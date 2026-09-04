@@ -3,14 +3,14 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	note
-m/MS00D2.BIN	0:00	0	0	DATA	ＮＰＣフォント表示\nフォント番号を入力{08:4A}{08:6E}（ｆｆｆｆで終了）		reads: ＮＰＣフォント表示\nフォント番号を入力してください（ｆｆｆｆで終了）
+m/MS00D2.BIN	0:00	0	0	DATA	ＮＰＣフォント表示\nフォント番号を入力{08:4A}{08:6E}（ｆｆｆｆで終了）	NPC Font Display\nEnter font number (ffff to quit)	reads: ＮＰＣフォント表示\nフォント番号を入力してください（ｆｆｆｆで終了）
 m/MS00D2.BIN	0:00	1	89	1F4E	{01:FF}	{01:FF}	reads: 
-m/MS00D2.BIN	0:00	2	98	1FE8	＝		
-m/MS00D2.BIN	0:00	3	104	1F02	（ＦＣ		
-m/MS00D2.BIN	0:00	4	113	0D	）\nパレット番号を入力{08:4A}{08:6E}		reads: ）\nパレット番号を入力してください
-m/MS00D2.BIN	0:00	5	147	1FE8	＝		
-m/MS00D2.BIN	0:00	6	153	1F02	\nＣＧＥＮ番号を入力{08:4A}{08:6E}		reads: \nＣＧＥＮ番号を入力してください
-m/MS00D2.BIN	0:00	7	185	1FE8	＝		
+m/MS00D2.BIN	0:00	2	98	1FE8	＝	=	
+m/MS00D2.BIN	0:00	3	104	1F02	（ＦＣ	(FC	
+m/MS00D2.BIN	0:00	4	113	0D	）\nパレット番号を入力{08:4A}{08:6E}	)\nEnter palette number	reads: ）\nパレット番号を入力してください
+m/MS00D2.BIN	0:00	5	147	1FE8	＝	=	
+m/MS00D2.BIN	0:00	6	153	1F02	\nＣＧＥＮ番号を入力{08:4A}{08:6E}	\nEnter CGEN number	reads: \nＣＧＥＮ番号を入力してください
+m/MS00D2.BIN	0:00	7	185	1FE8	＝	=	
 m/MS00D2.BIN	0:02	0	8	1F80	{=E2}{=00}{01:1F}L{03:00}	{=E2}{=00}{01:1F}L{03:00}	reads: {=E2}{=00}おにいちゃんL飛び道具
 m/MS00D2.BIN	0:02	1	21	10	{03:19}	{03:19}	reads: 
 m/MS00D2.BIN	0:03	0	8	1F80	{=E2}{=00}{01:1F}{=ED}{=03}	{=E2}{=00}{01:1F}{=ED}{=03}	reads: {=E2}{=00}おにいちゃん{=ED}{=03}
@@ -29,19 +29,19 @@ m/MS00D2.BIN	0:09	9	65	09	{01:3C}	{01:3C}	reads: ひとつ
 m/MS00D2.BIN	0:09	10	73	0B	{01:3A}	{01:3A}	reads: ひとり
 m/MS00D2.BIN	0:09	11	86	0E	7	7	
 m/MS00D2.BIN	0:09	12	88	00			
-m/MS00D2.BIN	0:09	13	98	00	０		
-m/MS00D2.BIN	0:09	14	101	00	１		
-m/MS00D2.BIN	0:09	15	104	00	２		
-m/MS00D2.BIN	0:09	16	107	00	３		
-m/MS00D2.BIN	0:09	17	110	00	４		
-m/MS00D2.BIN	0:09	18	113	00	５		
-m/MS00D2.BIN	0:09	19	116	00	６		
-m/MS00D2.BIN	0:09	20	119	00	７		
-m/MS00D2.BIN	0:09	21	122	00	８		
-m/MS00D2.BIN	0:09	22	125	00	９		
-m/MS00D2.BIN	0:09	23	128	00	ａ		
-m/MS00D2.BIN	0:09	24	131	00	ｂ		
-m/MS00D2.BIN	0:09	25	134	00	ｃ		
-m/MS00D2.BIN	0:09	26	137	00	ｄ		
-m/MS00D2.BIN	0:09	27	140	00	ｅ		
-m/MS00D2.BIN	0:09	28	143	00	ｆ		
+m/MS00D2.BIN	0:09	13	98	00	０		@skip hex glyph table (debug font viewer)
+m/MS00D2.BIN	0:09	14	101	00	１		@skip hex glyph table (debug font viewer)
+m/MS00D2.BIN	0:09	15	104	00	２		@skip hex glyph table (debug font viewer)
+m/MS00D2.BIN	0:09	16	107	00	３		@skip hex glyph table (debug font viewer)
+m/MS00D2.BIN	0:09	17	110	00	４		@skip hex glyph table (debug font viewer)
+m/MS00D2.BIN	0:09	18	113	00	５		@skip hex glyph table (debug font viewer)
+m/MS00D2.BIN	0:09	19	116	00	６		@skip hex glyph table (debug font viewer)
+m/MS00D2.BIN	0:09	20	119	00	７		@skip hex glyph table (debug font viewer)
+m/MS00D2.BIN	0:09	21	122	00	８		@skip hex glyph table (debug font viewer)
+m/MS00D2.BIN	0:09	22	125	00	９		@skip hex glyph table (debug font viewer)
+m/MS00D2.BIN	0:09	23	128	00	ａ		@skip hex glyph table (debug font viewer)
+m/MS00D2.BIN	0:09	24	131	00	ｂ		@skip hex glyph table (debug font viewer)
+m/MS00D2.BIN	0:09	25	134	00	ｃ		@skip hex glyph table (debug font viewer)
+m/MS00D2.BIN	0:09	26	137	00	ｄ		@skip hex glyph table (debug font viewer)
+m/MS00D2.BIN	0:09	27	140	00	ｅ		@skip hex glyph table (debug font viewer)
+m/MS00D2.BIN	0:09	28	143	00	ｆ		@skip hex glyph table (debug font viewer)

@@ -5,36 +5,36 @@
 file	rec	idx	off	tag	jp	en	note
 m/MS00DD.BIN	0:03	0	0	DATA	No effect on {04:05}.\n	No effect on {04:05}.\n	reads: No effect on 　.\n
 m/MS00DD.BIN	0:04	0	0	DATA	However, {04:05} dodged.\n	However, {04:05} dodged.\n	reads: However, 　 dodged.\n
-m/MS00DD.BIN	0:05	0	23	00	ﾝ		
-m/MS00DD.BIN	0:05	1	29	0B	{03:00}ﾝ		reads: 飛び道具ﾝ
-m/MS00DD.BIN	0:05	2	35	0D	ﾝ		
-m/MS00DD.BIN	0:05	3	43	00	ﾝ		
+m/MS00DD.BIN	0:05	0	23	00	ﾝ		@skip record separator noise
+m/MS00DD.BIN	0:05	1	29	0B	{03:00}ﾝ		reads: 飛び道具ﾝ; @skip record separator noise
+m/MS00DD.BIN	0:05	2	35	0D	ﾝ		@skip record separator noise
+m/MS00DD.BIN	0:05	3	43	00	ﾝ		@skip record separator noise
 m/MS00DD.BIN	0:05	4	60	13	a	a	
-m/MS00DD.BIN	0:06	0	23	00	ﾝ		
-m/MS00DD.BIN	0:06	1	31	0D	ﾝ		
+m/MS00DD.BIN	0:06	0	23	00	ﾝ		@skip record separator noise
+m/MS00DD.BIN	0:06	1	31	0D	ﾝ		@skip record separator noise
 m/MS00DD.BIN	0:06	2	48	13	a	a	
-m/MS00DD.BIN	0:07	0	17	00	ﾝ		
+m/MS00DD.BIN	0:07	0	17	00	ﾝ		@skip record separator noise
 m/MS00DD.BIN	0:07	1	38	13	a	a	
-m/MS00DD.BIN	0:08	0	17	00	ﾝ		
-m/MS00DD.BIN	0:08	1	23	0B	{04:00}ﾝ		reads: を唱えた！ ﾝ
-m/MS00DD.BIN	0:08	2	29	18	ﾝc{06:00}ﾝ		reads: ﾝc辞書５ﾝ
+m/MS00DD.BIN	0:08	0	17	00	ﾝ		@skip record separator noise
+m/MS00DD.BIN	0:08	1	23	0B	{04:00}ﾝ		reads: を唱えた！ ﾝ; @skip record separator noise
+m/MS00DD.BIN	0:08	2	29	18	ﾝc{06:00}ﾝ		reads: ﾝc辞書５ﾝ; @skip record separator noise
 m/MS00DD.BIN	0:08	3	50	13	a	a	
-m/MS00DD.BIN	0:09	0	27	00	ﾝ\n{01:00}ﾝ		reads: ﾝ\n早坂達也ﾝ
-m/MS00DD.BIN	0:09	1	37	0B	{05:00}ﾝ		reads: YesNoニュートンﾝ
-m/MS00DD.BIN	0:09	2	47	00	ﾝ		
+m/MS00DD.BIN	0:09	0	27	00	ﾝ\n{01:00}ﾝ		reads: ﾝ\n早坂達也ﾝ; @skip record separator noise
+m/MS00DD.BIN	0:09	1	37	0B	{05:00}ﾝ		reads: YesNoニュートンﾝ; @skip record separator noise
+m/MS00DD.BIN	0:09	2	47	00	ﾝ		@skip record separator noise
 m/MS00DD.BIN	0:09	3	60	13	a	a	
 m/MS00DD.BIN	0:0A	0	7	1E5C	{04:05} dodged with ease!\n	{04:05} dodged with ease!\n	reads: 　 dodged with ease!\n
 m/MS00DD.BIN	0:0A	1	31	18	However, {04:05} dodged.\n\n	However, {04:05} dodged.\n\n	reads: However, 　 dodged.\n\n
 m/MS00DD.BIN	0:0B	0	7	1E5C	{04:05} took no damage.\n	{04:05} took no damage.\n	reads: 　 took no damage.\n
 m/MS00DD.BIN	0:0B	1	29	18	No damage was dealt to {04:05}.\n\n	No damage was dealt to {04:05}.\n\n	reads: No damage was dealt to 　.\n\n
 m/MS00DD.BIN	0:0C	0	4	00	{04:EB}	{04:EB}	reads: 
-m/MS00DD.BIN	0:0C	1	13	1E5C	{08:62}かすり傷を受け、\n		reads: は、かすり傷を受け、\n
-m/MS00DD.BIN	0:0C	2	35	18	をかすり		
+m/MS00DD.BIN	0:0C	1	13	1E5C	{08:62}かすり傷を受け、\n	 took only a scratch,\n	reads: は、かすり傷を受け、\n
+m/MS00DD.BIN	0:0C	2	35	18	をかすり	 was grazed	
 m/MS00DD.BIN	0:0D	0	0	DATA	{04:05}\n	{04:05}\n	reads: 　\n
-m/MS00DD.BIN	0:0E	0	25	00	{07:0C}ﾝ		reads: もっとﾝ
+m/MS00DD.BIN	0:0E	0	25	00	{07:0C}ﾝ		reads: もっとﾝ; @skip record separator noise
 m/MS00DD.BIN	0:0E	1	51	17	Critical strike!\n	Critical strike!\n	
 m/MS00DD.BIN	0:0E	2	71	18	Fierce blow!\n	Fierce blow!\n	
-m/MS00DD.BIN	0:0E	3	92	00	{04:EB}{04:09}、		reads: はに、
+m/MS00DD.BIN	0:0E	3	92	00	{04:EB}{04:09}、	{04:EB} on {04:09}, 	reads: はに、
 m/MS00DD.BIN	0:0F	0	60	1E5D	Critical strike!\n	Critical strike!\n	
 m/MS00DD.BIN	0:0F	1	80	18	Fierce blow!\n	Fierce blow!\n	
 m/MS00DD.BIN	0:10	0	7	1E5C	No effect on 	No effect on 	
@@ -68,8 +68,8 @@ m/MS00DD.BIN	0:12	1	9	1E5C	 absorbed 	 absorbed
 m/MS00DD.BIN	0:12	2	24	1F02	 points of HP.\n	 points of HP.\n	
 m/MS00DD.BIN	0:12	3	42	18	 absorbed some HP.\n	 absorbed some HP.\n	
 m/MS00DD.BIN	0:13	0	0	DATA	{04:05}	{04:05}	reads: 　
-m/MS00DD.BIN	0:13	1	9	1E5C	は吸収{08:4A}、		reads: は吸収して、
-m/MS00DD.BIN	0:13	2	24	1F02	{03:0E}を得た\n		reads: ＭＰを得た\n
+m/MS00DD.BIN	0:13	1	9	1E5C	は吸収{08:4A}、	 absorbed it and 	reads: は吸収して、
+m/MS00DD.BIN	0:13	2	24	1F02	{03:0E}を得た\n	 gained MP.\n	reads: ＭＰを得た\n
 m/MS00DD.BIN	0:13	3	36	18	 absorbed some MP.\n	 absorbed some MP.\n	
 m/MS00DD.BIN	0:14	0	0	DATA	{04:05}	{04:05}	reads: 　
 m/MS00DD.BIN	0:14	1	9	1E5C	 dodged.\n	 dodged.\n	
@@ -78,8 +78,8 @@ m/MS00DD.BIN	0:15	0	0	DATA	{04:05}	{04:05}	reads: 　
 m/MS00DD.BIN	0:15	1	9	1E5C	 resisted.\n	 resisted.\n	
 m/MS00DD.BIN	0:15	2	23	18	 dodged the effect.\n	 dodged the effect.\n	
 m/MS00DD.BIN	0:17	0	0	DATA	{04:05}	{04:05}	reads: 　
-m/MS00DD.BIN	0:17	1	9	1E5C	{08:62}かすり傷を受け\n		reads: は、かすり傷を受け\n
-m/MS00DD.BIN	0:17	2	29	18	をかすり\n		
+m/MS00DD.BIN	0:17	1	9	1E5C	{08:62}かすり傷を受け\n	 took only a scratch\n	reads: は、かすり傷を受け\n
+m/MS00DD.BIN	0:17	2	29	18	をかすり\n	 was grazed\n	
 m/MS00DD.BIN	0:18	0	0	DATA	{04:05} 	{04:05} 	reads: 　 
 m/MS00DD.BIN	0:19	0	0	DATA	Absorbed from {04:05}	Absorbed from {04:05}	record reaches an engine no-op opcode; verify in game; reads: Absorbed from 　
 m/MS00DD.BIN	0:19	1	25	1F1A	{01:1B}	{01:1B}	record reaches an engine no-op opcode; verify in game; reads: パスワード
@@ -88,10 +88,10 @@ m/MS00DD.BIN	0:19	3	32	1F00	:	:	record reaches an engine no-op opcode; ver
 m/MS00DD.BIN	0:19	4	40	1F02	 HP.\n	 HP.\n	record reaches an engine no-op opcode; verify in game
 m/MS00DD.BIN	0:19	5	51	1F02	 MP.\n	 MP.\n	record reaches an engine no-op opcode; verify in game
 m/MS00DD.BIN	0:19	6	62	1F02	 EXP.\n	 EXP.\n	record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:1A	0	17	00	ﾝ		
-m/MS00DD.BIN	0:1A	1	22	15	e{06:00}ﾝ		reads: e辞書５ﾝ
+m/MS00DD.BIN	0:1A	0	17	00	ﾝ		@skip record separator noise
+m/MS00DD.BIN	0:1A	1	22	15	e{06:00}ﾝ		reads: e辞書５ﾝ; @skip record separator noise
 m/MS00DD.BIN	0:1A	2	42	13	a	a	
-m/MS00DD.BIN	0:1B	0	29	1F83	ｳらに		
+m/MS00DD.BIN	0:1B	0	29	1F83	ｳらに	Furthermore, 	
 m/MS00DD.BIN	0:1B	1	61	1F87	{04:05}'s HP is full.\n	{04:05}'s HP is full.\n	reads: 　's HP is full.\n
 m/MS00DD.BIN	0:1C	0	43	1F87	{04:05}'s MP is full.\n	{04:05}'s MP is full.\n	reads: 　's MP is full.\n
 m/MS00DD.BIN	0:1D	0	0	DATA	{04:05}	{04:05}	reads: 　
@@ -101,10 +101,10 @@ m/MS00DD.BIN	0:1E	0	0	DATA	{04:05}	{04:05}	reads: 　
 m/MS00DD.BIN	0:1E	1	9	1E5C	's MP was restored.\n	's MP was restored.\n	
 m/MS00DD.BIN	0:1E	2	32	18	's magic power returned.\n	's magic power returned.\n	
 m/MS00DD.BIN	0:1F	0	0	DATA	{04:05}	{04:05}	reads: 　
-m/MS00DD.BIN	0:1F	1	9	1E5C	は		
-m/MS00DD.BIN	0:1F	2	16	1F02	{03:0D}増加{08:4B}\n		reads: ＨＰ増加した\n
+m/MS00DD.BIN	0:1F	1	9	1E5C	は	's 	
+m/MS00DD.BIN	0:1F	2	16	1F02	{03:0D}増加{08:4B}\n	HP increased.\n	reads: ＨＰ増加した\n
 m/MS00DD.BIN	0:1F	3	28	18	HP.\n	HP.\n	
-m/MS00DD.BIN	0:20	0	17	00	ﾝ!{06:00}ﾝ		reads: ﾝ!辞書５ﾝ
+m/MS00DD.BIN	0:20	0	17	00	ﾝ!{06:00}ﾝ		reads: ﾝ!辞書５ﾝ; @skip record separator noise
 m/MS00DD.BIN	0:20	1	38	13	a	a	
 m/MS00DD.BIN	0:21	0	26	0C	{04:05} returned to the computer.\n	{04:05} returned to the computer.\n	reads: 　 returned to the computer.\n
 m/MS00DD.BIN	0:21	1	58	18	{04:05} returned to Makai.\n	{04:05} returned to Makai.\n	reads: 　 returned to Makai.\n
@@ -143,26 +143,26 @@ m/MS00DD.BIN	0:31	3	147	1F01	{03:12}]\nwas knocked away.\n	{03:12}]\nwas knocked
 m/MS00DD.BIN	0:31	4	205	1F60	You quickly pick up [	You quickly pick up [	
 m/MS00DD.BIN	0:31	5	229	1F01	{03:12}]!\n	{03:12}]!\n	reads: 切り]!\n
 m/MS00DD.BIN	0:31	6	248	18	However,\n{04:07} isn't holding a weapon.\n	However,\n{04:07} isn't holding a weapon.\n	reads: However,\nThe Enemy isn't holding a weapon.\n
-m/MS00DD.BIN	0:32	0	4	00	{04:EB}は		reads: は
-m/MS00DD.BIN	0:32	1	12	00	{04:EB}だ\n		reads: だ\n
-m/MS00DD.BIN	0:33	0	4	00	{04:EB}は踊っ{08:14}\n		reads: は踊っている\n
-m/MS00DD.BIN	0:34	0	0	DATA	{08:61}{08:0D}を封じられ{08:14}\n		reads: しかし魔法を封じられている\n
-m/MS00DD.BIN	0:35	0	4	00	{04:EB}は		reads: は
+m/MS00DD.BIN	0:32	0	4	00	{04:EB}は	{04:EB} is 	reads: は
+m/MS00DD.BIN	0:32	1	12	00	{04:EB}だ\n	{04:EB}.\n	reads: だ\n
+m/MS00DD.BIN	0:33	0	4	00	{04:EB}は踊っ{08:14}\n	{04:EB} is dancing.\n	reads: は踊っている\n
+m/MS00DD.BIN	0:34	0	0	DATA	{08:61}{08:0D}を封じられ{08:14}\n	However, magic is sealed.\n	reads: しかし魔法を封じられている\n
+m/MS00DD.BIN	0:35	0	4	00	{04:EB}は	{04:EB} is 	reads: は
 m/MS00DD.BIN	0:35	1	12	00	{04:EB}{08:13}\n	{04:EB}{08:13}\n	reads: している\n
-m/MS00DD.BIN	0:36	0	32	1F83	ｻ{08:4A}		reads: ｻして
+m/MS00DD.BIN	0:36	0	32	1F83	ｻ{08:4A}		reads: ｻして; @skip bare inflection fragment
 m/MS00DD.BIN	0:36	1	40	1F02	{03:0D}{03:10}{08:4B}\n	{03:0D}{03:10}{08:4B}\n	reads: ＨＰ回復した\n
-m/MS00DD.BIN	0:36	2	55	1F83	ｳらに		
+m/MS00DD.BIN	0:36	2	55	1F83	ｳらに	Furthermore, 	
 m/MS00DD.BIN	0:36	3	65	1F02	{03:0E}{03:10}{08:4B}\n	{03:0E}{03:10}{08:4B}\n	reads: ＭＰ回復した\n
 m/MS00DD.BIN	0:36	4	85	1F83	{04:05}	{04:05}	reads: 　
-m/MS00DD.BIN	0:36	5	119	09	らに		
+m/MS00DD.BIN	0:36	5	119	09	らに	Furthermore, 	
 m/MS00DD.BIN	0:36	6	126	18	{04:05}{08:62}	{04:05}{08:62}	reads: 　は、
-m/MS00DD.BIN	0:36	7	150	1F86	{03:0B}復活に失敗{08:17}\n		reads: しかし、復活に失敗した！\n
-m/MS00DD.BIN	0:36	8	183	1F80	{08:0D}は効果が無い\n		reads: 魔法は効果が無い\n
-m/MS00DD.BIN	0:37	0	17	00	ﾝ8{03:00}ﾝ9{04:00}ﾝ8{05:00}ﾝE{06:00}ﾝ?{07:00}ﾝ\<{08:00}ﾝ=		record reaches an engine no-op opcode; verify in game; reads: ﾝ8飛び道具ﾝ9を唱えた！ ﾝ8YesNoニュートンﾝE辞書５ﾝ?＞どうしますか？ﾝ\<早坂ﾝ=
-m/MS00DD.BIN	0:37	1	49	00	ﾝ9		record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	2	57	00	ﾝ\<		record reaches an engine no-op opcode; verify in game
+m/MS00DD.BIN	0:36	7	150	1F86	{03:0B}復活に失敗{08:17}\n	However, the revival failed!\n	reads: しかし、復活に失敗した！\n
+m/MS00DD.BIN	0:36	8	183	1F80	{08:0D}は効果が無い\n	Magic has no effect.\n	reads: 魔法は効果が無い\n
+m/MS00DD.BIN	0:37	0	17	00	ﾝ8{03:00}ﾝ9{04:00}ﾝ8{05:00}ﾝE{06:00}ﾝ?{07:00}ﾝ\<{08:00}ﾝ=		record reaches an engine no-op opcode; verify in game; reads: ﾝ8飛び道具ﾝ9を唱えた！ ﾝ8YesNoニュートンﾝE辞書５ﾝ?＞どうしますか？ﾝ\<早坂ﾝ=; @skip record separator noise
+m/MS00DD.BIN	0:37	1	49	00	ﾝ9		record reaches an engine no-op opcode; verify in game; @skip record separator noise
+m/MS00DD.BIN	0:37	2	57	00	ﾝ\<		record reaches an engine no-op opcode; verify in game; @skip record separator noise
 m/MS00DD.BIN	0:37	3	62	0D	>	>	record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	4	69	0E	ﾝE		record reaches an engine no-op opcode; verify in game
+m/MS00DD.BIN	0:37	4	69	0E	ﾝE		record reaches an engine no-op opcode; verify in game; @skip record separator noise
 m/MS00DD.BIN	0:37	5	78	10	:	:	record reaches an engine no-op opcode; verify in game
 m/MS00DD.BIN	0:37	6	86	12	;	;	record reaches an engine no-op opcode; verify in game
 m/MS00DD.BIN	0:37	7	94	14	\<	\<	record reaches an engine no-op opcode; verify in game
@@ -170,12 +170,12 @@ m/MS00DD.BIN	0:37	8	102	16	A	A	record reaches an engine no-op opcode; verify in 
 m/MS00DD.BIN	0:37	9	106	18	C	C	record reaches an engine no-op opcode; verify in game
 m/MS00DD.BIN	0:37	10	110	19	9	9	record reaches an engine no-op opcode; verify in game
 m/MS00DD.BIN	0:37	11	114	1A	:	:	record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	12	117	00	ﾝ;		record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	13	121	00	ﾝ;		record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	14	125	300	ﾝB		record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	15	129	1E00	ﾝ@		record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	16	133	1F00	ﾝ= 		record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	17	137	00	ﾝF		record reaches an engine no-op opcode; verify in game
+m/MS00DD.BIN	0:37	12	117	00	ﾝ;		record reaches an engine no-op opcode; verify in game; @skip record separator noise
+m/MS00DD.BIN	0:37	13	121	00	ﾝ;		record reaches an engine no-op opcode; verify in game; @skip record separator noise
+m/MS00DD.BIN	0:37	14	125	300	ﾝB		record reaches an engine no-op opcode; verify in game; @skip record separator noise
+m/MS00DD.BIN	0:37	15	129	1E00	ﾝ@		record reaches an engine no-op opcode; verify in game; @skip record separator noise
+m/MS00DD.BIN	0:37	16	133	1F00	ﾝ= 		record reaches an engine no-op opcode; verify in game; @skip record separator noise
+m/MS00DD.BIN	0:37	17	137	00	ﾝF		record reaches an engine no-op opcode; verify in game; @skip record separator noise
 m/MS00DD.BIN	0:37	18	144	1E5E	{03:0B}	{03:0B}	record reaches an engine no-op opcode; verify in game; reads: しかし、
 m/MS00DD.BIN	0:38	0	8	00	{04:EB} recovered health.\n	{04:EB} recovered health.\n	reads:  recovered health.\n
 m/MS00DD.BIN	0:39	0	8	00	{04:EB} woke up.\n	{04:EB} woke up.\n	reads:  woke up.\n
@@ -206,17 +206,17 @@ m/MS00DD.BIN	0:4C	0	7	1FE8	took 	took
 m/MS00DD.BIN	0:4C	1	16	1F02	 damage	 damage	
 m/MS00DD.BIN	0:4C	2	27	1E5F	.\n	.\n	
 m/MS00DD.BIN	0:4C	3	86	00	{02:03}	{02:03}	reads: レジスタンス
-m/MS00DD.BIN	0:4C	4	112	00	{04:EB}{08:62}居眠り{08:42}醒めた\n		reads: は、居眠りから醒めた\n
-m/MS00DD.BIN	0:4C	5	163	00	{04:EB}{08:62}眠り{08:42}居眠り{08:71}醒めた\n		reads: は、眠りから居眠りまで醒めた\n
+m/MS00DD.BIN	0:4C	4	112	00	{04:EB}{08:62}居眠り{08:42}醒めた\n	{04:EB} woke from dozing.\n	reads: は、居眠りから醒めた\n
+m/MS00DD.BIN	0:4C	5	163	00	{04:EB}{08:62}眠り{08:42}居眠り{08:71}醒めた\n	{04:EB} stirred from sleep into a doze.\n	reads: は、眠りから居眠りまで醒めた\n
 m/MS00DD.BIN	0:4C	6	261	18	,\nand 	,\nand 	
-m/MS00DD.BIN	0:4D	0	0	DATA	、		
-m/MS00DD.BIN	0:4D	1	7	1F02	{03:0E}を失な		reads: ＭＰを失な
-m/MS00DD.BIN	0:4D	2	26	1E5C	{08:51}\n	{08:51}\n	reads: った\n
-m/MS00DD.BIN	0:4D	3	32	18	わせた\n		
-m/MS00DD.BIN	0:4D	4	49	1E5C	い\n		
-m/MS00DD.BIN	0:4D	5	55	18	わせ\n\nさらに		
-m/MS00DD.BIN	0:4E	0	10	00	ﾝ{03:06}		reads: ﾝ自分に
-m/MS00DD.BIN	0:4E	1	14	00	ﾝ		
+m/MS00DD.BIN	0:4D	0	0	DATA	、	, 	
+m/MS00DD.BIN	0:4D	1	7	1F02	{03:0E}を失な	lost MP	reads: ＭＰを失な
+m/MS00DD.BIN	0:4D	2	26	1E5C	{08:51}\n	.\n	reads: った\n
+m/MS00DD.BIN	0:4D	3	32	18	わせた\n	.\n	
+m/MS00DD.BIN	0:4D	4	49	1E5C	い\n	.\n	
+m/MS00DD.BIN	0:4D	5	55	18	わせ\n\nさらに	.\n\nFurthermore, 	
+m/MS00DD.BIN	0:4E	0	10	00	ﾝ{03:06}		reads: ﾝ自分に; @skip record separator noise
+m/MS00DD.BIN	0:4E	1	14	00	ﾝ		@skip record separator noise
 m/MS00DD.BIN	0:4E	2	31	13	a	a	
 m/MS00DD.BIN	0:4F	0	9	00	{04:EB} 	{04:EB} 	reads:  
 m/MS00DD.BIN	0:4F	1	16	00	{04:EB}	{04:EB}	reads: 
@@ -234,7 +234,7 @@ m/MS00DD.BIN	0:4F	12	139	00	 crumbled down.\n	 crumbled down.\n
 m/MS00DD.BIN	0:4F	13	156	00	 turned into ash.\n	 turned into ash.\n	
 m/MS00DD.BIN	0:4F	14	175	00	 was defeated.\n	 was defeated.\n	
 m/MS00DD.BIN	0:4F	15	191	00	 fell.\n	 fell.\n	
-m/MS00DD.BIN	0:50	0	13	00	{04:EB}{08:62}がっくりと力尽{08:1E}\n		reads: は、がっくりと力尽きた\n
+m/MS00DD.BIN	0:50	0	13	00	{04:EB}{08:62}がっくりと力尽{08:1E}\n	{04:EB} slumped down, strength spent.\n	reads: は、がっくりと力尽きた\n
 m/MS00DD.BIN	0:51	0	0	DATA	{04:19} was victorious.\n	{04:19} was victorious.\n	reads: 's party was victorious.\n
 m/MS00DD.BIN	0:52	0	0	DATA	{04:19} gained 	{04:19} gained 	reads: 's party gained 
 m/MS00DD.BIN	0:52	1	15	1F02	 EXP.\n	 EXP.\n	
@@ -255,42 +255,42 @@ m/MS00DD.BIN	0:57	0	0	DATA	The enemy ran away.\n	The enemy ran away.\n
 m/MS00DD.BIN	0:58	0	0	DATA	{04:19} was victorious.\n	{04:19} was victorious.\n	reads: 's party was victorious.\n
 m/MS00DD.BIN	0:59	0	120	1F83	dition, the enemy left behind something.\n{1E10:01023C}	dition, the enemy left behind something.\n{1E10:01023C}	
 m/MS00DD.BIN	0:5A	0	23	1F87	{04:03} is refusing to fight.\n	{04:03} is refusing to fight.\n	reads: 　 is refusing to fight.\n
-m/MS00DD.BIN	0:5A	1	56	1F41	{04:03}{08:62}{08:05}ーに還{08:51}\n		reads: 　は、コンピューターに還った\n
-m/MS00DD.BIN	0:5A	2	76	1ED2	{04:03}{08:62}逃げ{08:21}\n		reads: 　は、逃げていった\n
+m/MS00DD.BIN	0:5A	1	56	1F41	{04:03}{08:62}{08:05}ーに還{08:51}\n	{04:03} returned to the computer.\n	reads: 　は、コンピューターに還った\n
+m/MS00DD.BIN	0:5A	2	76	1ED2	{04:03}{08:62}逃げ{08:21}\n	{04:03} fled.\n	reads: 　は、逃げていった\n
 m/MS00DD.BIN	0:5B	0	0	DATA	The demon possessing 	The demon possessing 	
 m/MS00DD.BIN	0:5B	1	25	00	{04:EB} disappeared.\n	{04:EB} disappeared.\n	reads:  disappeared.\n
-m/MS00DD.BIN	0:5C	0	0	DATA	{04:06}は{03:10}{08:4B}\n		reads: 味方たち　たちは回復した\n
+m/MS00DD.BIN	0:5C	0	0	DATA	{04:06}は{03:10}{08:4B}\n	{04:06} recovered.\n	reads: 味方たち　たちは回復した\n
 m/MS00DD.BIN	0:5D	0	0	DATA	{04:19} dodged the fight.\n	{04:19} dodged the fight.\n	reads: 's party dodged the fight.\n
 m/MS00DD.BIN	0:5E	0	77	1F83	{04:0E}	{04:0E}	reads: はの
 m/MS00DD.BIN	0:5E	1	82	1F01	{03:12}	{03:12}	reads: 切り
-m/MS00DD.BIN	0:5E	2	93	1F8A	に触{08:60}が、何も起き{08:19}\n		reads: に触れたが、何も起きなかった\n
-m/MS00DD.BIN	0:5E	3	117	18	を黄金に変{08:41}\n		reads: を黄金に変えた\n
-m/MS00DD.BIN	0:5E	4	145	18	{03:0B}\n{04:07}は武器を持{08:52}い{08:19}\n		reads: しかし、\nThe Enemyは武器を持っていなかった\n
-m/MS00DD.BIN	0:5F	0	0	DATA	{04:05}の、幻が現わ{08:11}\n		reads: 　の、幻が現われた！\n
-m/MS00DD.BIN	0:60	0	0	DATA	{04:05}の{01:34}が無効化{08:4B}\n		reads: 　の結界が無効化した\n
-m/MS00DD.BIN	0:61	0	0	DATA	{04:05}{08:62}{01:34}によ{08:52}護ら{08:60}\n		reads: 　は、結界によって護られた\n
-m/MS00DD.BIN	0:62	0	0	DATA	{04:05}の姿が消{08:41}\n		reads: 　の姿が消えた\n
-m/MS00DD.BIN	0:63	0	18	1E5D	必殺の一撃！\nすべての{03:0E}を失わせた！\n		reads: 必殺の一撃！\nすべてのＭＰを失わせた！\n
-m/MS00DD.BIN	0:63	1	57	18	痛恨の一撃！\nすべての{03:0E}を失{08:12}\n		reads: 痛恨の一撃！\nすべてのＭＰを失った！\n
-m/MS00DD.BIN	0:64	0	0	DATA	{04:05}は１０{03:0E}を受けと{08:51}\n		reads: 　は１０ＭＰを受けとった\n
+m/MS00DD.BIN	0:5E	2	93	1F8A	に触{08:60}が、何も起き{08:19}\n	 touched it, but nothing happened.\n	reads: に触れたが、何も起きなかった\n
+m/MS00DD.BIN	0:5E	3	117	18	を黄金に変{08:41}\n	 turned it to gold.\n	reads: を黄金に変えた\n
+m/MS00DD.BIN	0:5E	4	145	18	{03:0B}\n{04:07}は武器を持{08:52}い{08:19}\n	However,\n{04:07} had no weapon.\n	reads: しかし、\nThe Enemyは武器を持っていなかった\n
+m/MS00DD.BIN	0:5F	0	0	DATA	{04:05}の、幻が現わ{08:11}\n	An illusion of {04:05} appeared!\n	reads: 　の、幻が現われた！\n
+m/MS00DD.BIN	0:60	0	0	DATA	{04:05}の{01:34}が無効化{08:4B}\n	{04:05}'s barrier was nullified.\n	reads: 　の結界が無効化した\n
+m/MS00DD.BIN	0:61	0	0	DATA	{04:05}{08:62}{01:34}によ{08:52}護ら{08:60}\n	{04:05} was protected by the barrier.\n	reads: 　は、結界によって護られた\n
+m/MS00DD.BIN	0:62	0	0	DATA	{04:05}の姿が消{08:41}\n	{04:05} vanished from sight.\n	reads: 　の姿が消えた\n
+m/MS00DD.BIN	0:63	0	18	1E5D	必殺の一撃！\nすべての{03:0E}を失わせた！\n	Critical strike!\nAll MP drained!\n	reads: 必殺の一撃！\nすべてのＭＰを失わせた！\n
+m/MS00DD.BIN	0:63	1	57	18	痛恨の一撃！\nすべての{03:0E}を失{08:12}\n	Fierce blow!\nAll MP lost!\n	reads: 痛恨の一撃！\nすべてのＭＰを失った！\n
+m/MS00DD.BIN	0:64	0	0	DATA	{04:05}は１０{03:0E}を受けと{08:51}\n	{04:05} received 10 MP.\n	reads: 　は１０ＭＰを受けとった\n
 m/MS00DD.BIN	0:64	1	45	1F4E	{05:2C}{03:06}	{05:2C}{03:06}	reads: 自分に
 m/MS00DD.BIN	0:65	0	0	DATA	{04:05}\n	{04:05}\n	reads: 　\n
 m/MS00DD.BIN	0:65	1	10	1FE8	took 	took 	
 m/MS00DD.BIN	0:65	2	19	1F02	 damage.\n	 damage.\n	
 m/MS00DD.BIN	0:65	3	38	1F4D	{=EC}{=03}{08:04}{03:08}b	{=EC}{=03}{08:04}{03:08}b	reads: {=EC}{=03}西野アップb
-m/MS00DD.BIN	0:65	4	49	1F02	{03:0E}増加{08:4B}\n		reads: ＭＰ増加した\n
+m/MS00DD.BIN	0:65	4	49	1F02	{03:0E}増加{08:4B}\n	MP increased.\n	reads: ＭＰ増加した\n
 m/MS00DD.BIN	0:66	0	46	1F4E	{07:2B}{03:0D}{04:03} gained 	{07:2B}{03:0D}{04:03} gained 	reads: 全身全霊を込めて　ＨＰ　 gained 
 m/MS00DD.BIN	0:66	1	64	1F02	 HP.\n	 HP.\n	
 m/MS00DD.BIN	0:66	2	141	00	{02:1F}{=F4}{=03}	{02:1F}{=F4}{=03}	reads: {=F4}{=03}
 m/MS00DD.BIN	0:66	3	206	1F4E	{07:2B}{03:0D}	{07:2B}{03:0D}	reads: 全身全霊を込めて　ＨＰ
-m/MS00DD.BIN	0:66	4	236	1F4E	{07:2C}{03:0D}{04:03}{08:62}{04:05}を吸収し、\n{03:0D}と{03:0E}を奪{08:51}\n		reads: 精神に語りかけた！ＨＰ　は、　を吸収し、\nＨＰとＭＰを奪った\n
+m/MS00DD.BIN	0:66	4	236	1F4E	{07:2C}{03:0D}{04:03}{08:62}{04:05}を吸収し、\n{03:0D}と{03:0E}を奪{08:51}\n	Called out to the spirit! {04:03} absorbed {04:05},\nand drained its HP and MP.\n	reads: 精神に語りかけた！ＨＰ　は、　を吸収し、\nＨＰとＭＰを奪った\n
 m/MS00DD.BIN	0:66	5	336	0B	{03:00}	{03:00}	reads: 飛び道具
 m/MS00DD.BIN	0:66	6	374	00	{01:1F}{=83}{=27}	{01:1F}{=83}{=27}	reads: おにいちゃん{=83}{=27}
 m/MS00DD.BIN	0:66	7	379	00	{03:09}	{03:09}	reads: ダウン
-m/MS00DD.BIN	0:66	8	392	1EDD	さらに戦闘能力が上昇{08:17}\n		reads: さらに戦闘能力が上昇した！\n
+m/MS00DD.BIN	0:66	8	392	1EDD	さらに戦闘能力が上昇{08:17}\n	Combat ability rose even further!\n	reads: さらに戦闘能力が上昇した！\n
 m/MS00DD.BIN	0:66	9	446	1F4E	{07:24}{03:0B}	{07:24}{03:0B}	reads: 命中！しかし、
 m/MS00DD.BIN	0:66	10	468	1F4E	{07:1E}{03:0B}	{07:1E}{03:0B}	reads: 割り込んできた！しかし、
 m/MS00DD.BIN	0:66	11	490	1F4E	{07:1F}{03:0B}	{07:1F}{03:0B}	reads: 暴れ出した！しかし、
 m/MS00DD.BIN	0:66	12	512	1F4E	{07:1B}{03:0B}	{07:1B}{03:0B}	reads: 会話できない！しかし、
-m/MS00DD.BIN	0:66	13	524	18	さらに能力値が上昇{08:17}\n		reads: さらに能力値が上昇した！\n
+m/MS00DD.BIN	0:66	13	524	18	さらに能力値が上昇{08:17}\n	Stats rose even further!\n	reads: さらに能力値が上昇した！\n
 m/MS00DD.BIN	0:67	0	16	1F4C	{04:FF}	{04:FF}	reads: 

@@ -69,9 +69,10 @@ untranslated Japanese.
 **Stutters / interruptions:** rendered with a hyphen, e.g. "Y-Yamase!?", "Wh-What the
 hell". Keep this convention for any new nervous/shocked dialogue.
 
-**Currency capitalization:** "macca" is lowercase in the great majority of instances,
-but two capitalized "Macca" slips exist — see the Inconsistencies section. Recommend
-capitalizing "Macca" going forward (it is a proper noun / the official SMT spelling).
+**Currency capitalization:** always **"Macca"**, capitalized (proper noun / the
+official SMT spelling). The corpus was overwhelmingly lowercase "macca"; all 35
+lowercase instances were rewritten in the 2026-09 editorial pass (Inconsistencies
+item 3). Write "Macca" in all new text.
 
 ---
 
@@ -260,77 +261,140 @@ check after packing (run `python tools/bin_tools/giten_pack.py` per the README).
 
 ## e) Inconsistencies found in the existing translation
 
-Flagging these for a cleanup pass; do not silently propagate them into new text.
+Status key: **RESOLVED** = decided and applied corpus-wide in the 2026-09 editorial
+pass (see `translation/glossary.tsv` for the citation-bearing entry); **OPEN** = still
+needs a decision or a separate pass. Do not silently propagate an OPEN item into new
+text.
 
-1. **"Panic" used for two different status ailments.** `tools/exe_analysis/pairs.txt`
-   shows both `恐慌` (offset `0x63050`, dread/rout) and `混乱` (offset `0x63078`,
-   confusion/disorientation) translated identically as "Panic" in the fixed-width
-   status table. These are mechanically distinct ailments — recommend renaming one,
-   e.g. keep 恐慌 = "Panic" (or "Fear") and change 混乱 to "Confuse"/"Confus." (7
-   chars) to disambiguate.
-2. **"Baal" vs. "Bael"** used for the same demon lord. "Baal" dominates (13 files:
-   `MS0003`, `MS0007`, `MS000D`, `MS0014`, `MS0015`, `MS0020`, `MS002B`, `MS002C`,
-   `MS005C`, `MS005D`, `MS005F`, `MS0061`, `MS006C`, `MS006D.BIN`), but "Bael"
-   appears in 5 files (`MS0002`, `MS0014`, `MS0030`, `MS005F`, `MS006D.BIN`) —
-   and `MS0014`, `MS005F`, and `MS006D.BIN` each contain **both** spellings
-   internally. The still-untranslated speaker tag `バール兵` ("Baal soldier")
-   and `p_names.txt` (`P2199 Baal`) both support "Baal" as the intended spelling —
-   recommend standardizing on it.
-3. **"macca" vs. "Macca" capitalization.** Overwhelmingly lowercase "macca" (15+
-   instances in `MS0007`, `MS0008`, `MS0019`, `MS003A`, `MS0065.BIN`), but two
-   capitalized "Macca" instances slip in in the same file cluster. Recommend
-   standardizing on capitalized "Macca" going forward (proper noun, matches the
-   official SMT spelling named in the task brief).
-4. **"DCS" (exe) vs. "DDC" (story text)** for what is presumably the same program
-   name. The shipped exe translates `ＤＣＳ` as "DCS" (`tools/exe_analysis/pairs.txt`:
-   `[TALK] DCSを所持していません` → `DCS not installed`), but every story-file
-   appearance of the paired program alongside DDS/DAS instead reads "DDC" (`m/MS0007`,
-   `MS001E`, `MS0028`, `MS0058.BIN`: *"I managed to download both DDC and DAS."*).
-   Needs a decision on which is canonical before translating any new DCS/DDC
-   reference.
-5. **Typo "Baal Solider"** (transposed letters), `m/MS000D.BIN`, 2 instances,
-   alongside the correct "Baal Soldier" used elsewhere (and once with no colon in
-   `MS0061.BIN`).
-6. **Typo "Bartended"** for "Bartender", `m/MS0040.BIN`, 1 instance; every other
-   occurrence (`MS00B0`–`MS00B8.BIN`) correctly reads "Bartender".
-7. **Speaker-tag punctuation drift** — most speaker tags end in a colon, but a
-   handful use a period instead ("Emi." x4 in `MS000D.BIN`, "Sonoda." once in
-   `MS000E.BIN`, "Woman." once in `MS0015.BIN`), and a few drop the trailing
-   punctuation entirely ("Dantalion" with no colon in `MS002B.BIN` vs. "Dantalion:"
-   elsewhere; "Scientist" with no colon in `MS0055.BIN` vs. "Scientist:" elsewhere).
-8. **Same character split across full-name vs. given-name-only speaker tags.**
-   Nishino's daughter is "Nishino Chita:" in `MS0054.BIN` but simply "Chita:" in
-   `MS0029.BIN`. A minor character is "Take Katsumi:" as a speaker tag but just
-   "Katsumi" in the accompanying narration in `MS0006.BIN`.
-9. **Capitalization/hyphenation drift on demon-name speaker tags:** "Shuten Douji:"
-   vs. "Shuten-Douji:"; "Yoshino-hime:" vs. "Yoshino-Hime:"; "Young man:" vs.
-   "Young Man:" — all attested as separate strings for what should be the same name.
-10. **Protagonist given-name order flips within a single file.** `m/MS0006.BIN`
-    contains both "Ayato Katsuragi..." (given-name-first, 3 instances) and "Katsuragi
-    Ayato..." (surname-first, 1 instance, *"So, it is you, Katsuragi Ayato..."*) for
-    the same character in the same file — pick one order (surname-first is used
-    everywhere else in the game and matches the exe's name-table ordering) and fix
-    the outlier.
-11. **`COMP` (exe battle-menu label) vs. `Arm Terminal` (story-text device name).**
-    The shipped exe's combat command menu uses the bare acronym "COMP"
-    (`tools/exe_analysis/english_inventory.md`, off `0x660b0`, in the
-    ATTACK/SWORD/GUN/MAGIC/ITEM/COMP/EXTRA/RETURN/DEFENCE command row), while every
-    narrative mention of the player's wrist device instead calls it "Arm Terminal"
-    (`m/MS0000.BIN`, `MS0017.BIN`, `MS0019.BIN`). These probably refer to the same
-    physical device from two different UI layers (a terse battle-menu label vs. full
-    prose), but this was never reconciled by the previous translator — worth a
-    decision on whether to rename the exe's "COMP" button to something that reads
-    more naturally next to "Arm Terminal", or leave it as an accepted abbreviation.
-12. **Minor prose typos** spotted in passing (not exhaustive — a full proofreading
-    pass is out of scope here): `m/MS00B5.BIN`: *"...in truth, **his** just a little
-    kid."* (should be "he's"); `m/MS00B8.BIN`: *"Oh, I have no **interested** in
-    women."* (should be "interest"); `m/MS0103.BIN`: *"Here, take this. A **toke** of
+1. **RESOLVED — "Panic" used for two different status ailments.**
+   `tools/exe_analysis/pairs.txt` shows both `恐慌` (offset `0x63050`, dread/rout) and
+   `混乱` (offset `0x63078`, confusion/disorientation) rendered "Panic" in the exe's
+   fixed-width status table. **Decision: 恐慌 = "Panic", 混乱 = "Confusion".** The text
+   tables already observed this split (`m/MS7F06.BIN` 0:C0 "fallen into a panic" vs
+   0:49 "Thrown into confusion!"), so no table rows needed rewriting. The exe's own
+   7-character slot still needs the abbreviated **"Confus."** for 混乱, following the
+   house word-stem+period convention — that exe edit is **OPEN**, since this pass did
+   not touch the executable.
+
+2. **RESOLVED — "Baal" vs "Bael".** The Japanese source itself uses *both* バール and
+   バエル for the same demon lord and his cult, and the shipped English was already
+   inconsistent about it in *both* directions: it rendered バエル as "Baal" in 51 places
+   and as "Bael" in 32. **Decision: "Baal" everywhere** — "Lord Baal", "Baal cult",
+   "Baal Soldier", "Baalite". 279 occurrences of "Bael" plus 7 of "Baelite" were
+   rewritten, including the MS6107/MS6109 cult-fanatic files, the place names
+   "Baalite Base"/"Baalite Temple" (`m/MS0035.BIN`) and the `p/_P_NAMES` unit-name
+   slot. No "Bael" spelling is retained anywhere in `text_v2/`.
+
+3. **RESOLVED — "macca" vs "Macca".** **Decision: always capitalised "Macca"** (proper
+   noun, official SMT spelling). 35 lowercase occurrences rewritten corpus-wide.
+
+4. **RESOLVED — "DCS" (exe) vs "DDC" (story text).** **Decision: match the shipped
+   exe.** The exe knows exactly three program names — DDS, DCS, AMS
+   (`pairs.txt` off `0x664bc`, `0x66510`, `0x66530`) — so the story text's "DDC" was
+   drift. 8 "DDC" and 3 "D.D.C." occurrences rewritten to "DCS"/"D.C.S." across
+   `m/MS001E`, `MS0028`, `MS0058`, `MS006A`, `MS003D.BIN`. **"DAS" is not attested in
+   the exe at all** and has been left as-is in prose; if it is ever added to the exe,
+   match whatever spelling ships there.
+
+5. **RESOLVED — typo "Baal Solider".** Both instances in `m/MS000D.BIN` fixed. The
+   colon-less "Baal Soldier" speaker tag in `m/MS0061.BIN` now carries its colon.
+
+6. **RESOLVED — typo "Bartended"** (`m/MS0040.BIN`) fixed to "Bartender".
+
+7. **RESOLVED — speaker-tag punctuation drift.** Every `1FD2` speaker-name span now
+   ends in a colon and carries no trailing space. Fixed: "Sonoda." ×5, "Emi." ×4,
+   "Woman." ×1, `"Woman":` ×1, bare "Scientist" ×10, bare "Dantalion" ×4, bare
+   "Baal Soldier" ×1, and one trailing space. **Important scoping note for future
+   passes:** the same *strings* also occur as name-pool words (`m/MS7F00.BIN`) and as
+   unit names (`p/_P_NAMES.tsv`), where a colon must **never** be appended — restrict
+   any tag fix to rows whose `tag` column is `1FD2`.
+
+8. **RESOLVED — full-name vs given-name-only tags.** "Nishino Chita:" ×2 in
+   `MS0054.BIN` unified to "Chita:" (the form used 16× elsewhere). The "Take Katsumi:"
+   tag vs "Katsumi" in `MS0006.BIN` narration is left alone — a speaker tag and a
+   narration mention are allowed to differ.
+
+9. **RESOLVED — capitalisation/hyphenation drift on demon-name tags.**
+   "Shuten Douji:" ×3 → "Shuten-Douji:"; "Yoshino-Hime:" ×3 → "Yoshino-hime:";
+   "Young man:" ×2 → "Young Man:"; "Mystery Man:" ×3 → "Mysterious Man:" (same
+   character, same file `MS005D.BIN`). Majority form won in each case.
+
+10. **OPEN — protagonist given-name order flips within `m/MS0006.BIN`.** Both "Ayato
+    Katsuragi..." (×3) and "Katsuragi Ayato..." (×1) appear for the same character.
+    Surname-first is used everywhere else and matches the exe's name table — not
+    changed in this pass because it is prose rewriting rather than a mechanical
+    substitution.
+
+11. **OPEN — `COMP` (exe battle-menu label) vs `Arm Terminal` (story prose).** Still
+    unreconciled; both are in use and neither is wrong in its own layer. The glossary
+    keeps separate entries. Deciding this means editing the exe, which this pass did
+    not touch.
+
+12. **PARTLY RESOLVED — minor prose typos.** Not exhaustively swept. `m/MS0040.BIN`
+    "Bartended" is fixed (item 6). Still **OPEN**: `m/MS00B5.BIN` *"...in truth, **his**
+    just a little kid."* (should be "he's"); `m/MS00B8.BIN` *"Oh, I have no
+    **interested** in women."* (should be "interest"); `m/MS0103.BIN` *"A **toke** of
     our appreciation."* (should be "token").
-13. **`et/ET0000.BIN`'s race table contains one still-garbled entry.** Between the
-    translated "God" and "Undefined" entries (offsets `0x9e0` and `0xa08`) sits a
-    stray, apparently-corrupt fragment `"Z辱"` at offset `0x9e4` — worth checking
-    whether this is a genuinely untranslated/broken race name or a decoding
-    artifact.
+
+13. **OPEN — `et/ET0000.BIN`'s race table has one garbled entry.** The stray `"Z辱"`
+    fragment at offset `0x9e4`, between "God" and "Undefined", is unchanged. `ET*`
+    files have no record layer, so they are outside the v2 editable set.
+
+### Decisions added by the 2026-09 editorial pass
+
+14. **RESOLVED — ペンタグランマ: "Pentagramma".** Batches had produced "Pentagram",
+    "Pentagramma" and "Pentagrammar". It is a proper noun naming the resistance
+    faction, and **every one of the 118 occurrences in the corpus refers to the
+    faction, none to the five-pointed star**, so there is no context where the shorter
+    "Pentagram" needs preserving. 93 occurrences rewritten.
+
+15. **RESOLVED — 合体: "Fusion" / "fuse".** The glossary previously guessed "install",
+    reading across from the Arm-Terminal program metaphor. `m/MS003E.BIN` (the fusion
+    facility, 28 instances) is unambiguously demon fusion. Use **"Fusion"** as the
+    noun/facility term and **"fuse"** as the verb; 合体材料 = **"fusion material"**.
+    8 rows rewritten across `MS600C`, `MS600E`, `MS600F`, `MS6106`–`MS6109`.
+    "install" remains correct for actual DDS/DCS/AMS program installs — do not
+    sweep it blindly.
+
+16. **RESOLVED — 悪魔人: "Demonoid".** The term had three renderings: the speaker tag
+    "Demonoid:" (`MS0008.BIN`, 13), the speaker tag "Tainted:" (`MS0063`, `MS0067`,
+    `MS0069.BIN`, 15), and prose "demon-man"/"demon-woman" (`MS005C.BIN`).
+    **Decision: "Demonoid"** — it is the word these characters use of *themselves* in
+    dialogue (*"Demonoids are pretty much everywhere, but people tend to look down on
+    us."*), so it reads as the in-world term rather than an outsider's slur. The 15
+    "Tainted:" tags were rewritten. **OPEN:** the descriptive prose in `MS005C.BIN`
+    still reads "demon-man"/"demon-woman"; left as narration wording for a future pass.
+
+17. **RESOLVED — trailing pool calls standing in for Japanese grammar.** 58 finished
+    English lines ended on a raw `{02:0A}` token, which renders the Japanese negative
+    ending ません after the English. Several had left the *negation itself* in the
+    token, so the English said the opposite of the source — e.g. `MS6001.BIN` 4:5D
+    read "That sounds familiar" for 聞き覚えがありませんね ("that does *not* sound
+    familiar"). All 58 rewritten to carry their own meaning with the token dropped.
+    A further 173 `{02:09}` tokens (which render a full-width `・・・`) were replaced
+    with the house-style ASCII `...`.
+
+18. **RESOLVED — recurring battle-log flavour lines.** Same Japanese now gets the same
+    English across `MS6002`–`MS6006` and `MS7F06`: 「{04:EF}は去ろうとする」→ "is about to
+    leave", 「{04:FF}は幸せだ」→ "is happy.", 「{08:31}の鉄拳が」→ "Rui's Iron Fist",
+    「後退できない！」→ "Can't retreat!". **Deliberately NOT unified:** the
+    `MS6007`–`MS6016` personality files share a record skeleton and *are supposed to*
+    reword the same Japanese in different voices, and two apparent MS6006/MS6004
+    divergences turned out to be context-dependent joins with the following span.
+
+19. **RESOLVED — glossary negotiation verbs, with a width caveat.** Menu verbs now
+    follow the glossary (「何かくれ」→ "Give Me Something", 「怒る」→ "Get Angry",
+    「去れ」→ "Leave", 「威嚇射撃」→ "Warning Shot", 「様子を見る」→ "Wait and See",
+    「近づく」→ "Approach", 「肉をあげる／骨をあげる」→ "Give Meat"/"Give Bone").
+    **But the glossary form only applies where the menu's declared width allows it.**
+    `m/MS610D.BIN` declares 10 columns and `m/MS6200.BIN` declares 6 and 8, so those
+    menus keep sanctioned short variants: "Exorcise" (成仏させる), "Observe" (様子を見る),
+    "Kind" (友好的), "Harsh" (威圧的), "Get Mad" (怒る), "Warning" (威嚇射撃). Always
+    check the `menu option, declared width N columns` note before substituting.
+
+20. **RESOLVED — stray leading half-width kana glued to speaker tags.** Decode noise
+    such as `ﾒYuuka:`, `ﾒRui:`, `ﾒDantalion`, `ﾒMurmur:`, `ﾒAdonis:` has been stripped
+    from the affected spans (`m/MS001E`, `MS0031`, `MS002B.BIN`).
 
 ---
 

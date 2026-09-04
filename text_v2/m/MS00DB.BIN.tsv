@@ -3,10 +3,10 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	note
-m/MS00DB.BIN	0:01	0	26	1F80	{03:1E}ｰ{03:19}		reads: ｰ
+m/MS00DB.BIN	0:01	0	26	1F80	{03:1E}ｰ{03:19}		reads: ｰ; @skip pool-index scaffolding (no renderable text)
 m/MS00DB.BIN	0:01	1	32	00	{01:A2}	{01:A2}	reads: 
-m/MS00DB.BIN	0:01	2	35	00	{01:01}{=9F}{=00}{02:01}｣		reads: 山瀬勇{=9F}{=00}ペンタグランマ｣
-m/MS00DB.BIN	0:01	3	43	00	{03:01}ﾏ		reads: そんなことﾏ
+m/MS00DB.BIN	0:01	2	35	00	{01:01}{=9F}{=00}{02:01}｣		reads: 山瀬勇{=9F}{=00}ペンタグランマ｣; @skip pool-index scaffolding (no renderable text)
+m/MS00DB.BIN	0:01	3	43	00	{03:01}ﾏ		reads: そんなことﾏ; @skip pool-index scaffolding (no renderable text)
 m/MS00DB.BIN	0:01	4	47	00	{04:01}	{04:01}	reads: 切り
 m/MS00DB.BIN	0:01	5	54	0B	{01:06}{01:3C}{01:07}{01:B2}{01:08}{01:D5}{01:09}{01:F6}{01:0A}{01:14}{02:0B}{01:27}{02:0C}{01:40}{02:0D}{01:29}{03:0E}{01:9E}{03:0F}{01:B9}{03:10}{01:E4}{03:11}{01:0D}{04:12}{01:E8}{05:13}{01:FC}{05:14}{01:0F}{06:15}{01:16}{06:16}{01:2A}{06:17}{01:3A}{06:18}{01:5B}{06:19}{01:69}{06:1A}{01:C4}{07:1B}{01:C8}{07:1C}{01:23}{08:1D}{01:29}{08:1E}{01:89}{08:1F}{01:A3}{08:20}{01:BF}{08:21}{01:D4}{08:22}{01:F0}{08:23}{01:08}	{01:06}{01:3C}{01:07}{01:B2}{01:08}{01:D5}{01:09}{01:F6}{01:0A}{01:14}{02:0B}{01:27}{02:0C}{01:40}{02:0D}{01:29}{03:0E}{01:9E}{03:0F}{01:B9}{03:10}{01:E4}{03:11}{01:0D}{04:12}{01:E8}{05:13}{01:FC}{05:14}{01:0F}{06:15}{01:16}{06:16}{01:2A}{06:17}{01:3A}{06:18}{01:5B}{06:19}{01:69}{06:1A}{01:C4}{07:1B}{01:C8}{07:1C}{01:23}{08:1D}{01:29}{08:1E}{01:89}{08:1F}{01:A3}{08:20}{01:BF}{08:21}{01:D4}{08:22}{01:F0}{08:23}{01:08}	reads: カズミひとつダンタリオンバエルわたしたちわたしはあなたに人間まさか我々させてそうだＭＰＥＸＰ回復敵にわたしをなっさせあなたがたあたしありがとうひとり会話できない！わかってくれたしばらくきた！そうだきたしまったまったていったいったできないバエル
 m/MS00DB.BIN	0:01	6	179	09	%{01:74}	%{01:74}	reads: %
@@ -30,10 +30,10 @@ m/MS00DB.BIN	0:01	23	672	00	2{01:65}	2{01:65}	reads: 2
 m/MS00DB.BIN	0:01	24	676	00	\<{01:6F}	\<{01:6F}	reads: \<
 m/MS00DB.BIN	0:01	25	680	00	F{01:79}	F{01:79}	reads: F
 m/MS00DB.BIN	0:01	26	684	00	P{01:89}	P{01:89}	reads: P
-m/MS00DB.BIN	0:01	27	688	00	座り込んで{08:1F}\n		reads: 座り込んでしまった\n
-m/MS00DB.BIN	0:01	28	703	00	歌を歌っ{08:14}\n		reads: 歌を歌っている\n
+m/MS00DB.BIN	0:01	27	688	00	座り込んで{08:1F}\n	 sat down on the spot.\n	reads: 座り込んでしまった\n
+m/MS00DB.BIN	0:01	28	703	00	歌を歌っ{08:14}\n	 is singing a song.\n	reads: 歌を歌っている\n
 m/MS00DB.BIN	0:01	29	719	00	 threw up.\n	 threw up.\n	
-m/MS00DB.BIN	0:01	30	738	1F43	{01:24}で		reads: おかげで
+m/MS00DB.BIN	0:01	30	738	1F43	{01:24}で		reads: おかげで; @skip pool-index scaffolding (no renderable text)
 m/MS00DB.BIN	0:01	31	746	00	 mutters random nonsense.\n	 mutters random nonsense.\n	
 m/MS00DB.BIN	0:01	32	773	00	 bursts out laughing.\n	 bursts out laughing.\n	
 m/MS00DB.BIN	0:01	33	800	00	 stares into space.\n	 stares into space.\n	
@@ -60,7 +60,7 @@ m/MS00DB.BIN	0:01	53	1264	1F83	{01:3C}	{01:3C}	reads: ひとつ
 m/MS00DB.BIN	0:01	54	1271	18	 does nothing.\n	 does nothing.\n	
 m/MS00DB.BIN	0:01	55	1287	00	 threw away [	 threw away [	
 m/MS00DB.BIN	0:01	56	1303	1F01	{03:00}]!\n	{03:00}]!\n	reads: 飛び道具]!\n
-m/MS00DB.BIN	0:01	57	1313	00	{08:63}を殴っ{08:14}\n		reads: 自分を殴っている\n
+m/MS00DB.BIN	0:01	57	1313	00	{08:63}を殴っ{08:14}\n	 is punching themselves.\n	reads: 自分を殴っている\n
 m/MS00DB.BIN	0:01	58	1336	00	 fell and fainted!\n	 fell and fainted!\n	
 m/MS00DB.BIN	0:01	59	1374	00	 spouts out utter nonsense.\n	 spouts out utter nonsense.\n	
 m/MS00DB.BIN	0:01	60	1403	00	 spins around wildly.\n	 spins around wildly.\n	
