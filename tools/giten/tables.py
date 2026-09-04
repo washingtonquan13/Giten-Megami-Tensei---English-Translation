@@ -108,9 +108,22 @@ def read_for(rel: str, path: str) -> "dict[tuple[str, int], Row]":
     return out
 
 
+#: Sub-directories of a text tree that hold game-file tables.  Anything else --
+#: ``text_v2/exe/strings.tsv`` is the one that exists -- belongs to a different
+#: tool with a different column set, and walking into it made ``check`` abort
+#: with "11 columns, expected 8" before it had looked at a single game file.
+GAME_DIRS = frozenset({"m", "et", "p"})
+
+
 def iter_tables(text_dir: str):
-    """Yield every ``.tsv`` under ``text/``."""
+    """Yield every game-file ``.tsv`` under ``text/``.
+
+    Only tables that sit in a :data:`GAME_DIRS` sub-directory are game-file
+    tables; other tools keep their own tables in the same tree.
+    """
     for base, _dirs, names in os.walk(text_dir):
+        if os.path.basename(base) not in GAME_DIRS:
+            continue
         for n in sorted(names):
             if n.endswith(".tsv"):
                 yield os.path.join(base, n)

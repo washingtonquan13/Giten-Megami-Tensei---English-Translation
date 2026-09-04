@@ -5,8 +5,8 @@ import argparse
 import os
 import sys
 
-from . import (build, build_v2, check, check_v2, extract, extract_v2, files,
-               install, migrate, paths, stats)
+from . import (audit, build, build_v2, check, check_v2, extract, extract_v2,
+               files, install, migrate, paths, stats)
 
 
 def _common(p):
@@ -80,6 +80,16 @@ def make_parser():
     p.add_argument("--root", help="game ddswin/ folder")
     p.add_argument("-q", "--quiet", action="store_true")
 
+    p = sub.add_parser("audit",
+                       help="prove a build still runs the same script as the "
+                            "source: structural opcodes, branch targets, "
+                            "branches into edited text, runtime image size")
+    p.add_argument("--dir", dest="build_dir", default=None,
+                   help="build tree to audit (default build/ddswin_v2)")
+    p.add_argument("--root", help="game ddswin/ folder")
+    p.add_argument("--show", type=int, default=40, help="findings to print")
+    p.add_argument("-q", "--quiet", action="store_true")
+
     p = sub.add_parser("install", help="copy a build over the game folder")
     p.add_argument("--from", dest="src", default=None)
     p.add_argument("--to", dest="dst", default=None)
@@ -126,6 +136,9 @@ def main(argv=None) -> int:
         if not args.quiet:
             check_v2._print_verify(st, out_dir)
         return 1 if (st["decode_fail"] or st["regressions"]) else 0
+    if args.cmd == "audit":
+        rep = audit.run(args.build_dir, args.root, args.quiet, args.show)
+        return 1 if rep.findings else 0
     if args.cmd == "install":
         install.run(args.src, args.dst, dry_run=not args.yes, quiet=args.quiet)
         return 0

@@ -33,6 +33,7 @@ class Result:
     unmapped: int = 0
     unmapped_in_edit: int = 0
     branched_into: int = 0
+    not_a_branch: int = 0
     size_delta: int = 0
     errors: "list[str]" = field(default_factory=list)
     warnings: "list[str]" = field(default_factory=list)
@@ -92,7 +93,8 @@ def build_file(rel: str, raw: bytes, rows) -> Result:
     out, rep = script.build(sc, edits)
     return Result(rel, out, rep.changed_spans, rep.changed_records, rep.relocated,
                   rep.unmapped, rep.unmapped_in_edit, rep.branched_into,
-                  rep.size_delta, list(rep.errors), list(rep.warnings))
+                  rep.not_a_branch, rep.size_delta,
+                  list(rep.errors), list(rep.warnings))
 
 
 def run(out_dir: "str | None" = None, family: str = "all",
@@ -105,7 +107,8 @@ def run(out_dir: "str | None" = None, family: str = "all",
     cache = {}
     st = {"files": 0, "changed_files": 0, "changed_spans": 0, "changed_records": 0,
           "relocated": 0, "unmapped": 0, "unmapped_in_edit": 0,
-          "branched_into": 0, "identical": 0, "errors": [], "warnings": []}
+          "branched_into": 0, "not_a_branch": 0, "identical": 0,
+          "errors": [], "warnings": []}
 
     for rel in files.all_encoded(root):
         raw = files.read_source(rel, root)
@@ -124,6 +127,7 @@ def run(out_dir: "str | None" = None, family: str = "all",
         st["unmapped"] += res.unmapped
         st["unmapped_in_edit"] += res.unmapped_in_edit
         st["branched_into"] += res.branched_into
+        st["not_a_branch"] += res.not_a_branch
         st["errors"].extend(res.errors)
         st["warnings"].extend(res.warnings)
         if res.changed_spans:
@@ -152,6 +156,10 @@ def run(out_dir: "str | None" = None, family: str = "all",
         if st["branched_into"]:
             print("  %d edits skipped because a branch lands inside the span"
                   % st["branched_into"])
+        if st["not_a_branch"]:
+            print("  %d rel16 slots left untouched: the operand does not point "
+                  "at an instruction, so it is not a displacement"
+                  % st["not_a_branch"])
         for e in st["errors"][:20]:
             print("  ERROR " + e)
         if len(st["errors"]) > 20:

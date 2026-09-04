@@ -799,3 +799,53 @@ def test_validator_uses_the_declared_choice_width_from_the_note():
     check_v2.check_rows(rep, [_row("x", "y" * 25, tag="1FB2",
                                    note="menu option, declared width 20 columns")])
     assert [f.rule for f in rep.warnings] == ["width-choice"]
+
+
+def test_a_rel16_that_is_not_a_branch_is_never_rewritten():
+    """A ``rel16`` slot whose target is not an instruction must be left alone.
+
+    ``docs/opcodes.json`` is a recovered table: some slots it types ``rel16``
+    hold an ordinary small integer, and a few records tile a byte out of step so
+    that plain text reads as an opcode with a displacement.  Relocating either
+    rewrites two bytes that were never a branch.  The builder's test is that a
+    real displacement points at an instruction boundary; this proves the slots
+    that fail it keep the value they shipped with.
+    """
+    from tools.giten import audit
+
+    files_with_phantoms = 0
+    for rel in files.iter_files(("ms", "id")):
+        sc = script.parse(rel, files.read_source(rel))
+        if not sc.ok or not sc.containers[0]:
+            continue
+        recs = sc.containers[0]
+        base = audit._bases(recs)
+        bounds = audit._boundaries(recs, base)
+        if not any(o.kind == "rel16"
+                   and vmops.rel16_target(base[r.id], t, o) not in bounds
+                   for r in recs if r.tokens for t in r.tokens for o in t.ops):
+            continue
+        try:
+            rec, sp, txt = _first_editable_span(sc)
+        except Exception:
+            continue
+        files_with_phantoms += 1
+        out, _ = script.build(sc, {(rec.ci, rec.id, sp.idx): txt + "0123456789"})
+        after = script.parse(rel, out)
+        for r in recs:
+            new = next((x for x in after.containers[0] if x.id == r.id), None)
+            if (new is None or r.tokens is None or new.tokens is None
+                    or len(r.tokens) != len(new.tokens)):
+                continue
+            for t, t2 in zip(r.tokens, new.tokens):
+                if t.kind != "op" or t.idx != t2.idx:
+                    continue
+                for o, o2 in zip(t.ops, t2.ops):
+                    if o.kind != "rel16" or o.value == o2.value:
+                        continue
+                    assert vmops.rel16_target(base[r.id], t, o) in bounds, (
+                        "%s r%02X: rewrote a rel16 whose target was not an "
+                        "instruction" % (rel, r.id))
+        if files_with_phantoms >= 30:
+            break
+    assert files_with_phantoms, "no file with a phantom rel16 to test against"

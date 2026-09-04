@@ -427,6 +427,9 @@ class BuildReport:
     #: edits skipped because a branch lands inside the span (see
     #: :func:`_drop_branched_into`)
     branched_into: int = 0
+    #: ``rel16`` slots left alone because the operand does not behave like a
+    #: branch at all (see :func:`_is_branch`)
+    not_a_branch: int = 0
     size_delta: int = 0
     errors: "list[str]" = field(default_factory=list)
     warnings: "list[str]" = field(default_factory=list)
@@ -472,6 +475,40 @@ def _rebuild_record(rec: Rec, edits: "dict[int, str]", report: BuildReport):
     return bytes(out), [r for r in runs if r[0] < r[1]], anchors, changed
 
 
+def _token_boundaries(recs, base) -> "set[int]":
+    """Every runtime offset at which a token starts, plus each record's end.
+
+    This is the set of addresses a *real* branch can name: the script's PC only
+    ever lands on an instruction boundary.  Anything else is not a jump target.
+    """
+    out = set()
+    for r in recs:
+        if r.untiled or not r.tokens:
+            continue
+        b = base[r.id]
+        out |= {b + t.off for t in r.tokens}
+        out.add(b + len(r.data))
+    return out
+
+
+def _is_branch(base, tok, op, boundaries) -> bool:
+    """Does this ``rel16`` slot really hold a branch displacement?
+
+    ``docs/opcodes.json`` is a *recovered* table: it was derived by tracing the
+    interpreter statically, so a slot it calls ``rel16`` is sometimes an ordinary
+    small integer, and a handful of records tile one or two bytes out of step
+    (``docs/format-notes.md`` §2.10), which makes plain text look like an opcode
+    with a displacement.  Relocating either of those rewrites two bytes that were
+    never a branch -- silent corruption of a live script.
+
+    The test that separates them needs no new table: a real displacement points
+    at an instruction boundary in the image it was measured in.  One that does
+    not is either a phantom or a branch into nowhere, and in both cases the
+    honest thing is to leave the two bytes exactly as they shipped.
+    """
+    return vmops.rel16_target(base, tok, op) in boundaries
+
+
 def _branch_targets(recs, old_base) -> "set[int]":
     """Every runtime offset some ``rel16`` in this container jumps to."""
     out = set()
@@ -515,7 +552,7 @@ def _drop_branched_into(rel, rec, per, base, landed, report: BuildReport):
     return keep
 
 
-def _relocate(recs, new_data, omap: OffsetMap, report: BuildReport):
+def _relocate(recs, new_data, omap: OffsetMap, boundaries, report: BuildReport):
     """Rewrite every ``rel16`` so it still points at the same instruction.
 
     ``new_data`` is keyed by the record's position in the container, so a
@@ -533,6 +570,10 @@ def _relocate(recs, new_data, omap: OffsetMap, report: BuildReport):
                 continue
             for op in tok.ops:
                 if op.kind != "rel16":
+                    continue
+                if not _is_branch(base_old, tok, op, boundaries):
+                    # Not a displacement at all -- see :func:`_is_branch`.
+                    report.not_a_branch += 1
                     continue
                 old_target = vmops.rel16_target(base_old, tok, op)
                 new_target = omap.get(old_target)
@@ -599,6 +640,14 @@ def build(sc: Script, edits: "dict[tuple[int, int, int], str]") -> "tuple[bytes,
                                else records.ABSENT_LEN)
             off += omap.old_len[i]
 
+        boundaries = _token_boundaries(recs, omap.old_base)
+        # Deliberately NOT filtered by `boundaries`: refusing to *rewrite* a slot
+        # that does not look like a branch is always safe, but refusing to
+        # *protect* a span because the slot looks odd is not -- a displacement
+        # our table mis-typed may still be a live jump, and letting an edit move
+        # the byte it lands on is exactly the corruption this guard exists to
+        # prevent.  Blocking on every rel16 target costs a few skipped lines;
+        # trusting the table here would cost correctness.
         landed = _branch_targets(recs, omap.old_base)
 
         new_data = {}
@@ -632,7 +681,7 @@ def build(sc: Script, edits: "dict[tuple[int, int, int], str]") -> "tuple[bytes,
             off += omap.new_len[i]
         omap.finish()
 
-        _relocate(recs, new_data, omap, report)
+        _relocate(recs, new_data, omap, boundaries, report)
 
         out_recs = [records.Record(r.id, new_data[pos], r.cond, r.param, r.order)
                     for pos, r in enumerate(recs)]
