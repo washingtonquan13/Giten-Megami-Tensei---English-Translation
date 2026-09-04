@@ -17,7 +17,7 @@ def _common(p):
 
 
 def _engine(p):
-    p.add_argument("--engine", choices=("v1", "v2"), default="v1",
+    p.add_argument("--engine", choices=("v1", "v2"), default="v2",
                    help="v1: the original span scanner over text/ (default, kept "
                         "alive while translators work in text/). "
                         "v2: the opcode-aware pipeline over text_v2/ "
