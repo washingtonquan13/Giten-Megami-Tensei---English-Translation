@@ -72,10 +72,21 @@ _start:
         jb      3b
 4:      mov     byte ptr [edi+11], cl
 
+        # the engine's own index entry for the current record: the script
+        # buffer (base = handle table[ctx.handle]) starts with 256 entries of
+        # {u16 data_offset, u16 length}; this is the truth our layout model
+        # is checked against
+        mov     ecx, dword ptr [CTX]
+        mov     eax, dword ptr [ecx+0x0A]   # buffer handle
+        mov     eax, dword ptr [HANDLE_TABLE + eax*8]
+        movzx   ecx, word ptr [RECID]
+        mov     eax, dword ptr [eax + ecx*4]
+        mov     dword ptr [edi+12], eax     # u16 idx_off, u16 idx_len
+
         push    0                           # lpOverlapped
         lea     eax, [esi + written]
         push    eax
-        push    12
+        push    16
         push    edi                         # lpBuffer = rec
         push    dword ptr [esi + hfile]
         call    dword ptr [WRITEFILE_IAT]
@@ -88,5 +99,5 @@ _start:
         .balign 4
 hfile:  .long   0
 written: .long  0
-rec:    .space  12
+rec:    .space  16
 fname:  .asciz  "trace.bin"

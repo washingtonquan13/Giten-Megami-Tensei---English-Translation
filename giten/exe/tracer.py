@@ -40,12 +40,14 @@ SYMBOLS = {
     "RECID": 0x4911B2,              # current record id (u16)
     "CAPFLAG": 0x481224,            # text-capture mode (u16, non-zero = on)
     "CAPBUF": 0x481120,             # the 256-byte capture buffer
+    "HANDLE_TABLE": 0x47605C,       # [HANDLE_TABLE + handle*8] = buffer base (0x4045F0)
 }
 
 #: IMAGE_SCN_CNT_CODE | CNT_INITIALIZED_DATA | MEM_EXECUTE | MEM_READ | MEM_WRITE
 TRC_CHARACTERISTICS = 0xE0000060
 
-RECORD = struct.Struct("<HHHHhBB")     # file, rec, pc, ch, r, capflag, caplen
+#: file, rec, pc, ch, r, capflag, caplen, idx_off, idx_len
+RECORD = struct.Struct("<HHHHhBBHH")
 RECORD_SIZE = RECORD.size
 
 

@@ -38,7 +38,9 @@ from dataclasses import dataclass
 
 from .. import codec, files, paths, records, script, vmops
 
-RECORD = struct.Struct("<HHHHhBB")
+#: file, rec, pc, ch, r, capflag, caplen, idx_off, idx_len -- the last two are the
+#: engine's own index entry for the current record, read from the script buffer
+RECORD = struct.Struct("<HHHHhBBHH")
 
 
 @dataclass
@@ -51,6 +53,8 @@ class Event:
     r: int
     capflag: int
     caplen: int
+    idx_off: int = 0        # where the ENGINE put this record (0 = not logged)
+    idx_len: int = 0        # how long the ENGINE thinks it is
     rel: str = ""           # "m/MS0017.BIN"
     span: "int | None" = None
     anchor: "int | None" = None
@@ -78,7 +82,7 @@ class _Image:
             for r in recs:
                 self.by_id.setdefault(r.id, r)
 
-    def locate(self, rec_id: int, pc: int, ch: int):
+    def locate(self, rec_id: int, pc: int, ch: int, base: "int | None" = None):
         r = self.by_id.get(rec_id)
         if r is None or r.tokens is None:
             return None
@@ -86,7 +90,9 @@ class _Image:
         # consumed its operands by then -- so pc is the END of the token, for
         # text (1 or 2 bytes) and opcodes alike.  Measured: consecutive opcode
         # steps in a real trace sit exactly one token length apart.
-        end = pc - self.base[rec_id]
+        # ``base`` is the engine's own index entry when the trace carries it;
+        # our model's base is only the fallback.
+        end = pc - (base if base else self.base[rec_id])
         if not 0 <= end <= len(r.data):
             return None
         want = bytes([ch]) if ch <= 0xFF else bytes([ch >> 8, ch & 0xFF])
@@ -121,13 +127,13 @@ def decode(trace_path: str, build_dir: "str | None" = None) -> "list[Event]":
     images = {}
     out = []
     for n in range(len(data) // RECORD.size):
-        f, rec, pc, ch, r, capflag, caplen = RECORD.unpack_from(data, n * RECORD.size)
-        ev = Event(n, f, rec, pc, ch, r, capflag, caplen, rel=_rel_of(f))
+        f, rec, pc, ch, r, capflag, caplen, ioff, ilen = RECORD.unpack_from(data, n * RECORD.size)
+        ev = Event(n, f, rec, pc, ch, r, capflag, caplen, ioff, ilen, rel=_rel_of(f))
         if ev.rel not in images:
             p = os.path.join(build_dir, *ev.rel.split("/"))
             images[ev.rel] = _Image(ev.rel, open(p, "rb").read()) if os.path.exists(p) else None
         img = images[ev.rel]
-        hit = img.locate(rec, pc, ch) if img else None
+        hit = img.locate(rec, pc, ch, ioff or None) if img else None
         if hit:
             ev.span, ev.anchor, ev.kind, ev.ok = hit
         out.append(ev)
@@ -212,3 +218,29 @@ def selfcheck(trace_path: str, build_dir: str) -> "tuple[int, int]":
     """``(records, records whose logged bytes did not match the build)``."""
     evs = decode(trace_path, build_dir)
     return len(evs), sum(1 for e in evs if not e.ok)
+
+
+def bases(trace_path: str, build_dir: str):
+    """The engine's record placement against our model, per (file, record).
+
+    Returns ``[(rel, rec, engine_off, engine_len, model_off, model_len)]`` for
+    every record the trace visited with the index entry logged.  Any non-zero
+    difference is the layout rule we have not modelled; the whole point of
+    logging the entry is to read that rule off real numbers instead of fitting
+    a theory to displaced branches.
+    """
+    build_dir = build_dir or paths.game_root()
+    seen = {}
+    images = {}
+    for ev in decode(trace_path, build_dir):
+        if not ev.idx_off or (ev.rel, ev.rec) in seen:
+            continue
+        if ev.rel not in images:
+            p = os.path.join(build_dir, *ev.rel.split("/"))
+            images[ev.rel] = _Image(ev.rel, open(p, "rb").read()) if os.path.exists(p) else None
+        img = images[ev.rel]
+        r = img.by_id.get(ev.rec) if img else None
+        seen[(ev.rel, ev.rec)] = (ev.rel, ev.rec, ev.idx_off, ev.idx_len,
+                                  img.base.get(ev.rec) if img else None,
+                                  len(r.data) if r else None)
+    return list(seen.values())

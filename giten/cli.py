@@ -90,7 +90,7 @@ def make_parser():
     p.add_argument("--out", default=None, help="default build/exe/")
 
     p = sub.add_parser("trace", help="decode / diff interpreter traces from the dev exe")
-    p.add_argument("action", choices=("decode", "diff", "selfcheck"))
+    p.add_argument("action", choices=("decode", "diff", "selfcheck", "bases"))
     p.add_argument("trace", help="trace.bin (JP trace for diff)")
     p.add_argument("other", nargs="?", help="diff: the EN trace.bin")
     p.add_argument("--build", default=None, help="build tree the trace ran on (default original/ddswin)")
@@ -142,6 +142,15 @@ def main(argv=None) -> int:
             n, bad = trace.selfcheck(args.trace, jp_build)
             print("%d records, %d whose bytes at pc do not match the build" % (n, bad))
             return 1 if bad else 0
+        elif args.action == "bases":
+            print("%-16s rec  engine_off engine_len   model_off model_len   d_off d_len" % "file")
+            for rel, rec, eo, el, mo, ml in sorted(trace.bases(args.trace, jp_build)):
+                print("%-16s r%02X    0x%04X     %5d      %s     %s   %s  %s"
+                      % (rel, rec, eo, el,
+                         "0x%04X" % mo if mo is not None else "   ?  ",
+                         "%5d" % ml if ml is not None else "   ?",
+                         "%+d" % (eo - mo) if mo is not None else "?",
+                         "%+d" % (el - ml) if ml is not None else "?"))
         else:
             print(trace.report_diff(args.trace, args.other, jp_build, args.build2 or jp_build))
         return 0

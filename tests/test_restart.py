@@ -116,7 +116,7 @@ def test_trace_decoder_maps_a_synthetic_record_back_to_its_span():
     fid = int(rel[4:8], 16)
     tmp = tempfile.mktemp(suffix=".bin")
     with open(tmp, "wb") as fh:
-        fh.write(trace.RECORD.pack(fid, rec.id, pc, ch & 0xFFFF, 0, 0, 0))
+        fh.write(trace.RECORD.pack(fid, rec.id, pc, ch & 0xFFFF, 0, 0, 0, 0, 0))
     evs = trace.decode(tmp, paths.game_root())
     os.unlink(tmp)
     assert len(evs) == 1
@@ -127,7 +127,7 @@ def test_trace_decoder_maps_a_synthetic_record_back_to_its_span():
 
 
 def test_trace_normalise_collapses_text_runs():
-    e = lambda k, n: trace.Event(n, 0x17, 0, 0, 0, 0, 0, 0, "m/MS0017.BIN", 1, 3, k)
+    e = lambda k, n: trace.Event(n, 0x17, 0, 0, 0, 0, 0, 0, rel="m/MS0017.BIN", span=1, anchor=3, kind=k)
     evs = [e("TEXT", 0), e("TEXT", 1), e("1FB2", 2), e("TEXT", 3)]
     assert [x.kind for x in trace.normalise(evs)] == ["TEXT", "1FB2", "TEXT"]
 
