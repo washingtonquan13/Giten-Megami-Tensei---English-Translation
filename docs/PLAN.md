@@ -29,12 +29,16 @@ These exist because a session limit killed nine agents at once on 2026-09-03.
 
 1. ~~Land pipeline v2.~~ Done 2026-09-04.
 2. ~~Migrate.~~ Done; `text_v2/` is live and the CLI defaults to it.
-3. **Second translation pass** (Sonnet, 4 agents on disjoint sets; launched 2026-09-04): ~5,960 editable Japanese rows remain in `text_v2/` (never-covered files, re-opened operand rows, unported v1 rows, the `{DICT:9x}` rows, and anything `unmatched` from the migration. Same briefs as before, with the v2 token syntax from the updated `docs/pipeline.md`.
-4. **Consistency review** (one Opus agent, read-only on game): terminology against the glossary, speaker-name forms, demon voice per pool file, the inconsistencies listed at the end of the style guide (Panic/Panic, Baal/Bael, macca/Macca, DCS/DDC), coined terms reported by each translator. Output: a list of row edits, applied by script, then `check`.
-5. **Exe leftovers** (one Opus agent): a table-driven string patcher for `dds_en.exe` using `tools/exe_analysis/` (strings have unique `imm32` pointers, no `.reloc`; append a new PE section for space). Targets: the demon attitude words, the Analyze panel, マッカ, 立川, the shop total line, and the empty-name bug at file offset `0x67BD8`. Output `build/dds_en.exe`, never the game folder.
+3. ~~Second translation pass~~ Done 2026-09-04: all batches committed; 97.1% of spans done, every remaining empty row is tagged (skip/noedit/untiled). (Original scope: ~5,960 rows: the `{DICT:9x}` rows, and anything `unmatched` from the migration. Same briefs as before, with the v2 token syntax from the updated `docs/pipeline.md`.
+4. ~~Consistency review~~ Done 2026-09-04 (commit 591964b): terminology unified, 775 dropped page waits restored, glossary 205 terms, checker 0 errors / 36 page-rows false positives (BBS screens drawn in a taller window than `width.py` models). (Original scope: terminology against the glossary, speaker-name forms, demon voice per pool file, the inconsistencies listed at the end of the style guide (Panic/Panic, Baal/Bael, macca/Macca, DCS/DDC), coined terms reported by each translator. Output: a list of row edits, applied by script, then `check`.
+5. **Exe leftovers** (one Opus agent, launched 2026-09-04): a table-driven string patcher for `dds_en.exe` using `tools/exe_analysis/` (strings have unique `imm32` pointers, no `.reloc`; append a new PE section for space). Targets: the demon attitude words, the Analyze panel, マッカ, 立川, the shop total line, and the empty-name bug at file offset `0x67BD8`. Output `build/dds_en.exe`, never the game folder.
 6. **Build and install into a copy.** `python -m tools.giten build`, then `install --to <copy of ddswin>`. Keep the original `ddswin` untouched.
 7. **Play-test** (the user): get `dds_en.exe` running first (dgVoodoo2 `DDraw.dll` + `D3DImm.dll` beside the exe, windowed; see the investigation report). Then exercise every negotiation personality type, the offer menus, and the retranslated story scenes. Negotiation is the riskiest system: the original author needed a fix release for a conversation crash. Report crashes with the demon name and the last on-screen line; fixes are per-file repacks.
 8. **Release.** Tag `v0.06`, ship a zip of the changed files under `ddswin/` plus the patched exe and a README; push `development` and merge to `main`.
+
+## Known limitation to fix before or after v0.06
+
+`build --engine v2` skips 115 edits whose record has a branch landing inside the text span (source Japanese kept; safe). 109 of these predate the second pass. Fix in `tools/giten/script.py`: when a branch target falls inside a span, split the span at that target so each half is relocated separately, then re-run `build`/`verify`. Until then those lines ship in Japanese.
 
 ## If the two in-flight agents died
 
