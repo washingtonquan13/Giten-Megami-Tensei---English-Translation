@@ -3,34 +3,34 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	note
-et/ID014E.BIN	0:97	0	0	DATA	＞{02:06}\n		reads: ＞どうしますか？\n
+et/ID014E.BIN	0:97	0	0	DATA	＞{02:06}\n	>{02:06}\n	reads: ＞どうしますか？\n
 et/ID014E.BIN	0:97	1	21	1FB2	宝石	Gemstone	menu option, declared width 20 columns
 et/ID014E.BIN	0:97	2	27	1FB2	魔石	Magic Stone	menu option, declared width 20 columns
 et/ID014E.BIN	0:97	3	33	1FB2	ＭＡＧ	MAG	menu option, declared width 20 columns
 et/ID014E.BIN	0:97	4	41	1FB2	金	Money	menu option, declared width 20 columns
 et/ID014E.BIN	0:97	5	45	1FB2	他の物	Other	menu option, declared width 20 columns
-et/ID014E.BIN	0:97	6	66	00	燎{02:00}燠{03:00}燵{04:01}{01:00}		reads: 燎デビルバスター燠飛び道具燵切り早坂達也
+et/ID014E.BIN	0:97	6	66	00	燎{02:00}燠{03:00}燵{04:01}{01:00}	燎Devil Buster燠Ranged Weapon燵{04:01}{01:00}	reads: 燎デビルバスター燠飛び道具燵切り早坂達也
 et/ID014E.BIN	0:97	7	97	1FB2	肉をあげる	Give meat	menu option, declared width 20 columns
 et/ID014E.BIN	0:97	8	109	1FB2	骨をあげる	Give bone	menu option, declared width 20 columns
 et/ID014E.BIN	0:97	9	121	1FB2	や{08:2E}	Cancel	reads: やめる; menu option, declared width 20 columns
 et/ID014E.BIN	0:97	10	127	1FB2	他の物	Other	menu option, declared width 20 columns
 et/ID014E.BIN	0:97	11	147	0F	{01:11}{01:02}	{01:11}{01:02}	reads: あなたが桐島英美
-et/ID014E.BIN	0:97	12	152	00	燼{03:01}g		reads: 燼そんなことg
+et/ID014E.BIN	0:97	12	152	00	燼{03:01}g	燼such a thingg	reads: 燼そんなことg
 et/ID014E.BIN	0:97	13	232	1FB2	{08:26}	Yes	reads: はい; menu option, declared width 20 columns
 et/ID014E.BIN	0:97	14	236	1FB2	{08:27}	No	reads: いいえ; menu option, declared width 20 columns
 et/ID014E.BIN	0:97	15	240	1FB2	{08:5C}無い	No More	reads: もう無い; menu option, declared width 20 columns
 et/ID014E.BIN	0:97	16	260	0F	{01:3C}	{01:3C}	reads: ひとつ
 et/ID014E.BIN	0:97	17	263	00	{02:01}[	{02:01}[	reads: ペンタグランマ[
 et/ID014E.BIN	0:97	18	267	00			
-et/ID014E.BIN	0:97	19	284	00	{08:5C}肉が無い！\n		reads: もう肉が無い！\n
-et/ID014E.BIN	0:97	20	378	18	肉を持{08:52}{08:24}！\n		reads: 肉を持っていない！\n
+et/ID014E.BIN	0:97	19	284	00	{08:5C}肉が無い！\n	No more meat!\n	reads: もう肉が無い！\n
+et/ID014E.BIN	0:97	20	378	18	肉を持{08:52}{08:24}！\n	You don't have any meat!\n	reads: 肉を持っていない！\n
 et/ID014E.BIN	0:97	21	449	1FB2	そこを何とか	Just This Once	menu option, declared width 20 columns
 et/ID014E.BIN	0:97	22	463	1FB2	骨を投げる	Throw a Bone	menu option, declared width 20 columns
 et/ID014E.BIN	0:97	23	487	0F	{01:2B}	{01:2B}	reads: ゾンビ
 et/ID014E.BIN	0:97	24	490	00			
-et/ID014E.BIN	0:97	25	549	00	{04:EF}は骨を追いかけ{08:21}\n		reads: は骨を追いかけていった\n
-et/ID014E.BIN	0:97	26	579	12	{02:09}・・\n		reads: ・・・・・\n
-et/ID014E.BIN	0:97	27	590	00	{04:EF}は骨をくわえて戻{08:52}{08:1E}\n		reads: は骨をくわえて戻ってきた\n
+et/ID014E.BIN	0:97	25	549	00	{04:EF}は骨を追いかけ{08:21}\n	It chases after the bone.\n	reads: は骨を追いかけていった\n
+et/ID014E.BIN	0:97	26	579	12	{02:09}・・\n	{02:09}..\n	reads: ・・・・・\n
+et/ID014E.BIN	0:97	27	590	00	{04:EF}は骨をくわえて戻{08:52}{08:1E}\n	It comes back with the bone in its mouth.\n	reads: は骨をくわえて戻ってきた\n
 et/ID014E.BIN	0:97	28	640	1FB2	{08:26}	Yes	reads: はい; menu option, declared width 20 columns
 et/ID014E.BIN	0:97	29	644	1FB2	{08:27}	No	reads: いいえ; menu option, declared width 20 columns
 et/ID014E.BIN	0:97	30	648	1FB2	{08:90}し{08:69}かな…	What now...?	reads: どうしようかな…; menu option, declared width 20 columns
@@ -40,7 +40,7 @@ et/ID014E.BIN	0:97	33	728	1FB2	仕方{08:25}な	I guess so	reads: 仕方ない�
 et/ID014E.BIN	0:97	34	738	1FB2	{08:90}し{08:69}かな…	What now...?	reads: どうしようかな…; menu option, declared width 20 columns
 et/ID014E.BIN	0:97	35	764	0F	{01:07}	{01:07}	reads: ダンタリオン
 et/ID014E.BIN	0:97	36	767	00			
-et/ID014E.BIN	0:97	37	869	18	骨を持{08:52}{08:24}！\n		reads: 骨を持っていない！\n
+et/ID014E.BIN	0:97	37	869	18	骨を持{08:52}{08:24}！\n	You don't have any bones!\n	reads: 骨を持っていない！\n
 et/ID014E.BIN	2:02	0	19	1FB2	意地{08:56}通る	Push Through	reads: 意地でも通る; menu option, declared width 20 columns
 et/ID014E.BIN	2:02	1	31	1FB2	お願い{08:8E}	Beg	reads: お願いする; menu option, declared width 20 columns
 et/ID014E.BIN	2:02	2	41	1FB2	骨を投げる	Throw a Bone	menu option, declared width 20 columns
@@ -52,10 +52,10 @@ et/ID014E.BIN	2:02	7	149	1FB2	他の物{08:7D}あげる	Give Something	reads: �
 et/ID014E.BIN	2:02	8	165	1FB2	土下座{08:4A}頼む	Grovel	reads: 土下座して頼む; menu option, declared width 20 columns
 et/ID014E.BIN	2:02	9	191	0F	{01:08}	{01:08}	reads: バエル
 et/ID014E.BIN	2:02	10	194	00			
-et/ID014E.BIN	2:02	11	213	16	{02:09}・・		reads: ・・・・・
-et/ID014E.BIN	2:02	12	251	13	骨を持{08:52}{08:24}！\n		reads: 骨を持っていない！\n
-et/ID014E.BIN	2:02	13	302	00	{04:EF}は\n骨を追いかけ{08:21}\n		reads: は\n骨を追いかけていった\n
-et/ID014E.BIN	2:02	14	333	00	{04:EF}は\n骨をくわえて戻{08:52}{08:1E}\n		reads: は\n骨をくわえて戻ってきた\n
+et/ID014E.BIN	2:02	11	213	16	{02:09}・・	{02:09}..	reads: ・・・・・
+et/ID014E.BIN	2:02	12	251	13	骨を持{08:52}{08:24}！\n	You don't have any bones!\n	reads: 骨を持っていない！\n
+et/ID014E.BIN	2:02	13	302	00	{04:EF}は\n骨を追いかけ{08:21}\n	It\nchases after the bone.\n	reads: は\n骨を追いかけていった\n
+et/ID014E.BIN	2:02	14	333	00	{04:EF}は\n骨をくわえて戻{08:52}{08:1E}\n	It\ncomes back with the bone in its mouth.\n	reads: は\n骨をくわえて戻ってきた\n
 et/ID014E.BIN	2:02	15	384	1FB2	{08:26}	Yes	reads: はい; menu option, declared width 20 columns
 et/ID014E.BIN	2:02	16	388	1FB2	{08:27}	No	reads: いいえ; menu option, declared width 20 columns
 et/ID014E.BIN	2:02	17	392	1FB2	{08:90}し{08:69}かな…	What now...?	reads: どうしようかな…; menu option, declared width 20 columns
@@ -65,9 +65,9 @@ et/ID014E.BIN	2:02	20	480	1FB2	仕方{08:25}な	I guess so	reads: 仕方ない�
 et/ID014E.BIN	2:02	21	490	1FB2	{08:90}し{08:69}かな…	What now...?	reads: どうしようかな…; menu option, declared width 20 columns
 et/ID014E.BIN	2:02	22	516	0F	{01:0C}	{01:0C}	reads: わたしの
 et/ID014E.BIN	2:02	23	519	00			
-et/ID014E.BIN	3:1E	0	0	DATA	ウマイゾ！\n<wait>		
-et/ID014E.BIN	15:BA	0	0	DATA	何ノツモリダ？\n<wait>		
-et/ID014E.BIN	15:AC	0	0	DATA	カ　身体ガ勝手ニ！\n<wait>		
-et/ID014E.BIN	15:BB	0	0	DATA	シマッタ　ツイ{02:09}！\n<wait>		reads: シマッタ　ツイ・・・！\n<wait>
-et/ID014E.BIN	15:BC	0	0	DATA	コノ事ハ　他ノ奴ニハ黙ッテイテモラエナイカ？\n<wait>		
-et/ID014E.BIN	15:BD	0	0	DATA	ココハ通サン！！\n<wait>		
+et/ID014E.BIN	3:1E	0	0	DATA	ウマイゾ！\n<wait>	Delicious!\n<wait>	
+et/ID014E.BIN	15:BA	0	0	DATA	何ノツモリダ？\n<wait>	What's the meaning of this?\n<wait>	
+et/ID014E.BIN	15:AC	0	0	DATA	カ　身体ガ勝手ニ！\n<wait>	--my body moved on its own!\n<wait>	
+et/ID014E.BIN	15:BB	0	0	DATA	シマッタ　ツイ{02:09}！\n<wait>	Dammit, I just{02:09}!\n<wait>	reads: シマッタ　ツイ・・・！\n<wait>
+et/ID014E.BIN	15:BC	0	0	DATA	コノ事ハ　他ノ奴ニハ黙ッテイテモラエナイカ？\n<wait>	Could you keep this between us?\n<wait>	
+et/ID014E.BIN	15:BD	0	0	DATA	ココハ通サン！！\n<wait>	You shall not pass!!\n<wait>	

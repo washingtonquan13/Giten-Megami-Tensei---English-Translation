@@ -3,18 +3,18 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	note
-m/MS6102.BIN	3:0A	0	6	0E	チュッ\n		
-m/MS6102.BIN	5:0A	0	6	0E	チュッ\n		
-m/MS6102.BIN	5:0A	1	33	1FFA	{02:09}・・		reads: ・・・・・
+m/MS6102.BIN	3:0A	0	6	0E	チュッ\n	*Smooch*\n	
+m/MS6102.BIN	5:0A	0	6	0E	チュッ\n	*Smooch*\n	
+m/MS6102.BIN	5:0A	1	33	1FFA	{02:09}・・	{02:09}..	reads: ・・・・・
 m/MS6102.BIN	5:0A	2	41	1FFB	{01:23}お待ち下{08:49}	{01:23}#Please wait	reads: しばらくお待ち下さい
-m/MS6102.BIN	5:0A	3	55	1FFA	{02:09}・・\n		reads: ・・・・・\n
+m/MS6102.BIN	5:0A	3	55	1FFA	{02:09}・・\n	{02:09}..\n	reads: ・・・・・\n
 m/MS6102.BIN	5:10	0	7	00	{=E5}{=0E}	{=E5}{=0E}	
-m/MS6102.BIN	7:0F	0	23	1FFA	{02:09}・・		reads: ・・・・・
+m/MS6102.BIN	7:0F	0	23	1FFA	{02:09}・・	{02:09}..	reads: ・・・・・
 m/MS6102.BIN	7:0F	1	31	1FFB	{01:23}お待ち下{08:49}	{01:23}#Please wait	reads: しばらくお待ち下さい
-m/MS6102.BIN	7:0F	2	45	1FFA	{02:09}・・\n		reads: ・・・・・\n
+m/MS6102.BIN	7:0F	2	45	1FFA	{02:09}・・\n	{02:09}..\n	reads: ・・・・・\n
 m/MS6102.BIN	7:0B	0	6	0E	{01:63}	{01:63}	reads: 
 m/MS6102.BIN	7:0B	1	9	00	P{01:65}	P{01:65}	reads: P
 m/MS6102.BIN	7:0B	2	13	00			
-m/MS6102.BIN	7:0B	3	56	1FFA	{02:09}・・		reads: ・・・・・
+m/MS6102.BIN	7:0B	3	56	1FFA	{02:09}・・	{02:09}..	reads: ・・・・・
 m/MS6102.BIN	7:0B	4	64	1FFB	{01:23}お待ち下{08:49}	{01:23}#Please wait	reads: しばらくお待ち下さい
-m/MS6102.BIN	7:0B	5	78	1FFA	{02:09}・・\n		reads: ・・・・・\n
+m/MS6102.BIN	7:0B	5	78	1FFA	{02:09}・・\n	{02:09}..\n	reads: ・・・・・\n
