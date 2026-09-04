@@ -3,724 +3,724 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0022.BIN	0:00	0	32	00	{04:FF}は自室に戻り、{08:05}ーを睨みつけ、\n試験結果の通知が送られて来るのを待{08:51}。\n<wait>		reads: は自室に戻り、コンピューターを睨みつけ、\n試験結果の通知が送られて来るのを待った。\n<wait>			
-m/MS0022.BIN	0:00	1	110	1FBA	{1E10:01003C}{1E10:01003C}{08:76}通知は来{08:25}{02:08}\n<wait>		reads: {1E10:01003C}{1E10:01003C}まだ通知は来ない‥‥‥\n<wait>			
+m/MS0022.BIN	0:00	0	32	00	{04:FF}は自室に戻り、{08:05}ーを睨みつけ、\n試験結果の通知が送られて来るのを待{08:51}。\n<wait>					reads: は自室に戻り、コンピューターを睨みつけ、\n試験結果の通知が送られて来るのを待った。\n<wait>
+m/MS0022.BIN	0:00	1	110	1FBA	{1E10:01003C}{1E10:01003C}{08:76}通知は来{08:25}{02:08}\n<wait>					reads: {1E10:01003C}{1E10:01003C}まだ通知は来ない‥‥‥\n<wait>
 m/MS0022.BIN	0:00	2	141	1FBA	そこに、					
-m/MS0022.BIN	0:00	3	153	00	{04:FE}が、{01:2E}の中に飛び込んで来た。\n		reads: が、部屋の中に飛び込んで来た。\n			
-m/MS0022.BIN	0:00	4	196	1FC5	顔は上気し、息が切れ{08:14}。走{08:52}来た様だ。\n<wait>		reads: 顔は上気し、息が切れている。走って来た様だ。\n<wait>			
-m/MS0022.BIN	0:00	5	273	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:00	6	283	00	{04:FF}くんッ！　私{08:72}私、合格{08:4B}わ！！\n<wait>		reads: くんッ！　私‥‥私、合格したわ！！\n<wait>			
-m/MS0022.BIN	0:00	7	328	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:00	8	338	00	{04:FF}くんは？！\n<wait>		reads: くんは？！\n<wait>			
-m/MS0022.BIN	0:00	9	409	1FD0	{08:65}が入{08:51}{08:72}恐らく、試験結果の通知{08:8C}。\n<wait>		Having returned to your room, you take a seat in front of your computer\nand wait for your test result to arrive.\n<wait>	v005		
-m/MS0022.BIN	0:00	10	452	1FBA	震{08:28}手でキーボードを打つ、		{1E10:01003C}{1E10:01003C}Looks like they aren't here yet...\n<wait>	v005		
-m/MS0022.BIN	0:00	11	482	00	{04:FF}。\n<wait>結果が画面に写し出{03:0C}た。\n<wait>		reads: 。\n<wait>結果が画面に写し出された。\n<wait>			
-m/MS0022.BIN	0:00	12	528	1FD2	{01:2D}：		Yuuka:	v005		
+m/MS0022.BIN	0:00	3	153	00	{04:FE}が、{01:2E}の中に飛び込んで来た。\n					reads: が、部屋の中に飛び込んで来た。\n
+m/MS0022.BIN	0:00	4	196	1FC5	顔は上気し、息が切れ{08:14}。走{08:52}来た様だ。\n<wait>					reads: 顔は上気し、息が切れている。走って来た様だ。\n<wait>
+m/MS0022.BIN	0:00	5	273	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:00	6	283	00	{04:FF}くんッ！　私{08:72}私、合格{08:4B}わ！！\n<wait>					reads: くんッ！　私‥‥私、合格したわ！！\n<wait>
+m/MS0022.BIN	0:00	7	328	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:00	8	338	00	{04:FF}くんは？！\n<wait>					reads: くんは？！\n<wait>
+m/MS0022.BIN	0:00	9	409	1FD0	{08:65}が入{08:51}{08:72}恐らく、試験結果の通知{08:8C}。\n<wait>		Having returned to your room, you take a seat in front of your computer\nand wait for your test result to arrive.\n<wait>	v005		reads: 通信が入った‥‥恐らく、試験結果の通知だろう。\n<wait>
+m/MS0022.BIN	0:00	10	452	1FBA	震{08:28}手でキーボードを打つ、		{1E10:01003C}{1E10:01003C}Looks like they aren't here yet...\n<wait>	v005		reads: 震える手でキーボードを打つ、
+m/MS0022.BIN	0:00	11	482	00	{04:FF}。\n<wait>結果が画面に写し出{03:0C}た。\n<wait>					reads: 。\n<wait>結果が画面に写し出された。\n<wait>
+m/MS0022.BIN	0:00	12	528	1FD2	{01:2D}：		Yuuka:	v005		reads: 管理部：
 m/MS0022.BIN	0:00	13	534	1FD3	受験番号０９１６　		Katsuragi-kun! I... I passed the exam!\n<wait>	v005		
-m/MS0022.BIN	0:00	14	556	00	{04:FF}殿。\n<wait>		reads: 殿。\n<wait>			
-m/MS0022.BIN	0:00	15	598	1FD2	{01:2D}：		Administrator's Office:	v005		
-m/MS0022.BIN	0:00	16	604	1FD3	貴殿を、{08:82}今を以て、\n{02:00}隊員と{08:4A}承認{08:8E}。\n<wait>		We would like to inform you that you have\nthus been accepted as a member of\nthe Devil Busters.\n<wait>	v005		
-m/MS0022.BIN	0:00	17	652	1FD2	{01:2D}：		Administrator's Office:	v005		
-m/MS0022.BIN	0:00	18	658	1FD3	尚、配属部隊は第二部隊に決定。\n明日より、正式な任務に付く事と{08:59}。\n<wait>		You have been assigned to Squad Two.\nYour duties will officially begin tomorrow.\n<wait>	v005		
-m/MS0022.BIN	0:00	19	732	1FD2	{01:2D}：		Administrator's Office:	v005		
-m/MS0022.BIN	0:00	20	738	1FD3	{08:5B}、審査の結果、貴殿の部隊内に於{08:29}戦闘タイプは\n		In addition,\nit has been decided that the combat style\nmost suitable for you is 	v005		
-m/MS0022.BIN	0:00	21	790	09	{08:05}ー戦		Hacking.	v005		
+m/MS0022.BIN	0:00	14	556	00	{04:FF}殿。\n<wait>					reads: 殿。\n<wait>
+m/MS0022.BIN	0:00	15	598	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：
+m/MS0022.BIN	0:00	16	604	1FD3	貴殿を、{08:82}今を以て、\n{02:00}隊員と{08:4A}承認{08:8E}。\n<wait>		We would like to inform you that you have\nthus been accepted as a member of\nthe Devil Busters.\n<wait>	v005		reads: 貴殿を、ただ今を以て、\nデビルバスター隊員として承認する。\n<wait>
+m/MS0022.BIN	0:00	17	652	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：
+m/MS0022.BIN	0:00	18	658	1FD3	尚、配属部隊は第二部隊に決定。\n明日より、正式な任務に付く事と{08:59}。\n<wait>		You have been assigned to Squad Two.\nYour duties will officially begin tomorrow.\n<wait>	v005		reads: 尚、配属部隊は第二部隊に決定。\n明日より、正式な任務に付く事となる。\n<wait>
+m/MS0022.BIN	0:00	19	732	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：
+m/MS0022.BIN	0:00	20	738	1FD3	{08:5B}、審査の結果、貴殿の部隊内に於{08:29}戦闘タイプは\n		In addition,\nit has been decided that the combat style\nmost suitable for you is 	v005		reads: また、審査の結果、貴殿の部隊内に於ける戦闘タイプは\n
+m/MS0022.BIN	0:00	21	790	09	{08:05}ー戦		Hacking.	v005		reads: コンピューター戦
 m/MS0022.BIN	0:00	22	804	09	格闘戦		Melee Combat.	v005		
 m/MS0022.BIN	0:00	23	818	09	射撃戦		Ranged Combat.	v005		
-m/MS0022.BIN	0:00	24	832	09	{08:0D}戦と判定{03:0C}た。\n<wait>		Magic.                                    \n<wait>	v005		
-m/MS0022.BIN	0:00	25	857	1FD2	{01:2D}：		Administrator's Office:	v005		
-m/MS0022.BIN	0:00	26	863	1FD3	以後、{08:47}技能に磨きをかけ{02:00}と{08:4A}の\n能力を十二分に発揮{08:8E}{08:69}に。\n　　　　　　　　　　　　　　　　　　　　　以上。\n<wait>		May you continue proving yourself as\na capable Devil Buster.\n                            That is all.\n<wait>	v005		
-m/MS0022.BIN	0:00	27	991	1FD2	{01:2D}：		Administrator's Office:	v005		
-m/MS0022.BIN	0:00	28	997	1FD3	厳密な審査の結果、今回の{02:00}入隊試験に\nついて、残念な事に貴殿の不合格が決定{08:4B}。\n<wait>		We regret to inform you that after\nmuch consideration, we have judged you\nunqualified to join the Devil Busters.\n<wait>	v005		
-m/MS0022.BIN	0:00	29	1083	1FD2	{01:2D}：		Administrator's Office:	v005		
-m/MS0022.BIN	0:00	30	1089	1FD3	追試の申請を行なう場合{08:62}{08:79}旨折り返し\n送信願い{08:4E}。\n<wait>		If you'd like to take part in the\nsupplementary exams to be held later,\nplease fill out the attached form and send\nit to us at your earliest convenience.\n<wait>	v005		
-m/MS0022.BIN	0:00	31	1147	1FD2	{01:2D}：		Administrator's Office:	v005		
-m/MS0022.BIN	0:00	32	1153	1FD3	尚、試験中の行動を判定{08:4B}結果、貴殿は\n		In addition, based on your performance\nduring the trial, it has been decided that\nthe combat style most suitable\nfor you is 	v005		
-m/MS0022.BIN	0:00	33	1195	09	{08:05}ー戦		Hacking.	v005		
+m/MS0022.BIN	0:00	24	832	09	{08:0D}戦と判定{03:0C}た。\n<wait>		Magic.                                    \n<wait>	v005		reads: 魔法戦と判定された。\n<wait>
+m/MS0022.BIN	0:00	25	857	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：
+m/MS0022.BIN	0:00	26	863	1FD3	以後、{08:47}技能に磨きをかけ{02:00}と{08:4A}の\n能力を十二分に発揮{08:8E}{08:69}に。\n　　　　　　　　　　　　　　　　　　　　　以上。\n<wait>		May you continue proving yourself as\na capable Devil Buster.\n                            That is all.\n<wait>	v005		reads: 以後、この技能に磨きをかけデビルバスターとしての\n能力を十二分に発揮するように。\n　　　　　　　　　　　　　　　　　　　　　以上。\n<wait>
+m/MS0022.BIN	0:00	27	991	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：
+m/MS0022.BIN	0:00	28	997	1FD3	厳密な審査の結果、今回の{02:00}入隊試験に\nついて、残念な事に貴殿の不合格が決定{08:4B}。\n<wait>		We regret to inform you that after\nmuch consideration, we have judged you\nunqualified to join the Devil Busters.\n<wait>	v005		reads: 厳密な審査の結果、今回のデビルバスター入隊試験に\nついて、残念な事に貴殿の不合格が決定した。\n<wait>
+m/MS0022.BIN	0:00	29	1083	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：
+m/MS0022.BIN	0:00	30	1089	1FD3	追試の申請を行なう場合{08:62}{08:79}旨折り返し\n送信願い{08:4E}。\n<wait>		If you'd like to take part in the\nsupplementary exams to be held later,\nplease fill out the attached form and send\nit to us at your earliest convenience.\n<wait>	v005		reads: 追試の申請を行なう場合は、その旨折り返し\n送信願いたい。\n<wait>
+m/MS0022.BIN	0:00	31	1147	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：
+m/MS0022.BIN	0:00	32	1153	1FD3	尚、試験中の行動を判定{08:4B}結果、貴殿は\n		In addition, based on your performance\nduring the trial, it has been decided that\nthe combat style most suitable\nfor you is 	v005		reads: 尚、試験中の行動を判定した結果、貴殿は\n
+m/MS0022.BIN	0:00	33	1195	09	{08:05}ー戦		Hacking.	v005		reads: コンピューター戦
 m/MS0022.BIN	0:00	34	1209	09	格闘戦		Melee Combat.	v005		
 m/MS0022.BIN	0:00	35	1223	09	射撃戦		Ranged Combat.	v005		
-m/MS0022.BIN	0:00	36	1237	09	{08:0D}戦に優れ{08:14}と判定{03:0C}た。\n<wait>		Magic.             \n<wait>	v005		
-m/MS0022.BIN	0:00	37	1270	1FD2	{01:2D}：		Administrator's Office:	v005		
-m/MS0022.BIN	0:00	38	1276	1FD3	{08:47}技能に磨きをかけ、再試験に臨んでほしい。\n<wait>		We recommend that you focus your efforts\non this style of combat.\n<wait>	v005		
-m/MS0022.BIN	0:00	39	1327	1FD2	{01:2D}：		Administrator's Office:	v005		
-m/MS0022.BIN	0:00	40	1333	1FD3	日頃の鍛錬は怠らぬ{08:69}に。\n<wait>		Do not let this setback stop\nyou from improving yourself.\n<wait>	v005		
-m/MS0022.BIN	0:00	41	1366	1FD2	{01:2D}：		Administrator's Office:	v005		
-m/MS0022.BIN	0:00	42	1372	1FD3	又、追試の日取りに付いて{08:62}お{08:52}{02:0E}{08:42}\n連絡{08:8E}。\n<wait>　　　　　　　　　　　　　　以上。\n<wait>		We will let you know when the next exam\nis being held at a later date.\n<wait>                            That is all.\n<wait>	v005		
-m/MS0022.BIN	0:00	43	1469	00	{04:FF}{08:62}{08:05}ーに向かい、追試希望の旨を伝{08:28}メールを、\n黙々と打{08:51}。\n<wait>		Without a single word,\nyou fill out the attached application form and send it.\n<wait>	v005		
-m/MS0022.BIN	0:00	44	1535	1FBA	{08:79}側で、		As for Yuuka, she simply stands there next to you.\nIt seems like she doesn't quite know what to say.\n<wait>	v005		
-m/MS0022.BIN	0:00	45	1547	00	{04:FE}が所在なさ気に立っ{08:14}。\n<wait>		reads: が所在なさ気に立っている。\n<wait>			
-m/MS0022.BIN	0:01	0	74	1FD0	{08:65}が入っ{08:14}{02:08}{08:72}\n<wait>		You have a new transmission.\n<wait>	v005		
-m/MS0022.BIN	0:01	1	105	1FD2	原宿{08:10}：		Harajuku Shelter:	v005		
-m/MS0022.BIN	0:01	2	115	1FD3	{02:0E}原宿{08:10}\n<wait>		This is Harajuku Shelter.\n<wait>	v005		
-m/MS0022.BIN	0:01	3	132	1FD2	原宿{08:10}：		Harajuku Shelter:	v005		
-m/MS0022.BIN	0:01	4	142	1FD3	“{08:0B}撃退{08:09}”完成により、戦況は逆転。\n{08:0B}の駆逐に成功。\n<wait>		The Demon Repulsion Program has been completed,\nand using it, we have been able to turn the tide\nof the battle. All of the demons have now been\neither killed or driven off.\n<wait>	v005		
-m/MS0022.BIN	0:01	5	204	1FD2	原宿{08:10}：		Harajuku Shelter:	v005		
-m/MS0022.BIN	0:01	6	214	1FD3	但し、{01:2B}ウイルス感染者に関{08:4A}{08:62}\n今後の{03:10}の見込みが望め{08:25}事{08:42}{08:72}\n<wait>		Regrettably, it doesn't appear that there is any\nhope of recovery for those infected by\nthe Zombie Virus.\n<wait>	v005		
-m/MS0022.BIN	0:01	7	284	1FD2	原宿{08:10}：		Harajuku Shelter:	v005		
-m/MS0022.BIN	0:01	8	294	1FD3	内部的に処分を行{08:16}。\n<wait>		As such, they too have been exterminated.\n<wait>	v005		
-m/MS0022.BIN	0:01	9	323	1FD2	原宿{08:10}：		Harajuku Shelter:	v005		
-m/MS0022.BIN	0:01	10	333	1FD3	住民のパニックも沈静。\n現在、捕虜の訊問をおこなっ{08:14}。\n<wait>		We are currently interrogating parties suspected\nof involvement in the attack.\n<wait>	v005		
-m/MS0022.BIN	0:01	11	393	1FD2	原宿{08:10}：		Harajuku Shelter:	v005		
-m/MS0022.BIN	0:01	12	403	1FD3	極めて有用な{08:47}{08:09}を、転送{08:4A}おく。\n<wait>		Attached to this message is the program.\n<wait>	v005		
-m/MS0022.BIN	0:01	13	444	1FD2	原宿{08:10}：		Harajuku Shelter:	v005		
-m/MS0022.BIN	0:01	14	454	1FD3	大抵の{08:0B}に{08:62}{08:79}効力を発揮{08:8E}{08:85}だ。\n<wait>		May it prove as useful for you as it was for us.\n<wait>	v005		
-m/MS0022.BIN	0:01	15	495	1FD0	{08:0A}の種類は圧縮{08:0A}。{08:0A}容量は１．５ギガバイト{08:55}。\n<wait>		The attachment consists of whopping 1.5 gigabytes of compressed data.\n<wait>	v005		
-m/MS0022.BIN	0:01	16	548	1FBA	{08:0A}の{03:09}ロードを開始し{08:5A}。\n<wait>		You start the download.\n<wait>	v005		
-m/MS0022.BIN	0:01	17	585	1FFA	{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{08:72}\n<wait>	{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{08:72}\n<wait>	reads: ‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥\n<wait>			
-m/MS0022.BIN	0:01	18	618	1FFA	{03:09}ロード終了\n<wait>		Download completed.\n<wait>	v005		
-m/MS0022.BIN	0:01	19	641	1F72	“{08:0B}撃退{08:09}”を{03:09}ロード{08:4B}。\n<wait>		Demon Repulsion Program has been downloaded.\n<wait>	v005		
-m/MS0022.BIN	0:01	20	676	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		
-m/MS0022.BIN	0:01	21	703	1FB2	{08:04}に報告		Inform Nishino	v005		
-m/MS0022.BIN	0:01	22	713	1FB2	{01:2D}に報告		Inform Administration	v005		
-m/MS0022.BIN	0:01	23	723	1FB2	{08:00}に相談		Consult Hayasaka	v005		
-m/MS0022.BIN	0:01	24	733	1FB2	{08:63}で解析{08:8E}		Analyse it yourself	v005		
-m/MS0022.BIN	0:01	25	757	0F	{01:14}{04:02}{01:A7}{07:03}{01:47}{08:FF}	{01:14}{04:02}{01:A7}{07:03}{01:47}{08:FF}	reads: あなたに切り＞外す仲魔を選んで下さい			
-m/MS0022.BIN	0:01	26	775	00	{04:FF}{08:62}{08:65}で{08:04}を呼び出{08:4B}{08:72}\n<wait>		reads: は、通信で西野を呼び出した‥‥\n<wait>			
-m/MS0022.BIN	0:01	27	849	1FD2	{08:04}：		Nishino:	v005		
-m/MS0022.BIN	0:01	28	855	1FD3	{08:26}、{02:0E}{08:04}。\n何だ、		Nishino speaking.\nOh, Ayato? What is it?\n<wait>	v005		
-m/MS0022.BIN	0:01	29	876	00	{04:FF}か。{08:90}か{08:4B}のか？\n<wait>		reads: か。どうかしたのか？\n<wait>			
-m/MS0022.BIN	0:01	30	907	00	{04:FF}{08:62}{08:04}に、原宿{08:42}の{08:65}について{08:72}。\nそ{08:4A}一緒に送られて来た“{08:0B}撃退{08:09}”と称{08:8E}、不可解な{08:0A}に\nついて、全てを詳細に報告{08:4B}。\n<wait>		reads: は、西野に、原宿からの通信について‥‥。\nそして一緒に送られて来た“悪魔撃退プログラム”と称する、不可解なデータに\nついて、全てを詳細に報告した。\n<wait>			
-m/MS0022.BIN	0:01	31	1038	1FD2	{08:04}：		Nishino:	v005		
-m/MS0022.BIN	0:01	32	1044	1FD3	{02:08}‥{08:59}ほど。\n<wait>		Hmm... How curious.\n<wait>	v005		
-m/MS0022.BIN	0:01	33	1065	1FD2	{08:04}：		Nishino:	v005		
-m/MS0022.BIN	0:01	34	1071	1FD3	私の方{08:42}、今すぐ{01:2D}に報告し{08:69}。\n		I will contact the Administrator's Office\nright away. Give me a moment, Ayato.\n<wait>	v005		
-m/MS0022.BIN	0:01	35	1106	00	{04:FF}、悪いが少し待{08:52}いてくれ。\n<wait>		reads: 、悪いが少し待っていてくれ。\n<wait>			
-m/MS0022.BIN	0:01	36	1151	00	{04:FF}{08:62}{08:04}の連絡を待{08:51}{02:08}‥\n<wait>		reads: は、西野の連絡を待った‥‥‥‥\n<wait>			
-m/MS0022.BIN	0:01	37	1224	1FD2	{08:04}：		Nishino:	v005		
-m/MS0022.BIN	0:01	38	1234	00	{04:FF}、{08:48}{08:42}言う事は良く聞いて、\nきちんと対処{08:4A}欲しい。\n<wait>		Listen closely, Ayato.\n<wait>	v005		
-m/MS0022.BIN	0:01	39	1294	1FD2	{08:04}：		Nishino:	v005		
-m/MS0022.BIN	0:01	40	1300	1FD3	実の{08:87}、現在ラボではＤ.Ｄ.Ｓの改良に\n心血を注いで{08:40}。\n<wait>		The lab boys are currently busy at work\non an updated version of DDS.\n<wait>	v005		
-m/MS0022.BIN	0:01	41	1362	1FD2	{08:04}：		Nishino:	v005		
-m/MS0022.BIN	0:01	42	1368	1FD3	{08:79}為、ラボの研究員の中で、手空きの者は\n全く{08:24}らしい。\nそこで{08:72}だ。\n<wait>		The project is taking up all of their resources.\nIn other words, we will have to deal with this\nissue ourselves.\n<wait>	v005		
-m/MS0022.BIN	0:01	43	1441	1FD2	{08:04}：		Nishino:	v005		
-m/MS0022.BIN	0:01	44	1447	1FD3	{01:2D}の意向で{08:62}君自身が{08:63}で解析し、\n{08:79}内容を確認{08:8E}か、{08:5D}く{08:62}{08:34}君に\n解析させろとの事{08:6B}だ。\n<wait>		The Administrator's Office came up with two\npossible solutions. You can either analyse\nthe data by yourself, or let Kirishima do it.\n<wait>	v005		
-m/MS0022.BIN	0:01	45	1542	1FD2	{08:04}：		Nishino:	v005		
-m/MS0022.BIN	0:01	46	1548	1FD3	{01:3F}が適任で{08:7B}かを判断{08:8E}の{08:62}\n君自身に任{08:2A}。\n<wait>		You are free to choose whichever of these\noptions you believe is the correct one.\n<wait>	v005		
-m/MS0022.BIN	0:01	47	1598	1FD2	{08:04}：		Nishino:	v005		
-m/MS0022.BIN	0:01	48	1604	1FD3	そ{08:4A}、内容が分かり次第、すぐに私に報告{08:4A}欲しい。\n<wait>		Let me know right away once you figure out\nwhat the data contains.\n<wait>	v005		
-m/MS0022.BIN	0:01	49	1661	1FD2	{08:04}：		Nishino:	v005		
-m/MS0022.BIN	0:01	50	1667	1FD3	ラボも{01:2D}も、{08:09}に関心は示{08:13}{08:77}よ。\n済ま{08:25}が、宜しく頼{08:5F}ぞ。\n<wait>		Again, sorry that you have to do this, but we\nare extremely tight on resources at the moment.\n<wait>	v005		
-m/MS0022.BIN	0:01	51	1737	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		
-m/MS0022.BIN	0:01	52	1764	1FB2	{08:63}で解析		Analyse it by yourself	v005		
-m/MS0022.BIN	0:01	53	1774	1FB2	{08:03}に解析さ{08:2A}		Let Emi do it	v005		
-m/MS0022.BIN	0:01	54	1800	0F	{01:EA}{03:FF}	{01:EA}{03:FF}	reads: 			
-m/MS0022.BIN	0:01	55	1810	00	{04:FF}{08:62}すぐさま{01:2D}に{08:65}を入{08:60}。\n<wait>		You decide to report the matter to the Administrator's Office.\n<wait>	v005		
+m/MS0022.BIN	0:00	36	1237	09	{08:0D}戦に優れ{08:14}と判定{03:0C}た。\n<wait>		Magic.             \n<wait>	v005		reads: 魔法戦に優れていると判定された。\n<wait>
+m/MS0022.BIN	0:00	37	1270	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：
+m/MS0022.BIN	0:00	38	1276	1FD3	{08:47}技能に磨きをかけ、再試験に臨んでほしい。\n<wait>		We recommend that you focus your efforts\non this style of combat.\n<wait>	v005		reads: この技能に磨きをかけ、再試験に臨んでほしい。\n<wait>
+m/MS0022.BIN	0:00	39	1327	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：
+m/MS0022.BIN	0:00	40	1333	1FD3	日頃の鍛錬は怠らぬ{08:69}に。\n<wait>		Do not let this setback stop\nyou from improving yourself.\n<wait>	v005		reads: 日頃の鍛錬は怠らぬように。\n<wait>
+m/MS0022.BIN	0:00	41	1366	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：
+m/MS0022.BIN	0:00	42	1372	1FD3	又、追試の日取りに付いて{08:62}お{08:52}{02:0E}{08:42}\n連絡{08:8E}。\n<wait>　　　　　　　　　　　　　　以上。\n<wait>		We will let you know when the next exam\nis being held at a later date.\n<wait>                            That is all.\n<wait>	v005		reads: 又、追試の日取りに付いては、おってこちらから\n連絡する。\n<wait>　　　　　　　　　　　　　　以上。\n<wait>
+m/MS0022.BIN	0:00	43	1469	00	{04:FF}{08:62}{08:05}ーに向かい、追試希望の旨を伝{08:28}メールを、\n黙々と打{08:51}。\n<wait>		Without a single word,\nyou fill out the attached application form and send it.\n<wait>	v005		reads: は、コンピューターに向かい、追試希望の旨を伝えるメールを、\n黙々と打った。\n<wait>
+m/MS0022.BIN	0:00	44	1535	1FBA	{08:79}側で、		As for Yuuka, she simply stands there next to you.\nIt seems like she doesn't quite know what to say.\n<wait>	v005		reads: その側で、
+m/MS0022.BIN	0:00	45	1547	00	{04:FE}が所在なさ気に立っ{08:14}。\n<wait>					reads: が所在なさ気に立っている。\n<wait>
+m/MS0022.BIN	0:01	0	74	1FD0	{08:65}が入っ{08:14}{02:08}{08:72}\n<wait>		You have a new transmission.\n<wait>	v005		reads: 通信が入っている‥‥‥‥‥\n<wait>
+m/MS0022.BIN	0:01	1	105	1FD2	原宿{08:10}：		Harajuku Shelter:	v005		reads: 原宿シェルター：
+m/MS0022.BIN	0:01	2	115	1FD3	{02:0E}原宿{08:10}\n<wait>		This is Harajuku Shelter.\n<wait>	v005		reads: こちら原宿シェルター\n<wait>
+m/MS0022.BIN	0:01	3	132	1FD2	原宿{08:10}：		Harajuku Shelter:	v005		reads: 原宿シェルター：
+m/MS0022.BIN	0:01	4	142	1FD3	“{08:0B}撃退{08:09}”完成により、戦況は逆転。\n{08:0B}の駆逐に成功。\n<wait>		The Demon Repulsion Program has been completed,\nand using it, we have been able to turn the tide\nof the battle. All of the demons have now been\neither killed or driven off.\n<wait>	v005		reads: “悪魔撃退プログラム”完成により、戦況は逆転。\n悪魔の駆逐に成功。\n<wait>
+m/MS0022.BIN	0:01	5	204	1FD2	原宿{08:10}：		Harajuku Shelter:	v005		reads: 原宿シェルター：
+m/MS0022.BIN	0:01	6	214	1FD3	但し、{01:2B}ウイルス感染者に関{08:4A}{08:62}\n今後の{03:10}の見込みが望め{08:25}事{08:42}{08:72}\n<wait>		Regrettably, it doesn't appear that there is any\nhope of recovery for those infected by\nthe Zombie Virus.\n<wait>	v005		reads: 但し、ゾンビウイルス感染者に関しては、\n今後の回復の見込みが望めない事から‥‥\n<wait>
+m/MS0022.BIN	0:01	7	284	1FD2	原宿{08:10}：		Harajuku Shelter:	v005		reads: 原宿シェルター：
+m/MS0022.BIN	0:01	8	294	1FD3	内部的に処分を行{08:16}。\n<wait>		As such, they too have been exterminated.\n<wait>	v005		reads: 内部的に処分を行なった。\n<wait>
+m/MS0022.BIN	0:01	9	323	1FD2	原宿{08:10}：		Harajuku Shelter:	v005		reads: 原宿シェルター：
+m/MS0022.BIN	0:01	10	333	1FD3	住民のパニックも沈静。\n現在、捕虜の訊問をおこなっ{08:14}。\n<wait>		We are currently interrogating parties suspected\nof involvement in the attack.\n<wait>	v005		reads: 住民のパニックも沈静。\n現在、捕虜の訊問をおこなっている。\n<wait>
+m/MS0022.BIN	0:01	11	393	1FD2	原宿{08:10}：		Harajuku Shelter:	v005		reads: 原宿シェルター：
+m/MS0022.BIN	0:01	12	403	1FD3	極めて有用な{08:47}{08:09}を、転送{08:4A}おく。\n<wait>		Attached to this message is the program.\n<wait>	v005		reads: 極めて有用なこのプログラムを、転送しておく。\n<wait>
+m/MS0022.BIN	0:01	13	444	1FD2	原宿{08:10}：		Harajuku Shelter:	v005		reads: 原宿シェルター：
+m/MS0022.BIN	0:01	14	454	1FD3	大抵の{08:0B}に{08:62}{08:79}効力を発揮{08:8E}{08:85}だ。\n<wait>		May it prove as useful for you as it was for us.\n<wait>	v005		reads: 大抵の悪魔には、その効力を発揮するはずだ。\n<wait>
+m/MS0022.BIN	0:01	15	495	1FD0	{08:0A}の種類は圧縮{08:0A}。{08:0A}容量は１．５ギガバイト{08:55}。\n<wait>		The attachment consists of whopping 1.5 gigabytes of compressed data.\n<wait>	v005		reads: データの種類は圧縮データ。データ容量は１．５ギガバイトです。\n<wait>
+m/MS0022.BIN	0:01	16	548	1FBA	{08:0A}の{03:09}ロードを開始し{08:5A}。\n<wait>		You start the download.\n<wait>	v005		reads: データのダウンロードを開始します。\n<wait>
+m/MS0022.BIN	0:01	17	585	1FFA	{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{08:72}\n<wait>	{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{08:72}\n<wait>				reads: ‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥\n<wait>
+m/MS0022.BIN	0:01	18	618	1FFA	{03:09}ロード終了\n<wait>		Download completed.\n<wait>	v005		reads: ダウンロード終了\n<wait>
+m/MS0022.BIN	0:01	19	641	1F72	“{08:0B}撃退{08:09}”を{03:09}ロード{08:4B}。\n<wait>		Demon Repulsion Program has been downloaded.\n<wait>	v005		reads: “悪魔撃退プログラム”をダウンロードした。\n<wait>
+m/MS0022.BIN	0:01	20	676	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>
+m/MS0022.BIN	0:01	21	703	1FB2	{08:04}に報告		Inform Nishino	v005		reads: 西野に報告; menu option, declared width 20 columns
+m/MS0022.BIN	0:01	22	713	1FB2	{01:2D}に報告		Inform Administration	v005		reads: 管理部に報告; menu option, declared width 20 columns
+m/MS0022.BIN	0:01	23	723	1FB2	{08:00}に相談		Consult Hayasaka	v005		reads: 早坂に相談; menu option, declared width 20 columns
+m/MS0022.BIN	0:01	24	733	1FB2	{08:63}で解析{08:8E}		Analyse it yourself	v005		reads: 自分で解析する; menu option, declared width 20 columns
+m/MS0022.BIN	0:01	25	757	0F	{01:14}{04:02}{01:A7}{07:03}{01:47}{08:FF}	{01:14}{04:02}{01:A7}{07:03}{01:47}{08:FF}				reads: あなたに切り＞外す仲魔を選んで下さい
+m/MS0022.BIN	0:01	26	775	00	{04:FF}{08:62}{08:65}で{08:04}を呼び出{08:4B}{08:72}\n<wait>					reads: は、通信で西野を呼び出した‥‥\n<wait>
+m/MS0022.BIN	0:01	27	849	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
+m/MS0022.BIN	0:01	28	855	1FD3	{08:26}、{02:0E}{08:04}。\n何だ、		Nishino speaking.\nOh, Ayato? What is it?\n<wait>	v005		reads: はい、こちら西野。\n何だ、
+m/MS0022.BIN	0:01	29	876	00	{04:FF}か。{08:90}か{08:4B}のか？\n<wait>					reads: か。どうかしたのか？\n<wait>
+m/MS0022.BIN	0:01	30	907	00	{04:FF}{08:62}{08:04}に、原宿{08:42}の{08:65}について{08:72}。\nそ{08:4A}一緒に送られて来た“{08:0B}撃退{08:09}”と称{08:8E}、不可解な{08:0A}に\nついて、全てを詳細に報告{08:4B}。\n<wait>					reads: は、西野に、原宿からの通信について‥‥。\nそして一緒に送られて来た“悪魔撃退プログラム”と称する、不可解なデータに\nついて、全てを詳細に報告した。\n<wait>
+m/MS0022.BIN	0:01	31	1038	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
+m/MS0022.BIN	0:01	32	1044	1FD3	{02:08}‥{08:59}ほど。\n<wait>		Hmm... How curious.\n<wait>	v005		reads: ‥‥‥‥なるほど。\n<wait>
+m/MS0022.BIN	0:01	33	1065	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
+m/MS0022.BIN	0:01	34	1071	1FD3	私の方{08:42}、今すぐ{01:2D}に報告し{08:69}。\n		I will contact the Administrator's Office\nright away. Give me a moment, Ayato.\n<wait>	v005		reads: 私の方から、今すぐ管理部に報告しよう。\n
+m/MS0022.BIN	0:01	35	1106	00	{04:FF}、悪いが少し待{08:52}いてくれ。\n<wait>					reads: 、悪いが少し待っていてくれ。\n<wait>
+m/MS0022.BIN	0:01	36	1151	00	{04:FF}{08:62}{08:04}の連絡を待{08:51}{02:08}‥\n<wait>					reads: は、西野の連絡を待った‥‥‥‥\n<wait>
+m/MS0022.BIN	0:01	37	1224	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
+m/MS0022.BIN	0:01	38	1234	00	{04:FF}、{08:48}{08:42}言う事は良く聞いて、\nきちんと対処{08:4A}欲しい。\n<wait>		Listen closely, Ayato.\n<wait>	v005		reads: 、これから言う事は良く聞いて、\nきちんと対処して欲しい。\n<wait>
+m/MS0022.BIN	0:01	39	1294	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
+m/MS0022.BIN	0:01	40	1300	1FD3	実の{08:87}、現在ラボではＤ.Ｄ.Ｓの改良に\n心血を注いで{08:40}。\n<wait>		The lab boys are currently busy at work\non an updated version of DDS.\n<wait>	v005		reads: 実のところ、現在ラボではＤ.Ｄ.Ｓの改良に\n心血を注いでいる。\n<wait>
+m/MS0022.BIN	0:01	41	1362	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
+m/MS0022.BIN	0:01	42	1368	1FD3	{08:79}為、ラボの研究員の中で、手空きの者は\n全く{08:24}らしい。\nそこで{08:72}だ。\n<wait>		The project is taking up all of their resources.\nIn other words, we will have to deal with this\nissue ourselves.\n<wait>	v005		reads: その為、ラボの研究員の中で、手空きの者は\n全くいないらしい。\nそこで‥‥だ。\n<wait>
+m/MS0022.BIN	0:01	43	1441	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
+m/MS0022.BIN	0:01	44	1447	1FD3	{01:2D}の意向で{08:62}君自身が{08:63}で解析し、\n{08:79}内容を確認{08:8E}か、{08:5D}く{08:62}{08:34}君に\n解析させろとの事{08:6B}だ。\n<wait>		The Administrator's Office came up with two\npossible solutions. You can either analyse\nthe data by yourself, or let Kirishima do it.\n<wait>	v005		reads: 管理部の意向では、君自身が自分で解析し、\nその内容を確認するか、もしくは、桐島君に\n解析させろとの事なのだ。\n<wait>
+m/MS0022.BIN	0:01	45	1542	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
+m/MS0022.BIN	0:01	46	1548	1FD3	{01:3F}が適任で{08:7B}かを判断{08:8E}の{08:62}\n君自身に任{08:2A}。\n<wait>		You are free to choose whichever of these\noptions you believe is the correct one.\n<wait>	v005		reads: どちらが適任であるかを判断するのは、\n君自身に任せる。\n<wait>
+m/MS0022.BIN	0:01	47	1598	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
+m/MS0022.BIN	0:01	48	1604	1FD3	そ{08:4A}、内容が分かり次第、すぐに私に報告{08:4A}欲しい。\n<wait>		Let me know right away once you figure out\nwhat the data contains.\n<wait>	v005		reads: そして、内容が分かり次第、すぐに私に報告して欲しい。\n<wait>
+m/MS0022.BIN	0:01	49	1661	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
+m/MS0022.BIN	0:01	50	1667	1FD3	ラボも{01:2D}も、{08:09}に関心は示{08:13}{08:77}よ。\n済ま{08:25}が、宜しく頼{08:5F}ぞ。\n<wait>		Again, sorry that you have to do this, but we\nare extremely tight on resources at the moment.\n<wait>	v005		reads: ラボも管理部も、プログラムに関心は示しているのだよ。\n済まないが、宜しく頼んだぞ。\n<wait>
+m/MS0022.BIN	0:01	51	1737	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>
+m/MS0022.BIN	0:01	52	1764	1FB2	{08:63}で解析		Analyse it by yourself	v005		reads: 自分で解析; menu option, declared width 20 columns
+m/MS0022.BIN	0:01	53	1774	1FB2	{08:03}に解析さ{08:2A}		Let Emi do it	v005		reads: 英美に解析させる; menu option, declared width 20 columns
+m/MS0022.BIN	0:01	54	1800	0F	{01:EA}{03:FF}	{01:EA}{03:FF}				reads: 
+m/MS0022.BIN	0:01	55	1810	00	{04:FF}{08:62}すぐさま{01:2D}に{08:65}を入{08:60}。\n<wait>		You decide to report the matter to the Administrator's Office.\n<wait>	v005		reads: は、すぐさま管理部に通信を入れた。\n<wait>
 m/MS0022.BIN	0:01	56	1880	1FD2	オペレーター：		Operator:	v005		
-m/MS0022.BIN	0:01	57	1896	1FD3	{08:26}、{02:0E}{01:2D}{08:55}。\n<wait>		This is the Administrator's Office.\nHow may I help you?\n<wait>	v005		
-m/MS0022.BIN	0:01	58	1921	00	{04:FF}{08:62}事のいきさつを全て報告{08:4B}。\n<wait>		You explain in detail what has happened to the person\non the other end of the call.\n<wait>	v005		
+m/MS0022.BIN	0:01	57	1896	1FD3	{08:26}、{02:0E}{01:2D}{08:55}。\n<wait>		This is the Administrator's Office.\nHow may I help you?\n<wait>	v005		reads: はい、こちら管理部です。\n<wait>
+m/MS0022.BIN	0:01	58	1921	00	{04:FF}{08:62}事のいきさつを全て報告{08:4B}。\n<wait>		You explain in detail what has happened to the person\non the other end of the call.\n<wait>	v005		reads: は、事のいきさつを全て報告した。\n<wait>
 m/MS0022.BIN	0:01	59	1964	1FD2	オペレーター：		Operator:	v005		
-m/MS0022.BIN	0:01	60	1980	1FD3	{02:08}‥分かりま{08:4B}。\n至急ラボと上層に{08:79}旨を伝え、指示を仰ぎ{08:5A}。\n<wait>		...Understood. I will inform my supervisor at once.\n<wait>	v005		
+m/MS0022.BIN	0:01	60	1980	1FD3	{02:08}‥分かりま{08:4B}。\n至急ラボと上層に{08:79}旨を伝え、指示を仰ぎ{08:5A}。\n<wait>		...Understood. I will inform my supervisor at once.\n<wait>	v005		reads: ‥‥‥‥分かりました。\n至急ラボと上層にその旨を伝え、指示を仰ぎます。\n<wait>
 m/MS0022.BIN	0:01	61	2046	1FD2	オペレーター：		Operator:	v005		
-m/MS0022.BIN	0:01	62	2062	1FD3	{08:79}{08:7E}、お待ち下{08:49}。\n<wait>		Just a moment, please.\n<wait>	v005		
-m/MS0022.BIN	0:01	63	2097	00	{04:FF}{08:62}{01:2D}{08:42}の返答を待{08:51}{02:08}‥\n<wait>		You do as you're told, and wait for them to get back to you.\n<wait>	v005		
+m/MS0022.BIN	0:01	62	2062	1FD3	{08:79}{08:7E}、お待ち下{08:49}。\n<wait>		Just a moment, please.\n<wait>	v005		reads: そのまま、お待ち下さい。\n<wait>
+m/MS0022.BIN	0:01	63	2097	00	{04:FF}{08:62}{01:2D}{08:42}の返答を待{08:51}{02:08}‥\n<wait>		You do as you're told, and wait for them to get back to you.\n<wait>	v005		reads: は、管理部からの返答を待った‥‥‥‥\n<wait>
 m/MS0022.BIN	0:01	64	2172	1FD2	オペレーター：		Operator:	v005		
-m/MS0022.BIN	0:01	65	2188	1FD3	現在、ラボでは大規模なプロジェクトが\n発動{03:0C}ており{02:08}\n<wait>		I appears that the entire laboratory division is\nbusy working on a certain large-scale project\nat the moment.\n<wait>	v005		
+m/MS0022.BIN	0:01	65	2188	1FD3	現在、ラボでは大規模なプロジェクトが\n発動{03:0C}ており{02:08}\n<wait>		I appears that the entire laboratory division is\nbusy working on a certain large-scale project\nat the moment.\n<wait>	v005		reads: 現在、ラボでは大規模なプロジェクトが\n発動されており‥‥‥\n<wait>
 m/MS0022.BIN	0:01	66	2248	1FD2	オペレーター：		Operator:	v005		
-m/MS0022.BIN	0:01	67	2264	1FD3	{08:09}の解析を行なう為の人員を、廻す事が\n出来{08:25}との事{08:55}。\n<wait>		As such, we unfortunately are not able to divert\nany resources towards analysing this data.\n<wait>	v005		
+m/MS0022.BIN	0:01	67	2264	1FD3	{08:09}の解析を行なう為の人員を、廻す事が\n出来{08:25}との事{08:55}。\n<wait>		As such, we unfortunately are not able to divert\nany resources towards analysing this data.\n<wait>	v005		reads: プログラムの解析を行なう為の人員を、廻す事が\n出来ないとの事です。\n<wait>
 m/MS0022.BIN	0:01	68	2326	1FD2	オペレーター：		Operator:	v005		
-m/MS0022.BIN	0:01	69	2342	1FD3	更に、上層部{08:42}の意向で{08:62}貴方自身が解析を実行し、\n{08:09}内容の確認を行なうか{02:08}\n<wait>		The Office proposes that you uncompress it\nyourself and figure out what it is about.\n<wait>	v005		
+m/MS0022.BIN	0:01	69	2342	1FD3	更に、上層部{08:42}の意向で{08:62}貴方自身が解析を実行し、\n{08:09}内容の確認を行なうか{02:08}\n<wait>		The Office proposes that you uncompress it\nyourself and figure out what it is about.\n<wait>	v005		reads: 更に、上層部からの意向では、貴方自身が解析を実行し、\nプログラム内容の確認を行なうか‥‥‥\n<wait>
 m/MS0022.BIN	0:01	70	2422	1FD2	オペレーター：		Operator:	v005		
-m/MS0022.BIN	0:01	71	2438	1FD3	{08:5D}く{08:62}{01:02}に{08:0A}を受け渡し、\n解析さ{08:2A}かの、いずれかの方法で作業を進め{02:08}\n<wait>		Alternatively, you could talk to Kirishima Emi\nand have her do it for you.\n<wait>	v005		
+m/MS0022.BIN	0:01	71	2438	1FD3	{08:5D}く{08:62}{01:02}に{08:0A}を受け渡し、\n解析さ{08:2A}かの、いずれかの方法で作業を進め{02:08}\n<wait>		Alternatively, you could talk to Kirishima Emi\nand have her do it for you.\n<wait>	v005		reads: もしくは、桐島英美にデータを受け渡し、\n解析させるかの、いずれかの方法で作業を進め‥‥‥\n<wait>
 m/MS0022.BIN	0:01	72	2512	1FD2	オペレーター：		Operator:	v005		
-m/MS0022.BIN	0:01	73	2528	1FD3	結果を{01:2D}に報告{08:8E}様にとの事{08:55}。\n<wait>		Either way, please keep us updated.\n<wait>	v005		
+m/MS0022.BIN	0:01	73	2528	1FD3	結果を{01:2D}に報告{08:8E}様にとの事{08:55}。\n<wait>		Either way, please keep us updated.\n<wait>	v005		reads: 結果を管理部に報告する様にとの事です。\n<wait>
 m/MS0022.BIN	0:01	74	2567	1FD2	オペレーター：		Operator:	v005		
-m/MS0022.BIN	0:01	75	2583	1FD3	{01:3F}が適任で{08:7B}かの判断{08:62}貴方自身に任{08:2A}\nとの事{08:55}ので、そちらで判断し、対処願い{08:5A}。\n<wait>		It is up to you how you wish to proceed.\n<wait>	v005		
+m/MS0022.BIN	0:01	75	2583	1FD3	{01:3F}が適任で{08:7B}かの判断{08:62}貴方自身に任{08:2A}\nとの事{08:55}ので、そちらで判断し、対処願い{08:5A}。\n<wait>		It is up to you how you wish to proceed.\n<wait>	v005		reads: どちらが適任であるかの判断は、貴方自身に任せる\nとの事ですので、そちらで判断し、対処願います。\n<wait>
 m/MS0022.BIN	0:01	76	2669	1FD2	オペレーター：		Operator:	v005		
-m/MS0022.BIN	0:01	77	2685	1FD3	以上で、{08:65}を終了致し{08:5A}。\n<wait>		That is all.\n<wait>	v005		
-m/MS0022.BIN	0:01	78	2738	00	{04:FF}{08:62}{08:00}の所に{03:09}ロード{08:4B}{08:0A}を持{08:52}いく事に{08:4B}{02:08}‥\n<wait>		You decide to take the data you downloaded to Hayasaka.\n<wait>	v005		
-m/MS0022.BIN	0:01	79	2820	00	{04:FF}{08:62}{08:03}の所に{03:09}ロード{08:4B}{08:0A}を持{08:52}いく事に{08:4B}{02:08}‥\n<wait>		You decide to take the data you downloaded to Emi.\n<wait>	v005		
-m/MS0022.BIN	0:01	80	2919	00	{04:FF}{08:62}{08:63}で{08:47}{08:0A}を解凍し、解析{08:8E}事に{08:4B}。\n<wait>		You decide to uncompress the data and analyse it by yourself.\n<wait>	v005		
+m/MS0022.BIN	0:01	77	2685	1FD3	以上で、{08:65}を終了致し{08:5A}。\n<wait>		That is all.\n<wait>	v005		reads: 以上で、通信を終了致します。\n<wait>
+m/MS0022.BIN	0:01	78	2738	00	{04:FF}{08:62}{08:00}の所に{03:09}ロード{08:4B}{08:0A}を持{08:52}いく事に{08:4B}{02:08}‥\n<wait>		You decide to take the data you downloaded to Hayasaka.\n<wait>	v005		reads: は、早坂の所にダウンロードしたデータを持っていく事にした‥‥‥‥\n<wait>
+m/MS0022.BIN	0:01	79	2820	00	{04:FF}{08:62}{08:03}の所に{03:09}ロード{08:4B}{08:0A}を持{08:52}いく事に{08:4B}{02:08}‥\n<wait>		You decide to take the data you downloaded to Emi.\n<wait>	v005		reads: は、英美の所にダウンロードしたデータを持っていく事にした‥‥‥‥\n<wait>
+m/MS0022.BIN	0:01	80	2919	00	{04:FF}{08:62}{08:63}で{08:47}{08:0A}を解凍し、解析{08:8E}事に{08:4B}。\n<wait>		You decide to uncompress the data and analyse it by yourself.\n<wait>	v005		reads: は、自分でこのデータを解凍し、解析する事にした。\n<wait>
 m/MS0022.BIN	0:01	81	2968	1E07	MURMUR.BIN	MURMUR.BIN				
-m/MS0022.BIN	0:01	82	2984	1FFA	{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{08:72}\n<wait>	{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{08:72}\n<wait>	reads: ‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥\n<wait>			
-m/MS0022.BIN	0:01	83	3015	1FD0	画面に写し出{03:0C}た膨大な{08:0A}を見た瞬間、身体中に、言い様の無い\n悪寒が走{08:51}{02:08}‥\n<wait>		As soon as the data is displayed on the screen,\nyour body begins to shiver, and you quickly collapse on the floor.\n<wait>	v005		
-m/MS0022.BIN	0:01	84	3184	1FBD	{02:08}{02:08}メイルを{03:08}ロードし{08:5A}。\n<wait>		......Uploading attachment.\n<wait>	v005		
+m/MS0022.BIN	0:01	82	2984	1FFA	{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{08:72}\n<wait>	{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{08:72}\n<wait>				reads: ‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥\n<wait>
+m/MS0022.BIN	0:01	83	3015	1FD0	画面に写し出{03:0C}た膨大な{08:0A}を見た瞬間、身体中に、言い様の無い\n悪寒が走{08:51}{02:08}‥\n<wait>		As soon as the data is displayed on the screen,\nyour body begins to shiver, and you quickly collapse on the floor.\n<wait>	v005		reads: 画面に写し出された膨大なデータを見た瞬間、身体中に、言い様の無い\n悪寒が走った‥‥‥‥\n<wait>
+m/MS0022.BIN	0:01	84	3184	1FBD	{02:08}{02:08}メイルを{03:08}ロードし{08:5A}。\n<wait>		......Uploading attachment.\n<wait>	v005		reads: ‥‥‥‥‥‥メイルをアップロードします。\n<wait>
 m/MS0022.BIN	0:01	85	3217	1FBA	AIM.BIN　１．２ギガバイト		AIM.BIN / 1.2 Gigabytes	v005		
-m/MS0022.BIN	0:01	86	3248	1FFA	{02:08}{02:08}{08:72}\n	{02:08}{02:08}{08:72}\n	reads: ‥‥‥‥‥‥‥‥\n			
-m/MS0022.BIN	0:01	87	3261	1FFA	{1E10:01003C}{03:08}ロード完了。\n送信先を指定{08:4A}{08:6E}。\n		{1E10:01003C}Upload completed.\nPlease specify recipient's address.\n	v005		
-m/MS0022.BIN	0:01	88	3306	1FFA	{02:08}{02:08}{08:72}	{02:08}{02:08}{08:72}	reads: ‥‥‥‥‥‥‥‥			
-m/MS0022.BIN	0:01	89	3318	1FFA	{1E10:01003C}御茶ノ水{08:10}\n		{1E10:01003C}Ochanomizu Shelter\n	v005		
-m/MS0022.BIN	0:01	90	3340	1FFA	{02:08}{02:08}{08:72}	{02:08}{02:08}{08:72}	reads: ‥‥‥‥‥‥‥‥			
-m/MS0022.BIN	0:01	91	3352	1FFA	{1E10:01001E}送信完了\n何かキーを押{08:4A}{08:6E}。{08:65}を終了し{08:5A}。\n<wait>		{1E10:01001E}Message sent.\nPress any key to close this window.\n<wait>	v005		
-m/MS0022.BIN	0:01	92	3454	1FD0	{02:08}‥頬に冷{08:4E}床の感触が伝わ{08:52}くる{02:08}{08:72}\n<wait>		...You wake up to the sensation of the cold, hard floor\npressing against your cheek.\n<wait>	v005		
+m/MS0022.BIN	0:01	86	3248	1FFA	{02:08}{02:08}{08:72}\n	{02:08}{02:08}{08:72}\n				reads: ‥‥‥‥‥‥‥‥\n
+m/MS0022.BIN	0:01	87	3261	1FFA	{1E10:01003C}{03:08}ロード完了。\n送信先を指定{08:4A}{08:6E}。\n		{1E10:01003C}Upload completed.\nPlease specify recipient's address.\n	v005		reads: {1E10:01003C}アップロード完了。\n送信先を指定してください。\n
+m/MS0022.BIN	0:01	88	3306	1FFA	{02:08}{02:08}{08:72}	{02:08}{02:08}{08:72}				reads: ‥‥‥‥‥‥‥‥
+m/MS0022.BIN	0:01	89	3318	1FFA	{1E10:01003C}御茶ノ水{08:10}\n		{1E10:01003C}Ochanomizu Shelter\n	v005		reads: {1E10:01003C}御茶ノ水シェルター\n
+m/MS0022.BIN	0:01	90	3340	1FFA	{02:08}{02:08}{08:72}	{02:08}{02:08}{08:72}				reads: ‥‥‥‥‥‥‥‥
+m/MS0022.BIN	0:01	91	3352	1FFA	{1E10:01001E}送信完了\n何かキーを押{08:4A}{08:6E}。{08:65}を終了し{08:5A}。\n<wait>		{1E10:01001E}Message sent.\nPress any key to close this window.\n<wait>	v005		reads: {1E10:01001E}送信完了\n何かキーを押してください。通信を終了します。\n<wait>
+m/MS0022.BIN	0:01	92	3454	1FD0	{02:08}‥頬に冷{08:4E}床の感触が伝わ{08:52}くる{02:08}{08:72}\n<wait>		...You wake up to the sensation of the cold, hard floor\npressing against your cheek.\n<wait>	v005		reads: ‥‥‥‥頬に冷たい床の感触が伝わってくる‥‥‥‥‥\n<wait>
 m/MS0022.BIN	0:01	93	3497	1FBA	ゆっくりと目を開くと、		You open your eyes, only to find yourself lying on the floor.\n<wait>	v005		
-m/MS0022.BIN	0:01	94	3523	00	{04:FF}{08:62}床の上に直に倒れて{08:64}。\n<wait>		reads: は、床の上に直に倒れていた。\n<wait>			
-m/MS0022.BIN	0:01	95	3556	1FBA	いつの間にか意識を失{08:52}{08:64}様だ。\n<wait>		It appears that you ended up passing out at some point.\n<wait>	v005		
-m/MS0022.BIN	0:01	96	3593	1FBA	胃が{08:72}いや、内臓全てが、あたかも腐敗{08:4B}かの様に熱く、\n<wait>そ{08:4A}重苦しく感じられ、嘔吐感が耐えずのど元に居座っ{08:14}。\n<wait>		It feels like your stomach has been turned inside out.\nAnd not just your stomach, but your entire body.\n<wait>Your limbs feel heavy,\nand its a miracle that you haven't vomited already.\n<wait>	v005		
-m/MS0022.BIN	0:01	97	3711	1FBA	意識も{08:5B}、焦点の定まら{08:25}レンズの様に、手掛かりを掴みかけては\n遠のいて行く{08:72}\n<wait>		It doesn't take long till you once again find your consciousness\nstarting to fading away.\n<wait>	v005		
-m/MS0022.BIN	0:01	98	3797	1F72	{08:7A}状態の中、何とか起き上がると、煌々と灯る{08:05}ー画面に\n目が行{08:51}。\n<wait>		Using the last remaining bits of your strength, you pull yourself up,\nand have a look at the blinking words drawn on the screen.\n<wait>	v005		
-m/MS0022.BIN	0:01	99	3890	1F71	画面に浮かび上がる文字を読んで行くと、{08:90}やら{08:63}の記憶には{08:25}が、\n御茶ノ水{08:10}に向け、得体の知れ{08:25}{08:0A}を送信{08:4A}{08:64}様だ。\n<wait>		It appears that some sort of a package of data has been\nsent over to Ochanomizu Shelter. But when? And how?\n<wait>	v005		
+m/MS0022.BIN	0:01	94	3523	00	{04:FF}{08:62}床の上に直に倒れて{08:64}。\n<wait>					reads: は、床の上に直に倒れていた。\n<wait>
+m/MS0022.BIN	0:01	95	3556	1FBA	いつの間にか意識を失{08:52}{08:64}様だ。\n<wait>		It appears that you ended up passing out at some point.\n<wait>	v005		reads: いつの間にか意識を失っていた様だ。\n<wait>
+m/MS0022.BIN	0:01	96	3593	1FBA	胃が{08:72}いや、内臓全てが、あたかも腐敗{08:4B}かの様に熱く、\n<wait>そ{08:4A}重苦しく感じられ、嘔吐感が耐えずのど元に居座っ{08:14}。\n<wait>		It feels like your stomach has been turned inside out.\nAnd not just your stomach, but your entire body.\n<wait>Your limbs feel heavy,\nand its a miracle that you haven't vomited already.\n<wait>	v005		reads: 胃が‥‥いや、内臓全てが、あたかも腐敗したかの様に熱く、\n<wait>そして重苦しく感じられ、嘔吐感が耐えずのど元に居座っている。\n<wait>
+m/MS0022.BIN	0:01	97	3711	1FBA	意識も{08:5B}、焦点の定まら{08:25}レンズの様に、手掛かりを掴みかけては\n遠のいて行く{08:72}\n<wait>		It doesn't take long till you once again find your consciousness\nstarting to fading away.\n<wait>	v005		reads: 意識もまた、焦点の定まらないレンズの様に、手掛かりを掴みかけては\n遠のいて行く‥‥\n<wait>
+m/MS0022.BIN	0:01	98	3797	1F72	{08:7A}状態の中、何とか起き上がると、煌々と灯る{08:05}ー画面に\n目が行{08:51}。\n<wait>		Using the last remaining bits of your strength, you pull yourself up,\nand have a look at the blinking words drawn on the screen.\n<wait>	v005		reads: そんな状態の中、何とか起き上がると、煌々と灯るコンピューター画面に\n目が行った。\n<wait>
+m/MS0022.BIN	0:01	99	3890	1F71	画面に浮かび上がる文字を読んで行くと、{08:90}やら{08:63}の記憶には{08:25}が、\n御茶ノ水{08:10}に向け、得体の知れ{08:25}{08:0A}を送信{08:4A}{08:64}様だ。\n<wait>		It appears that some sort of a package of data has been\nsent over to Ochanomizu Shelter. But when? And how?\n<wait>	v005		reads: 画面に浮かび上がる文字を読んで行くと、どうやら自分の記憶にはないが、\n御茶ノ水シェルターに向け、得体の知れないデータを送信していた様だ。\n<wait>
 m/MS0022.BIN	0:01	100	4008	1FBA	何とか思い出そうと、画面に目を懲らす		You attempt to recall what happened, but no avail.\nStaring at the computer screen makes your head hurt\nso bad it feels like it's about to split in half.\n<wait>	v005		
-m/MS0022.BIN	0:01	101	4048	00	{04:FF}{08:72}。\n{03:0B}思い出そうとすれば{08:8E}ほど、頭を耐えが{08:4E}痛みが走る。\n<wait>		reads: ‥‥。\nしかし、思い出そうとすればするほど、頭を耐えがたい痛みが走る。\n<wait>			
-m/MS0022.BIN	0:01	102	4122	00	{04:FF}{08:62}よろめきながらもベッドに移動し、倒れ込む様にベッドに横たわる。\n<wait>		reads: は、よろめきながらもベッドに移動し、倒れ込む様にベッドに横たわる。\n<wait>			
-m/MS0022.BIN	0:01	103	4218	1F71	もはや、何かを考え{08:69}と{08:68}気力{08:62}全く失われて{08:64}。\n{08:82}、安らかな眠り{08:74}が、今の		By now, I no longer had any will left to think about anything.\nAll that was left was a peaceful sleep, and that was all	ours		
-m/MS0022.BIN	0:01	104	4295	00	{04:FF}の望む{08:5E}であ{08:51}。\n<wait>		...I wanted, right now.\n<wait>	ours		
-m/MS0022.BIN	0:01	105	4324	00	{04:FF}を、深い眠りが襲う{02:08}{02:08}{08:72}\n<wait>		And just like that, you fall deep, deep asleep...\n<wait>	v005		
+m/MS0022.BIN	0:01	101	4048	00	{04:FF}{08:72}。\n{03:0B}思い出そうとすれば{08:8E}ほど、頭を耐えが{08:4E}痛みが走る。\n<wait>					reads: ‥‥。\nしかし、思い出そうとすればするほど、頭を耐えがたい痛みが走る。\n<wait>
+m/MS0022.BIN	0:01	102	4122	00	{04:FF}{08:62}よろめきながらもベッドに移動し、倒れ込む様にベッドに横たわる。\n<wait>					reads: は、よろめきながらもベッドに移動し、倒れ込む様にベッドに横たわる。\n<wait>
+m/MS0022.BIN	0:01	103	4218	1F71	もはや、何かを考え{08:69}と{08:68}気力{08:62}全く失われて{08:64}。\n{08:82}、安らかな眠り{08:74}が、今の		By now, I no longer had any will left to think about anything.\nAll that was left was a peaceful sleep, and that was all	ours		reads: もはや、何かを考えようという気力は、全く失われていた。\nただ、安らかな眠りだけが、今の
+m/MS0022.BIN	0:01	104	4295	00	{04:FF}の望む{08:5E}であ{08:51}。\n<wait>		...I wanted, right now.\n<wait>	ours		reads: の望むものであった。\n<wait>
+m/MS0022.BIN	0:01	105	4324	00	{04:FF}を、深い眠りが襲う{02:08}{02:08}{08:72}\n<wait>		And just like that, you fall deep, deep asleep...\n<wait>	v005		reads: を、深い眠りが襲う‥‥‥‥‥‥‥‥\n<wait>
 m/MS0022.BIN	0:02	0	32	1F03						
 m/MS0022.BIN	0:02	1	67	1FD0	ベッドの中で身じろぎもせず、		You slowly open your eyes to find yourself lying in your bed.\nYour body feels numb, and you can barely move a muscle.\n<wait>	v005		
-m/MS0022.BIN	0:02	2	99	00	{04:FF}は異常な{08:71}の虚脱感を全身に感じながら、\nゆっくりと目を開{08:64}。\n<wait>		reads: は異常なまでの虚脱感を全身に感じながら、\nゆっくりと目を開いた。\n<wait>			
-m/MS0022.BIN	0:02	3	167	1FBA	急激な目まいが、天井をまるで悪夢の様に歪{08:2E}{08:72}\n<wait>		reads: 急激な目まいが、天井をまるで悪夢の様に歪める‥‥\n<wait>			
-m/MS0022.BIN	0:02	4	222	00	{04:FF}に{08:62}動く事も、思考{08:8E}事も{08:72}\nそ{08:4A}、息を{08:4C}{08:68}事にさえも、全く関心が動かなく{08:1A}{08:64}。\n<wait>		reads: には、動く事も、思考する事も‥‥\nそして、息をするという事にさえも、全く関心が動かなくなっていた。\n<wait>			
-m/MS0022.BIN	0:02	5	308	1FBA	{01:23}瞬きもせずに虚空を見つめ、再びゆっくりと目を閉じる{02:08}\n<wait>		The entire room around you appears twisted.\nIt's as if you were still trapped inside a nightmare...\n<wait>	v005		
+m/MS0022.BIN	0:02	2	99	00	{04:FF}は異常な{08:71}の虚脱感を全身に感じながら、\nゆっくりと目を開{08:64}。\n<wait>					reads: は異常なまでの虚脱感を全身に感じながら、\nゆっくりと目を開いた。\n<wait>
+m/MS0022.BIN	0:02	3	167	1FBA	急激な目まいが、天井をまるで悪夢の様に歪{08:2E}{08:72}\n<wait>					reads: 急激な目まいが、天井をまるで悪夢の様に歪める‥‥\n<wait>
+m/MS0022.BIN	0:02	4	222	00	{04:FF}に{08:62}動く事も、思考{08:8E}事も{08:72}\nそ{08:4A}、息を{08:4C}{08:68}事にさえも、全く関心が動かなく{08:1A}{08:64}。\n<wait>					reads: には、動く事も、思考する事も‥‥\nそして、息をするという事にさえも、全く関心が動かなくなっていた。\n<wait>
+m/MS0022.BIN	0:02	5	308	1FBA	{01:23}瞬きもせずに虚空を見つめ、再びゆっくりと目を閉じる{02:08}\n<wait>		The entire room around you appears twisted.\nIt's as if you were still trapped inside a nightmare...\n<wait>	v005		reads: しばらく瞬きもせずに虚空を見つめ、再びゆっくりと目を閉じる‥‥‥\n<wait>
 m/MS0022.BIN	0:02	6	369	1FBA	睡魔が再び		You can't move, nor can you think.\nAre you even breathing anymore? Who knows at this point.\n<wait>	v005		
-m/MS0022.BIN	0:02	7	383	00	{04:FF}を、深淵の縁へと誘{08:52}行く{02:08}\n<wait>		reads: を、深淵の縁へと誘って行く‥‥‥\n<wait>			
-m/MS0022.BIN	0:02	8	475	1FD0	電話の音が鳴り響い{08:14}。\n<wait>		You can hear a phone ringing.\n<wait>	v005		
-m/MS0022.BIN	0:02	9	544	1FC4	出る者の{08:24}電話の音{08:62}まるでうつろな叫びの声の様に、{01:2E}の中に\n響き渡る{08:74}だ{08:51}{02:08}\n<wait>		With no one to pick it up, the phone continues ringing...\n<wait>	v005		
-m/MS0022.BIN	0:02	10	665	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	11	675	00	{04:FF}！\nそこに{08:40}{08:5F}ろ、		reads: ！\nそこにいるんだろ、			
-m/MS0022.BIN	0:02	12	698	00	{04:FF}ッ！！\n		reads: ッ！！\n			
-m/MS0022.BIN	0:02	13	723	1FB2	応答し{08:69}と試みる		Try to answer	v005		
-m/MS0022.BIN	0:02	14	741	1FB2	放{08:52}おく		Ignore it	v005		
-m/MS0022.BIN	0:02	15	763	0F	{01:15}{01:FF}	{01:15}{01:FF}	reads: いろいろ			
-m/MS0022.BIN	0:02	16	782	00	{04:FF}{08:62}重{08:89}ぶたを無理やり開き、{08:00}の呼びかけに応え{08:69}と{08:4B}。\n<wait>		Despite your eyelids feeling as if they were made out of lead,\nyou force them open and attempt to call back to Hayasaka.\n<wait>	v005		
-m/MS0022.BIN	0:02	17	872	1F71	{03:0B}	{03:0B}	And yet, it's to no avail.\nYour body's as heavy as a brick, and refuses to listen to you.\n<wait>	v005		
-m/MS0022.BIN	0:02	18	878	00	{04:FF}の身体は言う{08:46}を聞かず、腕も足も石に{08:16}{08:69}に重{08:18}。\n<wait>		reads: の身体は言うことを聞かず、腕も足も石になったように重かった。\n<wait>			
-m/MS0022.BIN	0:02	19	935	1FBA	何とか応答し{08:69}と試みた{08:5E}の、{08:79}口{08:42}は音は発せられ{08:19}。\n<wait>		You open your mouth, but nothing comes out.\n<wait>	v005		
-m/MS0022.BIN	0:02	20	994	1FBA	スピーカー{08:42}{08:62}{08:00}の声が聞こえてくる{02:08}‥\n<wait>		You can hear Hayasaka yelling through the speaker phone...\n<wait>	v005		
-m/MS0022.BIN	0:02	21	1052	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	22	1058	1FD3	何の連絡もよこさずに、\nお前一体そこで何をし{08:2B}{08:5F}？！\n<wait>		What's going on in there!?\nHey, answer me!\n<wait>	v005		
-m/MS0022.BIN	0:02	23	1118	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	24	1124	1FD3	お前は{08:5C}、れっきと{08:4B}、{02:00}な{08:5F}ぞ！\n<wait>		You're a Devil Buster, so act like one!\n<wait>	v005		
-m/MS0022.BIN	0:02	25	1165	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	26	1171	1FD3	学生{08:81}{08:25}{08:5F}、と{08:53}と出て来い！\n<wait>		This is not middle school anymore!\nYou can't just sleep in if you feel like it!\n<wait>	v005		
-m/MS0022.BIN	0:02	27	1211	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	28	1217	1FD3	なあ、お前一体{08:90}しち{08:20}{08:5F}？\n食事にすら来て{08:25}{08:52}言う{08:81}{08:25}か。\n<wait>		Seriously, what's going on with you?\nHave you even been eating anything?\n<wait>	v005		
-m/MS0022.BIN	0:02	29	1283	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	30	1289	1FD3	何か悩み事が{08:7B}{08:7D}、相談{08:4A}くれよ。\n<wait>身体の具合が悪い{08:7D}、連絡{08:4A}くれれば、\nすぐに{08:56}、お前の{01:2E}{08:71}迎えに行く。\n<wait>		If there's something weighing on your mind,\nyou can always come talk with me.\n<wait>Call me if you don't start feeling better.\nI'll come see you right away.\n<wait>	v005		
-m/MS0022.BIN	0:02	31	1402	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	32	1412	00	{04:FE}さんや、隊長も心配し{08:2B}。\nとにかく、連絡くれ。待っ{08:2B}{08:42}{08:72}\n<wait>		We are all so worried about you.\nPlease, just talk to us...\n<wait>	v005		
-m/MS0022.BIN	0:02	33	1490	1FD0	そこ{08:71}聞{08:64}{08:87}で		It is there that your mind once again begins fading away...\n<wait>	v005		
-m/MS0022.BIN	0:02	34	1508	00	{04:FF}{08:62}{08:5B}も強烈な睡魔に襲われ、\n意識が遠くなっ{08:21}{02:08}‥\n<wait>		reads: は、またも強烈な睡魔に襲われ、\n意識が遠くなっていった‥‥‥‥\n<wait>			
-m/MS0022.BIN	0:02	35	1617	1FD2	{08:04}：		Nishino:	v005		
-m/MS0022.BIN	0:02	36	1632	00	{04:FF}、出たく{08:25}の{08:7D}、{08:79}{08:7E}{08:65}には\n出なくて{08:7F}。\n<wait>		Katsuragi. If you don't want to talk,\nthen that's fine.\n<wait>	v005		
-m/MS0022.BIN	0:02	37	1682	1FD2	{08:04}：		Nishino:	v005		
-m/MS0022.BIN	0:02	38	1688	1FD3	{08:61}{02:08}良く聞いてくれ。\n<wait>		Just... listen to me well.\n<wait>	v005		
-m/MS0022.BIN	0:02	39	1717	1FD2	{08:04}：		Nishino:	v005		
-m/MS0022.BIN	0:02	40	1723	1FD3	君に何が起{08:51}か知れ{08:25}。\n<wait>		I don't know what happened with you.\nAnd I don't want to know.\n<wait>	v005		
-m/MS0022.BIN	0:02	41	1754	1FD2	{08:04}：		Nishino:	v005		
-m/MS0022.BIN	0:02	42	1760	1FD3	{03:0B}{08:6D}様な状況下にあ{08:52}も、{02:00}で\n{08:7B}{08:7C}、任務を放棄{08:8E}事は許{03:0C}{08:25}{08:77}。\n<wait>		Still, you're now a Devil Buster.\nYou can't just ignore your duties.\n<wait>	v005		
-m/MS0022.BIN	0:02	43	1837	00	{04:FF}{08:72}一体{08:90}{08:4B}{08:5F}？\n私も含め、皆、お前の事を心配{08:13}。\nせめて連絡の{01:3C}くらい、入れてくれ。\n<wait>		What on earth is going on with you, Katsuragi?\nI'm seriously worried about you. We all are.\nCan you at least tell us what's wrong?\n<wait>	v005		
-m/MS0022.BIN	0:02	44	1940	1FD0	{02:08}{08:72}頭の中に懐かしい声が響いて来る{02:08}{08:72}\n<wait>		......You can hear a familiar voice echo through your mind......\n<wait>	v005		
-m/MS0022.BIN	0:02	45	1985	1FBA	{03:0B}	{03:0B}	However, you're too tired to respond.\n<wait>	v005		
-m/MS0022.BIN	0:02	46	1991	00	{04:FF}に{08:62}何も考{08:28}気力が無い。\n<wait>		reads: には、何も考える気力が無い。\n<wait>			
-m/MS0022.BIN	0:02	47	2073	1FD2	{08:03}：		Emi:	v005		
-m/MS0022.BIN	0:02	48	2083	00	{04:FF}くん！\nねぇ、{08:40}んでしょ！？\n		Hey, Katsuragi-kun. I know you're in there.\nCould you please talk to me?\n	v005		
-m/MS0022.BIN	0:02	49	2129	1FB2	応答し{08:69}と試みる		Try to answer	v005		
-m/MS0022.BIN	0:02	50	2147	1FB2	放{08:52}おく		Ignore it	v005		
-m/MS0022.BIN	0:02	51	2169	0F	{01:73}{01:FF}	{01:73}{01:FF}	reads: 			
-m/MS0022.BIN	0:02	52	2226	00	{04:FF}は苦労{08:4A}、瞼を開{08:64}。\n<wait>		You force your eyelids open.\n<wait>	v005		
-m/MS0022.BIN	0:02	53	2284	1F71	{03:0B}眼球一つ動かすのも大儀で、応答し{08:69}と{08:4A}も、と{08:54}無理な事が\n分{08:18}にすぎ{08:19}。\n<wait>		However, that alone uses up all of your energy.\nYou simply do not have it in you to reply.\n<wait>	v005		
-m/MS0022.BIN	0:02	54	2364	1FBA	心配気な{08:03}の声が、スピーカー{08:42}響いてくる{02:08}‥\n<wait>		Emi's voice can be heard through the speaker phone...\n<wait>	v005		
-m/MS0022.BIN	0:02	55	2418	18	応答し{08:69}と{08:4B}{08:5E}の、		You attempt to say something,\nbut once again, your body refuses to listen.\n<wait>	v005		
-m/MS0022.BIN	0:02	56	2440	00	{04:FF}の身体{08:62}{08:79}主の命令を何一つ聞こうとは\nし{08:19}。\n<wait>		reads: の身体は、その主の命令を何一つ聞こうとは\nしなかった。\n<wait>			
-m/MS0022.BIN	0:02	57	2492	1FBA	スピーカー{08:42}{08:62}{08:03}の声が{01:2E}中に響い{08:14}{02:08}‥\n<wait>		You can hear Emi's voice through the speaker phone...\n<wait>	v005		
-m/MS0022.BIN	0:02	58	2550	1FD2	{08:03}：		reads: 英美：			
-m/MS0022.BIN	0:02	59	2560	00	{04:FF}くん。\n連絡{08:5D}{08:25}で、一体{08:90}{08:13}の？\n<wait>		reads: くん。\n連絡もしないで、一体どうしているの？\n<wait>			
-m/MS0022.BIN	0:02	60	2602	1FD2	{08:03}：		Emi:	v005		
-m/MS0022.BIN	0:02	61	2608	1FD3	皆も心配し{08:2B}{08:5F}よ。\n<wait>		Katsuragi-kun.\nPlease, just tell me what's wrong.\n<wait>	v005		
-m/MS0022.BIN	0:02	62	2633	1FD2	{08:03}：		Emi:	v005		
-m/MS0022.BIN	0:02	63	2639	1FD3	幾ら尋ねて行{08:52}も、幾ら連絡を取ろうと{08:4A}も、\n居留守{08:6A}てあんまり{08:81}{08:25}？\n<wait>		I'm so worried. We all are.\n<wait>	v005		
-m/MS0022.BIN	0:02	64	2715	1FD2	{08:03}：		Emi:	v005		
-m/MS0022.BIN	0:02	65	2721	1FD3	連絡{08:74}は入れて、お願いだ{08:42}、ね。\n<wait>		We've tried so many times, but you never respond.\n<wait>	v005		
-m/MS0022.BIN	0:02	66	2763	1FD2	{08:03}：		Emi:	v005		
-m/MS0022.BIN	0:02	67	2773	00	{04:FF}くん。\nおばさんに聞い{08:50}、食堂にも来て{08:24}{08:52}\n言うし{02:08}{08:72}\n<wait>		Please, at least talk to us.\n<wait>	v005		
-m/MS0022.BIN	0:02	68	2836	1FD2	{08:03}：		Emi:	v005		
-m/MS0022.BIN	0:02	69	2842	1FD3	ねぇ、本当に{08:90}しちゃ{08:51}の？\n<wait>		Katsuragi. I heard that you haven't been\nto the cafeteria for a few days now...\n<wait>	v005		
-m/MS0022.BIN	0:02	70	2877	1FD2	{08:03}：		Emi:	v005		
-m/MS0022.BIN	0:02	71	2883	1FD3	幾ら尋ねて行{08:52}も、幾ら連絡を取ろうと{08:4A}も、\n居留守{08:6A}てあんまり{08:81}{08:25}？\n<wait>		Seriously, what is going on?\n<wait>	v005		
-m/MS0022.BIN	0:02	72	2959	1FD2	{08:03}：		Emi:	v005		
-m/MS0022.BIN	0:02	73	2965	1FD3	連絡{08:74}は入れて、お願いだ{08:42}、ね。\n<wait>		We've tried so many times, but you never respond.\n<wait>	v005		
-m/MS0022.BIN	0:02	74	3024	00	{04:FF}の意識{08:62}{08:5B}深淵へと飲み込まれ{08:21}{02:08}\n<wait>		reads: の意識は、また深淵へと飲み込まれていった‥‥‥\n<wait>			
-m/MS0022.BIN	0:02	75	3135	1FD0	電話の音が鳴り響い{08:14}。\n		You can hear a phone ringing.\n	v005		
-m/MS0022.BIN	0:02	76	3204	1FBA	{01:23}の間鳴り続{08:43}後、電話の音は突然に止み、室内は再び静寂に\n包ま{08:60}{02:08}‥\n<wait>		A few moments later, the ringing stops,\nand the room is once again filled by silence...\n<wait>	v005		
+m/MS0022.BIN	0:02	7	383	00	{04:FF}を、深淵の縁へと誘{08:52}行く{02:08}\n<wait>					reads: を、深淵の縁へと誘って行く‥‥‥\n<wait>
+m/MS0022.BIN	0:02	8	475	1FD0	電話の音が鳴り響い{08:14}。\n<wait>		You can hear a phone ringing.\n<wait>	v005		reads: 電話の音が鳴り響いている。\n<wait>
+m/MS0022.BIN	0:02	9	544	1FC4	出る者の{08:24}電話の音{08:62}まるでうつろな叫びの声の様に、{01:2E}の中に\n響き渡る{08:74}だ{08:51}{02:08}\n<wait>		With no one to pick it up, the phone continues ringing...\n<wait>	v005		reads: 出る者のいない電話の音は、まるでうつろな叫びの声の様に、部屋の中に\n響き渡るだけだった‥‥‥\n<wait>
+m/MS0022.BIN	0:02	10	665	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	11	675	00	{04:FF}！\nそこに{08:40}{08:5F}ろ、					reads: ！\nそこにいるんだろ、
+m/MS0022.BIN	0:02	12	698	00	{04:FF}ッ！！\n					reads: ッ！！\n
+m/MS0022.BIN	0:02	13	723	1FB2	応答し{08:69}と試みる		Try to answer	v005		reads: 応答しようと試みる; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	14	741	1FB2	放{08:52}おく		Ignore it	v005		reads: 放っておく; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	15	763	0F	{01:15}{01:FF}	{01:15}{01:FF}				reads: いろいろ
+m/MS0022.BIN	0:02	16	782	00	{04:FF}{08:62}重{08:89}ぶたを無理やり開き、{08:00}の呼びかけに応え{08:69}と{08:4B}。\n<wait>		Despite your eyelids feeling as if they were made out of lead,\nyou force them open and attempt to call back to Hayasaka.\n<wait>	v005		reads: は、重いまぶたを無理やり開き、早坂の呼びかけに応えようとした。\n<wait>
+m/MS0022.BIN	0:02	17	872	1F71	{03:0B}	{03:0B}	And yet, it's to no avail.\nYour body's as heavy as a brick, and refuses to listen to you.\n<wait>	v005		reads: しかし、
+m/MS0022.BIN	0:02	18	878	00	{04:FF}の身体は言う{08:46}を聞かず、腕も足も石に{08:16}{08:69}に重{08:18}。\n<wait>					reads: の身体は言うことを聞かず、腕も足も石になったように重かった。\n<wait>
+m/MS0022.BIN	0:02	19	935	1FBA	何とか応答し{08:69}と試みた{08:5E}の、{08:79}口{08:42}は音は発せられ{08:19}。\n<wait>		You open your mouth, but nothing comes out.\n<wait>	v005		reads: 何とか応答しようと試みたものの、その口からは音は発せられなかった。\n<wait>
+m/MS0022.BIN	0:02	20	994	1FBA	スピーカー{08:42}{08:62}{08:00}の声が聞こえてくる{02:08}‥\n<wait>		You can hear Hayasaka yelling through the speaker phone...\n<wait>	v005		reads: スピーカーからは、早坂の声が聞こえてくる‥‥‥‥\n<wait>
+m/MS0022.BIN	0:02	21	1052	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	22	1058	1FD3	何の連絡もよこさずに、\nお前一体そこで何をし{08:2B}{08:5F}？！\n<wait>		What's going on in there!?\nHey, answer me!\n<wait>	v005		reads: 何の連絡もよこさずに、\nお前一体そこで何をしてるんだ？！\n<wait>
+m/MS0022.BIN	0:02	23	1118	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	24	1124	1FD3	お前は{08:5C}、れっきと{08:4B}、{02:00}な{08:5F}ぞ！\n<wait>		You're a Devil Buster, so act like one!\n<wait>	v005		reads: お前はもう、れっきとした、デビルバスターなんだぞ！\n<wait>
+m/MS0022.BIN	0:02	25	1165	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	26	1171	1FD3	学生{08:81}{08:25}{08:5F}、と{08:53}と出て来い！\n<wait>		This is not middle school anymore!\nYou can't just sleep in if you feel like it!\n<wait>	v005		reads: 学生じゃないんだ、とっとと出て来い！\n<wait>
+m/MS0022.BIN	0:02	27	1211	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	28	1217	1FD3	なあ、お前一体{08:90}しち{08:20}{08:5F}？\n食事にすら来て{08:25}{08:52}言う{08:81}{08:25}か。\n<wait>		Seriously, what's going on with you?\nHave you even been eating anything?\n<wait>	v005		reads: なあ、お前一体どうしちまったんだ？\n食事にすら来てないって言うじゃないか。\n<wait>
+m/MS0022.BIN	0:02	29	1283	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	30	1289	1FD3	何か悩み事が{08:7B}{08:7D}、相談{08:4A}くれよ。\n<wait>身体の具合が悪い{08:7D}、連絡{08:4A}くれれば、\nすぐに{08:56}、お前の{01:2E}{08:71}迎えに行く。\n<wait>		If there's something weighing on your mind,\nyou can always come talk with me.\n<wait>Call me if you don't start feeling better.\nI'll come see you right away.\n<wait>	v005		reads: 何か悩み事があるなら、相談してくれよ。\n<wait>身体の具合が悪いなら、連絡してくれれば、\nすぐにでも、お前の部屋まで迎えに行く。\n<wait>
+m/MS0022.BIN	0:02	31	1402	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	32	1412	00	{04:FE}さんや、隊長も心配し{08:2B}。\nとにかく、連絡くれ。待っ{08:2B}{08:42}{08:72}\n<wait>		We are all so worried about you.\nPlease, just talk to us...\n<wait>	v005		reads: さんや、隊長も心配してる。\nとにかく、連絡くれ。待ってるから‥‥\n<wait>
+m/MS0022.BIN	0:02	33	1490	1FD0	そこ{08:71}聞{08:64}{08:87}で		It is there that your mind once again begins fading away...\n<wait>	v005		reads: そこまで聞いたところで
+m/MS0022.BIN	0:02	34	1508	00	{04:FF}{08:62}{08:5B}も強烈な睡魔に襲われ、\n意識が遠くなっ{08:21}{02:08}‥\n<wait>					reads: は、またも強烈な睡魔に襲われ、\n意識が遠くなっていった‥‥‥‥\n<wait>
+m/MS0022.BIN	0:02	35	1617	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
+m/MS0022.BIN	0:02	36	1632	00	{04:FF}、出たく{08:25}の{08:7D}、{08:79}{08:7E}{08:65}には\n出なくて{08:7F}。\n<wait>		Katsuragi. If you don't want to talk,\nthen that's fine.\n<wait>	v005		reads: 、出たくないのなら、そのまま通信には\n出なくていい。\n<wait>
+m/MS0022.BIN	0:02	37	1682	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
+m/MS0022.BIN	0:02	38	1688	1FD3	{08:61}{02:08}良く聞いてくれ。\n<wait>		Just... listen to me well.\n<wait>	v005		reads: しかし‥‥‥良く聞いてくれ。\n<wait>
+m/MS0022.BIN	0:02	39	1717	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
+m/MS0022.BIN	0:02	40	1723	1FD3	君に何が起{08:51}か知れ{08:25}。\n<wait>		I don't know what happened with you.\nAnd I don't want to know.\n<wait>	v005		reads: 君に何が起ったか知れない。\n<wait>
+m/MS0022.BIN	0:02	41	1754	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
+m/MS0022.BIN	0:02	42	1760	1FD3	{03:0B}{08:6D}様な状況下にあ{08:52}も、{02:00}で\n{08:7B}{08:7C}、任務を放棄{08:8E}事は許{03:0C}{08:25}{08:77}。\n<wait>		Still, you're now a Devil Buster.\nYou can't just ignore your duties.\n<wait>	v005		reads: しかし、どの様な状況下にあっても、デビルバスターで\nあるならば、任務を放棄する事は許されないのだ。\n<wait>
+m/MS0022.BIN	0:02	43	1837	00	{04:FF}{08:72}一体{08:90}{08:4B}{08:5F}？\n私も含め、皆、お前の事を心配{08:13}。\nせめて連絡の{01:3C}くらい、入れてくれ。\n<wait>		What on earth is going on with you, Katsuragi?\nI'm seriously worried about you. We all are.\nCan you at least tell us what's wrong?\n<wait>	v005		reads: ‥‥一体どうしたんだ？\n私も含め、皆、お前の事を心配している。\nせめて連絡のひとつくらい、入れてくれ。\n<wait>
+m/MS0022.BIN	0:02	44	1940	1FD0	{02:08}{08:72}頭の中に懐かしい声が響いて来る{02:08}{08:72}\n<wait>		......You can hear a familiar voice echo through your mind......\n<wait>	v005		reads: ‥‥‥‥‥頭の中に懐かしい声が響いて来る‥‥‥‥‥\n<wait>
+m/MS0022.BIN	0:02	45	1985	1FBA	{03:0B}	{03:0B}	However, you're too tired to respond.\n<wait>	v005		reads: しかし、
+m/MS0022.BIN	0:02	46	1991	00	{04:FF}に{08:62}何も考{08:28}気力が無い。\n<wait>					reads: には、何も考える気力が無い。\n<wait>
+m/MS0022.BIN	0:02	47	2073	1FD2	{08:03}：		Emi:	v005		reads: 英美：
+m/MS0022.BIN	0:02	48	2083	00	{04:FF}くん！\nねぇ、{08:40}んでしょ！？\n		Hey, Katsuragi-kun. I know you're in there.\nCould you please talk to me?\n	v005		reads: くん！\nねぇ、いるんでしょ！？\n
+m/MS0022.BIN	0:02	49	2129	1FB2	応答し{08:69}と試みる		Try to answer	v005		reads: 応答しようと試みる; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	50	2147	1FB2	放{08:52}おく		Ignore it	v005		reads: 放っておく; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	51	2169	0F	{01:73}{01:FF}	{01:73}{01:FF}				reads: 
+m/MS0022.BIN	0:02	52	2226	00	{04:FF}は苦労{08:4A}、瞼を開{08:64}。\n<wait>		You force your eyelids open.\n<wait>	v005		reads: は苦労して、瞼を開いた。\n<wait>
+m/MS0022.BIN	0:02	53	2284	1F71	{03:0B}眼球一つ動かすのも大儀で、応答し{08:69}と{08:4A}も、と{08:54}無理な事が\n分{08:18}にすぎ{08:19}。\n<wait>		However, that alone uses up all of your energy.\nYou simply do not have it in you to reply.\n<wait>	v005		reads: しかし、眼球一つ動かすのも大儀で、応答しようとしても、とても無理な事が\n分かったにすぎなかった。\n<wait>
+m/MS0022.BIN	0:02	54	2364	1FBA	心配気な{08:03}の声が、スピーカー{08:42}響いてくる{02:08}‥\n<wait>		Emi's voice can be heard through the speaker phone...\n<wait>	v005		reads: 心配気な英美の声が、スピーカーから響いてくる‥‥‥‥\n<wait>
+m/MS0022.BIN	0:02	55	2418	18	応答し{08:69}と{08:4B}{08:5E}の、		You attempt to say something,\nbut once again, your body refuses to listen.\n<wait>	v005		reads: 応答しようとしたものの、
+m/MS0022.BIN	0:02	56	2440	00	{04:FF}の身体{08:62}{08:79}主の命令を何一つ聞こうとは\nし{08:19}。\n<wait>					reads: の身体は、その主の命令を何一つ聞こうとは\nしなかった。\n<wait>
+m/MS0022.BIN	0:02	57	2492	1FBA	スピーカー{08:42}{08:62}{08:03}の声が{01:2E}中に響い{08:14}{02:08}‥\n<wait>		You can hear Emi's voice through the speaker phone...\n<wait>	v005		reads: スピーカーからは、英美の声が部屋中に響いている‥‥‥‥\n<wait>
+m/MS0022.BIN	0:02	58	2550	1FD2	{08:03}：					reads: 英美：
+m/MS0022.BIN	0:02	59	2560	00	{04:FF}くん。\n連絡{08:5D}{08:25}で、一体{08:90}{08:13}の？\n<wait>					reads: くん。\n連絡もしないで、一体どうしているの？\n<wait>
+m/MS0022.BIN	0:02	60	2602	1FD2	{08:03}：		Emi:	v005		reads: 英美：
+m/MS0022.BIN	0:02	61	2608	1FD3	皆も心配し{08:2B}{08:5F}よ。\n<wait>		Katsuragi-kun.\nPlease, just tell me what's wrong.\n<wait>	v005		reads: 皆も心配してるんだよ。\n<wait>
+m/MS0022.BIN	0:02	62	2633	1FD2	{08:03}：		Emi:	v005		reads: 英美：
+m/MS0022.BIN	0:02	63	2639	1FD3	幾ら尋ねて行{08:52}も、幾ら連絡を取ろうと{08:4A}も、\n居留守{08:6A}てあんまり{08:81}{08:25}？\n<wait>		I'm so worried. We all are.\n<wait>	v005		reads: 幾ら尋ねて行っても、幾ら連絡を取ろうとしても、\n居留守なんてあんまりじゃない？\n<wait>
+m/MS0022.BIN	0:02	64	2715	1FD2	{08:03}：		Emi:	v005		reads: 英美：
+m/MS0022.BIN	0:02	65	2721	1FD3	連絡{08:74}は入れて、お願いだ{08:42}、ね。\n<wait>		We've tried so many times, but you never respond.\n<wait>	v005		reads: 連絡だけは入れて、お願いだから、ね。\n<wait>
+m/MS0022.BIN	0:02	66	2763	1FD2	{08:03}：		Emi:	v005		reads: 英美：
+m/MS0022.BIN	0:02	67	2773	00	{04:FF}くん。\nおばさんに聞い{08:50}、食堂にも来て{08:24}{08:52}\n言うし{02:08}{08:72}\n<wait>		Please, at least talk to us.\n<wait>	v005		reads: くん。\nおばさんに聞いたら、食堂にも来ていないって\n言うし‥‥‥‥‥\n<wait>
+m/MS0022.BIN	0:02	68	2836	1FD2	{08:03}：		Emi:	v005		reads: 英美：
+m/MS0022.BIN	0:02	69	2842	1FD3	ねぇ、本当に{08:90}しちゃ{08:51}の？\n<wait>		Katsuragi. I heard that you haven't been\nto the cafeteria for a few days now...\n<wait>	v005		reads: ねぇ、本当にどうしちゃったの？\n<wait>
+m/MS0022.BIN	0:02	70	2877	1FD2	{08:03}：		Emi:	v005		reads: 英美：
+m/MS0022.BIN	0:02	71	2883	1FD3	幾ら尋ねて行{08:52}も、幾ら連絡を取ろうと{08:4A}も、\n居留守{08:6A}てあんまり{08:81}{08:25}？\n<wait>		Seriously, what is going on?\n<wait>	v005		reads: 幾ら尋ねて行っても、幾ら連絡を取ろうとしても、\n居留守なんてあんまりじゃない？\n<wait>
+m/MS0022.BIN	0:02	72	2959	1FD2	{08:03}：		Emi:	v005		reads: 英美：
+m/MS0022.BIN	0:02	73	2965	1FD3	連絡{08:74}は入れて、お願いだ{08:42}、ね。\n<wait>		We've tried so many times, but you never respond.\n<wait>	v005		reads: 連絡だけは入れて、お願いだから、ね。\n<wait>
+m/MS0022.BIN	0:02	74	3024	00	{04:FF}の意識{08:62}{08:5B}深淵へと飲み込まれ{08:21}{02:08}\n<wait>					reads: の意識は、また深淵へと飲み込まれていった‥‥‥\n<wait>
+m/MS0022.BIN	0:02	75	3135	1FD0	電話の音が鳴り響い{08:14}。\n		You can hear a phone ringing.\n	v005		reads: 電話の音が鳴り響いている。\n
+m/MS0022.BIN	0:02	76	3204	1FBA	{01:23}の間鳴り続{08:43}後、電話の音は突然に止み、室内は再び静寂に\n包ま{08:60}{02:08}‥\n<wait>		A few moments later, the ringing stops,\nand the room is once again filled by silence...\n<wait>	v005		reads: しばらくの間鳴り続けた後、電話の音は突然に止み、室内は再び静寂に\n包まれた‥‥‥‥\n<wait>
 m/MS0022.BIN	0:02	77	3289	1E07	誰かが、		You wake up to someone shaking your body...\n<wait>	v005		
-m/MS0022.BIN	0:02	78	3301	00	{04:FF}の身体を揺さぶっ{08:14}{02:08}\n<wait>		reads: の身体を揺さぶっている‥‥‥\n<wait>			
-m/MS0022.BIN	0:02	79	3396	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	80	3406	00	{04:FF}くん！　		reads: くん！　			
-m/MS0022.BIN	0:02	81	3420	00	{04:FF}くん！\n<wait>		reads: くん！\n<wait>			
-m/MS0022.BIN	0:02	82	3437	1FD0	さすがの虚脱感も、{08:79}声に束の間追い払わ{08:60}{08:69}だ{02:08}。\n		reads: さすがの虚脱感も、その声に束の間追い払われたようだ‥‥‥。\n			
-m/MS0022.BIN	0:02	83	3490	00	{04:FF}{08:62}何とか{08:79}目を開{08:64}。\n<wait>		reads: は、何とかその目を開いた。\n<wait>			
-m/MS0022.BIN	0:02	84	3525	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	85	3531	1FD3	{02:08}‥良{08:18}、息もあんまりし{08:25}{08:5F}{08:5E}。\n睡眠薬か何かを飲んで、昏睡し{08:2B}のかと思{08:51}。\n<wait>		Katsuragi-kun! Hey, Katsuragi-kun!\n<wait>	v005		
-m/MS0022.BIN	0:02	86	3619	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	87	3629	00	{04:FF}{08:72}くん？\n<wait>ねぇ{08:72}{01:32}？　私が誰だか分かる？\n<wait>		reads: ‥‥くん？\n<wait>ねぇ‥‥大丈夫？　私が誰だか分かる？\n<wait>			
-m/MS0022.BIN	0:02	88	3687	00	{04:FE}{08:62}	{04:FE}{08:62}	reads: は、			
-m/MS0022.BIN	0:02	89	3695	00	{04:FF}の手に{08:63}の手を重ね、{08:79}手を引き寄せ{08:69}と{08:4B}。\n<wait>		reads: の手に自分の手を重ね、その手を引き寄せようとした。\n<wait>			
-m/MS0022.BIN	0:02	90	3752	00	{04:FE}：		reads: ：			
+m/MS0022.BIN	0:02	78	3301	00	{04:FF}の身体を揺さぶっ{08:14}{02:08}\n<wait>					reads: の身体を揺さぶっている‥‥‥\n<wait>
+m/MS0022.BIN	0:02	79	3396	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	80	3406	00	{04:FF}くん！　					reads: くん！　
+m/MS0022.BIN	0:02	81	3420	00	{04:FF}くん！\n<wait>					reads: くん！\n<wait>
+m/MS0022.BIN	0:02	82	3437	1FD0	さすがの虚脱感も、{08:79}声に束の間追い払わ{08:60}{08:69}だ{02:08}。\n					reads: さすがの虚脱感も、その声に束の間追い払われたようだ‥‥‥。\n
+m/MS0022.BIN	0:02	83	3490	00	{04:FF}{08:62}何とか{08:79}目を開{08:64}。\n<wait>					reads: は、何とかその目を開いた。\n<wait>
+m/MS0022.BIN	0:02	84	3525	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	85	3531	1FD3	{02:08}‥良{08:18}、息もあんまりし{08:25}{08:5F}{08:5E}。\n睡眠薬か何かを飲んで、昏睡し{08:2B}のかと思{08:51}。\n<wait>		Katsuragi-kun! Hey, Katsuragi-kun!\n<wait>	v005		reads: ‥‥‥‥良かった、息もあんまりしないんだもの。\n睡眠薬か何かを飲んで、昏睡してるのかと思った。\n<wait>
+m/MS0022.BIN	0:02	86	3619	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	87	3629	00	{04:FF}{08:72}くん？\n<wait>ねぇ{08:72}{01:32}？　私が誰だか分かる？\n<wait>					reads: ‥‥くん？\n<wait>ねぇ‥‥大丈夫？　私が誰だか分かる？\n<wait>
+m/MS0022.BIN	0:02	88	3687	00	{04:FE}{08:62}	{04:FE}{08:62}				reads: は、
+m/MS0022.BIN	0:02	89	3695	00	{04:FF}の手に{08:63}の手を重ね、{08:79}手を引き寄せ{08:69}と{08:4B}。\n<wait>					reads: の手に自分の手を重ね、その手を引き寄せようとした。\n<wait>
+m/MS0022.BIN	0:02	90	3752	00	{04:FE}：					reads: ：
 m/MS0022.BIN	0:02	91	3758	1FD3	キャアッ！！\n<wait>		I'm so glad...\nYou were hardly breathing, and I thought you might have...\n<wait>	v005		
-m/MS0022.BIN	0:02	92	3783	00	{04:FF}の両手に{08:62}血が乾いてこびり付き、周囲のシーツに{08:62}どす黒い血の痕が\n染み込んで{08:64}。\n<wait>		reads: の両手には、血が乾いてこびり付き、周囲のシーツには、どす黒い血の痕が\n染み込んでいた。\n<wait>			
-m/MS0022.BIN	0:02	93	3877	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	94	3887	00	{04:FF}くん{02:08}‥爪が裂け{08:2B}。\n{08:90}{08:4A}、{08:73}に酷く{08:16}の？\n<wait>		reads: くん‥‥‥‥爪が裂けてる。\nどうして、こんなに酷くなったの？\n<wait>			
-m/MS0022.BIN	0:02	95	3943	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	96	3949	1FD3	{08:7F}わ理由{08:6A}て。{08:7A}事より、すぐ手当てをしなきゃ。\n		Umm... Katsuragi-kun...?\n<wait>Are you... alright? Do you recognize me?\n<wait>	v005		
-m/MS0022.BIN	0:02	97	4000	00	{04:FF}くん、私、医療キットを取{08:52}来る{08:42}、{08:45}{08:42}動いちゃ駄目よ。\n<wait>		reads: くん、私、医療キットを取って来るから、ここから動いちゃ駄目よ。\n<wait>			
-m/MS0022.BIN	0:02	98	4100	00	{04:FE}は足早に、		reads: は足早に、			
-m/MS0022.BIN	0:02	99	4116	00	{04:FF}の{01:2E}を出て行{08:51}。\n<wait>		reads: の部屋を出て行った。\n<wait>			
-m/MS0022.BIN	0:02	100	4141	1FBA	{01:23}、虚空を見つめて{08:64}{08:74}だ{08:51}		reads: しばらく、虚空を見つめていただけだった			
-m/MS0022.BIN	0:02	101	4171	00	{04:FF}{08:62}ひどい空腹感を感じ{08:14}事に\n気づ{08:64}。\n<wait>		reads: は、ひどい空腹感を感じている事に\n気づいた。\n<wait>			
-m/MS0022.BIN	0:02	102	4245	00	{04:FF}の足{08:62}自然と{01:2E}の外に向かい歩き出{08:4B}。\n<wait>		reads: の足は、自然と部屋の外に向かい歩き出した。\n<wait>			
+m/MS0022.BIN	0:02	92	3783	00	{04:FF}の両手に{08:62}血が乾いてこびり付き、周囲のシーツに{08:62}どす黒い血の痕が\n染み込んで{08:64}。\n<wait>					reads: の両手には、血が乾いてこびり付き、周囲のシーツには、どす黒い血の痕が\n染み込んでいた。\n<wait>
+m/MS0022.BIN	0:02	93	3877	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	94	3887	00	{04:FF}くん{02:08}‥爪が裂け{08:2B}。\n{08:90}{08:4A}、{08:73}に酷く{08:16}の？\n<wait>					reads: くん‥‥‥‥爪が裂けてる。\nどうして、こんなに酷くなったの？\n<wait>
+m/MS0022.BIN	0:02	95	3943	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	96	3949	1FD3	{08:7F}わ理由{08:6A}て。{08:7A}事より、すぐ手当てをしなきゃ。\n		Umm... Katsuragi-kun...?\n<wait>Are you... alright? Do you recognize me?\n<wait>	v005		reads: いいわ理由なんて。そんな事より、すぐ手当てをしなきゃ。\n
+m/MS0022.BIN	0:02	97	4000	00	{04:FF}くん、私、医療キットを取{08:52}来る{08:42}、{08:45}{08:42}動いちゃ駄目よ。\n<wait>					reads: くん、私、医療キットを取って来るから、ここから動いちゃ駄目よ。\n<wait>
+m/MS0022.BIN	0:02	98	4100	00	{04:FE}は足早に、					reads: は足早に、
+m/MS0022.BIN	0:02	99	4116	00	{04:FF}の{01:2E}を出て行{08:51}。\n<wait>					reads: の部屋を出て行った。\n<wait>
+m/MS0022.BIN	0:02	100	4141	1FBA	{01:23}、虚空を見つめて{08:64}{08:74}だ{08:51}					reads: しばらく、虚空を見つめていただけだった
+m/MS0022.BIN	0:02	101	4171	00	{04:FF}{08:62}ひどい空腹感を感じ{08:14}事に\n気づ{08:64}。\n<wait>					reads: は、ひどい空腹感を感じている事に\n気づいた。\n<wait>
+m/MS0022.BIN	0:02	102	4245	00	{04:FF}の足{08:62}自然と{01:2E}の外に向かい歩き出{08:4B}。\n<wait>					reads: の足は、自然と部屋の外に向かい歩き出した。\n<wait>
 m/MS0022.BIN	0:02	103	4333	1F03						
-m/MS0022.BIN	0:02	104	4351	00	{04:FF}{08:62}直に床に座り、\n調達{08:4A}来た大量のＤＢ専用食を、貪ぼる様に喰い散らか{08:13}。\n<wait>		reads: は、直に床に座り、\n調達して来た大量のＤＢ専用食を、貪ぼる様に喰い散らかしている。\n<wait>			
-m/MS0022.BIN	0:02	105	4431	1FBA	そこにあ{08:51}の{08:62}かつての		reads: そこにあったのは、かつての			
-m/MS0022.BIN	0:02	106	4457	00	{04:FF}の面影等{08:25}、濁{08:51}瞳を{08:4B}、頬の痩{08:43}\n狂人の姿だ{08:51}。\n<wait>		reads: の面影等ない、濁った瞳をした、頬の痩けた\n狂人の姿だった。\n<wait>			
-m/MS0022.BIN	0:02	107	4519	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	108	4529	00	{04:FF}{08:72}くん{02:08}‥。\n<wait>		reads: ‥‥くん‥‥‥‥。\n<wait>			
-m/MS0022.BIN	0:02	109	4616	00	{04:FE}{08:62}目に涙を溜めながら、黙{08:52}傷の手当てを{08:8E}。\nこびりついてかなかな取れ{08:25}血を、優しく丁寧にふき取{08:52}行く。\n<wait>		reads: は、目に涙を溜めながら、黙って傷の手当てをする。\nこびりついてかなかな取れない血を、優しく丁寧にふき取って行く。\n<wait>			
-m/MS0022.BIN	0:02	110	4726	1FBA	屈み込む姿勢のせいで、首筋{08:42}肩に流{08:2F}、柔らかそうな栗色の髪が、\n首筋を露にし、肩{08:42}滑り落ちる{02:08}\n<wait>		reads: 屈み込む姿勢のせいで、首筋から肩に流れる、柔らかそうな栗色の髪が、\n首筋を露にし、肩から滑り落ちる‥‥‥\n<wait>			
-m/MS0022.BIN	0:02	111	4826	1FBA	{08:79}瞬間、		reads: その瞬間、			
-m/MS0022.BIN	0:02	112	4838	00	{04:FF}の脳裏の中で、何かが弾{08:43}！\n<wait>		reads: の脳裏の中で、何かが弾けた！\n<wait>			
-m/MS0022.BIN	0:02	113	4873	1FBA	{08:4D}{08:62}狂おしい程の欲望と劣情{08:72}\nいや、{08:4D}にも似た、激しい血への餓え、血への欲求であ{08:51}。\n<wait>		reads: それは、狂おしい程の欲望と劣情‥‥\nいや、それにも似た、激しい血への餓え、血への欲求であった。\n<wait>			
-m/MS0022.BIN	0:02	114	4999	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	115	5009	00	{04:FF}くん、何を見{08:14}の？\n<wait>		reads: くん、何を見ているの？\n<wait>			
-m/MS0022.BIN	0:02	116	5042	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	117	5052	00	{04:FF}くん？{02:08}い‥嫌ッ！！！\n<wait>		reads: くん？‥‥‥い‥嫌ッ！！！\n<wait>			
-m/MS0022.BIN	0:02	118	5089	00	{04:FF}を懸命に想い、信じる		reads: を懸命に想い、信じる			
-m/MS0022.BIN	0:02	119	5115	00	{04:FE}{08:55}らも、{08:79}視線の奥に潜む邪悪な欲求を、\n無意識に感じ取{08:51}様だ。\n<wait>		reads: ですらも、その視線の奥に潜む邪悪な欲求を、\n無意識に感じ取った様だ。\n<wait>			
-m/MS0022.BIN	0:02	120	5191	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	121	5197	1FD3	貴方は{08:72}貴方{08:62}		Eek!\n<wait>	v005		
-m/MS0022.BIN	0:02	122	5215	00	{04:FF}くん{08:81}{08:25}わ！\n<wait>		Your hands are covered in black, dried-up blood.\nSo is the mattress. And the sheets.\n<wait>	v005		
-m/MS0022.BIN	0:02	123	5250	00	{04:FE}{08:62}怯えて去{08:52}行{08:51}{02:08}\n<wait>		Yuuka:	v005		
-m/MS0022.BIN	0:02	124	5277	1FBA	室内を、重苦しい静寂が包みこむ{02:08}‥\n<wait>		Katsuragi-kun, your nails... What happened to you?\n<wait>	v005		
-m/MS0022.BIN	0:02	125	5322	00	{04:FF}を、抗え{08:25}睡魔が再び襲{08:52}来た。\n<wait>		Yuuka:	v005		
-m/MS0022.BIN	0:02	126	5388	00	{04:FF}{08:62}再び深い眠りにつ{08:64}{02:08}{08:72}\n<wait>		It doesn't matter. We need to get you to a doctor. And fast.\nListen, you just hang on tight while I go get help, okay?\n<wait>	v005		
-m/MS0022.BIN	0:02	127	5444	1FD0	そ{08:4A}翌日{02:08}。\n<wait>		With that, Yuuka dashes off.\n<wait>	v005		
+m/MS0022.BIN	0:02	104	4351	00	{04:FF}{08:62}直に床に座り、\n調達{08:4A}来た大量のＤＢ専用食を、貪ぼる様に喰い散らか{08:13}。\n<wait>					reads: は、直に床に座り、\n調達して来た大量のＤＢ専用食を、貪ぼる様に喰い散らかしている。\n<wait>
+m/MS0022.BIN	0:02	105	4431	1FBA	そこにあ{08:51}の{08:62}かつての					reads: そこにあったのは、かつての
+m/MS0022.BIN	0:02	106	4457	00	{04:FF}の面影等{08:25}、濁{08:51}瞳を{08:4B}、頬の痩{08:43}\n狂人の姿だ{08:51}。\n<wait>					reads: の面影等ない、濁った瞳をした、頬の痩けた\n狂人の姿だった。\n<wait>
+m/MS0022.BIN	0:02	107	4519	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	108	4529	00	{04:FF}{08:72}くん{02:08}‥。\n<wait>					reads: ‥‥くん‥‥‥‥。\n<wait>
+m/MS0022.BIN	0:02	109	4616	00	{04:FE}{08:62}目に涙を溜めながら、黙{08:52}傷の手当てを{08:8E}。\nこびりついてかなかな取れ{08:25}血を、優しく丁寧にふき取{08:52}行く。\n<wait>					reads: は、目に涙を溜めながら、黙って傷の手当てをする。\nこびりついてかなかな取れない血を、優しく丁寧にふき取って行く。\n<wait>
+m/MS0022.BIN	0:02	110	4726	1FBA	屈み込む姿勢のせいで、首筋{08:42}肩に流{08:2F}、柔らかそうな栗色の髪が、\n首筋を露にし、肩{08:42}滑り落ちる{02:08}\n<wait>					reads: 屈み込む姿勢のせいで、首筋から肩に流れる、柔らかそうな栗色の髪が、\n首筋を露にし、肩から滑り落ちる‥‥‥\n<wait>
+m/MS0022.BIN	0:02	111	4826	1FBA	{08:79}瞬間、					reads: その瞬間、
+m/MS0022.BIN	0:02	112	4838	00	{04:FF}の脳裏の中で、何かが弾{08:43}！\n<wait>					reads: の脳裏の中で、何かが弾けた！\n<wait>
+m/MS0022.BIN	0:02	113	4873	1FBA	{08:4D}{08:62}狂おしい程の欲望と劣情{08:72}\nいや、{08:4D}にも似た、激しい血への餓え、血への欲求であ{08:51}。\n<wait>					reads: それは、狂おしい程の欲望と劣情‥‥\nいや、それにも似た、激しい血への餓え、血への欲求であった。\n<wait>
+m/MS0022.BIN	0:02	114	4999	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	115	5009	00	{04:FF}くん、何を見{08:14}の？\n<wait>					reads: くん、何を見ているの？\n<wait>
+m/MS0022.BIN	0:02	116	5042	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	117	5052	00	{04:FF}くん？{02:08}い‥嫌ッ！！！\n<wait>					reads: くん？‥‥‥い‥嫌ッ！！！\n<wait>
+m/MS0022.BIN	0:02	118	5089	00	{04:FF}を懸命に想い、信じる					reads: を懸命に想い、信じる
+m/MS0022.BIN	0:02	119	5115	00	{04:FE}{08:55}らも、{08:79}視線の奥に潜む邪悪な欲求を、\n無意識に感じ取{08:51}様だ。\n<wait>					reads: ですらも、その視線の奥に潜む邪悪な欲求を、\n無意識に感じ取った様だ。\n<wait>
+m/MS0022.BIN	0:02	120	5191	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	121	5197	1FD3	貴方は{08:72}貴方{08:62}		Eek!\n<wait>	v005		reads: 貴方は‥‥貴方は、
+m/MS0022.BIN	0:02	122	5215	00	{04:FF}くん{08:81}{08:25}わ！\n<wait>		Your hands are covered in black, dried-up blood.\nSo is the mattress. And the sheets.\n<wait>	v005		reads: くんじゃないわ！\n<wait>
+m/MS0022.BIN	0:02	123	5250	00	{04:FE}{08:62}怯えて去{08:52}行{08:51}{02:08}\n<wait>		Yuuka:	v005		reads: は、怯えて去って行った‥‥‥\n<wait>
+m/MS0022.BIN	0:02	124	5277	1FBA	室内を、重苦しい静寂が包みこむ{02:08}‥\n<wait>		Katsuragi-kun, your nails... What happened to you?\n<wait>	v005		reads: 室内を、重苦しい静寂が包みこむ‥‥‥‥\n<wait>
+m/MS0022.BIN	0:02	125	5322	00	{04:FF}を、抗え{08:25}睡魔が再び襲{08:52}来た。\n<wait>		Yuuka:	v005		reads: を、抗えない睡魔が再び襲って来た。\n<wait>
+m/MS0022.BIN	0:02	126	5388	00	{04:FF}{08:62}再び深い眠りにつ{08:64}{02:08}{08:72}\n<wait>		It doesn't matter. We need to get you to a doctor. And fast.\nListen, you just hang on tight while I go get help, okay?\n<wait>	v005		reads: は、再び深い眠りについた‥‥‥‥‥\n<wait>
+m/MS0022.BIN	0:02	127	5444	1FD0	そ{08:4A}翌日{02:08}。\n<wait>		With that, Yuuka dashes off.\n<wait>	v005		reads: そして翌日‥‥‥。\n<wait>
 m/MS0022.BIN	0:02	128	5463	1FBA	ベッドで目覚めた		A few moments pass when all of a sudden,\nyou notice that you are incredibly hungry.\n<wait>	v005		
-m/MS0022.BIN	0:02	129	5483	00	{04:FF}{08:62}{08:63}の身に久々にまともな感覚、\nまともな感情が戻{08:52}来た事を感じた。\n<wait>		reads: は、自分の身に久々にまともな感覚、\nまともな感情が戻って来た事を感じた。\n<wait>			
-m/MS0022.BIN	0:02	130	5557	1FBA	ベッドの中でゆっくりと深呼吸をし、昨日{08:71}の事を振り返る{02:08}‥\n<wait>		She has to lean forwards to reach them, which causes her soft,\nblonde hair to droop over her shoulders, exposing her neck.\n<wait>	v005		
-m/MS0022.BIN	0:02	131	5622	1FBA	{08:63}が異常な行動を取{08:52}{08:1F}事。\n{08:4D}は“{08:0B}撃退{08:09}”を解凍{08:4B}時{08:42}始{08:20}事。\n<wait>		In that instant, something lights up inside your head.\n<wait>	v005		
-m/MS0022.BIN	0:02	132	5692	1FBA	{08:4D}らを頭の中で整理{08:4A}行くうちに、{08:7B}{01:3C}の事件を思い出{08:4B}。\n丁度、{08:63}がおかしく{08:16}当日の夜、{08:05}ー画面に残{03:0C}た、\nあの奇妙な{08:0A}送信文の事を{02:08}。\n<wait>		That something is lust. And not the sexual kind, but rather, bloodlust.\nYou want to drink her blood, to consume her flesh...\n<wait>	v005		
-m/MS0022.BIN	0:02	133	5835	00	{04:FF}{08:62}急いで{08:05}ーに向{08:18}。\n<wait>		reads: は、急いでコンピューターに向かった。\n<wait>			
-m/MS0022.BIN	0:02	134	5905	1FD0	{08:05}ーに{08:62}常時ロックが掛けられ{08:14}。\nロックを解除し{08:57}、何{01:3C}操作は出来{08:25}。\nそ{08:4A}、ロック解除に{08:62}{01:1B}入力が必要だ。\n<wait>		Clearly frightened out of her mind, Yuuka runs off.\n<wait>	v005		
-m/MS0022.BIN	0:02	135	6018	1FBA	{01:1B}名は“ＺＯＷＹ－ＴＨＥ－ＫＩＴＴＹ”\n		A heavy silence falls upon you...\n<wait>	v005		
-m/MS0022.BIN	0:02	136	6061	00	{04:FF}以外に{08:62}誰も知る者は{08:24}。\n<wait>		reads: 以外には、誰も知る者はいない。\n<wait>			
-m/MS0022.BIN	0:02	137	6094	1FBA	{08:79}{01:1B}名{08:62}		Before you know it,\nyou once again find yourself feeling tired beyond belief.\n<wait>	v005		
-m/MS0022.BIN	0:02	138	6106	00	{04:FF}が幼い頃、両親に買{08:52}貰{08:51}小さなロボット猫に\n付{08:43}名前だ{08:51}。\n<wait>		reads: が幼い頃、両親に買って貰った小さなロボット猫に\n付けた名前だった。\n<wait>			
-m/MS0022.BIN	0:02	139	6172	1FBA	{01:28}の様に{01:1B}を入力し、ロック解除{08:8E}		As you wake up, you find that your senses have recovered.\nYou finally feel like yourself again.\n<wait>	v005		
-m/MS0022.BIN	0:02	140	6208	00	{04:FF}。\nそ{08:4A}、{08:0A}{08:65}のTENPを開き、問題の夜の記録を探す{02:08}\n<wait>		reads: 。\nそして、データ通信のTENPを開き、問題の夜の記録を探す‥‥‥\n<wait>			
-m/MS0022.BIN	0:02	141	6278	1FBD	{02:08}メイルを{03:08}ロードし{08:5A}\n<wait>		......Uploading attachment.\n<wait>	v005		
-m/MS0022.BIN	0:02	142	6307	1FBA	AIM.BIN　１．２ギガバイト{02:08}{02:08}{08:72}\n<wait>		AIM.BIN / 1.2 Gigabytes<wait>	v005		
-m/MS0022.BIN	0:02	143	6345	1FBA	{03:08}ロード完了\n<wait>		Upload completed.\n<wait>	v005		
-m/MS0022.BIN	0:02	144	6364	1FBA	送信先を指定{08:4A}{08:6E}\n{02:08}{02:08}{08:72}御茶ノ水{08:10}\n<wait>		Please specify recipient's address.\n............Ochanomizu Shelter\n<wait>	v005		
-m/MS0022.BIN	0:02	145	6404	1FBA	{02:08}{02:08}{08:72}送信完了\n<wait>		............Message sent.\n<wait>	v005		
-m/MS0022.BIN	0:02	146	6425	1FBA	何かキーを押{08:4A}{08:6E}。{08:65}を終了し{08:5A}。\n<wait>		Press any key to close this window.\n<wait>	v005		
-m/MS0022.BIN	0:02	147	6466	1FD0	御茶の水{08:10}に宛て、{08:0B}の名前とおぼしきファイルを送信{08:13}。\n<wait>		A file seemingly named after a demon was sent to Ochanomizu Shelter.\n<wait>	v005		
-m/MS0022.BIN	0:02	148	6527	1FBA	前後の動き{08:42}、{08:48}らの{08:0A}が“{08:0B}撃退{08:09}”内に圧縮{03:0C}て{08:64}\n{08:0A}で{08:7B}事に間違いは{08:25}。\n<wait>		Upon closer inspection, this would appear to be the very same file\nthat was compressed inside the Demon Repulsion Program.\n<wait>	v005		
-m/MS0022.BIN	0:02	149	6607	1FBA	画面を見つ{08:2E}		It is in that moment that you notice something.\n<wait>	v005		
-m/MS0022.BIN	0:02	150	6623	00	{04:FF}{08:62}{08:7B}奇妙な事に気付{08:64}。\n<wait>		reads: は、ある奇妙な事に気付いた。\n<wait>			
-m/MS0022.BIN	0:02	151	6654	1FBA	あの{08:09}は		Wait a minute	v005		
-m/MS0022.BIN	0:02	152	6668	1FFA	{02:08}{02:08}	{02:08}{02:08}	reads: ‥‥‥‥‥‥			
-m/MS0022.BIN	0:02	153	6678	1FFA	？\nそこには記憶がおかしく{08:59}直前に見た、あの莫大な{08:0A}量のMURMUR.BINと{08:68}\n名のファイル{08:62}忽然と消{08:41}かの様に見当{08:50}{08:19}。\n<wait>		\nYou distinctively recall seeing a massive file named MURMUR.BIN before\nyou collapsed. And yet, it's gone now. It's like it was deleted.\n<wait>	v005		
-m/MS0022.BIN	0:02	154	6797	1FBA	{02:08}{08:72}Ｄ.Ｄ.Ｍ　デジタル・{08:06}・メイル　{02:08}‥\n<wait>		DDM (Digital Devil Mail)...\n<wait>	v005		
-m/MS0022.BIN	0:02	155	6848	00	{04:FF}の頭に{08:62}以前{08:02}に見せら{08:60}、{08:0A}化{08:4B}{08:0B}を{08:05}ー・\nネットワークを通じて、相手に送り付{08:29}事が出来ると{08:68}ソフトの名が浮か{08:5F}。\n<wait>		reads: の頭には、以前山瀬に見せられた、データ化した悪魔をコンピューター・\nネットワークを通じて、相手に送り付ける事が出来るというソフトの名が浮かんだ。\n<wait>			
-m/MS0022.BIN	0:02	156	6970	1FBA	{08:72}経路不明の{08:0B}侵入{08:72}奇妙な霊的磁場の増大{02:08}\n<wait>		That is the name of a program used to turn demons into data which can\nthen be sent across computer networks. You remember Yamase showing it\noff to you back in the day.\n<wait>	v005		
-m/MS0022.BIN	0:02	157	7019	1FBA	{08:72}{08:0A}化{08:4B}肉体を持たぬ{08:0B}{02:08}{08:0B}憑依{02:08}\n<wait>		Demons making it inside Harajuku Shelter...\nStrange fluctuations in the Spirito-Magnetic Field...\n<wait>	v005		
-m/MS0022.BIN	0:02	158	7062	00	{04:FF}の脳裏で、{01:3C}の絶望的な予測が形を作り出{08:4A}来た。\n<wait>{08:79}時、<wait>背後で扉の開く音が{08:4B}。\n<wait>		reads: の脳裏で、ひとつの絶望的な予測が形を作り出して来た。\n<wait>その時、<wait>背後で扉の開く音がした。\n<wait>			
-m/MS0022.BIN	0:02	159	7194	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	160	7204	00	{04:FF}くん大変{08:6B}！　妹が{08:72}私の妹が！！\n<wait>		reads: くん大変なの！　妹が‥‥私の妹が！！\n<wait>			
-m/MS0022.BIN	0:02	161	7251	00	{04:FE}の両目{08:62}涙に濡れ、赤くなっ{08:14}。\n<wait>		reads: の両目は、涙に濡れ、赤くなっている。\n<wait>			
-m/MS0022.BIN	0:02	162	7290	1FBA	{08:5B}{08:72}何かが起{08:51}のか{02:08}\n<wait>		A terrifying image begins forming in your mind.\n<wait>Right then, <wait>you hear the door opening behind you.\n<wait>	v005		
-m/MS0022.BIN	0:02	163	7375	1FD2	{08:00}：		Yuuka:	v005		
+m/MS0022.BIN	0:02	129	5483	00	{04:FF}{08:62}{08:63}の身に久々にまともな感覚、\nまともな感情が戻{08:52}来た事を感じた。\n<wait>					reads: は、自分の身に久々にまともな感覚、\nまともな感情が戻って来た事を感じた。\n<wait>
+m/MS0022.BIN	0:02	130	5557	1FBA	ベッドの中でゆっくりと深呼吸をし、昨日{08:71}の事を振り返る{02:08}‥\n<wait>		She has to lean forwards to reach them, which causes her soft,\nblonde hair to droop over her shoulders, exposing her neck.\n<wait>	v005		reads: ベッドの中でゆっくりと深呼吸をし、昨日までの事を振り返る‥‥‥‥\n<wait>
+m/MS0022.BIN	0:02	131	5622	1FBA	{08:63}が異常な行動を取{08:52}{08:1F}事。\n{08:4D}は“{08:0B}撃退{08:09}”を解凍{08:4B}時{08:42}始{08:20}事。\n<wait>		In that instant, something lights up inside your head.\n<wait>	v005		reads: 自分が異常な行動を取ってしまった事。\nそれは“悪魔撃退プログラム”を解凍した時から始まった事。\n<wait>
+m/MS0022.BIN	0:02	132	5692	1FBA	{08:4D}らを頭の中で整理{08:4A}行くうちに、{08:7B}{01:3C}の事件を思い出{08:4B}。\n丁度、{08:63}がおかしく{08:16}当日の夜、{08:05}ー画面に残{03:0C}た、\nあの奇妙な{08:0A}送信文の事を{02:08}。\n<wait>		That something is lust. And not the sexual kind, but rather, bloodlust.\nYou want to drink her blood, to consume her flesh...\n<wait>	v005		reads: それらを頭の中で整理して行くうちに、あるひとつの事件を思い出した。\n丁度、自分がおかしくなった当日の夜、コンピューター画面に残された、\nあの奇妙なデータ送信文の事を‥‥‥。\n<wait>
+m/MS0022.BIN	0:02	133	5835	00	{04:FF}{08:62}急いで{08:05}ーに向{08:18}。\n<wait>					reads: は、急いでコンピューターに向かった。\n<wait>
+m/MS0022.BIN	0:02	134	5905	1FD0	{08:05}ーに{08:62}常時ロックが掛けられ{08:14}。\nロックを解除し{08:57}、何{01:3C}操作は出来{08:25}。\nそ{08:4A}、ロック解除に{08:62}{01:1B}入力が必要だ。\n<wait>		Clearly frightened out of her mind, Yuuka runs off.\n<wait>	v005		reads: コンピューターには、常時ロックが掛けられている。\nロックを解除しなければ、何ひとつ操作は出来ない。\nそして、ロック解除には、パスワード入力が必要だ。\n<wait>
+m/MS0022.BIN	0:02	135	6018	1FBA	{01:1B}名は“ＺＯＷＹ－ＴＨＥ－ＫＩＴＴＹ”\n		A heavy silence falls upon you...\n<wait>	v005		reads: パスワード名は“ＺＯＷＹ－ＴＨＥ－ＫＩＴＴＹ”\n
+m/MS0022.BIN	0:02	136	6061	00	{04:FF}以外に{08:62}誰も知る者は{08:24}。\n<wait>					reads: 以外には、誰も知る者はいない。\n<wait>
+m/MS0022.BIN	0:02	137	6094	1FBA	{08:79}{01:1B}名{08:62}		Before you know it,\nyou once again find yourself feeling tired beyond belief.\n<wait>	v005		reads: そのパスワード名は、
+m/MS0022.BIN	0:02	138	6106	00	{04:FF}が幼い頃、両親に買{08:52}貰{08:51}小さなロボット猫に\n付{08:43}名前だ{08:51}。\n<wait>					reads: が幼い頃、両親に買って貰った小さなロボット猫に\n付けた名前だった。\n<wait>
+m/MS0022.BIN	0:02	139	6172	1FBA	{01:28}の様に{01:1B}を入力し、ロック解除{08:8E}		As you wake up, you find that your senses have recovered.\nYou finally feel like yourself again.\n<wait>	v005		reads: いつもの様にパスワードを入力し、ロック解除する
+m/MS0022.BIN	0:02	140	6208	00	{04:FF}。\nそ{08:4A}、{08:0A}{08:65}のTENPを開き、問題の夜の記録を探す{02:08}\n<wait>					reads: 。\nそして、データ通信のTENPを開き、問題の夜の記録を探す‥‥‥\n<wait>
+m/MS0022.BIN	0:02	141	6278	1FBD	{02:08}メイルを{03:08}ロードし{08:5A}\n<wait>		......Uploading attachment.\n<wait>	v005		reads: ‥‥‥メイルをアップロードします\n<wait>
+m/MS0022.BIN	0:02	142	6307	1FBA	AIM.BIN　１．２ギガバイト{02:08}{02:08}{08:72}\n<wait>		AIM.BIN / 1.2 Gigabytes<wait>	v005		reads: AIM.BIN　１．２ギガバイト‥‥‥‥‥‥‥‥\n<wait>
+m/MS0022.BIN	0:02	143	6345	1FBA	{03:08}ロード完了\n<wait>		Upload completed.\n<wait>	v005		reads: アップロード完了\n<wait>
+m/MS0022.BIN	0:02	144	6364	1FBA	送信先を指定{08:4A}{08:6E}\n{02:08}{02:08}{08:72}御茶ノ水{08:10}\n<wait>		Please specify recipient's address.\n............Ochanomizu Shelter\n<wait>	v005		reads: 送信先を指定してください\n‥‥‥‥‥‥‥‥御茶ノ水シェルター\n<wait>
+m/MS0022.BIN	0:02	145	6404	1FBA	{02:08}{02:08}{08:72}送信完了\n<wait>		............Message sent.\n<wait>	v005		reads: ‥‥‥‥‥‥‥‥送信完了\n<wait>
+m/MS0022.BIN	0:02	146	6425	1FBA	何かキーを押{08:4A}{08:6E}。{08:65}を終了し{08:5A}。\n<wait>		Press any key to close this window.\n<wait>	v005		reads: 何かキーを押してください。通信を終了します。\n<wait>
+m/MS0022.BIN	0:02	147	6466	1FD0	御茶の水{08:10}に宛て、{08:0B}の名前とおぼしきファイルを送信{08:13}。\n<wait>		A file seemingly named after a demon was sent to Ochanomizu Shelter.\n<wait>	v005		reads: 御茶の水シェルターに宛て、悪魔の名前とおぼしきファイルを送信している。\n<wait>
+m/MS0022.BIN	0:02	148	6527	1FBA	前後の動き{08:42}、{08:48}らの{08:0A}が“{08:0B}撃退{08:09}”内に圧縮{03:0C}て{08:64}\n{08:0A}で{08:7B}事に間違いは{08:25}。\n<wait>		Upon closer inspection, this would appear to be the very same file\nthat was compressed inside the Demon Repulsion Program.\n<wait>	v005		reads: 前後の動きから、これらのデータが“悪魔撃退プログラム”内に圧縮されていた\nデータである事に間違いはない。\n<wait>
+m/MS0022.BIN	0:02	149	6607	1FBA	画面を見つ{08:2E}		It is in that moment that you notice something.\n<wait>	v005		reads: 画面を見つめる
+m/MS0022.BIN	0:02	150	6623	00	{04:FF}{08:62}{08:7B}奇妙な事に気付{08:64}。\n<wait>					reads: は、ある奇妙な事に気付いた。\n<wait>
+m/MS0022.BIN	0:02	151	6654	1FBA	あの{08:09}は		Wait a minute	v005		reads: あのプログラムは
+m/MS0022.BIN	0:02	152	6668	1FFA	{02:08}{02:08}	{02:08}{02:08}				reads: ‥‥‥‥‥‥
+m/MS0022.BIN	0:02	153	6678	1FFA	？\nそこには記憶がおかしく{08:59}直前に見た、あの莫大な{08:0A}量のMURMUR.BINと{08:68}\n名のファイル{08:62}忽然と消{08:41}かの様に見当{08:50}{08:19}。\n<wait>		\nYou distinctively recall seeing a massive file named MURMUR.BIN before\nyou collapsed. And yet, it's gone now. It's like it was deleted.\n<wait>	v005		reads: ？\nそこには記憶がおかしくなる直前に見た、あの莫大なデータ量のMURMUR.BINという\n名のファイルは、忽然と消えたかの様に見当たらなかった。\n<wait>
+m/MS0022.BIN	0:02	154	6797	1FBA	{02:08}{08:72}Ｄ.Ｄ.Ｍ　デジタル・{08:06}・メイル　{02:08}‥\n<wait>		DDM (Digital Devil Mail)...\n<wait>	v005		reads: ‥‥‥‥‥Ｄ.Ｄ.Ｍ　デジタル・デビル・メイル　‥‥‥‥\n<wait>
+m/MS0022.BIN	0:02	155	6848	00	{04:FF}の頭に{08:62}以前{08:02}に見せら{08:60}、{08:0A}化{08:4B}{08:0B}を{08:05}ー・\nネットワークを通じて、相手に送り付{08:29}事が出来ると{08:68}ソフトの名が浮か{08:5F}。\n<wait>					reads: の頭には、以前山瀬に見せられた、データ化した悪魔をコンピューター・\nネットワークを通じて、相手に送り付ける事が出来るというソフトの名が浮かんだ。\n<wait>
+m/MS0022.BIN	0:02	156	6970	1FBA	{08:72}経路不明の{08:0B}侵入{08:72}奇妙な霊的磁場の増大{02:08}\n<wait>		That is the name of a program used to turn demons into data which can\nthen be sent across computer networks. You remember Yamase showing it\noff to you back in the day.\n<wait>	v005		reads: ‥‥経路不明の悪魔侵入‥‥奇妙な霊的磁場の増大‥‥‥\n<wait>
+m/MS0022.BIN	0:02	157	7019	1FBA	{08:72}{08:0A}化{08:4B}肉体を持たぬ{08:0B}{02:08}{08:0B}憑依{02:08}\n<wait>		Demons making it inside Harajuku Shelter...\nStrange fluctuations in the Spirito-Magnetic Field...\n<wait>	v005		reads: ‥‥データ化した肉体を持たぬ悪魔‥‥‥悪魔憑依‥‥‥\n<wait>
+m/MS0022.BIN	0:02	158	7062	00	{04:FF}の脳裏で、{01:3C}の絶望的な予測が形を作り出{08:4A}来た。\n<wait>{08:79}時、<wait>背後で扉の開く音が{08:4B}。\n<wait>					reads: の脳裏で、ひとつの絶望的な予測が形を作り出して来た。\n<wait>その時、<wait>背後で扉の開く音がした。\n<wait>
+m/MS0022.BIN	0:02	159	7194	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	160	7204	00	{04:FF}くん大変{08:6B}！　妹が{08:72}私の妹が！！\n<wait>					reads: くん大変なの！　妹が‥‥私の妹が！！\n<wait>
+m/MS0022.BIN	0:02	161	7251	00	{04:FE}の両目{08:62}涙に濡れ、赤くなっ{08:14}。\n<wait>					reads: の両目は、涙に濡れ、赤くなっている。\n<wait>
+m/MS0022.BIN	0:02	162	7290	1FBA	{08:5B}{08:72}何かが起{08:51}のか{02:08}\n<wait>		A terrifying image begins forming in your mind.\n<wait>Right then, <wait>you hear the door opening behind you.\n<wait>	v005		reads: また‥‥何かが起ったのか‥‥‥\n<wait>
+m/MS0022.BIN	0:02	163	7375	1FD2	{08:00}：		Yuuka:	v005		reads: 早坂：
 m/MS0022.BIN	0:02	164	7381	1FD3	あ、		Katsuragi-kun, listen! My sister... My sister has!...\n<wait>	v005		
-m/MS0022.BIN	0:02	165	7389	00	{04:FE}さんも来てたのか。\n{08:5C}話は？\n<wait>		reads: さんも来てたのか。\nもう話は？\n<wait>			
-m/MS0022.BIN	0:02	166	7431	00	{04:FE}は黙{08:51}{08:7E}、首を横に振る。\n<wait>		reads: は黙ったまま、首を横に振る。\n<wait>			
-m/MS0022.BIN	0:02	167	7466	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	168	7472	1FD3	そうか{08:72}。\n<wait>		Oh...\n<wait>	v005		
-m/MS0022.BIN	0:02	169	7491	1FD2	{08:00}：		Hayasaka:	v005		
+m/MS0022.BIN	0:02	165	7389	00	{04:FE}さんも来てたのか。\n{08:5C}話は？\n<wait>					reads: さんも来てたのか。\nもう話は？\n<wait>
+m/MS0022.BIN	0:02	166	7431	00	{04:FE}は黙{08:51}{08:7E}、首を横に振る。\n<wait>					reads: は黙ったまま、首を横に振る。\n<wait>
+m/MS0022.BIN	0:02	167	7466	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	168	7472	1FD3	そうか{08:72}。\n<wait>		Oh...\n<wait>	v005		reads: そうか‥‥。\n<wait>
+m/MS0022.BIN	0:02	169	7491	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
 m/MS0022.BIN	0:02	170	7497	1FD3	実はな		Well, the thing is, a body was discovered over in the the forest area\nof the farm earlier this morning.\n<wait>	v005		
-m/MS0022.BIN	0:02	171	7507	00	{04:FF}、今日、ファームの樹木エリアで変死体が発見{03:0C}た{08:5F}。\n<wait>		reads: 、今日、ファームの樹木エリアで変死体が発見されたんだ。\n<wait>			
+m/MS0022.BIN	0:02	171	7507	00	{04:FF}、今日、ファームの樹木エリアで変死体が発見{03:0C}た{08:5F}。\n<wait>					reads: 、今日、ファームの樹木エリアで変死体が発見されたんだ。\n<wait>
 m/MS0022.BIN	0:02	172	7566	1FBA	被害者は		That body belongs to	v005		
-m/MS0022.BIN	0:02	173	7580	1FFA	{02:08}\n	{02:08}\n	reads: ‥‥‥\n			
-m/MS0022.BIN	0:02	174	7593	00	{04:FE}さんの腹違いの妹さんで{08:7B}、		reads: さんの腹違いの妹さんである、			
-m/MS0022.BIN	0:02	175	7625	00	{04:FE}美莉ちゃ{08:5F}。\n<wait>		reads: 美莉ちゃんだ。\n<wait>			
-m/MS0022.BIN	0:02	176	7648	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	177	7654	1FD3	死亡時刻{08:62}昨日の深夜か今日未明。\n		We aren't sure about her time of death.\nAll we know is that it happened sometime between last night and today.\nAlso	v005		
-m/MS0022.BIN	0:02	178	7693	1FFA	{02:08}	{02:08}	reads: ‥‥‥			
-m/MS0022.BIN	0:02	179	7701	1FFA	死体{08:42}、血が一滴も残さず吸い取られて{08:64}。\n<wait>		When we found the body, it was completely dry.\nAll of her blood had been sucked away. Every last drop of it.\n<wait>	v005		
-m/MS0022.BIN	0:02	180	7750	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	181	7756	1FD3	{03:0B}周囲には血痕はおろか、遺体には外傷{01:3C}見られ{08:25}。\n<wait>		Despite this, there weren't any bloodstains in the area. Not only that,\nthe girl appears to not have suffered any external injuries.\n<wait>	v005		
-m/MS0022.BIN	0:02	182	7817	00	{04:FE}：		Yuuka:	v005		
-m/MS0022.BIN	0:02	183	7823	1FD3	{02:08}う‥うっ{02:08}‥\n<wait>		*Sob*...\n<wait>	v005		
-m/MS0022.BIN	0:02	184	7846	1FD0	気丈にも耐えて{08:64}		The brutal description of her sister's death is too much for Yuuka to\ntake. She did an admirable job keeping herself together for as long as\nshe did, but now, her body starts to shake uncontrollably, and she\nbegins to weep.\n<wait>	v005		
-m/MS0022.BIN	0:02	185	7866	00	{04:FE}{08:62}ついに肩を振るわせ嗚咽し始めて{08:1F}。\n<wait>		reads: は、ついに肩を振るわせ嗚咽し始めてしまった。\n<wait>			
-m/MS0022.BIN	0:02	186	7913	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	187	7923	00	{04:FE}さん{02:08}<wait>ごめん。\n<wait>		Tachibana... <wait>Sorry.\n<wait>	v005		
-m/MS0022.BIN	0:02	188	7956	00	{04:FE}：		Yuuka:	v005		
-m/MS0022.BIN	0:02	189	7962	1FD3	{08:72}{08:7F}の{08:72}<wait>続けて{08:72}\n<wait>		It's fine... <wait>Please, continue...\n<wait>	v005		
-m/MS0022.BIN	0:02	190	7991	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	191	8003	1FFA	{02:08}	{02:08}	reads: ‥‥‥			
-m/MS0022.BIN	0:02	192	8011	1FFA	犯人の特定{08:62}{08:76}出来て{08:24}。\n死体の状況{08:42}見て、{08:10}内に{08:0B}が侵入{08:4B}事にまず間違いは{08:25}{08:8C}。\n<wait>		We've yet to been able to identify any potential suspects.\nJudging by the state of her corpse, it would appear that\na demon has managed to enter the shelter.\n<wait>	v005		
-m/MS0022.BIN	0:02	193	8105	00	{04:FF}の心臓の鼓動が高鳴る。\n静まりかえ{08:51}{01:2E}に、{08:79}音が木霊{08:8E}かの様に思わ{08:60}。\n<wait>		You can hear your heart louder than ever before.\nIt's to the point where it almost sounds like an earthquake happening.\n<wait>	v005		
-m/MS0022.BIN	0:02	194	8185	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	195	8191	1FD3	謹慎中の身で{08:7B}{02:0C}第二部隊に{08:62}何も成す術が{08:25}。\n口惜しい事{08:8F}{02:08}\n<wait>		I hate to say it, but as our squad has been temporarily suspended,\nthere's very little that we can do here...\n<wait>	v005		
-m/MS0022.BIN	0:02	196	8259	1FD0	下を向き、嗚咽{08:4A}{08:64}		Yuuka's eyes move down to the floor.\nIn the next moment, a surprised gasp leaves her mouth.\n<wait>	v005		
-m/MS0022.BIN	0:02	197	8281	00	{04:FE}が、{08:79}時驚愕の小さな悲鳴を上{08:44}。\n<wait>		reads: が、その時驚愕の小さな悲鳴を上げた。\n<wait>			
-m/MS0022.BIN	0:02	198	8328	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	199	8334	1FD3	ま{08:72}さか{08:72}{08:7A}！！\n<wait>		W-Wait, no... This can't be!\n<wait>	v005		
-m/MS0022.BIN	0:02	200	8359	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	201	8365	1FD3	{08:90}{08:4B}？！\n<wait>		Hmm? What can't be?\n<wait>	v005		
-m/MS0022.BIN	0:02	202	8386	00	{04:FE}の凝視{08:8E}方を目で追い、{08:00}もギクリと身体を硬直させた。\n<wait>		Hayasaka quickly follows Yuuka's gaze, and as he does,\nhis body tenses up as well.\n<wait>	v005		
-m/MS0022.BIN	0:02	203	8447	1FBA	ふたりの視線{08:62}		They're both staring at your feet.\n<wait>	v005		
-m/MS0022.BIN	0:02	204	8465	00	{04:FF}の足元に注がれて{08:64}。\n<wait>		reads: の足元に注がれていた。\n<wait>			
-m/MS0022.BIN	0:02	205	8500	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	206	8510	00	{04:FF}くん、{08:79}足{08:72}<wait>{08:90}{08:4A}？\n<wait>		reads: くん、その足‥‥<wait>どうして？\n<wait>			
-m/MS0022.BIN	0:02	207	8547	00	{04:FF}の靴に{08:62}柔らかい土を踏み散らか{08:4B}後の様に土が付着し、汚れて{08:64}。\n<wait>		reads: の靴には、柔らかい土を踏み散らかした後の様に土が付着し、汚れていた。\n<wait>			
-m/MS0022.BIN	0:02	208	8618	1FBA	人工物だらけの{08:10}内で、土が付着{08:8E}様な場所といえば、\nファーム以外には{08:25}。\n<wait>		Given the nature of the shelter,\nthe only place where dirt can be found here is the farm.\n<wait>	v005		
-m/MS0022.BIN	0:02	209	8696	1FBA	死体が発見{03:0C}て{08:42}後{08:62}調査の為に封鎖{03:0C}{08:14}{08:77}{08:42}、\n土付着のタイミングを予測{08:4B}場合、犯行時間に一致{08:4A}{08:83}。\n<wait>		You couldn't possibly have gone there after the body was discovered\nas the place was immediately closed down for forensic analysis.\nThis leaves only one explanation as to how you might have\ngotten dirt on your boots...\n<wait>	v005		
-m/MS0022.BIN	0:02	210	8802	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	211	8812	00	{04:FF}{08:72}お前{08:81}{08:25}よな？\n<wait>		Katsuragi... Was it... you?\n<wait>	v005		
-m/MS0022.BIN	0:02	212	8839	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	213	8845	1FD3	答えろよ<wait>{08:72}はっきりと言{08:52}くれッ！！\n<wait>		Answer me. <wait>Answer me right this second!\n<wait>	v005		
-m/MS0022.BIN	0:02	214	8906	1FB2	分{08:42}{08:25}		I don't know	v005		
-m/MS0022.BIN	0:02	215	8914	1FB2	{01:29}と思う		Probably, yeah	v005		
-m/MS0022.BIN	0:02	216	8936	0F	{01:9F}	{01:9F}	reads: 			
+m/MS0022.BIN	0:02	173	7580	1FFA	{02:08}\n	{02:08}\n				reads: ‥‥‥\n
+m/MS0022.BIN	0:02	174	7593	00	{04:FE}さんの腹違いの妹さんで{08:7B}、					reads: さんの腹違いの妹さんである、
+m/MS0022.BIN	0:02	175	7625	00	{04:FE}美莉ちゃ{08:5F}。\n<wait>					reads: 美莉ちゃんだ。\n<wait>
+m/MS0022.BIN	0:02	176	7648	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	177	7654	1FD3	死亡時刻{08:62}昨日の深夜か今日未明。\n		We aren't sure about her time of death.\nAll we know is that it happened sometime between last night and today.\nAlso	v005		reads: 死亡時刻は、昨日の深夜か今日未明。\n
+m/MS0022.BIN	0:02	178	7693	1FFA	{02:08}	{02:08}				reads: ‥‥‥
+m/MS0022.BIN	0:02	179	7701	1FFA	死体{08:42}、血が一滴も残さず吸い取られて{08:64}。\n<wait>		When we found the body, it was completely dry.\nAll of her blood had been sucked away. Every last drop of it.\n<wait>	v005		reads: 死体から、血が一滴も残さず吸い取られていた。\n<wait>
+m/MS0022.BIN	0:02	180	7750	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	181	7756	1FD3	{03:0B}周囲には血痕はおろか、遺体には外傷{01:3C}見られ{08:25}。\n<wait>		Despite this, there weren't any bloodstains in the area. Not only that,\nthe girl appears to not have suffered any external injuries.\n<wait>	v005		reads: しかし、周囲には血痕はおろか、遺体には外傷ひとつ見られない。\n<wait>
+m/MS0022.BIN	0:02	182	7817	00	{04:FE}：		Yuuka:	v005		reads: ：
+m/MS0022.BIN	0:02	183	7823	1FD3	{02:08}う‥うっ{02:08}‥\n<wait>		*Sob*...\n<wait>	v005		reads: ‥‥‥う‥うっ‥‥‥‥\n<wait>
+m/MS0022.BIN	0:02	184	7846	1FD0	気丈にも耐えて{08:64}		The brutal description of her sister's death is too much for Yuuka to\ntake. She did an admirable job keeping herself together for as long as\nshe did, but now, her body starts to shake uncontrollably, and she\nbegins to weep.\n<wait>	v005		reads: 気丈にも耐えていた
+m/MS0022.BIN	0:02	185	7866	00	{04:FE}{08:62}ついに肩を振るわせ嗚咽し始めて{08:1F}。\n<wait>					reads: は、ついに肩を振るわせ嗚咽し始めてしまった。\n<wait>
+m/MS0022.BIN	0:02	186	7913	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	187	7923	00	{04:FE}さん{02:08}<wait>ごめん。\n<wait>		Tachibana... <wait>Sorry.\n<wait>	v005		reads: さん‥‥‥<wait>ごめん。\n<wait>
+m/MS0022.BIN	0:02	188	7956	00	{04:FE}：		Yuuka:	v005		reads: ：
+m/MS0022.BIN	0:02	189	7962	1FD3	{08:72}{08:7F}の{08:72}<wait>続けて{08:72}\n<wait>		It's fine... <wait>Please, continue...\n<wait>	v005		reads: ‥‥いいの‥‥<wait>続けて‥‥\n<wait>
+m/MS0022.BIN	0:02	190	7991	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	191	8003	1FFA	{02:08}	{02:08}				reads: ‥‥‥
+m/MS0022.BIN	0:02	192	8011	1FFA	犯人の特定{08:62}{08:76}出来て{08:24}。\n死体の状況{08:42}見て、{08:10}内に{08:0B}が侵入{08:4B}事にまず間違いは{08:25}{08:8C}。\n<wait>		We've yet to been able to identify any potential suspects.\nJudging by the state of her corpse, it would appear that\na demon has managed to enter the shelter.\n<wait>	v005		reads: 犯人の特定は、まだ出来ていない。\n死体の状況から見て、シェルター内に悪魔が侵入した事にまず間違いはないだろう。\n<wait>
+m/MS0022.BIN	0:02	193	8105	00	{04:FF}の心臓の鼓動が高鳴る。\n静まりかえ{08:51}{01:2E}に、{08:79}音が木霊{08:8E}かの様に思わ{08:60}。\n<wait>		You can hear your heart louder than ever before.\nIt's to the point where it almost sounds like an earthquake happening.\n<wait>	v005		reads: の心臓の鼓動が高鳴る。\n静まりかえった部屋に、その音が木霊するかの様に思われた。\n<wait>
+m/MS0022.BIN	0:02	194	8185	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	195	8191	1FD3	謹慎中の身で{08:7B}{02:0C}第二部隊に{08:62}何も成す術が{08:25}。\n口惜しい事{08:8F}{02:08}\n<wait>		I hate to say it, but as our squad has been temporarily suspended,\nthere's very little that we can do here...\n<wait>	v005		reads: 謹慎中の身である我々第二部隊には、何も成す術がない。\n口惜しい事だが‥‥‥\n<wait>
+m/MS0022.BIN	0:02	196	8259	1FD0	下を向き、嗚咽{08:4A}{08:64}		Yuuka's eyes move down to the floor.\nIn the next moment, a surprised gasp leaves her mouth.\n<wait>	v005		reads: 下を向き、嗚咽していた
+m/MS0022.BIN	0:02	197	8281	00	{04:FE}が、{08:79}時驚愕の小さな悲鳴を上{08:44}。\n<wait>					reads: が、その時驚愕の小さな悲鳴を上げた。\n<wait>
+m/MS0022.BIN	0:02	198	8328	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	199	8334	1FD3	ま{08:72}さか{08:72}{08:7A}！！\n<wait>		W-Wait, no... This can't be!\n<wait>	v005		reads: ま‥‥さか‥‥そんな！！\n<wait>
+m/MS0022.BIN	0:02	200	8359	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	201	8365	1FD3	{08:90}{08:4B}？！\n<wait>		Hmm? What can't be?\n<wait>	v005		reads: どうした？！\n<wait>
+m/MS0022.BIN	0:02	202	8386	00	{04:FE}の凝視{08:8E}方を目で追い、{08:00}もギクリと身体を硬直させた。\n<wait>		Hayasaka quickly follows Yuuka's gaze, and as he does,\nhis body tenses up as well.\n<wait>	v005		reads: の凝視する方を目で追い、早坂もギクリと身体を硬直させた。\n<wait>
+m/MS0022.BIN	0:02	203	8447	1FBA	ふたりの視線{08:62}		They're both staring at your feet.\n<wait>	v005		reads: ふたりの視線は、
+m/MS0022.BIN	0:02	204	8465	00	{04:FF}の足元に注がれて{08:64}。\n<wait>					reads: の足元に注がれていた。\n<wait>
+m/MS0022.BIN	0:02	205	8500	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	206	8510	00	{04:FF}くん、{08:79}足{08:72}<wait>{08:90}{08:4A}？\n<wait>					reads: くん、その足‥‥<wait>どうして？\n<wait>
+m/MS0022.BIN	0:02	207	8547	00	{04:FF}の靴に{08:62}柔らかい土を踏み散らか{08:4B}後の様に土が付着し、汚れて{08:64}。\n<wait>					reads: の靴には、柔らかい土を踏み散らかした後の様に土が付着し、汚れていた。\n<wait>
+m/MS0022.BIN	0:02	208	8618	1FBA	人工物だらけの{08:10}内で、土が付着{08:8E}様な場所といえば、\nファーム以外には{08:25}。\n<wait>		Given the nature of the shelter,\nthe only place where dirt can be found here is the farm.\n<wait>	v005		reads: 人工物だらけのシェルター内で、土が付着する様な場所といえば、\nファーム以外にはない。\n<wait>
+m/MS0022.BIN	0:02	209	8696	1FBA	死体が発見{03:0C}て{08:42}後{08:62}調査の為に封鎖{03:0C}{08:14}{08:77}{08:42}、\n土付着のタイミングを予測{08:4B}場合、犯行時間に一致{08:4A}{08:83}。\n<wait>		You couldn't possibly have gone there after the body was discovered\nas the place was immediately closed down for forensic analysis.\nThis leaves only one explanation as to how you might have\ngotten dirt on your boots...\n<wait>	v005		reads: 死体が発見されてから後は、調査の為に封鎖されているのだから、\n土付着のタイミングを予測した場合、犯行時間に一致してしまう。\n<wait>
+m/MS0022.BIN	0:02	210	8802	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	211	8812	00	{04:FF}{08:72}お前{08:81}{08:25}よな？\n<wait>		Katsuragi... Was it... you?\n<wait>	v005		reads: ‥‥お前じゃないよな？\n<wait>
+m/MS0022.BIN	0:02	212	8839	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	213	8845	1FD3	答えろよ<wait>{08:72}はっきりと言{08:52}くれッ！！\n<wait>		Answer me. <wait>Answer me right this second!\n<wait>	v005		reads: 答えろよ<wait>‥‥はっきりと言ってくれッ！！\n<wait>
+m/MS0022.BIN	0:02	214	8906	1FB2	分{08:42}{08:25}		I don't know	v005		reads: 分からない; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	215	8914	1FB2	{01:29}と思う		Probably, yeah	v005		reads: そうだと思う; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	216	8936	0F	{01:9F}	{01:9F}				reads: 
 m/MS0022.BIN	0:02	217	8939	00						
-m/MS0022.BIN	0:02	218	8946	00	{04:FF}{08:62}絶望の色を湛{08:41}瞳で{08:00}を見つめ、乾{08:64}声でそう答{08:41}。\n<wait>		Your voice dry and your eyes filled with despair, you answer Hayasaka.\n<wait>	v005		
-m/MS0022.BIN	0:02	219	9007	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	220	9013	1FD3	何だよ！　{08:79}分{08:42}{08:25}{08:52}のは！！\nお前、{08:63}が殺人を犯{08:4B}か{08:90}かも、分{08:42}{08:25}{08:52}のか？！\n<wait>		What the hell!? That doesn't make any fucking sense!\nHow can you not know if you killed someone!?\n<wait>	v005		
-m/MS0022.BIN	0:02	221	9104	00	{04:FF}{08:62}絶望の色を湛{08:41}瞳で{08:00}を見つめ、哀しげな笑いを浮かべそう答{08:41}。\n<wait>		Your voice dry and with a sad smile on your face, you answer Hayasaka.\n<wait>	v005		
-m/MS0022.BIN	0:02	222	9181	00	{04:FE}：		Yuuka:	v005		
-m/MS0022.BIN	0:02	223	9187	1FD3	やめてッ！！　嘘よ、{08:7A}訳無いわよ！\n<wait>		Stop it! That's not funny!!\n<wait>	v005		
-m/MS0022.BIN	0:02	224	9234	00	{04:FE}：		Yuuka:	v005		
-m/MS0022.BIN	0:02	225	9240	1FD3	だ{08:52}、		What possible reason would you have to kill Miri!?\n<wait>	v005		
-m/MS0022.BIN	0:02	226	9250	00	{04:FF}くんが、美莉を殺す理由{08:6A}て無いわ！\n<wait>		reads: くんが、美莉を殺す理由なんて無いわ！\n<wait>			
-m/MS0022.BIN	0:02	227	9309	1FB2	理由は{08:7B}よ		I have a reason	v005		
-m/MS0022.BIN	0:02	228	9321	1FB2	{08:7A}事は関係無い		It doesn't matter	v005		
-m/MS0022.BIN	0:02	229	9349	0F	{01:3E}	{01:3E}	reads: つもり			
+m/MS0022.BIN	0:02	218	8946	00	{04:FF}{08:62}絶望の色を湛{08:41}瞳で{08:00}を見つめ、乾{08:64}声でそう答{08:41}。\n<wait>		Your voice dry and your eyes filled with despair, you answer Hayasaka.\n<wait>	v005		reads: は、絶望の色を湛えた瞳で早坂を見つめ、乾いた声でそう答えた。\n<wait>
+m/MS0022.BIN	0:02	219	9007	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	220	9013	1FD3	何だよ！　{08:79}分{08:42}{08:25}{08:52}のは！！\nお前、{08:63}が殺人を犯{08:4B}か{08:90}かも、分{08:42}{08:25}{08:52}のか？！\n<wait>		What the hell!? That doesn't make any fucking sense!\nHow can you not know if you killed someone!?\n<wait>	v005		reads: 何だよ！　その分からないってのは！！\nお前、自分が殺人を犯したかどうかも、分からないってのか？！\n<wait>
+m/MS0022.BIN	0:02	221	9104	00	{04:FF}{08:62}絶望の色を湛{08:41}瞳で{08:00}を見つめ、哀しげな笑いを浮かべそう答{08:41}。\n<wait>		Your voice dry and with a sad smile on your face, you answer Hayasaka.\n<wait>	v005		reads: は、絶望の色を湛えた瞳で早坂を見つめ、哀しげな笑いを浮かべそう答えた。\n<wait>
+m/MS0022.BIN	0:02	222	9181	00	{04:FE}：		Yuuka:	v005		reads: ：
+m/MS0022.BIN	0:02	223	9187	1FD3	やめてッ！！　嘘よ、{08:7A}訳無いわよ！\n<wait>		Stop it! That's not funny!!\n<wait>	v005		reads: やめてッ！！　嘘よ、そんな訳無いわよ！\n<wait>
+m/MS0022.BIN	0:02	224	9234	00	{04:FE}：		Yuuka:	v005		reads: ：
+m/MS0022.BIN	0:02	225	9240	1FD3	だ{08:52}、		What possible reason would you have to kill Miri!?\n<wait>	v005		reads: だって、
+m/MS0022.BIN	0:02	226	9250	00	{04:FF}くんが、美莉を殺す理由{08:6A}て無いわ！\n<wait>					reads: くんが、美莉を殺す理由なんて無いわ！\n<wait>
+m/MS0022.BIN	0:02	227	9309	1FB2	理由は{08:7B}よ		I have a reason	v005		reads: 理由はあるよ; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	228	9321	1FB2	{08:7A}事は関係無い		It doesn't matter	v005		reads: そんな事は関係無い; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	229	9349	0F	{01:3E}	{01:3E}				reads: つもり
 m/MS0022.BIN	0:02	230	9352	00						
-m/MS0022.BIN	0:02	231	9359	00	{04:FE}：		reads: ：			
+m/MS0022.BIN	0:02	231	9359	00	{04:FE}：					reads: ：
 m/MS0022.BIN	0:02	232	9365	1FD3	え？\n<wait>					
-m/MS0022.BIN	0:02	233	9392	1FB2	血だよ{08:72}		reads: 血だよ‥‥; menu option, declared width 20 columns			
-m/MS0022.BIN	0:02	234	9420	00	{04:FE}：		reads: ：			
+m/MS0022.BIN	0:02	233	9392	1FB2	血だよ{08:72}					reads: 血だよ‥‥; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	234	9420	00	{04:FE}：					reads: ：
 m/MS0022.BIN	0:02	235	9426	1FD3	え？\n<wait>					
-m/MS0022.BIN	0:02	236	9446	00	{04:FF}の身体の中に、何かが蠢くおぞましい感触が走{08:51}。\n<wait>		reads: の身体の中に、何かが蠢くおぞましい感触が走った。\n<wait>			
-m/MS0022.BIN	0:02	237	9503	1FD2	{08:00}：		Yuuka:	v005		
-m/MS0022.BIN	0:02	238	9509	1FD3	{02:08}‥	{02:08}‥	Huh?\n<wait>	v005		
-m/MS0022.BIN	0:02	239	9517	00	{04:FF}、何を一体{02:08}\n<wait>		reads: 、何を一体‥‥‥\n<wait>			
-m/MS0022.BIN	0:02	240	9544	00	{04:FF}{08:62}まるで{08:63}の口が勝手に動くかの様な感覚に囚われながら、\n頭の中で整理{08:4B}最も信じたくは{08:25}考えを、		reads: は、まるで自分の口が勝手に動くかの様な感覚に囚われながら、\n頭の中で整理した最も信じたくはない考えを、			
-m/MS0022.BIN	0:02	241	9643	00	{04:FE}と{08:00}に語{08:51}。\n<wait>		reads: と早坂に語った。\n<wait>			
-m/MS0022.BIN	0:02	242	9664	1FBA	真実に触{08:2F}言葉を発{08:8E}度、		reads: 真実に触れる言葉を発する度、			
-m/MS0022.BIN	0:02	243	9692	00	{04:FF}の体内を耐え難い苦痛とおぞましい\n感触とが襲う		reads: の体内を耐え難い苦痛とおぞましい\n感触とが襲う			
-m/MS0022.BIN	0:02	244	9745	1FFA	{02:08}<wait>	{02:08}<wait>	reads: ‥‥‥<wait>			
-m/MS0022.BIN	0:02	245	9757	1FFA	{08:4D}{08:56}	{08:4D}{08:56}	reads: それでも			
-m/MS0022.BIN	0:02	246	9765	00	{04:FF}は話す事を止め{08:19}。\n<wait>		reads: は話す事を止めなかった。\n<wait>			
-m/MS0022.BIN	0:02	247	9794	1FD2	{08:00}：		Yuuka:	v005		
-m/MS0022.BIN	0:02	248	9806	1FFA	{08:5C}{08:7F}{08:72}<wait>	{08:5C}{08:7F}{08:72}<wait>	reads: もういい‥‥<wait>			
-m/MS0022.BIN	0:02	249	9822	1FFA	{08:5C}、{08:4D}以上言うな。\n<wait>		reads: もう、それ以上言うな。\n<wait>			
-m/MS0022.BIN	0:02	250	9853	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	251	9863	00	{04:FF}くんが{08:72}？\n<wait>		reads: くんが‥‥？\n<wait>			
-m/MS0022.BIN	0:02	252	9884	00	{04:FF}くんも知ら{08:25}内に美莉を		reads: くんも知らない内に美莉を			
-m/MS0022.BIN	0:02	253	9914	1FFA	{08:72}信じ{08:25}{08:72}		reads: ‥‥信じない‥‥			
-m/MS0022.BIN	0:02	254	9930	1FFA	{08:7A}事、私信じ{08:25}わ{02:08}。\n<wait>{08:72}絶対信じ{08:25}{08:72}\n<wait>		And yet, you don't.\n<wait>	v005		
-m/MS0022.BIN	0:02	255	9983	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	256	9993	00	{04:FF}、<wait>お前は{08:45}を一歩も出るな。\n<wait>		reads: 、<wait>お前はここを一歩も出るな。\n<wait>			
-m/MS0022.BIN	0:02	257	10034	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	258	10040	1FD3	そ{08:4A}、誰にも会うな。\n<wait>		Don't talk to anyone. I mean it.\n<wait>	v005		
-m/MS0022.BIN	0:02	259	10069	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	260	10075	1FD3	俺{08:62}隊長に{08:47}事を相談{08:8E}。\n<wait>少し{08:4B}ら、改めて連絡{08:8E}{08:72}だ{08:42}、{08:4D}{08:71}信じて待{08:52}いてくれ。\n<wait>		I'll go ask the Commander what he thinks of all this.\n<wait>Stay here, and wait for me to call you. Got it?\n<wait>	v005		
-m/MS0022.BIN	0:02	261	10175	1FD0	{08:00}{08:62}痛みを堪{08:28}かの様な顔をし、足早に{01:2E}を出て行{08:51}。\n<wait>		With that, Hayasaka leaves the room.\nIt's clear that he has no idea what to think.\n<wait>	v005		
-m/MS0022.BIN	0:02	262	10236	00	{04:FF}の中を、様々な想いが駆け抜{08:29}。\n<wait>		reads: の中を、様々な想いが駆け抜ける。\n<wait>			
-m/MS0022.BIN	0:02	263	10275	1FBA	父に憧れ、{02:00}に憧れて{08:64}{08:63}{02:08}<wait>苦い思い出{08:72}楽し{08:18}日々\n<wait>{08:72}平坦に流れて行くと感じた、{08:63}の人生の残骸を{08:72}。\n<wait>		Same goes for you.\nAll sorts of thoughts run through your mind.\n<wait>	v005		
-m/MS0022.BIN	0:02	264	10393	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	265	10403	00	{04:FF}くん。\n<wait>		reads: くん。\n<wait>			
-m/MS0022.BIN	0:02	266	10420	1FD0	{08:79}時、		reads: その時、			
-m/MS0022.BIN	0:02	267	10430	00	{04:FE}が声をかけて来た。\n<wait>		reads: が声をかけて来た。\n<wait>			
-m/MS0022.BIN	0:02	268	10457	1FBA	殺人者で{08:7B}{08:63}を恐れ、そ{08:4A}、憎しみの視線を投げかけ{08:14}であろう事を\n確信しながら、		You wanted to be like your father. You wanted to be a Devil Buster.\n<wait>You worked so hard, and after you finally made it, this happened...\n<wait>Was it really all for nothing? Did you really just throw your life away?\n<wait>	v005		
-m/MS0022.BIN	0:02	269	10538	00	{04:FF}は		reads: は			
-m/MS0022.BIN	0:02	270	10546	00	{04:FE}を見た。\n<wait>		reads: を見た。\n<wait>			
-m/MS0022.BIN	0:02	271	10563	1FBA	{03:0B}そこにあ{08:51}の{08:62}深い哀しみに縁どられて{08:26}る{08:5E}の、\nまるで恋人か我が子を見る様な、愛に満ちた優しい瞳だ{08:51}。\n<wait>		Based on the expression on her face, the answer surprisingly enough\nwould appear to be neither of those. Her eyes are rich with kindness\nand affection, almost like she was staring at her lover, or her child.\n<wait>	v005		
-m/MS0022.BIN	0:02	272	10689	1FB2	何か言おうと{08:8E}		Try to speak	v005		
-m/MS0022.BIN	0:02	273	10705	1FB2	黙{08:52}見つ{08:2E}		Say nothing	v005		
-m/MS0022.BIN	0:02	274	10729	0F	{01:01}	{01:01}	reads: 山瀬勇			
+m/MS0022.BIN	0:02	236	9446	00	{04:FF}の身体の中に、何かが蠢くおぞましい感触が走{08:51}。\n<wait>					reads: の身体の中に、何かが蠢くおぞましい感触が走った。\n<wait>
+m/MS0022.BIN	0:02	237	9503	1FD2	{08:00}：		Yuuka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	238	9509	1FD3	{02:08}‥	{02:08}‥	Huh?\n<wait>	v005		reads: ‥‥‥‥
+m/MS0022.BIN	0:02	239	9517	00	{04:FF}、何を一体{02:08}\n<wait>					reads: 、何を一体‥‥‥\n<wait>
+m/MS0022.BIN	0:02	240	9544	00	{04:FF}{08:62}まるで{08:63}の口が勝手に動くかの様な感覚に囚われながら、\n頭の中で整理{08:4B}最も信じたくは{08:25}考えを、					reads: は、まるで自分の口が勝手に動くかの様な感覚に囚われながら、\n頭の中で整理した最も信じたくはない考えを、
+m/MS0022.BIN	0:02	241	9643	00	{04:FE}と{08:00}に語{08:51}。\n<wait>					reads: と早坂に語った。\n<wait>
+m/MS0022.BIN	0:02	242	9664	1FBA	真実に触{08:2F}言葉を発{08:8E}度、					reads: 真実に触れる言葉を発する度、
+m/MS0022.BIN	0:02	243	9692	00	{04:FF}の体内を耐え難い苦痛とおぞましい\n感触とが襲う					reads: の体内を耐え難い苦痛とおぞましい\n感触とが襲う
+m/MS0022.BIN	0:02	244	9745	1FFA	{02:08}<wait>	{02:08}<wait>				reads: ‥‥‥<wait>
+m/MS0022.BIN	0:02	245	9757	1FFA	{08:4D}{08:56}	{08:4D}{08:56}				reads: それでも
+m/MS0022.BIN	0:02	246	9765	00	{04:FF}は話す事を止め{08:19}。\n<wait>					reads: は話す事を止めなかった。\n<wait>
+m/MS0022.BIN	0:02	247	9794	1FD2	{08:00}：		Yuuka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	248	9806	1FFA	{08:5C}{08:7F}{08:72}<wait>	{08:5C}{08:7F}{08:72}<wait>				reads: もういい‥‥<wait>
+m/MS0022.BIN	0:02	249	9822	1FFA	{08:5C}、{08:4D}以上言うな。\n<wait>					reads: もう、それ以上言うな。\n<wait>
+m/MS0022.BIN	0:02	250	9853	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	251	9863	00	{04:FF}くんが{08:72}？\n<wait>					reads: くんが‥‥？\n<wait>
+m/MS0022.BIN	0:02	252	9884	00	{04:FF}くんも知ら{08:25}内に美莉を					reads: くんも知らない内に美莉を
+m/MS0022.BIN	0:02	253	9914	1FFA	{08:72}信じ{08:25}{08:72}					reads: ‥‥信じない‥‥
+m/MS0022.BIN	0:02	254	9930	1FFA	{08:7A}事、私信じ{08:25}わ{02:08}。\n<wait>{08:72}絶対信じ{08:25}{08:72}\n<wait>		And yet, you don't.\n<wait>	v005		reads: そんな事、私信じないわ‥‥‥。\n<wait>‥‥絶対信じない‥‥\n<wait>
+m/MS0022.BIN	0:02	255	9983	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	256	9993	00	{04:FF}、<wait>お前は{08:45}を一歩も出るな。\n<wait>					reads: 、<wait>お前はここを一歩も出るな。\n<wait>
+m/MS0022.BIN	0:02	257	10034	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	258	10040	1FD3	そ{08:4A}、誰にも会うな。\n<wait>		Don't talk to anyone. I mean it.\n<wait>	v005		reads: そして、誰にも会うな。\n<wait>
+m/MS0022.BIN	0:02	259	10069	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	260	10075	1FD3	俺{08:62}隊長に{08:47}事を相談{08:8E}。\n<wait>少し{08:4B}ら、改めて連絡{08:8E}{08:72}だ{08:42}、{08:4D}{08:71}信じて待{08:52}いてくれ。\n<wait>		I'll go ask the Commander what he thinks of all this.\n<wait>Stay here, and wait for me to call you. Got it?\n<wait>	v005		reads: 俺は、隊長にこの事を相談する。\n<wait>少ししたら、改めて連絡する‥‥だから、それまで信じて待っていてくれ。\n<wait>
+m/MS0022.BIN	0:02	261	10175	1FD0	{08:00}{08:62}痛みを堪{08:28}かの様な顔をし、足早に{01:2E}を出て行{08:51}。\n<wait>		With that, Hayasaka leaves the room.\nIt's clear that he has no idea what to think.\n<wait>	v005		reads: 早坂は、痛みを堪えるかの様な顔をし、足早に部屋を出て行った。\n<wait>
+m/MS0022.BIN	0:02	262	10236	00	{04:FF}の中を、様々な想いが駆け抜{08:29}。\n<wait>					reads: の中を、様々な想いが駆け抜ける。\n<wait>
+m/MS0022.BIN	0:02	263	10275	1FBA	父に憧れ、{02:00}に憧れて{08:64}{08:63}{02:08}<wait>苦い思い出{08:72}楽し{08:18}日々\n<wait>{08:72}平坦に流れて行くと感じた、{08:63}の人生の残骸を{08:72}。\n<wait>		Same goes for you.\nAll sorts of thoughts run through your mind.\n<wait>	v005		reads: 父に憧れ、デビルバスターに憧れていた自分‥‥‥<wait>苦い思い出‥‥楽しかった日々\n<wait>‥‥平坦に流れて行くと感じた、自分の人生の残骸を‥‥。\n<wait>
+m/MS0022.BIN	0:02	264	10393	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	265	10403	00	{04:FF}くん。\n<wait>					reads: くん。\n<wait>
+m/MS0022.BIN	0:02	266	10420	1FD0	{08:79}時、					reads: その時、
+m/MS0022.BIN	0:02	267	10430	00	{04:FE}が声をかけて来た。\n<wait>					reads: が声をかけて来た。\n<wait>
+m/MS0022.BIN	0:02	268	10457	1FBA	殺人者で{08:7B}{08:63}を恐れ、そ{08:4A}、憎しみの視線を投げかけ{08:14}であろう事を\n確信しながら、		You wanted to be like your father. You wanted to be a Devil Buster.\n<wait>You worked so hard, and after you finally made it, this happened...\n<wait>Was it really all for nothing? Did you really just throw your life away?\n<wait>	v005		reads: 殺人者である自分を恐れ、そして、憎しみの視線を投げかけているであろう事を\n確信しながら、
+m/MS0022.BIN	0:02	269	10538	00	{04:FF}は					reads: は
+m/MS0022.BIN	0:02	270	10546	00	{04:FE}を見た。\n<wait>					reads: を見た。\n<wait>
+m/MS0022.BIN	0:02	271	10563	1FBA	{03:0B}そこにあ{08:51}の{08:62}深い哀しみに縁どられて{08:26}る{08:5E}の、\nまるで恋人か我が子を見る様な、愛に満ちた優しい瞳だ{08:51}。\n<wait>		Based on the expression on her face, the answer surprisingly enough\nwould appear to be neither of those. Her eyes are rich with kindness\nand affection, almost like she was staring at her lover, or her child.\n<wait>	v005		reads: しかし、そこにあったのは、深い哀しみに縁どられてはいるものの、\nまるで恋人か我が子を見る様な、愛に満ちた優しい瞳だった。\n<wait>
+m/MS0022.BIN	0:02	272	10689	1FB2	何か言おうと{08:8E}		Try to speak	v005		reads: 何か言おうとする; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	273	10705	1FB2	黙{08:52}見つ{08:2E}		Say nothing	v005		reads: 黙って見つめる; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	274	10729	0F	{01:01}	{01:01}				reads: 山瀬勇
 m/MS0022.BIN	0:02	275	10732	00						
-m/MS0022.BIN	0:02	276	10739	00	{04:FE}：		Yuuka:	v005		
+m/MS0022.BIN	0:02	276	10739	00	{04:FE}：		Yuuka:	v005		reads: ：
 m/MS0022.BIN	0:02	277	10745	1FD3	うん、		It's okay, Katsuragi-kun. It's okay...\n<wait>	v005		
-m/MS0022.BIN	0:02	278	10755	00	{04:FF}くん、解っ{08:2B}{08:72}解っ{08:2B}よ。\n<wait>		reads: くん、解ってる‥‥解ってるよ。\n<wait>			
-m/MS0022.BIN	0:02	279	10794	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	280	10800	1FD3	私ね、今や{08:53}気づ{08:64}の。\n<wait>		You know, I finally see it now.\n<wait>	v005		
-m/MS0022.BIN	0:02	281	10835	00	{04:FE}：		Yuuka:	v005		
-m/MS0022.BIN	0:02	282	10841	1FD3	私{08:72}入隊試験で貴方と会{08:52}{08:42}、<wait>ううん{08:72}も{08:53}前{08:42}{02:08}\n<wait>貴方の事が好きだ{08:51}の。本当よ。\n<wait>		Ever since we took the entrance exam together...\n<wait>No, even before that... <wait>I've always loved you. I really have.\n<wait>	v005		
-m/MS0022.BIN	0:02	283	10949	1FB2	殺人者{08:6B}に？		A murderer like me?	v005		
-m/MS0022.BIN	0:02	284	10963	1FB2	僕も{08:72}		Me too...	v005		
-m/MS0022.BIN	0:02	285	10983	0F	{01:01}	{01:01}	reads: 山瀬勇			
+m/MS0022.BIN	0:02	278	10755	00	{04:FF}くん、解っ{08:2B}{08:72}解っ{08:2B}よ。\n<wait>					reads: くん、解ってる‥‥解ってるよ。\n<wait>
+m/MS0022.BIN	0:02	279	10794	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	280	10800	1FD3	私ね、今や{08:53}気づ{08:64}の。\n<wait>		You know, I finally see it now.\n<wait>	v005		reads: 私ね、今やっと気づいたの。\n<wait>
+m/MS0022.BIN	0:02	281	10835	00	{04:FE}：		Yuuka:	v005		reads: ：
+m/MS0022.BIN	0:02	282	10841	1FD3	私{08:72}入隊試験で貴方と会{08:52}{08:42}、<wait>ううん{08:72}も{08:53}前{08:42}{02:08}\n<wait>貴方の事が好きだ{08:51}の。本当よ。\n<wait>		Ever since we took the entrance exam together...\n<wait>No, even before that... <wait>I've always loved you. I really have.\n<wait>	v005		reads: 私‥‥入隊試験で貴方と会ってから、<wait>ううん‥‥もっと前から‥‥‥\n<wait>貴方の事が好きだったの。本当よ。\n<wait>
+m/MS0022.BIN	0:02	283	10949	1FB2	殺人者{08:6B}に？		A murderer like me?	v005		reads: 殺人者なのに？; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	284	10963	1FB2	僕も{08:72}		Me too...	v005		reads: 僕も‥‥; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	285	10983	0F	{01:01}	{01:01}				reads: 山瀬勇
 m/MS0022.BIN	0:02	286	10986	00						
-m/MS0022.BIN	0:02	287	10989	1FD0	言葉に出{08:4A}答{08:28}に{08:62}{08:4D}が精一杯だ{08:51}。\n強張{08:51}口とは裏腹に、		Your mind is flooded with feelings of affection for Yuuka, and yet,\nthose simple words are all that you are able to force out.\n<wait>	v005		
-m/MS0022.BIN	0:02	288	11048	00	{04:FF}の頭の中を、		reads: の頭の中を、			
-m/MS0022.BIN	0:02	289	11066	00	{04:FE}への強い想いが駆け巡る。\n<wait>		reads: への強い想いが駆け巡る。\n<wait>			
-m/MS0022.BIN	0:02	290	11099	1FBA	{01:29}{08:51}{02:08}\n<wait>彼女の事は何{01:3C}知ら{08:25}のに、最初{08:42}{08:72}まるで定めの様に彼女に惹かれ、\n彼女を求めて{08:64}。\n<wait>		Right...\n<wait>You fell in love with her the very moment the two of you met eyes.\nEven before you learned her name, you knew that she was the one.\n<wait>	v005		
-m/MS0022.BIN	0:02	291	11198	1FBA	{08:61}	{08:61}	And yet...	v005		
-m/MS0022.BIN	0:02	292	11206	1FFA	{02:08}‥\n<wait>	{02:08}‥\n<wait>	reads: ‥‥‥‥\n<wait>			
-m/MS0022.BIN	0:02	293	11223	1FFA	例え{08:0B}のせいだと{08:4A}も、彼女の妹を殺{08:4B}事に何の代わりも無い。\n<wait>		You killed her little sister. You murdered her in cold blood.\nYou might have been possessed, but you still did it.\n<wait>	v005		
-m/MS0022.BIN	0:02	294	11292	00	{04:FE}を想う気持ちの果てに在る、{08:79}凍てつく様な現実に突き当た{08:51}。\n		reads: を想う気持ちの果てに在る、その凍てつく様な現実に突き当たった。\n			
-m/MS0022.BIN	0:02	295	11357	00	{04:FF}{08:62}更{08:59}絶望を感じて硬直{08:4B}。\n<wait>		reads: は、更なる絶望を感じて硬直した。\n<wait>			
-m/MS0022.BIN	0:02	296	11392	1FBA	全てが夢{08:7C}{02:08}\n<wait>		How could you ever love someone after doing that to them?\nHow could they ever love you back?\n<wait>	v005		
-m/MS0022.BIN	0:02	297	11411	1FBA	冷や汗をかいて目を覚ませば、そこに{01:28}の朝、\n変わり無い日常が在るの{08:7D}{02:08}。\n<wait>		If only it was all a dream...\n<wait>	v005		
-m/MS0022.BIN	0:02	298	11489	1FBA	{08:63}はどれほど神に感謝を捧げるか知れ{08:25}{02:08}\n<wait>{08:8F}、{08:4D}こそが幻想、{08:4D}こそが叶わぬ夢{08:6B}だ。\n<wait>		If only you could wake up and discover that the world\nwas still the same...\n<wait>	v005		
-m/MS0022.BIN	0:02	299	11585	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	300	11595	00	{04:FF}くん。\n<wait>		reads: くん。\n<wait>			
-m/MS0022.BIN	0:02	301	11619	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	302	11625	1FD3	私{08:62}酷い{02:0B}{08:6B}かも知れ{08:25}。\n美莉が死んで哀しい{08:85}{08:6B}に、<wait>貴方を憎まなきゃ{08:7D}{08:25}のに、\n<wait>湧き起こ{08:52}来て止められ{08:25}の。貴方が好きだ{08:52}{08:47}気持ちが{02:08}‥。\n<wait>		I know I should be sad that my sister's dead.\n<wait>I know that I should despise you...\n<wait>And yet, I can't bring myself to.\nIt might make me a monster, but in this moment, I just love you...\n<wait>	v005		
-m/MS0022.BIN	0:02	303	11822	1FD0	ふたりは見つめ合{08:51}{08:7E}{08:72}{08:5C}、何も語ら{08:19}。\n<wait>		You two stare at one another with neither of you saying anything.\n<wait>	v005		
-m/MS0022.BIN	0:02	304	11867	1FBA	何もかもが動く事を止めて{08:1F}かの様に{08:72}\n<wait>{08:79}一瞬が、永遠に続く神話で{08:7B}かの様に{08:72}\n<wait>		It was as if the whole world had stopped...\n<wait>As if this one moment could last an eternity...\n<wait>	v005		
-m/MS0022.BIN	0:02	305	11953	1FBA	言葉{08:62}もはや何の意味を成しはし{08:19}。\n<wait>		You are unable to formulate a single word, much less a thought.\n<wait>	v005		
-m/MS0022.BIN	0:02	306	12040	1E07	{08:6D}ぐらい、そう{08:4A}{08:64}{08:8C}か。\n<wait>		Just how long must you have stayed like that for?\n<wait>	v005		
-m/MS0022.BIN	0:02	307	12071	1FBA	{08:65}を知ら{08:2A}音で、ふたりの間の時間が再び動き出{08:4B}。\n<wait>		It ends up being the sound of an incoming transmission\nthat finally pulls you back to reality.\n<wait>	v005		
-m/MS0022.BIN	0:02	308	12168	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	309	12174	1FD3	明日、Ｂ５の詰め所で、隊長も交え話し合う事に{08:16}。\n<wait>		We have decided that we will be holding\na meeting tomorrow at the office on B5.\n<wait>	v005		
-m/MS0022.BIN	0:02	310	12231	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	311	12237	1FD3	本当{08:7C}、今すぐに{08:56}話が{08:4B}い{08:77}が{08:72}\n隊長は今、{01:2D}での上層会議に出席中な{08:5F}。\n<wait>		Personally, I would've liked to do it right away,\nbut unfortunately, the Commander is busy dealing\nwith the Administrator's Office, and can't make it\nany earlier...\n<wait>	v005		
-m/MS0022.BIN	0:02	312	12317	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	313	12323	1FD3	{08:90}やら、今日一日は会議{08:42}抜け出れそうも\n無いらしい。\n<wait>		So, yeah. It's gonna have to wait till tomorrow.\n<wait>	v005		
-m/MS0022.BIN	0:02	314	12383	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	315	12389	1FD3	{08:4D}と{02:08}\n<wait>		Also, Katsuragi...\n<wait>Be sure to come by yourself.\n<wait>	v005		
-m/MS0022.BIN	0:02	316	12404	00	{04:FF}、明日はお前{01:3A}で来てくれ。\n<wait>		reads: 、明日はお前ひとりで来てくれ。\n<wait>			
-m/MS0022.BIN	0:02	317	12441	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	318	12451	00	{04:FE}さん。\n<wait>君も聞こえ{08:14}と思う{08:84}、そう{08:68}事に\n決{08:20}{08:5F}。\n<wait>		That means you, Tachibana.<wait>Like it or not, it's what's been decided.\n<wait>	v005		
-m/MS0022.BIN	0:02	319	12514	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	320	12520	1FD3	{02:08}宜しく頼むよ。\n<wait>		I hope you can understand...\n<wait>	v005		
-m/MS0022.BIN	0:02	321	12543	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	322	12549	1FD3	{08:81}あ、明日に{08:16}ら迎えに行く。\n<wait>以上だ。\n<wait>		I'll be there to pick you up in the morning.\n<wait>That's all.\n<wait>	v005		
-m/MS0022.BIN	0:02	323	12605	1FD0	{08:00}{08:42}の{08:65}が切{08:60}{02:08}‥\n<wait>		That's where the message ends.\n<wait>	v005		
-m/MS0022.BIN	0:02	324	12636	00	{04:FE}：		Yuuka:	v005		
-m/MS0022.BIN	0:02	325	12642	1FD3	私、明日{08:71}、{08:45}にい{08:54}{08:7F}で{08:80}？\n<wait>		That means I'm free to stay here till tomorrow, right?\n<wait>	v005		
-m/MS0022.BIN	0:02	326	12683	00	{04:FE}：		Yuuka:	v005		
-m/MS0022.BIN	0:02	327	12689	1FD3	{02:08}離{08:60}く{08:25}の。\n<wait>		I... I don't want to leave you by yourself.\n<wait>	v005		
-m/MS0022.BIN	0:02	328	12716	00	{04:FE}：		Yuuka:	v005		
-m/MS0022.BIN	0:02	329	12722	1FD3	今{08:45}を離れ{08:50}、何だか一生会え{08:25}気が{08:4A}		I feel like if I go now, I'll never be able to see you again.	v005		
-m/MS0022.BIN	0:02	330	12764	1FFA	{02:08}‥\n<wait>	{02:08}‥\n<wait>	reads: ‥‥‥‥\n<wait>			
-m/MS0022.BIN	0:02	331	12783	1FD0	そう言{08:52}、		Having said that, Yuuka wraps her arms tight around you.\n<wait>	v005		
-m/MS0022.BIN	0:02	332	12797	00	{04:FE}は		reads: は			
-m/MS0022.BIN	0:02	333	12805	00	{04:FF}にしがみつ{08:64}。\n<wait>		reads: にしがみついた。\n<wait>			
-m/MS0022.BIN	0:02	334	12832	00	{04:FF}{08:62}{08:63}の胸にしがみつき、肩を震わせ{08:14}		reads: は、自分の胸にしがみつき、肩を震わせている			
-m/MS0022.BIN	0:02	335	12872	00	{04:FE}の髪を優しく撫で、\nそ{08:4A}抱きしめた{02:08}。\n<wait>		reads: の髪を優しく撫で、\nそして抱きしめた‥‥‥。\n<wait>			
-m/MS0022.BIN	0:02	336	12950	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	337	12960	00	{04:FF}くん		reads: くん			
-m/MS0022.BIN	0:02	338	12972	1FFA	{02:08}	{02:08}	reads: ‥‥‥			
+m/MS0022.BIN	0:02	287	10989	1FD0	言葉に出{08:4A}答{08:28}に{08:62}{08:4D}が精一杯だ{08:51}。\n強張{08:51}口とは裏腹に、		Your mind is flooded with feelings of affection for Yuuka, and yet,\nthose simple words are all that you are able to force out.\n<wait>	v005		reads: 言葉に出して答えるには、それが精一杯だった。\n強張った口とは裏腹に、
+m/MS0022.BIN	0:02	288	11048	00	{04:FF}の頭の中を、					reads: の頭の中を、
+m/MS0022.BIN	0:02	289	11066	00	{04:FE}への強い想いが駆け巡る。\n<wait>					reads: への強い想いが駆け巡る。\n<wait>
+m/MS0022.BIN	0:02	290	11099	1FBA	{01:29}{08:51}{02:08}\n<wait>彼女の事は何{01:3C}知ら{08:25}のに、最初{08:42}{08:72}まるで定めの様に彼女に惹かれ、\n彼女を求めて{08:64}。\n<wait>		Right...\n<wait>You fell in love with her the very moment the two of you met eyes.\nEven before you learned her name, you knew that she was the one.\n<wait>	v005		reads: そうだった‥‥‥\n<wait>彼女の事は何ひとつ知らないのに、最初から‥‥まるで定めの様に彼女に惹かれ、\n彼女を求めていた。\n<wait>
+m/MS0022.BIN	0:02	291	11198	1FBA	{08:61}	{08:61}	And yet...	v005		reads: しかし
+m/MS0022.BIN	0:02	292	11206	1FFA	{02:08}‥\n<wait>	{02:08}‥\n<wait>				reads: ‥‥‥‥\n<wait>
+m/MS0022.BIN	0:02	293	11223	1FFA	例え{08:0B}のせいだと{08:4A}も、彼女の妹を殺{08:4B}事に何の代わりも無い。\n<wait>		You killed her little sister. You murdered her in cold blood.\nYou might have been possessed, but you still did it.\n<wait>	v005		reads: 例え悪魔のせいだとしても、彼女の妹を殺した事に何の代わりも無い。\n<wait>
+m/MS0022.BIN	0:02	294	11292	00	{04:FE}を想う気持ちの果てに在る、{08:79}凍てつく様な現実に突き当た{08:51}。\n					reads: を想う気持ちの果てに在る、その凍てつく様な現実に突き当たった。\n
+m/MS0022.BIN	0:02	295	11357	00	{04:FF}{08:62}更{08:59}絶望を感じて硬直{08:4B}。\n<wait>					reads: は、更なる絶望を感じて硬直した。\n<wait>
+m/MS0022.BIN	0:02	296	11392	1FBA	全てが夢{08:7C}{02:08}\n<wait>		How could you ever love someone after doing that to them?\nHow could they ever love you back?\n<wait>	v005		reads: 全てが夢ならば‥‥‥\n<wait>
+m/MS0022.BIN	0:02	297	11411	1FBA	冷や汗をかいて目を覚ませば、そこに{01:28}の朝、\n変わり無い日常が在るの{08:7D}{02:08}。\n<wait>		If only it was all a dream...\n<wait>	v005		reads: 冷や汗をかいて目を覚ませば、そこにいつもの朝、\n変わり無い日常が在るのなら‥‥‥。\n<wait>
+m/MS0022.BIN	0:02	298	11489	1FBA	{08:63}はどれほど神に感謝を捧げるか知れ{08:25}{02:08}\n<wait>{08:8F}、{08:4D}こそが幻想、{08:4D}こそが叶わぬ夢{08:6B}だ。\n<wait>		If only you could wake up and discover that the world\nwas still the same...\n<wait>	v005		reads: 自分はどれほど神に感謝を捧げるか知れない‥‥‥\n<wait>だが、それこそが幻想、それこそが叶わぬ夢なのだ。\n<wait>
+m/MS0022.BIN	0:02	299	11585	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	300	11595	00	{04:FF}くん。\n<wait>					reads: くん。\n<wait>
+m/MS0022.BIN	0:02	301	11619	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	302	11625	1FD3	私{08:62}酷い{02:0B}{08:6B}かも知れ{08:25}。\n美莉が死んで哀しい{08:85}{08:6B}に、<wait>貴方を憎まなきゃ{08:7D}{08:25}のに、\n<wait>湧き起こ{08:52}来て止められ{08:25}の。貴方が好きだ{08:52}{08:47}気持ちが{02:08}‥。\n<wait>		I know I should be sad that my sister's dead.\n<wait>I know that I should despise you...\n<wait>And yet, I can't bring myself to.\nIt might make me a monster, but in this moment, I just love you...\n<wait>	v005		reads: 私は、酷い人間なのかも知れない。\n美莉が死んで哀しいはずなのに、<wait>貴方を憎まなきゃならないのに、\n<wait>湧き起こって来て止められないの。貴方が好きだってこの気持ちが‥‥‥‥。\n<wait>
+m/MS0022.BIN	0:02	303	11822	1FD0	ふたりは見つめ合{08:51}{08:7E}{08:72}{08:5C}、何も語ら{08:19}。\n<wait>		You two stare at one another with neither of you saying anything.\n<wait>	v005		reads: ふたりは見つめ合ったまま‥‥もう、何も語らなかった。\n<wait>
+m/MS0022.BIN	0:02	304	11867	1FBA	何もかもが動く事を止めて{08:1F}かの様に{08:72}\n<wait>{08:79}一瞬が、永遠に続く神話で{08:7B}かの様に{08:72}\n<wait>		It was as if the whole world had stopped...\n<wait>As if this one moment could last an eternity...\n<wait>	v005		reads: 何もかもが動く事を止めてしまったかの様に‥‥\n<wait>その一瞬が、永遠に続く神話であるかの様に‥‥\n<wait>
+m/MS0022.BIN	0:02	305	11953	1FBA	言葉{08:62}もはや何の意味を成しはし{08:19}。\n<wait>		You are unable to formulate a single word, much less a thought.\n<wait>	v005		reads: 言葉は、もはや何の意味を成しはしなかった。\n<wait>
+m/MS0022.BIN	0:02	306	12040	1E07	{08:6D}ぐらい、そう{08:4A}{08:64}{08:8C}か。\n<wait>		Just how long must you have stayed like that for?\n<wait>	v005		reads: どのぐらい、そうしていただろうか。\n<wait>
+m/MS0022.BIN	0:02	307	12071	1FBA	{08:65}を知ら{08:2A}音で、ふたりの間の時間が再び動き出{08:4B}。\n<wait>		It ends up being the sound of an incoming transmission\nthat finally pulls you back to reality.\n<wait>	v005		reads: 通信を知らせる音で、ふたりの間の時間が再び動き出した。\n<wait>
+m/MS0022.BIN	0:02	308	12168	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	309	12174	1FD3	明日、Ｂ５の詰め所で、隊長も交え話し合う事に{08:16}。\n<wait>		We have decided that we will be holding\na meeting tomorrow at the office on B5.\n<wait>	v005		reads: 明日、Ｂ５の詰め所で、隊長も交え話し合う事になった。\n<wait>
+m/MS0022.BIN	0:02	310	12231	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	311	12237	1FD3	本当{08:7C}、今すぐに{08:56}話が{08:4B}い{08:77}が{08:72}\n隊長は今、{01:2D}での上層会議に出席中な{08:5F}。\n<wait>		Personally, I would've liked to do it right away,\nbut unfortunately, the Commander is busy dealing\nwith the Administrator's Office, and can't make it\nany earlier...\n<wait>	v005		reads: 本当ならば、今すぐにでも話がしたいのだが‥‥\n隊長は今、管理部での上層会議に出席中なんだ。\n<wait>
+m/MS0022.BIN	0:02	312	12317	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	313	12323	1FD3	{08:90}やら、今日一日は会議{08:42}抜け出れそうも\n無いらしい。\n<wait>		So, yeah. It's gonna have to wait till tomorrow.\n<wait>	v005		reads: どうやら、今日一日は会議から抜け出れそうも\n無いらしい。\n<wait>
+m/MS0022.BIN	0:02	314	12383	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	315	12389	1FD3	{08:4D}と{02:08}\n<wait>		Also, Katsuragi...\n<wait>Be sure to come by yourself.\n<wait>	v005		reads: それと‥‥‥\n<wait>
+m/MS0022.BIN	0:02	316	12404	00	{04:FF}、明日はお前{01:3A}で来てくれ。\n<wait>					reads: 、明日はお前ひとりで来てくれ。\n<wait>
+m/MS0022.BIN	0:02	317	12441	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	318	12451	00	{04:FE}さん。\n<wait>君も聞こえ{08:14}と思う{08:84}、そう{08:68}事に\n決{08:20}{08:5F}。\n<wait>		That means you, Tachibana.<wait>Like it or not, it's what's been decided.\n<wait>	v005		reads: さん。\n<wait>君も聞こえていると思うけど、そういう事に\n決まったんだ。\n<wait>
+m/MS0022.BIN	0:02	319	12514	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	320	12520	1FD3	{02:08}宜しく頼むよ。\n<wait>		I hope you can understand...\n<wait>	v005		reads: ‥‥‥宜しく頼むよ。\n<wait>
+m/MS0022.BIN	0:02	321	12543	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	322	12549	1FD3	{08:81}あ、明日に{08:16}ら迎えに行く。\n<wait>以上だ。\n<wait>		I'll be there to pick you up in the morning.\n<wait>That's all.\n<wait>	v005		reads: じゃあ、明日になったら迎えに行く。\n<wait>以上だ。\n<wait>
+m/MS0022.BIN	0:02	323	12605	1FD0	{08:00}{08:42}の{08:65}が切{08:60}{02:08}‥\n<wait>		That's where the message ends.\n<wait>	v005		reads: 早坂からの通信が切れた‥‥‥‥\n<wait>
+m/MS0022.BIN	0:02	324	12636	00	{04:FE}：		Yuuka:	v005		reads: ：
+m/MS0022.BIN	0:02	325	12642	1FD3	私、明日{08:71}、{08:45}にい{08:54}{08:7F}で{08:80}？\n<wait>		That means I'm free to stay here till tomorrow, right?\n<wait>	v005		reads: 私、明日まで、ここにいてもいいでしょう？\n<wait>
+m/MS0022.BIN	0:02	326	12683	00	{04:FE}：		Yuuka:	v005		reads: ：
+m/MS0022.BIN	0:02	327	12689	1FD3	{02:08}離{08:60}く{08:25}の。\n<wait>		I... I don't want to leave you by yourself.\n<wait>	v005		reads: ‥‥‥離れたくないの。\n<wait>
+m/MS0022.BIN	0:02	328	12716	00	{04:FE}：		Yuuka:	v005		reads: ：
+m/MS0022.BIN	0:02	329	12722	1FD3	今{08:45}を離れ{08:50}、何だか一生会え{08:25}気が{08:4A}		I feel like if I go now, I'll never be able to see you again.	v005		reads: 今ここを離れたら、何だか一生会えない気がして
+m/MS0022.BIN	0:02	330	12764	1FFA	{02:08}‥\n<wait>	{02:08}‥\n<wait>				reads: ‥‥‥‥\n<wait>
+m/MS0022.BIN	0:02	331	12783	1FD0	そう言{08:52}、		Having said that, Yuuka wraps her arms tight around you.\n<wait>	v005		reads: そう言って、
+m/MS0022.BIN	0:02	332	12797	00	{04:FE}は					reads: は
+m/MS0022.BIN	0:02	333	12805	00	{04:FF}にしがみつ{08:64}。\n<wait>					reads: にしがみついた。\n<wait>
+m/MS0022.BIN	0:02	334	12832	00	{04:FF}{08:62}{08:63}の胸にしがみつき、肩を震わせ{08:14}					reads: は、自分の胸にしがみつき、肩を震わせている
+m/MS0022.BIN	0:02	335	12872	00	{04:FE}の髪を優しく撫で、\nそ{08:4A}抱きしめた{02:08}。\n<wait>					reads: の髪を優しく撫で、\nそして抱きしめた‥‥‥。\n<wait>
+m/MS0022.BIN	0:02	336	12950	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	337	12960	00	{04:FF}くん					reads: くん
+m/MS0022.BIN	0:02	338	12972	1FFA	{02:08}	{02:08}				reads: ‥‥‥
 m/MS0022.BIN	0:02	339	12980	1FFA	好き		I love you	v005		
-m/MS0022.BIN	0:02	340	12990	1FFA	{02:08}\n<wait>	{02:08}\n<wait>	reads: ‥‥‥\n<wait>			
-m/MS0022.BIN	0:02	341	13011	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	342	13021	00	{04:FF}くん{08:72}<wait>も{08:53}強く抱きしめて{08:72}離さ{08:25}で{02:08}\n<wait>		reads: くん‥‥<wait>もっと強く抱きしめて‥‥離さないで‥‥‥\n<wait>			
-m/MS0022.BIN	0:02	343	13076	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	344	13082	1FD3	そ{08:4A}{08:72}<wait>キス{08:4A}{02:08}<wait>愛し{08:2B}の{02:08}\n<wait>		Katsuragi-kun... <wait>Hold me tight... And don't let me go...\n<wait>	v005		
-m/MS0022.BIN	0:02	345	13149	00	{04:FE}の鼓動が、密着{08:8E}身体を伝わり、甘美なパルスと{08:1A}、\n		reads: の鼓動が、密着する身体を伝わり、甘美なパルスとなって、\n			
-m/MS0022.BIN	0:02	346	13204	00	{04:FF}の内部へと届いて来る{08:72}。\n<wait>		reads: の内部へと届いて来る‥‥。\n<wait>			
-m/MS0022.BIN	0:02	347	13237	1FBA	{08:79}潤{08:5F}瞳は固く閉じられ、{08:76}涙に濡{08:2F}長い睫毛が、恥じらいと緊張で\n震え{08:14}{02:08}。\n<wait>		Her eyelashes, still wet with tears, can be seen shivering.\nShe's clearly nervous...\n<wait>	v005		
-m/MS0022.BIN	0:02	348	13321	00	{04:FF}{08:62}脳が灼{08:29}{08:69}な甘い衝撃に襲わ{08:60}。\n<wait>		A burning sensation travels through your mind.\n<wait>	v005		
-m/MS0022.BIN	0:02	349	13364	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		
-m/MS0022.BIN	0:02	350	13391	1FB2	優しく口づ{08:29}		Softly kiss her	v005		
-m/MS0022.BIN	0:02	351	13405	1FB2	戸惑い躊躇{08:8E}		Hesitate	v005		
-m/MS0022.BIN	0:02	352	13419	1FB2	{08:79}{08:7E}押し倒す		Push her down	v005		
-m/MS0022.BIN	0:02	353	13445	0F	{01:64}{01:02}{01:E9}{01:FF}	{01:64}{01:02}{01:E9}{01:FF}	reads: 桐島英美			
-m/MS0022.BIN	0:02	354	13459	00	{04:FF}{08:62}	{04:FF}{08:62}	reads: は、			
-m/MS0022.BIN	0:02	355	13467	00	{04:FE}の唇を優しく塞いだ{02:08}。\n<wait>		reads: の唇を優しく塞いだ‥‥‥。\n<wait>			
-m/MS0022.BIN	0:02	356	13504	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	357	13510	1FD3	ん{02:08}\n<wait>		Mhh...\n<wait>	v005		
-m/MS0022.BIN	0:02	358	13527	00	{04:FE}の唇はし{08:53}りと柔らかく、{08:79}華奢で薄い唇{08:42}漏{08:2F}吐息{08:62}\n全てを癒し包み込む女神の様だ{08:72}。\n<wait>		Her lips are so soft, yet so frail at the same time.\nAnd her sweet, sweet breath... Ah... You can feel yourself\nreinvigorating as you breathe it in. She's like... a goddess.\n<wait>	v005		
-m/MS0022.BIN	0:02	359	13629	00	{04:FE}：		Yuuka:	v005		
-m/MS0022.BIN	0:02	360	13645	00	{04:FF}くん{02:08}\n<wait>		Katsuragi-kun...\n<wait>	v005		
-m/MS0022.BIN	0:02	361	13672	00	{04:FE}は上気{08:4B}顔で、囁く様にそう呟{08:64}。\n<wait>		She quietly whispers your name.\n<wait>	v005		
-m/MS0022.BIN	0:02	362	13715	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		
-m/MS0022.BIN	0:02	363	13742	1FB2	{08:5C}一度キス{08:8E}		Kiss her again	v005		
-m/MS0022.BIN	0:02	364	13756	1FB2	髪にそ{08:53}触{08:2F}		Touch her hair	v005		
-m/MS0022.BIN	0:02	365	13770	1FB2	{08:79}{08:7E}押し倒す		Push her down	v005		
-m/MS0022.BIN	0:02	366	13796	0F	{01:27}{04:02}{01:1E}{05:FF}	{01:27}{04:02}{01:1E}{05:FF}	reads: まさか切りはやく			
-m/MS0022.BIN	0:02	367	13836	00	{04:FE}：		Yuuka:	v005		
-m/MS0022.BIN	0:02	368	13842	1FD3	私の事が{02:08}<wait>キライ？\n<wait>		Do you... <wait>not like me?\n<wait>	v005		
-m/MS0022.BIN	0:02	369	13887	1FB2	{08:7A}訳{08:25}！		Of course I do!	v005		
-m/MS0022.BIN	0:02	370	13897	1FB2	黙っ{08:14}{08:72}		Say nothing	v005		
-m/MS0022.BIN	0:02	371	13907	1FB2	{08:79}{08:7E}押し倒す		Push her down	v005		
-m/MS0022.BIN	0:02	372	13933	0F	{01:46}{07:02}{01:01}	{01:46}{07:02}{01:01}	reads: ＞どうやって？山瀬勇			
+m/MS0022.BIN	0:02	340	12990	1FFA	{02:08}\n<wait>	{02:08}\n<wait>				reads: ‥‥‥\n<wait>
+m/MS0022.BIN	0:02	341	13011	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	342	13021	00	{04:FF}くん{08:72}<wait>も{08:53}強く抱きしめて{08:72}離さ{08:25}で{02:08}\n<wait>					reads: くん‥‥<wait>もっと強く抱きしめて‥‥離さないで‥‥‥\n<wait>
+m/MS0022.BIN	0:02	343	13076	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	344	13082	1FD3	そ{08:4A}{08:72}<wait>キス{08:4A}{02:08}<wait>愛し{08:2B}の{02:08}\n<wait>		Katsuragi-kun... <wait>Hold me tight... And don't let me go...\n<wait>	v005		reads: そして‥‥<wait>キスして‥‥‥<wait>愛してるの‥‥‥\n<wait>
+m/MS0022.BIN	0:02	345	13149	00	{04:FE}の鼓動が、密着{08:8E}身体を伝わり、甘美なパルスと{08:1A}、\n					reads: の鼓動が、密着する身体を伝わり、甘美なパルスとなって、\n
+m/MS0022.BIN	0:02	346	13204	00	{04:FF}の内部へと届いて来る{08:72}。\n<wait>					reads: の内部へと届いて来る‥‥。\n<wait>
+m/MS0022.BIN	0:02	347	13237	1FBA	{08:79}潤{08:5F}瞳は固く閉じられ、{08:76}涙に濡{08:2F}長い睫毛が、恥じらいと緊張で\n震え{08:14}{02:08}。\n<wait>		Her eyelashes, still wet with tears, can be seen shivering.\nShe's clearly nervous...\n<wait>	v005		reads: その潤んだ瞳は固く閉じられ、まだ涙に濡れる長い睫毛が、恥じらいと緊張で\n震えている‥‥‥。\n<wait>
+m/MS0022.BIN	0:02	348	13321	00	{04:FF}{08:62}脳が灼{08:29}{08:69}な甘い衝撃に襲わ{08:60}。\n<wait>		A burning sensation travels through your mind.\n<wait>	v005		reads: は、脳が灼けるような甘い衝撃に襲われた。\n<wait>
+m/MS0022.BIN	0:02	349	13364	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>
+m/MS0022.BIN	0:02	350	13391	1FB2	優しく口づ{08:29}		Softly kiss her	v005		reads: 優しく口づける; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	351	13405	1FB2	戸惑い躊躇{08:8E}		Hesitate	v005		reads: 戸惑い躊躇する; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	352	13419	1FB2	{08:79}{08:7E}押し倒す		Push her down	v005		reads: そのまま押し倒す; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	353	13445	0F	{01:64}{01:02}{01:E9}{01:FF}	{01:64}{01:02}{01:E9}{01:FF}				reads: 桐島英美
+m/MS0022.BIN	0:02	354	13459	00	{04:FF}{08:62}	{04:FF}{08:62}				reads: は、
+m/MS0022.BIN	0:02	355	13467	00	{04:FE}の唇を優しく塞いだ{02:08}。\n<wait>					reads: の唇を優しく塞いだ‥‥‥。\n<wait>
+m/MS0022.BIN	0:02	356	13504	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	357	13510	1FD3	ん{02:08}\n<wait>		Mhh...\n<wait>	v005		reads: ん‥‥‥\n<wait>
+m/MS0022.BIN	0:02	358	13527	00	{04:FE}の唇はし{08:53}りと柔らかく、{08:79}華奢で薄い唇{08:42}漏{08:2F}吐息{08:62}\n全てを癒し包み込む女神の様だ{08:72}。\n<wait>		Her lips are so soft, yet so frail at the same time.\nAnd her sweet, sweet breath... Ah... You can feel yourself\nreinvigorating as you breathe it in. She's like... a goddess.\n<wait>	v005		reads: の唇はしっとりと柔らかく、その華奢で薄い唇から漏れる吐息は、\n全てを癒し包み込む女神の様だ‥‥。\n<wait>
+m/MS0022.BIN	0:02	359	13629	00	{04:FE}：		Yuuka:	v005		reads: ：
+m/MS0022.BIN	0:02	360	13645	00	{04:FF}くん{02:08}\n<wait>		Katsuragi-kun...\n<wait>	v005		reads: くん‥‥‥\n<wait>
+m/MS0022.BIN	0:02	361	13672	00	{04:FE}は上気{08:4B}顔で、囁く様にそう呟{08:64}。\n<wait>		She quietly whispers your name.\n<wait>	v005		reads: は上気した顔で、囁く様にそう呟いた。\n<wait>
+m/MS0022.BIN	0:02	362	13715	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>
+m/MS0022.BIN	0:02	363	13742	1FB2	{08:5C}一度キス{08:8E}		Kiss her again	v005		reads: もう一度キスする; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	364	13756	1FB2	髪にそ{08:53}触{08:2F}		Touch her hair	v005		reads: 髪にそっと触れる; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	365	13770	1FB2	{08:79}{08:7E}押し倒す		Push her down	v005		reads: そのまま押し倒す; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	366	13796	0F	{01:27}{04:02}{01:1E}{05:FF}	{01:27}{04:02}{01:1E}{05:FF}				reads: まさか切りはやく
+m/MS0022.BIN	0:02	367	13836	00	{04:FE}：		Yuuka:	v005		reads: ：
+m/MS0022.BIN	0:02	368	13842	1FD3	私の事が{02:08}<wait>キライ？\n<wait>		Do you... <wait>not like me?\n<wait>	v005		reads: 私の事が‥‥‥<wait>キライ？\n<wait>
+m/MS0022.BIN	0:02	369	13887	1FB2	{08:7A}訳{08:25}！		Of course I do!	v005		reads: そんな訳ない！; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	370	13897	1FB2	黙っ{08:14}{08:72}		Say nothing	v005		reads: 黙っている‥‥; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	371	13907	1FB2	{08:79}{08:7E}押し倒す		Push her down	v005		reads: そのまま押し倒す; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	372	13933	0F	{01:46}{07:02}{01:01}	{01:46}{07:02}{01:01}				reads: ＞どうやって？山瀬勇
 m/MS0022.BIN	0:02	373	13940	00						
-m/MS0022.BIN	0:02	374	13943	1FD0	{08:7A}	{08:7A}	There's no way you can keep yourself in check here.\n<wait>	v005		
-m/MS0022.BIN	0:02	375	13949	00	{04:FE}を前に、		reads: を前に、			
-m/MS0022.BIN	0:02	376	13963	00	{04:FF}の理性は吹き飛{08:5F}。\n<wait>		reads: の理性は吹き飛んだ。\n<wait>			
-m/MS0022.BIN	0:02	377	13990	1FBA	{08:90}{08:1A}も構わ{08:25}。\n<wait>今は{08:82}、		What comes next doesn't matter.\n<wait>You want Yuuka. You want her now.\n<wait>	v005		
-m/MS0022.BIN	0:02	378	14021	00	{04:FE}の全てが欲し{08:18}。\n<wait>		reads: の全てが欲しかった。\n<wait>			
-m/MS0022.BIN	0:02	379	14050	00	{04:FF}は		reads: は			
-m/MS0022.BIN	0:02	380	14058	00	{04:FE}を引き離し、ベッドに押し倒そうと{08:4B}{08:72}\n<wait>		reads: を引き離し、ベッドに押し倒そうとした‥‥\n<wait>			
-m/MS0022.BIN	0:02	381	14135	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	382	14141	1FD3	いや{02:08}<wait>酷いわ{08:72}<wait>		No... <wait>Stop... <wait>Do you not love me after all?\n<wait>	v005		
-m/MS0022.BIN	0:02	383	14167	00	{04:FF}くん、本当に私の事が好き{08:6B}？\n<wait>		reads: くん、本当に私の事が好きなの？\n<wait>			
-m/MS0022.BIN	0:02	384	14210	00	{04:FE}は身体を強張らせ、		reads: は身体を強張らせ、			
-m/MS0022.BIN	0:02	385	14234	00	{04:FF}{08:42}身体を離{08:4B}。\n<wait>		reads: から身体を離した。\n<wait>			
-m/MS0022.BIN	0:02	386	14259	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		
-m/MS0022.BIN	0:02	387	14286	1FB2	愛{08:13}と囁く		Whisper "I love you"	v005		
-m/MS0022.BIN	0:02	388	14298	1FB2	怒る		Get angry	v005		
-m/MS0022.BIN	0:02	389	14304	1FB2	沈黙{08:8E}		Say nothing	v005		
-m/MS0022.BIN	0:02	390	14324	0F	{01:61}{07:02}{01:BB}{05:FF}	{01:61}{07:02}{01:BB}{05:FF}	reads: ＞どうやって？			
+m/MS0022.BIN	0:02	374	13943	1FD0	{08:7A}	{08:7A}	There's no way you can keep yourself in check here.\n<wait>	v005		reads: そんな
+m/MS0022.BIN	0:02	375	13949	00	{04:FE}を前に、					reads: を前に、
+m/MS0022.BIN	0:02	376	13963	00	{04:FF}の理性は吹き飛{08:5F}。\n<wait>					reads: の理性は吹き飛んだ。\n<wait>
+m/MS0022.BIN	0:02	377	13990	1FBA	{08:90}{08:1A}も構わ{08:25}。\n<wait>今は{08:82}、		What comes next doesn't matter.\n<wait>You want Yuuka. You want her now.\n<wait>	v005		reads: どうなっても構わない。\n<wait>今はただ、
+m/MS0022.BIN	0:02	378	14021	00	{04:FE}の全てが欲し{08:18}。\n<wait>					reads: の全てが欲しかった。\n<wait>
+m/MS0022.BIN	0:02	379	14050	00	{04:FF}は					reads: は
+m/MS0022.BIN	0:02	380	14058	00	{04:FE}を引き離し、ベッドに押し倒そうと{08:4B}{08:72}\n<wait>					reads: を引き離し、ベッドに押し倒そうとした‥‥\n<wait>
+m/MS0022.BIN	0:02	381	14135	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	382	14141	1FD3	いや{02:08}<wait>酷いわ{08:72}<wait>		No... <wait>Stop... <wait>Do you not love me after all?\n<wait>	v005		reads: いや‥‥‥<wait>酷いわ‥‥<wait>
+m/MS0022.BIN	0:02	383	14167	00	{04:FF}くん、本当に私の事が好き{08:6B}？\n<wait>					reads: くん、本当に私の事が好きなの？\n<wait>
+m/MS0022.BIN	0:02	384	14210	00	{04:FE}は身体を強張らせ、					reads: は身体を強張らせ、
+m/MS0022.BIN	0:02	385	14234	00	{04:FF}{08:42}身体を離{08:4B}。\n<wait>					reads: から身体を離した。\n<wait>
+m/MS0022.BIN	0:02	386	14259	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>
+m/MS0022.BIN	0:02	387	14286	1FB2	愛{08:13}と囁く		Whisper "I love you"	v005		reads: 愛していると囁く; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	388	14298	1FB2	怒る		Get angry	v005		menu option, declared width 20 columns
+m/MS0022.BIN	0:02	389	14304	1FB2	沈黙{08:8E}		Say nothing	v005		reads: 沈黙する; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	390	14324	0F	{01:61}{07:02}{01:BB}{05:FF}	{01:61}{07:02}{01:BB}{05:FF}				reads: ＞どうやって？
 m/MS0022.BIN	0:02	391	14334	1FD0	今度は少し強引に、		You kiss her again, a bit more forcibly this time.\n<wait>	v005		
-m/MS0022.BIN	0:02	392	14356	00	{04:FF}は		reads: は			
-m/MS0022.BIN	0:02	393	14364	00	{04:FE}の唇を奪{08:51}。\n<wait>		reads: の唇を奪った。\n<wait>			
-m/MS0022.BIN	0:02	394	14391	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	395	14397	1FD3	あ{08:72}！\n<wait>		Ah!...\n<wait>	v005		
-m/MS0022.BIN	0:02	396	14434	1FD0	かすかに開か{08:60}{08:79}唇に、		Her mouth is open just wide enough for you to force your tongue inside.\n<wait>	v005		
-m/MS0022.BIN	0:02	397	14460	00	{04:FF}は{08:63}の舌を滑り込ませた。\n<wait>		reads: は自分の舌を滑り込ませた。\n<wait>			
-m/MS0022.BIN	0:02	398	14497	00	{04:FE}は戸惑い抵抗し{08:69}と試みたが、すぐに思い止まり、ぎこちなく\n舌を絡ま{08:67}来た{08:72}。\n<wait>		reads: は戸惑い抵抗しようと試みたが、すぐに思い止まり、ぎこちなく\n舌を絡ませて来た‥‥。\n<wait>			
-m/MS0022.BIN	0:02	399	14583	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		
-m/MS0022.BIN	0:02	400	14610	1FB2	愛し{08:2B}と囁く		Whisper "I love you"	v005		
-m/MS0022.BIN	0:02	401	14624	1FB2	{08:79}{08:7E}押し倒す		Push her down	v005		
-m/MS0022.BIN	0:02	402	14638	1FB2	{08:5C}止{08:2E}		Stop	v005		
-m/MS0022.BIN	0:02	403	14658	0F	{01:C4}{01:02}{01:01}	{01:C4}{01:02}{01:01}	reads: 桐島英美山瀬勇			
+m/MS0022.BIN	0:02	392	14356	00	{04:FF}は					reads: は
+m/MS0022.BIN	0:02	393	14364	00	{04:FE}の唇を奪{08:51}。\n<wait>					reads: の唇を奪った。\n<wait>
+m/MS0022.BIN	0:02	394	14391	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	395	14397	1FD3	あ{08:72}！\n<wait>		Ah!...\n<wait>	v005		reads: あ‥‥！\n<wait>
+m/MS0022.BIN	0:02	396	14434	1FD0	かすかに開か{08:60}{08:79}唇に、		Her mouth is open just wide enough for you to force your tongue inside.\n<wait>	v005		reads: かすかに開かれたその唇に、
+m/MS0022.BIN	0:02	397	14460	00	{04:FF}は{08:63}の舌を滑り込ませた。\n<wait>					reads: は自分の舌を滑り込ませた。\n<wait>
+m/MS0022.BIN	0:02	398	14497	00	{04:FE}は戸惑い抵抗し{08:69}と試みたが、すぐに思い止まり、ぎこちなく\n舌を絡ま{08:67}来た{08:72}。\n<wait>					reads: は戸惑い抵抗しようと試みたが、すぐに思い止まり、ぎこちなく\n舌を絡ませて来た‥‥。\n<wait>
+m/MS0022.BIN	0:02	399	14583	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>
+m/MS0022.BIN	0:02	400	14610	1FB2	愛し{08:2B}と囁く		Whisper "I love you"	v005		reads: 愛してると囁く; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	401	14624	1FB2	{08:79}{08:7E}押し倒す		Push her down	v005		reads: そのまま押し倒す; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	402	14638	1FB2	{08:5C}止{08:2E}		Stop	v005		reads: もう止める; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	403	14658	0F	{01:C4}{01:02}{01:01}	{01:C4}{01:02}{01:01}				reads: 桐島英美山瀬勇
 m/MS0022.BIN	0:02	404	14665	00						
-m/MS0022.BIN	0:02	405	14668	1FD0	{08:79}時{02:08}		It is there that you are finally able to regain yourself.\n<wait>	v005		
-m/MS0022.BIN	0:02	406	14678	00	{04:FF}には冷静さが戻{08:51}。\n<wait>		reads: には冷静さが戻った。\n<wait>			
-m/MS0022.BIN	0:02	407	14705	1FBA	{08:73}事を{08:4A}{08:26}け{08:25}{02:08}\n刹那の劣情に押{03:0C}て、{08:73}事を{08:8E}のは間違っ{08:14}。\n<wait>		You can't do this.\nYou can't let yourself be controlled by your primal instincts.\n<wait>	v005		
-m/MS0022.BIN	0:02	408	14775	00	{04:FF}は優しく、そ{08:4A}少し哀しげな眼で		reads: は優しく、そして少し哀しげな眼で			
-m/MS0022.BIN	0:02	409	14811	00	{04:FE}を見、そ{08:4A}、そ{08:53}彼女の身体を\n引き離{08:4B}。\n<wait>		reads: を見、そして、そっと彼女の身体を\n引き離した。\n<wait>			
-m/MS0022.BIN	0:02	410	14868	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	411	14878	00	{04:FF}くん{08:72}<wait>何だか変{08:6B}{02:08}<wait>死にそうなくらい恥ずかしいのに{08:72}		reads: くん‥‥<wait>何だか変なの‥‥‥<wait>死にそうなくらい恥ずかしいのに‥‥			
-m/MS0022.BIN	0:02	412	14944	1FFA	私{02:08}‥\n<wait>		I...\n<wait>	v005		
+m/MS0022.BIN	0:02	405	14668	1FD0	{08:79}時{02:08}		It is there that you are finally able to regain yourself.\n<wait>	v005		reads: その時‥‥‥
+m/MS0022.BIN	0:02	406	14678	00	{04:FF}には冷静さが戻{08:51}。\n<wait>					reads: には冷静さが戻った。\n<wait>
+m/MS0022.BIN	0:02	407	14705	1FBA	{08:73}事を{08:4A}{08:26}け{08:25}{02:08}\n刹那の劣情に押{03:0C}て、{08:73}事を{08:8E}のは間違っ{08:14}。\n<wait>		You can't do this.\nYou can't let yourself be controlled by your primal instincts.\n<wait>	v005		reads: こんな事をしてはいけない‥‥‥\n刹那の劣情に押されて、こんな事をするのは間違っている。\n<wait>
+m/MS0022.BIN	0:02	408	14775	00	{04:FF}は優しく、そ{08:4A}少し哀しげな眼で					reads: は優しく、そして少し哀しげな眼で
+m/MS0022.BIN	0:02	409	14811	00	{04:FE}を見、そ{08:4A}、そ{08:53}彼女の身体を\n引き離{08:4B}。\n<wait>					reads: を見、そして、そっと彼女の身体を\n引き離した。\n<wait>
+m/MS0022.BIN	0:02	410	14868	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	411	14878	00	{04:FF}くん{08:72}<wait>何だか変{08:6B}{02:08}<wait>死にそうなくらい恥ずかしいのに{08:72}					reads: くん‥‥<wait>何だか変なの‥‥‥<wait>死にそうなくらい恥ずかしいのに‥‥
+m/MS0022.BIN	0:02	412	14944	1FFA	私{02:08}‥\n<wait>		I...\n<wait>	v005		reads: 私‥‥‥‥\n<wait>
 m/MS0022.BIN	0:02	413	14965	1FD0	熱い吐息を洩らしながら、切なげに		You notice that Yuuka's breathing has grown increasingly heavy.\n<wait>	v005		
-m/MS0022.BIN	0:02	414	15001	00	{04:FE}はそう言{08:51}。\n<wait>		reads: はそう言った。\n<wait>			
-m/MS0022.BIN	0:02	415	15024	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		
-m/MS0022.BIN	0:02	416	15051	1FB2	君が欲しい{02:08}		I want you...	v005		
-m/MS0022.BIN	0:02	417	15065	1FB2	{08:5C}一度キス{08:8E}		Kiss her again	v005		
-m/MS0022.BIN	0:02	418	15079	1FB2	{08:79}{08:7E}押し倒す		Push her down	v005		
-m/MS0022.BIN	0:02	419	15105	0F	{01:F8}{=FC}{=02}{01:CF}{01:FF}	{01:F8}{=FC}{=02}{01:CF}{01:FF}	reads: {=FC}{=02}			
-m/MS0022.BIN	0:02	420	15115	1FD0	{08:7A}	{08:7A}	There's no way you can keep yourself in check here.\n<wait>	v005		
-m/MS0022.BIN	0:02	421	15121	00	{04:FE}を前に、		reads: を前に、			
-m/MS0022.BIN	0:02	422	15135	00	{04:FF}の理性は吹き飛{08:5F}。\n<wait>		reads: の理性は吹き飛んだ。\n<wait>			
-m/MS0022.BIN	0:02	423	15162	1FBA	{08:90}{08:1A}も構わ{08:25}。\n<wait>今は{08:82}、		What comes next doesn't matter.\n<wait>You want Yuuka. You want her now.\n<wait>	v005		
-m/MS0022.BIN	0:02	424	15193	00	{04:FE}の全てが欲し{08:18}。\n<wait>		reads: の全てが欲しかった。\n<wait>			
-m/MS0022.BIN	0:02	425	15222	00	{04:FF}は		reads: は			
-m/MS0022.BIN	0:02	426	15230	00	{04:FE}を引き離し、ベッドに押し倒そうと{08:4B}{08:72}\n<wait>		reads: を引き離し、ベッドに押し倒そうとした‥‥\n<wait>			
-m/MS0022.BIN	0:02	427	15303	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	428	15309	1FD3	いや{02:08}‥<wait>		No... <wait>Katsuragi-kun... I'm scared...\n<wait>	v005		
-m/MS0022.BIN	0:02	429	15325	00	{04:FF}くん{08:72}怖い{08:72}\n<wait>		reads: くん‥‥怖い‥‥\n<wait>			
-m/MS0022.BIN	0:02	430	15352	00	{04:FE}は身を強張らせた。\n<wait>		reads: は身を強張らせた。\n<wait>			
-m/MS0022.BIN	0:02	431	15381	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		
-m/MS0022.BIN	0:02	432	15408	1FB2	あやまる		Apologize	v005		
-m/MS0022.BIN	0:02	433	15418	1FB2	愛し{08:2B}と囁く		Whisper "I love you"	v005		
-m/MS0022.BIN	0:02	434	15432	1FB2	{08:5C}止{08:2E}		Stop	v005		
-m/MS0022.BIN	0:02	435	15452	0F	{01:35}{06:02}{01:E7}{=FC}{=FF}	{01:35}{06:02}{01:E7}{=FC}{=FF}	reads: バーチャル{=FC}{=FF}			
-m/MS0022.BIN	0:02	436	15466	00	{04:FE}：		Yuuka:	v005		
-m/MS0022.BIN	0:02	437	15478	1FFA	{02:08}{02:08}‥	{02:08}{02:08}‥	reads: ‥‥‥‥‥‥‥			
+m/MS0022.BIN	0:02	414	15001	00	{04:FE}はそう言{08:51}。\n<wait>					reads: はそう言った。\n<wait>
+m/MS0022.BIN	0:02	415	15024	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>
+m/MS0022.BIN	0:02	416	15051	1FB2	君が欲しい{02:08}		I want you...	v005		reads: 君が欲しい‥‥‥; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	417	15065	1FB2	{08:5C}一度キス{08:8E}		Kiss her again	v005		reads: もう一度キスする; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	418	15079	1FB2	{08:79}{08:7E}押し倒す		Push her down	v005		reads: そのまま押し倒す; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	419	15105	0F	{01:F8}{=FC}{=02}{01:CF}{01:FF}	{01:F8}{=FC}{=02}{01:CF}{01:FF}				reads: {=FC}{=02}
+m/MS0022.BIN	0:02	420	15115	1FD0	{08:7A}	{08:7A}	There's no way you can keep yourself in check here.\n<wait>	v005		reads: そんな
+m/MS0022.BIN	0:02	421	15121	00	{04:FE}を前に、					reads: を前に、
+m/MS0022.BIN	0:02	422	15135	00	{04:FF}の理性は吹き飛{08:5F}。\n<wait>					reads: の理性は吹き飛んだ。\n<wait>
+m/MS0022.BIN	0:02	423	15162	1FBA	{08:90}{08:1A}も構わ{08:25}。\n<wait>今は{08:82}、		What comes next doesn't matter.\n<wait>You want Yuuka. You want her now.\n<wait>	v005		reads: どうなっても構わない。\n<wait>今はただ、
+m/MS0022.BIN	0:02	424	15193	00	{04:FE}の全てが欲し{08:18}。\n<wait>					reads: の全てが欲しかった。\n<wait>
+m/MS0022.BIN	0:02	425	15222	00	{04:FF}は					reads: は
+m/MS0022.BIN	0:02	426	15230	00	{04:FE}を引き離し、ベッドに押し倒そうと{08:4B}{08:72}\n<wait>					reads: を引き離し、ベッドに押し倒そうとした‥‥\n<wait>
+m/MS0022.BIN	0:02	427	15303	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	428	15309	1FD3	いや{02:08}‥<wait>		No... <wait>Katsuragi-kun... I'm scared...\n<wait>	v005		reads: いや‥‥‥‥<wait>
+m/MS0022.BIN	0:02	429	15325	00	{04:FF}くん{08:72}怖い{08:72}\n<wait>					reads: くん‥‥怖い‥‥\n<wait>
+m/MS0022.BIN	0:02	430	15352	00	{04:FE}は身を強張らせた。\n<wait>					reads: は身を強張らせた。\n<wait>
+m/MS0022.BIN	0:02	431	15381	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>
+m/MS0022.BIN	0:02	432	15408	1FB2	あやまる		Apologize	v005		menu option, declared width 20 columns
+m/MS0022.BIN	0:02	433	15418	1FB2	愛し{08:2B}と囁く		Whisper "I love you"	v005		reads: 愛してると囁く; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	434	15432	1FB2	{08:5C}止{08:2E}		Stop	v005		reads: もう止める; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	435	15452	0F	{01:35}{06:02}{01:E7}{=FC}{=FF}	{01:35}{06:02}{01:E7}{=FC}{=FF}				reads: バーチャル{=FC}{=FF}
+m/MS0022.BIN	0:02	436	15466	00	{04:FE}：		Yuuka:	v005		reads: ：
+m/MS0022.BIN	0:02	437	15478	1FFA	{02:08}{02:08}‥	{02:08}{02:08}‥				reads: ‥‥‥‥‥‥‥
 m/MS0022.BIN	0:02	438	15490	1FFA	本当に？\n<wait>		Really?\n<wait>	v005		
-m/MS0022.BIN	0:02	439	15521	1FB2	抱きし{08:2E}		Embrace her	v005		
-m/MS0022.BIN	0:02	440	15531	1FB2	黙っ{08:14}{08:72}		Say nothing	v005		
-m/MS0022.BIN	0:02	441	15541	1FB2	{08:79}{08:7E}押し倒す		Push her down	v005		
-m/MS0022.BIN	0:02	442	15567	0F	{01:E4}	{01:E4}	reads: 			
-m/MS0022.BIN	0:02	443	15570	00	{02:01}	{02:01}	reads: ペンタグランマ			
-m/MS0022.BIN	0:02	444	15581	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	445	15591	00	{04:FF}くん{02:08}私{02:08}‥\n<wait>		reads: くん‥‥‥私‥‥‥‥\n<wait>			
-m/MS0022.BIN	0:02	446	15614	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		
-m/MS0022.BIN	0:02	447	15641	1FB2	{08:76}可哀相だ{08:72}		It's not time...	v005		
-m/MS0022.BIN	0:02	448	15655	1FB2	{08:79}{08:7E}押し倒す		Push her down	v005		
-m/MS0022.BIN	0:02	449	15681	0F	{01:CF}{05:FF}	{01:CF}{05:FF}	reads: 			
-m/MS0022.BIN	0:02	450	15691	00	{04:FF}{08:62}	{04:FF}{08:62}	reads: は、			
-m/MS0022.BIN	0:02	451	15699	00	{04:FE}を強く抱きしめた。\n<wait>		reads: を強く抱きしめた。\n<wait>			
-m/MS0022.BIN	0:02	452	15736	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	453	15742	1FD3	あ{08:72}		reads: あ‥‥			
-m/MS0022.BIN	0:02	454	15750	00	{04:FF}くん{02:08}\n<wait>		reads: くん‥‥‥\n<wait>			
-m/MS0022.BIN	0:02	455	15789	1FD0	そ{08:4A}、		You wrap your arms around Yuuka and embrace her tight.\n<wait>	v005		
-m/MS0022.BIN	0:02	456	15817	00	{04:FE}：		Yuuka:	v005		
-m/MS0022.BIN	0:02	457	15823	1FD3	ごめんな{08:49}{02:08}\n<wait>		Ah... Katsuragi-kun...\n<wait>	v005		
-m/MS0022.BIN	0:02	458	15848	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	459	15854	1FD3	私っ{08:50}、		Sorry...\n<wait>	v005		
-m/MS0022.BIN	0:02	460	15866	00	{04:FF}くんの気持ちも考えずに{02:08}<wait>{08:90}か{08:4A}{08:64}わ。\n<wait>		reads: くんの気持ちも考えずに‥‥‥<wait>どうかしていたわ。\n<wait>			
-m/MS0022.BIN	0:02	461	15929	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	462	15935	1FD3	ごめんな{08:49}{02:08}\n<wait>		I was so inconsiderate... <wait>It's all my fault.\n<wait>	v005		
-m/MS0022.BIN	0:02	463	15960	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	464	15966	1FD3	私{08:72}<wait>ちょ{08:53}{08:90}か{08:4A}たの{02:08}<wait>ごめんな{08:49}{02:08}\n<wait>		I... <wait>I did something wrong, didn't I? <wait>Sorry...\n<wait>	v005		
-m/MS0022.BIN	0:02	465	16031	1FB2	僕の方こそ{08:72}		No, it's my fault	v005		
-m/MS0022.BIN	0:02	466	16045	1FB2	愛し{08:2B}と囁く		Whisper "I love you"	v005		
-m/MS0022.BIN	0:02	467	16059	1FB2	{08:5C}止{08:2E}		Stop	v005		
-m/MS0022.BIN	0:02	468	16079	0F	{01:C2}{03:02}{01:01}	{01:C2}{03:02}{01:01}	reads: を攻撃し山瀬勇			
+m/MS0022.BIN	0:02	439	15521	1FB2	抱きし{08:2E}		Embrace her	v005		reads: 抱きしめる; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	440	15531	1FB2	黙っ{08:14}{08:72}		Say nothing	v005		reads: 黙っている‥‥; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	441	15541	1FB2	{08:79}{08:7E}押し倒す		Push her down	v005		reads: そのまま押し倒す; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	442	15567	0F	{01:E4}	{01:E4}				reads: 
+m/MS0022.BIN	0:02	443	15570	00	{02:01}	{02:01}				reads: ペンタグランマ
+m/MS0022.BIN	0:02	444	15581	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	445	15591	00	{04:FF}くん{02:08}私{02:08}‥\n<wait>					reads: くん‥‥‥私‥‥‥‥\n<wait>
+m/MS0022.BIN	0:02	446	15614	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>
+m/MS0022.BIN	0:02	447	15641	1FB2	{08:76}可哀相だ{08:72}		It's not time...	v005		reads: まだ可哀相だ‥‥; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	448	15655	1FB2	{08:79}{08:7E}押し倒す		Push her down	v005		reads: そのまま押し倒す; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	449	15681	0F	{01:CF}{05:FF}	{01:CF}{05:FF}				reads: 
+m/MS0022.BIN	0:02	450	15691	00	{04:FF}{08:62}	{04:FF}{08:62}				reads: は、
+m/MS0022.BIN	0:02	451	15699	00	{04:FE}を強く抱きしめた。\n<wait>					reads: を強く抱きしめた。\n<wait>
+m/MS0022.BIN	0:02	452	15736	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	453	15742	1FD3	あ{08:72}					reads: あ‥‥
+m/MS0022.BIN	0:02	454	15750	00	{04:FF}くん{02:08}\n<wait>					reads: くん‥‥‥\n<wait>
+m/MS0022.BIN	0:02	455	15789	1FD0	そ{08:4A}、		You wrap your arms around Yuuka and embrace her tight.\n<wait>	v005		reads: そして、
+m/MS0022.BIN	0:02	456	15817	00	{04:FE}：		Yuuka:	v005		reads: ：
+m/MS0022.BIN	0:02	457	15823	1FD3	ごめんな{08:49}{02:08}\n<wait>		Ah... Katsuragi-kun...\n<wait>	v005		reads: ごめんなさい‥‥‥\n<wait>
+m/MS0022.BIN	0:02	458	15848	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	459	15854	1FD3	私っ{08:50}、		Sorry...\n<wait>	v005		reads: 私ったら、
+m/MS0022.BIN	0:02	460	15866	00	{04:FF}くんの気持ちも考えずに{02:08}<wait>{08:90}か{08:4A}{08:64}わ。\n<wait>					reads: くんの気持ちも考えずに‥‥‥<wait>どうかしていたわ。\n<wait>
+m/MS0022.BIN	0:02	461	15929	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	462	15935	1FD3	ごめんな{08:49}{02:08}\n<wait>		I was so inconsiderate... <wait>It's all my fault.\n<wait>	v005		reads: ごめんなさい‥‥‥\n<wait>
+m/MS0022.BIN	0:02	463	15960	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	464	15966	1FD3	私{08:72}<wait>ちょ{08:53}{08:90}か{08:4A}たの{02:08}<wait>ごめんな{08:49}{02:08}\n<wait>		I... <wait>I did something wrong, didn't I? <wait>Sorry...\n<wait>	v005		reads: 私‥‥<wait>ちょっとどうかしてたの‥‥‥<wait>ごめんなさい‥‥‥\n<wait>
+m/MS0022.BIN	0:02	465	16031	1FB2	僕の方こそ{08:72}		No, it's my fault	v005		reads: 僕の方こそ‥‥; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	466	16045	1FB2	愛し{08:2B}と囁く		Whisper "I love you"	v005		reads: 愛してると囁く; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	467	16059	1FB2	{08:5C}止{08:2E}		Stop	v005		reads: もう止める; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	468	16079	0F	{01:C2}{03:02}{01:01}	{01:C2}{03:02}{01:01}				reads: を攻撃し山瀬勇
 m/MS0022.BIN	0:02	469	16086	00						
-m/MS0022.BIN	0:02	470	16112	00	{04:FE}：		Yuuka:	v005		
+m/MS0022.BIN	0:02	470	16112	00	{04:FE}：		Yuuka:	v005		reads: ：
 m/MS0022.BIN	0:02	471	16118	1FD3	イヤッ！！\n<wait>		No!\n<wait>	v005		
-m/MS0022.BIN	0:02	472	16141	00	{04:FE}は		reads: は			
-m/MS0022.BIN	0:02	473	16149	00	{04:FF}の腕をふりはらい、側を離{08:60}。\n<wait>		reads: の腕をふりはらい、側を離れた。\n<wait>			
-m/MS0022.BIN	0:02	474	16186	1FBA	{08:6C}に怯え{08:14}様子だ{02:08}。\n<wait>		Just by looking at her, it's clear that she's frightened.\n<wait>	v005		
-m/MS0022.BIN	0:02	475	16235	00	{04:FE}：		Yuuka:	v005		
-m/MS0022.BIN	0:02	476	16241	1FD3	ごめんな{08:49}{02:08}\n<wait>		Sorry...\n<wait>	v005		
-m/MS0022.BIN	0:02	477	16266	00	{04:FE}：		Yuuka:	v005		
-m/MS0022.BIN	0:02	478	16272	1FD3	私{08:72}<wait>ちょ{08:53}{08:90}か{08:4A}たの{02:08}<wait>ごめんな{08:49}{02:08}\n<wait>		I... <wait>I did something wrong, didn't I? <wait>Sorry...\n<wait>	v005		
-m/MS0022.BIN	0:02	479	16337	1F4F	{03:17}	{03:17}	reads: 			
-m/MS0022.BIN	0:02	480	16341	1FD0	{01:3B}{08:71}の雰囲気は嘘の様に消え去り、{01:2E}には気まずい空気が流{08:60}。\n<wait>		You suddenly find yourself feeling incredibly awkward about the whole\nsituation. It's as if everything leading up to this point never\nhappened at all.\n<wait>	v005		
-m/MS0022.BIN	0:02	481	16434	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	482	16444	00	{04:FF}くん。\nあ{08:72}明日の事が{08:7B}{08:5F}し、{08:5C}休{08:5F}方が良いと思うわ。\n<wait>		reads: くん。\nあ‥‥明日の事があるんだし、もう休んだ方が良いと思うわ。\n<wait>			
-m/MS0022.BIN	0:02	483	16512	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	484	16518	1FD3	あの{08:72}私、あの辺を片付{08:29}わ。\n私の事は気にし{08:25}で、		Hey, Katsuragi-kun. You should probably try to get some rest.\nTomorrow's a pretty important day and all...\n<wait>	v005		
-m/MS0022.BIN	0:02	485	16571	00	{04:FF}くんは寝て頂戴ね。\n<wait>		reads: くんは寝て頂戴ね。\n<wait>			
+m/MS0022.BIN	0:02	472	16141	00	{04:FE}は					reads: は
+m/MS0022.BIN	0:02	473	16149	00	{04:FF}の腕をふりはらい、側を離{08:60}。\n<wait>					reads: の腕をふりはらい、側を離れた。\n<wait>
+m/MS0022.BIN	0:02	474	16186	1FBA	{08:6C}に怯え{08:14}様子だ{02:08}。\n<wait>		Just by looking at her, it's clear that she's frightened.\n<wait>	v005		reads: 完全に怯えている様子だ‥‥‥。\n<wait>
+m/MS0022.BIN	0:02	475	16235	00	{04:FE}：		Yuuka:	v005		reads: ：
+m/MS0022.BIN	0:02	476	16241	1FD3	ごめんな{08:49}{02:08}\n<wait>		Sorry...\n<wait>	v005		reads: ごめんなさい‥‥‥\n<wait>
+m/MS0022.BIN	0:02	477	16266	00	{04:FE}：		Yuuka:	v005		reads: ：
+m/MS0022.BIN	0:02	478	16272	1FD3	私{08:72}<wait>ちょ{08:53}{08:90}か{08:4A}たの{02:08}<wait>ごめんな{08:49}{02:08}\n<wait>		I... <wait>I did something wrong, didn't I? <wait>Sorry...\n<wait>	v005		reads: 私‥‥<wait>ちょっとどうかしてたの‥‥‥<wait>ごめんなさい‥‥‥\n<wait>
+m/MS0022.BIN	0:02	479	16337	1F4F	{03:17}	{03:17}				reads: 
+m/MS0022.BIN	0:02	480	16341	1FD0	{01:3B}{08:71}の雰囲気は嘘の様に消え去り、{01:2E}には気まずい空気が流{08:60}。\n<wait>		You suddenly find yourself feeling incredibly awkward about the whole\nsituation. It's as if everything leading up to this point never\nhappened at all.\n<wait>	v005		reads: さっきまでの雰囲気は嘘の様に消え去り、部屋には気まずい空気が流れた。\n<wait>
+m/MS0022.BIN	0:02	481	16434	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	482	16444	00	{04:FF}くん。\nあ{08:72}明日の事が{08:7B}{08:5F}し、{08:5C}休{08:5F}方が良いと思うわ。\n<wait>					reads: くん。\nあ‥‥明日の事があるんだし、もう休んだ方が良いと思うわ。\n<wait>
+m/MS0022.BIN	0:02	483	16512	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	484	16518	1FD3	あの{08:72}私、あの辺を片付{08:29}わ。\n私の事は気にし{08:25}で、		Hey, Katsuragi-kun. You should probably try to get some rest.\nTomorrow's a pretty important day and all...\n<wait>	v005		reads: あの‥‥私、あの辺を片付けるわ。\n私の事は気にしないで、
+m/MS0022.BIN	0:02	485	16571	00	{04:FF}くんは寝て頂戴ね。\n<wait>					reads: くんは寝て頂戴ね。\n<wait>
 m/MS0022.BIN	0:02	486	16604	1FD0	そう言うと		Having said that, Yuuka quickly leaves the bedroom.\nIt's as if she was avoiding you.\n<wait>	v005		
-m/MS0022.BIN	0:02	487	16618	00	{04:FE}{08:62}	{04:FE}{08:62}	reads: は、			
-m/MS0022.BIN	0:02	488	16626	00	{04:FF}を避{08:29}様に奥の{01:2E}へ行{08:52}{08:1F}。\n<wait>		reads: を避ける様に奥の部屋へ行ってしまった。\n<wait>			
-m/MS0022.BIN	0:02	489	16661	1FBA	{08:5C}、何を言{08:52}も無駄{08:8C}{02:08}。\n<wait>		reads: もう、何を言っても無駄だろう‥‥‥。\n<wait>			
-m/MS0022.BIN	0:02	490	16696	00	{04:FE}がいなく{08:16}途端、		reads: がいなくなった途端、			
-m/MS0022.BIN	0:02	491	16718	00	{04:FF}の胸を言い表せぬ不安が襲{08:51}。\n<wait>		reads: の胸を言い表せぬ不安が襲った。\n<wait>			
-m/MS0022.BIN	0:02	492	16755	1FBA	明日{08:72}<wait>詰所で{08:63}を待ち受け{08:14}運命は{02:08}。\n<wait>		This is it.\nThere is nothing more left for you to say to make things right.\n<wait>	v005		
-m/MS0022.BIN	0:02	493	16802	1FBA	何者かが嘲笑{08:8E}声が聞こ{08:28}様な気がし、		No words can describe the helplessness you feel as you watch Yuuka\nwalk away from you.\n<wait>	v005		
-m/MS0022.BIN	0:02	494	16842	00	{04:FF}はたまらなくなり、\nベッドに潜り込{08:5F}。\n<wait>		reads: はたまらなくなり、\nベッドに潜り込んだ。\n<wait>			
-m/MS0022.BIN	0:02	495	16888	1FBA	奥の{01:2E}{08:42}食器を片付{08:29}音が聞こえて{08:64}が、程無く{08:4A}{08:4D}も薄れ、\n		Tomorrow...<wait>Tomorrow, you will visit the office, and there...\n<wait>	v005		
-m/MS0022.BIN	0:02	496	16949	00	{04:FF}は絶望の淵で深い眠りに落ちて行{08:51}{02:08}。\n<wait>		Having given up on all hope, you collapse on your bed.\nAs you do so, you can almost hear someone sneering at you.\n<wait>	v005		
-m/MS0022.BIN	0:02	497	17003	00	{04:FF}はそう言うと、		With the sound of Yuuka cleaning up in the next room over echoing\nin the background, your mind slowly descends into the abyss of despair.\n<wait>	v005		
-m/MS0022.BIN	0:02	498	17023	00	{04:FE}を見つめた。\n<wait>		You stare Yuuka into the eyes as you say this.\n<wait>	v005		
-m/MS0022.BIN	0:02	499	17054	00	{04:FE}：		Yuuka:	v005		
-m/MS0022.BIN	0:02	500	17064	00	{04:FF}<wait>くん{02:08}\n<wait>		Katsuragi<wait>-kun...\n<wait>	v005		
-m/MS0022.BIN	0:02	501	17090	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		
-m/MS0022.BIN	0:02	502	17117	1FB2	押し倒す！		Push her down!	v005		
-m/MS0022.BIN	0:02	503	17129	1FB2	{08:5C}止{08:2E}		Stop	v005		
-m/MS0022.BIN	0:02	504	17137	1FB2	愛し{08:2B}と囁く		Whisper "I love you"	v005		
-m/MS0022.BIN	0:02	505	17163	0F	{01:3C}{=F6}{=02}{01:FC}{=F6}{=FF}	{01:3C}{=F6}{=02}{01:FC}{=F6}{=FF}	reads: ひとつ{=F6}{=02}{=F6}{=FF}			
-m/MS0022.BIN	0:02	506	17177	00	{04:FF}は		reads: は			
-m/MS0022.BIN	0:02	507	17185	00	{04:FE}をベッドに押し倒{08:4B}。\n<wait>		reads: をベッドに押し倒した。\n<wait>			
-m/MS0022.BIN	0:02	508	17216	00	{04:FE}は{1E10:01003C}抵抗し{08:25}{02:08}\n<wait>		reads: は{1E10:01003C}抵抗しない‥‥‥\n<wait>			
-m/MS0022.BIN	0:02	509	17248	00	{04:FE}：		reads: ：			
-m/MS0022.BIN	0:02	510	17254	1FD3	愛し{08:2B}わ{08:72}		Katsuragi-kun... I love you... I really, truly do...\n<wait>	v005		
-m/MS0022.BIN	0:02	511	17268	00	{04:FF}くん{02:08}\n<wait>		reads: くん‥‥‥\n<wait>			
-m/MS0022.BIN	0:02	512	17289	00	{04:FF}は		reads: は			
-m/MS0022.BIN	0:02	513	17297	00	{04:FE}の服に手をか{08:43}。\n<wait>		reads: の服に手をかけた。\n<wait>			
-m/MS0022.BIN	0:02	514	17417	1A	露に{08:16}真珠の様にすべらかな肌に、		Yuuka now lies naked in front of you. Her pale white skin feels so soft\nagainst your lips as you cover every last inch of her body in kisses.\n	v005		
-m/MS0022.BIN	0:02	515	17453	00	{04:FF}は唇を沿わ{08:2A}。\n		reads: は唇を沿わせる。\n			
-m/MS0022.BIN	0:02	516	17476	1FFA	{02:08}{02:08}{02:08}\n<wait>	{02:08}{02:08}{02:08}\n<wait>	reads: ‥‥‥‥‥‥‥‥‥\n<wait>			
-m/MS0022.BIN	0:02	517	17499	1F5E	小さな喘ぎと衣擦れの音{02:08}‥\n<wait>ふたりはお互いの想いを確かめあいながら、静寂な深淵へと落ちて行{08:51}。\n<wait>		Soft moans and the rustling of clothes echo through the room...\n<wait>Ascertaining the feelings you have for one another,\nthe two of you travel deeper into the silent abyss.\n<wait>	v005		
-m/MS0022.BIN	0:02	518	17648	00	{04:FE}が何やら立ち動い{08:14}音で、		reads: が何やら立ち動いている音で、			
-m/MS0022.BIN	0:02	519	17678	00	{04:FF}は目を覚ま{08:4B}。\n<wait>		reads: は目を覚ました。\n<wait>			
-m/MS0022.BIN	0:02	520	17717	1FD0	奥の{01:2E}{08:42}は珈琲の香が漂{08:52}来{08:14}。\n<wait>		You can smell coffee being brewed in the kitchen.\n<wait>	v005		
-m/MS0022.BIN	0:02	521	17754	1FBA	幸福な瞬間{02:08}\n		In that brief moment of happiness...\n	v005		
+m/MS0022.BIN	0:02	487	16618	00	{04:FE}{08:62}	{04:FE}{08:62}				reads: は、
+m/MS0022.BIN	0:02	488	16626	00	{04:FF}を避{08:29}様に奥の{01:2E}へ行{08:52}{08:1F}。\n<wait>					reads: を避ける様に奥の部屋へ行ってしまった。\n<wait>
+m/MS0022.BIN	0:02	489	16661	1FBA	{08:5C}、何を言{08:52}も無駄{08:8C}{02:08}。\n<wait>					reads: もう、何を言っても無駄だろう‥‥‥。\n<wait>
+m/MS0022.BIN	0:02	490	16696	00	{04:FE}がいなく{08:16}途端、					reads: がいなくなった途端、
+m/MS0022.BIN	0:02	491	16718	00	{04:FF}の胸を言い表せぬ不安が襲{08:51}。\n<wait>					reads: の胸を言い表せぬ不安が襲った。\n<wait>
+m/MS0022.BIN	0:02	492	16755	1FBA	明日{08:72}<wait>詰所で{08:63}を待ち受け{08:14}運命は{02:08}。\n<wait>		This is it.\nThere is nothing more left for you to say to make things right.\n<wait>	v005		reads: 明日‥‥<wait>詰所で自分を待ち受けている運命は‥‥‥。\n<wait>
+m/MS0022.BIN	0:02	493	16802	1FBA	何者かが嘲笑{08:8E}声が聞こ{08:28}様な気がし、		No words can describe the helplessness you feel as you watch Yuuka\nwalk away from you.\n<wait>	v005		reads: 何者かが嘲笑する声が聞こえる様な気がし、
+m/MS0022.BIN	0:02	494	16842	00	{04:FF}はたまらなくなり、\nベッドに潜り込{08:5F}。\n<wait>					reads: はたまらなくなり、\nベッドに潜り込んだ。\n<wait>
+m/MS0022.BIN	0:02	495	16888	1FBA	奥の{01:2E}{08:42}食器を片付{08:29}音が聞こえて{08:64}が、程無く{08:4A}{08:4D}も薄れ、\n		Tomorrow...<wait>Tomorrow, you will visit the office, and there...\n<wait>	v005		reads: 奥の部屋から食器を片付ける音が聞こえていたが、程無くしてそれも薄れ、\n
+m/MS0022.BIN	0:02	496	16949	00	{04:FF}は絶望の淵で深い眠りに落ちて行{08:51}{02:08}。\n<wait>		Having given up on all hope, you collapse on your bed.\nAs you do so, you can almost hear someone sneering at you.\n<wait>	v005		reads: は絶望の淵で深い眠りに落ちて行った‥‥‥。\n<wait>
+m/MS0022.BIN	0:02	497	17003	00	{04:FF}はそう言うと、		With the sound of Yuuka cleaning up in the next room over echoing\nin the background, your mind slowly descends into the abyss of despair.\n<wait>	v005		reads: はそう言うと、
+m/MS0022.BIN	0:02	498	17023	00	{04:FE}を見つめた。\n<wait>		You stare Yuuka into the eyes as you say this.\n<wait>	v005		reads: を見つめた。\n<wait>
+m/MS0022.BIN	0:02	499	17054	00	{04:FE}：		Yuuka:	v005		reads: ：
+m/MS0022.BIN	0:02	500	17064	00	{04:FF}<wait>くん{02:08}\n<wait>		Katsuragi<wait>-kun...\n<wait>	v005		reads: <wait>くん‥‥‥\n<wait>
+m/MS0022.BIN	0:02	501	17090	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>
+m/MS0022.BIN	0:02	502	17117	1FB2	押し倒す！		Push her down!	v005		menu option, declared width 20 columns
+m/MS0022.BIN	0:02	503	17129	1FB2	{08:5C}止{08:2E}		Stop	v005		reads: もう止める; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	504	17137	1FB2	愛し{08:2B}と囁く		Whisper "I love you"	v005		reads: 愛してると囁く; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	505	17163	0F	{01:3C}{=F6}{=02}{01:FC}{=F6}{=FF}	{01:3C}{=F6}{=02}{01:FC}{=F6}{=FF}				reads: ひとつ{=F6}{=02}{=F6}{=FF}
+m/MS0022.BIN	0:02	506	17177	00	{04:FF}は					reads: は
+m/MS0022.BIN	0:02	507	17185	00	{04:FE}をベッドに押し倒{08:4B}。\n<wait>					reads: をベッドに押し倒した。\n<wait>
+m/MS0022.BIN	0:02	508	17216	00	{04:FE}は{1E10:01003C}抵抗し{08:25}{02:08}\n<wait>					reads: は{1E10:01003C}抵抗しない‥‥‥\n<wait>
+m/MS0022.BIN	0:02	509	17248	00	{04:FE}：					reads: ：
+m/MS0022.BIN	0:02	510	17254	1FD3	愛し{08:2B}わ{08:72}		Katsuragi-kun... I love you... I really, truly do...\n<wait>	v005		reads: 愛してるわ‥‥
+m/MS0022.BIN	0:02	511	17268	00	{04:FF}くん{02:08}\n<wait>					reads: くん‥‥‥\n<wait>
+m/MS0022.BIN	0:02	512	17289	00	{04:FF}は					reads: は
+m/MS0022.BIN	0:02	513	17297	00	{04:FE}の服に手をか{08:43}。\n<wait>					reads: の服に手をかけた。\n<wait>
+m/MS0022.BIN	0:02	514	17417	1A	露に{08:16}真珠の様にすべらかな肌に、		Yuuka now lies naked in front of you. Her pale white skin feels so soft\nagainst your lips as you cover every last inch of her body in kisses.\n	v005		reads: 露になった真珠の様にすべらかな肌に、
+m/MS0022.BIN	0:02	515	17453	00	{04:FF}は唇を沿わ{08:2A}。\n					reads: は唇を沿わせる。\n
+m/MS0022.BIN	0:02	516	17476	1FFA	{02:08}{02:08}{02:08}\n<wait>	{02:08}{02:08}{02:08}\n<wait>				reads: ‥‥‥‥‥‥‥‥‥\n<wait>
+m/MS0022.BIN	0:02	517	17499	1F5E	小さな喘ぎと衣擦れの音{02:08}‥\n<wait>ふたりはお互いの想いを確かめあいながら、静寂な深淵へと落ちて行{08:51}。\n<wait>		Soft moans and the rustling of clothes echo through the room...\n<wait>Ascertaining the feelings you have for one another,\nthe two of you travel deeper into the silent abyss.\n<wait>	v005		reads: 小さな喘ぎと衣擦れの音‥‥‥‥\n<wait>ふたりはお互いの想いを確かめあいながら、静寂な深淵へと落ちて行った。\n<wait>
+m/MS0022.BIN	0:02	518	17648	00	{04:FE}が何やら立ち動い{08:14}音で、					reads: が何やら立ち動いている音で、
+m/MS0022.BIN	0:02	519	17678	00	{04:FF}は目を覚ま{08:4B}。\n<wait>					reads: は目を覚ました。\n<wait>
+m/MS0022.BIN	0:02	520	17717	1FD0	奥の{01:2E}{08:42}は珈琲の香が漂{08:52}来{08:14}。\n<wait>		You can smell coffee being brewed in the kitchen.\n<wait>	v005		reads: 奥の部屋からは珈琲の香が漂って来ている。\n<wait>
+m/MS0022.BIN	0:02	521	17754	1FBA	幸福な瞬間{02:08}\n		In that brief moment of happiness...\n	v005		reads: 幸福な瞬間‥‥‥\n
 m/MS0022.BIN	0:02	522	17770	18	翌朝、目覚めた		You wake up the following morning feeling quite dizzy...\n<wait>	v005		
-m/MS0022.BIN	0:02	523	17788	00	{04:FF}{02:08}。\n<wait>		reads: ‥‥‥。\n<wait>			
-m/MS0022.BIN	0:02	524	17817	1FD0	まどろみの中で、{01:28}と変わらぬ室内を見渡す。\n<wait>		The first thing you do is have a quick look around you.\n<wait>	v005		
-m/MS0022.BIN	0:02	525	17870	00	{04:FE}は{02:08}{1E10:01001E}{08:64}{02:08}\n彼女{08:62}傍らのテーブルでうたたねを{08:13}{08:69}だ{02:08}\n<wait>		Yuuka... {1E10:01001E}is still here.\nYou find her slouched over on top of the table next to your bed.\n<wait>	v005		
-m/MS0022.BIN	0:02	526	17933	1FBA	{02:08}{01:2E}の中は静寂に包まれ{08:14}{02:08}\n{1E10:01001E}全てが夢だ{08:51}のかとすら思えて{08:83}{02:08}\n<wait>		The sound of silence fills the room...\n{1E10:01001E}You find yourself wishing that it'd all been a dream.\n<wait>	v005		
-m/MS0022.BIN	0:02	527	18004	1FBA	{03:0B}{08:7A}思いなど手易く木端微塵に砕いて{08:83}、容赦の無い現実が訪{08:60}。\n<wait>		However, before you are able to indulge further in such fantasies,\nreality hits you and smashes them into million tiny pieces.\n<wait>	v005		
-m/MS0022.BIN	0:02	528	18071	1FBA	{08:00}が迎えに現{08:60}{08:77}{02:08}‥\n<wait>		Hayasaka is here to pick you up.\n<wait>	v005		
-m/MS0022.BIN	0:02	529	18135	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	530	18141	1FD3	隊長も他の皆も揃っ{08:14}{02:08}‥{1E10:01001E}さあ、一緒に詰所に行こう。\n<wait>		Everyone's already waiting. {1E10:01001E}Now then, let's get going.\n<wait>	v005		
+m/MS0022.BIN	0:02	523	17788	00	{04:FF}{02:08}。\n<wait>					reads: ‥‥‥。\n<wait>
+m/MS0022.BIN	0:02	524	17817	1FD0	まどろみの中で、{01:28}と変わらぬ室内を見渡す。\n<wait>		The first thing you do is have a quick look around you.\n<wait>	v005		reads: まどろみの中で、いつもと変わらぬ室内を見渡す。\n<wait>
+m/MS0022.BIN	0:02	525	17870	00	{04:FE}は{02:08}{1E10:01001E}{08:64}{02:08}\n彼女{08:62}傍らのテーブルでうたたねを{08:13}{08:69}だ{02:08}\n<wait>		Yuuka... {1E10:01001E}is still here.\nYou find her slouched over on top of the table next to your bed.\n<wait>	v005		reads: は‥‥‥{1E10:01001E}いた‥‥‥\n彼女は、傍らのテーブルでうたたねをしているようだ‥‥‥\n<wait>
+m/MS0022.BIN	0:02	526	17933	1FBA	{02:08}{01:2E}の中は静寂に包まれ{08:14}{02:08}\n{1E10:01001E}全てが夢だ{08:51}のかとすら思えて{08:83}{02:08}\n<wait>		The sound of silence fills the room...\n{1E10:01001E}You find yourself wishing that it'd all been a dream.\n<wait>	v005		reads: ‥‥‥部屋の中は静寂に包まれている‥‥‥\n{1E10:01001E}全てが夢だったのかとすら思えてしまう‥‥‥\n<wait>
+m/MS0022.BIN	0:02	527	18004	1FBA	{03:0B}{08:7A}思いなど手易く木端微塵に砕いて{08:83}、容赦の無い現実が訪{08:60}。\n<wait>		However, before you are able to indulge further in such fantasies,\nreality hits you and smashes them into million tiny pieces.\n<wait>	v005		reads: しかし、そんな思いなど手易く木端微塵に砕いてしまう、容赦の無い現実が訪れた。\n<wait>
+m/MS0022.BIN	0:02	528	18071	1FBA	{08:00}が迎えに現{08:60}{08:77}{02:08}‥\n<wait>		Hayasaka is here to pick you up.\n<wait>	v005		reads: 早坂が迎えに現れたのだ‥‥‥‥\n<wait>
+m/MS0022.BIN	0:02	529	18135	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	530	18141	1FD3	隊長も他の皆も揃っ{08:14}{02:08}‥{1E10:01001E}さあ、一緒に詰所に行こう。\n<wait>		Everyone's already waiting. {1E10:01001E}Now then, let's get going.\n<wait>	v005		reads: 隊長も他の皆も揃っている‥‥‥‥{1E10:01001E}さあ、一緒に詰所に行こう。\n<wait>
 m/MS0022.BIN	0:02	531	18210	09	背後で、		You can sense Yuuka walking away behind you.\nAnd yet, you lack the courage to turn around and face her.\n	v005		
-m/MS0022.BIN	0:02	532	18222	00	{04:FE}が奥{08:42}出て来る気配が{08:4B}。\n		reads: が奥から出て来る気配がした。\n			
-m/MS0022.BIN	0:02	533	18252	18	{08:00}に付き添われ、{01:2E}を出る		You follow Hayasaka and leave your room.\n<wait>	v005		
-m/MS0022.BIN	0:02	534	18280	00	{04:FF}{02:08}\n<wait>	{04:FF}{02:08}\n<wait>	reads: ‥‥‥\n<wait>			
+m/MS0022.BIN	0:02	532	18222	00	{04:FE}が奥{08:42}出て来る気配が{08:4B}。\n					reads: が奥から出て来る気配がした。\n
+m/MS0022.BIN	0:02	533	18252	18	{08:00}に付き添われ、{01:2E}を出る		You follow Hayasaka and leave your room.\n<wait>	v005		reads: 早坂に付き添われ、部屋を出る
+m/MS0022.BIN	0:02	534	18280	00	{04:FF}{02:08}\n<wait>	{04:FF}{02:08}\n<wait>				reads: ‥‥‥\n<wait>
 m/MS0022.BIN	0:02	535	18291	1FBA	背後で、		You can sense Yuuka waking up behind you.\nAnd yet, you lack the courage to turn around and face her.\n                                                 \n<wait>	v005		
-m/MS0022.BIN	0:02	536	18303	00	{04:FE}の目覚{08:2E}気配が{08:8E}。\n{08:8F}、		reads: の目覚める気配がする。\nだが、			
-m/MS0022.BIN	0:02	537	18332	00	{04:FF}にはふり向く{08:74}の{08:33}気は無{08:18}{02:08}\n<wait>		reads: にはふり向くだけの勇気は無かった‥‥‥\n<wait>			
-m/MS0022.BIN	0:02	538	18390	1FE5	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		
-m/MS0022.BIN	0:02	539	18417	1FB2	{02:07}	{02:07}	Open terminal	v005		
-m/MS0022.BIN	0:02	540	18421	1FB2	休む		Rest	v005		
-m/MS0022.BIN	0:02	541	18427	1FB2	{02:05}	{02:05}	Leave	v005		
-m/MS0022.BIN	0:02	542	18443	0F	{01:05}	{01:05}	reads: 山田			
-m/MS0022.BIN	0:02	543	18446	00	{02:01}P{03:FF}	{02:01}P{03:FF}	reads: ペンタグランマP			
-m/MS0022.BIN	0:02	544	18465	1FD2	{08:03}：		Emi:	v005		
-m/MS0022.BIN	0:02	545	18471	1FD3	ねぇ、一緒に行{08:52}{08:52}頼{08:5F}のは{01:16}{08:74}ど{02:08}\n<wait>		Look, Katsuragi. I know you're doing me a favour here,\nbut we seriously have gotta hurry.\n<wait>	v005		
-m/MS0022.BIN	0:02	546	18514	1FD2	{08:03}：		Emi:	v005		
-m/MS0022.BIN	0:02	547	18520	1FD3	休む前に、{08:01}の{01:2E}に行こうよ。\nね？　お願い。\n		You can rest after we've visited Tatsuya. Please...?\n	v005		
-m/MS0022.BIN	0:02	548	18569	1FD0	相談が{08:7B}と言{08:52}{08:64}{08:03}。\n{08:04}にも相談せずに{08:40}{08:87}をみると、{08:8B}{08:8B}の事{08:8C}。\n<wait>		Emi told you that there was something she needed to talk to you about.\n<wait>	v005		
-m/MS0022.BIN	0:02	549	18639	1FBA	{08:45}{08:62}相談に乗{08:52}や{08:51}方が良い{08:8C}。\n		It's probably not a very good idea to ignore her.\n	v005		
-m/MS0022.BIN	0:02	550	18680	1FD2	{08:03}：		Emi:	v005		
-m/MS0022.BIN	0:02	551	18686	1FD3	ねぇ、今休んでる場合{08:81}{08:25}よ。\n早く{08:01}を探そう！\n		This is no time to be resting.\nWe've gotta find Tatsuya, and fast!\n	v005		
+m/MS0022.BIN	0:02	536	18303	00	{04:FE}の目覚{08:2E}気配が{08:8E}。\n{08:8F}、					reads: の目覚める気配がする。\nだが、
+m/MS0022.BIN	0:02	537	18332	00	{04:FF}にはふり向く{08:74}の{08:33}気は無{08:18}{02:08}\n<wait>					reads: にはふり向くだけの勇気は無かった‥‥‥\n<wait>
+m/MS0022.BIN	0:02	538	18390	1FE5	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>
+m/MS0022.BIN	0:02	539	18417	1FB2	{02:07}	{02:07}	Open terminal	v005		reads: 通信をする; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	540	18421	1FB2	休む		Rest	v005		menu option, declared width 20 columns
+m/MS0022.BIN	0:02	541	18427	1FB2	{02:05}	{02:05}	Leave	v005		reads: 出かける; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	542	18443	0F	{01:05}	{01:05}				reads: 山田
+m/MS0022.BIN	0:02	543	18446	00	{02:01}P{03:FF}	{02:01}P{03:FF}				reads: ペンタグランマP
+m/MS0022.BIN	0:02	544	18465	1FD2	{08:03}：		Emi:	v005		reads: 英美：
+m/MS0022.BIN	0:02	545	18471	1FD3	ねぇ、一緒に行{08:52}{08:52}頼{08:5F}のは{01:16}{08:74}ど{02:08}\n<wait>		Look, Katsuragi. I know you're doing me a favour here,\nbut we seriously have gotta hurry.\n<wait>	v005		reads: ねぇ、一緒に行ってって頼んだのはあたしだけど‥‥‥\n<wait>
+m/MS0022.BIN	0:02	546	18514	1FD2	{08:03}：		Emi:	v005		reads: 英美：
+m/MS0022.BIN	0:02	547	18520	1FD3	休む前に、{08:01}の{01:2E}に行こうよ。\nね？　お願い。\n		You can rest after we've visited Tatsuya. Please...?\n	v005		reads: 休む前に、達也の部屋に行こうよ。\nね？　お願い。\n
+m/MS0022.BIN	0:02	548	18569	1FD0	相談が{08:7B}と言{08:52}{08:64}{08:03}。\n{08:04}にも相談せずに{08:40}{08:87}をみると、{08:8B}{08:8B}の事{08:8C}。\n<wait>		Emi told you that there was something she needed to talk to you about.\n<wait>	v005		reads: 相談があると言っていた英美。\n西野にも相談せずにいるところをみると、よくよくの事だろう。\n<wait>
+m/MS0022.BIN	0:02	549	18639	1FBA	{08:45}{08:62}相談に乗{08:52}や{08:51}方が良い{08:8C}。\n		It's probably not a very good idea to ignore her.\n	v005		reads: ここは、相談に乗ってやった方が良いだろう。\n
+m/MS0022.BIN	0:02	550	18680	1FD2	{08:03}：		Emi:	v005		reads: 英美：
+m/MS0022.BIN	0:02	551	18686	1FD3	ねぇ、今休んでる場合{08:81}{08:25}よ。\n早く{08:01}を探そう！\n		This is no time to be resting.\nWe've gotta find Tatsuya, and fast!\n	v005		reads: ねぇ、今休んでる場合じゃないよ。\n早く達也を探そう！\n
 m/MS0022.BIN	0:02	552	18782	09						
-m/MS0022.BIN	0:02	553	18815	0C	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		
-m/MS0022.BIN	0:02	554	18842	1FB2	{02:07}	{02:07}	Open terminal	v005		
-m/MS0022.BIN	0:02	555	18846	1FB2	休む		Rest	v005		
-m/MS0022.BIN	0:02	556	18852	1FB2	{02:05}	{02:05}	Leave	v005		
-m/MS0022.BIN	0:02	557	18868	0F	{01:05}	{01:05}	reads: 山田			
-m/MS0022.BIN	0:02	558	18871	00	{02:01}ｧ{01:FF}		Pentagramma{=E1}{=01}	ours		
-m/MS0022.BIN	0:02	559	18890	1FD2	{08:00}：		Hayasaka:	v005		
+m/MS0022.BIN	0:02	553	18815	0C	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>
+m/MS0022.BIN	0:02	554	18842	1FB2	{02:07}	{02:07}	Open terminal	v005		reads: 通信をする; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	555	18846	1FB2	休む		Rest	v005		menu option, declared width 20 columns
+m/MS0022.BIN	0:02	556	18852	1FB2	{02:05}	{02:05}	Leave	v005		reads: 出かける; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	557	18868	0F	{01:05}	{01:05}				reads: 山田
+m/MS0022.BIN	0:02	558	18871	00	{02:01}ｧ{01:FF}		Pentagramma{=E1}{=01}	ours		reads: ペンタグランマｧ
+m/MS0022.BIN	0:02	559	18890	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
 m/MS0022.BIN	0:02	560	18896	1FD3	なぁ、		Look, man. I know you're doing me a favour here,\nbut we seriously have gotta hurry.\n<wait>	v005		
-m/MS0022.BIN	0:02	561	18906	00	{04:FF}。\n一緒に来てくれ{08:52}頼{08:5F}俺が、こう{08:68}事を言うのもな{08:5F}{08:84}さ。\n<wait>		reads: 。\n一緒に来てくれって頼んだ俺が、こういう事を言うのもなんだけどさ。\n<wait>			
-m/MS0022.BIN	0:02	562	18974	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	563	18980	1FD3	休む前にちょ{08:53}、{08:03}の{01:2E}に行こうぜ。\n頼むよ{02:08}\n		You can rest after we've visited Emi. Please...\n	v005		
-m/MS0022.BIN	0:02	564	19029	1FD0	相談が{08:7B}とい{08:52}{08:64}{08:00}{02:08}‥\n{08:04}にも相談せずに{08:40}{08:87}を見ると、{08:8B}{08:8B}の事{08:8C}。\n<wait>		Hayasaka told you that there was something he needed\nto talk to you about.\n<wait>	v005		
-m/MS0022.BIN	0:02	565	19101	1FBA	{08:4D}に、親友の相談だ。\n乗{08:52}やら{08:25}訳には行か{08:25}{08:8C}。\n		It's probably not a very good idea to ignore him.\n	v005		
-m/MS0022.BIN	0:02	566	19159	1FD2	{08:00}：		Hayasaka:	v005		
-m/MS0022.BIN	0:02	567	19169	00	{04:FF}、今は休んでる場合{08:81}{08:25}。\n早く{08:03}を探さ{08:25}と{02:08}\n		This is no time to be resting, Katsuragi. We've gotta find Emi.\n	v005		
+m/MS0022.BIN	0:02	561	18906	00	{04:FF}。\n一緒に来てくれ{08:52}頼{08:5F}俺が、こう{08:68}事を言うのもな{08:5F}{08:84}さ。\n<wait>					reads: 。\n一緒に来てくれって頼んだ俺が、こういう事を言うのもなんだけどさ。\n<wait>
+m/MS0022.BIN	0:02	562	18974	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	563	18980	1FD3	休む前にちょ{08:53}、{08:03}の{01:2E}に行こうぜ。\n頼むよ{02:08}\n		You can rest after we've visited Emi. Please...\n	v005		reads: 休む前にちょっと、英美の部屋に行こうぜ。\n頼むよ‥‥‥\n
+m/MS0022.BIN	0:02	564	19029	1FD0	相談が{08:7B}とい{08:52}{08:64}{08:00}{02:08}‥\n{08:04}にも相談せずに{08:40}{08:87}を見ると、{08:8B}{08:8B}の事{08:8C}。\n<wait>		Hayasaka told you that there was something he needed\nto talk to you about.\n<wait>	v005		reads: 相談があるといっていた早坂‥‥‥‥\n西野にも相談せずにいるところを見ると、よくよくの事だろう。\n<wait>
+m/MS0022.BIN	0:02	565	19101	1FBA	{08:4D}に、親友の相談だ。\n乗{08:52}やら{08:25}訳には行か{08:25}{08:8C}。\n		It's probably not a very good idea to ignore him.\n	v005		reads: それに、親友の相談だ。\n乗ってやらない訳には行かないだろう。\n
+m/MS0022.BIN	0:02	566	19159	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0022.BIN	0:02	567	19169	00	{04:FF}、今は休んでる場合{08:81}{08:25}。\n早く{08:03}を探さ{08:25}と{02:08}\n		This is no time to be resting, Katsuragi. We've gotta find Emi.\n	v005		reads: 、今は休んでる場合じゃない。\n早く英美を探さないと‥‥‥\n
 m/MS0022.BIN	0:02	568	19265	09						

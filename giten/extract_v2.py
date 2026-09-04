@@ -61,7 +61,7 @@ def script_rows(rel: str, sc: script.Script, pools) -> "list[tables.Row]":
                 continue
             rows.append(tables.Row(
                 rel, rec.key, 0, 0, UNTILED_TAG, jp.replace("\t", " "), "",
-                _note([script.NOEDIT_NOTE, script.UNTILED_NOTE,
+                note=_note([script.NOEDIT_NOTE, script.UNTILED_NOTE,
                        "record does not tile (%s); read-only, copied verbatim"
                        % rec.tile_error])))
             continue
@@ -90,7 +90,7 @@ def script_rows(rel: str, sc: script.Script, pools) -> "list[tables.Row]":
             if sp.is_choice and sp.choice_width:
                 notes.append("menu option, declared width %d columns" % sp.choice_width)
             rows.append(tables.Row(rel, sp.rec_key, sp.idx, sp.off, sp.tag,
-                                   jp, _prefill(jp), _note(notes)))
+                                   jp, _prefill(jp), note=_note(notes)))
     return rows
 
 
@@ -112,7 +112,7 @@ def pname_rows(rel: str, raw: bytes) -> "list[tables.Row]":
         return []
     return [tables.Row(rel, PNAME_REC, 0, spans.PNAME_OFF, spans.PNAME_TAG,
                        jp, _prefill(jp),
-                       "fixed %d-byte field: at most %d bytes plus a NUL"
+                       note="fixed %d-byte field: at most %d bytes plus a NUL"
                        % (spans.PNAME_LEN, spans.PNAME_LEN - 1))]
 
 

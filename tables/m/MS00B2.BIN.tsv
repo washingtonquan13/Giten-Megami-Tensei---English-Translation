@@ -3,12 +3,12 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS00B2.BIN	0:02	0	10	00	ｲ{05:02}		{05:02}	ours		
-m/MS00B2.BIN	0:02	1	14	00	ｲ{06:03}		{06:03}	ours		
-m/MS00B2.BIN	0:02	2	18	00	ｲ{07:FF}		{07:FF}	ours		
-m/MS00B2.BIN	0:03	0	9	1F19	{01:1E}	{01:1E}	reads: はやく			
-m/MS00B2.BIN	0:03	1	12	00	{02:01}5	{02:01}5	reads: ペンタグランマ5			
-m/MS00B2.BIN	0:03	2	16	00	{03:01}J	{03:01}J	reads: そんなことJ			
+m/MS00B2.BIN	0:02	0	10	00	ｲ{05:02}		{05:02}	ours		reads: ｲ切り
+m/MS00B2.BIN	0:02	1	14	00	ｲ{06:03}		{06:03}	ours		reads: ｲ
+m/MS00B2.BIN	0:02	2	18	00	ｲ{07:FF}		{07:FF}	ours		reads: ｲ
+m/MS00B2.BIN	0:03	0	9	1F19	{01:1E}	{01:1E}				reads: はやく
+m/MS00B2.BIN	0:03	1	12	00	{02:01}5	{02:01}5				reads: ペンタグランマ5
+m/MS00B2.BIN	0:03	2	16	00	{03:01}J	{03:01}J				reads: そんなことJ
 m/MS00B2.BIN	0:03	3	20	00						
 m/MS00B2.BIN	0:03	4	22	1B	バーテン		Bartender	v005		
 m/MS00B2.BIN	0:03	5	43	1B	女ミュータント		Fem Mutant	v005		
@@ -19,28 +19,28 @@ m/MS00B2.BIN	0:04	1	16	1FD3	いらっしゃいませ‥‥‥<wait>席はどう�
 m/MS00B2.BIN	0:05	0	4	1FD2	女ミュータント：		Fem Mutant:	v005		
 m/MS00B2.BIN	0:05	1	27	09	有明には、私達と同じミュータント達が集団で暮らす、\n隠された街があるわ‥‥ふふふ。\n<wait>		There is a hidden town in Ariake for mutants like myself.\n<wait>	v005		
 m/MS00B2.BIN	0:05	2	117	1FD2	女ミュータント：		Fem Mutant:	v005		
-m/MS00B2.BIN	0:05	3	135	1FD3	実はね‥‥私はそこ{08:42}逃げ出{08:4A}来たのよ。\n<wait>		Truth is... I ran away from there.\n<wait>	v005		
+m/MS00B2.BIN	0:05	3	135	1FD3	実はね‥‥私はそこ{08:42}逃げ出{08:4A}来たのよ。\n<wait>		Truth is... I ran away from there.\n<wait>	v005		reads: 実はね‥‥私はそこから逃げ出して来たのよ。\n<wait>
 m/MS00B2.BIN	0:05	4	182	1FD2	女ミュータント：		Fem Mutant:	v005		
-m/MS00B2.BIN	0:05	5	200	1FD3	傷の舐め合いはご免だ{08:51}の。\n私は、私自身の未来を信じた{08:18}のよ‥‥‥\n		I never liked that, having to rely on others.\nI want to be the one charge of my own destiny.\n	v005		
-m/MS00B2.BIN	0:05	6	274	09	お茶の水{08:10}も、{08:0B}の襲撃にやられ{08:50}しいわ。\n{08:48}で、正常に機能する{08:10}はひとつも無くなっ\nて{08:1F}と言うワケね‥‥‥\n<wait>		I hear that Ochonomizu Shelter got taken out by the demons.\nOne less of those left...\n<wait>	v005		
-m/MS00B2.BIN	0:05	7	393	09	サイファー博士を見{08:14}と、時々、空恐ろしく{08:59}の。\n<wait>		To be truthful, I quite fear Doctor Cypher.\n<wait>	v005		
+m/MS00B2.BIN	0:05	5	200	1FD3	傷の舐め合いはご免だ{08:51}の。\n私は、私自身の未来を信じた{08:18}のよ‥‥‥\n		I never liked that, having to rely on others.\nI want to be the one charge of my own destiny.\n	v005		reads: 傷の舐め合いはご免だったの。\n私は、私自身の未来を信じたかったのよ‥‥‥\n
+m/MS00B2.BIN	0:05	6	274	09	お茶の水{08:10}も、{08:0B}の襲撃にやられ{08:50}しいわ。\n{08:48}で、正常に機能する{08:10}はひとつも無くなっ\nて{08:1F}と言うワケね‥‥‥\n<wait>		I hear that Ochonomizu Shelter got taken out by the demons.\nOne less of those left...\n<wait>	v005		reads: お茶の水シェルターも、悪魔の襲撃にやられたらしいわ。\nこれで、正常に機能するシェルターはひとつも無くなっ\nてしまったと言うワケね‥‥‥\n<wait>
+m/MS00B2.BIN	0:05	7	393	09	サイファー博士を見{08:14}と、時々、空恐ろしく{08:59}の。\n<wait>		To be truthful, I quite fear Doctor Cypher.\n<wait>	v005		reads: サイファー博士を見ていると、時々、空恐ろしくなるの。\n<wait>
 m/MS00B2.BIN	0:05	8	448	1FD2	女ミュータント：		Fem Mutant:	v005		
-m/MS00B2.BIN	0:05	9	466	1FD3	あの頭脳は、神がも{08:50}された{08:5E}では{08:25}わ‥‥‥\n{08:3F}は‥‥‥<wait>{08:3F}は、{08:0B}がも{08:50}{08:4B}{08:5E}なのよ。\n		His intellect is not a gift from God.\n<wait>It is a gift from a demon.\n	v005		
-m/MS00B2.BIN	0:05	10	553	18	{08:45}には、サイファー博士が運営する“学術研究都市” と\n呼ば{08:2F}研究施設があるのよ。\n<wait>		This place is home to a research laboratory ran by Doctor Cypher,\nsometimes referred to as the Science City.\n<wait>	v005		
+m/MS00B2.BIN	0:05	9	466	1FD3	あの頭脳は、神がも{08:50}された{08:5E}では{08:25}わ‥‥‥\n{08:3F}は‥‥‥<wait>{08:3F}は、{08:0B}がも{08:50}{08:4B}{08:5E}なのよ。\n		His intellect is not a gift from God.\n<wait>It is a gift from a demon.\n	v005		reads: あの頭脳は、神がもたらされたものではないわ‥‥‥\nあれは‥‥‥<wait>あれは、悪魔がもたらしたものなのよ。\n
+m/MS00B2.BIN	0:05	10	553	18	{08:45}には、サイファー博士が運営する“学術研究都市” と\n呼ば{08:2F}研究施設があるのよ。\n<wait>		This place is home to a research laboratory ran by Doctor Cypher,\nsometimes referred to as the Science City.\n<wait>	v005		reads: ここには、サイファー博士が運営する“学術研究都市” と\n呼ばれる研究施設があるのよ。\n<wait>
 m/MS00B2.BIN	0:05	11	640	1FD2	女ミュータント：		Fem Mutant:	v005		
 m/MS00B2.BIN	0:05	12	658	1FD3	貴方の様な普通の人間には、興味ナイでしょうけれどね。\nふふふふふ････\n<wait>		Not that a layman like yourself would understand. Ehehehe.\n<wait>	v005		
 m/MS00B2.BIN	0:06	0	4	1FD2	サイバーな男：		Cyber Man:	v005		
-m/MS00B2.BIN	0:06	1	20	1FD3	{08:51}く、いっぱいくわされたよッ！！\n<wait>		God damn those guys!\n<wait>	v005		
+m/MS00B2.BIN	0:06	1	20	1FD3	{08:51}く、いっぱいくわされたよッ！！\n<wait>		God damn those guys!\n<wait>	v005		reads: ったく、いっぱいくわされたよッ！！\n<wait>
 m/MS00B2.BIN	0:06	2	61	1FD2	サイバーな男：		Cyber Man:	v005		
-m/MS00B2.BIN	0:06	3	77	1FD3	市ヶ谷じゃあ莫大な治療費がかかるが、{08:45}だっ{08:50}、\nパーツ代とちょ{08:53}で、サイバー強化手術が受けられ\nる{08:52}訊いて来たのによ！！\n<wait>		I was told you could get Cyber Surgery for much cheaper here\nthan in Ichigaya, but that turned out to be a huge scam!\n<wait>	v005		
+m/MS00B2.BIN	0:06	3	77	1FD3	市ヶ谷じゃあ莫大な治療費がかかるが、{08:45}だっ{08:50}、\nパーツ代とちょ{08:53}で、サイバー強化手術が受けられ\nる{08:52}訊いて来たのによ！！\n<wait>		I was told you could get Cyber Surgery for much cheaper here\nthan in Ichigaya, but that turned out to be a huge scam!\n<wait>	v005		reads: 市ヶ谷じゃあ莫大な治療費がかかるが、ここだったら、\nパーツ代とちょっとで、サイバー強化手術が受けられ\nるって訊いて来たのによ！！\n<wait>
 m/MS00B2.BIN	0:06	4	204	1FD2	サイバーな男：		Cyber Man:	v005		
-m/MS00B2.BIN	0:06	5	220	1FD3	あーあ、クソッ！！\n俺はも{08:53}強くなり{08:4E}{08:5F}よ！！！\n<wait>		Fuck! All I want is to get jacked!\n<wait>	v005		
+m/MS00B2.BIN	0:06	5	220	1FD3	あーあ、クソッ！！\n俺はも{08:53}強くなり{08:4E}{08:5F}よ！！！\n<wait>		Fuck! All I want is to get jacked!\n<wait>	v005		reads: あーあ、クソッ！！\n俺はもっと強くなりたいんだよ！！！\n<wait>
 m/MS00B2.BIN	0:07	0	4	1FD2	怪しい男：		Stranger:	v005		
-m/MS00B2.BIN	0:07	1	21	09	新宿では、\n<wait>何やら妙な建物が、都庁に増築され{08:14}{08:52}話だ。\n<wait>		Did you hear? <wait>They say that a tower of some kind\nhas been erected where the Government Office once stood.\n<wait>	v005		
+m/MS00B2.BIN	0:07	1	21	09	新宿では、\n<wait>何やら妙な建物が、都庁に増築され{08:14}{08:52}話だ。\n<wait>		Did you hear? <wait>They say that a tower of some kind\nhas been erected where the Government Office once stood.\n<wait>	v005		reads: 新宿では、\n<wait>何やら妙な建物が、都庁に増築されているって話だ。\n<wait>
 m/MS00B2.BIN	0:07	2	87	1FD2	怪しい男：		Stranger:	v005		
-m/MS00B2.BIN	0:07	3	99	1FD3	おおかた、バエルが本格的に移り住む{08:5F}ろうよ。\nクククク･････！！\n		I suppose that means Baal lives after all. Ehehe.\n	ours		
-m/MS00B2.BIN	0:07	4	170	09	お茶の水がやられた{08:52}なぁ？\nあそこは天使に護られた筈だが････まぁ、脆いモンだ。\n		Ochinomizu got taken out, huh?\nGuess the angels' protection wasn't worth much after all...\n	v005		
-m/MS00B2.BIN	0:07	5	256	09	小型の培養槽{08:52}のは便利だよなぁ････\n車が{08:3F}ば移動出来るし････死体の保存にゃも{08:52}こいだ。\n<wait>		Those portable cultivation tanks sure are convenient.\nIf you ever need to carry a corpse around, you can't do without one.\n<wait>	v005		
+m/MS00B2.BIN	0:07	3	99	1FD3	おおかた、バエルが本格的に移り住む{08:5F}ろうよ。\nクククク･････！！\n		I suppose that means Baal lives after all. Ehehe.\n	ours		reads: おおかた、バエルが本格的に移り住むんだろうよ。\nクククク･････！！\n
+m/MS00B2.BIN	0:07	4	170	09	お茶の水がやられた{08:52}なぁ？\nあそこは天使に護られた筈だが････まぁ、脆いモンだ。\n		Ochinomizu got taken out, huh?\nGuess the angels' protection wasn't worth much after all...\n	v005		reads: お茶の水がやられたってなぁ？\nあそこは天使に護られた筈だが････まぁ、脆いモンだ。\n
+m/MS00B2.BIN	0:07	5	256	09	小型の培養槽{08:52}のは便利だよなぁ････\n車が{08:3F}ば移動出来るし････死体の保存にゃも{08:52}こいだ。\n<wait>		Those portable cultivation tanks sure are convenient.\nIf you ever need to carry a corpse around, you can't do without one.\n<wait>	v005		reads: 小型の培養槽ってのは便利だよなぁ････\n車があれば移動出来るし････死体の保存にゃもってこいだ。\n<wait>
 m/MS00B2.BIN	0:07	6	350	1FD2	怪しい男：		Stranger:	v005		
-m/MS00B2.BIN	0:07	7	362	1FD3	死体の闇取引は儲かる{08:42}な･････クククク････\n		Not that I'd ever need to do that, of course. Ehehe...\n	v005		
-m/MS00B2.BIN	0:07	8	407	18	俺はバエルは死んで{08:25}と思うぜぇ････ボウヤ。\n<wait>こりゃあ、ヤツら、本気で何か企んでやがるな。\nお{08:5D}れぇ････クククク････！！\n<wait>		If you ask me, I don't think that Baal is dead.\n<wait>He must be planning something. How exciting...\n<wait>	ours		
+m/MS00B2.BIN	0:07	7	362	1FD3	死体の闇取引は儲かる{08:42}な･････クククク････\n		Not that I'd ever need to do that, of course. Ehehe...\n	v005		reads: 死体の闇取引は儲かるからな･････クククク････\n
+m/MS00B2.BIN	0:07	8	407	18	俺はバエルは死んで{08:25}と思うぜぇ････ボウヤ。\n<wait>こりゃあ、ヤツら、本気で何か企んでやがるな。\nお{08:5D}れぇ････クククク････！！\n<wait>		If you ask me, I don't think that Baal is dead.\n<wait>He must be planning something. How exciting...\n<wait>	ours		reads: 俺はバエルは死んでないと思うぜぇ････ボウヤ。\n<wait>こりゃあ、ヤツら、本気で何か企んでやがるな。\nおもしれぇ････クククク････！！\n<wait>

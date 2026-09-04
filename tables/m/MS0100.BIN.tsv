@@ -3,25 +3,25 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0100.BIN	0:00	0	0	DATA	他にご用件はあり{08:15}\n		Can I get you anything else?\n	v005		
+m/MS0100.BIN	0:00	0	0	DATA	他にご用件はあり{08:15}\n		Can I get you anything else?\n	v005		reads: 他にご用件はありますか？\n
 m/MS0100.BIN	0:01	0	0	DATA	いらっしゃいませ。ご用件をどうぞ。\n		Welcome. How can I help you?\n	v005		
-m/MS0100.BIN	0:02	0	0	DATA	どれも良い品{08:55}よ。ゆっくり見てい{08:52}下{08:49}。\n		Here's what we have on offer.\nPlease take a look.\n	v005		
-m/MS0100.BIN	0:03	0	0	DATA	うちで扱っ{08:2B}物をお持ちで{08:25}み{08:4E}{08:55}が。\n		Apologies, but it doesn't look like you have\nanything that we'd be interested in buying.\n	v005		
+m/MS0100.BIN	0:02	0	0	DATA	どれも良い品{08:55}よ。ゆっくり見てい{08:52}下{08:49}。\n		Here's what we have on offer.\nPlease take a look.\n	v005		reads: どれも良い品ですよ。ゆっくり見ていって下さい。\n
+m/MS0100.BIN	0:03	0	0	DATA	うちで扱っ{08:2B}物をお持ちで{08:25}み{08:4E}{08:55}が。\n		Apologies, but it doesn't look like you have\nanything that we'd be interested in buying.\n	v005		reads: うちで扱ってる物をお持ちでないみたいですが。\n
 m/MS0100.BIN	0:04	0	0	DATA	どれを買い取ればよろしいんで？\n		What would you like to sell?\n	v005		
-m/MS0100.BIN	0:05	0	0	DATA	‥‥あの、お金が足り{08:25}よう{08:55}が？\n		Umm... It doesn't look like you have enough money.\n	v005		
-m/MS0100.BIN	0:06	0	0	DATA	お買い上げの品はこちらでよろしい{08:55}ね？\n		Please confirm these items.\n	v005		
-m/MS0100.BIN	0:07	0	0	DATA	そん{08:58}持ち切れませんよ。\n		That is more than you are able to carry.\n	v005		
-m/MS0100.BIN	0:08	0	0	DATA	いくらなん{08:56}そこまで安くはできませんよ。\n		I'm sorry, but that is lower than I am able to go.\n	v005		
-m/MS0100.BIN	0:09	0	0	DATA	うーん、その値ではねえ‥‥。せめて、{08:47}くらいはね。\n		Umm, that is a little... How about this?\n	v005		
-m/MS0100.BIN	0:0A	0	0	DATA	いいでしょう！ お売りし{08:5A}。\n		Very well. It is a deal.\n	v005		
-m/MS0100.BIN	0:0B	0	0	DATA	ありがとうござい{08:5A}。\n		Thank you very much.\n	v005		
-m/MS0100.BIN	0:0C	0	0	DATA	引き取る品はこちらでよろしい{08:55}ね？\n		Are you good with these items?\n	v005		
-m/MS0100.BIN	0:0D	0	0	DATA	いくらなん{08:56}高すぎ{08:5A}よ。\n‥‥{08:5C}少し安くはなりませんかね？\n		That is more than I am able to offer.\nCould you consider lowering the price?\n	v005		
-m/MS0100.BIN	0:0E	0	0	DATA	{08:4D}じゃちょ{08:53}高い{08:55}よ。\n‥‥せめて{08:47}くらいになりませんか？\n		That is a bit too high. How about this?\n	v005		
+m/MS0100.BIN	0:05	0	0	DATA	‥‥あの、お金が足り{08:25}よう{08:55}が？\n		Umm... It doesn't look like you have enough money.\n	v005		reads: ‥‥あの、お金が足りないようですが？\n
+m/MS0100.BIN	0:06	0	0	DATA	お買い上げの品はこちらでよろしい{08:55}ね？\n		Please confirm these items.\n	v005		reads: お買い上げの品はこちらでよろしいですね？\n
+m/MS0100.BIN	0:07	0	0	DATA	そん{08:58}持ち切れませんよ。\n		That is more than you are able to carry.\n	v005		reads: そんなに持ち切れませんよ。\n
+m/MS0100.BIN	0:08	0	0	DATA	いくらなん{08:56}そこまで安くはできませんよ。\n		I'm sorry, but that is lower than I am able to go.\n	v005		reads: いくらなんでもそこまで安くはできませんよ。\n
+m/MS0100.BIN	0:09	0	0	DATA	うーん、その値ではねえ‥‥。せめて、{08:47}くらいはね。\n		Umm, that is a little... How about this?\n	v005		reads: うーん、その値ではねえ‥‥。せめて、このくらいはね。\n
+m/MS0100.BIN	0:0A	0	0	DATA	いいでしょう！ お売りし{08:5A}。\n		Very well. It is a deal.\n	v005		reads: いいでしょう！ お売りします。\n
+m/MS0100.BIN	0:0B	0	0	DATA	ありがとうござい{08:5A}。\n		Thank you very much.\n	v005		reads: ありがとうございます。\n
+m/MS0100.BIN	0:0C	0	0	DATA	引き取る品はこちらでよろしい{08:55}ね？\n		Are you good with these items?\n	v005		reads: 引き取る品はこちらでよろしいですね？\n
+m/MS0100.BIN	0:0D	0	0	DATA	いくらなん{08:56}高すぎ{08:5A}よ。\n‥‥{08:5C}少し安くはなりませんかね？\n		That is more than I am able to offer.\nCould you consider lowering the price?\n	v005		reads: いくらなんでも高すぎますよ。\n‥‥もう少し安くはなりませんかね？\n
+m/MS0100.BIN	0:0E	0	0	DATA	{08:4D}じゃちょ{08:53}高い{08:55}よ。\n‥‥せめて{08:47}くらいになりませんか？\n		That is a bit too high. How about this?\n	v005		reads: それじゃちょっと高いですよ。\n‥‥せめてこのくらいになりませんか？\n
 m/MS0100.BIN	0:0F	0	0	DATA	ＯＫ。その値で買い取りましょう。\n		Very well. It is a deal.\n	v005		
-m/MS0100.BIN	0:10	0	0	DATA	ありがとうござい{08:5A}。\n		Thank you.\n	v005		
+m/MS0100.BIN	0:10	0	0	DATA	ありがとうござい{08:5A}。\n		Thank you.\n	v005		reads: ありがとうございます。\n
 m/MS0100.BIN	0:11	0	0	DATA	ああ‥‥そうそう。\n		Oh, yes.\n	v005		
-m/MS0100.BIN	0:12	0	0	DATA	毎度ありー。次もごひいきに頼み{08:5A}よ。\n		Thank you very much.\nWe look forward to your next visit.\n	v005		
-m/MS0100.BIN	0:13	0	0	DATA	{08:5B}要ら{08:25}{08:5E}があっ{08:50}お願いし{08:5A}よ。\n		If you ever find yourself holding onto wares you no longer require,\nour doors are always open.\n	v005		
-m/MS0100.BIN	0:14	0	0	DATA	お客さん、ひやかしは困り{08:5A}よ。\n		We do not appreciate window shoppers, thank you very much.\n	v005		
-m/MS0100.BIN	0:15	0	0	DATA	つまら{08:25}物{08:55}が{08:48}を差し上げ{08:5A}。\nお役立てくだ{08:49}。\n		It's not much, but please, have this.\nMay it prove useful on your journey.\n	v005		
+m/MS0100.BIN	0:12	0	0	DATA	毎度ありー。次もごひいきに頼み{08:5A}よ。\n		Thank you very much.\nWe look forward to your next visit.\n	v005		reads: 毎度ありー。次もごひいきに頼みますよ。\n
+m/MS0100.BIN	0:13	0	0	DATA	{08:5B}要ら{08:25}{08:5E}があっ{08:50}お願いし{08:5A}よ。\n		If you ever find yourself holding onto wares you no longer require,\nour doors are always open.\n	v005		reads: また要らないものがあったらお願いしますよ。\n
+m/MS0100.BIN	0:14	0	0	DATA	お客さん、ひやかしは困り{08:5A}よ。\n		We do not appreciate window shoppers, thank you very much.\n	v005		reads: お客さん、ひやかしは困りますよ。\n
+m/MS0100.BIN	0:15	0	0	DATA	つまら{08:25}物{08:55}が{08:48}を差し上げ{08:5A}。\nお役立てくだ{08:49}。\n		It's not much, but please, have this.\nMay it prove useful on your journey.\n	v005		reads: つまらない物ですがこれを差し上げます。\nお役立てください。\n

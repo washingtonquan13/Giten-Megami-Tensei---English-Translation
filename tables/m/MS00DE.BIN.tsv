@@ -3,200 +3,200 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS00DE.BIN	0:00	0	4	00	{04:EC}{08:62}様子をうかがっ{08:14}\n		{04:EC} is standing by.\n	v005		
-m/MS00DE.BIN	0:02	0	42	1ECE	{08:62}{03:04}に刃物を振り回{08:17}\n		 swang their weapon at an ally!\n	v005		
-m/MS00DE.BIN	0:02	1	72	1ECF	{08:62}刃を{03:06}向{08:43}\n		 pointed their weapon at an ally.\n	v005		
+m/MS00DE.BIN	0:00	0	4	00	{04:EC}{08:62}様子をうかがっ{08:14}\n		{04:EC} is standing by.\n	v005		reads: は、様子をうかがっている\n
+m/MS00DE.BIN	0:02	0	42	1ECE	{08:62}{03:04}に刃物を振り回{08:17}\n		 swang their weapon at an ally!\n	v005		reads: は、味方に刃物を振り回した！\n
+m/MS00DE.BIN	0:02	1	72	1ECF	{08:62}刃を{03:06}向{08:43}\n		 pointed their weapon at an ally.\n	v005		reads: は、刃を自分に向けた\n
 m/MS00DE.BIN	0:02	2	88	18	は		 attacked 	v005		
-m/MS00DE.BIN	0:02	3	94	00	{04:EB}に切つ{08:43}\n		reads: に切つけた\n			
+m/MS00DE.BIN	0:02	3	94	00	{04:EB}に切つ{08:43}\n					reads: に切つけた\n
 m/MS00DE.BIN	0:02	4	108	18	は					
-m/MS00DE.BIN	0:02	5	116	1ECE	{04:01}で{03:12}か{08:18}\n		attacked using [{04:01}].\n	v005		
-m/MS00DE.BIN	0:02	6	130	18	{04:01}で{03:12}まく{08:51}\n		attacked using [{04:01}].\n	v005		
-m/MS00DE.BIN	0:02	7	152	1ECF	{08:62}{08:63}を{03:12}刻んで{08:40}\n		 cut themselves.\n	v005		
-m/MS00DE.BIN	0:02	8	179	1E5D	{08:62}{03:04}に{03:12}つけ{08:14}\n		 attacked an ally.\n	v005		
-m/MS00DE.BIN	0:02	9	203	1ECE	は\n{04:01}で{03:12}かか{08:52}{08:1E}\n		 attacked using [{04:01}].\n	v005		
-m/MS00DE.BIN	0:02	10	224	18	の{04:01}が舞う\n		's [{04:01}] swings wild.\n	v005		
-m/MS00DE.BIN	0:03	0	0	DATA	{04:03}	{04:03}	reads: 　			
-m/MS00DE.BIN	0:03	1	15	1ECF	{08:62}{03:0A}{03:02}{03:03}\n	{08:62}{03:0A}{03:02}{03:03}\n	 attacked themselves.\n	v005		
+m/MS00DE.BIN	0:02	5	116	1ECE	{04:01}で{03:12}か{08:18}\n		attacked using [{04:01}].\n	v005		reads: 切りで切りかかった\n
+m/MS00DE.BIN	0:02	6	130	18	{04:01}で{03:12}まく{08:51}\n		attacked using [{04:01}].\n	v005		reads: 切りで切りまくった\n
+m/MS00DE.BIN	0:02	7	152	1ECF	{08:62}{08:63}を{03:12}刻んで{08:40}\n		 cut themselves.\n	v005		reads: は、自分を切り刻んでいる\n
+m/MS00DE.BIN	0:02	8	179	1E5D	{08:62}{03:04}に{03:12}つけ{08:14}\n		 attacked an ally.\n	v005		reads: は、味方に切りつけている\n
+m/MS00DE.BIN	0:02	9	203	1ECE	は\n{04:01}で{03:12}かか{08:52}{08:1E}\n		 attacked using [{04:01}].\n	v005		reads: は\n切りで切りかかってきた\n
+m/MS00DE.BIN	0:02	10	224	18	の{04:01}が舞う\n		's [{04:01}] swings wild.\n	v005		reads: の切りが舞う\n
+m/MS00DE.BIN	0:03	0	0	DATA	{04:03}	{04:03}				reads: 　
+m/MS00DE.BIN	0:03	1	15	1ECF	{08:62}{03:0A}{03:02}{03:03}\n	{08:62}{03:0A}{03:02}{03:03}\n	 attacked themselves.\n	v005		reads: は、自分自身を攻撃しだした\n
 m/MS00DE.BIN	0:03	2	40	1ECE	は		 is attacking 	v005		
-m/MS00DE.BIN	0:03	3	46	00	{04:EB}に向か{08:52}{08:1E}\n		reads: に向かってきた\n			
-m/MS00DE.BIN	0:03	4	62	18	{08:62}{03:04}{03:02}{03:03}！\n		 attacked an ally!\n	v005		
-m/MS00DE.BIN	0:03	5	76	18	の{08:0C}\n		 attacks.\n	v005		
-m/MS00DE.BIN	0:03	6	90	1ECF	{08:62}{08:63}{03:02}{08:14}\n	{08:62}{08:63}{03:02}{08:14}\n	 is attacking themself.\n	v005		
-m/MS00DE.BIN	0:03	7	109	1E5D	{08:62}{03:04}{03:02}{08:14}\n	{08:62}{03:04}{03:02}{08:14}\n	 is attacking an ally.\n	v005		
-m/MS00DE.BIN	0:03	8	121	18	の{08:0C}\n		 attacks.\n	v005		
-m/MS00DE.BIN	0:04	0	35	1ECF	{08:62}己に{03:05}\n		 pointed their gun at themself.\n	v005		
+m/MS00DE.BIN	0:03	3	46	00	{04:EB}に向か{08:52}{08:1E}\n					reads: に向かってきた\n
+m/MS00DE.BIN	0:03	4	62	18	{08:62}{03:04}{03:02}{03:03}！\n		 attacked an ally!\n	v005		reads: は、味方を攻撃しだした！\n
+m/MS00DE.BIN	0:03	5	76	18	の{08:0C}\n		 attacks.\n	v005		reads: の攻撃\n
+m/MS00DE.BIN	0:03	6	90	1ECF	{08:62}{08:63}{03:02}{08:14}\n	{08:62}{08:63}{03:02}{08:14}\n	 is attacking themself.\n	v005		reads: は、自分を攻撃している\n
+m/MS00DE.BIN	0:03	7	109	1E5D	{08:62}{03:04}{03:02}{08:14}\n	{08:62}{03:04}{03:02}{08:14}\n	 is attacking an ally.\n	v005		reads: は、味方を攻撃している\n
+m/MS00DE.BIN	0:03	8	121	18	の{08:0C}\n		 attacks.\n	v005		reads: の攻撃\n
+m/MS00DE.BIN	0:04	0	35	1ECF	{08:62}己に{03:05}\n		 pointed their gun at themself.\n	v005		reads: は、己に銃口を向けた\n
 m/MS00DE.BIN	0:04	1	60	1ECE	は		 pointed their gun at 	v005		
-m/MS00DE.BIN	0:04	2	66	00	{04:EB}に{03:05}\n		reads: に銃口を向けた\n			
-m/MS00DE.BIN	0:04	3	76	18	{08:62}{03:04}に{03:05}\n		 pointed their gun at an ally.\n	v005		
-m/MS00DE.BIN	0:04	4	94	1ECE	の{04:02}が火を吹{08:64}\n		's [{04:02}] spew fire.\n	v005		
-m/MS00DE.BIN	0:04	5	112	18	は{04:02}を撃ちまく{08:51}\n		 fired their [{04:02}].\n	v005		
-m/MS00DE.BIN	0:04	6	138	1ECF	{08:62}{03:06}{03:05}\n	{08:62}{03:06}{03:05}\n	 pointed their gun at themself.\n	v005		
-m/MS00DE.BIN	0:04	7	155	1E5D	{08:62}{03:04}に{03:05}\n		 pointed their gun at an ally.\n	v005		
+m/MS00DE.BIN	0:04	2	66	00	{04:EB}に{03:05}\n					reads: に銃口を向けた\n
+m/MS00DE.BIN	0:04	3	76	18	{08:62}{03:04}に{03:05}\n		 pointed their gun at an ally.\n	v005		reads: は、味方に銃口を向けた\n
+m/MS00DE.BIN	0:04	4	94	1ECE	の{04:02}が火を吹{08:64}\n		's [{04:02}] spew fire.\n	v005		reads: の切りが火を吹いた\n
+m/MS00DE.BIN	0:04	5	112	18	は{04:02}を撃ちまく{08:51}\n		 fired their [{04:02}].\n	v005		reads: は切りを撃ちまくった\n
+m/MS00DE.BIN	0:04	6	138	1ECF	{08:62}{03:06}{03:05}\n	{08:62}{03:06}{03:05}\n	 pointed their gun at themself.\n	v005		reads: は、自分に銃口を向けた\n
+m/MS00DE.BIN	0:04	7	155	1E5D	{08:62}{03:04}に{03:05}\n		 pointed their gun at an ally.\n	v005		reads: は、味方に銃口を向けた\n
 m/MS00DE.BIN	0:04	8	173	1ECE	のショット\n		's shoots.\n	v005		
-m/MS00DE.BIN	0:04	9	187	18	は撃ちまく{08:51}\n		 fires.\n	v005		
-m/MS00DE.BIN	0:05	0	0	DATA	{04:03}	{04:03}	reads: 　			
-m/MS00DE.BIN	0:05	1	15	1ECF	{08:62}{08:63}をいじめ{08:14}\n		 is hitting themself.\n	v005		
+m/MS00DE.BIN	0:04	9	187	18	は撃ちまく{08:51}\n		 fires.\n	v005		reads: は撃ちまくった\n
+m/MS00DE.BIN	0:05	0	0	DATA	{04:03}	{04:03}				reads: 　
+m/MS00DE.BIN	0:05	1	15	1ECF	{08:62}{08:63}をいじめ{08:14}\n		 is hitting themself.\n	v005		reads: は、自分をいじめている\n
 m/MS00DE.BIN	0:05	2	44	1ECE	は		 attacks 	v005		
-m/MS00DE.BIN	0:05	3	50	00	{04:EB}	{04:EB}	reads: 			
-m/MS00DE.BIN	0:05	4	55	18	{08:62}{03:04}	{08:62}{03:04}	 attacks an ally!\n	v005		
-m/MS00DE.BIN	0:05	5	62	18	は敵に{03:07}た！\n		 attacks the enemy!             \n	v005		
-m/MS00DE.BIN	0:05	6	84	1ECF	{08:62}もがい{08:14}\n		 is wriggling.\n	v005		
-m/MS00DE.BIN	0:05	7	105	1E5D	{08:62}{03:04}に{03:07}た！\n		 attacks an ally!\n	v005		
-m/MS00DE.BIN	0:05	8	121	18	が{03:07}て{08:1E}\n		 launches an attack.\n	v005		
-m/MS00DE.BIN	0:06	0	35	1ECF	{08:62}{08:63}を打ちす{08:41}\n		 hits themself.\n	v005		
+m/MS00DE.BIN	0:05	3	50	00	{04:EB}	{04:EB}				reads: 
+m/MS00DE.BIN	0:05	4	55	18	{08:62}{03:04}	{08:62}{03:04}	 attacks an ally!\n	v005		reads: は、味方
+m/MS00DE.BIN	0:05	5	62	18	は敵に{03:07}た！\n		 attacks the enemy!             \n	v005		reads: は敵に襲いかかった！\n
+m/MS00DE.BIN	0:05	6	84	1ECF	{08:62}もがい{08:14}\n		 is wriggling.\n	v005		reads: は、もがいている\n
+m/MS00DE.BIN	0:05	7	105	1E5D	{08:62}{03:04}に{03:07}た！\n		 attacks an ally!\n	v005		reads: は、味方に襲いかかった！\n
+m/MS00DE.BIN	0:05	8	121	18	が{03:07}て{08:1E}\n		 launches an attack.\n	v005		reads: が襲いかかってきた\n
+m/MS00DE.BIN	0:06	0	35	1ECF	{08:62}{08:63}を打ちす{08:41}\n		 hits themself.\n	v005		reads: は、自分を打ちすえた\n
 m/MS00DE.BIN	0:06	1	64	1ECE	は		 swings [{04:01}] at 	v005		
-m/MS00DE.BIN	0:06	2	70	00	{04:EB}	{04:EB}	reads: 			
-m/MS00DE.BIN	0:06	3	75	18	{08:62}{03:04}	{08:62}{03:04}	 swings [{04:01}] at an ally!\n	v005		
-m/MS00DE.BIN	0:06	4	82	18	は敵に{04:01}を振り降ろ{08:17}\n		 swings [{04:01}] at the enemy!                     \n	v005		
-m/MS00DE.BIN	0:06	5	112	1ECF	{08:62}{08:63}を打ちすえ{08:14}\n		 is hitting themself.\n	v005		
-m/MS00DE.BIN	0:06	6	139	1E5D	{08:62}{03:04}に{04:01}を振り降ろ{08:4B}\n		 swings [{04:01}] at an ally.\n	v005		
-m/MS00DE.BIN	0:06	7	163	18	が{04:01}で殴りかか{08:52}{08:1E}\n		 swings [{04:01}].\n	v005		
-m/MS00DE.BIN	0:07	0	29	1E5C	は{04:01}で\n		 uses [{04:01}]\n	v005		
+m/MS00DE.BIN	0:06	2	70	00	{04:EB}	{04:EB}				reads: 
+m/MS00DE.BIN	0:06	3	75	18	{08:62}{03:04}	{08:62}{03:04}	 swings [{04:01}] at an ally!\n	v005		reads: は、味方
+m/MS00DE.BIN	0:06	4	82	18	は敵に{04:01}を振り降ろ{08:17}\n		 swings [{04:01}] at the enemy!                     \n	v005		reads: は敵に切りを振り降ろした！\n
+m/MS00DE.BIN	0:06	5	112	1ECF	{08:62}{08:63}を打ちすえ{08:14}\n		 is hitting themself.\n	v005		reads: は、自分を打ちすえている\n
+m/MS00DE.BIN	0:06	6	139	1E5D	{08:62}{03:04}に{04:01}を振り降ろ{08:4B}\n		 swings [{04:01}] at an ally.\n	v005		reads: は、味方に切りを振り降ろした\n
+m/MS00DE.BIN	0:06	7	163	18	が{04:01}で殴りかか{08:52}{08:1E}\n		 swings [{04:01}].\n	v005		reads: が切りで殴りかかってきた\n
+m/MS00DE.BIN	0:07	0	29	1E5C	は{04:01}で\n		 uses [{04:01}]\n	v005		reads: は切りで\n
 m/MS00DE.BIN	0:07	1	42	1ECF	己		to attack themself.\n	v005		
-m/MS00DE.BIN	0:07	2	64	00	{04:EB}	{04:EB}	reads: 			
-m/MS00DE.BIN	0:07	3	69	18	{03:04}	{03:04}	to attack an ally.\n	v005		
-m/MS00DE.BIN	0:07	4	74	18	敵を突{08:64}\n		to attack an enemy.         \n	v005		
-m/MS00DE.BIN	0:07	5	92	1ECF	{08:62}{08:63}を突い{08:14}\n		 is attacking themself.\n	v005		
-m/MS00DE.BIN	0:07	6	115	1E5D	{08:62}{03:04}を突い{08:14}\n		 is attacking an ally.\n	v005		
+m/MS00DE.BIN	0:07	2	64	00	{04:EB}	{04:EB}				reads: 
+m/MS00DE.BIN	0:07	3	69	18	{03:04}	{03:04}	to attack an ally.\n	v005		reads: 味方
+m/MS00DE.BIN	0:07	4	74	18	敵を突{08:64}\n		to attack an enemy.         \n	v005		reads: 敵を突いた\n
+m/MS00DE.BIN	0:07	5	92	1ECF	{08:62}{08:63}を突い{08:14}\n		 is attacking themself.\n	v005		reads: は、自分を突いている\n
+m/MS00DE.BIN	0:07	6	115	1E5D	{08:62}{03:04}を突い{08:14}\n		 is attacking an ally.\n	v005		reads: は、味方を突いている\n
 m/MS00DE.BIN	0:07	7	131	18	の突き！\n		 attacks!\n	v005		
-m/MS00DE.BIN	0:08	0	29	1E5C	の{04:01}が唸り、\n		's [{04:01}] cracks,\n	v005		
-m/MS00DE.BIN	0:08	1	48	1ECF	{03:0A}	{03:0A}	hitting themself.\n	v005		
-m/MS00DE.BIN	0:08	2	70	00	{04:EB}	{04:EB}	reads: 			
-m/MS00DE.BIN	0:08	3	75	18	{03:04}	{03:04}	hitting an ally.\n	v005		
+m/MS00DE.BIN	0:08	0	29	1E5C	の{04:01}が唸り、\n		's [{04:01}] cracks,\n	v005		reads: の切りが唸り、\n
+m/MS00DE.BIN	0:08	1	48	1ECF	{03:0A}	{03:0A}	hitting themself.\n	v005		reads: 自分自身
+m/MS00DE.BIN	0:08	2	70	00	{04:EB}	{04:EB}				reads: 
+m/MS00DE.BIN	0:08	3	75	18	{03:04}	{03:04}	hitting an ally.\n	v005		reads: 味方
 m/MS00DE.BIN	0:08	4	80	18	敵を鞭打つ\n		hitting the enemy.           \n	v005		
-m/MS00DE.BIN	0:08	5	100	1ECF	{08:62}{08:63}を鞭打つ\n		 whips themself.\n	v005		
-m/MS00DE.BIN	0:08	6	123	1E5D	{08:62}{03:04}を鞭打つ\n		 whips an ally.\n	v005		
+m/MS00DE.BIN	0:08	5	100	1ECF	{08:62}{08:63}を鞭打つ\n		 whips themself.\n	v005		reads: は、自分を鞭打つ\n
+m/MS00DE.BIN	0:08	6	123	1E5D	{08:62}{03:04}を鞭打つ\n		 whips an ally.\n	v005		reads: は、味方を鞭打つ\n
 m/MS00DE.BIN	0:08	7	139	18	の鞭打ち！\n		 whips!\n	v005		
-m/MS00DE.BIN	0:09	0	0	DATA	{04:03}	{04:03}	reads: 　			
-m/MS00DE.BIN	0:09	1	9	1E5C	{08:62}	{08:62}	reads: は、			
-m/MS00DE.BIN	0:09	2	17	1ECF	{03:0A}に\n		cast\n	v005		
-m/MS00DE.BIN	0:09	3	42	00	{04:EB}に		 on themself!\n	v005		
-m/MS00DE.BIN	0:09	4	49	18	{03:04}に{04:00}		cast\n	v005		
-m/MS00DE.BIN	0:09	5	64	1ECF	{08:62}{03:06}\n{04:00}	{08:62}{03:06}\n{04:00}	cast\n	v005		
-m/MS00DE.BIN	0:09	6	81	1E5D	{08:63}の{03:04}に\n{04:00}		cast\n	v005		
+m/MS00DE.BIN	0:09	0	0	DATA	{04:03}	{04:03}				reads: 　
+m/MS00DE.BIN	0:09	1	9	1E5C	{08:62}	{08:62}				reads: は、
+m/MS00DE.BIN	0:09	2	17	1ECF	{03:0A}に\n		cast\n	v005		reads: 自分自身に\n
+m/MS00DE.BIN	0:09	3	42	00	{04:EB}に		 on themself!\n	v005		reads: に
+m/MS00DE.BIN	0:09	4	49	18	{03:04}に{04:00}		cast\n	v005		reads: 味方にを唱えた！ 
+m/MS00DE.BIN	0:09	5	64	1ECF	{08:62}{03:06}\n{04:00}	{08:62}{03:06}\n{04:00}	cast\n	v005		reads: は、自分に\nを唱えた！ 
+m/MS00DE.BIN	0:09	6	81	1E5D	{08:63}の{03:04}に\n{04:00}		cast\n	v005		reads: 自分の味方に\nを唱えた！ 
 m/MS00DE.BIN	0:09	7	95	18	の		uses 	v005		
-m/MS00DE.BIN	0:0A	0	0	DATA	{04:03}{08:62}	{04:03}{08:62}	reads: 　は、			
-m/MS00DE.BIN	0:0A	1	24	1ECE	{01:1C}に		cast\n	v005		
-m/MS00DE.BIN	0:0A	2	37	1ECF	{08:63}で		cast\n	v005		
-m/MS00DE.BIN	0:0A	3	48	00	{04:EB}に		 on themself!\n	v005		
-m/MS00DE.BIN	0:0A	4	55	18	{03:11}{04:00}	{03:11}{04:00}	cast\n	v005		
-m/MS00DE.BIN	0:0A	5	69	1E5C	{02:0E}に		 on 	v005		
-m/MS00DE.BIN	0:0A	6	88	1ECF	{03:06}\n	{03:06}\n	reads: 自分に\n			
-m/MS00DE.BIN	0:0A	7	94	18	{08:0E}に\n{04:00}		cast\n	v005		
-m/MS00DE.BIN	0:0B	0	0	DATA	{04:03}	{04:03}	reads: 　			
-m/MS00DE.BIN	0:0B	1	9	1E5C	は{04:00}		 cast 	v005		
+m/MS00DE.BIN	0:0A	0	0	DATA	{04:03}{08:62}	{04:03}{08:62}				reads: 　は、
+m/MS00DE.BIN	0:0A	1	24	1ECE	{01:1C}に		cast\n	v005		reads: みんなに
+m/MS00DE.BIN	0:0A	2	37	1ECF	{08:63}で		cast\n	v005		reads: 自分で
+m/MS00DE.BIN	0:0A	3	48	00	{04:EB}に		 on themself!\n	v005		reads: に
+m/MS00DE.BIN	0:0A	4	55	18	{03:11}{04:00}	{03:11}{04:00}	cast\n	v005		reads: 敵にを唱えた！ 
+m/MS00DE.BIN	0:0A	5	69	1E5C	{02:0E}に		 on 	v005		reads: こちらに
+m/MS00DE.BIN	0:0A	6	88	1ECF	{03:06}\n	{03:06}\n				reads: 自分に\n
+m/MS00DE.BIN	0:0A	7	94	18	{08:0E}に\n{04:00}		cast\n	v005		reads: 仲魔に\nを唱えた！ 
+m/MS00DE.BIN	0:0B	0	0	DATA	{04:03}	{04:03}				reads: 　
+m/MS00DE.BIN	0:0B	1	9	1E5C	は{04:00}		 cast 	v005		reads: はを唱えた！ 
 m/MS00DE.BIN	0:0B	2	16	18	の		 uses 	v005		
-m/MS00DE.BIN	0:0C	0	0	DATA	{04:03}	{04:03}	reads: 　			
+m/MS00DE.BIN	0:0C	0	0	DATA	{04:03}	{04:03}				reads: 　
 m/MS00DE.BIN	0:0C	1	9	1E5C	は					
-m/MS00DE.BIN	0:0C	2	18	1E5D	{03:11}向けて{04:00}		cast\n	v005		
+m/MS00DE.BIN	0:0C	2	18	1E5D	{03:11}向けて{04:00}		cast\n	v005		reads: 敵に向けてを唱えた！ 
 m/MS00DE.BIN	0:0C	3	38	1E5D	の		uses 	v005		
-m/MS00DE.BIN	0:0C	4	49	18	{02:0E}に向けて{04:00}		cast\n	v005		
-m/MS00DE.BIN	0:0D	0	0	DATA	{04:03}の目が光{08:12}\n		{04:03}'s eyes shine!\n	v005		
-m/MS00DE.BIN	0:0E	0	0	DATA	{04:03}の熱い口づけ\n		{04:03} gives a passionate kiss.\n	v005		
-m/MS00DE.BIN	0:0F	0	0	DATA	{04:03}はニヤリと笑{08:51}{02:09}\n		{04:03} giggles.\n	v005		
-m/MS00DE.BIN	0:10	0	0	DATA	{04:03}{08:62}叫{08:5F}！\n		{04:03} yells out loud!\n	v005		
-m/MS00DE.BIN	0:11	0	0	DATA	{04:03}は唸り声をあ{08:44}\n		{04:03} lets out a roar.\n	v005		
-m/MS00DE.BIN	0:12	0	0	DATA	{04:03}{08:62}恐ろしげな声で吠{08:41}！\n		{04:03} lets out a terrifying howl!\n	v005		
-m/MS00DE.BIN	0:13	0	0	DATA	{04:03}は呪いの言葉をつぶや{08:64}{02:09}\n		{04:03} recites a curse...\\	v005		
-m/MS00DE.BIN	0:14	0	0	DATA	{04:03}の口{08:42}汚し言がついて出た\n		{04:03} utters dirty words.\n	v005		
-m/MS00DE.BIN	0:15	0	0	DATA	{04:03}は逆巻く炎を吐{08:64}！\n		{04:03} spits out flames!\n	v005		
-m/MS00DE.BIN	0:16	0	0	DATA	{04:03}は		{04:03} spits out 	v005		
-m/MS00DE.BIN	0:16	1	9	00	を吐{08:64}\n		reads: を吐いた\n			
-m/MS00DE.BIN	0:17	0	0	DATA	{04:03}は悩ましげに踊り{03:03}\n		{04:03} is dancing crazy.\n	v005		
-m/MS00DE.BIN	0:18	0	0	DATA	{04:03}は楽しげに踊り{03:03}\n		{04:03} is dancing with joy.\n	v005		
-m/MS00DE.BIN	0:19	0	0	DATA	{04:03}は激しく踊り出{08:4B}\n		{04:03} is dancing wildly.\n	v005		
-m/MS00DE.BIN	0:1A	0	0	DATA	{04:03}{08:62}うきうき{08:8E}歌を歌{08:51}\n		{04:03} sings a cheerful song.\n	v005		
-m/MS00DE.BIN	0:1B	0	0	DATA	{04:03}{08:62}心安らぐ歌を歌{08:51}\n		{04:03} sings a calming song.\n	v005		
-m/MS00DE.BIN	0:1C	0	0	DATA	{04:03}の歌声が、悩ましげに心に響く\n		{04:03}'s voice echoes in the listeners' minds.\n	v005		
-m/MS00DE.BIN	0:1D	0	0	DATA	{04:03}{08:62}狂{08:51}{08:69}にシャウトし始めた\n		{04:03} begins yelling like a madman.\n	v005		
-m/MS00DE.BIN	0:1E	0	0	DATA	{04:03}{08:62}何やら歌い出{08:4B}\n{02:09}と{08:54}聴くに耐え{08:25}\n		{04:03} begins singing.\n...It's very hard to listen to.\n	v005		
-m/MS00DE.BIN	0:1F	0	0	DATA	{04:03}{08:62}{03:13}	{04:03}{08:62}{03:13}	{04:03} holds [	v005		
-m/MS00DE.BIN	0:1F	1	11	00	を張{08:51}\n		] in front of them.\n	v005		
-m/MS00DE.BIN	0:20	0	0	DATA	{04:03}の姿が消えてゆく\n		{04:03}'s body fades away...\n	v005		
-m/MS00DE.BIN	0:21	0	0	DATA	{04:03}{08:62}	{04:03}{08:62}	{04:03} unleashes 	v005		
-m/MS00DE.BIN	0:21	1	9	00	を噴き出{08:4B}\n		reads: を噴き出した\n			
-m/MS00DE.BIN	0:22	0	0	DATA	{04:03}{08:62}炎を上げ{08:14}\n		{04:03} is burning up.\n	v005		
-m/MS00DE.BIN	0:23	0	0	DATA	{04:03}	{04:03}	reads: 　			
-m/MS00DE.BIN	0:23	1	9	1E5C	{08:62}呪わ{08:60}手を伸ば{08:4B}\n		 extends a cursed hands.\n	v005		
-m/MS00DE.BIN	0:23	2	31	18	の、冷{08:4E}手が触れて{08:1E}\n		 extends a cold hand.\n	v005		
-m/MS00DE.BIN	0:24	0	0	DATA	ぺたぺた{02:09}・\n		*Tap, tap*...\n	v005		
-m/MS00DE.BIN	0:25	0	0	DATA	{04:03}	{04:03}	reads: 　			
+m/MS00DE.BIN	0:0C	4	49	18	{02:0E}に向けて{04:00}		cast\n	v005		reads: こちらに向けてを唱えた！ 
+m/MS00DE.BIN	0:0D	0	0	DATA	{04:03}の目が光{08:12}\n		{04:03}'s eyes shine!\n	v005		reads: 　の目が光った！\n
+m/MS00DE.BIN	0:0E	0	0	DATA	{04:03}の熱い口づけ\n		{04:03} gives a passionate kiss.\n	v005		reads: 　の熱い口づけ\n
+m/MS00DE.BIN	0:0F	0	0	DATA	{04:03}はニヤリと笑{08:51}{02:09}\n		{04:03} giggles.\n	v005		reads: 　はニヤリと笑った・・・\n
+m/MS00DE.BIN	0:10	0	0	DATA	{04:03}{08:62}叫{08:5F}！\n		{04:03} yells out loud!\n	v005		reads: 　は、叫んだ！\n
+m/MS00DE.BIN	0:11	0	0	DATA	{04:03}は唸り声をあ{08:44}\n		{04:03} lets out a roar.\n	v005		reads: 　は唸り声をあげた\n
+m/MS00DE.BIN	0:12	0	0	DATA	{04:03}{08:62}恐ろしげな声で吠{08:41}！\n		{04:03} lets out a terrifying howl!\n	v005		reads: 　は、恐ろしげな声で吠えた！\n
+m/MS00DE.BIN	0:13	0	0	DATA	{04:03}は呪いの言葉をつぶや{08:64}{02:09}\n		{04:03} recites a curse...\\	v005		reads: 　は呪いの言葉をつぶやいた・・・\n
+m/MS00DE.BIN	0:14	0	0	DATA	{04:03}の口{08:42}汚し言がついて出た\n		{04:03} utters dirty words.\n	v005		reads: 　の口から汚し言がついて出た\n
+m/MS00DE.BIN	0:15	0	0	DATA	{04:03}は逆巻く炎を吐{08:64}！\n		{04:03} spits out flames!\n	v005		reads: 　は逆巻く炎を吐いた！\n
+m/MS00DE.BIN	0:16	0	0	DATA	{04:03}は		{04:03} spits out 	v005		reads: 　は
+m/MS00DE.BIN	0:16	1	9	00	を吐{08:64}\n					reads: を吐いた\n
+m/MS00DE.BIN	0:17	0	0	DATA	{04:03}は悩ましげに踊り{03:03}\n		{04:03} is dancing crazy.\n	v005		reads: 　は悩ましげに踊りだした\n
+m/MS00DE.BIN	0:18	0	0	DATA	{04:03}は楽しげに踊り{03:03}\n		{04:03} is dancing with joy.\n	v005		reads: 　は楽しげに踊りだした\n
+m/MS00DE.BIN	0:19	0	0	DATA	{04:03}は激しく踊り出{08:4B}\n		{04:03} is dancing wildly.\n	v005		reads: 　は激しく踊り出した\n
+m/MS00DE.BIN	0:1A	0	0	DATA	{04:03}{08:62}うきうき{08:8E}歌を歌{08:51}\n		{04:03} sings a cheerful song.\n	v005		reads: 　は、うきうきする歌を歌った\n
+m/MS00DE.BIN	0:1B	0	0	DATA	{04:03}{08:62}心安らぐ歌を歌{08:51}\n		{04:03} sings a calming song.\n	v005		reads: 　は、心安らぐ歌を歌った\n
+m/MS00DE.BIN	0:1C	0	0	DATA	{04:03}の歌声が、悩ましげに心に響く\n		{04:03}'s voice echoes in the listeners' minds.\n	v005		reads: 　の歌声が、悩ましげに心に響く\n
+m/MS00DE.BIN	0:1D	0	0	DATA	{04:03}{08:62}狂{08:51}{08:69}にシャウトし始めた\n		{04:03} begins yelling like a madman.\n	v005		reads: 　は、狂ったようにシャウトし始めた\n
+m/MS00DE.BIN	0:1E	0	0	DATA	{04:03}{08:62}何やら歌い出{08:4B}\n{02:09}と{08:54}聴くに耐え{08:25}\n		{04:03} begins singing.\n...It's very hard to listen to.\n	v005		reads: 　は、何やら歌い出した\n・・・とても聴くに耐えない\n
+m/MS00DE.BIN	0:1F	0	0	DATA	{04:03}{08:62}{03:13}	{04:03}{08:62}{03:13}	{04:03} holds [	v005		reads: 　は、目の前に
+m/MS00DE.BIN	0:1F	1	11	00	を張{08:51}\n		] in front of them.\n	v005		reads: を張った\n
+m/MS00DE.BIN	0:20	0	0	DATA	{04:03}の姿が消えてゆく\n		{04:03}'s body fades away...\n	v005		reads: 　の姿が消えてゆく\n
+m/MS00DE.BIN	0:21	0	0	DATA	{04:03}{08:62}	{04:03}{08:62}	{04:03} unleashes 	v005		reads: 　は、
+m/MS00DE.BIN	0:21	1	9	00	を噴き出{08:4B}\n					reads: を噴き出した\n
+m/MS00DE.BIN	0:22	0	0	DATA	{04:03}{08:62}炎を上げ{08:14}\n		{04:03} is burning up.\n	v005		reads: 　は、炎を上げている\n
+m/MS00DE.BIN	0:23	0	0	DATA	{04:03}	{04:03}				reads: 　
+m/MS00DE.BIN	0:23	1	9	1E5C	{08:62}呪わ{08:60}手を伸ば{08:4B}\n		 extends a cursed hands.\n	v005		reads: は、呪われた手を伸ばした\n
+m/MS00DE.BIN	0:23	2	31	18	の、冷{08:4E}手が触れて{08:1E}\n		 extends a cold hand.\n	v005		reads: の、冷たい手が触れてきた\n
+m/MS00DE.BIN	0:24	0	0	DATA	ぺたぺた{02:09}・\n		*Tap, tap*...\n	v005		reads: ぺたぺた・・・・\n
+m/MS00DE.BIN	0:25	0	0	DATA	{04:03}	{04:03}				reads: 　
 m/MS00DE.BIN	0:25	1	9	1E5C	は		 cast 	v005		
-m/MS00DE.BIN	0:25	2	16	00	をか{08:43}\n		reads: をかけた\n			
+m/MS00DE.BIN	0:25	2	16	00	をか{08:43}\n					reads: をかけた\n
 m/MS00DE.BIN	0:25	3	26	18	の		 uses 	v005		
-m/MS00DE.BIN	0:26	0	0	DATA	{04:03}	{04:03}	reads: 　			
-m/MS00DE.BIN	0:26	1	9	1E5C	{08:62}牙で{03:07}た\n		 attacked using fangs.\n	v005		
-m/MS00DE.BIN	0:26	2	23	18	が、牙をむいて{03:07}て{08:1E}\n		 attacked using fangs.\n	v005		
-m/MS00DE.BIN	0:27	0	0	DATA	{04:03}	{04:03}	reads: 　			
-m/MS00DE.BIN	0:27	1	9	1E5C	{08:62}爪で{03:07}た\n		 attacked using claws.\n	v005		
-m/MS00DE.BIN	0:27	2	23	18	が、爪で{03:07}て{08:1E}\n		 attacked using claws.\n	v005		
-m/MS00DE.BIN	0:28	0	0	DATA	{04:03}	{04:03}	reads: 　			
-m/MS00DE.BIN	0:28	1	9	1E5C	{08:62}	{08:62}	 performs a 	v005		
-m/MS00DE.BIN	0:28	2	16	00	{08:0C}をくらわ{08:4B}\n		 attack.\n	v005		
+m/MS00DE.BIN	0:26	0	0	DATA	{04:03}	{04:03}				reads: 　
+m/MS00DE.BIN	0:26	1	9	1E5C	{08:62}牙で{03:07}た\n		 attacked using fangs.\n	v005		reads: は、牙で襲いかかった\n
+m/MS00DE.BIN	0:26	2	23	18	が、牙をむいて{03:07}て{08:1E}\n		 attacked using fangs.\n	v005		reads: が、牙をむいて襲いかかってきた\n
+m/MS00DE.BIN	0:27	0	0	DATA	{04:03}	{04:03}				reads: 　
+m/MS00DE.BIN	0:27	1	9	1E5C	{08:62}爪で{03:07}た\n		 attacked using claws.\n	v005		reads: は、爪で襲いかかった\n
+m/MS00DE.BIN	0:27	2	23	18	が、爪で{03:07}て{08:1E}\n		 attacked using claws.\n	v005		reads: が、爪で襲いかかってきた\n
+m/MS00DE.BIN	0:28	0	0	DATA	{04:03}	{04:03}				reads: 　
+m/MS00DE.BIN	0:28	1	9	1E5C	{08:62}	{08:62}	 performs a 	v005		reads: は、
+m/MS00DE.BIN	0:28	2	16	00	{08:0C}をくらわ{08:4B}\n		 attack.\n	v005		reads: 攻撃をくらわした\n
 m/MS00DE.BIN	0:28	3	32	18	の		 performs a 	v005		
-m/MS00DE.BIN	0:28	4	39	00	{08:0C}\n	{08:0C}\n	 attack.\n	v005		
-m/MS00DE.BIN	0:29	0	0	DATA	{04:03}の剣が、なぎ払{08:51}かと思うと\n返す刀が素早く		{04:03} swings their blade twice,\n	v005		
-m/MS00DE.BIN	0:29	1	50	1E5C	{03:11}{03:12}つ{08:43}！\n		cutting up the enemy.\n	v005		
-m/MS00DE.BIN	0:29	2	64	18	{03:12}つけ{08:1C}\n		dealing heavy damage.\n	v005		
-m/MS00DE.BIN	0:2A	0	0	DATA	{04:03}の剣が、円を描いて		{04:03}'s sword drew a circle,\n	v005		
-m/MS00DE.BIN	0:2A	1	27	1E5C	{03:11}{03:12}込{08:5F}！\n		cutting deeply into the enemy!\n	v005		
-m/MS00DE.BIN	0:2A	2	41	18	{03:12}込んで{08:1D}\n		cutting deeply!\n	v005		
-m/MS00DE.BIN	0:2B	0	0	DATA	{04:03}の猛烈な羽ばたきの風が		{04:03}'s wings created a hurricane,\n	v005		
-m/MS00DE.BIN	0:2B	1	31	1E5D	{03:11}襲いかかる\n		dealing heavy damage to the foe.\n	v005		
-m/MS00DE.BIN	0:2B	2	47	18	襲{08:52}{08:1E}\n		dealing heavy damage.\\	v005		
-m/MS00DE.BIN	0:2C	0	0	DATA	{04:03}{08:62}	{04:03}{08:62}	reads: 　は、			
-m/MS00DE.BIN	0:2C	1	10	1ECF	身を守っ{08:14}		 has their guard up.\n	v005		
-m/MS00DE.BIN	0:2C	2	39	00	{04:EB}	{04:EB}	reads: 			
+m/MS00DE.BIN	0:28	4	39	00	{08:0C}\n	{08:0C}\n	 attack.\n	v005		reads: 攻撃\n
+m/MS00DE.BIN	0:29	0	0	DATA	{04:03}の剣が、なぎ払{08:51}かと思うと\n返す刀が素早く		{04:03} swings their blade twice,\n	v005		reads: 　の剣が、なぎ払ったかと思うと\n返す刀が素早く
+m/MS00DE.BIN	0:29	1	50	1E5C	{03:11}{03:12}つ{08:43}！\n		cutting up the enemy.\n	v005		reads: 敵に切りつけた！\n
+m/MS00DE.BIN	0:29	2	64	18	{03:12}つけ{08:1C}\n		dealing heavy damage.\n	v005		reads: 切りつけてきた！\n
+m/MS00DE.BIN	0:2A	0	0	DATA	{04:03}の剣が、円を描いて		{04:03}'s sword drew a circle,\n	v005		reads: 　の剣が、円を描いて
+m/MS00DE.BIN	0:2A	1	27	1E5C	{03:11}{03:12}込{08:5F}！\n		cutting deeply into the enemy!\n	v005		reads: 敵に切り込んだ！\n
+m/MS00DE.BIN	0:2A	2	41	18	{03:12}込んで{08:1D}\n		cutting deeply!\n	v005		reads: 切り込んできた！\n
+m/MS00DE.BIN	0:2B	0	0	DATA	{04:03}の猛烈な羽ばたきの風が		{04:03}'s wings created a hurricane,\n	v005		reads: 　の猛烈な羽ばたきの風が
+m/MS00DE.BIN	0:2B	1	31	1E5D	{03:11}襲いかかる\n		dealing heavy damage to the foe.\n	v005		reads: 敵に襲いかかる\n
+m/MS00DE.BIN	0:2B	2	47	18	襲{08:52}{08:1E}\n		dealing heavy damage.\\	v005		reads: 襲ってきた\n
+m/MS00DE.BIN	0:2C	0	0	DATA	{04:03}{08:62}	{04:03}{08:62}				reads: 　は、
+m/MS00DE.BIN	0:2C	1	10	1ECF	身を守っ{08:14}		 has their guard up.\n	v005		reads: 身を守っている
+m/MS00DE.BIN	0:2C	2	39	00	{04:EB}	{04:EB}				reads: 
 m/MS00DE.BIN	0:2C	3	44	18	何故か敵		 is guarding the enemy.\n	v005		
-m/MS00DE.BIN	0:2C	4	62	1E5D	{08:0E}の		 is guarding 	v005		
-m/MS00DE.BIN	0:2C	5	70	00	{04:EB}	{04:EB}	reads: 			
+m/MS00DE.BIN	0:2C	4	62	1E5D	{08:0E}の		 is guarding 	v005		reads: 仲魔の
+m/MS00DE.BIN	0:2C	5	70	00	{04:EB}	{04:EB}				reads: 
 m/MS00DE.BIN	0:2C	6	75	18	何故か		 is guarding 	v005		
-m/MS00DE.BIN	0:2C	7	85	00	{04:EB}を庇っ{08:14}		reads: を庇っている			
-m/MS00DE.BIN	0:2E	0	0	DATA	{04:03}はうろうろ{08:13}\n		{04:03} appears restless.\n	v005		
-m/MS00DE.BIN	0:2F	0	0	DATA	{04:03}は警告を発{08:13}\n		{04:03} is sounding the alarm.\n	v005		
-m/MS00DE.BIN	0:30	0	0	DATA	{04:03}はうすら笑いを浮かべ{08:14}\n		{04:03} is smiling faintly.\n	v005		
-m/MS00DE.BIN	0:31	0	0	DATA	{04:03}はあくびをかみ殺{08:4B}\n		{04:03} stops themself from yawning.\n	v005		
-m/MS00DE.BIN	0:32	0	0	DATA	{04:03}は目を閉じ{08:14}\n		{04:03} closes their eyes.\n	v005		
-m/MS00DE.BIN	0:33	0	0	DATA	{04:03}	{04:03}	reads: 　			
-m/MS00DE.BIN	0:33	1	10	1A	{08:4F}{08:62}ガーディアンの制服を\n装備の上{08:42}羽織{08:51}\n		's group threw a Guardian uniform on\nover their equipment.\n	ours		
-m/MS00DE.BIN	0:33	2	58	19	{08:4F}{08:62}ガーディアンの制服を脱いだ\n		's group took off the Guardian uniform.\n	ours		
-m/MS00DE.BIN	0:34	0	4	00	{04:EC}{08:62}	{04:EC}{08:62}	{04:EC} 	ours		
-m/MS00DE.BIN	0:34	1	12	00	{04:EB}を召喚{08:4B}\n		summoned {04:EB}.\n	ours		
-m/MS00DE.BIN	0:35	0	0	DATA	{04:08}使{08:51}\n		 used it.\n	ours		
-m/MS00DE.BIN	0:36	0	0	DATA	{04:08}	{04:08}	reads: は、を			
-m/MS00DE.BIN	0:36	1	8	1ECF	{08:63}	{08:63}	reads: 自分			
-m/MS00DE.BIN	0:36	2	23	00	{04:EB}	{04:EB}	reads: 			
-m/MS00DE.BIN	0:36	3	28	18	{01:1C}に使{08:51}\n		 used it on everyone.\n	ours		
-m/MS00DE.BIN	0:37	0	0	DATA	{04:08}	{04:08}	reads: は、を			
-m/MS00DE.BIN	0:37	1	8	1ECF	飲{08:5F}		 drank 	v005		
-m/MS00DE.BIN	0:37	2	25	00	{04:EB}に		reads: に			
-m/MS00DE.BIN	0:37	3	32	18	{01:1C}に飲ませた\n		 made the party drink 	v005		
-m/MS00DE.BIN	0:38	0	0	DATA	{04:08}	{04:08}	reads: は、を			
+m/MS00DE.BIN	0:2C	7	85	00	{04:EB}を庇っ{08:14}					reads: を庇っている
+m/MS00DE.BIN	0:2E	0	0	DATA	{04:03}はうろうろ{08:13}\n		{04:03} appears restless.\n	v005		reads: 　はうろうろしている\n
+m/MS00DE.BIN	0:2F	0	0	DATA	{04:03}は警告を発{08:13}\n		{04:03} is sounding the alarm.\n	v005		reads: 　は警告を発している\n
+m/MS00DE.BIN	0:30	0	0	DATA	{04:03}はうすら笑いを浮かべ{08:14}\n		{04:03} is smiling faintly.\n	v005		reads: 　はうすら笑いを浮かべている\n
+m/MS00DE.BIN	0:31	0	0	DATA	{04:03}はあくびをかみ殺{08:4B}\n		{04:03} stops themself from yawning.\n	v005		reads: 　はあくびをかみ殺した\n
+m/MS00DE.BIN	0:32	0	0	DATA	{04:03}は目を閉じ{08:14}\n		{04:03} closes their eyes.\n	v005		reads: 　は目を閉じている\n
+m/MS00DE.BIN	0:33	0	0	DATA	{04:03}	{04:03}				reads: 　
+m/MS00DE.BIN	0:33	1	10	1A	{08:4F}{08:62}ガーディアンの制服を\n装備の上{08:42}羽織{08:51}\n		's group threw a Guardian uniform on\nover their equipment.\n	ours		reads: たちは、ガーディアンの制服を\n装備の上から羽織った\n
+m/MS00DE.BIN	0:33	2	58	19	{08:4F}{08:62}ガーディアンの制服を脱いだ\n		's group took off the Guardian uniform.\n	ours		reads: たちは、ガーディアンの制服を脱いだ\n
+m/MS00DE.BIN	0:34	0	4	00	{04:EC}{08:62}	{04:EC}{08:62}	{04:EC} 	ours		reads: は、
+m/MS00DE.BIN	0:34	1	12	00	{04:EB}を召喚{08:4B}\n		summoned {04:EB}.\n	ours		reads: を召喚した\n
+m/MS00DE.BIN	0:35	0	0	DATA	{04:08}使{08:51}\n		 used it.\n	ours		reads: は、を使った\n
+m/MS00DE.BIN	0:36	0	0	DATA	{04:08}	{04:08}				reads: は、を
+m/MS00DE.BIN	0:36	1	8	1ECF	{08:63}	{08:63}				reads: 自分
+m/MS00DE.BIN	0:36	2	23	00	{04:EB}	{04:EB}				reads: 
+m/MS00DE.BIN	0:36	3	28	18	{01:1C}に使{08:51}\n		 used it on everyone.\n	ours		reads: みんなに使った\n
+m/MS00DE.BIN	0:37	0	0	DATA	{04:08}	{04:08}				reads: は、を
+m/MS00DE.BIN	0:37	1	8	1ECF	飲{08:5F}		 drank 	v005		reads: 飲んだ
+m/MS00DE.BIN	0:37	2	25	00	{04:EB}に					reads: に
+m/MS00DE.BIN	0:37	3	32	18	{01:1C}に飲ませた\n		 made the party drink 	v005		reads: みんなに飲ませた\n
+m/MS00DE.BIN	0:38	0	0	DATA	{04:08}	{04:08}				reads: は、を
 m/MS00DE.BIN	0:38	1	8	1ECF	食べた		 ate 	v005		
-m/MS00DE.BIN	0:38	2	27	00	{04:EB}に		reads: に			
-m/MS00DE.BIN	0:38	3	34	18	{01:1C}に食べさせた\n		 made the party eat 	v005		
-m/MS00DE.BIN	0:39	0	0	DATA	{04:08}振りかざ{08:4B}\n		reads: は、を振りかざした\n			
-m/MS00DE.BIN	0:3A	0	0	DATA	{04:08}投げつ{08:43}\n		reads: は、を投げつけた\n			
-m/MS00DE.BIN	0:3B	0	0	DATA	{04:08}発射{08:4B}\n		reads: は、を発射した\n			
-m/MS00DE.BIN	0:3C	0	0	DATA	{04:08}鳴ら{08:4B}\n		reads: は、を鳴らした\n			
-m/MS00DE.BIN	0:3D	0	0	DATA	{04:08}撒{08:64}\n		reads: は、を撒いた\n			
-m/MS00DE.BIN	0:3E	0	0	DATA	{04:08}割{08:51}\n		reads: は、を割った\n			
-m/MS00DE.BIN	0:3F	0	4	00	{04:EF}は{02:0E}に気がつ{08:64}！\n		{04:EC} noticed you!\n	v005		
-m/MS00DE.BIN	0:40	0	0	DATA	{04:03}は		{04:03} is doing [	v005		
-m/MS00DE.BIN	0:40	1	9	00	を{08:13}\n		reads: をしている\n			
-m/MS00DE.BIN	0:41	0	0	DATA	{04:03}は		{04:03} gave up [	v005		
-m/MS00DE.BIN	0:41	1	9	00	を放{08:51}\n		reads: を放った\n			
-m/MS00DE.BIN	0:42	0	0	DATA	{04:08}ぎゅ{08:53}握り締めた\n		reads: は、をぎゅっと握り締めた\n			
-m/MS00DE.BIN	0:43	0	0	DATA	{04:03}{08:62}	{04:03}{08:62}	{04:03} begged [	v005		
-m/MS00DE.BIN	0:43	1	9	00	に願いをか{08:43}\n		reads: に願いをかけた\n			
-m/MS00DE.BIN	0:44	0	0	DATA	{04:03}{08:62}	{04:03}{08:62}	{04:03} freed [	v005		
-m/MS00DE.BIN	0:44	1	9	00	の魔力を解放{08:4B}\n		]'s magic.\n	v005		
-m/MS00DE.BIN	0:45	0	7	1FC4	{1E10:01021E}風の{01:34}が張ら{08:60}\n		{1E10:01021E}A barrier of wind formed.\n	v005		
-m/MS00DE.BIN	0:46	0	7	1FC4	{1E10:01021E}対電{01:34}が張ら{08:60}\n		{1E10:01021E}An anti-electricity barrier formed.\n	v005		
-m/MS00DE.BIN	0:47	0	0	DATA	{04:03}	{04:03}	reads: 　			
+m/MS00DE.BIN	0:38	2	27	00	{04:EB}に					reads: に
+m/MS00DE.BIN	0:38	3	34	18	{01:1C}に食べさせた\n		 made the party eat 	v005		reads: みんなに食べさせた\n
+m/MS00DE.BIN	0:39	0	0	DATA	{04:08}振りかざ{08:4B}\n					reads: は、を振りかざした\n
+m/MS00DE.BIN	0:3A	0	0	DATA	{04:08}投げつ{08:43}\n					reads: は、を投げつけた\n
+m/MS00DE.BIN	0:3B	0	0	DATA	{04:08}発射{08:4B}\n					reads: は、を発射した\n
+m/MS00DE.BIN	0:3C	0	0	DATA	{04:08}鳴ら{08:4B}\n					reads: は、を鳴らした\n
+m/MS00DE.BIN	0:3D	0	0	DATA	{04:08}撒{08:64}\n					reads: は、を撒いた\n
+m/MS00DE.BIN	0:3E	0	0	DATA	{04:08}割{08:51}\n					reads: は、を割った\n
+m/MS00DE.BIN	0:3F	0	4	00	{04:EF}は{02:0E}に気がつ{08:64}！\n		{04:EC} noticed you!\n	v005		reads: はこちらに気がついた！\n
+m/MS00DE.BIN	0:40	0	0	DATA	{04:03}は		{04:03} is doing [	v005		reads: 　は
+m/MS00DE.BIN	0:40	1	9	00	を{08:13}\n					reads: をしている\n
+m/MS00DE.BIN	0:41	0	0	DATA	{04:03}は		{04:03} gave up [	v005		reads: 　は
+m/MS00DE.BIN	0:41	1	9	00	を放{08:51}\n					reads: を放った\n
+m/MS00DE.BIN	0:42	0	0	DATA	{04:08}ぎゅ{08:53}握り締めた\n					reads: は、をぎゅっと握り締めた\n
+m/MS00DE.BIN	0:43	0	0	DATA	{04:03}{08:62}	{04:03}{08:62}	{04:03} begged [	v005		reads: 　は、
+m/MS00DE.BIN	0:43	1	9	00	に願いをか{08:43}\n					reads: に願いをかけた\n
+m/MS00DE.BIN	0:44	0	0	DATA	{04:03}{08:62}	{04:03}{08:62}	{04:03} freed [	v005		reads: 　は、
+m/MS00DE.BIN	0:44	1	9	00	の魔力を解放{08:4B}\n		]'s magic.\n	v005		reads: の魔力を解放した\n
+m/MS00DE.BIN	0:45	0	7	1FC4	{1E10:01021E}風の{01:34}が張ら{08:60}\n		{1E10:01021E}A barrier of wind formed.\n	v005		reads: {1E10:01021E}風の結界が張られた\n
+m/MS00DE.BIN	0:46	0	7	1FC4	{1E10:01021E}対電{01:34}が張ら{08:60}\n		{1E10:01021E}An anti-electricity barrier formed.\n	v005		reads: {1E10:01021E}対電結界が張られた\n
+m/MS00DE.BIN	0:47	0	0	DATA	{04:03}	{04:03}				reads: 　
 m/MS00DE.BIN	0:47	1	9	1E5C	は		 started [	v005		
-m/MS00DE.BIN	0:47	2	16	00	を{08:86}{08:43}\n		reads: をしかけた\n			
+m/MS00DE.BIN	0:47	2	16	00	を{08:86}{08:43}\n					reads: をしかけた\n
 m/MS00DE.BIN	0:47	3	26	18	は		 started [	v005		
-m/MS00DE.BIN	0:47	4	33	00	を{08:86}けて{08:1E}\n		reads: をしかけてきた\n			
-m/MS00DE.BIN	0:48	0	0	DATA	{04:03}{08:62}	{04:03}{08:62}	{04:03} released [	v005		
-m/MS00DE.BIN	0:48	1	9	00	を放{08:51}\n		reads: を放った\n			
+m/MS00DE.BIN	0:47	4	33	00	を{08:86}けて{08:1E}\n					reads: をしかけてきた\n
+m/MS00DE.BIN	0:48	0	0	DATA	{04:03}{08:62}	{04:03}{08:62}	{04:03} released [	v005		reads: 　は、
+m/MS00DE.BIN	0:48	1	9	00	を放{08:51}\n					reads: を放った\n

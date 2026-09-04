@@ -3,15 +3,15 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS00A9.BIN	0:01	0	0	DATA	＞神田ターミナルへ{08:69}こそ\n		>Welcome to Kanda Terminal.\n	v005		
-m/MS00A9.BIN	0:03	0	0	DATA	{01:23}お待ち{08:6E}		Please wait a moment	v005		
+m/MS00A9.BIN	0:01	0	0	DATA	＞神田ターミナルへ{08:69}こそ\n		>Welcome to Kanda Terminal.\n	v005		reads: ＞神田ターミナルへようこそ\n
+m/MS00A9.BIN	0:03	0	0	DATA	{01:23}お待ち{08:6E}		Please wait a moment	v005		reads: しばらくお待ちください
 m/MS00A9.BIN	0:03	1	16	1FFA	．．．\n					
-m/MS00A9.BIN	0:03	2	27	1FBA	＞ＡＭＳ用マップ{08:0A}を確認しま{08:4B}\n　{03:09}ロードを始め{08:5A}\n		>AMS map data found. Download it?\n	v005		
-m/MS00A9.BIN	0:03	3	93	1FB2	実行		Proceed	v005		
-m/MS00A9.BIN	0:03	4	99	1FB2	中止		Cancel	v005		
-m/MS00A9.BIN	0:03	5	117	0F	{01:49}	{01:49}	reads: 			
+m/MS00A9.BIN	0:03	2	27	1FBA	＞ＡＭＳ用マップ{08:0A}を確認しま{08:4B}\n　{03:09}ロードを始め{08:5A}\n		>AMS map data found. Download it?\n	v005		reads: ＞ＡＭＳ用マップデータを確認しました\n　ダウンロードを始めます\n
+m/MS00A9.BIN	0:03	3	93	1FB2	実行		Proceed	v005		menu option, declared width 20 columns
+m/MS00A9.BIN	0:03	4	99	1FB2	中止		Cancel	v005		menu option, declared width 20 columns
+m/MS00A9.BIN	0:03	5	117	0F	{01:49}	{01:49}				reads: 
 m/MS00A9.BIN	0:03	6	120	00						
-m/MS00A9.BIN	0:03	7	123	1FBA	{03:09}ロード{08:4A}い{08:5A}		Downloading	v005		
+m/MS00A9.BIN	0:03	7	123	1FBA	{03:09}ロード{08:4A}い{08:5A}		Downloading	v005		reads: ダウンロードしています
 m/MS00A9.BIN	0:03	8	143	1FFA	．．．\n					
-m/MS00A9.BIN	0:03	9	158	1FBA	＞{03:09}ロード正常終了しま{08:4B}\n<wait>		>Download completed successfully.\n<wait>	v005		
-m/MS00A9.BIN	0:03	10	195	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>		>Download cancelled.\n<wait>	v005		
+m/MS00A9.BIN	0:03	9	158	1FBA	＞{03:09}ロード正常終了しま{08:4B}\n<wait>		>Download completed successfully.\n<wait>	v005		reads: ＞ダウンロード正常終了しました\n<wait>
+m/MS00A9.BIN	0:03	10	195	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>		>Download cancelled.\n<wait>	v005		reads: ＞ダウンロードを中止します\n<wait>

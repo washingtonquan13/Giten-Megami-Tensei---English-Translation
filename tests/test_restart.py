@@ -181,3 +181,18 @@ def test_capture_regions_are_bounded():
     rep = findings.Report()
     check_v2.check_capture(rep, [row])
     assert not [f for f in rep.errors if f.rule == "capture"]
+
+
+def test_extraction_never_fills_the_reference_columns():
+    """The extractor builds rows from the game alone: ref_en/ref_src/status must be
+    empty and the note must be in the note column (a positional Row() with eight
+    arguments once put every note into ref_en)."""
+    import tempfile
+    from giten import extract_v2
+    d = tempfile.mkdtemp()
+    extract_v2.run("ms", None, d, True)
+    rows = [r for p in tables.iter_tables(d) for r in tables.read(p)]
+    assert rows
+    assert not any(r.ref_en or r.ref_src or r.status for r in rows)
+    assert any(r.note for r in rows)
+    assert not any(r.ref_en.startswith(("reads:", "record reaches", "@")) for r in rows)

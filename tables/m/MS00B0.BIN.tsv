@@ -3,60 +3,60 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS00B0.BIN	0:02	0	10	00	ｰ{05:02}		{05:02}	ours		
-m/MS00B0.BIN	0:02	1	14	00	ｰ{06:03}		{06:03}	ours		
-m/MS00B0.BIN	0:02	2	18	00	ｰ{07:04}		{07:04}	ours		
-m/MS00B0.BIN	0:02	3	22	00	ｰ{08:05}		{08:05}	ours		
+m/MS00B0.BIN	0:02	0	10	00	ｰ{05:02}		{05:02}	ours		reads: ｰ切り
+m/MS00B0.BIN	0:02	1	14	00	ｰ{06:03}		{06:03}	ours		reads: ｰ
+m/MS00B0.BIN	0:02	2	18	00	ｰ{07:04}		{07:04}	ours		reads: ｰ＞攻撃しますか？
+m/MS00B0.BIN	0:02	3	22	00	ｰ{08:05}		{08:05}	ours		reads: ｰコンピュータ
 m/MS00B0.BIN	0:02	4	26	00	ｰ					
 m/MS00B0.BIN	0:02	5	32	09						
-m/MS00B0.BIN	0:03	0	9	1F19	{01:2A}	{01:2A}	reads: ありがとう			
-m/MS00B0.BIN	0:03	1	12	00	{02:01}5	{02:01}5	reads: ペンタグランマ5			
-m/MS00B0.BIN	0:03	2	16	00	{03:01}B	{03:01}B	reads: そんなことB			
-m/MS00B0.BIN	0:03	3	20	00	{04:01}O	{04:01}O	reads: 切りO			
-m/MS00B0.BIN	0:03	4	24	00	{05:01}^	{05:01}^	{05:01}r	v005		
-m/MS00B0.BIN	0:03	5	28	00	{06:01}k	{06:01}k	reads: k			
+m/MS00B0.BIN	0:03	0	9	1F19	{01:2A}	{01:2A}				reads: ありがとう
+m/MS00B0.BIN	0:03	1	12	00	{02:01}5	{02:01}5				reads: ペンタグランマ5
+m/MS00B0.BIN	0:03	2	16	00	{03:01}B	{03:01}B				reads: そんなことB
+m/MS00B0.BIN	0:03	3	20	00	{04:01}O	{04:01}O				reads: 切りO
+m/MS00B0.BIN	0:03	4	24	00	{05:01}^	{05:01}^	{05:01}r	v005		reads: 飛び道具^
+m/MS00B0.BIN	0:03	5	28	00	{06:01}k	{06:01}k				reads: k
 m/MS00B0.BIN	0:03	6	32	00						
 m/MS00B0.BIN	0:03	7	34	1B	バーテン		Bartender	v005		
-m/MS00B0.BIN	0:03	8	55	1B	{02:03}	{02:03}	R.Soldier	v005		
+m/MS00B0.BIN	0:03	8	55	1B	{02:03}	{02:03}	R.Soldier	v005		reads: レジスタンス
 m/MS00B0.BIN	0:03	9	70	1B	娼婦		Prostitute	v005		
-m/MS00B0.BIN	0:03	10	87	1B	{08:0B}人		Cambion	v005		
+m/MS00B0.BIN	0:03	10	87	1B	{08:0B}人		Cambion	v005		reads: 悪魔人
 m/MS00B0.BIN	0:03	11	104	1B	若い男		Young Man	v005		
 m/MS00B0.BIN	0:03	12	123	1B	男性		Man	v005		
 m/MS00B0.BIN	0:03	13	140	1B	女性		Woman	v005		
 m/MS00B0.BIN	0:04	0	4	1FD2	バーテン：		Bartender:	v005		
-m/MS00B0.BIN	0:04	1	21	09	やあ、いらっしゃい{08:72}\n<wait>		Welcome to our bar.\n<wait>	v005		
+m/MS00B0.BIN	0:04	1	21	09	やあ、いらっしゃい{08:72}\n<wait>		Welcome to our bar.\n<wait>	v005		reads: やあ、いらっしゃい‥‥\n<wait>
 m/MS00B0.BIN	0:04	2	50	1FD2	バーテン：		Bartender:	v005		
-m/MS00B0.BIN	0:04	3	62	1FD3	シャンシャンシティの{08:0B}{08:72}何者かに倒{03:0C}た{08:52}噂だ。\n<wait>大{08:4A}何も変わらんがね。\n		The word on the street is that someone took down\nthe demons at Sanshan City.\n<wait>It sounds like a big deal, but honestly,\nnot much has changed as a result.\n	v005		
-m/MS00B0.BIN	0:04	4	139	18	やあ、いらっしゃい{08:72}\n<wait>		Welcome to our bar.\n<wait>	v005		
+m/MS00B0.BIN	0:04	3	62	1FD3	シャンシャンシティの{08:0B}{08:72}何者かに倒{03:0C}た{08:52}噂だ。\n<wait>大{08:4A}何も変わらんがね。\n		The word on the street is that someone took down\nthe demons at Sanshan City.\n<wait>It sounds like a big deal, but honestly,\nnot much has changed as a result.\n	v005		reads: シャンシャンシティの悪魔‥‥何者かに倒されたって噂だ。\n<wait>大して何も変わらんがね。\n
+m/MS00B0.BIN	0:04	4	139	18	やあ、いらっしゃい{08:72}\n<wait>		Welcome to our bar.\n<wait>	v005		reads: やあ、いらっしゃい‥‥\n<wait>
 m/MS00B0.BIN	0:04	5	168	1FD2	バーテン：		Bartender:	v005		
-m/MS00B0.BIN	0:04	6	180	1FD3	お客さん{08:72}\n<wait>シャンシャンシティに{08:62}近づか{08:25}方が身の為{08:55}よ。\n<wait>		...\n<wait>I'd recommend that you keep away from Sanshan City.\n<wait>	v005		
+m/MS00B0.BIN	0:04	6	180	1FD3	お客さん{08:72}\n<wait>シャンシャンシティに{08:62}近づか{08:25}方が身の為{08:55}よ。\n<wait>		...\n<wait>I'd recommend that you keep away from Sanshan City.\n<wait>	v005		reads: お客さん‥‥\n<wait>シャンシャンシティには、近づかない方が身の為ですよ。\n<wait>
 m/MS00B0.BIN	0:04	7	250	1FD2	バーテン：		Bartender:	v005		
-m/MS00B0.BIN	0:04	8	262	1FD3	あそこは何{08:56}、{08:0B}共の管理{08:8E}牢獄な{08:5F}そう{08:55}。\n看守の{08:0B}{08:5C}{08:69}よ{08:40}様{08:55}よ。\n<wait>		I am told that there is a terrible prison there ran by demon.\n<wait>	v005		
-m/MS00B0.BIN	0:05	0	4	1FD2	{02:03}：		Resistance Soldier:	v005		
-m/MS00B0.BIN	0:05	1	15	09	シャンシャンシティのアバドン、奴は倒{03:0C}た{08:52}さ！\n<wait>		I hear that someone took down the demon Abaddon\nat Sanshan City.\n<wait>	v005		
-m/MS00B0.BIN	0:05	2	70	1FD2	{02:03}：		Resistance Soldier:	v005		
-m/MS00B0.BIN	0:05	3	76	1FD3	{08:33}者だとか何だとか{08:52}、妙な噂も{08:7B}らしいが、\nどーせ、{08:0B}同士の抗争か何かだろーよ。\n<wait>		Was it a human? A demon? Personally, my money's on the latter.\nIt was probably some sort of an internal dispute.\n<wait>	v005		
-m/MS00B0.BIN	0:05	4	164	1FD2	{02:03}：		Resistance Soldier:	v005		
-m/MS00B0.BIN	0:05	5	170	1FD3	ケッ{08:72}そう簡単に、アバドンが倒{08:2A}か{08:52}{08:5F}。\n何処の誰とも分{08:42}ん{02:0B}{08:6A}かによ！！\n		Hmph... No way could some silly human take down a demon\nof Abaddon's calibre... No way...\n	v005		
-m/MS00B0.BIN	0:05	6	247	18	{02:08}‥何だ？\n<wait>{02:03}が酒飲んでちゃ悪いかよ！<wait>　失せな！！\n<wait>		...What?\n<wait>Why can't a soldier grab a drink if he's thirsty?\n<wait>Get the fuck outta here!!\n<wait>	v005		
+m/MS00B0.BIN	0:04	8	262	1FD3	あそこは何{08:56}、{08:0B}共の管理{08:8E}牢獄な{08:5F}そう{08:55}。\n看守の{08:0B}{08:5C}{08:69}よ{08:40}様{08:55}よ。\n<wait>		I am told that there is a terrible prison there ran by demon.\n<wait>	v005		reads: あそこは何でも、悪魔共の管理する牢獄なんだそうです。\n看守の悪魔もうようよいる様ですよ。\n<wait>
+m/MS00B0.BIN	0:05	0	4	1FD2	{02:03}：		Resistance Soldier:	v005		reads: レジスタンス：
+m/MS00B0.BIN	0:05	1	15	09	シャンシャンシティのアバドン、奴は倒{03:0C}た{08:52}さ！\n<wait>		I hear that someone took down the demon Abaddon\nat Sanshan City.\n<wait>	v005		reads: シャンシャンシティのアバドン、奴は倒されたってさ！\n<wait>
+m/MS00B0.BIN	0:05	2	70	1FD2	{02:03}：		Resistance Soldier:	v005		reads: レジスタンス：
+m/MS00B0.BIN	0:05	3	76	1FD3	{08:33}者だとか何だとか{08:52}、妙な噂も{08:7B}らしいが、\nどーせ、{08:0B}同士の抗争か何かだろーよ。\n<wait>		Was it a human? A demon? Personally, my money's on the latter.\nIt was probably some sort of an internal dispute.\n<wait>	v005		reads: 勇者だとか何だとかって、妙な噂もあるらしいが、\nどーせ、悪魔同士の抗争か何かだろーよ。\n<wait>
+m/MS00B0.BIN	0:05	4	164	1FD2	{02:03}：		Resistance Soldier:	v005		reads: レジスタンス：
+m/MS00B0.BIN	0:05	5	170	1FD3	ケッ{08:72}そう簡単に、アバドンが倒{08:2A}か{08:52}{08:5F}。\n何処の誰とも分{08:42}ん{02:0B}{08:6A}かによ！！\n		Hmph... No way could some silly human take down a demon\nof Abaddon's calibre... No way...\n	v005		reads: ケッ‥‥そう簡単に、アバドンが倒せるかってんだ。\n何処の誰とも分からん人間なんかによ！！\n
+m/MS00B0.BIN	0:05	6	247	18	{02:08}‥何だ？\n<wait>{02:03}が酒飲んでちゃ悪いかよ！<wait>　失せな！！\n<wait>		...What?\n<wait>Why can't a soldier grab a drink if he's thirsty?\n<wait>Get the fuck outta here!!\n<wait>	v005		reads: ‥‥‥‥何だ？\n<wait>レジスタンスが酒飲んでちゃ悪いかよ！<wait>　失せな！！\n<wait>
 m/MS00B0.BIN	0:06	0	4	1FD2	娼婦：		Prostitute:	v005		
-m/MS00B0.BIN	0:06	1	17	09	なあに？　私フリー{08:81}し{08:25}主義{08:6B}。\n{08:4D}に、アンタみ{08:4E}な子供{08:81}あねぇ。\n<wait>		Hmm? Sorry honey, but I don't work for free.\nI think you're also a bit too young for me.\n<wait>	v005		
+m/MS00B0.BIN	0:06	1	17	09	なあに？　私フリー{08:81}し{08:25}主義{08:6B}。\n{08:4D}に、アンタみ{08:4E}な子供{08:81}あねぇ。\n<wait>		Hmm? Sorry honey, but I don't work for free.\nI think you're also a bit too young for me.\n<wait>	v005		reads: なあに？　私フリーじゃしない主義なの。\nそれに、アンタみたいな子供じゃあねぇ。\n<wait>
 m/MS00B0.BIN	0:06	2	91	1FD2	娼婦：		Prostitute:	v005		
 m/MS00B0.BIN	0:06	3	99	1FD3	あーあ、六本木に行こうかな。\n<wait>		Haa... I think I might move to Roppongi.\n<wait>	v005		
 m/MS00B0.BIN	0:06	4	136	1FD2	娼婦：		Prostitute:	v005		
-m/MS00B0.BIN	0:06	5	144	1FD3	{08:0B}が仕切っ{08:2B}らしい{08:84}、大きな歓楽街が{08:7B}{08:42}さ、\n断然、{08:47}辺より稼げると思うのよねぇ{02:08}\n		There's this giant red light district there. I hear it's ran by demons,\nbut as long as I get paid, I can leave with that.\n	v005		
-m/MS00B0.BIN	0:06	6	229	18	ねぇ{08:72}{08:45}さぁ、ヒプノパンチは無いのぉ！\n{08:51}く、ダッサいわねー！！\n<wait>		They don't even serve Hypno Punches here. What a shit bar!\n<wait>	v005		
-m/MS00B0.BIN	0:07	0	4	1FD2	{08:0B}人：		Cambion:	v005		
-m/MS00B0.BIN	0:07	1	12	1FD3	市ヶ谷にはさ、すんげぇ医者が{08:40}{08:5F}。\nサイバー手術す{08:5F}っ{08:50}、あそこが一番だよ。\n金が{08:3F}ばの話{08:74}どよ。\n<wait>		There's this incredible doctor residing at Ichigaya.\nIf you want cyber surgery done, and you've got the money to pay,\nthen he's your guy.\n<wait>	v005		
+m/MS00B0.BIN	0:06	5	144	1FD3	{08:0B}が仕切っ{08:2B}らしい{08:84}、大きな歓楽街が{08:7B}{08:42}さ、\n断然、{08:47}辺より稼げると思うのよねぇ{02:08}\n		There's this giant red light district there. I hear it's ran by demons,\nbut as long as I get paid, I can leave with that.\n	v005		reads: 悪魔が仕切ってるらしいけど、大きな歓楽街があるからさ、\n断然、この辺より稼げると思うのよねぇ‥‥‥\n
+m/MS00B0.BIN	0:06	6	229	18	ねぇ{08:72}{08:45}さぁ、ヒプノパンチは無いのぉ！\n{08:51}く、ダッサいわねー！！\n<wait>		They don't even serve Hypno Punches here. What a shit bar!\n<wait>	v005		reads: ねぇ‥‥ここさぁ、ヒプノパンチは無いのぉ！\nったく、ダッサいわねー！！\n<wait>
+m/MS00B0.BIN	0:07	0	4	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：
+m/MS00B0.BIN	0:07	1	12	1FD3	市ヶ谷にはさ、すんげぇ医者が{08:40}{08:5F}。\nサイバー手術す{08:5F}っ{08:50}、あそこが一番だよ。\n金が{08:3F}ばの話{08:74}どよ。\n<wait>		There's this incredible doctor residing at Ichigaya.\nIf you want cyber surgery done, and you've got the money to pay,\nthen he's your guy.\n<wait>	v005		reads: 市ヶ谷にはさ、すんげぇ医者がいるんだ。\nサイバー手術すんだったら、あそこが一番だよ。\n金があればの話だけどよ。\n<wait>
 m/MS00B0.BIN	0:08	0	4	1FD2	若い男：		Young Man:	v005		
-m/MS00B0.BIN	0:08	1	14	1FD3	神田に{08:62}学術研究都市が{08:7B}ん{08:55}。\n科学に魂を売{08:51}、ミュータント達の巣窟{08:55}よ。\n<wait>		Kanda is where most research happens these days.\nSome call it a lair of mutants who've sold their soul to science.\n<wait>	v005		
+m/MS00B0.BIN	0:08	1	14	1FD3	神田に{08:62}学術研究都市が{08:7B}ん{08:55}。\n科学に魂を売{08:51}、ミュータント達の巣窟{08:55}よ。\n<wait>		Kanda is where most research happens these days.\nSome call it a lair of mutants who've sold their soul to science.\n<wait>	v005		reads: 神田には、学術研究都市があるんです。\n科学に魂を売った、ミュータント達の巣窟ですよ。\n<wait>
 m/MS00B0.BIN	0:08	2	96	1FD2	若い男：		Young Man:	v005		
-m/MS00B0.BIN	0:08	3	106	1FD3	サイバー手術の技術を覚{08:41}いと思{08:52}行{08:51}{08:5F}{08:84}、\nと{08:54}、と{08:54}{08:72}相手にすら{08:4A}くれ{02:0A}で{08:4B}よ。\n<wait>		I was interested in cyber surgery and decided to drop by,\nbut no one there would even talk to me.\n<wait>	v005		
+m/MS00B0.BIN	0:08	3	106	1FD3	サイバー手術の技術を覚{08:41}いと思{08:52}行{08:51}{08:5F}{08:84}、\nと{08:54}、と{08:54}{08:72}相手にすら{08:4A}くれ{02:0A}で{08:4B}よ。\n<wait>		I was interested in cyber surgery and decided to drop by,\nbut no one there would even talk to me.\n<wait>	v005		reads: サイバー手術の技術を覚えたいと思って行ったんだけど、\nとても、とても‥‥相手にすらしてくれませんでしたよ。\n<wait>
 m/MS00B0.BIN	0:08	4	196	1FD2	若い男：		Young Man:	v005		
-m/MS00B0.BIN	0:08	5	206	1FD3	はぁ～{02:08}\n何か、儲かる仕事は{08:25}{08:55}かねぇ。\n<wait>		Haa... Is there really no job out there for me?\n<wait>	v005		
+m/MS00B0.BIN	0:08	5	206	1FD3	はぁ～{02:08}\n何か、儲かる仕事は{08:25}{08:55}かねぇ。\n<wait>		Haa... Is there really no job out there for me?\n<wait>	v005		reads: はぁ～‥‥‥\n何か、儲かる仕事はないですかねぇ。\n<wait>
 m/MS00B0.BIN	0:09	0	4	1FD2	労働者風の男：		Worker:	v005		
-m/MS00B0.BIN	0:09	1	20	1FD3	{02:08}{02:08}{02:08}{02:08}‥\n<wait>	{02:08}{02:08}{02:08}{02:08}‥\n<wait>	reads: ‥‥‥‥‥‥‥‥‥‥‥‥‥\n<wait>			
+m/MS00B0.BIN	0:09	1	20	1FD3	{02:08}{02:08}{02:08}{02:08}‥\n<wait>	{02:08}{02:08}{02:08}{02:08}‥\n<wait>				reads: ‥‥‥‥‥‥‥‥‥‥‥‥‥\n<wait>
 m/MS00B0.BIN	0:0A	0	4	1FD2	女性：		Woman:	v005		
-m/MS00B0.BIN	0:0A	1	12	1FD3	お茶の水にも、確か{08:10}があ{08:51}わよね。\n<wait>ああ、私、親戚を探し{08:2B}のよ。\n<wait>		Hmm... I'm pretty sure that there's a shelter at Ochanomizu.\n<wait>Oh, sorry. You see, I'm looking for my relatives.\n<wait>	v005		
+m/MS00B0.BIN	0:0A	1	12	1FD3	お茶の水にも、確か{08:10}があ{08:51}わよね。\n<wait>ああ、私、親戚を探し{08:2B}のよ。\n<wait>		Hmm... I'm pretty sure that there's a shelter at Ochanomizu.\n<wait>Oh, sorry. You see, I'm looking for my relatives.\n<wait>	v005		reads: お茶の水にも、確かシェルターがあったわよね。\n<wait>ああ、私、親戚を探してるのよ。\n<wait>
 m/MS00B0.BIN	0:0A	2	88	1FD2	女性：		Woman:	v005		
-m/MS00B0.BIN	0:0A	3	96	1FD3	初台で{08:62}該当者無しだ{08:51}のよね。\n原宿は全然つながら{08:25}しさ{02:08}ヤんなっちゃうわ。\n<wait>		I went by Hatsudai, but that was a bust.\nHarajuku likewise. How frustrating...\n<wait>	v005		
+m/MS00B0.BIN	0:0A	3	96	1FD3	初台で{08:62}該当者無しだ{08:51}のよね。\n原宿は全然つながら{08:25}しさ{02:08}ヤんなっちゃうわ。\n<wait>		I went by Hatsudai, but that was a bust.\nHarajuku likewise. How frustrating...\n<wait>	v005		reads: 初台では、該当者無しだったのよね。\n原宿は全然つながらないしさ‥‥‥ヤんなっちゃうわ。\n<wait>

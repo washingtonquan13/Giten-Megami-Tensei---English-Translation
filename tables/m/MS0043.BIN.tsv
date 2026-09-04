@@ -3,52 +3,52 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0043.BIN	0:00	0	2	1FD0	{08:05}ーの端末が{08:7B}。\nアームターミナルを接続し{08:15}\n		There is a computer here. Connect your Arm Terminal?\n	v005		
-m/MS0043.BIN	0:00	1	62	1FB2	接続{08:8E}		Connect	v005		
-m/MS0043.BIN	0:00	2	70	1FB2	立ち去る		Leave	v005		
-m/MS0043.BIN	0:00	3	93	00	C{08:FF}	C{08:FF}	reads: C			
-m/MS0043.BIN	0:01	0	8	1FD1	解析中{08:55}		Establishing a connection	v005		
+m/MS0043.BIN	0:00	0	2	1FD0	{08:05}ーの端末が{08:7B}。\nアームターミナルを接続し{08:15}\n		There is a computer here. Connect your Arm Terminal?\n	v005		reads: コンピューターの端末がある。\nアームターミナルを接続しますか？\n
+m/MS0043.BIN	0:00	1	62	1FB2	接続{08:8E}		Connect	v005		reads: 接続する; menu option, declared width 20 columns
+m/MS0043.BIN	0:00	2	70	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns
+m/MS0043.BIN	0:00	3	93	00	C{08:FF}	C{08:FF}				reads: C
+m/MS0043.BIN	0:01	0	8	1FD1	解析中{08:55}		Establishing a connection	v005		reads: 解析中です
 m/MS0043.BIN	0:01	1	22	1FFA	．．．\n					
-m/MS0043.BIN	0:01	2	37	1FC4	＞ターミナル回線とのリンクを確認\n　個人{08:0A}の管理操作が可能{08:55}\n		>Connection established.\n Personal data management possible.\n	v005		
-m/MS0043.BIN	0:01	3	113	1FB2	実行		Proceed	v005		
-m/MS0043.BIN	0:01	4	119	1FB2	中止		Abort	v005		
-m/MS0043.BIN	0:01	5	138	00	C{08:FF}	C{08:FF}	reads: C			
-m/MS0043.BIN	0:02	0	18	1FB2	{08:0A}セーブ		Save	v005		
-m/MS0043.BIN	0:02	1	28	1FB2	{08:0A}ロード		Load	v005		
-m/MS0043.BIN	0:02	2	38	1FB2	ゲームの終了		Quit	v005		
-m/MS0043.BIN	0:02	3	52	1FB2	中止		Abort	v005		
-m/MS0043.BIN	0:02	4	71	00	C{05:02}	C{05:02}	reads: C切り			
-m/MS0043.BIN	0:02	5	75	00	C{07:03}	C{07:03}	reads: C＞外す仲魔を選んで下さい			
-m/MS0043.BIN	0:02	6	79	00	C{08:FF}	C{08:FF}	reads: C			
-m/MS0043.BIN	0:03	0	2	1FBA	＞現在の状況をセーブし{08:5A}\n　セーブ{08:8E}ファイルを選択{08:4A}下{08:49}\n		>Your progress will be saved.\n Please select a file to save to.\n	v005		
-m/MS0043.BIN	0:03	1	209	1F81	{=84}{=08}\nを上書きし{08:5A}。よろしい{08:55}か？\n		ve data in this slot will be overwritten.\nProceed?\n	v005		
-m/MS0043.BIN	0:03	2	257	1FB2	{08:26}	{08:26}	Yes	v005		
-m/MS0043.BIN	0:03	3	261	1FB2	{08:27}	{08:27}	No	v005		
-m/MS0043.BIN	0:03	4	277	0F	{01:E8}	{01:E8}	reads: 			
+m/MS0043.BIN	0:01	2	37	1FC4	＞ターミナル回線とのリンクを確認\n　個人{08:0A}の管理操作が可能{08:55}\n		>Connection established.\n Personal data management possible.\n	v005		reads: ＞ターミナル回線とのリンクを確認\n　個人データの管理操作が可能です\n
+m/MS0043.BIN	0:01	3	113	1FB2	実行		Proceed	v005		menu option, declared width 20 columns
+m/MS0043.BIN	0:01	4	119	1FB2	中止		Abort	v005		menu option, declared width 20 columns
+m/MS0043.BIN	0:01	5	138	00	C{08:FF}	C{08:FF}				reads: C
+m/MS0043.BIN	0:02	0	18	1FB2	{08:0A}セーブ		Save	v005		reads: データセーブ; menu option, declared width 20 columns
+m/MS0043.BIN	0:02	1	28	1FB2	{08:0A}ロード		Load	v005		reads: データロード; menu option, declared width 20 columns
+m/MS0043.BIN	0:02	2	38	1FB2	ゲームの終了		Quit	v005		menu option, declared width 20 columns
+m/MS0043.BIN	0:02	3	52	1FB2	中止		Abort	v005		menu option, declared width 20 columns
+m/MS0043.BIN	0:02	4	71	00	C{05:02}	C{05:02}				reads: C切り
+m/MS0043.BIN	0:02	5	75	00	C{07:03}	C{07:03}				reads: C＞外す仲魔を選んで下さい
+m/MS0043.BIN	0:02	6	79	00	C{08:FF}	C{08:FF}				reads: C
+m/MS0043.BIN	0:03	0	2	1FBA	＞現在の状況をセーブし{08:5A}\n　セーブ{08:8E}ファイルを選択{08:4A}下{08:49}\n		>Your progress will be saved.\n Please select a file to save to.\n	v005		reads: ＞現在の状況をセーブします\n　セーブするファイルを選択して下さい\n
+m/MS0043.BIN	0:03	1	209	1F81	{=84}{=08}\nを上書きし{08:5A}。よろしい{08:55}か？\n		ve data in this slot will be overwritten.\nProceed?\n	v005		reads: {=84}{=08}\nを上書きします。よろしいですか？\n
+m/MS0043.BIN	0:03	2	257	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
+m/MS0043.BIN	0:03	3	261	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
+m/MS0043.BIN	0:03	4	277	0F	{01:E8}	{01:E8}				reads: 
 m/MS0043.BIN	0:03	5	302	1F80	сZーブ終了\n<wait>		ve completed.\n<wait>	v005		
-m/MS0043.BIN	0:03	6	325	1FD0	＞報告：{08:0A}セーブに失敗しま{08:4B}\n　　　　ハードディスクの空き容量が不足{08:4A}い{08:5A}\n<wait>		>Error: Failed to save.\n        Hard disk is full.\n<wait>	v005		
-m/MS0043.BIN	0:04	0	9	1F19	{01:19}	{01:19}	reads: われわれ			
-m/MS0043.BIN	0:04	1	12	00	{02:01}S	{02:01}S	reads: ペンタグランマS			
-m/MS0043.BIN	0:04	2	16	00	{03:01}{=F9}{=00}{04:01}{=F5}{=00}{05:01}{=F1}{=00}{06:01}{=ED}{=00}{07:01}{=E9}{=00}	{03:01}{=F9}{=00}{04:01}{=F5}{=00}{05:01}{=F1}{=00}{06:01}{=ED}{=00}{07:01}{=E9}{=00}	reads: そんなこと{=F9}{=00}切り{=F5}{=00}飛び道具{=F1}{=00}{=ED}{=00}＞何をしますか？{=E9}{=00}			
+m/MS0043.BIN	0:03	6	325	1FD0	＞報告：{08:0A}セーブに失敗しま{08:4B}\n　　　　ハードディスクの空き容量が不足{08:4A}い{08:5A}\n<wait>		>Error: Failed to save.\n        Hard disk is full.\n<wait>	v005		reads: ＞報告：データセーブに失敗しました\n　　　　ハードディスクの空き容量が不足しています\n<wait>
+m/MS0043.BIN	0:04	0	9	1F19	{01:19}	{01:19}				reads: われわれ
+m/MS0043.BIN	0:04	1	12	00	{02:01}S	{02:01}S				reads: ペンタグランマS
+m/MS0043.BIN	0:04	2	16	00	{03:01}{=F9}{=00}{04:01}{=F5}{=00}{05:01}{=F1}{=00}{06:01}{=ED}{=00}{07:01}{=E9}{=00}	{03:01}{=F9}{=00}{04:01}{=F5}{=00}{05:01}{=F1}{=00}{06:01}{=ED}{=00}{07:01}{=E9}{=00}				reads: そんなこと{=F9}{=00}切り{=F5}{=00}飛び道具{=F1}{=00}{=ED}{=00}＞何をしますか？{=E9}{=00}
 m/MS0043.BIN	0:04	3	40	1B	 プレイヤー名     LEVEL セーブ地点		 PLAYER NAME      LEVEL LOCATION	v005		
 m/MS0043.BIN	0:04	4	180	00	+	+				
 m/MS0043.BIN	0:04	5	182	00	+	+				
-m/MS0043.BIN	0:04	6	184	00	{01:1E}{=9B}{=03}	{01:1E}{=9B}{=03}	reads: はやく{=9B}{=03}			
-m/MS0043.BIN	0:05	0	2	1FBA	＞{08:0A}をロードし{08:5A}\n　ロード{08:8E}ファイルを選択{08:4A}下{08:49}\n		>Please select a save to load\n	v005		
-m/MS0043.BIN	0:05	1	167	1FBA	＞{08:0A}をロードし{08:5A}。よろしい{08:55}か？\n		>Do you wish to load this save?\n	v005		
-m/MS0043.BIN	0:05	2	216	1FB2	{08:26}	{08:26}	Yes	v005		
-m/MS0043.BIN	0:05	3	220	1FB2	{08:27}	{08:27}	No	v005		
-m/MS0043.BIN	0:05	4	236	0F	{01:11}	{01:11}	reads: あなたが			
-m/MS0043.BIN	0:05	5	261	1F80	{=84}{=95}吹F{08:0A}ロードに失敗しま{08:4B}\n　　　　セーブ{08:0A}が異常{08:55}\n<wait>		ror: Failed to load the save\n Save data is corrupted\n<wait>	v005		
-m/MS0043.BIN	0:06	0	9	1F19	{01:19}	{01:19}	reads: われわれ			
-m/MS0043.BIN	0:06	1	12	00	{02:01}S	{02:01}S	reads: ペンタグランマS			
-m/MS0043.BIN	0:06	2	16	00	{03:01}{=F9}{=00}{04:01}{=F5}{=00}{05:01}{=F1}{=00}{06:01}{=ED}{=00}{07:01}{=E9}{=00}	{03:01}{=F9}{=00}{04:01}{=F5}{=00}{05:01}{=F1}{=00}{06:01}{=ED}{=00}{07:01}{=E9}{=00}	reads: そんなこと{=F9}{=00}切り{=F5}{=00}飛び道具{=F1}{=00}{=ED}{=00}＞何をしますか？{=E9}{=00}			
+m/MS0043.BIN	0:04	6	184	00	{01:1E}{=9B}{=03}	{01:1E}{=9B}{=03}				reads: はやく{=9B}{=03}
+m/MS0043.BIN	0:05	0	2	1FBA	＞{08:0A}をロードし{08:5A}\n　ロード{08:8E}ファイルを選択{08:4A}下{08:49}\n		>Please select a save to load\n	v005		reads: ＞データをロードします\n　ロードするファイルを選択して下さい\n
+m/MS0043.BIN	0:05	1	167	1FBA	＞{08:0A}をロードし{08:5A}。よろしい{08:55}か？\n		>Do you wish to load this save?\n	v005		reads: ＞データをロードします。よろしいですか？\n
+m/MS0043.BIN	0:05	2	216	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
+m/MS0043.BIN	0:05	3	220	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
+m/MS0043.BIN	0:05	4	236	0F	{01:11}	{01:11}				reads: あなたが
+m/MS0043.BIN	0:05	5	261	1F80	{=84}{=95}吹F{08:0A}ロードに失敗しま{08:4B}\n　　　　セーブ{08:0A}が異常{08:55}\n<wait>		ror: Failed to load the save\n Save data is corrupted\n<wait>	v005		reads: {=84}{=95}吹Fデータロードに失敗しました\n　　　　セーブデータが異常です\n<wait>
+m/MS0043.BIN	0:06	0	9	1F19	{01:19}	{01:19}				reads: われわれ
+m/MS0043.BIN	0:06	1	12	00	{02:01}S	{02:01}S				reads: ペンタグランマS
+m/MS0043.BIN	0:06	2	16	00	{03:01}{=F9}{=00}{04:01}{=F5}{=00}{05:01}{=F1}{=00}{06:01}{=ED}{=00}{07:01}{=E9}{=00}	{03:01}{=F9}{=00}{04:01}{=F5}{=00}{05:01}{=F1}{=00}{06:01}{=ED}{=00}{07:01}{=E9}{=00}				reads: そんなこと{=F9}{=00}切り{=F5}{=00}飛び道具{=F1}{=00}{=ED}{=00}＞何をしますか？{=E9}{=00}
 m/MS0043.BIN	0:06	3	40	1B	 プレイヤー名     LEVEL セーブ地点		 PLAYER NAME      LEVEL LOCATION	v005		
 m/MS0043.BIN	0:06	4	180	00	+	+				
 m/MS0043.BIN	0:06	5	182	00	+	+				
-m/MS0043.BIN	0:06	6	184	00	{01:1E}{=9B}{=03}	{01:1E}{=9B}{=03}	reads: はやく{=9B}{=03}			
-m/MS0043.BIN	0:06	7	195	00	{01:18}F	{01:18}F	reads: あんたF			
-m/MS0043.BIN	0:07	0	2	1FBA	＞ゲームを終了し{08:5A}。よろしい{08:55}か？\n		>Are you sure that you wish to exit the game?\n	v005		
-m/MS0043.BIN	0:07	1	53	1FB2	{08:26}	{08:26}	Yes	v005		
-m/MS0043.BIN	0:07	2	57	1FB2	{08:27}	{08:27}	No	v005		
-m/MS0043.BIN	0:07	3	74	00	C{02:FF}	C{02:FF}	reads: C			
+m/MS0043.BIN	0:06	6	184	00	{01:1E}{=9B}{=03}	{01:1E}{=9B}{=03}				reads: はやく{=9B}{=03}
+m/MS0043.BIN	0:06	7	195	00	{01:18}F	{01:18}F				reads: あんたF
+m/MS0043.BIN	0:07	0	2	1FBA	＞ゲームを終了し{08:5A}。よろしい{08:55}か？\n		>Are you sure that you wish to exit the game?\n	v005		reads: ＞ゲームを終了します。よろしいですか？\n
+m/MS0043.BIN	0:07	1	53	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
+m/MS0043.BIN	0:07	2	57	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
+m/MS0043.BIN	0:07	3	74	00	C{02:FF}	C{02:FF}				reads: C

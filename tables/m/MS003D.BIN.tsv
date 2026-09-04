@@ -3,96 +3,96 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS003D.BIN	0:06	0	0	UNTILED	ｭ / ｬ / ｬ / ｬ / ｪ / ﾐ / ーの端末が / {。 / アームターミナルを接続し / ﾁ / ﾐ / ｱ / ｲ接続 / ｷ / ﾑ / = / = / 		@noedit; @untiled; record does not tile (expression selector past end of record at 0x8B); read-only, copied verbatim			
-m/MS003D.BIN	0:07	0	8	1FD1	有用{08:0A}を検索中{08:55}		Looking for available data	v005		
+m/MS003D.BIN	0:06	0	0	UNTILED	ｭ / ｬ / ｬ / ｬ / ｪ / ﾐ / ーの端末が / {。 / アームターミナルを接続し / ﾁ / ﾐ / ｱ / ｲ接続 / ｷ / ﾑ / = / = / 					@noedit; @untiled; record does not tile (expression selector past end of record at 0x8B); read-only, copied verbatim
+m/MS003D.BIN	0:07	0	8	1FD1	有用{08:0A}を検索中{08:55}		Looking for available data	v005		reads: 有用データを検索中です
 m/MS003D.BIN	0:07	1	30	1FFA	．．．\n					
 m/MS003D.BIN	0:08	0	12	1FC4	＞「		>"	ours		
-m/MS003D.BIN	0:08	1	19	1F01	{01:03}	{01:03}	reads: ニュートン			
-m/MS003D.BIN	0:08	2	24	19	{03:19}」「		" "	ours		
-m/MS003D.BIN	0:08	3	33	1F01	{01:03}	{01:03}	reads: ニュートン			
-m/MS003D.BIN	0:08	4	38	19	{03:19}」\n　「		"\n　"	ours		
-m/MS003D.BIN	0:08	5	50	1F01	{01:03}	{01:03}	reads: ニュートン			
-m/MS003D.BIN	0:08	6	55	19	の各{08:0B}の\n　ＤＡＳ{08:0A}を発見しま{08:4B}\n　プロテクトを解除し、{03:09}ロードを試み{08:5A}\n		's D.A.S. data found for each demon\n　Removing protection, attempting download\n	ours		
-m/MS003D.BIN	0:08	7	142	1FB2	実行		Proceed	v005		
-m/MS003D.BIN	0:08	8	148	1FB2	中止		Abort	v005		
-m/MS003D.BIN	0:08	9	166	0F	{01:27}	{01:27}	reads: まさか			
+m/MS003D.BIN	0:08	1	19	1F01	{01:03}	{01:03}				reads: ニュートン
+m/MS003D.BIN	0:08	2	24	19	{03:19}」「		" "	ours		reads: 」「
+m/MS003D.BIN	0:08	3	33	1F01	{01:03}	{01:03}				reads: ニュートン
+m/MS003D.BIN	0:08	4	38	19	{03:19}」\n　「		"\n　"	ours		reads: 」\n　「
+m/MS003D.BIN	0:08	5	50	1F01	{01:03}	{01:03}				reads: ニュートン
+m/MS003D.BIN	0:08	6	55	19	の各{08:0B}の\n　ＤＡＳ{08:0A}を発見しま{08:4B}\n　プロテクトを解除し、{03:09}ロードを試み{08:5A}\n		's D.A.S. data found for each demon\n　Removing protection, attempting download\n	ours		reads: の各悪魔の\n　ＤＡＳデータを発見しました\n　プロテクトを解除し、ダウンロードを試みます\n
+m/MS003D.BIN	0:08	7	142	1FB2	実行		Proceed	v005		menu option, declared width 20 columns
+m/MS003D.BIN	0:08	8	148	1FB2	中止		Abort	v005		menu option, declared width 20 columns
+m/MS003D.BIN	0:08	9	166	0F	{01:27}	{01:27}				reads: まさか
 m/MS003D.BIN	0:08	10	169	00						
-m/MS003D.BIN	0:08	11	210	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>		>Download aborted.\n<wait>	v005		
-m/MS003D.BIN	0:09	0	6	1FC4	＞ＡＭＳ{08:0A}を発見しま{08:4B}\n　プロテクトを解除し、{03:09}ロードを試み{08:5A}\n		>AMS data found.\n Decrypt and download?\n	v005		
-m/MS003D.BIN	0:09	1	84	1FB2	実行		Proceed	v005		
-m/MS003D.BIN	0:09	2	90	1FB2	中止		Abort	v005		
-m/MS003D.BIN	0:09	3	108	0F	{01:0D}	{01:0D}	reads: わたしを			
+m/MS003D.BIN	0:08	11	210	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>		>Download aborted.\n<wait>	v005		reads: ＞ダウンロードを中止します\n<wait>
+m/MS003D.BIN	0:09	0	6	1FC4	＞ＡＭＳ{08:0A}を発見しま{08:4B}\n　プロテクトを解除し、{03:09}ロードを試み{08:5A}\n		>AMS data found.\n Decrypt and download?\n	v005		reads: ＞ＡＭＳデータを発見しました\n　プロテクトを解除し、ダウンロードを試みます\n
+m/MS003D.BIN	0:09	1	84	1FB2	実行		Proceed	v005		menu option, declared width 20 columns
+m/MS003D.BIN	0:09	2	90	1FB2	中止		Abort	v005		menu option, declared width 20 columns
+m/MS003D.BIN	0:09	3	108	0F	{01:0D}	{01:0D}				reads: わたしを
 m/MS003D.BIN	0:09	4	111	00						
-m/MS003D.BIN	0:09	5	126	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>		>Download aborted.\n<wait>	v005		
-m/MS003D.BIN	0:0A	0	46	1F4F	{03:16}	{03:16}	reads: 			
-m/MS003D.BIN	0:0A	1	49	00	{02:03}	{02:03}	reads: レジスタンス			
+m/MS003D.BIN	0:09	5	126	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>		>Download aborted.\n<wait>	v005		reads: ＞ダウンロードを中止します\n<wait>
+m/MS003D.BIN	0:0A	0	46	1F4F	{03:16}	{03:16}				reads: 
+m/MS003D.BIN	0:0A	1	49	00	{02:03}	{02:03}				reads: レジスタンス
 m/MS003D.BIN	0:0A	2	70	1FC4	＞「					
-m/MS003D.BIN	0:0A	3	77	1F01	{03:19}」を発見しま{08:4B}\n		{03:19}] found.\n	v005		
-m/MS003D.BIN	0:0A	4	119	1F4E	{03:16}	{03:16}	reads: 			
-m/MS003D.BIN	0:0A	5	122	00	{01:03}	{01:03}	reads: ニュートン			
+m/MS003D.BIN	0:0A	3	77	1F01	{03:19}」を発見しま{08:4B}\n		{03:19}] found.\n	v005		reads: 」を発見しました\n
+m/MS003D.BIN	0:0A	4	119	1F4E	{03:16}	{03:16}				reads: 
+m/MS003D.BIN	0:0A	5	122	00	{01:03}	{01:03}				reads: ニュートン
 m/MS003D.BIN	0:0A	6	132	00	\{	\{				
-m/MS003D.BIN	0:0A	7	237	18	　プロテクトを解除し、{03:09}ロードを試み{08:5A}\n		 Decrypt and download?\n	v005		
-m/MS003D.BIN	0:0A	8	292	1FB2	実行		Proceed	v005		
-m/MS003D.BIN	0:0A	9	298	1FB2	中止		Abort	v005		
-m/MS003D.BIN	0:0A	10	316	0F	{01:3F}	{01:3F}	reads: どちら			
+m/MS003D.BIN	0:0A	7	237	18	　プロテクトを解除し、{03:09}ロードを試み{08:5A}\n		 Decrypt and download?\n	v005		reads: 　プロテクトを解除し、ダウンロードを試みます\n
+m/MS003D.BIN	0:0A	8	292	1FB2	実行		Proceed	v005		menu option, declared width 20 columns
+m/MS003D.BIN	0:0A	9	298	1FB2	中止		Abort	v005		menu option, declared width 20 columns
+m/MS003D.BIN	0:0A	10	316	0F	{01:3F}	{01:3F}				reads: どちら
 m/MS003D.BIN	0:0A	11	319	00						
-m/MS003D.BIN	0:0A	12	384	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>		>Download aborted.\n<wait>	v005		
-m/MS003D.BIN	0:0A	13	426	1FC4	＞{08:47}{08:09}は既にインストール{03:0C}てい{08:5A}\n<wait>		>This program has already been installed.\n<wait>	v005		
-m/MS003D.BIN	0:0A	14	480	1FC4	＞既に{08:47}{08:09}の上位バージョンが\n　インストール{03:0C}てい{08:5A}\n<wait>		>An upgraded version of this program\n has already been installed.\n<wait>	v005		
+m/MS003D.BIN	0:0A	12	384	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>		>Download aborted.\n<wait>	v005		reads: ＞ダウンロードを中止します\n<wait>
+m/MS003D.BIN	0:0A	13	426	1FC4	＞{08:47}{08:09}は既にインストール{03:0C}てい{08:5A}\n<wait>		>This program has already been installed.\n<wait>	v005		reads: ＞このプログラムは既にインストールされています\n<wait>
+m/MS003D.BIN	0:0A	14	480	1FC4	＞既に{08:47}{08:09}の上位バージョンが\n　インストール{03:0C}てい{08:5A}\n<wait>		>An upgraded version of this program\n has already been installed.\n<wait>	v005		reads: ＞既にこのプログラムの上位バージョンが\n　インストールされています\n<wait>
 m/MS003D.BIN	0:0B	0	2	1FBA	＞「		>Found the DDS data of [	v005		
-m/MS003D.BIN	0:0B	1	9	1F01	{01:03}	{01:03}	reads: ニュートン			
-m/MS003D.BIN	0:0B	2	12	00	」のＤＤＳ{08:0A}を発見しま{08:4B}\n		reads: 」のＤＤＳデータを発見しました\n			
+m/MS003D.BIN	0:0B	1	9	1F01	{01:03}	{01:03}				reads: ニュートン
+m/MS003D.BIN	0:0B	2	12	00	」のＤＤＳ{08:0A}を発見しま{08:4B}\n					reads: 」のＤＤＳデータを発見しました\n
 m/MS003D.BIN	0:0B	3	60	1F81	ｺ＞既に「		The DDS data of [	ours		
-m/MS003D.BIN	0:0B	4	72	1F01	{01:03}	{01:03}	reads: ニュートン			
-m/MS003D.BIN	0:0B	5	75	00	」のＤＤＳ{08:0A}は\n　インストール{03:0C}てい{08:5A}\n<wait>		]\n has already been installed.\n<wait>	v005		
-m/MS003D.BIN	0:0B	6	132	1FBA	＞記憶容量不足でインストールでき{02:0A}\n<wait>		>Error. No space left to install.\n<wait>	v005		
-m/MS003D.BIN	0:0B	7	176	0C	　プロテクトを解除し、{03:09}ロードを試み{08:5A}\n		 Decrypt the data and download it?\n	v005		
-m/MS003D.BIN	0:0B	8	231	1FB2	実行		Proceed	v005		
-m/MS003D.BIN	0:0B	9	237	1FB2	中止		Abort	v005		
-m/MS003D.BIN	0:0B	10	255	0F	{01:0C}	{01:0C}	reads: わたしの			
+m/MS003D.BIN	0:0B	4	72	1F01	{01:03}	{01:03}				reads: ニュートン
+m/MS003D.BIN	0:0B	5	75	00	」のＤＤＳ{08:0A}は\n　インストール{03:0C}てい{08:5A}\n<wait>		]\n has already been installed.\n<wait>	v005		reads: 」のＤＤＳデータは\n　インストールされています\n<wait>
+m/MS003D.BIN	0:0B	6	132	1FBA	＞記憶容量不足でインストールでき{02:0A}\n<wait>		>Error. No space left to install.\n<wait>	v005		reads: ＞記憶容量不足でインストールできません\n<wait>
+m/MS003D.BIN	0:0B	7	176	0C	　プロテクトを解除し、{03:09}ロードを試み{08:5A}\n		 Decrypt the data and download it?\n	v005		reads: 　プロテクトを解除し、ダウンロードを試みます\n
+m/MS003D.BIN	0:0B	8	231	1FB2	実行		Proceed	v005		menu option, declared width 20 columns
+m/MS003D.BIN	0:0B	9	237	1FB2	中止		Abort	v005		menu option, declared width 20 columns
+m/MS003D.BIN	0:0B	10	255	0F	{01:0C}	{01:0C}				reads: わたしの
 m/MS003D.BIN	0:0B	11	258	00						
-m/MS003D.BIN	0:0B	12	272	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>		>Download aborted.\n<wait>	v005		
-m/MS003D.BIN	0:0C	0	2	1FBA	＞有用{08:0A}を発見でき{02:0A}で{08:4B}\n<wait>		>Unable to find any available data.\n<wait>	v005		
-m/MS003D.BIN	0:0D	0	2	1FBA	＞情報{08:0A}ファイルを発見しま{08:4B}\n　プロテクトを解除し、内容を表示し{08:5A}\n		>Data file found.\n Decrypt and display its contents?\n	v005		
-m/MS003D.BIN	0:0D	1	84	1FB2	実行		Proceed	v005		
-m/MS003D.BIN	0:0D	2	90	1FB2	中止		Abort	v005		
-m/MS003D.BIN	0:0D	3	108	0F	{01:E5}	{01:E5}	reads: 			
+m/MS003D.BIN	0:0B	12	272	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>		>Download aborted.\n<wait>	v005		reads: ＞ダウンロードを中止します\n<wait>
+m/MS003D.BIN	0:0C	0	2	1FBA	＞有用{08:0A}を発見でき{02:0A}で{08:4B}\n<wait>		>Unable to find any available data.\n<wait>	v005		reads: ＞有用データを発見できませんでした\n<wait>
+m/MS003D.BIN	0:0D	0	2	1FBA	＞情報{08:0A}ファイルを発見しま{08:4B}\n　プロテクトを解除し、内容を表示し{08:5A}\n		>Data file found.\n Decrypt and display its contents?\n	v005		reads: ＞情報データファイルを発見しました\n　プロテクトを解除し、内容を表示します\n
+m/MS003D.BIN	0:0D	1	84	1FB2	実行		Proceed	v005		menu option, declared width 20 columns
+m/MS003D.BIN	0:0D	2	90	1FB2	中止		Abort	v005		menu option, declared width 20 columns
+m/MS003D.BIN	0:0D	3	108	0F	{01:E5}	{01:E5}				reads: 
 m/MS003D.BIN	0:0D	4	111	00						
-m/MS003D.BIN	0:0D	5	114	1FBA	＞{01:23}お待ち{08:6E}		>Please wait a moment	v005		
+m/MS003D.BIN	0:0D	5	114	1FBA	＞{01:23}お待ち{08:6E}		>Please wait a moment	v005		reads: ＞しばらくお待ちください
 m/MS003D.BIN	0:0D	6	132	1FFA	．．．\n					
-m/MS003D.BIN	0:0D	7	175	1FBA	＞プロテクトの解除に失敗しま{08:4B}\n　情報{08:0A}ファイルの内容を表示でき{02:0A}\n<wait>		>Unable to break encryption.\n Contents cannot be displayed.\n<wait>	v005		
-m/MS003D.BIN	0:0D	8	252	1FBA	＞情報{08:0A}ファイルの内容を表示し{08:5A}\n<wait>		>Displaying contents.\n<wait>	v005		
-m/MS003D.BIN	0:0D	9	310	1FB2	再表示		Show again	v005		
-m/MS003D.BIN	0:0D	10	318	1FB2	終了		Exit	v005		
-m/MS003D.BIN	0:0D	11	336	0F	{01:2B}	{01:2B}	reads: ゾンビ			
+m/MS003D.BIN	0:0D	7	175	1FBA	＞プロテクトの解除に失敗しま{08:4B}\n　情報{08:0A}ファイルの内容を表示でき{02:0A}\n<wait>		>Unable to break encryption.\n Contents cannot be displayed.\n<wait>	v005		reads: ＞プロテクトの解除に失敗しました\n　情報データファイルの内容を表示できません\n<wait>
+m/MS003D.BIN	0:0D	8	252	1FBA	＞情報{08:0A}ファイルの内容を表示し{08:5A}\n<wait>		>Displaying contents.\n<wait>	v005		reads: ＞情報データファイルの内容を表示します\n<wait>
+m/MS003D.BIN	0:0D	9	310	1FB2	再表示		Show again	v005		menu option, declared width 20 columns
+m/MS003D.BIN	0:0D	10	318	1FB2	終了		Exit	v005		menu option, declared width 20 columns
+m/MS003D.BIN	0:0D	11	336	0F	{01:2B}	{01:2B}				reads: ゾンビ
 m/MS003D.BIN	0:0D	12	339	00						
-m/MS003D.BIN	0:0D	13	342	1FBA	＞ファイル内容の表示を中止し{08:5A}\n<wait>		>Closing display.\n<wait>	v005		
-m/MS003D.BIN	0:0D	14	382	0C	<wait>＞ファイル内容の表示を終了し{08:5A}\n<wait>		<wait>>Exiting display mode.\n<wait>	v005		
-m/MS003D.BIN	0:0E	0	2	1FBA	＞{03:09}ロード開始し{08:5A}\n<wait>		>Initializing download.\n<wait>	v005		
-m/MS003D.BIN	0:0E	1	27	1FBA	{03:09}ロード{08:4A}い{08:5A}		Downloading	v005		
+m/MS003D.BIN	0:0D	13	342	1FBA	＞ファイル内容の表示を中止し{08:5A}\n<wait>		>Closing display.\n<wait>	v005		reads: ＞ファイル内容の表示を中止します\n<wait>
+m/MS003D.BIN	0:0D	14	382	0C	<wait>＞ファイル内容の表示を終了し{08:5A}\n<wait>		<wait>>Exiting display mode.\n<wait>	v005		reads: <wait>＞ファイル内容の表示を終了します\n<wait>
+m/MS003D.BIN	0:0E	0	2	1FBA	＞{03:09}ロード開始し{08:5A}\n<wait>		>Initializing download.\n<wait>	v005		reads: ＞ダウンロード開始します\n<wait>
+m/MS003D.BIN	0:0E	1	27	1FBA	{03:09}ロード{08:4A}い{08:5A}		Downloading	v005		reads: ダウンロードしています
 m/MS003D.BIN	0:0E	2	47	1FFA	．．．\n					
-m/MS003D.BIN	0:0E	3	90	1F89	＞プロテクトを解除でき{02:0A}で{08:4B}\n　{03:09}ロードに失敗しま{08:4B}\n<wait>		>Unable to break encryption.\n Download failed.\n<wait>	v005		
-m/MS003D.BIN	0:0E	4	151	0C	＞{03:09}ロード正常終了しま{08:4B}\n<wait>		>Download completed successfully.\n<wait>	v005		
+m/MS003D.BIN	0:0E	3	90	1F89	＞プロテクトを解除でき{02:0A}で{08:4B}\n　{03:09}ロードに失敗しま{08:4B}\n<wait>		>Unable to break encryption.\n Download failed.\n<wait>	v005		reads: ＞プロテクトを解除できませんでした\n　ダウンロードに失敗しました\n<wait>
+m/MS003D.BIN	0:0E	4	151	0C	＞{03:09}ロード正常終了しま{08:4B}\n<wait>		>Download completed successfully.\n<wait>	v005		reads: ＞ダウンロード正常終了しました\n<wait>
 m/MS003D.BIN	0:0F	0	122	1FC4	＞報告：		>Error: 	v005		
 m/MS003D.BIN	0:0F	1	138	1F86	Ｖ１		V1	v005		
 m/MS003D.BIN	0:0F	2	150	1F86	Ｖ２		V2	v005		
 m/MS003D.BIN	0:0F	3	162	1F86	Ｖ３		V3	v005		
 m/MS003D.BIN	0:0F	4	174	1F86	Ｖ４		V4	v005		
-m/MS003D.BIN	0:0F	5	186	1F86	Ｖ５型ウイルス{08:09}が侵入しま{08:4B}\n<wait>＞報告：対応{08:8E}セーバーを起動しウイルス\n　　　　{08:09}を消去しま{08:4B}\n　　　　システムへの影響はあり{02:0A}で{08:4B}\n<wait>		V5-type virus found.      \n<wait>>Saver program used to eradicate the virus.\n No damage caused to the system.\n<wait>	v005		
-m/MS003D.BIN	0:0F	6	331	1FC4	＞報告：未登録のウイルス{08:09}が侵入しま{08:4B}\n<wait>		>Error: Unregistered virus found.\n<wait>	v005		
-m/MS003D.BIN	0:0F	7	410	1F4E	{03:18}	{03:18}	reads: 			
-m/MS003D.BIN	0:0F	8	436	1F4E	{03:18}	{03:18}	reads: 			
-m/MS003D.BIN	0:0F	9	446	1FBA	＞報告：汎用セーバーを起動し、各システムの保護を\n　　　　試み{08:5A}\n<wait>		>Attempting to use a generic saver program\n to protect system.\n<wait>	v005		
-m/MS003D.BIN	0:0F	10	562	17	＞報告：システムへの影響はあり{02:0A}で{08:4B}\n<wait>		>Success: System is safe.\n<wait>	v005		
-m/MS003D.BIN	0:10	0	253	1FBA	＞報告：システムへの影響はあり{02:0A}で{08:4B}\n<wait>		>Success: System is safe.\n<wait>	v005		
-m/MS003D.BIN	0:12	0	0	DATA	＞報告：ウイルス{08:09}の自動消滅を確認\n　　　　各システムへの影響をチェックし{08:5A}\n<wait>		>Report: Automatic virus program elimination confirmed\n　　　　Checking effects on each system\n<wait>	ours		
-m/MS003D.BIN	0:12	1	82	1FBA	チェック{08:4A}い{08:5A}		Checking	v005		
+m/MS003D.BIN	0:0F	5	186	1F86	Ｖ５型ウイルス{08:09}が侵入しま{08:4B}\n<wait>＞報告：対応{08:8E}セーバーを起動しウイルス\n　　　　{08:09}を消去しま{08:4B}\n　　　　システムへの影響はあり{02:0A}で{08:4B}\n<wait>		V5-type virus found.      \n<wait>>Saver program used to eradicate the virus.\n No damage caused to the system.\n<wait>	v005		reads: Ｖ５型ウイルスプログラムが侵入しました\n<wait>＞報告：対応するセーバーを起動しウイルス\n　　　　プログラムを消去しました\n　　　　システムへの影響はありませんでした\n<wait>
+m/MS003D.BIN	0:0F	6	331	1FC4	＞報告：未登録のウイルス{08:09}が侵入しま{08:4B}\n<wait>		>Error: Unregistered virus found.\n<wait>	v005		reads: ＞報告：未登録のウイルスプログラムが侵入しました\n<wait>
+m/MS003D.BIN	0:0F	7	410	1F4E	{03:18}	{03:18}				reads: 
+m/MS003D.BIN	0:0F	8	436	1F4E	{03:18}	{03:18}				reads: 
+m/MS003D.BIN	0:0F	9	446	1FBA	＞報告：汎用セーバーを起動し、各システムの保護を\n　　　　試み{08:5A}\n<wait>		>Attempting to use a generic saver program\n to protect system.\n<wait>	v005		reads: ＞報告：汎用セーバーを起動し、各システムの保護を\n　　　　試みます\n<wait>
+m/MS003D.BIN	0:0F	10	562	17	＞報告：システムへの影響はあり{02:0A}で{08:4B}\n<wait>		>Success: System is safe.\n<wait>	v005		reads: ＞報告：システムへの影響はありませんでした\n<wait>
+m/MS003D.BIN	0:10	0	253	1FBA	＞報告：システムへの影響はあり{02:0A}で{08:4B}\n<wait>		>Success: System is safe.\n<wait>	v005		reads: ＞報告：システムへの影響はありませんでした\n<wait>
+m/MS003D.BIN	0:12	0	0	DATA	＞報告：ウイルス{08:09}の自動消滅を確認\n　　　　各システムへの影響をチェックし{08:5A}\n<wait>		>Report: Automatic virus program elimination confirmed\n　　　　Checking effects on each system\n<wait>	ours		reads: ＞報告：ウイルスプログラムの自動消滅を確認\n　　　　各システムへの影響をチェックします\n<wait>
+m/MS003D.BIN	0:12	1	82	1FBA	チェック{08:4A}い{08:5A}		Checking	v005		reads: チェックしています
 m/MS003D.BIN	0:12	2	102	1FFA	．．．\n					
-m/MS003D.BIN	0:13	0	4	1FC4	＞警告：ＡＭＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>		>Warning: A.M.S. has been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours		
-m/MS003D.BIN	0:14	0	4	1FC4	＞警告：ＡＭＳ及びＡＮＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>		>Warning: A.M.S. and A.N.S. have been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours		
-m/MS003D.BIN	0:15	0	4	1FC4	＞警告：ＡＮＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>		>Warning: A.N.S. has been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours		
-m/MS003D.BIN	0:17	0	28	1FC4	＞警告：ＤＡＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>		>Warning: D.A.S. has been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours		
-m/MS003D.BIN	0:18	0	68	1FC4	＞警告：戦闘{08:09}が破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　{08:09}の再インストールが必要{08:55}\n<wait>		>Warning: Combat program has been destroyed\n　　　　Repair is impossible\n　　　　Program reinstallation is required\n<wait>	ours		
-m/MS003D.BIN	0:19	0	20	1FC4	＞警告：ＤＣＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>		>Warning: DCS has been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours		
-m/MS003D.BIN	0:1A	0	7	1FC4	＞警告：ＤＤＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>		>Warning: DDS has been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours		
-m/MS003D.BIN	0:1B	0	13	1FD0	{08:05}ーの端末が{08:7B}。\n「アームターミナル」が{08:25}と利用{08:23}{08:69}だ。\n<wait>		A large computer stands before you.\nIt appears that an Arm Terminal is required to use it.\n<wait>	v005		
+m/MS003D.BIN	0:13	0	4	1FC4	＞警告：ＡＭＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>		>Warning: A.M.S. has been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours		reads: ＞警告：ＡＭＳが破壊されました\n　　　　修復は不可能です\n　　　　システムの再インストールが必要です\n<wait>
+m/MS003D.BIN	0:14	0	4	1FC4	＞警告：ＡＭＳ及びＡＮＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>		>Warning: A.M.S. and A.N.S. have been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours		reads: ＞警告：ＡＭＳ及びＡＮＳが破壊されました\n　　　　修復は不可能です\n　　　　システムの再インストールが必要です\n<wait>
+m/MS003D.BIN	0:15	0	4	1FC4	＞警告：ＡＮＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>		>Warning: A.N.S. has been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours		reads: ＞警告：ＡＮＳが破壊されました\n　　　　修復は不可能です\n　　　　システムの再インストールが必要です\n<wait>
+m/MS003D.BIN	0:17	0	28	1FC4	＞警告：ＤＡＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>		>Warning: D.A.S. has been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours		reads: ＞警告：ＤＡＳが破壊されました\n　　　　修復は不可能です\n　　　　システムの再インストールが必要です\n<wait>
+m/MS003D.BIN	0:18	0	68	1FC4	＞警告：戦闘{08:09}が破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　{08:09}の再インストールが必要{08:55}\n<wait>		>Warning: Combat program has been destroyed\n　　　　Repair is impossible\n　　　　Program reinstallation is required\n<wait>	ours		reads: ＞警告：戦闘プログラムが破壊されました\n　　　　修復は不可能です\n　　　　プログラムの再インストールが必要です\n<wait>
+m/MS003D.BIN	0:19	0	20	1FC4	＞警告：ＤＣＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>		>Warning: DCS has been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours		reads: ＞警告：ＤＣＳが破壊されました\n　　　　修復は不可能です\n　　　　システムの再インストールが必要です\n<wait>
+m/MS003D.BIN	0:1A	0	7	1FC4	＞警告：ＤＤＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>		>Warning: DDS has been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours		reads: ＞警告：ＤＤＳが破壊されました\n　　　　修復は不可能です\n　　　　システムの再インストールが必要です\n<wait>
+m/MS003D.BIN	0:1B	0	13	1FD0	{08:05}ーの端末が{08:7B}。\n「アームターミナル」が{08:25}と利用{08:23}{08:69}だ。\n<wait>		A large computer stands before you.\nIt appears that an Arm Terminal is required to use it.\n<wait>	v005		reads: コンピューターの端末がある。\n「アームターミナル」がないと利用できないようだ。\n<wait>
