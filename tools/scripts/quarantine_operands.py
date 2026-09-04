@@ -16,7 +16,10 @@ Usage:  python tools/scripts/quarantine_operands.py text/m/MS00*.tsv
 """
 import glob, re, sys
 
-TOKEN_THEN_TEXT = re.compile(r'\{[0-9A-F]{2}\}(?!\{|：|:|\n|<wait>|$)')
+# A token directly preceded by another token is that token's operand (operands
+# < 0x20 render as their own {XX}), so text after it is legitimate; only a token
+# with no token before it and text right after it has swallowed an operand.
+TOKEN_THEN_TEXT = re.compile(r'(?<!\})\{[0-9A-F]{2}\}(?!\{|：|:|\n|<wait>|$)')
 
 def quarantine(path):
     lines = open(path, encoding='utf-8', newline='').read().split('\n')
