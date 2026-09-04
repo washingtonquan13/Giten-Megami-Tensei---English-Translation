@@ -3,8 +3,8 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	note
-m/MS003C.BIN	0:10	0	0	UNTILED	ﾅ /  / ﾐ / ｺ /  /  Please select which service you'd like to use. / ﾁ / ﾐ / ｱ / ｲTerminal Travel / ｲAMS Data / ｲPersonal Management / ｲExit / ｷ / ﾑ / < /  / <( / < / 		@untiled; record does not tile (expression selector past end of record at 0xA1); read-only, copied verbatim
-m/MS003C.BIN	0:11	0	0	UNTILED	ｺ / ﾐ>Please select which service you'd like to use. / ﾁ / ﾐ / ｱ / ｲTerminal Travel / ｲDownload AMS Data / ｲPersonal Management / ｲExit / ｷ / ﾑ / < /  / <( / < / 		@untiled; record does not tile (expression selector past end of record at 0x9C); read-only, copied verbatim
+m/MS003C.BIN	0:10	0	0	UNTILED	ﾅ /  / ﾐ / ｺ /  /  Please select which service you'd like to use. / ﾁ / ﾐ / ｱ / ｲTerminal Travel / ｲAMS Data / ｲPersonal Management / ｲExit / ｷ / ﾑ / < /  / <( / < / 		@noedit; @untiled; record does not tile (expression selector past end of record at 0xA1); read-only, copied verbatim
+m/MS003C.BIN	0:11	0	0	UNTILED	ｺ / ﾐ>Please select which service you'd like to use. / ﾁ / ﾐ / ｱ / ｲTerminal Travel / ｲDownload AMS Data / ｲPersonal Management / ｲExit / ｷ / ﾑ / < /  / <( / < / 		@noedit; @untiled; record does not tile (expression selector past end of record at 0x9C); read-only, copied verbatim
 m/MS003C.BIN	0:12	0	7	1FD0	>Please select your destination.\n	>Please select your destination.\n	
 m/MS003C.BIN	0:13	0	4	1FD0	>We look forward to serving you again.\n<wait>	>We look forward to serving you again.\n<wait>	
 m/MS003C.BIN	0:14	0	80	1FD0	>No other terminals were found.\n<wait>	>No other terminals were found.\n<wait>	
@@ -47,7 +47,7 @@ m/MS003C.BIN	0:16	26	440	1B	Ichigaya	Ichigaya
 m/MS003C.BIN	0:17	0	2	1FBA	>Initiating warp.\n<wait>	>Initiating warp.\n<wait>	
 m/MS003C.BIN	0:18	0	8	1F77	{1E10:0103}>Destination reached.\n<wait>	{1E10:0103}>Destination reached.\n<wait>	
 m/MS003C.BIN	0:18	1	40	1FBA	>We look forward to serving you again.\n<wait>	>We look forward to serving you again.\n<wait>	
-m/MS003C.BIN	0:28	0	0	UNTILED	ｺ / ﾁ / ﾐ / ｱ / ｲSave / ｲLoad / ｲQuit / ｲBack / ｷ / ﾑ / <) / <+ / <- / < / 		@untiled; record does not tile (expression selector past end of record at 0x43); read-only, copied verbatim
+m/MS003C.BIN	0:28	0	0	UNTILED	ｺ / ﾁ / ﾐ / ｱ / ｲSave / ｲLoad / ｲQuit / ｲBack / ｷ / ﾑ / <) / <+ / <- / < / 		@noedit; @untiled; record does not tile (expression selector past end of record at 0x43); read-only, copied verbatim
 m/MS003C.BIN	0:29	0	2	1FBA	>Your progress will be saved.\n Please select a file to save to.\n	>Your progress will be saved.\n Please select a file to save to.\n	
 m/MS003C.BIN	0:29	1	219	1F81	 you wish to overwrite this save?\n	 you wish to overwrite this save?\n	
 m/MS003C.BIN	0:29	2	269	1FB2	Yes	Yes	menu option, declared width 20 columns

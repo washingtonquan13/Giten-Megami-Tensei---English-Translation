@@ -210,13 +210,6 @@ def bases(records: "list[Record]") -> "dict[int, int]":
     return out
 
 
-def image_size(records: "list[Record]") -> int:
-    b = bases(records)
-    have = {}
-    for r in records:
-        have.setdefault(r.id, len(r.data))
-    return b[255] + have.get(255, ABSENT_LEN)
-
 
 # --- whole-file convenience -------------------------------------------------
 @dataclass
@@ -259,9 +252,3 @@ def load(rel: str, raw: bytes) -> FileImage:
     return img
 
 
-def rebuild(image: FileImage, new_containers: "list[list[Record]]") -> bytes:
-    """Records -> a complete ``.BIN``, header words and cipher seeds recomputed."""
-    if len(new_containers) != len(image.containers):
-        raise RecordError("%s: container count changed (%d -> %d)"
-                          % (image.rel, len(image.containers), len(new_containers)))
-    return container.join([serialise(recs) for recs in new_containers])

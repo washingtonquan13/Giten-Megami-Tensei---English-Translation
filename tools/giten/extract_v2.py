@@ -61,7 +61,7 @@ def script_rows(rel: str, sc: script.Script, pools) -> "list[tables.Row]":
                 continue
             rows.append(tables.Row(
                 rel, rec.key, 0, 0, UNTILED_TAG, jp.replace("\t", " "), "",
-                _note([script.UNTILED_NOTE,
+                _note([script.NOEDIT_NOTE, script.UNTILED_NOTE,
                        "record does not tile (%s); read-only, copied verbatim"
                        % rec.tile_error])))
             continue
@@ -69,6 +69,7 @@ def script_rows(rel: str, sc: script.Script, pools) -> "list[tables.Row]":
             jp = script.span_text(rec, sp)
             notes = []
             if rec.blocked:
+                notes.append(script.NOEDIT_NOTE)
                 notes.append(rec.blocked)
                 notes.append("record is not editable; copied verbatim")
             for f in rec.flags:

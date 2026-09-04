@@ -7,6 +7,14 @@ dependencies.
 The game folder is **read-only** to everything here except `install`, and
 `install` backs up every file it touches before writing.
 
+> **Two engines.** `--engine v1` (the default) is the original span scanner over
+> `text/`; `--engine v2` is the opcode-aware pipeline over `text_v2/`, built on
+> the verified format in `docs/format-notes.md`. v1 is kept running only because
+> translators are working in `text/` right now — **v2 is the one to build a
+> release from**, and everything v1 does wrong is listed under
+> [The v2 engine](#the-v2-engine). Migrate finished work forward with
+> `python -m tools.giten migrate --from text --to text_v2`.
+
 ```
 game ddswin/  ──extract──▶  text/*.tsv  ──(you translate)──▶  text/*.tsv
                                                                    │
@@ -98,6 +106,26 @@ ones.
 ### `stats [--no-per-file]`
 
 Spans translated / remaining, per file and per tag.
+
+### `migrate [--from text] [--to text_v2] [--report P]`
+
+Extracts a fresh set of v2 tables and carries every finished translation over
+from another table set. Reads `--from`, writes only `--to` and the report
+(default `build/migrate-report.txt`). See
+[`migrate --from text --to text_v2`](#migrate---from-text---to-text_v2).
+
+### `verify [--dir build/ddswin_v2]`
+
+Reference-decodes every file of a build with `tools/giten/refdecode.py` — an
+independent transcription of the engine's reader — and re-tiles every record,
+comparing against the source. Passes when the build decodes and tiles *exactly
+as well as* the originals: same record count, same set of untileable records.
+
+### `--engine v1 | v2`
+
+`extract`, `build` and `check` take `--engine`. `v1` (default) is the original
+span scanner over `text/`; `v2` is the opcode-aware pipeline over `text_v2/`.
+`check --engine v2 --verify --out DIR` also runs the build verification above.
 
 ---
 
@@ -294,9 +322,269 @@ one and keeps the original bytes, and `check` reports it.
 
 ---
 
+## The v2 engine
+
+Everything below supersedes the v1 sections above wherever they disagree. It is
+built on `docs/format-notes.md` (each claim there tagged VERIFIED / CODE /
+HYPOTHESIS) and `docs/opcodes.json` (768 opcode entries plus the expression
+grammar), both recovered from `dds_en.exe`.
+
+```sh
+python -m tools.giten migrate --from text --to text_v2   # carry translations over
+python -m tools.giten extract --engine v2                # refresh text_v2/ from the game
+python -m tools.giten build   --engine v2 --text text_v2 --out build/ddswin_v2
+python -m tools.giten check   --engine v2 --text text_v2 --out build/ddswin_v2 --verify
+python -m tools.giten verify  --dir build/ddswin_v2      # reference-decode a build
+```
+
+### What v1 gets wrong, and why v2 exists
+
+| v1 | reality | consequence |
+|---|---|---|
+| a file is one container, cipher seed 0 | a file is a **sequence** of containers, and the seed is derived from each container's header word | byte-exact for an unmodified file; **wrong for any container whose length changes**, and wrong past the first container in the 51 multi-container files |
+| record framing guessed by a resync walk | `[u16 count][u8 id][u16 len][data]`, exact | v1 mis-framed the event scripts entirely and treated them as one flat blob |
+| text found by scanning for `1F xx` tags and stopping at "unknown" bytes | text is **bare**; a byte `< 0x20` is an opcode with typed operands | operand bytes leaked into text (`{0B}ｼ`, `{02}じゃd`) and resyncs invented `{DICT:92}` |
+| no branch handling | 123 opcodes carry a **PC-relative** `rel16` | any length change silently broke every branch spanning the edit |
+| width budget = "as wide as the Japanese line" | 74 columns per line, 4 lines per page, menu option width declared by `1F B1` | the budget was a placeholder with no relation to the engine |
+
+### Container and cipher seed
+
+```
+container := u16 hdr (plaintext) , hdr bytes of ciphertext
+file      := container+
+
+seed  = (hdr >> 8) ^ (hdr & 0xFF)          # 0x401B20
+plain = c ^ prev ; prev = c                # 0x401B40, prev starts at seed
+```
+
+The engine never validates `hdr` as a length — its only functional role is to
+**seed the cipher** (`0x43AA90` keeps `hdr - 2` in a local and never reads it).
+By convention it equals the body length, and every shipped container satisfies
+that, so on rebuild `hdr = len(new_body)` and the body is re-encrypted with
+`seed_of(hdr)`. **Header and cipher must agree**: change the length and you
+change the seed. Getting this wrong corrupts `body[0]` — the low half of the
+record count — which is exactly the bug v1 has the moment anything resizes.
+
+All 844 files the pipeline handles are container chains that land exactly on
+EOF. (`docs/format-notes.md` §0 says 842 of 844 over a slightly different file
+set that includes `et/A0000` and `et/A0001`; those two are the only non-chains in
+the game folder and are not in the pipeline's families.)
+
+`tools/giten/refdecode.py` is a second, independent transcription of the
+disassembly — a byte-at-a-time stream reader that shares no code with the
+builder. The tests and `verify` check builds against *it*, not against the
+pipeline's own idea of the format.
+
+### Record layer
+
+```
+body   := u16 record_count , record * record_count
+record := u8 id , u16 len , len bytes
+        | u8 id , 0xFFFF , u8 cond , u8 param , u16 len , len bytes
+```
+
+At runtime the loader allocates `0x500` bytes: a `0x400`-byte, 256-entry
+`{offset, length}` index followed by the record data **in id order**, with one
+`0x00` standing in for every absent record. So
+
+```
+base(id) = 0x400 + sum(length(j) for j < id)         # length(j) = 1 when absent
+```
+
+and that is the coordinate space the script PC — and every branch — lives in.
+**Changing the length of record k shifts every record with a higher id.**
+
+`records.is_record_layer()` decides whether a file really has this layer: at
+least one record somewhere, and no container that has trailing bytes *and* no
+records. That accepts exactly `m/MS*` (200 of 200) and `et/ID*` (17 of 17), and
+rejects `m/M*`, `et/CA*`, `et/ET*` and `p/P*`, which put other structures in the
+same container. It is two files better than the strict reading in the notes,
+which rejected four files over a record **count word that overstates its own
+body** (`m/MS600A` container 4 declares 217 records where 163 fit;
+`et/ID00A2`/`et/ID00A3` declare 169 where 1 fits) and one that has 4 158 bytes
+after its last record (`m/MS610B` container 15). Both the bogus count and the
+trailing bytes are re-emitted **verbatim**; rewriting the count would only change
+which garbage an engine that trusts it reads. Those records carry the advisory
+`@partial` marker.
+
+Each container is its own runtime image. 35 files repeat record ids *across*
+their 16 containers, so the containers cannot all be installing into one
+256-entry index; `0x43AA90` loads exactly one container per call. Relocation
+therefore never crosses a container boundary.
+
+### Tokens: what `jp` and `en` contain
+
+A record is tiled into typed tokens by `vmops.tokenize`, driven entirely by
+`docs/opcodes.json`. A byte `>= 0x20` is text (two bytes after a Shift-JIS lead
+byte); `0x1D`/`0x1E`/`0x1F` are escape prefixes; everything else is an opcode
+whose operands are an ordered list of `u8` / `u16` / `u32` / `rel16` / a
+recursive `expr` tree / a `0xFF`-terminated `list_ff` / the one data-dependent
+`rule:wait_1E10`. **If the table cannot tile a record, tokenizing fails** — it
+never resynchronises, because resynchronising one byte late is what produced
+v1's phantom tokens.
+
+A **span** is a maximal run of *inline* tokens containing something that draws.
+Inline means: literal text, `0A` (newline), the eight pool calls `01`–`08`, and
+`1E 10` (page wait). Every other opcode ends the span and is copied through byte
+for byte, so **a translator never sees an operand and cannot type a branch
+displacement.**
+
+| rendered | bytes |
+|---|---|
+| `\n` | `0A` |
+| `<wait>` | `1E 10 01 01` |
+| `{01:03}` … `{08:1F}` | a pool call: the opcode plus its `u8` record number |
+| `{1E10:010005}` | any other `1E 10` form, operands folded in |
+| `{=E9}` | one literal byte that is not valid cp932 on its own |
+| `\\` `\{` `\<` | literal backslash / brace / angle bracket |
+
+**Operands are folded into their opcode's token.** `{01:03}` is one token
+meaning "opcode `01`, operand byte `03`" — never `{01}` followed by `{03}`, and
+never `{01}` followed by a stray `0x03` pretending to be text. A token's payload
+is exactly the operand bytes the engine will consume, and `codec.encode` re-tiles
+each token to prove it before accepting it.
+
+`{=HH}` is deliberately spelled differently from an opcode token: the engine
+takes the byte after a Shift-JIS lead unconditionally, so a run like `E9 00` is
+two *text* bytes that happen not to decode — and its second byte would otherwise
+render as `{00}`, the record terminator, and re-encode into a broken record.
+
+`jp` stays **byte-faithful**, so a macro call shows as `{08:25}` rather than the
+Japanese it splices in. The readable form goes in the `note` column as
+`reads: …`, with every pool call expanded (recursively — pool records may call
+other pool records). Translators normally *drop* pool calls and write the English
+word out; that is expected, and only an **added** call is reported.
+
+`{DICT:nn}` no longer exists. It was never in the data.
+
+### Relocation
+
+`rel16` operands are PC-relative and measured from the byte immediately after
+the operand, in runtime-buffer coordinates:
+
+```
+target = (offset_after_the_operand + imm16) & 0xFFFF
+```
+
+Relocation is generic and derived from the token stream, never from a per-opcode
+rule:
+
+1. build the old runtime image (`base(id)` over the container's records) and note
+   where every token lands;
+2. substitute the edited spans, tracking each record's unchanged runs and the two
+   **anchors** of every replacement — its first byte and the byte just past it;
+3. build the new image;
+4. rewrite each `rel16` so it points at *the same instruction* it used to.
+
+With no edits every delta is zero, every displacement recomputes to the value it
+already had, and the rebuild is byte-identical — which is the identity test.
+
+Two cases get reported rather than guessed at:
+
+* **a branch that lands strictly inside an edited span.** The replacement text
+  has no byte corresponding to that target, so the *edit is skipped* and the
+  source text kept, with an error naming the row. (27 rows in the current
+  `text_v2`.) Leaving the displacement and shipping it would point a jump into
+  the middle of a new English sentence.
+* **a branch that already pointed outside its container's runtime image** — 308
+  of about 20 000 branches in the shipped data, all in files with wild
+  immediates (dead code, or a mis-tiled opcode reading text as a displacement).
+  Their displacements are left alone and counted.
+
+### Width budgets
+
+From `docs/format-notes.md` §3, all VERIFIED. One column is 8 px; half-width is
+1 column, full-width Shift-JIS is 2. `0x453C50` **auto-wraps** — it breaks the
+line when `cur_col + width > max_cols + slack`, with `slack = -2` for ordinary
+characters — so the effective budget is `max_cols - 2`.
+
+| context | budget |
+|---|---|
+| narration / speech line | **74 columns** (the 76-column bottom message box, window type 1/12, minus the 2-column kinsoku slack) |
+| lines per page before a `<wait>` | **4** (6 in the tall box, window type 0) |
+| menu option | the width the menu's `1F B1 <expr>` **declares** — 20 in 1 690 of 1 752 menus; the extractor reads the literal and records it in the `note` |
+
+Every width finding is a **warning**, not an error: the engine wraps rather than
+clipping, so an over-wide line breaks where the engine chooses instead of where
+the writer meant. About 500 lines of the shipped English already exceed 76
+columns.
+
+### `migrate --from text --to text_v2`
+
+Strictly additive and one-way. It reads `text/`, extracts a fresh set of v2
+tables, copies the finished work across, and writes **only** under `text_v2/`
+plus a report at `build/migrate-report.txt`. Nothing under `text/` is touched —
+there is a test that asserts it.
+
+Rows are matched strongest key first, each v2 row claimed at most once:
+
+1. **byte offset** — both extractions read the same shipped bytes, and a v1 `off`
+   into `unxor(raw[2:])` resolves to the same byte as a v2 span's
+   `container.off + record data offset + span offset`. This matches 35 307 of
+   35 338 v1 rows, so it is an identity rather than a similarity guess;
+2. **(record id, span index)** — only where v1 actually had a record framing
+   (its `R7:AA` rows); in a v1 `F0` flat file `idx` counts spans across the whole
+   file, so keying on it would manufacture confident nonsense;
+3. **identical text within the same record**, the v2 span rendered the way v1
+   rendered it (`08 nn` expanded, tokens stripped);
+4. **identical text, unique within the file.**
+
+Only real translations are carried — a v1 row whose `en` equalled its `jp` was a
+pre-fill of already-English source, which the v2 extractor re-derives itself.
+Carried text has its control tokens **re-bound**: a v1 `{01}` becomes the k-th
+`{01:nn}` of the corrected source line. Four things are reported instead of being
+carried silently:
+
+* `could not be ported` — the `en` was written against bytes v1 read wrongly (it
+  contains `{0B}`, `{0C}` or a `{DICT:nn}`); the line needs re-translating;
+* `landed on a @noedit row` — the record is one the builder will not edit; the v1
+  English is preserved in the `note` rather than parked where it can never build;
+* `@operand rows re-opened` — the 900 rows v1 marked `@operand`. Their `en` is
+  deliberately **not** carried: the v2 `jp` for that place is a different, correct
+  string. The report prints v1's `jp` against v2's `jp` for every one, e.g.
+  `{02}じゃd` → `{02:08}‥` and `{02}データ<wait>` → `{02:08}\n<wait>` (the
+  "データ" was the operand of `1E 10`);
+* `no v2 row at all` — nearly all inside `@untiled` records.
+
+### Non-editable records
+
+Four markers can appear in a `note`. `@noedit` is the one to test for — it is
+present whenever the builder will refuse an edit, whatever the specific reason.
+
+| marker | meaning | editable? |
+|---|---|---|
+| `@untiled` | the opcode table cannot tile this record (123 of 20 278, cause identified in `format-notes.md` §2.10). One row per record carries a best-effort reading so the text can still be *read*; the record is copied through verbatim. | no |
+| `@dupid` | two records share an id inside one container, so `base(id)` is ambiguous. Blocked only in the four such containers that actually branch (`m/MS6000` 0/1/8, `m/MS6800` 0); the other five are flat string pools where nothing measures against `base(id)`, so they stay editable. | mixed |
+| `@partial` | the container's count word disagrees with its body, or the body has trailing bytes. Advisory: the record list itself is complete and self-consistent. Verify those files in game. | yes |
+| `@noedit` | set alongside whichever of the above blocks the edit. | no |
+
+### TSV schema differences
+
+Same eight columns. `rec` is now `"0:3A"` (container 0, record id `0x3A`) or
+`"NAME"` for a `p/` display name; `idx` is the span's index **within that
+record**; `off` is the span's byte offset inside the record's data; `tag` is the
+encoding of the opcode immediately before the span (`1FD3`, `1FB2`, `1E12`, …) or
+`DATA` when the span opens the record.
+
+### Current state
+
+```
+84 tests pass (38 v1, 46 v2)
+identity build byte-exact on all 844 files
+migrate: 7 914 translations carried, 338 re-bound, 900 @operand rows re-opened
+build:   92 files changed, 7 888 spans in 4 828 records,
+         1 323 branch displacements relocated
+verify:  20 278 records in source and build; 20 155 tile in both;
+         123 untiled in both; 0 decode regressions, 0 tiling regressions
+check:   0 errors, 7 028 warnings (6 929 untranslated, 77 over-wide lines,
+         22 over-wide menu options)
+```
+
+---
+
 ## Known limitations
 
-* **No length framing for the event scripts.** `m/MS0*`..`m/MS1*` and
+* **v1 only — no length framing for the event scripts.** `m/MS0*`..`m/MS1*` and
   `et/ET*`/`et/ID*` are opcode streams. A general `[id][len]` walk does not
   describe them — only 60 of 303 script files parse strictly to the end, and
   inspecting those shows the matches are coincidental (`m/MS0000.BIN` "parses"
@@ -348,15 +636,27 @@ one and keeps the original bytes, and `check` reports it.
 ```
 tools/giten/
   paths.py        game/repo locations, ddswin discovery
-  container.py    the [u16 header][chain-XOR body] wrapper
+  files.py        families and file enumeration
+  tables.py       TSV read/write
+  container.py    the container chain and the header-derived cipher seed
+  cli.py __main__.py
+
+  # v2 -- the opcode-aware pipeline (text_v2/)
+  refdecode.py    an independent transcription of the engine's reader, for tests
+  records.py      [u16 count][u8 id][u16 len][data] and the runtime buffer
+  vmops.py        the tokenizer, driven by docs/opcodes.json
+  codec.py        tokens <-> the editable jp/en string
+  pool.py         the eight m/MS7F0*.BIN macro pools (gloss + width)
+  script.py       spans, the edit/relocate builder, @untiled/@dupid/@partial
+  width.py        the real column budgets
+  extract_v2.py build_v2.py check_v2.py migrate.py
+
+  # v1 -- the original span scanner (text/), kept while translators use it
   framing.py      frames, and which own a length field
   spans.py        where the translatable byte runs are
   tokens.py       the reversible text <-> bytes codec
   dictionary.py   the 08 nn macro table (m/MS7F07.BIN)
-  files.py        families and file enumeration
-  tables.py       TSV read/write
   extract.py build.py check.py install.py stats.py
-  cli.py __main__.py
 tools/bin_tools/  the original exploration scripts; giten.py, giten_pack.py,
                   giten_text.py and giten_lines.py are now thin wrappers over
                   the package and keep their old public names and CLIs

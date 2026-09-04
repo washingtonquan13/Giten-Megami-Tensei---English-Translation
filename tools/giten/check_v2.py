@@ -14,14 +14,16 @@ Rules
                record that tiled before stops tiling.
 ``encode``     the ``en`` text is legal: cp932-encodable, well-formed escapes,
                and only inline opcode tokens.
-``editable``   no ``en`` on a record marked ``@untiled`` or ``@dupid``.
+``editable``   an ``en`` on a row the builder will not edit (``@noedit``), where
+               it would silently do nothing.
 ``pname``      a ``p/`` name fits its fixed 16-byte field.
 ``width``      a line exceeds the 74-column message-box budget.
 ``page-rows``  a page holds more than 4 lines before a ``<wait>``.
 ``width-choice`` a menu option exceeds the width its ``1F B1`` declares.
 ``missing``    a non-empty ``jp`` with an empty ``en``.
-``tokens``     the ``en`` dropped a pool call the ``jp`` had (information only --
-               dropping ``{08:1F}`` and writing the English word out is normal).
+``tokens``     the ``en`` **adds** a pool call the ``jp`` does not have, naming a
+               record nothing has checked exists.  Dropping one is normal and is
+               not reported: an English line spells the word out.
 
 ``identity``, ``decode``, ``tile``, ``encode``, ``editable`` and ``pname`` are
 errors; the width family, ``missing`` and ``tokens`` are warnings, because the
@@ -30,6 +32,7 @@ over-wide line is cosmetic.
 """
 from __future__ import annotations
 
+import collections
 import os
 
 from . import (build_v2, check, codec, extract_v2, files, paths, pool, refdecode,
@@ -38,7 +41,7 @@ from . import (build_v2, check, codec, extract_v2, files, paths, pool, refdecode
 ERROR, WARN = check.ERROR, check.WARN
 Report = check.Report
 
-SKIP_MARKERS = check.SKIP_MARKERS + (script.UNTILED_NOTE, script.DUPID_NOTE)
+SKIP_MARKERS = check.SKIP_MARKERS + (script.NOEDIT_NOTE,)
 
 
 # --- (a) identity -----------------------------------------------------------
@@ -151,7 +154,7 @@ def check_rows(report: Report, rows, pools=None,
                line_columns=width.LINE_COLUMNS, page_rows=width.PAGE_ROWS) -> None:
     for r in rows:
         where = "%s %s[%d]" % (r.file, r.rec, r.idx)
-        blocked = any(m in r.note for m in (script.UNTILED_NOTE, script.DUPID_NOTE))
+        blocked = script.NOEDIT_NOTE in r.note
 
         if not r.en and codec.strip_tokens(r.jp).strip():
             if not any(m in r.note.lower() for m in SKIP_MARKERS):
@@ -181,13 +184,19 @@ def check_rows(report: Report, rows, pools=None,
                            % (len(data), _spans.PNAME_LEN - 1))
             continue
 
-        jp_calls = [t for t in codec.control_tokens(r.jp) if t.startswith("{0")]
-        en_calls = [t for t in codec.control_tokens(r.en) if t.startswith("{0")]
-        if jp_calls != en_calls:
+        # Dropping a pool call is normal and correct -- an English line spells
+        # the word out instead of splicing a Japanese macro -- so only an
+        # *added* call is worth reporting: it names a record the source line
+        # never referenced, and nothing has checked that record exists.
+        jp_calls = collections.Counter(t for t in codec.control_tokens(r.jp)
+                                       if t.startswith("{0"))
+        en_calls = collections.Counter(t for t in codec.control_tokens(r.en)
+                                       if t.startswith("{0"))
+        added = en_calls - jp_calls
+        if added:
             report.add("tokens", WARN, where,
-                       "pool calls changed: %s -> %s"
-                       % (" ".join(jp_calls) or "(none)",
-                          " ".join(en_calls) or "(none)"))
+                       "adds pool calls the source line does not have: %s"
+                       % " ".join(sorted(added.elements())))
 
         is_choice = r.tag in script.CHOICE_TAGS
         cw = _declared_width(r)

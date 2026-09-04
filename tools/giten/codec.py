@@ -46,9 +46,6 @@ WAIT_TOKEN = "<wait>"
 #: Opcodes that may live inside a translatable span.
 INLINE_OPS = frozenset({NEWLINE_OP, WAIT_OP}) | POOL_OPS
 
-#: Opcodes that render text of their own (their width has to be looked up).
-TEXT_PRODUCING_OPS = POOL_OPS
-
 _ESCAPES = {"\\": "\\\\", "{": "\\{", "<": "\\<"}
 _UNESCAPES = {"\\": "\\", "{": "{", "<": "<"}
 

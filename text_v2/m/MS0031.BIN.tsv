@@ -3,7 +3,7 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	note
-m/MS0031.BIN	0:00	0	0	UNTILED	 / # / = /  / y / ｺ / 6 / ｦ / < / y / ﾂ / 7 / y / ﾊ / 8 / j / ＃暫定：ゲームオーバーです。そのルーチンへ。 / ＃暫定：リセットして、初めからやり直してください。 / 蛻ﾈ下は暫定です。冥界をクリアして、蘇ったものとします。 / 1		@untiled; record does not tile (expression node 0x01 payload past end); read-only, copied verbatim
+m/MS0031.BIN	0:00	0	0	UNTILED	 / # / = /  / y / ｺ / 6 / ｦ / < / y / ﾂ / 7 / y / ﾊ / 8 / j / ＃暫定：ゲームオーバーです。そのルーチンへ。 / ＃暫定：リセットして、初めからやり直してください。 / 蛻ﾈ下は暫定です。冥界をクリアして、蘇ったものとします。 / 1		@noedit; @untiled; record does not tile (expression node 0x01 payload past end); read-only, copied verbatim
 m/MS0031.BIN	0:01	0	8	1F04	ｺ{01:C2}{01:CA}		record reaches an engine no-op opcode; verify in game; reads: ｺ
 m/MS0031.BIN	0:01	1	21	1FD2	泪：	Rui:	record reaches an engine no-op opcode; verify in game
 m/MS0031.BIN	0:01	2	30	1F01	！　ああ、やっと気がついた。\n		record reaches an engine no-op opcode; verify in game
@@ -62,8 +62,8 @@ m/MS0031.BIN	0:01	54	1696	1FD2	{08:03}：	Emi:	record reaches an engine no-op op
 m/MS0031.BIN	0:01	55	1702	1FD3	ん？　	Hm?	record reaches an engine no-op opcode; verify in game
 m/MS0031.BIN	0:01	56	1711	1F01	くん、どうしたの？\n		record reaches an engine no-op opcode; verify in game
 m/MS0031.BIN	0:01	57	1738	10	ﾈんでも{08:25}？　なら、いいけど。ちょっと顔色悪いよ。\n		record reaches an engine no-op opcode; verify in game; reads: ﾈんでもない？　なら、いいけど。ちょっと顔色悪いよ。\n
-m/MS0031.BIN	0:02	0	0	UNTILED	ﾒ / ： / ﾓなら、早くここを出なきゃ。 / くん、行こう。 / ﾒ / ： / ﾓじゃあ、地上で待っ / +。迎えに来てね。 / ﾐ　 / の魂は、地上へと還って行った‥‥		@untiled; record does not tile (rel16 operand past end of record at 0x8D); read-only, copied verbatim
-m/MS0031.BIN	0:03	0	0	UNTILED	ﾒ / ： / ﾓそっか。じゃ、 / くん、今度こそずっと‥‥さよなら。		@untiled; record does not tile (rel16 operand past end of record at 0x41); read-only, copied verbatim
+m/MS0031.BIN	0:02	0	0	UNTILED	ﾒ / ： / ﾓなら、早くここを出なきゃ。 / くん、行こう。 / ﾒ / ： / ﾓじゃあ、地上で待っ / +。迎えに来てね。 / ﾐ　 / の魂は、地上へと還って行った‥‥		@noedit; @untiled; record does not tile (rel16 operand past end of record at 0x8D); read-only, copied verbatim
+m/MS0031.BIN	0:03	0	0	UNTILED	ﾒ / ： / ﾓそっか。じゃ、 / くん、今度こそずっと‥‥さよなら。		@noedit; @untiled; record does not tile (rel16 operand past end of record at 0x41); read-only, copied verbatim
 m/MS0031.BIN	0:04	0	2	1FD2	{08:00}：	Hayasaka:	record reaches an engine no-op opcode; verify in game; reads: 早坂：
 m/MS0031.BIN	0:04	1	8	1FD3	わ{08:18}。ならば急ごう。出られなくなるぞ。\n	Got it. Then let's hurry. We won't be able to get out otherwise.\n	record reaches an engine no-op opcode; verify in game; reads: わかった。ならば急ごう。出られなくなるぞ。\n
 m/MS0031.BIN	0:04	2	49	1FD2	{08:00}：	Hayasaka:	record reaches an engine no-op opcode; verify in game; reads: 早坂：
@@ -155,8 +155,8 @@ m/MS0031.BIN	0:0C	31	848	1FD2	{08:00}：	Hayasaka:	record reaches an engine no-o
 m/MS0031.BIN	0:0C	32	854	1FD3	‥‥一緒に行って、オレが{08:03}を説得すればいいと？\nたしかに、そうかもしれ{08:25}。\n	...You want me to come along and try to talk Emi around?\nThat might actually work, yeah.\n	record reaches an engine no-op opcode; verify in game; reads: ‥‥一緒に行って、オレが英美を説得すればいいと？\nたしかに、そうかもしれない。\n
 m/MS0031.BIN	0:0C	33	933	1FD2	{08:00}：	Hayasaka:	record reaches an engine no-op opcode; verify in game; reads: 早坂：
 m/MS0031.BIN	0:0C	34	942	1F01	、頼む。{08:03}を止めてくれ‥‥\nオレにはもう、{08:23}ことだから、きみにしか頼め{08:25}んだ。\n		record reaches an engine no-op opcode; verify in game; reads: 、頼む。英美を止めてくれ‥‥\nオレにはもう、できないことだから、きみにしか頼めないんだ。\n
-m/MS0031.BIN	0:0D	0	0	UNTILED	ﾐ / 冝@‥‥‥‥ / 咊Nも / $ようだ。 / 1 / 		@untiled; record does not tile (expression selector past end of record at 0x36); read-only, copied verbatim
-m/MS0031.BIN	0:0E	0	0	UNTILED	` / W / q / ( / ﾒ泪： / ﾓ / ‥‥アタシ、ほんとはすごく不安なの。 / ずっとバエルに捕まってて、外のことなんか、何にもわかん / %んだもん。 / アナタが / $と、アタシ、どうしていいのかわかん / %。 / ｺ / ﾐ　泪は、腕にしがみついて / 。 / ﾒ泪： / ﾓねえ、ずうっと一緒にいてく / /んでしょ？ / ﾁ / ﾐ / ｱ / ｲ腕を払いの / ) / ｲ黙ってうなずく / ｲ抱きし / . / ｷ / ﾑ / 1 / 1 / 1 /  / ｰ / ｭ / ｪ / ﾒ泪： / ﾓ‥‥帰るところが、なくなっちゃった。 / アタシ、これから、どこに行けばいいの？ / ﾁ / ﾐ / ｱ / ｲ無視する / ｲ自分の行くところに、と答 / ( / ｲ抱きし / . / ｷ / ﾑ / 1 / 1 / 1 / 		@untiled; record does not tile (expression selector past end of record at 0x214); read-only, copied verbatim
+m/MS0031.BIN	0:0D	0	0	UNTILED	ﾐ / 冝@‥‥‥‥ / 咊Nも / $ようだ。 / 1 / 		@noedit; @untiled; record does not tile (expression selector past end of record at 0x36); read-only, copied verbatim
+m/MS0031.BIN	0:0E	0	0	UNTILED	` / W / q / ( / ﾒ泪： / ﾓ / ‥‥アタシ、ほんとはすごく不安なの。 / ずっとバエルに捕まってて、外のことなんか、何にもわかん / %んだもん。 / アナタが / $と、アタシ、どうしていいのかわかん / %。 / ｺ / ﾐ　泪は、腕にしがみついて / 。 / ﾒ泪： / ﾓねえ、ずうっと一緒にいてく / /んでしょ？ / ﾁ / ﾐ / ｱ / ｲ腕を払いの / ) / ｲ黙ってうなずく / ｲ抱きし / . / ｷ / ﾑ / 1 / 1 / 1 /  / ｰ / ｭ / ｪ / ﾒ泪： / ﾓ‥‥帰るところが、なくなっちゃった。 / アタシ、これから、どこに行けばいいの？ / ﾁ / ﾐ / ｱ / ｲ無視する / ｲ自分の行くところに、と答 / ( / ｲ抱きし / . / ｷ / ﾑ / 1 / 1 / 1 / 		@noedit; @untiled; record does not tile (expression selector past end of record at 0x214); read-only, copied verbatim
 m/MS0031.BIN	0:0F	0	2	1FD2	泪：	Rui:	record reaches an engine no-op opcode; verify in game
 m/MS0031.BIN	0:0F	1	8	1FD3	何すんの、バカ！\nアンタなんか、助{08:29}んじゃ{08:19}！\n	What are you doing, you idiot!\nI never should've saved you!\n	record reaches an engine no-op opcode; verify in game; reads: 何すんの、バカ！\nアンタなんか、助けるんじゃなかった！\n
 m/MS0031.BIN	0:10	0	2	1FD2	泪：	Rui:	record reaches an engine no-op opcode; verify in game
@@ -167,7 +167,7 @@ m/MS0031.BIN	0:12	0	2	1FD2	泪：	Rui:	record reaches an engine no-op opcode; ve
 m/MS0031.BIN	0:12	1	8	1FD3	ふぅん、なぁんにも言わ{08:25}わけ？\nいいよーだ！　アンタなんか知ら{08:25}！\n	Hmph, so you're not gonna say anything at all?\nFine then! I don't even know you anymore!\n	record reaches an engine no-op opcode; verify in game; reads: ふぅん、なぁんにも言わないわけ？\nいいよーだ！　アンタなんか知らない！\n
 m/MS0031.BIN	0:13	0	2	1FD2	泪：	Rui:	record reaches an engine no-op opcode; verify in game
 m/MS0031.BIN	0:13	1	8	1FD3	‥‥うん！\n	...Okay!\n	record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:14	0	0	UNTILED	p / W / ﾍ / ｣ / ｣ / q / ( / ﾒ泪： / ﾓねぇ‥‥ / アタシ、心細いの。 / ｺ‥‥そばに、いてく / /って、言ったよね？ / だったら‥‥ / その証を見せて。いいでしょ？ / ﾁ / ﾐ / ｱ / ｲＹＥＳ / ｲＮＯ / ｷ / ﾑ / 1 / 1 / 		@untiled; record does not tile (expression selector past end of record at 0xE0); read-only, copied verbatim
+m/MS0031.BIN	0:14	0	0	UNTILED	p / W / ﾍ / ｣ / ｣ / q / ( / ﾒ泪： / ﾓねぇ‥‥ / アタシ、心細いの。 / ｺ‥‥そばに、いてく / /って、言ったよね？ / だったら‥‥ / その証を見せて。いいでしょ？ / ﾁ / ﾐ / ｱ / ｲＹＥＳ / ｲＮＯ / ｷ / ﾑ / 1 / 1 / 		@noedit; @untiled; record does not tile (expression selector past end of record at 0xE0); read-only, copied verbatim
 m/MS0031.BIN	0:15	0	2	1FD2	泪：	Rui:	record reaches an engine no-op opcode; verify in game
 m/MS0031.BIN	0:15	1	8	1FD3	ねぇ、きて‥‥\n	Hey, come here...\n	record reaches an engine no-op opcode; verify in game
 m/MS0031.BIN	0:15	2	25	1FD0	　泪の唇が、首筋に触{08:2F}‥‥\n	Rui's lips brush against your neck...\n	record reaches an engine no-op opcode; verify in game; reads: 　泪の唇が、首筋に触れる‥‥\n
@@ -184,7 +184,7 @@ m/MS0031.BIN	0:16	6	244	1FB2	受け入{08:2F}	Accept her	record reaches an engin
 m/MS0031.BIN	0:16	7	254	1FB2	諦めてくれと説得	Try to talk her out of it	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS0031.BIN	0:16	8	287	00	1	1	record reaches an engine no-op opcode; verify in game
 m/MS0031.BIN	0:16	9	291	18	1	1	record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:17	0	0	UNTILED	ﾒ泪： / ﾓ‥‥なによ！　ほんとは、アタシを抱 / いくせに！ / つまら / %意地なんか、張ん / %でよ！ / ｺ‥‥アタシ、先に寝るからね！		@untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim
+m/MS0031.BIN	0:17	0	0	UNTILED	ﾒ泪： / ﾓ‥‥なによ！　ほんとは、アタシを抱 / いくせに！ / つまら / %意地なんか、張ん / %でよ！ / ｺ‥‥アタシ、先に寝るからね！		@noedit; @untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim
 m/MS0031.BIN	0:18	0	2	1FD2	泪：	Rui:	record reaches an engine no-op opcode; verify in game
 m/MS0031.BIN	0:18	1	8	1FD3	うふっ、それでいいのよ。やっぱりアナタ、正直ね。\nだったら‥‥\n	Heh, that's more like it. You really are honest, huh.\nIn that case...\n	record reaches an engine no-op opcode; verify in game
 m/MS0031.BIN	0:18	2	72	1FD0	　泪の小さな手が身体にからみつき、服を一枚ずつ、脱がしていく‥‥\n	Rui's small hands wrap around your body, undressing you piece by piece...\n	record reaches an engine no-op opcode; verify in game

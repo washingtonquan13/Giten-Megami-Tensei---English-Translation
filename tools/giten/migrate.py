@@ -265,6 +265,14 @@ def run(from_dir: "str | None" = None, to_dir: "str | None" = None,
                 new.note = _add_note(new.note, "was @operand in v1; jp is now "
                                                "correct and needs translating")
                 continue
+            if real and script.NOEDIT_NOTE in new.note:
+                # The v2 pipeline will not edit this record, so an `en` here
+                # could never reach a build.  Keep the work in the note rather
+                # than parking a translation somewhere it silently does nothing.
+                st["landed_on_noedit"] += 1
+                new.note = _add_note(new.note, "v1 translation, not applicable "
+                                               "here: " + old.en)
+                continue
             if real:
                 ported, why = port_en(new.jp, old.en)
                 if ported is None:
@@ -337,6 +345,8 @@ def _format_report(st, how, unmatched, quarantine, from_dir, to_dir) -> str:
              % (st["carried"], st["retokenised"]))
     L.append("could not be ported       %6d  (v1 read those bytes wrongly; the "
              "line needs re-translating)" % st["unportable"])
+    L.append("landed on a @noedit row  %6d  (kept in the note; the builder "
+             "cannot edit those records)" % st["landed_on_noedit"])
     L.append("@operand rows re-opened   %6d  (carried as empty; jp is now correct)"
              % st["quarantine_carried_empty"])
     L.append("no v2 row at all          %6d" % (st["unmatched_translations"]

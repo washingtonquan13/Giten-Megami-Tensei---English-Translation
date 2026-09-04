@@ -59,6 +59,11 @@ DEFAULT_CHOICE_WIDTH = 20
 
 DATA_TAG = "DATA"
 
+#: Prefixed to the note of every row the builder will refuse to edit, whatever
+#: the specific reason.  One marker for consumers to test, so a new reason never
+#: has to be added to a list in three other modules.
+NOEDIT_NOTE = "@noedit"
+
 #: The record could not be tiled by the recovered opcode table, so its spans are
 #: best-effort reading only and the builder copies it through verbatim.
 UNTILED_NOTE = "@untiled"
@@ -366,6 +371,7 @@ class OffsetMap:
         self.old_base = {}
         self.new_base = {}
         self.runs = {}           # rec id -> [(old_lo, old_hi, delta)]
+        self.anchors = {}        # rec id -> {old offset: new offset}
         self.old_len = {}
         self.new_len = {}
         self._by_old = []        # sorted [(old_base, old_end, rec id)]
@@ -387,11 +393,18 @@ class OffsetMap:
                 return rid
         return None
 
+    def in_image(self, old_abs: int) -> bool:
+        """Is this offset inside some record of the container's runtime image?"""
+        return self._record_of(old_abs) is not None
+
     def get(self, old_abs: int) -> "int | None":
         rid = self._record_of(old_abs)
         if rid is None:
             return None
         rel = old_abs - self.old_base[rid]
+        anchor = self.anchors.get(rid, ())
+        if rel in anchor:
+            return self.new_base[rid] + anchor[rel]
         if rel == self.old_len[rid]:
             return self.new_base[rid] + self.new_len[rid]
         for lo, hi, delta in self.runs.get(rid, ()):
@@ -408,6 +421,12 @@ class BuildReport:
     changed_records: int = 0
     relocated: int = 0
     unmapped: int = 0
+    #: of those, the ones whose target was inside a replaced span -- the only
+    #: subset that represents an actual risk (see :func:`_relocate`)
+    unmapped_in_edit: int = 0
+    #: edits skipped because a branch lands inside the span (see
+    #: :func:`_drop_branched_into`)
+    branched_into: int = 0
     size_delta: int = 0
     errors: "list[str]" = field(default_factory=list)
     warnings: "list[str]" = field(default_factory=list)
@@ -416,9 +435,10 @@ class BuildReport:
 def _rebuild_record(rec: Rec, edits: "dict[int, str]", report: BuildReport):
     """New bytes for one record plus its unchanged-run map ``[(lo, hi, delta)]``."""
     if not edits:
-        return rec.data, [(0, len(rec.data), 0)], False
+        return rec.data, [(0, len(rec.data), 0)], {}, False
     out = bytearray()
     runs = []
+    anchors = {}
     cursor = 0
     changed = False
     for sp in rec.spans:
@@ -435,14 +455,64 @@ def _rebuild_record(rec: Rec, edits: "dict[int, str]", report: BuildReport):
             continue
         runs.append((cursor, sp.off, len(out) - cursor))
         out += rec.data[cursor:sp.off]
+        # The replacement's own bytes have no old counterparts, but its two edges
+        # do: a branch that pointed at the span's first byte must point at the
+        # first byte of the new text, and one that pointed just past it must
+        # point just past the new text.  Without these anchors a jump onto the
+        # start of an edited line would look unrelocatable.
+        anchors[sp.off] = len(out)
         out += new
+        anchors[sp.end] = len(out)
         cursor = sp.end
         changed = True
         report.changed_spans += 1
         report.size_delta += len(new) - len(old)
     runs.append((cursor, len(rec.data), len(out) - cursor))
     out += rec.data[cursor:]
-    return bytes(out), [r for r in runs if r[0] < r[1]], changed
+    return bytes(out), [r for r in runs if r[0] < r[1]], anchors, changed
+
+
+def _branch_targets(recs, old_base) -> "set[int]":
+    """Every runtime offset some ``rel16`` in this container jumps to."""
+    out = set()
+    for r in recs:
+        if r.untiled or not r.tokens:
+            continue
+        base = old_base[r.id]
+        for tok in r.tokens:
+            for op in tok.ops:
+                if op.kind == "rel16":
+                    out.add(vmops.rel16_target(base, tok, op))
+    return out
+
+
+def _drop_branched_into(rel, rec, per, base, landed, report: BuildReport):
+    """Refuse an edit to a span that some branch jumps *into the middle of*.
+
+    A target on the span's first byte is fine -- it moves with the span.  A target
+    strictly inside it names a byte that the replacement text does not have, so
+    there is no honest answer, and quietly leaving the old displacement would
+    point a jump into the middle of a new English sentence.  Skip that span,
+    keep the rest of the record, and say so.
+    """
+    if not per:
+        return per
+    keep = {}
+    for idx, text in per.items():
+        sp = next((s for s in rec.spans if s.idx == idx), None)
+        if sp is None:
+            report.errors.append("%s %s: no span %d" % (rel, rec.key, idx))
+            continue
+        hit = [t for t in landed if base + sp.off < t < base + sp.end]
+        if hit:
+            report.branched_into += 1
+            report.errors.append(
+                "%s %s[%d]: a branch jumps into the middle of this span "
+                "(runtime 0x%04X); edit skipped, source text kept"
+                % (rel, rec.key, idx, hit[0]))
+            continue
+        keep[idx] = text
+    return keep
 
 
 def _relocate(recs, new_data, omap: OffsetMap, report: BuildReport):
@@ -468,12 +538,24 @@ def _relocate(recs, new_data, omap: OffsetMap, report: BuildReport):
                 new_target = omap.get(old_target)
                 new_op_abs = omap.get(base_old + op.off)
                 if new_target is None or new_op_abs is None:
+                    # Two very different causes, and only one of them is a
+                    # hazard: a target that was already outside this container's
+                    # runtime image (1.5% of branches in the shipped data --
+                    # dead code, or a mis-tiled opcode reading text as a
+                    # displacement) versus a target that landed *inside* a span
+                    # this build replaced, whose bytes no longer exist.
+                    inside = omap.in_image(old_target)
                     report.unmapped += 1
+                    if inside:
+                        report.unmapped_in_edit += 1
                     if len(report.warnings) < 40:
                         report.warnings.append(
-                            "%s %s: branch at 0x%X targets 0x%04X, which has no "
-                            "fixed position after the edit; displacement left "
-                            "unchanged" % (report.rel, rec.key, tok.off, old_target))
+                            "%s %s: branch at 0x%X targets 0x%04X, %s; "
+                            "displacement left unchanged"
+                            % (report.rel, rec.key, tok.off, old_target,
+                               "which is inside a span this build replaced"
+                               if inside else
+                               "which was already outside the container image"))
                     continue
                 new_imm = vmops.rel16_imm(base_new, new_op_abs - base_new,
                                           op.size, new_target)
@@ -509,8 +591,19 @@ def build(sc: Script, edits: "dict[tuple[int, int, int], str]") -> "tuple[bytes,
         for pos, r in enumerate(recs):
             first.setdefault(r.id, pos)
 
+        omap = OffsetMap()
+        off = records.INDEX_SIZE
+        for i in range(256):
+            omap.old_base[i] = off
+            omap.old_len[i] = (len(recs[first[i]].data) if i in first
+                               else records.ABSENT_LEN)
+            off += omap.old_len[i]
+
+        landed = _branch_targets(recs, omap.old_base)
+
         new_data = {}
         new_runs = {}
+        new_anchors = {}
         for pos, r in enumerate(recs):
             per = {k[2]: v for k, v in edits.items() if k[0] == ci and k[1] == r.id}
             if per and r.blocked:
@@ -519,19 +612,15 @@ def build(sc: Script, edits: "dict[tuple[int, int, int], str]") -> "tuple[bytes,
                     "verbatim" % (sc.rel, r.key, r.blocked,
                                   r.tile_error or "ambiguous record id"))
                 per = {}
-            data, runs, changed = _rebuild_record(r, per, report)
+            per = _drop_branched_into(sc.rel, r, per, omap.old_base.get(r.id, 0),
+                                      landed, report)
+            data, runs, anchors, changed = _rebuild_record(r, per, report)
             if changed:
                 report.changed_records += 1
             new_data[pos] = data
             new_runs[pos] = runs
+            new_anchors[pos] = anchors
 
-        omap = OffsetMap()
-        off = records.INDEX_SIZE
-        for i in range(256):
-            omap.old_base[i] = off
-            omap.old_len[i] = (len(recs[first[i]].data) if i in first
-                               else records.ABSENT_LEN)
-            off += omap.old_len[i]
         off = records.INDEX_SIZE
         for i in range(256):
             omap.new_base[i] = off
@@ -539,6 +628,7 @@ def build(sc: Script, edits: "dict[tuple[int, int, int], str]") -> "tuple[bytes,
                                else records.ABSENT_LEN)
             omap.runs[i] = (new_runs[first[i]] if i in first
                             else [(0, records.ABSENT_LEN, 0)])
+            omap.anchors[i] = new_anchors.get(first.get(i), {})
             off += omap.new_len[i]
         omap.finish()
 

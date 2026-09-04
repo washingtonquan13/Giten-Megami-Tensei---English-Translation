@@ -31,6 +31,8 @@ class Result:
     changed_records: int = 0
     relocated: int = 0
     unmapped: int = 0
+    unmapped_in_edit: int = 0
+    branched_into: int = 0
     size_delta: int = 0
     errors: "list[str]" = field(default_factory=list)
     warnings: "list[str]" = field(default_factory=list)
@@ -89,7 +91,8 @@ def build_file(rel: str, raw: bytes, rows) -> Result:
     edits = _edits_from_rows(rows)
     out, rep = script.build(sc, edits)
     return Result(rel, out, rep.changed_spans, rep.changed_records, rep.relocated,
-                  rep.unmapped, rep.size_delta, list(rep.errors), list(rep.warnings))
+                  rep.unmapped, rep.unmapped_in_edit, rep.branched_into,
+                  rep.size_delta, list(rep.errors), list(rep.warnings))
 
 
 def run(out_dir: "str | None" = None, family: str = "all",
@@ -101,8 +104,8 @@ def run(out_dir: "str | None" = None, family: str = "all",
 
     cache = {}
     st = {"files": 0, "changed_files": 0, "changed_spans": 0, "changed_records": 0,
-          "relocated": 0, "unmapped": 0, "identical": 0, "errors": [],
-          "warnings": []}
+          "relocated": 0, "unmapped": 0, "unmapped_in_edit": 0,
+          "branched_into": 0, "identical": 0, "errors": [], "warnings": []}
 
     for rel in files.all_encoded(root):
         raw = files.read_source(rel, root)
@@ -119,6 +122,8 @@ def run(out_dir: "str | None" = None, family: str = "all",
         st["changed_records"] += res.changed_records
         st["relocated"] += res.relocated
         st["unmapped"] += res.unmapped
+        st["unmapped_in_edit"] += res.unmapped_in_edit
+        st["branched_into"] += res.branched_into
         st["errors"].extend(res.errors)
         st["warnings"].extend(res.warnings)
         if res.changed_spans:
@@ -140,8 +145,13 @@ def run(out_dir: "str | None" = None, family: str = "all",
               % (st["changed_files"], st["changed_spans"], st["changed_records"],
                  st["relocated"], st["identical"]))
         if st["unmapped"]:
-            print("  %d branches point at a byte with no fixed position after the "
-                  "edit; their displacements were left unchanged" % st["unmapped"])
+            print("  %d branches could not be relocated (%d of them target a byte "
+                  "inside a replaced span; the rest already pointed outside their "
+                  "container image).  Displacements left unchanged."
+                  % (st["unmapped"], st["unmapped_in_edit"]))
+        if st["branched_into"]:
+            print("  %d edits skipped because a branch lands inside the span"
+                  % st["branched_into"])
         for e in st["errors"][:20]:
             print("  ERROR " + e)
         if len(st["errors"]) > 20:

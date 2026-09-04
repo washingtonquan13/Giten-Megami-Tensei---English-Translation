@@ -83,13 +83,6 @@ def branch_map(sc, ci=0):
     return out
 
 
-def _rebuild(rel, edits):
-    raw, sc = _script(rel)
-    out, rep = script.build(sc, edits)
-    sc2 = script.parse(rel, out)
-    assert sc2.ok, "%s rebuilt: %s" % (rel, sc2.error)
-    return raw, sc, out, sc2, rep
-
 
 def _first_editable_span(sc, want_id=None):
     for rec in sc.iter_records():
@@ -777,8 +770,13 @@ def test_validator_refuses_an_edit_on_an_untiled_record():
     from tools.giten import check_v2
 
     rep = check_v2.Report()
-    check_v2.check_rows(rep, [_row("jp", "en", note="@untiled; read-only")])
+    check_v2.check_rows(rep, [_row("jp", "en",
+                                   note="@noedit; @untiled; read-only")])
     assert [f.rule for f in rep.errors] == ["editable"]
+    # ...and a row that is only *flagged* @dupid (no @noedit) stays editable
+    rep = check_v2.Report()
+    check_v2.check_rows(rep, [_row("jp", "en", note="@dupid; nothing branches")])
+    assert not rep.errors
 
 
 def test_validator_width_findings_are_warnings():
