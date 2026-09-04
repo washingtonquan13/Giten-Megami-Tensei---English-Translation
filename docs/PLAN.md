@@ -57,11 +57,14 @@ raw); `original/` manifest; exe patcher and all three builds; tracer built and v
 redirects, PIC base); trace decoder/diff with self-check; tables with `ref_en` (14,479 ours /
 25,194 v0.05); status and capture rules; `play/jp` and `play/en`.
 
+Done 2026-09-04 evening: step 0 passed (Japanese renders on the release exe, no Locale Emulator); JP and EN traces
+taken; decoder validated on real data (pc = token end, or the destination of a control opcode; self-check 72/3,592);
+`1F01 nn` closed (prints runtime string nn: the player's name). The exam-loop route shows **identical flow** in both
+builds — the reported loop is most likely an unreadable menu in a partial build (pool words still Japanese).
+
 Open, in order:
-1. **Step 0** (user): `play/jp/ddswin/dds.exe` — Japanese must render with no Locale Emulator; then
-   `dds_dev.exe` to the terminal → `trace selfcheck` on its `trace.bin` (0 mismatches expected).
-2. **Exam loop**: same route in `play/en` with `dds_dev.exe`; `trace diff` names the span.
-3. Terminal crash: `--only m/MS006A.BIN`, then `--only "m/MS7F0?.BIN"`.
-4. Then `02 01 6a`, `1F01 nn`+`00`, capture-mode users; close each in `docs/limits.md`.
+1. Confirm with the user that the 'loop' was the menu (two Japanese options) and not a re-entry.
+2. **Terminal crash**: `play/en` now holds MS0017 + MS006A + MS7F00-07 English (draft) under `dds_dev.exe`; the crash trace's last records name the step.
+3. Then `02 01 6a` and capture-mode users; close each in `docs/limits.md`.
 5. Section 1 (opening) translation: fill `en` from `jp` with `ref_en` as reference; `reviewed` before build.
 6. Debug-menu arming; bold font as a deliberate feature; architecture graph from measured traces.
