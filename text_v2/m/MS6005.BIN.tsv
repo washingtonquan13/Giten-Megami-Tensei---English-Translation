@@ -5,14 +5,14 @@
 file	rec	idx	off	tag	jp	en	note
 m/MS6005.BIN	0:31	0	112	1FB2	{08:26}	Yes	reads: はい; menu option, declared width 20 columns
 m/MS6005.BIN	0:31	1	116	1FB2	{08:27}	No	reads: いいえ; menu option, declared width 20 columns
-m/MS6005.BIN	0:31	2	133	00	濺		
-m/MS6005.BIN	0:64	0	38	00	{04:FF}は		reads: は
-m/MS6005.BIN	0:64	1	46	00	{04:EF}と\n語り合{08:51}\n		reads: と\n語り合った\n
-m/MS6005.BIN	0:64	2	66	1FFA	{02:09}・・\n		reads: ・・・・・\n
+m/MS6005.BIN	0:31	2	133	00	濺		garbage single glyph, no reads/context; @skip
+m/MS6005.BIN	0:64	0	38	00	{04:FF}は	{04:FF}	reads: は
+m/MS6005.BIN	0:64	1	46	00	{04:EF}と\n語り合{08:51}\n	 and\n{04:EF} talked things over\n	reads: と\n語り合った\n
+m/MS6005.BIN	0:64	2	66	1FFA	{02:09}・・\n	.....\n	reads: ・・・・・\n
 m/MS6005.BIN	0:73	0	133	1FB2	{08:0E}になれ	Recruit	reads: 仲魔になれ; menu option, declared width 20 columns
 m/MS6005.BIN	0:73	1	143	1FB2	特に無い	Nothing Special	menu option, declared width 20 columns
 m/MS6005.BIN	0:73	2	153	1FB2	去れ	Leave	menu option, declared width 20 columns
-m/MS6005.BIN	0:73	3	172	00	熾{02:00}燒		reads: 熾デビルバスター燒
+m/MS6005.BIN	0:73	3	172	00	熾{02:00}燒	熾Devil Buster燒	reads: 熾デビルバスター燒
 m/MS6005.BIN	0:94	0	7	16	{02:09}	{02:09}	reads: ・・・
 m/MS6005.BIN	2:01	0	76	1FB2	{08:0B}狩り	Demon Hunting	reads: 悪魔狩り; menu option, declared width 20 columns
 m/MS6005.BIN	2:01	1	84	1FB2	散歩	Taking a Walk	menu option, declared width 20 columns
@@ -40,17 +40,17 @@ m/MS6005.BIN	3:01	0	8	00	{=E0}{=08}	{=E0}{=08}
 m/MS6005.BIN	3:01	1	13	1FD0	＞{08:6D}{08:69}に話{08:86}け{08:15}\n	>How will you speak to them?\n	reads: ＞どのように話しかけますか？\n
 m/MS6005.BIN	3:01	2	48	1FB2	友好的	Friendly	menu option, declared width 20 columns
 m/MS6005.BIN	3:01	3	56	1FB2	威圧的	Intimidating	menu option, declared width 20 columns
-m/MS6005.BIN	3:01	4	77	00	瀑		
+m/MS6005.BIN	3:01	4	77	00	瀑		garbage single glyph, no reads/context; @skip
 m/MS6005.BIN	3:06	0	8	00	{=E0}{=08}	{=E0}{=08}	
 m/MS6005.BIN	3:06	1	13	1FD0	＞{08:6D}{08:69}に話{08:86}け{08:15}\n	>How will you speak to them?\n	reads: ＞どのように話しかけますか？\n
 m/MS6005.BIN	3:06	2	48	1FB2	友好的	Friendly	menu option, declared width 20 columns
 m/MS6005.BIN	3:06	3	56	1FB2	威圧的	Intimidating	menu option, declared width 20 columns
-m/MS6005.BIN	3:06	4	77	00	瀑		
+m/MS6005.BIN	3:06	4	77	00	瀑		garbage single glyph, no reads/context; @skip
 m/MS6005.BIN	5:00	0	80	1FB2	{08:0E}になれ	Recruit	reads: 仲魔になれ; menu option, declared width 20 columns
 m/MS6005.BIN	5:00	1	90	1FB2	何かくれ	Give Me Something	menu option, declared width 20 columns
 m/MS6005.BIN	5:00	2	100	1FB2	別に…	Nothing...	menu option, declared width 20 columns
 m/MS6005.BIN	5:00	3	120	0F	{01:AF}	{01:AF}	reads: 
-m/MS6005.BIN	5:00	4	123	00	{02:01}ﾘ		reads: ペンタグランマﾘ
+m/MS6005.BIN	5:00	4	123	00	{02:01}ﾘ	Pentagramma	reads: ペンタグランマﾘ
 m/MS6005.BIN	5:00	5	127	00			
 m/MS6005.BIN	5:11	0	68	1FB2	何かくれ	Give Me Something	menu option, declared width 20 columns
 m/MS6005.BIN	5:11	1	78	1FB2	とにかく何か{03:10}{08:4A}	Just Give Me{03:10}	reads: とにかく何か回復して; menu option, declared width 20 columns
@@ -68,7 +68,7 @@ m/MS6005.BIN	6:00	0	27	1FB2	{01:29}	{01:29}	reads: そうだ; menu option, decla
 m/MS6005.BIN	6:00	1	31	1FB2	怒る	Get Angry	menu option, declared width 20 columns
 m/MS6005.BIN	6:00	2	37	1FB2	{08:0C}	Attack	reads: 攻撃; menu option, declared width 20 columns
 m/MS6005.BIN	6:00	3	53	0F	{01:6C}	{01:6C}	reads: 
-m/MS6005.BIN	6:00	4	56	00	{02:01}ｻ		reads: ペンタグランマｻ
+m/MS6005.BIN	6:00	4	56	00	{02:01}ｻ	Pentagramma	reads: ペンタグランマｻ
 m/MS6005.BIN	6:00	5	60	00			
 m/MS6005.BIN	6:00	6	93	1FB2	黙っ{08:14}	Stay Quiet	reads: 黙っている; menu option, declared width 20 columns
 m/MS6005.BIN	6:00	7	101	1FB2	{08:0C}	Attack	reads: 攻撃; menu option, declared width 20 columns
@@ -88,15 +88,15 @@ m/MS6005.BIN	6:00	20	720	1FB2	わ{08:18}	Understood	reads: わかった; menu op
 m/MS6005.BIN	6:00	21	726	1FB2	来るな！	Stay Back!	menu option, declared width 20 columns
 m/MS6005.BIN	6:00	22	748	0F	{01:23}	{01:23}	reads: しばらく
 m/MS6005.BIN	6:00	23	751	00			
-m/MS6005.BIN	6:0F	0	33	00	{04:EF}は石を投{08:44}！{02:09}\n		reads: は石を投げた！・・・\n
-m/MS6005.BIN	6:0F	1	61	00	{04:FF}はギリギリでかわ{08:17}\n		reads: はギリギリでかわした！\n
-m/MS6005.BIN	6:0F	2	96	18	命中！\n		
+m/MS6005.BIN	6:0F	0	33	00	{04:EF}は石を投{08:44}！{02:09}\n	{04:EF} threw a rock!...\n	reads: は石を投げた！・・・\n
+m/MS6005.BIN	6:0F	1	61	00	{04:FF}はギリギリでかわ{08:17}\n	{04:FF} barely dodged it!\n	reads: はギリギリでかわした！\n
+m/MS6005.BIN	6:0F	2	96	18	命中！\n	Hit!\n	
 m/MS6005.BIN	6:0F	3	172	0E	{02:09}	{02:09}	reads: ・・・
 m/MS6005.BIN	6:0F	4	301	1FB2	シラを切る	Play Dumb	menu option, declared width 20 columns
 m/MS6005.BIN	6:0F	5	313	1FB2	謝る	Apologize	menu option, declared width 20 columns
 m/MS6005.BIN	6:0F	6	331	0F	{01:25}	{01:25}	reads: ＹＥＳ
 m/MS6005.BIN	6:0F	7	334	00			
-m/MS6005.BIN	6:0F	8	346	14	{02:09}・・		reads: ・・・・・
+m/MS6005.BIN	6:0F	8	346	14	{02:09}・・	.....	reads: ・・・・・
 m/MS6005.BIN	6:0F	9	429	1FB2	ひたすら謝る	Keep Apologizing	menu option, declared width 20 columns
 m/MS6005.BIN	6:0F	10	443	1FB2	開き直る	Get Defiant	menu option, declared width 20 columns
 m/MS6005.BIN	6:0F	11	465	0F	{01:32}	{01:32}	reads: 大丈夫
@@ -114,8 +114,8 @@ m/MS6005.BIN	6:12	0	19	1FB2	なだ{08:2E}	Calm Them Down	reads: なだめる; me
 m/MS6005.BIN	6:12	1	27	1FB2	や{08:52}みろ	Go Ahead, Try	reads: やってみろ; menu option, declared width 20 columns
 m/MS6005.BIN	6:12	2	49	0F	{01:29}	{01:29}	reads: そうだ
 m/MS6005.BIN	6:12	3	52	00			
-m/MS6005.BIN	6:12	4	128	00	{04:EF}は\n		reads: は\n
-m/MS6005.BIN	6:12	5	137	00	{04:FF}の迫力に気圧{03:0C}た！\n		reads: の迫力に気圧された！\n
+m/MS6005.BIN	6:12	4	128	00	{04:EF}は\n	{04:EF} was\n	reads: は\n
+m/MS6005.BIN	6:12	5	137	00	{04:FF}の迫力に気圧{03:0C}た！\n	overwhelmed by {04:FF}'s power!\n	reads: の迫力に気圧された！\n
 m/MS6005.BIN	6:12	6	160	1FBA	{02:09}	{02:09}	reads: ・・・
 m/MS6005.BIN	7:00	0	23	1FB2	{08:0E}になれ	Recruit	reads: 仲魔になれ; menu option, declared width 20 columns
 m/MS6005.BIN	7:00	1	33	1FB2	何かくれ	Give Me Something	menu option, declared width 20 columns
@@ -136,7 +136,7 @@ m/MS6005.BIN	7:00	15	384	1FB2	仕方が{08:25}な	Can't Be Helped	reads: 仕方�
 m/MS6005.BIN	7:00	16	396	1FB2	許さん	I Won't Allow It	menu option, declared width 20 columns
 m/MS6005.BIN	7:00	17	404	1FB2	かわりに何かくれ	Give Something Else	menu option, declared width 20 columns
 m/MS6005.BIN	7:00	18	434	0F	{01:23}	{01:23}	reads: しばらく
-m/MS6005.BIN	7:00	19	437	00	{02:01}｣		reads: ペンタグランマ｣
+m/MS6005.BIN	7:00	19	437	00	{02:01}｣	Pentagramma	reads: ペンタグランマ｣
 m/MS6005.BIN	7:00	20	541	1FB2	{08:26}	Yes	reads: はい; menu option, declared width 20 columns
 m/MS6005.BIN	7:00	21	545	1FB2	{08:27}	No	reads: いいえ; menu option, declared width 20 columns
 m/MS6005.BIN	7:00	22	562	00	{=E7}{=10}	{=E7}{=10}	
@@ -160,10 +160,10 @@ m/MS6005.BIN	7:00	39	1109	1FB2	睨む	Glare	menu option, declared width 20 colum
 m/MS6005.BIN	7:00	40	1115	1FB2	威嚇射撃	Warning Shot	menu option, declared width 20 columns
 m/MS6005.BIN	7:00	41	1137	0F	{01:2F}	{01:2F}	reads: 不気味
 m/MS6005.BIN	7:00	42	1140	00			
-m/MS6005.BIN	7:00	43	1157	18	にらみ合いは続く		
+m/MS6005.BIN	7:00	43	1157	18	にらみ合いは続く	The staredown continues	
 m/MS6005.BIN	7:00	44	1179	1FFA	{02:09}\n	{02:09}\n	reads: ・・・\n
 m/MS6005.BIN	7:00	45	1206	00	{=EC}{=02}	{=EC}{=02}	
-m/MS6005.BIN	7:00	46	1222	1F0D	{08:61}　ガンを装備{08:4A}{08:24}！\n		reads: しかし　ガンを装備していない！\n
+m/MS6005.BIN	7:00	46	1222	1F0D	{08:61}　ガンを装備{08:4A}{08:24}！\n	But -- not equipped with a gun!\n	reads: しかし　ガンを装備していない！\n
 m/MS6005.BIN	7:00	47	1352	1FB2	{01:29}	{01:29}	reads: そうだ; menu option, declared width 20 columns; was @operand in v1; jp is now correct and needs translating
 m/MS6005.BIN	7:00	48	1356	1FB2	違う！	That's Wrong!	menu option, declared width 20 columns
 m/MS6005.BIN	7:00	49	1376	0F	{01:22}	{01:22}	reads: ママ
@@ -209,8 +209,8 @@ m/MS6005.BIN	13:00	29	702	0F	{01:17}	{01:17}	reads: おまえ
 m/MS6005.BIN	13:00	30	705	00			
 m/MS6005.BIN	13:00	31	788	0D	{02:09}\n	{02:09}\n	reads: ・・・\n
 m/MS6005.BIN	13:00	32	808	0D	{02:09}\n	{02:09}\n	reads: ・・・\n
-m/MS6005.BIN	13:00	33	855	0D	{02:09}・・\n		reads: ・・・・・\n
-m/MS6005.BIN	13:00	34	890	0D	{02:09}・・\n		reads: ・・・・・\n
+m/MS6005.BIN	13:00	33	855	0D	{02:09}・・\n	.....\n	reads: ・・・・・\n
+m/MS6005.BIN	13:00	34	890	0D	{02:09}・・\n	.....\n	reads: ・・・・・\n
 m/MS6005.BIN	13:00	35	939	0D	{02:09}\n	{02:09}\n	reads: ・・・\n
 m/MS6005.BIN	13:00	36	995	1FB2	何{08:56}！	Anything!	reads: 何でも！; menu option, declared width 20 columns
 m/MS6005.BIN	13:00	37	1003	1FB2	{08:4D}は…	Well...	reads: それは…; menu option, declared width 20 columns

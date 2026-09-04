@@ -3,7 +3,7 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	note
-m/MS6500.BIN	0:C4	0	8	00	菁		
+m/MS6500.BIN	0:C4	0	8	00	菁		garbage single glyph, no reads/context; @skip
 m/MS6500.BIN	0:C5	0	6	0E	{07:54}{07:38}\n	{07:54}{07:38}\n	record reaches an engine no-op opcode; verify in game; reads: 駄目だ！　話にならない！\n
 m/MS6500.BIN	0:C5	1	13	30E	{03:1F}	{03:1F}	record reaches an engine no-op opcode; verify in game; reads: 
 m/MS6500.BIN	0:C6	0	16	30E	{03:1F}	{03:1F}	record reaches an engine no-op opcode; verify in game; reads: 
@@ -16,7 +16,7 @@ m/MS6500.BIN	0:C8	0	23	14	{08:00}{=FC}{=FF}	{08:00}{=FC}{=FF}	reads: 早坂{=FC}
 m/MS6500.BIN	0:C9	0	2	1F00	1{03:00}	1{03:00}	record reaches an engine no-op opcode; verify in game; reads: 1飛び道具
 m/MS6500.BIN	0:C9	1	35	1FB2	大丈夫？	You OK?	record reaches an engine no-op opcode; verify in game; menu option, declared width 8 columns
 m/MS6500.BIN	0:C9	2	45	1FB2	あっそう	I see	record reaches an engine no-op opcode; verify in game; menu option, declared width 8 columns
-m/MS6500.BIN	0:C9	3	64	11	{05:00}{01:01}ﾉ		record reaches an engine no-op opcode; verify in game; reads: YesNoニュートン山瀬勇ﾉ
+m/MS6500.BIN	0:C9	3	64	11	{05:00}{01:01}ﾉ	{05:00}{01:01}ﾉ	record reaches an engine no-op opcode; verify in game; reads: YesNoニュートン山瀬勇ﾉ
 m/MS6500.BIN	0:C9	4	70	00			record reaches an engine no-op opcode; verify in game
 m/MS6500.BIN	0:C9	5	96	1F88			record reaches an engine no-op opcode; verify in game
 m/MS6500.BIN	0:C9	6	100	1F5F			record reaches an engine no-op opcode; verify in game
