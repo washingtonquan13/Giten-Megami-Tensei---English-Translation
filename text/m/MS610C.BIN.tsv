@@ -3,10 +3,10 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	note
-m/MS610C.BIN	F0	0	157	1FB2	様子を見る	Wait & See	
+m/MS610C.BIN	F0	0	157	1FB2	様子を見る	Wait and See	
 m/MS610C.BIN	F0	1	169	1FB2	ほっとく	Leave It	
 m/MS610C.BIN	F0	2	298	1FB2	刺激してみる	Poke It	
-m/MS610C.BIN	F0	3	310	1FB2	様子を見る	Wait & See	
+m/MS610C.BIN	F0	3	310	1FB2	様子を見る	Wait and See	
 m/MS610C.BIN	F0	4	322	1FB2	立ち去る	Leave	
 m/MS610C.BIN	F0	5	523	1FB2	刺激してみる	Poke It	
 m/MS610C.BIN	F0	6	535	1FB2	立ち去る	Leave	
@@ -19,11 +19,11 @@ m/MS610C.BIN	F0	12	1156	1FB2	近づく	Near
 m/MS610C.BIN	F0	13	1164	1FB2	ＭＡＧをあげる	Give MAG	
 m/MS610C.BIN	F0	14	1180	1FB2	見つめる	Stare	
 m/MS610C.BIN	F0	15	1280	1FB2	払う	Pay	
-m/MS610C.BIN	F0	16	1286	1FB2	様子を見る	Wait & See	
+m/MS610C.BIN	F0	16	1286	1FB2	様子を見る	Wait and See	
 m/MS610C.BIN	F0	17	1450	1FB2	払う	Pay	
-m/MS610C.BIN	F0	18	1456	1FB2	様子を見る	Wait & See	
+m/MS610C.BIN	F0	18	1456	1FB2	様子を見る	Wait and See	
 m/MS610C.BIN	F0	19	1690	1FB2	払う	Pay	
-m/MS610C.BIN	F0	20	1696	1FB2	様子を見る	Wait & See	
+m/MS610C.BIN	F0	20	1696	1FB2	様子を見る	Wait and See	
 m/MS610C.BIN	F0	21	1835	1FB2	吐き出す	Spit Out	
 m/MS610C.BIN	F0	22	1845	1FB2	無抵抗	Comply	
 m/MS610C.BIN	F0	23	1998	1FB2	耐える	Endure	
@@ -33,7 +33,7 @@ m/MS610C.BIN	F0	26	2753	1FB2	立ち去る	Leave
 m/MS610C.BIN	F0	27	2763	1FB2	見回す	Look	
 m/MS610C.BIN	F0	28	2845	1FB2	謝る	Oops	
 m/MS610C.BIN	F0	29	2851	1FB2	無視	Skip	
-m/MS610C.BIN	F0	30	2857	1FB2	攻撃	Atk	
+m/MS610C.BIN	F0	30	2857	1FB2	攻撃	Attack	
 m/MS610C.BIN	F0	31	3009	1FB2	傍観	View	
 m/MS610C.BIN	F0	32	3015	1FB2	いじる	Poke	
 m/MS610C.BIN	F0	33	3122	1FB2	手で触る	Touch It	
@@ -80,8 +80,8 @@ m/MS610C.BIN	F4	34	6289	1FB2	慰める	Soothe
 m/MS610C.BIN	F4	35	6295	1FB2	見てる	Watch	
 m/MS610C.BIN	F4	36	6400	1FB2	何かする	Do Stuff	
 m/MS610C.BIN	F4	37	6408	1FB2	見てる	Watch	
-m/MS610C.BIN	F4	38	6697	1FB2	様子を見る	Wait & See	
-m/MS610C.BIN	F4	39	6709	1FB2	攻撃	Atk	
+m/MS610C.BIN	F4	38	6697	1FB2	様子を見る	Wait and See	
+m/MS610C.BIN	F4	39	6709	1FB2	攻撃	Attack	
 m/MS610C.BIN	F4	40	6867	1FB2	ほっとく	Leave It	
 m/MS610C.BIN	F4	41	6875	1FB2	邪魔する	Butt In	
 m/MS610C.BIN	F4	42	7113	1FB2	慰める	Soothe	
@@ -126,12 +126,12 @@ m/MS610C.BIN	R71:CD	0	8217	DATA	どこかへ	Away
 m/MS610C.BIN	R73:CE	0	8229	DATA	飛んでいった\n<wait>	It flew\noff.\n<wait>	
 m/MS610C.BIN	R75:CF	0	8246	DATA	刺激しただけだ！\n<wait>	I only\npoked it!\n<wait>	
 m/MS610C.BIN	R77:D0	0	8267	DATA	飛びかかってきた！\n<wait>	It lunged\nat me!\n<wait>	
-m/MS610C.BIN	R79:D1	0	8288	DATA	言いた{01})！\n<wait>		runtime inserts: reproduce every {XX} token, in order @operand
+m/MS610C.BIN	R79:D1	0	8288	DATA	言いた{01})！\n<wait>	Say it{01})!\n<wait>	runtime inserts: reproduce every {XX} token, in order
 m/MS610C.BIN	R81:D2	0	8305	DATA	水を持っていた！\n<wait>	It had\nwater!\n<wait>	
 m/MS610C.BIN	R83:D3	0	8326	DATA	水をかけた！\n<wait>	I splashed\nit!\n<wait>	
 m/MS610C.BIN	R85:D4	0	8345	DATA	頭が冷えたようだ\n<wait>	Seems its head\ncooled off.\n<wait>	
 m/MS610C.BIN	R87:D5	0	8366	DATA	水なんて持っていない！\n<wait>	I don't have\nany water!\n<wait>	
-m/MS610C.BIN	R89:D6	0	8389	DATA	もっとやって欲し{01})\n<wait>		runtime inserts: reproduce every {XX} token, in order @operand
+m/MS610C.BIN	R89:D6	0	8389	DATA	もっとやって欲し{01})\n<wait>	Wanted more{01})\n<wait>	runtime inserts: reproduce every {XX} token, in order
 m/MS610C.BIN	R91:D7	0	8412	DATA	完全に	Fully	
 m/MS610C.BIN	R93:D8	0	8420	DATA	怒り始めた！\n<wait>	It started\nto rage!\n<wait>	
 m/MS610C.BIN	R95:D9	0	8441	DATA	遅かったようだ\n<wait>	Seems it\nwas too late.\n<wait>	
