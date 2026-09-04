@@ -76,12 +76,22 @@ _start:
         # buffer (base = handle table[ctx.handle]) starts with 256 entries of
         # {u16 data_offset, u16 length}; this is the truth our layout model
         # is checked against
+        mov     dword ptr [edi+12], 0       # default: not logged
         mov     ecx, dword ptr [CTX]
-        mov     eax, dword ptr [ecx+0x0A]   # buffer handle
+        test    ecx, ecx
+        jz      5f
+        mov     eax, dword ptr [ecx+0x0A]   # buffer handle; 0 = no script loaded
+        test    eax, eax                    # (the engine's byte fetch guards this too)
+        jz      5f
+        cmp     eax, 0x1000                 # a sane handle index, not a stray pointer
+        jae     5f
         mov     eax, dword ptr [HANDLE_TABLE + eax*8]
-        movzx   ecx, word ptr [RECID]
+        test    eax, eax
+        jz      5f
+        movzx   ecx, byte ptr [RECID]       # 256 entries: the id is one byte
         mov     eax, dword ptr [eax + ecx*4]
         mov     dword ptr [edi+12], eax     # u16 idx_off, u16 idx_len
+5:
 
         push    0                           # lpOverlapped
         lea     eax, [esi + written]
