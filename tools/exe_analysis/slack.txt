@@ -1,0 +1,27 @@
+=== SECTION SLACK (file-alignment padding usable as caves) ===
+.text    vsize 000622c4 rawsize 00062400 -> file 000626c4..00062800 = 316 bytes, all-zero=True, VA 004632c4
+.rdata   vsize 000032f6 rawsize 00003400 -> file 00065af6..00065c00 = 266 bytes, all-zero=True, VA 004672f6
+.data    vsize 0002ab54 rawsize 00009200 -> file 00090754..0006ee00 = -137556 bytes, all-zero=True, VA 00492b54
+.rsrc    vsize 00ba78b8 rawsize 00ba7a00 -> file 00c166b8..00c16800 = 328 bytes, all-zero=True, VA 0103a8b8
+total inter-section slack: 910
+
+headers: SizeOfHeaders 00000400, first section rawptr 00000400
+
+=== CAVE USAGE in dds_en.exe ===
+cave first byte 00c166b4 (VA 0103a8b4), last changed 00c16783 (VA 0103a983), used 208 bytes
+remaining zero padding after cave: 00c16784..00c16800 = 124 bytes
+all zero?  True
+
+cave contents (strings, in file order):
+   VA 0103a8b4 off 00c166b4 len 10  'Katsuragi '
+   VA 0103a8c0 off 00c166c0 len 10  'Tachibana '
+   VA 0103a8cc off 00c166cc len  8  'Nishino '
+   VA 0103a8d6 off 00c166d6 len  9  'Hayasaka '
+   VA 0103a8e1 off 00c166e1 len  5  'Isamu'
+   VA 0103a8e8 off 00c166e8 len 10  'Kirishima '
+   VA 0103a8f4 off 00c166f4 len  9  'Kamikawa '
+   VA 0103a8ff off 00c166ff len  9  'Sanshirou'
+   VA 0103a90a off 00c1670a len 29  'Giten Megami Tensei - English'
+   VA 0103a929 off 00c16729 len 29  'Giten Megami Tensei - English'
+   VA 0103a948 off 00c16748 len 29  'Giten Megami Tensei - English'
+   VA 0103a967 off 00c16767 len 29  'Giten Megami Tensei - English'

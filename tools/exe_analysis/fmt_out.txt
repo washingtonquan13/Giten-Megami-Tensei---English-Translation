@@ -1,0 +1,41 @@
+et/ prefix : (files where u16[0]==size-2) / total
+   A: 0/2
+   CA: 13/257
+   ET: 80/86
+   ID: 0/17
+m/ : {'M': '109/109', 'MS': '162/200'}
+p/ : {'P': '432/432'}
+
+=== CA2000.BIN annotated ===
+ size=38
+ 0x00 u16 = 0x0024 = 36  (== filesize-2)
+ 0x02 u16 = 4  (record count)
+ 0x04.. ptr table = ['0xc', '0x11', '0x18', '0x1f']  (table ends at 0xC == first ptr 0xC)
+   rec0 @0xC..0x11: 00 00 ff 0c 00
+   rec1 @0x11..0x18: 1e 01 1e 02 ff 11 00
+   rec2 @0x18..0x1F: 1e 06 1e 07 ff 18 00
+   rec3 @0x1F..0x26: 1e 08 1e 09 ff 1f 00
+
+=== CA2001.BIN annotated ===
+ size=29 hex=1b 00 06 00 10 00 10 00 10 00 10 00 10 00 10 00 0a 00 0a 01 0a 02 fc 0a 01 fc ff 10 00
+ len=27 cnt=6 ptrs=['0x10', '0x10', '0x10', '0x10', '0x10', '0x10']
+
+ largest CA files: [(13936, 'CA0011.BIN'), (590, 'CA6170.BIN'), (574, 'CA6820.BIN'), (570, 'CA6160.BIN'), (532, 'CA6280.BIN'), (490, 'CA62D0.BIN'), (482, 'CA6230.BIN'), (478, 'CA6370.BIN')]
+
+--- CA0011.BIN size=13936 first64=ea 34 85 00 0c 01 7c 02 c0 02 14 03 6a 03 24 04 80 04 dc 04 34 05 b0 05 ec 05 40 06 94 06 c0 06 3e 07 6a 07 9e 07 2e 08 a4 08 d0 0a d6 0b 22 0c 6e 0c ba 0c 06 0d 52 0d 12 0e 72 0e ae 0e 14 0f
+   u16[0]=13546 (size-2=13934) cnt=133
+   ptrs[0..9]=['0x10c', '0x27c', '0x2c0', '0x314', '0x36a', '0x424', '0x480', '0x4dc', '0x534', '0x5b0'] monotonic=True first==tableend(270) -> False
+
+--- CA3030.BIN size=193 first64=bf 00 fd 20 fe 00 01 01 00 00 00 00 00 00 01 01 01 00 00 00 00 00 01 01 02 00 00 00 00 00 01 03 03 80 ff ff 00 00 04 00 00 00 00 00 05 00 00 00 00 00 01 04 03 00 00 00 00 00 04 80 ff ff 00 00
+   u16[0]=191 (size-2=191) cnt=8445
+
+--- CA3020.BIN size=189 first64=bb 00 fd 20 fe 04 01 02 04 00 00 00 00 00 04 00 00 00 78 ff 01 02 05 00 00 00 00 00 05 00 00 00 48 ff 01 06 04 00 00 00 00 00 00 00 fa ff 00 00 00 00 06 00 00 00 04 00 00 00 78 ff 00 00 fa ff
+   u16[0]=187 (size-2=187) cnt=8445
+
+=== control-byte (<0x20) fraction, sample files ===
+   et/ET0000.BIN: <0x20 = 370/2680 (13%), >=0x80 = 46%, distinct=256
+   et/CA2000.BIN: <0x20 = 33/38 (86%), >=0x80 = 10%, distinct=15
+   et/ID0099.BIN: <0x20 = 267/1844 (14%), >=0x80 = 50%, distinct=255
+   m/M0000.BIN: <0x20 = 830/6010 (13%), >=0x80 = 40%, distinct=256
+   p/P2000.BIN: <0x20 = 3/124 (2%), >=0x80 = 50%, distinct=38
+PIL failed: ModuleNotFoundError("No module named 'PIL'")

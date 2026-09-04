@@ -1,0 +1,184 @@
+
+=== CreateFontA (IAT 00464038): 1 call sites: ['004515ba']
+  --- call site file 000509ba VA 004515ba  ORIGINAL
+  45156a:	00 00                	add    BYTE PTR [eax],al
+  45156c:	c7 44 24 14 01 00 00 	mov    DWORD PTR [esp+0x14],0x1
+  451573:	00 
+  451574:	c7 44 24 10 01 00 00 	mov    DWORD PTR [esp+0x10],0x1
+  45157b:	00 
+  45157c:	c7 44 24 70 40 08 00 	mov    DWORD PTR [esp+0x70],0x840
+  451583:	00 
+  451584:	8b 08                	mov    ecx,DWORD PTR [eax]
+  451586:	68 f4 0a 49 00       	push   0x490af4
+  45158b:	52                   	push   edx
+  45158c:	50                   	push   eax
+  45158d:	ff 51 18             	call   DWORD PTR [ecx+0x18]
+  451590:	85 c0                	test   eax,eax
+  451592:	74 07                	je     0x45159b
+  451594:	33 c0                	xor    eax,eax
+  451596:	5f                   	pop    edi
+  451597:	83 c4 6c             	add    esp,0x6c
+  45159a:	c3                   	ret
+  45159b:	6a 00                	push   0x0
+  45159d:	6a 30                	push   0x30
+  45159f:	6a 00                	push   0x0
+  4515a1:	68 80 00 00 00       	push   0x80
+  4515a6:	6a 00                	push   0x0
+  4515a8:	6a 01                	push   0x1
+  4515aa:	6a 00                	push   0x0
+  4515ac:	6a 00                	push   0x0
+  4515ae:	6a 00                	push   0x0
+  4515b0:	6a 64                	push   0x64
+  4515b2:	6a 00                	push   0x0
+  4515b4:	6a 00                	push   0x0
+  4515b6:	6a 00                	push   0x0
+  4515b8:	6a 11                	push   0x11
+  4515ba:	ff 15 38 40 46 00    	call   DWORD PTR ds:0x464038
+  4515c0:	a3 f0 0a 49 00       	mov    ds:0x490af0,eax
+  4515c5:	a1                   	.byte 0xa1
+  ~~~ PATCHED (dds_en) differs:
+  45156a:	00 00                	add    BYTE PTR [eax],al
+  45156c:	c7 44 24 14 01 00 00 	mov    DWORD PTR [esp+0x14],0x1
+  451573:	00 
+  451574:	c7 44 24 10 01 00 00 	mov    DWORD PTR [esp+0x10],0x1
+  45157b:	00 
+  45157c:	c7 44 24 70 40 08 00 	mov    DWORD PTR [esp+0x70],0x840
+  451583:	00 
+  451584:	8b 08                	mov    ecx,DWORD PTR [eax]
+  451586:	68 f4 0a 49 00       	push   0x490af4
+  45158b:	52                   	push   edx
+  45158c:	50                   	push   eax
+  45158d:	ff 51 18             	call   DWORD PTR [ecx+0x18]
+  451590:	85 c0                	test   eax,eax
+  451592:	74 07                	je     0x45159b
+  451594:	33 c0                	xor    eax,eax
+  451596:	5f                   	pop    edi
+  451597:	83 c4 6c             	add    esp,0x6c
+  45159a:	c3                   	ret
+  45159b:	6a 00                	push   0x0
+  45159d:	6a 30                	push   0x30
+  45159f:	6a 00                	push   0x0
+  4515a1:	68 80 00 00 00       	push   0x80
+  4515a6:	6a 00                	push   0x0
+  4515a8:	6a 80                	push   0xffffff80
+  4515aa:	6a 00                	push   0x0
+  4515ac:	6a 00                	push   0x0
+  4515ae:	6a 00                	push   0x0
+  4515b0:	6a 64                	push   0x64
+  4515b2:	6a 00                	push   0x0
+  4515b4:	6a 00                	push   0x0
+  4515b6:	6a 00                	push   0x0
+  4515b8:	6a 11                	push   0x11
+  4515ba:	ff 15 38 40 46 00    	call   DWORD PTR ds:0x464038
+  4515c0:	a3 f0 0a 49 00       	mov    ds:0x490af0,eax
+  4515c5:	a1                   	.byte 0xa1
+
+=== CreateWindowExA (IAT 00464184): 1 call sites: ['004501b5']
+
+=== GetGlyphOutlineA (IAT 0046402c): 1 call sites: ['004512b6']
+  --- call site file 000506b6 VA 004512b6  ORIGINAL
+  451266:	00 8b cf 83 ee 20    	add    BYTE PTR [ebx+0x20ee83cf],cl
+  45126c:	c1 e6 04             	shl    esi,0x4
+  45126f:	81 c6 30 c2 46 00    	add    esi,0x46c230
+  451275:	33 d2                	xor    edx,edx
+  451277:	8a 1c 30             	mov    bl,BYTE PTR [eax+esi*1]
+  45127a:	40                   	inc    eax
+  45127b:	88 19                	mov    BYTE PTR [ecx],bl
+  45127d:	88 51 01             	mov    BYTE PTR [ecx+0x1],dl
+  451280:	83 c1 02             	add    ecx,0x2
+  451283:	83 f8 10             	cmp    eax,0x10
+  451286:	7c ef                	jl     0x451277
+  451288:	8b c7                	mov    eax,edi
+  45128a:	5f                   	pop    edi
+  45128b:	5e                   	pop    esi
+  45128c:	5b                   	pop    ebx
+  45128d:	81 c4 94 00 00 00    	add    esp,0x94
+  451293:	c3                   	ret
+  451294:	8d 44 24 20          	lea    eax,[esp+0x20]
+  451298:	68 c0 cf 46 00       	push   0x46cfc0
+  45129d:	50                   	push   eax
+  45129e:	a1 d0 0b 49 00       	mov    eax,ds:0x490bd0
+  4512a3:	8d 4c 24 14          	lea    ecx,[esp+0x14]
+  4512a7:	8b d6                	mov    edx,esi
+  4512a9:	6a 40                	push   0x40
+  4512ab:	51                   	push   ecx
+  4512ac:	81 e2 ff ff 00 00    	and    edx,0xffff
+  4512b2:	6a 01                	push   0x1
+  4512b4:	52                   	push   edx
+  4512b5:	50                   	push   eax
+  4512b6:	ff 15 2c 40 46 00    	call   DWORD PTR ds:0x46402c
+  4512bc:	83 7c 24 0c 07       	cmp    DWORD PTR [esp+0xc],0x7
+  4512c1:	77                   	.byte 0x77
+
+=== MessageBoxA (IAT 00464178): 4 call sites: ['0044ffcc', '0045002c', '00450ff8', '00451029']
+
+=== MultiByteToWideChar (IAT 004640dc): 4 call sites: ['0045d01a', '0045d04d', '0045d240', '0045d268']
+
+=== RegisterClassA (IAT 00464188): 1 call sites: ['0045017a']
+  --- call site file 0004f57a VA 0045017a  ORIGINAL
+  45012a:	00 c7                	add    bh,al
+  45012c:	44                   	inc    esp
+  45012d:	24 10                	and    al,0x10
+  45012f:	90                   	nop
+  450130:	fe 44 00 c7          	inc    BYTE PTR [eax+eax*1-0x39]
+  450134:	44                   	inc    esp
+  450135:	24 14                	and    al,0x14
+  450137:	00 00                	add    BYTE PTR [eax],al
+  450139:	00 00                	add    BYTE PTR [eax],al
+  45013b:	c7 44 24 18 04 00 00 	mov    DWORD PTR [esp+0x18],0x4
+  450142:	00 
+  450143:	89 74 24 1c          	mov    DWORD PTR [esp+0x1c],esi
+  450147:	ff 15 8c 41 46 00    	call   DWORD PTR ds:0x46418c
+  45014d:	6a 04                	push   0x4
+  45014f:	89 44 24 1c          	mov    DWORD PTR [esp+0x1c],eax
+  450153:	c7 44 24 20 00 00 00 	mov    DWORD PTR [esp+0x20],0x0
+  45015a:	00 
+  45015b:	ff 15 34 40 46 00    	call   DWORD PTR ds:0x464034
+  450161:	89 44 24 20          	mov    DWORD PTR [esp+0x20],eax
+  450165:	8d 44 24 04          	lea    eax,[esp+0x4]
+  450169:	50                   	push   eax
+  45016a:	c7 44 24 28 00 00 00 	mov    DWORD PTR [esp+0x28],0x0
+  450171:	00 
+  450172:	c7 44 24 2c 20 c1 46 	mov    DWORD PTR [esp+0x2c],0x46c120
+  450179:	00 
+  45017a:	ff 15 88 41 46 00    	call   DWORD PTR ds:0x464188
+  450180:	66 85 c0             	test   ax,ax
+  450183:	75 07                	jne    0x45018c
+  450185:	33                   	.byte 0x33
+
+=== TextOutA (IAT 00464050): 1 call sites: ['00449a30']
+  --- call site file 00048e30 VA 00449a30  ORIGINAL
+  4499e0:	51                   	push   ecx
+  4499e1:	a1 ec 42 48 00       	mov    eax,ds:0x4842ec
+  4499e6:	8d 54 24 00          	lea    edx,[esp+0x0]
+  4499ea:	57                   	push   edi
+  4499eb:	52                   	push   edx
+  4499ec:	8b 08                	mov    ecx,DWORD PTR [eax]
+  4499ee:	50                   	push   eax
+  4499ef:	ff 51 44             	call   DWORD PTR [ecx+0x44]
+  4499f2:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+  4499f6:	6a 00                	push   0x0
+  4499f8:	50                   	push   eax
+  4499f9:	ff 15 4c 40 46 00    	call   DWORD PTR ds:0x46404c
+  4499ff:	8b 4c 24 04          	mov    ecx,DWORD PTR [esp+0x4]
+  449a03:	68 00 ff 00 00       	push   0xff00
+  449a08:	51                   	push   ecx
+  449a09:	ff 15 28 40 46 00    	call   DWORD PTR ds:0x464028
+  449a0f:	8b 54 24 0c          	mov    edx,DWORD PTR [esp+0xc]
+  449a13:	83 c9 ff             	or     ecx,0xffffffff
+  449a16:	8b fa                	mov    edi,edx
+  449a18:	33 c0                	xor    eax,eax
+  449a1a:	f2 ae                	repnz scas al,BYTE PTR es:[edi]
+  449a1c:	8b 44 24 10          	mov    eax,DWORD PTR [esp+0x10]
+  449a20:	f7 d1                	not    ecx
+  449a22:	49                   	dec    ecx
+  449a23:	51                   	push   ecx
+  449a24:	8b 4c 24 08          	mov    ecx,DWORD PTR [esp+0x8]
+  449a28:	52                   	push   edx
+  449a29:	8b 54 24 1c          	mov    edx,DWORD PTR [esp+0x1c]
+  449a2d:	52                   	push   edx
+  449a2e:	50                   	push   eax
+  449a2f:	51                   	push   ecx
+  449a30:	ff 15 50 40 46 00    	call   DWORD PTR ds:0x464050
+  449a36:	a1 ec 42 48 00       	mov    eax,ds:0x4842ec
+  449a3b:	8b                   	.byte 0x8b

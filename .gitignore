@@ -1,0 +1,78 @@
+# ---------------------------------------------------------------
+# Giten Megami Tensei English Translation
+# The repo holds tools, translation text and build scripts ONLY.
+# Never commit the game itself (Atlus/ASCII assets, ~424 MB).
+# ---------------------------------------------------------------
+
+# --- Game folder and its contents (any location inside the repo) ---
+ddswin/
+DIRECTX/
+攻略/
+Giten Megami Tensei - English/
+AUTORUN.EXE
+AUTORUN.INF
+DSETUP*.DLL
+MSVCRT.DLL
+
+# Game executables and the fan patch tool
+dds.exe
+dds_en.exe
+dds_org.exe
+Config.exe
+*パッチツール*.exe
+
+# Game data files. Translated text lives in .txt/.json tables, not here.
+# Patched BIN output belongs in a release archive, not in git.
+*.BIN
+*.bin
+*.mds
+*.bmp
+
+# Save files (GetWindowsDirectory()\save%04x.dds) and config
+save*.dds
+*.dds
+
+# --- Compatibility wrappers dropped next to the exe (dgVoodoo2, DxWnd, DDrawCompat) ---
+*.dll
+dgVoodoo.conf
+dgVoodooCpl.exe
+*.dxw
+
+# --- Derived / generated ---
+# Full decoded dumps of every data file (regenerate with tools/bin_tools/dumpall.py)
+tools/dumps/decoded/
+decoded/
+# Build output: patched files, patchers, release archives
+build/
+dist/
+out/
+release/
+*.7z
+*.zip
+*.rar
+*.xdelta
+*.ips
+*.bps
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# --- Editors / OS ---
+.vscode/
+.idea/
+*.swp
+*~
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# --- Logs and scratch ---
+*.log
+scratch/
+tmp/

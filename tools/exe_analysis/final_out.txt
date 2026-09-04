@@ -1,0 +1,85 @@
+
+--- dds.exe status-name table (JP) @0x62FE0 ---
+  062FE0  00 8A 44 00 00 00 00 00 01 8E 80 00 00 00 00 00  ..D.............
+  062FF0  02 95 6D 8E 80 00 00 00 03 8D A8 93 7C 00 00 00  ..m.........|...
+  063000  04 90 CE 89 BB 00 00 00 05 96 83 E1 83 00 00 00  ................
+  063010  06 93 80 8C 8B 00 00 00 07 9C DF 88 CB 00 00 00  ................
+  063020  08 83 5D 83 93 83 72 00 09 8E F4 82 A2 00 00 00  ..]...r.........
+  063030  0A 8B 43 90 E2 00 00 00 0B 92 82 91 A7 00 00 00  ..C.............
+
+--- dds_en.exe status-name table (EN) @0x62FE0 ---
+  062FE0  00 8A 44 00 00 00 00 00 01 44 65 61 64 00 00 00  ..D......Dead...
+  062FF0  02 44 79 69 6E 67 00 00 03 53 77 6F 6F 6E 00 00  .Dying...Swoon..
+  063000  04 53 74 6F 6E 65 00 00 05 50 61 72 61 6C 2E 00  .Stone...Paral..
+  063010  06 43 68 69 6C 6C 00 00 07 50 6F 73 73 65 2E 00  .Chill...Posse..
+  063020  08 5A 6F 6D 62 69 65 00 09 43 75 72 73 65 00 00  .Zombie..Curse..
+  063030  0A 46 61 69 6E 74 00 00 0B 53 75 66 66 6F 2E 00  .Faint...Suffo..
+
+--- dds.exe battle message table (JP) @0x66480 ---
+  066480  5B 49 54 45 4D 5D 20 8E 67 97 70 82 C5 82 AB 82  [ITEM] .g.p.....
+  066490  E9 90 6C 82 AA 8B 8F 82 DC 82 B9 82 F1 00 00 00  ..l.............
+  0664A0  5B 49 54 45 4D 5D 20 83 41 83 43 83 65 83 80 82  [ITEM] .A.C.e...
+  0664B0  AA 97 4C 82 E8 82 DC 82 B9 82 F1 00 5B 44 44 53  ..L.........[DDS
+  0664C0  5D 20 44 44 53 82 F0 8F 8A 8E 9D 82 B5 82 C4 82  ] DDS...........
+  0664D0  A2 82 DC 82 B9 82 F1 00 5B 46 49 47 48 54 5D 20  ........[FIGHT] 
+
+--- dds_en.exe battle message table (EN) @0x66480 ---
+  066480  55 6E 61 62 6C 65 20 74 6F 20 75 73 65 00 00 00  Unable to use...
+  066490  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+  0664A0  4E 6F 20 69 74 65 6D 00 00 00 00 00 00 00 00 00  No item.........
+  0664B0  00 00 00 00 00 00 00 00 00 00 00 00 44 44 53 20  ............DDS 
+  0664C0  6E 6F 74 20 69 6E 73 74 61 6C 6C 65 64 00 00 00  not installed...
+  0664D0  00 00 00 00 00 00 00 00 4E 6F 20 65 6E 65 6D 79  ........No enemy
+
+32-byte slot decode of 0x66480..0x66640:
+   0x66480: len=29/13 JP='[ITEM] 使用できる人が居ません' | EN='Unable to use'
+   0x664A0: len=27/7 JP='[ITEM] アイテムが有りません' | EN='No item'
+   0x664C0: len=23/13 JP='] DDSを所持していません' | EN='not installed'
+   0x664E0: len=18/8 JP='戦う相手が居ません' | EN=' present'
+   0x66500: len=13/5 JP='且閧ｪ居ません' | EN='lk to'
+   0x66520: len=12/1 JP='していません' | EN='d'
+   0x66540: len=15/1 JP='且揩ｵていません' | EN='d'
+   0x66560: len=12/1 JP='していません' | EN='d'
+   0x66580: len=10/0 JP='が居ません' | EN=''
+   0x665A0: len=4/0 JP='せん' | EN=''
+   0x665C0: len=7/0 JP='ｫません' | EN=''
+   0x665E0: len=3/0 JP='ｹん' | EN=''
+   0x66600: len=0/0 JP='' | EN=''
+   0x66620: len=31/17 JP='[MAPPING] AMSを所持していません' | EN='AMS not installed'
+
+8-byte slot decode of status table 0x62FE0..0x630F8:
+   0x62FE0: JP='\x00灰' id=0x00 | EN='\x00灰' id=0x00
+   0x62FE8: JP='\x01死' id=0x00 | EN='\x01Dead' id=0x00
+   0x62FF0: JP='\x02瀕死' id=0x00 | EN='\x02Dying' id=0x00
+   0x62FF8: JP='\x03昏倒' id=0x00 | EN='\x03Swoon' id=0x00
+   0x63000: JP='\x04石化' id=0x00 | EN='\x04Stone' id=0x00
+   0x63008: JP='\x05麻痺' id=0x00 | EN='\x05Paral.' id=0x00
+   0x63010: JP='\x06凍結' id=0x00 | EN='\x06Chill' id=0x00
+   0x63018: JP='\x07憑依' id=0x00 | EN='\x07Posse.' id=0x00
+   0x63020: JP='\x08ゾンビ' id=0x00 | EN='\x08Zombie' id=0x00
+   0x63028: JP='\t呪い' id=0x00 | EN='\tCurse' id=0x00
+   0x63030: JP='\n気絶' id=0x00 | EN='\nFaint' id=0x00
+   0x63038: JP='\x0b窒息' id=0x00 | EN='\x0bSuffo.' id=0x00
+   0x63040: JP='\x0c禁縛' id=0x00 | EN='\x0cBind' id=0x00
+   0x63048: JP='\r眠り' id=0x00 | EN='\rSleep' id=0x00
+   0x63050: JP='\x0e恐慌' id=0x00 | EN='\x0ePanic' id=0x00
+   0x63058: JP=' 猛毒' id=0x00 | EN=' Toxic' id=0x00
+   0x63060: JP='\x0f毒' id=0x00 | EN='\x0fPoison' id=0x00
+   0x63068: JP='\x10幻覚' id=0x00 | EN='\x10Hallu.' id=0x00
+   0x63070: JP='\x11魅了' id=0x00 | EN='\x11Charm' id=0x00
+   0x63078: JP='\x12混乱' id=0x00 | EN='\x12Panic' id=0x00
+   0x63080: JP='\x13舞踏' id=0x00 | EN='\x13Dance' id=0x00
+   0x63088: JP='\x14感電' id=0x00 | EN='\x14Shock' id=0x00
+   0x63090: JP='\x15氷結' id=0x00 | EN='\x15Freeze' id=0x00
+   0x63098: JP='\x16炎上' id=0x00 | EN='\x16Ignite' id=0x00
+   0x630A0: JP='\x17盲目' id=0x00 | EN='\x17Blind' id=0x00
+   0x630A8: JP='\x18封魔' id=0x00 | EN='\x18Sealed' id=0x00
+   0x630B0: JP='\x19居眠り' id=0x00 | EN='\x19Drowsy' id=0x00
+   0x630B8: JP='\x1a狂戦士' id=0x00 | EN='\x1aBerse.' id=0x00
+   0x630C0: JP='\x1bハイ' id=0x00 | EN='\x1bHigh' id=0x00
+   0x630C8: JP='\x1e泥酔' id=0x00 | EN='\x1eDrunk' id=0x00
+   0x630D0: JP='\x1dほろ酔' id=0x00 | EN='\x1dTipsy' id=0x00
+   0x630D8: JP='\x1c幸福' id=0x00 | EN='\x1cHappy' id=0x00
+   0x630E0: JP='\x1fｽﾗｲﾑ' id=0x00 | EN='\x1fSlime' id=0x00
+   0x630E8: JP='!吸血' id=0x00 | EN='!Vamp.' id=0x00
+   0x630F0: JP='"外傷' id=0x00 | EN='"Wound' id=0x00
