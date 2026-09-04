@@ -1,0 +1,25 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS6105.BIN	5:09	0	22	1FB2	やる	Yes	menu option, declared width 20 columns
+m/MS6105.BIN	5:09	1	28	1FB2	遠慮{08:8E}	Decline	reads: 遠慮する; menu option, declared width 20 columns
+m/MS6105.BIN	5:09	2	48	0F	{01:42}{01:FF}	{01:42}{01:FF}	reads: 
+m/MS6105.BIN	5:09	3	61	00	{04:EF}は石を差し出{08:4B}\n		reads: は石を差し出した\n
+m/MS6105.BIN	5:09	4	91	1FFA	{02:09}\n	{02:09}\n	reads: ・・・\n
+m/MS6105.BIN	5:09	5	100	00	{04:FF}は石を砕{08:64}！\n		reads: は石を砕いた！\n
+m/MS6105.BIN	5:09	6	134	1FFA	{02:09}・・		reads: ・・・・・
+m/MS6105.BIN	5:09	7	142	1FFB	！！！\n	!!!\n	
+m/MS6105.BIN	5:09	8	153	00	{04:FF}は石を砕{08:64}！\n		reads: は石を砕いた！\n
+m/MS6105.BIN	5:09	9	184	1FFA	{02:09}・・		reads: ・・・・・
+m/MS6105.BIN	5:09	10	192	1FFB	石は砕け{08:19}\n	The stone held.\n	reads: 石は砕けなかった\n
+m/MS6105.BIN	5:09	11	214	00	{04:EF}の鉄拳が炸裂！！！\n		reads: の鉄拳が炸裂！！！\n
+m/MS6105.BIN	5:09	12	245	1FFA	{02:09}	{02:09}	reads: ・・・
+m/MS6105.BIN	5:09	13	249	1FFB	石は砕け{08:19}	The stone held.	reads: 石は砕けなかった
+m/MS6105.BIN	5:09	14	261	1FFA	{02:09}\n	{02:09}\n	reads: ・・・\n
+m/MS6105.BIN	5:09	15	268	1FBA	{02:09}・・		reads: ・・・・・
+m/MS6105.BIN	5:09	16	289	1FFA	{02:09}・・		reads: ・・・・・
+m/MS6105.BIN	5:09	17	297	1FFB	！！！\n石は砕け{08:19}\n	!!!\nThe stone held.\n	reads: ！！！\n石は砕けなかった\n
+m/MS6105.BIN	5:09	18	329	00	{04:EF}の鉄拳が炸裂！！！\n		reads: の鉄拳が炸裂！！！\n
+m/MS6105.BIN	5:09	19	352	1FBA	石は砕{08:43}！\n	Stone broke!\n	reads: 石は砕けた！\n

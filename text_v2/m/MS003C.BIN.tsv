@@ -1,0 +1,83 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS003C.BIN	0:10	0	0	UNTILED	ﾅ /  / ﾐ / ｺ /  /  Please select which service you'd like to use. / ﾁ / ﾐ / ｱ / ｲTerminal Travel / ｲAMS Data / ｲPersonal Management / ｲExit / ｷ / ﾑ / < /  / <( / < / 		@untiled; record does not tile (expression selector past end of record at 0xA1); read-only, copied verbatim
+m/MS003C.BIN	0:11	0	0	UNTILED	ｺ / ﾐ>Please select which service you'd like to use. / ﾁ / ﾐ / ｱ / ｲTerminal Travel / ｲDownload AMS Data / ｲPersonal Management / ｲExit / ｷ / ﾑ / < /  / <( / < / 		@untiled; record does not tile (expression selector past end of record at 0x9C); read-only, copied verbatim
+m/MS003C.BIN	0:12	0	7	1FD0	>Please select your destination.\n	>Please select your destination.\n	
+m/MS003C.BIN	0:13	0	4	1FD0	>We look forward to serving you again.\n<wait>	>We look forward to serving you again.\n<wait>	
+m/MS003C.BIN	0:14	0	80	1FD0	>No other terminals were found.\n<wait>	>No other terminals were found.\n<wait>	
+m/MS003C.BIN	0:15	0	345	00	\<	\<	record reaches an engine no-op opcode; verify in game
+m/MS003C.BIN	0:15	1	349	1A	\<	\<	record reaches an engine no-op opcode; verify in game
+m/MS003C.BIN	0:15	2	351	1B	{04:00}\<	{04:00}\<	record reaches an engine no-op opcode; verify in game; reads: を唱えた！ \<
+m/MS003C.BIN	0:15	3	355	1C	{05:00}\<	{05:00}\<	record reaches an engine no-op opcode; verify in game; reads: YesNoニュートン\<
+m/MS003C.BIN	0:15	4	361	00	\<	\<	record reaches an engine no-op opcode; verify in game
+m/MS003C.BIN	0:15	5	374	1F08	"\n	"\n	record reaches an engine no-op opcode; verify in game
+m/MS003C.BIN	0:15	6	377	00	\<#	\<#	record reaches an engine no-op opcode; verify in game
+m/MS003C.BIN	0:15	7	385	00	\<%	\<%	record reaches an engine no-op opcode; verify in game
+m/MS003C.BIN	0:15	8	390	0D	&	&	record reaches an engine no-op opcode; verify in game
+m/MS003C.BIN	0:16	0	9	1F19	{01:19}	{01:19}	reads: われわれ
+m/MS003C.BIN	0:16	1	12	00	{02:01}7	{02:01}7	reads: ペンタグランマ7
+m/MS003C.BIN	0:16	2	16	00	{03:01}ﾈ{01:04}{01:C4}{01:05}{01:C0}{01:06}{01:BC}{01:07}{01:B8}{01:FF}		reads: そんなことﾈ西野義雄山田カズミダンタリオン
+m/MS003C.BIN	0:16	3	40	1B	Desti.	Desti.	
+m/MS003C.BIN	0:16	4	96	1F19	{01:48}	{01:48}	reads: 
+m/MS003C.BIN	0:16	5	99	00	{03:01}[	{03:01}[	reads: そんなこと[
+m/MS003C.BIN	0:16	6	103	00	{04:01}k	{04:01}k	reads: 切りk
+m/MS003C.BIN	0:16	7	107	00	{05:01}	{05:01}	reads: 飛び道具
+m/MS003C.BIN	0:16	8	111	00	{06:01}{=93}{=00}{07:01}｣		reads: {=93}{=00}＞何をしますか？｣
+m/MS003C.BIN	0:16	9	119	00	{08:01}ｷ		reads: 達也ｷ
+m/MS003C.BIN	0:16	10	128	09	{01:DB}	{01:DB}	reads: 
+m/MS003C.BIN	0:16	11	136	0B	{01:FE}	{01:FE}	reads: 
+m/MS003C.BIN	0:16	12	142	0D	{01:0E}{01:24}{01:FF}	{01:0E}{01:24}{01:FF}	reads: わたしにおかげ
+m/MS003C.BIN	0:16	13	149	1B	Hatsudai	Hatsudai	
+m/MS003C.BIN	0:16	14	172	1B	Shinjuku	Shinjuku	
+m/MS003C.BIN	0:16	15	195	1B	Shiba	Shiba	
+m/MS003C.BIN	0:16	16	215	1B	Ikebukuro	Ikebukuro	
+m/MS003C.BIN	0:16	17	239	1B	Ikebukuro	Ikebukuro	
+m/MS003C.BIN	0:16	18	263	1B	Ginza	Ginza	
+m/MS003C.BIN	0:16	19	283	1B	Akihabara	Akihabara	
+m/MS003C.BIN	0:16	20	307	1B	Shinagawa	Shinagawa	
+m/MS003C.BIN	0:16	21	331	1B	Kanda	Kanda	
+m/MS003C.BIN	0:16	22	351	1B	Ebisu	Ebisu	
+m/MS003C.BIN	0:16	23	371	1B	Roppongi	Roppongi	
+m/MS003C.BIN	0:16	24	394	1B	Ariake	Ariake	
+m/MS003C.BIN	0:16	25	415	1B	Ochanomizu	Ochanomizu	
+m/MS003C.BIN	0:16	26	440	1B	Ichigaya	Ichigaya	
+m/MS003C.BIN	0:17	0	2	1FBA	>Initiating warp.\n<wait>	>Initiating warp.\n<wait>	
+m/MS003C.BIN	0:18	0	8	1F77	{1E10:0103}>Destination reached.\n<wait>	{1E10:0103}>Destination reached.\n<wait>	
+m/MS003C.BIN	0:18	1	40	1FBA	>We look forward to serving you again.\n<wait>	>We look forward to serving you again.\n<wait>	
+m/MS003C.BIN	0:28	0	0	UNTILED	ｺ / ﾁ / ﾐ / ｱ / ｲSave / ｲLoad / ｲQuit / ｲBack / ｷ / ﾑ / <) / <+ / <- / < / 		@untiled; record does not tile (expression selector past end of record at 0x43); read-only, copied verbatim
+m/MS003C.BIN	0:29	0	2	1FBA	>Your progress will be saved.\n Please select a file to save to.\n	>Your progress will be saved.\n Please select a file to save to.\n	
+m/MS003C.BIN	0:29	1	219	1F81	 you wish to overwrite this save?\n	 you wish to overwrite this save?\n	
+m/MS003C.BIN	0:29	2	269	1FB2	Yes	Yes	menu option, declared width 20 columns
+m/MS003C.BIN	0:29	3	274	1FB2	No	No	menu option, declared width 20 columns
+m/MS003C.BIN	0:29	4	290	0F	{01:DB}	{01:DB}	reads: 
+m/MS003C.BIN	0:29	5	323	1F80	ved the game successfully\n<wait>	ved the game successfully\n<wait>	
+m/MS003C.BIN	0:29	6	360	1FD0	>Error: Failed to save the game\n Not enough disk space available\n<wait>	>Error: Failed to save the game\n Not enough disk space available\n<wait>	
+m/MS003C.BIN	0:2A	0	9	1F19	{01:19}	{01:19}	reads: われわれ
+m/MS003C.BIN	0:2A	1	12	00	{02:01}P	{02:01}P	reads: ペンタグランマP
+m/MS003C.BIN	0:2A	2	16	00	{03:01}{=F6}{=00}{04:01}{=F2}{=00}{05:01}{=EE}{=00}{06:01}{=EA}{=00}{07:01}{=E6}{=00}	{03:01}{=F6}{=00}{04:01}{=F2}{=00}{05:01}{=EE}{=00}{06:01}{=EA}{=00}{07:01}{=E6}{=00}	reads: そんなこと{=F6}{=00}切り{=F2}{=00}飛び道具{=EE}{=00}{=EA}{=00}＞何をしますか？{=E6}{=00}
+m/MS003C.BIN	0:2A	3	40	1B	PLAYER NAME      LEVEL LOCATION	PLAYER NAME      LEVEL LOCATION	
+m/MS003C.BIN	0:2A	4	177	00	+	+	
+m/MS003C.BIN	0:2A	5	179	00	+	+	
+m/MS003C.BIN	0:2A	6	181	00	{01:1E}{=9B}{=03}	{01:1E}{=9B}{=03}	reads: はやく{=9B}{=03}
+m/MS003C.BIN	0:2A	7	189	12	{03:14}	{03:14}	reads: 
+m/MS003C.BIN	0:2B	0	2	1FBA	>Please select a save to load\n	>Please select a save to load\n	
+m/MS003C.BIN	0:2B	1	149	1FBA	>Do you wish to load this save?\n	>Do you wish to load this save?\n	
+m/MS003C.BIN	0:2B	2	197	1FB2	Yes	Yes	menu option, declared width 20 columns
+m/MS003C.BIN	0:2B	3	202	1FB2	No	No	menu option, declared width 20 columns
+m/MS003C.BIN	0:2B	4	218	0F	{01:23}	{01:23}	reads: しばらく
+m/MS003C.BIN	0:2B	5	245	1F80	ror: Failed to load the save\n Save data is corrupted\n<wait>	ror: Failed to load the save\n Save data is corrupted\n<wait>	
+m/MS003C.BIN	0:2C	0	9	1F19	{01:19}	{01:19}	reads: われわれ
+m/MS003C.BIN	0:2C	1	12	00	{02:01}Q	{02:01}Q	reads: ペンタグランマQ
+m/MS003C.BIN	0:2C	2	16	00	{03:01}{=F7}{=00}{04:01}{=F3}{=00}{05:01}{=EF}{=00}{06:01}{=EB}{=00}{07:01}{=E7}{=00}	{03:01}{=F7}{=00}{04:01}{=F3}{=00}{05:01}{=EF}{=00}{06:01}{=EB}{=00}{07:01}{=E7}{=00}	reads: そんなこと{=F7}{=00}切り{=F3}{=00}飛び道具{=EF}{=00}{=EB}{=00}＞何をしますか？{=E7}{=00}
+m/MS003C.BIN	0:2C	3	40	1B	 PLAYER NAME      LEVEL LOCATION	 PLAYER NAME      LEVEL LOCATION	
+m/MS003C.BIN	0:2C	4	178	00	+	+	
+m/MS003C.BIN	0:2C	5	180	00	+	+	
+m/MS003C.BIN	0:2C	6	182	00	{01:1E}{=9B}{=03}	{01:1E}{=9B}{=03}	reads: はやく{=9B}{=03}
+m/MS003C.BIN	0:2C	7	193	00	{01:18}F	{01:18}F	reads: あんたF
+m/MS003C.BIN	0:2D	0	2	1FBA	>Are you sure that you wish to exit the game?\n	>Are you sure that you wish to exit the game?\n	
+m/MS003C.BIN	0:2D	1	64	1FB2	Yes	Yes	menu option, declared width 20 columns
+m/MS003C.BIN	0:2D	2	69	1FB2	No	No	menu option, declared width 20 columns
+m/MS003C.BIN	0:2D	3	86	00	\<(	\<(	

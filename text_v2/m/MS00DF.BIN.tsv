@@ -1,0 +1,36 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS00DF.BIN	0:00	0	4	00	{04:EF} fled!\n<wait>	{04:EF} fled!\n<wait>	reads:  fled!\n<wait>
+m/MS00DF.BIN	0:01	0	4	00	{04:EF} ran away.\n<wait>	{04:EF} ran away.\n<wait>	reads:  ran away.\n<wait>
+m/MS00DF.BIN	0:02	0	4	00	{04:EF} 	{04:EF} 	reads:  
+m/MS00DF.BIN	0:02	1	16	1EB0	{01:39}	{01:39}	reads: アナタ
+m/MS00DF.BIN	0:02	2	19	00	{02:01}5	{02:01}5	reads: ペンタグランマ5
+m/MS00DF.BIN	0:02	3	23	00	{03:01}1	{03:01}1	reads: そんなこと1
+m/MS00DF.BIN	0:02	4	27	00	{04:01}t	{04:01}t	reads: 切りt
+m/MS00DF.BIN	0:02	5	31	00	{05:01}{=8B}{=00}{06:01}	{05:01}{=8B}{=00}{06:01}	reads: 飛び道具{=8B}{=00}
+m/MS00DF.BIN	0:02	6	39	00	{07:01}ｵ		reads: ＞何をしますか？ｵ
+m/MS00DF.BIN	0:02	7	43	00	{08:01}ﾄ		reads: 達也ﾄ
+m/MS00DF.BIN	0:02	8	52	09	offered you nothing.\n	offered you nothing.\n	
+m/MS00DF.BIN	0:02	9	76	00	offered you 	offered you 	
+m/MS00DF.BIN	0:02	10	91	1F01	{03:13}.\n	{03:13}.\n	reads: 目の前に.\n
+m/MS00DF.BIN	0:02	11	113	1F7F	{03:00}	{03:00}	reads: 飛び道具
+m/MS00DF.BIN	0:02	12	134	1F83	{03:14}{03:14}	{03:14}{03:14}	reads: 
+m/MS00DF.BIN	0:02	13	147	00	offered you 	offered you 	
+m/MS00DF.BIN	0:02	14	163	1F02	 macca.\n	 macca.\n	
+m/MS00DF.BIN	0:02	15	174	00	offered you 	offered you 	
+m/MS00DF.BIN	0:02	16	190	1F02	 MAG.\n	 MAG.\n	
+m/MS00DF.BIN	0:02	17	199	00	offered you 	offered you 	
+m/MS00DF.BIN	0:02	18	215	1F02	 EXP.\n	 EXP.\n	
+m/MS00DF.BIN	0:02	19	224	00	{03:0D}をhealed you.\n		reads: ＨＰをhealed you.\n
+m/MS00DF.BIN	0:02	20	243	00	ボムを投{08:44}！\n		reads: ボムを投げた！\n
+m/MS00DF.BIN	0:02	21	282	1F81	#{03:03}	#{03:03}	reads: #だした
+m/MS00DF.BIN	0:02	22	291	00	{02:1F}E{03:16}{03:13}{03:16}	{02:1F}E{03:16}{03:13}{03:16}	reads: E目の前に
+m/MS00DF.BIN	0:02	23	313	00	{01:1F}{=E8}{=03}	{01:1F}{=E8}{=03}	reads: おにいちゃん{=E8}{=03}
+m/MS00DF.BIN	0:02	24	349	00	パンチを喰らわ{08:17}\n{05:12}		reads: パンチを喰らわした！\n
+m/MS00DF.BIN	0:02	25	378	1F81	#{03:03}{01:1F}M{03:16}	#{03:03}{01:1F}M{03:16}	reads: #だしたおにいちゃんM
+m/MS00DF.BIN	0:02	26	387	00	{05:1F}E{03:16}{03:13}{03:16}	{05:1F}E{03:16}{03:13}{03:16}	reads: E目の前に
+m/MS00DF.BIN	0:02	27	409	00	{01:1F}{=E8}{=03}	{01:1F}{=E8}{=03}	reads: おにいちゃん{=E8}{=03}
+m/MS00DF.BIN	0:03	0	4	00	{04:EB}'s barrier broke down.\n	{04:EB}'s barrier broke down.\n	reads: 's barrier broke down.\n

@@ -1,0 +1,92 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS0040.BIN	0:09	0	0	UNTILED	@ / @ / ﾒBartender: / ﾓ...Welcome. Your order, please. / ﾁ / ﾐ / ｱ / ｲOrder a drink / ｲListen to gossip / ｲLeave / ｷ / ﾑ / @ / @ / @ / 		@untiled; record does not tile (expression selector past end of record at 0x87); read-only, copied verbatim
+m/MS0040.BIN	0:0A	0	0	UNTILED	@ / ｺ / ﾒBartender: / ﾓ / If you're not going to drink, / then I'm going to have to ask you to leave. / @ / ...Your order, please. / N / ﾁ / ﾐ / ｱ / ｲOrder a drink / ｲListen to gossip / ｲLeave / ｷ / ﾑ / @ / @ / @ / 		@untiled; record does not tile (expression selector past end of record at 0xD6); read-only, copied verbatim
+m/MS0040.BIN	0:0B	0	7	1FD2	Bartender:	Bartender:	
+m/MS0040.BIN	0:0B	1	19	1FD3	...\n	...\n	
+m/MS0040.BIN	0:0B	2	39	1FB2	Order a drink	Order a drink	menu option, declared width 20 columns
+m/MS0040.BIN	0:0B	3	54	1FB2	Listen to gossip	Listen to gossip	menu option, declared width 20 columns
+m/MS0040.BIN	0:0B	4	72	1FB2	Leave	Leave	menu option, declared width 20 columns
+m/MS0040.BIN	0:0B	5	92	00	@	@	
+m/MS0040.BIN	0:0C	0	30	00	{03:16}	{03:16}	reads: 
+m/MS0040.BIN	0:0C	1	114	1FE8	{05:01}	{05:01}	reads: 飛び道具
+m/MS0040.BIN	0:0D	0	26	1FD2	Bartender:	Bartender:	
+m/MS0040.BIN	0:0D	1	38	1FD3	...How about you go breathe in some fresh air outside.\nHere, allow me to lend you a shoulder.\n<wait>	...How about you go breathe in some fresh air outside.\nHere, allow me to lend you a shoulder.\n<wait>	
+m/MS0040.BIN	0:0E	0	104	00	@	@	record reaches an engine no-op opcode; verify in game
+m/MS0040.BIN	0:0E	1	108	18	@	@	record reaches an engine no-op opcode; verify in game
+m/MS0040.BIN	0:0E	2	112	19	@	@	record reaches an engine no-op opcode; verify in game
+m/MS0040.BIN	0:0E	3	116	1A	@	@	record reaches an engine no-op opcode; verify in game
+m/MS0040.BIN	0:0E	4	118	1B	{06:00}@	{06:00}@	record reaches an engine no-op opcode; verify in game; reads: 辞書５@
+m/MS0040.BIN	0:0E	5	122	1C	{07:00}@	{07:00}@	record reaches an engine no-op opcode; verify in game; reads: ＞どうしますか？@
+m/MS0040.BIN	0:0E	6	128	00	@	@	record reaches an engine no-op opcode; verify in game
+m/MS0040.BIN	0:0F	0	9	1F19	{01:19}	{01:19}	reads: われわれ
+m/MS0040.BIN	0:0F	1	12	00	{02:01}H	{02:01}H	reads: ペンタグランマH
+m/MS0040.BIN	0:0F	2	16	00	{03:01}	{03:01}	reads: そんなこと
+m/MS0040.BIN	0:0F	3	21	0C	{01:08}{02:05}{01:04}{02:06}{01:00}{02:07}{01:FC}{01:FF}	{01:08}{02:05}{01:04}{02:06}{01:00}{02:07}{01:FC}{01:FF}	reads: バエル出かける西野義雄どうしますか？早坂達也通信をする
+m/MS0040.BIN	0:0F	4	40	1B	Menu:             Cost:	Menu:             Cost:	
+m/MS0040.BIN	0:0F	5	113	1F19	{01:47}	{01:47}	reads: 
+m/MS0040.BIN	0:0F	6	116	00	{03:01}h	{03:01}h	reads: そんなことh
+m/MS0040.BIN	0:0F	7	120	00	{04:01}{=8B}{=00}{05:01}ｭ		reads: 切り{=8B}{=00}飛び道具ｭ
+m/MS0040.BIN	0:0F	8	128	00	{06:01}ﾍ		reads: ﾍ
+m/MS0040.BIN	0:0F	9	132	00	{07:01}{=F0}{=00}{08:01}	{07:01}{=F0}{=00}{08:01}	reads: ＞何をしますか？{=F0}{=00}達也
+m/MS0040.BIN	0:0F	10	144	12	\n{01:58}{01:FF}	\n{01:58}{01:FF}	reads: \n
+m/MS0040.BIN	0:0F	11	150	1B	Fakir Knock	Fakir Knock	
+m/MS0040.BIN	0:0F	12	188	1B	Tobio Spot	Tobio Spot	
+m/MS0040.BIN	0:0F	13	225	1B	Bloody Padma	Bloody Padma	
+m/MS0040.BIN	0:0F	14	264	1B	Trance Mule	Trance Mule	
+m/MS0040.BIN	0:0F	15	302	1B	Third Eye	Third Eye	
+m/MS0040.BIN	0:0F	16	338	1B	Causal Cream	Causal Cream	
+m/MS0040.BIN	0:0F	17	377	1B	Hypno Punch	Hypno Punch	
+m/MS0040.BIN	0:0F	18	415	1B	Esbat Yoni	Esbat Yoni	
+m/MS0040.BIN	0:0F	19	452	1B	Notarikon Tree	Notarikon Tree	
+m/MS0040.BIN	0:0F	20	493	1B	Orgone Fizz	Orgone Fizz	
+m/MS0040.BIN	0:10	0	4	1FD0	Who would you like to talk to?\n	Who would you like to talk to?\n	
+m/MS0040.BIN	0:11	0	9	1F19	{01:19}	{01:19}	reads: われわれ
+m/MS0040.BIN	0:11	1	12	00	{02:01}8	{02:01}8	reads: ペンタグランマ8
+m/MS0040.BIN	0:11	2	16	00	{03:01}U	{03:01}U	reads: そんなことU
+m/MS0040.BIN	0:11	3	20	00	{04:01}s	{04:01}s	reads: 切りs
+m/MS0040.BIN	0:11	4	24	00	{05:01}o	{05:01}o	reads: 飛び道具o
+m/MS0040.BIN	0:11	5	28	00	{06:01}k	{06:01}k	reads: k
+m/MS0040.BIN	0:11	6	32	00	{07:01}g	{07:01}g	reads: ＞何をしますか？g
+m/MS0040.BIN	0:11	7	36	00			
+m/MS0040.BIN	0:11	8	40	1B	Person:	Person:	
+m/MS0040.BIN	0:11	9	108	1B	Cancel	Cancel	
+m/MS0040.BIN	0:12	0	4	1FD2	Bartended:	Bartended:	
+m/MS0040.BIN	0:12	1	16	1FD3	Who will have this drink?\n	Who will have this drink?\n	
+m/MS0040.BIN	0:12	2	73	1FEF	{05:04}	{05:04}	reads: 
+m/MS0040.BIN	0:13	0	9	1F19	{01:19}	{01:19}	reads: われわれ
+m/MS0040.BIN	0:13	1	12	00	{02:01}7	{02:01}7	reads: ペンタグランマ7
+m/MS0040.BIN	0:13	2	16	00	{03:01}c	{03:01}c	reads: そんなことc
+m/MS0040.BIN	0:13	3	20	00	{04:01}_	{04:01}_	reads: 切り_
+m/MS0040.BIN	0:13	4	24	00	{05:01}[	{05:01}[	reads: 飛び道具[
+m/MS0040.BIN	0:13	5	28	00	{06:01}W	{06:01}W	reads: W
+m/MS0040.BIN	0:13	6	32	00	{07:01}S	{07:01}S	reads: ＞何をしますか？S
+m/MS0040.BIN	0:13	7	36	00			
+m/MS0040.BIN	0:13	8	40	1B	Party:	Party:	
+m/MS0040.BIN	0:14	0	12	1FD0	The party was thrown out of the store.\n	The party was thrown out of the store.\n	
+m/MS0040.BIN	0:14	1	60	1FD2	Bartender:	Bartender:	
+m/MS0040.BIN	0:14	2	72	1FD3	Thank you for your patronage. We hope to see you again.\n<wait>	Thank you for your patronage. We hope to see you again.\n<wait>	
+m/MS0040.BIN	0:15	0	2	1FD2	Bartender:	Bartender:	
+m/MS0040.BIN	0:15	1	14	1FD3	It appears that you do not have the money.\n<wait>	It appears that you do not have the money.\n<wait>	
+m/MS0040.BIN	0:16	0	18	1FEC	{05:01}	{05:01}	reads: 飛び道具
+m/MS0040.BIN	0:16	1	42	1E3E	は酒を飲め{02:0A}\n<wait>		reads: は酒を飲めません\n<wait>
+m/MS0040.BIN	0:16	2	78	0E	{01:49}	{01:49}	reads: 
+m/MS0040.BIN	0:16	3	81	00			
+m/MS0040.BIN	0:16	4	99	0E	{01:05}	{01:05}	reads: 山田
+m/MS0040.BIN	0:16	5	102	00	d{01:30}	d{01:30}	reads: d医師
+m/MS0040.BIN	0:16	6	106	00			
+m/MS0040.BIN	0:16	7	126	1E3E	 got slightly drunk.\n	 got slightly drunk.\n	
+m/MS0040.BIN	0:16	8	173	1E3E	 is completely drunk.\n	 is completely drunk.\n	
+m/MS0040.BIN	0:17	0	32	1E3E	 drank the Fakir Knock.\n<wait>	 drank the Fakir Knock.\n<wait>	
+m/MS0040.BIN	0:18	0	32	1E3E	 drank the Tobio Spot.\n<wait>	 drank the Tobio Spot.\n<wait>	
+m/MS0040.BIN	0:19	0	32	1E3E	 drank the Bloody Padma.\n<wait>	 drank the Bloody Padma.\n<wait>	
+m/MS0040.BIN	0:1A	0	32	1E3E	 drank the Trance Mule.\n<wait>	 drank the Trance Mule.\n<wait>	
+m/MS0040.BIN	0:1B	0	32	1E3E	 drank the Third Eye.\n<wait>	 drank the Third Eye.\n<wait>	
+m/MS0040.BIN	0:1C	0	32	1E3E	 drank the Causal Cream.\n<wait>	 drank the Causal Cream.\n<wait>	
+m/MS0040.BIN	0:1D	0	32	1E3E	 drank the Hypno Punch.\n<wait>	 drank the Hypno Punch.\n<wait>	
+m/MS0040.BIN	0:1E	0	32	1E3E	 drank the Esbat Yoni.\n<wait>	 drank the Esbat Yoni.\n<wait>	
+m/MS0040.BIN	0:1F	0	32	1E3E	 drank the Notarikon Tree.\n<wait>	 drank the Notarikon Tree.\n<wait>	
+m/MS0040.BIN	0:20	0	32	1E3E	 drank the Orgone Fizz.\n<wait>	 drank the Orgone Fizz.\n<wait>	

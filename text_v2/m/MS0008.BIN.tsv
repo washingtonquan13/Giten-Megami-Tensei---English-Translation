@@ -1,0 +1,560 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS0008.BIN	0:00	0	2	1FD0	There's no one here...\n	There's no one here...\n	
+m/MS0008.BIN	0:01	0	2	1FD2	Man:	Man:	
+m/MS0008.BIN	0:01	1	13	09	You know that building that appeared over the Government Office?\n<wait>People are saying that it's Bael's Castle!\n<wait>	You know that building that appeared over the Government Office?\n<wait>People are saying that it's Bael's Castle!\n<wait>	
+m/MS0008.BIN	0:01	2	133	1FD2	Man:	Man:	
+m/MS0008.BIN	0:01	3	139	1FD3	If that's true, then it's big news.\n<wait>	If that's true, then it's big news.\n<wait>	
+m/MS0008.BIN	0:01	4	185	09	Apparently, the demons who ran Roppongi are no more.\n<wait>	Apparently, the demons who ran Roppongi are no more.\n<wait>	
+m/MS0008.BIN	0:01	5	246	1FD2	Man:	Man:	
+m/MS0008.BIN	0:01	6	252	1FD3	Well, there's always Ginza to fall back on.\n<wait>	Well, there's always Ginza to fall back on.\n<wait>	
+m/MS0008.BIN	0:01	7	301	00	Oh, you came here to visit the red light district?\nIt's over that way.\n<wait>	Oh, you came here to visit the red light district?\nIt's over that way.\n<wait>	
+m/MS0008.BIN	0:02	0	2	1FD2	Cambion:	Cambion:	
+m/MS0008.BIN	0:02	1	17	09	I suspect that the age of demons might be upon us...\n<wait>	I suspect that the age of demons might be upon us...\n<wait>	
+m/MS0008.BIN	0:02	2	75	00	Roppongi is the one place in Tokyo where demons and humans get along.\nEven folks like me have our place here.\n<wait>	Roppongi is the one place in Tokyo where demons and humans get along.\nEven folks like me have our place here.\n<wait>	
+m/MS0008.BIN	0:02	3	193	1FD2	Cambion:	Cambion:	
+m/MS0008.BIN	0:02	4	203	1FD3	It sure as hell beats Shibuya!\n<wait>	It sure as hell beats Shibuya!\n<wait>	
+m/MS0008.BIN	0:03	0	2	1FD2	男性：	Man:	
+m/MS0008.BIN	0:03	1	15	09	例の建物{08:62}完成が近いらしいな。\n{08:5C}都庁の辺り{08:62}{08:0B}の園に{08:1A}るらしい。\n{02:0B}{08:6A}て近づけやしねぇ。\n<wait>		reads: 例の建物は、完成が近いらしいな。\nもう都庁の辺りは、悪魔の園になってるらしい。\n人間なんて近づけやしねぇ。\n<wait>
+m/MS0008.BIN	0:03	2	114	09	{08:47}前池袋が解放{03:0C}{08:82}ろ？\n		reads: この前池袋が解放されただろ？\n
+m/MS0008.BIN	0:03	3	142	09	{08:79}次は御茶ノ水の{08:0B}が、倒{03:0C}て{08:72}\n今度は{08:47}六本木のイポスが倒{03:0C}たし{08:72}\n<wait>		reads: その次は御茶ノ水の悪魔が、倒されて‥‥\n今度はこの六本木のイポスが倒されたし‥‥\n<wait>
+m/MS0008.BIN	0:03	4	216	1FD2	男性：	Man:	
+m/MS0008.BIN	0:03	5	224	1FD3	{08:73}に次々と{08:0B}が倒{03:0C}ていく{08:6A}て{02:08}\n一体、何者の仕業な{08:5F}？\n<wait>		reads: こんなに次々と悪魔が倒されていくなんて‥‥‥\n一体、何者の仕業なんだ？\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:03	6	283	00	市ヶ谷に{08:62}高度な医療技術を持{08:51}医者が{08:40}らしい。\n<wait>		reads: 市ヶ谷には、高度な医療技術を持った医者がいるらしい。\n<wait>
+m/MS0008.BIN	0:03	7	338	1FD2	男性：	Man:	
+m/MS0008.BIN	0:03	8	346	1FD3	{08:82}、サイバネティック医療の常と{08:4A}、治療費は鬼の{08:69}に高い{08:52}話{08:74}どな。\n<wait>	Cybernetic medicine treatment costs are outrageous, as usual, I hear.\n<wait>	reads: ただ、サイバネティック医療の常として、治療費は鬼のように高いって話だけどな。\n<wait>
+m/MS0008.BIN	0:03	9	421	1FD2	男性：	Man:	
+m/MS0008.BIN	0:03	10	429	1FD3	技術はピカ一で、ミレニアム総合病院{08:6A}ぞ足元にも及ばん{01:29}。\nまあ、金があっ{08:50}行{08:52}みる{08:46}だな。\n<wait>		reads: 技術はピカ一で、ミレニアム総合病院なんぞ足元にも及ばんそうだ。\nまあ、金があったら行ってみることだな。\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:04	0	2	1FD2	男性：	Man:	
+m/MS0008.BIN	0:04	1	15	09	新宿{08:6A}てよ、渋谷{08:42}近いだろ？\n<wait>		reads: 新宿なんてよ、渋谷から近いだろ？\n<wait>
+m/MS0008.BIN	0:04	2	52	1FD2	男性：	Man:	
+m/MS0008.BIN	0:04	3	60	1FD3	渋谷に天使が{08:40}ん{08:7D}、何であん{08:6B}放{08:53}くん{08:8C}な。\n<wait>	If there's really an angel in Shibuya, why leave it be, I wonder.\n<wait>	reads: 渋谷に天使がいるんなら、何であんなの放っとくんだろうな。\n<wait>
+m/MS0008.BIN	0:04	4	113	1FD2	男性：	Man:	
+m/MS0008.BIN	0:04	5	121	1FD3	{08:4D}とも、天使の噂自体がデマだ{08:51}んかね？\n<wait>	Or maybe the whole angel rumor was just a hoax?\n<wait>	reads: それとも、天使の噂自体がデマだったんかね？\n<wait>
+m/MS0008.BIN	0:04	6	170	09	歓楽街{08:72}無くなっち{08:20}のかぁ{02:08}\nしゃー{08:25}。銀座{08:56}行くかなぁ。\n<wait>		reads: 歓楽街‥‥無くなっちまったのかぁ‥‥‥\nしゃーない。銀座でも行くかなぁ。\n<wait>
+m/MS0008.BIN	0:04	7	236	1FD2	男性：	Man:	
+m/MS0008.BIN	0:04	8	244	1FD3	{08:56}、行く{08:71}がなぁ{02:08}\n<wait>		reads: でも、行くまでがなぁ‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:04	9	268	00	ちょいとばかりまと{08:20}金が入{08:51}んで、遊びに来た{08:5F}{08:84}{08:72}\n<wait>		reads: ちょいとばかりまとまった金が入ったんで、遊びに来たんだけど‥‥\n<wait>
+m/MS0008.BIN	0:04	10	327	1FD2	男性：	Man:	
+m/MS0008.BIN	0:04	11	335	1FD3	調子こいて遊んで{08:50}、あ{08:53}言う間に一文無しさ。\n{01:18}も気を付けなよ！\n<wait>	Get carried away having fun there, and you'll be broke before you know it.\n{01:18}	reads: 調子こいて遊んでたら、あっと言う間に一文無しさ。\nあんたも気を付けなよ！\n<wait>
+m/MS0008.BIN	0:05	0	2	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:05	1	15	09	新宿{08:42}、{08:0B}が攻めてくる{08:52}本当かしら？\n<wait>		reads: 新宿から、悪魔が攻めてくるって本当かしら？\n<wait>
+m/MS0008.BIN	0:05	2	60	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:05	3	68	1FD3	ああ！　{08:73}事{08:7D}渋谷の方に逃げとく{08:5F}{08:51}わ！\n<wait>	Ugh! If I'd known this would happen, I'd have fled to Shibuya instead!\n<wait>	reads: ああ！　こんな事なら渋谷の方に逃げとくんだったわ！\n<wait>
+m/MS0008.BIN	0:05	4	119	09	イポスが死{08:5F}の{08:26}い{08:84}さぁ{02:08}\n六本木がさびれて、荒れちゃう{08:52}のはイヤよね。\n<wait>		reads: イポスが死んだのはいいけどさぁ‥‥‥\n六本木がさびれて、荒れちゃうってのはイヤよね。\n<wait>
+m/MS0008.BIN	0:05	5	196	00	{08:47}辺り{08:52}、ごちゃごちゃし{08:2B}でしょ？\n{02:0B}も{08:0B}も一緒に{08:40}し{02:08}\n<wait>		reads: この辺りって、ごちゃごちゃしてるでしょ？\n人間も悪魔も一緒にいるし‥‥‥\n<wait>
+m/MS0008.BIN	0:05	6	260	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:05	7	268	1FD3	おまけに歓楽街を仕切っ{08:2B}のが、イポス{08:52}{08:0B}{08:6B}よね。\n{08:6A}か{08:72}安心{08:4A}暮らせ{08:25}{08:52}感じ。\n<wait>	On top of that, the entertainment district is run by a demon named Ipos.\nIt just doesn't feel safe living there.\n<wait>	reads: おまけに歓楽街を仕切ってるのが、イポスって悪魔なのよね。\nなんか‥‥安心して暮らせないって感じ。\n<wait>
+m/MS0008.BIN	0:06	0	2	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:06	1	15	09	恵比寿{08:62}さすが渋谷に近い{08:74}あ{08:52}、{08:0B}が少{08:25}らしいよ。\n<wait>		reads: 恵比寿は、さすが渋谷に近いだけあって、悪魔が少ないらしいよ。\n<wait>
+m/MS0008.BIN	0:06	2	74	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:06	3	82	1FD3	ケド、新宿があんな事に{08:16}し、恵比寿も{08:0B}が増{08:28}ん{08:81}{08:25}かしら？\n<wait>	With what happened to Shinjuku, won't Ebisu get more demons too?\n<wait>	reads: ケド、新宿があんな事になったし、恵比寿も悪魔が増えるんじゃないかしら？\n<wait>
+m/MS0008.BIN	0:06	4	151	09	{08:47}サイバーパーツ、飽きちゃ{08:51}なぁ。\n秋葉原に別{08:6B}買いに行こうかしら。\n<wait>		reads: このサイバーパーツ、飽きちゃったなぁ。\n秋葉原に別なの買いに行こうかしら。\n<wait>
+m/MS0008.BIN	0:06	5	227	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:06	6	235	1FD3	{08:4D}とも、うーーーんと頑張{08:52}、今より数倍{08:7F}奴を市ヶ谷で付け{08:54}らう{08:72}\nそう{08:68}手も{08:7B}わね{02:08}\n<wait>		reads: それとも、うーーーんと頑張って、今より数倍いい奴を市ヶ谷で付けてもらう‥‥\nそういう手もあるわね‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:06	7	324	00	市ヶ谷の{08:10}{08:62}昔軍隊が使{08:52}た{08:5E}み{08:4E}。\n{08:4D}を、あの日下{08:52}先生が買い取{08:51}{08:5F}{08:52}。\n<wait>		reads: 市ヶ谷のシェルターは、昔軍隊が使ってたものみたい。\nそれを、あの日下って先生が買い取ったんだって。\n<wait>
+m/MS0008.BIN	0:06	8	404	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:06	9	412	1FD3	一体、いくら位{08:4B}のかしらね？\n<wait>	I wonder just how much that would cost.\n<wait>	reads: 一体、いくら位したのかしらね？\n<wait>
+m/MS0008.BIN	0:07	0	2	1FD2	男性：	Man:	
+m/MS0008.BIN	0:07	1	15	09	{08:47}世に神{08:6A}{08:14}のかね。\n<wait>		reads: この世に神なんているのかね。\n<wait>
+m/MS0008.BIN	0:07	2	44	1FD2	男性：	Man:	
+m/MS0008.BIN	0:07	3	52	1FD3	まぁ、こ{08:5F}け{08:0B}がいりゃあ、神だ{08:52}い{08:54}おかしく{08:25}わな。\n<wait>	With this many demons around, a god being here wouldn't be strange.\n<wait>	reads: まぁ、こんだけ悪魔がいりゃあ、神だっていてもおかしくないわな。\n<wait>
+m/MS0008.BIN	0:07	4	110	00	銀座{08:62}宗教団体が３つも{08:7B}{01:29}。\n<wait>		reads: 銀座は、宗教団体が３つもあるそうだ。\n<wait>
+m/MS0008.BIN	0:07	5	147	1FD2	男性：	Man:	
+m/MS0008.BIN	0:07	6	155	1FD3	すっげーお堅い街だと思{08:52}{08:50}、違う{08:5F}よな。{08:48}が。\n俺は驚{08:64}よ。\n<wait>	I figured it'd be a real strait-laced town, but nope, not at all. This is.\nI was surprised.\n<wait>	reads: すっげーお堅い街だと思ってたら、違うんだよな。これが。\n俺は驚いたよ。\n<wait>
+m/MS0008.BIN	0:08	0	2	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:08	1	15	09	あんな悪夢の{08:69}な建物が、現実に{08:0B}達の手で建てられ{08:14}のを見ると{02:08}\n<wait>		reads: あんな悪夢のような建物が、現実に悪魔達の手で建てられているのを見ると‥‥‥\n<wait>
+m/MS0008.BIN	0:08	2	86	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:08	3	94	1FD3	救世主の伝説{08:52}奴を信じたく{08:59}わね。\n<wait>	It makes you want to believe in that messiah legend.\n<wait>	reads: 救世主の伝説って奴を信じたくなるわね。\n<wait>
+m/MS0008.BIN	0:08	4	134	00	大手町に{08:62}ミレニアム{08:52}宗教団体の総本山が{08:7B}わ。\n<wait>		reads: 大手町には、ミレニアムって宗教団体の総本山があるわ。\n<wait>
+m/MS0008.BIN	0:08	5	189	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:08	6	197	1FD3	何{08:56}、救世主の降臨を信じ{08:2B}らしい{08:84}{02:08}\nバカバカしいわよね。{08:7A}の来やし{08:25}わよ。\n<wait>		reads: 何でも、救世主の降臨を信じてるらしいけど‥‥‥\nバカバカしいわよね。そんなの来やしないわよ。\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:08	7	281	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:08	8	289	1FD3	救世主様に傷を治{08:4A}もら{08:51}ー、な～んて話も聞く{08:84}、{08:7A}のデマよ。\nき{08:53}！！\n<wait>	I've heard stories of the messiah healing wounds, but that's just a rumor.\nHas to be!!\n<wait>	reads: 救世主様に傷を治してもらったー、な～んて話も聞くけど、そんなのデマよ。\nきっと！！\n<wait>
+m/MS0008.BIN	0:09	0	2	1FD2	{08:0B}人：	Demonoid:	reads: 悪魔人：
+m/MS0008.BIN	0:09	1	15	09	ねぇ。都庁の上の建物{08:52}、{01:08}の物{08:6B}？\n<wait>		reads: ねぇ。都庁の上の建物って、バエルの物なの？\n<wait>
+m/MS0008.BIN	0:09	2	58	1FD2	{08:0B}人：	Demonoid:	reads: 悪魔人：
+m/MS0008.BIN	0:09	3	66	1FD3	あん{08:6B}が{08:5B}、東京を支配{08:8E}{08:69}に{08:16}ら、{01:16}達捕ま{08:52}\n労働させられちゃうのかしら{08:72}\n<wait>	If something like that ends up ruling over Tokyo again, {01:16}	reads: あんなのがまた、東京を支配するようになったら、あたし達捕まって\n労働させられちゃうのかしら‥‥\n<wait>
+m/MS0008.BIN	0:09	4	150	09	イポス{08:52}殺{03:0C}ちゃ{08:51}のね！\n{02:0B}がや{08:51}{08:52}噂{08:74}ど{02:08}\n<wait>		reads: イポスって殺されちゃったのね！\n人間がやったって噂だけど‥‥‥\n<wait>
+m/MS0008.BIN	0:09	5	202	1FD2	{08:0B}人：	Demonoid:	reads: 悪魔人：
+m/MS0008.BIN	0:09	6	210	1FD3	{08:7A}力を持{08:51}{02:0B}{08:6A}{08:14}のかしら？\n<wait>		reads: そんな力を持った人間なんているのかしら？\n<wait>; v1 had a translation here but it was written against a mis-read line (v1 control token {0B} has no counterpart in the v2 source line); re-translate
+m/MS0008.BIN	0:09	7	242	00	{08:0B}人{08:52}、大体何処に{08:56}{08:40}{08:84}、割と嫌われ{08:2B}のよね。\n<wait>		reads: 悪魔人って、大体何処にでもいるけど、割と嫌われてるのよね。\n<wait>
+m/MS0008.BIN	0:09	8	297	1FD2	{08:0B}人：	Demonoid:	reads: 悪魔人：
+m/MS0008.BIN	0:09	9	305	1FD3	{08:45}くらいよ、{01:16}達が肩身の狭い思いをしなくてすむの。\n<wait>	This is about the only place, {01:16}	reads: ここくらいよ、あたし達が肩身の狭い思いをしなくてすむの。\n<wait>
+m/MS0008.BIN	0:0A	0	24	1FD2	男性：	Man:	
+m/MS0008.BIN	0:0A	1	37	09	{08:48}以上強い{08:0B}が出てきて、俺達が虐げら{08:2F}{08:72}\n{08:7A}のはご免だぜ！\n		reads: これ以上強い悪魔が出てきて、俺達が虐げられる‥‥\nそんなのはご免だぜ！\n
+m/MS0008.BIN	0:0A	2	101	09	誰が倒{08:4B}か知らねぇ{08:84}よ、あんな大歓楽街ぶっ潰{08:4B}ん{08:81}あ、\n恨む男が{08:40}ん{08:81}ねぇか？\n		reads: 誰が倒したか知らねぇけどよ、あんな大歓楽街ぶっ潰したんじゃあ、\n恨む男がいるんじゃねぇか？\n
+m/MS0008.BIN	0:0A	3	180	00	{01:18}も歓楽街目当てで、{08:45}に来た{08:5F}ろ？\n<wait>		reads: あんたも歓楽街目当てで、ここに来たんだろ？\n<wait>
+m/MS0008.BIN	0:0A	4	223	1FD2	男性：	Man:	
+m/MS0008.BIN	0:0A	5	231	1FD3	{08:0B}が仕切っちゃ{08:40}が、満足度は高いぜ。\n{08:79}分金も飛ぶ{08:84}な{02:08}。\n<wait>		reads: 悪魔が仕切っちゃいるが、満足度は高いぜ。\nその分金も飛ぶけどな‥‥‥。\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:0B	0	24	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:0B	1	37	09	有明{08:52}昔、臨海コロシアムとか{08:68}のがあ{08:51}み{08:4E}{08:74}ど、\n今{08:81}、あそこに渡る手段も無くて荒れ放題よ。\n<wait>		reads: 有明って昔、臨海コロシアムとかいうのがあったみたいだけど、\n今じゃ、あそこに渡る手段も無くて荒れ放題よ。\n<wait>
+m/MS0008.BIN	0:0B	2	137	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:0B	3	145	1FD3	あそこに人が{08:40}と{08:4B}ら、よっぽど物好きね！！\n	If there are actually people living there, they must be real weirdos!!\n	reads: あそこに人がいるとしたら、よっぽど物好きね！！\n
+m/MS0008.BIN	0:0B	4	194	09	渋谷には天使が{08:40}{08:52}話{08:74}ど、御茶ノ水の話の他に天使が助けてく{08:60}{08:72}\n{08:52}話聞か{08:25}{08:81}{08:25}。\n<wait>		reads: 渋谷には天使がいるって話だけど、御茶ノ水の話の他に天使が助けてくれた‥‥\nって話聞かないじゃない。\n<wait>
+m/MS0008.BIN	0:0B	5	282	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:0B	6	290	1FD3	あいつら{08:52}薄情{08:6A}{08:81}{08:25}！？\n	Aren't those guys just heartless!?\n	reads: あいつらって薄情なんじゃない！？\n
+m/MS0008.BIN	0:0B	7	316	00	ミレニアム総合病院{08:52}イイらしいわよ。\n<wait>		reads: ミレニアム総合病院ってイイらしいわよ。\n<wait>
+m/MS0008.BIN	0:0B	8	361	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:0B	9	369	1FD3	設備の割に安いし、どこぞの高い金ふ{08:5F}くる医者より{08:7F}ん{08:81}{08:25}かしら。\n	It's cheap for the equipment they've got,\nprobably better than some doctor charging an arm and a leg.\n	reads: 設備の割に安いし、どこぞの高い金ふんだくる医者よりいいんじゃないかしら。\n
+m/MS0008.BIN	0:0C	0	24	1FD2	老婆：	Old Woman:	
+m/MS0008.BIN	0:0C	1	37	09	{08:72}{08:48}{08:42}、{08:0B}の時代に{08:59}か{08:72}\n{08:4D}とも、{02:0B}が残るか{02:08}見物{08:81}な{08:72}\n<wait>		reads: ‥‥これから、悪魔の時代になるか‥‥\nそれとも、人間が残るか‥‥‥見物じゃな‥‥\n<wait>
+m/MS0008.BIN	0:0C	2	103	09	イポスが倒{03:0C}たか{02:08}‥\n<wait>		reads: イポスが倒されたか‥‥‥‥\n<wait>
+m/MS0008.BIN	0:0C	3	132	1FD2	老婆：	Old Woman:	
+m/MS0008.BIN	0:0C	4	140	1FD3	{01:27}、あの{08:0B}を倒す者が現わ{08:2F}とは思わん{08:18}わい。\n{08:48}も、時代の流れと言う奴かの。\n長生きも{08:4A}みるもん{08:81}て。\n<wait>		reads: まさか、あの悪魔を倒す者が現われるとは思わんかったわい。\nこれも、時代の流れと言う奴かの。\n長生きもしてみるもんじゃて。\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:0C	5	249	1FD2	老婆：	Old Woman:	
+m/MS0008.BIN	0:0C	6	257	1FD3	お前さんも自ら命を縮{08:2E}{08:69}な事{08:62}{08:66}方がええよ。\n	You'd best not go doing anything that'll shorten your own life, dearie.\n	reads: お前さんも自ら命を縮めるような事は、せん方がええよ。\n
+m/MS0008.BIN	0:0C	7	303	00	わしゃ、今は{08:73}{08:56}昔は”{08:25}すばでえ”で、{08:7D}{08:4A}たもん{08:81}！\n<wait>		reads: わしゃ、今はこんなでも昔は”ないすばでえ”で、ならしてたもんじゃ！\n<wait>
+m/MS0008.BIN	0:0C	8	364	1FD2	老婆：	Old Woman:	
+m/MS0008.BIN	0:0C	9	372	1FD3	今{08:56}{08:76}{08:76}現役{08:81}い！\n<wait>と、言い{08:4E}所{08:81}が、やっぱり寄る年波には勝てんのう。\n	I'm still plenty spry, mind you!\n<wait>That's what I'd like to say, but old age catches up with us all.\n	reads: 今でもまだまだ現役じゃい！\n<wait>と、言いたい所じゃが、やっぱり寄る年波には勝てんのう。\n
+m/MS0008.BIN	0:0D	0	24	1FD2	{08:0B}人：	Demonoid:	reads: 悪魔人：
+m/MS0008.BIN	0:0D	1	37	09	都庁が{08:90}なろうが、{01:16}は関係無いしぃー。\n{01:16}はぁ、{08:63}が居心地良ければ{08:7F}のよ。\n		reads: 都庁がどうなろうが、あたしは関係無いしぃー。\nあたしはぁ、自分が居心地良ければいいのよ。\n
+m/MS0008.BIN	0:0D	2	117	09	歓楽街が潰れちゃ{08:52}、ザマーミロだわ！\n<wait>		reads: 歓楽街が潰れちゃって、ザマーミロだわ！\n<wait>
+m/MS0008.BIN	0:0D	3	162	1FD2	{08:0B}人：	Demonoid:	reads: 悪魔人：
+m/MS0008.BIN	0:0D	4	170	1FD3	いっつも{01:16}の事いじめてた女も、酷い目に遭っ{08:2B}に違{08:24}わ！\n	Always {01:16}	reads: いっつもあたしの事いじめてた女も、酷い目に遭ってるに違いないわ！\n
+m/MS0008.BIN	0:0D	5	226	00	ねぇ、聞いてよ！！\n歓楽街の女{08:0B}達{08:52}、人の事半端者とか言{08:51}り{08:4A}、いじ{08:2E}のよ！！\nむかつくぅーー！\n<wait>		reads: ねぇ、聞いてよ！！\n歓楽街の女悪魔達って、人の事半端者とか言ったりして、いじめるのよ！！\nむかつくぅーー！\n<wait>
+m/MS0008.BIN	0:0D	6	329	1FD2	{08:0B}人：	Demonoid:	reads: 悪魔人：
+m/MS0008.BIN	0:0D	7	337	1FD3	{02:08}{08:4D}{08:56}、{08:45}は{08:76}{08:7F}方らしいわ。\n<wait>		reads: ‥‥‥それでも、ここはまだいい方らしいわ。\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:0D	8	374	1FD2	{08:0B}人：	Demonoid:	reads: 悪魔人：
+m/MS0008.BIN	0:0D	9	382	1FD3	他の所{08:62}{02:0B}に石投げら{08:60}り、酷いと殺{03:0C}たり{08:8E}らしい{08:42}{08:72}\n		reads: 他の所は、人間に石投げられたり、酷いと殺されたりするらしいから‥‥\n; v1 had a translation here but it was written against a mis-read line (v1 control token {0B} has no counterpart in the v2 source line); re-translate
+m/MS0008.BIN	0:0E	0	32	1FD2	怪しい男：	Suspicious Man:	
+m/MS0008.BIN	0:0E	1	49	09	歓楽街が潰れち{08:20}ら、俺の商売成り立たねぇな。\n{02:08}銀座{08:56}行くかぁ{02:08}\n		reads: 歓楽街が潰れちまったら、俺の商売成り立たねぇな。\n‥‥‥銀座でも行くかぁ‥‥‥\n
+m/MS0008.BIN	0:0E	2	114	00	{08:72}お兄ちゃん、俺の作{08:51}精力剤買{08:52}か{08:25}？\n<wait>		reads: ‥‥お兄ちゃん、俺の作った精力剤買ってかない？\n<wait>
+m/MS0008.BIN	0:0E	3	161	1FD2	怪しい男：	Suspicious Man:	
+m/MS0008.BIN	0:0E	4	173	1FD3	効き目は保証{08:8E}よ。\n<wait>{08:74}ど、薬が切{08:60}後、{08:90}{08:59}か知らんがね{08:72}\nヘッヘッヘ{02:08}‥\n		reads: 効き目は保証するよ。\n<wait>だけど、薬が切れた後、どうなるか知らんがね‥‥\nヘッヘッヘ‥‥‥‥\n; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:0F	0	24	1FD2	{08:0B}人：	Demonoid:	reads: 悪魔人：
+m/MS0008.BIN	0:0F	1	37	09	上野{08:52}のは恐ろしい所らしいぜ。\n<wait>		reads: 上野ってのは恐ろしい所らしいぜ。\n<wait>
+m/MS0008.BIN	0:0F	2	76	1FD2	{08:0B}人：	Demonoid:	reads: 悪魔人：
+m/MS0008.BIN	0:0F	3	84	1FD3	バール兵共が大勢{08:40}{08:52}のも{01:29}が、あの辺のゴミの山の中に、真新しい\n衣類とかが、けっこう混じっ{08:2B}らしい。\n<wait>		reads: バール兵共が大勢いるってのもそうだが、あの辺のゴミの山の中に、真新しい\n衣類とかが、けっこう混じってるらしい。\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:0F	4	192	1FD2	{08:0B}人：	Demonoid:	reads: 悪魔人：
+m/MS0008.BIN	0:0F	5	200	1FD3	奴ら生贄{08:56}捧げ{08:2B}のか{08:72}？\n	Are they offering up sacrifices or something...?\n	reads: 奴ら生贄でも捧げてるのか‥‥？\n
+m/MS0008.BIN	0:0F	6	231	09	ミレニアムに救世主が{08:40}{08:52}話{08:74}どな、{08:79}救世主とやら{08:62}\n{08:76}少年らしいぜ！\n<wait>		reads: ミレニアムに救世主がいるって話だけどな、その救世主とやらは、\nまだ少年らしいぜ！\n<wait>
+m/MS0008.BIN	0:0F	7	307	1FD2	{08:0B}人：	Demonoid:	reads: 悪魔人：
+m/MS0008.BIN	0:0F	8	315	1FD3	{08:7A}ガキが救世主{08:52}言う{08:5F}っ{08:50}よ、俺達だ{08:52}救世主にな{08:2F}ぜ！\n	If a brat like that can be the messiah, then we could all be messiahs too!\n	reads: そんなガキが救世主って言うんだったらよ、俺達だって救世主になれるぜ！\n
+m/MS0008.BIN	0:0F	9	371	00	銀座で、母{08:59}金星{08:52}言う宗教団体が、母{08:59}愛を教えてく{08:2F}{08:5F}{08:52}よ。\n<wait>		reads: 銀座で、母なる金星って言う宗教団体が、母なる愛を教えてくれるんだってよ。\n<wait>
+m/MS0008.BIN	0:0F	10	440	1FD2	{08:0B}人：	Demonoid:	reads: 悪魔人：
+m/MS0008.BIN	0:0F	11	448	1FD3	まあ{08:4D}は建前で、実体は売春な{08:5F}{08:84}な。\n	Well, that's just the official story. In reality, it's prostitution.\n	reads: まあそれは建前で、実体は売春なんだけどな。\n
+m/MS0008.BIN	0:10	0	24	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:10	1	37	09	最近{08:0B}が、強力に{08:1A}き{08:14}気が{08:8E}{08:72}\n		reads: 最近悪魔が、強力になってきている気がする‥‥\n
+m/MS0008.BIN	0:10	2	74	09	イポスを倒{08:4B}の{08:52}、{02:0B}な{08:5F}{08:52}。\n私も{08:4D}位強くなり{08:4E}{08:72}！\n		reads: イポスを倒したのって、人間なんだって。\n私もそれ位強くなりたい‥‥！\n
+m/MS0008.BIN	0:10	3	127	00	神田の地下に{08:62}研究ばっかりし{08:2B}ミュータントが大勢{08:40}の。\n<wait>		reads: 神田の地下には、研究ばっかりしてるミュータントが大勢いるの。\n<wait>
+m/MS0008.BIN	0:10	4	190	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:10	5	198	1FD3	だ{08:42}、通称”学術研究都市”{08:52}言われ{08:2B}わ。\n	That's why it's nicknamed the "Academic Research City".\n	reads: だから、通称”学術研究都市”って言われてるわ。\n
+m/MS0008.BIN	0:11	0	24	1FD2	男性：	Man:	
+m/MS0008.BIN	0:11	1	37	09	八重洲は一面の廃墟{08:8F}、孤児が多い{08:5F}。\n<wait>		reads: 八重洲は一面の廃墟だが、孤児が多いんだ。\n<wait>
+m/MS0008.BIN	0:11	2	82	1FD2	男性：	Man:	
+m/MS0008.BIN	0:11	3	90	1FD3	孤児達でグループを作{08:52}暮ら{08:13}{01:29}が、本当に少年や少女{08:74}らしい。\n<wait>		reads: 孤児達でグループを作って暮らしているそうだが、本当に少年や少女だけらしい。\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:11	4	159	1FD2	男性：	Man:	
+m/MS0008.BIN	0:11	5	167	1FD3	大{08:4B}モンだよな！\n	That's really something!\n	reads: 大したモンだよな！\n
+m/MS0008.BIN	0:11	6	190	09	六本木の歓楽街が無く{08:16}{08:52}、俺達には銀座が{08:7B}さ！\n		reads: 六本木の歓楽街が無くなったって、俺達には銀座があるさ！\n
+m/MS0008.BIN	0:11	7	238	00	市ヶ谷に{08:62}すんげー技術の医者が{08:40}{08:5F}{08:52}さ。\n<wait>		reads: 市ヶ谷には、すんげー技術の医者がいるんだってさ。\n<wait>
+m/MS0008.BIN	0:11	8	287	1FD2	男性：	Man:	
+m/MS0008.BIN	0:11	9	295	1FD3	{08:74}ど、治療費が高いんで、そうおい{08:4D}とは行け{08:25}{08:5F}よな。\n	But the treatment costs are so high, you can't just go there on a whim.\n	reads: だけど、治療費が高いんで、そうおいそれとは行けないんだよな。\n
+m/MS0008.BIN	0:12	0	24	1FD2	男性：	Man:	
+m/MS0008.BIN	0:12	1	37	09	{02:08}{08:45}{08:74}の話{08:8F}、{01:08}の奴復活{08:4B}{08:5F}{08:52}よ。\nんで、あの都庁の上が、奴の新しい城な{08:5F}と！\n		reads: ‥‥‥ここだけの話だが、バエルの奴復活したんだってよ。\nんで、あの都庁の上が、奴の新しい城なんだと！\n
+m/MS0008.BIN	0:12	2	121	09	ミレニアムにさぁ、救世主だ{08:52}{08:68}少年が{08:40}{08:5F}よ。\n<wait>		reads: ミレニアムにさぁ、救世主だっていう少年がいるんだよ。\n<wait>
+m/MS0008.BIN	0:12	3	174	1FD2	男性：	Man:	
+m/MS0008.BIN	0:12	4	182	1FD3	{08:4D}が{08:90}やら本物らしいぜ。\n死にか{08:43}{02:0B}{08:71}、{03:10}させちまう{08:5F}と！\n		reads: それがどうやら本物らしいぜ。\n死にかけた人間まで、回復させちまうんだと！\n; v1 had a translation here but it was written against a mis-read line (v1 control token {0B} has no counterpart in the v2 source line); re-translate
+m/MS0008.BIN	0:12	5	241	00	サイバーパーツ買う{08:7D}、やっぱり秋葉原が{08:7F}ぜ！\n<wait>		reads: サイバーパーツ買うなら、やっぱり秋葉原がいいぜ！\n<wait>
+m/MS0008.BIN	0:12	6	294	1FD2	男性：	Man:	
+m/MS0008.BIN	0:12	7	302	1FD3	品揃えは東京一だ。{08:4D}に安いしな。\n<wait>	Best selection in all of Tokyo. And cheap too.\n<wait>	reads: 品揃えは東京一だ。それに安いしな。\n<wait>
+m/MS0008.BIN	0:12	8	343	1FD2	男性：	Man:	
+m/MS0008.BIN	0:12	9	351	1FD3	{08:82}、いかがわしい物は買わ{08:25}方が身の為だぜ。\n	Still, you're better off not buying anything shady.\n	reads: ただ、いかがわしい物は買わない方が身の為だぜ。\n
+m/MS0008.BIN	0:13	0	24	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:13	1	37	09	{08:0B}{08:52}{08:90}{08:4A}、権力欲と顕示欲が強いのかしら？\n<wait>		reads: 悪魔ってどうして、権力欲と顕示欲が強いのかしら？\n<wait>
+m/MS0008.BIN	0:13	2	86	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:13	3	94	1FD3	わざわざ都庁の上に、あんな物建てちゃ{08:51}り{08:4A}さ。\n	Going out of their way to build something like that on top of the Metropolitan Government Building, of all places.\n	reads: わざわざ都庁の上に、あんな物建てちゃったりしてさ。\n
+m/MS0008.BIN	0:13	4	147	09	歓楽街、潰れちゃ{08:51}み{08:4E}ね。\n<wait>		reads: 歓楽街、潰れちゃったみたいね。\n<wait>
+m/MS0008.BIN	0:13	5	182	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:13	6	190	1FD3	色ボケ男共にはイイ薬{08:6A}{08:81}{08:25}？\n	Isn't that just perfect for all those lovesick fools?\n	reads: 色ボケ男共にはイイ薬なんじゃない？\n
+m/MS0008.BIN	0:13	7	220	00	恵比寿界隈{08:62}渋谷の影響で{08:0B}が比較的少{08:25}の。\n<wait>		reads: 恵比寿界隈は、渋谷の影響で悪魔が比較的少ないの。\n<wait>
+m/MS0008.BIN	0:13	8	271	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:13	9	279	1FD3	だ{08:42}あの辺、{08:10}に入れ{08:19}人のたまり場み{08:4E}に{08:1A}るわ。\n<wait>	That's why that area's become a hangout for people who couldn't get into a shelter.\n<wait>	reads: だからあの辺、シェルターに入れなかった人のたまり場みたいになってるわ。\n<wait>
+m/MS0008.BIN	0:13	10	336	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:13	11	344	1FD3	賞金稼ぎとかも{08:8B}立ち寄るみ{08:4E}だ{08:42}、結構お店{08:6A}かも{08:7B}み{08:4E}よ。\n	Bounty hunters and the like seem to stop by there often too, so there's apparently quite a few shops around.\n	reads: 賞金稼ぎとかもよく立ち寄るみたいだから、結構お店なんかもあるみたいよ。\n
+m/MS0008.BIN	0:14	0	24	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:14	1	37	09	浅草に{08:7B}花屋敷{08:62}古く{08:42}{08:7B}遊園地だ{08:51}{08:5F}{08:52}。\n<wait>		reads: 浅草にある花屋敷は、古くからある遊園地だったんだって。\n<wait>
+m/MS0008.BIN	0:14	2	86	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:14	3	94	1FD3	今、そ{08:47}お化け屋敷に行くと、本当のお化けに会{08:28}{08:52}専らの噂よ{02:08}\n		reads: 今、そこのお化け屋敷に行くと、本当のお化けに会えるって専らの噂よ‥‥‥\n; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:14	4	161	09	ミレニアム総合病院{08:52}、あの大手町に{08:7B}ミレニアム教団の病院{08:6B}よね。\n<wait>		reads: ミレニアム総合病院って、あの大手町にあるミレニアム教団の病院なのよね。\n<wait>
+m/MS0008.BIN	0:14	5	234	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:14	6	242	1FD3	治療費も安くて{08:7F}らしい{08:84}{02:08}‥<wait>何だか入信させられそうで、嫌だわ。\n		reads: 治療費も安くていいらしいけど‥‥‥‥<wait>何だか入信させられそうで、嫌だわ。\n; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:14	7	310	00	品川には大きなホテルの廃墟が{08:7B}の。\n<wait>		reads: 品川には大きなホテルの廃墟があるの。\n<wait>
+m/MS0008.BIN	0:14	8	353	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:14	9	361	1FD3	最近そこに似つかわしく{08:25}、綺麗な女の子の姿が見{08:28}事が{08:7B}{08:5F}{08:52}{02:08}\n着{08:2B}物も、何だか古めかしい物だ{08:51}{08:52}話よ。\n<wait>		reads: 最近そこに似つかわしくない、綺麗な女の子の姿が見える事があるんだって‥‥‥\n着てる物も、何だか古めかしい物だったって話よ。\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:14	10	471	1FD2	女性：	Woman:	
+m/MS0008.BIN	0:14	11	479	1FD3	大破壊前の幽霊かしら{02:08}？\n		reads: 大破壊前の幽霊かしら‥‥‥？\n; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:15	0	24	1FD2	Cambion:	Cambion:	
+m/MS0008.BIN	0:15	1	39	09	I hear that there's a statue of this person called Saigou over at Ueno.\n<wait>	I hear that there's a statue of this person called Saigou over at Ueno.\n<wait>	
+m/MS0008.BIN	0:15	2	119	1FD2	Cambion:	Cambion:	
+m/MS0008.BIN	0:15	3	129	1FD3	Supposedly, it has been there since forever.\n	Supposedly, it has been there since forever.\n	
+m/MS0008.BIN	0:15	4	175	00	I guess that in the end, humans and demons are simply incompatible...\n<wait>	I guess that in the end, humans and demons are simply incompatible...\n<wait>	
+m/MS0008.BIN	0:15	5	253	1FD2	Cambion:	Cambion:	
+m/MS0008.BIN	0:15	6	263	1FD3	I wonder where that leaves folks like me?\n	I wonder where that leaves folks like me?\n	
+m/MS0008.BIN	0:16	0	24	1FD2	男性：	Man:	
+m/MS0008.BIN	0:16	1	37	09	都庁の上の建物{08:62}{01:08}城{08:52}噂だ。\nやっぱり奴は生きてた{08:5F}な。\n<wait>		reads: 都庁の上の建物は、バエル城って噂だ。\nやっぱり奴は生きてたんだな。\n<wait>
+m/MS0008.BIN	0:16	2	101	1FD2	男性：	Man:	
+m/MS0008.BIN	0:16	3	109	1FD3	{02:03}が殺{08:4B}の{08:62}影武者だ{08:51}訳だ！\n		reads: レジスタンスが殺したのは、影武者だった訳だ！\n; v1 had a translation here but it was written against a mis-read line (v1 control token {03} has no counterpart in the v2 source line); re-translate
+m/MS0008.BIN	0:16	4	144	09	上野に{08:62}バール教団の本拠地が{08:7B}と{08:68}噂だ。\n<wait>		reads: 上野には、バール教団の本拠地があるという噂だ。\n<wait>
+m/MS0008.BIN	0:16	5	193	1FD2	男性：	Man:	
+m/MS0008.BIN	0:16	6	201	1FD3	奴ら{08:62}{08:79}名の通り、バール{08:52}神を崇拝し{08:2B}らしい{08:5F}が{02:08}\nあの{01:08}と、何か関係が{08:7B}のかね{02:08}\n		reads: 奴らは、その名の通り、バールって神を崇拝してるらしいんだが‥‥‥\nあのバエルと、何か関係があるのかね‥‥‥\n; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:16	7	284	00	{08:47}前間違えて、歓楽街の上の方に行{08:52}{08:1F}{08:5F}。\nそう{08:4B}ら{08:0B}共が、う{08:69}よ{08:64}{08:5F}よ！\n<wait>		reads: この前間違えて、歓楽街の上の方に行ってしまったんだ。\nそうしたら悪魔共が、うようよいたんだよ！\n<wait>
+m/MS0008.BIN	0:16	8	364	1FD2	男性：	Man:	
+m/MS0008.BIN	0:16	9	372	1FD3	あいつら、こっちに気付くと、追っかけて来やがるし{02:08}‥\n{08:5C}、必死で逃げて{08:1E}よ！！\n		reads: あいつら、こっちに気付くと、追っかけて来やがるし‥‥‥‥\nもう、必死で逃げてきたよ！！\n; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:17	0	24	1FD2	男性：	Man:	
+m/MS0008.BIN	0:17	1	37	09	新宿界隈{08:62}悪夢の{08:69}な世界になっ{08:14}{01:29}。\n<wait>		reads: 新宿界隈は、悪夢のような世界になっているそうだ。\n<wait>
+m/MS0008.BIN	0:17	2	82	1FD2	男性：	Man:	
+m/MS0008.BIN	0:17	3	90	1FD3	気の弱い奴{08:7D}、通りか{08:18}{08:74}{08:56}死んじまうん{08:81}{08:25}か？\n	If you're the faint-hearted type, you'd probably die just from walking by, huh?\n	reads: 気の弱い奴なら、通りかかっただけでも死んじまうんじゃないか？\n
+m/MS0008.BIN	0:17	4	143	09	歓楽街のイポスを倒{08:4B}奴、すごいよな！\n<wait>		reads: 歓楽街のイポスを倒した奴、すごいよな！\n<wait>
+m/MS0008.BIN	0:17	5	188	1FD2	男性：	Man:	
+m/MS0008.BIN	0:17	6	196	1FD3	{08:76}、{08:7A}命知らずの奴が{08:64}{08:5F}なぁ！\n	Guess there are still folks reckless enough to try, huh!\n	reads: まだ、そんな命知らずの奴がいたんだなぁ！\n
+m/MS0008.BIN	0:17	7	228	00	市ヶ谷の日下{08:52}{01:30}に、サイバー化{08:4A}もら{08:51}{08:5F}よ！\n<wait>		reads: 市ヶ谷の日下って医師に、サイバー化してもらったんだよ！\n<wait>
+m/MS0008.BIN	0:17	8	281	1FD2	男性：	Man:	
+m/MS0008.BIN	0:17	9	289	1FD3	金はか{08:18}が、最高の物を付け{08:54}ら{08:51}{08:5F}。\n調子も最高{08:8A}{08:72}\nやっぱ、ちょ{08:53}高く{08:54}最高の物に{08:8E}のが{08:7F}ぜ。\n	Cost me a fortune, but I got the best gear they had.\nAnd it's running great too...\nGuess it's worth paying a bit extra for the best, after all.\n	reads: 金はかかったが、最高の物を付けてもらったんだ。\n調子も最高だし‥‥\nやっぱ、ちょっと高くても最高の物にするのがいいぜ。\n
+m/MS0008.BIN	0:18	0	2	1FD2	Man:	Man:	
+m/MS0008.BIN	0:18	1	8	1FD3	There's booze here! And plenty of chicks! I love it!\n<wait>	There's booze here! And plenty of chicks! I love it!\n<wait>	
+m/MS0008.BIN	0:18	2	69	1FD2	Man:	Man:	
+m/MS0008.BIN	0:18	3	75	1FD3	I don't know a single other place where you can fuck a demoness.\nIt's a totally different experience. I doubt I can ever go back\nto human women.\n<wait>	I don't know a single other place where you can fuck a demoness.\nIt's a totally different experience. I doubt I can ever go back\nto human women.\n<wait>	
+m/MS0008.BIN	0:19	0	2	1FD2	Man:	Man:	
+m/MS0008.BIN	0:19	1	8	1FD3	This place is ran by demons, apparently.\n<wait>	This place is ran by demons, apparently.\n<wait>	
+m/MS0008.BIN	0:19	2	57	1FD2	Man:	Man:	
+m/MS0008.BIN	0:19	3	63	1FD3	I guess that even they aren't all bad.\n<wait>	I guess that even they aren't all bad.\n<wait>	
+m/MS0008.BIN	0:19	4	110	1FD2	Man:	Man:	
+m/MS0008.BIN	0:19	5	116	1FD3	That Josephine especially. Aah...\nEvery single man who's had a go with her is--\n<wait>	That Josephine especially. Aah...\nEvery single man who's had a go with her is--\n<wait>	
+m/MS0008.BIN	0:19	6	204	1FD2	Man:	Man:	
+m/MS0008.BIN	0:19	7	210	1FD3	Oops! Forget that I said anything. The more popular she gets,\nthe longer I'll have to wait till I can visit her again.\n<wait>	Oops! Forget that I said anything. The more popular she gets,\nthe longer I'll have to wait till I can visit her again.\n<wait>	
+m/MS0008.BIN	0:1A	0	2	1FD2	Cambion:	Cambion:	
+m/MS0008.BIN	0:1A	1	12	1FD3	If you party too hard, you risk losing not just your money,\nbut your life as well.\n<wait>	If you party too hard, you risk losing not just your money,\nbut your life as well.\n<wait>	
+m/MS0008.BIN	0:1A	2	103	1FD2	Cambion:	Cambion:	
+m/MS0008.BIN	0:1A	3	113	1FD3	Keep that in mind, boy!\n<wait>	Keep that in mind, boy!\n<wait>	
+m/MS0008.BIN	0:1B	0	2	1FD2	Man:	Man:	
+m/MS0008.BIN	0:1B	1	8	1FD3	Man, this place is heaven. The hour I spent with the legendary\nJosephine is easily the most I've ever enjoyed life.\n<wait>	Man, this place is heaven. The hour I spent with the legendary\nJosephine is easily the most I've ever enjoyed life.\n<wait>	
+m/MS0008.BIN	0:1B	2	138	1FD2	Man:	Man:	
+m/MS0008.BIN	0:1B	3	144	1FD3	You should visit her too if you haven't already.\nYou won't regret it!\n<wait>	You should visit her too if you haven't already.\nYou won't regret it!\n<wait>	
+m/MS0008.BIN	0:1C	0	2	1FD2	Cambion:	Cambion:	
+m/MS0008.BIN	0:1C	1	12	1FD3	Anyone can come here as long as they've got the cash.\n<wait>	Anyone can come here as long as they've got the cash.\n<wait>	
+m/MS0008.BIN	0:1C	2	74	1FD2	Cambion:	Cambion:	
+m/MS0008.BIN	0:1C	3	84	1FD3	And when I say cash, I mean a hell of a lot of it.\n<wait>	And when I say cash, I mean a hell of a lot of it.\n<wait>	
+m/MS0008.BIN	0:1D	0	2	1FD2	Man:	Man:	
+m/MS0008.BIN	0:1D	1	8	1FD3	You can use the spring to heal yourself when you're feeling tired.\n<wait>	You can use the spring to heal yourself when you're feeling tired.\n<wait>	
+m/MS0008.BIN	0:1D	2	83	1FD2	Man:	Man:	
+m/MS0008.BIN	0:1D	3	89	1FD3	If you have the money, that is...\n<wait>	If you have the money, that is...\n<wait>	
+m/MS0008.BIN	0:1E	0	2	1FD2	Man:	Man:	
+m/MS0008.BIN	0:1E	1	8	1FD3	Beyond the door over there, you can find Ipos.\nHe runs this place.\n<wait>	Beyond the door over there, you can find Ipos.\nHe runs this place.\n<wait>	
+m/MS0008.BIN	0:1E	2	83	1FD2	Man:	Man:	
+m/MS0008.BIN	0:1E	3	89	1FD3	However, it is said that the way to his office\nis guarded both by demons and traps.\n<wait>	However, it is said that the way to his office\nis guarded both by demons and traps.\n<wait>	
+m/MS0008.BIN	0:1E	4	181	1FD2	Man:	Man:	
+m/MS0008.BIN	0:1E	5	187	1FD3	Those who enter are quickly forced to retreat.\nIf they manage to come back alive, that is...\n<wait>	Those who enter are quickly forced to retreat.\nIf they manage to come back alive, that is...\n<wait>	
+m/MS0008.BIN	0:1F	0	40	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	1	47	1FD3	I heard that we had intruders...\nDidn't expect them to be just a bunch of kids.\n<wait>	I heard that we had intruders...\nDidn't expect them to be just a bunch of kids.\n<wait>	
+m/MS0008.BIN	0:1F	2	135	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	3	142	1FD3	What do I even pay these people if they let scum like you through?\nPathetic!\n<wait>	What do I even pay these people if they let scum like you through?\nPathetic!\n<wait>	
+m/MS0008.BIN	0:1F	4	232	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	5	239	1FD3	Oh? Yes... I thought that you looked familiar...\nIf it isn't the little worm from Hatsudai!\n<wait>	Oh? Yes... I thought that you looked familiar...\nIf it isn't the little worm from Hatsudai!\n<wait>	
+m/MS0008.BIN	0:1F	6	344	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	7	351	1FD3	{08:86}も、{08:79}{08:69}な哀れな姿に{08:1A}{02:08}クククク！\n<wait>		reads: しかも、そのような哀れな姿になって‥‥‥クククク！\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:1F	8	408	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	9	415	1FD3	お前は見た{08:46}の無い顔{08:8F}{02:08}‥{08:47}少年の{08:0F}であろう？\n<wait>		reads: お前は見たことの無い顔だが‥‥‥‥この少年の仲間であろう？\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:1F	10	470	1FD2	{08:3C}：	Sanshirou:	reads: 三四郎：
+m/MS0008.BIN	0:1F	11	476	1FD3	ああ。\n<wait>	Yeah.\n<wait>	
+m/MS0008.BIN	0:1F	12	491	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	13	498	1FD3	哀れな奴よ。\n{08:47}少年と行動を共に{08:4B}ばかりに、{08:73}事に巻き込ま{08:2F}とはな{08:72}\n<wait>	What a pitiful fellow.\nTo think that simply traveling with this boy would drag you into something like this...\n<wait>	reads: 哀れな奴よ。\nこの少年と行動を共にしたばかりに、こんな事に巻き込まれるとはな‥‥\n<wait>
+m/MS0008.BIN	0:1F	14	574	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	15	581	1FD3	だ{08:42}とい{08:52}、貴様を見逃す訳では{08:25}。\nいかにふが{08:24}とは言え、倒{03:0C}た部下達の礼は{08:66}とな！\n<wait>		reads: だからといって、貴様を見逃す訳ではない。\nいかにふがいないとは言え、倒された部下達の礼はせんとな！\n<wait>; v1 had a translation here but it was written against a mis-read line (v1 control token {0C} has no counterpart in the v2 source line); re-translate
+m/MS0008.BIN	0:1F	16	673	1FD2	{08:3C}：	Sanshirou:	reads: 三四郎：
+m/MS0008.BIN	0:1F	17	679	1FD3	{02:08}ごちゃごちゃ言{08:52}ねぇで、かか{08:52}きやがれ！\n<wait>		reads: ‥‥‥ごちゃごちゃ言ってねぇで、かかってきやがれ！\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:1F	18	730	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	19	737	1FD3	クククク{02:08}！\n身の程知らずが！！\n<wait>		reads: クククク‥‥‥！\n身の程知らずが！！\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:1F	20	792	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	21	799	1FD3	ククク{02:08}貴様も物好きな奴よ{02:08}\n{08:73}ガキについて歩い{08:14}とはな{02:08}\n<wait>		reads: ククク‥‥‥貴様も物好きな奴よ‥‥‥\nこんなガキについて歩いているとはな‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:1F	22	865	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	23	872	1FD3	まとめて片付けてく{08:2F}わ！！\n<wait>	I'll finish you all off at once!!\n<wait>	reads: まとめて片付けてくれるわ！！\n<wait>
+m/MS0008.BIN	0:1F	24	907	1FD2	{08:31}：	Rui:	reads: 泪：
+m/MS0008.BIN	0:1F	25	913	1FD3	{02:08}そう簡単にいくかしらね{02:08}？\n<wait>		reads: ‥‥‥そう簡単にいくかしらね‥‥‥？\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:1F	26	950	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	27	957	1FD3	うる{08:49}っ！！　行くぞ！！！\n<wait>	Shut up!! Here I come!!!\n<wait>	reads: うるさいっ！！　行くぞ！！！\n<wait>
+m/MS0008.BIN	0:1F	28	1002	1FD2	{01:03}：		reads: ニュートン：; v1 had a translation here but it was written against a mis-read line (v1 control token {03} has no counterpart in the v2 source line); re-translate
+m/MS0008.BIN	0:1F	29	1008	1FD3	{02:08}‥グルルルル{02:08}‥\n<wait>		reads: ‥‥‥‥グルルルル‥‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:1F	30	1035	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	31	1042	1FD3	ほう{02:08}‥お前も、初台の生き残り{02:08}か。\nあの犬コロが{08:8B}生きて{08:64}{08:5E}だ！\n<wait>		reads: ほう‥‥‥‥お前も、初台の生き残り‥‥‥か。\nあの犬コロがよく生きていたものだ！\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:1F	32	1116	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	33	1123	1FD3	{03:0B}{08:4D}も{08:45}で終わりに{08:4A}く{08:2F}わ！\n		reads: しかし、それもここで終わりにしてくれるわ！\n; v1 had a translation here but it was written against a mis-read line (v1 control token {0B} has no counterpart in the v2 source line); re-translate
+m/MS0008.BIN	0:1F	34	1156	00	{04:FF}共々地獄に行くが{08:7F}！！\n<wait>		reads: 共々地獄に行くがいい！！\n<wait>
+m/MS0008.BIN	0:1F	35	1192	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	36	1199	1FD3	I'm shocked that you're still alive!\n<wait>	I'm shocked that you're still alive!\n<wait>	
+m/MS0008.BIN	0:1F	37	1244	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	38	1251	1FD3	Now, let me ask. What have you come here to do?\n	Now, let me ask. What have you come here to do?\n	
+m/MS0008.BIN	0:1F	39	1315	1FB2	To kill you	To kill you	menu option, declared width 20 columns
+m/MS0008.BIN	0:1F	40	1328	1FB2	Nothing	Nothing	menu option, declared width 20 columns
+m/MS0008.BIN	0:1F	41	1349	0F	{01:77}{02:FF}	{01:77}{02:FF}	reads: 
+m/MS0008.BIN	0:1F	42	1357	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	43	1364	1FD3	Oh... So revenge then...\nYou do know that killing me won't bring your friends back, right?\n	Oh... So revenge then...\nYou do know that killing me won't bring your friends back, right?\n	
+m/MS0008.BIN	0:1F	44	1471	1FB2	Don't care	Don't care	menu option, declared width 20 columns
+m/MS0008.BIN	0:1F	45	1483	1FB2	True...	True...	menu option, declared width 20 columns
+m/MS0008.BIN	0:1F	46	1504	0F	{01:15}{01:FF}	{01:15}{01:FF}	reads: いろいろ
+m/MS0008.BIN	0:1F	47	1512	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	48	1519	1FD3	Humans truly are senseless creatures...\n<wait>	Humans truly are senseless creatures...\n<wait>	
+m/MS0008.BIN	0:1F	49	1567	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	50	1574	1FD3	Why waste your short stay on this earth on something\nas pointless as revenge?\n<wait>	Why waste your short stay on this earth on something\nas pointless as revenge?\n<wait>	
+m/MS0008.BIN	0:1F	51	1660	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	52	1667	1FD3	Especially when... you're not going to find it here!\n<wait>	Especially when... you're not going to find it here!\n<wait>	
+m/MS0008.BIN	0:1F	53	1728	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	54	1735	1FD3	I will devour your whole, soul and all!\n<wait>	I will devour your whole, soul and all!\n<wait>	
+m/MS0008.BIN	0:1F	55	1788	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	56	1795	1FD3	だ{08:42}とい{08:52}{08:79}{08:7E}、おめおめと帰{08:4A}やる訳には行かん。\n<wait>	That said, I can't just let you go home with your tail between your legs.\n<wait>	reads: だからといってそのまま、おめおめと帰してやる訳には行かん。\n<wait>
+m/MS0008.BIN	0:1F	57	1852	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	58	1859	1FD3	いかにふが{08:24}者と{08:26}え、倒{03:0C}た下僕共の償い{08:62}{08:4A}もらわぬとな{02:08}\n<wait>		reads: いかにふがいない者とはいえ、倒された下僕共の償いは、してもらわぬとな‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:1F	59	1926	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	60	1933	1FD3	覚悟{08:8E}が{08:7F}{02:08}貴様ごときに倒{03:0C}る私では{08:25}{08:72}\n<wait>		reads: 覚悟するがいい‥‥‥貴様ごときに倒される私ではない‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:1F	61	1987	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	62	1994	1FD3	{08:72}フッ{08:72}ハハハハハッ！！\n面白いガキだ！！\n<wait>	...Heh... Hahahahaha!!\nWhat an amusing brat!!\n<wait>	reads: ‥‥フッ‥‥ハハハハハッ！！\n面白いガキだ！！\n<wait>
+m/MS0008.BIN	0:1F	63	2044	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	64	2051	1FD3	そう言{08:51}{08:42}とて、{08:79}{08:7E}おめおめと帰すと思うか？\n	Just because I said that, do you really think I'll let you go home safe and sound?\n	reads: そう言ったからとて、そのままおめおめと帰すと思うか？\n
+m/MS0008.BIN	0:1F	65	2112	1FB2	思う	I do	menu option, declared width 20 columns
+m/MS0008.BIN	0:1F	66	2118	1FB2	思わ{08:25}	I don't	reads: 思わない; menu option, declared width 20 columns
+m/MS0008.BIN	0:1F	67	2138	0F	{01:8D}	{01:8D}	reads: 
+m/MS0008.BIN	0:1F	68	2141	00			
+m/MS0008.BIN	0:1F	69	2146	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	70	2153	1FD3	{08:72}フン！　どこま{08:56}人をく{08:51}ガキだ！\n<wait>	...Hmph! What an insufferably cocky brat!\n<wait>	reads: ‥‥フン！　どこまでも人をくったガキだ！\n<wait>
+m/MS0008.BIN	0:1F	71	2196	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	72	2203	1FD3	{08:72}覚悟{08:8E}が{08:7F}。私の大事な下僕共を倒{08:4B}償いを{08:4A}もらうぞ{08:72}\n貴様の命でな{02:08}\n<wait>		reads: ‥‥覚悟するがいい。私の大事な下僕共を倒した償いをしてもらうぞ‥‥\n貴様の命でな‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:1F	73	2286	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	74	2293	1FD3	物分かりの良い{02:08}\n<wait>		reads: 物分かりの良い‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:1F	75	2318	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	76	2325	1FD3	私の大事な下僕共を殺{08:4B}、償いを{08:4A}もらうとし{08:69}{02:08}\n<wait>貴様の命でな！　覚悟{08:8E}が{08:7F}！！\n<wait>		reads: 私の大事な下僕共を殺した、償いをしてもらうとしよう‥‥‥\n<wait>貴様の命でな！　覚悟するがいい！！\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:1F	77	2418	1EBE	{01:00}	{01:00}	reads: 早坂達也
+m/MS0008.BIN	0:1F	78	2421	00	{04:FF}	{04:FF}	reads: 
+m/MS0008.BIN	0:1F	79	2424	00	d{04:FF}	d{04:FF}	reads: d
+m/MS0008.BIN	0:1F	80	2428	00	d	d	
+m/MS0008.BIN	0:1F	81	2442	1F82	ﾅ		
+m/MS0008.BIN	0:1F	82	2444	00	{06:1F}p	{06:1F}p	reads: p
+m/MS0008.BIN	0:1F	83	2449	00	{01:62}{=E9}{=00}	{01:62}{=E9}{=00}	reads: {=E9}{=00}
+m/MS0008.BIN	0:1F	84	2470	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	85	2477	1FD3	This... This can't be! How could I... be defeated?...\n<wait>	This... This can't be! How could I... be defeated?...\n<wait>	
+m/MS0008.BIN	0:1F	86	2539	1FD2	Ipos:	Ipos:	
+m/MS0008.BIN	0:1F	87	2546	1FD3	Hngh... If only... I had killed you...\n<wait>Then I'd been able to... obtain... even greater... power...\n<wait>	Hngh... If only... I had killed you...\n<wait>Then I'd been able to... obtain... even greater... power...\n<wait>	
+m/MS0008.BIN	0:1F	88	2661	1FD0	Ipos's body turns into ash, and scatters.\n<wait>	Ipos's body turns into ash, and scatters.\n<wait>	
+m/MS0008.BIN	0:1F	89	2713	1FC5	From within the ash, something shiny emerges.\n<wait>	From within the ash, something shiny emerges.\n<wait>	
+m/MS0008.BIN	0:1F	90	2818	1F77	It is Yuuka's right foot.\n<wait>	It is Yuuka's right foot.\n<wait>	
+m/MS0008.BIN	0:1F	91	2850	1FBA	Like her other body parts, it too can be seen faintly pulsating.\nYou've gotta store it quick before it dries up.\n<wait>	Like her other body parts, it too can be seen faintly pulsating.\nYou've gotta store it quick before it dries up.\n<wait>	
+m/MS0008.BIN	0:1F	92	2979	1E66	You grab the foot and leave the room.\n	You grab the foot and leave the room.\n	
+m/MS0008.BIN	0:20	0	32	1FD2	Man:	Man:	
+m/MS0008.BIN	0:20	1	38	1FD3	How strange... Where is she?\nI could've sworn that she told me to wait here...\n	How strange... Where is she?\nI could've sworn that she told me to wait here...\n	
+m/MS0008.BIN	0:21	0	36	1FD2	Wendy:	Wendy:	
+m/MS0008.BIN	0:21	1	44	1FD3	Thanks for taking away my job, asshat!\n<wait>	Thanks for taking away my job, asshat!\n<wait>	
+m/MS0008.BIN	0:21	2	91	1FD2	Wendy:	Wendy:	
+m/MS0008.BIN	0:21	3	99	1FD3	I guess I have no choice but to go back to entering\nmen's dreams and stealing Magnetite that way...\n<wait>	I guess I have no choice but to go back to entering\nmen's dreams and stealing Magnetite that way...\n<wait>	
+m/MS0008.BIN	0:21	4	207	1FD2	Wendy:	Wendy:	
+m/MS0008.BIN	0:21	5	215	1FD3	Hmm... I could also just turn into a human and do it that way...\n<wait>	Hmm... I could also just turn into a human and do it that way...\n<wait>	
+m/MS0008.BIN	0:21	6	292	1FD0	Wendy walks away...\n	Wendy walks away...\n	
+m/MS0008.BIN	0:21	7	347	1FD2	Wendy:	Wendy:	
+m/MS0008.BIN	0:21	8	363	1F04	{08:13}	{08:13}	reads: している
+m/MS0008.BIN	0:21	9	381	0E	Oh? Are you here for me, boy?\n	Oh? Are you here for me, boy?\n	
+m/MS0008.BIN	0:21	10	427	1FB2	Yes	Yes	menu option, declared width 20 columns
+m/MS0008.BIN	0:21	11	432	1FB2	No	No	menu option, declared width 20 columns
+m/MS0008.BIN	0:21	12	448	0F	{01:3E}{02:FF}	{01:3E}{02:FF}	reads: つもり
+m/MS0008.BIN	0:21	13	456	1FD2	Wendy:	Wendy:	
+m/MS0008.BIN	0:21	14	464	1FD3	The fee is 1000 macca.\nIf you think that's too much, then then away from my sight.\n	The fee is 1000 macca.\nIf you think that's too much, then then away from my sight.\n	
+m/MS0008.BIN	0:21	15	563	1FB2	Screw that!	Screw that!	menu option, declared width 20 columns
+m/MS0008.BIN	0:21	16	576	1FB2	Works for me	Works for me	menu option, declared width 20 columns
+m/MS0008.BIN	0:21	17	602	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS0008.BIN	0:21	18	605	00			
+m/MS0008.BIN	0:21	19	610	1FD2	Wendy:	Wendy:	
+m/MS0008.BIN	0:21	20	628	1F87	Hmm... Looks like you're a little low on Magnetite...\n	Hmm... Looks like you're a little low on Magnetite...\n	
+m/MS0008.BIN	0:21	21	702	1F5D	Ehehe. Thank you...\n<wait>	Ehehe. Thank you...\n<wait>	
+m/MS0008.BIN	0:21	22	730	1FD2	Wendy:	Wendy:	
+m/MS0008.BIN	0:21	23	738	1FD3	Let us enter the world of pleasure...\n<wait>	Let us enter the world of pleasure...\n<wait>	
+m/MS0008.BIN	0:21	24	808	1FD2	Wendy:	Wendy:	
+m/MS0008.BIN	0:21	25	816	1FD3	Ehehe. Ehehe. That was fun, boy. You got me all fired up.\n<wait>	Ehehe. Ehehe. That was fun, boy. You got me all fired up.\n<wait>	
+m/MS0008.BIN	0:21	26	882	1FD2	Wendy:	Wendy:	
+m/MS0008.BIN	0:21	27	890	1FD3	I hope to see you again soon!\n	I hope to see you again soon!\n	
+m/MS0008.BIN	0:21	28	921	00	Sorry, but it looks like you don't have the money.\n<wait>	Sorry, but it looks like you don't have the money.\n<wait>	
+m/MS0008.BIN	0:21	29	980	1FD2	Wendy:	Wendy:	
+m/MS0008.BIN	0:21	30	988	1FD3	Come back once you have more, okay?\n	Come back once you have more, okay?\n	
+m/MS0008.BIN	0:21	31	1029	1FD2	Wendy:	Wendy:	
+m/MS0008.BIN	0:21	32	1037	1FD3	Hmph. Well, feel free to come back if you change your mind!\n	Hmph. Well, feel free to come back if you change your mind!\n	
+m/MS0008.BIN	0:21	33	1098	00	{08:5B}今度遊んであげるわ。\n		reads: また今度遊んであげるわ。\n
+m/MS0008.BIN	0:21	34	1122	00	Sorry, but I already have another customer lined up. Maybe later?\n	Sorry, but I already have another customer lined up. Maybe later?\n	
+m/MS0008.BIN	0:22	0	24	1FD2	Belinda:	Belinda:	
+m/MS0008.BIN	0:22	1	39	09	If Bael comes back, I wonder what that means for us.\nNothing good, most likely...\n	If Bael comes back, I wonder what that means for us.\nNothing good, most likely...\n	
+m/MS0008.BIN	0:22	2	127	09	I don't really got anywhere to go...\nHmm... Maybe I'll just stay here?\n	I don't really got anywhere to go...\nHmm... Maybe I'll just stay here?\n	
+m/MS0008.BIN	0:22	3	199	00	{01:16}ぃー、{08:47}辺うろついて{08:50}イポス様に拾わ{08:60}の。\n{08:56}、{08:47}仕事、結構性に合っ{08:2B}{08:52}感じぃー。\n		reads: あたしぃー、この辺うろついてたらイポス様に拾われたの。\nでも、この仕事、結構性に合ってるって感じぃー。\n
+m/MS0008.BIN	0:23	0	32	1FD2	Josephine:	Josephine:	
+m/MS0008.BIN	0:23	1	63	1F04	{08:13}	{08:13}	reads: している
+m/MS0008.BIN	0:23	2	70	0C	Oh? Are you here for me, boy?\n	Oh? Are you here for me, boy?\n	
+m/MS0008.BIN	0:23	3	116	1FB2	Yes	Yes	menu option, declared width 20 columns
+m/MS0008.BIN	0:23	4	121	1FB2	No	No	menu option, declared width 20 columns
+m/MS0008.BIN	0:23	5	137	0F	{01:B6}{02:FF}	{01:B6}{02:FF}	reads: 
+m/MS0008.BIN	0:23	6	145	1FD2	Josephine:	Josephine:	
+m/MS0008.BIN	0:23	7	157	1FD3	Fair warning, I charge a bit more than the other girls.\nYes... 10000 macca. That's my fee.\n	Fair warning, I charge a bit more than the other girls.\nYes... 10000 macca. That's my fee.\n	
+m/MS0008.BIN	0:23	8	264	1FB2	Screw that!	Screw that!	menu option, declared width 20 columns
+m/MS0008.BIN	0:23	9	277	1FB2	Works for me	Works for me	menu option, declared width 20 columns
+m/MS0008.BIN	0:23	10	303	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS0008.BIN	0:23	11	306	00			
+m/MS0008.BIN	0:23	12	311	1FD2	Josephine:	Josephine:	
+m/MS0008.BIN	0:23	13	333	1F87	Hmm... Looks like you're a little low on Magnetite...\n	Hmm... Looks like you're a little low on Magnetite...\n	
+m/MS0008.BIN	0:23	14	410	1F5D	Ehehe. Thank you...\n<wait>	Ehehe. Thank you...\n<wait>	
+m/MS0008.BIN	0:23	15	438	1FD2	Josephine:	Josephine:	
+m/MS0008.BIN	0:23	16	450	1FD3	Now, let us enter the world of pleasure together...\n<wait>	Now, let us enter the world of pleasure together...\n<wait>	
+m/MS0008.BIN	0:23	17	510	1FD2	Josephine:	Josephine:	
+m/MS0008.BIN	0:23	18	522	1FD3	You're mine now... My own little slave...\n<wait>	You're mine now... My own little slave...\n<wait>	
+m/MS0008.BIN	0:23	19	596	1FD2	Josephine:	Josephine:	
+m/MS0008.BIN	0:23	20	608	1FD3	Ehehe. That was quite fun.\n<wait>	Ehehe. That was quite fun.\n<wait>	
+m/MS0008.BIN	0:23	21	643	1FD2	Josephine:	Josephine:	
+m/MS0008.BIN	0:23	22	655	1FD3	Whenever it may be, I hope to see you again.\n	Whenever it may be, I hope to see you again.\n	
+m/MS0008.BIN	0:23	23	701	00	Sorry, but it looks like you don't have enough money.\n<wait>	Sorry, but it looks like you don't have enough money.\n<wait>	
+m/MS0008.BIN	0:23	24	763	1FD2	Josephine:	Josephine:	
+m/MS0008.BIN	0:23	25	775	1FD3	How unfortunate... Come back once you have more, alright?\n	How unfortunate... Come back once you have more, alright?\n	
+m/MS0008.BIN	0:23	26	838	1FD2	Josephine:	Josephine:	
+m/MS0008.BIN	0:23	27	850	1FD3	Hmph. Well, feel free to come back if you change your mind!\n	Hmph. Well, feel free to come back if you change your mind!\n	
+m/MS0008.BIN	0:23	28	911	00	Sorry, but I already have another customer lined up. Maybe later?\n	Sorry, but I already have another customer lined up. Maybe later?\n	
+m/MS0008.BIN	0:24	0	35	1FD2	Navi:	Navi:	
+m/MS0008.BIN	0:24	1	42	1FD3	Dammit! Where am I gonna find another job where I can both\nearn Magnetite and feel good!?\n<wait>	Dammit! Where am I gonna find another job where I can both\nearn Magnetite and feel good!?\n<wait>	
+m/MS0008.BIN	0:24	2	140	1FD2	Navi:	Navi:	
+m/MS0008.BIN	0:24	3	147	1FD3	It's all your fault! Screw you, seriously!\n<wait>	It's all your fault! Screw you, seriously!\n<wait>	
+m/MS0008.BIN	0:24	4	198	1FD2	Navi:	Navi:	
+m/MS0008.BIN	0:24	5	205	1FD3	Back to being a wanderer I go! Argh!\n<wait>	Back to being a wanderer I go! Argh!\n<wait>	
+m/MS0008.BIN	0:24	6	254	1FD0	Furious, Navi walks out of the room.\n	Furious, Navi walks out of the room.\n	
+m/MS0008.BIN	0:24	7	322	1FD2	Navi:	Navi:	
+m/MS0008.BIN	0:24	8	342	1F04	{08:13}	{08:13}	reads: している
+m/MS0008.BIN	0:24	9	349	0C	Oh? Are you here for me, Mister?\n	Oh? Are you here for me, Mister?\n	
+m/MS0008.BIN	0:24	10	398	1FB2	Yes	Yes	menu option, declared width 20 columns
+m/MS0008.BIN	0:24	11	403	1FB2	No	No	menu option, declared width 20 columns
+m/MS0008.BIN	0:24	12	419	0F	{01:63}{02:FF}	{01:63}{02:FF}	reads: 
+m/MS0008.BIN	0:24	13	427	1FD2	Navi:	Navi:	
+m/MS0008.BIN	0:24	14	434	1FD3	The fee is 1000 macca.\nIf you think that's too much, then please leave.\n	The fee is 1000 macca.\nIf you think that's too much, then please leave.\n	
+m/MS0008.BIN	0:24	15	522	1FB2	Screw that!	Screw that!	menu option, declared width 20 columns
+m/MS0008.BIN	0:24	16	535	1FB2	Works for me	Works for me	menu option, declared width 20 columns
+m/MS0008.BIN	0:24	17	561	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS0008.BIN	0:24	18	564	00			
+m/MS0008.BIN	0:24	19	569	1FD2	Navi:	Navi:	
+m/MS0008.BIN	0:24	20	586	1F87	Hmm... Looks like you're a little low on Magnetite...\nSorry, but I'm going to have to turn you down after all.\n	Hmm... Looks like you're a little low on Magnetite...\nSorry, but I'm going to have to turn you down after all.\n	
+m/MS0008.BIN	0:24	21	717	1F5D	Ehehe. Thank you!\n<wait>	Ehehe. Thank you!\n<wait>	
+m/MS0008.BIN	0:24	22	743	1FD2	Navi:	Navi:	
+m/MS0008.BIN	0:24	23	750	1FD3	Now, let me make you feel good. Real good...\n<wait>	Now, let me make you feel good. Real good...\n<wait>	
+m/MS0008.BIN	0:24	24	827	1FD2	Navi:	Navi:	
+m/MS0008.BIN	0:24	25	834	1FD3	Ehehe. That was fun! You got me all fired up.\n<wait>	Ehehe. That was fun! You got me all fired up.\n<wait>	
+m/MS0008.BIN	0:24	26	888	1FD2	Navi:	Navi:	
+m/MS0008.BIN	0:24	27	895	1FD3	I hope to see you again soon!\n	I hope to see you again soon!\n	
+m/MS0008.BIN	0:24	28	926	00	Sorry, but it looks like you don't got the cash.\n<wait>	Sorry, but it looks like you don't got the cash.\n<wait>	
+m/MS0008.BIN	0:24	29	983	1FD2	Navi:	Navi:	
+m/MS0008.BIN	0:24	30	990	1FD3	Come back once you have more money, okay?\n	Come back once you have more money, okay?\n	
+m/MS0008.BIN	0:24	31	1037	1FD2	Navi:	Navi:	
+m/MS0008.BIN	0:24	32	1044	1FD3	Hmph. Well, feel free to come back if you change your mind!\n	Hmph. Well, feel free to come back if you change your mind!\n	
+m/MS0008.BIN	0:24	33	1105	00	{08:5B}今度遊んであげる！！\n		reads: また今度遊んであげる！！\n
+m/MS0008.BIN	0:25	0	32	1FD2	Sarah:	Sarah:	
+m/MS0008.BIN	0:25	1	40	1FD3	We earn Magnetite by pleasuring men.\n<wait>	We earn Magnetite by pleasuring men.\n<wait>	
+m/MS0008.BIN	0:25	2	85	1FD2	Sarah:	Sarah:	
+m/MS0008.BIN	0:25	3	93	1FD3	It's the most fair form of exchange imaginable.\n	It's the most fair form of exchange imaginable.\n	
+m/MS0008.BIN	0:26	0	32	1FD2	Melanie:	Melanie:	
+m/MS0008.BIN	0:26	1	55	1F04	{08:13}	{08:13}	reads: している
+m/MS0008.BIN	0:26	2	62	0C	Oh, Mister. Are you here to play with me?\n	Oh, Mister. Are you here to play with me?\n	
+m/MS0008.BIN	0:26	3	120	1FB2	Yes	Yes	menu option, declared width 20 columns
+m/MS0008.BIN	0:26	4	125	1FB2	No	No	menu option, declared width 20 columns
+m/MS0008.BIN	0:26	5	141	0F	{01:88}{02:FF}	{01:88}{02:FF}	reads: 
+m/MS0008.BIN	0:26	6	149	1FD2	Melanie:	Melanie:	
+m/MS0008.BIN	0:26	7	159	1FD3	My fee is 1000 macca.\nIf you think that's too much, then you're free to leave.\n	My fee is 1000 macca.\nIf you think that's too much, then you're free to leave.\n	
+m/MS0008.BIN	0:26	8	254	1FB2	Screw that!	Screw that!	menu option, declared width 20 columns
+m/MS0008.BIN	0:26	9	267	1FB2	Works for me	Works for me	menu option, declared width 20 columns
+m/MS0008.BIN	0:26	10	293	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS0008.BIN	0:26	11	296	00			
+m/MS0008.BIN	0:26	12	301	1FD2	Melanie:	Melanie:	
+m/MS0008.BIN	0:26	13	321	1F87	Hmm... Looks like you're a little low on Magnetite...\nSorry, but I'm going to have to turn you down after all.\n	Hmm... Looks like you're a little low on Magnetite...\nSorry, but I'm going to have to turn you down after all.\n	
+m/MS0008.BIN	0:26	14	452	1F5D	Ehehehe. Thank you!\n<wait>	Ehehehe. Thank you!\n<wait>	
+m/MS0008.BIN	0:26	15	480	1FD2	Melanie:	Melanie:	
+m/MS0008.BIN	0:26	16	490	1FD3	Now, allow me to guide you to the world of pleasure...\n<wait>	Now, allow me to guide you to the world of pleasure...\n<wait>	
+m/MS0008.BIN	0:26	17	577	1FD2	Melanie:	Melanie:	
+m/MS0008.BIN	0:26	18	587	1FD3	Ehehe. That was fun! You got me all fired up.\n<wait>	Ehehe. That was fun! You got me all fired up.\n<wait>	
+m/MS0008.BIN	0:26	19	641	1FD2	Melanie:	Melanie:	
+m/MS0008.BIN	0:26	20	651	1FD3	I hope to see you again soon!\n	I hope to see you again soon!\n	
+m/MS0008.BIN	0:26	21	682	00	Sorry, but it looks like you don't got the cash.\n<wait>	Sorry, but it looks like you don't got the cash.\n<wait>	
+m/MS0008.BIN	0:26	22	739	1FD2	Melanie:	Melanie:	
+m/MS0008.BIN	0:26	23	749	1FD3	Come back once you have more money, okay?\n	Come back once you have more money, okay?\n	
+m/MS0008.BIN	0:26	24	796	1FD2	Melanie:	Melanie:	
+m/MS0008.BIN	0:26	25	806	1FD3	Hmph. Well, feel free to come back if you change your mind!\n	Hmph. Well, feel free to come back if you change your mind!\n	
+m/MS0008.BIN	0:26	26	867	00	Ah! You came again!\n<wait>	Ah! You came again!\n<wait>	
+m/MS0008.BIN	0:26	27	895	1FD2	Melanie:	Melanie:	
+m/MS0008.BIN	0:26	28	905	1FD3	Sorry, but I already have another customer lined up. Maybe later?\n	Sorry, but I already have another customer lined up. Maybe later?\n	
+m/MS0008.BIN	0:27	0	32	1FD2	Kiara:	Kiara:	
+m/MS0008.BIN	0:27	1	40	1FD3	Where is he? I thought I told him to wait for me here...\n	Where is he? I thought I told him to wait for me here...\n	
+m/MS0008.BIN	0:28	0	39	1FD2	Miranda:	Miranda:	
+m/MS0008.BIN	0:28	1	62	1F04	{08:13}	{08:13}	reads: している
+m/MS0008.BIN	0:28	2	69	0C	Welcome... Are you here for me?\n	Welcome... Are you here for me?\n	
+m/MS0008.BIN	0:28	3	117	1FB2	Yes	Yes	menu option, declared width 20 columns
+m/MS0008.BIN	0:28	4	122	1FB2	No	No	menu option, declared width 20 columns
+m/MS0008.BIN	0:28	5	138	0F	{01:8D}{02:FF}	{01:8D}{02:FF}	reads: 
+m/MS0008.BIN	0:28	6	146	1FD2	Miranda:	Miranda:	
+m/MS0008.BIN	0:28	7	156	1FD3	The fee is 1000 macca.\nIf you think that's too much, then you're free to leave.\n	The fee is 1000 macca.\nIf you think that's too much, then you're free to leave.\n	
+m/MS0008.BIN	0:28	8	252	1FB2	Screw that!	Screw that!	menu option, declared width 20 columns
+m/MS0008.BIN	0:28	9	265	1FB2	Works for me	Works for me	menu option, declared width 20 columns
+m/MS0008.BIN	0:28	10	291	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS0008.BIN	0:28	11	294	00			
+m/MS0008.BIN	0:28	12	299	1FD2	Miranda:	Miranda:	
+m/MS0008.BIN	0:28	13	319	1F87	Hmm... Looks like you're a little low on Magnetite...\nSorry, but I'm going to have to turn you down after all.\n	Hmm... Looks like you're a little low on Magnetite...\nSorry, but I'm going to have to turn you down after all.\n	
+m/MS0008.BIN	0:28	14	453	1F5D	Ehehe. Thank you...\n<wait>	Ehehe. Thank you...\n<wait>	
+m/MS0008.BIN	0:28	15	481	1FD2	Miranda:	Miranda:	
+m/MS0008.BIN	0:28	16	491	1FD3	Now, allow me to guide you to the world of pleasure...\n<wait>	Now, allow me to guide you to the world of pleasure...\n<wait>	
+m/MS0008.BIN	0:28	17	578	1FD2	Miranda:	Miranda:	
+m/MS0008.BIN	0:28	18	588	1FD3	Ehehe. That was fun. You got me all fired up...\n<wait>	Ehehe. That was fun. You got me all fired up...\n<wait>	
+m/MS0008.BIN	0:28	19	644	1FD2	Miranda:	Miranda:	
+m/MS0008.BIN	0:28	20	654	1FD3	I hope to see you again soon!\n	I hope to see you again soon!\n	
+m/MS0008.BIN	0:28	21	685	00	Sorry, but it looks like you don't have enough money.\n<wait>	Sorry, but it looks like you don't have enough money.\n<wait>	
+m/MS0008.BIN	0:28	22	747	1FD2	Miranda:	Miranda:	
+m/MS0008.BIN	0:28	23	757	1FD3	Come back once you have more, okay?\n	Come back once you have more, okay?\n	
+m/MS0008.BIN	0:28	24	798	1FD2	Miranda:	Miranda:	
+m/MS0008.BIN	0:28	25	808	1FD3	Hmph. Well, feel free to come back if you change your mind!\n<wait>	Hmph. Well, feel free to come back if you change your mind!\n<wait>	
+m/MS0008.BIN	0:28	26	876	1FD2	Miranda:	Miranda:	
+m/MS0008.BIN	0:28	27	886	1FD3	ほんとに遊べるか{08:90}か{08:62}別に{08:4A}{02:08}ね。\n		reads: ほんとに遊べるかどうかは、別にして‥‥‥ね。\n; was @operand in v1; jp is now correct and needs translating
+m/MS0008.BIN	0:28	28	922	00	You came to see me again?\nBut I already have another customer lined up...\n<wait>	You came to see me again?\nBut I already have another customer lined up...\n<wait>	
+m/MS0008.BIN	0:28	29	1004	1FD2	Miranda:	Miranda:	
+m/MS0008.BIN	0:28	30	1014	1FD3	I'm really, really sorry...\n	I'm really, really sorry...\n	
+m/MS0008.BIN	0:29	0	32	1FD2	Mia:	Mia:	
+m/MS0008.BIN	0:29	1	44	1F7C	What a profitable day today has been!\nAnd it's all thanks to my sexy body!\n<wait>	What a profitable day today has been!\nAnd it's all thanks to my sexy body!\n<wait>	
+m/MS0008.BIN	0:29	2	127	1FD2	Mia:	Mia:	
+m/MS0008.BIN	0:29	3	133	1FD3	Eek! Wh-When did you get there! Stop staring at me, freak!\n	Eek! Wh-When did you get there! Stop staring at me, freak!\n	
+m/MS0008.BIN	0:29	4	193	00	Ehehe! I earned sooo much Magnetite today!\n	Ehehe! I earned sooo much Magnetite today!\n	
+m/MS0008.BIN	0:2A	0	35	1FD2	Shelly:	Shelly:	
+m/MS0008.BIN	0:2A	1	44	1FD3	You screwed everything up!\n<wait>	You screwed everything up!\n<wait>	
+m/MS0008.BIN	0:2A	2	79	1FD2	Shelly:	Shelly:	
+m/MS0008.BIN	0:2A	3	88	1FD3	There goes our easy supply of Magnetite!\n<wait>	There goes our easy supply of Magnetite!\n<wait>	
+m/MS0008.BIN	0:2A	4	141	1FD0	Furious, Shelly walks out of the room...\n	Furious, Shelly walks out of the room...\n	
+m/MS0008.BIN	0:2A	5	213	1FD2	Shelly:	Shelly:	
+m/MS0008.BIN	0:2A	6	235	1F04	{08:13}	{08:13}	reads: している
+m/MS0008.BIN	0:2A	7	242	0C	What is it, boy? Are you here to see me?\n	What is it, boy? Are you here to see me?\n	
+m/MS0008.BIN	0:2A	8	299	1FB2	Yes	Yes	menu option, declared width 20 columns
+m/MS0008.BIN	0:2A	9	304	1FB2	No	No	menu option, declared width 20 columns
+m/MS0008.BIN	0:2A	10	320	0F	{01:8E}{02:FF}	{01:8E}{02:FF}	reads: 
+m/MS0008.BIN	0:2A	11	328	1FD2	Shelly:	Shelly:	
+m/MS0008.BIN	0:2A	12	337	1FD3	My fee is 1000 macca.\nIf you think that's too much, then you're free to leave.\n	My fee is 1000 macca.\nIf you think that's too much, then you're free to leave.\n	
+m/MS0008.BIN	0:2A	13	432	1FB2	Screw that!	Screw that!	menu option, declared width 20 columns
+m/MS0008.BIN	0:2A	14	445	1FB2	Works for me	Works for me	menu option, declared width 20 columns
+m/MS0008.BIN	0:2A	15	471	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS0008.BIN	0:2A	16	474	00			
+m/MS0008.BIN	0:2A	17	479	1FD2	Shelly:	Shelly:	
+m/MS0008.BIN	0:2A	18	498	1F87	Hmm... Looks like you're a little low on Magnetite...\nSorry, but I'm going to have to turn you down after all.\n	Hmm... Looks like you're a little low on Magnetite...\nSorry, but I'm going to have to turn you down after all.\n	
+m/MS0008.BIN	0:2A	19	629	1A	Ehehe. Thank you...\n<wait>	Ehehe. Thank you...\n<wait>	
+m/MS0008.BIN	0:2A	20	657	1FD2	Shelly:	Shelly:	
+m/MS0008.BIN	0:2A	21	666	1FD3	Now, allow me to guide you to the world of pleasure...\n<wait>	Now, allow me to guide you to the world of pleasure...\n<wait>	
+m/MS0008.BIN	0:2A	22	753	1FD2	Shelly:	Shelly:	
+m/MS0008.BIN	0:2A	23	762	1FD3	Ehehe. That was fun! You got me all fired up.\n<wait>	Ehehe. That was fun! You got me all fired up.\n<wait>	
+m/MS0008.BIN	0:2A	24	816	1FD2	Shelly:	Shelly:	
+m/MS0008.BIN	0:2A	25	825	1FD3	I hope to see you again soon!\n	I hope to see you again soon!\n	
+m/MS0008.BIN	0:2A	26	856	00	Sorry, but it looks like you don't got enough money.\n<wait>	Sorry, but it looks like you don't got enough money.\n<wait>	
+m/MS0008.BIN	0:2A	27	917	1FD2	Shelly:	Shelly:	
+m/MS0008.BIN	0:2A	28	926	1FD3	I don't have time for poor people. Leave at once!\n	I don't have time for poor people. Leave at once!\n	
+m/MS0008.BIN	0:2A	29	981	1FD2	Shelly:	Shelly:	
+m/MS0008.BIN	0:2A	30	990	1FD3	Hmph. Well, feel free to come back if you change your mind!\n	Hmph. Well, feel free to come back if you change your mind!\n	
+m/MS0008.BIN	0:2A	31	1051	00	I'll make sure that you won't regret it...\n	I'll make sure that you won't regret it...\n	
+m/MS0008.BIN	0:2B	0	60	17	{04:FF}	{04:FF}	reads: 
+m/MS0008.BIN	0:2B	1	81	00	{02:1F}ﾈ		reads: ﾈ
+m/MS0008.BIN	0:2B	2	85	00	{04:FF}{03:19}	{04:FF}{03:19}	reads: 
+m/MS0008.BIN	0:2B	3	128	00	{01:19}	{01:19}	reads: われわれ
+m/MS0008.BIN	0:2B	4	154	00	{01:1E}ﾝ		reads: はやくﾝ
+m/MS0008.BIN	0:2B	5	165	0E	{01:0E}	{01:0E}	reads: わたしに
+m/MS0008.BIN	0:2B	6	168	00	({01:31}	({01:31}	reads: (無事
+m/MS0008.BIN	0:2B	7	172	00			
+m/MS0008.BIN	0:2B	8	252	1F4D	{03:19}	{03:19}	reads: 
+m/MS0008.BIN	0:2D	0	0	DATA	あらぁ？\n<wait>お{08:0F}が大変な状態{08:6B}に、{08:73}トコ来{08:2B}場合{08:81}{08:25}ん{08:81}{08:25}？\n治療{08:4A}{08:42}いらっしゃい。\n		reads: あらぁ？\n<wait>お仲間が大変な状態なのに、こんなトコ来てる場合じゃないんじゃない？\n治療してからいらっしゃい。\n

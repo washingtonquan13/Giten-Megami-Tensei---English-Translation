@@ -16,4 +16,6 @@ backs up every file it touches first.
 __all__ = [
     "container", "framing", "spans", "tokens", "tables", "dictionary",
     "files", "paths", "extract", "build", "check", "install", "stats",
+    "records", "refdecode", "vmops", "codec", "pool", "script", "width",
+    "extract_v2", "build_v2", "check_v2", "migrate",
 ]

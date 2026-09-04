@@ -1,0 +1,13 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS0041.BIN	0:00	0	7	1E07	Highway entrance\n	Highway entrance\n	
+m/MS0041.BIN	0:00	1	40	1FB2	Get on	Get on	menu option, declared width 20 columns
+m/MS0041.BIN	0:00	2	48	1FB2	Walk away	Walk away	menu option, declared width 20 columns
+m/MS0041.BIN	0:00	3	72	00	A{04:FF}	A{04:FF}	reads: A
+m/MS0041.BIN	0:01	0	7	1E07	Highway exit	Highway exit	
+m/MS0041.BIN	0:01	1	35	1FB2	Get off	Get off	menu option, declared width 20 columns
+m/MS0041.BIN	0:01	2	44	1FB2	Walk away	Walk away	menu option, declared width 20 columns
+m/MS0041.BIN	0:01	3	68	00	A{04:FF}	A{04:FF}	reads: A

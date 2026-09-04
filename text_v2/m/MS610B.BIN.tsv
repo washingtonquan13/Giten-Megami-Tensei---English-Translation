@@ -1,0 +1,134 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS610B.BIN	0:00	0	18	1F88	＞会話可能圏外{08:55}\n　会話対象に接近{08:4A}下{08:49}\n<wait>		reads: ＞会話可能圏外です\n　会話対象に接近して下さい\n<wait>
+m/MS610B.BIN	0:00	1	71	1F18	{01:05}	{01:05}	reads: 山田
+m/MS610B.BIN	0:00	2	80	0F	(	(	
+m/MS610B.BIN	0:00	3	82	00	{=EF}{=01}A	{=EF}{=01}A	
+m/MS610B.BIN	0:00	4	86	00	{=EF}{=08}Z	{=EF}{=08}Z	
+m/MS610B.BIN	0:00	5	90	00	{=EF}{=17}d	{=EF}{=17}d	
+m/MS610B.BIN	0:00	6	94	00	{=EF}{=39}	{=EF}{=39}	
+m/MS610B.BIN	2:01	0	18	1FD0	{08:90}やら　あまり敵意は無い{08:69}だ。\n	It doesn't seem\ntoo hostile.\n	@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: どうやら　あまり敵意は無いようだ。\n
+m/MS610B.BIN	2:01	1	57	1FBA	＞{02:06}\n	>{02:06}	@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: ＞どうしますか？\n
+m/MS610B.BIN	2:01	2	78	1FB2	成仏さ{08:2A}	Put to Rest	@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: 成仏させる; menu option, declared width 20 columns
+m/MS610B.BIN	2:01	3	88	1FB2	用を聞く	Hear Its Request	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	2:01	4	98	1FB2	ほ{08:53}く	Leave It	@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: ほっとく; menu option, declared width 20 columns
+m/MS610B.BIN	2:01	5	118	0F	{01:5E}	{01:5E}	@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: 
+m/MS610B.BIN	2:01	6	121	00	{02:01}ﾍ		@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: ペンタグランマﾍ
+m/MS610B.BIN	2:01	7	125	00			@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	2:01	8	134	1FFA	{02:09}・・\n		@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: ・・・・・\n
+m/MS610B.BIN	2:01	9	171	1FD0	{08:61}　何も起こら{08:19}！\n	But nothing\nhappened at all!\n	@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: しかし　何も起こらなかった！\n
+m/MS610B.BIN	2:01	10	237	00	{04:EF}は　{08:63}{08:42}声を掛{08:43}事を忘れ{08:14}{08:69}だ{02:09}\n<wait>		@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: は　自分から声を掛けた事を忘れているようだ・・・\n<wait>
+m/MS610B.BIN	2:01	11	302	1FB2	{08:7F}よ	Sure	@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: いいよ; menu option, declared width 20 columns
+m/MS610B.BIN	2:01	12	308	1FB2	やだ	Nope	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	2:01	13	326	0F	{01:7B}	{01:7B}	@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: 
+m/MS610B.BIN	2:01	14	341	0D	......\n<wait>	......\n<wait>	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	2:01	15	355	0D	......\n<wait>	......\n<wait>	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	2:02	0	3	0D	......\n<wait>	......\n<wait>	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	2:03	0	28	1FB2	Sure	Sure	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	2:03	1	34	1FB2	No way	No way	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	2:03	2	54	0F	{01:4F}	{01:4F}	@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: 
+m/MS610B.BIN	2:03	3	57	00			@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	2:03	4	66	1FFA	......\n	......\n	@partial; container's record count word disagrees with its body; editable, but verify this file in game; @skip
+m/MS610B.BIN	2:03	5	103	1FD0	However, nothing happened!\n	However, nothing happened!\n	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	2:03	6	166	00	{04:EF} ran away!\n<wait>	{04:EF} ran away!\n<wait>	@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads:  ran away!\n<wait>
+m/MS610B.BIN	2:03	7	200	00	{04:EF} tried to run away,\nbut wasn't able to!\n	{04:EF} tried to run away,\nbut wasn't able to!\n	@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads:  tried to run away,\nbut wasn't able to!\n
+m/MS610B.BIN	2:33	0	0	DATA	お願いだ		@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	3:02	0	216	1FB2	なだ{08:2E}	Soothe	@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: なだめる; menu option, declared width 20 columns
+m/MS610B.BIN	3:02	1	224	1FB2	逃げる	Flee	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	3:02	2	245	00	{=E3}{=10}	{=E3}{=10}	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	3:02	3	274	1FFA	{02:09}・・\n		@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: ・・・・・\n
+m/MS610B.BIN	3:02	4	298	00	{04:EF}は一体成仏{08:4B}\n		@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: は一体成仏した\n
+m/MS610B.BIN	3:02	5	318	18	{08:61}何も起こら{08:19}\n		@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: しかし何も起こらなかった\n
+m/MS610B.BIN	3:10	0	21	18	逃げられ{08:25}！\n		@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: 逃げられない！\n
+m/MS610B.BIN	3:06	0	47	1FB2	Attack	Attack	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	3:06	1	55	1FB2	Run away	Run away	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	3:06	2	78	00	{=E3}{=10}	{=E3}{=10}	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	3:11	0	21	00	{04:EF}は素早く動{08:64}！\n		@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: は素早く動いた！\n
+m/MS610B.BIN	3:2F	0	0	DATA	月の波動が心地よいぜ\n<wait>		@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	3:1F	0	0	DATA	{08:5C}{02:09}・・ほ{08:53}いてくれ\n<wait>		@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: もう・・・・・ほっといてくれ\n<wait>
+m/MS610B.BIN	3:30	0	0	DATA	ヒャーハハハハ！\n闇夜だぁ！　俺の時間だぁ！\n<wait>		@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	4:02	0	0	DATA	{08:81}あ　		@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: じゃあ　
+m/MS610B.BIN	4:08	0	0	DATA	{08:48}をやろう\n<wait>		@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: これをやろう\n<wait>
+m/MS610B.BIN	4:17	0	0	DATA	Why!?\n<wait>	Why!?\n<wait>	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	4:20	0	0	DATA	Thank you!\n<wait>	Thank you!\n<wait>	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	4:45	0	0	DATA	何だと！		@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	4:28	0	0	DATA	許さんぞぉ！\n<wait>		@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	4:53	0	0	DATA	ばかめぇ！		@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	4:7B	0	0	DATA	Die!\n<wait>	Die!\n<wait>	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	4:7F	0	0	DATA	Come here.\n<wait>	Come here.\n<wait>	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	4:91	0	0	DATA	He he he...\n<wait>	He he he...\n<wait>	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	9:15	0	9	00	{=E9}{=1C}	{=E9}{=1C}	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	9:1C	0	7	00	{=EF}{=42}	{=EF}{=42}	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	9:20	0	21	1FB2	Yes	Yes	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	9:20	1	26	1FB2	No	No	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	9:20	2	43	00	{=EF}{=47}	{=EF}{=47}	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	9:31	0	9	00	{=E9}{=32}	{=E9}{=32}	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	9:38	0	0	DATA	......\n	......\n	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	9:38	1	14	00	{=EF}{=4F}d	{=EF}{=4F}d	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	9:38	2	18	00	{=EF}{=50}	{=EF}{=50}	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	9:39	0	0	DATA	......\n	......\n	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	9:39	1	29	1FB2	Yes	Yes	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	9:39	2	34	1FB2	No	No	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	9:39	3	51	00	{=EF}{=52}	{=EF}{=52}	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	9:48	0	3	0D	...\n	...\n	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	9:4F	0	14	00	{=EF}{=54}	{=EF}{=54}	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	9:4F	1	27	00	{=EF}{=56}	{=EF}{=56}	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	14:3C	0	0	DATA	{08:7D}	{08:7D}	reads: なら
+m/MS610B.BIN	14:23	0	0	DATA	私は		
+m/MS610B.BIN	15:01	0	19	1F80	7	7	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:01	1	25	1E18	{02:09}・・\n		@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: ・・・・・\n
+m/MS610B.BIN	15:01	2	51	1FB2	Yes	Yes	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	15:01	3	56	1FB2	No	No	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	15:01	4	73	00	{=EF}{=07}	{=EF}{=07}	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:02	0	11	00	{04:EF} began to grin!\n	{04:EF} began to grin!\n	@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads:  began to grin!\n
+m/MS610B.BIN	15:02	1	45	1FB2	Stop	Stop	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	15:02	2	51	1FB2	Proceed	Proceed	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	15:02	3	72	0F	{01:13}	{01:13}	@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: あなたを
+m/MS610B.BIN	15:02	4	75	00			@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:02	5	88	00	{=E9}{=32}	{=E9}{=32}	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:03	0	13	00	{=EF}{=05}	{=EF}{=05}	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:07	0	17	1FE1	Suddenly, 	Suddenly, 	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:07	1	31	00	{04:EF} charges you!\n	{04:EF} charges you!\n	@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads:  charges you!\n
+m/MS610B.BIN	15:08	0	22	1FB2	Yes	Yes	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	15:08	1	27	1FB2	No	No	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	15:08	2	44	00	{=EF}{=0A}	{=EF}{=0A}	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:0A	0	24	1FB2	No way	No way	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	15:0A	1	32	1FB2	Body	Body	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	15:0A	2	38	1FB2	Fist	Fist	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	15:0A	3	44	1FB2	Food	Food	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	15:0A	4	63	00	{=EF}{=0C}{02:00}{=EF}{=0D}{03:00}{=EF}{=0E}	{=EF}{=0C}{02:00}{=EF}{=0D}{03:00}{=EF}{=0E}	@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: {=EF}{=0C}デビルバスター{=EF}{=0D}飛び道具{=EF}{=0E}
+m/MS610B.BIN	15:0E	0	13	00	{=EF}{=16}	{=EF}{=16}	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:0E	1	23	00	{04:FF}は食べ物を\n差し出{08:17}\n		@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: は食べ物を\n差し出した！\n
+m/MS610B.BIN	15:0F	0	4	00	{04:F0} has the Shelter Special\n	{04:F0} has the Shelter Special\n	@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads:  has the Shelter Special\n
+m/MS610B.BIN	15:0F	1	38	00	{=EF}{=11}\<	{=EF}{=11}\<	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:0F	2	42	00	{=EF}{=12}P	{=EF}{=12}P	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:0F	3	46	00	{=EF}{=13}Z	{=EF}{=13}Z	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:0F	4	50	00	{=EF}{=14}d	{=EF}{=14}d	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:0F	5	54	00	{=EF}{=15}	{=EF}{=15}	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:10	0	3	0D	in their inventory!\n	in their inventory!\n	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:11	0	3	0D	in their inventory!\n	in their inventory!\n	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:12	0	3	0D	in their inventory!\n	in their inventory!\n	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:13	0	3	0D	in their inventory!\n	in their inventory!\n	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:14	0	3	0D	in their inventory!\n	in their inventory!\n	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:15	0	3	0D	in their inventory!\n	in their inventory!\n	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:16	0	4	00	{04:F0} pretends to give\nthe demon food, but punches\nit as it lowers its guard!\n<wait>	{04:F0} pretends to give\nthe demon food, but punches\nit as it lowers its guard!\n<wait>	@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads:  pretends to give\nthe demon food, but punches\nit as it lowers its guard!\n<wait>
+m/MS610B.BIN	15:17	0	26	1FB2	Watch	Watch	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	15:17	1	33	1FB2	Ignore	Ignore	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	15:17	2	54	00	{=EF}{=1E}	{=EF}{=1E}	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:17	3	64	00	{04:EF} is creeping towards you.\n	{04:EF} is creeping towards you.\n	@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads:  is creeping towards you.\n
+m/MS610B.BIN	15:17	4	108	1FB2	Stop!	Stop!	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	15:17	5	115	1FB2	Let it	Let it	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	15:17	6	136	00	{=EF}{=2F}	{=EF}{=2F}	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:19	0	43	00	{04:EF}は気配が消{08:41}！\n		@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: は気配が消えた！\n
+m/MS610B.BIN	15:19	1	76	1FB2	立ち去る	Leave	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	15:19	2	86	1FB2	見回す	Look	@partial; container's record count word disagrees with its body; editable, but verify this file in game; menu option, declared width 20 columns
+m/MS610B.BIN	15:19	3	107	00	{=EF}{=1A}	{=EF}{=1A}	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:19	4	139	00	{04:EF}は気配が消{08:41}！\n		@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: は気配が消えた！\n
+m/MS610B.BIN	15:1A	0	9	00	{=EF}{=1C}d	{=EF}{=1C}d	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:1A	1	13	00	{=EF}{=1D}	{=EF}{=1D}	@partial; container's record count word disagrees with its body; editable, but verify this file in game
+m/MS610B.BIN	15:1B	0	0	DATA	何も起こら{08:19}！\n		@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: 何も起こらなかった！\n
+m/MS610B.BIN	15:1C	0	0	DATA	背後に{08:64}！\n<wait>		@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: 背後にいた！\n<wait>
+m/MS610B.BIN	15:1D	0	4	00	{04:EF}が{08:64}後に　\n何か落ちて{08:64}\n		@partial; container's record count word disagrees with its body; editable, but verify this file in game; reads: がいた後に　\n何か落ちていた\n

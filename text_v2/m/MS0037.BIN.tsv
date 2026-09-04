@@ -1,0 +1,98 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS0037.BIN	0:00	0	30	1FD0	There is a treasure chest here.\n	There is a treasure chest here.\n	
+m/MS0037.BIN	0:01	0	34	1FD0	There is an ornate chest here.\n	There is an ornate chest here.\n	
+m/MS0037.BIN	0:04	0	17	1FBA	Who will try to open it?\n	Who will try to open it?\n	
+m/MS0037.BIN	0:04	1	60	1F17	{01:08}	{01:08}	reads: バエル
+m/MS0037.BIN	0:04	2	65	00	7	7	
+m/MS0037.BIN	0:04	3	118	1FFA	...\n...\n...\n	...\n...\n...\n	
+m/MS0037.BIN	0:04	4	163	1F19	{01:15}	{01:15}	reads: いろいろ
+m/MS0037.BIN	0:04	5	166	00	{02:01}	{02:01}	reads: ペンタグランマ
+m/MS0037.BIN	0:04	6	174	11	{04:01}	{04:01}	reads: 切り
+m/MS0037.BIN	0:04	7	182	00	{06:01}ﾀ{01:FF}		reads: ﾀ
+m/MS0037.BIN	0:04	8	213	1F4C	{03:19}	{03:19}	reads: 
+m/MS0037.BIN	0:04	9	268	18	A trap has been set off!\n<wait>	A trap has been set off!\n<wait>	
+m/MS0037.BIN	0:04	10	306	1E3E	 found a trap.\nShould they try to disable it, or someone else?\n	 found a trap.\nShould they try to disable it, or someone else?\n	
+m/MS0037.BIN	0:04	11	385	1FB2	They	They	menu option, declared width 20 columns
+m/MS0037.BIN	0:04	12	391	1FB2	Someone else	Someone else	menu option, declared width 20 columns
+m/MS0037.BIN	0:04	13	405	1FB2	Back off	Back off	menu option, declared width 20 columns
+m/MS0037.BIN	0:04	14	427	0F	{01:05}	{01:05}	reads: 山田
+m/MS0037.BIN	0:04	15	430	00	{02:00}7	{02:00}7	reads: デビルバスター7
+m/MS0037.BIN	0:04	16	439	0E	o will try to disable the trap?\n	o will try to disable the trap?\n	
+m/MS0037.BIN	0:04	17	485	1FFA	...\n...\n...\n	...\n...\n...\n	
+m/MS0037.BIN	0:04	18	525	1F4C	{03:19}	{03:19}	reads: 
+m/MS0037.BIN	0:04	19	577	1E3E	 disabled the trap.\n<wait>	 disabled the trap.\n<wait>	
+m/MS0037.BIN	0:04	20	604	0C	The trap activated!\n<wait>	The trap activated!\n<wait>	
+m/MS0037.BIN	0:04	21	693	1EAA	{08:0B}が出現{08:17}\n{1E10:01023C}		reads: 悪魔が出現した！\n{1E10:01023C}
+m/MS0037.BIN	0:04	22	762	00	{04:FF}	{04:FF}	reads: 
+m/MS0037.BIN	0:04	23	765	00	d{04:FF}	d{04:FF}	reads: d
+m/MS0037.BIN	0:04	24	769	00	d	d	
+m/MS0037.BIN	0:05	0	34	1F81	{03:17}{03:19}	{03:17}{03:19}	reads: 
+m/MS0037.BIN	0:05	1	143	1EA2	You decide to back off.\n<wait>	You decide to back off.\n<wait>	
+m/MS0037.BIN	0:05	2	259	1E3E	 is in no working condition.\n<wait>	 is in no working condition.\n<wait>	
+m/MS0037.BIN	0:06	0	9	1F19	{01:19}	{01:19}	reads: われわれ
+m/MS0037.BIN	0:06	1	12	00	{02:01}7	{02:01}7	reads: ペンタグランマ7
+m/MS0037.BIN	0:06	2	16	00	{03:01}c	{03:01}c	reads: そんなことc
+m/MS0037.BIN	0:06	3	20	00	{04:01}_	{04:01}_	reads: 切り_
+m/MS0037.BIN	0:06	4	24	00	{05:01}[	{05:01}[	reads: 飛び道具[
+m/MS0037.BIN	0:06	5	28	00	{06:01}W	{06:01}W	reads: W
+m/MS0037.BIN	0:06	6	32	00	{07:01}S	{07:01}S	reads: ＞何をしますか？S
+m/MS0037.BIN	0:06	7	36	00			
+m/MS0037.BIN	0:06	8	40	1B	Member	Member	
+m/MS0037.BIN	0:07	0	47	1F19	{01:0D}	{01:0D}	reads: わたしを
+m/MS0037.BIN	0:07	1	50	00	{03:01}w	{03:01}w	reads: そんなことw
+m/MS0037.BIN	0:07	2	54	00	{04:01}A{01:05}{01:B5}{01:FF}A bomb explodes!\n	{04:01}A{01:05}{01:B5}{01:FF}A bomb explodes!\n	reads: 切りA山田A bomb explodes!\n
+m/MS0037.BIN	0:07	3	165	17	{03:17}	{03:17}	reads: 
+m/MS0037.BIN	0:07	4	184	1F89	...Thankfully, you were able to dodge in time.\n	...Thankfully, you were able to dodge in time.\n	
+m/MS0037.BIN	0:07	5	234	18	Poison needles are launched!\n	Poison needles are launched!\n	
+m/MS0037.BIN	0:07	6	287	1F89	...Thankfully, you were able to dodge in time.\n	...Thankfully, you were able to dodge in time.\n	
+m/MS0037.BIN	0:07	7	337	18	Poison needles are launched!\n	Poison needles are launched!\n	
+m/MS0037.BIN	0:07	8	379	18	Poison gas is released!\n	Poison gas is released!\n	
+m/MS0037.BIN	0:07	9	491	17	{03:17}	{03:17}	reads: 
+m/MS0037.BIN	0:07	10	510	1F89	...Thankfully, you were able to dodge in time.\n	...Thankfully, you were able to dodge in time.\n	
+m/MS0037.BIN	0:07	11	585	1F77	{1E10:0103}You have been cursed!\n	{1E10:0103}You have been cursed!\n	
+m/MS0037.BIN	0:08	0	58	1F19	{01:3A}	{01:3A}	reads: ひとり
+m/MS0037.BIN	0:08	1	61	00	{02:01}V	{02:01}V	reads: ペンタグランマV
+m/MS0037.BIN	0:08	2	65	00			
+m/MS0037.BIN	0:08	3	81	18	There is nothing inside the chest.\n	There is nothing inside the chest.\n	
+m/MS0037.BIN	0:08	4	119	0C	You obtained 	You obtained 	
+m/MS0037.BIN	0:08	5	136	1F02	 macca.\n	 macca.\n	
+m/MS0037.BIN	0:08	6	151	0C	You obtained \n	You obtained \n	
+m/MS0037.BIN	0:08	7	169	1F02	 MAG.\n	 MAG.\n	
+m/MS0037.BIN	0:09	0	44	1F4C	{03:16}	{03:16}	reads: 
+m/MS0037.BIN	0:09	1	47	00	{05:1F}{=E8}{=03}	{05:1F}{=E8}{=03}	reads: {=E8}{=03}
+m/MS0037.BIN	0:0D	0	11	0D	You optained nothing.\n<wait>	You optained nothing.\n<wait>	
+m/MS0037.BIN	0:0F	0	11	00	{01:1F}{=E8}{=03}	{01:1F}{=E8}{=03}	reads: おにいちゃん{=E8}{=03}
+m/MS0037.BIN	0:0F	1	35	1F83	 found 	 found 	
+m/MS0037.BIN	0:0F	2	53	1F01	{03:00}.\n	{03:00}.\n	reads: 飛び道具.\n
+m/MS0037.BIN	0:0F	3	63	1F01	{03:00} (	{03:00} (	reads: 飛び道具 (
+m/MS0037.BIN	0:0F	4	71	1F02	).\n<wait>	).\n<wait>	
+m/MS0037.BIN	0:0F	5	123	1F86	put 	put 	
+m/MS0037.BIN	0:0F	6	130	1F01	{03:13} (	{03:13} (	reads: 目の前に (
+m/MS0037.BIN	0:0F	7	138	1F02	) back.	) back.	
+m/MS0037.BIN	0:0F	8	148	0C	threw 	threw 	
+m/MS0037.BIN	0:0F	9	157	1F01	{03:13} (	{03:13} (	reads: 目の前に (
+m/MS0037.BIN	0:0F	10	165	1F02	) away.	) away.	
+m/MS0037.BIN	0:0F	11	178	18	You threw 	You threw 	
+m/MS0037.BIN	0:0F	12	191	1F01	{03:00} away.	{03:00} away.	reads: 飛び道具 away.
+m/MS0037.BIN	0:0F	13	219	1EF0	Obtained 	Obtained 	
+m/MS0037.BIN	0:0F	14	231	1F01	{03:00}	{03:00}	reads: 飛び道具
+m/MS0037.BIN	0:0F	15	243	1F7F	{03:01}{03:12}を  (		reads: そんなこと切りを  (
+m/MS0037.BIN	0:0F	16	256	1F02	).\n<wait>	).\n<wait>	
+m/MS0037.BIN	0:0F	17	265	1FBA	There is still 	There is still 	
+m/MS0037.BIN	0:0F	18	284	1F02	 of\n	 of\n	
+m/MS0037.BIN	0:0F	19	291	1F01	{03:00} left.\n<wait>	{03:00} left.\n<wait>	reads: 飛び道具 left.\n<wait>
+m/MS0037.BIN	0:0F	20	309	18	.\n<wait>	.\n<wait>	
+m/MS0037.BIN	0:0F	21	323	18	You found 	You found 	
+m/MS0037.BIN	0:0F	22	341	1F88	 (	 (	
+m/MS0037.BIN	0:0F	23	347	1F02	).\n	).\n	
+m/MS0037.BIN	0:0F	24	357	1F01	{03:00}.\n	{03:00}.\n	reads: 飛び道具.\n
+m/MS0037.BIN	0:12	0	73	00	{01:00}	{01:00}	reads: 早坂達也
+m/MS0037.BIN	0:12	1	87	00	{02:00}	{02:00}	reads: デビルバスター
+m/MS0037.BIN	0:12	2	101	00	{03:00}	{03:00}	reads: 飛び道具
+m/MS0037.BIN	0:12	3	115	00	{04:00}	{04:00}	reads: を唱えた！ 
+m/MS0037.BIN	0:12	4	129	00	{05:00}	{05:00}	reads: YesNoニュートン
+m/MS0037.BIN	0:12	5	142	1F51	{03:18}	{03:18}	reads: 

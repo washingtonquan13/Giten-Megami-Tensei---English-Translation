@@ -1,0 +1,237 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS610D.BIN	0:B2	0	7	00	裄\<		record reaches an engine no-op opcode; verify in game
+m/MS610D.BIN	0:B2	1	11	00	裃P		record reaches an engine no-op opcode; verify in game
+m/MS610D.BIN	0:B2	2	15	00	袿		record reaches an engine no-op opcode; verify in game
+m/MS610D.BIN	0:B2	3	29	1FB2	{08:0C}	Attack	record reaches an engine no-op opcode; verify in game; reads: 攻撃; menu option, declared width 12 columns
+m/MS610D.BIN	0:B2	4	33	1FB2	心を助{08:29}	Save Heart	record reaches an engine no-op opcode; verify in game; reads: 心を助ける; menu option, declared width 12 columns
+m/MS610D.BIN	0:B2	5	43	1FB2	{07:78}やる		record reaches an engine no-op opcode; verify in game; reads: 食べ物をやる; menu option, declared width 12 columns
+m/MS610D.BIN	0:B2	6	60	11	褫{01:00}襁{02:00}襄		record reaches an engine no-op opcode; verify in game; reads: 褫早坂達也襁デビルバスター襄
+m/MS610D.BIN	0:F3	0	0	UNTILED	疵		@untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim
+m/MS610D.BIN	0:F5	0	6	12	{=E3}{=0D}痼		
+m/MS610D.BIN	0:DD	0	27	00	褸		record reaches an engine no-op opcode; verify in game
+m/MS610D.BIN	0:DD	1	33	1F01	{=FC}{=FF}は{07:79}\n		record reaches an engine no-op opcode; verify in game; reads: {=FC}{=FF}は一体成仏した！\n
+m/MS610D.BIN	0:DD	2	59	1FB2	{08:26}	Yes	record reaches an engine no-op opcode; verify in game; reads: はい; menu option, declared width 6 columns
+m/MS610D.BIN	0:DD	3	63	1FB2	{08:27}	No	record reaches an engine no-op opcode; verify in game; reads: いいえ; menu option, declared width 6 columns
+m/MS610D.BIN	0:DD	4	76	11	褻{01:00}褶		record reaches an engine no-op opcode; verify in game; reads: 褻早坂達也褶
+m/MS610D.BIN	0:F6	0	9	0D	{07:36}）		reads: ・・・）
+m/MS610D.BIN	0:DE	0	3	0D	{07:36}\n	{07:36}\n	record reaches an engine no-op opcode; verify in game; reads: ・・・\n
+m/MS610D.BIN	0:DE	1	14	1FB2	{08:26}	Yes	record reaches an engine no-op opcode; verify in game; reads: はい; menu option, declared width 6 columns
+m/MS610D.BIN	0:DE	2	18	1FB2	{08:27}	No	record reaches an engine no-op opcode; verify in game; reads: いいえ; menu option, declared width 6 columns
+m/MS610D.BIN	0:DE	3	31	11	袿{01:00}襌		record reaches an engine no-op opcode; verify in game; reads: 袿早坂達也襌
+m/MS610D.BIN	0:DF	0	14	1FB2	{08:26}	Yes	record reaches an engine no-op opcode; verify in game; reads: はい; menu option, declared width 6 columns
+m/MS610D.BIN	0:DF	1	18	1FB2	{08:27}	No	record reaches an engine no-op opcode; verify in game; reads: いいえ; menu option, declared width 6 columns
+m/MS610D.BIN	0:DF	2	31	11	褝{01:00}{=E6}{=00}		record reaches an engine no-op opcode; verify in game; reads: 褝早坂達也{=E6}{=00}
+m/MS610D.BIN	0:FA	0	7	00	裹		record reaches an engine no-op opcode; verify in game
+m/MS610D.BIN	0:FA	1	24	1FB2	笑う	Grin	record reaches an engine no-op opcode; verify in game; menu option, declared width 12 columns
+m/MS610D.BIN	0:FA	2	30	1FB2	去る	Go!	record reaches an engine no-op opcode; verify in game; menu option, declared width 12 columns
+m/MS610D.BIN	0:FA	3	36	1FB2	拭いてあげる	Wipe Away	record reaches an engine no-op opcode; verify in game; menu option, declared width 12 columns
+m/MS610D.BIN	0:FA	4	59	11	襠{01:00}襞{02:00}{=E5}{=FD}		record reaches an engine no-op opcode; verify in game; reads: 襠早坂達也襞デビルバスター{=E5}{=FD}
+m/MS610D.BIN	0:FB	0	0	UNTILED	6）		@untiled; record does not tile (expression selector past end of record at 0x11); read-only, copied verbatim
+m/MS610D.BIN	0:FC	0	0	UNTILED	〟j / ]		@untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim
+m/MS610D.BIN	0:FD	0	2	30E	{05:1F}ﾖ		record reaches an engine no-op opcode; verify in game; reads: ﾖ
+m/MS610D.BIN	0:FD	1	6	00	{01:14}B	{01:14}B	record reaches an engine no-op opcode; verify in game; reads: あなたにB
+m/MS610D.BIN	0:FD	2	17	1F01	{=FC}{=FF}の\n		record reaches an engine no-op opcode; verify in game
+m/MS610D.BIN	0:FD	3	41	1FB2	まだ拭く	Wipe On	record reaches an engine no-op opcode; verify in game; menu option, declared width 8 columns
+m/MS610D.BIN	0:FD	4	51	1FB2	止{08:2E}	Stop	record reaches an engine no-op opcode; verify in game; reads: 止める; menu option, declared width 8 columns
+m/MS610D.BIN	0:FD	5	66	11	褓{01:00}{=E5}{=FE}		record reaches an engine no-op opcode; verify in game; reads: 褓早坂達也{=E5}{=FE}
+m/MS610D.BIN	0:FE	0	3	0D	{07:36}\n	{07:36}\n	record reaches an engine no-op opcode; verify in game; reads: ・・・\n
+m/MS610D.BIN	0:FE	1	9	0D	{07:36}\n	{07:36}\n	record reaches an engine no-op opcode; verify in game; reads: ・・・\n
+m/MS610D.BIN	0:FE	2	20	1FB2	続{08:29}	Go On	record reaches an engine no-op opcode; verify in game; reads: 続ける; menu option, declared width 6 columns
+m/MS610D.BIN	0:FE	3	26	1FB2	止{08:2E}	Stop	record reaches an engine no-op opcode; verify in game; reads: 止める; menu option, declared width 6 columns
+m/MS610D.BIN	0:FE	4	41	11	褓{01:00}{=E5}{=FF}		record reaches an engine no-op opcode; verify in game; reads: 褓早坂達也{=E5}{=FF}
+m/MS610D.BIN	0:FF	0	0	UNTILED	瘋 / ﾞ		@untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim
+m/MS610D.BIN	0:00	0	0	UNTILED	疵		@untiled; record does not tile (expression selector past end of record at 0x7); read-only, copied verbatim
+m/MS610D.BIN	0:E0	0	11	1FB2	もらう	Accept	record reaches an engine no-op opcode; verify in game; menu option, declared width 8 columns
+m/MS610D.BIN	0:E0	1	19	1FB2	遠慮する	Decline	record reaches an engine no-op opcode; verify in game; menu option, declared width 8 columns
+m/MS610D.BIN	0:E0	2	38	11	{=E6}{=01}{01:00}{=E6}{=06}	{=E6}{=01}{01:00}{=E6}{=06}	record reaches an engine no-op opcode; verify in game; reads: {=E6}{=01}早坂達也{=E6}{=06}
+m/MS610D.BIN	0:01	0	14	1FB2	{08:26}	Yes	record reaches an engine no-op opcode; verify in game; reads: はい; menu option, declared width 6 columns
+m/MS610D.BIN	0:01	1	18	1FB2	{08:27}	No	record reaches an engine no-op opcode; verify in game; reads: いいえ; menu option, declared width 6 columns
+m/MS610D.BIN	0:01	2	31	11	{=E6}{=02}{01:00}裔		record reaches an engine no-op opcode; verify in game; reads: {=E6}{=02}早坂達也裔
+m/MS610D.BIN	0:02	0	0	UNTILED	C / 疂 / ) / ﾐ / ｱ / ｲ噛ま / * / ｲ思い直す / ｲ / ｷ / ﾑ / 畤 / # / 畧		@untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim
+m/MS610D.BIN	0:03	0	7	00	裝		
+m/MS610D.BIN	0:04	0	12	1F01	{=FC}{=FF}は\n		
+m/MS610D.BIN	0:05	0	3	1F01	{=FC}{=FF}は		
+m/MS610D.BIN	0:06	0	11	1FB2	かま{08:2A}	Feed It	record reaches an engine no-op opcode; verify in game; reads: かませる; menu option, declared width 14 columns
+m/MS610D.BIN	0:06	1	19	1FB2	えんりょしとく	I'll Pass	record reaches an engine no-op opcode; verify in game; menu option, declared width 14 columns
+m/MS610D.BIN	0:06	2	44	11	裝{01:00}{=E6}{=07}		record reaches an engine no-op opcode; verify in game; reads: 裝早坂達也{=E6}{=07}
+m/MS610D.BIN	0:08	0	0	UNTILED	熬		@untiled; record does not tile (expression selector past end of record at 0x7); read-only, copied verbatim
+m/MS610D.BIN	0:E2	0	0	UNTILED	疱 / 痾 / ｺ / 矇 / 疊 / 6） / 痼		@untiled; record does not tile (expression selector past end of record at 0x24); read-only, copied verbatim
+m/MS610D.BIN	0:E3	0	0	UNTILED	ｫ( / K / u / v / W / w / ｺ / 熬 / は / x / ﾁ！ / 裘 / 疊 / 痼		@untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim
+m/MS610D.BIN	0:0C	0	3	1F01	{=F5}{=FF}が{07:73}\n		reads: {=F5}{=FF}がシェルター特製\n
+m/MS610D.BIN	0:0C	1	17	00	{=E6}{=0E}\<	{=E6}{=0E}\<	
+m/MS610D.BIN	0:0C	2	21	00	{=E6}{=0F}P	{=E6}{=0F}P	
+m/MS610D.BIN	0:0C	3	25	00	{=E6}{=10}Z	{=E6}{=10}Z	
+m/MS610D.BIN	0:0C	4	29	00	{=E6}{=11}d	{=E6}{=11}d	
+m/MS610D.BIN	0:0C	5	33	00	{=E6}{=12}	{=E6}{=12}	
+m/MS610D.BIN	0:0D	0	3	0D	{07:74}\n	{07:74}\n	reads: を持っていた！\n
+m/MS610D.BIN	0:0E	0	3	0D	{07:74}\n	{07:74}\n	reads: を持っていた！\n
+m/MS610D.BIN	0:0F	0	3	0D	{07:74}\n	{07:74}\n	reads: を持っていた！\n
+m/MS610D.BIN	0:10	0	3	0D	{07:74}\n	{07:74}\n	reads: を持っていた！\n
+m/MS610D.BIN	0:11	0	3	0D	{07:74}\n	{07:74}\n	reads: を持っていた！\n
+m/MS610D.BIN	0:12	0	3	0D	{07:74}\n	{07:74}\n	reads: を持っていた！\n
+m/MS610D.BIN	0:E4	0	0	UNTILED	ﾋ / 疣 / k / 痂		@untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim
+m/MS610D.BIN	0:E5	0	11	1FB2	{08:26}	Yes	record reaches an engine no-op opcode; verify in game; reads: はい; menu option, declared width 6 columns
+m/MS610D.BIN	0:E5	1	15	1FB2	{08:27}	No	record reaches an engine no-op opcode; verify in game; reads: いいえ; menu option, declared width 6 columns
+m/MS610D.BIN	0:E5	2	28	11	{=E6}{=13}{01:00}{=E6}{=14}	{=E6}{=13}{01:00}{=E6}{=14}	record reaches an engine no-op opcode; verify in game; reads: {=E6}{=13}早坂達也{=E6}{=14}
+m/MS610D.BIN	0:13	0	0	UNTILED	7） / 疼 / 7		@untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim
+m/MS610D.BIN	0:E6	0	0	UNTILED	Z / 畩		@untiled; record does not tile (expression selector past end of record at 0xD); read-only, copied verbatim
+m/MS610D.BIN	0:15	0	0	UNTILED	畚		@untiled; record does not tile (expression selector past end of record at 0x7); read-only, copied verbatim
+m/MS610D.BIN	0:E7	0	0	UNTILED	ｺ / 2 / ﾊ		@untiled; record does not tile (expression selector past end of record at 0x18); read-only, copied verbatim
+m/MS610D.BIN	0:16	0	3	0D	{07:CA}\n	{07:CA}\n	reads: 狂っている！\n
+m/MS610D.BIN	0:E8	0	11	1FB2	{02:00}	{02:00}	record reaches an engine no-op opcode; verify in game; reads: デビルバスター; menu option, declared width 14 columns
+m/MS610D.BIN	0:E8	1	15	1FB2	風来坊	Rover	record reaches an engine no-op opcode; verify in game; menu option, declared width 14 columns
+m/MS610D.BIN	0:E8	2	23	1FB2	無視	Skip	record reaches an engine no-op opcode; verify in game; menu option, declared width 14 columns
+m/MS610D.BIN	0:E8	3	29	1FB2	名前威力	Namesake	record reaches an engine no-op opcode; verify in game; menu option, declared width 14 columns
+m/MS610D.BIN	0:E8	4	48	11	{=E6}{=17}{01:00}{=E6}{=24}{02:00}{=E6}{=28}{03:00}{=E6}{=29}	{=E6}{=17}{01:00}{=E6}{=24}{02:00}{=E6}{=28}{03:00}{=E6}{=29}	record reaches an engine no-op opcode; verify in game; reads: {=E6}{=17}早坂達也{=E6}{=24}デビルバスター{=E6}{=28}飛び道具{=E6}{=29}
+m/MS610D.BIN	0:17	0	17	1FB2	{08:26}	Yes	record reaches an engine no-op opcode; verify in game; reads: はい; menu option, declared width 6 columns
+m/MS610D.BIN	0:17	1	21	1FB2	{08:27}	No	record reaches an engine no-op opcode; verify in game; reads: いいえ; menu option, declared width 6 columns
+m/MS610D.BIN	0:17	2	34	11	{=E6}{=18}{01:00}{=E6}{=21}	{=E6}{=18}{01:00}{=E6}{=21}	record reaches an engine no-op opcode; verify in game; reads: {=E6}{=18}早坂達也{=E6}{=21}
+m/MS610D.BIN	0:18	0	6	16	）\n		record reaches an engine no-op opcode; verify in game
+m/MS610D.BIN	0:18	1	44	1FB2	{08:26}	Yes	record reaches an engine no-op opcode; verify in game; reads: はい; menu option, declared width 6 columns
+m/MS610D.BIN	0:18	2	48	1FB2	{08:27}	No	record reaches an engine no-op opcode; verify in game; reads: いいえ; menu option, declared width 6 columns
+m/MS610D.BIN	0:18	3	61	11	{=E6}{=19}{01:00}{=E6}{=1C}	{=E6}{=19}{01:00}{=E6}{=1C}	record reaches an engine no-op opcode; verify in game; reads: {=E6}{=19}早坂達也{=E6}{=1C}
+m/MS610D.BIN	0:1A	0	0	DATA	{07:37}）		record reaches an engine no-op opcode; verify in game; reads: ・・・・・）
+m/MS610D.BIN	0:1A	1	7	1F01	{=FC}{=FF}は{07:C3}\n		record reaches an engine no-op opcode; verify in game; reads: {=FC}{=FF}は睨んでいる\n
+m/MS610D.BIN	0:1A	2	22	1FB2	目をそらす	Look Away	record reaches an engine no-op opcode; verify in game; menu option, declared width 10 columns
+m/MS610D.BIN	0:1A	3	34	1FB2	睨み返す	Glare	record reaches an engine no-op opcode; verify in game; menu option, declared width 10 columns
+m/MS610D.BIN	0:1A	4	53	11	褌{01:00}{=E6}{=1B}		record reaches an engine no-op opcode; verify in game; reads: 褌早坂達也{=E6}{=1B}
+m/MS610D.BIN	0:1B	0	0	DATA	{07:37}	{07:37}	reads: ・・・・・
+m/MS610D.BIN	0:1B	1	43	1F01	{=FC}{=FF}は		
+m/MS610D.BIN	0:1B	2	85	1F01	{=FC}{=FF}の\n		
+m/MS610D.BIN	0:1D	0	3	0D	{07:36}\n	{07:36}\n	reads: ・・・\n
+m/MS610D.BIN	0:1E	0	20	1FB2	{08:26}	Yes	record reaches an engine no-op opcode; verify in game; reads: はい; menu option, declared width 6 columns
+m/MS610D.BIN	0:1E	1	24	1FB2	{08:27}	No	record reaches an engine no-op opcode; verify in game; reads: いいえ; menu option, declared width 6 columns
+m/MS610D.BIN	0:1E	2	37	11	袒{01:00}{=E6}{=1F}		record reaches an engine no-op opcode; verify in game; reads: 袒早坂達也{=E6}{=1F}
+m/MS610D.BIN	0:21	0	7	00	{=E6}{=23}	{=E6}{=23}	
+m/MS610D.BIN	0:25	0	14	1FB2	{08:26}	Yes	record reaches an engine no-op opcode; verify in game; reads: はい; menu option, declared width 6 columns
+m/MS610D.BIN	0:25	1	18	1FB2	{08:27}	No	record reaches an engine no-op opcode; verify in game; reads: いいえ; menu option, declared width 6 columns
+m/MS610D.BIN	0:25	2	31	11	{=E6}{=26}{01:00}{=E6}{=27}	{=E6}{=26}{01:00}{=E6}{=27}	record reaches an engine no-op opcode; verify in game; reads: {=E6}{=26}早坂達也{=E6}{=27}
+m/MS610D.BIN	0:26	0	20	1F0E	）		
+m/MS610D.BIN	0:27	0	13	00	衾d		
+m/MS610D.BIN	0:27	1	17	00	袵		
+m/MS610D.BIN	0:28	0	0	DATA	{07:37}）\n		reads: ・・・・・）\n
+m/MS610D.BIN	0:29	0	2	30E	{04:0E}2	{04:0E}2	record reaches an engine no-op opcode; verify in game; reads: はの2
+m/MS610D.BIN	0:29	1	6	00	{=E6}{=2A}{07:36}	{=E6}{=2A}{07:36}	record reaches an engine no-op opcode; verify in game; reads: {=E6}{=2A}・・・
+m/MS610D.BIN	0:2A	0	25	1FB2	きみって誰	Who're You	record reaches an engine no-op opcode; verify in game; menu option, declared width 10 columns
+m/MS610D.BIN	0:2A	1	37	1FB2	元気さ	Fine	record reaches an engine no-op opcode; verify in game; menu option, declared width 10 columns
+m/MS610D.BIN	0:2A	2	45	1FB2	不調さ	Rough	record reaches an engine no-op opcode; verify in game; menu option, declared width 10 columns
+m/MS610D.BIN	0:2A	3	62	11	{=E6}{=2B}{01:00}{=E6}{=2D}{02:00}褥		record reaches an engine no-op opcode; verify in game; reads: {=E6}{=2B}早坂達也{=E6}{=2D}デビルバスター褥
+m/MS610D.BIN	0:2A	4	87	1FB2	当たり前	Sure Is	record reaches an engine no-op opcode; verify in game; menu option, declared width 12 columns
+m/MS610D.BIN	0:2A	5	97	1FB2	そうでも{08:25}	Not Really	record reaches an engine no-op opcode; verify in game; reads: そうでもない; menu option, declared width 12 columns
+m/MS610D.BIN	0:2A	6	118	11	{=E6}{=35}{01:00}褊		record reaches an engine no-op opcode; verify in game; reads: {=E6}{=35}早坂達也褊
+m/MS610D.BIN	0:2C	0	10	00	衾		
+m/MS610D.BIN	0:2D	0	0	UNTILED	F / 甎		@untiled; record does not tile (expression selector past end of record at 0xD); read-only, copied verbatim
+m/MS610D.BIN	0:2E	0	12	16	）\n		record reaches an engine no-op opcode; verify in game
+m/MS610D.BIN	0:2E	1	32	1FB2	{08:26}	Yes	record reaches an engine no-op opcode; verify in game; reads: はい; menu option, declared width 6 columns
+m/MS610D.BIN	0:2E	2	36	1FB2	{08:27}	No	record reaches an engine no-op opcode; verify in game; reads: いいえ; menu option, declared width 6 columns
+m/MS610D.BIN	0:2E	3	49	11	{=E6}{=2F}{01:00}{=E6}{=30}	{=E6}{=2F}{01:00}{=E6}{=30}	record reaches an engine no-op opcode; verify in game; reads: {=E6}{=2F}早坂達也{=E6}{=30}
+m/MS610D.BIN	0:30	0	17	1FB2	{08:26}	Yes	record reaches an engine no-op opcode; verify in game; reads: はい; menu option, declared width 6 columns
+m/MS610D.BIN	0:30	1	21	1FB2	{08:27}	No	record reaches an engine no-op opcode; verify in game; reads: いいえ; menu option, declared width 6 columns
+m/MS610D.BIN	0:30	2	34	11	{=E6}{=31}{01:00}{=E6}{=32}	{=E6}{=31}{01:00}{=E6}{=32}	record reaches an engine no-op opcode; verify in game; reads: {=E6}{=31}早坂達也{=E6}{=32}
+m/MS610D.BIN	0:32	0	17	1FB2	{08:26}	Yes	record reaches an engine no-op opcode; verify in game; reads: はい; menu option, declared width 6 columns
+m/MS610D.BIN	0:32	1	21	1FB2	{08:27}	No	record reaches an engine no-op opcode; verify in game; reads: いいえ; menu option, declared width 6 columns
+m/MS610D.BIN	0:32	2	34	11	{=E6}{=33}{01:00}{=E6}{=34}	{=E6}{=33}{01:00}{=E6}{=34}	record reaches an engine no-op opcode; verify in game; reads: {=E6}{=33}早坂達也{=E6}{=34}
+m/MS610D.BIN	0:E9	0	0	UNTILED	(		@untiled; record does not tile (expression selector past end of record at 0x11); read-only, copied verbatim
+m/MS610D.BIN	0:37	0	0	UNTILED	ﾑ / P / 袵 / \ / 〟j / ]）		@untiled; record does not tile (expression selector past end of record at 0x25); read-only, copied verbatim
+m/MS610D.BIN	0:38	0	3	1F01	{=FC}{=FF}は{07:23}）		record reaches an engine no-op opcode; verify in game; reads: {=FC}{=FF}はころんだ！）
+m/MS610D.BIN	0:38	1	19	1FB2	助{08:29}	Help	record reaches an engine no-op opcode; verify in game; reads: 助ける; menu option, declared width 6 columns
+m/MS610D.BIN	0:38	2	25	1FB2	襲う	Atk	record reaches an engine no-op opcode; verify in game; menu option, declared width 6 columns
+m/MS610D.BIN	0:38	3	40	11	{=E6}{=3A}{01:00}{=E6}{=39}	{=E6}{=3A}{01:00}{=E6}{=39}	record reaches an engine no-op opcode; verify in game; reads: {=E6}{=3A}早坂達也{=E6}{=39}
+m/MS610D.BIN	0:39	0	0	UNTILED	熬		@untiled; record does not tile (expression selector past end of record at 0x7); read-only, copied verbatim
+m/MS610D.BIN	0:3A	0	7	00	{=E6}{=3B}	{=E6}{=3B}	
+m/MS610D.BIN	0:3A	1	13	0D	{07:36}\n	{07:36}\n	reads: ・・・\n
+m/MS610D.BIN	0:3A	2	19	0D	{07:36}\n	{07:36}\n	reads: ・・・\n
+m/MS610D.BIN	0:3B	0	3	1F01	{=FC}{=FF}の		record reaches an engine no-op opcode; verify in game
+m/MS610D.BIN	0:3B	1	18	1FB2	あやまる	Oops	record reaches an engine no-op opcode; verify in game; menu option, declared width 10 columns
+m/MS610D.BIN	0:3B	2	28	1FB2	投げ返す	Throw It	record reaches an engine no-op opcode; verify in game; menu option, declared width 10 columns
+m/MS610D.BIN	0:3B	3	38	1FB2	投げ捨{08:2B}	Throw Away	record reaches an engine no-op opcode; verify in game; reads: 投げ捨てる; menu option, declared width 10 columns
+m/MS610D.BIN	0:3B	4	57	11	{=E6}{=3C}{01:00}襯{02:00}襷		record reaches an engine no-op opcode; verify in game; reads: {=E6}{=3C}早坂達也襯デビルバスター襷
+m/MS610D.BIN	0:3D	0	11	1FB2	{08:26}	Yes	record reaches an engine no-op opcode; verify in game; reads: はい; menu option, declared width 6 columns
+m/MS610D.BIN	0:3D	1	15	1FB2	{08:27}	No	record reaches an engine no-op opcode; verify in game; reads: いいえ; menu option, declared width 6 columns
+m/MS610D.BIN	0:3D	2	28	11	{=E6}{=3E}{01:00}襭		record reaches an engine no-op opcode; verify in game; reads: {=E6}{=3E}早坂達也襭
+m/MS610D.BIN	0:3E	0	17	1FB2	{08:26}	Yes	record reaches an engine no-op opcode; verify in game; reads: はい; menu option, declared width 6 columns
+m/MS610D.BIN	0:3E	1	21	1FB2	{08:27}	No	record reaches an engine no-op opcode; verify in game; reads: いいえ; menu option, declared width 6 columns
+m/MS610D.BIN	0:3E	2	34	11	{=E6}{=3F}{01:00}襦		record reaches an engine no-op opcode; verify in game; reads: {=E6}{=3F}早坂達也襦
+m/MS610D.BIN	0:3F	0	9	0D	{07:36}）\n		reads: ・・・）\n
+m/MS610D.BIN	0:42	0	0	UNTILED	2 / 襪 / 疇		@untiled; record does not tile (expression selector past end of record at 0xD); read-only, copied verbatim
+m/MS610D.BIN	0:44	0	0	UNTILED	畴 / 癡 / ﾖ / 裄 / 2 / 襴 / 畤 / 瘻 / 瓮		@untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim
+m/MS610D.BIN	0:47	0	0	UNTILED	疝 / 瓮		@untiled; record does not tile (expression selector past end of record at 0xA); read-only, copied verbatim
+m/MS610D.BIN	0:EA	0	0	UNTILED	F / 覃 / k		@untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim
+m/MS610D.BIN	0:EC	0	0	UNTILED	2 / 衾d / 袵		@untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim
+m/MS610D.BIN	0:ED	0	11	1FB2	{08:26}	Yes	record reaches an engine no-op opcode; verify in game; reads: はい; menu option, declared width 6 columns
+m/MS610D.BIN	0:ED	1	15	1FB2	{08:27}	No	record reaches an engine no-op opcode; verify in game; reads: いいえ; menu option, declared width 6 columns
+m/MS610D.BIN	0:ED	2	28	11	覈{01:00}覲		record reaches an engine no-op opcode; verify in game; reads: 覈早坂達也覲
+m/MS610D.BIN	0:49	0	6	0E	{07:37}）		reads: ・・・・・）
+m/MS610D.BIN	0:4A	0	14	1FB2	{08:26}	Yes	record reaches an engine no-op opcode; verify in game; reads: はい; menu option, declared width 6 columns
+m/MS610D.BIN	0:4A	1	18	1FB2	{08:27}	No	record reaches an engine no-op opcode; verify in game; reads: いいえ; menu option, declared width 6 columns
+m/MS610D.BIN	0:4A	2	31	11	覓{01:00}裔		record reaches an engine no-op opcode; verify in game; reads: 覓早坂達也裔
+m/MS610D.BIN	0:4B	0	0	UNTILED	ﾖ / 2 / ﾎ / ﾐ / ｱ / ｲ / ｲ無抵抗 / ｷ / ﾑ / 覘 / 覩 / " / 瀲 / 炳 / は / # / 畧		@untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim
+m/MS610D.BIN	0:4C	0	0	UNTILED	2 / 覡相手よりも / a		@untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim
+m/MS610D.BIN	0:4D	0	0	DATA	{07:CF}\n	{07:CF}\n	reads: こちらの動きを悟られた！\n
+m/MS610D.BIN	0:4E	0	18	00	覯		
+m/MS610D.BIN	0:4F	0	0	UNTILED	畛		@untiled; record does not tile (expression selector past end of record at 0x7); read-only, copied verbatim
+m/MS610D.BIN	0:EE	0	3	1F01	{=FC}{=FF}の		record reaches an engine no-op opcode; verify in game
+m/MS610D.BIN	0:EE	1	24	1FB2	まだ拭く	Wipe On	record reaches an engine no-op opcode; verify in game; menu option, declared width 8 columns
+m/MS610D.BIN	0:EE	2	34	1FB2	止{08:2E}	Stop	record reaches an engine no-op opcode; verify in game; reads: 止める; menu option, declared width 8 columns
+m/MS610D.BIN	0:EE	3	49	11	覽{01:00}觝		record reaches an engine no-op opcode; verify in game; reads: 覽早坂達也觝
+m/MS610D.BIN	0:54	0	19	00	{=FC}{=FF}の		record reaches an engine no-op opcode; verify in game
+m/MS610D.BIN	0:54	1	41	1FB2	まだ拭く	Wipe On	record reaches an engine no-op opcode; verify in game; menu option, declared width 8 columns
+m/MS610D.BIN	0:54	2	51	1FB2	止{08:2E}	Stop	record reaches an engine no-op opcode; verify in game; reads: 止める; menu option, declared width 8 columns
+m/MS610D.BIN	0:54	3	66	11	覿{01:00}觜		record reaches an engine no-op opcode; verify in game; reads: 覿早坂達也觜
+m/MS610D.BIN	0:55	0	12	14	@	@	record reaches an engine no-op opcode; verify in game
+m/MS610D.BIN	0:55	1	27	1FB2	走る	Run	record reaches an engine no-op opcode; verify in game; menu option, declared width 10 columns
+m/MS610D.BIN	0:55	2	33	1FB2	成仏さ{08:2A}	Put to Rest	record reaches an engine no-op opcode; verify in game; reads: 成仏させる; menu option, declared width 10 columns
+m/MS610D.BIN	0:55	3	52	11	觀{01:00}觚		record reaches an engine no-op opcode; verify in game; reads: 觀早坂達也觚
+m/MS610D.BIN	0:EF	0	3	0D	{07:37}\n	{07:37}\n	record reaches an engine no-op opcode; verify in game; reads: ・・・・・\n
+m/MS610D.BIN	0:EF	1	17	1FB2	{08:26}	Yes	record reaches an engine no-op opcode; verify in game; reads: はい; menu option, declared width 6 columns
+m/MS610D.BIN	0:EF	2	21	1FB2	{08:27}	No	record reaches an engine no-op opcode; verify in game; reads: いいえ; menu option, declared width 6 columns
+m/MS610D.BIN	0:EF	3	34	11	觧{01:00}觴		record reaches an engine no-op opcode; verify in game; reads: 觧早坂達也觴
+m/MS610D.BIN	0:5B	0	6	14	{=98}{=07}6）		
+m/MS610D.BIN	0:5B	1	29	0D	{07:36}\n	{07:36}\n	reads: ・・・\n
+m/MS610D.BIN	0:F0	0	10	00	觸		
+m/MS610D.BIN	0:5C	0	10	00	訛		
+m/MS610D.BIN	0:5D	0	6	1F01	{=FC}{=FF}は{07:CC}\n		record reaches an engine no-op opcode; verify in game; reads: {=FC}{=FF}はしんみりしている！\n
+m/MS610D.BIN	0:5D	1	21	1FB2	{08:0C}	Attack	record reaches an engine no-op opcode; verify in game; reads: 攻撃; menu option, declared width 10 columns
+m/MS610D.BIN	0:5D	2	25	1FB2	慰{08:2E}	Soothe	record reaches an engine no-op opcode; verify in game; reads: 慰める; menu option, declared width 10 columns
+m/MS610D.BIN	0:5D	3	31	1FB2	様子を見る	Wait and See	record reaches an engine no-op opcode; verify in game; menu option, declared width 10 columns
+m/MS610D.BIN	0:5D	4	52	11	訖{01:00}裲{02:00}訐		record reaches an engine no-op opcode; verify in game; reads: 訖早坂達也裲デビルバスター訐
+m/MS610D.BIN	0:5E	0	0	UNTILED	熬		@untiled; record does not tile (expression selector past end of record at 0x7); read-only, copied verbatim
+m/MS610D.BIN	0:5F	0	0	DATA	{07:37}）\n		reads: ・・・・・）\n
+m/MS610D.BIN	0:5F	1	8	1F01	{=FC}{=FF}は		
+m/MS610D.BIN	0:60	0	0	UNTILED	痼		@untiled; record does not tile (expression selector past end of record at 0x7); read-only, copied verbatim
+m/MS610D.BIN	0:61	0	0	UNTILED	( / 訝< / 裲		@untiled; record does not tile (expression selector past end of record at 0x14); read-only, copied verbatim
+m/MS610D.BIN	0:62	0	3	1F01	{=FC}{=FF}はヨロヨロと{07:29}\n		record reaches an engine no-op opcode; verify in game; reads: {=FC}{=FF}はヨロヨロと近づいた\n
+m/MS610D.BIN	0:62	1	28	1FB2	{08:0C}	Attack	record reaches an engine no-op opcode; verify in game; reads: 攻撃; menu option, declared width 10 columns
+m/MS610D.BIN	0:62	2	32	1FB2	様子を見る	Wait and See	record reaches an engine no-op opcode; verify in game; menu option, declared width 10 columns
+m/MS610D.BIN	0:62	3	53	11	訥{01:00}訶		record reaches an engine no-op opcode; verify in game; reads: 訥早坂達也訶
+m/MS610D.BIN	0:64	0	0	UNTILED	2 / 裨		@untiled; record does not tile (expression selector past end of record at 0x10); read-only, copied verbatim
+m/MS610D.BIN	0:F1	0	3	0D	{07:36}\n	{07:36}\n	reads: ・・・\n
+m/MS610D.BIN	0:F1	1	9	0D	{07:36}\n	{07:36}\n	reads: ・・・\n
+m/MS610D.BIN	3:C6	0	0	UNTILED	F / 詛 / ﾊ		@untiled; record does not tile (expression selector past end of record at 0x10); read-only, copied verbatim
+m/MS610D.BIN	3:66	0	15	1F01	{=FC}{=FF}は{07:CB}\n		record reaches an engine no-op opcode; verify in game; reads: {=FC}{=FF}は呆然としている！\n
+m/MS610D.BIN	3:66	1	30	1FB2	{08:0C}	Attack	record reaches an engine no-op opcode; verify in game; reads: 攻撃; menu option, declared width 10 columns
+m/MS610D.BIN	3:66	2	34	1FB2	声をか{08:29}	Call Out	record reaches an engine no-op opcode; verify in game; reads: 声をかける; menu option, declared width 10 columns
+m/MS610D.BIN	3:66	3	53	11	詒{01:00}詆		record reaches an engine no-op opcode; verify in game; reads: 詒早坂達也詆
+m/MS610D.BIN	3:67	0	0	UNTILED	熬		@untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim
+m/MS610D.BIN	3:68	0	6	14	{04:0B}	{04:0B}	reads: はから
+m/MS610D.BIN	3:68	1	13	14	7）		
+m/MS610D.BIN	3:69	0	0	UNTILED	甬		@untiled; record does not tile (expression selector past end of record at 0x7); read-only, copied verbatim
+m/MS610D.BIN	3:CE	0	30	1F88			record reaches an engine no-op opcode; verify in game
+m/MS610D.BIN	3:CE	1	34	1F5F			record reaches an engine no-op opcode; verify in game
+m/MS610D.BIN	3:CE	2	62	1F88			record reaches an engine no-op opcode; verify in game
+m/MS610D.BIN	3:CE	3	66	1F5F			record reaches an engine no-op opcode; verify in game
+m/MS610D.BIN	3:CE	4	83	30E	{03:1F}	{03:1F}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS610D.BIN	3:CE	5	94	14	+{07:36}\n	+{07:36}\n	record reaches an engine no-op opcode; verify in game; reads: +・・・\n
+m/MS610D.BIN	3:CE	6	111	30E	{03:1F}	{03:1F}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS610D.BIN	3:CE	7	131	14	{08:1F}k	{08:1F}k	record reaches an engine no-op opcode; verify in game; reads: しまったk
+m/MS610D.BIN	3:CE	8	162	30E	{03:1F}	{03:1F}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS610D.BIN	3:CE	9	180	0D	{07:37}\n{07:0A}何も起こら{08:19}\n		record reaches an engine no-op opcode; verify in game; reads: ・・・・・\nしかし　何も起こらなかった\n
+m/MS610D.BIN	3:CE	10	208	30E	{03:1F}	{03:1F}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS610D.BIN	3:CE	11	218	30E	{03:1F}	{03:1F}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS610D.BIN	3:CE	12	239	14	+	+	record reaches an engine no-op opcode; verify in game
+m/MS610D.BIN	3:CE	13	247	30E	{03:1F}	{03:1F}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS610D.BIN	3:CE	14	263	30E	{03:1F}	{03:1F}	record reaches an engine no-op opcode; verify in game; reads: 

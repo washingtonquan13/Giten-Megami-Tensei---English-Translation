@@ -1,0 +1,765 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS005C.BIN	0:00	0	2	1FD0	There's no one here...\n	There's no one here...\n	
+m/MS005C.BIN	0:01	0	2	1FD0	Corpses lie scattered across the floor...\n<wait>	Corpses lie scattered across the floor...\n<wait>	
+m/MS005C.BIN	0:02	0	16	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:02	1	27	1FD3	Wrong way, idiot! If we turn back now, then the whole mission's bust.\n<wait>	Wrong way, idiot! If we turn back now, then the whole mission's bust.\n<wait>	
+m/MS005C.BIN	0:02	2	111	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:02	3	120	1FD3	Wrong way, idiot! If we turn back now, then the whole mission's bust.\n<wait>	Wrong way, idiot! If we turn back now, then the whole mission's bust.\n<wait>	
+m/MS005C.BIN	0:02	4	204	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:02	5	215	1FD3	Wrong way, idiot! If we turn back now, then the whole mission's bust.\n<wait>	Wrong way, idiot! If we turn back now, then the whole mission's bust.\n<wait>	
+m/MS005C.BIN	0:02	6	299	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:02	7	305	1FD3	Wrong way, idiot! If we turn back now, then the whole mission's bust.\n<wait>	Wrong way, idiot! If we turn back now, then the whole mission's bust.\n<wait>	
+m/MS005C.BIN	0:02	8	384	1FD0	Wrong way. If you turn back now, then the whole mission's bust.\n<wait>	Wrong way. If you turn back now, then the whole mission's bust.\n<wait>	
+m/MS005C.BIN	0:02	9	458	00	{04:FF}は引き返{08:4B}。\n<wait>		reads: は引き返した。\n<wait>
+m/MS005C.BIN	0:02	10	498	1F03	{08:20}{08:21}{08:22}	{08:20}{08:21}{08:22}	reads: まったていったいった
+m/MS005C.BIN	0:02	11	508	1FD0	作戦で{08:62}{08:47}先でカモフラージュの為に待機{08:13}{08:0B}人と合流し、\n{02:02}内の歓楽街を抜け、歓楽街エリアの北に{08:7B}通路へ進入{08:8E}手{08:85}に\nなっ{08:14}。\n<wait>		reads: 作戦では、この先でカモフラージュの為に待機している悪魔人と合流し、\nキャンプ内の歓楽街を抜け、歓楽街エリアの北にある通路へ進入する手はずに\nなっている。\n<wait>
+m/MS005C.BIN	0:02	12	637	1FBA	{08:45}{08:71}で、既に生き残りは{08:63}{08:74}に{08:1A}しまっ{08:14}{02:08}\n{03:0B}戻る事は許{03:0C}{08:25}。\n<wait>		reads: ここまでで、既に生き残りは自分だけになってしまっている‥‥‥\nしかし、戻る事は許されない。\n<wait>
+m/MS005C.BIN	0:02	13	707	00	{04:FF}は先に進む事に{08:4B}{02:08}{08:72}\n<wait>		reads: は先に進む事にした‥‥‥‥‥\n<wait>
+m/MS005C.BIN	0:02	14	745	1F03	{08:20}{08:21}{08:22}	{08:20}{08:21}{08:22}	reads: まったていったいった
+m/MS005C.BIN	0:02	15	755	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:02	16	764	1FD3	作戦で{08:62}{08:47}先でカモフラージュの為の{08:0B}人と合流{08:4A}、{02:02}内歓楽街を\n突破{08:8E}事になっ{08:14}が{02:08}‥\n<wait>		reads: 作戦では、この先でカモフラージュの為の悪魔人と合流して、キャンプ内歓楽街を\n突破する事になっているが‥‥‥‥\n<wait>
+m/MS005C.BIN	0:02	17	856	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:02	18	865	1FD3	すでに、俺{08:74}が生き残り{02:08}{03:0B}戻る事は許{03:0C}{08:25}{08:72}\n戻{08:51}と{08:4A}も、{08:90}{08:59}{08:5E}では{08:25}しな{08:72}行く{08:86}{08:25}{08:72}\n<wait>		reads: すでに、俺だけが生き残り‥‥‥しかし、戻る事は許されない‥‥\n戻ったとしても、どうなるものではないしな‥‥行くしかない‥‥\n<wait>
+m/MS005C.BIN	0:02	19	964	1F03	{=88}{=20}{08:21}{08:22}	{=88}{=20}{08:21}{08:22}	reads: {=88}{=20}ていったいった
+m/MS005C.BIN	0:02	20	974	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:02	21	985	1FD3	作戦で{08:62}{08:47}先で待っ{08:2B}{08:0B}人の女性と合流{08:4A}、カモフラージュ{08:8E}事に\n{08:1A}る{08:84}{02:08}‥\n<wait>		reads: 作戦では、この先で待ってる悪魔人の女性と合流して、カモフラージュする事に\nなってるけど‥‥‥‥\n<wait>
+m/MS005C.BIN	0:02	22	1065	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:02	23	1076	1FD3	生き残りが僕{08:74}{08:81}あ、カモフラージュどころ{08:81}{08:25}し{02:08}‥\n{08:56}、戻{08:52}も{08:90}{08:59}訳{08:81}{08:25}し{02:08}\n<wait>		reads: 生き残りが僕だけじゃあ、カモフラージュどころじゃないし‥‥‥‥\nでも、戻ってもどうなる訳じゃないし‥‥‥\n<wait>
+m/MS005C.BIN	0:02	24	1160	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:02	25	1171	1FD3	行く{08:86}{08:25}のか{02:08}\n<wait>		reads: 行くしかないのか‥‥‥\n<wait>
+m/MS005C.BIN	0:02	26	1201	1F03	{08:20}{=88}{=21}{08:22}	{08:20}{=88}{=21}{08:22}	reads: まった{=88}{=21}いった
+m/MS005C.BIN	0:02	27	1211	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:02	28	1222	1FD3	えーと、作戦だと{08:47}先でカモフラージュの為の{08:0B}人と合流{08:4A}、\n{02:02}内歓楽街の、北に{08:7B}通路に進入{08:8E}事になっ{08:14}が{08:72}\n<wait>		reads: えーと、作戦だとこの先でカモフラージュの為の悪魔人と合流して、\nキャンプ内歓楽街の、北にある通路に進入する事になっているが‥‥\n<wait>
+m/MS005C.BIN	0:02	29	1334	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:02	30	1345	1FD3	生き残りが俺{08:74}{08:52}の{08:62}まずいな{02:08}‥\n{08:56}、進む{08:86}道は残{03:0C}て{08:24}{08:5F}{02:08}\n<wait>		reads: 生き残りが俺だけってのは、まずいな‥‥‥‥\nでも、進むしか道は残されていないんだ‥‥‥\n<wait>
+m/MS005C.BIN	0:02	31	1420	1F03	{08:20}{08:21}{=88}{=22}	{08:20}{08:21}{=88}{=22}	reads: まったていった{=88}{=22}
+m/MS005C.BIN	0:02	32	1430	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:02	33	1436	1FD3	{08:72}地図によると、{08:47}先は歓楽街{02:08}‥そこを抜けて、北に{08:7B}通路{08:71}\nたどりつけば、第一の難関は抜{08:43}事に{08:59}のよね。\n<wait>		reads: ‥‥地図によると、この先は歓楽街‥‥‥‥そこを抜けて、北にある通路まで\nたどりつけば、第一の難関は抜けた事になるのよね。\n<wait>
+m/MS005C.BIN	0:02	34	1548	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:02	35	1554	1FD3	カモフラージュの為に{08:0B}人が一人待機し{08:2B}{08:85}{08:74}ど{02:08}‥\n生き残りが{01:16}{08:74}{08:81}、カモフラージュも何もあ{08:51}もん{08:81}{08:25}わ。\n<wait>		reads: カモフラージュの為に悪魔人が一人待機してるはずだけど‥‥‥‥\n生き残りがあたしだけじゃ、カモフラージュも何もあったもんじゃないわ。\n<wait>
+m/MS005C.BIN	0:02	36	1666	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:02	37	1672	1FD3	{08:56}、戻る訳に{08:26}か{08:25}し{02:08}‥。\n行く{08:86}{08:25}{02:08}{08:72}\n<wait>		reads: でも、戻る訳にはいかないし‥‥‥‥。\n行くしかない‥‥‥‥‥\n<wait>
+m/MS005C.BIN	0:02	38	1726	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:02	39	1735	1FD3	I hear people ahead. Let's take a moment to discuss our strategy.\n<wait>	I hear people ahead. Let's take a moment to discuss our strategy.\n<wait>	
+m/MS005C.BIN	0:02	40	1814	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:02	41	1825	1FD3	Alright.\n<wait>	Alright.\n<wait>	
+m/MS005C.BIN	0:02	42	1850	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:02	43	1861	1FD3	Let's do that.\n<wait>	Let's do that.\n<wait>	
+m/MS005C.BIN	0:02	44	1892	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:02	45	1898	1FD3	Okay.\n<wait>	Okay.\n<wait>	
+m/MS005C.BIN	0:02	46	1912	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:02	47	1921	1FD3	First, we should engage in small talk with the cambions\nin order for us to not stand out.\n<wait>	First, we should engage in small talk with the cambions\nin order for us to not stand out.\n<wait>	
+m/MS005C.BIN	0:02	48	2019	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:02	49	2028	1FD3	There's a hallway in the northern section of the are that leads\nto the chemical plant. Once we make it there, we'll be safe.\n<wait>	There's a hallway in the northern section of the are that leads\nto the chemical plant. Once we make it there, we'll be safe.\n<wait>	
+m/MS005C.BIN	0:02	50	2166	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:02	51	2177	1FD3	Let's go!\n<wait>	Let's go!\n<wait>	
+m/MS005C.BIN	0:02	52	2201	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:02	53	2212	1FD3	Let's go!\n<wait>	Let's go!\n<wait>	
+m/MS005C.BIN	0:02	54	2238	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:02	55	2244	1FD3	Let's go!\n<wait>	Let's go!\n<wait>	
+m/MS005C.BIN	0:02	56	2265	1FD0	You nod your head silently.\n<wait>	You nod your head silently.\n<wait>	
+m/MS005C.BIN	0:02	57	2309	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:02	58	2320	1FD3	I hear people ahead. Let's take a moment to discuss our strategy.\n<wait>	I hear people ahead. Let's take a moment to discuss our strategy.\n<wait>	
+m/MS005C.BIN	0:02	59	2399	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:02	60	2410	1FD3	Alright.\n<wait>	Alright.\n<wait>	
+m/MS005C.BIN	0:02	61	2435	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:02	62	2441	1FD3	Okay.\n<wait>	Okay.\n<wait>	
+m/MS005C.BIN	0:02	63	2455	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:02	64	2466	1FD3	First, we should engage in small talk with the cambions\nin order for us to not stand out.\n<wait>	First, we should engage in small talk with the cambions\nin order for us to not stand out.\n<wait>	
+m/MS005C.BIN	0:02	65	2564	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:02	66	2575	1FD3	There's a hallway in the northern section of the are that leads\nto the chemical plant. Once we make it there, we'll be safe.\n<wait>	There's a hallway in the northern section of the are that leads\nto the chemical plant. Once we make it there, we'll be safe.\n<wait>	
+m/MS005C.BIN	0:02	67	2713	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:02	68	2724	1FD3	Let's go!\n<wait>	Let's go!\n<wait>	
+m/MS005C.BIN	0:02	69	2750	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:02	70	2756	1FD3	Let's go!\n<wait>	Let's go!\n<wait>	
+m/MS005C.BIN	0:02	71	2777	1FD0	You nod your head silently.\n<wait>	You nod your head silently.\n<wait>	
+m/MS005C.BIN	0:02	72	2821	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:02	73	2832	1FD3	I hear people ahead. Let's take a moment to discuss our strategy.\n<wait>	I hear people ahead. Let's take a moment to discuss our strategy.\n<wait>	
+m/MS005C.BIN	0:02	74	2911	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:02	75	2917	1FD3	Okay.\n<wait>	Okay.\n<wait>	
+m/MS005C.BIN	0:02	76	2931	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:02	77	2942	1FD3	First, we should engage in small talk with the cambions\nin order for us to not stand out.\n<wait>	First, we should engage in small talk with the cambions\nin order for us to not stand out.\n<wait>	
+m/MS005C.BIN	0:02	78	3040	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:02	79	3051	1FD3	There's a hallway in the northern section of the are that leads\nto the chemical plant. Once we make it there, we'll be safe.\n<wait>	There's a hallway in the northern section of the are that leads\nto the chemical plant. Once we make it there, we'll be safe.\n<wait>	
+m/MS005C.BIN	0:02	80	3189	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:02	81	3195	1FD3	Let's go!\n<wait>	Let's go!\n<wait>	
+m/MS005C.BIN	0:02	82	3216	1FD0	You nod your head silently.\n<wait>	You nod your head silently.\n<wait>	
+m/MS005C.BIN	0:02	83	3260	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:02	84	3266	1FD3	I hear people ahead. Let's take a moment to discuss our strategy.\n<wait>	I hear people ahead. Let's take a moment to discuss our strategy.\n<wait>	
+m/MS005C.BIN	0:02	85	3340	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:02	86	3346	1FD3	First, we should engage in small talk with the cambions\nin order for us to not stand out.\n<wait>	First, we should engage in small talk with the cambions\nin order for us to not stand out.\n<wait>	
+m/MS005C.BIN	0:02	87	3444	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:02	88	3450	1FD3	There's a hallway in the northern section of the are that leads\nto the chemical plant. Once we make it there, we'll be safe.\n<wait>	There's a hallway in the northern section of the are that leads\nto the chemical plant. Once we make it there, we'll be safe.\n<wait>	
+m/MS005C.BIN	0:02	89	3583	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:02	90	3589	1FD3	Let's go!\n<wait>	Let's go!\n<wait>	
+m/MS005C.BIN	0:03	0	9	1FD2	Man:	Man:	
+m/MS005C.BIN	0:03	1	15	1FD3	...Everyone here?\n<wait>Alright, good. Now then, let's get to work.\n<wait>	...Everyone here?\n<wait>Alright, good. Now then, let's get to work.\n<wait>	
+m/MS005C.BIN	0:03	2	89	1FD0	It is there that the driver of the truck approaches you.\n<wait>	It is there that the driver of the truck approaches you.\n<wait>	
+m/MS005C.BIN	0:03	3	154	1FD2	Driver:	Driver:	
+m/MS005C.BIN	0:03	4	163	1FD3	Err, so... I can go now, right?\n<wait>	Err, so... I can go now, right?\n<wait>	
+m/MS005C.BIN	0:03	5	203	1FD2	Driver:	Driver:	
+m/MS005C.BIN	0:03	6	212	1FD3	I already finished unpacking the truck, so...\n<wait>	I already finished unpacking the truck, so...\n<wait>	
+m/MS005C.BIN	0:03	7	266	1FD2	Man:	Man:	
+m/MS005C.BIN	0:03	8	272	1FD3	Yeah, you can go.\n<wait>	Yeah, you can go.\n<wait>	
+m/MS005C.BIN	0:03	9	298	1FD2	Woman:	Woman:	
+m/MS005C.BIN	0:03	10	306	1FD3	Just act normal. We don't want to attract any suspicion quite yet.\n<wait>	Just act normal. We don't want to attract any suspicion quite yet.\n<wait>	
+m/MS005C.BIN	0:03	11	385	1FD0	With that, the man hops back into the trailer and begins driving off.\n	With that, the man hops back into the trailer and begins driving off.\n	
+m/MS005C.BIN	0:03	12	465	1FBA	A few moments later, he has disappeared from sight.\n<wait>	A few moments later, he has disappeared from sight.\n<wait>	
+m/MS005C.BIN	0:03	13	635	1FD2	Man:	Man:	
+m/MS005C.BIN	0:03	14	641	1FD3	Alright. The ammunitions storage should be this way.\n<wait>	Alright. The ammunitions storage should be this way.\n<wait>	
+m/MS005C.BIN	0:03	15	832	1FD2	Man:	Man:	
+m/MS005C.BIN	0:03	16	838	1FD3	As for our team, we'll be checking out the entry routes.\n<wait>	As for our team, we'll be checking out the entry routes.\n<wait>	
+m/MS005C.BIN	0:03	17	923	1FD0	You begin discussing your strategy.\nNot too long after, a cambion appears before you.\n<wait>	You begin discussing your strategy.\nNot too long after, a cambion appears before you.\n<wait>	
+m/MS005C.BIN	0:03	18	1039	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:03	19	1049	1FD3	You guys sure took your sweet time getting here.\n<wait>	You guys sure took your sweet time getting here.\n<wait>	
+m/MS005C.BIN	0:03	20	1106	1FD2	Man:	Man:	
+m/MS005C.BIN	0:03	21	1112	1FD3	Everything going as planned on your end?\n<wait>	Everything going as planned on your end?\n<wait>	
+m/MS005C.BIN	0:03	22	1161	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:03	23	1171	1FD3	Yeah, yeah.\n<wait>	Yeah, yeah.\n<wait>	
+m/MS005C.BIN	0:03	24	1200	1F04	{08:20}{08:21}{08:22}	{08:20}{08:21}{08:22}	reads: まったていったいった
+m/MS005C.BIN	0:03	25	1210	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:03	26	1220	1FD3	Hmm? Some of you are in no fighting condition.\nIs Pentagram running out of soldiers or something?\n<wait>	Hmm? Some of you are in no fighting condition.\nIs Pentagram running out of soldiers or something?\n<wait>	
+m/MS005C.BIN	0:03	27	1326	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:03	28	1336	1FD3	Goddammit... Alright, alright. Just a second...\n<wait>	Goddammit... Alright, alright. Just a second...\n<wait>	
+m/MS005C.BIN	0:03	29	1392	1FD0	Nekogal pulls out a small vial from her pocket and pours its contents\ninto the mouths of your fallen party members.\n<wait>	Nekogal pulls out a small vial from her pocket and pours its contents\ninto the mouths of your fallen party members.\n<wait>	
+m/MS005C.BIN	0:03	30	1519	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:03	31	1529	1FD3	That should do.\n<wait>	That should do.\n<wait>	
+m/MS005C.BIN	0:03	32	1553	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:03	33	1563	1FD3	This mission is far too important for us to be losing soldiers\nbefore we have even fully started it.\n<wait>	This mission is far too important for us to be losing soldiers\nbefore we have even fully started it.\n<wait>	
+m/MS005C.BIN	0:03	34	1672	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:03	35	1682	1FD3	Moving along...\n<wait>	Moving along...\n<wait>	
+m/MS005C.BIN	0:03	36	1706	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:03	37	1716	1FD3	Here are your uniforms.\n<wait>	Here are your uniforms.\n<wait>	
+m/MS005C.BIN	0:03	38	1748	1FD2	Man:	Man:	
+m/MS005C.BIN	0:03	39	1754	1FD3	Thanks. Everyone, put these on!\n<wait>	Thanks. Everyone, put these on!\n<wait>	
+m/MS005C.BIN	0:03	40	1794	1FD0	The soldiers quickly change into the uniforms Nekogal gives you.\n<wait>	The soldiers quickly change into the uniforms Nekogal gives you.\n<wait>	
+m/MS005C.BIN	0:03	41	1865	1FBA	However, there is a problem. Your team isn't given any.\n<wait>	However, there is a problem. Your team isn't given any.\n<wait>	
+m/MS005C.BIN	0:03	42	1929	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:03	43	1939	1FD3	Oh, yeah. Sorry about that.\n<wait>	Oh, yeah. Sorry about that.\n<wait>	
+m/MS005C.BIN	0:03	44	1975	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:03	45	1985	1FD3	Due to circumstances I'd rather not get into,\nI was only able to prepare so many.\n<wait>	Due to circumstances I'd rather not get into,\nI was only able to prepare so many.\n<wait>	
+m/MS005C.BIN	0:03	46	2075	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:03	47	2085	1FD3	What I was able to find, however, are clothes worn by sex slaves.\nOne dress and one male uniform.\n<wait>	What I was able to find, however, are clothes worn by sex slaves.\nOne dress and one male uniform.\n<wait>	
+m/MS005C.BIN	0:03	48	2191	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:03	49	2201	1FD3	The dress goes to the girl. As for the uniform, hmm...\n<wait>	The dress goes to the girl. As for the uniform, hmm...\n<wait>	
+m/MS005C.BIN	0:03	50	2264	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:03	51	2274	1FD3	Let's go with you. You look the cutest.\n<wait>	Let's go with you. You look the cutest.\n<wait>	
+m/MS005C.BIN	0:03	52	2322	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:03	53	2333	1FD3	Huh!? M-Me!?\n<wait>	Huh!? M-Me!?\n<wait>	
+m/MS005C.BIN	0:03	54	2354	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:03	55	2363	1FD3	Stop whining. We have a mission to carry out.\n<wait>	Stop whining. We have a mission to carry out.\n<wait>	
+m/MS005C.BIN	0:03	56	2417	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:03	57	2428	1FD3	Yes sir...\n<wait>	Yes sir...\n<wait>	
+m/MS005C.BIN	0:03	58	2447	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:03	59	2456	1FD3	That takes care of these two, but what about the rest of us?\nThe plan was for us to disguise as soldiers.\n<wait>	That takes care of these two, but what about the rest of us?\nThe plan was for us to disguise as soldiers.\n<wait>	
+m/MS005C.BIN	0:03	60	2570	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:03	61	2580	1FD3	And that's what you will do. The only difference is that\nyou will need to obtain the uniforms on your own.\n<wait>	And that's what you will do. The only difference is that\nyou will need to obtain the uniforms on your own.\n<wait>	
+m/MS005C.BIN	0:03	62	2695	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:03	63	2705	1FD3	There's a guard station just up ahead from here.\nYou should be able to find what you need there.\n<wait>	There's a guard station just up ahead from here.\nYou should be able to find what you need there.\n<wait>	
+m/MS005C.BIN	0:03	64	2810	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:03	65	2821	1FD3	You want us to act like some common burglars?\n<wait>	You want us to act like some common burglars?\n<wait>	
+m/MS005C.BIN	0:03	66	2875	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:03	67	2885	1FD3	Yeah? Problem?\n<wait>	Yeah? Problem?\n<wait>	
+m/MS005C.BIN	0:03	68	2908	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:03	69	2919	1FD3	No... Forget I said anything.\n<wait>	No... Forget I said anything.\n<wait>	
+m/MS005C.BIN	0:03	70	2983	1FD2	Man:	Man:	
+m/MS005C.BIN	0:03	71	2989	1FD3	Alright then. Let's get this thing started.\n<wait>	Alright then. Let's get this thing started.\n<wait>	
+m/MS005C.BIN	0:03	72	3041	1FD0	The leader of the mission turns towards you.\n<wait>	The leader of the mission turns towards you.\n<wait>	
+m/MS005C.BIN	0:03	73	3094	1FD2	Man:	Man:	
+m/MS005C.BIN	0:03	74	3100	1FD3	You guys should be especially careful.\nOne fuck up, and this whole mission is toast.\n<wait>	You guys should be especially careful.\nOne fuck up, and this whole mission is toast.\n<wait>	
+m/MS005C.BIN	0:03	75	3193	1FD2	Man:	Man:	
+m/MS005C.BIN	0:03	76	3199	1FD3	Got it?\n<wait>	Got it?\n<wait>	
+m/MS005C.BIN	0:03	77	3215	1FD0	You nod your head.\n<wait>	You nod your head.\n<wait>	
+m/MS005C.BIN	0:03	78	3242	1FD2	Man:	Man:	
+m/MS005C.BIN	0:03	79	3248	1FD3	Good. Let's begin.\n<wait>I wish you all best of luck.\n<wait>	Good. Let's begin.\n<wait>I wish you all best of luck.\n<wait>	
+m/MS005C.BIN	0:03	80	3312	1FD0	The other soldiers quickly take their leave,\nleaving only your group behind.\n<wait>	The other soldiers quickly take their leave,\nleaving only your group behind.\n<wait>	
+m/MS005C.BIN	0:03	81	3419	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:03	82	3429	1FD3	I'm gonna show you guys to the guard post.\n<wait>Follow me.\n<wait>	I'm gonna show you guys to the guard post.\n<wait>Follow me.\n<wait>	
+m/MS005C.BIN	0:04	0	16	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:04	1	30	0B	Hey, wrong way! Get it together, Katsuragi!\n	Hey, wrong way! Get it together, Katsuragi!\n	
+m/MS005C.BIN	0:04	2	77	18	There's no point in turning back. Let's keep pushing forward.\n	There's no point in turning back. Let's keep pushing forward.\n	
+m/MS005C.BIN	0:04	3	157	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:04	4	173	0B	Hey, wrong way! Get it together, Katsuragi!\n	Hey, wrong way! Get it together, Katsuragi!\n	
+m/MS005C.BIN	0:04	5	220	18	There's no point in turning back. Let's keep pushing forward.\n	There's no point in turning back. Let's keep pushing forward.\n	
+m/MS005C.BIN	0:04	6	292	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:04	7	303	0B	Hey, wrong way! Get it together, Katsuragi!\n	Hey, wrong way! Get it together, Katsuragi!\n	
+m/MS005C.BIN	0:04	8	350	18	There's no point in turning back. Let's keep pushing forward.\n	There's no point in turning back. Let's keep pushing forward.\n	
+m/MS005C.BIN	0:04	9	417	1FD0	What good is turning back going to do to you?\nYou decide to keep pushing forward.\n<wait>	What good is turning back going to do to you?\nYou decide to keep pushing forward.\n<wait>	
+m/MS005C.BIN	0:04	10	518	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:04	11	528	1FD3	Hush now, everyone. The guard station is located just up ahead.\n<wait>	Hush now, everyone. The guard station is located just up ahead.\n<wait>	
+m/MS005C.BIN	0:05	0	7	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:05	1	17	1FD3	Alright, this is it. I wish you the best of luck.\n<wait>	Alright, this is it. I wish you the best of luck.\n<wait>	
+m/MS005C.BIN	0:05	2	91	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:05	3	102	0B	Katsuragi! We can't turn back now! Let's hurry!\n	Katsuragi! We can't turn back now! Let's hurry!\n	
+m/MS005C.BIN	0:05	4	153	18	There's no time to waste... <wait>Let's hurry!\n	There's no time to waste... <wait>Let's hurry!\n	
+m/MS005C.BIN	0:05	5	208	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:05	6	222	0B	Katsuragi! We can't turn back now! Let's hurry!\n	Katsuragi! We can't turn back now! Let's hurry!\n	
+m/MS005C.BIN	0:05	7	273	18	There's no time to waste... <wait>Let's hurry!\n	There's no time to waste... <wait>Let's hurry!\n	
+m/MS005C.BIN	0:05	8	336	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:05	9	352	0B	Katsuragi! We can't turn back now! Let's hurry!\n	Katsuragi! We can't turn back now! Let's hurry!\n	
+m/MS005C.BIN	0:05	10	403	18	There's no time to waste... <wait>Let's hurry!\n	There's no time to waste... <wait>Let's hurry!\n	
+m/MS005C.BIN	0:05	11	453	1FD0	There's no time to waste. You decide to turn back.\n<wait>	There's no time to waste. You decide to turn back.\n<wait>	
+m/MS005C.BIN	0:06	0	8	1F03			
+m/MS005C.BIN	0:06	1	15	1FD0	You barge into the room!\n<wait>	You barge into the room!\n<wait>	
+m/MS005C.BIN	0:06	2	92	1FD2	Baal Soldier:	Baal Soldier:	
+m/MS005C.BIN	0:06	3	107	1FD3	Huh? Who the hell are you!?\n<wait>	Huh? Who the hell are you!?\n<wait>	
+m/MS005C.BIN	0:06	4	182	1EBE	{01:00}	{01:00}	reads: 早坂達也
+m/MS005C.BIN	0:06	5	185	00	{04:FF}	{04:FF}	reads: 
+m/MS005C.BIN	0:06	6	188	00	d{04:FF}	d{04:FF}	reads: d
+m/MS005C.BIN	0:06	7	192	00	d	d	
+m/MS005C.BIN	0:06	8	206	1F82	aving dispatched of the soldiers,\nyou remove their uniforms and put them on.\n<wait>	aving dispatched of the soldiers,\nyou remove their uniforms and put them on.\n<wait>	
+m/MS005C.BIN	0:06	9	572	1F03	{=88}{=1F}{=88}{=20}	{=88}{=1F}{=88}{=20}	
+m/MS005C.BIN	0:06	10	580	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:06	11	591	1FD3	I really don't feel good about this...\n<wait>	I really don't feel good about this...\n<wait>	
+m/MS005C.BIN	0:06	12	638	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:06	13	644	1FD3	Stop complaining, Tatsuya.\nAt least you don't have to wear this ridiculous dress.\n<wait>	Stop complaining, Tatsuya.\nAt least you don't have to wear this ridiculous dress.\n<wait>	
+m/MS005C.BIN	0:06	14	734	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:06	15	745	1FD3	What she said.\nI'd be more than willing to switch with you if you'd like.\n<wait>	What she said.\nI'd be more than willing to switch with you if you'd like.\n<wait>	
+m/MS005C.BIN	0:06	16	827	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:06	17	838	1FD3	Yeah, I think I'm good after all...\n<wait>	Yeah, I think I'm good after all...\n<wait>	
+m/MS005C.BIN	0:06	18	885	1FD0	An indescribable sense of dread flows through you\nas you lie your eyes on the now-empty room...\n<wait>	An indescribable sense of dread flows through you\nas you lie your eyes on the now-empty room...\n<wait>	
+m/MS005C.BIN	0:06	19	1031	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:06	20	1041	1FD3	Good work.\n<wait>	Good work.\n<wait>	
+m/MS005C.BIN	0:06	21	1060	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:06	22	1070	1FD3	I should be going now. If I stay away for any longer,\nsomeone might get suspicious of me.\n<wait>	I should be going now. If I stay away for any longer,\nsomeone might get suspicious of me.\n<wait>	
+m/MS005C.BIN	0:06	23	1168	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:06	24	1178	1FD3	Dantalion will also be done with the initiation ceremony shortly.\n<wait>	Dantalion will also be done with the initiation ceremony shortly.\n<wait>	
+m/MS005C.BIN	0:06	25	1252	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:06	26	1262	1FD3	Remember, this whole plan relies on keeping him distracted.\nMake your way to his room as quickly as possible.\nI can only buy you so much time.\n<wait>	Remember, this whole plan relies on keeping him distracted.\nMake your way to his room as quickly as possible.\nI can only buy you so much time.\n<wait>	
+m/MS005C.BIN	0:06	27	1413	1FD2	Nekogal:	Nekogal:	
+m/MS005C.BIN	0:06	28	1423	1FD3	Good luck!\n<wait>	Good luck!\n<wait>	
+m/MS005C.BIN	0:06	29	1450	1FD0	Having said that, Nekogal runs off.\n<wait>	Having said that, Nekogal runs off.\n<wait>	
+m/MS005C.BIN	0:06	30	1499	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:06	31	1508	1FD3	You heard the woman. Let's hurry!\n	You heard the woman. Let's hurry!\n	
+m/MS005C.BIN	0:06	32	1552	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:06	33	1563	1FD3	You heard her. Let's hurry!\n	You heard her. Let's hurry!\n	
+m/MS005C.BIN	0:06	34	1601	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:06	35	1612	1FD3	You heard the woman. Let's hurry!\n	You heard the woman. Let's hurry!\n	
+m/MS005C.BIN	0:06	36	1656	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:06	37	1662	1FD3	You heard her. Let's hurry!\n	You heard her. Let's hurry!\n	
+m/MS005C.BIN	0:06	38	1695	1FD0	There's no time to waste. You hurry and leave the room.\n	There's no time to waste. You hurry and leave the room.\n	
+m/MS005C.BIN	0:06	39	1754	1FD0	Corpses of dead soldiers lie on the floor...\n	Corpses of dead soldiers lie on the floor...\n	
+m/MS005C.BIN	0:07	0	2	1FD2	Cambion:	Cambion:	
+m/MS005C.BIN	0:07	1	12	1FD3	Enjoy yourselves!\n<wait>	Enjoy yourselves!\n<wait>	
+m/MS005C.BIN	0:08	0	2	1FD2	Baal Soldier:	Baal Soldier:	
+m/MS005C.BIN	0:08	1	17	1FD3	I-I-I'm not here to have f-fun. No sir. I'm... I'm on patrol!\n<wait>	I-I-I'm not here to have f-fun. No sir. I'm... I'm on patrol!\n<wait>	
+m/MS005C.BIN	0:09	0	2	1FD2	Cambion:	Cambion:	
+m/MS005C.BIN	0:09	1	12	1FD3	Looking as beautiful as ever, Barbara!\n<wait>	Looking as beautiful as ever, Barbara!\n<wait>	
+m/MS005C.BIN	0:09	2	59	1FD2	Barbara:	Barbara:	
+m/MS005C.BIN	0:09	3	69	1FD3	Ehehe. Thanks. You're looking cute, too.\n<wait>	Ehehe. Thanks. You're looking cute, too.\n<wait>	
+m/MS005C.BIN	0:09	4	118	1FD2	Cambion:	Cambion:	
+m/MS005C.BIN	0:09	5	128	1FD3	Eek! Thank you! Barbara called me cute...\nI'm not sure if my heart can take this!\n<wait>	Eek! Thank you! Barbara called me cute...\nI'm not sure if my heart can take this!\n<wait>	
+m/MS005C.BIN	0:0A	0	2	1FD2	Baal Soldier:	Baal Soldier:	
+m/MS005C.BIN	0:0A	1	17	1FD3	You better not get too distracted, or else!\n<wait>	You better not get too distracted, or else!\n<wait>	
+m/MS005C.BIN	0:0B	0	5	1FD2	Demon:	Demon:	
+m/MS005C.BIN	0:0B	1	21	1F03	Yo! That's a cute looking boy toy you have there.\n<wait>Mind if I take him for a spin?\n<wait>	Yo! That's a cute looking boy toy you have there.\n<wait>Mind if I take him for a spin?\n<wait>	
+m/MS005C.BIN	0:0B	2	116	1FD0	You can see Kamikawa taking cover behind Sonoda.\n<wait>	You can see Kamikawa taking cover behind Sonoda.\n<wait>	
+m/MS005C.BIN	0:0B	3	173	1FD2	Demon:	Demon:	
+m/MS005C.BIN	0:0B	4	181	1FD3	Oh, a shy one? Hehe. I like those! I'm gonna get you next time, cutie.\n<wait>	Oh, a shy one? Hehe. I like those! I'm gonna get you next time, cutie.\n<wait>	
+m/MS005C.BIN	0:0B	5	265	1F03	Oh, wow. You're a real cutie.\n<wait>	Oh, wow. You're a real cutie.\n<wait>	
+m/MS005C.BIN	0:0B	6	305	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:0B	7	316	1FD3	M-M-Me...?\n<wait>	M-M-Me...?\n<wait>	
+m/MS005C.BIN	0:0B	8	335	1FD0	You can see Kamikawa shivering.\n<wait>	You can see Kamikawa shivering.\n<wait>	
+m/MS005C.BIN	0:0B	9	376	18	*Sigh*... Are there really no cute boys anywhere here?\n<wait>	*Sigh*... Are there really no cute boys anywhere here?\n<wait>	
+m/MS005C.BIN	0:0C	0	2	1FD2	Demon:	Demon:	
+m/MS005C.BIN	0:0C	1	10	1FD3	Haa... Oh, Elis.\n<wait>Why does she always turn me down?...\n<wait>	Haa... Oh, Elis.\n<wait>Why does she always turn me down?...\n<wait>	
+m/MS005C.BIN	0:0C	2	76	1FD2	Demon:	Demon:	
+m/MS005C.BIN	0:0C	3	84	1FD3	Am I really that unattractive?\n	Am I really that unattractive?\n	
+m/MS005C.BIN	0:0C	4	131	1FB2	Of course not	Of course not	menu option, declared width 20 columns
+m/MS005C.BIN	0:0C	5	146	1FB2	You are	You are	menu option, declared width 20 columns
+m/MS005C.BIN	0:0C	6	167	0F	{01:29}	{01:29}	reads: そうだ
+m/MS005C.BIN	0:0C	7	170	00			
+m/MS005C.BIN	0:0C	8	173	1FD2	Demon:	Demon:	
+m/MS005C.BIN	0:0C	9	181	1FD3	Really? Thanks, man!\n<wait>	Really? Thanks, man!\n<wait>	
+m/MS005C.BIN	0:0C	10	213	1FD2	Demon:	Demon:	
+m/MS005C.BIN	0:0C	11	221	1FD3	Oh... <wait>Well, I'm still not gonna give up!\n<wait>	Oh... <wait>Well, I'm still not gonna give up!\n<wait>	
+m/MS005C.BIN	0:0C	12	274	1FD2	Demon:	Demon:	
+m/MS005C.BIN	0:0C	13	282	1FD3	Just you wait, baby. I'm gonna make you mine!\n<wait>	Just you wait, baby. I'm gonna make you mine!\n<wait>	
+m/MS005C.BIN	0:0D	0	2	1FD2	Cambion:	Cambion:	
+m/MS005C.BIN	0:0D	1	12	1FD3	Haa... All this "service" really wears me out.\n<wait>	Haa... All this "service" really wears me out.\n<wait>	
+m/MS005C.BIN	0:0E	0	2	1FD2	Cambion:	Cambion:	
+m/MS005C.BIN	0:0E	1	12	1FD3	Wanna have a good time, boy?\n<wait>	Wanna have a good time, boy?\n<wait>	
+m/MS005C.BIN	0:0F	0	5	1FD0	There is a cambion prostitute waiting for you on the other side\nof the door.\n<wait>	There is a cambion prostitute waiting for you on the other side\nof the door.\n<wait>	
+m/MS005C.BIN	0:0F	1	112	1FD2	Barbara:	Barbara:	
+m/MS005C.BIN	0:0F	2	122	1FD3	You must be the people Madam was talking about.\n<wait>	You must be the people Madam was talking about.\n<wait>	
+m/MS005C.BIN	0:0F	3	178	1FD2	Barbara:	Barbara:	
+m/MS005C.BIN	0:0F	4	188	1FD3	My name is Barbara. Nice to meet y'all.\n<wait>	My name is Barbara. Nice to meet y'all.\n<wait>	
+m/MS005C.BIN	0:0F	5	245	1F04	{08:20}{08:21}{08:22}	{08:20}{08:21}{08:22}	reads: まったていったいった
+m/MS005C.BIN	0:0F	6	255	1FD2	Barbara:	Barbara:	
+m/MS005C.BIN	0:0F	7	265	1FD3	Oh? Some of you have been downed already?\n<wait>	Oh? Some of you have been downed already?\n<wait>	
+m/MS005C.BIN	0:0F	8	315	1FD2	Barbara:	Barbara:	
+m/MS005C.BIN	0:0F	9	325	1FD3	Hmph... Well, it's good thing that I came prepared.\n<wait>	Hmph... Well, it's good thing that I came prepared.\n<wait>	
+m/MS005C.BIN	0:0F	10	385	1FD0	Having said that, Barbara pulls out a tiny vial and feeds its contents\nto your fallen party members.\n<wait>	Having said that, Barbara pulls out a tiny vial and feeds its contents\nto your fallen party members.\n<wait>	
+m/MS005C.BIN	0:0F	11	518	1FD2	Barbara:	Barbara:	
+m/MS005C.BIN	0:0F	12	528	1FD3	You should drink the rest. It'll heal you up.\n<wait>	You should drink the rest. It'll heal you up.\n<wait>	
+m/MS005C.BIN	0:0F	13	582	1FD2	Barbara:	Barbara:	
+m/MS005C.BIN	0:0F	14	592	1FD3	Err, so... Which one of you am I going to be servicing?\n<wait>	Err, so... Which one of you am I going to be servicing?\n<wait>	
+m/MS005C.BIN	0:0F	15	656	1FD0	Flustered by the demon's words,\nEmi grabs Hayasaka's arm and practically drags him to her.\n<wait>	Flustered by the demon's words,\nEmi grabs Hayasaka's arm and practically drags him to her.\n<wait>	
+m/MS005C.BIN	0:0F	16	753	1FBA	Barbara sees this, snickers, and then turn towards Katsuragi.\n<wait>	Barbara sees this, snickers, and then turn towards Katsuragi.\n<wait>	
+m/MS005C.BIN	0:0F	17	823	1FD2	Barbara:	Barbara:	
+m/MS005C.BIN	0:0F	18	833	1FD3	What about you? You're just my type.\n<wait>	What about you? You're just my type.\n<wait>	
+m/MS005C.BIN	0:0F	19	878	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:0F	20	887	1FD3	Wait, but... That leaves me with... Kamikawa...\n<wait>	Wait, but... That leaves me with... Kamikawa...\n<wait>	
+m/MS005C.BIN	0:0F	21	943	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:0F	22	954	1FD3	For the mission. For the mission...\n<wait>	For the mission. For the mission...\n<wait>	
+m/MS005C.BIN	0:10	0	16	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:10	1	27	1FD3	Where are you going? We have no time to turn back.\n<wait>	Where are you going? We have no time to turn back.\n<wait>	
+m/MS005C.BIN	0:10	2	92	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:10	3	101	1FD3	Where are you going? We have no time to turn back.\n<wait>	Where are you going? We have no time to turn back.\n<wait>	
+m/MS005C.BIN	0:10	4	166	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:10	5	177	1FD3	Where are you going? We have no time to turn back.\n<wait>	Where are you going? We have no time to turn back.\n<wait>	
+m/MS005C.BIN	0:10	6	242	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:10	7	248	1FD3	Where are you going? We have no time to turn back.\n<wait>	Where are you going? We have no time to turn back.\n<wait>	
+m/MS005C.BIN	0:10	8	308	1FD0	Turning back now would just be a waste of time.\n<wait>	Turning back now would just be a waste of time.\n<wait>	
+m/MS005C.BIN	0:10	9	375	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:10	10	396	1E12	If we head straight north from here, 	If we head straight north from here, 	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	11	442	1E12	If we head to the left from here, 	If we head to the left from here, 	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	12	485	1E12	If we head to the opposite direction, 	If we head to the opposite direction, 	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	13	532	1E12	If we head to the right from here,\nthe door will be directly in front of us.               \n<wait>	If we head to the right from here,\nthe door will be directly in front of us.               \n<wait>	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	14	636	1E12	The door is to the north from here.	The door is to the north from here.	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	15	680	1E12	The door is to the left from here.	The door is to the left from here.	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	16	723	1E12	The door is right behind us.	The door is right behind us.	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	17	760	1E12	The door is to the right from here. Hurry! \n<wait>	The door is to the right from here. Hurry! \n<wait>	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	18	820	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:10	19	843	1E12	If we head straight here, 	If we head straight here, 	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	20	878	1E12	if we take a left here, 	if we take a left here, 	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	21	911	1E12	if we turn around here, 	if we turn around here, 	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	22	944	1E12	if we take a right here,\nthe door will be in front of us. Let's hurry!                \n<wait>	if we take a right here,\nthe door will be in front of us. Let's hurry!                \n<wait>	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	23	1043	1E12	The door's straight ahead.	The door's straight ahead.	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	24	1078	1E12	The door's to our left.	The door's to our left.	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	25	1110	1E12	The door's behind us. 	The door's behind us. 	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	26	1141	1E12	The door's to the right. Let's hurry.           \n<wait>	The door's to the right. Let's hurry.           \n<wait>	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	27	1206	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:10	28	1227	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:10	29	1245	1E12	If we head straight here, 	If we head straight here, 	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	30	1280	1E12	if we take a left here, 	if we take a left here, 	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	31	1313	1E12	if we turn around here, 	if we turn around here, 	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	32	1346	1E12	if we take a right here,\nthe door will be directly in front of us. Let's hurry!  \n<wait>	if we take a right here,\nthe door will be directly in front of us. Let's hurry!  \n<wait>	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	33	1440	1E12	The door is to the north from here.	The door is to the north from here.	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	34	1484	1E12	The door is to the left from here.	The door is to the left from here.	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	35	1527	1E12	The door is behind us.	The door is behind us.	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	36	1558	1E12	The door is to the left from here. Let's hurry.  \n<wait>	The door is to the left from here. Let's hurry.  \n<wait>	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	37	1625	1F7C	According to the map, the door you need to get to is to the north.\n<wait>	According to the map, the door you need to get to is to the north.\n<wait>	
+m/MS005C.BIN	0:10	38	1698	1FE5	The door you need to get to is 	The door you need to get to is 	
+m/MS005C.BIN	0:10	39	1735	1E12	The door's straight ahead.	The door's straight ahead.	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	40	1770	1E12	to the left.\n	to the left.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	41	1792	1E12	behind you.\n	behind you.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	42	1813	1E12	to the right.\n            <wait>	to the right.\n            <wait>	menu option, declared width 20 columns
+m/MS005C.BIN	0:10	43	1845	1FBA	The clock is ticking. You should hurry.\n<wait>	The clock is ticking. You should hurry.\n<wait>	
+m/MS005C.BIN	0:11	0	113	1FD0	You come across a soldier making out with a cambion.\n<wait>	You come across a soldier making out with a cambion.\n<wait>	
+m/MS005C.BIN	0:11	1	174	1FD2	Baal Soldier:	Baal Soldier:	
+m/MS005C.BIN	0:11	2	189	1FD3	Ah, didn't see you people there. How's it hanging?\n<wait>	Ah, didn't see you people there. How's it hanging?\n<wait>	
+m/MS005C.BIN	0:11	3	248	1FD2	Linda:	Linda:	
+m/MS005C.BIN	0:11	4	256	1FD3	Barbara! You've found yourself a real cutie.\n<wait>	Barbara! You've found yourself a real cutie.\n<wait>	
+m/MS005C.BIN	0:11	5	309	1FD2	Baal Soldier:	Baal Soldier:	
+m/MS005C.BIN	0:11	6	324	1FD3	Can't say that I approve of this one, though...\nKeep that gay shit in moderation, okay?\n<wait>	Can't say that I approve of this one, though...\nKeep that gay shit in moderation, okay?\n<wait>	
+m/MS005C.BIN	0:11	7	419	1FD2	Baal Soldier:	Baal Soldier:	
+m/MS005C.BIN	0:11	8	434	1FD3	We meet again. Wow, Linda. You're really going at it today.\n<wait>	We meet again. Wow, Linda. You're really going at it today.\n<wait>	
+m/MS005C.BIN	0:11	9	502	1FD2	Linda:	Linda:	
+m/MS005C.BIN	0:11	10	510	1FD3	Really?\n<wait>	Really?\n<wait>	
+m/MS005C.BIN	0:12	0	17	1FD0	You find yourself entering a narrow hallway.\n<wait>	You find yourself entering a narrow hallway.\n<wait>	
+m/MS005C.BIN	0:12	1	76	1F03	{08:20}{08:21}{08:22}{08:45}{08:71}来れば、まず問題{08:25}。\n<wait>		reads: まったていったいったここまで来れば、まず問題ない。\n<wait>
+m/MS005C.BIN	0:12	2	115	1FBA	あと{08:62}{08:45}を左に行けば{08:7F}{08:85}で{08:7B}。\n<wait>		reads: あとは、ここを左に行けばいいはずである。\n<wait>
+m/MS005C.BIN	0:12	3	152	1FBA	{03:0B}正直言{08:52}{08:63}一人では{08:90}し{08:69}も{08:25}{02:08}\n<wait>		reads: しかし、正直言って自分一人ではどうしようもない‥‥‥\n<wait>
+m/MS005C.BIN	0:12	4	202	1F03	{08:20}{08:21}{08:22}	{08:20}{08:21}{08:22}	reads: まったていったいった
+m/MS005C.BIN	0:12	5	212	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:12	6	221	1FD3	Let's take a left from here.\n<wait>	Let's take a left from here.\n<wait>	
+m/MS005C.BIN	0:12	7	258	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:12	8	267	1FD3	{03:0B}俺一人では{08:90}し{08:69}も{08:25}な{02:08}‥\n<wait>		reads: しかし、俺一人ではどうしようもないな‥‥‥‥\n<wait>
+m/MS005C.BIN	0:12	9	313	1F03	{=88}{=20}{08:21}{08:22}	{=88}{=20}{08:21}{08:22}	reads: {=88}{=20}ていったいった
+m/MS005C.BIN	0:12	10	323	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:12	11	334	1FD3	Let's take a left from here.\n<wait>	Let's take a left from here.\n<wait>	
+m/MS005C.BIN	0:12	12	371	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:12	13	382	1FD3	{03:0B}僕一人{08:81}あ、{08:90}し{08:69}も{08:25}{02:08}‥\n<wait>		reads: しかし、僕一人じゃあ、どうしようもない‥‥‥‥\n<wait>
+m/MS005C.BIN	0:12	14	428	1F03	{08:20}{=88}{=21}{08:22}	{08:20}{=88}{=21}{08:22}	reads: まった{=88}{=21}いった
+m/MS005C.BIN	0:12	15	438	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:12	16	449	1FD3	Let's take a left from here.\n<wait>	Let's take a left from here.\n<wait>	
+m/MS005C.BIN	0:12	17	486	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:12	18	497	1FD3	{03:0B}俺一人では{08:90}し{08:69}も{08:25}な{02:08}‥\n<wait>		reads: しかし、俺一人ではどうしようもないな‥‥‥‥\n<wait>
+m/MS005C.BIN	0:12	19	543	1F03	{08:20}{08:21}{=88}{=22}	{08:20}{08:21}{=88}{=22}	reads: まったていった{=88}{=22}
+m/MS005C.BIN	0:12	20	553	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:12	21	559	1FD3	後{08:62}{08:45}を左に向かえば{08:7F}のよね{02:08}‥\n{08:56}、{01:16}一人{08:81}{02:08}‥{08:90}{08:4B}ら{08:7F}の{02:08}\n<wait>		reads: 後は、ここを左に向かえばいいのよね‥‥‥‥\nでも、あたし一人じゃ‥‥‥‥どうしたらいいの‥‥‥\n<wait>
+m/MS005C.BIN	0:12	22	637	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:12	23	646	1FD3	Alright. We've made it this far.\n<wait>	Alright. We've made it this far.\n<wait>	
+m/MS005C.BIN	0:12	24	692	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:12	25	703	1FD3	Let's take a left from here.\n<wait>	Let's take a left from here.\n<wait>	
+m/MS005C.BIN	0:12	26	748	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:12	27	759	1FD3	Let's take a left from here.\n<wait>	Let's take a left from here.\n<wait>	
+m/MS005C.BIN	0:12	28	804	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:12	29	810	1FD3	Let's take a left from here.\n<wait>	Let's take a left from here.\n<wait>	
+m/MS005C.BIN	0:12	30	850	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:12	31	859	1FD3	Let's take a left from here.\n<wait>	Let's take a left from here.\n<wait>	
+m/MS005C.BIN	0:12	32	899	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:12	33	908	1FD3	Yeah.\n<wait>	Yeah.\n<wait>	
+m/MS005C.BIN	0:12	34	930	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:12	35	941	1FD3	Alright. We've made it this far.\n<wait>	Alright. We've made it this far.\n<wait>	
+m/MS005C.BIN	0:12	36	987	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:12	37	998	1FD3	Let's take a left from here.\n<wait>	Let's take a left from here.\n<wait>	
+m/MS005C.BIN	0:12	38	1043	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:12	39	1049	1FD3	Let's take a left from here.\n<wait>	Let's take a left from here.\n<wait>	
+m/MS005C.BIN	0:12	40	1089	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:12	41	1105	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:12	42	1116	1FD3	Yeah.\n<wait>	Yeah.\n<wait>	
+m/MS005C.BIN	0:12	43	1138	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:12	44	1149	1FD3	{08:45}{08:71}来れば、まずは安心{08:55}よね。\n<wait>		reads: ここまで来れば、まずは安心ですよね。\n<wait>
+m/MS005C.BIN	0:12	45	1193	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:12	46	1199	1FD3	Let's take a left from here.\n<wait>	Let's take a left from here.\n<wait>	
+m/MS005C.BIN	0:12	47	1239	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:12	48	1250	1FD3	Let's take a left from here.\n<wait>	Let's take a left from here.\n<wait>	
+m/MS005C.BIN	0:12	49	1290	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:12	50	1301	1FD3	そう{08:55}。\n<wait>		reads: そうです。\n<wait>
+m/MS005C.BIN	0:12	51	1326	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:12	52	1332	1FD3	{08:45}{08:71}来れば、まずは第一段階終了ね。\n後{08:62}{08:45}を左に向かうのよ{02:08}\n<wait>		reads: ここまで来れば、まずは第一段階終了ね。\n後は、ここを左に向かうのよ‥‥‥\n<wait>
+m/MS005C.BIN	0:12	53	1400	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:12	54	1406	1FD3	{08:56}、{08:47}人数{08:81}{02:08}\n<wait>		reads: でも、この人数じゃ‥‥‥\n<wait>
+m/MS005C.BIN	0:12	55	1429	1FD2	Barbara:	Barbara:	
+m/MS005C.BIN	0:12	56	1439	1FD3	Before you go, here. Take this.\n<wait>	Before you go, here. Take this.\n<wait>	
+m/MS005C.BIN	0:12	57	1479	1FD0	Barbara hands you a small vial.\n<wait>	Barbara hands you a small vial.\n<wait>	
+m/MS005C.BIN	0:12	58	1519	1FD2	Barbara:	Barbara:	
+m/MS005C.BIN	0:12	59	1529	1FD3	You have a long road ahead. This will restore your energy.\n<wait>	You have a long road ahead. This will restore your energy.\n<wait>	
+m/MS005C.BIN	0:12	60	1620	1FD0	Your wounds have been healed!\n<wait>	Your wounds have been healed!\n<wait>	
+m/MS005C.BIN	0:12	61	1658	1FD2	Barbara:	Barbara:	
+m/MS005C.BIN	0:12	62	1668	1FD3	That's it for me then. Good luck.\n<wait>	That's it for me then. Good luck.\n<wait>	
+m/MS005C.BIN	0:12	63	1710	1FD2	Barbara:	Barbara:	
+m/MS005C.BIN	0:12	64	1720	1FD3	You too, Ayato. If you make it out alive,\ncome meet me and I'll give you a "special reward".\n<wait>	You too, Ayato. If you make it out alive,\ncome meet me and I'll give you a "special reward".\n<wait>	
+m/MS005C.BIN	0:12	65	1821	1FD0	With that, Barbara takes her leave.\n<wait>	With that, Barbara takes her leave.\n<wait>	
+m/MS005C.BIN	0:12	66	1865	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:12	67	1876	1FD3	Let's go, Katsuragi!\n<wait>	Let's go, Katsuragi!\n<wait>	
+m/MS005C.BIN	0:12	68	1910	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:12	69	1919	1FD3	It's to the left from here. Let's hurry.\n<wait>	It's to the left from here. Let's hurry.\n<wait>	
+m/MS005C.BIN	0:12	70	1974	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:12	71	1985	1FD3	It's to the left from here. Let's hurry.\n<wait>	It's to the left from here. Let's hurry.\n<wait>	
+m/MS005C.BIN	0:12	72	2040	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:12	73	2051	1FD3	It's to the left from here. Let's hurry.\n<wait>	It's to the left from here. Let's hurry.\n<wait>	
+m/MS005C.BIN	0:12	74	2106	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:12	75	2112	1FD3	It's to the left from here. Let's hurry.\n<wait>	It's to the left from here. Let's hurry.\n<wait>	
+m/MS005C.BIN	0:12	76	2162	1FD0	Your destination is to the left. There is no time. You must hurry.\n<wait>	Your destination is to the left. There is no time. You must hurry.\n<wait>	
+m/MS005C.BIN	0:12	77	2250	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:12	78	2259	1FD3	Straight from here!\n<wait>	Straight from here!\n<wait>	
+m/MS005C.BIN	0:12	79	2293	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:12	80	2304	1FD3	Straight from here!\n<wait>	Straight from here!\n<wait>	
+m/MS005C.BIN	0:12	81	2338	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:12	82	2349	1FD3	Straight from here!\n<wait>	Straight from here!\n<wait>	
+m/MS005C.BIN	0:12	83	2383	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:12	84	2389	1FD3	Straight from here!\n<wait>	Straight from here!\n<wait>	
+m/MS005C.BIN	0:12	85	2418	1FD0	You should head straight from here.\n<wait>	You should head straight from here.\n<wait>	
+m/MS005C.BIN	0:12	86	2477	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:12	87	2486	1FD3	What the hell, Katsuragi? There's no time. We can't head back now!\n<wait>	What the hell, Katsuragi? There's no time. We can't head back now!\n<wait>	
+m/MS005C.BIN	0:12	88	2567	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:12	89	2578	1FD3	There's no time. We can't head back now!\n<wait>	There's no time. We can't head back now!\n<wait>	
+m/MS005C.BIN	0:12	90	2633	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:12	91	2644	1FD3	There's no time. We can't head back now!\n<wait>	There's no time. We can't head back now!\n<wait>	
+m/MS005C.BIN	0:12	92	2699	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:12	93	2705	1FD3	There's no time. We can't head back now!\n<wait>	There's no time. We can't head back now!\n<wait>	
+m/MS005C.BIN	0:12	94	2755	1FD0	There's no time. You can't head back now.\n<wait>	There's no time. You can't head back now.\n<wait>	
+m/MS005C.BIN	0:13	0	16	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:13	1	33	1F03	{08:20}{08:22}The coming area is a bit of a maze...\n<wait>	{08:20}{08:22}The coming area is a bit of a maze...\n<wait>	reads: まったいったThe coming area is a bit of a maze...\n<wait>
+m/MS005C.BIN	0:13	2	85	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:13	3	94	1FD3	Proceed with caution...\n<wait>	Proceed with caution...\n<wait>	
+m/MS005C.BIN	0:13	4	125	18	The coming area is a bit of a maze.\n<wait>Be sure to follow my instructions.\n<wait>	The coming area is a bit of a maze.\n<wait>Be sure to follow my instructions.\n<wait>	
+m/MS005C.BIN	0:13	5	213	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:13	6	224	1FD3	Alright! We're counting on you.\n<wait>	Alright! We're counting on you.\n<wait>	
+m/MS005C.BIN	0:13	7	270	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:13	8	276	1FD3	We're counting on you!\n<wait>	We're counting on you!\n<wait>	
+m/MS005C.BIN	0:13	9	313	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:13	10	324	1FD3	We're counting on you!\n	We're counting on you!\n	
+m/MS005C.BIN	0:13	11	357	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:13	12	376	1F03	{08:22}The coming area is a bit of a maze...\n<wait>You've gotta find a way through somehow!...\n<wait>	{08:22}The coming area is a bit of a maze...\n<wait>You've gotta find a way through somehow!...\n<wait>	reads: いったThe coming area is a bit of a maze...\n<wait>You've gotta find a way through somehow!...\n<wait>
+m/MS005C.BIN	0:13	13	473	18	The coming area is a bit of a maze.\n<wait>Be sure to follow my instructions.\n<wait>	The coming area is a bit of a maze.\n<wait>Be sure to follow my instructions.\n<wait>	
+m/MS005C.BIN	0:13	14	561	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:13	15	567	1FD3	We're counting on you!\n<wait>	We're counting on you!\n<wait>	
+m/MS005C.BIN	0:13	16	604	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:13	17	615	1FD3	We're counting on you!\n	We're counting on you!\n	
+m/MS005C.BIN	0:13	18	648	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:13	19	667	1F03	The coming area is a bit of a maze...\nYou've gotta find a way through somehow!...\n<wait>	The coming area is a bit of a maze...\nYou've gotta find a way through somehow!...\n<wait>	
+m/MS005C.BIN	0:13	20	758	18	The coming area is a bit of a maze.\nBe sure to follow my instructions.\n	The coming area is a bit of a maze.\nBe sure to follow my instructions.\n	
+m/MS005C.BIN	0:13	21	836	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:13	22	842	1FD3	We're counting on you!\n<wait>	We're counting on you!\n<wait>	
+m/MS005C.BIN	0:13	23	879	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:13	24	890	0B	The coming area is a bit of a maze.\nBe sure to follow my instructions.\n<wait>	The coming area is a bit of a maze.\nBe sure to follow my instructions.\n<wait>	
+m/MS005C.BIN	0:13	25	968	18	The coming area is a bit of a maze...\nYou've gotta find a way through somehow!...\n<wait>	The coming area is a bit of a maze...\nYou've gotta find a way through somehow!...\n<wait>	
+m/MS005C.BIN	0:13	26	1059	1FD0	The coming area is a bit of a maze.\nLet's be careful and try not to waste too much time.\n<wait>	The coming area is a bit of a maze.\nLet's be careful and try not to waste too much time.\n<wait>	
+m/MS005C.BIN	0:13	27	1171	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:13	28	1187	09	Turning back now means that the plan's a bust!\nWe've gotta keep going.\n<wait>	Turning back now means that the plan's a bust!\nWe've gotta keep going.\n<wait>	
+m/MS005C.BIN	0:13	29	1265	18	Turning back now means that the plan's a bust!\nWe've gotta keep going.\n<wait>	Turning back now means that the plan's a bust!\nWe've gotta keep going.\n<wait>	
+m/MS005C.BIN	0:13	30	1350	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:13	31	1359	1FD3	Turning back now means that the plan's a bust!\nWe've gotta keep going.\n<wait>	Turning back now means that the plan's a bust!\nWe've gotta keep going.\n<wait>	
+m/MS005C.BIN	0:13	32	1444	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:13	33	1455	1FD3	Turning back now means that the plan's a bust!\nWe've gotta keep going.\n<wait>	Turning back now means that the plan's a bust!\nWe've gotta keep going.\n<wait>	
+m/MS005C.BIN	0:13	34	1540	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:13	35	1546	1FD3	We can't turn back now! Let's keep going.\n<wait>	We can't turn back now! Let's keep going.\n<wait>	
+m/MS005C.BIN	0:13	36	1597	1FD0	Turning back now means that the plan's a bust.\nYour fates will be sealed.\n<wait>	Turning back now means that the plan's a bust.\nYour fates will be sealed.\n<wait>	
+m/MS005C.BIN	0:13	37	1677	1FBA	You have no choice but to keep going...\n<wait>	You have no choice but to keep going...\n<wait>	
+m/MS005C.BIN	0:14	0	16	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:14	1	25	1FD3	Turn west, and then head straight.\n<wait>	Turn west, and then head straight.\n<wait>	
+m/MS005C.BIN	0:14	2	74	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:14	3	95	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:14	4	106	1FD3	Turn west, and then head to the next floor.\n<wait>	Turn west, and then head to the next floor.\n<wait>	
+m/MS005C.BIN	0:14	5	164	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:14	6	170	1FD3	Head west from here.\n<wait>	Head west from here.\n<wait>	
+m/MS005C.BIN	0:14	7	200	1FD0	You should head to west from here...\n<wait>	You should head to west from here...\n<wait>	
+m/MS005C.BIN	0:14	8	296	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:14	9	312	0B	I literally just said "left". Are you deaf or something?\n<wait>	I literally just said "left". Are you deaf or something?\n<wait>	
+m/MS005C.BIN	0:14	10	376	18	This is not the way. Let's turn back.\n<wait>	This is not the way. Let's turn back.\n<wait>	
+m/MS005C.BIN	0:14	11	435	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:14	12	449	0B	Wrong way! Turn back!\n<wait>	Wrong way! Turn back!\n<wait>	
+m/MS005C.BIN	0:14	13	491	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:14	14	507	0B	Err... Pretty sure that this isn't the right way.\nLet's turn back.\n<wait>	Err... Pretty sure that this isn't the right way.\nLet's turn back.\n<wait>	
+m/MS005C.BIN	0:14	15	581	18	Pretty sure that this isn't the right way.\nLet's turn back.\n<wait>	Pretty sure that this isn't the right way.\nLet's turn back.\n<wait>	
+m/MS005C.BIN	0:14	16	658	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:14	17	669	0B	Wrong way! Turn back!\n<wait>	Wrong way! Turn back!\n<wait>	
+m/MS005C.BIN	0:14	18	698	18	Pretty sure that this isn't the right way.\nLet's turn back.\n<wait>	Pretty sure that this isn't the right way.\nLet's turn back.\n<wait>	
+m/MS005C.BIN	0:14	19	770	1FD0	This doesn't look like you are meant to be going.\n<wait>	This doesn't look like you are meant to be going.\n<wait>	
+m/MS005C.BIN	0:14	20	826	1FBA	There's no time for detours. You should head back.\n<wait>	There's no time for detours. You should head back.\n<wait>	
+m/MS005C.BIN	0:15	0	16	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:15	1	27	1FD3	There's no time. Let's hurry.\n	There's no time. Let's hurry.\n	
+m/MS005C.BIN	0:15	2	63	1E12	It's to the left from here.\n	It's to the left from here.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:15	3	100	1E12	It's to the right from here.\n	It's to the right from here.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:15	4	138	1E12	It's to the west from here.\n	It's to the west from here.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:15	5	175	1E12	It's straight ahead from here!                       \n<wait>	It's straight ahead from here!                       \n<wait>	menu option, declared width 20 columns
+m/MS005C.BIN	0:15	6	243	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:15	7	252	1FD3	There's no time. Let's hurry.\n	There's no time. Let's hurry.\n	
+m/MS005C.BIN	0:15	8	288	1E12	It's to the left from here.\n	It's to the left from here.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:15	9	325	1E12	It's to the right from here.\n	It's to the right from here.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:15	10	363	1E12	It's to the west from here.\n	It's to the west from here.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:15	11	400	1E12	It's straight ahead from here!                       \n<wait>	It's straight ahead from here!                       \n<wait>	menu option, declared width 20 columns
+m/MS005C.BIN	0:15	12	468	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:15	13	489	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:15	14	495	1FD3	There's no time. Let's hurry.\n	There's no time. Let's hurry.\n	
+m/MS005C.BIN	0:15	15	531	1E12	It's to the left from here.\n	It's to the left from here.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:15	16	568	1E12	It's to the right from here.\n	It's to the right from here.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:15	17	606	1E12	It's to the west from here.\n	It's to the west from here.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:15	18	643	1E12	It's straight ahead from here!                       \n<wait>	It's straight ahead from here!                       \n<wait>	menu option, declared width 20 columns
+m/MS005C.BIN	0:15	19	706	1FD0	There's no time. You must hurry.\n	There's no time. You must hurry.\n	
+m/MS005C.BIN	0:15	20	745	1E12	It's to the left from here.\n	It's to the left from here.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:15	21	782	1E12	It's to the right from here.\n	It's to the right from here.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:15	22	820	1E12	It's to the west from here.\n	It's to the west from here.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:15	23	857	1E12	It's straight ahead from here!                       \n<wait>	It's straight ahead from here!                       \n<wait>	menu option, declared width 20 columns
+m/MS005C.BIN	0:15	24	931	1F03	{08:20}{08:21}{08:22}	{08:20}{08:21}{08:22}	reads: まったていったいった
+m/MS005C.BIN	0:15	25	941	1FD0	This hallway leads to the chemical plant.\n<wait>	This hallway leads to the chemical plant.\n<wait>	
+m/MS005C.BIN	0:15	26	995	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:15	27	1004	1FD3	This hallway leads to the chemical plant.\n<wait>What on earth are you thinking?\n<wait>	This hallway leads to the chemical plant.\n<wait>What on earth are you thinking?\n<wait>	
+m/MS005C.BIN	0:15	28	1095	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:15	29	1101	1FD3	Hey, seriously... Let's just turn around, okay?\n<wait>	Hey, seriously... Let's just turn around, okay?\n<wait>	
+m/MS005C.BIN	0:15	30	1163	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:15	31	1174	1FD3	Hey, seriously... Let's just turn around, okay?\n<wait>	Hey, seriously... Let's just turn around, okay?\n<wait>	
+m/MS005C.BIN	0:15	32	1236	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:15	33	1247	1FD3	Seriously, man. Let's turn around.\n<wait>	Seriously, man. Let's turn around.\n<wait>	
+m/MS005C.BIN	0:15	34	1291	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:15	35	1300	1FD3	This is not what we came here to do. Let's turn around.\n<wait>	This is not what we came here to do. Let's turn around.\n<wait>	
+m/MS005C.BIN	0:15	36	1370	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:15	37	1381	1FD3	Yo, Katsuragi. This hallway leads to the chemical plant.\n<wait>	Yo, Katsuragi. This hallway leads to the chemical plant.\n<wait>	
+m/MS005C.BIN	0:15	38	1462	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:15	39	1473	1FD3	This is not what we came here to do. Let's turn around.\n<wait>	This is not what we came here to do. Let's turn around.\n<wait>	
+m/MS005C.BIN	0:15	40	1543	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:15	41	1554	1FD3	This hallway leads to the chemical plant.\n<wait>	This hallway leads to the chemical plant.\n<wait>	
+m/MS005C.BIN	0:15	42	1618	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:15	43	1624	1FD3	This hallway leads to the chemical plant.\nWhat on earth are you thinking?\n<wait>	This hallway leads to the chemical plant.\nWhat on earth are you thinking?\n<wait>	
+m/MS005C.BIN	0:15	44	1706	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:15	45	1712	1FD3	This is not what we came here to do. Let's turn around.\n<wait>	This is not what we came here to do. Let's turn around.\n<wait>	
+m/MS005C.BIN	0:16	0	8	1F03			
+m/MS005C.BIN	0:16	1	20	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:16	2	35	1F7C	One of the other teams is going to be taking care of this area.\nLet's get back to our own mission.\n	One of the other teams is going to be taking care of this area.\nLet's get back to our own mission.\n	
+m/MS005C.BIN	0:16	3	137	18	What the hell is wrong with you, man?\nWe've gotta stick to our orders!\n	What the hell is wrong with you, man?\nWe've gotta stick to our orders!\n	
+m/MS005C.BIN	0:16	4	218	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:16	5	239	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:16	6	256	1F7C	One of the other teams is going to be taking care of this area.\nLet's get back to our own mission.\n	One of the other teams is going to be taking care of this area.\nLet's get back to our own mission.\n	
+m/MS005C.BIN	0:16	7	358	18	Katsuragi, please. We've gotta stick to our orders.\n	Katsuragi, please. We've gotta stick to our orders.\n	
+m/MS005C.BIN	0:16	8	420	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:16	9	432	1F7C	One of the other teams is going to be taking care of this area.\nLet's get back to our own mission.\n	One of the other teams is going to be taking care of this area.\nLet's get back to our own mission.\n	
+m/MS005C.BIN	0:16	10	534	18	Katsuragi, please. We've gotta stick to our orders.\n	Katsuragi, please. We've gotta stick to our orders.\n	
+m/MS005C.BIN	0:16	11	597	1F7C	The chemical plant...\n<wait>	The chemical plant...\n<wait>	
+m/MS005C.BIN	0:16	12	625	1FBA	One of the other teams is going to be taking care of this area.\nThere is no reason whatsoever for you to be here.\n<wait>	One of the other teams is going to be taking care of this area.\nThere is no reason whatsoever for you to be here.\n<wait>	
+m/MS005C.BIN	0:16	13	745	1FBA	You turn around and get back to your own mission.\n	You turn around and get back to your own mission.\n	
+m/MS005C.BIN	0:16	14	798	18	There is no point in wasting time here.\nYou turn around and get back to your own mission.\n	There is no point in wasting time here.\nYou turn around and get back to your own mission.\n	
+m/MS005C.BIN	0:17	0	8	1F03			
+m/MS005C.BIN	0:18	0	8	1F03			
+m/MS005C.BIN	0:18	1	56	1FD2	Baal Soldier:	Baal Soldier:	
+m/MS005C.BIN	0:18	2	71	1FD3	Hmm? And who do you people think you are? Get the hell out of here!\n<wait>	Hmm? And who do you people think you are? Get the hell out of here!\n<wait>	
+m/MS005C.BIN	0:18	3	147	1FD2	Prostitute:	Prostitute:	
+m/MS005C.BIN	0:18	4	160	1FD3	Thanks for ruining the mood!\n	Thanks for ruining the mood!\n	
+m/MS005C.BIN	0:19	0	8	1F03			
+m/MS005C.BIN	0:19	1	34	1FD2	Baal Soldier:	Baal Soldier:	
+m/MS005C.BIN	0:19	2	49	1FD3	Where is my Charlotte!?\nShe better not be with another man, because if she is!...\n<wait>	Where is my Charlotte!?\nShe better not be with another man, because if she is!...\n<wait>	
+m/MS005C.BIN	0:1A	0	8	1F03			
+m/MS005C.BIN	0:1A	1	34	1FD2	Prostitute:	Prostitute:	
+m/MS005C.BIN	0:1A	2	47	1FD3	I'm sorry, but this room is currently taken.\n<wait>	I'm sorry, but this room is currently taken.\n<wait>	
+m/MS005C.BIN	0:1A	3	100	1FD2	Prostitute:	Prostitute:	
+m/MS005C.BIN	0:1A	4	113	1FD3	Please go somewhere else.\n	Please go somewhere else.\n	
+m/MS005C.BIN	0:1B	0	8	1F03			
+m/MS005C.BIN	0:1C	0	16	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:1C	1	25	1FD3	Right from here!\n<wait>	Right from here!\n<wait>	
+m/MS005C.BIN	0:1C	2	56	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:1C	3	67	1FD3	Right from here!\n<wait>	Right from here!\n<wait>	
+m/MS005C.BIN	0:1C	4	98	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:1C	5	109	1FD3	Right from here!\n<wait>	Right from here!\n<wait>	
+m/MS005C.BIN	0:1C	6	140	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:1C	7	146	1FD3	Right from here!\n<wait>	Right from here!\n<wait>	
+m/MS005C.BIN	0:1C	8	172	1FD0	You should probably take a right here...\n<wait>	You should probably take a right here...\n<wait>	
+m/MS005C.BIN	0:1C	9	231	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:1C	10	240	1FD3	We have no time for detours!\n<wait>	We have no time for detours!\n<wait>	
+m/MS005C.BIN	0:1C	11	283	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:1C	12	294	1FD3	We have no time for detours!\n<wait>	We have no time for detours!\n<wait>	
+m/MS005C.BIN	0:1C	13	337	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:1C	14	348	1FD3	We have no time for detours!\n<wait>	We have no time for detours!\n<wait>	
+m/MS005C.BIN	0:1C	15	391	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:1C	16	397	1FD3	We have no time for detours!\n<wait>	We have no time for detours!\n<wait>	
+m/MS005C.BIN	0:1C	17	435	1FD0	関係無い所に行っ{08:14}ほど、時間と作戦の余裕は{08:25}{08:72}\n		reads: 関係無い所に行っているほど、時間と作戦の余裕はない‥‥\n
+m/MS005C.BIN	0:1C	18	486	00	{04:FF}は今来た道へ戻{08:51}。\n<wait>		reads: は今来た道へ戻った。\n<wait>
+m/MS005C.BIN	0:1C	19	531	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:1C	20	546	1E12	Right to us 	Right to us 	menu option, declared width 20 columns
+m/MS005C.BIN	0:1C	21	567	1E12	Left to us 	Left to us 	menu option, declared width 20 columns
+m/MS005C.BIN	0:1C	22	587	1E12	Behind us 	Behind us 	menu option, declared width 20 columns
+m/MS005C.BIN	0:1C	23	606	1E12	there's a door. Let's go through there!\n<wait>	there's a door. Let's go through there!\n<wait>	menu option, declared width 20 columns
+m/MS005C.BIN	0:1C	24	651	00	there's a door. Let's go through there!\n<wait>	there's a door. Let's go through there!\n<wait>	
+m/MS005C.BIN	0:1C	25	705	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:1C	26	726	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:1C	27	743	1E12	Right to us 	Right to us 	menu option, declared width 20 columns
+m/MS005C.BIN	0:1C	28	764	1E12	Left to us 	Left to us 	menu option, declared width 20 columns
+m/MS005C.BIN	0:1C	29	784	1E12	Behind us 	Behind us 	menu option, declared width 20 columns
+m/MS005C.BIN	0:1C	30	803	1E12	there's a door. Let's go through there!\n<wait>	there's a door. Let's go through there!\n<wait>	menu option, declared width 20 columns
+m/MS005C.BIN	0:1C	31	848	00	there's a door. Let's go through there!\n<wait>	there's a door. Let's go through there!\n<wait>	
+m/MS005C.BIN	0:1C	32	902	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:1C	33	914	1E12	Right to us 	Right to us 	menu option, declared width 20 columns
+m/MS005C.BIN	0:1C	34	935	1E12	Left to us 	Left to us 	menu option, declared width 20 columns
+m/MS005C.BIN	0:1C	35	955	1E12	Behind us 	Behind us 	menu option, declared width 20 columns
+m/MS005C.BIN	0:1C	36	974	1E12	there's a door. Let's go through there!\n<wait>	there's a door. Let's go through there!\n<wait>	menu option, declared width 20 columns
+m/MS005C.BIN	0:1C	37	1019	00	there's a door. Let's go through there!\n<wait>	there's a door. Let's go through there!\n<wait>	
+m/MS005C.BIN	0:1C	38	1074	1E12	Right to us 	Right to us 	menu option, declared width 20 columns
+m/MS005C.BIN	0:1C	39	1095	1E12	Left to us 	Left to us 	menu option, declared width 20 columns
+m/MS005C.BIN	0:1C	40	1115	1E12	Behind us 	Behind us 	menu option, declared width 20 columns
+m/MS005C.BIN	0:1C	41	1134	1E12	there's a door. Let's go through there!\n<wait>	there's a door. Let's go through there!\n<wait>	menu option, declared width 20 columns
+m/MS005C.BIN	0:1C	42	1179	00	there's a door. Let's go through there!\n<wait>	there's a door. Let's go through there!\n<wait>	
+m/MS005C.BIN	0:1D	0	16	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:1D	1	25	1FD3	Left from here!\n<wait>	Left from here!\n<wait>	
+m/MS005C.BIN	0:1D	2	55	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:1D	3	66	1FD3	Left from here!\n<wait>	Left from here!\n<wait>	
+m/MS005C.BIN	0:1D	4	96	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:1D	5	107	1FD3	Left from here!\n<wait>	Left from here!\n<wait>	
+m/MS005C.BIN	0:1D	6	137	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:1D	7	143	1FD3	Left from here!\n<wait>	Left from here!\n<wait>	
+m/MS005C.BIN	0:1D	8	168	1FD0	Looking at the map, it appears that you should head left from here.\n<wait>	Looking at the map, it appears that you should head left from here.\n<wait>	
+m/MS005C.BIN	0:1D	9	259	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:1D	10	268	1FD3	Wrong way. There are enemies ahead. Let's turn back.\n<wait>	Wrong way. There are enemies ahead. Let's turn back.\n<wait>	
+m/MS005C.BIN	0:1D	11	335	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:1D	12	346	1FD3	Wrong way. There are enemies ahead. Let's turn back.\n<wait>	Wrong way. There are enemies ahead. Let's turn back.\n<wait>	
+m/MS005C.BIN	0:1D	13	413	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:1D	14	424	1FD3	Wrong way. There are enemies ahead. Let's turn back.\n<wait>	Wrong way. There are enemies ahead. Let's turn back.\n<wait>	
+m/MS005C.BIN	0:1D	15	491	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:1D	16	497	1FD3	Wrong way. There are enemies ahead. Let's turn back.\n<wait>	Wrong way. There are enemies ahead. Let's turn back.\n<wait>	
+m/MS005C.BIN	0:1D	17	567	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:1D	18	578	1FD3	Katsuragi! Wrong way!\n<wait>	Katsuragi! Wrong way!\n<wait>	
+m/MS005C.BIN	0:1D	19	614	1F03	{08:22}	{08:22}	reads: いった
+m/MS005C.BIN	0:1D	20	620	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:1D	21	631	1FD3	There are enemies ahead.\n<wait>What are you doing?\n<wait>	There are enemies ahead.\n<wait>What are you doing?\n<wait>	
+m/MS005C.BIN	0:1D	22	692	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:1D	23	698	1FD3	There are enemies ahead.\n<wait>	There are enemies ahead.\n<wait>	
+m/MS005C.BIN	0:1D	24	736	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:1D	25	745	1FD3	What are you doing?\n<wait>	What are you doing?\n<wait>	
+m/MS005C.BIN	0:1D	26	777	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:1D	27	788	1FD3	What are you doing?\n<wait>	What are you doing?\n<wait>	
+m/MS005C.BIN	0:1D	28	815	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:1D	29	821	1FD3	What are you doing?\n<wait>	What are you doing?\n<wait>	
+m/MS005C.BIN	0:1D	30	856	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:1D	31	865	1FD3	There are enemies ahead.\n<wait>	There are enemies ahead.\n<wait>	
+m/MS005C.BIN	0:1D	32	906	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:1D	33	915	1FD3	What are you doing?\n<wait>	What are you doing?\n<wait>	
+m/MS005C.BIN	0:1D	34	950	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:1D	35	961	1FD3	There are enemies ahead. What are you doing?\n<wait>	There are enemies ahead. What are you doing?\n<wait>	
+m/MS005C.BIN	0:1D	36	1021	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:1D	37	1030	1FD3	Katsuragi! Wrong way!\n<wait>	Katsuragi! Wrong way!\n<wait>	
+m/MS005C.BIN	0:1D	38	1065	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:1D	39	1071	1FD3	There are enemies ahead.\n<wait>	There are enemies ahead.\n<wait>	
+m/MS005C.BIN	0:1D	40	1112	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:1D	41	1121	1FD3	What are you doing?\n<wait>	What are you doing?\n<wait>	
+m/MS005C.BIN	0:1D	42	1167	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:1D	43	1178	1FD3	Katsuragi! Wrong way!\n<wait>	Katsuragi! Wrong way!\n<wait>	
+m/MS005C.BIN	0:1D	44	1213	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:1D	45	1219	1FD3	There are enemies ahead.\n<wait>	There are enemies ahead.\n<wait>	
+m/MS005C.BIN	0:1D	46	1252	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:1D	47	1258	1FD3	What are you doing?\n<wait>	What are you doing?\n<wait>	
+m/MS005C.BIN	0:1D	48	1285	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:1D	49	1296	1FD3	There are enemies ahead.\n<wait>What are you doing?\n<wait>	There are enemies ahead.\n<wait>What are you doing?\n<wait>	
+m/MS005C.BIN	0:1D	50	1360	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:1D	51	1366	1FD3	Katsuragi! Wrong way!\n<wait>	Katsuragi! Wrong way!\n<wait>	
+m/MS005C.BIN	0:1D	52	1396	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:1D	53	1402	1FD3	There are enemies ahead.\n<wait>What are you doing?\n<wait>	There are enemies ahead.\n<wait>What are you doing?\n<wait>	
+m/MS005C.BIN	0:1E	0	15	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:1E	1	24	1FD3	There's are demons ahead. Let's turn back.\n<wait>	There's are demons ahead. Let's turn back.\n<wait>	
+m/MS005C.BIN	0:1E	2	81	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:1E	3	102	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:1E	4	113	1FD3	There's are demons ahead. Let's turn back.\n<wait>	There's are demons ahead. Let's turn back.\n<wait>	
+m/MS005C.BIN	0:1E	5	170	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:1E	6	189	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:1E	7	198	1FD3	Katsuragi. There are demons ahead.\n<wait>	Katsuragi. There are demons ahead.\n<wait>	
+m/MS005C.BIN	0:1E	8	246	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:1E	9	257	1FD3	Let's turn back!\n<wait>	Let's turn back!\n<wait>	
+m/MS005C.BIN	0:1E	10	288	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:1E	11	299	1FD3	Let's turn back!\n<wait>	Let's turn back!\n<wait>	
+m/MS005C.BIN	0:1E	12	330	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:1E	13	336	1FD3	Let's turn back!\n<wait>	Let's turn back!\n<wait>	
+m/MS005C.BIN	0:1E	14	362	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:1E	15	384	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:1E	16	395	1FD3	Katsuragi. There are demons ahead.\n<wait>	Katsuragi. There are demons ahead.\n<wait>	
+m/MS005C.BIN	0:1E	17	454	1FD2	Hayasaka:	Hayasaka:	
+m/MS005C.BIN	0:1E	18	478	1FD2	Kamikawa:	Kamikawa:	
+m/MS005C.BIN	0:1E	19	489	1FD3	Katsuragi. There are demons ahead.\n<wait>	Katsuragi. There are demons ahead.\n<wait>	
+m/MS005C.BIN	0:1E	20	551	1FD2	Emi:	Emi:	
+m/MS005C.BIN	0:1E	21	557	1FD3	Katsuragi. There are demons ahead.\n<wait>	Katsuragi. There are demons ahead.\n<wait>	
+m/MS005C.BIN	0:1F	0	10	1FD2	Sonoda:	Sonoda:	
+m/MS005C.BIN	0:1F	1	31	1E12	{08:45}を右に行{08:52}、		reads: ここを右に行って、; menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	2	54	1E12	{08:45}を左に行{08:52}、		reads: ここを左に行って、; menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	3	77	1E12	真っすぐ行{08:52}、		reads: 真っすぐ行って、; menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	4	100	1E12	後ろの方に{08:7B}、下り階段を降りる{08:5F}！\n<wait>		reads: 後ろの方にある、下り階段を降りるんだ！\n<wait>; menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	5	144	0B	{01:32}か		reads: 大丈夫か
+m/MS005C.BIN	0:1F	6	152	00	{04:FF}。お前方向音痴{08:81}{08:25}{08:8C}な？\n<wait>		reads: 。お前方向音痴じゃないだろうな？\n<wait>
+m/MS005C.BIN	0:1F	7	184	00	突きあたりの階段を降りる{08:5F}！\n<wait>		reads: 突きあたりの階段を降りるんだ！\n<wait>
+m/MS005C.BIN	0:1F	8	229	0B	何や{08:52}{08:5F}		reads: 何やってんだ
+m/MS005C.BIN	0:1F	9	241	00	{04:FF}！\n戻っ{08:14}暇は無いぞ！！\n<wait>		reads: ！\n戻っている暇は無いぞ！！\n<wait>
+m/MS005C.BIN	0:1F	10	272	00	戻っ{08:14}暇{08:6A}か無い！　早く行こう！\n<wait>		reads: 戻っている暇なんか無い！　早く行こう！\n<wait>
+m/MS005C.BIN	0:1F	11	322	1E12	To the right from here, there's a staircase leading down to B1F.\nThat's our destination.\n	To the right from here, there's a staircase leading down to B1F.\nThat's our destination.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	12	420	1E12	To the left from here, there's a staircase leading down to B1F.\nThat's our destination.\n	To the left from here, there's a staircase leading down to B1F.\nThat's our destination.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	13	517	1E12	Straight ahead from here, there's a staircase leading down to B1F.\nThat's our destination.\n	Straight ahead from here, there's a staircase leading down to B1F.\nThat's our destination.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	14	617	1E12	Directly behind us, there's a staircase leading down to B1F.\nThat's our destination.                                         \n<wait>	Directly behind us, there's a staircase leading down to B1F.\nThat's our destination.                                         \n<wait>	menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	15	758	1FD2	{08:00}：		reads: 早坂：
+m/MS005C.BIN	0:1F	16	774	1FD2	{08:39}：		reads: 上河：
+m/MS005C.BIN	0:1F	17	792	1E12	{08:45}を右に行{08:52}、		reads: ここを右に行って、; menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	18	815	1E12	{08:45}を左に行{08:52}、		reads: ここを左に行って、; menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	19	838	1E12	真っすぐ行{08:52}、		reads: 真っすぐ行って、; menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	20	861	1E12	後ろの方に{08:7B}、下り階段を降りるん{08:55}！\n<wait>		reads: 後ろの方にある、下り階段を降りるんです！\n<wait>; menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	21	907	0B	{01:32}{08:55}か？　		reads: 大丈夫ですか？　
+m/MS005C.BIN	0:1F	22	921	00	{04:FF}さん。\n{01:27}方向音痴{08:81}{08:25}{08:55}よね？\n<wait>		reads: さん。\nまさか方向音痴じゃないですよね？\n<wait>
+m/MS005C.BIN	0:1F	23	958	00	突きあたりの階段を降りるん{08:55}！\n<wait>		reads: 突きあたりの階段を降りるんです！\n<wait>
+m/MS005C.BIN	0:1F	24	1009	00	{04:FF}さん！\n戻っ{08:14}暇は本当にあり{02:0A}！！\n<wait>		reads: さん！\n戻っている暇は本当にありません！！\n<wait>
+m/MS005C.BIN	0:1F	25	1050	00	戻っ{08:14}暇{08:6A}か無い！　早く行きま{08:80}！\n<wait>		reads: 戻っている暇なんか無い！　早く行きましょう！\n<wait>
+m/MS005C.BIN	0:1F	26	1102	1E12	To the right from here, there's a staircase leading down to B1F.\nThat's our destination.\n	To the right from here, there's a staircase leading down to B1F.\nThat's our destination.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	27	1200	1E12	To the left from here, there's a staircase leading down to B1F.\nThat's our destination.\n	To the left from here, there's a staircase leading down to B1F.\nThat's our destination.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	28	1297	1E12	Straight ahead from here, there's a staircase leading down to B1F.\nThat's our destination.\n	Straight ahead from here, there's a staircase leading down to B1F.\nThat's our destination.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	29	1397	1E12	後ろの方に{08:7B}、下り階段でＢ１Ｆに入るん{08:55}。\n<wait>		reads: 後ろの方にある、下り階段でＢ１Ｆに入るんです。\n<wait>; menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	30	1455	1FD2	{08:03}：		reads: 英美：
+m/MS005C.BIN	0:1F	31	1473	1E12	{08:45}を右に行{08:52}、		reads: ここを右に行って、; menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	32	1496	1E12	{08:45}を左に行{08:52}、		reads: ここを左に行って、; menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	33	1519	1E12	真っすぐ行{08:52}、		reads: 真っすぐ行って、; menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	34	1542	1E12	後ろの方に{08:7B}、下り階段を降りるのよ！\n<wait>		reads: 後ろの方にある、下り階段を降りるのよ！\n<wait>; menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	35	1592	00	{04:FF}くん。{01:27}{02:08}方向音痴？\n<wait>		reads: くん。まさか‥‥‥方向音痴？\n<wait>
+m/MS005C.BIN	0:1F	36	1620	00	突きあたりの階段を降りるのよ！\n<wait>		
+m/MS005C.BIN	0:1F	37	1671	00	{04:FF}くん！\n戻っ{08:14}暇{08:62}本当に無いわよ！！\n<wait>		reads: くん！\n戻っている暇は、本当に無いわよ！！\n<wait>
+m/MS005C.BIN	0:1F	38	1714	00	戻っ{08:14}暇{08:6A}か無いわ！　早く行きま{08:80}！\n<wait>		reads: 戻っている暇なんか無いわ！　早く行きましょう！\n<wait>
+m/MS005C.BIN	0:1F	39	1768	1E12	To the right from here, there's a staircase leading down to B1F.\nThat's our destination.\n	To the right from here, there's a staircase leading down to B1F.\nThat's our destination.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	40	1866	1E12	To the left from here, there's a staircase leading down to B1F.\nThat's our destination.\n	To the left from here, there's a staircase leading down to B1F.\nThat's our destination.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	41	1963	1E12	Straight ahead from here, there's a staircase leading down to B1F.\nThat's our destination.\n	Straight ahead from here, there's a staircase leading down to B1F.\nThat's our destination.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	42	2063	1E12	後ろの方に{08:7B}、下り階段でＢ１Ｆに入るのよ。\n<wait>		reads: 後ろの方にある、下り階段でＢ１Ｆに入るのよ。\n<wait>; menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	43	2128	1E12	{08:45}を右に行{08:52}、		reads: ここを右に行って、; menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	44	2151	1E12	{08:45}を左に行{08:52}、		reads: ここを左に行って、; menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	45	2174	1E12	真っすぐ行{08:52}、		reads: 真っすぐ行って、; menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	46	2197	1E12	後ろの方に{08:7B}、下り階段でＢ１Ｆへ行く手筈になっ{08:14}。\n<wait>		reads: 後ろの方にある、下り階段でＢ１Ｆへ行く手筈になっている。\n<wait>; menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	47	2253	00	突きあたりの階段でＢ１Ｆへ行く手筈になっ{08:14}。\n<wait>		reads: 突きあたりの階段でＢ１Ｆへ行く手筈になっている。\n<wait>
+m/MS005C.BIN	0:1F	48	2309	1E14	戻っ{08:14}暇は無い{02:08}‥。\nこう{08:13}間にも、他の部隊は着々と任務をこな{08:13}{08:85}で{08:7B}。\n<wait>		reads: 戻っている暇は無い‥‥‥‥。\nこうしている間にも、他の部隊は着々と任務をこなしているはずである。\n<wait>
+m/MS005C.BIN	0:1F	49	2398	1E12	To the right from here, there's a staircase leading down to B1F.\nThat's our destination.\n	To the right from here, there's a staircase leading down to B1F.\nThat's our destination.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	50	2496	1E12	To the left from here, there's a staircase leading down to B1F.\nThat's our destination.\n	To the left from here, there's a staircase leading down to B1F.\nThat's our destination.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	51	2593	1E12	Straight ahead from here, there's a staircase leading down to B1F.\nThat's our destination.\n	Straight ahead from here, there's a staircase leading down to B1F.\nThat's our destination.\n	menu option, declared width 20 columns
+m/MS005C.BIN	0:1F	52	2693	1E12	後ろの方に{08:7B}、下り階段Ｂ１Ｆへ行く手筈になっ{08:14}。\n<wait>		reads: 後ろの方にある、下り階段Ｂ１Ｆへ行く手筈になっている。\n<wait>; menu option, declared width 20 columns
