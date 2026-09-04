@@ -610,6 +610,45 @@ the jump table at `0x402208`, `sprintf`s a name and `fopen(name, "rb")`
   in `MS7F00` / `MS7F07`. Harmless (absent records expand to nothing) but it hints
   `0x0F` may be data-dependent too. **[HYPOTHESIS]**
 
+### 2.12 Switch tables: `0E` `0F` `1F11`-`1F16` `1F19`-`1F1E` `1DB0` `1DB1` **[VERIFIED by disassembly + trace, 2026-09-04]**
+
+Sixteen opcodes share one parser, `0x4327C0` (via `0x432740`).  After the
+opcode's key operands (below) comes a `0xFF`-terminated table of 4-byte cases:
+
+```
+[u8 case][u8 kind][rel16 target]      kind != 0 : branch to target (PC-relative, measured
+                                                  from the byte after the rel16, like every rel16)
+[u8 case][u8 kind][u8 file][u8 rec]   kind == 0 : leave for script file `file`, record `rec`
+FF
+```
+
+| opcode | key | handler |
+|---|---|---|
+| `0E`, `1F11` | random 1..100; the first case `>=` the roll wins | `0x4328C0` |
+| `0F`, `1F12` | the last menu selection (byte at `0x4919E0`); exact match | `0x4328E0` |
+| `1F13`, `1F14` | `u8` selector + `expr`, then a party member's byte `+0x7A` | `0x432900` |
+| `1F15`, `1F16` | `u8` selector + `expr`, byte `+0x7B` | `0x432930` |
+| `1F19`, `1F1A` | `expr` value | `0x432960` |
+| `1F1B`, `1F1C` | context byte `+0x1C4` (no operand) | `0x432980` |
+| `1F1D`, `1F1E` | context byte `+0x1C5` (no operand) | `0x4329A0` |
+| `1DB0`, `1DB1` | `expr` value, mode 1 | `0x4329C0` |
+
+The second opcode of each pair passes `win=1` (a window is closed first); the
+operand layout is identical.  Kind is only tested for zero, but no real table in
+the corpus uses a value other than 0 or 1 (the 14 non-`0E`/`0F` opcodes are 100%
+kind 1 and land on an instruction boundary 100% of the time), so the tokenizer
+refuses any other value rather than tile a record it has already lost.
+
+Why this matters: the recovered table typed all sixteen as `u8 u8 u16 u8` --
+five bytes, no branch.  The room menu in `m/MS0017` r02 is
+`0F | 00 00 6A 00 | 01 01 05 00 | 02 01 0F 03 | FF`: option 0 goes to file `6A`
+(the BBS), option 1 jumps 5 bytes to the "too focused on the exam" line, option 2
+jumps 783 bytes to the room exit.  The English build never relocated the 783, so
+"leave" landed mid-record and re-ran the menu -- found by `trace diff` on
+2026-09-04, and the mis-typing also hid it from `audit`.  Every `rel16` in a
+table is now an ordinary operand, so relocation and `audit` treat it like any
+branch; the trace's `0F->` events name the case taken.
+
 ### 2.11 `1F 01 nn` -- print runtime string **[VERIFIED by trace, 2026-09-04]**
 
 `1F 01 nn` switches the interpreter to a runtime string buffer (the trace shows the PC at 0x0000 and Shift-JIS characters drawn from it until `00`), then returns. `nn = 00` is the player's name (葛城史人 by default); other indices print numbers (a `６` was observed). It is a real opcode with a real effect and must survive translation. The `00` that follows it in the data is the string terminator, not a fragment end.

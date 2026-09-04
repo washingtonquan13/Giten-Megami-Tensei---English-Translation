@@ -330,7 +330,12 @@ def test_tokenizer_reproduces_the_published_tiling_numbers():
     # more files (m/MS600A, m/MS610B, et/ID00A2, et/ID00A3 -- see
     # records.is_record_layer), which contribute the extra ok/stray0 records and
     # not one extra failure: the 123 untileable records are exactly the same set.
-    assert (ok, stray, unimpl, overrun) == (19317, 1119, 131, 123), (ok, stray, unimpl, overrun)
+    # 2026-09-04, switch tables (format-notes 2.12): 19 317 / 1 119 / 131 / 123
+    # became 19 330 / 1 117 / 95 / 148.  36 records stopped dispatching to an
+    # engine no-op (their switch table had been tiled as opcodes) and 25 records
+    # that only *looked* tiled -- the walk was out of step before a switch, and a
+    # 5-byte guess happened to resync -- are now refused, i.e. not editable.
+    assert (ok, stray, unimpl, overrun) == (19330, 1117, 95, 148), (ok, stray, unimpl, overrun)
 
 
 def test_operands_are_never_text():

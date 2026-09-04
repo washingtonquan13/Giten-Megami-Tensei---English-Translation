@@ -8,9 +8,10 @@ Every re-adopted module carries an entry here.  An entry is closed only by evide
 - Containers with duplicate record ids and branches (`m/MS6000` c0/1/8, `m/MS6800` c0, `m/MS610B` c15) are not editable.
 
 ## vmops / opcodes.json
-- 267 opcodes are typed as consuming no operands because the static tracer took the fall-through; 123 records still cannot be tiled.
+- 267 opcodes are typed as consuming no operands because the static tracer took the fall-through; 148 records cannot be tiled (123 before the switch grammar; the 25 newly refused ones tiled by luck and were editable).  `1F82` is a known offender: its operand model eats the next opcode's `1F` prefix (`m/MS0002` r26, `m/MS0015` r02, `m/MS0032` r22).
 - ~~`1F01 nn` followed by `00`: meaning unknown.~~ **Closed 2026-09-04 by trace:** `1F01 nn` prints runtime string *nn* -- `00` is the player's name (the trace shows the PC jump to offset 0 of the name buffer and read 葛城史人), other indices print counters (`６`). The `00` after it is that string's terminator. v0.05 stripped all 3,240 and hard-coded names; we keep them.
-- The byte after a name macro in the post-menu dead zone (`00 02 01 6a`): meaning unknown; v0.05 changed it, translators deleted it.
+- ~~The byte after a name macro in the post-menu dead zone (`00 02 01 6a`): meaning unknown.~~ **Closed 2026-09-04:** those bytes are a switch-table case (`[case 02][kind 01][rel16]`, format-notes 2.12) that the old five-byte model for `0F` had spilled into the text.  They are operands now and never reach a table.
+- Switch tables (`0E`/`0F` and 14 relatives) are decoded from the handler; a `kind` byte other than 0/1 refuses the record.  Which records those are is known (25 that used to tile by luck), what their real layout is, is not.
 - `NOT_A_BRANCH = {010, 011, 182}` is statistical (target lands on an instruction at or below chance).  `017` is in the grey zone on the original (48.7% vs chance 43%) and is still relocated.
 
 ## codec

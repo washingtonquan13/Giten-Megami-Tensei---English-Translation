@@ -15,7 +15,8 @@ The model (``docs/format-notes.md`` §2.1 / §2.2 / §2.8, all VERIFIED)
 * anything else is opcode index == the byte;
 * an opcode's operands are an ordered list of typed slots -- ``u8``, ``u16``,
   ``u32``, ``rel16``, a recursive ``expr`` tree, a ``0xFF``-terminated
-  ``list_ff``, or the one data-dependent ``rule:wait_1E10``.
+  ``list_ff``, the ``0E``/``0F`` ``switch`` table, or the one data-dependent
+  ``rule:wait_1E10``.
 
 Nothing here guesses.  When the table says an opcode's operands run past the end
 of the record, tokenizing *fails* and the caller must treat the record as
@@ -166,6 +167,43 @@ def _wait_1e10(data: bytes, i: int) -> int:
     return i + n
 
 
+def _read_switch(data: bytes, i: int, out: list) -> int:
+    """``0E`` / ``0F``: a ``0xFF``-terminated table of 4-byte cases, decoded from
+    the shared handler at ``0x4327C0`` (``docs/format-notes.md`` section 2.12)::
+
+        [u8 case][u8 kind][rel16 target]     kind != 0: branch to target
+        [u8 case][u8 kind][u8 file][u8 rec]  kind == 0: go to another script file
+        ... FF
+
+    ``0F`` matches ``case`` against the last menu selection, ``0E`` against a
+    random 1..100 (first case >= the roll wins).  Every slot is appended to
+    ``out`` as an ordinary operand, so the ``rel16`` targets are relocated and
+    audited exactly like a plain branch's.
+    """
+    while True:
+        if i >= len(data):
+            raise TileError("unterminated switch table at 0x%X" % i)
+        if data[i] == 0xFF:
+            out.append(Operand("u8", i, 1, data[i:i + 1]))
+            return i + 1
+        if i + 4 > len(data):
+            raise TileError("switch entry past end of record at 0x%X" % i)
+        if data[i + 1] > 1:
+            # the handler only tests kind != 0, but no real table in the corpus
+            # uses another value (the 14 other switch opcodes are 100% kind 1)
+            # and 0E/0F "entries" with kind >= 2 point at an instruction 8% of
+            # the time -- they are bytes the walk reached out of step.  Refuse.
+            raise TileError("switch entry at 0x%X has kind %d (not 0 or 1)" % (i, data[i + 1]))
+        out.append(Operand("u8", i, 1, data[i:i + 1]))
+        out.append(Operand("u8", i + 1, 1, data[i + 1:i + 2]))
+        if data[i + 1]:
+            out.append(Operand("rel16", i + 2, 2, data[i + 2:i + 4]))
+        else:
+            out.append(Operand("u8", i + 2, 1, data[i + 2:i + 3]))
+            out.append(Operand("u8", i + 3, 1, data[i + 3:i + 4]))
+        i += 4
+
+
 def _read_operands(data: bytes, i: int, slots, tab: Table) -> "tuple[int, list]":
     out = []
     for slot in slots:
@@ -182,6 +220,9 @@ def _read_operands(data: bytes, i: int, slots, tab: Table) -> "tuple[int, list]"
             i = j + 1
         elif kind == "rule:wait_1E10":
             i = _wait_1e10(data, i)
+        elif kind == "switch":
+            i = _read_switch(data, i, out)
+            continue                       # entries were appended one by one
         else:
             i += FIXED_SIZE[kind]
             if i > len(data):

@@ -648,28 +648,19 @@
    "handler": "0x00430037",
    "operands": [
     {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u16",
-     "size": 2
-    },
-    {
-     "kind": "u8",
-     "size": 1
+     "kind": "switch",
+     "size": "var"
     }
    ],
-   "fixed_size": 5,
-   "variable": false,
-   "has_offset": false,
-   "offset_slots": [],
+   "fixed_size": null,
+   "variable": true,
+   "has_offset": true,
+   "offset_slots": [
+    "every rel16 in the table"
+   ],
    "refs_record": false,
-   "uses": 1272
+   "uses": 1272,
+   "note": "0xFF-terminated table of 4-byte cases [case][kind][rel16 | file,rec]; decoded from 0x4327C0 on 2026-09-04 (was mis-typed as u8 u8 u16 u8). 0E keys on a random 1..100, 0F on the last menu selection."
   },
   "0x00F": {
    "encoding": "0F",
@@ -677,28 +668,19 @@
    "handler": "0x00430046",
    "operands": [
     {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u16",
-     "size": 2
-    },
-    {
-     "kind": "u8",
-     "size": 1
+     "kind": "switch",
+     "size": "var"
     }
    ],
-   "fixed_size": 5,
-   "variable": false,
-   "has_offset": false,
-   "offset_slots": [],
+   "fixed_size": null,
+   "variable": true,
+   "has_offset": true,
+   "offset_slots": [
+    "every rel16 in the table"
+   ],
    "refs_record": false,
-   "uses": 1732
+   "uses": 1732,
+   "note": "0xFF-terminated table of 4-byte cases [case][kind][rel16 | file,rec]; decoded from 0x4327C0 on 2026-09-04 (was mis-typed as u8 u8 u16 u8). 0E keys on a random 1..100, 0F on the last menu selection."
   },
   "0x010": {
    "encoding": "10",
@@ -4077,28 +4059,19 @@
    "handler": "0x00430225",
    "operands": [
     {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u16",
-     "size": 2
-    },
-    {
-     "kind": "u8",
-     "size": 1
+     "kind": "switch",
+     "size": "var"
     }
    ],
-   "fixed_size": 5,
-   "variable": false,
-   "has_offset": false,
-   "offset_slots": [],
+   "fixed_size": null,
+   "variable": true,
+   "has_offset": true,
+   "offset_slots": [
+    "every rel16 in the table"
+   ],
    "refs_record": false,
-   "uses": 6
+   "uses": 6,
+   "note": "switch table (see _switch), key = random 1..100 (0x4328C0); retyped 2026-09-04"
   },
   "0x112": {
    "encoding": "1F 12",
@@ -4106,28 +4079,19 @@
    "handler": "0x00430234",
    "operands": [
     {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u16",
-     "size": 2
-    },
-    {
-     "kind": "u8",
-     "size": 1
+     "kind": "switch",
+     "size": "var"
     }
    ],
-   "fixed_size": 5,
-   "variable": false,
-   "has_offset": false,
-   "offset_slots": [],
+   "fixed_size": null,
+   "variable": true,
+   "has_offset": true,
+   "offset_slots": [
+    "every rel16 in the table"
+   ],
    "refs_record": false,
-   "uses": 12
+   "uses": 12,
+   "note": "switch table (see _switch), key = last menu selection (0x4328E0); retyped 2026-09-04"
   },
   "0x113": {
    "encoding": "1F 13",
@@ -4143,28 +4107,19 @@
      "size": "var"
     },
     {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u16",
-     "size": 2
-    },
-    {
-     "kind": "u8",
-     "size": 1
+     "kind": "switch",
+     "size": "var"
     }
    ],
    "fixed_size": null,
    "variable": true,
-   "has_offset": false,
-   "offset_slots": [],
+   "has_offset": true,
+   "offset_slots": [
+    "every rel16 in the table"
+   ],
    "refs_record": false,
-   "uses": 33
+   "uses": 33,
+   "note": "switch table (see _switch), key = u8 selector + expr, keyed on a party member's byte +0x7A (0x432900); retyped 2026-09-04"
   },
   "0x114": {
    "encoding": "1F 14",
@@ -4180,28 +4135,19 @@
      "size": "var"
     },
     {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u16",
-     "size": 2
-    },
-    {
-     "kind": "u8",
-     "size": 1
+     "kind": "switch",
+     "size": "var"
     }
    ],
    "fixed_size": null,
    "variable": true,
-   "has_offset": false,
-   "offset_slots": [],
+   "has_offset": true,
+   "offset_slots": [
+    "every rel16 in the table"
+   ],
    "refs_record": false,
-   "uses": 0
+   "uses": 0,
+   "note": "switch table (see _switch), key = as 0x113, win=1; retyped 2026-09-04"
   },
   "0x115": {
    "encoding": "1F 15",
@@ -4217,28 +4163,19 @@
      "size": "var"
     },
     {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u16",
-     "size": 2
-    },
-    {
-     "kind": "u8",
-     "size": 1
+     "kind": "switch",
+     "size": "var"
     }
    ],
    "fixed_size": null,
    "variable": true,
-   "has_offset": false,
-   "offset_slots": [],
+   "has_offset": true,
+   "offset_slots": [
+    "every rel16 in the table"
+   ],
    "refs_record": false,
-   "uses": 6
+   "uses": 6,
+   "note": "switch table (see _switch), key = u8 selector + expr, byte +0x7B (0x432930); retyped 2026-09-04"
   },
   "0x116": {
    "encoding": "1F 16",
@@ -4254,28 +4191,19 @@
      "size": "var"
     },
     {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u16",
-     "size": 2
-    },
-    {
-     "kind": "u8",
-     "size": 1
+     "kind": "switch",
+     "size": "var"
     }
    ],
    "fixed_size": null,
    "variable": true,
-   "has_offset": false,
-   "offset_slots": [],
+   "has_offset": true,
+   "offset_slots": [
+    "every rel16 in the table"
+   ],
    "refs_record": false,
-   "uses": 0
+   "uses": 0,
+   "note": "switch table (see _switch), key = as 0x115, win=1; retyped 2026-09-04"
   },
   "0x117": {
    "encoding": "1F 17",
@@ -4345,28 +4273,19 @@
      "size": "var"
     },
     {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u16",
-     "size": 2
-    },
-    {
-     "kind": "u8",
-     "size": 1
+     "kind": "switch",
+     "size": "var"
     }
    ],
    "fixed_size": null,
    "variable": true,
-   "has_offset": false,
-   "offset_slots": [],
+   "has_offset": true,
+   "offset_slots": [
+    "every rel16 in the table"
+   ],
    "refs_record": false,
-   "uses": 89
+   "uses": 89,
+   "note": "switch table (see _switch), key = expr value (0x432960); retyped 2026-09-04"
   },
   "0x11A": {
    "encoding": "1F 1A",
@@ -4378,28 +4297,19 @@
      "size": "var"
     },
     {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u16",
-     "size": 2
-    },
-    {
-     "kind": "u8",
-     "size": 1
+     "kind": "switch",
+     "size": "var"
     }
    ],
    "fixed_size": null,
    "variable": true,
-   "has_offset": false,
-   "offset_slots": [],
+   "has_offset": true,
+   "offset_slots": [
+    "every rel16 in the table"
+   ],
    "refs_record": false,
-   "uses": 12
+   "uses": 12,
+   "note": "switch table (see _switch), key = as 0x119, win=1; retyped 2026-09-04"
   },
   "0x11B": {
    "encoding": "1F 1B",
@@ -4407,28 +4317,19 @@
    "handler": "0x004302BB",
    "operands": [
     {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u16",
-     "size": 2
-    },
-    {
-     "kind": "u8",
-     "size": 1
+     "kind": "switch",
+     "size": "var"
     }
    ],
-   "fixed_size": 5,
-   "variable": false,
-   "has_offset": false,
-   "offset_slots": [],
+   "fixed_size": null,
+   "variable": true,
+   "has_offset": true,
+   "offset_slots": [
+    "every rel16 in the table"
+   ],
    "refs_record": false,
-   "uses": 23
+   "uses": 23,
+   "note": "switch table (see _switch), key = context byte +0x1C4 (0x432980); retyped 2026-09-04"
   },
   "0x11C": {
    "encoding": "1F 1C",
@@ -4436,28 +4337,19 @@
    "handler": "0x004302CA",
    "operands": [
     {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u16",
-     "size": 2
-    },
-    {
-     "kind": "u8",
-     "size": 1
+     "kind": "switch",
+     "size": "var"
     }
    ],
-   "fixed_size": 5,
-   "variable": false,
-   "has_offset": false,
-   "offset_slots": [],
+   "fixed_size": null,
+   "variable": true,
+   "has_offset": true,
+   "offset_slots": [
+    "every rel16 in the table"
+   ],
    "refs_record": false,
-   "uses": 1
+   "uses": 1,
+   "note": "switch table (see _switch), key = as 0x11B, win=1; retyped 2026-09-04"
   },
   "0x11D": {
    "encoding": "1F 1D",
@@ -4465,28 +4357,19 @@
    "handler": "0x004302D9",
    "operands": [
     {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u16",
-     "size": 2
-    },
-    {
-     "kind": "u8",
-     "size": 1
+     "kind": "switch",
+     "size": "var"
     }
    ],
-   "fixed_size": 5,
-   "variable": false,
-   "has_offset": false,
-   "offset_slots": [],
+   "fixed_size": null,
+   "variable": true,
+   "has_offset": true,
+   "offset_slots": [
+    "every rel16 in the table"
+   ],
    "refs_record": false,
-   "uses": 5
+   "uses": 5,
+   "note": "switch table (see _switch), key = context byte +0x1C5 (0x4329A0); retyped 2026-09-04"
   },
   "0x11E": {
    "encoding": "1F 1E",
@@ -4494,28 +4377,19 @@
    "handler": "0x004302E8",
    "operands": [
     {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u16",
-     "size": 2
-    },
-    {
-     "kind": "u8",
-     "size": 1
+     "kind": "switch",
+     "size": "var"
     }
    ],
-   "fixed_size": 5,
-   "variable": false,
-   "has_offset": false,
-   "offset_slots": [],
+   "fixed_size": null,
+   "variable": true,
+   "has_offset": true,
+   "offset_slots": [
+    "every rel16 in the table"
+   ],
    "refs_record": false,
-   "uses": 0
+   "uses": 0,
+   "note": "switch table (see _switch), key = as 0x11D, win=1; retyped 2026-09-04"
   },
   "0x11F": {
    "encoding": "1F 1F",
@@ -12276,28 +12150,19 @@
      "size": "var"
     },
     {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u16",
-     "size": 2
-    },
-    {
-     "kind": "u8",
-     "size": 1
+     "kind": "switch",
+     "size": "var"
     }
    ],
    "fixed_size": null,
    "variable": true,
-   "has_offset": false,
-   "offset_slots": [],
+   "has_offset": true,
+   "offset_slots": [
+    "every rel16 in the table"
+   ],
    "refs_record": false,
-   "uses": 20
+   "uses": 20,
+   "note": "switch table (see _switch), key = expr value, mode 1 (0x4329C0); retyped 2026-09-04"
   },
   "0x2B1": {
    "encoding": "1E B1",
@@ -12309,28 +12174,19 @@
      "size": "var"
     },
     {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u16",
-     "size": 2
-    },
-    {
-     "kind": "u8",
-     "size": 1
+     "kind": "switch",
+     "size": "var"
     }
    ],
    "fixed_size": null,
    "variable": true,
-   "has_offset": false,
-   "offset_slots": [],
+   "has_offset": true,
+   "offset_slots": [
+    "every rel16 in the table"
+   ],
    "refs_record": false,
-   "uses": 0
+   "uses": 0,
+   "note": "switch table (see _switch), key = as 0x2B0, win=1; retyped 2026-09-04"
   },
   "0x2B2": {
    "encoding": "1E B2",
@@ -14219,5 +14075,6 @@
    "refs_record": false,
    "uses": 1
   }
- }
+ },
+ "_switch": "0E/0F operands are a 0xFF-terminated table: [u8 case][u8 kind][u16]; kind != 0 -> the u16 is a rel16 branch target (relocated), kind == 0 -> two bytes (file, record) naming another script file. Handler 0x4327C0, callers 0x4328C0 (0E, random) and 0x4328E0 (0F, menu selection byte at 0x4919E0)."
 }

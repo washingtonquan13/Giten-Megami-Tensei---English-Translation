@@ -10,7 +10,7 @@ import tempfile
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from giten import check_v2, codec, files, findings, paths, records, script, tables  # noqa: E402
+from giten import check_v2, codec, files, findings, paths, records, script, tables, vmops  # noqa: E402
 from giten.exe import patch, tracer  # noqa: E402
 from giten.exe.pe import PE  # noqa: E402
 from giten.trace import core as trace  # noqa: E402
@@ -215,6 +215,73 @@ def test_record_size_is_bounded_by_the_loaders_signed_delta():
     r = audit.Report()
     audit.audit_file(rel, src, built, r)
     assert any(f.startswith("record-size") for f in r.findings), r.findings
+
+
+def _room_menu_switch(sc):
+    """The ``0F`` right after the room menu's ``1E 08`` in m/MS0017 r02."""
+    rec = next(r for r in sc.iter_records() if r.id == 2)
+    i = rec.data.find(b"\x1e\x11\x1e\x08\x0f") + 4
+    return rec, next(t for t in rec.tokens if t.off == i)
+
+
+def test_switch_table_tokenizes_as_cases_with_rel16_targets():
+    """m/MS0017 r02's room menu: three cases -- call file 6A (the BBS), jump +5
+    (the "too focused on the exam" line), jump +783 (leave the room) -- then FF.
+    The old model typed 0F as five plain bytes, ate the next opcode, and never
+    relocated the +783; that was the "leave loops back to the exam" bug."""
+    rel = "m/MS0017.BIN"
+    sc = script.parse(rel, files.read_source(rel))
+    rec, tok = _room_menu_switch(sc)
+    assert tok.idx == 0x0F
+    assert rec.data[tok.off:tok.end].hex() == "0f00006a000101050002010f03ff"
+    assert [o.kind for o in tok.ops] == ["u8", "u8", "u8", "u8",
+                                          "u8", "u8", "rel16",
+                                          "u8", "u8", "rel16", "u8"]
+    assert [o.value for o in tok.ops if o.kind == "rel16"] == [5, 0x30F]
+    assert rec.tokens[rec.tokens.index(tok) + 1].idx == 0x1BA          # 1F BA follows the FF
+
+
+def test_switch_targets_are_relocated_and_audited():
+    """Lengthen text between the room-menu switch and its 'leave' target.  The
+    builder must relocate the rel16 (same anchor after the edit); splicing the
+    same text in by hand -- what the old model effectively did -- must be an
+    audit finding naming opcode 00F."""
+    from giten import audit, container, records
+    rel = "m/MS0017.BIN"
+    raw = files.read_source(rel)
+    sc = script.parse(rel, raw)
+    rec, tok = _room_menu_switch(sc)
+    cont = sc.containers[0]
+    base = records.bases([records.Record(r.id, r.data) for r in cont])
+    leave = vmops.rel16_target(base[2], tok, tok.ops[-2]) - base[2]
+    anchor = sum(1 for u in rec.tokens if u.kind == "op" and u.off < leave)
+    sp = next(s for s in rec.spans if tok.end <= s.off and s.end <= leave)
+    longer = script.span_text(rec, sp) + " plus a much longer English sentence than the source"
+
+    built, rep = script.build(sc, {(0, 2, sp.idx): longer})
+    assert not rep.errors and rep.relocated > 0
+    sc2 = script.parse(rel, built)
+    rec2, tok2 = _room_menu_switch(sc2)
+    base2 = records.bases([records.Record(r.id, r.data) for r in sc2.containers[0]])
+    leave2 = vmops.rel16_target(base2[2], tok2, tok2.ops[-2]) - base2[2]
+    assert sum(1 for u in rec2.tokens if u.kind == "op" and u.off < leave2) == anchor
+    r = audit.Report()
+    audit.audit_file(rel, raw, built, r)
+    assert not r.findings, r.findings
+
+    spliced = rec.data[:sp.off] + codec.encode(longer) + rec.data[sp.end:]
+    recs = [records.Record(q.id, spliced if q.id == 2 else q.data) for q in cont]
+    bad = container.join([records.serialise(recs)])
+    r = audit.Report()
+    audit.audit_file(rel, raw, bad, r)
+    assert any(f.startswith("branch-moved") and "(00F)" in f for f in r.findings), r.findings
+
+
+def test_switch_kind_other_than_0_or_1_refuses_to_tile():
+    assert vmops.tiles(bytes.fromhex("0f 00 01 05 00 ff 00"))
+    assert vmops.tiles(bytes.fromhex("0f 00 00 6a 00 ff 00"))
+    assert not vmops.tiles(bytes.fromhex("0f 00 02 05 00 ff 00"))
+    assert not vmops.tiles(bytes.fromhex("0f 00 01 05 00"))                 # no FF
 
 
 def test_extraction_never_fills_the_reference_columns():

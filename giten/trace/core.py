@@ -141,6 +141,9 @@ def decode(trace_path: str, build_dir: "str | None" = None) -> "list[Event]":
 
 
 POOL_CALLS = {"%02X->" % k for k in range(1, 9)}
+#: inline opcodes (newline ``0A``, page wait ``1E10``): translators add and
+#: remove these freely inside a span, so they are text, not flow
+INLINE_KINDS = {vmops.table().encoding(k) for k in codec.INLINE_OPS} - POOL_CALLS
 MAX_CYCLE = 12
 
 
@@ -154,6 +157,8 @@ def normalise(events: "list[Event]") -> "list[Event]":
     * **pool words** -- a ``01``-``08`` call and everything executed inside the
       pool files ``m/MS7F0x`` is part of the text run (English inlines the
       dictionary word the Japanese fetched), so those events become TEXT too;
+    * **inline opcodes** -- newlines and page waits inside a span are re-flowed
+      by the translator, so they fold into the text run as well;
     * **idle polling** -- the engine spins in a tiny cycle (``1F57`` / jump /
       jump / ``18`` back in ``m/MS002D`` r01) until input arrives, so how long
       the player waited shows up as thousands of repeated events.  Immediately
@@ -163,6 +168,8 @@ def normalise(events: "list[Event]") -> "list[Event]":
     for ev in events:
         if ev.rel.startswith("m/MS7F0") or ev.kind in POOL_CALLS:
             continue                          # a word, not flow: see above
+        if ev.kind in INLINE_KINDS:
+            ev.kind = "TEXT"                  # a newline or page wait is part of the text
         if out and ev.kind == "TEXT" and out[-1].kind == "TEXT" and out[-1].key() == ev.key():
             out[-1].r = ev.r                      # keep the *last* r of the run
             out[-1].caplen = max(out[-1].caplen, ev.caplen)
