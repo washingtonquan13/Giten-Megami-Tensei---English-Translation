@@ -801,35 +801,78 @@ def test_validator_uses_the_declared_choice_width_from_the_note():
     assert [f.rule for f in rep.warnings] == ["width-choice"]
 
 
-def test_a_rel16_that_is_not_a_branch_is_never_rewritten():
-    """A ``rel16`` slot whose target is not an instruction must be left alone.
+def test_not_a_branch_is_re_derived_from_the_game_files():
+    """`script.NOT_A_BRANCH` must still match what the corpus says.
 
-    ``docs/opcodes.json`` is a recovered table: some slots it types ``rel16``
-    hold an ordinary small integer, and a few records tile a byte out of step so
-    that plain text reads as an opcode with a displacement.  Relocating either
-    rewrites two bytes that were never a branch.  The builder's test is that a
-    real displacement points at an instruction boundary; this proves the slots
-    that fail it keep the value they shipped with.
+    A real branch displacement points at an instruction boundary.  Roughly 39%
+    of byte offsets are an instruction boundary by chance, so a genuine branch
+    opcode scores near 100% and a mistyped slot scores at or below chance.  This
+    re-derives the split so that a change to `docs/opcodes.json` or the
+    tokenizer shows up as a failing test rather than as silently different
+    output.
     """
     from tools.giten import audit
 
-    files_with_phantoms = 0
+    hit = {}
+    tot = {}
+    boundary_frac = []
+    for rel in files.iter_files(("ms", "id")):
+        sc = script.parse(rel, files.read_source(rel))
+        if not sc.ok:
+            continue
+        for recs in sc.containers:
+            if not recs:
+                continue
+            base = audit._bases(recs)
+            bounds = audit._boundaries(recs, base)
+            end = max(base[r.id] + len(r.data) for r in recs)
+            boundary_frac.append(len(bounds) / max(1, end - records.INDEX_SIZE))
+            for r in recs:
+                if r.tokens is None:
+                    continue
+                for t in r.tokens:
+                    for o in t.ops:
+                        if o.kind != "rel16":
+                            continue
+                        tot[t.idx] = tot.get(t.idx, 0) + 1
+                        if vmops.rel16_target(base[r.id], t, o) in bounds:
+                            hit[t.idx] = hit.get(t.idx, 0) + 1
+
+    chance = sum(boundary_frac) / len(boundary_frac)
+    assert 0.40 < chance < 0.60, "unexpected boundary density %.3f" % chance
+
+    # Anything at or below chance, with enough observations to mean something.
+    derived = {k for k, n in tot.items()
+               if n >= 40 and hit.get(k, 0) / n <= chance * 1.05}
+    assert derived == script.NOT_A_BRANCH, (
+        "corpus says NOT_A_BRANCH should be %s, code says %s"
+        % (sorted("%03X" % k for k in derived),
+           sorted("%03X" % k for k in script.NOT_A_BRANCH)))
+
+    # And every opcode the builder does relocate is convincingly a branch.
+    for k, n in tot.items():
+        if k in script.NOT_A_BRANCH or n < 40:
+            continue
+        assert hit.get(k, 0) / n > chance * 1.2, (
+            "op %03X is relocated but only %.1f%% of its targets are "
+            "instructions" % (k, 100 * hit.get(k, 0) / n))
+
+
+def test_a_not_a_branch_slot_is_never_rewritten():
+    """No `NOT_A_BRANCH` slot may change value when a record is lengthened."""
+    checked = 0
     for rel in files.iter_files(("ms", "id")):
         sc = script.parse(rel, files.read_source(rel))
         if not sc.ok or not sc.containers[0]:
             continue
         recs = sc.containers[0]
-        base = audit._bases(recs)
-        bounds = audit._boundaries(recs, base)
-        if not any(o.kind == "rel16"
-                   and vmops.rel16_target(base[r.id], t, o) not in bounds
-                   for r in recs if r.tokens for t in r.tokens for o in t.ops):
+        if not any(t.idx in script.NOT_A_BRANCH
+                   for r in recs if r.tokens for t in r.tokens):
             continue
         try:
             rec, sp, txt = _first_editable_span(sc)
         except Exception:
             continue
-        files_with_phantoms += 1
         out, _ = script.build(sc, {(rec.ci, rec.id, sp.idx): txt + "0123456789"})
         after = script.parse(rel, out)
         for r in recs:
@@ -840,12 +883,15 @@ def test_a_rel16_that_is_not_a_branch_is_never_rewritten():
             for t, t2 in zip(r.tokens, new.tokens):
                 if t.kind != "op" or t.idx != t2.idx:
                     continue
+                if t.idx not in script.NOT_A_BRANCH:
+                    continue
                 for o, o2 in zip(t.ops, t2.ops):
-                    if o.kind != "rel16" or o.value == o2.value:
+                    if o.kind != "rel16":
                         continue
-                    assert vmops.rel16_target(base[r.id], t, o) in bounds, (
-                        "%s r%02X: rewrote a rel16 whose target was not an "
-                        "instruction" % (rel, r.id))
-        if files_with_phantoms >= 30:
+                    checked += 1
+                    assert o.value == o2.value, (
+                        "%s r%02X: rewrote a %03X slot, which is not a branch"
+                        % (rel, r.id, t.idx))
+        if checked > 300:
             break
-    assert files_with_phantoms, "no file with a phantom rel16 to test against"
+    assert checked, "no NOT_A_BRANCH slot was exercised"

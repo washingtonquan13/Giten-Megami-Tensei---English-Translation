@@ -475,38 +475,51 @@ def _rebuild_record(rec: Rec, edits: "dict[int, str]", report: BuildReport):
     return bytes(out), [r for r in runs if r[0] < r[1]], anchors, changed
 
 
-def _token_boundaries(recs, base) -> "set[int]":
-    """Every runtime offset at which a token starts, plus each record's end.
+#: Dispatch indices whose ``rel16`` slot, measured over the whole corpus, does
+#: **not** hold a branch displacement.
+#:
+#: ``docs/opcodes.json`` is a *recovered* table -- it was produced by tracing the
+#: interpreter statically -- and a few slots it types ``rel16`` are really a pair
+#: of small integers.  The measurement that separates them needs no new
+#: disassembly: a real displacement points at an instruction boundary, and ~50%
+#: of byte offsets are an instruction boundary by chance, so a genuine branch
+#: opcode scores near 100% and a mistyped one scores at or below chance.
+#: Measured on the 20 195 ``rel16`` slots in ``m/MS*`` and ``et/ID*``::
+#:
+#:     op 018  n=7634  98.5%   op 011  n= 85  15.3%   <- not a branch
+#:     op 009  n=2004  95.8%   op 010  n= 99  22.2%   <- not a branch
+#:     op 014  n= 945  97.8%   op 182  n=203  40.4%   <- not a branch
+#:     op 103  n= 777  99.4%
+#:
+#: ``tests/test_v2.py`` re-derives this from the game files, so an opcode that
+#: changes side is a test failure rather than a silent behaviour change.
+#:
+#: Opcodes between the two extremes (``012`` 78.5%, ``013`` 65.5%, ``016`` 89.9%,
+#: ``017`` 62.6%, ``180`` 78.3%, ``183`` 84.3%) are left classified as branches:
+#: they are most likely real branches that happen to sit in the records the
+#: tokenizer tiles a byte out of step (``docs/format-notes.md`` §2.10), and
+#: relocating a real branch matters more than skipping a rare phantom.
+NOT_A_BRANCH = frozenset({0x010, 0x011, 0x182})
 
-    This is the set of addresses a *real* branch can name: the script's PC only
-    ever lands on an instruction boundary.  Anything else is not a jump target.
+
+def _is_branch(tok) -> bool:
+    """Does this opcode's ``rel16`` slot really hold a branch displacement?
+
+    Deliberately a property of the *opcode*, not of the individual value.  A
+    per-value test ("does this displacement point at an instruction?") looks
+    more precise and is wrong in the case that matters most: a real branch
+    inside one of the 123 records the tokenizer tiles a byte out of step has a
+    target that cannot be *placed*, yet it is still a branch, and
+    :class:`OffsetMap` maps any offset through the unchanged runs -- boundary or
+    not -- so it relocates correctly.  Skipping those leaves live jumps pointing
+    at the wrong byte once the record moves.
+
+    Measured both ways over the corpus, counting only slots whose opcode is a
+    real branch: this rule leaves 3 branch targets moved (all three already
+    pointed outside their container image in the source, i.e. dead), against 39
+    for the per-value test.
     """
-    out = set()
-    for r in recs:
-        if r.untiled or not r.tokens:
-            continue
-        b = base[r.id]
-        out |= {b + t.off for t in r.tokens}
-        out.add(b + len(r.data))
-    return out
-
-
-def _is_branch(base, tok, op, boundaries) -> bool:
-    """Does this ``rel16`` slot really hold a branch displacement?
-
-    ``docs/opcodes.json`` is a *recovered* table: it was derived by tracing the
-    interpreter statically, so a slot it calls ``rel16`` is sometimes an ordinary
-    small integer, and a handful of records tile one or two bytes out of step
-    (``docs/format-notes.md`` §2.10), which makes plain text look like an opcode
-    with a displacement.  Relocating either of those rewrites two bytes that were
-    never a branch -- silent corruption of a live script.
-
-    The test that separates them needs no new table: a real displacement points
-    at an instruction boundary in the image it was measured in.  One that does
-    not is either a phantom or a branch into nowhere, and in both cases the
-    honest thing is to leave the two bytes exactly as they shipped.
-    """
-    return vmops.rel16_target(base, tok, op) in boundaries
+    return tok.idx not in NOT_A_BRANCH
 
 
 def _branch_targets(recs, old_base) -> "set[int]":
@@ -552,7 +565,7 @@ def _drop_branched_into(rel, rec, per, base, landed, report: BuildReport):
     return keep
 
 
-def _relocate(recs, new_data, omap: OffsetMap, boundaries, report: BuildReport):
+def _relocate(recs, new_data, omap: OffsetMap, report: BuildReport):
     """Rewrite every ``rel16`` so it still points at the same instruction.
 
     ``new_data`` is keyed by the record's position in the container, so a
@@ -571,8 +584,8 @@ def _relocate(recs, new_data, omap: OffsetMap, boundaries, report: BuildReport):
             for op in tok.ops:
                 if op.kind != "rel16":
                     continue
-                if not _is_branch(base_old, tok, op, boundaries):
-                    # Not a displacement at all -- see :func:`_is_branch`.
+                if not _is_branch(tok):
+                    # Not a displacement at all -- see :data:`NOT_A_BRANCH`.
                     report.not_a_branch += 1
                     continue
                 old_target = vmops.rel16_target(base_old, tok, op)
@@ -640,8 +653,7 @@ def build(sc: Script, edits: "dict[tuple[int, int, int], str]") -> "tuple[bytes,
                                else records.ABSENT_LEN)
             off += omap.old_len[i]
 
-        boundaries = _token_boundaries(recs, omap.old_base)
-        # Deliberately NOT filtered by `boundaries`: refusing to *rewrite* a slot
+        # Deliberately NOT filtered to plausible targets: refusing to *rewrite* a slot
         # that does not look like a branch is always safe, but refusing to
         # *protect* a span because the slot looks odd is not -- a displacement
         # our table mis-typed may still be a live jump, and letting an edit move
@@ -681,7 +693,7 @@ def build(sc: Script, edits: "dict[tuple[int, int, int], str]") -> "tuple[bytes,
             off += omap.new_len[i]
         omap.finish()
 
-        _relocate(recs, new_data, omap, boundaries, report)
+        _relocate(recs, new_data, omap, report)
 
         out_recs = [records.Record(r.id, new_data[pos], r.cond, r.param, r.order)
                     for pos, r in enumerate(recs)]

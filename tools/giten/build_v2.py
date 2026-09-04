@@ -157,8 +157,8 @@ def run(out_dir: "str | None" = None, family: str = "all",
             print("  %d edits skipped because a branch lands inside the span"
                   % st["branched_into"])
         if st["not_a_branch"]:
-            print("  %d rel16 slots left untouched: the operand does not point "
-                  "at an instruction, so it is not a displacement"
+            print("  %d rel16 slots left untouched: their opcode's slot does not "
+                  "hold a branch displacement (script.NOT_A_BRANCH)"
                   % st["not_a_branch"])
         for e in st["errors"][:20]:
             print("  ERROR " + e)

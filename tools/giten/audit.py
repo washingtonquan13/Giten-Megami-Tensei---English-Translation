@@ -16,18 +16,21 @@ builder does.
    inside spans and are the translator's to change; everything else must match
    byte for byte.  Any difference here means an edit escaped its span.
 
-2. **Branch resolvability** -- how many ``rel16`` displacements fail to land on
-   an instruction boundary.  A file is allowed to have some in the source (the
+2. **Branch resolvability** -- how many branch displacements fail to land on an
+   instruction boundary.  A file is allowed to have some in the source (the
    recovered opcode table mis-tiles a little; see ``docs/format-notes.md``
-   section 2.10), but the build must never have *more* than the source did.
-   This is the test that catches a mis-relocation, and it needs no token pairing
-   between the two sides, so a record whose text re-tiled cannot raise a false
-   alarm.
+   section 2.10), but the build must never have *more* than the source did.  It
+   needs no token pairing between the two sides, so a record whose text re-tiled
+   cannot raise a false alarm -- which makes it the check to trust when finding
+   3 and this one disagree.
 
-3. **Branches into edited text** -- a jump whose target is strictly inside a run
-   of text that this build replaced points at a byte that no longer exists.
-   :func:`script._drop_branched_into` is supposed to make this impossible by
-   skipping the edit; this is the independent proof that it did.
+3. **Branch destinations** -- the sharpest of the four.  Every real branch must
+   still reach *the same instruction* it reached before.  The comparison keys on
+   a structural anchor -- how many non-inline opcodes precede the target --
+   rather than on a byte offset or a token index, because finding 1 has already
+   proved the anchor sequence identical, whereas text re-tiles and byte offsets
+   move.  Slots whose opcode is in :data:`script.NOT_A_BRANCH` are excluded:
+   they are not branches, so where their value "points" is meaningless.
 
 4. **Runtime image size** -- the script PC is a ``u16``, so a container's image
    must stay under 0x10000, and growing text is the one thing that can push it
@@ -90,27 +93,15 @@ def _structural(rec):
             if t.kind == "op" and t.idx not in codec.INLINE_OPS]
 
 
-def _segments(rec):
-    """Alternating ``("op"|"run", start, end)`` spans of one record's bytes."""
-    if rec.tokens is None:
-        return None
-    segs = []
-    run = None
-    for t in rec.tokens:
-        if t.kind == "op" and t.idx not in codec.INLINE_OPS:
-            if run:
-                segs.append(("run", run[0], run[1]))
-                run = None
-            segs.append(("op", t.off, t.end))
-        else:
-            run = [t.off, t.end] if run is None else [run[0], t.end]
-    if run:
-        segs.append(("run", run[0], run[1]))
-    return segs
-
-
 def _unresolvable(recs) -> "tuple[int, int]":
-    """``(rel16 count, how many miss every instruction boundary)``."""
+    """``(branch count, how many miss every instruction boundary)``.
+
+    Counts only slots whose opcode really is a branch.  Including the
+    :data:`script.NOT_A_BRANCH` opcodes would measure noise: their value is not
+    a displacement, so whether it happens to point at an instruction is a coin
+    toss that lands differently once records move, and it drowns the signal this
+    finding exists to carry.
+    """
     if not recs:
         return 0, 0
     base = _bases(recs)
@@ -120,6 +111,8 @@ def _unresolvable(recs) -> "tuple[int, int]":
         if r.tokens is None:
             continue
         for t in r.tokens:
+            if t.idx in script.NOT_A_BRANCH:
+                continue
             for o in t.ops:
                 if o.kind != "rel16":
                     continue
@@ -140,34 +133,68 @@ class Report:
         self.findings.append("%-17s %s" % (kind, msg))
 
 
-def _audit_branch_into_edit(rel, ci, pa, pb, ra, rep):
-    """Finding 3, for one record whose bytes this build changed."""
-    sga, sgb = _segments(pa), _segments(pb)
-    if sga is None or sgb is None:
-        return
-    base_a = _bases(ra)
-    lo = base_a[pa.id]
-    for r in ra:
-        if r.tokens is None:
+def _anchors(rec):
+    """Byte offsets of the record's non-inline opcodes -- its structural spine.
+
+    Finding 1 proves this sequence is identical on both sides, so an index into
+    it is a stable name for a place in the script even though every byte offset
+    around it may have moved.  Keying on a byte offset or a token index instead
+    produces false alarms wherever text re-tiled, which is everywhere.
+    """
+    if rec.tokens is None:
+        return None
+    return [t.off for t in rec.tokens
+            if t.kind == "op" and t.idx not in codec.INLINE_OPS]
+
+
+def _destination(recs, base, anchors, target):
+    """A relocation-independent name for the place a branch points at."""
+    for r in recs:
+        lo = base[r.id]
+        if not lo <= target <= lo + len(r.data):
             continue
-        for t in r.tokens:
-            for o in t.ops:
-                if o.kind != "rel16":
+        off = target - lo
+        a = anchors.get(r.id)
+        if a is None:
+            return (r.id, "untiled")
+        if off == len(r.data):
+            return (r.id, "end")
+        for k, at in enumerate(a):
+            if at == off:
+                return (r.id, "op", k)
+        return (r.id, "after-op", sum(1 for at in a if at < off))
+    return ("outside",)
+
+
+def _audit_destinations(rel, ci, ra, rb, rep):
+    """Finding 3: does every real branch still reach the same instruction?"""
+    ba, bb = _bases(ra), _bases(rb)
+    aa = {r.id: _anchors(r) for r in ra}
+    ab = {r.id: _anchors(r) for r in rb}
+    for pa, pb in zip(ra, rb):
+        if pa.tokens is None or pb.tokens is None:
+            continue
+        ta = [t for t in pa.tokens
+              if t.kind == "op" and t.idx not in codec.INLINE_OPS]
+        tb = [t for t in pb.tokens
+              if t.kind == "op" and t.idx not in codec.INLINE_OPS]
+        if len(ta) != len(tb):
+            continue                      # finding 1 has already reported this
+        for k, (x, y) in enumerate(zip(ta, tb)):
+            if x.idx in script.NOT_A_BRANCH:
+                continue                  # not a branch; where it points is noise
+            for ox, oy in zip(x.ops, y.ops):
+                if ox.kind != "rel16":
                     continue
-                tgt = vmops.rel16_target(base_a[r.id], t, o)
-                if not lo <= tgt < lo + len(pa.data):
-                    continue
-                off = tgt - lo
-                si = next((i for i, (k, s, e) in enumerate(sga)
-                           if k == "run" and s < off < e), None)
-                if si is None or si >= len(sgb):
-                    continue
-                _, s, e = sga[si]
-                _, s2, e2 = sgb[si]
-                if pa.data[s:e] != pb.data[s2:e2]:
-                    rep.say("branch-into-edit",
-                            "%s c%d r%02X: a branch targets byte %d of a text "
-                            "run this build replaced" % (rel, ci, pa.id, off - s))
+                da = _destination(ra, ba, aa,
+                                  vmops.rel16_target(ba[pa.id], x, ox))
+                db = _destination(rb, bb, ab,
+                                  vmops.rel16_target(bb[pb.id], y, oy))
+                if da == db or da == ("outside",):
+                    continue              # unchanged, or already dead in source
+                rep.say("branch-moved",
+                        "%s c%d r%02X opcode %d (%03X): reached %s, now reaches %s"
+                        % (rel, ci, pa.id, k, x.idx, da, db))
 
 
 def audit_file(rel: str, src: bytes, built: bytes, rep: Report) -> None:
@@ -221,8 +248,7 @@ def audit_file(rel: str, src: bytes, built: bytes, rep: Report) -> None:
                            xa[k] if k < len(xa) else None,
                            xb[k] if k < len(xb) else None, len(xa), len(xb)))
                 continue
-            if pa.data != pb.data:
-                _audit_branch_into_edit(rel, ci, pa, pb, ra, rep)
+        _audit_destinations(rel, ci, ra, rb, rep)
 
 
 def run(build_dir: "str | None" = None, root: "str | None" = None,
