@@ -134,15 +134,39 @@ def decode(trace_path: str, build_dir: "str | None" = None) -> "list[Event]":
     return out
 
 
+POOL_CALLS = {"%02X->" % k for k in range(1, 9)}
+MAX_CYCLE = 12
+
+
 def normalise(events: "list[Event]") -> "list[Event]":
-    """Collapse runs of text into one event per (file, rec, anchor)."""
+    """Reduce a trace to the structural flow two builds must share.
+
+    Three things that legitimately differ between a Japanese and an English run
+    are folded away, each learned from the first real pair of traces:
+
+    * **text** -- runs of characters collapse to one TEXT event per anchor;
+    * **pool words** -- a ``01``-``08`` call and everything executed inside the
+      pool files ``m/MS7F0x`` is part of the text run (English inlines the
+      dictionary word the Japanese fetched), so those events become TEXT too;
+    * **idle polling** -- the engine spins in a tiny cycle (``1F57`` / jump /
+      jump / ``18`` back in ``m/MS002D`` r01) until input arrives, so how long
+      the player waited shows up as thousands of repeated events.  Immediately
+      repeating cycles of up to :data:`MAX_CYCLE` events collapse to one.
+    """
     out = []
     for ev in events:
+        if ev.rel.startswith("m/MS7F0") or ev.kind in POOL_CALLS:
+            continue                          # a word, not flow: see above
         if out and ev.kind == "TEXT" and out[-1].kind == "TEXT" and out[-1].key() == ev.key():
             out[-1].r = ev.r                      # keep the *last* r of the run
             out[-1].caplen = max(out[-1].caplen, ev.caplen)
             continue
         out.append(ev)
+        # drop an immediate repeat of the last p events, for any small p
+        for p_ in range(1, MAX_CYCLE + 1):
+            if len(out) >= 2 * p_ and [e.key() for e in out[-p_:]] == [e.key() for e in out[-2 * p_:-p_]]:
+                del out[-p_:]
+                break
     return out
 
 
