@@ -10,7 +10,7 @@ State as of 2026-09-04 (branch `development`, 16 commits ahead of `origin`, neve
 | Pipeline v1 (`tools/giten`) | Committed. Byte-exact identity build on all 844 files. **Cannot be used to build length-changed files** (seed rule, multi-container, rel16 relocation missing). |
 | Pipeline v2 | In progress by an Opus agent when this was written. Deliverables: seed-rule container codec, opcode-aware tokenizer, rel16 relocation, real width budgets, `migrate` command, output in `text_v2/`. If it never landed, redo it from the brief in the pipeline v2 section below. |
 | Glossary / style guide | `translation/glossary.tsv`, `translation/style-guide.md`. |
-| Translation | 7,617 / 10,154 Japanese rows done (75%). Negotiation complete. Story tails MS0000–MS0031 were in flight. 758 rows tagged `@operand` need a second pass after migration. 98 rows `@skip` (debug menu, garbage). |
+| Translation | 8,220 / 10,154 Japanese rows done (81%). All eight batches committed. 871 rows tagged `@operand` need a second pass after migration. 965 rows were never covered: `m/MS005A` (275), `MS005B` (208), `MS003E` (152), `MS006A` (131), `MS010A` (48), `MS005C` (26), `MS003A` (13), `MS006B` (13), `MS003F` (3), `MS0061` (3) — two translators misreported these files as already English — plus the name/word dictionaries `MS7F00` (61), `MS7F01` (14), `MS7F02` (17), which are inserted into text by opcodes 01–03 and need English too. 98 rows `@skip` (debug menu, garbage). |
 | In-game testing | Not started. Game has not yet been launched on this machine. |
 
 Per-file status: `python -m tools.giten stats` (set `PYTHONIOENCODING=utf-8`). Fast cross-check that ignores malformed rows: count rows whose `jp` contains Japanese and whose `en` is non-empty and differs from `jp`.
@@ -29,7 +29,7 @@ These exist because a session limit killed nine agents at once on 2026-09-03.
 
 1. **Land pipeline v2.** Verify: `python -m tests.run` green; identity build byte-exact; a synthetic lengthening edit in `m/MS0003.BIN` re-tokenizes with every branch landing on the same instruction. Commit.
 2. **Migrate.** `python -m tools.giten migrate --from text --to text_v2`. Read the report: rows carried, unmatched, and the former `@operand` rows now rendering as clean tokens. Replace `text/` with `text_v2/` and commit. Rows whose `en` carries a token mismatch (an operand character that a translator dropped, e.g. `{01}#`) are errors: blank them for redo.
-3. **Second translation pass** (Sonnet, 2–3 agents): the ~760 formerly quarantined rows, the `{DICT:9x}` rows, and anything `unmatched` from the migration. Same briefs as before, with the v2 token syntax from the updated `docs/pipeline.md`.
+3. **Second translation pass** (Sonnet, 2–3 agents): the 965 never-covered rows in the files listed above, the ~870 formerly quarantined rows, the `{DICT:9x}` rows, and anything `unmatched` from the migration. Same briefs as before, with the v2 token syntax from the updated `docs/pipeline.md`.
 4. **Consistency review** (one Opus agent, read-only on game): terminology against the glossary, speaker-name forms, demon voice per pool file, the inconsistencies listed at the end of the style guide (Panic/Panic, Baal/Bael, macca/Macca, DCS/DDC), coined terms reported by each translator. Output: a list of row edits, applied by script, then `check`.
 5. **Exe leftovers** (one Opus agent): a table-driven string patcher for `dds_en.exe` using `tools/exe_analysis/` (strings have unique `imm32` pointers, no `.reloc`; append a new PE section for space). Targets: the demon attitude words, the Analyze panel, マッカ, 立川, the shop total line, and the empty-name bug at file offset `0x67BD8`. Output `build/dds_en.exe`, never the game folder.
 6. **Build and install into a copy.** `python -m tools.giten build`, then `install --to <copy of ddswin>`. Keep the original `ddswin` untouched.
@@ -38,7 +38,7 @@ These exist because a session limit killed nine agents at once on 2026-09-03.
 
 ## If the two in-flight agents died
 
-- Story tails MS0000–MS0031: re-run one Sonnet translator with the original brief (files whose hex id is 0000–0031; most rows already English; fill empty `en` where `jp` is Japanese). Check `git status` first: any file it finished is on disk and only needs committing.
+- Story tails MS0000–MS0031: landed and committed. The missed files listed in the state table above still need one Sonnet translator (same brief as the story batches; treat `MS7F00–02` as name/word pools: translate each entry as the bare word, no punctuation).
 - Pipeline v2: check whether `text_v2/` or new modules under `tools/giten/` exist. If partial, hand the brief to a fresh Opus agent and tell it to build on what is there.
 
 ## Pipeline v2 brief (condensed)
