@@ -1,5 +1,9 @@
-"""``rebase``: carry translations from the v0.05-based tables onto tables
-extracted from the Japanese original.
+"""``carry``: bring earlier translations into the new tables as *candidates*.
+
+Nothing here writes ``en``.  Every earlier translation -- ours, or v0.05's --
+lands in ``ref_en`` with its origin in ``ref_src``; a person fills ``en`` while
+reading ``jp``, and ``check`` refuses an ``en`` that merely copies ``ref_en``
+without a ``reviewed`` status.
 
 Why a separate tool from :mod:`.migrate`
 ----------------------------------------
@@ -114,6 +118,10 @@ def _pairs(old, new):
 def _carry(src, dst, tagdiff: bool, st: dict) -> bool:
     """Move one translation from a v2 row onto its paired v3 row."""
     ours = src.en if (src.en and src.en != src.jp) else None
+    # old/text_v3 already merged v0.05's English into en and said so in note
+    from_v005 = FROM_V005 in src.note and FROM_OURS not in src.note
+    if ours is None and src.ref_en:
+        ours, from_v005 = src.ref_en, src.ref_src == "v005"
     if "@untiled" in dst.note:
         st["untiled_skipped"] += 1
         if ours:
@@ -121,12 +129,10 @@ def _carry(src, dst, tagdiff: bool, st: dict) -> bool:
             return True
         return False
     if ours is not None and ours != dst.jp:
-        dst.en = ours
-        dst.note = _add(dst.note, FROM_OURS)
-        st["from_ours"] += 1
+        dst.ref_en, dst.ref_src = ours, ("v005" if from_v005 else "ours")
+        st["from_v005" if from_v005 else "from_ours"] += 1
     elif is_english(src.jp) and not is_english(dst.jp):
-        dst.en = src.jp
-        dst.note = _add(dst.note, FROM_V005)
+        dst.ref_en, dst.ref_src = src.jp, "v005"
         st["from_v005"] += 1
     elif is_english(dst.jp):
         st["identity"] += 1
@@ -142,9 +148,9 @@ def _carry(src, dst, tagdiff: bool, st: dict) -> bool:
 
 def run(from_dir: "str | None" = None, to_dir: "str | None" = None,
         quiet: bool = False, report: "str | None" = None) -> dict:
-    from_dir = from_dir or os.path.join(paths.REPO_ROOT, "text_v2")
-    to_dir = to_dir or os.path.join(paths.REPO_ROOT, "text_v3")
-    report = report or os.path.join(paths.BUILD_DIR, "rebase-report.txt")
+    from_dir = from_dir or os.path.join(paths.REPO_ROOT, "old", "text_v3")
+    to_dir = to_dir or paths.TEXT_DIR
+    report = report or os.path.join(paths.BUILD_DIR, "carry-report.txt")
 
     v2 = _load(from_dir)
     st = {"rows": 0, "from_ours": 0, "from_v005": 0, "tagdiff": 0,
@@ -198,8 +204,8 @@ def run(from_dir: "str | None" = None, to_dir: "str | None" = None,
             fh.write("  %s\t%s\t%d\t%s\t%s\n" % row)
 
     if not quiet:
-        print("rebased %d rows in %s" % (st["rows"], to_dir))
-        print("  %d carry our translation, %d carry v0.05\'s English beside the "
+        print("carried into %d rows in %s" % (st["rows"], to_dir))
+        print("  %d ref_en from ours, %d ref_en from v0.05\'s English beside the "
               "real Japanese (%d of all carries paired across a changed tag, "
               "marked %s), %d already English in the original"
               % (st["from_ours"], st["from_v005"], st["tagdiff"], TAGDIFF,

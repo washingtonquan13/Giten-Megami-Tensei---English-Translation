@@ -1,0 +1,30 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
+m/MS0103.BIN	0:00	0	0	DATA	他には{08:7B}かな？\n		Can I get you anything else?\n	v005		
+m/MS0103.BIN	0:01	0	0	DATA	やあ、いらっしゃい。何か買{08:52}く{08:2F}のかい？\n		Ah, welcome. Would you like to buy something?\n	v005		
+m/MS0103.BIN	0:02	0	0	DATA	さあ、何を買{08:52}く{08:2F}{08:5F}い？\n		What can I have for you?\n	v005		
+m/MS0103.BIN	0:03	0	0	DATA	あー、{08:4D}うち{08:81}扱{08:52}{08:25}{08:5F}。悪いね。\n		Sorry. We cannot buy this.\n	v005		
+m/MS0103.BIN	0:04	0	0	DATA	どれを売{08:52}もら{08:28}のかな？\n		What would you like to sell?\n	v005		
+m/MS0103.BIN	0:05	0	0	DATA	お金が足り{08:25}み{08:4E}{08:74}ど。\n		Sorry. Looks like you don't have enough money.\n	v005		
+m/MS0103.BIN	0:06	0	0	DATA	{08:48}で全部かい？\n		Is this all?\n	v005		
+m/MS0103.BIN	0:07	0	0	DATA	{08:4D}以上物を持て{08:25}{08:69}だね。\n		It looks like your inventory is full.\n	v005		
+m/MS0103.BIN	0:08	0	0	DATA	うーん、いくら		Sorry, but I can't sell this at that price.\nNot even for you.\n	v005		
+m/MS0103.BIN	0:08	1	18	00	{04:FF}君{08:56}そこ{08:71}は負けられ{08:25}よ。\n		reads: 君でもそこまでは負けられないよ。\n			
+m/MS0103.BIN	0:09	0	0	DATA	うーん、{08:4D}{08:81}ちょ{08:53}ね{08:72}。\n{08:48}くらいで{08:90}？\n		Hmm, that's a little... How about this?\n	v005		
+m/MS0103.BIN	0:0A	0	0	DATA	他の人には言わ{08:25}でくれよ。\n		Just don't tell anyone else.\n	v005		
+m/MS0103.BIN	0:0B	0	0	DATA	毎度あり！\n大事に使{08:52}欲しいね。\n		Thank you very much! Make good use of it, alright?\n	v005		
+m/MS0103.BIN	0:0C	0	0	DATA	{08:48}で全部かい？\n		Is this all?\n	v005		
+m/MS0103.BIN	0:0D	0	0	DATA	駄目だね。さすがに{08:4D}{08:81}あ、商売に{08:7D}{08:25}よ。\n		No way. That would hardly be a fair trade.\n	v005		
+m/MS0103.BIN	0:0E	0	0	DATA	うーん、{01:29}なあ{08:72}。\n{08:48}ぐらいで我慢{08:4A}くれ{08:25}かな。\n		Hmm, let's see......\nCould you settle for about this much?\n	ours		
+m/MS0103.BIN	0:0F	0	0	DATA	ＯＫ、{08:79}値で買{08:52}あげるよ。\n		Okay. I'll purchase it at that price.\n	v005		
+m/MS0103.BIN	0:10	0	0	DATA	毎度あり。いら{08:25}{08:5E}があっ{08:50}{08:5B}引き取{08:52}あげるよ。\n		Thank you very much. If you ever have something that you don't need,\ndo drop by and we'll buy it off you.\n	v005		
+m/MS0103.BIN	0:11	0	0	DATA	あー、{01:29}		Oh, right. Please hold on.\n	v005		
+m/MS0103.BIN	0:11	1	12	00	{04:FF}くん、ちょ{08:53}待{08:52}。\n		reads: くん、ちょっと待って。\n			
+m/MS0103.BIN	0:12	0	0	DATA	{08:5B}何か買{08:64}く{08:16}ら来なよ。{08:4D}{08:81}。\n		Feel free to drop by whenever you need to buy something.\n	v005		
+m/MS0103.BIN	0:13	0	0	DATA	{08:5B}何か売りたく{08:16}ら来なよ。{08:81}な。\n		Feel free to drop by whenever you need to sell something.\n	v005		
+m/MS0103.BIN	0:14	0	0	DATA	{08:5B}来なよ。ひやかし{08:56}歓迎{08:8E}よ。\n		Please come by again.\n	v005		
+m/MS0103.BIN	0:15	0	4	1FD2	店員：		Shopkeeper:	v005		
+m/MS0103.BIN	0:15	1	12	1FD3	{08:48}をあげるよ。\nなあに遠慮は要ら{08:25}。お得意様{08:8A}ね。\n		Here, take this. A toke of our appreciation.\n	v005		

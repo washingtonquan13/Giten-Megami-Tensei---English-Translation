@@ -1,0 +1,18 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
+m/MS00A3.BIN	0:01	0	0	DATA	＞池袋ターミナルへ{08:69}こそ\n		>Welcome to Ikebukuro Terminal.\n	v005		
+m/MS00A3.BIN	0:03	0	0	DATA	{01:23}お待ち{08:6E}		Please wait a moment	v005		
+m/MS00A3.BIN	0:03	1	16	1FFA	．．．\n					
+m/MS00A3.BIN	0:03	2	32	1FBA	＞ＡＭＳ用マップ{08:0A}が登録{03:0C}てい{02:0A}\n<wait>		>AMS map data not found.\n<wait>	v005		
+m/MS00A3.BIN	0:03	3	74	1FBA	＞ＡＭＳ用マップ{08:0A}を確認しま{08:4B}\n　{03:09}ロードを始め{08:5A}\n		>AMS map data found. Download it?\n	v005		
+m/MS00A3.BIN	0:03	4	140	1FB2	実行		Proceed	v005		
+m/MS00A3.BIN	0:03	5	146	1FB2	中止		Cancel	v005		
+m/MS00A3.BIN	0:03	6	164	0F	{01:49}	{01:49}	reads: 			
+m/MS00A3.BIN	0:03	7	167	00						
+m/MS00A3.BIN	0:03	8	170	1FBA	{03:09}ロード{08:4A}い{08:5A}		Downloading	v005		
+m/MS00A3.BIN	0:03	9	190	1FFA	．．．\n					
+m/MS00A3.BIN	0:03	10	205	1FBA	＞{03:09}ロード正常終了しま{08:4B}\n<wait>		>Download completed successfully.\n<wait>	v005		
+m/MS00A3.BIN	0:03	11	242	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>		>Download cancelled.\n<wait>	v005		

@@ -6,8 +6,9 @@ import os
 import sys
 
 from . import (audit, build_v2, check_v2, extract_v2, files, install, paths,
-               rebase)
+               carry)
 from .exe import patch as exepatch
+from .trace import core as trace
 
 
 def _common(p):
@@ -52,9 +53,9 @@ def make_parser():
     p.add_argument("--show", type=int, default=200, help="findings to print per level")
     _common(p)
 
-    p = sub.add_parser("rebase",
-                       help="carry translations from v0.05-based tables onto "
-                            "tables extracted from the Japanese original")
+    p = sub.add_parser("carry",
+                       help="bring earlier translations into tables/ as ref_en "
+                            "candidates (never as en)")
     p.add_argument("--from", dest="src", default=None, help="default tables/")
     p.add_argument("--to", dest="dst", default=None, help="default text_v3/")
     p.add_argument("--report", default=None, help="default build/rebase-report.txt")
@@ -88,6 +89,14 @@ def make_parser():
     p.add_argument("which", choices=("base", "release", "dev"))
     p.add_argument("--out", default=None, help="default build/exe/")
 
+    p = sub.add_parser("trace", help="decode / diff interpreter traces from the dev exe")
+    p.add_argument("action", choices=("decode", "diff", "selfcheck"))
+    p.add_argument("trace", help="trace.bin (JP trace for diff)")
+    p.add_argument("other", nargs="?", help="diff: the EN trace.bin")
+    p.add_argument("--build", default=None, help="build tree the trace ran on (default original/ddswin)")
+    p.add_argument("--build2", default=None, help="diff: the EN build tree")
+    p.add_argument("--limit", type=int, default=60)
+
     sub.add_parser("where", help="print the resolved game and repo paths")
     return ap
 
@@ -109,8 +118,8 @@ def main(argv=None) -> int:
                                args.skip_identity, args.quiet, args.show,
                                args.out, args.verify)
         return 1 if rep.errors else 0
-    if args.cmd == "rebase":
-        rebase.run(args.src, args.dst, args.quiet, args.report)
+    if args.cmd == "carry":
+        carry.run(args.src, args.dst, args.quiet, args.report)
         return 0
     if args.cmd == "verify":
         out_dir = args.out_dir or os.path.join(paths.BUILD_DIR, "ddswin_v2")
@@ -123,6 +132,18 @@ def main(argv=None) -> int:
         return 1 if rep.findings else 0
     if args.cmd == "install":
         install.run(args.src, args.dst, dry_run=not args.yes, quiet=args.quiet)
+        return 0
+    if args.cmd == "trace":
+        jp_build = args.build or paths.game_root()
+        if args.action == "decode":
+            for ev in trace.decode(args.trace, jp_build)[:args.limit]:
+                print(trace.describe(ev))
+        elif args.action == "selfcheck":
+            n, bad = trace.selfcheck(args.trace, jp_build)
+            print("%d records, %d whose bytes at pc do not match the build" % (n, bad))
+            return 1 if bad else 0
+        else:
+            print(trace.report_diff(args.trace, args.other, jp_build, args.build2 or jp_build))
         return 0
     if args.cmd == "exe":
         print("built " + exepatch.build(args.which, args.out))

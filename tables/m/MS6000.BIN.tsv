@@ -1,0 +1,461 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
+m/MS6000.BIN	0:00	0	18	1F88	＞会話可能圏外{08:55}\n　会話対象に接近{08:4A}下{08:49}\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: ＞会話可能圏外です\n　会話対象に接近して下さい\n<wait>			
+m/MS6000.BIN	0:00	1	77	0C	＞{08:6D}{08:69}に話{08:86}け{08:15}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ＞どのように話しかけますか？\n			
+m/MS6000.BIN	0:00	2	110	1FB2	友好的		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:00	3	118	1FB2	威圧的		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:00	4	139	00	瀑		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:02	0	16	1FB2	{08:26}	{08:26}	@noedit; @dupid; record is not editable; copied verbatim; reads: はい; menu option, declared width 20 columns			
+m/MS6000.BIN	0:02	1	20	1FB2	{08:27}	{08:27}	@noedit; @dupid; record is not editable; copied verbatim; reads: いいえ; menu option, declared width 20 columns			
+m/MS6000.BIN	0:02	2	36	0F	{01:03}	{01:03}	@noedit; @dupid; record is not editable; copied verbatim; reads: ニュートン			
+m/MS6000.BIN	0:02	3	39	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:03	0	16	1FB2	や{08:2E}		@noedit; @dupid; record is not editable; copied verbatim; reads: やめる; menu option, declared width 20 columns			
+m/MS6000.BIN	0:03	1	22	1FB2	無視		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:03	2	40	0F	{01:01}	{01:01}	@noedit; @dupid; record is not editable; copied verbatim; reads: 山瀬勇			
+m/MS6000.BIN	0:03	3	43	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:04	0	16	1FB2	言う		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:04	1	22	1FB2	言わ{08:25}		@noedit; @dupid; record is not editable; copied verbatim; reads: 言わない; menu option, declared width 20 columns			
+m/MS6000.BIN	0:04	2	42	0F	{01:03}	{01:03}	@noedit; @dupid; record is not editable; copied verbatim; reads: ニュートン			
+m/MS6000.BIN	0:04	3	45	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:05	0	165	00	{04:FF}のコンディションが{03:10}{08:17}\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: のコンディションが回復した！\n<wait>			
+m/MS6000.BIN	0:06	0	165	00	{04:F0}のコンディションが{03:10}{08:17}\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: のコンディションが回復した！\n<wait>			
+m/MS6000.BIN	0:08	0	4	00	{04:EF}と会話{08:23}！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: と会話できない！\n<wait>			
+m/MS6000.BIN	0:08	1	23	1FBA	{08:90}やら　ＣＯ{03:0E}の調子が悪い様だ		@noedit; @dupid; record is not editable; copied verbatim; reads: どうやら　ＣＯＭＰの調子が悪い様だ			
+m/MS6000.BIN	0:08	2	59	1FFA	{02:09}{02:09}\n	{02:09}{02:09}\n	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・・\n			
+m/MS6000.BIN	0:08	3	87	00	{=E0}{=0A}	{=E0}{=0A}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:09	0	0	DATA	直{08:12}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: 直った！\n			
+m/MS6000.BIN	0:0B	0	7	00	{=E0}{=0D}	{=E0}{=0D}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:0C	0	4	00	{04:EF}はわか{08:52}く{08:60}{08:69}だ\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: はわかってくれたようだ\n<wait>			
+m/MS6000.BIN	0:0D	0	4	00	{04:EF}の機嫌をそこねた{08:69}だ\n		@noedit; @dupid; record is not editable; copied verbatim; reads: の機嫌をそこねたようだ\n			
+m/MS6000.BIN	0:0E	0	0	DATA	{08:76}　調子が悪い		@noedit; @dupid; record is not editable; copied verbatim; reads: まだ　調子が悪い			
+m/MS6000.BIN	0:0E	1	20	1FFA	{02:09}{02:09}\n	{02:09}{02:09}\n	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・・\n			
+m/MS6000.BIN	0:0E	2	33	1FFA	＞{02:06}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ＞どうしますか？\n			
+m/MS6000.BIN	0:0E	3	54	1FB2	ボディランゲージ		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:0E	4	72	1FB2	絵を描く		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:0E	5	82	1FB2	念じる		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:0E	6	90	1FB2	あきら{08:2E}		@noedit; @dupid; record is not editable; copied verbatim; reads: あきらめる; menu option, declared width 20 columns			
+m/MS6000.BIN	0:0E	7	113	00	{=E0}{=11}{02:00}狹{03:00}{=E0}{=0A}		@noedit; @dupid; record is not editable; copied verbatim; reads: {=E0}{=11}デビルバスター狹飛び道具{=E0}{=0A}			
+m/MS6000.BIN	0:0F	0	19	00	{04:EF}は考え{08:14}		@noedit; @dupid; record is not editable; copied verbatim; reads: は考えている			
+m/MS6000.BIN	0:0F	1	35	1FFA	{02:09}{02:09}\n	{02:09}{02:09}\n	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・・\n			
+m/MS6000.BIN	0:0F	2	48	1FFA	＞も{08:53}やり{08:15}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ＞もっとやりますか？\n			
+m/MS6000.BIN	0:0F	3	77	18	通じて{08:24}{08:69}だ\n		@noedit; @dupid; record is not editable; copied verbatim; reads: 通じていないようだ\n			
+m/MS6000.BIN	0:0F	4	92	1FBA	＞も{08:53}やり{08:15}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ＞もっとやりますか？\n			
+m/MS6000.BIN	0:11	0	21	00	{04:EF}はわか{08:52}く{08:60}{08:69}だ\n		@noedit; @dupid; record is not editable; copied verbatim; reads: はわかってくれたようだ\n			
+m/MS6000.BIN	0:11	1	66	00	{04:EF}は理解{08:23}{08:69}だ\n		@noedit; @dupid; record is not editable; copied verbatim; reads: は理解できないようだ\n			
+m/MS6000.BIN	0:11	2	86	14	{08:61}　		@noedit; @dupid; record is not editable; copied verbatim; reads: しかし　			
+m/MS6000.BIN	0:11	3	96	1FFA	{02:09}{02:09}\n	{02:09}{02:09}\n	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・・\n			
+m/MS6000.BIN	0:11	4	116	00	{04:EF}の機嫌をそこねた{08:69}だ\n		@noedit; @dupid; record is not editable; copied verbatim; reads: の機嫌をそこねたようだ\n			
+m/MS6000.BIN	0:11	5	154	18	紙を持{08:52}{08:24}！\n		@noedit; @dupid; record is not editable; copied verbatim; reads: 紙を持っていない！\n			
+m/MS6000.BIN	0:C3	0	6	00	{04:FF}は全身全霊を込めて　\n		@noedit; @dupid; record is not editable; copied verbatim; reads: は全身全霊を込めて　\n			
+m/MS6000.BIN	0:C3	1	33	00	{04:EF}の精神に語りか{08:43}！\n		@noedit; @dupid; record is not editable; copied verbatim; reads: の精神に語りかけた！\n			
+m/MS6000.BIN	0:C3	2	60	1FFA	{02:09}・・{02:09}・・\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・・・・・・\n			
+m/MS6000.BIN	0:C3	3	94	16	{08:90}やら　わか{08:52}く{08:60}{08:69}だ\n		@noedit; @dupid; record is not editable; copied verbatim; reads: どうやら　わかってくれたようだ\n			
+m/MS6000.BIN	0:C3	4	122	00	{04:EF}は悩んで{08:40}		@noedit; @dupid; record is not editable; copied verbatim; reads: は悩んでいる			
+m/MS6000.BIN	0:C3	5	140	1FFA	{02:09}・・\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n			
+m/MS6000.BIN	0:C3	6	149	1FBA	{02:09}・・{02:09}・・\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・・・・・・\n			
+m/MS6000.BIN	0:C3	7	173	14	{08:90}やら　わか{08:52}く{08:60}{08:69}だ\n		@noedit; @dupid; record is not editable; copied verbatim; reads: どうやら　わかってくれたようだ\n			
+m/MS6000.BIN	0:C3	8	222	00	{04:EF}は唖然と{08:13}\nスキだらけだ！\n		@noedit; @dupid; record is not editable; copied verbatim; reads: は唖然としている\nスキだらけだ！\n			
+m/MS6000.BIN	0:C3	9	252	1FBA	＞{08:0C}し{08:15}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ＞攻撃しますか？\n			
+m/MS6000.BIN	0:C3	10	275	00	{04:FF}{08:62}念じ続{08:43}		@noedit; @dupid; record is not editable; copied verbatim; reads: は、念じ続けた			
+m/MS6000.BIN	0:C3	11	293	1FFA	{02:09}・・\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n			
+m/MS6000.BIN	0:C3	12	317	14	{08:90}やらわか{08:52}く{08:60}{08:69}だ\n		@noedit; @dupid; record is not editable; copied verbatim; reads: どうやらわかってくれたようだ\n			
+m/MS6000.BIN	0:C3	13	343	00	{04:EF}は呆れ{08:14}{08:69}だ\n		@noedit; @dupid; record is not editable; copied verbatim; reads: は呆れているようだ\n			
+m/MS6000.BIN	0:12	0	12	00	{04:FF}{08:62}念じ続{08:43}		@noedit; @dupid; record is not editable; copied verbatim; reads: は、念じ続けた			
+m/MS6000.BIN	0:12	1	30	1FFA	{02:09}・・\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n			
+m/MS6000.BIN	0:12	2	54	14	{08:90}やらわか{08:52}く{08:60}{08:69}だ\n		@noedit; @dupid; record is not editable; copied verbatim; reads: どうやらわかってくれたようだ\n			
+m/MS6000.BIN	0:12	3	80	00	{04:EF}は呆れ{08:14}{08:69}だ\n		@noedit; @dupid; record is not editable; copied verbatim; reads: は呆れているようだ\n			
+m/MS6000.BIN	0:13	0	0	DATA	スキだらけだ！\n＞{08:0C}し{08:15}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: スキだらけだ！\n＞攻撃しますか？\n			
+m/MS6000.BIN	0:13	1	38	00	{04:FF}{08:62}念じ続{08:43}		@noedit; @dupid; record is not editable; copied verbatim; reads: は、念じ続けた			
+m/MS6000.BIN	0:13	2	56	1FFA	{02:09}・・\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n			
+m/MS6000.BIN	0:13	3	80	14	{08:90}やらわか{08:52}く{08:60}{08:69}だ\n		@noedit; @dupid; record is not editable; copied verbatim; reads: どうやらわかってくれたようだ\n			
+m/MS6000.BIN	0:13	4	106	00	{04:EF}は呆れ{08:14}{08:69}だ\n		@noedit; @dupid; record is not editable; copied verbatim; reads: は呆れているようだ\n			
+m/MS6000.BIN	0:14	0	7	1F17	{01:04}	{01:04}	@noedit; @dupid; record is not editable; copied verbatim; reads: 西野義雄			
+m/MS6000.BIN	0:14	1	10	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:14	2	14	0C	駄目だ！　話に{08:7D}{08:25}！\n		@noedit; @dupid; record is not editable; copied verbatim; reads: 駄目だ！　話にならない！\n			
+m/MS6000.BIN	0:15	0	327	00	{04:EF}のコンディションが{03:10}{08:17}\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: のコンディションが回復した！\n<wait>			
+m/MS6000.BIN	0:16	0	7	00	{=EC}{=0C}	{=EC}{=0C}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:16	1	17	00	{=EC}{=0D}	{=EC}{=0D}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:17	0	10	00	{=E0}{=08}	{=E0}{=08}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:17	1	25	00	{=E7}{=00}	{=E7}{=00}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:17	2	43	00	{=E0}{=18}	{=E0}{=18}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:18	0	9	00	{04:EF}は　警戒{08:13}{08:69}だ\n		@noedit; @dupid; record is not editable; copied verbatim; reads: は　警戒しているようだ\n			
+m/MS6000.BIN	0:18	1	42	1FB2	安心さ{08:2A}		@noedit; @dupid; record is not editable; copied verbatim; reads: 安心させる; menu option, declared width 20 columns			
+m/MS6000.BIN	0:18	2	52	1FB2	受けを狙う		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:18	3	77	00	{=E0}{=2F}	{=E0}{=2F}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:18	4	107	1FB2	ばっちり		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:18	5	117	1FB2	{08:89}いち		@noedit; @dupid; record is not editable; copied verbatim; reads: いまいち; menu option, declared width 20 columns			
+m/MS6000.BIN	0:18	6	138	00	{=E0}{=1F}	{=E0}{=1F}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:19	0	28	1FB2	足り{08:2B}		@noedit; @dupid; record is not editable; copied verbatim; reads: 足りてる; menu option, declared width 20 columns			
+m/MS6000.BIN	0:19	1	36	1FB2	足り{08:25}		@noedit; @dupid; record is not editable; copied verbatim; reads: 足りない; menu option, declared width 20 columns			
+m/MS6000.BIN	0:19	2	56	0F	{01:13}	{01:13}	@noedit; @dupid; record is not editable; copied verbatim; reads: あなたを			
+m/MS6000.BIN	0:19	3	59	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:19	4	72	00	{=EC}{=0E}	{=EC}{=0E}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:1A	0	7	00	{=E0}{=1C}\<	{=E0}{=1C}\<	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:1A	1	11	00	{=E0}{=1D}d	{=E0}{=1D}d	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:1A	2	15	00	{=E0}{=1E}	{=E0}{=1E}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:1F	0	11	1FFA	{02:09}・・\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n			
+m/MS6000.BIN	0:20	0	2	1FBA	＞{08:90}や{08:52}？\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ＞どうやって？\n			
+m/MS6000.BIN	0:20	1	29	1FB2	武器を置く		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:20	2	41	1FB2	近づく		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:20	3	49	1FB2	両手を上げる		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:20	4	76	00	{=E0}{=29}{02:00}{=E0}{=2E}	{=E0}{=29}{02:00}{=E0}{=2E}	@noedit; @dupid; record is not editable; copied verbatim; reads: {=E0}{=29}デビルバスター{=E0}{=2E}			
+m/MS6000.BIN	0:21	0	6	1FAE	ガンを装備{08:4A}{08:24}！\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ガンを装備していない！\n			
+m/MS6000.BIN	0:21	1	35	00	{=EC}{=06}	{=EC}{=06}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:21	2	87	00	{04:EF}はスキだらけだ！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: はスキだらけだ！\n<wait>			
+m/MS6000.BIN	0:21	3	112	1FBA	＞{08:0C}し{08:15}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ＞攻撃しますか？\n			
+m/MS6000.BIN	0:22	0	6	1FFA	{02:09}・・\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n			
+m/MS6000.BIN	0:29	0	106	1FE2	＞{02:06}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ＞どうしますか？\n			
+m/MS6000.BIN	0:29	1	127	1FB2	近づく		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:29	2	135	1FB2	ほ{08:53}く		@noedit; @dupid; record is not editable; copied verbatim; reads: ほっとく; menu option, declared width 20 columns			
+m/MS6000.BIN	0:29	3	156	00	{=E0}{=2D}	{=E0}{=2D}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:29	4	166	00	{04:EF}は後ずさろうと{08:4B}が後退{08:23}！\n		@noedit; @dupid; record is not editable; copied verbatim; reads: は後ずさろうとしたが後退できない！\n			
+m/MS6000.BIN	0:2B	0	34	00	{04:FF}は近づくそぶりを見せた\n		@noedit; @dupid; record is not editable; copied verbatim; reads: は近づくそぶりを見せた\n			
+m/MS6000.BIN	0:2F	0	6	00	{04:FF}は		@noedit; @dupid; record is not editable; copied verbatim; reads: は			
+m/MS6000.BIN	0:2F	1	15	16	ウィットに富{08:5F}ジョークを言{08:12}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ウィットに富んだジョークを言った！\n			
+m/MS6000.BIN	0:2F	2	47	0C	こてこてのギャグをかま{08:17}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: こてこてのギャグをかました！\n			
+m/MS6000.BIN	0:65	0	10	00	{=E0}{=08}	{=E0}{=08}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:65	1	25	00	{=E7}{=00}	{=E7}{=00}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:65	2	55	00	瀏		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:67	0	98	00	{04:EF}は無視{08:13}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: は無視している\n			
+m/MS6000.BIN	0:67	1	125	1FB2	怒る		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:67	2	131	1FB2	威嚇射撃		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:67	3	141	1FB2	{08:0C}	{08:0C}	@noedit; @dupid; record is not editable; copied verbatim; reads: 攻撃; menu option, declared width 20 columns			
+m/MS6000.BIN	0:67	4	158	00	瀛{02:00}瀲		@noedit; @dupid; record is not editable; copied verbatim; reads: 瀛デビルバスター瀲			
+m/MS6000.BIN	0:69	0	10	1FDB	{08:61}　\nガンを装備{08:4A}{08:24}！\n		@noedit; @dupid; record is not editable; copied verbatim; reads: しかし　\nガンを装備していない！\n			
+m/MS6000.BIN	0:69	1	41	00	瀘		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:69	2	74	00	{04:EF}は指を鳴ら{08:17}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: は指を鳴らした！\n			
+m/MS6000.BIN	0:69	3	108	16	弾は		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:69	4	116	00	{04:EF}の頭を掠めた！\n		@noedit; @dupid; record is not editable; copied verbatim; reads: の頭を掠めた！\n			
+m/MS6000.BIN	0:69	5	172	1FB2	脅す		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:69	6	178	1FB2	{08:0C}	{08:0C}	@noedit; @dupid; record is not editable; copied verbatim; reads: 攻撃; menu option, declared width 20 columns			
+m/MS6000.BIN	0:69	7	195	00	瀲		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:6A	0	13	1FFA	{02:09}\n	{02:09}\n	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・\n			
+m/MS6000.BIN	0:97	0	2	1FBA	＞{02:06}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ＞どうしますか？\n			
+m/MS6000.BIN	0:97	1	23	1FB2	宝石		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:97	2	29	1FB2	魔石		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:97	3	35	1FB2	ＭＡＧ		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:97	4	43	1FB2	金		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:97	5	47	1FB2	や{08:2E}		@noedit; @dupid; record is not editable; copied verbatim; reads: やめる; menu option, declared width 20 columns			
+m/MS6000.BIN	0:97	6	66	00	燎{02:00}燠{03:00}燵{04:00}燼		@noedit; @dupid; record is not editable; copied verbatim; reads: 燎デビルバスター燠飛び道具燵を唱えた！ 燼			
+m/MS6000.BIN	0:9A	0	2	1FBA	＞どれくらい出し{08:15}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ＞どれくらい出しますか？\n			
+m/MS6000.BIN	0:9A	1	37	1FB2	１ＭＡＧ		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:9A	2	47	1FB2	１０ＭＡＧ		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:9A	3	59	1FB2	１００ＭＡＧ		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:9A	4	73	1FB2	１０００ＭＡＧ		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:9A	5	101	0F	{01:32}	{01:32}	@noedit; @dupid; record is not editable; copied verbatim; reads: 大丈夫			
+m/MS6000.BIN	0:9A	6	104	00	{02:01}W	{02:01}W	@noedit; @dupid; record is not editable; copied verbatim; reads: ペンタグランマW			
+m/MS6000.BIN	0:9A	7	108	00	{03:01}.{01:FF}	{03:01}.{01:FF}	@noedit; @dupid; record is not editable; copied verbatim; reads: そんなこと.			
+m/MS6000.BIN	0:9A	8	218	00	燬		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:9A	9	357	0E	{01:30}	{01:30}	@noedit; @dupid; record is not editable; copied verbatim; reads: 医師			
+m/MS6000.BIN	0:9A	10	360	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:9A	11	544	00	{=EC}{=48}	{=EC}{=48}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:9D	0	2	1FBA	＞どれくらい出し{08:15}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ＞どれくらい出しますか？\n			
+m/MS6000.BIN	0:9D	1	37	1FB2	１マッカ		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:9D	2	47	1FB2	１０マッカ		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:9D	3	59	1FB2	１００マッカ		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:9D	4	73	1FB2	１０００マッカ		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	0:9D	5	101	0F	{01:32}	{01:32}	@noedit; @dupid; record is not editable; copied verbatim; reads: 大丈夫			
+m/MS6000.BIN	0:9D	6	104	00	{02:01}W	{02:01}W	@noedit; @dupid; record is not editable; copied verbatim; reads: ペンタグランマW			
+m/MS6000.BIN	0:9D	7	108	00	{03:01}8{01:FF}	{03:01}8{01:FF}	@noedit; @dupid; record is not editable; copied verbatim; reads: そんなこと8			
+m/MS6000.BIN	0:9D	8	218	00	燬		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:9D	9	365	0E	{01:32}	{01:32}	@noedit; @dupid; record is not editable; copied verbatim; reads: 大丈夫			
+m/MS6000.BIN	0:9D	10	368	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	0:9D	11	554	00	{=EC}{=48}	{=EC}{=48}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	1:00	0	44	1FB2	なだ{08:2E}		@noedit; @dupid; record is not editable; copied verbatim; reads: なだめる; menu option, declared width 20 columns			
+m/MS6000.BIN	1:00	1	52	1FB2	ほ{08:53}く		@noedit; @dupid; record is not editable; copied verbatim; reads: ほっとく; menu option, declared width 20 columns			
+m/MS6000.BIN	1:00	2	72	0F	{01:B1}	{01:B1}	@noedit; @dupid; record is not editable; copied verbatim; reads: 			
+m/MS6000.BIN	1:00	3	75	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	1:00	4	130	1FB2	そう{08:55}		@noedit; @dupid; record is not editable; copied verbatim; reads: そうです; menu option, declared width 20 columns			
+m/MS6000.BIN	1:00	5	138	1FB2	{08:7A}事は{08:25}		@noedit; @dupid; record is not editable; copied verbatim; reads: そんな事はない; menu option, declared width 20 columns			
+m/MS6000.BIN	1:00	6	160	0F	{01:1A}	{01:1A}	@noedit; @dupid; record is not editable; copied verbatim; reads: わたくし			
+m/MS6000.BIN	1:00	7	163	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	1:00	8	277	1FB2	謝る		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	1:00	9	283	1FB2	無視{08:8E}		@noedit; @dupid; record is not editable; copied verbatim; reads: 無視する; menu option, declared width 20 columns			
+m/MS6000.BIN	1:00	10	303	0F	{01:38}	{01:38}	@noedit; @dupid; record is not editable; copied verbatim; reads: アタシ			
+m/MS6000.BIN	1:00	11	306	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	1:00	12	387	0E	{01:14}	{01:14}	@noedit; @dupid; record is not editable; copied verbatim; reads: あなたに			
+m/MS6000.BIN	1:00	13	390	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	2:00	0	12	00	{=E2}{=03}{04:01}	{=E2}{=03}{04:01}	record reaches an engine no-op opcode; verify in game; reads: {=E2}{=03}切り			
+m/MS6000.BIN	2:00	1	18	300			record reaches an engine no-op opcode; verify in game			
+m/MS6000.BIN	2:00	2	23	00	{04:EF}はいきなり{03:07}{08:1C}\n		{04:EF} suddenly lunged at you!\n	ours		
+m/MS6000.BIN	2:00	3	51	00	{04:EF}が話{08:86}け{08:1C}\n		{04:EF} spoke to you!\n	ours		
+m/MS6000.BIN	2:03	0	14	0D	＞{02:06}\n		>What will you do?\n	ours		
+m/MS6000.BIN	2:03	1	35	1FB2	{08:0E}になれ		Recruit	ours		
+m/MS6000.BIN	2:03	2	45	1FB2	何かくれ		Give Me Something	ours		
+m/MS6000.BIN	2:03	3	55	1FB2	去れ		Leave	ours		
+m/MS6000.BIN	2:03	4	73	0F	{01:3B}	{01:3B}	reads: さっき			
+m/MS6000.BIN	2:03	5	76	00	{02:01}U	{02:01}U	reads: ペンタグランマU			
+m/MS6000.BIN	2:03	6	80	00						
+m/MS6000.BIN	2:03	7	88	14	{02:09}	{02:09}	reads: ・・・			
+m/MS6000.BIN	2:03	8	100	00	{04:EF}は悩んで{08:40}\n		{04:EF} looks troubled\n	ours		
+m/MS6000.BIN	2:03	9	118	14	{02:09}	{02:09}	reads: ・・・			
+m/MS6000.BIN	2:03	10	141	00	{04:EF}は何か差し出{08:4B}\n		{04:EF} held something out\n	ours		
+m/MS6000.BIN	2:03	11	197	18	{02:09}	{02:09}	reads: ・・・			
+m/MS6000.BIN	2:03	12	246	0E	{01:EC}	{01:EC}	reads: 			
+m/MS6000.BIN	3:00	0	7	1F17	{01:05}	{01:05}	reads: 山田			
+m/MS6000.BIN	3:01	0	6	0E	駄目だ！　話に{08:7D}{08:25}！\n<wait>		No good! There's no talking to it!\n<wait>	ours		
+m/MS6000.BIN	3:03	0	61	1FB2	言う		Say It	ours		
+m/MS6000.BIN	3:03	1	67	1FB2	言わ{08:25}		Stay Silent	ours		
+m/MS6000.BIN	3:03	2	87	0F	{01:10}	{01:10}	reads: あなたは			
+m/MS6000.BIN	3:03	3	90	00						
+m/MS6000.BIN	3:05	0	42	1FB2	{01:32}？		Are you okay?	ours		
+m/MS6000.BIN	3:05	1	48	1FB2	あっそう		I See	ours		
+m/MS6000.BIN	3:05	2	70	0F	{01:C2}	{01:C2}	reads: 			
+m/MS6000.BIN	3:05	3	73	00						
+m/MS6000.BIN	8:00	0	25	1FB2	名乗る		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	8:00	1	33	1FB2	分{08:42}{08:25}		@noedit; @dupid; record is not editable; copied verbatim; reads: 分からない; menu option, declared width 20 columns			
+m/MS6000.BIN	8:00	2	41	1FB2	救世主		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	8:00	3	49	1FB2	{02:00}	{02:00}	@noedit; @dupid; record is not editable; copied verbatim; reads: デビルバスター; menu option, declared width 20 columns			
+m/MS6000.BIN	8:00	4	53	1FB2	無視		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	8:00	5	72	00	{=E8}{=02}{02:00}{=E8}{=04}{03:00}{=E8}{=08}{04:00}{=E8}{=09}	{=E8}{=02}{02:00}{=E8}{=04}{03:00}{=E8}{=08}{04:00}{=E8}{=09}	@noedit; @dupid; record is not editable; copied verbatim; reads: {=E8}{=02}デビルバスター{=E8}{=04}飛び道具{=E8}{=08}を唱えた！ {=E8}{=09}			
+m/MS6000.BIN	8:05	0	15	1F13	{01:0D}	{01:0D}	@noedit; @dupid; record is not editable; copied verbatim; reads: わたしを			
+m/MS6000.BIN	8:05	1	18	00	{02:01}	{02:01}	@noedit; @dupid; record is not editable; copied verbatim; reads: ペンタグランマ			
+m/MS6000.BIN	8:0A	0	19	1FB2	名乗る		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	8:0A	1	27	1FB2	あく{08:71}無視		@noedit; @dupid; record is not editable; copied verbatim; reads: あくまで無視; menu option, declared width 20 columns			
+m/MS6000.BIN	8:0A	2	51	0F	{01:21}	{01:21}	@noedit; @dupid; record is not editable; copied verbatim; reads: パパ			
+m/MS6000.BIN	8:0A	3	54	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	8:0B	0	19	1FB2	{08:26}	{08:26}	@noedit; @dupid; record is not editable; copied verbatim; reads: はい; menu option, declared width 20 columns			
+m/MS6000.BIN	8:0B	1	23	1FB2	謝る		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	8:0B	2	29	1FB2	あく{08:71}無視		@noedit; @dupid; record is not editable; copied verbatim; reads: あくまで無視; menu option, declared width 20 columns			
+m/MS6000.BIN	8:0B	3	54	00	{=E8}{=0D}{02:00}{=E8}{=0E}	{=E8}{=0D}{02:00}{=E8}{=0E}	@noedit; @dupid; record is not editable; copied verbatim; reads: {=E8}{=0D}デビルバスター{=E8}{=0E}			
+m/MS6000.BIN	8:0E	0	36	1FB2	謝る		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS6000.BIN	8:0E	1	42	1FB2	あく{08:71}無視		@noedit; @dupid; record is not editable; copied verbatim; reads: あくまで無視; menu option, declared width 20 columns			
+m/MS6000.BIN	8:0E	2	66	0F	{01:2C}	{01:2C}	@noedit; @dupid; record is not editable; copied verbatim; reads: 開発			
+m/MS6000.BIN	8:0E	3	69	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6000.BIN	10:02	0	9	0E	{01:10}	{01:10}	reads: あなたは			
+m/MS6000.BIN	10:02	1	12	00						
+m/MS6000.BIN	10:04	0	63	00	{=EA}{=03}	{=EA}{=03}				
+m/MS6000.BIN	10:06	0	166	0E	{01:CA}	{01:CA}	reads: 			
+m/MS6000.BIN	11:00	0	25	1FB2	{08:0E}に{08:1A}		Recruit	ours		
+m/MS6000.BIN	11:00	1	33	1FB2	何かくれ		Give Me Something	ours		
+m/MS6000.BIN	11:00	2	43	1FB2	去れ		Leave	ours		
+m/MS6000.BIN	11:00	3	62	00	{=EB}{=02}{02:00}{=EB}{=04}	{=EB}{=02}{02:00}{=EB}{=04}	reads: {=EB}{=02}デビルバスター{=EB}{=04}			
+m/MS6000.BIN	11:01	0	113	00	{04:EF}は去ろうと{08:13}\n		{04:EF} is about to leave\n	ours		
+m/MS6000.BIN	11:01	1	144	1FB2	呼び止{08:2E}		Call Out to Them	ours		
+m/MS6000.BIN	11:01	2	154	1FB2	ほ{08:53}く		Leave It Alone	ours		
+m/MS6000.BIN	11:01	3	162	1FB2	{08:0C}	{08:0C}	Attack	ours		
+m/MS6000.BIN	11:01	4	178	0F	{01:27}	{01:27}	reads: まさか			
+m/MS6000.BIN	11:01	5	181	00	{02:01}2	{02:01}2	reads: ペンタグランマ2			
+m/MS6000.BIN	11:01	6	185	00						
+m/MS6000.BIN	11:02	0	38	1FB2	{02:04}	{02:04}	reads: アイテム; menu option, declared width 20 columns			
+m/MS6000.BIN	11:02	1	42	1FB2	ＭＡＧ		MAG	ours		
+m/MS6000.BIN	11:02	2	50	1FB2	マッカ		Macca	ours		
+m/MS6000.BIN	11:02	3	70	0F	{01:36}	{01:36}	reads: そろそろ			
+m/MS6000.BIN	11:02	4	73	00	{02:01}P	{02:01}P	reads: ペンタグランマP			
+m/MS6000.BIN	11:02	5	77	00						
+m/MS6000.BIN	11:02	6	118	00	{=EC}{=0C}P	{=EC}{=0C}P				
+m/MS6000.BIN	11:02	7	122	00	{=EC}{=0D}	{=EC}{=0D}				
+m/MS6000.BIN	11:02	8	241	00	{04:EF}は去ろうと{08:13}\n		{04:EF} is about to leave\n	ours		
+m/MS6000.BIN	11:02	9	272	1FB2	呼び止{08:2E}		Call Out to Them	ours		
+m/MS6000.BIN	11:02	10	282	1FB2	ほ{08:53}く		Leave It Alone	ours		
+m/MS6000.BIN	11:02	11	303	00	{=EC}{=01}	{=EC}{=01}				
+m/MS6000.BIN	11:02	12	323	00	{04:EF}は無視{08:4A}行{08:52}{08:1F}\n		{04:EF} ignored you and walked away\n	ours		
+m/MS6000.BIN	11:0B	0	15	00	{=EC}{=A6}	{=EC}{=A6}				
+m/MS6000.BIN	12:02	0	15	00	{04:EF}は逃げ{08:69}と{08:4B}が、逃げられ{08:19}！\n		{04:EF} tried to flee, but couldn't get away!\n	ours		
+m/MS6000.BIN	12:20	0	4	00	{04:EF}は無視{08:4A}行{08:52}{08:1F}\n		{04:EF} ignored you and walked away\n	ours		
+m/MS6000.BIN	12:2D	0	0	DATA	痛い！！手を噛ま{08:11}！\n		Ouch!! Bitten on the hand!!\n	ours		
+m/MS6000.BIN	12:2E	0	27	1FB2	{02:04}	{02:04}	reads: アイテム; menu option, declared width 20 columns			
+m/MS6000.BIN	12:2E	1	31	1FB2	お前の命		Your Life	ours		
+m/MS6000.BIN	12:2E	2	54	00	{=EC}{=3C}	{=EC}{=3C}				
+m/MS6000.BIN	12:2F	0	20	00	{=EC}{=0D}K	{=EC}{=0D}K				
+m/MS6000.BIN	12:2F	1	24	00	{=EC}{=0E}d	{=EC}{=0E}d				
+m/MS6000.BIN	12:2F	2	28	00	{=EC}{=3B}	{=EC}{=3B}				
+m/MS6000.BIN	12:30	0	4	00	{04:EF}は去ろうと{08:13}\n<wait>		{04:EF} is about to leave\n<wait>	ours		
+m/MS6000.BIN	12:30	1	25	1FBA	＞{02:06}\n		>{02:06}	ours		
+m/MS6000.BIN	12:30	2	46	1FB2	ひきと{08:2E}		Hold Them Back	ours		
+m/MS6000.BIN	12:30	3	56	1FB2	ほ{08:53}く		Leave It Alone	ours		
+m/MS6000.BIN	12:30	4	77	00	{=EC}{=0B}	{=EC}{=0B}				
+m/MS6000.BIN	12:31	0	2	1FBA	＞{08:90}や{08:52}？\n		>How?\n	ours		
+m/MS6000.BIN	12:31	1	29	1FB2	抱き付く		Hug Them	ours		
+m/MS6000.BIN	12:31	2	39	1FB2	腕をつかむ		Grab Their Arm	ours		
+m/MS6000.BIN	12:31	3	51	1FB2	呼び止{08:2E}		Call Out to Them	ours		
+m/MS6000.BIN	12:31	4	74	00	{=EC}{=36}{02:00}{=EC}{=39}	{=EC}{=36}{02:00}{=EC}{=39}	reads: {=EC}{=36}デビルバスター{=EC}{=39}			
+m/MS6000.BIN	12:32	0	10	0C	失敗！\n		Failure!\n	ours		
+m/MS6000.BIN	12:33	0	4	1FB0	抱き付{08:64}！\n		Latched right onto you!\n	ours		
+m/MS6000.BIN	12:33	1	36	1F0D	{08:61}　振りほどか{08:11}\n		But it shook right off!\n	ours		
+m/MS6000.BIN	12:33	2	91	18	つか{08:5F}！\n		Grabbed it!\n	ours		
+m/MS6000.BIN	12:33	3	105	16	ぷちっ\n		Pop!\n	ours		
+m/MS6000.BIN	12:36	0	10	0C	失敗！\n		Failure!\n	ours		
+m/MS6000.BIN	12:37	0	4	1FB0	つか{08:5F}！\n		Grabbed it!\n	ours		
+m/MS6000.BIN	12:37	1	21	0C	{08:61}　振りほどか{08:11}\n<wait>		But it shook right off!\n<wait>	ours		
+m/MS6000.BIN	12:37	2	57	16	つか{08:5F}！\n		Grabbed it!\n	ours		
+m/MS6000.BIN	12:37	3	97	18	失敗！\n		Failure!\n	ours		
+m/MS6000.BIN	12:3E	0	31	00	{=EC}{=07}	{=EC}{=07}				
+m/MS6000.BIN	12:42	0	9	00	{04:EF}と語り合{08:51}\n		You and {04:EF} talked things over together\n	ours		
+m/MS6000.BIN	12:42	1	28	1FFA	{02:09}{02:09}\n<wait>	{02:09}{02:09}\n<wait>	reads: ・・・・・・\n<wait>			
+m/MS6000.BIN	12:42	2	54	00	{04:EF}は満足{08:4B}{08:69}だ\n		{04:EF} seems satisfied\n	ours		
+m/MS6000.BIN	12:42	3	76	00	{=EC}{=0B}	{=EC}{=0B}				
+m/MS6000.BIN	12:44	0	18	1FFA	{02:09}・・{02:09}・・\n		..........\n	ours		
+m/MS6000.BIN	12:44	1	105	1FFA	{02:09}・・{02:09}・・\n		..........\n	ours		
+m/MS6000.BIN	12:45	0	8	1FFA	{02:09}・・{02:09}・・\n		..........\n	ours		
+m/MS6000.BIN	12:46	0	22	1FB2	さよ{08:7D}		Goodbye	ours		
+m/MS6000.BIN	12:46	1	30	1FB2	ちょ{08:53}待{08:52}		Wait a Moment	ours		
+m/MS6000.BIN	12:46	2	55	00	{=EC}{=45}	{=EC}{=45}				
+m/MS6000.BIN	12:48	0	15	00	{04:EF}は暴れ出{08:17}\n<wait>		{04:EF} started rampaging!\n<wait>	ours		
+m/MS6000.BIN	12:48	1	34	1FBA	＞{02:06}\n		>{02:06}	ours		
+m/MS6000.BIN	12:48	2	55	1FB2	ほ{08:53}く		Leave It Alone	ours		
+m/MS6000.BIN	12:48	3	63	1FB2	なだ{08:2E}		Calm Them Down	ours		
+m/MS6000.BIN	12:48	4	71	1FB2	怒る		Get Angry	ours		
+m/MS6000.BIN	12:48	5	77	1FB2	{08:0C}	{08:0C}	Attack	ours		
+m/MS6000.BIN	12:48	6	94	00	{=EC}{=4A}{02:00}{=EC}{=4B}{03:00}{=EC}{=4C}	{=EC}{=4A}{02:00}{=EC}{=4B}{03:00}{=EC}{=4C}	reads: {=EC}{=4A}デビルバスター{=EC}{=4B}飛び道具{=EC}{=4C}			
+m/MS6000.BIN	12:4A	0	19	00	{04:EF}はおとなしく{08:16}\n		{04:EF} calmed right down\n	ours		
+m/MS6000.BIN	12:4A	1	58	18	手が付けられ{08:25}！\n		There's just no dealing with it!\n	ours		
+m/MS6000.BIN	12:4B	0	41	00	{=EC}{=1C}	{=EC}{=1C}				
+m/MS6000.BIN	12:4C	0	35	00	{04:FF}はころ{08:5F}！\n<wait>		{04:FF} tripped over!\n<wait>	ours		
+m/MS6000.BIN	12:4E	0	9	00	{=EC}{=54}d	{=EC}{=54}d				
+m/MS6000.BIN	12:4E	1	13	00	{=EC}{=5B}	{=EC}{=5B}				
+m/MS6000.BIN	12:55	0	35	00	{=EC}{=56}	{=EC}{=56}				
+m/MS6000.BIN	12:55	1	76	00	{=EC}{=5A}	{=EC}{=5A}				
+m/MS6000.BIN	12:59	0	17	00	{=EC}{=5A}	{=EC}{=5A}				
+m/MS6000.BIN	12:59	1	30	00	{=EC}{=5A}	{=EC}{=5A}				
+m/MS6000.BIN	12:5C	0	41	00	{=EC}{=54}	{=EC}{=54}				
+m/MS6000.BIN	12:5C	1	69	00	{=EC}{=5F}	{=EC}{=5F}				
+m/MS6000.BIN	12:5C	2	96	00	{=EC}{=4F}	{=EC}{=4F}				
+m/MS6000.BIN	12:60	0	15	00	{=EC}{=4F}d	{=EC}{=4F}d				
+m/MS6000.BIN	12:60	1	19	00	{=EC}{=54}	{=EC}{=54}				
+m/MS6000.BIN	12:61	0	7	00	{=EC}{=62}	{=EC}{=62}				
+m/MS6000.BIN	12:64	0	9	00	{=EC}{=66}K	{=EC}{=66}K				
+m/MS6000.BIN	12:64	1	13	00	{=EC}{=6D}d	{=EC}{=6D}d				
+m/MS6000.BIN	12:64	2	17	00	{=EC}{=75}	{=EC}{=75}				
+m/MS6000.BIN	12:67	0	66	00	{=EC}{=78}K	{=EC}{=78}K				
+m/MS6000.BIN	12:67	1	70	00	{=EC}{=6B}d	{=EC}{=6B}d				
+m/MS6000.BIN	12:67	2	74	00	{=EC}{=83}	{=EC}{=83}				
+m/MS6000.BIN	12:6C	0	21	00	{=EC}{=6D}	{=EC}{=6D}				
+m/MS6000.BIN	12:6E	0	56	00	{=EC}{=6A}	{=EC}{=6A}				
+m/MS6000.BIN	12:6E	1	72	00	{=EC}{=75}	{=EC}{=75}				
+m/MS6000.BIN	12:6E	2	113	00	{=EC}{=48}	{=EC}{=48}				
+m/MS6000.BIN	12:73	0	21	00	{=EC}{=75}d	{=EC}{=75}d				
+m/MS6000.BIN	12:73	1	25	00	{=EC}{=66}	{=EC}{=66}				
+m/MS6000.BIN	12:73	2	41	00	{=EC}{=A6}	{=EC}{=A6}				
+m/MS6000.BIN	12:76	0	58	00	{=EC}{=71}	{=EC}{=71}				
+m/MS6000.BIN	12:77	0	22	00	{=EC}{=A6}d	{=EC}{=A6}d				
+m/MS6000.BIN	12:77	1	26	00	{=EC}{=48}	{=EC}{=48}				
+m/MS6000.BIN	12:7A	0	7	00	{=EC}{=66}	{=EC}{=66}				
+m/MS6000.BIN	12:7B	0	16	00	{=EC}{=78}	{=EC}{=78}				
+m/MS6000.BIN	12:7C	0	10	00	{=EC}{=64}	{=EC}{=64}				
+m/MS6000.BIN	12:81	0	11	00	{=EC}{=A6}d	{=EC}{=A6}d				
+m/MS6000.BIN	12:81	1	15	00	{=EC}{=18}	{=EC}{=18}				
+m/MS6000.BIN	12:82	0	7	00	{=EC}{=65}	{=EC}{=65}				
+m/MS6000.BIN	12:84	0	13	00	{=EC}{=6D}	{=EC}{=6D}				
+m/MS6000.BIN	12:88	0	22	00	{04:EF}は去ろうと{08:13}\n		{04:EF} is about to leave\n	ours		
+m/MS6000.BIN	12:88	1	53	1FB2	追いか{08:29}		Give Chase	ours		
+m/MS6000.BIN	12:88	2	63	1FB2	呼び止{08:2E}		Call Out to Them	ours		
+m/MS6000.BIN	12:88	3	73	1FB2	威嚇射撃		Warning Shot	ours		
+m/MS6000.BIN	12:88	4	83	1FB2	ほ{08:53}く		Leave It Alone	ours		
+m/MS6000.BIN	12:88	5	104	00	{=EC}{=8A}{02:00}{=EC}{=90}{03:00}{=EC}{=91}	{=EC}{=8A}{02:00}{=EC}{=90}{03:00}{=EC}{=91}	reads: {=EC}{=8A}デビルバスター{=EC}{=90}飛び道具{=EC}{=91}			
+m/MS6000.BIN	12:89	0	14	0C	追いつか{08:19}\n		Couldn't catch up\n	ours		
+m/MS6000.BIN	12:90	0	10	00	{04:FF}のガンが火を噴く！！\n		{04:FF}'s gun roars to life!!\n	ours		
+m/MS6000.BIN	12:90	1	94	18	ガンを装備{08:4A}{08:24}！\n		Not equipped with a gun!\n	ours		
+m/MS6000.BIN	12:90	2	120	16	今{08:7D}{08:76}間に合う！\n<wait>		There's still time!\n<wait>	ours		
+m/MS6000.BIN	12:90	3	143	1FBA	＞追いかけ{08:15}\n		>Give chase?\n	ours		
+m/MS6000.BIN	12:94	0	31	1FB2	{08:7F}{08:8C}	{08:7F}{08:8C}	Very Well	ours		
+m/MS6000.BIN	12:94	1	37	1FB2	許さん		I Won't Allow It	ours		
+m/MS6000.BIN	12:94	2	58	00	{=EC}{=95}	{=EC}{=95}				
+m/MS6000.BIN	12:98	0	28	00	{=EC}{=11}d	{=EC}{=11}d				
+m/MS6000.BIN	12:98	1	32	00	{=EC}{=10}	{=EC}{=10}				
+m/MS6000.BIN	12:9A	0	22	1FB2	楽しま{08:67}		Entertain Me	ours		
+m/MS6000.BIN	12:9A	1	32	1FB2	去れ		Leave	ours		
+m/MS6000.BIN	12:9A	2	51	00	{=EC}{=9C}	{=EC}{=9C}				
+m/MS6000.BIN	12:9D	0	8	0C	追いつか{08:19}\n		Couldn't catch up\n	ours		
+m/MS6000.BIN	12:9E	0	12	00	{04:EF}は踊{08:12}\n		{04:EF} danced!\n	ours		
+m/MS6000.BIN	12:9E	1	31	14	＞{02:06}\n		>What will you do?\n	ours		
+m/MS6000.BIN	12:9E	2	52	1FB2	褒{08:2E}		Praise Them	ours		
+m/MS6000.BIN	12:9E	3	58	1FB2	罵声を浴び{08:2A}		Hurl Insults at Them	ours		
+m/MS6000.BIN	12:9E	4	85	00	{=EC}{=A0}	{=EC}{=A0}				
+m/MS6000.BIN	12:9E	5	102	00	{04:FF}は幸せだ\n<wait>		{04:FF} is happy\n<wait>	ours		
+m/MS6000.BIN	12:9E	6	143	00	{04:FF}は魅了{03:0C}た！\n<wait>		{04:FF} was charmed completely!\n<wait>	ours		
+m/MS6000.BIN	12:A1	0	4	00	{04:EF}は歌{08:12}\n		{04:EF} sang!\n	ours		
+m/MS6000.BIN	12:A1	1	18	12	＞{02:06}\n		>What will you do?\n	ours		
+m/MS6000.BIN	12:A1	2	39	1FB2	褒{08:2E}		Praise Them	ours		
+m/MS6000.BIN	12:A1	3	45	1FB2	罵声を浴び{08:2A}		Hurl Insults at Them	ours		
+m/MS6000.BIN	12:A1	4	72	00	{=EC}{=A3}	{=EC}{=A3}				
+m/MS6000.BIN	12:A1	5	82	00	{04:EF}は{08:5E}すごい音痴だ！！\n		{04:EF} is terribly tone-deaf!!\n	ours		
+m/MS6000.BIN	12:A1	6	110	16	＞{02:06}\n		>What will you do?\n	ours		
+m/MS6000.BIN	12:A1	7	131	1FB2	褒{08:2E}		Praise Them	ours		
+m/MS6000.BIN	12:A1	8	137	1FB2	罵声を浴び{08:2A}		Hurl Insults at Them	ours		
+m/MS6000.BIN	12:A1	9	164	00	{=EC}{=A5}	{=EC}{=A5}				
+m/MS6000.BIN	12:A1	10	181	00	{04:FF}は混乱{08:17}\n		{04:FF} was thrown into confusion!\n	ours		
+m/MS6000.BIN	12:A2	0	15	00	{=EC}{=0A}	{=EC}{=0A}				
+m/MS6000.BIN	12:A5	0	9	00	{=EC}{=1C}	{=EC}{=1C}				
+m/MS6000.BIN	12:A5	1	18	1FFA	{02:09}・・{02:09}・・\n		..........\n	ours		
+m/MS6000.BIN	12:A6	0	2	1FBA	気まずく{08:1B}		It got awkward.	ours		
+m/MS6000.BIN	12:A6	1	18	1FFA	{02:09}{02:09}\n	{02:09}{02:09}\n	reads: ・・・・・・\n			
+m/MS6000.BIN	12:A6	2	45	1FB2	受けを狙う		Play It Safe	ours		
+m/MS6000.BIN	12:A6	3	57	1FB2	なだ{08:2E}		Calm Them Down	ours		
+m/MS6000.BIN	12:A6	4	65	1FB2	説得{08:8E}		Persuade Them	ours		
+m/MS6000.BIN	12:A6	5	73	1FB2	戦う		To Fight	ours		
+m/MS6000.BIN	12:A6	6	92	00	{=EC}{=AF}{02:00}{=EC}{=B7}{03:00}{=EC}{=B8}	{=EC}{=AF}{02:00}{=EC}{=B7}{03:00}{=EC}{=B8}	reads: {=EC}{=AF}デビルバスター{=EC}{=B7}飛び道具{=EC}{=B8}			
+m/MS6000.BIN	12:A7	0	6	00	{04:FF}はこてこてのギャグをかま{08:17}\n		{04:FF} pulled off a real corny gag!\n	ours		
+m/MS6000.BIN	12:A7	1	41	1FFA	{02:09}{02:09}{02:09}・\n<wait>		..........\n<wait>	ours		
+m/MS6000.BIN	12:A7	2	139	0D	＞も{08:53}やり{08:15}\n		>Keep going?\n	ours		
+m/MS6000.BIN	12:A8	0	4	00	{04:FF}は、も{08:53}こてこてのギャグをかま{08:17}\n		{04:FF} pulled off an even cornier gag!\n	ours		
+m/MS6000.BIN	12:A8	1	45	1FFA	{02:09}{02:09}{02:09}・\n<wait>		..........\n<wait>	ours		
+m/MS6000.BIN	12:AB	0	14	00	{=EC}{=1B}	{=EC}{=1B}				
+m/MS6000.BIN	12:AF	0	29	1FB2	あやまる		Apologize	ours		
+m/MS6000.BIN	12:AF	1	39	1FB2	怒る		Get Angry	ours		
+m/MS6000.BIN	12:AF	2	58	00	{=EC}{=B5}	{=EC}{=B5}				
+m/MS6000.BIN	12:B8	0	33	00	{04:FF}はころ{08:5F}！\n<wait>		{04:FF} tripped over!\n<wait>	ours		
+m/MS6000.BIN	12:BA	0	24	1FB2	{08:4D}{08:74}の事は{08:8E}		I'll Do That Much	ours		
+m/MS6000.BIN	12:BA	1	38	1FB2	そうは{08:7D}{08:25}		That Won't Happen	ours		
+m/MS6000.BIN	12:BA	2	63	00	{=EC}{=BC}	{=EC}{=BC}				
+m/MS6000.BIN	12:BC	0	30	1FFA	{02:09}{02:09}{02:09}・\n		..........\n	ours		
+m/MS6000.BIN	12:C1	0	18	00	{=EC}{=18}	{=EC}{=18}				
+m/MS6000.BIN	12:C3	0	6	00	{04:EF}は逃げ出{08:17}\n		{04:EF} fled the scene!\n	ours		
+m/MS6000.BIN	12:C3	1	35	1FB2	追いか{08:29}		Give Chase	ours		
+m/MS6000.BIN	12:C3	2	45	1FB2	あきら{08:2E}		Give Up	ours		
+m/MS6000.BIN	12:C3	3	55	1FB2	石を投げる		Throw a Rock	ours		
+m/MS6000.BIN	12:C3	4	67	1FB2	罵声を浴び{08:2A}		Hurl Insults at Them	ours		
+m/MS6000.BIN	12:C3	5	94	00	{=EC}{=C5}{02:00}{=EC}{=C6}{03:00}{=EC}{=C8}	{=EC}{=C5}{02:00}{=EC}{=C6}{03:00}{=EC}{=C8}	reads: {=EC}{=C5}デビルバスター{=EC}{=C6}飛び道具{=EC}{=C8}			
+m/MS6000.BIN	12:C4	0	21	0C	追いつか{08:19}\n		Couldn't catch up\n	ours		
+m/MS6000.BIN	12:C6	0	11	00	{04:FF}は石を投{08:44}！\n<wait>		{04:FF} threw a rock!\n<wait>	ours		
+m/MS6000.BIN	12:C6	1	38	1FFA	{02:09}{02:09}{02:09}・		..........	ours		
+m/MS6000.BIN	12:C6	2	57	14	命中！\n<wait>		Hit!\n<wait>	ours		
+m/MS6000.BIN	12:C6	3	83	00	{04:EF}はころ{08:5F}！\nスキだらけだ！\n<wait>		{04:EF} tripped over!\nWide open!\n<wait>	ours		
+m/MS6000.BIN	12:C6	4	117	1FBA	＞{08:0C}し{08:15}\n		>Attack?\n	ours		
+m/MS6000.BIN	12:C6	5	185	1F0D	{08:61}　		But,	ours		
+m/MS6000.BIN	12:C6	6	193	00	{04:EF}は無視{08:4A}行{08:52}{08:1F}\n		{04:EF} ignored you and walked away\n	ours		
+m/MS6000.BIN	12:C6	7	215	18	{08:85}{08:11}\n	{08:85}{08:11}\n	reads: はずれた！\n			
+m/MS6000.BIN	12:C6	8	225	16	{08:61}　\n		But,\n	ours		
+m/MS6000.BIN	12:C6	9	239	18	石が無い！\n		No stones left!\n	ours		
+m/MS6000.BIN	12:CA	0	8	0C	追いつか{08:19}\n		Couldn't catch up\n	ours		
+m/MS6000.BIN	12:CB	0	0	DATA	今{08:7D}{08:76}間に合う！\n＞追いかけ{08:15}\n		There's still time!\n>Will you give chase?\n	ours		
+m/MS6000.BIN	12:CC	0	6	00	{04:EF}は去ろうと{08:13}\n		{04:EF} is about to leave\n	ours		
+m/MS6000.BIN	12:CC	1	37	1FB2	ひきと{08:2E}		Hold Them Back	ours		
+m/MS6000.BIN	12:CC	2	47	1FB2	ほ{08:53}く		Leave It Alone	ours		
+m/MS6000.BIN	12:CC	3	68	00	{=EC}{=0B}	{=EC}{=0B}				
+m/MS6000.BIN	12:CD	0	2	1FBA	＞{08:90}や{08:52}？\n		>How?\n	ours		
+m/MS6000.BIN	12:CD	1	41	1FB2	抱き付く		Hug Them	ours		
+m/MS6000.BIN	12:CD	2	51	1FB2	腕をつかむ		Grab Their Arm	ours		
+m/MS6000.BIN	12:CD	3	63	1FB2	呼び止{08:2E}		Call Out to Them	ours		
+m/MS6000.BIN	12:CD	4	86	00	{=EC}{=CF}{02:00}{=EC}{=D1}	{=EC}{=CF}{02:00}{=EC}{=D1}	reads: {=EC}{=CF}デビルバスター{=EC}{=D1}			
+m/MS6000.BIN	12:CD	5	116	1FB2	飛びつく		Lunge at Them	ours		
+m/MS6000.BIN	12:CD	6	126	1FB2	呼び止{08:2E}		Call Out to Them	ours		
+m/MS6000.BIN	12:CD	7	149	00	{=EC}{=D1}	{=EC}{=D1}				
+m/MS6000.BIN	12:CE	0	2	1FBA	とぉっ！　		Hyah!	ours		
+m/MS6000.BIN	12:CE	1	17	11	失敗！\n		Failure!\n	ours		
+m/MS6000.BIN	12:CE	2	28	00	{04:FF}は　転んで{08:1F}！\n<wait>		{04:FF} ended up falling down!\n<wait>	ours		
+m/MS6000.BIN	12:CE	3	62	1E18	ホップ　		Hop,	ours		
+m/MS6000.BIN	12:CE	4	81	1E18	ステップ　		Step,	ours		
+m/MS6000.BIN	12:CE	5	102	1E18	ジャンプ！\n		Jump!\n	ours		
+m/MS6000.BIN	12:CE	6	161	18	失敗！\n		Failure!\n	ours		
+m/MS6000.BIN	12:CE	7	172	00	{04:FF}は　転んで{08:1F}！\n		{04:FF} ended up falling down!\n	ours		
+m/MS6000.BIN	12:CE	8	220	1FBA	追いつか{08:19}\n		Lost them.\n	ours		
+m/MS6000.BIN	12:CF	0	11	1FB0	つか{08:5F}！\n<wait>		Grabbed it!\n<wait>	ours		
+m/MS6000.BIN	12:CF	1	63	18	{08:61}　振りほどか{08:11}\n<wait>		But it shook right off!\n<wait>	ours		
+m/MS6000.BIN	12:CF	2	99	16	つか{08:5F}！\n<wait>		Grabbed it!\n<wait>	ours		
+m/MS6000.BIN	12:CF	3	163	18	失敗！\n		Failure!\n	ours		
+m/MS6000.BIN	12:CF	4	174	00	{04:EF}はかわ{08:17}\n		{04:EF} dodged it!\n	ours		
+m/MS6000.BIN	12:D0	0	0	DATA	痛い！！手を噛ま{08:11}！\n<wait>		Ouch!! Bitten on the hand!!\n<wait>	ours		
+m/MS6000.BIN	12:D2	0	11	1FB0	抱き付{08:64}！\n<wait>		Latched right onto you!\n<wait>	ours		
+m/MS6000.BIN	12:D2	1	58	1F0D	{08:61}　振りほどか{08:11}\n<wait>		But it shook right off!\n<wait>	ours		
+m/MS6000.BIN	12:D2	2	119	18	つか{08:5F}！\n<wait>		Grabbed it!\n<wait>	ours		
+m/MS6000.BIN	12:D2	3	155	18	ぷちっ\n{1E10:01001E}		Pop!\n{1E10:01001E}	ours		
+m/MS6000.BIN	12:D2	4	169	1FBA	あ{02:09}・・！！！\n		Ah......!!!\n	ours		
+m/MS6000.BIN	12:D2	5	229	18	失敗！\n		Failure!\n	ours		
+m/MS6000.BIN	12:D2	6	240	00	{04:EF}はギリギリでかわ{08:17}\n		{04:EF} barely dodged it!\n	ours		
+m/MS6000.BIN	12:D4	0	32	00	{04:EF}は近づくと見{08:67}\n突然身をひるがえ{08:4B}\n<wait>		{04:EF} pretended to approach,\nthen suddenly spun away!\n<wait>	ours		
+m/MS6000.BIN	12:D5	0	30	00	{04:EF}は近づくと見{08:67}\n突然身をひるがえ{08:4B}\n<wait>		{04:EF} pretended to approach,\nthen suddenly spun away!\n<wait>	ours		
+m/MS6000.BIN	12:D6	0	30	00	{04:EF}は突然身をひるがえ{08:4B}\n<wait>		{04:EF} suddenly spun away!\n<wait>	ours		

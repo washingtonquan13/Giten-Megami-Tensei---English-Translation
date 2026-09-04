@@ -1,0 +1,38 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
+m/MS6800.BIN	0:00	0	43	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6800.BIN	0:00	1	65	0F	･{03:0F}		@noedit; @dupid; record is not editable; copied verbatim; reads: ･ＥＸＰ			
+m/MS6800.BIN	0:00	2	69	00	{07:1F}{=81}{=06}	{07:1F}{=81}{=06}	@noedit; @dupid; record is not editable; copied verbatim; reads: 暴れ出した！{=81}{=06}			
+m/MS6800.BIN	0:00	3	74	00	{03:0F}	{03:0F}	@noedit; @dupid; record is not editable; copied verbatim; reads: ＥＸＰ			
+m/MS6800.BIN	0:00	4	93	00	\n{01:00}{05:FF}	\n{01:00}{05:FF}	@noedit; @dupid; record is not editable; copied verbatim; reads: \n早坂達也			
+m/MS6800.BIN	0:01	0	14	00	{03:0F}	{03:0F}	@noedit; @dupid; record is not editable; copied verbatim; reads: ＥＸＰ			
+m/MS6800.BIN	0:01	1	18	00	{04:1D}	{04:1D}	@noedit; @dupid; record is not editable; copied verbatim; reads: 			
+m/MS6800.BIN	0:01	2	22	00	{03:FF}	{03:FF}	@noedit; @dupid; record is not editable; copied verbatim; reads: 			
+m/MS6800.BIN	0:03	0	48	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6800.BIN	0:03	1	52	18			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6800.BIN	0:03	2	80	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6800.BIN	0:03	3	84	18			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6800.BIN	0:03	4	92	00	\n	\n	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6800.BIN	0:04	0	48	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6800.BIN	0:05	0	0	UNTILED	 / ( /  / 2 /  /  / , /  / < /  / F /  / P /  /  /  / U /  / Z /  / _ /  / 		@noedit; @untiled; record does not tile (expression selector past end of record at 0x42); read-only, copied verbatim			
+m/MS6800.BIN	0:06	0	0	UNTILED	@ /  /  /  /  /  /  /  /  /  /  /  /  /  /  /  / 		@noedit; @untiled; record does not tile (rel16 operand past end of record at 0x81); read-only, copied verbatim			
+m/MS6800.BIN	0:07	0	16	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6800.BIN	0:07	1	55	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6800.BIN	0:07	2	61	0B	d	d	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6800.BIN	0:07	3	63	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6800.BIN	0:07	4	76	1E00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6800.BIN	0:07	5	82	0B	d	d	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6800.BIN	0:07	6	84	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6800.BIN	0:09	0	0	UNTILED	( /  / 2 /  / 7 /  / A /  /  / F /  / P /  / Z /  /  / 		@noedit; @untiled; record does not tile (u8 operand past end of record at 0x32); read-only, copied verbatim			
+m/MS6800.BIN	0:0A	0	37	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6800.BIN	0:0A	1	45	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6800.BIN	0:0A	2	58	14			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6800.BIN	0:0B	0	27	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6800.BIN	0:0B	1	36	10			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6800.BIN	0:0B	2	53	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS6800.BIN	0:0B	3	60	0F	{05:00}	{05:00}	@noedit; @dupid; record is not editable; copied verbatim; reads: はいいいえニュートン			
+m/MS6800.BIN	0:0D	0	0	UNTILED	2 /  / Z /  / d /  /  /  / F /  /  /  / F /  /  / # /  / ( /  / Z /  /  / # /  / K /  / d /  / 		@noedit; @untiled; record does not tile (expression selector past end of record at 0x5C); read-only, copied verbatim			
+m/MS6800.BIN	0:1A	0	0	UNTILED	 /  /  / , / ' /  / 2 /  / F /  / U /  / _ /  /  / 		@noedit; @untiled; record does not tile (rel16 operand past end of record at 0x4F); read-only, copied verbatim			

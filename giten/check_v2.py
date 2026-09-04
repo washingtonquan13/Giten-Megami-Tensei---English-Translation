@@ -36,6 +36,7 @@ import collections
 import os
 
 from . import findings as check
+from . import script
 from . import (build_v2, codec, extract_v2, files, paths, pool, refdecode,
                script, tables, vmops, width)
 
@@ -151,8 +152,21 @@ def verify_tree(out_dir: str, root=None, report: "Report | None" = None) -> dict
 
 
 # --- per-row rules ----------------------------------------------------------
+def _where(row) -> str:
+    return "%s %s[%d]" % (row.file, row.rec, row.idx)
+
 def check_rows(report: Report, rows, pools=None,
                line_columns=width.LINE_COLUMNS, page_rows=width.PAGE_ROWS) -> None:
+    # (s) workflow: an en is only real once someone has marked it, and an en that
+    # merely copies its ref_en candidate needs a reviewer's word for it.
+    for row in rows:
+        if row.edited and not row.status:
+            report.add("status", check.ERROR, _where(row),
+                       "en is set but status is empty (draft or reviewed)")
+        elif row.edited and row.ref_en and row.en == row.ref_en and row.status != "reviewed":
+            report.add("status", check.ERROR, _where(row),
+                       "en equals ref_en; mark it reviewed or change it")
+
     for r in rows:
         where = "%s %s[%d]" % (r.file, r.rec, r.idx)
         blocked = script.NOEDIT_NOTE in r.note
@@ -222,6 +236,46 @@ def _declared_width(row) -> int:
 
 
 # --- run --------------------------------------------------------------------
+
+CAPTURE_ON, CAPTURE_OFF, CAPTURE_LIMIT = 0x01B, 0x01C, 255
+
+
+def check_capture(report: Report, rows, root=None) -> None:
+    """(c) text-capture regions: opcode ``1B`` turns on a mode in which characters
+    are appended to a 256-byte buffer (``0x481120``) with no bound check until
+    ``1C``; ``1E9D``/``1E9E`` then render it as a fixed field.  The original's
+    largest region is 215 bytes, so English can overflow it.  Sum the bytes the
+    build will emit for every span inside a region and refuse more than 255."""
+    by_file = {}
+    for r in rows:
+        if r.edited:
+            by_file.setdefault(r.file, {})[(r.rec, r.idx)] = r
+    for rel, edited in by_file.items():
+        sc = script.parse(rel, files.read_source(rel, root))
+        if not sc.ok:
+            continue
+        for rec in sc.iter_records():
+            if rec.tokens is None:
+                continue
+            key = "%d:%02X" % (rec.ci, rec.id)
+            on = None
+            for t in rec.tokens:
+                if t.kind == "op" and t.idx == CAPTURE_ON:
+                    on = t.off
+                    continue
+                if t.kind == "op" and t.idx == CAPTURE_OFF and on is not None:
+                    total = 0
+                    for sp in rec.spans:
+                        if sp.off >= on and sp.end <= t.off:
+                            row = edited.get((key, sp.idx))
+                            total += len(codec.encode(row.en)) if row else sp.end - sp.off
+                    if total > CAPTURE_LIMIT:
+                        report.add("capture", check.ERROR, "%s %s" % (rel, key),
+                                   "%d bytes of text between 1B and 1C; the capture "
+                                   "buffer holds %d" % (total, CAPTURE_LIMIT))
+                    on = None
+
+
 def run(root=None, text_dir=None, family="all", skip_identity=False,
         quiet=False, show=200, out_dir=None, verify=False) -> Report:
     text_dir = text_dir or extract_v2.text_v2_dir()
@@ -235,6 +289,7 @@ def run(root=None, text_dir=None, family="all", skip_identity=False,
         rows.extend(tables.read(path))
     report.counts["rows"] = len(rows)
     check_rows(report, rows, pool.load(root))
+    check_capture(report, rows, root)
 
     st = None
     if verify:

@@ -25,7 +25,7 @@ from __future__ import annotations
 import os
 from dataclasses import dataclass, field
 
-COLUMNS = ("file", "rec", "idx", "off", "tag", "jp", "en", "note")
+COLUMNS = ("file", "rec", "idx", "off", "tag", "jp", "en", "ref_en", "ref_src", "status", "note")
 
 HEADER_COMMENT = (
     "# Giten Megami Tensei translation table -- see docs/pipeline.md\n"
@@ -44,6 +44,9 @@ class Row:
     tag: str
     jp: str
     en: str = ""
+    ref_en: str = ""      # a candidate translation, never applied by the builder
+    ref_src: str = ""     # where it came from: ours / v005
+    status: str = ""      # "" | draft | reviewed -- required once en is set
     note: str = ""
 
     @property
@@ -57,7 +60,7 @@ class Row:
 
     def to_tsv(self) -> str:
         cells = [self.file, self.rec, str(self.idx), str(self.off), self.tag,
-                 self.jp, self.en, self.note]
+                 self.jp, self.en, self.ref_en, self.ref_src, self.status, self.note]
         for c in cells:
             if "\t" in c or "\n" in c or "\r" in c:
                 raise ValueError("un-escaped whitespace in row %r" % (self.key,))
@@ -85,6 +88,9 @@ def read(path: str) -> "list[Row]":
             cells = line.split("\t")
             if cells[0] == "file":
                 continue                     # header row
+            if len(cells) == 8:
+                # the old 8-column layout (old/text*): note was the last cell
+                cells = cells[:7] + ["", "", ""] + cells[7:]
             if len(cells) < len(COLUMNS):
                 cells += [""] * (len(COLUMNS) - len(cells))
             elif len(cells) > len(COLUMNS):
@@ -95,7 +101,7 @@ def read(path: str) -> "list[Row]":
             except ValueError:
                 raise SystemExit("%s:%d: non-numeric idx/off" % (path, lineno))
             rows.append(Row(cells[0], cells[1], idx, off, cells[4],
-                            cells[5], cells[6], cells[7]))
+                            cells[5], cells[6], cells[7], cells[8], cells[9], cells[10]))
     return rows
 
 

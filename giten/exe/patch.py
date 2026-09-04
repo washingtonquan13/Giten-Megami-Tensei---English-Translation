@@ -42,6 +42,9 @@ def apply(data: bytes, which: str, table: str = TABLE) -> bytes:
 
 
 def build(which: str, out_dir: "str | None" = None) -> str:
+    if which == "dev":
+        from .tracer import build_dev
+        return build_dev(out_dir)
     out_dir = out_dir or os.path.join(paths.BUILD_DIR, "exe")
     os.makedirs(out_dir, exist_ok=True)
     dst = os.path.join(out_dir, "dds_%s.exe" % which)

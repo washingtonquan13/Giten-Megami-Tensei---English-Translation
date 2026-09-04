@@ -1,0 +1,41 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
+m/MS0042.BIN	0:03	0	18	00	{03:17}	{03:17}	reads: 			
+m/MS0042.BIN	0:04	0	0	UNTILED	P /  / O / P /  / O / B		@noedit; @untiled; record does not tile (u8 operand past end of record at 0x33); read-only, copied verbatim			
+m/MS0042.BIN	0:05	0	0	UNTILED	P /  / B / P /  / B		@noedit; @untiled; record does not tile (expression selector past end of record at 0x2B); read-only, copied verbatim			
+m/MS0042.BIN	0:06	0	20	00	{01:1F}Q{03:00}{03:17}	{01:1F}Q{03:00}{03:17}	reads: おにいちゃんQ飛び道具			
+m/MS0042.BIN	0:06	1	113	1F4E	{03:02}{03:19}	{03:02}{03:19}	reads: を攻撃し			
+m/MS0042.BIN	0:06	2	118	00	{02:03}	{02:03}	reads: レジスタンス			
+m/MS0042.BIN	0:06	3	123	18	{08:00}{03:18}{01:FF}	{08:00}{03:18}{01:FF}	reads: 早坂			
+m/MS0042.BIN	0:06	4	304	1F82	fバッグＭＳＧ：		Debug MSG:	ours		
+m/MS0042.BIN	0:06	5	321	1FD3	選択{08:4B}{02:04}{08:42}フラグが拾え{02:0A}。\n関連テーブルのチェックが必要{08:55}。\n<wait>		Cannot read a flag from the selected item.\nThe related table needs checking.\n<wait>	ours		
+m/MS0042.BIN	0:06	6	417	1F4E	{03:16}	{03:16}	reads: 			
+m/MS0042.BIN	0:06	7	420	00	{02:03}	{02:03}	reads: レジスタンス			
+m/MS0042.BIN	0:06	8	427	09	{03:18}	{03:18}	reads: 			
+m/MS0042.BIN	0:06	9	448	1F4E	{03:16}	{03:16}	reads: 			
+m/MS0042.BIN	0:06	10	451	00	{01:03}	{01:03}	reads: ニュートン			
+m/MS0042.BIN	0:06	11	461	00	|	|				
+m/MS0042.BIN	0:06	12	626	1FB2	{08:26}	{08:26}	Yes	ours		
+m/MS0042.BIN	0:06	13	630	1FB2	{08:27}	{08:27}	No	ours		
+m/MS0042.BIN	0:06	14	647	00	B{06:FF}	B{06:FF}	reads: B			
+m/MS0042.BIN	0:07	0	9	1F19	{01:19}	{01:19}	reads: われわれ			
+m/MS0042.BIN	0:07	1	12	00	{02:01}O	{02:01}O	reads: ペンタグランマO			
+m/MS0042.BIN	0:07	2	16	00	{03:01}ｦ		{03:01}	ours		
+m/MS0042.BIN	0:07	3	20	00	{04:01}｢		{04:01}	ours		
+m/MS0042.BIN	0:07	4	24	00	{05:01}{=9E}{=00}{06:01}{=9A}{=00}{07:01}{=96}{=00}	{05:01}{=9E}{=00}{06:01}{=9A}{=00}{07:01}{=96}{=00}	reads: 飛び道具{=9E}{=00}{=9A}{=00}＞何をしますか？{=96}{=00}			
+m/MS0042.BIN	0:07	5	40	1B	ソフト名　              　価格		Software Name                Price	ours		
+m/MS0042.BIN	0:07	6	115	1F01	{03:18}	{03:18}	reads: 			
+m/MS0042.BIN	0:08	0	0	UNTILED	 / ｺ /  / ｺ / B / ｮ / 8 / ] / ｺ /  / Q / B		@noedit; @untiled; record does not tile (expression node 0x04 payload past end); read-only, copied verbatim			
+m/MS0042.BIN	0:0B	0	9	1F19	{01:19}	{01:19}	reads: われわれ			
+m/MS0042.BIN	0:0B	1	12	00	{02:01}K	{02:01}K	reads: ペンタグランマK			
+m/MS0042.BIN	0:0B	2	16	00	{03:01}{=9D}{=00}{04:01}{=99}{=00}{05:01}{=95}{=00}{06:01}{=91}{=00}{07:01}{=8D}{=00}	{03:01}{=9D}{=00}{04:01}{=99}{=00}{05:01}{=95}{=00}{06:01}{=91}{=00}{07:01}{=8D}{=00}	reads: そんなこと{=9D}{=00}切り{=99}{=00}飛び道具{=95}{=00}{=91}{=00}＞何をしますか？{=8D}{=00}			
+m/MS0042.BIN	0:0B	3	40	1B	ＤＤＳ{08:0A}名          買取額		DDS Data Name          Buyback Price	ours		
+m/MS0042.BIN	0:0C	0	21	1FB2	{08:26}	{08:26}	Yes	ours		
+m/MS0042.BIN	0:0C	1	25	1FB2	{08:27}	{08:27}	No	ours		
+m/MS0042.BIN	0:0C	2	42	00	B\n	B\n				
+m/MS0042.BIN	0:0D	0	0	UNTILED	ｺ / ･ /  / ﾁ / ﾐ / ｱ / ｲ / & / ｲ / ' / ｷ / ﾑ / B /  / ? / \ / ｺ /  / ｺ / Q / B		@noedit; @untiled; record does not tile (expression node 0x04 payload past end); read-only, copied verbatim			
+m/MS0042.BIN	0:0E	0	18	00	{03:17}	{03:17}	reads: 			
+m/MS0042.BIN	0:0E	1	42	00	{03:17}	{03:17}	reads: 			

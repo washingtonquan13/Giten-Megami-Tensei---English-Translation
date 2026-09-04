@@ -1,0 +1,297 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
+m/MS610B.BIN	0:00	0	18	1F88	＞会話可能圏外{08:55}\n　会話対象に接近{08:4A}下{08:49}\n<wait>		>Out of conversation range.\n  Get closer to talk.\n<wait>	ours		
+m/MS610B.BIN	0:00	1	71	1F18	{01:05}	{01:05}	reads: 山田			
+m/MS610B.BIN	0:00	2	80	0F	(	(				
+m/MS610B.BIN	0:00	3	82	00	{=EF}{=01}A	{=EF}{=01}A				
+m/MS610B.BIN	0:00	4	86	00	{=EF}{=08}Z	{=EF}{=08}Z				
+m/MS610B.BIN	0:00	5	90	00	{=EF}{=17}d	{=EF}{=17}d				
+m/MS610B.BIN	0:00	6	94	00	{=EF}{=39}	{=EF}{=39}				
+m/MS610B.BIN	2:01	0	18	1FD0	{08:90}やら　あまり敵意は無い{08:69}だ。\n		It doesn't seem\ntoo hostile.\n	ours		
+m/MS610B.BIN	2:01	1	57	1FBA	＞{02:06}\n		>{02:06}	ours		
+m/MS610B.BIN	2:01	2	78	1FB2	成仏さ{08:2A}		Put to Rest	ours		
+m/MS610B.BIN	2:01	3	88	1FB2	用を聞く		Hear Its Request	ours		
+m/MS610B.BIN	2:01	4	98	1FB2	ほ{08:53}く		Leave It	ours		
+m/MS610B.BIN	2:01	5	118	0F	{01:5E}	{01:5E}	reads: 			
+m/MS610B.BIN	2:01	6	121	00	{02:01}ﾍ		Pentagramﾍ	ours		
+m/MS610B.BIN	2:01	7	125	00						
+m/MS610B.BIN	2:01	8	134	1FFA	{02:09}・・\n		{02:09}..\n	ours		
+m/MS610B.BIN	2:01	9	171	1FD0	{08:61}　何も起こら{08:19}！\n		But nothing\nhappened at all!\n	ours		
+m/MS610B.BIN	2:01	10	237	00	{04:EF}は　{08:63}{08:42}声を掛{08:43}事を忘れ{08:14}{08:69}だ{02:09}\n<wait>		It seems to have forgotten\nthat it called out to you itself...\n<wait>	ours		
+m/MS610B.BIN	2:01	11	302	1FB2	{08:7F}よ		Sure	ours		
+m/MS610B.BIN	2:01	12	308	1FB2	やだ		Nope	ours		
+m/MS610B.BIN	2:01	13	326	0F	{01:7B}	{01:7B}	reads: 			
+m/MS610B.BIN	2:01	14	341	0D	{02:09}{02:09}\n<wait>	{02:09}{02:09}\n<wait>	reads: ・・・・・・\n<wait>			
+m/MS610B.BIN	2:01	15	353	0D	{02:09}{02:09}\n<wait>	{02:09}{02:09}\n<wait>	reads: ・・・・・・\n<wait>			
+m/MS610B.BIN	2:02	0	3	0D	{02:09}{02:09}\n<wait>	{02:09}{02:09}\n<wait>	reads: ・・・・・・\n<wait>			
+m/MS610B.BIN	2:03	0	28	1FB2	{08:7F}よ		Sure	v005		
+m/MS610B.BIN	2:03	1	34	1FB2	やだ		No way	v005		
+m/MS610B.BIN	2:03	2	52	0F	{01:47}	{01:47}	reads: 			
+m/MS610B.BIN	2:03	3	55	00						
+m/MS610B.BIN	2:03	4	64	1FFA	{02:09}・・\n		reads: ・・・・・\n			
+m/MS610B.BIN	2:03	5	101	1FD0	{08:61}　何も起こら{08:19}！\n		However, nothing happened!\n	v005		
+m/MS610B.BIN	2:03	6	156	00	{04:EF}は　逃げ出{08:17}\n<wait>		{04:EF} ran away!\n<wait>	v005		
+m/MS610B.BIN	2:03	7	192	00	{04:EF}は　逃げ{08:69}と{08:4B}が　逃げられ{08:19}！\n		{04:EF} tried to run away,\nbut wasn't able to!\n	v005		
+m/MS610B.BIN	2:33	0	0	DATA	お願いだ		Please	ours		
+m/MS610B.BIN	3:02	0	216	1FB2	なだ{08:2E}		Soothe	ours		
+m/MS610B.BIN	3:02	1	224	1FB2	逃げる		Flee	ours		
+m/MS610B.BIN	3:02	2	245	00	{=E3}{=10}	{=E3}{=10}				
+m/MS610B.BIN	3:02	3	274	1FFA	{02:09}・・\n		{02:09}..\n	ours		
+m/MS610B.BIN	3:02	4	298	00	{04:EF}は一体成仏{08:4B}\n		One has been laid to rest.\n	ours		
+m/MS610B.BIN	3:02	5	318	18	{08:61}何も起こら{08:19}\n		But nothing happened.\n	ours		
+m/MS610B.BIN	3:10	0	21	18	逃げられ{08:25}！\n		Can't get away!\n	ours		
+m/MS610B.BIN	3:06	0	47	1FB2	{08:0C}	{08:0C}	Attack	v005		
+m/MS610B.BIN	3:06	1	51	1FB2	逃げる		Run away	v005		
+m/MS610B.BIN	3:06	2	72	00	{=E3}{=10}	{=E3}{=10}				
+m/MS610B.BIN	3:11	0	21	00	{04:EF}は素早く動{08:64}！\n		It moves swiftly!\n	ours		
+m/MS610B.BIN	3:2F	0	0	DATA	月の波動が心地よいぜ\n<wait>		The moon's pulse feels so good\n<wait>	ours		
+m/MS610B.BIN	3:1F	0	0	DATA	{08:5C}{02:09}・・ほ{08:53}いてくれ\n<wait>		Just leave me be.....\n<wait>	ours		
+m/MS610B.BIN	3:30	0	0	DATA	ヒャーハハハハ！\n闇夜だぁ！　俺の時間だぁ！\n<wait>		Hyahahahaha!\nA dark night! This is my time!\n<wait>	ours		
+m/MS610B.BIN	4:02	0	0	DATA	{08:81}あ　		Well then	ours		
+m/MS610B.BIN	4:08	0	0	DATA	{08:48}をやろう\n<wait>		Here, take this.\n<wait>	ours		
+m/MS610B.BIN	4:17	0	0	DATA	何を{08:8E}！\n<wait>		Why!?\n<wait>	v005		
+m/MS610B.BIN	4:20	0	0	DATA	{01:2A}\n<wait>	{01:2A}\n<wait>	Thank you!\n<wait>	v005		
+m/MS610B.BIN	4:45	0	0	DATA	何だと！		What did you say!	ours		
+m/MS610B.BIN	4:28	0	0	DATA	許さんぞぉ！\n<wait>		I won't forgive this!\n<wait>	ours		
+m/MS610B.BIN	4:53	0	0	DATA	ばかめぇ！		You fool!	ours		
+m/MS610B.BIN	4:7B	0	0	DATA	死ねぇ！\n<wait>		Die!\n<wait>	v005		
+m/MS610B.BIN	4:7F	0	0	DATA	こっちに来い\n<wait>		Come here.\n<wait>	v005		
+m/MS610B.BIN	4:91	0	0	DATA	ふ・ふ・ふ{02:09}\n<wait>		He he he...\n<wait>	v005		
+m/MS610B.BIN	9:15	0	9	00	{=E9}{=1C}	{=E9}{=1C}				
+m/MS610B.BIN	9:1C	0	7	00	{=EF}{=42}	{=EF}{=42}				
+m/MS610B.BIN	9:20	0	21	1FB2	{08:26}	{08:26}	Yes	v005		
+m/MS610B.BIN	9:20	1	25	1FB2	{08:27}	{08:27}	No	v005		
+m/MS610B.BIN	9:20	2	42	00	{=EF}{=47}	{=EF}{=47}				
+m/MS610B.BIN	9:31	0	9	00	{=E9}{=32}	{=E9}{=32}				
+m/MS610B.BIN	9:38	0	0	DATA	{02:09}・・\n		reads: ・・・・・\n			
+m/MS610B.BIN	9:38	1	14	00	{=EF}{=4F}d	{=EF}{=4F}d				
+m/MS610B.BIN	9:38	2	18	00	{=EF}{=50}	{=EF}{=50}				
+m/MS610B.BIN	9:39	0	0	DATA	{02:09}・・\n		reads: ・・・・・\n			
+m/MS610B.BIN	9:39	1	29	1FB2	{08:26}	{08:26}	Yes	v005		
+m/MS610B.BIN	9:39	2	33	1FB2	{08:27}	{08:27}	No	v005		
+m/MS610B.BIN	9:39	3	50	00	{=EF}{=52}	{=EF}{=52}				
+m/MS610B.BIN	9:48	0	3	0D	{02:09}\n	{02:09}\n	reads: ・・・\n			
+m/MS610B.BIN	9:4F	0	14	00	{=EF}{=54}	{=EF}{=54}				
+m/MS610B.BIN	9:4F	1	27	00	{=EF}{=56}	{=EF}{=56}				
+m/MS610B.BIN	14:3C	0	0	DATA	{08:7D}	{08:7D}	reads: なら			
+m/MS610B.BIN	14:23	0	0	DATA	私は		I	ours		
+m/MS610B.BIN	15:01	0	19	1F80	6	6	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:01	1	25	1E18	{02:09}・・\n		{02:09}..\n	ours		
+m/MS610B.BIN	15:01	2	51	1FB2	{08:26}	{08:26}	Yes	v005		
+m/MS610B.BIN	15:01	3	55	1FB2	{08:27}	{08:27}	No	v005		
+m/MS610B.BIN	15:01	4	72	00	{=EF}{=07}	{=EF}{=07}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:02	0	11	00	{04:EF}はニヤリと笑{08:12}\n		{04:EF} began to grin!\n	v005		
+m/MS610B.BIN	15:02	1	44	1FB2	立ち止まる		Stop	v005		
+m/MS610B.BIN	15:02	2	56	1FB2	{08:79}{08:7E}進む		Proceed	v005		
+m/MS610B.BIN	15:02	3	78	0F	{01:13}	{01:13}	@noedit; @dupid; record is not editable; copied verbatim; reads: あなたを			
+m/MS610B.BIN	15:02	4	81	00			@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:02	5	94	00	{=E9}{=32}	{=E9}{=32}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:03	0	13	00	{=EF}{=05}	{=EF}{=05}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:07	0	21	00	{04:EF}は\nいきなり\n迫っ{08:1C}\n		{04:EF} charges you!\n	v005		
+m/MS610B.BIN	15:08	0	22	1FB2	{08:26}	{08:26}	Yes	v005		
+m/MS610B.BIN	15:08	1	26	1FB2	{08:27}	{08:27}	No	v005		
+m/MS610B.BIN	15:08	2	43	00	{=EF}{=0A}	{=EF}{=0A}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:0A	0	24	1FB2	いやだ		No way	v005		
+m/MS610B.BIN	15:0A	1	32	1FB2	体		Body	v005		
+m/MS610B.BIN	15:0A	2	36	1FB2	鉄拳		Fist	v005		
+m/MS610B.BIN	15:0A	3	42	1FB2	食べ物		Food	v005		
+m/MS610B.BIN	15:0A	4	63	00	{=EF}{=0C}{02:00}{=EF}{=0D}{03:00}{=EF}{=0E}	{=EF}{=0C}{02:00}{=EF}{=0D}{03:00}{=EF}{=0E}	@noedit; @dupid; record is not editable; copied verbatim; reads: {=EF}{=0C}デビルバスター{=EF}{=0D}飛び道具{=EF}{=0E}			
+m/MS610B.BIN	15:0E	0	13	00	{=EF}{=16}	{=EF}{=16}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:0E	1	23	00	{04:FF}は食べ物を\n差し出{08:17}\n		You hold out\nsome food!\n	ours		
+m/MS610B.BIN	15:0F	0	4	00	{04:F0}が{08:10}特製\n		{04:F0} has the Shelter Special\n	v005		
+m/MS610B.BIN	15:0F	1	22	00	{=EF}{=11}\<	{=EF}{=11}\<	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:0F	2	26	00	{=EF}{=12}P	{=EF}{=12}P	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:0F	3	30	00	{=EF}{=13}Z	{=EF}{=13}Z	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:0F	4	34	00	{=EF}{=14}d	{=EF}{=14}d	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:0F	5	38	00	{=EF}{=15}	{=EF}{=15}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:10	0	3	0D	を持{08:52}{08:64}！\n		in their inventory!\n	v005		
+m/MS610B.BIN	15:11	0	3	0D	を持{08:52}{08:64}！\n		in their inventory!\n	v005		
+m/MS610B.BIN	15:12	0	3	0D	を持{08:52}{08:64}！\n		in their inventory!\n	v005		
+m/MS610B.BIN	15:13	0	3	0D	を持{08:52}{08:64}！\n		in their inventory!\n	v005		
+m/MS610B.BIN	15:14	0	3	0D	を持{08:52}{08:64}！\n		in their inventory!\n	v005		
+m/MS610B.BIN	15:15	0	3	0D	を持{08:52}{08:64}！\n		in their inventory!\n	v005		
+m/MS610B.BIN	15:16	0	4	00	{04:F0}は何も持{08:52}い{08:19}が\n食べ物を渡すふりを{08:4A}\nいきなり殴{08:52}{08:1F}！\n<wait>		{04:F0} pretends to give\nthe demon food, but punches\nit as it lowers its guard!\n<wait>	v005		
+m/MS610B.BIN	15:17	0	26	1FB2	見る		Watch	v005		
+m/MS610B.BIN	15:17	1	32	1FB2	無視		Ignore	v005		
+m/MS610B.BIN	15:17	2	51	00	{=EF}{=1E}	{=EF}{=1E}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:17	3	61	00	{04:EF}は{02:0E}へ近寄ろうと{08:13}\n		{04:EF} is creeping towards you.\n	v005		
+m/MS610B.BIN	15:17	4	98	1FB2	まて！		Stop!	v005		
+m/MS610B.BIN	15:17	5	106	1FB2	様子を見る		Let it	v005		
+m/MS610B.BIN	15:17	6	131	00	{=EF}{=2F}	{=EF}{=2F}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:19	0	43	00	{04:EF}は気配が消{08:41}！\n		Its presence vanishes!\n	ours		
+m/MS610B.BIN	15:19	1	76	1FB2	立ち去る		Leave	ours		
+m/MS610B.BIN	15:19	2	86	1FB2	見回す		Look	ours		
+m/MS610B.BIN	15:19	3	107	00	{=EF}{=1A}	{=EF}{=1A}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:19	4	139	00	{04:EF}は気配が消{08:41}！\n		Its presence vanishes!\n	ours		
+m/MS610B.BIN	15:1A	0	9	00	{=EF}{=1C}d	{=EF}{=1C}d	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:1A	1	13	00	{=EF}{=1D}	{=EF}{=1D}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:1B	0	0	DATA	何も起こら{08:19}！\n		Nothing happens!\n	ours		
+m/MS610B.BIN	15:1C	0	0	DATA	背後に{08:64}！\n<wait>		It was right behind you!\n<wait>	ours		
+m/MS610B.BIN	15:1D	0	4	00	{04:EF}が{08:64}後に　\n何か落ちて{08:64}\n		After it was there,\nsomething was left behind.\n	ours		
+m/MS610B.BIN	15:1E	0	14	1F0D	{02:09}・・\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n			
+m/MS610B.BIN	15:1F	0	24	1FB2	{08:26}	{08:26}	@noedit; @dupid; record is not editable; copied verbatim; reads: はい; menu option, declared width 20 columns			
+m/MS610B.BIN	15:1F	1	28	1FB2	{08:27}	{08:27}	@noedit; @dupid; record is not editable; copied verbatim; reads: いいえ; menu option, declared width 20 columns			
+m/MS610B.BIN	15:1F	2	45	00	{=EF}{=2C}	{=EF}{=2C}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:20	0	9	00	{=EF}{=22}	{=EF}{=22}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:22	0	6	0D	{02:09}・・\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n<wait>			
+m/MS610B.BIN	15:22	1	38	1FB2	{08:26}	{08:26}	@noedit; @dupid; record is not editable; copied verbatim; reads: はい; menu option, declared width 20 columns			
+m/MS610B.BIN	15:22	2	42	1FB2	{08:27}	{08:27}	@noedit; @dupid; record is not editable; copied verbatim; reads: いいえ; menu option, declared width 20 columns			
+m/MS610B.BIN	15:22	3	59	00	{=EF}{=2B}	{=EF}{=2B}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:23	0	13	00	{=EF}{=24}	{=EF}{=24}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:24	0	22	0C	突然　\n		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:24	1	33	00	{04:EF}が覆いかぶさっ{08:1C}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: が覆いかぶさってきた！\n			
+m/MS610B.BIN	15:24	2	75	1FB2	暴{08:2F}		@noedit; @dupid; record is not editable; copied verbatim; reads: 暴れる; menu option, declared width 20 columns			
+m/MS610B.BIN	15:24	3	81	1FB2	無抵抗		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS610B.BIN	15:24	4	102	00	{=EF}{=25}	{=EF}{=25}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:25	0	42	1FB2	暴{08:2F}		@noedit; @dupid; record is not editable; copied verbatim; reads: 暴れる; menu option, declared width 20 columns			
+m/MS610B.BIN	15:25	1	48	1FB2	無抵抗		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS610B.BIN	15:25	2	69	00	{=EF}{=26}	{=EF}{=26}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:25	3	82	00	{=EF}{=2A}	{=EF}{=2A}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:26	0	12	0D	{02:09}\n	{02:09}\n	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・\n			
+m/MS610B.BIN	15:26	1	18	0D	{02:09}\n	{02:09}\n	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・\n			
+m/MS610B.BIN	15:26	2	37	1FB2	暴{08:2F}		@noedit; @dupid; record is not editable; copied verbatim; reads: 暴れる; menu option, declared width 20 columns			
+m/MS610B.BIN	15:26	3	43	1FB2	無抵抗		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS610B.BIN	15:26	4	64	00	{=EF}{=27}	{=EF}{=27}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:27	0	26	00	{=EF}{=29}	{=EF}{=29}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:28	0	3	0D	{02:09}\n	{02:09}\n	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・\n			
+m/MS610B.BIN	15:2C	0	9	00	{=EF}{=2E}	{=EF}{=2E}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:2F	0	14	00	{=EF}{=33}	{=EF}{=33}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:2F	1	61	1FE1	！！！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:2F	2	78	00	{04:EF}が\n猛スピードで距離を詰め{08:1C}！！\n		@noedit; @dupid; record is not editable; copied verbatim; reads: が\n猛スピードで距離を詰めてきた！！！\n			
+m/MS610B.BIN	15:2F	3	119	00	{=EF}{=37}<wait>	{=EF}{=37}<wait>	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:2F	4	128	1FBA	{02:09}が\n{08:79}{08:7E}　通りすぎてい{08:52}{08:1F}{02:09}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・が\nそのまま　通りすぎていってしまった・・・\n			
+m/MS610B.BIN	15:30	0	4	00	{04:EF}が{08:0C}し{08:69}と{08:13}！\n		@noedit; @dupid; record is not editable; copied verbatim; reads: が攻撃しようとしている！\n			
+m/MS610B.BIN	15:30	1	37	1FB2	先制{08:0C}		@noedit; @dupid; record is not editable; copied verbatim; reads: 先制攻撃; menu option, declared width 20 columns			
+m/MS610B.BIN	15:30	2	45	1FB2	無抵抗		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS610B.BIN	15:30	3	66	00	{=EF}{=32}	{=EF}{=32}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:31	0	14	1F0F	駄目だ！　\n間に合わ{08:25}！\n		@noedit; @dupid; record is not editable; copied verbatim; reads: 駄目だ！　\n間に合わない！\n			
+m/MS610B.BIN	15:33	0	36	00	{04:EF}は{08:79}{08:7E}通りすぎ{08:21}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: はそのまま通りすぎていった\n			
+m/MS610B.BIN	15:34	0	0	DATA	と思っ{08:50}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: と思ったら\n			
+m/MS610B.BIN	15:34	1	16	00	{=EF}{=36}	{=EF}{=36}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:35	0	0	DATA	後ろに{08:64}！\n		@noedit; @dupid; record is not editable; copied verbatim; reads: 後ろにいた！\n			
+m/MS610B.BIN	15:36	0	0	DATA	後ろ{08:42}\n{03:07}{08:1C}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: 後ろから\n襲いかかってきた！\n			
+m/MS610B.BIN	15:37	0	6	1FBA	{02:09}が\n{08:79}{08:7E}　通りすぎてい{08:52}{08:1F}{02:09}\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・が\nそのまま　通りすぎていってしまった・・・\n<wait>			
+m/MS610B.BIN	15:37	1	46	00	{04:EF}が{08:64}後に　\n何か\n落ちて{08:64}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: がいた後に　\n何か\n落ちていた\n			
+m/MS610B.BIN	15:38	0	12	1FBA	後ろ\n{08:42}\n{03:07}{08:1C}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: 後ろ\nから\n襲いかかってきた！\n			
+m/MS610B.BIN	15:3A	0	12	00	{04:FF}は転{08:5F}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: は転んだ\n			
+m/MS610B.BIN	15:3A	1	56	1FB2	起きる		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns			
+m/MS610B.BIN	15:3A	2	64	1FB2	起こ{08:4A}もらう		@noedit; @dupid; record is not editable; copied verbatim; reads: 起こしてもらう; menu option, declared width 20 columns			
+m/MS610B.BIN	15:3A	3	91	00	{=EF}{=3D}	{=EF}{=3D}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:3B	0	25	00	{04:EF}が目前{08:71}来て{08:64}！\n		@noedit; @dupid; record is not editable; copied verbatim; reads: が目前まで来ていた！\n			
+m/MS610B.BIN	15:3D	0	14	00	{=EF}{=3F}	{=EF}{=3F}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:3D	1	39	1F7F	{02:09}・・\n手が\n痺{08:11}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n手が\n痺れた！\n			
+m/MS610B.BIN	15:3D	2	76	00	{=E9}{=39}	{=E9}{=39}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:42	0	19	1FB2	{08:26}	{08:26}	@noedit; @dupid; record is not editable; copied verbatim; reads: はい; menu option, declared width 20 columns			
+m/MS610B.BIN	15:42	1	23	1FB2	{08:27}	{08:27}	@noedit; @dupid; record is not editable; copied verbatim; reads: いいえ; menu option, declared width 20 columns			
+m/MS610B.BIN	15:42	2	40	00	{=EF}{=43}	{=EF}{=43}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:43	0	9	00	{=EF}{=45}	{=EF}{=45}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:45	0	19	1FB2	{08:26}	{08:26}	@noedit; @dupid; record is not editable; copied verbatim; reads: はい; menu option, declared width 20 columns			
+m/MS610B.BIN	15:45	1	23	1FB2	{08:27}	{08:27}	@noedit; @dupid; record is not editable; copied verbatim; reads: いいえ; menu option, declared width 20 columns			
+m/MS610B.BIN	15:45	2	40	00	{=EF}{=46}	{=EF}{=46}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:47	0	9	00	{=EF}{=49}Z	{=EF}{=49}Z	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:47	1	13	00	{=EF}{=4A}d	{=EF}{=4A}d	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:47	2	17	00	{=EF}{=4B}	{=EF}{=4B}	@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:48	0	12	00	{04:FF}は難しい事を\n考{08:41}！\n		@noedit; @dupid; record is not editable; copied verbatim; reads: は難しい事を\n考えた！\n			
+m/MS610B.BIN	15:48	1	51	00	{04:FF}は難しい事を\n考{08:41}！\n		@noedit; @dupid; record is not editable; copied verbatim; reads: は難しい事を\n考えた！\n			
+m/MS610B.BIN	15:49	0	15	00	{04:FF}は{08:48}{08:71}の人生を\n考{08:41}！\n		@noedit; @dupid; record is not editable; copied verbatim; reads: はこれまでの人生を\n考えた！\n			
+m/MS610B.BIN	15:49	1	56	00	{04:FF}は{08:48}{08:71}の人生を\n考{08:41}！\n		@noedit; @dupid; record is not editable; copied verbatim; reads: はこれまでの人生を\n考えた！\n			
+m/MS610B.BIN	15:4B	0	4	00	{04:FF}は何も思い浮かば{08:19}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: は何も思い浮かばなかった\n			
+m/MS610B.BIN	15:4D	0	0	DATA	突然　\n		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:4D	1	11	00	{04:EF}が\n意識の中に　入り込んで{08:1D}\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: が\n意識の中に　入り込んできた！\n<wait>			
+m/MS610B.BIN	15:4D	2	47	1FBA	{02:09}・・\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n			
+m/MS610B.BIN	15:4D	3	58	00	{04:FF}は		@noedit; @dupid; record is not editable; copied verbatim; reads: は			
+m/MS610B.BIN	15:4D	4	67	16	耐え切{08:12}\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: 耐え切った！\n<wait>			
+m/MS610B.BIN	15:4D	5	96	00	{04:EF}に憑依{03:0C}た！\n		@noedit; @dupid; record is not editable; copied verbatim; reads: に憑依された！\n			
+m/MS610B.BIN	15:4E	0	3	0D	{02:09}\n	{02:09}\n	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・\n			
+m/MS610B.BIN	15:4E	1	9	0D	{02:09}\n<wait>	{02:09}\n<wait>	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・\n<wait>			
+m/MS610B.BIN	15:51	0	2	1FBA	{02:09}・・\n		@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n			
+m/MS610B.BIN	15:51	1	23	0C	何も起こら{08:19}！\n		@noedit; @dupid; record is not editable; copied verbatim; reads: 何も起こらなかった！\n			
+m/MS610B.BIN	15:57	0	4	00	{04:EF}\nは\n一体成仏{08:17}\n		@noedit; @dupid; record is not editable; copied verbatim; reads: \nは\n一体成仏した！\n			
+m/MS610B.BIN	15:58	0	0	DATA	何を{08:13}？\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: 何をしている？\n<wait>			
+m/MS610B.BIN	15:59	0	0	DATA	おのれぇ！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:5A	0	0	DATA	来{08:25}かぁ！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: 来ないかぁ！\n<wait>			
+m/MS610B.BIN	15:5B	0	0	DATA	こっち{08:42}		@noedit; @dupid; record is not editable; copied verbatim; reads: こっちから			
+m/MS610B.BIN	15:5C	0	0	DATA	行{08:52}やる\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: 行ってやる\n<wait>			
+m/MS610B.BIN	15:5D	0	0	DATA	ヒャハははは！		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:5E	0	0	DATA	{08:0E}になれぇ！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: 仲魔になれぇ！\n<wait>			
+m/MS610B.BIN	15:5F	0	0	DATA	{08:79}{08:7E}	{08:79}{08:7E}	@noedit; @dupid; record is not editable; copied verbatim; reads: そのまま			
+m/MS610B.BIN	15:60	0	0	DATA	永遠に寝てな！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:61	0	0	DATA	企んで{08:40}{08:8C}！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: 企んでいるだろう！\n<wait>			
+m/MS610B.BIN	15:62	0	0	DATA	成仏{02:0D}くれぇ\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: 成仏させてくれぇ\n<wait>			
+m/MS610B.BIN	15:63	0	0	DATA	ああ{02:09}輝い{08:14}！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: ああ・・・輝いている！\n<wait>			
+m/MS610B.BIN	15:64	0	0	DATA	温かい{02:09}		@noedit; @dupid; record is not editable; copied verbatim; reads: 温かい・・・			
+m/MS610B.BIN	15:65	0	0	DATA	冷やか{08:4B}なぁぁぁ！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: 冷やかしたなぁぁぁ！\n<wait>			
+m/MS610B.BIN	15:66	0	0	DATA	一緒に消え{08:69}ぞ！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: 一緒に消えようぞ！\n<wait>			
+m/MS610B.BIN	15:67	0	0	DATA	貴様が		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:68	0	0	DATA	恨めしい{08:77}！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: 恨めしいのだ！\n<wait>			
+m/MS610B.BIN	15:69	0	0	DATA	何も考{08:28}なよ\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: 何も考えるなよ\n<wait>			
+m/MS610B.BIN	15:6A	0	0	DATA	眼をつぶれぇ！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:6B	0	0	DATA	グ・ウウウウウ！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:6C	0	0	DATA	考{08:28}なと{08:22}ろぉ！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: 考えるなといったろぉ！\n<wait>			
+m/MS610B.BIN	15:6D	0	0	DATA	ちっ！		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:6E	0	0	DATA	御苦労		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:6F	0	0	DATA	うらめしい\n<wait>		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:70	0	0	DATA	命を		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:71	0	0	DATA	くれぇ！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:72	0	0	DATA	おおおおおおおおおお！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:73	0	0	DATA	{08:8B}{08:22}ぁ！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: よくいったぁ！\n<wait>			
+m/MS610B.BIN	15:74	0	0	DATA	{08:58}おぉ？\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: なにおぉ？\n<wait>			
+m/MS610B.BIN	15:75	0	0	DATA	アンズーレーズン		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:76	0	0	DATA	バロンマロン		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:77	0	0	DATA	ノッカーコーク		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:78	0	0	DATA	オモイカネパン		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:79	0	0	DATA	オードリーハニー		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:7A	0	0	DATA	シヴァレバー		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:7B	0	0	DATA	うう！		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:7C	0	0	DATA	う・うめぇよぉ\n<wait>		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:7D	0	0	DATA	満足だ		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:7E	0	0	DATA	まずい！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:7F	0	0	DATA	すま{08:25}なぁ\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: すまないなぁ\n<wait>			
+m/MS610B.BIN	15:80	0	0	DATA	{08:48}は　ほんのお礼だ\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: これは　ほんのお礼だ\n<wait>			
+m/MS610B.BIN	15:81	0	0	DATA	{02:0B}の食い物など　食{08:28}かぁ！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: 人間の食い物など　食えるかぁ！\n<wait>			
+m/MS610B.BIN	15:82	0	0	DATA	{08:3F}な{08:5F}ぁ？\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: あれなんだぁ？\n<wait>			
+m/MS610B.BIN	15:83	0	0	DATA	地獄への門だぁ！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:84	0	0	DATA	私は{08:45}だ！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: 私はここだ！\n<wait>			
+m/MS610B.BIN	15:85	0	0	DATA	つまらん奴だ！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:86	0	0	DATA	{08:90}{08:4B}ぁ？\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: どうしたぁ？\n<wait>			
+m/MS610B.BIN	15:87	0	0	DATA	私{08:4F}が怖いのか？\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: 私たちが怖いのか？\n<wait>			
+m/MS610B.BIN	15:88	0	0	DATA	食わず嫌いは　よろしく{08:25}なぁ\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: 食わず嫌いは　よろしくないなぁ\n<wait>			
+m/MS610B.BIN	15:89	0	0	DATA	{02:0C}は{08:82}\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: 我々はただ\n<wait>			
+m/MS610B.BIN	15:8A	0	0	DATA	ぬくもりを{02:09}くれ{02:09}\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: ぬくもりを・・・くれ・・・\n<wait>			
+m/MS610B.BIN	15:8B	0	0	DATA	早く		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:8C	0	0	DATA	{01:18}	{01:18}	@noedit; @dupid; record is not editable; copied verbatim; reads: あんた			
+m/MS610B.BIN	15:8D	0	0	DATA	やるなぁ{02:09}\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: やるなぁ・・・\n<wait>			
+m/MS610B.BIN	15:8E	0	0	DATA	くちおしや\n<wait>		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:8F	0	0	DATA	今更		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:90	0	0	DATA	遅いわぁ！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:91	0	0	DATA	ア・あは・アハ{02:09}		@noedit; @dupid; record is not editable; copied verbatim; reads: ア・あは・アハ・・・			
+m/MS610B.BIN	15:92	0	0	DATA	あ{08:51}けぇ{02:09}\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: あったけぇ・・・\n<wait>			
+m/MS610B.BIN	15:93	0	0	DATA	も{08:53}		@noedit; @dupid; record is not editable; copied verbatim; reads: もっと			
+m/MS610B.BIN	15:94	0	0	DATA	欲しいぞぉ！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:95	0	0	DATA	ず・ず・ずぅぅぅ{02:09}\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: ず・ず・ずぅぅぅ・・・\n<wait>			
+m/MS610B.BIN	15:96	0	0	DATA	も{08:53}だぁ		@noedit; @dupid; record is not editable; copied verbatim; reads: もっとだぁ			
+m/MS610B.BIN	15:97	0	0	DATA	最後にぃー		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:98	0	0	DATA	光ぉぉぉ\n<wait>		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:99	0	0	DATA	貴様の体だぁ！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:9A	0	0	DATA	{08:7F}度胸だ\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: いい度胸だ\n<wait>			
+m/MS610B.BIN	15:9B	0	0	DATA	{08:48}が本当の恐怖だ！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: これが本当の恐怖だ！\n<wait>			
+m/MS610B.BIN	15:9C	0	0	DATA	はっ！？		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:9D	0	0	DATA	ひゃははははは		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:9E	0	0	DATA	{08:45}だ！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: ここだ！\n<wait>			
+m/MS610B.BIN	15:9F	0	0	DATA	やはあ{02:09}\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: やはあ・・・\n<wait>			
+m/MS610B.BIN	15:A0	0	0	DATA	あ？		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:A1	0	0	DATA	何か		@noedit; @dupid; record is not editable; copied verbatim			
+m/MS610B.BIN	15:A2	0	0	DATA	二辺の角度が６０°で{08:3F}ば\n{08:4D}は正三角形で{08:7B}！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: 二辺の角度が６０°であれば\nそれは正三角形である！\n<wait>			
+m/MS610B.BIN	15:A2	1	50	1FBA	６つの内角が{08:4D}ぞれ６０°で{08:3F}ば、\n{08:4D}は正六角形で{08:7B}！\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: ６つの内角がそれぞれ６０°であれば、\nそれは正六角形である！\n<wait>			
+m/MS610B.BIN	15:A3	0	0	DATA	いんいちがいち、いんにがに、\nいんさんがさん{02:09}\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: いんいちがいち、いんにがに、\nいんさんがさん・・・\n<wait>			
+m/MS610B.BIN	15:A3	1	52	1FBA	ごいちがご、ごにじゅう、\nごさんじゅうご{02:09}\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: ごいちがご、ごにじゅう、\nごさんじゅうご・・・\n<wait>			
+m/MS610B.BIN	15:A4	0	0	DATA	あの頃の俺{08:62}何をや{08:52}も		@noedit; @dupid; record is not editable; copied verbatim; reads: あの頃の俺は、何をやっても			
+m/MS610B.BIN	15:A5	0	0	DATA	大当たり。肩で風を{03:12}、\n往来を歩いて{02:09}\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: 大当たり。肩で風を切り、\n往来を歩いて・・・\n<wait>			
+m/MS610B.BIN	15:A6	0	0	DATA	上手くいか{08:19}。\n物は無くすし、精神的にも\nズタズタ{02:09}\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: 上手くいかなかった。\n物は無くすし、精神的にも\nズタズタ・・・\n<wait>			
+m/MS610B.BIN	15:A7	0	0	DATA	{08:47}間、町で見か{08:43}あの子。\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: この間、町で見かけたあの子。\n<wait>			
+m/MS610B.BIN	15:A8	0	0	DATA	何かすご{08:18}なよなぁ。ハハ。\nナニや{08:52}も許{08:4A}くれ{01:29}{08:51}し{02:09}\nククッ。\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: 何かすごかったなよなぁ。ハハ。\nナニやっても許してくれそうだったし・・・\nククッ。\n<wait>			
+m/MS610B.BIN	15:A9	0	0	DATA	結構可愛{08:18}よなぁ。\n{08:74}ど、少し性格がきつ{01:29}{08:51}な{02:09}\n<wait>		@noedit; @dupid; record is not editable; copied verbatim; reads: 結構可愛かったよなぁ。\nだけど、少し性格がきつそうだったな・・・\n<wait>			
+m/MS610B.BIN	15:AA	0	0	DATA	用か？\n<wait>		@noedit; @dupid; record is not editable; copied verbatim			

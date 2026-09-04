@@ -717,7 +717,8 @@ def test_pname_field_is_fixed_width():
 
 
 def _row(jp, en, tag="1FD3", note=""):
-    return tables.Row("m/X.BIN", "0:00", 0, 0, tag, jp, en, note)
+    # a real edit needs a status now; "draft" keeps these legacy rows meaningful
+    return tables.Row("m/X.BIN", "0:00", 0, 0, tag, jp, en, status="draft", note=note)
 
 
 def test_validator_reports_encode_errors_as_errors():
