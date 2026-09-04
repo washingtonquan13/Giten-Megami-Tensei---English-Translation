@@ -85,6 +85,10 @@ def make_parser():
                    help="actually write (default is a dry run)")
     p.add_argument("-q", "--quiet", action="store_true")
 
+    p = sub.add_parser("overlay", help="tables -> overlay.dat (the runtime translation)")
+    p.add_argument("--out", default=None, help="default build/overlay.dat")
+    _common(p)
+
     p = sub.add_parser("exe", help="build patched exes from docs/exe-patches.md")
     p.add_argument("which", choices=("base", "release", "dev"))
     p.add_argument("--out", default=None, help="default build/exe/")
@@ -157,6 +161,27 @@ def main(argv=None) -> int:
     if args.cmd == "exe":
         print("built " + exepatch.build(args.which, args.out))
         return 0
+    if args.cmd == "overlay":
+        from . import overlay, tables
+        text_dir = args.text_dir or extract_v2.text_v2_dir()
+        rows = [r for p_ in tables.iter_tables(text_dir) for r in tables.read(p_)]
+        entries, findings = overlay.plan(rows, args.root)
+        out = args.out or os.path.join(paths.BUILD_DIR, "overlay.dat")
+        os.makedirs(os.path.dirname(out), exist_ok=True)
+        blob = overlay.build(entries)
+        with open(out, "wb") as fh:
+            fh.write(blob)
+        if not args.quiet:
+            for e in entries:
+                used = sum(len(s.data) for s in e.spans)
+                print("  %-16s c%d  %4d spans  %6d bytes  virtual 0x%04X..0x%04X (%d%% of the room)"
+                      % (e.rel, e.ci, len(e.spans), used, e.image_end, e.image_end + used,
+                         100 * used // max(1, overlay.PC_LIMIT - e.image_end)))
+            for where, msg in findings:
+                print("  REFUSED %s: %s" % (where, msg))
+            print("wrote %s: %d files, %d spans, %d bytes; %d rows refused"
+                  % (out, len(entries), sum(len(e.spans) for e in entries), len(blob), len(findings)))
+        return 1 if findings else 0
     if args.cmd == "where":
         print("game (read-only): %s" % paths.game_root())
         print("repo            : %s" % paths.REPO_ROOT)

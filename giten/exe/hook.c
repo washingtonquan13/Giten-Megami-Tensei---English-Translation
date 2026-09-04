@@ -1,0 +1,197 @@
+/* Runtime text overlay for dds.exe -- the byte-fetch hook.
+ *
+ * The interpreter reads every script byte through one routine,
+ * FETCH(handle, &pc) at 0x438E50 (cdecl, returns the byte in al).  Its five
+ * call sites are redirected here.  See giten/overlay.py for the rules and the
+ * overlay.dat layout; this file and overlay.Model must agree byte for byte
+ * (tests/test_overlay.py runs both).
+ *
+ * Built two ways:
+ *   -DGAME     absolute engine addresses; linked at the cave's VA (hook.ld),
+ *              no CRT, no relocations, first function = the hook.
+ *   (harness)  tests/hook_harness.c supplies the engine's globals and the
+ *              original fetch; the same logic runs as a native 32-bit exe.
+ */
+typedef unsigned char u8;
+typedef unsigned short u16;
+typedef unsigned int u32;
+
+#ifdef GAME
+typedef u8 (*fetch_fn)(u32 handle, u16 *pcp);
+#define ORIG_FETCH ((fetch_fn)0x438E50)
+#define FILEID (*(volatile u16 *)0x4911B0)
+#define HANDLE_BASE(h) (*(u8 **)(0x47605C + (h) * 8))
+typedef void *HANDLE;
+typedef u32 dword;
+typedef HANDLE(__attribute__((stdcall)) * CreateFileA_t)(const char *, u32, u32, void *, u32, u32, HANDLE);
+typedef dword(__attribute__((stdcall)) * GetFileSize_t)(HANDLE, dword *);
+typedef int(__attribute__((stdcall)) * ReadFile_t)(HANDLE, void *, dword, dword *, void *);
+typedef void *(__attribute__((stdcall)) * VirtualAlloc_t)(void *, u32, u32, u32);
+typedef int(__attribute__((stdcall)) * CloseHandle_t)(HANDLE);
+#define pCreateFileA (*(CreateFileA_t *)0x464074)
+#define pGetFileSize (*(GetFileSize_t *)0x464078)
+#define pReadFile (*(ReadFile_t *)0x464070)
+#define pVirtualAlloc (*(VirtualAlloc_t *)0x4640A8)
+#define pCloseHandle (*(CloseHandle_t *)0x464080)
+#define ENTRY __attribute__((section(".text.entry"), used))
+#else
+#include "hook_harness.h"
+#define ENTRY
+#endif
+
+#define OVERLAY_NAME "overlay.dat"
+#define FP_BYTES 128
+
+struct hdr { u32 magic, version, nfiles, reserved; };
+struct dir { u16 fid, pad; u32 fp; u16 image_end, nspans; u32 spans_off; };
+struct span { u16 start, end, virt, len; u32 data_off; };
+
+static u8 *ovl;                 /* the whole overlay.dat in memory */
+static int state;               /* 0 not loaded, 1 loaded, -1 unavailable */
+static struct dir *dirs;
+static u32 ndirs;
+
+/* two-entry cache: (handle, fid) -> directory entry (or 0 = no overlay) */
+static u32 c_handle[2];
+static u16 c_fid[2];
+static struct dir *c_dir[2];
+static int c_valid[2];
+static int c_next;
+
+static u32 fnv1a(const u8 *p, u32 n)
+{
+    u32 h = 0x811C9DC5u;
+    while (n--)
+        h = (h ^ *p++) * 0x01000193u;
+    return h;
+}
+
+static void load(void)
+{
+    HANDLE f = pCreateFileA(OVERLAY_NAME, 0x80000000u, 1, 0, 3, 0x80, 0);
+    dword size, got;
+    struct hdr *h;
+    state = -1;
+    if (f == (HANDLE)-1)
+        return;
+    size = pGetFileSize(f, 0);
+    if (size < sizeof(struct hdr) || size == 0xFFFFFFFFu) {
+        pCloseHandle(f);
+        return;
+    }
+    ovl = (u8 *)pVirtualAlloc(0, size, 0x3000, 4);
+    if (!ovl) {
+        pCloseHandle(f);
+        return;
+    }
+    if (!pReadFile(f, ovl, size, &got, 0) || got != size) {
+        pCloseHandle(f);
+        return;
+    }
+    pCloseHandle(f);
+    h = (struct hdr *)ovl;
+    if (h->magic != 0x564F5447u /* "GTOV" */ || h->version != 1)
+        return;
+    dirs = (struct dir *)(ovl + sizeof(struct hdr));
+    ndirs = h->nfiles;
+    state = 1;
+}
+
+static struct dir *rebind(u32 handle, u16 fid)
+{
+    u32 i, fp;
+    const u8 *base;
+    for (i = 0; i < ndirs; i++)
+        if (dirs[i].fid == fid)
+            break;
+    if (i == ndirs)
+        return 0;                       /* no translation for this file id */
+    base = HANDLE_BASE(handle);
+    if (!base)
+        return 0;
+    fp = fnv1a(base, FP_BYTES);
+    for (; i < ndirs; i++)
+        if (dirs[i].fid == fid && dirs[i].fp == fp)
+            return &dirs[i];
+    return 0;                           /* a container we did not translate */
+}
+
+static struct dir *lookup(u32 handle, u16 fid)
+{
+    int k;
+    for (k = 0; k < 2; k++)
+        if (c_valid[k] && c_handle[k] == handle && c_fid[k] == fid)
+            return c_dir[k];
+    k = c_next;
+    c_next ^= 1;
+    c_handle[k] = handle;
+    c_fid[k] = fid;
+    c_dir[k] = rebind(handle, fid);
+    c_valid[k] = 1;
+    return c_dir[k];
+}
+
+/* span whose start == pc, or 0 */
+static struct span *by_start(struct dir *d, u16 pc)
+{
+    struct span *s = (struct span *)(ovl + d->spans_off);
+    int lo = 0, hi = (int)d->nspans - 1;
+    while (lo <= hi) {
+        int mid = (lo + hi) >> 1;
+        if (s[mid].start == pc)
+            return &s[mid];
+        if (s[mid].start < pc)
+            lo = mid + 1;
+        else
+            hi = mid - 1;
+    }
+    return 0;
+}
+
+/* span whose virtual range holds pc, or 0 (virt ranges ascend with start) */
+static struct span *by_virt(struct dir *d, u16 pc)
+{
+    struct span *s = (struct span *)(ovl + d->spans_off);
+    int lo = 0, hi = (int)d->nspans - 1;
+    while (lo <= hi) {
+        int mid = (lo + hi) >> 1;
+        u32 v = s[mid].virt;
+        if (pc < v)
+            hi = mid - 1;
+        else if (pc >= v + s[mid].len)
+            lo = mid + 1;
+        else
+            return &s[mid];
+    }
+    return 0;
+}
+
+ENTRY u8 hook(u32 handle, u16 *pcp)
+{
+    struct dir *d;
+    struct span *s;
+    u16 pc;
+    if (state == 0)
+        load();
+    if (state < 0)
+        return ORIG_FETCH(handle, pcp);
+    d = lookup(handle, FILEID);
+    if (!d)
+        return ORIG_FETCH(handle, pcp);
+    pc = *pcp;
+    if (pc >= d->image_end) {
+        s = by_virt(d, pc);
+        if (!s)
+            return ORIG_FETCH(handle, pcp);
+        {
+            u32 k = pc - s->virt;
+            *pcp = (k + 1 == s->len) ? s->end : (u16)(pc + 1);
+            return ovl[s->data_off + k];
+        }
+    }
+    s = by_start(d, pc);
+    if (!s)
+        return ORIG_FETCH(handle, pcp);
+    *pcp = (s->len == 1) ? s->end : (u16)(s->virt + 1);
+    return ovl[s->data_off];
+}

@@ -36,7 +36,7 @@ import os
 import struct
 from dataclasses import dataclass
 
-from .. import codec, files, paths, records, script, vmops
+from .. import codec, files, overlay, paths, records, script, vmops
 
 #: file, rec, pc, ch, r, capflag, caplen, idx_off, idx_len -- the last two are the
 #: engine's own index entry for the current record, read from the script buffer
@@ -72,15 +72,41 @@ def _rel_of(file_id: int) -> str:
 class _Image:
     """One parsed script file: runtime bases and per-record token lookup."""
 
-    def __init__(self, rel: str, raw: bytes):
+    def __init__(self, rel: str, raw: bytes, entries=None):
         self.sc = script.parse(rel, raw)
         self.by_id = {}
         self.base = {}
+        self.entry = None                             # overlay entry, if the build has one
         if self.sc.ok and self.sc.containers:
             recs = self.sc.containers[0]              # limitation: container 0
-            self.base = records.bases([records.Record(r.id, r.data) for r in recs])
+            rr = [records.Record(r.id, r.data) for r in recs]
+            self.base = records.bases(rr)
             for r in recs:
                 self.by_id.setdefault(r.id, r)
+            if entries:
+                fid, fp = int(rel[4:8], 16), overlay.fingerprint(rr)
+                self.entry = next((e for e in entries if e.fid == fid and e.fp == fp), None)
+
+    def _overlay_hit(self, pc: int, ch: int):
+        """A logged pc produced by the overlay: inside a virtual range, or the
+        real span end the last English byte hands the PC back to."""
+        e = self.entry
+        if e is None:
+            return None
+        for s in e.spans:
+            if s.virt < pc <= s.vend or (pc == s.end and ch < 0x100):
+                rec_id = max((i for i, b in self.base.items() if b <= s.start), default=None)
+                r = self.by_id.get(rec_id)
+                if r is None or r.tokens is None:
+                    return None
+                off = s.start - self.base[rec_id]
+                k = next((i for i, t in enumerate(r.tokens) if t.off == off), None)
+                if k is None:
+                    return None
+                anchor = sum(1 for u in r.tokens[:k] if u.kind == "op" and u.idx not in codec.INLINE_OPS)
+                span = next((sp.idx for sp in r.spans if sp.tok_lo <= k < sp.tok_hi), None)
+                return span, anchor, "TEXT", True
+        return None
 
     def locate(self, rec_id: int, pc: int, ch: int, base: "int | None" = None):
         r = self.by_id.get(rec_id)
@@ -92,6 +118,9 @@ class _Image:
         # steps in a real trace sit exactly one token length apart.
         # ``base`` is the engine's own index entry when the trace carries it;
         # our model's base is only the fallback.
+        hit_ = self._overlay_hit(pc, ch)
+        if hit_ is not None:
+            return hit_
         end = pc - (base if base else self.base[rec_id])
         if not 0 <= end <= len(r.data):
             return None
@@ -124,6 +153,11 @@ def decode(trace_path: str, build_dir: "str | None" = None) -> "list[Event]":
     build_dir = build_dir or paths.game_root()
     with open(trace_path, "rb") as fh:
         data = fh.read()
+    entries = None
+    ovl = os.path.join(build_dir, "overlay.dat")
+    if os.path.exists(ovl):
+        with open(ovl, "rb") as fh:
+            entries = overlay.parse(fh.read())
     images = {}
     out = []
     for n in range(len(data) // RECORD.size):
@@ -131,7 +165,7 @@ def decode(trace_path: str, build_dir: "str | None" = None) -> "list[Event]":
         ev = Event(n, f, rec, pc, ch, r, capflag, caplen, ioff, ilen, rel=_rel_of(f))
         if ev.rel not in images:
             p = os.path.join(build_dir, *ev.rel.split("/"))
-            images[ev.rel] = _Image(ev.rel, open(p, "rb").read()) if os.path.exists(p) else None
+            images[ev.rel] = _Image(ev.rel, open(p, "rb").read(), entries) if os.path.exists(p) else None
         img = images[ev.rel]
         hit = img.locate(rec, pc, ch, ioff or None) if img else None
         if hit:

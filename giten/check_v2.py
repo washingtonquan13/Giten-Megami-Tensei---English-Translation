@@ -298,6 +298,16 @@ def check_stale(report: Report, rows, root=None) -> None:
             report.add("stale", check.ERROR, "%s %d:%02X[%d]" % (rel, ci, rid, idx), why)
 
 
+def check_overlay(report: Report, rows, root=None) -> None:
+    """(f) everything :func:`overlay.plan` refuses: a row it cannot serve at
+    runtime (stale, untiled, unencodable, or the file's virtual PC space is
+    exhausted -- ``overlay-space``)."""
+    from . import overlay
+    _, findings = overlay.plan(rows, root)
+    for where, msg in findings:
+        report.add("overlay", check.ERROR, where, msg)
+
+
 RECORD_LIMIT = 0x7FFF
 
 
@@ -347,6 +357,7 @@ def run(root=None, text_dir=None, family="all", skip_identity=False,
     check_capture(report, rows, root)
     check_record_size(report, rows, root)
     check_stale(report, rows, root)
+    check_overlay(report, rows, root)
 
     st = None
     if verify:

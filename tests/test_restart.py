@@ -78,24 +78,37 @@ def test_cave_is_position_independent_and_small():
     assert b"trace.bin\0" in blob
 
 
-def test_dev_exe_redirects_exactly_the_three_calls():
-    out = tempfile.mkdtemp()
-    p = tracer.build_dev(out)
-    d = open(p, "rb").read()
-    pe = PE(d, "dev")
-    sec = pe.section(".trc")
-    assert sec is not None
-    va = pe.imagebase + sec["vaddr"]
-    assert d[sec["rawptr"]:sec["rawptr"] + sec["vsize"]] == tracer.assemble()
-    for site in tracer.CALL_SITES:
+def _calls_go_to(d, pe, sites, va):
+    for site in sites:
         off = pe.va2off(site)
         assert d[off] == 0xE8
         assert (site + 5 + struct.unpack_from("<i", d, off + 1)[0]) & 0xFFFFFFFF == va
-    # nothing else moved: the release image and the dev image agree everywhere
-    # except the three rel32s and the appended section
-    rel = patch.apply(open(patch.ORG, "rb").read(), "release")
-    diffs = [i for i in range(len(rel)) if rel[i] != d[i]]
-    assert set(diffs) <= {pe.va2off(s) + k for s in tracer.CALL_SITES for k in (1, 2, 3, 4)} | set(range(0x1F0, 0x290)) | set(range(0xC0, 0x120))
+
+
+def test_release_exe_carries_the_overlay_hook_and_dev_adds_the_tracer():
+    out = tempfile.mkdtemp()
+    rel = open(tracer.build_release(out), "rb").read()
+    dev = open(tracer.build_dev(out), "rb").read()
+    pe = PE(rel, "rel")
+    sec = pe.section(".ovl")
+    assert sec is not None
+    va = pe.imagebase + sec["vaddr"]
+    blob = tracer.compile_hook(va)
+    assert rel[sec["rawptr"]:sec["rawptr"] + sec["vsize"]] == blob
+    assert struct.pack("<I", tracer.FETCH) in blob                    # the passthrough call
+    assert b"overlay.dat\0" in blob
+    _calls_go_to(rel, pe, tracer.FETCH_SITES, va)
+    # the plain locale patches are still there underneath
+    assert rel[0x509A9] == 0x80 and rel[0x59DE0:0x59DE5] == bytes.fromhex("68a4030000")
+    # dev = release + .trc + the three exec_token redirects, nothing else
+    pe2 = PE(dev, "dev")
+    sec2 = pe2.section(".trc")
+    va2 = pe2.imagebase + sec2["vaddr"]
+    assert dev[sec2["rawptr"]:sec2["rawptr"] + sec2["vsize"]] == tracer.assemble()
+    _calls_go_to(dev, pe2, tracer.CALL_SITES, va2)
+    _calls_go_to(dev, pe2, tracer.FETCH_SITES, va)
+    diffs = [i for i in range(len(rel)) if rel[i] != dev[i]]
+    assert set(diffs) <= {pe2.va2off(s) + k for s in tracer.CALL_SITES for k in (1, 2, 3, 4)} | set(range(0x1F0, 0x290)) | set(range(0xC0, 0x120))
 
 
 def test_trace_decoder_maps_a_synthetic_record_back_to_its_span():
