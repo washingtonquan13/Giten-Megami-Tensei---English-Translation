@@ -80,8 +80,8 @@ m/MS0021.BIN	0:05	9	684	1FD2	Little Girl:	Little Girl:
 m/MS0021.BIN	0:05	10	698	1FD3	...And you are?...\n<wait>	...And you are?...\n<wait>	
 m/MS0021.BIN	0:05	11	739	1FB2	Tell your name	Tell your name	menu option, declared width 20 columns
 m/MS0021.BIN	0:05	12	755	1FB2	Ask her name	Ask her name	menu option, declared width 20 columns
-m/MS0021.BIN	0:05	13	781	0F	{01:5D}	{01:5D}	reads: 
-m/MS0021.BIN	0:05	14	784	00			
+m/MS0021.BIN	0:05	13	781	0F	{01:5D}		reads: ; @skip (token-only row, no literal text)
+m/MS0021.BIN	0:05	14	784	00			@skip (private-use glyph artifact, not real text)
 m/MS0021.BIN	0:05	15	787	1FD0	You go ahead and introduce yourself.\n<wait>	You go ahead and introduce yourself.\n<wait>	
 m/MS0021.BIN	0:05	16	832	1FD2	Little Girl:	Little Girl:	
 m/MS0021.BIN	0:05	17	846	1FD3	Katsuragi... Ayato...\n<wait>	Katsuragi... Ayato...\n<wait>	
@@ -124,7 +124,7 @@ m/MS0021.BIN	0:06	17	828	1FD3	Hey. You're not seriously considering going in the
 m/MS0021.BIN	0:06	18	913	1FB2	I am	I am	menu option, declared width 20 columns
 m/MS0021.BIN	0:06	19	919	1FB2	No...	No...	menu option, declared width 20 columns
 m/MS0021.BIN	0:06	20	938	0F	{01:01}	{01:01}	reads: 山瀬勇
-m/MS0021.BIN	0:06	21	941	00			
+m/MS0021.BIN	0:06	21	941	00			@skip (private-use glyph artifact, not real text)
 m/MS0021.BIN	0:06	22	944	1FD2	Rui:	Rui:	
 m/MS0021.BIN	0:06	23	950	1FD3	You're not saying that just because of me, are you?\n<wait>	You're not saying that just because of me, are you?\n<wait>	
 m/MS0021.BIN	0:06	24	1010	1FD2	Rui:	Rui:	
@@ -146,7 +146,7 @@ m/MS0021.BIN	0:06	39	1539	1FD3	...Just can't get enough huh?\n<wait>You're plann
 m/MS0021.BIN	0:06	40	1633	1FB2	I am	I am	menu option, declared width 20 columns
 m/MS0021.BIN	0:06	41	1639	1FB2	No...	No...	menu option, declared width 20 columns
 m/MS0021.BIN	0:06	42	1658	0F	{01:01}	{01:01}	reads: 山瀬勇
-m/MS0021.BIN	0:06	43	1661	00			
+m/MS0021.BIN	0:06	43	1661	00			@skip (private-use glyph artifact, not real text)
 m/MS0021.BIN	0:06	44	1664	1FD2	Rui:	Rui:	
 m/MS0021.BIN	0:06	45	1670	1FD3	You're not saying that just because of me, are you?\n<wait>	You're not saying that just because of me, are you?\n<wait>	
 m/MS0021.BIN	0:06	46	1730	1FD2	Rui:	Rui:	
@@ -157,10 +157,10 @@ m/MS0021.BIN	0:06	50	1870	1FD2	Rui:	Rui:
 m/MS0021.BIN	0:06	51	1876	1FD3	Good luck!\n<wait>	Good luck!\n<wait>	
 m/MS0021.BIN	0:06	52	1907	1FD0	You decide not to risk it.\n<wait>	You decide not to risk it.\n<wait>	
 m/MS0021.BIN	0:06	53	2095	1FD2	Sanshirou:	Sanshirou:	
-m/MS0021.BIN	0:06	54	2107	1FD3	{08:45}に{08:40}奴ら{02:08}とりたてて悪い奴ら{08:81}なさ{01:29}な{02:08}\n<wait>		reads: ここにいる奴ら‥‥‥とりたてて悪い奴らじゃなさそうだな‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0021.BIN	0:06	54	2107	1FD3	{08:45}に{08:40}奴ら{02:08}とりたてて悪い奴ら{08:81}なさ{01:29}な{02:08}\n<wait>	These guys here...don't seem like they're particularly bad people...\n<wait>	reads: ここにいる奴ら‥‥‥とりたてて悪い奴らじゃなさそうだな‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0021.BIN	0:06	55	2158	1FD2	Sanshirou:	Sanshirou:	
 m/MS0021.BIN	0:06	56	2170	1FD3	こりゃ、	Well now,	
-m/MS0021.BIN	0:06	57	2182	00	{04:FF}を{03:10}さ{08:2A}方が先決か。\n<wait>		reads: を回復させる方が先決か。\n<wait>
+m/MS0021.BIN	0:06	57	2182	00	{04:FF}を{03:10}さ{08:2A}方が先決か。\n<wait>	...I should focus on getting them healed up first.\n<wait>	reads: を回復させる方が先決か。\n<wait>
 m/MS0021.BIN	0:06	58	2213	1FD0	Sanshirou decides to turn around.\n<wait>	Sanshirou decides to turn around.\n<wait>	
 m/MS0021.BIN	0:06	59	2256	1FD2	Newton:	Newton:	
 m/MS0021.BIN	0:06	60	2265	1FD3	*GRRRWL*...\n<wait>	*GRRRWL*...\n<wait>	
@@ -169,7 +169,7 @@ m/MS0021.BIN	0:06	62	2371	1FBA	With Katsuragi out of comission, Newton decides t
 m/MS0021.BIN	0:06	63	2444	1FBA	>Will you enter?\n<wait>	>Will you enter?\n<wait>	
 m/MS0021.BIN	0:06	64	2471	1F58	{05:00}	{05:00}	reads: YesNoニュートン
 m/MS0021.BIN	0:06	65	2502	1FD2	Rui:	Rui:	
-m/MS0021.BIN	0:06	66	2508	1FD3	何だあ{02:08}‥早{08:18}のね！\n<wait>		reads: 何だあ‥‥‥‥早かったのね！\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0021.BIN	0:06	66	2508	1FD3	何だあ{02:08}‥早{08:18}のね！\n<wait>	Huh... That was fast!\n<wait>	reads: 何だあ‥‥‥‥早かったのね！\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0021.BIN	0:06	67	2537	1FD2	Rui:	Rui:	
 m/MS0021.BIN	0:06	68	2543	1FD3	{08:56}良{08:18}。\nあんまり待たなきゃいけ{08:25}ん{08:7D}、退屈でき{08:53}死んでたわ！\n<wait>	But it's a good thing.\nIf I'd had to wait much longer, I probably would've died of boredom!\n<wait>	reads: でも良かった。\nあんまり待たなきゃいけないんなら、退屈できっと死んでたわ！\n<wait>
 m/MS0021.BIN	0:06	69	2613	1FD2	Rui:	Rui:	
@@ -179,10 +179,10 @@ m/MS0021.BIN	0:08	1	44	1FD3	Human. What business do you think you have in this p
 m/MS0021.BIN	0:08	2	110	1FD2	Osaki-Gitsune:	Osaki-Gitsune:	
 m/MS0021.BIN	0:08	3	126	1FD3	We warned you, yet you did not listen. Now you shall pay!\n<wait>	We warned you, yet you did not listen. Now you shall pay!\n<wait>	
 m/MS0021.BIN	0:08	4	194	00	{01:04}	{01:04}	reads: 西野義雄
-m/MS0021.BIN	0:08	5	198	00	d{04:FF}	d{04:FF}	reads: d
+m/MS0021.BIN	0:08	5	198	00	d{04:FF}		reads: d; @skip (isolated single letter, garbage/control-byte artifact)
 m/MS0021.BIN	0:08	6	202	00	d	d	
 m/MS0021.BIN	0:08	7	225	1F82	p	p	
-m/MS0021.BIN	0:08	8	228	00	{01:92}{=E7}{=00}{01:1F}W	{01:92}{=E7}{=00}{01:1F}W	reads: {=E7}{=00}おにいちゃんW
+m/MS0021.BIN	0:08	8	228	00	{01:92}{=E7}{=00}{01:1F}W	{=E7}{=00}Big brother! Hehe~	reads: {=E7}{=00}おにいちゃんW
 m/MS0021.BIN	0:08	9	249	1FD2	Osaki-Gitsune:	Osaki-Gitsune:	
 m/MS0021.BIN	0:08	10	265	1FD3	How could I... be bested my a mere human?...\n<wait>	How could I... be bested my a mere human?...\n<wait>	
 m/MS0021.BIN	0:0A	0	28	1FD2	Ama-no-Sakugami:	Ama-no-Sakugami:	
@@ -192,19 +192,19 @@ m/MS0021.BIN	0:0A	3	106	1FD3	We made the mistake of letting humans lay their han
 m/MS0021.BIN	0:0A	4	231	1FD2	Ama-no-Sakugami:	Ama-no-Sakugami:	
 m/MS0021.BIN	0:0A	5	249	1FD3	You only have your foolish desires to blame for your demise!\n<wait>Now, die!!\n	You only have your foolish desires to blame for your demise!\n<wait>Now, die!!\n	
 m/MS0021.BIN	0:0A	6	330	1EBE	{01:00}{01:04}	{01:00}{01:04}	reads: 早坂達也西野義雄
-m/MS0021.BIN	0:0A	7	336	00	d{04:FF}	d{04:FF}	reads: d
+m/MS0021.BIN	0:0A	7	336	00	d{04:FF}		reads: d; @skip (isolated single letter, garbage/control-byte artifact)
 m/MS0021.BIN	0:0A	8	340	00	d	d	
-m/MS0021.BIN	0:0A	9	369	00	{01:92}{=E7}{=00}{01:1F}W	{01:92}{=E7}{=00}{01:1F}W	reads: {=E7}{=00}おにいちゃんW
+m/MS0021.BIN	0:0A	9	369	00	{01:92}{=E7}{=00}{01:1F}W	{=E7}{=00}Big brother! Hehe~	reads: {=E7}{=00}おにいちゃんW
 m/MS0021.BIN	0:0A	10	390	1FD2	Ama-no-Sakugami:	Ama-no-Sakugami:	
 m/MS0021.BIN	0:0A	11	408	1FD3	Just... what are you?... <wait>Hngh!\n<wait>	Just... what are you?... <wait>Hngh!\n<wait>	
 m/MS0021.BIN	0:0B	0	25	1FD2	Nue:	Nue:	
 m/MS0021.BIN	0:0B	1	31	1FD3	YOU WILL NOT... LAY YOUR HAND... ON YOSHINO-HIME!\n<wait>	YOU WILL NOT... LAY YOUR HAND... ON YOSHINO-HIME!\n<wait>	
 m/MS0021.BIN	0:0B	2	89	1FD0	Nue lets out a roar and charges you!\n<wait>	Nue lets out a roar and charges you!\n<wait>	
 m/MS0021.BIN	0:0B	3	135	1EBE	{01:00}{01:04}	{01:00}{01:04}	reads: 早坂達也西野義雄
-m/MS0021.BIN	0:0B	4	141	00	d{04:FF}	d{04:FF}	reads: d
+m/MS0021.BIN	0:0B	4	141	00	d{04:FF}		reads: d; @skip (isolated single letter, garbage/control-byte artifact)
 m/MS0021.BIN	0:0B	5	145	00	d	d	
 m/MS0021.BIN	0:0B	6	168	1F82	p	p	
-m/MS0021.BIN	0:0B	7	171	00	{01:92}{=E7}{=00}{01:1F}W	{01:92}{=E7}{=00}{01:1F}W	reads: {=E7}{=00}おにいちゃんW
+m/MS0021.BIN	0:0B	7	171	00	{01:92}{=E7}{=00}{01:1F}W	{=E7}{=00}Big brother! Hehe~	reads: {=E7}{=00}おにいちゃんW
 m/MS0021.BIN	0:0B	8	192	1FD2	Nue:	Nue:	
 m/MS0021.BIN	0:0B	9	198	1FD3	GROOOOWL...\n<wait>	GROOOOWL...\n<wait>	
 m/MS0021.BIN	0:0C	0	25	1FD2	Nekomata:	Nekomata:	
@@ -214,10 +214,10 @@ m/MS0021.BIN	0:0C	3	103	1FD3	Yoshino-hime has suffered for decades, centuries in
 m/MS0021.BIN	0:0C	4	190	1FD2	Nekomata:	Nekomata:	
 m/MS0021.BIN	0:0C	5	201	1FD3	Us youkai are not for you humans to use as you please!\n<wait>	Us youkai are not for you humans to use as you please!\n<wait>	
 m/MS0021.BIN	0:0C	6	266	00	{01:04}	{01:04}	reads: 西野義雄
-m/MS0021.BIN	0:0C	7	270	00	d{04:FF}	d{04:FF}	reads: d
+m/MS0021.BIN	0:0C	7	270	00	d{04:FF}		reads: d; @skip (isolated single letter, garbage/control-byte artifact)
 m/MS0021.BIN	0:0C	8	274	00	d	d	
 m/MS0021.BIN	0:0C	9	297	1F82	p	p	
-m/MS0021.BIN	0:0C	10	300	00	{01:92}{=E7}{=00}{01:1F}W	{01:92}{=E7}{=00}{01:1F}W	reads: {=E7}{=00}おにいちゃんW
+m/MS0021.BIN	0:0C	10	300	00	{01:92}{=E7}{=00}{01:1F}W	{=E7}{=00}Big brother! Hehe~	reads: {=E7}{=00}おにいちゃんW
 m/MS0021.BIN	0:0C	11	321	1FD2	Nekomata:	Nekomata:	
 m/MS0021.BIN	0:0C	12	332	1FD3	How?...\n<wait>	How?...\n<wait>	
 m/MS0021.BIN	0:0C	13	348	1FD2	Nekomata:	Nekomata:	
@@ -227,10 +227,10 @@ m/MS0021.BIN	0:0D	1	36	1FD3	Foolish human... You should've turned back when you 
 m/MS0021.BIN	0:0D	2	110	1FD2	Nurikabe:	Nurikabe:	
 m/MS0021.BIN	0:0D	3	121	1FD3	Now, you shall regret your decision!\n<wait>	Now, you shall regret your decision!\n<wait>	
 m/MS0021.BIN	0:0D	4	168	00	{01:04}	{01:04}	reads: 西野義雄
-m/MS0021.BIN	0:0D	5	172	00	d{04:FF}	d{04:FF}	reads: d
+m/MS0021.BIN	0:0D	5	172	00	d{04:FF}		reads: d; @skip (isolated single letter, garbage/control-byte artifact)
 m/MS0021.BIN	0:0D	6	176	00	d	d	
 m/MS0021.BIN	0:0D	7	199	1F82	p	p	
-m/MS0021.BIN	0:0D	8	202	00	{01:92}{=E7}{=00}{01:1F}W	{01:92}{=E7}{=00}{01:1F}W	reads: {=E7}{=00}おにいちゃんW
+m/MS0021.BIN	0:0D	8	202	00	{01:92}{=E7}{=00}{01:1F}W	{=E7}{=00}Big brother! Hehe~	reads: {=E7}{=00}おにいちゃんW
 m/MS0021.BIN	0:0D	9	223	1FD2	Nurikabe:	Nurikabe:	
 m/MS0021.BIN	0:0D	10	234	1FD3	Aah... I must... protect Yoshino-hime...\n<wait>	Aah... I must... protect Yoshino-hime...\n<wait>	
 m/MS0021.BIN	0:0E	0	25	1FD2	Nurikabe:	Nurikabe:	
@@ -238,19 +238,19 @@ m/MS0021.BIN	0:0E	1	36	1FD3	Are you the one who defeated my brother?\n<wait>I do
 m/MS0021.BIN	0:0E	2	170	1FD2	Nurikabe:	Nurikabe:	
 m/MS0021.BIN	0:0E	3	181	1FD3	I do not know what sort of underhanded tricks you used,\nbut I will not fall for them! Prepare yourself!\n<wait>	I do not know what sort of underhanded tricks you used,\nbut I will not fall for them! Prepare yourself!\n<wait>	
 m/MS0021.BIN	0:0E	4	295	00	{01:04}	{01:04}	reads: 西野義雄
-m/MS0021.BIN	0:0E	5	299	00	d{04:FF}	d{04:FF}	reads: d
+m/MS0021.BIN	0:0E	5	299	00	d{04:FF}		reads: d; @skip (isolated single letter, garbage/control-byte artifact)
 m/MS0021.BIN	0:0E	6	303	00	d	d	
 m/MS0021.BIN	0:0E	7	326	1F82	p	p	
-m/MS0021.BIN	0:0E	8	329	00	{01:92}{=E7}{=00}{01:1F}W	{01:92}{=E7}{=00}{01:1F}W	reads: {=E7}{=00}おにいちゃんW
+m/MS0021.BIN	0:0E	8	329	00	{01:92}{=E7}{=00}{01:1F}W	{=E7}{=00}Big brother! Hehe~	reads: {=E7}{=00}おにいちゃんW
 m/MS0021.BIN	0:0E	9	350	1FD2	Nurikabe:	Nurikabe:	
 m/MS0021.BIN	0:0E	10	361	1FD3	Such... Such power!...\n<wait>	Such... Such power!...\n<wait>	
 m/MS0021.BIN	0:10	0	28	1FD2	Gyuuki:	Gyuuki:	
 m/MS0021.BIN	0:10	1	37	1FD3	.........\n<wait>	.........\n<wait>	
 m/MS0021.BIN	0:10	2	56	1EBE	{01:00}{01:04}	{01:00}{01:04}	reads: 早坂達也西野義雄
-m/MS0021.BIN	0:10	3	62	00	d{04:FF}	d{04:FF}	reads: d
+m/MS0021.BIN	0:10	3	62	00	d{04:FF}		reads: d; @skip (isolated single letter, garbage/control-byte artifact)
 m/MS0021.BIN	0:10	4	66	00	d	d	
 m/MS0021.BIN	0:10	5	89	1F82	p	p	
-m/MS0021.BIN	0:10	6	92	00	{01:92}{=E7}{=00}{01:1F}W	{01:92}{=E7}{=00}{01:1F}W	reads: {=E7}{=00}おにいちゃんW
+m/MS0021.BIN	0:10	6	92	00	{01:92}{=E7}{=00}{01:1F}W	{=E7}{=00}Big brother! Hehe~	reads: {=E7}{=00}おにいちゃんW
 m/MS0021.BIN	0:10	7	113	1FD2	Gyuuki:	Gyuuki:	
 m/MS0021.BIN	0:10	8	122	1FD3	Grr... Graaah...\n<wait>	Grr... Graaah...\n<wait>	
 m/MS0021.BIN	0:12	0	28	1FD2	Shuten-Douji:	Shuten-Douji:	
@@ -258,10 +258,10 @@ m/MS0021.BIN	0:12	1	43	1FD3	You've done well making your way here.\n<wait>	You'v
 m/MS0021.BIN	0:12	2	90	1FD2	Shuten-Douji:	Shuten-Douji:	
 m/MS0021.BIN	0:12	3	105	1FD3	Interesting! Allow me to test the extend of your strength.\n<wait>	Interesting! Allow me to test the extend of your strength.\n<wait>	
 m/MS0021.BIN	0:12	4	174	00	{01:04}	{01:04}	reads: 西野義雄
-m/MS0021.BIN	0:12	5	178	00	d{04:FF}	d{04:FF}	reads: d
+m/MS0021.BIN	0:12	5	178	00	d{04:FF}		reads: d; @skip (isolated single letter, garbage/control-byte artifact)
 m/MS0021.BIN	0:12	6	182	00	d	d	
 m/MS0021.BIN	0:12	7	205	1F82	p	p	
-m/MS0021.BIN	0:12	8	208	00	{01:92}{=E7}{=00}{01:1F}W	{01:92}{=E7}{=00}{01:1F}W	reads: {=E7}{=00}おにいちゃんW
+m/MS0021.BIN	0:12	8	208	00	{01:92}{=E7}{=00}{01:1F}W	{=E7}{=00}Big brother! Hehe~	reads: {=E7}{=00}おにいちゃんW
 m/MS0021.BIN	0:12	9	229	1FD2	Shuten-Douji:	Shuten-Douji:	
 m/MS0021.BIN	0:12	10	244	1FD3	I see now... You are not a fool blinded by greed...\nVery well... Defeat her, and prove yourself...\n<wait>	I see now... You are not a fool blinded by greed...\nVery well... Defeat her, and prove yourself...\n<wait>	
 m/MS0021.BIN	0:12	11	351	1FD2	Shuten-Douji:	Shuten-Douji:	
@@ -269,10 +269,10 @@ m/MS0021.BIN	0:12	12	366	1FD3	Perhaps you have what it takes to witness Yoshino-
 m/MS0021.BIN	0:13	0	25	1FD2	Kuzu-no-Ha:	Kuzu-no-Ha:	
 m/MS0021.BIN	0:13	1	38	1FD3	I'm sorry, but I cannot allow you to pass here.\n<wait>Prepare to die!\n<wait>	I'm sorry, but I cannot allow you to pass here.\n<wait>Prepare to die!\n<wait>	
 m/MS0021.BIN	0:13	2	116	00	{01:04}	{01:04}	reads: 西野義雄
-m/MS0021.BIN	0:13	3	120	00	d{04:FF}	d{04:FF}	reads: d
+m/MS0021.BIN	0:13	3	120	00	d{04:FF}		reads: d; @skip (isolated single letter, garbage/control-byte artifact)
 m/MS0021.BIN	0:13	4	124	00	d	d	
 m/MS0021.BIN	0:13	5	147	1F82	p	p	
-m/MS0021.BIN	0:13	6	150	00	{01:92}{=E7}{=00}{01:1F}W	{01:92}{=E7}{=00}{01:1F}W	reads: {=E7}{=00}おにいちゃんW
+m/MS0021.BIN	0:13	6	150	00	{01:92}{=E7}{=00}{01:1F}W	{=E7}{=00}Big brother! Hehe~	reads: {=E7}{=00}おにいちゃんW
 m/MS0021.BIN	0:13	7	171	1FD2	Kuzu-no-Ha:	Kuzu-no-Ha:	
 m/MS0021.BIN	0:13	8	184	1FD3	Aah... Yoshino-hime!...\n<wait>	Aah... Yoshino-hime!...\n<wait>	
 m/MS0021.BIN	0:14	0	24	1FD2	Yoshino-hime:	Yoshino-hime:	
@@ -383,7 +383,7 @@ m/MS0021.BIN	0:1F	5	141	1FD3	Hmm? You okay? <wait>You look kinda pale...\n<wait>
 m/MS0021.BIN	0:1F	6	205	1FB2	It's nothing	It's nothing	menu option, declared width 20 columns
 m/MS0021.BIN	0:1F	7	219	1FB2	I got scared	I got scared	menu option, declared width 20 columns
 m/MS0021.BIN	0:1F	8	245	0F	{01:3A}	{01:3A}	reads: ひとり
-m/MS0021.BIN	0:1F	9	248	00			
+m/MS0021.BIN	0:1F	9	248	00			@skip (private-use glyph artifact, not real text)
 m/MS0021.BIN	0:1F	10	251	1FD2	Rui:	Rui:	
 m/MS0021.BIN	0:1F	11	257	1FD3	Huh... Weird...\n<wait>	Huh... Weird...\n<wait>	
 m/MS0021.BIN	0:1F	12	281	1FD2	Rui:	Rui:	

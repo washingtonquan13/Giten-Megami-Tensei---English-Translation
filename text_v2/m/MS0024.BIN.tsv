@@ -64,11 +64,11 @@ m/MS0024.BIN	0:01	56	2444	1FD3	I ask that you do not disappoint me.\n<wait>	I as
 m/MS0024.BIN	0:01	57	2489	1FD2	Belphegor:	Belphegor:	
 m/MS0024.BIN	0:01	58	2501	1FD3	Now, Katsuragi Ayato! Come!\n<wait>	Now, Katsuragi Ayato! Come!\n<wait>	
 m/MS0024.BIN	0:01	59	2538	1EBE	{01:00}	{01:00}	reads: 早坂達也
-m/MS0024.BIN	0:01	60	2541	00	{04:FF}	{04:FF}	reads: 
-m/MS0024.BIN	0:01	61	2544	00	d{04:FF}	d{04:FF}	reads: d
+m/MS0024.BIN	0:01	60	2541	00	{04:FF}		reads: ; @skip (token-only row / isolated control-byte artifact, no literal text)
+m/MS0024.BIN	0:01	61	2544	00	d{04:FF}		reads: d; @skip (token-only row / isolated control-byte artifact, no literal text)
 m/MS0024.BIN	0:01	62	2548	00	d	d	
-m/MS0024.BIN	0:01	63	2562	1F82	ﾅ		
-m/MS0024.BIN	0:01	64	2564	00	{06:1F}p	{06:1F}p	reads: p
+m/MS0024.BIN	0:01	63	2562	1F82	ﾅ		@skip (private-use glyph / corrupted-byte artifact, not real text)
+m/MS0024.BIN	0:01	64	2564	00	{06:1F}p		reads: p; @skip (token-only row / isolated control-byte artifact, no literal text)
 m/MS0024.BIN	0:01	65	2569	00	{01:12}{=EA}{=00}	{01:12}{=EA}{=00}	reads: あなたの{=EA}{=00}
 m/MS0024.BIN	0:01	66	2590	1FD2	Belphegor:	Belphegor:	
 m/MS0024.BIN	0:01	67	2602	1FD3	Well done, Katsuragi Ayato... <wait>Hahahahaha!\n<wait>	Well done, Katsuragi Ayato... <wait>Hahahahaha!\n<wait>	
@@ -87,8 +87,8 @@ m/MS0024.BIN	0:01	79	3204	1FD2	Priyankara:	Priyankara:
 m/MS0024.BIN	0:01	80	3217	1FD3	I am also Maitreya, a saviour who has come to this world\nto establish an eternal paradise for all of its people!\n<wait>	I am also Maitreya, a saviour who has come to this world\nto establish an eternal paradise for all of its people!\n<wait>	
 m/MS0024.BIN	0:01	81	3338	1FD2	Priyankara:	Priyankara:	
 m/MS0024.BIN	0:01	82	3351	1FD3	Who are you to oppose me and the great Belphegor!?\nBy my mother's name, I shall destroy you!\n<wait>	Who are you to oppose me and the great Belphegor!?\nBy my mother's name, I shall destroy you!\n<wait>	
-m/MS0024.BIN	0:01	83	3455	00	{04:FF}	{04:FF}	reads: 
-m/MS0024.BIN	0:01	84	3458	00	d{04:FF}	d{04:FF}	reads: d
+m/MS0024.BIN	0:01	83	3455	00	{04:FF}		reads: ; @skip (token-only row / isolated control-byte artifact, no literal text)
+m/MS0024.BIN	0:01	84	3458	00	d{04:FF}		reads: d; @skip (token-only row / isolated control-byte artifact, no literal text)
 m/MS0024.BIN	0:01	85	3462	00	d	d	
 m/MS0024.BIN	0:01	86	3483	1FD0	You ring the pomegranate bell you received from Hariti.\n<wait>	You ring the pomegranate bell you received from Hariti.\n<wait>	
 m/MS0024.BIN	0:01	87	3574	1FD2	Priyankara:	Priyankara:	
@@ -99,7 +99,7 @@ m/MS0024.BIN	0:01	91	3669	1FD2	Priyankara:	Priyankara:
 m/MS0024.BIN	0:01	92	3682	1FD3	Goodness...\nWho knows what I might have done had you not ring that bell...\n<wait>	Goodness...\nWho knows what I might have done had you not ring that bell...\n<wait>	
 m/MS0024.BIN	0:01	93	3765	1FD2	Priyankara:	Priyankara:	
 m/MS0024.BIN	0:01	94	3778	1FD3	I thank you...\n<wait>	I thank you...\n<wait>	
-m/MS0024.BIN	0:01	95	3884	1F82	ﾅ		
+m/MS0024.BIN	0:01	95	3884	1F82	ﾅ		@skip (private-use glyph / corrupted-byte artifact, not real text)
 m/MS0024.BIN	0:01	96	3915	1FD2	Priyankara:	Priyankara:	
 m/MS0024.BIN	0:01	97	3928	1FD3	M-Mother!...\n<wait>	M-Mother!...\n<wait>	
 m/MS0024.BIN	0:01	98	3973	1FD0	All of a sudden, the clay bell you were given breaks in two.\n<wait>	All of a sudden, the clay bell you were given breaks in two.\n<wait>	
@@ -111,7 +111,7 @@ m/MS0024.BIN	0:01	103	4306	1FD2	Priyankara:	Priyankara:
 m/MS0024.BIN	0:01	104	4319	1FD3	Belphegor was looking for Kusanagi-no-Tsurugi and Yasakani-no-Magatama,\nbut was unable to locate them.\n<wait>	Belphegor was looking for Kusanagi-no-Tsurugi and Yasakani-no-Magatama,\nbut was unable to locate them.\n<wait>	
 m/MS0024.BIN	0:01	105	4430	1FD2	Priyankara:	Priyankara:	
 m/MS0024.BIN	0:01	106	4443	1FD3	Regardless, you should have it.\nPerhaps it will prove useful on your journey.\n<wait>	Regardless, you should have it.\nPerhaps it will prove useful on your journey.\n<wait>	
-m/MS0024.BIN	0:01	107	4560	1F83	{03:00}	{03:00}	reads: 飛び道具
+m/MS0024.BIN	0:01	107	4560	1F83	{03:00}	Ranged Weapon	reads: 飛び道具
 m/MS0024.BIN	0:01	108	4580	18	You pick up the Yata-no-Kagami.\n<wait>	You pick up the Yata-no-Kagami.\n<wait>	
 m/MS0024.BIN	0:02	0	32	1FD2	Devotee:	Devotee:	
 m/MS0024.BIN	0:02	1	47	09	Not everyone is happy with the way Millennium is growing.\nWe face an increasing amount of opposition each passing day.\n<wait>	Not everyone is happy with the way Millennium is growing.\nWe face an increasing amount of opposition each passing day.\n<wait>	
@@ -140,20 +140,20 @@ m/MS0024.BIN	0:03	12	543	1FD2	Maitreya:	Maitreya:	record reaches an engine no-op
 m/MS0024.BIN	0:03	13	554	1FD3	My strength shall heal your wounds.\n<wait>	My strength shall heal your wounds.\n<wait>	record reaches an engine no-op opcode; verify in game
 m/MS0024.BIN	0:03	14	612	1FB2	Do it	Do it	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS0024.BIN	0:03	15	619	1FB2	Stop	Stop	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
-m/MS0024.BIN	0:03	16	637	0F	{01:8C}{03:FF}	{01:8C}{03:FF}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS0024.BIN	0:03	16	637	0F	{01:8C}{03:FF}		record reaches an engine no-op opcode; verify in game; reads: ; @skip (token-only row / isolated control-byte artifact, no literal text)
 m/MS0024.BIN	0:03	17	668	00	{01:00}	{01:00}	record reaches an engine no-op opcode; verify in game; reads: 早坂達也
 m/MS0024.BIN	0:03	18	696	00	{01:00}	{01:00}	record reaches an engine no-op opcode; verify in game; reads: 早坂達也
 m/MS0024.BIN	0:03	19	724	00	{01:00}	{01:00}	record reaches an engine no-op opcode; verify in game; reads: 早坂達也
 m/MS0024.BIN	0:03	20	738	00	{08:00}	{08:00}	record reaches an engine no-op opcode; verify in game; reads: 早坂
-m/MS0024.BIN	0:03	21	757	09	{03:00}{03:18}	{03:00}{03:18}	record reaches an engine no-op opcode; verify in game; reads: 飛び道具
-m/MS0024.BIN	0:03	22	780	00	{03:00}	{03:00}	record reaches an engine no-op opcode; verify in game; reads: 飛び道具
-m/MS0024.BIN	0:03	23	794	00	{04:00}	{04:00}	record reaches an engine no-op opcode; verify in game; reads: を唱えた！ 
+m/MS0024.BIN	0:03	21	757	09	{03:00}{03:18}	Ranged Weapon	record reaches an engine no-op opcode; verify in game; reads: 飛び道具
+m/MS0024.BIN	0:03	22	780	00	{03:00}	Ranged Weapon	record reaches an engine no-op opcode; verify in game; reads: 飛び道具
+m/MS0024.BIN	0:03	23	794	00	{04:00}	cast it!	record reaches an engine no-op opcode; verify in game; reads: を唱えた！ 
 m/MS0024.BIN	0:03	24	808	00	{05:00}	{05:00}	record reaches an engine no-op opcode; verify in game; reads: YesNoニュートン
-m/MS0024.BIN	0:03	25	822	00	{06:00}	{06:00}	record reaches an engine no-op opcode; verify in game; reads: 辞書５
-m/MS0024.BIN	0:03	26	855	0B	{03:00}{03:18}	{03:00}{03:18}	record reaches an engine no-op opcode; verify in game; reads: 飛び道具
-m/MS0024.BIN	0:03	27	899	00	{03:18}	{03:18}	record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0024.BIN	0:03	28	927	10	{03:18}	{03:18}	record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0024.BIN	0:03	29	955	17	{03:18}	{03:18}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS0024.BIN	0:03	25	822	00	{06:00}		record reaches an engine no-op opcode; verify in game; reads: 辞書５; @skip (token-only row / isolated control-byte artifact, no literal text)
+m/MS0024.BIN	0:03	26	855	0B	{03:00}{03:18}	Ranged Weapon	record reaches an engine no-op opcode; verify in game; reads: 飛び道具
+m/MS0024.BIN	0:03	27	899	00	{03:18}		record reaches an engine no-op opcode; verify in game; reads: ; @skip (token-only row / isolated control-byte artifact, no literal text)
+m/MS0024.BIN	0:03	28	927	10	{03:18}		record reaches an engine no-op opcode; verify in game; reads: ; @skip (token-only row / isolated control-byte artifact, no literal text)
+m/MS0024.BIN	0:03	29	955	17	{03:18}		record reaches an engine no-op opcode; verify in game; reads: ; @skip (token-only row / isolated control-byte artifact, no literal text)
 m/MS0024.BIN	0:03	30	1007	1FD2	Maitreya:	Maitreya:	record reaches an engine no-op opcode; verify in game
 m/MS0024.BIN	0:03	31	1018	1FD3	Oh?\n<wait>It doesn't look like you're in the need of healing...\n<wait>	Oh?\n<wait>It doesn't look like you're in the need of healing...\n<wait>	record reaches an engine no-op opcode; verify in game
 m/MS0024.BIN	0:03	32	1095	1FD2	Maitreya:	Maitreya:	record reaches an engine no-op opcode; verify in game
@@ -163,51 +163,51 @@ m/MS0024.BIN	0:03	35	1494	1FD2	Maitreya:	Maitreya:	record reaches an engine no-o
 m/MS0024.BIN	0:03	36	1505	1FD3	.........<wait>That will do it.\n<wait>	.........<wait>That will do it.\n<wait>	record reaches an engine no-op opcode; verify in game
 m/MS0024.BIN	0:03	37	1552	1FD2	Maitreya:	Maitreya:	record reaches an engine no-op opcode; verify in game
 m/MS0024.BIN	0:03	38	1563	1FD3	Millennium is an ally to all those who are suffering.\nIf you ever need help again, our doors are always open.\n<wait>	Millennium is an ally to all those who are suffering.\nIf you ever need help again, our doors are always open.\n<wait>	record reaches an engine no-op opcode; verify in game
-m/MS0024.BIN	0:04	0	16	1F03			
-m/MS0024.BIN	0:04	1	30	00	{=E3}{=FF}	{=E3}{=FF}	
+m/MS0024.BIN	0:04	0	16	1F03			@skip (private-use glyph / corrupted-byte artifact, not real text)
+m/MS0024.BIN	0:04	1	30	00	{=E3}{=FF}		@skip (private-use glyph / corrupted-byte artifact, not real text)
 m/MS0024.BIN	0:04	2	57	1FD2	Priest:	Priest:	
-m/MS0024.BIN	0:04	3	66	1FD3	おお{08:72}何と{08:68}事だ！\n<wait>{08:45}は約束の地、大い{08:59}千年王国のひな形では{08:19}か！\n<wait>	Oh...! What is the meaning of this!?\n<wait>Was this not supposed to be the promised land, a model of the great Millennium Kingdom!?\n<wait>	reads: おお‥‥何という事だ！\n<wait>ここは約束の地、大いなる千年王国のひな形ではなかったか！\n<wait>
+m/MS0024.BIN	0:04	3	66	1FD3	おお{08:72}何と{08:68}事だ！\n<wait>{08:45}は約束の地、大い{08:59}千年王国のひな形では{08:19}か！\n<wait>	Oh...! What is the meaning of this!?\n<wait>Wasn't this the promised land, the great model of the Millennium Kingdom!?\n<wait>	reads: おお‥‥何という事だ！\n<wait>ここは約束の地、大いなる千年王国のひな形ではなかったか！\n<wait>
 m/MS0024.BIN	0:04	4	144	1FD2	Priest:	Priest:	
-m/MS0024.BIN	0:04	5	153	1FD3	{08:4D}が、{08:47}様に{08:0B}に溢れ{08:72}\n{08:0B}に支配{03:0C}た、ソドムの如き場所だ{08:51}とは{08:72}！！\n<wait>		reads: それが、この様に悪魔に溢れ‥‥\n悪魔に支配された、ソドムの如き場所だったとは‥‥！！\n<wait>; v1 had a translation here but it was written against a mis-read line (v1 control token {0C} has no counterpart in the v2 source line); re-translate
+m/MS0024.BIN	0:04	5	153	1FD3	{08:4D}が、{08:47}様に{08:0B}に溢れ{08:72}\n{08:0B}に支配{03:0C}た、ソドムの如き場所だ{08:51}とは{08:72}！！\n<wait>	To think that it would be overrun with demons like this...\nA place ruled by devils, just like something out of Sodom...!!\n<wait>	reads: それが、この様に悪魔に溢れ‥‥\n悪魔に支配された、ソドムの如き場所だったとは‥‥！！\n<wait>; v1 had a translation here but it was written against a mis-read line (v1 control token {0C} has no counterpart in the v2 source line); re-translate
 m/MS0024.BIN	0:04	6	248	1FD2	ピャンカラ：	Priyankara:	
-m/MS0024.BIN	0:04	7	262	1FD3	{02:08}{08:45}にいては危険だ。\n今{08:42}私の思念で、貴方を安全な場所にお送りし{08:69}。\n<wait>		reads: ‥‥‥ここにいては危険だ。\n今から私の思念で、貴方を安全な場所にお送りしよう。\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:04	7	262	1FD3	{02:08}{08:45}にいては危険だ。\n今{08:42}私の思念で、貴方を安全な場所にお送りし{08:69}。\n<wait>	...It's too dangerous to stay here.\nAllow me to send you to a safer place with my mind, right now.\n<wait>	reads: ‥‥‥ここにいては危険だ。\n今から私の思念で、貴方を安全な場所にお送りしよう。\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0024.BIN	0:04	8	338	1FD2	Priest:	Priest:	
-m/MS0024.BIN	0:04	9	347	1FD3	{08:5D}や{08:72}{08:79}御声は{02:08}！！\n<wait>		reads: もしや‥‥その御声は‥‥‥！！\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:04	9	347	1FD3	{08:5D}や{08:72}{08:79}御声は{02:08}！！\n<wait>	Could it be...? That voice...!!\n<wait>	reads: もしや‥‥その御声は‥‥‥！！\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0024.BIN	0:04	10	376	1FD2	ピャンカラ：	Priyankara:	
-m/MS0024.BIN	0:04	11	390	1FD3	{02:08}‥目を閉じ、心を平静に{08:8E}の{08:55}。\n{02:08}‥よい{08:55}か？\n<wait>		reads: ‥‥‥‥目を閉じ、心を平静にするのです。\n‥‥‥‥よいですか？\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:04	11	390	1FD3	{02:08}‥目を閉じ、心を平静に{08:8E}の{08:55}。\n{02:08}‥よい{08:55}か？\n<wait>	...Close your eyes, and calm your mind.\n...Are you ready?\n<wait>	reads: ‥‥‥‥目を閉じ、心を平静にするのです。\n‥‥‥‥よいですか？\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0024.BIN	0:04	12	446	1FD2	Priest:	Priest:	
 m/MS0024.BIN	0:04	13	455	1FD3	は{08:72}{08:26}！\n<wait>	Y-Yes!\n<wait>	reads: は‥‥はい！\n<wait>
 m/MS0024.BIN	0:04	14	472	1FD2	ピャンカラ：	Priyankara:	
-m/MS0024.BIN	0:04	15	486	1FD3	{02:08}{08:90}か生きて下{08:49}。希望を捨てずに{02:08}\n<wait>		reads: ‥‥‥どうか生きて下さい。希望を捨てずに‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:04	15	486	1FD3	{02:08}{08:90}か生きて下{08:49}。希望を捨てずに{02:08}\n<wait>	...Please, live. Don't ever give up hope...\n<wait>	reads: ‥‥‥どうか生きて下さい。希望を捨てずに‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0024.BIN	0:04	16	529	1FD2	Priest:	Priest:	
-m/MS0024.BIN	0:04	17	538	1FD3	やはり貴方{08:62}マイト‥レ{02:08}‥\n<wait>		reads: やはり貴方は、マイト‥レ‥‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
-m/MS0024.BIN	0:04	18	609	1F04	痼{=E2}{=FF}		
-m/MS0024.BIN	0:04	19	626	1FD0	司祭は逃げ遅{08:60}様だ{02:08}\n<wait>		reads: 司祭は逃げ遅れた様だ‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
-m/MS0024.BIN	0:04	20	661	09	{01:03}{08:62}司祭に{03:06}ついてくる{08:69}に示{08:4B}。\n<wait>		reads: ニュートンは、司祭に自分についてくるように示した。\n<wait>
+m/MS0024.BIN	0:04	17	538	1FD3	やはり貴方{08:62}マイト‥レ{02:08}‥\n<wait>	I knew it... You really are... Mait...re...ya...\n<wait>	reads: やはり貴方は、マイト‥レ‥‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:04	18	609	1F04	痼{=E2}{=FF}		@skip (private-use glyph / corrupted-byte artifact, not real text)
+m/MS0024.BIN	0:04	19	626	1FD0	司祭は逃げ遅{08:60}様だ{02:08}\n<wait>	The priest appears to have missed his chance to flee...\n<wait>	reads: 司祭は逃げ遅れた様だ‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:04	20	661	09	{01:03}{08:62}司祭に{03:06}ついてくる{08:69}に示{08:4B}。\n<wait>	Newton signals for the priest to follow him.\n<wait>	reads: ニュートンは、司祭に自分についてくるように示した。\n<wait>
 m/MS0024.BIN	0:04	21	705	1FD1	＞{02:06}\n<wait>	>{02:06}	reads: ＞どうしますか？\n<wait>
 m/MS0024.BIN	0:04	22	732	1FB2	助{08:29}	Save him	reads: 助ける; menu option, declared width 20 columns
 m/MS0024.BIN	0:04	23	738	1FB2	ほ{08:53}く	Leave him	reads: ほっとく; menu option, declared width 20 columns
-m/MS0024.BIN	0:04	24	758	0F	{01:BD}	{01:BD}	reads: 
-m/MS0024.BIN	0:04	25	761	00			
-m/MS0024.BIN	0:04	26	774	00	{04:FF}は司祭を助{08:29}事に{08:4B}。\n<wait>		reads: は司祭を助ける事にした。\n<wait>
+m/MS0024.BIN	0:04	24	758	0F	{01:BD}		reads: ; @skip (token-only row / isolated control-byte artifact, no literal text)
+m/MS0024.BIN	0:04	25	761	00			@skip (private-use glyph / corrupted-byte artifact, not real text)
+m/MS0024.BIN	0:04	26	774	00	{04:FF}は司祭を助{08:29}事に{08:4B}。\n<wait>	...decided to help the priest.\n<wait>	reads: は司祭を助ける事にした。\n<wait>
 m/MS0024.BIN	0:04	27	805	1FD2	Priest:	Priest:	
 m/MS0024.BIN	0:04	28	814	1FD3	何{08:55}と？{08:72}私を外に連れ出{08:4A}く{08:2F}と？\n<wait>	What did you say...? You'll take me outside?\n<wait>	reads: 何ですと？‥‥私を外に連れ出してくれると？\n<wait>
 m/MS0024.BIN	0:04	29	857	1FD2	Priest:	Priest:	
 m/MS0024.BIN	0:04	30	866	1FD3	ああ、何と有り難い！！\n<wait>	Oh, thank you so much!!\n<wait>	
 m/MS0024.BIN	0:04	31	897	1FD0	司祭はそう言うと、	So saying, the priest,	
-m/MS0024.BIN	0:04	32	919	00	{04:FF}達の後ろにつ{08:64}。\n<wait>		reads: 達の後ろについた。\n<wait>
-m/MS0024.BIN	0:04	33	964	1FD0	逃げ遅{08:60}{02:0B}などに、構っ{08:14}ゆとりは{08:25}。\n		reads: 逃げ遅れた人間などに、構っているゆとりはない。\n; v1 had a translation here but it was written against a mis-read line (v1 control token {0B} has no counterpart in the v2 source line); re-translate
-m/MS0024.BIN	0:04	34	1005	00	{04:FF}{08:62}司祭を{08:79}{08:7E}置いて行く事に{08:4B}。\n<wait>		reads: は、司祭をそのまま置いて行く事にした。\n<wait>
+m/MS0024.BIN	0:04	32	919	00	{04:FF}達の後ろにつ{08:64}。\n<wait>	...fell in line behind you.\n<wait>	reads: 達の後ろについた。\n<wait>
+m/MS0024.BIN	0:04	33	964	1FD0	逃げ遅{08:60}{02:0B}などに、構っ{08:14}ゆとりは{08:25}。\n	There's no time to spare for those who failed to escape.\n	reads: 逃げ遅れた人間などに、構っているゆとりはない。\n; v1 had a translation here but it was written against a mis-read line (v1 control token {0B} has no counterpart in the v2 source line); re-translate
+m/MS0024.BIN	0:04	34	1005	00	{04:FF}{08:62}司祭を{08:79}{08:7E}置いて行く事に{08:4B}。\n<wait>	...decided to leave the priest behind, just as he was.\n<wait>	reads: は、司祭をそのまま置いて行く事にした。\n<wait>
 m/MS0024.BIN	0:04	35	1067	1FD2	Priest:	Priest:	
 m/MS0024.BIN	0:04	36	1076	1FD3	{08:45}ミレニアムに{08:62}厳しい戒律などは全く存在し{08:25}。\n{08:7B}のは自由と平和、そ{08:4A}、人と{08:4A}の幸福{08:74}{08:72}。\n<wait>	Here in Millennium, there are no strict commandments whatsoever.\nAll that exists is freedom, peace, and happiness as a human being...\n<wait>	reads: ここミレニアムには、厳しい戒律などは全く存在しない。\nあるのは自由と平和、そして、人としての幸福だけ‥‥。\n<wait>
 m/MS0024.BIN	0:04	37	1174	1FD2	Priest:	Priest:	
 m/MS0024.BIN	0:04	38	1183	1FD3	階級と{08:68}{08:5E}が一応定められて{08:26}るが、{08:4D}とて、精神のランクを\n表わす{08:5E}であり、{08:4D}で人を縛る{08:5E}では{08:25}。\n<wait>	There is a rank system in place, but it merely reflects\none's spiritual level -- it is not meant to bind anyone.\n<wait>	reads: 階級というものが一応定められてはいるが、それとて、精神のランクを\n表わすものであり、それで人を縛るものではない。\n<wait>
 m/MS0024.BIN	0:04	39	1287	1FD2	Priest:	Priest:	
-m/MS0024.BIN	0:04	40	1296	1FD3	階級{08:62}{08:45}での暮らしを始め、{08:7B}一定期間が過ぎると上がりはじめ、\n最終的に上位者となれば、更{08:59}高みで{08:7B}、マイトレーヤ様のいらっしゃる、\n４Ｆ以上の階へと入る事が許{03:0C}る。\n<wait>		reads: 階級は、ここでの暮らしを始め、ある一定期間が過ぎると上がりはじめ、\n最終的に上位者となれば、更なる高みである、マイトレーヤ様のいらっしゃる、\n４Ｆ以上の階へと入る事が許される。\n<wait>; v1 had a translation here but it was written against a mis-read line (v1 control token {0C} has no counterpart in the v2 source line); re-translate
+m/MS0024.BIN	0:04	40	1296	1FD3	階級{08:62}{08:45}での暮らしを始め、{08:7B}一定期間が過ぎると上がりはじめ、\n最終的に上位者となれば、更{08:59}高みで{08:7B}、マイトレーヤ様のいらっしゃる、\n４Ｆ以上の階へと入る事が許{03:0C}る。\n<wait>	Once you settle in here, your rank starts to rise after some time passes,\nand once you reach the Elevated, you're granted access to a higher level--\nthe fourth floor and above, where Lord Maitreya himself resides.\n<wait>	reads: 階級は、ここでの暮らしを始め、ある一定期間が過ぎると上がりはじめ、\n最終的に上位者となれば、更なる高みである、マイトレーヤ様のいらっしゃる、\n４Ｆ以上の階へと入る事が許される。\n<wait>; v1 had a translation here but it was written against a mis-read line (v1 control token {0C} has no counterpart in the v2 source line); re-translate
 m/MS0024.BIN	0:04	41	1467	1FD2	Priest:	Priest:	
 m/MS0024.BIN	0:04	42	1476	1FD3	私も含め{08:72}皆、上位者と{08:59}事を目指し、日々精神を高{08:2E}様、\n努め{08:14}の{08:81}よ。\n<wait>	Myself included... we all strive daily to elevate our spirits,\naiming to become one of the elite.\n<wait>	reads: 私も含め‥‥皆、上位者となる事を目指し、日々精神を高める様、\n努めているのじゃよ。\n<wait>
-m/MS0024.BIN	0:05	0	16	1F03			
-m/MS0024.BIN	0:05	1	30	00	{=E3}{=FF}	{=E3}{=FF}	
+m/MS0024.BIN	0:05	0	16	1F03			@skip (private-use glyph / corrupted-byte artifact, not real text)
+m/MS0024.BIN	0:05	1	30	00	{=E3}{=FF}		@skip (private-use glyph / corrupted-byte artifact, not real text)
 m/MS0024.BIN	0:05	2	57	1FD2	Devotee:	Devotee:	
 m/MS0024.BIN	0:05	3	67	1FD3	Demons... Demons are attacking us! Someone, please save us!\n<wait>	Demons... Demons are attacking us! Someone, please save us!\n<wait>	
 m/MS0024.BIN	0:05	4	154	1FD2	Priyankara:	Priyankara:	
@@ -224,14 +224,14 @@ m/MS0024.BIN	0:05	14	438	1FD2	Priyankara:	Priyankara:
 m/MS0024.BIN	0:05	15	451	1FD3	...Do not give up on life, for hope never dies...\n<wait>	...Do not give up on life, for hope never dies...\n<wait>	
 m/MS0024.BIN	0:05	16	509	1FD2	Devotee:	Devotee:	
 m/MS0024.BIN	0:05	17	519	1FD3	I knew it. You're... Maitreya...\n<wait>	I knew it. You're... Maitreya...\n<wait>	
-m/MS0024.BIN	0:05	18	600	1F04	痼{=E2}{=FF}		
+m/MS0024.BIN	0:05	18	600	1F04	痼{=E2}{=FF}		@skip (private-use glyph / corrupted-byte artifact, not real text)
 m/MS0024.BIN	0:05	19	617	1FD0	It appears that this woman has been left behind.\n<wait>	It appears that this woman has been left behind.\n<wait>	
 m/MS0024.BIN	0:05	20	677	09	Newton motions to the woman to follow him.\n<wait>	Newton motions to the woman to follow him.\n<wait>	
 m/MS0024.BIN	0:05	21	731	1FD1	>What will you do?\n<wait>	>What will you do?\n<wait>	
 m/MS0024.BIN	0:05	22	772	1FB2	Save her	Save her	menu option, declared width 20 columns
 m/MS0024.BIN	0:05	23	782	1FB2	Leave her	Leave her	menu option, declared width 20 columns
-m/MS0024.BIN	0:05	24	805	0F	{01:8A}	{01:8A}	reads: 
-m/MS0024.BIN	0:05	25	808	00			
+m/MS0024.BIN	0:05	24	805	0F	{01:8A}		reads: ; @skip (token-only row / isolated control-byte artifact, no literal text)
+m/MS0024.BIN	0:05	25	808	00			@skip (private-use glyph / corrupted-byte artifact, not real text)
 m/MS0024.BIN	0:05	26	817	1FD0	You decide to rescue the woman.\n<wait>	You decide to rescue the woman.\n<wait>	
 m/MS0024.BIN	0:05	27	857	1FD2	Devotee:	Devotee:	
 m/MS0024.BIN	0:05	28	867	1FD3	Th-Thank you!\n<wait>	Th-Thank you!\n<wait>	
@@ -249,7 +249,7 @@ m/MS0024.BIN	0:05	39	1391	00	Have you already met Lord Maitreya, our saviour?\n<
 m/MS0024.BIN	0:05	40	1462	1FB2	Yes	Yes	menu option, declared width 20 columns
 m/MS0024.BIN	0:05	41	1467	1FB2	No	No	menu option, declared width 20 columns
 m/MS0024.BIN	0:05	42	1483	0F	{01:01}	{01:01}	reads: 山瀬勇
-m/MS0024.BIN	0:05	43	1486	00			
+m/MS0024.BIN	0:05	43	1486	00			@skip (private-use glyph / corrupted-byte artifact, not real text)
 m/MS0024.BIN	0:05	44	1489	1FD2	Devotee:	Devotee:	
 m/MS0024.BIN	0:05	45	1499	1FD3	Not only does Lord Maitreya possess tremendous power,\nhe extends the arm of salvation to anyone who seeks it free of charge.\n<wait>	Not only does Lord Maitreya possess tremendous power,\nhe extends the arm of salvation to anyone who seeks it free of charge.\n<wait>	
 m/MS0024.BIN	0:05	46	1632	1FD2	Devotee:	Devotee:	
@@ -270,8 +270,8 @@ m/MS0024.BIN	0:08	2	114	1FD2	Devotee:	Devotee:
 m/MS0024.BIN	0:08	3	124	1FD3	We spend our time refining our spirits through activities\nsuch as artistry and poetry.\n<wait>	We spend our time refining our spirits through activities\nsuch as artistry and poetry.\n<wait>	
 m/MS0024.BIN	0:08	4	219	1FD2	Devotee:	Devotee:	
 m/MS0024.BIN	0:08	5	229	1FD3	Truly, this is a paradise.\n<wait>	Truly, this is a paradise.\n<wait>	
-m/MS0024.BIN	0:09	0	16	1F03			
-m/MS0024.BIN	0:09	1	30	00	{=E3}{=FF}	{=E3}{=FF}	
+m/MS0024.BIN	0:09	0	16	1F03			@skip (private-use glyph / corrupted-byte artifact, not real text)
+m/MS0024.BIN	0:09	1	30	00	{=E3}{=FF}		@skip (private-use glyph / corrupted-byte artifact, not real text)
 m/MS0024.BIN	0:09	2	57	1FD2	Devotee:	Devotee:	
 m/MS0024.BIN	0:09	3	67	1FD3	What on earth is going on!?\nDemons are flooding in, and all of my comrades are gone!\n<wait>	What on earth is going on!?\nDemons are flooding in, and all of my comrades are gone!\n<wait>	
 m/MS0024.BIN	0:09	4	160	1FD2	Devotee:	Devotee:	
@@ -292,14 +292,14 @@ m/MS0024.BIN	0:09	18	613	1FD2	Priyankara:	Priyankara:
 m/MS0024.BIN	0:09	19	626	1FD3	...Do not give up on life, for hope never dies...\n<wait>	...Do not give up on life, for hope never dies...\n<wait>	
 m/MS0024.BIN	0:09	20	684	1FD2	Devotee:	Devotee:	
 m/MS0024.BIN	0:09	21	694	1FD3	H-Huh!?\n<wait>	H-Huh!?\n<wait>	
-m/MS0024.BIN	0:09	22	750	1F04	痼{=E2}{=FF}		
+m/MS0024.BIN	0:09	22	750	1F04	痼{=E2}{=FF}		@skip (private-use glyph / corrupted-byte artifact, not real text)
 m/MS0024.BIN	0:09	23	767	1FD0	It appears that this man has been left behind.\n<wait>	It appears that this man has been left behind.\n<wait>	
 m/MS0024.BIN	0:09	24	825	09	Newton motions to the man to follow him.\n<wait>	Newton motions to the man to follow him.\n<wait>	
 m/MS0024.BIN	0:09	25	877	1FD1	>What will you do?\n<wait>	>What will you do?\n<wait>	
 m/MS0024.BIN	0:09	26	918	1FB2	Save him	Save him	menu option, declared width 20 columns
 m/MS0024.BIN	0:09	27	928	1FB2	Leave him	Leave him	menu option, declared width 20 columns
-m/MS0024.BIN	0:09	28	951	0F	{01:87}	{01:87}	reads: 
-m/MS0024.BIN	0:09	29	954	00			
+m/MS0024.BIN	0:09	28	951	0F	{01:87}		reads: ; @skip (token-only row / isolated control-byte artifact, no literal text)
+m/MS0024.BIN	0:09	29	954	00			@skip (private-use glyph / corrupted-byte artifact, not real text)
 m/MS0024.BIN	0:09	30	963	1FD0	You decide to rescue the man.\n<wait>	You decide to rescue the man.\n<wait>	
 m/MS0024.BIN	0:09	31	1001	1FD2	Devotee:	Devotee:	
 m/MS0024.BIN	0:09	32	1011	1FD3	Th-Thank you!\n<wait>	Th-Thank you!\n<wait>	
@@ -335,8 +335,8 @@ m/MS0024.BIN	0:0C	2	107	1FD2	Devotee:	Devotee:
 m/MS0024.BIN	0:0C	3	117	1FD3	It's where Lord Maitreya, the Archpriest,\nand other high-ranking devotees reside.\n<wait>	It's where Lord Maitreya, the Archpriest,\nand other high-ranking devotees reside.\n<wait>	
 m/MS0024.BIN	0:0C	4	207	1FD2	Devotee:	Devotee:	
 m/MS0024.BIN	0:0C	5	217	1FD3	Getting to serve by Lord Maitreya's side\nis the single greatest honour for us.\n<wait>	Getting to serve by Lord Maitreya's side\nis the single greatest honour for us.\n<wait>	
-m/MS0024.BIN	0:0D	0	16	1F03			
-m/MS0024.BIN	0:0D	1	30	00	{=E3}{=FF}	{=E3}{=FF}	
+m/MS0024.BIN	0:0D	0	16	1F03			@skip (private-use glyph / corrupted-byte artifact, not real text)
+m/MS0024.BIN	0:0D	1	30	00	{=E3}{=FF}		@skip (private-use glyph / corrupted-byte artifact, not real text)
 m/MS0024.BIN	0:0D	2	57	1FD2	信者：	Devotee:	
 m/MS0024.BIN	0:0D	3	65	1FD3	た{08:72}助けてくれ！！\n<wait>	S-somebody... help me!!\n<wait>	reads: た‥‥助けてくれ！！\n<wait>
 m/MS0024.BIN	0:0D	4	111	1FD2	ピャンカラ：	Priyankara:	
@@ -344,89 +344,89 @@ m/MS0024.BIN	0:0D	5	125	1FD3	勿論だとも！\n<wait>	Of course!\n<wait>
 m/MS0024.BIN	0:0D	6	146	1FD2	ピャンカラ：	Priyankara:	
 m/MS0024.BIN	0:0D	7	160	1FD3	{08:47}{08:7E}、{08:45}にいては危険だ。\n今{08:42}私の思念で、貴方を安全な場所にお送りし{08:69}。\n<wait>	It's too dangerous to stay here like this.\nAllow me to send you to a safe place with my mind, right now.\n<wait>	reads: このまま、ここにいては危険だ。\n今から私の思念で、貴方を安全な場所にお送りしよう。\n<wait>
 m/MS0024.BIN	0:0D	8	240	1FD2	信者：	Devotee:	
-m/MS0024.BIN	0:0D	9	248	1FD3	助{08:18}{02:08}！！\n<wait>		reads: 助かった‥‥‥！！\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:0D	9	248	1FD3	助{08:18}{02:08}！！\n<wait>	We're saved...!!\n<wait>	reads: 助かった‥‥‥！！\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0024.BIN	0:0D	10	267	1FD2	ピャンカラ：	Priyankara:	
-m/MS0024.BIN	0:0D	11	281	1FD3	{02:08}‥目を閉じ、心を平静に{08:8E}の{08:55}。\n{02:08}‥よい{08:55}か？\n<wait>		reads: ‥‥‥‥目を閉じ、心を平静にするのです。\n‥‥‥‥よいですか？\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:0D	11	281	1FD3	{02:08}‥目を閉じ、心を平静に{08:8E}の{08:55}。\n{02:08}‥よい{08:55}か？\n<wait>	...Close your eyes, and calm your mind.\n...Are you ready?\n<wait>	reads: ‥‥‥‥目を閉じ、心を平静にするのです。\n‥‥‥‥よいですか？\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0024.BIN	0:0D	12	337	1FD2	信者：	Devotee:	
 m/MS0024.BIN	0:0D	13	345	1FD3	わ{08:72}分かりま{08:4B}。\n<wait>	I... I understand.\n<wait>	reads: わ‥‥分かりました。\n<wait>
 m/MS0024.BIN	0:0D	14	370	1FD2	ピャンカラ：	Priyankara:	
-m/MS0024.BIN	0:0D	15	384	1FD3	{02:08}{08:90}か生きて下{08:49}。希望を捨てずに{02:08}\n<wait>		reads: ‥‥‥どうか生きて下さい。希望を捨てずに‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:0D	15	384	1FD3	{02:08}{08:90}か生きて下{08:49}。希望を捨てずに{02:08}\n<wait>	...Please, live. Don't ever give up hope...\n<wait>	reads: ‥‥‥どうか生きて下さい。希望を捨てずに‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0024.BIN	0:0D	16	427	1FD2	信者：	Devotee:	
-m/MS0024.BIN	0:0D	17	435	1FD3	わ‥わ{02:08}か{08:72}身体が{02:08}‥！！\n<wait>		reads: わ‥わ‥‥‥か‥‥身体が‥‥‥‥！！\n<wait>; was @operand in v1; jp is now correct and needs translating
-m/MS0024.BIN	0:0D	18	510	1F04	烙{=E2}{=FF}		
-m/MS0024.BIN	0:0D	19	527	1FD0	男は逃げ遅{08:60}様だ{02:08}\n<wait>		reads: 男は逃げ遅れた様だ‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
-m/MS0024.BIN	0:0D	20	557	09	{01:03}{08:62}信者に{03:06}ついてくる{08:69}に示{08:4B}。\n<wait>		reads: ニュートンは、信者に自分についてくるように示した。\n<wait>
+m/MS0024.BIN	0:0D	17	435	1FD3	わ‥わ{02:08}か{08:72}身体が{02:08}‥！！\n<wait>	I... I under...stand... My body...!!\n<wait>	reads: わ‥わ‥‥‥か‥‥身体が‥‥‥‥！！\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:0D	18	510	1F04	烙{=E2}{=FF}		@skip (private-use glyph / corrupted-byte artifact, not real text)
+m/MS0024.BIN	0:0D	19	527	1FD0	男は逃げ遅{08:60}様だ{02:08}\n<wait>	The man appears to have missed his chance to flee...\n<wait>	reads: 男は逃げ遅れた様だ‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:0D	20	557	09	{01:03}{08:62}信者に{03:06}ついてくる{08:69}に示{08:4B}。\n<wait>	Newton signals for the believer to follow him.\n<wait>	reads: ニュートンは、信者に自分についてくるように示した。\n<wait>
 m/MS0024.BIN	0:0D	21	601	1FD1	＞{02:06}\n<wait>	>{02:06}	reads: ＞どうしますか？\n<wait>
 m/MS0024.BIN	0:0D	22	628	1FB2	助{08:29}	Save him	reads: 助ける; menu option, declared width 20 columns
 m/MS0024.BIN	0:0D	23	634	1FB2	ほ{08:53}く	Leave him	reads: ほっとく; menu option, declared width 20 columns
-m/MS0024.BIN	0:0D	24	654	0F	{01:8C}	{01:8C}	reads: 
-m/MS0024.BIN	0:0D	25	657	00			
-m/MS0024.BIN	0:0D	26	670	00	{04:FF}{08:62}信者の男性を助{08:29}事に{08:4B}。\n<wait>		reads: は、信者の男性を助ける事にした。\n<wait>
+m/MS0024.BIN	0:0D	24	654	0F	{01:8C}		reads: ; @skip (token-only row / isolated control-byte artifact, no literal text)
+m/MS0024.BIN	0:0D	25	657	00			@skip (private-use glyph / corrupted-byte artifact, not real text)
+m/MS0024.BIN	0:0D	26	670	00	{04:FF}{08:62}信者の男性を助{08:29}事に{08:4B}。\n<wait>	...decided to help the male believer.\n<wait>	reads: は、信者の男性を助ける事にした。\n<wait>
 m/MS0024.BIN	0:0D	27	707	1FD2	信者：	Devotee:	
 m/MS0024.BIN	0:0D	28	715	1FD3	あ{08:72}有り難い！！\n<wait>	Th... Thank you so much!!\n<wait>	reads: あ‥‥有り難い！！\n<wait>
 m/MS0024.BIN	0:0D	29	740	1FD0	男性信者はそう言うと、	So saying, the male devotee,	
-m/MS0024.BIN	0:0D	30	766	00	{04:FF}達の後ろにつ{08:64}。\n<wait>		reads: 達の後ろについた。\n<wait>
-m/MS0024.BIN	0:0D	31	811	1FD0	逃げ遅{08:60}{02:0B}などに、構っ{08:14}ゆとりは{08:25}。\n		reads: 逃げ遅れた人間などに、構っているゆとりはない。\n; v1 had a translation here but it was written against a mis-read line (v1 control token {0B} has no counterpart in the v2 source line); re-translate
-m/MS0024.BIN	0:0D	32	852	00	{04:FF}{08:62}男を{08:79}{08:7E}置いて行く事に{08:4B}。\n<wait>		reads: は、男をそのまま置いて行く事にした。\n<wait>
+m/MS0024.BIN	0:0D	30	766	00	{04:FF}達の後ろにつ{08:64}。\n<wait>	...fell in line behind you.\n<wait>	reads: 達の後ろについた。\n<wait>
+m/MS0024.BIN	0:0D	31	811	1FD0	逃げ遅{08:60}{02:0B}などに、構っ{08:14}ゆとりは{08:25}。\n	There's no time to spare for those who failed to escape.\n	reads: 逃げ遅れた人間などに、構っているゆとりはない。\n; v1 had a translation here but it was written against a mis-read line (v1 control token {0B} has no counterpart in the v2 source line); re-translate
+m/MS0024.BIN	0:0D	32	852	00	{04:FF}{08:62}男を{08:79}{08:7E}置いて行く事に{08:4B}。\n<wait>	...decided to leave the man behind, just as he was.\n<wait>	reads: は、男をそのまま置いて行く事にした。\n<wait>
 m/MS0024.BIN	0:0D	33	889	1FD2	信者：	Devotee:	
 m/MS0024.BIN	0:0D	34	897	1FD3	{08:90}か頼むッ！！　置いて行か{08:25}でくれッ！！\n<wait>	Please, I'm begging you!! Don't leave me behind!!\n<wait>	reads: どうか頼むッ！！　置いて行かないでくれッ！！\n<wait>
 m/MS0024.BIN	0:0D	35	967	1FD2	信者：	Devotee:	
 m/MS0024.BIN	0:0D	36	975	1FD3	ミレニアムで暮らす事が出来て、私は本当に幸せ{08:55}。\n{08:45}で{08:62}何一つと{08:4A}、心配{08:8E}事などあり{02:0A}。\n{08:82}自由があり、皆豊かに暮ら{08:13}の{08:55}。\n<wait>	I'm truly happy to be able to live here in Millennium.\nThere's nothing at all to worry about here.{02:0A}\nThere's only freedom, and everyone lives in abundance.\n<wait>	reads: ミレニアムで暮らす事が出来て、私は本当に幸せです。\nここでは、何一つとして、心配する事などありません。\nただ自由があり、皆豊かに暮らしているのです。\n<wait>
 m/MS0024.BIN	0:0E	0	32	1FD2	信者：	Devotee:	
-m/MS0024.BIN	0:0E	1	45	0B	マイトレーヤ様に{08:62}{08:5C}御会いに{08:16}かな？\n<wait>		reads: マイトレーヤ様には、もう御会いになったかな？\n<wait>
+m/MS0024.BIN	0:0E	1	45	0B	マイトレーヤ様に{08:62}{08:5C}御会いに{08:16}かな？\n<wait>	Have you had the chance to meet Lord Maitreya yet?\n<wait>	reads: マイトレーヤ様には、もう御会いになったかな？\n<wait>
 m/MS0024.BIN	0:0E	2	90	1FD2	信者：	Devotee:	
-m/MS0024.BIN	0:0E	3	98	1FD3	マイトレーヤ様{08:62}今、無償で怪我の治療な{08:6D}、奇跡を行{08:1A}いらっしゃる。\n<wait>	Lord Maitreya is currently performing miracles free of charge, healing wounds and the like.\n<wait>	reads: マイトレーヤ様は、今、無償で怪我の治療などの、奇跡を行なっていらっしゃる。\n<wait>
+m/MS0024.BIN	0:0E	3	98	1FD3	マイトレーヤ様{08:62}今、無償で怪我の治療な{08:6D}、奇跡を行{08:1A}いらっしゃる。\n<wait>	Lord Maitreya freely performs miracles now, healing wounds and the like.\n<wait>	reads: マイトレーヤ様は、今、無償で怪我の治療などの、奇跡を行なっていらっしゃる。\n<wait>
 m/MS0024.BIN	0:0E	4	173	1FD2	信者：	Devotee:	
 m/MS0024.BIN	0:0E	5	181	1FD3	{08:76}{08:7C}、是非行{08:52}みると{08:7F}{08:8C}。\n<wait>	If you haven't been yet, you really ought to go see.\n<wait>	reads: まだならば、是非行ってみるといいだろう。\n<wait>
-m/MS0024.BIN	0:0E	6	217	18	マイトレーヤ様の治療{08:62}一時取り止めになっ{08:14}。\n<wait>		reads: マイトレーヤ様の治療は、一時取り止めになっている。\n<wait>
+m/MS0024.BIN	0:0E	6	217	18	マイトレーヤ様の治療{08:62}一時取り止めになっ{08:14}。\n<wait>	Lord Maitreya's treatments have been temporarily suspended.\n<wait>	reads: マイトレーヤ様の治療は、一時取り止めになっている。\n<wait>
 m/MS0024.BIN	0:0E	7	270	1FD2	信者：	Devotee:	
-m/MS0024.BIN	0:0E	8	278	1FD3	マイトレーヤ様の素晴らしいお力を広{08:2E}為にも、早く復活{08:4A}欲しい{08:5E}{08:55}。\n	For the sake of spreading Lord Maitreya's wonderful power, I do hope he recovers soon.\n	reads: マイトレーヤ様の素晴らしいお力を広める為にも、早く復活して欲しいものです。\n
-m/MS0024.BIN	0:0F	0	16	1F03			
-m/MS0024.BIN	0:0F	1	30	00	{=E3}{=FF}	{=E3}{=FF}	
+m/MS0024.BIN	0:0E	8	278	1FD3	マイトレーヤ様の素晴らしいお力を広{08:2E}為にも、早く復活{08:4A}欲しい{08:5E}{08:55}。\n	For the sake of spreading Lord Maitreya's power, I hope he recovers soon.\n	reads: マイトレーヤ様の素晴らしいお力を広める為にも、早く復活して欲しいものです。\n
+m/MS0024.BIN	0:0F	0	16	1F03			@skip (private-use glyph / corrupted-byte artifact, not real text)
+m/MS0024.BIN	0:0F	1	30	00	{=E3}{=FF}		@skip (private-use glyph / corrupted-byte artifact, not real text)
 m/MS0024.BIN	0:0F	2	57	1FD2	信者：	Devotee:	
 m/MS0024.BIN	0:0F	3	65	1FD3	何が起こ{08:51}ん{08:55}か！　一体{08:90}{08:4A}{08:0B}が{08:72}！！\n	What's happening!? Why are there demons here of all things...!!\n	reads: 何が起こったんですか！　一体どうして悪魔が‥‥！！\n
 m/MS0024.BIN	0:0F	4	125	1FD2	ピャンカラ：	Priyankara:	
 m/MS0024.BIN	0:0F	5	139	1FD3	{08:47}{08:7E}、{08:45}にいては危険だ。\n今{08:42}私の思念で、貴方を安全な場所にお送りし{08:69}。\n<wait>	It's too dangerous to stay here like this.\nAllow me to send you to a safe place with my mind, right now.\n<wait>	reads: このまま、ここにいては危険だ。\n今から私の思念で、貴方を安全な場所にお送りしよう。\n<wait>
 m/MS0024.BIN	0:0F	6	219	1FD2	信者：	Devotee:	
-m/MS0024.BIN	0:0F	7	227	1FD3	あの{02:08}貴方は{08:5D}や{02:08}！！\n<wait>		reads: あの‥‥‥貴方はもしや‥‥‥！！\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:0F	7	227	1FD3	あの{02:08}貴方は{08:5D}や{02:08}！！\n<wait>	Um... Could you possibly be...!!\n<wait>	reads: あの‥‥‥貴方はもしや‥‥‥！！\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0024.BIN	0:0F	8	258	1FD2	ピャンカラ：	Priyankara:	
-m/MS0024.BIN	0:0F	9	272	1FD3	{02:08}‥目を閉じ、心を平静に{08:8E}の{08:55}。\n{02:08}‥よい{08:55}か？\n<wait>		reads: ‥‥‥‥目を閉じ、心を平静にするのです。\n‥‥‥‥よいですか？\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:0F	9	272	1FD3	{02:08}‥目を閉じ、心を平静に{08:8E}の{08:55}。\n{02:08}‥よい{08:55}か？\n<wait>	...Close your eyes, and calm your mind.\n...Are you ready?\n<wait>	reads: ‥‥‥‥目を閉じ、心を平静にするのです。\n‥‥‥‥よいですか？\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0024.BIN	0:0F	10	328	1FD2	信者：	Devotee:	
 m/MS0024.BIN	0:0F	11	336	1FD3	は{08:72}{08:26}！\n<wait>	Y-Yes!\n<wait>	reads: は‥‥はい！\n<wait>
 m/MS0024.BIN	0:0F	12	353	1FD2	ピャンカラ：	Priyankara:	
-m/MS0024.BIN	0:0F	13	367	1FD3	{02:08}{08:90}か生きて下{08:49}。希望を捨てずに{02:08}\n<wait>		reads: ‥‥‥どうか生きて下さい。希望を捨てずに‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:0F	13	367	1FD3	{02:08}{08:90}か生きて下{08:49}。希望を捨てずに{02:08}\n<wait>	...Please, live. Don't ever give up hope...\n<wait>	reads: ‥‥‥どうか生きて下さい。希望を捨てずに‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0024.BIN	0:0F	14	410	1FD2	信者：	Devotee:	
-m/MS0024.BIN	0:0F	15	418	1FD3	やはり貴方は{02:08}‥あっ{02:08}‥！！\n<wait>		reads: やはり貴方は‥‥‥‥あっ‥‥‥‥！！\n<wait>; was @operand in v1; jp is now correct and needs translating
-m/MS0024.BIN	0:0F	16	495	1F04	烙{=E1}{=FF}		
-m/MS0024.BIN	0:0F	17	512	1FD0	女は逃げ遅{08:60}様だ{02:08}\n<wait>		reads: 女は逃げ遅れた様だ‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
-m/MS0024.BIN	0:0F	18	542	09	{01:03}{08:62}信者に{03:06}ついてくる{08:69}に示{08:4B}。\n<wait>		reads: ニュートンは、信者に自分についてくるように示した。\n<wait>
+m/MS0024.BIN	0:0F	15	418	1FD3	やはり貴方は{02:08}‥あっ{02:08}‥！！\n<wait>	I knew it, you really are...! Ah...!!\n<wait>	reads: やはり貴方は‥‥‥‥あっ‥‥‥‥！！\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:0F	16	495	1F04	烙{=E1}{=FF}		@skip (private-use glyph / corrupted-byte artifact, not real text)
+m/MS0024.BIN	0:0F	17	512	1FD0	女は逃げ遅{08:60}様だ{02:08}\n<wait>	The woman appears to have missed her chance to flee...\n<wait>	reads: 女は逃げ遅れた様だ‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:0F	18	542	09	{01:03}{08:62}信者に{03:06}ついてくる{08:69}に示{08:4B}。\n<wait>	Newton signals for the believer to follow him.\n<wait>	reads: ニュートンは、信者に自分についてくるように示した。\n<wait>
 m/MS0024.BIN	0:0F	19	586	1FD1	＞{02:06}\n<wait>	>{02:06}	reads: ＞どうしますか？\n<wait>
 m/MS0024.BIN	0:0F	20	613	1FB2	助{08:29}	Save her	reads: 助ける; menu option, declared width 20 columns
 m/MS0024.BIN	0:0F	21	619	1FB2	ほ{08:53}く	Leave her	reads: ほっとく; menu option, declared width 20 columns
-m/MS0024.BIN	0:0F	22	639	0F	{01:AA}	{01:AA}	reads: 
-m/MS0024.BIN	0:0F	23	642	00			
-m/MS0024.BIN	0:0F	24	655	00	{04:FF}{08:62}信者の女性を助{08:29}事に{08:4B}。\n<wait>		reads: は、信者の女性を助ける事にした。\n<wait>
+m/MS0024.BIN	0:0F	22	639	0F	{01:AA}		reads: ; @skip (token-only row / isolated control-byte artifact, no literal text)
+m/MS0024.BIN	0:0F	23	642	00			@skip (private-use glyph / corrupted-byte artifact, not real text)
+m/MS0024.BIN	0:0F	24	655	00	{04:FF}{08:62}信者の女性を助{08:29}事に{08:4B}。\n<wait>	...decided to help the female believer.\n<wait>	reads: は、信者の女性を助ける事にした。\n<wait>
 m/MS0024.BIN	0:0F	25	692	1FD2	信者：	Devotee:	
 m/MS0024.BIN	0:0F	26	700	1FD3	助けて下さるん{08:55}か{08:72}あ、有り難うござい{08:5A}！！\n<wait>	You're going to save me...? Oh, thank you so much!!\n<wait>	reads: 助けて下さるんですか‥‥あ、有り難うございます！！\n<wait>
 m/MS0024.BIN	0:0F	27	753	1FD0	信者の女性はそう言うと、	So saying, the female devotee,	
-m/MS0024.BIN	0:0F	28	781	00	{04:FF}達の後ろにつ{08:64}。\n<wait>		reads: 達の後ろについた。\n<wait>
-m/MS0024.BIN	0:0F	29	826	1FD0	逃げ遅{08:60}{02:0B}などに、構っ{08:14}ゆとりは{08:25}。\n		reads: 逃げ遅れた人間などに、構っているゆとりはない。\n; v1 had a translation here but it was written against a mis-read line (v1 control token {0B} has no counterpart in the v2 source line); re-translate
-m/MS0024.BIN	0:0F	30	867	00	{04:FF}{08:62}女を{08:79}{08:7E}置いて行く事に{08:4B}。\n<wait>		reads: は、女をそのまま置いて行く事にした。\n<wait>
+m/MS0024.BIN	0:0F	28	781	00	{04:FF}達の後ろにつ{08:64}。\n<wait>	...fell in line behind you.\n<wait>	reads: 達の後ろについた。\n<wait>
+m/MS0024.BIN	0:0F	29	826	1FD0	逃げ遅{08:60}{02:0B}などに、構っ{08:14}ゆとりは{08:25}。\n	There's no time to spare for those who failed to escape.\n	reads: 逃げ遅れた人間などに、構っているゆとりはない。\n; v1 had a translation here but it was written against a mis-read line (v1 control token {0B} has no counterpart in the v2 source line); re-translate
+m/MS0024.BIN	0:0F	30	867	00	{04:FF}{08:62}女を{08:79}{08:7E}置いて行く事に{08:4B}。\n<wait>	...decided to leave the woman behind, just as she was.\n<wait>	reads: は、女をそのまま置いて行く事にした。\n<wait>
 m/MS0024.BIN	0:0F	31	904	1FD2	信者：	Devotee:	
 m/MS0024.BIN	0:0F	32	912	1FD3	待{08:52}下{08:49}！！　一体、何がおき{08:14}の{08:55}か！！\n<wait>	Please wait!! What in the world is happening!?\n<wait>	reads: 待って下さい！！　一体、何がおきているのですか！！\n<wait>
 m/MS0024.BIN	0:0F	33	960	1FD2	信者：	Devotee:	
-m/MS0024.BIN	0:0F	34	995	1F71	以前、{08:47}{01:2E}に{08:62}若い男性が{08:64}ん{08:55}けれど、上位者と{08:4A}\n選ば{08:60}の{08:55}{08:52}。\n<wait>		reads: 以前、この部屋には、若い男性がいたんですけれど、上位者として\n選ばれたのですって。\n<wait>
+m/MS0024.BIN	0:0F	34	995	1F71	以前、{08:47}{01:2E}に{08:62}若い男性が{08:64}ん{08:55}けれど、上位者と{08:4A}\n選ば{08:60}の{08:55}{08:52}。\n<wait>	There used to be a young man staying in this room, but I hear\nhe was chosen to become one of the Elevated.\n<wait>	reads: 以前、この部屋には、若い男性がいたんですけれど、上位者として\n選ばれたのですって。\n<wait>
 m/MS0024.BIN	0:0F	35	1067	1FD2	信者：	Devotee:	
-m/MS0024.BIN	0:0F	36	1075	1FD3	若く{08:52}も、上位者にな{08:2F}と分か{08:52}、私、{08:33}気付けられま{08:4B}わ！\n<wait>	Knowing that even someone young like me can become one of the elite really encouraged me!\n<wait>	reads: 若くっても、上位者になれると分かって、私、勇気付けられましたわ！\n<wait>
+m/MS0024.BIN	0:0F	36	1075	1FD3	若く{08:52}も、上位者にな{08:2F}と分か{08:52}、私、{08:33}気付けられま{08:4B}わ！\n<wait>	Knowing even someone young like me can join the elite gave me such hope!\n<wait>	reads: 若くっても、上位者になれると分かって、私、勇気付けられましたわ！\n<wait>
 m/MS0024.BIN	0:0F	37	1140	1FD2	信者：	Devotee:	
 m/MS0024.BIN	0:0F	38	1148	1FD3	だ{08:52}、上位者に{08:59}の{08:62}私達信者の憧れ{08:55}{08:5E}。\n<wait>	After all, becoming one of the elite is every devotee's dream.\n<wait>	reads: だって、上位者になるのは、私達信者の憧れですもの。\n<wait>
-m/MS0024.BIN	0:0F	39	1216	1F71	{08:45}で暮らし始めて随分経つ{08:84}、未だに一度も、大司祭様以外の上位者と{08:62}\n会{08:51}事が{08:25}{08:5F}。\n<wait>		reads: ここで暮らし始めて随分経つけど、未だに一度も、大司祭様以外の上位者とは、\n会った事がないんだ。\n<wait>
+m/MS0024.BIN	0:0F	39	1216	1F71	{08:45}で暮らし始めて随分経つ{08:84}、未だに一度も、大司祭様以外の上位者と{08:62}\n会{08:51}事が{08:25}{08:5F}。\n<wait>	It's been a while since I moved here, but I still haven't once\nmet any of the Elevated besides the High Priest.\n<wait>	reads: ここで暮らし始めて随分経つけど、未だに一度も、大司祭様以外の上位者とは、\n会った事がないんだ。\n<wait>
 m/MS0024.BIN	0:0F	40	1306	1FD2	信者：	Devotee:	
-m/MS0024.BIN	0:0F	41	1314	1FD3	{08:86}も、近頃無断でミレニアムを去る{02:0B}が、ごく僅{08:42}しい{08:5F}けれど、\n続出し{08:2B}らしい{08:5F}よ。\n<wait>		reads: しかも、近頃無断でミレニアムを去る人間が、ごく僅からしいんだけれど、\n続出してるらしいんだよ。\n<wait>; v1 had a translation here but it was written against a mis-read line (v1 control token {0B} has no counterpart in the v2 source line); re-translate
+m/MS0024.BIN	0:0F	41	1314	1FD3	{08:86}も、近頃無断でミレニアムを去る{02:0B}が、ごく僅{08:42}しい{08:5F}けれど、\n続出し{08:2B}らしい{08:5F}よ。\n<wait>	Apparently, only a rare few have left Millennium without permission,\nbut it seems like more keep popping up one after another.\n<wait>	reads: しかも、近頃無断でミレニアムを去る人間が、ごく僅からしいんだけれど、\n続出してるらしいんだよ。\n<wait>; v1 had a translation here but it was written against a mis-read line (v1 control token {0B} has no counterpart in the v2 source line); re-translate
 m/MS0024.BIN	0:0F	42	1404	1FD2	信者：	Devotee:	
 m/MS0024.BIN	0:0F	43	1412	1FD3	食べ者にも不自由せず、{08:0B}に怯{08:28}事も{08:25}のに、{08:90}{08:4A}、{08:45}を去る\n必要が{08:7B}ん{08:8C}？\n<wait>	With plenty of food and no fear of demons, why would anyone\nneed to leave this place?\n<wait>	reads: 食べ者にも不自由せず、悪魔に怯える事もないのに、どうして、ここを去る\n必要があるんだろう？\n<wait>
 m/MS0024.BIN	0:0F	44	1492	1FD2	信者：	Devotee:	
-m/MS0024.BIN	0:0F	45	1500	1FD3	僕は{08:45}の暮らしが気に入っ{08:2B}し、マイトレーヤ様の事は心底尊敬{08:13}{08:84}、\n何だか引っ掛かる{08:5F}よ{02:08}{08:72}<wait>気のせいだとお{08:5C}けれどね。\n<wait>		reads: 僕はここの暮らしが気に入ってるし、マイトレーヤ様の事は心底尊敬しているけど、\n何だか引っ掛かるんだよ‥‥‥‥‥<wait>気のせいだとおもうけれどね。\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:0F	45	1500	1FD3	僕は{08:45}の暮らしが気に入っ{08:2B}し、マイトレーヤ様の事は心底尊敬{08:13}{08:84}、\n何だか引っ掛かる{08:5F}よ{02:08}{08:72}<wait>気のせいだとお{08:5C}けれどね。\n<wait>	I like living here, and I deeply respect Lord Maitreya, but\nsomething about it just doesn't sit right with me...<wait>Though I'm sure it's just my imagination.\n<wait>	reads: 僕はここの暮らしが気に入ってるし、マイトレーヤ様の事は心底尊敬しているけど、\n何だか引っ掛かるんだよ‥‥‥‥‥<wait>気のせいだとおもうけれどね。\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0024.BIN	0:10	0	0	UNTILED	) / J / K / ﾐThere is no one here... / v / p / ﾂ / W / q / ( / ﾝ / v / ﾒGuardian: / ﾓOnly chosen ones are allow to enter this floor. / I am going to have to ask you to turn away. /  / J / ﾒGuardian: / ﾓHmm? Is it time for the shift change already? / ｺ / ﾒGuardian: / ﾓ...Wait! I don't recognize you! / ｺ / ﾒGuardian: / ﾓI see... You've put on a disguise to infiltrate our ranks. / ｺ / ﾒGuardian: / ﾓThat will cost you your life! / ﾈ / |ﾄ / K / ﾒGuardian: / ﾓHmm? Is it time for the shift change already? / ｺ / ﾒGuardian: / ﾓ...Wait! I don't recognize you! / ｺ / ﾒGuardian: / ﾓSo it was you who killed our comrades! / Prepare to die! / ｺ / r / ｾ /  / d /  / d / ｾ /  / 		@noedit; @untiled; record does not tile (expression selector past end of record at 0x2AA); read-only, copied verbatim
 m/MS0024.BIN	0:11	0	2	1FD2	Devotee:	Devotee:	
 m/MS0024.BIN	0:11	1	12	1FD3	This place is called Millennium.\n<wait>	This place is called Millennium.\n<wait>	
@@ -501,27 +501,27 @@ m/MS0024.BIN	0:1D	1	12	1FD3	There is nothing special about us.\n<wait>	There is 
 m/MS0024.BIN	0:1D	2	55	1FD2	Devotee:	Devotee:	
 m/MS0024.BIN	0:1D	3	65	1FD3	It's the people living on the outside that are crazy.\n<wait>	It's the people living on the outside that are crazy.\n<wait>	
 m/MS0024.BIN	0:1E	0	2	1FD2	Devotee:	Devotee:	
-m/MS0024.BIN	0:1E	1	12	1FD3	怯えながら生きていて{08:62}{02:0B}は本来の英知を忘れ、鼠も同然に堕ちてしまい{08:5A}。\n<wait>		reads: 怯えながら生きていては、人間は本来の英知を忘れ、鼠も同然に堕ちてしまいます。\n<wait>; v1 had a translation here but it was written against a mis-read line (v1 control token {0B} has no counterpart in the v2 source line); re-translate
+m/MS0024.BIN	0:1E	1	12	1FD3	怯えながら生きていて{08:62}{02:0B}は本来の英知を忘れ、鼠も同然に堕ちてしまい{08:5A}。\n<wait>	Living in fear, people forget their true wisdom and sink to a rat's level.\n<wait>	reads: 怯えながら生きていては、人間は本来の英知を忘れ、鼠も同然に堕ちてしまいます。\n<wait>; v1 had a translation here but it was written against a mis-read line (v1 control token {0B} has no counterpart in the v2 source line); re-translate
 m/MS0024.BIN	0:1E	2	91	1FD2	Devotee:	Devotee:	
-m/MS0024.BIN	0:1E	3	101	1FD3	全ての人々{08:62}一刻も早く救済{03:0C}ねばなり{02:0A}。\n<wait>		reads: 全ての人々は、一刻も早く救済されねばなりません。\n<wait>; v1 had a translation here but it was written against a mis-read line (v1 control token {0C} has no counterpart in the v2 source line); re-translate
+m/MS0024.BIN	0:1E	3	101	1FD3	全ての人々{08:62}一刻も早く救済{03:0C}ねばなり{02:0A}。\n<wait>	All people must be saved, as soon as possible.\n<wait>	reads: 全ての人々は、一刻も早く救済されねばなりません。\n<wait>; v1 had a translation here but it was written against a mis-read line (v1 control token {0C} has no counterpart in the v2 source line); re-translate
 m/MS0024.BIN	0:1F	0	18	1FD2	Voice:	Voice:	
 m/MS0024.BIN	0:1F	1	26	1FD3	Halt.\n<wait>	Halt.\n<wait>	
 m/MS0024.BIN	0:1F	2	62	1FD2	Guardian:	Guardian:	
 m/MS0024.BIN	0:1F	3	73	1FD3	Only the chosen are allowed to enter here.\n<wait>	Only the chosen are allowed to enter here.\n<wait>	
 m/MS0024.BIN	0:1F	4	124	1FD2	Guardian:	Guardian:	
 m/MS0024.BIN	0:1F	5	135	1FD3	If you're not one of them, then I ask that you leave at once.\n<wait>	If you're not one of them, then I ask that you leave at once.\n<wait>	
-m/MS0024.BIN	0:1F	6	220	1F03			
+m/MS0024.BIN	0:1F	6	220	1F03			@skip (private-use glyph / corrupted-byte artifact, not real text)
 m/MS0024.BIN	0:1F	7	237	1FD2	Digital Voice:	Digital Voice:	
 m/MS0024.BIN	0:1F	8	253	1FD3	Please enter a password.\n	Please enter a password.\n	
 m/MS0024.BIN	0:1F	9	294	1FB2	Enter	Enter	menu option, declared width 20 columns
 m/MS0024.BIN	0:1F	10	301	1FB2	Never mind	Never mind	menu option, declared width 20 columns
-m/MS0024.BIN	0:1F	11	325	0F	{01:69}{01:FF}	{01:69}{01:FF}	reads: 
+m/MS0024.BIN	0:1F	11	325	0F	{01:69}{01:FF}		reads: ; @skip (token-only row / isolated control-byte artifact, no literal text)
 m/MS0024.BIN	0:1F	12	362	1FD2	Guardian:	Guardian:	
 m/MS0024.BIN	0:1F	13	373	1FD3	Wait... I don't recognize you.\n<wait>	Wait... I don't recognize you.\n<wait>	
 m/MS0024.BIN	0:1F	14	417	1FD2	Guardian:	Guardian:	
 m/MS0024.BIN	0:1F	15	428	1FD3	Intruder!\n<wait>	Intruder!\n<wait>	
 m/MS0024.BIN	0:1F	16	451	1EBE	{01:00}{01:04}	{01:00}{01:04}	reads: 早坂達也西野義雄
-m/MS0024.BIN	0:1F	17	457	00	d{04:FF}	d{04:FF}	reads: d
+m/MS0024.BIN	0:1F	17	457	00	d{04:FF}		reads: d; @skip (token-only row / isolated control-byte artifact, no literal text)
 m/MS0024.BIN	0:1F	18	461	00	d	d	
 m/MS0024.BIN	0:1F	19	480	09	igital Voice:	igital Voice:	
 m/MS0024.BIN	0:1F	20	495	1FD3	Please enter a password.\n<wait>	Please enter a password.\n<wait>	
@@ -530,33 +530,33 @@ m/MS0024.BIN	0:1F	22	594	1FD3	Password confirmed. Please proceed.\n	Password con
 m/MS0024.BIN	0:1F	23	644	1FD2	Digital Voice:	Digital Voice:	
 m/MS0024.BIN	0:1F	24	660	1FD3	Incorrect password.\n<wait>	Incorrect password.\n<wait>	
 m/MS0024.BIN	0:1F	25	693	1FD0	You decide to walk away.\n<wait>	You decide to walk away.\n<wait>	
-m/MS0024.BIN	0:20	0	18	1F04	烙痼{=E2}{=FF}		
+m/MS0024.BIN	0:20	0	18	1F04	烙痼{=E2}{=FF}		@skip (private-use glyph / corrupted-byte artifact, not real text)
 m/MS0024.BIN	0:20	1	93	1FD0	救出{08:4B}司祭が、一行の前に立{08:51}。\n<wait>	The priest they rescued stands before the group.\n<wait>	reads: 救出した司祭が、一行の前に立った。\n<wait>
 m/MS0024.BIN	0:20	2	154	1FD2	司祭：	Priest:	
 m/MS0024.BIN	0:20	3	162	1FD3	いやいや{08:72}本当に助かりま{08:4B}よ{08:72}\n<wait>	Oh my, oh my... you truly saved my life...\n<wait>	reads: いやいや‥‥本当に助かりましたよ‥‥\n<wait>
 m/MS0024.BIN	0:20	4	201	1FD2	司祭：	Priest:	
-m/MS0024.BIN	0:20	5	209	1FD3	本当に{02:08}‥人の良い方だ{02:08}‥！\n<wait>		reads: 本当に‥‥‥‥人の良い方だ‥‥‥‥！\n<wait>; was @operand in v1; jp is now correct and needs translating
-m/MS0024.BIN	0:20	6	246	1FD0	司祭の姿が変貌{08:4A}いく{02:08}！\n<wait>		reads: 司祭の姿が変貌していく‥‥‥！\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:20	5	209	1FD3	本当に{02:08}‥人の良い方だ{02:08}‥！\n<wait>	Truly... what a kind soul you are...!\n<wait>	reads: 本当に‥‥‥‥人の良い方だ‥‥‥‥！\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:20	6	246	1FD0	司祭の姿が変貌{08:4A}いく{02:08}！\n<wait>	The priest's form begins to twist and change...!\n<wait>	reads: 司祭の姿が変貌していく‥‥‥！\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0024.BIN	0:20	7	327	1FD2	ベリス：	Berith:	
-m/MS0024.BIN	0:20	8	337	1FD3	フフフ{02:08}‥我が名はベリス{02:08}‥\n貴様らを倒せば、我が名も上がると{08:68}{08:5E}{02:08}‥\n<wait>		reads: フフフ‥‥‥‥我が名はベリス‥‥‥‥\n貴様らを倒せば、我が名も上がるというもの‥‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:20	8	337	1FD3	フフフ{02:08}‥我が名はベリス{02:08}‥\n貴様らを倒せば、我が名も上がると{08:68}{08:5E}{02:08}‥\n<wait>	Fufufu... My name is Beris...\nDefeating the likes of you shall only raise my name further...\n<wait>	reads: フフフ‥‥‥‥我が名はベリス‥‥‥‥\n貴様らを倒せば、我が名も上がるというもの‥‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0024.BIN	0:20	9	415	1FD2	ベリス：	Berith:	
 m/MS0024.BIN	0:20	10	425	1FD3	行くぞ！！\n<wait>	Here I come!!\n<wait>	
 m/MS0024.BIN	0:20	11	447	1EBE	{01:00}{01:04}	{01:00}{01:04}	reads: 早坂達也西野義雄
-m/MS0024.BIN	0:20	12	453	00	d{04:FF}	d{04:FF}	reads: d
+m/MS0024.BIN	0:20	12	453	00	d{04:FF}		reads: d; @skip (token-only row / isolated control-byte artifact, no literal text)
 m/MS0024.BIN	0:20	13	457	00	d	d	
 m/MS0024.BIN	0:20	14	471	1F82	p	p	
-m/MS0024.BIN	0:20	15	474	00	{01:F2}{=E0}{=00}{02:1F}W	{01:F2}{=E0}{=00}{02:1F}W	reads: {=E0}{=00}W
+m/MS0024.BIN	0:20	15	474	00	{01:F2}{=E0}{=00}{02:1F}W		reads: {=E0}{=00}W; @skip (token-only row / isolated control-byte artifact, no literal text)
 m/MS0024.BIN	0:20	16	495	1FD2	ベリス：	Berith:	
-m/MS0024.BIN	0:20	17	505	1FD3	グアアァァァ{02:08}‥！\nさすが{08:72}ベルフェゴール様を{02:08}‥ッ！\n<wait>		reads: グアアァァァ‥‥‥‥！\nさすが‥‥ベルフェゴール様を‥‥‥‥ッ！\n<wait>; was @operand in v1; jp is now correct and needs translating
-m/MS0024.BIN	0:20	18	571	1FD0	ベリスは息絶{08:41}{02:08}‥\n<wait>		reads: ベリスは息絶えた‥‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:20	17	505	1FD3	グアアァァァ{02:08}‥！\nさすが{08:72}ベルフェゴール様を{02:08}‥ッ！\n<wait>	Guaaaaargh...!\nAs expected... of Lord Belphegor's chosen...!\n<wait>	reads: グアアァァァ‥‥‥‥！\nさすが‥‥ベルフェゴール様を‥‥‥‥ッ！\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:20	18	571	1FD0	ベリスは息絶{08:41}{02:08}‥\n<wait>	Beris draws his last breath...\n<wait>	reads: ベリスは息絶えた‥‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0024.BIN	0:20	19	635	1FD2	{08:31}：	Rui:	reads: 泪：
-m/MS0024.BIN	0:20	20	641	1FD3	{02:08}	{02:08}	reads: ‥‥‥; was @operand in v1; jp is now correct and needs translating
-m/MS0024.BIN	0:20	21	647	00	{04:FF}{02:08}‥{08:73}になっちゃ{08:52}{02:08}\n<wait>		reads: ‥‥‥‥こんなになっちゃって‥‥‥\n<wait>
+m/MS0024.BIN	0:20	20	641	1FD3	{02:08}	......	reads: ‥‥‥; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:20	21	647	00	{04:FF}{02:08}‥{08:73}になっちゃ{08:52}{02:08}\n<wait>	......Look at the state you're in...\n<wait>	reads: ‥‥‥‥こんなになっちゃって‥‥‥\n<wait>
 m/MS0024.BIN	0:20	22	678	1FD2	{08:31}：	Rui:	reads: 泪：
-m/MS0024.BIN	0:20	23	684	1FD3	{02:08}相変わらず無茶し{08:2B}のね{02:08}‥\n<wait>{08:73}所で貴方を死な{08:2A}訳にいか{08:25}{08:72}今‥治{08:4A}あげる{02:08}\n<wait>		reads: ‥‥‥相変わらず無茶してるのね‥‥‥‥\n<wait>こんな所で貴方を死なせる訳にいかない‥‥今‥治してあげる‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
-m/MS0024.BIN	0:20	24	772	1FD0	そう言{08:52}、{08:31}は小さな声で呪文を呟{08:64}{02:08}‥\n<wait>		reads: そう言って、泪は小さな声で呪文を呟いた‥‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
-m/MS0024.BIN	0:20	25	821	00	{04:FF}の身体を、暖かい光が包み込む{02:08}。\n<wait>		reads: の身体を、暖かい光が包み込む‥‥‥。\n<wait>
-m/MS0024.BIN	0:20	26	869	00	{04:FF}は復帰{08:17}！\n<wait>		reads: は復帰した！！\n<wait>
+m/MS0024.BIN	0:20	23	684	1FD3	{02:08}相変わらず無茶し{08:2B}のね{02:08}‥\n<wait>{08:73}所で貴方を死な{08:2A}訳にいか{08:25}{08:72}今‥治{08:4A}あげる{02:08}\n<wait>	...You're still as reckless as ever, huh...\n<wait>I can't let you die in a place like this... Here... let me heal you...\n<wait>	reads: ‥‥‥相変わらず無茶してるのね‥‥‥‥\n<wait>こんな所で貴方を死なせる訳にいかない‥‥今‥治してあげる‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:20	24	772	1FD0	そう言{08:52}、{08:31}は小さな声で呪文を呟{08:64}{02:08}‥\n<wait>	With that, Rui murmured a spell under her breath...\n<wait>	reads: そう言って、泪は小さな声で呪文を呟いた‥‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:20	25	821	00	{04:FF}の身体を、暖かい光が包み込む{02:08}。\n<wait>	...A warm light envelops your body...\n<wait>	reads: の身体を、暖かい光が包み込む‥‥‥。\n<wait>
+m/MS0024.BIN	0:20	26	869	00	{04:FF}は復帰{08:17}！\n<wait>	...has recovered!!\n<wait>	reads: は復帰した！！\n<wait>
 m/MS0024.BIN	0:20	27	890	1FD2	{08:31}：	Rui:	reads: 泪：
 m/MS0024.BIN	0:20	28	896	1FD3	It has been a while... Ayato.\n<wait>	It has been a while... Ayato.\n<wait>	
 m/MS0024.BIN	0:20	29	934	1FD2	{08:31}：	Rui:	reads: 泪：
@@ -566,13 +566,13 @@ m/MS0024.BIN	0:20	32	1012	1FD3	Have you perhaps... forgotten about me already?\n
 m/MS0024.BIN	0:20	33	1082	1FB2	I have	I have	menu option, declared width 20 columns
 m/MS0024.BIN	0:20	34	1090	1FB2	Of course not!	Of course not!	menu option, declared width 20 columns
 m/MS0024.BIN	0:20	35	1118	0F	{01:22}	{01:22}	reads: ママ
-m/MS0024.BIN	0:20	36	1121	00			
+m/MS0024.BIN	0:20	36	1121	00			@skip (private-use glyph / corrupted-byte artifact, not real text)
 m/MS0024.BIN	0:20	37	1124	1FD2	{08:31}：	Rui:	reads: 泪：
 m/MS0024.BIN	0:20	38	1130	1FD3	Hmph. How cold.\n<wait>	Hmph. How cold.\n<wait>	
 m/MS0024.BIN	0:20	39	1157	1FD2	{08:31}：	Rui:	reads: 泪：
 m/MS0024.BIN	0:20	40	1163	1FD3	ふふ{08:72}相変わらずお人良し{08:6B}ね。\n<wait>	Fufu... Still such a pushover, huh.\n<wait>	reads: ふふ‥‥相変わらずお人良しなのね。\n<wait>
 m/MS0024.BIN	0:20	41	1202	1FD2	{08:31}：	Rui:	reads: 泪：
-m/MS0024.BIN	0:20	42	1208	1FD3	{08:56}、分か{08:52}欲しいの。\nあの時{08:62}ああ{08:8E}{08:86}他に{08:19}{02:08}‥\n<wait>		reads: でも、分かって欲しいの。\nあの時は、ああするしか他になかった‥‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:20	42	1208	1FD3	{08:56}、分か{08:52}欲しいの。\nあの時{08:62}ああ{08:8E}{08:86}他に{08:19}{02:08}‥\n<wait>	But I want you to understand.\nAt the time, that was the only thing I could do...\n<wait>	reads: でも、分かって欲しいの。\nあの時は、ああするしか他になかった‥‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0024.BIN	0:20	43	1264	1FD2	{08:31}：	Rui:	reads: 泪：
 m/MS0024.BIN	0:20	44	1270	1FD3	That said, I would still like to be by your side.\n<wait>	That said, I would still like to be by your side.\n<wait>	
 m/MS0024.BIN	0:20	45	1328	1FD1	>What will you do?\n	>What will you do?\n	
@@ -580,7 +580,7 @@ m/MS0024.BIN	0:20	46	1363	1FB2	Don't leave me...	Don't leave me...	menu option, 
 m/MS0024.BIN	0:20	47	1382	1FB2	Hmm...	Hmm...	menu option, declared width 20 columns
 m/MS0024.BIN	0:20	48	1390	1FB2	Screw you!	Screw you!	menu option, declared width 20 columns
 m/MS0024.BIN	0:20	49	1414	0F	{01:05}	{01:05}	reads: 山田
-m/MS0024.BIN	0:20	50	1417	00	{02:01}ﾟ{02:FF}		reads: ペンタグランマﾟ
+m/MS0024.BIN	0:20	50	1417	00	{02:01}ﾟ{02:FF}	Pentagrammaﾟ	reads: ペンタグランマﾟ
 m/MS0024.BIN	0:20	51	1426	1FD0	It isn't a simple decision letting someone who once left\nyour party back in.\n<wait>	It isn't a simple decision letting someone who once left\nyour party back in.\n<wait>	
 m/MS0024.BIN	0:20	52	1509	1FBA	You find yourself having trouble deciding...\n<wait>	You find yourself having trouble deciding...\n<wait>	
 m/MS0024.BIN	0:20	53	1562	1FD2	{08:31}：	Rui:	reads: 泪：
@@ -591,33 +591,33 @@ m/MS0024.BIN	0:20	57	1763	1FB2	Don't leave me...	Don't leave me...	menu option, 
 m/MS0024.BIN	0:20	58	1782	1FB2	Sure, why not	Sure, why not	menu option, declared width 20 columns
 m/MS0024.BIN	0:20	59	1797	1FB2	Screw you!	Screw you!	menu option, declared width 20 columns
 m/MS0024.BIN	0:20	60	1821	0F	{01:9C}{02:02}{01:48}{01:FF}	{01:9C}{02:02}{01:48}{01:FF}	reads: キャンプ
-m/MS0024.BIN	0:20	61	1847	1F4F	{03:17}	{03:17}	reads: 
-m/MS0024.BIN	0:20	62	1865	1F4E	{03:17}	{03:17}	reads: 
-m/MS0024.BIN	0:20	63	1873	00	{04:FF}はそう言い、{08:31}を抱き寄せた{02:08}。\n<wait>		reads: はそう言い、泪を抱き寄せた‥‥‥。\n<wait>
+m/MS0024.BIN	0:20	61	1847	1F4F	{03:17}		reads: ; @skip (token-only row / isolated control-byte artifact, no literal text)
+m/MS0024.BIN	0:20	62	1865	1F4E	{03:17}		reads: ; @skip (token-only row / isolated control-byte artifact, no literal text)
+m/MS0024.BIN	0:20	63	1873	00	{04:FF}はそう言い、{08:31}を抱き寄せた{02:08}。\n<wait>	...said so, and pulled Rui close...\n<wait>	reads: はそう言い、泪を抱き寄せた‥‥‥。\n<wait>
 m/MS0024.BIN	0:20	64	1912	1FBA	ほのかな香が、	A faint fragrance,	
-m/MS0024.BIN	0:20	65	1930	00	{04:FF}の鼻孔をくすぐる{02:08}\n<wait>		reads: の鼻孔をくすぐる‥‥‥\n<wait>
+m/MS0024.BIN	0:20	65	1930	00	{04:FF}の鼻孔をくすぐる{02:08}\n<wait>	...tickles your nose...\n<wait>	reads: の鼻孔をくすぐる‥‥‥\n<wait>
 m/MS0024.BIN	0:20	66	1959	1FD2	{08:31}：	Rui:	reads: 泪：
-m/MS0024.BIN	0:20	67	1965	1FD3	{01:2A}{02:08}	{01:2A}{02:08}	reads: ありがとう‥‥‥; was @operand in v1; jp is now correct and needs translating
-m/MS0024.BIN	0:20	68	1973	00	{04:FF}{02:08}\n<wait>	{04:FF}{02:08}\n<wait>	reads: ‥‥‥\n<wait>
+m/MS0024.BIN	0:20	67	1965	1FD3	{01:2A}{02:08}	Thank you...	reads: ありがとう‥‥‥; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:20	68	1973	00	{04:FF}{02:08}\n<wait>	......\n<wait>	reads: ‥‥‥\n<wait>
 m/MS0024.BIN	0:20	69	1986	1FD0	{08:31}はそう言{08:52}、	So saying, Rui,	reads: 泪はそう言って、
-m/MS0024.BIN	0:20	70	2004	00	{04:FF}の首に手を回{08:4B}。\nそ{08:4A}、少し背伸びを{08:4A}		reads: の首に手を回した。\nそして、少し背伸びをして
-m/MS0024.BIN	0:20	71	2047	00	{04:FF}の唇に{08:63}の唇を重ねた{08:72}。\n<wait>		reads: の唇に自分の唇を重ねた‥‥。\n<wait>
+m/MS0024.BIN	0:20	70	2004	00	{04:FF}の首に手を回{08:4B}。\nそ{08:4A}、少し背伸びを{08:4A}	...wrapped her arms around your neck.\nThen, standing on her tiptoes a little,	reads: の首に手を回した。\nそして、少し背伸びをして
+m/MS0024.BIN	0:20	71	2047	00	{04:FF}の唇に{08:63}の唇を重ねた{08:72}。\n<wait>	...pressed her lips against yours...\n<wait>	reads: の唇に自分の唇を重ねた‥‥。\n<wait>
 m/MS0024.BIN	0:20	72	2101	1F77	Rui has joined your party.\n<wait>	Rui has joined your party.\n<wait>	
-m/MS0024.BIN	0:20	73	2180	1F4E	{03:17}	{03:17}	reads: 
-m/MS0024.BIN	0:20	74	2198	1F4F	{03:17}	{03:17}	reads: 
+m/MS0024.BIN	0:20	73	2180	1F4E	{03:17}		reads: ; @skip (token-only row / isolated control-byte artifact, no literal text)
+m/MS0024.BIN	0:20	74	2198	1F4F	{03:17}		reads: ; @skip (token-only row / isolated control-byte artifact, no literal text)
 m/MS0024.BIN	0:20	75	2202	1FD2	{08:31}：	Rui:	reads: 泪：
-m/MS0024.BIN	0:20	76	2208	1FD3	駄目{08:72}{08:7A}答え聞こえ{08:25}わ{02:08}\n<wait>		reads: 駄目‥‥そんな答え聞こえないわ‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:20	76	2208	1FD3	駄目{08:72}{08:7A}答え聞こえ{08:25}わ{02:08}\n<wait>	No... That's not the answer I want to hear...\n<wait>	reads: 駄目‥‥そんな答え聞こえないわ‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0024.BIN	0:20	77	2241	1FD2	{08:31}：	Rui:	reads: 泪：
 m/MS0024.BIN	0:20	78	2247	1FD3	身勝手{08:6B}は分かっ{08:2B}{08:72}\n{08:56}お願いよ{08:72}貴方の側にい{02:0D}{02:08}‥\n<wait>	I know I'm being selfish...\nBut please... let me stay by your side{02:0D}	reads: 身勝手なのは分かってる‥‥\nでもお願いよ‥‥貴方の側にいさせて‥‥‥‥\n<wait>
 m/MS0024.BIN	0:20	79	2307	1FD0	そう言{08:52}、{08:31}は	So saying, Rui	reads: そう言って、泪は
-m/MS0024.BIN	0:20	80	2325	00	{04:FF}の胸にすがりつい{08:14}{02:08}\n<wait>		reads: の胸にすがりついている‥‥‥\n<wait>
-m/MS0024.BIN	0:20	81	2354	1FBA	{08:31}の鼓動が僅かに伝わ{08:52}くる{02:08}\n<wait>		reads: 泪の鼓動が僅かに伝わってくる‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:20	80	2325	00	{04:FF}の胸にすがりつい{08:14}{02:08}\n<wait>	...clings tightly to your chest...\n<wait>	reads: の胸にすがりついている‥‥‥\n<wait>
+m/MS0024.BIN	0:20	81	2354	1FBA	{08:31}の鼓動が僅かに伝わ{08:52}くる{02:08}\n<wait>	You can faintly feel Rui's heartbeat...\n<wait>	reads: 泪の鼓動が僅かに伝わってくる‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0024.BIN	0:20	82	2391	1FD1	>What will you do?\n	>What will you do?\n	
 m/MS0024.BIN	0:20	83	2426	1FB2	Don't leave me...	Don't leave me...	menu option, declared width 20 columns
 m/MS0024.BIN	0:20	84	2445	1FB2	Sure, why not	Sure, why not	menu option, declared width 20 columns
 m/MS0024.BIN	0:20	85	2460	1FB2	Screw you!	Screw you!	menu option, declared width 20 columns
 m/MS0024.BIN	0:20	86	2484	0F	{01:05}	{01:05}	reads: 山田
-m/MS0024.BIN	0:20	87	2487	00	{02:01}ｱ		reads: ペンタグランマｱ
+m/MS0024.BIN	0:20	87	2487	00	{02:01}ｱ	Pentagrammaｱ	reads: ペンタグランマｱ
 m/MS0024.BIN	0:20	88	2496	1FD0	Despite the history between you two, it can't be denied that you are\ncurrently lacking in able party members.\n<wait>	Despite the history between you two, it can't be denied that you are\ncurrently lacking in able party members.\n<wait>	
 m/MS0024.BIN	0:20	89	2612	1FBA	You decide to invite Rui to join you.\n<wait>	You decide to invite Rui to join you.\n<wait>	
 m/MS0024.BIN	0:20	90	2658	1FD2	{08:31}：	Rui:	reads: 泪：
@@ -628,6 +628,6 @@ m/MS0024.BIN	0:21	1	16	1FD3	逃げおく{08:60}人々が、{08:76}何処かに{0
 m/MS0024.BIN	0:21	2	67	1FD2	ピャンカラ：	Priyankara:	
 m/MS0024.BIN	0:21	3	81	1FD3	すま{08:25}が、彼らを{08:90}にか助{08:43}い{08:77}。\n他も探{08:4A}みて{08:62}くれ{08:25}{08:8C}か？　頼む！！\n<wait>	I'm sorry to ask, but I want to save them somehow, if I can.\nWould you mind searching elsewhere too? Please!!\n<wait>	reads: すまないが、彼らをどうにか助けたいのだ。\n他も探してみては、くれないだろうか？　頼む！！\n<wait>
 m/MS0024.BIN	0:22	0	2	1FD2	ピャンカラ：	Priyankara:	
-m/MS0024.BIN	0:22	1	16	1FD3	逃げおく{08:60}人は{08:5C}{08:24}{08:8C}{02:08}\n<wait>手間を取らせたな。\n<wait>		reads: 逃げおくれた人はもういないだろう‥‥‥\n<wait>手間を取らせたな。\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0024.BIN	0:22	1	16	1FD3	逃げおく{08:60}人は{08:5C}{08:24}{08:8C}{02:08}\n<wait>手間を取らせたな。\n<wait>	There shouldn't be anyone left who failed to escape by now...\n<wait>Sorry for the trouble.\n<wait>	reads: 逃げおくれた人はもういないだろう‥‥‥\n<wait>手間を取らせたな。\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0024.BIN	0:22	2	70	1FD2	ピャンカラ：	Priyankara:	
 m/MS0024.BIN	0:22	3	84	1FD3	さあ、{08:5C}{08:45}には用は{08:25}。出{08:69}。\n<wait>	Well then, there's nothing left for us here. Let's go.\n<wait>	reads: さあ、もうここには用はない。出よう。\n<wait>

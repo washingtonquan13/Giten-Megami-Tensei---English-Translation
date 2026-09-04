@@ -31,12 +31,12 @@ m/MS0020.BIN	0:01	23	1189	1FD2	Sanshirou:	Sanshirou:
 m/MS0020.BIN	0:01	24	1201	1FD3	......\n<wait>	......\n<wait>	
 m/MS0020.BIN	0:01	25	1231	1FB2	I know	I know	menu option, declared width 20 columns
 m/MS0020.BIN	0:01	26	1239	1FB2	Say nothing	Say nothing	menu option, declared width 20 columns
-m/MS0020.BIN	0:01	27	1264	0F	{01:5D}{04:FF}	{01:5D}{04:FF}	reads: 
+m/MS0020.BIN	0:01	27	1264	0F	{01:5D}{04:FF}		reads: ; @skip (token-only row, no literal text)
 m/MS0020.BIN	0:01	28	1272	1FD2	Belberith:	Belberith:	
 m/MS0020.BIN	0:01	29	1284	1FD3	Interesting. Does that mean that you've come here to kill me then?\n	Interesting. Does that mean that you've come here to kill me then?\n	
 m/MS0020.BIN	0:01	30	1367	1FB2	Yes	Yes	menu option, declared width 20 columns
 m/MS0020.BIN	0:01	31	1372	1FB2	No	No	menu option, declared width 20 columns
-m/MS0020.BIN	0:01	32	1388	0F	{01:A5}{01:FF}	{01:A5}{01:FF}	reads: 
+m/MS0020.BIN	0:01	32	1388	0F	{01:A5}{01:FF}		reads: ; @skip (token-only row, no literal text)
 m/MS0020.BIN	0:01	33	1396	1FD2	Belberith:	Belberith:	
 m/MS0020.BIN	0:01	34	1408	1FD3	Hehehe... I like that fierce attitude.\nTo be frank with you, I've also been looking for a good fight.\n<wait>	Hehehe... I like that fierce attitude.\nTo be frank with you, I've also been looking for a good fight.\n<wait>	
 m/MS0020.BIN	0:01	35	1518	1FD2	Belberith:	Belberith:	
@@ -60,29 +60,29 @@ m/MS0020.BIN	0:01	52	2400	1FD3	You come all the way here, yet the person you wer
 m/MS0020.BIN	0:01	53	2527	1FD2	Belberith:	Belberith:	
 m/MS0020.BIN	0:01	54	2539	1FD3	I better be a good host and make your visit worth the while.\n	I better be a good host and make your visit worth the while.\n	
 m/MS0020.BIN	0:01	55	2613	1FD2	Sanshirou:	Sanshirou:	
-m/MS0020.BIN	0:01	56	2625	1FD3	{02:08}もてなし{02:08}か。\n{08:72}{08:6D}みち{08:7F}事では無さ{01:29}がな{02:08}\n<wait>		reads: ‥‥‥もてなし‥‥‥か。\n‥‥どのみちいい事では無さそうだがな‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:01	56	2625	1FD3	{02:08}もてなし{02:08}か。\n{08:72}{08:6D}みち{08:7F}事では無さ{01:29}がな{02:08}\n<wait>	...'Hospitality'... huh.\n...Either way, doesn't sound like it's gonna be anything good...\n<wait>	reads: ‥‥‥もてなし‥‥‥か。\n‥‥どのみちいい事では無さそうだがな‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:01	57	2694	1FB2	何で{08:80}？	What is it?	reads: 何でしょう？; menu option, declared width 20 columns
 m/MS0020.BIN	0:01	58	2704	1FB2	遠慮し{08:5A}	No thanks	reads: 遠慮します; menu option, declared width 20 columns
-m/MS0020.BIN	0:01	59	2726	0F	{01:D4}	{01:D4}	reads: 
-m/MS0020.BIN	0:01	60	2729	00			
+m/MS0020.BIN	0:01	59	2726	0F	{01:D4}		reads: ; @skip (token-only row, no literal text)
+m/MS0020.BIN	0:01	60	2729	00			@skip (private-use glyph artifact, not real text)
 m/MS0020.BIN	0:01	61	2734	1FD2	Belberith:	Belberith:	
-m/MS0020.BIN	0:01	62	2746	1FD3	迷宮を抜け、私の元に辿り着{08:64}事を称え、{08:47}私が直々に相手を{08:4A}やろう。\n<wait>	In honor of you making it through the labyrinth all the way to me, I myself shall personally deal with you.\n<wait>	reads: 迷宮を抜け、私の元に辿り着いた事を称え、この私が直々に相手をしてやろう。\n<wait>
+m/MS0020.BIN	0:01	62	2746	1FD3	迷宮を抜け、私の元に辿り着{08:64}事を称え、{08:47}私が直々に相手を{08:4A}やろう。\n<wait>	In honor of your trek through the labyrinth, I'll deal with you myself.\n<wait>	reads: 迷宮を抜け、私の元に辿り着いた事を称え、この私が直々に相手をしてやろう。\n<wait>
 m/MS0020.BIN	0:01	63	2821	1FD2	Belberith:	Belberith:	
-m/MS0020.BIN	0:01	64	2833	1FD3	正直な所、{08:47}迷宮を抜けて{08:1E}と言う事{08:62}下僕共で{08:62}相手に{08:7D}んと\n言う事だ{08:42}な！\n<wait>	Honestly, the fact that you made it through this labyrinth means my servants\nweren't even worth sending against you!\n<wait>	reads: 正直な所、この迷宮を抜けてきたと言う事は、下僕共では、相手にならんと\n言う事だからな！\n<wait>
+m/MS0020.BIN	0:01	64	2833	1FD3	正直な所、{08:47}迷宮を抜けて{08:1E}と言う事{08:62}下僕共で{08:62}相手に{08:7D}んと\n言う事だ{08:42}な！\n<wait>	Honestly, making it through this labyrinth means my own servants\nweren't even worth sending against you!\n<wait>	reads: 正直な所、この迷宮を抜けてきたと言う事は、下僕共では、相手にならんと\n言う事だからな！\n<wait>
 m/MS0020.BIN	0:01	65	2915	1FD2	Belberith:	Belberith:	
 m/MS0020.BIN	0:01	66	2927	1FD3	Now, come!\n	Now, come!\n	
 m/MS0020.BIN	0:01	67	2945	1FD2	Belberith:	Belberith:	
-m/MS0020.BIN	0:01	68	2957	1FD3	{03:0C}ど、{08:47}{08:7E}帰す訳にもいかぬな。\n<wait>		reads: されど、このまま帰す訳にもいかぬな。\n<wait>; v1 had a translation here but it was written against a mis-read line (v1 control token {0C} has no counterpart in the v2 source line); re-translate
+m/MS0020.BIN	0:01	68	2957	1FD3	{03:0C}ど、{08:47}{08:7E}帰す訳にもいかぬな。\n<wait>	But still, I cannot simply send you back now.\n<wait>	reads: されど、このまま帰す訳にもいかぬな。\n<wait>; v1 had a translation here but it was written against a mis-read line (v1 control token {0C} has no counterpart in the v2 source line); re-translate
 m/MS0020.BIN	0:01	69	2996	1FD2	Belberith:	Belberith:	
-m/MS0020.BIN	0:01	70	3008	1FD3	私の元{08:71}辿り着{08:64}事を称え{02:08}‥<wait>{08:47}私が直々に、貴様の相手を{08:4A}やる。\n<wait>		reads: 私の元まで辿り着いた事を称え‥‥‥‥<wait>この私が直々に、貴様の相手をしてやる。\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:01	70	3008	1FD3	私の元{08:71}辿り着{08:64}事を称え{02:08}‥<wait>{08:47}私が直々に、貴様の相手を{08:4A}やる。\n<wait>	In honor of you making it all the way to me...<wait>I myself shall personally deal with you.\n<wait>	reads: 私の元まで辿り着いた事を称え‥‥‥‥<wait>この私が直々に、貴様の相手をしてやる。\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:01	71	3083	1FD2	Belberith:	Belberith:	
-m/MS0020.BIN	0:01	72	3095	1FD3	是非とも受け取{08:52}頂こうか{02:08}‥行くぞ！！\n<wait>		reads: 是非とも受け取って頂こうか‥‥‥‥行くぞ！！\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:01	72	3095	1FD3	是非とも受け取{08:52}頂こうか{02:08}‥行くぞ！！\n<wait>	Why don't you graciously accept it... Here I come!!\n<wait>	reads: 是非とも受け取って頂こうか‥‥‥‥行くぞ！！\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:01	73	3145	1EBE	{01:00}	{01:00}	reads: 早坂達也
-m/MS0020.BIN	0:01	74	3148	00	{04:FF}	{04:FF}	reads: 
-m/MS0020.BIN	0:01	75	3151	00	d{04:FF}	d{04:FF}	reads: d
-m/MS0020.BIN	0:01	76	3155	00	d	d	
-m/MS0020.BIN	0:01	77	3178	1F82	p	p	
-m/MS0020.BIN	0:01	78	3181	00	{01:22}{=EA}{=00}	{01:22}{=EA}{=00}	reads: ママ{=EA}{=00}
+m/MS0020.BIN	0:01	74	3148	00	{04:FF}		reads: ; @skip (token-only row, no literal text)
+m/MS0020.BIN	0:01	75	3151	00	d{04:FF}		reads: d; @skip (isolated single letter, garbage/control-byte artifact)
+m/MS0020.BIN	0:01	76	3155	00	d		@skip (isolated single letter, garbage/control-byte artifact)
+m/MS0020.BIN	0:01	77	3178	1F82	p		@skip (isolated single letter, garbage/control-byte artifact)
+m/MS0020.BIN	0:01	78	3181	00	{01:22}{=EA}{=00}		reads: ママ{=EA}{=00}; @skip (resolved to isolated word abutting raw-byte tokens, appears to be a decode artifact not real dialogue)
 m/MS0020.BIN	0:01	79	3202	1FD2	Belberith:	Belberith:	
 m/MS0020.BIN	0:01	80	3214	1FD3	This... This cannot be...\nHow could I... be defeated... by a mere son of man?...\n<wait>	This... This cannot be...\nHow could I... be defeated... by a mere son of man?...\n<wait>	
 m/MS0020.BIN	0:01	81	3303	1FD2	Belberith:	Belberith:	
@@ -91,7 +91,7 @@ m/MS0020.BIN	0:01	83	3354	1FD2	Belberith:	Belberith:
 m/MS0020.BIN	0:01	84	3366	1FD3	You shall rot... in the depths of earth!...\n<wait>	You shall rot... in the depths of earth!...\n<wait>	
 m/MS0020.BIN	0:01	85	3418	1FD0	Belberith casts some sort of a spell!\n<wait>	Belberith casts some sort of a spell!\n<wait>	
 m/MS0020.BIN	0:01	86	3466	1FC4	Your body grows weightless, as if you were floating in air.\nIn the next instant, you're assaulted by the sensation of falling,\nand quickly pass out.\n<wait>	Your body grows weightless, as if you were floating in air.\nIn the next instant, you're assaulted by the sensation of falling,\nand quickly pass out.\n<wait>	
-m/MS0020.BIN	0:02	0	8	1F04			
+m/MS0020.BIN	0:02	0	8	1F04			@skip (private-use glyph artifact, not real text)
 m/MS0020.BIN	0:02	1	81	1FD2	Man:	Man:	
 m/MS0020.BIN	0:02	2	87	1FD3	Hey, you! Help me! I'm a high ranking official at Millennium!\n<wait>	Hey, you! Help me! I'm a high ranking official at Millennium!\n<wait>	
 m/MS0020.BIN	0:02	3	157	1FD1	>Will you help the man?\n	>Will you help the man?\n	
@@ -108,13 +108,13 @@ m/MS0020.BIN	0:02	13	454	1FD2	Man:	Man:
 m/MS0020.BIN	0:02	14	460	1FD3	Now, why would he allow demons to assault Millennium\nin the first place?...\n	Now, why would he allow demons to assault Millennium\nin the first place?...\n	
 m/MS0020.BIN	0:02	15	547	1FD2	Man:	Man:	
 m/MS0020.BIN	0:02	16	553	1FD3	You... You demon!\n	You... You demon!\n	
-m/MS0020.BIN	0:03	0	8	1F04			
+m/MS0020.BIN	0:03	0	8	1F04			@skip (private-use glyph artifact, not real text)
 m/MS0020.BIN	0:03	1	81	1FD2	Woman:	Woman:	
 m/MS0020.BIN	0:03	2	89	1FD3	Help me! Someone, help me! What did I ever do?...\n<wait>	Help me! Someone, help me! What did I ever do?...\n<wait>	
 m/MS0020.BIN	0:03	3	147	1FD1	>Will you free her?\n	>Will you free her?\n	
 m/MS0020.BIN	0:03	4	183	1FB2	Yes	Yes	menu option, declared width 20 columns
 m/MS0020.BIN	0:03	5	188	1FB2	No	No	menu option, declared width 20 columns
-m/MS0020.BIN	0:03	6	204	0F	{01:60}{01:FF}	{01:60}{01:FF}	reads: 
+m/MS0020.BIN	0:03	6	204	0F	{01:60}{01:FF}		reads: ; @skip (token-only row, no literal text)
 m/MS0020.BIN	0:03	7	224	1FD2	Woman:	Woman:	
 m/MS0020.BIN	0:03	8	232	1FD3	Thank you! I don't even want to think what might have happened\nif you hadn't shown up...\n<wait>	Thank you! I don't even want to think what might have happened\nif you hadn't shown up...\n<wait>	
 m/MS0020.BIN	0:03	9	329	1FD2	Woman:	Woman:	
@@ -125,14 +125,14 @@ m/MS0020.BIN	0:03	13	460	1FD2	Woman:	Woman:
 m/MS0020.BIN	0:03	14	468	1FD3	Aah! Does Millennium still stand?\nSurely, Lord Maitreya has stopped the demons. Surely...\n	Aah! Does Millennium still stand?\nSurely, Lord Maitreya has stopped the demons. Surely...\n	
 m/MS0020.BIN	0:03	15	569	1FD2	Woman:	Woman:	
 m/MS0020.BIN	0:03	16	577	1FD3	You're just going to let me die here!? No! Noo!!\n	You're just going to let me die here!? No! Noo!!\n	
-m/MS0020.BIN	0:04	0	8	1F04			
+m/MS0020.BIN	0:04	0	8	1F04			@skip (private-use glyph artifact, not real text)
 m/MS0020.BIN	0:04	1	81	1FD2	Man:	Man:	
 m/MS0020.BIN	0:04	2	87	1FD3	What do you want with me!? I hope that you don't think that you can do\nthis to a follower of Millennium without facing Lord Maitreya's wrath!\n<wait>	What do you want with me!? I hope that you don't think that you can do\nthis to a follower of Millennium without facing Lord Maitreya's wrath!\n<wait>	
 m/MS0020.BIN	0:04	3	237	1FD1	>Will you free him?\n	>Will you free him?\n	
 m/MS0020.BIN	0:04	4	273	1FB2	Yes	Yes	menu option, declared width 20 columns
 m/MS0020.BIN	0:04	5	278	1FB2	No	No	menu option, declared width 20 columns
-m/MS0020.BIN	0:04	6	294	0F	{01:73}	{01:73}	reads: 
-m/MS0020.BIN	0:04	7	297	00			
+m/MS0020.BIN	0:04	6	294	0F	{01:73}		reads: ; @skip (token-only row, no literal text)
+m/MS0020.BIN	0:04	7	297	00			@skip (private-use glyph artifact, not real text)
 m/MS0020.BIN	0:04	8	314	1FD2	Man:	Man:	
 m/MS0020.BIN	0:04	9	320	1FD3	Thank you...\n<wait>	Thank you...\n<wait>	
 m/MS0020.BIN	0:04	10	341	1FD2	Man:	Man:	
@@ -142,184 +142,184 @@ m/MS0020.BIN	0:04	13	428	1FD3	Hey! Let me out of here!\nI need to tell Lord Mait
 m/MS0020.BIN	0:05	0	24	1FD2	Baal Soldier:	Baal Soldier:	
 m/MS0020.BIN	0:05	1	39	1FD3	{08:45}は貴様の来る{08:69}な所では{08:25}！\n早々に立ち去れい！！\n	This is no place for the likes of you!\nLeave at once!!\n	reads: ここは貴様の来るような所ではない！\n早々に立ち去れい！！\n
 m/MS0020.BIN	0:06	0	24	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:06	1	39	1FD3	の{08:47}{08:46}、{08:73}所{08:71}来お{08:52}{02:08}！\n		reads: のこのこと、こんな所まで来おって‥‥‥！\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:06	1	39	1FD3	の{08:47}{08:46}、{08:73}所{08:71}来お{08:52}{02:08}！\n	You've got some nerve, strolling right into a place like this...!\n	reads: のこのこと、こんな所まで来おって‥‥‥！\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:07	0	24	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:07	1	39	1FD3	{01:08}様の、勅命が無ければ貴様ごとき{08:72}！\n		reads: バエル様の、勅命が無ければ貴様ごとき‥‥！\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:07	1	39	1FD3	{01:08}様の、勅命が無ければ貴様ごとき{08:72}！\n	If not for Lord Baal's decree, a wretch like you would already be...!\n	reads: バエル様の、勅命が無ければ貴様ごとき‥‥！\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:08	0	32	1FD2	Baal Soldier:	Baal Soldier:	
 m/MS0020.BIN	0:08	1	47	1FD3	{08:45}{08:62}お前にと{08:52}敵地のど真ん中だと{08:68}のに、{08:73}所{08:71}の{08:47}{08:46}\nや{08:52}来るとはな。\n<wait>	This is right in the middle of enemy territory for you, and yet\nhere you come strolling in like nothing.\n<wait>	reads: ここは、お前にとって敵地のど真ん中だというのに、こんな所までのこのこと\nやって来るとはな。\n<wait>
 m/MS0020.BIN	0:08	2	125	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:08	3	140	1FD3	無駄足だと{08:68}のに{02:08}\n		reads: 無駄足だというのに‥‥‥\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:08	3	140	1FD3	無駄足だと{08:68}のに{02:08}\n	All this way, and for nothing...\n	reads: 無駄足だというのに‥‥‥\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:09	0	24	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:09	1	44	09	せいぜい、無駄なあがきを{08:8E}が{08:7F}さ{02:08}{08:72}\n		reads: せいぜい、無駄なあがきをするがいいさ‥‥‥‥‥\n
-m/MS0020.BIN	0:09	2	84	18	今頃{08:45}に来{08:54}、{01:08}様はおらんぞ。\n<wait>		reads: 今頃ここに来ても、バエル様はおらんぞ。\n<wait>
+m/MS0020.BIN	0:09	1	44	09	せいぜい、無駄なあがきを{08:8E}が{08:7F}さ{02:08}{08:72}\n	Go ahead, flail about uselessly if it makes you feel better...\n	reads: せいぜい、無駄なあがきをするがいいさ‥‥‥‥‥\n
+m/MS0020.BIN	0:09	2	84	18	今頃{08:45}に来{08:54}、{01:08}様はおらんぞ。\n<wait>	Lord Baal isn't even here, no matter how late you've shown up.\n<wait>	reads: 今頃ここに来ても、バエル様はおらんぞ。\n<wait>
 m/MS0020.BIN	0:09	3	123	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:09	4	138	1FD3	{01:08}様は既に、新宿に移ら{08:60}。\n貴様ごときでは近寄る事も出来まいよ。クククク{02:08}\n		reads: バエル様は既に、新宿に移られた。\n貴様ごときでは近寄る事も出来まいよ。クククク‥‥‥\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:09	4	138	1FD3	{01:08}様は既に、新宿に移ら{08:60}。\n貴様ごときでは近寄る事も出来まいよ。クククク{02:08}\n	Lord Baal has already relocated to Shinjuku.\nSomeone like you couldn't even hope to get near him. Kukuku...\n	reads: バエル様は既に、新宿に移られた。\n貴様ごときでは近寄る事も出来まいよ。クククク‥‥‥\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:0A	0	32	1FD2	Baal Soldier:	Baal Soldier:	
 m/MS0020.BIN	0:0A	1	47	1FD3	.........\n<wait>	.........\n<wait>	
 m/MS0020.BIN	0:0A	2	65	1FD0	The soldier is ignoring you...\n	The soldier is ignoring you...\n	
 m/MS0020.BIN	0:0B	0	24	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:0B	1	44	09	バルベリス様を倒{08:4B}とて、お前には何の利益にも{08:7D}ん{08:72}\n<wait>		reads: バルベリス様を倒したとて、お前には何の利益にもならん‥‥\n<wait>
+m/MS0020.BIN	0:0B	1	44	09	バルベリス様を倒{08:4B}とて、お前には何の利益にも{08:7D}ん{08:72}\n<wait>	Even if you defeat Lord Barbelith, it'll do you no good at all...\n<wait>	reads: バルベリス様を倒したとて、お前には何の利益にもならん‥‥\n<wait>
 m/MS0020.BIN	0:0B	2	103	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:0B	3	118	1FD3	むしろ、首を締め{08:14}のか{08:5D}れんな{08:72}クククク{02:08}‥\n		reads: むしろ、首を締めているのかもしれんな‥‥クククク‥‥‥‥\n; was @operand in v1; jp is now correct and needs translating
-m/MS0020.BIN	0:0B	4	166	18	お前が		
-m/MS0020.BIN	0:0B	5	176	00	{04:FF}{02:08}‥？\n{08:76}、ほんのガキでは{08:25}か{08:72}。\n		reads: ‥‥‥‥？\nまだ、ほんのガキではないか‥‥。\n
+m/MS0020.BIN	0:0B	3	118	1FD3	むしろ、首を締め{08:14}のか{08:5D}れんな{08:72}クククク{02:08}‥\n	If anything, you're just tightening your own noose... Kukuku...\n	reads: むしろ、首を締めているのかもしれんな‥‥クククク‥‥‥‥\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:0B	4	166	18	お前が	You...	
+m/MS0020.BIN	0:0B	5	176	00	{04:FF}{02:08}‥？\n{08:76}、ほんのガキでは{08:25}か{08:72}。\n	...?\nYou're nothing but a snot-nosed kid, aren't you...\n	reads: ‥‥‥‥？\nまだ、ほんのガキではないか‥‥。\n
 m/MS0020.BIN	0:0D	0	32	1FD2	Baal Soldier:	Baal Soldier:	
 m/MS0020.BIN	0:0D	1	47	1FD3	お前{08:72}噂通りの者{08:6B}か{08:72}？\n<wait>	You... are you the one from the rumors...?\n<wait>	reads: お前‥‥噂通りの者なのか‥‥？\n<wait>
 m/MS0020.BIN	0:0D	2	80	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:0D	3	95	1FD3	と{08:54}そうには見えんが{02:08}‥\n		reads: とてもそうには見えんが‥‥‥‥\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:0D	3	95	1FD3	と{08:54}そうには見えんが{02:08}‥\n	Though you sure don't look it...\n	reads: とてもそうには見えんが‥‥‥‥\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:0E	0	24	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:0E	1	39	1FD3	{01:08}様{08:62}一体何を考えておら{08:2F}{08:77}{08:72}？\n{08:73}ガキ一匹{02:08}\n		reads: バエル様は、一体何を考えておられるのだ‥‥？\nこんなガキ一匹‥‥‥\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:0E	1	39	1FD3	{01:08}様{08:62}一体何を考えておら{08:2F}{08:77}{08:72}？\n{08:73}ガキ一匹{02:08}\n	What could Lord Baal possibly be thinking...?\nOver some brat like this...\n	reads: バエル様は、一体何を考えておられるのだ‥‥？\nこんなガキ一匹‥‥‥\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:0F	0	32	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:0F	1	47	1FD3	イシュタルの転生体の身体を集めた所で、頭部は{01:08}様が持{08:52}いらっしゃる。\n<wait>		reads: イシュタルの転生体の身体を集めた所で、頭部はバエル様が持っていらっしゃる。\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:0F	1	47	1FD3	イシュタルの転生体の身体を集めた所で、頭部は{01:08}様が持{08:52}いらっしゃる。\n<wait>	Even with every piece of Ishtar's body, the head stays with Lord Baal.\n<wait>	reads: イシュタルの転生体の身体を集めた所で、頭部はバエル様が持っていらっしゃる。\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:0F	2	124	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:0F	3	139	1FD3	お前{08:62}{08:90}や{08:52}{08:4D}を手に入{08:2F}{01:3E}だ？\n		reads: お前は、どうやってそれを手に入れるつもりだ？\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:0F	3	139	1FD3	お前{08:62}{08:90}や{08:52}{08:4D}を手に入{08:2F}{01:3E}だ？\n	Just how do you intend to get your hands on that?\n	reads: お前は、どうやってそれを手に入れるつもりだ？\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:11	0	32	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:11	1	47	1FD3	せいぜい、無駄なあがきを{08:8E}が{08:7F}{02:08}\n		reads: せいぜい、無駄なあがきをするがいい‥‥‥\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:11	1	47	1FD3	せいぜい、無駄なあがきを{08:8E}が{08:7F}{02:08}\n	Go ahead, struggle all you like. It won't do you any good...\n	reads: せいぜい、無駄なあがきをするがいい‥‥‥\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:12	0	24	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:12	1	44	09	あのバルベリス様を倒すとはな{02:08}{08:72}\n		reads: あのバルベリス様を倒すとはな‥‥‥‥‥\n
-m/MS0020.BIN	0:12	2	80	18	{01:08}様のお言葉が無ければ、今すぐ貴様を八つ裂きに{08:4A}やると{08:68}のに{08:72}！\n		reads: バエル様のお言葉が無ければ、今すぐ貴様を八つ裂きにしてやるというのに‥‥！\n
+m/MS0020.BIN	0:12	1	44	09	あのバルベリス様を倒すとはな{02:08}{08:72}\n	To think you actually defeated Lord Barbelith...\n	reads: あのバルベリス様を倒すとはな‥‥‥‥‥\n
+m/MS0020.BIN	0:12	2	80	18	{01:08}様のお言葉が無ければ、今すぐ貴様を八つ裂きに{08:4A}やると{08:68}のに{08:72}！\n	Without Lord Baal's word, I'd tear you apart this instant...!\n	reads: バエル様のお言葉が無ければ、今すぐ貴様を八つ裂きにしてやるというのに‥‥！\n
 m/MS0020.BIN	0:13	0	24	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:13	1	39	1FD3	ふん{02:08}‥\n貴様などに話す事は無い！　早く出ていけ！！\n		reads: ふん‥‥‥‥\n貴様などに話す事は無い！　早く出ていけ！！\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:13	1	39	1FD3	ふん{02:08}‥\n貴様などに話す事は無い！　早く出ていけ！！\n	Hmph...\nI have nothing to say to the likes of you! Get out of here, now!!\n	reads: ふん‥‥‥‥\n貴様などに話す事は無い！　早く出ていけ！！\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:14	0	32	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:14	1	47	1FD3	イシュタルの転生体の肉を集めたとて、必ず元に戻るとは限ら{08:25}と{08:68}に{02:08}\n		reads: イシュタルの転生体の肉を集めたとて、必ず元に戻るとは限らないというに‥‥‥\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:14	1	47	1FD3	イシュタルの転生体の肉を集めたとて、必ず元に戻るとは限ら{08:25}と{08:68}に{02:08}\n	Gathering all her flesh won't guarantee Ishtar returns to normal...\n	reads: イシュタルの転生体の肉を集めたとて、必ず元に戻るとは限らないというに‥‥‥\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:15	0	32	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:15	1	47	1FD3	{01:27}、貴様が		reads: まさか、貴様が; was @operand in v1; jp is now correct and needs translating
-m/MS0020.BIN	0:15	2	61	00	{04:FF}だとは{02:08}！\n<wait>		reads: だとは‥‥‥！\n<wait>
+m/MS0020.BIN	0:15	1	47	1FD3	{01:27}、貴様が	Don't tell me you're	reads: まさか、貴様が; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:15	2	61	00	{04:FF}だとは{02:08}！\n<wait>	...!\n<wait>	reads: だとは‥‥‥！\n<wait>
 m/MS0020.BIN	0:15	3	82	1FD2	Baal Soldier:	Baal Soldier:	
 m/MS0020.BIN	0:15	4	97	1FD3	ど{08:47}ガキが紛れ込{08:5F}かと思うたわ！！\n	I wondered what brat had wandered in here!!\n	reads: どこのガキが紛れ込んだかと思うたわ！！\n
 m/MS0020.BIN	0:16	0	32	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:16	1	47	1FD3	お前などが{08:90}あが{08:64}{08:87}で、{01:08}様はおろか{02:08}\nバルベリス様にもかなうまいよ{02:08}クククク！\n		reads: お前などがどうあがいたところで、バエル様はおろか‥‥‥\nバルベリス様にもかなうまいよ‥‥‥クククク！\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:16	1	47	1FD3	お前などが{08:90}あが{08:64}{08:87}で、{01:08}様はおろか{02:08}\nバルベリス様にもかなうまいよ{02:08}クククク！\n	No matter how you struggle, you'll never stand a chance against Baal...\nlet alone Lord Barbelith... Kukuku!\n	reads: お前などがどうあがいたところで、バエル様はおろか‥‥‥\nバルベリス様にもかなうまいよ‥‥‥クククク！\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:17	0	24	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:17	1	39	1FD3	{01:08}様{08:62}何を考えておら{08:2F}{08:77}？\n{08:73}ガキをのさばら{08:67}おくなどと{02:08}‥。\n		reads: バエル様は、何を考えておられるのだ？\nこんなガキをのさばらせておくなどと‥‥‥‥。\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:17	1	39	1FD3	{01:08}様{08:62}何を考えておら{08:2F}{08:77}？\n{08:73}ガキをのさばら{08:67}おくなどと{02:08}‥。\n	What is Lord Baal thinking...?\nLetting a brat like this run around unchecked...\n	reads: バエル様は、何を考えておられるのだ？\nこんなガキをのさばらせておくなどと‥‥‥‥。\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:19	0	24	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:19	1	39	1FD3	イシュタル{02:08}か{02:08}\n過去において、{01:08}様の妻であ{08:51}と言うが{02:08}\n		reads: イシュタル‥‥‥か‥‥‥\n過去において、バエル様の妻であったと言うが‥‥‥\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:19	1	39	1FD3	イシュタル{02:08}か{02:08}\n過去において、{01:08}様の妻であ{08:51}と言うが{02:08}\n	Ishtar... huh...\nThey say she was once Lord Baal's wife, long ago...\n	reads: イシュタル‥‥‥か‥‥‥\n過去において、バエル様の妻であったと言うが‥‥‥\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:1A	0	32	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:1A	1	47	1FD3	お前などに話す事は無いな{02:08}‥失せろ！！\n		reads: お前などに話す事は無いな‥‥‥‥失せろ！！\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:1A	1	47	1FD3	お前などに話す事は無いな{02:08}‥失せろ！！\n	I have nothing to say to you. Get lost!!\n	reads: お前などに話す事は無いな‥‥‥‥失せろ！！\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:1C	0	24	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:1C	1	44	09	無駄なあがきを続{08:29}が{08:7F}{02:08}‥\n<wait>		reads: 無駄なあがきを続けるがいい‥‥‥‥\n<wait>
+m/MS0020.BIN	0:1C	1	44	09	無駄なあがきを続{08:29}が{08:7F}{02:08}‥\n<wait>	Keep flailing about uselessly, if you like...\n<wait>	reads: 無駄なあがきを続けるがいい‥‥‥‥\n<wait>
 m/MS0020.BIN	0:1C	2	79	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:1C	3	94	1FD3	{08:90}せ、最後には貴様は死ぬ{08:77}{08:42}な{02:08}‥\n		reads: どうせ、最後には貴様は死ぬのだからな‥‥‥‥\n; was @operand in v1; jp is now correct and needs translating
-m/MS0020.BIN	0:1C	4	132	18	貴様ごとき、{01:08}様の足元にも及ばぬ{08:5E}を{02:08}\n<wait>		reads: 貴様ごとき、バエル様の足元にも及ばぬものを‥‥‥\n<wait>
+m/MS0020.BIN	0:1C	3	94	1FD3	{08:90}せ、最後には貴様は死ぬ{08:77}{08:42}な{02:08}‥\n	You're going to die in the end regardless...\n	reads: どうせ、最後には貴様は死ぬのだからな‥‥‥‥\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:1C	4	132	18	貴様ごとき、{01:08}様の足元にも及ばぬ{08:5E}を{02:08}\n<wait>	Someone like you doesn't even come close to Lord Baal...\n<wait>	reads: 貴様ごとき、バエル様の足元にも及ばぬものを‥‥‥\n<wait>
 m/MS0020.BIN	0:1C	5	179	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:1C	6	194	1FD3	ハッ、せいぜい頑張るが良いさ{02:08}。\n		reads: ハッ、せいぜい頑張るが良いさ‥‥‥。\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:1C	6	194	1FD3	ハッ、せいぜい頑張るが良いさ{02:08}。\n	Hah, do your best, then...\n	reads: ハッ、せいぜい頑張るが良いさ‥‥‥。\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:1D	0	32	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:1D	1	47	1FD3	ああ{02:08}{01:08}様のお考えがわ{08:42}ぬ{02:08}！！\n<wait>みすみす奴を{02:08}‥！\n<wait>		reads: ああ‥‥‥バエル様のお考えがわからぬ‥‥‥！！\n<wait>みすみす奴を‥‥‥‥！\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:1D	1	47	1FD3	ああ{02:08}{01:08}様のお考えがわ{08:42}ぬ{02:08}！！\n<wait>みすみす奴を{02:08}‥！\n<wait>	Ah... I cannot fathom what Lord Baal is thinking...!!\n<wait>Letting him go free like that...!\n	reads: ああ‥‥‥バエル様のお考えがわからぬ‥‥‥！！\n<wait>みすみす奴を‥‥‥‥！\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:1D	2	111	1FD2	Baal Soldier:	Baal Soldier:	
 m/MS0020.BIN	0:1D	3	126	1FD3	ハッ！？　何だ貴様！！　出ていけ！！\n	Hah!? Who the hell are you!? Get out!!\n	
 m/MS0020.BIN	0:1E	0	32	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:1E	1	47	1FD3	クッ{02:08}！！\n本当{08:7D}、今{08:45}で貴様を八つ裂きに{08:4A}やり{08:4E}所だ{08:72}！\n		reads: クッ‥‥‥！！\n本当なら、今ここで貴様を八つ裂きにしてやりたい所だ‥‥！\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:1E	1	47	1FD3	クッ{02:08}！！\n本当{08:7D}、今{08:45}で貴様を八つ裂きに{08:4A}やり{08:4E}所だ{08:72}！\n	Guh...!!\nTruth be told, I'd love nothing more than to tear you apart right here...!\n	reads: クッ‥‥‥！！\n本当なら、今ここで貴様を八つ裂きにしてやりたい所だ‥‥！\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:1F	0	32	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:1F	1	47	1FD3	貴様も、{08:8B}{08:8B}しぶとい男だ{02:08}‥！\n{03:0B}近{08:68}ちに命運尽きる{08:8C}な！\n		reads: 貴様も、よくよくしぶとい男だ‥‥‥‥！\nしかし、近いうちに命運尽きるだろうな！\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:1F	1	47	1FD3	貴様も、{08:8B}{08:8B}しぶとい男だ{02:08}‥！\n{03:0B}近{08:68}ちに命運尽きる{08:8C}な！\n	You really are a stubborn one, aren't you...!\nBut your luck will run out before long!\n	reads: 貴様も、よくよくしぶとい男だ‥‥‥‥！\nしかし、近いうちに命運尽きるだろうな！\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:20	0	32	1FD2	Baal Soldier:	Baal Soldier:	
 m/MS0020.BIN	0:20	1	47	1FD3	貴様、	You,	
-m/MS0020.BIN	0:20	2	57	00	{04:FF}か！！\n<wait>		reads: か！！\n<wait>
+m/MS0020.BIN	0:20	2	57	00	{04:FF}か！！\n<wait>	...!!\n<wait>	reads: か！！\n<wait>
 m/MS0020.BIN	0:20	3	74	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:20	4	89	1FD3	{08:72}{01:08}様も、随分と余裕を見{08:67}おら{08:2F}{08:5E}だ{02:08}\n		reads: ‥‥バエル様も、随分と余裕を見せておられるものだ‥‥‥\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:20	4	89	1FD3	{08:72}{01:08}様も、随分と余裕を見{08:67}おら{08:2F}{08:5E}だ{02:08}\n	...Lord Baal certainly seems to be taking his time about this...\n	reads: ‥‥バエル様も、随分と余裕を見せておられるものだ‥‥‥\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:21	0	24	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:21	1	39	1FD3	{01:08}様は何故、{08:47}者を気にか{08:29}のか？\n<wait>		reads: バエル様は何故、この者を気にかけるのか？\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:21	1	39	1FD3	{01:08}様は何故、{08:47}者を気にか{08:29}のか？\n<wait>	Why does Lord Baal even bother concerning himself with this one?\n<wait>	reads: バエル様は何故、この者を気にかけるのか？\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:21	2	80	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:21	3	95	1FD3	イシュタルの肉体を集め{08:14}とは言え、{02:0C}に手出しをさせぬなど{02:08}\n		reads: イシュタルの肉体を集めているとは言え、我々に手出しをさせぬなど‥‥‥\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:21	3	95	1FD3	イシュタルの肉体を集め{08:14}とは言え、{02:0C}に手出しをさせぬなど{02:08}\n	Even while gathering Ishtar's body, he forbids us from touching it...\n	reads: イシュタルの肉体を集めているとは言え、我々に手出しをさせぬなど‥‥‥\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:23	0	32	1FD2	Baal Soldier:	Baal Soldier:	
 m/MS0020.BIN	0:23	1	47	1FD3	お前など、迷宮で朽ちて{08:83}が{08:7F}！！\n<wait>	May you rot away in this labyrinth!!\n<wait>	reads: お前など、迷宮で朽ちてしまうがいい！！\n<wait>
 m/MS0020.BIN	0:23	2	88	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:23	3	103	1FD3	生きて{01:08}様の御前に出ら{08:2F}と思うな！！\n		reads: 生きてバエル様の御前に出られると思うな！！\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:23	3	103	1FD3	生きて{01:08}様の御前に出ら{08:2F}と思うな！！\n	Don't you dare think you'll live to stand before Lord Baal!!\n	reads: 生きてバエル様の御前に出られると思うな！！\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:26	0	32	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:26	1	47	1FD3	貴様{02:08}{02:08}早く{08:45}を出ていけ{02:08}<wait>目障りだ！！\n		reads: 貴様‥‥‥‥‥‥早くここを出ていけ‥‥‥<wait>目障りだ！！\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:26	1	47	1FD3	貴様{02:08}{02:08}早く{08:45}を出ていけ{02:08}<wait>目障りだ！！\n	You...\nGet out of here, now...<wait>You're an eyesore!!\n	reads: 貴様‥‥‥‥‥‥早くここを出ていけ‥‥‥<wait>目障りだ！！\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:28	0	24	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:28	1	44	09	貴様は所詮、{01:08}様の足元にも及ばぬよ{02:08}ククク。\n		reads: 貴様は所詮、バエル様の足元にも及ばぬよ‥‥‥ククク。\n
-m/MS0020.BIN	0:28	2	92	18	貴様{08:72}バルベリス様の贄と{08:59}為に現{08:60}のか？\nククククク！！\n		reads: 貴様‥‥バルベリス様の贄となる為に現れたのか？\nククククク！！\n
+m/MS0020.BIN	0:28	1	44	09	貴様は所詮、{01:08}様の足元にも及ばぬよ{02:08}ククク。\n	In the end, you'll never measure up to Lord Baal... Kukuku.\n	reads: 貴様は所詮、バエル様の足元にも及ばぬよ‥‥‥ククク。\n
+m/MS0020.BIN	0:28	2	92	18	貴様{08:72}バルベリス様の贄と{08:59}為に現{08:60}のか？\nククククク！！\n	You... Have you come to serve as an offering for Lord Barbelith?\nKukukukuku!!\n	reads: 貴様‥‥バルベリス様の贄となる為に現れたのか？\nククククク！！\n
 m/MS0020.BIN	0:29	0	32	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:29	1	47	1FD3	ほほう{02:08}丁度良い生贄が手に入{08:51}{08:5E}だ{08:72}ククク{08:72}\n		reads: ほほう‥‥‥丁度良い生贄が手に入ったものだ‥‥ククク‥‥\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:29	1	47	1FD3	ほほう{02:08}丁度良い生贄が手に入{08:51}{08:5E}だ{08:72}ククク{08:72}\n	Ho... What a convenient sacrifice has just wandered in... Kuku...\n	reads: ほほう‥‥‥丁度良い生贄が手に入ったものだ‥‥ククク‥‥\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:2A	0	24	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:2A	1	39	1FD3	分{08:42}んな{02:08}\n貴様の何処に、力が秘められ{08:14}と{08:68}{08:77}？\n		reads: 分からんな‥‥‥\n貴様の何処に、力が秘められているというのだ？\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:2A	1	39	1FD3	分{08:42}んな{02:08}\n貴様の何処に、力が秘められ{08:14}と{08:68}{08:77}？\n	I don't understand...\nJust where is this power of yours supposedly hiding?\n	reads: 分からんな‥‥‥\n貴様の何処に、力が秘められているというのだ？\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:2A	2	100	1FD2	Baal Soldier:	Baal Soldier:	
-m/MS0020.BIN	0:2A	3	115	1FD3	あの、バルベリス様をも打ち倒す力を{02:08}\n		reads: あの、バルベリス様をも打ち倒す力を‥‥‥\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:2A	3	115	1FD3	あの、バルベリス様をも打ち倒す力を{02:08}\n	The power that felled even Lord Barbelith himself...\n	reads: あの、バルベリス様をも打ち倒す力を‥‥‥\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:2C	0	24	1FD2	Baal Soldier:	Baal Soldier:	
 m/MS0020.BIN	0:2C	1	39	1FD3	貴様{08:72}{08:0B}の力を借りねば、何も出来{08:25}のでは{08:25}か？\n<wait>	You... can't you do anything without borrowing the power of demons?\n<wait>	reads: 貴様‥‥悪魔の力を借りねば、何も出来ないのではないか？\n<wait>
 m/MS0020.BIN	0:2C	2	94	1FD2	Baal Soldier:	Baal Soldier:	
 m/MS0020.BIN	0:2C	3	109	1FD3	{08:72}腰抜けが{08:72}！！\n	...You coward...!!\n	reads: ‥‥腰抜けが‥‥！！\n
 m/MS0020.BIN	0:2D	0	24	1FD2	若者：	Young Man:	
-m/MS0020.BIN	0:2D	1	37	09	{01:08}さえ倒せれば、{08:47}東京に台頭{08:4A}き{08:2B}{08:0B}は今の所{08:24}。\n<wait>		reads: バエルさえ倒せれば、この東京に台頭してきてる悪魔は今の所いない。\n<wait>
+m/MS0020.BIN	0:2D	1	37	09	{01:08}さえ倒せれば、{08:47}東京に台頭{08:4A}き{08:2B}{08:0B}は今の所{08:24}。\n<wait>	As long as we take down Baal, no other demon's currently rising in Tokyo.\n<wait>	reads: バエルさえ倒せれば、この東京に台頭してきてる悪魔は今の所いない。\n<wait>
 m/MS0020.BIN	0:2D	2	94	1FD2	若者：	Young Man:	
 m/MS0020.BIN	0:2D	3	102	1FD3	奴さえいなくなれば、一応は東京に平和が戻る{08:5F}！\n<wait>	If that guy were just gone, Tokyo would at least get some peace back!\n<wait>	reads: 奴さえいなくなれば、一応は東京に平和が戻るんだ！\n<wait>
 m/MS0020.BIN	0:2D	4	157	1FD2	若者：	Young Man:	
-m/MS0020.BIN	0:2D	5	165	1FD3	奴さえいなくなれば{02:08}\n		reads: 奴さえいなくなれば‥‥‥\n; was @operand in v1; jp is now correct and needs translating
-m/MS0020.BIN	0:2D	6	192	09	本当にバール教徒が大人しく{08:1A}良{08:18}。\n{08:74}ど、{08:76}そこら辺にも、{08:0B}は腐るほど{08:40}もんな。\n<wait>		reads: 本当にバール教徒が大人しくなって良かった。\nだけど、まだそこら辺にも、悪魔は腐るほどいるもんな。\n<wait>
+m/MS0020.BIN	0:2D	5	165	1FD3	奴さえいなくなれば{02:08}\n	If only he were gone...\n	reads: 奴さえいなくなれば‥‥‥\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:2D	6	192	09	本当にバール教徒が大人しく{08:1A}良{08:18}。\n{08:74}ど、{08:76}そこら辺にも、{08:0B}は腐るほど{08:40}もんな。\n<wait>	I'm just glad the Baal cultists have finally settled down.\nStill, there are plenty of demons crawling around out there.\n<wait>	reads: 本当にバール教徒が大人しくなって良かった。\nだけど、まだそこら辺にも、悪魔は腐るほどいるもんな。\n<wait>
 m/MS0020.BIN	0:2D	7	280	1FD2	若者：	Young Man:	
 m/MS0020.BIN	0:2D	8	288	1FD3	マジで、平和には程遠いぜ！\n	Seriously, we're nowhere near peace!\n	
-m/MS0020.BIN	0:2D	9	316	00	生贄の儀式{08:62}最近に{08:1A}行わ{08:2F}{08:69}に{08:16}{08:5F}。\n{08:4D}{08:71}、何も言{08:52}{08:19}のに{02:08}\n		reads: 生贄の儀式は、最近になって行われるようになったんだ。\nそれまで、何も言ってなかったのに‥‥‥\n
+m/MS0020.BIN	0:2D	9	316	00	生贄の儀式{08:62}最近に{08:1A}行わ{08:2F}{08:69}に{08:16}{08:5F}。\n{08:4D}{08:71}、何も言{08:52}{08:19}のに{02:08}\n	The sacrificial rituals only started happening recently.\nThey never said a word about it before that...\n	reads: 生贄の儀式は、最近になって行われるようになったんだ。\nそれまで、何も言ってなかったのに‥‥‥\n
 m/MS0020.BIN	0:2E	0	24	1FD2	男性：	Man:	
-m/MS0020.BIN	0:2E	1	37	09	諸悪の根源が倒れ{08:25}限り{08:62}{08:6C}に平和に{08:59}訳{08:81}{08:25}もんな{02:08}\n		reads: 諸悪の根源が倒れない限りは、完全に平和になる訳じゃないもんな‥‥‥\n
-m/MS0020.BIN	0:2E	2	94	09	生贄を求{08:2E}{08:0B}を倒{08:4A}、街に平和を取り戻しま{08:4B}{08:72}\n{08:6A}てまるで、お伽話み{08:4E}だな！　ハハハ！\n		reads: 生贄を求める悪魔を倒して、街に平和を取り戻しました‥‥\nなんてまるで、お伽話みたいだな！　ハハハ！\n
-m/MS0020.BIN	0:2E	3	179	00	バール教徒達{08:62}生贄の儀式を行っ{08:14}らしい。\n今の所、{08:45}らの{02:0B}{08:42}被害は出て{08:24}が{08:72}\nいつ俺達も生贄に{03:0C}るか、戦々恐々だよ！\n		reads: バール教徒達は、生贄の儀式を行っているらしい。\n今の所、ここらの人間から被害は出ていないが‥‥\nいつ俺達も生贄にされるか、戦々恐々だよ！\n
+m/MS0020.BIN	0:2E	1	37	09	諸悪の根源が倒れ{08:25}限り{08:62}{08:6C}に平和に{08:59}訳{08:81}{08:25}もんな{02:08}\n	As long as this evil's root stands, things'll never be truly peaceful...\n	reads: 諸悪の根源が倒れない限りは、完全に平和になる訳じゃないもんな‥‥‥\n
+m/MS0020.BIN	0:2E	2	94	09	生贄を求{08:2E}{08:0B}を倒{08:4A}、街に平和を取り戻しま{08:4B}{08:72}\n{08:6A}てまるで、お伽話み{08:4E}だな！　ハハハ！\n	'We beat the demon demanding sacrifices and brought peace to the city'...\nSounds just like something out of a fairy tale! Hahaha!\n	reads: 生贄を求める悪魔を倒して、街に平和を取り戻しました‥‥\nなんてまるで、お伽話みたいだな！　ハハハ！\n
+m/MS0020.BIN	0:2E	3	179	00	バール教徒達{08:62}生贄の儀式を行っ{08:14}らしい。\n今の所、{08:45}らの{02:0B}{08:42}被害は出て{08:24}が{08:72}\nいつ俺達も生贄に{03:0C}るか、戦々恐々だよ！\n	I hear the Baal cultists have been holding sacrificial rituals.\nNo one around here has been hurt so far, but...\nWe're all scared stiff, wondering when we'll be next!\n	reads: バール教徒達は、生贄の儀式を行っているらしい。\n今の所、ここらの人間から被害は出ていないが‥‥\nいつ俺達も生贄にされるか、戦々恐々だよ！\n
 m/MS0020.BIN	0:2F	0	24	1FD2	男性：	Man:	
-m/MS0020.BIN	0:2F	1	37	09	腹心の部下もほとんど倒{03:0C}て、{01:08}の奴、段々追い詰められ{08:2B}な。\n<wait>		reads: 腹心の部下もほとんど倒されて、バエルの奴、段々追い詰められてるな。\n<wait>
+m/MS0020.BIN	0:2F	1	37	09	腹心の部下もほとんど倒{03:0C}て、{01:08}の奴、段々追い詰められ{08:2B}な。\n<wait>	With most of his top men defeated, Baal's getting more and more cornered.\n<wait>	reads: 腹心の部下もほとんど倒されて、バエルの奴、段々追い詰められてるな。\n<wait>
 m/MS0020.BIN	0:2F	2	104	1FD2	男性：	Man:	
-m/MS0020.BIN	0:2F	3	112	1FD3	追い詰められ{08:2B}と言{08:52}も、俺達には{08:90}{08:8E}事も出来{08:25}が{02:08}\n		reads: 追い詰められてると言っても、俺達にはどうする事も出来ないが‥‥‥\n; was @operand in v1; jp is now correct and needs translating
-m/MS0020.BIN	0:2F	4	169	09	バール教団は大人しく{08:16}{08:84}、奴ら{08:79}{08:5E}が無く{08:16}訳では無い{08:42}な。\n<wait>		reads: バール教団は大人しくなったけど、奴らそのものが無くなった訳では無いからな。\n<wait>
+m/MS0020.BIN	0:2F	3	112	1FD3	追い詰められ{08:2B}と言{08:52}も、俺達には{08:90}{08:8E}事も出来{08:25}が{02:08}\n	Not that it helps us any, since there's nothing we can actually do...\n	reads: 追い詰められてると言っても、俺達にはどうする事も出来ないが‥‥‥\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:2F	4	169	09	バール教団は大人しく{08:16}{08:84}、奴ら{08:79}{08:5E}が無く{08:16}訳では無い{08:42}な。\n<wait>	The Baal cult's quieted down, but that doesn't mean they're actually gone.\n<wait>	reads: バール教団は大人しくなったけど、奴らそのものが無くなった訳では無いからな。\n<wait>
 m/MS0020.BIN	0:2F	5	236	1FD2	男性：	Man:	
-m/MS0020.BIN	0:2F	6	244	1FD3	都庁の上に{08:62}{01:08}城が着々と出来てき{08:14}し、{08:48}で終わる{08:85}は無い{08:5F}。\n		reads: 都庁の上には、バエル城が着々と出来てきているし、これで終わるはずは無いんだ。\n; was @operand in v1; jp is now correct and needs translating
-m/MS0020.BIN	0:2F	7	306	00	上野は今、バール教徒に乗っ取られちまっ{08:2B}。\n誰も奴らには逆らえ{08:25}。\n<wait>		reads: 上野は今、バール教徒に乗っ取られちまってる。\n誰も奴らには逆らえない。\n<wait>
+m/MS0020.BIN	0:2F	6	244	1FD3	都庁の上に{08:62}{01:08}城が着々と出来てき{08:14}し、{08:48}で終わる{08:85}は無い{08:5F}。\n	Baal's castle keeps rising atop City Hall, so this definitely isn't over.\n	reads: 都庁の上には、バエル城が着々と出来てきているし、これで終わるはずは無いんだ。\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:2F	7	306	00	上野は今、バール教徒に乗っ取られちまっ{08:2B}。\n誰も奴らには逆らえ{08:25}。\n<wait>	Ueno's been completely taken over by the Baal cultists.\nNo one dares to stand against them.\n<wait>	reads: 上野は今、バール教徒に乗っ取られちまってる。\n誰も奴らには逆らえない。\n<wait>
 m/MS0020.BIN	0:2F	8	380	1FD2	男性：	Man:	
-m/MS0020.BIN	0:2F	9	388	1FD3	逆らっ{08:50}最後、{08:63}が生贄に{03:0C}るか{08:5D}れ{08:25}{08:5F}{08:42}な。\n		reads: 逆らったら最後、自分が生贄にされるかもしれないんだからな。\n; v1 had a translation here but it was written against a mis-read line (v1 control token {0C} has no counterpart in the v2 source line); re-translate
+m/MS0020.BIN	0:2F	9	388	1FD3	逆らっ{08:50}最後、{08:63}が生贄に{03:0C}るか{08:5D}れ{08:25}{08:5F}{08:42}な。\n	Cross them once, and you might be the next one offered up as a sacrifice.\n	reads: 逆らったら最後、自分が生贄にされるかもしれないんだからな。\n; v1 had a translation here but it was written against a mis-read line (v1 control token {0C} has no counterpart in the v2 source line); re-translate
 m/MS0020.BIN	0:30	0	24	1FD2	女性：	Woman:	
-m/MS0020.BIN	0:30	1	37	09	{01:08}{02:08}何て奴{08:6B}{02:08}‥\n		reads: バエル‥‥‥何て奴なの‥‥‥‥\n
-m/MS0020.BIN	0:30	2	60	09	バール教徒達も、案外大{08:4B}事無{08:18}のかねぇ{08:72}\nうちらが束でかかっ{08:21}ら、何とか{08:16}かも。\n		reads: バール教徒達も、案外大した事無かったのかねぇ‥‥\nうちらが束でかかっていったら、何とかなったかも。\n
-m/MS0020.BIN	0:30	3	141	00	ちょ{08:53}アンタ！　よそ者だね？\n<wait>		reads: ちょっとアンタ！　よそ者だね？\n<wait>
+m/MS0020.BIN	0:30	1	37	09	{01:08}{02:08}何て奴{08:6B}{02:08}‥\n	Baal... What a monster...\n	reads: バエル‥‥‥何て奴なの‥‥‥‥\n
+m/MS0020.BIN	0:30	2	60	09	バール教徒達も、案外大{08:4B}事無{08:18}のかねぇ{08:72}\nうちらが束でかかっ{08:21}ら、何とか{08:16}かも。\n	Maybe the Baal cultists weren't such a big deal after all...\nIf we'd all banded together, we might've actually managed something.\n	reads: バール教徒達も、案外大した事無かったのかねぇ‥‥\nうちらが束でかかっていったら、何とかなったかも。\n
+m/MS0020.BIN	0:30	3	141	00	ちょ{08:53}アンタ！　よそ者だね？\n<wait>	Hey, you there! You're not from around here, are you?\n<wait>	reads: ちょっとアンタ！　よそ者だね？\n<wait>
 m/MS0020.BIN	0:30	4	178	1FD2	女性：	Woman:	
 m/MS0020.BIN	0:30	5	186	1FD3	悪い事は言わ{08:25}。早く{08:45}{08:42}離れな！\n	Take my advice. Get away from here, quick!\n	reads: 悪い事は言わない。早くここから離れな！\n
 m/MS0020.BIN	0:31	0	24	1FD2	男の子：	Boy:	
-m/MS0020.BIN	0:31	1	39	09	{08:76}{08:0B}がたくさん{08:40}{08:42}、外で遊べ{08:25}{08:5F}。つまん{08:25}の！\n		reads: まだ悪魔がたくさんいるから、外で遊べないんだ。つまんないの！\n
-m/MS0020.BIN	0:31	2	87	00	外{08:62}バール教徒がいっぱ{08:7F}て、子供が捕まると食べられちゃうんでしょ？\n<wait>		reads: 外は、バール教徒がいっぱいいて、子供が捕まると食べられちゃうんでしょ？\n<wait>
+m/MS0020.BIN	0:31	1	39	09	{08:76}{08:0B}がたくさん{08:40}{08:42}、外で遊べ{08:25}{08:5F}。つまん{08:25}の！\n	There's still tons of demons out there, so I can't play outside. Boring!\n	reads: まだ悪魔がたくさんいるから、外で遊べないんだ。つまんないの！\n
+m/MS0020.BIN	0:31	2	87	00	外{08:62}バール教徒がいっぱ{08:7F}て、子供が捕まると食べられちゃうんでしょ？\n<wait>	Outside's crawling with Baal cultists who eat kids they catch, right?\n<wait>	reads: 外は、バール教徒がいっぱいいて、子供が捕まると食べられちゃうんでしょ？\n<wait>
 m/MS0020.BIN	0:31	3	162	1FD2	男の子：	Boy:	
-m/MS0020.BIN	0:31	4	172	1FD3	早く外に出て遊び{08:4E}な{02:08}\n		reads: 早く外に出て遊びたいな‥‥‥\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:31	4	172	1FD3	早く外に出て遊び{08:4E}な{02:08}\n	I just wanna go outside and play already...\n	reads: 早く外に出て遊びたいな‥‥‥\n; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:32	0	24	1FD2	女性：	Woman:	
-m/MS0020.BIN	0:32	1	37	09	今に{08:4A}思えば、バール教団が急に生贄の儀式を始めた時{08:72}\nあの時既に、本物の{01:08}は新宿に移{08:52}{08:64}のね{08:72}。\n		reads: 今にして思えば、バール教団が急に生贄の儀式を始めた時‥‥\nあの時既に、本物のバエルは新宿に移っていたのね‥‥。\n
-m/MS0020.BIN	0:32	2	139	09	そうそう。\n前に浅草の辺りを歩いてた時、いきなり、水をぶっかけら{08:60}{08:46}{08:7B}のよ！\n<wait>		reads: そうそう。\n前に浅草の辺りを歩いてた時、いきなり、水をぶっかけられたことあるのよ！\n<wait>
+m/MS0020.BIN	0:32	1	37	09	今に{08:4A}思えば、バール教団が急に生贄の儀式を始めた時{08:72}\nあの時既に、本物の{01:08}は新宿に移{08:52}{08:64}のね{08:72}。\n	Looking back, when the Baal cult suddenly began those sacrifice rituals...\nThe real Baal must have already moved to Shinjuku by then...\n	reads: 今にして思えば、バール教団が急に生贄の儀式を始めた時‥‥\nあの時既に、本物のバエルは新宿に移っていたのね‥‥。\n
+m/MS0020.BIN	0:32	2	139	09	そうそう。\n前に浅草の辺りを歩いてた時、いきなり、水をぶっかけら{08:60}{08:46}{08:7B}のよ！\n<wait>	Oh, right.\nOne time in Asakusa, someone suddenly splashed water all over me!\n<wait>	reads: そうそう。\n前に浅草の辺りを歩いてた時、いきなり、水をぶっかけられたことあるのよ！\n<wait>
 m/MS0020.BIN	0:32	3	223	1FD2	女性：	Woman:	
-m/MS0020.BIN	0:32	4	231	1FD3	周りを見{08:54}誰も{08:24}し、{08:20}く悪質{08:25}たずらよね！\n{01:24}で、風邪ひいちゃ{08:51}のよ！\n		reads: 周りを見ても誰もいないし、まったく悪質ないたずらよね！\nおかげで、風邪ひいちゃったのよ！\n; was @operand in v1; jp is now correct and needs translating
-m/MS0020.BIN	0:32	5	302	00	{08:47}生活、イヤに{08:1A}くるわ！\nバール教徒に怯えながら、暮らさなきゃ{08:7D}{08:25}{08:6A}て{02:08}\n<wait>		reads: この生活、イヤになってくるわ！\nバール教徒に怯えながら、暮らさなきゃならないなんて‥‥‥\n<wait>
+m/MS0020.BIN	0:32	4	231	1FD3	周りを見{08:54}誰も{08:24}し、{08:20}く悪質{08:25}たずらよね！\n{01:24}で、風邪ひいちゃ{08:51}のよ！\n	I looked around and there was nobody there, what a nasty prank!\nAnd thanks to that, I caught a cold!\n	reads: 周りを見ても誰もいないし、まったく悪質ないたずらよね！\nおかげで、風邪ひいちゃったのよ！\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:32	5	302	00	{08:47}生活、イヤに{08:1A}くるわ！\nバール教徒に怯えながら、暮らさなきゃ{08:7D}{08:25}{08:6A}て{02:08}\n<wait>	I'm getting so sick of this life!\nHaving to live in fear of the Baal cultists all the time...\n<wait>	reads: この生活、イヤになってくるわ！\nバール教徒に怯えながら、暮らさなきゃならないなんて‥‥‥\n<wait>
 m/MS0020.BIN	0:32	6	382	1FD2	女性：	Woman:	
-m/MS0020.BIN	0:32	7	390	1FD3	{08:56}、バール教徒がいなくた{08:52}、{08:6D}みち{08:0B}に怯えながら暮らす{08:5F}{08:42}、\nあまり変わりは{08:25}のか{08:5D}れ{08:25}わ。\n<wait>	But even without the Baal cultists, we'd still be living in fear of demons either way,\nso maybe it doesn't make much difference.\n<wait>	reads: でも、バール教徒がいなくたって、どのみち悪魔に怯えながら暮らすんだから、\nあまり変わりはないのかもしれないわ。\n<wait>
+m/MS0020.BIN	0:32	7	390	1FD3	{08:56}、バール教徒がいなくた{08:52}、{08:6D}みち{08:0B}に怯えながら暮らす{08:5F}{08:42}、\nあまり変わりは{08:25}のか{08:5D}れ{08:25}わ。\n<wait>	But even without the Baal cultists, we'd still fear demons either way,\nso maybe it doesn't make much difference.\n<wait>	reads: でも、バール教徒がいなくたって、どのみち悪魔に怯えながら暮らすんだから、\nあまり変わりはないのかもしれないわ。\n<wait>
 m/MS0020.BIN	0:32	8	490	1FD2	女性：	Woman:	
-m/MS0020.BIN	0:32	9	498	1FD3	{08:0B}がいなく{08:59}世界{08:6A}て、そうすぐに来る{08:5E}{08:81}{08:25}{08:5E}ね。\n	A world without demons isn't something that's going to come along anytime soon, after all.\n	reads: 悪魔がいなくなる世界なんて、そうすぐに来るものじゃないものね。\n
+m/MS0020.BIN	0:32	9	498	1FD3	{08:0B}がいなく{08:59}世界{08:6A}て、そうすぐに来る{08:5E}{08:81}{08:25}{08:5E}ね。\n	A demon-free world isn't coming along anytime soon, after all.\n	reads: 悪魔がいなくなる世界なんて、そうすぐに来るものじゃないものね。\n
 m/MS0020.BIN	0:33	0	24	1FD2	男性：	Man:	
-m/MS0020.BIN	0:33	1	37	09	{01:08}の奴、{08:63}は隠{08:60}り、城の中で動か{08:19}り{02:08}！\nたまには{08:63}の方{08:42}、出て{08:1E}り{08:4A}みろ{08:52}{08:5F}！\n		reads: バエルの奴、自分は隠れたり、城の中で動かなかったり‥‥‥！\nたまには自分の方から、出てきたりしてみろってんだ！\n
-m/MS0020.BIN	0:33	2	123	09	{01:08}は既に、上野には{08:24}のか{02:08}‥\nと、{08:4C}{02:08}{08:5C}奴の居場所は一つだな！\n		reads: バエルは既に、上野にはいないのか‥‥‥‥\nと、すると‥‥‥もう奴の居場所は一つだな！\n
-m/MS0020.BIN	0:33	3	186	00	上野界隈で{08:62}大人しくし{08:2B}事だな。\n下手に目立つと、バール教徒に目をつけら{08:2F}ぞ。\n		reads: 上野界隈では、大人しくしてる事だな。\n下手に目立つと、バール教徒に目をつけられるぞ。\n
+m/MS0020.BIN	0:33	1	37	09	{01:08}の奴、{08:63}は隠{08:60}り、城の中で動か{08:19}り{02:08}！\nたまには{08:63}の方{08:42}、出て{08:1E}り{08:4A}みろ{08:52}{08:5F}！\n	That Baal, always hiding away, never budging from inside his castle...!\nHe should try coming out here himself for once!\n	reads: バエルの奴、自分は隠れたり、城の中で動かなかったり‥‥‥！\nたまには自分の方から、出てきたりしてみろってんだ！\n
+m/MS0020.BIN	0:33	2	123	09	{01:08}は既に、上野には{08:24}のか{02:08}‥\nと、{08:4C}{02:08}{08:5C}奴の居場所は一つだな！\n	So Baal's not even in Ueno anymore, huh...\nWhich means... there's only one place left he could be!\n	reads: バエルは既に、上野にはいないのか‥‥‥‥\nと、すると‥‥‥もう奴の居場所は一つだな！\n
+m/MS0020.BIN	0:33	3	186	00	上野界隈で{08:62}大人しくし{08:2B}事だな。\n下手に目立つと、バール教徒に目をつけら{08:2F}ぞ。\n	Best to keep a low profile around Ueno.\nStand out too much and the Baal cultists will take notice of you.\n	reads: 上野界隈では、大人しくしてる事だな。\n下手に目立つと、バール教徒に目をつけられるぞ。\n
 m/MS0020.BIN	0:34	0	24	1FD2	女性：	Woman:	
-m/MS0020.BIN	0:34	1	37	09	{01:16}達{08:47}{08:7E}、{01:08}の言いなりに{08:59}{08:86}{08:25}のかしら‥？\n		reads: あたし達このまま、バエルの言いなりになるしかないのかしら‥？\n
-m/MS0020.BIN	0:34	2	86	09	バール教団、本当にいなく{08:16}のね！\n<wait>		reads: バール教団、本当にいなくなったのね！\n<wait>
+m/MS0020.BIN	0:34	1	37	09	{01:16}達{08:47}{08:7E}、{01:08}の言いなりに{08:59}{08:86}{08:25}のかしら‥？\n	Are we really just gonna keep doing whatever Baal says...?\n	reads: あたし達このまま、バエルの言いなりになるしかないのかしら‥？\n
+m/MS0020.BIN	0:34	2	86	09	バール教団、本当にいなく{08:16}のね！\n<wait>	The Baal cult really is gone now!\n<wait>	reads: バール教団、本当にいなくなったのね！\n<wait>
 m/MS0020.BIN	0:34	3	127	1FD2	女性：	Woman:	
-m/MS0020.BIN	0:34	4	135	1FD3	{08:56}、今度は新宿の方に集結{08:4A}き{08:2B}み{08:4E}{02:08}\n		reads: でも、今度は新宿の方に集結してきてるみたい‥‥‥\n; was @operand in v1; jp is now correct and needs translating
-m/MS0020.BIN	0:34	5	173	00	バール教団{08:62}生贄の儀式をやっ{08:2B}らしいわ。\n<wait>		reads: バール教団は、生贄の儀式をやってるらしいわ。\n<wait>
+m/MS0020.BIN	0:34	4	135	1FD3	{08:56}、今度は新宿の方に集結{08:4A}き{08:2B}み{08:4E}{02:08}\n	But it looks like they're regrouping over in Shinjuku now...\n	reads: でも、今度は新宿の方に集結してきてるみたい‥‥‥\n; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:34	5	173	00	バール教団{08:62}生贄の儀式をやっ{08:2B}らしいわ。\n<wait>	I hear the Baal cult's been performing sacrificial rituals.\n<wait>	reads: バール教団は、生贄の儀式をやってるらしいわ。\n<wait>
 m/MS0020.BIN	0:34	6	222	1FD2	女性：	Woman:	
-m/MS0020.BIN	0:34	7	230	1FD3	あいつら、確かに戦闘能力は{08:7B}{08:84}、毎回毎回{08:8B}生贄を連れて来{08:2F}わね。\n<wait>	Those guys sure do have combat skill, but how do they keep bringing in sacrifices every single time?\n<wait>	reads: あいつら、確かに戦闘能力はあるけど、毎回毎回よく生贄を連れて来れるわね。\n<wait>
+m/MS0020.BIN	0:34	7	230	1FD3	あいつら、確かに戦闘能力は{08:7B}{08:84}、毎回毎回{08:8B}生贄を連れて来{08:2F}わね。\n<wait>	Those guys have real skill, but how do they keep finding sacrifices?\n<wait>	reads: あいつら、確かに戦闘能力はあるけど、毎回毎回よく生贄を連れて来れるわね。\n<wait>
 m/MS0020.BIN	0:34	8	303	1FD2	女性：	Woman:	
-m/MS0020.BIN	0:34	9	311	1FD3	どこかに生贄用の{02:0B}{08:56}飼っ{08:2B}のかしら？\n		reads: どこかに生贄用の人間でも飼ってるのかしら？\n; v1 had a translation here but it was written against a mis-read line (v1 control token {0B} has no counterpart in the v2 source line); re-translate
+m/MS0020.BIN	0:34	9	311	1FD3	どこかに生贄用の{02:0B}{08:56}飼っ{08:2B}のかしら？\n	I wonder if they're keeping people somewhere just for sacrifices?\n	reads: どこかに生贄用の人間でも飼ってるのかしら？\n; v1 had a translation here but it was written against a mis-read line (v1 control token {0B} has no counterpart in the v2 source line); re-translate
 m/MS0020.BIN	0:35	0	2	1FD2	女戦士：	Female Warrior:	
-m/MS0020.BIN	0:35	1	17	09	{01:08}もかなり手駒を失っ{08:2B}み{08:4E}ね{02:08}\n側近も、かなり減っ{08:2B}ん{08:81}{08:25}？\n<wait>		reads: バエルもかなり手駒を失ってるみたいね‥‥‥\n側近も、かなり減ってるんじゃない？\n<wait>
-m/MS0020.BIN	0:35	2	82	00	バール教団{08:62}どっか行っちゃ{08:51}のね！\n<wait>		reads: バール教団は、どっか行っちゃったのね！\n<wait>
+m/MS0020.BIN	0:35	1	17	09	{01:08}もかなり手駒を失っ{08:2B}み{08:4E}ね{02:08}\n側近も、かなり減っ{08:2B}ん{08:81}{08:25}？\n<wait>	Sounds like Baal's lost quite a few of his pawns...\nHis inner circle must be getting pretty thin too, don't you think?\n<wait>	reads: バエルもかなり手駒を失ってるみたいね‥‥‥\n側近も、かなり減ってるんじゃない？\n<wait>
+m/MS0020.BIN	0:35	2	82	00	バール教団{08:62}どっか行っちゃ{08:51}のね！\n<wait>	The Baal cult just up and left, huh!\n<wait>	reads: バール教団は、どっか行っちゃったのね！\n<wait>
 m/MS0020.BIN	0:35	3	125	1FD2	女戦士：	Female Warrior:	
 m/MS0020.BIN	0:35	4	135	1FD3	{08:56}、奴らき{08:53}何処かに潜伏し{08:2B}に違{08:24}わ！\n絶対安心{08:6A}か出来{08:25}{08:5F}{08:42}！\n<wait>	But they must be lurking somewhere for sure!\nThere's absolutely no way we can let our guard down!\n<wait>	reads: でも、奴らきっと何処かに潜伏してるに違いないわ！\n絶対安心なんか出来ないんだから！\n<wait>
 m/MS0020.BIN	0:36	0	2	1FD2	男性：	Man:	
-m/MS0020.BIN	0:36	1	15	09	{08:47}世界に本当に神{08:52}{08:5E}が{08:40}{08:7D}、{01:08}を何とか{08:4A}く{08:60}{08:52}、\n{08:7F}と思わ{08:25}か！？\n<wait>		reads: この世界に本当に神ってものがいるなら、バエルを何とかしてくれたって、\nいいと思わないか！？\n<wait>
-m/MS0020.BIN	0:36	2	86	00	{08:76}、外には{08:0B}がウヨウヨし{08:2B}{08:84}さ、いつ生贄に{03:0C}るか{08:52}、\nビクビクしながら暮らさ{08:25}で済む{08:74}、マシ{08:52}モンだ。\n<wait>		reads: まだ、外には悪魔がウヨウヨしてるけどさ、いつ生贄にされるかって、\nビクビクしながら暮らさないで済むだけ、マシってモンだ。\n<wait>
+m/MS0020.BIN	0:36	1	15	09	{08:47}世界に本当に神{08:52}{08:5E}が{08:40}{08:7D}、{01:08}を何とか{08:4A}く{08:60}{08:52}、\n{08:7F}と思わ{08:25}か！？\n<wait>	If there's really a god in this world, you'd think they'd help with Baal,\nwouldn't you!?\n<wait>	reads: この世界に本当に神ってものがいるなら、バエルを何とかしてくれたって、\nいいと思わないか！？\n<wait>
+m/MS0020.BIN	0:36	2	86	00	{08:76}、外には{08:0B}がウヨウヨし{08:2B}{08:84}さ、いつ生贄に{03:0C}るか{08:52}、\nビクビクしながら暮らさ{08:25}で済む{08:74}、マシ{08:52}モンだ。\n<wait>	Sure, there's still demons crawling all over out there, but\nat least I don't fear being sacrificed anymore. That's something.\n<wait>	reads: まだ、外には悪魔がウヨウヨしてるけどさ、いつ生贄にされるかって、\nビクビクしながら暮らさないで済むだけ、マシってモンだ。\n<wait>
 m/MS0020.BIN	0:37	0	2	1FD2	怪しい男：	Suspicious Man:	
-m/MS0020.BIN	0:37	1	19	09	{08:5C}{08:72}終わりか{08:5D}れ{08:25}な{02:08}{08:72}\n所詮{08:62}{01:08}の思いどおりだ{08:51}{08:52}訳だ{08:72}\n<wait>		reads: もう‥‥終わりかもしれないな‥‥‥‥‥\n所詮は、バエルの思いどおりだったって訳だ‥‥\n<wait>
-m/MS0020.BIN	0:37	2	82	00	生贄の儀式{08:62}なくなっち{08:20}のか{02:08}\n<wait>		reads: 生贄の儀式は、なくなっちまったのか‥‥‥\n<wait>
+m/MS0020.BIN	0:37	1	19	09	{08:5C}{08:72}終わりか{08:5D}れ{08:25}な{02:08}{08:72}\n所詮{08:62}{01:08}の思いどおりだ{08:51}{08:52}訳だ{08:72}\n<wait>	Maybe... this really is the end...\nGuess everything went exactly the way Baal wanted, in the end...\n<wait>	reads: もう‥‥終わりかもしれないな‥‥‥‥‥\n所詮は、バエルの思いどおりだったって訳だ‥‥\n<wait>
+m/MS0020.BIN	0:37	2	82	00	生贄の儀式{08:62}なくなっち{08:20}のか{02:08}\n<wait>	So the sacrificial rituals have stopped, huh...\n<wait>	reads: 生贄の儀式は、なくなっちまったのか‥‥‥\n<wait>
 m/MS0020.BIN	0:37	3	121	1FD2	怪しい男：	Suspicious Man:	
 m/MS0020.BIN	0:37	4	133	1FD3	せっかく、商売のネタを持{08:52}来たのによ。\n<wait>	And here I brought some good business material, too.\n<wait>	reads: せっかく、商売のネタを持って来たのによ。\n<wait>
 m/MS0020.BIN	0:38	0	2	1FD2	男性：	Man:	
-m/MS0020.BIN	0:38	1	15	09	{08:45}を解放{08:4B}奴み{08:4E}にさ、{01:08}を倒{08:4A}東京を救{08:52}く{08:2F}{02:08}‥\n<wait>		reads: ここを解放した奴みたいにさ、バエルを倒して東京を救ってくれる‥‥‥‥\n<wait>
+m/MS0020.BIN	0:38	1	15	09	{08:45}を解放{08:4B}奴み{08:4E}にさ、{01:08}を倒{08:4A}東京を救{08:52}く{08:2F}{02:08}‥\n<wait>	Like whoever freed this place... someone to defeat Baal and save Tokyo...\n<wait>	reads: ここを解放した奴みたいにさ、バエルを倒して東京を救ってくれる‥‥‥‥\n<wait>
 m/MS0020.BIN	0:38	2	72	1FD2	男性：	Man:	
-m/MS0020.BIN	0:38	3	80	1FD3	{08:7A}豪気な奴が現れてくれ{08:25}モンかね{02:08}\nハァ{08:72}東京は{08:5C}終わりかも知れんな{08:72}\n<wait>		reads: そんな豪気な奴が現れてくれないモンかね‥‥‥\nハァ‥‥東京はもう終わりかも知れんな‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
-m/MS0020.BIN	0:38	4	155	00	{01:27}、バール教の支配{08:42}逃れら{08:2F}とはな！\n<wait>		reads: まさか、バール教の支配から逃れられるとはな！\n<wait>
+m/MS0020.BIN	0:38	3	80	1FD3	{08:7A}豪気な奴が現れてくれ{08:25}モンかね{02:08}\nハァ{08:72}東京は{08:5C}終わりかも知れんな{08:72}\n<wait>	Guess someone that gutsy just isn't gonna show up, huh...\nHaah... Tokyo might really be finished...\n<wait>	reads: そんな豪気な奴が現れてくれないモンかね‥‥‥\nハァ‥‥東京はもう終わりかも知れんな‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:38	4	155	00	{01:27}、バール教の支配{08:42}逃れら{08:2F}とはな！\n<wait>	To think we'd actually manage to escape the Baal cult's grip!\n<wait>	reads: まさか、バール教の支配から逃れられるとはな！\n<wait>
 m/MS0020.BIN	0:38	5	200	1FD2	男性：	Man:	
-m/MS0020.BIN	0:38	6	208	1FD3	{08:48}で、{01:08}も滅びてく{08:60}{08:5F}っ{08:50}良い{08:5F}がな。\n<wait>		reads: これで、バエルも滅びてくれたんだったら良いんだがな。\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:38	6	208	1FD3	{08:48}で、{01:08}も滅びてく{08:60}{08:5F}っ{08:50}良い{08:5F}がな。\n<wait>	If only this meant Baal was finished too.\n<wait>	reads: これで、バエルも滅びてくれたんだったら良いんだがな。\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:39	0	2	1FD2	女性：	Woman:	
-m/MS0020.BIN	0:39	1	15	09	今に渋谷の天使達が、{08:0B}討伐に乗り出{08:4A}くるわ！\nき{08:53}そうよ！　そうに違{08:24}わ！！\n<wait>		reads: 今に渋谷の天使達が、悪魔討伐に乗り出してくるわ！\nきっとそうよ！　そうに違いないわ！！\n<wait>
-m/MS0020.BIN	0:39	2	96	00	{08:48}{08:56}う、生贄に{03:0C}る心配も無いのね！\n<wait>		reads: これでもう、生贄にされる心配も無いのね！\n<wait>
+m/MS0020.BIN	0:39	1	15	09	今に渋谷の天使達が、{08:0B}討伐に乗り出{08:4A}くるわ！\nき{08:53}そうよ！　そうに違{08:24}わ！！\n<wait>	Any day now, the angels of Shibuya will start hunting down the demons!\nI just know it! There's no way I'm wrong!!\n<wait>	reads: 今に渋谷の天使達が、悪魔討伐に乗り出してくるわ！\nきっとそうよ！　そうに違いないわ！！\n<wait>
+m/MS0020.BIN	0:39	2	96	00	{08:48}{08:56}う、生贄に{03:0C}る心配も無いのね！\n<wait>	So that means we don't have to worry about being sacrificed anymore!\n<wait>	reads: これでもう、生贄にされる心配も無いのね！\n<wait>
 m/MS0020.BIN	0:39	3	139	1FD2	女性：	Woman:	
 m/MS0020.BIN	0:39	4	147	1FD3	{08:56}、{08:0B}の勢いは衰えて{08:25}わ。\n一体いつに{08:16}ら、安心{08:4A}暮ら{08:2A}のかしら{08:72}？\n<wait>	But the demons' momentum hasn't let up at all.\nI wonder when we'll ever be able to live in peace again...?\n<wait>	reads: でも、悪魔の勢いは衰えてないわ。\n一体いつになったら、安心して暮らせるのかしら‥‥？\n<wait>
 m/MS0020.BIN	0:3A	0	2	1FD2	若者：	Young Man:	
@@ -334,7 +334,7 @@ m/MS0020.BIN	0:3C	1	91	1FBA	From behind him, another man emerges.\n<wait>	From b
 m/MS0020.BIN	0:3C	2	164	1FD2	Sanshirou:	Sanshirou:	
 m/MS0020.BIN	0:3C	3	176	1FD3	Katsuragi! Thank god...\nI was freaking out when I woke up and didn't see you anywhere.\n<wait>	Katsuragi! Thank god...\nI was freaking out when I woke up and didn't see you anywhere.\n<wait>	
 m/MS0020.BIN	0:3C	4	271	1FD2	Sanshirou:	Sanshirou:	
-m/MS0020.BIN	0:3C	5	283	1FD3	{02:08}{08:47}人は{02:08}\n{02:08}何て酷い{02:08}{08:72}\n<wait>		reads: ‥‥‥この人は‥‥‥\n‥‥‥何て酷い‥‥‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:3C	5	283	1FD3	{02:08}{08:47}人は{02:08}\n{02:08}何て酷い{02:08}{08:72}\n<wait>	...This person...\n...How horrible...\n<wait>	reads: ‥‥‥この人は‥‥‥\n‥‥‥何て酷い‥‥‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:3C	6	317	1FD2	Sanshirou:	Sanshirou:	
 m/MS0020.BIN	0:3C	7	329	1FD3	待{08:52}ろ、今手当て{08:4A}やる{08:42}な。\n<wait>	Hang on, I'll patch you up now.\n<wait>	reads: 待ってろ、今手当てしてやるからな。\n<wait>
 m/MS0020.BIN	0:3C	8	366	1FD0	Sanshirou quickly treats the man's wounds. Looking slightly better\nbut still not good, he lifts his gaze to look up at you.\n<wait>	Sanshirou quickly treats the man's wounds. Looking slightly better\nbut still not good, he lifts his gaze to look up at you.\n<wait>	
@@ -351,13 +351,13 @@ m/MS0020.BIN	0:3C	18	786	1FBA	The man seems to be having extreme trouble breathi
 m/MS0020.BIN	0:3C	19	848	1FD1	>What will you do?\n	>What will you do?\n	
 m/MS0020.BIN	0:3C	20	883	1FB2	Help him	Help him	menu option, declared width 20 columns
 m/MS0020.BIN	0:3C	21	893	1FB2	Do nothing	Do nothing	menu option, declared width 20 columns
-m/MS0020.BIN	0:3C	22	917	0F	{01:82}	{01:82}	reads: 
-m/MS0020.BIN	0:3C	23	920	00			
+m/MS0020.BIN	0:3C	22	917	0F	{01:82}		reads: ; @skip (token-only row, no literal text)
+m/MS0020.BIN	0:3C	23	920	00			@skip (private-use glyph artifact, not real text)
 m/MS0020.BIN	0:3C	24	931	1FD0	You approach the man in an attempt to help him.\n<wait>	You approach the man in an attempt to help him.\n<wait>	
 m/MS0020.BIN	0:3C	25	987	1FD2	Man:	Man:	
-m/MS0020.BIN	0:3C	26	993	1FD3	ミ‥ニア{02:08}ム{08:72}は{02:08}{08:0B}{02:08}{08:72}が{02:08}\n奴{02:08}は{02:08}鏡{02:08}を{02:08}‥\n<wait>		reads: ミ‥ニア‥‥‥ム‥‥は‥‥‥悪魔‥‥‥‥‥が‥‥‥\n奴‥‥‥は‥‥‥鏡‥‥‥を‥‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
-m/MS0020.BIN	0:3C	27	1064	00	{04:FF}は男を放置{08:4A}お{08:64}。\n<wait>		reads: は男を放置しておいた。\n<wait>
-m/MS0020.BIN	0:3C	28	1091	1FBA	{03:0B}男はか細い声でこう告{08:44}。\n<wait>		reads: しかし、男はか細い声でこう告げた。\n<wait>; v1 had a translation here but it was written against a mis-read line (v1 control token {0B} has no counterpart in the v2 source line); re-translate
+m/MS0020.BIN	0:3C	26	993	1FD3	ミ‥ニア{02:08}ム{08:72}は{02:08}{08:0B}{02:08}{08:72}が{02:08}\n奴{02:08}は{02:08}鏡{02:08}を{02:08}‥\n<wait>	M-Millenni...um... is... a demon......\nThat thing... is... a mirror......\n<wait>	reads: ミ‥ニア‥‥‥ム‥‥は‥‥‥悪魔‥‥‥‥‥が‥‥‥\n奴‥‥‥は‥‥‥鏡‥‥‥を‥‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:3C	27	1064	00	{04:FF}は男を放置{08:4A}お{08:64}。\n<wait>	...left the man there.\n<wait>	reads: は男を放置しておいた。\n<wait>
+m/MS0020.BIN	0:3C	28	1091	1FBA	{03:0B}男はか細い声でこう告{08:44}。\n<wait>	However, the man managed to say this in a faint voice.\n<wait>	reads: しかし、男はか細い声でこう告げた。\n<wait>; v1 had a translation here but it was written against a mis-read line (v1 control token {0B} has no counterpart in the v2 source line); re-translate
 m/MS0020.BIN	0:3C	29	1127	18	With that, he draws his final breath, and ceases moving.\n<wait>	With that, he draws his final breath, and ceases moving.\n<wait>	
 m/MS0020.BIN	0:3C	30	1213	1FD0	Not long after, Sanshirou returns.\n<wait>	Not long after, Sanshirou returns.\n<wait>	
 m/MS0020.BIN	0:3C	31	1278	1FD2	Sanshirou:	Sanshirou:	
@@ -380,39 +380,39 @@ m/MS0020.BIN	0:3D	4	248	1FD0	The dragon looks too strong for you to take on.\nYo
 m/MS0020.BIN	0:3E	0	27	1FD0	This seems to be the way out.\n<wait>	This seems to be the way out.\n<wait>	
 m/MS0020.BIN	0:3E	1	63	1FBA	You open the gate.\n<wait>	You open the gate.\n<wait>	
 m/MS0020.BIN	0:3F	0	141	1FD2	{08:3C}：	Sanshirou:	reads: 三四郎：
-m/MS0020.BIN	0:3F	1	147	1FD3	う{08:72}{01:03}{08:72}頼む{02:08}\n<wait>俺の{02:08}懐{08:42}{08:72}宝珠を{02:08}そ{08:4A}{08:72}{08:4D}を額に{08:72}\n<wait>		reads: う‥‥ニュートン‥‥頼む‥‥‥\n<wait>俺の‥‥‥懐から‥‥宝珠を‥‥‥そして‥‥それを額に‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:3F	1	147	1FD3	う{08:72}{01:03}{08:72}頼む{02:08}\n<wait>俺の{02:08}懐{08:42}{08:72}宝珠を{02:08}そ{08:4A}{08:72}{08:4D}を額に{08:72}\n<wait>	Ugh... Newton... please...\n<wait>From my... pocket... the jewel... and then... hold it to my forehead...\n<wait>	reads: う‥‥ニュートン‥‥頼む‥‥‥\n<wait>俺の‥‥‥懐から‥‥宝珠を‥‥‥そして‥‥それを額に‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:3F	2	211	1FD0	{08:3C}は苦しげにそう告{08:44}。\n<wait>	Sanshirou says this, clearly in pain.\n<wait>	reads: 三四郎は苦しげにそう告げた。\n<wait>
-m/MS0020.BIN	0:3F	3	240	1FBA	{01:03}{08:62}器用に{08:3C}の懐を探ると、小さな袋に入{08:51}宝珠を見つけ出{08:4B}。\n<wait>		reads: ニュートンは、器用に三四郎の懐を探ると、小さな袋に入った宝珠を見つけ出した。\n<wait>; v1 had a translation here but it was written against a mis-read line (v1 control token {03} has no counterpart in the v2 source line); re-translate
+m/MS0020.BIN	0:3F	3	240	1FBA	{01:03}{08:62}器用に{08:3C}の懐を探ると、小さな袋に入{08:51}宝珠を見つけ出{08:4B}。\n<wait>	Newton digs through Sanshirou's pocket and finds a jewel in a small pouch.\n<wait>	reads: ニュートンは、器用に三四郎の懐を探ると、小さな袋に入った宝珠を見つけ出した。\n<wait>; v1 had a translation here but it was written against a mis-read line (v1 control token {03} has no counterpart in the v2 source line); re-translate
 m/MS0020.BIN	0:3F	4	305	1FBA	そ{08:4A}{08:4D}を、言わ{08:60}とおりに{08:3C}の額にかざ{08:4B}。\n<wait>	And just as instructed, holds it up to Sanshirou's forehead.\n<wait>	reads: そしてそれを、言われたとおりに三四郎の額にかざした。\n<wait>
-m/MS0020.BIN	0:3F	5	380	1F77	数瞬の後、{08:3C}のみ{08:7D}ず、		reads: 数瞬の後、三四郎のみならず、
-m/MS0020.BIN	0:3F	6	406	00	{04:FF}の身体の傷も全て治{08:52}{08:64}{02:08}。\n<wait>		reads: の身体の傷も全て治っていた‥‥‥。\n<wait>
+m/MS0020.BIN	0:3F	5	380	1F77	数瞬の後、{08:3C}のみ{08:7D}ず、	A few moments later, not only Sanshirou,	reads: 数瞬の後、三四郎のみならず、
+m/MS0020.BIN	0:3F	6	406	00	{04:FF}の身体の傷も全て治{08:52}{08:64}{02:08}。\n<wait>	but even your wounds had been completely healed...\n<wait>	reads: の身体の傷も全て治っていた‥‥‥。\n<wait>
 m/MS0020.BIN	0:3F	7	443	1FD2	{08:3C}：	Sanshirou:	reads: 三四郎：
-m/MS0020.BIN	0:3F	8	449	1FD3	{01:2A}な、{01:03}。本当に助{08:18}よ。\nお前は命の恩人だぜ！\n<wait>		reads: ありがとうな、ニュートン。本当に助かったよ。\nお前は命の恩人だぜ！\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:3F	8	449	1FD3	{01:2A}な、{01:03}。本当に助{08:18}よ。\nお前は命の恩人だぜ！\n<wait>	Thanks, Newton. You really saved us back there.\nYou're a real lifesaver!\n<wait>	reads: ありがとうな、ニュートン。本当に助かったよ。\nお前は命の恩人だぜ！\n<wait>; was @operand in v1; jp is now correct and needs translating
 m/MS0020.BIN	0:3F	9	503	1FD2	{08:3C}：	Sanshirou:	reads: 三四郎：
 m/MS0020.BIN	0:3F	10	509	1FD3	さぁ、あそこが出口だ。や{08:53}脱出できるぞ。\n<wait>	Look, there's the exit. We can finally get out of here.\n<wait>	reads: さぁ、あそこが出口だ。やっと脱出できるぞ。\n<wait>
 m/MS0020.BIN	0:3F	11	561	1FD2	{08:3C}：	Sanshirou:	reads: 三四郎：
-m/MS0020.BIN	0:3F	12	571	00	{04:FF}！！　		reads: ！！　
-m/MS0020.BIN	0:3F	13	583	00	{04:FF}、しっかりしろ！\n出口はすぐそこだ！\n<wait>		reads: 、しっかりしろ！\n出口はすぐそこだ！\n<wait>
+m/MS0020.BIN	0:3F	12	571	00	{04:FF}！！　	!!	reads: ！！　
+m/MS0020.BIN	0:3F	13	583	00	{04:FF}、しっかりしろ！\n出口はすぐそこだ！\n<wait>	, hang in there!\nThe exit's right there!\n<wait>	reads: 、しっかりしろ！\n出口はすぐそこだ！\n<wait>
 m/MS0020.BIN	0:3F	14	634	1FD2	{08:3C}：	Sanshirou:	reads: 三四郎：
-m/MS0020.BIN	0:3F	15	640	1FD3	{02:08}仕方{08:25}。<wait>{08:48}を{02:08}\n<wait>		reads: ‥‥‥仕方ない。<wait>これを‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
-m/MS0020.BIN	0:3F	16	669	1FD0	{08:3C}{08:62}懐{08:42}小さな袋を取り出し中に入{08:52}{08:64}宝珠を、\n	Sanshirou pulls a small pouch from his coat and takes out the jewel inside,\n	reads: 三四郎は、懐から小さな袋を取り出し中に入っていた宝珠を、\n
-m/MS0020.BIN	0:3F	17	718	00	{04:FF}の額にかざ{08:4B}{02:08}。\n<wait>		reads: の額にかざした‥‥‥。\n<wait>
-m/MS0020.BIN	0:3F	18	771	1F77	数瞬の後、		
-m/MS0020.BIN	0:3F	19	785	00	{04:FF}の身体の傷は全て治{08:52}{08:64}{02:08}。\n<wait>		reads: の身体の傷は全て治っていた‥‥‥。\n<wait>
+m/MS0020.BIN	0:3F	15	640	1FD3	{02:08}仕方{08:25}。<wait>{08:48}を{02:08}\n<wait>	...I have no choice.<wait>Take this...\n<wait>	reads: ‥‥‥仕方ない。<wait>これを‥‥‥\n<wait>; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:3F	16	669	1FD0	{08:3C}{08:62}懐{08:42}小さな袋を取り出し中に入{08:52}{08:64}宝珠を、\n	Sanshirou pulls a small pouch from his coat and takes out the jewel,\n	reads: 三四郎は、懐から小さな袋を取り出し中に入っていた宝珠を、\n
+m/MS0020.BIN	0:3F	17	718	00	{04:FF}の額にかざ{08:4B}{02:08}。\n<wait>	...and held it against your forehead...\n<wait>	reads: の額にかざした‥‥‥。\n<wait>
+m/MS0020.BIN	0:3F	18	771	1F77	数瞬の後、	A few moments later,	
+m/MS0020.BIN	0:3F	19	785	00	{04:FF}の身体の傷は全て治{08:52}{08:64}{02:08}。\n<wait>	your wounds were completely healed...\n<wait>	reads: の身体の傷は全て治っていた‥‥‥。\n<wait>
 m/MS0020.BIN	0:3F	20	822	1FD2	{08:3C}：	Sanshirou:	reads: 三四郎：
-m/MS0020.BIN	0:3F	21	828	1FD3	{01:32}か？　		reads: 大丈夫か？　; was @operand in v1; jp is now correct and needs translating
-m/MS0020.BIN	0:3F	22	840	00	{04:FF}。\nさぁ、あそこが出口だ。や{08:53}脱出できるぞ。\n<wait>		reads: 。\nさぁ、あそこが出口だ。やっと脱出できるぞ。\n<wait>
+m/MS0020.BIN	0:3F	21	828	1FD3	{01:32}か？　	Are you okay?	reads: 大丈夫か？　; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:3F	22	840	00	{04:FF}。\nさぁ、あそこが出口だ。や{08:53}脱出できるぞ。\n<wait>	...\nCome on, there's the exit. We can finally get out of here.\n<wait>	reads: 。\nさぁ、あそこが出口だ。やっと脱出できるぞ。\n<wait>
 m/MS0020.BIN	0:3F	23	954	1FD2	{08:3C}：	Sanshirou:	reads: 三四郎：
 m/MS0020.BIN	0:3F	24	960	1FD3	う{08:72}	Ngh...	reads: う‥‥
-m/MS0020.BIN	0:3F	25	968	00	{04:FF}{08:72}\n<wait>俺の{02:08}懐{08:42}{08:72}宝珠を{02:08}そ{08:4A}{08:72}{08:4D}を額に{08:72}\n<wait>		reads: ‥‥\n<wait>俺の‥‥‥懐から‥‥宝珠を‥‥‥そして‥‥それを額に‥‥\n<wait>
+m/MS0020.BIN	0:3F	25	968	00	{04:FF}{08:72}\n<wait>俺の{02:08}懐{08:42}{08:72}宝珠を{02:08}そ{08:4A}{08:72}{08:4D}を額に{08:72}\n<wait>	......\n<wait>From my... pocket... the jewel... and then... hold it to my forehead...\n<wait>	reads: ‥‥\n<wait>俺の‥‥‥懐から‥‥宝珠を‥‥‥そして‥‥それを額に‥‥\n<wait>
 m/MS0020.BIN	0:3F	26	1022	1FD0	{08:3C}は苦しげにそう告{08:44}。\n<wait>	Sanshirou says this, clearly in pain.\n<wait>	reads: 三四郎は苦しげにそう告げた。\n<wait>
-m/MS0020.BIN	0:3F	27	1055	00	{04:FF}{08:62}{08:3C}の懐を探り小さな袋に入{08:51}宝珠を見つけ出し、\n{08:3C}の額にかざ{08:4B}{02:08}。\n<wait>		reads: は、三四郎の懐を探り小さな袋に入った宝珠を見つけ出し、\n三四郎の額にかざした‥‥‥。\n<wait>
-m/MS0020.BIN	0:3F	28	1157	1F77	数瞬の後、{08:3C}の身体の傷は全て治{08:52}{08:64}{02:08}。\n<wait>		reads: 数瞬の後、三四郎の身体の傷は全て治っていた‥‥‥。\n<wait>
+m/MS0020.BIN	0:3F	27	1055	00	{04:FF}{08:62}{08:3C}の懐を探り小さな袋に入{08:51}宝珠を見つけ出し、\n{08:3C}の額にかざ{08:4B}{02:08}。\n<wait>	...searched through Sanshirou's pocket, found the jewel in a small pouch,\nand held it to Sanshirou's forehead...\n<wait>	reads: は、三四郎の懐を探り小さな袋に入った宝珠を見つけ出し、\n三四郎の額にかざした‥‥‥。\n<wait>
+m/MS0020.BIN	0:3F	28	1157	1F77	数瞬の後、{08:3C}の身体の傷は全て治{08:52}{08:64}{02:08}。\n<wait>	A few moments later, Sanshirou's wounds were completely healed...\n<wait>	reads: 数瞬の後、三四郎の身体の傷は全て治っていた‥‥‥。\n<wait>
 m/MS0020.BIN	0:3F	29	1202	1FBA	宝珠は砂の様になり、	The jewel crumbles to sand,	
-m/MS0020.BIN	0:3F	30	1226	00	{04:FF}の指の間{08:42}こぼれ落ち{08:21}。\n<wait>		reads: の指の間からこぼれ落ちていった。\n<wait>
+m/MS0020.BIN	0:3F	30	1226	00	{04:FF}の指の間{08:42}こぼれ落ち{08:21}。\n<wait>	...slipped through your fingers.\n<wait>	reads: の指の間からこぼれ落ちていった。\n<wait>
 m/MS0020.BIN	0:3F	31	1261	1FD2	{08:3C}：	Sanshirou:	reads: 三四郎：
-m/MS0020.BIN	0:3F	32	1267	1FD3	{02:08}すま{08:19}な{08:72}		reads: ‥‥‥すまなかったな‥‥; was @operand in v1; jp is now correct and needs translating
-m/MS0020.BIN	0:3F	33	1283	00	{04:FF}{08:72}。\n<wait>本当は{08:48}、お前にやろうと思{08:52}た{08:5F}{08:84}な。\n<wait>		reads: ‥‥。\n<wait>本当はこれ、お前にやろうと思ってたんだけどな。\n<wait>
+m/MS0020.BIN	0:3F	32	1267	1FD3	{02:08}すま{08:19}な{08:72}	...Sorry about that...	reads: ‥‥‥すまなかったな‥‥; was @operand in v1; jp is now correct and needs translating
+m/MS0020.BIN	0:3F	33	1283	00	{04:FF}{08:72}。\n<wait>本当は{08:48}、お前にやろうと思{08:52}た{08:5F}{08:84}な。\n<wait>	......\n<wait>Truth is, I was planning on giving this to you.\n<wait>	reads: ‥‥。\n<wait>本当はこれ、お前にやろうと思ってたんだけどな。\n<wait>
 m/MS0020.BIN	0:3F	34	1344	1FD2	{08:3C}：	Sanshirou:	reads: 三四郎：
 m/MS0020.BIN	0:3F	35	1350	1FD3	Look, there it is! The way out!\n<wait>	Look, there it is! The way out!\n<wait>	
 m/MS0020.BIN	0:3F	36	1394	1FD0	Just then, Sanshirou gets all serious.\n<wait>	Just then, Sanshirou gets all serious.\n<wait>	
@@ -422,7 +422,7 @@ m/MS0020.BIN	0:3F	39	1473	1FD0	He clearly wants to say something.\n	He clearly w
 m/MS0020.BIN	0:3F	40	1524	1FB2	Say it	Say it	menu option, declared width 20 columns
 m/MS0020.BIN	0:3F	41	1532	1FB2	Ignore him	Ignore him	menu option, declared width 20 columns
 m/MS0020.BIN	0:3F	42	1556	0F	{01:01}	{01:01}	reads: 山瀬勇
-m/MS0020.BIN	0:3F	43	1559	00			
+m/MS0020.BIN	0:3F	43	1559	00			@skip (private-use glyph artifact, not real text)
 m/MS0020.BIN	0:3F	44	1564	1FD2	{08:3C}：	Sanshirou:	reads: 三四郎：
 m/MS0020.BIN	0:3F	45	1570	1FD3	The truth is...\n<wait>	The truth is...\n<wait>	
 m/MS0020.BIN	0:3F	46	1594	1FD2	{08:3C}：	Sanshirou:	reads: 三四郎：
@@ -437,7 +437,7 @@ m/MS0020.BIN	0:3F	54	1999	1FD2	{08:3C}：	Sanshirou:	reads: 三四郎：
 m/MS0020.BIN	0:3F	55	2005	1FD3	So, yeah...\n	So, yeah...\n	
 m/MS0020.BIN	0:3F	56	2033	1FB2	Damn...	Damn...	menu option, declared width 20 columns
 m/MS0020.BIN	0:3F	57	2042	1FB2	Whatever	Whatever	menu option, declared width 20 columns
-m/MS0020.BIN	0:3F	58	2064	0F	{01:99}{01:FF}	{01:99}{01:FF}	reads: 
+m/MS0020.BIN	0:3F	58	2064	0F	{01:99}{01:FF}		reads: ; @skip (token-only row, no literal text)
 m/MS0020.BIN	0:3F	59	2072	1FD2	{08:3C}：	Sanshirou:	reads: 三四郎：
 m/MS0020.BIN	0:3F	60	2078	1FD3	I'm sorry! I really want to help you. I do. It's just...\n<wait>	I'm sorry! I really want to help you. I do. It's just...\n<wait>	
 m/MS0020.BIN	0:3F	61	2143	1FD0	You attempt to convince Sanshirou to stay.\n<wait>	You attempt to convince Sanshirou to stay.\n<wait>	
@@ -458,17 +458,17 @@ m/MS0020.BIN	0:3F	75	2851	1FD3	Hey, Ayato... Do you love me?\n	Hey, Ayato... Do 
 m/MS0020.BIN	0:3F	76	2897	1FB2	Yes	Yes	menu option, declared width 20 columns
 m/MS0020.BIN	0:3F	77	2902	1FB2	No	No	menu option, declared width 20 columns
 m/MS0020.BIN	0:3F	78	2918	0F	{01:01}	{01:01}	reads: 山瀬勇
-m/MS0020.BIN	0:3F	79	2921	00			
+m/MS0020.BIN	0:3F	79	2921	00			@skip (private-use glyph artifact, not real text)
 m/MS0020.BIN	0:3F	80	2926	1FD2	Rui:	Rui:	
 m/MS0020.BIN	0:3F	81	2932	1FD3	In that case, would you be willing to kill me?\n	In that case, would you be willing to kill me?\n	
 m/MS0020.BIN	0:3F	82	2995	1FB2	Yes	Yes	menu option, declared width 20 columns
 m/MS0020.BIN	0:3F	83	3000	1FB2	No	No	menu option, declared width 20 columns
 m/MS0020.BIN	0:3F	84	3016	0F	{01:25}	{01:25}	reads: ＹＥＳ
-m/MS0020.BIN	0:3F	85	3019	00			
-m/MS0020.BIN	0:3F	86	3036	1F4F	{03:17}	{03:17}	reads: 
-m/MS0020.BIN	0:3F	87	3054	1F4E	{03:17}	{03:17}	reads: 
-m/MS0020.BIN	0:3F	88	3072	1F4E	{03:17}	{03:17}	reads: 
-m/MS0020.BIN	0:3F	89	3090	1F4F	{03:17}	{03:17}	reads: 
+m/MS0020.BIN	0:3F	85	3019	00			@skip (private-use glyph artifact, not real text)
+m/MS0020.BIN	0:3F	86	3036	1F4F	{03:17}		reads: ; @skip (token-only row, no literal text)
+m/MS0020.BIN	0:3F	87	3054	1F4E	{03:17}		reads: ; @skip (token-only row, no literal text)
+m/MS0020.BIN	0:3F	88	3072	1F4E	{03:17}		reads: ; @skip (token-only row, no literal text)
+m/MS0020.BIN	0:3F	89	3090	1F4F	{03:17}		reads: ; @skip (token-only row, no literal text)
 m/MS0020.BIN	0:3F	90	3096	1FD2	Rui:	Rui:	
 m/MS0020.BIN	0:3F	91	3102	1FD3	Huh...\n	Huh...\n	
 m/MS0020.BIN	0:3F	92	3116	1FD2	Rui:	Rui:	
@@ -476,13 +476,13 @@ m/MS0020.BIN	0:3F	93	3122	1FD3	In that case, would you be willing to die for me?
 m/MS0020.BIN	0:3F	94	3188	1FB2	Yes	Yes	menu option, declared width 20 columns
 m/MS0020.BIN	0:3F	95	3193	1FB2	No	No	menu option, declared width 20 columns
 m/MS0020.BIN	0:3F	96	3209	0F	{01:DE}	{01:DE}	reads: 
-m/MS0020.BIN	0:3F	97	3231	1F4F	{03:17}	{03:17}	reads: 
-m/MS0020.BIN	0:3F	98	3249	1F4E	{03:17}	{03:17}	reads: 
+m/MS0020.BIN	0:3F	97	3231	1F4F	{03:17}		reads: ; @skip (token-only row, no literal text)
+m/MS0020.BIN	0:3F	98	3249	1F4E	{03:17}		reads: ; @skip (token-only row, no literal text)
 m/MS0020.BIN	0:3F	99	3253	1FD2	Rui:	Rui:	
 m/MS0020.BIN	0:3F	100	3259	1FD3	Huh...\n	Huh...\n	
 m/MS0020.BIN	0:3F	101	3282	1FB2	Why?	Why?	menu option, declared width 20 columns
 m/MS0020.BIN	0:3F	102	3288	1FB2	What is going on?	What is going on?	menu option, declared width 20 columns
 m/MS0020.BIN	0:3F	103	3319	0F	{01:01}	{01:01}	reads: 山瀬勇
-m/MS0020.BIN	0:3F	104	3322	00			
+m/MS0020.BIN	0:3F	104	3322	00			@skip (private-use glyph artifact, not real text)
 m/MS0020.BIN	0:3F	105	3327	1FD2	Rui:	Rui:	
 m/MS0020.BIN	0:3F	106	3333	1FD3	...Don't think too much about it. Bye...\n<wait>	...Don't think too much about it. Bye...\n<wait>	

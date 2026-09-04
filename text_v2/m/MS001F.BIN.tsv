@@ -190,11 +190,11 @@ m/MS001F.BIN	0:02	62	3901	1FD3	It pains me to say, but I have very little time l
 m/MS001F.BIN	0:02	63	4020	1FD2	Murmur:	Murmur:	
 m/MS001F.BIN	0:02	64	4029	1FD3	Hehehe...\n<wait>	Hehehe...\n<wait>	
 m/MS001F.BIN	0:02	65	4065	1EBE	{01:00}	{01:00}	reads: 早坂達也
-m/MS001F.BIN	0:02	66	4069	00	{06:00}	{06:00}	reads: 辞書５
-m/MS001F.BIN	0:02	67	4072	00	{04:FF}	{04:FF}	reads: 
+m/MS001F.BIN	0:02	66	4069	00	{06:00}	Dictionary 5	reads: 辞書５
+m/MS001F.BIN	0:02	67	4072	00	{04:FF}		reads:  @skip lone name-pool call, empty reads, no renderable text
 m/MS001F.BIN	0:02	68	4075	00	d	d	
-m/MS001F.BIN	0:02	69	4089	1F82	ﾅ		
-m/MS001F.BIN	0:02	70	4096	11	{01:42}{=EA}{=00}	{01:42}{=EA}{=00}	reads: {=EA}{=00}
+m/MS001F.BIN	0:02	69	4089	1F82	ﾅ		@skip lone stray half-width kana character, control-byte leftover
+m/MS001F.BIN	0:02	70	4096	11	{01:42}{=EA}{=00}		reads: {=EA}{=00} @skip lone name-pool call + raw-byte fragment, no renderable text
 m/MS001F.BIN	0:02	71	4117	1FD2	Murmur:	Murmur:	
 m/MS001F.BIN	0:02	72	4126	1FD3	Nishino	Nishino	
 m/MS001F.BIN	0:02	73	4139	1FFA	... 	... 	
@@ -235,11 +235,11 @@ m/MS001F.BIN	0:03	3	99	1FD3	It pains me to say, but I have very little time left
 m/MS001F.BIN	0:03	4	222	1FD2	Murmur:	Murmur:	
 m/MS001F.BIN	0:03	5	231	1FD3	Hehehehe...\n<wait>	Hehehehe...\n<wait>	
 m/MS001F.BIN	0:03	6	269	1EBE	{01:00}	{01:00}	reads: 早坂達也
-m/MS001F.BIN	0:03	7	273	00	{06:00}	{06:00}	reads: 辞書５
-m/MS001F.BIN	0:03	8	276	00	{04:FF}	{04:FF}	reads: 
+m/MS001F.BIN	0:03	7	273	00	{06:00}	Dictionary 5	reads: 辞書５
+m/MS001F.BIN	0:03	8	276	00	{04:FF}		reads:  @skip lone name-pool call, empty reads, no renderable text
 m/MS001F.BIN	0:03	9	279	00	d	d	
-m/MS001F.BIN	0:03	10	293	1F82	ﾅ		
-m/MS001F.BIN	0:03	11	300	11	{01:42}{=EA}{=00}	{01:42}{=EA}{=00}	reads: {=EA}{=00}
+m/MS001F.BIN	0:03	10	293	1F82	ﾅ		@skip lone stray half-width kana character, control-byte leftover
+m/MS001F.BIN	0:03	11	300	11	{01:42}{=EA}{=00}		reads: {=EA}{=00} @skip lone name-pool call + raw-byte fragment, no renderable text
 m/MS001F.BIN	0:03	12	321	1FD2	Murmur:	Murmur:	
 m/MS001F.BIN	0:03	13	330	1FD3	Nishino	Nishino	
 m/MS001F.BIN	0:03	14	343	1FFA	... 	... 	
@@ -314,9 +314,9 @@ m/MS001F.BIN	0:05	3	332	1FB2	Red	Red	record reaches an engine no-op opcode; veri
 m/MS001F.BIN	0:05	4	337	1FB2	Blue	Blue	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	5	343	1FB2	Green	Green	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	6	350	1FB2	Yellow	Yellow	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
-m/MS001F.BIN	0:05	7	370	0F	{01:12}	{01:12}	record reaches an engine no-op opcode; verify in game; reads: あなたの
-m/MS001F.BIN	0:05	8	373	00	{02:01}	{02:01}	record reaches an engine no-op opcode; verify in game; reads: ペンタグランマ
-m/MS001F.BIN	0:05	9	381	17			record reaches an engine no-op opcode; verify in game
+m/MS001F.BIN	0:05	7	370	0F	{01:12}		record reaches an engine no-op opcode; verify in game; reads: あなたの @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	8	373	00	{02:01}		record reaches an engine no-op opcode; verify in game; reads: ペンタグランマ @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	9	381	17			record reaches an engine no-op opcode; verify in game @skip stray control-byte artifact in a record flagged 'reaches an engine no-op opcode', no renderable text
 m/MS001F.BIN	0:05	10	422	1FD0	You are walking down a lovely grass field.\nA gentle gust of wind brushes against your cheeks.\nSuddenly, the road before you splits in two.\nOn your left, you can see a forest, and on your\nright, a small hill.\n<wait>	You are walking down a lovely grass field.\nA gentle gust of wind brushes against your cheeks.\nSuddenly, the road before you splits in two.\nOn your left, you can see a forest, and on your\nright, a small hill.\n<wait>	record reaches an engine no-op opcode; verify in game
 m/MS001F.BIN	0:05	11	636	1FBA	Which path do you choose?\n	Which path do you choose?\n	record reaches an engine no-op opcode; verify in game
 m/MS001F.BIN	0:05	12	678	1FB2	Left into the forest	Left into the forest	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
@@ -324,110 +324,110 @@ m/MS001F.BIN	0:05	13	700	1FB2	Right up the hill	Right up the hill	record reaches
 m/MS001F.BIN	0:05	14	719	1FB2	Untrodden middle path	Untrodden middle path	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	15	742	1FB2	Take a break	Take a break	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	16	756	1FB2	Let fate decide	Let fate decide	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
-m/MS001F.BIN	0:05	17	785	0F	{01:32}	{01:32}	record reaches an engine no-op opcode; verify in game; reads: 大丈夫
-m/MS001F.BIN	0:05	18	788	00	{02:01}Y	{02:01}Y	record reaches an engine no-op opcode; verify in game; reads: ペンタグランマY
-m/MS001F.BIN	0:05	19	792	00	{03:01}t	{03:01}t	record reaches an engine no-op opcode; verify in game; reads: そんなことt
-m/MS001F.BIN	0:05	20	796	00	{04:01}･		record reaches an engine no-op opcode; verify in game; reads: 切り･
-m/MS001F.BIN	0:05	21	800	00			record reaches an engine no-op opcode; verify in game
-m/MS001F.BIN	0:05	22	825	12	{03:18}	{03:18}	record reaches an engine no-op opcode; verify in game; reads: 
-m/MS001F.BIN	0:05	23	828	00	{02:1F}ﾍ		record reaches an engine no-op opcode; verify in game; reads: ﾍ
-m/MS001F.BIN	0:05	24	832	00	{01:00}{01:18}ｰ		record reaches an engine no-op opcode; verify in game; reads: 早坂達也あんたｰ
-m/MS001F.BIN	0:05	25	849	00	{02:1F}ﾍ		record reaches an engine no-op opcode; verify in game; reads: ﾍ
-m/MS001F.BIN	0:05	26	855	00	{01:1F}{=E8}{=03}	{01:1F}{=E8}{=03}	record reaches an engine no-op opcode; verify in game; reads: おにいちゃん{=E8}{=03}
-m/MS001F.BIN	0:05	27	893	1E00	{03:12}	{03:12}	record reaches an engine no-op opcode; verify in game; reads: 切り
-m/MS001F.BIN	0:05	28	942	12	{03:13}"	{03:13}"	record reaches an engine no-op opcode; verify in game; reads: 目の前に"
-m/MS001F.BIN	0:05	29	946	00	{03:12}	{03:12}	record reaches an engine no-op opcode; verify in game; reads: 切り
-m/MS001F.BIN	0:05	30	982	00	{01:1F}ﾍ		record reaches an engine no-op opcode; verify in game; reads: おにいちゃんﾍ
-m/MS001F.BIN	0:05	31	986	00	{01:00}{02:1F}{=E8}{=03}	{01:00}{02:1F}{=E8}{=03}	record reaches an engine no-op opcode; verify in game; reads: 早坂達也{=E8}{=03}
+m/MS001F.BIN	0:05	17	785	0F	{01:32}		record reaches an engine no-op opcode; verify in game; reads: 大丈夫 @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	18	788	00	{02:01}Y		record reaches an engine no-op opcode; verify in game; reads: ペンタグランマY @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	19	792	00	{03:01}t		record reaches an engine no-op opcode; verify in game; reads: そんなことt @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	20	796	00	{04:01}･		record reaches an engine no-op opcode; verify in game; reads: 切り･ @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	21	800	00			record reaches an engine no-op opcode; verify in game @skip stray control-byte artifact in a record flagged 'reaches an engine no-op opcode', no renderable text
+m/MS001F.BIN	0:05	22	825	12	{03:18}		record reaches an engine no-op opcode; verify in game; reads:  @skip lone name-pool call, empty reads, in a record flagged 'reaches an engine no-op opcode', no renderable text
+m/MS001F.BIN	0:05	23	828	00	{02:1F}ﾍ		record reaches an engine no-op opcode; verify in game; reads: ﾍ @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	24	832	00	{01:00}{01:18}ｰ		record reaches an engine no-op opcode; verify in game; reads: 早坂達也あんたｰ @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	25	849	00	{02:1F}ﾍ		record reaches an engine no-op opcode; verify in game; reads: ﾍ @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	26	855	00	{01:1F}{=E8}{=03}		record reaches an engine no-op opcode; verify in game; reads: おにいちゃん{=E8}{=03} @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	27	893	1E00	{03:12}		record reaches an engine no-op opcode; verify in game; reads: 切り @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	28	942	12	{03:13}"		record reaches an engine no-op opcode; verify in game; reads: 目の前に" @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	29	946	00	{03:12}		record reaches an engine no-op opcode; verify in game; reads: 切り @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	30	982	00	{01:1F}ﾍ		record reaches an engine no-op opcode; verify in game; reads: おにいちゃんﾍ @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	31	986	00	{01:00}{02:1F}{=E8}{=03}		record reaches an engine no-op opcode; verify in game; reads: 早坂達也{=E8}{=03} @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
 m/MS001F.BIN	0:05	32	1018	1FD0	A bird flies past you, its feathers black\nas the night. What could this be an omen of?\n	A bird flies past you, its feathers black\nas the night. What could this be an omen of?\n	record reaches an engine no-op opcode; verify in game
 m/MS001F.BIN	0:05	33	1121	1FB2	Disaster	Disaster	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	34	1131	1FB2	Good fortune	Good fortune	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	35	1145	1FB2	Nothing	Nothing	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	36	1154	1FB2	That bird's a demon	That bird's a demon	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
-m/MS001F.BIN	0:05	37	1187	0F	{01:3E}	{01:3E}	record reaches an engine no-op opcode; verify in game; reads: つもり
-m/MS001F.BIN	0:05	38	1190	00	{02:01}i	{02:01}i	record reaches an engine no-op opcode; verify in game; reads: ペンタグランマi
-m/MS001F.BIN	0:05	39	1194	00	{03:01}{=94}{=00}	{03:01}{=94}{=00}	record reaches an engine no-op opcode; verify in game; reads: そんなこと{=94}{=00}
-m/MS001F.BIN	0:05	40	1223	12	{03:18}	{03:18}	record reaches an engine no-op opcode; verify in game; reads: 
-m/MS001F.BIN	0:05	41	1226	00	{02:1F}{=E8}{=03}	{02:1F}{=E8}{=03}	record reaches an engine no-op opcode; verify in game; reads: {=E8}{=03}
-m/MS001F.BIN	0:05	42	1276	12	{03:13}	{03:13}	record reaches an engine no-op opcode; verify in game; reads: 目の前に
-m/MS001F.BIN	0:05	43	1280	00	{03:12}	{03:12}	record reaches an engine no-op opcode; verify in game; reads: 切り
-m/MS001F.BIN	0:05	44	1323	12	{03:13}	{03:13}	record reaches an engine no-op opcode; verify in game; reads: 目の前に
-m/MS001F.BIN	0:05	45	1327	00	{03:12}	{03:12}	record reaches an engine no-op opcode; verify in game; reads: 切り
-m/MS001F.BIN	0:05	46	1370	12	{03:13}	{03:13}	record reaches an engine no-op opcode; verify in game; reads: 目の前に
-m/MS001F.BIN	0:05	47	1374	1E00	{03:12}	{03:12}	record reaches an engine no-op opcode; verify in game; reads: 切り
+m/MS001F.BIN	0:05	37	1187	0F	{01:3E}		record reaches an engine no-op opcode; verify in game; reads: つもり @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	38	1190	00	{02:01}i		record reaches an engine no-op opcode; verify in game; reads: ペンタグランマi @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	39	1194	00	{03:01}{=94}{=00}		record reaches an engine no-op opcode; verify in game; reads: そんなこと{=94}{=00} @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	40	1223	12	{03:18}		record reaches an engine no-op opcode; verify in game; reads:  @skip lone name-pool call, empty reads, in a record flagged 'reaches an engine no-op opcode', no renderable text
+m/MS001F.BIN	0:05	41	1226	00	{02:1F}{=E8}{=03}		record reaches an engine no-op opcode; verify in game; reads: {=E8}{=03} @skip lone name-pool call + raw-byte fragment, in a record flagged 'reaches an engine no-op opcode', no renderable text
+m/MS001F.BIN	0:05	42	1276	12	{03:13}		record reaches an engine no-op opcode; verify in game; reads: 目の前に @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	43	1280	00	{03:12}		record reaches an engine no-op opcode; verify in game; reads: 切り @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	44	1323	12	{03:13}		record reaches an engine no-op opcode; verify in game; reads: 目の前に @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	45	1327	00	{03:12}		record reaches an engine no-op opcode; verify in game; reads: 切り @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	46	1370	12	{03:13}		record reaches an engine no-op opcode; verify in game; reads: 目の前に @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	47	1374	1E00	{03:12}		record reaches an engine no-op opcode; verify in game; reads: 切り @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
 m/MS001F.BIN	0:05	48	1397	1FD0	After walking for a bit, you come across\nan abandoned house with a well next to it.\nWhat is the condition of the well?\n	After walking for a bit, you come across\nan abandoned house with a well next to it.\nWhat is the condition of the well?\n	record reaches an engine no-op opcode; verify in game
 m/MS001F.BIN	0:05	49	1532	1FB2	Dried up	Dried up	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	50	1542	1FB2	Needs digging	Needs digging	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	51	1557	1FB2	Has some water	Has some water	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	52	1573	1FB2	Full of water	Full of water	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	53	1588	1FB2	A monster lurks within	A monster lurks within	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
-m/MS001F.BIN	0:05	54	1624	0F	{01:3C}	{01:3C}	record reaches an engine no-op opcode; verify in game; reads: ひとつ
-m/MS001F.BIN	0:05	55	1627	00	{02:01}m	{02:01}m	record reaches an engine no-op opcode; verify in game; reads: ペンタグランマm
-m/MS001F.BIN	0:05	56	1631	00	{03:01}､		record reaches an engine no-op opcode; verify in game; reads: そんなこと､
-m/MS001F.BIN	0:05	57	1635	00	{04:01}ﾏ		record reaches an engine no-op opcode; verify in game; reads: 切りﾏ
-m/MS001F.BIN	0:05	58	1639	00			record reaches an engine no-op opcode; verify in game
-m/MS001F.BIN	0:05	59	1664	12	{03:13}	{03:13}	record reaches an engine no-op opcode; verify in game; reads: 目の前に
-m/MS001F.BIN	0:05	60	1668	00	{03:12}	{03:12}	record reaches an engine no-op opcode; verify in game; reads: 切り
-m/MS001F.BIN	0:05	61	1717	12	{03:13}	{03:13}	record reaches an engine no-op opcode; verify in game; reads: 目の前に
-m/MS001F.BIN	0:05	62	1721	1F00	{03:12}	{03:12}	record reaches an engine no-op opcode; verify in game; reads: 切り
-m/MS001F.BIN	0:05	63	1758	00	{03:12}	{03:12}	record reaches an engine no-op opcode; verify in game; reads: 切り
-m/MS001F.BIN	0:05	64	1776	12	{03:13}!	{03:13}!	record reaches an engine no-op opcode; verify in game; reads: 目の前に!
-m/MS001F.BIN	0:05	65	1780	00	{03:12}	{03:12}	record reaches an engine no-op opcode; verify in game; reads: 切り
-m/MS001F.BIN	0:05	66	1823	12	{03:13}#	{03:13}#	record reaches an engine no-op opcode; verify in game; reads: 目の前に#
-m/MS001F.BIN	0:05	67	1827	00	{03:12}	{03:12}	record reaches an engine no-op opcode; verify in game; reads: 切り
-m/MS001F.BIN	0:05	68	1870	12	{03:13} 	{03:13} 	record reaches an engine no-op opcode; verify in game; reads: 目の前に 
-m/MS001F.BIN	0:05	69	1874	00	{03:12}	{03:12}	record reaches an engine no-op opcode; verify in game; reads: 切り
+m/MS001F.BIN	0:05	54	1624	0F	{01:3C}		record reaches an engine no-op opcode; verify in game; reads: ひとつ @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	55	1627	00	{02:01}m		record reaches an engine no-op opcode; verify in game; reads: ペンタグランマm @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	56	1631	00	{03:01}､		record reaches an engine no-op opcode; verify in game; reads: そんなこと､ @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	57	1635	00	{04:01}ﾏ		record reaches an engine no-op opcode; verify in game; reads: 切りﾏ @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	58	1639	00			record reaches an engine no-op opcode; verify in game @skip stray control-byte artifact in a record flagged 'reaches an engine no-op opcode', no renderable text
+m/MS001F.BIN	0:05	59	1664	12	{03:13}		record reaches an engine no-op opcode; verify in game; reads: 目の前に @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	60	1668	00	{03:12}		record reaches an engine no-op opcode; verify in game; reads: 切り @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	61	1717	12	{03:13}		record reaches an engine no-op opcode; verify in game; reads: 目の前に @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	62	1721	1F00	{03:12}		record reaches an engine no-op opcode; verify in game; reads: 切り @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	63	1758	00	{03:12}		record reaches an engine no-op opcode; verify in game; reads: 切り @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	64	1776	12	{03:13}!		record reaches an engine no-op opcode; verify in game; reads: 目の前に! @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	65	1780	00	{03:12}		record reaches an engine no-op opcode; verify in game; reads: 切り @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	66	1823	12	{03:13}#		record reaches an engine no-op opcode; verify in game; reads: 目の前に# @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	67	1827	00	{03:12}		record reaches an engine no-op opcode; verify in game; reads: 切り @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	68	1870	12	{03:13} 		record reaches an engine no-op opcode; verify in game; reads: 目の前に  @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	69	1874	00	{03:12}		record reaches an engine no-op opcode; verify in game; reads: 切り @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
 m/MS001F.BIN	0:05	70	1897	1FD0	Colour association.\nIf red is the colour of blood,\nthen white is the colour of... what?\n	Colour association.\nIf red is the colour of blood,\nthen white is the colour of... what?\n	record reaches an engine no-op opcode; verify in game
 m/MS001F.BIN	0:05	71	2001	1FB2	Clouds	Clouds	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	72	2009	1FB2	Snow	Snow	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	73	2015	1FB2	Death	Death	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	74	2022	1FB2	Milk	Milk	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	75	2028	1FB2	Light	Light	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
-m/MS001F.BIN	0:05	76	2047	0F	{01:42}	{01:42}	record reaches an engine no-op opcode; verify in game; reads: 
-m/MS001F.BIN	0:05	77	2050	00	{02:01}s	{02:01}s	record reaches an engine no-op opcode; verify in game; reads: ペンタグランマs
-m/MS001F.BIN	0:05	78	2054	00	{03:01}､		record reaches an engine no-op opcode; verify in game; reads: そんなこと､
-m/MS001F.BIN	0:05	79	2058	00	{04:01}ﾏ		record reaches an engine no-op opcode; verify in game; reads: 切りﾏ
-m/MS001F.BIN	0:05	80	2062	00			record reaches an engine no-op opcode; verify in game
-m/MS001F.BIN	0:05	81	2093	12	{03:13}	{03:13}	record reaches an engine no-op opcode; verify in game; reads: 目の前に
-m/MS001F.BIN	0:05	82	2097	00	{03:12}	{03:12}	record reaches an engine no-op opcode; verify in game; reads: 切り
-m/MS001F.BIN	0:05	83	2146	12	{03:13} 	{03:13} 	record reaches an engine no-op opcode; verify in game; reads: 目の前に 
-m/MS001F.BIN	0:05	84	2150	00	{03:12}	{03:12}	record reaches an engine no-op opcode; verify in game; reads: 切り
-m/MS001F.BIN	0:05	85	2199	12	{03:13}	{03:13}	record reaches an engine no-op opcode; verify in game; reads: 目の前に
-m/MS001F.BIN	0:05	86	2203	00	{03:12}	{03:12}	record reaches an engine no-op opcode; verify in game; reads: 切り
-m/MS001F.BIN	0:05	87	2246	12	{03:13}"	{03:13}"	record reaches an engine no-op opcode; verify in game; reads: 目の前に"
-m/MS001F.BIN	0:05	88	2250	00	{03:12}	{03:12}	record reaches an engine no-op opcode; verify in game; reads: 切り
-m/MS001F.BIN	0:05	89	2299	12	{03:13}	{03:13}	record reaches an engine no-op opcode; verify in game; reads: 目の前に
-m/MS001F.BIN	0:05	90	2303	00	{03:12}	{03:12}	record reaches an engine no-op opcode; verify in game; reads: 切り
+m/MS001F.BIN	0:05	76	2047	0F	{01:42}		record reaches an engine no-op opcode; verify in game; reads:  @skip lone name-pool call, empty reads, in a record flagged 'reaches an engine no-op opcode', no renderable text
+m/MS001F.BIN	0:05	77	2050	00	{02:01}s		record reaches an engine no-op opcode; verify in game; reads: ペンタグランマs @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	78	2054	00	{03:01}､		record reaches an engine no-op opcode; verify in game; reads: そんなこと､ @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	79	2058	00	{04:01}ﾏ		record reaches an engine no-op opcode; verify in game; reads: 切りﾏ @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	80	2062	00			record reaches an engine no-op opcode; verify in game @skip stray control-byte artifact in a record flagged 'reaches an engine no-op opcode', no renderable text
+m/MS001F.BIN	0:05	81	2093	12	{03:13}		record reaches an engine no-op opcode; verify in game; reads: 目の前に @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	82	2097	00	{03:12}		record reaches an engine no-op opcode; verify in game; reads: 切り @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	83	2146	12	{03:13} 		record reaches an engine no-op opcode; verify in game; reads: 目の前に  @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	84	2150	00	{03:12}		record reaches an engine no-op opcode; verify in game; reads: 切り @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	85	2199	12	{03:13}		record reaches an engine no-op opcode; verify in game; reads: 目の前に @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	86	2203	00	{03:12}		record reaches an engine no-op opcode; verify in game; reads: 切り @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	87	2246	12	{03:13}"		record reaches an engine no-op opcode; verify in game; reads: 目の前に" @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	88	2250	00	{03:12}		record reaches an engine no-op opcode; verify in game; reads: 切り @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	89	2299	12	{03:13}		record reaches an engine no-op opcode; verify in game; reads: 目の前に @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	90	2303	00	{03:12}		record reaches an engine no-op opcode; verify in game; reads: 切り @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
 m/MS001F.BIN	0:05	91	2326	1FD0	You are on a patrol mission on the surface when\nsuddenly, it gets foggy. Your commanding officer\nsenses danger, and orders a retreat. However,\nafter a quick count, it would appear that the size\nof your squad has grown by one. You attempt to\nnotify your commanding officer, but the fog makes\nit impossible to tell anyone apart.\nWhat do you do?\n	You are on a patrol mission on the surface when\nsuddenly, it gets foggy. Your commanding officer\nsenses danger, and orders a retreat. However,\nafter a quick count, it would appear that the size\nof your squad has grown by one. You attempt to\nnotify your commanding officer, but the fog makes\nit impossible to tell anyone apart.\nWhat do you do?\n	record reaches an engine no-op opcode; verify in game
 m/MS001F.BIN	0:05	92	2685	1FB2	Inform everyone at once	Inform everyone at once	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	93	2710	1FB2	Approach them one by one	Approach them one by one	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	94	2736	1FB2	Start doing small talk	Start doing small talk	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	95	2760	1FB2	Get your gun ready	Get your gun ready	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	96	2780	1FB2	Devil Analyze	Devil Analyze	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
-m/MS001F.BIN	0:05	97	2807	0F	{01:2C}	{01:2C}	record reaches an engine no-op opcode; verify in game; reads: 開発
-m/MS001F.BIN	0:05	98	2810	00	{02:01}A	{02:01}A	record reaches an engine no-op opcode; verify in game; reads: ペンタグランマA
-m/MS001F.BIN	0:05	99	2814	00	{03:01}r	{03:01}r	record reaches an engine no-op opcode; verify in game; reads: そんなことr
-m/MS001F.BIN	0:05	100	2818	00	{04:01}{=8D}{=00}	{04:01}{=8D}{=00}	record reaches an engine no-op opcode; verify in game; reads: 切り{=8D}{=00}
-m/MS001F.BIN	0:05	101	2835	00	{03:12}	{03:12}	record reaches an engine no-op opcode; verify in game; reads: 切り
-m/MS001F.BIN	0:05	102	2891	00	{03:12}	{03:12}	record reaches an engine no-op opcode; verify in game; reads: 切り
-m/MS001F.BIN	0:05	103	2909	12	{03:13}"	{03:13}"	record reaches an engine no-op opcode; verify in game; reads: 目の前に"
-m/MS001F.BIN	0:05	104	2913	00	{03:12}	{03:12}	record reaches an engine no-op opcode; verify in game; reads: 切り
-m/MS001F.BIN	0:05	105	2942	1F4E	"	"	record reaches an engine no-op opcode; verify in game
-m/MS001F.BIN	0:05	106	2944	00	{03:12}	{03:12}	record reaches an engine no-op opcode; verify in game; reads: 切り
-m/MS001F.BIN	0:05	107	2975	00	{03:12}	{03:12}	record reaches an engine no-op opcode; verify in game; reads: 切り
+m/MS001F.BIN	0:05	97	2807	0F	{01:2C}		record reaches an engine no-op opcode; verify in game; reads: 開発 @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	98	2810	00	{02:01}A		record reaches an engine no-op opcode; verify in game; reads: ペンタグランマA @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	99	2814	00	{03:01}r		record reaches an engine no-op opcode; verify in game; reads: そんなことr @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	100	2818	00	{04:01}{=8D}{=00}		record reaches an engine no-op opcode; verify in game; reads: 切り{=8D}{=00} @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	101	2835	00	{03:12}		record reaches an engine no-op opcode; verify in game; reads: 切り @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	102	2891	00	{03:12}		record reaches an engine no-op opcode; verify in game; reads: 切り @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	103	2909	12	{03:13}"		record reaches an engine no-op opcode; verify in game; reads: 目の前に" @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	104	2913	00	{03:12}		record reaches an engine no-op opcode; verify in game; reads: 切り @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	105	2942	1F4E	"		record reaches an engine no-op opcode; verify in game @skip stray leftover punctuation fragment in a record flagged 'reaches an engine no-op opcode', no renderable text
+m/MS001F.BIN	0:05	106	2944	00	{03:12}		record reaches an engine no-op opcode; verify in game; reads: 切り @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	107	2975	00	{03:12}		record reaches an engine no-op opcode; verify in game; reads: 切り @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
 m/MS001F.BIN	0:05	108	2998	1FD0	You have just reached your destination after many\nyears of travel. What is it that lies before you?\n	You have just reached your destination after many\nyears of travel. What is it that lies before you?\n	record reaches an engine no-op opcode; verify in game
 m/MS001F.BIN	0:05	109	3114	1FB2	The ocean	The ocean	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	110	3125	1FB2	Mountaintop view	Mountaintop view	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	111	3143	1FB2	House with your lover	House with your lover	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	112	3166	1FB2	Destroyed Tokyo	Destroyed Tokyo	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS001F.BIN	0:05	113	3183	1FB2	Your final enemy	Your final enemy	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
-m/MS001F.BIN	0:05	114	3213	0F	{01:16}	{01:16}	record reaches an engine no-op opcode; verify in game; reads: あたし
-m/MS001F.BIN	0:05	115	3216	00	{02:01}	{02:01}	record reaches an engine no-op opcode; verify in game; reads: ペンタグランマ
-m/MS001F.BIN	0:05	116	3220	00	{03:01}F	{03:01}F	record reaches an engine no-op opcode; verify in game; reads: そんなことF
-m/MS001F.BIN	0:05	117	3224	00	{04:01}K	{04:01}K	record reaches an engine no-op opcode; verify in game; reads: 切りK
-m/MS001F.BIN	0:05	118	3228	00			record reaches an engine no-op opcode; verify in game
-m/MS001F.BIN	0:05	119	3271	12	{03:13}#	{03:13}#	record reaches an engine no-op opcode; verify in game; reads: 目の前に#
-m/MS001F.BIN	0:05	120	3275	00	{03:12}	{03:12}	record reaches an engine no-op opcode; verify in game; reads: 切り
+m/MS001F.BIN	0:05	114	3213	0F	{01:16}		record reaches an engine no-op opcode; verify in game; reads: あたし @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	115	3216	00	{02:01}		record reaches an engine no-op opcode; verify in game; reads: ペンタグランマ @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	116	3220	00	{03:01}F		record reaches an engine no-op opcode; verify in game; reads: そんなことF @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	117	3224	00	{04:01}K		record reaches an engine no-op opcode; verify in game; reads: 切りK @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	118	3228	00			record reaches an engine no-op opcode; verify in game @skip stray control-byte artifact in a record flagged 'reaches an engine no-op opcode', no renderable text
+m/MS001F.BIN	0:05	119	3271	12	{03:13}#		record reaches an engine no-op opcode; verify in game; reads: 目の前に# @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
+m/MS001F.BIN	0:05	120	3275	00	{03:12}		record reaches an engine no-op opcode; verify in game; reads: 切り @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
 m/MS001F.BIN	0:05	121	3314	1FBA	The aptitude test is now over.\n<wait>	The aptitude test is now over.\n<wait>	record reaches an engine no-op opcode; verify in game
 m/MS001F.BIN	0:05	122	3351	1FBA	Next, we will present you with a simple\npersonality analysis based on your answers.\n<wait>	Next, we will present you with a simple\npersonality analysis based on your answers.\n<wait>	record reaches an engine no-op opcode; verify in game
 m/MS001F.BIN	0:05	123	3465	1F8A	You are very honest and straight-to-the-point.\nYour will is strong, and you do not hesitate when\nfaced with tough decisions.\n<wait>	You are very honest and straight-to-the-point.\nYour will is strong, and you do not hesitate when\nfaced with tough decisions.\n<wait>	record reaches an engine no-op opcode; verify in game
@@ -456,7 +456,7 @@ m/MS001F.BIN	0:05	145	7102	18	You possess great intellect and intuition.\nYour i
 m/MS001F.BIN	0:05	146	7229	1FBA	The only thing you lack is courage and the will to\nsacrifice yourself for the good of others.\n<wait>	The only thing you lack is courage and the will to\nsacrifice yourself for the good of others.\n<wait>	record reaches an engine no-op opcode; verify in game
 m/MS001F.BIN	0:05	147	7332	18	You possess the ability to maintain your calm even\nwhen faced with the toughest of challenges.\nYour sense of justice is unbreakable, and your\nheart never sways.\n<wait>	You possess the ability to maintain your calm even\nwhen faced with the toughest of challenges.\nYour sense of justice is unbreakable, and your\nheart never sways.\n<wait>	record reaches an engine no-op opcode; verify in game
 m/MS001F.BIN	0:05	148	7499	1FBA	However, there may be times when you let your\nindecisiveness show. It is important to always\nmaintain a forward attitude.\n<wait>	However, there may be times when you let your\nindecisiveness show. It is important to always\nmaintain a forward attitude.\n<wait>	record reaches an engine no-op opcode; verify in game
-m/MS001F.BIN	0:05	149	7641	00	{04:1E}:	{04:1E}:	record reaches an engine no-op opcode; verify in game; reads: :
-m/MS001F.BIN	0:05	150	7645	00	{03:12}G{03:16}	{03:12}G{03:16}	record reaches an engine no-op opcode; verify in game; reads: 切りG
+m/MS001F.BIN	0:05	149	7641	00	{04:1E}:		record reaches an engine no-op opcode; verify in game; reads: : @skip lone name-pool call + stray punctuation, in a record flagged 'reaches an engine no-op opcode', no renderable text
+m/MS001F.BIN	0:05	150	7645	00	{03:12}G{03:16}		record reaches an engine no-op opcode; verify in game; reads: 切りG @skip garbled/overlapping dictionary-fragment text in a record already flagged 'reaches an engine no-op opcode' (dead/unreachable code); not a coherent sentence
 m/MS001F.BIN	0:05	151	7680	1FD2	Office of Education:	Office of Education:	record reaches an engine no-op opcode; verify in game
 m/MS001F.BIN	0:05	152	7702	1FD3	Katsuragi Ayato, citizen rank special B.\nWe have received your application to take part in\nthe upcoming Devil Buster exams, and will pass it\non to the administrators. You will be contacted\nregarding the outcome later on. In case you have\nany further questions, please contact\nadministrator NO.32-999392.\n<wait>	Katsuragi Ayato, citizen rank special B.\nWe have received your application to take part in\nthe upcoming Devil Buster exams, and will pass it\non to the administrators. You will be contacted\nregarding the outcome later on. In case you have\nany further questions, please contact\nadministrator NO.32-999392.\n<wait>	record reaches an engine no-op opcode; verify in game

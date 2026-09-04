@@ -39,8 +39,8 @@ m/MS0018.BIN	0:02	30	1645	1FD2	Phanuel:	Phanuel:
 m/MS0018.BIN	0:02	31	1655	1FD3	My only hope is that you will be strong enough.\n<wait>So, what do you say? Will you slay Aym in my place?\n	My only hope is that you will be strong enough.\n<wait>So, what do you say? Will you slay Aym in my place?\n	
 m/MS0018.BIN	0:02	32	1775	1FB2	Sure	Sure	menu option, declared width 20 columns
 m/MS0018.BIN	0:02	33	1781	1FB2	No way!	No way!	menu option, declared width 20 columns
-m/MS0018.BIN	0:02	34	1802	0F	{01:A8}	{01:A8}	reads: 
-m/MS0018.BIN	0:02	35	1805	00			
+m/MS0018.BIN	0:02	34	1802	0F	{01:A8}		reads:  @skip lone name-pool call, empty reads, no renderable text
+m/MS0018.BIN	0:02	35	1805	00			@skip stray control-byte artifact (private-use codepoint), no renderable text
 m/MS0018.BIN	0:02	36	1822	1FD2	Phanuel:	Phanuel:	
 m/MS0018.BIN	0:02	37	1832	1FD3	Thank you. I can now focus on protecting the people.\n<wait>	Thank you. I can now focus on protecting the people.\n<wait>	
 m/MS0018.BIN	0:02	38	1893	1FD2	Phanuel:	Phanuel:	
@@ -67,7 +67,7 @@ m/MS0018.BIN	0:02	58	2652	1FD2	Phanuel:	Phanuel:
 m/MS0018.BIN	0:02	59	2662	1FD3	If only my brothers had lent me their power,\nthen all of this could have been avoided...\n<wait>	If only my brothers had lent me their power,\nthen all of this could have been avoided...\n<wait>	
 m/MS0018.BIN	0:02	60	2759	1FD2	Phanuel:	Phanuel:	
 m/MS0018.BIN	0:02	61	2769	1FD3	No... I cannot blame them...\n<wait>	No... I cannot blame them...\n<wait>	
-m/MS0018.BIN	0:02	62	2818	1F03			
+m/MS0018.BIN	0:02	62	2818	1F03			@skip stray control-byte artifact (private-use codepoints), no renderable text
 m/MS0018.BIN	0:02	63	2910	1FD2	Man:	Man:	
 m/MS0018.BIN	0:02	64	2916	1FD3	We are currently working to rebuild this shelter.\nIt's pretty dangerous, so if you aren't part of the construction crew,\nwe cannot let you inside.\n<wait>	We are currently working to rebuild this shelter.\nIt's pretty dangerous, so if you aren't part of the construction crew,\nwe cannot let you inside.\n<wait>	
 m/MS0018.BIN	0:03	0	29	1FD0	A corpse lies in the middle of the room...\n	A corpse lies in the middle of the room...\n	
@@ -90,7 +90,7 @@ m/MS0018.BIN	0:04	15	696	1FD3	Come, you servants of the selfish angels!\n<wait>	
 m/MS0018.BIN	0:04	16	747	1EBE	{01:00}{01:04}	{01:00}{01:04}	reads: 早坂達也西野義雄
 m/MS0018.BIN	0:04	17	753	00	d{04:FF}	d{04:FF}	reads: d
 m/MS0018.BIN	0:04	18	757	00	d	d	
-m/MS0018.BIN	0:04	19	780	1F82	ﾅ		
+m/MS0018.BIN	0:04	19	780	1F82	ﾅ		@skip lone stray half-width kana character, control-byte leftover
 m/MS0018.BIN	0:04	20	787	00	{01:02}{=E9}{=00}	{01:02}{=E9}{=00}	reads: 桐島英美{=E9}{=00}
 m/MS0018.BIN	0:04	21	808	1FD2	Aym:	Aym:	
 m/MS0018.BIN	0:04	22	814	1FD3	Hngh! My flames... My flames have been extinguished!\n<wait>Hngh! What power!...\n<wait>	Hngh! My flames... My flames have been extinguished!\n<wait>Hngh! What power!...\n<wait>	
@@ -155,35 +155,35 @@ m/MS0018.BIN	0:0D	2	144	00	I wonder, is that angel looking at us from heaven?\nI
 m/MS0018.BIN	0:0E	0	30	1FD2	Woman:	Woman:	
 m/MS0018.BIN	0:0E	1	38	1FD3	This is your room. Use it as you please.\n<wait>	This is your room. Use it as you please.\n<wait>	
 m/MS0018.BIN	0:0E	2	93	1F03	C	C	
-m/MS0018.BIN	0:0E	3	138	1FDF	{08:00}{04:FF}達{08:62}個人用の培養槽を設置{08:4B}{08:72}\n<wait>		reads: 早坂達は、個人用の培養槽を設置した‥‥\n<wait>
+m/MS0018.BIN	0:0E	3	138	1FDF	{08:00}{04:FF}達{08:62}個人用の培養槽を設置{08:4B}{08:72}\n<wait>	Hayasaka{04:FF} and the others have installed a personal cultivation tank...\n<wait>	reads: 早坂達は、個人用の培養槽を設置した‥‥\n<wait>
 m/MS0018.BIN	0:0E	4	179	1FD1	>What will you do?\n	>What will you do?\n	
 m/MS0018.BIN	0:0E	5	239	1FB2	Store parts	Store parts	menu option, declared width 20 columns
 m/MS0018.BIN	0:0E	6	252	1FB2	Resurrect Yuuka	Resurrect Yuuka	menu option, declared width 20 columns
 m/MS0018.BIN	0:0E	7	269	1FB2	Rest	Rest	menu option, declared width 20 columns
 m/MS0018.BIN	0:0E	8	275	1FB2	Leave	Leave	menu option, declared width 20 columns
-m/MS0018.BIN	0:0E	9	294	0F	{01:7A}	{01:7A}	reads: 
-m/MS0018.BIN	0:0E	10	297	00	{02:01}4	{02:01}4	reads: ペンタグランマ4
+m/MS0018.BIN	0:0E	9	294	0F	{01:7A}		reads:  @skip lone name-pool call, empty reads, no renderable text
+m/MS0018.BIN	0:0E	10	297	00	{02:01}4	Pentagramma 4	reads: ペンタグランマ4
 m/MS0018.BIN	0:0E	11	325	1FB2	Store parts	Store parts	menu option, declared width 20 columns
 m/MS0018.BIN	0:0E	12	338	1FB2	Rest	Rest	menu option, declared width 20 columns
 m/MS0018.BIN	0:0E	13	344	1FB2	Leave	Leave	menu option, declared width 20 columns
-m/MS0018.BIN	0:0E	14	363	0F	{01:F3}	{01:F3}	reads: 
-m/MS0018.BIN	0:0E	15	368	0D	ﾛ		
-m/MS0018.BIN	0:0E	16	375	0E	{07:00}	{07:00}	reads: ＞どうしますか？
+m/MS0018.BIN	0:0E	14	363	0F	{01:F3}		reads:  @skip lone name-pool call, empty reads, no renderable text
+m/MS0018.BIN	0:0E	15	368	0D	ﾛ		@skip lone stray half-width kana character, control-byte leftover
+m/MS0018.BIN	0:0E	16	375	0E	{07:00}	>What will you do?	reads: ＞どうしますか？
 m/MS0018.BIN	0:0E	17	390	1FB2	Rest	Rest	menu option, declared width 20 columns
 m/MS0018.BIN	0:0E	18	396	1FB2	Leave	Leave	menu option, declared width 20 columns
-m/MS0018.BIN	0:0E	19	415	0F	{01:AB}	{01:AB}	reads: 
+m/MS0018.BIN	0:0E	19	415	0F	{01:AB}		reads:  @skip lone name-pool call, empty reads, no renderable text
 m/MS0018.BIN	0:0E	20	423	0E	6	6	
-m/MS0018.BIN	0:0E	21	482	00	ｮ		
-m/MS0018.BIN	0:0E	22	484	00	ｭ		
-m/MS0018.BIN	0:0E	23	486	00	ｱ		
-m/MS0018.BIN	0:0E	24	488	00	ｲ{04:FF}		reads: ｲ
-m/MS0018.BIN	0:0E	25	500	00	{=8B}{=00}{=8C}{=00}{=8D}{=00}{=8E}{=FF}	{=8B}{=00}{=8C}{=00}{=8D}{=00}{=8E}{=FF}	
+m/MS0018.BIN	0:0E	21	482	00	ｮ		@skip lone stray half-width kana character, control-byte leftover
+m/MS0018.BIN	0:0E	22	484	00	ｭ		@skip lone stray half-width kana character, control-byte leftover
+m/MS0018.BIN	0:0E	23	486	00	ｱ		@skip lone stray half-width kana character, control-byte leftover
+m/MS0018.BIN	0:0E	24	488	00	ｲ{04:FF}		reads: ｲ @skip lone stray half-width kana character, control-byte leftover
+m/MS0018.BIN	0:0E	25	500	00	{=8B}{=00}{=8C}{=00}{=8D}{=00}{=8E}{=FF}		@skip raw-byte token fragment, no renderable text
 m/MS0018.BIN	0:0E	26	511	1FD0	You consider resurrecting Yuuka, but before you are able to,\nyou notice that some of her body parts have dried up.\nYou're going to need Kusaka to revitalize them.\n<wait>	You consider resurrecting Yuuka, but before you are able to,\nyou notice that some of her body parts have dried up.\nYou're going to need Kusaka to revitalize them.\n<wait>	
 m/MS0018.BIN	0:0E	27	680	1FBA	>Will you take all of the parts with you?\n	>Will you take all of the parts with you?\n	
 m/MS0018.BIN	0:0E	28	738	1FB2	Yes	Yes	menu option, declared width 20 columns
 m/MS0018.BIN	0:0E	29	743	1FB2	No	No	menu option, declared width 20 columns
-m/MS0018.BIN	0:0E	30	759	0F	{01:C1}	{01:C1}	reads: 
-m/MS0018.BIN	0:0E	31	762	00			
+m/MS0018.BIN	0:0E	30	759	0F	{01:C1}		reads:  @skip lone name-pool call, empty reads, no renderable text
+m/MS0018.BIN	0:0E	31	762	00			@skip stray control-byte artifact (private-use codepoint), no renderable text
 m/MS0018.BIN	0:0E	32	771	19	Left arm... <wait>	Left arm... <wait>	
 m/MS0018.BIN	0:0E	33	795	19	Left leg... <wait>	Left leg... <wait>	
 m/MS0018.BIN	0:0E	34	819	19	Right leg... <wait>	Right leg... <wait>	
@@ -195,8 +195,8 @@ m/MS0018.BIN	0:0E	39	979	00	6	6
 m/MS0018.BIN	0:0E	40	1008	00	8	8	
 m/MS0018.BIN	0:0E	41	1037	00	9	9	
 m/MS0018.BIN	0:0E	42	1066	00	7	7	
-m/MS0018.BIN	0:0E	43	1095	00	:	:	
-m/MS0018.BIN	0:0E	44	1124	00	;	;	
+m/MS0018.BIN	0:0E	43	1095	00	:		@skip stray leftover punctuation fragment, no renderable text
+m/MS0018.BIN	0:0E	44	1124	00	;		@skip stray leftover punctuation fragment, no renderable text
 m/MS0018.BIN	0:0E	45	1198	1FD0	You take out all of Yuuka's body parts.\nYou can see them pulsing faintly, almost as if alive.\n<wait>	You take out all of Yuuka's body parts.\nYou can see them pulsing faintly, almost as if alive.\n<wait>	
 m/MS0018.BIN	0:0E	46	1298	1FBA	Carefully, you place them on the altar.\n<wait>	Carefully, you place them on the altar.\n<wait>	
 m/MS0018.BIN	0:0E	47	1348	1FC5	As you do so, Yuuka's body starts glowing with soft light,\nand the once-separated parts begin melding as one.\n<wait>	As you do so, Yuuka's body starts glowing with soft light,\nand the once-separated parts begin melding as one.\n<wait>	
@@ -221,39 +221,39 @@ m/MS0018.BIN	0:0E	65	2648	00	{=8B}{=00}{=8C}{=00}{=8D}{=00}{=8E}{=FF}The part
 m/MS0018.BIN	0:0E	66	2754	1FBA	>Will you take all of the parts you have with you?\n	>Will you take all of the parts you have with you?\n	
 m/MS0018.BIN	0:0E	67	2821	1FB2	Yes	Yes	menu option, declared width 20 columns
 m/MS0018.BIN	0:0E	68	2826	1FB2	No	No	menu option, declared width 20 columns
-m/MS0018.BIN	0:0E	69	2842	0F	{01:9E}{=F8}{=FF}	{01:9E}{=F8}{=FF}	reads: {=F8}{=FF}
+m/MS0018.BIN	0:0E	69	2842	0F	{01:9E}{=F8}{=FF}		reads: {=F8}{=FF} @skip lone name-pool call + raw-byte fragment, no renderable text
 m/MS0018.BIN	0:0E	70	2883	00	6	6	
-m/MS0018.BIN	0:0E	71	2888	1F61	左腕{08:72}\n<wait>		reads: 左腕‥‥\n<wait>
+m/MS0018.BIN	0:0E	71	2888	1F61	左腕{08:72}\n<wait>	Left arm...\n<wait>	reads: 左腕‥‥\n<wait>
 m/MS0018.BIN	0:0E	72	2939	00	8	8	
-m/MS0018.BIN	0:0E	73	2944	1F61	左脚{08:72}\n<wait>		reads: 左脚‥‥\n<wait>
+m/MS0018.BIN	0:0E	73	2944	1F61	左脚{08:72}\n<wait>	Left leg...\n<wait>	reads: 左脚‥‥\n<wait>
 m/MS0018.BIN	0:0E	74	2995	00	9	9	
-m/MS0018.BIN	0:0E	75	3000	1F61	右脚{08:72}\n<wait>		reads: 右脚‥‥\n<wait>
+m/MS0018.BIN	0:0E	75	3000	1F61	右脚{08:72}\n<wait>	Right leg...\n<wait>	reads: 右脚‥‥\n<wait>
 m/MS0018.BIN	0:0E	76	3051	00	7	7	
-m/MS0018.BIN	0:0E	77	3056	1F61	右腕{08:72}\n<wait>		reads: 右腕‥‥\n<wait>
-m/MS0018.BIN	0:0E	78	3107	00	:	:	
-m/MS0018.BIN	0:0E	79	3112	1F61	胸部{08:72}\n<wait>		reads: 胸部‥‥\n<wait>
-m/MS0018.BIN	0:0E	80	3163	00	;	;	
-m/MS0018.BIN	0:0E	81	3168	1F61	腹部{08:72}\n<wait>		reads: 腹部‥‥\n<wait>
-m/MS0018.BIN	0:0E	82	3205	09	{03:09}{04:FF}	{03:09}{04:FF}	reads: ダウン
+m/MS0018.BIN	0:0E	77	3056	1F61	右腕{08:72}\n<wait>	Right arm...\n<wait>	reads: 右腕‥‥\n<wait>
+m/MS0018.BIN	0:0E	78	3107	00	:		@skip stray leftover punctuation fragment, no renderable text
+m/MS0018.BIN	0:0E	79	3112	1F61	胸部{08:72}\n<wait>	Chest...\n<wait>	reads: 胸部‥‥\n<wait>
+m/MS0018.BIN	0:0E	80	3163	00	;		@skip stray leftover punctuation fragment, no renderable text
+m/MS0018.BIN	0:0E	81	3168	1F61	腹部{08:72}\n<wait>	Stomach...\n<wait>	reads: 腹部‥‥\n<wait>
+m/MS0018.BIN	0:0E	82	3205	09	{03:09}{04:FF}	Down{04:FF}	reads: ダウン
 m/MS0018.BIN	0:0E	83	3228	19	On a second thought, you realise that you don't actually have\nany parts to store.\n<wait>	On a second thought, you realise that you don't actually have\nany parts to store.\n<wait>	
 m/MS0018.BIN	0:0E	84	3328	00	8	8	
 m/MS0018.BIN	0:0E	85	3330	00	9	9	
-m/MS0018.BIN	0:0E	86	3332	00	:	:	
+m/MS0018.BIN	0:0E	86	3332	00	:		@skip stray leftover punctuation fragment, no renderable text
 m/MS0018.BIN	0:0E	87	3334	00	;You take the parts you're carrying and store them inside the tank.\n<wait>	;You take the parts you're carrying and store them inside the tank.\n<wait>	
 m/MS0018.BIN	0:0E	88	3419	00	{=8B}{=00}{=8C}{=00}{=8D}{=00}{=8E}{=FF}However...\n<wait>	{=8B}{=00}{=8C}{=00}{=8D}{=00}{=8E}{=FF}However...\n<wait>	
 m/MS0018.BIN	0:0E	89	3460	00	{=8B}{=00}{=8C}{=00}{=8D}{=00}{=8E}{=FF}As you're about to store them, you notice that the parts you've\nbeen carrying have dried up completely.\n<wait>	{=8B}{=00}{=8C}{=00}{=8D}{=00}{=8E}{=FF}As you're about to store them, you notice that the parts you've\nbeen carrying have dried up completely.\n<wait>	
-m/MS0018.BIN	0:0E	90	3603	00	鵜eft arm...\n<wait>		
-m/MS0018.BIN	0:0E	91	3644	00	崖ight arm...\n<wait>		
-m/MS0018.BIN	0:0E	92	3686	00	記eft leg...\n<wait>		
-m/MS0018.BIN	0:0E	93	3727	00	軍ight leg...\n<wait>		
-m/MS0018.BIN	0:0E	94	3769	00	垢hest...\n<wait>		
-m/MS0018.BIN	0:0E	95	3807	00	惨tomach...\n<wait>The aforementioned parts are completely dried up.\n<wait>		
+m/MS0018.BIN	0:0E	90	3603	00	鵜eft arm...\n<wait>	Left arm...\n<wait>	
+m/MS0018.BIN	0:0E	91	3644	00	崖ight arm...\n<wait>	Right arm...\n<wait>	
+m/MS0018.BIN	0:0E	92	3686	00	記eft leg...\n<wait>	Left leg...\n<wait>	
+m/MS0018.BIN	0:0E	93	3727	00	軍ight leg...\n<wait>	Right leg...\n<wait>	
+m/MS0018.BIN	0:0E	94	3769	00	垢hest...\n<wait>	Chest...\n<wait>	
+m/MS0018.BIN	0:0E	95	3807	00	惨tomach...\n<wait>The aforementioned parts are completely dried up.\n<wait>	Stomach...\n<wait>The aforementioned parts are completely dried up.\n<wait>	
 m/MS0018.BIN	0:0E	96	3879	1FBA	You're going to need to revitalize them somehow.\n<wait>	You're going to need to revitalize them somehow.\n<wait>	
 m/MS0018.BIN	0:0E	97	3945	1FD0	A pleasant wave of tiredness washes over you...\n<wait>	A pleasant wave of tiredness washes over you...\n<wait>	
 m/MS0018.BIN	0:0E	98	4045	00	{01:00}	{01:00}	reads: 早坂達也
 m/MS0018.BIN	0:0E	99	4059	00	{02:00}	{02:00}	reads: デビルバスター
-m/MS0018.BIN	0:0E	100	4073	00	{04:00}	{04:00}	reads: を唱えた！ 
-m/MS0018.BIN	0:0E	101	4087	00	{08:00}	{08:00}	reads: 早坂
+m/MS0018.BIN	0:0E	100	4073	00	{04:00}	cast a spell! 	reads: を唱えた！ 
+m/MS0018.BIN	0:0E	101	4087	00	{08:00}	Hayasaka	reads: 早坂
 m/MS0018.BIN	0:0E	102	4101	00	{01:00}	{01:00}	reads: 早坂達也
 m/MS0018.BIN	0:0E	103	4115	00	{01:00}	{01:00}	reads: 早坂達也
 m/MS0018.BIN	0:0F	0	24	1FD2	Woman:	Woman:	
@@ -343,8 +343,8 @@ m/MS0018.BIN	0:1C	0	24	1FD2	Woman:	Woman:
 m/MS0018.BIN	0:1C	1	38	1F7C	Are you the one who defeated Aym?\n	Are you the one who defeated Aym?\n	
 m/MS0018.BIN	0:1C	2	88	1FB2	Yes	Yes	menu option, declared width 20 columns
 m/MS0018.BIN	0:1C	3	93	1FB2	No	No	menu option, declared width 20 columns
-m/MS0018.BIN	0:1C	4	109	0F	{01:4A}	{01:4A}	reads: 
-m/MS0018.BIN	0:1C	5	112	00			
+m/MS0018.BIN	0:1C	4	109	0F	{01:4A}		reads:  @skip lone name-pool call, empty reads, no renderable text
+m/MS0018.BIN	0:1C	5	112	00			@skip stray control-byte artifact (private-use codepoint), no renderable text
 m/MS0018.BIN	0:1C	6	117	1FD2	Woman:	Woman:	
 m/MS0018.BIN	0:1C	7	125	1FD3	I knew it! You're totally unlike the other people here.\n<wait>	I knew it! You're totally unlike the other people here.\n<wait>	
 m/MS0018.BIN	0:1C	8	190	1FD2	Woman:	Woman:	
