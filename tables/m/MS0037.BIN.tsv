@@ -9,60 +9,41 @@ m/MS0037.BIN	0:04	0	17	1FBA	誰が開け{08:15}\n		Who will try to open it?\n	v0
 m/MS0037.BIN	0:04	1	46	1F17	{01:08}	{01:08}				reads: バエル
 m/MS0037.BIN	0:04	2	51	00	7	7				
 m/MS0037.BIN	0:04	3	104	1FFA	・\n・\n・\n					
-m/MS0037.BIN	0:04	4	146	1F19	{01:15}	{01:15}				reads: いろいろ
-m/MS0037.BIN	0:04	5	149	00	{02:01}	{02:01}				reads: ペンタグランマ
-m/MS0037.BIN	0:04	6	157	11	{04:01}	{04:01}				reads: 切り
-m/MS0037.BIN	0:04	7	165	00	{06:01}ｳ{01:FF}					reads: ｳ
-m/MS0037.BIN	0:04	8	196	1F4C	{03:19}	{03:19}				reads: 
-m/MS0037.BIN	0:04	9	251	18	トラップが仕掛けられて{08:64}！\n<wait>		A trap has been set off!\n<wait>	v005		reads: トラップが仕掛けられていた！\n<wait>
-m/MS0037.BIN	0:04	10	291	1E3E	がトラップを見つ{08:43}。\n{08:47}{08:7E}					reads: がトラップを見つけた。\nこのまま
-m/MS0037.BIN	0:04	11	320	1E3E	がトラップを解除し{08:15}\n		 found a trap.\nShould they try to disable it, or someone else?\n	v005		reads: がトラップを解除しますか？\n
-m/MS0037.BIN	0:04	12	357	1FB2	{08:79}{08:7E}解除{08:8E}		They	v005		reads: そのまま解除する; menu option, declared width 20 columns
-m/MS0037.BIN	0:04	13	369	1FB2	他の者が解除{08:8E}		Someone else	v005		reads: 他の者が解除する; menu option, declared width 20 columns
-m/MS0037.BIN	0:04	14	385	1FB2	宝箱をあきら{08:2E}		Back off	v005		reads: 宝箱をあきらめる; menu option, declared width 20 columns
-m/MS0037.BIN	0:04	15	413	0F	{01:05}	{01:05}				reads: 山田
-m/MS0037.BIN	0:04	16	416	00	{02:00}7	{02:00}7				reads: デビルバスター7
-m/MS0037.BIN	0:04	17	425	0E	がトラップを解除し{08:15}\n		o will try to disable the trap?\n	v005		reads: がトラップを解除しますか？\n
-m/MS0037.BIN	0:04	18	460	1FFA	・\n・\n・\n					
-m/MS0037.BIN	0:04	19	497	1F4C	{03:19}	{03:19}				reads: 
-m/MS0037.BIN	0:04	20	549	1E3E	はトラップを解除{08:4B}。\n<wait>		 disabled the trap.\n<wait>	v005		reads: はトラップを解除した。\n<wait>
-m/MS0037.BIN	0:04	21	577	0C	トラップが作動{08:17}\n<wait>		The trap activated!\n<wait>	v005		reads: トラップが作動した！\n<wait>
-m/MS0037.BIN	0:04	22	663	1EAA	{08:0B}が出現{08:17}\n{1E10:01023C}		A demon appeared!\n{1E10:01023C}	ours		reads: 悪魔が出現した！\n{1E10:01023C}
-m/MS0037.BIN	0:04	23	732	00	{04:FF}	{04:FF}				reads: 
-m/MS0037.BIN	0:04	24	735	00	d{04:FF}	d{04:FF}				reads: d
-m/MS0037.BIN	0:04	25	739	00	d	d				
+m/MS0037.BIN	0:04	4	196	1F4C	{03:19}	{03:19}				reads: ; reads: いろいろ
+m/MS0037.BIN	0:04	5	251	18	トラップが仕掛けられて{08:64}！\n<wait>	トラップが仕掛けられて{08:64}！\n<wait>	A trap has been set off!\n<wait>	v005		reads: トラップが仕掛けられていた！\n<wait>; reads: ペンタグランマ
+m/MS0037.BIN	0:04	6	291	1E3E	がトラップを見つ{08:43}。\n{08:47}{08:7E}	がトラップを見つ{08:43}。\n{08:47}{08:7E}				reads: がトラップを見つけた。\nこのまま; reads: 切り
+m/MS0037.BIN	0:04	7	320	1E3E	がトラップを解除し{08:15}\n		 found a trap.\nShould they try to disable it, or someone else?\n	v005		reads: がトラップを解除しますか？\n; reads: ｳ
+m/MS0037.BIN	0:04	8	357	1FB2	{08:79}{08:7E}解除{08:8E}	{08:79}{08:7E}解除{08:8E}	They	v005		reads: そのまま解除する; menu option, declared width 20 columns
+m/MS0037.BIN	0:04	9	369	1FB2	他の者が解除{08:8E}		Someone else	v005		reads: 他の者が解除する; menu option, declared width 20 columns; reads: トラップが仕掛けられていた！\n<wait>
+m/MS0037.BIN	0:04	10	385	1FB2	宝箱をあきら{08:2E}		Back off	v005		reads: 宝箱をあきらめる; menu option, declared width 20 columns; reads: がトラップを見つけた。\nこのまま
+m/MS0037.BIN	0:04	11	423	1FBA	誰がトラップを解除し{08:15}\n					reads: 誰がトラップを解除しますか？\n; reads: がトラップを解除しますか？\n @rebase-new
+m/MS0037.BIN	0:04	12	460	1FFA	・\n・\n・\n					reads: そのまま解除する; menu option, declared width 20 columns
+m/MS0037.BIN	0:04	13	497	1F4C	{03:19}	{03:19}				reads: ; reads: 他の者が解除する; menu option, declared width 20 columns
+m/MS0037.BIN	0:04	14	549	1E3E	はトラップを解除{08:4B}。\n<wait>		 disabled the trap.\n<wait>	v005		reads: はトラップを解除した。\n<wait>; reads: 宝箱をあきらめる; menu option, declared width 20 columns
+m/MS0037.BIN	0:04	15	577	0C	トラップが作動{08:17}\n<wait>	トラップが作動{08:17}\n<wait>	The trap activated!\n<wait>	v005		reads: トラップが作動した！\n<wait>; reads: 山田
+m/MS0037.BIN	0:04	16	663	1EAA	{08:0B}が出現{08:17}\n{1E10:01023C}	{08:0B}が出現{08:17}\n{1E10:01023C}	A demon appeared!\n{1E10:01023C}	ours		reads: 悪魔が出現した！\n{1E10:01023C}; reads: デビルバスター7
+m/MS0037.BIN	0:04	17	732	00	{04:FF}	{04:FF}				reads: ; reads: がトラップを解除しますか？\n @rebase-unmatched idx17 en=o will try to disable the trap?\n
+m/MS0037.BIN	0:04	18	735	00	d{04:FF}	d{04:FF}				reads: d
+m/MS0037.BIN	0:04	19	739	00	d	d				reads: 
 m/MS0037.BIN	0:05	0	34	1F81	{03:17}{03:19}	{03:17}{03:19}				reads: 
 m/MS0037.BIN	0:05	1	147	00	{04:FF}達は宝箱をあきらめた\n<wait>		You decide to back off.\n<wait>	v005		reads: 達は宝箱をあきらめた\n<wait>
 m/MS0037.BIN	0:05	2	262	1E3E	は行動不能状態{08:55}\n<wait>		 is in no working condition.\n<wait>	v005		reads: は行動不能状態です\n<wait>
-m/MS0037.BIN	0:06	0	9	1F19	{01:19}	{01:19}				reads: われわれ
-m/MS0037.BIN	0:06	1	12	00	{02:01}9	{02:01}9				reads: ペンタグランマ9
-m/MS0037.BIN	0:06	2	16	00	{03:01}e	{03:01}e				reads: そんなことe
-m/MS0037.BIN	0:06	3	20	00	{04:01}a	{04:01}a				reads: 切りa
-m/MS0037.BIN	0:06	4	24	00	{05:01}]	{05:01}]				reads: 飛び道具]
-m/MS0037.BIN	0:06	5	28	00	{06:01}Y	{06:01}Y				reads: Y
-m/MS0037.BIN	0:06	6	32	00	{07:01}U	{07:01}U				reads: ＞何をしますか？U
-m/MS0037.BIN	0:06	7	36	00						
-m/MS0037.BIN	0:06	8	40	1B	メンバー		Member	v005		
-m/MS0037.BIN	0:07	0	47	1F19	{01:0D}	{01:0D}				reads: わたしを
-m/MS0037.BIN	0:07	1	50	00	{03:01}w	{03:01}w				reads: そんなことw
-m/MS0037.BIN	0:07	2	54	00	{04:01}{=F5}{=00}{05:01}`{01:FF}爆発のトラップ！\n		{04:01}A{01:05}{01:B5}{01:FF}A bomb explodes!\n	v005		reads: 切り{=F5}{=00}飛び道具`爆発のトラップ！\n
-m/MS0037.BIN	0:07	3	165	17	{03:17}	{03:17}				reads: 
-m/MS0037.BIN	0:07	4	184	1F89	{08:72}が運良くかわす{08:46}がで{08:1E}\n		...Thankfully, you were able to dodge in time.\n	v005		reads: ‥‥が運良くかわすことができた\n
-m/MS0037.BIN	0:07	5	212	18	毒針に刺さ{08:11}\n		Poison needles are launched!\n	v005		reads: 毒針に刺された！\n
-m/MS0037.BIN	0:07	6	249	1F89	{08:72}が運良くかわす{08:46}がで{08:1E}\n		...Thankfully, you were able to dodge in time.\n	v005		reads: ‥‥が運良くかわすことができた\n
-m/MS0037.BIN	0:07	7	277	18	毒針に刺さ{08:11}\n		Poison needles are launched!\n	v005		reads: 毒針に刺された！\n
-m/MS0037.BIN	0:07	8	303	18	ガスが吹き出{08:17}\n		Poison gas is released!\n	v005		reads: ガスが吹き出した！\n
-m/MS0037.BIN	0:07	9	406	17	{03:17}	{03:17}				reads: 
-m/MS0037.BIN	0:07	10	425	1F89	{08:72}が運良くかわす{08:46}がで{08:1E}\n		...Thankfully, you were able to dodge in time.\n	v005		reads: ‥‥が運良くかわすことができた\n
-m/MS0037.BIN	0:07	11	478	1F77	{1E10:0103}呪わ{08:11}\n		{1E10:0103}You have been cursed!\n	v005		reads: {1E10:0103}呪われた！\n
-m/MS0037.BIN	0:08	0	58	1F19	{01:30}	{01:30}				reads: 医師
-m/MS0037.BIN	0:08	1	61	00	{02:01}P	{02:01}P				reads: ペンタグランマP
-m/MS0037.BIN	0:08	2	65	00						
-m/MS0037.BIN	0:08	3	81	18	宝箱の中には何も入{08:52}{08:24}。\n		There is nothing inside the chest.\n	v005		reads: 宝箱の中には何も入っていない。\n
-m/MS0037.BIN	0:08	4	113	00	{04:FF}達は		You obtained 	v005		reads: 達は
-m/MS0037.BIN	0:08	5	123	1F02	マッカ入手{08:4B}。\n		 Macca.\n	ours		reads: マッカ入手した。\n
-m/MS0037.BIN	0:08	6	149	00	{04:FF}達は生体マグネタイトを\n		You obtained \n	v005		reads: 達は生体マグネタイトを\n
-m/MS0037.BIN	0:08	7	178	1F02	ＭＡＧ入手{08:4B}。\n		 MAG.\n	v005		reads: ＭＡＧ入手した。\n
+m/MS0037.BIN	0:06	0	40	1B	メンバー	メンバー	Member	v005		reads: われわれ
+m/MS0037.BIN	0:07	0	63	1F19	爆発のトラップ！\n	爆発のトラップ！\n				reads: わたしを
+m/MS0037.BIN	0:07	1	165	17	{03:17}	{03:17}				reads: ; reads: そんなことw
+m/MS0037.BIN	0:07	2	184	1F89	{08:72}が運良くかわす{08:46}がで{08:1E}\n		...Thankfully, you were able to dodge in time.\n	v005		reads: ‥‥が運良くかわすことができた\n; reads: 切り{=F5}{=00}飛び道具`爆発のトラップ！\n @rebase-unmatched idx2 en={04:01}A{01:05}{01:B5}{01:FF}A bomb explodes!\n
+m/MS0037.BIN	0:07	3	212	18	毒針に刺さ{08:11}\n	毒針に刺さ{08:11}\n	Poison needles are launched!\n	v005		reads: 毒針に刺された！\n
+m/MS0037.BIN	0:07	4	249	1F89	{08:72}が運良くかわす{08:46}がで{08:1E}\n		...Thankfully, you were able to dodge in time.\n	v005		reads: ‥‥が運良くかわすことができた\n
+m/MS0037.BIN	0:07	5	277	18	毒針に刺さ{08:11}\n		Poison needles are launched!\n	v005		reads: 毒針に刺された！\n
+m/MS0037.BIN	0:07	6	303	18	ガスが吹き出{08:17}\n		Poison gas is released!\n	v005		reads: ガスが吹き出した！\n; reads: ‥‥が運良くかわすことができた\n
+m/MS0037.BIN	0:07	7	406	17	{03:17}	{03:17}				reads: ; reads: 毒針に刺された！\n
+m/MS0037.BIN	0:07	8	425	1F89	{08:72}が運良くかわす{08:46}がで{08:1E}\n		...Thankfully, you were able to dodge in time.\n	v005		reads: ‥‥が運良くかわすことができた\n; reads: ガスが吹き出した！\n
+m/MS0037.BIN	0:07	9	478	1F77	{1E10:0103}呪わ{08:11}\n	{1E10:0103}呪わ{08:11}\n	{1E10:0103}You have been cursed!\n	v005		reads: {1E10:0103}呪われた！\n
+m/MS0037.BIN	0:08	0	81	18	宝箱の中には何も入{08:52}{08:24}。\n	宝箱の中には何も入{08:52}{08:24}。\n	There is nothing inside the chest.\n	v005		reads: 宝箱の中には何も入っていない。\n; reads: 医師
+m/MS0037.BIN	0:08	1	113	00	{04:FF}達は	{04:FF}達は	You obtained 	v005		reads: 達は; reads: ペンタグランマP
+m/MS0037.BIN	0:08	2	123	1F02	マッカ入手{08:4B}。\n	マッカ入手{08:4B}。\n	 Macca.\n	ours		reads: マッカ入手した。\n
+m/MS0037.BIN	0:08	3	149	00	{04:FF}達は生体マグネタイトを\n		You obtained \n	v005		reads: 達は生体マグネタイトを\n; reads: 宝箱の中には何も入っていない。\n
+m/MS0037.BIN	0:08	4	178	1F02	ＭＡＧ入手{08:4B}。\n		 MAG.\n	v005		reads: ＭＡＧ入手した。\n; reads: 達は
 m/MS0037.BIN	0:09	0	44	1F4C	{03:16}	{03:16}				reads: 
 m/MS0037.BIN	0:09	1	47	00	{05:1F}{=E8}{=03}	{05:1F}{=E8}{=03}				reads: {=E8}{=03}
 m/MS0037.BIN	0:0D	0	11	0D	{08:58}も入{08:52}い{08:19}\n<wait>		You optained nothing.\n<wait>	v005		reads: なにも入っていなかった\n<wait>
@@ -95,5 +76,5 @@ m/MS0037.BIN	0:12	0	73	00	{01:00}	{01:00}				reads: 早坂達也
 m/MS0037.BIN	0:12	1	87	00	{02:00}	{02:00}				reads: デビルバスター
 m/MS0037.BIN	0:12	2	101	00	{03:00}	{03:00}				reads: 飛び道具
 m/MS0037.BIN	0:12	3	115	00	{04:00}	{04:00}				reads: を唱えた！ 
-m/MS0037.BIN	0:12	4	129	00	{05:00}	{05:00}				reads: はいいいえニュートン
+m/MS0037.BIN	0:12	4	129	00	{05:00}	{05:00}				reads: はいいいえ; reads: はいいいえニュートン
 m/MS0037.BIN	0:12	5	142	1F51	{03:18}	{03:18}				reads: 

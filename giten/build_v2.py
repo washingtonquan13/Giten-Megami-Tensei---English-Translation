@@ -39,8 +39,8 @@ class Result:
     warnings: "list[str]" = field(default_factory=list)
 
 
-def _edits_from_rows(rows) -> "dict[tuple[int, int, int], str]":
-    """``{(container, record id, span index): english}`` from a file's rows."""
+def _edits_from_rows(rows) -> "dict[tuple[int, int, int], object]":
+    """``{(container, record id, span index): row}`` for a file's edited rows."""
     out = {}
     for r in rows:
         if not r.edited or r.rec == extract_v2.PNAME_REC:
@@ -49,9 +49,36 @@ def _edits_from_rows(rows) -> "dict[tuple[int, int, int], str]":
             continue
         ci, _, rid = r.rec.partition(":")
         try:
-            out[(int(ci), int(rid, 16), r.idx)] = r.en
+            out[(int(ci), int(rid, 16), r.idx)] = r
         except ValueError:
             continue
+    return out
+
+
+def stale_rows(sc, keyed: dict) -> "list[tuple[tuple, str]]":
+    '''Rows whose ``jp`` is not what span ``idx`` of that record says *now*.
+
+    A table is addressed by span index, and span numbering is a property of the
+    tokenizer: when the opcode model improves (the switch tables of 2026-09-04
+    renumbered every record that holds one) a row written against the old
+    numbering would silently put its English on some other line.  The ``jp``
+    column is the row's fingerprint; it must match byte for byte or the row is
+    not applied.  Returns ``[(key, reason)]``.
+    '''
+    by_key = {}
+    for rec in sc.iter_records():
+        if rec.tokens is None:
+            continue
+        for sp in rec.spans:
+            by_key[(rec.ci, rec.id, sp.idx)] = script.span_text(rec, sp)
+    out = []
+    for key, row in keyed.items():
+        now = by_key.get(key)
+        if now is None:
+            out.append((key, "no span %d in this record any more" % key[2]))
+        elif now != row.jp:
+            out.append((key, "stale row: jp is %r but the span now reads %r"
+                        % (row.jp[:40], now[:40])))
     return out
 
 
@@ -89,8 +116,15 @@ def build_file(rel: str, raw: bytes, rows) -> Result:
     sc = script.parse(rel, raw)
     if not sc.ok:
         return Result(rel, raw)                 # no text layer: copy through
-    edits = _edits_from_rows(rows)
+    keyed = _edits_from_rows(rows)
+    stale = stale_rows(sc, keyed)
+    for key, why in stale:
+        keyed.pop(key)
+    edits = {k: r.en for k, r in keyed.items()}
     out, rep = script.build(sc, edits)
+    for (ci, rid, idx), why in stale:
+        rep.errors.append("%s %d:%02X[%d]: %s -- not applied; re-extract and carry"
+                          % (rel, ci, rid, idx, why))
     return Result(rel, out, rep.changed_spans, rep.changed_records, rep.relocated,
                   rep.unmapped, rep.unmapped_in_edit, rep.branched_into,
                   rep.not_a_branch, rep.size_delta,

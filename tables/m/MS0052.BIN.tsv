@@ -142,7 +142,7 @@ m/MS0052.BIN	0:01	2	55	1FD2	看護婦：		Nurse:	v005
 m/MS0052.BIN	0:01	3	65	1FD3	治療を御希望で{08:4B}ら、直接診療室の方へお願いし{08:5A}。\n非常事態{08:55}ので、優先的に治療致し{08:5A}。\n		If you need to get your wounds healed, you should go see a doctor.\nAt times likes these, I'm sure that they'll let you skip the line.\n	v005		reads: 治療を御希望でしたら、直接診療室の方へお願いします。\n非常事態ですので、優先的に治療致します。\n
 m/MS0052.BIN	0:01	4	157	1FD2	看護婦：		Nurse:	v005		
 m/MS0052.BIN	0:01	5	167	1FD3	{08:45}は受付{08:55}。治療にいら{08:4B}の{08:55}か？\n<wait>		Welcome to the reception. Are you here to get your wounds healed?\n<wait>	v005		reads: ここは受付です。治療にいらしたのですか？\n<wait>
-m/MS0052.BIN	0:01	6	210	1F58	{05:00}	{05:00}				reads: はいいいえニュートン
+m/MS0052.BIN	0:01	6	210	1F58	{05:00}	{05:00}				reads: はいいいえ; reads: はいいいえニュートン
 m/MS0052.BIN	0:01	7	214	1FD2	看護婦：		Nurse:	v005		
 m/MS0052.BIN	0:01	8	224	1FD3	で{08:62}診察室へ{08:90}ぞ。\n<wait>		Very well then. Please, head down to the examination room.\n<wait>	v005		reads: では、診察室へどうぞ。\n<wait>
 m/MS0052.BIN	0:01	9	269	1FD2	看護婦：		Nurse:	v005		
@@ -150,194 +150,180 @@ m/MS0052.BIN	0:01	10	279	1FD3	で{08:62}何の御用で{08:80}？\n<wait>		In th
 m/MS0052.BIN	0:01	11	320	1FB2	薬を貰いに来た		Buy medicine	v005		menu option, declared width 20 columns
 m/MS0052.BIN	0:01	12	336	1FB2	友達のお見舞い		Visiting a friend	v005		menu option, declared width 20 columns
 m/MS0052.BIN	0:01	13	352	1FB2	何{08:56}{08:25}		Nothing	v005		reads: 何でもない; menu option, declared width 20 columns
-m/MS0052.BIN	0:01	14	372	0F	{01:4C}	{01:4C}				reads: 
-m/MS0052.BIN	0:01	15	375	00	{02:01}･					reads: ペンタグランマ･
-m/MS0052.BIN	0:01	16	379	00						
-m/MS0052.BIN	0:01	17	382	1FD2	看護婦：		Nurse:	v005		
-m/MS0052.BIN	0:01	18	392	1FD3	薬{08:62}薬局の方でお願いし{08:5A}。\n薬局{08:62}{08:47}受付のお隣の{01:2E}{08:55}。\n<wait>		You can purchase medicine at the pharmacist located next door.\n<wait>	v005		reads: 薬は、薬局の方でお願いします。\n薬局は、この受付のお隣の部屋です。\n<wait>
-m/MS0052.BIN	0:01	19	453	1FD2	看護婦：		Nurse:	v005		
-m/MS0052.BIN	0:01	20	463	1FD3	患者さん達の病棟は受付を出て右に進み、突き当た{08:51}壁の右のドアの奥に\n{08:1A}おり{08:5A}\n<wait>		You can find the patient rooms to the right from here.\n<wait>	v005		reads: 患者さん達の病棟は受付を出て右に進み、突き当たった壁の右のドアの奥に\nなっております\n<wait>
-m/MS0052.BIN	0:01	21	546	1FD2	看護婦：		Nurse:	v005		
-m/MS0052.BIN	0:01	22	556	1FD3	{08:26}、{08:4D}では次の方{08:90}ぞー\n<wait>		I see. Next patient, please!\n<wait>	v005		reads: はい、それでは次の方どうぞー\n<wait>
+m/MS0052.BIN	0:01	14	382	1FD2	看護婦：	看護婦：	Nurse:	v005		reads: 
+m/MS0052.BIN	0:01	15	392	1FD3	薬{08:62}薬局の方でお願いし{08:5A}。\n薬局{08:62}{08:47}受付のお隣の{01:2E}{08:55}。\n<wait>		You can purchase medicine at the pharmacist located next door.\n<wait>	v005		reads: 薬は、薬局の方でお願いします。\n薬局は、この受付のお隣の部屋です。\n<wait>; reads: ペンタグランマ･
+m/MS0052.BIN	0:01	16	453	1FD2	看護婦：	看護婦：	Nurse:	v005		
+m/MS0052.BIN	0:01	17	463	1FD3	患者さん達の病棟は受付を出て右に進み、突き当た{08:51}壁の右のドアの奥に\n{08:1A}おり{08:5A}\n<wait>		You can find the patient rooms to the right from here.\n<wait>	v005		reads: 患者さん達の病棟は受付を出て右に進み、突き当たった壁の右のドアの奥に\nなっております\n<wait>
+m/MS0052.BIN	0:01	18	546	1FD2	看護婦：		Nurse:	v005		reads: 薬は、薬局の方でお願いします。\n薬局は、この受付のお隣の部屋です。\n<wait>
+m/MS0052.BIN	0:01	19	556	1FD3	{08:26}、{08:4D}では次の方{08:90}ぞー\n<wait>		I see. Next patient, please!\n<wait>	v005		reads: はい、それでは次の方どうぞー\n<wait>
 m/MS0052.BIN	0:02	0	22	1F04						
 m/MS0052.BIN	0:02	1	70	00	{02:00}	{02:00}				reads: デビルバスター
 m/MS0052.BIN	0:02	2	85	1F51	治療システムが{08:7B}。\n治療{08:4A}いき{08:15}\n					reads: 治療システムがある。\n治療していきますか？\n
 m/MS0052.BIN	0:02	3	133	1FB2	治療{08:8E}		Heal	v005		reads: 治療する; menu option, declared width 20 columns
 m/MS0052.BIN	0:02	4	141	1FB2	治療し{08:25}		Don't heal	v005		reads: 治療しない; menu option, declared width 20 columns
-m/MS0052.BIN	0:02	5	163	0F	{01:00}	{01:00}				reads: 早坂達也
-m/MS0052.BIN	0:02	6	184	1F80	{=FC}{=1F}ﾒ{08:04}：		{=FC}{=1F}Nishino:	ours		reads: {=FC}{=1F}ﾒ西野：
-m/MS0052.BIN	0:02	7	193	1FD3	治療の必要な者は{08:24}{08:69}だな{02:08}\nあまり悠長にや{08:52}{08:26}られん。行くぞ！\n		Doesn't look like anyone's in need of healing. Let's get going!\n	v005		reads: 治療の必要な者はいないようだな‥‥‥\nあまり悠長にやってはいられん。行くぞ！\n
-m/MS0052.BIN	0:02	8	265	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0052.BIN	0:02	9	271	1FD3	治療の必要が{08:7B}奴は{08:24}ぜ。行こう。\nあまり、悠長には{08:4A}いられ{08:25}{08:42}な。\n		Doesn't look like anyone's in need of healing. Let's get going!\n	v005		reads: 治療の必要がある奴はいないぜ。行こう。\nあまり、悠長にはしていられないからな。\n
-m/MS0052.BIN	0:02	10	340	1FD0	治療の必要が{08:7B}者は{08:24}{08:69}だ{02:08}‥\nあまり、悠長に事を構えて{08:26}られ{08:25}。\n<wait>		It doesn't look like anyone is in need of healing.\nYou should probably get going.\n<wait>	v005		reads: 治療の必要がある者はいないようだ‥‥‥‥\nあまり、悠長に事を構えてはいられない。\n<wait>
-m/MS0052.BIN	0:02	11	414	00	{04:FF}{08:62}診療室を立ち去{08:51}。\n		You turn around and leave the examination room behind.\n	v005		reads: は、診療室を立ち去った。\n
-m/MS0052.BIN	0:02	12	450	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	13	456	1FD3	あまり悠長にや{08:52}{08:26}られん。行くぞ！\n		No point in wasting time. Let's hurry!\n	v005		reads: あまり悠長にやってはいられん。行くぞ！\n
-m/MS0052.BIN	0:02	14	501	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0052.BIN	0:02	15	507	1FD3	あまり、悠長には{08:4A}いられ{08:25}{08:42}な。<wait>行こう。\n		No point in wasting time. <wait>Let's hurry!\n	v005		reads: あまり、悠長にはしていられないからな。<wait>行こう。\n
-m/MS0052.BIN	0:02	16	555	1FD0	治療{08:62}{01:31}終了{08:4B}。\nあまり、悠長に事を構えて{08:26}られ{08:25}。\n<wait>		All healed up. Now then, you shouldn't waste any more time.\n<wait>	v005		reads: 治療は、無事終了した。\nあまり、悠長に事を構えてはいられない。\n<wait>
-m/MS0052.BIN	0:02	17	617	00	{04:FF}{08:62}診療室を立ち去{08:51}。\n		You turn around and leave the examination room behind.\n	v005		reads: は、診療室を立ち去った。\n
-m/MS0052.BIN	0:02	18	641	00	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n
-m/MS0052.BIN	0:02	19	662	1FB2	{08:0F}の蘇生を試みる		Revive ally	v005		reads: 仲間の蘇生を試みる; menu option, declared width 20 columns
-m/MS0052.BIN	0:02	20	680	1FB2	{08:63}の治療{08:8E}		Heal self	v005		reads: 自分の治療する; menu option, declared width 20 columns
-m/MS0052.BIN	0:02	21	692	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns
-m/MS0052.BIN	0:02	22	714	0F	{01:20}	{01:20}				reads: おねえちゃん
-m/MS0052.BIN	0:02	23	717	00	{02:01}ﾕ		{02:01}	ours		reads: ペンタグランマﾕ
-m/MS0052.BIN	0:02	24	727	00	{04:FF}	{04:FF}				reads: 
-m/MS0052.BIN	0:02	25	730	00	{01:18}ﾎ		{01:18}K	v005		reads: あんたﾎ
-m/MS0052.BIN	0:02	26	736	0C	{08:00}	{08:00}				reads: 早坂
-m/MS0052.BIN	0:02	27	739	00	{04:FF}	{04:FF}				reads: 
-m/MS0052.BIN	0:02	28	742	00	{02:18}ﾂ					reads: ﾂ
-m/MS0052.BIN	0:02	29	751	0C	{03:02}{04:FF}	{03:02}{04:FF}				reads: を攻撃し
-m/MS0052.BIN	0:02	30	785	1FD2	医者：		Doctor:	v005		
-m/MS0052.BIN	0:02	31	806	1F04						
-m/MS0052.BIN	0:02	32	819	1FD2	医者：		Doctor:	v005		
-m/MS0052.BIN	0:02	33	827	1FD3	{02:08}ふぅ{02:08}‥一時は{08:90}{08:59}事かと思{08:51}ぞ！\n<wait>		Phew... For a moment there, I had no idea what was happening!\n<wait>	v005		reads: ‥‥‥ふぅ‥‥‥‥一時はどうなる事かと思ったぞ！\n<wait>
-m/MS0052.BIN	0:02	34	870	1FD2	医者：		Doctor:	v005		
-m/MS0052.BIN	0:02	35	878	1FD3	{08:72}{08:61}{08:72}君達も無茶を{08:8E}ね。\n{01:2D}の指示を、振り切っ{08:21}{08:5F}{08:52}な？\n<wait>		Still, I must say. It was quite the thing you guys did.\nOrders from the Administrator's Office aren't to be ignored like that.\n<wait>	v005		reads: ‥‥しかし‥‥君達も無茶をするね。\n管理部の指示を、振り切っていったんだってな？\n<wait>
-m/MS0052.BIN	0:02	36	942	1FD2	医者：		Doctor:	v005		
-m/MS0052.BIN	0:02	37	950	1FD3	{08:72}人道的に{08:62}君達の{08:4B}事は正しいと私は思うがね。\n<wait>		Not that I personally disagree with your decision...\n<wait>	v005		reads: ‥‥人道的には、君達のした事は正しいと私は思うがね。\n<wait>
-m/MS0052.BIN	0:02	38	1005	1FD2	医者：		Doctor:	v005		
-m/MS0052.BIN	0:02	39	1013	1FD3	さて、{01:2D}の呼び出しが掛かっ{08:14}ん{08:8C}？\n早く行{08:1E}まえ。私も患者が控え{08:14}んでな。\n<wait>		Anyway, did they already send out the summons?\nYou probably shouldn't keep them waiting for any longer than necessary.\n<wait>	v005		reads: さて、管理部の呼び出しが掛かっているんだろう？\n早く行きたまえ。私も患者が控えているんでな。\n<wait>
-m/MS0052.BIN	0:02	40	1095	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	41	1101	1FD3	{08:72}{01:2A}ござ{08:89}{08:4B}。\n<wait>		...Thank you kindly.\n<wait>	v005		reads: ‥‥ありがとうございました。\n<wait>
-m/MS0052.BIN	0:02	42	1124	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	43	1130	1FD3	{01:1C}！　行くぞ！！\n<wait>		Guys, let's get going!\n<wait>	v005		reads: みんな！　行くぞ！！\n<wait>
-m/MS0052.BIN	0:02	44	1155	1FD2	一同：		Everyone:	v005		
-m/MS0052.BIN	0:02	45	1163	1FD3	{02:08}了解！\n		Roger!\n	v005		reads: ‥‥‥了解！\n
-m/MS0052.BIN	0:02	46	1195	09	治療{08:4B}いのかね？\n{08:58}、{08:47}非常事態だ。金{08:26}らんよ。\n		You want to get your wounds healed? Sure thing.\nWith the situation being what it is, you don't even have to pay.\n	v005		reads: 治療したいのかね？\nなに、この非常事態だ。金はいらんよ。\n
-m/MS0052.BIN	0:02	47	1259	1FB2	治療{08:4A}もらう		Get healed	v005		reads: 治療してもらう; menu option, declared width 20 columns
-m/MS0052.BIN	0:02	48	1273	1FB2	治療し{08:25}		Don't heal	v005		reads: 治療しない; menu option, declared width 20 columns
-m/MS0052.BIN	0:02	49	1295	0F	{01:B0}	{01:B0}				reads: 
-m/MS0052.BIN	0:02	50	1298	00						
-m/MS0052.BIN	0:02	51	1303	1FD2	医者：		Doctor:	v005		
-m/MS0052.BIN	0:02	52	1321	1F80	rと言{08:52}も、治療が必要な{02:0B}は{08:24}{08:69}{08:8F}{08:72}？\n<wait>		ually, it doesn't seem like there's anyone in need of healing...\n<wait>	v005		reads: rと言っても、治療が必要な人間はいないようだが‥‥？\n<wait>
-m/MS0052.BIN	0:02	53	1367	1FD2	医者：		Doctor:	v005		
-m/MS0052.BIN	0:02	54	1375	1FD3	早く、{08:47}騒ぎを何とか{08:4A}もらい{08:4E}{08:5E}{08:55}な。\n		I know it's hard, but please, you've gotta fix this mess somehow.\n	v005		reads: 早く、この騒ぎを何とかしてもらいたいものですな。\n
-m/MS0052.BIN	0:02	55	1415	00	{02:08}{08:48}で{01:32}だ。\n<wait>		...That'll do.\n<wait>	v005		reads: ‥‥‥これで大丈夫だ。\n<wait>
-m/MS0052.BIN	0:02	56	1436	1FD2	医者：		Doctor:	v005		
-m/MS0052.BIN	0:02	57	1444	1FD3	早く、{08:47}騒ぎを何とか{08:4A}下{08:49}！\n		I know it's hard, but please, you've gotta fix this mess somehow.\n	v005		reads: 早く、この騒ぎを何とかして下さい！\n
-m/MS0052.BIN	0:02	58	1478	1FD2	医者：		Doctor:	v005		
-m/MS0052.BIN	0:02	59	1486	1FD3	そうか、無理{08:8E}ん{08:81}{08:25}ぞ！\n		Right. Well, don't push yourself too hard!\n	v005		reads: そうか、無理するんじゃないぞ！\n
-m/MS0052.BIN	0:02	60	1512	00	何だね君は？　今は君の番{08:81}{08:25}{08:8C}。\n診療を望むの{08:7C}、受付に行{08:1E}まえ。\n		And what do you want? It's not your turn.\nIf you want to be examined, go talk to the reception.\n	v005		reads: 何だね君は？　今は君の番じゃないだろう。\n診療を望むのならば、受付に行きたまえ。\n
-m/MS0052.BIN	0:02	61	1597	00	：		asaka:	v005		
-m/MS0052.BIN	0:02	62	1601	1FD3	おい、		Yo, Katsuragi. Let's go find some food. Everyone's starving.\n	v005		
-m/MS0052.BIN	0:02	63	1611	00	{04:FF}。\n早いとこ食料を調達{08:4A}、休憩を取ろうぜ。\n{01:1C}も待っ{08:2B}{08:5F}しさ。\n					reads: 。\n早いとこ食料を調達して、休憩を取ろうぜ。\nみんなも待ってるんだしさ。\n
-m/MS0052.BIN	0:02	64	1712	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	65	1718	1FD3	{08:90}だ？　様子は。\n何はとも{08:3F}、{01:31}に蘇生出来て良{08:18}{02:08}\n<wait>		How's it feeling? I'm glad that we were able to revive you...\n<wait>	v005		reads: どうだ？　様子は。\n何はともあれ、無事に蘇生出来て良かった‥‥‥\n<wait>
-m/MS0052.BIN	0:02	66	1781	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	67	1787	1FD3	{08:4D}で{08:72}食料の方は{08:90}だ？\n<wait>		So, what about the food?\n<wait>	v005		reads: それで‥‥食料の方はどうだ？\n<wait>
-m/MS0052.BIN	0:02	68	1836	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	69	1853	1F80	A調達できて{08:25}のか。\n休み無し{08:55}ま{08:25}が、皆の食料を調達{08:4A}きてくれ。\n<wait>		 still haven't gotten it?\nLook, I know you're tired, but we all need to eat.\n<wait>	v005		reads: A調達できてないのか。\n休み無しですまないが、皆の食料を調達してきてくれ。\n<wait>
-m/MS0052.BIN	0:02	70	1926	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	71	1932	1FD3	頼{08:5F}ぞ！\n		Please!\n	v005		reads: 頼んだぞ！\n
-m/MS0052.BIN	0:02	72	1965	1A	{02:08}{08:79}量で{08:62}全員に食料が行き渡らん{08:8C}。\nも{08:53}多めに調達{08:4A}きてくれ。\n<wait>		That's hardly enough to feed us all.\nI'm going to have to ask you to go back and get some more.\n<wait>	v005		reads: ‥‥‥その量では、全員に食料が行き渡らんだろう。\nもっと多めに調達してきてくれ。\n<wait>
-m/MS0052.BIN	0:02	73	2048	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	74	2054	1FD3	{08:34}と		Kirishima is currently staying with Tachibana. It's much easier to get\nrest on a soft bed rather than the cold, hard floor.\n<wait>	v005		reads: 桐島と
-m/MS0052.BIN	0:02	75	2062	00	{04:FE}{08:62}病室の方に{08:40}。\n身体を休ま{08:2A}のに、床の上はあんまりだ{08:42}な。\n<wait>					reads: は、病室の方にいる。\n身体を休ませるのに、床の上はあんまりだからな。\n<wait>
-m/MS0052.BIN	0:02	76	2132	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	77	2138	1FD3	お、{01:36}、{08:02}に連絡し{08:25}といかんな。\n<wait>		Ah, that reminds me. It's been a while already.\nI need to contact Yamase and see what the situation is like at his end.\n<wait>	v005		reads: お、そろそろ、山瀬に連絡しないといかんな。\n<wait>
-m/MS0052.BIN	0:02	78	2179	1FD0	{08:04}{08:62}ファームに{08:40}{08:02}と、{08:65}で連絡を取る事に{08:4B}。\nアームターミナルを{08:65}モードにし、{08:02}を呼び出す{02:08}\n<wait>		Nishino swiftly activates his transmitter and calls Yamase.\n<wait>	v005		reads: 西野は、ファームにいる山瀬と、通信で連絡を取る事にした。\nアームターミナルを通信モードにし、山瀬を呼び出す‥‥‥\n<wait>
-m/MS0052.BIN	0:02	79	2301	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	80	2307	1FD3	{02:0E}{08:04}。\n<wait>{08:72}{08:02}、応答願う！\n<wait>		This is Nishino.\n<wait>...Yamase, answer!\n<wait>	v005		reads: こちら西野。\n<wait>‥‥山瀬、応答願う！\n<wait>
-m/MS0052.BIN	0:02	81	2351	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：
-m/MS0052.BIN	0:02	82	2357	1FD3	{02:08}{08:26}、{02:0E}{08:02}{08:55}。\n<wait>		Yeah... This is Yamase. I hear you.\n<wait>	v005		reads: ‥‥‥はい、こちら山瀬です。\n<wait>
-m/MS0052.BIN	0:02	83	2380	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	84	2386	1FD3	現状を、お互いに報告しあおう。\n<wait>まず、{02:0E}の状態{08:8F}{02:08}{02:08}{08:72}\n<wait>		Let's start by exchanging status reports.\n<wait>I'll go first.\n<wait>	v005		reads: 現状を、お互いに報告しあおう。\n<wait>まず、こちらの状態だが‥‥‥‥‥‥‥‥\n<wait>
-m/MS0052.BIN	0:02	85	2452	1FD0	{08:04}{08:62}{02:0E}の状況を{08:02}に伝え、{08:02}{08:42}の報告に対し、細かな指示を\n与え{08:14}。\n<wait>		Nishino lets Yamase know what you've been up to so far,\nand also gives him some further instruction.\n<wait>	v005		reads: 西野は、こちらの状況を山瀬に伝え、山瀬からの報告に対し、細かな指示を\n与えている。\n<wait>
-m/MS0052.BIN	0:02	86	2524	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	87	2530	1FD3	{02:08}‥以上だ。\n<wait>		...That is all.\n<wait>	v005		reads: ‥‥‥‥以上だ。\n<wait>
-m/MS0052.BIN	0:02	88	2555	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：
-m/MS0052.BIN	0:02	89	2561	1FD3	了解。指示通り対処致し{08:5A}。\n<wait>		Roger. I'll get on that right away.\n<wait>	v005		reads: 了解。指示通り対処致します。\n<wait>
-m/MS0052.BIN	0:02	90	2596	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：
-m/MS0052.BIN	0:02	91	2602	1FD3	{08:4D}と{02:08}‥\n<wait>		Oh, and also...\n<wait>	v005		reads: それと‥‥‥‥\n<wait>
-m/MS0052.BIN	0:02	92	2623	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	93	2629	1FD3	ん？　ああ、陽子と知多も{01:31}か{02:08}{08:72}よ{08:18}。\nすまんな。{08:02}。\n<wait>		Hmm? Oh, Youko and Chito are safe. That's good to hear...\n<wait>	v005		reads: ん？　ああ、陽子と知多も無事か‥‥‥‥‥よかった。\nすまんな。山瀬。\n<wait>
-m/MS0052.BIN	0:02	94	2691	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	95	2697	1FD3	しっかり頼{08:5F}ぞ！\n<wait>		Take care of them. And everyone else there, too.\n<wait>	v005		reads: しっかり頼んだぞ！\n<wait>
-m/MS0052.BIN	0:02	96	2722	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0052.BIN	0:02	97	2728	1FD3	{08:90}で{08:4B}か？\n<wait>		What was the situation like?\n<wait>	v005		reads: どうでしたか？\n<wait>
-m/MS0052.BIN	0:02	98	2747	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	99	2753	1FD3	今の{08:87}、異変は{08:25}{01:29}。\n<wait>		Things appear to be going well for now.\n<wait>	v005		reads: 今のところ、異変はないそうだ。\n<wait>
-m/MS0052.BIN	0:02	100	2782	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	101	2788	1FD3	{08:82}、点呼を取{08:51}所、やはりラボ以降の階の{02:0B}{08:62}殆どい{08:19}らしい。\n<wait>		However, there was something odd he noted.\nIt'd seem that there are no people present from the lower floors.\n<wait>	v005		reads: ただ、点呼を取った所、やはりラボ以降の階の人間は、殆どいなかったらしい。\n<wait>
-m/MS0052.BIN	0:02	102	2855	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	103	2861	1FD3	{08:4D}と、{08:00}。\nお前の御両親も、ちゃんと避難{03:0C}た{01:29}。安心しろ。\n<wait>		Also, Hayasaka. You don't need to worry about your parents.\nThey have been evacuated safely.\n<wait>	v005		reads: それと、早坂。\nお前の御両親も、ちゃんと避難されたそうだ。安心しろ。\n<wait>
-m/MS0052.BIN	0:02	104	2927	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0052.BIN	0:02	105	2933	1FD3	そう{08:55}か！\n<wait>		Really!? Thank god...\n<wait>	v005		reads: そうですか！\n<wait>
-m/MS0052.BIN	0:02	106	2952	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	107	2958	1FD3	さて、{02:0C}も病室に入ろう。\n<wait>食事をと{08:52}、僅かな間{08:56}休息を取る{08:5F}。\n<wait>		Now then, let's gather up with the others.\n<wait>We should make sure that we are fed and rested.\n<wait>	v005		reads: さて、我々も病室に入ろう。\n<wait>食事をとって、僅かな間でも休息を取るんだ。\n<wait>
-m/MS0052.BIN	0:02	108	3101	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	109	3107	1FD3	{08:72}上手くい{08:52}くれ{02:08}‥！\n<wait>		Please work...\n<wait>	v005		reads: ‥‥上手くいってくれ‥‥‥‥！\n<wait>
-m/MS0052.BIN	0:02	110	3147	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	111	3153	1FD3	よし！　成功だ{02:08}‥！\n<wait>		Yes! It worked!\n<wait>	v005		reads: よし！　成功だ‥‥‥‥！\n<wait>
-m/MS0052.BIN	0:02	112	3182	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	113	3188	1FD3	間に合{08:51}か{02:08}{08:72}よ{08:18}{02:08}‥\n<wait>		Did we make it in time? Thank god...\n<wait>	v005		reads: 間に合ったか‥‥‥‥‥よかった‥‥‥‥\n<wait>
-m/MS0052.BIN	0:02	114	3256	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0052.BIN	0:02	115	3262	1FD3	{08:45}を{02:08}こう{08:4A}{02:08}‥！\nお願い！！　間に合{08:52}！！\n<wait>		Put this here, and... Please work...\n<wait>	v005		reads: ここを‥‥‥こうして‥‥‥‥！\nお願い！！　間に合って！！\n<wait>
-m/MS0052.BIN	0:02	116	3323	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0052.BIN	0:02	117	3329	1FD3	や{08:51}あ！　成功だわ！\n{02:08}‥よ{08:18}{02:08}\n<wait>		Yes! It worked! Thank god...\n<wait>	v005		reads: やったあ！　成功だわ！\n‥‥‥‥よかった‥‥‥\n<wait>
-m/MS0052.BIN	0:02	118	3406	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0052.BIN	0:02	119	3412	1FD3	{08:45}を{08:72}こう{08:4A}{02:08}後は{08:48}を{02:08}‥！\n{02:08}‥{01:1C}{02:08}死な{08:25}でくれッ！！\n<wait>		Put this here, and... Please work...\n<wait>	v005		reads: ここを‥‥こうして‥‥‥後はこれを‥‥‥‥！\n‥‥‥‥みんな‥‥‥死なないでくれッ！！\n<wait>
-m/MS0052.BIN	0:02	120	3485	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0052.BIN	0:02	121	3491	1FD3	{02:08}いや{08:51}ぁ！　成功だッ！\n{01:1C}{02:08}良{08:18}{02:08}{08:72}\n<wait>		Yes! It worked! We saved them...\n<wait>	v005		reads: ‥‥‥いやったぁ！　成功だッ！\nみんな‥‥‥良かった‥‥‥‥‥\n<wait>
-m/MS0052.BIN	0:02	122	3574	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：
-m/MS0052.BIN	0:02	123	3580	1FD3	えー{08:53}、{08:45}を{08:72}こうや{08:52}{08:72}こうだな？\nよし！　{08:48}でＯＫだ。\n<wait>		Put this here, and... And... Alright! That should do.\n<wait>	v005		reads: えーっと、ここを‥‥こうやって‥‥こうだな？\nよし！　これでＯＫだ。\n<wait>
-m/MS0052.BIN	0:02	124	3644	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：
-m/MS0052.BIN	0:02	125	3650	1FD3	{02:08}間に合{08:52}くれよ{02:08}‥\n<wait>		Now to hope that we were in time...\n<wait>	v005		reads: ‥‥‥間に合ってくれよ‥‥‥‥\n<wait>
-m/MS0052.BIN	0:02	126	3688	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：
-m/MS0052.BIN	0:02	127	3694	1FD3	いやっほぅ！　成功だ！！　や{08:51}ぜ！\n<wait>		Yes! It worked!\n<wait>	v005		reads: いやっほぅ！　成功だ！！　やったぜ！\n<wait>
-m/MS0052.BIN	0:02	128	3778	00	{04:FE}：		Yuuka:	v005		reads: ：
-m/MS0052.BIN	0:02	129	3784	1FD3	{08:45}を{02:08}こう{08:4A}{02:08}‥こうよね{08:72}！\nお願い！！　間に合{08:52}！！\n<wait>		Put this here, and... Please work...\n<wait>	v005		reads: ここを‥‥‥こうして‥‥‥‥こうよね‥‥！\nお願い！！　間に合って！！\n<wait>
-m/MS0052.BIN	0:02	130	3859	00	{04:FE}：		Yuuka:	v005		reads: ：
-m/MS0052.BIN	0:02	131	3865	1FD3	成功だわ！\n{02:08}‥よ{08:18}{02:08}\n<wait>		Yes! It worked!\n<wait>	v005		reads: 成功だわ！\n‥‥‥‥よかった‥‥‥\n<wait>
-m/MS0052.BIN	0:02	132	3936	00	{04:FF}{08:62}蘇生システムを作動させ、{08:0F}の蘇生を試みた。\n<wait>		You attempt to use the revival system to bring your friends back.\n<wait>	v005		reads: は、蘇生システムを作動させ、仲間の蘇生を試みた。\n<wait>
-m/MS0052.BIN	0:02	133	3998	1FC4	蘇生成功！\n		It worked!\n	v005		
-m/MS0052.BIN	0:02	134	4029	1FD0	{01:03}{08:62}救命システムを作動させ、重傷患者の蘇生を行{08:51}。\n<wait>		Newton begins operating the revival system.\n<wait>	v005		reads: ニュートンは、救命システムを作動させ、重傷患者の蘇生を行った。\n<wait>
-m/MS0052.BIN	0:02	135	4095	1FC4	蘇生は成功し、		It worked. 	v005		
-m/MS0052.BIN	0:02	136	4118	00	{04:FF}{08:62}一命を取り留めた。\n		Katsuragi was revived.\n	v005		reads: は、一命を取り留めた。\n
-m/MS0052.BIN	0:02	137	4144	18	一行は一命を取り留めた。\n		The party was revived.\n	v005		
-m/MS0052.BIN	0:02	138	4196	1FD2	医者：		Doctor:	v005		
-m/MS0052.BIN	0:02	139	4204	1FD3	{02:08}{03:0B}一時は{08:90}{08:59}事かと思{08:51}ぞ。\nまぁ、{01:31}に蘇生{08:4A}良{08:18}がな{02:08}\n<wait>		That sure was close...\nStill, I'm glad that it all worked out in the end.\n<wait>	v005		reads: ‥‥‥しかし、一時はどうなる事かと思ったぞ。\nまぁ、無事に蘇生して良かったがな‥‥‥\n<wait>
-m/MS0052.BIN	0:02	140	4268	1FD2	医者：		Doctor:	v005		
-m/MS0052.BIN	0:02	141	4276	1FD3	あまり無茶を{08:4A}、人を心配さ{08:2A}モン{08:81}{08:25}ぞ！\n		Stop pushing yourself so damn hard, okay?\n	v005		reads: あまり無茶をして、人を心配させるモンじゃないぞ！\n
-m/MS0052.BIN	0:02	142	4335	1FD0	蘇生{08:4B}ばかりの{08:00}が、少しふらつく頭を押さえながら言{08:51}。\n<wait>		Hayasaka shakes his head.\n<wait>	v005		reads: 蘇生したばかりの早坂が、少しふらつく頭を押さえながら言った。\n<wait>
-m/MS0052.BIN	0:02	143	4398	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0052.BIN	0:02	144	4404	1FD3	{08:61}{02:08}{08:47}武装では{08:48}{08:42}が心もと{08:25}な{02:08}\n<wait>		Hmm... I feel like we should get ourselves better weapons.\n<wait>	v005		reads: しかし‥‥‥この武装ではこれからが心もとないな‥‥‥\n<wait>
-m/MS0052.BIN	0:02	145	4445	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0052.BIN	0:02	146	4451	1FD3	Ｂ８に戻{08:52}装備を整え{08:69}。\n<wait>		Let's head back to B8 and get geared up.\n<wait>	v005		reads: Ｂ８に戻って装備を整えよう。\n<wait>
-m/MS0052.BIN	0:02	147	4484	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0052.BIN	0:02	148	4490	1FD3	そうね。{08:4D}が{08:7F}わ。\n<wait>		Sounds good.\n<wait>	v005		reads: そうね。それがいいわ。\n<wait>
-m/MS0052.BIN	0:02	149	4526	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0052.BIN	0:02	150	4532	1FD3	そういえば、武器を{08:76}調達{08:4A}{08:24}な{02:08}\n<wait>		That reminds me... We still need to find weapons.\n<wait>	v005		reads: そういえば、武器をまだ調達していないな‥‥‥\n<wait>
-m/MS0052.BIN	0:02	151	4573	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0052.BIN	0:02	152	4579	1FD3	よし。Ｂ８の武器庫へ行{08:52}装備を整えて{08:42}、上に向かおう。\n<wait>		Right. Let's drop by the armoury on B8 and get geared up.\n<wait>	v005		reads: よし。Ｂ８の武器庫へ行って装備を整えてから、上に向かおう。\n<wait>
-m/MS0052.BIN	0:02	153	4642	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0052.BIN	0:02	154	4648	1FD3	そうしま{08:80}。\n		Sounds good.\n	v005		reads: そうしましょう。\n
-m/MS0052.BIN	0:02	155	4672	1F03	<wait>	<wait>				
-m/MS0052.BIN	0:02	156	4682	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	157	4688	1FD3	{08:61}{08:72}一体{08:90}{08:4B}{08:46}だ？\n<wait>		What on earth is going on?\n<wait>	v005		reads: しかし‥‥一体どうしたことだ？\n<wait>
-m/MS0052.BIN	0:02	158	4715	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0052.BIN	0:02	159	4721	1FD3	{08:73}階{08:71}{08:0B}が{08:72}{08:86}も肉体を持つ{08:0B}が{08:72}\n<wait>		How are there demons with physical bodies on this floor?\n<wait>	v005		reads: こんな階まで悪魔が‥‥しかも肉体を持つ悪魔が‥‥\n<wait>
-m/MS0052.BIN	0:02	160	4762	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0052.BIN	0:02	161	4768	1FD3	{01:34}が破ら{08:60}の？　{08:56}{08:90}{08:4A}？\n<wait>		Has the boundary failed? If so, how?\n<wait>	v005		reads: 結界が破られたの？　でもどうして？\n<wait>
-m/MS0052.BIN	0:02	162	4801	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	163	4807	1FD3	避難{08:13}住人の安否が心配だ。{08:02}と連絡を！\n<wait>		I'm worried about the people. Let's contact Yamase.\n<wait>	v005		reads: 避難している住人の安否が心配だ。山瀬と連絡を！\n<wait>
-m/MS0052.BIN	0:02	164	4854	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0052.BIN	0:02	165	4860	1FD3	了解！\n<wait>		Roger!\n<wait>	v005		
-m/MS0052.BIN	0:02	166	4875	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	167	4881	1FD3	大変な事に{08:16}な。\nあの時取り逃が{08:4B}、ムールムールと言う{08:0B}の仕業か！\n<wait>		What an ordeal. This must be the doing of that demon Murmur.\n<wait>	v005		reads: 大変な事になったな。\nあの時取り逃がした、ムールムールと言う悪魔の仕業か！\n<wait>
-m/MS0052.BIN	0:02	168	4955	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0052.BIN	0:02	169	4961	1FD3	隊長、幾ら呼び出{08:4A}も、{08:02}隊員の応答があり{02:0A}！！\n<wait>		Commander, bad news. Yamase isn't picking up!\n<wait>	v005		reads: 隊長、幾ら呼び出しても、山瀬隊員の応答がありません！！\n<wait>
-m/MS0052.BIN	0:02	170	5016	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	171	5022	1FD3	クッ{08:72}！　Ｂ６Ｆのファームに急ぐぞ！！\n{08:47}階の{08:0B}は構わん。無視{08:4A}突っ切れ！\n<wait>		Dammit... Alright. Let's head to B6F!\n<wait>	v005		reads: クッ‥‥！　Ｂ６Ｆのファームに急ぐぞ！！\nこの階の悪魔は構わん。無視して突っ切れ！\n<wait>
-m/MS0052.BIN	0:02	172	5104	1FD2	一同：		Everyone:	v005		
-m/MS0052.BIN	0:02	173	5112	1FD3	了解！！\n<wait>		Roger!\n<wait>	v005		
-m/MS0052.BIN	0:02	174	5148	0B	蘇生{08:4B}ばかりの{08:04}が、一同を見渡し重々しく口を開{08:64}。\n<wait>		Nishino turns towards the group and opens his mouth.\n<wait>	v005		reads: 蘇生したばかりの西野が、一同を見渡し重々しく口を開いた。\n<wait>
-m/MS0052.BIN	0:02	175	5207	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0052.BIN	0:02	176	5213	1FD3	{02:08}休み無しに{08:59}が、Ｂ８Ｆの{01:2B}駆逐作戦を続行{08:8E}。\n<wait>		Let's hurry over to B8F. We need to get rid of the zombies.\n<wait>	v005		reads: ‥‥‥休み無しになるが、Ｂ８Ｆのゾンビ駆逐作戦を続行する。\n<wait>
-m/MS0052.BIN	0:02	177	5268	1FD2	一同：		Everyone:	v005		
-m/MS0052.BIN	0:02	178	5276	1FD3	了解{02:08}！\n		Roger!...\n	v005		reads: 了解‥‥‥！\n
+m/MS0052.BIN	0:02	5	184	1F80	{=FC}{=1F}ﾒ{08:04}：	{=FC}{=1F}ﾒ{08:04}：	{=FC}{=1F}Nishino:	ours		reads: {=FC}{=1F}ﾒ西野：; reads: 早坂達也
+m/MS0052.BIN	0:02	6	193	1FD3	治療の必要な者は{08:24}{08:69}だな{02:08}\nあまり悠長にや{08:52}{08:26}られん。行くぞ！\n		Doesn't look like anyone's in need of healing. Let's get going!\n	v005		reads: 治療の必要な者はいないようだな‥‥‥\nあまり悠長にやってはいられん。行くぞ！\n; reads: {=FC}{=1F}ﾒ西野：
+m/MS0052.BIN	0:02	7	265	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 治療の必要な者はいないようだな‥‥‥\nあまり悠長にやってはいられん。行くぞ！\n
+m/MS0052.BIN	0:02	8	271	1FD3	治療の必要が{08:7B}奴は{08:24}ぜ。行こう。\nあまり、悠長には{08:4A}いられ{08:25}{08:42}な。\n		Doesn't look like anyone's in need of healing. Let's get going!\n	v005		reads: 治療の必要がある奴はいないぜ。行こう。\nあまり、悠長にはしていられないからな。\n; reads: 早坂：
+m/MS0052.BIN	0:02	9	340	1FD0	治療の必要が{08:7B}者は{08:24}{08:69}だ{02:08}‥\nあまり、悠長に事を構えて{08:26}られ{08:25}。\n<wait>		It doesn't look like anyone is in need of healing.\nYou should probably get going.\n<wait>	v005		reads: 治療の必要がある者はいないようだ‥‥‥‥\nあまり、悠長に事を構えてはいられない。\n<wait>; reads: 治療の必要がある奴はいないぜ。行こう。\nあまり、悠長にはしていられないからな。\n
+m/MS0052.BIN	0:02	10	414	00	{04:FF}{08:62}診療室を立ち去{08:51}。\n		You turn around and leave the examination room behind.\n	v005		reads: は、診療室を立ち去った。\n; reads: 治療の必要がある者はいないようだ‥‥‥‥\nあまり、悠長に事を構えてはいられない。\n<wait>
+m/MS0052.BIN	0:02	11	450	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: は、診療室を立ち去った。\n
+m/MS0052.BIN	0:02	12	456	1FD3	あまり悠長にや{08:52}{08:26}られん。行くぞ！\n		No point in wasting time. Let's hurry!\n	v005		reads: あまり悠長にやってはいられん。行くぞ！\n; reads: 西野：
+m/MS0052.BIN	0:02	13	501	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: あまり悠長にやってはいられん。行くぞ！\n
+m/MS0052.BIN	0:02	14	507	1FD3	あまり、悠長には{08:4A}いられ{08:25}{08:42}な。<wait>行こう。\n		No point in wasting time. <wait>Let's hurry!\n	v005		reads: あまり、悠長にはしていられないからな。<wait>行こう。\n; reads: 早坂：
+m/MS0052.BIN	0:02	15	555	1FD0	治療{08:62}{01:31}終了{08:4B}。\nあまり、悠長に事を構えて{08:26}られ{08:25}。\n<wait>		All healed up. Now then, you shouldn't waste any more time.\n<wait>	v005		reads: 治療は、無事終了した。\nあまり、悠長に事を構えてはいられない。\n<wait>; reads: あまり、悠長にはしていられないからな。<wait>行こう。\n
+m/MS0052.BIN	0:02	16	617	00	{04:FF}{08:62}診療室を立ち去{08:51}。\n		You turn around and leave the examination room behind.\n	v005		reads: は、診療室を立ち去った。\n; reads: 治療は、無事終了した。\nあまり、悠長に事を構えてはいられない。\n<wait>
+m/MS0052.BIN	0:02	17	641	00	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n; reads: は、診療室を立ち去った。\n
+m/MS0052.BIN	0:02	18	662	1FB2	{08:0F}の蘇生を試みる		Revive ally	v005		reads: 仲間の蘇生を試みる; menu option, declared width 20 columns; reads: ＞どうしますか？\n
+m/MS0052.BIN	0:02	19	680	1FB2	{08:63}の治療{08:8E}		Heal self	v005		reads: 自分の治療する; menu option, declared width 20 columns; reads: 仲間の蘇生を試みる
+m/MS0052.BIN	0:02	20	692	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; reads: 自分の治療する
+m/MS0052.BIN	0:02	21	785	1FD2	医者：		Doctor:	v005		menu option, declared width 20 columns
+m/MS0052.BIN	0:02	22	806	1F04						reads: おねえちゃん
+m/MS0052.BIN	0:02	23	819	1FD2	医者：		Doctor:	v005		reads: ペンタグランマﾕ @rebase-unmatched idx23 en={02:01}
+m/MS0052.BIN	0:02	24	827	1FD3	{02:08}ふぅ{02:08}‥一時は{08:90}{08:59}事かと思{08:51}ぞ！\n<wait>	{02:08}ふぅ{02:08}‥一時は{08:90}{08:59}事かと思{08:51}ぞ！\n<wait>	Phew... For a moment there, I had no idea what was happening!\n<wait>	v005		reads: ‥‥‥ふぅ‥‥‥‥一時はどうなる事かと思ったぞ！\n<wait>
+m/MS0052.BIN	0:02	25	870	1FD2	医者：		Doctor:	v005		reads: あんたﾎ @rebase-unmatched idx25 en={01:18}K
+m/MS0052.BIN	0:02	26	878	1FD3	{08:72}{08:61}{08:72}君達も無茶を{08:8E}ね。\n{01:2D}の指示を、振り切っ{08:21}{08:5F}{08:52}な？\n<wait>	{08:72}{08:61}{08:72}君達も無茶を{08:8E}ね。\n{01:2D}の指示を、振り切っ{08:21}{08:5F}{08:52}な？\n<wait>	Still, I must say. It was quite the thing you guys did.\nOrders from the Administrator's Office aren't to be ignored like that.\n<wait>	v005		reads: ‥‥しかし‥‥君達も無茶をするね。\n管理部の指示を、振り切っていったんだってな？\n<wait>; reads: 早坂
+m/MS0052.BIN	0:02	27	942	1FD2	医者：	医者：	Doctor:	v005		reads: 
+m/MS0052.BIN	0:02	28	950	1FD3	{08:72}人道的に{08:62}君達の{08:4B}事は正しいと私は思うがね。\n<wait>		Not that I personally disagree with your decision...\n<wait>	v005		reads: ‥‥人道的には、君達のした事は正しいと私は思うがね。\n<wait>; reads: ﾂ
+m/MS0052.BIN	0:02	29	1005	1FD2	医者：	医者：	Doctor:	v005		reads: を攻撃し
+m/MS0052.BIN	0:02	30	1013	1FD3	さて、{01:2D}の呼び出しが掛かっ{08:14}ん{08:8C}？\n早く行{08:1E}まえ。私も患者が控え{08:14}んでな。\n<wait>		Anyway, did they already send out the summons?\nYou probably shouldn't keep them waiting for any longer than necessary.\n<wait>	v005		reads: さて、管理部の呼び出しが掛かっているんだろう？\n早く行きたまえ。私も患者が控えているんでな。\n<wait>
+m/MS0052.BIN	0:02	31	1095	1FD2	{08:04}：	{08:04}：	Nishino:	v005		reads: 西野：
+m/MS0052.BIN	0:02	32	1101	1FD3	{08:72}{01:2A}ござ{08:89}{08:4B}。\n<wait>		...Thank you kindly.\n<wait>	v005		reads: ‥‥ありがとうございました。\n<wait>
+m/MS0052.BIN	0:02	33	1124	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: ‥‥‥ふぅ‥‥‥‥一時はどうなる事かと思ったぞ！\n<wait>
+m/MS0052.BIN	0:02	34	1130	1FD3	{01:1C}！　行くぞ！！\n<wait>		Guys, let's get going!\n<wait>	v005		reads: みんな！　行くぞ！！\n<wait>
+m/MS0052.BIN	0:02	35	1155	1FD2	一同：		Everyone:	v005		reads: ‥‥しかし‥‥君達も無茶をするね。\n管理部の指示を、振り切っていったんだってな？\n<wait>
+m/MS0052.BIN	0:02	36	1163	1FD3	{02:08}了解！\n		Roger!\n	v005		reads: ‥‥‥了解！\n
+m/MS0052.BIN	0:02	37	1195	09	治療{08:4B}いのかね？\n{08:58}、{08:47}非常事態だ。金{08:26}らんよ。\n		You want to get your wounds healed? Sure thing.\nWith the situation being what it is, you don't even have to pay.\n	v005		reads: 治療したいのかね？\nなに、この非常事態だ。金はいらんよ。\n; reads: ‥‥人道的には、君達のした事は正しいと私は思うがね。\n<wait>
+m/MS0052.BIN	0:02	38	1259	1FB2	治療{08:4A}もらう		Get healed	v005		reads: 治療してもらう; menu option, declared width 20 columns
+m/MS0052.BIN	0:02	39	1273	1FB2	治療し{08:25}		Don't heal	v005		reads: 治療しない; menu option, declared width 20 columns; reads: さて、管理部の呼び出しが掛かっているんだろう？\n早く行きたまえ。私も患者が控えているんでな。\n<wait>
+m/MS0052.BIN	0:02	40	1303	1FD2	医者：		Doctor:	v005		reads: 西野：
+m/MS0052.BIN	0:02	41	1321	1F80	rと言{08:52}も、治療が必要な{02:0B}は{08:24}{08:69}{08:8F}{08:72}？\n<wait>		ually, it doesn't seem like there's anyone in need of healing...\n<wait>	v005		reads: rと言っても、治療が必要な人間はいないようだが‥‥？\n<wait>; reads: ‥‥ありがとうございました。\n<wait>
+m/MS0052.BIN	0:02	42	1367	1FD2	医者：		Doctor:	v005		reads: 西野：
+m/MS0052.BIN	0:02	43	1375	1FD3	早く、{08:47}騒ぎを何とか{08:4A}もらい{08:4E}{08:5E}{08:55}な。\n		I know it's hard, but please, you've gotta fix this mess somehow.\n	v005		reads: 早く、この騒ぎを何とかしてもらいたいものですな。\n; reads: みんな！　行くぞ！！\n<wait>
+m/MS0052.BIN	0:02	44	1415	00	{02:08}{08:48}で{01:32}だ。\n<wait>		...That'll do.\n<wait>	v005		reads: ‥‥‥これで大丈夫だ。\n<wait>
+m/MS0052.BIN	0:02	45	1436	1FD2	医者：		Doctor:	v005		reads: ‥‥‥了解！\n
+m/MS0052.BIN	0:02	46	1444	1FD3	早く、{08:47}騒ぎを何とか{08:4A}下{08:49}！\n		I know it's hard, but please, you've gotta fix this mess somehow.\n	v005		reads: 早く、この騒ぎを何とかして下さい！\n; reads: 治療したいのかね？\nなに、この非常事態だ。金はいらんよ。\n
+m/MS0052.BIN	0:02	47	1478	1FD2	医者：		Doctor:	v005		reads: 治療してもらう; menu option, declared width 20 columns
+m/MS0052.BIN	0:02	48	1486	1FD3	そうか、無理{08:8E}ん{08:81}{08:25}ぞ！\n		Right. Well, don't push yourself too hard!\n	v005		reads: そうか、無理するんじゃないぞ！\n; reads: 治療しない; menu option, declared width 20 columns
+m/MS0052.BIN	0:02	49	1512	00	何だね君は？　今は君の番{08:81}{08:25}{08:8C}。\n診療を望むの{08:7C}、受付に行{08:1E}まえ。\n	何だね君は？　今は君の番{08:81}{08:25}{08:8C}。\n診療を望むの{08:7C}、受付に行{08:1E}まえ。\n	And what do you want? It's not your turn.\nIf you want to be examined, go talk to the reception.\n	v005		reads: 何だね君は？　今は君の番じゃないだろう。\n診療を望むのならば、受付に行きたまえ。\n
+m/MS0052.BIN	0:02	50	1597	00	：	：	asaka:	v005		
+m/MS0052.BIN	0:02	51	1601	1FD3	おい、		Yo, Katsuragi. Let's go find some food. Everyone's starving.\n	v005		
+m/MS0052.BIN	0:02	52	1611	00	{04:FF}。\n早いとこ食料を調達{08:4A}、休憩を取ろうぜ。\n{01:1C}も待っ{08:2B}{08:5F}しさ。\n					reads: 。\n早いとこ食料を調達して、休憩を取ろうぜ。\nみんなも待ってるんだしさ。\n; reads: rと言っても、治療が必要な人間はいないようだが‥‥？\n<wait>
+m/MS0052.BIN	0:02	53	1712	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
+m/MS0052.BIN	0:02	54	1718	1FD3	{08:90}だ？　様子は。\n何はとも{08:3F}、{01:31}に蘇生出来て良{08:18}{02:08}\n<wait>		How's it feeling? I'm glad that we were able to revive you...\n<wait>	v005		reads: どうだ？　様子は。\n何はともあれ、無事に蘇生出来て良かった‥‥‥\n<wait>; reads: 早く、この騒ぎを何とかしてもらいたいものですな。\n
+m/MS0052.BIN	0:02	55	1781	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: ‥‥‥これで大丈夫だ。\n<wait>
+m/MS0052.BIN	0:02	56	1787	1FD3	{08:4D}で{08:72}食料の方は{08:90}だ？\n<wait>		So, what about the food?\n<wait>	v005		reads: それで‥‥食料の方はどうだ？\n<wait>
+m/MS0052.BIN	0:02	57	1836	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 早く、この騒ぎを何とかして下さい！\n
+m/MS0052.BIN	0:02	58	1853	1F80	A調達できて{08:25}のか。\n休み無し{08:55}ま{08:25}が、皆の食料を調達{08:4A}きてくれ。\n<wait>		 still haven't gotten it?\nLook, I know you're tired, but we all need to eat.\n<wait>	v005		reads: A調達できてないのか。\n休み無しですまないが、皆の食料を調達してきてくれ。\n<wait>
+m/MS0052.BIN	0:02	59	1926	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: そうか、無理するんじゃないぞ！\n
+m/MS0052.BIN	0:02	60	1932	1FD3	頼{08:5F}ぞ！\n		Please!\n	v005		reads: 頼んだぞ！\n; reads: 何だね君は？　今は君の番じゃないだろう。\n診療を望むのならば、受付に行きたまえ。\n
+m/MS0052.BIN	0:02	61	1965	1A	{02:08}{08:79}量で{08:62}全員に食料が行き渡らん{08:8C}。\nも{08:53}多めに調達{08:4A}きてくれ。\n<wait>		That's hardly enough to feed us all.\nI'm going to have to ask you to go back and get some more.\n<wait>	v005		reads: ‥‥‥その量では、全員に食料が行き渡らんだろう。\nもっと多めに調達してきてくれ。\n<wait>
+m/MS0052.BIN	0:02	62	2048	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
+m/MS0052.BIN	0:02	63	2054	1FD3	{08:34}と		Kirishima is currently staying with Tachibana. It's much easier to get\nrest on a soft bed rather than the cold, hard floor.\n<wait>	v005		reads: 桐島と; reads: 。\n早いとこ食料を調達して、休憩を取ろうぜ。\nみんなも待ってるんだしさ。\n
+m/MS0052.BIN	0:02	64	2062	00	{04:FE}{08:62}病室の方に{08:40}。\n身体を休ま{08:2A}のに、床の上はあんまりだ{08:42}な。\n<wait>					reads: は、病室の方にいる。\n身体を休ませるのに、床の上はあんまりだからな。\n<wait>; reads: 西野：
+m/MS0052.BIN	0:02	65	2132	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: どうだ？　様子は。\n何はともあれ、無事に蘇生出来て良かった‥‥‥\n<wait>
+m/MS0052.BIN	0:02	66	2138	1FD3	お、{01:36}、{08:02}に連絡し{08:25}といかんな。\n<wait>		Ah, that reminds me. It's been a while already.\nI need to contact Yamase and see what the situation is like at his end.\n<wait>	v005		reads: お、そろそろ、山瀬に連絡しないといかんな。\n<wait>; reads: 西野：
+m/MS0052.BIN	0:02	67	2179	1FD0	{08:04}{08:62}ファームに{08:40}{08:02}と、{08:65}で連絡を取る事に{08:4B}。\nアームターミナルを{08:65}モードにし、{08:02}を呼び出す{02:08}\n<wait>		Nishino swiftly activates his transmitter and calls Yamase.\n<wait>	v005		reads: 西野は、ファームにいる山瀬と、通信で連絡を取る事にした。\nアームターミナルを通信モードにし、山瀬を呼び出す‥‥‥\n<wait>; reads: それで‥‥食料の方はどうだ？\n<wait>
+m/MS0052.BIN	0:02	68	2301	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
+m/MS0052.BIN	0:02	69	2307	1FD3	{02:0E}{08:04}。\n<wait>{08:72}{08:02}、応答願う！\n<wait>		This is Nishino.\n<wait>...Yamase, answer!\n<wait>	v005		reads: こちら西野。\n<wait>‥‥山瀬、応答願う！\n<wait>; reads: A調達できてないのか。\n休み無しですまないが、皆の食料を調達してきてくれ。\n<wait>
+m/MS0052.BIN	0:02	70	2351	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 西野：
+m/MS0052.BIN	0:02	71	2357	1FD3	{02:08}{08:26}、{02:0E}{08:02}{08:55}。\n<wait>		Yeah... This is Yamase. I hear you.\n<wait>	v005		reads: ‥‥‥はい、こちら山瀬です。\n<wait>; reads: 頼んだぞ！\n
+m/MS0052.BIN	0:02	72	2380	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: ‥‥‥その量では、全員に食料が行き渡らんだろう。\nもっと多めに調達してきてくれ。\n<wait>
+m/MS0052.BIN	0:02	73	2386	1FD3	現状を、お互いに報告しあおう。\n<wait>まず、{02:0E}の状態{08:8F}{02:08}{02:08}{08:72}\n<wait>		Let's start by exchanging status reports.\n<wait>I'll go first.\n<wait>	v005		reads: 現状を、お互いに報告しあおう。\n<wait>まず、こちらの状態だが‥‥‥‥‥‥‥‥\n<wait>; reads: 西野：
+m/MS0052.BIN	0:02	74	2452	1FD0	{08:04}{08:62}{02:0E}の状況を{08:02}に伝え、{08:02}{08:42}の報告に対し、細かな指示を\n与え{08:14}。\n<wait>		Nishino lets Yamase know what you've been up to so far,\nand also gives him some further instruction.\n<wait>	v005		reads: 西野は、こちらの状況を山瀬に伝え、山瀬からの報告に対し、細かな指示を\n与えている。\n<wait>; reads: 桐島と
+m/MS0052.BIN	0:02	75	2524	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: は、病室の方にいる。\n身体を休ませるのに、床の上はあんまりだからな。\n<wait>
+m/MS0052.BIN	0:02	76	2530	1FD3	{02:08}‥以上だ。\n<wait>		...That is all.\n<wait>	v005		reads: ‥‥‥‥以上だ。\n<wait>; reads: 西野：
+m/MS0052.BIN	0:02	77	2555	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: お、そろそろ、山瀬に連絡しないといかんな。\n<wait>
+m/MS0052.BIN	0:02	78	2561	1FD3	了解。指示通り対処致し{08:5A}。\n<wait>		Roger. I'll get on that right away.\n<wait>	v005		reads: 了解。指示通り対処致します。\n<wait>; reads: 西野は、ファームにいる山瀬と、通信で連絡を取る事にした。\nアームターミナルを通信モードにし、山瀬を呼び出す‥‥‥\n<wait>
+m/MS0052.BIN	0:02	79	2596	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 西野：
+m/MS0052.BIN	0:02	80	2602	1FD3	{08:4D}と{02:08}‥\n<wait>		Oh, and also...\n<wait>	v005		reads: それと‥‥‥‥\n<wait>; reads: こちら西野。\n<wait>‥‥山瀬、応答願う！\n<wait>
+m/MS0052.BIN	0:02	81	2623	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 山瀬：
+m/MS0052.BIN	0:02	82	2629	1FD3	ん？　ああ、陽子と知多も{01:31}か{02:08}{08:72}よ{08:18}。\nすまんな。{08:02}。\n<wait>		Hmm? Oh, Youko and Chito are safe. That's good to hear...\n<wait>	v005		reads: ん？　ああ、陽子と知多も無事か‥‥‥‥‥よかった。\nすまんな。山瀬。\n<wait>; reads: ‥‥‥はい、こちら山瀬です。\n<wait>
+m/MS0052.BIN	0:02	83	2691	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
+m/MS0052.BIN	0:02	84	2697	1FD3	しっかり頼{08:5F}ぞ！\n<wait>		Take care of them. And everyone else there, too.\n<wait>	v005		reads: しっかり頼んだぞ！\n<wait>; reads: 現状を、お互いに報告しあおう。\n<wait>まず、こちらの状態だが‥‥‥‥‥‥‥‥\n<wait>
+m/MS0052.BIN	0:02	85	2722	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 西野は、こちらの状況を山瀬に伝え、山瀬からの報告に対し、細かな指示を\n与えている。\n<wait>
+m/MS0052.BIN	0:02	86	2728	1FD3	{08:90}で{08:4B}か？\n<wait>		What was the situation like?\n<wait>	v005		reads: どうでしたか？\n<wait>; reads: 西野：
+m/MS0052.BIN	0:02	87	2747	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: ‥‥‥‥以上だ。\n<wait>
+m/MS0052.BIN	0:02	88	2753	1FD3	今の{08:87}、異変は{08:25}{01:29}。\n<wait>		Things appear to be going well for now.\n<wait>	v005		reads: 今のところ、異変はないそうだ。\n<wait>; reads: 山瀬：
+m/MS0052.BIN	0:02	89	2782	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 了解。指示通り対処致します。\n<wait>
+m/MS0052.BIN	0:02	90	2788	1FD3	{08:82}、点呼を取{08:51}所、やはりラボ以降の階の{02:0B}{08:62}殆どい{08:19}らしい。\n<wait>		However, there was something odd he noted.\nIt'd seem that there are no people present from the lower floors.\n<wait>	v005		reads: ただ、点呼を取った所、やはりラボ以降の階の人間は、殆どいなかったらしい。\n<wait>; reads: 山瀬：
+m/MS0052.BIN	0:02	91	2855	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: それと‥‥‥‥\n<wait>
+m/MS0052.BIN	0:02	92	2861	1FD3	{08:4D}と、{08:00}。\nお前の御両親も、ちゃんと避難{03:0C}た{01:29}。安心しろ。\n<wait>		Also, Hayasaka. You don't need to worry about your parents.\nThey have been evacuated safely.\n<wait>	v005		reads: それと、早坂。\nお前の御両親も、ちゃんと避難されたそうだ。安心しろ。\n<wait>; reads: 西野：
+m/MS0052.BIN	0:02	93	2927	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: ん？　ああ、陽子と知多も無事か‥‥‥‥‥よかった。\nすまんな。山瀬。\n<wait>
+m/MS0052.BIN	0:02	94	2933	1FD3	そう{08:55}か！\n<wait>		Really!? Thank god...\n<wait>	v005		reads: そうですか！\n<wait>; reads: 西野：
+m/MS0052.BIN	0:02	95	2952	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: しっかり頼んだぞ！\n<wait>
+m/MS0052.BIN	0:02	96	2958	1FD3	さて、{02:0C}も病室に入ろう。\n<wait>食事をと{08:52}、僅かな間{08:56}休息を取る{08:5F}。\n<wait>		Now then, let's gather up with the others.\n<wait>We should make sure that we are fed and rested.\n<wait>	v005		reads: さて、我々も病室に入ろう。\n<wait>食事をとって、僅かな間でも休息を取るんだ。\n<wait>; reads: 早坂：
+m/MS0052.BIN	0:02	97	3101	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: どうでしたか？\n<wait>
+m/MS0052.BIN	0:02	98	3107	1FD3	{08:72}上手くい{08:52}くれ{02:08}‥！\n<wait>		Please work...\n<wait>	v005		reads: ‥‥上手くいってくれ‥‥‥‥！\n<wait>; reads: 西野：
+m/MS0052.BIN	0:02	99	3147	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 今のところ、異変はないそうだ。\n<wait>
+m/MS0052.BIN	0:02	100	3153	1FD3	よし！　成功だ{02:08}‥！\n<wait>		Yes! It worked!\n<wait>	v005		reads: よし！　成功だ‥‥‥‥！\n<wait>; reads: 西野：
+m/MS0052.BIN	0:02	101	3182	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: ただ、点呼を取った所、やはりラボ以降の階の人間は、殆どいなかったらしい。\n<wait>
+m/MS0052.BIN	0:02	102	3188	1FD3	間に合{08:51}か{02:08}{08:72}よ{08:18}{02:08}‥\n<wait>		Did we make it in time? Thank god...\n<wait>	v005		reads: 間に合ったか‥‥‥‥‥よかった‥‥‥‥\n<wait>; reads: 西野：
+m/MS0052.BIN	0:02	103	3256	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: それと、早坂。\nお前の御両親も、ちゃんと避難されたそうだ。安心しろ。\n<wait>
+m/MS0052.BIN	0:02	104	3262	1FD3	{08:45}を{02:08}こう{08:4A}{02:08}‥！\nお願い！！　間に合{08:52}！！\n<wait>		Put this here, and... Please work...\n<wait>	v005		reads: ここを‥‥‥こうして‥‥‥‥！\nお願い！！　間に合って！！\n<wait>; reads: 早坂：
+m/MS0052.BIN	0:02	105	3323	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: そうですか！\n<wait>
+m/MS0052.BIN	0:02	106	3329	1FD3	や{08:51}あ！　成功だわ！\n{02:08}‥よ{08:18}{02:08}\n<wait>		Yes! It worked! Thank god...\n<wait>	v005		reads: やったあ！　成功だわ！\n‥‥‥‥よかった‥‥‥\n<wait>; reads: 西野：
+m/MS0052.BIN	0:02	107	3406	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: さて、我々も病室に入ろう。\n<wait>食事をとって、僅かな間でも休息を取るんだ。\n<wait>
+m/MS0052.BIN	0:02	108	3412	1FD3	{08:45}を{08:72}こう{08:4A}{02:08}後は{08:48}を{02:08}‥！\n{02:08}‥{01:1C}{02:08}死な{08:25}でくれッ！！\n<wait>		Put this here, and... Please work...\n<wait>	v005		reads: ここを‥‥こうして‥‥‥後はこれを‥‥‥‥！\n‥‥‥‥みんな‥‥‥死なないでくれッ！！\n<wait>; reads: 西野：
+m/MS0052.BIN	0:02	109	3485	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: ‥‥上手くいってくれ‥‥‥‥！\n<wait>
+m/MS0052.BIN	0:02	110	3491	1FD3	{02:08}いや{08:51}ぁ！　成功だッ！\n{01:1C}{02:08}良{08:18}{02:08}{08:72}\n<wait>		Yes! It worked! We saved them...\n<wait>	v005		reads: ‥‥‥いやったぁ！　成功だッ！\nみんな‥‥‥良かった‥‥‥‥‥\n<wait>; reads: 西野：
+m/MS0052.BIN	0:02	111	3574	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: よし！　成功だ‥‥‥‥！\n<wait>
+m/MS0052.BIN	0:02	112	3580	1FD3	えー{08:53}、{08:45}を{08:72}こうや{08:52}{08:72}こうだな？\nよし！　{08:48}でＯＫだ。\n<wait>		Put this here, and... And... Alright! That should do.\n<wait>	v005		reads: えーっと、ここを‥‥こうやって‥‥こうだな？\nよし！　これでＯＫだ。\n<wait>; reads: 西野：
+m/MS0052.BIN	0:02	113	3644	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 間に合ったか‥‥‥‥‥よかった‥‥‥‥\n<wait>
+m/MS0052.BIN	0:02	114	3650	1FD3	{02:08}間に合{08:52}くれよ{02:08}‥\n<wait>		Now to hope that we were in time...\n<wait>	v005		reads: ‥‥‥間に合ってくれよ‥‥‥‥\n<wait>; reads: 英美：
+m/MS0052.BIN	0:02	115	3688	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: ここを‥‥‥こうして‥‥‥‥！\nお願い！！　間に合って！！\n<wait>
+m/MS0052.BIN	0:02	116	3694	1FD3	いやっほぅ！　成功だ！！　や{08:51}ぜ！\n<wait>		Yes! It worked!\n<wait>	v005		reads: いやっほぅ！　成功だ！！　やったぜ！\n<wait>; reads: 英美：
+m/MS0052.BIN	0:02	117	3778	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: やったあ！　成功だわ！\n‥‥‥‥よかった‥‥‥\n<wait>
+m/MS0052.BIN	0:02	118	3784	1FD3	{08:45}を{02:08}こう{08:4A}{02:08}‥こうよね{08:72}！\nお願い！！　間に合{08:52}！！\n<wait>		Put this here, and... Please work...\n<wait>	v005		reads: ここを‥‥‥こうして‥‥‥‥こうよね‥‥！\nお願い！！　間に合って！！\n<wait>; reads: 早坂：
+m/MS0052.BIN	0:02	119	3859	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: ここを‥‥こうして‥‥‥後はこれを‥‥‥‥！\n‥‥‥‥みんな‥‥‥死なないでくれッ！！\n<wait>
+m/MS0052.BIN	0:02	120	3865	1FD3	成功だわ！\n{02:08}‥よ{08:18}{02:08}\n<wait>		Yes! It worked!\n<wait>	v005		reads: 成功だわ！\n‥‥‥‥よかった‥‥‥\n<wait>; reads: 早坂：
+m/MS0052.BIN	0:02	121	3936	00	{04:FF}{08:62}蘇生システムを作動させ、{08:0F}の蘇生を試みた。\n<wait>		You attempt to use the revival system to bring your friends back.\n<wait>	v005		reads: は、蘇生システムを作動させ、仲間の蘇生を試みた。\n<wait>; reads: ‥‥‥いやったぁ！　成功だッ！\nみんな‥‥‥良かった‥‥‥‥‥\n<wait>
+m/MS0052.BIN	0:02	122	3998	1FC4	蘇生成功！\n		It worked!\n	v005		reads: 山瀬：
+m/MS0052.BIN	0:02	123	4029	1FD0	{01:03}{08:62}救命システムを作動させ、重傷患者の蘇生を行{08:51}。\n<wait>		Newton begins operating the revival system.\n<wait>	v005		reads: ニュートンは、救命システムを作動させ、重傷患者の蘇生を行った。\n<wait>; reads: えーっと、ここを‥‥こうやって‥‥こうだな？\nよし！　これでＯＫだ。\n<wait>
+m/MS0052.BIN	0:02	124	4095	1FC4	蘇生は成功し、		It worked. 	v005		reads: 山瀬：
+m/MS0052.BIN	0:02	125	4118	00	{04:FF}{08:62}一命を取り留めた。\n		Katsuragi was revived.\n	v005		reads: は、一命を取り留めた。\n; reads: ‥‥‥間に合ってくれよ‥‥‥‥\n<wait>
+m/MS0052.BIN	0:02	126	4144	18	一行は一命を取り留めた。\n		The party was revived.\n	v005		reads: 山瀬：
+m/MS0052.BIN	0:02	127	4196	1FD2	医者：		Doctor:	v005		reads: いやっほぅ！　成功だ！！　やったぜ！\n<wait>
+m/MS0052.BIN	0:02	128	4204	1FD3	{02:08}{03:0B}一時は{08:90}{08:59}事かと思{08:51}ぞ。\nまぁ、{01:31}に蘇生{08:4A}良{08:18}がな{02:08}\n<wait>		That sure was close...\nStill, I'm glad that it all worked out in the end.\n<wait>	v005		reads: ‥‥‥しかし、一時はどうなる事かと思ったぞ。\nまぁ、無事に蘇生して良かったがな‥‥‥\n<wait>; reads: ：
+m/MS0052.BIN	0:02	129	4268	1FD2	医者：		Doctor:	v005		reads: ここを‥‥‥こうして‥‥‥‥こうよね‥‥！\nお願い！！　間に合って！！\n<wait>
+m/MS0052.BIN	0:02	130	4276	1FD3	あまり無茶を{08:4A}、人を心配さ{08:2A}モン{08:81}{08:25}ぞ！\n		Stop pushing yourself so damn hard, okay?\n	v005		reads: あまり無茶をして、人を心配させるモンじゃないぞ！\n; reads: ：
+m/MS0052.BIN	0:02	131	4335	1FD0	蘇生{08:4B}ばかりの{08:00}が、少しふらつく頭を押さえながら言{08:51}。\n<wait>		Hayasaka shakes his head.\n<wait>	v005		reads: 蘇生したばかりの早坂が、少しふらつく頭を押さえながら言った。\n<wait>; reads: 成功だわ！\n‥‥‥‥よかった‥‥‥\n<wait>
+m/MS0052.BIN	0:02	132	4398	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: は、蘇生システムを作動させ、仲間の蘇生を試みた。\n<wait>
+m/MS0052.BIN	0:02	133	4404	1FD3	{08:61}{02:08}{08:47}武装では{08:48}{08:42}が心もと{08:25}な{02:08}\n<wait>		Hmm... I feel like we should get ourselves better weapons.\n<wait>	v005		reads: しかし‥‥‥この武装ではこれからが心もとないな‥‥‥\n<wait>
+m/MS0052.BIN	0:02	134	4445	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: ニュートンは、救命システムを作動させ、重傷患者の蘇生を行った。\n<wait>
+m/MS0052.BIN	0:02	135	4451	1FD3	Ｂ８に戻{08:52}装備を整え{08:69}。\n<wait>		Let's head back to B8 and get geared up.\n<wait>	v005		reads: Ｂ８に戻って装備を整えよう。\n<wait>
+m/MS0052.BIN	0:02	136	4484	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: は、一命を取り留めた。\n
+m/MS0052.BIN	0:02	137	4490	1FD3	そうね。{08:4D}が{08:7F}わ。\n<wait>		Sounds good.\n<wait>	v005		reads: そうね。それがいいわ。\n<wait>
+m/MS0052.BIN	0:02	138	4526	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0052.BIN	0:02	139	4532	1FD3	そういえば、武器を{08:76}調達{08:4A}{08:24}な{02:08}\n<wait>		That reminds me... We still need to find weapons.\n<wait>	v005		reads: そういえば、武器をまだ調達していないな‥‥‥\n<wait>; reads: ‥‥‥しかし、一時はどうなる事かと思ったぞ。\nまぁ、無事に蘇生して良かったがな‥‥‥\n<wait>
+m/MS0052.BIN	0:02	140	4573	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0052.BIN	0:02	141	4579	1FD3	よし。Ｂ８の武器庫へ行{08:52}装備を整えて{08:42}、上に向かおう。\n<wait>		Right. Let's drop by the armoury on B8 and get geared up.\n<wait>	v005		reads: よし。Ｂ８の武器庫へ行って装備を整えてから、上に向かおう。\n<wait>; reads: あまり無茶をして、人を心配させるモンじゃないぞ！\n
+m/MS0052.BIN	0:02	142	4642	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 蘇生したばかりの早坂が、少しふらつく頭を押さえながら言った。\n<wait>
+m/MS0052.BIN	0:02	143	4648	1FD3	そうしま{08:80}。\n		Sounds good.\n	v005		reads: そうしましょう。\n; reads: 早坂：
+m/MS0052.BIN	0:02	144	4672	1F03	<wait>	<wait>				reads: しかし‥‥‥この武装ではこれからが心もとないな‥‥‥\n<wait>
+m/MS0052.BIN	0:02	145	4682	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 早坂：
+m/MS0052.BIN	0:02	146	4688	1FD3	{08:61}{08:72}一体{08:90}{08:4B}{08:46}だ？\n<wait>		What on earth is going on?\n<wait>	v005		reads: しかし‥‥一体どうしたことだ？\n<wait>; reads: Ｂ８に戻って装備を整えよう。\n<wait>
+m/MS0052.BIN	0:02	147	4715	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 英美：
+m/MS0052.BIN	0:02	148	4721	1FD3	{08:73}階{08:71}{08:0B}が{08:72}{08:86}も肉体を持つ{08:0B}が{08:72}\n<wait>		How are there demons with physical bodies on this floor?\n<wait>	v005		reads: こんな階まで悪魔が‥‥しかも肉体を持つ悪魔が‥‥\n<wait>; reads: そうね。それがいいわ。\n<wait>
+m/MS0052.BIN	0:02	149	4762	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 早坂：
+m/MS0052.BIN	0:02	150	4768	1FD3	{01:34}が破ら{08:60}の？　{08:56}{08:90}{08:4A}？\n<wait>		Has the boundary failed? If so, how?\n<wait>	v005		reads: 結界が破られたの？　でもどうして？\n<wait>; reads: そういえば、武器をまだ調達していないな‥‥‥\n<wait>
+m/MS0052.BIN	0:02	151	4801	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 早坂：
+m/MS0052.BIN	0:02	152	4807	1FD3	避難{08:13}住人の安否が心配だ。{08:02}と連絡を！\n<wait>		I'm worried about the people. Let's contact Yamase.\n<wait>	v005		reads: 避難している住人の安否が心配だ。山瀬と連絡を！\n<wait>; reads: よし。Ｂ８の武器庫へ行って装備を整えてから、上に向かおう。\n<wait>
+m/MS0052.BIN	0:02	153	4854	1FD2	{08:03}：		Emi:	v005		reads: 英美：
+m/MS0052.BIN	0:02	154	4860	1FD3	了解！\n<wait>		Roger!\n<wait>	v005		reads: そうしましょう。\n
+m/MS0052.BIN	0:02	155	4875	1FD2	{08:04}：	{08:04}：	Nishino:	v005		reads: 西野：
+m/MS0052.BIN	0:02	156	4881	1FD3	大変な事に{08:16}な。\nあの時取り逃が{08:4B}、ムールムールと言う{08:0B}の仕業か！\n<wait>		What an ordeal. This must be the doing of that demon Murmur.\n<wait>	v005		reads: 大変な事になったな。\nあの時取り逃がした、ムールムールと言う悪魔の仕業か！\n<wait>; reads: 西野：
+m/MS0052.BIN	0:02	157	4955	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: しかし‥‥一体どうしたことだ？\n<wait>
+m/MS0052.BIN	0:02	158	4961	1FD3	隊長、幾ら呼び出{08:4A}も、{08:02}隊員の応答があり{02:0A}！！\n<wait>		Commander, bad news. Yamase isn't picking up!\n<wait>	v005		reads: 隊長、幾ら呼び出しても、山瀬隊員の応答がありません！！\n<wait>; reads: 早坂：
+m/MS0052.BIN	0:02	159	5016	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: こんな階まで悪魔が‥‥しかも肉体を持つ悪魔が‥‥\n<wait>
+m/MS0052.BIN	0:02	160	5022	1FD3	クッ{08:72}！　Ｂ６Ｆのファームに急ぐぞ！！\n{08:47}階の{08:0B}は構わん。無視{08:4A}突っ切れ！\n<wait>		Dammit... Alright. Let's head to B6F!\n<wait>	v005		reads: クッ‥‥！　Ｂ６Ｆのファームに急ぐぞ！！\nこの階の悪魔は構わん。無視して突っ切れ！\n<wait>; reads: 英美：
+m/MS0052.BIN	0:02	161	5104	1FD2	一同：		Everyone:	v005		reads: 結界が破られたの？　でもどうして？\n<wait>
+m/MS0052.BIN	0:02	162	5112	1FD3	了解！！\n<wait>		Roger!\n<wait>	v005		reads: 西野：
+m/MS0052.BIN	0:02	163	5148	0B	蘇生{08:4B}ばかりの{08:04}が、一同を見渡し重々しく口を開{08:64}。\n<wait>		Nishino turns towards the group and opens his mouth.\n<wait>	v005		reads: 蘇生したばかりの西野が、一同を見渡し重々しく口を開いた。\n<wait>; reads: 避難している住人の安否が心配だ。山瀬と連絡を！\n<wait>
+m/MS0052.BIN	0:02	164	5207	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 英美：
+m/MS0052.BIN	0:02	165	5213	1FD3	{02:08}休み無しに{08:59}が、Ｂ８Ｆの{01:2B}駆逐作戦を続行{08:8E}。\n<wait>		Let's hurry over to B8F. We need to get rid of the zombies.\n<wait>	v005		reads: ‥‥‥休み無しになるが、Ｂ８Ｆのゾンビ駆逐作戦を続行する。\n<wait>
+m/MS0052.BIN	0:02	166	5268	1FD2	一同：		Everyone:	v005		reads: 西野：
+m/MS0052.BIN	0:02	167	5276	1FD3	了解{02:08}！\n		Roger!...\n	v005		reads: 了解‥‥‥！\n; reads: 大変な事になったな。\nあの時取り逃がした、ムールムールと言う悪魔の仕業か！\n<wait>
 m/MS0052.BIN	0:04	0	37	1FD0	{01:2E}の前{08:71}来ると、床一面に細々と{08:4B}箱や、薬瓶などが散乱{08:4A}{08:64}。\n<wait>		You're about to enter your room when you come across Yuuka.\nShe appears to have dropped whatever it was that she was carrying.\n<wait>	v005		reads: 部屋の前まで来ると、床一面に細々とした箱や、薬瓶などが散乱していた。\n<wait>
 m/MS0052.BIN	0:04	1	108	00	{04:FE}：		Yuuka:	v005		reads: ：
 m/MS0052.BIN	0:04	2	114	1FD3	あ、		Ah, Katsuragi-kun.\n<wait>Sorry about this. I'll get it sorted out right away!<wait>	v005		
@@ -345,47 +331,44 @@ m/MS0052.BIN	0:04	3	122	00	{04:FF}くん。\n<wait>ごめんね、今すぐ片�
 m/MS0052.BIN	0:04	4	178	00	{04:FE}{08:62}床に散らば{08:51}ディスクや医療キット等を、慌てて拾っ{08:14}。\n<wait>					reads: は、床に散らばったディスクや医療キット等を、慌てて拾っている。\n<wait>
 m/MS0052.BIN	0:04	5	257	1FB2	手伝う		Help her	v005		menu option, declared width 20 columns
 m/MS0052.BIN	0:04	6	265	1FB2	ほ{08:53}く		Ignore her	v005		reads: ほっとく; menu option, declared width 20 columns
-m/MS0052.BIN	0:04	7	285	0F	{01:A2}{04:FF}	{01:A2}{04:FF}				reads: 
-m/MS0052.BIN	0:04	8	295	00	{04:FF}{08:62}黙{08:52}拾うのを手伝{08:51}。\n<wait>		You decide to give her a hand.\n<wait>	v005		reads: は、黙って拾うのを手伝った。\n<wait>
-m/MS0052.BIN	0:04	9	354	00	{04:FE}：		Yuuka:	v005		reads: ：
-m/MS0052.BIN	0:04	10	360	1FD3	{01:2A}。\n<wait>私っ{08:50}ドジで、備品補充の為の荷物を運んでる途中でバラバラにしちゃ{08:51}の。\n<wait>		Thanks.\n<wait>And sorry. I really mean it.\nIt's so like me not to even be able to do the most basic tasks.\n<wait>	v005		reads: ありがとう。\n<wait>私ったらドジで、備品補充の為の荷物を運んでる途中でバラバラにしちゃったの。\n<wait>
-m/MS0052.BIN	0:04	11	448	1FD0	ふたりがかりで備品を拾い集め、何とか梱包をやり直{08:4B}。\n<wait>		It turns out to be quite the challenge, but in the end,\nthe two of you are able to bundle everything back together.\n<wait>	v005		reads: ふたりがかりで備品を拾い集め、何とか梱包をやり直した。\n<wait>
-m/MS0052.BIN	0:04	12	535	00	{04:FE}：		Yuuka:	v005		reads: ：
-m/MS0052.BIN	0:04	13	545	00	{04:FF}くんのお陰で、本当に助{08:18}わ。\n<wait>私{01:3A}だっ{08:50}、終わ{08:51}頃にはすっかり夜{02:08}{1E10:01001E}{08:6A}て事に{08:1A}たかも。\nくすくす。\n<wait>		Thank you, Katsuragi-kun.\n<wait>This would've taken me all night do by myself.\n{1E10:01001E}Well, maybe not ALL night, but you get my point.\n<wait>	v005		reads: くんのお陰で、本当に助かったわ。\n<wait>私ひとりだったら、終わった頃にはすっかり夜‥‥‥{1E10:01001E}なんて事になってたかも。\nくすくす。\n<wait>
-m/MS0052.BIN	0:04	14	663	00	{04:FE}：		Yuuka:	v005		reads: ：
-m/MS0052.BIN	0:04	15	669	1FD3	さてと、今度はちゃんと運ばなきゃ！\n<wait>		Well then, I've gotta be going now!\n<wait>	v005		
-m/MS0052.BIN	0:04	16	712	1FD0	そう言{08:52}		Yuuka says that, but you're not so sure.\nClearly, this is more weight than she can carry.\n<wait>	v005		reads: そう言って
-m/MS0052.BIN	0:04	17	724	00	{04:FE}は荷物を持ち上{08:44}が、{08:90}もおぼつか{08:25}。\n第一、{08:90}見{08:54}彼女には無茶な量だ{08:51}。\n<wait>					reads: は荷物を持ち上げたが、どうもおぼつかない。\n第一、どう見ても彼女には無茶な量だった。\n<wait>
-m/MS0052.BIN	0:04	18	822	1FB2	運ぶのは僕がやるよ		I'll carry them	v005		menu option, declared width 20 columns
-m/MS0052.BIN	0:04	19	842	1FB2	放{08:52}おく		Take care	v005		reads: 放っておく; menu option, declared width 20 columns
-m/MS0052.BIN	0:04	20	864	0F	{01:5F}{02:FF}	{01:5F}{02:FF}				reads: 
-m/MS0052.BIN	0:04	21	874	00	{04:FE}：		Yuuka:	v005		reads: ：
-m/MS0052.BIN	0:04	22	880	1FD3	{08:56}、{08:7A}の悪いわ。{08:48}も仕事の内な{08:5F}{08:5E}。\n<wait>		I appreciate the concern, but this is part of my job.\n<wait>	v005		reads: でも、そんなの悪いわ。これも仕事の内なんだもの。\n<wait>
-m/MS0052.BIN	0:04	23	939	1FB2	暇{08:8A}{08:72}手伝う{08:52}		I said I'd help	v005		reads: 暇だし‥‥手伝うって; menu option, declared width 20 columns
-m/MS0052.BIN	0:04	24	955	1FB2	{08:81}あ、勝手に{08:90}ぞ		As you wish	v005		reads: じゃあ、勝手にどうぞ; menu option, declared width 20 columns
-m/MS0052.BIN	0:04	25	985	0F	{01:08}{03:FF}	{01:08}{03:FF}				reads: バエル
-m/MS0052.BIN	0:04	26	999	00	{04:FE}：		Yuuka:	v005		reads: ：
-m/MS0052.BIN	0:04	27	1005	1FD3	あ{08:72}。\n<wait>		Ah...\n<wait>	v005		reads: あ‥‥。\n<wait>
-m/MS0052.BIN	0:04	28	1024	00	{04:FF}{08:62}	{04:FF}{08:62}				reads: は、
-m/MS0052.BIN	0:04	29	1032	00	{04:FE}が必死で抱えて{08:64}荷物の束を軽々と持ち上{08:44}。\n<wait>					reads: が必死で抱えていた荷物の束を軽々と持ち上げた。\n<wait>
-m/MS0052.BIN	0:04	30	1085	1FD0	{08:4D}を見て、		You are able to lift with one hand the bundle of boxes\nYuuka was having trouble carrying with two.\n<wait>	v005		reads: それを見て、
-m/MS0052.BIN	0:04	31	1099	00	{04:FE}は何やらきょとんと{08:13}。\n<wait>					reads: は何やらきょとんとしている。\n<wait>
-m/MS0052.BIN	0:04	32	1136	00	{04:FE}：					reads: ：
-m/MS0052.BIN	0:04	33	1142	1FD3	{08:72}すごい！　{1E10:01001E}やっぱり、男の人{08:52}力持ち{08:6B}ね。\n<wait>					reads: ‥‥すごい！　{1E10:01001E}やっぱり、男の人って力持ちなのね。\n<wait>
-m/MS0052.BIN	0:04	34	1202	00	{04:FE}：					reads: ：
-m/MS0052.BIN	0:04	35	1208	1FD3	ちょ{08:53}感動しちゃ{08:51}。\n<wait>					reads: ちょっと感動しちゃった。\n<wait>
-m/MS0052.BIN	0:04	36	1241	00	{04:FF}{08:62}備品を運ぶ手伝いを{08:8E}為、Ｂ５Ｆの詰め所へと行く{08:46}に{08:16}。\n<wait>					reads: は、備品を運ぶ手伝いをする為、Ｂ５Ｆの詰め所へと行くことになった。\n<wait>
-m/MS0052.BIN	0:04	37	1306	1FBA	合格{08:4A}いれば、{08:63}が{08:64}であろう場所で{08:7B}。\n<wait>					reads: 合格していれば、自分がいたであろう場所である。\n<wait>
-m/MS0052.BIN	0:04	38	1355	00	{04:FF}{08:62}苦い思いが湧いてくるのを何とか押しのけ、心配そうな					reads: は、苦い思いが湧いてくるのを何とか押しのけ、心配そうな
-m/MS0052.BIN	0:04	39	1413	00	{04:FE}の後を\nついて行く{02:08}。\n<wait>					reads: の後を\nついて行く‥‥‥。\n<wait>
-m/MS0052.BIN	0:04	40	1476	1FD0	手伝うのは面倒に感じた		The sight leaves Yuuka visibly shocked.\n<wait>	v005		
-m/MS0052.BIN	0:04	41	1502	00	{04:FF}{08:62}{08:47}{08:7E}	{04:FF}{08:62}{08:47}{08:7E}				reads: は、このまま
-m/MS0052.BIN	0:04	42	1514	00	{04:FE}を放{08:52}おこうかと思{08:51}。\n<wait>					reads: を放っておこうかと思った。\n<wait>
-m/MS0052.BIN	0:04	43	1545	1FBA	{03:0B}男で{08:7B}以上{08:62}そう{08:68}訳にも行か{08:25}。\n<wait>		That's where you would be too had you passed the exam.\n<wait>	v005		reads: しかし、男である以上は、そういう訳にも行かない。\n<wait>
-m/MS0052.BIN	0:04	44	1586	1FBA	ま{08:4A}、試験に{08:63}が落ちて		Forcing thoughts like those out of your mind, you follow after Yuuka.\n<wait>	v005		reads: まして、試験に自分が落ちて
-m/MS0052.BIN	0:04	45	1612	00	{04:FE}が受{08:18}事を、ひがんで{08:40}と思わ{08:2F}のも\n癪だ{08:51}。\n<wait>					reads: が受かった事を、ひがんでいると思われるのも\n癪だった。\n<wait>
-m/MS0052.BIN	0:04	46	1664	1FBA	結局、少{08:4B}めら{08:51}後、					reads: 結局、少しためらった後、
-m/MS0052.BIN	0:04	47	1688	00	{04:FF}は手伝う{08:46}に決めた。\n<wait>					reads: は手伝うことに決めた。\n<wait>
-m/MS0052.BIN	0:04	48	1766	1FD0	{02:08}と言い{08:4E}{08:87}{08:8F}、{08:63}もそこ{08:71}子供{08:81}あ無い。\n		You honestly can't be assed to help Yuuka right now.\n<wait>	v005		reads: ‥‥‥と言いたいところだが、自分もそこまで子供じゃあ無い。\n
-m/MS0052.BIN	0:04	49	1811	00	{04:FF}はぐ{08:53}我慢し、有無を言わさず					reads: はぐっと我慢し、有無を言わさず
-m/MS0052.BIN	0:04	50	1845	00	{04:FE}の荷物に手を掛{08:43}。\n<wait>					reads: の荷物に手を掛けた。\n<wait>
+m/MS0052.BIN	0:04	7	295	00	{04:FF}{08:62}黙{08:52}拾うのを手伝{08:51}。\n<wait>	{04:FF}{08:62}黙{08:52}拾うのを手伝{08:51}。\n<wait>	You decide to give her a hand.\n<wait>	v005		reads: は、黙って拾うのを手伝った。\n<wait>
+m/MS0052.BIN	0:04	8	354	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: は、黙って拾うのを手伝った。\n<wait>
+m/MS0052.BIN	0:04	9	360	1FD3	{01:2A}。\n<wait>私っ{08:50}ドジで、備品補充の為の荷物を運んでる途中でバラバラにしちゃ{08:51}の。\n<wait>		Thanks.\n<wait>And sorry. I really mean it.\nIt's so like me not to even be able to do the most basic tasks.\n<wait>	v005		reads: ありがとう。\n<wait>私ったらドジで、備品補充の為の荷物を運んでる途中でバラバラにしちゃったの。\n<wait>; reads: ：
+m/MS0052.BIN	0:04	10	448	1FD0	ふたりがかりで備品を拾い集め、何とか梱包をやり直{08:4B}。\n<wait>		It turns out to be quite the challenge, but in the end,\nthe two of you are able to bundle everything back together.\n<wait>	v005		reads: ふたりがかりで備品を拾い集め、何とか梱包をやり直した。\n<wait>; reads: ありがとう。\n<wait>私ったらドジで、備品補充の為の荷物を運んでる途中でバラバラにしちゃったの。\n<wait>
+m/MS0052.BIN	0:04	11	535	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: ふたりがかりで備品を拾い集め、何とか梱包をやり直した。\n<wait>
+m/MS0052.BIN	0:04	12	545	00	{04:FF}くんのお陰で、本当に助{08:18}わ。\n<wait>私{01:3A}だっ{08:50}、終わ{08:51}頃にはすっかり夜{02:08}{1E10:01001E}{08:6A}て事に{08:1A}たかも。\nくすくす。\n<wait>		Thank you, Katsuragi-kun.\n<wait>This would've taken me all night do by myself.\n{1E10:01001E}Well, maybe not ALL night, but you get my point.\n<wait>	v005		reads: くんのお陰で、本当に助かったわ。\n<wait>私ひとりだったら、終わった頃にはすっかり夜‥‥‥{1E10:01001E}なんて事になってたかも。\nくすくす。\n<wait>; reads: ：
+m/MS0052.BIN	0:04	13	663	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: くんのお陰で、本当に助かったわ。\n<wait>私ひとりだったら、終わった頃にはすっかり夜‥‥‥{1E10:01001E}なんて事になってたかも。\nくすくす。\n<wait>
+m/MS0052.BIN	0:04	14	669	1FD3	さてと、今度はちゃんと運ばなきゃ！\n<wait>		Well then, I've gotta be going now!\n<wait>	v005		reads: ：
+m/MS0052.BIN	0:04	15	712	1FD0	そう言{08:52}		Yuuka says that, but you're not so sure.\nClearly, this is more weight than she can carry.\n<wait>	v005		reads: そう言って
+m/MS0052.BIN	0:04	16	724	00	{04:FE}は荷物を持ち上{08:44}が、{08:90}もおぼつか{08:25}。\n第一、{08:90}見{08:54}彼女には無茶な量だ{08:51}。\n<wait>					reads: は荷物を持ち上げたが、どうもおぼつかない。\n第一、どう見ても彼女には無茶な量だった。\n<wait>; reads: そう言って
+m/MS0052.BIN	0:04	17	822	1FB2	運ぶのは僕がやるよ		I'll carry them	v005		menu option, declared width 20 columns; reads: は荷物を持ち上げたが、どうもおぼつかない。\n第一、どう見ても彼女には無茶な量だった。\n<wait>
+m/MS0052.BIN	0:04	18	842	1FB2	放{08:52}おく		Take care	v005		reads: 放っておく; menu option, declared width 20 columns
+m/MS0052.BIN	0:04	19	874	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 放っておく; menu option, declared width 20 columns
+m/MS0052.BIN	0:04	20	880	1FD3	{08:56}、{08:7A}の悪いわ。{08:48}も仕事の内な{08:5F}{08:5E}。\n<wait>	{08:56}、{08:7A}の悪いわ。{08:48}も仕事の内な{08:5F}{08:5E}。\n<wait>	I appreciate the concern, but this is part of my job.\n<wait>	v005		reads: でも、そんなの悪いわ。これも仕事の内なんだもの。\n<wait>
+m/MS0052.BIN	0:04	21	939	1FB2	暇{08:8A}{08:72}手伝う{08:52}		I said I'd help	v005		reads: 暇だし‥‥手伝うって; menu option, declared width 20 columns; reads: ：
+m/MS0052.BIN	0:04	22	955	1FB2	{08:81}あ、勝手に{08:90}ぞ		As you wish	v005		reads: じゃあ、勝手にどうぞ; menu option, declared width 20 columns; reads: でも、そんなの悪いわ。これも仕事の内なんだもの。\n<wait>
+m/MS0052.BIN	0:04	23	999	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 暇だし‥‥手伝うって; menu option, declared width 20 columns
+m/MS0052.BIN	0:04	24	1005	1FD3	あ{08:72}。\n<wait>		Ah...\n<wait>	v005		reads: あ‥‥。\n<wait>; reads: じゃあ、勝手にどうぞ; menu option, declared width 20 columns
+m/MS0052.BIN	0:04	25	1024	00	{04:FF}{08:62}	{04:FF}{08:62}				reads: は、; reads: バエル
+m/MS0052.BIN	0:04	26	1032	00	{04:FE}が必死で抱えて{08:64}荷物の束を軽々と持ち上{08:44}。\n<wait>					reads: が必死で抱えていた荷物の束を軽々と持ち上げた。\n<wait>; reads: ：
+m/MS0052.BIN	0:04	27	1085	1FD0	{08:4D}を見て、		You are able to lift with one hand the bundle of boxes\nYuuka was having trouble carrying with two.\n<wait>	v005		reads: それを見て、; reads: あ‥‥。\n<wait>
+m/MS0052.BIN	0:04	28	1099	00	{04:FE}は何やらきょとんと{08:13}。\n<wait>	{04:FE}は何やらきょとんと{08:13}。\n<wait>				reads: は何やらきょとんとしている。\n<wait>; reads: は、
+m/MS0052.BIN	0:04	29	1136	00	{04:FE}：					reads: ：; reads: が必死で抱えていた荷物の束を軽々と持ち上げた。\n<wait>
+m/MS0052.BIN	0:04	30	1142	1FD3	{08:72}すごい！　{1E10:01001E}やっぱり、男の人{08:52}力持ち{08:6B}ね。\n<wait>					reads: ‥‥すごい！　{1E10:01001E}やっぱり、男の人って力持ちなのね。\n<wait>; reads: それを見て、
+m/MS0052.BIN	0:04	31	1202	00	{04:FE}：					reads: ：; reads: は何やらきょとんとしている。\n<wait>
+m/MS0052.BIN	0:04	32	1208	1FD3	ちょ{08:53}感動しちゃ{08:51}。\n<wait>					reads: ちょっと感動しちゃった。\n<wait>; reads: ：
+m/MS0052.BIN	0:04	33	1241	00	{04:FF}{08:62}備品を運ぶ手伝いを{08:8E}為、Ｂ５Ｆの詰め所へと行く{08:46}に{08:16}。\n<wait>					reads: は、備品を運ぶ手伝いをする為、Ｂ５Ｆの詰め所へと行くことになった。\n<wait>; reads: ‥‥すごい！　{1E10:01001E}やっぱり、男の人って力持ちなのね。\n<wait>
+m/MS0052.BIN	0:04	34	1306	1FBA	合格{08:4A}いれば、{08:63}が{08:64}であろう場所で{08:7B}。\n<wait>					reads: 合格していれば、自分がいたであろう場所である。\n<wait>; reads: ：
+m/MS0052.BIN	0:04	35	1355	00	{04:FF}{08:62}苦い思いが湧いてくるのを何とか押しのけ、心配そうな					reads: は、苦い思いが湧いてくるのを何とか押しのけ、心配そうな; reads: ちょっと感動しちゃった。\n<wait>
+m/MS0052.BIN	0:04	36	1413	00	{04:FE}の後を\nついて行く{02:08}。\n<wait>					reads: の後を\nついて行く‥‥‥。\n<wait>; reads: は、備品を運ぶ手伝いをする為、Ｂ５Ｆの詰め所へと行くことになった。\n<wait>
+m/MS0052.BIN	0:04	37	1476	1FD0	手伝うのは面倒に感じた		The sight leaves Yuuka visibly shocked.\n<wait>	v005		reads: 合格していれば、自分がいたであろう場所である。\n<wait>
+m/MS0052.BIN	0:04	38	1502	00	{04:FF}{08:62}{08:47}{08:7E}	{04:FF}{08:62}{08:47}{08:7E}				reads: は、このまま; reads: は、苦い思いが湧いてくるのを何とか押しのけ、心配そうな
+m/MS0052.BIN	0:04	39	1514	00	{04:FE}を放{08:52}おこうかと思{08:51}。\n<wait>					reads: を放っておこうかと思った。\n<wait>; reads: の後を\nついて行く‥‥‥。\n<wait>
+m/MS0052.BIN	0:04	40	1545	1FBA	{03:0B}男で{08:7B}以上{08:62}そう{08:68}訳にも行か{08:25}。\n<wait>		That's where you would be too had you passed the exam.\n<wait>	v005		reads: しかし、男である以上は、そういう訳にも行かない。\n<wait>
+m/MS0052.BIN	0:04	41	1586	1FBA	ま{08:4A}、試験に{08:63}が落ちて	ま{08:4A}、試験に{08:63}が落ちて	Forcing thoughts like those out of your mind, you follow after Yuuka.\n<wait>	v005		reads: まして、試験に自分が落ちて; reads: は、このまま
+m/MS0052.BIN	0:04	42	1612	00	{04:FE}が受{08:18}事を、ひがんで{08:40}と思わ{08:2F}のも\n癪だ{08:51}。\n<wait>					reads: が受かった事を、ひがんでいると思われるのも\n癪だった。\n<wait>; reads: を放っておこうかと思った。\n<wait>
+m/MS0052.BIN	0:04	43	1664	1FBA	結局、少{08:4B}めら{08:51}後、					reads: 結局、少しためらった後、; reads: しかし、男である以上は、そういう訳にも行かない。\n<wait>
+m/MS0052.BIN	0:04	44	1688	00	{04:FF}は手伝う{08:46}に決めた。\n<wait>					reads: は手伝うことに決めた。\n<wait>; reads: まして、試験に自分が落ちて
+m/MS0052.BIN	0:04	45	1766	1FD0	{02:08}と言い{08:4E}{08:87}{08:8F}、{08:63}もそこ{08:71}子供{08:81}あ無い。\n		You honestly can't be assed to help Yuuka right now.\n<wait>	v005		reads: ‥‥‥と言いたいところだが、自分もそこまで子供じゃあ無い。\n; reads: が受かった事を、ひがんでいると思われるのも\n癪だった。\n<wait>
+m/MS0052.BIN	0:04	46	1811	00	{04:FF}はぐ{08:53}我慢し、有無を言わさず					reads: はぐっと我慢し、有無を言わさず; reads: 結局、少しためらった後、
+m/MS0052.BIN	0:04	47	1845	00	{04:FE}の荷物に手を掛{08:43}。\n<wait>					reads: の荷物に手を掛けた。\n<wait>; reads: は手伝うことに決めた。\n<wait>

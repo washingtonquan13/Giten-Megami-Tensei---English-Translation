@@ -5,28 +5,17 @@
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
 m/MS6004.BIN	0:31	0	37	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
 m/MS6004.BIN	0:31	1	41	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
-m/MS6004.BIN	0:31	2	58	00	澹					
-m/MS6004.BIN	0:31	3	99	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
-m/MS6004.BIN	0:31	4	103	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
-m/MS6004.BIN	0:31	5	120	00	濟					
-m/MS6004.BIN	0:31	6	183	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
-m/MS6004.BIN	0:31	7	187	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
-m/MS6004.BIN	0:31	8	204	00	濬					
-m/MS6004.BIN	0:31	9	253	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
-m/MS6004.BIN	0:31	10	257	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
-m/MS6004.BIN	0:31	11	274	00	濘					
+m/MS6004.BIN	0:31	2	99	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
+m/MS6004.BIN	0:31	3	103	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns; reads: はい
+m/MS6004.BIN	0:31	4	183	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns; reads: いいえ
+m/MS6004.BIN	0:31	5	187	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
+m/MS6004.BIN	0:31	6	253	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
+m/MS6004.BIN	0:31	7	257	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
 m/MS6004.BIN	0:57	0	30	1FB2	わ{08:18}		Understood	ours		reads: わかった; menu option, declared width 20 columns
 m/MS6004.BIN	0:57	1	36	1FB2	駄目		No Good	ours		menu option, declared width 20 columns
-m/MS6004.BIN	0:57	2	54	0F	{01:01}	{01:01}				reads: 山瀬勇
-m/MS6004.BIN	0:57	3	57	00						
-m/MS6004.BIN	0:57	4	67	00	{=EC}{=24}	{=EC}{=24}				
-m/MS6004.BIN	0:59	0	58	00	濛					
-m/MS6004.BIN	0:59	1	95	18	{02:09}・・引き寄せら{08:2F}？？？\n		.....Am I being drawn in???\n	ours		reads: ・・・・・引き寄せられる？？？\n
-m/MS6004.BIN	0:59	2	149	00	{=EC}{=01}	{=EC}{=01}				
+m/MS6004.BIN	0:59	0	95	18	{02:09}・・引き寄せら{08:2F}？？？\n		.....Am I being drawn in???\n	ours		reads: ・・・・・引き寄せられる？？？\n
 m/MS6004.BIN	0:5A	0	18	00	{04:EF}は涙を流{08:13}\n		{04:EF} has tears streaming down.\n	ours		reads: は涙を流している\n
-m/MS6004.BIN	0:5C	0	33	0E	{01:56}	{01:56}				reads: 
-m/MS6004.BIN	0:5C	1	36	00						
-m/MS6004.BIN	0:5C	2	80	00	{04:EF}は後ずさろうと{08:4B}が後退{08:23}！\n		{04:EF} tried to step back, but can't back away!\n	ours		reads: は後ずさろうとしたが後退できない！\n
+m/MS6004.BIN	0:5C	0	80	00	{04:EF}は後ずさろうと{08:4B}が後退{08:23}！\n	{04:EF}は後ずさろうと{08:4B}が後退{08:23}！\n				reads: は後ずさろうとしたが後退できない！\n @rebase-unmatched idx2 en={04:EF} tried to step back, but can't back away!\n
 m/MS6004.BIN	0:5F	0	4	00	{04:EF}は誘惑し{08:1C}\n		{04:EF} tried to tempt you!\n	ours		reads: は誘惑してきた！\n
 m/MS6004.BIN	0:5F	1	28	1FFA	{02:09}	{02:09}				reads: ・・・
 m/MS6004.BIN	0:5F	2	32	1FFB	？？？		???	ours		
@@ -39,251 +28,155 @@ m/MS6004.BIN	0:5F	8	247	0E	{08:31}の鉄拳が		Rui's Iron Fist	ours		reads: 泪
 m/MS6004.BIN	0:62	0	6	1FFA	{02:09}	{02:09}				reads: ・・・
 m/MS6004.BIN	0:62	1	10	1FFB	{01:23}お待ち下{08:49}		{01:23}#Please Wait	ours		reads: しばらくお待ち下さい
 m/MS6004.BIN	0:62	2	24	1FFA	{02:09}\n	{02:09}\n				reads: ・・・\n
-m/MS6004.BIN	0:60	0	7	00	濛					
-m/MS6004.BIN	0:60	1	40	00	濛					
 m/MS6004.BIN	0:73	0	4	00	{04:EF}は怯え{08:14}{08:69}だ\n		{04:EF} seems terrified.\n	ours		reads: は怯えているようだ\n
 m/MS6004.BIN	0:73	1	35	1FB2	威嚇射撃		Warning Shot	ours		menu option, declared width 20 columns
 m/MS6004.BIN	0:73	2	45	1FB2	近づく		Approach	ours		menu option, declared width 20 columns
 m/MS6004.BIN	0:73	3	53	1FB2	様子を見る		Wait and See	ours		menu option, declared width 20 columns
-m/MS6004.BIN	0:73	4	65	1FB2	{08:0C}	{08:0C}	Attack	ours		reads: 攻撃; menu option, declared width 20 columns
-m/MS6004.BIN	0:73	5	82	00	煢{02:00}煌{03:00}熏		煢Devil Buster煌Ranged Weapon熏	ours		reads: 煢デビルバスター煌飛び道具熏
+m/MS6004.BIN	0:73	4	65	1FB2	{08:0C}	{08:0C}	Attack	ours		reads: 攻撃; menu option, declared width 20 columns @rebase-unmatched idx5 en=煢Devil Buster煌Ranged Weapon熏
 m/MS6004.BIN	0:84	0	6	1FAE	ガンを装備{08:4A}{08:24}！\n		Not equipped with a gun!\n	ours		reads: ガンを装備していない！\n
 m/MS6004.BIN	0:84	1	137	00	{04:EF}は涙を流{08:13}\n		{04:EF} has tears streaming down.\n	ours		reads: は涙を流している\n
 m/MS6004.BIN	0:84	2	166	1FB2	脅す		Threaten Them	ours		menu option, declared width 20 columns
 m/MS6004.BIN	0:84	3	172	1FB2	謝る		Apologize	ours		menu option, declared width 20 columns
 m/MS6004.BIN	0:84	4	178	1FB2	ほ{08:53}く		Leave It Alone	ours		reads: ほっとく; menu option, declared width 20 columns
-m/MS6004.BIN	0:84	5	198	0F	{01:39}	{01:39}				reads: アナタ
-m/MS6004.BIN	0:84	6	201	00	{02:01}P	{02:01}P				reads: ペンタグランマP
-m/MS6004.BIN	0:84	7	205	00						
-m/MS6004.BIN	0:84	8	298	1FFA	{02:09}	{02:09}				reads: ・・・
-m/MS6004.BIN	0:84	9	302	1FFB	ウソ泣きだ！\n		Fake crying!\n	ours		
-m/MS6004.BIN	0:84	10	331	1FB2	怒る		Get Angry	ours		menu option, declared width 20 columns
-m/MS6004.BIN	0:84	11	337	1FB2	ほ{08:53}く		Leave It Alone	ours		reads: ほっとく; menu option, declared width 20 columns
-m/MS6004.BIN	0:84	12	358	00	煕					
-m/MS6004.BIN	0:84	13	368	00	{04:EF}は泣い{08:14}{02:09}・・\n		{04:EF} is crying.....\n	ours		reads: は泣いている・・・・・\n
-m/MS6004.BIN	0:84	14	401	1FB2	脅す		Threaten Them	ours		menu option, declared width 20 columns
-m/MS6004.BIN	0:84	15	407	1FB2	謝る		Apologize	ours		menu option, declared width 20 columns
-m/MS6004.BIN	0:84	16	426	00	煦					
+m/MS6004.BIN	0:84	5	298	1FFA	{02:09}	{02:09}				reads: ・・・; reads: アナタ
+m/MS6004.BIN	0:84	6	302	1FFB	ウソ泣きだ！\n	ウソ泣きだ！\n	Fake crying!\n	ours		reads: ペンタグランマP
+m/MS6004.BIN	0:84	7	331	1FB2	怒る	怒る	Get Angry	ours		menu option, declared width 20 columns
+m/MS6004.BIN	0:84	8	337	1FB2	ほ{08:53}く	ほ{08:53}く	Leave It Alone	ours		reads: ほっとく; menu option, declared width 20 columns; reads: ・・・
+m/MS6004.BIN	0:84	9	368	00	{04:EF}は泣い{08:14}{02:09}・・\n					reads: は泣いている・・・・・\n
+m/MS6004.BIN	0:84	10	401	1FB2	脅す		Threaten Them	ours		menu option, declared width 20 columns
+m/MS6004.BIN	0:84	11	407	1FB2	謝る		Apologize	ours		menu option, declared width 20 columns; reads: ほっとく @rebase-unmatched idx13 en={04:EF} is crying.....\n
 m/MS6004.BIN	0:86	0	2	1FBA	{02:09}\n	{02:09}\n				reads: ・・・\n
 m/MS6004.BIN	0:87	0	6	00	{04:EF}は泣きや{08:5F}\n		{04:EF} stopped crying.\n	ours		reads: は泣きやんだ\n
 m/MS6004.BIN	0:87	1	35	00	{04:EF}は睨んで{08:40}{02:09}・・\n		{04:EF} is glaring.....\n	ours		reads: は睨んでいる・・・・・\n
 m/MS6004.BIN	0:8A	0	95	1FB2	本当		It's True	ours		menu option, declared width 20 columns
 m/MS6004.BIN	0:8A	1	101	1FB2	嘘		A Lie	ours		menu option, declared width 20 columns
-m/MS6004.BIN	0:8A	2	118	00	煬					
 m/MS6004.BIN	0:8E	0	4	00	{04:EF}は指を鳴ら{08:17}\n		{04:EF} snapped its fingers!\n	ours		reads: は指を鳴らした！\n
 m/MS6004.BIN	0:8F	0	4	00	{04:EF}は涙を流{08:13}\n		{04:EF} has tears streaming down.\n	ours		reads: は涙を流している\n
 m/MS6004.BIN	0:8F	1	33	1FB2	脅す		Threaten Them	ours		menu option, declared width 20 columns
 m/MS6004.BIN	0:8F	2	39	1FB2	謝る		Apologize	ours		menu option, declared width 20 columns
 m/MS6004.BIN	0:8F	3	45	1FB2	ほ{08:53}く		Leave It Alone	ours		reads: ほっとく; menu option, declared width 20 columns
-m/MS6004.BIN	0:8F	4	65	0F	{01:2B}	{01:2B}				reads: ゾンビ
-m/MS6004.BIN	0:8F	5	68	00	{02:01}C	{02:01}C				reads: ペンタグランマC
-m/MS6004.BIN	0:8F	6	72	00						
-m/MS6004.BIN	0:8F	7	101	1FFA	{02:09}{02:09}\n	{02:09}{02:09}\n				reads: ・・・・・・\n
-m/MS6004.BIN	0:8F	8	151	00	{04:EF}は{08:76}　泣い{08:14}\n		{04:EF} is still crying.\n	ours		reads: はまだ　泣いている\n
+m/MS6004.BIN	0:8F	4	101	1FFA	{02:09}{02:09}\n	{02:09}{02:09}\n				reads: ・・・・・・\n; reads: ゾンビ
+m/MS6004.BIN	0:8F	5	151	00	{04:EF}は{08:76}　泣い{08:14}\n	{04:EF}は{08:76}　泣い{08:14}\n	{04:EF} is still crying.\n	ours		reads: はまだ　泣いている\n; reads: ペンタグランマC
 m/MS6004.BIN	0:90	0	30	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
 m/MS6004.BIN	0:90	1	34	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
-m/MS6004.BIN	0:90	2	50	0F	{01:01}	{01:01}				reads: 山瀬勇
-m/MS6004.BIN	0:90	3	53	00						
-m/MS6004.BIN	0:90	4	80	00	{=EC}{=1E}	{=EC}{=1E}				
-m/MS6004.BIN	0:90	5	119	00	{04:EF}は後ずさろうと{08:4B}が後退{08:23}！\n		{04:EF} tried to step back, but can't back away!\n	ours		reads: は後ずさろうとしたが後退できない！\n
-m/MS6004.BIN	0:90	6	190	00	{04:EF}は泣き出{08:17}\n		{04:EF} burst into tears!\n	ours		reads: は泣き出した！\n
-m/MS6004.BIN	0:90	7	231	1FB2	{08:0E}	{08:0E}	Ally	ours		reads: 仲魔; menu option, declared width 20 columns
-m/MS6004.BIN	0:90	8	235	1FB2	キミ		You	ours		menu option, declared width 20 columns
-m/MS6004.BIN	0:90	9	241	1FB2	お前の命		Your Life	ours		menu option, declared width 20 columns
-m/MS6004.BIN	0:90	10	264	00	熬{02:00}燗		熬Devil Buster燗	ours		reads: 熬デビルバスター燗
+m/MS6004.BIN	0:90	2	119	00	{04:EF}は後ずさろうと{08:4B}が後退{08:23}！\n	{04:EF}は後ずさろうと{08:4B}が後退{08:23}！\n	{04:EF} tried to step back, but can't back away!\n	ours		reads: は後ずさろうとしたが後退できない！\n; reads: 山瀬勇
+m/MS6004.BIN	0:90	3	190	00	{04:EF}は泣き出{08:17}\n	{04:EF}は泣き出{08:17}\n	{04:EF} burst into tears!\n	ours		reads: は泣き出した！\n
+m/MS6004.BIN	0:90	4	231	1FB2	{08:0E}	{08:0E}	Ally	ours		reads: 仲魔; menu option, declared width 20 columns
+m/MS6004.BIN	0:90	5	235	1FB2	キミ		You	ours		menu option, declared width 20 columns; reads: は後ずさろうとしたが後退できない！\n
+m/MS6004.BIN	0:90	6	241	1FB2	お前の命		Your Life	ours		menu option, declared width 20 columns; reads: は泣き出した！\n @rebase-unmatched idx10 en=熬Devil Buster燗
 m/MS6004.BIN	0:92	0	13	1FA3	{08:03}が睨んで{08:40}{02:09}\n		Emi is glaring...\n	ours		reads: 英美が睨んでいる・・・\n
 m/MS6004.BIN	0:92	1	48	1FA3	{08:31}が		Rui	ours		reads: 泪が
 m/MS6004.BIN	0:92	2	72	1FFA	{02:09}	{02:09}				reads: ・・・
 m/MS6004.BIN	0:92	3	83	1FFA	{02:09}{02:09}	{02:09}{02:09}				reads: ・・・・・・
 m/MS6004.BIN	0:92	4	89	1FFB	{01:23}お待ち下{08:49}		{01:23}#Please Wait	ours		reads: しばらくお待ち下さい
 m/MS6004.BIN	0:92	5	103	1FFA	{02:09}{02:09}\n	{02:09}{02:09}\n				reads: ・・・・・・\n
-m/MS6004.BIN	0:93	0	45	0E	{01:0A}	{01:0A}				reads: わたしは
-m/MS6004.BIN	0:93	1	48	00						
-m/MS6004.BIN	1:03	0	28	1FB2	ちょ{08:53}待{08:52}		Wait a Moment	ours		reads: ちょっと待って; menu option, declared width 20 columns
-m/MS6004.BIN	1:03	1	40	1FB2	さよ{08:7D}		Goodbye	ours		reads: さよなら; menu option, declared width 20 columns
-m/MS6004.BIN	1:03	2	60	0F	{01:DB}{01:FF}	{01:DB}{01:FF}				reads: 
-m/MS6004.BIN	1:03	3	85	1FB2	謝る		Apologize	ours		menu option, declared width 20 columns
-m/MS6004.BIN	1:03	4	91	1FB2	別に		Nothing Much	ours		menu option, declared width 20 columns
-m/MS6004.BIN	1:03	5	109	0F	{01:90}{01:FF}	{01:90}{01:FF}				reads: 
-m/MS6004.BIN	1:03	6	172	1FB2	よろこんで		Gladly	ours		menu option, declared width 20 columns
-m/MS6004.BIN	1:03	7	184	1FB2	{08:80}が{08:25}		Can't Be Helped	ours		reads: しょうがない; menu option, declared width 20 columns
-m/MS6004.BIN	1:03	8	192	1FB2	誰がお前{08:6A}かに		Not for You!	ours		reads: 誰がお前なんかに; menu option, declared width 20 columns
-m/MS6004.BIN	1:03	9	220	0F	{01:27}	{01:27}				reads: まさか
-m/MS6004.BIN	1:03	10	223	00	{02:01}{=EB}{=00}	{02:01}{=EB}{=00}				reads: ペンタグランマ{=EB}{=00}
-m/MS6004.BIN	1:03	11	291	1FB2	なだ{08:2E}		Calm Them Down	ours		reads: なだめる; menu option, declared width 20 columns
-m/MS6004.BIN	1:03	12	299	1FB2	ほ{08:53}く		Leave It Alone	ours		reads: ほっとく; menu option, declared width 20 columns
-m/MS6004.BIN	1:03	13	319	0F	{01:6D}	{01:6D}				reads: 
-m/MS6004.BIN	1:03	14	322	00						
-m/MS6004.BIN	1:03	15	350	00	{04:EF}は感動{08:13}\nスキだらけだ！\n＞{08:0C}し{08:15}\n		{04:EF} is deeply moved!\nWide open!\n>Attack?\n	ours		reads: は感動している\nスキだらけだ！\n＞攻撃しますか？\n
-m/MS6004.BIN	1:03	16	524	0E	{01:5C}	{01:5C}				reads: 
-m/MS6004.BIN	1:03	17	527	00						
-m/MS6004.BIN	1:03	18	564	1FB2	なだ{08:2E}		Calm Them Down	ours		reads: なだめる; menu option, declared width 20 columns
-m/MS6004.BIN	1:03	19	572	1FB2	無視{08:8E}		Ignore Them	ours		reads: 無視する; menu option, declared width 20 columns
-m/MS6004.BIN	1:03	20	592	0F	{01:1D}	{01:1D}				reads: だれも
-m/MS6004.BIN	1:03	21	595	00						
-m/MS6004.BIN	1:03	22	699	1FB2	そう{08:55}		That's Right	ours		reads: そうです; menu option, declared width 20 columns
-m/MS6004.BIN	1:03	23	707	1FB2	{08:4D}ほど{08:56}{08:25}		Not Really	ours		reads: それほどでもない; menu option, declared width 20 columns
-m/MS6004.BIN	1:03	24	731	0F	{01:19}	{01:19}				reads: われわれ
-m/MS6004.BIN	1:03	25	734	00						
-m/MS6004.BIN	1:03	26	833	0E	{01:A3}	{01:A3}				reads: 
-m/MS6004.BIN	1:03	27	893	1FB2	なだ{08:2E}		Calm Them Down	ours		reads: なだめる; menu option, declared width 20 columns
-m/MS6004.BIN	1:03	28	901	1FB2	無視{08:8E}		Ignore Them	ours		reads: 無視する; menu option, declared width 20 columns
-m/MS6004.BIN	1:03	29	921	0F	{01:1A}	{01:1A}				reads: わたくし
-m/MS6004.BIN	1:03	30	924	00						
-m/MS6004.BIN	2:01	0	22	1FB2	{08:0B}狩り		Demon Hunting	ours		reads: 悪魔狩り; menu option, declared width 20 columns
-m/MS6004.BIN	2:01	1	30	1FB2	散歩		Taking a Walk	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:01	2	48	0F	{01:00}{03:FF}	{01:00}{03:FF}				reads: 早坂達也
-m/MS6004.BIN	2:01	3	87	1FB2	まあね		I Guess	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:01	4	95	1FB2	仕方が無い		Can't Be Helped	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:01	5	119	0F	{01:51}{02:FF}	{01:51}{02:FF}				reads: 
-m/MS6004.BIN	2:01	6	149	1FB2	うーん‥		Hmm...	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:01	7	159	1FB2	そうかもね		Maybe So	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:01	8	183	0F	{01:8C}{01:FF}	{01:8C}{01:FF}				reads: 
-m/MS6004.BIN	2:01	9	222	1FB2	スキだよ		I Like You	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:01	10	232	1FB2	うーん‥		Hmm...	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:01	11	254	0F	{01:38}{01:FF}	{01:38}{01:FF}				reads: アタシ
-m/MS6004.BIN	2:01	12	277	0E	{01:12}{02:FF}	{01:12}{02:FF}				reads: あなたの
-m/MS6004.BIN	2:01	13	303	1FB2	もちろん		Of Course	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:01	14	313	1FB2	今は結構		Not Right Now	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:01	15	335	0F	{01:C6}	{01:C6}				reads: 
-m/MS6004.BIN	2:01	16	338	00						
-m/MS6004.BIN	2:01	17	399	1FB2	{02:04}	{02:04}				reads: アイテム; menu option, declared width 20 columns
-m/MS6004.BIN	2:01	18	403	1FB2	ＭＡＧ		MAG	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:01	19	411	1FB2	マッカ		Macca	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:01	20	431	0F	{01:36}	{01:36}				reads: そろそろ
-m/MS6004.BIN	2:01	21	434	00	{02:01}P	{02:01}P				reads: ペンタグランマP
-m/MS6004.BIN	2:01	22	438	00						
-m/MS6004.BIN	2:01	23	479	00	{=EC}{=0C}P	{=EC}{=0C}P				
-m/MS6004.BIN	2:01	24	483	00	{=EC}{=0D}	{=EC}{=0D}				
-m/MS6004.BIN	2:01	25	613	1FB2	ごめん！		Sorry!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:01	26	623	1FB2	本当の事だ		It's the Truth	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:01	27	647	0F	{01:28}	{01:28}				reads: いつも
-m/MS6004.BIN	2:01	28	650	00						
-m/MS6004.BIN	2:01	29	736	1FB2	今はね‥		Not Right Now...	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:01	30	746	1FB2	{01:29}な		I suppose so	ours		reads: そうだな; menu option, declared width 20 columns
-m/MS6004.BIN	2:01	31	764	0F	{01:1D}	{01:1D}				reads: だれも
-m/MS6004.BIN	2:01	32	767	00						
-m/MS6004.BIN	2:01	33	849	1FB2	ヤダ！		No Way!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:01	34	857	1FB2	{08:7F}ケド		Fine, But	ours		reads: いいケド; menu option, declared width 20 columns
-m/MS6004.BIN	2:01	35	877	0F	{01:20}	{01:20}				reads: おねえちゃん
-m/MS6004.BIN	2:01	36	880	00						
-m/MS6004.BIN	2:01	37	942	1FB2	貢ぐ		Offer Tribute	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:01	38	948	1FB2	Ｈな事		Something Naughty	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:01	39	969	00	{=E2}{=17}	{=E2}{=17}				
+m/MS6004.BIN	1:03	0	28	1FB2	ちょ{08:53}待{08:52}		Gladly	ours		reads: ちょっと待って; menu option, declared width 20 columns @rebase-unmatched idx0 en=Wait a Moment
+m/MS6004.BIN	1:03	1	40	1FB2	さよ{08:7D}		Can't Be Helped	ours		reads: さよなら; menu option, declared width 20 columns @rebase-unmatched idx1 en=Goodbye
+m/MS6004.BIN	1:03	2	85	1FB2	謝る	謝る	Not for You!	ours		menu option, declared width 20 columns; reads: 
+m/MS6004.BIN	1:03	3	91	1FB2	別に					menu option, declared width 20 columns @rebase-new @rebase-unmatched idx3 en=Apologize
+m/MS6004.BIN	1:03	4	172	1FB2	よろこんで					menu option, declared width 20 columns @rebase-new @rebase-unmatched idx4 en=Nothing Much
+m/MS6004.BIN	1:03	5	184	1FB2	{08:80}が{08:25}	{08:80}が{08:25}				reads: しょうがない; menu option, declared width 20 columns @rebase-new
+m/MS6004.BIN	1:03	6	192	1FB2	誰がお前{08:6A}かに					reads: 誰がお前なんかに; menu option, declared width 20 columns @rebase-new
+m/MS6004.BIN	1:03	7	291	1FB2	なだ{08:2E}					reads: なだめる; menu option, declared width 20 columns; reads: しょうがない @rebase-new
+m/MS6004.BIN	1:03	8	299	1FB2	ほ{08:53}く					reads: ほっとく; menu option, declared width 20 columns; reads: 誰がお前なんかに @rebase-new
+m/MS6004.BIN	1:03	9	350	00	{04:EF}は感動{08:13}\nスキだらけだ！\n＞{08:0C}し{08:15}\n	{04:EF}は感動{08:13}\nスキだらけだ！\n＞{08:0C}し{08:15}\n				reads: は感動している\nスキだらけだ！\n＞攻撃しますか？\n; reads: まさか
+m/MS6004.BIN	1:03	10	564	1FB2	なだ{08:2E}	なだ{08:2E}	Calm Them Down	ours		reads: なだめる; menu option, declared width 20 columns; reads: ペンタグランマ{=EB}{=00}
+m/MS6004.BIN	1:03	11	572	1FB2	無視{08:8E}		Leave It Alone	ours		reads: 無視する; menu option, declared width 20 columns; reads: なだめる
+m/MS6004.BIN	1:03	12	699	1FB2	そう{08:55}		Calm Them Down	ours		reads: そうです; menu option, declared width 20 columns; reads: ほっとく
+m/MS6004.BIN	1:03	13	707	1FB2	{08:4D}ほど{08:56}{08:25}	{08:4D}ほど{08:56}{08:25}	Ignore Them	ours		reads: それほどでもない; menu option, declared width 20 columns
+m/MS6004.BIN	1:03	14	893	1FB2	なだ{08:2E}	なだ{08:2E}	That's Right	ours		reads: なだめる; menu option, declared width 20 columns
+m/MS6004.BIN	1:03	15	901	1FB2	無視{08:8E}		Not Really	ours		reads: 無視する; menu option, declared width 20 columns; reads: は感動している\nスキだらけだ！\n＞攻撃しますか？\n @rebase-unmatched idx15 en={04:EF} is deeply moved!\nWide open!\n>Attack?\n @rebase-unmatched idx27 en=Calm Them Down @rebase-unmatched idx28 en=Ignore Them
+m/MS6004.BIN	2:01	0	22	1FB2	{08:0B}狩り					reads: 悪魔狩り; menu option, declared width 20 columns @rebase-unmatched idx0 en=Demon Hunting
+m/MS6004.BIN	2:01	1	30	1FB2	散歩		MAG	ours		menu option, declared width 20 columns @rebase-unmatched idx1 en=Taking a Walk
+m/MS6004.BIN	2:01	2	87	1FB2	まあね	まあね	Macca	ours		menu option, declared width 20 columns; reads: 早坂達也
+m/MS6004.BIN	2:01	3	95	1FB2	仕方が無い		Sorry!	ours		menu option, declared width 20 columns @rebase-unmatched idx3 en=I Guess
+m/MS6004.BIN	2:01	4	149	1FB2	うーん‥		It's the Truth	ours		menu option, declared width 20 columns @rebase-unmatched idx4 en=Can't Be Helped
+m/MS6004.BIN	2:01	5	159	1FB2	そうかもね	そうかもね	Not Right Now...	ours		menu option, declared width 20 columns; reads: 
+m/MS6004.BIN	2:01	6	222	1FB2	スキだよ		I suppose so	ours		menu option, declared width 20 columns @rebase-unmatched idx6 en=Hmm...
+m/MS6004.BIN	2:01	7	232	1FB2	うーん‥		No Way!	ours		menu option, declared width 20 columns @rebase-unmatched idx7 en=Maybe So
+m/MS6004.BIN	2:01	8	303	1FB2	もちろん	もちろん	Fine, But	ours		menu option, declared width 20 columns; reads: 
+m/MS6004.BIN	2:01	9	313	1FB2	今は結構		Offer Tribute	ours		menu option, declared width 20 columns @rebase-unmatched idx9 en=I Like You
+m/MS6004.BIN	2:01	10	399	1FB2	{02:04}	{02:04}	Something Naughty	ours		reads: アイテム; menu option, declared width 20 columns @rebase-unmatched idx10 en=Hmm...
+m/MS6004.BIN	2:01	11	403	1FB2	ＭＡＧ	ＭＡＧ				menu option, declared width 20 columns; reads: アタシ @rebase-new
+m/MS6004.BIN	2:01	12	411	1FB2	マッカ	マッカ				menu option, declared width 20 columns; reads: あなたの @rebase-new
+m/MS6004.BIN	2:01	13	613	1FB2	ごめん！					menu option, declared width 20 columns @rebase-new @rebase-unmatched idx13 en=Of Course
+m/MS6004.BIN	2:01	14	623	1FB2	本当の事だ					menu option, declared width 20 columns @rebase-new @rebase-unmatched idx14 en=Not Right Now
+m/MS6004.BIN	2:01	15	736	1FB2	今はね‥	今はね‥				menu option, declared width 20 columns; reads:  @rebase-new
+m/MS6004.BIN	2:01	16	746	1FB2	{01:29}な	{01:29}な				reads: そうだな; menu option, declared width 20 columns @rebase-new
+m/MS6004.BIN	2:01	17	849	1FB2	ヤダ！	ヤダ！				menu option, declared width 20 columns; reads: アイテム @rebase-new
+m/MS6004.BIN	2:01	18	857	1FB2	{08:7F}ケド					reads: いいケド; menu option, declared width 20 columns @rebase-new
+m/MS6004.BIN	2:01	19	942	1FB2	貢ぐ					menu option, declared width 20 columns @rebase-new
+m/MS6004.BIN	2:01	20	948	1FB2	Ｈな事	Ｈな事				menu option, declared width 20 columns; reads: そろそろ @rebase-new
 m/MS6004.BIN	2:0C	0	16	1FB2	甘くささやく		Whisper Sweetly	ours		menu option, declared width 20 columns
 m/MS6004.BIN	2:0C	1	30	1FB2	{08:5C}止{08:2E}		Stop It Now	ours		reads: もう止める; menu option, declared width 20 columns
 m/MS6004.BIN	2:0C	2	38	1FB2	押し倒す！		Push Them Down!	ours		menu option, declared width 20 columns
 m/MS6004.BIN	2:0C	3	50	1FB2	イケナイ所をいぢ{08:2E}！		Tease Naughty Spots!	ours		reads: イケナイ所をいぢめる！; menu option, declared width 20 columns
 m/MS6004.BIN	2:0C	4	72	1FB2	身体中触りまくる！		Touch All Over!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:0C	5	104	0F	{01:2D}	{01:2D}				reads: 管理部
-m/MS6004.BIN	2:0C	6	107	00	{02:01}{=9C}{=00}{03:01}ｰ					reads: ペンタグランマ{=9C}{=00}そんなことｰ
-m/MS6004.BIN	2:0C	7	115	00	{04:01}ﾛ					reads: 切りﾛ
-m/MS6004.BIN	2:0C	8	119	00						
-m/MS6004.BIN	2:0C	9	182	1FB2	{01:29}！		That's right!	ours		reads: そうだ！; menu option, declared width 20 columns
-m/MS6004.BIN	2:0C	10	188	1FB2	{08:76}{08:76}	{08:76}{08:76}	Not Yet	ours		reads: まだまだ; menu option, declared width 20 columns
-m/MS6004.BIN	2:0C	11	206	0F	{01:24}	{01:24}				reads: おかげ
-m/MS6004.BIN	2:0C	12	209	00						
-m/MS6004.BIN	2:0D	0	16	1FB2	押し倒す！		Push Them Down!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:0D	1	28	1FB2	無理やり試みる！		Force It Through!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:0D	2	58	0F	{01:01}	{01:01}				reads: 山瀬勇
-m/MS6004.BIN	2:0D	3	61	00						
-m/MS6004.BIN	2:0D	4	98	1FB2	今更ムダだ！		Too Late Now!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:0D	5	112	1FB2	ごめん！！		Sorry!!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:0D	6	136	0F	{01:C1}{01:FF}	{01:C1}{01:FF}				reads: 
-m/MS6004.BIN	2:0D	7	166	1FB2	{08:0E}になれ		Recruit	ours		reads: 仲魔になれ; menu option, declared width 20 columns
-m/MS6004.BIN	2:0D	8	176	1FB2	何かくれ		Give Me Something	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:0D	9	186	1FB2	{08:81}あ口で{08:4A}		Use Your Mouth	ours		reads: じゃあ口でして; menu option, declared width 20 columns
-m/MS6004.BIN	2:0D	10	211	00	{=EC}{=0A}{02:01}{=8D}{=00}	{=EC}{=0A}{02:01}{=8D}{=00}				reads: {=EC}{=0A}ペンタグランマ{=8D}{=00}
-m/MS6004.BIN	2:0D	11	256	1FFA	{02:09}・・{02:09}\n		........\n	ours		reads: ・・・・・・・・\n
-m/MS6004.BIN	2:0D	12	289	1FB2	分{08:18}		Understood	ours		reads: 分かった; menu option, declared width 20 columns
-m/MS6004.BIN	2:0D	13	295	1FB2	絶対許さん		Never Forgive You	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:0D	14	319	0F	{01:0B}	{01:0B}				reads: わたしが
-m/MS6004.BIN	2:0D	15	322	00						
-m/MS6004.BIN	2:0D	16	337	1FFA	{02:09}・・		.....	ours		reads: ・・・・・
-m/MS6004.BIN	2:0D	17	407	1FB2	断る！		Refuse!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:0D	18	415	1FB2	分{08:18}		Understood	ours		reads: 分かった; menu option, declared width 20 columns
-m/MS6004.BIN	2:0D	19	433	0F	{01:12}	{01:12}				reads: あなたの
-m/MS6004.BIN	2:0D	20	436	00						
-m/MS6004.BIN	2:0D	21	477	00	{04:EF}は\n		{04:EF}\n	ours		reads: は\n
-m/MS6004.BIN	2:0D	22	486	00	{04:FF}の××を××{08:17}\n		 did XX to {04:FF}'s XX!\n	ours		reads: の××を××した！\n
-m/MS6004.BIN	2:0D	23	524	1FB2	{08:76}{08:76}	{08:76}{08:76}	Not Yet	ours		reads: まだまだ; menu option, declared width 20 columns
-m/MS6004.BIN	2:0D	24	530	1FB2	{01:29}な		I suppose so	ours		reads: そうだな; menu option, declared width 20 columns
-m/MS6004.BIN	2:0D	25	548	0F	{01:17}	{01:17}				reads: おまえ
-m/MS6004.BIN	2:0D	26	551	00						
-m/MS6004.BIN	2:0D	27	631	1FB2	そう{08:8E}		I'll Do That	ours		reads: そうする; menu option, declared width 20 columns
-m/MS6004.BIN	2:0D	28	639	1FB2	{08:76}{08:76}	{08:76}{08:76}	Not Yet	ours		reads: まだまだ; menu option, declared width 20 columns
-m/MS6004.BIN	2:0D	29	657	0F	{01:52}	{01:52}				reads: 
-m/MS6004.BIN	2:0D	30	660	00						
+m/MS6004.BIN	2:0C	5	182	1FB2	{01:29}！	{01:29}！	That's right!	ours		reads: そうだ！; menu option, declared width 20 columns; reads: 管理部
+m/MS6004.BIN	2:0C	6	188	1FB2	{08:76}{08:76}	{08:76}{08:76}	Not Yet	ours		reads: まだまだ; menu option, declared width 20 columns; reads: ペンタグランマ{=9C}{=00}そんなことｰ
+m/MS6004.BIN	2:0D	0	16	1FB2	押し倒す！		Recruit	ours		menu option, declared width 20 columns @rebase-unmatched idx0 en=Push Them Down!
+m/MS6004.BIN	2:0D	1	28	1FB2	無理やり試みる！		Give Me Something	ours		menu option, declared width 20 columns @rebase-unmatched idx1 en=Force It Through!
+m/MS6004.BIN	2:0D	2	98	1FB2	今更ムダだ！	今更ムダだ！	Use Your Mouth	ours		menu option, declared width 20 columns; reads: 山瀬勇
+m/MS6004.BIN	2:0D	3	112	1FB2	ごめん！！	ごめん！！				menu option, declared width 20 columns @rebase-new
+m/MS6004.BIN	2:0D	4	166	1FB2	{08:0E}になれ					reads: 仲魔になれ; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx4 en=Too Late Now!
+m/MS6004.BIN	2:0D	5	176	1FB2	何かくれ					menu option, declared width 20 columns @rebase-new @rebase-unmatched idx5 en=Sorry!!
+m/MS6004.BIN	2:0D	6	186	1FB2	{08:81}あ口で{08:4A}	{08:81}あ口で{08:4A}				reads: じゃあ口でして; menu option, declared width 20 columns @rebase-new
+m/MS6004.BIN	2:0D	7	256	1FFA	{02:09}・・{02:09}\n		........\n	ours		reads: ・・・・・・・・\n; reads: 仲魔になれ; menu option, declared width 20 columns
+m/MS6004.BIN	2:0D	8	289	1FB2	分{08:18}		Understood	ours		reads: 分かった; menu option, declared width 20 columns
+m/MS6004.BIN	2:0D	9	295	1FB2	絶対許さん		Never Forgive You	ours		menu option, declared width 20 columns; reads: じゃあ口でして
+m/MS6004.BIN	2:0D	10	337	1FFA	{02:09}・・	{02:09}・・	.....	ours		reads: ・・・・・; reads: {=EC}{=0A}ペンタグランマ{=8D}{=00}
+m/MS6004.BIN	2:0D	11	407	1FB2	断る！		Refuse!	ours		menu option, declared width 20 columns; reads: ・・・・・・・・\n
+m/MS6004.BIN	2:0D	12	415	1FB2	分{08:18}		Understood	ours		reads: 分かった; menu option, declared width 20 columns
+m/MS6004.BIN	2:0D	13	477	00	{04:EF}は\n		{04:EF}\n	ours		reads: は\n; menu option, declared width 20 columns
+m/MS6004.BIN	2:0D	14	486	00	{04:FF}の××を××{08:17}\n	{04:FF}の××を××{08:17}\n	 did XX to {04:FF}'s XX!\n	ours		reads: の××を××した！\n; reads: わたしが
+m/MS6004.BIN	2:0D	15	524	1FB2	{08:76}{08:76}	{08:76}{08:76}	Not Yet	ours		reads: まだまだ; menu option, declared width 20 columns
+m/MS6004.BIN	2:0D	16	530	1FB2	{01:29}な		I suppose so	ours		reads: そうだな; menu option, declared width 20 columns; reads: ・・・・・
+m/MS6004.BIN	2:0D	17	631	1FB2	そう{08:8E}		I'll Do That	ours		reads: そうする; menu option, declared width 20 columns
+m/MS6004.BIN	2:0D	18	639	1FB2	{08:76}{08:76}	{08:76}{08:76}	Not Yet	ours		reads: まだまだ; menu option, declared width 20 columns; reads: 分かった
 m/MS6004.BIN	2:0E	0	30	1FB2	すかさず押し倒す！		Push Down at Once!	ours		menu option, declared width 20 columns
 m/MS6004.BIN	2:0E	1	50	1FB2	ボディにソフトタッチ		A Gentle Touch	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:0E	2	84	0F	{01:25}	{01:25}				reads: ＹＥＳ
-m/MS6004.BIN	2:0E	3	87	00						
 m/MS6004.BIN	2:0F	0	30	1FB2	もちろん		Of Course	ours		menu option, declared width 20 columns
 m/MS6004.BIN	2:0F	1	40	1FB2	ふざ{08:29}な！		Knock It Off!	ours		reads: ふざけるな！; menu option, declared width 20 columns
-m/MS6004.BIN	2:0F	2	64	0F	{01:01}	{01:01}				reads: 山瀬勇
-m/MS6004.BIN	2:0F	3	67	00						
 m/MS6004.BIN	2:10	0	22	1FB2	そりゃマズイ		That's Bad	ours		menu option, declared width 20 columns
 m/MS6004.BIN	2:10	1	36	1FB2	もちろん		Of Course	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:10	2	58	0F	{01:01}	{01:01}				reads: 山瀬勇
-m/MS6004.BIN	2:10	3	61	00						
 m/MS6004.BIN	2:11	0	22	1FB2	{01:29}な		I suppose so	ours		reads: そうだな; menu option, declared width 20 columns
 m/MS6004.BIN	2:11	1	28	1FB2	構うな		Don't Mind Me	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:11	2	48	0F	{01:38}	{01:38}				reads: アタシ
-m/MS6004.BIN	2:11	3	51	00						
 m/MS6004.BIN	2:12	0	16	1FB2	そ{08:53}抱きし{08:2E}		Hold Them Gently	ours		reads: そっと抱きしめる; menu option, declared width 20 columns
 m/MS6004.BIN	2:12	1	30	1FB2	いきなり押し倒す！		Suddenly Push Down!	ours		menu option, declared width 20 columns
 m/MS6004.BIN	2:12	2	50	1FB2	キス{08:8E}		Kiss Them	ours		reads: キスする; menu option, declared width 20 columns
-m/MS6004.BIN	2:12	3	71	00	{=E2}{=17}{02:01}	{=E2}{=17}{02:01}				reads: {=E2}{=17}ペンタグランマ
 m/MS6004.BIN	2:13	0	37	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
 m/MS6004.BIN	2:13	1	41	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
-m/MS6004.BIN	2:13	2	58	00	{=E2}{=12}	{=E2}{=12}				
 m/MS6004.BIN	2:14	0	16	1FB2	何を？		What?	ours		menu option, declared width 20 columns
 m/MS6004.BIN	2:14	1	24	1FB2	断る！		Refuse!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:14	2	44	0F	{01:8A}	{01:8A}				reads: 
-m/MS6004.BIN	2:14	3	47	00						
-m/MS6004.BIN	2:14	4	90	1FB2	Ｈな事を{08:8E}		Do Something Naughty	ours		reads: Ｈな事をする; menu option, declared width 20 columns
-m/MS6004.BIN	2:14	5	102	1FB2	さっぱり分{08:42}ん		I Have No Clue	ours		reads: さっぱり分からん; menu option, declared width 20 columns
-m/MS6004.BIN	2:14	6	130	0F	{01:27}	{01:27}				reads: まさか
-m/MS6004.BIN	2:14	7	133	00						
+m/MS6004.BIN	2:14	2	90	1FB2	Ｈな事を{08:8E}	Ｈな事を{08:8E}	Do Something Naughty	ours		reads: Ｈな事をする; menu option, declared width 20 columns
+m/MS6004.BIN	2:14	3	102	1FB2	さっぱり分{08:42}ん	さっぱり分{08:42}ん	I Have No Clue	ours		reads: さっぱり分からん; menu option, declared width 20 columns
 m/MS6004.BIN	2:15	0	29	1FFA	{02:09}・・\n		.....\n	ours		reads: ・・・・・\n
 m/MS6004.BIN	2:18	0	6	00	{04:FF}は\n		{04:FF}\n	ours		reads: は\n
 m/MS6004.BIN	2:18	1	15	00	{04:EF}と×××{08:17}\n		 did XXX with {04:EF}!\n	ours		reads: と×××した！\n
 m/MS6004.BIN	2:18	2	30	1FBA	{02:09}・・{02:09}・・\n		..........\n	ours		reads: ・・・・・・・・・・\n
-m/MS6004.BIN	2:18	3	58	0E	{01:10}	{01:10}				reads: あなたは
-m/MS6004.BIN	2:18	4	61	00	\<{01:14}	\<{01:14}				reads: \<あなたに
-m/MS6004.BIN	2:18	5	65	00						
-m/MS6004.BIN	2:18	6	107	0C	{08:5C}体力が残{08:52}{08:24}！\n＞{02:06}\n		There's no strength left!\n>What will you do?\n	ours		reads: もう体力が残っていない！\n＞どうしますか？\n
-m/MS6004.BIN	2:18	7	145	1FB2	逃げる！		Run Away!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:18	8	155	1FB2	謝る		Apologize	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:18	9	173	0F	{01:20}	{01:20}				reads: おねえちゃん
-m/MS6004.BIN	2:18	10	176	00						
-m/MS6004.BIN	2:18	11	192	1FBA	逃げられ{08:25}！\n		Can't escape!\n	ours		reads: 逃げられない！\n
+m/MS6004.BIN	2:18	3	107	0C	{08:5C}体力が残{08:52}{08:24}！\n＞{02:06}\n	{08:5C}体力が残{08:52}{08:24}！\n＞{02:06}\n	There's no strength left!\n>What will you do?\n	ours		reads: もう体力が残っていない！\n＞どうしますか？\n; reads: あなたは
+m/MS6004.BIN	2:18	4	145	1FB2	逃げる！	逃げる！	Run Away!	ours		menu option, declared width 20 columns; reads: \<あなたに
+m/MS6004.BIN	2:18	5	155	1FB2	謝る	謝る	Apologize	ours		menu option, declared width 20 columns
+m/MS6004.BIN	2:18	6	192	1FBA	逃げられ{08:25}！\n		Can't escape!\n	ours		reads: 逃げられない！\n; reads: もう体力が残っていない！\n＞どうしますか？\n
 m/MS6004.BIN	2:02	0	43	00	{04:EF}の鉄拳が炸裂！！！\n		{04:EF}'s Iron Fist explodes!!!\n	ours		reads: の鉄拳が炸裂！！！\n
 m/MS6004.BIN	2:02	1	225	1FB2	怒る		Get Angry	ours		menu option, declared width 20 columns
 m/MS6004.BIN	2:02	2	231	1FB2	謝る		Apologize	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:02	3	237	1FB2	引き下がる		Back Down	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:02	4	261	0F	{01:5D}	{01:5D}				reads: 
-m/MS6004.BIN	2:02	5	264	00	{02:01}ｾ		Pentagramma	ours		reads: ペンタグランマｾ
-m/MS6004.BIN	2:02	6	268	00						
-m/MS6004.BIN	2:04	0	95	00	{=EC}{=1E}	{=EC}{=1E}				
-m/MS6004.BIN	2:04	1	110	00	{04:EF}は誘惑し{08:1C}\n		{04:EF} tried to tempt you!\n	ours		reads: は誘惑してきた！\n
-m/MS6004.BIN	2:04	2	134	00	{04:FF}は耐え切{08:12}\n		{04:FF} held out to the end!\n	ours		reads: は耐え切った！\n
-m/MS6004.BIN	2:04	3	163	1FB2	威嚇射撃		Warning Shot	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:04	4	173	1FB2	見逃す		Let It Go	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:04	5	181	1FB2	{08:0C}	{08:0C}	Attack	ours		reads: 攻撃; menu option, declared width 20 columns
-m/MS6004.BIN	2:04	6	197	0F	{01:3A}	{01:3A}				reads: ひとり
-m/MS6004.BIN	2:04	7	200	00	{02:01}D	{02:01}D				reads: ペンタグランマD
-m/MS6004.BIN	2:04	8	204	00						
-m/MS6004.BIN	2:04	9	215	00	{04:FF}はガンを装備{08:4A}{08:24}！\n		{04:FF} isn't equipped with a gun!\n	ours		reads: はガンを装備していない！\n
-m/MS6004.BIN	2:04	10	291	0D	チュッ\n		Mwah!\n	ours		
-m/MS6004.BIN	2:04	11	304	00	{04:FF}は幸せだ\n		{04:FF} is happy.\n	ours		reads: は幸せだ\n
-m/MS6004.BIN	2:04	12	341	1FD2	{08:03}：		Emi:	ours		reads: 英美：
-m/MS6004.BIN	2:04	13	347	1FD3	何鼻の下のば{08:4A}んのよ！！\n		Quit making googly eyes!!\n	ours		reads: 何鼻の下のばしてんのよ！！\n
-m/MS6004.BIN	2:04	14	374	1FBA	{08:03}のメガトンパンチが		Emi's Megaton Punch	ours		reads: 英美のメガトンパンチが
-m/MS6004.BIN	2:04	15	406	1FD2	{08:31}：		Rui:	ours		reads: 泪：
-m/MS6004.BIN	2:04	16	412	1FD3	何鼻の下のば{08:4A}んのよ！！\n		Quit making googly eyes!!\n	ours		reads: 何鼻の下のばしてんのよ！！\n
-m/MS6004.BIN	2:04	17	439	1FBA	{08:31}の鉄拳が		Rui's Iron Fist	ours		reads: 泪の鉄拳が
-m/MS6004.BIN	2:04	18	455	18	炸裂！！！\n		Detonation!!!\n	ours		
+m/MS6004.BIN	2:02	3	237	1FB2	引き下がる		Back Down	ours		menu option, declared width 20 columns @rebase-unmatched idx5 en=Pentagramma
+m/MS6004.BIN	2:04	0	110	00	{04:EF}は誘惑し{08:1C}\n	{04:EF}は誘惑し{08:1C}\n	{04:EF} tried to tempt you!\n	ours		reads: は誘惑してきた！\n
+m/MS6004.BIN	2:04	1	134	00	{04:FF}は耐え切{08:12}\n		{04:FF} held out to the end!\n	ours		reads: は耐え切った！\n; reads: は誘惑してきた！\n
+m/MS6004.BIN	2:04	2	163	1FB2	威嚇射撃		Warning Shot	ours		menu option, declared width 20 columns; reads: は耐え切った！\n
+m/MS6004.BIN	2:04	3	173	1FB2	見逃す		Let It Go	ours		menu option, declared width 20 columns
+m/MS6004.BIN	2:04	4	181	1FB2	{08:0C}	{08:0C}	Attack	ours		reads: 攻撃; menu option, declared width 20 columns
+m/MS6004.BIN	2:04	5	215	00	{04:FF}はガンを装備{08:4A}{08:24}！\n	{04:FF}はガンを装備{08:4A}{08:24}！\n	{04:FF} isn't equipped with a gun!\n	ours		reads: はガンを装備していない！\n; reads: 攻撃; menu option, declared width 20 columns
+m/MS6004.BIN	2:04	6	291	0D	チュッ\n	チュッ\n	Mwah!\n	ours		reads: ひとり
+m/MS6004.BIN	2:04	7	304	00	{04:FF}は幸せだ\n	{04:FF}は幸せだ\n	{04:FF} is happy.\n	ours		reads: は幸せだ\n; reads: ペンタグランマD
+m/MS6004.BIN	2:04	8	341	1FD2	{08:03}：	{08:03}：	Emi:	ours		reads: 英美：
+m/MS6004.BIN	2:04	9	347	1FD3	何鼻の下のば{08:4A}んのよ！！\n		Quit making googly eyes!!\n	ours		reads: 何鼻の下のばしてんのよ！！\n; reads: はガンを装備していない！\n
+m/MS6004.BIN	2:04	10	374	1FBA	{08:03}のメガトンパンチが		Emi's Megaton Punch	ours		reads: 英美のメガトンパンチが
+m/MS6004.BIN	2:04	11	406	1FD2	{08:31}：		Rui:	ours		reads: 泪：; reads: は幸せだ\n
+m/MS6004.BIN	2:04	12	412	1FD3	何鼻の下のば{08:4A}んのよ！！\n		Quit making googly eyes!!\n	ours		reads: 何鼻の下のばしてんのよ！！\n; reads: 英美：
+m/MS6004.BIN	2:04	13	439	1FBA	{08:31}の鉄拳が		Rui's Iron Fist	ours		reads: 泪の鉄拳が; reads: 何鼻の下のばしてんのよ！！\n
+m/MS6004.BIN	2:04	14	455	18	炸裂！！！\n		Detonation!!!\n	ours		reads: 英美のメガトンパンチが
 m/MS6004.BIN	3:07	0	22	00	{04:EF}は迫っ{08:1C}\n		{04:EF} closed right in!\n	ours		reads: は迫ってきた！\n
 m/MS6004.BIN	3:07	1	47	1FA3	{08:03}が睨んで{08:40}{02:09}\n		Emi is glaring...\n	ours		reads: 英美が睨んでいる・・・\n
 m/MS6004.BIN	3:07	2	75	0E	{08:03}のメガトンパンチが炸裂！！！\n		Emi's Megaton Punch explodes!!!\n	ours		reads: 英美のメガトンパンチが炸裂！！！\n
@@ -295,27 +188,18 @@ m/MS6004.BIN	3:0B	1	12	1FFB	{01:23}お待ち下{08:49}		{01:23}#Please Wait	ours
 m/MS6004.BIN	3:0B	2	30	1FFA	{02:09}\n	{02:09}\n				reads: ・・・\n
 m/MS6004.BIN	3:08	0	19	1FB2	{01:32}？		Are you okay?	ours		reads: 大丈夫？; menu option, declared width 20 columns
 m/MS6004.BIN	3:08	1	25	1FB2	様子を見る		Wait and See	ours		menu option, declared width 20 columns
-m/MS6004.BIN	3:08	2	49	0F	{01:79}	{01:79}				reads: 
-m/MS6004.BIN	3:08	3	52	00						
-m/MS6004.BIN	3:08	4	194	1FB2	{01:29}よ		That's right	ours		reads: そうだよ; menu option, declared width 20 columns
-m/MS6004.BIN	3:08	5	200	1FB2	{08:7A}訳では		That's Not It	ours		reads: そんな訳では; menu option, declared width 20 columns
-m/MS6004.BIN	3:08	6	222	0F	{01:0C}	{01:0C}				reads: わたしの
-m/MS6004.BIN	3:08	7	225	00						
+m/MS6004.BIN	3:08	2	194	1FB2	{01:29}よ	{01:29}よ	That's right	ours		reads: そうだよ; menu option, declared width 20 columns
+m/MS6004.BIN	3:08	3	200	1FB2	{08:7A}訳では	{08:7A}訳では	That's Not It	ours		reads: そんな訳では; menu option, declared width 20 columns
 m/MS6004.BIN	3:0F	0	120	1FB2	駄目		No Good	ours		menu option, declared width 20 columns
 m/MS6004.BIN	3:0F	1	126	1FB2	わ{08:18}よ		Got It	ours		reads: わかったよ; menu option, declared width 20 columns
-m/MS6004.BIN	3:0F	2	146	0F	{01:0C}	{01:0C}				reads: わたしの
-m/MS6004.BIN	3:0F	3	149	00						
 m/MS6004.BIN	5:00	0	76	00	{04:EF}は去ろうと{08:13}\n		{04:EF} is about to leave\n	ours		reads: は去ろうとしている\n
 m/MS6004.BIN	5:00	1	107	1FB2	呼び止{08:2E}		Call Out to Them	ours		reads: 呼び止める; menu option, declared width 20 columns
 m/MS6004.BIN	5:00	2	117	1FB2	ほ{08:53}く		Leave It Alone	ours		reads: ほっとく; menu option, declared width 20 columns
-m/MS6004.BIN	5:00	3	137	0F	{01:27}	{01:27}				reads: まさか
-m/MS6004.BIN	5:00	4	140	00						
-m/MS6004.BIN	5:00	5	208	1FBA	チュッ\n		Mwah!\n	ours		
-m/MS6004.BIN	5:00	6	379	1FB2	{08:0B}狩り		Demon Hunting	ours		reads: 悪魔狩り; menu option, declared width 20 columns
-m/MS6004.BIN	5:00	7	387	1FB2	{08:0E}探し		Seeking Allies	ours		reads: 仲魔探し; menu option, declared width 20 columns
-m/MS6004.BIN	5:00	8	395	1FB2	物乞い		Begging	ours		menu option, declared width 20 columns
-m/MS6004.BIN	5:00	9	403	1FB2	別に…		Nothing...	ours		menu option, declared width 20 columns
-m/MS6004.BIN	5:00	10	424	00	{=E5}{=29}{02:00}{=E5}{=2A}{03:00}{=E5}{=2B}	{=E5}{=29}{02:00}{=E5}{=2A}{03:00}{=E5}{=2B}				reads: {=E5}{=29}デビルバスター{=E5}{=2A}飛び道具{=E5}{=2B}
+m/MS6004.BIN	5:00	3	208	1FBA	チュッ\n	チュッ\n	Mwah!\n	ours		reads: まさか
+m/MS6004.BIN	5:00	4	379	1FB2	{08:0B}狩り	{08:0B}狩り	Demon Hunting	ours		reads: 悪魔狩り; menu option, declared width 20 columns
+m/MS6004.BIN	5:00	5	387	1FB2	{08:0E}探し		Seeking Allies	ours		reads: 仲魔探し; menu option, declared width 20 columns
+m/MS6004.BIN	5:00	6	395	1FB2	物乞い		Begging	ours		menu option, declared width 20 columns; reads: 悪魔狩り
+m/MS6004.BIN	5:00	7	403	1FB2	別に…		Nothing...	ours		menu option, declared width 20 columns; reads: 仲魔探し
 m/MS6004.BIN	5:28	0	97	00	{04:EF}はスキだらけだ！\n＞{08:0C}し{08:15}\n		{04:EF} is wide open!\n>Attack?\n	ours		reads: はスキだらけだ！\n＞攻撃しますか？\n
 m/MS6004.BIN	5:0A	0	6	0E	チュッ\n		Mwah!\n	ours		
 m/MS6004.BIN	5:0C	0	14	1FA3	{08:03}が睨んで{08:40}\n{02:09}\n		Emi is glaring\n...\n	ours		reads: 英美が睨んでいる\n・・・\n
@@ -328,92 +212,57 @@ m/MS6004.BIN	5:0D	2	28	1FFA	{02:09}・・\n		.....\n	ours		reads: ・・・・�
 m/MS6004.BIN	5:0E	0	14	00	{04:FF}は踊{08:12}\n		{04:FF} danced!\n	ours		reads: は踊った！\n
 m/MS6004.BIN	5:0F	0	5	1FBA	＞も{08:53}やり{08:15}\n		>Give more?\n	ours		reads: ＞もっとやりますか？\n
 m/MS6004.BIN	5:0F	1	38	00	{04:FF}は踊{08:12}\n		{04:FF} danced!\n	ours		reads: は踊った！\n
-m/MS6004.BIN	5:10	0	7	00	{=E5}{=0E}	{=E5}{=0E}				
-m/MS6004.BIN	6:00	0	30	1FB2	そこを何とか		Just This Once	ours		menu option, declared width 20 columns
-m/MS6004.BIN	6:00	1	44	1FB2	引き下がる		Back Down	ours		menu option, declared width 20 columns
-m/MS6004.BIN	6:00	2	56	1FB2	{08:0C}	{08:0C}	Attack	ours		reads: 攻撃; menu option, declared width 20 columns
-m/MS6004.BIN	6:00	3	72	0F	{01:57}{01:02}	{01:57}{01:02}				reads: 桐島英美
-m/MS6004.BIN	6:00	4	77	00	{=E6}{=0E}	{=E6}{=0E}				
-m/MS6004.BIN	6:00	5	106	1FB2	{08:0E}になれ		Recruit	ours		reads: 仲魔になれ; menu option, declared width 20 columns
-m/MS6004.BIN	6:00	6	116	1FB2	何かくれ		Give Me Something	ours		menu option, declared width 20 columns
-m/MS6004.BIN	6:00	7	126	1FB2	あっち行け		Go Away	ours		menu option, declared width 20 columns
-m/MS6004.BIN	6:00	8	150	0F	{01:6F}	{01:6F}				reads: 
-m/MS6004.BIN	6:00	9	153	00	{02:01}{=83}{=00}	{02:01}{=83}{=00}				reads: ペンタグランマ{=83}{=00}
-m/MS6004.BIN	6:00	10	182	1FB2	そこを何とか		Just This Once	ours		menu option, declared width 20 columns
-m/MS6004.BIN	6:00	11	196	1FB2	あきら{08:2E}		Give Up	ours		reads: あきらめる; menu option, declared width 20 columns
-m/MS6004.BIN	6:00	12	219	00	{=EC}{=0B}	{=EC}{=0B}				
-m/MS6004.BIN	6:00	13	368	1FB2	そこを何とか		Just This Once	ours		menu option, declared width 20 columns
-m/MS6004.BIN	6:00	14	382	1FB2	引き下がる		Back Down	ours		menu option, declared width 20 columns
-m/MS6004.BIN	6:00	15	406	0F	{01:09}	{01:09}				reads: わたしたち
-m/MS6004.BIN	6:00	16	409	00						
-m/MS6004.BIN	6:00	17	460	1FB2	貢ぐ		Offer Tribute	ours		menu option, declared width 20 columns
-m/MS6004.BIN	6:00	18	466	1FB2	謝る		Apologize	ours		menu option, declared width 20 columns
-m/MS6004.BIN	6:00	19	472	1FB2	引き下がる		Back Down	ours		menu option, declared width 20 columns
-m/MS6004.BIN	6:00	20	484	1FB2	無視		Ignore Them	ours		menu option, declared width 20 columns
-m/MS6004.BIN	6:00	21	502	0F	{01:20}	{01:20}				reads: おねえちゃん
-m/MS6004.BIN	6:00	22	505	00	{02:00}{=EC}{=0B}{03:01}7	{02:00}{=EC}{=0B}{03:01}7				reads: デビルバスター{=EC}{=0B}そんなこと7
-m/MS6004.BIN	6:00	23	513	00						
+m/MS6004.BIN	6:00	0	30	1FB2	そこを何とか		Offer Tribute	ours		menu option, declared width 20 columns @rebase-unmatched idx0 en=Just This Once
+m/MS6004.BIN	6:00	1	44	1FB2	引き下がる		Apologize	ours		menu option, declared width 20 columns @rebase-unmatched idx1 en=Back Down
+m/MS6004.BIN	6:00	2	56	1FB2	{08:0C}	{08:0C}	Back Down	ours		reads: 攻撃; menu option, declared width 20 columns @rebase-unmatched idx2 en=Attack
+m/MS6004.BIN	6:00	3	106	1FB2	{08:0E}になれ	{08:0E}になれ	Ignore Them	ours		reads: 仲魔になれ; menu option, declared width 20 columns; reads: 桐島英美
+m/MS6004.BIN	6:00	4	116	1FB2	何かくれ	何かくれ				menu option, declared width 20 columns @rebase-new
+m/MS6004.BIN	6:00	5	126	1FB2	あっち行け					menu option, declared width 20 columns; reads: 仲魔になれ @rebase-new @rebase-unmatched idx5 en=Recruit
+m/MS6004.BIN	6:00	6	182	1FB2	そこを何とか					menu option, declared width 20 columns @rebase-new @rebase-unmatched idx6 en=Give Me Something
+m/MS6004.BIN	6:00	7	196	1FB2	あきら{08:2E}					reads: あきらめる; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx7 en=Go Away
+m/MS6004.BIN	6:00	8	368	1FB2	そこを何とか	そこを何とか				menu option, declared width 20 columns; reads:  @rebase-new
+m/MS6004.BIN	6:00	9	382	1FB2	引き下がる	引き下がる				menu option, declared width 20 columns; reads: ペンタグランマ{=83}{=00} @rebase-new
+m/MS6004.BIN	6:00	10	460	1FB2	貢ぐ					menu option, declared width 20 columns @rebase-new @rebase-unmatched idx10 en=Just This Once
+m/MS6004.BIN	6:00	11	466	1FB2	謝る					menu option, declared width 20 columns; reads: あきらめる @rebase-new @rebase-unmatched idx11 en=Give Up
+m/MS6004.BIN	6:00	12	472	1FB2	引き下がる	引き下がる				menu option, declared width 20 columns @rebase-new
+m/MS6004.BIN	6:00	13	484	1FB2	無視					menu option, declared width 20 columns @rebase-new @rebase-unmatched idx13 en=Just This Once @rebase-unmatched idx14 en=Back Down
 m/MS6004.BIN	6:0D	0	4	00	{04:EF}は{02:0E}を睨んで{08:40}{02:09}・・\n		{04:EF} is glaring this way.....\n	ours		reads: はこちらを睨んでいる・・・・・\n
 m/MS6004.BIN	6:0D	1	43	1FB2	怒る		Get Angry	ours		menu option, declared width 20 columns
 m/MS6004.BIN	6:0D	2	49	1FB2	貢ぐ		Offer Tribute	ours		menu option, declared width 20 columns
 m/MS6004.BIN	6:0D	3	55	1FB2	受けを狙う		Play It Safe	ours		menu option, declared width 20 columns
 m/MS6004.BIN	6:0D	4	67	1FB2	睨む		Glare	ours		menu option, declared width 20 columns
 m/MS6004.BIN	6:0D	5	73	1FB2	{08:0C}	{08:0C}	Attack	ours		reads: 攻撃; menu option, declared width 20 columns
-m/MS6004.BIN	6:0D	6	89	0F	{01:58}	{01:58}				reads: 
-m/MS6004.BIN	6:0D	7	92	00	{02:01}`	{02:01}`				reads: ペンタグランマ`
-m/MS6004.BIN	6:0D	8	96	00	{03:01}{=EF}{=00}{04:00}{=E6}{=0E}	{03:01}{=EF}{=00}{04:00}{=E6}{=0E}				reads: そんなこと{=EF}{=00}を唱えた！ {=E6}{=0E}
-m/MS6004.BIN	6:0D	9	153	1FFA	{02:09}・・{02:09}・・\n		..........\n	ours		reads: ・・・・・・・・・・\n
-m/MS6004.BIN	6:0D	10	198	00	{04:FF}は		{04:FF}	ours		reads: は
-m/MS6004.BIN	6:0D	11	207	16	ウィットに富{08:5F}ジョークを言{08:12}\n		 told a witty joke!\n	ours		reads: ウィットに富んだジョークを言った！\n
-m/MS6004.BIN	6:0D	12	273	18	こてこてのギャグをかま{08:17}\n		Pulled off a real corny gag!\n	ours		reads: こてこてのギャグをかました！\n
-m/MS6004.BIN	6:0D	13	350	1FDA	にらみ合いは続く{02:09}・・\n		The staredown continues.....\n	ours		reads: にらみ合いは続く・・・・・\n
-m/MS6004.BIN	6:0D	14	389	1FB2	続{08:29}		Keep Going	ours		reads: 続ける; menu option, declared width 20 columns
-m/MS6004.BIN	6:0D	15	395	1FB2	目をそらす		Look Away	ours		menu option, declared width 20 columns
-m/MS6004.BIN	6:0D	16	419	0F	{01:1A}	{01:1A}				reads: わたくし
-m/MS6004.BIN	6:0D	17	422	00						
-m/MS6004.BIN	7:00	0	69	00	{=EC}{=26}	{=EC}{=26}				
-m/MS6004.BIN	7:00	1	129	00	{=E7}{=0C}	{=E7}{=0C}				
-m/MS6004.BIN	7:00	2	151	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
-m/MS6004.BIN	7:00	3	155	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
-m/MS6004.BIN	7:00	4	171	0F	{01:C4}	{01:C4}				reads: 
-m/MS6004.BIN	7:00	5	231	1FB2	{02:04}	{02:04}				reads: アイテム; menu option, declared width 20 columns
-m/MS6004.BIN	7:00	6	235	1FB2	金		Money	ours		menu option, declared width 20 columns
-m/MS6004.BIN	7:00	7	239	1FB2	ＭＡＧ		MAG	ours		menu option, declared width 20 columns
-m/MS6004.BIN	7:00	8	247	1FB2	キミ		You	ours		menu option, declared width 20 columns
-m/MS6004.BIN	7:00	9	265	0F	{01:3D}	{01:3D}				reads: ふたつ
-m/MS6004.BIN	7:00	10	268	00	{02:01}T	{02:01}T				reads: ペンタグランマT
-m/MS6004.BIN	7:00	11	272	00	{03:01}h	{03:01}h				reads: そんなことh
-m/MS6004.BIN	7:00	12	276	00						
-m/MS6004.BIN	7:00	13	304	0E	{01:0E}	{01:0E}				reads: わたしに
-m/MS6004.BIN	7:00	14	307	00						
-m/MS6004.BIN	7:0B	0	6	0E	{01:66}	{01:66}				reads: 
-m/MS6004.BIN	7:0B	1	9	00	P{01:68}	P{01:68}				reads: P
-m/MS6004.BIN	7:0B	2	13	00						
-m/MS6004.BIN	7:0B	3	59	1FFA	{02:09}・・		.....	ours		reads: ・・・・・
-m/MS6004.BIN	7:0B	4	67	1FFB	{01:23}お待ち下{08:49}		{01:23}#Please Wait	ours		reads: しばらくお待ち下さい
-m/MS6004.BIN	7:0B	5	81	1FFA	{02:09}・・\n		.....\n	ours		reads: ・・・・・\n
+m/MS6004.BIN	6:0D	6	153	1FFA	{02:09}・・{02:09}・・\n	{02:09}・・{02:09}・・\n	..........\n	ours		reads: ・・・・・・・・・・\n
+m/MS6004.BIN	6:0D	7	198	00	{04:FF}は	{04:FF}は	{04:FF}	ours		reads: は; reads: ペンタグランマ`
+m/MS6004.BIN	6:0D	8	207	16	ウィットに富{08:5F}ジョークを言{08:12}\n	ウィットに富{08:5F}ジョークを言{08:12}\n	 told a witty joke!\n	ours		reads: ウィットに富んだジョークを言った！\n; reads: そんなこと{=EF}{=00}を唱えた！ {=E6}{=0E}
+m/MS6004.BIN	6:0D	9	273	18	こてこてのギャグをかま{08:17}\n		Pulled off a real corny gag!\n	ours		reads: こてこてのギャグをかました！\n; reads: ・・・・・・・・・・\n
+m/MS6004.BIN	6:0D	10	350	1FDA	にらみ合いは続く{02:09}・・\n		The staredown continues.....\n	ours		reads: にらみ合いは続く・・・・・\n; reads: は
+m/MS6004.BIN	6:0D	11	389	1FB2	続{08:29}		Keep Going	ours		reads: 続ける; menu option, declared width 20 columns; reads: ウィットに富んだジョークを言った！\n
+m/MS6004.BIN	6:0D	12	395	1FB2	目をそらす		Look Away	ours		menu option, declared width 20 columns; reads: こてこてのギャグをかました！\n
+m/MS6004.BIN	7:00	0	151	1FB2	{08:26}	{08:26}				reads: はい; menu option, declared width 20 columns
+m/MS6004.BIN	7:00	1	155	1FB2	{08:27}	{08:27}	Money	ours		reads: いいえ; menu option, declared width 20 columns
+m/MS6004.BIN	7:00	2	231	1FB2	{02:04}	{02:04}	MAG	ours		reads: アイテム; menu option, declared width 20 columns; reads: はい @rebase-unmatched idx2 en=Yes
+m/MS6004.BIN	7:00	3	235	1FB2	金	金	You	ours		menu option, declared width 20 columns; reads: いいえ @rebase-unmatched idx3 en=No
+m/MS6004.BIN	7:00	4	239	1FB2	ＭＡＧ	ＭＡＧ				menu option, declared width 20 columns; reads:  @rebase-new
+m/MS6004.BIN	7:00	5	247	1FB2	キミ	キミ				menu option, declared width 20 columns; reads: アイテム @rebase-new
+m/MS6004.BIN	7:0B	0	59	1FFA	{02:09}・・	{02:09}・・	.....	ours		reads: ・・・・・
+m/MS6004.BIN	7:0B	1	67	1FFB	{01:23}お待ち下{08:49}	{01:23}お待ち下{08:49}	{01:23}#Please Wait	ours		reads: しばらくお待ち下さい; reads: P
+m/MS6004.BIN	7:0B	2	81	1FFA	{02:09}・・\n	{02:09}・・\n	.....\n	ours		reads: ・・・・・\n
 m/MS6004.BIN	7:0E	0	10	0D	＞{02:06}\n		>What will you do?\n	ours		reads: ＞どうしますか？\n
 m/MS6004.BIN	7:0E	1	31	1FB2	踊れ		Dance!	ours		menu option, declared width 20 columns
 m/MS6004.BIN	7:0E	2	37	1FB2	何かくれ		Give Me Something	ours		menu option, declared width 20 columns
 m/MS6004.BIN	7:0E	3	47	1FB2	Ｈな事		Something Naughty	ours		menu option, declared width 20 columns
 m/MS6004.BIN	7:0E	4	55	1FB2	死ね		Die!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	7:0E	5	73	0F	{01:C4}	{01:C4}				reads: 
-m/MS6004.BIN	7:0E	6	76	00	{02:00}{=E7}{=0F}{03:01}C{01:FF}	{02:00}{=E7}{=0F}{03:01}C{01:FF}				reads: デビルバスター{=E7}{=0F}そんなことC
-m/MS6004.BIN	7:0E	7	96	00	{04:EF}は		{04:EF}	ours		reads: は
-m/MS6004.BIN	7:0E	8	106	0E	美しく舞{08:51}{02:09}・・\n		 danced beautifully.....\n	ours		reads: 美しく舞った・・・・・\n
-m/MS6004.BIN	7:0E	9	145	00	{04:FF}は幸せだ\n		{04:FF} is happy.\n	ours		reads: は幸せだ\n
-m/MS6004.BIN	7:0E	10	181	00	{04:EF}は妖しく踊{08:51}{02:09}・・\n		{04:EF} danced with eerie grace.....\n	ours		reads: は妖しく踊った・・・・・\n
-m/MS6004.BIN	7:0E	11	235	00	{04:FF}は魅了{03:0C}た！\n		{04:FF} was charmed completely!\n	ours		reads: は魅了された！\n
-m/MS6004.BIN	7:0E	12	313	1FB2	{02:04}	{02:04}				reads: アイテム; menu option, declared width 20 columns
-m/MS6004.BIN	7:0E	13	317	1FB2	金		Money	ours		menu option, declared width 20 columns
-m/MS6004.BIN	7:0E	14	321	1FB2	ＭＡＧ		MAG	ours		menu option, declared width 20 columns
-m/MS6004.BIN	7:0E	15	329	1FB2	魔石		Magic Stone	ours		menu option, declared width 20 columns
-m/MS6004.BIN	7:0E	16	335	1FB2	宝玉		Jewel	ours		menu option, declared width 20 columns
-m/MS6004.BIN	7:0E	17	353	0F	{01:17}	{01:17}				reads: おまえ
-m/MS6004.BIN	7:0E	18	356	00	{02:01}	{02:01}				reads: ペンタグランマ
-m/MS6004.BIN	7:0E	19	361	1A	{01:1D}	{01:1D}				reads: だれも
-m/MS6004.BIN	7:0E	20	364	00	{04:01} 	{04:01} 				reads: 切り 
-m/MS6004.BIN	7:0E	21	368	00						
+m/MS6004.BIN	7:0E	5	96	00	{04:EF}は	{04:EF}は	{04:EF}	ours		reads: は
+m/MS6004.BIN	7:0E	6	106	0E	美しく舞{08:51}{02:09}・・\n	美しく舞{08:51}{02:09}・・\n	 danced beautifully.....\n	ours		reads: 美しく舞った・・・・・\n; reads: デビルバスター{=E7}{=0F}そんなことC
+m/MS6004.BIN	7:0E	7	145	00	{04:FF}は幸せだ\n		{04:FF} is happy.\n	ours		reads: は幸せだ\n
+m/MS6004.BIN	7:0E	8	181	00	{04:EF}は妖しく踊{08:51}{02:09}・・\n		{04:EF} danced with eerie grace.....\n	ours		reads: は妖しく踊った・・・・・\n; reads: 美しく舞った・・・・・\n
+m/MS6004.BIN	7:0E	9	235	00	{04:FF}は魅了{03:0C}た！\n		{04:FF} was charmed completely!\n	ours		reads: は魅了された！\n; reads: は幸せだ\n
+m/MS6004.BIN	7:0E	10	313	1FB2	{02:04}	{02:04}				reads: アイテム; menu option, declared width 20 columns; reads: は妖しく踊った・・・・・\n
+m/MS6004.BIN	7:0E	11	317	1FB2	金		Money	ours		menu option, declared width 20 columns; reads: は魅了された！\n
+m/MS6004.BIN	7:0E	12	321	1FB2	ＭＡＧ	ＭＡＧ	MAG	ours		menu option, declared width 20 columns; reads: アイテム
+m/MS6004.BIN	7:0E	13	329	1FB2	魔石		Magic Stone	ours		menu option, declared width 20 columns
+m/MS6004.BIN	7:0E	14	335	1FB2	宝玉		Jewel	ours		menu option, declared width 20 columns
 m/MS6004.BIN	7:0F	0	34	1FFA	{02:09}・・		.....	ours		reads: ・・・・・
 m/MS6004.BIN	7:0F	1	42	1FFB	{01:23}お待ち下{08:49}		{01:23}#Please Wait	ours		reads: しばらくお待ち下さい
 m/MS6004.BIN	7:0F	2	56	1FFA	{02:09}・・\n		.....\n	ours		reads: ・・・・・\n
@@ -425,20 +274,16 @@ m/MS6004.BIN	8:18	0	28	00	{04:EF}は魅了{03:0C}た！\n		{04:EF} was charmed c
 m/MS6004.BIN	8:11	0	65	00	{04:EF}はすがる{08:69}な瞳で見{08:14}\n		{04:EF} is looking at you with pleading eyes.\n	ours		reads: はすがるような瞳で見ている\n
 m/MS6004.BIN	8:11	1	104	1FB2	だめ		No Good	ours		menu option, declared width 20 columns
 m/MS6004.BIN	8:11	2	110	1FB2	まあ{08:7F}		That's Fine	ours		reads: まあいい; menu option, declared width 20 columns
-m/MS6004.BIN	8:11	3	130	0F	{01:1C}	{01:1C}				reads: みんな
-m/MS6004.BIN	8:11	4	133	00						
 m/MS6004.BIN	10:09	0	9	00	{04:EF}は涙を流{08:13}\n<wait>		{04:EF} has tears streaming down.\n<wait>	ours		reads: は涙を流している\n<wait>
 m/MS6004.BIN	10:09	1	28	1FBA	＞{02:06}\n		>{02:06}	ours		reads: ＞どうしますか？\n
 m/MS6004.BIN	10:09	2	49	1FB2	近づく		Approach	ours		menu option, declared width 20 columns
 m/MS6004.BIN	10:09	3	57	1FB2	様子を見る		Wait and See	ours		menu option, declared width 20 columns
 m/MS6004.BIN	10:09	4	69	1FB2	去る		Leave	ours		menu option, declared width 20 columns
-m/MS6004.BIN	10:09	5	88	00	{=EA}{=0C}{02:01}{=86}{=00}	{=EA}{=0C}{02:01}{=86}{=00}				reads: {=EA}{=0C}ペンタグランマ{=86}{=00}
-m/MS6004.BIN	10:09	6	134	00	{04:EF}は{08:76}　泣い{08:14}\n<wait>		{04:EF} is still crying.\n<wait>	ours		reads: はまだ　泣いている\n<wait>
-m/MS6004.BIN	10:09	7	155	1FBA	＞{02:06}\n		>{02:06}	ours		reads: ＞どうしますか？\n
-m/MS6004.BIN	10:09	8	176	1FB2	近づく		Approach	ours		menu option, declared width 20 columns
-m/MS6004.BIN	10:09	9	184	1FB2	様子を見る		Wait and See	ours		menu option, declared width 20 columns
-m/MS6004.BIN	10:09	10	196	1FB2	去る		Leave	ours		menu option, declared width 20 columns
-m/MS6004.BIN	10:09	11	215	00	{=EA}{=0C}{02:01}{07:00}	{=EA}{=0C}{02:01}{07:00}				reads: {=EA}{=0C}ペンタグランマ＞どうしますか？
+m/MS6004.BIN	10:09	5	134	00	{04:EF}は{08:76}　泣い{08:14}\n<wait>	{04:EF}は{08:76}　泣い{08:14}\n<wait>				reads: はまだ　泣いている\n<wait>; reads: {=EA}{=0C}ペンタグランマ{=86}{=00}
+m/MS6004.BIN	10:09	6	155	1FBA	＞{02:06}\n		>{02:06}	ours		reads: ＞どうしますか？\n; reads: はまだ　泣いている\n<wait> @rebase-unmatched idx6 en={04:EF} is still crying.\n<wait>
+m/MS6004.BIN	10:09	7	176	1FB2	近づく		Approach	ours		menu option, declared width 20 columns; reads: ＞どうしますか？\n
+m/MS6004.BIN	10:09	8	184	1FB2	様子を見る		Wait and See	ours		menu option, declared width 20 columns
+m/MS6004.BIN	10:09	9	196	1FB2	去る		Leave	ours		menu option, declared width 20 columns
 m/MS6004.BIN	10:0A	0	62	00	{04:EF}はニヤリと笑{08:12}\n		{04:EF} grinned wickedly!\n	ours		reads: はニヤリと笑った！\n
 m/MS6004.BIN	10:0B	0	0	DATA	{02:09}ウソ泣きだ！\n<wait>		...just crocodile tears!\n<wait>	ours		reads: ・・・ウソ泣きだ！\n<wait>
 m/MS6004.BIN	10:0C	0	2	1FBA	{02:09}・・		.....	ours		reads: ・・・・・
@@ -447,71 +292,40 @@ m/MS6004.BIN	11:0A	1	38	1FB2	好きな物あげる		Give What You Like	ours		men
 m/MS6004.BIN	11:0A	2	54	1FB2	素敵な{08:0B}と合体		A Nice Demon Fusion	ours		reads: 素敵な悪魔と合体; menu option, declared width 20 columns
 m/MS6004.BIN	11:0A	3	70	1FB2	黙{08:52}俺についてこい		Silently Follow Me	ours		reads: 黙って俺についてこい; menu option, declared width 20 columns
 m/MS6004.BIN	11:0A	4	90	1FB2	特典は無い		There's No Reward	ours		menu option, declared width 20 columns
-m/MS6004.BIN	11:0A	5	114	0F	{01:1F}	{01:1F}				reads: おにいちゃん
-m/MS6004.BIN	11:0A	6	117	00	{02:01}ｻ		Pentagramma	ours		reads: ペンタグランマｻ
-m/MS6004.BIN	11:0A	7	121	00	{03:01}ﾎ		Something like that	ours		reads: そんなことﾎ
-m/MS6004.BIN	11:0A	8	125	00						
-m/MS6004.BIN	11:0A	9	159	00	{04:EF}は悩んで{08:40}\n		{04:EF} looks troubled.\n	ours		reads: は悩んでいる\n
-m/MS6004.BIN	11:0A	10	188	1FB2	{08:5C}一押し		One More Push	ours		reads: もう一押し; menu option, declared width 20 columns
-m/MS6004.BIN	11:0A	11	198	1FB2	待つ		Wait	ours		menu option, declared width 20 columns
-m/MS6004.BIN	11:0A	12	216	0F	{01:20}	{01:20}				reads: おねえちゃん
-m/MS6004.BIN	11:0A	13	219	00						
-m/MS6004.BIN	11:0A	14	253	1FBA	{02:09}・・		.....	ours		reads: ・・・・・
-m/MS6004.BIN	11:0A	15	265	0E	{01:0C}	{01:0C}				reads: わたしの
-m/MS6004.BIN	11:0A	16	268	00						
-m/MS6004.BIN	11:0A	17	345	00	{04:EF}の機嫌をそこねた{08:69}だ\n<wait>		{04:EF} seems to have been put in a bad mood.\n<wait>	ours		reads: の機嫌をそこねたようだ\n<wait>
-m/MS6004.BIN	11:0A	18	374	1FBA	＞{02:06}\n		>{02:06}	ours		reads: ＞どうしますか？\n
-m/MS6004.BIN	11:0A	19	395	1FB2	貢ぐ		Offer Tribute	ours		menu option, declared width 20 columns
-m/MS6004.BIN	11:0A	20	401	1FB2	おだ{08:2B}		Butter Up	ours		reads: おだてる; menu option, declared width 20 columns
-m/MS6004.BIN	11:0A	21	421	0F	{01:09}	{01:09}				reads: わたしたち
-m/MS6004.BIN	11:0A	22	424	00						
+m/MS6004.BIN	11:0A	5	159	00	{04:EF}は悩んで{08:40}\n	{04:EF}は悩んで{08:40}\n	{04:EF} looks troubled.\n	ours		reads: は悩んでいる\n; reads: おにいちゃん
+m/MS6004.BIN	11:0A	6	188	1FB2	{08:5C}一押し		One More Push	ours		reads: もう一押し; menu option, declared width 20 columns; reads: ペンタグランマｻ @rebase-unmatched idx6 en=Pentagramma
+m/MS6004.BIN	11:0A	7	198	1FB2	待つ		Wait	ours		menu option, declared width 20 columns; reads: そんなことﾎ @rebase-unmatched idx7 en=Something like that
+m/MS6004.BIN	11:0A	8	253	1FBA	{02:09}・・	{02:09}・・	.....	ours		reads: ・・・・・
+m/MS6004.BIN	11:0A	9	345	00	{04:EF}の機嫌をそこねた{08:69}だ\n<wait>		{04:EF} seems to have been put in a bad mood.\n<wait>	ours		reads: の機嫌をそこねたようだ\n<wait>; reads: は悩んでいる\n
+m/MS6004.BIN	11:0A	10	374	1FBA	＞{02:06}\n		>{02:06}	ours		reads: ＞どうしますか？\n; reads: もう一押し; menu option, declared width 20 columns
+m/MS6004.BIN	11:0A	11	395	1FB2	貢ぐ		Offer Tribute	ours		menu option, declared width 20 columns
+m/MS6004.BIN	11:0A	12	401	1FB2	おだ{08:2B}	おだ{08:2B}	Butter Up	ours		reads: おだてる; menu option, declared width 20 columns; reads: おねえちゃん
 m/MS6004.BIN	13:00	0	56	1FB2	{08:7F}{08:8C}	{08:7F}{08:8C}	Very Well	ours		reads: いいだろう; menu option, declared width 20 columns
 m/MS6004.BIN	13:00	1	62	1FB2	断る！		Refuse!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	13:00	2	82	0F	{01:0E}	{01:0E}				reads: わたしに
-m/MS6004.BIN	13:00	3	85	00						
-m/MS6004.BIN	13:00	4	201	1F0D	{02:09}・・		.....	ours		reads: ・・・・・
-m/MS6004.BIN	13:00	5	226	1FB2	もちろん		Of Course	ours		menu option, declared width 20 columns
-m/MS6004.BIN	13:00	6	236	1FB2	ウソ！		Liar!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	13:00	7	256	0F	{01:A5}{01:FF}	{01:A5}{01:FF}				reads: 
-m/MS6004.BIN	13:00	8	289	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
-m/MS6004.BIN	13:00	9	293	1FB2	{08:4D}は…		Well...	ours		reads: それは…; menu option, declared width 20 columns
-m/MS6004.BIN	13:00	10	313	0F	{01:36}	{01:36}				reads: そろそろ
-m/MS6004.BIN	13:00	11	316	00						
-m/MS6004.BIN	13:00	12	391	1FB2	人に害を成せば		If They Harm People	ours		menu option, declared width 20 columns
-m/MS6004.BIN	13:00	13	407	1FB2	{08:0B}による		Because It's a Demon	ours		reads: 悪魔による; menu option, declared width 20 columns
-m/MS6004.BIN	13:00	14	429	0F	{01:22}	{01:22}				reads: ママ
-m/MS6004.BIN	13:00	15	432	00						
-m/MS6004.BIN	13:00	16	504	1FB2	{01:29}	{01:29}				reads: そうだ; menu option, declared width 20 columns
-m/MS6004.BIN	13:00	17	508	1FB2	違う！		That's Wrong!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	13:00	18	528	0F	{01:5A}{01:FF}	{01:5A}{01:FF}				reads: 
-m/MS6004.BIN	13:00	19	553	1FB2	{01:29}	{01:29}				reads: そうだ; menu option, declared width 20 columns
-m/MS6004.BIN	13:00	20	557	1FB2	仕方{08:25}		Can't Be Helped	ours		reads: 仕方ない; menu option, declared width 20 columns
-m/MS6004.BIN	13:00	21	565	1FB2	違う！		That's Wrong!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	13:00	22	585	0F	{01:9C}	{01:9C}				reads: 
-m/MS6004.BIN	13:00	23	588	00	{02:01}{08:01}	{02:01}{08:01}				reads: ペンタグランマ達也
-m/MS6004.BIN	13:00	24	607	00	{04:EF}の\n機嫌をそこねた\n＞{02:06}\n		{04:EF}\nwas put in a bad mood.\n>What will you do?\n	ours		reads: の\n機嫌をそこねた\n＞どうしますか？\n
-m/MS6004.BIN	13:00	25	648	1FB2	ほ{08:53}く		Leave It Alone	ours		reads: ほっとく; menu option, declared width 20 columns
-m/MS6004.BIN	13:00	26	656	1FB2	説得{08:8E}		Persuade Them	ours		reads: 説得する; menu option, declared width 20 columns
-m/MS6004.BIN	13:00	27	676	0F	{01:1E}	{01:1E}				reads: はやく
-m/MS6004.BIN	13:00	28	679	00						
-m/MS6004.BIN	13:00	29	765	1FB2	世界の為だ		For the World	ours		menu option, declared width 20 columns
-m/MS6004.BIN	13:00	30	777	1FB2	恋人の為だ		For My Lover	ours		menu option, declared width 20 columns
-m/MS6004.BIN	13:00	31	801	0F	{01:27}	{01:27}				reads: まさか
-m/MS6004.BIN	13:00	32	804	00						
-m/MS6004.BIN	13:00	33	926	1FB2	いかにも		Indeed	ours		menu option, declared width 20 columns
-m/MS6004.BIN	13:00	34	936	1FB2	とん{08:56}{08:25}		No Way	ours		reads: とんでもない; menu option, declared width 20 columns
-m/MS6004.BIN	13:00	35	958	0F	{01:0C}	{01:0C}				reads: わたしの
-m/MS6004.BIN	13:00	36	961	00						
-m/MS6004.BIN	13:00	37	987	00	{04:EF}の\n機嫌をそこねた\n＞{02:06}\n		{04:EF}\nwas put in a bad mood.\n>What will you do?\n	ours		reads: の\n機嫌をそこねた\n＞どうしますか？\n
-m/MS6004.BIN	13:00	38	1028	1FB2	ほ{08:53}く		Leave It Alone	ours		reads: ほっとく; menu option, declared width 20 columns
-m/MS6004.BIN	13:00	39	1036	1FB2	なだ{08:2E}		Calm Them Down	ours		reads: なだめる; menu option, declared width 20 columns
-m/MS6004.BIN	13:00	40	1044	1FB2	怒る		Get Angry	ours		menu option, declared width 20 columns
-m/MS6004.BIN	13:00	41	1062	0F	{01:2F}{02:01}{01:00}	{01:2F}{02:01}{01:00}				reads: 不気味ペンタグランマ早坂達也
+m/MS6004.BIN	13:00	2	201	1F0D	{02:09}・・	{02:09}・・	.....	ours		reads: ・・・・・; reads: わたしに
+m/MS6004.BIN	13:00	3	226	1FB2	もちろん	もちろん	Of Course	ours		menu option, declared width 20 columns
+m/MS6004.BIN	13:00	4	236	1FB2	ウソ！		Liar!	ours		menu option, declared width 20 columns; reads: ・・・・・
+m/MS6004.BIN	13:00	5	289	1FB2	{08:26}	{08:26}				reads: はい; menu option, declared width 20 columns
+m/MS6004.BIN	13:00	6	293	1FB2	{08:4D}は…		Can't Be Helped	ours		reads: それは…; menu option, declared width 20 columns
+m/MS6004.BIN	13:00	7	391	1FB2	人に害を成せば	人に害を成せば	That's Wrong!	ours		menu option, declared width 20 columns; reads: 
+m/MS6004.BIN	13:00	8	407	1FB2	{08:0B}による	{08:0B}による	Leave It Alone	ours		reads: 悪魔による; menu option, declared width 20 columns; reads: はい @rebase-unmatched idx8 en=Yes
+m/MS6004.BIN	13:00	9	504	1FB2	{01:29}	{01:29}	Persuade Them	ours		reads: そうだ; menu option, declared width 20 columns; reads: それは… @rebase-unmatched idx9 en=Well...
+m/MS6004.BIN	13:00	10	508	1FB2	違う！	違う！	For the World	ours		menu option, declared width 20 columns; reads: そろそろ
+m/MS6004.BIN	13:00	11	553	1FB2	{01:29}	{01:29}	For My Lover	ours		reads: そうだ; menu option, declared width 20 columns
+m/MS6004.BIN	13:00	12	557	1FB2	仕方{08:25}		Indeed	ours		reads: 仕方ない; menu option, declared width 20 columns @rebase-unmatched idx12 en=If They Harm People
+m/MS6004.BIN	13:00	13	565	1FB2	違う！		No Way	ours		menu option, declared width 20 columns; reads: 悪魔による @rebase-unmatched idx13 en=Because It's a Demon
+m/MS6004.BIN	13:00	14	607	00	{04:EF}の\n機嫌をそこねた\n＞{02:06}\n	{04:EF}の\n機嫌をそこねた\n＞{02:06}\n	{04:EF}\nwas put in a bad mood.\n>What will you do?\n	ours		reads: の\n機嫌をそこねた\n＞どうしますか？\n; reads: ママ
+m/MS6004.BIN	13:00	15	648	1FB2	ほ{08:53}く	ほ{08:53}く	Leave It Alone	ours		reads: ほっとく; menu option, declared width 20 columns
+m/MS6004.BIN	13:00	16	656	1FB2	説得{08:8E}	説得{08:8E}	Calm Them Down	ours		reads: 説得する; menu option, declared width 20 columns; reads: そうだ
+m/MS6004.BIN	13:00	17	765	1FB2	世界の為だ		Get Angry	ours		menu option, declared width 20 columns @rebase-unmatched idx17 en=That's Wrong!
+m/MS6004.BIN	13:00	18	777	1FB2	恋人の為だ	恋人の為だ				menu option, declared width 20 columns; reads:  @rebase-new
+m/MS6004.BIN	13:00	19	926	1FB2	いかにも	いかにも				menu option, declared width 20 columns; reads: そうだ @rebase-new
+m/MS6004.BIN	13:00	20	936	1FB2	とん{08:56}{08:25}					reads: とんでもない; menu option, declared width 20 columns; reads: 仕方ない @rebase-new
+m/MS6004.BIN	13:00	21	987	00	{04:EF}の\n機嫌をそこねた\n＞{02:06}\n					reads: の\n機嫌をそこねた\n＞どうしますか？\n; menu option, declared width 20 columns @rebase-new
+m/MS6004.BIN	13:00	22	1028	1FB2	ほ{08:53}く	ほ{08:53}く				reads: ほっとく; menu option, declared width 20 columns @rebase-new
+m/MS6004.BIN	13:00	23	1036	1FB2	なだ{08:2E}	なだ{08:2E}				reads: なだめる; menu option, declared width 20 columns; reads: ペンタグランマ達也 @rebase-new
+m/MS6004.BIN	13:00	24	1044	1FB2	怒る					menu option, declared width 20 columns; reads: の\n機嫌をそこねた\n＞どうしますか？\n @rebase-new @rebase-unmatched idx24 en={04:EF}\nwas put in a bad mood.\n>What will you do?\n
 m/MS6004.BIN	14:00	0	19	1FB2	人に害をなす{08:42}		They Harm People	ours		reads: 人に害をなすから; menu option, declared width 20 columns
 m/MS6004.BIN	14:00	1	35	1FB2	趣味！		It's a Hobby!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	14:00	2	55	0F	{01:68}	{01:68}				reads: 
-m/MS6004.BIN	14:00	3	58	00						
-m/MS6004.BIN	14:00	4	80	1FB2	人は牛とは違う		Humans Aren't Cattle	ours		menu option, declared width 20 columns
-m/MS6004.BIN	14:00	5	96	1FB2	難しいな…		That's Tricky...	ours		menu option, declared width 20 columns
-m/MS6004.BIN	14:00	6	120	0F	{01:0E}	{01:0E}				reads: わたしに
-m/MS6004.BIN	14:00	7	123	00						
+m/MS6004.BIN	14:00	2	80	1FB2	人は牛とは違う	人は牛とは違う	Humans Aren't Cattle	ours		menu option, declared width 20 columns; reads: 
+m/MS6004.BIN	14:00	3	96	1FB2	難しいな…	難しいな…	That's Tricky...	ours		menu option, declared width 20 columns

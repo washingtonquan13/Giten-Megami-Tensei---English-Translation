@@ -3,7 +3,9 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS003D.BIN	0:06	0	0	UNTILED	ｭ / ｬ / ｬ / ｬ / ｪ / ﾐ / ーの端末が / {。 / アームターミナルを接続し / ﾁ / ﾐ / ｱ / ｲ接続 / ｷ / ﾑ / = / = / 					@noedit; @untiled; record does not tile (expression selector past end of record at 0x8B); read-only, copied verbatim
+m/MS003D.BIN	0:06	0	44	1FD0	{08:05}ーの端末が{08:7B}。\nアームターミナルを接続し{08:15}\n					reads: コンピューターの端末がある。\nアームターミナルを接続しますか？\n; @noedit; @untiled; record does not tile (expression selector past end of record at 0x8B); read-only, copied verbatim @rebase-new
+m/MS003D.BIN	0:06	1	104	1FB2	接続{08:8E}					reads: 接続する; menu option, declared width 20 columns @rebase-new
+m/MS003D.BIN	0:06	2	112	1FB2	立ち去る					menu option, declared width 20 columns @rebase-new
 m/MS003D.BIN	0:07	0	8	1FD1	有用{08:0A}を検索中{08:55}		Looking for available data	v005		reads: 有用データを検索中です
 m/MS003D.BIN	0:07	1	30	1FFA	．．．\n					
 m/MS003D.BIN	0:08	0	12	1FC4	＞「		>"	ours		
@@ -15,15 +17,11 @@ m/MS003D.BIN	0:08	5	50	1F01	{01:03}	{01:03}				reads: ニュートン
 m/MS003D.BIN	0:08	6	55	19	の各{08:0B}の\n　ＤＡＳ{08:0A}を発見しま{08:4B}\n　プロテクトを解除し、{03:09}ロードを試み{08:5A}\n		's D.A.S. data found for each demon\n　Removing protection, attempting download\n	ours		reads: の各悪魔の\n　ＤＡＳデータを発見しました\n　プロテクトを解除し、ダウンロードを試みます\n
 m/MS003D.BIN	0:08	7	142	1FB2	実行		Proceed	v005		menu option, declared width 20 columns
 m/MS003D.BIN	0:08	8	148	1FB2	中止		Abort	v005		menu option, declared width 20 columns
-m/MS003D.BIN	0:08	9	166	0F	{01:27}	{01:27}				reads: まさか
-m/MS003D.BIN	0:08	10	169	00						
-m/MS003D.BIN	0:08	11	210	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>		>Download aborted.\n<wait>	v005		reads: ＞ダウンロードを中止します\n<wait>
+m/MS003D.BIN	0:08	9	210	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>	＞{03:09}ロードを中止し{08:5A}\n<wait>	>Download aborted.\n<wait>	v005		reads: ＞ダウンロードを中止します\n<wait>; reads: まさか
 m/MS003D.BIN	0:09	0	6	1FC4	＞ＡＭＳ{08:0A}を発見しま{08:4B}\n　プロテクトを解除し、{03:09}ロードを試み{08:5A}\n		>AMS data found.\n Decrypt and download?\n	v005		reads: ＞ＡＭＳデータを発見しました\n　プロテクトを解除し、ダウンロードを試みます\n
 m/MS003D.BIN	0:09	1	84	1FB2	実行		Proceed	v005		menu option, declared width 20 columns
 m/MS003D.BIN	0:09	2	90	1FB2	中止		Abort	v005		menu option, declared width 20 columns
-m/MS003D.BIN	0:09	3	108	0F	{01:0D}	{01:0D}				reads: わたしを
-m/MS003D.BIN	0:09	4	111	00						
-m/MS003D.BIN	0:09	5	126	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>		>Download aborted.\n<wait>	v005		reads: ＞ダウンロードを中止します\n<wait>
+m/MS003D.BIN	0:09	3	126	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>	＞{03:09}ロードを中止し{08:5A}\n<wait>	>Download aborted.\n<wait>	v005		reads: ＞ダウンロードを中止します\n<wait>; reads: わたしを
 m/MS003D.BIN	0:0A	0	46	1F4F	{03:16}	{03:16}				reads: 
 m/MS003D.BIN	0:0A	1	49	00	{02:03}	{02:03}				reads: レジスタンス
 m/MS003D.BIN	0:0A	2	70	1FC4	＞「					
@@ -34,11 +32,9 @@ m/MS003D.BIN	0:0A	6	132	00	\{	\{
 m/MS003D.BIN	0:0A	7	237	18	　プロテクトを解除し、{03:09}ロードを試み{08:5A}\n		 Decrypt and download?\n	v005		reads: 　プロテクトを解除し、ダウンロードを試みます\n
 m/MS003D.BIN	0:0A	8	292	1FB2	実行		Proceed	v005		menu option, declared width 20 columns
 m/MS003D.BIN	0:0A	9	298	1FB2	中止		Abort	v005		menu option, declared width 20 columns
-m/MS003D.BIN	0:0A	10	316	0F	{01:3F}	{01:3F}				reads: どちら
-m/MS003D.BIN	0:0A	11	319	00						
-m/MS003D.BIN	0:0A	12	384	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>		>Download aborted.\n<wait>	v005		reads: ＞ダウンロードを中止します\n<wait>
-m/MS003D.BIN	0:0A	13	426	1FC4	＞{08:47}{08:09}は既にインストール{03:0C}てい{08:5A}\n<wait>		>This program has already been installed.\n<wait>	v005		reads: ＞このプログラムは既にインストールされています\n<wait>
-m/MS003D.BIN	0:0A	14	480	1FC4	＞既に{08:47}{08:09}の上位バージョンが\n　インストール{03:0C}てい{08:5A}\n<wait>		>An upgraded version of this program\n has already been installed.\n<wait>	v005		reads: ＞既にこのプログラムの上位バージョンが\n　インストールされています\n<wait>
+m/MS003D.BIN	0:0A	10	384	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>	＞{03:09}ロードを中止し{08:5A}\n<wait>	>Download aborted.\n<wait>	v005		reads: ＞ダウンロードを中止します\n<wait>; reads: どちら
+m/MS003D.BIN	0:0A	11	426	1FC4	＞{08:47}{08:09}は既にインストール{03:0C}てい{08:5A}\n<wait>	＞{08:47}{08:09}は既にインストール{03:0C}てい{08:5A}\n<wait>	>This program has already been installed.\n<wait>	v005		reads: ＞このプログラムは既にインストールされています\n<wait>
+m/MS003D.BIN	0:0A	12	480	1FC4	＞既に{08:47}{08:09}の上位バージョンが\n　インストール{03:0C}てい{08:5A}\n<wait>		>An upgraded version of this program\n has already been installed.\n<wait>	v005		reads: ＞既にこのプログラムの上位バージョンが\n　インストールされています\n<wait>; reads: ＞ダウンロードを中止します\n<wait>
 m/MS003D.BIN	0:0B	0	2	1FBA	＞「		>Found the DDS data of [	v005		
 m/MS003D.BIN	0:0B	1	9	1F01	{01:03}	{01:03}				reads: ニュートン
 m/MS003D.BIN	0:0B	2	12	00	」のＤＤＳ{08:0A}を発見しま{08:4B}\n					reads: 」のＤＤＳデータを発見しました\n
@@ -49,25 +45,19 @@ m/MS003D.BIN	0:0B	6	132	1FBA	＞記憶容量不足でインストールでき{02
 m/MS003D.BIN	0:0B	7	176	0C	　プロテクトを解除し、{03:09}ロードを試み{08:5A}\n		 Decrypt the data and download it?\n	v005		reads: 　プロテクトを解除し、ダウンロードを試みます\n
 m/MS003D.BIN	0:0B	8	231	1FB2	実行		Proceed	v005		menu option, declared width 20 columns
 m/MS003D.BIN	0:0B	9	237	1FB2	中止		Abort	v005		menu option, declared width 20 columns
-m/MS003D.BIN	0:0B	10	255	0F	{01:0C}	{01:0C}				reads: わたしの
-m/MS003D.BIN	0:0B	11	258	00						
-m/MS003D.BIN	0:0B	12	272	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>		>Download aborted.\n<wait>	v005		reads: ＞ダウンロードを中止します\n<wait>
+m/MS003D.BIN	0:0B	10	272	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>	＞{03:09}ロードを中止し{08:5A}\n<wait>	>Download aborted.\n<wait>	v005		reads: ＞ダウンロードを中止します\n<wait>; reads: わたしの
 m/MS003D.BIN	0:0C	0	2	1FBA	＞有用{08:0A}を発見でき{02:0A}で{08:4B}\n<wait>		>Unable to find any available data.\n<wait>	v005		reads: ＞有用データを発見できませんでした\n<wait>
 m/MS003D.BIN	0:0D	0	2	1FBA	＞情報{08:0A}ファイルを発見しま{08:4B}\n　プロテクトを解除し、内容を表示し{08:5A}\n		>Data file found.\n Decrypt and display its contents?\n	v005		reads: ＞情報データファイルを発見しました\n　プロテクトを解除し、内容を表示します\n
 m/MS003D.BIN	0:0D	1	84	1FB2	実行		Proceed	v005		menu option, declared width 20 columns
 m/MS003D.BIN	0:0D	2	90	1FB2	中止		Abort	v005		menu option, declared width 20 columns
-m/MS003D.BIN	0:0D	3	108	0F	{01:E5}	{01:E5}				reads: 
-m/MS003D.BIN	0:0D	4	111	00						
-m/MS003D.BIN	0:0D	5	114	1FBA	＞{01:23}お待ち{08:6E}		>Please wait a moment	v005		reads: ＞しばらくお待ちください
-m/MS003D.BIN	0:0D	6	132	1FFA	．．．\n					
-m/MS003D.BIN	0:0D	7	175	1FBA	＞プロテクトの解除に失敗しま{08:4B}\n　情報{08:0A}ファイルの内容を表示でき{02:0A}\n<wait>		>Unable to break encryption.\n Contents cannot be displayed.\n<wait>	v005		reads: ＞プロテクトの解除に失敗しました\n　情報データファイルの内容を表示できません\n<wait>
-m/MS003D.BIN	0:0D	8	252	1FBA	＞情報{08:0A}ファイルの内容を表示し{08:5A}\n<wait>		>Displaying contents.\n<wait>	v005		reads: ＞情報データファイルの内容を表示します\n<wait>
-m/MS003D.BIN	0:0D	9	310	1FB2	再表示		Show again	v005		menu option, declared width 20 columns
-m/MS003D.BIN	0:0D	10	318	1FB2	終了		Exit	v005		menu option, declared width 20 columns
-m/MS003D.BIN	0:0D	11	336	0F	{01:2B}	{01:2B}				reads: ゾンビ
-m/MS003D.BIN	0:0D	12	339	00						
-m/MS003D.BIN	0:0D	13	342	1FBA	＞ファイル内容の表示を中止し{08:5A}\n<wait>		>Closing display.\n<wait>	v005		reads: ＞ファイル内容の表示を中止します\n<wait>
-m/MS003D.BIN	0:0D	14	382	0C	<wait>＞ファイル内容の表示を終了し{08:5A}\n<wait>		<wait>>Exiting display mode.\n<wait>	v005		reads: <wait>＞ファイル内容の表示を終了します\n<wait>
+m/MS003D.BIN	0:0D	3	114	1FBA	＞{01:23}お待ち{08:6E}	＞{01:23}お待ち{08:6E}	>Please wait a moment	v005		reads: ＞しばらくお待ちください
+m/MS003D.BIN	0:0D	4	132	1FFA	．．．\n	．．．\n				
+m/MS003D.BIN	0:0D	5	175	1FBA	＞プロテクトの解除に失敗しま{08:4B}\n　情報{08:0A}ファイルの内容を表示でき{02:0A}\n<wait>		>Unable to break encryption.\n Contents cannot be displayed.\n<wait>	v005		reads: ＞プロテクトの解除に失敗しました\n　情報データファイルの内容を表示できません\n<wait>; reads: ＞しばらくお待ちください
+m/MS003D.BIN	0:0D	6	252	1FBA	＞情報{08:0A}ファイルの内容を表示し{08:5A}\n<wait>		>Displaying contents.\n<wait>	v005		reads: ＞情報データファイルの内容を表示します\n<wait>
+m/MS003D.BIN	0:0D	7	310	1FB2	再表示		Show again	v005		menu option, declared width 20 columns; reads: ＞プロテクトの解除に失敗しました\n　情報データファイルの内容を表示できません\n<wait>
+m/MS003D.BIN	0:0D	8	318	1FB2	終了		Exit	v005		menu option, declared width 20 columns; reads: ＞情報データファイルの内容を表示します\n<wait>
+m/MS003D.BIN	0:0D	9	342	1FBA	＞ファイル内容の表示を中止し{08:5A}\n<wait>		>Closing display.\n<wait>	v005		reads: ＞ファイル内容の表示を中止します\n<wait>; menu option, declared width 20 columns
+m/MS003D.BIN	0:0D	10	382	0C	<wait>＞ファイル内容の表示を終了し{08:5A}\n<wait>		<wait>>Exiting display mode.\n<wait>	v005		reads: <wait>＞ファイル内容の表示を終了します\n<wait>; menu option, declared width 20 columns
 m/MS003D.BIN	0:0E	0	2	1FBA	＞{03:09}ロード開始し{08:5A}\n<wait>		>Initializing download.\n<wait>	v005		reads: ＞ダウンロード開始します\n<wait>
 m/MS003D.BIN	0:0E	1	27	1FBA	{03:09}ロード{08:4A}い{08:5A}		Downloading	v005		reads: ダウンロードしています
 m/MS003D.BIN	0:0E	2	47	1FFA	．．．\n					

@@ -3,7 +3,7 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0031.BIN	0:00	0	0	UNTILED	 / # / = /  / y / ｺ / 6 / ｦ / < / y / ﾂ / 7 / y / ﾊ / 8 / j / ＃暫定：ゲームオーバーです。そのルーチンへ。 / ＃暫定：リセットして、初めからやり直してください。 / 蛻ﾈ下は暫定です。冥界をクリアして、蘇ったものとします。 / 1					@noedit; @untiled; record does not tile (expression node 0x01 payload past end); read-only, copied verbatim
+m/MS0031.BIN	0:00	0	0	UNTILED	 / # / = /  / y / ｺ / 6 / ｦ / < / y / ﾂ / 7 / y / ﾊ / 8 / j / ＃暫定：ゲームオーバーです。そのルーチンへ。 / ＃暫定：リセットして、初めからやり直してください。 / 蛻ﾈ下は暫定です。冥界をクリアして、蘇ったものとします。 / 1					@noedit; @untiled; record does not tile (switch entry at 0x61 has kind 13 (not 0 or 1)); read-only, copied verbatim; record does not tile (expression node 0x01 payload past end)
 m/MS0031.BIN	0:01	0	8	1F04	ｺ{01:C2}{01:CA}					record reaches an engine no-op opcode; verify in game; reads: ｺ
 m/MS0031.BIN	0:01	1	21	1FD2	泪：		Rui:	ours		record reaches an engine no-op opcode; verify in game
 m/MS0031.BIN	0:01	2	30	1F01	！　ああ、やっと気がついた。\n		! Ah, you're finally awake.\n	ours		record reaches an engine no-op opcode; verify in game
@@ -23,45 +23,43 @@ m/MS0031.BIN	0:01	15	557	10	{07:00}	{07:00}	>What will you do?	ours		record reac
 m/MS0031.BIN	0:01	16	572	1FB2	言い訳する		Make an excuse	ours		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
 m/MS0031.BIN	0:01	17	584	1FB2	優しく慰{08:2E}		Gently comfort her	ours		record reaches an engine no-op opcode; verify in game; reads: 優しく慰める; menu option, declared width 20 columns
 m/MS0031.BIN	0:01	18	596	1FB2	全部話す		Tell her everything	ours		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
-m/MS0031.BIN	0:01	19	620	0F	{01:20}{02:02}{01:7C}{02:FF}	{01:20}{02:02}{01:7C}{02:FF}				record reaches an engine no-op opcode; verify in game; reads: おねえちゃんキャンプ
-m/MS0031.BIN	0:01	20	636	1FD2	{08:00}：		Hayasaka:	ours		record reaches an engine no-op opcode; verify in game; reads: 早坂：
-m/MS0031.BIN	0:01	21	642	1FD3	なんだ、無事か。いきなり消{08:28}から、何事かと思ったよ。\n		Oh, you're okay. You vanished so suddenly, I thought something happened.\n	ours		record reaches an engine no-op opcode; verify in game; reads: なんだ、無事か。いきなり消えるから、何事かと思ったよ。\n
-m/MS0031.BIN	0:01	22	701	10	ﾚしい事情はあとだ。こんな不気味なところ、とっとと離れようぜ。\n		The details can wait. Let's get out of this creepy place already.\n	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:01	23	774	1FD2	{08:03}：		Emi:	ours		record reaches an engine no-op opcode; verify in game; reads: 英美：
-m/MS0031.BIN	0:01	24	783	1F01	くん！　{08:22}い、何があったの？\nあなたの姿が見えなく{08:1A}、あたしひとりで取り残されて‥‥\n		-kun! What on earth happened?\nYou just disappeared, and I was left all alone......\n	ours		record reaches an engine no-op opcode; verify in game; reads: くん！　いったい、何があったの？\nあなたの姿が見えなくなって、あたしひとりで取り残されて‥‥\n
-m/MS0031.BIN	0:01	25	877	10	っごく、怖{08:18}。\n		It was really, really scary.\n	ours		record reaches an engine no-op opcode; verify in game; reads: っごく、怖かった。\n
-m/MS0031.BIN	0:01	26	899	1FD0	　{08:00}のことを、{08:03}に話すべきだろうか‥‥？\n		Should he tell Emi about Hayasaka...?\n	ours		record reaches an engine no-op opcode; verify in game; reads: 　早坂のことを、英美に話すべきだろうか‥‥？\n
-m/MS0031.BIN	0:01	27	942	1F00	{07:00}	{07:00}				record reaches an engine no-op opcode; verify in game; reads: ＞どうしますか？
-m/MS0031.BIN	0:01	28	957	1FB2	話す		Tell her	ours		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
-m/MS0031.BIN	0:01	29	963	1FB2	話さ{08:25}		Don't tell her	ours		record reaches an engine no-op opcode; verify in game; reads: 話さない; menu option, declared width 20 columns
-m/MS0031.BIN	0:01	30	985	0F	{01:C2}{02:FF}	{01:C2}{02:FF}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0031.BIN	0:01	31	991	1FD2	泪：		Rui:	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:01	32	997	1FD3	なぁんか、嘘っぽい。\nさては、アタシに言え{08:25}ようなコト、して{08:1E}んでしょ！\n		Hmm, sounds kinda fishy.\nI bet you went and did something you can't tell me about!\n	ours		record reaches an engine no-op opcode; verify in game; reads: なぁんか、嘘っぽい。\nさては、アタシに言えないようなコト、してきたんでしょ！\n
-m/MS0031.BIN	0:01	33	1081	10	‥‥‥‥もう、		......Honestly,	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:01	34	1097	1FFB	とうっぶん口きか{08:25}！\n		I'm not talking to you for a good long while!\n	ours		record reaches an engine no-op opcode; verify in game; reads: とうっぶん口きかない！\n
-m/MS0031.BIN	0:01	35	1126	10	@泪はふくれて、そっぽを向いた。\n		Rui puffs out her cheeks and turns away.\n	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:01	36	1169	1FD2	泪：		Rui:	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:01	37	1175	1FD3	ぐすん‥‥\n		Sniffle...\n	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:01	38	1194	10	、もう、どこへも行か{08:25}でね。\nアタシ、アナタしか頼{08:2F}人、{08:24}のよ。\n		Don't go anywhere else, okay?\nYou're the only one I can rely on.\n	ours		record reaches an engine no-op opcode; verify in game; reads: 、もう、どこへも行かないでね。\nアタシ、アナタしか頼れる人、いないのよ。\n
-m/MS0031.BIN	0:01	39	1265	1FD2	泪：		Rui:	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:01	40	1271	1FD3	ふーん‥‥\n		Hmph...\n	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:01	41	1288	10	ｱんなトコが、よその世界への入り口だったのかぁ。\n		So a place like that was the entrance to another world, huh.\n	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:01	42	1344	10	、スゴイ体験、して{08:1E}のね。神サマに会うなんて！\n		Wow, you really went through something amazing. Meeting a god, no less!\n	ours		record reaches an engine no-op opcode; verify in game; reads: 、スゴイ体験、してきたのね。神サマに会うなんて！\n
-m/MS0031.BIN	0:01	43	1399	10	ﾅも今度は、アタシも連れてってね！\n		But next time, take me with you too!\n	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:01	44	1444	1FD2	{08:03}：		Emi:	ours		record reaches an engine no-op opcode; verify in game; reads: 英美：
-m/MS0031.BIN	0:01	45	1450	1FD3	え？　{08:01}が‥‥		Huh? Tatsuya is...	ours		record reaches an engine no-op opcode; verify in game; reads: え？　達也が‥‥
-m/MS0031.BIN	0:01	46	1472	10	{03:05}'{=F9}{=FF}	{03:05}'{=F9}{=FF}	aimed a gun'{=F9}{=FF}	ours		record reaches an engine no-op opcode; verify in game; reads: 銃口を向けた'{=F9}{=FF}
-m/MS0031.BIN	0:01	47	1485	1F87	そう。\n		I see.\n	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:01	48	1498	10	ﾅも、あたしの気持ちは変わら{08:25}よ。\n		But my feelings for you won't change.\n	ours		record reaches an engine no-op opcode; verify in game; reads: ﾅも、あたしの気持ちは変わらないよ。\n
-m/MS0031.BIN	0:01	49	1535	18	生き{08:2B}の？　また、会{08:28}のね？\n		You're alive? Then... we can see each other again?\n	ours		record reaches an engine no-op opcode; verify in game; reads: 生きてるの？　また、会えるのね？\n
-m/MS0031.BIN	0:01	50	1569	1FF9	‥‥嬉しい‥‥\n		......I'm so happy...\n	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:01	51	1596	10	@{08:03}は流れてくる涙を、必死に掌でぬぐい続けた。\n		Emi desperately wipes away the tears streaming down her face.\n	ours		record reaches an engine no-op opcode; verify in game; reads: @英美は流れてくる涙を、必死に掌でぬぐい続けた。\n
-m/MS0031.BIN	0:01	52	1650	10	{03:81}F	{03:81}F				record reaches an engine no-op opcode; verify in game; reads: F
-m/MS0031.BIN	0:01	53	1655	1FD3	ありがとう、本当にありがとう‥‥。\n		Thank you, thank you so much...\n	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:01	54	1696	1FD2	{08:03}：		Emi:	ours		record reaches an engine no-op opcode; verify in game; reads: 英美：
-m/MS0031.BIN	0:01	55	1702	1FD3	ん？　		Hm?	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:01	56	1711	1F01	くん、どうしたの？\n		-kun, what's wrong?\n	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:01	57	1738	10	ﾈんでも{08:25}？　なら、いいけど。ちょっと顔色悪いよ。\n		Nothing, huh? Well, if you say so. You look a little pale though.\n	ours		record reaches an engine no-op opcode; verify in game; reads: ﾈんでもない？　なら、いいけど。ちょっと顔色悪いよ。\n
+m/MS0031.BIN	0:01	19	636	1FD2	{08:00}：	{08:00}：	Hayasaka:	ours		record reaches an engine no-op opcode; verify in game; reads: 早坂：; reads: おねえちゃんキャンプ
+m/MS0031.BIN	0:01	20	642	1FD3	なんだ、無事か。いきなり消{08:28}から、何事かと思ったよ。\n		Oh, you're okay. You vanished so suddenly, I thought something happened.\n	ours		record reaches an engine no-op opcode; verify in game; reads: なんだ、無事か。いきなり消えるから、何事かと思ったよ。\n; reads: 早坂：
+m/MS0031.BIN	0:01	21	701	10	ﾚしい事情はあとだ。こんな不気味なところ、とっとと離れようぜ。\n		The details can wait. Let's get out of this creepy place already.\n	ours		record reaches an engine no-op opcode; verify in game; reads: なんだ、無事か。いきなり消えるから、何事かと思ったよ。\n
+m/MS0031.BIN	0:01	22	774	1FD2	{08:03}：		Emi:	ours		record reaches an engine no-op opcode; verify in game; reads: 英美：
+m/MS0031.BIN	0:01	23	783	1F01	くん！　{08:22}い、何があったの？\nあなたの姿が見えなく{08:1A}、あたしひとりで取り残されて‥‥\n		-kun! What on earth happened?\nYou just disappeared, and I was left all alone......\n	ours		record reaches an engine no-op opcode; verify in game; reads: くん！　いったい、何があったの？\nあなたの姿が見えなくなって、あたしひとりで取り残されて‥‥\n; reads: 英美：
+m/MS0031.BIN	0:01	24	877	10	っごく、怖{08:18}。\n		It was really, really scary.\n	ours		record reaches an engine no-op opcode; verify in game; reads: っごく、怖かった。\n; reads: くん！　いったい、何があったの？\nあなたの姿が見えなくなって、あたしひとりで取り残されて‥‥\n
+m/MS0031.BIN	0:01	25	899	1FD0	　{08:00}のことを、{08:03}に話すべきだろうか‥‥？\n		Should he tell Emi about Hayasaka...?\n	ours		record reaches an engine no-op opcode; verify in game; reads: 　早坂のことを、英美に話すべきだろうか‥‥？\n; reads: っごく、怖かった。\n
+m/MS0031.BIN	0:01	26	942	1F00	{07:00}	{07:00}				record reaches an engine no-op opcode; verify in game; reads: ＞どうしますか？; reads: 　早坂のことを、英美に話すべきだろうか‥‥？\n
+m/MS0031.BIN	0:01	27	957	1FB2	話す	話す	Tell her	ours		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns; reads: ＞どうしますか？
+m/MS0031.BIN	0:01	28	963	1FB2	話さ{08:25}		Don't tell her	ours		record reaches an engine no-op opcode; verify in game; reads: 話さない; menu option, declared width 20 columns
+m/MS0031.BIN	0:01	29	991	1FD2	泪：		Rui:	ours		record reaches an engine no-op opcode; verify in game; reads: 話さない; menu option, declared width 20 columns
+m/MS0031.BIN	0:01	30	997	1FD3	なぁんか、嘘っぽい。\nさては、アタシに言え{08:25}ようなコト、して{08:1E}んでしょ！\n	なぁんか、嘘っぽい。\nさては、アタシに言え{08:25}ようなコト、して{08:1E}んでしょ！\n	Hmm, sounds kinda fishy.\nI bet you went and did something you can't tell me about!\n	ours		record reaches an engine no-op opcode; verify in game; reads: なぁんか、嘘っぽい。\nさては、アタシに言えないようなコト、してきたんでしょ！\n
+m/MS0031.BIN	0:01	31	1081	10	‥‥‥‥もう、		......Honestly,	ours		record reaches an engine no-op opcode; verify in game
+m/MS0031.BIN	0:01	32	1097	1FFB	とうっぶん口きか{08:25}！\n		I'm not talking to you for a good long while!\n	ours		record reaches an engine no-op opcode; verify in game; reads: とうっぶん口きかない！\n; reads: なぁんか、嘘っぽい。\nさては、アタシに言えないようなコト、してきたんでしょ！\n
+m/MS0031.BIN	0:01	33	1126	10	@泪はふくれて、そっぽを向いた。\n		Rui puffs out her cheeks and turns away.\n	ours		record reaches an engine no-op opcode; verify in game
+m/MS0031.BIN	0:01	34	1169	1FD2	泪：		Rui:	ours		record reaches an engine no-op opcode; verify in game; reads: とうっぶん口きかない！\n
+m/MS0031.BIN	0:01	35	1175	1FD3	ぐすん‥‥\n		Sniffle...\n	ours		record reaches an engine no-op opcode; verify in game
+m/MS0031.BIN	0:01	36	1194	10	、もう、どこへも行か{08:25}でね。\nアタシ、アナタしか頼{08:2F}人、{08:24}のよ。\n		Don't go anywhere else, okay?\nYou're the only one I can rely on.\n	ours		record reaches an engine no-op opcode; verify in game; reads: 、もう、どこへも行かないでね。\nアタシ、アナタしか頼れる人、いないのよ。\n
+m/MS0031.BIN	0:01	37	1265	1FD2	泪：		Rui:	ours		record reaches an engine no-op opcode; verify in game
+m/MS0031.BIN	0:01	38	1271	1FD3	ふーん‥‥\n		Hmph...\n	ours		record reaches an engine no-op opcode; verify in game; reads: 、もう、どこへも行かないでね。\nアタシ、アナタしか頼れる人、いないのよ。\n
+m/MS0031.BIN	0:01	39	1288	10	ｱんなトコが、よその世界への入り口だったのかぁ。\n		So a place like that was the entrance to another world, huh.\n	ours		record reaches an engine no-op opcode; verify in game
+m/MS0031.BIN	0:01	40	1344	10	、スゴイ体験、して{08:1E}のね。神サマに会うなんて！\n		Wow, you really went through something amazing. Meeting a god, no less!\n	ours		record reaches an engine no-op opcode; verify in game; reads: 、スゴイ体験、してきたのね。神サマに会うなんて！\n
+m/MS0031.BIN	0:01	41	1399	10	ﾅも今度は、アタシも連れてってね！\n		But next time, take me with you too!\n	ours		record reaches an engine no-op opcode; verify in game
+m/MS0031.BIN	0:01	42	1444	1FD2	{08:03}：		Emi:	ours		record reaches an engine no-op opcode; verify in game; reads: 英美：; reads: 、スゴイ体験、してきたのね。神サマに会うなんて！\n
+m/MS0031.BIN	0:01	43	1450	1FD3	え？　{08:01}が‥‥		Huh? Tatsuya is...	ours		record reaches an engine no-op opcode; verify in game; reads: え？　達也が‥‥
+m/MS0031.BIN	0:01	44	1472	10	{03:05}'{=F9}{=FF}	{03:05}'{=F9}{=FF}	aimed a gun'{=F9}{=FF}	ours		record reaches an engine no-op opcode; verify in game; reads: 銃口を向けた'{=F9}{=FF}; reads: 英美：
+m/MS0031.BIN	0:01	45	1485	1F87	そう。\n		I see.\n	ours		record reaches an engine no-op opcode; verify in game; reads: え？　達也が‥‥
+m/MS0031.BIN	0:01	46	1498	10	ﾅも、あたしの気持ちは変わら{08:25}よ。\n	ﾅも、あたしの気持ちは変わら{08:25}よ。\n	But my feelings for you won't change.\n	ours		record reaches an engine no-op opcode; verify in game; reads: ﾅも、あたしの気持ちは変わらないよ。\n; reads: 銃口を向けた'{=F9}{=FF}
+m/MS0031.BIN	0:01	47	1535	18	生き{08:2B}の？　また、会{08:28}のね？\n		You're alive? Then... we can see each other again?\n	ours		record reaches an engine no-op opcode; verify in game; reads: 生きてるの？　また、会えるのね？\n
+m/MS0031.BIN	0:01	48	1569	1FF9	‥‥嬉しい‥‥\n		......I'm so happy...\n	ours		record reaches an engine no-op opcode; verify in game; reads: ﾅも、あたしの気持ちは変わらないよ。\n
+m/MS0031.BIN	0:01	49	1596	10	@{08:03}は流れてくる涙を、必死に掌でぬぐい続けた。\n		Emi desperately wipes away the tears streaming down her face.\n	ours		record reaches an engine no-op opcode; verify in game; reads: @英美は流れてくる涙を、必死に掌でぬぐい続けた。\n; reads: 生きてるの？　また、会えるのね？\n
+m/MS0031.BIN	0:01	50	1650	10	{03:81}F	{03:81}F				record reaches an engine no-op opcode; verify in game; reads: F
+m/MS0031.BIN	0:01	51	1655	1FD3	ありがとう、本当にありがとう‥‥。\n		Thank you, thank you so much...\n	ours		record reaches an engine no-op opcode; verify in game; reads: @英美は流れてくる涙を、必死に掌でぬぐい続けた。\n
+m/MS0031.BIN	0:01	52	1696	1FD2	{08:03}：	{08:03}：	Emi:	ours		record reaches an engine no-op opcode; verify in game; reads: 英美：; reads: F
+m/MS0031.BIN	0:01	53	1702	1FD3	ん？　		Hm?	ours		record reaches an engine no-op opcode; verify in game
+m/MS0031.BIN	0:01	54	1711	1F01	くん、どうしたの？\n		-kun, what's wrong?\n	ours		record reaches an engine no-op opcode; verify in game; reads: 英美：
+m/MS0031.BIN	0:01	55	1738	10	ﾈんでも{08:25}？　なら、いいけど。ちょっと顔色悪いよ。\n		Nothing, huh? Well, if you say so. You look a little pale though.\n	ours		record reaches an engine no-op opcode; verify in game; reads: ﾈんでもない？　なら、いいけど。ちょっと顔色悪いよ。\n
 m/MS0031.BIN	0:02	0	0	UNTILED	ﾒ / ： / ﾓなら、早くここを出なきゃ。 / くん、行こう。 / ﾒ / ： / ﾓじゃあ、地上で待っ / +。迎えに来てね。 / ﾐ　 / の魂は、地上へと還って行った‥‥					@noedit; @untiled; record does not tile (rel16 operand past end of record at 0x8D); read-only, copied verbatim
 m/MS0031.BIN	0:03	0	0	UNTILED	ﾒ / ： / ﾓそっか。じゃ、 / くん、今度こそずっと‥‥さよなら。					@noedit; @untiled; record does not tile (rel16 operand past end of record at 0x41); read-only, copied verbatim
 m/MS0031.BIN	0:04	0	2	1FD2	{08:00}：		Hayasaka:	ours		record reaches an engine no-op opcode; verify in game; reads: 早坂：
@@ -128,35 +126,45 @@ m/MS0031.BIN	0:0C	4	138	1FB2	元気でいると答{08:28}		Say she's fine	ours		
 m/MS0031.BIN	0:0C	5	156	1FB2	わから{08:25}と答{08:28}		Say you don't know	ours		record reaches an engine no-op opcode; verify in game; reads: わからないと答える; menu option, declared width 20 columns
 m/MS0031.BIN	0:0C	6	172	1FB2	自分の彼女に{08:16}と言う		She's my girlfriend	ours		record reaches an engine no-op opcode; verify in game; reads: 自分の彼女になったと言う; menu option, declared width 20 columns
 m/MS0031.BIN	0:0C	7	194	1FB2	バエルに寝返ったと答{08:28}		Say she joined Baal	ours		record reaches an engine no-op opcode; verify in game; reads: バエルに寝返ったと答える; menu option, declared width 20 columns
-m/MS0031.BIN	0:0C	8	232	0F	{01:79}	{01:79}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0031.BIN	0:0C	9	235	00	{02:01}{07:01}{03:01}7{01:04}{01:BD}{01:FF}	{02:01}{07:01}{03:01}7{01:04}{01:BD}{01:FF}	Pentagramma>What will you do?that kind of thing7Nishino Yoshio{01:BD}{01:FF}	ours		record reaches an engine no-op opcode; verify in game; reads: ペンタグランマ＞何をしますか？そんなこと7西野義雄
-m/MS0031.BIN	0:0C	10	250	1FD2	{08:00}：		Hayasaka:	ours		record reaches an engine no-op opcode; verify in game; reads: 早坂：
-m/MS0031.BIN	0:0C	11	256	1FD3	そうか‥‥\n		I see...\n	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:0C	12	273	10	烽ｵ彼女が見つ{08:18}ら、オレは死んだと伝えてくれ。そうすれば、彼女もあきら{08:2E}だろう。\n		If you find her, tell her I died. That way, she'll be able to let go.\n	ours		record reaches an engine no-op opcode; verify in game; reads: 烽ｵ彼女が見つかったら、オレは死んだと伝えてくれ。そうすれば、彼女もあきらめるだろう。\n
-m/MS0031.BIN	0:0C	13	358	1FD2	{08:00}：		Hayasaka:	ours		record reaches an engine no-op opcode; verify in game; reads: 早坂：
-m/MS0031.BIN	0:0C	14	364	1FD3	そうか、元気でいるのか。よ{08:18}。\n		I see, so she's doing well. That's a relief.\n	ours		record reaches an engine no-op opcode; verify in game; reads: そうか、元気でいるのか。よかった。\n
-m/MS0031.BIN	0:0C	15	404	10	、悪いが、彼女に伝えてくれ{08:25}か？\nオレは今でも、きみを愛{08:13}と‥‥		Sorry to ask, but could you tell her something for me?\nThat I still love her, even now...\n	ours		record reaches an engine no-op opcode; verify in game; reads: 、悪いが、彼女に伝えてくれないか？\nオレは今でも、きみを愛していると‥‥
-m/MS0031.BIN	0:0C	16	476	10	や、いい。忘れてくれ。\n		No, forget it. Never mind.\n	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:0C	17	504	1FD2	{08:00}：		Hayasaka:	ours		record reaches an engine no-op opcode; verify in game; reads: 早坂：
-m/MS0031.BIN	0:0C	18	510	1FD3	そうか‥‥\n		I see...\n	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:0C	19	527	10	ｳ事だと、いいんだが‥‥\n		I hope that's really how it is...\n	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:0C	20	556	1FD2	{08:00}：		Hayasaka:	ours		record reaches an engine no-op opcode; verify in game; reads: 早坂：
-m/MS0031.BIN	0:0C	21	562	1FD3	‥‥なんだって！？　いや‥‥\n		...What did you say!? No way...\n	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:0C	22	599	10	んだオレに、{04:00}を言う資格は{08:25}な。\n		As someone already dead, I have no right to say {04:00}, do I.\n	ours		record reaches an engine no-op opcode; verify in game; reads: んだオレに、を唱えた！ を言う資格はないな。\n
-m/MS0031.BIN	0:0C	23	643	10	、彼女を幸せにしてやってくれ。オレの分もな。\n		Please make her happy. For my sake too.\n	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:0C	24	694	1FD2	{08:00}：		Hayasaka:	ours		record reaches an engine no-op opcode; verify in game; reads: 早坂：
-m/MS0031.BIN	0:0C	25	700	1FD3	何だって！？　そんな‥‥\nオレのせいで、彼女が{04:00}を‥‥\nオレは、どうすればいいんだろう？\n		What!? No way...\nBecause of me, she	ours		record reaches an engine no-op opcode; verify in game; reads: 何だって！？　そんな‥‥\nオレのせいで、彼女がを唱えた！ を‥‥\nオレは、どうすればいいんだろう？\n
-m/MS0031.BIN	0:0C	26	789	1F00	{07:00}	{07:00}				record reaches an engine no-op opcode; verify in game; reads: ＞どうしますか？
-m/MS0031.BIN	0:0C	27	804	1FB2	説得を頼む		Have him talk to her	ours		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
-m/MS0031.BIN	0:0C	28	816	1FB2	何も言わ{08:25}		Say nothing	ours		record reaches an engine no-op opcode; verify in game; reads: 何も言わない; menu option, declared width 20 columns
-m/MS0031.BIN	0:0C	29	842	0F	{01:56}	{01:56}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0031.BIN	0:0C	30	845	00						record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:0C	31	848	1FD2	{08:00}：		Hayasaka:	ours		record reaches an engine no-op opcode; verify in game; reads: 早坂：
-m/MS0031.BIN	0:0C	32	854	1FD3	‥‥一緒に行って、オレが{08:03}を説得すればいいと？\nたしかに、そうかもしれ{08:25}。\n		...You want me to come along and try to talk Emi around?\nThat might actually work, yeah.\n	ours		record reaches an engine no-op opcode; verify in game; reads: ‥‥一緒に行って、オレが英美を説得すればいいと？\nたしかに、そうかもしれない。\n
-m/MS0031.BIN	0:0C	33	933	1FD2	{08:00}：		Hayasaka:	ours		record reaches an engine no-op opcode; verify in game; reads: 早坂：
-m/MS0031.BIN	0:0C	34	942	1F01	、頼む。{08:03}を止めてくれ‥‥\nオレにはもう、{08:23}ことだから、きみにしか頼め{08:25}んだ。\n		, please. Stop Emi......\nIt's something I can't do anymore, so you're the only one I can ask.\n	ours		record reaches an engine no-op opcode; verify in game; reads: 、頼む。英美を止めてくれ‥‥\nオレにはもう、できないことだから、きみにしか頼めないんだ。\n
+m/MS0031.BIN	0:0C	8	250	1FD2	{08:00}：	{08:00}：	Hayasaka:	ours		record reaches an engine no-op opcode; verify in game; reads: 早坂：
+m/MS0031.BIN	0:0C	9	256	1FD3	そうか‥‥\n	そうか‥‥\n	I see...\n	ours		record reaches an engine no-op opcode; verify in game; reads: ペンタグランマ＞何をしますか？そんなこと7西野義雄 @rebase-unmatched idx9 en=Pentagramma>What will you do?that kind of thing7Nishino Yoshio{01:BD}{01:FF}
+m/MS0031.BIN	0:0C	10	273	10	烽ｵ彼女が見つ{08:18}ら、オレは死んだと伝えてくれ。そうすれば、彼女もあきら{08:2E}だろう。\n		If you find her, tell her I died. That way, she'll be able to let go.\n	ours		record reaches an engine no-op opcode; verify in game; reads: 烽ｵ彼女が見つかったら、オレは死んだと伝えてくれ。そうすれば、彼女もあきらめるだろう。\n; reads: 早坂：
+m/MS0031.BIN	0:0C	11	358	1FD2	{08:00}：		Hayasaka:	ours		record reaches an engine no-op opcode; verify in game; reads: 早坂：
+m/MS0031.BIN	0:0C	12	364	1FD3	そうか、元気でいるのか。よ{08:18}。\n		I see, so she's doing well. That's a relief.\n	ours		record reaches an engine no-op opcode; verify in game; reads: そうか、元気でいるのか。よかった。\n; reads: 烽ｵ彼女が見つかったら、オレは死んだと伝えてくれ。そうすれば、彼女もあきらめるだろう。\n
+m/MS0031.BIN	0:0C	13	404	10	、悪いが、彼女に伝えてくれ{08:25}か？\nオレは今でも、きみを愛{08:13}と‥‥		Sorry to ask, but could you tell her something for me?\nThat I still love her, even now...\n	ours		record reaches an engine no-op opcode; verify in game; reads: 、悪いが、彼女に伝えてくれないか？\nオレは今でも、きみを愛していると‥‥; reads: 早坂：
+m/MS0031.BIN	0:0C	14	476	10	や、いい。忘れてくれ。\n		No, forget it. Never mind.\n	ours		record reaches an engine no-op opcode; verify in game; reads: そうか、元気でいるのか。よかった。\n
+m/MS0031.BIN	0:0C	15	504	1FD2	{08:00}：		Hayasaka:	ours		record reaches an engine no-op opcode; verify in game; reads: 早坂：; reads: 、悪いが、彼女に伝えてくれないか？\nオレは今でも、きみを愛していると‥‥
+m/MS0031.BIN	0:0C	16	510	1FD3	そうか‥‥\n		I see...\n	ours		record reaches an engine no-op opcode; verify in game
+m/MS0031.BIN	0:0C	17	527	10	ｳ事だと、いいんだが‥‥\n		I hope that's really how it is...\n	ours		record reaches an engine no-op opcode; verify in game; reads: 早坂：
+m/MS0031.BIN	0:0C	18	556	1FD2	{08:00}：		Hayasaka:	ours		record reaches an engine no-op opcode; verify in game; reads: 早坂：
+m/MS0031.BIN	0:0C	19	562	1FD3	‥‥なんだって！？　いや‥‥\n		...What did you say!? No way...\n	ours		record reaches an engine no-op opcode; verify in game
+m/MS0031.BIN	0:0C	20	599	10	んだオレに、{04:00}を言う資格は{08:25}な。\n		As someone already dead, I have no right to say {04:00}, do I.\n	ours		record reaches an engine no-op opcode; verify in game; reads: んだオレに、を唱えた！ を言う資格はないな。\n; reads: 早坂：
+m/MS0031.BIN	0:0C	21	643	10	、彼女を幸せにしてやってくれ。オレの分もな。\n		Please make her happy. For my sake too.\n	ours		record reaches an engine no-op opcode; verify in game
+m/MS0031.BIN	0:0C	22	694	1FD2	{08:00}：		Hayasaka:	ours		record reaches an engine no-op opcode; verify in game; reads: 早坂：; reads: んだオレに、を唱えた！ を言う資格はないな。\n
+m/MS0031.BIN	0:0C	23	700	1FD3	何だって！？　そんな‥‥\nオレのせいで、彼女が{04:00}を‥‥\nオレは、どうすればいいんだろう？\n		What!? No way...\nBecause of me, she	ours		record reaches an engine no-op opcode; verify in game; reads: 何だって！？　そんな‥‥\nオレのせいで、彼女がを唱えた！ を‥‥\nオレは、どうすればいいんだろう？\n
+m/MS0031.BIN	0:0C	24	789	1F00	{07:00}	{07:00}				record reaches an engine no-op opcode; verify in game; reads: ＞どうしますか？; reads: 早坂：
+m/MS0031.BIN	0:0C	25	804	1FB2	説得を頼む		Have him talk to her	ours		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns; reads: 何だって！？　そんな‥‥\nオレのせいで、彼女がを唱えた！ を‥‥\nオレは、どうすればいいんだろう？\n
+m/MS0031.BIN	0:0C	26	816	1FB2	何も言わ{08:25}	何も言わ{08:25}	Say nothing	ours		record reaches an engine no-op opcode; verify in game; reads: 何も言わない; menu option, declared width 20 columns; reads: ＞どうしますか？
+m/MS0031.BIN	0:0C	27	848	1FD2	{08:00}：		Hayasaka:	ours		record reaches an engine no-op opcode; verify in game; reads: 早坂：; menu option, declared width 20 columns
+m/MS0031.BIN	0:0C	28	854	1FD3	‥‥一緒に行って、オレが{08:03}を説得すればいいと？\nたしかに、そうかもしれ{08:25}。\n		...You want me to come along and try to talk Emi around?\nThat might actually work, yeah.\n	ours		record reaches an engine no-op opcode; verify in game; reads: ‥‥一緒に行って、オレが英美を説得すればいいと？\nたしかに、そうかもしれない。\n; reads: 何も言わない; menu option, declared width 20 columns
+m/MS0031.BIN	0:0C	29	933	1FD2	{08:00}：	{08:00}：	Hayasaka:	ours		record reaches an engine no-op opcode; verify in game; reads: 早坂：
+m/MS0031.BIN	0:0C	30	942	1F01	、頼む。{08:03}を止めてくれ‥‥\nオレにはもう、{08:23}ことだから、きみにしか頼め{08:25}んだ。\n	、頼む。{08:03}を止めてくれ‥‥\nオレにはもう、{08:23}ことだから、きみにしか頼め{08:25}んだ。\n	, please. Stop Emi......\nIt's something I can't do anymore, so you're the only one I can ask.\n	ours		record reaches an engine no-op opcode; verify in game; reads: 、頼む。英美を止めてくれ‥‥\nオレにはもう、できないことだから、きみにしか頼めないんだ。\n
 m/MS0031.BIN	0:0D	0	0	UNTILED	ﾐ / 冝@‥‥‥‥ / 咊Nも / $ようだ。 / 1 / 					@noedit; @untiled; record does not tile (expression selector past end of record at 0x36); read-only, copied verbatim
-m/MS0031.BIN	0:0E	0	0	UNTILED	` / W / q / ( / ﾒ泪： / ﾓ / ‥‥アタシ、ほんとはすごく不安なの。 / ずっとバエルに捕まってて、外のことなんか、何にもわかん / %んだもん。 / アナタが / $と、アタシ、どうしていいのかわかん / %。 / ｺ / ﾐ　泪は、腕にしがみついて / 。 / ﾒ泪： / ﾓねえ、ずうっと一緒にいてく / /んでしょ？ / ﾁ / ﾐ / ｱ / ｲ腕を払いの / ) / ｲ黙ってうなずく / ｲ抱きし / . / ｷ / ﾑ / 1 / 1 / 1 /  / ｰ / ｭ / ｪ / ﾒ泪： / ﾓ‥‥帰るところが、なくなっちゃった。 / アタシ、これから、どこに行けばいいの？ / ﾁ / ﾐ / ｱ / ｲ無視する / ｲ自分の行くところに、と答 / ( / ｲ抱きし / . / ｷ / ﾑ / 1 / 1 / 1 / 					@noedit; @untiled; record does not tile (expression selector past end of record at 0x214); read-only, copied verbatim
+m/MS0031.BIN	0:0E	0	29	1FD2	泪：					record reaches an engine no-op opcode; verify in game; @noedit; @untiled; record does not tile (expression selector past end of record at 0x214); read-only, copied verbatim @rebase-new
+m/MS0031.BIN	0:0E	1	38	1F01	‥‥アタシ、ほんとはすごく不安なの。\nずっとバエルに捕まってて、外のことなんか、何にもわかん{08:25}んだもん。\nアナタが{08:24}と、アタシ、どうしていいのかわかん{08:25}。\n					record reaches an engine no-op opcode; verify in game; reads: ‥‥アタシ、ほんとはすごく不安なの。\nずっとバエルに捕まってて、外のことなんか、何にもわかんないんだもん。\nアナタがいないと、アタシ、どうしていいのかわかんない。\n @rebase-new
+m/MS0031.BIN	0:0E	2	197	1FD0	　泪は、腕にしがみついて{08:1E}。\n					record reaches an engine no-op opcode; verify in game; reads: 　泪は、腕にしがみついてきた。\n @rebase-new
+m/MS0031.BIN	0:0E	3	228	1FD2	泪：					record reaches an engine no-op opcode; verify in game @rebase-new
+m/MS0031.BIN	0:0E	4	234	1FD3	ねえ、ずうっと一緒にいてく{08:2F}んでしょ？\n					record reaches an engine no-op opcode; verify in game; reads: ねえ、ずうっと一緒にいてくれるんでしょ？\n @rebase-new
+m/MS0031.BIN	0:0E	5	275	1F00	{07:00}	{07:00}				record reaches an engine no-op opcode; verify in game; reads: ＞どうしますか？ @rebase-new
+m/MS0031.BIN	0:0E	6	290	1FB2	腕を払いの{08:29}					record reaches an engine no-op opcode; verify in game; reads: 腕を払いのける; menu option, declared width 20 columns @rebase-new
+m/MS0031.BIN	0:0E	7	304	1FB2	黙ってうなずく					record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns @rebase-new
+m/MS0031.BIN	0:0E	8	320	1FB2	抱きし{08:2E}					record reaches an engine no-op opcode; verify in game; reads: 抱きしめる; menu option, declared width 20 columns @rebase-new
+m/MS0031.BIN	0:0E	9	362	1FD2	泪：					record reaches an engine no-op opcode; verify in game @rebase-new
+m/MS0031.BIN	0:0E	10	368	1FD3	‥‥帰るところが、なくなっちゃった。\nアタシ、これから、どこに行けばいいの？\n					record reaches an engine no-op opcode; verify in game @rebase-new
+m/MS0031.BIN	0:0E	11	446	1F00	{07:00}	{07:00}				record reaches an engine no-op opcode; verify in game; reads: ＞どうしますか？ @rebase-new
+m/MS0031.BIN	0:0E	12	461	1FB2	無視する					record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns @rebase-new
+m/MS0031.BIN	0:0E	13	471	1FB2	自分の行くところに、と答{08:28}					record reaches an engine no-op opcode; verify in game; reads: 自分の行くところに、と答える; menu option, declared width 20 columns @rebase-new
+m/MS0031.BIN	0:0E	14	499	1FB2	抱きし{08:2E}					record reaches an engine no-op opcode; verify in game; reads: 抱きしめる; menu option, declared width 20 columns @rebase-new
 m/MS0031.BIN	0:0F	0	2	1FD2	泪：		Rui:	ours		record reaches an engine no-op opcode; verify in game
 m/MS0031.BIN	0:0F	1	8	1FD3	何すんの、バカ！\nアンタなんか、助{08:29}んじゃ{08:19}！\n		What are you doing, you idiot!\nI never should've saved you!\n	ours		record reaches an engine no-op opcode; verify in game; reads: 何すんの、バカ！\nアンタなんか、助けるんじゃなかった！\n
 m/MS0031.BIN	0:10	0	2	1FD2	泪：		Rui:	ours		record reaches an engine no-op opcode; verify in game
@@ -167,7 +175,13 @@ m/MS0031.BIN	0:12	0	2	1FD2	泪：		Rui:	ours		record reaches an engine no-op opc
 m/MS0031.BIN	0:12	1	8	1FD3	ふぅん、なぁんにも言わ{08:25}わけ？\nいいよーだ！　アンタなんか知ら{08:25}！\n		Hmph, so you're not gonna say anything at all?\nFine then! I don't even know you anymore!\n	ours		record reaches an engine no-op opcode; verify in game; reads: ふぅん、なぁんにも言わないわけ？\nいいよーだ！　アンタなんか知らない！\n
 m/MS0031.BIN	0:13	0	2	1FD2	泪：		Rui:	ours		record reaches an engine no-op opcode; verify in game
 m/MS0031.BIN	0:13	1	8	1FD3	‥‥うん！\n		...Okay!\n	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:14	0	0	UNTILED	p / W / ﾍ / ｣ / ｣ / q / ( / ﾒ泪： / ﾓねぇ‥‥ / アタシ、心細いの。 / ｺ‥‥そばに、いてく / /って、言ったよね？ / だったら‥‥ / その証を見せて。いいでしょ？ / ﾁ / ﾐ / ｱ / ｲＹＥＳ / ｲＮＯ / ｷ / ﾑ / 1 / 1 / 					@noedit; @untiled; record does not tile (expression selector past end of record at 0xE0); read-only, copied verbatim
+m/MS0031.BIN	0:14	0	52	1FD2	泪：					record reaches an engine no-op opcode; verify in game; @noedit; @untiled; record does not tile (expression selector past end of record at 0xE0); read-only, copied verbatim @rebase-new
+m/MS0031.BIN	0:14	1	58	1FD3	ねぇ‥‥					record reaches an engine no-op opcode; verify in game @rebase-new
+m/MS0031.BIN	0:14	2	74	10	タシ、心細いの。\n					record reaches an engine no-op opcode; verify in game @rebase-new
+m/MS0031.BIN	0:14	3	93	1FBA	‥‥そばに、いてく{08:2F}って、言ったよね？\nだったら‥‥\nその証を見せて。いいでしょ？\n					record reaches an engine no-op opcode; verify in game; reads: ‥‥そばに、いてくれるって、言ったよね？\nだったら‥‥\nその証を見せて。いいでしょ？\n @rebase-new
+m/MS0031.BIN	0:14	4	176	1F00	{07:00}	{07:00}				record reaches an engine no-op opcode; verify in game; reads: ＞どうしますか？ @rebase-new
+m/MS0031.BIN	0:14	5	191	1FB2	ＹＥＳ					record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns @rebase-new
+m/MS0031.BIN	0:14	6	199	1FB2	ＮＯ					record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns @rebase-new
 m/MS0031.BIN	0:15	0	2	1FD2	泪：		Rui:	ours		record reaches an engine no-op opcode; verify in game
 m/MS0031.BIN	0:15	1	8	1FD3	ねぇ、きて‥‥\n		Hey, come here...\n	ours		record reaches an engine no-op opcode; verify in game
 m/MS0031.BIN	0:15	2	25	1FD0	　泪の唇が、首筋に触{08:2F}‥‥\n		Rui's lips brush against your neck...\n	ours		record reaches an engine no-op opcode; verify in game; reads: 　泪の唇が、首筋に触れる‥‥\n
@@ -182,8 +196,6 @@ m/MS0031.BIN	0:16	4	219	1F00	{07:00}	{07:00}				record reaches an engine no-op o
 m/MS0031.BIN	0:16	5	234	1FB2	はねつ{08:29}		Push her away	ours		record reaches an engine no-op opcode; verify in game; reads: はねつける; menu option, declared width 20 columns
 m/MS0031.BIN	0:16	6	244	1FB2	受け入{08:2F}		Accept her	ours		record reaches an engine no-op opcode; verify in game; reads: 受け入れる; menu option, declared width 20 columns
 m/MS0031.BIN	0:16	7	254	1FB2	諦めてくれと説得		Talk her out of it	ours		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
-m/MS0031.BIN	0:16	8	287	00	1	1				record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:16	9	291	18	1	1				record reaches an engine no-op opcode; verify in game
 m/MS0031.BIN	0:17	0	0	UNTILED	ﾒ泪： / ﾓ‥‥なによ！　ほんとは、アタシを抱 / いくせに！ / つまら / %意地なんか、張ん / %でよ！ / ｺ‥‥アタシ、先に寝るからね！					@noedit; @untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim
 m/MS0031.BIN	0:18	0	2	1FD2	泪：		Rui:	ours		record reaches an engine no-op opcode; verify in game
 m/MS0031.BIN	0:18	1	8	1FD3	うふっ、それでいいのよ。やっぱりアナタ、正直ね。\nだったら‥‥\n		Heh, that's more like it. You really are honest, huh.\nIn that case...\n	ours		record reaches an engine no-op opcode; verify in game
@@ -192,35 +204,28 @@ m/MS0031.BIN	0:18	3	159	00	{02:1F}	{02:1F}				record reaches an engine no-op opc
 m/MS0031.BIN	0:18	4	170	00	{01:1F}r	{01:1F}r	Onii-chan	ours		record reaches an engine no-op opcode; verify in game; reads: おにいちゃんr; v005={01:1F}r
 m/MS0031.BIN	0:19	0	2	1FD2	泪：		Rui:	ours		record reaches an engine no-op opcode; verify in game
 m/MS0031.BIN	0:19	1	8	1FD3	‥‥アナタ、そのひとのこと、よっぽど好きなのね。\nもう、死んじゃったひとなのに。\n‥‥わ{08:18}わ。今言ったこと、忘れてちょうだい。\nもう寝ましょ。おやすみなさい。\n		...You must really love her, huh.\nEven though she's already gone.\n...Fine. Forget what I just said.\nLet's just go to sleep. Good night.\n	ours		record reaches an engine no-op opcode; verify in game; reads: ‥‥アナタ、そのひとのこと、よっぽど好きなのね。\nもう、死んじゃったひとなのに。\n‥‥わかったわ。今言ったこと、忘れてちょうだい。\nもう寝ましょ。おやすみなさい。\n
-m/MS0031.BIN	0:1A	0	6	0E	{01:DD}	{01:DD}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0031.BIN	0:1A	1	9	00						record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:1A	2	12	1FD2	泪：		Rui:	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:1A	3	21	1F01	‥‥アタシ、恐い。\n{08:0B}が、アタシを見ていたの。ほら、あそこに隠れて。\nお願い、アタシをひとりにし{08:25}で。\n		...I'm scared.\nA demon was watching me. Look, hiding over there.\nPlease, don't leave me alone.\n	ours		record reaches an engine no-op opcode; verify in game; reads: ‥‥アタシ、恐い。\n悪魔が、アタシを見ていたの。ほら、あそこに隠れて。\nお願い、アタシをひとりにしないで。\n
-m/MS0031.BIN	0:1A	4	126	1FD0	　泪は、もたれかかって{08:1E}。\n		Rui leans in against you.\n	ours		record reaches an engine no-op opcode; verify in game; reads: 　泪は、もたれかかってきた。\n
-m/MS0031.BIN	0:1A	5	155	1F00	{07:00}	{07:00}				record reaches an engine no-op opcode; verify in game; reads: ＞どうしますか？
-m/MS0031.BIN	0:1A	6	170	1FB2	はねつ{08:29}		Push her away	ours		record reaches an engine no-op opcode; verify in game; reads: はねつける; menu option, declared width 20 columns
-m/MS0031.BIN	0:1A	7	180	1FB2	受け入{08:2F}		Accept her	ours		record reaches an engine no-op opcode; verify in game; reads: 受け入れる; menu option, declared width 20 columns
-m/MS0031.BIN	0:1A	8	190	1FB2	諦めてくれと説得		Talk her out of it	ours		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
-m/MS0031.BIN	0:1A	9	223	00	1	1				record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:1A	10	227	18	1	1				record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:1A	11	231	19	ﾒ泪：		Rui:	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:1A	12	238	1FD3	キャアアア！\n		Kyaaaah!\n	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:1A	13	253	1FD0	　遠くから、泪の悲鳴が聞こえ{08:1C}\n		Rui's scream can be heard echoing from far away!\n	ours		record reaches an engine no-op opcode; verify in game; reads: 　遠くから、泪の悲鳴が聞こえてきた！\n
-m/MS0031.BIN	0:1A	14	286	1F00	{07:00}	{07:00}				record reaches an engine no-op opcode; verify in game; reads: ＞どうしますか？
-m/MS0031.BIN	0:1A	15	301	1FB2	そっちへ行ってみる		Go check it out	ours		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
-m/MS0031.BIN	0:1A	16	321	1FB2	放っておく		Leave it be	ours		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
-m/MS0031.BIN	0:1A	17	347	0F	{01:3E}{01:FF}	{01:3E}{01:FF}				record reaches an engine no-op opcode; verify in game; reads: つもり
-m/MS0031.BIN	0:1A	18	353	1FD0	　泪が{08:0B}に襲われ{08:14}！\n		Rui is being attacked by a demon!\n	ours		record reaches an engine no-op opcode; verify in game; reads: 　泪が悪魔に襲われている！\n
-m/MS0031.BIN	0:1A	19	376	1FD2	泪：		Rui:	ours		record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:1A	20	385	1F01	！　助けて！\n＃暫定：泪を襲っ{08:14}{08:0B}と、戦闘になる。ここでは勝ったことにする。\n		! Help me!\n#Tentative: battle the demon attacking Rui. Assume a win here.\n	ours		record reaches an engine no-op opcode; verify in game; reads: ！　助けて！\n＃暫定：泪を襲っている悪魔と、戦闘になる。ここでは勝ったことにする。\n
-m/MS0031.BIN	0:1A	21	471	10	｣：					record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:1A	22	476	1FD3	変な影を見たから、追っかけ{08:21}ら、いきなり捕まって‥‥\n恐{08:18}の、とっても、恐{08:18}の！\n		I saw a strange shadow and chased after it, and then it just grabbed me...\nI was scared, so, so scared!\n	ours		record reaches an engine no-op opcode; verify in game; reads: 変な影を見たから、追っかけていったら、いきなり捕まって‥‥\n恐かったの、とっても、恐かったの！\n
-m/MS0031.BIN	0:1A	23	558	1FD0	　泪は泣きながら、抱きついて{08:1E}。\n		Crying, Rui clings to you.\n	ours		record reaches an engine no-op opcode; verify in game; reads: 　泪は泣きながら、抱きついてきた。\n
-m/MS0031.BIN	0:1A	24	593	1F00	{07:00}	{07:00}				record reaches an engine no-op opcode; verify in game; reads: ＞どうしますか？
-m/MS0031.BIN	0:1A	25	608	1FB2	はねつ{08:29}		Push her away	ours		record reaches an engine no-op opcode; verify in game; reads: はねつける; menu option, declared width 20 columns
-m/MS0031.BIN	0:1A	26	618	1FB2	受け入{08:2F}		Accept her	ours		record reaches an engine no-op opcode; verify in game; reads: 受け入れる; menu option, declared width 20 columns
-m/MS0031.BIN	0:1A	27	628	1FB2	諦めてくれと説得		Talk her out of it	ours		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
-m/MS0031.BIN	0:1A	28	661	00	1	1				record reaches an engine no-op opcode; verify in game
-m/MS0031.BIN	0:1A	29	665	18	1	1				record reaches an engine no-op opcode; verify in game
+m/MS0031.BIN	0:1A	0	12	1FD2	泪：	泪：	Rui:	ours		record reaches an engine no-op opcode; verify in game; reads: 
+m/MS0031.BIN	0:1A	1	21	1F01	‥‥アタシ、恐い。\n{08:0B}が、アタシを見ていたの。ほら、あそこに隠れて。\nお願い、アタシをひとりにし{08:25}で。\n	‥‥アタシ、恐い。\n{08:0B}が、アタシを見ていたの。ほら、あそこに隠れて。\nお願い、アタシをひとりにし{08:25}で。\n	...I'm scared.\nA demon was watching me. Look, hiding over there.\nPlease, don't leave me alone.\n	ours		record reaches an engine no-op opcode; verify in game; reads: ‥‥アタシ、恐い。\n悪魔が、アタシを見ていたの。ほら、あそこに隠れて。\nお願い、アタシをひとりにしないで。\n
+m/MS0031.BIN	0:1A	2	126	1FD0	　泪は、もたれかかって{08:1E}。\n		Rui leans in against you.\n	ours		record reaches an engine no-op opcode; verify in game; reads: 　泪は、もたれかかってきた。\n
+m/MS0031.BIN	0:1A	3	155	1F00	{07:00}	{07:00}				record reaches an engine no-op opcode; verify in game; reads: ＞どうしますか？; reads: ‥‥アタシ、恐い。\n悪魔が、アタシを見ていたの。ほら、あそこに隠れて。\nお願い、アタシをひとりにしないで。\n
+m/MS0031.BIN	0:1A	4	170	1FB2	はねつ{08:29}		Push her away	ours		record reaches an engine no-op opcode; verify in game; reads: はねつける; menu option, declared width 20 columns; reads: 　泪は、もたれかかってきた。\n
+m/MS0031.BIN	0:1A	5	180	1FB2	受け入{08:2F}	受け入{08:2F}	Accept her	ours		record reaches an engine no-op opcode; verify in game; reads: 受け入れる; menu option, declared width 20 columns; reads: ＞どうしますか？
+m/MS0031.BIN	0:1A	6	190	1FB2	諦めてくれと説得		Talk her out of it	ours		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns; reads: はねつける
+m/MS0031.BIN	0:1A	7	232	1FD2	泪：					record reaches an engine no-op opcode; verify in game; reads: 受け入れる; menu option, declared width 20 columns @rebase-new
+m/MS0031.BIN	0:1A	8	238	1FD3	キャアアア！\n		Kyaaaah!\n	ours		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
+m/MS0031.BIN	0:1A	9	253	1FD0	　遠くから、泪の悲鳴が聞こえ{08:1C}\n	　遠くから、泪の悲鳴が聞こえ{08:1C}\n	Rui's scream can be heard echoing from far away!\n	ours		record reaches an engine no-op opcode; verify in game; reads: 　遠くから、泪の悲鳴が聞こえてきた！\n
+m/MS0031.BIN	0:1A	10	286	1F00	{07:00}	{07:00}				record reaches an engine no-op opcode; verify in game; reads: ＞どうしますか？
+m/MS0031.BIN	0:1A	11	301	1FB2	そっちへ行ってみる		Go check it out	ours		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns @rebase-unmatched idx11 en=Rui:
+m/MS0031.BIN	0:1A	12	321	1FB2	放っておく		Leave it be	ours		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
+m/MS0031.BIN	0:1A	13	353	1FD0	　泪が{08:0B}に襲われ{08:14}！\n		Rui is being attacked by a demon!\n	ours		record reaches an engine no-op opcode; verify in game; reads: 　泪が悪魔に襲われている！\n; reads: 　遠くから、泪の悲鳴が聞こえてきた！\n
+m/MS0031.BIN	0:1A	14	376	1FD2	泪：	泪：	Rui:	ours		record reaches an engine no-op opcode; verify in game; reads: ＞どうしますか？
+m/MS0031.BIN	0:1A	15	385	1F01	！　助けて！\n＃暫定：泪を襲っ{08:14}{08:0B}と、戦闘になる。ここでは勝ったことにする。\n		! Help me!\n#Tentative: battle the demon attacking Rui. Assume a win here.\n	ours		record reaches an engine no-op opcode; verify in game; reads: ！　助けて！\n＃暫定：泪を襲っている悪魔と、戦闘になる。ここでは勝ったことにする。\n; menu option, declared width 20 columns
+m/MS0031.BIN	0:1A	16	471	10	｣：					record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
+m/MS0031.BIN	0:1A	17	476	1FD3	変な影を見たから、追っかけ{08:21}ら、いきなり捕まって‥‥\n恐{08:18}の、とっても、恐{08:18}の！\n	変な影を見たから、追っかけ{08:21}ら、いきなり捕まって‥‥\n恐{08:18}の、とっても、恐{08:18}の！\n	I saw a strange shadow and chased after it, and then it just grabbed me...\nI was scared, so, so scared!\n	ours		record reaches an engine no-op opcode; verify in game; reads: 変な影を見たから、追っかけていったら、いきなり捕まって‥‥\n恐かったの、とっても、恐かったの！\n; reads: つもり
+m/MS0031.BIN	0:1A	18	558	1FD0	　泪は泣きながら、抱きついて{08:1E}。\n		Crying, Rui clings to you.\n	ours		record reaches an engine no-op opcode; verify in game; reads: 　泪は泣きながら、抱きついてきた。\n; reads: 　泪が悪魔に襲われている！\n
+m/MS0031.BIN	0:1A	19	593	1F00	{07:00}	{07:00}				record reaches an engine no-op opcode; verify in game; reads: ＞どうしますか？
+m/MS0031.BIN	0:1A	20	608	1FB2	はねつ{08:29}		Push her away	ours		record reaches an engine no-op opcode; verify in game; reads: はねつける; menu option, declared width 20 columns; reads: ！　助けて！\n＃暫定：泪を襲っている悪魔と、戦闘になる。ここでは勝ったことにする。\n
+m/MS0031.BIN	0:1A	21	618	1FB2	受け入{08:2F}		Accept her	ours		record reaches an engine no-op opcode; verify in game; reads: 受け入れる; menu option, declared width 20 columns
+m/MS0031.BIN	0:1A	22	628	1FB2	諦めてくれと説得		Talk her out of it	ours		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns; reads: 変な影を見たから、追っかけていったら、いきなり捕まって‥‥\n恐かったの、とっても、恐かったの！\n
 m/MS0031.BIN	0:1B	0	2	1FD2	泪：		Rui:	ours		record reaches an engine no-op opcode; verify in game
 m/MS0031.BIN	0:1B	1	8	1FD3	‥‥アナタには、理性のかけらも{08:25}のね。見損{08:16}わ。\n		...You don't have a shred of restraint, do you. I'm disappointed in you.\n	ours		record reaches an engine no-op opcode; verify in game; reads: ‥‥アナタには、理性のかけらもないのね。見損なったわ。\n

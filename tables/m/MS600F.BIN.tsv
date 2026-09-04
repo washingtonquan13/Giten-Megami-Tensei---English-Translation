@@ -9,29 +9,15 @@ m/MS600F.BIN	0:B8	0	0	DATA	仲睦まじく　やるがよいぞよ\n<wait>		Go o
 m/MS600F.BIN	0:B5	0	0	DATA	よ{08:18}\n<wait>		Good.\n<wait>	ours		reads: よかった\n<wait>
 m/MS600F.BIN	0:B9	0	0	DATA	美しいおなごでは　{08:25}かえ\n<wait>		Am I not a lovely lady?\n<wait>	ours		reads: 美しいおなごでは　ないかえ\n<wait>
 m/MS600F.BIN	0:BA	0	0	DATA	意気地の無い男よの\n<wait>		Quite spineless.\n<wait>	ours		
-m/MS600F.BIN	1:03	0	25	1FB2	謝る		Beg	ours		menu option, declared width 20 columns
-m/MS600F.BIN	1:03	1	31	1FB2	無視{08:8E}		Ignore	ours		reads: 無視する; menu option, declared width 20 columns
-m/MS600F.BIN	1:03	2	51	0F	{01:3D}{01:FF}	{01:3D}{01:FF}				reads: ふたつ
-m/MS600F.BIN	1:03	3	152	0E	{01:0A}	{01:0A}				reads: わたしは
-m/MS600F.BIN	1:03	4	155	00						
-m/MS600F.BIN	1:03	5	193	1FB2	よろこんで		Gladly	ours		menu option, declared width 20 columns
-m/MS600F.BIN	1:03	6	205	1FB2	{08:80}が{08:25}		No choice	ours		reads: しょうがない; menu option, declared width 20 columns
-m/MS600F.BIN	1:03	7	213	1FB2	誰がお前{08:6A}かに		Not for you	ours		reads: 誰がお前なんかに; menu option, declared width 20 columns
-m/MS600F.BIN	1:03	8	241	0F	{01:21}	{01:21}				reads: パパ
-m/MS600F.BIN	1:03	9	244	00	{02:01}\<	{02:01}\<				reads: ペンタグランマ\<
-m/MS600F.BIN	1:03	10	248	00						
-m/MS600F.BIN	1:03	11	292	0E	{01:07}	{01:07}				reads: ダンタリオン
-m/MS600F.BIN	1:03	12	295	00						
-m/MS600F.BIN	1:03	13	386	0E	{01:1B}	{01:1B}				reads: パスワード
-m/MS600F.BIN	1:03	14	389	00						
-m/MS600F.BIN	1:03	15	449	1FB2	なだ{08:2E}		Soothe	ours		reads: なだめる; menu option, declared width 20 columns
-m/MS600F.BIN	1:03	16	457	1FB2	{08:86}る		Scold	ours		reads: しかる; menu option, declared width 20 columns
-m/MS600F.BIN	1:03	17	475	0F	{01:7D}	{01:7D}				reads: 
-m/MS600F.BIN	1:03	18	478	00						
-m/MS600F.BIN	1:03	19	505	1FB2	そう{08:55}		Indeed	ours		reads: そうです; menu option, declared width 20 columns
-m/MS600F.BIN	1:03	20	513	1FB2	{08:7A}事{08:25}		Not at all	ours		reads: そんな事ない; menu option, declared width 20 columns
-m/MS600F.BIN	1:03	21	533	0F	{01:18}	{01:18}				reads: あんた
-m/MS600F.BIN	1:03	22	536	00						
+m/MS600F.BIN	1:03	0	25	1FB2	謝る		Gladly	ours		menu option, declared width 20 columns @rebase-unmatched idx0 en=Beg
+m/MS600F.BIN	1:03	1	31	1FB2	無視{08:8E}		No choice	ours		reads: 無視する; menu option, declared width 20 columns @rebase-unmatched idx1 en=Ignore
+m/MS600F.BIN	1:03	2	193	1FB2	よろこんで	よろこんで	Not for you	ours		menu option, declared width 20 columns; reads: ふたつ
+m/MS600F.BIN	1:03	3	205	1FB2	{08:80}が{08:25}	{08:80}が{08:25}	Soothe	ours		reads: しょうがない; menu option, declared width 20 columns; reads: わたしは
+m/MS600F.BIN	1:03	4	213	1FB2	誰がお前{08:6A}かに	誰がお前{08:6A}かに	Scold	ours		reads: 誰がお前なんかに; menu option, declared width 20 columns
+m/MS600F.BIN	1:03	5	449	1FB2	なだ{08:2E}		Indeed	ours		reads: なだめる; menu option, declared width 20 columns
+m/MS600F.BIN	1:03	6	457	1FB2	{08:86}る		Not at all	ours		reads: しかる; menu option, declared width 20 columns; reads: しょうがない
+m/MS600F.BIN	1:03	7	505	1FB2	そう{08:55}					reads: そうです; menu option, declared width 20 columns; reads: 誰がお前なんかに
+m/MS600F.BIN	1:03	8	513	1FB2	{08:7A}事{08:25}	{08:7A}事{08:25}				reads: そんな事ない; menu option, declared width 20 columns; reads: パパ
 m/MS600F.BIN	1:4A	0	0	DATA	なかなかに\n見どころが　{08:7B}では{08:25}かえ\n<wait>		Not bad,\nthou hast an eye for talent.\n<wait>	ours		reads: なかなかに\n見どころが　あるではないかえ\n<wait>
 m/MS600F.BIN	1:65	0	0	DATA	{08:79}様な　浮き雲の様な言葉では\nわらわの心は　揺るぎはせぬわ！\n<wait>		Such fleeting, cloudy words\nshall never sway my heart!\n<wait>	ours		reads: その様な　浮き雲の様な言葉では\nわらわの心は　揺るぎはせぬわ！\n<wait>
 m/MS600F.BIN	1:66	0	0	DATA	わらわの前に　かしずくの{08:81}\n<wait>		Kneel before me, thou shalt.\n<wait>	ours		reads: わらわの前に　かしずくのじゃ\n<wait>

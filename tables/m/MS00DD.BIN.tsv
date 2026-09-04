@@ -5,24 +5,8 @@
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
 m/MS00DD.BIN	0:03	0	0	DATA	{04:05}に{08:62}効果が無{08:18}\n		No effect on {04:05}.\n	v005		reads: 　には、効果が無かった\n
 m/MS00DD.BIN	0:04	0	0	DATA	{08:61}{04:05}に、かわ{03:0C}て{08:1F}\n		However, {04:05} dodged.\n	v005		reads: しかし　に、かわされてしまった\n
-m/MS00DD.BIN	0:05	0	23	00	ﾝ					
-m/MS00DD.BIN	0:05	1	29	0B	{03:00}ﾝ					reads: 飛び道具ﾝ
-m/MS00DD.BIN	0:05	2	35	0D	ﾝ					
-m/MS00DD.BIN	0:05	3	43	00	ﾝ					
-m/MS00DD.BIN	0:05	4	60	13	a	a				
-m/MS00DD.BIN	0:06	0	23	00	ﾝ					
-m/MS00DD.BIN	0:06	1	31	0D	ﾝ					
-m/MS00DD.BIN	0:06	2	48	13	a	a				
-m/MS00DD.BIN	0:07	0	17	00	ﾝ					
-m/MS00DD.BIN	0:07	1	38	13	a	a				
-m/MS00DD.BIN	0:08	0	17	00	ﾝ					
-m/MS00DD.BIN	0:08	1	23	0B	{04:00}ﾝ					reads: を唱えた！ ﾝ
-m/MS00DD.BIN	0:08	2	29	18	ﾝc{06:00}ﾝ					reads: ﾝc辞書５ﾝ
-m/MS00DD.BIN	0:08	3	50	13	a	a				
 m/MS00DD.BIN	0:09	0	27	00	ﾝ\n{01:00}ﾝ					reads: ﾝ\n早坂達也ﾝ
-m/MS00DD.BIN	0:09	1	37	0B	{05:00}ﾝ					reads: はいいいえニュートンﾝ
-m/MS00DD.BIN	0:09	2	47	00	ﾝ					
-m/MS00DD.BIN	0:09	3	60	13	a	a				
+m/MS00DD.BIN	0:09	1	37	0B	{05:00}ﾝ					reads: はいいいえﾝ; reads: はいいいえニュートンﾝ
 m/MS00DD.BIN	0:0A	0	7	1E5C	{04:05}{08:62}巧くかわ{08:17}\n		{04:05} dodged with ease!\n	v005		reads: 　は、巧くかわした！\n
 m/MS00DD.BIN	0:0A	1	25	18	{03:0B}{04:05}にかわ{03:0C}た\n\n		However, {04:05} dodged.\n\n	v005		reads: しかし、　にかわされた\n\n
 m/MS00DD.BIN	0:0B	0	7	1E5C	{04:05}に{08:62}ダメージが無{08:18}\n		{04:05} took no damage.\n	v005		reads: 　には、ダメージが無かった\n
@@ -79,16 +63,11 @@ m/MS00DD.BIN	0:17	0	0	DATA	{04:05}	{04:05}				reads: 　
 m/MS00DD.BIN	0:17	1	9	1E5C	{08:62}かすり傷を受け\n		 took only a scratch\n	ours		reads: は、かすり傷を受け\n
 m/MS00DD.BIN	0:17	2	29	18	をかすり\n		 was grazed\n	ours		
 m/MS00DD.BIN	0:18	0	0	DATA	{04:05}{04:09}	{04:05}{04:09}				reads: 　はに
-m/MS00DD.BIN	0:19	0	0	DATA	{04:05}{04:0B}	{04:05}{04:0B}	Absorbed from {04:05}	v005		record reaches an engine no-op opcode; verify in game; reads: 　はから
-m/MS00DD.BIN	0:19	1	13	1F1A	{01:1B}	{01:1B}				record reaches an engine no-op opcode; verify in game; reads: パスワード
-m/MS00DD.BIN	0:19	2	16	00	{08:01}	{08:01}				record reaches an engine no-op opcode; verify in game; reads: 達也
-m/MS00DD.BIN	0:19	3	20	1F00	を吸い取{04:0C}た\n					record reaches an engine no-op opcode; verify in game; reads: を吸い取られった\n
-m/MS00DD.BIN	0:19	4	40	1F02	{03:0D}	{03:0D}	 HP.\n	v005		record reaches an engine no-op opcode; verify in game; reads: ＨＰ
-m/MS00DD.BIN	0:19	5	48	1F02	{03:0E}	{03:0E}	 MP.\n	v005		record reaches an engine no-op opcode; verify in game; reads: ＭＰ
-m/MS00DD.BIN	0:19	6	56	1F02	{03:0F}	{03:0F}	 EXP.\n	v005		record reaches an engine no-op opcode; verify in game; reads: ＥＸＰ
-m/MS00DD.BIN	0:1A	0	17	00	ﾝ					
-m/MS00DD.BIN	0:1A	1	22	15	e{06:00}ﾝ					reads: e辞書５ﾝ
-m/MS00DD.BIN	0:1A	2	42	13	a	a				
+m/MS00DD.BIN	0:19	0	0	DATA	{04:05}{04:0B}	{04:05}{04:0B}	Absorbed from {04:05}	v005		reads: 　はから; record reaches an engine no-op opcode; verify in game
+m/MS00DD.BIN	0:19	1	21	1F1A	を吸い取{04:0C}た\n	を吸い取{04:0C}た\n				reads: を吸い取られった\n; record reaches an engine no-op opcode; verify in game; reads: パスワード
+m/MS00DD.BIN	0:19	2	40	1F02	{03:0D}	{03:0D}	 HP.\n	v005		reads: ＨＰ; record reaches an engine no-op opcode; verify in game; reads: 達也
+m/MS00DD.BIN	0:19	3	48	1F02	{03:0E}	{03:0E}	 MP.\n	v005		reads: ＭＰ; record reaches an engine no-op opcode; verify in game; reads: を吸い取られった\n
+m/MS00DD.BIN	0:19	4	56	1F02	{03:0F}	{03:0F}	 EXP.\n	v005		reads: ＥＸＰ; record reaches an engine no-op opcode; verify in game; reads: ＨＰ
 m/MS00DD.BIN	0:1B	0	29	1F83	ｳらに		Furthermore, 	ours		
 m/MS00DD.BIN	0:1B	1	61	1F87	{04:05}の{03:0D}はＭＡＸだ\n		{04:05}'s HP is full.\n	v005		reads: 　のＨＰはＭＡＸだ\n
 m/MS00DD.BIN	0:1C	0	43	1F87	{04:05}の{03:0E}はＭＡＸだ\n		{04:05}'s MP is full.\n	v005		reads: 　のＭＰはＭＡＸだ\n
@@ -102,8 +81,6 @@ m/MS00DD.BIN	0:1F	0	0	DATA	{04:05}	{04:05}				reads: 　
 m/MS00DD.BIN	0:1F	1	9	1E5C	は		's 	ours		
 m/MS00DD.BIN	0:1F	2	16	1F02	{03:0D}増加{08:4B}\n		HP increased.\n	ours		reads: ＨＰ増加した\n
 m/MS00DD.BIN	0:1F	3	28	18	は{03:0D}を増や{08:4B}\n		HP.\n	v005		reads: はＨＰを増やした\n
-m/MS00DD.BIN	0:20	0	17	00	ﾝ!{06:00}ﾝ					reads: ﾝ!辞書５ﾝ
-m/MS00DD.BIN	0:20	1	38	13	a	a				
 m/MS00DD.BIN	0:21	0	26	0C	{04:05}{08:62}{08:05}ーに還{08:51}\n		{04:05} returned to the computer.\n	v005		reads: 　は、コンピューターに還った\n
 m/MS00DD.BIN	0:21	1	44	18	{04:05}{08:62}魔界に還っ{08:21}\n		{04:05} returned to Makai.\n	v005		reads: 　は、魔界に還っていった\n
 m/MS00DD.BIN	0:22	0	0	DATA	{04:05}	{04:05}				reads: 　
@@ -155,25 +132,7 @@ m/MS00DD.BIN	0:36	5	119	09	らに		Furthermore, 	ours
 m/MS00DD.BIN	0:36	6	126	18	{04:05}{08:62}	{04:05}{08:62}				reads: 　は、
 m/MS00DD.BIN	0:36	7	150	1F86	{03:0B}復活に失敗{08:17}\n		However, the revival failed!\n	ours		reads: しかし、復活に失敗した！\n
 m/MS00DD.BIN	0:36	8	183	1F80	{08:0D}は効果が無い\n		Magic has no effect.\n	ours		reads: 魔法は効果が無い\n
-m/MS00DD.BIN	0:37	0	17	00	ﾝ8{03:00}ﾝ9{04:00}ﾝ8{05:00}ﾝE{06:00}ﾝ?{07:00}ﾝ\<{08:00}ﾝ=					record reaches an engine no-op opcode; verify in game; reads: ﾝ8飛び道具ﾝ9を唱えた！ ﾝ8はいいいえニュートンﾝE辞書５ﾝ?＞どうしますか？ﾝ\<早坂ﾝ=
-m/MS00DD.BIN	0:37	1	49	00	ﾝ9					record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	2	57	00	ﾝ\<					record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	3	62	0D	>	>				record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	4	69	0E	ﾝE					record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	5	78	10	:	:				record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	6	86	12	;	;				record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	7	94	14	\<	\<				record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	8	102	16	A	A				record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	9	106	18	C	C				record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	10	110	19	9	9				record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	11	114	1A	:	:				record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	12	117	00	ﾝ;					record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	13	121	00	ﾝ;					record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	14	125	300	ﾝB					record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	15	129	1E00	ﾝ@					record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	16	133	1F00	ﾝ= 					record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	17	137	00	ﾝF					record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:37	18	144	1E5E	{03:0B}	{03:0B}				record reaches an engine no-op opcode; verify in game; reads: しかし、
+m/MS00DD.BIN	0:37	0	144	1E5E	{03:0B}	{03:0B}				reads: しかし、; record reaches an engine no-op opcode; verify in game; reads: ﾝ8飛び道具ﾝ9を唱えた！ ﾝ8はいいいえニュートンﾝE辞書５ﾝ?＞どうしますか？ﾝ\<早坂ﾝ=
 m/MS00DD.BIN	0:38	0	8	00	{04:EB}は復活{08:4B}\n		{04:EB} recovered health.\n	v005		reads: は復活した\n
 m/MS00DD.BIN	0:39	0	8	00	{04:EB}は目覚めた\n		{04:EB} woke up.\n	v005		reads: は目覚めた\n
 m/MS00DD.BIN	0:3A	0	8	00	{04:EB}は正気に戻{08:51}\n		{04:EB} came to their senses.\n	v005		reads: は正気に戻った\n
@@ -211,24 +170,15 @@ m/MS00DD.BIN	0:4D	2	26	1E5C	{08:51}\n	{08:51}\n	.\n	ours		reads: った\n
 m/MS00DD.BIN	0:4D	3	32	18	わせた\n		.\n	ours		
 m/MS00DD.BIN	0:4D	4	49	1E5C	い\n		.\n	ours		
 m/MS00DD.BIN	0:4D	5	55	18	わせ\n\nさらに		.\n\nFurthermore, 	ours		
-m/MS00DD.BIN	0:4E	0	10	00	ﾝ{03:06}					reads: ﾝ自分に
-m/MS00DD.BIN	0:4E	1	14	00	ﾝ					
-m/MS00DD.BIN	0:4E	2	31	13	a	a				
-m/MS00DD.BIN	0:4F	0	9	00	{04:EB}　					record reaches an engine no-op opcode; verify in game; reads: 　
-m/MS00DD.BIN	0:4F	1	17	00	{04:EB}	{04:EB}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS00DD.BIN	0:4F	2	46	1EB0	{01:41}	{01:41}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS00DD.BIN	0:4F	3	49	00	'{01:49}	'{01:49}				record reaches an engine no-op opcode; verify in game; reads: '
-m/MS00DD.BIN	0:4F	4	53	00	({01:53}	({01:53}				record reaches an engine no-op opcode; verify in game; reads: (
-m/MS00DD.BIN	0:4F	5	57	00	#{01:35}	#{01:35}				record reaches an engine no-op opcode; verify in game; reads: #バーチャル
-m/MS00DD.BIN	0:4F	6	66	10	{01:55}	{01:55}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS00DD.BIN	0:4F	7	75	0E	M	M				record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:4F	8	90	14	を倒{08:17}\n		 was defeated!\n	v005		record reaches an engine no-op opcode; verify in game; reads: を倒した！\n
-m/MS00DD.BIN	0:4F	9	98	00	{08:62}機能を停止{08:4B}\n		 ceased functioning.\n	v005		record reaches an engine no-op opcode; verify in game; reads: は、機能を停止した\n
-m/MS00DD.BIN	0:4F	10	114	00	{08:62}消え去{08:51}\n		 vanished.\n	v005		record reaches an engine no-op opcode; verify in game; reads: は、消え去った\n
-m/MS00DD.BIN	0:4F	11	126	00	{08:62}崩れ落ちた\n		 crumbled down.\n	v005		record reaches an engine no-op opcode; verify in game; reads: は、崩れ落ちた\n
-m/MS00DD.BIN	0:4F	12	140	00	{08:62}灰燼と化{08:4B}\n		 turned into ash.\n	v005		record reaches an engine no-op opcode; verify in game; reads: は、灰燼と化した\n
-m/MS00DD.BIN	0:4F	13	154	00	{08:62}{08:90}と倒{08:60}\n		 was defeated.\n	v005		record reaches an engine no-op opcode; verify in game; reads: は、どうと倒れた\n
-m/MS00DD.BIN	0:4F	14	166	00	{08:62}落鳥{08:4B}\n		 fell.\n	v005		record reaches an engine no-op opcode; verify in game; reads: は、落鳥した\n
+m/MS00DD.BIN	0:4F	0	9	00	{04:EB}　					reads: 　; record reaches an engine no-op opcode; verify in game
+m/MS00DD.BIN	0:4F	1	17	00	{04:EB}	{04:EB}				reads: ; record reaches an engine no-op opcode; verify in game
+m/MS00DD.BIN	0:4F	2	90	1EB0	を倒{08:17}\n	を倒{08:17}\n				reads: を倒した！\n; record reaches an engine no-op opcode; verify in game
+m/MS00DD.BIN	0:4F	3	98	00	{08:62}機能を停止{08:4B}\n	{08:62}機能を停止{08:4B}\n				reads: は、機能を停止した\n; record reaches an engine no-op opcode; verify in game; reads: '
+m/MS00DD.BIN	0:4F	4	114	00	{08:62}消え去{08:51}\n	{08:62}消え去{08:51}\n				reads: は、消え去った\n; record reaches an engine no-op opcode; verify in game; reads: (
+m/MS00DD.BIN	0:4F	5	126	00	{08:62}崩れ落ちた\n	{08:62}崩れ落ちた\n				reads: は、崩れ落ちた\n; record reaches an engine no-op opcode; verify in game; reads: #バーチャル
+m/MS00DD.BIN	0:4F	6	140	00	{08:62}灰燼と化{08:4B}\n	{08:62}灰燼と化{08:4B}\n	 ceased functioning.\n	v005		reads: は、灰燼と化した\n; record reaches an engine no-op opcode; verify in game
+m/MS00DD.BIN	0:4F	7	154	00	{08:62}{08:90}と倒{08:60}\n	{08:62}{08:90}と倒{08:60}\n	 vanished.\n	v005		reads: は、どうと倒れた\n; record reaches an engine no-op opcode; verify in game
+m/MS00DD.BIN	0:4F	8	166	00	{08:62}落鳥{08:4B}\n		 crumbled down.\n	v005		reads: は、落鳥した\n; record reaches an engine no-op opcode; verify in game; reads: を倒した！\n @rebase-unmatched idx8 en= was defeated!\n @rebase-unmatched idx12 en= turned into ash.\n @rebase-unmatched idx13 en= was defeated.\n @rebase-unmatched idx14 en= fell.\n
 m/MS00DD.BIN	0:50	0	13	00	{04:EB}{08:62}がっくりと力尽{08:1E}\n		{04:EB} slumped down, strength spent.\n	ours		reads: は、がっくりと力尽きた\n
 m/MS00DD.BIN	0:51	0	0	DATA	{04:19}戦いに勝ち残{08:51}\n		{04:19} was victorious.\n	v005		reads: たちは戦いに勝ち残った\n
 m/MS00DD.BIN	0:52	0	0	DATA	{04:19}	{04:19}	{04:19} gained 	v005		reads: たちは

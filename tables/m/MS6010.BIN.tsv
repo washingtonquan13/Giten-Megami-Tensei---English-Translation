@@ -9,37 +9,22 @@ m/MS6010.BIN	0:B8	0	0	DATA	彼女と仲良くね{=EB}{=9F}\n<wait>		Be nice to h
 m/MS6010.BIN	0:B5	0	0	DATA	よ{08:18}あ\n<wait>		Yay!\n<wait>	ours		reads: よかったあ\n<wait>
 m/MS6010.BIN	0:B9	0	0	DATA	かわ{08:7F}子{08:81}{08:25}\n<wait>		Isn't she cute?\n<wait>	ours		reads: かわいい子じゃない\n<wait>
 m/MS6010.BIN	0:BA	0	0	DATA	根性{08:25}ん{08:81}ん！\n<wait>		No guts, much!\n<wait>	ours		reads: 根性ないんじゃん！\n<wait>
-m/MS6010.BIN	1:03	0	28	1FB2	ちょ{08:53}待{08:52}		Wait up	ours		reads: ちょっと待って; menu option, declared width 20 columns
-m/MS6010.BIN	1:03	1	40	1FB2	さよ{08:7D}		Bye	ours		reads: さよなら; menu option, declared width 20 columns
-m/MS6010.BIN	1:03	2	60	0F	{01:D5}{01:FF}	{01:D5}{01:FF}				reads: 
-m/MS6010.BIN	1:03	3	85	1FB2	謝る		Beg	ours		menu option, declared width 20 columns
-m/MS6010.BIN	1:03	4	91	1FB2	別に		Meh	ours		menu option, declared width 20 columns
-m/MS6010.BIN	1:03	5	109	0F	{01:8A}{01:FF}	{01:8A}{01:FF}				reads: 
-m/MS6010.BIN	1:03	6	171	1FB2	よろこんで		Gladly	ours		menu option, declared width 20 columns
-m/MS6010.BIN	1:03	7	183	1FB2	{08:80}が{08:25}		No choice	ours		reads: しょうがない; menu option, declared width 20 columns
-m/MS6010.BIN	1:03	8	191	1FB2	誰がお前{08:6A}かに		Not for you	ours		reads: 誰がお前なんかに; menu option, declared width 20 columns
-m/MS6010.BIN	1:03	9	219	0F	{01:27}	{01:27}				reads: まさか
-m/MS6010.BIN	1:03	10	222	00	{02:01}{=E6}{=00}	{02:01}{=E6}{=00}				reads: ペンタグランマ{=E6}{=00}
-m/MS6010.BIN	1:03	11	290	1FB2	なだ{08:2E}		Soothe	ours		reads: なだめる; menu option, declared width 20 columns
-m/MS6010.BIN	1:03	12	298	1FB2	ほ{08:53}く		Ignore	ours		reads: ほっとく; menu option, declared width 20 columns
-m/MS6010.BIN	1:03	13	318	0F	{01:68}	{01:68}				reads: 
-m/MS6010.BIN	1:03	14	321	00						
-m/MS6010.BIN	1:03	15	347	00	{04:EF}は感動{08:13}\nスキだらけだ！\n＞{08:0C}し{08:15}\n		{04:EF} is totally moved!\nWide open!\n>Attack?\n	ours		reads: は感動している\nスキだらけだ！\n＞攻撃しますか？\n
-m/MS6010.BIN	1:03	16	518	0E	{01:5C}	{01:5C}				reads: 
-m/MS6010.BIN	1:03	17	521	00						
-m/MS6010.BIN	1:03	18	558	1FB2	なだ{08:2E}		Soothe	ours		reads: なだめる; menu option, declared width 20 columns
-m/MS6010.BIN	1:03	19	566	1FB2	無視{08:8E}		Ignore	ours		reads: 無視する; menu option, declared width 20 columns
-m/MS6010.BIN	1:03	20	586	0F	{01:1D}	{01:1D}				reads: だれも
-m/MS6010.BIN	1:03	21	589	00						
-m/MS6010.BIN	1:03	22	692	1FB2	そう{08:55}		Yeah	ours		reads: そうです; menu option, declared width 20 columns
-m/MS6010.BIN	1:03	23	700	1FB2	{08:4D}ほど{08:56}{08:25}		Not really	ours		reads: それほどでもない; menu option, declared width 20 columns
-m/MS6010.BIN	1:03	24	724	0F	{01:18}	{01:18}				reads: あんた
-m/MS6010.BIN	1:03	25	727	00						
-m/MS6010.BIN	1:03	26	825	0E	{01:A4}	{01:A4}				reads: 
-m/MS6010.BIN	1:03	27	885	1FB2	なだ{08:2E}		Soothe	ours		reads: なだめる; menu option, declared width 20 columns
-m/MS6010.BIN	1:03	28	893	1FB2	無視{08:8E}		Ignore	ours		reads: 無視する; menu option, declared width 20 columns
-m/MS6010.BIN	1:03	29	913	0F	{01:1A}	{01:1A}				reads: わたくし
-m/MS6010.BIN	1:03	30	916	00						
+m/MS6010.BIN	1:03	0	28	1FB2	ちょ{08:53}待{08:52}		Gladly	ours		reads: ちょっと待って; menu option, declared width 20 columns @rebase-unmatched idx0 en=Wait up
+m/MS6010.BIN	1:03	1	40	1FB2	さよ{08:7D}		No choice	ours		reads: さよなら; menu option, declared width 20 columns @rebase-unmatched idx1 en=Bye
+m/MS6010.BIN	1:03	2	85	1FB2	謝る	謝る	Not for you	ours		menu option, declared width 20 columns; reads: 
+m/MS6010.BIN	1:03	3	91	1FB2	別に					menu option, declared width 20 columns @rebase-new @rebase-unmatched idx3 en=Beg
+m/MS6010.BIN	1:03	4	171	1FB2	よろこんで					menu option, declared width 20 columns @rebase-new @rebase-unmatched idx4 en=Meh
+m/MS6010.BIN	1:03	5	183	1FB2	{08:80}が{08:25}	{08:80}が{08:25}				reads: しょうがない; menu option, declared width 20 columns @rebase-new
+m/MS6010.BIN	1:03	6	191	1FB2	誰がお前{08:6A}かに					reads: 誰がお前なんかに; menu option, declared width 20 columns @rebase-new
+m/MS6010.BIN	1:03	7	290	1FB2	なだ{08:2E}					reads: なだめる; menu option, declared width 20 columns; reads: しょうがない @rebase-new
+m/MS6010.BIN	1:03	8	298	1FB2	ほ{08:53}く					reads: ほっとく; menu option, declared width 20 columns; reads: 誰がお前なんかに @rebase-new
+m/MS6010.BIN	1:03	9	347	00	{04:EF}は感動{08:13}\nスキだらけだ！\n＞{08:0C}し{08:15}\n	{04:EF}は感動{08:13}\nスキだらけだ！\n＞{08:0C}し{08:15}\n				reads: は感動している\nスキだらけだ！\n＞攻撃しますか？\n; reads: まさか
+m/MS6010.BIN	1:03	10	558	1FB2	なだ{08:2E}	なだ{08:2E}	Soothe	ours		reads: なだめる; menu option, declared width 20 columns; reads: ペンタグランマ{=E6}{=00}
+m/MS6010.BIN	1:03	11	566	1FB2	無視{08:8E}		Ignore	ours		reads: 無視する; menu option, declared width 20 columns; reads: なだめる
+m/MS6010.BIN	1:03	12	692	1FB2	そう{08:55}		Soothe	ours		reads: そうです; menu option, declared width 20 columns; reads: ほっとく
+m/MS6010.BIN	1:03	13	700	1FB2	{08:4D}ほど{08:56}{08:25}	{08:4D}ほど{08:56}{08:25}	Ignore	ours		reads: それほどでもない; menu option, declared width 20 columns
+m/MS6010.BIN	1:03	14	885	1FB2	なだ{08:2E}	なだ{08:2E}	Yeah	ours		reads: なだめる; menu option, declared width 20 columns
+m/MS6010.BIN	1:03	15	893	1FB2	無視{08:8E}		Not really	ours		reads: 無視する; menu option, declared width 20 columns; reads: は感動している\nスキだらけだ！\n＞攻撃しますか？\n @rebase-unmatched idx15 en={04:EF} is totally moved!\nWide open!\n>Attack?\n @rebase-unmatched idx27 en=Soothe @rebase-unmatched idx28 en=Ignore
 m/MS6010.BIN	1:72	0	0	DATA	ちょ{08:53}ー　調子クレてん{08:81}{08:25}わよ！\n<wait>		Hey, don't get carried away!\n<wait>	ours		reads: ちょっとー　調子クレてんじゃないわよ！\n<wait>
 m/MS6010.BIN	1:57	0	0	DATA	コイツ　むかつくぅー！\n<wait>		Ugh, so annoying!\n<wait>	ours		
 m/MS6010.BIN	1:73	0	0	DATA	も{08:61}てコイツぅ？\n{01:1C}が言{08:52}た　ヤツ{08:52}さー\n<wait>		Wait, is this the one?\nThe guy everyone's been talking about?\n<wait>	ours		reads: もしかしてコイツぅ？\nみんなが言ってた　ヤツってさー\n<wait>

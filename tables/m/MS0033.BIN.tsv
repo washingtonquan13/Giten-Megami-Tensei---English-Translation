@@ -7,7 +7,7 @@ m/MS0033.BIN	0:01	0	7	1FD0	誰も{08:24}{08:72}\n		No one here...\n	ours		reads:
 m/MS0033.BIN	0:09	0	0	UNTILED	3. / 3) / 3* / ｺ / P /  /  /  /  / 3 / 3					@noedit; @untiled; record does not tile (rel16 operand past end of record at 0x3E); read-only, copied verbatim
 m/MS0033.BIN	0:0C	0	0	UNTILED	3. / 3) / 3* / ｺ /  /  /  / 3 /  / x / P /  / r / r / g / f / L / p / , / W / q / ( / ｺ / w / P /  / O / 3					@noedit; @untiled; record does not tile (expression node 0x0D payload past end); read-only, copied verbatim
 m/MS0033.BIN	0:0D	0	35	00	{03:17}	{03:17}				reads: 
-m/MS0033.BIN	0:0E	0	36	1F80	{05:00}{03:10}	{05:00}{03:10}				reads: はいいいえニュートン回復
+m/MS0033.BIN	0:0E	0	36	1F80	{05:00}{03:10}	{05:00}{03:10}				reads: はいいいえ回復; reads: はいいいえニュートン回復
 m/MS0033.BIN	0:0E	1	107	1FEF	{05:04}	{05:04}				reads: 
 m/MS0033.BIN	0:0E	2	200	1F80	3	3				
 m/MS0033.BIN	0:0E	3	206	00	{03:10}	{03:10}				reads: 回復
@@ -16,13 +16,9 @@ m/MS0033.BIN	0:0E	5	320	1F80	{03:16}	{03:16}				reads:
 m/MS0033.BIN	0:0E	6	328	1FE8	{05:01}	{05:01}				reads: 飛び道具
 m/MS0033.BIN	0:0E	7	386	1F7F	{03:16}	{03:16}				reads: 
 m/MS0033.BIN	0:0E	8	394	1FE8	{05:02}	{05:02}				reads: 切り
-m/MS0033.BIN	0:0F	0	9	1F19	{01:19}	{01:19}				reads: われわれ
-m/MS0033.BIN	0:0F	1	12	00	{02:01}O	{02:01}O				reads: ペンタグランマO
-m/MS0033.BIN	0:0F	2	16	00	{03:01}{=E2}{=00}{04:01}\n{01:05}{01:06}{01:06}{01:02}{01:07}{01:FE}	{03:01}{=E2}{=00}{04:01}\n{01:05}{01:06}{01:06}{01:02}{01:07}{01:FE}				reads: そんなこと{=E2}{=00}切り\n山田カズミカズミ桐島英美ダンタリオン
-m/MS0033.BIN	0:0F	3	36	00						
-m/MS0033.BIN	0:0F	4	40	1B	メンバー名              治療費		Member Name              Treatment Cost	ours		
-m/MS0033.BIN	0:0F	5	249	1B	合計		Total	ours		
-m/MS0033.BIN	0:10	0	38	1F80	{05:00}{03:10}	{05:00}{03:10}				reads: はいいいえニュートン回復
+m/MS0033.BIN	0:0F	0	40	1B	メンバー名              治療費	メンバー名              治療費	Member Name              Treatment Cost	ours		reads: われわれ
+m/MS0033.BIN	0:0F	1	249	1B	合計	合計	Total	ours		reads: ペンタグランマO
+m/MS0033.BIN	0:10	0	38	1F80	{05:00}{03:10}	{05:00}{03:10}				reads: はいいいえ回復; reads: はいいいえニュートン回復
 m/MS0033.BIN	0:10	1	109	1FEF	{05:04}	{05:04}				reads: 
 m/MS0033.BIN	0:10	2	202	1F80	3	3				
 m/MS0033.BIN	0:10	3	208	00	{03:10}	{03:10}				reads: 回復
@@ -31,29 +27,19 @@ m/MS0033.BIN	0:10	5	322	1F80	{03:16}	{03:16}				reads:
 m/MS0033.BIN	0:10	6	330	1FE8	{05:01}	{05:01}				reads: 飛び道具
 m/MS0033.BIN	0:10	7	388	1F7F	{03:16}	{03:16}				reads: 
 m/MS0033.BIN	0:10	8	396	1FE8	{05:02}	{05:02}				reads: 切り
-m/MS0033.BIN	0:11	0	9	1F19	{01:19}	{01:19}				reads: われわれ
-m/MS0033.BIN	0:11	1	12	00	{02:01}O	{02:01}O				reads: ペンタグランマO
-m/MS0033.BIN	0:11	2	16	00	{03:01}{=E2}{=00}{04:01}\n{01:05}{01:06}{01:06}{01:02}{01:07}{01:FE}	{03:01}{=E2}{=00}{04:01}\n{01:05}{01:06}{01:06}{01:02}{01:07}{01:FE}				reads: そんなこと{=E2}{=00}切り\n山田カズミカズミ桐島英美ダンタリオン
-m/MS0033.BIN	0:11	3	36	00						
-m/MS0033.BIN	0:11	4	40	1B	メンバー名              治療費		Member Name              Treatment Cost	ours		
-m/MS0033.BIN	0:11	5	249	1B	合計		Total	ours		
+m/MS0033.BIN	0:11	0	40	1B	メンバー名              治療費	メンバー名              治療費	Member Name              Treatment Cost	ours		reads: われわれ
+m/MS0033.BIN	0:11	1	249	1B	合計	合計	Total	ours		reads: ペンタグランマO
 m/MS0033.BIN	0:12	0	13	1F80	｡療をや{08:2E}のかね？\n<wait>		Are you giving up on the treatment?\n<wait>	ours		reads: ｡療をやめるのかね？\n<wait>
-m/MS0033.BIN	0:12	1	46	1F80	{05:00}{03:10}	{05:00}{03:10}				reads: はいいいえニュートン回復
+m/MS0033.BIN	0:12	1	46	1F80	{05:00}{03:10}	{05:00}{03:10}				reads: はいいいえ回復; reads: はいいいえニュートン回復
 m/MS0033.BIN	0:13	0	27	00	{03:17}	{03:17}				reads: 
 m/MS0033.BIN	0:13	1	87	1FEF	{05:04}	{05:04}				reads: 
 m/MS0033.BIN	0:13	2	180	1F80	3	3				
 m/MS0033.BIN	0:13	3	186	00	{03:10}	{03:10}				reads: 回復
 m/MS0033.BIN	0:13	4	223	19	{03:06}{03:0B}3	{03:06}{03:0B}3				reads: 自分にしかし、3
 m/MS0033.BIN	0:13	5	233	14	{04:EA}	{04:EA}				reads: 
-m/MS0033.BIN	0:14	0	9	1F19	{01:19}	{01:19}				reads: われわれ
-m/MS0033.BIN	0:14	1	12	00	{02:01}O	{02:01}O				reads: ペンタグランマO
-m/MS0033.BIN	0:14	2	16	00	{03:01}ﾘ		{03:01}	ours		reads: そんなことﾘ
-m/MS0033.BIN	0:14	3	20	00	{04:01}	{04:01}				reads: 切り
-m/MS0033.BIN	0:14	4	23	00	{01:05}{01:FC}	{01:05}{01:FC}				reads: 山田
-m/MS0033.BIN	0:14	5	28	00	{06:01}{=F8}{=00}{07:01}{=F4}{=00}	{06:01}{=F8}{=00}{07:01}{=F4}{=00}				reads: {=F8}{=00}＞何をしますか？{=F4}{=00}
-m/MS0033.BIN	0:14	6	40	1B	メンバー名              治療費		Member Name              Treatment Cost	ours		
-m/MS0033.BIN	0:14	7	193	17	{03:18}	{03:18}				reads: 
-m/MS0033.BIN	0:14	8	239	1B	合計		Total	ours		
+m/MS0033.BIN	0:14	0	40	1B	メンバー名              治療費	メンバー名              治療費	Member Name              Treatment Cost	ours		reads: われわれ
+m/MS0033.BIN	0:14	1	193	17	{03:18}	{03:18}				reads: ; reads: ペンタグランマO
+m/MS0033.BIN	0:14	2	239	1B	合計		Total	ours		reads: そんなことﾘ @rebase-unmatched idx2 en={03:01}
 m/MS0033.BIN	0:15	0	0	UNTILED	3. / 3- / Q / P /  / O / P /  / O / 3					@noedit; @untiled; record does not tile (rel16 operand past end of record at 0x4D); read-only, copied verbatim
 m/MS0033.BIN	0:16	0	31	00	{01:1F}P{03:17}{03:00}	{01:1F}P{03:17}{03:00}				reads: おにいちゃんP飛び道具
 m/MS0033.BIN	0:16	1	49	00	{01:1F}	{01:1F}				reads: おにいちゃん
@@ -81,45 +67,7 @@ m/MS0033.BIN	0:26	1	62	00	{03:17}	{03:17}				reads:
 m/MS0033.BIN	0:27	0	36	00	{03:17}	{03:17}				reads: 
 m/MS0033.BIN	0:28	0	0	UNTILED	e / Q / e / Q / e / ! / Q / e / Q / e / Q					@noedit; @untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim
 m/MS0033.BIN	0:29	0	0	UNTILED	 / 3( / $ / Q / & / Q /  / P / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / P					@noedit; @untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim
-m/MS0033.BIN	0:2A	0	0	UNTILED	 / 3( / H / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q /  / P					@noedit; @untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim
+m/MS0033.BIN	0:2A	0	0	UNTILED	 / 3( / H / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q /  / P					@noedit; @untiled; record does not tile (switch entry at 0xE1 has kind 2 (not 0 or 1)); read-only, copied verbatim; record does not tile (expression node 0x00 payload past end)
 m/MS0033.BIN	0:2B	0	0	UNTILED	- / + / E / . / , / E / N					@noedit; @untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim
-m/MS0033.BIN	0:2C	0	50	00	{03:16}	{03:16}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0033.BIN	0:2C	1	64	17	{03:17}	{03:17}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0033.BIN	0:2C	2	96	00	{03:16}	{03:16}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0033.BIN	0:2C	3	99	00	{06:1F}B{03:17}{03:12}	{06:1F}B{03:17}{03:12}				record reaches an engine no-op opcode; verify in game; reads: B切り
-m/MS0033.BIN	0:2C	4	107	00	{02:1F}N{03:13}{03:17}	{02:1F}N{03:13}{03:17}				record reaches an engine no-op opcode; verify in game; reads: N目の前に
-m/MS0033.BIN	0:2C	5	144	00	{03:16}	{03:16}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0033.BIN	0:2C	6	160	12	{03:17}	{03:17}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0033.BIN	0:2C	7	192	00	{03:16}	{03:16}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0033.BIN	0:2C	8	198	0C	{03:17}{03:12}	{03:17}{03:12}				record reaches an engine no-op opcode; verify in game; reads: 切り
-m/MS0033.BIN	0:2C	9	216	00	{03:16}	{03:16}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0033.BIN	0:2C	10	224	17	{03:12}	{03:12}				record reaches an engine no-op opcode; verify in game; reads: 切り
-m/MS0033.BIN	0:2C	11	240	00	{03:16}	{03:16}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0033.BIN	0:2C	12	264	00	{03:16}	{03:16}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0033.BIN	0:2C	13	280	12	{03:17}	{03:17}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0033.BIN	0:2C	14	312	00	{03:16}	{03:16}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0033.BIN	0:2C	15	320	10	{03:12}	{03:12}				record reaches an engine no-op opcode; verify in game; reads: 切り
-m/MS0033.BIN	0:2C	16	336	00	{03:16}	{03:16}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0033.BIN	0:2C	17	344	0B	{03:12}	{03:12}				record reaches an engine no-op opcode; verify in game; reads: 切り
-m/MS0033.BIN	0:2C	18	384	00	{03:16}	{03:16}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0033.BIN	0:2C	19	387	00	{03:1F}B{03:17}{03:12}	{03:1F}B{03:17}{03:12}				record reaches an engine no-op opcode; verify in game; reads: B切り
-m/MS0033.BIN	0:2C	20	395	00	(	(				record reaches an engine no-op opcode; verify in game
-m/MS0033.BIN	0:2C	21	408	00	{03:16}	{03:16}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0033.BIN	0:2C	22	411	00	{04:1F}B{03:17}{03:12}	{04:1F}B{03:17}{03:12}				record reaches an engine no-op opcode; verify in game; reads: B切り
-m/MS0033.BIN	0:2C	23	419	00	2	2				record reaches an engine no-op opcode; verify in game
-m/MS0033.BIN	0:2C	24	432	00	{03:16}	{03:16}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0033.BIN	0:2C	25	435	00	{02:1F}B{03:17}{03:12}	{02:1F}B{03:17}{03:12}				record reaches an engine no-op opcode; verify in game; reads: B切り
-m/MS0033.BIN	0:2C	26	443	00	\<	\<				record reaches an engine no-op opcode; verify in game
-m/MS0033.BIN	0:2C	27	454	00	{03:10}	{03:10}				record reaches an engine no-op opcode; verify in game; reads: 回復
-m/MS0033.BIN	0:2C	28	486	00	{03:16}	{03:16}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0033.BIN	0:2C	29	489	00	{07:1F}B{03:17}{03:12}	{07:1F}B{03:17}{03:12}				record reaches an engine no-op opcode; verify in game; reads: 暴れ出した！B切り
-m/MS0033.BIN	0:2C	30	497	00	:	:				record reaches an engine no-op opcode; verify in game
-m/MS0033.BIN	0:2C	31	510	00	{03:16}	{03:16}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0033.BIN	0:2C	32	513	00	{08:1F}B{03:17}{03:12}	{08:1F}B{03:17}{03:12}				record reaches an engine no-op opcode; verify in game; reads: しまったB切り
-m/MS0033.BIN	0:2C	33	521	00	P	P				record reaches an engine no-op opcode; verify in game
-m/MS0033.BIN	0:2C	34	534	00	{03:16}	{03:16}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0033.BIN	0:2C	35	537	00	{01:1F}B{03:17}{03:12}	{01:1F}B{03:17}{03:12}				record reaches an engine no-op opcode; verify in game; reads: おにいちゃんB切り
-m/MS0033.BIN	0:2C	36	545	00	d	d				record reaches an engine no-op opcode; verify in game
-m/MS0033.BIN	0:2C	37	558	00	{03:16}	{03:16}				record reaches an engine no-op opcode; verify in game; reads: 
-m/MS0033.BIN	0:2C	38	580	1F4E	{03:13}	{03:13}				record reaches an engine no-op opcode; verify in game; reads: 目の前に
+m/MS0033.BIN	0:2C	0	0	UNTILED	$ / ｹ / N / ｹ / N / ｹ / B / N / ｹ / B / N / ｹ / B / N / ｹ / B / N / ｹ / B / N / ｹ / B / N / ｹ / B / N / ｹ / B / N / ｹ / B / N / ｹ / B / N / ｹ / B / N / ｹ / B / N / ｹ / B / N / ｹ / B / ( / N / ｹ / B / 2 / N / ｹ / B / < / N / z / ｹ / B / 7 / N / ｹ / B / : / N / ｹ / B / P / N / ｹ / B / d / N / ｹ / B / ﾈ / N / N	$ / ｹ / N / ｹ / N / ｹ / B / N / ｹ / B / N / ｹ / B / N / ｹ / B / N / ｹ / B / N / ｹ / B / N / ｹ / B / N / ｹ / B / N / ｹ / B / N / ｹ / B / N / ｹ / B / N / ｹ / B / N / ｹ / B / N / ｹ / B / ( / N / ｹ / B / 2 / N / ｹ / B / < / N / z / ｹ / B / 7 / N / ｹ / B / : / N / ｹ / B / P / N / ｹ / B / d / N / ｹ / B / ﾈ / N / N				@noedit; @untiled; record does not tile (switch entry at 0x94 has kind 66 (not 0 or 1)); read-only, copied verbatim; record reaches an engine no-op opcode; verify in game; reads:  @rebase-new
 m/MS0033.BIN	0:2D	0	0	UNTILED	P /  / ｢ / ｢ / O					@noedit; @untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim

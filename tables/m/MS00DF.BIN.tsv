@@ -6,26 +6,20 @@ file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
 m/MS00DF.BIN	0:00	0	4	00	{04:EF}は逃げ出{08:17}\n<wait>		{04:EF} fled!\n<wait>	v005		reads: は逃げ出した！\n<wait>
 m/MS00DF.BIN	0:01	0	4	00	{04:EF}は去っ{08:21}\n<wait>		{04:EF} ran away.\n<wait>	v005		reads: は去っていった\n<wait>
 m/MS00DF.BIN	0:02	0	4	00	{04:EF}は					reads: は
-m/MS00DF.BIN	0:02	1	17	1EB0	{01:2F}	{01:2F}				reads: 不気味
-m/MS00DF.BIN	0:02	2	20	00	{02:01}+	{02:01}+				reads: ペンタグランマ+
-m/MS00DF.BIN	0:02	3	24	00	{03:01}'	{03:01}'				reads: そんなこと'
-m/MS00DF.BIN	0:02	4	28	00	{04:01}e	{04:01}e				reads: 切りe
-m/MS00DF.BIN	0:02	5	32	00	{05:01}w	{05:01}w				reads: 飛び道具w
-m/MS00DF.BIN	0:02	6	36	00	{06:01}{=87}{=00}{07:01}{=95}{=00}{08:01}｡					reads: {=87}{=00}＞何をしますか？{=95}{=00}達也｡
-m/MS00DF.BIN	0:02	7	53	09	{08:58}もくれ{08:19}\n		offered you nothing.\n	v005		reads: なにもくれなかった\n
-m/MS00DF.BIN	0:02	8	70	1F01	{03:13}をおい{08:21}\n					reads: 目の前にをおいていった\n
-m/MS00DF.BIN	0:02	9	99	1F7F	{03:00}	{03:00}				reads: 飛び道具
-m/MS00DF.BIN	0:02	10	120	1F83	{03:14}{03:14}	{03:14}{03:14}				reads: 
-m/MS00DF.BIN	0:02	11	137	1F02	マッカをおい{08:21}\n		 Macca.\n	ours		reads: マッカをおいていった\n
-m/MS00DF.BIN	0:02	12	159	1F02	マグをおい{08:21}\n		 MAG.\n	v005		reads: マグをおいていった\n
-m/MS00DF.BIN	0:02	13	179	1F02	{03:0F}をおい{08:21}\n		 EXP.\n	v005		reads: ＥＸＰをおいていった\n
-m/MS00DF.BIN	0:02	14	193	00	{03:0D}を{03:10}{08:4A}く{08:60}\n		restored your HP.\n	ours		reads: ＨＰを回復してくれた\n
-m/MS00DF.BIN	0:02	15	209	00	ボムを投{08:44}！\n		threw a bomb!\n	ours		reads: ボムを投げた！\n
-m/MS00DF.BIN	0:02	16	248	1F81	#{03:03}	#{03:03}				reads: #だした
-m/MS00DF.BIN	0:02	17	257	00	{02:1F}E{03:16}{03:13}{03:16}	{02:1F}E{03:16}{03:13}{03:16}				reads: E目の前に
-m/MS00DF.BIN	0:02	18	279	00	{01:1F}{=E8}{=03}	{01:1F}{=E8}{=03}				reads: おにいちゃん{=E8}{=03}
-m/MS00DF.BIN	0:02	19	315	00	パンチを喰らわ{08:17}\n{05:12}		landed a punch on you!\n{05:12}	ours		reads: パンチを喰らわした！\n
-m/MS00DF.BIN	0:02	20	344	1F81	#{03:03}{01:1F}M{03:16}	#{03:03}{01:1F}M{03:16}				reads: #だしたおにいちゃんM
-m/MS00DF.BIN	0:02	21	353	00	{05:1F}E{03:16}{03:13}{03:16}	{05:1F}E{03:16}{03:13}{03:16}				reads: E目の前に
-m/MS00DF.BIN	0:02	22	375	00	{01:1F}{=E8}{=03}	{01:1F}{=E8}{=03}				reads: おにいちゃん{=E8}{=03}
+m/MS00DF.BIN	0:02	1	53	1EB0	{08:58}もくれ{08:19}\n	{08:58}もくれ{08:19}\n				reads: なにもくれなかった\n; reads: 不気味
+m/MS00DF.BIN	0:02	2	70	1F01	{03:13}をおい{08:21}\n	{03:13}をおい{08:21}\n				reads: 目の前にをおいていった\n; reads: ペンタグランマ+
+m/MS00DF.BIN	0:02	3	99	1F7F	{03:00}	{03:00}				reads: 飛び道具; reads: そんなこと'
+m/MS00DF.BIN	0:02	4	120	1F83	{03:14}{03:14}	{03:14}{03:14}				reads: ; reads: 切りe
+m/MS00DF.BIN	0:02	5	137	1F02	マッカをおい{08:21}\n	マッカをおい{08:21}\n	 Macca.\n	ours		reads: マッカをおいていった\n; reads: 飛び道具w
+m/MS00DF.BIN	0:02	6	159	1F02	マグをおい{08:21}\n		 MAG.\n	v005		reads: マグをおいていった\n; reads: {=87}{=00}＞何をしますか？{=95}{=00}達也｡
+m/MS00DF.BIN	0:02	7	179	1F02	{03:0F}をおい{08:21}\n		 EXP.\n	v005		reads: ＥＸＰをおいていった\n; reads: なにもくれなかった\n @rebase-unmatched idx7 en=offered you nothing.\n
+m/MS00DF.BIN	0:02	8	193	00	{03:0D}を{03:10}{08:4A}く{08:60}\n		restored your HP.\n	ours		reads: ＨＰを回復してくれた\n; reads: 目の前にをおいていった\n
+m/MS00DF.BIN	0:02	9	209	00	ボムを投{08:44}！\n	ボムを投{08:44}！\n	threw a bomb!\n	ours		reads: ボムを投げた！\n; reads: 飛び道具
+m/MS00DF.BIN	0:02	10	248	1F81	#{03:03}	#{03:03}				reads: #だした
+m/MS00DF.BIN	0:02	11	257	00	{02:1F}E{03:16}{03:13}{03:16}	{02:1F}E{03:16}{03:13}{03:16}				reads: E目の前に; reads: マッカをおいていった\n
+m/MS00DF.BIN	0:02	12	279	00	{01:1F}{=E8}{=03}	{01:1F}{=E8}{=03}				reads: おにいちゃん{=E8}{=03}; reads: マグをおいていった\n
+m/MS00DF.BIN	0:02	13	315	00	パンチを喰らわ{08:17}\n{05:12}		landed a punch on you!\n{05:12}	ours		reads: パンチを喰らわした！\n; reads: ＥＸＰをおいていった\n
+m/MS00DF.BIN	0:02	14	344	1F81	#{03:03}{01:1F}M{03:16}	#{03:03}{01:1F}M{03:16}				reads: #だしたおにいちゃんM; reads: ＨＰを回復してくれた\n
+m/MS00DF.BIN	0:02	15	353	00	{05:1F}E{03:16}{03:13}{03:16}	{05:1F}E{03:16}{03:13}{03:16}				reads: E目の前に; reads: ボムを投げた！\n
+m/MS00DF.BIN	0:02	16	375	00	{01:1F}{=E8}{=03}	{01:1F}{=E8}{=03}				reads: おにいちゃん{=E8}{=03}; reads: #だした
 m/MS00DF.BIN	0:03	0	4	00	{04:EB}の{01:34}が破ら{08:60}\n		{04:EB}'s barrier broke down.\n	v005		reads: の結界が破られた\n

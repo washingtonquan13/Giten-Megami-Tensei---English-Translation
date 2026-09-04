@@ -3,67 +3,44 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0040.BIN	0:09	0	0	UNTILED	@ / @ / ﾒバーテン： / ﾓ / rいらっしゃ / 奄ｹ。御注文を / 垂ｼ。 / ﾁ / ﾐ / ｱ / ｲ酒を飲む / ｲ話を聞く / ｲ終了 / ｷ / ﾑ / @ / @ / @ / 					@noedit; @untiled; record does not tile (expression selector past end of record at 0x7A); read-only, copied verbatim
-m/MS0040.BIN	0:0A	0	0	UNTILED	@ / ｺ / ﾒバーテン： / ﾓ / お飲みに / }れ / %の / }出てい / R下 / I。 / @ / r御注文を / 垂ｼ。 / N / ﾁ / ﾐ / ｱ / ｲ酒を飲む / ｲ話を聞く / ｲ終了 / ｷ / ﾑ / @ / @ / @ / 					@noedit; @untiled; record does not tile (expression selector past end of record at 0x99); read-only, copied verbatim
+m/MS0040.BIN	0:09	0	14	1FD2	バーテン：					@noedit; @untiled; record does not tile (expression selector past end of record at 0x7A); read-only, copied verbatim @rebase-new
+m/MS0040.BIN	0:09	1	26	1FD3	{08:72}いらっしゃ{08:89}せ。御注文を{08:90}ぞ。\n					reads: ‥‥いらっしゃいませ。御注文をどうぞ。\n @rebase-new
+m/MS0040.BIN	0:09	2	75	1FB2	酒を飲む					menu option, declared width 20 columns @rebase-new
+m/MS0040.BIN	0:09	3	85	1FB2	話を聞く					menu option, declared width 20 columns @rebase-new
+m/MS0040.BIN	0:09	4	95	1FB2	終了					menu option, declared width 20 columns @rebase-new
+m/MS0040.BIN	0:0A	0	7	1FD2	バーテン：					@noedit; @untiled; record does not tile (expression selector past end of record at 0x99); read-only, copied verbatim @rebase-new
+m/MS0040.BIN	0:0A	1	27	1F86	お飲みに{08:7D}れ{08:25}の{08:7D}出てい{08:52}下{08:49}。\n<wait>					reads: お飲みになられないのなら出ていって下さい。\n<wait> @rebase-new
+m/MS0040.BIN	0:0A	2	67	0C	{08:72}御注文を{08:90}ぞ。\n					reads: ‥‥御注文をどうぞ。\n @rebase-new
+m/MS0040.BIN	0:0A	3	106	1FB2	酒を飲む					menu option, declared width 20 columns @rebase-new
+m/MS0040.BIN	0:0A	4	116	1FB2	話を聞く					menu option, declared width 20 columns @rebase-new
+m/MS0040.BIN	0:0A	5	126	1FB2	終了					menu option, declared width 20 columns @rebase-new
 m/MS0040.BIN	0:0B	0	7	1FD2	バーテン：		Bartender:	v005		
 m/MS0040.BIN	0:0B	1	19	1FD3	{02:08}。\n					reads: ‥‥‥。\n
 m/MS0040.BIN	0:0B	2	40	1FB2	酒を飲む		Order a drink	v005		menu option, declared width 20 columns
 m/MS0040.BIN	0:0B	3	50	1FB2	話を聞く		Listen to gossip	v005		menu option, declared width 20 columns
 m/MS0040.BIN	0:0B	4	60	1FB2	終了		Leave	v005		menu option, declared width 20 columns
-m/MS0040.BIN	0:0B	5	79	00	@	@				
 m/MS0040.BIN	0:0C	0	30	00	{03:16}	{03:16}				reads: 
 m/MS0040.BIN	0:0C	1	114	1FE8	{05:01}	{05:01}				reads: 飛び道具
 m/MS0040.BIN	0:0D	0	26	1FD2	バーテン：		Bartender:	v005		
 m/MS0040.BIN	0:0D	1	38	1FD3	{08:72}外の空気をお吸いに{08:7D}れて{08:26}かが{08:55}か？\nさ、{08:90}ぞ。肩をお貸ししま{08:80}。\n<wait>		...How about you go breathe in some fresh air outside.\nHere, allow me to lend you a shoulder.\n<wait>	v005		reads: ‥‥外の空気をお吸いになられてはいかがですか？\nさ、どうぞ。肩をお貸ししましょう。\n<wait>
-m/MS0040.BIN	0:0E	0	104	00	@	@				record reaches an engine no-op opcode; verify in game
-m/MS0040.BIN	0:0E	1	108	18	@	@				record reaches an engine no-op opcode; verify in game
-m/MS0040.BIN	0:0E	2	112	19	@	@				record reaches an engine no-op opcode; verify in game
-m/MS0040.BIN	0:0E	3	116	1A	@	@				record reaches an engine no-op opcode; verify in game
-m/MS0040.BIN	0:0E	4	118	1B	{06:00}@	{06:00}@				record reaches an engine no-op opcode; verify in game; reads: 辞書５@
-m/MS0040.BIN	0:0E	5	122	1C	{07:00}@	{07:00}@				record reaches an engine no-op opcode; verify in game; reads: ＞どうしますか？@
-m/MS0040.BIN	0:0E	6	128	00	@	@				record reaches an engine no-op opcode; verify in game
-m/MS0040.BIN	0:0F	0	9	1F19	{01:19}	{01:19}				reads: われわれ
-m/MS0040.BIN	0:0F	1	12	00	{02:01}M	{02:01}M				reads: ペンタグランマM
-m/MS0040.BIN	0:0F	2	16	00	{03:01}8{02:04}{01:34}{02:05}{01:30}{02:06}{01:2C}{02:07}{01:28}{02:FF}	{03:01}8{02:04}{01:34}{02:05}{01:30}{02:06}{01:2C}{02:07}{01:28}{02:FF}				reads: そんなこと8アイテム結界出かける医師どうしますか？開発通信をするいつも
-m/MS0040.BIN	0:0F	3	40	1B	メニュー　　　　　　　　値段		Menu:             Cost:	v005		
-m/MS0040.BIN	0:0F	4	118	1F19	{01:4C}	{01:4C}				reads: 
-m/MS0040.BIN	0:0F	5	121	00	{03:01}q	{03:01}q				reads: そんなことq
-m/MS0040.BIN	0:0F	6	125	00	{04:01}{=9A}{=00}{05:01}ﾁ		{04:01}{=8B}{=00}{05:01}	ours		reads: 切り{=9A}{=00}飛び道具ﾁ
-m/MS0040.BIN	0:0F	7	133	00	{06:01}{=E2}{=00}{07:01}	{06:01}{=E2}{=00}{07:01}	{06:01}	ours		reads: {=E2}{=00}＞何をしますか？
-m/MS0040.BIN	0:0F	8	144	09	{01:09}{01:53}{01:0A}{01:7C}{01:FF}	{01:09}{01:53}{01:0A}{01:7C}{01:FF}				reads: わたしたちわたしは
-m/MS0040.BIN	0:0F	9	155	1B	ファキールノック		Fakir Knock	v005		
-m/MS0040.BIN	0:0F	10	198	1B	トビオスポット		Tobio Spot	v005		
-m/MS0040.BIN	0:0F	11	239	1B	ブラッディーパドマ		Bloody Padma	v005		
-m/MS0040.BIN	0:0F	12	284	1B	トランスミュール		Trance Mule	v005		
-m/MS0040.BIN	0:0F	13	327	1B	サードアイ		Third Eye	v005		
-m/MS0040.BIN	0:0F	14	364	1B	コーザルクリーム		Causal Cream	v005		
-m/MS0040.BIN	0:0F	15	407	1B	ヒプノパンチ		Hypno Punch	v005		
-m/MS0040.BIN	0:0F	16	446	1B	エスバットヨーニ		Esbat Yoni	v005		
-m/MS0040.BIN	0:0F	17	489	1B	ノタリコントゥリー		Notarikon Tree	v005		
-m/MS0040.BIN	0:0F	18	534	1B	オルゴンフィズ		Orgone Fizz	v005		
+m/MS0040.BIN	0:0F	0	40	1B	メニュー　　　　　　　　値段	メニュー　　　　　　　　値段	Fakir Knock	v005		reads: われわれ
+m/MS0040.BIN	0:0F	1	155	1B	ファキールノック	ファキールノック	Tobio Spot	v005		reads: ペンタグランマM
+m/MS0040.BIN	0:0F	2	198	1B	トビオスポット	トビオスポット	Bloody Padma	v005		reads: そんなこと8アイテム結界出かける医師どうしますか？開発通信をするいつも
+m/MS0040.BIN	0:0F	3	239	1B	ブラッディーパドマ		Trance Mule	v005		@rebase-unmatched idx3 en=Menu:             Cost:
+m/MS0040.BIN	0:0F	4	284	1B	トランスミュール	トランスミュール	Third Eye	v005		reads: 
+m/MS0040.BIN	0:0F	5	327	1B	サードアイ	サードアイ	Causal Cream	v005		reads: そんなことq
+m/MS0040.BIN	0:0F	6	364	1B	コーザルクリーム		Hypno Punch	v005		reads: 切り{=9A}{=00}飛び道具ﾁ @rebase-unmatched idx6 en={04:01}{=8B}{=00}{05:01}
+m/MS0040.BIN	0:0F	7	407	1B	ヒプノパンチ	ヒプノパンチ	Esbat Yoni	v005		reads: {=E2}{=00}＞何をしますか？ @rebase-unmatched idx7 en={06:01}
+m/MS0040.BIN	0:0F	8	446	1B	エスバットヨーニ	エスバットヨーニ	Notarikon Tree	v005		reads: わたしたちわたしは
+m/MS0040.BIN	0:0F	9	489	1B	ノタリコントゥリー		Orgone Fizz	v005		
+m/MS0040.BIN	0:0F	10	534	1B	オルゴンフィズ					@rebase-new
 m/MS0040.BIN	0:10	0	4	1FD0	誰に話を聞き{08:15}\n		Who would you like to talk to?\n	v005		reads: 誰に話を聞きますか？\n
-m/MS0040.BIN	0:11	0	9	1F19	{01:19}	{01:19}				reads: われわれ
-m/MS0040.BIN	0:11	1	12	00	{02:01}5	{02:01}5				reads: ペンタグランマ5
-m/MS0040.BIN	0:11	2	16	00	{03:01}R	{03:01}R				reads: そんなことR
-m/MS0040.BIN	0:11	3	20	00	{04:01}n	{04:01}n				reads: 切りn
-m/MS0040.BIN	0:11	4	24	00	{05:01}j	{05:01}j				reads: 飛び道具j
-m/MS0040.BIN	0:11	5	28	00	{06:01}f	{06:01}f				reads: f
-m/MS0040.BIN	0:11	6	32	00	{07:01}b	{07:01}b				reads: ＞何をしますか？b
-m/MS0040.BIN	0:11	7	36	00						
-m/MS0040.BIN	0:11	8	40	1B	人物		Person:	v005		
-m/MS0040.BIN	0:11	9	105	1B	や{08:2E}		Cancel	v005		reads: やめる
+m/MS0040.BIN	0:11	0	40	1B	人物	人物	Person:	v005		reads: われわれ
+m/MS0040.BIN	0:11	1	105	1B	や{08:2E}	や{08:2E}	Cancel	v005		reads: やめる; reads: ペンタグランマ5
 m/MS0040.BIN	0:12	0	4	1FD2	バーテン：		Bartender:	ours		
 m/MS0040.BIN	0:12	1	16	1FD3	どなたがお飲みになり{08:15}\n		Who will have this drink?\n	v005		reads: どなたがお飲みになりますか？\n
 m/MS0040.BIN	0:12	2	70	1FEF	{05:04}	{05:04}				reads: 
-m/MS0040.BIN	0:13	0	9	1F19	{01:19}	{01:19}				reads: われわれ
-m/MS0040.BIN	0:13	1	12	00	{02:01}9	{02:01}9				reads: ペンタグランマ9
-m/MS0040.BIN	0:13	2	16	00	{03:01}e	{03:01}e				reads: そんなことe
-m/MS0040.BIN	0:13	3	20	00	{04:01}a	{04:01}a				reads: 切りa
-m/MS0040.BIN	0:13	4	24	00	{05:01}]	{05:01}]				reads: 飛び道具]
-m/MS0040.BIN	0:13	5	28	00	{06:01}Y	{06:01}Y				reads: Y
-m/MS0040.BIN	0:13	6	32	00	{07:01}U	{07:01}U				reads: ＞何をしますか？U
-m/MS0040.BIN	0:13	7	36	00						
-m/MS0040.BIN	0:13	8	40	1B	メンバー		Party:	v005		
+m/MS0040.BIN	0:13	0	40	1B	メンバー	メンバー	Party:	v005		reads: われわれ
 m/MS0040.BIN	0:14	0	16	00	{04:FF}達は店を追い出{03:0C}た。\n		The party was thrown out of the store.\n	v005		reads: 達は店を追い出された。\n
 m/MS0040.BIN	0:14	1	48	1FD2	バーテン：		Bartender:	v005		
 m/MS0040.BIN	0:14	2	60	1FD3	{08:72}有難うござ{08:89}{08:4B}。{08:5B}{08:90}ぞ。\n<wait>		Thank you for your patronage. We hope to see you again.\n<wait>	v005		reads: ‥‥有難うございました。またどうぞ。\n<wait>
@@ -71,13 +48,8 @@ m/MS0040.BIN	0:15	0	2	1FD2	バーテン：		Bartender:	v005
 m/MS0040.BIN	0:15	1	14	1FD3	お金が足り{08:25}{08:69}{08:55}が。\n<wait>		It appears that you do not have the money.\n<wait>	v005		reads: お金が足りないようですが。\n<wait>
 m/MS0040.BIN	0:16	0	18	1FEC	{05:01}	{05:01}				reads: 飛び道具
 m/MS0040.BIN	0:16	1	42	1E3E	は酒を飲め{02:0A}\n<wait>		 can't drink alcohol\n<wait>	ours		reads: は酒を飲めません\n<wait>
-m/MS0040.BIN	0:16	2	78	0E	{01:43}	{01:43}				reads: 
-m/MS0040.BIN	0:16	3	81	00						
-m/MS0040.BIN	0:16	4	99	0E	{01:05}	{01:05}				reads: 山田
-m/MS0040.BIN	0:16	5	102	00	d{01:2A}	d{01:2A}				reads: dありがとう
-m/MS0040.BIN	0:16	6	106	00						
-m/MS0040.BIN	0:16	7	126	1E3E	は少し酔{08:52}{08:1F}。\n		 got slightly drunk.\n	v005		reads: は少し酔ってしまった。\n
-m/MS0040.BIN	0:16	8	167	1E3E	は泥酔{08:4A}{08:1F}。\n		 is completely drunk.\n	v005		reads: は泥酔してしまった。\n
+m/MS0040.BIN	0:16	2	126	1E3E	は少し酔{08:52}{08:1F}。\n	は少し酔{08:52}{08:1F}。\n	 got slightly drunk.\n	v005		reads: は少し酔ってしまった。\n
+m/MS0040.BIN	0:16	3	167	1E3E	は泥酔{08:4A}{08:1F}。\n	は泥酔{08:4A}{08:1F}。\n	 is completely drunk.\n	v005		reads: は泥酔してしまった。\n
 m/MS0040.BIN	0:17	0	32	1E3E	はファキールノックを飲{08:5F}。\n<wait>		 drank the Fakir Knock.\n<wait>	v005		reads: はファキールノックを飲んだ。\n<wait>
 m/MS0040.BIN	0:18	0	32	1E3E	はトビオスポットを飲{08:5F}。\n<wait>		 drank the Tobio Spot.\n<wait>	v005		reads: はトビオスポットを飲んだ。\n<wait>
 m/MS0040.BIN	0:19	0	32	1E3E	はブラッディーパドマを飲{08:5F}。\n<wait>		 drank the Bloody Padma.\n<wait>	v005		reads: はブラッディーパドマを飲んだ。\n<wait>

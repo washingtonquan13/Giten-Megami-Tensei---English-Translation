@@ -284,6 +284,32 @@ def test_switch_kind_other_than_0_or_1_refuses_to_tile():
     assert not vmops.tiles(bytes.fromhex("0f 00 01 05 00"))                 # no FF
 
 
+def test_a_row_whose_jp_no_longer_matches_its_span_is_refused():
+    """Span numbering belongs to the tokenizer; a row carries its ``jp`` as the
+    fingerprint of the span it was written against.  Both the checker and the
+    builder must refuse a row whose fingerprint does not match."""
+    from giten import build_v2
+    rel = "m/MS0017.BIN"
+    raw = files.read_source(rel)
+    sc = script.parse(rel, raw)
+    rec = next(r for r in sc.iter_records() if r.id == 2 and r.spans)
+    good, bad = rec.spans[3], rec.spans[4]
+    mk = lambda sp, jp: tables.Row(rel, "0:02", sp.idx, sp.off, sp.tag, jp, "english", "", "", "draft", "")
+    rows = [mk(good, script.span_text(rec, good)),            # fingerprint matches
+            mk(bad, script.span_text(rec, good))]             # row 4 carries span 3's text
+    rep = findings.Report()
+    check_v2.check_stale(rep, rows)
+    assert [f.where for f in rep.errors if f.rule == "stale"] == ["m/MS0017.BIN 0:02[%d]" % bad.idx]
+    res = build_v2.build_file(rel, raw, rows)
+    assert res.changed_spans == 1
+    assert len(res.errors) == 1 and "stale row" in res.errors[0]
+    # ...and the bad row really was not applied: only the good span changed
+    sc2 = script.parse(rel, res.raw)
+    rec2 = next(r for r in sc2.iter_records() if r.id == 2)
+    assert script.span_text(rec2, rec2.spans[good.idx]) == "english"
+    assert script.span_text(rec2, rec2.spans[bad.idx]) == script.span_text(rec, bad)
+
+
 def test_extraction_never_fills_the_reference_columns():
     """The extractor builds rows from the game alone: ref_en/ref_src/status must be
     empty and the note must be in the note column (a positional Row() with eight

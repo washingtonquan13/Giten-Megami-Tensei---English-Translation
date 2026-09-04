@@ -18,7 +18,7 @@ m/MS0057.BIN	0:00	11	297	09	早く{08:03}さんの{01:2E}に行かなきゃ。\n
 m/MS0057.BIN	0:00	12	352	1F04	早く詰所に戻りま{08:80}。\n					reads: 早く詰所に戻りましょう。\n
 m/MS0057.BIN	0:00	13	402	1FD2	オヤジ：		Old Man:	v005		
 m/MS0057.BIN	0:00	14	412	1FD3	{08:45}は武器庫だ。\n<wait>武器の支給を受{08:43}いのか？\n<wait>		Welcome to the armoury.\n<wait>You're here to pick up weapons?\n<wait>	v005		reads: ここは武器庫だ。\n<wait>武器の支給を受けたいのか？\n<wait>
-m/MS0057.BIN	0:00	15	466	1F58	{05:00}	{05:00}				reads: はいいいえニュートン
+m/MS0057.BIN	0:00	15	466	1F58	{05:00}	{05:00}				reads: はいいいえ; reads: はいいいえニュートン
 m/MS0057.BIN	0:00	16	470	1FD2	オヤジ：		Old Man:	v005		
 m/MS0057.BIN	0:00	17	480	1FD3	武器の支給{08:62}階級や能力で厳しく制限{03:0C}{08:14}。\n{02:00}だ{08:42}{08:52}、何{08:56}手に入る訳{08:81}あ{08:25}{08:5F}ぞ。\n分かっ{08:2B}のか？\n<wait>		Just because you're a Devil Buster, that doesn't mean that you're free\nto take whatever weapon you want. What's available to you is determined\nby your experience and skill level. Capiche?\n<wait>	v005		reads: 武器の支給は、階級や能力で厳しく制限されている。\nデビルバスターだからって、何でも手に入る訳じゃあないんだぞ。\n分かってるのか？\n<wait>
 m/MS0057.BIN	0:00	18	581	1FD2	オヤジ：		Old Man:	v005		
@@ -45,144 +45,133 @@ m/MS0057.BIN	0:00	38	1397	1FBA	＞{02:06}\n<wait>		>What will you do?\n<wait>	v0
 m/MS0057.BIN	0:00	39	1422	1FB2	逃げる		Run	v005		menu option, declared width 20 columns
 m/MS0057.BIN	0:00	40	1430	1FB2	おっちゃんを呼ぶ		Call to the old man	v005		menu option, declared width 20 columns
 m/MS0057.BIN	0:00	41	1448	1FB2	周囲をうかがう		Look around	v005		menu option, declared width 20 columns
-m/MS0057.BIN	0:00	42	1476	0F	{01:74}	{01:74}				reads: 
-m/MS0057.BIN	0:00	43	1479	00	{02:01}{=E9}{=01}	{02:01}{=E9}{=01}				reads: ペンタグランマ{=E9}{=01}
-m/MS0057.BIN	0:00	44	1492	00	{04:FF}は　逃げ出{08:4B}{02:08}。\n{1E10:01003C}		You ran away...\n{1E10:01003C}	ours		reads: は　逃げ出した‥‥‥。\n{1E10:01003C}
-m/MS0057.BIN	0:00	45	1520	1FD2	声：		Voice:	v005		
-m/MS0057.BIN	0:00	46	1526	1FD3	受験番号０９１６　		Applicant NO 0916, Katsuragi Ayato.\nThe exam is now over. Please return to your room.\n<wait>	v005		
-m/MS0057.BIN	0:00	47	1548	00	{04:FF}\n{08:48}にて試験終了。自室にて待機{08:8E}{08:46}。\n<wait>					reads: \nこれにて試験終了。自室にて待機すること。\n<wait>
-m/MS0057.BIN	0:00	48	1609	00	{04:FF}：					reads: ：
-m/MS0057.BIN	0:00	49	1615	1FD3	{02:08}おっちゃん{02:08}！\n<wait>		Y-You okay!\n<wait>	v005		reads: ‥‥‥おっちゃん‥‥‥！\n<wait>
-m/MS0057.BIN	0:00	50	1640	1FD2	作業員：		Worker:	v005		
-m/MS0057.BIN	0:00	51	1650	1FD3	おお{08:53}！　変なマネすん{08:81}ねぇぜ！\n{08:48}以上でかい声を出{08:4A}みろ{02:08}\n<wait>		Hold it right there, buddy! One more word...\n<wait>	v005		reads: おおっと！　変なマネすんじゃねぇぜ！\nこれ以上でかい声を出してみろ‥‥‥\n<wait>
-m/MS0057.BIN	0:00	52	1718	1FD2	作業員：		Worker:	v005		
-m/MS0057.BIN	0:00	53	1728	1FD3	こいつの首がす{08:53}ぶぜ！　ヒャーハハハハ！！\n<wait>		And this old fart gets his throat sliced open!\n<wait>	v005		reads: こいつの首がすっとぶぜ！　ヒャーハハハハ！！\n<wait>
-m/MS0057.BIN	0:00	54	1780	1FD0	{08:48}以上、下手に大声を出すのは避{08:43}方が良い{08:8C}{02:08}\n<wait>		It appears that you'd do well keeping your mouth shut...\n<wait>	v005		reads: これ以上、下手に大声を出すのは避けた方が良いだろう‥‥‥\n<wait>
-m/MS0057.BIN	0:00	55	1831	1FBA	{08:4D}に、おっちゃんを呼{08:5F}{08:87}で、あまり役に立た{08:25}のは明白で{08:7B}{02:08}\n<wait>		What were you even thinking?\nHow was that ever supposed to help anyone?\n<wait>	v005		reads: それに、おっちゃんを呼んだところで、あまり役に立たないのは明白である‥‥‥\n<wait>
-m/MS0057.BIN	0:00	56	1905	1FBA	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>
-m/MS0057.BIN	0:00	57	1932	1FB2	逃げる		Run	v005		menu option, declared width 20 columns
-m/MS0057.BIN	0:00	58	1940	1FB2	周囲をうかがう		Look around	v005		menu option, declared width 20 columns
-m/MS0057.BIN	0:00	59	1968	0F	{01:01}	{01:01}				reads: 山瀬勇
-m/MS0057.BIN	0:00	60	1971	00	<wait>	<wait>				
-m/MS0057.BIN	0:00	61	1980	1FD0	何を見{08:15}\n		Look at what?\n	v005		reads: 何を見ますか？\n
-m/MS0057.BIN	0:00	62	2005	1FB2	憑依{03:0C}た作業員		Possessed worker	v005		reads: 憑依された作業員; menu option, declared width 20 columns
-m/MS0057.BIN	0:00	63	2021	1FB2	人質		Hostage	v005		menu option, declared width 20 columns
-m/MS0057.BIN	0:00	64	2027	1FB2	置かれ{08:14}武器		Dropped weapon	v005		reads: 置かれている武器; menu option, declared width 20 columns
-m/MS0057.BIN	0:00	65	2041	1FB2	倒れ{08:14}ＤＢ		Fallen Devil Buster	v005		reads: 倒れているＤＢ; menu option, declared width 20 columns
-m/MS0057.BIN	0:00	66	2053	1FB2	見るのはや{08:2E}		Stop looking	v005		reads: 見るのはやめる; menu option, declared width 20 columns
-m/MS0057.BIN	0:00	67	2079	0F	{01:68}	{01:68}				reads: 
-m/MS0057.BIN	0:00	68	2082	00	{02:01}{=82}{=00}{03:01}	{02:01}{=82}{=00}{03:01}	{02:01}	ours		reads: ペンタグランマ{=82}{=00}そんなこと
-m/MS0057.BIN	0:00	69	2091	19	{01:3D}	{01:3D}	{03:01}{01:04}{01:20}	ours		reads: ふたつ
-m/MS0057.BIN	0:00	70	2099	1FD0	作業員{08:62}人質に身体を密着させ人質の喉にナイフを突きつけ{08:14}。\n{08:72}相手には隙が無い。\n<wait>		The worker is holding a knife tight against the other man's throat.\nThere doesn't seem to be any safe way to get to him...\n<wait>	v005		reads: 作業員は、人質に身体を密着させ人質の喉にナイフを突きつけている。\n‥‥相手には隙が無い。\n<wait>
-m/MS0057.BIN	0:00	71	2190	1FD0	人質{08:62}怯え切っ{08:14}{02:08}\n<wait>		The hostage is shacking...\n<wait>	v005		reads: 人質は、怯え切っている‥‥‥\n<wait>
-m/MS0057.BIN	0:00	72	2220	1FD2	作業員：		Worker:	v005		
-m/MS0057.BIN	0:00	73	2230	1FD3	おおー{08:53}！　変な事考{08:28}ん{08:81}ねぇ！\nこいつの喉笛かっ切るぜ！\n<wait>		You better not be planning on doing something stupid, kid!\nTry to act like a hero, and this guy's getting his throat sliced open!\n<wait>	v005		reads: おおーっと！　変な事考えるんじゃねぇ！\nこいつの喉笛かっ切るぜ！\n<wait>
-m/MS0057.BIN	0:00	74	2296	1FD0	そう言うと、犯人は人質の頬に傷を付{08:43}。\n<wait>		Having said that, the man uses his knife to cut his hostage's cheek.\n<wait>	v005		reads: そう言うと、犯人は人質の頬に傷を付けた。\n<wait>
-m/MS0057.BIN	0:00	75	2343	1FD2	人質：		Hostage:	v005		
-m/MS0057.BIN	0:00	76	2351	1FD3	ヒイィィー！\n<wait>		Hyaaah!\n<wait>	v005		
-m/MS0057.BIN	0:00	77	2380	1FD0	{02:00}は傷を負っ{08:14}。\n{08:86}も人質を取られ{08:14}ので、手出しが出来{08:25}。\n<wait>		The Devil Buster is too badly hurt to move. Even if he wasn't,\nhe still wouldn't be able to stop the man due to the hostage.\n<wait>	v005		reads: デビルバスターは傷を負っている。\nしかも人質を取られているので、手出しが出来ない。\n<wait>
-m/MS0057.BIN	0:00	78	2450	1FD0	{02:00}の身体の側、{08:86}も、犯人{08:42}は見えにくい{08:63}の側に銃が\n落ち{08:14}{08:72}\n<wait><wait>		A gun lies on the floor next to him.\nIt appears that the man hasn't noticed it yet...\n<wait><wait>	v005		reads: デビルバスターの身体の側、しかも、犯人からは見えにくい自分の側に銃が\n落ちている‥‥\n<wait><wait>
-m/MS0057.BIN	0:00	79	2522	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n
-m/MS0057.BIN	0:00	80	2543	1FB2	銃を拾う		Grab the gun	v005		menu option, declared width 20 columns
-m/MS0057.BIN	0:00	81	2553	1FB2	話{08:86}{08:29}		Talk to him	v005		reads: 話しかける; menu option, declared width 20 columns
-m/MS0057.BIN	0:00	82	2561	1FB2	何{08:5D}{08:25}		Do nothing	v005		reads: 何もしない; menu option, declared width 20 columns
-m/MS0057.BIN	0:00	83	2581	0F	{01:AE}	{01:AE}				reads: 
-m/MS0057.BIN	0:00	84	2584	00	{02:01}O	{02:01}O				reads: ペンタグランマO
-m/MS0057.BIN	0:00	85	2593	1FD2	作業員：		Worker:	v005		
-m/MS0057.BIN	0:00	86	2603	1FD3	ん？　変な事考えん{08:81}ねーぞッ！\nこいつの喉笛かっ切るぜェ！　ケケケケ！！\n<wait>		Hmm? You better not be planning on doing something stupid, kid!\nTry to act like a hero, and this guy's getting his throat sliced open!\nHahahaha!\n<wait>	v005		reads: ん？　変な事考えんじゃねーぞッ！\nこいつの喉笛かっ切るぜェ！　ケケケケ！！\n<wait>
-m/MS0057.BIN	0:00	87	2683	1FD0	そう言うと、犯人は人質の頬に傷を付{08:43}。\n<wait>		Having said that, the man uses his knife to cut his hostage's cheek.\n<wait>	v005		reads: そう言うと、犯人は人質の頬に傷を付けた。\n<wait>
-m/MS0057.BIN	0:00	88	2730	1FD2	人質：		Hostage:	v005		
-m/MS0057.BIN	0:00	89	2738	1FD3	ヒイィィー！\n<wait>		Hyaaah!\n<wait>	v005		
-m/MS0057.BIN	0:00	90	2766	00	{04:FF}は話{08:86}{08:43}。\n<wait>		You began talking with the man.\n<wait>	v005		reads: は話しかけた。\n<wait>
-m/MS0057.BIN	0:00	91	2787	1FD2	作業員：		Worker:	v005		
-m/MS0057.BIN	0:00	92	2797	1FD3	や{08:53}、話を聞く気に{08:16}か？\n<wait>		Oh? Finally willing to talk?\n<wait>	v005		reads: やっと、話を聞く気になったか？\n<wait>
-m/MS0057.BIN	0:00	93	2830	1FD2	作業員：		Worker:	v005		
-m/MS0057.BIN	0:00	94	2840	1FD3	{08:81}あなぁ、俺様の要求はこうだ{02:08}{08:72}\n<wait>		Alright. Here are my demands...\n<wait>	v005		reads: じゃあなぁ、俺様の要求はこうだ‥‥‥‥‥\n<wait>
-m/MS0057.BIN	0:00	95	2881	1FD0	犯人{08:62}要求を語り出{08:4B}{02:08}{02:08}\n<wait>		The man lists all of his demands.\n<wait>	v005		reads: 犯人は、要求を語り出した‥‥‥‥‥‥\n<wait>
-m/MS0057.BIN	0:00	96	2912	1FBA	犯人に僅かな隙が出来た！\n<wait>		This is it! Your opening!\n<wait>	v005		
-m/MS0057.BIN	0:00	97	2957	1FB2	銃を拾う		Grab the gun	v005		menu option, declared width 20 columns
-m/MS0057.BIN	0:00	98	2967	1FB2	逃げる		Run	v005		menu option, declared width 20 columns
-m/MS0057.BIN	0:00	99	2987	0F	{01:1E}{=FA}{=FF}	{01:1E}{=FA}{=FF}				reads: はやく{=FA}{=FF}
-m/MS0057.BIN	0:00	100	3033	1F4E	{03:19}	{03:19}				reads: 
-m/MS0057.BIN	0:00	101	3037	1FD0	{08:1F}！　銃を拾え{08:19}！\n<wait>		Shit! You failed to crap the gun!\n<wait>	v005		reads: しまった！　銃を拾えなかった！\n<wait>
-m/MS0057.BIN	0:00	102	3065	1FD0	銃を拾{08:12}\n<wait>		You grabbed the gun!<wait>	v005		reads: 銃を拾った！\n<wait>
-m/MS0057.BIN	0:00	103	3082	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n
-m/MS0057.BIN	0:00	104	3103	1FB2	撃つ		Shoot	v005		menu option, declared width 20 columns
-m/MS0057.BIN	0:00	105	3109	1FB2	人質の解放を要求		"Let him go"	v005		menu option, declared width 20 columns
-m/MS0057.BIN	0:00	106	3139	0F	{01:18}{01:FF}	{01:18}{01:FF}				reads: あんた
-m/MS0057.BIN	0:00	107	3156	1FD2	声：		Voice:	v005		
-m/MS0057.BIN	0:00	108	3162	1FD3	受験番号０９１６　		Applicant NO 0916, Katsuragi Ayato.\n<wait>	v005		
-m/MS0057.BIN	0:00	109	3184	00	{04:FF}\n<wait>	{04:FF}\n<wait>				reads: \n<wait>
-m/MS0057.BIN	0:00	110	3195	1FD2	声：		Voice:	v005		
-m/MS0057.BIN	0:00	111	3201	1FD3	弾道予想により、弾は		The bullet soars through the air... 	v005		
-m/MS0057.BIN	0:00	112	3265	1F4E	命中。敵{08:0B}死亡。\n<wait>		nd hits the man. The demon is dead.\n<wait>	v005		reads: 命中。敵悪魔死亡。\n<wait>
-m/MS0057.BIN	0:00	113	3321	1F88	後方壁に命中。\n犯人激情に{08:42}れ、人質を殺害{08:72}。\n<wait>		and hits the back wall. Furious, the man raises his knife, and...\n<wait>	v005		reads: 後方壁に命中。\n犯人激情にかられ、人質を殺害‥‥。\n<wait>
-m/MS0057.BIN	0:00	114	3383	1F4F	l質に命中。人質死亡。\n<wait>		Hit the hostage. Hostage deceased.\n<wait>	ours		
-m/MS0057.BIN	0:00	115	3413	1FD2	声：		Voice:	v005		
-m/MS0057.BIN	0:00	116	3426	1FD2	声：		Voice:	v005		
-m/MS0057.BIN	0:00	117	3432	1FD3	受験番号０９１６　		Applicant NO 0916, Katsuragi Ayato.\nThe exam is now over. Please return to your room.\n<wait>	v005		
-m/MS0057.BIN	0:00	118	3454	00	{04:FF}。\n{08:48}にて試験終了。自室にて待機{08:8E}{08:46}。\n<wait>					reads: 。\nこれにて試験終了。自室にて待機すること。\n<wait>
-m/MS0057.BIN	0:00	119	3505	1FD0	{08:4C}、倒れて{08:64}{02:00}が起き上が{08:51}。\n<wait>		Following the announcement, the fallen Devil Buster gets up.\n<wait>	v005		reads: すると、倒れていたデビルバスターが起き上がった。\n<wait>
-m/MS0057.BIN	0:00	120	3568	1FD2	ＤＢ隊員：		Devil Buster:	v005		
-m/MS0057.BIN	0:00	121	3580	1FD3	驚{08:64}か？　{08:48}も、試験の一環だ{08:51}{08:77}よ。\n<wait>		Surprised? This was all part of the exam.\n<wait>	v005		reads: 驚いたか？　これも、試験の一環だったのだよ。\n<wait>
-m/MS0057.BIN	0:00	122	3625	1FD2	ＤＢ隊員：		Devil Buster:	v005		
-m/MS0057.BIN	0:00	123	3637	1FD3	腹が立つのも無理は{08:25}。\n{08:8F}、緊急事態に遭遇{08:4B}場合の行動{08:62}大変に重要{08:6B}だ。\nパニックに陥{08:52}{08:83}様で{08:62}勤まらん{08:42}な。\n<wait>		I don't blame you for feeling cheated. Still, it's crucial that we test\nhow the applicants react in emergencies. If you panic, then you're not\nfit to become a Devil Buster.\n<wait>	v005		reads: 腹が立つのも無理はない。\nだが、緊急事態に遭遇した場合の行動は、大変に重要なのだ。\nパニックに陥ってしまう様では、勤まらんからな。\n<wait>
-m/MS0057.BIN	0:00	124	3754	1FD2	ＤＢ隊員：		Devil Buster:	v005		
-m/MS0057.BIN	0:00	125	3766	1FD3	さあ、今度こそ、試験は全て終了{08:4B}。\n自室に戻{08:52}、試験結果を待つが{08:7F}。\n<wait>		Anyway, that's the end of the exam. For real this time.\nReturn to your room, and we'll contact you with the results.\n<wait>	v005		reads: さあ、今度こそ、試験は全て終了した。\n自室に戻って、試験結果を待つがいい。\n<wait>
-m/MS0057.BIN	0:00	126	3884	00	{04:FF}達は{08:04}に誘導{03:0C}、武器を調達{08:8E}為に武器庫を訪{08:60}。\n<wait>		You follow Nishino to the armoury.\nThis is where you'll be able to find the weapons you need.\n<wait>	v005		reads: 達は西野に誘導され、武器を調達する為に武器庫を訪れた。\n<wait>
-m/MS0057.BIN	0:00	127	3963	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0057.BIN	0:00	128	3973	00	{04:FF}{08:62}入口を見張{08:52}いろ！\n私が捜{08:4A}くる！\n<wait>		Katsuragi, watch the entrance while I have look around.\n<wait>	v005		reads: は、入口を見張っていろ！\n私が捜してくる！\n<wait>
-m/MS0057.BIN	0:00	129	4023	1FD0	{08:04}はそう言い放つと、武器庫の奥に消えて行{08:51}。\n<wait>		Having said that, Nishino disappears into the storage room in the back.\n<wait>	v005		reads: 西野はそう言い放つと、武器庫の奥に消えて行った。\n<wait>
-m/MS0057.BIN	0:00	130	4093	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0057.BIN	0:00	131	4099	1FD3	よし、{08:48}で{08:7F}な。\n<wait>		Alright. These will do.\n<wait>	v005		reads: よし、これでいいな。\n<wait>
-m/MS0057.BIN	0:00	132	4217	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0057.BIN	0:00	133	4223	1FD3	隊長！　扉の溶接終わりま{08:17}\n<wait>		Commander! We've finished welding the entrances shut!\n<wait>	v005		reads: 隊長！　扉の溶接終わりました！\n<wait>
-m/MS0057.BIN	0:00	134	4258	1FD2	{01:03}：		Newton:	v005		reads: ニュートン：
-m/MS0057.BIN	0:00	135	4264	1FD3	ワォンッ！！\n<wait>		*Bark!*\n<wait>	v005		
-m/MS0057.BIN	0:00	136	4285	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0057.BIN	0:00	137	4291	1FD3	よし、御苦労だ{08:12}\n皆受け取れ、新しい武器だ。今すぐ装備しろ！\n<wait>		Good work. Now then, take these weapons, and suit up.\n<wait>	v005		reads: よし、御苦労だった！\n皆受け取れ、新しい武器だ。今すぐ装備しろ！\n<wait>
-m/MS0057.BIN	0:00	138	4359	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0057.BIN	0:00	139	4365	1FD3	装備が整い次第、{01:2B}の駆逐にかかる{08:42}な！\n<wait>		Once you're ready, we will begin the operation.<wait>	v005		reads: 装備が整い次第、ゾンビの駆逐にかかるからな！\n<wait>
-m/MS0057.BIN	0:00	140	4412	1FD2	一同：		Everyone:	v005		
-m/MS0057.BIN	0:00	141	4420	1FD3	了解！\n<wait>		Yes sir!\n<wait>	v005		
-m/MS0057.BIN	0:00	142	4453	1FD0	一同{08:62}{08:04}{08:42}渡{03:0C}た新しい武器を装備{08:4B}。\n		You take the gun Nishino hands to you,\nand the others follow in suit.\n	v005		reads: 一同は、西野から渡された新しい武器を装備した。\n
-m/MS0057.BIN	0:00	143	4625	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0057.BIN	0:00	144	4631	1FD3	扱えそうな物で、{08:59}べく強力な物を選んでくる。\nふたり{08:62}{08:45}で待{08:52}いてくれ。\n<wait>		You two wait here while I go get us some weapons.\n<wait>	v005		reads: 扱えそうな物で、なるべく強力な物を選んでくる。\nふたりは、ここで待っていてくれ。\n<wait>
-m/MS0057.BIN	0:00	145	4741	1FD0	{08:00}{08:62}武器庫の奥へと消えて行{08:51}。\n<wait>		Having said that, Hayasaka disappears into the back of the armoury.\n<wait>	v005		reads: 早坂は、武器庫の奥へと消えて行った。\n<wait>
-m/MS0057.BIN	0:00	146	4804	1FC4	奥の方{08:42}{08:62}何やら荒っぽく、物をひっかき廻す音が{08:8E}。\n{08:03}と		You can hear all sorts of rumblings and noises as he goes through\nthe shelves in search of gear for you to use. At this point, making\nsure that things stay organized is no longer a priority, it seems.\n<wait>	v005		reads: 奥の方からは、何やら荒っぽく、物をひっかき廻す音がする。\n英美と
-m/MS0057.BIN	0:00	147	4863	00	{04:FF}{08:62}{08:00}が戻るのを待{08:51}。\n<wait>					reads: は、早坂が戻るのを待った。\n<wait>
-m/MS0057.BIN	0:00	148	4921	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0057.BIN	0:00	149	4927	1FD3	待たせたな！\nまあ、大体{08:73}モンが精一杯{08:52}とこだな。\n<wait>		Alright. These should do the trick.\n<wait>	v005		reads: 待たせたな！\nまあ、大体こんなモンが精一杯ってとこだな。\n<wait>
-m/MS0057.BIN	0:00	150	4985	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0057.BIN	0:00	151	4991	1FD3	さ、と{08:53}と装備{08:4A}しちまおう！\n<wait>		Go ahead, take them.\n<wait>	v005		reads: さ、とっとと装備してしちまおう！\n<wait>
-m/MS0057.BIN	0:00	152	5035	00	{04:FF}達{08:62}黙々と装備を整{08:41}。\n<wait>		You take the weapons Hayasaka gives you.\n<wait>	v005		reads: 達は、黙々と装備を整えた。\n<wait>
-m/MS0057.BIN	0:00	153	5068	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0057.BIN	0:00	154	5074	1FD3	さ、行くか。\n<wait>		Let's get going then. We have no time to waste.\n<wait>	v005		
-m/MS0057.BIN	0:00	155	5113	1FD0	{08:5C}、{08:63}達の扱えそうな武器は{08:25}{02:08}\n{08:4D}に、{08:48}以上持{08:52}行くと行動に支障が出る{08:8C}。\n<wait>		I think we got everything we need already.\nPlus, there's only so much that we can realistically carry.\n<wait>	v005		reads: もう、自分達の扱えそうな武器はない‥‥‥\nそれに、これ以上持って行くと行動に支障が出るだろう。\n<wait>
-m/MS0057.BIN	0:00	156	5197	00	{04:FF}は武器庫を後に{08:4B}。\n		You leave the armory behind.\n	v005		reads: は武器庫を後にした。\n
-m/MS0057.BIN	0:00	157	5255	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0057.BIN	0:00	158	5261	1FD3	{08:5C}、{01:16}達の扱えそうな物{08:52}{08:25}よ。\n{08:4D}に、{08:48}以上持っ{08:50}荷物に{08:59}{08:74}{08:8A}さ。\n<wait>		I think we got everything we need already.\nPlus, there's only so much that we can realistically carry.\n<wait>	v005		reads: もう、あたし達の扱えそうな物ってないよ。\nそれに、これ以上持ったら荷物になるだけだしさ。\n<wait>
-m/MS0057.BIN	0:00	159	5364	1FD0	{01:03}は武器庫を訪れ、脱出に備えて		Newton drops by the armory and upgrades Katsuragi's gear.\n	v005		reads: ニュートンは武器庫を訪れ、脱出に備えて
-m/MS0057.BIN	0:00	160	5398	00	{04:FF}の武装を交換{08:4B}。\n					reads: の武装を交換した。\n
-m/MS0057.BIN	0:00	161	5439	1F81	{04:FF}	{04:FF}				reads: 
-m/MS0057.BIN	0:00	162	5490	1F83	{03:00}	{03:00}				reads: 飛び道具
-m/MS0057.BIN	0:00	163	5504	1F80	ﾇれ{08:74}、{08:10}の外をさま{08:69}事に{08:59}か分{08:42}{08:25}{08:77}。\n{08:47}弾丸が無ければ、銃を使う事は出来{08:25}。\n<wait>		 don't know how long you're going to spend outside.\nYou need these bullets to be able to fire your gun.\n<wait>	v005		reads: ﾇれだけ、シェルターの外をさまよう事になるか分からないのだ。\nこの弾丸が無ければ、銃を使う事は出来ない。\n<wait>
-m/MS0057.BIN	0:00	164	5589	1FBA	用心に越{08:4B}{08:46}は無い{08:8C}{02:08}\n<wait>		Like they say, there's no such thing as too careful.\n<wait>	v005		reads: 用心に越したことは無いだろう‥‥‥\n<wait>
-m/MS0057.BIN	0:00	165	5618	1FBA	{01:03}{08:62}荷物の整理にか{08:18}。\n<wait>		Newton ends up bagging his bags full.\n<wait>	v005		reads: ニュートンは、荷物の整理にかかった。\n<wait>
-m/MS0057.BIN	0:00	166	5693	1F83	{03:00}	{03:00}				reads: 飛び道具
-m/MS0057.BIN	0:00	167	5707	1F80	ﾇれ{08:74}、{08:10}の外をさま{08:69}事に{08:59}か分{08:42}{08:25}{08:77}。\n{08:47}カートリッジが無ければ、{08:63}の銃を使う事は出来{08:25}。\n<wait>		 don't know how long you're going to spend outside.\nYou need these cartridges to be able to fire your gun.\n<wait>	v005		reads: ﾇれだけ、シェルターの外をさまよう事になるか分からないのだ。\nこのカートリッジが無ければ、自分の銃を使う事は出来ない。\n<wait>
-m/MS0057.BIN	0:00	168	5804	1FBA	用心に越{08:4B}{08:46}は無い{08:8C}{02:08}\n<wait>		Like they say, there's no such thing as too careful.\n<wait>	v005		reads: 用心に越したことは無いだろう‥‥‥\n<wait>
-m/MS0057.BIN	0:00	169	5833	1FBA	{01:03}{08:62}荷物の整理にか{08:18}。\n<wait>		Newton ends up bagging his bags full.\n<wait>	v005		reads: ニュートンは、荷物の整理にかかった。\n<wait>
-m/MS0057.BIN	0:00	170	5884	00	{04:FF}は武器庫を訪{08:60}。\n<wait>					reads: は武器庫を訪れた。\n<wait>
-m/MS0057.BIN	0:00	171	5909	1FBA	行動に支障が{08:25}最低限{08:71}{08:62}持{08:52}行く事にし{08:69}{08:72}\n<wait>そう頭の中で言い聞かせ、					reads: 行動に支障がない最低限までは、持って行く事にしよう‥‥\n<wait>そう頭の中で言い聞かせ、
-m/MS0057.BIN	0:00	172	5984	00	{04:FF}は武器の調達にか{08:18}。\n<wait>					reads: は武器の調達にかかった。\n<wait>
-m/MS0057.BIN	0:00	173	6013	1FBA	積み重{08:59}箱を広げ、中身を物色し、操作手順を確認{08:8E}。\n<wait>		You decide to bring with you just enough gear\nas not to hinder you.\n<wait>With that, you move on to gathering weapons.\n<wait>	v005		reads: 積み重なる箱を広げ、中身を物色し、操作手順を確認する。\n<wait>
-m/MS0057.BIN	0:00	174	6070	1FBA	色々と悩{08:5F}末、		You pick up a number of crates, pry them open,\nand cull out their contents.\n<wait>	v005		reads: 色々と悩んだ末、
-m/MS0057.BIN	0:00	175	6088	00	{04:FF}{08:62}{08:63}が扱えそうな武器類をカウンターの上に並べた。\n<wait>		After a while, you end up with a decent selection of different weapons\nresting on the counter.\n<wait>	v005		reads: は、自分が扱えそうな武器類をカウンターの上に並べた。\n<wait>
-m/MS0057.BIN	0:00	176	6150	1FD0	武器を選び終{08:41}		Having picked up the one you like the most,\nyou at last leave the armoury behind.\n<wait>	v005		reads: 武器を選び終えた
-m/MS0057.BIN	0:00	177	6168	00	{04:FF}{08:62}武器庫を後に{08:4B}。\n<wait>					reads: は、武器庫を後にした。\n<wait>
-m/MS0057.BIN	0:00	178	6200	1FD0	{08:5C}、{03:06}扱えそうな物は残{03:0C}ては{08:24}{02:08}。\n<wait>そう思い改めた		There's nothing here left for you...\n<wait>With that, you leave the armoury behind.\n<wait>	v005		reads: もう、自分に扱えそうな物は残されてはいない‥‥‥。\n<wait>そう思い改めた
-m/MS0057.BIN	0:00	179	6257	00	{04:FF}{08:62}武器庫を後に{08:4B}。\n<wait>					reads: は、武器庫を後にした。\n<wait>
+m/MS0057.BIN	0:00	42	1492	00	{04:FF}は　逃げ出{08:4B}{02:08}。\n{1E10:01003C}	{04:FF}は　逃げ出{08:4B}{02:08}。\n{1E10:01003C}	You ran away...\n{1E10:01003C}	ours		reads: は　逃げ出した‥‥‥。\n{1E10:01003C}
+m/MS0057.BIN	0:00	43	1520	1FD2	声：	声：	Voice:	v005		reads: ペンタグランマ{=E9}{=01}
+m/MS0057.BIN	0:00	44	1526	1FD3	受験番号０９１６　		Applicant NO 0916, Katsuragi Ayato.\nThe exam is now over. Please return to your room.\n<wait>	v005		reads: は　逃げ出した‥‥‥。\n{1E10:01003C}
+m/MS0057.BIN	0:00	45	1548	00	{04:FF}\n{08:48}にて試験終了。自室にて待機{08:8E}{08:46}。\n<wait>					reads: \nこれにて試験終了。自室にて待機すること。\n<wait>
+m/MS0057.BIN	0:00	46	1609	00	{04:FF}：					reads: ：
+m/MS0057.BIN	0:00	47	1615	1FD3	{02:08}おっちゃん{02:08}！\n<wait>		Y-You okay!\n<wait>	v005		reads: ‥‥‥おっちゃん‥‥‥！\n<wait>; reads: \nこれにて試験終了。自室にて待機すること。\n<wait>
+m/MS0057.BIN	0:00	48	1640	1FD2	作業員：		Worker:	v005		reads: ：
+m/MS0057.BIN	0:00	49	1650	1FD3	おお{08:53}！　変なマネすん{08:81}ねぇぜ！\n{08:48}以上でかい声を出{08:4A}みろ{02:08}\n<wait>		Hold it right there, buddy! One more word...\n<wait>	v005		reads: おおっと！　変なマネすんじゃねぇぜ！\nこれ以上でかい声を出してみろ‥‥‥\n<wait>; reads: ‥‥‥おっちゃん‥‥‥！\n<wait>
+m/MS0057.BIN	0:00	50	1718	1FD2	作業員：		Worker:	v005		
+m/MS0057.BIN	0:00	51	1728	1FD3	こいつの首がす{08:53}ぶぜ！　ヒャーハハハハ！！\n<wait>		And this old fart gets his throat sliced open!\n<wait>	v005		reads: こいつの首がすっとぶぜ！　ヒャーハハハハ！！\n<wait>; reads: おおっと！　変なマネすんじゃねぇぜ！\nこれ以上でかい声を出してみろ‥‥‥\n<wait>
+m/MS0057.BIN	0:00	52	1780	1FD0	{08:48}以上、下手に大声を出すのは避{08:43}方が良い{08:8C}{02:08}\n<wait>		It appears that you'd do well keeping your mouth shut...\n<wait>	v005		reads: これ以上、下手に大声を出すのは避けた方が良いだろう‥‥‥\n<wait>
+m/MS0057.BIN	0:00	53	1831	1FBA	{08:4D}に、おっちゃんを呼{08:5F}{08:87}で、あまり役に立た{08:25}のは明白で{08:7B}{02:08}\n<wait>		What were you even thinking?\nHow was that ever supposed to help anyone?\n<wait>	v005		reads: それに、おっちゃんを呼んだところで、あまり役に立たないのは明白である‥‥‥\n<wait>; reads: こいつの首がすっとぶぜ！　ヒャーハハハハ！！\n<wait>
+m/MS0057.BIN	0:00	54	1905	1FBA	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>; reads: これ以上、下手に大声を出すのは避けた方が良いだろう‥‥‥\n<wait>
+m/MS0057.BIN	0:00	55	1932	1FB2	逃げる		Run	v005		menu option, declared width 20 columns; reads: それに、おっちゃんを呼んだところで、あまり役に立たないのは明白である‥‥‥\n<wait>
+m/MS0057.BIN	0:00	56	1940	1FB2	周囲をうかがう		Look around	v005		menu option, declared width 20 columns; reads: ＞どうしますか？\n<wait>
+m/MS0057.BIN	0:00	57	1980	1FD0	何を見{08:15}\n		Look at what?\n	v005		reads: 何を見ますか？\n; menu option, declared width 20 columns
+m/MS0057.BIN	0:00	58	2005	1FB2	憑依{03:0C}た作業員		Possessed worker	v005		reads: 憑依された作業員; menu option, declared width 20 columns
+m/MS0057.BIN	0:00	59	2021	1FB2	人質	人質	Hostage	v005		menu option, declared width 20 columns; reads: 山瀬勇
+m/MS0057.BIN	0:00	60	2027	1FB2	置かれ{08:14}武器	置かれ{08:14}武器	Dropped weapon	v005		reads: 置かれている武器; menu option, declared width 20 columns
+m/MS0057.BIN	0:00	61	2041	1FB2	倒れ{08:14}ＤＢ		Fallen Devil Buster	v005		reads: 倒れているＤＢ; menu option, declared width 20 columns; reads: 何を見ますか？\n
+m/MS0057.BIN	0:00	62	2053	1FB2	見るのはや{08:2E}		Stop looking	v005		reads: 見るのはやめる; menu option, declared width 20 columns; reads: 憑依された作業員
+m/MS0057.BIN	0:00	63	2099	1FD0	作業員{08:62}人質に身体を密着させ人質の喉にナイフを突きつけ{08:14}。\n{08:72}相手には隙が無い。\n<wait>		The worker is holding a knife tight against the other man's throat.\nThere doesn't seem to be any safe way to get to him...\n<wait>	v005		reads: 作業員は、人質に身体を密着させ人質の喉にナイフを突きつけている。\n‥‥相手には隙が無い。\n<wait>; menu option, declared width 20 columns
+m/MS0057.BIN	0:00	64	2190	1FD0	人質{08:62}怯え切っ{08:14}{02:08}\n<wait>		The hostage is shacking...\n<wait>	v005		reads: 人質は、怯え切っている‥‥‥\n<wait>; reads: 置かれている武器; menu option, declared width 20 columns
+m/MS0057.BIN	0:00	65	2220	1FD2	作業員：		Worker:	v005		reads: 倒れているＤＢ; menu option, declared width 20 columns
+m/MS0057.BIN	0:00	66	2230	1FD3	おおー{08:53}！　変な事考{08:28}ん{08:81}ねぇ！\nこいつの喉笛かっ切るぜ！\n<wait>		You better not be planning on doing something stupid, kid!\nTry to act like a hero, and this guy's getting his throat sliced open!\n<wait>	v005		reads: おおーっと！　変な事考えるんじゃねぇ！\nこいつの喉笛かっ切るぜ！\n<wait>; reads: 見るのはやめる; menu option, declared width 20 columns
+m/MS0057.BIN	0:00	67	2296	1FD0	そう言うと、犯人は人質の頬に傷を付{08:43}。\n<wait>	そう言うと、犯人は人質の頬に傷を付{08:43}。\n<wait>	Having said that, the man uses his knife to cut his hostage's cheek.\n<wait>	v005		reads: そう言うと、犯人は人質の頬に傷を付けた。\n<wait>
+m/MS0057.BIN	0:00	68	2343	1FD2	人質：	人質：	Hostage:	v005		reads: ペンタグランマ{=82}{=00}そんなこと @rebase-unmatched idx68 en={02:01}
+m/MS0057.BIN	0:00	69	2351	1FD3	ヒイィィー！\n<wait>	ヒイィィー！\n<wait>	Hyaaah!\n<wait>	v005		reads: ふたつ @rebase-unmatched idx69 en={03:01}{01:04}{01:20}
+m/MS0057.BIN	0:00	70	2380	1FD0	{02:00}は傷を負っ{08:14}。\n{08:86}も人質を取られ{08:14}ので、手出しが出来{08:25}。\n<wait>		The Devil Buster is too badly hurt to move. Even if he wasn't,\nhe still wouldn't be able to stop the man due to the hostage.\n<wait>	v005		reads: デビルバスターは傷を負っている。\nしかも人質を取られているので、手出しが出来ない。\n<wait>; reads: 作業員は、人質に身体を密着させ人質の喉にナイフを突きつけている。\n‥‥相手には隙が無い。\n<wait>
+m/MS0057.BIN	0:00	71	2450	1FD0	{02:00}の身体の側、{08:86}も、犯人{08:42}は見えにくい{08:63}の側に銃が\n落ち{08:14}{08:72}\n<wait><wait>		A gun lies on the floor next to him.\nIt appears that the man hasn't noticed it yet...\n<wait><wait>	v005		reads: デビルバスターの身体の側、しかも、犯人からは見えにくい自分の側に銃が\n落ちている‥‥\n<wait><wait>; reads: 人質は、怯え切っている‥‥‥\n<wait>
+m/MS0057.BIN	0:00	72	2522	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n
+m/MS0057.BIN	0:00	73	2543	1FB2	銃を拾う		Grab the gun	v005		menu option, declared width 20 columns; reads: おおーっと！　変な事考えるんじゃねぇ！\nこいつの喉笛かっ切るぜ！\n<wait>
+m/MS0057.BIN	0:00	74	2553	1FB2	話{08:86}{08:29}		Talk to him	v005		reads: 話しかける; menu option, declared width 20 columns; reads: そう言うと、犯人は人質の頬に傷を付けた。\n<wait>
+m/MS0057.BIN	0:00	75	2561	1FB2	何{08:5D}{08:25}		Do nothing	v005		reads: 何もしない; menu option, declared width 20 columns
+m/MS0057.BIN	0:00	76	2593	1FD2	作業員：		Worker:	v005		
+m/MS0057.BIN	0:00	77	2603	1FD3	ん？　変な事考えん{08:81}ねーぞッ！\nこいつの喉笛かっ切るぜェ！　ケケケケ！！\n<wait>		Hmm? You better not be planning on doing something stupid, kid!\nTry to act like a hero, and this guy's getting his throat sliced open!\nHahahaha!\n<wait>	v005		reads: ん？　変な事考えんじゃねーぞッ！\nこいつの喉笛かっ切るぜェ！　ケケケケ！！\n<wait>; reads: デビルバスターは傷を負っている。\nしかも人質を取られているので、手出しが出来ない。\n<wait>
+m/MS0057.BIN	0:00	78	2683	1FD0	そう言うと、犯人は人質の頬に傷を付{08:43}。\n<wait>		Having said that, the man uses his knife to cut his hostage's cheek.\n<wait>	v005		reads: そう言うと、犯人は人質の頬に傷を付けた。\n<wait>; reads: デビルバスターの身体の側、しかも、犯人からは見えにくい自分の側に銃が\n落ちている‥‥\n<wait><wait>
+m/MS0057.BIN	0:00	79	2730	1FD2	人質：		Hostage:	v005		reads: ＞どうしますか？\n
+m/MS0057.BIN	0:00	80	2738	1FD3	ヒイィィー！\n<wait>		Hyaaah!\n<wait>	v005		menu option, declared width 20 columns
+m/MS0057.BIN	0:00	81	2766	00	{04:FF}は話{08:86}{08:43}。\n<wait>		You began talking with the man.\n<wait>	v005		reads: は話しかけた。\n<wait>; reads: 話しかける; menu option, declared width 20 columns
+m/MS0057.BIN	0:00	82	2787	1FD2	作業員：		Worker:	v005		reads: 何もしない; menu option, declared width 20 columns
+m/MS0057.BIN	0:00	83	2797	1FD3	や{08:53}、話を聞く気に{08:16}か？\n<wait>	や{08:53}、話を聞く気に{08:16}か？\n<wait>	Oh? Finally willing to talk?\n<wait>	v005		reads: やっと、話を聞く気になったか？\n<wait>
+m/MS0057.BIN	0:00	84	2830	1FD2	作業員：	作業員：	Worker:	v005		reads: ペンタグランマO
+m/MS0057.BIN	0:00	85	2840	1FD3	{08:81}あなぁ、俺様の要求はこうだ{02:08}{08:72}\n<wait>		Alright. Here are my demands...\n<wait>	v005		reads: じゃあなぁ、俺様の要求はこうだ‥‥‥‥‥\n<wait>
+m/MS0057.BIN	0:00	86	2881	1FD0	犯人{08:62}要求を語り出{08:4B}{02:08}{02:08}\n<wait>		The man lists all of his demands.\n<wait>	v005		reads: 犯人は、要求を語り出した‥‥‥‥‥‥\n<wait>; reads: ん？　変な事考えんじゃねーぞッ！\nこいつの喉笛かっ切るぜェ！　ケケケケ！！\n<wait>
+m/MS0057.BIN	0:00	87	2912	1FBA	犯人に僅かな隙が出来た！\n<wait>		This is it! Your opening!\n<wait>	v005		reads: そう言うと、犯人は人質の頬に傷を付けた。\n<wait>
+m/MS0057.BIN	0:00	88	2957	1FB2	銃を拾う		Grab the gun	v005		menu option, declared width 20 columns
+m/MS0057.BIN	0:00	89	2967	1FB2	逃げる		Run	v005		menu option, declared width 20 columns
+m/MS0057.BIN	0:00	90	3033	1F4E	{03:19}	{03:19}				reads: ; reads: は話しかけた。\n<wait>
+m/MS0057.BIN	0:00	91	3037	1FD0	{08:1F}！　銃を拾え{08:19}！\n<wait>		Shit! You failed to crap the gun!\n<wait>	v005		reads: しまった！　銃を拾えなかった！\n<wait>
+m/MS0057.BIN	0:00	92	3065	1FD0	銃を拾{08:12}\n<wait>		You grabbed the gun!<wait>	v005		reads: 銃を拾った！\n<wait>; reads: やっと、話を聞く気になったか？\n<wait>
+m/MS0057.BIN	0:00	93	3082	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n
+m/MS0057.BIN	0:00	94	3103	1FB2	撃つ		Shoot	v005		menu option, declared width 20 columns; reads: じゃあなぁ、俺様の要求はこうだ‥‥‥‥‥\n<wait>
+m/MS0057.BIN	0:00	95	3109	1FB2	人質の解放を要求		"Let him go"	v005		menu option, declared width 20 columns; reads: 犯人は、要求を語り出した‥‥‥‥‥‥\n<wait>
+m/MS0057.BIN	0:00	96	3156	1FD2	声：		Voice:	v005		
+m/MS0057.BIN	0:00	97	3162	1FD3	受験番号０９１６　		Applicant NO 0916, Katsuragi Ayato.\n<wait>	v005		menu option, declared width 20 columns
+m/MS0057.BIN	0:00	98	3184	00	{04:FF}\n<wait>	{04:FF}\n<wait>				reads: \n<wait>; menu option, declared width 20 columns
+m/MS0057.BIN	0:00	99	3195	1FD2	声：	声：	Voice:	v005		reads: はやく{=FA}{=FF}
+m/MS0057.BIN	0:00	100	3201	1FD3	弾道予想により、弾は	弾道予想により、弾は	The bullet soars through the air... 	v005		reads: 
+m/MS0057.BIN	0:00	101	3265	1F4E	命中。敵{08:0B}死亡。\n<wait>		nd hits the man. The demon is dead.\n<wait>	v005		reads: 命中。敵悪魔死亡。\n<wait>; reads: しまった！　銃を拾えなかった！\n<wait>
+m/MS0057.BIN	0:00	102	3321	1F88	後方壁に命中。\n犯人激情に{08:42}れ、人質を殺害{08:72}。\n<wait>		and hits the back wall. Furious, the man raises his knife, and...\n<wait>	v005		reads: 後方壁に命中。\n犯人激情にかられ、人質を殺害‥‥。\n<wait>; reads: 銃を拾った！\n<wait>
+m/MS0057.BIN	0:00	103	3383	1F4F	l質に命中。人質死亡。\n<wait>		Hit the hostage. Hostage deceased.\n<wait>	ours		reads: ＞どうしますか？\n
+m/MS0057.BIN	0:00	104	3413	1FD2	声：		Voice:	v005		menu option, declared width 20 columns
+m/MS0057.BIN	0:00	105	3426	1FD2	声：		Voice:	v005		menu option, declared width 20 columns
+m/MS0057.BIN	0:00	106	3432	1FD3	受験番号０９１６　	受験番号０９１６　	Applicant NO 0916, Katsuragi Ayato.\nThe exam is now over. Please return to your room.\n<wait>	v005		reads: あんた
+m/MS0057.BIN	0:00	107	3454	00	{04:FF}。\n{08:48}にて試験終了。自室にて待機{08:8E}{08:46}。\n<wait>					reads: 。\nこれにて試験終了。自室にて待機すること。\n<wait>
+m/MS0057.BIN	0:00	108	3505	1FD0	{08:4C}、倒れて{08:64}{02:00}が起き上が{08:51}。\n<wait>		Following the announcement, the fallen Devil Buster gets up.\n<wait>	v005		reads: すると、倒れていたデビルバスターが起き上がった。\n<wait>
+m/MS0057.BIN	0:00	109	3568	1FD2	ＤＢ隊員：	ＤＢ隊員：	Devil Buster:	v005		reads: \n<wait>
+m/MS0057.BIN	0:00	110	3580	1FD3	驚{08:64}か？　{08:48}も、試験の一環だ{08:51}{08:77}よ。\n<wait>		Surprised? This was all part of the exam.\n<wait>	v005		reads: 驚いたか？　これも、試験の一環だったのだよ。\n<wait>
+m/MS0057.BIN	0:00	111	3625	1FD2	ＤＢ隊員：		Devil Buster:	v005		
+m/MS0057.BIN	0:00	112	3637	1FD3	腹が立つのも無理は{08:25}。\n{08:8F}、緊急事態に遭遇{08:4B}場合の行動{08:62}大変に重要{08:6B}だ。\nパニックに陥{08:52}{08:83}様で{08:62}勤まらん{08:42}な。\n<wait>		I don't blame you for feeling cheated. Still, it's crucial that we test\nhow the applicants react in emergencies. If you panic, then you're not\nfit to become a Devil Buster.\n<wait>	v005		reads: 腹が立つのも無理はない。\nだが、緊急事態に遭遇した場合の行動は、大変に重要なのだ。\nパニックに陥ってしまう様では、勤まらんからな。\n<wait>; reads: 命中。敵悪魔死亡。\n<wait>
+m/MS0057.BIN	0:00	113	3754	1FD2	ＤＢ隊員：		Devil Buster:	v005		reads: 後方壁に命中。\n犯人激情にかられ、人質を殺害‥‥。\n<wait>
+m/MS0057.BIN	0:00	114	3766	1FD3	さあ、今度こそ、試験は全て終了{08:4B}。\n自室に戻{08:52}、試験結果を待つが{08:7F}。\n<wait>		Anyway, that's the end of the exam. For real this time.\nReturn to your room, and we'll contact you with the results.\n<wait>	v005		reads: さあ、今度こそ、試験は全て終了した。\n自室に戻って、試験結果を待つがいい。\n<wait>
+m/MS0057.BIN	0:00	115	3884	00	{04:FF}達は{08:04}に誘導{03:0C}、武器を調達{08:8E}為に武器庫を訪{08:60}。\n<wait>		You follow Nishino to the armoury.\nThis is where you'll be able to find the weapons you need.\n<wait>	v005		reads: 達は西野に誘導され、武器を調達する為に武器庫を訪れた。\n<wait>
+m/MS0057.BIN	0:00	116	3963	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
+m/MS0057.BIN	0:00	117	3973	00	{04:FF}{08:62}入口を見張{08:52}いろ！\n私が捜{08:4A}くる！\n<wait>		Katsuragi, watch the entrance while I have look around.\n<wait>	v005		reads: は、入口を見張っていろ！\n私が捜してくる！\n<wait>
+m/MS0057.BIN	0:00	118	4023	1FD0	{08:04}はそう言い放つと、武器庫の奥に消えて行{08:51}。\n<wait>		Having said that, Nishino disappears into the storage room in the back.\n<wait>	v005		reads: 西野はそう言い放つと、武器庫の奥に消えて行った。\n<wait>; reads: 。\nこれにて試験終了。自室にて待機すること。\n<wait>
+m/MS0057.BIN	0:00	119	4093	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: すると、倒れていたデビルバスターが起き上がった。\n<wait>
+m/MS0057.BIN	0:00	120	4099	1FD3	よし、{08:48}で{08:7F}な。\n<wait>		Alright. These will do.\n<wait>	v005		reads: よし、これでいいな。\n<wait>
+m/MS0057.BIN	0:00	121	4217	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 驚いたか？　これも、試験の一環だったのだよ。\n<wait>
+m/MS0057.BIN	0:00	122	4223	1FD3	隊長！　扉の溶接終わりま{08:17}\n<wait>		Commander! We've finished welding the entrances shut!\n<wait>	v005		reads: 隊長！　扉の溶接終わりました！\n<wait>
+m/MS0057.BIN	0:00	123	4258	1FD2	{01:03}：		Newton:	v005		reads: ニュートン：; reads: 腹が立つのも無理はない。\nだが、緊急事態に遭遇した場合の行動は、大変に重要なのだ。\nパニックに陥ってしまう様では、勤まらんからな。\n<wait>
+m/MS0057.BIN	0:00	124	4264	1FD3	ワォンッ！！\n<wait>		*Bark!*\n<wait>	v005		
+m/MS0057.BIN	0:00	125	4285	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: さあ、今度こそ、試験は全て終了した。\n自室に戻って、試験結果を待つがいい。\n<wait>
+m/MS0057.BIN	0:00	126	4291	1FD3	よし、御苦労だ{08:12}\n皆受け取れ、新しい武器だ。今すぐ装備しろ！\n<wait>		Good work. Now then, take these weapons, and suit up.\n<wait>	v005		reads: よし、御苦労だった！\n皆受け取れ、新しい武器だ。今すぐ装備しろ！\n<wait>; reads: 達は西野に誘導され、武器を調達する為に武器庫を訪れた。\n<wait>
+m/MS0057.BIN	0:00	127	4359	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
+m/MS0057.BIN	0:00	128	4365	1FD3	装備が整い次第、{01:2B}の駆逐にかかる{08:42}な！\n<wait>		Once you're ready, we will begin the operation.<wait>	v005		reads: 装備が整い次第、ゾンビの駆逐にかかるからな！\n<wait>; reads: は、入口を見張っていろ！\n私が捜してくる！\n<wait>
+m/MS0057.BIN	0:00	129	4412	1FD2	一同：		Everyone:	v005		reads: 西野はそう言い放つと、武器庫の奥に消えて行った。\n<wait>
+m/MS0057.BIN	0:00	130	4420	1FD3	了解！\n<wait>		Yes sir!\n<wait>	v005		reads: 西野：
+m/MS0057.BIN	0:00	131	4453	1FD0	一同{08:62}{08:04}{08:42}渡{03:0C}た新しい武器を装備{08:4B}。\n		You take the gun Nishino hands to you,\nand the others follow in suit.\n	v005		reads: 一同は、西野から渡された新しい武器を装備した。\n; reads: よし、これでいいな。\n<wait>
+m/MS0057.BIN	0:00	132	4625	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0057.BIN	0:00	133	4631	1FD3	扱えそうな物で、{08:59}べく強力な物を選んでくる。\nふたり{08:62}{08:45}で待{08:52}いてくれ。\n<wait>		You two wait here while I go get us some weapons.\n<wait>	v005		reads: 扱えそうな物で、なるべく強力な物を選んでくる。\nふたりは、ここで待っていてくれ。\n<wait>; reads: 隊長！　扉の溶接終わりました！\n<wait>
+m/MS0057.BIN	0:00	134	4741	1FD0	{08:00}{08:62}武器庫の奥へと消えて行{08:51}。\n<wait>		Having said that, Hayasaka disappears into the back of the armoury.\n<wait>	v005		reads: 早坂は、武器庫の奥へと消えて行った。\n<wait>; reads: ニュートン：
+m/MS0057.BIN	0:00	135	4804	1FC4	奥の方{08:42}{08:62}何やら荒っぽく、物をひっかき廻す音が{08:8E}。\n{08:03}と		You can hear all sorts of rumblings and noises as he goes through\nthe shelves in search of gear for you to use. At this point, making\nsure that things stay organized is no longer a priority, it seems.\n<wait>	v005		reads: 奥の方からは、何やら荒っぽく、物をひっかき廻す音がする。\n英美と
+m/MS0057.BIN	0:00	136	4863	00	{04:FF}{08:62}{08:00}が戻るのを待{08:51}。\n<wait>					reads: は、早坂が戻るのを待った。\n<wait>; reads: 西野：
+m/MS0057.BIN	0:00	137	4921	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: よし、御苦労だった！\n皆受け取れ、新しい武器だ。今すぐ装備しろ！\n<wait>
+m/MS0057.BIN	0:00	138	4927	1FD3	待たせたな！\nまあ、大体{08:73}モンが精一杯{08:52}とこだな。\n<wait>		Alright. These should do the trick.\n<wait>	v005		reads: 待たせたな！\nまあ、大体こんなモンが精一杯ってとこだな。\n<wait>; reads: 西野：
+m/MS0057.BIN	0:00	139	4985	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 装備が整い次第、ゾンビの駆逐にかかるからな！\n<wait>
+m/MS0057.BIN	0:00	140	4991	1FD3	さ、と{08:53}と装備{08:4A}しちまおう！\n<wait>		Go ahead, take them.\n<wait>	v005		reads: さ、とっとと装備してしちまおう！\n<wait>
+m/MS0057.BIN	0:00	141	5035	00	{04:FF}達{08:62}黙々と装備を整{08:41}。\n<wait>		You take the weapons Hayasaka gives you.\n<wait>	v005		reads: 達は、黙々と装備を整えた。\n<wait>
+m/MS0057.BIN	0:00	142	5068	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 一同は、西野から渡された新しい武器を装備した。\n
+m/MS0057.BIN	0:00	143	5074	1FD3	さ、行くか。\n<wait>		Let's get going then. We have no time to waste.\n<wait>	v005		reads: 早坂：
+m/MS0057.BIN	0:00	144	5113	1FD0	{08:5C}、{08:63}達の扱えそうな武器は{08:25}{02:08}\n{08:4D}に、{08:48}以上持{08:52}行くと行動に支障が出る{08:8C}。\n<wait>		I think we got everything we need already.\nPlus, there's only so much that we can realistically carry.\n<wait>	v005		reads: もう、自分達の扱えそうな武器はない‥‥‥\nそれに、これ以上持って行くと行動に支障が出るだろう。\n<wait>; reads: 扱えそうな物で、なるべく強力な物を選んでくる。\nふたりは、ここで待っていてくれ。\n<wait>
+m/MS0057.BIN	0:00	145	5197	00	{04:FF}は武器庫を後に{08:4B}。\n		You leave the armory behind.\n	v005		reads: は武器庫を後にした。\n; reads: 早坂は、武器庫の奥へと消えて行った。\n<wait>
+m/MS0057.BIN	0:00	146	5255	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 奥の方からは、何やら荒っぽく、物をひっかき廻す音がする。\n英美と
+m/MS0057.BIN	0:00	147	5261	1FD3	{08:5C}、{01:16}達の扱えそうな物{08:52}{08:25}よ。\n{08:4D}に、{08:48}以上持っ{08:50}荷物に{08:59}{08:74}{08:8A}さ。\n<wait>		I think we got everything we need already.\nPlus, there's only so much that we can realistically carry.\n<wait>	v005		reads: もう、あたし達の扱えそうな物ってないよ。\nそれに、これ以上持ったら荷物になるだけだしさ。\n<wait>; reads: は、早坂が戻るのを待った。\n<wait>
+m/MS0057.BIN	0:00	148	5364	1FD0	{01:03}は武器庫を訪れ、脱出に備えて		Newton drops by the armory and upgrades Katsuragi's gear.\n	v005		reads: ニュートンは武器庫を訪れ、脱出に備えて; reads: 早坂：
+m/MS0057.BIN	0:00	149	5398	00	{04:FF}の武装を交換{08:4B}。\n					reads: の武装を交換した。\n; reads: 待たせたな！\nまあ、大体こんなモンが精一杯ってとこだな。\n<wait>
+m/MS0057.BIN	0:00	150	5439	1F81	{04:FF}	{04:FF}				reads: ; reads: 早坂：
+m/MS0057.BIN	0:00	151	5490	1F83	{03:00}	{03:00}				reads: 飛び道具; reads: さ、とっとと装備してしちまおう！\n<wait>
+m/MS0057.BIN	0:00	152	5504	1F80	ﾇれ{08:74}、{08:10}の外をさま{08:69}事に{08:59}か分{08:42}{08:25}{08:77}。\n{08:47}弾丸が無ければ、銃を使う事は出来{08:25}。\n<wait>		 don't know how long you're going to spend outside.\nYou need these bullets to be able to fire your gun.\n<wait>	v005		reads: ﾇれだけ、シェルターの外をさまよう事になるか分からないのだ。\nこの弾丸が無ければ、銃を使う事は出来ない。\n<wait>; reads: 達は、黙々と装備を整えた。\n<wait>
+m/MS0057.BIN	0:00	153	5589	1FBA	用心に越{08:4B}{08:46}は無い{08:8C}{02:08}\n<wait>		Like they say, there's no such thing as too careful.\n<wait>	v005		reads: 用心に越したことは無いだろう‥‥‥\n<wait>; reads: 早坂：
+m/MS0057.BIN	0:00	154	5618	1FBA	{01:03}{08:62}荷物の整理にか{08:18}。\n<wait>		Newton ends up bagging his bags full.\n<wait>	v005		reads: ニュートンは、荷物の整理にかかった。\n<wait>
+m/MS0057.BIN	0:00	155	5693	1F83	{03:00}	{03:00}				reads: 飛び道具; reads: もう、自分達の扱えそうな武器はない‥‥‥\nそれに、これ以上持って行くと行動に支障が出るだろう。\n<wait>
+m/MS0057.BIN	0:00	156	5707	1F80	ﾇれ{08:74}、{08:10}の外をさま{08:69}事に{08:59}か分{08:42}{08:25}{08:77}。\n{08:47}カートリッジが無ければ、{08:63}の銃を使う事は出来{08:25}。\n<wait>		 don't know how long you're going to spend outside.\nYou need these cartridges to be able to fire your gun.\n<wait>	v005		reads: ﾇれだけ、シェルターの外をさまよう事になるか分からないのだ。\nこのカートリッジが無ければ、自分の銃を使う事は出来ない。\n<wait>; reads: は武器庫を後にした。\n
+m/MS0057.BIN	0:00	157	5804	1FBA	用心に越{08:4B}{08:46}は無い{08:8C}{02:08}\n<wait>		Like they say, there's no such thing as too careful.\n<wait>	v005		reads: 用心に越したことは無いだろう‥‥‥\n<wait>; reads: 英美：
+m/MS0057.BIN	0:00	158	5833	1FBA	{01:03}{08:62}荷物の整理にか{08:18}。\n<wait>		Newton ends up bagging his bags full.\n<wait>	v005		reads: ニュートンは、荷物の整理にかかった。\n<wait>; reads: もう、あたし達の扱えそうな物ってないよ。\nそれに、これ以上持ったら荷物になるだけだしさ。\n<wait>
+m/MS0057.BIN	0:00	159	5884	00	{04:FF}は武器庫を訪{08:60}。\n<wait>					reads: は武器庫を訪れた。\n<wait>; reads: ニュートンは武器庫を訪れ、脱出に備えて
+m/MS0057.BIN	0:00	160	5909	1FBA	行動に支障が{08:25}最低限{08:71}{08:62}持{08:52}行く事にし{08:69}{08:72}\n<wait>そう頭の中で言い聞かせ、					reads: 行動に支障がない最低限までは、持って行く事にしよう‥‥\n<wait>そう頭の中で言い聞かせ、; reads: の武装を交換した。\n
+m/MS0057.BIN	0:00	161	5984	00	{04:FF}は武器の調達にか{08:18}。\n<wait>	{04:FF}は武器の調達にか{08:18}。\n<wait>				reads: は武器の調達にかかった。\n<wait>
+m/MS0057.BIN	0:00	162	6013	1FBA	積み重{08:59}箱を広げ、中身を物色し、操作手順を確認{08:8E}。\n<wait>	積み重{08:59}箱を広げ、中身を物色し、操作手順を確認{08:8E}。\n<wait>	You decide to bring with you just enough gear\nas not to hinder you.\n<wait>With that, you move on to gathering weapons.\n<wait>	v005		reads: 積み重なる箱を広げ、中身を物色し、操作手順を確認する。\n<wait>; reads: 飛び道具
+m/MS0057.BIN	0:00	163	6070	1FBA	色々と悩{08:5F}末、		You pick up a number of crates, pry them open,\nand cull out their contents.\n<wait>	v005		reads: 色々と悩んだ末、; reads: ﾇれだけ、シェルターの外をさまよう事になるか分からないのだ。\nこの弾丸が無ければ、銃を使う事は出来ない。\n<wait>
+m/MS0057.BIN	0:00	164	6088	00	{04:FF}{08:62}{08:63}が扱えそうな武器類をカウンターの上に並べた。\n<wait>		After a while, you end up with a decent selection of different weapons\nresting on the counter.\n<wait>	v005		reads: は、自分が扱えそうな武器類をカウンターの上に並べた。\n<wait>; reads: 用心に越したことは無いだろう‥‥‥\n<wait>
+m/MS0057.BIN	0:00	165	6150	1FD0	武器を選び終{08:41}		Having picked up the one you like the most,\nyou at last leave the armoury behind.\n<wait>	v005		reads: 武器を選び終えた; reads: ニュートンは、荷物の整理にかかった。\n<wait>
+m/MS0057.BIN	0:00	166	6168	00	{04:FF}{08:62}武器庫を後に{08:4B}。\n<wait>	{04:FF}{08:62}武器庫を後に{08:4B}。\n<wait>				reads: は、武器庫を後にした。\n<wait>; reads: 飛び道具
+m/MS0057.BIN	0:00	167	6200	1FD0	{08:5C}、{03:06}扱えそうな物は残{03:0C}ては{08:24}{02:08}。\n<wait>そう思い改めた		There's nothing here left for you...\n<wait>With that, you leave the armoury behind.\n<wait>	v005		reads: もう、自分に扱えそうな物は残されてはいない‥‥‥。\n<wait>そう思い改めた; reads: ﾇれだけ、シェルターの外をさまよう事になるか分からないのだ。\nこのカートリッジが無ければ、自分の銃を使う事は出来ない。\n<wait>
+m/MS0057.BIN	0:00	168	6257	00	{04:FF}{08:62}武器庫を後に{08:4B}。\n<wait>					reads: は、武器庫を後にした。\n<wait>; reads: 用心に越したことは無いだろう‥‥‥\n<wait>
 m/MS0057.BIN	0:01	0	2	1FD2	オヤジ：		Old Man:	v005		
 m/MS0057.BIN	0:01	1	12	1FD3	{02:08}お前さんの携帯許可が出{08:2B}武器は{08:72}		The weapons you have been authorized to use... 	v005		reads: ‥‥‥お前さんの携帯許可が出てる武器は‥‥
 m/MS0057.BIN	0:01	2	114	1F80	{03:15}	{03:15}				reads: 
@@ -200,18 +189,8 @@ m/MS0057.BIN	0:01	13	631	1FD2	オヤジ：		Old Man:	v005
 m/MS0057.BIN	0:01	14	641	1FD3	{08:76}他に必要な物は{08:7B}か？\n		Is there anything else you need?\n	v005		reads: まだ他に必要な物はあるか？\n
 m/MS0057.BIN	0:01	15	680	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
 m/MS0057.BIN	0:01	16	684	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
-m/MS0057.BIN	0:01	17	700	0F	{01:01}	{01:01}				reads: 山瀬勇
-m/MS0057.BIN	0:01	18	703	00						
-m/MS0057.BIN	0:02	0	9	1F19	{01:19}	{01:19}				reads: われわれ
-m/MS0057.BIN	0:02	1	12	00	{02:01}7	{02:01}7				reads: ペンタグランマ7
-m/MS0057.BIN	0:02	2	16	00	{03:01}d	{03:01}d				reads: そんなことd
-m/MS0057.BIN	0:02	3	20	00	{04:01}`	{04:01}`	{04:01}a	v005		reads: 切り`
-m/MS0057.BIN	0:02	4	24	00	{05:01}\\	{05:01}\\				reads: 飛び道具\\
-m/MS0057.BIN	0:02	5	28	00	{06:01}X	{06:01}X				reads: X
-m/MS0057.BIN	0:02	6	32	00	{07:01}T	{07:01}T				reads: ＞何をしますか？T
-m/MS0057.BIN	0:02	7	36	00						
-m/MS0057.BIN	0:02	8	40	1B	装備名		Weapon:	v005		
-m/MS0057.BIN	0:02	9	91	1F01	{03:18}	{03:18}				reads: 
+m/MS0057.BIN	0:02	0	40	1B	装備名	装備名	Weapon:	v005		reads: われわれ
+m/MS0057.BIN	0:02	1	91	1F01	{03:18}	{03:18}				reads: ; reads: ペンタグランマ7 @rebase-unmatched idx3 en={04:01}a
 m/MS0057.BIN	0:03	0	22	1F81	{04:FF}	{04:FF}				reads: 
 m/MS0057.BIN	0:03	1	86	1F81	{04:FE}	{04:FE}				reads: 
 m/MS0057.BIN	0:03	2	156	1F81	{04:FC}	{04:FC}				reads: 
@@ -236,16 +215,14 @@ m/MS0057.BIN	0:04	8	531	1F81	{04:F9}	{04:F9}				reads:
 m/MS0057.BIN	0:05	0	2	1FD0	{08:6D}武器を装備し{08:15}\n		Which weapon would you like to equip?\n	v005		reads: どの武器を装備しますか？\n
 m/MS0057.BIN	0:05	1	37	1FB2	ウージー		Uzi	v005		menu option, declared width 20 columns
 m/MS0057.BIN	0:05	2	47	1FB2	モスバーグＭ５００		Mossberg 500	v005		menu option, declared width 20 columns
-m/MS0057.BIN	0:05	3	79	0F	{01:CE}	{01:CE}				reads: 
-m/MS0057.BIN	0:05	4	82	00						
-m/MS0057.BIN	0:05	5	128	1F83	{03:00}	{03:00}				reads: 飛び道具
-m/MS0057.BIN	0:05	6	142	1F80	n上に行く{08:71}にも、かなりの数の{08:0B}が{08:40}{08:8C}。\n{08:4D}に、地上に出て{08:42}も、決{08:4A}安心は出来{08:25}{08:77}{02:08}\n<wait>		're almost certainly going to encounter a number of demons\nas you enter the surface.\n<wait>	v005		reads: n上に行くまでにも、かなりの数の悪魔がいるだろう。\nそれに、地上に出てからも、決して安心は出来ないのだ‥‥‥\n<wait>
-m/MS0057.BIN	0:05	7	231	1FBA	弾丸は出来る{08:74}持{08:52}いく事にし{08:69}{02:08}\n<wait>		You should bring as many bullets as you're able to.\n<wait>	v005		reads: 弾丸は出来るだけ持っていく事にしよう‥‥‥\n<wait>
-m/MS0057.BIN	0:05	8	333	1F83	{03:00}	{03:00}				reads: 飛び道具
-m/MS0057.BIN	0:05	9	347	1F80	n上に行く{08:71}にも、かなりの数の{08:0B}が{08:40}{08:8C}。\n{08:4D}に、地上に出て{08:42}も、決{08:4A}安心は出来{08:25}{08:77}{02:08}\n<wait>		're almost certainly going to encounter a number of demons\nas you enter the surface.\n<wait>	v005		reads: n上に行くまでにも、かなりの数の悪魔がいるだろう。\nそれに、地上に出てからも、決して安心は出来ないのだ‥‥‥\n<wait>
-m/MS0057.BIN	0:05	10	436	1FBA	弾丸は出来る{08:74}持{08:52}いく事にし{08:69}{02:08}\n<wait>		You should bring as many bullets as you're able to.\n<wait>	v005		reads: 弾丸は出来るだけ持っていく事にしよう‥‥‥\n<wait>
-m/MS0057.BIN	0:05	11	522	1F01	{03:18}を装備{08:4B}。\n					reads: を装備した。\n
-m/MS0057.BIN	0:05	12	585	1F83	{03:00}	{03:00}				reads: 飛び道具
-m/MS0057.BIN	0:05	13	599	1F80	ﾇれ{08:74}、{08:10}の外をさま{08:69}事に{08:59}か分{08:42}{08:25}{08:77}。\n{08:47}カートリッジが無ければ、{01:03}は銃を使え{08:25}。\n<wait>		 don't know how long you're going to spend outside.\nNewton needs these cartridges to be able to fire his gun.\n<wait>	v005		reads: ﾇれだけ、シェルターの外をさまよう事になるか分からないのだ。\nこのカートリッジが無ければ、ニュートンは銃を使えない。\n<wait>
-m/MS0057.BIN	0:05	14	688	1FBA	用心に越{08:4B}{08:46}は無い{08:8C}{02:08}\n<wait>		Like they say, there's no such thing as too careful.\n<wait>	v005		reads: 用心に越したことは無いだろう‥‥‥\n<wait>
-m/MS0057.BIN	0:05	15	721	00	{04:FF}{08:62}荷物の整理にか{08:18}。\n<wait>		You end up packing your bags full.\n<wait>	v005		reads: は、荷物の整理にかかった。\n<wait>
+m/MS0057.BIN	0:05	3	128	1F83	{03:00}	{03:00}				reads: 飛び道具
+m/MS0057.BIN	0:05	4	142	1F80	n上に行く{08:71}にも、かなりの数の{08:0B}が{08:40}{08:8C}。\n{08:4D}に、地上に出て{08:42}も、決{08:4A}安心は出来{08:25}{08:77}{02:08}\n<wait>	n上に行く{08:71}にも、かなりの数の{08:0B}が{08:40}{08:8C}。\n{08:4D}に、地上に出て{08:42}も、決{08:4A}安心は出来{08:25}{08:77}{02:08}\n<wait>	're almost certainly going to encounter a number of demons\nas you enter the surface.\n<wait>	v005		reads: n上に行くまでにも、かなりの数の悪魔がいるだろう。\nそれに、地上に出てからも、決して安心は出来ないのだ‥‥‥\n<wait>
+m/MS0057.BIN	0:05	5	231	1FBA	弾丸は出来る{08:74}持{08:52}いく事にし{08:69}{02:08}\n<wait>	弾丸は出来る{08:74}持{08:52}いく事にし{08:69}{02:08}\n<wait>	You should bring as many bullets as you're able to.\n<wait>	v005		reads: 弾丸は出来るだけ持っていく事にしよう‥‥‥\n<wait>; reads: 飛び道具
+m/MS0057.BIN	0:05	6	333	1F83	{03:00}	{03:00}				reads: 飛び道具; reads: n上に行くまでにも、かなりの数の悪魔がいるだろう。\nそれに、地上に出てからも、決して安心は出来ないのだ‥‥‥\n<wait>
+m/MS0057.BIN	0:05	7	347	1F80	n上に行く{08:71}にも、かなりの数の{08:0B}が{08:40}{08:8C}。\n{08:4D}に、地上に出て{08:42}も、決{08:4A}安心は出来{08:25}{08:77}{02:08}\n<wait>		're almost certainly going to encounter a number of demons\nas you enter the surface.\n<wait>	v005		reads: n上に行くまでにも、かなりの数の悪魔がいるだろう。\nそれに、地上に出てからも、決して安心は出来ないのだ‥‥‥\n<wait>; reads: 弾丸は出来るだけ持っていく事にしよう‥‥‥\n<wait>
+m/MS0057.BIN	0:05	8	436	1FBA	弾丸は出来る{08:74}持{08:52}いく事にし{08:69}{02:08}\n<wait>	弾丸は出来る{08:74}持{08:52}いく事にし{08:69}{02:08}\n<wait>	You should bring as many bullets as you're able to.\n<wait>	v005		reads: 弾丸は出来るだけ持っていく事にしよう‥‥‥\n<wait>; reads: 飛び道具
+m/MS0057.BIN	0:05	9	522	1F01	{03:18}を装備{08:4B}。\n					reads: を装備した。\n; reads: n上に行くまでにも、かなりの数の悪魔がいるだろう。\nそれに、地上に出てからも、決して安心は出来ないのだ‥‥‥\n<wait>
+m/MS0057.BIN	0:05	10	585	1F83	{03:00}	{03:00}				reads: 飛び道具; reads: 弾丸は出来るだけ持っていく事にしよう‥‥‥\n<wait>
+m/MS0057.BIN	0:05	11	599	1F80	ﾇれ{08:74}、{08:10}の外をさま{08:69}事に{08:59}か分{08:42}{08:25}{08:77}。\n{08:47}カートリッジが無ければ、{01:03}は銃を使え{08:25}。\n<wait>		 don't know how long you're going to spend outside.\nNewton needs these cartridges to be able to fire his gun.\n<wait>	v005		reads: ﾇれだけ、シェルターの外をさまよう事になるか分からないのだ。\nこのカートリッジが無ければ、ニュートンは銃を使えない。\n<wait>; reads: を装備した。\n
+m/MS0057.BIN	0:05	12	688	1FBA	用心に越{08:4B}{08:46}は無い{08:8C}{02:08}\n<wait>	用心に越{08:4B}{08:46}は無い{08:8C}{02:08}\n<wait>	Like they say, there's no such thing as too careful.\n<wait>	v005		reads: 用心に越したことは無いだろう‥‥‥\n<wait>; reads: 飛び道具
+m/MS0057.BIN	0:05	13	721	00	{04:FF}{08:62}荷物の整理にか{08:18}。\n<wait>		You end up packing your bags full.\n<wait>	v005		reads: は、荷物の整理にかかった。\n<wait>; reads: ﾇれだけ、シェルターの外をさまよう事になるか分からないのだ。\nこのカートリッジが無ければ、ニュートンは銃を使えない。\n<wait>

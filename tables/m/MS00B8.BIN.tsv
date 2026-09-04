@@ -3,19 +3,12 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS00B8.BIN	0:02	0	0	UNTILED	ｸ / ｸ / ｸ / ｸ / ｸ / ｸ / 					@noedit; @untiled; record does not tile (u8 operand past end of record at 0x1E); read-only, copied verbatim
-m/MS00B8.BIN	0:03	0	9	1F19	{01:26}	{01:26}				reads: ＮＯ
-m/MS00B8.BIN	0:03	1	12	00	{02:01};	{02:01};				reads: ペンタグランマ;
-m/MS00B8.BIN	0:03	2	16	00	{03:01}J	{03:01}J				reads: そんなことJ
-m/MS00B8.BIN	0:03	3	20	00	{04:01}[	{04:01}[				reads: 切り[
-m/MS00B8.BIN	0:03	4	24	00	{05:01}j	{05:01}j				reads: 飛び道具j
-m/MS00B8.BIN	0:03	5	28	00						
-m/MS00B8.BIN	0:03	6	30	1B	バーテン		Bartender	v005		
-m/MS00B8.BIN	0:03	7	51	1B	サイバーな男		Cyber Man	v005		
-m/MS00B8.BIN	0:03	8	76	1B	若い男		Young Man	v005		
-m/MS00B8.BIN	0:03	9	95	1B	{08:0B}人娼婦		Prostitute	v005		reads: 悪魔人娼婦
-m/MS00B8.BIN	0:03	10	116	1B	おやじ		Old Man	v005		
-m/MS00B8.BIN	0:03	11	135	1B	老人		Elder	v005		
+m/MS00B8.BIN	0:03	0	30	1B	バーテン	バーテン	Bartender	v005		reads: ＮＯ
+m/MS00B8.BIN	0:03	1	51	1B	サイバーな男	サイバーな男	Cyber Man	v005		reads: ペンタグランマ;
+m/MS00B8.BIN	0:03	2	76	1B	若い男	若い男	Young Man	v005		reads: そんなことJ
+m/MS00B8.BIN	0:03	3	95	1B	{08:0B}人娼婦	{08:0B}人娼婦	Prostitute	v005		reads: 悪魔人娼婦; reads: 切り[
+m/MS00B8.BIN	0:03	4	116	1B	おやじ	おやじ	Old Man	v005		reads: 飛び道具j
+m/MS00B8.BIN	0:03	5	135	1B	老人	老人	Elder	v005		
 m/MS00B8.BIN	0:04	0	4	1FD2	バーテン：		Bartender:	v005		
 m/MS00B8.BIN	0:04	1	21	09	あのイポスを倒す{08:6A}て、一体誰{08:6A}で{08:80}ね？\n<wait>		Someone took down Ipos, but who?\n<wait>	v005		reads: あのイポスを倒すなんて、一体誰なんでしょうね？\n<wait>
 m/MS00B8.BIN	0:04	2	68	1FD2	バーテン：		Bartender:	v005		

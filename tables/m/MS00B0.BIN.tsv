@@ -3,26 +3,13 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS00B0.BIN	0:02	0	10	00	ｰ{05:02}		{05:02}	ours		reads: ｰ切り
-m/MS00B0.BIN	0:02	1	14	00	ｰ{06:03}		{06:03}	ours		reads: ｰ
-m/MS00B0.BIN	0:02	2	18	00	ｰ{07:04}		{07:04}	ours		reads: ｰ＞攻撃しますか？
-m/MS00B0.BIN	0:02	3	22	00	ｰ{08:05}		{08:05}	ours		reads: ｰコンピュータ
-m/MS00B0.BIN	0:02	4	26	00	ｰ					
-m/MS00B0.BIN	0:02	5	32	09						
-m/MS00B0.BIN	0:03	0	9	1F19	{01:2A}	{01:2A}				reads: ありがとう
-m/MS00B0.BIN	0:03	1	12	00	{02:01}5	{02:01}5				reads: ペンタグランマ5
-m/MS00B0.BIN	0:03	2	16	00	{03:01}B	{03:01}B				reads: そんなことB
-m/MS00B0.BIN	0:03	3	20	00	{04:01}O	{04:01}O				reads: 切りO
-m/MS00B0.BIN	0:03	4	24	00	{05:01}^	{05:01}^	{05:01}r	v005		reads: 飛び道具^
-m/MS00B0.BIN	0:03	5	28	00	{06:01}k	{06:01}k				reads: k
-m/MS00B0.BIN	0:03	6	32	00						
-m/MS00B0.BIN	0:03	7	34	1B	バーテン		Bartender	v005		
-m/MS00B0.BIN	0:03	8	55	1B	{02:03}	{02:03}	R.Soldier	v005		reads: レジスタンス
-m/MS00B0.BIN	0:03	9	70	1B	娼婦		Prostitute	v005		
-m/MS00B0.BIN	0:03	10	87	1B	{08:0B}人		Cambion	v005		reads: 悪魔人
-m/MS00B0.BIN	0:03	11	104	1B	若い男		Young Man	v005		
-m/MS00B0.BIN	0:03	12	123	1B	男性		Man	v005		
-m/MS00B0.BIN	0:03	13	140	1B	女性		Woman	v005		
+m/MS00B0.BIN	0:03	0	34	1B	バーテン	バーテン	Bartender	v005		reads: ありがとう
+m/MS00B0.BIN	0:03	1	55	1B	{02:03}	{02:03}	R.Soldier	v005		reads: レジスタンス; reads: ペンタグランマ5
+m/MS00B0.BIN	0:03	2	70	1B	娼婦	娼婦	Prostitute	v005		reads: そんなことB
+m/MS00B0.BIN	0:03	3	87	1B	{08:0B}人	{08:0B}人	Cambion	v005		reads: 悪魔人; reads: 切りO
+m/MS00B0.BIN	0:03	4	104	1B	若い男	若い男	Young Man	v005		reads: 飛び道具^ @rebase-unmatched idx4 en={05:01}r
+m/MS00B0.BIN	0:03	5	123	1B	男性	男性	Man	v005		reads: k
+m/MS00B0.BIN	0:03	6	140	1B	女性	女性	Woman	v005		
 m/MS00B0.BIN	0:04	0	4	1FD2	バーテン：		Bartender:	v005		
 m/MS00B0.BIN	0:04	1	21	09	やあ、いらっしゃい{08:72}\n<wait>		Welcome to our bar.\n<wait>	v005		reads: やあ、いらっしゃい‥‥\n<wait>
 m/MS00B0.BIN	0:04	2	50	1FD2	バーテン：		Bartender:	v005		

@@ -3,11 +3,8 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS6015.BIN	1:03	0	7	00	{=E1}{=02}	{=E1}{=02}				
 m/MS6015.BIN	1:02	0	53	1FB2	事実を告げる		Tell the Truth	ours		menu option, declared width 20 columns
 m/MS6015.BIN	1:02	1	67	1FB2	適当にごまかす		Make an Excuse	ours		menu option, declared width 20 columns
-m/MS6015.BIN	1:02	2	95	0F	{01:08}	{01:08}				reads: バエル
-m/MS6015.BIN	1:02	3	98	00						
 m/MS6015.BIN	1:99	0	0	DATA	{02:09}お前は{02:09}		...You are...	ours		reads: ・・・お前は・・・
 m/MS6015.BIN	1:99	1	14	00	{04:FF}\n{02:09}だよな？\n<wait>		 {04:FF}\n...aren't you?\n<wait>	ours		reads: \n・・・だよな？\n<wait>
 m/MS6015.BIN	1:9A	0	0	DATA	オレを　オレを{08:47}呪縛{08:42}解き放{08:52}くれ！\n<wait>		Free me... free me from this curse!\n<wait>	ours		reads: オレを　オレをこの呪縛から解き放ってくれ！\n<wait>

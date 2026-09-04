@@ -3,25 +3,13 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS00B3.BIN	0:02	0	10	00	ｳ{05:02}		{05:02}	ours		reads: ｳ切り
-m/MS00B3.BIN	0:02	1	14	00	ｳ{06:03}		{06:03}	ours		reads: ｳ
-m/MS00B3.BIN	0:02	2	18	00	ｳ{07:04}		{07:04}	ours		reads: ｳ＞攻撃しますか？
-m/MS00B3.BIN	0:02	3	22	00	ｳ{08:05}		{08:05}	ours		reads: ｳコンピュータ
-m/MS00B3.BIN	0:02	4	26	00	ｳ					
-m/MS00B3.BIN	0:02	5	32	09						
-m/MS00B3.BIN	0:03	0	9	1F19	{01:2A}	{01:2A}				reads: ありがとう
-m/MS00B3.BIN	0:03	1	12	00	{02:01}?	{02:01}?				reads: ペンタグランマ?
-m/MS00B3.BIN	0:03	2	16	00	{03:01}N	{03:01}N				reads: そんなことN
-m/MS00B3.BIN	0:03	3	20	00	{04:01}c	{04:01}c				reads: 切りc
-m/MS00B3.BIN	0:03	4	24	00	{05:01}r	{05:01}r				reads: 飛び道具r
-m/MS00B3.BIN	0:03	5	28	00	{06:01}{=85}{=00}	{06:01}{=85}{=00}				reads: {=85}{=00}
-m/MS00B3.BIN	0:03	6	34	1B	バーテン		Bartender	v005		
-m/MS00B3.BIN	0:03	7	55	1B	サイバーな女		Cyber Woman	v005		
-m/MS00B3.BIN	0:03	8	80	1B	若い娘		Young Girl	v005		
-m/MS00B3.BIN	0:03	9	99	1B	サイバーな男		Cyber Man	v005		
-m/MS00B3.BIN	0:03	10	124	1B	若い男		Young Man	v005		
-m/MS00B3.BIN	0:03	11	143	1B	イカレタ男		Maniac	v005		
-m/MS00B3.BIN	0:03	12	166	1B	女戦士		Fem Warrior	v005		
+m/MS00B3.BIN	0:03	0	34	1B	バーテン	バーテン	Bartender	v005		reads: ありがとう
+m/MS00B3.BIN	0:03	1	55	1B	サイバーな女	サイバーな女	Cyber Woman	v005		reads: ペンタグランマ?
+m/MS00B3.BIN	0:03	2	80	1B	若い娘	若い娘	Young Girl	v005		reads: そんなことN
+m/MS00B3.BIN	0:03	3	99	1B	サイバーな男	サイバーな男	Cyber Man	v005		reads: 切りc
+m/MS00B3.BIN	0:03	4	124	1B	若い男	若い男	Young Man	v005		reads: 飛び道具r
+m/MS00B3.BIN	0:03	5	143	1B	イカレタ男	イカレタ男	Maniac	v005		reads: {=85}{=00}
+m/MS00B3.BIN	0:03	6	166	1B	女戦士		Fem Warrior	v005		
 m/MS00B3.BIN	0:04	0	4	1FD2	バーテン：		Bartender:	v005		
 m/MS00B3.BIN	0:04	1	16	1FD3	いらっしゃいませ！\nうちは、酒の安全性と、種類の豊富さが自慢なん{08:55}。\nどうぞ、楽しんで{08:52}下{08:49}よ！！\n<wait>		Welcome! We guarantee that our alcohol is both delicious\nand safe to drink. Please, have a seat.\n<wait>	v005		reads: いらっしゃいませ！\nうちは、酒の安全性と、種類の豊富さが自慢なんです。\nどうぞ、楽しんでって下さいよ！！\n<wait>
 m/MS00B3.BIN	0:05	0	4	1FD2	サイバーな女：		Cyber Woman:	v005		
@@ -44,26 +32,24 @@ m/MS00B3.BIN	0:07	0	4	1FD2	サイバーな男：		Cyber Man:	v005
 m/MS00B3.BIN	0:07	1	25	09	大手町には行{08:52}みたか？\n		You ever been to Ootemachi?\n	v005		reads: 大手町には行ってみたか？\n
 m/MS00B3.BIN	0:07	2	64	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
 m/MS00B3.BIN	0:07	3	68	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
-m/MS00B3.BIN	0:07	4	84	0F	{01:E2}	{01:E2}				reads: 
-m/MS00B3.BIN	0:07	5	87	00						
-m/MS00B3.BIN	0:07	6	92	1FD2	サイバーな男：		Cyber Man:	v005		
-m/MS00B3.BIN	0:07	7	108	1FD3	ミレニアム{08:52}のは、何だかすげぇ所だよな。\n<wait>		Those Millennium people are just something else.\n<wait>	v005		reads: ミレニアムってのは、何だかすげぇ所だよな。\n<wait>
-m/MS00B3.BIN	0:07	8	157	1FD2	サイバーな男：		Cyber Man:	v005		
-m/MS00B3.BIN	0:07	9	173	1FD3	俺のダチが{08:0B}にやられてよ、歩くのだ{08:52}駄目だ{08:52}\n状態んときにさ、あそ{08:47}メシア様に会{08:51}{08:5F}‥‥‥\nそ{08:4B}らさ、元通り歩い{08:29}様に{08:1A}帰{08:52}来た{08:5F}。\n<wait>		A buddy of mine lost my legs fighting the demons.\nHowever, after meeting the Messiah, he became able to walk once more.\n<wait>	v005		reads: 俺のダチが悪魔にやられてよ、歩くのだって駄目だって\n状態んときにさ、あそこのメシア様に会ったんだ‥‥‥\nそしたらさ、元通り歩いける様になって帰って来たんだ。\n<wait>
-m/MS00B3.BIN	0:07	10	317	1FD2	サイバーな男：		Cyber Man:	v005		
-m/MS00B3.BIN	0:07	11	333	1FD3	あそこはすげぇらしいぜ！\nマイトレーヤとかいうメシアを中心に{08:4B}、すんげぇ施設が\n建っ{08:2B}{08:5F}{08:52}よ。\n<wait>		You definitely should!\nThere's this organization there led by a Messiah named of Maitreya.\n<wait>	v005		reads: あそこはすげぇらしいぜ！\nマイトレーヤとかいうメシアを中心にした、すんげぇ施設が\n建ってるんだってよ。\n<wait>
-m/MS00B3.BIN	0:07	12	434	1FD2	サイバーな男：		Cyber Man:	v005		
-m/MS00B3.BIN	0:07	13	450	1FD3	俺のダチが{08:0B}にやられてよ、歩くのだ{08:52}駄目だ{08:52}\n状態んときにさ、あそ{08:47}メシア様に会{08:51}{08:5F}‥‥‥\nそ{08:4B}らさ、元通り歩い{08:29}様に{08:1A}帰{08:52}来たのさ。\n<wait>		A buddy of mine lost my legs fighting the demons.\nHowever, after meeting him, he became able to walk once more.\n<wait>	v005		reads: 俺のダチが悪魔にやられてよ、歩くのだって駄目だって\n状態んときにさ、あそこのメシア様に会ったんだ‥‥‥\nそしたらさ、元通り歩いける様になって帰って来たのさ。\n<wait>
-m/MS00B3.BIN	0:07	14	591	1FD2	サイバーな男：		Cyber Man:	v005		
-m/MS00B3.BIN	0:07	15	607	1FD3	さすがに驚いたぜ！　だがマジもんよ！！\n		I know it sounds unbelievable, but it really happened!\n	v005		
-m/MS00B3.BIN	0:07	16	654	09	俺のダチがさ、あの大手町のミレニアム{08:42}帰{08:52}こ{08:25}{08:5F}。\nメシア様の御世話を{08:4C}か言{08:52}さ。\n<wait>		My buddy refuses to leave the Millennium base in Ootemachi.\nSomething about him feeling indebted to their Messiah.\n<wait>	v005		reads: 俺のダチがさ、あの大手町のミレニアムから帰ってこないんだ。\nメシア様の御世話をするとか言ってさ。\n<wait>
-m/MS00B3.BIN	0:07	17	744	1FD2	サイバーな男：		Cyber Man:	v005		
-m/MS00B3.BIN	0:07	18	760	1FD3	なのによ、ジャンク屋に行っ{08:50}さ、\nヤツ自慢のサイバーアームが売られてんのよ。\n<wait>		You know what's weird? I went to this random junk store,\nand saw his beloved cyber arm on sale.\n<wait>	v005		reads: なのによ、ジャンク屋に行ったらさ、\nヤツ自慢のサイバーアームが売られてんのよ。\n<wait>
-m/MS00B3.BIN	0:07	19	844	1FD2	サイバーな男：		Cyber Man:	v005		
-m/MS00B3.BIN	0:07	20	860	1FD3	上野の店でだぜぇ！\n<wait>		This was in Ueno!\n<wait>	v005		
-m/MS00B3.BIN	0:07	21	887	1FD2	サイバーな男：		Cyber Man:	v005		
-m/MS00B3.BIN	0:07	22	903	1FD3	なーんか、ヤな感じがする{08:5F}‥‥‥\n		Something's definitely up there...\n	v005		reads: なーんか、ヤな感じがするんだ‥‥‥\n
-m/MS00B3.BIN	0:07	23	939	18	上野はバール兵でいっぱいだ。\n悪い事言わねぇ、上野には無闇に近づかねぇ方が身の為だぜ！\n<wait>		Ueno is swarming with Baal soldiers.\nIf I were you, I'd keep the hell away from there!\n<wait>	v005		
+m/MS00B3.BIN	0:07	4	92	1FD2	サイバーな男：	サイバーな男：	Cyber Man:	v005		reads: 
+m/MS00B3.BIN	0:07	5	108	1FD3	ミレニアム{08:52}のは、何だかすげぇ所だよな。\n<wait>	ミレニアム{08:52}のは、何だかすげぇ所だよな。\n<wait>	Those Millennium people are just something else.\n<wait>	v005		reads: ミレニアムってのは、何だかすげぇ所だよな。\n<wait>
+m/MS00B3.BIN	0:07	6	157	1FD2	サイバーな男：		Cyber Man:	v005		
+m/MS00B3.BIN	0:07	7	173	1FD3	俺のダチが{08:0B}にやられてよ、歩くのだ{08:52}駄目だ{08:52}\n状態んときにさ、あそ{08:47}メシア様に会{08:51}{08:5F}‥‥‥\nそ{08:4B}らさ、元通り歩い{08:29}様に{08:1A}帰{08:52}来た{08:5F}。\n<wait>		A buddy of mine lost my legs fighting the demons.\nHowever, after meeting the Messiah, he became able to walk once more.\n<wait>	v005		reads: 俺のダチが悪魔にやられてよ、歩くのだって駄目だって\n状態んときにさ、あそこのメシア様に会ったんだ‥‥‥\nそしたらさ、元通り歩いける様になって帰って来たんだ。\n<wait>; reads: ミレニアムってのは、何だかすげぇ所だよな。\n<wait>
+m/MS00B3.BIN	0:07	8	317	1FD2	サイバーな男：		Cyber Man:	v005		
+m/MS00B3.BIN	0:07	9	333	1FD3	あそこはすげぇらしいぜ！\nマイトレーヤとかいうメシアを中心に{08:4B}、すんげぇ施設が\n建っ{08:2B}{08:5F}{08:52}よ。\n<wait>		You definitely should!\nThere's this organization there led by a Messiah named of Maitreya.\n<wait>	v005		reads: あそこはすげぇらしいぜ！\nマイトレーヤとかいうメシアを中心にした、すんげぇ施設が\n建ってるんだってよ。\n<wait>; reads: 俺のダチが悪魔にやられてよ、歩くのだって駄目だって\n状態んときにさ、あそこのメシア様に会ったんだ‥‥‥\nそしたらさ、元通り歩いける様になって帰って来たんだ。\n<wait>
+m/MS00B3.BIN	0:07	10	434	1FD2	サイバーな男：		Cyber Man:	v005		
+m/MS00B3.BIN	0:07	11	450	1FD3	俺のダチが{08:0B}にやられてよ、歩くのだ{08:52}駄目だ{08:52}\n状態んときにさ、あそ{08:47}メシア様に会{08:51}{08:5F}‥‥‥\nそ{08:4B}らさ、元通り歩い{08:29}様に{08:1A}帰{08:52}来たのさ。\n<wait>		A buddy of mine lost my legs fighting the demons.\nHowever, after meeting him, he became able to walk once more.\n<wait>	v005		reads: 俺のダチが悪魔にやられてよ、歩くのだって駄目だって\n状態んときにさ、あそこのメシア様に会ったんだ‥‥‥\nそしたらさ、元通り歩いける様になって帰って来たのさ。\n<wait>; reads: あそこはすげぇらしいぜ！\nマイトレーヤとかいうメシアを中心にした、すんげぇ施設が\n建ってるんだってよ。\n<wait>
+m/MS00B3.BIN	0:07	12	591	1FD2	サイバーな男：		Cyber Man:	v005		
+m/MS00B3.BIN	0:07	13	607	1FD3	さすがに驚いたぜ！　だがマジもんよ！！\n		I know it sounds unbelievable, but it really happened!\n	v005		reads: 俺のダチが悪魔にやられてよ、歩くのだって駄目だって\n状態んときにさ、あそこのメシア様に会ったんだ‥‥‥\nそしたらさ、元通り歩いける様になって帰って来たのさ。\n<wait>
+m/MS00B3.BIN	0:07	14	654	09	俺のダチがさ、あの大手町のミレニアム{08:42}帰{08:52}こ{08:25}{08:5F}。\nメシア様の御世話を{08:4C}か言{08:52}さ。\n<wait>		My buddy refuses to leave the Millennium base in Ootemachi.\nSomething about him feeling indebted to their Messiah.\n<wait>	v005		reads: 俺のダチがさ、あの大手町のミレニアムから帰ってこないんだ。\nメシア様の御世話をするとか言ってさ。\n<wait>
+m/MS00B3.BIN	0:07	15	744	1FD2	サイバーな男：		Cyber Man:	v005		
+m/MS00B3.BIN	0:07	16	760	1FD3	なのによ、ジャンク屋に行っ{08:50}さ、\nヤツ自慢のサイバーアームが売られてんのよ。\n<wait>		You know what's weird? I went to this random junk store,\nand saw his beloved cyber arm on sale.\n<wait>	v005		reads: なのによ、ジャンク屋に行ったらさ、\nヤツ自慢のサイバーアームが売られてんのよ。\n<wait>; reads: 俺のダチがさ、あの大手町のミレニアムから帰ってこないんだ。\nメシア様の御世話をするとか言ってさ。\n<wait>
+m/MS00B3.BIN	0:07	17	844	1FD2	サイバーな男：		Cyber Man:	v005		
+m/MS00B3.BIN	0:07	18	860	1FD3	上野の店でだぜぇ！\n<wait>		This was in Ueno!\n<wait>	v005		reads: なのによ、ジャンク屋に行ったらさ、\nヤツ自慢のサイバーアームが売られてんのよ。\n<wait>
+m/MS00B3.BIN	0:07	19	887	1FD2	サイバーな男：		Cyber Man:	v005		
+m/MS00B3.BIN	0:07	20	903	1FD3	なーんか、ヤな感じがする{08:5F}‥‥‥\n		Something's definitely up there...\n	v005		reads: なーんか、ヤな感じがするんだ‥‥‥\n
+m/MS00B3.BIN	0:07	21	939	18	上野はバール兵でいっぱいだ。\n悪い事言わねぇ、上野には無闇に近づかねぇ方が身の為だぜ！\n<wait>		Ueno is swarming with Baal soldiers.\nIf I were you, I'd keep the hell away from there!\n<wait>	v005		
 m/MS00B3.BIN	0:08	0	4	1FD2	若い男：		Young Man:	v005		
 m/MS00B3.BIN	0:08	1	19	09	新宿都庁に作られてた建物は、やはりバエル城だ{08:51}\n様{08:55}ね。\n<wait>		You've seen that new building in Shinjuku?\nThat's actually Baal's castle.\n<wait>	ours		reads: 新宿都庁に作られてた建物は、やはりバエル城だった\n様ですね。\n<wait>
 m/MS00B3.BIN	0:08	2	83	1FD2	若い男：		Young Man:	v005		

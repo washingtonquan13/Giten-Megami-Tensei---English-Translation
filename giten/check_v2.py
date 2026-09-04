@@ -276,6 +276,28 @@ def check_capture(report: Report, rows, root=None) -> None:
                     on = None
 
 
+def check_stale(report: Report, rows, root=None) -> None:
+    """(e) a row is addressed by span index, and its ``jp`` must still be what that
+    span reads in the source; otherwise the English would land on another line
+    (see :func:`build_v2.stale_rows`).  Rows that fail are errors and the builder
+    refuses them too; the fix is to re-extract and carry, never to hand-edit."""
+    from . import build_v2
+    by_file = {}
+    for r in rows:
+        if r.edited and r.tag != extract_v2.UNTILED_TAG and r.rec != extract_v2.PNAME_REC:
+            ci, _, rid = r.rec.partition(":")
+            try:
+                by_file.setdefault(r.file, {})[(int(ci), int(rid, 16), r.idx)] = r
+            except ValueError:
+                continue
+    for rel, keyed in by_file.items():
+        sc = script.parse(rel, files.read_source(rel, root))
+        if not sc.ok:
+            continue
+        for (ci, rid, idx), why in build_v2.stale_rows(sc, keyed):
+            report.add("stale", check.ERROR, "%s %d:%02X[%d]" % (rel, ci, rid, idx), why)
+
+
 RECORD_LIMIT = 0x7FFF
 
 
@@ -324,6 +346,7 @@ def run(root=None, text_dir=None, family="all", skip_identity=False,
     check_rows(report, rows, pool.load(root))
     check_capture(report, rows, root)
     check_record_size(report, rows, root)
+    check_stale(report, rows, root)
 
     st = None
     if verify:
