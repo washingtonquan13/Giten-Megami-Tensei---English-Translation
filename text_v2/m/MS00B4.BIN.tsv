@@ -3,8 +3,8 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	note
-m/MS00B4.BIN	0:02	0	10	00	ｴ{05:02}		reads: ｴ切り
-m/MS00B4.BIN	0:02	1	14	00	ｴ{06:FF}		reads: ｴ
+m/MS00B4.BIN	0:02	0	10	00	ｴ{05:02}	{05:02}	reads: ｴ切り
+m/MS00B4.BIN	0:02	1	14	00	ｴ{06:FF}	{06:FF}	reads: ｴ
 m/MS00B4.BIN	0:03	0	9	1F19	{01:1B}	{01:1B}	reads: パスワード
 m/MS00B4.BIN	0:03	1	12	00	{02:01}'	{02:01}'	reads: ペンタグランマ'
 m/MS00B4.BIN	0:03	2	16	00			

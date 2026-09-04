@@ -3,11 +3,11 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	note
-m/MS00B3.BIN	0:02	0	10	00	ｳ{05:02}		reads: ｳ切り
-m/MS00B3.BIN	0:02	1	14	00	ｳ{06:03}		reads: ｳ
-m/MS00B3.BIN	0:02	2	18	00	ｳ{07:04}		reads: ｳ＞攻撃しますか？
-m/MS00B3.BIN	0:02	3	22	00	ｳ{08:05}		reads: ｳコンピュータ
-m/MS00B3.BIN	0:02	4	26	00	ｳ		
+m/MS00B3.BIN	0:02	0	10	00	ｳ{05:02}	{05:02}	reads: ｳ切り
+m/MS00B3.BIN	0:02	1	14	00	ｳ{06:03}	{06:03}	reads: ｳ
+m/MS00B3.BIN	0:02	2	18	00	ｳ{07:04}	{07:04}	reads: ｳ＞攻撃しますか？
+m/MS00B3.BIN	0:02	3	22	00	ｳ{08:05}	{08:05}	reads: ｳコンピュータ
+m/MS00B3.BIN	0:02	4	26	00	ｳ		@skip isolated stray half-width kana glyph, no reads context, not readable Japanese
 m/MS00B3.BIN	0:02	5	32	09			
 m/MS00B3.BIN	0:03	0	9	1F19	{01:2B}	{01:2B}	reads: ゾンビ
 m/MS00B3.BIN	0:03	1	12	00	{02:01}?	{02:01}?	reads: ペンタグランマ?
@@ -75,9 +75,9 @@ m/MS00B3.BIN	0:08	7	363	1FD2	Young Man:	Young Man:
 m/MS00B3.BIN	0:08	8	375	1FD3	I'd keep away from there if I were you.\n	I'd keep away from there if I were you.\n	
 m/MS00B3.BIN	0:08	9	418	18	There's a group in Ootemachi calling themselves Millennium whose\nleader can perform miracles. Personally, I think that's some bullshit.\n<wait>	There's a group in Ootemachi calling themselves Millennium whose\nleader can perform miracles. Personally, I think that's some bullshit.\n<wait>	
 m/MS00B3.BIN	0:09	0	4	1FD2	Maniac:	Maniac:	
-m/MS00B3.BIN	0:09	1	18	09	‥‥‥は血に飢え{08:2B}{08:5F}‥‥‥ケケケケ‥‥‥‥\n‥‥バエルが‥‥{08:51}‥{08:42}なぁ‥‥ク‥ククク‥\n		reads: ‥‥‥は血に飢えてるんだ‥‥‥ケケケケ‥‥‥‥\n‥‥バエルが‥‥った‥からなぁ‥‥ク‥ククク‥\n
-m/MS00B3.BIN	0:09	2	112	09	‥‥鈴が鳴る‥‥<wait>ヒャハハハハ‥‥鈴だあッ！！！\n		
-m/MS00B3.BIN	0:09	3	166	18	‥‥{08:5C}すぐだ‥‥{08:5C}すぐ完成する‥ケケケケ‥‥\n<wait>		reads: ‥‥もうすぐだ‥‥もうすぐ完成する‥ケケケケ‥‥\n<wait>
+m/MS00B3.BIN	0:09	1	18	09	‥‥‥は血に飢え{08:2B}{08:5F}‥‥‥ケケケケ‥‥‥‥\n‥‥バエルが‥‥{08:51}‥{08:42}なぁ‥‥ク‥ククク‥\n	......is thirsting for blood......Kekekeke......\n......Baal......did it......that's why......Ke...kekeke...\n	reads: ‥‥‥は血に飢えてるんだ‥‥‥ケケケケ‥‥‥‥\n‥‥バエルが‥‥った‥からなぁ‥‥ク‥ククク‥\n
+m/MS00B3.BIN	0:09	2	112	09	‥‥鈴が鳴る‥‥<wait>ヒャハハハハ‥‥鈴だあッ！！！\n	......the bell rings......<wait>Hyahahahaha......it's the bell!!!\n	
+m/MS00B3.BIN	0:09	3	166	18	‥‥{08:5C}すぐだ‥‥{08:5C}すぐ完成する‥ケケケケ‥‥\n<wait>	It's almost time......almost complete......Kekekeke......\n<wait>	reads: ‥‥もうすぐだ‥‥もうすぐ完成する‥ケケケケ‥‥\n<wait>
 m/MS00B3.BIN	0:0A	0	4	1FD2	Female Warrior:	Female Warrior:	
 m/MS00B3.BIN	0:0A	1	26	09	It sounds like things have gotten real bad in Shinjuku...\n<wait>	It sounds like things have gotten real bad in Shinjuku...\n<wait>	
 m/MS00B3.BIN	0:0A	2	92	1FD2	Female Warrior:	Female Warrior:	

@@ -12,7 +12,7 @@ m/MS0037.BIN	0:04	3	118	1FFA	...\n...\n...\n	...\n...\n...\n
 m/MS0037.BIN	0:04	4	163	1F19	{01:15}	{01:15}	reads: いろいろ
 m/MS0037.BIN	0:04	5	166	00	{02:01}	{02:01}	reads: ペンタグランマ
 m/MS0037.BIN	0:04	6	174	11	{04:01}	{04:01}	reads: 切り
-m/MS0037.BIN	0:04	7	182	00	{06:01}ﾀ{01:FF}		reads: ﾀ
+m/MS0037.BIN	0:04	7	182	00	{06:01}ﾀ{01:FF}		reads: ﾀ @skip isolated stray half-width kana glyph, no reads context, not readable Japanese
 m/MS0037.BIN	0:04	8	213	1F4C	{03:19}	{03:19}	reads: 
 m/MS0037.BIN	0:04	9	268	18	A trap has been set off!\n<wait>	A trap has been set off!\n<wait>	
 m/MS0037.BIN	0:04	10	306	1E3E	 found a trap.\nShould they try to disable it, or someone else?\n	 found a trap.\nShould they try to disable it, or someone else?\n	
@@ -26,7 +26,7 @@ m/MS0037.BIN	0:04	17	485	1FFA	...\n...\n...\n	...\n...\n...\n
 m/MS0037.BIN	0:04	18	525	1F4C	{03:19}	{03:19}	reads: 
 m/MS0037.BIN	0:04	19	577	1E3E	 disabled the trap.\n<wait>	 disabled the trap.\n<wait>	
 m/MS0037.BIN	0:04	20	604	0C	The trap activated!\n<wait>	The trap activated!\n<wait>	
-m/MS0037.BIN	0:04	21	693	1EAA	{08:0B}が出現{08:17}\n{1E10:01023C}		reads: 悪魔が出現した！\n{1E10:01023C}
+m/MS0037.BIN	0:04	21	693	1EAA	{08:0B}が出現{08:17}\n{1E10:01023C}	A demon appeared!\n{1E10:01023C}	reads: 悪魔が出現した！\n{1E10:01023C}
 m/MS0037.BIN	0:04	22	762	00	{04:FF}	{04:FF}	reads: 
 m/MS0037.BIN	0:04	23	765	00	d{04:FF}	d{04:FF}	reads: d
 m/MS0037.BIN	0:04	24	769	00	d	d	
@@ -80,7 +80,7 @@ m/MS0037.BIN	0:0F	11	178	18	You threw 	You threw
 m/MS0037.BIN	0:0F	12	191	1F01	{03:00} away.	{03:00} away.	reads: 飛び道具 away.
 m/MS0037.BIN	0:0F	13	219	1EF0	Obtained 	Obtained 	
 m/MS0037.BIN	0:0F	14	231	1F01	{03:00}	{03:00}	reads: 飛び道具
-m/MS0037.BIN	0:0F	15	243	1F7F	{03:01}{03:12}を  (		reads: そんなこと切りを  (
+m/MS0037.BIN	0:0F	15	243	1F7F	{03:01}{03:12}を  (		reads: そんなこと切りを  ( @skip reads: garbled/incomplete fragment, not readable Japanese
 m/MS0037.BIN	0:0F	16	256	1F02	).\n<wait>	).\n<wait>	
 m/MS0037.BIN	0:0F	17	265	1FBA	There is still 	There is still 	
 m/MS0037.BIN	0:0F	18	284	1F02	 of\n	 of\n	

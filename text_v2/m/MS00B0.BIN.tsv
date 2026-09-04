@@ -3,11 +3,11 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	note
-m/MS00B0.BIN	0:02	0	10	00	ｰ{05:02}		reads: ｰ切り
-m/MS00B0.BIN	0:02	1	14	00	ｰ{06:03}		reads: ｰ
-m/MS00B0.BIN	0:02	2	18	00	ｰ{07:04}		reads: ｰ＞攻撃しますか？
-m/MS00B0.BIN	0:02	3	22	00	ｰ{08:05}		reads: ｰコンピュータ
-m/MS00B0.BIN	0:02	4	26	00	ｰ		
+m/MS00B0.BIN	0:02	0	10	00	ｰ{05:02}	{05:02}	reads: ｰ切り
+m/MS00B0.BIN	0:02	1	14	00	ｰ{06:03}	{06:03}	reads: ｰ
+m/MS00B0.BIN	0:02	2	18	00	ｰ{07:04}	{07:04}	reads: ｰ＞攻撃しますか？
+m/MS00B0.BIN	0:02	3	22	00	ｰ{08:05}	{08:05}	reads: ｰコンピュータ
+m/MS00B0.BIN	0:02	4	26	00	ｰ		@skip isolated stray half-width kana glyph, no reads context, not readable Japanese
 m/MS00B0.BIN	0:02	5	32	09			
 m/MS00B0.BIN	0:03	0	9	1F19	{01:2B}	{01:2B}	reads: ゾンビ
 m/MS00B0.BIN	0:03	1	12	00	{02:01}=	{02:01}=	reads: ペンタグランマ=

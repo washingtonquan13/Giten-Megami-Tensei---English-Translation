@@ -3,19 +3,19 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	note
-m/MS00B7.BIN	0:02	0	10	00	ｷ{05:02}		reads: ｷ切り
-m/MS00B7.BIN	0:02	1	14	00	ｷ{06:03}		reads: ｷ
-m/MS00B7.BIN	0:02	2	18	00	ｷ{07:04}		reads: ｷ＞攻撃しますか？
-m/MS00B7.BIN	0:02	3	22	00	ｷ{08:05}		reads: ｷコンピュータ
-m/MS00B7.BIN	0:02	4	26	00	ｷ		
-m/MS00B7.BIN	0:02	5	32	09	{07:00}ｷ		reads: ＞どうしますか？ｷ
+m/MS00B7.BIN	0:02	0	10	00	ｷ{05:02}	{05:02}	reads: ｷ切り
+m/MS00B7.BIN	0:02	1	14	00	ｷ{06:03}	{06:03}	reads: ｷ
+m/MS00B7.BIN	0:02	2	18	00	ｷ{07:04}	{07:04}	reads: ｷ＞攻撃しますか？
+m/MS00B7.BIN	0:02	3	22	00	ｷ{08:05}	{08:05}	reads: ｷコンピュータ
+m/MS00B7.BIN	0:02	4	26	00	ｷ		@skip isolated stray half-width kana glyph, no reads context, not readable Japanese
+m/MS00B7.BIN	0:02	5	32	09	{07:00}ｷ	{07:00}	reads: ＞どうしますか？ｷ
 m/MS00B7.BIN	0:02	6	40	0B			
 m/MS00B7.BIN	0:03	0	9	1F19	{01:33}	{01:33}	reads: きみ
 m/MS00B7.BIN	0:03	1	12	00	{02:01}E	{02:01}E	reads: ペンタグランマE
 m/MS00B7.BIN	0:03	2	16	00	{03:01}U	{03:01}U	reads: そんなことU
 m/MS00B7.BIN	0:03	3	20	00	{04:01}l	{04:01}l	reads: 切りl
-m/MS00B7.BIN	0:03	4	24	00	{05:01}{=82}{=00}{06:01}{=94}{=00}{07:01}､		reads: 飛び道具{=82}{=00}{=94}{=00}＞何をしますか？､
-m/MS00B7.BIN	0:03	5	36	00	{08:01}ｵ		reads: 達也ｵ
+m/MS00B7.BIN	0:03	4	24	00	{05:01}{=82}{=00}{06:01}{=94}{=00}{07:01}､	{05:01}{=82}{=00}{06:01}{=94}{=00}{07:01}	reads: 飛び道具{=82}{=00}{=94}{=00}＞何をしますか？､
+m/MS00B7.BIN	0:03	5	36	00	{08:01}ｵ	{08:01}	reads: 達也ｵ
 m/MS00B7.BIN	0:03	6	40	00			
 m/MS00B7.BIN	0:03	7	42	1B	Bartender	Bartender	
 m/MS00B7.BIN	0:03	8	64	1B	Young Man	Young Man	
