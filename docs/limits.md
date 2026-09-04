@@ -8,7 +8,7 @@ Every re-adopted module carries an entry here.  An entry is closed only by evide
 
 ## vmops / opcodes.json
 - 267 opcodes are typed as consuming no operands because the static tracer took the fall-through; 123 records still cannot be tiled.
-- `1F01 nn` followed by `00` (3 240 sites in the original, all stripped by v0.05): meaning unknown.
+- ~~`1F01 nn` followed by `00`: meaning unknown.~~ **Closed 2026-09-04 by trace:** `1F01 nn` prints runtime string *nn* -- `00` is the player's name (the trace shows the PC jump to offset 0 of the name buffer and read 葛城史人), other indices print counters (`６`). The `00` after it is that string's terminator. v0.05 stripped all 3,240 and hard-coded names; we keep them.
 - The byte after a name macro in the post-menu dead zone (`00 02 01 6a`): meaning unknown; v0.05 changed it, translators deleted it.
 - `NOT_A_BRANCH = {010, 011, 182}` is statistical (target lands on an instruction at or below chance).  `017` is in the grey zone on the original (48.7% vs chance 43%) and is still relocated.
 

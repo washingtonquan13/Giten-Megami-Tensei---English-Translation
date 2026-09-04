@@ -601,3 +601,7 @@ the jump table at `0x402208`, `sprintf`s a name and `fopen(name, "rb")`
   offset 0x3C) leaves a following `01 5C` / `08 FF` pair whose record ids do not exist
   in `MS7F00` / `MS7F07`. Harmless (absent records expand to nothing) but it hints
   `0x0F` may be data-dependent too. **[HYPOTHESIS]**
+
+### 2.11 `1F 01 nn` -- print runtime string **[VERIFIED by trace, 2026-09-04]**
+
+`1F 01 nn` switches the interpreter to a runtime string buffer (the trace shows the PC at 0x0000 and Shift-JIS characters drawn from it until `00`), then returns. `nn = 00` is the player's name (葛城史人 by default); other indices print numbers (a `６` was observed). It is a real opcode with a real effect and must survive translation. The `00` that follows it in the data is the string terminator, not a fragment end.
