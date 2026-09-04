@@ -4,9 +4,9 @@ A trace is a flat file of 12-byte records (see ``exe/trace.S``)::
 
     u16 file, u16 rec, u16 pc, u16 ch, i16 r, u8 capflag, u8 caplen
 
-``decode`` maps each record back to the script: ``pc`` is the byte *after* the
-character exec_token was given (one byte, or two for a Shift-JIS pair), so the
-token starts at ``pc - 1`` or ``pc - 2`` in the runtime image, and the runtime
+``decode`` maps each record back to the script: the hook logs after exec_token
+returns, so ``pc`` is the byte after the whole token (operands included), and
+the token is the one that *ends* there in the runtime image; the runtime
 image is ``records.bases`` over the loaded container.  From the token we get the
 span index, the same numbering the tables use -- so a trace line names a table
 row.
@@ -82,19 +82,34 @@ class _Image:
         r = self.by_id.get(rec_id)
         if r is None or r.tokens is None:
             return None
-        width = 2 if ch > 0xFF else 1
-        off = pc - self.base[rec_id] - width
-        if not 0 <= off < len(r.data):
+        # The hook logs *after* exec_token returns, and an opcode's handler has
+        # consumed its operands by then -- so pc is the END of the token, for
+        # text (1 or 2 bytes) and opcodes alike.  Measured: consecutive opcode
+        # steps in a real trace sit exactly one token length apart.
+        end = pc - self.base[rec_id]
+        if not 0 <= end <= len(r.data):
             return None
+        want = bytes([ch]) if ch <= 0xFF else bytes([ch >> 8, ch & 0xFF])
+        def hit(k, t, jumped):
+            anchor = sum(1 for u in r.tokens[:k]
+                         if u.kind == "op" and u.idx not in codec.INLINE_OPS)
+            span = next((s.idx for s in r.spans if s.tok_lo <= k < s.tok_hi), None)
+            if jumped:
+                # a control opcode ran and execution *landed* here: name the
+                # opcode that ran (ch) and the place it went (this token)
+                kind = "%s->" % vmops.table().encoding(ch)
+                return span, anchor, kind, ch < 0x20
+            got = r.data[t.off:t.end]
+            kind = "TEXT" if t.kind == "text" else vmops.table().encoding(t.idx)
+            return span, anchor, kind, got == want or (t.kind == "op" and got[:1] == want[:1])
+        # 1. the token that ends at pc: text, or an opcode that fell through
         for k, t in enumerate(r.tokens):
-            if t.off == off:
-                anchor = sum(1 for u in r.tokens[:k]
-                             if u.kind == "op" and u.idx not in codec.INLINE_OPS)
-                span = next((s.idx for s in r.spans if s.tok_lo <= k < s.tok_hi), None)
-                kind = "TEXT" if t.kind == "text" else vmops.table().encoding(t.idx)
-                got = r.data[t.off:t.end]
-                want = bytes([ch]) if width == 1 else bytes([ch >> 8, ch & 0xFF])
-                return span, anchor, kind, got == want or (t.kind == "op" and got[:1] == want[:1])
+            if t.end == end and (t.kind == "text" or r.data[t.off] == ch):
+                return hit(k, t, False)
+        # 2. the token that starts at pc: a taken branch, a call, a return
+        for k, t in enumerate(r.tokens):
+            if t.off == end:
+                return hit(k, t, True)
         return None
 
 

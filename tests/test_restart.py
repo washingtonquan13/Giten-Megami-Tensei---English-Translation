@@ -108,9 +108,9 @@ def test_trace_decoder_maps_a_synthetic_record_back_to_its_span():
     base = records.bases([records.Record(r.id, r.data) for r in sc.containers[0]])
     # exec_token is handed one character: a byte, a Shift-JIS pair packed
     # big-endian, or -- for an opcode -- just the opcode byte (the handler reads
-    # its own operands).  pc is the byte after what it was handed.
+    # its own operands).  pc is the byte after the whole token (logged on return).
     if tok.kind == "op":
-        ch, pc = rec.data[tok.off], base[rec.id] + tok.off + 1
+        ch, pc = rec.data[tok.off], base[rec.id] + tok.end
     else:
         ch, pc = int.from_bytes(rec.data[tok.off:tok.end], "big"), base[rec.id] + tok.end
     fid = int(rel[4:8], 16)
