@@ -48,13 +48,22 @@ These exist because a session limit killed nine agents at once on 2026-09-03.
 
 ## Play-test findings, 2026-09-04
 
-Reported: an early story gate not holding (the exam could be taken without talking to the friends first, and the Virtual Dungeon room was empty), plus crashes shortly after the aptitude test.
+Reported: an early story gate not holding (the exam could be taken without talking to the friends first, and the Virtual Dungeon room was empty), crashes shortly after the aptitude test, and — the sharpest clue — **the terminal in the player's room opens the "ADAM-23" BBS in vanilla v0.05 but goes straight to the test in our build**, after which the test can be repeated indefinitely.
 
-Audited with a new `python -m tools.giten audit` (structural opcode stream, branch resolvability per file, branches into edited text, u16 image limit). It found **one real defect**: relocation trusted `docs/opcodes.json` on every slot typed `rel16`, and rewrote 121 displacements of which ~55 were not branches at all — mistyped small integers, and text in the 123 records that tile a byte out of step. That corrupted **98 bytes across 28 files**, among them the early-game scripts `MS0007`, `MS0008`, `MS0015`, `MS0017` (the exam), `MS0018`, `MS001B`, `MS002A`, `MS0031`, `MS0033`. Example: `1F 03 85 02 …` in `MS0017` had its first 16-bit parameter moved from `0x0285` to `0x0286`.
+`python -m tools.giten audit` (new) compares a build to its source on four axes: structural opcode stream, branch resolvability per file, branch destinations keyed on structural anchors, and the u16 image limit.
 
-Fixed in commit `2509dfe` and reinstalled. Everything else audited clean: the structural opcode stream is identical in all 173 changed files, no branch lands in replaced text, no container exceeds the u16 PC limit, and the build now resolves *more* branches than the source does.
+**Defect found and fixed** (commits `2509dfe`, corrected by `42cd5e3`): relocation trusted `docs/opcodes.json` on every slot typed `rel16`. That table is recovered, so three opcodes (`010`, `011`, `182`) carry a pair of small integers there, not a displacement. Rewriting them corrupted operands across ~30 files, several of them early-game (`MS0007/0008/0012/0015/0017/0018/001B/002A/0031/0033`). `MS0017` is the file that holds the "Open terminal" menu.
 
-Still unattributed: whether the reported gate/crash behaviour was caused by those 98 bytes or predates our patch. `vanilla-v005\ddswin` exists for exactly that comparison.
+The classification is per **opcode**, measured: a real displacement points at an instruction boundary, ~50% of offsets are one by chance, so a branch opcode scores near 100% and a mistyped slot scores at or below chance. A per-value rule was tried first and is wrong — it also skips real branches inside the 123 mis-tiled records, and left 39 branch destinations moved against 3 for the opcode rule (those 3 were already dead in the source). `tests/test_v2.py` re-derives the set from the game files.
+
+Everything else audits clean: structural opcode stream identical in all 173 changed files, no branch destination moved, no container past the u16 PC limit, and the build resolves more branches than the source.
+
+**Still open.** Whether the reported symptoms are fixed is unverified — the user had already tested a build carrying the corruption. Retest `test-install` first; `vanilla-v005` is the A/B if it persists.
+
+Two smaller things noticed while auditing, neither yet acted on:
+
+- 196 bytes of `0xFD`–`0xFF` were deleted from *text* runs across 136 spans in 36 files (worst: `MS0012` 42, `MS0031` 27, `MS610D` 25). They render as undefined characters, so translators dropped them as junk. They may be display control codes. Requires knowing what the renderer does with them.
+- 180 spans have a lone half-width-katakana byte immediately after a pool call (`{02:01}ﾙ`), and some were dropped the same way. Same open question.
 
 ## If the two in-flight agents died
 
