@@ -3,6 +3,7 @@
 Every re-adopted module carries an entry here.  An entry is closed only by evidence from the exe or the tracer, never by a plausible theory.
 
 ## container / records
+- **A record may not exceed 32,767 bytes** (closed 2026-09-04 by the tracer + disassembly of the loader `0x43ABC0`: the per-record growth delta is a signed 16-bit value; over 0x7FFF it goes negative, the shrink path runs and the game crashes on load).  The original's largest record is `m/MS006A` r00 at 28,291 bytes -- the BBS -- so English there has 4,476 bytes of headroom.  Enforced by `check` (`record-size`, predicted from the tables) and `audit` (measured on the build).
 - Record-count words that overstate the body (`m/MS600A`, `m/MS610B`, `et/ID00A2`, `et/ID00A3`) and trailing bytes are copied verbatim; what the engine does with them is unknown.
 - Containers with duplicate record ids and branches (`m/MS6000` c0/1/8, `m/MS6800` c0, `m/MS610B` c15) are not editable.
 
@@ -17,7 +18,7 @@ Every re-adopted module carries an entry here.  An entry is closed only by evide
 
 ## script / relocation
 - Branches whose target is strictly inside an edited span block the edit (115 lines ship untranslated).
-- Text-capture mode (`1B`..`1C`, 256-byte buffer) is not yet enforced by `check`.
+- Text-capture mode (`1B`..`1C`, 256-byte buffer) is enforced by `check` (`capture`) from the static token walk; a region entered by a branch from elsewhere is not modelled.
 
 ## exe
 - Debug-menu arming is unverified (the table at `0x468318` is not four contiguous pointers).

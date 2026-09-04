@@ -276,6 +276,39 @@ def check_capture(report: Report, rows, root=None) -> None:
                     on = None
 
 
+RECORD_LIMIT = 0x7FFF
+
+
+def check_record_size(report: Report, rows, root=None) -> None:
+    """(d) record size: the loader grows the script buffer by a *signed 16-bit*
+    delta per record (``0x43ABC0``), so a record of 0x8000 bytes or more takes
+    the shrink path with a garbage count and the game crashes when the file is
+    loaded.  The original's largest record is 28,291 bytes (``m/MS006A`` r00);
+    the English BBS pushed it to 35,824 and the terminal crashed.  Predict each
+    record's built length from the edits and refuse anything over the limit."""
+    by_file = {}
+    for r in rows:
+        if r.edited:
+            by_file.setdefault(r.file, {})[(r.rec, r.idx)] = r
+    for rel, edited in by_file.items():
+        sc = script.parse(rel, files.read_source(rel, root))
+        if not sc.ok:
+            continue
+        for rec in sc.iter_records():
+            key = "%d:%02X" % (rec.ci, rec.id)
+            size = len(rec.data)
+            for sp in rec.spans:
+                row = edited.get((key, sp.idx))
+                if row:
+                    size += len(codec.encode(row.en)) - (sp.end - sp.off)
+            if size > RECORD_LIMIT:
+                report.add("record-size", check.ERROR, "%s %s" % (rel, key),
+                           "would build to %d bytes; the engine cannot load a "
+                           "record over %d (source is %d) -- shorten the English "
+                           "in this record by %d bytes"
+                           % (size, RECORD_LIMIT, len(rec.data), size - RECORD_LIMIT))
+
+
 def run(root=None, text_dir=None, family="all", skip_identity=False,
         quiet=False, show=200, out_dir=None, verify=False) -> Report:
     text_dir = text_dir or extract_v2.text_v2_dir()
@@ -290,6 +323,7 @@ def run(root=None, text_dir=None, family="all", skip_identity=False,
     report.counts["rows"] = len(rows)
     check_rows(report, rows, pool.load(root))
     check_capture(report, rows, root)
+    check_record_size(report, rows, root)
 
     st = None
     if verify:

@@ -259,6 +259,14 @@ into this whole buffer. Consequences:
    *cross-record* relative branch spanning the edit must be fixed up. Intra-record
    branches, and branches whose endpoints both lie entirely before or entirely after
    the edit, are unaffected.
+3. **No record may be longer than 0x7FFF bytes.** `0x43ABC0` computes
+   `delta = new_length - entry.length` in 16-bit registers (`sub di, ...`), then
+   `test di,di / jge grow` -- a *signed* test.  A record of 0x8000+ bytes (delta
+   0x7FFF+ over the 1-byte placeholder) reads as negative, the shrink/move path
+   runs with a bogus count, and the game crashes while loading the file.  The
+   original never comes close (largest: `m/MS006A` r00, 28,291 bytes); an
+   English BBS of 35,824 bytes crashed the terminal on 2026-09-04 and this is
+   how it was found.  The 0x10000 image cap (u16 PC) is a separate, looser bound.
 
 ### 2.7 Answers to the pipeline team's specific questions **[VERIFIED]**
 

@@ -36,6 +36,13 @@ builder does.
    must stay under 0x10000, and growing text is the one thing that can push it
    there.
 
+5. **Record size** -- the loader (``0x43ABC0``) computes how much a record grows
+   the buffer as a *signed 16-bit* delta (``sub di, ...`` then ``jge``): a record
+   longer than 0x7FFF bytes turns the delta negative, the shrink path runs with a
+   garbage count and the game crashes on load.  The original's largest record is
+   28,291 bytes (``m/MS006A`` r00, the BBS); English pushed it to 35,824 and the
+   terminal crashed -- found by the tracer on 2026-09-04.
+
 Exit status is non-zero if any finding is reported.
 """
 from __future__ import annotations
@@ -48,6 +55,11 @@ from . import codec, files, paths, records, script, vmops
 #: The script PC is a u16 (``docs/format-notes.md`` section 2.3), so nothing in
 #: a container's runtime image may sit at or past this offset.
 PC_LIMIT = 0x10000
+
+#: The loader's per-record growth delta is a signed 16-bit value, so a record
+#: of 0x8000 bytes or more is installed with a negative delta and the buffer
+#: move that follows crashes (``docs/format-notes.md`` section 2.6).
+RECORD_LIMIT = 0x7FFF
 
 
 def _bases(recs) -> "dict[int, int]":
@@ -221,6 +233,12 @@ def audit_file(rel: str, src: bytes, built: bytes, rep: Report) -> None:
             rep.say("image-size",
                     "%s c%d: runtime image is 0x%X, past the u16 PC limit 0x%X "
                     "(source was 0x%X)" % (rel, ci, end, PC_LIMIT, _image_end(ra)))
+        for pa, pb in zip(ra, rb):
+            if len(pb.data) > RECORD_LIMIT:
+                rep.say("record-size",
+                        "%s c%d r%02X: %d bytes; the loader's signed 16-bit delta "
+                        "caps a record at %d (source was %d)"
+                        % (rel, ci, pb.id, len(pb.data), RECORD_LIMIT, len(pa.data)))
 
         _, ba = _unresolvable(ra)
         tb, bb = _unresolvable(rb)

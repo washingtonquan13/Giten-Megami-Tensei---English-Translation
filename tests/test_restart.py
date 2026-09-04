@@ -183,6 +183,40 @@ def test_capture_regions_are_bounded():
     assert not [f for f in rep.errors if f.rule == "capture"]
 
 
+def test_record_size_is_bounded_by_the_loaders_signed_delta():
+    """The BBS record (m/MS006A r00) is the original's largest at 28,291 bytes;
+    4,477 more bytes of English and the loader's signed 16-bit delta goes
+    negative.  ``check`` must predict that from the tables, ``audit`` must see
+    it in a built file."""
+    from giten import audit
+    rel = "m/MS006A.BIN"
+    src = files.read_source(rel)
+    sc = script.parse(rel, src)
+    rec = next(r for r in sc.iter_records() if r.id == 0)
+    assert len(rec.data) == 28291
+    assert audit.RECORD_LIMIT == check_v2.RECORD_LIMIT == 0x7FFF
+    sp = rec.spans[0]
+    room = check_v2.RECORD_LIMIT - len(rec.data) + (sp.end - sp.off)
+    mk = lambda n: tables.Row(rel, "0:00", sp.idx, sp.off, sp.tag, script.span_text(rec, sp),
+                              "x" * n, "", "", "draft", "")
+    rep = findings.Report()
+    check_v2.check_record_size(rep, [mk(room)])
+    assert not [f for f in rep.errors if f.rule == "record-size"]      # exactly at the limit
+    rep = findings.Report()
+    check_v2.check_record_size(rep, [mk(room + 1)])
+    assert [f.where for f in rep.errors if f.rule == "record-size"] == ["m/MS006A.BIN 0:00"]
+    # the same record, actually built one byte too long, is an audit finding:
+    # splice the record's bytes by hand and re-frame the container
+    from giten import container, records
+    recs = [records.Record(r.id, r.data) for r in sc.containers[0]]
+    fat = rec.data[:sp.off] + b"x" * (room + 1) + rec.data[sp.end:]
+    recs = [records.Record(r.id, fat if r.id == 0 else r.data) for r in recs]
+    built = container.join([records.serialise(recs)])
+    r = audit.Report()
+    audit.audit_file(rel, src, built, r)
+    assert any(f.startswith("record-size") for f in r.findings), r.findings
+
+
 def test_extraction_never_fills_the_reference_columns():
     """The extractor builds rows from the game alone: ref_en/ref_src/status must be
     empty and the note must be in the note column (a positional Row() with eight
