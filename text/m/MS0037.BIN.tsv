@@ -1,0 +1,18 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS0037.BIN	F0	0	35	1FD0	There is a treasure chest here.\n{0C}7	There is a treasure chest here.\n{0C}7	runtime inserts: reproduce every {XX} token, in order
+m/MS0037.BIN	F0	1	107	1FD0	There is an ornate chest here.\n{0C}7	There is an ornate chest here.\n{0C}7	runtime inserts: reproduce every {XX} token, in order
+m/MS0037.BIN	F0	2	263	1FBA	Who will try to open it?\n	Who will try to open it?\n	
+m/MS0037.BIN	F0	3	364	1FFA	...\n...\n...\n	...\n...\n...\n	suspect: may be misread operand data, verify before editing
+m/MS0037.BIN	F0	4	631	1FB2	They	They	
+m/MS0037.BIN	F0	5	637	1FB2	Someone else	Someone else	
+m/MS0037.BIN	F0	6	651	1FB2	Back off	Back off	
+m/MS0037.BIN	F0	7	683	1FBA	Who will try to disable the trap?\n	Who will try to disable the trap?\n	
+m/MS0037.BIN	F0	8	731	1FFA	...\n...\n...\n	...\n...\n...\n	suspect: may be misread operand data, verify before editing
+m/MS0037.BIN	F0	9	2597	1FBA	{0C}7	{0C}7	suspect: may be misread operand data, verify before editing; runtime inserts: reproduce every {XX} token, in order
+m/MS0037.BIN	F0	10	2873	1FBA	There is still 	There is still 	
+m/MS0037.BIN	F0	11	2925	1FBA	{0C}7	{0C}7	suspect: may be misread operand data, verify before editing; runtime inserts: reproduce every {XX} token, in order
+m/MS0037.BIN	F0	12	3006	1FBA	{0C}7	{0C}7	suspect: may be misread operand data, verify before editing; runtime inserts: reproduce every {XX} token, in order

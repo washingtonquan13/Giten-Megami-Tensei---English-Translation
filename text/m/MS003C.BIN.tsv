@@ -1,0 +1,39 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS003C.BIN	F0	0	255	1FB2	Terminal Travel	Terminal Travel	
+m/MS003C.BIN	F0	1	272	1FB2	AMS Data	AMS Data	
+m/MS003C.BIN	F0	2	282	1FB2	Personal Management	Personal Management	
+m/MS003C.BIN	F0	3	303	1FB2	Exit	Exit	
+m/MS003C.BIN	F0	4	341	1FD0	>Please select which service you'd like to use.\n	>Please select which service you'd like to use.\n	
+m/MS003C.BIN	F0	5	405	1FB2	Terminal Travel	Terminal Travel	
+m/MS003C.BIN	F0	6	422	1FB2	Download AMS Data	Download AMS Data	
+m/MS003C.BIN	F0	7	441	1FB2	Personal Management	Personal Management	
+m/MS003C.BIN	F0	8	462	1FB2	Exit	Exit	
+m/MS003C.BIN	F0	9	503	1FD0	>Please select your destination.\n{0C}\<	>Please select your destination.\n{0C}\<	runtime inserts: reproduce every {XX} token, in order
+m/MS003C.BIN	F0	10	546	1FD0	>We look forward to serving you again.\n<wait>	>We look forward to serving you again.\n<wait>	
+m/MS003C.BIN	F0	11	679	1FD0	>No other terminals were found.\n<wait>{0C}\<	>No other terminals were found.\n<wait>{0C}\<	runtime inserts: reproduce every {XX} token, in order
+m/MS003C.BIN	F0	12	1623	1FBA	>Initiating warp.\n<wait>	>Initiating warp.\n<wait>	
+m/MS003C.BIN	F0	13	1703	1FBA	>We look forward to serving you again.\n<wait>	>We look forward to serving you again.\n<wait>	
+m/MS003C.BIN	F0	14	2070	1FB2	Save	Save	
+m/MS003C.BIN	F0	15	2076	1FB2	Load	Load	
+m/MS003C.BIN	F0	16	2082	1FB2	Quit	Quit	
+m/MS003C.BIN	F0	17	2088	1FB2	Back	Back	
+m/MS003C.BIN	F0	18	2124	1FBA	>Your progress will be saved.\n Please select a file to save to.\n	>Your progress will be saved.\n Please select a file to save to.\n	
+m/MS003C.BIN	F0	19	2338	1FBA	>Do you wish to overwrite this save?\n	>Do you wish to overwrite this save?\n	
+m/MS003C.BIN	F0	20	2391	1FB2	Yes	Yes	
+m/MS003C.BIN	F0	21	2396	1FB2	No	No	
+m/MS003C.BIN	F0	22	2442	1FD0	>Saved the game successfully\n<wait>	>Saved the game successfully\n<wait>	
+m/MS003C.BIN	F0	23	2477	1FBA	{0C}\<	{0C}\<	suspect: may be misread operand data, verify before editing; runtime inserts: reproduce every {XX} token, in order
+m/MS003C.BIN	F0	24	2482	1FD0	>Error: Failed to save the game\n Not enough disk space available\n<wait>	>Error: Failed to save the game\n Not enough disk space available\n<wait>	
+m/MS003C.BIN	F0	25	2553	1FBA	{0C}\<	{0C}\<	suspect: may be misread operand data, verify before editing; runtime inserts: reproduce every {XX} token, in order
+m/MS003C.BIN	F0	26	2833	1FBA	>Please select a save to load\n	>Please select a save to load\n	
+m/MS003C.BIN	F0	27	2980	1FBA	>Do you wish to load this save?\n	>Do you wish to load this save?\n	
+m/MS003C.BIN	F0	28	3028	1FB2	Yes	Yes	
+m/MS003C.BIN	F0	29	3033	1FB2	No	No	
+m/MS003C.BIN	F0	30	3135	1FBA	{0C}\<	{0C}\<	suspect: may be misread operand data, verify before editing; runtime inserts: reproduce every {XX} token, in order
+m/MS003C.BIN	F0	31	3416	1FBA	>Are you sure that you wish to exit the game?\n	>Are you sure that you wish to exit the game?\n	
+m/MS003C.BIN	F0	32	3478	1FB2	Yes	Yes	
+m/MS003C.BIN	F0	33	3483	1FB2	No	No	

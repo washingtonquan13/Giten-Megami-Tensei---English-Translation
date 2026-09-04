@@ -1,0 +1,32 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS0043.BIN	F0	0	7	1FD0	There is a computer here. Connect your Arm Terminal?\n	There is a computer here. Connect your Arm Terminal?\n	
+m/MS0043.BIN	F0	1	76	1FB2	Connect	Connect	
+m/MS0043.BIN	F0	2	85	1FB2	Leave	Leave	
+m/MS0043.BIN	F0	3	120	1FD1	Establishing a connection	Establishing a connection	
+m/MS0043.BIN	F0	4	151	1FFA	...\n	...\n	suspect: may be misread operand data, verify before editing
+m/MS0043.BIN	F0	5	240	1FB2	Proceed	Proceed	
+m/MS0043.BIN	F0	6	249	1FB2	Abort	Abort	
+m/MS0043.BIN	F0	7	294	1FB2	Save	Save	
+m/MS0043.BIN	F0	8	300	1FB2	Load	Load	
+m/MS0043.BIN	F0	9	306	1FB2	Quit	Quit	
+m/MS0043.BIN	F0	10	312	1FB2	Abort	Abort	
+m/MS0043.BIN	F0	11	349	1FBA	>Your progress will be saved.\n Please select a file to save to.\n	>Your progress will be saved.\n Please select a file to save to.\n	
+m/MS0043.BIN	F0	12	563	1FBA	>Save data in this slot will be overwritten.\nProceed?\n	>Save data in this slot will be overwritten.\nProceed?\n	
+m/MS0043.BIN	F0	13	633	1FB2	Yes	Yes	
+m/MS0043.BIN	F0	14	638	1FB2	No	No	
+m/MS0043.BIN	F0	15	678	1FD0	>Save completed.\n<wait>	>Save completed.\n<wait>	
+m/MS0043.BIN	F0	16	701	1FBA	{0C}C{02}	{0C}C{02}	suspect: may be misread operand data, verify before editing; runtime inserts: reproduce every {XX} token, in order
+m/MS0043.BIN	F0	17	706	1FD0	>Error: Failed to save.\n        Hard disk is full.\n<wait>	>Error: Failed to save.\n        Hard disk is full.\n<wait>	
+m/MS0043.BIN	F0	18	763	1FBA	{0C}C{02}	{0C}C{02}	suspect: may be misread operand data, verify before editing; runtime inserts: reproduce every {XX} token, in order
+m/MS0043.BIN	F0	19	1044	1FBA	>Please select a save to load\n	>Please select a save to load\n	
+m/MS0043.BIN	F0	20	1191	1FBA	>Do you wish to load this save?\n	>Do you wish to load this save?\n	
+m/MS0043.BIN	F0	21	1239	1FB2	Yes	Yes	
+m/MS0043.BIN	F0	22	1244	1FB2	No	No	
+m/MS0043.BIN	F0	23	1346	1FBA	{0C}C{02}	{0C}C{02}	suspect: may be misread operand data, verify before editing; runtime inserts: reproduce every {XX} token, in order
+m/MS0043.BIN	F0	24	1627	1FBA	>Are you sure that you wish to exit the game?\n	>Are you sure that you wish to exit the game?\n	
+m/MS0043.BIN	F0	25	1689	1FB2	Yes	Yes	
+m/MS0043.BIN	F0	26	1694	1FB2	No	No	

@@ -1,0 +1,29 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS0040.BIN	F0	0	127	1FD2	Bartender:	Bartender:	
+m/MS0040.BIN	F0	1	139	1FD3	...Welcome. Your order, please.\n	...Welcome. Your order, please.\n	
+m/MS0040.BIN	F0	2	187	1FB2	Order a drink	Order a drink	
+m/MS0040.BIN	F0	3	202	1FB2	Listen to gossip	Listen to gossip	
+m/MS0040.BIN	F0	4	220	1FB2	Leave	Leave	
+m/MS0040.BIN	F0	5	258	1FD2	Bartender:	Bartender:	
+m/MS0040.BIN	F0	6	404	1FB2	Order a drink	Order a drink	
+m/MS0040.BIN	F0	7	419	1FB2	Listen to gossip	Listen to gossip	
+m/MS0040.BIN	F0	8	437	1FB2	Leave	Leave	
+m/MS0040.BIN	F0	9	475	1FD2	Bartender:	Bartender:	
+m/MS0040.BIN	F0	10	487	1FD3	...\n	...\n	suspect: may be misread operand data, verify before editing
+m/MS0040.BIN	F0	11	507	1FB2	Order a drink	Order a drink	
+m/MS0040.BIN	F0	12	522	1FB2	Listen to gossip	Listen to gossip	
+m/MS0040.BIN	F0	13	540	1FB2	Leave	Leave	
+m/MS0040.BIN	F0	14	744	1FD2	Bartender:	Bartender:	
+m/MS0040.BIN	F0	15	756	1FD3	...How about you go breathe in some fresh air outside.\nHere, allow me to lend you a shoulder.\n<wait>	...How about you go breathe in some fresh air outside.\nHere, allow me to lend you a shoulder.\n<wait>	
+m/MS0040.BIN	F0	16	1605	1FD0	Who would you like to talk to?\n	Who would you like to talk to?\n	
+m/MS0040.BIN	F0	17	1913	1FD2	Bartended:	Bartended:	
+m/MS0040.BIN	F0	18	1925	1FD3	Who will have this drink?\n	Who will have this drink?\n	
+m/MS0040.BIN	F0	19	2233	1FD0	The party was thrown out of the store.\n	The party was thrown out of the store.\n	
+m/MS0040.BIN	F0	20	2281	1FD2	Bartender:	Bartender:	
+m/MS0040.BIN	F0	21	2293	1FD3	Thank you for your patronage. We hope to see you again.\n<wait>	Thank you for your patronage. We hope to see you again.\n<wait>	
+m/MS0040.BIN	F0	22	2360	1FD2	Bartender:	Bartender:	
+m/MS0040.BIN	F0	23	2372	1FD3	It appears that you do not have the money.\n<wait>{0C}@	It appears that you do not have the money.\n<wait>{0C}@	runtime inserts: reproduce every {XX} token, in order

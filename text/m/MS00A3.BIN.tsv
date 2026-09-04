@@ -1,0 +1,15 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS00A3.BIN	F0	0	91	1FFA	...\n	...\n	suspect: may be misread operand data, verify before editing
+m/MS00A3.BIN	F0	1	97	1FFB	{0B}$	{0B}$	suspect: may be misread operand data, verify before editing; runtime inserts: reproduce every {XX} token, in order
+m/MS00A3.BIN	F0	2	104	1FBA	>AMS map data not found.\n<wait>{0C}\<	>AMS map data not found.\n<wait>{0C}\<	runtime inserts: reproduce every {XX} token, in order
+m/MS00A3.BIN	F0	3	138	1FBA	>AMS map data found. Download it?\n	>AMS map data found. Download it?\n	
+m/MS00A3.BIN	F0	4	188	1FB2	Proceed	Proceed	
+m/MS00A3.BIN	F0	5	197	1FB2	Cancel	Cancel	
+m/MS00A3.BIN	F0	6	223	1FBA	Downloading	Downloading	
+m/MS00A3.BIN	F0	7	240	1FFA	...\n	...\n	suspect: may be misread operand data, verify before editing
+m/MS00A3.BIN	F0	8	252	1FBA	>Download completed successfully.\n<wait>	>Download completed successfully.\n<wait>	
+m/MS00A3.BIN	F0	9	298	1FBA	>Download cancelled.\n<wait>{0C}\<	>Download cancelled.\n<wait>{0C}\<	runtime inserts: reproduce every {XX} token, in order
