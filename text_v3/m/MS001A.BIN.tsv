@@ -1,0 +1,258 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS001A.BIN	0:00	0	110	1FD2	{08:00}：		reads: 早坂： @rebase-new
+m/MS001A.BIN	0:00	1	116	1FD3	隊長！！　{08:4D}に		reads: 隊長！！　それに @rebase-new
+m/MS001A.BIN	0:00	2	134	00	{04:FF}{08:71}{02:08}‥\n<wait>	{04:FF}{08:71}{02:08}‥\n<wait>	reads: まで‥‥‥‥\n<wait> @rebase-new
+m/MS001A.BIN	0:00	3	237	1FD2	{08:04}：	Hayasaka:	reads: 西野： @from-v005
+m/MS001A.BIN	0:00	4	243	1FD3	{02:08}‥{02:0C}{08:62}{08:48}より原宿{08:10}に向かう。\n人命救助を最優先だ。<wait>行くぞ！\n<wait>	Commander! And Katsuragi as well...\n<wait>	reads: ‥‥‥‥我々は、これより原宿シェルターに向かう。\n人命救助を最優先だ。<wait>行くぞ！\n<wait> @from-v005
+m/MS001A.BIN	0:00	5	315	1FD2	全員：	Nishino:	@from-v005
+m/MS001A.BIN	0:00	6	323	1FD3	了解！！\n<wait>	...We will be heading over to Harajuku Shelter.\nRegardless of our orders, saving lives takes priority.\n<wait>Now, let's get moving!\n<wait>	@from-v005
+m/MS001A.BIN	0:01	0	81	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS001A.BIN	0:01	1	87	1FD3	いよいよ外に出る{08:5F}な{02:08}\n<wait>	Alright, we're finally here.\nAll that separates us from the outside world now is this door...\n<wait>	reads: いよいよ外に出るんだな‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:01	2	118	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001A.BIN	0:01	3	124	1FD3	{01:16}達{08:48}{08:42}、{08:90}なっちゃうん{08:8C}{08:72}\n<wait>	I wonder what's going to happen to us...\n<wait>	reads: あたし達これから、どうなっちゃうんだろう‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:01	4	161	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS001A.BIN	0:01	5	167	1FD3	余計な心配を{08:4A}{08:54}仕方{08:25}。{08:5C}、後戻りは出来{08:25}{08:5F}。\n<wait>	It's probably for the best if we don't worry about that too much.\nIt's not like we could turn back even if we wanted to.\n<wait>	reads: 余計な心配をしてても仕方ない。もう、後戻りは出来ないんだ。\n<wait> @from-v005
+m/MS001A.BIN	0:01	6	222	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001A.BIN	0:01	7	228	1FD3	そうね。\n<wait>	That's true.\n<wait>	@from-v005
+m/MS001A.BIN	0:01	8	245	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS001A.BIN	0:01	9	251	1FD3	{08:5C}、科学戦スーツは脱い{08:56}{08:7F}{08:8C}。\n<wait>{08:0B}相手に、いつま{08:56}{08:73}物着て戦え{08:25}{08:42}な！\n<wait>	Anyway, we can probably take the hazmats suits off now.\n<wait>Fighting demons in these things is going to be impossible.\n<wait>	reads: もう、科学戦スーツは脱いでもいいだろう。\n<wait>悪魔相手に、いつまでもこんな物着て戦えないからな！\n<wait> @from-v005
+m/MS001A.BIN	0:01	10	333	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001A.BIN	0:01	11	339	1FD3	ちょ{08:53}待{08:52}、スーツの測定機を見るわ！\n<wait>	Hold on. Let me check these readings real quick...\n<wait>	reads: ちょっと待って、スーツの測定機を見るわ！\n<wait> @from-v005
+m/MS001A.BIN	0:01	12	384	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001A.BIN	0:01	13	390	1FD3	{08:45}の毒ガスの濃度{08:62}数値{08:42}見れば危険値以下ね。\n<wait>{01:32}そうよ、脱い{08:81}{08:89}しょ！\n<wait>	Okay, everything looks normal.\n<wait>No poison gas detected.\n<wait>	reads: ここの毒ガスの濃度は、数値から見れば危険値以下ね。\n<wait>大丈夫そうよ、脱いじゃいましょ！\n<wait> @from-v005
+m/MS001A.BIN	0:01	14	472	1FD0	一行は科学戦スーツを脱ぎ捨てた。\n<wait>新鮮な空気とは言い難いが、肺の中に湿っぽく{08:25}空気が広がる。\n<wait>	The three of you quickly remove your hazmat suits.\n<wait>Finally. The fresh air feels so good in your lungs.\n<wait>	reads: 一行は科学戦スーツを脱ぎ捨てた。\n<wait>新鮮な空気とは言い難いが、肺の中に湿っぽくない空気が広がる。\n<wait> @from-v005
+m/MS001A.BIN	0:01	15	576	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS001A.BIN	0:01	16	582	1FD3	さあ、行こう！！\n<wait>	Let's get going!\n<wait>	@from-v005
+m/MS001A.BIN	0:01	17	648	1FD0	隔壁の前につ{08:64}{01:03}{02:08}{08:72}\n彼は{08:82}、	Newton now stands before the shelter's outer gate.\nAll he wanted was to bring Katsuragi to safety...\n<wait>	reads: 隔壁の前についたニュートン‥‥‥‥‥\n彼はただ、 @from-v005
+m/MS001A.BIN	0:01	18	681	00	{04:FF}を{01:1E}安全な場所に移{08:4A}やりた{08:18}{08:72}\n<wait>		reads: をはやく安全な場所に移してやりたかった‥‥\n<wait> @rebase-new
+m/MS001A.BIN	0:01	19	720	1FBA	{01:03}{08:62}{08:10}の重い扉を開き、外界への一歩を踏み出{08:4B}{02:08}\n<wait>	He pries the door open,\nand takes a step into the world that awaits outside...\n<wait>	reads: ニュートンは、シェルターの重い扉を開き、外界への一歩を踏み出した‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:01	20	778	1FD0	いよいよ外だ{02:08}‥\n<wait>{08:48}{08:42}{08:90}{08:1A}{08:83}の{08:8C}{02:08}‥\n<wait>	The outside, at last...\n<wait>Just what dangers awaits you there?\n<wait>	reads: いよいよ外だ‥‥‥‥\n<wait>これからどうなってしまうのだろう‥‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:01	21	828	00	{04:FF}の脳裏に拭い去れ{08:25}重い不安が過ぎ{08:51}。\n<wait>{03:0B}<wait>いつま{08:56}、{08:47}場所に止まっ{08:14}訳には行か{08:25}。\n<wait>	Anxious thoughts cloud your mind.\n<wait>However... <wait>It's not like you can stay here forever.\n<wait>	reads: の脳裏に拭い去れない重い不安が過ぎった。\n<wait>しかし、<wait>いつまでも、この場所に止まっている訳には行かない。\n<wait> @from-v005 @rebase-tagdiff
+m/MS001A.BIN	0:01	22	924	1FBA	もはや、{08:45}には全てが無い。\n<wait>もはや{08:72}全てが過去と{08:68}、時間軸の彼方に置き去りに{03:0C}た\n狂おしく遠い思い出で{08:86}{08:25}。\n<wait>	No. The place you once called home is now gone.\n<wait>Those days feel so distant already,\nas if they'd been nothing more than a daydream.\n<wait>	reads: もはや、ここには全てが無い。\n<wait>もはや‥‥全てが過去という、時間軸の彼方に置き去りにされた\n狂おしく遠い思い出でしかない。\n<wait> @from-v005
+m/MS001A.BIN	0:01	23	1057	1FB2	さぁ、行くぞ！	...Let's go!\n	menu option, declared width 20 columns @from-v005
+m/MS001A.BIN	0:01	24	1073	1FB2	さ{08:69}{08:7D}{08:72}	Goodbye... 	reads: さようなら‥‥; menu option, declared width 20 columns @from-v005
+m/MS001A.BIN	0:01	25	1087	00	{04:FE}{02:08}	Yuuka... 	reads: ‥‥‥ @from-v005 @rebase-tagdiff
+m/MS001A.BIN	0:01	26	1105	0F	{01:05}	{01:05}	reads: 山田
+m/MS001A.BIN	0:01	27	1108	00	{02:01}{01:00}	{02:01}{01:00}	reads: ペンタグランマ早坂達也
+m/MS001A.BIN	0:01	28	1117	00	{04:FF}はそう呟くと、{08:10}の重い扉を開{08:64}		reads: はそう呟くと、シェルターの重い扉を開いた @rebase-new
+m/MS001A.BIN	0:01	29	1155	1FFA	{02:08}{02:08}{02:08}\n<wait>	{02:08}{02:08}{02:08}\n<wait>	reads: ‥‥‥‥‥‥‥‥‥\n<wait>
+m/MS001A.BIN	0:02	0	348	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001A.BIN	0:02	1	354	1FD3	{02:0E}{08:04}。\n<wait>	This is Nishino.\n<wait>	reads: こちら西野。\n<wait> @from-v005
+m/MS001A.BIN	0:02	2	373	1F03	{08:13}{08:14}{08:15}全員{01:31}帰還{08:4B}。\n<wait>		reads: しているているますか？全員無事帰還した。\n<wait>
+m/MS001A.BIN	0:02	3	405	18	{08:82}今帰還{08:4B}。\n<wait>	We have returned to base.\n<wait>	reads: ただ今帰還した。\n<wait> @from-v005
+m/MS001A.BIN	0:02	4	461	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:02	5	475	1F03	{08:13}{08:14}{08:15}御{01:31}で何より{08:55}。\n<wait>		reads: しているているますか？御無事で何よりです。\n<wait>
+m/MS001A.BIN	0:02	6	509	18	重傷者が出{08:14}{08:69}{08:55}が{02:08}‥\n取りあえず、お帰りな{08:49}ませ。\n<wait>	I'm glad you made it back.\nEven if some of you did suffer heavy injuries...\n<wait>	reads: 重傷者が出ているようですが‥‥‥‥\n取りあえず、お帰りなさいませ。\n<wait> @from-v005
+m/MS001A.BIN	0:02	7	571	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001A.BIN	0:02	8	577	1FD3	何か{08:65}連絡はあ{08:51}か？\n<wait>	Have there been any news on our end?\n<wait>	reads: 何か通信連絡はあったか？\n<wait> @from-v005
+m/MS001A.BIN	0:02	9	614	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:02	10	620	1FD3	{08:4D}が{08:55}ねぇ{08:72}\n<wait>只今、{01:2D}{08:42}の{08:65}がありま{08:4A}。\n<wait>	Well, about that...\n<wait>I did just get a call\nfrom the Administrator's Office.\n<wait>	reads: それがですねぇ‥‥\n<wait>只今、管理部からの通信がありまして。\n<wait> @from-v005
+m/MS001A.BIN	0:02	11	672	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:02	12	678	1FD3	原宿に出動{08:4B}隊員{08:62}直ちに全員{01:2D}に\n出頭せよ{02:08}との事{08:55}。\n<wait>	Apparently, they want to talk to you guys\nin person. They sounded pretty mad...\n<wait>	reads: 原宿に出動した隊員は、直ちに全員管理部に\n出頭せよ‥‥‥との事です。\n<wait> @from-v005
+m/MS001A.BIN	0:02	13	742	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001A.BIN	0:02	14	748	1FD3	{02:08}了解。\n<wait>	...Roger that.\n<wait>	reads: ‥‥‥了解。\n<wait> @from-v005
+m/MS001A.BIN	0:02	15	769	1F03	{08:13}{08:14}{08:15}{02:0C}{08:62}今より		reads: しているているますか？我々は、今より
+m/MS001A.BIN	0:02	16	790	18	重傷者を治療{08:4B}後に、全員{01:2D}に出頭{08:8E}。\n<wait>	after treating the injured.             \n<wait>	reads: 重傷者を治療した後に、全員管理部に出頭する。\n<wait> @from-v005
+m/MS001A.BIN	0:02	17	835	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001A.BIN	0:02	18	841	1FD3	{08:02}、君は自宅で待機{08:4A}いてくれ。\n<wait>	Yamase. Head to your room and wait there.\n<wait>	reads: 山瀬、君は自宅で待機していてくれ。\n<wait> @from-v005
+m/MS001A.BIN	0:02	19	888	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:02	20	894	1FD3	御健闘をお祈りし{08:5A}。\n<wait>	I wish you the best of luck.\n<wait>	reads: 御健闘をお祈りします。\n<wait> @from-v005
+m/MS001A.BIN	0:02	21	927	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001A.BIN	0:02	22	941	1F03	{08:13}{08:14}{08:15}聞いての通りだ。\n<wait>今{08:42}、全員{01:2D}に出頭{08:8E}。行くぞ！\n<wait>		reads: しているているますか？聞いての通りだ。\n<wait>今から、全員管理部に出頭する。行くぞ！\n<wait>
+m/MS001A.BIN	0:02	23	1009	1FD2	一同：	Everyone:	@from-v005
+m/MS001A.BIN	0:02	24	1017	1FD3	{08:72}了解。\n<wait>	...Roger.\n<wait>	reads: ‥‥了解。\n<wait> @from-v005
+m/MS001A.BIN	0:02	25	1041	1F04	{08:13}{08:14}{08:15}重傷者を治療{08:4B}後に、{01:2D}に出頭{08:8E}。行くぞ！\n<wait>		reads: しているているますか？重傷者を治療した後に、管理部に出頭する。行くぞ！\n<wait>
+m/MS001A.BIN	0:02	26	1099	18	まず{08:62}重傷者を急いで治療せねばな{02:08}{08:72}\n<wait>	First, we need to take care of the injured...\n<wait>	reads: まずは、重傷者を急いで治療せねばな‥‥‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:02	27	1144	1FD0	{08:04}{08:62}まず医療施設へと急いだ{02:08}‥\n<wait>	Nishino headed to the medical ward...\n<wait>	reads: 西野は、まず医療施設へと急いだ‥‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:02	28	1246	1FD0	{08:76}毒ガスの匂いが、僅かに残っ{08:14}。\n<wait>中に入{08:52}は危険だ。引き返す{08:86}{08:25}。\n<wait>	You can still smell a faint amount of poison gas in the air.\n<wait>It's most likely not safe to enter.\n<wait>	reads: まだ毒ガスの匂いが、僅かに残っている。\n<wait>中に入っては危険だ。引き返すしかない。\n<wait> @from-v005
+m/MS001A.BIN	0:03	0	6	00	{04:FF}{08:62}地下に降りるエレベーターに向かおうと{08:4B}。\n<wait>	You briefly consider riding the elevator back down.\n<wait>	reads: は、地下に降りるエレベーターに向かおうとした。\n<wait> @from-v005 @rebase-tagdiff
+m/MS001A.BIN	0:03	1	57	1FBA	{03:0B}こう{08:13}間にも、窮地に陥っ{08:14}{08:04}達が{08:90}{08:59}かわ{08:42}{08:25}。\n<wait>	However, if you leave now,\nthen what's going to happen to Nishino and the rest?\n<wait>	reads: しかし、こうしている間にも、窮地に陥っている西野達がどうなるかわからない。\n<wait> @from-v005
+m/MS001A.BIN	0:03	2	116	00	{04:FF}{08:62}隔壁に向かう事に{08:4B}{02:08}‥\n<wait>	You can't just leave them. Not like this...\n<wait>	reads: は、隔壁に向かう事にした‥‥‥‥\n<wait> @from-v005 @rebase-tagdiff
+m/MS001A.BIN	0:04	0	8	1FD0	再び、	You hear Yuuka's voice again.\n<wait>	@from-v005
+m/MS001A.BIN	0:04	1	18	00	{04:FE}と{01:2D}の応答が聞こえて来た。\n<wait>		reads: と管理部の応答が聞こえて来た。\n<wait> @rebase-new
+m/MS001A.BIN	0:04	2	67	00	{04:FE}：		reads: ： @rebase-new
+m/MS001A.BIN	0:04	3	73	1FD3	{02:0E}{02:00}第二部隊、		reads: こちらデビルバスター第二部隊、 @rebase-new
+m/MS001A.BIN	0:04	4	91	00	{04:FE}！\n<wait>{01:2D}応答願い{08:5A}！\n<wait>		reads: ！\n<wait>管理部応答願います！\n<wait> @rebase-new
+m/MS001A.BIN	0:04	5	123	1FD2	オペレーター：	Yuuka:	@from-v005
+m/MS001A.BIN	0:04	6	139	1FD3	{02:0E}{01:2D}。\n{08:90}しま{08:4B}か？\n<wait>	This is Tachibana Yuuka, from Devil Buster Squad\nTwo! <wait>I request to speak with the Administrator's\nOffice!\n<wait>	reads: こちら管理部。\nどうしましたか？\n<wait> @from-v005
+m/MS001A.BIN	0:04	7	171	00	{04:FE}：		reads: ： @rebase-new
+m/MS001A.BIN	0:04	8	177	1FD3	応援の要請は行なわ{08:60}ので{08:80}か？！\n<wait>	Has the rescue squad been deployed already!?\n<wait>	reads: 応援の要請は行なわれたのでしょうか？！\n<wait> @from-v005
+m/MS001A.BIN	0:04	9	218	1FD2	オペレーター：	Operator:	@from-v005
+m/MS001A.BIN	0:04	10	234	1FD3	少々お待ち{08:6E}。\n<wait>	Please, just a moment.\n<wait>	reads: 少々お待ちください。\n<wait> @from-v005
+m/MS001A.BIN	0:04	11	267	1FFA	{02:08}{02:08}{02:08}{02:08}{02:08}‥\n<wait>	{02:08}{02:08}{02:08}{02:08}{02:08}‥\n<wait>	reads: ‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥\n<wait>
+m/MS001A.BIN	0:04	12	302	1FD2	オペレーター：	Operator:	@from-v005
+m/MS001A.BIN	0:04	13	318	1FD3	応援要請は受理{03:0C}てい{08:5A}。\n<wait>	Your request has been processed,\nand a team has been deployed.\n<wait>	reads: 応援要請は受理されています。\n<wait> @from-v005
+m/MS001A.BIN	0:04	14	351	1FD2	オペレーター：	Operator:	@from-v005
+m/MS001A.BIN	0:04	15	367	1FD3	尚、只今、第一部隊{08:42}{08:65}が入{08:52}おり{08:5A}ので、\n<wait>そちらにつなぎ{08:5A}。\n<wait>	In addition,\nwe have an incoming call from Squad One.\n<wait>I will patch it over.\n<wait>	reads: 尚、只今、第一部隊から通信が入っておりますので、\n<wait>そちらにつなぎます。\n<wait> @from-v005
+m/MS001A.BIN	0:04	16	439	1FD2	ＤＢ男性隊員：	Devil Buster (Male):	@from-v005
+m/MS001A.BIN	0:04	17	455	1FD3	{02:0E}、{02:00}第一部隊、隊長、野坂稔だ。\n<wait>	This is the leader of Devil Buster Squad One,\nNozaka Minori.\n<wait>	reads: こちら、デビルバスター第一部隊、隊長、野坂稔だ。\n<wait> @from-v005
+m/MS001A.BIN	0:04	18	496	1FD2	野坂：	Nozaka:	@from-v005
+m/MS001A.BIN	0:04	19	504	1FD3	現在、応援部隊要請を受け、出動準備にかかっ{08:14}。\n<wait>	We have been informed of the situation,\nand are currently putting together a rescue team.\n<wait>	reads: 現在、応援部隊要請を受け、出動準備にかかっている。\n<wait> @from-v005
+m/MS001A.BIN	0:04	20	559	1FD2	野坂：	Nozaka:	@from-v005
+m/MS001A.BIN	0:04	21	567	1FD3	約１５分ほどで、隔壁に向かう予定。\n<wait>	We expect to reach the surface in 15 minutes.\n<wait>	@from-v005
+m/MS001A.BIN	0:04	22	614	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS001A.BIN	0:04	23	620	1FD3	お願いし{08:5A}！\n<wait>{08:90}か、急いで下{08:49}！！\n<wait>	Thank you! <wait>And please, hurry!\n<wait>	reads: お願いします！\n<wait>どうか、急いで下さい！！\n<wait> @from-v005
+m/MS001A.BIN	0:04	24	666	1FD2	野坂：	Nozaka:	@from-v005
+m/MS001A.BIN	0:04	25	674	1FD3	了解！\n<wait>	Will do!\n<wait>	@from-v005
+m/MS001A.BIN	0:04	26	695	1FD0	{08:65}は切{08:60}。\n<wait>	The call ends there.\n<wait>	reads: 通信は切れた。\n<wait> @from-v005
+m/MS001A.BIN	0:04	27	712	1FBA	応援部隊が出動{08:8E}様だ。{03:0B}すでに時間はかなり過ぎ{08:14}。\n<wait>{08:04}達は{01:31}{08:8C}か？　いずれにせよ、急がねば{08:7D}{08:25}{02:08}\n<wait>	It appears that a rescue team is on its way.\nHowever, it's going to take them some time.\n<wait>Is Nishino safe? What about everyone else?\nYou have no choice but to hurry...\n<wait>	reads: 応援部隊が出動する様だ。しかし、すでに時間はかなり過ぎている。\n<wait>西野達は無事だろうか？　いずれにせよ、急がねばならない‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:05	0	12	00	{04:FE}と{01:2D}の応答が聞こえて来た。\n<wait>{08:90}やら{08:65}機のモードが、ＯＮに{03:0C}た{08:7E}らしい。\n<wait>		reads: と管理部の応答が聞こえて来た。\n<wait>どうやら通信機のモードが、ＯＮにされたままらしい。\n<wait> @rebase-new
+m/MS001A.BIN	0:05	1	108	00	{04:FE}：		reads: ： @rebase-new
+m/MS001A.BIN	0:05	2	114	1FD3	{02:0E}{02:00}第二部隊、		reads: こちらデビルバスター第二部隊、 @rebase-new
+m/MS001A.BIN	0:05	3	132	00	{04:FE}！\n<wait>{08:90}か、{01:2D}応答願い{08:5A}。\n<wait>		reads: ！\n<wait>どうか、管理部応答願います。\n<wait> @rebase-new
+m/MS001A.BIN	0:05	4	170	1FD2	オペレーター：	Yuuka:	@from-v005
+m/MS001A.BIN	0:05	5	186	1FD3	{02:0E}{01:2D}。\n{08:90}しま{08:4B}か？\n<wait>		reads: こちら管理部。\nどうしましたか？\n<wait> @rebase-new
+m/MS001A.BIN	0:05	6	218	00	{04:FE}：		reads: ： @rebase-new
+m/MS001A.BIN	0:05	7	224	1FD3	隔壁の{08:0B}撃退に向{08:18}当部隊隊員より、先程\n{08:65}が入{08:51}の{08:55}が、{08:90}も様子がおかしいの{08:55}。\n<wait>		reads: 隔壁の悪魔撃退に向かった当部隊隊員より、先程\n通信が入ったのですが、どうも様子がおかしいのです。\n<wait> @rebase-new
+m/MS001A.BIN	0:05	8	312	1FD2	オペレーター：		@rebase-new
+m/MS001A.BIN	0:05	9	328	1FD3	落ち着いて。\n<wait>{08:65}内容を明確に報告{08:4A}下{08:49}。\n<wait>		reads: 落ち着いて。\n<wait>通信内容を明確に報告して下さい。\n<wait> @rebase-new
+m/MS001A.BIN	0:05	10	384	00	{04:FE}：		reads: ： @rebase-new
+m/MS001A.BIN	0:05	11	390	1FD3	{08:4D}が、{08:65}の電波状況が悪く、\n内容が聞き取れずに{02:08}‥\n<wait>		reads: それが、通信の電波状況が悪く、\n内容が聞き取れずに‥‥‥‥\n<wait> @rebase-new
+m/MS001A.BIN	0:05	12	448	1FD2	オペレーター：		@rebase-new
+m/MS001A.BIN	0:05	13	464	1FD3	で{08:62}状況が詳しく分かり次第、\n再度報告を行{08:1A}下{08:49}。\n<wait>		reads: では、状況が詳しく分かり次第、\n再度報告を行なって下さい。\n<wait> @rebase-new
+m/MS001A.BIN	0:05	14	526	00	{04:FE}：		reads: ： @rebase-new
+m/MS001A.BIN	0:05	15	532	1FD3	そ{08:72}{08:7A}時間はあり{02:0A}！\n<wait>応援部隊の派遣を、至急お願いし{08:5A}！\n<wait>	This is Tachibana Yuuka, from Devil Buster Squad\nTwo. <wait>I request to speak with the Administrator's\nOffice at once.\n<wait>	reads: そ‥‥そんな時間はありません！\n<wait>応援部隊の派遣を、至急お願いします！\n<wait> @from-v005
+m/MS001A.BIN	0:05	16	600	1FD2	オペレーター：	Operator:	@from-v005
+m/MS001A.BIN	0:05	17	616	1FD3	{02:08}‥了解しま{08:4B}。\n<wait>	This is the Administrator's Office.\nHow may I help you?\n<wait>	reads: ‥‥‥‥了解しました。\n<wait> @from-v005
+m/MS001A.BIN	0:05	18	641	1FD2	オペレーター：	Yuuka:	@from-v005
+m/MS001A.BIN	0:05	19	657	1FD3	報告を受{08:43}旨、上層に伝えておきま{08:80}。\n<wait>	I received a message from my squadmates engaged\nwith a demon on the surface.\nHowever, there was something... strange about it.\n<wait>	reads: 報告を受けた旨、上層に伝えておきましょう。\n<wait> @from-v005
+m/MS001A.BIN	0:05	20	702	1FD2	オペレーター：	Operator:	@from-v005
+m/MS001A.BIN	0:05	21	718	1FD3	以上で{08:65}を終わり{08:5A}。\n<wait>	First of all, please, calm down. <wait>Next, can you\nrepeat the message exactly like you heard it?\n<wait>	reads: 以上で通信を終わります。\n<wait> @from-v005
+m/MS001A.BIN	0:05	22	751	00	{04:FE}：		reads: ： @rebase-new
+m/MS001A.BIN	0:05	23	757	1FD3	ちょ{08:53}待{08:52}！　あのッ{02:08}\n<wait>	Hold on! You can't just...!\n<wait>	reads: ちょっと待って！　あのッ‥‥‥\n<wait> @from-ours
+m/MS001A.BIN	0:05	24	794	1FD0	ブツッと{08:68}、{08:65}を一方的に切る鈍い音が聞こえ、再び{08:65}機は沈黙{08:4B}。\n<wait>	The operator ends the call, and the line goes silent.\n<wait>	reads: ブツッという、通信を一方的に切る鈍い音が聞こえ、再び通信機は沈黙した。\n<wait> @from-v005
+m/MS001A.BIN	0:06	0	57	00	{04:FF}{08:62}{08:79}場に倒れ込む{02:08}‥\n<wait>	You collapse on the floor...\n<wait>	reads: は、その場に倒れ込む‥‥‥‥\n<wait> @from-v005 @rebase-tagdiff
+m/MS001A.BIN	0:06	1	86	1FBA	遠くの方で誰かが駆けてくる足音が聞こ{08:41}{02:08}\n<wait>	In the distance,\nyou can hear the footsteps of someone running over to you.\n<wait>	reads: 遠くの方で誰かが駆けてくる足音が聞こえた‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:06	2	187	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001A.BIN	0:06	3	193	1FD3	おいっ！　しっかりしろ！\n今、医療施設に連れてい{08:52}やる{08:42}な{02:08}‥\n<wait>	Hey! Stay with us! We're gonna get you to a doctor!\n<wait>	reads: おいっ！　しっかりしろ！\n今、医療施設に連れていってやるからな‥‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:06	4	297	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS001A.BIN	0:06	5	303	1FD3	くそっ！\n早く医療施設に連れていか{08:25}と{02:08}<wait>本当に死んじまう！\n<wait>	Shit! We've gotta hurry and get him to a doctor...<wait>He's gonna die at this rate!\n<wait>	reads: くそっ！\n早く医療施設に連れていかないと‥‥‥<wait>本当に死んじまう！\n<wait> @from-v005
+m/MS001A.BIN	0:06	6	407	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001A.BIN	0:06	7	413	1FD3	きゃあっ！　しっかり{08:4A}！\n{08:62}早く医療施設に行かなきゃ{02:08}‥\n<wait>	Ah! Stay with us! We're gonna get you to a doctor!\n<wait>	reads: きゃあっ！　しっかりして！\nは、早く医療施設に行かなきゃ‥‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:06	8	515	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS001A.BIN	0:06	9	521	1FD3	きゃあっ！　しっかり{08:4A}！\n{08:62}早く医療施設に連れていか{08:25}と{02:08}‥\n<wait>	Ah! Stay with us! W-We're gonna get you to a doctor!\n<wait>	reads: きゃあっ！　しっかりして！\nは、早く医療施設に連れていかないと‥‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:06	10	623	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:06	11	629	1FD3	おいっ！　返事しろ！\n<wait>	Hey! Say something! Can you hear me!?\n<wait>	@from-v005
+m/MS001A.BIN	0:06	12	658	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:06	13	664	1FD3	{08:72}こりゃ、早く医療施設に連れて行かねぇとヤバイな{02:08}\n<wait>	Crap... We've gotta hurry and get him to a doctor...<wait>	reads: ‥‥こりゃ、早く医療施設に連れて行かねぇとヤバイな‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:06	14	757	1FD2	{01:03}：	Newton:	reads: ニュートン： @from-v005
+m/MS001A.BIN	0:06	15	763	1FD3	ワオンッ！　ワオンッワオンッ！\n<wait>	*Woof*! *Bow-wow*!\n<wait>	@from-v005
+m/MS001A.BIN	0:06	16	802	1FD0	{01:03}は重傷者を医療施設へと運{08:5F}{02:08}‥\n<wait>	Newton grabs your body and drags it over to the medical ward...\\<wait>	reads: ニュートンは重傷者を医療施設へと運んだ‥‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:06	17	846	1FD0	主人公を残し、		
+m/MS001A.BIN	0:06	18	865	09	{01:03}は倒れて{08:1F}{02:08}\n	Newton fell...\n	reads: ニュートンは倒れてしまった‥‥‥\n @from-v005
+m/MS001A.BIN	0:06	19	888	09	{08:03}は倒れて{08:1F}{02:08}‥\n<wait>	Emi fell...\n<wait>	reads: 英美は倒れてしまった‥‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:06	20	922	1F04			
+m/MS001A.BIN	0:06	21	931	1FA3	{08:00}は倒れて{08:1F}{02:08}‥\n<wait>	Hayasaka fell...\n<wait>	reads: 早坂は倒れてしまった‥‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:06	22	968	18	皆倒れて{08:1F}{02:08}{08:72}\n<wait>	The party fell...\n<wait>	reads: 皆倒れてしまった‥‥‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:06	23	994	0B	一刻も早く蘇生処置を行わねば、手遅れに{08:59}{08:8C}{02:08}‥\n<wait>	If you don't hurry up and revive them quickly, it'll be too late.\n<wait>	reads: 一刻も早く蘇生処置を行わねば、手遅れになるだろう‥‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:06	24	1047	1FBA	{08:4D}に、{08:47}{08:7E}放{08:52}おいて、死に至らし{08:2E}{08:69}な事が{08:3F}ば、\n{08:63}は犯罪者で{08:7B}。\n<wait>	There's no way that you could handle the weight\nof being responsible for their deaths.\n<wait>	reads: それに、このまま放っておいて、死に至らしめるような事があれば、\n自分は犯罪者である。\n<wait> @from-v005
+m/MS001A.BIN	0:06	25	1123	00	{04:FF}{08:62}医療施設へ向かう事に{08:4B}{02:08}‥\n<wait>	You decide to head over to the medical ward.\n<wait>	reads: は、医療施設へ向かう事にした‥‥‥‥\n<wait> @from-v005 @rebase-tagdiff
+m/MS001A.BIN	0:06	26	1165	1FD1	＞{02:06}\n	>What will you do?\n	reads: ＞どうしますか？\n @from-v005
+m/MS001A.BIN	0:06	27	1186	1FB2	蘇生さ{08:2A}	Revive them	reads: 蘇生させる; menu option, declared width 20 columns @from-v005
+m/MS001A.BIN	0:06	28	1196	1FB2	ほ{08:53}く	Ignore them	reads: ほっとく; menu option, declared width 20 columns @from-v005
+m/MS001A.BIN	0:06	29	1216	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS001A.BIN	0:06	30	1219	00			
+m/MS001A.BIN	0:06	31	1228	00	{04:FF}{08:62}取りあえず{08:0F}を放{08:52}おく{08:46}に{08:4B}。\n<wait>		reads: は、取りあえず仲間を放っておくことにした。\n<wait> @rebase-new
+m/MS001A.BIN	0:06	32	1270	1FBA	一刻も早く蘇生処置を行わねば、手遅れに{08:59}{08:8C}{02:08}‥\n<wait>		reads: 一刻も早く蘇生処置を行わねば、手遅れになるだろう‥‥‥‥\n<wait> @rebase-new
+m/MS001A.BIN	0:06	33	1327	00	{04:FF}{08:62}急いで医療施設へと向{08:18}。\n<wait>		reads: は、急いで医療施設へと向かった。\n<wait> @rebase-new
+m/MS001A.BIN	0:06	34	1365	1FD0	一行{08:62}医療施設へ向{08:18}{02:08}{08:72}\n<wait>	You decide to leave your comrades be for now.\n<wait>	reads: 一行は、医療施設へ向かった‥‥‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:07	0	27	00	{02:00}	Devil Buster	reads: デビルバスター @from-ours
+m/MS001A.BIN	0:07	1	40	1F51	{03:00}	Ranged Weapon	reads: 飛び道具 @from-ours
+m/MS001A.BIN	0:08	0	2	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS001A.BIN	0:08	1	8	1FD3	{02:0E}{08:00}。\n<wait>{08:82}今帰還{08:4B}。\n<wait>	This is Hayasaka.\n<wait>We have just returned to base.\n<wait>	reads: こちら早坂。\n<wait>ただ今帰還した。\n<wait> @from-v005
+m/MS001A.BIN	0:08	2	75	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:08	3	81	1FD3	重傷者が出{08:2B}み{08:4E}だな{02:08}‥\n<wait>{01:32}か？\n<wait>	It sounded like you were having a tough time out there...\n<wait>Is everyone alright?\n<wait>	reads: 重傷者が出てるみたいだな‥‥‥‥\n<wait>大丈夫か？\n<wait> @from-v005
+m/MS001A.BIN	0:08	4	127	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS001A.BIN	0:08	5	133	1FD3	{08:72}一刻も早く、治療し{08:25}とヤバイ{08:5F}。\n<wait>	...For now. Though we still need to get everyone to a doctor.\n<wait>	reads: ‥‥一刻も早く、治療しないとヤバイんだ。\n<wait> @from-v005
+m/MS001A.BIN	0:08	6	184	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:08	7	190	1FD3	{08:81}あ、手っ取り早く行こう。\n<wait>つい今しがた、{01:2D}{08:42}の{08:65}があ{08:51}。\n<wait>	Alright then.\n<wait>Oh, also, I just received a message from the Administrator's Office.\n<wait>	reads: じゃあ、手っ取り早く行こう。\n<wait>つい今しがた、管理部からの通信があった。\n<wait> @from-v005
+m/MS001A.BIN	0:08	8	260	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:08	9	266	1FD3	原宿に出動{08:4B}隊員{08:62}直ちに全員{01:2D}に出頭せよ。\n<wait>だとさ。\n<wait>	The big man wants everyone who travelled to Harajuku in his office.\n<wait>That's all.\n<wait>	reads: 原宿に出動した隊員は、直ちに全員管理部に出頭せよ。\n<wait>だとさ。\n<wait> @from-v005
+m/MS001A.BIN	0:08	10	332	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS001A.BIN	0:08	11	338	1FD3	{02:08}了解。\n<wait>重傷者を治療{08:4B}後直ちに、全員{01:2D}に出頭{08:8E}。\n<wait>	...Understood.\n<wait>We'll head there right away once everyone has been treated.\n<wait>	reads: ‥‥‥了解。\n<wait>重傷者を治療した後直ちに、全員管理部に出頭する。\n<wait> @from-v005
+m/MS001A.BIN	0:08	12	400	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS001A.BIN	0:08	13	406	1FD3	{08:02}、お前は自宅で待機{08:4A}いてくれ。\n<wait>	As for you, Yamase, head to your room and wait for further instructions.\n<wait>	reads: 山瀬、お前は自宅で待機していてくれ。\n<wait> @from-v005
+m/MS001A.BIN	0:08	14	455	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:08	15	461	1FD3	健闘を祈っ{08:2B}ぜ。\n<wait>	I wish you the best of luck.\n<wait>	reads: 健闘を祈ってるぜ。\n<wait> @from-v005
+m/MS001A.BIN	0:08	16	490	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS001A.BIN	0:08	17	504	1F04	{08:14}{08:15}聞{08:64}とおりだ。\n重傷者を治療{08:4B}後に、{01:2D}に出頭{08:8E}。行くぞ！\n<wait>		reads: ているますか？聞いたとおりだ。\n重傷者を治療した後に、管理部に出頭する。行くぞ！\n<wait>
+m/MS001A.BIN	0:08	18	575	18	まず、重傷者を急いで治療しなきゃな{02:08}{08:72}\n<wait>	First, we need to get everyone healed...\n<wait>	reads: まず、重傷者を急いで治療しなきゃな‥‥‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:08	19	622	1FD0	{08:00}{08:62}まず医療施設へと急いだ{02:08}‥\n<wait>	Hayasaka hurried over to the medical ward...\n<wait>	reads: 早坂は、まず医療施設へと急いだ‥‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:09	0	2	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001A.BIN	0:09	1	8	1FD3	{02:0E}{08:34}。\n<wait>{08:82}今帰還しま{08:4B}。\n<wait>	This is Kirishima.\n<wait>We have just returned to base.\n<wait>	reads: こちら桐島。\n<wait>ただ今帰還しました。\n<wait> @from-v005
+m/MS001A.BIN	0:09	2	79	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:09	3	85	1FD3	御{01:31}で{02:08}{08:52}訳{08:81}{08:25}み{08:4E}だな。\n<wait>	Thank goodness that you're safe...\nWell, I guess that "safe" is a slight exaggeration.\n<wait>	reads: 御無事で‥‥‥って訳じゃないみたいだな。\n<wait> @from-v005
+m/MS001A.BIN	0:09	4	122	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001A.BIN	0:09	5	128	1FD3	ええ、早く治療し{08:25}と{02:08}{08:72}\n<wait>何か連絡は？\n<wait>	Yeah... The demons definitely took their toll on us.\n<wait>Anything new on your end?\n<wait>	reads: ええ、早く治療しないと‥‥‥‥‥\n<wait>何か連絡は？\n<wait> @from-v005
+m/MS001A.BIN	0:09	6	186	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:09	7	192	1FD3	つい{01:3B}、{01:2D}{08:42}の{08:65}があ{08:51}ぜ。\n<wait>	I received a message from the Administrator's Office just now.\n<wait>	reads: ついさっき、管理部からの通信があったぜ。\n<wait> @from-v005
+m/MS001A.BIN	0:09	8	227	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:09	9	233	1FD3	原宿に出動{08:4B}隊員{08:62}直ちに全員{01:2D}に出頭せよ。\n<wait>だとさ。\n<wait>	The big man wants everyone who travelled to Harajuku in his office.\n<wait>That's all.\n<wait>	reads: 原宿に出動した隊員は、直ちに全員管理部に出頭せよ。\n<wait>だとさ。\n<wait> @from-v005
+m/MS001A.BIN	0:09	10	299	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001A.BIN	0:09	11	305	1FD3	{02:08}了解。\n<wait>重傷者を治療{08:4B}後に、全員{01:2D}に出頭し{08:5A}。\n<wait>	...Understood.\n<wait>We'll head there right away once everyone has been treated.\n<wait>	reads: ‥‥‥了解。\n<wait>重傷者を治療した後に、全員管理部に出頭します。\n<wait> @from-v005
+m/MS001A.BIN	0:09	12	365	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001A.BIN	0:09	13	371	1FD3	{08:02}は自宅で待機{08:4A}て。\n<wait>	As for you, Yamase, head to your room and wait for further instructions.\n<wait>	reads: 山瀬は自宅で待機してて。\n<wait> @from-v005
+m/MS001A.BIN	0:09	14	408	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:09	15	414	1FD3	御健闘を{02:08}‥。\n<wait>	I wish you the best of luck.\n<wait>	reads: 御健闘を‥‥‥‥。\n<wait> @from-v005
+m/MS001A.BIN	0:09	16	441	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001A.BIN	0:09	17	455	1F04	{08:15}重傷者を治療{08:4B}後に、{01:2D}に出頭し{08:5A}。行きま{08:80}！\n<wait>		reads: ますか？重傷者を治療した後に、管理部に出頭します。行きましょう！\n<wait>
+m/MS001A.BIN	0:09	18	513	18	まず{08:62}重傷者を急いで治療しなきゃ{02:08}{08:72}\n<wait>	First, we need to get everyone healed...\n<wait>	reads: まずは、重傷者を急いで治療しなきゃ‥‥‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:09	19	558	1FD0	{08:03}{08:62}まず医療施設へと急いだ{02:08}‥\n<wait>	Emi hurried over to the medical ward...\n<wait>	reads: 英美は、まず医療施設へと急いだ‥‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:0A	0	6	00	{04:FE}：		reads: ： @rebase-new
+m/MS001A.BIN	0:0A	1	12	1FD3	{02:0E}	{02:0E}	reads: こちら @rebase-new
+m/MS001A.BIN	0:0A	2	18	00	{04:FE}。\n<wait>{08:82}今帰還しま{08:4B}。\n<wait>		reads: 。\n<wait>ただ今帰還しました。\n<wait> @rebase-new
+m/MS001A.BIN	0:0A	3	87	1FD2	{08:02}：	Yuuka:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:0A	4	93	1FD3	御{01:31}{02:08}{08:52}訳{08:81}{08:25}な？\n<wait>		reads: 御無事‥‥‥って訳じゃないな？\n<wait> @rebase-new
+m/MS001A.BIN	0:0A	5	124	00	{04:FE}：		reads: ： @rebase-new
+m/MS001A.BIN	0:0A	6	130	1FD3	ええ。早く治療し{08:25}と{02:08}{08:72}\n<wait>		reads: ええ。早く治療しないと‥‥‥‥‥\n<wait> @rebase-new
+m/MS001A.BIN	0:0A	7	167	00	{04:FE}：		reads: ： @rebase-new
+m/MS001A.BIN	0:0A	8	173	1FD3	何か連絡は{02:08}‥？\n<wait>	This is Yuuka.\n<wait>We have just returned to base.\n<wait>	reads: 何か連絡は‥‥‥‥？\n<wait> @from-v005
+m/MS001A.BIN	0:0A	9	206	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:0A	10	212	1FD3	{08:4D}が{08:55}ねぇ{08:72}\n<wait>つい{01:3B}、{01:2D}{08:42}の{08:65}があ{08:52}{02:08}\n<wait>	Thank goodness that you're safe...\nWell, I guess that "safe" is a slight exaggeration.\n<wait>	reads: それがですねぇ‥‥\n<wait>ついさっき、管理部からの通信があって‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:0A	11	262	1FD2	{08:02}：	Yuuka:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:0A	12	268	1FD3	原宿に出動{08:4B}隊員{08:62}直ちに全員{01:2D}に出頭せよ。\n<wait>だとさ。\n<wait>	Yeah... The demons definitely took their toll on us.\n<wait>	reads: 原宿に出動した隊員は、直ちに全員管理部に出頭せよ。\n<wait>だとさ。\n<wait> @from-v005
+m/MS001A.BIN	0:0A	13	338	00	{04:FE}：		reads: ： @rebase-new
+m/MS001A.BIN	0:0A	14	344	1FD3	{02:08}了解。\n<wait>重傷者を治療{08:4B}後に、全員{01:2D}に出頭し{08:5A}。\n<wait>		reads: ‥‥‥了解。\n<wait>重傷者を治療した後に、全員管理部に出頭します。\n<wait> @rebase-new
+m/MS001A.BIN	0:0A	15	408	00	{04:FE}：		reads: ： @rebase-new
+m/MS001A.BIN	0:0A	16	414	1FD3	{08:02}さん、{08:02}さんは自宅で待機{08:4A}下{08:49}。\n<wait>	Anything new on your end?\n<wait>	reads: 山瀬さん、山瀬さんは自宅で待機して下さい。\n<wait> @from-v005
+m/MS001A.BIN	0:0A	17	465	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:0A	18	471	1FD3	了解。\n御健闘をお祈りし{08:5A}。\n<wait>	Well...\n<wait>I received a message from the Administrator's Office just now.\n<wait>	reads: 了解。\n御健闘をお祈りします。\n<wait> @from-v005
+m/MS001A.BIN	0:0A	19	515	00	{04:FE}：		reads: ： @rebase-new
+m/MS001A.BIN	0:0A	20	529	1F04	重傷者を治療{08:4B}後に、{01:2D}に出頭し{08:5A}{08:72}行きま{08:80}{08:72}\n<wait>		reads: 重傷者を治療した後に、管理部に出頭します‥‥行きましょう‥‥\n<wait>
+m/MS001A.BIN	0:0A	21	585	18	急いで{01:1C}を治療しなきゃ{02:08}{08:72}\n<wait>	First, we need to get everyone healed...\n<wait>	reads: 急いでみんなを治療しなきゃ‥‥‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:0A	22	624	00	{04:FE}{08:62}まず医療施設へと急いだ{02:08}‥\n	Yuuka hurried over to the medical ward...\n	reads: は、まず医療施設へと急いだ‥‥‥‥\n @from-v005 @rebase-tagdiff
+m/MS001A.BIN	0:0B	0	6	00	{04:FF}{08:62}詰所で待機{08:13}{08:02}に{08:65}を入{08:60}。\n<wait>	You call Yamase waiting back at the office.\n<wait>	reads: は、詰所で待機している山瀬に通信を入れた。\n<wait> @from-v005 @rebase-tagdiff
+m/MS001A.BIN	0:0B	1	80	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:0B	2	86	1FD3	御{01:31}で{02:08}{08:52}、かなりヤバイ状態だな。\n<wait>	I'm glad that you're safe.\nThen again, I guess you've seen better days...\n<wait>	reads: 御無事で‥‥‥って、かなりヤバイ状態だな。\n<wait> @from-v005
+m/MS001A.BIN	0:0B	3	129	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:0B	4	135	1FD3	つい今し方、{01:2D}{08:42}{08:65}が入{08:51}ぜ。\n<wait>	Also, I just got a dispatch from the Administrator's Office.\n<wait>	reads: つい今し方、管理部から通信が入ったぜ。\n<wait> @from-v005
+m/MS001A.BIN	0:0B	5	172	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:0B	6	178	1FD3	原宿に出動{08:4B}隊員{08:62}直ちに全員{01:2D}に出頭せよ。\n<wait>だとさ。\n<wait>	The big man wants everyone who travelled to Harajuku in his office.\n<wait>That's all.\n<wait>	reads: 原宿に出動した隊員は、直ちに全員管理部に出頭せよ。\n<wait>だとさ。\n<wait> @from-v005
+m/MS001A.BIN	0:0B	7	248	00	{04:FF}は重傷者を治療{08:4B}後に、全員{01:2D}に出頭{08:8E}旨を告げ、\n{08:02}は自宅で待機{08:8E}{08:69}に告{08:44}。\n<wait>	You've been ordered to report to the Administrator's Office\nafter healing everyone. As for Yamase, he's to wait in his room.\n<wait>	reads: は重傷者を治療した後に、全員管理部に出頭する旨を告げ、\n山瀬は自宅で待機するように告げた。\n<wait> @from-v005 @rebase-tagdiff
+m/MS001A.BIN	0:0B	8	340	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:0B	9	346	1FD3	了解。\n<wait>	Roger.\n<wait>	@from-v005
+m/MS001A.BIN	0:0B	10	361	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:0B	11	367	1FD3	そい{08:81}、御健闘を{02:08}‥\n<wait>	Well then, good luck.\n<wait>	reads: そいじゃ、御健闘を‥‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:0B	12	404	00	{04:FF}{08:62}まず医療施設へと急いだ{02:08}‥\n	You hurry over to the medical ward.\n	reads: は、まず医療施設へと急いだ‥‥‥‥\n @from-v005 @rebase-tagdiff
+m/MS001A.BIN	0:0C	0	2	1FD0	{01:03}は{08:65}モードをＯＮにし、Ｂ５Ｆ詰所へ{08:65}を入{08:60}。\n<wait>	Newton turns on his transmitter, and calls the office.\n<wait>	reads: ニュートンは通信モードをＯＮにし、Ｂ５Ｆ詰所へ通信を入れた。\n<wait> @from-v005
+m/MS001A.BIN	0:0C	1	92	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:0C	2	98	1FD3	お？　{01:03}か？\n他の皆は{02:08}‥？\n<wait>	Oh? Newton? What happened to the other guys?\n<wait>	reads: お？　ニュートンか？\n他の皆は‥‥‥‥？\n<wait> @from-v005
+m/MS001A.BIN	0:0C	3	136	1FD0	{01:03}{08:62}行動記録を送信{08:4B}。\n<wait>	Newton sends over the team's action record.\n<wait>	reads: ニュートンは、行動記録を送信した。\n<wait> @from-v005
+m/MS001A.BIN	0:0C	4	175	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:0C	5	181	1FD3	そうか{02:08}‥\n<wait>	Huh...\n<wait>	reads: そうか‥‥‥‥\n<wait> @from-v005
+m/MS001A.BIN	0:0C	6	200	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:0C	7	206	1FD3	今、{01:2D}{08:42}の{08:65}があ{08:51}。\n<wait>	Oh, and also. I just got a dispatch from the Administrator's Office.\n<wait>	reads: 今、管理部からの通信があった。\n<wait> @from-v005
+m/MS001A.BIN	0:0C	8	235	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:0C	9	241	1FD3	原宿に出動{08:4B}隊員{08:62}直ちに全員{01:2D}に出頭せよ。\n<wait>との事だ。\n<wait>	The big man wants everyone who travelled to Harajuku in his office.\n<wait>That's all.\n<wait>	reads: 原宿に出動した隊員は、直ちに全員管理部に出頭せよ。\n<wait>との事だ。\n<wait> @from-v005
+m/MS001A.BIN	0:0C	10	307	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:0C	11	313	1FD3	治療が終わっ{08:50}隊長達に伝えてくれ。\n<wait>	Tell that to the commander once he has been healed, okay?\n<wait>	reads: 治療が終わったら隊長達に伝えてくれ。\n<wait> @from-v005
+m/MS001A.BIN	0:0C	12	358	1FD2	{01:03}：	Newton:	reads: ニュートン： @from-v005
+m/MS001A.BIN	0:0C	13	364	1FD3	ワォン！\n<wait>	Woof!\n<wait>	@from-v005
+m/MS001A.BIN	0:0C	14	389	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001A.BIN	0:0C	15	395	1FD3	{08:4D}{08:81}あ、頼{08:5F}ぜ。{08:81}あな。\n<wait>	Good boy.\n<wait>	reads: それじゃあ、頼んだぜ。じゃあな。\n<wait> @from-v005
+m/MS001A.BIN	0:0C	16	432	1FD0	{08:65}は切断{03:0C}た。\n<wait>	The conversation stops there.\n<wait>	reads: 通信は切断された。\n<wait> @from-v005
+m/MS001A.BIN	0:0C	17	453	1FBA	{01:03}{08:62}医療施設へと急いだ{02:08}‥\n<wait>	Newton hurries over to the medical ward.\n<wait>	reads: ニュートンは、医療施設へと急いだ‥‥‥‥\n<wait> @from-v005

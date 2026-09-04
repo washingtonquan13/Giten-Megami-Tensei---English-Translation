@@ -1,0 +1,458 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS000F.BIN	0:00	0	8	1F04			
+m/MS000F.BIN	0:00	1	12	1FD0	誰も{08:24}{02:08}‥\n	There's no one here...\n	reads: 誰もいない‥‥‥‥\n @from-v005
+m/MS000F.BIN	0:00	2	53	1FD0	オセ{08:62}{08:0B}化{08:4B}若者に囲まれ悠然と{08:13}。\n<wait>	You find Ose surrounded by youngsters who have transformed into demons.\n<wait>	reads: オセは、悪魔化した若者に囲まれ悠然としている。\n<wait> @from-v005
+m/MS000F.BIN	0:00	3	222	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	4	230	1FD3	{08:72}珍しい客人だ{08:72}生者で、{08:86}も私と同じ臭いを持つ者{08:72}\n私を倒しに来たと{08:56}言うのかね？\n	...What a rare guest... A living being, who carries the same\nscent as me, no less... Are you telling me you've come to defeat me?\n	reads: ‥‥珍しい客人だ‥‥生者で、しかも私と同じ臭いを持つ者‥‥\n私を倒しに来たとでも言うのかね？\n @from-ours
+m/MS000F.BIN	0:00	5	328	1FB2	{08:26}	Yes	reads: はい; menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:00	6	332	1FB2	{08:27}	No	reads: いいえ; menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:00	7	348	0F	{01:E6}{03:FF}	{01:E6}{03:FF}	reads: 
+m/MS000F.BIN	0:00	8	356	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	9	364	1FD3	フフ{02:08}強気な{02:08}‥気に入{08:51}ぞ。\n<wait>	Fufu... So bold... I like it.\n<wait>	reads: フフ‥‥‥強気な‥‥‥‥気に入ったぞ。\n<wait> @from-ours
+m/MS000F.BIN	0:00	10	401	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	11	409	1FD3	私と取引をし{08:25}か？\n	Won't you make a deal with me?\n	reads: 私と取引をしないか？\n @from-ours
+m/MS000F.BIN	0:00	12	444	1FB2	何だ？	What is it?	menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:00	13	452	1FB2	聞く耳持たん	Not listening	menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:00	14	478	0F	{01:84}{02:FF}	{01:84}{02:FF}	reads: 
+m/MS000F.BIN	0:00	15	486	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	16	494	1FD3	私の持つ神剣を、君に譲ろう。\n<wait>	I'll hand over the sacred sword in my possession to you.\n<wait>	@from-ours
+m/MS000F.BIN	0:00	17	531	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	18	539	1FD3	かわりに君{08:62}私を{08:79}{08:05}ーの中に入れて、地上{08:71}連れて行{08:52}\nくれれば良い。\n<wait>	In exchange, all you need to do is put me inside that computer of yours\nand carry me up to the surface.\n<wait>	reads: かわりに君は、私をそのコンピューターの中に入れて、地上まで連れて行って\nくれれば良い。\n<wait> @from-ours
+m/MS000F.BIN	0:00	19	615	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	20	623	1FD3	簡単な事{08:8C}？\n{08:90}だね？　私と取引{08:8E}かね？\n	Simple enough, isn't it?\nSo, what do you say? Will you make a deal with me?\n	reads: 簡単な事だろう？\nどうだね？　私と取引するかね？\n @from-ours
+m/MS000F.BIN	0:00	21	679	1FB2	取引{08:8E}	Make the deal	reads: 取引する; menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:00	22	687	1FB2	断る	Refuse	menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:00	23	705	0F	{01:F9}	{01:F9}	reads: 
+m/MS000F.BIN	0:00	24	708	00			
+m/MS000F.BIN	0:00	25	719	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	26	727	1FD3	フフフ{08:72}契約成立だ。\n<wait>	Fufufu... Then it's a deal.\n<wait>	reads: フフフ‥‥契約成立だ。\n<wait> @from-ours
+m/MS000F.BIN	0:00	27	775	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	28	783	1FD3	で{08:62}宜しく頼むぞ{02:08}‥\n<wait>	Now then, take good care of it...\n<wait>	reads: では、宜しく頼むぞ‥‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:00	29	907	1F83	{03:00}	{03:00}	reads: 飛び道具
+m/MS000F.BIN	0:00	30	933	00	{04:FF}{08:62}草薙剣を入手{08:17}\n<wait>	{04:FF} obtained the Kusanagi Sword!\n<wait>	reads: は、草薙剣を入手した！\n<wait> @from-ours
+m/MS000F.BIN	0:00	31	961	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	32	969	1FD3	そうか{08:72}{08:7F}条件だと思{08:51}{08:77}が{02:08}\n<wait>	I see... I thought it was a fine offer...\n<wait>	reads: そうか‥‥いい条件だと思ったのだが‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:00	33	1006	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	34	1014	1FD3	残念だよ。君は{08:5C}少し、頭の{08:7F}{02:0B}だと思{08:52}{08:64}{08:42}な。\n交渉は決裂だ。剣が欲しければ、力づくで取{08:52}みるが{08:7F}！！\n<wait>	What a shame. I thought you were a bit smarter than that.\nNegotiations are over. If you want the sword, try taking it by force!!\n<wait>	reads: 残念だよ。君はもう少し、頭のいい人間だと思っていたからな。\n交渉は決裂だ。剣が欲しければ、力づくで取ってみるがいい！！\n<wait> @from-ours
+m/MS000F.BIN	0:00	35	1129	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	36	1137	1FD3	{08:0B}と取引などし{08:25}。と、言う訳か。\n{08:7F}条件だ{08:51}{08:77}がね。残念だよ。\n<wait>	So you won't make deals with demons, is that it?\nIt was a fine offer, too. What a shame.\n<wait>	reads: 悪魔と取引などしない。と、言う訳か。\nいい条件だったのだがね。残念だよ。\n<wait> @from-ours
+m/MS000F.BIN	0:00	37	1207	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	38	1215	1FD3	今更、交渉し{08:69}と思{08:52}も無駄だ。\n私{08:62}そうころころと態度を変{08:28}奴は信用{08:23}{08:42}な。\n<wait>	It's no use trying to negotiate now.\nI can't trust someone who flip-flops their attitude so easily.\n<wait>	reads: 今更、交渉しようと思っても無駄だ。\n私は、そうころころと態度を変える奴は信用できないからな。\n<wait> @from-ours
+m/MS000F.BIN	0:00	39	1299	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	40	1307	1FD3	{01:36}、おしゃべりは終わりだ。死ぬが{08:7F}！！\n	That's enough chit-chat. Now die!!\n	reads: そろそろ、おしゃべりは終わりだ。死ぬがいい！！\n @from-ours
+m/MS000F.BIN	0:00	41	1353	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	42	1361	1FD3	で{08:62}何用だ？\n	Well then, what business do you have?\n	reads: では、何用だ？\n @from-ours
+m/MS000F.BIN	0:00	43	1390	1FB2	{08:0E}に{08:1A}	Become my ally	reads: 仲魔になって; menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:00	44	1398	1FB2	神剣くれ	Give me the sword	menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:00	45	1408	1FB2	何{08:56}{08:25}	Nothing	reads: 何でもない; menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:00	46	1428	0F	{01:F2}{01:02}{01:BA}{02:FF}	{01:F2}{01:02}{01:BA}{02:FF}	reads: 桐島英美
+m/MS000F.BIN	0:00	47	1440	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	48	1448	1FD3	{08:4D}は出来{08:25}相談だな。\n何故、私が今の君に仕えねば{08:7D}ん{08:77}？\n<wait>	That's not a request I can grant.\nWhy would I have to serve someone like you as you are now?\n<wait>	reads: それは出来ない相談だな。\n何故、私が今の君に仕えねばならんのだ？\n<wait> @from-ours
+m/MS000F.BIN	0:00	49	1512	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	50	1520	1FD3	まあ、短い間{08:56}良いと{08:68}{08:7D}話は別{08:8F}{02:08}{08:72}\n	Well, if you'd settle for just a short while, that's a different story...\n	reads: まあ、短い間でも良いというなら話は別だが‥‥‥‥‥\n @from-ours
+m/MS000F.BIN	0:00	51	1573	1FB2	{08:90}{08:68}事だ	What do you mean?	reads: どういう事だ; menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:00	52	1583	1FB2	{08:4D}{08:81}やだ	No thanks then	reads: それじゃやだ; menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:00	53	1605	0F	{01:9B}	{01:9B}	reads: 
+m/MS000F.BIN	0:00	54	1608	00			
+m/MS000F.BIN	0:00	55	1613	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	56	1621	1FD3	私を、君の{08:0E}に加えて貰{08:52}、外{08:71}連れ出{08:4A}もらおうと{08:68}訳だ。\n<wait>	The idea is that you take me on as your ally and carry me out of here.\n<wait>	reads: 私を、君の仲魔に加えて貰って、外まで連れ出してもらおうという訳だ。\n<wait> @from-ours
+m/MS000F.BIN	0:00	57	1686	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	58	1694	1FD3	{08:45}を抜け出{08:2A}{08:7D}、{08:5C}{08:47}{08:69}な剣も用済みだ。\n貴様にくれてやろう。\n<wait>	If I can get out of here, a sword like this will have outlived its use.\nI'll give it to you.\n<wait>	reads: ここを抜け出せるなら、もうこのような剣も用済みだ。\n貴様にくれてやろう。\n<wait> @from-ours
+m/MS000F.BIN	0:00	59	1767	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	60	1775	1FD3	{08:7C}、話に{08:7D}んな。\n君は{08:5C}少し頭が{08:7F}と思{08:52}{08:64}が{02:08}\n私が買いかぶりすぎて{08:64}{08:69}だ。\n<wait>	Then there's nothing more to discuss.\nI thought you were a bit smarter than this...\nSeems I overestimated you.\n<wait>	reads: ならば、話にならんな。\n君はもう少し頭がいいと思っていたが‥‥‥\n私が買いかぶりすぎていたようだ。\n<wait> @from-ours
+m/MS000F.BIN	0:00	61	1858	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	62	1866	1FD3	交渉は終わりだ。\n{08:0E}に{08:4B}ければ、力づく{08:56}や{08:52}みるが{08:7F}！\n<wait>	Negotiations are over.\nIf you want me as an ally, then try taking me by force!\n<wait>	reads: 交渉は終わりだ。\n仲魔にしたければ、力づくでもやってみるがいい！\n<wait> @from-ours
+m/MS000F.BIN	0:00	63	1933	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	64	1941	1FD3	神剣をくれだと？\n単刀直入に来たな{02:08}‥\n<wait>	You want me to hand over the sacred sword?\nStraight to the point, aren't you...\n<wait>	reads: 神剣をくれだと？\n単刀直入に来たな‥‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:00	65	1987	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	66	1995	1FD3	{08:7F}{08:8C}。{08:47}{08:69}な物くれてやる。\n<wait>	Very well. I'll give you a thing like this.\n<wait>	reads: いいだろう。このような物くれてやる。\n<wait> @from-ours
+m/MS000F.BIN	0:00	67	2030	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	68	2038	1FD3	{08:82}し、私の言う条件を呑んでくれ{08:50}の話{08:8F}{02:08}\n	That is, of course, provided you accept my terms...\n	reads: ただし、私の言う条件を呑んでくれたらの話だが‥‥‥\n @from-ours
+m/MS000F.BIN	0:00	69	2095	1FB2	何だ？	What is it?	menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:00	70	2103	1FB2	聞く耳持たん	Not listening	menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:00	71	2129	0F	{01:11}{=FC}{=FF}	{01:11}{=FC}{=FF}	reads: あなたが{=FC}{=FF}
+m/MS000F.BIN	0:00	72	2137	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	73	2145	1FD3	{08:72}随分と面白い奴だ{02:08}\n<wait>	...Quite the interesting one, aren't you...\n<wait>	reads: ‥‥随分と面白い奴だ‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:00	74	2174	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	75	2182	1FD3	で{08:62}{02:0E}{08:42}のもてなしを受け取{08:52}頂こうか{02:08}\n<wait>	Well then, allow us to offer you some hospitality of our own......\n<wait>	reads: では、こちらからのもてなしを受け取って頂こうか‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:00	76	2234	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	77	2242	1FD3	ほほう{08:72}随分と珍しい客人だ{02:08}{08:69}こそ{02:08}‥\nさっそく私のもてなしを受け取{08:52}頂こうか{02:08}\n<wait>	Oh? How interesting... Go ahead, entertain our new guests.\n<wait>	reads: ほほう‥‥随分と珍しい客人だ‥‥‥ようこそ‥‥‥‥\nさっそく私のもてなしを受け取って頂こうか‥‥‥\n<wait> @from-v005
+m/MS000F.BIN	0:00	78	2501	00	{04:FF}	{04:FF}	reads: 
+m/MS000F.BIN	0:00	79	2504	00	d{04:FF}	d{04:FF}	reads: d
+m/MS000F.BIN	0:00	80	2508	00	d	d	
+m/MS000F.BIN	0:00	81	2531	12	{03:12}	{03:12}	reads: 切り
+m/MS000F.BIN	0:00	82	2534	00	{01:1E}ｾ		reads: はやくｾ
+m/MS000F.BIN	0:00	83	2542	00	{04:FF}	{04:FF}	reads: 
+m/MS000F.BIN	0:00	84	2545	00	d{04:FF}	d{04:FF}	reads: d
+m/MS000F.BIN	0:00	85	2549	00	d	d	
+m/MS000F.BIN	0:00	86	2563	1F82	ﾅ		
+m/MS000F.BIN	0:00	87	2565	00	{06:1F}p	{06:1F}p	reads: p
+m/MS000F.BIN	0:00	88	2570	00	{01:82}{=EA}{=00}	{01:82}{=EA}{=00}	reads: {=EA}{=00}
+m/MS000F.BIN	0:00	89	2591	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	90	2599	1FD3	ふふふ{02:08}そうこなくてはな。私の楽しみが無く{08:59}と{08:68}{08:5E}だ。\n	Fufufu... Now that's more like it. It would be a shame to lose my fun.\n	reads: ふふふ‥‥‥そうこなくてはな。私の楽しみが無くなるというものだ。\n @from-ours
+m/MS000F.BIN	0:00	91	2719	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	92	2727	1FD3	で{08:62}{08:47}私が全力で相手を{08:4A}やろう{02:08}‥\n<wait>行くぞ！！\n<wait>	Then allow me to face you with everything I have...\n<wait>Here I come!!\n<wait>	reads: では、この私が全力で相手をしてやろう‥‥‥‥\n<wait>行くぞ！！\n<wait> @from-ours
+m/MS000F.BIN	0:00	93	2786	18	名を聞いておこうか{02:08}\n	Suppose I'll ask for your name first...\n	reads: 名を聞いておこうか‥‥‥\n @from-ours
+m/MS000F.BIN	0:00	94	2823	1FB2	名乗る	Introduce yourself	menu option, declared width 20 columns @from-v005
+m/MS000F.BIN	0:00	95	2831	1FB2	無視	Say nothing	menu option, declared width 20 columns @from-v005
+m/MS000F.BIN	0:00	96	2849	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS000F.BIN	0:00	97	2852	00			
+m/MS000F.BIN	0:00	98	2861	00	{04:FF}はオセの問いかけを無視し、黙{08:52}{08:64}。\n<wait>	You decide to remain silent.\n<wait>	reads: はオセの問いかけを無視し、黙っていた。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000F.BIN	0:00	99	2906	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	100	2914	1FD3	フ{08:72}フフフフ！　{08:0B}などに名乗る名は無いと言う事か！？\n随分となめら{08:60}{08:5E}よ{02:08}‥\n<wait>	Hehehe... Are you saying that demons are not worth hearing your name?\nWhat a cheeky little human you are...\n<wait>	reads: フ‥‥フフフフ！　悪魔などに名乗る名は無いと言う事か！？\n随分となめられたものよ‥‥‥‥\n<wait> @from-v005
+m/MS000F.BIN	0:00	101	2998	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	102	3006	1FD3	貴様{08:72}{08:79}態度を悔い{08:54}遅いぞ{02:08}{08:72}\nせめ{08:54}の手向け{08:72}全力で相手を{08:4A}やろう{08:72}\n<wait>	You will regret that decision soon enough. As one last expression\nof kindness, I will allow you to witness the full extent of my power!\n<wait>	reads: 貴様‥‥その態度を悔いても遅いぞ‥‥‥‥‥\nせめてもの手向け‥‥全力で相手をしてやろう‥‥\n<wait> @from-v005
+m/MS000F.BIN	0:00	103	3093	00	{04:FF}{08:62}オセに{08:63}の名を名乗{08:51}。\n<wait>	{04:FF} told Ose his own name.\n<wait>	reads: は、オセに自分の名を名乗った。\n<wait> @from-ours
+m/MS000F.BIN	0:00	104	3128	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	105	3140	00	{04:FF}か{02:08}‥{08:47}私の手に掛か{08:52}息絶{08:28}事を、光栄と思え！！　行くぞ！！\n<wait>	{04:FF}, is it...? Consider it an honor to breathe your last\nby my hand!!　Here I come!!<wait>	reads: か‥‥‥‥この私の手に掛かって息絶える事を、光栄と思え！！　行くぞ！！\n<wait> @from-ours
+m/MS000F.BIN	0:00	106	3214	1EBE	{01:00}	{01:00}	reads: 早坂達也
+m/MS000F.BIN	0:00	107	3217	00	{04:FF}	{04:FF}	reads: 
+m/MS000F.BIN	0:00	108	3220	00	d{04:FF}	d{04:FF}	reads: d
+m/MS000F.BIN	0:00	109	3224	00	d	d	
+m/MS000F.BIN	0:00	110	3247	1F82	ﾅ		
+m/MS000F.BIN	0:00	111	3249	00	{06:1F}p	{06:1F}p	reads: p
+m/MS000F.BIN	0:00	112	3254	00	{01:82}{=EA}{=00}	{01:82}{=EA}{=00}	reads: {=EA}{=00}
+m/MS000F.BIN	0:00	113	3281	1FD2	オセ：	Ose:	@from-v005
+m/MS000F.BIN	0:00	114	3289	1FD3	うがあぁぁァァッ！！\n{08:47}私が、{08:5B}も人に敗{08:2F}など{02:08}<wait>貴様、一体何の‥転せ{02:08}{08:72}グフッ！\n<wait>	Graaah! How could this be?...\nHow could I be defeated by a mere human?...\n<wait>Just... who are you?... Graah!\n<wait>	reads: うがあぁぁァァッ！！\nこの私が、またも人に敗れるなど‥‥‥<wait>貴様、一体何の‥転せ‥‥‥‥‥グフッ！\n<wait> @from-v005
+m/MS000F.BIN	0:00	115	3423	1F83	{03:00}	{03:00}	reads: 飛び道具
+m/MS000F.BIN	0:00	116	3445	1FD0	草薙剣を入手{08:17}\n<wait>	You obtained Kusanagi-no-Tsurugi!\n<wait>	reads: 草薙剣を入手した！\n<wait> @from-v005
+m/MS000F.BIN	0:01	0	7	1FD0	誰も{08:24}{02:08}‥\n<wait>	There's no one here...\n<wait>	reads: 誰もいない‥‥‥‥\n<wait> @from-v005
+m/MS000F.BIN	0:01	1	26	1FD1	＞地上に戻り{08:15}\n	>Will you return to your world?\n	reads: ＞地上に戻りますか？\n @from-v005
+m/MS000F.BIN	0:01	2	45	1F58	{05:00}	{05:00}	reads: はいいいえニュートン
+m/MS000F.BIN	0:01	3	64	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:01	4	97	1F7C	そ、{08:4D}は神剣！！\n	Ah! The sacred sword!\n	reads: そ、それは神剣！！\n @from-v005
+m/MS000F.BIN	0:01	5	119	09	あのオセ{08:42}取り返{08:4A}くるとは{02:08}！！\n<wait>	To think that you actually managed to get it back from Ose...\n<wait>	reads: あのオセから取り返してくるとは‥‥‥！！\n<wait> @from-v005
+m/MS000F.BIN	0:01	6	160	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:01	7	170	1FD3	{08:72}{08:79}剣はお主にやろう。\nわしらが後生大事に持っ{08:14}よりも、お主の方が役立{08:2B}{08:8C}て。\n	As promised, the sword is now yours. May it prove useful your you.\n	reads: ‥‥その剣はお主にやろう。\nわしらが後生大事に持っているよりも、お主の方が役立てるだろうて。\n @from-v005
+m/MS000F.BIN	0:01	8	250	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:01	9	263	18	本当にあの、オセ{08:42}取り返{08:4A}くるとは{02:08}！！\n<wait>	To think that you actually managed to get it back from Ose...\n<wait>	reads: 本当にあの、オセから取り返してくるとは‥‥‥！！\n<wait> @from-v005
+m/MS000F.BIN	0:01	10	312	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:01	11	322	1FD3	大{08:4B}{08:5E}{08:81}{08:72}{08:48}で、黄泉も当分は平和{08:81}ろうて。\n<wait>	Quite the feat... This should keep Yomi at peace for a while now.\n<wait>	reads: 大したものじゃ‥‥これで、黄泉も当分は平和じゃろうて。\n<wait> @from-ours
+m/MS000F.BIN	0:01	12	373	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:01	13	383	1FD3	約束通り、{08:79}神剣はお主にやろう。\n存分に役立ててくれい！\n<wait>	As promised, the sword is now yours. May it prove useful your you.\n<wait>	reads: 約束通り、その神剣はお主にやろう。\n存分に役立ててくれい！\n<wait> @from-v005
+m/MS000F.BIN	0:01	14	447	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:01	15	460	18	神剣{08:62}神の力を取り込んで他の剣に変わる事が出来る。\nやはり、最高の物は火之迦具土剣{08:81}ろうな。\n<wait>	The sacred sword has the ability to transform into other weapons.\nThe greatest of these is the legendary Hi-no-Kagutsuchi.\n<wait>	reads: 神剣は、神の力を取り込んで他の剣に変わる事が出来る。\nやはり、最高の物は火之迦具土剣じゃろうな。\n<wait> @from-v005
+m/MS000F.BIN	0:01	16	560	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:01	17	570	1FD3	{08:87}で、地上に戻り{08:4E}と申すか？\n	Now, would you wish to return to your own world?\n	reads: ところで、地上に戻りたいと申すか？\n @from-v005
+m/MS000F.BIN	0:01	18	615	1FB2	{08:26}	Yes	reads: はい; menu option, declared width 20 columns @from-v005
+m/MS000F.BIN	0:01	19	619	1FB2	{08:27}	No	reads: いいえ; menu option, declared width 20 columns @from-v005
+m/MS000F.BIN	0:01	20	635	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS000F.BIN	0:01	21	638	00			
+m/MS000F.BIN	0:01	22	672	1F71	貴様{08:72}！！　何の{01:3E}だ{02:08}！\n<wait>	You...!! What do you think you're doing...!\n<wait>	reads: 貴様‥‥！！　何のつもりだ‥‥‥！\n<wait> @from-ours
+m/MS000F.BIN	0:01	23	705	1FD2	オセ：	Ose:	@from-ours
+m/MS000F.BIN	0:01	24	713	1FD3	貴様の息の根を止めてく{08:2F}{02:08}‥\nまず{08:62}{08:47}黄泉を我が物にし{08:69}ぞ！！\n	I'll put an end to you...\nBut first, I shall make this realm of Yomi my own!!\n	reads: 貴様の息の根を止めてくれる‥‥‥‥\nまずは、この黄泉を我が物にしようぞ！！\n @from-ours
+m/MS000F.BIN	0:01	25	791	1FB2	戦う	Fight	menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:01	26	797	1FB2	去る	Leave	menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:01	27	815	0F	{01:8B}	{01:8B}	reads: 
+m/MS000F.BIN	0:01	28	818	00			
+m/MS000F.BIN	0:01	29	842	00	{04:FF}	{04:FF}	reads: 
+m/MS000F.BIN	0:01	30	845	00	d{04:FF}	d{04:FF}	reads: d
+m/MS000F.BIN	0:01	31	849	00	d	d	
+m/MS000F.BIN	0:01	32	872	1F82	ﾅ		
+m/MS000F.BIN	0:01	33	874	00	{06:1F}ﾎ		reads: ﾎ
+m/MS000F.BIN	0:01	34	878	00	{01:00}{04:1F}p	{01:00}{04:1F}p	reads: 早坂達也p
+m/MS000F.BIN	0:01	35	885	00	{01:62}{=E4}{=00}{02:1F}W	{01:62}{=E4}{=00}{02:1F}W	reads: {=E4}{=00}W
+m/MS000F.BIN	0:01	36	906	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:01	37	916	1FD3	おおぉ{02:08}貴様{02:08}何と言う{02:08}\n<wait>	Ohh... You... What in the world...\n<wait>	reads: おおぉ‥‥‥貴様‥‥‥何と言う‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:01	38	961	1FD0	国津神を相手に{08:8E}など、出来れば避{08:43}い{08:87}だ。\n<wait>	Facing off against a Kunitsukami is something\nhe'd rather avoid, if possible.<wait>	reads: 国津神を相手にするなど、出来れば避けたいところだ。\n<wait> @from-ours
+m/MS000F.BIN	0:01	39	1010	1FBA	{08:86}も、オセとの約束はオセを地上{08:71}連れていく事。\n{08:4D}{08:74}だ{08:51}筈で{08:7B}。\n<wait>	Besides, the deal with Ose was only to take him up to the surface.\nThat should have been all.\n<wait>	reads: しかも、オセとの約束はオセを地上まで連れていく事。\nそれだけだった筈である。\n<wait> @from-ours
+m/MS000F.BIN	0:01	40	1084	00	{04:FF}{08:62}黙{08:52}地上へ向かおうと{08:4B}。\n<wait>	{04:FF} silently made to head for the surface.\n<wait>	reads: は、黙って地上へ向かおうとした。\n<wait> @from-ours
+m/MS000F.BIN	0:01	41	1121	1FD2	オセ：	Ose:	@from-ours
+m/MS000F.BIN	0:01	42	1129	1FD3	何処へ行く？\n<wait>	Where do you think you're going?\n<wait>	@from-ours
+m/MS000F.BIN	0:01	43	1154	00	{04:FF}が地上に戻ろうと{08:8E}のを見て、オセも{08:79}意味{08:8E}所を察{08:4B}{08:69}だ。\n<wait>	Seeing {04:FF} try to head back to the surface, Ose too\nseemed to sense what it meant.<wait>	reads: が地上に戻ろうとするのを見て、オセもその意味する所を察したようだ。\n<wait> @from-ours
+m/MS000F.BIN	0:01	44	1221	1FD2	オセ：	Ose:	@from-ours
+m/MS000F.BIN	0:01	45	1229	1FD3	{02:08}‥チッ！！\n<wait>	...Tch!!\n<wait>	reads: ‥‥‥‥チッ！！\n<wait> @from-ours
+m/MS000F.BIN	0:01	46	1250	1FD0	オセ{08:62}口惜しそうにしながらも、大人しくついて{08:1E}。\n<wait>	Looking frustrated, Ose nonetheless comes along quietly.\n<wait>	reads: オセは、口惜しそうにしながらも、大人しくついてきた。\n<wait> @from-ours
+m/MS000F.BIN	0:01	47	1320	1F71	何と！！　オセを{08:0E}に引き込むとは{02:08}！！\n<wait>	What!? You've recruited Ose to your side...!!\n<wait>	reads: 何と！！　オセを仲魔に引き込むとは‥‥‥！！\n<wait> @from-ours
+m/MS000F.BIN	0:01	48	1367	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:01	49	1377	1FD3	お主{02:08}何と言う事を{02:08}‥\n知らぬぞ{08:72}現世にとん{08:56}{08:25}災いが降りかかる{08:72}\n<wait>	You...! What have you done...\nMark my words... A terrible calamity shall befall the mortal realm...\n<wait>	reads: お主‥‥‥何と言う事を‥‥‥‥\n知らぬぞ‥‥現世にとんでもない災いが降りかかる‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:01	50	1472	1F71	わしらも手をこまねい{08:14}の{08:81}。\nそうそう神剣を取り返{08:2A}者など、現{08:2F}訳が無いか{08:72}\n	We too have been standing idly by, unable to act.\nAs if anyone capable of reclaiming the sword was ever likely to appear...\n	reads: わしらも手をこまねいているのじゃ。\nそうそう神剣を取り返せる者など、現れる訳が無いか‥‥\n @from-ours
+m/MS000F.BIN	0:01	51	1566	1F71	{08:47}黄泉でおかしな真似を{08:8E}{08:7C}、{02:0C}が貴様を黄泉の地深く沈めてく{08:2F}！\n	Should you try anything foolish here in Yomi,\nwe shall sink you deep into its depths!\n	reads: この黄泉でおかしな真似をするならば、我々が貴様を黄泉の地深く沈めてくれる！\n @from-ours
+m/MS000F.BIN	0:01	52	1642	1F71	{08:90}{08:81}？　オセの奴は？\n何とかなりそうかの？\n	Well now? What of that Ose fellow?\nDo you suppose he'll manage all right?\n	reads: どうじゃ？　オセの奴は？\n何とかなりそうかの？\n @from-ours
+m/MS000F.BIN	0:02	0	29	1FD0	一行の前に、一人の国津神が立ちはだ{08:18}。\n<wait>	You find yourself face to face with one of the national deities.\n<wait>	reads: 一行の前に、一人の国津神が立ちはだかった。\n<wait> @from-v005
+m/MS000F.BIN	0:02	1	76	1FD2	国津神：	Demon:	@from-v005
+m/MS000F.BIN	0:02	2	86	1FD3	次{08:42}次へと、性懲りも無く来お{08:52}{08:42}に{02:08}！\n	When will you learn to stop coming here?...\n	reads: 次から次へと、性懲りも無く来おってからに‥‥‥！\n @from-v005
+m/MS000F.BIN	0:02	3	290	1FB2	え？	Huh?	menu option, declared width 20 columns @from-v005
+m/MS000F.BIN	0:02	4	296	1FB2	アンタ誰？	You are?	menu option, declared width 20 columns @from-v005
+m/MS000F.BIN	0:02	5	320	0F	{01:92}{05:FF}	{01:92}{05:FF}	reads: 
+m/MS000F.BIN	0:02	6	340	1FD2	{08:31}：	Rui:	reads: 泪： @from-v005
+m/MS000F.BIN	0:02	7	346	1FD3	{02:08}？　ちょ{08:53}待{08:52}！\n一体何の事よ！　次{08:42}次へ{08:52}{02:08}。\n<wait>	...? Wait just a second!\nWhat is going on here!? One thing after another...\n<wait>	reads: ‥‥‥？　ちょっと待って！\n一体何の事よ！　次から次へって‥‥‥。\n<wait> @from-ours
+m/MS000F.BIN	0:02	8	411	1FD2	国津神：	Demon:	@from-v005
+m/MS000F.BIN	0:02	9	421	1FD3	例え犬とて容赦はせぬ！！\n{08:79}奇異{08:59}姿{02:08}{08:0B}共の手先に相違{08:25}！！\n<wait>	Even a dog will get no mercy from me!!\nThat bizarre appearance... You must be minions of the demons!!\n<wait>	reads: 例え犬とて容赦はせぬ！！\nその奇異なる姿‥‥‥悪魔共の手先に相違ない！！\n<wait> @from-ours
+m/MS000F.BIN	0:02	10	489	1FD2	{01:03}：	Newton:	reads: ニュートン： @from-v005
+m/MS000F.BIN	0:02	11	495	1FD3	{02:08}‥！　クウゥーン{02:08}\n<wait>	...! *Whimper*...\n<wait>	reads: ‥‥‥‥！　クウゥーン‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:02	12	524	1FD2	国津神：	Demon:	@from-v005
+m/MS000F.BIN	0:02	13	534	1FD3	しらばっくれお{08:52}！\n{08:47}黄泉ま{08:56}我が物に{08:66}と{08:8E}、{08:0B}の手先めが！！\n	Stop playing dumb! I know of your plans to take over Yomi,\nyou minions of the demons!\n	reads: しらばっくれおって！\nこの黄泉までも我が物にせんとする、悪魔の手先めが！！\n @from-v005
+m/MS000F.BIN	0:02	14	617	1FB2	何の事だ？	What?	menu option, declared width 20 columns @from-v005
+m/MS000F.BIN	0:02	15	629	1FB2	俺{08:81}{08:25}	That's not us	reads: 俺じゃない; menu option, declared width 20 columns @from-v005
+m/MS000F.BIN	0:02	16	649	0F	{01:6D}{02:FF}	{01:6D}{02:FF}	reads: 
+m/MS000F.BIN	0:02	17	669	1FD2	{08:31}：	Rui:	reads: 泪： @from-v005
+m/MS000F.BIN	0:02	18	675	1FD3	あのねぇ！！　そう言う事{08:62}人の話聞いて{08:42}に{08:4A}頂戴！！\n{01:16}達は{08:45}に攻めて{08:1E}{08:0B}{08:6A}かと、ぜんっぜん無関係よ！\n<wait>	Hey now! Do that after you've actually listened to what people say!!\nWe have nothing to do with whatever demons attacked this place!\n<wait>	reads: あのねぇ！！　そう言う事は、人の話聞いてからにして頂戴！！\nあたし達はここに攻めてきた悪魔なんかと、ぜんっぜん無関係よ！\n<wait> @from-ours
+m/MS000F.BIN	0:02	19	785	1FD2	国津神：	Demon:	@from-v005
+m/MS000F.BIN	0:02	20	795	1FD3	信用できんな{02:08}\n<wait>	I can't trust that...\n<wait>	reads: 信用できんな‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:02	21	818	1FD2	{08:31}：	Rui:	reads: 泪： @from-v005
+m/MS000F.BIN	0:02	22	824	1FD3	だ{08:52}、ホントの事{08:86}言{08:52}{08:25}わ！\n護国寺の鳥居の下で鏡を使っ{08:50}、いきなり{08:73}所に来た{08:5F}{08:5E}！\n<wait>	But I'm only telling the truth! We used the mirror\nunder the torii gate at Gokokuji and ended up somewhere like this!\n<wait>	reads: だって、ホントの事しか言ってないわ！\n護国寺の鳥居の下で鏡を使ったら、いきなりこんな所に来たんだもの！\n<wait> @from-ours
+m/MS000F.BIN	0:02	23	916	1FD0	そう言{08:52}、{08:31}は八咫鏡を取り出{08:4B}。\n<wait>	So saying, Rui pulls out the Yata-no-Kagami.\n<wait>	reads: そう言って、泪は八咫鏡を取り出した。\n<wait> @from-ours
+m/MS000F.BIN	0:02	24	966	1FD2	{01:03}：	Newton:	reads: ニュートン： @from-v005
+m/MS000F.BIN	0:02	25	972	1FD3	{02:08}{02:08}‥\n<wait>	{02:08}{02:08}‥\n<wait>	reads: ‥‥‥‥‥‥‥\n<wait>
+m/MS000F.BIN	0:02	26	987	1FD0	{01:03}は{01:23}考えて{08:64}が、荷物の中{08:42}八咫鏡を引っ張り出し\n国津神に見せた。\n<wait>	Newton mulled it over for a moment, then dug the\nYata Mirror out of his bag and showed it to the Kunitsukami.\n<wait>	reads: ニュートンはしばらく考えていたが、荷物の中から八咫鏡を引っ張り出し\n国津神に見せた。\n<wait> @from-ours
+m/MS000F.BIN	0:02	27	1061	1FD2	国津神：	Demon:	@from-v005
+m/MS000F.BIN	0:02	28	1071	1FD3	{02:08}何だ{08:72}{08:47}鏡は{02:08}{08:72}\n<wait>{08:72}{08:48}は{02:08}！\n<wait>	...What... is this mirror...?\n<wait>...This is...!\n<wait>	reads: ‥‥‥何だ‥‥この鏡は‥‥‥‥‥\n<wait>‥‥これは‥‥‥！\n<wait> @from-ours
+m/MS000F.BIN	0:02	29	1113	1FD2	国津神：	Demon:	@from-v005
+m/MS000F.BIN	0:02	30	1123	1FD3	{08:48}は八咫鏡では{08:25}か！！\n{08:5D}や{08:72}お主らは{02:08}\n<wait>	Why, this is the Yata Mirror!!\nCould it be... that you are...\n<wait>	reads: これは八咫鏡ではないか！！\nもしや‥‥お主らは‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:02	31	1176	1FD2	国津神：	Demon:	@from-v005
+m/MS000F.BIN	0:02	32	1186	1FD3	ふん！　あく{08:71}しらを{03:12}通す気か？\n気に喰わん！！　{08:79}身体に直接聞く事とし{08:69}！！\n<wait>	Hmph! You intend to keep playing dumb to the end?\nI don't like it!! I'll ask that body of yours directly!!\n<wait>	reads: ふん！　あくまでしらを切り通す気か？\n気に喰わん！！　その身体に直接聞く事としよう！！\n<wait> @from-ours
+m/MS000F.BIN	0:02	33	1277	1FD2	国津神：	Demon:	@from-v005
+m/MS000F.BIN	0:02	34	1287	1FD3	では貴様、なぜ生者の身でありながら、{08:47}黄泉に来{08:60}{08:77}？\n	No? Then what business do you have here?\nYou are very clearly still alive!\n	reads: では貴様、なぜ生者の身でありながら、この黄泉に来れたのだ？\n @from-v005
+m/MS000F.BIN	0:02	35	1356	1FB2	一部始終を話す	Explain	menu option, declared width 20 columns @from-v005
+m/MS000F.BIN	0:02	36	1372	1FB2	黙っ{08:14}	Say nothing	reads: 黙っている; menu option, declared width 20 columns @from-v005
+m/MS000F.BIN	0:02	37	1392	0F	{01:77}	{01:77}	reads: 
+m/MS000F.BIN	0:02	38	1395	00			
+m/MS000F.BIN	0:02	39	1400	1FD2	国津神：	Demon:	@from-v005
+m/MS000F.BIN	0:02	40	1410	1FD3	何と！！　八咫鏡とな！！\n<wait>	What!? Yata-no-Kagami!?\n<wait>	@from-v005
+m/MS000F.BIN	0:02	41	1443	1FD2	国津神：	Demon:	@from-v005
+m/MS000F.BIN	0:02	42	1453	1FD3	{02:08}{02:08}{02:08}{08:72}\n私はハツセオノミコト。先だ{08:52}の御無礼お許し下{08:49}。\n	...............\nI am Hatsuseo-no-Mikoto. I apologize for the earlier.\n	reads: ‥‥‥‥‥‥‥‥‥‥‥\n私はハツセオノミコト。先だっての御無礼お許し下さい。\n @from-v005
+m/MS000F.BIN	0:02	43	1518	1FD2	国津神：	Demon:	@from-v005
+m/MS000F.BIN	0:02	44	1528	1FD3	何故黙っ{08:14}？\n人に言えぬ{08:69}な方法{08:56}使うたか？\n	Why are you staying silent?\nDid you use some method you can't speak of?\n	reads: 何故黙っている？\n人に言えぬような方法でも使うたか？\n @from-ours
+m/MS000F.BIN	0:02	45	1588	1FB2	一部始終を話す	Explain	menu option, declared width 20 columns @from-v005
+m/MS000F.BIN	0:02	46	1604	1FB2	秘密！！	Secret!!	menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:02	47	1614	1FB2	さらに黙っ{08:14}	Stay silent still	reads: さらに黙っている; menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:02	48	1640	0F	{01:05}	{01:05}	reads: 山田
+m/MS000F.BIN	0:02	49	1643	00	{02:01}{01:00}	{02:01}{01:00}	reads: ペンタグランマ早坂達也
+m/MS000F.BIN	0:02	50	1652	1FD2	国津神：	Demon:	@from-v005
+m/MS000F.BIN	0:02	51	1662	1FD3	くぬう{02:08}どこま{08:56}人を小馬鹿に{08:4B}奴め！！！\nこうなれば、無理やりに{08:56}口を割ら{08:67}く{08:2F}！！\n	Grrgh...! You insolent little worm, mocking me at every turn!!!\nVery well then, I'll pry the truth out of you by force!!\n	reads: くぬう‥‥‥どこまでも人を小馬鹿にした奴め！！！\nこうなれば、無理やりにでも口を割らせてくれる！！\n @from-ours
+m/MS000F.BIN	0:02	52	1753	1FD2	国津神：	Demon:	@from-v005
+m/MS000F.BIN	0:02	53	1763	1FD3	私の名{08:62}ハツセオノミコト。\n<wait>	My name is Hatsuseo-no-Mikoto.\n<wait>	reads: 私の名は、ハツセオノミコト。\n<wait> @from-ours
+m/MS000F.BIN	0:02	54	1798	1FD2	ハツセオノミコト：	Hatsuseo-no-Mikoto:	@from-ours
+m/MS000F.BIN	0:02	55	1818	1FD3	お主は何と{08:68}？\n	And what is your name?\n	reads: お主は何という？\n @from-ours
+m/MS000F.BIN	0:02	56	1849	1FB2	名乗る	Give your name	menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:02	57	1857	1FB2	無視	Ignore	menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:02	58	1875	0F	{01:EC}	{01:EC}	reads: 
+m/MS000F.BIN	0:02	59	1878	00			
+m/MS000F.BIN	0:02	60	1887	00	{04:FF}は名乗{08:51}。\n<wait>	{04:FF} gave his name.\n<wait>	reads: は名乗った。\n<wait> @from-ours
+m/MS000F.BIN	0:02	61	1908	1FD2	ハツセオノミコト：	Hatsuseo-no-Mikoto:	@from-ours
+m/MS000F.BIN	0:02	62	1928	1FD3	何と、	What, so	@from-ours
+m/MS000F.BIN	0:02	63	1938	00	{04:FF}とな？\n	{04:FF}, is it?\n	reads: とな？\n @from-ours
+m/MS000F.BIN	0:02	64	1951	00	{04:FF}と言えば、現世で{01:08}とやらの軍勢を孤軍奮闘{08:4A}、駆逐{08:4A}おる者の\n名では{08:25}か。\n<wait>	{04:FF}, of course! Isn't that the name of the one\nwho's been single-handedly fighting off Baal's armies in the mortal realm?\n<wait>	reads: と言えば、現世でバエルとやらの軍勢を孤軍奮闘して、駆逐しておる者の\n名ではないか。\n<wait> @from-ours
+m/MS000F.BIN	0:02	65	2033	1FD2	ハツセオノミコト：	Hatsuseo-no-Mikoto:	@from-ours
+m/MS000F.BIN	0:02	66	2053	1FD3	果{08:4A}お主が本当に{02:08}？\n<wait>{02:08}確かに、並の者では{08:25}な{02:08}‥が{02:08}\n	Can it truly be you...?\n<wait>...Indeed, you are no ordinary being... and yet...\n	reads: 果してお主が本当に‥‥‥？\n<wait>‥‥‥確かに、並の者ではないな‥‥‥‥が‥‥‥\n @from-ours
+m/MS000F.BIN	0:02	67	2118	1FD2	ハツセオノミコト：	Hatsuseo-no-Mikoto:	@from-ours
+m/MS000F.BIN	0:02	68	2138	1FD3	{08:72}名を名乗らぬとは怪しい奴！！\n信用{08:8E}訳に{08:26}かんな{02:08}\n<wait>	...Refusing to give your name is suspicious indeed!!\nI cannot bring myself to trust you...\n<wait>	reads: ‥‥名を名乗らぬとは怪しい奴！！\n信用する訳にはいかんな‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:02	69	2198	1FD2	ハツセオノミコト：	Hatsuseo-no-Mikoto:	@from-ours
+m/MS000F.BIN	0:02	70	2218	1FD3	いざ尋常に勝負！！\n<wait>	Now then, let us fight honorably!!\n<wait>	@from-ours
+m/MS000F.BIN	0:02	71	2249	00	{01:04}	{01:04}	reads: 西野義雄
+m/MS000F.BIN	0:02	72	2253	00	d{04:FF}	d{04:FF}	reads: d
+m/MS000F.BIN	0:02	73	2257	00	d	d	
+m/MS000F.BIN	0:02	74	2280	1F82	p	p	
+m/MS000F.BIN	0:02	75	2283	00	{01:72}{=E4}{=00}	{01:72}{=E4}{=00}	reads: {=E4}{=00}
+m/MS000F.BIN	0:02	76	2304	1FD2	ハツセオノミコト：	Hatsuseo-no-Mikoto:	@from-ours
+m/MS000F.BIN	0:02	77	2324	1FD3	ぐ{08:72}み、見事{02:08}敵ながらあっぱれ{02:08}‥\n早く{08:72}止めを刺すが良い{02:08}‥\n	Guh... M-magnificent... A worthy foe, even as my enemy...\nQuickly... finish me off...\n	reads: ぐ‥‥み、見事‥‥‥敵ながらあっぱれ‥‥‥‥\n早く‥‥止めを刺すが良い‥‥‥‥\n @from-ours
+m/MS000F.BIN	0:02	78	2402	1FB2	止めを刺す	Finish her off	menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:02	79	2414	1FB2	止めを刺さ{08:25}	Spare her	reads: 止めを刺さない; menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:02	80	2428	1FB2	考{08:28}	Think it over	reads: 考える; menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:02	81	2446	0F	{01:EE}{01:02}{01:EA}{01:FF}	{01:EE}{01:02}{01:EA}{01:FF}	reads: 桐島英美
+m/MS000F.BIN	0:02	82	2465	00	{04:FF}{08:62}ハツセオノミコトに剣を振り下ろ{08:4B}{02:08}\n<wait>	{04:FF} brought the sword down on Hatsuseo-no-Mikoto...\n<wait>	reads: は、ハツセオノミコトに剣を振り下ろした‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:02	83	2545	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	84	2555	1FD3	おお{02:08}‥何と{08:68}事を{02:08}‥\n勝負は{08:5C}ついて{08:64}と言うに{02:08}‥\n<wait>	Ohh... What have you done...\nThe duel was already decided...\n<wait>	reads: おお‥‥‥‥何という事を‥‥‥‥\n勝負はもうついていたと言うに‥‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:02	85	2615	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	86	2625	1FD3	何と冷酷な{08:72}お主など何処へとなりと行くが良い！！\n<wait>	How cold-hearted... Go wherever you please, then!!\n<wait>	reads: 何と冷酷な‥‥お主など何処へとなりと行くが良い！！\n<wait> @from-ours
+m/MS000F.BIN	0:02	87	2682	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	88	2692	1FD3	{08:6D}道、神剣はオセの元{08:81}！！\nお主には神器を揃{08:28}事などできまいよ！\n奴に喰われて{08:83}が{08:7F}！！\n<wait>	Either way, the sacred sword remains with Ose!!\nThere's no way you'll manage to gather the sacred treasures!\nMay you be devoured by him!!\n<wait>	reads: どの道、神剣はオセの元じゃ！！\nお主には神器を揃える事などできまいよ！\n奴に喰われてしまうがいい！！\n<wait> @from-ours
+m/MS000F.BIN	0:02	89	2787	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	90	2797	1FD3	オセ{08:42}神剣、ヒルコ{08:42}勾玉{02:08}\n{08:47}二つを手に入れぬ限り、３種の神器は揃わぬ{02:08}‥\n<wait>	The sacred sword from Ose, the jewel from Hiruko...\nWithout both, the three sacred treasures will never be complete...\n<wait>	reads: オセから神剣、ヒルコから勾玉‥‥‥\nこの二つを手に入れぬ限り、３種の神器は揃わぬ‥‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:02	91	2879	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	92	2889	1FD3	お主には高天原を開く事など出来はし{08:25}{08:77}！！\n<wait>	You will never be able to open the way to Takamagahara!!\n<wait>	reads: お主には高天原を開く事など出来はしないのだ！！\n<wait> @from-ours
+m/MS000F.BIN	0:02	93	2947	1FD2	声：	Voice:	@from-v005
+m/MS000F.BIN	0:02	94	2953	1FD3	そこ{08:71}！　{08:5C}勝負はついておる。\n{08:4D}くらいに{08:4A}おくの{08:81}。\n<wait>	That's enough! The match has already been decided.\nLet's leave it at that.\n<wait>	reads: そこまで！　もう勝負はついておる。\nそれくらいにしておくのじゃ。\n<wait> @from-ours
+m/MS000F.BIN	0:02	95	3028	1FD2	声：	Voice:	@from-v005
+m/MS000F.BIN	0:02	96	3034	1FD3	{08:20}く、用心深いのは良いが、度が過ぎるのは困り者{08:81}のう。\n<wait>	Goodness... It's good to be careful,\nbut too much is too much.\n<wait>	reads: まったく、用心深いのは良いが、度が過ぎるのは困り者じゃのう。\n<wait> @from-v005
+m/MS000F.BIN	0:02	97	3097	1FD2	ハツセオノミコト：	Hatsuseo-no-Mikoto:	@from-ours
+m/MS000F.BIN	0:02	98	3117	1FD3	大国主様！！\n<wait>	Ookuninushi!\n<wait>	@from-v005
+m/MS000F.BIN	0:02	99	3165	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	100	3175	1FD3	お客人。先程{08:71}の無礼、お許し願い{08:4E}。\n<wait>	Our dear guests. I hope that you can forgive his rudeness.\n<wait>	reads: お客人。先程までの無礼、お許し願いたい。\n<wait> @from-v005
+m/MS000F.BIN	0:02	101	3220	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	102	3230	1FD3	せめ{08:54}の詫びの印{08:81}{02:08}\n<wait>御主らを癒{08:4A}しんぜ{08:69}{02:08}\n<wait>	Here, accept this as a token of my apology...\n<wait>May it heal your wounds...\n<wait>	reads: せめてもの詫びの印じゃ‥‥‥\n<wait>御主らを癒してしんぜよう‥‥‥\n<wait> @from-v005
+m/MS000F.BIN	0:02	103	3314	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	104	3324	1FD3	{08:47}地ももはや、{08:0B}共の脅威にさら{03:0C}ておる故、皆、過敏に{08:1A}おるの{08:81}。\n<wait>	The increasing threat posed by the demons\nhas all of us slightly on the edge.\n<wait>	reads: この地ももはや、悪魔共の脅威にさらされておる故、皆、過敏になっておるのじゃ。\n<wait> @from-v005
+m/MS000F.BIN	0:02	105	3397	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	106	3407	1FD3	と{08:68}のも{08:79}昔、{08:3B}小次郎と{08:68}将門公の転生体が、地獄の総統で{08:7B}{08:0B}、\nオセを倒しま{08:4A}な。\n<wait>	This all began when Souma Kojirou, the reincarnation of Masakado,\nslew Ose, the president of hell.\n<wait>	reads: というのもその昔、相馬小次郎という将門公の転生体が、地獄の総統である悪魔、\nオセを倒しましてな。\n<wait> @from-v005
+m/MS000F.BIN	0:02	107	3497	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	108	3507	1FD3	あやつらは本来{08:7C}、も{08:53}深くに堕ちる{08:85}{08:6B}{08:81}が、\n{08:89}わの際に、コノハナサクヤ姫の気に触{08:60}{08:46}によ{08:52}、\n辛うじて黄泉に止ま{08:52}{08:1F}の{08:81}。\n<wait>	While a demon of his calibre would normally have fallen deep into\nthe depths of the abyss, taking advantage of a momentary lapse in\nKonohanasakuya-hime's judgement, he was able to arrive here at Yomi.\n<wait>	reads: あやつらは本来ならば、もっと深くに堕ちるはずなのじゃが、\nいまわの際に、コノハナサクヤ姫の気に触れたことによって、\n辛うじて黄泉に止まってしまったのじゃ。\n<wait> @from-v005
+m/MS000F.BIN	0:02	109	3638	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	110	3648	1FD3	あの、魔震災による人死にで黄泉も潤い、オセの奴めは{08:4D}に乗じて\n力を盛り返{08:4A}{08:1E}の{08:55}{08:81}。\n<wait>	We were already flooded by the souls of those dead in the cataclysm,\nand once Ose got to them, he quickly recovered his power.\n<wait>	reads: あの、魔震災による人死にで黄泉も潤い、オセの奴めはそれに乗じて\n力を盛り返してきたのですじゃ。\n<wait> @from-v005
+m/MS000F.BIN	0:02	111	3740	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	112	3750	1FD3	奴{08:62}堕ちる際に{02:0C}の神剣、クサナギノツルギをも奪い取{08:52}し{08:5C}た‥。\n<wait>	He then stole our sacred sword, Kusanagi-no-Tsurugi, and escaped.\n<wait>	reads: 奴は、堕ちる際に我々の神剣、クサナギノツルギをも奪い取ってしもうた‥。\n<wait> @from-v005
+m/MS000F.BIN	0:02	113	3821	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	114	3831	1FD3	神剣の力が絶大で、{02:0C}が手出しを出来{08:25}のを{08:7F}事に、あ奴め{08:62}\n黄泉を乗っ取ろうと企んでおる！\n<wait>	Knowing that we are powerless before the sword's might,\nhe plans to use it to take over Yomi for himself!\n<wait>	reads: 神剣の力が絶大で、我々が手出しを出来ないのをいい事に、あ奴めは、\n黄泉を乗っ取ろうと企んでおる！\n<wait> @from-v005
+m/MS000F.BIN	0:02	115	3927	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	116	3937	1FD3	{08:48}{08:42}起こる、更{08:59}大破壊によ{08:52}送られてくる死者を喰い、\n{08:47}黄泉{08:74}でなく、ついには地上に復活{08:66}と目論んでおるに相違{08:7B}まい！\n<wait>	This would grant him complete control over the souls of the dead.\nHe would be able to devour them as he pleases, eventually becoming\npowerful enough to manifest himself on earth.\n<wait>	reads: これから起こる、更なる大破壊によって送られてくる死者を喰い、\nこの黄泉だけでなく、ついには地上に復活せんと目論んでおるに相違あるまい！\n<wait> @from-v005
+m/MS000F.BIN	0:02	117	4063	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	118	4073	1FD3	{02:08}そこでお主に頼みが{08:7B}。\nお主、人の子{08:81}が、わしらよりず{08:53}力があろう。\n<wait>	...This is where we require your help, son of man.\n<wait>	reads: ‥‥‥そこでお主に頼みがある。\nお主、人の子じゃが、わしらよりずっと力があろう。\n<wait> @from-v005
+m/MS000F.BIN	0:02	119	4151	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	120	4161	1FD3	頼みと{08:68}の{08:62}{08:72}神剣を奪い返{08:4A}欲しいの{08:81}。\n<wait>	You must steal back the sacred sword.\n<wait>	reads: 頼みというのは、‥‥神剣を奪い返して欲しいのじゃ。\n<wait> @from-v005
+m/MS000F.BIN	0:02	121	4210	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	122	4220	1FD3	勿論、礼は{08:8E}。神剣を取り返{08:4B}あかつきに{08:62}神剣はお主の物{08:81}。\n<wait>	Naturally, you will be rewarded handsomely for your efforts.\nThe sword will be yours to keep once you find it.\n<wait>	reads: 勿論、礼はする。神剣を取り返したあかつきには、神剣はお主の物じゃ。\n<wait> @from-v005
+m/MS000F.BIN	0:02	123	4287	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	124	4297	1FD3	わしらが{08:4D}に、取りすが{08:52}生き{08:14}より、お主の方が有効に使{08:28}{08:81}ろ。\n<wait>	May you put its might to better use than we did.\n<wait>	reads: わしらがそれに、取りすがって生きているより、お主の方が有効に使えるじゃろ。\n<wait> @from-v005
+m/MS000F.BIN	0:02	125	4368	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	126	4378	1FD3	お主の持つ鏡、ヒルコの持つ勾玉、{08:4D}にオセ{08:42}剣を取り返せば、\n三種の神器が揃う事に{08:59}。\n<wait>	Your mirror, Hiruko's magatama, and Ose's sword\ncomprise the sacred regalia.\n<wait>	reads: お主の持つ鏡、ヒルコの持つ勾玉、それにオセから剣を取り返せば、\n三種の神器が揃う事になる。\n<wait> @from-v005
+m/MS000F.BIN	0:02	127	4470	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	128	4480	1FD3	さすれば、高天原への扉が開かれ{08:69}。\n<wait>	Collect all of them, and the gates to Takamagahara are sure to open.\n<wait>	reads: さすれば、高天原への扉が開かれよう。\n<wait> @from-v005
+m/MS000F.BIN	0:02	129	4523	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	130	4533	1FD3	{08:90}{08:81}？　や{08:52}くれぬか？\n	So, what do you say?\n	reads: どうじゃ？　やってくれぬか？\n @from-v005
+m/MS000F.BIN	0:02	131	4572	1FB2	やり{08:5A}	I'll do it	reads: やります; menu option, declared width 20 columns @from-v005
+m/MS000F.BIN	0:02	132	4580	1FB2	いや{08:55}	Nah	reads: いやです; menu option, declared width 20 columns @from-v005
+m/MS000F.BIN	0:02	133	4600	0F	{01:71}	{01:71}	reads: 
+m/MS000F.BIN	0:02	134	4603	00			
+m/MS000F.BIN	0:02	135	4611	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	136	4621	1FD3	おお！　や{08:52}く{08:2F}か！　ありがたや{02:08}‥\nオセ{08:62}{08:47}黄泉の下の階層におる。心{08:4A}掛かるん{08:81}ぞ{02:08}。\n<wait>	Oh! Wonderful! You can find Ose at the depths of Yomi.\nI wish you good luck...\n<wait>	reads: おお！　やってくれるか！　ありがたや‥‥‥‥\nオセは、この黄泉の下の階層におる。心して掛かるんじゃぞ‥‥‥。\n<wait> @from-v005
+m/MS000F.BIN	0:02	137	4720	1FD2	大国主：	Ookuninushi:	@from-v005
+m/MS000F.BIN	0:02	138	4730	1FD3	{02:08}やはりそうか{02:08}\n神剣を持{08:51}、地獄の総統になど手を出す奴はおらぬか{08:72}\n<wait>	Right... I suppose that you would need to be a madman\nto take on the president of hell armed with our sacred sword...\\<wait>	reads: ‥‥‥やはりそうか‥‥‥\n神剣を持った、地獄の総統になど手を出す奴はおらぬか‥‥\n<wait> @from-v005
+m/MS000F.BIN	0:03	0	7	1FD0	誰も{08:24}{02:08}‥\n	There's no one here...\n	reads: 誰もいない‥‥‥‥\n @from-v005
+m/MS000F.BIN	0:03	1	38	00	{04:FF}が気がつくと、そこは薄暗い空間だ{08:51}{02:08}。\n<wait>	As you come to, you find yourself lying in darkness...\n<wait>	reads: が気がつくと、そこは薄暗い空間だった‥‥‥。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000F.BIN	0:03	2	107	1F71	そこにヒルコが現{08:60}。\n<wait>	Hiruko appears before you.\n<wait>	reads: そこにヒルコが現れた。\n<wait> @from-v005
+m/MS000F.BIN	0:03	3	191	1F77	まばゆい光と共に、ヒルコは一瞬に{08:4A}{01:2F}な赤ん坊の姿{08:42}、\n光輝く太陽の子供と{08:16}。\n<wait>	Shrouded in dazzling light,\nHiruko transforms from a baby into a child of the sun.\n<wait>	reads: まばゆい光と共に、ヒルコは一瞬にして不気味な赤ん坊の姿から、\n光輝く太陽の子供となった。\n<wait> @from-v005
+m/MS000F.BIN	0:03	4	275	1FD2	ヒルコ：	Hiruko:	@from-v005
+m/MS000F.BIN	0:03	5	285	1FD3	こは黄泉なれど案ずるにいらじ。\n吾、古き衣を打ち捨てて、更{08:59}を得るのみ。\n<wait>	We find ourselves in Yomi.\nFret not, for I have merely cast away my old robes.\n<wait>	reads: こは黄泉なれど案ずるにいらじ。\n吾、古き衣を打ち捨てて、更なるを得るのみ。\n<wait> @from-v005
+m/MS000F.BIN	0:03	6	365	1FD2	ヒルコ：	Hiruko:	@from-v005
+m/MS000F.BIN	0:03	7	375	1FD3	{08:86}れ{08:88}汝が勤め未だ終わらじ。\n今ひとたび古き衣を纏うべし{08:72}。\n<wait>	As for you, you still have work left to do...\n<wait>	reads: しかれども汝が勤め未だ終わらじ。\n今ひとたび古き衣を纏うべし‥‥。\n<wait> @from-v005
+m/MS000F.BIN	0:03	8	487	1F81	+{03:03}	+{03:03}	reads: +だした
+m/MS000F.BIN	0:03	9	493	19	{03:17}	{03:17}	reads: 
+m/MS000F.BIN	0:03	10	496	00	{01:1F}{=ED}{=03}	Big brother!{=ED}{=03}	reads: おにいちゃん{=ED}{=03} @from-ours
+m/MS000F.BIN	0:03	11	544	1FD2	ヒルコ：	Hiruko:	@from-v005
+m/MS000F.BIN	0:03	12	559	09	汝の心、闇に捕われつつあり。\n闇に捕われし者、二度と陽光の元にいづる事まかり{08:7D}ぬ{02:08}‥\n	Your heart is being consumed by darkness.\nOne who is captured by darkness may never again return to the light...\n	reads: 汝の心、闇に捕われつつあり。\n闇に捕われし者、二度と陽光の元にいづる事まかりならぬ‥‥‥‥\n @from-ours
+m/MS000F.BIN	0:03	13	644	00	汝が勤め、未だ終わらじ{02:08}‥\n	Your task remains unfinished...\n	reads: 汝が勤め、未だ終わらじ‥‥‥‥\n @from-ours
+m/MS000F.BIN	0:04	0	2	1FD2	死人：	Dead Man:	@from-ours
+m/MS000F.BIN	0:04	1	16	1F7C	{02:08}あうぅ{02:08}{08:0B}が{08:72}俺に{02:08}‥\n<wait>	...Aaugh... A demon... came for me...\n<wait>	reads: ‥‥‥あうぅ‥‥‥悪魔が‥‥俺に‥‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:04	2	49	1FD2	死人：	Dead Man:	@from-ours
+m/MS000F.BIN	0:04	3	57	1FD3	！！{02:08}来るなぁぁああぁ！！\n<wait>	!! ...Stay awaaay!!\n<wait>	reads: ！！‥‥‥来るなぁぁああぁ！！\n<wait> @from-ours
+m/MS000F.BIN	0:04	4	91	18	俺は{02:08}俺は{08:90}なっち{08:20}{08:5F}{02:08}‥\n分{08:42}{08:25}{02:08}{08:0B}が急に{08:72}{03:13}{08:72}\n<wait>	I... What happened to me...\nI don't know... A demon suddenly... right in front of me...\n<wait>	reads: 俺は‥‥‥俺はどうなっちまったんだ‥‥‥‥\n分からない‥‥‥悪魔が急に‥‥目の前に‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:05	0	2	1FD2	死人：	Dead Man:	@from-ours
+m/MS000F.BIN	0:05	1	10	1FD3	{08:05}ーを‥立ち上{08:44}ら{08:72}急に{02:08}\n<wait>	I turned on... the computer, and then... all of a sudden...\n<wait>	reads: コンピューターを‥立ち上げたら‥‥急に‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:05	2	45	1FD2	死人：	Dead Man:	@from-ours
+m/MS000F.BIN	0:05	3	53	1FD3	気がつい{08:50}{08:45}に{08:64}の{02:08}\n私{02:08}‥{08:90}{08:4A}{02:08}‥？\nも{08:61}て{08:72}死{08:5F}の{02:08}{08:72}？\n<wait>	When I came to, I was here...\nI... why...?\nCould it be... that I died...?\n<wait>	reads: 気がついたらここにいたの‥‥‥\n私‥‥‥‥どうして‥‥‥‥？\nもしかして‥‥死んだの‥‥‥‥‥？\n<wait> @from-ours
+m/MS000F.BIN	0:06	0	2	1FD2	子供：	Child:	@from-ours
+m/MS000F.BIN	0:06	1	16	1F7C	{02:08}目の前で{08:72}{01:21}と{01:22}が{02:08}‥\n<wait>	...Right in front of me... Mom and Dad...\n<wait>	reads: ‥‥‥目の前で‥‥パパとママが‥‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:06	2	49	1FD2	子供：	Child:	@from-ours
+m/MS000F.BIN	0:06	3	57	1FD3	{08:56}{08:72}{01:21}も{01:22}も、{08:45}に{08:24}{08:5F}{08:72}\n僕は{01:3A}ぼっち{02:08}‥\n<wait>	But... neither Mom nor Dad are here...\nI'm all alone...\n<wait>	reads: でも‥‥パパもママも、ここにいないんだ‥‥\n僕はひとりぼっち‥‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:06	4	106	18	{08:45}の奥に{08:62}も{08:53}怖い{08:0B}が{08:40}{08:5F}{08:52}{02:08}\n<wait>	They say there's an even scarier demon further in...\n<wait>	reads: ここの奥には、もっと怖い悪魔がいるんだって‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:07	0	2	1FD2	亡者：	Departed:	@from-ours
+m/MS000F.BIN	0:07	1	16	1F7C	うおぉぉおおおお{02:08}‥戻{08:52}きてくれぇ{02:08}\nよしこぉぉ{02:08}‥\n<wait>	Aaaaaugh... Come baaack...\nYoshikooo...\n<wait>	reads: うおぉぉおおおお‥‥‥‥戻ってきてくれぇ‥‥‥\nよしこぉぉ‥‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:07	2	75	18	俺は俺だぁ{02:08}お前何かと一緒{08:81}{08:25}{08:5F}{08:72}。\n<wait>	I'm still me...! I'm not the same as you...\n<wait>	reads: 俺は俺だぁ‥‥‥お前何かと一緒じゃないんだ‥‥。\n<wait> @from-ours
+m/MS000F.BIN	0:07	3	120	1FD2	亡者：	Departed:	@from-ours
+m/MS000F.BIN	0:07	4	128	1FD3	お前こそ{02:08}俺にくっつい{08:2B}ん{08:81}ねぇ{08:72}\n<wait>	You're the one clinging to me, dammit...\n<wait>	reads: お前こそ‥‥‥俺にくっついてるんじゃねぇ‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:07	5	171	1FD2	亡者：	Departed:	@from-ours
+m/MS000F.BIN	0:07	6	179	1FD3	{08:72}{08:48}{08:62}{01:16}の身体よ{08:72}誰にも渡さ{08:25}ぃ{02:08}‥\n<wait>	...This is my body... I'm not giving it up to anyone......\n<wait>	reads: ‥‥これは、あたしの身体よ‥‥誰にも渡さないぃ‥‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:08	0	2	1FD2	子供：	Child:	@from-ours
+m/MS000F.BIN	0:08	1	10	1FD3	お兄ちゃん{02:08}何だか僕達と違う{02:08}‥\n<wait>	Big brother... you're somehow... different from us...\n<wait>	reads: お兄ちゃん‥‥‥何だか僕達と違う‥‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:09	0	2	1FD2	死人：	Dead Man:	@from-ours
+m/MS000F.BIN	0:09	1	10	1FD3	{08:72}{08:90}{08:4A}、誰も助けに来てくれ{08:19}の{02:08}？\n<wait>	...Why didn't anyone come to help us...?\n<wait>	reads: ‥‥どうして、誰も助けに来てくれなかったの‥‥‥？\n<wait> @from-ours
+m/MS000F.BIN	0:09	2	53	1FD2	死人：	Dead Man:	@from-ours
+m/MS000F.BIN	0:09	3	61	1FD3	他の{08:10}に救援{08:65}だ{08:52}、出{08:4B}筈{08:6B}に{08:72}。\n初台も、御茶ノ水も{08:72}所詮は{08:63}さえ良ければ{08:7F}{08:5F}わ‥。\n<wait>	We even sent distress signals to the other shelters...\nHatsudai, Ochanomizu... everyone only cares about themselves...\n<wait>	reads: 他のシェルターに救援通信だって、出した筈なのに‥‥。\n初台も、御茶ノ水も‥‥所詮は自分さえ良ければいいんだわ‥。\n<wait> @from-ours
+m/MS000F.BIN	0:0A	0	2	1FD2	死人：	Dead Man:	@from-ours
+m/MS000F.BIN	0:0A	1	16	1F7C	突然{02:08}突然下の階{08:42}、{01:2B}が上が{08:52}{08:1E}{08:5F}。\n<wait>	All of a sudden... zombies came up from the floor below.\n<wait>	reads: 突然‥‥‥突然下の階から、ゾンビが上がってきたんだ。\n<wait> @from-ours
+m/MS000F.BIN	0:0A	2	61	1FD2	死人：	Dead Man:	@from-ours
+m/MS000F.BIN	0:0A	3	69	1FD3	俺達はなす術も無く{08:72}気付い{08:50}{08:45}だ{02:08}\n{08:63}の身体も{01:2B}み{08:4E}に{08:1A}るしよ{02:08}\n<wait>	We couldn't do a thing... and before I knew it, I was here...\nMy own body's turned into something like a zombie's, too...\n<wait>	reads: 俺達はなす術も無く‥‥気付いたらここだ‥‥‥\n自分の身体もゾンビみたいになってるしよ‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:0A	4	141	1FD2	死人：	Dead Man:	@from-ours
+m/MS000F.BIN	0:0A	5	149	1FD3	{08:10}は安全{08:81}{08:19}のか{02:08}？\n<wait>	Wasn't the shelter supposed to be safe...?\n<wait>	reads: シェルターは安全じゃなかったのか‥‥‥？\n<wait> @from-ours
+m/MS000F.BIN	0:0A	6	177	18	{08:72}ああ{08:72}最後に見た{08:5E}が{02:08}記憶に残っ{08:2B}{02:08}\n<wait>	...Yeah... The last thing I saw... it's still stuck in my memory...\n<wait>	reads: ‥‥ああ‥‥最後に見たものが‥‥‥記憶に残ってる‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:0A	7	224	1FD2	死人：	Dead Man:	@from-ours
+m/MS000F.BIN	0:0A	8	232	1FD3	{02:00}だ{02:08}{02:00}が俺を{02:08}\n<wait>	It was a Devil Buster... A Devil Buster did this to me...\n<wait>	reads: デビルバスターだ‥‥‥デビルバスターが俺を‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:0B	0	2	1FD2	死人：	Dead Man:	@from-ours
+m/MS000F.BIN	0:0B	1	16	1F7C	{08:05}ー{08:42}{08:0B}が{02:08}‥\n{08:0B}は{08:72}炎を{02:08}‥私は{02:08}{02:08}‥\n<wait>	A demon came out of the computer...\nThe demon... unleashed fire... and I...\n<wait>	reads: コンピューターから悪魔が‥‥‥‥\n悪魔は‥‥炎を‥‥‥‥私は‥‥‥‥‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:0B	2	64	1FD2	死人：	Dead Man:	@from-ours
+m/MS000F.BIN	0:0B	3	72	1FD3	メイルは{08:72}初台{08:42}{02:08}{08:72}\nひどい{08:72}ひどいわ{02:08}\n<wait>	The email... it was from Hatsudai...\nHow horrible... it's just horrible...\n<wait>	reads: メイルは‥‥初台から‥‥‥‥‥\nひどい‥‥ひどいわ‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:0B	4	120	1FD2	死人：	Dead Man:	@from-ours
+m/MS000F.BIN	0:0B	5	128	1FD3	{08:56}{08:72}最後に見{08:41}わ{02:08}光が{02:08}\n<wait>	But... at the very end, I saw it... a light...\n<wait>	reads: でも‥‥最後に見えたわ‥‥‥光が‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:0B	6	160	18	奥に泉が{08:7B}わ{02:08}{08:74}ど、{08:7A}物使{08:51}{08:52}、生き返{08:2F}訳{08:81}{08:25}{02:08}\n<wait>	There's a spring further in... but even if you used it,\nit's not like you'd come back to life...<wait>	reads: 奥に泉があるわ‥‥‥だけど、そんな物使ったって、生き返れる訳じゃない‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:0C	0	2	1FD2	死人：	Dead Man:	@from-ours
+m/MS000F.BIN	0:0C	1	10	1FD3	Ｄ.Ｄ.Ｍ.を{08:0B}が{02:08}馬鹿な{02:08}\n<wait>	A demon, using a D.D.M....? Impossible...\n<wait>	reads: Ｄ.Ｄ.Ｍ.を悪魔が‥‥‥馬鹿な‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:0C	2	44	1FD2	死人：	Dead Man:	@from-ours
+m/MS000F.BIN	0:0C	3	56	00	{04:FE}上官が{02:08}{08:65}を{02:08}‥\n<wait>	{04:FE}My superior officer... tried to call it in...\n<wait>	reads: 上官が‥‥‥通信を‥‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:0D	0	2	1FD2	死人：	Dead Man:	@from-ours
+m/MS000F.BIN	0:0D	1	16	1F7C	{08:5C}だめ{02:08}所詮は‥{02:00}{08:6A}て{02:08}\nあてに{08:7D}{08:19}{08:5F}わ{02:08}{08:72}\n<wait>	It's no use... In the end... those Devil Busters...\nthey were never any help at all...\n<wait>	reads: もうだめ‥‥‥所詮は‥デビルバスターなんて‥‥‥\nあてにならなかったんだわ‥‥‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:0D	2	67	18	{08:70}{08:72}{02:00}？\n{01:1C}死{08:5F}のね{02:08}？\n<wait>	You... are you a Devil Buster?\nEveryone's dead, aren't they...?\n<wait>	reads: あなた‥‥デビルバスター？\nみんな死んだのね‥‥‥？\n<wait> @from-ours
+m/MS000F.BIN	0:0D	3	99	1FD2	死人：	Dead Man:	@from-ours
+m/MS000F.BIN	0:0D	4	107	1FD3	{01:1C}{08:72}{01:1C}死{08:5F}わ{02:08}\n{08:45}にも{02:08}いろんな人が{02:08}{01:1C}死んでる{02:08}\n<wait>	Everyone... everyone's dead...\nHere too... so many people... all of them, dead...\n<wait>	reads: みんな‥‥みんな死んだわ‥‥‥\nここにも‥‥‥いろんな人が‥‥‥みんな死んでる‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:0D	5	165	1FD2	死人：	Dead Man:	@from-ours
+m/MS000F.BIN	0:0D	6	173	1FD3	私分{08:18}わ、{08:10}の{02:0B}{08:74}が、のうのうと暮らし{08:2B}{08:52}事{02:08}‥\n<wait>	Now I understand... only the people in the shelters\nget to live in peace...<wait>	reads: 私分かったわ、シェルターの人間だけが、のうのうと暮らしてるって事‥‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:0E	0	35	1FD2	黄泉醜女：	Yomotsu-Shikome:	@from-ours
+m/MS000F.BIN	0:0E	1	47	1FD3	おや{02:08}そこにおるの{08:62}生者では{08:25}かえ？\n<wait>	Oh my... Is that a living being standing there?\n<wait>	reads: おや‥‥‥そこにおるのは、生者ではないかえ？\n<wait> @from-ours
+m/MS000F.BIN	0:0E	2	92	1FD2	黄泉醜女：	Yomotsu-Shikome:	@from-ours
+m/MS000F.BIN	0:0E	3	104	1FD3	{08:45}{08:62}黄泉比良坂。生者の立ち入りはまかり{08:7D}ぬ。\nそなたは{08:76}、死す運命に{08:7B}者でなし。\n<wait>	This is Yomotsu Hirasaka. The living are forbidden to set foot here.\nYou are not yet one fated to die.\n<wait>	reads: ここは、黄泉比良坂。生者の立ち入りはまかりならぬ。\nそなたはまだ、死す運命にある者でなし。\n<wait> @from-ours
+m/MS000F.BIN	0:0E	4	192	1FD2	黄泉醜女：	Yomotsu-Shikome:	@from-ours
+m/MS000F.BIN	0:0E	5	204	1FD3	{08:6D}{08:69}に{08:4A}、{08:47}地に立ち入{08:51}かは知らぬが、即刻立ち去るがよいぞ！\n	I know not how you came to enter this land, but you\nwould do well to leave at once!\n	reads: どのようにして、この地に立ち入ったかは知らぬが、即刻立ち去るがよいぞ！\n @from-ours
+m/MS000F.BIN	0:0E	6	281	1FB2	{08:90}{08:68}事だ	What do you mean?	reads: どういう事だ; menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:0E	7	291	1FB2	無視{08:4A}奥へ	Ignore her, push on	reads: 無視して奥へ; menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:0E	8	303	1FB2	素直に立ち去る	Leave obediently	menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:0E	9	331	0F	{01:89}{04:02}{01:79}{07:FF}	{01:89}{04:02}{01:79}{07:FF}	reads: 切り
+m/MS000F.BIN	0:0E	10	343	1FD2	黄泉醜女：	Yomotsu-Shikome:	@from-ours
+m/MS000F.BIN	0:0E	11	355	1FD3	{08:4D}{08:62}{02:0E}が聞{08:1E}い{08:87}{08:81}。\n<wait>	That is precisely what I would like to ask.\n<wait>	reads: それは、こちらが聞きたいところじゃ。\n<wait> @from-ours
+m/MS000F.BIN	0:0E	12	384	1FD2	黄泉醜女：	Yomotsu-Shikome:	@from-ours
+m/MS000F.BIN	0:0E	13	396	1FD3	生者の身で{08:7B}そなたが何故、黄泉比良坂におるのか？\n{08:4D}が、わらわには不可解{08:81}！！\n<wait>	Why is it that you, one of the living, are here at Yomotsu Hirasaka?\nThat is what I cannot fathom!!\n<wait>	reads: 生者の身であるそなたが何故、黄泉比良坂におるのか？\nそれが、わらわには不可解じゃ！！\n<wait> @from-ours
+m/MS000F.BIN	0:0E	14	482	1FD2	黄泉醜女：	Yomotsu-Shikome:	@from-ours
+m/MS000F.BIN	0:0E	15	494	1FD3	{08:47}地に生者が来{08:69}など、かのイザナギ神の時以来の事{02:08}。\nかの時の事を思うと、気分が悪いわ！！\n	No living soul has set foot here since the days of\nthe god Izanagi himself. Just thinking of it turns my stomach!!\n	reads: この地に生者が来ようなど、かのイザナギ神の時以来の事‥‥‥。\nかの時の事を思うと、気分が悪いわ！！\n @from-ours
+m/MS000F.BIN	0:0E	16	600	1FB2	好きで{08:40}訳では‥	Not that I like it	reads: 好きでいる訳では‥; menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:0E	17	618	1FB2	無視{08:4A}奥へ	Ignore her, push on	reads: 無視して奥へ; menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:0E	18	630	1FB2	立ち去る	Leave	menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:0E	19	652	0F	{01:48}{03:02}{01:38}{06:FF}	{01:48}{03:02}{01:38}{06:FF}	reads: を攻撃しアタシ
+m/MS000F.BIN	0:0E	20	664	1FD2	黄泉醜女：	Yomotsu-Shikome:	@from-ours
+m/MS000F.BIN	0:0E	21	676	1FD3	{08:7C}、即刻立ち去れい！！\n{08:4D}とも、帰り方が分{08:42}ぬと言うのかや？\n	Then leave at once!!\nOr is it that you don't know the way back?\n	reads: ならば、即刻立ち去れい！！\nそれとも、帰り方が分からぬと言うのかや？\n @from-ours
+m/MS000F.BIN	0:0E	22	752	1FB2	{08:26}	Yes	reads: はい; menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:0E	23	756	1FB2	{08:27}	No	reads: いいえ; menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:0E	24	772	0F	{01:7C}	{01:7C}	reads: 
+m/MS000F.BIN	0:0E	25	775	00			
+m/MS000F.BIN	0:0E	26	780	1FD2	黄泉醜女：	Yomotsu-Shikome:	@from-ours
+m/MS000F.BIN	0:0E	27	792	1FD3	{08:7C}、わらわがそなたを現世に戻{08:4A}やろうぞ。\n<wait>	Then I shall send you back to the world of the living myself.\n<wait>	reads: ならば、わらわがそなたを現世に戻してやろうぞ。\n<wait> @from-ours
+m/MS000F.BIN	0:0E	28	841	1FD2	黄泉醜女：	Yomotsu-Shikome:	@from-ours
+m/MS000F.BIN	0:0E	29	853	1FD3	一刻も早く、わらわの眼前{08:42}消え失{08:2A}の{08:81}！！\n	Vanish from my sight, at once!!\n	reads: 一刻も早く、わらわの眼前から消え失せるのじゃ！！\n @from-ours
+m/MS000F.BIN	0:0E	30	903	1FD2	黄泉醜女：	Yomotsu-Shikome:	@from-ours
+m/MS000F.BIN	0:0E	31	915	1FD3	ええい！！　わらわを{08:42}かいお{08:52}！！！\n<wait>	Ergh!! You dare mock me!!!\n<wait>	reads: ええい！！　わらわをからかいおって！！！\n<wait> @from-ours
+m/MS000F.BIN	0:0E	32	960	1FD2	黄泉醜女：	Yomotsu-Shikome:	@from-ours
+m/MS000F.BIN	0:0E	33	972	1FD3	かく{08:59}上{08:62}そなたを喰うてやるわ！！\n魂の一欠けも残さずに喰うてく{08:2F}！！！\n<wait>	In that case, I shall devour you!!\nI'll eat you down to the very last scrap of your soul!!!\n<wait>	reads: かくなる上は、そなたを喰うてやるわ！！\n魂の一欠けも残さずに喰うてくれる！！！\n<wait> @from-ours
+m/MS000F.BIN	0:0E	34	1056	1FD0	黄泉醜女はそう言{08:52}、	So saying, Yomotsu-Shikome,	reads: 黄泉醜女はそう言って、 @from-ours
+m/MS000F.BIN	0:0E	35	1080	00	{04:FF}に飛びかかろうと身構{08:41}。\n<wait>	readied herself to lunge at {04:FF}.\n<wait>	reads: に飛びかかろうと身構えた。\n<wait> @from-ours
+m/MS000F.BIN	0:0E	36	1113	1FBA	{08:79}時、	Just then,	reads: その時、 @from-ours
+m/MS000F.BIN	0:0E	37	1123	00	{04:FF}の意識に呼びか{08:29}声があ{08:51}。\n<wait>	A voice called out to {04:FF}'s consciousness.\n<wait>	reads: の意識に呼びかける声があった。\n<wait> @from-ours
+m/MS000F.BIN	0:0E	38	1160	1FD2	声：	Voice:	@from-ours
+m/MS000F.BIN	0:0E	39	1166	1FD3	{02:08}だめ！！{02:08}\n	...No!!...\n	reads: ‥‥‥だめ！！‥‥‥\n @from-ours
+m/MS000F.BIN	0:0E	40	1183	00	{04:FF}君{08:72}{08:76}死んで{08:26}け{08:25}わ{02:08}‥\n‥{01:10}‥{08:76}勤めを果{08:4A}{08:24}{02:08}‥\n<wait>	{04:FF}You mustn't die yet...\n...You still have your duty left to fulfill...\n<wait>	reads: 君‥‥まだ死んではいけないわ‥‥‥‥\n‥あなたは‥まだ勤めを果していない‥‥‥‥\n<wait> @from-ours
+m/MS000F.BIN	0:0E	41	1243	1FD2	声：	Voice:	@from-ours
+m/MS000F.BIN	0:0E	42	1249	1FD3	{02:08}現世に戻{08:52}{08:72}そ{08:4A}{02:08}‥私を！！！\n<wait>	...Return to the mortal realm... and then... rescue me!!!\n<wait>	reads: ‥‥‥現世に戻って‥‥そして‥‥‥‥私を！！！\n<wait> @from-ours
+m/MS000F.BIN	0:0E	43	1290	1FD0	優しい女性の声が響き、そ{08:4A}一陣の豪風が巻き起こ{08:51}。\n<wait>	A gentle woman's voice echoes, and a fierce gust of wind kicks up.\n<wait>	reads: 優しい女性の声が響き、そして一陣の豪風が巻き起こった。\n<wait> @from-ours
+m/MS000F.BIN	0:0E	44	1355	00	{04:FF}はたまらず、{08:79}風に吹き飛ば{03:0C}、間一髪で、黄泉醜女の{08:0C}を\nかわす{08:46}が出来た。\n<wait>	{04:FF}, unable to resist, was swept up by the wind, and by a hair's breadth,\nmanaged to dodge Yomotsu-Shikome's attack.\n<wait>	reads: はたまらず、その風に吹き飛ばされ、間一髪で、黄泉醜女の攻撃を\nかわすことが出来た。\n<wait> @from-ours
+m/MS000F.BIN	0:0E	45	1441	00	{04:FF}は{08:79}{08:7E}風に吹き飛ば{03:0C}、真っ暗な空間へと飛ば{03:0C}{08:21}。\n	{04:FF} was carried off by the wind just as it was,\nblown away into a pitch-black void.\n	reads: はそのまま風に吹き飛ばされ、真っ暗な空間へと飛ばされていった。\n @from-ours
+m/MS000F.BIN	0:0E	46	1499	1FD2	黄泉醜女：	Yomotsu-Shikome:	@from-ours
+m/MS000F.BIN	0:0E	47	1511	1FD3	待て！！　{08:45}より先{08:62}{08:6C}な死者のみの世界ぞ！\nそなたを通す訳にはゆかぬ！！\n<wait>	Wait!! Beyond here lies a realm for the truly dead alone!\nI cannot let you pass!!\n<wait>	reads: 待て！！　ここより先は、完全な死者のみの世界ぞ！\nそなたを通す訳にはゆかぬ！！\n<wait> @from-ours
+m/MS000F.BIN	0:0E	48	1591	1FD2	黄泉醜女：	Yomotsu-Shikome:	@from-ours
+m/MS000F.BIN	0:0E	49	1603	1FD3	無理に通ろうと言うので{08:3F}ば、{08:82}では済まぬぞ。\nそなたを魂の一欠けも残さずに、喰うてく{08:2F}わ！！\n<wait>	If you try to force your way through, you won't get off easy.\nI'll devour you, down to the very last scrap of your soul!!\n<wait>	reads: 無理に通ろうと言うのであれば、ただでは済まぬぞ。\nそなたを魂の一欠けも残さずに、喰うてくれるわ！！\n<wait> @from-ours
+m/MS000F.BIN	0:0E	50	1703	1FD2	黄泉醜女：	Yomotsu-Shikome:	@from-ours
+m/MS000F.BIN	0:0E	51	1715	1FD3	魂ま{08:56}喰えば、蘇る事はおろか、転生すらも出来ぬ{02:08}\nそなたの存在自体が、消え失{08:2A}の{08:81}！！\n	Should I devour your very soul, you'd lose not just revival,\nbut even reincarnation -- your very existence would be erased!!\n	reads: 魂までも喰えば、蘇る事はおろか、転生すらも出来ぬ‥‥‥\nそなたの存在自体が、消え失せるのじゃ！！\n @from-ours
+m/MS000F.BIN	0:0E	52	1817	1FB2	立ち向かう	Stand and fight	menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:0E	53	1829	1FB2	逃げる	Run away	menu option, declared width 20 columns @from-ours
+m/MS000F.BIN	0:0E	54	1849	0F	{01:A5}	{01:A5}	reads: 
+m/MS000F.BIN	0:0E	55	1852	00			
+m/MS000F.BIN	0:0E	56	1857	1FD2	黄泉醜女：	Yomotsu-Shikome:	@from-ours
+m/MS000F.BIN	0:0E	57	1869	1FD3	おのれ！！　{08:76}、命運尽きておらぬ{08:5E}を{02:08}！\n命を粗末にしお{08:52}{08:72}！！\n<wait>	Curse you!! Your fate was not yet at its end...!\nAnd yet you throw your life away so carelessly...!!\n<wait>	reads: おのれ！！　まだ、命運尽きておらぬものを‥‥‥！\n命を粗末にしおって‥‥！！\n<wait> @from-ours
+m/MS000F.BIN	0:0E	58	1941	1FD2	黄泉醜女：	Yomotsu-Shikome:	@from-ours
+m/MS000F.BIN	0:0E	59	1953	1FD3	{08:7A}に命がいらぬの{08:7D}望み通り、わらわが喰うてやろうぞ！！\n<wait>	If you care so little for your life, then as you wish,\nI shall devour you!!<wait>	reads: そんなに命がいらぬのなら望み通り、わらわが喰うてやろうぞ！！\n<wait> @from-ours
+m/MS000F.BIN	0:0E	60	2025	00	{04:FF}は逃げ出{08:4B}。\n<wait>	{04:FF} took off running.\n<wait>	reads: は逃げ出した。\n<wait> @from-ours
+m/MS000F.BIN	0:0E	61	2048	1FD2	黄泉醜女：	Yomotsu-Shikome:	@from-ours
+m/MS000F.BIN	0:0E	62	2060	1FD3	逃げるのかや！？\n<wait>	Running away, are you!?\n<wait>	@from-ours
+m/MS000F.BIN	0:0E	63	2085	1FD2	黄泉醜女：	Yomotsu-Shikome:	@from-ours
+m/MS000F.BIN	0:0E	64	2097	1FD3	{08:72}まあよい。二度とわらわの眼前に現{08:2F}で{08:25}ぞ！！\n<wait>	...Very well. Do not show your face before me again!!\n<wait>	reads: ‥‥まあよい。二度とわらわの眼前に現れるでないぞ！！\n<wait> @from-ours
+m/MS000F.BIN	0:0E	65	2152	1FD0	黄泉醜女の言葉が、終わるか終わら{08:25}かのうちに、ゴオッと{08:68}音と共に\n一陣の豪風が巻き起こ{08:51}。\n<wait>	Before Yomotsu-Shikome's words even finish, a roaring\ngust of wind erupts.\n<wait>	reads: 黄泉醜女の言葉が、終わるか終わらないかのうちに、ゴオッという音と共に\n一陣の豪風が巻き起こった。\n<wait> @from-ours
+m/MS000F.BIN	0:0E	66	2255	1FD2	黄泉醜女：	Yomotsu-Shikome:	@from-ours
+m/MS000F.BIN	0:0E	67	2267	1FD3	そなたの命運は尽きてはおらぬ！\n{08:45}{08:42}去ねい！！！\n<wait>	Your fate has not yet run its course!\nBegone from this place!!!\n<wait>	reads: そなたの命運は尽きてはおらぬ！\nここから去ねい！！！\n<wait> @from-ours
+m/MS000F.BIN	0:0E	68	2323	1FD2	黄泉醜女：	Yomotsu-Shikome:	@from-ours
+m/MS000F.BIN	0:0E	69	2335	1FD3	早くわらわの眼前{08:42}、消{08:28}の{08:81}！！\n<wait>	Vanish from before me, quickly!!\n<wait>	reads: 早くわらわの眼前から、消えるのじゃ！！\n<wait> @from-ours
+m/MS000F.BIN	0:0E	70	2376	1FD0	黄泉醜女が叫{08:5F}瞬間、ゴオッと{08:68}音と共に一陣の豪風が巻き起こ{08:51}。\n<wait>	The instant Yomotsu-Shikome shouts, a roaring gust of wind erupts.\n<wait>	reads: 黄泉醜女が叫んだ瞬間、ゴオッという音と共に一陣の豪風が巻き起こった。\n<wait> @from-ours
+m/MS000F.BIN	0:0E	71	2453	00	{04:FF}{08:62}なす術も無く{08:79}風に吹き飛ば{03:0C}て{08:1F}。\n<wait>	{04:FF}, powerless to resist, was swept away by the wind.\n<wait>	reads: は、なす術も無くその風に吹き飛ばされてしまった。\n<wait> @from-ours
+m/MS000F.BIN	0:0E	72	2498	1FBA	黄泉醜女の姿が、あ{08:53}言う間に小さくなり、	Yomotsu-Shikome's figure shrinks away in an instant,	reads: 黄泉醜女の姿が、あっと言う間に小さくなり、 @from-ours
+m/MS000F.BIN	0:0E	73	2542	00	{04:FF}は真っ暗な空間へと\n飛ば{03:0C}{08:21}。\n<wait>	{04:FF} was carried off\ninto a pitch-black void.\n<wait>	reads: は真っ暗な空間へと\n飛ばされていった。\n<wait> @from-ours
+m/MS000F.BIN	0:0E	74	2580	1FBA	誰も{08:24}真っ暗な空間を、上へ下へと吹き飛ば{03:0C}て行くうち、\nいつ{08:86}	Tossed up and down through the empty, pitch-black void, before long\n	reads: 誰もいない真っ暗な空間を、上へ下へと吹き飛ばされて行くうち、\nいつしか @from-ours
+m/MS000F.BIN	0:0E	75	2645	00	{04:FF}{08:62}意識を失っ{08:21}{02:08}\n<wait>	{04:FF} slipped from consciousness...\n<wait>	reads: は、意識を失っていった‥‥‥\n<wait> @from-ours

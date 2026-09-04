@@ -99,10 +99,23 @@ def build_file(rel: str, raw: bytes, rows) -> Result:
 
 def run(out_dir: "str | None" = None, family: str = "all",
         root: "str | None" = None, text_dir: "str | None" = None,
-        quiet: bool = False, ignore_tables: bool = False) -> dict:
+        quiet: bool = False, ignore_tables: bool = False,
+        only: "list[str] | None" = None) -> dict:
+    """Build every file; apply tables only to those in ``family`` and ``only``.
+
+    ``only`` is a list of ``fnmatch`` patterns against the ``dir/FILE.BIN`` key
+    (``m/MS0017.BIN``, ``m/MS001*``).  Files that do not match are still built,
+    as identity copies, so the output is always a complete game tree -- this is
+    what lets a translation be switched on one section at a time and each
+    section play-tested before the next is enabled.
+    """
     out_dir = out_dir or os.path.join(paths.BUILD_DIR, "ddswin_v2")
     text_dir = text_dir or extract_v2.text_v2_dir()
     wanted = set(files.iter_files(files.expand_family(family), root))
+    if only:
+        import fnmatch
+        wanted = {rel for rel in wanted
+                  if any(fnmatch.fnmatch(rel, pat) for pat in only)}
 
     cache = {}
     st = {"files": 0, "changed_files": 0, "changed_spans": 0, "changed_records": 0,

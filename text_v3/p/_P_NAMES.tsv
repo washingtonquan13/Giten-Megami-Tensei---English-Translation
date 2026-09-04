@@ -1,0 +1,437 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+p/P2000.BIN	NAME	0	54	NAME	相馬雪彦	Souma Yukihito	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2001.BIN	NAME	0	54	NAME	相馬雪彦＿	Souma Yukihito_	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2002.BIN	NAME	0	54	NAME	内海笙子	Utsumi Shouko	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2003.BIN	NAME	0	54	NAME	内海笙子＿	Utsumi Shouko_	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2004.BIN	NAME	0	54	NAME	飛鳥泪	Asuka Rui	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2005.BIN	NAME	0	54	NAME	西野義雄	Nishino Yoshio	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2006.BIN	NAME	0	54	NAME	早坂達也	Hayasaka	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005 @renamed-15: was 'Hayasaka Tatsuya' (16 bytes, v0.05 overran the field)
+p/P2007.BIN	NAME	0	54	NAME	園田哲也	Sonoda Tetsuya	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2008.BIN	NAME	0	54	NAME	上河公輝	Kamikawa Kouki	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2009.BIN	NAME	0	54	NAME	相馬三四郎	Souma Sanshirou	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P200A.BIN	NAME	0	54	NAME	山瀬勇	Yamase Isamu	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P200B.BIN	NAME	0	54	NAME	桐島恵美	Kirishima Emi	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P200C.BIN	NAME	0	54	NAME	バーバラ	Barbara	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P200D.BIN	NAME	0	54	NAME	ニュートン	Newton	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P200E.BIN	NAME	0	54	NAME	山田カズミ	Yamada Kazumi	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P200F.BIN	NAME	0	54	NAME	樹海	Jukai	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2010.BIN	NAME	0	54	NAME	ノスフェラトゥ	Nosferatu	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2011.BIN	NAME	0	54	NAME	アイ・ボール	Eye Ball	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2012.BIN	NAME	0	54	NAME	ビット・ボール	Bit Ball	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2013.BIN	NAME	0	54	NAME	ハイボール	High Ball	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2014.BIN	NAME	0	54	NAME	Ｔ９３－α		fixed 16-byte field: at most 15 bytes plus a NUL
+p/P2015.BIN	NAME	0	54	NAME	Ｔ９３－β		fixed 16-byte field: at most 15 bytes plus a NUL
+p/P2016.BIN	NAME	0	54	NAME	インズマス	Innsmouth	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2017.BIN	NAME	0	54	NAME	ワードック	Weredog	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2018.BIN	NAME	0	54	NAME	ワーキャット	Werecat	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2019.BIN	NAME	0	54	NAME	ワーウルフ	Werewolf	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P201A.BIN	NAME	0	54	NAME	ヴァンピール	Vampire	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P201B.BIN	NAME	0	54	NAME	ドッペルゲンガー	Doppelganger	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P201C.BIN	NAME	0	54	NAME	スライム	Slime	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P201D.BIN	NAME	0	54	NAME	プラズマ・ボール	Plasma Ball	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P201E.BIN	NAME	0	54	NAME	クラップスライム	Crap Slime	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P201F.BIN	NAME	0	54	NAME	スプラッター	Splatter	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2020.BIN	NAME	0	54	NAME	大日如来	Dainichi Nyorai	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2021.BIN	NAME	0	54	NAME	バールハダド	Baal Hadad	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2022.BIN	NAME	0	54	NAME	マルドゥーク	Marduk	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2023.BIN	NAME	0	54	NAME	ルー	Lugh	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2024.BIN	NAME	0	54	NAME	アモン	Amon	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2025.BIN	NAME	0	54	NAME	カーマ	Kama	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2026.BIN	NAME	0	54	NAME	イシュタル	Ishtar	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2027.BIN	NAME	0	54	NAME	アマテラス	Amaterasu	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2028.BIN	NAME	0	54	NAME	ラクシュミ	Lakshmi	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2029.BIN	NAME	0	54	NAME	ウルド	Urd	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P202A.BIN	NAME	0	54	NAME	ニンフルサグ	Ninhursag	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P202B.BIN	NAME	0	54	NAME	ニケ	Nike	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P202C.BIN	NAME	0	54	NAME	フレイア	Freya	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P202D.BIN	NAME	0	54	NAME	アメノウズメ	Ame-no-Uzume	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P202E.BIN	NAME	0	54	NAME	ブリーイッド	Brigid	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P202F.BIN	NAME	0	54	NAME	スセリヒメ	Suseri-Hime	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2030.BIN	NAME	0	54	NAME	カルキ	Kalki	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2031.BIN	NAME	0	54	NAME	スサノオ	Susano-o	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2032.BIN	NAME	0	54	NAME	アレス	Ares	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2033.BIN	NAME	0	54	NAME	大国主	Ookuninushi	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2034.BIN	NAME	0	54	NAME	ヤマトタケル	Yamato-Takeru	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2035.BIN	NAME	0	54	NAME	タケミカズチ	Take-Mikazuchi	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2036.BIN	NAME	0	54	NAME	ピャンカラ	Priyankara	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2037.BIN	NAME	0	54	NAME	タケミナカタ	Take-Minakata	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2038.BIN	NAME	0	54	NAME	ハツセオノミコト	Hatsuseo Mikoto	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005 @renamed-15: was 'Hatsueo-no-Mikot' (16 bytes, v0.05 overran the field)
+p/P2039.BIN	NAME	0	54	NAME	タヂカラオ	Tajikarao	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P203A.BIN	NAME	0	54	NAME	レミエル	Remiel	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P203B.BIN	NAME	0	54	NAME	ファニエル	Phanuel	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P203C.BIN	NAME	0	54	NAME	ラファエラ	Raphaela	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P203D.BIN	NAME	0	54	NAME	アブドゥエル	Abdiel	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P203E.BIN	NAME	0	54	NAME	ククリヒメ	Kikuri-Hime	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P203F.BIN	NAME	0	54	NAME	ハリティー	Hariti	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2040.BIN	NAME	0	54	NAME	アシラト	Asherah	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2041.BIN	NAME	0	54	NAME	ヴェスタ	Vesta	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2042.BIN	NAME	0	54	NAME	ヘケト	Heket	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2043.BIN	NAME	0	54	NAME	チンロン	Qing-Long	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2044.BIN	NAME	0	54	NAME	キングー	Kingu	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2045.BIN	NAME	0	54	NAME	トヨタマヒメ	Toyotama-Hime	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2046.BIN	NAME	0	54	NAME	ペクヨン	Pek-Young	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2047.BIN	NAME	0	54	NAME	カヤノヒメ	Kayano-Hime	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2048.BIN	NAME	0	54	NAME	ナムチ	Namuci	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2049.BIN	NAME	0	54	NAME	ガルーダ	Garuda	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P204A.BIN	NAME	0	54	NAME	八た烏	Yatagarasu	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P204B.BIN	NAME	0	54	NAME	フェニックス	Phoenix	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P204C.BIN	NAME	0	54	NAME	ジャターユ	Jatayu	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P204D.BIN	NAME	0	54	NAME	鳳凰	Hou-Ou	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P204E.BIN	NAME	0	54	NAME	スパルナ	Suparna	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P204F.BIN	NAME	0	54	NAME	キンシチョウ	Kinshichou	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2050.BIN	NAME	0	54	NAME	バロン	Barong	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2051.BIN	NAME	0	54	NAME	ナラシンハ	Narasimha	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2052.BIN	NAME	0	54	NAME	白影	Hakuei	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2053.BIN	NAME	0	54	NAME	シーサー	Shiisaa	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2054.BIN	NAME	0	54	NAME	白蛇	Shirohebi	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2055.BIN	NAME	0	54	NAME	アピス	Apis	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2056.BIN	NAME	0	54	NAME	白狐	Shirogitsune	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2057.BIN	NAME	0	54	NAME	サラマンダー	Salamander	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2058.BIN	NAME	0	54	NAME	ウンディーネ	Undine	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2059.BIN	NAME	0	54	NAME	ノーム	Gnome	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P205A.BIN	NAME	0	54	NAME	シルフ	Sylph	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P205B.BIN	NAME	0	54	NAME	ホリーエレメント	Holy Elemental	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P205C.BIN	NAME	0	54	NAME	フレイムエレメﾝﾄ	Flame Elemental	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P205D.BIN	NAME	0	54	NAME	アクアエレメント	Aqua Elemental	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P205E.BIN	NAME	0	54	NAME	テラエレメント	Terra Elemental	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P205F.BIN	NAME	0	54	NAME	エアロエレメント	Aero Elemental	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2060.BIN	NAME	0	54	NAME	ヴァーチュー	Virtue	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2061.BIN	NAME	0	54	NAME	パワー	Power	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2062.BIN	NAME	0	54	NAME	プリンシパリティ	Principality	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2063.BIN	NAME	0	54	NAME	アークエンジェル	Archangel	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2064.BIN	NAME	0	54	NAME	ダニエル	Daniel	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2065.BIN	NAME	0	54	NAME	カシエル	Cassiel	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2066.BIN	NAME	0	54	NAME	シェムシエル	Shamsiel	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2067.BIN	NAME	0	54	NAME	エンジェル	Angel	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2068.BIN	NAME	0	54	NAME	ホーリーゴースト	Holy Ghost	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2069.BIN	NAME	0	54	NAME	ウォッチャー	Watcher	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P206A.BIN	NAME	0	54	NAME	モラクス	Morax	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P206B.BIN	NAME	0	54	NAME	プルソン	Purson	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P206C.BIN	NAME	0	54	NAME	ハアゲンティ	Haagenti	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P206D.BIN	NAME	0	54	NAME	ヴェパル	Vepar	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P206E.BIN	NAME	0	54	NAME	フラロウス	Flauros	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P206F.BIN	NAME	0	54	NAME	ヴィネ	Vine	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2070.BIN	NAME	0	54	NAME	フォルネウス	Forneus	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2071.BIN	NAME	0	54	NAME	デカラビア	Decarabia	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2072.BIN	NAME	0	54	NAME	プロケル	Procel	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2073.BIN	NAME	0	54	NAME	エリゴール	Eligor	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2074.BIN	NAME	0	54	NAME	オリアス	Orias	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2075.BIN	NAME	0	54	NAME	ヴァピュラ	Vapula	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2076.BIN	NAME	0	54	NAME	アバドン	Abaddon	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2077.BIN	NAME	0	54	NAME	マルコキアス	Marchosias	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2078.BIN	NAME	0	54	NAME	レラジエ	Leraje	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2079.BIN	NAME	0	54	NAME	オロバス	Orobas	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P207A.BIN	NAME	0	54	NAME	ゼパール	Zepar	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P207B.BIN	NAME	0	54	NAME	ブエル	Buer	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P207C.BIN	NAME	0	54	NAME	ザガン	Zagan	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P207D.BIN	NAME	0	54	NAME	アムドゥシアス	Amdusias	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P207E.BIN	NAME	0	54	NAME	ヴォラク	Valac	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P207F.BIN	NAME	0	54	NAME	ストラス	Stolas	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2080.BIN	NAME	0	54	NAME	ヴァレフォール	Valefor	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2081.BIN	NAME	0	54	NAME	カイム	Caim	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2082.BIN	NAME	0	54	NAME	ペンドラゴン	Pendragon	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2083.BIN	NAME	0	54	NAME	ナーガ・カンニャ	Naga Kanya	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2084.BIN	NAME	0	54	NAME	ナーガ・ラジャ	Naga Raja	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2085.BIN	NAME	0	54	NAME	ホンロン	Hong-Long	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2086.BIN	NAME	0	54	NAME	マヤ	Maya	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2087.BIN	NAME	0	54	NAME	応龍	Ying-Long	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2088.BIN	NAME	0	54	NAME	ナーギー	Nagi	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2089.BIN	NAME	0	54	NAME	ナーガ	Naga	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P208A.BIN	NAME	0	54	NAME	ノヅチ	Nozuchi	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P208B.BIN	NAME	0	54	NAME	メリジェーヌ	Melusine	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P208C.BIN	NAME	0	54	NAME	ヤト	Yato	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P208D.BIN	NAME	0	54	NAME	モーリアン	Morrighan	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P208E.BIN	NAME	0	54	NAME	ケライノ	Celaeno	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P208F.BIN	NAME	0	54	NAME	マッハ	Macha	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2090.BIN	NAME	0	54	NAME	アエロー	Aello	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2091.BIN	NAME	0	54	NAME	ネヴァン	Neamhan	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2092.BIN	NAME	0	54	NAME	オキュペテ	Okypete	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2093.BIN	NAME	0	54	NAME	ポルタゲ	Podarge	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2094.BIN	NAME	0	54	NAME	アエロプス	Aellopus	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2095.BIN	NAME	0	54	NAME	ニコトエ	Nicothoe	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2096.BIN	NAME	0	54	NAME	ハーピー	Harpy	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2097.BIN	NAME	0	54	NAME	ボギーレイヴァン	Bogey Raven	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2098.BIN	NAME	0	54	NAME	タムズ	Tammuz	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2099.BIN	NAME	0	54	NAME	ケルベロス	Cerberus	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P209A.BIN	NAME	0	54	NAME	ストーンカ	Stonka	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P209B.BIN	NAME	0	54	NAME	オルトロス	Orthrus	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P209C.BIN	NAME	0	54	NAME	葛の葉	Kuzunoha	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P209D.BIN	NAME	0	54	NAME	ガブリエルの猟犬	Gabriel Hound	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005 @renamed-15: was 'Gabriel Ratchets' (16 bytes, v0.05 overran the field)
+p/P209E.BIN	NAME	0	54	NAME	ケルピー	Kelpie	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P209F.BIN	NAME	0	54	NAME	ネコマタ	Nekomata	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20A0.BIN	NAME	0	54	NAME	カーシー	Cu Sith	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20A1.BIN	NAME	0	54	NAME	オサキ狐	Osaki Gitsune	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20A2.BIN	NAME	0	54	NAME	オコンキツネ	Okon Kitsune	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20A3.BIN	NAME	0	54	NAME	ケットシー	Cait Sith	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20A4.BIN	NAME	0	54	NAME	キツネ	Kitsune	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20A5.BIN	NAME	0	54	NAME	クダギツネ	Kuda Gitsune	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20A6.BIN	NAME	0	54	NAME	ガネーシャ	Ganesha	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20A7.BIN	NAME	0	54	NAME	ジニー	Djinn	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20A8.BIN	NAME	0	54	NAME	ペリ	Peri	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20A9.BIN	NAME	0	54	NAME	エロス	Eros	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20AA.BIN	NAME	0	54	NAME	ガンダルヴァ	Gandharva	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20AB.BIN	NAME	0	54	NAME	クピト	Cupid	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20AC.BIN	NAME	0	54	NAME	ヴィル	Ville	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20AD.BIN	NAME	0	54	NAME	プシュケ	Psyche	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20AE.BIN	NAME	0	54	NAME	ケウケゲン	Keukegen	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20AF.BIN	NAME	0	54	NAME	ヴァンパイア	Vampire	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20B0.BIN	NAME	0	54	NAME	サキュバス	Succubus	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20B1.BIN	NAME	0	54	NAME	リリム	Lilim	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20B2.BIN	NAME	0	54	NAME	キャク	Cyak	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20B3.BIN	NAME	0	54	NAME	アナーヒータ	Anahita	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20B4.BIN	NAME	0	54	NAME	アプサラス	Apsaras	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20B5.BIN	NAME	0	54	NAME	エアリエル	Ariel	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20B6.BIN	NAME	0	54	NAME	ルサールカ	Rusalka	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20B7.BIN	NAME	0	54	NAME	アズミ	Azumi	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20B8.BIN	NAME	0	54	NAME	ネレイド	Nereid	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20B9.BIN	NAME	0	54	NAME	イヒカ	Ihika	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20BA.BIN	NAME	0	54	NAME	ニンフ	Nymph	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20BB.BIN	NAME	0	54	NAME	マブ	Mab	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20BC.BIN	NAME	0	54	NAME	クー・フーリン	Cu Chulainn	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20BD.BIN	NAME	0	54	NAME	トロール	Troll	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20BE.BIN	NAME	0	54	NAME	タム・リン	Tam Lin	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20BF.BIN	NAME	0	54	NAME	マベル	Mabel	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20C0.BIN	NAME	0	54	NAME	エルフ	Elf	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20C1.BIN	NAME	0	54	NAME	ホブゴブリン	Hobgoblin	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20C2.BIN	NAME	0	54	NAME	ジｬｯｸ･ｵ･ランタン	Jack-o'-lantern	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20C3.BIN	NAME	0	54	NAME	ジｬｯｸ･ｵ･フロスト	Jack Frost	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20C4.BIN	NAME	0	54	NAME	ゴブリン	Goblin	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20C5.BIN	NAME	0	54	NAME	ハイピクシー	High Pixie	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20C6.BIN	NAME	0	54	NAME	レプラホーン	Leprechaun	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20C7.BIN	NAME	0	54	NAME	ピクシー	Pixie	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20C8.BIN	NAME	0	54	NAME	ウｨル･ｵ･ウｨスプ	Will-o'-wisp	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20C9.BIN	NAME	0	54	NAME	イグドラシル	Yggdrasil	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20CA.BIN	NAME	0	54	NAME	アルラウネ	Alraune	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20CB.BIN	NAME	0	54	NAME	ドリアード	Dryad	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20CC.BIN	NAME	0	54	NAME	ジプシーローズ	Gypsy Rose	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20CD.BIN	NAME	0	54	NAME	ブルーベル	Bluebell	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20CE.BIN	NAME	0	54	NAME	プリムローズ	Primrose	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20CF.BIN	NAME	0	54	NAME	ラマシュトゥ	Lamashtu	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20D0.BIN	NAME	0	54	NAME	ランダ	Rangda	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20D1.BIN	NAME	0	54	NAME	ダーキニー	Dakini	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20D2.BIN	NAME	0	54	NAME	ゴルゴン	Gorgon	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20D3.BIN	NAME	0	54	NAME	メデューサ	Medusa	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20D4.BIN	NAME	0	54	NAME	ラミア	Lamia	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20D5.BIN	NAME	0	54	NAME	黄泉醜女	Yomotsu Shikome	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20D6.BIN	NAME	0	54	NAME	ヤクシャ	Yaksha	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20D7.BIN	NAME	0	54	NAME	ヤクシニー	Yaksini	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20D8.BIN	NAME	0	54	NAME	ブーダダーマラ	Bhuta Damara	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20D9.BIN	NAME	0	54	NAME	スパルトイ	Spartoi	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20DA.BIN	NAME	0	54	NAME	護法童子	Gohou Douji	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20DB.BIN	NAME	0	54	NAME	黄泉軍	Yomotsu Ikusa	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20DC.BIN	NAME	0	54	NAME	酒呑童子	Shuten Douji	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20DD.BIN	NAME	0	54	NAME	プルシキ	Purski	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20DE.BIN	NAME	0	54	NAME	悪路王	Akuro Ou	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20DF.BIN	NAME	0	54	NAME	ぬりかべ	Nurikabe	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20E0.BIN	NAME	0	54	NAME	カワンチャ	Kwancha	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20E1.BIN	NAME	0	54	NAME	ボギー	Bogey	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20E2.BIN	NAME	0	54	NAME	ジャイアント	Giant	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20E3.BIN	NAME	0	54	NAME	シレーノス	Silenus	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20E4.BIN	NAME	0	54	NAME	レーシー	Leshy	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20E5.BIN	NAME	0	54	NAME	ツチグモ	Tsuchigumo	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20E6.BIN	NAME	0	54	NAME	ドワーフ	Dwarf	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20E7.BIN	NAME	0	54	NAME	フォーン	Faun	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20E8.BIN	NAME	0	54	NAME	サトゥルヌス	Saturnus	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20E9.BIN	NAME	0	54	NAME	コボルト	Kobold	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20EA.BIN	NAME	0	54	NAME	ドモヴォイ	Domovoi	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20EB.BIN	NAME	0	54	NAME	ノッカー	Knocker	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20EC.BIN	NAME	0	54	NAME	ブラウニー	Brownie	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20ED.BIN	NAME	0	54	NAME	アドニス	Adonis	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20EE.BIN	NAME	0	54	NAME	悪魔生徒アキラ	Student Akira	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20EF.BIN	NAME	0	54	NAME	悪魔生徒ヒロコ	Student Hiroko	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20F0.BIN	NAME	0	54	NAME	悪魔生徒ヨシオ	Student Yoshio	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20F1.BIN	NAME	0	54	NAME	悪魔生徒ミキ	Student Miki	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20F2.BIN	NAME	0	54	NAME	ヴァンピール	Vampire	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20F3.BIN	NAME	0	54	NAME	アドニス	Adonis	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20F4.BIN	NAME	0	54	NAME	アドニス	Adonis	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20F5.BIN	NAME	0	54	NAME	アドニス	Adonis	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20F6.BIN	NAME	0	54	NAME	母子合体悪魔人	Demonic Pieta	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20F7.BIN	NAME	0	54	NAME	インスマウス	Innsmouth	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20F8.BIN	NAME	0	54	NAME	アリス	Alice	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20F9.BIN	NAME	0	54	NAME	三月うさぎ	March Hare	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20FA.BIN	NAME	0	54	NAME	トランプ兵	Trump Soldier	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20FB.BIN	NAME	0	54	NAME	アルラウネ	Alraune	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20FC.BIN	NAME	0	54	NAME	ワーウルフ	Werewolf	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20FD.BIN	NAME	0	54	NAME	ワーウルフ	Werewolf	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20FE.BIN	NAME	0	54	NAME	ワーキャット	Werecat	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P20FF.BIN	NAME	0	54	NAME	ワードック	Weredog	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2100.BIN	NAME	0	54	NAME	ガーディアン	Guardian	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2101.BIN	NAME	0	54	NAME	シストラム	Sistrum	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2102.BIN	NAME	0	54	NAME	クラレ	Curare	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2103.BIN	NAME	0	54	NAME	タランテラ	Tarantella	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2104.BIN	NAME	0	54	NAME	バール兵	Baal Soldier	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2105.BIN	NAME	0	54	NAME	処刑ライダー	Death Rider	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2106.BIN	NAME	0	54	NAME	クランキー	Cranky	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2107.BIN	NAME	0	54	NAME	インテリペリ	Interipelli	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2108.BIN	NAME	0	54	NAME	ハイウェイスター	Highway Star	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2109.BIN	NAME	0	54	NAME	パンクス	Punks	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P210A.BIN	NAME	0	54	NAME	ジャンキー	Junkie	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P210B.BIN	NAME	0	54	NAME	リュティナント	Lieutenant	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P210C.BIN	NAME	0	54	NAME	サージェント	Sergeant	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P210D.BIN	NAME	0	54	NAME	レジスタンス	Resistance	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P210E.BIN	NAME	0	54	NAME	ダークネス	Darkness	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P210F.BIN	NAME	0	54	NAME	ブラックウーズ	Black Ooze	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2110.BIN	NAME	0	54	NAME	ゴールデンスラｲﾑ	Golden Slime	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2111.BIN	NAME	0	54	NAME	フォッグ	Fog	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2112.BIN	NAME	0	54	NAME	スプラッター	Splatter	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2113.BIN	NAME	0	54	NAME	クリッター	Critter	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2114.BIN	NAME	0	54	NAME	プラズマ・ボール	Plasma Ball	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2115.BIN	NAME	0	54	NAME	クラップスライム	Crap Slime	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2116.BIN	NAME	0	54	NAME	スライム	Slime	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2117.BIN	NAME	0	54	NAME	ドッペルゲンガー	Doppelganger	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2118.BIN	NAME	0	54	NAME	クリスティーン	Christine	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2119.BIN	NAME	0	54	NAME	ボーンゴーレム	Bone Golem	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P211A.BIN	NAME	0	54	NAME	Ｔ９３－β		fixed 16-byte field: at most 15 bytes plus a NUL
+p/P211B.BIN	NAME	0	54	NAME	Ｔ９２－β		fixed 16-byte field: at most 15 bytes plus a NUL
+p/P211C.BIN	NAME	0	54	NAME	Ｔ９３－α		fixed 16-byte field: at most 15 bytes plus a NUL
+p/P211D.BIN	NAME	0	54	NAME	Ｔ９２－α		fixed 16-byte field: at most 15 bytes plus a NUL
+p/P211E.BIN	NAME	0	54	NAME	ハイボール	High Ball	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P211F.BIN	NAME	0	54	NAME	ゲートロボット	Gate Robot	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2120.BIN	NAME	0	54	NAME	ビット・ボール	Bit Ball	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2121.BIN	NAME	0	54	NAME	アイ・ボール	Eye Ball	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2122.BIN	NAME	0	54	NAME	レギオン	Legion	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2123.BIN	NAME	0	54	NAME	ファントム	Phantom	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2124.BIN	NAME	0	54	NAME	ピシャーチャ	Pisaca	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2125.BIN	NAME	0	54	NAME	ラルウァイ	Larvae	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2126.BIN	NAME	0	54	NAME	色情因縁霊	Lustful Spirit	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005 @renamed-15: was 'Shikijo Innen Re' (16 bytes, v0.05 overran the field)
+p/P2127.BIN	NAME	0	54	NAME	レムルース	Lemur	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2128.BIN	NAME	0	54	NAME	エンティティー	Entity	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2129.BIN	NAME	0	54	NAME	たくろうび	Takuroubi	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P212A.BIN	NAME	0	54	NAME	地縛霊	Jibaku Rei	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P212B.BIN	NAME	0	54	NAME	浮遊霊	Fuyuu Rei	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P212C.BIN	NAME	0	54	NAME	鬼火	Onibi	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P212D.BIN	NAME	0	54	NAME	ポルターガイスト	Poltergeist	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P212E.BIN	NAME	0	54	NAME	スタンパー	Stomper	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P212F.BIN	NAME	0	54	NAME	コープス	Corpses	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2130.BIN	NAME	0	54	NAME	バタリオン	Battalion	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2131.BIN	NAME	0	54	NAME	ゾンビミックス	Zombie Mix	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2132.BIN	NAME	0	54	NAME	ボディコニアン	Bodyconian	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2133.BIN	NAME	0	54	NAME	マミーデッド	Mommy Dead	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2134.BIN	NAME	0	54	NAME	クリスピーデッド	Crispy Dead	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2135.BIN	NAME	0	54	NAME	シーゾンビ	She Zombie	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2136.BIN	NAME	0	54	NAME	ゾンビ	Zombie	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2137.BIN	NAME	0	54	NAME	死んだ女	Dead Woman	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2138.BIN	NAME	0	54	NAME	死んだ男	Dead Man	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2139.BIN	NAME	0	54	NAME	ノスフェラトゥ	Nosferatu	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P213A.BIN	NAME	0	54	NAME	グーラー	Ghoulette	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P213B.BIN	NAME	0	54	NAME	マンイーター	Maneater	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P213C.BIN	NAME	0	54	NAME	ヴェータラ	Vetala	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P213D.BIN	NAME	0	54	NAME	ナイトストーカー	Nightstalker	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P213E.BIN	NAME	0	54	NAME	ハクマ･ブ･トゥー	Hakuma-Bhuta	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P213F.BIN	NAME	0	54	NAME	カルヤカー	Kaluyaka	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2140.BIN	NAME	0	54	NAME	スケルトン	Skeleton	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2141.BIN	NAME	0	54	NAME	リリーヤカー	Ririyaka	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2142.BIN	NAME	0	54	NAME	ガキ	Gaki	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2143.BIN	NAME	0	54	NAME	ギリメカラ	Girimehkala	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2144.BIN	NAME	0	54	NAME	ラクシャーサ	Rakshasa	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2145.BIN	NAME	0	54	NAME	ウェンディゴ	Wendigo	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2146.BIN	NAME	0	54	NAME	牛鬼	Gyuuki	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2147.BIN	NAME	0	54	NAME	オーガ	Ogre	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2148.BIN	NAME	0	54	NAME	ラケー	Lakhe	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2149.BIN	NAME	0	54	NAME	天逆神	Ama-no-Sakugami	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P214A.BIN	NAME	0	54	NAME	オークチーフ	Orc Chief	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P214B.BIN	NAME	0	54	NAME	レッドキャップ	Redcap	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P214C.BIN	NAME	0	54	NAME	バーベガジ	Barbegazi	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P214D.BIN	NAME	0	54	NAME	オーク	Orc	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P214E.BIN	NAME	0	54	NAME	グレムリン	Gremlin	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P214F.BIN	NAME	0	54	NAME	ダークウィロー	Dark Willow	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2150.BIN	NAME	0	54	NAME	マンドラゴラ？	Mandragora	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2151.BIN	NAME	0	54	NAME	ベヒモス	Behemoth	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2152.BIN	NAME	0	54	NAME	ハンババ	Humbaba	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2153.BIN	NAME	0	54	NAME	マンティコア	Manticore	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2154.BIN	NAME	0	54	NAME	ナラギリ	Nalagiri	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2155.BIN	NAME	0	54	NAME	ガルム	Garm	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2156.BIN	NAME	0	54	NAME	ヌエ	Nue	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2157.BIN	NAME	0	54	NAME	ヘルハウンド	Hell Hound	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2158.BIN	NAME	0	54	NAME	アペプ	Apep	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2159.BIN	NAME	0	54	NAME	ファンタキャット	Phantacat	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P215A.BIN	NAME	0	54	NAME	ボギードッグ	Bogey Dog	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P215B.BIN	NAME	0	54	NAME	グルル・ヤクシャ	Gurr Yaksha	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P215C.BIN	NAME	0	54	NAME	モルト	Moruto	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P215D.BIN	NAME	0	54	NAME	アトロポス	Atropos	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P215E.BIN	NAME	0	54	NAME	ラケシス	Lachesis	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P215F.BIN	NAME	0	54	NAME	ロト	Clotho	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2160.BIN	NAME	0	54	NAME	フリアエ	Furiae	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2161.BIN	NAME	0	54	NAME	ウィプリ	Upyr	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2162.BIN	NAME	0	54	NAME	チョンチョン	Chonchon	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2163.BIN	NAME	0	54	NAME	ラドン	Ladon	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2164.BIN	NAME	0	54	NAME	バジリスク	Basilisk	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2165.BIN	NAME	0	54	NAME	ピュトン	Python	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2166.BIN	NAME	0	54	NAME	コカトリス	Cockatrice	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2167.BIN	NAME	0	54	NAME	ワイバーン	Wyvern	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2168.BIN	NAME	0	54	NAME	ジャバウォーク	Jabberwocky	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2169.BIN	NAME	0	54	NAME	ワイアーム	Wyrm	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P216A.BIN	NAME	0	54	NAME	ワーム	Worm	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P216B.BIN	NAME	0	54	NAME	イカズチ	Ikazuchi	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P216C.BIN	NAME	0	54	NAME	アバドンズ	Abaddons	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P216D.BIN	NAME	0	54	NAME	ベルゼブブの下僕	Beelzebub Serf	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005 @renamed-15: was "Beelzebub's Swar" (16 bytes, v0.05 overran the field)
+p/P216E.BIN	NAME	0	54	NAME	式神	Shikigami	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P216F.BIN	NAME	0	54	NAME	インプ	Imp	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2170.BIN	NAME	0	54	NAME	ナアス蝿	Nasu Flies	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2171.BIN	NAME	0	54	NAME	ファミリア	Familiar	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2172.BIN	NAME	0	54	NAME	ムールムール	Murmur	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2173.BIN	NAME	0	54	NAME	ムールムール	Murmur	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2174.BIN	NAME	0	54	NAME	ダンタリオンⅢ		fixed 16-byte field: at most 15 bytes plus a NUL
+p/P2175.BIN	NAME	0	54	NAME	オセ	Ose	fixed 16-byte field: at most 15 bytes plus a NUL @from-ours
+p/P2176.BIN	NAME	0	54	NAME	アロケン	Allocen	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2177.BIN	NAME	0	54	NAME	ダンタリオンⅡ		fixed 16-byte field: at most 15 bytes plus a NUL
+p/P2178.BIN	NAME	0	54	NAME	アイム	Aym	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2179.BIN	NAME	0	54	NAME	ブネ	Bune	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P217A.BIN	NAME	0	54	NAME	イポス	Ipos	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P217B.BIN	NAME	0	54	NAME	ベリス	Berith	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P217C.BIN	NAME	0	54	NAME	ボティス	Botis	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P217D.BIN	NAME	0	54	NAME	サブナック	Sabnock	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P217E.BIN	NAME	0	54	NAME	シトリー	Sytry	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P217F.BIN	NAME	0	54	NAME	マルバス	Marbas	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2180.BIN	NAME	0	54	NAME	ハルパス	Halphas	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2181.BIN	NAME	0	54	NAME	ダンタリオン	Dantalion	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2182.BIN	NAME	0	54	NAME	アンドラス	Andras	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2183.BIN	NAME	0	54	NAME	ガミジン	Gamigin	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2184.BIN	NAME	0	54	NAME	ラウム	Raum	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2185.BIN	NAME	0	54	NAME	マルファス	Malphas	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2186.BIN	NAME	0	54	NAME	ポイズンドラゴン	Poison Dragon	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2187.BIN	NAME	0	54	NAME	ファイアドラゴン	Fire Dragon	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2188.BIN	NAME	0	54	NAME	スカイドラゴン	Sky Dragon	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2189.BIN	NAME	0	54	NAME	アースドラゴン	Earth Dragon	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P218A.BIN	NAME	0	54	NAME	オロバス	Orobas	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P218B.BIN	NAME	0	54	NAME	アンドラス	Andras	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P218C.BIN	NAME	0	54	NAME	フリーザー	Freezer	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P218D.BIN	NAME	0	54	NAME	ライカンスロープ	Lycanthrope	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P218E.BIN	NAME	0	54	NAME	ライオンヘッド	Lion Head	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P218F.BIN	NAME	0	54	NAME	ヘルドッグ	Hell Dog	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2190.BIN	NAME	0	54	NAME	アンデッド	Undead	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2191.BIN	NAME	0	54	NAME	ブギーマン	Bogeyman	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2192.BIN	NAME	0	54	NAME	イヴルスピリット	Evil Spirit	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2193.BIN	NAME	0	54	NAME	マイナーデヴィル	Minor Devil	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2194.BIN	NAME	0	54	NAME	メッセンジャー	Messenger	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2195.BIN	NAME	0	54	NAME	クトゥグアー	Cthugha	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2196.BIN	NAME	0	54	NAME	アザトート	Azathoth	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2197.BIN	NAME	0	54	NAME	モロク	Moloch	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2198.BIN	NAME	0	54	NAME	イトハカ	Ithaqua	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P2199.BIN	NAME	0	54	NAME	バール	Baal	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P219A.BIN	NAME	0	54	NAME	アスタルテ	Astarte	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P219B.BIN	NAME	0	54	NAME	ベルフェゴール	Belphegor	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P219C.BIN	NAME	0	54	NAME	バルベリス	Belberith	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P219D.BIN	NAME	0	54	NAME	バエル	Baal	fixed 16-byte field: at most 15 bytes plus a NUL @from-ours
+p/P219E.BIN	NAME	0	54	NAME	バールゼフォン	Baalzephon	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P219F.BIN	NAME	0	54	NAME	イシュタル	Ishtar	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P21A0.BIN	NAME	0	54	NAME	アシラト	Asherah	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P21A1.BIN	NAME	0	54	NAME	モラクス	Morax	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P21A2.BIN	NAME	0	54	NAME	ハアゲンティ	Haagenti	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P21A3.BIN	NAME	0	54	NAME	ヴェパル	Vepar	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P21A4.BIN	NAME	0	54	NAME	ヴェパル	Vepar	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P21A5.BIN	NAME	0	54	NAME	デカラビア	Decarabia	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P21A6.BIN	NAME	0	54	NAME	アバドン	Abaddon	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P21A7.BIN	NAME	0	54	NAME	レラジエ	Leraje	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P21A8.BIN	NAME	0	54	NAME	ラマシュトゥ	Lamashtu	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P21A9.BIN	NAME	0	54	NAME	オセ	Ose	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P21AA.BIN	NAME	0	54	NAME	アイム	Aym	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P21AB.BIN	NAME	0	54	NAME	イポス	Ipos	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P21AC.BIN	NAME	0	54	NAME	アスタルテ	Astarte	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005
+p/P21AD.BIN	NAME	0	54	NAME	豊饒の山羊	Fertility Goat	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005 @renamed-15: was 'Goat of Fertilit' (16 bytes, v0.05 overran the field)
+p/P21AE.BIN	NAME	0	54	NAME	満月の犬	Full Moon Dog	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005 @renamed-15: was 'Dog of Full Moon' (16 bytes, v0.05 overran the field)
+p/P21AF.BIN	NAME	0	54	NAME	新月の犬	Dog of New Moon	fixed 16-byte field: at most 15 bytes plus a NUL @from-v005

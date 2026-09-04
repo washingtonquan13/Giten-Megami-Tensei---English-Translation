@@ -1,0 +1,492 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS00D1.BIN	0:00	0	16	1FB2	フォント系		menu option, declared width 20 columns
+m/MS00D1.BIN	0:00	1	28	1FB2	テーブル系		menu option, declared width 20 columns
+m/MS00D1.BIN	0:00	2	40	1FB2	？？？		menu option, declared width 20 columns
+m/MS00D1.BIN	0:00	3	48	1FB2	空間座標		menu option, declared width 20 columns
+m/MS00D1.BIN	0:00	4	58	1FB2	終了		menu option, declared width 20 columns
+m/MS00D1.BIN	0:00	5	78	00	ﾑ{06:02}		reads: ﾑ
+m/MS00D1.BIN	0:00	6	82	00	ﾑ		
+m/MS00D1.BIN	0:00	7	88	09	{04:01}{04:00}	{04:01}{04:00}	reads: 切りを唱えた！ 
+m/MS00D1.BIN	0:01	0	16	1FB2	敵フォント		menu option, declared width 20 columns
+m/MS00D1.BIN	0:01	1	28	1FB2	ＮＰＣフォント		menu option, declared width 20 columns
+m/MS00D1.BIN	0:01	2	44	1FB2	背景フォント		menu option, declared width 20 columns
+m/MS00D1.BIN	0:01	3	58	1FB2	全画面フォント		menu option, declared width 20 columns
+m/MS00D1.BIN	0:01	4	74	1FB2	戻る		menu option, declared width 20 columns
+m/MS00D1.BIN	0:01	5	94	00	ﾑ{03:02}		reads: ﾑを攻撃し
+m/MS00D1.BIN	0:01	6	98	00	ﾑ{04:03}		reads: ﾑ　
+m/MS00D1.BIN	0:01	7	102	00	ﾑ{08:04}{01:04}		reads: ﾑ西野西野義雄
+m/MS00D1.BIN	0:01	8	108	00			
+m/MS00D1.BIN	0:02	0	2	1FBA	敵フォント表示\n		
+m/MS00D1.BIN	0:02	1	58	1FB2	番号入力		menu option, declared width 20 columns
+m/MS00D1.BIN	0:02	2	68	1FB2	次フォント		menu option, declared width 20 columns
+m/MS00D1.BIN	0:02	3	80	1FB2	前フォント		menu option, declared width 20 columns
+m/MS00D1.BIN	0:02	4	92	1FB2	次距離		menu option, declared width 20 columns
+m/MS00D1.BIN	0:02	5	100	1FB2	次パレット		menu option, declared width 20 columns
+m/MS00D1.BIN	0:02	6	112	1FB2	ウィンドウ消去		menu option, declared width 20 columns
+m/MS00D1.BIN	0:02	7	128	1FB2	戻る		menu option, declared width 20 columns
+m/MS00D1.BIN	0:02	8	147	1F12	{01:52}	{01:52}	reads: 
+m/MS00D1.BIN	0:02	9	150	00	{02:01}Z	{02:01}Z	reads: ペンタグランマZ
+m/MS00D1.BIN	0:02	10	154	00	{03:01}u	{03:01}u	reads: そんなことu
+m/MS00D1.BIN	0:02	11	158	00	{04:01}{=8B}{=00}{05:01}{=9F}{=00}{06:01}	{04:01}{=8B}{=00}{05:01}{=9F}{=00}{06:01}	reads: 切り{=8B}{=00}飛び道具{=9F}{=00}
+m/MS00D1.BIN	0:02	12	170	00			
+m/MS00D1.BIN	0:02	13	174	18	表示{08:8E}フォント番号を入力{08:4A}{08:6E}\n		reads: 表示するフォント番号を入力してください\n
+m/MS00D1.BIN	0:02	14	255	1F82	ﾅ小値{08:55}\n		reads: ﾅ小値です\n
+m/MS00D1.BIN	0:02	15	349	1FFB	フォント番号：		
+m/MS00D1.BIN	0:02	16	373	1F02	距離　（ＦＣ		
+m/MS00D1.BIN	0:02	17	404	00	{02:1F}N{03:00}{01:00} {05:0A}）　パレット番号：		reads: N飛び道具早坂達也 ママペンタグランマ'そんなこと.切り3飛び道具:A＞何をしますか？M山瀬勇?ペンタグランマ>そんなこと=切り<飛び道具;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ切り山瀬勇?ペンタグランマ>そんなこと=切り<飛び道具;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ切り切り山瀬勇?ペンタグランマ>そんなこと=切り<飛び道具;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ切り切り切り?ペンタグランマ>=<;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ）　パレット番号：
+m/MS00D1.BIN	0:02	18	450	1F4F	{01:FF}	{01:FF}	reads: 
+m/MS00D1.BIN	0:03	0	2	1FBA	ＮＰＣフォント表示\n		
+m/MS00D1.BIN	0:03	1	62	1FB2	番号入力		menu option, declared width 20 columns
+m/MS00D1.BIN	0:03	2	72	1FB2	次フォント		menu option, declared width 20 columns
+m/MS00D1.BIN	0:03	3	84	1FB2	前フォント		menu option, declared width 20 columns
+m/MS00D1.BIN	0:03	4	96	1FB2	次ＣＧＥＮ		menu option, declared width 20 columns
+m/MS00D1.BIN	0:03	5	108	1FB2	次パレット		menu option, declared width 20 columns
+m/MS00D1.BIN	0:03	6	120	1FB2	ウィンドウ消去		menu option, declared width 20 columns
+m/MS00D1.BIN	0:03	7	136	1FB2	戻る		menu option, declared width 20 columns
+m/MS00D1.BIN	0:03	8	155	1F12	{01:52}	{01:52}	reads: 
+m/MS00D1.BIN	0:03	9	158	00	{02:01}Z	{02:01}Z	reads: ペンタグランマZ
+m/MS00D1.BIN	0:03	10	162	00	{03:01}u	{03:01}u	reads: そんなことu
+m/MS00D1.BIN	0:03	11	166	00	{04:01}{=89}{=00}{05:01}{=9D}{=00}{06:01}{=9E}{=00}	{04:01}{=89}{=00}{05:01}{=9D}{=00}{06:01}{=9E}{=00}	reads: 切り{=89}{=00}飛び道具{=9D}{=00}{=9E}{=00}
+m/MS00D1.BIN	0:03	12	182	18	表示{08:8E}フォント番号を入力{08:4A}{08:6E}\n		reads: 表示するフォント番号を入力してください\n
+m/MS00D1.BIN	0:03	13	263	1F82	ﾅ小値{08:55}\n		reads: ﾅ小値です\n
+m/MS00D1.BIN	0:03	14	355	1FFB	フォント番号：		
+m/MS00D1.BIN	0:03	15	373	1F02	（ＦＣ		
+m/MS00D1.BIN	0:03	16	388	1F44	{05:0A}）　ＣＧＥＮ番号：		reads: ママペンタグランマ'そんなこと.切り3飛び道具:A＞何をしますか？M山瀬勇?ペンタグランマ>そんなこと=切り<飛び道具;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ切り山瀬勇?ペンタグランマ>そんなこと=切り<飛び道具;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ切り切り山瀬勇?ペンタグランマ>そんなこと=切り<飛び道具;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ切り切り切り?ペンタグランマ>=<;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ）　ＣＧＥＮ番号：
+m/MS00D1.BIN	0:03	17	412	1F02	　パレット番号：		
+m/MS00D1.BIN	0:04	0	2	1FBA	背景フォント表示\n		
+m/MS00D1.BIN	0:04	1	60	1FB2	番号入力		menu option, declared width 20 columns
+m/MS00D1.BIN	0:04	2	70	1FB2	次フォント		menu option, declared width 20 columns
+m/MS00D1.BIN	0:04	3	82	1FB2	前フォント		menu option, declared width 20 columns
+m/MS00D1.BIN	0:04	4	94	1FB2	次ＣＧＥＮ		menu option, declared width 20 columns
+m/MS00D1.BIN	0:04	5	106	1FB2	次パレット		menu option, declared width 20 columns
+m/MS00D1.BIN	0:04	6	118	1FB2	ウィンドウ消去		menu option, declared width 20 columns
+m/MS00D1.BIN	0:04	7	134	1FB2	戻る		menu option, declared width 20 columns
+m/MS00D1.BIN	0:04	8	153	1F12	{01:52}	{01:52}	reads: 
+m/MS00D1.BIN	0:04	9	156	00	{02:01}Z	{02:01}Z	reads: ペンタグランマZ
+m/MS00D1.BIN	0:04	10	160	00	{03:01}u	{03:01}u	reads: そんなことu
+m/MS00D1.BIN	0:04	11	164	00	{04:01}{=89}{=00}{05:01}{=9D}{=00}{06:01}{=9E}{=00}	{04:01}{=89}{=00}{05:01}{=9D}{=00}{06:01}{=9E}{=00}	reads: 切り{=89}{=00}飛び道具{=9D}{=00}{=9E}{=00}
+m/MS00D1.BIN	0:04	12	180	18	表示{08:8E}フォント番号を入力{08:4A}{08:6E}\n		reads: 表示するフォント番号を入力してください\n
+m/MS00D1.BIN	0:04	13	261	1F82	ﾅ小値{08:55}\n		reads: ﾅ小値です\n
+m/MS00D1.BIN	0:04	14	339	1FFB	フォント番号：		
+m/MS00D1.BIN	0:04	15	357	1F02	（ＦＣ		
+m/MS00D1.BIN	0:04	16	372	1F44	{05:0A}）　ＣＧＥＮ番号：		reads: ママペンタグランマ'そんなこと.切り3飛び道具:A＞何をしますか？M山瀬勇?ペンタグランマ>そんなこと=切り<飛び道具;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ切り山瀬勇?ペンタグランマ>そんなこと=切り<飛び道具;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ切り切り山瀬勇?ペンタグランマ>そんなこと=切り<飛び道具;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ切り切り切り?ペンタグランマ>=<;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ）　ＣＧＥＮ番号：
+m/MS00D1.BIN	0:04	17	396	1F02	　パレット番号：		
+m/MS00D1.BIN	0:05	0	32	1FFB	終了{08:8E}場合は絵を右クリック{08:4A}{08:6E}\n		reads: 終了する場合は絵を右クリックしてください\n
+m/MS00D1.BIN	0:05	1	149	1FC3	ウィンドウ内画面座標　Ｘ＝		
+m/MS00D1.BIN	0:05	2	179	1F02	、Ｙ＝		
+m/MS00D1.BIN	0:05	3	212	1F4F	{01:DB}{02:1F}M{03:01}{01:19}{01:1F}{=ED}{=03}{01:1F}N{03:01}	{01:DB}{02:1F}M{03:01}{01:19}{01:1F}{=ED}{=03}{01:1F}N{03:01}	reads: Mそんなことわれわれおにいちゃん{=ED}{=03}おにいちゃんNそんなこと
+m/MS00D1.BIN	0:05	4	231	00	{=E9}{=1F}O{03:00}{01:40}{01:1F}L{03:00}{01:DB}{02:1F}M{03:00}{01:19}{01:8B}ﾔ座標　Ｘ＝		reads: {=E9}{=1F}O飛び道具おにいちゃんL飛び道具M飛び道具われわれﾔ座標　Ｘ＝
+m/MS00D1.BIN	0:05	5	271	1F02	、Ｙ＝		
+m/MS00D1.BIN	0:05	6	281	1F02	、Ｚ＝		
+m/MS00D1.BIN	0:06	0	16	1FB2	{08:0D}テーブル		reads: 魔法テーブル; menu option, declared width 20 columns
+m/MS00D1.BIN	0:06	1	28	1FB2	{02:04}	{02:04}	reads: アイテム; menu option, declared width 20 columns
+m/MS00D1.BIN	0:06	2	32	1FB2	敵整合性		menu option, declared width 20 columns
+m/MS00D1.BIN	0:06	3	42	1FB2	金額入手		menu option, declared width 20 columns
+m/MS00D1.BIN	0:06	4	52	1FB2	戻る		menu option, declared width 20 columns
+m/MS00D1.BIN	0:06	5	72	00	ﾑ		
+m/MS00D1.BIN	0:06	6	80	00	ﾑ		
+m/MS00D1.BIN	0:06	7	86	10			
+m/MS00D1.BIN	0:07	0	16	1FB2	表示のみ		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
+m/MS00D1.BIN	0:07	1	26	1FB2	表示と修得		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
+m/MS00D1.BIN	0:07	2	50	0F	{01:01}	{01:01}	record reaches an engine no-op opcode; verify in game; reads: 山瀬勇
+m/MS00D1.BIN	0:07	3	53	00			record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	4	81	1F82	C{03:08}	C{03:08}	record reaches an engine no-op opcode; verify in game; reads: Cアップ
+m/MS00D1.BIN	0:07	5	98	1F82	ｺ{08:0D}デバッグ（修得）\n		record reaches an engine no-op opcode; verify in game; reads: ｺ魔法デバッグ（修得）\n
+m/MS00D1.BIN	0:07	6	187	1FB2	番号入力		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
+m/MS00D1.BIN	0:07	7	197	1FB2	次		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
+m/MS00D1.BIN	0:07	8	201	1FB2	前		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
+m/MS00D1.BIN	0:07	9	205	1FB2	終了		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
+m/MS00D1.BIN	0:07	10	211	1FB2	修得		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
+m/MS00D1.BIN	0:07	11	230	1F12	{01:F5}	{01:F5}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	12	233	00	{02:01} {01:03}{01:95}	{02:01} {01:03}{01:95}	record reaches an engine no-op opcode; verify in game; reads: ペンタグランマ ニュートン
+m/MS00D1.BIN	0:07	13	241	00	{04:01}{04:00}	{04:01}{04:00}	record reaches an engine no-op opcode; verify in game; reads: 切りを唱えた！ 
+m/MS00D1.BIN	0:07	14	258	1FBA	{08:0D}デバッグ\n		record reaches an engine no-op opcode; verify in game; reads: 魔法デバッグ\n
+m/MS00D1.BIN	0:07	15	338	1FB2	番号入力		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
+m/MS00D1.BIN	0:07	16	348	1FB2	次		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
+m/MS00D1.BIN	0:07	17	352	1FB2	前		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
+m/MS00D1.BIN	0:07	18	356	1FB2	終了		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns
+m/MS00D1.BIN	0:07	19	375	1F12	{01:64}	{01:64}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	20	378	00	{02:01}{=8F}{=00}{03:01}{04:00}	{02:01}{=8F}{=00}{03:01}{04:00}	record reaches an engine no-op opcode; verify in game; reads: ペンタグランマ{=8F}{=00}そんなことを唱えた！ 
+m/MS00D1.BIN	0:07	21	397	1E07	{08:0D}番号を入力{08:4A}{08:6E}		record reaches an engine no-op opcode; verify in game; reads: 魔法番号を入力してください
+m/MS00D1.BIN	0:07	22	442	1E07	値は		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	23	450	1F02	迄{08:55}\n<wait>		record reaches an engine no-op opcode; verify in game; reads: 迄です\n<wait>
+m/MS00D1.BIN	0:07	24	494	1E07	最大値{08:55}\n<wait>		record reaches an engine no-op opcode; verify in game; reads: 最大値です\n<wait>
+m/MS00D1.BIN	0:07	25	539	1F82	最小値{08:55}\n<wait>		record reaches an engine no-op opcode; verify in game; reads: 最小値です\n<wait>
+m/MS00D1.BIN	0:07	26	590	1EAB	ＩＤ：		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	27	898	1EAB	特殊コード：		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	28	917	00	系統：		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	29	932	1F19	{01:45}	{01:45}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	30	935	00	{02:01}H	{02:01}H	record reaches an engine no-op opcode; verify in game; reads: ペンタグランマH
+m/MS00D1.BIN	0:07	31	939	00	{03:01}I	{03:01}I	record reaches an engine no-op opcode; verify in game; reads: そんなことI
+m/MS00D1.BIN	0:07	32	943	00	{04:01}J	{04:01}J	record reaches an engine no-op opcode; verify in game; reads: 切りJ
+m/MS00D1.BIN	0:07	33	947	00	{05:01}O	{05:01}O	record reaches an engine no-op opcode; verify in game; reads: 飛び道具O
+m/MS00D1.BIN	0:07	34	951	00	{06:01}V	{06:01}V	record reaches an engine no-op opcode; verify in game; reads: V
+m/MS00D1.BIN	0:07	35	955	00	{07:01}]	{07:01}]	record reaches an engine no-op opcode; verify in game; reads: ＞何をしますか？]
+m/MS00D1.BIN	0:07	36	959	00	{08:01}d	{08:01}d	record reaches an engine no-op opcode; verify in game; reads: 達也d
+m/MS00D1.BIN	0:07	37	968	09	{01:72}	{01:72}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	38	976	0B	{01:7A}	{01:7A}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	39	989	0E	{=83}{=00}？？		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	40	997	00	通常{08:0C}		record reaches an engine no-op opcode; verify in game; reads: 通常攻撃
+m/MS00D1.BIN	0:07	41	1004	00	通常{08:0D}		record reaches an engine no-op opcode; verify in game; reads: 通常魔法
+m/MS00D1.BIN	0:07	42	1011	00	{03:10}{08:0D}	{03:10}{08:0D}	record reaches an engine no-op opcode; verify in game; reads: 回復魔法
+m/MS00D1.BIN	0:07	43	1016	00	{01:34}{08:0D}	{01:34}{08:0D}	record reaches an engine no-op opcode; verify in game; reads: 結界魔法
+m/MS00D1.BIN	0:07	44	1021	00	能力操作		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	45	1030	00	{03:0D}ドレイン		record reaches an engine no-op opcode; verify in game; reads: ＨＰドレイン
+m/MS00D1.BIN	0:07	46	1041	00	{03:0E}ダメージ		record reaches an engine no-op opcode; verify in game; reads: ＭＰダメージ
+m/MS00D1.BIN	0:07	47	1052	00	{03:0E}ドレイン		record reaches an engine no-op opcode; verify in game; reads: ＭＰドレイン
+m/MS00D1.BIN	0:07	48	1063	00	{03:0F}ドレイン		record reaches an engine no-op opcode; verify in game; reads: ＥＸＰドレイン
+m/MS00D1.BIN	0:07	49	1074	00	カウンター		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	50	1085	00	反{01:34}		record reaches an engine no-op opcode; verify in game; reads: 反結界
+m/MS00D1.BIN	0:07	51	1090	00	反能力操作		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	52	1101	00	移動{08:0D}		record reaches an engine no-op opcode; verify in game; reads: 移動魔法
+m/MS00D1.BIN	0:07	53	1108	00	召還{08:0D}		record reaches an engine no-op opcode; verify in game; reads: 召還魔法
+m/MS00D1.BIN	0:07	54	1115	00	変身{08:0D}		record reaches an engine no-op opcode; verify in game; reads: 変身魔法
+m/MS00D1.BIN	0:07	55	1122	00	特殊{08:0D}		record reaches an engine no-op opcode; verify in game; reads: 特殊魔法
+m/MS00D1.BIN	0:07	56	1129	00	計算式：		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	57	1146	1F19	{01:13}	{01:13}	record reaches an engine no-op opcode; verify in game; reads: あなたを
+m/MS00D1.BIN	0:07	58	1149	00	{02:01}	{02:01}	record reaches an engine no-op opcode; verify in game; reads: ペンタグランマ
+m/MS00D1.BIN	0:07	59	1157	16	？？		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	60	1163	00	{08:0D}系		record reaches an engine no-op opcode; verify in game; reads: 魔法系
+m/MS00D1.BIN	0:07	61	1168	00	格闘系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	62	1175	00	射撃系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	63	1182	00	加護系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	64	1189	00	修得：		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	65	1204	1F19	{01:7B}	{01:7B}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	66	1207	00	{02:01}~	{02:01}~	record reaches an engine no-op opcode; verify in game; reads: ペンタグランマ~
+m/MS00D1.BIN	0:07	67	1211	00	{03:01}{=81}{=00}{04:01}{=86}{=00}{05:01}{=89}{=00}{06:01}{=8C}{=00}{07:01}{=8F}{=00}{08:01}{=94}{=00}	{03:01}{=81}{=00}{04:01}{=86}{=00}{05:01}{=89}{=00}{06:01}{=8C}{=00}{07:01}{=8F}{=00}{08:01}{=94}{=00}	record reaches an engine no-op opcode; verify in game; reads: そんなこと{=81}{=00}切り{=86}{=00}飛び道具{=89}{=00}{=8C}{=00}＞何をしますか？{=8F}{=00}達也{=94}{=00}
+m/MS00D1.BIN	0:07	68	1240	09	{01:9A}	{01:9A}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	69	1248	0B	{01:A0}	{01:A0}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	70	1261	0E	ｫ		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	71	1268	10	{01:AD}	{01:AD}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	72	1276	12	{01:B3}	{01:B3}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	73	1284	14	{01:B5}	{01:B5}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	74	1292	16	{01:BB}	{01:BB}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	75	1308	1B	{01:C3}	{01:C3}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	76	1312	1C	{01:C4}	{01:C4}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	77	1317	301	ﾅ		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	78	1319	00	？？		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	79	1325	00	無し		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	80	1330	00	アギ系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	81	1337	00	ザン系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	82	1344	00	ダムド系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	83	1353	00	ジオ系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	84	1360	00	ブフ系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	85	1367	00	ハマ系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	86	1374	00	メギド系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	87	1383	00	治癒系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	88	1390	00	精神系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	89	1397	00	繰魔系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	90	1404	00	禁為系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	91	1411	00	幻術系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	92	1418	00	黒魔術系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	93	1427	00	操力系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	94	1434	00	{01:34}系		record reaches an engine no-op opcode; verify in game; reads: 結界系
+m/MS00D1.BIN	0:07	95	1439	00	{03:10}系		record reaches an engine no-op opcode; verify in game; reads: 回復系
+m/MS00D1.BIN	0:07	96	1444	00	呪い系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	97	1451	00	戦士系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	98	1458	00	獣系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	99	1463	00	鳥系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	100	1468	00	大獣系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	101	1475	00	火炎系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	102	1482	00	氷結系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	103	1489	00	水系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	104	1494	00	毒系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	105	1499	00	舞踏系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	106	1506	00	歌系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	107	1511	00	針系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	108	1516	00	格闘系		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	109	1523	00	体数：		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	110	1551	19	作為		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	111	1566	1F86	全員		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	112	1577	1F02	体に		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	113	1591	1F50	回づつ		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	114	1598	00	使用状況：		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	115	1623	1F7F	R	R	record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	116	1627	18	－		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	117	1644	1F7F	Q	Q	record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	118	1648	18	－		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	119	1665	1F7F	{=ED}{=18}{02:00}－		record reaches an engine no-op opcode; verify in game; reads: {=ED}{=18}デビルバスター－
+m/MS00D1.BIN	0:07	120	1686	1F7F	ﾁ		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	121	1690	18	－		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	122	1693	00	レベル：		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	123	1706	00	消費：		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	124	1737	00	全		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	125	1747	1F02	{03:0D}	{03:0D}	record reaches an engine no-op opcode; verify in game; reads: ＨＰ
+m/MS00D1.BIN	0:07	126	1760	1F86	全		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	127	1769	1F02	{03:0E}	{03:0E}	record reaches an engine no-op opcode; verify in game; reads: ＭＰ
+m/MS00D1.BIN	0:07	128	1772	00	範囲：		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	129	1787	1F19	{01:23}	{01:23}	record reaches an engine no-op opcode; verify in game; reads: しばらく
+m/MS00D1.BIN	0:07	130	1790	00	{02:01}&	{02:01}&	record reaches an engine no-op opcode; verify in game; reads: ペンタグランマ&
+m/MS00D1.BIN	0:07	131	1794	00	{03:01})	{03:01})	record reaches an engine no-op opcode; verify in game; reads: そんなこと)
+m/MS00D1.BIN	0:07	132	1798	00	{04:01}*	{04:01}*	record reaches an engine no-op opcode; verify in game; reads: 切り*
+m/MS00D1.BIN	0:07	133	1802	00	{05:01}+	{05:01}+	record reaches an engine no-op opcode; verify in game; reads: 飛び道具+
+m/MS00D1.BIN	0:07	134	1806	00	{06:01},	{06:01},	record reaches an engine no-op opcode; verify in game; reads: ,
+m/MS00D1.BIN	0:07	135	1810	00	{07:01}-	{07:01}-	record reaches an engine no-op opcode; verify in game; reads: ＞何をしますか？-
+m/MS00D1.BIN	0:07	136	1814	00	？？		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	137	1820	00	無し		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	138	1825	00	エリア		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	139	1832	00	未定義		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	140	1839	00	方向		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	141	1844	00	前列		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	142	1849	00	後列		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	143	1854	00	貫通		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	144	1859	00	全体		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	145	1864	00	ﾘｽﾄｱｯﾌﾟ対象：		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	146	1886	1EB0	{01:3F}	{01:3F}	record reaches an engine no-op opcode; verify in game; reads: どちら
+m/MS00D1.BIN	0:07	147	1889	00	{02:01}H	{02:01}H	record reaches an engine no-op opcode; verify in game; reads: ペンタグランマH
+m/MS00D1.BIN	0:07	148	1893	00	{04:01}K	{04:01}K	record reaches an engine no-op opcode; verify in game; reads: 切りK
+m/MS00D1.BIN	0:07	149	1902	09	{01:51}	{01:51}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	150	1910	0B	{01:5F}	{01:5F}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	151	1918	11	{01:71}	{01:71}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	152	1925	00	 {01:7B}	 {01:7B}	record reaches an engine no-op opcode; verify in game; reads:  
+m/MS00D1.BIN	0:07	153	1929	00	){01:88}	){01:88}	record reaches an engine no-op opcode; verify in game; reads: )
+m/MS00D1.BIN	0:07	154	1933	00	0{01:93}	0{01:93}	record reaches an engine no-op opcode; verify in game; reads: 0
+m/MS00D1.BIN	0:07	155	1937	00	8{01:9C}	8{01:9C}	record reaches an engine no-op opcode; verify in game; reads: 8
+m/MS00D1.BIN	0:07	156	1941	00	？？		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	157	1947	00	無し		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	158	1952	00	ﾊﾟｰﾃｨｰ{08:42}１体		record reaches an engine no-op opcode; verify in game; reads: ﾊﾟｰﾃｨｰから１体
+m/MS00D1.BIN	0:07	159	1965	00	敵１体		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	160	1972	00	{08:63}	{08:63}	record reaches an engine no-op opcode; verify in game; reads: 自分
+m/MS00D1.BIN	0:07	161	1975	00	ﾊﾟｰﾃｨｰ全体		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	162	1986	00	敵全体		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	163	1993	00	ﾊﾟｰﾃｨｰと敵全体		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	164	2008	00	ＣＯ{03:0E}{08:42}１体		record reaches an engine no-op opcode; verify in game; reads: ＣＯＭＰから１体
+m/MS00D1.BIN	0:07	165	2021	00	{03:04}全体{08:42}１体		record reaches an engine no-op opcode; verify in game; reads: 味方全体から１体
+m/MS00D1.BIN	0:07	166	2034	00	ＣＯ{03:0E}全体		record reaches an engine no-op opcode; verify in game; reads: ＣＯＭＰ全体
+m/MS00D1.BIN	0:07	167	2045	00	{03:04}全体		record reaches an engine no-op opcode; verify in game; reads: 味方全体
+m/MS00D1.BIN	0:07	168	2052	00	ﾊﾟｰﾃｨｰの{08:0E}{08:42}１体		record reaches an engine no-op opcode; verify in game; reads: ﾊﾟｰﾃｨｰの仲魔から１体
+m/MS00D1.BIN	0:07	169	2069	00	ﾊﾟｰﾃｨｰの{08:0E}全体		record reaches an engine no-op opcode; verify in game; reads: ﾊﾟｰﾃｨｰの仲魔全体
+m/MS00D1.BIN	0:07	170	2084	00	{03:04}の{08:0E}{08:42}１体		record reaches an engine no-op opcode; verify in game; reads: 味方の仲魔から１体
+m/MS00D1.BIN	0:07	171	2097	00	{03:04}の{08:0E}全体		record reaches an engine no-op opcode; verify in game; reads: 味方の仲魔全体
+m/MS00D1.BIN	0:07	172	2108	00	相性：		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	173	2123	1F19	{01:27}	{01:27}	record reaches an engine no-op opcode; verify in game; reads: まさか
+m/MS00D1.BIN	0:07	174	2126	00	{02:01}&	{02:01}&	record reaches an engine no-op opcode; verify in game; reads: ペンタグランマ&
+m/MS00D1.BIN	0:07	175	2130	00	{03:01}%	{03:01}%	record reaches an engine no-op opcode; verify in game; reads: そんなこと%
+m/MS00D1.BIN	0:07	176	2134	00	{04:01}$	{04:01}$	record reaches an engine no-op opcode; verify in game; reads: 切り$
+m/MS00D1.BIN	0:07	177	2138	00	{05:01}#	{05:01}#	record reaches an engine no-op opcode; verify in game; reads: 飛び道具#
+m/MS00D1.BIN	0:07	178	2142	00	{06:01}"	{06:01}"	record reaches an engine no-op opcode; verify in game; reads: "
+m/MS00D1.BIN	0:07	179	2146	00	{07:01}!	{07:01}!	record reaches an engine no-op opcode; verify in game; reads: ＞何をしますか？!
+m/MS00D1.BIN	0:07	180	2150	00	{08:01} 	{08:01} 	record reaches an engine no-op opcode; verify in game; reads: 達也 
+m/MS00D1.BIN	0:07	181	2159	09	？		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	182	2162	00	剣		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	183	2165	00	物		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	184	2168	00	火		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	185	2171	00	氷		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	186	2174	00	風		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	187	2177	00	雷		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	188	2180	00	聖		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	189	2183	00	心		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	190	2186	00	禁		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	191	2189	00	魔		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	192	2192	00	治癒：		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	193	2207	1F19	{01:95}	{01:95}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	194	2210	00	{02:01}{=94}{=00}{03:01}{=95}{=00}{04:01}{=96}{=00}{05:01}{=97}{=00}{06:01}{=98}{=00}{07:01}{=99}{=00}{08:01}{=9A}{=00}	{02:01}{=94}{=00}{03:01}{=95}{=00}{04:01}{=96}{=00}{05:01}{=97}{=00}{06:01}{=98}{=00}{07:01}{=99}{=00}{08:01}{=9A}{=00}	record reaches an engine no-op opcode; verify in game; reads: ペンタグランマ{=94}{=00}そんなこと{=95}{=00}切り{=96}{=00}飛び道具{=97}{=00}{=98}{=00}＞何をしますか？{=99}{=00}達也{=9A}{=00}
+m/MS00D1.BIN	0:07	195	2243	09	{01:9A}	{01:9A}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	196	2251	0B	{01:9C}	{01:9C}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	197	2271	10	{01:9F}	{01:9F}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	198	2279	12	{01:A1}	{01:A1}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	199	2287	14	{01:A3}	{01:A3}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	200	2295	16	{01:A5}	{01:A5}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	201	2311	1B	{01:AD}	{01:AD}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	202	2315	1C	{01:AE}	{01:AE}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	203	2320	301	ｯ		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	204	2324	1E01	ｲ		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	205	2330	00	 {01:B4}	 {01:B4}	record reaches an engine no-op opcode; verify in game; reads:  
+m/MS00D1.BIN	0:07	206	2334	00	!{01:B5}	!{01:B5}	record reaches an engine no-op opcode; verify in game; reads: !
+m/MS00D1.BIN	0:07	207	2338	00	"{01:B6}	"{01:B6}	record reaches an engine no-op opcode; verify in game; reads: "
+m/MS00D1.BIN	0:07	208	2342	00	/{01:05}	/{01:05}	record reaches an engine no-op opcode; verify in game; reads: /山田
+m/MS00D1.BIN	0:07	209	2346	00	{01:B3}	{01:B3}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	210	2350	00	？		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	211	2354	00	無し		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	212	2359	00	死		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	213	2362	00	瀕死		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	214	2367	00	昏倒		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	215	2372	00	石化		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	216	2377	00	麻痺		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	217	2382	00	凍結		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	218	2387	00	憑依		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	219	2392	00	{01:2B}	{01:2B}	record reaches an engine no-op opcode; verify in game; reads: ゾンビ
+m/MS00D1.BIN	0:07	220	2395	00	呪い		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	221	2400	00	気絶		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	222	2405	00	窒息		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	223	2410	00	緊縛		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	224	2415	00	眠り		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	225	2420	00	恐慌		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	226	2425	00	毒		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	227	2428	00	幻覚		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	228	2433	00	魅了		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	229	2438	00	混乱		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	230	2443	00	舞踏		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	231	2448	00	感電		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	232	2453	00	氷結		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	233	2458	00	炎上		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	234	2463	00	盲目		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	235	2468	00	封魔		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	236	2473	00	居眠り		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	237	2480	00	狂戦士		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	238	2487	00	ハイ		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	239	2492	00	幸せ		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	240	2497	00	ほろ酔		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	241	2504	00	泥酔		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	242	2509	00	ｽﾗｲﾑ		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	243	2514	00	猛毒		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	244	2519	00	吸血		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	245	2524	00	外傷		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	246	2529	00	特殊({05:0A})		record reaches an engine no-op opcode; verify in game; reads: 特殊(ママペンタグランマ'そんなこと.切り3飛び道具:A＞何をしますか？M山瀬勇?ペンタグランマ>そんなこと=切り<飛び道具;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ切り山瀬勇?ペンタグランマ>そんなこと=切り<飛び道具;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ切り切り山瀬勇?ペンタグランマ>そんなこと=切り<飛び道具;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ切り切り切り?ペンタグランマ>=<;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ)
+m/MS00D1.BIN	0:07	247	2538	00	追加効果：		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	248	2557	1F19	{01:95}	{01:95}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	249	2560	00	{02:01}{=94}{=00}{03:01}{=95}{=00}{04:01}{=96}{=00}{05:01}{=97}{=00}{06:01}{=98}{=00}{07:01}{=99}{=00}{08:01}{=9A}{=00}	{02:01}{=94}{=00}{03:01}{=95}{=00}{04:01}{=96}{=00}{05:01}{=97}{=00}{06:01}{=98}{=00}{07:01}{=99}{=00}{08:01}{=9A}{=00}	record reaches an engine no-op opcode; verify in game; reads: ペンタグランマ{=94}{=00}そんなこと{=95}{=00}切り{=96}{=00}飛び道具{=97}{=00}{=98}{=00}＞何をしますか？{=99}{=00}達也{=9A}{=00}
+m/MS00D1.BIN	0:07	250	2593	09	{01:9A}	{01:9A}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	251	2601	0B	{01:9C}	{01:9C}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	252	2621	10	{01:9F}	{01:9F}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	253	2629	12	{01:A1}	{01:A1}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	254	2637	14	{01:A3}	{01:A3}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	255	2645	16	{01:A5}	{01:A5}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	256	2661	1B	{01:AD}	{01:AD}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	257	2665	1C	{01:AE}	{01:AE}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	258	2670	301	ｯ		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	259	2674	1E01	ｲ		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	260	2680	00	 {01:B4}	 {01:B4}	record reaches an engine no-op opcode; verify in game; reads:  
+m/MS00D1.BIN	0:07	261	2684	00	!{01:B5}	!{01:B5}	record reaches an engine no-op opcode; verify in game; reads: !
+m/MS00D1.BIN	0:07	262	2688	00	"{01:B6}	"{01:B6}	record reaches an engine no-op opcode; verify in game; reads: "
+m/MS00D1.BIN	0:07	263	2692	00	/{01:05}	/{01:05}	record reaches an engine no-op opcode; verify in game; reads: /山田
+m/MS00D1.BIN	0:07	264	2696	00	{01:B3}	{01:B3}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:07	265	2700	00	？		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	266	2704	00	無し		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	267	2709	00	死		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	268	2712	00	瀕死		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	269	2717	00	昏倒		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	270	2722	00	石化		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	271	2727	00	麻痺		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	272	2732	00	凍結		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	273	2737	00	憑依		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	274	2742	00	{01:2B}	{01:2B}	record reaches an engine no-op opcode; verify in game; reads: ゾンビ
+m/MS00D1.BIN	0:07	275	2745	00	呪い		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	276	2750	00	気絶		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	277	2755	00	窒息		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	278	2760	00	緊縛		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	279	2765	00	眠り		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	280	2770	00	恐慌		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	281	2775	00	毒		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	282	2778	00	幻覚		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	283	2783	00	魅了		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	284	2788	00	混乱		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	285	2793	00	舞踏		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	286	2798	00	感電		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	287	2803	00	氷結		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	288	2808	00	炎上		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	289	2813	00	盲目		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	290	2818	00	封魔		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	291	2823	00	居眠り		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	292	2830	00	狂戦士		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	293	2837	00	ハイ		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	294	2842	00	幸せ		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	295	2847	00	ほろ酔		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	296	2854	00	泥酔		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	297	2859	00	ｽﾗｲﾑ		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	298	2864	00	猛毒		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	299	2869	00	吸血		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	300	2874	00	外傷		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	301	2879	00	特殊({05:0A})		record reaches an engine no-op opcode; verify in game; reads: 特殊(ママペンタグランマ'そんなこと.切り3飛び道具:A＞何をしますか？M山瀬勇?ペンタグランマ>そんなこと=切り<飛び道具;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ切り山瀬勇?ペンタグランマ>そんなこと=切り<飛び道具;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ切り切り山瀬勇?ペンタグランマ>そんなこと=切り<飛び道具;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ切り切り切り?ペンタグランマ>=<;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ)
+m/MS00D1.BIN	0:07	302	2888	00	距離：		record reaches an engine no-op opcode; verify in game
+m/MS00D1.BIN	0:07	303	2917	0F	F{03:00}{03:19}	F{03:00}{03:19}	record reaches an engine no-op opcode; verify in game; reads: F飛び道具
+m/MS00D1.BIN	0:07	304	2930	00	{03:19}	{03:19}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS00D1.BIN	0:08	0	2	1FBA	全画面フォント表示\n		
+m/MS00D1.BIN	0:08	1	62	1FB2	番号入力		menu option, declared width 20 columns
+m/MS00D1.BIN	0:08	2	72	1FB2	次フォント		menu option, declared width 20 columns
+m/MS00D1.BIN	0:08	3	84	1FB2	前フォント		menu option, declared width 20 columns
+m/MS00D1.BIN	0:08	4	96	1FB2	次ＣＧＥＮ		menu option, declared width 20 columns
+m/MS00D1.BIN	0:08	5	108	1FB2	次パレット		menu option, declared width 20 columns
+m/MS00D1.BIN	0:08	6	120	1FB2	ウィンドウ消去		menu option, declared width 20 columns
+m/MS00D1.BIN	0:08	7	136	1FB2	戻る		menu option, declared width 20 columns
+m/MS00D1.BIN	0:08	8	155	1F12	{01:58}	{01:58}	reads: 
+m/MS00D1.BIN	0:08	9	158	00	{02:01}`	{02:01}`	reads: ペンタグランマ`
+m/MS00D1.BIN	0:08	10	162	00	{03:01}{=85}{=00}{04:01}{=99}{=00}{05:01}ｭ		reads: そんなこと{=85}{=00}切り{=99}{=00}飛び道具ｭ
+m/MS00D1.BIN	0:08	11	174	00	{06:01}ｮ		reads: ｮ
+m/MS00D1.BIN	0:08	12	178	00			
+m/MS00D1.BIN	0:08	13	186	1E07	表示{08:8E}フォント番号を入力{08:4A}{08:6E}\n		reads: 表示するフォント番号を入力してください\n
+m/MS00D1.BIN	0:08	14	272	1F82	最小値{08:55}\n<wait>		reads: 最小値です\n<wait>
+m/MS00D1.BIN	0:0B	0	75	1FB2	再度実行		menu option, declared width 20 columns
+m/MS00D1.BIN	0:0B	1	85	1FB2	終了		menu option, declared width 20 columns
+m/MS00D1.BIN	0:0B	2	103	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS00D1.BIN	0:0B	3	106	00			
+m/MS00D1.BIN	0:0C	0	11	1EB0	{01:08}	{01:08}	reads: バエル
+m/MS00D1.BIN	0:0C	1	14	00	{03:01}2	{03:01}2	reads: そんなこと2
+m/MS00D1.BIN	0:0C	2	18	00			
+m/MS00D1.BIN	0:0C	3	35	1B	表示文字		
+m/MS00D1.BIN	0:0D	0	0	DATA	呼ばれま{08:4B}\n		reads: 呼ばれました\n
+m/MS00D1.BIN	0:0D	1	36	1F7F	ﾑ\n次の呼び出し{08:71}		reads: ﾑ\n次の呼び出しまで
+m/MS00D1.BIN	0:0D	2	70	1EC4	{03:01}	{03:01}	reads: そんなこと
+m/MS00D1.BIN	0:0D	3	76	18	{03:01}	{03:01}	reads: そんなこと
+m/MS00D1.BIN	0:0D	4	82	18	{08:00}{03:02}	{08:00}{03:02}	reads: 早坂を攻撃し
+m/MS00D1.BIN	0:0D	5	90	1F02	日		
+m/MS00D1.BIN	0:0D	6	102	1F7F	時間		
+m/MS00D1.BIN	0:0D	7	110	1F02	分{08:55}<wait>		reads: 分です<wait>
+m/MS00D1.BIN	0:0E	0	2	1FBA	敵{08:0A}整合性デバッグ\n		reads: 敵データ整合性デバッグ\n
+m/MS00D1.BIN	0:0E	1	90	1FB2	番号入力		menu option, declared width 20 columns
+m/MS00D1.BIN	0:0E	2	100	1FB2	次		menu option, declared width 20 columns
+m/MS00D1.BIN	0:0E	3	104	1FB2	前		menu option, declared width 20 columns
+m/MS00D1.BIN	0:0E	4	108	1FB2	{08:0E}	{08:0E}	reads: 仲魔; menu option, declared width 20 columns
+m/MS00D1.BIN	0:0E	5	112	1FB2	終了		menu option, declared width 20 columns
+m/MS00D1.BIN	0:0E	6	131	1F12	{01:96}	{01:96}	reads: 
+m/MS00D1.BIN	0:0E	7	134	00	{02:01}ﾁ		reads: ペンタグランマﾁ
+m/MS00D1.BIN	0:0E	8	138	00	{03:01}	{03:01}	reads: そんなこと
+m/MS00D1.BIN	0:0E	9	146	00			
+m/MS00D1.BIN	0:0E	10	163	1E07	{08:0B}番号を入力{08:4A}{08:6E}		reads: 悪魔番号を入力してください
+m/MS00D1.BIN	0:0E	11	208	1E07	値は		
+m/MS00D1.BIN	0:0E	12	216	1F02	未満迄{08:55}\n<wait>		reads: 未満迄です\n<wait>
+m/MS00D1.BIN	0:0E	13	246	1E07	値は３２以上{08:55}\n<wait>		reads: 値は３２以上です\n<wait>
+m/MS00D1.BIN	0:0E	14	300	1E07	最大値{08:55}\n<wait>		reads: 最大値です\n<wait>
+m/MS00D1.BIN	0:0E	15	347	1E07	最小値{08:55}\n<wait>		reads: 最小値です\n<wait>
+m/MS00D1.BIN	0:0E	16	380	1FBA	ＩＤ：		
+m/MS00D1.BIN	0:0E	17	463	00	@	@	
+m/MS00D1.BIN	0:0E	18	529	00	{04:18}	{04:18}	reads: させ
+m/MS00D1.BIN	0:0E	19	546	00	{01:18}{06:00}	{01:18}{06:00}	reads: あんた辞書５
+m/MS00D1.BIN	0:0E	20	557	1F51	ﾂ別ファイル\n		
+m/MS00D1.BIN	0:0E	21	616	1F4E	eーブル\n		
+m/MS00D1.BIN	0:0E	22	724	00	レベル：		
+m/MS00D1.BIN	0:0E	23	737	00	種族：		
+m/MS00D1.BIN	0:0E	24	746	1F01	{01:03}{04:00}神族：		reads: ニュートンを唱えた！ 神族：
+m/MS00D1.BIN	0:0E	25	759	1F01	{01:03}{04:00}属性：		reads: ニュートンを唱えた！ 属性：
+m/MS00D1.BIN	0:0E	26	785	1F86	Ｌ		
+m/MS00D1.BIN	0:0E	27	798	1F86	Ｎ		
+m/MS00D1.BIN	0:0E	28	811	1F86	Ｄ		
+m/MS00D1.BIN	0:0E	29	816	18	？／		
+m/MS00D1.BIN	0:0E	30	836	1F86	Ｌ		
+m/MS00D1.BIN	0:0E	31	849	1F86	Ｎ		
+m/MS00D1.BIN	0:0E	32	862	1F86	Ｃ		
+m/MS00D1.BIN	0:0E	33	867	18	？		
+m/MS00D1.BIN	0:0F	0	0	DATA	{02:04}情報表示\n		reads: アイテム情報表示\n
+m/MS00D1.BIN	0:0F	1	80	1FB2	番号入力		menu option, declared width 20 columns
+m/MS00D1.BIN	0:0F	2	90	1FB2	次		menu option, declared width 20 columns
+m/MS00D1.BIN	0:0F	3	94	1FB2	前		menu option, declared width 20 columns
+m/MS00D1.BIN	0:0F	4	98	1FB2	入手		menu option, declared width 20 columns
+m/MS00D1.BIN	0:0F	5	104	1FB2	終了		menu option, declared width 20 columns
+m/MS00D1.BIN	0:0F	6	123	1F12	{01:A1}	{01:A1}	reads: 
+m/MS00D1.BIN	0:0F	7	126	00	{02:01}ﾈ		reads: ペンタグランマﾈ
+m/MS00D1.BIN	0:0F	8	130	00	{03:01}	{03:01}	reads: そんなこと
+m/MS00D1.BIN	0:0F	9	138	00			
+m/MS00D1.BIN	0:0F	10	175	1F7F	{03:00}	{03:00}	reads: 飛び道具
+m/MS00D1.BIN	0:0F	11	206	1E07	{02:04}番号を入力{08:4A}{08:6E}		reads: アイテム番号を入力してください
+m/MS00D1.BIN	0:0F	12	251	1E07	値は		
+m/MS00D1.BIN	0:0F	13	259	1F02	迄{08:55}\n<wait>		reads: 迄です\n<wait>
+m/MS00D1.BIN	0:0F	14	303	1E07	最大値{08:55}\n<wait>		reads: 最大値です\n<wait>
+m/MS00D1.BIN	0:0F	15	344	1F82	最小値{08:55}\n<wait>		reads: 最小値です\n<wait>
+m/MS00D1.BIN	0:0F	16	381	1EFC	ＩＤ：		
+m/MS00D1.BIN	0:0F	17	403	1EAC	価格：		
+m/MS00D1.BIN	0:0F	18	417	1F01	{03:08}\n	{03:08}\n	reads: アップ\n
+m/MS00D1.BIN	0:0F	19	430	1EAC	種類：		
+m/MS00D1.BIN	0:0F	20	452	1EAC	呪い：		
+m/MS00D1.BIN	0:0F	21	474	1EAC	レベル：		
+m/MS00D1.BIN	0:0F	22	503	1FE8	破壊：{05:0D}\n		reads: 破壊：切り山瀬勇?ペンタグランマ>そんなこと=切り<飛び道具;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ\n
+m/MS00D1.BIN	0:10	0	16	1FB2	マグ入手		menu option, declared width 20 columns
+m/MS00D1.BIN	0:10	1	26	1FB2	マッカ入手		menu option, declared width 20 columns
+m/MS00D1.BIN	0:10	2	38	1FB2	終了		menu option, declared width 20 columns
+m/MS00D1.BIN	0:10	3	57	1F12	{01:33}	{01:33}	reads: きみ
+m/MS00D1.BIN	0:10	4	60	00	{02:01}{04:00}	{02:01}{04:00}	reads: ペンタグランマを唱えた！ 
+m/MS00D1.BIN	0:10	5	75	1E07	マグを入力{08:4A}{08:6E}		reads: マグを入力してください
+m/MS00D1.BIN	0:10	6	115	1E07	マッカを入力{08:4A}{08:6E}		reads: マッカを入力してください

@@ -1,0 +1,657 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS000D.BIN	0:00	0	21	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:00	1	27	1FD3	ふう{02:08}危{08:19}{02:08}‥。\n時間が無い。早く、先に進ま{08:25}と{08:72}。\n<wait>	Phew... That was a close one...\nNow then, we must hurry. There's no time.\n<wait>	reads: ふう‥‥‥危なかった‥‥‥‥。\n時間が無い。早く、先に進まないと‥‥。\n<wait> @from-v005
+m/MS000D.BIN	0:00	2	93	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:00	3	99	1FD3	{02:08}危{08:19}ぜ{02:08}。\n<wait>{08:72}{08:73}事し{08:2B}場合{08:81}{08:25}！　早く行か{08:57}。\n<wait>	That was a close one...\n<wait>There's no time for this. We must hurry!\n<wait>	reads: ‥‥‥危なかったぜ‥‥‥。\n<wait>‥‥こんな事してる場合じゃない！　早く行かなければ。\n<wait> @from-v005
+m/MS000D.BIN	0:00	4	165	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:00	5	171	1FD3	ふう{02:08}危{08:19}{02:08}‥。\n時間が無い。早く、先に進ま{08:25}と{08:72}。\n<wait>	Phew... That was a close one...\nNow then, we must hurry. There's no time.\n<wait>	reads: ふう‥‥‥危なかった‥‥‥‥。\n時間が無い。早く、先に進まないと‥‥。\n<wait> @from-v005
+m/MS000D.BIN	0:00	6	237	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:00	7	243	1FD3	{02:08}危{08:19}わ。\n{08:72}{08:73}事し{08:2B}場合{08:81}{08:25}わ。早く進ま{08:25}と、間に合わ{08:25}{08:72}！\n<wait>	That was a close one...\nNow, we've gotta hurry or we won't make it in time!\n<wait>	reads: ‥‥‥危なかったわ。\n‥‥こんな事してる場合じゃないわ。早く進まないと、間に合わない‥‥！\n<wait> @from-v005
+m/MS000D.BIN	0:00	8	317	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:00	9	323	1FD3	{02:08}ふぅ、危{08:25}{08:87}だ{08:51}な。\n<wait>	Phew... That was a close one.\n<wait>	reads: ‥‥‥ふぅ、危ないところだったな。\n<wait> @from-v005
+m/MS000D.BIN	0:00	10	359	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:00	11	369	00	{04:FF}。何を考え{08:2B}のかは知らんが、危険な行為は慎め！！\n<wait>		reads: 。何を考えてるのかは知らんが、危険な行為は慎め！！\n<wait> @rebase-new
+m/MS000D.BIN	0:00	12	434	1FD2	{08:39}：		reads: 上河： @rebase-new
+m/MS000D.BIN	0:00	13	444	00	{04:FF}さん、危険な事はやめて下{08:49}！\n<wait>		reads: さん、危険な事はやめて下さい！\n<wait> @rebase-new
+m/MS000D.BIN	0:00	14	489	1FD2	{08:03}：		reads: 英美： @rebase-new
+m/MS000D.BIN	0:00	15	499	00	{04:FF}くん！　危険な真似はやめてよ！\n<wait>		reads: くん！　危険な真似はやめてよ！\n<wait> @rebase-new
+m/MS000D.BIN	0:00	16	541	1FD2	{08:37}：		reads: 園田： @rebase-new
+m/MS000D.BIN	0:00	17	560	1FD2	{08:00}：		reads: 早坂： @rebase-new
+m/MS000D.BIN	0:00	18	566	1FD3	{02:08}ふぅ、危{08:19}な。\n<wait>	Katsuragi. I don't know what you're thinking,\nbut please, exercise some goddamn caution!\n<wait>	reads: ‥‥‥ふぅ、危なかったな。\n<wait> @from-v005
+m/MS000D.BIN	0:00	19	607	1FD2	{08:00}：		reads: 早坂： @rebase-new
+m/MS000D.BIN	0:00	20	626	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:00	21	632	1FD3	{02:08}危{08:25}{08:87}で{08:4B}{02:08}。\n<wait>	You've gotta be more careful, Katsuragi!\n<wait>	reads: ‥‥‥危ないところでした‥‥‥。\n<wait> @from-v005
+m/MS000D.BIN	0:00	22	676	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:00	23	682	1FD3	{08:72}はあ{02:08}危{08:19}わ{02:08}。\n<wait>	You've gotta be more careful, Katsuragi!\n<wait>	reads: ‥‥はあ‥‥‥危なかったわ‥‥‥。\n<wait> @from-v005
+m/MS000D.BIN	0:00	24	709	1FD2	{08:03}：	Sonoda:	reads: 英美： @from-v005
+m/MS000D.BIN	0:00	25	719	00	{04:FF}くん！　あんな危{08:25}{08:46}やめてよね！\n<wait>		reads: くん！　あんな危ないことやめてよね！\n<wait> @rebase-new
+m/MS000D.BIN	0:00	26	787	1FD2	{08:37}：	Hayasaka:	reads: 園田： @from-v005
+m/MS000D.BIN	0:00	27	793	1FD3	{08:47}先はホールだ。入っ{08:50}まずい{08:46}に{08:59}！\n戻ろう！\n<wait>	Phew... That was a close one.<wait>	reads: この先はホールだ。入ったらまずいことになる！\n戻ろう！\n<wait> @from-v005
+m/MS000D.BIN	0:00	28	851	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:00	29	867	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:00	30	873	1FD3	{08:47}先はホール{02:08}入っ{08:50}まずい{08:46}になり{08:5A}。\n戻りま{08:80}。\n<wait>	That was a close one...\n<wait>	reads: この先はホール‥‥‥入ったらまずいことになります。\n戻りましょう。\n<wait> @from-v005
+m/MS000D.BIN	0:00	31	937	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:00	32	943	1FD3	{08:47}先はホール{08:72}入っ{08:50}まずいわ。\nもどらなきゃ。\n<wait>	Phew... That was a close one.\n<wait>	reads: この先はホール‥‥入ったらまずいわ。\nもどらなきゃ。\n<wait> @from-v005
+m/MS000D.BIN	0:00	33	1007	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:00	34	1013	1FD3	{08:47}先はホールよ！　出てはまずいわ！\n<wait>	You've gotta be more careful, Katsuragi!\n<wait>	reads: この先はホールよ！　出てはまずいわ！\n<wait> @from-v005
+m/MS000D.BIN	0:00	35	1061	1FD2	{08:00}：	Sonoda:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:00	36	1071	00	{04:FF}！　お前何考えて{08:5F}！？\n<wait>	The hall up ahead is full of soldiers. Let's turn back!\n<wait>	reads: ！　お前何考えてんだ！？\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:00	37	1110	1FD2	{08:37}：	Hayasaka:	reads: 園田： @from-v005
+m/MS000D.BIN	0:00	38	1120	00	{04:FF}！　危険な真似はやめろ！\n<wait>		reads: ！　危険な真似はやめろ！\n<wait> @rebase-new
+m/MS000D.BIN	0:00	39	1161	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:00	40	1171	00	{04:FF}さん！　危険{08:55}！\n<wait>	The hall up ahead is full of soldiers. Let's turn back!\n<wait>	reads: さん！　危険です！\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:00	41	1199	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:00	42	1209	00	{04:FF}くん！　何を考え{08:2B}の！？\n<wait>	The hall up ahead is full of soldiers. Let's turn back!\n<wait>	reads: くん！　何を考えてるの！？\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:00	43	1250	1FD2	{08:37}：	Emi:	reads: 園田： @from-v005
+m/MS000D.BIN	0:00	44	1260	00	{04:FF}！　{08:47}先はホールだぞ！\n出{08:21}らまずい！\n<wait>	The hall up ahead is full of soldiers. Let's turn back!\n<wait>	reads: ！　この先はホールだぞ！\n出ていったらまずい！\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:00	45	1335	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:00	46	1345	00	{04:FF}！　{08:47}先はホールだ！\n出ていくとまずいぞ！！\n<wait>	What the hell do you think you're doing, Katsuragi!?\n<wait>	reads: ！　この先はホールだ！\n出ていくとまずいぞ！！\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:00	47	1418	1FD2	{08:39}：	Sonoda:	reads: 上河： @from-v005
+m/MS000D.BIN	0:00	48	1428	00	{04:FF}さん！　{08:47}先はホール{08:55}！\n出{08:21}らまずい{08:55}よ！！\n<wait>		reads: さん！　この先はホールです！\n出ていったらまずいですよ！！\n<wait> @rebase-new
+m/MS000D.BIN	0:00	49	1498	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:00	50	1504	1FD3	{08:73}所に寄っ{08:14}暇は無い！　行こう！\n<wait>	We don't have time for detours. Let's hurry!\n<wait>	reads: こんな所に寄っている暇は無い！　行こう！\n<wait> @from-v005
+m/MS000D.BIN	0:00	51	1551	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:00	52	1567	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:00	53	1573	1FD3	{08:73}所に入っ{08:2B}暇は無い！　戻らなきゃ！\n<wait>	We don't have time for detours. Let's hurry!\n<wait>	reads: こんな所に入ってる暇は無い！　戻らなきゃ！\n<wait> @from-v005
+m/MS000D.BIN	0:00	54	1624	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:00	55	1630	1FD3	{08:73}所に入っ{08:2B}暇無いわ！　戻らなきゃ！\n<wait>	We don't have time for detours. Let's hurry!\n<wait>	reads: こんな所に入ってる暇無いわ！　戻らなきゃ！\n<wait> @from-v005
+m/MS000D.BIN	0:00	56	1685	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:00	57	1695	00	{04:FF}！　お前、{08:76}懲りてねぇのかっ！\n戻るぞ！！！\n<wait>	The hell do you think you're doing, Katsuragi? Let's hurry!\n<wait>	reads: ！　お前、まだ懲りてねぇのかっ！\n戻るぞ！！！\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:00	58	1755	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:00	59	1761	1FD3	{08:7F}かげんにしろッ！　戻るぞ！\n<wait>	We don't have time for this! Let's hurry!\n<wait>	reads: いいかげんにしろッ！　戻るぞ！\n<wait> @from-v005
+m/MS000D.BIN	0:00	60	1804	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:00	61	1810	1FD3	{08:7F}加減に{08:4A}下{08:49}！　戻り{08:5A}よ！\n<wait>	We don't have time for this! Let's hurry!\n<wait>	reads: いい加減にして下さい！　戻りますよ！\n<wait> @from-v005
+m/MS000D.BIN	0:00	62	1853	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:00	63	1863	00	{04:FF}くん！！　{08:7F}加減に{08:4A}！！\n戻るわよ！！\n<wait>	We don't have time for this, Katsuragi! Let's hurry!\n<wait>	reads: くん！！　いい加減にして！！\n戻るわよ！！\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:01	0	2	1FD2	バール兵：	Baal Soldier:	@from-ours
+m/MS000D.BIN	0:01	1	14	1FD3	何だお前達は？\n<wait>	Hmm? And what the fuck are you people doing here?\n<wait>	@from-v005
+m/MS000D.BIN	0:01	2	45	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:01	3	51	1FD3	{08:72}捕虜を連行中{08:55}。失礼し{08:5A}。\n<wait>	...My apologies, Sir. We are transporting prisoners.\n<wait>	reads: ‥‥捕虜を連行中です。失礼します。\n<wait> @from-v005
+m/MS000D.BIN	0:01	4	96	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:01	5	112	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:01	6	118	1FD3	あ{08:72}あの‥{01:2E}、間違えま{08:17}！\n<wait>	Err... Wrong room!\n<wait>	reads: あ‥‥あの‥部屋、間違えました！！\n<wait> @from-v005
+m/MS000D.BIN	0:01	7	161	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:01	8	172	1FD0	＞{02:06}\n<wait>	>What will you do?\n<wait>	reads: ＞どうしますか？\n<wait> @from-v005
+m/MS000D.BIN	0:01	9	199	1FB2	捕虜を連行中	Moving prisoners	menu option, declared width 20 columns @from-v005
+m/MS000D.BIN	0:01	10	213	1FB2	間違えま{08:4B}	Sorry, wrong room	reads: 間違えました; menu option, declared width 20 columns @from-v005
+m/MS000D.BIN	0:01	11	225	1FB2	無言で逃げる	Walk away	menu option, declared width 20 columns @from-v005
+m/MS000D.BIN	0:01	12	251	0F	{01:05}	{01:05}	reads: 山田
+m/MS000D.BIN	0:01	13	254	00	{02:01}{01:00}	{02:01}{01:00}	reads: ペンタグランマ早坂達也
+m/MS000D.BIN	0:01	14	261	1FD2	バール兵：	Baal Soldier:	@from-ours
+m/MS000D.BIN	0:01	15	273	1FD3	ちょ{08:53}待て{08:72}\n<wait>	Are you deaf or something? Answer me!\n<wait>	reads: ちょっと待て‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:01	16	294	1FD0	一行{08:62}みな{08:71}聞き終わらぬうちに、引き返{08:4B}。\n<wait>	You turn around and leave the room before the man can do anything.\n<wait>	reads: 一行は、みなまで聞き終わらぬうちに、引き返した。\n<wait> @from-v005
+m/MS000D.BIN	0:02	0	2	1FD2	女性：	Woman:	@from-v005
+m/MS000D.BIN	0:02	1	10	1FD3	{02:08}{02:08}{02:08}‥\n<wait>	{02:08}{02:08}{02:08}‥\n<wait>	reads: ‥‥‥‥‥‥‥‥‥‥\n<wait>
+m/MS000D.BIN	0:02	2	27	1FD0	女性の目は虚ろで、	The woman's eyes are hollow,\nand it doesn't look like she can even tell that you are there.\n<wait>	@from-v005
+m/MS000D.BIN	0:02	3	49	00	{04:FF}達など眼中に無い{08:69}だ。\n<wait>		reads: 達など眼中に無いようだ。\n<wait> @rebase-new
+m/MS000D.BIN	0:03	0	2	1FD2	男性：	Man:	@from-v005
+m/MS000D.BIN	0:03	1	10	1FD3	{02:08}う{02:08}‥あ{02:08}‥\n<wait>	Uuh... Uugh...\n<wait>	reads: ‥‥‥う‥‥‥‥あ‥‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:03	2	33	1FD0	男{08:62}精神に異常を{08:1E}{08:13}{08:69}だ。\n<wait>	The man looks like he has a few screws loose.\n<wait>	reads: 男は、精神に異常をきたしているようだ。\n<wait> @from-v005
+m/MS000D.BIN	0:04	0	2	1FD2	女性：	Woman:	@from-v005
+m/MS000D.BIN	0:04	1	10	1FD3	{02:08}‥クスクス{02:08}クスクスクス{02:08}‥\n<wait>	Hehe... Hehehehe...\n<wait>	reads: ‥‥‥‥クスクス‥‥‥クスクスクス‥‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:04	2	49	1FD0	女性は何度話{08:86}け{08:54}、クスクスと笑い続け{08:14}{02:08}。\n<wait>	You attempt to approach the woman,\nbut she simply keeps on giggling to herself.\n<wait>	reads: 女性は何度話しかけても、クスクスと笑い続けている‥‥‥。\n<wait> @from-v005
+m/MS000D.BIN	0:05	0	21	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:05	1	27	1FD3	{08:5C}、あまり時間が残{08:52}{08:25}わ{02:08}戻っ{08:2B}暇{08:6A}て無い。\n<wait>	It's too late to turn back now. We've gotta keep going.\n<wait>	reads: もう、あまり時間が残ってないわ‥‥‥戻ってる暇なんて無い。\n<wait> @from-v005
+m/MS000D.BIN	0:05	2	86	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:05	3	92	1FD3	{08:5C}、あまり時間が残{08:52}{08:25}{02:08}戻っ{08:2B}暇{08:6A}て無いぞ。\n<wait>	It's too late to turn back now. We've gotta keep going.\n<wait>	reads: もう、あまり時間が残ってない‥‥‥戻ってる暇なんて無いぞ。\n<wait> @from-v005
+m/MS000D.BIN	0:05	4	151	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-ours
+m/MS000D.BIN	0:05	5	157	1FD3	残{03:0C}た時間は少{08:25}{08:72}戻る暇など無い{02:08}\n<wait>	It's too late to turn back now. We've gotta keep going.\n<wait>	reads: 残された時間は少ない‥‥戻る暇など無い‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:05	6	206	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:05	7	212	1FD3	{08:5C}時間が無い{08:72}戻る暇{08:6A}て無いな{08:72}\n<wait>	It's too late to turn back now. We've gotta keep going.\n<wait>	reads: もう時間が無い‥‥戻る暇なんて無いな‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:05	8	298	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:05	9	308	00	{04:FF}君、何処へ行く気{08:6B}？\n{08:5C}、あまり時間が残{08:52}{08:25}わ{02:08}\n<wait>	Where are you going, Katsuragi? We don't have time for this.\n<wait>	reads: 君、何処へ行く気なの？\nもう、あまり時間が残ってないわ‥‥‥\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:05	10	372	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:05	11	382	00	{04:FF}、どこへ行く{08:5F}？\n{08:5C}時間が無いぞ。\n<wait>	Where are you going, Katsuragi? We don't have time for this.\n<wait>	reads: 、どこへ行くんだ？\nもう時間が無いぞ。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:05	12	432	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-ours
+m/MS000D.BIN	0:05	13	442	00	{04:FF}、どこへ行く{01:3E}だ？\n残{03:0C}た時間{08:62}少{08:25}ぞ{08:72}\n<wait>	Where are you going, Katsuragi? We don't have time for this.\n<wait>	reads: 、どこへ行くつもりだ？\n残された時間は、少ないぞ‥‥\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:05	14	498	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:05	15	508	00	{04:FF}さん。どこへ行くん{08:55}？\n{08:5C}時間が無い{08:55}よ。\n<wait>	Where are you going, Katsuragi? We don't have time for this.\n<wait>	reads: さん。どこへ行くんです？\nもう時間が無いですよ。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:05	16	561	1FD0	打ち合わせの時間{08:71}、後僅か{02:08}{08:72}\n時間{08:71}に、{01:07}の{01:2E}にたどり着{08:29}{08:8C}か{02:08}\n<wait>	There's no time for this.\nYou've gotta reach Dantalion before it's too late...\n<wait>	reads: 打ち合わせの時間まで、後僅か‥‥‥‥‥\n時間までに、ダンタリオンの部屋にたどり着けるだろうか‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:05	17	645	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-ours
+m/MS000D.BIN	0:05	18	651	1FD3	{08:45}を右だ！\n<wait>	Right from here!\n<wait>	reads: ここを右だ！\n<wait> @from-v005
+m/MS000D.BIN	0:05	19	676	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:05	20	682	1FD3	{08:45}を右よ！\n<wait>	Right from here!\n<wait>	reads: ここを右よ！\n<wait> @from-v005
+m/MS000D.BIN	0:05	21	707	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:05	22	713	1FD3	{08:45}を右だ！\n<wait>	Right from here!\n<wait>	reads: ここを右だ！\n<wait> @from-v005
+m/MS000D.BIN	0:05	23	738	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:05	24	744	1FD3	{08:45}を右{08:55}！\n<wait>	Right from here!\n<wait>	reads: ここを右です！\n<wait> @from-v005
+m/MS000D.BIN	0:05	25	764	1FD0	地図によると、{08:45}を右に行けば良い{08:69}で{08:7B}。\n<wait>	According to the map, it seems like you should head right from here.\n<wait>	reads: 地図によると、ここを右に行けば良いようである。\n<wait> @from-v005
+m/MS000D.BIN	0:05	26	823	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-ours
+m/MS000D.BIN	0:05	27	829	1FD3	{08:45}を左だ！\n<wait>	Left from here!\n<wait>	reads: ここを左だ！\n<wait> @from-v005
+m/MS000D.BIN	0:05	28	854	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:05	29	860	1FD3	{08:45}を左よ！\n<wait>	Left from here!\n<wait>	reads: ここを左よ！\n<wait> @from-v005
+m/MS000D.BIN	0:05	30	885	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:05	31	891	1FD3	{08:45}を左だ！\n<wait>	Left from here!\n<wait>	reads: ここを左だ！\n<wait> @from-v005
+m/MS000D.BIN	0:05	32	916	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:05	33	922	1FD3	{08:45}を左{08:55}！\n<wait>	Left from here!\n<wait>	reads: ここを左です！\n<wait> @from-v005
+m/MS000D.BIN	0:05	34	942	1FD0	地図によると、{08:45}を左に行けば良い{08:69}で{08:7B}。\n<wait>	According to the map, it seems like you should head left from here.\n<wait>	reads: 地図によると、ここを左に行けば良いようである。\n<wait> @from-v005
+m/MS000D.BIN	0:06	0	27	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:06	1	33	1FD3	{08:47}先は強制労働エリアだ。\n労働者の解放は別部隊が行っ{08:14}{08:85}。\n<wait>	This is where they keep the human slaves.\nOne of the other squads should be in the process of freeing them.\n<wait>	reads: この先は強制労働エリアだ。\n労働者の解放は別部隊が行っているはず。\n<wait> @from-v005
+m/MS000D.BIN	0:06	2	99	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:06	3	105	1FD3	俺達の出る幕は{08:25}。戻ろう。\n<wait>	We aren't needed here. Let's head back.\n<wait>	reads: 俺達の出る幕はない。戻ろう。\n<wait> @from-v005
+m/MS000D.BIN	0:06	4	146	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:06	5	152	1FD3	{08:47}先{08:62}労働エリア{02:08}‥\n<wait>	This is where they keep the human slaves.\n<wait>	reads: この先は、労働エリア‥‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:06	6	181	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:06	7	187	1FD3	労働エリア{08:62}僕達の担当{08:81}{08:25}。戻らなきゃ{02:08}\n<wait>	We aren't needed here. Let's head back.\n<wait>	reads: 労働エリアは、僕達の担当じゃない。戻らなきゃ‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:06	8	242	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:06	9	253	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:06	10	259	1FD3	{08:47}先は労働エリアね{02:08}\n{08:45}は{01:16}達の担当{08:81}{08:25}わ。戻らなきゃ{08:72}。\n<wait>	This is where they keep the human slaves.\nWe aren't needed here. Let's head back.\n<wait>	reads: この先は労働エリアね‥‥‥\nここはあたし達の担当じゃないわ。戻らなきゃ‥‥。\n<wait> @from-v005
+m/MS000D.BIN	0:06	11	334	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:06	12	340	1FD3	{08:47}先{08:62}強制労働エリアだ。\n<wait>	This is where they keep the human slaves.\n<wait>	reads: この先は、強制労働エリアだ。\n<wait> @from-v005
+m/MS000D.BIN	0:06	13	378	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:06	14	384	1FD3	私達の任務{08:62}彼らの解放では{08:25}わ。\n<wait>	It is not our mission to free them.\n<wait>	reads: 私達の任務は、彼らの解放ではないわ。\n<wait> @from-v005
+m/MS000D.BIN	0:06	15	430	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:06	16	440	00	{04:FF}、気持ちは分かるが、{08:63}達の任務が優先だ。\n<wait>	I understand how you feel, Katsuragi,\nbut we must focus on the job at hand.\n<wait>	reads: 、気持ちは分かるが、自分達の任務が優先だ。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:06	17	500	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:06	18	506	1FD3	気持ちは分かる{08:84}{08:72}今は{08:63}達の任務を優先し{08:25}と{02:08}\n<wait>	I understand how you feel,\nbut we must focus on the job at hand.\n<wait>	reads: 気持ちは分かるけど‥‥今は自分達の任務を優先しないと‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:06	19	567	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:06	20	573	1FD3	俺達の任務{08:62}彼らの解放{08:81}{08:25}。\n<wait>	It is not our mission to free them.\n<wait>	reads: 俺達の任務は、彼らの解放じゃない。\n<wait> @from-v005
+m/MS000D.BIN	0:06	21	629	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:06	22	635	1FD3	僕達の任務{08:62}彼等の解放では{08:25}{08:55}。\n<wait>	It is not our mission to free them.\n<wait>	reads: 僕達の任務は、彼等の解放ではないです。\n<wait> @from-v005
+m/MS000D.BIN	0:06	23	676	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:06	24	686	00	{04:FF}さんの気持ちは分かり{08:5A}が、{08:63}達の任務を優先し{08:25}と{08:72}。\n<wait>		reads: さんの気持ちは分かりますが、自分達の任務を優先しないと‥‥。\n<wait> @rebase-new
+m/MS000D.BIN	0:06	25	750	1FD2	{08:37}：		reads: 園田： @rebase-new
+m/MS000D.BIN	0:06	26	760	00	{04:FF}、俺達の任務は彼らの解放では{08:25}。\n気持ちは分かるが、{08:63}達の任務が優先だ。\n<wait>		reads: 、俺達の任務は彼らの解放ではない。\n気持ちは分かるが、自分達の任務が優先だ。\n<wait> @rebase-new
+m/MS000D.BIN	0:06	27	848	1FD2	{08:00}：	Sonoda:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:06	28	854	1FD3	{08:47}先{08:62}強制労働エリアだぞ。\n<wait>	It is not our mission to free them. I understand how you feel,\nKatsuragi, but we must focus on the job at hand.\n<wait>	reads: この先は、強制労働エリアだぞ。\n<wait> @from-v005
+m/MS000D.BIN	0:06	29	894	1FD2	{08:03}：	Hayasaka:	reads: 英美： @from-v005
+m/MS000D.BIN	0:06	30	900	1FD3	私達の任務{08:62}彼らの解放では{08:25}わ。\n<wait>	This is where they keep the human slaves.\n<wait>	reads: 私達の任務は、彼らの解放ではないわ。\n<wait> @from-v005
+m/MS000D.BIN	0:06	31	974	1FD2	{08:39}：	Emi:	reads: 上河： @from-v005
+m/MS000D.BIN	0:06	32	984	00	{04:FF}さん、こっちは労働エリア{08:55}。\n<wait>	It is not our mission to free them.\n<wait>	reads: さん、こっちは労働エリアです。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:06	33	1031	1FD2	{08:03}：	Kamikawa:	reads: 英美： @from-v005
+m/MS000D.BIN	0:06	34	1041	00	{04:FF}くん。こっちは労働エリアよ。\n私達の任務{08:62}彼らの解放{08:81}{08:25}わ。\n<wait>		reads: くん。こっちは労働エリアよ。\n私達の任務は、彼らの解放じゃないわ。\n<wait> @rebase-new
+m/MS000D.BIN	0:06	35	1125	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:06	36	1131	1FD3	彼らの解放{08:62}別部隊の任務だ。\n俺達の出る幕は{08:25}。戻ろう。\n<wait>	The other squads will deal with freeing them.\nWe aren't needed here. Let's head back.\n<wait>	reads: 彼らの解放は、別部隊の任務だ。\n俺達の出る幕はない。戻ろう。\n<wait> @from-v005
+m/MS000D.BIN	0:06	37	1201	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:06	38	1207	1FD3	労働者の解放は僕達の担当{08:81}{08:25}。戻らなきゃ{02:08}\n<wait>	It is not our mission to free them. Let's head back.\n<wait>	reads: 労働者の解放は僕達の担当じゃない。戻らなきゃ‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:06	39	1264	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:06	40	1275	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:06	41	1281	1FD3	労働者の解放は{01:16}達の担当{08:81}{08:25}わ。戻らなきゃ{08:72}。\n<wait>	It is not our mission to free them. Let's head back.\n<wait>	reads: 労働者の解放はあたし達の担当じゃないわ。戻らなきゃ‥‥。\n<wait> @from-v005
+m/MS000D.BIN	0:06	42	1342	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:06	43	1352	00	{04:FF}君、彼らの解放{08:62}別部隊の人達がや{08:52}く{08:2F}わ。\n<wait>	The other squads will deal with freeing them.\n<wait>	reads: 君、彼らの解放は、別部隊の人達がやってくれるわ。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:06	44	1410	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:06	45	1416	1FD3	俺達{08:62}俺達の任務を果そう！\n<wait>	Let's focus on completing our own mission.\n<wait>	reads: 俺達は、俺達の任務を果そう！\n<wait> @from-v005
+m/MS000D.BIN	0:06	46	1457	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:06	47	1473	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:06	48	1479	1FD3	僕達{08:62}僕達の任務を果しま{08:80}！\n<wait>	Let's focus on completing our own mission.\n<wait>	reads: 僕達は、僕達の任務を果しましょう！\n<wait> @from-v005
+m/MS000D.BIN	0:06	49	1517	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:06	50	1523	1FD3	私達{08:62}{08:63}の任務を果さなきゃ！\n<wait>	Let's focus on completing our own mission.\n<wait>	reads: 私達は、自分の任務を果さなきゃ！\n<wait> @from-v005
+m/MS000D.BIN	0:06	51	1566	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:06	52	1576	00	{04:FF}、彼らの解放は別部隊の{02:0B}がやっ{08:14}！\n<wait>	The other squads will deal with freeing them!\n<wait>	reads: 、彼らの解放は別部隊の人間がやっている！\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:06	53	1637	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:06	54	1656	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:06	55	1666	00	{04:FF}、彼らの解放は別部隊の{02:0B}がやっ{08:14}{08:5F}！\n<wait>	The other squads will deal with freeing them!\n<wait>	reads: 、彼らの解放は別部隊の人間がやっているんだ！\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:06	56	1732	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:06	57	1742	00	{04:FF}さん、彼らの解放は別部隊の人達がやっ{08:14}筈{08:55}！\n<wait>	The other squads will deal with freeing them!\n<wait>	reads: さん、彼らの解放は別部隊の人達がやっている筈です！\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:06	58	1800	1FD0	労働者の解放{08:62}別部隊の{02:0B}がやっ{08:14}筈で{08:7B}。\n	The other squads will deal with freeing them.\nYou aren't needed here.\n<wait>	reads: 労働者の解放は、別部隊の人間がやっている筈である。\n @from-v005
+m/MS000D.BIN	0:06	59	1845	00	{04:FF}の出番は無い。\n<wait>		reads: の出番は無い。\n<wait> @rebase-new
+m/MS000D.BIN	0:06	60	1868	1FBA	{08:4D}よりも、{08:63}の任務を果す方が先で{08:7B}。\n<wait>	You should get back to completing your own mission.\n<wait>	reads: それよりも、自分の任務を果す方が先である。\n<wait> @from-v005
+m/MS000D.BIN	0:06	61	1932	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:06	62	1938	1FD3	彼らの解放は任{08:67}、俺達は先を急ごう！\n<wait>	The other squads will deal with freeing them.\nLet's hurry!\n<wait>	reads: 彼らの解放は任せて、俺達は先を急ごう！\n<wait> @from-v005
+m/MS000D.BIN	0:06	63	1989	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:06	64	1995	1FD3	彼等の解放{08:62}あっちの部隊にまか{08:67}俺達は先を急ぐ{08:5F}！\n<wait>	The other squads will deal with freeing them.\nLet's hurry!\n<wait>	reads: 彼等の解放は、あっちの部隊にまかせて俺達は先を急ぐんだ！\n<wait> @from-v005
+m/MS000D.BIN	0:06	65	2060	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:06	66	2066	1FD3	彼等の解放{08:62}あの人達にまか{08:67}、僕達は先を急ぎま{08:80}！\n<wait>	The other squads will deal with freeing them.\nLet's hurry!\n<wait>	reads: 彼等の解放は、あの人達にまかせて、僕達は先を急ぎましょう！\n<wait> @from-v005
+m/MS000D.BIN	0:06	67	2131	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:06	68	2137	1FD3	彼等の解放はまか{08:67}、{01:16}達は先を急ぎま{08:80}。\n<wait>	The other squads will deal with freeing them.\nLet's hurry!\n<wait>	reads: 彼等の解放はまかせて、あたし達は先を急ぎましょう。\n<wait> @from-v005
+m/MS000D.BIN	0:06	69	2187	1FD0	労働者の解放{08:62}別部隊にまかせ{08:63}は先を急ぐ{08:46}に{08:4B}。\n<wait>	You decide to leave freeing the slaves to the other squads\nas you rush to complete your own mission.\n<wait>	reads: 労働者の解放は、別部隊にまかせ自分は先を急ぐことにした。\n<wait> @from-v005
+m/MS000D.BIN	0:07	0	5	1FD0	労働エリアに入ると、奴隷達がろくな休息も与えられ{08:25}{08:7E}、発掘作業に\n従事させられ{08:14}。\n<wait>	This is the mining area. Here, slaves are forced to dig for minerals\nuntil they die from exhaustion.\n<wait>	reads: 労働エリアに入ると、奴隷達がろくな休息も与えられないまま、発掘作業に\n従事させられている。\n<wait> @from-v005
+m/MS000D.BIN	0:07	1	93	1FBA	彼らは	You can see the prisoners staring at you in terror as you enter\nthe room, but only for a moment before they get back to work.\n<wait>	@from-v005
+m/MS000D.BIN	0:07	2	103	00	{04:FF}達を見ると、一瞬怯{08:41}表情を見せたが、{08:82}黙々と{08:4D}ぞれの\n作業に戻{08:51}。\n<wait>		reads: 達を見ると、一瞬怯えた表情を見せたが、ただ黙々とそれぞれの\n作業に戻った。\n<wait> @rebase-new
+m/MS000D.BIN	0:07	3	184	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:07	4	190	1FD3	{08:72}何て酷い状態だ{08:72}\n<wait>	This is horrible...\n<wait>	reads: ‥‥何て酷い状態だ‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:07	5	225	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:07	6	231	1FD3	何て{02:08}ひどい{02:08}‥\n<wait>	This is horrible...\n<wait>	reads: 何て‥‥‥ひどい‥‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:07	7	264	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:07	8	270	1FD3	何て事を{02:08}‥\n<wait>	This is horrible...\n<wait>	reads: 何て事を‥‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:07	9	299	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:07	10	305	1FD3	{02:08}ひどい状態だ{02:08}‥\n<wait>	This is horrible...\n<wait>	reads: ‥‥‥ひどい状態だ‥‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:07	11	349	1FB2	ひどい状態だ	This is horrible	menu option, declared width 20 columns @from-v005
+m/MS000D.BIN	0:07	12	363	1FB2	関係無いな	Let's move	menu option, declared width 20 columns @from-v005
+m/MS000D.BIN	0:07	13	375	1FB2	働け愚民共	Work, you scum	menu option, declared width 20 columns @from-v005
+m/MS000D.BIN	0:07	14	399	0F	{01:21}	{01:21}	reads: パパ
+m/MS000D.BIN	0:07	15	402	00	{02:01}7	{02:01}7	reads: ペンタグランマ7
+m/MS000D.BIN	0:07	16	406	00	{02:08}ひどい状態だ{02:08}‥\n<wait>		reads: ‥‥‥ひどい状態だ‥‥‥‥\n<wait>
+m/MS000D.BIN	0:07	17	435	18	{02:08}関係無いな{02:08}‥\n<wait>	...Let's move...\n<wait>	reads: ‥‥‥関係無いな‥‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:07	18	461	18	{02:08}働け、愚民共が{02:08}\n<wait>	...Work, you scum...\n<wait>	reads: ‥‥‥働け、愚民共が‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:07	19	490	00	{04:FF}の胸を、{08:7A}思いが占めた。\n<wait>	That is the thought that crosses your mind.\n<wait>	reads: の胸を、そんな思いが占めた。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:07	20	525	1FD0	{08:79}時、突如{03:13}バール兵が現わ{08:11}\n<wait>	In the next moment, a soldier appears before you!\n<wait>	reads: その時、突如目の前にバール兵が現われた！\n<wait> @from-v005
+m/MS000D.BIN	0:07	21	589	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:07	22	595	1FD3	う{08:72}た、只今捕虜を連行中で{08:72}\n<wait>	We're... err... transporting prisoners...\n<wait>	reads: う‥‥た、只今捕虜を連行中で‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:07	23	640	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:07	24	646	1FD3	う{08:72}た、只今捕虜を連行中で{08:72}\n<wait>	We're... err... transporting prisoners...\n<wait>	reads: う‥‥た、只今捕虜を連行中で‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:07	25	691	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:07	26	697	1FD3	あ{02:08}へ、{01:2E}を{08:72}ま、間違えま{08:17}\n<wait>	S-Sorry, wrong room!\n<wait>	reads: あ‥‥‥へ、部屋を‥‥ま、間違えました！\n<wait> @from-v005
+m/MS000D.BIN	0:07	27	742	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:07	28	748	1FD3	あ、{01:2E}、間違えま{08:4B}{02:08}‥\n<wait>	S-Sorry, wrong room!\n<wait>	reads: あ、部屋、間違えました‥‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:07	29	796	1FB2	捕虜を連行中	Moving prisoners	menu option, declared width 20 columns @from-v005
+m/MS000D.BIN	0:07	30	810	1FB2	無言	Say nothing	menu option, declared width 20 columns @from-v005
+m/MS000D.BIN	0:07	31	816	1FB2	ご苦労！	Good work, boys!	menu option, declared width 20 columns @from-v005
+m/MS000D.BIN	0:07	32	838	0F	{01:05}	{01:05}	reads: 山田
+m/MS000D.BIN	0:07	33	841	00	{02:01}{01:00}	{02:01}{01:00}	reads: ペンタグランマ早坂達也
+m/MS000D.BIN	0:07	34	848	1FD2	バール兵：	Baal Soldier:	@from-v005
+m/MS000D.BIN	0:07	35	860	1FD3	{02:08}お前達{02:08}\n<wait>	Hmm?\n<wait>	reads: ‥‥‥お前達‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:07	36	879	1FD2	バール兵：	Baal Soldier:	@from-v005
+m/MS000D.BIN	0:07	37	891	1FD3	お前達{08:73}所で、何を{08:13}？\n大体、お前達の任務{08:62}奴隷解放では{08:25}{08:8C}！\n<wait>	The fuck do you think you're doing here?\nYou weren't assigned to freeing the prisoners!\n<wait>	reads: お前達こんな所で、何をしている？\n大体、お前達の任務は、奴隷解放ではないだろう！\n<wait> @from-v005
+m/MS000D.BIN	0:07	38	966	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:07	39	982	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:07	40	998	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:07	41	1014	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:07	42	1039	1FB2	すみ{02:0A}	Sorry	reads: すみません; menu option, declared width 20 columns @from-v005
+m/MS000D.BIN	0:07	43	1047	1FB2	そう{08:6B}？	Oh?	reads: そうなの？; menu option, declared width 20 columns @from-v005
+m/MS000D.BIN	0:07	44	1057	1FB2	無視	Say nothing.	menu option, declared width 20 columns @from-v005
+m/MS000D.BIN	0:07	45	1075	0F	{01:05}	{01:05}	reads: 山田
+m/MS000D.BIN	0:07	46	1078	00	{02:01}!	{02:01}!	reads: ペンタグランマ!
+m/MS000D.BIN	0:07	47	1082	00			
+m/MS000D.BIN	0:07	48	1085	1FD2	バール兵：	Baal Soldier:	@from-v005
+m/MS000D.BIN	0:07	49	1097	1FD3	ふざ{08:29}なッ！！\n	The fuck!?\n	reads: ふざけるなッ！！\n @from-v005
+m/MS000D.BIN	0:07	50	1121	00	{04:FF}{08:62}無視{08:4B}。\n<wait>	You ignore the man.\n<wait>	reads: は、無視した。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:07	51	1142	1FD2	バール兵：	Baal Soldier:	@from-v005
+m/MS000D.BIN	0:07	52	1154	1FD3	貴様ッ！！　ぶっ殺{03:0C}{08:4E}のか！？\n	You wanna die, kid!?\n	reads: 貴様ッ！！　ぶっ殺されたいのか！？\n @from-v005
+m/MS000D.BIN	0:07	53	1188	18	{08:72}すみ{02:0A}{02:08}\n<wait>	Sorry...\n<wait>	reads: ‥‥すみません‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:07	54	1207	1FD2	バール兵：	Baal Soldier:	@from-v005
+m/MS000D.BIN	0:07	55	1219	1FD3	すみ{02:0A}で済むかッ！\n<wait>早く任務を継続しろ！！！　次にやっ{08:50}ぶっ殺すぞ！\n<wait>	"Sorry" isn't gonna cut it!\n<wait>Get back to your mission this instant!\nYou show your face here again, and you're dead!\n<wait>	reads: すみませんで済むかッ！\n<wait>早く任務を継続しろ！！！　次にやったらぶっ殺すぞ！\n<wait> @from-v005
+m/MS000D.BIN	0:08	0	16	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:08	1	22	1FD3	Ｂ１Ｆ{08:42}{08:62}労働エリアだ。\n奴ら{08:62}奴隷を使{08:52}新宿の地下を掘り、{01:08}城建設の為の資材や、大破壊前の\n物資の発掘を行っ{08:14}。\n<wait>	We are getting closer. These depths are where the demons bring human\nslaves to dig for resources that are then used to fuel their massive\nconstruction projects.\n<wait>	reads: Ｂ１Ｆからは、労働エリアだ。\n奴らは、奴隷を使って新宿の地下を掘り、バエル城建設の為の資材や、大破壊前の\n物資の発掘を行っている。\n<wait> @from-v005
+m/MS000D.BIN	0:08	2	149	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:08	3	165	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:08	4	171	1FD3	Ｂ１Ｆ{08:42}{08:62}労働エリア{08:55}。\n奴ら{08:62}奴隷を使{08:52}新宿の地下を掘り、{01:08}城建設の為の資材や、大破壊前の\n物資の発掘を行っ{08:14}らしい{08:55}よ。\n<wait>	We are getting closer. These depths are where the demons bring human\nslaves to dig for resources that are then used to fuel their massive\nconstruction projects.\n<wait>	reads: Ｂ１Ｆからは、労働エリアです。\n奴らは、奴隷を使って新宿の地下を掘り、バエル城建設の為の資材や、大破壊前の\n物資の発掘を行っているらしいですよ。\n<wait> @from-v005
+m/MS000D.BIN	0:08	5	308	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:08	6	314	1FD3	Ｂ１Ｆ{08:42}{08:62}労働エリアね。\n奴ら{08:62}奴隷を使{08:52}新宿の地下を掘{08:52}、{01:08}城建設の為の資材や、\n大破壊前の物資の発掘を行っ{08:14}らしいわ。\n<wait>	We are getting closer. These depths are where the demons bring human\nslaves to dig for resources that are then used to fuel their massive\nconstruction projects.\n<wait>	reads: Ｂ１Ｆからは、労働エリアね。\n奴らは、奴隷を使って新宿の地下を掘って、バエル城建設の為の資材や、\n大破壊前の物資の発掘を行っているらしいわ。\n<wait> @from-v005
+m/MS000D.BIN	0:08	7	444	1FD0	Ｂ１Ｆ{08:42}{08:62}労働エリアで{08:7B}。\n{01:08}達{08:62}奴隷を使{08:52}新宿の地下を掘り、{01:08}城建設の為の資材や、\n大破壊前の物資の発掘を行っ{08:14}と、噂{03:0C}{08:14}。\n<wait>	We are getting closer. These depths are where the demons bring human\nslaves to dig for resources that are then used to fuel their massive\nconstruction projects.\n<wait>	reads: Ｂ１Ｆからは、労働エリアである。\nバエル達は、奴隷を使って新宿の地下を掘り、バエル城建設の為の資材や、\n大破壊前の物資の発掘を行っていると、噂されている。\n<wait> @from-v005
+m/MS000D.BIN	0:08	8	628	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:08	9	639	09	今更戻る訳に{08:26}か{08:25}！　行くぞ！\n<wait>	It's too late to turn back now. Let's hurry!\n<wait>	reads: 今更戻る訳にはいかない！　行くぞ！\n<wait> @from-v005
+m/MS000D.BIN	0:08	10	677	18	おい、	It's too late to turn back now. Let's hurry!\n<wait>	@from-v005
+m/MS000D.BIN	0:08	11	687	00	{04:FF}！　そっちは昇り階段だ。\n今更戻{08:52}{08:90}{08:8E}！\n<wait>		reads: ！　そっちは昇り階段だ。\n今更戻ってどうする！\n<wait> @rebase-new
+m/MS000D.BIN	0:08	12	743	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:08	13	759	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:08	14	770	09	今更戻る訳には行か{08:25}！　進{08:5C}！\n<wait>	It's too late to turn back now. Let's hurry!\n<wait>	reads: 今更戻る訳には行かない！　進もう！\n<wait> @from-v005
+m/MS000D.BIN	0:08	15	812	00	{04:FF}さん、そっちは昇り階段{08:55}よ？\n今更戻る訳に{08:26}き{02:0A}！\n<wait>	It's too late to turn back now. Let's hurry!\n<wait>	reads: さん、そっちは昇り階段ですよ？\n今更戻る訳にはいきません！\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:08	16	878	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:08	17	889	09	今更戻る訳には行か{08:25}わ！　進{08:5C}！\n<wait>	It's too late to turn back now. Let's hurry!\n<wait>	reads: 今更戻る訳には行かないわ！　進もう！\n<wait> @from-v005
+m/MS000D.BIN	0:08	18	933	00	{04:FF}くん、そっちは昇り階段よ？\n今更戻る訳に{08:26}か{08:25}わ！\n<wait>	It's too late to turn back now. Let's hurry!\n<wait>	reads: くん、そっちは昇り階段よ？\n今更戻る訳にはいかないわ！\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:08	19	994	1FD0	今戻っ{08:50}、{08:48}{08:71}の苦労が水の泡で{08:7B}。\n<wait>	Turning back now means that all your efforts have been for nothing.\n<wait>	reads: 今戻ったら、これまでの苦労が水の泡である。\n<wait> @from-v005
+m/MS000D.BIN	0:08	20	1039	00	{04:FF}{08:62}先にすすむ{08:46}に{08:4B}。\n<wait>	You decide to keep pushing forward.\n<wait>	reads: は、先にすすむことにした。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:09	0	10	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:09	1	16	1FD3	{08:47}先は昇り階段だ。{08:86}も、敵のど真ん中にでる！\n<wait>	These stairs lead up, not down.\nAlso, we'll be surrounded by enemies. Let's head back.\n<wait>	reads: この先は昇り階段だ。しかも、敵のど真ん中にでる！\n<wait> @from-v005
+m/MS000D.BIN	0:09	2	74	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:09	3	80	1FD3	{08:45}を昇る{08:6A}て自殺行為だ。戻るぞ！\n<wait>	Taking these stairs is suicide. Let's head back.\n<wait>	reads: ここを昇るなんて自殺行為だ。戻るぞ！\n<wait> @from-v005
+m/MS000D.BIN	0:09	4	127	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:09	5	133	1FD3	{08:45}を昇る{08:6A}て、自殺行為{08:55}！！　戻りま{08:80}！！\n<wait>	Taking these stairs is suicide! Let's head back!\n<wait>	reads: ここを昇るなんて、自殺行為です！！　戻りましょう！！\n<wait> @from-v005
+m/MS000D.BIN	0:09	6	190	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:09	7	196	1FD3	{08:45}を昇る{08:6A}て、自殺行為だわ！！　戻るわよ！！\n<wait>	Taking these stairs is suicide! Let's head back!\n<wait>	reads: ここを昇るなんて、自殺行為だわ！！　戻るわよ！！\n<wait> @from-v005
+m/MS000D.BIN	0:09	8	250	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:09	9	269	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:09	10	275	1FD3	{08:47}先は昇り階段だ。{08:86}も、敵のど真ん中にでる！\n<wait>	These stairs lead up, not down.\nAlso, we'll be surrounded by enemies. Let's head back.\n<wait>	reads: この先は昇り階段だ。しかも、敵のど真ん中にでる！\n<wait> @from-v005
+m/MS000D.BIN	0:09	11	355	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:09	12	361	1FD3	{08:47}先は昇り階段{08:55}。{08:86}も、敵のど真ん中に出{08:5A}！\n<wait>	These stairs lead up, not down.\nAlso, we'll be surrounded by enemies. Let's head back.\n<wait>	reads: この先は昇り階段です。しかも、敵のど真ん中に出ます！\n<wait> @from-v005
+m/MS000D.BIN	0:09	13	433	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:09	14	439	1FD3	{08:47}先は昇り階段よ。{08:86}も、敵のど真ん中にでるのよ！\n<wait>	These stairs lead up, not down.\nAlso, we'll be surrounded by enemies. Let's head back.\n<wait>	reads: この先は昇り階段よ。しかも、敵のど真ん中にでるのよ！\n<wait> @from-v005
+m/MS000D.BIN	0:09	15	499	1FD0	{08:47}先は昇り階段で、{08:86}も敵のど真ん中に出る{08:69}で{08:7B}。\nむざむざと命を捨{08:2B}訳には行か{08:25}。\n<wait>	These stairs appear to lead to a room full of enemies.\nTaking them is suicide.\n<wait>	reads: この先は昇り階段で、しかも敵のど真ん中に出るようである。\nむざむざと命を捨てる訳には行かない。\n<wait> @from-v005
+m/MS000D.BIN	0:09	16	591	00	{04:FF}{08:62}引き返す{08:46}に{08:4B}。\n<wait>	You decide to turn back.\n<wait>	reads: は、引き返すことにした。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:0A	0	16	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:0A	1	32	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:0A	2	48	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:0A	3	54	1FD3	{08:45}を右{08:55}！！\n<wait>	Right from here!\n<wait>	reads: ここを右です！！\n<wait> @from-v005
+m/MS000D.BIN	0:0A	4	79	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:0A	5	85	1FD3	{08:45}を右よ！！\n<wait>	Right from here!\n<wait>	reads: ここを右よ！！\n<wait> @from-v005
+m/MS000D.BIN	0:0A	6	105	1FD0	{08:45}を右に行けば{08:7F}{08:85}で{08:7B}。\n<wait>	It seems like you need to head right from here.\n<wait>	reads: ここを右に行けばいいはずである。\n<wait> @from-v005
+m/MS000D.BIN	0:0A	7	135	00	{08:45}を右だ！\n<wait>	Right from here!\n<wait>	reads: ここを右だ！\n<wait> @from-v005
+m/MS000D.BIN	0:0A	8	164	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:0A	9	180	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:0A	10	196	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:0A	11	202	1FD3	{08:45}を左{08:55}！！\n<wait>	Left from here!\n<wait>	reads: ここを左です！！\n<wait> @from-v005
+m/MS000D.BIN	0:0A	12	227	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:0A	13	233	1FD3	{08:45}を左に行くのよ！！\n<wait>	Left from here!\n<wait>	reads: ここを左に行くのよ！！\n<wait> @from-v005
+m/MS000D.BIN	0:0A	14	261	1FD0	{08:45}を左に行けば{08:7F}{08:85}で{08:7B}。\n<wait>	It seems like you need to head left from here.\n<wait>	reads: ここを左に行けばいいはずである。\n<wait> @from-v005
+m/MS000D.BIN	0:0A	15	291	00	{08:45}を左に行く{08:5F}！\n<wait>	Left from here!\n<wait>	reads: ここを左に行くんだ！\n<wait> @from-v005
+m/MS000D.BIN	0:0A	16	326	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:0A	17	342	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:0A	18	358	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:0A	19	364	1FD3	戻っ{08:2B}余裕は無い！　早く行かなくては！！\n<wait>	There's no time to turn back. Let's hurry!\n<wait>	reads: 戻ってる余裕は無い！　早く行かなくては！！\n<wait> @from-v005
+m/MS000D.BIN	0:0A	20	419	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:0A	21	425	1FD3	戻っ{08:2B}余裕は無いわ！　早く行かなくちゃ！！\n<wait>	There's no time to turn back. Let's hurry!\n<wait>	reads: 戻ってる余裕は無いわ！　早く行かなくちゃ！！\n<wait> @from-v005
+m/MS000D.BIN	0:0A	22	477	1FD0	戻る余裕など{08:62}とうに無くなっ{08:14}。\n	It's too late to turn back now. You decide to keep going.\n<wait>	reads: 戻る余裕などは、とうに無くなっている。\n @from-v005
+m/MS000D.BIN	0:0A	23	514	00	{04:FF}{08:62}進む事に{08:4B}。\n<wait>		reads: は、進む事にした。\n<wait> @rebase-new
+m/MS000D.BIN	0:0A	24	547	00	{04:FF}！！　戻っ{08:14}余裕は{08:25}！\n<wait>		reads: ！！　戻っている余裕はない！\n<wait> @rebase-new
+m/MS000D.BIN	0:0C	0	16	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:0C	1	22	1FD3	こっち{08:81}{08:25}ぞ、戻ろう！\n<wait>	Wrong way!\n<wait>	reads: こっちじゃないぞ、戻ろう！\n<wait> @from-v005
+m/MS000D.BIN	0:0C	2	59	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:0C	3	65	1FD3	こっち{08:81}{08:25}！　戻るぞ！\n<wait>	Wrong way!\n<wait>	reads: こっちじゃない！　戻るぞ！\n<wait> @from-v005
+m/MS000D.BIN	0:0C	4	102	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:0C	5	108	1FD3	こっちは違い{08:5A}！　戻りま{08:80}！\n<wait>	Wrong way!\n<wait>	reads: こっちは違います！　戻りましょう！\n<wait> @from-v005
+m/MS000D.BIN	0:0C	6	149	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:0C	7	155	1FD3	こっちは違うわ！　戻りま{08:80}！\n<wait>	Wrong way!\n<wait>	reads: こっちは違うわ！　戻りましょう！\n<wait> @from-v005
+m/MS000D.BIN	0:0C	8	191	1FD0	{02:0E}は違う道の{08:69}だ。戻{08:51}方が{08:7F}{08:8C}。\n<wait>	This looks to be the wrong way.\n<wait>	reads: こちらは違う道のようだ。戻った方がいいだろう。\n<wait> @from-v005
+m/MS000D.BIN	0:0C	9	242	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:0C	10	258	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:0C	11	274	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:0C	12	280	1FD3	{08:45}を右{08:55}！！\n<wait>	Right from here!\n<wait>	reads: ここを右です！！\n<wait> @from-v005
+m/MS000D.BIN	0:0C	13	305	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:0C	14	311	1FD3	{08:45}を右よ！！\n<wait>	Right from here!\n<wait>	reads: ここを右よ！！\n<wait> @from-v005
+m/MS000D.BIN	0:0C	15	331	1FD0	{08:45}を右に行けば{08:7F}{08:85}で{08:7B}。\n<wait>	It seems that you should head right from here.\n<wait>	reads: ここを右に行けばいいはずである。\n<wait> @from-v005
+m/MS000D.BIN	0:0C	16	361	00	{08:45}を右に行く{08:5F}！\n<wait>	Right from here!\n<wait>	reads: ここを右に行くんだ！\n<wait> @from-v005
+m/MS000D.BIN	0:0C	17	396	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:0C	18	412	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:0C	19	428	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:0C	20	443	00	{04:FF}さん！　時間があまりあり{02:0A}。急ぎま{08:80}！\n<wait>	There's no time. Let's hurry!\n<wait>	reads: さん！　時間があまりありません。急ぎましょう！\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:0C	21	491	18	時間があまり無い{02:08}。急ごう！\n<wait>	There's no time. Let's hurry!\n<wait>	reads: 時間があまり無い‥‥‥。急ごう！\n<wait> @from-v005
+m/MS000D.BIN	0:0C	22	532	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:0C	23	547	00	{04:FF}くん！　時間が無いわ。急ぎま{08:80}！\n<wait>	There's no time. Let's hurry!\n<wait>	reads: くん！　時間が無いわ。急ぎましょう！\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:0C	24	589	18	時間があまり無い{02:08}。急がなきゃ！\n<wait>	There's no time. Let's hurry!\n<wait>	reads: 時間があまり無い‥‥‥。急がなきゃ！\n<wait> @from-v005
+m/MS000D.BIN	0:0C	25	629	1FD0	時間が無い{02:08}急がなくては{02:08}！\n<wait>	There's no time. Let's hurry!\n<wait>	reads: 時間が無い‥‥‥急がなくては‥‥‥！\n<wait> @from-v005
+m/MS000D.BIN	0:0C	26	672	00	{04:FF}！　時間があまり無い。急ぐぞ！\n<wait>	There's no time. Let's hurry!\n<wait>	reads: ！　時間があまり無い。急ぐぞ！\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:0D	0	17	1F03			
+m/MS000D.BIN	0:0D	1	21	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:0D	2	27	1FD3	何の{01:2E}かしら{08:72}{08:56}、{08:7F}香りが{08:8E}わ。\n<wait>	There's a strange fragrance coming from this room.\nIt... actually smells kinda good.\n<wait>	reads: 何の部屋かしら‥‥でも、いい香りがするわ。\n<wait> @from-v005
+m/MS000D.BIN	0:0D	3	68	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:0D	4	74	1FD3	香水か？\n<wait>	Reminds me of a perfume.\n<wait>	@from-v005
+m/MS000D.BIN	0:0D	5	92	1FD0	何の{01:2E}{08:8C}か{02:08}‥。\n{01:2E}の中{08:42}、何か花の{08:69}な香りが漂{08:52}くる{02:08}。\n<wait>	What room is this?\nYou can smell a sweet fragrance coming from inside...\n<wait>	reads: 何の部屋だろうか‥‥‥‥。\n部屋の中から、何か花のような香りが漂ってくる‥‥‥。\n<wait> @from-v005
+m/MS000D.BIN	0:0E	0	2	1FD2	娼婦：	Prostitute:	@from-v005
+m/MS000D.BIN	0:0E	1	10	1FD3	キャーーーー！　一体何{08:6B}よぉ！\n{01:38}、お金{08:6A}か一銭も持{08:52}{08:25}わよぉ！\n<wait>	Eek! What do you want from me? I don't have any money!\n<wait>	reads: キャーーーー！　一体何なのよぉ！\nアタシ、お金なんか一銭も持ってないわよぉ！\n<wait> @from-v005
+m/MS000D.BIN	0:0F	0	2	1FD2	娼婦：	Prostitute:	@from-v005
+m/MS000D.BIN	0:0F	1	10	1FD3	あ、アンタ達、何て事を{02:08}‥！\n<wait>	My goodness! What are you people doing!?\n<wait>	reads: あ、アンタ達、何て事を‥‥‥‥！\n<wait> @from-v005
+m/MS000D.BIN	0:10	0	2	1FD2	娼婦：	Prostitute:	@from-v005
+m/MS000D.BIN	0:10	1	10	1FD3	な、何よアンタ達！\n{01:38}達に、何の恨みが{08:7B}{08:52}言うのよぉ！\n<wait>	What the hell is happening? I don't even know you people!\n<wait>	reads: な、何よアンタ達！\nアタシ達に、何の恨みがあるって言うのよぉ！\n<wait> @from-v005
+m/MS000D.BIN	0:11	0	16	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:11	1	32	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:11	2	48	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:11	3	54	1FD3	{08:45}{08:42}先{08:62}{08:5C}一本道{08:55}。\n時間が無い{02:08}‥急が{08:25}と！！\n<wait>	This is the final sprint. Let's hurry!\n<wait>	reads: ここから先は、もう一本道です。\n時間が無い‥‥‥‥急がないと！！\n<wait> @from-v005
+m/MS000D.BIN	0:11	4	116	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:11	5	122	1FD3	{08:45}{08:42}先{08:62}{08:5C}一本道ね。\n時間が無いわ{02:08}‥急が{08:25}と！！\n<wait>	This is the final sprint. Let's hurry!\n<wait>	reads: ここから先は、もう一本道ね。\n時間が無いわ‥‥‥‥急がないと！！\n<wait> @from-v005
+m/MS000D.BIN	0:11	6	181	1FD0	{08:45}{08:42}先{08:62}{08:5C}一本道の{08:85}だ。\nいよいよも{08:52}時間が無い{02:08}‥急がねば{08:7D}{08:25}。\n<wait>	This is the final sprint. You must hurry!\n<wait>	reads: ここから先は、もう一本道のはずだ。\nいよいよもって時間が無い‥‥‥‥急がねばならない。\n<wait> @from-v005
+m/MS000D.BIN	0:11	7	254	18	{08:45}{08:42}先{08:62}{08:5C}一本道だ。時間が無い、急ごう！！\n<wait>	This is the final sprint. Let's hurry!\n<wait>	reads: ここから先は、もう一本道だ。時間が無い、急ごう！！\n<wait> @from-v005
+m/MS000D.BIN	0:12	0	16	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:12	1	32	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:12	2	48	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:12	3	54	1FD3	{01:36}、弾薬庫の爆破が始ま{08:52}{08:83}{02:08}！\n間に合い{08:5A}{08:69}に{02:08}！\n<wait>	They are about to blow up the ammunitions storage any minute now...\nWe've gotta hurry if we want to make it in time!\n<wait>	reads: そろそろ、弾薬庫の爆破が始まってしまう‥‥‥！\n間に合いますように‥‥‥！\n<wait> @from-v005
+m/MS000D.BIN	0:12	4	118	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:12	5	124	1FD3	{01:36}、弾薬庫の爆破が始まるわ{02:08}！\nお願い！　間に合{08:52}{02:08}！\n<wait>	They are about to blow up the ammunitions storage any minute now...\nWe've gotta hurry if we want to make it in time!\n<wait>	reads: そろそろ、弾薬庫の爆破が始まるわ‥‥‥！\nお願い！　間に合って‥‥‥！\n<wait> @from-v005
+m/MS000D.BIN	0:12	6	187	1FD0	{01:36}弾薬庫の爆破が、始まる頃で{08:7B}。\n本当に時間が無い{02:08}‥急がねば{02:08}。\n<wait>	They are about to blow up the ammunitions storage any minute now...\nWe've gotta hurry if we want to make it in time!\n<wait>	reads: そろそろ弾薬庫の爆破が、始まる頃である。\n本当に時間が無い‥‥‥‥急がねば‥‥‥。\n<wait> @from-v005
+m/MS000D.BIN	0:12	7	260	18	{01:36}弾薬庫の爆破が始ま{08:52}{08:83}{02:08}\n間に合{08:52}くれよ！\n<wait>	They are about to blow up the ammunitions storage any minute now...\nWe've gotta hurry if we want to make it in time!\n<wait>	reads: そろそろ弾薬庫の爆破が始まってしまう‥‥‥\n間に合ってくれよ！\n<wait> @from-v005
+m/MS000D.BIN	0:13	0	5	1FD0	扉の向こう{08:42}、声が聞こえてくる{08:72}\n<wait>	You can hear people talking on the other side of the door...\n<wait>	reads: 扉の向こうから、声が聞こえてくる‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:13	1	46	1FD2	{01:07}：	Dantalion:	reads: ダンタリオン： @from-v005
+m/MS000D.BIN	0:13	2	52	1FD3	{08:47}私をはめ{08:69}とは小賢しい！\nせっかく目を掛けてや{08:52}{08:64}{08:5E}を{08:72}裏{03:12}お{08:52}！！\n<wait>	I go out of my way to make you my personal concubine,\nand this is how you pay me back? By betraying me!?\n<wait>	reads: この私をはめようとは小賢しい！\nせっかく目を掛けてやっていたものを‥‥裏切りおって！！\n<wait> @from-v005
+m/MS000D.BIN	0:13	3	130	1FD2	猫娘：	Nekogal:	@from-v005
+m/MS000D.BIN	0:13	4	138	1FD3	は{08:2E}{08:6A}て、とん{08:56}ござい{02:0A}{08:72}私は{02:08}\n<wait>	I... I've done no such thing, sir...\n<wait>	reads: はめるなんて、とんでもございません‥‥私は‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:13	5	179	1FD2	{01:07}：	Dantalion:	reads: ダンタリオン： @from-v005
+m/MS000D.BIN	0:13	6	185	1FD3	白々しい嘘はお止め！　薄汚い雌猫が！！\n{08:47}{01:1A}を欺{08:29}と思っ{08:14}の？\n<wait>	Cease your lies, you filthy bitch! You cannot fool me!\n<wait>	reads: 白々しい嘘はお止め！　薄汚い雌猫が！！\nこのわたくしを欺けると思っているの？\n<wait> @from-v005
+m/MS000D.BIN	0:13	7	259	1FD2	猫娘：	Nekogal:	@from-v005
+m/MS000D.BIN	0:13	8	267	1FD3	キャアッ！！\n<wait>	Eek!\n<wait>	@from-v005
+m/MS000D.BIN	0:13	9	293	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:13	10	299	1FD3	クソッ！\n<wait>	Oh no!\n<wait>	@from-v005
+m/MS000D.BIN	0:13	11	321	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:13	12	327	1FD3	行くぞ！！\n<wait>	Let's go!\n<wait>	@from-v005
+m/MS000D.BIN	0:13	13	352	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:13	14	358	1FD3	行きま{08:80}！\n<wait>	Let's go!\n<wait>	reads: 行きましょう！\n<wait> @from-v005
+m/MS000D.BIN	0:13	15	383	1FD2	{08:03}：	Emi:	reads: 英美： @from-ours
+m/MS000D.BIN	0:13	16	389	1FD3	行こう！！\n<wait>	Let's go!\n<wait>	@from-v005
+m/MS000D.BIN	0:13	17	409	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:13	18	415	1FD3	行くぞ！\n<wait>	Let's go!\n<wait>	@from-v005
+m/MS000D.BIN	0:13	19	438	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:13	20	444	1FD3	クソッ！\n<wait>	Oh no!\n<wait>	@from-v005
+m/MS000D.BIN	0:13	21	466	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:13	22	472	1FD3	行きま{08:80}！\n<wait>	Let's go!\n<wait>	reads: 行きましょう！\n<wait> @from-v005
+m/MS000D.BIN	0:13	23	497	1FD2	{08:03}：	Emi:	reads: 英美： @from-ours
+m/MS000D.BIN	0:13	24	503	1FD3	行こう！！\n<wait>	Let's go!\n<wait>	@from-v005
+m/MS000D.BIN	0:13	25	523	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:13	26	529	1FD3	行くぞ！\n<wait>	Let's go!\n<wait>	@from-v005
+m/MS000D.BIN	0:13	27	552	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:13	28	558	1FD3	まずい！\n<wait>	Oh no!\n<wait>	@from-v005
+m/MS000D.BIN	0:13	29	580	1FD2	{08:03}：	Emi:	reads: 英美： @from-ours
+m/MS000D.BIN	0:13	30	586	1FD3	行こう！！\n<wait>	Let's go!\n<wait>	@from-v005
+m/MS000D.BIN	0:13	31	606	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:13	32	612	1FD3	行きま{08:80}！\n<wait>	Let's go!\n<wait>	reads: 行きましょう！\n<wait> @from-v005
+m/MS000D.BIN	0:13	33	637	1FD2	{08:03}：	Emi:	reads: 英美： @from-ours
+m/MS000D.BIN	0:13	34	643	1FD3	まずいわ！　行くわよ！！\n<wait>	Oh no! Let's go!\n<wait>	@from-v005
+m/MS000D.BIN	0:13	35	693	1FB2	{01:2E}に飛び込む	Barge in	reads: 部屋に飛び込む; menu option, declared width 20 columns @from-v005
+m/MS000D.BIN	0:13	36	707	1FB2	様子を伺う	Observe	menu option, declared width 20 columns @from-v005
+m/MS000D.BIN	0:13	37	731	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS000D.BIN	0:13	38	734	00			
+m/MS000D.BIN	0:13	39	739	00	{04:FF}{08:62}{01:2E}の様子を伺{08:51}。\n<wait>		reads: は、部屋の様子を伺った。\n<wait> @rebase-new
+m/MS000D.BIN	0:13	40	766	1FBA	ぴたりと閉ざ{03:0C}たドア{08:62}中{08:42}の音を伝{08:28}のみで{08:7B}。\n<wait>	You press your ear against the door and listen.\n<wait>	reads: ぴたりと閉ざされたドアは、中からの音を伝えるのみである。\n<wait> @from-v005
+m/MS000D.BIN	0:13	41	821	1FD2	猫娘：	Nekogal:	@from-v005
+m/MS000D.BIN	0:13	42	829	1FD3	{02:08}う{08:72}あ{02:08}{08:72}\n<wait>	Hngh... Nnhm...\n<wait>	reads: ‥‥‥う‥‥あ‥‥‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:13	43	850	1FD2	{01:07}：	Dantalion:	reads: ダンタリオン： @from-v005
+m/MS000D.BIN	0:13	44	856	1FD3	ふん{08:72}大人しく{08:4A}{08:78}ばよい{08:5E}を{02:08}‥\n<wait>	If only you had stayed loyal to me,\nall of this could have been avoided...\n<wait>	reads: ふん‥‥大人しくしておればよいものを‥‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:13	45	897	1FD0	躊躇{08:13}暇は{08:25}。	Nekogal's life is in serious danger. You decide to barge in!\n<wait>	reads: 躊躇している暇はない。 @from-v005
+m/MS000D.BIN	0:13	46	915	00	{04:FF}は{01:2E}に躍り込{08:5F}！！\n<wait>		reads: は部屋に躍り込んだ！！\n<wait> @rebase-new
+m/MS000D.BIN	0:14	0	13	1FD0	{01:2E}の中に飛び込むと、{01:07}が猫娘を、今にも絞め殺さんと{08:13}\n{08:87}だ{08:51}。\n<wait>	You enter the room, only to find Nekogal being strangled by Dantalion.\n<wait>	reads: 部屋の中に飛び込むと、ダンタリオンが猫娘を、今にも絞め殺さんとしている\nところだった。\n<wait> @from-v005
+m/MS000D.BIN	0:14	1	106	1FD2	{01:07}：	Dantalion:	reads: ダンタリオン： @from-v005
+m/MS000D.BIN	0:14	2	112	1FD3	何だ貴様ら！？\n<wait>	And who the hell are you people!?\n<wait>	@from-v005
+m/MS000D.BIN	0:14	3	135	1FD0	突如{01:2E}に躍り込{08:5F}一行を見て、{01:07}は一瞬狼狽の色を見せた。\n{03:0B}{08:4D}も一瞬の事で、すぐに状況を理解{08:4B}{08:69}だ。\n<wait>	Though he briefly appears confused, it doesn't take long for Dantalion\nto put two and two together and figure out who you are.\n<wait>	reads: 突如部屋に躍り込んだ一行を見て、ダンタリオンは一瞬狼狽の色を見せた。\nしかし、それも一瞬の事で、すぐに状況を理解したようだ。\n<wait> @from-v005
+m/MS000D.BIN	0:14	4	241	1FD2	{01:07}：	Dantalion:	reads: ダンタリオン： @from-v005
+m/MS000D.BIN	0:14	5	247	1FD3	そうか{02:08}貴様ら{02:03}の仕業か{08:72}<wait>や{08:52}く{08:60}な{02:08}\n<wait>	Hmph. So, this is the human resistance I have been hearing about...\n<wait>You've done quite well making it this far...\n<wait>	reads: そうか‥‥‥貴様らレジスタンスの仕業か‥‥<wait>やってくれたな‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:14	6	298	1FD0	そう言うと{01:07}{08:62}掴んで{08:64}猫娘を離{08:4B}。\n<wait>	Having said that, he releases his grasp on Nekogal.\n<wait>	reads: そう言うとダンタリオンは、掴んでいた猫娘を離した。\n<wait> @from-v005
+m/MS000D.BIN	0:14	7	350	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:14	8	356	1FD3	今だわ！！　猫娘さん！　逃げて！！\n<wait>	Nekogal, now! Run!\n<wait>	@from-v005
+m/MS000D.BIN	0:14	9	407	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:14	10	413	1FD3	今{08:55}！！　逃げて下{08:49}！！\n<wait>	Now! Run!\n<wait>	reads: 今です！！　逃げて下さい！！\n<wait> @from-v005
+m/MS000D.BIN	0:14	11	454	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:14	12	460	1FD3	今だ！！　逃げろ！！\n<wait>	Now! Run!\n<wait>	@from-v005
+m/MS000D.BIN	0:14	13	497	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:14	14	503	1FD3	今だ！　逃げる{08:5F}！！\n<wait>	Now! Run!\n<wait>	reads: 今だ！　逃げるんだ！！\n<wait> @from-v005
+m/MS000D.BIN	0:14	15	549	1FB2	逃げる{08:5F}！	Run!	reads: 逃げるんだ！; menu option, declared width 20 columns @from-v005
+m/MS000D.BIN	0:14	16	561	1FB2	{01:07}許さん！	You're dead to me!	reads: ダンタリオン許さん！; menu option, declared width 20 columns @from-v005
+m/MS000D.BIN	0:14	17	585	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS000D.BIN	0:14	18	588	00			
+m/MS000D.BIN	0:14	19	593	00	{04:FF}{08:62}叫ぶと{01:07}に向き直り、剣を構{08:41}。\n<wait>		reads: は、叫ぶとダンタリオンに向き直り、剣を構えた。\n<wait> @rebase-new
+m/MS000D.BIN	0:14	20	634	1FBA	一瞬、{01:07}の注意がそ{08:2F}。\n{08:79}隙をついて、猫娘は素早い動きで出口へと駆け出{08:4B}。\n<wait>	This is enough to steal Dantalion's attention,\ngiving Nekogal just enough time to sprint for the exit.\n<wait>	reads: 一瞬、ダンタリオンの注意がそれる。\nその隙をついて、猫娘は素早い動きで出口へと駆け出した。\n<wait> @from-v005
+m/MS000D.BIN	0:14	21	716	1FD2	猫娘：	Nekogal:	@from-v005
+m/MS000D.BIN	0:14	22	724	1FD3	き{08:53}、助けを呼んでくるわ！　待{08:52}て！！\n<wait>	Just hold on! I'll call help!\n<wait>	reads: きっと、助けを呼んでくるわ！　待ってて！！\n<wait> @from-v005
+m/MS000D.BIN	0:14	23	776	00	{04:FF}{08:62}チャンスは今{08:86}{08:25}と思い、猫娘に向か{08:52}、逃げろと叫{08:5F}。\n<wait>	Knowing that you won't get a second chance, you shout at Nekogal to run.\n<wait>	reads: は、チャンスは今しかないと思い、猫娘に向かって、逃げろと叫んだ。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:14	24	841	1FD0	{08:79}声に反応し、猫娘は弱{08:52}いながらも持{08:2B}最大限の素早さで、\n{01:2E}の出口に向か{08:52}駆{08:43}。\n<wait>	She hesitates a little, but ultimately gets up and sprints for the exit.\n<wait>	reads: その声に反応し、猫娘は弱っていながらも持てる最大限の素早さで、\n部屋の出口に向かって駆けた。\n<wait> @from-v005
+m/MS000D.BIN	0:14	25	929	1FD2	猫娘：	Nekogal:	@from-v005
+m/MS000D.BIN	0:14	26	937	1FD3	き{08:53}、助けを呼んでくるわ！　待{08:52}て！！\n<wait>	Just hold on! I'll call help!\n<wait>	reads: きっと、助けを呼んでくるわ！　待ってて！！\n<wait> @from-v005
+m/MS000D.BIN	0:14	27	984	1FD2	{01:07}：	Dantalion:	reads: ダンタリオン： @from-v005
+m/MS000D.BIN	0:14	28	990	1FD3	そうはさ{08:66}！！\n<wait>	No you don't!\n<wait>	reads: そうはさせん！！\n<wait> @from-v005
+m/MS000D.BIN	0:14	29	1019	1F03	{08:20}{08:22}	{08:20}{08:22}	reads: まったいった
+m/MS000D.BIN	0:14	30	1027	1FD0	{01:07}はそう言い、逃げる猫娘に{08:0C}をかけ{08:69}と{08:13}！\n<wait>	However, before she is able to get out of the demon's reach,\nDantalion launches an attack towards her!\n<wait>	reads: ダンタリオンはそう言い、逃げる猫娘に攻撃をかけようとしている！\n<wait> @from-v005
+m/MS000D.BIN	0:14	31	1092	1FB2	{08:0C}を阻む	Defend her	reads: 攻撃を阻む; menu option, declared width 20 columns @from-v005
+m/MS000D.BIN	0:14	32	1102	1FB2	ほ{08:53}く	Stay back	reads: ほっとく; menu option, declared width 20 columns @from-v005
+m/MS000D.BIN	0:14	33	1122	0F	{01:3D}	{01:3D}	reads: ふたつ
+m/MS000D.BIN	0:14	34	1125	00			@rebase-new
+m/MS000D.BIN	0:14	35	1130	00	{04:FF}{08:62}猫娘に{08:0C}をかけ{08:69}と{08:8E}手を、間一髪で阻{08:5F}！！\n<wait>		reads: は、猫娘に攻撃をかけようとする手を、間一髪で阻んだ！！\n<wait>
+m/MS000D.BIN	0:14	36	1192	1FCD	{01:07}の{08:0C}が、逃げる猫娘の背後{08:42}迫る！！\n<wait>	The attack comes just inches away from connecting!\n<wait>	reads: ダンタリオンの攻撃が、逃げる猫娘の背後から迫る！！\n<wait> @from-v005
+m/MS000D.BIN	0:14	37	1239	1FC4	間一髪、猫娘は{08:79}{08:0C}をかわし、{01:2E}の外へと逃{08:60}{02:08}\n<wait>	Nekogal is thankfully able to dodge in time,\nand safely makes it to the exit.\n<wait>	reads: 間一髪、猫娘はその攻撃をかわし、部屋の外へと逃れた‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:14	38	1299	1FD0	そう言{08:52}、猫娘に{08:0C}をかけ{08:69}と{08:8E}手を	Fortunately 	reads: そう言って、猫娘に攻撃をかけようとする手を @from-v005
+m/MS000D.BIN	0:14	39	1338	0B	{08:37}が阻{08:5F}。\n<wait>	Sonoda is able to block the attack.\n<wait>	reads: 園田が阻んだ。\n<wait> @from-v005
+m/MS000D.BIN	0:14	40	1357	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:14	41	1363	1FD3	お前の相手{08:62}俺達だ！\n<wait>	She's not who you are fighting. We are!\n<wait>	reads: お前の相手は、俺達だ！\n<wait> @from-v005
+m/MS000D.BIN	0:14	42	1398	0B	{08:00}が阻{08:5F}。\n<wait>	Hayasaka is able to block the attack.\n<wait>	reads: 早坂が阻んだ。\n<wait> @from-v005
+m/MS000D.BIN	0:14	43	1417	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:14	44	1423	1FD3	お前の相手はこっちだぜ！！\n<wait>	She's not who you are fighting. We are!\n<wait>	@from-v005
+m/MS000D.BIN	0:14	45	1464	0B	{08:39}が阻{08:5F}。\n<wait>	Kamikawa is able to block the attack.\n<wait>	reads: 上河が阻んだ。\n<wait> @from-v005
+m/MS000D.BIN	0:14	46	1483	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:14	47	1489	1FD3	やらせはし{08:25}ッ！\n<wait>	Oh no you don't!\n<wait>	reads: やらせはしないッ！\n<wait> @from-v005
+m/MS000D.BIN	0:14	48	1520	0B	{08:03}が阻{08:5F}。\n<wait>	Emi is able to block the attack.\n<wait>	reads: 英美が阻んだ。\n<wait> @from-v005
+m/MS000D.BIN	0:14	49	1539	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:14	50	1545	1FD3	アンタの相手{08:62}こっちよッ！\n<wait>	She's not who you are fighting. We are!\n<wait>	reads: アンタの相手は、こっちよッ！\n<wait> @from-v005
+m/MS000D.BIN	0:14	51	1580	1FD2	{01:07}：	Dantalion:	reads: ダンタリオン： @from-v005
+m/MS000D.BIN	0:14	52	1586	1FD3	こしゃくな{08:72}まあ{08:7F}、あんな娼婦風情{08:90}に{08:56}{08:59}わ。\n<wait>	Hmph... Whatever. The fate of a whore concerns me not.\n<wait>	reads: こしゃくな‥‥まあいい、あんな娼婦風情どうにでもなるわ。\n<wait> @from-v005
+m/MS000D.BIN	0:14	53	1641	1FD2	{01:07}：	Dantalion:	reads: ダンタリオン： @from-v005
+m/MS000D.BIN	0:14	54	1647	1FD3	まず{08:62}お前達{08:42}血祭りに上げてく{08:2F}ッ！！\n<wait>	Come! Allow me to feast on your blood!\n<wait>	reads: まずは、お前達から血祭りに上げてくれるッ！！\n<wait> @from-v005
+m/MS000D.BIN	0:14	55	1697	1EBE	{01:00}{01:04}	{01:00}{01:04}	reads: 早坂達也西野義雄
+m/MS000D.BIN	0:14	56	1703	00	d{04:FF}	d{04:FF}	reads: d
+m/MS000D.BIN	0:14	57	1707	00	d	d	
+m/MS000D.BIN	0:14	58	1730	1F82	p	p	
+m/MS000D.BIN	0:14	59	1733	00	{01:B2}{=E9}{=00}	{01:B2}{=E9}{=00}	reads: {=E9}{=00}
+m/MS000D.BIN	0:14	60	1754	1FD2	{01:07}：	Dantalion:	reads: ダンタリオン： @from-v005
+m/MS000D.BIN	0:14	61	1760	1FD3	{08:47}私が{08:72}！　{02:0B}風情に{08:73}目に遭わ{03:0C}るど{08:72}！\n<wait>	How... How could I be bested by mere humans...?\n<wait>	reads: この私が‥‥！　人間風情にこんな目に遭わされるど‥‥！\n<wait> @from-v005
+m/MS000D.BIN	0:14	62	1809	1FD2	{01:07}：	Dantalion:	reads: ダンタリオン： @from-v005
+m/MS000D.BIN	0:14	63	1815	1FD3	おぼえてらっしゃい！\n今に、貴方達のしでか{08:4B}事を後悔{02:0D}あげる！！\n<wait>	Mark my words! I will make you pay for this humiliation!\n<wait>	reads: おぼえてらっしゃい！\n今に、貴方達のしでかした事を後悔させてあげる！！\n<wait> @from-v005
+m/MS000D.BIN	0:14	64	1887	1FD0	{01:07}{08:62}煙の{08:69}にかき消えて{08:1F}{02:08}\n<wait>	With that, Dantalion turns into smoke and vanishes.\n<wait>	reads: ダンタリオンは、煙のようにかき消えてしまった‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:14	65	1931	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:14	66	1937	1FD3	ふん！　いつ{08:56}相手に{08:1A}やるぜ！！\n<wait>	I'd like to see you try!\n<wait>	reads: ふん！　いつでも相手になってやるぜ！！\n<wait> @from-v005
+m/MS000D.BIN	0:14	67	1986	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:14	68	1992	1FD3	いつ{08:56}相手に{08:59}わよ！！\n<wait>	I'd like to see you try!\n<wait>	reads: いつでも相手になるわよ！！\n<wait> @from-v005
+m/MS000D.BIN	0:14	69	2031	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:14	70	2037	1FD3	ふん！　いつ{08:56}相手に{08:59}ぜ！\n<wait>	I'd like to see you try!\n<wait>	reads: ふん！　いつでも相手になるぜ！\n<wait> @from-v005
+m/MS000D.BIN	0:14	71	2080	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:14	72	2086	1FD3	月並みな台詞{08:55}ねぇ{02:08}。\n<wait>	That's the lamest comeback line I've heard in my life...\n<wait>	reads: 月並みな台詞ですねぇ‥‥‥。\n<wait> @from-v005
+m/MS000D.BIN	0:14	73	2117	1FD0	そこへ猫娘に先導{03:0C}た、他の部隊が飛び込んで{08:1E}。\n<wait>	It is there that Nekogal returns,\nfollowed by soldiers from another squad.\n<wait>	reads: そこへ猫娘に先導された、他の部隊が飛び込んできた。\n<wait> @from-v005
+m/MS000D.BIN	0:14	74	2172	1FD2	男性：	Man:	@from-v005
+m/MS000D.BIN	0:14	75	2180	1FD3	{01:07}はどこだ！？\n<wait>	Where is Dantalion!?\n<wait>	reads: ダンタリオンはどこだ！？\n<wait> @from-v005
+m/MS000D.BIN	0:14	76	2208	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:14	77	2214	1FD3	奴{08:62}形勢が不利と見て、逃げてしま{08:89}{08:4B}{08:72}\n<wait>	Unfortunately, he was able to get away...\n<wait>	reads: 奴は、形勢が不利と見て、逃げてしまいました‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:14	78	2269	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:14	79	2285	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:14	80	2301	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:14	81	2326	1FB2	状況説明	The thing is...	menu option, declared width 20 columns @from-v005
+m/MS000D.BIN	0:14	82	2336	1FB2	無言	Say nothing	menu option, declared width 20 columns @from-v005
+m/MS000D.BIN	0:14	83	2354	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS000D.BIN	0:14	84	2357	00			
+m/MS000D.BIN	0:14	85	2364	00	{04:FF}は黙{08:52}{08:64}{02:08}‥\n<wait>	You decide to say nothing.\n<wait>	reads: は黙っていた‥‥‥‥\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:14	86	2387	1FD2	男性：	Man:	@from-v005
+m/MS000D.BIN	0:14	87	2395	1FD3	{08:90}{08:4B}？　奴はどこに{08:72}？\n<wait>	Hmm? Did you not hear me?\n<wait>	reads: どうした？　奴はどこに‥‥？\n<wait> @from-v005
+m/MS000D.BIN	0:14	88	2426	1FD0	{08:47}{08:7E}黙{08:52}い{08:54}、余計な疑いを受{08:29}{08:74}{08:8C}。\n<wait>	Staying silent is only going to cast unneeded suspicion on your team.\n<wait>	reads: このまま黙っていても、余計な疑いを受けるだけだろう。\n<wait> @from-v005
+m/MS000D.BIN	0:14	89	2475	00	{04:FF}は状況を説明{08:4B}。\n<wait>	You decide to explain what happened.\n<wait>	reads: は状況を説明した。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:14	90	2502	1FD2	男性：	Man:	@from-v005
+m/MS000D.BIN	0:14	91	2510	1FD3	そうか{08:72}奴を取り逃{08:4A}{08:1F}か{08:72}\n<wait>	Huh. So the bastard got away...\n<wait>	reads: そうか‥‥奴を取り逃してしまったか‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:14	92	2545	1FD2	男性：	Man:	@from-v005
+m/MS000D.BIN	0:14	93	2553	1FD3	{03:0B}大{08:4B}{08:5E}だ。\nあの{01:07}を退{08:43}{08:77}{08:42}な！\n<wait>	Still, the fact that you were able to stand up against\na demon of his level is pretty impressive in and of itself.\n<wait>	reads: しかし、大したものだ。\nあのダンタリオンを退けたのだからな！\n<wait> @from-v005
+m/MS000D.BIN	0:14	94	2595	1FD2	女性：	Woman:	@from-v005
+m/MS000D.BIN	0:14	95	2603	1FD3	アンタ達、見直{08:4B}よ！\n<wait>	Totally! I've totally changed my view on you.\n<wait>	reads: アンタ達、見直したよ！\n<wait> @from-v005
+m/MS000D.BIN	0:14	96	2632	1FD2	男性：	Man:	@from-v005
+m/MS000D.BIN	0:14	97	2640	1FD3	さあ、基地に戻ろう。\n	Anyway, let's head back to base.\n	@from-v005
+m/MS000D.BIN	0:14	98	2669	1F04	{08:21}{08:20}{08:22}早く手当てを{08:4A}やら{08:25}とな！\n<wait>		reads: ていったまったいった早く手当てをしてやらないとな！\n<wait>
+m/MS000D.BIN	0:14	99	2711	18	{01:37}がお待ちかねだぜ！\n<wait>	The boss is waiting!\n<wait>	reads: リーダーがお待ちかねだぜ！\n<wait> @from-v005
+m/MS000D.BIN	0:15	0	50	1FD2	声：	Voice:	@from-v005
+m/MS000D.BIN	0:15	1	56	1FD3	定刻通り、弾薬庫の爆破を始{08:2E}！\n<wait>	The explosives have been set!\nFire in the hole!\n<wait>	reads: 定刻通り、弾薬庫の爆破を始める！\n<wait> @from-v005
+m/MS000D.BIN	0:15	2	126	1FD0	{08:79}{08:65}が、切{08:2F}か切れ{08:25}かの内に、爆発音が連続{08:4A}聞こえて{08:1E}。\n<wait>	The broadcast is followed by the sound of an explosion in the distance.\n<wait>	reads: その通信が、切れるか切れないかの内に、爆発音が連続して聞こえてきた。\n<wait> @from-v005
+m/MS000D.BIN	0:15	3	196	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:15	4	202	1FD3	{08:1F}！　{08:5C}始ま{08:52}{08:1F}ぞ！\n<wait>	Crap! They've started already!\n<wait>	reads: しまった！　もう始まってしまったぞ！\n<wait> @from-v005
+m/MS000D.BIN	0:15	5	236	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:15	6	242	1FD3	急ごう！\n<wait>	Let's hurry!\n<wait>	@from-v005
+m/MS000D.BIN	0:15	7	265	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:15	8	271	1FD3	急ぎま{08:80}！\n<wait>	Let's hurry!\n<wait>	reads: 急ぎましょう！\n<wait> @from-v005
+m/MS000D.BIN	0:15	9	296	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:15	10	302	1FD3	急がなきゃ！\n<wait>	Let's hurry!\n<wait>	@from-v005
+m/MS000D.BIN	0:15	11	326	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:15	12	345	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:15	13	351	1FD3	{08:1F}！　{08:5C}始ま{08:52}{08:1F}ぞ！\n<wait>	Crap! They've started already!\n<wait>	reads: しまった！　もう始まってしまったぞ！\n<wait> @from-v005
+m/MS000D.BIN	0:15	14	407	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:15	15	413	1FD3	{08:1F}！　{08:5C}始{08:20}のか！\n<wait>	Crap! They've started already!\n<wait>	reads: しまった！　もう始まったのか！\n<wait> @from-v005
+m/MS000D.BIN	0:15	16	459	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:15	17	465	1FD3	{08:1F}！　{08:5C}始{08:20}のね！？\n<wait>	Crap! They've started already!\n<wait>	reads: しまった！　もう始まったのね！？\n<wait> @from-v005
+m/MS000D.BIN	0:15	18	497	1FD0	弾薬庫の爆破が始ま{08:52}{08:1F}。\n<wait>	It sounds like they have started already.\n<wait>	reads: 弾薬庫の爆破が始まってしまった。\n<wait> @from-v005
+m/MS000D.BIN	0:15	19	528	1FBA	急が{08:25}と、{01:07}の足止めを{08:13}猫娘の命が危{08:25}。\n<wait>	Nekogal is going to die if we don't hurry.\n<wait>	reads: 急がないと、ダンタリオンの足止めをしている猫娘の命が危ない。\n<wait> @from-v005
+m/MS000D.BIN	0:15	20	575	1FBA	早く行かなくては{02:08}‥\n<wait>	We need to hurry...\n<wait>	reads: 早く行かなくては‥‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:15	21	627	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:15	22	633	1FD3	今戻る{08:6A}て、{08:7A}事は出来{08:25}！！\n<wait>	There's no way that we can turn back now!\n<wait>	reads: 今戻るなんて、そんな事は出来ない！！\n<wait> @from-v005
+m/MS000D.BIN	0:15	23	676	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:15	24	692	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:15	25	708	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:15	26	727	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:15	27	733	1FD3	ふざけんな！！　	The hell do you think you're doing, Katsuragi!?\n<wait>	@from-v005
+m/MS000D.BIN	0:15	28	753	00	{04:FF}ッ！！！\n<wait>		reads: ッ！！！\n<wait> @rebase-new
+m/MS000D.BIN	0:15	29	777	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:15	30	783	1FD3	猫娘さんの命が危{08:25}のよ！\n<wait>	Nekogal is going to die if we don't hurry!\n<wait>	reads: 猫娘さんの命が危ないのよ！\n<wait> @from-v005
+m/MS000D.BIN	0:15	31	822	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:15	32	828	1FD3	猫娘さんの命が危{08:25}{08:5F}ぞ！！\n<wait>	Nekogal is going to die if we don't hurry!\n<wait>	reads: 猫娘さんの命が危ないんだぞ！！\n<wait> @from-v005
+m/MS000D.BIN	0:15	33	869	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:15	34	875	1FD3	猫娘さんの命が危{08:25}ん{08:55}よ！！\n<wait>	Nekogal is going to die if we don't hurry!\n<wait>	reads: 猫娘さんの命が危ないんですよ！！\n<wait> @from-v005
+m/MS000D.BIN	0:15	35	913	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:15	36	932	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:15	37	967	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:15	38	994	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:15	39	1005	1FD0	今戻れば、足止めを{08:13}猫娘の命{08:62}{08:6C}に失わ{08:2F}。\n<wait>	Nekogal is going to die if you don't hurry.\n<wait>	reads: 今戻れば、足止めをしている猫娘の命は、完全に失われる。\n<wait> @from-v005
+m/MS000D.BIN	0:15	40	1054	1FBA	さらに、足止めが無く{08:16}事によ{08:52}、他のメンバーも危険にさら{03:0C}る。\n<wait>	Not only that, you'd also be endangering the other teams.\n<wait>	reads: さらに、足止めが無くなった事によって、他のメンバーも危険にさらされる。\n<wait> @from-v005
+m/MS000D.BIN	0:15	41	1123	1FBA	戻っ{08:14}場合では{08:25}{02:08}‥\n<wait>	There really is no turning back now...\n<wait>	reads: 戻っている場合ではない‥‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:16	0	17	1F03	{=88}{=21}	{=88}{=21}	
+m/MS000D.BIN	0:16	1	23	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:16	2	29	1FD3	後{08:5C}少しね！\n<wait>	Just a bit further!\n<wait>	reads: 後もう少しね！\n<wait> @from-v005
+m/MS000D.BIN	0:16	3	50	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:16	4	56	1FD3	{08:0B}人の娘が心配だ。無理やり引き止め{08:14}{08:8C}{08:42}な！\n<wait>	I'm worried about Nekogal. She's fighting for her life there!\n<wait>	reads: 悪魔人の娘が心配だ。無理やり引き止めているだろうからな！\n<wait> @from-v005
+m/MS000D.BIN	0:16	5	109	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:16	6	115	1FD3	{01:31}でいてくれよ！　{08:5C}死人はたくさ{08:5F}！！\n<wait>	Please be safe! I don't want there to be any more casualties!\n<wait>	reads: 無事でいてくれよ！　もう死人はたくさんだ！！\n<wait> @from-v005
+m/MS000D.BIN	0:16	7	168	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:16	8	174	1FD3	後{08:5C}少しね！\n<wait>	Just a bit further!\n<wait>	reads: 後もう少しね！\n<wait> @from-v005
+m/MS000D.BIN	0:16	9	200	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:16	10	206	1FD3	{08:8F}、猫娘が心配だ！　早く行こう！\n{08:5C}、死人はたくさ{08:5F}！\n<wait>	I'm worried about Nekogal. Let's hurry!\nI don't want there to be any more casualties.\n<wait>	reads: だが、猫娘が心配だ！　早く行こう！\nもう、死人はたくさんだ！\n<wait> @from-v005
+m/MS000D.BIN	0:16	11	274	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:16	12	280	1FD3	猫娘さんが心配{08:55}！　早く行きま{08:80}！\n{08:5C}、死人はたくさん{08:55}！\n<wait>	I'm worried about Nekogal. Let's hurry!\nI don't want there to be any more casualties.\n<wait>	reads: 猫娘さんが心配です！　早く行きましょう！\nもう、死人はたくさんです！\n<wait> @from-v005
+m/MS000D.BIN	0:16	13	352	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:16	14	363	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:16	15	369	1FD3	{08:56}、猫娘さんが心配だわ！　{08:5C}、死人はたくさんよ！！\n<wait>	I'm worried about Nekogal. Let's hurry!\nI don't want there to be any more casualties.\n<wait>	reads: でも、猫娘さんが心配だわ！　もう、死人はたくさんよ！！\n<wait> @from-v005
+m/MS000D.BIN	0:16	16	434	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:16	17	440	1FD3	後少し{08:55}ね！！\n<wait>	Just a bit further!\n<wait>	reads: 後少しですね！！\n<wait> @from-v005
+m/MS000D.BIN	0:16	18	476	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:16	19	498	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:16	20	504	1FD3	後、{08:5C}少しだな{02:08}‥\n<wait>	Just a bit further!...\n<wait>	reads: 後、もう少しだな‥‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:16	21	536	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:16	22	558	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:16	23	569	1FD0	後{08:5C}少しで、{01:07}の{08:40}{01:2E}で{08:7B}。\n<wait>	Just a bit further!\n<wait>	reads: 後もう少しで、ダンタリオンのいる部屋である。\n<wait> @from-v005
+m/MS000D.BIN	0:16	24	602	1FBA	今頃、猫娘は必死で足止め{08:13}{08:8C}。\n早く行か{08:25}と、彼女の命が危{08:25}{02:08}。\n<wait>	Nekogal is fighting for her life.\nIf you don't hurry, she's a goner...\n<wait>	reads: 今頃、猫娘は必死で足止めしているだろう。\n早く行かないと、彼女の命が危ない‥‥‥。\n<wait> @from-v005
+m/MS000D.BIN	0:16	25	738	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:16	26	744	1FD3	{08:47}期に及んで何を考え{08:2B}{08:5F}よ！！\n<wait>	What the hell do you think you're doing!?\n<wait>	reads: この期に及んで何を考えてるんだよ！！\n<wait> @from-v005
+m/MS000D.BIN	0:16	27	788	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:16	28	794	1FD3	人の命がかかっ{08:2B}のよ！！！\n<wait>	A person's life is at stake here!\n<wait>	reads: 人の命がかかってるのよ！！！\n<wait> @from-v005
+m/MS000D.BIN	0:16	29	837	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:16	30	843	1FD3	人の命がかかっ{08:14}ん{08:55}よ！？\n<wait>	A person's life is at stake here!\n<wait>	reads: 人の命がかかっているんですよ！？\n<wait> @from-v005
+m/MS000D.BIN	0:16	31	884	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:16	32	890	1FD3	人の命がかかっ{08:2B}{08:5F}ぞ！？\n<wait>	A person's life is at stake here!\n<wait>	reads: 人の命がかかってるんだぞ！？\n<wait> @from-v005
+m/MS000D.BIN	0:16	33	924	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:16	34	943	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:16	35	959	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:16	36	965	1FD3	今更、何を考え{08:2B}ん{08:55}か！？\n	What do you think you're doing!?\n	reads: 今更、何を考えてるんですか！？\n @from-v005
+m/MS000D.BIN	0:16	37	1013	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:16	38	1019	1FD3	ちょ{08:53}！　今更何を考え{08:2B}のよ！！\n<wait>	What do you think you're doing!?\n<wait>	reads: ちょっと！　今更何を考えてるのよ！！\n<wait> @from-v005
+m/MS000D.BIN	0:16	39	1063	1FD0	今更、戻る{08:46}など出来はし{08:25}。戻れば、死は確実{08:6B}だ。\n<wait>	Your death is certain if you turn back now.\n<wait>	reads: 今更、戻ることなど出来はしない。戻れば、死は確実なのだ。\n<wait> @from-v005
+m/MS000D.BIN	0:16	40	1120	1FBA	{08:7C}、少し{08:56}生き残る確立の高い方を選ぶのが賢明{08:8C}。\n<wait>	However low your chance at victory is,\nat this point, you might as well give it a shot.\n<wait>	reads: ならば、少しでも生き残る確立の高い方を選ぶのが賢明だろう。\n<wait> @from-v005
+m/MS000D.BIN	0:18	0	24	1FD2	バール兵：	Baal Soldier:	@from-v005
+m/MS000D.BIN	0:18	1	36	1FD3	ん？　お前ら見かけ{08:25}顔だな。\n<wait>新入りか？{02:08}いや{08:72}\n<wait>	Hmm? I don't think I recognize you people.\n<wait>Are you new? Wait, no, that can't be...\n<wait>	reads: ん？　お前ら見かけない顔だな。\n<wait>新入りか？‥‥‥いや‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:18	2	104	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:18	3	110	1FD3	やばい、ばれ{01:29}。\n<wait>	Crap! Our cover's blown. <wait>	reads: やばい、ばれそうだ。\n<wait> @from-v005
+m/MS000D.BIN	0:18	4	135	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:18	5	141	1FD3	仕方が無い！！\n<wait>	We've gotta take him out!\n<wait>	@from-v005
+m/MS000D.BIN	0:18	6	172	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:18	7	178	1FD3	くっ！　{08:73}所で失敗は出来ん！\n<wait>	Crap! Our cover's blown. <wait>	reads: くっ！　こんな所で失敗は出来ん！\n<wait> @from-v005
+m/MS000D.BIN	0:18	8	215	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:18	9	221	1FD3	仕方が無い！！\n<wait>	We've gotta take him out!\n<wait>	@from-v005
+m/MS000D.BIN	0:18	10	252	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:18	11	258	1FD3	{02:08}ば{08:2F}訳に{08:26}か{08:25}{02:08}\n<wait>	Crap! Our cover's blown. <wait>	reads: ‥‥‥ばれる訳にはいかない‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:18	12	285	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:18	13	291	1FD3	仕方が無い！！\n<wait>	We've gotta take him out!\n<wait>	@from-v005
+m/MS000D.BIN	0:18	14	322	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:18	15	328	1FD3	{08:72}まず{02:08}ばれそう{02:08}\n<wait>	Crap! Our cover's blown. <wait>	reads: ‥‥まず‥‥‥ばれそう‥‥‥\n<wait> @from-v005
+m/MS000D.BIN	0:18	16	355	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:18	17	361	1FD3	仕方{08:25}わ！！\n<wait>	We've gotta take him out!\n<wait>	reads: 仕方ないわ！！\n<wait> @from-v005
+m/MS000D.BIN	0:18	18	385	1FD0	{08:47}ま{08:71}{08:62}正体がばれて{08:83}{02:08}‥\n	Your cover's about to be blown.\n	reads: このままでは、正体がばれてしまう‥‥‥‥\n @from-v005
+m/MS000D.BIN	0:18	19	428	1FB2	戦う	Fight	menu option, declared width 20 columns @from-v005
+m/MS000D.BIN	0:18	20	434	1FB2	逃げる	Run	menu option, declared width 20 columns @from-v005
+m/MS000D.BIN	0:18	21	454	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS000D.BIN	0:18	22	457	00			
+m/MS000D.BIN	0:18	23	460	1FBA	{08:47}{08:7E}逃{08:44}と{08:4A}も、警戒{03:0C}てしまい、作戦全体の失敗を招く{08:8C}。\n<wait>	If even if you do manage to run,\nthe soldier is likely going to raise the alarm.\n<wait>	reads: このまま逃げたとしても、警戒されてしまい、作戦全体の失敗を招くだろう。\n<wait> @from-v005
+m/MS000D.BIN	0:18	24	523	1FBA	{08:7C}、戦{08:52}{08:47}男の口を封じた方が良い。\n<wait>	Taking him out would be the safest choice.\n<wait>	reads: ならば、戦ってこの男の口を封じた方が良い。\n<wait> @from-v005
+m/MS000D.BIN	0:18	25	568	00	{04:FF}は仕方なく戦う事に{08:4B}。\n<wait>	You can no choice but to fight.\n<wait>	reads: は仕方なく戦う事にした。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:18	26	618	1EBE	{01:00}	{01:00}	reads: 早坂達也
+m/MS000D.BIN	0:18	27	621	00	{04:FF}	{04:FF}	reads: 
+m/MS000D.BIN	0:18	28	624	00	d{04:FF}	d{04:FF}	reads: d
+m/MS000D.BIN	0:18	29	628	00	d	d	
+m/MS000D.BIN	0:19	0	12	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:19	1	28	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:19	2	44	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:19	3	60	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:19	4	66	1FD3	{08:45}{08:71}来て、後戻りなど{08:8E}訳には行か{08:25}！！\n<wait>	We've come way too far to turn back now!\n<wait>	reads: ここまで来て、後戻りなどする訳には行かない！！\n<wait> @from-v005
+m/MS000D.BIN	0:19	5	117	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:19	6	123	1FD3	何考えて{08:5F}よ、お前は！！\n<wait>	What the hell do you think you're doing!?\n<wait>	reads: 何考えてんだよ、お前は！！\n<wait> @from-v005
+m/MS000D.BIN	0:19	7	161	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:19	8	167	1FD3	{08:45}{08:71}来て、後戻り{08:6A}て出来る訳無い{08:8C}！\n<wait>	We've come way too far to turn back now!\n<wait>	reads: ここまで来て、後戻りなんて出来る訳無いだろう！\n<wait> @from-v005
+m/MS000D.BIN	0:19	9	218	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:19	10	224	1FD3	{08:45}{08:71}来て、後戻り{08:6A}て出来{02:0A}！！\n<wait>	We've come way too far to turn back now!\n<wait>	reads: ここまで来て、後戻りなんて出来ません！！\n<wait> @from-v005
+m/MS000D.BIN	0:19	11	269	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:19	12	275	1FD3	{08:45}{08:71}来て、後戻り{08:6A}て出来{08:25}わ！！\n<wait>	We've come way too far to turn back now!\n<wait>	reads: ここまで来て、後戻りなんて出来ないわ！！\n<wait> @from-v005
+m/MS000D.BIN	0:19	13	317	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000D.BIN	0:19	14	323	1FD3	{08:45}{08:71}来て後戻り{08:6A}て、出来る訳{08:25}{08:8C}！？\n<wait>	We've come way too far to turn back now!\n<wait>	reads: ここまで来て後戻りなんて、出来る訳ないだろう！？\n<wait> @from-v005
+m/MS000D.BIN	0:19	15	374	1FD2	{08:37}：	Sonoda:	reads: 園田： @from-v005
+m/MS000D.BIN	0:19	16	384	00	{04:FF}！　何考え{08:2B}{08:5F}！？\n<wait>	What the hell do you think you're doing!?\n<wait>	reads: ！　何考えてるんだ！？\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:19	17	440	1FD2	{08:39}：	Kamikawa:	reads: 上河： @from-v005
+m/MS000D.BIN	0:19	18	450	00	{04:FF}さん！？　何考え{08:2B}ん{08:55}か！？\n<wait>	What the hell do you think you're doing!?\n<wait>	reads: さん！？　何考えてるんですか！？\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:19	19	508	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000D.BIN	0:19	20	518	00	{04:FF}くん！？　何考え{08:2B}のよ！\n<wait>	What the hell do you think you're doing!?\n<wait>	reads: くん！？　何考えてるのよ！\n<wait> @from-v005 @rebase-tagdiff
+m/MS000D.BIN	0:19	21	556	1FD0	{08:45}{08:71}来て、後戻りは出来{08:25}{02:08}\n<wait>	You've come way too far to turn back now...\n<wait>	reads: ここまで来て、後戻りは出来ない‥‥‥\n<wait> @from-v005

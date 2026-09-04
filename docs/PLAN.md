@@ -46,24 +46,34 @@ These exist because a session limit killed nine agents at once on 2026-09-03.
 
 `build` also leaves 972 `rel16` slots unrelocated because their displacement does not point at an instruction (see the 2026-09-04 fix below). Most are mistyped operands and want no relocation at all; a minority are real branches our tokenizer mis-tiles. Narrowing that set means improving `docs/opcodes.json`, not loosening the guard.
 
-## Play-test findings, 2026-09-04
+## Rebase on the Japanese original (2026-09-04, in progress)
 
-Reported: an early story gate not holding (the exam could be taken without talking to the friends first, and the Virtual Dungeon room was empty), crashes shortly after the aptitude test, and — the sharpest clue — **the terminal in the player's room opens the "ADAM-23" BBS in vanilla v0.05 but goes straight to the test in our build**, after which the test can be repeated indefinitely.
+**Decision:** stop diagnosing the hybrid; rebuild the patch on the untouched Japanese
+original and validate one section at a time. Source: `D:\BrowserDownloads\Giten-Megami-Tensei-Tokyo-Mokushiroku_Win_EN_Patched-game\Giten Megami Tensei\ddswin`
+(original data + XP compat patch only). The pipeline round-trips it byte-exact (1,103/1,103).
 
-`python -m tools.giten audit` (new) compares a build to its source on four axes: structural opcode stream, branch resolvability per file, branch destinations keyed on structural anchors, and the u16 image limit.
+What was learned that the rebase encodes:
 
-**Defect found and fixed** (commits `2509dfe`, corrected by `42cd5e3`): relocation trusted `docs/opcodes.json` on every slot typed `rel16`. That table is recovered, so three opcodes (`010`, `011`, `182`) carry a pair of small integers there, not a displacement. Rewriting them corrupted operands across ~30 files, several of them early-game (`MS0007/0008/0012/0015/0017/0018/001B/002A/0031/0033`). `MS0017` is the file that holds the "Open terminal" menu.
+- The terminal regression (BBS skipped, test repeatable) is **ours** (A/B against vanilla v0.05). Never explained by static analysis; the incremental build is the diagnostic.
+- Relocation must not touch opcodes `010`/`011`/`182` (`script.NOT_A_BRANCH`, measured). `audit` checks structure, branch destinations and image size; run it after every build.
+- Sneikkimies' `dds_en.exe` repurposes half-width-katakana font slots `0xA1`-`0xDF` as a bold Latin alphabet. Our extractor rendered those as kana and translators deleted them. **The rebase ships the original font** (`build/dds_jp.exe` = original `dds.exe` + one byte: `0x509A9` `01`->`80`, SHIFTJIS charset so Japanese renders on en-US). Bold text is a later, deliberate feature.
+- Text-capture mode: opcode `1B` on, `1C` off, `1E9C` clear, `1E9D`/`1E9E` render as a numeric/string field; 256-byte buffer, unbounded append. Original max 215 bytes/region. **TODO: checker rule, <=255 bytes of text between `1B` and `1C`.**
+- v0.05 shipped seven 16-byte demon names in a 15+NUL field (renamed, `@renamed-15` in `text_v3/p/_P_NAMES.tsv`).
+- v0.05 stripped ~3,240 `1F01 nn`+`00` idioms from the original. The rebase keeps them. Whether English renders cleanly with them in place is answered by the first play-test, not by more RE.
 
-The classification is per **opcode**, measured: a real displacement points at an instruction boundary, ~50% of offsets are one by chance, so a branch opcode scores near 100% and a mistyped slot scores at or below chance. A per-value rule was tried first and is wrong — it also skips real branches inside the 123 mis-tiled records, and left 39 branch destinations moved against 3 for the opcode rule (those 3 were already dead in the source). `tests/test_v2.py` re-derives the set from the game files.
+Tables: `text_v3/` (52,164 rows). `python -m tools.giten rebase` carried 14,479 of our translations and 25,194 of v0.05's (his now sit beside real Japanese and are reviewable; `@from-ours` / `@from-v005` / `@rebase-tagdiff` / `@rebase-unmatched` / `@rebase-new` in `note`). 7,779 rows untranslated, 3,785 spans the original has that v0.05 lacked. Report: `build/rebase-report.txt`. Checker on `text_v3` against the original: 34 `editable` errors (`MS610B` c15, duplicate ids in the original, stays Japanese), 34 `tokens` warnings (`ID00A2/A3`: our English references pool calls v0.05 added; review).
 
-Everything else audits clean: structural opcode stream identical in all 173 changed files, no branch destination moved, no container past the u16 PC limit, and the build resolves more branches than the source.
+Installs (all use `dds_jp.exe`, original font):
 
-**Still open.** Whether the reported symptoms are fixed is unverified — the user had already tested a build carrying the corruption. Retest `test-install` first; `vanilla-v005` is the A/B if it persists.
+| folder | contents | purpose |
+|---|---|---|
+| `test-install-JP\ddswin` | original data, untouched | **step 0**: identity — must play exactly like the original |
+| `test-install-v3\ddswin` | original + English for `m/MS000*`, `m/MS001*`, `m/MS006A`, `m/MS7F0*` | **step 1**: the opening slice |
+| `test-install\ddswin`, `test-install-B`, `vanilla-v005` | the v0.05-based builds | superseded; keep until step 1 passes |
 
-Two smaller things noticed while auditing, neither yet acted on:
+Rebuild a slice: `python -m tools.giten build --root <JP> --text text_v3 --out build/ddswin_v3 --only "m/MS001*.BIN" ...` then `verify --root <JP> --dir build/ddswin_v3`, `audit --root <JP> --dir build/ddswin_v3`, `install --from build/ddswin_v3 --to <test-install-v3>/ddswin --yes`. Files not in `--only` build as identity, so the tree is always complete.
 
-- 196 bytes of `0xFD`–`0xFF` were deleted from *text* runs across 136 spans in 36 files (worst: `MS0012` 42, `MS0031` 27, `MS610D` 25). They render as undefined characters, so translators dropped them as junk. They may be display control codes. Requires knowing what the renderer does with them.
-- 180 spans have a lone half-width-katakana byte immediately after a pool call (`{02:01}ﾙ`), and some were dropped the same way. Same open question.
+Next: (1) user plays step 0 then step 1 to the terminal; (2) if step 1 is clean, widen `--only` section by section; (3) add the capture-region checker rule; (4) review `@from-v005` rows against the Japanese; (5) translate the 7,779 + 3,785 remaining.
 
 ## If the two in-flight agents died
 

@@ -1,0 +1,468 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS610C.BIN	0:00	0	24	1F88	＞会話可能圏外{08:55}\n　会話対象に接近{08:4A}下{08:49}\n<wait>	>Out of conversation range.\n  Get closer to talk.\n<wait>	reads: ＞会話可能圏外です\n　会話対象に接近して下さい\n<wait> @from-ours
+m/MS610C.BIN	0:00	1	79	00	餘O		
+m/MS610C.BIN	0:00	2	83	00	馭d		
+m/MS610C.BIN	0:00	3	87	00	{=E9}{=14}	{=E9}{=14}	
+m/MS610C.BIN	2:01	0	9	00	{04:EF}は　何か訴え{08:14}{08:69}だ。\n	It seems to be pleading for something.\n	reads: は　何か訴えているようだ。\n @from-ours
+m/MS610C.BIN	2:01	1	48	1FB2	様子を見る	Wait and See	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	2:01	2	60	1FB2	ほ{08:53}く	Leave It	reads: ほっとく; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	2:01	3	80	0F	{01:2E}	{01:2E}	reads: 部屋
+m/MS610C.BIN	2:01	4	83	00			
+m/MS610C.BIN	2:01	5	95	00	{04:EF}は　何かを差し出{08:4B}。\n<wait>	It holds something out to you.\n<wait>	reads: は　何かを差し出した。\n<wait> @from-ours
+m/MS610C.BIN	2:01	6	141	00	{04:EF}は　	It	reads: は　 @from-ours
+m/MS610C.BIN	2:02	0	6	00	{04:EF}は　	It	reads: は　 @from-ours
+m/MS610C.BIN	2:02	1	31	1FB2	刺激{08:4A}みる	Poke It	reads: 刺激してみる; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	2:02	2	43	1FB2	様子を見る	Wait and See	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	2:02	3	55	1FB2	立ち去る	Leave	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	2:02	4	77	0F	{01:8F}	{01:8F}	reads: 
+m/MS610C.BIN	2:02	5	80	00	{02:01}ﾒ	Pentagramﾒ	reads: ペンタグランマﾒ @from-ours
+m/MS610C.BIN	2:02	6	84	00			
+m/MS610C.BIN	2:02	7	91	00	{04:EF}は　	It	reads: は　 @from-ours
+m/MS610C.BIN	2:02	8	119	00	{04:EF}は　突然	It suddenly	reads: は　突然 @from-ours
+m/MS610C.BIN	2:02	9	145	1F0E	そ{08:4A}　	And then	reads: そして　 @from-ours
+m/MS610C.BIN	2:02	10	155	00	{04:EF}は　突然	It suddenly	reads: は　突然 @from-ours
+m/MS610C.BIN	2:02	11	194	1F81	{04:FF}	{04:FF}	reads: 
+m/MS610C.BIN	2:02	12	229	00	{04:EF}は　{08:76}	It still	reads: は　まだ @from-ours
+m/MS610C.BIN	2:02	13	256	1FB2	刺激{08:4A}みる	Poke It	reads: 刺激してみる; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	2:02	14	268	1FB2	立ち去る	Leave	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	2:02	15	290	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS610C.BIN	2:02	16	293	00			
+m/MS610C.BIN	2:02	17	308	00	{04:EF}が　	It	reads: が　 @from-ours
+m/MS610C.BIN	2:03	0	12	00	{04:EF}は　何か差し出{08:13}。\n	It's holding something out.\n	reads: は　何か差し出している。\n @from-ours
+m/MS610C.BIN	2:03	1	49	1FB2	受け取る	Take It	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	2:03	2	59	1FB2	いら{08:25}	Pass	reads: いらない; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	2:03	3	79	0F	{01:17}	{01:17}	reads: おまえ
+m/MS610C.BIN	2:03	4	82	00			
+m/MS610C.BIN	2:03	5	102	00	{=EC}{=0D}	{=EC}{=0D}	
+m/MS610C.BIN	2:03	6	111	00	{04:EF}は　	It	reads: は　 @from-ours
+m/MS610C.BIN	2:03	7	120	0D	逃げ出{08:17}\n<wait>	ran off!\n<wait>	reads: 逃げ出した！\n<wait> @from-ours
+m/MS610C.BIN	2:03	8	144	18	{08:61}　逃げられ{08:25}！\n<wait>	...but couldn't get away!\n<wait>	reads: しかし　逃げられない！\n<wait> @from-ours
+m/MS610C.BIN	2:03	9	169	1FD1	！！！\n	!!!\n	@from-ours
+m/MS610C.BIN	2:03	10	188	00	{04:EF}は　恐れ{08:14}{08:69}だ。\n<wait>	It seems frightened.\n<wait>	reads: は　恐れているようだ。\n<wait> @from-ours
+m/MS610C.BIN	2:03	11	223	00	{04:EF}は　	It	reads: は　 @from-ours
+m/MS610C.BIN	2:03	12	241	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:10	0	26	00	{04:EF}は手招き{08:13}{08:69}だ\n	It seems to be beckoning you over.\n	reads: は手招きしているようだ\n @from-ours
+m/MS610C.BIN	9:10	1	59	1FB2	行か{08:25}	Don't Go	reads: 行かない; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:10	2	67	1FB2	行く	Go	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:10	3	86	00	{=E9}{=13}	{=E9}{=13}	
+m/MS610C.BIN	9:12	0	0	DATA	怒{08:51}{08:69}だ\n<wait>	Seems angry.\n<wait>	reads: 怒ったようだ\n<wait> @from-ours
+m/MS610C.BIN	9:13	0	11	00	{=E9}{=15}	{=E9}{=15}	
+m/MS610C.BIN	9:14	0	5	16	！！！\n	!!!\n	@from-ours
+m/MS610C.BIN	9:14	1	16	00	{04:EF}は恐れ{08:14}\n<wait>	It looks frightened.\n<wait>	reads: は恐れている\n<wait> @from-ours
+m/MS610C.BIN	9:14	2	40	00	{=EC}{=0E}	{=EC}{=0E}	
+m/MS610C.BIN	9:14	3	47	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:14	4	63	00	{04:EF}は怒{08:51}{08:69}だ\n<wait>	It seems to have gotten angry.\n<wait>	reads: は怒ったようだ\n<wait> @from-ours
+m/MS610C.BIN	9:15	0	4	00	{04:EF}は{02:0E}を見つめ{08:14}\n	It's staring right at you.\n	reads: はこちらを見つめている\n @from-ours
+m/MS610C.BIN	9:15	1	37	1FB2	近づく	Approach	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:15	2	45	1FB2	ＭＡＧをあげる	Give MAG	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:15	3	61	1FB2	見つ{08:2E}	Stare	reads: 見つめる; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:15	4	82	00	飃{02:00}{=E9}{=16}	飃Devil Buster{=E9}{=16}	reads: 飃デビルバスター{=E9}{=16} @from-ours
+m/MS610C.BIN	9:16	0	2	1FBA	{02:09}・・	{02:09}..	reads: ・・・・・ @from-ours
+m/MS610C.BIN	9:16	1	17	00	{04:EF}に	It	reads: に @from-ours
+m/MS610C.BIN	9:16	2	34	00	{04:EF}は足に	It grabs your leg.	reads: は足に @from-ours
+m/MS610C.BIN	9:16	3	68	1FB2	払う	Pay	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:16	4	74	1FB2	様子を見る	Wait and See	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:16	5	99	00	{=E9}{=1A}	{=E9}{=1A}	
+m/MS610C.BIN	9:16	6	112	00	驩d		
+m/MS610C.BIN	9:16	7	116	00	{=E9}{=18}	{=E9}{=18}	
+m/MS610C.BIN	9:18	0	4	00	{04:EF}は怒{08:51}{08:69}だ\n	It seems to have gotten angry.\n	reads: は怒ったようだ\n @from-ours
+m/MS610C.BIN	9:18	1	24	00	{=E9}{=19}	{=E9}{=19}	
+m/MS610C.BIN	9:19	0	4	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:1A	0	6	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:1A	1	17	00	{04:EF}は胴に	It grabs your torso.	reads: は胴に @from-ours
+m/MS610C.BIN	9:1A	2	51	1FB2	払う	Pay	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:1A	3	57	1FB2	様子を見る	Wait and See	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:1A	4	82	00	{=E9}{=20}	{=E9}{=20}	
+m/MS610C.BIN	9:1B	0	14	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:1C	0	6	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:1C	1	24	00	{=E9}{=1E}d	{=E9}{=1E}d	
+m/MS610C.BIN	9:1C	2	28	00	{=E9}{=1F}	{=E9}{=1F}	
+m/MS610C.BIN	9:1D	0	0	DATA	{02:09}・・	{02:09}..	reads: ・・・・・ @from-ours
+m/MS610C.BIN	9:1D	1	10	00	{04:EF}は無反応だ\n<wait>	It shows no reaction.\n<wait>	reads: は無反応だ\n<wait> @from-ours
+m/MS610C.BIN	9:1E	0	4	00	{04:EF}は怒{08:51}{08:69}だ\n<wait>	It seems to have gotten angry.\n<wait>	reads: は怒ったようだ\n<wait> @from-ours
+m/MS610C.BIN	9:1F	0	0	DATA	！！！	!!!	@from-ours
+m/MS610C.BIN	9:1F	1	10	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:20	0	6	00	{04:EF}はさらに	It further	reads: はさらに @from-ours
+m/MS610C.BIN	9:20	1	23	00	{04:EF}は首に	It grabs your neck.	reads: は首に @from-ours
+m/MS610C.BIN	9:20	2	57	1FB2	払う	Pay	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:20	3	63	1FB2	様子を見る	Wait and See	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:20	4	88	00	{=E9}{=22}	{=E9}{=22}	
+m/MS610C.BIN	9:21	0	14	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:22	0	6	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:22	1	13	0D	{02:09}・・\n	{02:09}..\n	reads: ・・・・・\n @from-ours
+m/MS610C.BIN	9:22	2	27	00	{=E9}{=26}	{=E9}{=26}	
+m/MS610C.BIN	9:23	0	0	DATA	突然　		
+m/MS610C.BIN	9:23	1	10	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:23	2	36	1FB2	吐き出す	Spit Out	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:23	3	46	1FB2	無抵抗	Comply	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:23	4	67	00	{=E9}{=25}	{=E9}{=25}	
+m/MS610C.BIN	9:24	0	10	0C	駄目だ！　	No good! 	@from-ours
+m/MS610C.BIN	9:24	1	23	0D	間に合わ{08:25}！\n	Not in time!\n	reads: 間に合わない！\n @from-ours
+m/MS610C.BIN	9:25	0	11	00	{04:EF}は思いとど{08:20}{08:69}だ\n	It seems to have thought better of it.\n	reads: は思いとどまったようだ\n @from-ours
+m/MS610C.BIN	9:26	0	0	DATA	！！！駄目だ！　	!!! No good! 	@from-ours
+m/MS610C.BIN	9:26	1	35	1FB2	耐{08:28}	Endure	reads: 耐える; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:26	2	41	1FB2	暴{08:2F}	Resist	reads: 暴れる; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:26	3	60	00	{=E9}{=2A}	{=E9}{=2A}	
+m/MS610C.BIN	9:27	0	2	1FBA	{02:09}・・	{02:09}..	reads: ・・・・・ @from-ours
+m/MS610C.BIN	9:27	1	29	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:27	2	36	0D	{02:09}・・	{02:09}..	reads: ・・・・・ @from-ours
+m/MS610C.BIN	9:27	3	46	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:27	4	61	00	{=E9}{=29}	{=E9}{=29}	
+m/MS610C.BIN	9:27	5	71	00	{04:FF}は気絶{08:4B}\n	You faint!\n	reads: は気絶した\n @from-ours
+m/MS610C.BIN	9:27	6	96	00	{=E9}{=31}	{=E9}{=31}	
+m/MS610C.BIN	9:27	7	105	18	{02:09}・・駄目だ！　	..... No good! 	reads: ・・・・・駄目だ！　 @from-ours
+m/MS610C.BIN	9:27	8	128	00	{04:FF}は	You	reads: は @from-ours
+m/MS610C.BIN	9:28	0	4	00	{04:EF}は機嫌が直{08:51}\n<wait>	It calms down.\n<wait>	reads: は機嫌が直った\n<wait> @from-ours
+m/MS610C.BIN	9:29	0	0	DATA	ついに	Finally,	@from-ours
+m/MS610C.BIN	9:2A	0	5	0D	{02:09}	{02:09}	reads: ・・・
+m/MS610C.BIN	9:2A	1	15	0D	{02:09}	{02:09}	reads: ・・・
+m/MS610C.BIN	9:2A	2	22	14	おお！	Ohh!	@from-ours
+m/MS610C.BIN	9:2A	3	32	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:2A	4	43	00	{=E9}{=2D}	{=E9}{=2D}	
+m/MS610C.BIN	9:2B	0	13	00	{=E9}{=2C}	{=E9}{=2C}	
+m/MS610C.BIN	9:2C	0	0	DATA	何か落ちて{08:64}\n<wait>	Something fell out.\n<wait>	reads: 何か落ちていた\n<wait> @from-ours
+m/MS610C.BIN	9:2D	0	10	00	{=E9}{=2F}	{=E9}{=2F}	
+m/MS610C.BIN	9:2E	0	0	DATA	！！！	!!!	@from-ours
+m/MS610C.BIN	9:2E	1	10	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:2F	0	7	00	{=E9}{=30}	{=E9}{=30}	
+m/MS610C.BIN	9:30	0	4	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:31	0	4	00	{04:EF}が	It	reads: が @from-ours
+m/MS610C.BIN	9:31	1	18	00	{04:EF}は体が痺{08:11}\n	Its body goes numb!\n	reads: は体が痺れた！\n @from-ours
+m/MS610C.BIN	9:32	0	0	DATA	{02:09}・・\n	{02:09}..\n	reads: ・・・・・\n @from-ours
+m/MS610C.BIN	9:32	1	16	00	{04:EF}は機嫌が直{08:51}{08:69}だ\n	It seems to have calmed down.\n	reads: は機嫌が直ったようだ\n @from-ours
+m/MS610C.BIN	9:32	2	38	0D	{02:09}	{02:09}	reads: ・・・
+m/MS610C.BIN	9:32	3	47	00	{=EC}{=01}	{=EC}{=01}	
+m/MS610C.BIN	9:32	4	64	00	{=E9}{=38}	{=E9}{=38}	
+m/MS610C.BIN	9:33	0	4	00	{04:F0}が	It	reads: が @from-ours
+m/MS610C.BIN	9:33	1	11	0D	{02:09}・・\n	{02:09}..\n	reads: ・・・・・\n @from-ours
+m/MS610C.BIN	9:33	2	24	0E	成功！\n	Success!\n	@from-ours
+m/MS610C.BIN	9:33	3	35	00	{04:FF}の	Your	reads: の @from-ours
+m/MS610C.BIN	9:33	4	46	00	{04:EF}を	hold on it.	reads: を @from-ours
+m/MS610C.BIN	9:34	0	0	DATA	{08:61}　	But 	reads: しかし　 @from-ours
+m/MS610C.BIN	9:35	0	4	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:35	1	15	00	{=E9}{=37}	{=E9}{=37}	
+m/MS610C.BIN	9:37	0	0	DATA	何か置い{08:21}\n<wait>	It leaves something behind.\n<wait>	reads: 何か置いていった\n<wait> @from-ours
+m/MS610C.BIN	9:38	0	4	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:39	0	16	1FBA	？？？\nいきなり	???\nSuddenly	@from-ours
+m/MS610C.BIN	9:39	1	35	00	{04:EF}が視界{08:42}姿が消{08:41}\n	It vanishes from sight.\n	reads: が視界から姿が消えた\n @from-ours
+m/MS610C.BIN	9:39	2	70	1FB2	立ち去る	Leave	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:39	3	80	1FB2	見回す	Look	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:39	4	101	00	{=E9}{=3A}	{=E9}{=3A}	
+m/MS610C.BIN	9:3A	0	9	00	颱		
+m/MS610C.BIN	9:3B	0	4	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:3B	1	11	0D	{08:86}も　	What's more, 	reads: しかも　 @from-ours
+m/MS610C.BIN	9:3B	2	36	1FB2	謝る	Oops	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:3B	3	42	1FB2	無視	Skip	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:3B	4	48	1FB2	{08:0C}	Attack	reads: 攻撃; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:3B	5	65	00	颯{02:00}髀	颯Devil Buster髀	reads: 颯デビルバスター髀 @from-ours
+m/MS610C.BIN	9:3C	0	6	00	{04:EF}	{04:EF}	reads: 
+m/MS610C.BIN	9:3C	1	13	14	の機嫌が直{08:51}{08:69}だ\n	's mood seems to have improved.\n	reads: の機嫌が直ったようだ\n @from-ours
+m/MS610C.BIN	9:3C	2	49	18	は怒っ{08:14}　{08:69}だ\n	's clearly furious.\n	reads: は怒っている　ようだ\n @from-ours
+m/MS610C.BIN	9:3C	3	70	0E	？？？\n<wait>	???\n<wait>	@from-ours
+m/MS610C.BIN	9:3C	4	87	00	{04:EF}は小刻みに震え出{08:17}\n	It starts trembling!\n	reads: は小刻みに震え出した！\n @from-ours
+m/MS610C.BIN	9:3C	5	124	1FB2	傍観	View	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:3C	6	130	1FB2	いじる	Poke	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:3C	7	151	00	{=E9}{=3D}	{=E9}{=3D}	
+m/MS610C.BIN	9:3D	0	7	14	手ごろな棒があ{08:51}\n{02:09}・・\n	There's a decent stick nearby.\n.....\n	reads: 手ごろな棒があった\n・・・・・\n @from-ours
+m/MS610C.BIN	9:3D	1	44	0C	手ごろな道具が無い\n	There's nothing decent to use.\n	@from-ours
+m/MS610C.BIN	9:3D	2	79	1FB2	手で触る	Touch It	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:3D	3	89	1FB2	諦{08:2E}	Quit	reads: 諦める; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:3D	4	108	00	顱		
+m/MS610C.BIN	9:3E	0	13	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:3E	1	23	0E	マグネタイトを\n欲しがっ{08:14}{08:69}だ\n	It seems to want\nsome Magnetite.\n	reads: マグネタイトを\n欲しがっているようだ\n @from-ours
+m/MS610C.BIN	9:3E	2	69	1FB2	あげる	Give	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:3E	3	77	1FB2	あげ{08:25}	Refuse	reads: あげない; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:3E	4	98	00	餔		
+m/MS610C.BIN	9:3F	0	0	DATA	怒{08:51}{08:69}だ\n<wait>	Seems\nangry.\n<wait>	reads: 怒ったようだ\n<wait> @from-ours
+m/MS610C.BIN	9:40	0	19	00	{04:EF}に回り込ま{08:60}\n<wait>	It circles around behind you!\n<wait>	reads: に回り込まれた\n<wait> @from-ours
+m/MS610C.BIN	9:40	1	45	18	後ろ{08:42}	From behind, 	reads: 後ろから @from-ours
+m/MS610C.BIN	9:40	2	55	00	{04:EF}が{03:07}{08:1C}\n<wait>	it lunges at you!\n<wait>	reads: が襲いかかってきた！\n<wait> @from-ours
+m/MS610C.BIN	9:41	0	4	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:41	1	15	00	颪		
+m/MS610C.BIN	9:41	2	21	0D	逃げ{08:21}\n<wait>	It flees.\n<wait>	reads: 逃げていった\n<wait> @from-ours
+m/MS610C.BIN	9:42	0	0	DATA	逃げ{08:21}\n	It flees.\n	reads: 逃げていった\n @from-ours
+m/MS610C.BIN	9:43	0	0	DATA	突然　		
+m/MS610C.BIN	9:44	0	2	1FBA	{02:09}・・	{02:09}..	reads: ・・・・・ @from-ours
+m/MS610C.BIN	9:44	1	15	00	髓！！！	髓!!!	@from-ours
+m/MS610C.BIN	9:44	2	27	0D	毒を受{08:43}\n<wait>	You've been poisoned!\n<wait>	reads: 毒を受けた\n<wait> @from-ours
+m/MS610C.BIN	9:45	0	7	00	飄		
+m/MS610C.BIN	9:45	1	13	0D	{03:07}{08:1C}\n<wait>	{03:07}{08:1C}\n<wait>	reads: 襲いかかってきた！\n<wait>
+m/MS610C.BIN	9:46	0	0	DATA	後ろ{08:42}{03:07}{08:1C}\n<wait>	It lunges at you from behind!\n<wait>	reads: 後ろから襲いかかってきた！\n<wait> @from-ours
+m/MS610C.BIN	9:47	0	0	DATA	{08:64}後に　何か落ちて{08:64}\n<wait>	After it left,\nsomething lay there.\n<wait>	reads: いた後に　何か落ちていた\n<wait> @from-ours
+m/MS610C.BIN	9:48	0	20	1F5F	？？？\n	???\n	@from-ours
+m/MS610C.BIN	9:48	1	31	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:48	2	42	00	{04:EF}はも{08:53}欲しがっ{08:14}\n	It wants more.\n	reads: はもっと欲しがっている\n @from-ours
+m/MS610C.BIN	9:48	3	77	1FB2	やる	Yes	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:48	4	83	1FB2	やら{08:25}	Decline	reads: やらない; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:48	5	104	00	餒		
+m/MS610C.BIN	9:48	6	110	18	希望の量を持{08:52}{08:24}！\n	You don't have enough on you!\n	reads: 希望の量を持っていない！\n @from-ours
+m/MS610C.BIN	9:49	0	20	1F5F	？？？\n<wait>	???\n<wait>	@from-ours
+m/MS610C.BIN	9:49	1	37	00	{04:EF}はさらに	It further	reads: はさらに @from-ours
+m/MS610C.BIN	9:49	2	54	00	{04:EF}はも{08:53}欲しがっ{08:14}\n	It wants more.\n	reads: はもっと欲しがっている\n @from-ours
+m/MS610C.BIN	9:49	3	89	1FB2	やる	Yes	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:49	4	95	1FB2	やら{08:25}	Decline	reads: やらない; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:49	5	116	00	餃		
+m/MS610C.BIN	9:49	6	122	18	希望の量を持{08:52}{08:24}！\n	You don't have enough on you!\n	reads: 希望の量を持っていない！\n @from-ours
+m/MS610C.BIN	9:4A	0	18	1F5F	？？？！！！\n	???!!!\n	record reaches an engine no-op opcode; verify in game @from-ours
+m/MS610C.BIN	9:4A	1	35	00	{04:EF}が突然　	It suddenly	record reaches an engine no-op opcode; verify in game; reads: が突然　 @from-ours
+m/MS610C.BIN	9:4A	2	53	18	希望の量を持{08:52}{08:24}！\n	You don't have enough on you!\n	record reaches an engine no-op opcode; verify in game; reads: 希望の量を持っていない！\n @from-ours
+m/MS610C.BIN	9:4A	3	82	00	{04:EF}の機嫌が悪く{08:16}\n<wait>	Its mood turns sour.\n<wait>	record reaches an engine no-op opcode; verify in game; reads: の機嫌が悪くなった\n<wait> @from-ours
+m/MS610C.BIN	9:4B	0	0	DATA	{02:09}・・\n	{02:09}..\n	reads: ・・・・・\n @from-ours
+m/MS610C.BIN	9:4B	1	11	00	{04:EF}は{02:0E}を見つめ{08:14}\n<wait>	It's staring right at you.\n<wait>	reads: はこちらを見つめている\n<wait> @from-ours
+m/MS610C.BIN	9:4C	0	12	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:4C	1	22	0E	怒っ{08:14}　{08:69}だ\n<wait>	It looks furious.\n<wait>	reads: 怒っている　ようだ\n<wait> @from-ours
+m/MS610C.BIN	9:4D	0	0	DATA	無反応だ\n<wait>	No response.\n<wait>	@from-ours
+m/MS610C.BIN	9:4E	0	12	00	{04:EF}は怒っ{08:14}　{08:69}だ\n<wait>	It looks furious.\n<wait>	reads: は怒っている　ようだ\n<wait> @from-ours
+m/MS610C.BIN	9:4F	0	0	DATA	！！！\n	!!!\n	@from-ours
+m/MS610C.BIN	9:4F	1	11	00	{04:EF}が	It	reads: が @from-ours
+m/MS610C.BIN	9:4F	2	24	0E	{08:86}も　	What's more, 	reads: しかも　 @from-ours
+m/MS610C.BIN	9:50	0	4	00	{04:EF}はかなり興奮{08:13}{08:69}だ\n	It seems quite worked up.\n	reads: はかなり興奮しているようだ\n @from-ours
+m/MS610C.BIN	9:50	1	41	1FB2	無視	Skip	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:50	2	47	1FB2	落ち着か{08:2A}	Calm It Down	reads: 落ち着かせる; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:50	3	59	1FB2	あおる	Rile	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:50	4	80	00	饐{02:00}餝	饐Devil Buster餝	reads: 饐デビルバスター餝 @from-ours
+m/MS610C.BIN	9:51	0	14	00	{04:EF}は何か	It has something...	reads: は何か @from-ours
+m/MS610C.BIN	9:52	0	11	12	ああ！！！\n	Ahh!!!\n	@from-ours
+m/MS610C.BIN	9:52	1	26	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:52	2	49	1FB2	あおる	Rile	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:52	3	57	1FB2	止{08:2E}	Stop	reads: 止める; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:52	4	76	00	餬		
+m/MS610C.BIN	9:52	5	86	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:52	6	99	0E	{08:61}　怒っ{08:14}　\n<wait>	But it's angry.\n<wait>	reads: しかし　怒っている　\n<wait> @from-ours
+m/MS610C.BIN	9:53	0	10	00	{04:EF}は怒っ{08:14}　\n<wait>	It's angry.\n<wait>	reads: は怒っている　\n<wait> @from-ours
+m/MS610C.BIN	9:53	1	38	00	{04:EF}はキレた！\n<wait>	It snaps!\n<wait>	reads: はキレた！\n<wait> @from-ours
+m/MS610C.BIN	9:53	2	59	1F0D	{08:61}　	But 	reads: しかし　 @from-ours
+m/MS610C.BIN	9:53	3	67	00	{04:EF}は耐え{08:14}！\n	it's holding back!\n	reads: は耐えている！\n @from-ours
+m/MS610C.BIN	9:53	4	96	1FB2	あおる	Rile	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:53	5	104	1FB2	や{08:2E}	Cancel	reads: やめる; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:53	6	123	00	餬		
+m/MS610C.BIN	9:54	0	10	00	{04:EF}は怒っ{08:14}　\n<wait>	It's angry.\n<wait>	reads: は怒っている　\n<wait> @from-ours
+m/MS610C.BIN	9:54	1	38	00	{04:EF}はキレた！\n<wait>	It snaps!\n<wait>	reads: はキレた！\n<wait> @from-ours
+m/MS610C.BIN	9:54	2	75	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:54	3	82	0D	自我崩壊を起こ{08:17}\n	It suffers a total mental breakdown!\n	reads: 自我崩壊を起こした！\n @from-ours
+m/MS610C.BIN	9:55	0	4	00	{04:EF}は何かをばらま{08:64}！\n<wait>	It scatters something everywhere!\n<wait>	reads: は何かをばらまいた！\n<wait> @from-ours
+m/MS610C.BIN	9:56	0	11	00	{04:EF}は恐慌状態に陥っ{08:14}！\n	It's thrown into a panic!\n	reads: は恐慌状態に陥っている！\n @from-ours
+m/MS610C.BIN	9:56	1	41	00	餮		
+m/MS610C.BIN	9:57	0	4	00	{04:EF}は何か差し出{08:4B}\n<wait>	It holds something out.\n<wait>	reads: は何か差し出した\n<wait> @from-ours
+m/MS610C.BIN	9:58	0	16	1FB2	{08:5C}一度	Again	reads: もう一度; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:58	1	24	1FB2	止{08:2E}	Stop	reads: 止める; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:58	2	43	00	饂		
+m/MS610C.BIN	9:59	0	18	00	{04:EF}は笑っ{08:14}！\n<wait>	It's laughing!\n<wait>	reads: は笑っている！\n<wait> @from-ours
+m/MS610C.BIN	9:59	1	51	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:59	2	64	18	ああ！！！\n	Ahh!!!\n	@from-ours
+m/MS610C.BIN	9:59	3	79	00	{04:EF}は{08:6C}に怒{08:51}\n<wait>	It's completely furious now.\n<wait>	reads: は完全に怒った\n<wait> @from-ours
+m/MS610C.BIN	9:5A	0	2	1FBA	＞{02:06}\n	>{02:06}	reads: ＞どうしますか？\n @from-ours
+m/MS610C.BIN	9:5A	1	23	1FB2	初め{08:42}	Restart	reads: 初めから; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:5A	2	31	1FB2	去る	Go!	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:5A	3	50	00	饉		
+m/MS610C.BIN	9:5B	0	14	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:5B	1	24	0E	逃が{08:4A}くれ{08:25}！\n<wait>	won't let you go!\n<wait>	reads: 逃がしてくれない！\n<wait> @from-ours
+m/MS610C.BIN	9:5C	0	0	DATA	後ろ{08:42}{03:07}{08:1C}\n<wait>	It lunges at you from behind!\n<wait>	reads: 後ろから襲いかかってきた！\n<wait> @from-ours
+m/MS610C.BIN	9:5D	0	2	1FBA	＞{02:06}\n	>{02:06}	reads: ＞どうしますか？\n @from-ours
+m/MS610C.BIN	9:5D	1	23	1FB2	水をか{08:29}	Splash It	reads: 水をかける; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:5D	2	33	1FB2	冗談を言う	Joke	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:5D	3	58	00	馘		
+m/MS610C.BIN	9:5E	0	11	00	{04:FF}は	Someone	reads: は @from-ours
+m/MS610C.BIN	9:5E	1	22	00	{04:FF}は	Someone	reads: は @from-ours
+m/MS610C.BIN	9:5E	2	29	0D	{02:09}・・\n<wait>	.....\n<wait>	reads: ・・・・・\n<wait> @from-ours
+m/MS610C.BIN	9:5E	3	56	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:5E	4	79	1FB2	何かくれ	Give Me Something	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:5E	5	89	1FB2	失せろ	Scram!	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:5E	6	97	1FB2	正体を表せ	Reveal It	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:5E	7	122	00	饒{02:00}饌	饒Devil Buster饌	reads: 饒デビルバスター饌 @from-ours
+m/MS610C.BIN	9:5E	8	144	18	{08:61}　{08:85}{08:11}\n	But it misses!\n	reads: しかし　はずれた！\n @from-ours
+m/MS610C.BIN	9:5F	0	13	0E	無視{03:0C}た\n<wait>	It ignores you.\n<wait>	reads: 無視された\n<wait> @from-ours
+m/MS610C.BIN	9:61	0	2	1FBA	マグネタイトを欲しがっ{08:14}{08:69}だ\n	It seems to want\nsome Magnetite.\n	reads: マグネタイトを欲しがっているようだ\n @from-ours
+m/MS610C.BIN	9:61	1	47	1FB2	あげる	Give	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:61	2	55	1FB2	あげ{08:25}	Refuse	reads: あげない; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:61	3	76	00	饕		
+m/MS610C.BIN	9:62	0	6	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:62	1	16	0E	怒{08:51}\n<wait>	gets angry.\n<wait>	reads: 怒った\n<wait> @from-ours
+m/MS610C.BIN	9:63	0	0	DATA	寂しげだ！\n<wait>	It seems lonely!\n<wait>	@from-ours
+m/MS610C.BIN	9:64	0	7	16	{02:09}・・\n	{02:09}..\n	reads: ・・・・・\n @from-ours
+m/MS610C.BIN	9:64	1	29	00	{04:EF}は笑っ{08:14}！\n<wait>	It's laughing!\n<wait>	reads: は笑っている！\n<wait> @from-ours
+m/MS610C.BIN	9:64	2	65	00	{04:EF}のお気に召さ{08:19}{08:69}だ\n	It doesn't seem pleased.\n	reads: のお気に召さなかったようだ\n @from-ours
+m/MS610C.BIN	9:64	3	93	00	餽<wait>		
+m/MS610C.BIN	9:65	0	0	DATA	？？？\n	???\n	@from-ours
+m/MS610C.BIN	9:65	1	11	00	{04:EF}は理解できて{08:24}\n<wait>	It doesn't seem to understand.\n<wait>	reads: は理解できていない\n<wait> @from-ours
+m/MS610C.BIN	9:66	0	7	00	駮		
+m/MS610C.BIN	9:67	0	6	00	{04:EF}	{04:EF}	reads: 
+m/MS610C.BIN	9:67	1	15	00	駘		
+m/MS610C.BIN	9:68	0	0	DATA	の体が	Its body	@from-ours
+m/MS610C.BIN	9:68	1	13	00	駛d		
+m/MS610C.BIN	9:68	2	17	00	駝		
+m/MS610C.BIN	9:69	0	9	1E36	Q	Q	
+m/MS610C.BIN	9:6A	0	12	1E36	O	O	
+m/MS610C.BIN	9:6B	0	12	1E36	O	O	
+m/MS610C.BIN	9:6C	0	6	0E	は	It	@from-ours
+m/MS610C.BIN	9:6C	1	23	1E36	T	T	
+m/MS610C.BIN	9:6D	0	0	DATA	の	Its	@from-ours
+m/MS610C.BIN	9:6D	1	20	1E36	U	U	
+m/MS610C.BIN	9:6E	0	9	1E36	S	S	
+m/MS610C.BIN	9:6F	0	4	00	{04:EF}は突然　\n	It suddenly\n	reads: は突然　\n @from-ours
+m/MS610C.BIN	9:6F	1	22	00	騫K		
+m/MS610C.BIN	9:6F	2	26	00	驃d		
+m/MS610C.BIN	9:6F	3	30	00	驍		
+m/MS610C.BIN	9:70	0	22	1FB2	怒っ{08:14}と思う	Seems Angry	reads: 怒っていると思う; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:70	1	36	1FB2	笑っ{08:14}と思う	Seems Amused	reads: 笑っていると思う; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:70	2	50	1FB2	悲しがっ{08:14}	Seems Sad	reads: 悲しがっている; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:70	3	75	00	駻{02:00}騏	駻Devil Buster騏	reads: 駻デビルバスター騏 @from-ours
+m/MS610C.BIN	9:71	0	17	00	{=EC}{=01}{02:09}・・\n	{=EC}{=01}{02:09}..\n	reads: {=EC}{=01}・・・・・\n @from-ours
+m/MS610C.BIN	9:71	1	30	0C	{02:09}\n	{02:09}\n	reads: ・・・\n
+m/MS610C.BIN	9:72	0	14	00	{04:EF}は笑っ{08:14}！\n	It's laughing!\n	reads: は笑っている！\n @from-ours
+m/MS610C.BIN	9:72	1	43	1FB2	一緒に笑う	Laugh Too	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:72	2	55	1FB2	見{08:2B}	Watch	reads: 見てる; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:72	3	74	00	馮		
+m/MS610C.BIN	9:72	4	80	18	{02:09}\n	{02:09}\n	reads: ・・・\n
+m/MS610C.BIN	9:72	5	90	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:72	6	100	0E	睨んで{08:40}\n<wait>	glares at you.\n<wait>	reads: 睨んでいる\n<wait> @from-ours
+m/MS610C.BIN	9:73	0	0	DATA	突然　{02:09}	Suddenly ...	reads: 突然　・・・ @from-ours
+m/MS610C.BIN	9:74	0	11	00	{04:EF}はお気に召さ{08:19}{08:69}だ\n	It doesn't seem pleased.\n	reads: はお気に召さなかったようだ\n @from-ours
+m/MS610C.BIN	9:74	1	42	00	{04:FF}を無視{08:13}\n<wait>	It ignores you.\n<wait>	reads: を無視している\n<wait> @from-ours
+m/MS610C.BIN	9:74	2	63	00	{04:EF}は何か置い{08:21}\n<wait>	It leaves something behind.\n<wait>	reads: は何か置いていった\n<wait> @from-ours
+m/MS610C.BIN	9:75	0	11	00	{04:EF}は泣い{08:14}{02:09}\n	It's crying...\n	reads: は泣いている・・・\n @from-ours
+m/MS610C.BIN	9:75	1	40	1FB2	慰{08:2E}	Soothe	reads: 慰める; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:75	2	46	1FB2	見{08:2B}	Watch	reads: 見てる; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:75	3	65	00	騅		
+m/MS610C.BIN	9:75	4	81	00	{04:EF}は怒{08:51}\n<wait>	It gets angry.\n<wait>	reads: は怒った\n<wait> @from-ours
+m/MS610C.BIN	9:76	0	2	1FBA	{02:09}・・！！！\n	{02:09}..!!!\n	reads: ・・・・・！！！\n @from-ours
+m/MS610C.BIN	9:76	1	19	00	{04:EF}の体が	Its body	reads: の体が @from-ours
+m/MS610C.BIN	9:76	2	49	1FB2	何か{08:8E}	Do Stuff	reads: 何かする; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:76	3	57	1FB2	見{08:2B}	Watch	reads: 見てる; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:76	4	76	00	{=E9}{=39}	{=E9}{=39}	
+m/MS610C.BIN	9:77	0	13	0E	とりあえず驚{08:64}！{02:09}・・\n	It's startled, for now......\n	reads: とりあえず驚いた！・・・・・\n @from-ours
+m/MS610C.BIN	9:77	1	40	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:77	2	59	00	{04:FF}は殺意を抱{08:64}！\n<wait>	It's overcome with bloodlust!\n<wait>	reads: は殺意を抱いた！\n<wait> @from-ours
+m/MS610C.BIN	9:78	0	10	00	{04:FF}は殺意を抱{08:64}！\n<wait>	It's overcome with bloodlust!\n<wait>	reads: は殺意を抱いた！\n<wait> @from-ours
+m/MS610C.BIN	9:79	0	11	12	{02:09}・・\n	{02:09}..\n	reads: ・・・・・\n @from-ours
+m/MS610C.BIN	9:79	1	28	00	{04:EF}は姿が消{08:41}\n<wait>	It vanishes from sight.\n<wait>	reads: は姿が消えた\n<wait> @from-ours
+m/MS610C.BIN	9:79	2	52	00	{04:FF}は驚{08:64}！\n	It's startled!\n	reads: は驚いた！\n @from-ours
+m/MS610C.BIN	9:79	3	67	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:79	4	77	0E	去っ{08:21}\n<wait>	and leaves.\n<wait>	reads: 去っていった\n<wait> @from-ours
+m/MS610C.BIN	9:7A	0	0	DATA	突然　		
+m/MS610C.BIN	9:7B	0	0	DATA	動きが止{08:20}\n	It stops moving.\n	reads: 動きが止まった\n @from-ours
+m/MS610C.BIN	9:7B	1	27	1FB2	様子を見る	Wait and See	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:7B	2	39	1FB2	{08:0C}	Attack	reads: 攻撃; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:7B	3	56	00	驀		
+m/MS610C.BIN	9:7C	0	2	1FBA	{02:09}・・\n{08:90}やら　寝{08:14}{08:69}だ\n<wait>	.....\nSeems to be asleep.\n<wait>	reads: ・・・・・\nどうやら　寝ているようだ\n<wait> @from-ours
+m/MS610C.BIN	9:7D	0	15	00	{04:EF}は突然　	It suddenly	reads: は突然　 @from-ours
+m/MS610C.BIN	9:7E	0	0	DATA	膨らみ	It swells.	@from-ours
+m/MS610C.BIN	9:7E	1	14	14	{02:09}・・\n	{02:09}..\n	reads: ・・・・・\n @from-ours
+m/MS610C.BIN	9:7E	2	25	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:7E	3	51	1FB2	ほ{08:53}く	Leave It	reads: ほっとく; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:7E	4	59	1FB2	邪魔{08:8E}	Butt In	reads: 邪魔する; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:7E	5	80	00	驕		
+m/MS610C.BIN	9:7E	6	90	00	{04:FF}は驚{08:64}！\n	It's startled!\n	reads: は驚いた！\n @from-ours
+m/MS610C.BIN	9:7E	7	105	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:7F	0	0	DATA	突然　		
+m/MS610C.BIN	9:80	0	2	1FBA	{02:09}・・\n	{02:09}..\n	reads: ・・・・・\n @from-ours
+m/MS610C.BIN	9:80	1	19	00	{04:EF}は去っ{08:21}\nと思っ{08:50}\n	Just when it seemed to have left,\n	reads: は去っていった\nと思ったら\n @from-ours
+m/MS610C.BIN	9:81	0	7	14	動きが止{08:20}\n	It stops moving.\n	reads: 動きが止まった\n @from-ours
+m/MS610C.BIN	9:81	1	31	00	{04:EF}は興奮{08:13}{08:69}だ\n<wait>	It looks excited.\n<wait>	reads: は興奮しているようだ\n<wait> @from-ours
+m/MS610C.BIN	9:82	0	12	00	{04:EF}は怯え{08:14}\n{08:69}だ\n	It looks frightened.\n	reads: は怯えている\nようだ\n @from-ours
+m/MS610C.BIN	9:82	1	44	1FB2	慰{08:2E}	Soothe	reads: 慰める; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:82	2	50	1FB2	いじ{08:2E}	Tease It	reads: いじめる; menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:82	3	58	1FB2	無視	Skip	menu option, declared width 20 columns @from-ours
+m/MS610C.BIN	9:82	4	77	00	驛{02:00}驗	驛Devil Buster驗	reads: 驛デビルバスター驗 @from-ours
+m/MS610C.BIN	9:82	5	91	00	{04:FF}は驚{08:64}！\n	It's startled!\n	reads: は驚いた！\n @from-ours
+m/MS610C.BIN	9:82	6	106	00	{04:EF}	{04:EF}	reads: 
+m/MS610C.BIN	9:82	7	114	0E	は	It	@from-ours
+m/MS610C.BIN	9:83	0	2	1FBA	！！！\n	!!!\n	@from-ours
+m/MS610C.BIN	9:84	0	9	00	{=EC}{=01}	{=EC}{=01}	
+m/MS610C.BIN	9:85	0	0	DATA	も驚{08:64}！\n	It's surprised too!\n	reads: も驚いた！\n @from-ours
+m/MS610C.BIN	9:86	0	6	00	{04:FF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:86	1	19	0E	！！！\n	!!!\n	@from-ours
+m/MS610C.BIN	9:86	2	30	00	{04:EF}の	Its	reads: の @from-ours
+m/MS610C.BIN	9:86	3	47	00	{04:EF}は怒{08:51}\n<wait>	It gets angry.\n<wait>	reads: は怒った\n<wait> @from-ours
+m/MS610C.BIN	9:87	0	4	00	{04:EF}は	It	reads: は @from-ours
+m/MS610C.BIN	9:87	1	17	0D	去っ{08:21}\n<wait>	and leaves.\n<wait>	reads: 去っていった\n<wait> @from-ours
+m/MS610C.BIN	9:88	0	0	DATA	怒{08:51}\n<wait>	Angry.\n<wait>	reads: 怒った\n<wait> @from-ours
+m/MS610C.BIN	9:89	0	0	DATA	無視{03:0C}た{08:69}だ\n<wait>	Seems you're being ignored.\n<wait>	reads: 無視されたようだ\n<wait> @from-ours
+m/MS610C.BIN	9:8C	0	0	DATA	駄目だ！　	No good! 	@from-ours
+m/MS610C.BIN	9:8C	1	14	00	{04:EF}を	It	reads: を @from-ours
+m/MS610C.BIN	9:8D	0	8	1FE5	後退{08:23}！\n<wait>	Can't retreat!\n<wait>	reads: 後退できない！\n<wait> @from-ours
+m/MS610C.BIN	9:90	0	4	00	{04:EF}は何か置い{08:21}\n<wait>	It leaves something behind.\n<wait>	reads: は何か置いていった\n<wait> @from-ours
+m/MS610C.BIN	9:91	0	4	00	{04:EF}は怒{08:51}\n<wait>	It gets angry.\n<wait>	reads: は怒った\n<wait> @from-ours
+m/MS610C.BIN	12:48	0	0	DATA	暴{08:2F}！\n<wait>	It thrashes about!\n<wait>	reads: 暴れる！\n<wait> @from-ours
+m/MS610C.BIN	14:AB	0	2	1FD1	てけり・てけりりりり{02:09}{02:09}\n<wait>	Tekeri-tekeririri......\n<wait>	reads: てけり・てけりりりり・・・・・・\n<wait> @from-ours
+m/MS610C.BIN	14:AC	0	0	DATA	足元に{08:64}！\n<wait>	It was\nat my feet!\n<wait>	reads: 足元にいた！\n<wait> @from-ours
+m/MS610C.BIN	14:AD	0	0	DATA	踏んで{08:64}！\n<wait>	I stepped\non it!\n<wait>	reads: 踏んでいた！\n<wait> @from-ours
+m/MS610C.BIN	14:AE	0	0	DATA	二つに別{08:11}\n<wait>	It split\nin two!\n<wait>	reads: 二つに別れた！\n<wait> @from-ours
+m/MS610C.BIN	14:AF	0	0	DATA	怒りがおさま{08:52}{08:24}！\n<wait>	It's still\nfuming with rage!\n<wait>	reads: 怒りがおさまっていない！\n<wait> @from-ours
+m/MS610C.BIN	14:B0	0	0	DATA	足{08:42}	Foot	reads: 足から @from-ours
+m/MS610C.BIN	14:B1	0	0	DATA	天井{08:42}	Ceiling	reads: 天井から @from-ours
+m/MS610C.BIN	14:B2	0	0	DATA	{02:0E}へにじりよ{08:51}\n<wait>	It creeps closer to you.\n<wait>	reads: こちらへにじりよった\n<wait> @from-ours
+m/MS610C.BIN	14:B3	0	0	DATA	大きく{08:16}\n<wait>	It grew\nbigger!\n<wait>	reads: 大きくなった\n<wait> @from-ours
+m/MS610C.BIN	14:B4	0	0	DATA	飛んで{08:1E}\n<wait>	It flew\nover!\n<wait>	reads: 飛んできた\n<wait> @from-ours
+m/MS610C.BIN	14:B5	0	0	DATA	実体をあらわ{08:4B}\n<wait>	It revealed\nits true form!\n<wait>	reads: 実体をあらわした\n<wait> @from-ours
+m/MS610C.BIN	14:B6	0	0	DATA	なつか{08:60}\n<wait>	It's fond\nof me!\n<wait>	reads: なつかれた\n<wait> @from-ours
+m/MS610C.BIN	14:B7	0	0	DATA	まとわりつい{08:14}\n<wait>	It's clinging\nonto me!\n<wait>	reads: まとわりついている\n<wait> @from-ours
+m/MS610C.BIN	14:B8	0	0	DATA	下に落ちた\n<wait>	It fell\ndown.\n<wait>	@from-ours
+m/MS610C.BIN	14:B9	0	0	DATA	{08:79}{08:7E}動かなく{08:16}\n<wait>	It stopped\nmoving entirely.\n<wait>	reads: そのまま動かなくなった\n<wait> @from-ours
+m/MS610C.BIN	14:BA	0	0	DATA	這い上がっ{08:1C}\n<wait>	It crawled\nup!\n<wait>	reads: 這い上がってきた！\n<wait> @from-ours
+m/MS610C.BIN	14:BB	0	0	DATA	離れ{08:25}！\n<wait>	Won't let\ngo!\n<wait>	reads: 離れない！\n<wait> @from-ours
+m/MS610C.BIN	14:BC	0	0	DATA	ヒタヒタと首をまさぐっ{08:14}\n<wait>	It's groping\nclammily at my neck!\n<wait>	reads: ヒタヒタと首をまさぐっている\n<wait> @from-ours
+m/MS610C.BIN	14:BD	0	0	DATA	口の中へ	In Mouth	@from-ours
+m/MS610C.BIN	14:BE	0	0	DATA	入{08:52}{08:1E}\n<wait>	It went\nin!\n<wait>	reads: 入ってきた\n<wait> @from-ours
+m/MS610C.BIN	14:BF	0	0	DATA	早すぎて	Too Fast	@from-ours
+m/MS610C.BIN	14:C0	0	0	DATA	体内に	Inside	@from-ours
+m/MS610C.BIN	14:C1	0	0	DATA	形が変{08:51}\n<wait>	It changed\nshape.\n<wait>	reads: 形が変った\n<wait> @from-ours
+m/MS610C.BIN	14:C2	0	0	DATA	跳びはねた\n<wait>	It hopped\naround.\n<wait>	@from-ours
+m/MS610C.BIN	14:C3	0	0	DATA	助けに入{08:12}\n<wait>	I jumped\nin to help!\n<wait>	reads: 助けに入った！\n<wait> @from-ours
+m/MS610C.BIN	14:C4	0	0	DATA	助{08:29}方法が思いつか{08:25}！\n<wait>	I can't think\nof a way to help!\n<wait>	reads: 助ける方法が思いつかない！\n<wait> @from-ours
+m/MS610C.BIN	14:C5	0	0	DATA	体{08:42}	Body	reads: 体から @from-ours
+m/MS610C.BIN	14:C6	0	0	DATA	追い出{08:17}\n<wait>	I drove\nit out!\n<wait>	reads: 追い出した！\n<wait> @from-ours
+m/MS610C.BIN	14:C7	0	0	DATA	息苦しい！\n<wait>	Can't\nbreathe!\n<wait>	@from-ours
+m/MS610C.BIN	14:C8	0	0	DATA	マグネタイトを吸っ{08:14}！\n<wait>	It's sucking\nout my Magnetite!\n<wait>	reads: マグネタイトを吸っている！\n<wait> @from-ours
+m/MS610C.BIN	14:C9	0	0	DATA	本性を剥き出{08:17}\n<wait>	It bared\nits true nature!\n<wait>	reads: 本性を剥き出した！\n<wait> @from-ours
+m/MS610C.BIN	14:CA	0	0	DATA	口を大きくあ{08:43}\n<wait>	It opened\nits mouth wide.\n<wait>	reads: 口を大きくあけた\n<wait> @from-ours
+m/MS610C.BIN	14:CB	0	0	DATA	素早く	Fast	@from-ours
+m/MS610C.BIN	14:CC	0	0	DATA	体をひねりながら	Body twisting	@from-ours
+m/MS610C.BIN	14:CD	0	0	DATA	どこかへ	Away	@from-ours
+m/MS610C.BIN	14:CE	0	0	DATA	飛んで{08:22}\n<wait>	It flew\noff.\n<wait>	reads: 飛んでいった\n<wait> @from-ours
+m/MS610C.BIN	14:CF	0	0	DATA	刺激{08:4B}{08:74}だ！\n<wait>	I only\npoked it!\n<wait>	reads: 刺激しただけだ！\n<wait> @from-ours
+m/MS610C.BIN	14:D0	0	0	DATA	飛びかかっ{08:1C}\n<wait>	It lunged\nat me!\n<wait>	reads: 飛びかかってきた！\n<wait> @from-ours
+m/MS610C.BIN	14:D1	0	0	DATA	言{08:64}{01:29}！\n<wait>	Say it{01:29})!\n<wait>	reads: 言いたそうだ！\n<wait> @from-ours
+m/MS610C.BIN	14:D2	0	0	DATA	水を持{08:52}{08:64}！\n<wait>	It had\nwater!\n<wait>	reads: 水を持っていた！\n<wait> @from-ours
+m/MS610C.BIN	14:D3	0	0	DATA	水をか{08:43}！\n<wait>	I splashed\nit!\n<wait>	reads: 水をかけた！\n<wait> @from-ours
+m/MS610C.BIN	14:D4	0	0	DATA	頭が冷{08:41}{08:69}だ\n<wait>	Seems its head\ncooled off.\n<wait>	reads: 頭が冷えたようだ\n<wait> @from-ours
+m/MS610C.BIN	14:D5	0	0	DATA	水{08:6A}て持{08:52}{08:24}！\n<wait>	I don't have\nany water!\n<wait>	reads: 水なんて持っていない！\n<wait> @from-ours
+m/MS610C.BIN	14:D6	0	0	DATA	も{08:53}や{08:52}欲し{01:29}\n<wait>	Wanted more{01:29})\n<wait>	reads: もっとやって欲しそうだ\n<wait> @from-ours
+m/MS610C.BIN	14:D7	0	0	DATA	{08:6C}に	Fully	reads: 完全に @from-ours
+m/MS610C.BIN	14:D8	0	0	DATA	怒り始めた！\n<wait>	It started\nto rage!\n<wait>	@from-ours
+m/MS610C.BIN	14:D9	0	0	DATA	遅{08:18}{08:69}だ\n<wait>	Seems it\nwas too late.\n<wait>	reads: 遅かったようだ\n<wait> @from-ours
+m/MS610C.BIN	14:DA	0	0	DATA	耐えすぎで	Held Firm	@from-ours
+m/MS610C.BIN	14:DB	0	0	DATA	気にし{08:19}\n<wait>	It didn't\nmind at all.\n<wait>	reads: 気にしなかった\n<wait> @from-ours
+m/MS610C.BIN	14:DC	0	0	DATA	波うっ{08:14}\n<wait>	It's\nrippling.\n<wait>	reads: 波うっている\n<wait> @from-ours
+m/MS610C.BIN	14:DD	0	0	DATA	ヨタヨタ	Wobbly	@from-ours
+m/MS610C.BIN	14:DE	0	0	DATA	プルプル	Trembly	@from-ours
+m/MS610C.BIN	14:DF	0	0	DATA	{08:13}\n<wait>	shaking.\n<wait>	reads: している\n<wait> @from-ours
+m/MS610C.BIN	14:E0	0	0	DATA	体の一部が	Part of It	@from-ours
+m/MS610C.BIN	14:E1	0	0	DATA	刃物の{08:69}にな{08:12}\n<wait>	It became\nlike a blade!\n<wait>	reads: 刃物のようになった！\n<wait> @from-ours
+m/MS610C.BIN	14:E2	0	0	DATA	甲殻質になっ{08:14}！\n<wait>	It's grown\na hard shell!\n<wait>	reads: 甲殻質になっている！\n<wait> @from-ours
+m/MS610C.BIN	14:E3	0	0	DATA	伸び	Grow	@from-ours
+m/MS610C.BIN	14:E4	0	0	DATA	縮み	Wilt	@from-ours
+m/MS610C.BIN	14:E5	0	0	DATA	ブクブクと沸騰し	Bubble-boiling	@from-ours
+m/MS610C.BIN	14:E6	0	0	DATA	始めた！\n<wait>	Began!\n<wait>	@from-ours
+m/MS610C.BIN	14:E7	0	0	DATA	御名答！\n<wait>	Correct!\n<wait>	@from-ours
+m/MS610C.BIN	14:E8	0	0	DATA	違う{08:69}だ\n<wait>	Seems\nwrong.\n<wait>	reads: 違うようだ\n<wait> @from-ours
+m/MS610C.BIN	14:E9	0	0	DATA	破裂{08:17}\n<wait>	It burst!\n<wait>	reads: 破裂した！\n<wait> @from-ours
+m/MS610C.BIN	14:EA	0	0	DATA	涙を拭いてあ{08:44}！\n<wait>	I wiped\naway its tears!\n<wait>	reads: 涙を拭いてあげた！\n<wait> @from-ours
+m/MS610C.BIN	14:EB	0	0	DATA	大人しく	Calmly	@from-ours
+m/MS610C.BIN	14:EC	0	0	DATA	眼に指が入{08:51}\n<wait>	A finger went\nin its eye.\n<wait>	reads: 眼に指が入った\n<wait> @from-ours
+m/MS610C.BIN	14:ED	0	0	DATA	溶け	Melt	@from-ours
+m/MS610C.BIN	14:EE	0	0	DATA	始めた\n<wait>	began.\n<wait>	@from-ours
+m/MS610C.BIN	14:EF	0	0	DATA	泣くのを止めた\n<wait>	It stopped\ncrying.\n<wait>	@from-ours
+m/MS610C.BIN	14:F0	0	0	DATA	弾け飛{08:5F}！\n<wait>	It burst\napart!\n<wait>	reads: 弾け飛んだ！\n<wait> @from-ours
+m/MS610C.BIN	14:F1	0	0	DATA	飛んでいこうと{08:13}\n<wait>	It's trying\nto fly away.\n<wait>	reads: 飛んでいこうとしている\n<wait> @from-ours
+m/MS610C.BIN	14:F2	0	0	DATA	{08:0C}{08:4A}{08:1E}\n<wait>	It\nattacked!\n<wait>	reads: 攻撃してきた\n<wait> @from-ours
+m/MS610C.BIN	14:F3	0	0	DATA	威嚇{08:13}\n<wait>	It's\nthreatening.\n<wait>	reads: 威嚇している\n<wait> @from-ours
+m/MS610C.BIN	14:F4	0	0	DATA	でかい音を出{08:17}\n<wait>	It made a\nhuge sound!\n<wait>	reads: でかい音を出した！\n<wait> @from-ours
+m/MS610C.BIN	14:F5	0	0	DATA	動か{08:25}\n<wait>	Still.\n<wait>	reads: 動かない\n<wait> @from-ours
+m/MS610C.BIN	14:F6	0	0	DATA	一声{08:25}て	One Cry	reads: 一声ないて @from-ours
+m/MS610C.BIN	14:F7	0	0	DATA	ついに	Final	@from-ours
+m/MS610C.BIN	14:F8	0	0	DATA	そ{08:4A}	Then	reads: そして @from-ours

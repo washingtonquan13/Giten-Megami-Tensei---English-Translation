@@ -1,0 +1,52 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+et/ID00A3.BIN	0:97	0	0	DATA	＞{02:06}\n	>What will you do?\n	reads: ＞どうしますか？\n @from-v005
+et/ID00A3.BIN	0:97	1	33	1FB2	宝石	Gemstone	menu option, declared width 20 columns @from-v005
+et/ID00A3.BIN	0:97	2	39	1FB2	魔石	Magic Stone	menu option, declared width 20 columns @from-v005
+et/ID00A3.BIN	0:97	3	45	1FB2	ＭＡＧ	Magnetite	menu option, declared width 20 columns @from-v005
+et/ID00A3.BIN	0:97	4	53	1FB2	金	Money	menu option, declared width 20 columns @from-v005
+et/ID00A3.BIN	0:97	5	57	1FB2	他の物	Other	menu option, declared width 20 columns @from-v005
+et/ID00A3.BIN	0:97	6	78	00	燎{02:00}燠{03:00}燵{04:01}{01:00}	燎Devil Buster燠Ranged Weapon燵Pentagram{01:00}	reads: 燎デビルバスター燠飛び道具燵切り早坂達也 @from-ours
+et/ID00A3.BIN	0:97	7	109	1FB2	猫{08:81}らしを振る	Kitty Stone	reads: 猫じゃらしを振る; menu option, declared width 20 columns @from-v005
+et/ID00A3.BIN	0:97	8	125	1FB2	マタタビをあげる	Catnip	menu option, declared width 20 columns @from-v005
+et/ID00A3.BIN	0:97	9	143	1FB2	喉を撫でる	Rub Neck	menu option, declared width 20 columns @from-v005
+et/ID00A3.BIN	0:97	10	155	1FB2	や{08:2E}	Never Mind	reads: やめる; menu option, declared width 20 columns @from-v005
+et/ID00A3.BIN	0:97	11	161	1FB2	他の物	Other	menu option, declared width 20 columns @from-v005
+et/ID00A3.BIN	0:97	12	181	0F	{01:35}{02:02}{01:A9}{02:03}	{01:35}{02:02}{01:A9}{02:03}	reads: バーチャルキャンプレジスタンス
+et/ID00A3.BIN	0:97	13	190	00	燼{04:01}M	燼2{01:4D}	reads: 燼切りM @from-ours
+et/ID00A3.BIN	0:97	14	216	1FB2	宝石	Gemstone	menu option, declared width 20 columns @from-v005
+et/ID00A3.BIN	0:97	15	222	1FB2	魔石	Magic Stone	menu option, declared width 20 columns @from-v005
+et/ID00A3.BIN	0:97	16	228	1FB2	ＭＡＧ	Magnetite	menu option, declared width 20 columns @from-v005
+et/ID00A3.BIN	0:97	17	236	1FB2	金	Money	menu option, declared width 20 columns @from-v005
+et/ID00A3.BIN	0:97	18	240	1FB2	他の物	Other	menu option, declared width 20 columns @from-v005
+et/ID00A3.BIN	0:97	19	261	00	燎{02:00}燠{03:00}燵{04:01}{01:00}		reads: 燎デビルバスター燠飛び道具燵切り早坂達也 @rebase-unmatched idx19 en=燎Devil Buster燠Ranged Weapon燵1{01:01}
+et/ID00A3.BIN	0:97	20	292	1FB2	猫{08:81}らしを振る	Kitty Stone	reads: 猫じゃらしを振る; menu option, declared width 20 columns @from-v005
+et/ID00A3.BIN	0:97	21	308	1FB2	マタタビをあげる	Catnip	menu option, declared width 20 columns @from-v005
+et/ID00A3.BIN	0:97	22	326	1FB2	や{08:2E}	Never Mind	reads: やめる; menu option, declared width 20 columns @from-v005
+et/ID00A3.BIN	0:97	23	332	1FB2	他の物	Other	menu option, declared width 20 columns @from-v005
+et/ID00A3.BIN	0:97	24	352	0F	{01:8A}{01:02}	{01:8A}{01:02}	reads: 桐島英美
+et/ID00A3.BIN	0:97	25	357	00	燼{03:01}]	燼;{01:5D}	reads: 燼そんなこと] @from-ours
+et/ID00A3.BIN	0:97	26	382	00	{04:EF}は喜んで{08:40}\n<wait>	{04:EF} seems happy.\n<wait>	reads: は喜んでいる\n<wait> @from-v005
+et/ID00A3.BIN	0:97	27	421	00	{04:EF}はスキだらけだ！\n＞{08:0C}し{08:15}\n	{04:EF} has left their guard down.\n>Use this opportunity to attack?\n	reads: はスキだらけだ！\n＞攻撃しますか？\n @from-v005
+et/ID00A3.BIN	0:97	28	474	00	{04:EF}はと{08:54}興奮{08:13}\n<wait>	{04:EF} seems very excited.\n<wait>	reads: はとても興奮している\n<wait> @from-v005
+et/ID00A3.BIN	0:97	29	495	1FBA	＞も{08:53}やり{08:15}\n	>Keep going?\n	reads: ＞もっとやりますか？\n @from-v005
+et/ID00A3.BIN	0:97	30	521	0E	突然　	Suddenly, 	@from-v005
+et/ID00A3.BIN	0:97	31	531	00	{04:EF}が{03:07}{08:1C}\n	{04:EF} attacks!\n	reads: が襲いかかってきた！\n @from-v005
+et/ID00A3.BIN	0:97	32	551	00	{04:EF}は尻尾をふりふり{08:13}\n<wait>	{04:EF} is wagging its tail.\n<wait>	reads: は尻尾をふりふりしている\n<wait> @from-v005
+et/ID00A3.BIN	0:97	33	578	1FBA	＞も{08:53}やり{08:15}\n	>Keep going?\n	reads: ＞もっとやりますか？\n @from-v005
+et/ID00A3.BIN	0:97	34	658	00	{04:EF}は尻尾をふりふり{08:13}\n<wait>	{04:EF} is wagging its tail.\n<wait>	reads: は尻尾をふりふりしている\n<wait> @from-v005
+et/ID00A3.BIN	0:97	35	706	18	猫{08:81}らしを持{08:52}{08:24}！\n<wait>	You don't have a Kitty Toy!\n<wait>	reads: 猫じゃらしを持っていない！\n<wait> @from-v005
+et/ID00A3.BIN	0:97	36	760	00	{04:EF}は{08:5C}　めろめろだ！\n<wait>	{04:EF} is love!\n<wait>	reads: はもう　めろめろだ！\n<wait> @from-v005
+et/ID00A3.BIN	0:97	37	826	18	マタタビを持{08:52}{08:24}！\n<wait>	You don't have any Catnip!\n<wait>	reads: マタタビを持っていない！\n<wait> @from-v005
+et/ID00A3.BIN	0:97	38	884	00	{04:EF}は喉をゴロゴロ鳴ら{08:13}\n	{04:EF} is purring.\n	reads: は喉をゴロゴロ鳴らしている\n @from-v005
+et/ID00A3.BIN	0:97	39	923	1FB2	も{08:53}やる	Keep Going	reads: もっとやる; menu option, declared width 20 columns @from-v005
+et/ID00A3.BIN	0:97	40	933	1FB2	やめちゃう	Stop	menu option, declared width 20 columns @from-v005
+et/ID00A3.BIN	0:97	41	957	0F	{01:58}	{01:58}	reads: 
+et/ID00A3.BIN	0:97	42	960	00			
+et/ID00A3.BIN	0:97	43	1028	00	{04:EF}は眠{08:52}{08:1F}\n	{04:EF} fell asleep.\n	reads: は眠ってしまった\n @from-v005
+et/ID00A3.BIN	0:97	44	1082	00	{=EC}{=A6}	{=EC}{=A6}	
+et/ID00A3.BIN	15:AB	0	0	DATA	うーむ　たまらんのぉ！\n<wait>	Aah! So good!\n<wait>	@from-v005
+et/ID00A3.BIN	15:AC	0	0	DATA	そ　{08:4D}は！\nあぁぁ身体が勝手に！\n<wait>	O-Oh no! My body's moving on its own!\n<wait>	reads: そ　それは！\nあぁぁ身体が勝手に！\n<wait> @from-v005

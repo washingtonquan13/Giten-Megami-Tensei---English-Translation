@@ -1,0 +1,654 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS0017.BIN	0:00	0	2	1FD1	＞{02:06}\n	>What will you do?\n	reads: ＞どうしますか？\n @from-v005
+m/MS0017.BIN	0:00	1	23	1FB2	{02:07}	Open terminal	reads: 通信をする; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:00	2	27	1FB2	休む	Rest	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:00	3	33	1FB2	{02:05}	Leave	reads: 出かける; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:00	4	49	0F	{01:05}	{01:05}	reads: 山田
+m/MS0017.BIN	0:00	5	52	00	{02:01}j	{02:01}	reads: ペンタグランマj @from-ours
+m/MS0017.BIN	0:00	6	67	1F04	{01:19}	{01:19}	reads: われわれ
+m/MS0017.BIN	0:00	7	116	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS0017.BIN	0:00	8	126	00	{04:FF}、今は{08:73}所で休んで{08:40}場合では{08:25}！\n{03:10}{08:4B}いので{08:3F}ば、医療施設へ行こう。\n	This is no time to be resting, Katsuragi!\nIf you need to heal, then go visit the medical facility.\n	reads: 、今はこんな所で休んでいる場合ではない！\n回復したいのであれば、医療施設へ行こう。\n @from-v005 @rebase-tagdiff
+m/MS0017.BIN	0:00	9	244	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS0017.BIN	0:00	10	250	1FD3	おいおい。{08:73}所で、ゆっくり休憩{08:6A}か{08:4A}られ{08:25}ぜ。\n{03:10}{08:4B}い{08:7D}、医療施設へ行こう。\n	Hey, Katsuragi. This is no time to be resting.\nIf you need to heal, then go visit the medical facility.\n	reads: おいおい。こんな所で、ゆっくり休憩なんかしてられないぜ。\n回復したいなら、医療施設へ行こう。\n @from-v005
+m/MS0017.BIN	0:00	11	331	1FD0	今{08:62}{08:73}所でのうのうと休んで{08:40}場合では{08:25}。\n{03:10}{08:8E}ので{08:3F}ば、医療施設に行{08:51}方が良い{08:8C}。\n	This is no time to be resting.\nIf you need to heal, then go visit the medical facility.\n	reads: 今は、こんな所でのうのうと休んでいる場合ではない。\n回復するのであれば、医療施設に行った方が良いだろう。\n @from-v005
+m/MS0017.BIN	0:00	12	430	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS0017.BIN	0:00	13	446	0B	ねぇ。{08:7F}の？　	Are you sure this is a good idea, Katsuragi?\nYuuka's probably anxious to hear back from us.\n	reads: ねぇ。いいの？　 @from-v005
+m/MS0017.BIN	0:00	14	464	00	{04:FF}くん。\n		reads: くん。\n @rebase-new
+m/MS0017.BIN	0:00	15	477	00	{04:FE}ちゃん、き{08:53}話し合いの結果を気にし{08:2B}よ。\n		reads: ちゃん、きっと話し合いの結果を気にしてるよ。\n @rebase-new
+m/MS0017.BIN	0:00	16	523	18	{02:08}	Hey, Katsuragi. Let's go visit Tatsuya before that.\\We've... We've gotta tell him about tomorrow.\n	reads: ‥‥‥ @from-v005
+m/MS0017.BIN	0:00	17	529	00	{04:FF}くん。{08:01}の所へ行こう。\n明日の事‥伝えなくちゃ{02:08}。\n		reads: くん。達也の所へ行こう。\n明日の事‥伝えなくちゃ‥‥‥。\n @rebase-new
+m/MS0017.BIN	0:00	18	584	18	休んでる場合{08:81}{08:25}よ。\n隊長の所へ報告に行かなくちゃ。\n	This is no time to be resting.\nWe've gotta visit the Commander and tell him what happened.\n	reads: 休んでる場合じゃないよ。\n隊長の所へ報告に行かなくちゃ。\n @from-v005
+m/MS0017.BIN	0:00	19	648	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS0017.BIN	0:00	20	664	0B	おい。本当に{08:7F}のか？　	Are you sure this is a good idea?\n<wait>	reads: おい。本当にいいのか？　 @from-v005
+m/MS0017.BIN	0:00	21	690	00	{04:FF}。\n		reads: 。\n @rebase-new
+m/MS0017.BIN	0:00	22	699	00	{04:FE}さんの事{02:08}‥。\n<wait>		reads: さんの事‥‥‥‥。\n<wait> @rebase-new
+m/MS0017.BIN	0:00	23	724	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS0017.BIN	0:00	24	730	1FD3	隊長との話し合いの結果を、伝えに行{08:51}方が{08:7F}ぜ。\n	Tachibana is probably anxious to hear back from us.\n	reads: 隊長との話し合いの結果を、伝えに行った方がいいぜ。\n @from-v005
+m/MS0017.BIN	0:00	25	781	00	{04:FE}さん、き{08:53}気にし{08:2B}ぞ。\n		reads: さん、きっと気にしてるぞ。\n @rebase-new
+m/MS0017.BIN	0:00	26	813	00	{04:FF}{02:08}{08:03}の所へ行こう。\n明日の事を伝え{08:25}と{02:08}\n		reads: ‥‥‥英美の所へ行こう。\n明日の事を伝えないと‥‥‥\n @rebase-new
+m/MS0017.BIN	0:00	27	858	18	おいおい、休んでる場合{08:81}{08:25}ぞ。\n隊長の所に報告に行かなくちゃ。\n<wait>	This is no time to be resting.\nWe've gotta visit the Commander and tell him what happened.\n<wait>	reads: おいおい、休んでる場合じゃないぞ。\n隊長の所に報告に行かなくちゃ。\n<wait> @from-v005
+m/MS0017.BIN	0:00	28	937	1FD0	{08:73}時に休んで{08:40}場合では{08:25}！\n	This is no time to be resting!\n	reads: こんな時に休んでいる場合ではない！\n @from-v005
+m/MS0017.BIN	0:00	29	976	1F03			
+m/MS0017.BIN	0:00	30	1004	1FD0	誰かが、	You wake up to someone shaking your body...\n<wait>	@from-v005
+m/MS0017.BIN	0:00	31	1016	00	{04:FF}の身体を揺さぶっ{08:14}{02:08}\n<wait>		reads: の身体を揺さぶっている‥‥‥\n<wait> @rebase-new
+m/MS0017.BIN	0:00	32	1073	00	{04:FE}：		reads: ： @rebase-new
+m/MS0017.BIN	0:00	33	1083	00	{04:FF}くん！　		reads: くん！　 @rebase-new
+m/MS0017.BIN	0:00	34	1097	00	{04:FF}くん！\n<wait>		reads: くん！\n<wait> @rebase-new
+m/MS0017.BIN	0:00	35	1118	00	{04:FE}：		reads: ： @rebase-new
+m/MS0017.BIN	0:00	36	1124	1FD3	私の妹が！　妹の美莉が！！！\n<wait>	Katsuragi-kun! Katsuragi-kun!\n<wait>	@from-v005
+m/MS0017.BIN	0:00	37	1165	00	{04:FE}{08:62}目にいっぱい涙を溜めながら、必死に{08:1A}、\n何かを訴え{08:69}と{08:13}。\n<wait>		reads: は、目にいっぱい涙を溜めながら、必死になって、\n何かを訴えようとしている。\n<wait> @rebase-new
+m/MS0017.BIN	0:00	38	1233	1FBA	{03:0B}気が動転{08:13}らしく、思{08:51}様に言葉が出て来{08:25}。\n<wait>	And yet, she seems too shocked to be able to form words.\n<wait>	reads: しかし、気が動転しているらしく、思った様に言葉が出て来ない。\n<wait> @from-v005
+m/MS0017.BIN	0:00	39	1286	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>	reads: ＞どうしますか？\n<wait> @from-v005
+m/MS0017.BIN	0:00	40	1313	1FB2	なだ{08:2E}	Calm her down	reads: なだめる; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:00	41	1321	1FB2	ほ{08:53}く	Ignore her	reads: ほっとく; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:00	42	1329	1FB2	無理やり聞く	Force her to speak	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:00	43	1355	0F	{01:8D}{01:02}{01:2C}{02:FF}	{01:8D}{01:02}{01:2C}{02:FF}	reads: 桐島英美開発
+m/MS0017.BIN	0:00	44	1369	00	{04:FF}{08:62}	{04:FF}{08:62}	reads: は、 @rebase-new
+m/MS0017.BIN	0:00	45	1377	00	{04:FE}をなだめながら、気を落ち着か{08:2A}為に、\n合成ブランディーの入{08:51}カップを差し出{08:4B}。\n<wait>		reads: をなだめながら、気を落ち着かせる為に、\n合成ブランディーの入ったカップを差し出した。\n<wait> @rebase-new
+m/MS0017.BIN	0:00	46	1467	00	{04:FE}{08:62}素直にカップを受け取り、中の液体を飲み干{08:4B}。\n<wait>		reads: は、素直にカップを受け取り、中の液体を飲み干した。\n<wait> @rebase-new
+m/MS0017.BIN	0:00	47	1522	1FBA	小さなため息をつき、青ざめて{08:64}	She takes the cup and drinks the liquid within in one big gulp.\n<wait>	reads: 小さなため息をつき、青ざめていた @from-v005
+m/MS0017.BIN	0:00	48	1556	00	{04:FE}の顔に、ほんのりと赤味が戻{08:52}来た。\n<wait>	You can see a hint of colour starting to return to her cheeks.\n<wait>	reads: の顔に、ほんのりと赤味が戻って来た。\n<wait> @from-v005 @rebase-tagdiff
+m/MS0017.BIN	0:00	49	1605	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS0017.BIN	0:00	50	1611	1FD3	ごめんな{08:49}、取り乱{08:4B}り{08:4A}。\n{08:72}{08:56}、お陰で随分落ち着{08:64}み{08:4E}。{01:2A}。\n<wait>	Sorry. It's not good for me to lose my composure like this...\nBut thanks. I feel a bit better now.\n<wait>	reads: ごめんなさい、取り乱したりして。\n‥‥でも、お陰で随分落ち着いたみたい。ありがとう。\n<wait> @from-v005
+m/MS0017.BIN	0:00	51	1681	1FD0	そう言うと	Yuuka then begins explaining.\n<wait>	@from-v005
+m/MS0017.BIN	0:00	52	1695	00	{04:FE}{08:62}{01:3C}浅い深呼吸をし、心を決めたかの様に話し出{08:4B}。\n<wait>		reads: は、ひとつ浅い深呼吸をし、心を決めたかの様に話し出した。\n<wait> @rebase-new
+m/MS0017.BIN	0:00	53	1761	00	{04:FF}{08:62}	{04:FF}{08:62}	reads: は、 @rebase-new
+m/MS0017.BIN	0:00	54	1769	00	{04:FE}の気が落ち着く{08:71}、下手に触ら{08:25}事に決めた。\n<wait>		reads: の気が落ち着くまで、下手に触らない事に決めた。\n<wait> @rebase-new
+m/MS0017.BIN	0:00	55	1831	00	{04:FE}：		reads: ： @rebase-new
+m/MS0017.BIN	0:00	56	1837	1FD3	ごめんな{08:49}、取り乱{08:4B}り{08:4A}。\n何とか落ち着{08:64}し、{08:5C}、ちゃんと話{08:2A}と思うわ。\n<wait>	Sorry. It's not good for me to lose my composure like this...\nI think I should be able to talk now.\n<wait>	reads: ごめんなさい、取り乱したりして。\n何とか落ち着いたし、もう、ちゃんと話せると思うわ。\n<wait> @from-v005
+m/MS0017.BIN	0:00	57	1924	00	{04:FF}は少々きつい口調で、		reads: は少々きつい口調で、 @rebase-new
+m/MS0017.BIN	0:00	58	1950	00	{04:FE}に訳を尋ねた。\n<wait>		reads: に訳を尋ねた。\n<wait> @rebase-new
+m/MS0017.BIN	0:00	59	1979	00	{04:FE}：		reads: ： @rebase-new
+m/MS0017.BIN	0:00	60	1985	1FD3	{02:08}{02:08}{08:72}ヒック{02:08}ヒック{02:08}\n<wait>	*Sniff, sniff*...\n<wait>	reads: ‥‥‥‥‥‥‥‥ヒック‥‥‥ヒック‥‥‥\n<wait> @from-v005
+m/MS0017.BIN	0:00	61	2025	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS0017.BIN	0:00	62	2031	1FD3	{02:08}{1E10:01003C}ごめんな{08:49}、取り乱{08:4B}り{08:4A}。\n{08:56}何とか落ち着{08:64}し、{08:5C}、ちゃんと話{08:2A}と思うわ。\n<wait>	......{1E10:01003C}Sorry. It's not good for me to lose my composure like this...\nI think I should be able to talk now.\n<wait>	reads: ‥‥‥{1E10:01003C}ごめんなさい、取り乱したりして。\nでも何とか落ち着いたし、もう、ちゃんと話せると思うわ。\n<wait> @from-v005
+m/MS0017.BIN	0:00	63	2124	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS0017.BIN	0:00	64	2130	1FD3	私とは腹違いに{08:59}妹の美莉が、{01:3B}	My little sister, Miri	reads: 私とは腹違いになる妹の美莉が、さっき @from-v005
+m/MS0017.BIN	0:00	65	2166	1FFA	{02:08}‥	{02:08}‥	reads: ‥‥‥‥
+m/MS0017.BIN	0:00	66	2176	1FFA	ファームの	She was	@from-v005
+m/MS0017.BIN	0:00	67	2192	1FFA	{02:08}‥\n	{02:08}‥\n	reads: ‥‥‥‥\n
+m/MS0017.BIN	0:00	68	2214	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS0017.BIN	0:00	69	2220	1FD3	ファームの樹木エリアで	She was found dead	@from-v005
+m/MS0017.BIN	0:00	70	2248	1FFA	{02:08}‥	{02:08}‥	reads: ‥‥‥‥
+m/MS0017.BIN	0:00	71	2258	1FFA	殺{03:0C}て	near the forest area	reads: 殺されて @from-v005
+m/MS0017.BIN	0:00	72	2270	1FFA	{02:08}‥\n<wait>	{02:08}‥\n<wait>	reads: ‥‥‥‥\n<wait>
+m/MS0017.BIN	0:00	73	2293	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS0017.BIN	0:00	74	2299	1FD3	と{08:54}、おかしな死に方を{08:4A}い{08:50}しい<wait>{08:72}の。\n<wait>	Apparently, the way she was killed was particularly... <wait>gruesome.\n<wait>	reads: とても、おかしな死に方をしていたらしい<wait>‥‥の。\n<wait> @from-v005
+m/MS0017.BIN	0:00	75	2350	1FD0	今にも倒れてしまいそうな蒼白の顔をしながらも、	Her face so pale it looks like she might collapse any second,\nYuuka forces herself to continue.\n<wait>	@from-v005
+m/MS0017.BIN	0:00	76	2400	00	{04:FE}は何とか言葉を続{08:43}。\n<wait>		reads: は何とか言葉を続けた。\n<wait> @rebase-new
+m/MS0017.BIN	0:00	77	2435	00	{04:FE}：		reads: ： @rebase-new
+m/MS0017.BIN	0:00	78	2441	1FD3	身体中の血が全部抜き取られてて<wait>{08:72}{08:6B}に何処にも{08:72}\n<wait>{1E10:01003C}何処にも傷がついてい{08:19}{08:52}	Every last drop of her blood had been drained. <wait>And yet...\n<wait>{1E10:01003C}And yet, no wounds were found anywhere on her body	reads: 身体中の血が全部抜き取られてて<wait>‥‥なのに何処にも‥‥\n<wait>{1E10:01003C}何処にも傷がついていなかったって @from-v005
+m/MS0017.BIN	0:00	79	2531	1FFA	{02:08}‥	{02:08}‥	reads: ‥‥‥‥
+m/MS0017.BIN	0:00	80	2541	1FFA	うっ	*Sob*	@from-v005
+m/MS0017.BIN	0:00	81	2551	1FFA	{08:72}	{08:72}	reads: ‥‥
+m/MS0017.BIN	0:00	82	2559	1FFA	うっ	*Sob*	@from-v005
+m/MS0017.BIN	0:00	83	2569	1FFA	{08:72}\n<wait>	{08:72}\n<wait>	reads: ‥‥\n<wait>
+m/MS0017.BIN	0:00	84	2600	1FB2	犯人について訪{08:2C}	Ask about the killer	reads: 犯人について訪ねる; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:00	85	2618	1FB2	黙{08:52}次の言葉を待つ	Wait and say nothing	reads: 黙って次の言葉を待つ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:00	86	2650	0F	{01:41}	{01:41}	reads: 
+m/MS0017.BIN	0:00	87	2653	00			
+m/MS0017.BIN	0:00	88	2660	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS0017.BIN	0:00	89	2666	1FD3	{08:76}	They	reads: まだ @from-v005
+m/MS0017.BIN	0:00	90	2674	1FFA	{02:08}‥	{02:08}‥	reads: ‥‥‥‥
+m/MS0017.BIN	0:00	91	2684	1FFA	分{08:42}{08:25}{08:52}	They said that they don't know yet	reads: 分からないって @from-v005
+m/MS0017.BIN	0:00	92	2698	1FFA	{02:08}‥\n<wait>	{02:08}‥\n<wait>	reads: ‥‥‥‥\n<wait>
+m/MS0017.BIN	0:00	93	2724	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS0017.BIN	0:00	94	2730	1FD3	{08:76}	They	reads: まだ @from-v005
+m/MS0017.BIN	0:00	95	2738	1FFA	{02:08}‥	{02:08}‥	reads: ‥‥‥‥
+m/MS0017.BIN	0:00	96	2748	1FFA	犯人は判ら{08:25}{08:52}言うの	They said that they don't know who the killer is yet	reads: 犯人は判らないって言うの @from-v005
+m/MS0017.BIN	0:00	97	2774	1FFA	{02:08}‥\n<wait>	{02:08}‥\n<wait>	reads: ‥‥‥‥\n<wait>
+m/MS0017.BIN	0:00	98	2797	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS0017.BIN	0:00	99	2807	00	{04:FF}くん！　<wait>私怖い	Katsuragi-kun! <wait>I'm	reads: くん！　<wait>私怖い @from-v005 @rebase-tagdiff
+m/MS0017.BIN	0:00	100	2833	1FFA	{02:08}‥\n<wait>	{02:08}‥\n<wait>	reads: ‥‥‥‥\n<wait>
+m/MS0017.BIN	0:00	101	2856	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS0017.BIN	0:00	102	2862	1FD3	怖いの	I'm really scared	@from-v005
+m/MS0017.BIN	0:00	103	2874	1FFA	{02:08}‥	{02:08}‥	reads: ‥‥‥‥
+m/MS0017.BIN	0:00	104	2884	1FFA	！！\n<wait>		
+m/MS0017.BIN	0:00	105	2901	00	{04:FE}{08:62}	{04:FE}{08:62}	reads: は、 @rebase-new
+m/MS0017.BIN	0:00	106	2909	00	{04:FF}にすがりつき、泣き出{08:4B}。\n<wait>		reads: にすがりつき、泣き出した。\n<wait> @rebase-new
+m/MS0017.BIN	0:00	107	2944	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>	reads: ＞どうしますか？\n<wait> @from-v005
+m/MS0017.BIN	0:00	108	2971	1FB2	抱き寄{08:67}キス{08:8E}	Kiss her	reads: 抱き寄せてキスする; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:00	109	2987	1FB2	優しく抱きし{08:2E}	Hug her gently	reads: 優しく抱きしめる; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:00	110	3003	1FB2	{08:82}じ{08:53}し{08:2B}	Stare at her	reads: ただじっとしてる; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:00	111	3027	0F	{01:A1}	{01:A1}	reads: 
+m/MS0017.BIN	0:00	112	3030	00	{02:01}+{01:FF}	{02:01}{01:FF}	reads: ペンタグランマ+ @from-ours
+m/MS0017.BIN	0:00	113	3037	1FD0	身体を振るわせ、怯え切{08:52}泣く	She looks like a scared, little girl bawling her eyes out.	reads: 身体を振るわせ、怯え切って泣く @from-v005
+m/MS0017.BIN	0:00	114	3069	00	{04:FE}	{04:FE}	reads:  @rebase-new
+m/MS0017.BIN	0:00	115	3077	1FFA	{02:08}‥\n<wait>	{02:08}‥\n<wait>	reads: ‥‥‥‥\n<wait>
+m/MS0017.BIN	0:00	116	3094	1FFA	{08:7A}	Seeing her in such a state causes something to awaken inside you.\nBefore you know it, you've drawn her close and kissed her forehead.\n<wait>	reads: そんな @from-v005
+m/MS0017.BIN	0:00	117	3100	00	{04:FE}の事が、たまらなく愛しく感じら{08:60}		reads: の事が、たまらなく愛しく感じられた @rebase-new
+m/MS0017.BIN	0:00	118	3138	00	{04:FF}{08:62}\nそ{08:53}		reads: は、\nそっと @rebase-new
+m/MS0017.BIN	0:00	119	3151	00	{04:FE}を抱き寄せ、{08:79}額に口づけ{08:4B}。\n<wait>		reads: を抱き寄せ、その額に口づけした。\n<wait> @rebase-new
+m/MS0017.BIN	0:00	120	3193	1FD0	身体を振るわせ、怯え切{08:52}泣く	She looks like a scared, little girl bawling her eyes out.	reads: 身体を振るわせ、怯え切って泣く @from-v005
+m/MS0017.BIN	0:00	121	3225	00	{04:FE}	{04:FE}	reads:  @rebase-new
+m/MS0017.BIN	0:00	122	3233	1FFA	{02:08}‥\n<wait>	{02:08}‥\n<wait>	reads: ‥‥‥‥\n<wait>
+m/MS0017.BIN	0:00	123	3250	1FFA	{08:7A}	Seeing her in such a state causes something to awaken inside you.\nBefore you know it, you've wrapped your arms tight around her.\n<wait>	reads: そんな @from-v005
+m/MS0017.BIN	0:00	124	3256	00	{04:FE}の事が、たまらなく愛しく感じら{08:60}		reads: の事が、たまらなく愛しく感じられた @rebase-new
+m/MS0017.BIN	0:00	125	3294	00	{04:FF}{08:62}\nそ{08:53}		reads: は、\nそっと @rebase-new
+m/MS0017.BIN	0:00	126	3307	00	{04:FE}を抱きしめた。\n<wait>		reads: を抱きしめた。\n<wait> @rebase-new
+m/MS0017.BIN	0:00	127	3335	1FD0	身体を振るわせ、怯え切{08:52}泣く	She looks like a scared, little girl bawling her eyes out.	reads: 身体を振るわせ、怯え切って泣く @from-v005
+m/MS0017.BIN	0:00	128	3367	00	{04:FE}	{04:FE}	reads:  @rebase-new
+m/MS0017.BIN	0:00	129	3375	1FFA	{02:08}‥\n<wait>	{02:08}‥\n<wait>	reads: ‥‥‥‥\n<wait>
+m/MS0017.BIN	0:00	130	3392	1FFA	{08:7A}	You find yourself not knowing what to do, and end up simply\nstaring at her.\n<wait>	reads: そんな @from-v005
+m/MS0017.BIN	0:00	131	3398	00	{04:FE}を前にし、		reads: を前にし、 @rebase-new
+m/MS0017.BIN	0:00	132	3414	00	{04:FF}は{08:82}何も出来ずにじ{08:53}{08:4A}{08:64}。\n<wait>		reads: はただ何も出来ずにじっとしていた。\n<wait> @rebase-new
+m/MS0017.BIN	0:00	133	3455	00	{04:FE}：		reads: ： @rebase-new
+m/MS0017.BIN	0:00	134	3465	00	{04:FF}くん		reads: くん @rebase-new
+m/MS0017.BIN	0:00	135	3477	1FFA	{02:08}{02:08}{08:72}\n<wait>	{02:08}{02:08}{08:72}\n<wait>	reads: ‥‥‥‥‥‥‥‥\n<wait> @rebase-new
+m/MS0017.BIN	0:00	136	3502	00	{04:FE}：		reads: ： @rebase-new
+m/MS0017.BIN	0:00	137	3508	1FD3	お願い	Katsuragi-kun	@from-v005
+m/MS0017.BIN	0:00	138	3520	1FFA	{02:08}‥	{02:08}‥	reads: ‥‥‥‥
+m/MS0017.BIN	0:00	139	3534	00	{04:FF}くん		reads: くん @rebase-new
+m/MS0017.BIN	0:00	140	3546	1FFA	{02:08}‥\n<wait>	{02:08}‥\n<wait>	reads: ‥‥‥‥\n<wait> @rebase-new
+m/MS0017.BIN	0:00	141	3569	00	{04:FE}：		reads: ： @rebase-new
+m/MS0017.BIN	0:00	142	3575	1FD3	{08:48}{08:42}、私の実家で美莉のお葬式が{08:7B}の	Please	reads: これから、私の実家で美莉のお葬式があるの @from-v005
+m/MS0017.BIN	0:00	143	3615	1FFA	{02:08}‥\n<wait>	{02:08}‥\n<wait>	reads: ‥‥‥‥\n<wait>
+m/MS0017.BIN	0:00	144	3638	00	{04:FE}：		reads: ： @rebase-new
+m/MS0017.BIN	0:00	145	3644	1FD3	{08:74}ど私<wait>{08:72}{01:3A}{08:81}行{08:1E}く{08:25}{02:08}。\n<wait>	My parents are planning to hold her funeral soon.	reads: だけど私<wait>‥‥ひとりじゃ行きたくない‥‥‥。\n<wait> @from-v005
+m/MS0017.BIN	0:00	146	3681	00	{04:FF}くん、お願い。一緒に来て		reads: くん、お願い。一緒に来て @rebase-new
+m/MS0017.BIN	0:00	147	3713	1FFA	{02:08}‥\n<wait>	{02:08}‥\n<wait>	reads: ‥‥‥‥\n<wait>
+m/MS0017.BIN	0:00	148	3732	1FD1	＞{02:06}\n	>What will you do?\n	reads: ＞どうしますか？\n @from-v005
+m/MS0017.BIN	0:00	149	3753	1FB2	一緒に行く	Go with her	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:00	150	3765	1FB2	断る	Refuse	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:00	151	3783	0F	{01:88}{01:FF}	{01:88}{01:FF}	reads: 
+m/MS0017.BIN	0:00	152	3795	00	{04:FF}{08:62}	{04:FF}{08:62}	reads: は、 @rebase-new
+m/MS0017.BIN	0:00	153	3803	00	{04:FE}と共に、美莉の葬儀に出席{08:8E}事に{08:4B}。\n<wait>		reads: と共に、美莉の葬儀に出席する事にした。\n<wait> @rebase-new
+m/MS0017.BIN	0:00	154	3852	00	{04:FE}：		reads: ： @rebase-new
+m/MS0017.BIN	0:00	155	3858	1FD3	{01:2A}、		reads: ありがとう、 @rebase-new
+m/MS0017.BIN	0:00	156	3866	00	{04:FF}くん{02:08}\n<wait>貴方{08:86}{08:72}貴方{08:86}頼{08:2F}人は{08:24}の{02:08}。\n<wait>		reads: くん‥‥‥\n<wait>貴方しか‥‥貴方しか頼れる人はいないの‥‥‥。\n<wait> @rebase-new
+m/MS0017.BIN	0:00	157	3918	1FD0	そう言{08:52}見つ{08:2E}濡{08:60}	You decide to attend Miri's funeral with Yuuka.\n<wait>	reads: そう言って見つめる濡れた @from-v005
+m/MS0017.BIN	0:00	158	3940	00	{04:FE}の瞳{08:62}まるで吸い込まれそうな程に澄んで{08:64}。\n<wait>{1E10:01003C}		reads: の瞳は、まるで吸い込まれそうな程に澄んでいた。\n<wait>{1E10:01003C} @rebase-new
+m/MS0017.BIN	0:00	159	4000	00	{04:FE}：		reads: ： @rebase-new
+m/MS0017.BIN	0:00	160	4010	00	{04:FF}くん<wait>{02:08}？\n<wait>		reads: くん<wait>‥‥‥？\n<wait> @rebase-new
+m/MS0017.BIN	0:00	161	4033	1FD0	お{08:53}いけ{08:25}{08:72}<wait>浸っ{08:14}場合では{08:19}。\n<wait>葬儀に出席しなくては{08:7D}{08:25}{08:77}。\n<wait>		reads: おっといけない‥‥<wait>浸っている場合ではなかった。\n<wait>葬儀に出席しなくてはならないのだ。\n<wait> @rebase-new
+m/MS0017.BIN	0:00	162	4111	00	{04:FF}は制服を正すと、		reads: は制服を正すと、 @rebase-new
+m/MS0017.BIN	0:00	163	4133	00	{04:FE}と共に{01:2E}を後に{08:4B}。\n<wait>		reads: と共に部屋を後にした。\n<wait> @rebase-new
+m/MS0017.BIN	0:00	164	4186	00	{04:FF}{08:62}一緒に葬儀に行く事を断{08:51}。\n<wait>		reads: は、一緒に葬儀に行く事を断った。\n<wait> @rebase-new
+m/MS0017.BIN	0:00	165	4227	00	{04:FE}は涙をいっぱいに溜めた瞳で見つめ、消え入りそうな声で		reads: は涙をいっぱいに溜めた瞳で見つめ、消え入りそうな声で @rebase-new
+m/MS0017.BIN	0:00	166	4285	00	{04:FF}に訴{08:41}。\n<wait>		reads: に訴えた。\n<wait> @rebase-new
+m/MS0017.BIN	0:00	167	4308	00	{04:FE}：		reads: ： @rebase-new
+m/MS0017.BIN	0:00	168	4314	1FD3	お願いよ、	Thank you, Katsuragi-kun...\n<wait>You're the only person I can ask to do this for me...\n<wait>	@from-v005
+m/MS0017.BIN	0:00	169	4328	00	{04:FF}くん		reads: くん @rebase-new
+m/MS0017.BIN	0:00	170	4340	1FFA	{02:08}‥	{02:08}‥	reads: ‥‥‥‥
+m/MS0017.BIN	0:00	171	4350	1FFA	わがま{08:76}{08:52}解っ{08:2B}	I know how selfish it is	reads: わがままだって解ってる @from-v005
+m/MS0017.BIN	0:00	172	4372	1FFA	{08:72}\n	{08:72}\n	reads: ‥‥\n
+m/MS0017.BIN	0:00	173	4381	1FFA	{08:74}ど	but, I need you	reads: だけど @from-v005
+m/MS0017.BIN	0:00	174	4391	1FFA	{08:72}	{08:72}	reads: ‥‥
+m/MS0017.BIN	0:00	175	4399	1FFA	お願い	Please	@from-v005
+m/MS0017.BIN	0:00	176	4411	1FFA	{08:72}	{08:72}	reads: ‥‥
+m/MS0017.BIN	0:00	177	4419	1FFA	一緒に行{08:52}	Please	reads: 一緒に行って @from-v005
+m/MS0017.BIN	0:00	178	4435	1FFA	{02:08}‥\n<wait>	{02:08}‥\n<wait>	reads: ‥‥‥‥\n<wait>
+m/MS0017.BIN	0:00	179	4459	09	{08:8B}考えれば、	Thinking about it some more, you recall that Yuuka's father is\nthe highest leader of all of the Devil Buster squads.\n<wait>	reads: よく考えれば、 @from-v005
+m/MS0017.BIN	0:00	180	4475	00	{04:FE}の父		reads: の父 @rebase-new
+m/MS0017.BIN	0:00	181	4485	00	{04:FE}兼嗣{08:62}{08:04}の上官、\nつまり、		reads: 兼嗣は、西野の上官、\nつまり、 @rebase-new
+m/MS0017.BIN	0:00	182	4516	00	{04:FF}にと{08:52}も同様と{08:68}事に{08:59}。\n<wait>		reads: にとっても同様という事になる。\n<wait> @rebase-new
+m/MS0017.BIN	0:00	183	4549	1FBA	やはり、出席し{08:25}訳には行か{08:25}{08:8C}。\n	Sitting out his daughter's funeral is probably not a very good idea.\n	reads: やはり、出席しない訳には行かないだろう。\n @from-v005
+m/MS0017.BIN	0:00	184	4589	00	{04:FE}は俯き、肩を震わせ{08:14}{02:08}\n<wait>	Plus, just look at Yuuka.\n<wait>	reads: は俯き、肩を震わせている‥‥‥\n<wait> @from-v005 @rebase-tagdiff
+m/MS0017.BIN	0:00	185	4620	1FBA	{08:47}{08:69}な状態の彼女を突き放し、一人で葬儀に向かわ{08:2A}の{08:62}非常に\n心もと{08:25}{08:5E}があ{08:51}。\n<wait>	She's clearly not in a condition where you can let her go by herself.\n<wait>	reads: このような状態の彼女を突き放し、一人で葬儀に向かわせるのは、非常に\n心もとないものがあった。\n<wait> @from-v005
+m/MS0017.BIN	0:00	186	4704	1FBA	{08:45}はやはり、一緒に葬儀に参列し、ついていてあ{08:44}方が{08:7F}{08:8C}。\n<wait>	You decide that in the end, it's best for everyone if you go with her.\n<wait>	reads: ここはやはり、一緒に葬儀に参列し、ついていてあげた方がいいだろう。\n<wait> @from-v005
+m/MS0017.BIN	0:01	0	7	1FD0	かつての	This used to once be your room...\n<wait>	@from-v005
+m/MS0017.BIN	0:01	1	19	00	{04:FF}の{01:2E}{02:08}{08:72}\n<wait>		reads: の部屋‥‥‥‥‥\n<wait> @rebase-new
+m/MS0017.BIN	0:01	2	36	1FBA	今は{08:0B}達に荒ら{03:0C}、昔の面影は{08:25}{08:72}\n	You can barely recognize it anymore...\n	reads: 今は悪魔達に荒らされ、昔の面影はない‥‥\n @from-v005
+m/MS0017.BIN	0:01	3	95	1F03	{=89}{=02}	{=89}{=02}	
+m/MS0017.BIN	0:01	4	126	1F03	{=89}{=06}	{=89}{=06}	
+m/MS0017.BIN	0:01	5	165	1F03	{=89}{=02}{06:FF}	{=89}{=02}{06:FF}	reads: {=89}{=02}
+m/MS0017.BIN	0:01	6	185	1F03			
+m/MS0017.BIN	0:01	7	206	1F03			
+m/MS0017.BIN	0:01	8	224	09	S\n	S\n	@rebase-new
+m/MS0017.BIN	0:01	9	234	1F03			
+m/MS0017.BIN	0:01	10	244	1F03			
+m/MS0017.BIN	0:01	11	260	1F03	{=89}{=0E}	{=89}{=0E}	
+m/MS0017.BIN	0:01	12	288	09	＞{02:06}\n<wait>	>What will you do?\n<wait>	reads: ＞どうしますか？\n<wait> @from-v005
+m/MS0017.BIN	0:01	13	315	1FB2	{02:07}	Open terminal	reads: 通信をする; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	14	319	1FB2	休む	Rest	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	15	325	1FB2	{02:05}	Leave	reads: 出かける; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	16	341	0F	{01:05}	{01:05}	reads: 山田
+m/MS0017.BIN	0:01	17	344	00	{02:01}{=EA}{=0D}	{02:01}o	reads: ペンタグランマ{=EA}{=0D} @from-v005
+m/MS0017.BIN	0:01	18	388	1FD0	万全の態勢で受{08:43}{08:85}の、入隊試験{02:08}‥\n<wait>{08:4D}に落ちたショックで、	You had so much momentum going into the exams, and yet, you flunked...\n<wait>The sheer shock of it all leaves you utterly unable to get any sleep.\n<wait>	reads: 万全の態勢で受けたはずの、入隊試験‥‥‥‥\n<wait>それに落ちたショックで、 @from-v005
+m/MS0017.BIN	0:01	19	453	00	{04:FF}は中々寝つけずに{08:64}。\n<wait>		reads: は中々寝つけずにいた。\n<wait> @rebase-new
+m/MS0017.BIN	0:01	20	482	1FBA	寝苦しさに、幾度も寝返りをうちながら、	All sorts of thoughts fly through your mind as you lie there.\n	@from-v005
+m/MS0017.BIN	0:01	21	539	1FB2	父さん{08:72}挫け{08:25}よ	Father... Forgive me...	reads: 父さん‥‥挫けないよ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	22	557	1FB2	母さんごめんね{02:08}	Mother... Sorry...	reads: 母さんごめんね‥‥‥; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	23	575	1FB2	僕は最低な{02:0B}だ{08:72}	I'm worthless...	reads: 僕は最低な人間だ‥‥; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	24	605	0F	{01:05}	{01:05}	reads: 山田
+m/MS0017.BIN	0:01	25	608	00	{02:01}{01:00}	{02:01}{01:00}	reads: ペンタグランマ早坂達也
+m/MS0017.BIN	0:01	26	670	0C	＞{02:06}\n<wait>	>What will you do?\n<wait>	reads: ＞どうしますか？\n<wait> @from-v005
+m/MS0017.BIN	0:01	27	697	1FB2	{02:07}	Open terminal	reads: 通信をする; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	28	701	1FB2	休む	Rest	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	29	707	1FB2	{02:05}	Leave	reads: 出かける; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	30	723	0F	{01:05}	{01:05}	reads: 山田
+m/MS0017.BIN	0:01	31	726	00	{02:01}l	{02:01}l	reads: ペンタグランマl
+m/MS0017.BIN	0:01	32	732	0C	ﾐ試験の結果を、皆も気に{08:13}{08:8C}。\n<wait>	The others are probably curious to hear how you did.\n<wait>	reads: ﾐ試験の結果を、皆も気にしているだろう。\n<wait> @from-v005 @rebase-tagdiff
+m/MS0017.BIN	0:01	33	768	1FBA	不本意な結果であ{08:51}が、一応皆に{02:08}‥\n{08:04}ぐらいに{08:62}報告{08:4A}お{08:64}方が{08:7F}{08:8C}{02:08}‥\n	As embarrassing as it is, you probably should let them know.\nAnd if not all of them, then at least Nishino.\n	reads: 不本意な結果であったが、一応皆に‥‥‥‥\n西野ぐらいには、報告しておいた方がいいだろう‥‥‥‥\n @from-v005
+m/MS0017.BIN	0:01	34	855	1F03			
+m/MS0017.BIN	0:01	35	873	09	＞{02:06}\n<wait>		reads: ＞どうしますか？\n<wait>
+m/MS0017.BIN	0:01	36	901	1FB2	{02:07}	Open terminal	reads: 通信をする; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	37	905	1FB2	休む	Rest	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	38	911	1FB2	{02:05}	Leave	reads: 出かける; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	39	927	0F	{01:05}	{01:05}	reads: 山田 @rebase-unmatched idx39 en=Outside
+m/MS0017.BIN	0:01	40	930	00	{02:01}	{02:01}U	reads: ペンタグランマ @from-v005
+m/MS0017.BIN	0:01	41	980	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS0017.BIN	0:01	42	986	1FD3	不死身の{08:02}く{08:5F}よ～ん！\n<wait>		reads: 不死身の山瀬くんだよ～ん！\n<wait> @rebase-new
+m/MS0017.BIN	0:01	43	1017	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS0017.BIN	0:01	44	1023	1FD3	おーい、		@rebase-new
+m/MS0017.BIN	0:01	45	1035	00	{04:FF}くぅん。\n<wait>入隊試験、不合格だ{08:51}よなぁ？\n<wait>		reads: くぅん。\n<wait>入隊試験、不合格だったよなぁ？\n<wait> @rebase-new
+m/MS0017.BIN	0:01	46	1087	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS0017.BIN	0:01	47	1093	1FD3	そんっ{08:58}落ち込むなよ！\n<wait>俺だ{08:52}一回{08:81}パスし{08:19}{08:5F}ぜ！\n<wait>		reads: そんっなに落ち込むなよ！\n<wait>俺だって一回じゃパスしなかったんだぜ！\n<wait> @rebase-new
+m/MS0017.BIN	0:01	48	1155	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS0017.BIN	0:01	49	1161	1FD3	{08:4D}よかさ、お前にすっげぇイイモンやるぜ！\n今{08:42}さぁ、俺の{01:2E}に来いよぅぅ、なっ？！\n<wait>		reads: それよかさ、お前にすっげぇイイモンやるぜ！\n今からさぁ、俺の部屋に来いよぅぅ、なっ？！\n<wait> @rebase-new
+m/MS0017.BIN	0:01	50	1249	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS0017.BIN	0:01	51	1255	1FD3	何もエッチな事{08:6A}てしねぇ{08:42}よ！\n絶対に来いよ！　来なきゃ損{08:8E}ぞ！\n分{08:18}な！？\n<wait>		reads: 何もエッチな事なんてしねぇからよ！\n絶対に来いよ！　来なきゃ損するぞ！\n分かったな！？\n<wait> @rebase-new
+m/MS0017.BIN	0:01	52	1338	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS0017.BIN	0:01	53	1344	1FD3	ん{08:81}、待っ{08:2B}よん！\n<wait>		reads: んじゃ、待ってるよん！\n<wait> @rebase-new
+m/MS0017.BIN	0:01	54	1411	1F03			@rebase-new
+m/MS0017.BIN	0:01	55	1424	1F03			
+m/MS0017.BIN	0:01	56	1434	1F03			
+m/MS0017.BIN	0:01	57	1450	1F03	{=89}{=0E}	{=89}{=0E}	
+m/MS0017.BIN	0:01	58	1509	1FD2	{01:2D}：	Administrator's Office:	reads: 管理部： @from-v005
+m/MS0017.BIN	0:01	59	1519	00	{04:FF}君。\n<wait>	Mister Katsuragi Ayato.\n<wait>	reads: 君。\n<wait> @from-v005 @rebase-tagdiff
+m/MS0017.BIN	0:01	60	1534	1FD2	{01:2D}：	Administrator's Office:	reads: 管理部： @from-v005
+m/MS0017.BIN	0:01	61	1540	1FD3	ＤＢ第二部隊救出の功績により、君を正式な\n{02:00}と{08:4A}任命{08:8E}。\n<wait>	For the bravery you showed saving Squad Two,\nwe have decided to officially grant you the title\nof Devil Buster.\n<wait>	reads: ＤＢ第二部隊救出の功績により、君を正式な\nデビルバスターとして任命する。\n<wait> @from-v005
+m/MS0017.BIN	0:01	62	1604	1FD2	{01:2D}：	Administrator's Office:	reads: 管理部： @from-v005
+m/MS0017.BIN	0:01	63	1610	1FD3	今回の功績を常とし、任務に励んでく{08:2F}事を\n{02:0C}は期待{08:8E}。　　　　　　　　　　以上。\n<wait>	We have high hopes for you. May you work hard,\nand eventually surpass them.         That is all.\n<wait>	reads: 今回の功績を常とし、任務に励んでくれる事を\n我々は期待する。　　　　　　　　　　以上。\n<wait> @from-v005
+m/MS0017.BIN	0:01	64	1706	18	＞{02:06}\n<wait>	>What will you do?\n<wait>	reads: ＞どうしますか？\n<wait> @from-v005
+m/MS0017.BIN	0:01	65	1733	1FB2	{02:07}	Open terminal	reads: 通信をする; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	66	1737	1FB2	休む	Rest	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	67	1743	1FB2	{02:05}	Leave	reads: 出かける; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	68	1759	0F	{01:05}	{01:05}	reads: 山田
+m/MS0017.BIN	0:01	69	1762	00	{02:01}`{08:FF}	{02:01}`{08:FF}	reads: ペンタグランマ`
+m/MS0017.BIN	0:01	70	1816	1FD0	明日{08:26}よいよ、念願であ{08:51}{02:00}初日で{08:7B}。\n興奮のせいか、目を閉じ{08:54}なかなか眠る{08:46}が出来{08:25}。\n<wait>	Tomorrow marks your first day as a Devil Buster. This is it.\nThis is what you've been waiting for all your life.\nThe sheer excitement makes it impossible for you to fall asleep.\n<wait>	reads: 明日はいよいよ、念願であったデビルバスター初日である。\n興奮のせいか、目を閉じてもなかなか眠ることが出来ない。\n<wait> @from-v005
+m/MS0017.BIN	0:01	71	1908	1FBA	亡き父の職であ{08:51}、{02:00}{02:08}‥\n{08:79}憧れの職に、明日{08:42}就く{08:77}{02:08}{08:72}\n<wait>	This is it. You have finally made it.\nTomorrow, you will become a Devil Buster, just like your late father.\n<wait>	reads: 亡き父の職であった、デビルバスター‥‥‥‥\nその憧れの職に、明日から就くのだ‥‥‥‥‥\n<wait> @from-v005
+m/MS0017.BIN	0:01	72	1970	1FBA	{08:7A}事を、とめどなく考え{08:14}うちに、	With thoughts like those running through your mind,\nyou quickly fall asleep.\n<wait>	reads: そんな事を、とめどなく考えているうちに、 @from-v005
+m/MS0017.BIN	0:01	73	2006	00	{04:FF}は眠りにおち{08:21}{02:08}‥\n<wait>		reads: は眠りにおちていった‥‥‥‥\n<wait> @rebase-new
+m/MS0017.BIN	0:01	74	2088	0B	＞{02:06}\n<wait>	>What will you do?\n<wait>	reads: ＞どうしますか？\n<wait> @from-v005
+m/MS0017.BIN	0:01	75	2115	1FB2	{02:07}	Open terminal	reads: 通信をする; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	76	2119	1FB2	休む	Rest	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	77	2125	1FB2	{02:05}	Leave	reads: 出かける; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	78	2141	0F	{01:05}	{01:05}	reads: 山田
+m/MS0017.BIN	0:01	79	2144	00	{02:01}{=E2}{=06}	{02:01}	reads: ペンタグランマ{=E2}{=06} @from-ours
+m/MS0017.BIN	0:01	80	2151	1FD0	{01:28}	{01:28}	reads: いつも @rebase-new
+m/MS0017.BIN	0:01	81	2157	00	{04:FF}の事を、気に掛けていてく{08:2F}{08:04}{02:08}\n<wait>		reads: の事を、気に掛けていてくれる西野‥‥‥\n<wait> @rebase-new
+m/MS0017.BIN	0:01	82	2196	1FBA	彼も、試験結果を気に{08:13}頃{08:8C}。\n彼に{08:62}結果を報告{08:4A}おか{08:57}{02:08}\n<wait>	He must be very excited to hear how you did.\nLet's not keep him waiting.\n<wait>	reads: 彼も、試験結果を気にしている頃だろう。\n彼には、結果を報告しておかなければ‥‥‥\n<wait> @from-v005
+m/MS0017.BIN	0:01	83	2257	00	＞{02:06}\n<wait>	>What will you do?\n<wait>	reads: ＞どうしますか？\n<wait> @from-v005
+m/MS0017.BIN	0:01	84	2284	1FB2	{02:07}	Open terminal	reads: 通信をする; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	85	2288	1FB2	休む	Rest	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	86	2294	1FB2	{02:05}	Leave	reads: 出かける; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	87	2310	0F	{01:05}	{01:05}	reads: 山田
+m/MS0017.BIN	0:01	88	2313	00	{02:01}9{06:FF}	{02:01}9{06:FF}	reads: ペンタグランマ9
+m/MS0017.BIN	0:01	89	2343	1FD0	明日{08:26}よいよ、念願であ{08:51}{02:00}初日で{08:7B}。\n興奮のせいか、目を閉じ{08:54}なかなか眠る{08:46}が出来{08:25}。\n<wait>	Tomorrow marks your first day as a Devil Buster. This is it.\nThis is what you've been waiting for all your life.\nThe sheer excitement makes it impossible for you to fall asleep.\n<wait>	reads: 明日はいよいよ、念願であったデビルバスター初日である。\n興奮のせいか、目を閉じてもなかなか眠ることが出来ない。\n<wait> @from-v005
+m/MS0017.BIN	0:01	90	2435	1FBA	嬉しい寝苦しさに寝返りをうちながら、	As you lie there in your bed...\n	@from-v005
+m/MS0017.BIN	0:01	91	2490	1FB2	父さん、僕や{08:51}よ！	Dad, I did it!	reads: 父さん、僕やったよ！; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	92	2510	1FB2	母さん、ついにＤＢだ	I'm a DB now, Mom	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	93	2544	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS0017.BIN	0:01	94	2547	00			
+m/MS0017.BIN	0:01	95	2633	00	{04:FF}{08:62}{08:65}の音で目が覚めた{02:08}‥\n<wait>		reads: は、通信の音で目が覚めた‥‥‥‥\n<wait> @rebase-new
+m/MS0017.BIN	0:01	96	2672	1FD2	{08:00}：		reads: 早坂： @rebase-new
+m/MS0017.BIN	0:01	97	2682	00	{04:FF}！\n<wait>		reads: ！\n<wait> @rebase-new
+m/MS0017.BIN	0:01	98	2695	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS0017.BIN	0:01	99	2701	1FD3	起きろ！　起きろ！　起きろッ！\n<wait>	Katsuragi!\n<wait>	@from-v005
+m/MS0017.BIN	0:01	100	2740	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS0017.BIN	0:01	101	2746	1FD3	装備品の支給等が{08:7B}{08:42}、早急にＢ５Ｆの\n詰所{08:71}来い。\n<wait>	Wake up, Katsuragi! Hey! Wake up!\n<wait>	reads: 装備品の支給等があるから、早急にＢ５Ｆの\n詰所まで来い。\n<wait> @from-v005
+m/MS0017.BIN	0:01	102	2804	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS0017.BIN	0:01	103	2810	1FD3	遅{08:2F}なよ！　	We're handing the new recruits their gear.\nHurry your ass over to the office on B5F.\n<wait>	reads: 遅れるなよ！　 @from-v005
+m/MS0017.BIN	0:01	104	2826	00	{04:FF}隊員！\n<wait>		reads: 隊員！\n<wait> @rebase-new
+m/MS0017.BIN	0:01	105	2885	1FB2	{02:07}	Open terminal	reads: 通信をする; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	106	2889	1FB2	休む	Rest	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	107	2895	1FB2	{02:05}	Leave	reads: 出かける; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	108	2911	0F	{01:4C}	{01:4C}	reads: 
+m/MS0017.BIN	0:01	109	2914	00	{02:01}{=E0}{=03}	{02:01}{05:FF}	reads: ペンタグランマ{=E0}{=03} @from-ours
+m/MS0017.BIN	0:01	110	2927	00	{04:FF}は{08:65}をし{08:69}と考{08:41}。\n{03:0B}{08:7A}事を{08:13}場合では{08:25}事に気付き、やめた。\n	For a moment, you consider sending a reply.\nHowever, on a second thought, that doesn't seem appropriate here.\n	reads: は通信をしようと考えた。\nしかし、そんな事をしている場合ではない事に気付き、やめた。\n @from-v005 @rebase-tagdiff
+m/MS0017.BIN	0:01	111	2994	1FD0	今は{08:7A}事を{08:13}場合では{08:25}。\n早く	This is no time for that.\nYou need to hurry to 	reads: 今はそんな事をしている場合ではない。\n早く @from-v005
+m/MS0017.BIN	0:01	112	3028	09	{08:03}の{01:2E}	Emi's room.\n	reads: 英美の部屋 @from-v005
+m/MS0017.BIN	0:01	113	3037	18	詰所に行か{08:57}{02:08}‥。\n	the Devil Buster office.\n                      	reads: 詰所に行かなければ‥‥‥‥。\n @from-v005
+m/MS0017.BIN	0:01	114	3057	00	＞{02:06}\n<wait>	>What will you do?\n<wait>	reads: ＞どうしますか？\n<wait> @from-v005
+m/MS0017.BIN	0:01	115	3084	1FB2	{02:07}	Open terminal	reads: 通信をする; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	116	3088	1FB2	休む	Rest	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	117	3094	1FB2	{02:05}	Leave	reads: 出かける; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:01	118	3110	0F	{01:05}	{01:05}	reads: 山田
+m/MS0017.BIN	0:01	119	3113	00	{02:01}	{02:01}	reads: ペンタグランマ
+m/MS0017.BIN	0:01	120	3161	1FC4	何か{08:65}が届い{08:14}様だ。\n<wait>	It appears that you have a new transmission.\n<wait>	reads: 何か通信が届いている様だ。\n<wait> @from-v005
+m/MS0017.BIN	0:01	121	3226	1FD2	原宿{08:10}：	Harajuku Shelter:	reads: 原宿シェルター： @from-v005
+m/MS0017.BIN	0:01	122	3236	1FD3	{02:0E}原宿{08:10}。\n救援を求む！　救援を求む！\n<wait>	This is Harajuku Shelter.\nWe request immediate assistance!\nI repeat, we request immediate assistance!\n<wait>	reads: こちら原宿シェルター。\n救援を求む！　救援を求む！\n<wait> @from-v005
+m/MS0017.BIN	0:01	123	3282	1FD2	原宿{08:10}：	Harajuku Shelter:	reads: 原宿シェルター： @from-v005
+m/MS0017.BIN	0:01	124	3292	1FD3	{08:10}内に{08:0B}が侵入。\n侵入経路は不明。\n<wait>	Demons have managed to enter the shelter.\nHow they got in is currently unknown.\n<wait>	reads: シェルター内に悪魔が侵入。\n侵入経路は不明。\n<wait> @from-v005
+m/MS0017.BIN	0:01	125	3334	1FD2	原宿{08:10}：	Harajuku Shelter:	reads: 原宿シェルター： @from-v005
+m/MS0017.BIN	0:01	126	3344	1FD3	外部に破損は無く、<wait>{01:34}も{01:31}機能{08:13}。\n<wait>	There's been no damage to the shelter's exterior.\n<wait>Likewise, the barrier appears fully operational.\n<wait>	reads: 外部に破損は無く、<wait>結界も無事機能している。\n<wait> @from-v005
+m/MS0017.BIN	0:01	127	3389	1FD2	原宿{08:10}：	Harajuku Shelter:	reads: 原宿シェルター： @from-v005
+m/MS0017.BIN	0:01	128	3399	1FD3	住人の大半が、{01:2B}ウイルスに汚染{03:0C}、\n死傷者も多数発生。\n<wait>	More than half of the residents have been\ninfected by a zombie virus, resulting in\nnumerous casualties.\n<wait>	reads: 住人の大半が、ゾンビウイルスに汚染され、\n死傷者も多数発生。\n<wait> @from-v005
+m/MS0017.BIN	0:01	129	3461	1FD2	原宿{08:10}：	Harajuku Shelter:	reads: 原宿シェルター： @from-v005
+m/MS0017.BIN	0:01	130	3471	1FD3	状況改善の見込みが全く無い。\n<wait>	The situation looks beyond dire.\n<wait>	@from-v005
+m/MS0017.BIN	0:01	131	3515	1FD2	原宿{08:10}：	Harajuku Shelter:	reads: 原宿シェルター： @from-v005
+m/MS0017.BIN	0:01	132	3525	1FD3	今後の予測も全く不可能。\n絶望的だ。\n至急、{02:00}の{02:08}\n<wait>	If help doesn't arrive soon, then...\n<wait>	reads: 今後の予測も全く不可能。\n絶望的だ。\n至急、デビルバスターの‥‥‥\n<wait> @from-v005
+m/MS0017.BIN	0:01	133	3590	1FD0	そこで、{08:65}文は終わ{08:52}{08:64}。\n<wait>	The transmission ends there.\n<wait>	reads: そこで、通信文は終わっていた。\n<wait> @from-v005
+m/MS0017.BIN	0:01	134	3621	1FBA	原宿{08:10}に{08:0B}が侵入し、{08:10}内が壊滅状態に{08:7B}。\n{08:48}{08:62}大変な事が起{08:52}{08:1F}様だ。\n<wait>	It appears that shit is beyond fucked over at Harajuku Shelter.\n<wait>	reads: 原宿シェルターに悪魔が侵入し、シェルター内が壊滅状態にある。\nこれは、大変な事が起ってしまった様だ。\n<wait> @from-v005
+m/MS0017.BIN	0:01	135	3695	1FBA	一刻も早く、{08:04}達に{08:47}事を伝え{08:57}{08:7D}{08:25}。\n	You need to let the rest of the squad know about this as soon as possible.\nWasting no time, you get yourself ready and dash out.\n<wait>	reads: 一刻も早く、西野達にこの事を伝えなければならない。\n @from-v005
+m/MS0017.BIN	0:01	136	3736	00	{04:FF}{08:62}{01:2E}を飛び出{08:4B}。\n<wait>		reads: は、部屋を飛び出した。\n<wait> @rebase-new
+m/MS0017.BIN	0:01	137	3777	1F03			
+m/MS0017.BIN	0:01	138	3799	0C	{08:90}{08:4A}も	You're a bit worried about Yuuka...\n<wait>	reads: どうしても @from-v005
+m/MS0017.BIN	0:01	139	3809	00	{04:FE}の事が気に{08:59}{02:08}\n<wait>		reads: の事が気になる‥‥‥\n<wait> @rebase-new
+m/MS0017.BIN	0:01	140	3832	1FBA	やはり、	It might be for the best if you go check up on her.\n<wait>	@from-v005
+m/MS0017.BIN	0:01	141	3844	00	{04:FE}の側についていてあげ{08:69}。\n<wait>		reads: の側についていてあげよう。\n<wait> @rebase-new
+m/MS0017.BIN	0:02	0	96	1FD0	{08:65}が入っ{08:14}様だ{02:08}\n<wait>	Looks like you have a new transmission...\n<wait>	reads: 通信が入っている様だ‥‥‥\n<wait> @from-v005
+m/MS0017.BIN	0:02	1	148	1FD2	教育{01:2D}：	Office of Education:	reads: 教育管理部： @from-v005
+m/MS0017.BIN	0:02	2	162	00	{04:FF}殿。\n先より申請{03:0C}て{08:64}、{02:00}入隊試験に\n必要な学位の取得見込みが、本日決定{03:0C}ま{08:4B}。\n<wait>{08:79}旨、お伝え致し{08:5A}。\n問い合わせの際{08:62}管理{01:26}.３２－９９９３９２を。\n<wait>	Mister Katsuragi Ayato. Earlier, you submitted\na request form for a document proving that you\npossess a level of academic standing necessary\nto enter the ranks of the Devil Busters.\n<wait>We would like to inform you that your application\nhas been successfully processed. For more details,\nplease contact Administrator NO.32-999392.\n<wait>	reads: 殿。\n先より申請されていた、デビルバスター入隊試験に\n必要な学位の取得見込みが、本日決定されました。\n<wait>その旨、お伝え致します。\n問い合わせの際は、管理ＮＯ.３２－９９９３９２を。\n<wait> @from-v005 @rebase-tagdiff
+m/MS0017.BIN	0:02	3	322	1FD2	教育{01:2D}：	Office of Education:	reads: 教育管理部： @from-v005
+m/MS0017.BIN	0:02	4	332	1FD3	続けて、入隊試験資格申請を行い{08:15}\n	Now, would you also wish to submit an application\nto join the upcoming Devil Buster entry trials?\n	reads: 続けて、入隊試験資格申請を行いますか？\n @from-v005
+m/MS0017.BIN	0:02	5	369	1F58	{05:00}	{05:00}	reads: はいいいえニュートン
+m/MS0017.BIN	0:02	6	384	1FD0	申請し{08:25}と{08:4B}ら、次のチャンスはかなり先に{08:1A}{08:83}。\n<wait>	If you say no here, it might be a while till you get another\nchance like this.\n<wait>	reads: 申請しないとしたら、次のチャンスはかなり先になってしまう。\n<wait> @from-v005
+m/MS0017.BIN	0:02	7	437	1FBA	今、申請を済ま{08:67}おくべき{08:8C}。\n<wait>	You should probably submit the application.\n<wait>	reads: 今、申請を済ませておくべきだろう。\n<wait> @from-v005
+m/MS0017.BIN	0:02	8	476	00	{04:FF}は思い直{08:4A}、再び{08:05}ーに向{08:18}{02:08}\n<wait>	Having reconsidered his decision, Katsuragi returns to the computer.\n<wait>	reads: は思い直して、再びコンピューターに向かった‥‥‥\n<wait> @from-v005 @rebase-tagdiff
+m/MS0017.BIN	0:02	9	552	09	j	j	
+m/MS0017.BIN	0:02	10	588	1FD0	{08:90}やら、{08:65}が入っ{08:14}様だ{02:08}\n<wait>	It appears that you have a new transmission...\n<wait>	reads: どうやら、通信が入っている様だ‥‥‥\n<wait> @from-v005
+m/MS0017.BIN	0:02	11	648	1FD2	{01:2D}：	Administrator's Office:	reads: 管理部： @from-v005
+m/MS0017.BIN	0:02	12	654	1FD3	市民階級スペシャルＢ　	Katsuragi Ayato, citizen rank special B.\nWe have approved your application to take part\nin the upcoming Devil Buster entry trials.\n<wait>	@from-v005
+m/MS0017.BIN	0:02	13	680	00	{04:FF}殿。\n{02:00}入隊試験の受験を認{08:2E}。\n<wait>		reads: 殿。\nデビルバスター入隊試験の受験を認める。\n<wait> @rebase-new
+m/MS0017.BIN	0:02	14	720	1FD2	{01:2D}：	Administrator's Office:	reads: 管理部： @from-v005
+m/MS0017.BIN	0:02	15	726	1FD3	又、試験は明日行なわ{08:2F}事に決定{08:4B}。\n{08:79}旨、{08:45}に報告{08:8E}。\n<wait>	The trials will be held tomorrow. That is all.\n<wait>	reads: 又、試験は明日行なわれる事に決定した。\nその旨、ここに報告する。\n<wait> @from-v005
+m/MS0017.BIN	0:02	16	815	0C	＞{02:06}\n	>What will you do?\n	reads: ＞どうしますか？\n @from-v005
+m/MS0017.BIN	0:02	17	836	1FB2	{02:07}	Open terminal	reads: 通信をする; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:02	18	840	1FB2	休む	Rest	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:02	19	846	1FB2	{02:05}	Leave	reads: 出かける; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:02	20	862	0F	{01:05}	{01:05}	reads: 山田
+m/MS0017.BIN	0:02	21	865	00	{02:01}	{02:01}{04:FF}	reads: ペンタグランマ @from-ours
+m/MS0017.BIN	0:02	22	873	0F	ﾐ		@rebase-new
+m/MS0017.BIN	0:02	23	878	00	{04:FF}は横になり、眠ろうと{08:4B}{02:08}\n<wait>		reads: は横になり、眠ろうとした‥‥‥\n<wait> @rebase-new
+m/MS0017.BIN	0:02	24	911	1FBA	{08:8F}、試験資格を得ら{08:2F}の{08:8C}か{02:08}\n<wait>{08:4D}ばかりが気になり、目がさえて{08:83}{02:08}\n<wait>	However, you are too focused on the entry trials to be able to relax.\n<wait>After a few moments, Katsuragi gets back up.\n<wait>	reads: だが、試験資格を得られるのだろうか‥‥‥\n<wait>そればかりが気になり、目がさえてしまう‥‥‥\n<wait> @from-v005
+m/MS0017.BIN	0:02	25	996	1FD2	教育{01:2D}：	Office of Education:	reads: 教育管理部： @from-v005
+m/MS0017.BIN	0:02	26	1006	1FD3	{02:00}入隊試験資格申請\n<wait>	Processing your application...\n<wait>	reads: デビルバスター入隊試験資格申請\n<wait> @from-v005
+m/MS0017.BIN	0:02	27	1033	1FD2	教育{01:2D}：	Office of Education:	reads: 教育管理部： @from-v005
+m/MS0017.BIN	0:02	28	1047	00	{04:FF}殿{02:08}‥{1E10:01003C}市民階級スペシャルＢ\n{1E10:01003C}確認致しま{08:4B}。\n<wait>	Identity of the applicant confirmed.\n{1E10:01003C}Katsuragi Ayato... {1E10:01003C}citizen rank special B.\n<wait>	reads: 殿‥‥‥‥{1E10:01003C}市民階級スペシャルＢ\n{1E10:01003C}確認致しました。\n<wait> @from-v005 @rebase-tagdiff
+m/MS0017.BIN	0:02	29	1109	1FD2	教育{01:2D}：	Office of Education:	reads: 教育管理部： @from-v005
+m/MS0017.BIN	0:02	30	1119	1FD3	資格申請に必要な、学位取得見込み通知を確認。\n<wait>	Academic standing confirmed as sufficient.\n<wait>	@from-v005
+m/MS0017.BIN	0:02	31	1172	1FD2	教育{01:2D}：	Office of Education:	reads: 教育管理部： @from-v005
+m/MS0017.BIN	0:02	32	1182	1FD3	健康状態チェック\n医療施設端末より、カルテを参照し{08:5A}。\n	We will now perform a medical check.\nPlease submit your patient records\nfrom the medical facility's terminal.\n	reads: 健康状態チェック\n医療施設端末より、カルテを参照します。\n @from-v005
+m/MS0017.BIN	0:02	33	1252	1FB2	ＯＫ	OK	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:02	34	1258	1FB2	中断	Abort	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:02	35	1276	0F	{01:48}	{01:48}	reads: 
+m/MS0017.BIN	0:02	36	1279	00			
+m/MS0017.BIN	0:02	37	1284	1FD2	教育{01:2D}：	Office of Education:	reads: 教育管理部： @from-v005
+m/MS0017.BIN	0:02	38	1300	1FFA	{02:08}{08:72}	{02:08}{08:72}	reads: ‥‥‥‥‥
+m/MS0017.BIN	0:02	39	1310	1FFA	健康状態良好、既往症無し。\n<wait>	Applicant is in perfect health.\nNo record of previous illnesses.\n<wait>	@from-v005
+m/MS0017.BIN	0:02	40	1355	1FD2	教育{01:2D}：	Office of Education:	reads: 教育管理部： @from-v005
+m/MS0017.BIN	0:02	41	1365	1FD3	資格申請モードを中断し{08:5A}。\nよろしい{08:55}か？\n	Are you sure you wish to abort\nthe application process?\n	reads: 資格申請モードを中断します。\nよろしいですか？\n @from-v005
+m/MS0017.BIN	0:02	42	1411	1F58	{05:00}	{05:00}	reads: はいいいえニュートン
+m/MS0017.BIN	0:02	43	1417	1FD2	教育{01:2D}：	Office of Education:	reads: 教育管理部： @from-v005
+m/MS0017.BIN	0:02	44	1427	1FD3	試験資格申請はお早めに{02:08}{08:72}\n<wait>	Please submit the application at your earliest\nconvenience...\n<wait>	reads: 試験資格申請はお早めに‥‥‥‥‥\n<wait> @from-v005
+m/MS0017.BIN	0:02	45	1466	1FD0	{08:45}で申請のチャンスを逃{08:4B}ら、いつ次の試験が{08:7B}か解ら{08:25}{08:77}。\n<wait>	If you miss your chance to submit an application now,\nthere's no telling when the next tryouts will be.\n<wait>	reads: ここで申請のチャンスを逃したら、いつ次の試験があるか解らないのだ。\n<wait> @from-v005
+m/MS0017.BIN	0:02	46	1529	1FBA	ともかく、試験資格の申請は{08:4A}おくのが賢明{08:8C}。\n<wait>	It'd be smart to get it done as soon as possible.\n<wait>	reads: ともかく、試験資格の申請はしておくのが賢明だろう。\n<wait> @from-v005
+m/MS0017.BIN	0:02	47	1584	00	{04:FF}は思い直{08:4A}、再び{08:05}ーに向{08:18}{02:08}\n<wait>	Having reconsidered his decision, Katsuragi returns to the computer.\n<wait>	reads: は思い直して、再びコンピューターに向かった‥‥‥\n<wait> @from-v005 @rebase-tagdiff
+m/MS0017.BIN	0:03	0	0	DATA	＞{02:06}\n<wait>	>What will you do?\n<wait>	reads: ＞どうしますか？\n<wait> @from-v005
+m/MS0017.BIN	0:03	1	27	1FB2	{02:07}	Open terminal	reads: 通信をする; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:03	2	31	1FB2	休む	Rest	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:03	3	37	1FB2	{02:05}	Leave	reads: 出かける; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:03	4	53	0F	{01:05}	{01:05}	reads: 山田
+m/MS0017.BIN	0:03	5	56	00	{02:01}c	{02:01}	reads: ペンタグランマc @from-ours
+m/MS0017.BIN	0:03	6	60	00			
+m/MS0017.BIN	0:03	7	74	09			
+m/MS0017.BIN	0:03	8	88	1FD0	{01:31}、試験資格が取{08:60}{08:77}。\n休む前に、{08:04}達に報告{08:4A}お{08:64}方が良い{08:8C}。\n<wait>	You promised quite a few people that you'd let them know\nright away once you got your application approved.\nYou should make sure to do that before going to bed.<wait>	reads: 無事、試験資格が取れたのだ。\n休む前に、西野達に報告しておいた方が良いだろう。\n<wait> @from-v005
+m/MS0017.BIN	0:04	0	51	1FD0	{08:65}が入{08:51}{08:69}だ{02:08}{08:72}\n<wait>	Looks like you have a new transmission...\n<wait>	reads: 通信が入ったようだ‥‥‥‥‥\n<wait> @from-v005
+m/MS0017.BIN	0:04	1	99	1FD0	{01:2D}{08:42}の{08:65}が入{08:51}。\n<wait>試験開始を告げるメッセージが、画面にうつし出{03:0C}ていく。\n<wait>	It's from the Administrator's Office.\n<wait>It says that the Devil Buster entry trial is about to begin.\n<wait>	reads: 管理部からの通信が入った。\n<wait>試験開始を告げるメッセージが、画面にうつし出されていく。\n<wait> @from-v005
+m/MS0017.BIN	0:04	2	187	1FD2	{01:2D}：	Administrator's Office:	reads: 管理部： @from-v005
+m/MS0017.BIN	0:04	3	193	1FD3	{08:48}より{08:72}{02:00}入隊試験の一つで{08:7B}、\n能力試験問題を送信{08:8E}。\n<wait>	The first part of the trial will be held\nin the form of a multiple-choice exam.\n<wait>	reads: これより‥‥デビルバスター入隊試験の一つである、\n能力試験問題を送信する。\n<wait> @from-v005
+m/MS0017.BIN	0:04	4	255	1FD2	{01:2D}：	Administrator's Office:	reads: 管理部： @from-v005
+m/MS0017.BIN	0:04	5	261	1FD3	試験問題に対{08:8E}回答{08:62}\n{08:79}都度提示{03:0C}る選択肢を選択{08:8E}形式で行なう。\n<wait>	Please select the most appropriate answer\nout of the ones shown on the screen.\n<wait>	reads: 試験問題に対する回答は、\nその都度提示される選択肢を選択する形式で行なう。\n<wait> @from-v005
+m/MS0017.BIN	0:04	6	333	1FD2	{01:2D}：	Administrator's Office:	reads: 管理部： @from-v005
+m/MS0017.BIN	0:04	7	339	1FD3	試験時間は６０分。\n<wait>	You have 60 minutes.\n<wait>	@from-v005
+m/MS0017.BIN	0:04	8	366	1FD2	{01:2D}：	Administrator's Office:	reads: 管理部： @from-v005
+m/MS0017.BIN	0:04	9	372	1FD3	時間内に全ての問題に回答出来{08:19}場合におい{08:54}、\n制限時間が訪{08:60}時点で、試験終了と{08:8E}。\n<wait>	The exam will automatically end when the time\nis up, regardless of whether you have managed\nto answer all of the questions.\n<wait>	reads: 時間内に全ての問題に回答出来なかった場合においても、\n制限時間が訪れた時点で、試験終了とする。\n<wait> @from-v005
+m/MS0017.BIN	0:04	10	462	1FD2	{01:2D}：	Administrator's Office:	reads: 管理部： @from-v005
+m/MS0017.BIN	0:04	11	468	1FD3	質問等、試験中の外部との{08:65}は一切禁じられ{08:14}。\n厳守{08:8E}事。\n<wait>	You are not allowed to contact any outside\nparties during the exam.\n<wait>	reads: 質問等、試験中の外部との通信は一切禁じられている。\n厳守する事。\n<wait> @from-v005
+m/MS0017.BIN	0:04	12	532	1FD2	{01:2D}：	Administrator's Office:	reads: 管理部： @from-v005
+m/MS0017.BIN	0:04	13	538	1FD3	万が一違反{08:4B}場合、試験結果が{08:6D}様な物であろうと、\n不合格処分と{08:8E}。\n<wait>	In case such behaviour is observed,\nyou will be instantly disqualified.\n<wait>	reads: 万が一違反した場合、試験結果がどの様な物であろうと、\n不合格処分とする。\n<wait> @from-v005
+m/MS0017.BIN	0:04	14	612	1FD2	{01:2D}：	Administrator's Office:	reads: 管理部： @from-v005
+m/MS0017.BIN	0:04	15	618	1FD3	\n\n　　　　　　　　　　　　　　　　　　　　　　以上。\n受験番号０９１６　	\n\n                            That is all.\nGood luck, examinee 0916, Katsuragi Ayato.\n<wait>	@from-v005
+m/MS0017.BIN	0:04	16	693	00	{04:FF}　検討を祈る。\n<wait>		reads: 　検討を祈る。\n<wait> @rebase-new
+m/MS0017.BIN	0:04	17	744	1FD0	　　　　　能力試験第一部　{08:0B}形態分類学　\n<wait>	      Section 1: Demonology\n<wait>	reads: 　　　　　能力試験第一部　悪魔形態分類学　\n<wait> @from-v005
+m/MS0017.BIN	0:04	18	793	1FD2	問題１：	Question 1:	@from-v005
+m/MS0017.BIN	0:04	19	803	1FD3	{08:0B}とは本来霊的な存在で{08:7B}が、霊的な存在でありながらも\n{08:47}世において肉体を持つ事が出来る。\n<wait>	Although demons are by nature spiritual beings,\nwhen they appear in our world, they do so possessing physical bodies.\n<wait>	reads: 悪魔とは本来霊的な存在であるが、霊的な存在でありながらも\nこの世において肉体を持つ事が出来る。\n<wait> @from-v005
+m/MS0017.BIN	0:04	20	897	1FBA	受肉の手段は主に二種類に分類{03:0C}る。\n{01:3C}の手段と{08:4A}、他の生物体の肉体に憑依し、{08:4D}を自らの肉体と{08:8E}場合。\n<wait>	In general, there are two main methods through which a demon can\nmanifest itself. One is possessing another living being and using its\nbody as its own.\n<wait>	reads: 受肉の手段は主に二種類に分類される。\nひとつの手段として、他の生物体の肉体に憑依し、それを自らの肉体とする場合。\n<wait> @from-v005
+m/MS0017.BIN	0:04	21	1003	1FBA	そ{08:4A}、残る{08:5C}{01:3C}の手段と{08:4A}、大量の生命エネルギーを用い、\n{08:4D}を肉体に変換{08:8E}場合で{08:7B}。\n<wait>	The other is for the demon to gather a massive amount of life energy,\nand then transform that into a body for it to use.\n<wait>	reads: そして、残るもうひとつの手段として、大量の生命エネルギーを用い、\nそれを肉体に変換する場合である。\n<wait> @from-v005
+m/MS0017.BIN	0:04	22	1091	1FBA	{08:47}生命エネルギーを生体マグネタイトと呼ぶが、{08:0B}が{08:47}生命エネルギーを\n{02:0B}{08:42}最も大量に摂取できる方法を、次{08:42}選べ。\n	Please select the method through which demons harvest this energy,\nreferred to as Somatic Magnetite, from humans out of the following.\n	reads: この生命エネルギーを生体マグネタイトと呼ぶが、悪魔がこの生命エネルギーを\n人間から最も大量に摂取できる方法を、次から選べ。\n @from-v005
+m/MS0017.BIN	0:04	23	1217	1FB2	血を流さ{08:2A}	Draining their blood	reads: 血を流させる; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	24	1229	1FB2	信仰心を得る	Gathering worship	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	25	1243	1FB2	炎に焼く	Cooking them	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	26	1265	0F	{01:0B}	{01:0B}	reads: わたしが
+m/MS0017.BIN	0:04	27	1268	00	{02:01}{07:00}	{02:01}{07:00}	reads: ペンタグランマ＞どうしますか？
+m/MS0017.BIN	0:04	28	1284	1F4E	竭閧Q：	stion 2:	@from-v005
+m/MS0017.BIN	0:04	29	1293	1FD3	{08:0B}の行動形態{08:62}属性と呼ば{08:2F}{08:5E}で主に分類{03:0C}るが、\n{08:4D}以外の要素と{08:4A}、月の運行が大きく影響を及ぼす。\n<wait>	Demons are often classified by their Alignment and Tendency.\nHowever, there are also other qualities that can be used to group them,\nincluding the way in which they react to the movements of the moon.\n<wait>	reads: 悪魔の行動形態は、属性と呼ばれるもので主に分類されるが、\nそれ以外の要素として、月の運行が大きく影響を及ぼす。\n<wait> @from-v005
+m/MS0017.BIN	0:04	30	1395	1FBA	アンデッド系統に分類{03:0C}る{08:0B}が、{08:79}パワーを増大さ{08:2A}場合、\n月の状態{08:62}{08:90}なっ{08:14}かを答えよ。\n	Which of the following phases of the moon increases the power of demons\nof the Undead type?\n	reads: アンデッド系統に分類される悪魔が、そのパワーを増大させる場合、\n月の状態は、どうなっているかを答えよ。\n @from-v005
+m/MS0017.BIN	0:04	31	1497	1FB2	満月	Full moon	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	32	1503	1FB2	新月	New moon	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	33	1509	1FB2	下弦の月	Waning moon	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	34	1531	0F	{01:05}	{01:05}	reads: 山田
+m/MS0017.BIN	0:04	35	1534	00	{02:01}{07:00}	{02:01}{07:00}	reads: ペンタグランマ＞どうしますか？
+m/MS0017.BIN	0:04	36	1550	1F4E	竭閧R：	stion 3:	@from-v005
+m/MS0017.BIN	0:04	37	1559	1FD3	{08:0B}{08:4D}ぞれの行動パターン予測、及び習性を分類{08:8E}上で、\n重要な要素と{08:59}{08:5E}が、属性と呼ば{08:2F}概念で{08:7B}。\n<wait>	The concepts of Alignments and Tendencies are extremely important when\nit comes to analysing and predicting the behaviour of a type of demon.\n<wait>	reads: 悪魔それぞれの行動パターン予測、及び習性を分類する上で、\n重要な要素となるものが、属性と呼ばれる概念である。\n<wait> @from-v005
+m/MS0017.BIN	0:04	38	1659	1FBA	属性をグラフで表わ{08:4B}場合、縦横軸線を基準に{08:4B}表の一点に表す{08:46}が\nできる。\n<wait>	Together, they can be used to form a two-dimensional graph where\ndemons can then be placed.\n<wait>	reads: 属性をグラフで表わした場合、縦横軸線を基準にした表の一点に表すことが\nできる。\n<wait> @from-v005
+m/MS0017.BIN	0:04	39	1737	1FBA	{08:0B}の根本性質を表わす善悪を縦軸と{08:4A}、\n善{08:59}ＬＩＧＨＴ（ライト）、悪の属性で{08:7B}ＤＡＲＫ（ダーク）{02:08}‥\nそ{08:4A}、中間の{01:26}ＭＡＬ（ノーマル）。\n<wait>	First, there is the demon's natural Tendency,\nranging from LIGHT (good) to DARK (evil), and finally, NORMAL (middle).\n<wait>	reads: 悪魔の根本性質を表わす善悪を縦軸として、\n善なるＬＩＧＨＴ（ライト）、悪の属性であるＤＡＲＫ（ダーク）‥‥‥‥\nそして、中間のＮＯＭＡＬ（ノーマル）。\n<wait> @from-v005
+m/MS0017.BIN	0:04	40	1876	1FBA	習性や行動形態を表わす横軸に{08:62}ＬＡＷ／ＮＥＵＴＲＡＬ／ＣＨＡＯＳ。\nＬＡＷ（ロウ）{08:62}秩序や全体を重んじ、ＣＨＡＯＳ（カオス）{08:62}混沌の\n中に身を置くのを好む。ＮＥＵＴＲＡＬ（ニュートラル）は中庸で{08:7B}。\n<wait>	Then there are the Alignments (LAW, NETRAL, CHAOS), which let us predict\nhow a demon is going to behave in given circumstances. Demons of the LAW\nalignment prefer order and tend to put the needs of the group over those\nof the individual. CHAOS-aligned demons, on the other hand, adore\ndisarrangement and can most often be found going against the established\nrule. Lastly, there are NEUTRAL demons, who walk the path in the middle.\n<wait>	reads: 習性や行動形態を表わす横軸には、ＬＡＷ／ＮＥＵＴＲＡＬ／ＣＨＡＯＳ。\nＬＡＷ（ロウ）は、秩序や全体を重んじ、ＣＨＡＯＳ（カオス）は、混沌の\n中に身を置くのを好む。ＮＥＵＴＲＡＬ（ニュートラル）は中庸である。\n<wait> @from-v005
+m/MS0017.BIN	0:04	41	2079	1FBA	で{08:62}{08:47}世界に直接干渉{08:4A}来{08:25}属性の{08:0B}は何か？\n	Which of the following type of demons do not interfere in the matters\nof this world directly?\n	reads: では、この世界に直接干渉して来ない属性の悪魔は何か？\n @from-v005
+m/MS0017.BIN	0:04	42	2138	1FB2	ＬＩＧＨＴ	LIGHT	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	43	2150	1FB2	ＤＡＲＫ	DARK	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	44	2160	1FB2	ＬＡＷ	LAW	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	45	2180	0F	{01:0B}	{01:0B}	reads: わたしが
+m/MS0017.BIN	0:04	46	2183	00	{02:01}{07:00}	{02:01}{07:00}	reads: ペンタグランマ＞どうしますか？
+m/MS0017.BIN	0:04	47	2199	1F4E	竭閧S：	stion 4:	@from-v005
+m/MS0017.BIN	0:04	48	2208	1FD3	で{08:62}先の属性で、何者かに使役{03:0C}{08:14}{08:0B}の属性は何か言え。\n	Which of the following type of demons could be found working\nunder a third party?\n	reads: では、先の属性で、何者かに使役されている悪魔の属性は何か言え。\n @from-v005
+m/MS0017.BIN	0:04	49	2277	1FB2	ＤＡＲＫ	DARK	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	50	2287	1FB2	ＮＥＵＴＲＡＬ	NEUTRAL	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	51	2303	1FB2	ＬＡＷ	LAW	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	52	2311	1FB2	{01:26}ＭＡＬ	NORMAL	reads: ＮＯＭＡＬ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	53	2333	0F	{01:0F}	{01:0F}	reads: あなたがた
+m/MS0017.BIN	0:04	54	2336	00	{02:01}	{02:01}	reads: ペンタグランマ
+m/MS0017.BIN	0:04	55	2344	00			
+m/MS0017.BIN	0:04	56	2356	1F4E	竭閧T：	stion 5:	@from-v005
+m/MS0017.BIN	0:04	57	2365	1FD3	同族及び同種{08:0B}間に{08:62}連帯感及び友情とも呼べる行動が見ら{08:2F}事が、\n研究の結果明らかに{03:0C}{08:14}。\n<wait>	Through experimentation, we have been able to show that demons\ndo in fact display a certain amount of solidarity towards other\ndemons of their own race.\n<wait>	reads: 同族及び同種悪魔間には、連帯感及び友情とも呼べる行動が見られる事が、\n研究の結果明らかにされている。\n<wait> @from-v005
+m/MS0017.BIN	0:04	58	2459	1FBA	{08:47}行動{08:62}時には{02:0B}を対象に向けら{08:2F}場合も{08:7B}。\n<wait>	There have even been rare circumstances where they've been observed\nacting this way towards humans.\n<wait>	reads: この行動は、時には人間を対象に向けられる場合もある。\n<wait> @from-v005
+m/MS0017.BIN	0:04	59	2508	1FBA	{08:6D}様な{08:0B}であ{08:52}も、{08:47}様な行動習性を巧みに利用し、\n友好状態に持ち込めた場合において{08:62}{08:0E}に{08:8E}事が可能で{08:7B}。\n<wait>	By carefully taking into consideration the demon's nature and\ndisposition, it is possible to have it lower its guard, and even join\nyour ranks as an ally. This applies to all demons out there.\n<wait>	reads: どの様な悪魔であっても、この様な行動習性を巧みに利用し、\n友好状態に持ち込めた場合においては、仲魔にする事が可能である。\n<wait> @from-v005
+m/MS0017.BIN	0:04	60	2618	1FBA	\n{01:25}か{01:26}かを答えよ。\n	\nYes, or no?	reads: \nＹＥＳかＮＯかを答えよ。\n @from-v005
+m/MS0017.BIN	0:04	61	2654	1FB2	{01:25}	YES	reads: ＹＥＳ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	62	2658	1FB2	{01:26}	NO	reads: ＮＯ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	63	2674	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS0017.BIN	0:04	64	2677	00			
+m/MS0017.BIN	0:04	65	2689	1F4E	竭閧U：	stion 6:	@from-v005
+m/MS0017.BIN	0:04	66	2698	1FD3	{08:0B}は{08:79}姿態と属性によ{08:52}種族に分類できる。\n種族によ{08:52}、{08:7B}程度の共通性が他にも見ら{08:2F}が、{08:4D}は何か答えよ。\n<wait>	Demons can be classified into different races based on their physical\nappearance, their Alignment, and their Tendency. There is also something\nelse members of a race share in common. What?\n<wait>	reads: 悪魔はその姿態と属性によって種族に分類できる。\n種族によって、ある程度の共通性が他にも見られるが、それは何か答えよ。\n<wait> @from-v005
+m/MS0017.BIN	0:04	67	2820	1FB2	{08:0D}の傾向	Magic	reads: 魔法の傾向; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	68	2830	1FB2	能力値の偏向	Attributes	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	69	2844	1FB2	出身地	Place of origin	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	70	2864	0F	{01:05}	{01:05}	reads: 山田
+m/MS0017.BIN	0:04	71	2867	00	{02:01}\n	{02:01}\n	reads: ペンタグランマ\n
+m/MS0017.BIN	0:04	72	2871	00			
+m/MS0017.BIN	0:04	73	2891	1F4E	{03:00}	{03:00}	reads: 飛び道具
+m/MS0017.BIN	0:04	74	2897	1FD0	　　　　　能力試験第二部　対{08:0B}戦術学 ＭＡＧＩＣ\n<wait>	      Section 2: Demon Combat - MAGIC<wait>	reads: 　　　　　能力試験第二部　対悪魔戦術学 ＭＡＧＩＣ\n<wait> @from-v005
+m/MS0017.BIN	0:04	75	2953	1FD2	問題１：	Question 1:	@from-v005
+m/MS0017.BIN	0:04	76	2963	1FD3	{08:0D}{08:62}{08:0B}の出現に伴い、{02:0B}も使{08:28}{08:69}に{08:16}。\n誰もが使{08:28}訳では{08:25}が、{08:79}パワーにシンクロできる者が行使できる。\nよ{08:52}、{08:0D}は{08:79}力の本質を、魔界に置い{08:14}と思わ{08:2F}。\n<wait>	It was shortly after demons first appeared in this world that humans\nbecame able to use magic. As such, it is commonly assumed that the true\nsource of this power resides in the world of demons.\n<wait>	reads: 魔法は、悪魔の出現に伴い、人間も使えるようになった。\n誰もが使える訳ではないが、そのパワーにシンクロできる者が行使できる。\nよって、魔法はその力の本質を、魔界に置いていると思われる。\n<wait> @from-v005
+m/MS0017.BIN	0:04	77	3116	1FBA	{08:0D}の行使に{08:62}使用者の魔力が大きく影響{08:8E}が、では{08:4D}に耐{08:28}には\n被使用者の何が最も大きく影響{08:8E}か？　次の項目{08:42}選び答えよ。\n	If MAGIC is the stat which increases the power of one's magical attacks,\nthen which stat acts as its counterpart and boosts magical defence?\nPlease select your answer out of the following.\n	reads: 魔法の行使には、使用者の魔力が大きく影響するが、ではそれに耐えるには\n被使用者の何が最も大きく影響するか？　次の項目から選び答えよ。\n @from-v005
+m/MS0017.BIN	0:04	78	3250	1FB2	精神力	WILLPOWER	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	79	3258	1FB2	加護	DIVINE GRACE	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	80	3264	1FB2	知力	INTELLIGENCE	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	81	3282	0F	{01:0B}	{01:0B}	reads: わたしが
+m/MS0017.BIN	0:04	82	3285	00	{02:01}{07:00}	{02:01}{07:00}	reads: ペンタグランマ＞どうしますか？
+m/MS0017.BIN	0:04	83	3301	1F4E	竭閧Q：	stion 2:	@from-v005
+m/MS0017.BIN	0:04	84	3310	1FD3	ブフ系凍結{08:0C}{08:0D}{08:62}対象{08:42}熱を奪う{08:0C}{08:0D}で{08:7B}が、\n{08:0D}には相性があり、特に火炎障壁が{08:7B}場合に{08:62}威力を発揮し{08:25}。\n<wait>	Bufu is a basic ice-type spell which works by sucking heat away from\nits target. However, depending on the enemy's affinities, and especially\nif they have set up a Flame Wall, it might not do all that much.\n<wait>	reads: ブフ系凍結攻撃魔法は、対象から熱を奪う攻撃魔法であるが、\n魔法には相性があり、特に火炎障壁がある場合には、威力を発揮しない。\n<wait> @from-v005
+m/MS0017.BIN	0:04	85	3418	1FBA	で{08:62}同じ様に威力が半減{08:8E}状態を、次の項目{08:42}選び答えよ。\n	Conversely, there also are factors that can raise Bufu's effectiveness.\nPlease choose one such factor out of the following.\n	reads: では、同じ様に威力が半減する状態を、次の項目から選び答えよ。\n @from-v005
+m/MS0017.BIN	0:04	86	3489	1FB2	非肉体{08:0B}にか{08:29}	Target is spirit	reads: 非肉体悪魔にかける; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	87	3505	1FB2	水障壁が{08:7B}時	Target has Ice Wall	reads: 水障壁がある時; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	88	3519	1FB2	対象が凍結の時	Target is frozen	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	89	3547	0F	{01:0B}	{01:0B}	reads: わたしが
+m/MS0017.BIN	0:04	90	3550	00	{02:01}{07:00}	{02:01}{07:00}	reads: ペンタグランマ＞どうしますか？
+m/MS0017.BIN	0:04	91	3566	1F4E	竭閧R：	stion 3:	@from-v005
+m/MS0017.BIN	0:04	92	3575	1FD3	タルカジャ{08:62}{08:0C}力を上昇さ{08:2A}補助{08:0D}で{08:7B}が、対象相手が瀕死及び死に\n瀕{08:4A}{08:24}場合、かつ、{03:04}に対{08:4A}か{08:29}事を前提とすれば、確実に効果を\n発揮{08:8E}。\n<wait>	Tarukaja is a support skill that boosts ATTACK. As long as it's cast on\nan ally, whether that ally is on the verge of death or not, its effect\nwill always go off.\n<wait>	reads: タルカジャは、攻撃力を上昇させる補助魔法であるが、対象相手が瀕死及び死に\n瀕していない場合、かつ、味方に対してかける事を前提とすれば、確実に効果を\n発揮する。\n<wait> @from-v005
+m/MS0017.BIN	0:04	93	3714	1FBA	\n{01:25}か{01:26}かを答えよ。\n	\nYes, or no?	reads: \nＹＥＳかＮＯかを答えよ。\n @from-v005
+m/MS0017.BIN	0:04	94	3750	1FB2	{01:25}	YES	reads: ＹＥＳ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	95	3754	1FB2	{01:26}	NO	reads: ＮＯ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	96	3770	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS0017.BIN	0:04	97	3773	00			
+m/MS0017.BIN	0:04	98	3785	1F4E	竭閧S：	stion 4:	@from-v005
+m/MS0017.BIN	0:04	99	3794	1FD3	敵{08:0B}が、ファイアブレス等の特殊能力を持つ{08:0B}であ{08:51}場合。\n{08:79}能力に属{08:8E}系統の{08:0D}{08:72}{08:47}場合では火炎系{08:72}をか{08:29}事{08:62}\n危険を招く恐れがあり、リスクが大きく有効な手段では{08:25}。\n<wait>	You are fighting a demon who knows Fire Breath. It would be foolish to\nattack it using a spell of the matching element, Fire in this case.\n<wait>	reads: 敵悪魔が、ファイアブレス等の特殊能力を持つ悪魔であった場合。\nその能力に属する系統の魔法‥‥この場合では火炎系‥‥をかける事は、\n危険を招く恐れがあり、リスクが大きく有効な手段ではない。\n<wait> @from-v005
+m/MS0017.BIN	0:04	100	3961	1FBA	\n{01:25}か{01:26}かを答えよ。\n	\nYes, or no?	reads: \nＹＥＳかＮＯかを答えよ。\n @from-v005
+m/MS0017.BIN	0:04	101	3997	1FB2	{01:25}	YES	reads: ＹＥＳ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	102	4001	1FB2	{01:26}	NO	reads: ＮＯ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	103	4017	0F	{01:07}	{01:07}	reads: ダンタリオン
+m/MS0017.BIN	0:04	104	4020	00			
+m/MS0017.BIN	0:04	105	4032	1F4E	竭閧T：	stion 5:	@from-v005
+m/MS0017.BIN	0:04	106	4041	1FD3	敵の{08:0C}にさら{03:0C}、コンディションが凍結に{08:16}場合。\nコンディション{03:10}の処置を行なわなくとも、一定時間さえ経てば\n自然に状態は{03:10}{08:8E}。\n<wait>	You have been frozen by an enemy's attack.\nIs it possible to wait out the ailment and let it expire on its own?\n<wait>	reads: 敵の攻撃にさらされ、コンディションが凍結になった場合。\nコンディション回復の処置を行なわなくとも、一定時間さえ経てば\n自然に状態は回復する。\n<wait> @from-v005
+m/MS0017.BIN	0:04	107	4172	1FBA	\n{01:25}か{01:26}かを答えよ。\n	\nYes, or no?	reads: \nＹＥＳかＮＯかを答えよ。\n @from-v005
+m/MS0017.BIN	0:04	108	4208	1FB2	{01:25}	YES	reads: ＹＥＳ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	109	4212	1FB2	{01:26}	NO	reads: ＮＯ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	110	4228	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS0017.BIN	0:04	111	4231	00			
+m/MS0017.BIN	0:04	112	4243	1F4E	竭閧U：	stion 6:	@from-v005
+m/MS0017.BIN	0:04	113	4252	1FD3	{08:0D}は{03:0E}を消費{08:8E}。で{08:62}格闘技系の特技{08:62}何を消費{08:8E}か？\n	Magic skills cost MP. Which resource do special techniques use?\n	reads: 魔法はＭＰを消費する。では、格闘技系の特技は、何を消費するか？\n @from-v005
+m/MS0017.BIN	0:04	114	4319	1FB2	{03:0D}	HP	reads: ＨＰ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	115	4323	1FB2	{03:0E}	MP	reads: ＭＰ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	116	4327	1FB2	生体マグネタイト	Magnetite	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	117	4357	0F	{01:0B}	{01:0B}	reads: わたしが
+m/MS0017.BIN	0:04	118	4360	00	{02:01}{07:00}	{02:01}{07:00}	reads: ペンタグランマ＞どうしますか？
+m/MS0017.BIN	0:04	119	4376	1F4E	竭閧V：	stion 7:	@from-v005
+m/MS0017.BIN	0:04	120	4385	1FD3	{08:0B}はさまざまな{08:0D}や特技を駆使し、コンディションに影響{08:8E}{08:0C}を{08:4A}くる。\n［混乱］{08:62}何を{08:8E}か分{08:42}なくなり、［魅了］{08:62}{03:04}{03:02}始{08:2E}。\n他にも行動不能に陥ら{08:2A}{08:0C}が、数多く報告{03:0C}{08:14}。\n<wait>	Some demons possess spells and abilities that inflict status effects.\nConfused causes a character to act unpredictably, whereas Charm\nmakes them attack their allies. In addition, there are various ailments\nthat render you completely unable to act.\n<wait>	reads: 悪魔はさまざまな魔法や特技を駆使し、コンディションに影響する攻撃をしてくる。\n［混乱］は、何をするか分からなくなり、［魅了］は、味方を攻撃し始める。\n他にも行動不能に陥らせる攻撃が、数多く報告されている。\n<wait> @from-v005
+m/MS0017.BIN	0:04	121	4556	1FBA	で{08:62}パーティーの大半がこう{08:4B}コンディション不良に陥{08:51}とき{08:62}\nいか{08:59}戦術を取るのが、最も適確で{08:7B}か？\n	What is the best course of action to take if the majority\nof your party is affected by these sorts of ailments?\n	reads: では、パーティーの大半がこうしたコンディション不良に陥ったときは、\nいかなる戦術を取るのが、最も適確であるか？\n @from-v005
+m/MS0017.BIN	0:04	122	4670	1FB2	守りに徹{08:8E}	Focusing on defence	reads: 守りに徹する; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	123	4682	1FB2	危険な敵を倒す	Target strongest foe	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	124	4698	1FB2	とにかく逃げる	Run	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	125	4726	0F	{01:0B}	{01:0B}	reads: わたしが
+m/MS0017.BIN	0:04	126	4729	00	{02:01}{01:00}	{02:01}{01:00}	reads: ペンタグランマ早坂達也
+m/MS0017.BIN	0:04	127	4744	1F4E	{03:00}{03:01}	{03:00}{03:01}	reads: 飛び道具そんなこと
+m/MS0017.BIN	0:04	128	4752	1FD0	　　　　　能力試験第三部　対{08:0B}戦術学 物理{08:0C}\n<wait>	      Section 3: Demon Combat - Physical Attacks<wait>	reads: 　　　　　能力試験第三部　対悪魔戦術学 物理攻撃\n<wait> @from-v005
+m/MS0017.BIN	0:04	129	4804	1FD2	問題１：	Question 1:	@from-v005
+m/MS0017.BIN	0:04	130	4814	1FD3	銃に比べレベルの高い刀剣類{08:62}ほぼ、{08:6D}様な{08:0B}に対{08:4A}も有効なダメージを\n与{08:28}事の出来る、比較的安全な武器で{08:7B}。\n<wait>	Unlike guns, swords do decent damage against all types of demons.\n<wait>	reads: 銃に比べレベルの高い刀剣類は、ほぼ、どの様な悪魔に対しても有効なダメージを\n与える事の出来る、比較的安全な武器である。\n<wait> @from-v005
+m/MS0017.BIN	0:04	131	4926	1FBA	\n{01:25}か{01:26}かを答えよ。\n	\nYes, or no?	reads: \nＹＥＳかＮＯかを答えよ。\n @from-v005
+m/MS0017.BIN	0:04	132	4962	1FB2	{01:25}	YES	reads: ＹＥＳ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	133	4966	1FB2	{01:26}	NO	reads: ＮＯ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	134	4982	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS0017.BIN	0:04	135	4985	00			
+m/MS0017.BIN	0:04	136	4997	1F4E	竭閧Q：	stion 2:	@from-v005
+m/MS0017.BIN	0:04	137	5006	1FD3	ハンマー等を武器に用{08:64}場合、{08:0C}時のアクションが大きい為、\n目標の回避度が上がり、あまり有効では{08:25}。\n<wait>	Hammers have a long wind-up time,\nmaking them easily dodgeable, thus not particularly effective.\n<wait>	reads: ハンマー等を武器に用いた場合、攻撃時のアクションが大きい為、\n目標の回避度が上がり、あまり有効ではない。\n<wait> @from-v005
+m/MS0017.BIN	0:04	138	5110	1FBA	\n{01:25}か{01:26}かを答えよ。\n	\nYes, or no?	reads: \nＹＥＳかＮＯかを答えよ。\n @from-v005
+m/MS0017.BIN	0:04	139	5146	1FB2	{01:25}	YES	reads: ＹＥＳ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	140	5150	1FB2	{01:26}	NO	reads: ＮＯ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	141	5166	0F	{01:07}	{01:07}	reads: ダンタリオン
+m/MS0017.BIN	0:04	142	5169	00			
+m/MS0017.BIN	0:04	143	5181	1F4E	竭閧R：	stion 3:	@from-v005
+m/MS0017.BIN	0:04	144	5190	1FD3	銃器{08:62}離{08:60}敵を{08:0C}できる有効な武器で{08:7B}が、弾薬数に制限を持つ。\n{08:4D}以外のほとん{08:6D}武器は弾数は{08:25}が、接近戦にのみ有効で{08:7B}。\n<wait>	Guns are highly effective against enemies standing far away. However,\nthey are limited by the amount of ammo you have. Conversely, swords\ndon't use ammo, but can only be used at close range.\n<wait>	reads: 銃器は、離れた敵を攻撃できる有効な武器であるが、弾薬数に制限を持つ。\nそれ以外のほとんどの武器は弾数はないが、接近戦にのみ有効である。\n<wait> @from-v005
+m/MS0017.BIN	0:04	145	5314	1FBA	さて、０距離の戦闘と{08:59}と、混戦となり戦いにかなりの制約とリスクが出る。\n以下の内で、制約で{08:25}物はどれか？\n	Fights at close range come with their own constraints and risks. Which\nof the following is not a constraint associated with close range fights.\n	reads: さて、０距離の戦闘となると、混戦となり戦いにかなりの制約とリスクが出る。\n以下の内で、制約でない物はどれか？\n @from-v005
+m/MS0017.BIN	0:04	146	5434	1FB2	戦闘{08:42}離脱{08:23}	Can't flee	reads: 戦闘から離脱できない; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	147	5448	1FB2	ダメージが増{08:28}	Take more damage	reads: ダメージが増える; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	148	5464	1FB2	銃の命中度が下がる	Gun accuracy down	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	149	5484	1FB2	複数{08:0C}{08:0D}が使え{08:25}	AOE magic disabled	reads: 複数攻撃魔法が使えない; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	150	5502	1FB2	{08:0C}目標を選べ{08:25}	Can't choose targets	reads: 攻撃目標を選べない; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	151	5530	0F	{01:13}	{01:13}	reads: あなたを
+m/MS0017.BIN	0:04	152	5533	00	{02:01}	{02:01}	reads: ペンタグランマ
+m/MS0017.BIN	0:04	153	5541	0F	{04:01}{07:00}	{04:01}{07:00}	reads: 切り＞どうしますか？
+m/MS0017.BIN	0:04	154	5557	1F4E	竭閧S：	stion 4:	@from-v005
+m/MS0017.BIN	0:04	155	5566	1FD3	格闘技は敏捷性が重要視{03:0C}るが、実戦においては銃の扱いに関{08:4A}も、\n同様に敏捷性が重要と{08:59}。\n<wait>	The effectiveness of guns and hand-to-hand combat alike is dependent\non your AGILITY.\n<wait>	reads: 格闘技は敏捷性が重要視されるが、実戦においては銃の扱いに関しても、\n同様に敏捷性が重要となる。\n<wait> @from-v005
+m/MS0017.BIN	0:04	156	5660	1FBA	\n{01:25}か{01:26}かを答えよ。\n	\nYes, or no?	reads: \nＹＥＳかＮＯかを答えよ。\n @from-v005
+m/MS0017.BIN	0:04	157	5696	1FB2	{01:25}	YES	reads: ＹＥＳ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	158	5700	1FB2	{01:26}	NO	reads: ＮＯ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	159	5716	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS0017.BIN	0:04	160	5719	00			
+m/MS0017.BIN	0:04	161	5731	1F4E	竭閧T：	stion 5:	@from-v005
+m/MS0017.BIN	0:04	162	5740	1FD3	銃撃{08:42}の回避に{08:62}敏捷性と命運が大きく影響{08:8E}。\n<wait>	AGILITY and LUCK greatly increase your chance of evading gun attacks.\n<wait>	reads: 銃撃からの回避には、敏捷性と命運が大きく影響する。\n<wait> @from-v005
+m/MS0017.BIN	0:04	163	5791	1FBA	\n{01:25}か{01:26}かを答えよ。\n	\nYes, or no?	reads: \nＹＥＳかＮＯかを答えよ。\n @from-v005
+m/MS0017.BIN	0:04	164	5827	1FB2	{01:25}	YES	reads: ＹＥＳ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	165	5831	1FB2	{01:26}	NO	reads: ＮＯ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	166	5847	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS0017.BIN	0:04	167	5850	00			
+m/MS0017.BIN	0:04	168	5862	1F4E	竭閧U：	stion 6:	@from-v005
+m/MS0017.BIN	0:04	169	5871	1FD3	{08:0B}を{08:0C}{08:4C}きに、{08:79}向きによ{08:52}効果が変化{08:8E}。\n最も効果の{08:7B}{08:0B}の向きは何か？\n	The effectiveness of an attack can change depending on which direction\nyou attack from. Which is the most effective direction of attack?\n	reads: 悪魔を攻撃するときに、その向きによって効果が変化する。\n最も効果のある悪魔の向きは何か？\n @from-v005
+m/MS0017.BIN	0:04	170	5957	1FB2	正面	Front	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	171	5963	1FB2	側面	Side	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	172	5969	1FB2	背面	Back	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	173	5987	0F	{01:0B}	{01:0B}	reads: わたしが
+m/MS0017.BIN	0:04	174	5990	00	{02:01}{01:00}	{02:01}{01:00}	reads: ペンタグランマ早坂達也
+m/MS0017.BIN	0:04	175	6005	1F4E	{03:01}{03:02}	{03:01}{03:02}	reads: そんなことを攻撃し
+m/MS0017.BIN	0:04	176	6021	1FD0	　　　　　能力試験第四部　対{08:0B}会話戦術\n<wait>	      Section 4: Demon Combat - Conversations<wait>	reads: 　　　　　能力試験第四部　対悪魔会話戦術\n<wait> @from-v005
+m/MS0017.BIN	0:04	177	6068	1FD2	問題１：	Question 1:	@from-v005
+m/MS0017.BIN	0:04	178	6078	1FD3	{08:0B}を{08:0E}に{08:8E}為に会話を行なう場合、交渉に宝石を用{08:40}事{08:62}\n大変有効で{08:7B}。\n<wait>	When attempting to talk a demon into joining you, it is possible to\noffer gemstones to help make the negotiations go more smoothly.\n<wait>	reads: 悪魔を仲魔にする為に会話を行なう場合、交渉に宝石を用いる事は、\n大変有効である。\n<wait> @from-v005
+m/MS0017.BIN	0:04	179	6152	1FBA	で{08:62}数{08:7B}宝石の中で最も効果の高い物{08:62}次の内のどれで{08:7B}かを答えよ。\n	Which one of the following gemstones is the most effective?\n	reads: では、数ある宝石の中で最も効果の高い物は、次の内のどれであるかを答えよ。\n @from-v005
+m/MS0017.BIN	0:04	180	6233	1FB2	オパール	Opal	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	181	6243	1FB2	ダイアモンド	Diamond	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	182	6257	1FB2	エメラルド	Emerald	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	183	6281	0F	{01:05}	{01:05}	reads: 山田
+m/MS0017.BIN	0:04	184	6284	00	{02:01}{07:00}	{02:01}{07:00}	reads: ペンタグランマ＞どうしますか？
+m/MS0017.BIN	0:04	185	6300	1F4E	竭閧Q：	stion 2:	@from-v005
+m/MS0017.BIN	0:04	186	6309	1FD3	{08:0B}との会話を安全に行なうに{08:62}ＤＤＥシステムが必要不可欠で{08:7B}。\n<wait>	The DDE System is required to safely converse with demons.\n<wait>	reads: 悪魔との会話を安全に行なうには、ＤＤＥシステムが必要不可欠である。\n<wait> @from-v005
+m/MS0017.BIN	0:04	187	6376	1FBA	\n{01:25}か{01:26}かを答えよ。\n	\nYes, or no?	reads: \nＹＥＳかＮＯかを答えよ。\n @from-v005
+m/MS0017.BIN	0:04	188	6412	1FB2	{01:25}	YES	reads: ＹＥＳ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	189	6416	1FB2	{01:26}	NO	reads: ＮＯ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	190	6432	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS0017.BIN	0:04	191	6435	00			
+m/MS0017.BIN	0:04	192	6447	1F4E	竭閧R：	stion 3:	@from-v005
+m/MS0017.BIN	0:04	193	6456	1FD3	{08:0B}に対{08:4A}威嚇射撃を行{08:16}場合、{08:79}成果を得るに{08:62}\n相手{08:0B}の服従度合いが大きく影響{08:8E}。\n<wait>	The outcome of firing a warning shot at a demon is highly dependent\non whether that demon is submissive or not.\n<wait>	reads: 悪魔に対して威嚇射撃を行なった場合、その成果を得るには、\n相手悪魔の服従度合いが大きく影響する。\n<wait> @from-v005
+m/MS0017.BIN	0:04	194	6542	1FBA	で{08:62}眼力による威圧の場合{08:62}次の内の何が{08:79}成否に影響を\n及ぼす事に{08:59}かを答えよ。\n	It is also possible to attempt to coerce a demon through the power of\ninsight. Which of the following determines if this will be successful?\n	reads: では、眼力による威圧の場合は、次の内の何がその成否に影響を\n及ぼす事になるかを答えよ。\n @from-v005
+m/MS0017.BIN	0:04	195	6636	1FB2	魔力	MAGIC	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	196	6642	1FB2	魅力	CHARM	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	197	6648	1FB2	{08:0C}力	ATTACK	reads: 攻撃力; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	198	6666	0F	{01:0B}	{01:0B}	reads: わたしが
+m/MS0017.BIN	0:04	199	6669	00	{02:01}{07:00}	{02:01}{07:00}	reads: ペンタグランマ＞どうしますか？
+m/MS0017.BIN	0:04	200	6685	1F4E	竭閧S：	stion 4:	@from-v005
+m/MS0017.BIN	0:04	201	6694	1FD3	次の{08:0B}の内、会話によ{08:52}{08:0E}に{08:7D}{08:25}{08:0B}を選べ。\n	Which of the following demons cannot be recruited through negotiation.\n	reads: 次の悪魔の内、会話によって仲魔にならない悪魔を選べ。\n @from-v005
+m/MS0017.BIN	0:04	202	6751	1FB2	オーク	Orc	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	203	6759	1FB2	エンジェル	Angel	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	204	6771	1FB2	ゴブリン	Goblin	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	205	6793	0F	{01:0B}	{01:0B}	reads: わたしが
+m/MS0017.BIN	0:04	206	6796	00	{02:01}{07:00}	{02:01}{07:00}	reads: ペンタグランマ＞どうしますか？
+m/MS0017.BIN	0:04	207	6812	1F4E	竭閧T：	stion 5:	@from-v005
+m/MS0017.BIN	0:04	208	6821	1FD3	アンデッド系{08:0B}に対し、会話を行なう事{08:62}全く意味を成さず、\nかえ{08:52}戦況の悪化を招く事にもなりかね{08:25}。\n<wait>	Demons of the undead type cannot understand speech,\nand attempting to talk to them can often make the situation worse.\n<wait>	reads: アンデッド系悪魔に対し、会話を行なう事は、全く意味を成さず、\nかえって戦況の悪化を招く事にもなりかねない。\n<wait> @from-v005
+m/MS0017.BIN	0:04	209	6925	1FBA	\n{01:25}か{01:26}かを答えよ。\n<wait>	\nYes, or no?<wait>	reads: \nＹＥＳかＮＯかを答えよ。\n<wait> @from-v005
+m/MS0017.BIN	0:04	210	6965	1FB2	{01:25}	YES	reads: ＹＥＳ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	211	6969	1FB2	{01:26}	NO	reads: ＮＯ; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	212	6985	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS0017.BIN	0:04	213	6988	00			
+m/MS0017.BIN	0:04	214	7000	1F4E	竭閧U：	stion 6:	@from-v005
+m/MS0017.BIN	0:04	215	7009	1FD3	{08:0B}と会話を行{08:16}場合、{08:0B}はしばしば、{02:0B}に物品や金銭を要求{08:8E}\n習性を持つが、巧みに{08:0E}に{08:59}事を匂わせ、金品{08:74}を奪い逃走{08:8E}ケースも\n頻繁に発生{08:8E}。\n<wait>	Certain demons will ask you for items or gold when you talk to them.\nHowever, there are some that will attempt to run away with your gifts\nthe moment you suggest that they join your party.\n<wait>	reads: 悪魔と会話を行なった場合、悪魔はしばしば、人間に物品や金銭を要求する\n習性を持つが、巧みに仲魔になる事を匂わせ、金品だけを奪い逃走するケースも\n頻繁に発生する。\n<wait> @from-v005
+m/MS0017.BIN	0:04	216	7152	1FBA	{08:47}場合、逃走{08:4B}{08:0B}との友好関係を保つ為に{08:62}\n{08:6D}様な行動をとる事が的確か、判断し答えよ。\n<wait>	If this happens, how should you proceed in order to remain on friendly\nterms with the demon?\n<wait>	reads: この場合、逃走した悪魔との友好関係を保つ為には、\nどの様な行動をとる事が的確か、判断し答えよ。\n<wait> @from-v005
+m/MS0017.BIN	0:04	217	7256	1FB2	あきらめて逃がす	Let them go	menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	218	7274	1FB2	追いか{08:29}	Chase after them	reads: 追いかける; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	219	7284	1FB2	おだ{08:2B}	Flatter them	reads: おだてる; menu option, declared width 20 columns @from-v005
+m/MS0017.BIN	0:04	220	7304	0F	{01:0B}	{01:0B}	reads: わたしが
+m/MS0017.BIN	0:04	221	7307	00	{02:01}{07:00}	{02:01}{07:00}	reads: ペンタグランマ＞どうしますか？
+m/MS0017.BIN	0:04	222	7322	1F4E	{03:01}{03:02}	{03:01}{03:02}	reads: そんなことを攻撃し
+m/MS0017.BIN	0:04	223	7336	1F4E	{03:00}{03:05}	{03:00}{03:05}	reads: 飛び道具銃口を向けた
+m/MS0017.BIN	0:04	224	7344	1FD0	\n　　　　　　　筆記試験終了\n<wait>	\n         The written portion is now over.\n<wait>	@from-v005
+m/MS0017.BIN	0:04	225	7378	1FBA	ＤＢ受験番号０９１６　	Devil Buster candidate 0916, Katsuragi Ayato. Your scored the following:\nDemonology                         Max: 12  You: 	@from-v005
+m/MS0017.BIN	0:04	226	7404	00	{04:FF}。君の筆記試験の成績は以下の通り。\n{08:0B}形態分類学　　　　　　６問　１２点中		reads: 。君の筆記試験の成績は以下の通り。\n悪魔形態分類学　　　　　　６問　１２点中 @rebase-new
+m/MS0017.BIN	0:04	227	7483	1F02	点\n対{08:0B}戦術学ＭＡＧＩＣ　　７問　１４点中		reads: 点\n対悪魔戦術学ＭＡＧＩＣ　　７問　１４点中 @rebase-new
+m/MS0017.BIN	0:04	228	7528	1F02	点\n対{08:0B}戦術学物理{08:0C}　　　６問　１３点中	\nDemon Combat - MAGIC               Max: 14  You: 	reads: 点\n対悪魔戦術学物理攻撃　　　６問　１３点中 @from-v005
+m/MS0017.BIN	0:04	229	7571	1F02	点\n対{08:0B}会話戦術　　　　　　６問　１１点中	\nDemon Combat - Physical Attacks    Max: 13  You: 	reads: 点\n対悪魔会話戦術　　　　　　６問　１１点中 @from-v005
+m/MS0017.BIN	0:04	230	7616	1F02	点\n<wait>\n筆記試験総合得点　　　　２５問　５０点中	\nDemon Combat - Conversations       Max: 11  You: 	@from-v005
+m/MS0017.BIN	0:04	231	7668	1F02	点\n<wait>	\n<wait>\nWritten Exam Total                 Max: 50  You: 	@from-v005
+m/MS0017.BIN	0:04	232	7677	1FBA	引き続き実技試験が行わ{08:2F}。{08:79}{08:7E}自室で待機せよ。\n<wait>	The practical exam will begin shortly.\nPlease do not exit your room till then.\n<wait>	reads: 引き続き実技試験が行われる。そのまま自室で待機せよ。\n<wait> @from-v005
+m/MS0017.BIN	0:04	233	7765	1F71	筆記試験を終{08:28}と、{02:00}隊員が一人{01:2E}に入{08:52}{08:1E}。\n<wait>	With the written exam over, a Devil Buster soon enters your room.\n<wait>	reads: 筆記試験を終えると、デビルバスター隊員が一人部屋に入ってきた。\n<wait> @from-v005
+m/MS0017.BIN	0:04	234	7816	1FD2	ＤＢ隊員：	Devil Buster:	@from-v005
+m/MS0017.BIN	0:04	235	7828	1FD3	次はヴァーチャダンジョンを用{08:64}、実施試験が執り行わ{08:2F}。\n私の後に、速やかについて来る様に。\n<wait>	The next section of the exam will take place in the Virtual Dungeon.\nPlease follow after me.\n<wait>	reads: 次はヴァーチャダンジョンを用いた、実施試験が執り行われる。\n私の後に、速やかについて来る様に。\n<wait> @from-v005
+m/MS0017.BIN	0:05	0	6	1FD0	心地よい眠気が、	A pleasant sense of tiredness flows through your body.\n<wait>	@from-v005
+m/MS0017.BIN	0:05	1	26	00	{04:FF}に忍び寄る{02:08}\n<wait>		reads: に忍び寄る‥‥‥\n<wait>
+m/MS0017.BIN	0:05	2	51	00	{04:FF}はすぐに、寝息をたて{03:03}。\n<wait>		reads: はすぐに、寝息をたてだした。\n<wait> @rebase-new
+m/MS0017.BIN	0:05	3	126	00	{01:00}	{01:00}	reads: 早坂達也 @rebase-new
+m/MS0017.BIN	0:06	0	4	00	{04:FF}の頭の中に{08:62}様々な思いが過ぎ{08:51}。\n<wait>		reads: の頭の中には、様々な思いが過ぎった。\n<wait> @rebase-new
+m/MS0017.BIN	0:06	1	49	00	{04:FF}の既に亡き父、		reads: の既に亡き父、 @rebase-new
+m/MS0017.BIN	0:06	2	69	00	{04:FF}萩人{08:62}かつて{08:04}が\n一介のＤＢ隊員であ{08:51}時、{08:79}部隊の隊長を勤めた人物であ{08:51}。\n<wait>		reads: 萩人は、かつて西野が\n一介のＤＢ隊員であった時、その部隊の隊長を勤めた人物であった。\n<wait> @rebase-new
+m/MS0017.BIN	0:06	3	151	1FBA	かつての{08:10}{08:62}今程安全性は高くなく、{08:79}当時の\n{02:00}達{08:62}常に危険にさら{03:0C}て{08:64}。\n<wait>	Your late father, Katsuragi Habito,\nwas the commanding officer of Nishino's squad of Devil Busters.\n<wait>	reads: かつてのシェルターは、今程安全性は高くなく、その当時の\nデビルバスター達は、常に危険にさらされていた。\n<wait> @from-v005
+m/MS0017.BIN	0:06	4	229	1FBA	{08:7A}中、	The shelter wasn't always as secure as it is now. Even as late as just\na few decades ago, the Devil Busters truly put their lives on the line\nto keep everyone safe.\n<wait>	reads: そんな中、 @from-v005
+m/MS0017.BIN	0:06	5	239	00	{04:FF}の父親{08:62}部下達を逃走さ{08:2A}為、自らの命を犠牲にし、\n{08:47}世を去{08:51}。\n<wait>		reads: の父親は、部下達を逃走させる為、自らの命を犠牲にし、\nこの世を去った。\n<wait> @rebase-new
+m/MS0017.BIN	0:06	6	309	1FBA	{08:79}時、現場に到着{08:4B}応援部隊が発見出来たの{08:62}血に濡{08:60}拳銃と、\n{08:79}側に残{03:0C}た制服の上着、ＤＢブルゾン{08:74}だ{08:51}。\n<wait>	One of the many casualties of this era was your father,\nwho gave his life to save his subordinates.\n<wait>	reads: その時、現場に到着した応援部隊が発見出来たのは、血に濡れた拳銃と、\nその側に残された制服の上着、ＤＢブルゾンだけだった。\n<wait> @from-v005
+m/MS0017.BIN	0:06	7	419	1FBA	現在、	Once backup at last arrived, they were unable to locate his body.\nAll they found was an assault rifle drenched in blood,\nand a discarded DB blouson lying next to it.\n<wait>	@from-v005
+m/MS0017.BIN	0:06	8	429	00	{04:FF}が常日頃着{08:14}ＤＢブルゾン{08:62}{08:79}時の{08:5E}だ。\n<wait>		reads: が常日頃着ているＤＢブルゾンは、その時のものだ。\n<wait> @rebase-new
+m/MS0017.BIN	0:06	9	476	1FBA	幼い頃、{08:0B}によ{08:52}母親を奪わ{08:60}	That blouson is the very same one you wearing currently.\n<wait>	reads: 幼い頃、悪魔によって母親を奪われた @from-v005
+m/MS0017.BIN	0:06	10	508	00	{04:FF}{08:62}再び{08:0B}によ{08:52}、\n父親をも奪わ{08:60}。\n<wait>		reads: は、再び悪魔によって、\n父親をも奪われた。\n<wait> @rebase-new
+m/MS0017.BIN	0:06	11	550	1FBA	当時、	Your mother was taken from you when you were a child,\nand not that long after, your father met the same fate.\n<wait>	@from-v005
+m/MS0017.BIN	0:06	12	560	00	{04:FF}は{08:76}幼く、僅か１０歳だ{08:51}。\n<wait>	You were only 10 years old when it all happened.\n<wait>	reads: はまだ幼く、僅か１０歳だった。\n<wait> @from-v005 @rebase-tagdiff
+m/MS0017.BIN	0:06	13	599	00	{04:FF}の心を{08:7B}想いが占めた。\n<wait>{08:4D}は	There is one expression that perfectly encapsulates what you're feeling\nin this moment. <wait>That being	reads: の心をある想いが占めた。\n<wait>それは @from-v005 @rebase-tagdiff
+m/MS0017.BIN	0:06	14	638	1FFA	{02:08}‥\n	{02:08}‥\n	reads: ‥‥‥‥\n
+m/MS0017.BIN	0:07	0	6	00	{04:FF}の心の中に、父を失{08:51}当時の悲しみが蘇る。\nそ{08:4A}、{08:4D}と同時に、{08:04}の笑顔も思い出{03:0C}た。\n<wait>		reads: の心の中に、父を失った当時の悲しみが蘇る。\nそして、それと同時に、西野の笑顔も思い出された。\n<wait> @rebase-new
+m/MS0017.BIN	0:07	1	96	1FBA	ふさぎ込み、自閉的に{08:16}少年の頃の		reads: ふさぎ込み、自閉的になった少年の頃の @rebase-new
+m/MS0017.BIN	0:07	2	132	00	{04:FF}を、優しさで救{08:52}く{08:60}の{08:62}\n{01:04}だ{08:51}{08:77}。\n<wait>		reads: を、優しさで救ってくれたのは、\n西野義雄だったのだ。\n<wait> @rebase-new
+m/MS0017.BIN	0:07	3	176	1FBA	かつての家族、そ{08:4A}現在、家族の様に面倒を見てく{08:2F}{08:04}達を思ううち、\n何故か		reads: かつての家族、そして現在、家族の様に面倒を見てくれる西野達を思ううち、\n何故か @rebase-new
+m/MS0017.BIN	0:07	4	251	00	{04:FE}の事が思考を捕らえ、離れなく{08:16}。\n<wait>		reads: の事が思考を捕らえ、離れなくなった。\n<wait> @rebase-new
+m/MS0017.BIN	0:07	5	296	00	{04:FE}{02:08}‥。\n<wait>		reads: ‥‥‥‥。\n<wait> @rebase-new
+m/MS0017.BIN	0:07	6	311	1FBA	エリート上官を父に持ちながら、{01:3A}一般居住区に住み、\n<wait>そ{08:4A}、{02:00}に{08:59}と{08:68}夢を掴み取{08:51}少女。\n<wait>	It was his kindness that saved the young you from falling\ninto the abyss of despair. He was the father figure you needed.\n<wait>	reads: エリート上官を父に持ちながら、ひとり一般居住区に住み、\n<wait>そして、デビルバスターになるという夢を掴み取った少女。\n<wait> @from-v005
+m/MS0017.BIN	0:07	7	407	1FBA	あの子は今、どんな夢を見{08:14}の{08:8C}か{02:08}{02:08}\n<wait>	As you think back to the days you spent with him and his family,\nanother person suddenly comes to your mind.\n<wait>	reads: あの子は今、どんな夢を見ているのだろうか‥‥‥‥‥‥\n<wait> @from-v005

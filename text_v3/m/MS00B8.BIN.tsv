@@ -1,0 +1,37 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS00B8.BIN	0:02	0	0	UNTILED	ｸ / ｸ / ｸ / ｸ / ｸ / ｸ / 		@noedit; @untiled; record does not tile (u8 operand past end of record at 0x1E); read-only, copied verbatim
+m/MS00B8.BIN	0:03	0	9	1F19	{01:26}	{01:26}	reads: ＮＯ
+m/MS00B8.BIN	0:03	1	12	00	{02:01};	{02:01};	reads: ペンタグランマ;
+m/MS00B8.BIN	0:03	2	16	00	{03:01}J	{03:01}J	reads: そんなことJ
+m/MS00B8.BIN	0:03	3	20	00	{04:01}[	{04:01}[	reads: 切り[
+m/MS00B8.BIN	0:03	4	24	00	{05:01}j	{05:01}j	reads: 飛び道具j
+m/MS00B8.BIN	0:03	5	28	00			
+m/MS00B8.BIN	0:03	6	30	1B	バーテン	Bartender	@from-v005
+m/MS00B8.BIN	0:03	7	51	1B	サイバーな男	Cyber Man	@from-v005
+m/MS00B8.BIN	0:03	8	76	1B	若い男	Young Man	@from-v005
+m/MS00B8.BIN	0:03	9	95	1B	{08:0B}人娼婦	Prostitute	reads: 悪魔人娼婦 @from-v005
+m/MS00B8.BIN	0:03	10	116	1B	おやじ	Old Man	@from-v005
+m/MS00B8.BIN	0:03	11	135	1B	老人	Elder	@from-v005
+m/MS00B8.BIN	0:04	0	4	1FD2	バーテン：	Bartender:	@from-v005
+m/MS00B8.BIN	0:04	1	21	09	あのイポスを倒す{08:6A}て、一体誰{08:6A}で{08:80}ね？\n<wait>	Someone took down Ipos, but who?\n<wait>	reads: あのイポスを倒すなんて、一体誰なんでしょうね？\n<wait> @from-v005
+m/MS00B8.BIN	0:04	2	68	1FD2	バーテン：	Bartender:	@from-v005
+m/MS00B8.BIN	0:04	3	80	1FD3	噂で{08:62}{08:0B}同士の抗争の結果だと{08:68}のもあり{08:5A}が、\n私は{08:33}者が{08:40}{08:77}と信じ{08:4E}{08:55}よ。\n	The word on the street is that it was a rival demon lord,\nbut I like to believe that we have a hero on the loose.\n	reads: 噂では、悪魔同士の抗争の結果だというのもありますが、\n私は勇者がいるのだと信じたいですよ。\n @from-v005
+m/MS00B8.BIN	0:04	4	157	18	大歓楽街へは行かれま{08:4B}か？\n<wait>	You ever been to the entertainment district?\n<wait>	reads: 大歓楽街へは行かれましたか？\n<wait> @from-v005
+m/MS00B8.BIN	0:04	5	192	1FD2	バーテン：	Bartender:	@from-v005
+m/MS00B8.BIN	0:04	6	204	1FD3	{08:76}で{08:4B}ら、{08:45}でほろ酔い加減に{08:16}らば、\n是非とも、足を運んでみて下{08:49}。素晴らしい所{08:55}よ！\n<wait>	If not, you definitely should. It's a wonderful place.\n<wait>	reads: まだでしたら、ここでほろ酔い加減になったらば、\n是非とも、足を運んでみて下さい。素晴らしい所ですよ！\n<wait> @from-v005
+m/MS00B8.BIN	0:05	0	4	1FD2	サイバーな男：	Cyber Man:	@from-v005
+m/MS00B8.BIN	0:05	1	20	1FD3	六本木は破壊前{08:42}、娼婦で溢{08:2F}町だ{08:51}{08:5F}{08:52}な！\n変わら{08:25}モンだよ！\n<wait>	They say that Roppongi became an oasis of prostitution after\nthe world ended. I ask, you never visited there before that?\n<wait>	reads: 六本木は破壊前から、娼婦で溢れる町だったんだってな！\n変わらないモンだよ！\n<wait> @from-v005
+m/MS00B8.BIN	0:06	0	4	1FD2	若い男：	Young Man:	@from-v005
+m/MS00B8.BIN	0:06	1	14	1FD3	大歓楽街を牛耳っ{08:14}の{08:62}{01:08}の息のか{08:18}{08:0B}、\nイポスと{08:68}ヤツな{08:5F}。\n<wait>	The entertainment district is run by the demon Ipos,\nan underling of Baal.\n<wait>	reads: 大歓楽街を牛耳っているのは、バエルの息のかかった悪魔、\nイポスというヤツなんだ。\n<wait> @from-ours
+m/MS00B8.BIN	0:06	2	82	1FD2	若い男：	Young Man:	@from-v005
+m/MS00B8.BIN	0:06	3	92	1FD3	金儲けと娯楽の為{08:7D}、どんな非道な事も平気でやる。\n六本木{08:62}{08:7A}{08:0B}の力で生み出{03:0C}た、幻の楽園\nな{08:5F}よ{02:08}\n<wait>	As long as it makes money or provides entertainment,\nanything goes there. It is truly a demon's paradise.\n<wait>	reads: 金儲けと娯楽の為なら、どんな非道な事も平気でやる。\n六本木は、そんな悪魔の力で生み出された、幻の楽園\nなんだよ‥‥‥\n<wait> @from-v005
+m/MS00B8.BIN	0:07	0	4	1FD2	{08:0B}人娼婦：	Demon Prostitute:	reads: 悪魔人娼婦： @from-v005
+m/MS00B8.BIN	0:07	1	16	1FD3	{08:45}で働くのは楽しいわ！\n{08:0B}に襲わ{08:2F}心配もぜんぜん{08:25}しね。\nやっぱ管理{03:0C}てなきゃ駄目よー。\n<wait>	I love working here! No longer do I need to worry about\ngetting assaulted by a demon. Organized society rules!<wait>	reads: ここで働くのは楽しいわ！\n悪魔に襲われる心配もぜんぜんないしね。\nやっぱ管理されてなきゃ駄目よー。\n<wait> @from-v005
+m/MS00B8.BIN	0:08	0	4	1FD2	おやじ：	Old Man:	@from-v005
+m/MS00B8.BIN	0:08	1	14	1FD3	私{08:62}女性に興味は{08:25}の{08:55}けれどね{02:08}ウオホン！\n<wait>	Oh, I have no interested in women. Ehehe!\n<wait>	reads: 私は、女性に興味はないのですけれどね‥‥‥ウオホン！\n<wait> @from-v005
+m/MS00B8.BIN	0:09	0	2	1FD2	老人：	Elder:	@from-v005
+m/MS00B8.BIN	0:09	1	10	1FD3	やっぱ、若いおなごが一番{08:81}よ！！\n<wait>	Young girls are simply the best! The younger, the better!\n<wait>	reads: やっぱ、若いおなごが一番じゃよ！！\n<wait> @from-v005

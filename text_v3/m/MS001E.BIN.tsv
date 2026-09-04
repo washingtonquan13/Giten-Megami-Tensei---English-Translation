@@ -1,0 +1,614 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS001E.BIN	0:00	0	68	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:00	1	74	1FD3	お、もら{08:52}{08:1E}な。\n<wait>	Did you get your Arm Terminals upgraded? Good.\n<wait>	reads: お、もらってきたな。\n<wait> @from-v005
+m/MS001E.BIN	0:00	2	97	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:00	3	103	1FD3	{08:81}あ、次は{08:00}、	Next up, Hayasaka will guide you through a short\nVirtual Training session.\n<wait>	reads: じゃあ、次は早坂、 @from-v005
+m/MS001E.BIN	0:00	4	121	00	{04:FE}と共に、ヴァーチャルトレーナーの訓練を行{08:52}もらおう。\n<wait>		reads: と共に、ヴァーチャルトレーナーの訓練を行ってもらおう。\n<wait> @rebase-new
+m/MS001E.BIN	0:00	5	182	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS001E.BIN	0:00	6	188	1FD3	{08:81}、ヴァーチャルトレーナーに行くぞ、二人とも！\n<wait>	Follow after me, you two.\n<wait>	reads: じゃ、ヴァーチャルトレーナーに行くぞ、二人とも！\n<wait> @from-v005
+m/MS001E.BIN	0:01	0	106	1FD2	{08:04}：		reads: 西野： @rebase-new
+m/MS001E.BIN	0:01	1	112	1FD3	戻{08:52}{08:1E}な。\n<wait>{08:81}あ、{08:34}と{08:02}。二人に{08:09}の説明を{08:4A}や{08:52}くれ。\n<wait>		reads: 戻ってきたな。\n<wait>じゃあ、桐島と山瀬。二人にプログラムの説明をしてやってくれ。\n<wait> @rebase-new
+m/MS001E.BIN	0:01	2	178	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS001E.BIN	0:01	3	184	1FD3	さ～て、我らがアームターミナルの秘{08:2E}パワー{08:62}\n{01:3B}、隊長が説明{08:4B}{08:46}ぐらい{08:81}{08:25}ぜ。\n<wait>		reads: さ～て、我らがアームターミナルの秘めるパワーは、\nさっき、隊長が説明したことぐらいじゃないぜ。\n<wait> @rebase-new
+m/MS001E.BIN	0:01	4	270	1FD2	{08:03}：		reads: 英美： @rebase-new
+m/MS001E.BIN	0:01	5	276	1FD3	そう、{08:47}{01:3D}の{08:09}、ＤＤＳとＤＤＣこそが、\n{08:0B}と実際に遭遇{08:4B}ときに、{08:79}真価を発揮{08:8E}の。\n<wait>		reads: そう、このふたつのプログラム、ＤＤＳとＤＤＣこそが、\n悪魔と実際に遭遇したときに、その真価を発揮するの。\n<wait> @rebase-new
+m/MS001E.BIN	0:01	6	366	1FD2	{08:03}：		reads: 英美： @rebase-new
+m/MS001E.BIN	0:01	7	372	1FD3	今や地上は{08:0B}が支配{08:4C}ころ{08:74}ど、{08:0B}の中には人類に対{08:4A}\n必ずしも敵対的で{08:25}種族も存在{08:8E}のよ。\n<wait>		reads: 今や地上は悪魔が支配するところだけど、悪魔の中には人類に対して\n必ずしも敵対的でない種族も存在するのよ。\n<wait> @rebase-new
+m/MS001E.BIN	0:01	8	468	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS001E.BIN	0:01	9	474	1FD3	ウォッホン！！\n{02:0C}ＤＢはそう{08:4B}{08:0B}とあえて事を構え、戦力を{08:64}ずらに消耗{08:8E}より、\nより悪質な{08:0B}を選び、優先的に{08:0C}殲滅{08:8E}{08:46}を基本方針と{08:13}。\n<wait>		reads: ウォッホン！！\n我々ＤＢはそうした悪魔とあえて事を構え、戦力をいたずらに消耗するより、\nより悪質な悪魔を選び、優先的に攻撃殲滅することを基本方針としている。\n<wait> @rebase-new
+m/MS001E.BIN	0:01	10	613	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS001E.BIN	0:01	11	619	1FD3	中立的な{08:0B}とは話し合いで無益な戦闘を回避{08:8E}{08:74}でなく、\nそう{08:68}{08:0B}を稀に下僕と{08:4A}従{08:28}{08:46}も可能{08:6B}だよ。		reads: 中立的な悪魔とは話し合いで無益な戦闘を回避するだけでなく、\nそういう悪魔を稀に下僕として従えることも可能なのだよ。 @rebase-new
+m/MS001E.BIN	0:01	12	718	00	{04:FF}君！\n<wait>		reads: 君！\n<wait> @rebase-new
+m/MS001E.BIN	0:01	13	733	1FD2	{08:03}：		reads: 英美： @rebase-new
+m/MS001E.BIN	0:01	14	739	1FD3	{08:79}ために{01:2C}{03:0C}たのが、ＤＤＣ。デジタル・{08:06}・コミュニケーター。\n<wait>		reads: そのために開発されたのが、ＤＤＣ。デジタル・デビル・コミュニケーター。\n<wait> @rebase-new
+m/MS001E.BIN	0:01	15	808	1FD2	{08:03}：		reads: 英美： @rebase-new
+m/MS001E.BIN	0:01	16	814	1FD3	通常{08:0B}との対話には精神を支配{03:0C}ると{08:68}危険が伴{08:52}、高度な修養を\n必要と{08:8E}{08:84}、{08:47}ＤＤＣは{08:0B}との対話を低リスクで可能に{08:13}の。\n<wait>		reads: 通常悪魔との対話には精神を支配されるという危険が伴って、高度な修養を\n必要とするけど、このＤＤＣは悪魔との対話を低リスクで可能にしているの。\n<wait> @rebase-new
+m/MS001E.BIN	0:01	17	940	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS001E.BIN	0:01	18	946	1FD3	も{08:53}も{08:7B}程度の強靱な精神力や、{02:0B}的な魅力とが{08:25}と、\nやはり危険が伴うのはもちろ{08:5F}ぜ。\n<wait>		reads: もっともある程度の強靱な精神力や、人間的な魅力とがないと、\nやはり危険が伴うのはもちろんだぜ。\n<wait> @rebase-new
+m/MS001E.BIN	0:01	19	1038	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS001E.BIN	0:01	20	1044	1FD3	ま、少なくとも、俺くらいの魅力はなきゃな！\n<wait>		@rebase-new
+m/MS001E.BIN	0:01	21	1095	1FD2	{08:04}：		reads: 西野： @rebase-new
+m/MS001E.BIN	0:01	22	1101	1FD3	{08:02}！\n<wait>		reads: 山瀬！\n<wait> @rebase-new
+m/MS001E.BIN	0:01	23	1114	1FD2	{08:04}：		reads: 西野： @rebase-new
+m/MS001E.BIN	0:01	24	1120	1FD3	相手はどんな愛らしい姿をとろうとも{08:0B}{08:6B}だ。\n隙あらば、{02:0C}の精神を支配し、{02:0B}を操り人形にし{08:69}と{08:13}\n輩で{08:7B}{08:46}を、肝に銘じておく{08:46}だ。\n<wait>		reads: 相手はどんな愛らしい姿をとろうとも悪魔なのだ。\n隙あらば、我々の精神を支配し、人間を操り人形にしようとしている\n輩であることを、肝に銘じておくことだ。\n<wait> @rebase-new
+m/MS001E.BIN	0:01	25	1255	1FD2	{08:03}：		reads: 英美： @rebase-new
+m/MS001E.BIN	0:01	26	1261	1FD3	さて、ＤＤＣと		@rebase-new
+m/MS001E.BIN	0:01	27	1279	00	{04:FF}君の頭脳を駆使{08:4A}下僕に{08:4B}{08:0B}を、\nデジタル・{08:06}と{08:4A}君のアームターミナルのメモリーにセーブ{08:8E}\n{08:46}もできるわ。\n<wait>		reads: 君の頭脳を駆使して下僕にした悪魔を、\nデジタル・デビルとして君のアームターミナルのメモリーにセーブする\nこともできるわ。\n<wait> @rebase-new
+m/MS001E.BIN	0:01	28	1392	1FD2	{08:02}：	Nishino:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:01	29	1398	1FD3	そ{08:4A}{08:47}{08:0B}を必要に応じて召喚し、使役{08:8E}{08:46}もでき～る！\n<wait>	Ah, you're back.\n<wait>Kirishima, Yamase. You're up next.\n<wait>	reads: そしてこの悪魔を必要に応じて召喚し、使役することもでき～る！\n<wait> @from-v005
+m/MS001E.BIN	0:01	30	1457	1FD2	{08:03}：	Yamase:	reads: 英美： @from-v005
+m/MS001E.BIN	0:01	31	1463	1FD3	{08:48}を可能に{08:13}のがＤＤＳ、デジタル・{08:06}・サマナー。\n<wait>	Alright. Now, you've already learned about the mapping function.\nHowever, that is hardly the Arm Terminal's only feature.\n<wait>	reads: これを可能にしているのがＤＤＳ、デジタル・デビル・サマナー。\n<wait> @from-v005
+m/MS001E.BIN	0:01	32	1520	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001E.BIN	0:01	33	1526	1FD3	セーブ・{08:0A}は{08:0B}の存在{08:79}{08:5E}でなく、{08:0B}が{08:47}世界に実体化\n{08:8E}ための{08:0A}で{08:7B}{08:46}を覚えてて。\n<wait>	Exactly. There are two programs, DDS and DCS,\nwhich will prove invaluable once you actually encounter a demon.\n<wait>	reads: セーブ・データは悪魔の存在そのものでなく、悪魔がこの世界に実体化\nするためのデータであることを覚えてて。\n<wait> @from-ours
+m/MS001E.BIN	0:01	34	1614	1FD2	{08:02}：	Emi:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:01	35	1620	1FD3	んで、{08:0B}を実体化{08:8E}ために{08:62}生命エネルギーで{08:7B}\n生体マグネタイトを大量に必要と{08:8E}。\n<wait>	As you know, the surface world is currently ruled over by demons.\nNot all of them are necessarily hostile towards us humans, however.\n<wait>	reads: んで、悪魔を実体化するためには、生命エネルギーである\n生体マグネタイトを大量に必要とする。\n<wait> @from-v005
+m/MS001E.BIN	0:01	36	1708	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:01	37	1714	1FD3	古来{08:42}生贄を捧げて生体マグネタイトを抽出し、{08:0B}を召喚{08:8E}儀式が\n行なわれて{08:64}訳{08:8F}、俺達が生贄を捧げる{08:46}は出来{08:25}よな？\n<wait>	It's better to focus our resources towards taking down the demons who\nare actively trying to kill us, and not waste any resources on those\nwho are more or less neutral.\n<wait>	reads: 古来から生贄を捧げて生体マグネタイトを抽出し、悪魔を召喚する儀式が\n行なわれていた訳だが、俺達が生贄を捧げることは出来ないよな？\n<wait> @from-v005
+m/MS001E.BIN	0:01	38	1836	1FD2	{08:03}：	Yamase:	reads: 英美： @from-v005
+m/MS001E.BIN	0:01	39	1842	1FD3	かとい{08:52}生体マグネタイトを召喚者{08:42}抽出{08:4A}{08:64}ので{08:62}\n{08:4F}まち命を落とす{08:46}に{08:59}わよね。\n<wait>	When facing such demons, you'll find that you can often simply talk your\nway out of having to fight them. Better yet, it's sometimes even\npossible to recruit them to your side.\n<wait>	reads: かといって生体マグネタイトを召喚者から抽出していたのでは、\nたちまち命を落とすことになるわよね。\n<wait> @from-v005
+m/MS001E.BIN	0:01	40	1930	1FD2	{08:02}：	Emi:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:01	41	1936	1FD3	そこで、俺達は別の{08:0B}{08:42}{08:4D}を頂戴{08:8E}{08:46}に{08:4B}{08:52}ワケだ！\n<wait>	This is exactly what the DCS (Digital Devil Communicator)\nwas developed for.\n<wait>	reads: そこで、俺達は別の悪魔からそれを頂戴することにしたってワケだ！\n<wait> @from-ours
+m/MS001E.BIN	0:01	42	1993	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001E.BIN	0:01	43	1999	1FD3	{08:0B}を倒{08:4B}ときに、彼らを形づく{08:52}{08:64}肉体{08:42}四散{08:8E}\n生体マグネタイトを収集し、バッテリーに蓄えておく機能、\nＭＡＧバッテリーが、私達のアームターミナルには備わっ{08:14}の。\n<wait>	Negotiating with demons used to be insanely complicated back in the day.\nYou needed years of training, and if you ever messed up, you ran the\nrisk of having your soul stolen. However, thanks to this program, it's\nnow something that anyone can master.\n<wait>	reads: 悪魔を倒したときに、彼らを形づくっていた肉体から四散する\n生体マグネタイトを収集し、バッテリーに蓄えておく機能、\nＭＡＧバッテリーが、私達のアームターミナルには備わっているの。\n<wait> @from-v005
+m/MS001E.BIN	0:01	44	2166	1FD2	{08:03}：	Yamase:	reads: 英美： @from-v005
+m/MS001E.BIN	0:01	45	2172	1FD3	便利でしょ？\n<wait>	You guys should be thankful. With your weak wills and lack of charisma,\nyou would've been shit out of luck.\n<wait>	@from-v005
+m/MS001E.BIN	0:01	46	2193	1FD2	{08:04}：	Yamase:	reads: 西野： @from-v005
+m/MS001E.BIN	0:01	47	2199	1FD3	最後に、{08:48}らの驚異的な発明品が、いつ誰の手によ{08:52}{01:2C}{03:0C}たのか、\nい{08:76}に分{08:52}{08:24}。\n<wait>	Me on the other hand, well...\n<wait>	reads: 最後に、これらの驚異的な発明品が、いつ誰の手によって開発されたのか、\nいまだに分っていない。\n<wait> @from-ours
+m/MS001E.BIN	0:01	48	2283	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:01	49	2289	1FD3	{08:82}、スティーヴン博士と{08:68}謎の男が、大破壊前の世界各地に出没し、\n{08:48}らの{08:09}や、アームターミナルの原形と{08:16}ハードを広範囲に\n配布{08:4A}{08:64}{08:46}が分っ{08:14}。\n<wait>	Yamase!\n<wait>	reads: ただ、スティーヴン博士という謎の男が、大破壊前の世界各地に出没し、\nこれらのプログラムや、アームターミナルの原形となったハードを広範囲に\n配布していたことが分っている。\n<wait> @from-v005
+m/MS001E.BIN	0:01	50	2436	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:01	51	2442	1FD3	以上が、{08:09}や、アームターミナルのあらましだ。\n<wait>	Keep in mind, these are still demons we are talking about.\nThe forms they take on might occasionally trick you into seeing them\nas your companions, but if given the chance, they will not hesitate\nto stab you in the back.\n<wait>	reads: 以上が、プログラムや、アームターミナルのあらましだ。\n<wait> @from-v005
+m/MS001E.BIN	0:01	52	2495	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001E.BIN	0:01	53	2501	1FD3	そうそう、今支給{03:0C}たアームターミナルに{08:62}{01:3B}説明{08:4B}ＤＤＳと、\nＤＤＣの{08:09}は入{08:52}{08:25}わ。\n<wait>{08:4D}{08:62}	Now, using the DCS and your wit, it's possible to save a copy of a demon\nyou've recruited into your Arm Terminal as what we call a Digital Devil.\n<wait>	reads: そうそう、今支給されたアームターミナルには、さっき説明したＤＤＳと、\nＤＤＣのプログラムは入ってないわ。\n<wait>それは、 @from-ours
+m/MS001E.BIN	0:01	54	2595	00	{04:FF}君がも{08:53}経験を積{08:5F}ら{08:72}ね。\n<wait>		reads: 君がもっと経験を積んだら‥‥ね。\n<wait> @rebase-new
+m/MS001E.BIN	0:02	0	2	1FD2	{08:03}：		reads: 英美： @rebase-new
+m/MS001E.BIN	0:02	1	8	1FD3	{08:48}で今日のレクチャーは終わりよ！\n<wait>		reads: これで今日のレクチャーは終わりよ！\n<wait> @rebase-new
+m/MS001E.BIN	0:02	2	49	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS001E.BIN	0:02	3	55	1FD3	俺様の説明でよーく分{08:18}だろ？\n何た{08:52}{08:47}、超俺様のありがたぁ～い説明だ{08:42}な！\n<wait>		reads: 俺様の説明でよーく分かっただろ？\n何たってこの、超俺様のありがたぁ～い説明だからな！\n<wait> @rebase-new
+m/MS001E.BIN	0:02	4	137	1FD2	{08:00}：		reads: 早坂： @rebase-new
+m/MS001E.BIN	0:02	5	147	00	{04:FF}{08:62}なかなか筋がよ{08:18}{08:55}よ。\n<wait>		reads: は、なかなか筋がよかったですよ。\n<wait> @rebase-new
+m/MS001E.BIN	0:02	6	182	1FD2	{08:04}：		reads: 西野： @rebase-new
+m/MS001E.BIN	0:02	7	188	1FD3	{08:4D}はよ{08:18}。将来が楽しみだな。\n<wait>		reads: それはよかった。将来が楽しみだな。\n<wait> @rebase-new
+m/MS001E.BIN	0:02	8	225	1FD2	{08:00}：		reads: 早坂： @rebase-new
+m/MS001E.BIN	0:02	9	235	00	{04:FE}も、健闘{08:4A}ま{08:4B}よ。\n彼女{08:62}{03:10}の技術もあり{08:5A}{08:42}ね。心強い{08:55}よ。\n<wait>		reads: も、健闘してましたよ。\n彼女は、回復の技術もありますからね。心強いですよ。\n<wait> @rebase-new
+m/MS001E.BIN	0:02	10	305	1FD2	{08:04}：	Emi:	reads: 西野： @from-v005
+m/MS001E.BIN	0:02	11	311	1FD3	二人とも、日々の鍛錬は怠るなよ。\n<wait>	And with that, the lecture's over!\n<wait>	@from-v005
+m/MS001E.BIN	0:02	12	352	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:02	13	358	1FD3	そーそー、足手まといはご免被り{08:4E}{08:42}な。\n<wait>	You got that? You better have, because if you didn't,\nthat's your own damn fault.\n<wait>	reads: そーそー、足手まといはご免被りたいからな。\n<wait> @from-v005
+m/MS001E.BIN	0:02	14	410	1FD2	ＤＢ隊員：	Hayasaka:	@from-v005
+m/MS001E.BIN	0:02	15	422	1FD3	御苦労様{08:55}。{01:36}、交代の時間であり{08:5A}！\n<wait>	I was quite impressed with Katsuragi's earlier performance.\n<wait>	reads: 御苦労様です。そろそろ、交代の時間であります！\n<wait> @from-v005
+m/MS001E.BIN	0:02	16	467	1FD2	{08:02}：	Nishino:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:02	17	473	1FD3	待{08:52}ま{08:17}\n<wait>	That is good to hear. I expect great things from you going forward.\n<wait>	reads: 待ってました！\n<wait> @from-v005
+m/MS001E.BIN	0:02	18	490	1FD2	{08:04}：	Hayasaka:	reads: 西野： @from-v005
+m/MS001E.BIN	0:02	19	496	1FD3	で{08:62}{08:48}にて今日は解散！\n<wait>	Tachibana did well, too. It looks like she's quite good with\nhealing magic. We can always use one more of those.\n<wait>	reads: では、これにて今日は解散！\n<wait> @from-v005
+m/MS001E.BIN	0:03	0	16	1F04			
+m/MS001E.BIN	0:03	1	29	1F03			
+m/MS001E.BIN	0:03	2	42	1F03			
+m/MS001E.BIN	0:03	3	66	00	{02:09}!{=89}{=0E}	{02:09}!{=89}{=0E}	reads: ・・・!{=89}{=0E} @rebase-new
+m/MS001E.BIN	0:03	4	93	1F03			
+m/MS001E.BIN	0:03	5	106	1F03			
+m/MS001E.BIN	0:03	6	119	1F03			
+m/MS001E.BIN	0:03	7	132	1F03			
+m/MS001E.BIN	0:03	8	145	1F03			
+m/MS001E.BIN	0:03	9	263	1FD2	ＤＢ隊員：	Devil Buster:	@from-v005
+m/MS001E.BIN	0:03	10	275	1FD3	{08:45}へ{08:62}一般人の立ち入りは禁じられ{08:14}。\n<wait>出て行{08:52}く{08:60}まえ。\n<wait>	This place is out of limits for civilians.\n<wait>Get out before we make you.\n<wait>	reads: ここへは、一般人の立ち入りは禁じられている。\n<wait>出て行ってくれたまえ。\n<wait> @from-v005
+m/MS001E.BIN	0:03	11	369	1F03			
+m/MS001E.BIN	0:03	12	382	1F03	{02:FF}	{02:FF}	reads: 
+m/MS001E.BIN	0:03	13	397	1F03	{02:FF}	{02:FF}	reads: 
+m/MS001E.BIN	0:03	14	412	1F03			
+m/MS001E.BIN	0:03	15	433	1F03	{=89}{=28}{=89}{=27}	{=89}{=28}{=89}{=27}	
+m/MS001E.BIN	0:03	16	451	1FD0	誰も{08:24}{02:08}{02:08}\n<wait>	There's no one here...\n<wait>	reads: 誰もいない‥‥‥‥‥‥\n<wait> @from-v005
+m/MS001E.BIN	0:03	17	585	1FD2	ＤＢ隊員：	Devil Buster:	@from-v005
+m/MS001E.BIN	0:03	18	597	1FD3	謹慎処分と{08:16}、第二部隊に代わり、{02:0C}、ＤＢ第三部隊が急遽当直と{08:16}。\n<wait>	Squad Three, that being us, have been put on duty to replace Squad Two\nwhile they are being investigated.\n<wait>	reads: 謹慎処分となった、第二部隊に代わり、我々、ＤＢ第三部隊が急遽当直となった。\n<wait> @from-v005
+m/MS001E.BIN	0:03	19	670	1FD2	ＤＢ隊員：	Devil Buster:	@from-v005
+m/MS001E.BIN	0:03	20	682	1FD3	さあ、用の無い者は立ち去りたまえ！\n<wait>	Now, if you have no business here, then get out!\n<wait>	@from-v005
+m/MS001E.BIN	0:03	21	834	1FD2	ＤＢ隊員：	Devil Buster:	@from-v005
+m/MS001E.BIN	0:03	22	846	1FD3	用が無い{08:7D}、立ち去りたまえ！\n<wait>	If you have no business here, then get out!\n<wait>	reads: 用が無いなら、立ち去りたまえ！\n<wait> @from-v005
+m/MS001E.BIN	0:03	23	970	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS001E.BIN	0:03	24	976	1FD3	{08:51}く、{08:02}の奴何や{08:52}{08:5F}？\n<wait>	God dammit... What is that Yamase doing?\n<wait>	reads: ったく、山瀬の奴何やってんだ？\n<wait> @from-v005
+m/MS001E.BIN	0:03	25	1007	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	26	1013	1FD3	当直の時間になっ{08:14}と{08:68}のに{02:08}\n<wait>	He should be here already.\n<wait>	reads: 当直の時間になっているというのに‥‥‥\n<wait> @from-v005
+m/MS001E.BIN	0:03	27	1050	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001E.BIN	0:03	28	1056	1FD3	どーせ、又アームターミナルの改造{08:56}や{08:52}て、夜更かし{08:4A}たんでしょ。\n<wait>	Knowing him, he probably spent the night fixing up old Arm Terminals\nor something, and overslept.\n<wait>	reads: どーせ、又アームターミナルの改造でもやってて、夜更かししてたんでしょ。\n<wait> @from-v005
+m/MS001E.BIN	0:03	29	1129	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	30	1135	1FD3	{02:08}仕方の{08:25}奴だ。\n<wait>	He's totally helpless...\n<wait>	reads: ‥‥‥仕方のない奴だ。\n<wait> @from-v005
+m/MS001E.BIN	0:03	31	1160	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	32	1166	1FD3	お、	Ah, Katsuragi.\n<wait>If you happen to come across Yamase,\ntell him to get his ass over here.\n<wait>	@from-v005
+m/MS001E.BIN	0:03	33	1174	00	{04:FF}。\n<wait>{08:5D}、{08:02}の奴にあっ{08:50}、早く来いと伝えてくれ。\n<wait>		reads: 。\n<wait>もし、山瀬の奴にあったら、早く来いと伝えてくれ。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	34	1326	1FD2	{08:00}：		reads: 早坂： @rebase-new
+m/MS001E.BIN	0:03	35	1336	00	{04:FF}、何かあ{08:51}のか？　ん？\n<wait>何かあっ{08:50}言えよな。\n<wait>		reads: 、何かあったのか？　ん？\n<wait>何かあったら言えよな。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	36	1394	1FD2	{08:00}：		reads: 早坂： @rebase-new
+m/MS001E.BIN	0:03	37	1400	1FD3	交代時間{08:71}{08:62}俺達{08:45}に詰め{08:2B}{08:42}さ。\n<wait>		reads: 交代時間までは、俺達ここに詰めてるからさ。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	38	1440	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS001E.BIN	0:03	39	1446	1FD3	あーあ、つっまんねぇ！！　退屈だよ{08:51}く。\n<wait>		reads: あーあ、つっまんねぇ！！　退屈だよったく。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	40	1495	1FD2	{08:00}：		reads: 早坂： @rebase-new
+m/MS001E.BIN	0:03	41	1501	1FD3	銃の手入れ{08:56}しろよ。恋人よりも大切な{08:5F}ろ？\n<wait>		reads: 銃の手入れでもしろよ。恋人よりも大切なんだろ？\n<wait> @rebase-new
+m/MS001E.BIN	0:03	42	1552	1FD2	{08:00}：		reads: 早坂： @rebase-new
+m/MS001E.BIN	0:03	43	1562	00	{04:FF}、こいつ{08:52}さ、超マニアな{08:5F}ぜ。\n<wait>{02:0B}の女より銃が好き{08:6A}て、不健全だよな！\n<wait>		reads: 、こいつってさ、超マニアなんだぜ。\n<wait>人間の女より銃が好きなんて、不健全だよな！\n<wait> @rebase-new
+m/MS001E.BIN	0:03	44	1646	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS001E.BIN	0:03	45	1652	1FD3	あー、そう{08:68}事を言うワケ？\n<wait>あのねぇ、女より大切な物は他にも{08:7B}の。\n<wait>		reads: あー、そういう事を言うワケ？\n<wait>あのねぇ、女より大切な物は他にもあるの。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	46	1730	1FD2	{08:03}：		reads: 英美： @rebase-new
+m/MS001E.BIN	0:03	47	1736	1FD3	何？　何{08:6B}？\n<wait>		reads: 何？　何なの？\n<wait> @rebase-new
+m/MS001E.BIN	0:03	48	1757	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS001E.BIN	0:03	49	1763	1FD3	{08:47}改造バリバリの超アームターミナルよ！\n<wait>へっへーん！！\n<wait>		reads: この改造バリバリの超アームターミナルよ！\n<wait>へっへーん！！\n<wait> @rebase-new
+m/MS001E.BIN	0:03	50	1829	1FD2	{08:00}：		reads: 早坂： @rebase-new
+m/MS001E.BIN	0:03	51	1835	1FD3	やれやれ。{08:5B}改造{08:4B}のかよ。\n<wait>{08:4D}に何だよ、頭に何{08:56}“超”つけんなよ。\n<wait>		reads: やれやれ。また改造したのかよ。\n<wait>それに何だよ、頭に何でも“超”つけんなよ。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	52	1913	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS001E.BIN	0:03	53	1919	1FD3	今度はすっごい{08:5F}ぜぇ{08:72}あのさ{02:08}\n<wait>		reads: 今度はすっごいんだぜぇ‥‥あのさ‥‥‥\n<wait> @rebase-new
+m/MS001E.BIN	0:03	54	1958	1FD2	{08:00}：		reads: 早坂： @rebase-new
+m/MS001E.BIN	0:03	55	1964	1FD3	{08:7F}よ説明は。\n<wait>んで、前のは{08:90}{08:4B}{08:5F}よ？　{08:76}使え{08:5F}ろ？\n<wait>		reads: いいよ説明は。\n<wait>んで、前のはどうしたんだよ？　まだ使えんだろ？\n<wait> @rebase-new
+m/MS001E.BIN	0:03	56	2026	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS001E.BIN	0:03	57	2032	1FD3	やだねぇー。体力にモノいわし{08:2B}{08:74}の奴は。\n<wait>		reads: やだねぇー。体力にモノいわしてるだけの奴は。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	58	2081	1FD2	{08:00}：		reads: 早坂： @rebase-new
+m/MS001E.BIN	0:03	59	2087	1FD3	何だと！！\n<wait>		@rebase-new
+m/MS001E.BIN	0:03	60	2106	1FD2	{08:03}：		reads: 英美： @rebase-new
+m/MS001E.BIN	0:03	61	2112	1FD3	まあまあ。		@rebase-new
+m/MS001E.BIN	0:03	62	2126	00	{04:FF}くんが、呆れ{08:2B}{08:81}{08:25}。\n<wait>		reads: くんが、呆れてるじゃない。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	63	2157	1FD2	{08:03}：		reads: 英美： @rebase-new
+m/MS001E.BIN	0:03	64	2163	1FD3	ごめんねぇ。{01:28}{08:73}調子{08:6B}よ。\n<wait>		reads: ごめんねぇ。いつもこんな調子なのよ。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	65	2198	1FD2	{08:00}：		reads: 早坂： @rebase-new
+m/MS001E.BIN	0:03	66	2204	1FD3	そういや		@rebase-new
+m/MS001E.BIN	0:03	67	2216	00	{04:FF}、何かあ{08:51}のか？　ん？\n<wait>何かあっ{08:50}言えよ。\n<wait>		reads: 、何かあったのか？　ん？\n<wait>何かあったら言えよ。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	68	2272	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS001E.BIN	0:03	69	2278	1FD3	頼りに{08:59}ぜぇ、俺{08:4F}、超ＤＢはさ！\n<wait>		reads: 頼りになるぜぇ、俺たち、超ＤＢはさ！\n<wait> @rebase-new
+m/MS001E.BIN	0:03	70	2334	1F03			@rebase-new
+m/MS001E.BIN	0:03	71	2426	1FD2	{08:03}：		reads: 英美： @rebase-new
+m/MS001E.BIN	0:03	72	2436	00	{04:FF}くん！　{01:3B}は本当に{01:2A}！\n<wait>		reads: くん！　さっきは本当にありがとう！\n<wait> @rebase-new
+m/MS001E.BIN	0:03	73	2469	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS001E.BIN	0:03	74	2475	1FD3	隊長か？\n隊長は今、{01:2D}に報告に行っ{08:2B}よ。\n<wait>		reads: 隊長か？\n隊長は今、管理部に報告に行ってるよ。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	75	2523	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS001E.BIN	0:03	76	2529	1FD3	行きに医療施設で、腕の治療を受けて来る{08:52}言{08:52}た{08:42}{08:72}\n今、医療施設に行けば会{08:28}ん{08:81}{08:25}？\n		reads: 行きに医療施設で、腕の治療を受けて来るって言ってたから‥‥\n今、医療施設に行けば会えるんじゃない？\n @rebase-new
+m/MS001E.BIN	0:03	77	2622	1F03			@rebase-new
+m/MS001E.BIN	0:03	78	2692	1FD2	{08:03}：		reads: 英美： @rebase-new
+m/MS001E.BIN	0:03	79	2702	00	{04:FF}くん。{01:3B}は本当に{01:2A}ね。\n<wait>		reads: くん。さっきは本当にありがとうね。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	80	2735	1FD2	{08:00}：		reads: 早坂： @rebase-new
+m/MS001E.BIN	0:03	81	2741	1FD3	{08:02}は入院しち{08:20}{08:84}、サイバネ治療のお陰で明日には退院できる{01:29}。\n<wait>		reads: 山瀬は入院しちまったけど、サイバネ治療のお陰で明日には退院できるそうだ。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	82	2810	1FD2	{08:03}：		reads: 英美： @rebase-new
+m/MS001E.BIN	0:03	83	2816	1FD3	お見舞いに行{08:52}あげると{08:7F}かもね。\n今{08:7D}、隊長も{08:02}の所に{08:40}と思うよ。\n<wait>		reads: お見舞いに行ってあげるといいかもね。\n今なら、隊長も山瀬の所にいると思うよ。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	84	2893	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:03	85	2899	1FD3	あ、		@rebase-new
+m/MS001E.BIN	0:03	86	2907	00	{04:FF}くん。\n今{08:62}{01:1C}治療の為に医療施設へ行っ{08:2B}わ。\n<wait>		reads: くん。\n今は、みんな治療の為に医療施設へ行ってるわ。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	87	2997	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:03	88	3003	1FD3	{08:04}隊長{08:62}医療施設に行っ{08:2B}わ。\n<wait>		reads: 西野隊長は、医療施設に行ってるわ。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	89	3044	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:03	90	3050	1FD3	隊長{08:42}聞{08:64}{08:84}、ラボの{08:0B}{08:0A}が不確か{08:6A}て、少しショックだわ。\n<wait>		reads: 隊長から聞いたけど、ラボの悪魔データが不確かなんて、少しショックだわ。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	91	3241	1FD2	{08:04}：		reads: 西野： @rebase-new
+m/MS001E.BIN	0:03	92	3247	1FD3	今回の君の功績に、{01:2D}も大変高い評価を{08:4A}く{08:60}。\n<wait>		reads: 今回の君の功績に、管理部も大変高い評価をしてくれた。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	93	3300	1FD2	{08:04}：		reads: 西野： @rebase-new
+m/MS001E.BIN	0:03	94	3306	1FD3	つまる{08:87}、君の特例合格が決定{08:4B}と{08:68}訳だ。\n<wait>夢が叶{08:51}な、おめでとう！　		reads: つまるところ、君の特例合格が決定したという訳だ。\n<wait>夢が叶ったな、おめでとう！　 @rebase-new
+m/MS001E.BIN	0:03	95	3381	00	{04:FF}君。\n<wait>		reads: 君。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	96	3396	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS001E.BIN	0:03	97	3402	1FD3	上手い{08:46}や{08:51}なぁ　おい、		reads: 上手いことやったなぁ　おい、 @rebase-new
+m/MS001E.BIN	0:03	98	3430	00	{04:FF}！\n<wait>		reads: ！\n<wait> @rebase-new
+m/MS001E.BIN	0:03	99	3443	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS001E.BIN	0:03	100	3449	1FD3	オレ{08:6A}か、二度も入隊試験に落ちた{08:5F}ぜ。\n<wait>お前、{08:79}歳で{02:00}隊員{08:6A}てよ、贅沢{08:52}モンさ！\n<wait>		reads: オレなんか、二度も入隊試験に落ちたんだぜ。\n<wait>お前、その歳でデビルバスター隊員なんてよ、贅沢ってモンさ！\n<wait> @rebase-new
+m/MS001E.BIN	0:03	101	3592	1FD2	{08:04}：		reads: 西野： @rebase-new
+m/MS001E.BIN	0:03	102	3598	1FD3	今回の君の功績に、{01:2D}も大変高い評価を{08:4A}く{08:60}。\n<wait>		reads: 今回の君の功績に、管理部も大変高い評価をしてくれた。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	103	3651	1FD2	{08:04}：		reads: 西野： @rebase-new
+m/MS001E.BIN	0:03	104	3657	1FD3	つまる{08:87}、君の特例合格が決定{08:4B}と{08:68}訳だ。\n<wait>夢が叶{08:51}な、おめでとう！　		reads: つまるところ、君の特例合格が決定したという訳だ。\n<wait>夢が叶ったな、おめでとう！　 @rebase-new
+m/MS001E.BIN	0:03	105	3732	00	{04:FF}君。\n<wait>		reads: 君。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	106	3747	1FD2	{08:04}：	Hayasaka:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	107	3753	1FD3	尚、君{08:62}私の部隊に配属が決定{08:4B}。\n<wait>本日より正式に、{02:00}第二部隊戦闘員と{08:59}。\n<wait>	Ah, Katsuragi. What's up?\n<wait>If something happens, make sure to tell us.\n<wait>	reads: 尚、君は、私の部隊に配属が決定した。\n<wait>本日より正式に、デビルバスター第二部隊戦闘員となる。\n<wait> @from-v005
+m/MS001E.BIN	0:03	108	3837	1FD2	{08:04}：	Hayasaka:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	109	3843	1FD3	最初の君に与えら{08:2F}任務{08:62}様々な基礎訓練、\n<wait>及び、様々な装置類の操作方法を、マスター{08:8E}事だ。\n<wait>	We're going to be right here till the shift change.\n<wait>	reads: 最初の君に与えられる任務は、様々な基礎訓練、\n<wait>及び、様々な装置類の操作方法を、マスターする事だ。\n<wait> @from-v005
+m/MS001E.BIN	0:03	110	3945	1FD2	{08:04}：	Yamase:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	111	3951	1FD3	教官と{08:4A}、{08:00}と{08:34}を付{08:29}。\n<wait>	Holy shitballs am I bored!\n<wait>	reads: 教官として、早坂と桐島を付ける。\n<wait> @from-v005
+m/MS001E.BIN	0:03	112	3984	1FD2	{08:04}：	Hayasaka:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	113	3990	1FD3	頑張{08:52}訓練に励み、一日も早く実戦で通用{08:8E}、\n<wait>一人前の{02:00}に{08:1A}く{08:60}まえ。\n<wait>	Go clean your gun then or something. Didn't you say that\nyou love that thing more than you ever could a woman?\n<wait>	reads: 頑張って訓練に励み、一日も早く実戦で通用する、\n<wait>一人前のデビルバスターになってくれたまえ。\n<wait> @from-v005
+m/MS001E.BIN	0:03	114	4070	1FD2	{08:04}：	Hayasaka:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	115	4076	1FD3	以上だ。\n<wait>	Pay close attention, Katsuragi. This guy's a gun-nut.\n<wait>Like seriously.\nThere's a difference between being a enthusiast and a total sicko.\n<wait>	@from-v005
+m/MS001E.BIN	0:03	116	4093	1FD2	{08:04}：	Yamase:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	117	4099	1FD3	今は取りあえず、自室に戻{08:52}待機{08:4A}いてくれ。\n<wait>お{08:52}、必要な事は連絡{08:8E}。\n<wait>	Oh, did I say that?\n<wait>I'll have you know,\nthere are plenty of other things I prefer over women.\n<wait>	reads: 今は取りあえず、自室に戻って待機していてくれ。\n<wait>おって、必要な事は連絡する。\n<wait> @from-v005
+m/MS001E.BIN	0:03	118	4184	1FD2	ＤＢ隊員：	Emi:	@from-v005
+m/MS001E.BIN	0:03	119	4196	1FD3	御苦労様{08:55}。{01:36}、交代の時間であり{08:5A}！\n<wait>	Oh? Like what?\n<wait>	reads: 御苦労様です。そろそろ、交代の時間であります！\n<wait> @from-v005
+m/MS001E.BIN	0:03	120	4241	1FD2	{08:04}：	Yamase:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	121	4247	1FD3	で{08:62}{08:48}にて今日は解散！\n<wait>	Like this upgraded Super Arm Terminal I have here!\n<wait>Hehehe!\n<wait>	reads: では、これにて今日は解散！\n<wait> @from-v005
+m/MS001E.BIN	0:03	122	4441	1FD2	{08:02}：	Hayasaka:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:03	123	4447	1FD3	よぉ！　遅{08:18}な！\n<wait>	Really? You upgraded it again?\n<wait>Also, stop calling everything "Super".\n<wait>	reads: よぉ！　遅かったな！\n<wait> @from-v005
+m/MS001E.BIN	0:03	124	4472	1FD2	{08:00}：	Yamase:	reads: 早坂： @from-v005
+m/MS001E.BIN	0:03	125	4478	1FD3	{08:02}！　珍しく早い{08:81}{08:25}か。\n<wait>	No, but really. This time, I made sure to...\n<wait>	reads: 山瀬！　珍しく早いじゃないか。\n<wait> @from-ours
+m/MS001E.BIN	0:03	126	4511	1FD2	{08:02}：	Hayasaka:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:03	127	4517	1FD3	珍しくは余計だ。\n<wait>	Yeah, yeah. No one cares.\n<wait>So, what happened to the old one you were using?\nDid you throw it away?\n<wait>	@from-v005
+m/MS001E.BIN	0:03	128	4542	1FD2	{08:00}：	Yamase:	reads: 早坂： @from-v005
+m/MS001E.BIN	0:03	129	4552	00	{04:FF}と		reads: と @rebase-new
+m/MS001E.BIN	0:03	130	4560	00	{04:FE}さんも来てたのか。\n早{08:18}な。二人とも。\n<wait>		reads: さんも来てたのか。\n早かったな。二人とも。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	131	4608	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	132	4614	1FD3	感心な事だ。{08:48}{08:42}も継続{08:8E}{08:69}に！\nで{08:62}早速{08:8F}新人{02:00}に装備を支給{08:8E}。\n<wait>	That's the spirit! Try to keep it up going forward.\nNow then, let's start by handing our new recruits their gear.\n<wait>	reads: 感心な事だ。これからも継続するように！\nでは、早速だが新人デビルバスターに装備を支給する。\n<wait> @from-v005
+m/MS001E.BIN	0:03	133	4686	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	134	4697	09	{08:48}が、	Here is your uniform, weapons, and personal Arm Terminal.\n<wait>	reads: これが、 @from-v005
+m/MS001E.BIN	0:03	135	4707	00	{04:FF}に支給{03:0C}る{02:00}の装備品と、アームターミナルだ。\n<wait>		reads: に支給されるデビルバスターの装備品と、アームターミナルだ。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	136	4762	1FD0	{08:04}{08:62}	Nishino hands you the items.\n<wait>	reads: 西野は、 @from-v005
+m/MS001E.BIN	0:03	137	4770	00	{04:FF}にＤＢ装備一式と、アームターミナルを手渡{08:4B}。\n<wait>		reads: にＤＢ装備一式と、アームターミナルを手渡した。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	138	4826	18	{08:48}が、二人に支給{03:0C}る{02:00}の装備品と、アームターミナルだ。\n<wait>	Here is your uniform, weapons, and personal Arm Terminal.\n<wait>	reads: これが、二人に支給されるデビルバスターの装備品と、アームターミナルだ。\n<wait> @from-v005
+m/MS001E.BIN	0:03	139	4889	1FD0	{08:04}{08:62}	Nishino hands you and Yuuka the items.\n<wait>	reads: 西野は、 @from-v005
+m/MS001E.BIN	0:03	140	4897	00	{04:FF}と		reads: と @rebase-new
+m/MS001E.BIN	0:03	141	4905	00	{04:FE}にＤＢ装備一式と、アームターミナルを手渡{08:4B}。\n<wait>		reads: にＤＢ装備一式と、アームターミナルを手渡した。\n<wait> @rebase-new
+m/MS001E.BIN	0:03	142	4960	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	143	4966	1FD3	ではまず、向こうのロッカールームで、今渡{08:4B}装備に着替えてこい。\n<wait>	Please head to the locker room and get yourselves changed.\nIt's located just over there.\n<wait>	reads: ではまず、向こうのロッカールームで、今渡した装備に着替えてこい。\n<wait> @from-v005
+m/MS001E.BIN	0:03	144	5073	1F81	{04:FF}	{04:FF}	reads: 
+m/MS001E.BIN	0:03	145	5145	1F81	{04:FE}	{04:FE}	reads: 
+m/MS001E.BIN	0:03	146	5223	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS001E.BIN	0:03	147	5229	1FD3	おっ！　似合う{08:81}{08:25}か。\n<wait>	Wow! You guys look great.\n<wait>	reads: おっ！　似合うじゃないか。\n<wait> @from-v005
+m/MS001E.BIN	0:03	148	5260	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:03	149	5266	1FD3	ホントホント！　ひゅーひゅー！　かっこ{08:7F}～！\n<wait>	Seriously. It's almost like you were actual Devil Busters.\n<wait>	reads: ホントホント！　ひゅーひゅー！　かっこいい～！\n<wait> @from-v005
+m/MS001E.BIN	0:03	150	5319	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	151	5325	1FD3	最初に、今君に支給{03:0C}たアームターミナルの説明をし{08:69}。\n<wait>	Now then, allow me to give you a basic rundown on the functions\nof the Arm Terminal.\n<wait>	reads: 最初に、今君に支給されたアームターミナルの説明をしよう。\n<wait> @from-v005
+m/MS001E.BIN	0:03	152	5386	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	153	5392	1FD3	君に支給{03:0C}たアームターミナル{08:62}ＤＢ隊員の象徴ともなっ{08:14}{08:5E}だ。\n<wait>	This is by far the most versatile piece of equipment\nin a Devil Buster's kit.\n<wait>	reads: 君に支給されたアームターミナルは、ＤＢ隊員の象徴ともなっているものだ。\n<wait> @from-v005
+m/MS001E.BIN	0:03	154	5461	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	155	5467	1FD3	ＤＢ隊員の中{08:56}、{08:05}ーの扱いに慣れ、\n{08:0B}と対峙できる{08:74}の精神力に優{08:60}者{08:74}に支給{03:0C}る。\n最大限の注意をも{08:52}取り扱う{08:69}に。\n<wait>	Only those adept with computers, and possessing a necessary level of\nwillpower to confront demons are given access to one. Please exercise\nmaximum caution when using yours.\n<wait>	reads: ＤＢ隊員の中でも、コンピューターの扱いに慣れ、\n悪魔と対峙できるだけの精神力に優れた者だけに支給される。\n最大限の注意をもって取り扱うように。\n<wait> @from-v005
+m/MS001E.BIN	0:03	156	5590	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	157	5596	1FD3	{08:48}には{08:0B}と戦うために{01:2C}{03:0C}た、非常に優{08:60}ソフトがインストール{03:0C}{08:14}。\n<wait>	Arm Terminals come pre-installed with a number of helpful programs.\nThese have been developed specifically to assist you fight demons.\n<wait>	reads: これには悪魔と戦うために開発された、非常に優れたソフトがインストールされている。\n<wait> @from-v005
+m/MS001E.BIN	0:03	158	5669	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	159	5675	1FD3	まずマッパー{08:8F}、初めて訪{08:60}場所{08:56}周囲にセンサーを発し、{08:7B}程度の\n地形を知る{08:46}が出来る。\n<wait>	First, the Mapper. This program combines data from various sensors\nto form a map of your current location, even when one isn't\nnormally available.\n<wait>	reads: まずマッパーだが、初めて訪れた場所でも周囲にセンサーを発し、ある程度の\n地形を知ることが出来る。\n<wait> @from-v005
+m/MS001E.BIN	0:03	160	5769	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	161	5775	1FD3	{08:48}{08:62}常に君の位置を白い三角で表示{08:8E}。\nオプションにより、北を固定で上に向けておく{08:46}もできるし、{08:63}の正面を常に\n上に置く{08:46}も出来る。\n<wait>	The white triangle indicates your position. You can have north\nalways point up, or have the map rotate as you walk, depending\non your preference.\n<wait>	reads: これは、常に君の位置を白い三角で表示する。\nオプションにより、北を固定で上に向けておくこともできるし、自分の正面を常に\n上に置くことも出来る。\n<wait> @from-v005
+m/MS001E.BIN	0:03	162	5912	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	163	5918	1FD3	{08:5B}、場所に関{08:8E}情報を、リアルタイムで衛星{08:42}受け取る{08:69}に{08:1A}\n{08:40}{08:77}。\n<wait>	The Mapper can also display satellite data in real time.\n<wait>	reads: また、場所に関する情報を、リアルタイムで衛星から受け取るようになって\nいるのだ。\n<wait> @from-v005
+m/MS001E.BIN	0:03	164	5990	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	165	5996	1FD3	オートマッピングは君が移動{08:4B}場所を、自動的に記録し、ボタン操作{01:3C}で、\n{08:79}ドキュメントをスクリーン上に映し出す{08:46}が出来る、非常に役立つ\n{08:09}だ。\n<wait>	With Auto Mapping turned on, places you visit are automatically recorded,\nand can be reviewed later with a single click of a button.\n<wait>	reads: オートマッピングは君が移動した場所を、自動的に記録し、ボタン操作ひとつで、\nそのドキュメントをスクリーン上に映し出すことが出来る、非常に役立つ\nプログラムだ。\n<wait> @from-v005
+m/MS001E.BIN	0:03	166	6143	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	167	6149	1FD3	{08:48}らのナビゲーション・{08:09}{08:62}{08:10}内で使い方を練習{08:4A}おく\n{08:69}に。\n<wait>	Take your time mastering this program.\n<wait>	reads: これらのナビゲーション・プログラムは、シェルター内で使い方を練習しておく\nように。\n<wait> @from-v005
+m/MS001E.BIN	0:03	168	6215	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	169	6221	1FD3	まあ、今では滅多な事では外には出なくなっ{08:14}がな{02:08}‥\n<wait>	We rarely have to leave the shelter these days,\nbut it's always good to be ready.\n<wait>	reads: まあ、今では滅多な事では外には出なくなっているがな‥‥‥‥\n<wait> @from-v005
+m/MS001E.BIN	0:03	170	6280	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	171	6286	1FD3	あと{08:62}ＤＤＣ、ＤＤＳと{08:22}{08:09}も{08:7B}が、\n{08:48}は後で、{08:34}と{08:02}に説明{08:4A}もらうとし{08:69}。\n<wait>	As for the two remaining programs, DCS and DDS,\nKirishima and Yamase will teach you how to use those later on.\n<wait>	reads: あとは、ＤＤＣ、ＤＤＳといったプログラムもあるが、\nこれは後で、桐島と山瀬に説明してもらうとしよう。\n<wait> @from-ours
+m/MS001E.BIN	0:03	172	6368	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	173	6374	1FD3	さて、{08:34}がアームターミナル用の{08:09}の改良を行っ{08:14}。\n朝{08:71}かか{08:52}{08:64}{08:69}{08:8F}、{01:36}終わっ{08:14}{08:8C}。\n<wait>	Speaking of, Kirishima has been working on a new software update.\nIt took her all night, but I believe she should be done by now.\n<wait>	reads: さて、桐島がアームターミナル用のプログラムの改良を行っている。\n朝までかかっていたようだが、そろそろ終わっているだろう。\n<wait> @from-v005
+m/MS001E.BIN	0:03	174	6464	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	175	6470	1FD3	{08:34}の{08:87}へ行き、改良{03:0C}た{08:09}を組み込んで貰{08:52}来い。\n<wait>	Drop by her place and get that installed.\n<wait>	reads: 桐島のところへ行き、改良されたプログラムを組み込んで貰って来い。\n<wait> @from-v005
+m/MS001E.BIN	0:03	176	6528	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	177	6538	00	{04:FE}君、		reads: 君、 @rebase-new
+m/MS001E.BIN	0:03	178	6548	00	{04:FF}君についていてや{08:52}くれ。\n頼{08:5F}ぞ！\n<wait>		reads: 君についていてやってくれ。\n頼んだぞ！\n<wait> @rebase-new
+m/MS001E.BIN	0:03	179	6594	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	180	6600	1FD3	{08:90}{08:4B}。	What is it, Katsuragi? Did you receive the programs already?\n<wait>	reads: どうした。 @from-v005
+m/MS001E.BIN	0:03	181	6610	00	{04:FF}。\n{08:09}は組み込ん{08:56}ら{08:51}のか？\n<wait>		reads: 。\nプログラムは組み込んでもらったのか？\n<wait> @rebase-new
+m/MS001E.BIN	0:03	182	6653	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	183	6659	1FD3	{08:76}{08:6B}か。\n早く組み込んで貰{08:52}来い。\n<wait>	Not yet? Well, hurry up and go get them then.\n<wait>	reads: まだなのか。\n早く組み込んで貰って来い。\n<wait> @from-v005
+m/MS001E.BIN	0:03	184	6701	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:03	185	6707	1FD3	{08:47}後も、{08:76}やる事は{08:7B}{08:5F}{08:42}な。\n	We still have a whole list of matters we need to take care of.\n	reads: この後も、まだやる事はあるんだからな。\n @from-v005
+m/MS001E.BIN	0:03	186	6849	1FD2	ＤＢ隊員：	Devil Buster:	@from-v005
+m/MS001E.BIN	0:03	187	6871	09	何だ？　君は？\n<wait>	Hmm?\n<wait>	@from-v005
+m/MS001E.BIN	0:03	188	6899	1FD2	ＤＢ隊員：	Devil Buster:	@from-v005
+m/MS001E.BIN	0:03	189	6911	1FD3	ああ、君は{02:00}試験に合格{08:4B}ぼうやだな。\n<wait>	Oh, you're one of the kids who passed the exam.\n<wait>	reads: ああ、君はデビルバスター試験に合格したぼうやだな。\n<wait> @from-v005
+m/MS001E.BIN	0:03	190	6956	1FD2	ＤＢ隊員：	Devil Buster:	@from-v005
+m/MS001E.BIN	0:03	191	6968	1FD3	レクチャーは明日だぞ。\nまぁ、熱心{08:6B}{08:26}いが、張りきりすぎてヘマ{08:8E}なよ！\n	I appreciate the enthusiasm,\nbut you're gonna have to wait till tomorrow for the lecture.\n	reads: レクチャーは明日だぞ。\nまぁ、熱心なのはいいが、張りきりすぎてヘマするなよ！\n @from-v005
+m/MS001E.BIN	0:03	192	7044	09	君は確か{08:72}試験を受{08:43}ぼうやだ{08:51}な？\n<wait>	Oh, you're one of the kids who took the exam.\n<wait>	reads: 君は確か‥‥試験を受けたぼうやだったな？\n<wait> @from-v005
+m/MS001E.BIN	0:03	193	7087	1FD2	ＤＢ隊員：	Devil Buster:	@from-v005
+m/MS001E.BIN	0:03	194	7099	1FD3	今回、君は不合格だ{08:51}ん{08:8C}？\nリストに君の名前は無{08:18}{08:42}なぁ。\n<wait>	I didn't see your name on the list. Did you flunk?\n<wait>	reads: 今回、君は不合格だったんだろう？\nリストに君の名前は無かったからなぁ。\n<wait> @from-v005
+m/MS001E.BIN	0:03	195	7165	1FD2	ＤＢ隊員：	Devil Buster:	@from-v005
+m/MS001E.BIN	0:03	196	7177	1FD3	まぁ、諦めずに{08:5B}チャレンジな{08:49}な。\n今回{08:62}諦め{08:54}らう他無い{08:84}ね。\n	Still, don't give up. There's always a next time.\n	reads: まぁ、諦めずにまたチャレンジなさいな。\n今回は、諦めてもらう他無いけどね。\n @from-v005
+m/MS001E.BIN	0:03	197	7253	09	おや？　君の部隊は当直では{08:25}{08:8C}？\nまぁ　仕事熱心{08:6B}{08:62}結構な事{08:8F}な。\n<wait>	Hmm? Your squad's not on duty right now. Go get some rest, kid.\n<wait>	reads: おや？　君の部隊は当直ではないだろう？\nまぁ　仕事熱心なのは、結構な事だがな。\n<wait> @from-v005
+m/MS001E.BIN	0:03	198	7329	09	第二部隊は負傷者多数の為、急遽{02:0C}が当直と{08:16}。\n<wait>	With Squad Two out of commission, we are temporarily taking over.\n<wait>	reads: 第二部隊は負傷者多数の為、急遽我々が当直となった。\n<wait> @from-v005
+m/MS001E.BIN	0:03	199	7382	1FD2	ＤＢ隊員：	Devil Buster:	@from-v005
+m/MS001E.BIN	0:03	200	7394	1FD3	{08:04}さん達{08:62}自宅に戻ら{08:60}ぞ。\n<wait>	If it's Nishino you're looking for, he left already.\n<wait>	reads: 西野さん達は、自宅に戻られたぞ。\n<wait> @from-v005
+m/MS001E.BIN	0:03	201	7426	00	{08:90}{08:4B}{08:5F}？\n<wait>	Hmm? What's the matter?\n<wait>	reads: どうしたんだ？\n<wait> @from-v005
+m/MS001E.BIN	0:03	202	7443	1FD2	ＤＢ隊員：	Devil Buster:	@from-v005
+m/MS001E.BIN	0:03	203	7455	1FD3	今日は第二部隊は非番の{08:85}だ。\n遊びに来た{08:52}、誰も{08:24}ぞ。\n<wait>	Squad Two isn't on duty today. Get lost.\n<wait>	reads: 今日は第二部隊は非番のはずだ。\n遊びに来たって、誰もいないぞ。\n<wait> @from-v005
+m/MS001E.BIN	0:04	0	104	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS001E.BIN	0:04	1	110	1FD3	たぁぁぁぁいくつでしにそぉぉぉぉ！！\n<wait>		@rebase-new
+m/MS001E.BIN	0:04	2	155	1FD2	{08:00}：		reads: 早坂： @rebase-new
+m/MS001E.BIN	0:04	3	161	1FD3	{08:7F}加減にしろよ。\n<wait>俺達が退屈だ{08:52}事{08:62}{08:10}は平和{08:52}事だ。\n<wait>		reads: いい加減にしろよ。\n<wait>俺達が退屈だって事は、シェルターは平和って事だ。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	4	225	1FD2	{08:00}：		reads: 早坂： @rebase-new
+m/MS001E.BIN	0:04	5	231	1FD3	忙しく{08:52}たまるか！\n<wait>		reads: 忙しくってたまるか！\n<wait> @rebase-new
+m/MS001E.BIN	0:04	6	258	1FD2	{08:03}：		reads: 英美： @rebase-new
+m/MS001E.BIN	0:04	7	264	1FD3	{01:29}よ、{08:02}！\n<wait>事件{08:6A}て、起き{08:25}方が{08:7F}{08:5F}{08:42}。\n<wait>		reads: そうだよ、山瀬！\n<wait>事件なんて、起きない方がいいんだから。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	8	316	1FD2	{08:02}：		reads: 山瀬： @rebase-new
+m/MS001E.BIN	0:04	9	322	1FD3	へいへい。夫婦でガミガミやられちゃたまんねぇや。\n<wait>		@rebase-new
+m/MS001E.BIN	0:04	10	379	1FD2	{08:00}：		reads: 早坂： @rebase-new
+m/MS001E.BIN	0:04	11	385	1FD3	ばッ{08:72}馬鹿な事言うな！\n<wait>		reads: ばッ‥‥馬鹿な事言うな！\n<wait> @rebase-new
+m/MS001E.BIN	0:04	12	416	1FD2	{08:03}：		reads: 英美： @rebase-new
+m/MS001E.BIN	0:04	13	422	1FD3	ふ‥夫婦{08:52}何よ！\n<wait>		reads: ふ‥夫婦って何よ！\n<wait> @rebase-new
+m/MS001E.BIN	0:04	14	447	1FD2	{08:04}：		reads: 西野： @rebase-new
+m/MS001E.BIN	0:04	15	453	1FD3	{08:7F}加減にしろ。\n<wait>ほら、		reads: いい加減にしろ。\n<wait>ほら、 @rebase-new
+m/MS001E.BIN	0:04	16	482	00	{04:FE}君と		reads: 君と @rebase-new
+m/MS001E.BIN	0:04	17	492	00	{04:FF}君の荷物、<wait>{08:02}、お前が手伝{08:52}整理{08:8E}{08:5F}。\n<wait>		reads: 君の荷物、<wait>山瀬、お前が手伝って整理するんだ。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	18	543	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:04	19	549	1FD3	ええええ！\n<wait>	I'M SOOOO BOOOOREEED!!\n<wait>	@from-v005
+m/MS001E.BIN	0:04	20	568	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS001E.BIN	0:04	21	574	1FD3	退屈{08:81}なく{08:1A}良{08:18}なぁ！\n<wait>	Cut it out already.\n<wait>Us not having work is a good thing. It means that the shelter's safe.\n<wait>	reads: 退屈じゃなくなって良かったなぁ！\n<wait> @from-v005
+m/MS001E.BIN	0:04	22	605	1FD2	{08:02}：	Hayasaka:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:04	23	611	1FD3	ケッ！\n<wait>	Tough it out!\n<wait>	@from-v005
+m/MS001E.BIN	0:04	24	666	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001E.BIN	0:04	25	672	1FD3	{08:26}、{02:0E}{02:00}第二部隊。\n<wait>	Yeah, what he said.\n<wait>The less shit's happening, the better.\n<wait>	reads: はい、こちらデビルバスター第二部隊。\n<wait> @from-v005
+m/MS001E.BIN	0:04	26	699	1FD2	{08:03}：	Yamase:	reads: 英美： @from-v005
+m/MS001E.BIN	0:04	27	705	1FD3	{02:08}{02:08}{08:26}、\n<wait>{02:08}{02:08}{08:26}、\n<wait>分かりま{08:4B}。至急{08:04}に報告し、出動致し{08:5A}。\n<wait>	Yeah, yeah. Just gang up on me. Fucking couples...\n<wait>	reads: ‥‥‥‥‥‥はい、\n<wait>‥‥‥‥‥‥はい、\n<wait>分かりました。至急西野に報告し、出動致します。\n<wait> @from-v005
+m/MS001E.BIN	0:04	28	780	1FD2	{08:04}：	Hayasaka:	reads: 西野： @from-v005
+m/MS001E.BIN	0:04	29	786	1FD3	何かあ{08:51}のか？\n<wait>	Wh-What did you just say!?\n<wait>	reads: 何かあったのか？\n<wait> @from-v005
+m/MS001E.BIN	0:04	30	809	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001E.BIN	0:04	31	815	1FD3	{08:26}。\n<wait>{08:10}隔壁に、外部{08:42}{08:0B}が{08:0C}を仕掛け{08:2B}模様。\n<wait>	We're not a c-"couple"!...\n<wait>	reads: はい。\n<wait>シェルター隔壁に、外部から悪魔が攻撃を仕掛けてる模様。\n<wait> @from-v005
+m/MS001E.BIN	0:04	32	871	1FD2	{08:03}：	Nishino:	reads: 英美： @from-v005
+m/MS001E.BIN	0:04	33	877	1FD3	{01:2D}{08:42}、至急駆逐{08:8E}様にとの命令{08:55}。\n<wait>	That is enough.\n<wait>It seems that Tachibana is back with the equipment.\n<wait>Yamase. Given her a hand.\n<wait>	reads: 管理部から、至急駆逐する様にとの命令です。\n<wait> @from-v005
+m/MS001E.BIN	0:04	34	918	1FD2	{08:04}：	Yamase:	reads: 西野： @from-v005
+m/MS001E.BIN	0:04	35	924	1FD3	{08:0B}の{08:0A}は？\n<wait>	WHAAAAT!? Why me?\n<wait>	reads: 悪魔のデータは？\n<wait> @from-v005
+m/MS001E.BIN	0:04	36	943	1FD2	{08:03}：	Hayasaka:	reads: 英美： @from-v005
+m/MS001E.BIN	0:04	37	949	1FD3	今、{08:65}で送られてきてい{08:5A}<wait>{02:08}‥分かりま{08:4B}。\n<wait>名称{08:71}は分かり{02:0A}が、魔界植物系{08:0B}の様{08:55}。\n<wait>	Weren't you just crying about how bored you are?\n<wait>	reads: 今、通信で送られてきています<wait>‥‥‥‥分かりました。\n<wait>名称までは分かりませんが、魔界植物系悪魔の様です。\n<wait> @from-v005
+m/MS001E.BIN	0:04	38	1047	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:04	39	1053	1FD3	どれどれ？\n<wait>はっはあ～ん。使う{08:0D}が精神{08:0D}{08:74}か{02:08}。\n<wait>おまけに知力が低い{08:81}{08:75}か。こりゃ楽勝だな。\n<wait>	Touche...\n<wait>	reads: どれどれ？\n<wait>はっはあ～ん。使う魔法が精神魔法だけか‥‥‥。\n<wait>おまけに知力が低いじゃねえか。こりゃ楽勝だな。\n<wait> @from-v005
+m/MS001E.BIN	0:04	40	1160	1FD2	{08:04}：	Emi:	reads: 西野： @from-v005
+m/MS001E.BIN	0:04	41	1166	1FD3	よし、今すぐ出動{08:8E}。{08:02}、{08:00}、{08:34}、準備しろ！\n<wait>	This is Devil Buster Squad Two, how may I help you?\n<wait>	reads: よし、今すぐ出動する。山瀬、早坂、桐島、準備しろ！\n<wait> @from-v005
+m/MS001E.BIN	0:04	42	1217	1FD2	一同：	Emi:	@from-v005
+m/MS001E.BIN	0:04	43	1225	1FD3	了解！！\n<wait>	......Okay.\n<wait>......Okay.\n<wait>Understood. I will let the commander know right away.\n<wait>	@from-v005
+m/MS001E.BIN	0:04	44	1242	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:04	45	1252	00	{04:FE}君！\n<wait>		reads: 君！\n<wait> @rebase-new
+m/MS001E.BIN	0:04	46	1271	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	47	1277	1FD3	{08:62}{08:26}ッ！\n<wait>		reads: は、はいッ！\n<wait> @rebase-new
+m/MS001E.BIN	0:04	48	1294	1FD2	{08:04}：		reads: 西野： @rebase-new
+m/MS001E.BIN	0:04	49	1300	1FD3	君{08:62}{08:76}実戦には早い。{08:4D}に、{08:4D}ほど手強い敵{08:56}無い様だ。\n<wait>君は{08:45}に残り、連絡係と{08:4A}待機せよ。\n<wait>		reads: 君は、まだ実戦には早い。それに、それほど手強い敵でも無い様だ。\n<wait>君はここに残り、連絡係として待機せよ。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	50	1404	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	51	1410	1FD3	了解！\n<wait>	Something happened?\n<wait>	@from-v005
+m/MS001E.BIN	0:04	52	1425	1FD2	{08:02}：	Emi:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:04	53	1431	1FD3	準備完了っす！\n<wait>	Yeah.\n<wait>A demon has been spotted attacking the shelter from outside.\n<wait>	@from-v005
+m/MS001E.BIN	0:04	54	1454	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001E.BIN	0:04	55	1460	1FD3	あ、私{01:03}連れて来{08:5A}。\n<wait>{08:07}{02:0D}、{08:0B}資料を増やさ{08:25}と{08:72}\n<wait>	The Administrator's Office ordered us to go out there and drive it off.\n<wait>	reads: あ、私ニュートン連れて来ます。\n<wait>アナライズさせて、悪魔資料を増やさないと‥‥\n<wait> @from-v005
+m/MS001E.BIN	0:04	56	1520	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:04	57	1526	1FD3	よし、急げ！\n<wait>{02:0C}{08:62}先に現地へ向かう。\n<wait>	Any data on the demon?\n<wait>	reads: よし、急げ！\n<wait>我々は、先に現地へ向かう。\n<wait> @from-v005
+m/MS001E.BIN	0:04	58	1574	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001E.BIN	0:04	59	1580	1FD3	了解！\n<wait>	They're sending it in right now. <wait>...Okay, got it.\n<wait>We don't know the name, but it seems to have a physical body.\n<wait>	@from-v005
+m/MS001E.BIN	0:04	60	1603	1FD2	{08:04}：	Yamase:	reads: 西野： @from-v005
+m/MS001E.BIN	0:04	61	1609	1FD3	で{08:62}行くぞ！！\n<wait>	Let me see too. <wait>Heh! This son of a bitch only knows spirit-type magic.\n<wait>Not only that, its INT is way low. This will be a breeze.\n<wait>	reads: では、行くぞ！！\n<wait> @from-v005
+m/MS001E.BIN	0:04	62	1648	1FD2	{08:02}：	Nishino:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:04	63	1654	1FD3	{01:29}、	Alright. Yamase, Hayasaka, Kirishima. Grab your gear.\nWe're heading out.<wait>	reads: そうだ、 @from-v005
+m/MS001E.BIN	0:04	64	1662	00	{04:FF}、戻っ{08:50}、お前に{08:7F}モンやるよ。\n<wait>		reads: 、戻ったら、お前にいいモンやるよ。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	65	1703	1FD2	{08:02}：	Everyone:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:04	66	1709	1FD3	{08:4D}{08:71}の間{08:62}	Yes sir!\n<wait>	reads: それまでの間は、 @from-v005
+m/MS001E.BIN	0:04	67	1723	00	{04:FE}さんと、イイ事{08:56}{08:4A}な！\n<wait>{08:81}あな！\n<wait>		reads: さんと、イイ事でもしてな！\n<wait>じゃあな！\n<wait> @rebase-new
+m/MS001E.BIN	0:04	68	1777	1FD0	{08:04}達が、慌{08:82}しく出動{08:4A}行{08:51}。\n<wait>		reads: 西野達が、慌ただしく出動して行った。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	69	1844	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	70	1850	1FD3	ふう。{08:02}さんっ{08:50}、すぐ変な事言うの。\n<wait>あの、気を悪く{08:4B}りし{08:25}でね、	Tachibana!\n<wait>	reads: ふう。山瀬さんったら、すぐ変な事言うの。\n<wait>あの、気を悪くしたりしないでね、 @from-v005
+m/MS001E.BIN	0:04	71	1923	00	{04:FF}くん。\n<wait>		reads: くん。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	72	1954	1FB2	うれしいくらいさ		menu option, declared width 20 columns @rebase-new
+m/MS001E.BIN	0:04	73	1972	1FB2	ちょ{08:53}迷惑		reads: ちょっと迷惑; menu option, declared width 20 columns @rebase-new
+m/MS001E.BIN	0:04	74	1996	0F	{01:27}\n	{01:27}\n	reads: まさか\n @rebase-new
+m/MS001E.BIN	0:04	75	2006	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	76	2012	1FD3	えっ{02:08}‥\n<wait>	Y-Yes!?\n<wait>	reads: えっ‥‥‥‥\n<wait> @from-v005
+m/MS001E.BIN	0:04	77	2033	00	{04:FE}の顔が、一面桜の花びらの様に赤く{08:16}。\n<wait>{08:90}やら、まんざら{08:56}無いらしい。\n<wait>		reads: の顔が、一面桜の花びらの様に赤くなった。\n<wait>どうやら、まんざらでも無いらしい。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	78	2119	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	79	2125	1FD3	ええ{08:53}{08:72}お、お茶{08:56}入れ{08:69}か？\n<wait>	While this enemy doesn't appear to be particularly strong,\nyou're by no means ready for combat.\n<wait>Remain here and wait for further instructions.\n<wait>	reads: ええっと‥‥お、お茶でも入れようか？\n<wait> @from-v005
+m/MS001E.BIN	0:04	80	2166	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS001E.BIN	0:04	81	2172	1FD3	私、や{08:2F}事{08:52}言っ{08:50}、{08:76}お茶汲みぐらい{08:6B}！\n<wait>	Roger that!\n<wait>	reads: 私、やれる事って言ったら、まだお茶汲みぐらいなの！\n<wait> @from-v005
+m/MS001E.BIN	0:04	82	2225	00	{04:FE}：		reads: ： @rebase-new @rebase-unmatched idx82 en=YES\nPentagramma!\n
+m/MS001E.BIN	0:04	83	2235	00	{04:FF}くん{08:62}何が{08:7F}？\n<wait>		reads: くんは、何がいい？\n<wait> @rebase-new
+m/MS001E.BIN	0:04	84	2274	1FB2	断然っ緑茶！		menu option, declared width 20 columns @rebase-new
+m/MS001E.BIN	0:04	85	2288	1FB2	おしゃれに紅茶		menu option, declared width 20 columns @rebase-new
+m/MS001E.BIN	0:04	86	2304	1FB2	渋く珈琲		menu option, declared width 20 columns @rebase-new
+m/MS001E.BIN	0:04	87	2326	0F	{01:41}{07:02}{01:3D}{07:FF}	{01:41}{07:02}{01:3D}{07:FF}	reads: ＞どうやって？ふたつ @rebase-new
+m/MS001E.BIN	0:04	88	2340	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	89	2346	1FD3	うふふ、良{08:18}。\n<wait>私の父{08:52}緑茶好き{08:6B}。{08:4D}で{08:48}{08:74}は自信が{08:7B}{08:5F}。\n<wait>	I'm good to go!\n<wait>	reads: うふふ、良かった。\n<wait>私の父って緑茶好きなの。それでこれだけは自信があるんだ。\n<wait> @from-v005
+m/MS001E.BIN	0:04	90	2420	00	{04:FE}：	Emi:	reads: ： @from-v005 @rebase-tagdiff
+m/MS001E.BIN	0:04	91	2426	1FD3	ちょ{08:53}待{08:52}てね。\n<wait>	Oh, I just remembered. I should bring Newton along.\n<wait>It's important that I let him analyse as many demons as possible.\n<wait>	reads: ちょっと待っててね。\n<wait> @from-v005
+m/MS001E.BIN	0:04	92	2455	1FD0	給湯室の方では		@rebase-new
+m/MS001E.BIN	0:04	93	2473	00	{04:FE}が、せわしなく動い{08:14}。\n<wait>少しカタイ{08:87}も{08:7B}が、案外可愛いかも知れ{08:25}{08:72}。\n<wait>		reads: が、せわしなく動いている。\n<wait>少しカタイところもあるが、案外可愛いかも知れない‥‥。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	94	2581	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	95	2587	1FD3	お待たせ！　カップは{08:73}の{08:86}無い{08:5F}{08:84}。\n<wait>味は保証付よ、多分。　さあ、{08:90}ぞ召し上がれ。\n<wait>	Very well.\n<wait>Let's rendezvous at the front exit.\n<wait>	reads: お待たせ！　カップはこんなのしか無いんだけど。\n<wait>味は保証付よ、多分。　さあ、どうぞ召し上がれ。\n<wait> @from-v005
+m/MS001E.BIN	0:04	96	2681	1FD0	{03:13}、アルミの武骨なカップに入{08:51}緑茶が置かれ{08:14}。\n<wait>湯気の向こうに{08:62}緊張{08:4B}面持ちの		reads: 目の前に、アルミの武骨なカップに入った緑茶が置かれている。\n<wait>湯気の向こうには、緊張した面持ちの @rebase-new
+m/MS001E.BIN	0:04	97	2766	00	{04:FE}が見{08:28}。\n<wait>悪く{08:25}構図だ。{08:45}が詰所で{08:57}尚良い。\n<wait>		reads: が見える。\n<wait>悪くない構図だ。ここが詰所でなければ尚良い。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	98	2873	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	99	2879	1FD3	あら、{08:65}だわ。\n<wait>ええ{08:53}、{08:45}のボタンを押{08:4A}{02:08}\n<wait>	By the way, Katsuragi. Drop by my place later.\nI have something good for you.\n<wait>	reads: あら、通信だわ。\n<wait>ええっと、ここのボタンを押して‥‥‥\n<wait> @from-v005
+m/MS001E.BIN	0:04	100	2972	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:04	101	2978	1FD3	{02:0E}{08:72}ガガガガ{08:72}{08:02}{08:72}扉の‥\n<wait>‥板が‥ガガガ‥悪{08:72}ガガーピー{08:72}\n<wait>	Now then, I'll leave you lovebirds to it!\n<wait>Bye!\n<wait>	reads: こちら‥‥ガガガガ‥‥山瀬‥‥扉の‥\n<wait>‥板が‥ガガガ‥悪‥‥ガガーピー‥‥\n<wait> @from-v005
+m/MS001E.BIN	0:04	102	3054	1FD0	ノイズ音は一層酷くなり、そ{08:4A}突然静寂に包ま{08:60}。\n<wait>	Nishino and his squad take their leave.\n<wait>	reads: ノイズ音は一層酷くなり、そして突然静寂に包まれた。\n<wait> @from-v005
+m/MS001E.BIN	0:04	103	3113	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	104	3119	1FD3	やだ、スピーカーに{08:1A}る。{08:47}ボタンを押{08:4A}{08:72}\n<wait>		reads: やだ、スピーカーになってる。このボタンを押して‥‥\n<wait> @rebase-new
+m/MS001E.BIN	0:04	105	3172	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	106	3178	1FD3	{08:5D}{08:5D}！　{08:5D}{08:5D}！！\n<wait>		reads: もしもし！　もしもし！！\n<wait> @rebase-new
+m/MS001E.BIN	0:04	107	3207	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	108	3213	1FD3	え{08:53}、{08:65}呼び出しは{08:72}こう{08:4A}{08:72}うーんと、よし。\n<wait>		reads: えっと、通信呼び出しは‥‥こうして‥‥うーんと、よし。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	109	3270	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	110	3276	1FD3	{08:5D}{08:5D}！　{02:0E}		reads: もしもし！　こちら @rebase-new
+m/MS001E.BIN	0:04	111	3290	00	{04:FE}{08:55}　応答願い{08:5A}！\n<wait>		reads: です　応答願います！\n<wait> @rebase-new
+m/MS001E.BIN	0:04	112	3323	1E07	{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}\n<wait>	{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}\n<wait>	reads: ‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥\n<wait> @rebase-new
+m/MS001E.BIN	0:04	113	3356	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	114	3362	1FD3	駄目だわ、応答が無いわ。\n<wait>		@rebase-new
+m/MS001E.BIN	0:04	115	3399	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	116	3405	1FD3	き{08:53}何か起{08:51}のよ！\n<wait>{08:90}{08:4B}ら{08:7F}のかしら{02:08}‥！！\n<wait>		reads: きっと何か起ったのよ！\n<wait>どうしたらいいのかしら‥‥‥‥！！\n<wait> @rebase-new
+m/MS001E.BIN	0:04	117	3465	00	{04:FE}は必死に、{08:63}が{08:90}行動すれば良いかを考え{08:14}様だ。\n<wait>		reads: は必死に、自分がどう行動すれば良いかを考えている様だ。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	118	3520	1FBA	辺り{08:62}緊迫{08:4B}空気に包ま{08:2F}{02:08}‥\n<wait>		reads: 辺りは、緊迫した空気に包まれる‥‥‥‥\n<wait> @rebase-new
+m/MS001E.BIN	0:04	119	3555	1FBA	思案{08:4A}{08:64}		reads: 思案していた @rebase-new
+m/MS001E.BIN	0:04	120	3567	00	{04:FE}が顔を上{08:44}。\n<wait>不安気な気配は既に無く、毅然と{08:4B}表情に変{08:52}{08:64}。\n<wait>		reads: が顔を上げた。\n<wait>不安気な気配は既に無く、毅然とした表情に変っていた。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	121	3645	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	122	3655	00	{04:FF}くん。\n<wait>		reads: くん。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	123	3676	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	124	3682	1FD3	貴方は{02:00}では無い{08:84}、{08:48}を持{08:52}行けばゲートロボットは\n通{08:2F}わ。\n<wait>		reads: 貴方はデビルバスターでは無いけど、これを持って行けばゲートロボットは\n通れるわ。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	125	3754	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	126	3760	1FD3	{08:4D}と、小型{08:65}機。\n<wait>		reads: それと、小型通信機。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	127	3789	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	128	3795	1FD3	私は{01:2D}に応援を要請{08:8E}{08:42}、貴方は１Ｆ{08:71}行{08:52}様子を見て来て欲しいの。\n<wait>		reads: 私は管理部に応援を要請するから、貴方は１Ｆまで行って様子を見て来て欲しいの。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	129	3872	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	130	3878	1FD3	{08:5D}、{08:65}機が{08:6C}に壊れて{08:24}{08:7D}、近く{08:71}行けば{08:65}出来るかも\n知れ{08:25}わ。\n<wait>		reads: もし、通信機が完全に壊れていないなら、近くまで行けば通信出来るかも\n知れないわ。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	131	3952	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	132	3958	1FD3	お願い！　急いで！！\n<wait>		@rebase-new
+m/MS001E.BIN	0:04	133	3987	1FD0	口を挟むいとまもなく、		@rebase-new
+m/MS001E.BIN	0:04	134	4013	00	{04:FE}{08:42}ＩＤカードと小型{08:65}機を渡{03:0C}て{08:1F}。\n<wait>		reads: からＩＤカードと小型通信機を渡されてしまった。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	135	4056	1FBA	{03:0B}{08:04}達の身に何かあ{08:51}{08:77}とすれば、{08:47}{08:7E}捨て置く訳には行か{08:25}。\n<wait>		reads: しかし、西野達の身に何かあったのだとすれば、このまま捨て置く訳には行かない。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	136	4125	00	{04:FE}に目で合図をし、		reads: に目で合図をし、 @rebase-new
+m/MS001E.BIN	0:04	137	4147	00	{04:FF}{08:62}詰所を後に{08:4B}。\n<wait>		reads: は、詰所を後にした。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	138	4192	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	139	4198	1FD3	分{08:18}わ。ちょ{08:53}待{08:52}てね。\n<wait>		reads: 分かったわ。ちょっと待っててね。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	140	4235	1FD0	給湯室の方で		@rebase-new
+m/MS001E.BIN	0:04	141	4251	00	{04:FE}が、せわしなく動い{08:14}。\n<wait>		reads: が、せわしなく動いている。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	142	4310	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	143	4316	1FD3	ごめんな{08:49}！\n<wait>紅茶もコーヒーも、切ら{08:13}み{08:4E}。\n<wait>		reads: ごめんなさい！\n<wait>紅茶もコーヒーも、切らしているみたい。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	144	4376	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	145	4382	1FD3	緑茶で{08:7F}かしら？\n<wait>	That Yamase. He's always saying some weird stuff...\n<wait>Don't take it personally, Katsuragi-kun.\n<wait>	reads: 緑茶でいいかしら？\n<wait> @from-v005
+m/MS001E.BIN	0:04	146	4421	1FB2	{08:81}あいら{08:25}	I'm happy, actually	reads: じゃあいらない; menu option, declared width 20 columns @from-v005
+m/MS001E.BIN	0:04	147	4433	1FB2	{08:4D}で{08:7F}	Yeah...	reads: それでいい; menu option, declared width 20 columns @from-v005
+m/MS001E.BIN	0:04	148	4453	0F	{01:B6}{=F7}{=FF}	{01:B6}{=F7}{=FF}	reads: {=F7}{=FF}
+m/MS001E.BIN	0:04	149	4463	00	{04:FE}：	Yuuka:	reads: ： @from-ours @rebase-tagdiff
+m/MS001E.BIN	0:04	150	4469	1FD3	{02:08}‥ごめんね、	Huh?\n<wait>	reads: ‥‥‥‥ごめんね、 @from-v005
+m/MS001E.BIN	0:04	151	4487	00	{04:FF}くん。\n<wait>		reads: くん。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	152	4508	00	{04:FE}は俯いて{08:1F}。\n<wait>重い沈黙が流{08:2F}{02:08}{02:08}{08:72}\n<wait>		reads: は俯いてしまった。\n<wait>重い沈黙が流れる‥‥‥‥‥‥‥‥\n<wait> @rebase-new
+m/MS001E.BIN	0:04	153	4560	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	154	4566	1FD3	あ{08:72}あの、	Err, so... H-How about some tea?\n<wait>	reads: あ‥‥あの、 @from-v005
+m/MS001E.BIN	0:04	155	4580	00	{04:FF}くん。\n<wait>		reads: くん。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	156	4604	00	{04:FE}：		reads: ： @rebase-new
+m/MS001E.BIN	0:04	157	4610	1FD3	えっ{02:08}そ、そうよね。ごめんね、	That's kinda all I'm good for at the moment, making tea...\n<wait>	reads: えっ‥‥‥そ、そうよね。ごめんね、 @from-v005
+m/MS001E.BIN	0:04	158	4644	00	{04:FF}くん\n<wait>		reads: くん\n<wait> @rebase-new
+m/MS001E.BIN	0:04	159	4663	00	{04:FE}の顔に一瞬陰りが見{08:41}。\n<wait>		reads: の顔に一瞬陰りが見えた。\n<wait> @rebase-new
+m/MS001E.BIN	0:04	160	4694	1FBA	{08:72}が、{08:4D}は一瞬の事。\n<wait>努めてそう{08:13}のか、前よりも明るいそぶりを見{08:2A}。\n<wait>	The air around you grows thick with anticipation.\n<wait>	reads: ‥‥が、それは一瞬の事。\n<wait>努めてそうしているのか、前よりも明るいそぶりを見せる。\n<wait> @from-v005
+m/MS001E.BIN	0:05	0	112	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	1	123	09	おお	There you are, Katsuragi. We just heard what happened from Youko.\n<wait>	@from-v005
+m/MS001E.BIN	0:05	2	131	00	{04:FF}。や{08:53}来たか。\n陽子{08:42}大体の話は聞{08:64}。\n<wait>		reads: 。やっと来たか。\n陽子から大体の話は聞いた。\n<wait> @rebase-new
+m/MS001E.BIN	0:05	3	179	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	4	185	1FD3	今、先程報告を受{08:43}内容を、{01:2D}に報告{08:4B}{08:87}だ。\n<wait>	We've already contacted the Administrator's Office.\nWe should hear back from them any moment now.\n<wait>	reads: 今、先程報告を受けた内容を、管理部に報告したところだ。\n<wait> @from-v005
+m/MS001E.BIN	0:05	5	236	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:05	6	242	1FD3	{08:56}よー。	Still, it's weird...	reads: でもよー。 @from-v005
+m/MS001E.BIN	0:05	7	253	18	{08:90}{08:4B}{08:5F}、	Hmm? Katsuragi, what's the matter? Your face is all pale.	reads: どうしたんだ、 @from-v005
+m/MS001E.BIN	0:05	8	265	00	{04:FF}	{04:FF}	reads:  @rebase-new
+m/MS001E.BIN	0:05	9	272	09	君。血相を変えて。\n<wait>何かあ{08:51}のか？\n<wait>	                \n<wait>Did something happen?\n<wait>	reads: 君。血相を変えて。\n<wait>何かあったのか？\n<wait> @from-v005
+m/MS001E.BIN	0:05	10	322	00	{04:FF}{08:62}原宿{08:42}の緊急{08:65}について、詳しく{08:04}に報告{08:4B}。\n<wait>	You relay the emergency broadcast you received to Nishino.\n<wait>	reads: は、原宿からの緊急通信について、詳しく西野に報告した。\n<wait> @from-v005 @rebase-tagdiff
+m/MS001E.BIN	0:05	11	377	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:05	12	383	1FD3	原宿{08:52}言っ{08:50}、{08:45}初台{08:10}よりも、規模のでかい{08:10}だぜ！\n<wait>	Harajuku is a massive shelter. Way bigger than ours, at least.\n<wait>	reads: 原宿って言ったら、ここ初台シェルターよりも、規模のでかいシェルターだぜ！\n<wait> @from-v005
+m/MS001E.BIN	0:05	13	442	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:05	14	448	1FD3	{08:4D}{08:74}、{02:00}の人員も{08:40}し、{08:10}の防護力も上だ。\n<wait>	They have an entire army of Devil Busters keeping them safe,\nyet we're expected to believe that they got wiped out just like that?\n<wait>	reads: それだけ、デビルバスターの人員もいるし、シェルターの防護力も上だ。\n<wait> @from-v005
+m/MS001E.BIN	0:05	15	497	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:05	16	503	1FD3	{08:4D}{08:52}さ、ガセ{08:81}{08:25}のぉ？\n<wait>	Don't you guys find it a bit hard to believe?\n<wait>	reads: それってさ、ガセじゃないのぉ？\n<wait> @from-v005
+m/MS001E.BIN	0:05	17	534	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	18	540	1FD3	勿論、偽りで{08:7B}と{08:68}事も考えら{08:2F}。\n<wait>{03:0B}仮に本当だとすれば、一刻を争う事態だ。\n<wait>	Naturally, there is a possibility that the message could be fabricated.\n<wait>On the other hand, if it turns out to be true,\nthen we really don't have any time to waste.\n<wait>	reads: 勿論、偽りであるという事も考えられる。\n<wait>しかし、仮に本当だとすれば、一刻を争う事態だ。\n<wait> @from-v005
+m/MS001E.BIN	0:05	19	662	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	20	668	1FD3	{08:26}、{02:0E}{02:00}第二部隊。\n<wait>	...This is the commander of DB Squad Two.\n<wait>	reads: はい、こちらデビルバスター第二部隊。\n<wait> @from-v005
+m/MS001E.BIN	0:05	21	703	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	22	709	1FD3	{01:2D}に報告し指示を仰ごう。\n<wait>	We should let the Administrator's Office know about this.\n<wait>	reads: 管理部に報告し指示を仰ごう。\n<wait> @from-v005
+m/MS001E.BIN	0:05	23	742	1FD0	{08:04}は{01:2D}へ、{08:65}を入{08:60}。\n<wait>	Having said that, Nishino pulls out his transmitter.\n<wait>	reads: 西野は管理部へ、通信を入れた。\n<wait> @from-v005
+m/MS001E.BIN	0:05	24	771	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	25	777	1FD3	{02:0E}{08:62}{02:00}第二部隊、隊長、{08:04}だ。\n<wait>{01:2D}の	This is the commander of DB Squad Two, Nishino.\n<wait>I request to speak with Commander Tachibana.\n<wait>	reads: こちらは、デビルバスター第二部隊、隊長、西野だ。\n<wait>管理部の @from-v005
+m/MS001E.BIN	0:05	26	818	00	{04:FE}兼嗣上官に、取り次ぎ願い{08:4E}。\n<wait>		reads: 兼嗣上官に、取り次ぎ願いたい。\n<wait> @rebase-new
+m/MS001E.BIN	0:05	27	857	1FD0	{08:04}{08:62}	Nishino relays everything you told him forward.\n<wait>	reads: 西野は、 @from-v005
+m/MS001E.BIN	0:05	28	865	00	{04:FF}{08:42}報告を受{08:43}内容を、余す{08:87}なく、{01:2D}に報告{08:4B}。\n<wait>		reads: から報告を受けた内容を、余すところなく、管理部に報告した。\n<wait> @rebase-new
+m/MS001E.BIN	0:05	29	920	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	30	926	1FD3	{02:08}{08:62}{03:0B}{08:4D}では万が一に{02:08}{08:26}。\n<wait>	...Right. But, what if it turns out that-- Understood.\n<wait>	reads: ‥‥‥は、しかし、それでは万が一に‥‥‥はい。\n<wait> @from-v005
+m/MS001E.BIN	0:05	31	961	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	32	967	1FD3	{02:08}{02:08}‥そう{08:55}か、了解しま{08:4B}。\n<wait>	.........Yes sir. Roger that.\n<wait>	reads: ‥‥‥‥‥‥‥そうですか、了解しました。\n<wait> @from-v005
+m/MS001E.BIN	0:05	33	1004	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS001E.BIN	0:05	34	1010	1FD3	{08:90}だ{08:51}ん{08:55}か、隊長！\n<wait>	What did they say, Commander?\n<wait>	reads: どうだったんですか、隊長！\n<wait> @from-v005
+m/MS001E.BIN	0:05	35	1039	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001E.BIN	0:05	36	1045	1FD3	すぐに出動{08:55}か！？\n<wait>	Are we heading out?\n<wait>	reads: すぐに出動ですか！？\n<wait> @from-v005
+m/MS001E.BIN	0:05	37	1072	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	38	1078	1FD3	{01:2D}の意向で{08:62}事実柄を調査{08:4B}上で、出動命令の必要性を検討{08:4B}いと\n言{08:52}来{08:14}。\n<wait>	The Administrator's Office is of the opinion that we first need to\nverify the message's authenticity before committing any resources\ninto a potential rescue operation.\n<wait>	reads: 管理部の意向では、事実柄を調査した上で、出動命令の必要性を検討したいと\n言って来ている。\n<wait> @from-v005
+m/MS001E.BIN	0:05	39	1158	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001E.BIN	0:05	40	1164	1FD3	{02:08}{08:7A}！\n<wait>	N-No way!\n<wait>	reads: ‥‥‥そんな！\n<wait> @from-v005
+m/MS001E.BIN	0:05	41	1179	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001E.BIN	0:05	42	1185	1FD3	懸念通りデマであ{08:51}場合{08:26}い{08:55}が、{08:5D}、本当に原宿{08:10}に\n{08:0B}が侵入し、危機に瀕{08:4A}{08:64}と{08:4B}ら、一体{08:90}{08:8E}{01:3E}{08:6A}{08:55}か？！\n<wait>	That's all fine and good if it turns out to be a hoax, but if Harajuku\nreally is being attacked by demons and we get there too late, what then?\n<wait>	reads: 懸念通りデマであった場合はいいですが、もし、本当に原宿シェルターに\n悪魔が侵入し、危機に瀕していたとしたら、一体どうするつもりなんですか？！\n<wait> @from-v005
+m/MS001E.BIN	0:05	43	1297	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	44	1303	1FD3	私も同じ事を言{08:51}。\n<wait>{03:0B}確認が済む{08:71}は待機せよとの命令が出{03:0C}た{08:74}だ。\n<wait>	That is what I tried to tell them as well.\n<wait>However, the orders were clear.\nWe are not to leave the shelter until further notice.\n<wait>	reads: 私も同じ事を言った。\n<wait>しかし、確認が済むまでは待機せよとの命令が出されただけだ。\n<wait> @from-v005
+m/MS001E.BIN	0:05	45	1381	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS001E.BIN	0:05	46	1387	1FD3	{08:6A}て悠長な事を！！\n<wait>	I can't believe this!\n<wait>	reads: なんて悠長な事を！！\n<wait> @from-v005
+m/MS001E.BIN	0:05	47	1414	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS001E.BIN	0:05	48	1420	1FD3	現に原宿{08:42}{08:62}明確に応援を求{08:2E}{08:65}が届い{08:14}{08:52}のに！\n<wait>	We got a message directly asking for help,\nand we're just gonna ignore it!?\n<wait>	reads: 現に原宿からは、明確に応援を求める通信が届いているってのに！\n<wait> @from-v005
+m/MS001E.BIN	0:05	49	1475	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS001E.BIN	0:05	50	1481	1FD3	隊長、{08:4D}に原宿{08:10}に{08:62}{08:34}隊員の両親と、	Commander, you must be aware that Kirishima's parents,\nas well as Tachibana's mother both live in Harajuku.\n<wait>Orders aside, we can't just sit there twiddling our thumbs!\n<wait>	reads: 隊長、それに原宿シェルターには、桐島隊員の両親と、 @from-v005
+m/MS001E.BIN	0:05	51	1521	00	{04:FE}さんのお母さんが\n{08:40}ん{08:55}。\n<wait>私情{08:6B}は分か{08:52}{08:5A}が、黙{08:52}放{08:52}{08:6A}か置け{02:0A}！\n<wait>		reads: さんのお母さんが\nいるんです。\n<wait>私情なのは分かってますが、黙って放ってなんか置けません！\n<wait> @rebase-new
+m/MS001E.BIN	0:05	52	1602	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS001E.BIN	0:05	53	1608	1FD3	どんな処分を受け{08:54}構い{02:0A}。\n<wait>	I don't care if they fire me or whatever.\n<wait>	reads: どんな処分を受けても構いません。\n<wait> @from-v005
+m/MS001E.BIN	0:05	54	1643	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS001E.BIN	0:05	55	1649	1FD3	俺{08:62}{01:3A}{08:56}行き{08:5A}！\n<wait>	I'm going!\n<wait>	reads: 俺は、ひとりでも行きます！\n<wait> @from-v005
+m/MS001E.BIN	0:05	56	1674	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001E.BIN	0:05	57	1680	1FD3	{08:01}{08:72}あ{08:72}{08:00}隊員！！\n<wait>	Tatsuya...\n<wait>	reads: 達也‥‥あ‥‥早坂隊員！！\n<wait> @from-v005
+m/MS001E.BIN	0:05	58	1715	1FD0	{08:00}は{01:3A}、詰所を飛び出{08:4A}行{08:51}。\n<wait>	Having said that, Hayasaka storms out of the room.\n<wait>	reads: 早坂はひとり、詰所を飛び出して行った。\n<wait> @from-v005
+m/MS001E.BIN	0:05	59	1752	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS001E.BIN	0:05	60	1758	1FD3	隊長、私も行かせ{08:54}らい{08:5A}{08:72}済み{02:0A}！\n<wait>	Commander, I'm sorry... but I'm going as well!\n<wait>	reads: 隊長、私も行かせてもらいます‥‥済みません！\n<wait> @from-v005
+m/MS001E.BIN	0:05	61	1813	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS001E.BIN	0:05	62	1819	1FD3	{08:03}さん、待{08:52}！\n<wait>	Emi, wait!\n<wait>	reads: 英美さん、待って！\n<wait> @from-v005
+m/MS001E.BIN	0:05	63	1846	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS001E.BIN	0:05	64	1852	1FD3	済み{02:0A}、隊長{02:08}私も行かせ{08:54}らい{08:5A}！\n<wait>	I'm... I'm going, too!\n<wait>	reads: 済みません、隊長‥‥‥私も行かせてもらいます！\n<wait> @from-v005
+m/MS001E.BIN	0:05	65	1903	1FD0	{08:03}も、	Both Emi and Yuuka follow after Hayasaka.\n<wait>	reads: 英美も、 @from-v005
+m/MS001E.BIN	0:05	66	1913	00	{04:FE}も、行{08:52}{08:1F}。\n<wait>		reads: も、行ってしまった。\n<wait> @rebase-new
+m/MS001E.BIN	0:05	67	1934	1FBA	{08:4D}を、無言で見送{08:52}{08:64}{08:04}が、\n<wait>おもむろに{08:65}ボタンに手を延ばし、{01:2D}に{08:65}を行{08:16}。\n<wait>	Nishino says nothing as he watches them leave.\n<wait>He remains silent for the next few moments till all of a sudden,\nhe activates his transmitter and contacts the Administrator's Office.\n<wait>	reads: それを、無言で見送っていた西野が、\n<wait>おもむろに通信ボタンに手を延ばし、管理部に通信を行なった。\n<wait> @from-v005
+m/MS001E.BIN	0:05	68	2020	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	69	2026	1FD3	ＤＢ第二部隊より、志願者のみで編成{08:4B}原宿救援部隊{08:62}\n<wait>{08:82}今より、原宿{08:10}に向け、緊急出動致し{08:5A}。\n<wait>	A team of volunteers from Devil Buster Squad Two\n<wait>is currently heading towards Harajuku Shelter.\n<wait>	reads: ＤＢ第二部隊より、志願者のみで編成した原宿救援部隊は、\n<wait>ただ今より、原宿シェルターに向け、緊急出動致します。\n<wait> @from-v005
+m/MS001E.BIN	0:05	70	2130	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	71	2136	1FD3	人命救助最優先。\n<wait>事実柄の調査も、{08:4D}と同時に行なう所存{08:55}{02:08}以上！！\n<wait>	Our mission is to save as many lives as we can.\n<wait>We will let you know the details of the situation as we arrive there.\nThat is all.\n<wait>	reads: 人命救助最優先。\n<wait>事実柄の調査も、それと同時に行なう所存です‥‥‥以上！！\n<wait> @from-v005
+m/MS001E.BIN	0:05	72	2214	1FD0	{08:04}は{01:2D}の返答も聞かず、一方的に{08:65}を{03:12}、{08:02}の方に目をやり、\nこう言{08:51}。\n<wait>	Nishino ends the call before the Administrator's Office\nhas a chance to reply. He then turns to face you and Yamase.\n<wait>	reads: 西野は管理部の返答も聞かず、一方的に通信を切り、山瀬の方に目をやり、\nこう言った。\n<wait> @from-v005
+m/MS001E.BIN	0:05	73	2290	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	74	2296	1FD3	私{08:62}今{08:42}原宿に向かう。\n<wait>お前達に、無理について来いとは言わ{08:25}。\n<wait>{03:0B}{08:00}達を、あの{08:7E}放{08:52}おく訳にも行かん{08:77}。\n<wait>	I will be heading over to Harajuku Shelter.\n<wait>I won't force you two to come with me.\n<wait>However, as their commanding officer, I cannot simply sit back\nand watch as my subordinates expose themselves to potential danger.\n<wait>	reads: 私は、今から原宿に向かう。\n<wait>お前達に、無理について来いとは言わない。\n<wait>しかし、早坂達を、あのまま放っておく訳にも行かんのだ。\n<wait> @from-v005
+m/MS001E.BIN	0:05	75	2415	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:05	76	2421	1FD3	上層部の命令に背く何て、{08:7A}気違い染みた{08:46}、オレはごめん{08:55}よ。\n<wait>	Sorry, boss... I'm won't be coming with you. Frankly speaking, I think\nthose guys are fucking insane for going against the Administrators'\ndirect orders.\n<wait>	reads: 上層部の命令に背く何て、そんな気違い染みたこと、オレはごめんですよ。\n<wait> @from-v005
+m/MS001E.BIN	0:05	77	2498	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	78	2504	1FD3	そうか{02:08}。\n<wait>	Very well... That is your decision to make.\n<wait>	reads: そうか‥‥‥。\n<wait> @from-v005
+m/MS001E.BIN	0:05	79	2523	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	80	2529	1FD3	で{08:62}	What about you, Katsuragi? Are you coming, or are you staying?\n<wait>	reads: では、 @from-v005
+m/MS001E.BIN	0:05	81	2537	00	{04:FF}、お前は{08:90}{08:8E}？\n<wait>		reads: 、お前はどうする？\n<wait> @rebase-new
+m/MS001E.BIN	0:05	82	2576	1FB2	行く	Go	menu option, declared width 20 columns @from-v005
+m/MS001E.BIN	0:05	83	2582	1FB2	行か{08:25}	Stay	reads: 行かない; menu option, declared width 20 columns @from-v005
+m/MS001E.BIN	0:05	84	2602	0F	{01:EC}	{01:EC}	reads: 
+m/MS001E.BIN	0:05	85	2605	00			@rebase-new
+m/MS001E.BIN	0:05	86	2618	00	{04:FF}{08:62}{08:63}も一緒に行く意志が{08:7B}事を{08:04}に告{08:44}。\n<wait>		reads: は、自分も一緒に行く意志がある事を西野に告げた。\n<wait> @rebase-new
+m/MS001E.BIN	0:05	87	2667	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	88	2673	1FD3	では	I'm glad to hear that. Now then, let's get moving!\nWe have no time to waste.\n<wait>	@from-v005
+m/MS001E.BIN	0:05	89	2681	00	{04:FF}、時間が{08:25}。行くぞ！！\n<wait>		reads: 、時間がない。行くぞ！！\n<wait> @rebase-new
+m/MS001E.BIN	0:05	90	2714	1FD0	原宿{08:10}の危機{02:08}<wait>初めて出る{08:10}の外{02:08}\n<wait>	A disaster at Harajuku Shelter... <wait>Your first mission outside...\n<wait>You'd be lying if you said that you weren't nervous.\nAnd yet, you must follow your heart, and do what you believe is right.\n	reads: 原宿シェルターの危機‥‥‥<wait>初めて出るシェルターの外‥‥‥\n<wait> @from-v005
+m/MS001E.BIN	0:05	91	2759	00	{04:FF}の胸を、例え{08:69}の無い緊張が支配{08:4A}行く		reads: の胸を、例えようの無い緊張が支配して行く @rebase-new
+m/MS001E.BIN	0:05	92	2803	1FFA	{02:08}\n<wait>	{02:08}\n<wait>	reads: ‥‥‥\n<wait>
+m/MS001E.BIN	0:05	93	2843	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	94	2849	1FD3	そうか。\n<wait>で{08:62}君{08:4F}ふたりに{08:62}{08:45}での待機を命ずる。\n<wait>有事の際に{08:62}適切な判断の元に行動せよ{02:08}以上だ。\n<wait>	Very well.\n<wait>I order you two to remain here.\n<wait>In case of emergency, you are authorized to use whatever\nmeans you deem justified. That is all.\n<wait>	reads: そうか。\n<wait>では、君たちふたりには、ここでの待機を命ずる。\n<wait>有事の際には、適切な判断の元に行動せよ‥‥‥以上だ。\n<wait> @from-v005
+m/MS001E.BIN	0:05	95	2971	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	96	2977	1FD3	そうか、{08:7C}仕方{08:25}。\n<wait>	Huh. Well, there's not much that can be done then.\n<wait>	reads: そうか、ならば仕方ない。\n<wait> @from-v005
+m/MS001E.BIN	0:05	97	3004	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	98	3010	1FD3	{08:02}、お前に{08:62}{08:45}での待機を命ずる。\n<wait>有事の際に{08:62}適切な判断の元に行動せよ。\n<wait>	Yamase. I order you to remain here.\n<wait>In case of emergency, you are authorized to use whatever\nmeans you deem justified.\n<wait>	reads: 山瀬、お前には、ここでの待機を命ずる。\n<wait>有事の際には、適切な判断の元に行動せよ。\n<wait> @from-v005
+m/MS001E.BIN	0:05	99	3094	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	100	3100	1FD3	そ{08:4A}、	Also, Katsuragi.\n<wait>I'm sorry to say, but Yamase can't do this alone.\n<wait>	reads: そして、 @from-v005
+m/MS001E.BIN	0:05	101	3110	00	{04:FF}君。\n<wait>申し訳{08:25}が、{08:02}{08:74}では手が足り{08:25}。\n<wait>		reads: 君。\n<wait>申し訳ないが、山瀬だけでは手が足りない。\n<wait> @rebase-new
+m/MS001E.BIN	0:05	102	3162	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	103	3168	1FD3	{02:0C}が戻る{08:71}、{08:65}関係のオペレーターと{08:4A}、{08:02}の手助けを{08:4A}や{08:52}くれ。\n<wait>	I order you to take over as an operator until we return.\n<wait>	reads: 我々が戻るまで、通信関係のオペレーターとして、山瀬の手助けをしてやってくれ。\n<wait> @from-v005
+m/MS001E.BIN	0:05	104	3239	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	105	3245	1FD3	{01:2D}{08:42}の{08:65}{08:62}私のターミナルにつ{08:25}でくれれば{08:7F}。\n<wait>宜しく頼{08:5F}ぞ。\n<wait>	If the Administrator's Office calls, refer that to me.\n<wait>That is all.\n<wait>	reads: 管理部からの通信は、私のターミナルにつないでくれればいい。\n<wait>宜しく頼んだぞ。\n<wait> @from-v005
+m/MS001E.BIN	0:05	106	3346	1FD0	詰所の中に{08:62}重苦しい静寂が続く{02:08}‥\n<wait>	A deep silence falls upon the room.\n<wait>	reads: 詰所の中には、重苦しい静寂が続く‥‥‥‥\n<wait> @from-v005
+m/MS001E.BIN	0:05	107	3419	1FC4	出動{08:4B}部隊{08:42}、状況を説明{08:8E}{08:65}が入{08:51}様だ{08:72}\n<wait>{08:02}にも聞{08:29}様にスピーカーに{03:12}替え、	All of a sudden, your transmitter blinks. It's Nishino.\n<wait>You switch the device to speaker mode so that Yamase can hear as well\nbefore taking the call.\n<wait>	reads: 出動した部隊から、状況を説明する通信が入った様だ‥‥\n<wait>山瀬にも聞ける様にスピーカーに切り替え、 @from-v005
+m/MS001E.BIN	0:05	108	3502	00	{04:FF}は{08:65}スイッチを入{08:60}。\n<wait>		reads: は通信スイッチを入れた。\n<wait> @rebase-new
+m/MS001E.BIN	0:05	109	3541	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	110	3547	1FD3	{02:0C}は今{02:08}\n原宿{08:10}の隔壁扉前に{08:40}。\n<wait>	We are currently stationed in front of\nHarajuku Shelter.\n<wait>	reads: 我々は今‥‥‥\n原宿シェルターの隔壁扉前にいる。\n<wait> @from-v005
+m/MS001E.BIN	0:05	111	3587	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	112	3593	1FD3	{08:10}内の電気系統が、全てストップ{08:4A}おり、\n隔壁を開く事が出来{08:25}。\n<wait>	The shelter's power is off,\nmaking it impossible for us to enter.\n<wait>	reads: シェルター内の電気系統が、全てストップしており、\n隔壁を開く事が出来ない。\n<wait> @from-v005
+m/MS001E.BIN	0:05	113	3663	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	114	3669	1FD3	生存者の確認も不可能。\n<wait>	There are no signs of survivors.\n<wait>	@from-v005
+m/MS001E.BIN	0:05	115	3700	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	116	3706	1FD3	{08:48}以上、{02:0C}には講じる手段が{08:25}と判断し、\n<wait>{08:48}より帰還{08:8E}。\n<wait>	There's nothing else we can do here.\n<wait>We are heading back now.\n<wait>	reads: これ以上、我々には講じる手段がないと判断し、\n<wait>これより帰還する。\n<wait> @from-v005
+m/MS001E.BIN	0:05	117	3776	1FD0	黙{08:52}聞いて{08:64}{08:02}が、マイクを引っつかみ、{08:65}{08:8E}。\n<wait>	Yamase had been listening in silence this whole time,\nyet all of a sudden, he grabs the microphone from you.\n<wait>	reads: 黙って聞いていた山瀬が、マイクを引っつかみ、通信する。\n<wait> @from-v005
+m/MS001E.BIN	0:05	118	3829	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:05	119	3835	1FD3	原宿{08:10}の状況は{08:90}{08:6A}{08:55}か！\n<wait>	What is the situation like!? Is the shelter okay!?\n<wait>	reads: 原宿シェルターの状況はどうなんですか！\n<wait> @from-v005
+m/MS001E.BIN	0:05	120	3876	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	121	3882	1FD3	原宿{08:10}の状況は極めて危険だ。\n<wait>	It's hard to say for certain.\n<wait>	reads: 原宿シェルターの状況は極めて危険だ。\n<wait> @from-v005
+m/MS001E.BIN	0:05	122	3919	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	123	3925	1FD3	{08:82}し、{08:0B}の侵入によ{08:52}壊滅状態に陥{08:51}と\n<wait>{08:68}様な痕跡{08:62}外部に見られ{08:25}。\n<wait>	Still, judging from what we can see,\n<wait>it doesn't appear that any demons have broken in.\n<wait>	reads: ただし、悪魔の侵入によって壊滅状態に陥ったと\n<wait>いう様な痕跡は、外部に見られない。\n<wait> @from-v005
+m/MS001E.BIN	0:05	124	4003	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	125	4009	1FD3	何らかの事故が、内部で発生{08:4B}事に間違{08:24}が、\n応援の{08:65}はパニックを起{08:4B}住人による、誤報で{08:7B}\n可能性も考えら{08:2F}。\n<wait>	Something definitely happened. No doubt about it.\nHowever, it would seem likely that the emergency\nbroadcast was sent mistakenly.\nPerhaps the shelter's residents simply panicked.\n<wait>	reads: 何らかの事故が、内部で発生した事に間違いないが、\n応援の通信はパニックを起した住人による、誤報である\n可能性も考えられる。\n<wait> @from-v005
+m/MS001E.BIN	0:05	126	4124	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	127	4130	1FD3	{08:8F}、電気系統がいかれ{08:14}状況{08:42}推測{08:8E}に、\n{08:10}内の酸素の供給が断たれ{08:14}可能性が、\n非常に高い。\n<wait>	That doesn't mean that we can just leave them be,\nof course. If the power remains down, they will\nalmost certainly run out of oxygen.\n<wait>	reads: だが、電気系統がいかれている状況から推測するに、\nシェルター内の酸素の供給が断たれている可能性が、\n非常に高い。\n<wait> @from-v005
+m/MS001E.BIN	0:05	128	4227	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	129	4233	1FD3	救援が必要な事に、変わりは{08:25}{08:77}よ。\n<wait>	Help is still required.\n<wait>	reads: 救援が必要な事に、変わりはないのだよ。\n<wait> @from-v005
+m/MS001E.BIN	0:05	130	4276	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	131	4282	1FD3	そこで{02:08}\n他の部隊に対し、技術陣を伴わせた、救援部隊を\n要請{08:8E}事に{08:4B}。\n<wait>	We will request the Administrator's Office to\ndispatch a separate squad accompanied by\nan engineering team.\n<wait>	reads: そこで‥‥‥\n他の部隊に対し、技術陣を伴わせた、救援部隊を\n要請する事にした。\n<wait> @from-v005
+m/MS001E.BIN	0:05	132	4359	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	133	4365	1FD3	原宿{08:10}の状況は以上だ。\n<wait>	That is all from us.\n<wait>	reads: 原宿シェルターの状況は以上だ。\n<wait> @from-v005
+m/MS001E.BIN	0:05	134	4402	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:05	135	4408	1FD3	了解！　直ちに帰還{08:4A}下{08:49}。\n<wait>	Understood! We will wait for your return.\n<wait>	reads: 了解！　直ちに帰還して下さい。\n<wait> @from-v005
+m/MS001E.BIN	0:05	136	4443	1FD0	{08:04}{08:42}の{08:65}は終了{08:4B}。\n<wait>	The transmission ends there.\n<wait>	reads: 西野からの通信は終了した。\n<wait> @from-v005
+m/MS001E.BIN	0:05	137	4468	1FBA	{08:02}が意外に真剣に、{08:04}らを心配{08:13}姿が、何だか微笑まし{08:18}。\n<wait>	You can't help but laugh a little. When was it that you last saw\nYamase genuinely worried about another person?\n<wait>	reads: 山瀬が意外に真剣に、西野らを心配している姿が、何だか微笑ましかった。\n<wait> @from-v005
+m/MS001E.BIN	0:05	138	4531	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:05	139	4537	1FD3	何だよ、	Hmm?\n<wait>Don't you laugh at me, Katsuragi!\n<wait>	@from-v005
+m/MS001E.BIN	0:05	140	4549	00	{04:FF}。\n<wait>ニヤニヤ{08:4A}、こっち見てん{08:81}ねぇよ！！\n<wait>		reads: 。\n<wait>ニヤニヤして、こっち見てんじゃねぇよ！！\n<wait> @rebase-new
+m/MS001E.BIN	0:05	141	4639	1FD0	{08:65}が入{08:51}。{08:90}やら{01:2D}の様だ{02:08}\n<wait>	It is there that you receive another transmission.\nThis one is from the Administrator's Office.\n<wait>	reads: 通信が入った。どうやら管理部の様だ‥‥‥\n<wait> @from-v005
+m/MS001E.BIN	0:05	142	4678	1FD2	{01:2D}：	Administrator's Office:	reads: 管理部： @from-v005
+m/MS001E.BIN	0:05	143	4684	1FD3	{02:00}第二部隊隊員中、命令に背き、原宿\n救援に向{08:18}者{08:62}帰還次第、{01:2D}に出頭せよ。\n<wait>	Members of DB Squad Two who abandoned your posts\nand headed to Harajuku against direct orders,\nyou are to immediately report to HQ upon\nyour return.\n<wait>	reads: デビルバスター第二部隊隊員中、命令に背き、原宿\n救援に向かった者は、帰還次第、管理部に出頭せよ。\n<wait> @from-v005
+m/MS001E.BIN	0:05	144	4766	1FD2	{01:2D}：	Administrator's Office:	reads: 管理部： @from-v005
+m/MS001E.BIN	0:05	145	4772	1FD3	繰り返す{02:08}{02:08}\n<wait>	I repeat...\n<wait>	reads: 繰り返す‥‥‥‥‥‥\n<wait> @from-v005
+m/MS001E.BIN	0:05	146	4793	1FD0	{01:2D}{08:42}の{08:65}が{08:76}終わらぬ内に、{08:04}達が帰還{08:4A}来た。\n<wait>	The message has no time to finish playing\nas Nishino and the others enter the room.\n<wait>	reads: 管理部からの通信がまだ終わらぬ内に、西野達が帰還して来た。\n<wait> @from-v005
+m/MS001E.BIN	0:05	147	4938	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	148	4944	1FD3	{01:2D}{08:42}の{08:65}{08:62}私の方{08:56}受信{08:4B}。\n<wait>	We received the same message.\n<wait>	reads: 管理部からの通信は、私の方でも受信した。\n<wait> @from-v005
+m/MS001E.BIN	0:05	149	4979	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS001E.BIN	0:05	150	4985	1FD3	俺のせい{08:55}！\n<wait>隊長、{08:5B}、隊長に御迷惑を{02:08}{02:08}\n<wait>	This is all my fault!\n<wait>Commander, I'm so sorry. It's because of me that...\n<wait>	reads: 俺のせいです！\n<wait>隊長、また、隊長に御迷惑を‥‥‥‥‥‥\n<wait> @from-ours
+m/MS001E.BIN	0:05	151	5039	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	152	5045	1FD3	私も、あの{08:7E}原宿を、放{08:52}置く{01:3E}は{08:19}{08:5F}。\n<wait>第一、本当にまずいと考{08:28}{08:7D}、あの時に止めて{08:64}よ。\n<wait>	Please. I wasn't ready to simply abandon Harajuku either.\n<wait>Had I thought what you were doing was wrong, I would've stopped you.\n<wait>	reads: 私も、あのまま原宿を、放って置くつもりはなかったんだ。\n<wait>第一、本当にまずいと考えるなら、あの時に止めていたよ。\n<wait> @from-v005
+m/MS001E.BIN	0:05	153	5145	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	154	5151	1FD3	{08:8F}、隊員の事を考{08:28}{08:7D}、どんな事を{08:4A}{08:56}あの時止{08:2E}のが、\n<wait>立派な隊長の{08:8E}事{08:8C}がな。\n<wait>	However, doing so, I would've given up all right I have\nto call myself your commander. <wait>That is what I think.\n<wait>	reads: だが、隊員の事を考えるなら、どんな事をしてでもあの時止めるのが、\n<wait>立派な隊長のする事だろうがな。\n<wait> @from-v005
+m/MS001E.BIN	0:05	155	5241	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS001E.BIN	0:05	156	5247	1FD3	隊長{08:72}\n<wait>	Commander...\n<wait>	reads: 隊長‥‥\n<wait> @from-v005
+m/MS001E.BIN	0:05	157	5262	1FD2	{08:04}：	Nishino:	reads: 西野： @from-v005
+m/MS001E.BIN	0:05	158	5268	1FD3	で{08:62}{02:0C}は{01:2D}に出頭{08:8E}ぞ。\n<wait>	Now then, we ought to go and turn ourselves in.\n<wait>Katsuragi, Yamase. You two are dismissed.\n<wait>	reads: では、我々は管理部に出頭するぞ。\n<wait> @from-v005
+m/MS001E.BIN	0:05	159	5299	00	{04:FF}、{08:02}、お前達は{08:5C}解散{08:4A}良い。\n<wait>		reads: 、山瀬、お前達はもう解散して良い。\n<wait> @rebase-new
+m/MS001E.BIN	0:05	160	5378	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS001E.BIN	0:05	161	5384	1FD3	{08:81}あ、俺は帰るとすっかな。{08:81}あな！\n<wait>	Alright then. Catch y'all later.\n<wait>	reads: じゃあ、俺は帰るとすっかな。じゃあな！\n<wait> @from-v005

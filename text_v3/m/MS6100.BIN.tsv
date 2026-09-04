@@ -1,0 +1,45 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS6100.BIN	0:00	0	16	1F88	＞会話可能圏外{08:55}\n　会話対象に接近{08:4A}下{08:49}\n<wait>	>Out of conversation range.\n  Get closer to talk.\n<wait>	reads: ＞会話可能圏外です\n　会話対象に接近して下さい\n<wait> @from-ours
+m/MS6100.BIN	0:00	1	82	00	{04:FF}は	You	reads: は @from-ours
+m/MS6100.BIN	0:00	2	90	00	{04:EF}と\n{08:05}{08:65}を試みた{02:09}\n<wait>	try connecting to it via computer...\n<wait>	reads: と\nコンピュータ通信を試みた・・・\n<wait> @from-ours
+m/MS6100.BIN	0:00	3	122	0E	{08:65}は失敗{08:4B}\n<wait>	The connection fails.\n<wait>	reads: 通信は失敗した\n<wait> @from-ours
+m/MS6100.BIN	0:00	4	167	1FB2	入力{08:8E}	Enter It	reads: 入力する; menu option, declared width 20 columns @from-ours
+m/MS6100.BIN	0:00	5	175	1FB2	入力し{08:25}	Never Mind	reads: 入力しない; menu option, declared width 20 columns @from-ours
+m/MS6100.BIN	0:00	6	197	0F	{01:94}	{01:94}	reads: 
+m/MS6100.BIN	0:00	7	200	00			
+m/MS6100.BIN	0:00	8	221	1FBA	＞{02:06}\n	>{02:06}	reads: ＞どうしますか？\n @from-ours
+m/MS6100.BIN	0:00	9	242	1FB2	ひとまず撤退！	Retreat!	menu option, declared width 20 columns @from-ours
+m/MS6100.BIN	0:00	10	258	1FB2	戦う	Fight	menu option, declared width 20 columns @from-ours
+m/MS6100.BIN	0:00	11	276	0F	{01:40}	{01:40}	reads: 
+m/MS6100.BIN	0:00	12	279	00			
+m/MS6100.BIN	0:00	13	300	00	{04:FF}は逃げ{08:69}と{08:4B}\n{02:09}・・\n{08:61}　\n失敗{08:17}\n<wait>	You try to flee\n.....\nBut\nyou fail!\n<wait>	reads: は逃げようとした\n・・・・・\nしかし　\n失敗した！\n<wait> @from-ours
+m/MS6100.BIN	2:00	0	27	1FB2	入力{08:8E}	Enter It	record reaches an engine no-op opcode; verify in game; reads: 入力する; menu option, declared width 20 columns @from-ours
+m/MS6100.BIN	2:00	1	35	1FB2	入力し{08:25}	Never Mind	record reaches an engine no-op opcode; verify in game; reads: 入力しない; menu option, declared width 20 columns @from-ours
+m/MS6100.BIN	2:00	2	57	0F	{01:B7}	{01:B7}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS6100.BIN	2:00	3	60	00			record reaches an engine no-op opcode; verify in game
+m/MS6100.BIN	2:00	4	65	1FFA	{02:09}・・\n	{02:09}..\n	record reaches an engine no-op opcode; verify in game; reads: ・・・・・\n @from-ours
+m/MS6100.BIN	2:00	5	92	1FBA	＞{02:06}\n	>{02:06}	record reaches an engine no-op opcode; verify in game; reads: ＞どうしますか？\n @from-ours
+m/MS6100.BIN	2:00	6	113	1FB2	ひとまず撤退！	Retreat!	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns @from-ours
+m/MS6100.BIN	2:00	7	129	1FB2	戦う	Fight	record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns @from-ours
+m/MS6100.BIN	2:00	8	147	0F	{01:58}	{01:58}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS6100.BIN	2:00	9	150	00			record reaches an engine no-op opcode; verify in game
+m/MS6100.BIN	2:00	10	173	00	{04:FF}は逃げ{08:69}と{08:4B}\n<wait>	You try to flee.\n<wait>	record reaches an engine no-op opcode; verify in game; reads: は逃げようとした\n<wait> @from-ours
+m/MS6100.BIN	2:00	11	200	1FFA	{02:09}・・\n	{02:09}..\n	record reaches an engine no-op opcode; verify in game; reads: ・・・・・\n @from-ours
+m/MS6100.BIN	2:00	12	215	1FBA	{08:61}　\n失敗{08:17}\n	But...\nIt failed!\n	record reaches an engine no-op opcode; verify in game; reads: しかし　\n失敗した！\n @from-ours
+m/MS6100.BIN	4:AC	0	0	DATA	ＩＤコードノ入力ヲドウゾ{02:09}・・\n<wait>	Please enter your ID code.....\n<wait>	reads: ＩＤコードノ入力ヲドウゾ・・・・・\n<wait> @from-ours
+m/MS6100.BIN	4:AD	0	0	DATA	ドウゾ　オ通リクダサイ\n<wait>	Please, proceed.\n<wait>	@from-ours
+m/MS6100.BIN	4:AE	0	0	DATA	{01:39}ノＩＤデハ\nコノ　エリア内ヘノ　進入ハデキマセン\n<wait>	Your ID does not permit\nentry into this area.\n<wait>	reads: アナタノＩＤデハ\nコノ　エリア内ヘノ　進入ハデキマセン\n<wait> @from-ours
+m/MS6100.BIN	4:AE	1	56	1FBA	直チニ　エリア外ニ　退出シテクダサイ！！\n<wait>	IMMEDIATELY EVACUATE THE AREA!!\n<wait>	@from-ours
+m/MS6100.BIN	4:AF	0	0	DATA	抵抗スル場合ハ　	Should you resist, 	@from-ours
+m/MS6100.BIN	4:B0	0	0	DATA	照合ナキ場合ハ　	Should verification fail, 	@from-ours
+m/MS6100.BIN	4:B1	0	0	DATA	不法侵入者発見！　不法侵入者発見！！\n<wait>	Intruder detected! Intruder detected!!\n<wait>	@from-ours
+m/MS6100.BIN	4:B2	0	0	DATA	対処{08:09}ニ切リ換エマス！\n<wait>	Switching to countermeasure protocol!\n<wait>	reads: 対処プログラムニ切リ換エマス！\n<wait> @from-ours
+m/MS6100.BIN	4:B3	0	0	DATA	対処{08:09}作動！！\n<wait>	Countermeasure protocol activated!!\n<wait>	reads: 対処プログラム作動！！\n<wait> @from-ours
+m/MS6100.BIN	4:B4	0	0	DATA	撃退{08:09}開始シマス！！\n<wait>	Initiating repulsion protocol!!\n<wait>	reads: 撃退プログラム開始シマス！！\n<wait> @from-ours
+m/MS6100.BIN	4:B5	0	0	DATA	警告！　警告！！\n<wait>	Warning! Warning!!\n<wait>	@from-ours
+m/MS6100.BIN	4:B6	0	0	DATA	ＩＤノ照合ヲ　行ナッテクダサイ\n照合ナキ場合ハ　対処{08:09}ニ切リ換エマス\n<wait>	Please complete ID verification.\nFailure to verify will trigger the countermeasure protocol.\n<wait>	reads: ＩＤノ照合ヲ　行ナッテクダサイ\n照合ナキ場合ハ　対処プログラムニ切リ換エマス\n<wait> @from-ours
+m/MS6100.BIN	4:B7	0	0	DATA	繰リ返シマス\n<wait>	Repeating.\n<wait>	@from-ours

@@ -1,0 +1,593 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS000C.BIN	0:00	0	2	1FD0	{08:65}が切{08:60}後、少し{08:4A}	Soon after, Yuuka enters the room.\n	reads: 通信が切れた後、少しして @from-v005
+m/MS000C.BIN	0:00	1	24	00	{04:FE}が入{08:52}{08:1E}。\n		reads: が入ってきた。\n @rebase-new
+m/MS000C.BIN	0:00	2	65	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:00	3	71	1FD3	おは{08:69}。	Good morning, Katsuragi-kun.\n	reads: おはよう。 @from-v005
+m/MS000C.BIN	0:00	4	83	00	{04:FF}くん。\n		reads: くん。\n @rebase-new
+m/MS000C.BIN	0:00	5	108	1FB2	{08:5C}{08:7A}時間？	Is it morning already?	reads: もうそんな時間？; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:00	6	120	1FB2	う～ん、あと５分	Five more minutes...	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:00	7	150	0F	{01:C9}{03:FF}	{01:C9}{03:FF}	reads: 
+m/MS000C.BIN	0:00	8	162	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:00	9	168	1FD3	そうよ。\n早く行か{08:25}と、遅れて{08:83}わ。\n<wait>	Yep. We've gotta hurry, or we'll be late.\n<wait>	reads: そうよ。\n早く行かないと、遅れてしまうわ。\n<wait> @from-v005
+m/MS000C.BIN	0:00	10	216	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:00	11	222	1FD3	初日{08:42}遅刻{08:26}け{08:25}わよね。\n	Did you get everything, Katsuragi-kun?\n	reads: 初日から遅刻はいけないわよね。\n @from-v005
+m/MS000C.BIN	0:00	12	263	1FB2	早く行かなきゃ	Yeah, yeah	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:00	13	279	1FB2	{01:32}だよ	I'm not a kid	reads: 大丈夫だよ; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:00	14	299	0F	{01:D6}{01:FF}	{01:D6}{01:FF}	reads: 
+m/MS000C.BIN	0:00	15	311	00	{04:FE}：		reads: ：
+m/MS000C.BIN	0:00	16	317	1FD3	そうしま{08:80}。\n<wait>	Right. Hehehe... Sorry.\n<wait>	reads: そうしましょう。\n<wait> @from-v005
+m/MS000C.BIN	0:00	17	342	00	{04:FF}{08:62}急いで仕度を整{08:41}。\n<wait>		reads: は、急いで仕度を整えた。\n<wait> @rebase-new
+m/MS000C.BIN	0:00	18	377	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:00	19	387	00	{04:FF}くん、忘れ物とか無い？\n		reads: くん、忘れ物とか無い？\n @rebase-new
+m/MS000C.BIN	0:00	20	428	1FB2	うん、無いよ		menu option, declared width 20 columns @rebase-new
+m/MS000C.BIN	0:00	21	442	1FB2	子供{08:81}{08:25}{08:5F}{08:42}		reads: 子供じゃないんだから; menu option, declared width 20 columns @rebase-new
+m/MS000C.BIN	0:00	22	468	0F	{01:72}	{01:72}	reads:  @rebase-new
+m/MS000C.BIN	0:00	23	471	00			@rebase-new
+m/MS000C.BIN	0:00	24	480	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:00	25	486	1FD3	うふふ{02:08}ごめんな{08:49}。\n子供扱いしちゃ{08:51}み{08:4E}で{02:08}{08:72}\n<wait>	Alright. Let's go then.\n<wait>	reads: うふふ‥‥‥ごめんなさい。\n子供扱いしちゃったみたいで‥‥‥‥‥\n<wait> @from-v005
+m/MS000C.BIN	0:00	26	546	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:00	27	552	1FD3	{08:4D}{08:81}、行きま{08:80}。\n<wait>		reads: それじゃ、行きましょう。\n<wait> @rebase-new
+m/MS000C.BIN	0:00	28	593	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:00	29	599	1FD3	{02:08}ごめんな{08:49}{02:08}冗談の{01:3E}だ{08:51}のよ。\n	Please, don't take it the wrong way. I was just trying to make a joke.\n	reads: ‥‥‥ごめんなさい‥‥‥冗談のつもりだったのよ。\n @from-v005
+m/MS000C.BIN	0:00	30	648	1FB2	わかっ{08:2B}よ	I know	reads: わかってるよ; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:00	31	660	1FB2	{01:29}{08:51}の？	Really?	reads: そうだったの？; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:00	32	682	0F	{01:2D}	{01:2D}	reads: 管理部
+m/MS000C.BIN	0:00	33	685	00			
+m/MS000C.BIN	0:00	34	694	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:00	35	700	1FD3	よ{08:18}。わか{08:52}くれて。\n<wait>	Thanks. I knew you'd understand.\n<wait>	reads: よかった。わかってくれて。\n<wait> @from-v005
+m/MS000C.BIN	0:00	36	738	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:00	37	744	1FD3	ごめんな{08:49}{02:08}‥行きま{08:80}。\n	Sorry... Well, anyway. Let's get going then.\n	reads: ごめんなさい‥‥‥‥行きましょう。\n @from-v005
+m/MS000C.BIN	0:00	38	780	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:00	39	786	1FD3	駄目よ！\n{08:4D}{08:81}、知っ{08:2B}人ばかりだ{08:42}甘え{08:2B}{08:52}思わ{08:2F}わ。\n<wait>	Absolutely not!\nWhat will they think of us?\n<wait>	reads: 駄目よ！\nそれじゃ、知ってる人ばかりだから甘えてるって思われるわ。\n<wait> @from-v005
+m/MS000C.BIN	0:00	40	850	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:00	41	856	1FD3	早く行きま{08:80}よ。\n	Let's hurry.	reads: 早く行きましょうよ。\n @from-v005
+m/MS000C.BIN	0:00	42	889	1FB2	よし行こう	Alright	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:00	43	901	1FB2	先に行{08:52}て	You go ahead	reads: 先に行ってて; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:00	44	925	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS000C.BIN	0:00	45	928	00			
+m/MS000C.BIN	0:00	46	937	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:00	47	943	1FD3	えっ！　{08:7A}{02:08}‥。\n<wait>	Huh? S-Seriously?\n<wait>	reads: えっ！　そんな‥‥‥‥。\n<wait> @from-v005
+m/MS000C.BIN	0:00	48	972	00	{04:FE}の顔が、みるみるうちに悲しみに染まる。\n<wait>	Yuuka appears quite saddened by your response.\n<wait>	reads: の顔が、みるみるうちに悲しみに染まる。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:00	49	1023	00	{04:FF}{08:62}仕方なく一緒に詰所に行く事にし、急いで身支度を整{08:41}。\n<wait>	You decide that it would be better to head out with her after all.\n<wait>	reads: は、仕方なく一緒に詰所に行く事にし、急いで身支度を整えた。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:00	50	1092	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:00	51	1098	1FD3	{08:4D}{08:81}あ{08:72}行きま{08:80}{08:72}。\n	Err, alright... Let's get going...\n	reads: それじゃあ‥‥行きましょう‥‥。\n @from-v005
+m/MS000C.BIN	0:00	52	1174	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:00	53	1180	1FD3	{08:5C}！　	This is no time for jokes, Katsuragi-kun!\nWake up! We're seriously gonna be late.\n	reads: もう！　 @from-v005
+m/MS000C.BIN	0:00	54	1190	00	{04:FF}くんっ{08:50}！\n起きて！　遅刻しちゃうわよ！\n		reads: くんったら！\n起きて！　遅刻しちゃうわよ！\n @rebase-new
+m/MS000C.BIN	0:00	55	1248	1FB2	う～ん、{08:5C}ちょ{08:53}	Just a bit longer...	reads: う～ん、もうちょっと; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:00	56	1266	1FB2	げ、そりゃまずい	Oh, crap!	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:00	57	1296	0F	{01:89}{04:FF}	{01:89}{04:FF}	reads: 
+m/MS000C.BIN	0:00	58	1304	1FD0	そう言{08:52}、布団をかぶ{08:51}	You pull the blanket over your head in an attempt to ignore her,\nprompting Yuuka to start violently shaking you from side to side.\nThe touch of her hair feels so soft against your skin...\n<wait>	reads: そう言って、布団をかぶった @from-v005
+m/MS000C.BIN	0:00	59	1330	00	{04:FF}を、		reads: を、 @rebase-new
+m/MS000C.BIN	0:00	60	1340	00	{04:FE}は揺さぶ{08:51}。\n{08:79}柔らかな髪が揺れ{08:14}{02:08}‥\n<wait>		reads: は揺さぶった。\nその柔らかな髪が揺れている‥‥‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:00	61	1392	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:00	62	1398	1FD3	本当に遅刻しちゃうわ。念願の{02:00}初日{08:6B}よ？\n	This is not a joke. Are you really about to throw away your dream\njust for a few extra minutes of sleep?\n	reads: 本当に遅刻しちゃうわ。念願のデビルバスター初日なのよ？\n @from-v005
+m/MS000C.BIN	0:00	63	1455	1FB2	真面目に起きる	Get up	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:00	64	1471	1FB2	いきなり抱き寄{08:2A}	Embrace her	reads: いきなり抱き寄せる; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:00	65	1501	0F	{01:56}	{01:56}	reads: 
+m/MS000C.BIN	0:00	66	1504	00			
+m/MS000C.BIN	0:00	67	1509	1FD0	初日{08:42}遅刻など{08:4A}いられ{08:25}。\n	You can't afford to be late on your first day.\nWasting no time, you jump out of bed and get dressed up.\n<wait>	reads: 初日から遅刻などしていられない。\n @from-v005
+m/MS000C.BIN	0:00	68	1540	00	{04:FF}{08:62}真面目に起きて身支度を整{08:41}。\n<wait>		reads: は、真面目に起きて身支度を整えた。\n<wait> @rebase-new
+m/MS000C.BIN	0:00	69	1598	00	{04:FF}{08:62}身体を揺さぶっ{08:14}		reads: は、身体を揺さぶっている @rebase-new
+m/MS000C.BIN	0:00	70	1622	00	{04:FE}の身体をいきなり抱き寄{08:67}、\n驚か{08:67}やろうと考{08:41}。\n<wait>		reads: の身体をいきなり抱き寄せて、\n驚かせてやろうと考えた。\n<wait> @rebase-new
+m/MS000C.BIN	0:00	71	1680	1FD1	＞本当にやり{08:15}\n	>Are you sure about this?\n	reads: ＞本当にやりますか？\n @from-v005
+m/MS000C.BIN	0:00	72	1711	1FB2	やる	Do it	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:00	73	1717	1FB2	やら{08:25}	Actually...	reads: やらない; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:00	74	1737	0F	{01:6B}{02:FF}	{01:6B}{02:FF}	reads: 
+m/MS000C.BIN	0:00	75	1755	00	{04:FF}{08:62}	{04:FF}{08:62}	reads: は、 @rebase-new
+m/MS000C.BIN	0:00	76	1763	00	{04:FE}をいきなり抱き寄せた！\n<wait>		reads: をいきなり抱き寄せた！\n<wait> @rebase-new
+m/MS000C.BIN	0:00	77	1810	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:00	78	1816	1FD3	キャアッ！\n<wait>	Eeek!\n<wait>	@from-v005
+m/MS000C.BIN	0:00	79	1839	00	{04:FF}の予期せぬ行動に、		reads: の予期せぬ行動に、 @rebase-new
+m/MS000C.BIN	0:00	80	1863	00	{04:FE}の身体は対応し切れず、簡単に抱き寄{08:2A}事が\n出来た。\n<wait>		reads: の身体は対応し切れず、簡単に抱き寄せる事が\n出来た。\n<wait> @rebase-new
+m/MS000C.BIN	0:00	81	1921	1FBA	頬にかかる	Her hair, now resting against your face,\nhas a pleasant fragrance to it...\n<wait>	@from-v005
+m/MS000C.BIN	0:00	82	1935	00	{04:FE}の髪{08:42}、良い香りが{08:8E}{02:08}\n<wait>		reads: の髪から、良い香りがする‥‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:00	83	1972	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:00	84	1978	1FD3	イヤッ！！　やめてッ！！！\n<wait>	Stop it! Let me go!!\n<wait>	@from-v005
+m/MS000C.BIN	0:00	85	2015	1FC4	ばっちぃ～ん！\n<wait>	SLAP!\n<wait>	@from-v005
+m/MS000C.BIN	0:00	86	2038	1FD0	{08:79}途端、	In the next instant, a sharp wave of pain runs across your cheek.\n<wait>	reads: その途端、 @from-v005
+m/MS000C.BIN	0:00	87	2050	00	{04:FF}の頬に鋭い痛みが走{08:51}。\n<wait>		reads: の頬に鋭い痛みが走った。\n<wait> @rebase-new
+m/MS000C.BIN	0:00	88	2085	00	{04:FE}の平手うちが入{08:51}{08:77}。\n<wait>		reads: の平手うちが入ったのだ。\n<wait> @rebase-new
+m/MS000C.BIN	0:00	89	2120	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:00	90	2126	1FD3	{08:5C}！　		reads: もう！　 @rebase-new
+m/MS000C.BIN	0:00	91	2136	00	{04:FF}君！！\n<wait>		reads: 君！！\n<wait> @rebase-new
+m/MS000C.BIN	0:00	92	2195	00	{04:FE}は平手うちのショックで、力が緩{08:5F}		reads: は平手うちのショックで、力が緩んだ @rebase-new
+m/MS000C.BIN	0:00	93	2233	00	{04:FF}の腕{08:42}逃{08:2F}と、\n顔を真っ赤に{08:4A}そっぽを向いて{08:1F}{02:08}\n<wait>		reads: の腕から逃れると、\n顔を真っ赤にしてそっぽを向いてしまった‥‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:00	94	2293	00	{04:FF}の視界に入{08:51}時計{08:62}{08:5C}あまり時間の余裕が無い事を告げ{08:14}。\n<wait>		reads: の視界に入った時計は、もうあまり時間の余裕が無い事を告げている。\n<wait> @rebase-new
+m/MS000C.BIN	0:00	95	2361	1FBA	{03:0B}いきなり{08:7A}事を{08:4B}ら、	You have Yuuka to thank for that. She slapped you.\n<wait>	reads: しかし、いきなりそんな事をしたら、 @from-v005
+m/MS000C.BIN	0:00	96	2387	00	{04:FE}に嫌われ兼ね{08:25}。\n{08:4D}に、初日{08:42}変な噂が流{08:2F}のも、{08:7F}気分では{08:25}。\n<wait>		reads: に嫌われ兼ねない。\nそれに、初日から変な噂が流れるのも、いい気分ではない。\n<wait> @rebase-new
+m/MS000C.BIN	0:00	97	2468	00	{04:FF}はさすがにまずいと感じ、起き上が{08:51}。\n<wait>		reads: はさすがにまずいと感じ、起き上がった。\n<wait> @rebase-new
+m/MS000C.BIN	0:00	98	2527	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:00	99	2537	00	{04:FF}くん、目が覚めた？\n<wait>		reads: くん、目が覚めた？\n<wait> @rebase-new
+m/MS000C.BIN	0:00	100	2570	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:00	101	2576	1FD3	早くし{08:25}と本当に遅刻よ。\n	We've gotta hurry, or we're seriously gonna be late.\n	reads: 早くしないと本当に遅刻よ。\n @from-v005
+m/MS000C.BIN	0:00	102	2617	1FB2	と{08:53}と身支度	Get yourself ready	reads: とっとと身支度; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:00	103	2631	1FB2	{08:56}{08:76}眠い	I'm still tired	reads: でもまだ眠い; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:00	104	2653	0F	{01:5A}	{01:5A}	reads: 
+m/MS000C.BIN	0:00	105	2656	00			
+m/MS000C.BIN	0:00	106	2665	00	{04:FF}{08:62}急いで身支度を整{08:41}。\n<wait>		reads: は、急いで身支度を整えた。\n<wait> @rebase-new
+m/MS000C.BIN	0:00	107	2702	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:00	108	2708	1FD3	{08:4D}{08:81}あ、		reads: それじゃあ、 @rebase-new
+m/MS000C.BIN	0:00	109	2720	00	{04:FF}くん一緒に行きま{08:80}。\n		reads: くん一緒に行きましょう。\n @rebase-new
+m/MS000C.BIN	0:00	110	2750	1FD0	起き上が{08:52}はみた{08:5E}の、	You leap up, and quickly get yourself dressed.\n<wait>	reads: 起き上がってはみたものの、 @from-v005
+m/MS000C.BIN	0:00	111	2776	00	{04:FF}の頭には{08:76}眠気が残っ{08:14}。\n<wait>		reads: の頭にはまだ眠気が残っている。\n<wait> @rebase-new
+m/MS000C.BIN	0:00	112	2809	1FBA	{03:0B}視界の隅に映{08:51}時計が、まどろむ余裕があまり無い事を示{08:4A}{08:64}。\n<wait>	That said, as suggested by the clock behind Yuuka,\nthere is indeed no time to waste.\n<wait>	reads: しかし、視界の隅に映った時計が、まどろむ余裕があまり無い事を示していた。\n<wait> @from-v005
+m/MS000C.BIN	0:00	113	2876	1FBA	飛び起きる	You decide that it'd be for the best to hurry.\n<wait>	@from-v005
+m/MS000C.BIN	0:00	114	2890	00	{04:FF}。\n<wait>		reads: 。\n<wait> @rebase-new
+m/MS000C.BIN	0:01	0	41	1FD0	朝、目覚めた	You wake up the following morning only to find Yuuka standing\nnext to your bed.\n	@from-v005
+m/MS000C.BIN	0:01	1	57	00	{04:FF}の前に、		reads: の前に、 @rebase-new
+m/MS000C.BIN	0:01	2	71	00	{04:FE}が現わ{08:60}。\n		reads: が現われた。\n @rebase-new
+m/MS000C.BIN	0:01	3	100	1FB2	{08:48}は{08:72}夢？	Is this... a dream?	reads: これは‥‥夢？; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:01	4	112	1FB2	おは{08:69}	Morning	reads: おはよう; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:01	5	132	0F	{01:55}{06:FF}	{01:55}{06:FF}	reads: 
+m/MS000C.BIN	0:01	6	144	00	{04:FF}はそう思い、頬をつね{08:52}みた。\n{1E10:01003C}		reads: はそう思い、頬をつねってみた。\n{1E10:01003C} @rebase-new
+m/MS000C.BIN	0:01	7	182	1FBA	痛い。\n<wait>		@rebase-new
+m/MS000C.BIN	0:01	8	249	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	9	255	1FD3	うふふ{02:08}‥		reads: うふふ‥‥‥‥ @rebase-new
+m/MS000C.BIN	0:01	10	269	00	{04:FF}くん。\n夢{08:6A}か{08:81}{08:25}わよ。\n		reads: くん。\n夢なんかじゃないわよ。\n @rebase-new
+m/MS000C.BIN	0:01	11	311	1FB2	何で{08:45}に？		reads: 何でここに？; menu option, declared width 20 columns @rebase-new
+m/MS000C.BIN	0:01	12	323	1FB2	嘘だ、{08:48}は夢だ		reads: 嘘だ、これは夢だ; menu option, declared width 20 columns @rebase-new
+m/MS000C.BIN	0:01	13	351	0F	{01:8B}	{01:8B}	reads:  @rebase-new
+m/MS000C.BIN	0:01	14	354	00			@rebase-new
+m/MS000C.BIN	0:01	15	367	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	16	373	1FD3	うん{02:08}{08:82}、何となく{02:08}{08:72}\n何となく、		reads: うん‥‥‥ただ、何となく‥‥‥‥‥\n何となく、 @rebase-new
+m/MS000C.BIN	0:01	17	410	00	{04:FF}くんの事が気に{08:1A}{02:08}\n		reads: くんの事が気になって‥‥‥\n @rebase-new
+m/MS000C.BIN	0:01	18	447	1FB2	心配{08:4A}くれ{08:2B}の？		reads: 心配してくれてるの？; menu option, declared width 20 columns @rebase-new
+m/MS000C.BIN	0:01	19	465	1FB2	仕事は{01:32}？		reads: 仕事は大丈夫？; menu option, declared width 20 columns @rebase-new
+m/MS000C.BIN	0:01	20	489	0F	{01:B4}{03:FF}	{01:B4}{03:FF}	reads:  @rebase-new
+m/MS000C.BIN	0:01	21	501	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	22	507	1FD3	夢{08:81}{08:25}わ。私はちゃんと{08:45}に{08:40}のよ。\n<wait>		reads: 夢じゃないわ。私はちゃんとここにいるのよ。\n<wait> @rebase-new
+m/MS000C.BIN	0:01	23	550	1FD0	そう言{08:52}、	You go ahead and pinch your cheek.\n{1E10:01003C}	reads: そう言って、 @from-v005
+m/MS000C.BIN	0:01	24	564	00	{04:FE}は		reads: は @rebase-new
+m/MS000C.BIN	0:01	25	572	00	{04:FF}の手を取{08:51}。\n<wait>		reads: の手を取った。\n<wait> @rebase-new
+m/MS000C.BIN	0:01	26	593	1FBA	柔らかな	Ouch.\n<wait>	@from-v005
+m/MS000C.BIN	0:01	27	605	00	{04:FE}の手が、{08:48}は現実で{08:7B}{08:46}を物語っ{08:14}。\n<wait>		reads: の手が、これは現実であることを物語っている。\n<wait> @rebase-new
+m/MS000C.BIN	0:01	28	658	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	29	664	1FD3	ねぇ、{01:32}？\n熱とか{08:7B}ん{08:81}{08:25}？\n	Ehehe... No, silly. This is not a dream.\n	reads: ねぇ、大丈夫？\n熱とかあるんじゃない？\n @from-v005
+m/MS000C.BIN	0:01	30	708	1FB2	{01:32}	Why are you here?	reads: 大丈夫; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:01	31	712	1FB2	そうかも	Definitely a dream	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:01	32	734	0F	{01:45}{01:FF}	{01:45}{01:FF}	reads: 
+m/MS000C.BIN	0:01	33	746	00	{04:FE}：		reads: ：
+m/MS000C.BIN	0:01	34	752	1FD3	そう{02:08}{08:7D}{08:7F}{08:5F}{08:84}。\n<wait>	Well... I was just a bit worried about you, so...\n	reads: そう‥‥‥ならいいんだけど。\n<wait> @from-v005
+m/MS000C.BIN	0:01	35	781	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	36	787	1FD3	{08:4D}{08:81}あ私、{08:48}{08:42}出勤だ{08:42}{02:08}‥\n<wait>		reads: それじゃあ私、これから出勤だから‥‥‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:01	37	826	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	38	832	1FD3	あの‥{08:5D}良{08:18}ら後で、私とヴァーチャトレーナーでトレーニングし{08:25}？\n<wait>		reads: あの‥もし良かったら後で、私とヴァーチャトレーナーでトレーニングしない？\n<wait> @rebase-new
+m/MS000C.BIN	0:01	39	909	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	40	915	1FD3	私も少し鍛え{08:25}といけ{08:25}し、{08:4D}に一人{08:55}るより二人の方が楽しい{08:42}。\n{08:4D}{08:81}あ、{08:5B}ね！\n<wait>		reads: 私も少し鍛えないといけないし、それに一人でするより二人の方が楽しいから。\nそれじゃあ、またね！\n<wait> @rebase-new
+m/MS000C.BIN	0:01	41	1030	00	{04:FE}{08:62}パタパタと{01:2E}を出{08:21}。\n<wait>		reads: は、パタパタと部屋を出ていった。\n<wait> @rebase-new
+m/MS000C.BIN	0:01	42	1092	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	43	1098	1FD3	大変！\n<wait>		@rebase-new
+m/MS000C.BIN	0:01	44	1117	00	{04:FE}{08:62}	{04:FE}{08:62}	reads: は、 @rebase-new
+m/MS000C.BIN	0:01	45	1125	00	{04:FF}の額に手をあ{08:2B}。\n<wait>		reads: の額に手をあてる。\n<wait> @rebase-new
+m/MS000C.BIN	0:01	46	1187	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	47	1193	1FD3	よ{08:18}。大{08:4B}事{08:25}み{08:4E}。\n{08:56}、身体は大事に{08:4A}ね。\n<wait>		reads: よかった。大した事ないみたい。\nでも、身体は大事にしてね。\n<wait> @rebase-new
+m/MS000C.BIN	0:01	48	1249	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	49	1255	1FD3	{08:4D}{08:81}あ、私行かなきゃ{02:08}{02:08}\n<wait>		reads: それじゃあ、私行かなきゃ‥‥‥‥‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:01	50	1292	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	51	1302	00	{04:FF}くんも、無理し{08:25}でね。\nあと{08:72}よ{08:18}ら、今度一緒にヴァーチャルトレーナーで、トレーニング\nしま{08:80}。一人より、二人の方が楽しいし{02:08}‥\n<wait>		reads: くんも、無理しないでね。\nあと‥‥よかったら、今度一緒にヴァーチャルトレーナーで、トレーニング\nしましょう。一人より、二人の方が楽しいし‥‥‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:01	52	1448	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	53	1454	1FD3	ええ。少し早く{01:2E}を出た{08:42}{02:08}{02:08}\n{08:76}少し余裕が{08:7B}わ。\n<wait>		reads: ええ。少し早く部屋を出たから‥‥‥‥‥‥\nまだ少し余裕があるわ。\n<wait> @rebase-new
+m/MS000C.BIN	0:01	54	1514	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	55	1520	1FD3	{08:56}、元気そうで良{08:18}。\n<wait>		reads: でも、元気そうで良かった。\n<wait> @rebase-new
+m/MS000C.BIN	0:01	56	1553	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	57	1559	1FD3	ねぇ、今度一緒にヴァーチャルトレーナーでトレーニングし{08:25}？\n一人でやるより、二人の方が楽しいし{02:08}‥\n<wait>		reads: ねぇ、今度一緒にヴァーチャルトレーナーでトレーニングしない？\n一人でやるより、二人の方が楽しいし‥‥‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:01	58	1669	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	59	1675	1FD3	あ！　いけ{08:25}！　{08:5C}{08:73}時間！\n<wait>		reads: あ！　いけない！　もうこんな時間！\n<wait> @rebase-new
+m/MS000C.BIN	0:01	60	1714	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	61	1720	1FD3	ごめんね		@rebase-new
+m/MS000C.BIN	0:01	62	1732	00	{04:FF}くん、慌{08:82}しく{08:52}{02:08}\n		reads: くん、慌ただしくって‥‥‥\n @rebase-new
+m/MS000C.BIN	0:01	63	1812	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	64	1818	1FD3	おは{08:69}。		reads: おはよう。 @rebase-new
+m/MS000C.BIN	0:01	65	1830	00	{04:FF}くん。\n		reads: くん。\n @rebase-new
+m/MS000C.BIN	0:01	66	1855	1FB2	{08:90}{08:4B}の？	About me?	reads: どうしたの？; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:01	67	1865	1FB2	仕事は{02:08}？	Won't you be late?	reads: 仕事は‥‥‥？; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:01	68	1889	0F	{01:71}{01:FF}	{01:71}{01:FF}	reads: 
+m/MS000C.BIN	0:01	69	1905	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	70	1911	1FD3	特に{08:72}{08:90}{08:4B}{08:52}訳{08:81}{08:25}{08:5F}けれど{02:08}\n{08:82}{02:08}何だか、気に{08:16}{08:42}{02:08}{02:08}‥\n	Yeah.\n	reads: 特に‥‥どうしたって訳じゃないんだけれど‥‥‥\nただ‥‥‥何だか、気になったから‥‥‥‥‥‥‥\n @from-v005
+m/MS000C.BIN	0:01	71	1983	1FB2	心配{08:4A}くれ{08:2B}の？	You didn't need to	reads: 心配してくれてるの？; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:01	72	2001	1FB2	ふ～ん	Thanks	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:01	73	2021	0F	{01:A9}	{01:A9}	reads: 
+m/MS000C.BIN	0:01	74	2024	00			
+m/MS000C.BIN	0:01	75	2033	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:01	76	2039	1FD3	ええ。\n	Still, I really mean it when I say that you shouldn't push yourself.\nIf something happens, anything, you can always talk to me...\n<wait>	@from-v005
+m/MS000C.BIN	0:01	77	2062	1FB2	心配いら{08:25}		reads: 心配いらない; menu option, declared width 20 columns @rebase-new
+m/MS000C.BIN	0:01	78	2074	1FB2	{01:2A}	{01:2A}	reads: ありがとう; menu option, declared width 20 columns @rebase-new
+m/MS000C.BIN	0:01	79	2090	0F	{01:01}	{01:01}	reads: 山瀬勇 @rebase-new
+m/MS000C.BIN	0:01	80	2093	00			@rebase-new
+m/MS000C.BIN	0:01	81	2124	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	82	2130	1FD3	{08:56}、本当に無理し{08:25}でね。\n何かあっ{08:50}、何{08:56}言{08:52}{02:08}{08:72}\n<wait>	Sorry. I know I shouldn't just show up like this and start telling\nyou what to do and what not to do...\n	reads: でも、本当に無理しないでね。\n何かあったら、何でも言って‥‥‥‥‥\n<wait> @from-v005
+m/MS000C.BIN	0:01	83	2201	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:01	84	2207	1FD3	ごめんな{08:49}ね。急に来たり{08:4A}。\n	It's fine. I woke up early, so...\n<wait>	reads: ごめんなさいね。急に来たりして。\n @from-v005
+m/MS000C.BIN	0:01	85	2269	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:01	86	2275	1FD3	{08:76}{01:32}。少し早く{01:2E}を出て{08:1E}{08:42}{02:08}‥\n<wait>	Anyway, what about you, Katsuragi-kun?\nHow are you feeling today?\n	reads: まだ大丈夫。少し早く部屋を出てきたから‥‥‥‥\n<wait> @from-v005
+m/MS000C.BIN	0:01	87	2318	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	88	2324	1FD3	{08:4D}より		reads: それより @rebase-new
+m/MS000C.BIN	0:01	89	2334	00	{04:FF}くん、気分は{08:90}？\n頭が痛いとか、熱が{08:7B}とか{08:25}？\n		reads: くん、気分はどう？\n頭が痛いとか、熱があるとかない？\n @rebase-new
+m/MS000C.BIN	0:01	90	2398	1FB2	{01:32}だよ	All's good	reads: 大丈夫だよ; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:01	91	2406	1FB2	熱っぽい	I have a fever	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:01	92	2416	1FB2	頭痛い	My head hurts	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:01	93	2436	0F	{01:9F}{=FA}{=02}{01:01}	{01:9F}{=FA}{=02}{01:01}	reads: {=FA}{=02}山瀬勇
+m/MS000C.BIN	0:01	94	2443	00			
+m/MS000C.BIN	0:01	95	2474	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	96	2480	1FD3	大変！\n<wait>		@rebase-new
+m/MS000C.BIN	0:01	97	2499	00	{04:FE}{08:62}	{04:FE}{08:62}	reads: は、 @rebase-new
+m/MS000C.BIN	0:01	98	2507	00	{04:FF}の額に手をあてた。\n<wait>		reads: の額に手をあてた。\n<wait> @rebase-new
+m/MS000C.BIN	0:01	99	2549	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	100	2555	1FD3	{02:08}熱は無いみ{08:4E}ね。よ{08:18}わ。\n<wait>		reads: ‥‥‥熱は無いみたいね。よかったわ。\n<wait> @rebase-new
+m/MS000C.BIN	0:01	101	2594	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	102	2600	1FD3	ええ{08:53}{08:72}あら、{08:5C}{08:73}時間だわ。\n薬局{08:71}、薬を取りに行っ{08:2B}暇は無いわね{02:08}‥\n<wait>	Ah!\n<wait>	reads: ええっと‥‥あら、もうこんな時間だわ。\n薬局まで、薬を取りに行ってる暇は無いわね‥‥‥‥\n<wait> @from-v005
+m/MS000C.BIN	0:01	103	2678	1FD0	そう言{08:52}、	She places her hand on your forehead.\n<wait>	reads: そう言って、 @from-v005
+m/MS000C.BIN	0:01	104	2692	00	{04:FE}は{08:63}のポーチを探{08:51}。\n<wait>		reads: は自分のポーチを探った。\n<wait> @rebase-new
+m/MS000C.BIN	0:01	105	2749	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	106	2755	1FD3	{08:26}、{08:48}！　気休め程度{08:74}ど、鎮痛剤よ。\n<wait>	...Doesn't look like you have a fever. That's good.\n<wait>	reads: はい、これ！　気休め程度だけど、鎮痛剤よ。\n<wait> @from-v005
+m/MS000C.BIN	0:01	107	2804	00	{04:FE}は白い錠剤を取り出{08:4B}。\n<wait>		reads: は白い錠剤を取り出した。\n<wait> @rebase-new
+m/MS000C.BIN	0:01	108	2841	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	109	2847	1FD3	ええ{08:53}{08:72}お水お水{02:08}\n<wait>ごめんな{08:49}、流し使わせ{08:54}らうわね！\n<wait>	Ah, just look at the time.\nI'd run by the pharmacist, but then I'd be late...\n<wait>	reads: ええっと‥‥お水お水‥‥‥\n<wait>ごめんなさい、流し使わせてもらうわね！\n<wait> @from-v005
+m/MS000C.BIN	0:01	110	2925	00	{04:FE}{08:62}流しの方に消{08:28}。\n程無く{08:4A}、		reads: は、流しの方に消える。\n程無くして、 @rebase-new
+m/MS000C.BIN	0:01	111	2960	00	{04:FE}が水の入{08:51}グラスを手に戻{08:52}{08:1E}。\n<wait>		reads: が水の入ったグラスを手に戻ってきた。\n<wait> @rebase-new
+m/MS000C.BIN	0:01	112	3027	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	113	3033	1FD3	{08:26}{08:90}ぞ！\n<wait>	Here you go. Swallow this, and it should help with the headache.\n<wait>	reads: はいどうぞ！\n<wait> @from-v005
+m/MS000C.BIN	0:01	114	3054	00	{04:FE}はグラスを差し出{08:4B}。\n		reads: はグラスを差し出した。\n @rebase-new
+m/MS000C.BIN	0:01	115	3081	00	{04:FF}{08:62}厚意を受け薬を喉に流し込{08:5F}。\n<wait>		reads: は、厚意を受け薬を喉に流し込んだ。\n<wait> @rebase-new
+m/MS000C.BIN	0:01	116	3126	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	117	3132	1FD3	あっ！　{08:5C}急がなきゃ！\n<wait>	Now then, let's see... Water, water...\n<wait>Sorry, but I'm gonna have to use your sink.\n<wait>	reads: あっ！　もう急がなきゃ！\n<wait> @from-v005
+m/MS000C.BIN	0:01	118	3167	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:01	119	3173	1FD3	{08:4D}{08:81}あ、	Here.\n<wait>	reads: それじゃあ、 @from-v005
+m/MS000C.BIN	0:01	120	3185	00	{04:FF}くん。\n無理し{08:25}で、ちゃんとお医者様に診{08:54}ら{08:52}ね。\n<wait>	You take the glass and glug the liquid down.\n<wait>	reads: くん。\n無理しないで、ちゃんとお医者様に診てもらってね。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:01	121	3249	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:01	122	3255	1FD3	元気に{08:16}ら、一緒にヴァーチャトレーナーでトレーニングしま{08:80}ね！\n	Ah! I've really gotta hurry now!\n<wait>	reads: 元気になったら、一緒にヴァーチャトレーナーでトレーニングしましょうね！\n @from-v005
+m/MS000C.BIN	0:02	0	2	1FD0	{02:00}詰所に着{08:64}二人{02:08}{08:72}\n{08:8F}、そこには二人以外の{02:0B}は誰もい{08:19}{02:08}\n<wait>	The two of you make your way to the Devil Buster office.\nHowever, much to your surprise, there is no one else there...\n<wait>	reads: デビルバスター詰所に着いた二人‥‥‥‥‥\nだが、そこには二人以外の人間は誰もいなかった‥‥‥\n<wait> @from-v005
+m/MS000C.BIN	0:02	1	94	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:02	2	100	1FD3	{08:90}{08:4B}のかしら？　{08:76}５分前だ{08:42}{02:08}？\nけっこう、{01:1C}遅いわね。\n<wait>	Seriously? The training session is supposed to start in five minutes...\nHuh. Guess you're not the only one who has trouble getting up.\n<wait>	reads: どうしたのかしら？　まだ５分前だから‥‥‥？\nけっこう、みんな遅いわね。\n<wait> @from-v005
+m/MS000C.BIN	0:02	3	164	1FD0	{01:2E}の中は静まりかえ{08:52}おり、{08:82}二人{08:74}が{08:47}場に居ると{08:68}事を\n嫌が応{08:56}感じさせた。\n<wait>	Yuuka's voice echoes throughout the silent hall,\nfurther making it clear that there is no one else present.\n<wait>	reads: 部屋の中は静まりかえっており、ただ二人だけがこの場に居るという事を\n嫌が応でも感じさせた。\n<wait> @from-v005
+m/MS000C.BIN	0:02	4	252	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:02	5	262	00	{04:FF}くんごめんね。\n私が早く行こう{08:52}、急がせた{08:42}{02:08}‥\n	Err... Sorry. I feel really bad for rushing you now...\n	reads: くんごめんね。\n私が早く行こうって、急がせたから‥‥‥‥\n @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:02	6	328	1FB2	あ‥うん	Oh... Sure	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:02	7	338	1FB2	いや、{08:7F}よ	It's fine	reads: いや、いいよ; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:02	8	362	0F	{01:9A}{05:FF}	{01:9A}{05:FF}	reads: 
+m/MS000C.BIN	0:02	9	422	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:02	10	428	1FD3	{08:56}、私少し嬉しいの。\n<wait>	Still, I gotta say. I really am glad.\n<wait>	reads: でも、私少し嬉しいの。\n<wait> @from-v005
+m/MS000C.BIN	0:02	11	461	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:02	12	467	1FD3	こう{08:4A}、二人き{02:08}‥いえ、二人で{02:00}になれて。\n	Glad that we... were able to become Devil Busters together.\n	reads: こうして、二人き‥‥‥‥いえ、二人でデビルバスターになれて。\n @from-v005
+m/MS000C.BIN	0:02	13	526	1FB2	二人きりの方が嬉しい	Your face is so close	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:02	14	548	1FB2	本当にそう思っ{08:2B}？	Are you really?	reads: 本当にそう思ってる？; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:02	15	568	1FB2	うん、{01:29}ね	I think so too	reads: うん、そうだね; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:02	16	592	0F	{01:90}{06:02}{01:A8}{05:FF}	{01:90}{06:02}{01:A8}{05:FF}	reads: 
+m/MS000C.BIN	0:02	17	608	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:02	18	614	1FD3	えっ{02:08}‥\n<wait>	Huh...?\n<wait>	reads: えっ‥‥‥‥\n<wait> @from-v005
+m/MS000C.BIN	0:02	19	639	00	{04:FE}{08:62}驚{08:64}顔を{08:4A}		reads: は、驚いた顔をして @rebase-new
+m/MS000C.BIN	0:02	20	657	00	{04:FF}の瞳を見つめた。\n		reads: の瞳を見つめた。\n @rebase-new
+m/MS000C.BIN	0:02	21	692	1FB2	見つめ返す	Stare back at her	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:02	22	704	1FB2	微笑む	Smile	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:02	23	724	0F	{01:A6}{03:FF}	{01:A6}{03:FF}	reads: 
+m/MS000C.BIN	0:02	24	736	00	{04:FF}が		reads: が @rebase-new
+m/MS000C.BIN	0:02	25	744	00	{04:FE}の瞳を見つめ返すと、		reads: の瞳を見つめ返すと、 @rebase-new
+m/MS000C.BIN	0:02	26	770	00	{04:FE}の頬は桜色に染まり、信じられ{08:25}\nと{08:22}表情を{08:13}。\n		reads: の頬は桜色に染まり、信じられない\nといった表情をしている。\n @rebase-new
+m/MS000C.BIN	0:02	27	834	1FB2	優しく見つめ続{08:29}	Continue staring	reads: 優しく見つめ続ける; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:02	28	852	1FB2	手を握る	Take her hand	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:02	29	874	0F	{01:5F}{02:FF}	{01:5F}{02:FF}	reads: 
+m/MS000C.BIN	0:02	30	908	00	{04:FF}{08:62}	{04:FF}{08:62}	reads: は、 @rebase-new
+m/MS000C.BIN	0:02	31	916	00	{04:FE}を優しく見つめ続{08:43}{02:08}\n		reads: を優しく見つめ続けた‥‥‥\n @rebase-new
+m/MS000C.BIN	0:02	32	943	00	{04:FE}も、嬉しそうな表情で		reads: も、嬉しそうな表情で @rebase-new
+m/MS000C.BIN	0:02	33	969	00	{04:FF}を見つめ{08:14}{08:72}\n<wait>		reads: を見つめている‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:02	34	996	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:02	35	1006	00	{04:FF}くん{02:08}\n<wait>		reads: くん‥‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:02	36	1035	1FD0	{08:79}時だ。\n背後で物音がし、思わず振り向くと、いつ{08:42}{08:64}のか{08:02}が入口に{08:64}。\n<wait>	Right then, you hear a sound behind you.\nYou quickly turn around, only to find Yamase standing by the doorway.\n<wait>	reads: その時だ。\n背後で物音がし、思わず振り向くと、いつからいたのか山瀬が入口にいた。\n<wait> @from-v005
+m/MS000C.BIN	0:02	37	1139	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS000C.BIN	0:02	38	1145	1FD3	いや～～～。ど～もど～もぉ。\n悪いねぇ、邪魔しちゃ{08:52}～。\n<wait>	Oh my, oh my. Am I interrupting something?\n<wait>	reads: いや～～～。ど～もど～もぉ。\n悪いねぇ、邪魔しちゃって～。\n<wait> @from-v005
+m/MS000C.BIN	0:02	39	1209	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS000C.BIN	0:02	40	1215	1FD3	いや、ほんと。邪魔{08:8E}気は無{08:18}{08:5F}{08:84}ねぇ。\n物音たてち{08:20}も{08:5F}{08:42}{02:08}{08:72}\n<wait>	No, but seriously. Sorry about that. I heard some noises, so...\n<wait>	reads: いや、ほんと。邪魔する気は無かったんだけどねぇ。\n物音たてちまったもんだから‥‥‥‥‥\n<wait> @from-v005
+m/MS000C.BIN	0:02	41	1285	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS000C.BIN	0:02	42	1291	1FD3	ま、{08:47}事{08:62}俺の胸の奥深ぁ～くにしま{08:52}おいてやる{08:42}よ。\nアームターミナルの改造パーツ一つで、手を打{08:52}やるよ。な？\n<wait>	Oh, put don't worry. You can always pay me to keep my mouth closed.\nHow about... you get me some new parts for my Arm Terminal. Deal?\n<wait>	reads: ま、この事は、俺の胸の奥深ぁ～くにしまっておいてやるからよ。\nアームターミナルの改造パーツ一つで、手を打ってやるよ。な？\n<wait> @from-v005
+m/MS000C.BIN	0:02	43	1409	1FD2	{08:02}：	Yamase:	reads: 山瀬： @from-v005
+m/MS000C.BIN	0:02	44	1415	1FD3	お！　他の奴らが来るみ{08:4E}だぜ。\n	Ah! Looks like the other guys are here.\nI'll be waiting for those parts, Katsuragi!\n<wait>	reads: お！　他の奴らが来るみたいだぜ。\n @from-v005
+m/MS000C.BIN	0:02	45	1450	00	{04:FF}、パーツよろしくな！\n<wait>		reads: 、パーツよろしくな！\n<wait> @rebase-new
+m/MS000C.BIN	0:02	46	1492	00	{04:FF}{08:62}	{04:FF}{08:62}	reads: は、 @rebase-new
+m/MS000C.BIN	0:02	47	1500	00	{04:FE}の手をと{08:51}。\n柔らかな		reads: の手をとった。\n柔らかな @rebase-new
+m/MS000C.BIN	0:02	48	1527	00	{04:FE}の手を		reads: の手を @rebase-new
+m/MS000C.BIN	0:02	49	1539	00	{04:FF}の手が包む{08:72}\n<wait>		reads: の手が包む‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:02	50	1564	00	{04:FE}は抵抗もせず、		reads: は抵抗もせず、 @rebase-new
+m/MS000C.BIN	0:02	51	1584	00	{04:FF}の手のぬくもりを受け止め{08:14}{08:69}だ{02:08}‥\n<wait>		reads: の手のぬくもりを受け止めているようだ‥‥‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:02	52	1633	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:02	53	1643	00	{04:FF}くん{08:72}私{02:08}‥\n		reads: くん‥‥私‥‥‥‥\n @rebase-new
+m/MS000C.BIN	0:02	54	1669	00	{04:FF}{08:62}優しく微笑みか{08:43}。\n<wait>		reads: は、優しく微笑みかけた。\n<wait> @rebase-new
+m/MS000C.BIN	0:02	55	1702	00	{04:FE}は{08:4D}に、心の底{08:42}の笑顔で応{08:28}。\n<wait>		reads: はそれに、心の底からの笑顔で応える。\n<wait> @rebase-new
+m/MS000C.BIN	0:02	56	1769	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:02	57	1779	00	{04:FF}くん{02:08}‥私{02:08}‥\n		reads: くん‥‥‥‥私‥‥‥‥\n @rebase-new
+m/MS000C.BIN	0:02	58	1855	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:02	59	1861	1FD3	私{02:08}今、嬉しいの。\n	I'm so incredibly happy right now.\n	reads: 私‥‥‥今、嬉しいの。\n @from-v005
+m/MS000C.BIN	0:02	60	1896	1FB2	何故？	Why?	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:02	61	1904	1FB2	ＤＢにな{08:60}{08:42}？	Because you're a DB?	reads: ＤＢになれたから？; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:02	62	1932	0F	{01:CD}	{01:CD}	reads: 
+m/MS000C.BIN	0:02	63	1935	00			
+m/MS000C.BIN	0:02	64	1944	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:02	65	1950	1FD3	{08:4D}は{08:72}こう{08:4A}二人で{02:08}{02:00}にな{08:60}{08:42}{02:08}\n	Because... we both made it as Devil Busters.\n	reads: それは‥‥こうして二人で‥‥‥デビルバスターになれたから‥‥‥\n @from-v005
+m/MS000C.BIN	0:02	66	1999	1FB2	うん、{01:29}ね	I think so too	reads: うん、そうだね; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:02	67	2011	1FB2	本当にそう思っ{08:2B}？	Are you really?	reads: 本当にそう思ってる？; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:02	68	2043	0F	{01:E5}	{01:E5}	reads: 
+m/MS000C.BIN	0:02	69	2046	00			@rebase-new
+m/MS000C.BIN	0:02	70	2059	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:02	71	2069	00	{04:FF}くん{08:72}あのね{02:08}私{02:08}{08:4D}よりもね{02:08}\n<wait>		reads: くん‥‥あのね‥‥‥私‥‥‥それよりもね‥‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:02	72	2114	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:02	73	2124	00	{04:FF}くんと{02:08}‥\n		reads: くんと‥‥‥‥\n @rebase-new
+m/MS000C.BIN	0:02	74	2148	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:02	75	2154	1FD3	ええ。{08:4D}も{08:7B}けれど{02:08}{02:08}\n<wait>	And not just that...\n<wait>	reads: ええ。それもあるけれど‥‥‥‥‥‥\n<wait> @from-v005
+m/MS000C.BIN	0:02	76	2198	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:02	77	2204	1FD3	何{08:56}{08:25}わ。\n	Nothing. Just forget about it...\n	reads: 何でもないわ。\n @from-v005
+m/MS000C.BIN	0:02	78	2231	1FB2	本当に何{08:56}{08:25}の？	Is it really nothing?	reads: 本当に何でもないの？; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:02	79	2249	1FB2	あっそう	Oh, sure	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:02	80	2271	0F	{01:76}{01:FF}	{01:76}{01:FF}	reads: 
+m/MS000C.BIN	0:02	81	2287	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:02	82	2293	1FD3	{02:08}‥ううん{02:08}本当は{08:72}\n{1E10:01001E}本当{08:62}	Actually, no. It's not. The truth is...\n{1E10:01001E}I'm glad that we were both able to become Devil Busters.\nTogether...\n<wait>	reads: ‥‥‥‥ううん‥‥‥本当は‥‥\n{1E10:01001E}本当は、 @from-v005
+m/MS000C.BIN	0:02	83	2329	00	{04:FF}くんと二人でいら{08:2F}事が嬉しいの{02:08}\n<wait>		reads: くんと二人でいられる事が嬉しいの‥‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:02	84	2376	00	{04:FE}は顔を赤らめて、俯いて{08:1F}。\n		reads: は顔を赤らめて、俯いてしまった。\n @rebase-new
+m/MS000C.BIN	0:02	85	2443	1FB2	手を握る	Take her hand	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:02	86	2453	1FB2	顔をあげさ{08:2A}	Lift her head	reads: 顔をあげさせる; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:02	87	2479	0F	{01:01}	{01:01}	reads: 山瀬勇
+m/MS000C.BIN	0:02	88	2482	00			
+m/MS000C.BIN	0:02	89	2495	00	{04:FF}{08:62}人さし指を		reads: は、人さし指を @rebase-new
+m/MS000C.BIN	0:02	90	2513	00	{04:FE}の顎の下に添え、俯いて{08:1F}		reads: の顎の下に添え、俯いてしまった @rebase-new
+m/MS000C.BIN	0:02	91	2543	00	{04:FE}の顔を\nあげさせた。\n<wait>		reads: の顔を\nあげさせた。\n<wait> @rebase-new
+m/MS000C.BIN	0:02	92	2575	00	{04:FE}は頬を上気させ、		reads: は頬を上気させ、 @rebase-new
+m/MS000C.BIN	0:02	93	2597	00	{04:FF}を見つめ{08:14}{02:08}\n<wait>		reads: を見つめている‥‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:02	94	2678	00	{04:FF}の言葉を聞くと、		reads: の言葉を聞くと、 @rebase-new
+m/MS000C.BIN	0:02	95	2700	00	{04:FE}の表情が固く{08:16}。\n{03:0B}すぐ決意{08:4B}{08:69}に話し出{08:4B}。\n<wait>		reads: の表情が固くなった。\nしかし、すぐ決意したように話し出した。\n<wait> @rebase-new
+m/MS000C.BIN	0:02	96	2762	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:02	97	2768	1FD3	あ、あのッ！　私{08:72}本当は{02:08}本当は‥\n	A-Actually, the truth is!...\n	reads: あ、あのッ！　私‥‥本当は‥‥‥本当は‥\n @from-v005
+m/MS000C.BIN	0:03	0	27	1FD0	{08:65}が入っ{08:14}{02:08}\n	You have a new transmission.\n	reads: 通信が入っている‥‥‥\n @from-v005
+m/MS000C.BIN	0:03	1	56	1FB2	応答{08:8E}	Answer	reads: 応答する; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:03	2	64	1FB2	応答し{08:25}	Don't answer	reads: 応答しない; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:03	3	86	0F	{01:47}{02:FF}	{01:47}{02:FF}	reads: 
+m/MS000C.BIN	0:03	4	106	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:03	5	112	1FD3	あ、	Hey, Katsuragi-kun.\n<wait>	@from-v005
+m/MS000C.BIN	0:03	6	120	00	{04:FF}くん！\n<wait>		reads: くん！\n<wait> @rebase-new
+m/MS000C.BIN	0:03	7	141	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:03	8	147	1FD3	あの{02:08}‥\n私、今{08:42}ヴァーチャトレーナーに行こうと思うの。\n<wait>	I...\nI was thinking about doing some virtual training.\n<wait>	reads: あの‥‥‥‥\n私、今からヴァーチャトレーナーに行こうと思うの。\n<wait> @from-v005
+m/MS000C.BIN	0:03	9	215	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:03	10	221	1FD3	{01:2E}に{08:40}より、{08:79}方が気が晴{08:2F}し{08:72}\n<wait>	It seems like a better use of my time than\nsitting in my room all day long.\n<wait>	reads: 部屋にいるより、その方が気が晴れるし‥‥\n<wait> @from-v005
+m/MS000C.BIN	0:03	11	264	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:03	12	270	1FD3	{08:4D}で、	Anyway, I was wondering...\nWould you like to join me?\n	reads: それで、 @from-v005
+m/MS000C.BIN	0:03	13	280	00	{04:FF}くんも{08:90}か{08:1A}思{08:52}。\n		reads: くんもどうかなって思って。\n @rebase-new
+m/MS000C.BIN	0:03	14	317	1FB2	行く行く	Sure thing	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:03	15	327	1FB2	う～ん	Sorry...	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:03	16	347	0F	{01:8C}	{01:8C}	reads: 
+m/MS000C.BIN	0:03	17	350	00			
+m/MS000C.BIN	0:03	18	362	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:03	19	368	1FD3	本当！？　{08:81}あ、ヴァーチャトレーナーで待っ{08:2B}わ。\n{08:4D}{08:81}あね！\n<wait>	Really!? That's awesome!\nlLright. I'll be waiting for you there.\n<wait>	reads: 本当！？　じゃあ、ヴァーチャトレーナーで待ってるわ。\nそれじゃあね！\n<wait> @from-v005
+m/MS000C.BIN	0:03	20	444	00	{04:FE}の嬉しそうな声が、		reads: の嬉しそうな声が、 @rebase-new
+m/MS000C.BIN	0:03	21	468	00	{04:FF}の耳に残{08:51}{08:72}\n<wait>		reads: の耳に残った‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:03	22	498	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:03	23	504	1FD3	あ{08:72}{08:7A}、あの、無理に誘っ{08:2B}訳{08:81}{08:25}{08:42}‥\n<wait>	Right... You don't have to if you don't want to.\n<wait>	reads: あ‥‥そんな、あの、無理に誘ってる訳じゃないから‥\n<wait> @from-v005
+m/MS000C.BIN	0:03	24	553	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:03	25	559	1FD3	ごめんな{08:49}。忙しいのに{02:08}‥\n<wait>	Sorry. I know you're busy and everything...\n<wait>	reads: ごめんなさい。忙しいのに‥‥‥‥\n<wait> @from-v005
+m/MS000C.BIN	0:03	26	598	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:03	27	604	1FD3	{08:4D}{08:81}あ。\n{08:5D}、気が向い{08:50}来てね。\n<wait>	Well, if you happen to change your mind,\nfeel free to join me.\n<wait>	reads: それじゃあ。\nもし、気が向いたら来てね。\n<wait> @from-v005
+m/MS000C.BIN	0:03	28	648	1FD0	{08:65}は切れて{08:1F}{02:08}{08:72}\n<wait>	And with that, she ends the call...\n<wait>	reads: 通信は切れてしまった‥‥‥‥‥\n<wait> @from-v005
+m/MS000C.BIN	0:03	29	678	1FC4	{08:65}は留守録モードに入{08:51}。\n<wait>	The call goes to your answering machine.\n<wait>	reads: 通信は留守録モードに入った。\n<wait> @from-v005
+m/MS000C.BIN	0:03	30	719	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:03	31	725	1FD3	{08:72}あ{08:72}	Ah... He's not home...\n<wait>	reads: ‥‥あ‥‥ @from-v005
+m/MS000C.BIN	0:03	32	735	00	{04:FF}くん{08:24}のね{02:08}\n<wait>		reads: くんいないのね‥‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:03	33	762	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:03	34	768	1FD3	え{08:53}、	Err, hi. It's me.\n<wait>	reads: えっと、 @from-v005
+m/MS000C.BIN	0:03	35	778	00	{04:FE}{08:55}。\n<wait>		reads: です。\n<wait> @rebase-new
+m/MS000C.BIN	0:03	36	797	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:03	37	803	1FD3	{08:48}{08:42}、ヴァーチャトレーナーに行{08:52}来{08:69}と\n思い{08:5A}。\n<wait>	I thought we could do some virtual training together.\n<wait>	reads: これから、ヴァーチャトレーナーに行って来ようと\n思います。\n<wait> @from-v005
+m/MS000C.BIN	0:03	38	863	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:03	39	869	1FD3	{08:79}方が気が晴{08:2F}し{02:08}‥\n良{08:18}ら一緒にやり{02:0A}か？\n<wait>	Might do you some good to get your mind off things.\nAnyway, at least consider it, okay?\n<wait>	reads: その方が気が晴れるし‥‥‥‥\n良かったら一緒にやりませんか？\n<wait> @from-v005
+m/MS000C.BIN	0:03	40	925	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:03	41	931	1FD3	{08:4D}{08:81}あ{02:08}‥\n<wait>	Bye then...\n<wait>	reads: それじゃあ‥‥‥‥\n<wait> @from-v005
+m/MS000C.BIN	0:03	42	954	1FD0	{08:65}は切{08:60}{02:08}{08:72}\n<wait>	The call ends there.\n<wait>	reads: 通信は切れた‥‥‥‥‥\n<wait> @from-v005
+m/MS000C.BIN	0:04	0	32	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	1	42	00	{04:FF}くん	Katsuragi-kun	reads: くん @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	2	54	1FFA	{02:08}	{02:08}	reads: ‥‥‥
+m/MS000C.BIN	0:04	3	62	1FFA	好き	I love you	@from-v005
+m/MS000C.BIN	0:04	4	72	1FFA	{02:08}\n<wait>	{02:08}\n<wait>	reads: ‥‥‥\n<wait>
+m/MS000C.BIN	0:04	5	93	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:04	6	103	00	{04:FF}くん{08:72}<wait>も{08:53}強く抱きしめて{08:72}離さ{08:25}で{02:08}\n<wait>		reads: くん‥‥<wait>もっと強く抱きしめて‥‥離さないで‥‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:04	7	158	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:04	8	164	1FD3	そ{08:4A}{08:72}<wait>キス{08:4A}{02:08}<wait>愛し{08:2B}の{02:08}\n<wait>	Katsuragi-kun... <wait>Hold me tight... And don't let me go...\n<wait>	reads: そして‥‥<wait>キスして‥‥‥<wait>愛してるの‥‥‥\n<wait> @from-v005
+m/MS000C.BIN	0:04	9	231	00	{04:FE}の鼓動が、密着{08:8E}身体を伝わり、甘美なパルスと{08:1A}		reads: の鼓動が、密着する身体を伝わり、甘美なパルスとなって @rebase-new
+m/MS000C.BIN	0:04	10	283	00	{04:FF}の内部へと\n届いて来る{08:72}。\n<wait>		reads: の内部へと\n届いて来る‥‥。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	11	317	1FBA	{08:79}潤{08:5F}瞳は固く閉じられ、{08:76}涙に濡{08:2F}長い睫毛が、恥じらいと緊張で\n震え{08:14}。\n<wait>	Her eyelashes, still wet with tears, can be seen shivering.\nShe's clearly nervous...\n<wait>	reads: その潤んだ瞳は固く閉じられ、まだ涙に濡れる長い睫毛が、恥じらいと緊張で\n震えている。\n<wait> @from-v005
+m/MS000C.BIN	0:04	12	399	00	{04:FF}{08:62}脳が灼{08:29}{08:69}な甘い衝撃に襲わ{08:60}。\n<wait>	A burning sensation travels through your mind.\n<wait>	reads: は、脳が灼けるような甘い衝撃に襲われた。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	13	442	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>	reads: ＞どうしますか？\n<wait> @from-v005
+m/MS000C.BIN	0:04	14	469	1FB2	優しく口づ{08:29}	Softly kiss her	reads: 優しく口づける; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	15	483	1FB2	戸惑い躊躇{08:8E}	Hesitate	reads: 戸惑い躊躇する; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	16	497	1FB2	{08:79}{08:7E}押し倒す	Push her down	reads: そのまま押し倒す; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	17	523	0F	{01:64}{01:02}{01:E9}{01:FF}	{01:64}{01:02}{01:E9}{01:FF}	reads: 桐島英美
+m/MS000C.BIN	0:04	18	537	00	{04:FF}{08:62}	{04:FF}{08:62}	reads: は、 @rebase-new
+m/MS000C.BIN	0:04	19	545	00	{04:FE}の唇を優しく塞いだ{02:08}。\n<wait>		reads: の唇を優しく塞いだ‥‥‥。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	20	582	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:04	21	588	1FD3	ん{02:08}\n<wait>	Mhh...\n<wait>	reads: ん‥‥‥\n<wait> @from-v005
+m/MS000C.BIN	0:04	22	605	00	{04:FE}の唇はし{08:53}りと柔らかく、{08:79}華奢で薄い唇{08:42}漏{08:2F}吐息{08:62}\n全てを癒し包み込む女神の様だ{08:72}。\n<wait>	Her lips are so soft, yet so frail at the same time.\nAnd her sweet, sweet breath... Ah... You can feel yourself\nreinvigorating as you breathe it in. She's like... a goddess.\n<wait>	reads: の唇はしっとりと柔らかく、その華奢で薄い唇から漏れる吐息は、\n全てを癒し包み込む女神の様だ‥‥。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	23	707	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	24	723	00	{04:FF}くん{02:08}\n<wait>	Katsuragi-kun...\n<wait>	reads: くん‥‥‥\n<wait> @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	25	750	00	{04:FE}は上気{08:4B}顔で、囁く様にそう呟{08:64}。\n<wait>	She quietly whispers your name.\n<wait>	reads: は上気した顔で、囁く様にそう呟いた。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	26	793	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>	reads: ＞どうしますか？\n<wait> @from-v005
+m/MS000C.BIN	0:04	27	820	1FB2	{08:5C}一度キス{08:8E}	Kiss her again	reads: もう一度キスする; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	28	834	1FB2	髪にそ{08:53}触{08:2F}	Touch her hair	reads: 髪にそっと触れる; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	29	848	1FB2	{08:79}{08:7E}押し倒す	Push her down	reads: そのまま押し倒す; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	30	874	0F	{01:25}{04:02}{01:1C}{05:FF}	{01:25}{04:02}{01:1C}{05:FF}	reads: ＹＥＳ切りみんな
+m/MS000C.BIN	0:04	31	914	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	32	920	1FD3	私の事が{02:08}<wait>キライ？\n<wait>	Do you... <wait>not like me?\n<wait>	reads: 私の事が‥‥‥<wait>キライ？\n<wait> @from-v005
+m/MS000C.BIN	0:04	33	965	1FB2	{08:7A}訳{08:25}！	Of course I do!	reads: そんな訳ない！; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	34	975	1FB2	黙っ{08:14}{08:72}	Say nothing	reads: 黙っている‥‥; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	35	985	1FB2	{08:79}{08:7E}押し倒す	Push her down	reads: そのまま押し倒す; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	36	1011	0F	{01:44}{07:02}{01:01}	{01:44}{07:02}{01:01}	reads: ＞どうやって？山瀬勇
+m/MS000C.BIN	0:04	37	1018	00			
+m/MS000C.BIN	0:04	38	1021	1FD0	{08:7A}	There's no way you can keep yourself in check here.\n<wait>	reads: そんな @from-v005
+m/MS000C.BIN	0:04	39	1027	00	{04:FE}を前に、		reads: を前に、 @rebase-new
+m/MS000C.BIN	0:04	40	1041	00	{04:FF}の理性は吹き飛{08:5F}。\n<wait>		reads: の理性は吹き飛んだ。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	41	1068	1FBA	{08:90}{08:1A}も構わ{08:25}。\n<wait>今は{08:82}、	What comes next doesn't matter.\n<wait>You want Yuuka. You want her now.\n<wait>	reads: どうなっても構わない。\n<wait>今はただ、 @from-v005
+m/MS000C.BIN	0:04	42	1099	00	{04:FE}の全てが欲し{08:18}。\n<wait>		reads: の全てが欲しかった。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	43	1128	00	{04:FF}は		reads: は @rebase-new
+m/MS000C.BIN	0:04	44	1136	00	{04:FE}を引き離し、ベッドに押し倒そうと{08:4B}{08:72}\n<wait>		reads: を引き離し、ベッドに押し倒そうとした‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:04	45	1213	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:04	46	1219	1FD3	いや{02:08}<wait>酷いわ{08:72}<wait>	No... <wait>Stop... <wait>Do you not love me after all?\n<wait>	reads: いや‥‥‥<wait>酷いわ‥‥<wait> @from-v005
+m/MS000C.BIN	0:04	47	1245	00	{04:FF}くん、本当に私の事が好き{08:6B}？\n<wait>		reads: くん、本当に私の事が好きなの？\n<wait> @rebase-new
+m/MS000C.BIN	0:04	48	1288	00	{04:FE}は身体を強張らせ、		reads: は身体を強張らせ、 @rebase-new
+m/MS000C.BIN	0:04	49	1312	00	{04:FF}{08:42}身体を離{08:4B}。\n<wait>		reads: から身体を離した。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	50	1337	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>	reads: ＞どうしますか？\n<wait> @from-v005
+m/MS000C.BIN	0:04	51	1364	1FB2	愛{08:13}と囁く	Whisper "I love you"	reads: 愛していると囁く; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	52	1376	1FB2	怒る	Get angry	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	53	1382	1FB2	沈黙{08:8E}	Say nothing	reads: 沈黙する; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	54	1402	0F	{01:54}{07:02}{01:B9}{05:FF}	{01:54}{07:02}{01:B9}{05:FF}	reads: ＞どうやって？
+m/MS000C.BIN	0:04	55	1412	1FD0	今度は少し強引に、	You kiss her again, a bit more forcibly this time.\n<wait>	@from-v005
+m/MS000C.BIN	0:04	56	1434	00	{04:FF}は		reads: は @rebase-new
+m/MS000C.BIN	0:04	57	1442	00	{04:FE}の唇を奪{08:51}。\n<wait>		reads: の唇を奪った。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	58	1469	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:04	59	1475	1FD3	あ{08:72}！\n<wait>	Ah!...\n<wait>	reads: あ‥‥！\n<wait> @from-v005
+m/MS000C.BIN	0:04	60	1512	1FD0	かすかに開か{08:60}{08:79}唇に、	Her mouth is open just wide enough for you to force your tongue inside.\n<wait>	reads: かすかに開かれたその唇に、 @from-v005
+m/MS000C.BIN	0:04	61	1538	00	{04:FF}は{08:63}の舌を滑り込ませた。\n<wait>		reads: は自分の舌を滑り込ませた。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	62	1575	00	{04:FE}は戸惑い抵抗し{08:69}と試みたが、すぐに思い止まり、ぎこちなく\n舌を絡ま{08:67}来た{08:72}。\n<wait>		reads: は戸惑い抵抗しようと試みたが、すぐに思い止まり、ぎこちなく\n舌を絡ませて来た‥‥。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	63	1661	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>	reads: ＞どうしますか？\n<wait> @from-v005
+m/MS000C.BIN	0:04	64	1688	1FB2	愛し{08:2B}と囁く	Whisper "I love you"	reads: 愛してると囁く; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	65	1702	1FB2	{08:79}{08:7E}押し倒す	Push her down	reads: そのまま押し倒す; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	66	1716	1FB2	{08:5C}止{08:2E}	Stop	reads: もう止める; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	67	1736	0F	{01:C2}{01:02}{01:01}	{01:C2}{01:02}{01:01}	reads: 桐島英美山瀬勇
+m/MS000C.BIN	0:04	68	1743	00			
+m/MS000C.BIN	0:04	69	1746	1FD0	{08:79}時{02:08}	It is there that you are finally able to regain yourself.\n<wait>	reads: その時‥‥‥ @from-v005
+m/MS000C.BIN	0:04	70	1756	00	{04:FF}には冷静さが戻{08:51}。\n<wait>		reads: には冷静さが戻った。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	71	1783	1FBA	{08:73}事を{08:4A}{08:26}け{08:25}{02:08}\n刹那の劣情に押{03:0C}て、{08:73}事を{08:8E}のは間違っ{08:14}。\n<wait>	You can't do this.\nYou can't let yourself be controlled by your primal instincts.\n<wait>	reads: こんな事をしてはいけない‥‥‥\n刹那の劣情に押されて、こんな事をするのは間違っている。\n<wait> @from-v005
+m/MS000C.BIN	0:04	72	1853	00	{04:FF}は優しく、そ{08:4A}少し哀しげな眼で		reads: は優しく、そして少し哀しげな眼で @rebase-new
+m/MS000C.BIN	0:04	73	1889	00	{04:FE}を見、そ{08:4A}そ{08:53}彼女の身体を\n引き離{08:4B}。\n<wait>		reads: を見、そしてそっと彼女の身体を\n引き離した。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	74	1944	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:04	75	1954	00	{04:FF}くん{08:72}<wait>何だか変{08:6B}{02:08}<wait>死にそうなくらい恥ずかしいのに{08:72}		reads: くん‥‥<wait>何だか変なの‥‥‥<wait>死にそうなくらい恥ずかしいのに‥‥ @rebase-new
+m/MS000C.BIN	0:04	76	2020	1FFA	私{02:08}‥\n<wait>	I...\n<wait>	reads: 私‥‥‥‥\n<wait> @from-v005
+m/MS000C.BIN	0:04	77	2041	1FD0	熱い吐息を洩らしながら、切なげに	You notice that Yuuka's breathing has grown increasingly heavy.\n<wait>	@from-v005
+m/MS000C.BIN	0:04	78	2077	00	{04:FE}はそう言{08:51}。\n<wait>		reads: はそう言った。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	79	2100	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>	reads: ＞どうしますか？\n<wait> @from-v005
+m/MS000C.BIN	0:04	80	2127	1FB2	君が欲しい{02:08}	I want you...	reads: 君が欲しい‥‥‥; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	81	2141	1FB2	{08:5C}一度キス{08:8E}	Kiss her again	reads: もう一度キスする; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	82	2155	1FB2	{08:79}{08:7E}押し倒す	Push her down	reads: そのまま押し倒す; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	83	2181	0F	{01:FA}{=FC}{=02}{01:CF}{01:FF}	{01:FA}{=FC}{=02}{01:CF}{01:FF}	reads: {=FC}{=02}
+m/MS000C.BIN	0:04	84	2191	1FD0	{08:7A}	There's no way you can keep yourself in check here.\n<wait>	reads: そんな @from-v005
+m/MS000C.BIN	0:04	85	2197	00	{04:FE}を前に、		reads: を前に、 @rebase-new
+m/MS000C.BIN	0:04	86	2211	00	{04:FF}の理性は吹き飛{08:5F}。\n<wait>		reads: の理性は吹き飛んだ。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	87	2238	1FBA	{08:90}{08:1A}も構わ{08:25}。\n<wait>今は{08:82}、	What comes next doesn't matter.\n<wait>You want Yuuka. You want her now.\n<wait>	reads: どうなっても構わない。\n<wait>今はただ、 @from-v005
+m/MS000C.BIN	0:04	88	2269	00	{04:FE}の全てが欲し{08:18}。\n<wait>		reads: の全てが欲しかった。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	89	2298	00	{04:FF}は		reads: は @rebase-new
+m/MS000C.BIN	0:04	90	2306	00	{04:FE}を引き離し、ベッドに押し倒そうと{08:4B}{08:72}\n<wait>		reads: を引き離し、ベッドに押し倒そうとした‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:04	91	2379	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:04	92	2385	1FD3	いや{02:08}‥<wait>	No... <wait>Katsuragi-kun... I'm scared...\n<wait>	reads: いや‥‥‥‥<wait> @from-v005
+m/MS000C.BIN	0:04	93	2401	00	{04:FF}くん{08:72}怖い{08:72}\n<wait>		reads: くん‥‥怖い‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:04	94	2428	00	{04:FE}は身を強張らせた。\n<wait>		reads: は身を強張らせた。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	95	2457	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>	reads: ＞どうしますか？\n<wait> @from-v005
+m/MS000C.BIN	0:04	96	2484	1FB2	あやまる	Apologize	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	97	2494	1FB2	愛し{08:2B}と囁く	Whisper "I love you"	reads: 愛してると囁く; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	98	2508	1FB2	{08:5C}止{08:2E}	Stop	reads: もう止める; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	99	2528	0F	{01:24}{06:02}{01:E9}{=FC}{=FF}	{01:24}{06:02}{01:E9}{=FC}{=FF}	reads: おかげ{=FC}{=FF}
+m/MS000C.BIN	0:04	100	2542	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	101	2554	1FFA	{02:08}{02:08}‥	{02:08}{02:08}‥	reads: ‥‥‥‥‥‥‥
+m/MS000C.BIN	0:04	102	2566	1FFA	本当に？\n<wait>	Really?\n<wait>	@from-v005
+m/MS000C.BIN	0:04	103	2597	1FB2	抱きし{08:2E}	Embrace her	reads: 抱きしめる; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	104	2607	1FB2	黙っ{08:14}{08:72}	Say nothing	reads: 黙っている‥‥; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	105	2617	1FB2	{08:79}{08:7E}押し倒す	Push her down	reads: そのまま押し倒す; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	106	2643	0F	{01:E4}	{01:E4}	reads: 
+m/MS000C.BIN	0:04	107	2646	00	{02:01}{01:02}	{02:01}{01:02}	reads: ペンタグランマ桐島英美 @rebase-new
+m/MS000C.BIN	0:04	108	2657	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:04	109	2667	00	{04:FF}くん{02:08}私{02:08}‥\n<wait>		reads: くん‥‥‥私‥‥‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:04	110	2690	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>	reads: ＞どうしますか？\n<wait> @from-v005
+m/MS000C.BIN	0:04	111	2717	1FB2	{08:76}可哀相だ{08:72}	It's not time...	reads: まだ可哀相だ‥‥; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	112	2731	1FB2	{08:79}{08:7E}押し倒す	Push her down	reads: そのまま押し倒す; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	113	2757	0F	{01:BE}{05:FF}	{01:BE}{05:FF}	reads: 
+m/MS000C.BIN	0:04	114	2767	00	{04:FF}{08:62}	{04:FF}{08:62}	reads: は、 @rebase-new
+m/MS000C.BIN	0:04	115	2775	00	{04:FE}を強く抱きしめた。\n<wait>		reads: を強く抱きしめた。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	116	2812	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:04	117	2818	1FD3	あ{08:72}		reads: あ‥‥ @rebase-new
+m/MS000C.BIN	0:04	118	2826	00	{04:FF}くん{02:08}\n<wait>		reads: くん‥‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:04	119	2865	1FD0	そ{08:4A}、	You wrap your arms around Yuuka and embrace her tight.\n<wait>	reads: そして、 @from-v005
+m/MS000C.BIN	0:04	120	2893	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	121	2899	1FD3	ごめんな{08:49}{02:08}\n<wait>	Ah... Katsuragi-kun...\n<wait>	reads: ごめんなさい‥‥‥\n<wait> @from-v005
+m/MS000C.BIN	0:04	122	2924	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:04	123	2930	1FD3	私っ{08:50}、	Sorry...\n<wait>	reads: 私ったら、 @from-v005
+m/MS000C.BIN	0:04	124	2942	00	{04:FF}くんの気持ちも考えずに{02:08}<wait>{08:90}か{08:4A}{08:64}わ。\n<wait>		reads: くんの気持ちも考えずに‥‥‥<wait>どうかしていたわ。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	125	3005	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:04	126	3011	1FD3	ごめんな{08:49}{02:08}\n<wait>	I was so inconsiderate... <wait>It's all my fault.\n<wait>	reads: ごめんなさい‥‥‥\n<wait> @from-v005
+m/MS000C.BIN	0:04	127	3036	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:04	128	3042	1FD3	私{08:72}<wait>ちょ{08:53}{08:90}か{08:4A}たの{02:08}<wait>ごめんな{08:49}{02:08}\n<wait>	I... <wait>I did something wrong, didn't I? <wait>Sorry...\n<wait>	reads: 私‥‥<wait>ちょっとどうかしてたの‥‥‥<wait>ごめんなさい‥‥‥\n<wait> @from-v005
+m/MS000C.BIN	0:04	129	3107	1FB2	僕の方こそ{08:72}	No, it's my fault	reads: 僕の方こそ‥‥; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	130	3121	1FB2	愛し{08:2B}と囁く	Whisper "I love you"	reads: 愛してると囁く; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	131	3135	1FB2	{08:5C}止{08:2E}	Stop	reads: もう止める; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	132	3155	0F	{01:B1}{03:02}{01:F2}	{01:B1}{03:02}{01:F2}	reads: を攻撃し
+m/MS000C.BIN	0:04	133	3162	00			@rebase-new
+m/MS000C.BIN	0:04	134	3177	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:04	135	3183	1FD3	イヤッ！！\n<wait>	No!\n<wait>	@from-v005
+m/MS000C.BIN	0:04	136	3206	00	{04:FE}は		reads: は @rebase-new
+m/MS000C.BIN	0:04	137	3214	00	{04:FF}の腕をふりはらい、側を離{08:60}。\n<wait>		reads: の腕をふりはらい、側を離れた。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	138	3251	1FBA	{08:6C}に怯え{08:14}様子だ{02:08}。\n<wait>	Just by looking at her, it's clear that she's frightened.\n<wait>	reads: 完全に怯えている様子だ‥‥‥。\n<wait> @from-v005
+m/MS000C.BIN	0:04	139	3300	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	140	3306	1FD3	ごめんな{08:49}{02:08}\n<wait>	Sorry...\n<wait>	reads: ごめんなさい‥‥‥\n<wait> @from-v005
+m/MS000C.BIN	0:04	141	3331	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	142	3337	1FD3	私{08:72}<wait>ちょ{08:53}{08:90}か{08:4A}たの{02:08}<wait>ごめんな{08:49}{02:08}\n<wait>	I... <wait>I did something wrong, didn't I? <wait>Sorry...\n<wait>	reads: 私‥‥<wait>ちょっとどうかしてたの‥‥‥<wait>ごめんなさい‥‥‥\n<wait> @from-v005
+m/MS000C.BIN	0:04	143	3402	1F4F	{03:17}	{03:17}	reads: 
+m/MS000C.BIN	0:04	144	3414	1FD0	{01:3B}{08:71}の雰囲気は嘘の様に消え去り、{01:2E}には気まずい空気が流{08:60}。\n<wait>	You suddenly find yourself feeling incredibly awkward about the whole\nsituation. It's as if everything leading up to this point never\nhappened at all.\n<wait>	reads: さっきまでの雰囲気は嘘の様に消え去り、部屋には気まずい空気が流れた。\n<wait> @from-v005
+m/MS000C.BIN	0:04	145	3507	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:04	146	3517	00	{04:FF}くん。\nあ{08:72}明日の事が{08:7B}{08:5F}し、{08:5C}休{08:5F}方が良いと思うわ。\n<wait>		reads: くん。\nあ‥‥明日の事があるんだし、もう休んだ方が良いと思うわ。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	147	3585	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:04	148	3591	1FD3	私{02:08}少し片付け物を{08:4A}{08:42}休むわ。\n私の事は気にし{08:25}で、	Hey, Katsuragi-kun. You should probably try to get some rest.\nTomorrow's a pretty important day and all...\n<wait>	reads: 私‥‥‥少し片付け物をしてから休むわ。\n私の事は気にしないで、 @from-v005
+m/MS000C.BIN	0:04	149	3646	00	{04:FF}くんは寝て頂戴ね。\n<wait>		reads: くんは寝て頂戴ね。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	150	3679	1FD0	そう言うと	Having said that, Yuuka quickly leaves the bedroom.\nIt's as if she was avoiding you.\n<wait>	@from-v005
+m/MS000C.BIN	0:04	151	3693	00	{04:FE}{08:62}	{04:FE}{08:62}	reads: は、 @rebase-new
+m/MS000C.BIN	0:04	152	3701	00	{04:FF}を避{08:29}様に奥の{01:2E}へ行{08:52}{08:1F}。\n<wait>		reads: を避ける様に奥の部屋へ行ってしまった。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	153	3736	1FBA	{08:5C}、何を言{08:52}も無駄{08:8C}{02:08}。\n<wait>		reads: もう、何を言っても無駄だろう‥‥‥。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	154	3771	00	{04:FE}がいなく{08:16}途端、		reads: がいなくなった途端、 @rebase-new
+m/MS000C.BIN	0:04	155	3793	00	{04:FF}の胸を言い表せぬ不安が襲{08:51}。\n<wait>		reads: の胸を言い表せぬ不安が襲った。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	156	3830	1FBA	明日{08:72}<wait>{08:63}{08:62}友を殺め{08:57}{08:7D}{08:25}か{08:5D}れ{08:25}{08:77}{02:08}‥。\n<wait>	This is it.\nThere is nothing more left for you to say to make things right.\n<wait>	reads: 明日‥‥<wait>自分は、友を殺めなければならないかもしれないのだ‥‥‥‥。\n<wait> @from-v005
+m/MS000C.BIN	0:04	157	3881	1FBA	そう思うと、	No words can describe the helplessness you feel as you watch Yuuka\nwalk away from you.\n<wait>	@from-v005
+m/MS000C.BIN	0:04	158	3897	00	{04:FF}はたまらなくなり、無理に{08:56}眠ろうと{08:4B}。\n<wait>		reads: はたまらなくなり、無理にでも眠ろうとした。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	159	3944	1FBA	奥の{01:2E}{08:42}食器を片付{08:29}音が聞こえて{08:64}が、程無く{08:4A}{08:4D}も薄れ、\n	Tomorrow...<wait>Tomorrow, you might need to kill your friend...\n<wait>	reads: 奥の部屋から食器を片付ける音が聞こえていたが、程無くしてそれも薄れ、\n @from-v005
+m/MS000C.BIN	0:04	160	4005	00	{04:FF}は不安の中で深い眠りに落ちて行{08:51}{02:08}。\n<wait>	Wanting to avoid the thought, you force yourself to get some rest.\n<wait>	reads: は不安の中で深い眠りに落ちて行った‥‥‥。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	161	4062	00	{04:FF}はそう言うと、	With the sound of Yuuka cleaning up in the next room over echoing\nin the background, your mind slowly descends into the world of sleep.\n<wait>	reads: はそう言うと、 @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	162	4082	00	{04:FE}を見つめた。\n<wait>	You stare Yuuka into the eyes as you say this.\n<wait>	reads: を見つめた。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	163	4113	00	{04:FE}：	Yuuka:	reads: ： @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	164	4123	00	{04:FF}<wait>くん{02:08}\n<wait>	Katsuragi<wait>-kun...\n<wait>	reads: <wait>くん‥‥‥\n<wait> @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	165	4149	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>	reads: ＞どうしますか？\n<wait> @from-v005
+m/MS000C.BIN	0:04	166	4176	1FB2	押し倒す！	Push her down!	menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	167	4188	1FB2	{08:5C}止{08:2E}	Stop	reads: もう止める; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	168	4196	1FB2	愛し{08:2B}と囁く	Whisper "I love you"	reads: 愛してると囁く; menu option, declared width 20 columns @from-v005
+m/MS000C.BIN	0:04	169	4222	0F	{01:4F}{=F6}{=02}{01:0D}{=F7}{=FF}	{01:4F}{=F6}{=02}{01:0D}{=F7}{=FF}	reads: {=F6}{=02}わたしを{=F7}{=FF}
+m/MS000C.BIN	0:04	170	4236	00	{04:FF}は		reads: は @rebase-new
+m/MS000C.BIN	0:04	171	4244	00	{04:FE}をベッドに押し倒{08:4B}。\n<wait>		reads: をベッドに押し倒した。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	172	4275	00	{04:FE}は{1E10:01003C}抵抗し{08:25}{02:08}\n<wait>		reads: は{1E10:01003C}抵抗しない‥‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:04	173	4307	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:04	174	4313	1FD3	愛し{08:2B}わ{08:72}	Katsuragi-kun... I love you... I really, truly do...\n<wait>	reads: 愛してるわ‥‥ @from-v005
+m/MS000C.BIN	0:04	175	4327	00	{04:FF}くん{02:08}\n<wait>		reads: くん‥‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:04	176	4348	00	{04:FF}は		reads: は @rebase-new
+m/MS000C.BIN	0:04	177	4356	00	{04:FE}の服に手をか{08:43}。\n<wait>		reads: の服に手をかけた。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	178	4437	1F71	露に{08:16}真珠の様にすべらかな肌に、	Yuuka now lies naked in front of you. Her pale white skin feels so soft\nagainst your lips as you cover every last inch of her body in kisses.\n	reads: 露になった真珠の様にすべらかな肌に、 @from-v005
+m/MS000C.BIN	0:04	179	4473	00	{04:FF}は唇を沿わ{08:2A}。\n		reads: は唇を沿わせる。\n @rebase-new
+m/MS000C.BIN	0:04	180	4496	1FFA	{02:08}{02:08}{02:08}\n<wait>	{02:08}{02:08}{02:08}\n<wait>	reads: ‥‥‥‥‥‥‥‥‥\n<wait>
+m/MS000C.BIN	0:04	181	4515	1FFA	小さな喘ぎと衣擦れの音{02:08}‥\n<wait>ふたりはお互いの想いを確かめあいながら、静寂な深淵へと落ちて行{08:51}。\n<wait>	Soft moans and the rustling of clothes echo through the room...\n<wait>Ascertaining the feelings you have for one another,\nthe two of you travel deeper into the silent abyss.\n<wait>	reads: 小さな喘ぎと衣擦れの音‥‥‥‥\n<wait>ふたりはお互いの想いを確かめあいながら、静寂な深淵へと落ちて行った。\n<wait> @from-v005
+m/MS000C.BIN	0:04	182	4667	00	{04:FE}が何やら立ち動い{08:14}音で、		reads: が何やら立ち動いている音で、 @rebase-new
+m/MS000C.BIN	0:04	183	4697	00	{04:FF}は目を覚ま{08:4B}。\n<wait>		reads: は目を覚ました。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	184	4736	1FD0	奥の{01:2E}{08:42}は珈琲の香が漂{08:52}来{08:14}。\n<wait>	You can smell coffee being brewed in the kitchen.\n<wait>	reads: 奥の部屋からは珈琲の香が漂って来ている。\n<wait> @from-v005
+m/MS000C.BIN	0:04	185	4773	1FBA	幸福な瞬間{02:08}\n	In that brief moment of happiness...\n	reads: 幸福な瞬間‥‥‥\n @from-v005
+m/MS000C.BIN	0:04	186	4789	18	翌朝、目覚めた	You wake up the following morning.\nStill feeling a bit tired, you have a quick look around you.\n<wait>	@from-v005
+m/MS000C.BIN	0:04	187	4807	00	{04:FF}{08:62}{08:76}眠気の残る頭で、{01:2E}を見回{08:4B}。\n<wait>		reads: は、まだ眠気の残る頭で、部屋を見回した。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	188	4862	1FD0	{02:08}{01:28}と違う{01:2E}{02:08}\n<wait>	...This is not the same room as usual.\n<wait>	reads: ‥‥‥いつもと違う部屋‥‥‥\n<wait> @from-v005
+m/MS000C.BIN	0:04	189	4883	1FBA	ふと、傍らを見ると	Glancing to your side looking for Yuuka,\nand there she is, slouched over a table next to you.\n{1E10:01001E}You find yourself wishing that it'd all been a dream.\n<wait>	@from-v005
+m/MS000C.BIN	0:04	190	4905	00	{04:FE}が、テーブルにひじをつき、うたたねを{08:13}{02:08}\n{1E10:01001E}全てが夢だ{08:51}のかとすら思えて{08:83}{02:08}\n<wait>		reads: が、テーブルにひじをつき、うたたねをしている‥‥‥\n{1E10:01001E}全てが夢だったのかとすら思えてしまう‥‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:04	191	4992	1FBA	{03:0B}{08:7A}思いなど手易く木端微塵に砕いて{08:83}、容赦の無い現実が訪{08:60}。\n<wait>	However, before you are able to indulge further in such fantasies,\nreality hits you and smashes them into million tiny pieces.\n<wait>	reads: しかし、そんな思いなど手易く木端微塵に砕いてしまう、容赦の無い現実が訪れた。\n<wait> @from-v005
+m/MS000C.BIN	0:04	192	5101	1FD2	{08:03}：	Emi:	reads: 英美： @from-v005
+m/MS000C.BIN	0:04	193	5111	00	{04:FF}くん、作戦を遂行{08:8E}わ。\n<wait>詰所に来て{08:72}急いで！！\n<wait>	Katsuragi. We're ready to begin.\n<wait>Come to the office... and fast!\n<wait>	reads: くん、作戦を遂行するわ。\n<wait>詰所に来て‥‥急いで！！\n<wait> @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	194	5179	1FD2	{08:00}：	Hayasaka:	reads: 早坂： @from-v005
+m/MS000C.BIN	0:04	195	5189	00	{04:FF}、いよいよ作戦を遂行{08:8E}。\n<wait>詰所{08:71}来てくれ！\n<wait>		reads: 、いよいよ作戦を遂行する。\n<wait>詰所まで来てくれ！\n<wait> @rebase-new
+m/MS000C.BIN	0:04	196	5260	00	{04:FF}{08:62}ベッド{08:42}飛び起き、慌{08:82}しく着替えを始{08:2E}。\n		reads: は、ベッドから飛び起き、慌ただしく着替えを始める。\n @rebase-new
+m/MS000C.BIN	0:04	197	5312	00	{04:FF}{08:62}ベッド{08:42}飛び起き、{01:2E}を出る準備を進めた。\n<wait>		reads: は、ベッドから飛び起き、部屋を出る準備を進めた。\n<wait> @rebase-new
+m/MS000C.BIN	0:04	198	5369	00	{04:FE}：		reads: ： @rebase-new
+m/MS000C.BIN	0:04	199	5379	00	{04:FF}くん、気をつけて{02:08}\n<wait>		reads: くん、気をつけて‥‥‥\n<wait> @rebase-new
+m/MS000C.BIN	0:04	200	5413	0B	奥{08:42}出て{08:1E}	You leap up and rush to get yourself dressed.\n	reads: 奥から出てきた @from-v005
+m/MS000C.BIN	0:04	201	5427	00	{04:FE}が、心配そうな顔を{08:13}{02:08}\n		reads: が、心配そうな顔をしている‥‥‥\n @rebase-new
+m/MS000C.BIN	0:04	202	5455	18	うたたねを{08:4A}{08:64}	You and up and rush to get yourself ready.\n<wait>	reads: うたたねをしていた @from-v005
+m/MS000C.BIN	0:04	203	5473	00	{04:FE}{08:62}{08:65}の音で飛び起きると、心配そうな瞳で\n	Yuuka:	reads: は、通信の音で飛び起きると、心配そうな瞳で\n @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	204	5518	00	{04:FF}を見つめた{02:08}\n<wait>	Please be careful, Katsuragi-kun...\n<wait>	reads: を見つめた‥‥‥\n<wait> @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	205	5543	00	{04:FF}{08:62}	Yuuka appears from the kitchen to greet you farewell.\nJudging by her face, it's clear that she's deeply worried about you.\n	reads: は、 @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	206	5551	00	{04:FE}の方を向き、力強く頷く。\n<wait>	The sound of the incoming transmission causes Yuuka to wake up as well.\nJudging by her face, it's clear that she's deeply worried about you.\n<wait>	reads: の方を向き、力強く頷く。\n<wait> @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	207	5588	00	{04:FF}{08:62}	You give her a firm nod.\n<wait>	reads: は、 @from-v005 @rebase-tagdiff
+m/MS000C.BIN	0:04	208	5596	00	{04:FE}の{01:2E}を後にし、Ｂ５Ｆ詰所へと向{08:18}。\n<wait>	With that, you leave the room behind and head to the office on B5F.\n<wait>	reads: の部屋を後にし、Ｂ５Ｆ詰所へと向かった。\n<wait> @from-v005 @rebase-tagdiff

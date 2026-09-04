@@ -1,0 +1,32 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS002A.BIN	0:00	0	42	1E07	あら、{08:5C}終わり{08:6B}{02:08}？\n<wait>大{08:4B}事無いのね{02:08}ウフフフフ！\n<wait>	Oh? Done already?\n<wait>How pathetic... Ahahahaha!\n<wait>	reads: あら、もう終わりなの‥‥‥？\n<wait>大した事無いのね‥‥‥ウフフフフ！\n<wait> @from-v005
+m/MS002A.BIN	0:00	1	195	1E07	ホホホホ{02:08}所詮は人の子よのう{02:08}\n<wait>我らにかなう{08:85}も{08:25}{02:08}ホホホホ{08:72}\n<wait>	Hahahaha... This is how it goes...\n<wait>Children of men cannot hope to defy us...\n<wait>	reads: ホホホホ‥‥‥所詮は人の子よのう‥‥‥\n<wait>我らにかなうはずもない‥‥‥ホホホホ‥‥\n<wait> @from-v005
+m/MS002A.BIN	0:00	2	360	1E07	{02:08}{08:5C}終わり{08:6B}か{02:08}？\n<wait>{08:48}{08:7C}、{08:76}生贄の方が手応えが{08:7B}と{08:68}{08:5E}だな{02:08}\n<wait>ククククク！\n<wait>	Done already?\n<wait>Looks like I'm going to have to find another human to entertain me...\n<wait>Hehehehe!\n<wait>	reads: ‥‥‥もう終わりなのか‥‥‥？\n<wait>これならば、まだ生贄の方が手応えがあるというものだな‥‥‥\n<wait>ククククク！\n<wait> @from-v005
+m/MS002A.BIN	0:00	3	540	1E07	フフフ{02:08}所詮貴様{08:62}{08:47}程度だと{08:68}{08:46}だな{02:08}\n<wait>フフフフ{02:08}‥\n<wait>	Hahaha... Is that all you got?\n<wait>Hahahaha...\n<wait>	reads: フフフ‥‥‥所詮貴様は、この程度だということだな‥‥‥\n<wait>フフフフ‥‥‥‥\n<wait> @from-v005
+m/MS002A.BIN	0:00	4	695	1E07	おや{02:08}{08:5C}終わり{08:55}か{02:08}\n<wait>{08:5C}少し、楽しま{08:67}く{08:2F}と思{08:52}{08:64}の{08:55}が{02:08}<wait>残念{08:55}ね。\n<wait>	Oh? Done already?\n<wait>And here I was hoping to be entertained for a bit longer...\n<wait>How unfortunate.\n<wait>	reads: おや‥‥‥もう終わりですか‥‥‥\n<wait>もう少し、楽しませてくれると思っていたのですが‥‥‥<wait>残念ですね。\n<wait> @from-v005
+m/MS002A.BIN	0:00	5	870	1E07	人の子は愚かよのう{02:08}‥\n<wait>我らに盾突き、はかなき命を散らす{02:08}‥\n<wait>所詮、人の身で{08:62}我らにかなわぬと{08:68}に{02:08}\n<wait>	You foolish child of man...\n<wait>You shall now learn how fleeting your lives are...\n<wait>After all, you couldn't possibly hope to defy us...\n<wait>	reads: 人の子は愚かよのう‥‥‥‥\n<wait>我らに盾突き、はかなき命を散らす‥‥‥‥\n<wait>所詮、人の身では、我らにかなわぬというに‥‥‥\n<wait> @from-v005
+m/MS002A.BIN	0:00	6	1076	1E07	はっはっは！　{08:5C}終わりか？\n<wait>{08:5C}少し、楽しませ{08:54}らい{08:4E}{08:5E}だな！\n<wait>	Hahaha! That's the best you got?\n<wait>And here I was hoping to be entertained for a bit longer!\n<wait>	reads: はっはっは！　もう終わりか？\n<wait>もう少し、楽しませてもらいたいものだな！\n<wait> @from-v005
+m/MS002A.BIN	0:01	0	37	00	{04:FF}の中に、新しい力が漲{08:52}くる{02:08}\n<wait>	A new power surges from within you...\n<wait>	reads: の中に、新しい力が漲ってくる‥‥‥\n<wait> @from-v005 @rebase-tagdiff
+m/MS002A.BIN	0:01	1	120	1F81	{04:FF}	{04:FF}	reads: 
+m/MS002A.BIN	0:01	2	146	12	{03:16}J	{03:16}J	reads: J
+m/MS002A.BIN	0:01	3	150	00	{03:12}	Slash	reads: 切り @from-ours
+m/MS002A.BIN	0:01	4	370	00	{04:FF}{08:62}{08:05}ー技能に覚醒{08:17}！\n<wait>	You've awakened to Computer Skills!\n<wait>	reads: は、コンピューター技能に覚醒した！！\n<wait> @from-v005
+m/MS002A.BIN	0:01	5	434	00	{04:FF}{08:62}格闘技能に覚醒{08:17}！\n<wait>	You've awakened to Melee Combat!\n<wait>	reads: は、格闘技能に覚醒した！！\n<wait> @from-v005 @rebase-tagdiff
+m/MS002A.BIN	0:01	6	498	00	{04:FF}{08:62}射撃技能に覚醒{08:17}！\n<wait>	You've awakened to Ranged Combat!\n<wait>	reads: は、射撃技能に覚醒した！！\n<wait> @from-v005 @rebase-tagdiff
+m/MS002A.BIN	0:01	7	562	00	{04:FF}{08:62}魔道に覚醒{08:17}\n<wait>	You've awakened to Magic Combat!\n<wait>	reads: は、魔道に覚醒した！\n<wait> @from-v005 @rebase-tagdiff
+m/MS002A.BIN	0:02	0	37	00	{04:FF}の中に、新しい力が漲{08:52}くる{02:08}\n<wait>	A new power surges from within you...\n<wait>	reads: の中に、新しい力が漲ってくる‥‥‥\n<wait> @from-v005 @rebase-tagdiff
+m/MS002A.BIN	0:02	1	128	1F81	{04:FF}	{04:FF}	reads: 
+m/MS002A.BIN	0:02	2	154	12	{03:13}R	In front of you, R	reads: 目の前にR @from-ours
+m/MS002A.BIN	0:02	3	158	00	{03:12}	Slash	reads: 切り @from-ours
+m/MS002A.BIN	0:02	4	228	00	{04:FF}{08:62}{08:05}ー技能に覚醒{08:17}！\n<wait>	You've awakened to Computer Skills!\n<wait>	reads: は、コンピューター技能に覚醒した！！\n<wait> @from-v005 @rebase-tagdiff
+m/MS002A.BIN	0:02	5	292	00	{04:FF}{08:62}魔道に覚醒{08:17}！\n<wait>	You've awakened to Magic Combat!\n<wait>	reads: は、魔道に覚醒した！！\n<wait> @from-v005 @rebase-tagdiff
+m/MS002A.BIN	0:02	6	377	00	{04:FF}{08:62}射撃技能に覚醒{08:17}！\n<wait>	You've awakened to Ranged Combat!\n<wait>	reads: は、射撃技能に覚醒した！！\n<wait> @from-v005 @rebase-tagdiff
+m/MS002A.BIN	0:02	7	507	00	{04:FF}{08:62}格闘技能に覚醒{08:17}！\n<wait>	You've awakened to Melee Combat!\n<wait>	reads: は、格闘技能に覚醒した！！\n<wait> @from-v005 @rebase-tagdiff
+m/MS002A.BIN	0:03	0	24	1F82	{03:00}	Ranged Weapon	reads: 飛び道具 @from-ours
+m/MS002A.BIN	0:03	1	39	1F81	{03:00}	Ranged Weapon	reads: 飛び道具 @from-ours
+m/MS002A.BIN	0:04	0	24	1F82	{03:00}	Ranged Weapon	reads: 飛び道具 @from-ours
+m/MS002A.BIN	0:04	1	39	1F81	{03:00}	Ranged Weapon	reads: 飛び道具 @from-ours

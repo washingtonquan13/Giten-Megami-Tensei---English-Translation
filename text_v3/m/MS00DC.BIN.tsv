@@ -1,0 +1,54 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS00DC.BIN	0:00	0	21	00	ﾜ{07:02}		reads: ﾜ＞どうやって？
+m/MS00DC.BIN	0:00	1	25	00	ﾜ{06:03}		reads: ﾜ
+m/MS00DC.BIN	0:00	2	29	00	ﾜ{03:04}		reads: ﾜ味方
+m/MS00DC.BIN	0:00	3	33	00	ﾜ{03:05}		reads: ﾜ銃口を向けた
+m/MS00DC.BIN	0:00	4	37	00	ﾜ{03:06}		reads: ﾜ自分に
+m/MS00DC.BIN	0:00	5	41	00	ﾜ{03:07}		reads: ﾜ襲いかかっ
+m/MS00DC.BIN	0:00	6	45	00	ﾜ{05:08}		reads: ﾜ
+m/MS00DC.BIN	0:00	7	49	00	ﾜ{02:09}		reads: ﾜ・・・
+m/MS00DC.BIN	0:00	8	53	00	ﾜ		
+m/MS00DC.BIN	0:00	9	65	00	ﾜ{02:0D}		reads: ﾜさせて
+m/MS00DC.BIN	0:00	10	69	00	ﾜ		
+m/MS00DC.BIN	0:00	11	81	0F	ﾜ		
+m/MS00DC.BIN	0:00	12	85	0C	ﾜ{05:12}		reads: ﾜ
+m/MS00DC.BIN	0:00	13	89	00	ﾜ{03:13}		reads: ﾜ目の前に
+m/MS00DC.BIN	0:00	14	93	00	ﾜ{08:14}		reads: ﾜている
+m/MS00DC.BIN	0:00	15	97	00	ﾜ{03:15}		reads: ﾜ
+m/MS00DC.BIN	0:00	16	101	00	ﾜ{03:16}		reads: ﾜ
+m/MS00DC.BIN	0:00	17	105	00	ﾜ{03:17}		reads: ﾜ
+m/MS00DC.BIN	0:00	18	109	00	ﾜ		
+m/MS00DC.BIN	0:00	19	113	0D	ﾜ		
+m/MS00DC.BIN	0:00	20	121	00	ﾜ		
+m/MS00DC.BIN	0:00	21	129	00	ﾜ{02:1D}		reads: ﾜ
+m/MS00DC.BIN	0:00	22	133	00	ﾜ{02:1E}		reads: ﾜ
+m/MS00DC.BIN	0:00	23	137	00	ﾜ{02:1F}		reads: ﾜ
+m/MS00DC.BIN	0:00	24	141	00	ﾜ{03:20}		reads: ﾜ
+m/MS00DC.BIN	0:00	25	145	00	ﾜ{04:FF}		reads: ﾜ
+m/MS00DC.BIN	0:01	0	14	1F80	{04:05}	{04:05}	reads: 　
+m/MS00DC.BIN	0:01	1	38	18	{04:0E}	{04:0E}	reads: はの
+m/MS00DC.BIN	0:01	2	47	1E5C	、		
+m/MS00DC.BIN	0:02	0	8	00	に{04:0F}た\n		reads: にされした\n
+m/MS00DC.BIN	0:03	0	8	00	{04:11}た\n		reads: しさせた\n
+m/MS00DC.BIN	0:04	0	8	00	に冒{04:0F}た\n		reads: に冒されした\n
+m/MS00DC.BIN	0:05	0	14	00	{04:EC}に	{04:EC} inflicted 	reads: に @from-ours
+m/MS00DC.BIN	0:05	1	23	00	{04:0F}た\n	{04:0F}.\n	reads: されした\n @from-ours
+m/MS00DC.BIN	0:06	0	8	00	状態に{04:12}た\n	 state.\n	reads: 状態になっさせた\n @from-ours
+m/MS00DC.BIN	0:07	0	10	1E5C	死んでしまっ	died.	@from-v005
+m/MS00DC.BIN	0:07	1	25	18	倒した\n	was defeated.       \n	@from-v005
+m/MS00DC.BIN	0:08	0	3	0D	踊{04:15}{04:16}た\n	 started dancing.\n	reads: 踊りらせ出した\n @from-ours
+m/MS00DC.BIN	0:09	0	7	0D	呪	was cursed.	@from-v005
+m/MS00DC.BIN	0:09	1	16	1E5C	われ		@rebase-new
+m/MS00DC.BIN	0:09	2	23	18	いをかけた\n		@rebase-new
+m/MS00DC.BIN	0:0A	0	7	0D	居眠り{04:11}{04:16}た\n	became dozy.\n	reads: 居眠りしさせ出した\n @from-v005
+m/MS00DC.BIN	0:0B	0	3	0D	眠{04:15}	became sleepy.	reads: 眠りらせ @from-v005
+m/MS00DC.BIN	0:0B	1	14	1E5C	込{08:5F}\n		reads: 込んだ\n @rebase-new
+m/MS00DC.BIN	0:0B	2	22	18	た\n		@rebase-new
+m/MS00DC.BIN	0:0C	0	10	1E5C	おぞましい幻覚にとら{04:17}た\n	became trapped by illusions.\n	reads: おぞましい幻覚にとらわれえた\n @from-v005
+m/MS00DC.BIN	0:0D	0	7	0D	目{04:13}見えなく{04:12}た\n	can no longer see.\n	reads: 目がを見えなくなっさせた\n @from-v005
+m/MS00DC.BIN	0:0E	0	7	0D	{08:0D}を封じ{04:0C}た\n	had their magic sealed.\n	reads: 魔法を封じられった\n @from-v005
+m/MS00DC.BIN	0:0F	0	3	0D	切れ{04:18}た\n	was hurt.\n	reads: 切れさせた\n @from-v005

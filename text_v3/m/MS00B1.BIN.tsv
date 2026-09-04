@@ -1,0 +1,68 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS00B1.BIN	0:02	0	0	UNTILED	ｱ / ｱ / ｱ / ｱ / ｱ / ｱ / 		@noedit; @untiled; record does not tile (u8 operand past end of record at 0x1E); read-only, copied verbatim
+m/MS00B1.BIN	0:03	0	9	1F19	{01:26}	{01:26}	reads: ＮＯ
+m/MS00B1.BIN	0:03	1	12	00	{02:01}5	{02:01}5	reads: ペンタグランマ5
+m/MS00B1.BIN	0:03	2	16	00	{03:01}F	{03:01}F	reads: そんなことF
+m/MS00B1.BIN	0:03	3	20	00	{04:01}W	{04:01}W	reads: 切りW
+m/MS00B1.BIN	0:03	4	24	00	{05:01}f	{05:01}f	reads: 飛び道具f
+m/MS00B1.BIN	0:03	5	28	00			
+m/MS00B1.BIN	0:03	6	30	1B	バーテン	Bartender	@from-v005
+m/MS00B1.BIN	0:03	7	51	1B	おやじ	Old Man	@from-v005
+m/MS00B1.BIN	0:03	8	70	1B	若い女性	Young Woman	@from-v005
+m/MS00B1.BIN	0:03	9	91	1B	怪しい男	Stranger	@from-v005
+m/MS00B1.BIN	0:03	10	112	1B	若い男	Young Man	@from-v005
+m/MS00B1.BIN	0:03	11	131	1B	女性	Woman	@from-v005
+m/MS00B1.BIN	0:04	0	4	1FD2	バーテン：	Bartender:	@from-v005
+m/MS00B1.BIN	0:04	1	21	09	都庁にバエル城が建設され{08:2B}{08:52}、もっぱらの噂{08:55}。\n<wait>レジスタンス達が、バエルを倒{08:4B}{08:52}話もあ{08:51}けど、\nやっぱりデマだ{08:51}ん{08:55}ねぇ。\n	The word on the street is that Baal has built a castle\nwhere the Government Office once stood.\n<wait>I also hear that he was taken down by the Resistance,\nbut that can't possibly be true, can it?\n	reads: 都庁にバエル城が建設されてるって、もっぱらの噂です。\n<wait>レジスタンス達が、バエルを倒したって話もあったけど、\nやっぱりデマだったんですねぇ。\n @from-ours
+m/MS00B1.BIN	0:04	2	154	09	新宿では、{08:5B}{08:0B}とレジスタンスが、\n衝突{08:4B}み{08:4E}{08:55}ね。\n<wait>	It sounds like the resistance and the demons\nhad another clash in Shinjuku.\n<wait>	reads: 新宿では、また悪魔とレジスタンスが、\n衝突したみたいですね。\n<wait> @from-v005
+m/MS00B1.BIN	0:04	3	212	1FD2	バーテン：	Bartender:	@from-v005
+m/MS00B1.BIN	0:04	4	224	1FD3	何{08:56}、新宿には結界が張られてて、中には入れ{08:25}と\nいう噂{08:55}よ。\n	There's now a barrier around the place,\nstopping anyone from entering.\n	reads: 何でも、新宿には結界が張られてて、中には入れないと\nいう噂ですよ。\n @from-v005
+m/MS00B1.BIN	0:04	5	287	18	いらっしゃい‥‥‥‥\n<wait>	Welcome.\n<wait>	@from-v005
+m/MS00B1.BIN	0:04	6	316	1FD2	バーテン：	Bartender:	@from-v005
+m/MS00B1.BIN	0:04	7	328	1FD3	まぁ、ゆっくり飲んで{08:52}下{08:49}よ。\n<wait>	Anyway... Enjoy your a drink.\n<wait>	reads: まぁ、ゆっくり飲んでって下さいよ。\n<wait> @from-v005
+m/MS00B1.BIN	0:05	0	4	1FD2	おやじ：	Old Man:	@from-v005
+m/MS00B1.BIN	0:05	1	19	09	バエルはやっぱり、生きてやが{08:51}{08:5F}！\nレジスタンス何てよ、はな{08:42}信用{08:4A}{08:19}が‥‥‥。\n<wait>	I knew it! Baal lives!\n<wait>	reads: バエルはやっぱり、生きてやがったんだ！\nレジスタンス何てよ、はなから信用してなかったが‥‥‥。\n<wait> @from-ours
+m/MS00B1.BIN	0:05	2	107	1FD2	おやじ：	Old Man:	@from-v005
+m/MS00B1.BIN	0:05	3	117	1FD3	や{08:52}られんよなぁ！！\n	I never had much faith in the Resistance,\nbut man, this is just sad.\n	reads: やってられんよなぁ！！\n @from-v005
+m/MS00B1.BIN	0:05	4	146	09	ペンタグランマの奴らが、都庁を解放{08:4B}{08:52}話を\n聞いたかと思っ{08:50}‥‥‥\n<wait>	I was going to ask you if you'd heard how Pentagramma\nmanaged to take the Government Office from the demons.\n<wait>	reads: ペンタグランマの奴らが、都庁を解放したって話を\n聞いたかと思ったら‥‥‥\n<wait> @from-ours
+m/MS00B1.BIN	0:05	5	220	1FD2	おやじ：	Old Man:	@from-v005
+m/MS00B1.BIN	0:05	6	230	1FD3	今度は{08:0B}の逆襲にあっ{08:50}し{08:52}ぇ話だ。\n<wait>	However, they've apparently managed to already lose it!\n<wait>	reads: 今度は悪魔の逆襲にあったらしってぇ話だ。\n<wait> @from-v005
+m/MS00B1.BIN	0:05	7	273	1FD2	おやじ：	Old Man:	@from-v005
+m/MS00B1.BIN	0:05	8	283	1FD3	‥‥{08:51}く、大人しく{08:4A}りゃいい{08:5F}よ。\n出来{08:5D}{08:25}事をする{08:42}、{08:0B}を駆立てちまう{08:5F}！\nこっちはイイ迷惑だよ！　ケッ！！\n	Goddammit! Those idiots should have known their place!\nThanks to them, the demons are now riled up and ready to rumble!\n	reads: ‥‥ったく、大人しくしてりゃいいんだよ。\n出来もしない事をするから、悪魔を駆立てちまうんだ！\nこっちはイイ迷惑だよ！　ケッ！！\n @from-v005
+m/MS00B1.BIN	0:05	9	395	18	レジスタンスがバエルを倒し、新宿都庁を解放{08:4B}{08:52}よ。\n笑わせ{08:4A}く{08:2F}‥‥デマに決ま{08:52}ら！！\n<wait>	The say that the Resistance was able to kill Baal.\nWhat a fucking joke. No way am I buying that.\n<wait>	reads: レジスタンスがバエルを倒し、新宿都庁を解放したってよ。\n笑わせしてくれる‥‥デマに決まってら！！\n<wait> @from-ours
+m/MS00B1.BIN	0:06	0	4	1FD2	若い女性：	Young Man:	@from-v005
+m/MS00B1.BIN	0:06	1	21	09	母{08:59}金星も、イシュタルの鎚も狂っ{08:2B}わ！\n<wait>	Mother Venus, Hammer of Ishtar, they're all crazy!\n<wait>	reads: 母なる金星も、イシュタルの鎚も狂ってるわ！\n<wait> @from-v005
+m/MS00B1.BIN	0:06	2	68	1FD2	若い女性：	Young Man:	@from-v005
+m/MS00B1.BIN	0:06	3	80	1FD3	渋谷に{08:4B}{08:52}そうよ。\n{08:3F}程の難民を恵比寿に置き去りに{08:4A}、知らぬ顔を\n決め込んで{08:40}ん{08:55}{08:5E}！！\n<wait>	Same goes for the angels of Shibuya.\nSo many have fled to Ebisu, yet they still turn them a blind eye!\n<wait>	reads: 渋谷にしたってそうよ。\nあれ程の難民を恵比寿に置き去りにして、知らぬ顔を\n決め込んでいるんですもの！！\n<wait> @from-v005
+m/MS00B1.BIN	0:06	4	175	1FD2	若い女性：	Young Man:	@from-v005
+m/MS00B1.BIN	0:06	5	187	1FD3	{08:4D}に比べ、大手町にあるミレニアムは本物よ。\n救世主マイトレーヤ様の御力は、奇跡その{08:5E}だわ‥‥‥\n	Only the Millennium has any real morals.\nI pray every night for the blessing of our saviour Maitreya.\n	reads: それに比べ、大手町にあるミレニアムは本物よ。\n救世主マイトレーヤ様の御力は、奇跡そのものだわ‥‥‥\n @from-v005
+m/MS00B1.BIN	0:06	6	289	09	{08:47}先‥‥東京はどう{08:1A}しまうのでしょう。\n<wait>	I wonder... What will come of Tokyo?\n<wait>	reads: この先‥‥東京はどうなってしまうのでしょう。\n<wait> @from-v005
+m/MS00B1.BIN	0:06	7	336	1FD2	若い女性：	Young Man:	@from-v005
+m/MS00B1.BIN	0:06	8	348	1FD3	諸外国{08:42}も見放された東京は、{08:47}世の地獄と化{08:4A}\nしまうだけなのでしょうか‥‥‥<wait>ああ‥‥‥‥‥‥！！\n	The rest of the world has completely abandoned us.\nIt is but a matter of time until all life dies...\n<wait>Aah!\n	reads: 諸外国からも見放された東京は、この世の地獄と化して\nしまうだけなのでしょうか‥‥‥<wait>ああ‥‥‥‥‥‥！！\n @from-v005
+m/MS00B1.BIN	0:06	9	451	18	レジスタンスの方々が、新宿を解放{08:4B}と聞きま{08:4B}。\n少し‥‥<wait>未来がひらけて来た様に感じ{08:5A}わ！\n<wait>	They say at the Resistance was able to liberate Shinjuku.\n<wait>It's not much, but it still gives me hope for a brighter future!\n<wait>	reads: レジスタンスの方々が、新宿を解放したと聞きました。\n少し‥‥<wait>未来がひらけて来た様に感じますわ！\n<wait> @from-v005
+m/MS00B1.BIN	0:07	0	4	1FD2	怪しい男：	Stranger:	@from-v005
+m/MS00B1.BIN	0:07	1	21	09	都庁には、何やらデカイ建造物が作られ{08:14}らしい。\n{08:0F}うちでは、“バエル城”と呼んでる{08:5F}が‥‥‥\n<wait>あながち間違い{08:56}無さそうだ。\n	A mysterious building has been erected where the Government Office\nonce stood. Some folks I know are saying that it's Baal's Castle.\n<wait>Sounds crazy, but I believe them.\n	reads: 都庁には、何やらデカイ建造物が作られているらしい。\n仲間うちでは、“バエル城”と呼んでるんだが‥‥‥\n<wait>あながち間違いでも無さそうだ。\n @from-ours
+m/MS00B1.BIN	0:07	2	154	09	レジスタンス共が倒{08:4B}という、都庁のバエルだが‥‥\n<wait>どうやら偽者だっ{08:50}しい。\n<wait>	You know how the Resistance claims to have killed Baal?\n<wait>Well, it turns out to have been an imposter.\n<wait>	reads: レジスタンス共が倒したという、都庁のバエルだが‥‥\n<wait>どうやら偽者だったらしい。\n<wait> @from-ours
+m/MS00B1.BIN	0:07	3	240	1FD2	怪しい男：	Stranger:	@from-v005
+m/MS00B1.BIN	0:07	4	252	1FD3	本物のバエルは、上野にいたという情報もある。\n<wait>どこまで信憑性があるかは、確認のしようも無いがな！\n	They say that the real Baal is in Ueno.\n<wait>How credible that information is, that I cannot say.\n	@from-ours
+m/MS00B1.BIN	0:07	5	355	18	ほう‥‥‥<wait>若造のわりには、大{08:4B}殺気じゃねぇか。\n<wait>だが、その殺気が消せ{08:25}様じゃあ、マダマダ甘いな。\n<wait>	My, my...\n<wait>Never met a youngster oozing with such bloodlust before.\n<wait>Then again, the fact that you don't know how to hide it\nshows that you still have much to learn.\n<wait>	reads: ほう‥‥‥<wait>若造のわりには、大した殺気じゃねぇか。\n<wait>だが、その殺気が消せない様じゃあ、マダマダ甘いな。\n<wait> @from-v005
+m/MS00B1.BIN	0:07	6	467	1FD2	怪しい男：	Stranger:	@from-v005
+m/MS00B1.BIN	0:07	7	479	1FD3	ま‥‥<wait>自ずと解{08:52}くるさ。そのうちな！\n<wait>	Well, whatever.\n<wait>You'll figure it out eventually.\n<wait>	reads: ま‥‥<wait>自ずと解ってくるさ。そのうちな！\n<wait> @from-v005
+m/MS00B1.BIN	0:08	0	4	1FD2	若い男：	Young Man:	@from-v005
+m/MS00B1.BIN	0:08	1	19	09	恵比寿には、{08:5E}凄い数の難民が溢れ{08:2B}‥‥‥\n<wait>	Ebisu is being flooded by refugees.\n<wait>	reads: 恵比寿には、もの凄い数の難民が溢れてる‥‥‥\n<wait> @from-v005
+m/MS00B1.BIN	0:08	2	68	1FD2	若い男：	Young Man:	@from-v005
+m/MS00B1.BIN	0:08	3	78	1FD3	天使に守られし地、聖地渋谷へ入ろうと、皆わらにもすがる\n思いで集っ{08:14}{08:5F}よ。\n	All of them want to enter Shibuya, the holy city of angels.\n	reads: 天使に守られし地、聖地渋谷へ入ろうと、皆わらにもすがる\n思いで集っているんだよ。\n @from-v005
+m/MS00B1.BIN	0:08	4	155	18	市ヶ谷の旧軍部{08:10}には、日下というサイバネック\n治療の権威が{08:40}{08:5F}。\n<wait>	You ever hear about the cybernetics expert Kusaka\nwho operates from a former military shelter in Ichigaya?\n<wait>	reads: 市ヶ谷の旧軍部シェルターには、日下というサイバネック\n治療の権威がいるんだ。\n<wait> @from-v005
+m/MS00B1.BIN	0:08	5	227	1FD2	若い男：	Young Man:	@from-v005
+m/MS00B1.BIN	0:08	6	237	1FD3	莫大な手術費を請求さ{08:2F}様だが、腕は確{08:42}しい････\n死人すら、生き返ら{08:2A}と言う噂だよ。\n<wait>	He charges a pretty penny, but his services are apparently worth it.\nThey say that he can even bring a corpse back to life...\n<wait>	reads: 莫大な手術費を請求される様だが、腕は確からしい････\n死人すら、生き返らせると言う噂だよ。\n<wait> @from-v005
+m/MS00B1.BIN	0:09	0	4	1FD2	女性：	Woman:	@from-v005
+m/MS00B1.BIN	0:09	1	17	09	バエルはやっぱり生きてた{08:5F}わ･････\n<wait>	So, Baal lives, huh?\n<wait>	reads: バエルはやっぱり生きてたんだわ･････\n<wait> @from-ours
+m/MS00B1.BIN	0:09	2	59	1FD2	女性：	Woman:	@from-v005
+m/MS00B1.BIN	0:09	3	67	1FD3	{08:5C}、おしまいよぉ････\n<wait>あんな{08:0B}相手に{08:4A}、人間が勝{08:2B}ワケ{08:25}じゃ{08:25}！！\n	This is it. This is the end for us...\n<wait>Of course humanity could never hope to win against the demons!\n	reads: もう、おしまいよぉ････\n<wait>あんな悪魔相手にして、人間が勝てるワケないじゃない！！\n @from-v005
+m/MS00B1.BIN	0:09	4	140	18	レジスタンスの連中もやるわよね！！\n<wait>	Long live the Resistance!\n<wait>	@from-v005
+m/MS00B1.BIN	0:09	5	183	1FD2	女性：	Woman:	@from-v005
+m/MS00B1.BIN	0:09	6	191	1FD3	そうよ！　いつま{08:56}{08:0B}にビクビクし{08:2B}{08:46}{08:25}わ！\nアタシ達人間は、{08:0B}にだ{08:52}勝{08:2B}のよっ！！\n<wait>	No longer will mankind quiver in the shadows!\nIt is time for us to rise up!\n<wait>	reads: そうよ！　いつまでも悪魔にビクビクしてることないわ！\nアタシ達人間は、悪魔にだって勝てるのよっ！！\n<wait> @from-v005

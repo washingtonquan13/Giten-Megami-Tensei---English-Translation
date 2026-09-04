@@ -1,0 +1,28 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS6500.BIN	0:C4	0	8	00	菁		
+m/MS6500.BIN	0:C5	0	6	0E	{07:54}{07:38}\n	{07:54}{07:38}\n	record reaches an engine no-op opcode; verify in game; reads: 駄目だ！　話にならない！\n
+m/MS6500.BIN	0:C5	1	13	30E	{03:1F}	{03:1F}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS6500.BIN	0:C6	0	16	30E	{03:1F}	{03:1F}	record reaches an engine no-op opcode; verify in game; reads: 
+m/MS6500.BIN	0:C7	0	21	1F88			record reaches an engine no-op opcode; verify in game
+m/MS6500.BIN	0:C7	1	41	14	@	@	record reaches an engine no-op opcode; verify in game
+m/MS6500.BIN	0:C7	2	50	1FB2	言う	Tell	record reaches an engine no-op opcode; verify in game; menu option, declared width 8 columns @from-ours
+m/MS6500.BIN	0:C7	3	56	1FB2	言わ{08:25}	Refuse	record reaches an engine no-op opcode; verify in game; reads: 言わない; menu option, declared width 8 columns @from-ours
+m/MS6500.BIN	0:C7	4	73	11	{05:00}{01:01}	{05:00}{01:01}	record reaches an engine no-op opcode; verify in game; reads: はいいいえニュートン山瀬勇
+m/MS6500.BIN	0:C8	0	23	14	{08:00}{=FC}{=FF}	{08:00}{=FC}{=FF}	reads: 早坂{=FC}{=FF}
+m/MS6500.BIN	0:C9	0	2	1F00	1{03:00}	1{03:00}	record reaches an engine no-op opcode; verify in game; reads: 1飛び道具
+m/MS6500.BIN	0:C9	1	35	1FB2	大丈夫？	You OK?	record reaches an engine no-op opcode; verify in game; menu option, declared width 8 columns @from-ours
+m/MS6500.BIN	0:C9	2	45	1FB2	あっそう	I see	record reaches an engine no-op opcode; verify in game; menu option, declared width 8 columns @from-ours
+m/MS6500.BIN	0:C9	3	64	11	{05:00}{01:01}ﾉ		record reaches an engine no-op opcode; verify in game; reads: はいいいえニュートン山瀬勇ﾉ
+m/MS6500.BIN	0:C9	4	70	00			record reaches an engine no-op opcode; verify in game
+m/MS6500.BIN	0:C9	5	96	1F88			record reaches an engine no-op opcode; verify in game
+m/MS6500.BIN	0:C9	6	100	1F5F			record reaches an engine no-op opcode; verify in game
+m/MS6500.BIN	0:C9	7	124	15	x	x	record reaches an engine no-op opcode; verify in game
+m/MS6500.BIN	0:C9	8	166	14	@	@	record reaches an engine no-op opcode; verify in game
+m/MS6500.BIN	0:C9	9	203	1FB2	{08:26}	Yes	record reaches an engine no-op opcode; verify in game; reads: はい; menu option, declared width 6 columns @from-ours
+m/MS6500.BIN	0:C9	10	207	1FB2	{08:27}	No	record reaches an engine no-op opcode; verify in game; reads: いいえ; menu option, declared width 6 columns @from-ours
+m/MS6500.BIN	0:C9	11	220	11	y{01:01}{01:00}	y{01:01}{01:00}	record reaches an engine no-op opcode; verify in game; reads: y山瀬勇早坂達也
+m/MS6500.BIN	0:C9	12	265	12			record reaches an engine no-op opcode; verify in game

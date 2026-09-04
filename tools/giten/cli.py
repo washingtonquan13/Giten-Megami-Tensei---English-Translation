@@ -6,7 +6,7 @@ import os
 import sys
 
 from . import (audit, build, build_v2, check, check_v2, extract, extract_v2,
-               files, install, migrate, paths, stats)
+               files, install, migrate, paths, rebase, stats)
 
 
 def _common(p):
@@ -42,6 +42,9 @@ def make_parser():
     p.add_argument("--family", default="all", choices=files.FAMILY_CHOICES)
     p.add_argument("--identity", action="store_true",
                    help="ignore the tables entirely (pure round-trip build)")
+    p.add_argument("--only", action="append", default=None, metavar="GLOB",
+                   help="apply tables only to files matching this dir/FILE.BIN "
+                        "glob (repeatable); everything else builds as identity")
     _engine(p)
     _common(p)
 
@@ -71,6 +74,14 @@ def make_parser():
                    help="where to write the full report "
                         "(default build/migrate-report.txt)")
     p.add_argument("--root", help="game ddswin/ folder")
+    p.add_argument("-q", "--quiet", action="store_true")
+
+    p = sub.add_parser("rebase",
+                       help="carry translations from v0.05-based tables onto "
+                            "tables extracted from the Japanese original")
+    p.add_argument("--from", dest="src", default=None, help="default text_v2/")
+    p.add_argument("--to", dest="dst", default=None, help="default text_v3/")
+    p.add_argument("--report", default=None, help="default build/rebase-report.txt")
     p.add_argument("-q", "--quiet", action="store_true")
 
     p = sub.add_parser("verify",
@@ -115,7 +126,8 @@ def main(argv=None) -> int:
     if args.cmd == "build":
         mod = build_v2 if args.engine == "v2" else build
         st = mod.run(args.out, args.family, args.root, args.text_dir,
-                     args.quiet, ignore_tables=args.identity)
+                     args.quiet, ignore_tables=args.identity,
+                     **({"only": args.only} if args.engine == "v2" else {}))
         return 1 if st["errors"] else 0
     if args.cmd == "check":
         if args.engine == "v2":
@@ -129,6 +141,9 @@ def main(argv=None) -> int:
         return 1 if rep.errors else 0
     if args.cmd == "migrate":
         migrate.run(args.src, args.dst, args.root, args.quiet, args.report)
+        return 0
+    if args.cmd == "rebase":
+        rebase.run(args.src, args.dst, args.quiet, args.report)
         return 0
     if args.cmd == "verify":
         out_dir = args.out_dir or os.path.join(paths.BUILD_DIR, "ddswin_v2")

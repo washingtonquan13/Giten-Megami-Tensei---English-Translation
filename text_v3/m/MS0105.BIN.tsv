@@ -1,0 +1,27 @@
+# Giten Megami Tensei translation table -- see docs/pipeline.md
+# Edit the 'en' column only.  Leave it empty (or equal to 'jp') to keep the
+# original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
+# (keep them, in order), \\ \{ \< literal backslash / brace / angle.
+file	rec	idx	off	tag	jp	en	note
+m/MS0105.BIN	0:00	0	0	DATA	買い{08:15}売り{08:15}\n	Buying? Or selling?\n	reads: 買いますか？売りますか？\n @from-ours
+m/MS0105.BIN	0:01	0	0	DATA	いらっしゃい。{08:7F}薬有るよ。\n	Welcome. I've got some good medicine here.\n	reads: いらっしゃい。いい薬有るよ。\n @from-ours
+m/MS0105.BIN	0:02	0	0	DATA	何買い{08:5A}？ {08:7F}薬たくさん有るよ。\n	What'll you buy? Got plenty of good medicine here.\n	reads: 何買います？ いい薬たくさん有るよ。\n @from-ours
+m/MS0105.BIN	0:03	0	0	DATA	{08:70}、うちで扱っ{08:2B}物持{08:52}{08:25}{08:55}ね。\n	You, you're not carrying anything we deal in.\n	reads: あなた、うちで扱ってる物持ってないですね。\n @from-ours
+m/MS0105.BIN	0:04	0	0	DATA	何売り{08:5A}？\n	What'll you sell?\n	reads: 何売ります？\n @from-ours
+m/MS0105.BIN	0:05	0	0	DATA	お金足り{08:25}の困り{08:5A}よ。\n	Not enough money troubles me.\n	reads: お金足りないの困りますよ。\n @from-ours
+m/MS0105.BIN	0:06	0	0	DATA	買う物{08:48}で全部{08:55}ね？\n	This is everything you're buying, yes?\n	reads: 買う物これで全部ですね？\n @from-ours
+m/MS0105.BIN	0:07	0	0	DATA	{08:70}持ち物たくさん持ちすぎ{08:55}。\n	You, carrying way too much stuff.\n	reads: あなた持ち物たくさん持ちすぎです。\n @from-ours
+m/MS0105.BIN	0:08	0	0	DATA	{08:7A}に負{08:29}の無理{08:55}。\n私に首くくれ言う{08:55}か？\n	Can't go down that much. You want me hang myself?\n	reads: そんなに負けるの無理です。\n私に首くくれ言うですか？\n @from-ours
+m/MS0105.BIN	0:09	0	0	DATA	ウーン{08:72}。{08:48}で{08:90}でしょ。\n	Hmmm...... How about this.\n	reads: ウーン‥‥。これでどうでしょ。\n @from-ours
+m/MS0105.BIN	0:0A	0	0	DATA	{08:7F}{08:55}！ 売り{08:5A}！\nお客さん買い物上手{08:55}ね。\n	Good! I'll sell it!\nCustomer good at shopping.\n	reads: いいです！ 売ります！\nお客さん買い物上手ですね。\n @from-ours
+m/MS0105.BIN	0:0B	0	0	DATA	{01:2A}ござい{08:5A}。\n	Thank you very much.\n	reads: ありがとうございます。\n @from-ours
+m/MS0105.BIN	0:0C	0	0	DATA	売る物{08:48}で全部{08:55}ね？\n	This is everything you're selling, yes?\n	reads: 売る物これで全部ですね？\n @from-ours
+m/MS0105.BIN	0:0D	0	0	DATA	{08:7A}に高く買え{02:0A}。\n私に夜逃げしろ言う{08:55}か？\n	Can't buy that high. You want me skip town?\n	reads: そんなに高く買えません。\n私に夜逃げしろ言うですか？\n @from-ours
+m/MS0105.BIN	0:0E	0	0	DATA	ウーン{08:72}。{08:48}で{08:90}でしょ。\n	Hmmm...... How about this.\n	reads: ウーン‥‥。これでどうでしょ。\n @from-ours
+m/MS0105.BIN	0:0F	0	0	DATA	{08:7F}{08:55}！ 買{08:89}{08:80}！\nお客さんには勝て{02:0A}{08:55}。\n	Good! I'll buy it!\nCan't win against customer.\n	reads: いいです！ 買いましょう！\nお客さんには勝てませんです。\n @from-ours
+m/MS0105.BIN	0:10	0	0	DATA	{01:2A}ござい{08:5A}。\n	Thank you very much.\n	reads: ありがとうございます。\n @from-ours
+m/MS0105.BIN	0:11	0	0	DATA	あっ、お客さん。ちょ{08:53}待{08:52}下{08:49}。\n	Ah, customer. Wait a moment please.\n	reads: あっ、お客さん。ちょっと待って下さい。\n @from-ours
+m/MS0105.BIN	0:12	0	0	DATA	毎度あり{08:55}。{08:7F}薬{08:76}{08:76}たくさん有るよ。\n{08:5B}たくさん買{08:52}下{08:49}。\n	Thanks as always. Still got plenty good medicine.\nCome buy lots more again.\n	reads: 毎度ありです。いい薬まだまだたくさん有るよ。\nまたたくさん買って下さい。\n @from-ours
+m/MS0105.BIN	0:13	0	0	DATA	毎度あり{08:55}。{08:5B}たくさん売{08:52}下{08:49}。\n	Thanks as always. Come sell lots more again.\n	reads: 毎度ありです。またたくさん売って下さい。\n @from-ours
+m/MS0105.BIN	0:14	0	0	DATA	毎度あり{08:55}。次は何か買{08:52}下{08:49}。\n	Thanks as always. Buy something again next time.\n	reads: 毎度ありです。次は何か買って下さい。\n @from-ours
+m/MS0105.BIN	0:15	0	0	DATA	{08:48}、オマケ{08:55}。感謝{08:55}。\n受け取ると良い{08:55}。\n	This, a bonus. Thank you.\nBetter take it.\n	reads: これ、オマケです。感謝です。\n受け取ると良いです。\n @from-ours
