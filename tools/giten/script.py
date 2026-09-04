@@ -430,9 +430,51 @@ class BuildReport:
     #: ``rel16`` slots left alone because the operand does not behave like a
     #: branch at all (see :func:`_is_branch`)
     not_a_branch: int = 0
+    #: edits skipped because the English dropped a byte that is not prose
+    #: (see :func:`opaque_bytes`)
+    opaque_dropped: int = 0
     size_delta: int = 0
     errors: "list[str]" = field(default_factory=list)
     warnings: "list[str]" = field(default_factory=list)
+
+
+def opaque_bytes(rec: Rec, sp: Span) -> "list[int]":
+    """Bytes in a span's text that we cannot justify as ordinary prose.
+
+    Two shapes, both of which a translator reads as mojibake and deletes:
+
+    * a byte ``>= 0xFD``, which cp932 does not define at all, so it renders as a
+      private-use box and is certainly not a character;
+    * a *lone* half-width katakana byte (``0xA1``-``0xDF``) sitting directly
+      against opcodes on both sides rather than inside a run of Japanese -- the
+      ``{02:01}ﾙ`` shape, where ``{02:01}`` expands to a name and the trailing
+      byte is one isolated kana that no sentence would contain.
+
+    Both are legal Shift-JIS in isolation, which is why the extractor shows them
+    as text and no encoding check catches them.  What they actually mean is
+    unknown: they survive into ``v0.05`` (which changed the byte rather than
+    dropping it, so its author did not think they were junk either), and the
+    renderer's treatment of them has not been traced.  Until that is known, a
+    translation that deletes them is changing something it does not understand,
+    so the builder keeps the source span instead.
+    """
+    out = []
+    for k in range(sp.tok_lo, sp.tok_hi):
+        t = rec.tokens[k]
+        if t.kind != "text":
+            continue
+        d = rec.data[t.off:t.end]
+        if len(d) != 1:
+            continue
+        if d[0] >= 0xFD:
+            out.append(d[0])
+            continue
+        if 0xA1 <= d[0] <= 0xDF:
+            prev = rec.tokens[k - 1] if k > sp.tok_lo else None
+            nxt = rec.tokens[k + 1] if k + 1 < sp.tok_hi else None
+            if (prev is None or prev.kind == "op") and (nxt is None or nxt.kind == "op"):
+                out.append(d[0])
+    return out
 
 
 def _rebuild_record(rec: Rec, edits: "dict[int, str]", report: BuildReport):
@@ -455,6 +497,15 @@ def _rebuild_record(rec: Rec, edits: "dict[int, str]", report: BuildReport):
             continue
         old = rec.data[sp.off:sp.end]
         if new == old:
+            continue
+        lost = [b for b in opaque_bytes(rec, sp) if bytes([b]) not in new]
+        if lost:
+            report.opaque_dropped += 1
+            report.warnings.append(
+                "%s %s[%d]: the English drops %s, which is not ordinary text "
+                "(see script.opaque_bytes); edit skipped, source kept"
+                % (report.rel, sp.rec_key, sp.idx,
+                   " ".join("0x%02X" % b for b in lost)))
             continue
         runs.append((cursor, sp.off, len(out) - cursor))
         out += rec.data[cursor:sp.off]

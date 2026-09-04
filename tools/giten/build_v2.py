@@ -34,6 +34,7 @@ class Result:
     unmapped_in_edit: int = 0
     branched_into: int = 0
     not_a_branch: int = 0
+    opaque_dropped: int = 0
     size_delta: int = 0
     errors: "list[str]" = field(default_factory=list)
     warnings: "list[str]" = field(default_factory=list)
@@ -93,7 +94,7 @@ def build_file(rel: str, raw: bytes, rows) -> Result:
     out, rep = script.build(sc, edits)
     return Result(rel, out, rep.changed_spans, rep.changed_records, rep.relocated,
                   rep.unmapped, rep.unmapped_in_edit, rep.branched_into,
-                  rep.not_a_branch, rep.size_delta,
+                  rep.not_a_branch, rep.opaque_dropped, rep.size_delta,
                   list(rep.errors), list(rep.warnings))
 
 
@@ -107,7 +108,8 @@ def run(out_dir: "str | None" = None, family: str = "all",
     cache = {}
     st = {"files": 0, "changed_files": 0, "changed_spans": 0, "changed_records": 0,
           "relocated": 0, "unmapped": 0, "unmapped_in_edit": 0,
-          "branched_into": 0, "not_a_branch": 0, "identical": 0,
+          "branched_into": 0, "not_a_branch": 0, "opaque_dropped": 0,
+          "identical": 0,
           "errors": [], "warnings": []}
 
     for rel in files.all_encoded(root):
@@ -128,6 +130,7 @@ def run(out_dir: "str | None" = None, family: str = "all",
         st["unmapped_in_edit"] += res.unmapped_in_edit
         st["branched_into"] += res.branched_into
         st["not_a_branch"] += res.not_a_branch
+        st["opaque_dropped"] += res.opaque_dropped
         st["errors"].extend(res.errors)
         st["warnings"].extend(res.warnings)
         if res.changed_spans:
@@ -156,6 +159,9 @@ def run(out_dir: "str | None" = None, family: str = "all",
         if st["branched_into"]:
             print("  %d edits skipped because a branch lands inside the span"
                   % st["branched_into"])
+        if st["opaque_dropped"]:
+            print("  %d edits skipped: the English dropped a byte that is not "
+                  "ordinary text (script.opaque_bytes)" % st["opaque_dropped"])
         if st["not_a_branch"]:
             print("  %d rel16 slots left untouched: their opcode's slot does not "
                   "hold a branch displacement (script.NOT_A_BRANCH)"
