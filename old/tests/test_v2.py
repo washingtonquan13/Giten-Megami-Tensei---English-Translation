@@ -6,7 +6,7 @@ the game folder read-only and writes nothing outside a temporary directory.
 The load-bearing ones, in order of how much else depends on them:
 
 * the container seed rule agrees with an independent transcription of the
-  engine (:mod:`giten.refdecode`) -- including for a container whose
+  engine (:mod:`tools.giten.refdecode`) -- including for a container whose
   length, and therefore whose cipher seed, has changed;
 * the identity build is byte-exact on all 844 files;
 * a lengthening edit relocates every ``rel16`` so it still lands on the same
@@ -19,7 +19,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from giten import (codec, container, extract_v2, files, pool,
+from tools.giten import (codec, container, extract_v2, files, migrate, pool,
                          records, refdecode, script, tables, vmops, width)
 
 
@@ -67,10 +67,7 @@ def branch_map(sc, ci=0):
             where[base[r.id] + t.off] = (r.id, nops,
                                          t.idx if t.kind == "op" else "text")
             ordinal[(r.id, k)] = nops
-            # Only structural opcodes count: a pool call, newline or page wait
-            # lives inside a span and an edit may add or drop it, which would
-            # shift every later ordinal without any branch having moved.
-            if t.kind == "op" and t.idx not in codec.INLINE_OPS:
+            if t.kind == "op":
                 nops += 1
         where[base[r.id] + len(r.data)] = (r.id, nops, "end")
 
@@ -125,7 +122,7 @@ def test_container_chain_lands_on_eof_for_every_pipeline_file():
     assert bad == [], bad
 
     import os
-    from giten import paths
+    from tools.giten import paths
     for name in ("A0000.BIN", "A0001.BIN"):
         p = os.path.join(paths.game_root(), "et", name)
         if os.path.exists(p):
@@ -298,13 +295,7 @@ def test_a_body_that_is_not_a_record_list_is_rejected():
 # tokenizer
 # --------------------------------------------------------------------------
 def test_tokenizer_reproduces_the_published_tiling_numbers():
-    """Tiling census on the ORIGINAL data (re-baselined 2026-09-04).
-
-    The v0.05-based figures were 19 207 / 1 088 / 130 / 123.  The original has
-    more records ending in a clean ``00`` (v0.05 stripped ~3 240 ``1F01 nn``+``00``
-    idioms, which is what moved the first two numbers) and one more record
-    using an unimplemented opcode; the 123 untileable records are the same set.
-    """
+    """docs/format-notes.md §2.9: 18 913 ok / 1 060 stray0 / 130 unimpl / 123 overrun."""
     tab = vmops.table()
     ok = stray = unimpl = overrun = 0
     for rel in files.iter_files(("ms", "id")):
@@ -330,7 +321,7 @@ def test_tokenizer_reproduces_the_published_tiling_numbers():
     # more files (m/MS600A, m/MS610B, et/ID00A2, et/ID00A3 -- see
     # records.is_record_layer), which contribute the extra ok/stray0 records and
     # not one extra failure: the 123 untileable records are exactly the same set.
-    assert (ok, stray, unimpl, overrun) == (19317, 1119, 131, 123), (ok, stray, unimpl, overrun)
+    assert (ok, stray, unimpl, overrun) == (19207, 1088, 130, 123),         (ok, stray, unimpl, overrun)
 
 
 def test_operands_are_never_text():
@@ -362,12 +353,12 @@ def test_ms0004_choice_record_tiles_exactly_as_the_notes_say():
     """§2.9's structural cross-check, as a regression test."""
     _raw, sc = _script("m/MS0004.BIN")
     rec = next(r for r in sc.iter_records() if r.id == 0x35 and r.ci == 0)
-    assert len(rec.data) == 89                         # 93 in v0.05
-    assert sum(t.size for t in rec.tokens) == 89
+    assert len(rec.data) == 93
+    assert sum(t.size for t in rec.tokens) == 93
     jumps = [t for t in rec.tokens if t.idx == 0x018]
     assert len(jumps) == 3
-    assert {vmops.rel16_target(0, t, t.ops[0]) for t in jumps} == {0x58}
-    assert rec.data[0x58] == 0x00                      # the record terminator
+    assert {vmops.rel16_target(0, t, t.ops[0]) for t in jumps} == {0x5C}
+    assert rec.data[0x5C] == 0x00                      # the record terminator
     opts = [t for t in rec.tokens if t.idx == 0x212]
     assert len(opts) == 4
     for a, b in zip(opts, opts[1:]):
@@ -450,7 +441,7 @@ def test_no_dict_artefact_can_be_produced():
 # identity
 # --------------------------------------------------------------------------
 def test_v2_identity_build_is_byte_exact_on_all_844_files():
-    from giten import build_v2
+    from tools.giten import build_v2
 
     n = 0
     for rel in files.all_encoded():
@@ -692,7 +683,7 @@ def test_extraction_rows_are_addressable_and_stable():
 
 def test_extracted_rows_rebuild_to_the_source_bytes():
     """Feeding every ``jp`` back in as ``en`` is a no-op."""
-    from giten import build_v2
+    from tools.giten import build_v2
 
     for rel in ("m/MS0003.BIN", "et/ID0099.BIN", "m/MS0004.BIN"):
         raw = files.read_source(rel)
@@ -703,7 +694,7 @@ def test_extracted_rows_rebuild_to_the_source_bytes():
 
 
 def test_pname_field_is_fixed_width():
-    from giten import build_v2
+    from tools.giten import build_v2
 
     rel = "p/P2000.BIN"
     raw = files.read_source(rel)
@@ -716,12 +707,59 @@ def test_pname_field_is_fixed_width():
     assert build_v2.build_file(rel, raw, rows).errors
 
 
+def test_migrate_carries_a_translation_and_reopens_an_operand_row(tmp=None):
+    import tempfile
+
+    rel = "m/MS0003.BIN"
+    raw = files.read_source(rel)
+    v2 = extract_v2.rows_for(rel, raw, pool.load())
+    target = next(r for r in v2 if codec.strip_tokens(r.jp).strip())
+    body = container.split(raw)[0][0].body
+
+    with tempfile.TemporaryDirectory() as src, tempfile.TemporaryDirectory() as dst:
+        # A v1-shaped row at the same byte offset in the same decoded body.
+        rec = next(r for r in script.parse(rel, raw).iter_records()
+                   if r.key == target.rec)
+        v1_off = rec.raw_off - 2 + target.off
+        old = [tables.Row(rel, "F0", 0, v1_off, target.tag, target.jp,
+                          "CARRIED", ""),
+               tables.Row(rel, "F0", 1, v1_off, target.tag, "junk",
+                          "STALE", "@operand")]
+        tables.write(os.path.join(src, "m", "MS0003.BIN.tsv"), old[:1])
+        out = migrate.run(src, dst, quiet=True,
+                          report_path=os.path.join(dst, "report.txt"))
+        rows = tables.read(files.table_path(rel, dst))
+        got = next(r for r in rows if (r.rec, r.idx) == (target.rec, target.idx))
+        assert got.en == "CARRIED"
+        assert out["stats"]["carried"] == 1
+        assert body is not None
+
+
+def test_migrate_never_writes_into_the_source_directory():
+    import tempfile
+
+    before = {}
+    for p in tables.iter_tables(os.path.join(
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "text")):
+        before[p] = os.path.getmtime(p)
+    assert before, "no v1 tables to guard"
+    with tempfile.TemporaryDirectory() as src, tempfile.TemporaryDirectory() as dst:
+        tables.write(os.path.join(src, "m", "MS0003.BIN.tsv"), [])
+        migrate.run(src, dst, quiet=True,
+                    report_path=os.path.join(dst, "report.txt"))
+    for p, t in before.items():
+        assert os.path.getmtime(p) == t, "migrate touched %s" % p
+
+
+# --------------------------------------------------------------------------
+# validators
+# --------------------------------------------------------------------------
 def _row(jp, en, tag="1FD3", note=""):
     return tables.Row("m/X.BIN", "0:00", 0, 0, tag, jp, en, note)
 
 
 def test_validator_reports_encode_errors_as_errors():
-    from giten import check_v2
+    from tools.giten import check_v2
 
     rep = check_v2.Report()
     check_v2.check_rows(rep, [_row("a", "{18:0000}"), _row("b", "☃")])
@@ -729,7 +767,7 @@ def test_validator_reports_encode_errors_as_errors():
 
 
 def test_validator_refuses_an_edit_on_an_untiled_record():
-    from giten import check_v2
+    from tools.giten import check_v2
 
     rep = check_v2.Report()
     check_v2.check_rows(rep, [_row("jp", "en",
@@ -742,7 +780,7 @@ def test_validator_refuses_an_edit_on_an_untiled_record():
 
 
 def test_validator_width_findings_are_warnings():
-    from giten import check_v2
+    from tools.giten import check_v2
 
     rep = check_v2.Report()
     check_v2.check_rows(rep, [_row("x", "y" * 90)])
@@ -751,7 +789,7 @@ def test_validator_width_findings_are_warnings():
 
 
 def test_validator_uses_the_declared_choice_width_from_the_note():
-    from giten import check_v2
+    from tools.giten import check_v2
 
     rep = check_v2.Report()
     check_v2.check_rows(rep, [_row("x", "y" * 25, tag="1FB2",
@@ -773,7 +811,7 @@ def test_not_a_branch_is_re_derived_from_the_game_files():
     tokenizer shows up as a failing test rather than as silently different
     output.
     """
-    from giten import audit
+    from tools.giten import audit
 
     hit = {}
     tot = {}
@@ -815,9 +853,7 @@ def test_not_a_branch_is_re_derived_from_the_game_files():
     for k, n in tot.items():
         if k in script.NOT_A_BRANCH or n < 40:
             continue
-        # 017 sits in the grey zone on the original (48.7% vs chance 43%);
-        # it keeps the benefit of the doubt -- see docs/limits.md.
-        assert hit.get(k, 0) / n > chance * 1.1, (
+        assert hit.get(k, 0) / n > chance * 1.2, (
             "op %03X is relocated but only %.1f%% of its targets are "
             "instructions" % (k, 100 * hit.get(k, 0) / n))
 
