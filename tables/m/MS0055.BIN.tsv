@@ -5,17 +5,17 @@
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
 m/MS0055.BIN	0:00	0	8	1F04						
 m/MS0055.BIN	0:00	1	20	1FD0	{02:00}達の無残な死体が転がっ{08:14}{02:08}\n		Mangled corpses of Devil Busters lie scattered on the floor...\n	v005		reads: デビルバスター達の無残な死体が転がっている‥‥‥\n; reads: デビルバスター達の無残な死体が転がっている‥‥‥\n @refalign
-m/MS0055.BIN	0:00	2	65	1F01	：		:	v005		reads: ： @rebase-tagdiff @refalign
-m/MS0055.BIN	0:00	3	69	1FD3	ちょ、ちょ{08:53}					reads: ちょ、ちょっと; reads: ちょ、ちょっと
-m/MS0055.BIN	0:00	4	87	1F01	くん。\n					reads: くん。\n
-m/MS0055.BIN	0:00	5	102	1F03	私達の行く詰所はこっち{08:81}{08:25}わ。Ｂ５Ｆの方よ。\n<wait>					reads: 私達の行く詰所はこっちじゃないわ。Ｂ５Ｆの方よ。\n<wait>
-m/MS0055.BIN	0:00	6	163	1F01	：		:	v005		reads: ： @rebase-tagdiff @refalign
+m/MS0055.BIN	0:00	2	65	1F01	：	:	:	v005	draft	reads: ： @rebase-tagdiff @refalign
+m/MS0055.BIN	0:00	3	69	1FD3	ちょ、ちょ{08:53}	W-wait a second, 			draft	reads: ちょ、ちょっと; reads: ちょ、ちょっと @ours-2026-09-05
+m/MS0055.BIN	0:00	4	87	1F01	くん。\n	.\n			draft	reads: くん。\n @ours-2026-09-05
+m/MS0055.BIN	0:00	5	102	1F03	私達の行く詰所はこっち{08:81}{08:25}わ。Ｂ５Ｆの方よ。\n<wait>	The guard post we're going to isn't this way. It's on B5F.\n<wait>			draft	reads: 私達の行く詰所はこっちじゃないわ。Ｂ５Ｆの方よ。\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:00	6	163	1F01	：	:	:	v005	draft	reads: ： @rebase-tagdiff @refalign
 m/MS0055.BIN	0:00	7	167	1FD3	早くし{08:25}と遅刻だわ！\n急ぎま{08:80}！\n<wait>		We're gonna be late at this rate. Let's hurry!\n<wait>	v005		reads: 早くしないと遅刻だわ！\n急ぎましょう！\n<wait>; reads: 早くしないと遅刻だわ！\n急ぎましょう！\n<wait> @refalign
 m/MS0055.BIN	0:00	8	228	09	今はレクチャー中よ。\n<wait>		This is not the time for this.\n<wait>	v005		@refalign
-m/MS0055.BIN	0:00	9	263	1F01	：		:	v005		reads: ： @rebase-tagdiff @refalign
+m/MS0055.BIN	0:00	9	263	1F01	：	:	:	v005	draft	reads: ： @rebase-tagdiff @refalign
 m/MS0055.BIN	0:00	10	267	1FD3	早く{08:03}さんの{01:2E}に行かなきゃ。\n		You need to hurry over to Emi's place.\n	v005		reads: 早く英美さんの部屋に行かなきゃ。\n; reads: 早く英美さんの部屋に行かなきゃ。\n @refalign
-m/MS0055.BIN	0:00	11	322	1F04	私達の部隊{08:62}Ｂ５Ｆの詰所よ。\n<wait>					reads: 私達の部隊は、Ｂ５Ｆの詰所よ。\n<wait>
-m/MS0055.BIN	0:00	12	367	1F01	：		:	v005		reads: ： @rebase-tagdiff @refalign
+m/MS0055.BIN	0:00	11	322	1F04	私達の部隊{08:62}Ｂ５Ｆの詰所よ。\n<wait>	Our squad's guard post is on B5F.\n<wait>			draft	reads: 私達の部隊は、Ｂ５Ｆの詰所よ。\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:00	12	367	1F01	：	:	:	v005	draft	reads: ： @rebase-tagdiff @refalign
 m/MS0055.BIN	0:00	13	371	1FD3	何にも言われ{08:25}うちに、早くＢ５Ｆの詰所に戻りま{08:80}。\n		Let's hurry back to the office before we get yelled at.\n	v005		reads: 何にも言われないうちに、早くＢ５Ｆの詰所に戻りましょう。\n; reads: 何にも言われないうちに、早くＢ５Ｆの詰所に戻りましょう。\n @refalign
 m/MS0055.BIN	0:00	14	543	1F03						
 m/MS0055.BIN	0:00	15	547	1FD2	ＤＢ男性隊員：		Devil Buster (Male):	v005		@refalign
@@ -44,55 +44,55 @@ m/MS0055.BIN	0:02	2	106	1FD2	ＤＢ試験官：		DB Trial Coordinator:	v005
 m/MS0055.BIN	0:02	3	120	1FD3	{08:82}し、各自私語は慎み、勝手に室内を出たりし{08:25}事。\n<wait>以上！\n<wait>		I would also like to ask that you do not discuss the details of the test\namongst yourselves. <wait>That is all.\n<wait>	v005		reads: ただし、各自私語は慎み、勝手に室内を出たりしない事。\n<wait>以上！\n<wait>
 m/MS0055.BIN	0:02	4	223	1F81	{04:FF}	{04:FF}				reads: 
 m/MS0055.BIN	0:02	5	289	1FD2	受験者男：		Male Examinee:	v005		
-m/MS0055.BIN	0:02	6	301	1FD3	{08:5C}心臓が破裂し{01:29}よ。\n{02:00}入隊試験は厳しい{08:52}言うし{08:72}ああ！\n<wait>					reads: もう心臓が破裂しそうだよ。\nデビルバスター入隊試験は厳しいって言うし‥‥ああ！\n<wait>
-m/MS0055.BIN	0:02	7	396	1FD2	受験者女：					
-m/MS0055.BIN	0:02	8	408	1FD3	私{08:6A}て、{08:48}で受験二度目{08:6B}。\n今度落ち{08:50}、オペレーターに{08:56}応募{08:8E}わ。\n<wait>					reads: 私なんて、これで受験二度目なの。\n今度落ちたら、オペレーターにでも応募するわ。\n<wait>
-m/MS0055.BIN	0:02	9	519	1F01	：		:	v005		reads: ： @refalign
-m/MS0055.BIN	0:02	10	523	1FD3	私達も座りま{08:80}。\n<wait>					reads: 私達も座りましょう。\n<wait>; reads: 私達も座りましょう。\n<wait>
-m/MS0055.BIN	0:02	11	560	1FD2	アナウンスの声：					
-m/MS0055.BIN	0:02	12	578	1FD3	受験番号１２２５　秋本桃汰君。\n<wait>会議室より速やかに退室し、試験官と共にラボ{08:71}出頭{08:8E}事。\n<wait>					reads: 受験番号１２２５　秋本桃汰君。\n<wait>会議室より速やかに退室し、試験官と共にラボまで出頭する事。\n<wait>; reads: 受験番号１２２５　秋本桃汰君。\n<wait>会議室より速やかに退室し、試験官と共にラボまで出頭する事。\n<wait>
-m/MS0055.BIN	0:02	13	698	1FD2	受験者男：					
-m/MS0055.BIN	0:02	14	710	1FD3	ぎゃあ！　ぼ{08:72}僕の番だ。\nああ神様。僕は{08:90}か受か{08:52}い{08:5A}様に{08:72}ううう。\n<wait>					reads: ぎゃあ！　ぼ‥‥僕の番だ。\nああ神様。僕はどうか受かっています様に‥‥ううう。\n<wait>; reads: ぎゃあ！　ぼ‥‥僕の番だ。\nああ神様。僕はどうか受かっています様に‥‥ううう。\n<wait>
-m/MS0055.BIN	0:02	15	795	1FD2	アナウンスの声：					
-m/MS0055.BIN	0:02	16	813	1FD3	受験番号０８１８　富田安子君。\n会議室より速やかに退室し、試験官と共に{01:2D}{08:71}出頭{08:8E}事。\n<wait>					reads: 受験番号０８１８　富田安子君。\n会議室より速やかに退室し、試験官と共に管理部まで出頭する事。\n<wait>; reads: 受験番号０８１８　富田安子君。\n会議室より速やかに退室し、試験官と共に管理部まで出頭する事。\n<wait>
-m/MS0055.BIN	0:02	17	932	1FD2	受験者女：					
-m/MS0055.BIN	0:02	18	944	1FD3	嘘！　{08:5C}私の番{08:6B}？！\nあーもー、{08:90}と{08:56}なれだわ！！　{08:81}、お先に！\n<wait>					reads: 嘘！　もう私の番なの？！\nあーもー、どうとでもなれだわ！！　じゃ、お先に！\n<wait>; reads: 嘘！　もう私の番なの？！\nあーもー、どうとでもなれだわ！！　じゃ、お先に！\n<wait>
-m/MS0055.BIN	0:02	19	1025	1FD2	アナウンスの声：					
-m/MS0055.BIN	0:02	20	1043	1FD3	受験番号１１０１　					
-m/MS0055.BIN	0:02	21	1067	1F01	君。\n会議室より速やかに退室し、{02:00}詰め所{08:71}来る事。\n<wait>					reads: 君。\n会議室より速やかに退室し、デビルバスター詰め所まで来る事。\n<wait>; reads: 君。\n会議室より速やかに退室し、デビルバスター詰め所まで来る事。\n<wait>
-m/MS0055.BIN	0:02	22	1153	1F01	：		:	v005		reads: ： @refalign
-m/MS0055.BIN	0:02	23	1157	1FD3	{02:08}私の番だわ。\n{08:4D}{08:81}あ、					reads: ‥‥‥私の番だわ。\nそれじゃあ、; reads: ‥‥‥私の番だわ。\nそれじゃあ、
-m/MS0055.BIN	0:02	24	1186	1F01	くん、お先に。\n<wait>					reads: くん、お先に。\n<wait>
-m/MS0055.BIN	0:02	25	1228	1F01	もいなく{08:1A}{08:1F}。\n残るは{08:63}{01:3A}。時間の流れが、恐ろしく遅く感じら{08:2F}{08:72}\n<wait>					reads: もいなくなってしまった。\n残るは自分ひとり。時間の流れが、恐ろしく遅く感じられる‥‥\n<wait>; reads: もいなくなってしまった。\n残るは自分ひとり。時間の流れが、恐ろしく遅く感じられる‥‥\n<wait>
-m/MS0055.BIN	0:02	26	1318	1FD0	突然轟音が響{08:64}！\n音{08:62}{08:90}やら武器庫の方{08:42}だ。\n					reads: 突然轟音が響いた！\n音は、どうやら武器庫の方からだ。\n; reads: 突然轟音が響いた！\n音は、どうやら武器庫の方からだ。\n
+m/MS0055.BIN	0:02	6	301	1FD3	{08:5C}心臓が破裂し{01:29}よ。\n{02:00}入隊試験は厳しい{08:52}言うし{08:72}ああ！\n<wait>	My heart's about to burst.\nThey say the Devil Buster entrance exam is brutal... aah!\n<wait>			draft	reads: もう心臓が破裂しそうだよ。\nデビルバスター入隊試験は厳しいって言うし‥‥ああ！\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:02	7	396	1FD2	受験者女：	Female Examinee:			draft	@ours-2026-09-05
+m/MS0055.BIN	0:02	8	408	1FD3	私{08:6A}て、{08:48}で受験二度目{08:6B}。\n今度落ち{08:50}、オペレーターに{08:56}応募{08:8E}わ。\n<wait>	This is my second try, you know.\nIf I fail this time, I'll just apply to be an operator.\n<wait>			draft	reads: 私なんて、これで受験二度目なの。\n今度落ちたら、オペレーターにでも応募するわ。\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:02	9	519	1F01	：	:	:	v005	draft	reads: ： @refalign
+m/MS0055.BIN	0:02	10	523	1FD3	私達も座りま{08:80}。\n<wait>	Let's sit down too.\n<wait>			draft	reads: 私達も座りましょう。\n<wait>; reads: 私達も座りましょう。\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:02	11	560	1FD2	アナウンスの声：	Announcement:			draft	@ours-2026-09-05
+m/MS0055.BIN	0:02	12	578	1FD3	受験番号１２２５　秋本桃汰君。\n<wait>会議室より速やかに退室し、試験官と共にラボ{08:71}出頭{08:8E}事。\n<wait>	Examinee number 1225, Akimoto Touta.\n<wait>Leave the conference room at once and report to the lab\nwith your examiner.\n<wait>			draft	reads: 受験番号１２２５　秋本桃汰君。\n<wait>会議室より速やかに退室し、試験官と共にラボまで出頭する事。\n<wait>; reads: 受験番号１２２５　秋本桃汰君。\n<wait>会議室より速やかに退室し、試験官と共にラボまで出頭する事。\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:02	13	698	1FD2	受験者男：	Male Examinee:			draft	@ours-2026-09-05
+m/MS0055.BIN	0:02	14	710	1FD3	ぎゃあ！　ぼ{08:72}僕の番だ。\nああ神様。僕は{08:90}か受か{08:52}い{08:5A}様に{08:72}ううう。\n<wait>	Gyaah! I-it's my turn.\nOh God. Please, please let me pass... uuugh.\n<wait>			draft	reads: ぎゃあ！　ぼ‥‥僕の番だ。\nああ神様。僕はどうか受かっています様に‥‥ううう。\n<wait>; reads: ぎゃあ！　ぼ‥‥僕の番だ。\nああ神様。僕はどうか受かっています様に‥‥ううう。\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:02	15	795	1FD2	アナウンスの声：	Announcement:			draft	@ours-2026-09-05
+m/MS0055.BIN	0:02	16	813	1FD3	受験番号０８１８　富田安子君。\n会議室より速やかに退室し、試験官と共に{01:2D}{08:71}出頭{08:8E}事。\n<wait>	Examinee number 0818, Tomita Yasuko.\nLeave the conference room at once and report to the\nAdministrator's Office with your examiner.\n<wait>			draft	reads: 受験番号０８１８　富田安子君。\n会議室より速やかに退室し、試験官と共に管理部まで出頭する事。\n<wait>; reads: 受験番号０８１８　富田安子君。\n会議室より速やかに退室し、試験官と共に管理部まで出頭する事。\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:02	17	932	1FD2	受験者女：	Female Examinee:			draft	@ours-2026-09-05
+m/MS0055.BIN	0:02	18	944	1FD3	嘘！　{08:5C}私の番{08:6B}？！\nあーもー、{08:90}と{08:56}なれだわ！！　{08:81}、お先に！\n<wait>	No way! It's my turn already?!\nAaargh, whatever happens, happens!! See you later, then!\n<wait>			draft	reads: 嘘！　もう私の番なの？！\nあーもー、どうとでもなれだわ！！　じゃ、お先に！\n<wait>; reads: 嘘！　もう私の番なの？！\nあーもー、どうとでもなれだわ！！　じゃ、お先に！\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:02	19	1025	1FD2	アナウンスの声：	Announcement:			draft	@ours-2026-09-05
+m/MS0055.BIN	0:02	20	1043	1FD3	受験番号１１０１　	Examinee number 1101, 			draft	@ours-2026-09-05
+m/MS0055.BIN	0:02	21	1067	1F01	君。\n会議室より速やかに退室し、{02:00}詰め所{08:71}来る事。\n<wait>	.\nLeave the conference room at once and report to the\nDevil Buster guard post.\n<wait>			draft	reads: 君。\n会議室より速やかに退室し、デビルバスター詰め所まで来る事。\n<wait>; reads: 君。\n会議室より速やかに退室し、デビルバスター詰め所まで来る事。\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:02	22	1153	1F01	：	:	:	v005	draft	reads: ： @refalign
+m/MS0055.BIN	0:02	23	1157	1FD3	{02:08}私の番だわ。\n{08:4D}{08:81}あ、	......It's my turn.\nWell then, 			draft	reads: ‥‥‥私の番だわ。\nそれじゃあ、; reads: ‥‥‥私の番だわ。\nそれじゃあ、 @ours-2026-09-05
+m/MS0055.BIN	0:02	24	1186	1F01	くん、お先に。\n<wait>	, I'll go on ahead.\n<wait>			draft	reads: くん、お先に。\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:02	25	1228	1F01	もいなく{08:1A}{08:1F}。\n残るは{08:63}{01:3A}。時間の流れが、恐ろしく遅く感じら{08:2F}{08:72}\n<wait>	 is gone too, now.\nOnly I remain. Time seems to crawl by, terrifyingly slowly...\n<wait>			draft	reads: もいなくなってしまった。\n残るは自分ひとり。時間の流れが、恐ろしく遅く感じられる‥‥\n<wait>; reads: もいなくなってしまった。\n残るは自分ひとり。時間の流れが、恐ろしく遅く感じられる‥‥\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:02	26	1318	1FD0	突然轟音が響{08:64}！\n音{08:62}{08:90}やら武器庫の方{08:42}だ。\n	Suddenly, a roar echoed out!\nThe sound seems to have come from the armoury.\n			draft	reads: 突然轟音が響いた！\n音は、どうやら武器庫の方からだ。\n; reads: 突然轟音が響いた！\n音は、どうやら武器庫の方からだ。\n @ours-2026-09-05
 m/MS0055.BIN	0:02	27	1378	1FB2	様子を見に行く		Go have a look	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0055.BIN	0:02	28	1394	1FB2	待機{08:8E}		Remain put	v005		reads: 待機する; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0055.BIN	0:02	29	1422	1FD2	声：	声：	Female Examinee:	v005		reads: 山瀬勇
 m/MS0055.BIN	0:02	30	1428	1FD3	受験番号０９１６　	受験番号０９１６　	M-My turn already? Well, I guess this is it!\n<wait>	v005		
-m/MS0055.BIN	0:02	31	1452	1F01	\n{08:48}にて試験終了。自室にて待機{08:8E}{08:46}。\n<wait>					reads: \nこれにて試験終了。自室にて待機すること。\n<wait>
+m/MS0055.BIN	0:02	31	1452	1F01	\n{08:48}にて試験終了。自室にて待機{08:8E}{08:46}。\n<wait>	.\nThis concludes the exam. Wait in your room.\n<wait>			draft	reads: \nこれにて試験終了。自室にて待機すること。\n<wait> @ours-2026-09-05
 m/MS0055.BIN	0:02	32	1518	1FD2	ＤＢ隊員：		Announcer:	v005		
 m/MS0055.BIN	0:02	33	1530	1FD3	{08:48}で、君の試験は終了だ。\n自室に戻{08:52}、試験結果を待つが{08:7F}。\n<wait>		Applicant NO 1101, Tachibana Yuuka.\nPlease follow the examiner to the Devil Buster Office.\n<wait>	v005		reads: これで、君の試験は終了だ。\n自室に戻って、試験結果を待つがいい。\n<wait>; reads: \nこれにて試験終了。自室にて待機すること。\n<wait>
-m/MS0055.BIN	0:02	34	1629	1F01	{08:62}{01:2E}を飛び出{08:4B}。\n					reads: は、部屋を飛び出した。\n
+m/MS0055.BIN	0:02	34	1629	1F01	{08:62}{01:2E}を飛び出{08:4B}。\n	 burst out of the room.\n			draft	reads: は、部屋を飛び出した。\n @ours-2026-09-05
 m/MS0055.BIN	0:02	35	1678	1F03	{=89}{=19}	{=89}{=19}				reads: これで、君の試験は終了だ。\n自室に戻って、試験結果を待つがいい。\n<wait>
 m/MS0055.BIN	0:02	36	1706	1FD2	学者：		Scientist	v005		reads: は、部屋を飛び出した。\n @refalign
 m/MS0055.BIN	0:02	37	1714	1FD3	{02:08}‥{02:00}か！？\n<wait>	{02:08}‥{02:00}か！？\n<wait>	...I'm up. Well then, see you later, Katsuragi-kun.\n<wait>	v005		reads: ‥‥‥‥デビルバスターか！？\n<wait>
 m/MS0055.BIN	0:02	38	1770	1FB2	助けに来ま{08:4B}		You're safe now	v005		reads: 助けに来ました; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0055.BIN	0:02	39	1784	1FB2	{02:08}	{02:08}	Remain put	v005		reads: ‥‥‥; menu option, declared width 20 columns; reads: ‥‥‥‥デビルバスターか！？\n<wait>
-m/MS0055.BIN	0:02	40	1806	1FD2	学者：					reads: 助けに来ました; menu option, declared width 20 columns
+m/MS0055.BIN	0:02	40	1806	1FD2	学者：	Scientist:			draft	reads: 助けに来ました; menu option, declared width 20 columns @ours-2026-09-05
 m/MS0055.BIN	0:02	41	1814	1FD3	た{08:72}助か{08:12}！　{08:5C}駄目かと思{08:51}よ！！\n<wait>	た{08:72}助か{08:12}！　{08:5C}駄目かと思{08:51}よ！！\n<wait>	Applicant NO 0916, Katsuragi Ayato. The exam is now over.\nPlease return to your room and wait there for further instructions.\n<wait>	v005		reads: た‥‥助かった！！　もう駄目かと思ったよ！！\n<wait>; reads: ‥‥‥; menu option, declared width 20 columns
 m/MS0055.BIN	0:02	42	1857	1FD2	学者：	学者：	Devil Buster:	v005		reads: 
 m/MS0055.BIN	0:02	43	1865	1FD3	突然{01:2B}が出現{08:4A}、私{08:85}{08:53}{08:45}で隠れて{08:64}{08:5F}。\n{08:65}は使え{08:25}し{02:08}‥ああ、{08:48}で助{08:18}。\n<wait>	突然{01:2B}が出現{08:4A}、私{08:85}{08:53}{08:45}で隠れて{08:64}{08:5F}。\n{08:65}は使え{08:25}し{02:08}‥ああ、{08:48}で助{08:18}。\n<wait>	That's you, kid. Return to your room. We'll send you your results later.\n<wait>	v005		reads: 突然ゾンビが出現して、私はずっとここで隠れていたんだ。\n通信は使えないし‥‥‥‥ああ、これで助かった。\n<wait>
-m/MS0055.BIN	0:02	44	1956	1F01	{08:62}何も言わ{08:19}{02:08}‥\n<wait>					reads: は、何も言わなかった‥‥‥‥\n<wait>; reads: は、何も言わなかった‥‥‥‥\n<wait>
+m/MS0055.BIN	0:02	44	1956	1F01	{08:62}何も言わ{08:19}{02:08}‥\n<wait>	 said nothing......\n<wait>			draft	reads: は、何も言わなかった‥‥‥‥\n<wait>; reads: は、何も言わなかった‥‥‥‥\n<wait> @ours-2026-09-05
 m/MS0055.BIN	0:02	45	1981	1FD2	学者：		Scientist:	ours		reads: た‥‥助かった！！　もう駄目かと思ったよ！！\n<wait>
-m/MS0055.BIN	0:02	46	1989	1FD3	き、君、何とか言っ{08:50}{08:90}だ？\nま、{01:27}{02:08}{08:72}！！　ゾ{02:08}{08:72}！？\n<wait>					reads: き、君、何とか言ったらどうだ？\nま、まさか‥‥‥‥‥！！　ゾ‥‥‥‥‥！？\n<wait>; reads: き、君、何とか言ったらどうだ？\nま、まさか‥‥‥‥‥！！　ゾ‥‥‥‥‥！？\n<wait>
-m/MS0055.BIN	0:02	47	2051	1FD0	学者は後ずさっ{08:14}。\n<wait>					reads: 学者は後ずさっている。\n<wait>; reads: 突然ゾンビが出現して、私はずっとここで隠れていたんだ。\n通信は使えないし‥‥‥‥ああ、これで助かった。\n<wait>
-m/MS0055.BIN	0:02	48	2076	1FBA	{08:48}以上不安がらせ{08:54}仕方が{08:25}。\n					reads: これ以上不安がらせても仕方がない。\n; reads: は、何も言わなかった‥‥‥‥\n<wait>
-m/MS0055.BIN	0:02	49	2111	1F01	{08:62}{08:47}階の{01:2B}は駆逐{08:4B}事と、一旦血液検査を{08:4A}{08:42}、\nすでに避難{08:13}住民と、合流{08:4A}もらう事を告{08:44}。\n<wait>					reads: は、この階のゾンビは駆逐した事と、一旦血液検査をしてから、\nすでに避難している住民と、合流してもらう事を告げた。\n<wait>; reads: は、この階のゾンビは駆逐した事と、一旦血液検査をしてから、\nすでに避難している住民と、合流してもらう事を告げた。\n<wait>
+m/MS0055.BIN	0:02	46	1989	1FD3	き、君、何とか言っ{08:50}{08:90}だ？\nま、{01:27}{02:08}{08:72}！！　ゾ{02:08}{08:72}！？\n<wait>	Y-you there, say something, would you?\nD-don't tell me......!! A zom......!?\n<wait>			draft	reads: き、君、何とか言ったらどうだ？\nま、まさか‥‥‥‥‥！！　ゾ‥‥‥‥‥！？\n<wait>; reads: き、君、何とか言ったらどうだ？\nま、まさか‥‥‥‥‥！！　ゾ‥‥‥‥‥！？\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:02	47	2051	1FD0	学者は後ずさっ{08:14}。\n<wait>	The scientist is backing away.\n<wait>			draft	reads: 学者は後ずさっている。\n<wait>; reads: 突然ゾンビが出現して、私はずっとここで隠れていたんだ。\n通信は使えないし‥‥‥‥ああ、これで助かった。\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:02	48	2076	1FBA	{08:48}以上不安がらせ{08:54}仕方が{08:25}。\n	No sense frightening him any further.\n			draft	reads: これ以上不安がらせても仕方がない。\n; reads: は、何も言わなかった‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:02	49	2111	1F01	{08:62}{08:47}階の{01:2B}は駆逐{08:4B}事と、一旦血液検査を{08:4A}{08:42}、\nすでに避難{08:13}住民と、合流{08:4A}もらう事を告{08:44}。\n<wait>	 told him the zombies on this floor had been eliminated, and that\nonce he'd had a blood test, he would join the residents who had already\nevacuated.\n<wait>			draft	reads: は、この階のゾンビは駆逐した事と、一旦血液検査をしてから、\nすでに避難している住民と、合流してもらう事を告げた。\n<wait>; reads: は、この階のゾンビは駆逐した事と、一旦血液検査をしてから、\nすでに避難している住民と、合流してもらう事を告げた。\n<wait> @ours-2026-09-05
 m/MS0055.BIN	0:02	50	2207	1FD2	学者：		Scientist:	ours		reads: き、君、何とか言ったらどうだ？\nま、まさか‥‥‥‥‥！！　ゾ‥‥‥‥‥！？\n<wait>
-m/MS0055.BIN	0:02	51	2215	1FD3	ＺＭＶの検査だな。\n私は{01:2B}に怪我など負わ{03:0C}ては{08:24}が、まあ、{08:4D}が君達の仕事だ。\n言う通りに{08:80}。\n<wait>					reads: ＺＭＶの検査だな。\n私はゾンビに怪我など負わされてはいないが、まあ、それが君達の仕事だ。\n言う通りにしょう。\n<wait>; reads: 学者は後ずさっている。\n<wait>
+m/MS0055.BIN	0:02	51	2215	1FD3	ＺＭＶの検査だな。\n私は{01:2B}に怪我など負わ{03:0C}ては{08:24}が、まあ、{08:4D}が君達の仕事だ。\n言う通りに{08:80}。\n<wait>	A ZMV test, then.\nI wasn't wounded by the zombies or anything, but well, that's your job.\nI'll do as you say.\n<wait>			draft	reads: ＺＭＶの検査だな。\n私はゾンビに怪我など負わされてはいないが、まあ、それが君達の仕事だ。\n言う通りにしょう。\n<wait>; reads: 学者は後ずさっている。\n<wait> @ours-2026-09-05
 m/MS0055.BIN	0:02	52	2314	1FD2	学者：		Scientist:	ours		reads: これ以上不安がらせても仕方がない。\n
-m/MS0055.BIN	0:02	53	2322	1FD3	ふう、{08:48}でや{08:53}まともな場所でひと息付{08:29}。\n<wait>					reads: ふう、これでやっとまともな場所でひと息付ける。\n<wait>; reads: は、この階のゾンビは駆逐した事と、一旦血液検査をしてから、\nすでに避難している住民と、合流してもらう事を告げた。\n<wait>
-m/MS0055.BIN	0:02	54	2377	1F01	{08:62}一旦戻る事に{08:4B}。\n					reads: は、一旦戻る事にした。\n; reads: は、一旦戻る事にした。\n
+m/MS0055.BIN	0:02	53	2322	1FD3	ふう、{08:48}でや{08:53}まともな場所でひと息付{08:29}。\n<wait>	Phew. At last I can catch my breath somewhere decent.\n<wait>			draft	reads: ふう、これでやっとまともな場所でひと息付ける。\n<wait>; reads: は、この階のゾンビは駆逐した事と、一旦血液検査をしてから、\nすでに避難している住民と、合流してもらう事を告げた。\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:02	54	2377	1F01	{08:62}一旦戻る事に{08:4B}。\n	 decided to head back for now.\n			draft	reads: は、一旦戻る事にした。\n; reads: は、一旦戻る事にした。\n @ours-2026-09-05
 m/MS0055.BIN	0:02	55	2401	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: ＺＭＶの検査だな。\n私はゾンビに怪我など負わされてはいないが、まあ、それが君達の仕事だ。\n言う通りにしょう。\n<wait> @refalign
 m/MS0055.BIN	0:02	56	2407	1FD3	{08:5C}{01:32}{08:55}よ。\n<wait>		You can relax. The threat has been dealt with.\n<wait>	v005		reads: もう大丈夫ですよ。\n<wait>; reads: もう大丈夫ですよ。\n<wait> @refalign
 m/MS0055.BIN	0:02	57	2426	1FD2	学者：		Scientist:	ours		reads: ふう、これでやっとまともな場所でひと息付ける。\n<wait>
@@ -110,18 +110,18 @@ m/MS0055.BIN	0:02	68	2716	1FD3	ＺＭＶの検査だな。\n私は{01:2B}に怪�
 m/MS0055.BIN	0:02	69	2815	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
 m/MS0055.BIN	0:02	70	2821	1FD3	御協力{01:2A}ござい{08:5A}。\n<wait>		We appreciate your co-operation.\n<wait>	v005		reads: 御協力ありがとうございます。\n<wait>; reads: ですが、その前に血液検査をしてもらいます。\n<wait> @refalign
 m/MS0055.BIN	0:02	71	2848	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
-m/MS0055.BIN	0:02	72	2854	1FD3	で{08:62}戻ろう。\n<wait>					reads: では、戻ろう。\n<wait>; reads: ＺＭＶの検査だな。\n私はゾンビに怪我など負わされてはいないが、まあ、それが君達の仕事だ。\n言う通りにしょう。\n<wait>
-m/MS0055.BIN	0:02	73	2873	1FD2	一同：					reads: 西野：
-m/MS0055.BIN	0:02	74	2881	1FD3	了解！\n<wait>					reads: 御協力ありがとうございます。\n<wait>
+m/MS0055.BIN	0:02	72	2854	1FD3	で{08:62}戻ろう。\n<wait>	Well then, let's head back.\n<wait>			draft	reads: では、戻ろう。\n<wait>; reads: ＺＭＶの検査だな。\n私はゾンビに怪我など負わされてはいないが、まあ、それが君達の仕事だ。\n言う通りにしょう。\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:02	73	2873	1FD2	一同：	All:			draft	reads: 西野： @ours-2026-09-05
+m/MS0055.BIN	0:02	74	2881	1FD3	了解！\n<wait>	Roger!\n<wait>			draft	reads: 御協力ありがとうございます。\n<wait> @ours-2026-09-05
 m/MS0055.BIN	0:03	0	11	1F03	{01:FF}	{01:FF}				reads: 
 m/MS0055.BIN	0:03	1	39	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 英美： @refalign
 m/MS0055.BIN	0:03	2	45	1FD3	扉を溶接し{08:5A}！\n<wait>		I'm finished with the door!\n<wait>	v005		reads: 扉を溶接します！\n<wait>; reads: 扉を溶接します！\n<wait> @refalign
 m/MS0055.BIN	0:03	3	66	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
 m/MS0055.BIN	0:03	4	72	1FD3	よし！　{08:34}と{08:00}{08:62}他のエレベーターや階段の溶接に向かえ！\n<wait>		Good. Kirishima, Hayasaka. Go and seal the other entrances as well.\n<wait>	v005		reads: よし！　桐島と早坂は、他のエレベーターや階段の溶接に向かえ！\n<wait>; reads: よし！　桐島と早坂は、他のエレベーターや階段の溶接に向かえ！\n<wait> @refalign
 m/MS0055.BIN	0:03	5	135	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
-m/MS0055.BIN	0:03	6	141	1FD3	{02:0C}{08:62}武器庫に向かう！\n<wait>					reads: 我々は、武器庫に向かう！\n<wait>; reads: 我々は、武器庫に向かう！\n<wait>
-m/MS0055.BIN	0:03	7	170	1FD2	一同：					
-m/MS0055.BIN	0:03	8	178	1FD3	了解！\n<wait>					
+m/MS0055.BIN	0:03	6	141	1FD3	{02:0C}{08:62}武器庫に向かう！\n<wait>	We're heading for the armoury!\n<wait>			draft	reads: 我々は、武器庫に向かう！\n<wait>; reads: 我々は、武器庫に向かう！\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:03	7	170	1FD2	一同：	All:			draft	@ours-2026-09-05
+m/MS0055.BIN	0:03	8	178	1FD3	了解！\n<wait>	Roger!\n<wait>			draft	@ours-2026-09-05
 m/MS0055.BIN	0:03	9	286	1F03						
 m/MS0055.BIN	0:03	10	314	1FD0	{08:45}を溶接し{08:19}ら、何の意味も無く{08:1A}{08:83}。\n<wait>		There won't be a point to any of this unless we seal this area off.\n<wait>	v005		reads: ここを溶接しなかったら、何の意味も無くなってしまう。\n<wait>; reads: ここを溶接しなかったら、何の意味も無くなってしまう。\n<wait> @refalign
 m/MS0055.BIN	0:03	11	363	1F01	{08:62}Ｂ７Ｆへの扉を溶接{08:4B}。\n<wait>		You welded the door leading to B7F shut.\n<wait>	v005		reads: は、Ｂ７Ｆへの扉を溶接した。\n<wait>; reads: は、Ｂ７Ｆへの扉を溶接した。\n<wait> @rebase-tagdiff @refalign
@@ -130,9 +130,9 @@ m/MS0055.BIN	0:03	13	423	1FD3	扉を溶接し{08:5A}！\n<wait>		I'm finished wi
 m/MS0055.BIN	0:03	14	493	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 英美： @refalign
 m/MS0055.BIN	0:03	15	499	1FD3	ＯＫ{08:55}！\n<wait>		Alright!\n<wait>	v005		reads: ＯＫです！\n<wait>; reads: ＯＫです！\n<wait> @refalign
 m/MS0055.BIN	0:03	16	514	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
-m/MS0055.BIN	0:03	17	520	1FD3	よし！　{01:2B}の駆逐に向かうぞ！\n<wait>					reads: よし！　ゾンビの駆逐に向かうぞ！\n<wait>; reads: よし！　ゾンビの駆逐に向かうぞ！\n<wait>
-m/MS0055.BIN	0:03	18	557	1FD2	一同：					
-m/MS0055.BIN	0:03	19	565	1FD3	了解！！\n<wait>					
+m/MS0055.BIN	0:03	17	520	1FD3	よし！　{01:2B}の駆逐に向かうぞ！\n<wait>	Right! We move out to eliminate the zombies!\n<wait>			draft	reads: よし！　ゾンビの駆逐に向かうぞ！\n<wait>; reads: よし！　ゾンビの駆逐に向かうぞ！\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:03	18	557	1FD2	一同：	All:			draft	@ours-2026-09-05
+m/MS0055.BIN	0:03	19	565	1FD3	了解！！\n<wait>	Roger!!\n<wait>			draft	@ours-2026-09-05
 m/MS0055.BIN	0:03	20	590	1F03	{01:FF}	{01:FF}				reads: 
 m/MS0055.BIN	0:03	21	618	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 英美： @refalign
 m/MS0055.BIN	0:03	22	624	1FD3	扉の溶接を解き{08:5A}{08:72}\n<wait>		Let me just get this thing open real quick, and...\n<wait>	v005		reads: 扉の溶接を解きます‥‥\n<wait>; reads: 扉の溶接を解きます‥‥\n<wait> @refalign
@@ -148,43 +148,43 @@ m/MS0055.BIN	0:05	2	96	1FBA	階段で行{08:51}方が安全{08:8C}。\n<wait>		I
 m/MS0055.BIN	0:05	3	128	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 英美： @refalign
 m/MS0055.BIN	0:05	4	134	1FD3	エレベーターは危険だよ。階段で行こう。\n<wait>		The elevator's too dangerous. Let's take the stairs.\n<wait>	v005		@refalign
 m/MS0055.BIN	0:05	5	182	1FD0	扉はしっかりと溶接{03:0C}{08:14}{08:72}\n<wait>		The door is welded shut.\n<wait>	v005		reads: 扉はしっかりと溶接されている‥‥\n<wait>; reads: 扉はしっかりと溶接されている‥‥\n<wait> @refalign
-m/MS0055.BIN	0:06	0	6	1FD0	管制{08:05}室{08:42}、退室{08:4B}途端、					reads: 管制コンピュータ室から、退室した途端、; reads: 管制コンピュータ室から、退室した途端、
-m/MS0055.BIN	0:06	1	36	1F01	{08:62}誰かとぶつ{08:18}。\n<wait>					reads: は、誰かとぶつかった。\n<wait>; reads: は、誰かとぶつかった。\n<wait>
-m/MS0055.BIN	0:06	2	83	1FD2	美莉：					
-m/MS0055.BIN	0:06	3	91	1FD3	御父様ーー！！！\n<wait>					
-m/MS0055.BIN	0:06	4	138	1FD2	可燐：					
-m/MS0055.BIN	0:06	5	146	1FD3	{08:48}{08:48}、美莉！　待ちな{08:49}！\n<wait>					reads: これこれ、美莉！　待ちなさい！\n<wait>; reads: これこれ、美莉！　待ちなさい！\n<wait>
-m/MS0055.BIN	0:06	6	179	1FD2	美莉：					
-m/MS0055.BIN	0:06	7	187	1FD3	{08:75}早く早く！　御父様！\n御約束{08:4B}でしょ、ファームに連れて{08:52}ー！\n<wait>					reads: ねえ早く早く！　御父様！\n御約束したでしょ、ファームに連れてってー！\n<wait>; reads: ねえ早く早く！　御父様！\n御約束したでしょ、ファームに連れてってー！\n<wait>
-m/MS0055.BIN	0:06	8	273	1FD0	二人{08:62}管制{08:05}ー室へと入っ{08:21}{02:08}‥\n<wait>					reads: 二人は、管制コンピューター室へと入っていった‥‥‥‥\n<wait>; reads: 二人は、管制コンピューター室へと入っていった‥‥‥‥\n<wait>
-m/MS0055.BIN	0:06	9	340	1F01	：		:	v005		reads: ： @rebase-tagdiff @refalign
+m/MS0055.BIN	0:06	0	6	1FD0	管制{08:05}室{08:42}、退室{08:4B}途端、	The moment he stepped out of the control computer room, 			draft	reads: 管制コンピュータ室から、退室した途端、; reads: 管制コンピュータ室から、退室した途端、 @ours-2026-09-05
+m/MS0055.BIN	0:06	1	36	1F01	{08:62}誰かとぶつ{08:18}。\n<wait>	 bumped into someone.\n<wait>			draft	reads: は、誰かとぶつかった。\n<wait>; reads: は、誰かとぶつかった。\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:06	2	83	1FD2	美莉：	Miri:			draft	@ours-2026-09-05
+m/MS0055.BIN	0:06	3	91	1FD3	御父様ーー！！！\n<wait>	Fatherrr!!!\n<wait>			draft	@ours-2026-09-05
+m/MS0055.BIN	0:06	4	138	1FD2	可燐：	Karin:			draft	@ours-2026-09-05
+m/MS0055.BIN	0:06	5	146	1FD3	{08:48}{08:48}、美莉！　待ちな{08:49}！\n<wait>	Now, now, Miri! Wait!\n<wait>			draft	reads: これこれ、美莉！　待ちなさい！\n<wait>; reads: これこれ、美莉！　待ちなさい！\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:06	6	179	1FD2	美莉：	Miri:			draft	@ours-2026-09-05
+m/MS0055.BIN	0:06	7	187	1FD3	{08:75}早く早く！　御父様！\n御約束{08:4B}でしょ、ファームに連れて{08:52}ー！\n<wait>	Come on, hurry, hurry, Father!\nYou promised, remember? You said you'd take me to the Farm!\n<wait>			draft	reads: ねえ早く早く！　御父様！\n御約束したでしょ、ファームに連れてってー！\n<wait>; reads: ねえ早く早く！　御父様！\n御約束したでしょ、ファームに連れてってー！\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:06	8	273	1FD0	二人{08:62}管制{08:05}ー室へと入っ{08:21}{02:08}‥\n<wait>	The two of them went into the control computer room......\n<wait>			draft	reads: 二人は、管制コンピューター室へと入っていった‥‥‥‥\n<wait>; reads: 二人は、管制コンピューター室へと入っていった‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:06	9	340	1F01	：	:	:	v005	draft	reads: ： @rebase-tagdiff @refalign
 m/MS0055.BIN	0:06	10	344	1FD3	あの子は私の妹{08:6B}。腹違い{08:74}ど{02:08}。\n<wait>		That girl just now was my little sister.\nWell, half-sister, technically. We have different mothers...\n<wait>	v005		reads: あの子は私の妹なの。腹違いだけど‥‥‥。\n<wait>; reads: あの子は私の妹なの。腹違いだけど‥‥‥。\n<wait> @refalign
-m/MS0055.BIN	0:06	11	391	1F01	：		:	v005		reads: ： @rebase-tagdiff @refalign
+m/MS0055.BIN	0:06	11	391	1F01	：	:	:	v005	draft	reads: ： @rebase-tagdiff @refalign
 m/MS0055.BIN	0:06	12	395	1FD3	父{08:62}私の母と離婚前{08:42}、あの女性{08:72}可燐さんと交際{08:4A}いて、\n母と別{08:60}直後に、美莉が生ま{08:60}の。\n<wait>		As for the woman, she's dad's new wife. He married her pretty much\nimmediately after divorcing mom, and had a child with her shortly after.\n<wait>	v005		reads: 父は、私の母と離婚前から、あの女性‥‥可燐さんと交際していて、\n母と別れた直後に、美莉が生まれたの。\n<wait>; reads: 父は、私の母と離婚前から、あの女性‥‥可燐さんと交際していて、\n母と別れた直後に、美莉が生まれたの。\n<wait> @refalign
-m/MS0055.BIN	0:06	13	497	1F01	：		:	v005		reads: ： @rebase-tagdiff @refalign
+m/MS0055.BIN	0:06	13	497	1F01	：	:	:	v005	draft	reads: ： @rebase-tagdiff @refalign
 m/MS0055.BIN	0:06	14	501	1FD3	私は父の傲慢さや、身勝手さが許せなく{08:52}{08:72}そ{08:4A}、黙{08:52}尽く{08:4A}{08:64}、\n母を裏切{08:51}事が許せなくて{02:08}\n<wait>{08:4D}で、あの家を出たのよ。\n<wait>		Can you even imagine being so arrogant,\nso full of yourself as to betray another person like that?\n<wait>That's the reason why I left home.\nI simply couldn't standing licing with him any longer...\n<wait>	v005		reads: 私は父の傲慢さや、身勝手さが許せなくって‥‥そして、黙って尽くしていた、\n母を裏切った事が許せなくて‥‥‥\n<wait>それで、あの家を出たのよ。\n<wait>; reads: 私は父の傲慢さや、身勝手さが許せなくって‥‥そして、黙って尽くしていた、\n母を裏切った事が許せなくて‥‥‥\n<wait>それで、あの家を出たのよ。\n<wait> @refalign
-m/MS0055.BIN	0:06	15	632	1F01	：		:	v005		reads: ： @rebase-tagdiff @refalign
+m/MS0055.BIN	0:06	15	632	1F01	：	:	:	v005	draft	reads: ： @rebase-tagdiff @refalign
 m/MS0055.BIN	0:06	16	636	1FD3	父み{08:4E}な、{08:63}{08:74}が安全な場所にいて、他の{02:0B}の命を当然の様に操る{08:6A}て、\n{08:7A}{02:0B}には絶対なりたく{08:25}！\n<wait>		I promised myself that I would never become like that scumbag.\nHe uses other people like they were tools, while never putting\nhis own safety on the line!\n<wait>	v005		reads: 父みたいな、自分だけが安全な場所にいて、他の人間の命を当然の様に操るなんて、\nそんな人間には絶対なりたくない！\n<wait>; reads: 父みたいな、自分だけが安全な場所にいて、他の人間の命を当然の様に操るなんて、\nそんな人間には絶対なりたくない！\n<wait> @refalign
-m/MS0055.BIN	0:06	17	742	1F01	：		:	v005		reads: ： @rebase-tagdiff @refalign
-m/MS0055.BIN	0:06	18	746	1FD3	{08:72}だ{08:42}、{02:00}に志願{08:4B}の。\n<wait>					reads: ‥‥だから、デビルバスターに志願したの。\n<wait>; reads: ‥‥だから、デビルバスターに志願したの。\n<wait>
-m/MS0055.BIN	0:06	19	777	1FD0	勢いに任{08:67}喋{08:51}{08:5E}の、{08:63}の今語{08:51}事が、無様な愚痴で{08:86}{08:25}事に\n気づき、					reads: 勢いに任せて喋ったものの、自分の今語った事が、無様な愚痴でしかない事に\n気づき、; reads: 勢いに任せて喋ったものの、自分の今語った事が、無様な愚痴でしかない事に\n気づき、
-m/MS0055.BIN	0:06	20	848	1F01	は赤面{08:4B}。\n<wait>					reads: は赤面した。\n<wait>; reads: は赤面した。\n<wait>
-m/MS0055.BIN	0:06	21	873	1F01	：		:	v005		reads: ： @refalign
-m/MS0055.BIN	0:06	22	877	1FD3	私{08:72}今日は{08:90}かし{08:2B}わ。ごめんな{08:49}。\n					reads: 私‥‥今日はどうかしてるわ。ごめんなさい。\n; reads: 私‥‥今日はどうかしてるわ。ごめんなさい。\n
-m/MS0055.BIN	0:06	23	918	1F01	くんに無関係な、つまら{08:25}事勝手に話{08:4A}。\n<wait>					reads: くんに無関係な、つまらない事勝手に話して。\n<wait>; reads: くんに無関係な、つまらない事勝手に話して。\n<wait>
-m/MS0055.BIN	0:06	24	971	1F01	：		:	v005		reads: ： @refalign
-m/MS0055.BIN	0:06	25	975	1FD3	あの、そ{08:72}{08:4D}{08:81}あ、私、失礼{08:8E}わ。\n<wait>					reads: あの、そ‥‥それじゃあ、私、失礼するわ。\n<wait>; reads: あの、そ‥‥それじゃあ、私、失礼するわ。\n<wait>
-m/MS0055.BIN	0:06	26	1020	1FD0	{08:63}の言動を恥じ、					reads: 自分の言動を恥じ、; reads: 自分の言動を恥じ、
-m/MS0055.BIN	0:06	27	1042	1F01	は{08:79}場を去{08:52}行{08:51}。\n<wait>					reads: はその場を去って行った。\n<wait>; reads: はその場を去って行った。\n<wait>
-m/MS0055.BIN	0:07	0	8	1F01	：		:	v005		reads: ： @rebase-tagdiff @refalign
-m/MS0055.BIN	0:07	1	12	1FD3	ちょ、ちょ{08:53}					reads: ちょ、ちょっと; reads: ちょ、ちょっと
-m/MS0055.BIN	0:07	2	30	1F01	くん。\n寄り道し{08:2B}場合{08:81}{08:25}わ！\n<wait>					reads: くん。\n寄り道してる場合じゃないわ！\n<wait>; reads: くん。\n寄り道してる場合じゃないわ！\n<wait>
+m/MS0055.BIN	0:06	17	742	1F01	：	:	:	v005	draft	reads: ： @rebase-tagdiff @refalign
+m/MS0055.BIN	0:06	18	746	1FD3	{08:72}だ{08:42}、{02:00}に志願{08:4B}の。\n<wait>	...That's why I volunteered for the Devil Busters.\n<wait>			draft	reads: ‥‥だから、デビルバスターに志願したの。\n<wait>; reads: ‥‥だから、デビルバスターに志願したの。\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:06	19	777	1FD0	勢いに任{08:67}喋{08:51}{08:5E}の、{08:63}の今語{08:51}事が、無様な愚痴で{08:86}{08:25}事に\n気づき、	Having let it all pour out, she realised that what she had just said\nwas nothing but an ugly rant, and 			draft	reads: 勢いに任せて喋ったものの、自分の今語った事が、無様な愚痴でしかない事に\n気づき、; reads: 勢いに任せて喋ったものの、自分の今語った事が、無様な愚痴でしかない事に\n気づき、 @ours-2026-09-05
+m/MS0055.BIN	0:06	20	848	1F01	は赤面{08:4B}。\n<wait>	 blushed.\n<wait>			draft	reads: は赤面した。\n<wait>; reads: は赤面した。\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:06	21	873	1F01	：	:	:	v005	draft	reads: ： @refalign
+m/MS0055.BIN	0:06	22	877	1FD3	私{08:72}今日は{08:90}かし{08:2B}わ。ごめんな{08:49}。\n	I... I'm not myself today. I'm sorry,\n			draft	reads: 私‥‥今日はどうかしてるわ。ごめんなさい。\n; reads: 私‥‥今日はどうかしてるわ。ごめんなさい。\n @ours-2026-09-05
+m/MS0055.BIN	0:06	23	918	1F01	くんに無関係な、つまら{08:25}事勝手に話{08:4A}。\n<wait>	, rambling about nonsense that has nothing to do with you.\n<wait>			draft	reads: くんに無関係な、つまらない事勝手に話して。\n<wait>; reads: くんに無関係な、つまらない事勝手に話して。\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:06	24	971	1F01	：	:	:	v005	draft	reads: ： @refalign
+m/MS0055.BIN	0:06	25	975	1FD3	あの、そ{08:72}{08:4D}{08:81}あ、私、失礼{08:8E}わ。\n<wait>	Um, s... so, I'll be going now.\n<wait>			draft	reads: あの、そ‥‥それじゃあ、私、失礼するわ。\n<wait>; reads: あの、そ‥‥それじゃあ、私、失礼するわ。\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:06	26	1020	1FD0	{08:63}の言動を恥じ、	Ashamed of her outburst, 			draft	reads: 自分の言動を恥じ、; reads: 自分の言動を恥じ、 @ours-2026-09-05
+m/MS0055.BIN	0:06	27	1042	1F01	は{08:79}場を去{08:52}行{08:51}。\n<wait>	 walked away.\n<wait>			draft	reads: はその場を去って行った。\n<wait>; reads: はその場を去って行った。\n<wait> @ours-2026-09-05
+m/MS0055.BIN	0:07	0	8	1F01	：	:	:	v005	draft	reads: ： @rebase-tagdiff @refalign
+m/MS0055.BIN	0:07	1	12	1FD3	ちょ、ちょ{08:53}	W-wait a second, 			draft	reads: ちょ、ちょっと; reads: ちょ、ちょっと @ours-2026-09-05
+m/MS0055.BIN	0:07	2	30	1F01	くん。\n寄り道し{08:2B}場合{08:81}{08:25}わ！\n<wait>	.\nThis is no time for detours!\n<wait>			draft	reads: くん。\n寄り道してる場合じゃないわ！\n<wait>; reads: くん。\n寄り道してる場合じゃないわ！\n<wait> @ours-2026-09-05
 m/MS0055.BIN	0:07	3	74	1F03						
-m/MS0055.BIN	0:07	4	84	1F01	：		:	v005		reads: ： @rebase-tagdiff @refalign
+m/MS0055.BIN	0:07	4	84	1F01	：	:	:	v005	draft	reads: ： @rebase-tagdiff @refalign
 m/MS0055.BIN	0:07	5	88	1FD3	早くし{08:25}と、本当に遅刻しちゃう。\n詰所に行きま{08:80}！\n<wait>		We've gotta hurry to the DB office.\n<wait>	v005		reads: 早くしないと、本当に遅刻しちゃう。\n詰所に行きましょう！\n<wait>; reads: 早くしないと、本当に遅刻しちゃう。\n詰所に行きましょう！\n<wait> @refalign
-m/MS0055.BIN	0:07	6	175	1F01	：		:	v005		reads: ： @rebase-tagdiff @refalign
+m/MS0055.BIN	0:07	6	175	1F01	：	:	:	v005	draft	reads: ： @rebase-tagdiff @refalign
 m/MS0055.BIN	0:07	7	179	1FD3	早く{08:03}さんの{01:2E}に行かなきゃ。\n		We've gotta hurry to Emi's room.\n	v005		reads: 早く英美さんの部屋に行かなきゃ。\n; reads: 早く英美さんの部屋に行かなきゃ。\n @refalign
 m/MS0055.BIN	0:07	8	234	1F04						
-m/MS0055.BIN	0:07	9	244	1F01	：		:	v005		reads: ： @rebase-tagdiff @refalign
+m/MS0055.BIN	0:07	9	244	1F01	：	:	:	v005	draft	reads: ： @rebase-tagdiff @refalign
 m/MS0055.BIN	0:07	10	248	1FD3	早く詰所に戻りま{08:80}。\n		We've gotta hurry back to the office.\n	v005		reads: 早く詰所に戻りましょう。\n; reads: 早く詰所に戻りましょう。\n @refalign
 m/MS0055.BIN	0:08	0	21	09						
