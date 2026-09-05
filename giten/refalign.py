@@ -61,11 +61,14 @@ def _is_name(text: str, english: bool) -> bool:
 
 
 def _units(seq, english):
-    """[(speaker key, name item or None, [body items])] for one run of text spans."""
+    """[(speaker key, name item or None, [body items])] for one run of text
+    spans.  An item is ``(idx, text, key)``; for Japanese the key of a name span
+    is the ``1F01`` instruction that printed the name (its operand bytes), since
+    the span itself is just the colon."""
     res = [("^", None, [])]
     for item in seq:
         if _is_name(item[1], english):
-            res.append((item[1].strip(), item, []))
+            res.append((item[1].strip() if english else item[2], item, []))
         else:
             res[-1][2].append(item)
     return res
@@ -113,11 +116,26 @@ def _pair_run(jp, en, out, speakers=None):
 def _segments(spans):
     """[(anchor span or None, [text spans])]: the text runs between structural spans."""
     out = [(None, [])]
-    for item in spans:                     # item = (idx, tag, text)
+    for item in spans:                     # item = (idx, tag, text, key)
         if _structural(item[1]):
             out.append((item, []))
         else:
-            out[-1][1].append((item[0], item[2]))
+            out[-1][1].append((item[0], item[2], item[3]))
+    return out
+
+
+def _spans_with_keys(rec):
+    """(idx, tag, text, speaker key) per span; the key is the raw bytes of the
+    ``1F01`` right before the span when there is one, else the text."""
+    out = []
+    for sp in rec.spans:
+        text = script.span_text(rec, sp)
+        key = text.strip()
+        if sp.tok_lo > 0:
+            prev = rec.tokens[sp.tok_lo - 1]
+            if prev.kind == "op" and prev.idx == 0x101:
+                key = "1F01:" + rec.data[prev.off:prev.end].hex()
+        out.append((sp.idx, sp.tag, text, key))
     return out
 
 
@@ -139,8 +157,7 @@ def learn_speakers(pairs) -> "dict[str, str]":
 def text_runs(a: "script.Rec", b: "script.Rec"):
     """The paired text runs of two records: ``[(jp run, en run)]`` between
     matching structural anchors, plus ``[(jp anchor idx, en text)]``."""
-    ja = [(sp.idx, sp.tag, script.span_text(a, sp)) for sp in a.spans]
-    jb = [(sp.idx, sp.tag, script.span_text(b, sp)) for sp in b.spans]
+    ja, jb = _spans_with_keys(a), _spans_with_keys(b)
     sa, sb = _segments(ja), _segments(jb)
     sm = difflib.SequenceMatcher(None, [x[0][1] if x[0] else "^" for x in sa],
                                  [x[0][1] if x[0] else "^" for x in sb], autojunk=False)
