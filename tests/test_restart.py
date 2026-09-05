@@ -108,6 +108,16 @@ def test_release_exe_carries_the_overlay_hook_and_dev_adds_the_tracer():
     assert b"timeBeginPeriod\0" in blob and b"winmm.dll\0" in blob
     # the plain locale patches are still there underneath
     assert rel[0x509A9] == 0x80 and rel[0x59DE0:0x59DE5] == bytes.fromhex("68a4030000")
+    # the English character names live in .nam and every default-name push points there
+    from giten.exe import names
+    nam = pe.section(".nam"); nam_va = pe.imagebase + nam["vaddr"]
+    for off, _, jp, given in names.sites(org):
+        if jp == "":
+            continue
+        tgt = struct.unpack_from("<I", rel, off)[0]
+        assert nam_va <= tgt < nam_va + nam["vsize"], jp
+        assert pe.cstring_at_va(tgt) == ((" " if given else "") + names.NAMES[jp]).encode("ascii"), jp
+    assert pe.cstring_at_va(struct.unpack_from("<I", rel, names.sites(org)[1][0])[0]) == b"Katsuragi"
     # dev = release + .trc + the three exec_token redirects, nothing else
     pe2 = PE(dev, "dev")
     sec2 = pe2.section(".trc")
@@ -116,7 +126,7 @@ def test_release_exe_carries_the_overlay_hook_and_dev_adds_the_tracer():
     _calls_go_to(dev, pe2, tracer.CALL_SITES, va2)
     _calls_go_to(dev, pe2, tracer.FETCH_SITES, va)
     diffs = [i for i in range(len(rel)) if rel[i] != dev[i]]
-    assert set(diffs) <= {pe2.va2off(s) + k for s in tracer.CALL_SITES for k in (1, 2, 3, 4)} | set(range(0x1F0, 0x2C0)) | set(range(0xC0, 0x120))   # section headers incl. the 7th
+    assert set(diffs) <= {pe2.va2off(s) + k for s in tracer.CALL_SITES for k in (1, 2, 3, 4)} | set(range(0x1F0, 0x2E0)) | set(range(0xC0, 0x120))   # section headers incl. the 8th (.trc after .nam)
 
 
 def test_trace_decoder_maps_a_synthetic_record_back_to_its_span():
