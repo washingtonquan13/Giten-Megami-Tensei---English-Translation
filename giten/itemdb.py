@@ -26,6 +26,7 @@ byte-exactly but are not translatable.
 """
 from __future__ import annotations
 
+import os
 import struct
 from dataclasses import dataclass
 
@@ -136,3 +137,33 @@ def build(records: list[Record], strings=None, *, wide: bool = False) -> bytes:
     for blob in blobs:
         out += blob
     return bytes(out)
+
+
+#: the loader allocates this much for the concatenated chain (giten/exe/database.py)
+BUF_SIZE = 0x20000
+
+#: keep each container comfortably inside the u16 header word
+CHUNK = 0x8000
+
+
+def source_body(original_ddswin: str) -> bytes:
+    """The original ``et/ET0001.BIN`` container body."""
+    from . import container
+    path = os.path.join(original_ddswin, "et", "ET0001.BIN")
+    with open(path, "rb") as fh:
+        return container.split(fh.read())[0][0].body
+
+
+def pack_file(records, strings=None) -> bytes:
+    """Records -> the bytes of ``et/et0102.bin``.
+
+    A ``u32`` offset table (which only the patched loader can read) split
+    across as many containers as it takes, since the container header is a
+    ``u16`` and the point of the exercise is to be bigger than that.
+    """
+    from . import container
+    body = build(records, strings, wide=True)
+    if len(body) > BUF_SIZE:
+        raise ItemDbError("body is %d bytes; the loader allocates %d" % (len(body), BUF_SIZE))
+    chunks = [body[i:i + CHUNK] for i in range(0, len(body), CHUNK)] or [b""]
+    return container.join(chunks)

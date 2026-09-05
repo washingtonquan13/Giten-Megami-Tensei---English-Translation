@@ -96,6 +96,10 @@ def make_parser():
     p.add_argument("--out", default=None, help="default build/overlay.dat")
     _common(p)
 
+    p = sub.add_parser("itemdb", help="the item database -> et/et0102.bin (English builds)")
+    p.add_argument("--out", default=None, help="default build/en/et/et0102.bin")
+    _common(p)
+
     p = sub.add_parser("exe", help="build patched exes from docs/exe-patches.md")
     p.add_argument("which", choices=("base", "release", "dev"))
     p.add_argument("--out", default=None, help="default build/exe/")
@@ -171,6 +175,20 @@ def main(argv=None) -> int:
         return 0
     if args.cmd == "exe":
         print("built " + exepatch.build(args.which, args.out))
+        return 0
+    if args.cmd == "itemdb":
+        from . import itemdb
+        from .exe import database
+        database.check_free(os.path.join(paths.ORIGINAL_DDSWIN, "et"))
+        recs = itemdb.parse(itemdb.source_body(paths.ORIGINAL_DDSWIN))
+        blob = itemdb.pack_file(recs)
+        out = args.out or os.path.join(paths.BUILD_DIR, "en", "et", "et%04x.bin" % database.ET_ID)
+        os.makedirs(os.path.dirname(out), exist_ok=True)
+        with open(out, "wb") as fh:
+            fh.write(blob)
+        if not args.quiet:
+            n = sum(1 for r in recs if r.translatable)
+            print("wrote %s: %d bytes, %d records (%d translatable)" % (out, len(blob), len(recs), n))
         return 0
     if args.cmd == "overlay":
         from . import overlay, tables
