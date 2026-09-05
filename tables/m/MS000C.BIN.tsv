@@ -18,7 +18,7 @@ m/MS000C.BIN	0:00	11	263	1FB2	早く行かなきゃ		Let's hurry	v005		menu opti
 m/MS000C.BIN	0:00	12	279	1FB2	{01:32}だよ		It'll be fine	v005		reads: 大丈夫だよ; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS000C.BIN	0:00	13	313	1F01	：	:	:	v005	draft	reads: ：; reads: 大丈夫だよ; menu option, declared width 20 columns @rebase-new @refalign
 m/MS000C.BIN	0:00	14	317	1FD3	そうしま{08:80}。\n<wait>	Let's do that.\n<wait>	Right. Hehehe... Sorry.\n<wait>	v005	draft	reads: そうしましょう。\n<wait> @ours-2026-09-05
-m/MS000C.BIN	0:00	15	344	1F01	{08:62}急いで仕度を整{08:41}。\n<wait>		You leap up and quickly get yourself ready.\n<wait>	v005		reads: は、急いで仕度を整えた。\n<wait>; reads: ： @refalign
+m/MS000C.BIN	0:00	15	344	1F01	{08:62}急いで仕度を整{08:41}。\n<wait>	 hurriedly got ready.\n<wait>	You leap up and quickly get yourself ready.\n<wait>	v005	draft	reads: は、急いで仕度を整えた。\n<wait>; reads: ： @refalign @seamfix-2026-09-05
 m/MS000C.BIN	0:00	16	379	1F01	：	:	:	v005	draft	reads: ：; reads: そうしましょう。\n<wait> @refalign
 m/MS000C.BIN	0:00	17	389	1F01	くん、忘れ物とか無い？\n	, have you got everything?\n	Did you get everything, Katsuragi-kun?\n	v005	draft	reads: くん、忘れ物とか無い？\n; reads: は、急いで仕度を整えた。\n<wait> @refalign @ours-2026-09-05
 m/MS000C.BIN	0:00	18	428	1FB2	うん、無いよ		Yeah, yeah	v005		menu option, declared width 20 columns; reads: ： @refalign
@@ -43,8 +43,8 @@ m/MS000C.BIN	0:00	36	889	1FB2	よし行こう		Alright	v005		menu option, declar
 m/MS000C.BIN	0:00	37	901	1FB2	先に行{08:52}て		You go ahead	v005		reads: 先に行ってて; menu option, declared width 20 columns; reads: ごめんなさい‥‥‥‥行きましょう。\n @refalign
 m/MS000C.BIN	0:00	38	939	1F01	：	:	:	v005	draft	reads: ： @rebase-new @refalign
 m/MS000C.BIN	0:00	39	943	1FD3	えっ！　{08:7A}{02:08}‥。\n<wait>		Huh? S-Seriously?\n<wait>	v005		reads: えっ！　そんな‥‥‥‥。\n<wait>; reads: 駄目よ！\nそれじゃ、知ってる人ばかりだから甘えてるって思われるわ。\n<wait> @refalign
-m/MS000C.BIN	0:00	40	974	1F01	の顔が、みるみるうちに悲しみに染まる。\n<wait>		Yuuka appears quite saddened by your response.\n<wait>	v005		reads: の顔が、みるみるうちに悲しみに染まる。\n<wait>; reads: ： @rebase-tagdiff @refalign
-m/MS000C.BIN	0:00	41	1025	1F01	{08:62}仕方なく一緒に詰所に行く事にし、急いで身支度を整{08:41}。\n<wait>		You decide that it would be better to head out with her after all.\n<wait>	v005		reads: は、仕方なく一緒に詰所に行く事にし、急いで身支度を整えた。\n<wait>; reads: 早く行きましょうよ。\n @rebase-tagdiff @refalign
+m/MS000C.BIN	0:00	40	974	1F01	の顔が、みるみるうちに悲しみに染まる。\n<wait>	's face filled with sadness in an instant.\n<wait>	Yuuka appears quite saddened by your response.\n<wait>	v005	draft	reads: の顔が、みるみるうちに悲しみに染まる。\n<wait>; reads: ： @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS000C.BIN	0:00	41	1025	1F01	{08:62}仕方なく一緒に詰所に行く事にし、急いで身支度を整{08:41}。\n<wait>	 gave in, decided to go to the post with her, and got ready in haste.\n<wait>	You decide that it would be better to head out with her after all.\n<wait>	v005	draft	reads: は、仕方なく一緒に詰所に行く事にし、急いで身支度を整えた。\n<wait>; reads: 早く行きましょうよ。\n @rebase-tagdiff @refalign @seamfix-2026-09-05
 m/MS000C.BIN	0:00	42	1094	1F01	：	:	:	v005	draft	reads: ：; menu option, declared width 20 columns @rebase-tagdiff @refalign
 m/MS000C.BIN	0:00	43	1098	1FD3	{08:4D}{08:81}あ{08:72}行きま{08:80}{08:72}。\n		Err, alright... Let's get going...\n	v005		reads: それじゃあ‥‥行きましょう‥‥。\n; reads: 先に行ってて; menu option, declared width 20 columns @refalign
 m/MS000C.BIN	0:00	44	1176	1F01	：	:	Yuuka:	v005	draft	reads: ：; reads: 山瀬勇 @rebase-tagdiff
@@ -95,7 +95,7 @@ m/MS000C.BIN	0:00	88	2572	1F01	：	:	:	v005	draft	reads: ：; reads: の平手�
 m/MS000C.BIN	0:00	89	2576	1FD3	早くし{08:25}と本当に遅刻よ。\n		We've gotta hurry, or we're seriously gonna be late.\n	v005		reads: 早くしないと本当に遅刻よ。\n; reads: ： @refalign
 m/MS000C.BIN	0:00	90	2617	1FB2	と{08:53}と身支度		Get yourself ready	v005		reads: とっとと身支度; menu option, declared width 20 columns; reads: もう！ @refalign
 m/MS000C.BIN	0:00	91	2631	1FB2	{08:56}{08:76}眠い		I'm still tired	v005		reads: でもまだ眠い; menu option, declared width 20 columns; reads: 君！！\n<wait> @refalign
-m/MS000C.BIN	0:00	92	2667	1F01	{08:62}急いで身支度を整{08:41}。\n<wait>		You leap up, and quickly get yourself dressed.\n<wait>	v005		reads: は、急いで身支度を整えた。\n<wait>; reads: は平手うちのショックで、力が緩んだ @rebase-new @refalign
+m/MS000C.BIN	0:00	92	2667	1F01	{08:62}急いで身支度を整{08:41}。\n<wait>	 hurriedly got dressed.\n<wait>	You leap up, and quickly get yourself dressed.\n<wait>	v005	draft	reads: は、急いで身支度を整えた。\n<wait>; reads: は平手うちのショックで、力が緩んだ @rebase-new @refalign @seamfix-2026-09-05
 m/MS000C.BIN	0:00	93	2704	1F01	：	:	:	v005	draft	reads: ：; reads: の腕から逃れると、\n顔を真っ赤にしてそっぽを向いてしまった‥‥‥\n<wait> @rebase-new @refalign
 m/MS000C.BIN	0:00	94	2708	1FD3	{08:4D}{08:81}あ、	Well then, 			draft	reads: それじゃあ、; reads: の視界に入った時計は、もうあまり時間の余裕が無い事を告げている。\n<wait> @ours-2026-09-05
 m/MS000C.BIN	0:00	95	2722	1F01	くん一緒に行きま{08:80}。\n	, let's go together.\n			draft	reads: くん一緒に行きましょう。\n; reads: しかし、いきなりそんな事をしたら、 @ours-2026-09-05
@@ -140,7 +140,7 @@ m/MS000C.BIN	0:01	32	828	1F01	：	:			draft	reads: ：
 m/MS000C.BIN	0:01	33	832	1FD3	あの‥{08:5D}良{08:18}ら後で、私とヴァーチャトレーナーでトレーニングし{08:25}？\n<wait>		Err... If you'd like, maybe we could do some training later?\n<wait>	v005		reads: あの‥もし良かったら後で、私とヴァーチャトレーナーでトレーニングしない？\n<wait>; reads: ： @refalign
 m/MS000C.BIN	0:01	34	911	1F01	：	:	:	v005	draft	reads: ：; reads: そう‥‥‥ならいいんだけど。\n<wait> @refalign
 m/MS000C.BIN	0:01	35	915	1FD3	私も少し鍛え{08:25}といけ{08:25}し、{08:4D}に一人{08:55}るより二人の方が楽しい{08:42}。\n{08:4D}{08:81}あ、{08:5B}ね！\n<wait>		I need to get stronger anyway, and it's more with the two of us.\nAt least consider it, okay?\n<wait>	v005		reads: 私も少し鍛えないといけないし、それに一人でするより二人の方が楽しいから。\nそれじゃあ、またね！\n<wait>; reads: ： @refalign
-m/MS000C.BIN	0:01	36	1032	1F01	{08:62}パタパタと{01:2E}を出{08:21}。\n<wait>		Wanting to avoid the awkward silence that is sure to follow,\nYuuka quickly turns around and runs off.\n<wait>	v005		reads: は、パタパタと部屋を出ていった。\n<wait>; reads: それじゃあ私、これから出勤だから‥‥‥‥\n<wait> @refalign
+m/MS000C.BIN	0:01	36	1032	1F01	{08:62}パタパタと{01:2E}を出{08:21}。\n<wait>	 went pattering out of the room.\n<wait>	Wanting to avoid the awkward silence that is sure to follow,\nYuuka quickly turns around and runs off.\n<wait>	v005	draft	reads: は、パタパタと部屋を出ていった。\n<wait>; reads: それじゃあ私、これから出勤だから‥‥‥‥\n<wait> @refalign @seamfix-2026-09-05
 m/MS000C.BIN	0:01	37	1094	1F01	：	:	:	v005	draft	reads: ： @refalign
 m/MS000C.BIN	0:01	38	1098	1FD3	大変！\n<wait>	Oh no!\n<wait>			draft	reads: あの‥もし良かったら後で、私とヴァーチャトレーナーでトレーニングしない？\n<wait> @ours-2026-09-05
 m/MS000C.BIN	0:01	39	1119	1F01	{08:62}	 put a hand to 			draft	reads: は、; reads: ： @ours-2026-09-05
@@ -199,7 +199,7 @@ m/MS000C.BIN	0:01	91	2678	1FD0	そう言{08:52}、	So saying, 			draft	reads: �
 m/MS000C.BIN	0:01	92	2694	1F01	は{08:63}のポーチを探{08:51}。\n<wait>	 rummaged in her pouch.\n<wait>			draft	reads: は自分のポーチを探った。\n<wait>; menu option, declared width 20 columns @ours-2026-09-05
 m/MS000C.BIN	0:01	93	2751	1F01	：	:			draft	reads: ：; reads: {=FA}{=02}山瀬勇
 m/MS000C.BIN	0:01	94	2755	1FD3	{08:26}、{08:48}！　気休め程度{08:74}ど、鎮痛剤よ。\n<wait>	Here, take this! It's only a painkiller, but it's something.\n<wait>	...Doesn't look like you have a fever. That's good.\n<wait>	v005	draft	reads: はい、これ！　気休め程度だけど、鎮痛剤よ。\n<wait> @ours-2026-09-05
-m/MS000C.BIN	0:01	95	2806	1F01	は白い錠剤を取り出{08:4B}。\n<wait>		Yuuka hands you a small, white pill.\n<wait>	v005		reads: は白い錠剤を取り出した。\n<wait>; reads: ： @refalign
+m/MS000C.BIN	0:01	95	2806	1F01	は白い錠剤を取り出{08:4B}。\n<wait>	 took out a small white pill.\n<wait>	Yuuka hands you a small, white pill.\n<wait>	v005	draft	reads: は白い錠剤を取り出した。\n<wait>; reads: ： @refalign @seamfix-2026-09-05
 m/MS000C.BIN	0:01	96	2843	1F01	：	:	:	v005	draft	reads: ： @refalign
 m/MS000C.BIN	0:01	97	2847	1FD3	ええ{08:53}{08:72}お水お水{02:08}\n<wait>ごめんな{08:49}、流し使わせ{08:54}らうわね！\n<wait>	Let's see... water, water......\n<wait>Sorry, I'll just borrow your sink!\n<wait>	Ah, just look at the time.\nI'd run by the pharmacist, but then I'd be late...\n<wait>	v005	draft	reads: ええっと‥‥お水お水‥‥‥\n<wait>ごめんなさい、流し使わせてもらうわね！\n<wait>; reads: は、 @ours-2026-09-05
 m/MS000C.BIN	0:01	98	2927	1F01	{08:62}流しの方に消{08:28}。\n程無く{08:4A}、	 disappeared towards the sink.\nBefore long, 			draft	reads: は、流しの方に消える。\n程無くして、; reads: の額に手をあてた。\n<wait> @ours-2026-09-05
@@ -265,8 +265,8 @@ m/MS000C.BIN	0:02	46	1566	1F01	は抵抗もせず、	 did not resist, seeming to
 m/MS000C.BIN	0:02	47	1586	1F01	の手のぬくもりを受け止め{08:14}{08:69}だ{02:08}‥\n<wait>	's hand.........\n<wait>			draft	reads: の手のぬくもりを受け止めているようだ‥‥‥‥\n<wait>; reads: の手をとった。\n柔らかな @ours-2026-09-05
 m/MS000C.BIN	0:02	48	1635	1F01	：	:	:	v005	draft	reads: ：; reads: の手を @refalign
 m/MS000C.BIN	0:02	49	1645	1F01	くん{08:72}私{02:08}‥\n	... I......\n	Katsuragi-kun... I...\n	v005	draft	reads: くん‥‥私‥‥‥‥\n; reads: の手が包む‥‥\n<wait> @refalign @ours-2026-09-05
-m/MS000C.BIN	0:02	50	1671	1F01	{08:62}優しく微笑みか{08:43}。\n<wait>		You proceed to smile at Yuuka.\n<wait>	v005		reads: は、優しく微笑みかけた。\n<wait>; reads: は抵抗もせず、 @refalign
-m/MS000C.BIN	0:02	51	1704	1F01	は{08:4D}に、心の底{08:42}の笑顔で応{08:28}。\n<wait>		As you do so, she smiles at you back.\n<wait>	v005		reads: はそれに、心の底からの笑顔で応える。\n<wait>; reads: の手のぬくもりを受け止めているようだ‥‥‥‥\n<wait> @refalign
+m/MS000C.BIN	0:02	50	1671	1F01	{08:62}優しく微笑みか{08:43}。\n<wait>	 smiled at her gently.\n<wait>	You proceed to smile at Yuuka.\n<wait>	v005	draft	reads: は、優しく微笑みかけた。\n<wait>; reads: は抵抗もせず、 @refalign @seamfix-2026-09-05
+m/MS000C.BIN	0:02	51	1704	1F01	は{08:4D}に、心の底{08:42}の笑顔で応{08:28}。\n<wait>	 answered it with a smile from the bottom of her heart.\n<wait>	As you do so, she smiles at you back.\n<wait>	v005	draft	reads: はそれに、心の底からの笑顔で応える。\n<wait>; reads: の手のぬくもりを受け止めているようだ‥‥‥‥\n<wait> @refalign @seamfix-2026-09-05
 m/MS000C.BIN	0:02	52	1771	1F01	：	:	:	v005	draft	reads: ： @refalign
 m/MS000C.BIN	0:02	53	1781	1F01	くん{02:08}‥私{02:08}‥\n	...... I......\n	Katsuragi-kun... I'm...\n	v005	draft	reads: くん‥‥‥‥私‥‥‥‥\n; reads: くん‥‥私‥‥‥‥\n @refalign @ours-2026-09-05
 m/MS000C.BIN	0:02	54	1857	1F01	：	:	:	v005	draft	reads: ：; reads: は、優しく微笑みかけた。\n<wait> @refalign
@@ -363,10 +363,10 @@ m/MS000C.BIN	0:04	17	539	1F01	{08:62}	 gently sealed 			draft	reads: は、; rea
 m/MS000C.BIN	0:04	18	547	1F01	の唇を優しく塞いだ{02:08}。\n<wait>	's lips with his own......\n<wait>			draft	reads: の唇を優しく塞いだ‥‥‥。\n<wait>; reads: は、 @rebase-new @ours-2026-09-05
 m/MS000C.BIN	0:04	19	584	1F01	：	:	:	v005	draft	reads: ：; reads: の唇を優しく塞いだ‥‥‥。\n<wait> @rebase-new @refalign
 m/MS000C.BIN	0:04	20	588	1FD3	ん{02:08}\n<wait>		Mhh...\n<wait>	v005		reads: ん‥‥‥\n<wait>; reads: ： @refalign
-m/MS000C.BIN	0:04	21	607	1F01	の唇はし{08:53}りと柔らかく、{08:79}華奢で薄い唇{08:42}漏{08:2F}吐息{08:62}\n全てを癒し包み込む女神の様だ{08:72}。\n<wait>		Her lips are so soft, yet so frail at the same time.\nAnd her sweet, sweet breath... Ah... You can feel yourself\nreinvigorating as you breathe it in. She's like... a goddess.\n<wait>	v005		reads: の唇はしっとりと柔らかく、その華奢で薄い唇から漏れる吐息は、\n全てを癒し包み込む女神の様だ‥‥。\n<wait>; reads: ん‥‥‥\n<wait> @rebase-tagdiff @refalign
+m/MS000C.BIN	0:04	21	607	1F01	の唇はし{08:53}りと柔らかく、{08:79}華奢で薄い唇{08:42}漏{08:2F}吐息{08:62}\n全てを癒し包み込む女神の様だ{08:72}。\n<wait>	's lips were moist and soft, and the breath escaping those slender,\nthin lips was like a goddess's, healing and enfolding all.\n<wait>	Her lips are so soft, yet so frail at the same time.\nAnd her sweet, sweet breath... Ah... You can feel yourself\nreinvigorating as you breathe it in. She's like... a goddess.\n<wait>	v005	draft	reads: の唇はしっとりと柔らかく、その華奢で薄い唇から漏れる吐息は、\n全てを癒し包み込む女神の様だ‥‥。\n<wait>; reads: ん‥‥‥\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
 m/MS000C.BIN	0:04	22	709	1F01	：	:	:	v005	draft	reads: ：; reads: の唇はしっとりと柔らかく、その華奢で薄い唇から漏れる吐息は、\n全てを癒し包み込む女神の様だ‥‥。\n<wait> @rebase-tagdiff @refalign
 m/MS000C.BIN	0:04	23	725	1F01	くん{02:08}\n<wait>	......\n<wait>	Katsuragi-kun...\n<wait>	v005	draft	reads: くん‥‥‥\n<wait>; reads: ： @rebase-tagdiff @refalign @ours-2026-09-05
-m/MS000C.BIN	0:04	24	752	1F01	は上気{08:4B}顔で、囁く様にそう呟{08:64}。\n<wait>		She quietly whispers your name.\n<wait>	v005		reads: は上気した顔で、囁く様にそう呟いた。\n<wait>; reads: くん‥‥‥\n<wait> @rebase-tagdiff @refalign
+m/MS000C.BIN	0:04	24	752	1F01	は上気{08:4B}顔で、囁く様にそう呟{08:64}。\n<wait>	 murmured it like a whisper, her face flushed.\n<wait>	She quietly whispers your name.\n<wait>	v005	draft	reads: は上気した顔で、囁く様にそう呟いた。\n<wait>; reads: くん‥‥‥\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
 m/MS000C.BIN	0:04	25	793	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>; reads: は上気した顔で、囁く様にそう呟いた。\n<wait> @refalign
 m/MS000C.BIN	0:04	26	820	1FB2	{08:5C}一度キス{08:8E}		Kiss her again	v005		reads: もう一度キスする; menu option, declared width 20 columns; reads: ＞どうしますか？\n<wait> @refalign
 m/MS000C.BIN	0:04	27	834	1FB2	髪にそ{08:53}触{08:2F}		Touch her hair	v005		reads: 髪にそっと触れる; menu option, declared width 20 columns; reads: もう一度キスする @refalign
@@ -520,7 +520,7 @@ m/MS000C.BIN	0:04	174	4883	1FBA	ふと、傍らを見ると	Glancing to the side
 m/MS000C.BIN	0:04	175	4907	1F01	が、テーブルにひじをつき、うたたねを{08:13}{02:08}\n{1E10:01001E}全てが夢だ{08:51}のかとすら思えて{08:83}{02:08}\n<wait>	 dozing with her elbows on the table.........\n{1E10:01001E}It almost seemed as if it had all been a dream......\n<wait>			draft	reads: が、テーブルにひじをつき、うたたねをしている‥‥‥\n{1E10:01001E}全てが夢だったのかとすら思えてしまう‥‥‥\n<wait>; reads: くん‥‥‥\n<wait> @ours-2026-09-05
 m/MS000C.BIN	0:04	176	4992	1FBA	{03:0B}{08:7A}思いなど手易く木端微塵に砕いて{08:83}、容赦の無い現実が訪{08:60}。\n<wait>	But then a merciless reality arrived, shattering such thoughts to pieces.\n<wait>			draft	reads: しかし、そんな思いなど手易く木端微塵に砕いてしまう、容赦の無い現実が訪れた。\n<wait>; reads: は @ours-2026-09-05
 m/MS000C.BIN	0:04	177	5101	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: の服に手をかけた。\n<wait> @refalign
-m/MS000C.BIN	0:04	178	5113	1F01	くん、作戦を遂行{08:8E}わ。\n<wait>詰所に来て{08:72}急いで！！\n<wait>		Katsuragi. We're ready to begin.\n<wait>Come to the office... and fast!\n<wait>	v005		reads: くん、作戦を遂行するわ。\n<wait>詰所に来て‥‥急いで！！\n<wait>; reads: 露になった真珠の様にすべらかな肌に、 @rebase-tagdiff @refalign
+m/MS000C.BIN	0:04	178	5113	1F01	くん、作戦を遂行{08:8E}わ。\n<wait>詰所に来て{08:72}急いで！！\n<wait>	-kun, we're carrying out the operation.\n<wait>Come to the post...... hurry!!\n<wait>	Katsuragi. We're ready to begin.\n<wait>Come to the office... and fast!\n<wait>	v005	draft	reads: くん、作戦を遂行するわ。\n<wait>詰所に来て‥‥急いで！！\n<wait>; reads: 露になった真珠の様にすべらかな肌に、 @rebase-tagdiff @refalign @seamfix-2026-09-05
 m/MS000C.BIN	0:04	179	5179	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: は唇を沿わせる。\n @refalign
 m/MS000C.BIN	0:04	180	5191	1F01	、いよいよ作戦を遂行{08:8E}。\n<wait>詰所{08:71}来てくれ！\n<wait>	, we're finally carrying out the operation.\n<wait>Get to the guard post!\n<wait>			draft	reads: 、いよいよ作戦を遂行する。\n<wait>詰所まで来てくれ！\n<wait>; reads: ‥‥‥‥‥‥‥‥‥\n<wait> @ours-2026-09-05
 m/MS000C.BIN	0:04	181	5262	1F01	{08:62}ベッド{08:42}飛び起き、慌{08:82}しく着替えを始{08:2E}。\n	 leapt out of bed and hurriedly began to change.\n			draft	reads: は、ベッドから飛び起き、慌ただしく着替えを始める。\n; reads: 小さな喘ぎと衣擦れの音‥‥‥‥\n<wait>ふたりはお互いの想いを確かめあいながら、静寂な深淵へと落ちて行った。\n<wait> @ours-2026-09-05
@@ -530,8 +530,8 @@ m/MS000C.BIN	0:04	184	5381	1F01	くん、気をつけて{02:08}\n<wait>	, be car
 m/MS000C.BIN	0:04	185	5413	0B	奥{08:42}出て{08:1E}	Coming out from the back, 	You leap up and rush to get yourself dressed.\n	v005	draft	reads: 奥から出てきた; reads: 幸福な瞬間‥‥‥\n @ours-2026-09-05
 m/MS000C.BIN	0:04	186	5429	1F01	が、心配そうな顔を{08:13}{02:08}\n	 looked worried.........\n			draft	reads: が、心配そうな顔をしている‥‥‥\n @ours-2026-09-05
 m/MS000C.BIN	0:04	187	5455	18	うたたねを{08:4A}{08:64}	Roused from her doze, 	You and up and rush to get yourself ready.\n<wait>	v005	draft	reads: うたたねをしていた; reads: は、まだ眠気の残る頭で、部屋を見回した。\n<wait> @refalign @ours-2026-09-05
-m/MS000C.BIN	0:04	188	5475	1F01	{08:62}{08:65}の音で飛び起きると、心配そうな瞳で\n		Yuuka:	v005		reads: は、通信の音で飛び起きると、心配そうな瞳で\n; reads: ‥‥‥いつもと違う部屋‥‥‥\n<wait> @rebase-tagdiff
-m/MS000C.BIN	0:04	189	5520	1F01	を見つめた{02:08}\n<wait>		Please be careful, Katsuragi-kun...\n<wait>	v005		reads: を見つめた‥‥‥\n<wait> @rebase-tagdiff
+m/MS000C.BIN	0:04	188	5475	1F01	{08:62}{08:65}の音で飛び起きると、心配そうな瞳で\n	 sprang up at the sound of the transmission and, with worried eyes,\ngazed at 	Yuuka:	v005	draft	reads: は、通信の音で飛び起きると、心配そうな瞳で\n; reads: ‥‥‥いつもと違う部屋‥‥‥\n<wait> @rebase-tagdiff @seamfix-2026-09-05
+m/MS000C.BIN	0:04	189	5520	1F01	を見つめた{02:08}\n<wait>	......\n<wait>	Please be careful, Katsuragi-kun...\n<wait>	v005	draft	reads: を見つめた‥‥‥\n<wait> @rebase-tagdiff @seamfix-2026-09-05
 m/MS000C.BIN	0:04	190	5545	1F01	{08:62}	 turned to 	Yuuka appears from the kitchen to greet you farewell.\nJudging by her face, it's clear that she's deeply worried about you.\n	v005	draft	reads: は、; reads: が、テーブルにひじをつき、うたたねをしている‥‥‥\n{1E10:01001E}全てが夢だったのかとすら思えてしまう‥‥‥\n<wait> @rebase-tagdiff @ours-2026-09-05
 m/MS000C.BIN	0:04	191	5553	1F01	の方を向き、力強く頷く。\n<wait>	 and nodded firmly.\n<wait>	The sound of the incoming transmission causes Yuuka to wake up as well.\nJudging by her face, it's clear that she's deeply worried about you.\n<wait>	v005	draft	reads: の方を向き、力強く頷く。\n<wait>; reads: しかし、そんな思いなど手易く木端微塵に砕いてしまう、容赦の無い現実が訪れた。\n<wait> @rebase-tagdiff @ours-2026-09-05
 m/MS000C.BIN	0:04	192	5590	1F01	{08:62}	 left 	You give her a firm nod.\n<wait>	v005	draft	reads: は、; reads: 英美： @rebase-tagdiff @ours-2026-09-05

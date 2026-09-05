@@ -51,7 +51,7 @@ m/MS0001.BIN	0:01	16	402	1FD3	{08:34}！　{08:00}！\n<wait>{08:02}の身体を
 m/MS0001.BIN	0:01	17	477	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 早坂： @refalign
 m/MS0001.BIN	0:01	18	483	1FD3	了解！！\n<wait>		Roger!!\n<wait>	v005		@refalign
 m/MS0001.BIN	0:01	19	505	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
-m/MS0001.BIN	0:01	20	517	1F01	！！　ＩＤ{08:62}５８１４７だ！\n落ち着いて入力{08:4A}くれ！！\n<wait>		Ayato! The ID is 58147! Enter it!\n<wait>	v005		reads: ！！　ＩＤは、５８１４７だ！\n落ち着いて入力してくれ！！\n<wait>; reads: ！！　ＩＤは、５８１４７だ！\n落ち着いて入力してくれ！！\n<wait> @rebase-tagdiff @refalign
+m/MS0001.BIN	0:01	20	517	1F01	！！　ＩＤ{08:62}５８１４７だ！\n落ち着いて入力{08:4A}くれ！！\n<wait>	!! The ID is 58147!\nStay calm and enter it!!\n<wait>	Ayato! The ID is 58147! Enter it!\n<wait>	v005	draft	reads: ！！　ＩＤは、５８１４７だ！\n落ち着いて入力してくれ！！\n<wait>; reads: ！！　ＩＤは、５８１４７だ！\n落ち着いて入力してくれ！！\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
 m/MS0001.BIN	0:01	21	620	1FD0	{08:65}の様子{08:42}で{08:62}{08:02}が重傷を負{08:51}事がうかが{08:28}。\n<wait>		It appears that Yamase has been gravely injured.\n<wait>	v005		reads: 通信の様子からでは、山瀬が重傷を負った事がうかがえる。\n<wait>; reads: 通信の様子からでは、山瀬が重傷を負った事がうかがえる。\n<wait> @refalign
 m/MS0001.BIN	0:01	22	671	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>; reads: ＞どうしますか？\n<wait> @refalign
 m/MS0001.BIN	0:01	23	698	1FB2	{02:07}	{02:07}	Contact them	v005		reads: 通信をする; menu option, declared width 20 columns
@@ -85,7 +85,7 @@ m/MS0001.BIN	0:02	25	506	1FD3	し、{03:0B}一刻の猶予も！\n<wait>		Y-Yes,
 m/MS0001.BIN	0:02	26	535	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
 m/MS0001.BIN	0:02	27	541	1FD3	分かっ{08:14}！\n<wait>		I'm aware!\n<wait>	v005		reads: 分かっている！\n<wait>; reads: 分かっている！\n<wait> @refalign
 m/MS0001.BIN	0:02	28	560	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
-m/MS0001.BIN	0:02	29	577	1F01	！　落ち着いてＩＤを{02:08}！！\n<wait>		Ayato! Input the ID, now!\n<wait>	v005		reads: ！　落ち着いてＩＤを‥‥‥！！\n<wait> @rebase-tagdiff
+m/MS0001.BIN	0:02	29	577	1F01	！　落ち着いてＩＤを{02:08}！！\n<wait>	! Calm down and enter the ID......!!\n<wait>	Ayato! Input the ID, now!\n<wait>	v005	draft	reads: ！　落ち着いてＩＤを‥‥‥！！\n<wait> @rebase-tagdiff @seamfix-2026-09-05
 m/MS0001.BIN	0:02	30	613	18	{02:08}{08:8F}、{08:65}手段すら無い現状で{08:62}残{08:4A}来た\n	......But with no way to communicate, all we can do is pray that\n	...Unfortunately, there's not much we can do.\nOur only hope know is that Tachibana brings\nin the cavalry.\n<wait>	v005	draft	reads: ‥‥‥だが、通信手段すら無い現状では、残して来た\n; reads: ‥‥‥だが、通信手段すら無い現状では、残して来た\n @refalign @ours-2026-09-05
 m/MS0001.BIN	0:02	31	656	1F01	が、気づいてく{08:2F}事を祈る{08:86}{08:25}{02:08}\n<wait>	, whom we left behind, notices......\n<wait>			draft	reads: が、気づいてくれる事を祈るしかない‥‥‥\n<wait> @ours-2026-09-05
 m/MS0001.BIN	0:02	32	695	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 早坂： @refalign
@@ -99,13 +99,13 @@ m/MS0001.BIN	0:03	1	39	1FD3	{02:0E}	This is 			draft	reads: こちら @ours-2026
 m/MS0001.BIN	0:03	2	47	1F01	！\n<wait>	!\n<wait>			draft	reads: ！\n<wait> @ours-2026-09-05
 m/MS0001.BIN	0:03	3	60	1F01	さんが応援を頼んでい{08:5A}。\n<wait>{08:4D}に、僕は隔壁のすぐ真裏にい{08:5A}！\n<wait>	 has asked for backup.\n<wait>And I'm right on the other side of the bulkhead!\n<wait>			draft	reads: さんが応援を頼んでいます。\n<wait>それに、僕は隔壁のすぐ真裏にいます！\n<wait>; reads: さんが応援を頼んでいます。\n<wait>それに、僕は隔壁のすぐ真裏にいます！\n<wait> @ours-2026-09-05
 m/MS0001.BIN	0:03	4	138	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 英美： @refalign
-m/MS0001.BIN	0:03	5	150	1F01	{08:72}くん？\n<wait>		Katsuragi...?\n<wait>	v005		reads: ‥‥くん？\n<wait>; reads: ‥‥くん？\n<wait> @refalign
+m/MS0001.BIN	0:03	5	150	1F01	{08:72}くん？\n<wait>	-kun......?\n<wait>	Katsuragi...?\n<wait>	v005	draft	reads: ‥‥くん？\n<wait>; reads: ‥‥くん？\n<wait> @refalign @seamfix-2026-09-05
 m/MS0001.BIN	0:03	6	167	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 英美： @refalign
-m/MS0001.BIN	0:03	7	179	1F01	くん{08:6B}ね！！\n<wait>		Hey, guys! It's Katsuragi!\n<wait>	v005		reads: くんなのね！！\n<wait>; reads: くんなのね！！\n<wait> @refalign
+m/MS0001.BIN	0:03	7	179	1F01	くん{08:6B}ね！！\n<wait>	-kun, it's you!!\n<wait>	Hey, guys! It's Katsuragi!\n<wait>	v005	draft	reads: くんなのね！！\n<wait>; reads: くんなのね！！\n<wait> @refalign @seamfix-2026-09-05
 m/MS0001.BIN	0:03	8	200	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 早坂： @refalign
 m/MS0001.BIN	0:03	9	206	1FD3	隔壁の扉を開けてくれ！\n{08:47}{08:7E}{08:81}全滅だ！！\n<wait>		You've gotta get the door opened!\nWe're sitting ducks out here!\n<wait>	v005		reads: 隔壁の扉を開けてくれ！\nこのままじゃ全滅だ！！\n<wait>; reads: 隔壁の扉を開けてくれ！\nこのままじゃ全滅だ！！\n<wait> @refalign
 m/MS0001.BIN	0:03	10	254	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
-m/MS0001.BIN	0:03	11	266	1F01	！\n落ち着いて行動{08:4A}くれ。\n<wait>		Ayato! Calm down, and listen to me carefully.\n<wait>	v005		reads: ！\n落ち着いて行動してくれ。\n<wait>; reads: ！\n落ち着いて行動してくれ。\n<wait> @refalign
+m/MS0001.BIN	0:03	11	266	1F01	！\n落ち着いて行動{08:4A}くれ。\n<wait>	!\nKeep your head and act carefully.\n<wait>	Ayato! Calm down, and listen to me carefully.\n<wait>	v005	draft	reads: ！\n落ち着いて行動してくれ。\n<wait>; reads: ！\n落ち着いて行動してくれ。\n<wait> @refalign @seamfix-2026-09-05
 m/MS0001.BIN	0:03	12	300	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
 m/MS0001.BIN	0:03	13	306	1FD3	{08:7F}か、蓋が{03:0C}てて分かり難いが、扉左側に\nＩＤ入力板が{08:7B}。\n<wait>		There is a control panel to the left of the door.\n<wait>	v005		reads: いいか、蓋がされてて分かり難いが、扉左側に\nＩＤ入力板がある。\n<wait>; reads: いいか、蓋がされてて分かり難いが、扉左側に\nＩＤ入力板がある。\n<wait> @refalign
 m/MS0001.BIN	0:03	14	370	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
@@ -118,7 +118,7 @@ m/MS0001.BIN	0:03	20	534	1FFA	{08:72}え{02:08}\n<wait>	...Eh......\n<wait>			dr
 m/MS0001.BIN	0:03	21	555	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 英美： @refalign
 m/MS0001.BIN	0:03	22	561	1FD3	{08:02}ッ！！　無理しちゃダメッ！！！\n<wait>		Yamase! Hang in there!\n<wait>	v005		reads: 山瀬ッ！！　無理しちゃダメッ！！！\n<wait>; reads: 山瀬ッ！！　無理しちゃダメッ！！！\n<wait> @refalign
 m/MS0001.BIN	0:03	23	602	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
-m/MS0001.BIN	0:03	24	614	1F01	！　聞こ{08:28}か！？\n<wait>{08:5D}{08:5D}！！\n<wait>		Ayato, are you still there?\n<wait>Hello!?\n<wait>	v005		reads: ！　聞こえるか！？\n<wait>もしもし！！\n<wait>; reads: ！　聞こえるか！？\n<wait>もしもし！！\n<wait> @refalign
+m/MS0001.BIN	0:03	24	614	1F01	！　聞こ{08:28}か！？\n<wait>{08:5D}{08:5D}！！\n<wait>	! Can you hear me!?\n<wait>Hello!? Hello!!\n<wait>	Ayato, are you still there?\n<wait>Hello!?\n<wait>	v005	draft	reads: ！　聞こえるか！？\n<wait>もしもし！！\n<wait>; reads: ！　聞こえるか！？\n<wait>もしもし！！\n<wait> @refalign @seamfix-2026-09-05
 m/MS0001.BIN	0:03	25	664	1F01	：	:	:	v005	draft	reads: ： @refalign
 m/MS0001.BIN	0:03	26	668	1FD3	聞こえてい{08:5A}！\n<wait>		I hear you!\n<wait>	v005		reads: 聞こえています！\n<wait>; reads: 聞こえています！\n<wait> @refalign
 m/MS0001.BIN	0:03	27	699	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
@@ -134,13 +134,13 @@ m/MS0001.BIN	0:04	1	39	1FD3	{02:0E}	This is 			draft	reads: こちら @ours-2026
 m/MS0001.BIN	0:04	2	47	1F01	！\n<wait>	!\n<wait>			draft	reads: ！\n<wait> @ours-2026-09-05
 m/MS0001.BIN	0:04	3	60	1F01	さんが応援を頼んでい{08:5A}。\n<wait>{08:4D}に、僕は隔壁のすぐ真裏にい{08:5A}！\n<wait>	 has asked for backup.\n<wait>And I'm right on the other side of the bulkhead!\n<wait>			draft	reads: さんが応援を頼んでいます。\n<wait>それに、僕は隔壁のすぐ真裏にいます！\n<wait>; reads: さんが応援を頼んでいます。\n<wait>それに、僕は隔壁のすぐ真裏にいます！\n<wait> @ours-2026-09-05
 m/MS0001.BIN	0:04	4	138	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 英美： @refalign
-m/MS0001.BIN	0:04	5	150	1F01	{08:72}くん？\n<wait>		Katsuragi...?\n<wait>	v005		reads: ‥‥くん？\n<wait>; reads: ‥‥くん？\n<wait> @refalign
+m/MS0001.BIN	0:04	5	150	1F01	{08:72}くん？\n<wait>	-kun......?\n<wait>	Katsuragi...?\n<wait>	v005	draft	reads: ‥‥くん？\n<wait>; reads: ‥‥くん？\n<wait> @refalign @seamfix-2026-09-05
 m/MS0001.BIN	0:04	6	167	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 英美： @refalign
-m/MS0001.BIN	0:04	7	179	1F01	くん{08:6B}ね！！\n<wait>		Hey, guys! It's Katsuragi!\n<wait>	v005		reads: くんなのね！！\n<wait>; reads: くんなのね！！\n<wait> @refalign
+m/MS0001.BIN	0:04	7	179	1F01	くん{08:6B}ね！！\n<wait>	-kun, it's you!!\n<wait>	Hey, guys! It's Katsuragi!\n<wait>	v005	draft	reads: くんなのね！！\n<wait>; reads: くんなのね！！\n<wait> @refalign @seamfix-2026-09-05
 m/MS0001.BIN	0:04	8	200	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 早坂： @refalign
 m/MS0001.BIN	0:04	9	206	1FD3	隔壁の扉を開けてくれ！\n{08:47}{08:7E}{08:81}全滅だ！！\n<wait>		You've gotta get the door opened!\nWe're sitting ducks out here!\n<wait>	v005		reads: 隔壁の扉を開けてくれ！\nこのままじゃ全滅だ！！\n<wait>; reads: 隔壁の扉を開けてくれ！\nこのままじゃ全滅だ！！\n<wait> @refalign
 m/MS0001.BIN	0:04	10	254	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
-m/MS0001.BIN	0:04	11	266	1F01	！\n落ち着いて行動{08:4A}くれ。\n<wait>		Ayato! Calm down, and listen to me carefully.\n<wait>	v005		reads: ！\n落ち着いて行動してくれ。\n<wait>; reads: ！\n落ち着いて行動してくれ。\n<wait> @refalign
+m/MS0001.BIN	0:04	11	266	1F01	！\n落ち着いて行動{08:4A}くれ。\n<wait>	!\nKeep your head and act carefully.\n<wait>	Ayato! Calm down, and listen to me carefully.\n<wait>	v005	draft	reads: ！\n落ち着いて行動してくれ。\n<wait>; reads: ！\n落ち着いて行動してくれ。\n<wait> @refalign @seamfix-2026-09-05
 m/MS0001.BIN	0:04	12	300	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
 m/MS0001.BIN	0:04	13	306	1FD3	{08:7F}か、蓋が{03:0C}てて分かり難いが、扉左側に\nＩＤ入力板が{08:7B}。\n<wait>		There is a control panel to the left of the door.\n<wait>	v005		reads: いいか、蓋がされてて分かり難いが、扉左側に\nＩＤ入力板がある。\n<wait>; reads: いいか、蓋がされてて分かり難いが、扉左側に\nＩＤ入力板がある。\n<wait> @refalign
 m/MS0001.BIN	0:04	14	370	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
@@ -148,7 +148,7 @@ m/MS0001.BIN	0:04	15	376	1FD3	{08:79}入力板にＩＤを入力すれば、{08:
 m/MS0001.BIN	0:04	16	431	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
 m/MS0001.BIN	0:04	17	437	1FD3	イや{08:51}ぁ！　土手っ腹に命中{08:4B}ぜ！\n<wait>あん？　クソ野郎ォ！\n<wait>ち{08:53}も効いてねェッ！！\n<wait>		Okay! I landed a bullseye!\n<wait>Huh? Shit!\n<wait>This thing's immune to bullets!\n<wait>	v005		reads: イやったぁ！　土手っ腹に命中したぜ！\n<wait>あん？　クソ野郎ォ！\n<wait>ちっとも効いてねェッ！！\n<wait>; reads: イやったぁ！　土手っ腹に命中したぜ！\n<wait>あん？　クソ野郎ォ！\n<wait>ちっとも効いてねェッ！！\n<wait> @refalign
 m/MS0001.BIN	0:04	18	528	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
-m/MS0001.BIN	0:04	19	540	1F01	！　聞こ{08:28}か！？\n<wait>{08:5D}{08:5D}！！\n<wait>		Ayato, are you still there?\n<wait>Hello!?\n<wait>	v005		reads: ！　聞こえるか！？\n<wait>もしもし！！\n<wait>; reads: ！　聞こえるか！？\n<wait>もしもし！！\n<wait> @refalign
+m/MS0001.BIN	0:04	19	540	1F01	！　聞こ{08:28}か！？\n<wait>{08:5D}{08:5D}！！\n<wait>	! Can you hear me!?\n<wait>Hello!? Hello!!\n<wait>	Ayato, are you still there?\n<wait>Hello!?\n<wait>	v005	draft	reads: ！　聞こえるか！？\n<wait>もしもし！！\n<wait>; reads: ！　聞こえるか！？\n<wait>もしもし！！\n<wait> @refalign @seamfix-2026-09-05
 m/MS0001.BIN	0:04	20	590	1F01	：	:	:	v005	draft	reads: ： @refalign
 m/MS0001.BIN	0:04	21	594	1FD3	聞こえてい{08:5A}！\n<wait>		I hear you!\n<wait>	v005		reads: 聞こえています！\n<wait>; reads: 聞こえています！\n<wait> @refalign
 m/MS0001.BIN	0:04	22	625	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
@@ -178,13 +178,13 @@ m/MS0001.BIN	0:08	15	520	1FD3	全くだ！　{08:86}も、こっち{08:62}お陰
 m/MS0001.BIN	0:08	16	610	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
 m/MS0001.BIN	0:08	17	616	1FD3	そう言うな。{08:06}{08:07}には成功{08:4B}{08:5F}。\n<wait>後でラボに報告し、正式な{08:0A}を渡せば{08:7F}。\n<wait>		Come now. It's not their fault. The analysis was successful.\n<wait>Let's just talk to them and see what we can do to make sure\nthat this never happens again.\n<wait>	v005		reads: そう言うな。デビルアナライズには成功したんだ。\n<wait>後でラボに報告し、正式なデータを渡せばいい。\n<wait>; reads: そう言うな。デビルアナライズには成功したんだ。\n<wait>後でラボに報告し、正式なデータを渡せばいい。\n<wait> @refalign
 m/MS0001.BIN	0:08	18	698	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
-m/MS0001.BIN	0:08	19	710	1F01	くん。\n<wait>君の今回の功績{08:62}私{08:42}{01:2D}に報告{08:4A}おく。\n<wait>		Also, Katsuragi.\n<wait>I'll be sure to let the Administrator's Office know about\nwhat you did for us today.\n<wait>	v005		reads: くん。\n<wait>君の今回の功績は、私から管理部に報告しておく。\n<wait>; reads: くん。\n<wait>君の今回の功績は、私から管理部に報告しておく。\n<wait> @refalign
+m/MS0001.BIN	0:08	19	710	1F01	くん。\n<wait>君の今回の功績{08:62}私{08:42}{01:2D}に報告{08:4A}おく。\n<wait>	-kun.\n<wait>I'll report what you did today to the Administrator's Office\nmyself.\n<wait>	Also, Katsuragi.\n<wait>I'll be sure to let the Administrator's Office know about\nwhat you did for us today.\n<wait>	v005	draft	reads: くん。\n<wait>君の今回の功績は、私から管理部に報告しておく。\n<wait>; reads: くん。\n<wait>君の今回の功績は、私から管理部に報告しておく。\n<wait> @refalign @seamfix-2026-09-05
 m/MS0001.BIN	0:08	20	766	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 英美： @refalign
 m/MS0001.BIN	0:08	21	772	1FD3	上手くすれば、特例合格{08:52}のもアリよ！\n<wait>		If it goes well, they might even let you become a Devil Buster!\n<wait>	v005		reads: 上手くすれば、特例合格ってのもアリよ！\n<wait>; reads: 上手くすれば、特例合格ってのもアリよ！\n<wait> @refalign
 m/MS0001.BIN	0:08	22	817	1FD2	{01:03}：		Newton:	v005		reads: ニュートン：; reads: ニュートン： @refalign
 m/MS0001.BIN	0:08	23	823	1FD3	ウオン、ウオン！\n<wait>		*Woof, woof*!\n<wait>	v005		@refalign
 m/MS0001.BIN	0:08	24	848	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
-m/MS0001.BIN	0:08	25	860	1F01	くん、君は後でＢ５Ｆの詰め所に来てく{08:60}まえ。\n<wait>良い知らせを聞かせら{08:2F}と思う。\n<wait>		Drop by the office on B5F afterwards.\n<wait>I believe I might have good news for you.\n<wait>	v005		reads: くん、君は後でＢ５Ｆの詰め所に来てくれたまえ。\n<wait>良い知らせを聞かせられると思う。\n<wait>; reads: くん、君は後でＢ５Ｆの詰め所に来てくれたまえ。\n<wait>良い知らせを聞かせられると思う。\n<wait> @refalign
+m/MS0001.BIN	0:08	25	860	1F01	くん、君は後でＢ５Ｆの詰め所に来てく{08:60}まえ。\n<wait>良い知らせを聞かせら{08:2F}と思う。\n<wait>	-kun, come by the B5F post later.\n<wait>I think I'll have good news for you.\n<wait>	Drop by the office on B5F afterwards.\n<wait>I believe I might have good news for you.\n<wait>	v005	draft	reads: くん、君は後でＢ５Ｆの詰め所に来てくれたまえ。\n<wait>良い知らせを聞かせられると思う。\n<wait>; reads: くん、君は後でＢ５Ｆの詰め所に来てくれたまえ。\n<wait>良い知らせを聞かせられると思う。\n<wait> @refalign @seamfix-2026-09-05
 m/MS0001.BIN	0:08	26	948	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
 m/MS0001.BIN	0:08	27	954	1FD3	で{08:62}{02:0C}は{01:2D}に報告せねば{08:7D}{08:25}。\n<wait>{08:48}で失礼{08:8E}よ。\n<wait>		Well then, we better be going now.\n<wait>Let's talk later.\n<wait>	v005		reads: では、我々は管理部に報告せねばならない。\n<wait>これで失礼するよ。\n<wait>; reads: では、我々は管理部に報告せねばならない。\n<wait>これで失礼するよ。\n<wait> @refalign
 m/MS0001.BIN	0:08	28	1045	09						
@@ -217,7 +217,7 @@ m/MS0001.BIN	0:08	54	1837	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; rea
 m/MS0001.BIN	0:08	55	1843	1FD3	よ{08:18}な、	Good for you, 			draft	reads: よかったな、; reads: よかったな、 @ours-2026-09-05
 m/MS0001.BIN	0:08	56	1857	1F01	。\n<wait>上手くすれば、特例合格と{08:68}事も有り得る。\n<wait>	.\n<wait>Play it right, and you might even get a special pass.\n<wait>			draft	reads: 。\n<wait>上手くすれば、特例合格という事も有り得る。\n<wait>; reads: 。\n<wait>上手くすれば、特例合格という事も有り得る。\n<wait> @ours-2026-09-05
 m/MS0001.BIN	0:08	57	1913	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
-m/MS0001.BIN	0:08	58	1925	1F01	君。\n<wait>君は後で、Ｂ５Ｆの詰め所に来てく{08:60}まえ。\n<wait>良い知らせを聞かせら{08:2F}と{08:7F}が{02:08}約束は出来{08:25}。\n<wait>		Well then.\n<wait>Drop by the office on B5F later on.\n<wait>While I can't make any promises,\nI do have a good feeling about this.\n<wait>	v005		reads: 君。\n<wait>君は後で、Ｂ５Ｆの詰め所に来てくれたまえ。\n<wait>良い知らせを聞かせられるといいが‥‥‥約束は出来ない。\n<wait>; reads: 君。\n<wait>君は後で、Ｂ５Ｆの詰め所に来てくれたまえ。\n<wait>良い知らせを聞かせられるといいが‥‥‥約束は出来ない。\n<wait> @refalign
+m/MS0001.BIN	0:08	58	1925	1F01	君。\n<wait>君は後で、Ｂ５Ｆの詰め所に来てく{08:60}まえ。\n<wait>良い知らせを聞かせら{08:2F}と{08:7F}が{02:08}約束は出来{08:25}。\n<wait>	-kun.\n<wait>Come by the B5F post later on.\n<wait>I hope to have good news for you...... though I can't promise it.\n<wait>	Well then.\n<wait>Drop by the office on B5F later on.\n<wait>While I can't make any promises,\nI do have a good feeling about this.\n<wait>	v005	draft	reads: 君。\n<wait>君は後で、Ｂ５Ｆの詰め所に来てくれたまえ。\n<wait>良い知らせを聞かせられるといいが‥‥‥約束は出来ない。\n<wait>; reads: 君。\n<wait>君は後で、Ｂ５Ｆの詰め所に来てくれたまえ。\n<wait>良い知らせを聞かせられるといいが‥‥‥約束は出来ない。\n<wait> @refalign @seamfix-2026-09-05
 m/MS0001.BIN	0:08	59	2032	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
 m/MS0001.BIN	0:08	60	2038	1FD3	{08:4D}と、出来{08:50}{08:79}前に、{08:02}の見舞いに行{08:52}や{08:52}くれ。\n<wait>私も{08:47}後すぐに立ち寄る{01:3E}だ。\n<wait>		Also, if you can, I'm sure that Yamase would appreciate it\nif you were to pay him a visit.\n<wait>I'll probably drop by to say him "hi" myself.\n<wait>	v005		reads: それと、出来たらその前に、山瀬の見舞いに行ってやってくれ。\n<wait>私もこの後すぐに立ち寄るつもりだ。\n<wait>; reads: それと、出来たらその前に、山瀬の見舞いに行ってやってくれ。\n<wait>私もこの後すぐに立ち寄るつもりだ。\n<wait> @refalign
 m/MS0001.BIN	0:08	61	2126	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
@@ -233,7 +233,7 @@ m/MS0001.BIN	0:08	70	2647	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; rea
 m/MS0001.BIN	0:08	71	2653	1FD3	{08:03}に{08:5D}{08:5E}事があっ{08:50}{02:08}‥\n<wait>ラボの奴ら{02:08}ぶっ殺{08:4A}やる！！\n<wait>		If something, anything happens to her...\n<wait>Then those lab guys... They're gonna pay in blood!!\n<wait>	v005		reads: 英美にもしもの事があったら‥‥‥‥\n<wait>ラボの奴ら‥‥‥ぶっ殺してやる！！\n<wait>; reads: 英美にもしもの事があったら‥‥‥‥\n<wait>ラボの奴ら‥‥‥ぶっ殺してやる！！\n<wait> @refalign
 m/MS0001.BIN	0:08	72	2746	1FD0	{08:00}は軽々と{08:03}を抱き上げ、去{08:52}行{08:51}。\n<wait>{08:79}後を、心配気に{01:03}が追{08:52}行く{02:08}‥\n<wait>		Hayasaka makes his way down the stairs with Emi in his arms.\n<wait>You can see Newton following after them.\n<wait>	v005		reads: 早坂は軽々と英美を抱き上げ、去って行った。\n<wait>その後を、心配気にニュートンが追って行く‥‥‥‥\n<wait>; reads: 早坂は軽々と英美を抱き上げ、去って行った。\n<wait>その後を、心配気にニュートンが追って行く‥‥‥‥\n<wait> @refalign
 m/MS0001.BIN	0:08	73	2848	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
-m/MS0001.BIN	0:08	74	2860	1F01	{08:72}か。\n<wait>残念ながら、{08:34}と{08:02}は負傷し、重体だ。\n<wait>		Ayato...\n<wait>Unfortunately, both Yamase and Kirishima have been injured gravely.\n<wait>	v005		reads: ‥‥か。\n<wait>残念ながら、桐島と山瀬は負傷し、重体だ。\n<wait>; reads: ‥‥か。\n<wait>残念ながら、桐島と山瀬は負傷し、重体だ。\n<wait> @rebase-tagdiff @refalign
+m/MS0001.BIN	0:08	74	2860	1F01	{08:72}か。\n<wait>残念ながら、{08:34}と{08:02}は負傷し、重体だ。\n<wait>	...... I see.\n<wait>I'm sorry to say Kirishima and Yamase are both badly wounded.\n<wait>	Ayato...\n<wait>Unfortunately, both Yamase and Kirishima have been injured gravely.\n<wait>	v005	draft	reads: ‥‥か。\n<wait>残念ながら、桐島と山瀬は負傷し、重体だ。\n<wait>; reads: ‥‥か。\n<wait>残念ながら、桐島と山瀬は負傷し、重体だ。\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
 m/MS0001.BIN	0:08	75	2916	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
 m/MS0001.BIN	0:08	76	2922	1FD3	{08:0B}情報が間違{08:52}{08:64}{08:77}よ。\n<wait>{08:8F}{08:72}{08:0A}に頼り、判断を誤{08:51}の{08:62}{08:47}私だ{02:08}。\n<wait>		The data we got regarding the demon was wrong.\n<wait>And yet, in the end, it was me who made the wrong call.\n<wait>	v005		reads: 悪魔情報が間違っていたのだよ。\n<wait>だが‥‥データに頼り、判断を誤ったのは、この私だ‥‥‥。\n<wait>; reads: 悪魔情報が間違っていたのだよ。\n<wait>だが‥‥データに頼り、判断を誤ったのは、この私だ‥‥‥。\n<wait> @refalign
 m/MS0001.BIN	0:08	77	2996	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
@@ -241,7 +241,7 @@ m/MS0001.BIN	0:08	78	3002	1FD3	私の責任だよ。隊長失格だな{02:08}。
 m/MS0001.BIN	0:08	79	3041	1FD0	{08:04}はそう語ると、険しい表情の{08:7E}、握り締めた拳を凝視{08:4B}。\n<wait>しばしの間そう{08:4B}後、再び、	With that, Nishino, his expression grim, stared at his clenched fist.\n<wait>After a while, he turned once more to 			draft	reads: 西野はそう語ると、険しい表情のまま、握り締めた拳を凝視した。\n<wait>しばしの間そうした後、再び、; reads: 西野はそう語ると、険しい表情のまま、握り締めた拳を凝視した。\n<wait>しばしの間そうした後、再び、 @ours-2026-09-05
 m/MS0001.BIN	0:08	80	3132	1F01	に向け語り出{08:4B}。\n<wait>	 and began to speak.\n<wait>			draft	reads: に向け語り出した。\n<wait>; reads: に向け語り出した。\n<wait> @ours-2026-09-05
 m/MS0001.BIN	0:08	81	3157	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
-m/MS0001.BIN	0:08	82	3169	1F01	、心配をかけて済ま{08:19}。\n<wait>{08:02}は第一部隊の手によ{08:52}、医療施設に運ば{08:2F}準備が、行なわれ{08:14}所だ。\n<wait>		Ayato. I apologize for any concern I might have caused you.\n<wait>Yamase is currently being prepared to be taken to the medical ward\nby Squad One.\n<wait>	v005		reads: 、心配をかけて済まなかった。\n<wait>山瀬は第一部隊の手によって、医療施設に運ばれる準備が、行なわれている所だ。\n<wait>; reads: 、心配をかけて済まなかった。\n<wait>山瀬は第一部隊の手によって、医療施設に運ばれる準備が、行なわれている所だ。\n<wait> @refalign
+m/MS0001.BIN	0:08	82	3169	1F01	、心配をかけて済ま{08:19}。\n<wait>{08:02}は第一部隊の手によ{08:52}、医療施設に運ば{08:2F}準備が、行なわれ{08:14}所だ。\n<wait>	, I'm sorry to have worried you.\n<wait>Squad One is preparing to move Yamase to the medical facility now.\n<wait>	Ayato. I apologize for any concern I might have caused you.\n<wait>Yamase is currently being prepared to be taken to the medical ward\nby Squad One.\n<wait>	v005	draft	reads: 、心配をかけて済まなかった。\n<wait>山瀬は第一部隊の手によって、医療施設に運ばれる準備が、行なわれている所だ。\n<wait>; reads: 、心配をかけて済まなかった。\n<wait>山瀬は第一部隊の手によって、医療施設に運ばれる準備が、行なわれている所だ。\n<wait> @refalign @seamfix-2026-09-05
 m/MS0001.BIN	0:08	83	3269	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
 m/MS0001.BIN	0:08	84	3275	1FD3	{08:34}の方{08:62}君も見た通り{08:00}が連れて行{08:51}。\n<wait>ふたりとも命に別状は{08:25}{02:08}安心{08:4A}くれ。\n<wait>		As for Kirishima, Hayasaka already went with her as you could see.\n<wait>They are both in stable condition. Please, don't worry about them.\n<wait>	v005		reads: 桐島の方は、君も見た通り早坂が連れて行った。\n<wait>ふたりとも命に別状はない‥‥‥安心してくれ。\n<wait>; reads: 桐島の方は、君も見た通り早坂が連れて行った。\n<wait>ふたりとも命に別状はない‥‥‥安心してくれ。\n<wait> @refalign
 m/MS0001.BIN	0:08	85	3361	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
