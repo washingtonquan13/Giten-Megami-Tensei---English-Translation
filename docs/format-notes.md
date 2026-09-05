@@ -710,7 +710,15 @@ Three independent limits, all of them small patches:
    `0x00422D32` to a private six-byte resolver in the appended section
    (`mov eax,[esp+8]; add eax,[esp+4]; ret`), leaving the other 16 callers alone.
 
-With all three, the database can grow to whatever the offsets allow, which is enough
+4. **The allocator.** `0x004044C0` -> `0x00449640` masks *both* of its arguments
+   to 16 bits and multiplies them, so it can never be handed a size above 65,535
+   in a single argument -- `alloc(0x20000, 1)` allocates **zero** bytes.  It is a
+   calloc, so the fix is to pass the size as `chunk * count`.  This one does not
+   show up in any static check: the exe builds, the patches verify, and the game
+   dies on the opening frame writing the database into a zero-byte buffer.
+   **[Found by play-testing 2026-09-05, not by reading the code.]**
+
+With all four, the database can grow to whatever the offsets allow, which is enough
 for English names *and* descriptions (the Japanese is 42,736 bytes; English needs
 roughly +21,000).
 

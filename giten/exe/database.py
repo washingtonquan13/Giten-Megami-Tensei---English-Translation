@@ -40,12 +40,21 @@ SOURCE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "database.S")
 #: the next free slot.  :func:`check_free` asserts the original does not use it.
 ET_ID = 0x0102
 
-#: how much the loader allocates for the concatenated chain
-BUF_SIZE = 0x20000
+#: How much the loader allocates for the concatenated chain.
+#:
+#: The allocator masks **both** of its arguments to 16 bits before multiplying
+#: (``0x00449640``: ``and eax,0xffff`` / ``and esi,0xffff`` / ``imul``), so
+#: asking for 0x20000 bytes in one argument asks for *zero*.  It is a calloc,
+#: so the size is split across the two -- a fourth 64 KB limit, and the one
+#: that is invisible until the thing actually runs.
+BUF_CHUNK = 0x8000
+BUF_COUNT = 4
+BUF_SIZE = BUF_CHUNK * BUF_COUNT
 
 SYMBOLS = {
     "ET_ID": ET_ID,
-    "BUF_SIZE": BUF_SIZE,
+    "BUF_CHUNK": BUF_CHUNK,
+    "BUF_COUNT": BUF_COUNT,
     "ROUTER": 0x00401DD0,        # (id, kind, flags) -> FILE *
     "ALLOC": 0x004044C0,         # (size, 1) -> handle
     "HANDLE2PTR": 0x00404670,    # handle -> buffer base

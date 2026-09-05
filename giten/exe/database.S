@@ -17,6 +17,11 @@
 # everything anyway (pushad) because the run we replace ended by leaving the
 # handle in ds:0x4800E8, not in a register.
 #
+# The allocator (0x004044C0 -> 0x00449640) masks *both* of its arguments to 16
+# bits and multiplies them, so it can never be asked for more than 65,535 bytes
+# in one argument -- a fourth 64 KB limit on top of the three in section 6.3.
+# It is a calloc, so the size is passed as BUF_CHUNK * BUF_COUNT instead.
+#
 # If the file is missing the router returns NULL and we store nothing, so the
 # very next record lookup dereferences a null base and the game dies at
 # startup.  That is deliberate: a loud failure on the first frame beats a
@@ -61,9 +66,9 @@ load:
         jz      .Ldone                      # missing file: store nothing
         mov     esi, eax                    # esi = FILE *
 
-        push    1                           # alloc(BUF_SIZE, 1) -> handle
-        push    BUF_SIZE
-        mov     eax, ALLOC
+        push    BUF_COUNT                   # alloc(chunk, count) -> handle
+        push    BUF_CHUNK                   # both are masked to 16 bits and
+        mov     eax, ALLOC                  # multiplied, so the size goes in two
         call    eax
         add     esp, 8
         test    eax, eax

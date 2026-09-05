@@ -100,3 +100,23 @@ def test_the_wide_table_is_what_the_patched_load_instruction_reads():
         off = struct.unpack_from("<I", body, 2 + i * 4)[0]
         end = struct.unpack_from("<I", body, 2 + (i + 1) * 4)[0] if i + 1 < count else len(body)
         assert body[off:end] == recs[i].pack(), i
+
+
+def test_the_allocator_cannot_be_asked_for_more_than_64k_in_one_argument():
+    """0x00449640 masks *both* arguments to 16 bits and multiplies them.
+
+    Asking for BUF_SIZE in one argument asks for (BUF_SIZE & 0xFFFF) -- zero,
+    for a 0x20000 buffer -- and the loader then writes the whole database into
+    it.  That is the crash this test exists to stop coming back: it is a fourth
+    64 KB limit, and unlike the other three it is invisible until the game runs.
+    """
+    assert database.BUF_CHUNK <= 0xFFFF, database.BUF_CHUNK
+    assert database.BUF_COUNT <= 0xFFFF, database.BUF_COUNT
+    assert database.BUF_CHUNK * database.BUF_COUNT == database.BUF_SIZE
+    assert (database.BUF_SIZE & 0xFFFF) != database.BUF_SIZE, \
+        "BUF_SIZE now fits in 16 bits; the split is no longer load-bearing"
+
+    # and the loader really does pass the pair, not the product
+    src = open(database.SOURCE, encoding="utf-8").read()
+    assert "push    BUF_COUNT" in src and "push    BUF_CHUNK" in src
+    assert "push    BUF_SIZE" not in src, "the size is being passed in one argument again"
