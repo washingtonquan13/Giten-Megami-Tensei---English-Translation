@@ -22,7 +22,7 @@ m/MS0053.BIN	0:00	15	450	1FB2	君は気絶{08:4B}{08:5F}		You passed out	v005		r
 m/MS0053.BIN	0:00	16	464	1FB2	{01:32}？		You okay?	v005		reads: 大丈夫？; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0053.BIN	0:00	17	494	1F01	：	:			draft	reads: ：; reads: 山瀬勇 @rebase-new @ours-2026-09-05
 m/MS0053.BIN	0:00	18	498	1FD3	{08:72}うん{08:72}{01:32}だと思う{02:08}\n<wait>	...Yeah... I think I'm all right.........\n<wait>	Yeah... I think I'm okay...\n<wait>	v005	draft	reads: ‥‥うん‥‥大丈夫だと思う‥‥‥\n<wait> @ours-2026-09-05
-m/MS0053.BIN	0:00	19	533	1F01	はそう言いながらも、{08:76}足元がふらつき、顔色も良く{08:25}。\n<wait>		Yuuka says that, but it's clear that she hasn't fully recovered yet.\nHer face is pale, and she has trouble standing straight.\n<wait>	v005		reads: はそう言いながらも、まだ足元がふらつき、顔色も良くない。\n<wait>; reads: ： @rebase-tagdiff @rebase-unmatched idx19 en=Yuuka: @refalign
+m/MS0053.BIN	0:00	19	533	1F01	はそう言いながらも、{08:76}足元がふらつき、顔色も良く{08:25}。\n<wait>	 said so, but she was still unsteady on her feet and pale.\n<wait>	Yuuka says that, but it's clear that she hasn't fully recovered yet.\nHer face is pale, and she has trouble standing straight.\n<wait>	v005	draft	reads: はそう言いながらも、まだ足元がふらつき、顔色も良くない。\n<wait>; reads: ： @rebase-tagdiff @rebase-unmatched idx19 en=Yuuka: @refalign @seamfix-2026-09-05
 m/MS0053.BIN	0:00	20	608	1FB2	ベッドで休{08:5C}		Let's find you a bed	v005		reads: ベッドで休もう; menu option, declared width 20 columns; reads: ‥‥うん‥‥大丈夫だと思う‥‥‥\n<wait> @refalign
 m/MS0053.BIN	0:00	21	622	1FB2	身体を支{08:28}		Give her a shoulder	v005		reads: 身体を支える; menu option, declared width 20 columns; reads: はそう言いながらも、まだ足元がふらつき、顔色も良くない。\n<wait> @refalign
 m/MS0053.BIN	0:00	22	658	1F01	{08:62}ふらつく	 supported the unsteady 			draft	reads: は、ふらつく; reads: ベッドで休もう; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
@@ -100,7 +100,7 @@ m/MS0053.BIN	0:00	93	3037	1FD3	食料庫はＢ６Ｆの中央だ！　気をつ�
 m/MS0053.BIN	0:01	0	99	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
 m/MS0053.BIN	0:01	1	105	1FD3	{02:08}終わ{08:51}よ。\nエレベーターの溶接も、済ま{08:67}来た。\n<wait>		Alright, we are finished.\nEvery single entrance is now welded shut.\n<wait>	v005		reads: ‥‥‥終わったよ。\nエレベーターの溶接も、済ませて来た。\n<wait>; reads: ‥‥‥終わったよ。\nエレベーターの溶接も、済ませて来た。\n<wait> @refalign
 m/MS0053.BIN	0:01	2	161	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
-m/MS0053.BIN	0:01	3	173	1F01	君は？\n<wait>		Is Yuuka okay?\n<wait>	v005		reads: 君は？\n<wait> @refalign
+m/MS0053.BIN	0:01	3	173	1F01	君は？\n<wait>	-kun?\n<wait>	Is Yuuka okay?\n<wait>	v005	draft	reads: 君は？\n<wait> @refalign @seamfix-2026-09-05
 m/MS0053.BIN	0:01	4	194	1F01	：	:	:	v005	draft	reads: ： @refalign @ours-2026-09-05
 m/MS0053.BIN	0:01	5	198	1FD3	意識は取り戻{08:4B}ん{08:55}が、気分が悪いらしくて{08:72}\n今、病室にい{08:5A}。\n<wait>		She regained consciousness, but her condition is still bad.\nShe's currently resting.\n<wait>	v005		reads: 意識は取り戻したんですが、気分が悪いらしくて‥‥\n今、病室にいます。\n<wait>; reads: 意識は取り戻したんですが、気分が悪いらしくて‥‥\n今、病室にいます。\n<wait> @refalign
 m/MS0053.BIN	0:01	6	266	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
@@ -179,10 +179,10 @@ m/MS0053.BIN	0:04	18	546	1FBA	父{08:62}部下を逃走さ{08:2A}為に一命を
 m/MS0053.BIN	0:04	19	593	1FBA	{08:4D}を思うと、	Thinking of that, 	Can you really bring yourself to just run away like this?\nNo, you cannot.\n<wait>	v005	draft	reads: それを思うと、; reads: ‥‥‥‥‥\n<wait> @ours-2026-09-05
 m/MS0053.BIN	0:04	20	611	1F01	は兼嗣を見捨て{08:69}と{08:4B}事が恥ずかしく思え、\nエレベーターの前{08:42}立ち去{08:51}。\n<wait>	 felt ashamed of having tried to abandon Kanetsugu, and walked away from\nthe elevator.\n<wait>			draft	reads: は兼嗣を見捨てようとした事が恥ずかしく思え、\nエレベーターの前から立ち去った。\n<wait>; reads: だが、その脳裏に父の事が蘇った。\n<wait> @ours-2026-09-05
 m/MS0053.BIN	0:04	21	688	18	{08:04}は{01:28}言{08:52}{08:64}。\nどんな者で{08:3F}、助けを求{08:2E}{02:0B}を捨て置く訳には行か{08:25}{08:72}と\n<wait>		It's like Nishino always said.\nA man cannot ignore those in need of help.\n<wait>	v005		reads: 西野はいつも言っていた。\nどんな者であれ、助けを求める人間を捨て置く訳には行かない‥‥と\n<wait>; reads: 父は、部下を逃走させる為に一命をなげうったのだ。\n<wait> @refalign
-m/MS0053.BIN	0:04	22	768	1F01	{08:62}Ｂ９へ向かう為エレベーターの前{08:42}立ち去{08:51}。\n<wait>		You step away from the elevator.\n<wait>	v005		reads: は、Ｂ９へ向かう為エレベーターの前から立ち去った。\n<wait>; reads: それを思うと、 @rebase-tagdiff @refalign
+m/MS0053.BIN	0:04	22	768	1F01	{08:62}Ｂ９へ向かう為エレベーターの前{08:42}立ち去{08:51}。\n<wait>	 stepped away from the elevator, heading for B9.\n<wait>	You step away from the elevator.\n<wait>	v005	draft	reads: は、Ｂ９へ向かう為エレベーターの前から立ち去った。\n<wait>; reads: それを思うと、 @rebase-tagdiff @refalign @seamfix-2026-09-05
 m/MS0053.BIN	0:04	23	822	1FD0	どんな者で{08:3F}、助けを求{08:2E}{02:0B}を捨て置く訳には行か{08:25}{08:72}\n<wait>		A man cannot ignore those in need of help.\n<wait>	v005		reads: どんな者であれ、助けを求める人間を捨て置く訳には行かない‥‥\n<wait>; reads: は兼嗣を見捨てようとした事が恥ずかしく思え、\nエレベーターの前から立ち去った。\n<wait> @refalign
 m/MS0053.BIN	0:04	24	895	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野はいつも言っていた。\nどんな者であれ、助けを求める人間を捨て置く訳には行かない‥‥と\n<wait> @refalign
-m/MS0053.BIN	0:04	25	907	1F01	、上官を見捨{08:2B}{08:46}は出来んぞ！\n<wait>		Katsuragi. We must save Commander Kanetsugu!\n<wait>	v005		reads: 、上官を見捨てることは出来んぞ！\n<wait>; reads: は、Ｂ９へ向かう為エレベーターの前から立ち去った。\n<wait> @rebase-tagdiff @refalign
+m/MS0053.BIN	0:04	25	907	1F01	、上官を見捨{08:2B}{08:46}は出来んぞ！\n<wait>	, we cannot abandon our commanding officer!\n<wait>	Katsuragi. We must save Commander Kanetsugu!\n<wait>	v005	draft	reads: 、上官を見捨てることは出来んぞ！\n<wait>; reads: は、Ｂ９へ向かう為エレベーターの前から立ち去った。\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
 m/MS0053.BIN	0:04	26	965	1FD0	エレベーター{08:62}ＢＯＸロック{03:0C}{08:14}{02:08}\n<wait>		The elevator has been locked.\n<wait>	v005		reads: エレベーターは、ＢＯＸロックされている‥‥‥\n<wait>; reads: どんな者であれ、助けを求める人間を捨て置く訳には行かない‥‥\n<wait> @refalign
 m/MS0053.BIN	0:05	0	8	1F03	{=89}{=1B}	{=89}{=1B}				
 m/MS0053.BIN	0:05	1	41	1FD0	ＢＯＸロック解除を試みる	Attempting to release the box lock 			draft	@ours-2026-09-05
@@ -227,8 +227,8 @@ m/MS0053.BIN	0:07	28	822	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: �
 m/MS0053.BIN	0:07	29	828	1FD3	ＯＫよ！\n<wait>		Okay, done!\n<wait>	v005		@refalign
 m/MS0053.BIN	0:07	30	910	16	{=FC}{=00}{01:1F}ﾐ溶接を解いて、Ｂ８に行き{08:15}\n		{=FC}{=00}{01:1F}Undo the welding and proceed to B8?\n	ours		reads: {=FC}{=00}おにいちゃんﾐ溶接を解いて、Ｂ８に行きますか？\n
 m/MS0053.BIN	0:07	31	946	1F58	{05:00}	{05:00}				reads: はいいいえ; reads: はいいいえニュートン
-m/MS0053.BIN	0:07	32	958	1F01	は厳重な溶接を解いて、階下に向{08:18}{02:08}\n<wait>		You undo the welding and head downstairs.\n<wait>	v005		reads: は厳重な溶接を解いて、階下に向かった‥‥‥\n<wait>; reads: は厳重な溶接を解いて、階下に向かった‥‥‥\n<wait> @rebase-tagdiff @refalign
-m/MS0053.BIN	0:07	33	1010	1F01	{08:62}Ｂ８に向かうのはやめ、{08:47}場を立ち去{08:51}。\n<wait>		You decide to turn around after all.\n<wait>	v005		reads: は、Ｂ８に向かうのはやめ、この場を立ち去った。\n<wait>; reads: は、Ｂ８に向かうのはやめ、この場を立ち去った。\n<wait> @rebase-tagdiff @refalign
+m/MS0053.BIN	0:07	32	958	1F01	は厳重な溶接を解いて、階下に向{08:18}{02:08}\n<wait>	 undid the heavy welding and headed downstairs......\n<wait>	You undo the welding and head downstairs.\n<wait>	v005	draft	reads: は厳重な溶接を解いて、階下に向かった‥‥‥\n<wait>; reads: は厳重な溶接を解いて、階下に向かった‥‥‥\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS0053.BIN	0:07	33	1010	1F01	{08:62}Ｂ８に向かうのはやめ、{08:47}場を立ち去{08:51}。\n<wait>	 gave up on going to B8 and left the place.\n<wait>	You decide to turn around after all.\n<wait>	v005	draft	reads: は、Ｂ８に向かうのはやめ、この場を立ち去った。\n<wait>; reads: は、Ｂ８に向かうのはやめ、この場を立ち去った。\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
 m/MS0053.BIN	0:08	0	6	1FD2	女性：		Woman:	v005		
 m/MS0053.BIN	0:08	1	14	1FD3	キャアアアアアア！！！\n<wait>		EEEEEEEEEEEEEK!\n<wait>	v005		
 m/MS0053.BIN	0:08	2	51	1FD0	{08:79}時、辺りをつんざく様な、甲高い女性の悲鳴が聞こ{08:41}。\n声は{08:90}やら、医療施設の方{08:42}の様だ。\n<wait>		In that moment, a high-pitched scream pierces the air.\nIt sounds like it came from the medical facility.\n<wait>	v005		reads: その時、辺りをつんざく様な、甲高い女性の悲鳴が聞こえた。\n声はどうやら、医療施設の方からの様だ。\n<wait>
