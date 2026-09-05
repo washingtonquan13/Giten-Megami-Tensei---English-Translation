@@ -7,11 +7,11 @@ m/MS003D.BIN	0:06	0	44	1FD0	{08:05}ーの端末が{08:7B}。\nアームターミ
 m/MS003D.BIN	0:06	1	104	1FB2	接続{08:8E}		Connect	v005		reads: 接続する; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign
 m/MS003D.BIN	0:06	2	112	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign
 m/MS003D.BIN	0:07	0	8	1FD1	有用{08:0A}を検索中{08:55}		Looking for available data	v005		reads: 有用データを検索中です; reads: 有用データを検索中です @refalign
-m/MS003D.BIN	0:07	1	30	1FFA	．．．\n					
-m/MS003D.BIN	0:08	0	12	1FC4	＞「		>"	ours		
-m/MS003D.BIN	0:08	1	26	1FEF	」「	」「				reads: ニュートン @rebase-new
-m/MS003D.BIN	0:08	2	40	1FEF	」\n　「					reads: 」「 @rebase-new @rebase-unmatched idx2 en=" "
-m/MS003D.BIN	0:08	3	53	1F01	」の各{08:0B}の\n　ＤＡＳ{08:0A}を発見しま{08:4B}\n　プロテクトを解除し、{03:09}ロードを試み{08:5A}\n	」の各{08:0B}の\n　ＤＡＳ{08:0A}を発見しま{08:4B}\n　プロテクトを解除し、{03:09}ロードを試み{08:5A}\n				reads: 」の各悪魔の\n　ＤＡＳデータを発見しました\n　プロテクトを解除し、ダウンロードを試みます\n; reads: ニュートン
+m/MS003D.BIN	0:07	1	30	1FFA	．．．\n	...\n			draft	@ours-2026-09-05
+m/MS003D.BIN	0:08	0	12	1FC4	＞「	>DAS data found for the demons "	>"	ours	draft	@ours-2026-09-05
+m/MS003D.BIN	0:08	1	26	1FEF	」「	", "			draft	reads: ニュートン @rebase-new @ours-2026-09-05
+m/MS003D.BIN	0:08	2	40	1FEF	」\n　「	",\n and " 			draft	reads: 」「 @rebase-new @rebase-unmatched idx2 en=" " @ours-2026-09-05
+m/MS003D.BIN	0:08	3	53	1F01	」の各{08:0B}の\n　ＤＡＳ{08:0A}を発見しま{08:4B}\n　プロテクトを解除し、{03:09}ロードを試み{08:5A}\n	 ".\n Releasing protection and attempting download.\n			draft	reads: 」の各悪魔の\n　ＤＡＳデータを発見しました\n　プロテクトを解除し、ダウンロードを試みます\n; reads: ニュートン @ours-2026-09-05
 m/MS003D.BIN	0:08	4	142	1FB2	実行		Proceed	v005		menu option, declared width 20 columns; reads: 」\n　「 @rebase-unmatched idx4 en="\n　" @refalign
 m/MS003D.BIN	0:08	5	148	1FB2	中止	中止	Abort	v005		menu option, declared width 20 columns; reads: ニュートン
 m/MS003D.BIN	0:08	6	210	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>		>Download aborted.\n<wait>	v005		reads: ＞ダウンロードを中止します\n<wait>; reads: の各悪魔の\n　ＤＡＳデータを発見しました\n　プロテクトを解除し、ダウンロードを試みます\n @rebase-unmatched idx6 en='s D.A.S. data found for each demon\n　Removing protection, attempting download\n @refalign
@@ -21,7 +21,7 @@ m/MS003D.BIN	0:09	2	90	1FB2	中止		Abort	v005		menu option, declared width 20 c
 m/MS003D.BIN	0:09	3	126	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>	＞{03:09}ロードを中止し{08:5A}\n<wait>	>Download aborted.\n<wait>	v005		reads: ＞ダウンロードを中止します\n<wait>; reads: わたしを
 m/MS003D.BIN	0:0A	0	46	1F4F	{03:16}	{03:16}				reads: 
 m/MS003D.BIN	0:0A	1	49	00	{02:03}	{02:03}				reads: レジスタンス
-m/MS003D.BIN	0:0A	2	70	1FC4	＞「					
+m/MS003D.BIN	0:0A	2	70	1FC4	＞「	>[ 			draft	@ours-2026-09-05
 m/MS003D.BIN	0:0A	3	79	1F01	」を発見しま{08:4B}\n		{03:19}] found.\n	v005		reads: 」を発見しました\n; reads: 」を発見しました\n @refalign
 m/MS003D.BIN	0:0A	4	119	1F4E	{03:16}	{03:16}				reads: 
 m/MS003D.BIN	0:0A	5	122	00	{01:03}	{01:03}				reads: ニュートン
@@ -33,7 +33,7 @@ m/MS003D.BIN	0:0A	10	384	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>	＞
 m/MS003D.BIN	0:0A	11	426	1FC4	＞{08:47}{08:09}は既にインストール{03:0C}てい{08:5A}\n<wait>	＞{08:47}{08:09}は既にインストール{03:0C}てい{08:5A}\n<wait>	>This program has already been installed.\n<wait>	v005		reads: ＞このプログラムは既にインストールされています\n<wait>
 m/MS003D.BIN	0:0A	12	480	1FC4	＞既に{08:47}{08:09}の上位バージョンが\n　インストール{03:0C}てい{08:5A}\n<wait>		>An upgraded version of this program\n has already been installed.\n<wait>	v005		reads: ＞既にこのプログラムの上位バージョンが\n　インストールされています\n<wait>; reads: ＞ダウンロードを中止します\n<wait> @refalign
 m/MS003D.BIN	0:0B	0	2	1FBA	＞「		>Found the DDS data of [	v005		@refalign
-m/MS003D.BIN	0:0B	1	12	1F01	」のＤＤＳ{08:0A}を発見しま{08:4B}\n	」のＤＤＳ{08:0A}を発見しま{08:4B}\n				reads: 」のＤＤＳデータを発見しました\n; reads: ニュートン
+m/MS003D.BIN	0:0B	1	12	1F01	」のＤＤＳ{08:0A}を発見しま{08:4B}\n	 ].\n			draft	reads: 」のＤＤＳデータを発見しました\n; reads: ニュートン @ours-2026-09-05
 m/MS003D.BIN	0:0B	2	60	1F81	ｺ＞既に「		The DDS data of [	ours		reads: 」のＤＤＳデータを発見しました\n
 m/MS003D.BIN	0:0B	3	75	1F01	」のＤＤＳ{08:0A}は\n　インストール{03:0C}てい{08:5A}\n<wait>		]\n has already been installed.\n<wait>	v005		reads: 」のＤＤＳデータは\n　インストールされています\n<wait>
 m/MS003D.BIN	0:0B	4	132	1FBA	＞記憶容量不足でインストールでき{02:0A}\n<wait>	＞記憶容量不足でインストールでき{02:0A}\n<wait>	>Error. No space left to install.\n<wait>	v005		reads: ＞記憶容量不足でインストールできません\n<wait>; reads: ニュートン
@@ -46,7 +46,7 @@ m/MS003D.BIN	0:0D	0	2	1FBA	＞情報{08:0A}ファイルを発見しま{08:4B}\n�
 m/MS003D.BIN	0:0D	1	84	1FB2	実行		Proceed	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS003D.BIN	0:0D	2	90	1FB2	中止		Abort	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS003D.BIN	0:0D	3	114	1FBA	＞{01:23}お待ち{08:6E}	＞{01:23}お待ち{08:6E}	>Please wait a moment	v005		reads: ＞しばらくお待ちください
-m/MS003D.BIN	0:0D	4	132	1FFA	．．．\n	．．．\n				
+m/MS003D.BIN	0:0D	4	132	1FFA	．．．\n	...\n			draft	@ours-2026-09-05
 m/MS003D.BIN	0:0D	5	175	1FBA	＞プロテクトの解除に失敗しま{08:4B}\n　情報{08:0A}ファイルの内容を表示でき{02:0A}\n<wait>		>Unable to break encryption.\n Contents cannot be displayed.\n<wait>	v005		reads: ＞プロテクトの解除に失敗しました\n　情報データファイルの内容を表示できません\n<wait>; reads: ＞しばらくお待ちください @refalign
 m/MS003D.BIN	0:0D	6	252	1FBA	＞情報{08:0A}ファイルの内容を表示し{08:5A}\n<wait>		>Displaying contents.\n<wait>	v005		reads: ＞情報データファイルの内容を表示します\n<wait>; reads: ＞情報データファイルの内容を表示します\n<wait> @refalign
 m/MS003D.BIN	0:0D	7	310	1FB2	再表示		Show again	v005		menu option, declared width 20 columns; reads: ＞プロテクトの解除に失敗しました\n　情報データファイルの内容を表示できません\n<wait> @refalign
@@ -55,7 +55,7 @@ m/MS003D.BIN	0:0D	9	342	1FBA	＞ファイル内容の表示を中止し{08:5A}\n
 m/MS003D.BIN	0:0D	10	382	0C	<wait>＞ファイル内容の表示を終了し{08:5A}\n<wait>		<wait>>Exiting display mode.\n<wait>	v005		reads: <wait>＞ファイル内容の表示を終了します\n<wait>; menu option, declared width 20 columns @refalign
 m/MS003D.BIN	0:0E	0	2	1FBA	＞{03:09}ロード開始し{08:5A}\n<wait>		>Initializing download.\n<wait>	v005		reads: ＞ダウンロード開始します\n<wait>; reads: ＞ダウンロード開始します\n<wait> @refalign
 m/MS003D.BIN	0:0E	1	27	1FBA	{03:09}ロード{08:4A}い{08:5A}		Downloading	v005		reads: ダウンロードしています; reads: ダウンロードしています @refalign
-m/MS003D.BIN	0:0E	2	47	1FFA	．．．\n					
+m/MS003D.BIN	0:0E	2	47	1FFA	．．．\n	...\n			draft	@ours-2026-09-05
 m/MS003D.BIN	0:0E	3	90	1F89	＞プロテクトを解除でき{02:0A}で{08:4B}\n　{03:09}ロードに失敗しま{08:4B}\n<wait>		>Unable to break encryption.\n Download failed.\n<wait>	v005		reads: ＞プロテクトを解除できませんでした\n　ダウンロードに失敗しました\n<wait>; reads: ＞プロテクトを解除できませんでした\n　ダウンロードに失敗しました\n<wait> @refalign
 m/MS003D.BIN	0:0E	4	151	0C	＞{03:09}ロード正常終了しま{08:4B}\n<wait>		>Download completed successfully.\n<wait>	v005		reads: ＞ダウンロード正常終了しました\n<wait>; reads: ＞ダウンロード正常終了しました\n<wait> @refalign
 m/MS003D.BIN	0:0F	0	122	1FC4	＞報告：		>Error: 	v005		@refalign
@@ -72,12 +72,12 @@ m/MS003D.BIN	0:0F	10	562	17	＞報告：システムへの影響はあり{02:0A}
 m/MS003D.BIN	0:10	0	253	1FBA	＞報告：システムへの影響はあり{02:0A}で{08:4B}\n<wait>		>Success: System is safe.\n<wait>	v005		reads: ＞報告：システムへの影響はありませんでした\n<wait>; reads: ＞報告：システムへの影響はありませんでした\n<wait> @refalign
 m/MS003D.BIN	0:12	0	0	DATA	＞報告：ウイルス{08:09}の自動消滅を確認\n　　　　各システムへの影響をチェックし{08:5A}\n<wait>		>Report: Automatic virus program elimination confirmed\n　　　　Checking effects on each system\n<wait>	ours		reads: ＞報告：ウイルスプログラムの自動消滅を確認\n　　　　各システムへの影響をチェックします\n<wait>
 m/MS003D.BIN	0:12	1	82	1FBA	チェック{08:4A}い{08:5A}		Checking	v005		reads: チェックしています; reads: チェックしています @refalign
-m/MS003D.BIN	0:12	2	102	1FFA	．．．\n					
-m/MS003D.BIN	0:13	0	4	1FC4	＞警告：ＡＭＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>		>Warning: A.M.S. has been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours		reads: ＞警告：ＡＭＳが破壊されました\n　　　　修復は不可能です\n　　　　システムの再インストールが必要です\n<wait>
-m/MS003D.BIN	0:14	0	4	1FC4	＞警告：ＡＭＳ及びＡＮＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>		>Warning: A.M.S. and A.N.S. have been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours		reads: ＞警告：ＡＭＳ及びＡＮＳが破壊されました\n　　　　修復は不可能です\n　　　　システムの再インストールが必要です\n<wait>
-m/MS003D.BIN	0:15	0	4	1FC4	＞警告：ＡＮＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>		>Warning: A.N.S. has been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours		reads: ＞警告：ＡＮＳが破壊されました\n　　　　修復は不可能です\n　　　　システムの再インストールが必要です\n<wait>
-m/MS003D.BIN	0:17	0	28	1FC4	＞警告：ＤＡＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>		>Warning: D.A.S. has been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours		reads: ＞警告：ＤＡＳが破壊されました\n　　　　修復は不可能です\n　　　　システムの再インストールが必要です\n<wait>
-m/MS003D.BIN	0:18	0	68	1FC4	＞警告：戦闘{08:09}が破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　{08:09}の再インストールが必要{08:55}\n<wait>		>Warning: Combat program has been destroyed\n　　　　Repair is impossible\n　　　　Program reinstallation is required\n<wait>	ours		reads: ＞警告：戦闘プログラムが破壊されました\n　　　　修復は不可能です\n　　　　プログラムの再インストールが必要です\n<wait>
-m/MS003D.BIN	0:19	0	20	1FC4	＞警告：ＤＣＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>		>Warning: DCS has been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours		reads: ＞警告：ＤＣＳが破壊されました\n　　　　修復は不可能です\n　　　　システムの再インストールが必要です\n<wait>
-m/MS003D.BIN	0:1A	0	7	1FC4	＞警告：ＤＤＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>		>Warning: DDS has been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours		reads: ＞警告：ＤＤＳが破壊されました\n　　　　修復は不可能です\n　　　　システムの再インストールが必要です\n<wait>
+m/MS003D.BIN	0:12	2	102	1FFA	．．．\n	...\n			draft	@ours-2026-09-05
+m/MS003D.BIN	0:13	0	4	1FC4	＞警告：ＡＭＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>	>WARNING: AMS destroyed\n        Repair impossible\n        System reinstallation required\n<wait>	>Warning: A.M.S. has been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours	draft	reads: ＞警告：ＡＭＳが破壊されました\n　　　　修復は不可能です\n　　　　システムの再インストールが必要です\n<wait> @ours-2026-09-05
+m/MS003D.BIN	0:14	0	4	1FC4	＞警告：ＡＭＳ及びＡＮＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>	>WARNING: AMS and ANS destroyed\n        Repair impossible\n        System reinstallation required\n<wait>	>Warning: A.M.S. and A.N.S. have been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours	draft	reads: ＞警告：ＡＭＳ及びＡＮＳが破壊されました\n　　　　修復は不可能です\n　　　　システムの再インストールが必要です\n<wait> @ours-2026-09-05
+m/MS003D.BIN	0:15	0	4	1FC4	＞警告：ＡＮＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>	>WARNING: ANS destroyed\n        Repair impossible\n        System reinstallation required\n<wait>	>Warning: A.N.S. has been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours	draft	reads: ＞警告：ＡＮＳが破壊されました\n　　　　修復は不可能です\n　　　　システムの再インストールが必要です\n<wait> @ours-2026-09-05
+m/MS003D.BIN	0:17	0	28	1FC4	＞警告：ＤＡＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>	>WARNING: DAS destroyed\n        Repair impossible\n        System reinstallation required\n<wait>	>Warning: D.A.S. has been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours	draft	reads: ＞警告：ＤＡＳが破壊されました\n　　　　修復は不可能です\n　　　　システムの再インストールが必要です\n<wait> @ours-2026-09-05
+m/MS003D.BIN	0:18	0	68	1FC4	＞警告：戦闘{08:09}が破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　{08:09}の再インストールが必要{08:55}\n<wait>	>WARNING: Battle program destroyed\n        Repair impossible\n        Program reinstallation required\n<wait>	>Warning: Combat program has been destroyed\n　　　　Repair is impossible\n　　　　Program reinstallation is required\n<wait>	ours	draft	reads: ＞警告：戦闘プログラムが破壊されました\n　　　　修復は不可能です\n　　　　プログラムの再インストールが必要です\n<wait> @ours-2026-09-05
+m/MS003D.BIN	0:19	0	20	1FC4	＞警告：ＤＣＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>	>WARNING: DCS destroyed\n        Repair impossible\n        System reinstallation required\n<wait>	>Warning: DCS has been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours	draft	reads: ＞警告：ＤＣＳが破壊されました\n　　　　修復は不可能です\n　　　　システムの再インストールが必要です\n<wait> @ours-2026-09-05
+m/MS003D.BIN	0:1A	0	7	1FC4	＞警告：ＤＤＳが破壊{03:0C}ま{08:4B}\n　　　　修復は不可能{08:55}\n　　　　システムの再インストールが必要{08:55}\n<wait>	>WARNING: DDS destroyed\n        Repair impossible\n        System reinstallation required\n<wait>	>Warning: DDS has been destroyed\n　　　　Repair is impossible\n　　　　System reinstallation is required\n<wait>	ours	draft	reads: ＞警告：ＤＤＳが破壊されました\n　　　　修復は不可能です\n　　　　システムの再インストールが必要です\n<wait> @ours-2026-09-05
 m/MS003D.BIN	0:1B	0	13	1FD0	{08:05}ーの端末が{08:7B}。\n「アームターミナル」が{08:25}と利用{08:23}{08:69}だ。\n<wait>		A large computer stands before you.\nIt appears that an Arm Terminal is required to use it.\n<wait>	v005		reads: コンピューターの端末がある。\n「アームターミナル」がないと利用できないようだ。\n<wait>; reads: コンピューターの端末がある。\n「アームターミナル」がないと利用できないようだ。\n<wait> @refalign
