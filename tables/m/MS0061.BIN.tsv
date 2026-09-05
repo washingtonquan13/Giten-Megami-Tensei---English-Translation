@@ -22,8 +22,8 @@ m/MS0061.BIN	0:02	0	28	1FD2	男性：		Man:	v005
 m/MS0061.BIN	0:02	1	36	1FD3	お兄さん{02:00}の制服買わ{08:25}かい？\n		Mister. Would you be interested in purchasing a Devil Buster uniform?\n	v005		reads: お兄さんデビルバスターの制服買わないかい？\n
 m/MS0061.BIN	0:02	2	81	1FB2	買う		Purchase	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0061.BIN	0:02	3	87	1FB2	いら{08:25}		Not interested	v005		reads: いらない; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0061.BIN	0:02	4	115	1FD2	男性：	男性：	Man:	v005		reads: 
-m/MS0061.BIN	0:02	5	123	1FD3	値段{08:62}１万マッカ！\n使い込まれちゃ{08:40}が、きれいな代物だ。\n{08:48}以上{08:62}ビタ一文まけられ{08:25}ぜ！\n<wait>	値段{08:62}１万マッカ！\n使い込まれちゃ{08:40}が、きれいな代物だ。\n{08:48}以上{08:62}ビタ一文まけられ{08:25}ぜ！\n<wait>	This pristine uniform can be yours for the low, low price\nof 10000 Macca!\n<wait>	ours		reads: 値段は、１万マッカ！\n使い込まれちゃいるが、きれいな代物だ。\nこれ以上は、ビタ一文まけられないぜ！\n<wait>
+m/MS0061.BIN	0:02	4	115	1FD2	男性：	Man:	Man:	v005	draft	reads:  @ours-2026-09-05
+m/MS0061.BIN	0:02	5	123	1FD3	値段{08:62}１万マッカ！\n使い込まれちゃ{08:40}が、きれいな代物だ。\n{08:48}以上{08:62}ビタ一文まけられ{08:25}ぜ！\n<wait>	The price is 10,000 Macca!\nIt's seen some use, but it's a fine piece.\nI won't knock off a single Macca more!\n<wait>	This pristine uniform can be yours for the low, low price\nof 10000 Macca!\n<wait>	ours	draft	reads: 値段は、１万マッカ！\n使い込まれちゃいるが、きれいな代物だ。\nこれ以上は、ビタ一文まけられないぜ！\n<wait> @ours-2026-09-05
 m/MS0061.BIN	0:02	6	218	1FD2	{08:03}：	Emi: 	Man:	v005	draft	reads: 英美：; reads: 英美： @refalign @ours-2026-09-05
 m/MS0061.BIN	0:02	7	230	1F01	君！　ちょ{08:53}待{08:52}！\nねぇ、{08:79}制服も{08:53}{08:8B}見{08:67}！\n<wait>	! Wait a moment!\nHey, let me get a better look at that uniform!\n<wait>			draft	reads: 君！　ちょっと待って！\nねぇ、その制服もっとよく見せて！\n<wait>; reads: 値段は、１万マッカ！\n使い込まれちゃいるが、きれいな代物だ。\nこれ以上は、ビタ一文まけられないぜ！\n<wait> @rebase-tagdiff @ours-2026-09-05
 m/MS0061.BIN	0:02	8	282	1FD0	{08:03}{08:62}男が何か言おうと{08:8E}前に、{08:79}手{08:42}制服をひ{08:51}く{08:52}制服を\n調べ{08:14}{02:08}\n<wait>	Before the man could say anything, Emi snatched the uniform from his\nhands and is examining it.........\n<wait>			draft	reads: 英美は、男が何か言おうとする前に、その手から制服をひったくって制服を\n調べている‥‥‥\n<wait>; reads: 英美： @ours-2026-09-05
@@ -41,13 +41,13 @@ m/MS0061.BIN	0:02	19	604	1FB2	金を渡す		Bribe	v005		menu option, declared wi
 m/MS0061.BIN	0:02	20	614	1FB2	脅す		Threaten	v005		menu option, declared width 20 columns; reads: ‥‥それはちょっと言えねぇなぁ‥‥\n @refalign
 m/MS0061.BIN	0:02	21	640	1FD2	男性：		Man:	v005		menu option, declared width 20 columns
 m/MS0061.BIN	0:02	22	648	1FD3	お{08:53}、{08:48}ばっかりは企業秘密だ。\n人に教えちゃ商売あが{08:51}りだ{08:42}な。\n		If I go around giving away all of my trade secrets,\nthen I'll be out of a job in no time.\n	v005		reads: おっと、こればっかりは企業秘密だ。\n人に教えちゃ商売あがったりだからな。\n; menu option, declared width 20 columns
-m/MS0061.BIN	0:02	23	728	1FB2	脅す	脅す	Threaten	v005		menu option, declared width 20 columns; reads: 
+m/MS0061.BIN	0:02	23	728	1FB2	脅す	Threaten him	Threaten	v005	draft	menu option, declared width 20 columns; reads:  @ours-2026-09-05
 m/MS0061.BIN	0:02	24	734	1FB2	下手に出る		Please	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0061.BIN	0:02	25	772	1F01	は下手に出て、教えてく{08:2F}{08:69}に頼{08:5F}。\n<wait>	 took a humble tone and asked him to tell.\n<wait>			draft	reads: は下手に出て、教えてくれるように頼んだ。\n<wait>; reads: おっと、こればっかりは企業秘密だ。\n人に教えちゃ商売あがったりだからな。\n @rebase-new @ours-2026-09-05
 m/MS0061.BIN	0:02	26	815	1FD2	男性：	Man:			draft	menu option, declared width 20 columns @ours-2026-09-05
 m/MS0061.BIN	0:02	27	823	1FD3	いーや。{08:48}{08:62}誰にも教えられ{08:75}な！\n<wait>	Nope. This is something I can't tell anyone!\n<wait>			draft	reads: いーや。これは、誰にも教えられねえな！\n<wait>; menu option, declared width 20 columns @ours-2026-09-05
-m/MS0061.BIN	0:02	28	864	1FD0	{08:79}やり取りを聞いて{08:64}{08:03}が、おもむろに口を挟{08:5F}。\n<wait>	{08:79}やり取りを聞いて{08:64}{08:03}が、おもむろに口を挟{08:5F}。\n<wait>	Having been silent this whole time, Emi finally interjects.\n<wait>	v005		reads: そのやり取りを聞いていた英美が、おもむろに口を挟んだ。\n<wait>; reads: 山瀬勇
-m/MS0061.BIN	0:02	29	919	1FD2	{08:03}：	{08:03}：	Emi:	v005		reads: 英美：
+m/MS0061.BIN	0:02	28	864	1FD0	{08:79}やり取りを聞いて{08:64}{08:03}が、おもむろに口を挟{08:5F}。\n<wait>	Emi, who had been listening to the exchange, slowly cut in.\n<wait>	Having been silent this whole time, Emi finally interjects.\n<wait>	v005	draft	reads: そのやり取りを聞いていた英美が、おもむろに口を挟んだ。\n<wait>; reads: 山瀬勇 @ours-2026-09-05
+m/MS0061.BIN	0:02	29	919	1FD2	{08:03}：	Emi:	Emi:	v005	draft	reads: 英美： @ours-2026-09-05
 m/MS0061.BIN	0:02	30	925	1FD3	あー{08:5C}！　じれっ{08:4E}わね！\n<wait>		Hmm... Sorry, but I've made up my mind. I'm not telling anyone.\n<wait>\nHaving been silent this whole time, Emi finally interjects.\n<wait>	v005		reads: あーもう！　じれったいわね！\n<wait>; reads: は下手に出て、教えてくれるように頼んだ。\n<wait> @rebase-unmatched idx30 en=You ask the man nicely to tell you.\n<wait> @refalign @refalign-joined
 m/MS0061.BIN	0:02	31	958	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 英美： @refalign
 m/MS0061.BIN	0:02	32	964	1FD3	ねぇ、{08:48}を何処で手に入{08:60}の？\n言わ{08:25}と{02:08}\n<wait>	Hey, where did you get this?\nIf you don't tell me.........\n<wait>			draft	reads: ねぇ、これを何処で手に入れたの？\n言わないと‥‥‥\n<wait>; reads: いーや。これは、誰にも教えられねえな！\n<wait> @ours-2026-09-05
@@ -112,8 +112,8 @@ m/MS0061.BIN	0:06	1	177	1FD2	{08:3C}：		Sanshirou:	ours		reads: 三四郎：
 m/MS0061.BIN	0:06	2	183	1FD3	{08:72}いつの間に、{08:73}物が{02:08}？\nあの時は{08:73}物、影も形も無{08:18}のに{08:72}\n		...... When did something like this get built......?\nBack then, there wasn't a trace of anything like it......\n	ours		reads: ‥‥いつの間に、こんな物が‥‥‥？\nあの時はこんな物、影も形も無かったのに‥‥\n
 m/MS0061.BIN	0:06	3	257	1FB2	{08:90}{08:68}事だ？		What's this?	ours		reads: どういう事だ？; menu option, declared width 20 columns
 m/MS0061.BIN	0:06	4	269	1FB2	あっそう		Oh, well	ours		menu option, declared width 20 columns
-m/MS0061.BIN	0:06	5	299	1FD2	{08:3C}：	{08:3C}：	Sanshirou:	ours		reads: 三四郎：; reads: 山瀬勇
-m/MS0061.BIN	0:06	6	305	1FD3	{02:08}{08:45}{08:62}アスタルテの地獄の炎によ{08:52}、一度、焼きつく{03:0C}{08:14}{08:5F}。\n<wait>	{02:08}{08:45}{08:62}アスタルテの地獄の炎によ{08:52}、一度、焼きつく{03:0C}{08:14}{08:5F}。\n<wait>	...... This place was once burned to nothing by Astarte's hellfire.\n<wait>	ours		reads: ‥‥‥ここは、アスタルテの地獄の炎によって、一度、焼きつくされているんだ。\n<wait>
+m/MS0061.BIN	0:06	5	299	1FD2	{08:3C}：	Sanshirou:	Sanshirou:	ours	draft	reads: 三四郎：; reads: 山瀬勇 @ours-2026-09-05
+m/MS0061.BIN	0:06	6	305	1FD3	{02:08}{08:45}{08:62}アスタルテの地獄の炎によ{08:52}、一度、焼きつく{03:0C}{08:14}{08:5F}。\n<wait>	.........This place was once burned to the ground by Astarte's\nhellfire.\n<wait>	...... This place was once burned to nothing by Astarte's hellfire.\n<wait>	ours	draft	reads: ‥‥‥ここは、アスタルテの地獄の炎によって、一度、焼きつくされているんだ。\n<wait> @ours-2026-09-05
 m/MS0061.BIN	0:06	7	370	1FD2	{08:3C}：		Sanshirou:	ours		reads: 三四郎：
 m/MS0061.BIN	0:06	8	376	1FD3	{08:79}時、俺と{08:04}さんは{08:45}に{08:64}{08:5F}{02:08}‥\n<wait>		At that time, Nishino and I were here......\n<wait>	ours		reads: その時、俺と西野さんはここにいたんだ‥‥‥‥\n<wait>; reads: ‥‥‥ここは、アスタルテの地獄の炎によって、一度、焼きつくされているんだ。\n<wait>
 m/MS0061.BIN	0:06	9	415	1FD2	{08:3C}：		Sanshirou:	ours		reads: 三四郎：
@@ -122,7 +122,7 @@ m/MS0061.BIN	0:06	11	515	1FB2	何の為に？		For what?	ours		menu option, decl
 m/MS0061.BIN	0:06	12	527	1FB2	{08:4D}{08:42}？		And then?	ours		reads: それから？; menu option, declared width 20 columns; reads: 俺達が、この護国寺に辿り着いて間もなく、アスタルテが悪魔の軍勢を率いて\nやって来た。\n
 m/MS0061.BIN	0:06	13	555	1FD2	{08:3C}：		Sanshirou:	ours		reads: 三四郎：; menu option, declared width 20 columns
 m/MS0061.BIN	0:06	14	561	1FD3	{08:72}俺にも良く分{08:42}{08:25}{02:08}\n<wait>		...... I don't really understand it myself either......\n<wait>	ours		reads: ‥‥俺にも良く分からない‥‥‥\n<wait>; reads: それから？; menu option, declared width 20 columns
-m/MS0061.BIN	0:06	15	590	1FD2	{08:3C}：	{08:3C}：	Sanshirou:	ours		reads: 三四郎：; reads: ママ
+m/MS0061.BIN	0:06	15	590	1FD2	{08:3C}：	Sanshirou:	Sanshirou:	ours	draft	reads: 三四郎：; reads: ママ @ours-2026-09-05
 m/MS0061.BIN	0:06	16	596	1FD3	とにかく奴ら{08:62}{08:45}を{08:6C}に破壊し、焼き尽くし{08:21}{02:08}\n<wait>		Anyway, they completely destroyed this place and burned everything\nto ash......\n<wait>	ours		reads: とにかく奴らは、ここを完全に破壊し、焼き尽くしていった‥‥‥\n<wait>; reads: 三四郎：
 m/MS0061.BIN	0:06	17	649	1FD2	{08:3C}：		Sanshirou:	ours		reads: 三四郎：; reads: ‥‥俺にも良く分からない‥‥‥\n<wait>
 m/MS0061.BIN	0:06	18	655	1FD3	奴らにと{08:52}、余程都合の悪い物{08:56}あ{08:51}のかも知れ{08:25}な{08:72}\n<wait>		There must have been something here that was a real thorn in their side...\n<wait>	ours		reads: 奴らにとって、余程都合の悪い物でもあったのかも知れないな‥‥\n<wait>; reads: 三四郎：
@@ -144,9 +144,9 @@ m/MS0061.BIN	0:06	33	1248	1FB2	{08:81}あ、隊長も{08:72}		Commander too...?	
 m/MS0061.BIN	0:06	34	1264	1FB2	{02:08}‥	......			draft	reads: ‥‥‥‥; menu option, declared width 20 columns; reads: 三四郎： @ours-2026-09-05
 m/MS0061.BIN	0:06	35	1290	1FD2	{08:3C}：		Sanshirou:	ours		reads: 三四郎：; reads: あわてて護国寺に戻ったが、もう全ては終わってしまっていた。\n辺り一面焼け野原で、動く物は何も無かった‥‥‥\n
 m/MS0061.BIN	0:06	36	1296	1FD3	{02:08}ああ。\n<wait>		...... Yeah.\n<wait>	ours		reads: ‥‥‥ああ。\n<wait>; reads: じゃあ、隊長も‥‥; menu option, declared width 20 columns
-m/MS0061.BIN	0:06	37	1324	1F01	{08:62}言うべき言葉が見つ{08:42}ず、黙{08:52}{08:64}{08:72}\n<wait>	{08:62}言うべき言葉が見つ{08:42}ず、黙{08:52}{08:64}{08:72}\n<wait>	{04:FF} couldn't find the right words, and stayed silent......\n<wait>	ours		reads: は、言うべき言葉が見つからず、黙っていた‥‥\n<wait>; reads: ‥‥‥‥; menu option, declared width 20 columns @rebase-tagdiff
-m/MS0061.BIN	0:06	38	1367	1FD2	{08:3C}：	{08:3C}：	Sanshirou:	ours		reads: 三四郎：; reads: だれも
-m/MS0061.BIN	0:06	39	1373	1FD3	俺は諦め切れずに瓦礫を掘り、彼を捜{08:4B}{08:72}\n<wait>	俺は諦め切れずに瓦礫を掘り、彼を捜{08:4B}{08:72}\n<wait>	I couldn't give up. I dug through the rubble, searching for him...\n<wait>	ours		reads: 俺は諦め切れずに瓦礫を掘り、彼を捜した‥‥\n<wait>
+m/MS0061.BIN	0:06	37	1324	1F01	{08:62}言うべき言葉が見つ{08:42}ず、黙{08:52}{08:64}{08:72}\n<wait>	 could find nothing to say, and stayed silent...\n<wait>	{04:FF} couldn't find the right words, and stayed silent......\n<wait>	ours	draft	reads: は、言うべき言葉が見つからず、黙っていた‥‥\n<wait>; reads: ‥‥‥‥; menu option, declared width 20 columns @rebase-tagdiff @ours-2026-09-05
+m/MS0061.BIN	0:06	38	1367	1FD2	{08:3C}：	Sanshirou:	Sanshirou:	ours	draft	reads: 三四郎：; reads: だれも @ours-2026-09-05
+m/MS0061.BIN	0:06	39	1373	1FD3	俺は諦め切れずに瓦礫を掘り、彼を捜{08:4B}{08:72}\n<wait>	I couldn't give up. I dug through the rubble, searching for him...\n<wait>	I couldn't give up. I dug through the rubble, searching for him...\n<wait>	ours	draft	reads: 俺は諦め切れずに瓦礫を掘り、彼を捜した‥‥\n<wait> @ours-2026-09-05
 m/MS0061.BIN	0:06	40	1420	1FD2	{08:3C}：		Sanshirou:	ours		reads: 三四郎：
 m/MS0061.BIN	0:06	41	1426	1FD3	思いの他早く{08:72}{08:04}さんの身体は見つ{08:18}{08:72}\n<wait>		Sooner than I expected... I found Nishino's body...\n<wait>	ours		reads: 思いの他早く‥‥西野さんの身体は見つかった‥‥\n<wait>; reads: ‥‥‥ああ。\n<wait>
 m/MS0061.BIN	0:06	42	1471	1FD2	{08:3C}：		Sanshirou:	ours		reads: 三四郎：; reads: は、言うべき言葉が見つからず、黙っていた‥‥\n<wait>
@@ -162,9 +162,9 @@ m/MS0061.BIN	0:06	51	1746	1F03						reads: 三四郎：
 m/MS0061.BIN	0:06	52	1759	1F03						reads: それで俺は、ここに西野さんを埋葬したんだ。\n<wait>
 m/MS0061.BIN	0:06	53	1785	1FD0	鳥居の下には樹海が{08:40}{02:08}‥。\n<wait>		Beneath the torii lies the Jukai......\n<wait>	ours		reads: 鳥居の下には樹海がいる‥‥‥‥。\n<wait>; reads: 三四郎：
 m/MS0061.BIN	0:06	54	1820	1FD2	樹海：		Jukai:	ours		reads: 西野さん‥‥‥安らかに‥‥‥\n
-m/MS0061.BIN	0:06	55	1828	1FD3	{08:72}未だ時は満ちぬ{02:08}\n不動に貴き石を用い、瞳を与えよ{02:08}\n<wait>	{08:72}未だ時は満ちぬ{02:08}\n不動に貴き石を用い、瞳を与えよ{02:08}\n<wait>	...... The time has not yet come......\nUse a precious stone upon the Fudou, and grant it eyes......\n<wait>	ours		reads: ‥‥未だ時は満ちぬ‥‥‥\n不動に貴き石を用い、瞳を与えよ‥‥‥\n<wait>
-m/MS0061.BIN	0:06	56	1888	1FD2	樹海：	樹海：	Jukai:	ours		
-m/MS0061.BIN	0:06	57	1896	1FD3	{08:82}、青の不動{08:74}は{08:47}地より、遠方に{08:7B}故、{08:79}他の４体の不動に\n瞳を与{08:41}{08:7C}、拙僧が案内致そう。\n<wait>	{08:82}、青の不動{08:74}は{08:47}地より、遠方に{08:7B}故、{08:79}他の４体の不動に\n瞳を与{08:41}{08:7C}、拙僧が案内致そう。\n<wait>	However, the Blue Immovable lies quite far from here,\nso once the other four Immovables can see, I will guide you there.\n<wait>	ours		reads: ただ、青の不動だけはこの地より、遠方にある故、その他の４体の不動に\n瞳を与えたならば、拙僧が案内致そう。\n<wait>
+m/MS0061.BIN	0:06	55	1828	1FD3	{08:72}未だ時は満ちぬ{02:08}\n不動に貴き石を用い、瞳を与えよ{02:08}\n<wait>	...The time is not yet ripe.........\nUse precious stones on the Fudo and give them eyes.........\n<wait>	...... The time has not yet come......\nUse a precious stone upon the Fudou, and grant it eyes......\n<wait>	ours	draft	reads: ‥‥未だ時は満ちぬ‥‥‥\n不動に貴き石を用い、瞳を与えよ‥‥‥\n<wait> @ours-2026-09-05
+m/MS0061.BIN	0:06	56	1888	1FD2	樹海：	Jukai:	Jukai:	ours	draft	@ours-2026-09-05
+m/MS0061.BIN	0:06	57	1896	1FD3	{08:82}、青の不動{08:74}は{08:47}地より、遠方に{08:7B}故、{08:79}他の４体の不動に\n瞳を与{08:41}{08:7C}、拙僧が案内致そう。\n<wait>	But the Blue Fudo alone lies far from this land, so once you have\ngiven eyes to the other four Fudo, I shall guide you.\n<wait>	However, the Blue Immovable lies quite far from here,\nso once the other four Immovables can see, I will guide you there.\n<wait>	ours	draft	reads: ただ、青の不動だけはこの地より、遠方にある故、その他の４体の不動に\n瞳を与えたならば、拙僧が案内致そう。\n<wait> @ours-2026-09-05
 m/MS0061.BIN	0:06	58	1992	1FD2	樹海：		Jukai:	ours		reads: 鳥居の下には樹海がいる‥‥‥‥。\n<wait>
 m/MS0061.BIN	0:06	59	2000	1FD3	{08:79}時に{08:5B}、{08:45}に来られよ{02:08}‥\n		When that time comes, come to this place once more......\n	ours		reads: その時にまた、ここに来られよ‥‥‥‥\n
 m/MS0061.BIN	0:06	60	2042	1F03	ﾄ					reads: ‥‥未だ時は満ちぬ‥‥‥\n不動に貴き石を用い、瞳を与えよ‥‥‥\n<wait>
@@ -183,12 +183,12 @@ m/MS0061.BIN	0:06	72	2449	00	{02:00}{02:1F}ベ{01:03}					reads: デビルバス
 m/MS0061.BIN	0:06	73	2464	00	{01:05}八咫鏡と榊を合わ{08:67}ひもろぎにし、鳥居の下に置{08:64}。\n<wait>		ou take Yata-no-Kagami and the twig of sakaki,\nand place them underneath the torii.\n<wait>	v005		reads: 山田八咫鏡と榊を合わせてひもろぎにし、鳥居の下に置いた。\n<wait>; reads: ‥‥‥両の目にはまる分をお持ちですな。\n<wait> @refalign
 m/MS0061.BIN	0:06	74	2570	1A	鏡がまばゆい光を放ち、鳥居の下に異空間へのゲートが現{08:60}。\n<wait>		The mirror immediately begins glowing,\nand soon after, a portal appears.\n<wait>	v005		reads: 鏡がまばゆい光を放ち、鳥居の下に異空間へのゲートが現れた。\n<wait>; reads: 鏡がまばゆい光を放ち、鳥居の下に異空間へのゲートが現れた。\n<wait> @refalign
 m/MS0061.BIN	0:06	75	2635	1FD1	＞入{08:52}み{08:15}\n		>Will you enter the portal?\n	v005		reads: ＞入ってみますか？\n; reads: それでは、青の不動の元へ案内致そう‥‥。\n<wait> @refalign
-m/MS0061.BIN	0:06	76	2662	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
-m/MS0061.BIN	0:06	77	2666	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns; reads: デビルバスターベニュートン
+m/MS0061.BIN	0:06	76	2662	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0061.BIN	0:06	77	2666	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns; reads: デビルバスターベニュートン @ours-2026-09-05
 m/MS0061.BIN	0:06	78	2689	18	＞黄泉へ行き{08:15}\n		>Go to Yomi?\n	ours		reads: ＞黄泉へ行きますか？\n; reads: 山田八咫鏡と榊を合わせてひもろぎにし、鳥居の下に置いた。\n<wait>
-m/MS0061.BIN	0:06	79	2720	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns; reads: 鏡がまばゆい光を放ち、鳥居の下に異空間へのゲートが現れた。\n<wait>
-m/MS0061.BIN	0:06	80	2724	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns; reads: ＞入ってみますか？\n
-m/MS0061.BIN	0:06	81	2840	1FD0	荒れ地に、西洋鳥居が静かに佇んで{08:40}{02:08}\n	荒れ地に、西洋鳥居が静かに佇んで{08:40}{02:08}\n	A Western-style torii stands quietly in the wasteland......\n	ours		reads: 荒れ地に、西洋鳥居が静かに佇んでいる‥‥‥\n; reads: はい; menu option, declared width 20 columns
+m/MS0061.BIN	0:06	79	2720	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns; reads: 鏡がまばゆい光を放ち、鳥居の下に異空間へのゲートが現れた。\n<wait> @ours-2026-09-05
+m/MS0061.BIN	0:06	80	2724	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns; reads: ＞入ってみますか？\n @ours-2026-09-05
+m/MS0061.BIN	0:06	81	2840	1FD0	荒れ地に、西洋鳥居が静かに佇んで{08:40}{02:08}\n	A Western torii stands quietly in the wasteland.........\n	A Western-style torii stands quietly in the wasteland......\n	ours	draft	reads: 荒れ地に、西洋鳥居が静かに佇んでいる‥‥‥\n; reads: はい; menu option, declared width 20 columns @ours-2026-09-05
 m/MS0061.BIN	0:07	0	2	1FD0	見え{08:25}力に阻まれ、進入{08:8E}事が出来{08:25}！！\n<wait>		An unseen force blocks your way, preventing you from entering!!\n<wait>	ours		reads: 見えない力に阻まれ、進入する事が出来ない！！\n<wait>
 m/MS0061.BIN	0:08	0	29	1FD0	緑衣の人物が、道の先に立っ{08:14}{02:08}{08:72}\n<wait>	A figure in green stands at the end of the road............\n<wait>			draft	reads: 緑衣の人物が、道の先に立っている‥‥‥‥‥\n<wait>; reads: 緑衣の人物が、道の先に立っている‥‥‥‥‥\n<wait> @ours-2026-09-05
 m/MS0061.BIN	0:08	1	68	1FBA	{08:79}人物{08:62}一行を見ると、歩み寄{08:52}{08:1E}。\n<wait>	Seeing the party, the figure walked over.\n<wait>			draft	reads: その人物は、一行を見ると、歩み寄ってきた。\n<wait>; reads: その人物は、一行を見ると、歩み寄ってきた。\n<wait> @ours-2026-09-05
@@ -277,8 +277,8 @@ m/MS0061.BIN	0:08	83	2784	1FD3	悪い話では{08:7B}まい？\n	Not a bad offer
 m/MS0061.BIN	0:08	84	2819	1FB2	勝負{08:8E}		I accept	v005		reads: 勝負する; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0061.BIN	0:08	85	2827	1FB2	逃げ出す		Run	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0061.BIN	0:08	86	2863	1F01	{08:62}逃げだそうと{08:4B}{08:72}\n<wait>	 tried to run away...\n<wait>			draft	reads: は、逃げだそうとした‥‥\n<wait>; reads: 山瀬勇 @rebase-new @ours-2026-09-05
-m/MS0061.BIN	0:08	87	2945	1E16	{03:0B}レラジエを倒さ{08:25}事に{08:62}	{03:0B}レラジエを倒さ{08:25}事に{08:62}	Then again, failing to kill Leraje means that you won't be able to\nput Yuuka's body back together.\n<wait>	v005		reads: しかし、レラジエを倒さない事には、
-m/MS0061.BIN	0:08	88	2975	1F01	の身体は揃わ{08:25}。\n<wait>		Plus, you hardly get the feeling that he's just going to let you walk.\n<wait>	v005		reads: の身体は揃わない。\n<wait>; reads: は、逃げだそうとした‥‥\n<wait> @rebase-unmatched idx88 en=You briefly consider running away.\n<wait> @refalign
+m/MS0061.BIN	0:08	87	2945	1E16	{03:0B}レラジエを倒さ{08:25}事に{08:62}	But unless he defeated Leraje, 	Then again, failing to kill Leraje means that you won't be able to\nput Yuuka's body back together.\n<wait>	v005	draft	reads: しかし、レラジエを倒さない事には、 @ours-2026-09-05
+m/MS0061.BIN	0:08	88	2975	1F01	の身体は揃わ{08:25}。\n<wait>	's body would never be made whole.\n<wait>	Plus, you hardly get the feeling that he's just going to let you walk.\n<wait>	v005	draft	reads: の身体は揃わない。\n<wait>; reads: は、逃げだそうとした‥‥\n<wait> @rebase-unmatched idx88 en=You briefly consider running away.\n<wait> @refalign @ours-2026-09-05
 m/MS0061.BIN	0:08	89	2998	1FBA	{08:4D}に、相手も大人しく逃が{08:4A}くれそうには{08:25}。\n<wait>		Plus, you hardly get the feeling that he's just going to let you walk.\n<wait>	v005		reads: それに、相手も大人しく逃がしてくれそうにはない。\n<wait>; reads: しかし、レラジエを倒さない事には、
 m/MS0061.BIN	0:08	90	3050	1FD2	{08:03}：	Emi:	Leraje:	v005	draft	reads: 英美：; reads: の身体は揃わない。\n<wait> @refalign @ours-2026-09-05
 m/MS0061.BIN	0:08	91	3056	1FD3	何やっ{08:2B}のよ！？　	What are you doing!? 			draft	reads: 何やってるのよ！？　; reads: それに、相手も大人しく逃がしてくれそうにはない。\n<wait> @ours-2026-09-05
@@ -315,19 +315,19 @@ m/MS0061.BIN	0:08	121	4121	1FBA	{08:0B}の体内に取り込まれて、永ら�
 m/MS0061.BIN	0:08	122	4215	1F01	{08:62}複雑な思いを胸に、先を急ぐ事に{08:4B}。\n<wait>		{04:FF}, his heart heavy with complicated thoughts, decided to hurry\nonward.\n<wait>	ours		reads: は、複雑な思いを胸に、先を急ぐ事にした。\n<wait>; reads: とにかく、この腕を保存する方法を考えねばなるまい。\n<wait> @rebase-tagdiff
 m/MS0061.BIN	0:09	0	7	1FD0	明治神宮入口\n		Meiji Jinguu Entrance\n	ours		
 m/MS0061.BIN	0:09	1	22	1FD1	＞中に入り{08:15}\n		>Enter the shrine?\n	ours		reads: ＞中に入りますか？\n
-m/MS0061.BIN	0:09	2	51	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
-m/MS0061.BIN	0:09	3	55	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
-m/MS0061.BIN	0:09	4	112	1F77	＞社の中に入り{08:15}\n	＞社の中に入り{08:15}\n	>Go inside the shrine?\n	ours		reads: ＞社の中に入りますか？\n; reads: 山瀬勇
-m/MS0061.BIN	0:09	5	145	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns; reads: ＞社の中に入りますか？\n
-m/MS0061.BIN	0:09	6	149	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns; reads: はい
-m/MS0061.BIN	0:09	7	211	1FD2	オークチーフ：	オークチーフ：	Orc Chief:	ours		reads: いいえ; menu option, declared width 20 columns
-m/MS0061.BIN	0:09	8	227	1FD3	{02:0B}か{02:08}\n{08:45}を通りてぇのか？\n	{02:0B}か{02:08}\n{08:45}を通りてぇのか？\n	A human......\nYou want to pass through here?\n	ours		reads: 人間か‥‥‥\nここを通りてぇのか？\n; reads: あなたがた
-m/MS0061.BIN	0:09	9	269	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
+m/MS0061.BIN	0:09	2	51	1FB2	{08:26}	Yes	Yes	ours	draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0061.BIN	0:09	3	55	1FB2	{08:27}	No	No	ours	draft	reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0061.BIN	0:09	4	112	1F77	＞社の中に入り{08:15}\n	>Go inside the shrine?\n	>Go inside the shrine?\n	ours	draft	reads: ＞社の中に入りますか？\n; reads: 山瀬勇 @ours-2026-09-05
+m/MS0061.BIN	0:09	5	145	1FB2	{08:26}	Yes	Yes	ours	draft	reads: はい; menu option, declared width 20 columns; reads: ＞社の中に入りますか？\n @ours-2026-09-05
+m/MS0061.BIN	0:09	6	149	1FB2	{08:27}	No	No	ours	draft	reads: いいえ; menu option, declared width 20 columns; reads: はい @ours-2026-09-05
+m/MS0061.BIN	0:09	7	211	1FD2	オークチーフ：	Orc Chief:	Orc Chief:	ours	draft	reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0061.BIN	0:09	8	227	1FD3	{02:0B}か{02:08}\n{08:45}を通りてぇのか？\n	A human.........\nYou wanna pass through here?\n	A human......\nYou want to pass through here?\n	ours	draft	reads: 人間か‥‥‥\nここを通りてぇのか？\n; reads: あなたがた @ours-2026-09-05
+m/MS0061.BIN	0:09	9	269	1FB2	{08:26}	Yes	Yes	ours	draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
 m/MS0061.BIN	0:09	10	273	1FB2	別に		Nah	ours		menu option, declared width 20 columns
 m/MS0061.BIN	0:09	11	299	1FD2	オークチーフ：		Orc Chief:	ours		reads: 人間か‥‥‥\nここを通りてぇのか？\n
-m/MS0061.BIN	0:09	12	315	1FD3	通る{08:52}{08:5F}っ{08:50}、{08:47}俺を倒{08:4A}{08:42}だぜぇ！！\n{08:72}や{08:2E}{08:7D}、今の内だぁ！\n	通る{08:52}{08:5F}っ{08:50}、{08:47}俺を倒{08:4A}{08:42}だぜぇ！！\n{08:72}や{08:2E}{08:7D}、今の内だぁ！\n	If you wanna get through, you'll have to beat me first!!\n...If you're gonna back out, now's your chance!\n	ours		reads: 通るってんだったら、この俺を倒してからだぜぇ！！\n‥‥やめるなら、今の内だぁ！\n; reads: はい; menu option, declared width 20 columns
+m/MS0061.BIN	0:09	12	315	1FD3	通る{08:52}{08:5F}っ{08:50}、{08:47}俺を倒{08:4A}{08:42}だぜぇ！！\n{08:72}や{08:2E}{08:7D}、今の内だぁ！\n	If you wanna pass, you'll have to beat me first!!\n...If you're gonna back out, now's the time!\n	If you wanna get through, you'll have to beat me first!!\n...If you're gonna back out, now's your chance!\n	ours	draft	reads: 通るってんだったら、この俺を倒してからだぜぇ！！\n‥‥やめるなら、今の内だぁ！\n; reads: はい; menu option, declared width 20 columns @ours-2026-09-05
 m/MS0061.BIN	0:09	13	391	1FB2	やる		Go!	ours		menu option, declared width 20 columns
-m/MS0061.BIN	0:09	14	397	1FB2	や{08:2E}	や{08:2E}	Stop	ours		reads: やめる; menu option, declared width 20 columns
+m/MS0061.BIN	0:09	14	397	1FB2	や{08:2E}	Back out	Stop	ours	draft	reads: やめる; menu option, declared width 20 columns @ours-2026-09-05
 m/MS0061.BIN	0:09	15	423	1FD2	オークチーフ：		Orc Chief:	ours		
 m/MS0061.BIN	0:09	16	439	1FD3	ふん！！　後で泣い{08:54}無駄だ{08:42}な！！\n<wait>		Hmph!! Don't come crying to me later!!\n<wait>	ours		reads: ふん！！　後で泣いても無駄だからな！！\n<wait>; reads: 通るってんだったら、この俺を倒してからだぜぇ！！\n‥‥やめるなら、今の内だぁ！\n
 m/MS0061.BIN	0:09	17	485	1EBE	{01:00}	{01:00}				reads: 早坂達也; menu option, declared width 20 columns
@@ -336,11 +336,11 @@ m/MS0061.BIN	0:09	19	491	00	d{04:FF}	d{04:FF}				reads: d; reads: 医師
 m/MS0061.BIN	0:09	20	495	00	d	d				
 m/MS0061.BIN	0:09	21	518	1F82	p	p				reads: ふん！！　後で泣いても無駄だからな！！\n<wait>
 m/MS0061.BIN	0:09	22	521	00	{01:32}{=E3}{=00}{01:1F}W	{01:32}{=E3}{=00}{01:1F}W				reads: 大丈夫{=E3}{=00}おにいちゃんW; reads: 早坂達也
-m/MS0061.BIN	0:09	23	542	1FD2	オークチーフ：	オークチーフ：	Orc Chief:	ours		reads: 
-m/MS0061.BIN	0:09	24	558	1FD3	ぐげぇっ！！！　つ、つえぇ{02:08}‥\n<wait>	ぐげぇっ！！！　つ、つえぇ{02:08}‥\n<wait>	Gugeh!!! S-strong......\n<wait>	ours		reads: ぐげぇっ！！！　つ、つえぇ‥‥‥‥\n<wait>; reads: d
-m/MS0061.BIN	0:09	25	601	1FD0	鬱蒼と{08:4B}森が続い{08:14}{02:08}‥\n<wait>	鬱蒼と{08:4B}森が続い{08:14}{02:08}‥\n<wait>	A dense, dark forest stretches on......\n<wait>	ours		reads: 鬱蒼とした森が続いている‥‥‥‥\n<wait>
+m/MS0061.BIN	0:09	23	542	1FD2	オークチーフ：	Orc Chief:	Orc Chief:	ours	draft	reads:  @ours-2026-09-05
+m/MS0061.BIN	0:09	24	558	1FD3	ぐげぇっ！！！　つ、つえぇ{02:08}‥\n<wait>	Gugeh!!! S-so strong............\n<wait>	Gugeh!!! S-strong......\n<wait>	ours	draft	reads: ぐげぇっ！！！　つ、つえぇ‥‥‥‥\n<wait>; reads: d @ours-2026-09-05
+m/MS0061.BIN	0:09	25	601	1FD0	鬱蒼と{08:4B}森が続い{08:14}{02:08}‥\n<wait>	A dense, dark forest stretches on............\n<wait>	A dense, dark forest stretches on......\n<wait>	ours	draft	reads: 鬱蒼とした森が続いている‥‥‥‥\n<wait> @ours-2026-09-05
 m/MS0061.BIN	0:09	26	632	1FD1	＞{02:06}\n	>What will you do?\n	>{02:06}	ours	draft	reads: ＞どうしますか？\n @ours-2026-09-05
-m/MS0061.BIN	0:09	27	653	1FB2	進む	進む	Go	ours		menu option, declared width 20 columns; reads: 大丈夫{=E3}{=00}おにいちゃんW
+m/MS0061.BIN	0:09	27	653	1FB2	進む	Go on	Go	ours	draft	menu option, declared width 20 columns; reads: 大丈夫{=E3}{=00}おにいちゃんW @ours-2026-09-05
 m/MS0061.BIN	0:09	28	659	1FB2	戻る		Back	ours		menu option, declared width 20 columns
 m/MS0061.BIN	0:09	29	706	1FD0	どこ{08:42}ともなく、低い唸り声が聞こえてくる{02:08}\n		A low growl can be heard from somewhere......\n	ours		reads: どこからともなく、低い唸り声が聞こえてくる‥‥‥\n; reads: ぐげぇっ！！！　つ、つえぇ‥‥‥‥\n<wait>
 m/MS0061.BIN	0:09	30	751	1FD1	＞{02:06}\n	>What will you do?\n	>{02:06}	ours	draft	reads: ＞どうしますか？\n; reads: 鬱蒼とした森が続いている‥‥‥‥\n<wait> @ours-2026-09-05
@@ -352,12 +352,12 @@ m/MS0061.BIN	0:09	35	893	00	{04:FF}	{04:FF}				reads: ; reads: どこからと�
 m/MS0061.BIN	0:09	36	896	00	d{04:FF}	d{04:FF}				reads: d; reads: ＞どうしますか？\n
 m/MS0061.BIN	0:09	37	900	00	d	d				menu option, declared width 20 columns
 m/MS0061.BIN	0:09	38	923	1F82	ﾒガルム：		Garm:	ours		menu option, declared width 20 columns
-m/MS0061.BIN	0:09	39	934	1FD3	ギャイイィィーーーーン！！\n<wait>	ギャイイィィーーーーン！！\n<wait>	GYAAAAAAAH!!\n<wait>	ours		reads: 
+m/MS0061.BIN	0:09	39	934	1FD3	ギャイイィィーーーーン！！\n<wait>	GYAIIIIIIIN!!\n<wait>	GYAAAAAAAH!!\n<wait>	ours	draft	reads:  @ours-2026-09-05
 m/MS0061.BIN	0:09	40	969	1FD0	ガルム{08:62}一声吠えて息絶{08:41}。\n<wait>		Garm let out a single howl, then breathed its last.\n<wait>	ours		reads: ガルムは、一声吠えて息絶えた。\n<wait>; reads: 突然目の前に、１匹の獣が現れた。\n獣は有無を言わさず、襲いかかってきた！！\n
-m/MS0061.BIN	0:09	41	1002	1FBA	道は{08:76}続い{08:14}{02:08}{02:08}\n<wait>	道は{08:76}続い{08:14}{02:08}{02:08}\n<wait>	The path continues on still......\n<wait>	ours		reads: 道はまだ続いている‥‥‥‥‥‥\n<wait>; reads: 早坂達也
-m/MS0061.BIN	0:09	42	1025	1FBA	先程より、も{08:53}多くの唸り声が聞こえてくる{02:08}\n<wait>	先程より、も{08:53}多くの唸り声が聞こえてくる{02:08}\n<wait>	More growling can be heard now than before......\n<wait>	ours		reads: 先程より、もっと多くの唸り声が聞こえてくる‥‥‥\n<wait>
-m/MS0061.BIN	0:09	43	1076	1FD1	＞{08:76}先に進み{08:15}\n	＞{08:76}先に進み{08:15}\n	>Will you keep going?\n	ours		reads: ＞まだ先に進みますか？\n; reads: d
-m/MS0061.BIN	0:09	44	1107	1FB2	進む	進む	Go	ours		menu option, declared width 20 columns
+m/MS0061.BIN	0:09	41	1002	1FBA	道は{08:76}続い{08:14}{02:08}{02:08}\n<wait>	The path still continues..................\n<wait>	The path continues on still......\n<wait>	ours	draft	reads: 道はまだ続いている‥‥‥‥‥‥\n<wait>; reads: 早坂達也 @ours-2026-09-05
+m/MS0061.BIN	0:09	42	1025	1FBA	先程より、も{08:53}多くの唸り声が聞こえてくる{02:08}\n<wait>	Even more growling than before can be heard.........\n<wait>	More growling can be heard now than before......\n<wait>	ours	draft	reads: 先程より、もっと多くの唸り声が聞こえてくる‥‥‥\n<wait> @ours-2026-09-05
+m/MS0061.BIN	0:09	43	1076	1FD1	＞{08:76}先に進み{08:15}\n	>Keep going?\n	>Will you keep going?\n	ours	draft	reads: ＞まだ先に進みますか？\n; reads: d @ours-2026-09-05
+m/MS0061.BIN	0:09	44	1107	1FB2	進む	Go on	Go	ours	draft	menu option, declared width 20 columns @ours-2026-09-05
 m/MS0061.BIN	0:09	45	1113	1FB2	戻る		Back	ours		menu option, declared width 20 columns
 m/MS0061.BIN	0:09	46	1160	1FD0	突然{03:13}、多数の獣が現{08:60}。\n獣は有無を言わさず、{03:07}{08:1C}！\n<wait>		Suddenly, a horde of beasts appears before you.\nWithout a word, the beasts lunge at you!!\n<wait>	ours		reads: 突然目の前に、多数の獣が現れた。\n獣は有無を言わさず、襲いかかってきた！！\n<wait>
 m/MS0061.BIN	0:09	47	1241	1EBE	{01:00}	{01:00}				reads: 早坂達也; reads: ガルムは、一声吠えて息絶えた。\n<wait>
@@ -366,12 +366,12 @@ m/MS0061.BIN	0:09	49	1247	00	d{04:FF}	d{04:FF}				reads: d; reads: 先程より�
 m/MS0061.BIN	0:09	50	1251	00	d	d				reads: ＞まだ先に進みますか？\n
 m/MS0061.BIN	0:09	51	1265	1F82	ﾒガルム：		Garm:	ours		menu option, declared width 20 columns
 m/MS0061.BIN	0:09	52	1276	1FD3	ギャイイィィーーーーン！！\n<wait>		GYAAAAAAAH!!\n<wait>	ours		menu option, declared width 20 columns
-m/MS0061.BIN	0:09	53	1311	1FD0	ガルム{08:62}一声吠えて息絶{08:41}。\n<wait>	ガルム{08:62}一声吠えて息絶{08:41}。\n<wait>	Garm let out a single howl, then breathed its last.\n<wait>	ours		reads: ガルムは、一声吠えて息絶えた。\n<wait>; reads: 医師
+m/MS0061.BIN	0:09	53	1311	1FD0	ガルム{08:62}一声吠えて息絶{08:41}。\n<wait>	Garm let out a single howl and breathed its last.\n<wait>	Garm let out a single howl, then breathed its last.\n<wait>	ours	draft	reads: ガルムは、一声吠えて息絶えた。\n<wait>; reads: 医師 @ours-2026-09-05
 m/MS0061.BIN	0:09	54	1344	1FBA	道は{08:76}続い{08:14}{02:08}{02:08}\n<wait>		The path continues on still......\n<wait>	ours		reads: 道はまだ続いている‥‥‥‥‥‥\n<wait>; reads: 突然目の前に、多数の獣が現れた。\n獣は有無を言わさず、襲いかかってきた！！\n<wait>
 m/MS0061.BIN	0:09	55	1369	1FD1	＞{02:06}\n	>What will you do?\n	>{02:06}	ours	draft	reads: ＞どうしますか？\n; reads: 早坂達也 @ours-2026-09-05
-m/MS0061.BIN	0:09	56	1390	1FB2	進む	進む	Go	ours		menu option, declared width 20 columns; reads: 
-m/MS0061.BIN	0:09	57	1396	1FB2	戻る	戻る	Back	ours		menu option, declared width 20 columns; reads: d
-m/MS0061.BIN	0:09	58	1494	1FD2	オークチーフ：	オークチーフ：	Orc Chief:	ours		
+m/MS0061.BIN	0:09	56	1390	1FB2	進む	Go on	Go	ours	draft	menu option, declared width 20 columns; reads:  @ours-2026-09-05
+m/MS0061.BIN	0:09	57	1396	1FB2	戻る	Go back	Back	ours	draft	menu option, declared width 20 columns; reads: d @ours-2026-09-05
+m/MS0061.BIN	0:09	58	1494	1FD2	オークチーフ：	Orc Chief:	Orc Chief:	ours	draft	@ours-2026-09-05
 m/MS0061.BIN	0:09	59	1510	1FD3	{08:81}あ、と{08:53}と行きな！\n俺の気が変わら{08:25}うちにな！！\n<wait>		Fine, get going already!\nBefore I change my mind!!\n<wait>	ours		reads: じゃあ、とっとと行きな！\n俺の気が変わらないうちにな！！\n<wait>
 m/MS0061.BIN	0:09	60	1569	1FD2	オークチーフ：		Orc Chief:	ours		
 m/MS0061.BIN	0:09	61	1585	1FD3	{08:7C}、と{08:53}と{08:45}{08:42}立ち去れ！\n		Then get out of here, now!\n	ours		reads: ならば、とっととここから立ち去れ！\n; reads: ガルムは、一声吠えて息絶えた。\n<wait>
@@ -402,13 +402,13 @@ m/MS0061.BIN	0:0B	7	324	1FB2	辺りを眺{08:2E}		Look around	v005		reads: 辺�
 m/MS0061.BIN	0:0B	8	336	1FB2	穴に入る		Enter the hole	v005		menu option, declared width 20 columns; reads: 辺りを眺める @refalign
 m/MS0061.BIN	0:0B	9	346	1FB2	戻る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0061.BIN	0:0B	10	395	1FB2	奥に進む		Proceed further	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0061.BIN	0:0B	11	405	1FB2	穴に入る	穴に入る	Enter the hole	v005		menu option, declared width 20 columns; reads: あなたがた桐島英美
-m/MS0061.BIN	0:0B	12	415	1FB2	戻る	戻る	Leave	v005		menu option, declared width 20 columns; reads: そんなことn
+m/MS0061.BIN	0:0B	11	405	1FB2	穴に入る	Enter the hole	Enter the hole	v005	draft	menu option, declared width 20 columns; reads: あなたがた桐島英美 @ours-2026-09-05
+m/MS0061.BIN	0:0B	12	415	1FB2	戻る	Go back	Leave	v005	draft	menu option, declared width 20 columns; reads: そんなことn @ours-2026-09-05
 m/MS0061.BIN	0:0B	13	444	18	八咫鏡が輝き{03:03}{02:08}{08:72}\n<wait>		Yata-no-Kagami glows...\n<wait>	v005		reads: 八咫鏡が輝きだした‥‥‥‥‥\n<wait>; menu option, declared width 20 columns @refalign
 m/MS0061.BIN	0:0B	14	486	1FE5	道は奥へ続い{08:14}{02:08}\n		You proceed further...\n	v005		reads: 道は奥へ続いている‥‥‥\n; menu option, declared width 20 columns @refalign
 m/MS0061.BIN	0:0B	15	539	1FB2	奥に進む		Proceed further	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0061.BIN	0:0B	16	549	1FB2	辺りを眺{08:2E}	辺りを眺{08:2E}	Look around	v005		reads: 辺りを眺める; menu option, declared width 20 columns; reads: おかげ
-m/MS0061.BIN	0:0B	17	561	1FB2	戻る	戻る	Leave	v005		menu option, declared width 20 columns; reads: ペンタグランマ- @rebase-unmatched idx17 en={02:01}......{06:FF} @rebase-unmatched idx17 en={02:01}......{06:FF}
+m/MS0061.BIN	0:0B	16	549	1FB2	辺りを眺{08:2E}	Look around	Look around	v005	draft	reads: 辺りを眺める; menu option, declared width 20 columns; reads: おかげ @ours-2026-09-05
+m/MS0061.BIN	0:0B	17	561	1FB2	戻る	Go back	Leave	v005	draft	menu option, declared width 20 columns; reads: ペンタグランマ- @rebase-unmatched idx17 en={02:01}......{06:FF} @rebase-unmatched idx17 en={02:01}......{06:FF} @ours-2026-09-05
 m/MS0061.BIN	0:0B	18	606	1FB2	奥に進む		Proceed further	v005		menu option, declared width 20 columns; reads: 八咫鏡が輝きだした‥‥‥‥‥\n<wait> @refalign
 m/MS0061.BIN	0:0B	19	616	1FB2	戻る		Leave	v005		menu option, declared width 20 columns; reads: 道は奥へ続いている‥‥‥\n @refalign
 m/MS0061.BIN	0:0B	20	648	1F01	{08:62}辺りを見回{08:4B}。\n<wait>		You decide to look around.\n<wait>	v005		reads: は、辺りを見回した。\n<wait>; menu option, declared width 20 columns @rebase-new @refalign
@@ -421,8 +421,8 @@ m/MS0061.BIN	0:0B	26	915	1FD0	誰も{08:24}{02:08}\n<wait>		There's no one here.
 m/MS0061.BIN	0:0B	27	957	1F83	黷ｳん：	黷ｳん：				reads: 
 m/MS0061.BIN	0:0B	28	966	1FD3	証をも{08:52}おる{08:69}{08:81}な{02:08}\n<wait>		You carry the proof, it seems......\n<wait>	ours		reads: 証をもっておるようじゃな‥‥‥\n<wait>; reads: は、辺りを見回した。\n<wait> @rebase-unmatched idx28 en=You decide to look around.\n<wait>
 m/MS0061.BIN	0:0B	29	999	1FD0	爺さんは忽然と消えて{08:1F}{02:08}‥\n<wait>		The old man vanished without a trace......\n<wait>	ours		reads: 爺さんは忽然と消えてしまった‥‥‥‥\n<wait>; reads: すると、榊が生えているのが目に付いた。\n榊を取りますか？\n
-m/MS0061.BIN	0:0B	30	1040	1FD2	爺さん：	爺さん：	Old Man:	ours		reads: はいいいえニュートン
-m/MS0061.BIN	0:0B	31	1050	1FD3	ええか、昔日本がロシアと戦{08:51}時、わしは{08:76}ほんの子供だ{08:51}。\n<wait>	ええか、昔日本がロシアと戦{08:51}時、わしは{08:76}ほんの子供だ{08:51}。\n<wait>	Listen here, back when Japan fought against Russia, I was still a child.\n<wait>	ours		reads: ええか、昔日本がロシアと戦った時、わしはまだほんの子供だった。\n<wait>; reads: 飛び道具
+m/MS0061.BIN	0:0B	30	1040	1FD2	爺さん：	Old Man:	Old Man:	ours	draft	reads: はいいいえニュートン @ours-2026-09-05
+m/MS0061.BIN	0:0B	31	1050	1FD3	ええか、昔日本がロシアと戦{08:51}時、わしは{08:76}ほんの子供だ{08:51}。\n<wait>	Listen, back when Japan fought Russia, I was still just a child.\n<wait>	Listen here, back when Japan fought against Russia, I was still a child.\n<wait>	ours	draft	reads: ええか、昔日本がロシアと戦った時、わしはまだほんの子供だった。\n<wait>; reads: 飛び道具 @ours-2026-09-05
 m/MS0061.BIN	0:0B	32	1115	1FD2	爺さん：		Old Man:	ours		
 m/MS0061.BIN	0:0B	33	1125	1FD3	東郷閣下は帝国海軍の戦艦三笠に乗り、無敵と謳わ{08:60}ロシアのバルチック艦隊を\n全滅させたん{08:81}。\n{08:86}も、{03:04}の被害は無し{08:81}ぞ。\n<wait>		Admiral Togo rode the Imperial Navy's battleship Mikasa and annihilated\nRussia's supposedly invincible Baltic Fleet.\nWhat's more, our side took no losses at all.\n<wait>	ours		reads: 東郷閣下は帝国海軍の戦艦三笠に乗り、無敵と謳われたロシアのバルチック艦隊を\n全滅させたんじゃ。\nしかも、味方の被害は無しじゃぞ。\n<wait>; reads: 榊を少し頂戴した。\n<wait>
 m/MS0061.BIN	0:0B	34	1250	1FD2	爺さん：		Old Man:	ours		reads: 誰もいない‥‥‥\n<wait>
@@ -442,7 +442,7 @@ m/MS0061.BIN	0:0B	47	1752	1FD2	爺さん：		Old Man:	ours		reads: 日本の歴�
 m/MS0061.BIN	0:0B	48	1762	1FD3	{08:81}{08:42}、明治神宮に何かあ{08:51}時{08:62}東郷神社が何とか出来る{08:69}に、\n{08:47}東郷神社と明治神宮{08:62}秘密の道でつなが{08:52}おるの{08:55}{08:81}。\n<wait>		That's why, so Togo Shrine can lend a hand if anything ever happens\nto Meiji Jinguu, the two shrines are connected by a secret passage.\n<wait>	ours		reads: じゃから、明治神宮に何かあった時は、東郷神社が何とか出来るように、\nこの東郷神社と明治神宮は、秘密の道でつながっておるのですじゃ。\n<wait>; reads: 爺さんの話はまだまだ続きそうだ。引き返しますか？\n
 m/MS0061.BIN	0:0B	49	1880	1FD2	爺さん：		Old Man:	ours		reads: まだ聞く; menu option, declared width 20 columns
 m/MS0061.BIN	0:0B	50	1890	1FD3	{08:79}道は{08:72}{08:79}道は{02:08}\n<wait>何か証をも{08:51}モン{08:56}無い限り、使わせ{08:54}らえん{08:8C}がな。\n<wait>		That path...... that path......\n<wait>Unless you're carrying some kind of proof, they won't let you use it,\nI'd imagine.\n<wait>	ours		reads: その道は‥‥その道は‥‥‥\n<wait>何か証をもったモンでも無い限り、使わせてもらえんだろうがな。\n<wait>; menu option, declared width 20 columns
-m/MS0061.BIN	0:0B	51	1975	1FD0	爺さんに気付かれ{08:25}{08:69}、そ{08:53}引き返{08:4B}{02:08}‥\n<wait>	爺さんに気付かれ{08:25}{08:69}、そ{08:53}引き返{08:4B}{02:08}‥\n<wait>	So as not to be noticed by the old man, he quietly turned back......\n<wait>	ours		reads: 爺さんに気付かれないよう、そっと引き返した‥‥‥‥\n<wait>
+m/MS0061.BIN	0:0B	51	1975	1FD0	爺さんに気付かれ{08:25}{08:69}、そ{08:53}引き返{08:4B}{02:08}‥\n<wait>	Not wanting the old man to notice, he quietly turned back............\n<wait>	So as not to be noticed by the old man, he quietly turned back......\n<wait>	ours	draft	reads: 爺さんに気付かれないよう、そっと引き返した‥‥‥‥\n<wait> @ours-2026-09-05
 m/MS0061.BIN	0:0C	0	31	1FD0	建物を出た途端に、誰かとぶつかりそうにな{08:12}！\n<wait>	The moment he left the building, he nearly collided with someone!!\n<wait>			draft	reads: 建物を出た途端に、誰かとぶつかりそうになった！！\n<wait>; reads: 建物を出た途端に、誰かとぶつかりそうになった！！\n<wait> @ours-2026-09-05
 m/MS0061.BIN	0:0C	1	84	1FD2	男：	Man:			draft	@ours-2026-09-05
 m/MS0061.BIN	0:0C	2	90	1FD3	うわ{08:53}！！　危ねぇな！！\nち{08:51}ぁ気を付けろ！！\n<wait>	Whoa!! Watch it!!\nBe a little careful, would you!!\n<wait>			draft	reads: うわっと！！　危ねぇな！！\nちったぁ気を付けろ！！\n<wait>; reads: うわっと！！　危ねぇな！！\nちったぁ気を付けろ！！\n<wait> @ours-2026-09-05
@@ -450,7 +450,7 @@ m/MS0061.BIN	0:0C	3	144	1FD2	男：	Man:			draft	@ours-2026-09-05
 m/MS0061.BIN	0:0C	4	150	1FD3	{02:08}！？　う、うわっ！！\n{01:18}は{02:08}‥！！！\n	.........!? Wh... whoa!!\nYou're.........!!!\n			draft	reads: ‥‥‥！？　う、うわっ！！\nあんたは‥‥‥‥！！！\n; reads: ‥‥‥！？　う、うわっ！！\nあんたは‥‥‥‥！！！\n @ours-2026-09-05
 m/MS0061.BIN	0:0C	5	204	1FB2	アンタこそ誰		And you are?	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0061.BIN	0:0C	6	218	1FB2	{08:73}所で何を？		Why are you here?	v005		reads: こんな所で何を？; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0061.BIN	0:0C	7	252	1FD2	男：	男：	Man:	v005		reads: 
+m/MS0061.BIN	0:0C	7	252	1FD2	男：	Man:	Man:	v005	draft	reads:  @ours-2026-09-05
 m/MS0061.BIN	0:0C	8	258	1FD3	げっ！！　ひっでーー！\nあんな酷い事しといて忘れ{08:2B}のかよ！\n信じらんねー脳味噌だな！\n<wait>		Geh! You fuck me over like that, and then you don't even\nhave the courtesy to remember who I am!? Such nerve!\n<wait>	v005		reads: げっ！！　ひっでーー！\nあんな酷い事しといて忘れてるのかよ！\n信じらんねー脳味噌だな！\n<wait>
 m/MS0061.BIN	0:0C	9	349	1FD2	男：		Man:	v005		reads: げっ！！　ひっでーー！\nあんな酷い事しといて忘れてるのかよ！\n信じらんねー脳味噌だな！\n<wait>
 m/MS0061.BIN	0:0C	10	355	1FD3	言{08:53}く{08:84}な、今回は{02:00}の制服何か持っちゃ{08:24}ぜ！\n{02:00}の制服は{08:5C}こりごりだ！\n<wait>		Just so that you know, I don't got any uniforms or shit\nwith me this time, so don't even bother!\n<wait>	v005		reads: 言っとくけどな、今回はデビルバスターの制服何か持っちゃいないぜ！\nデビルバスターの制服はもうこりごりだ！\n<wait>
@@ -513,8 +513,8 @@ m/MS0061.BIN	0:0E	27	943	1FD2	ミュータント：	Mutant:			draft	@ours-2026-0
 m/MS0061.BIN	0:0E	28	959	1FD3	{08:61}{08:72}我らの長、ヒルコ様は{02:08}残念ながら{02:08}\n<wait>	But... our chief, Lord Hiruko is......... sadly.........\n<wait>			draft	reads: しかし‥‥我らの長、ヒルコ様は‥‥‥残念ながら‥‥‥\n<wait>; reads: しかし‥‥我らの長、ヒルコ様は‥‥‥残念ながら‥‥‥\n<wait> @ours-2026-09-05
 m/MS0061.BIN	0:0E	29	1006	1FD0	ミュータント{08:62}そう言うと俯いて{08:1F}。\n<wait>	So saying, the mutant hung his head.\n<wait>			draft	reads: ミュータントは、そう言うと俯いてしまった。\n<wait>; reads: ミュータントは、そう言うと俯いてしまった。\n<wait> @ours-2026-09-05
 m/MS0061.BIN	0:0E	30	1047	1FBA	黄泉で会{08:51}、ヒルコの事を聞かせ{08:15}\n	Tell him about the Hiruko you met in Yomi?\n			draft	reads: 黄泉で会った、ヒルコの事を聞かせますか？\n; reads: 黄泉で会った、ヒルコの事を聞かせますか？\n @ours-2026-09-05
-m/MS0061.BIN	0:0E	31	1096	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
-m/MS0061.BIN	0:0E	32	1100	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
+m/MS0061.BIN	0:0E	31	1096	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0061.BIN	0:0E	32	1100	1FB2	{08:27}	No 	No	v005	draft	reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
 m/MS0061.BIN	0:0E	33	1128	1F01	{08:62}黄泉で出会{08:51}ヒルコの事を語{08:52}聞かせた{02:08}‥\n<wait>	 told him about the Hiruko he met in Yomi............\n<wait>			draft	reads: は、黄泉で出会ったヒルコの事を語って聞かせた‥‥‥‥\n<wait>; reads: アナタ @rebase-new @ours-2026-09-05
 m/MS0061.BIN	0:0E	34	1179	1FD2	ミュータント：	Mutant:			draft	reads: は、黄泉で出会ったヒルコの事を語って聞かせた‥‥‥‥\n<wait> @rebase-unmatched idx34 en=You tell the man everything about your recent encounter with Hiruko.\n<wait> @ours-2026-09-05
 m/MS0061.BIN	0:0E	35	1195	1FD3	{08:72}何と！！　{08:4D}で{08:62}ヒルコ様は滅びては{08:24}の{08:55}ね！\n{08:4D}で{08:62}いつか我らの元に{02:08}！！\n<wait>	...What!! Then Lord Hiruko is not destroyed!\nThen someday, back to us.........!!\n<wait>			draft	reads: ‥‥何と！！　それでは、ヒルコ様は滅びてはいないのですね！\nそれでは、いつか我らの元に‥‥‥！！\n<wait>; reads: ‥‥何と！！　それでは、ヒルコ様は滅びてはいないのですね！\nそれでは、いつか我らの元に‥‥‥！！\n<wait> @ours-2026-09-05

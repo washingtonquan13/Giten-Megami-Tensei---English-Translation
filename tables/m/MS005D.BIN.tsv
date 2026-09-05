@@ -79,7 +79,7 @@ m/MS005D.BIN	0:10	21	819	1FB2	ドアをこじあ{08:29}		Smash the door	v005		re
 m/MS005D.BIN	0:10	22	835	1FB2	大声で騒ぐ		Yell out loud	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS005D.BIN	0:10	23	847	1FB2	脱出口を探す		Find a way out	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS005D.BIN	0:10	24	891	1F01	は渾身の力で、ドアをこじ開けにか{08:18}。\n{1E10:01003C}が、{03:0B}外側{08:42}ロック{03:0C}たドアはびくと{08:5D}{08:19}。\n<wait>	 threw his whole strength into forcing the door open.\n{1E10:01003C}But the door, locked from outside, would not budge.\n<wait>			draft	reads: は渾身の力で、ドアをこじ開けにかかった。\n{1E10:01003C}が、しかし、外側からロックされたドアはびくともしなかった。\n<wait> @rebase-new @ours-2026-09-05
-m/MS005D.BIN	0:10	25	996	1FB2	大声で騒ぐ	大声で騒ぐ	Yell out loud	v005		menu option, declared width 20 columns; reads: ペンタグランマ{=E8}{=00}
+m/MS005D.BIN	0:10	25	996	1FB2	大声で騒ぐ	Make a racket	Yell out loud	v005	draft	menu option, declared width 20 columns; reads: ペンタグランマ{=E8}{=00} @ours-2026-09-05
 m/MS005D.BIN	0:10	26	1008	1FB2	脱出口を探す		Find a way out	v005		menu option, declared width 20 columns; reads: は渾身の力で、ドアをこじ開けにかかった。\n{1E10:01003C}が、しかし、外側からロックされたドアはびくともしなかった。\n<wait> @rebase-unmatched idx26 en=You throw the full weight of your body against the door.\n{1E10:01003C}However, it's locked from the outside, and doesn't as much as budge.\n<wait> @refalign
 m/MS005D.BIN	0:10	27	1048	1F01	{08:62}大声で騒いだ！！\n{1E10:01003C}{03:0B}ドアの外{08:42}は何の反応も無い。\n<wait>	 made a great racket!!\n{1E10:01003C}But there was no response from outside the door.\n<wait>			draft	reads: は、大声で騒いだ！！\n{1E10:01003C}しかし、ドアの外からは何の反応も無い。\n<wait>; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
 m/MS005D.BIN	0:10	28	1122	1F01	は脱出口が無いか、くまなく{01:2E}を調べて回{08:51}。\n{1E10:01003C}{03:0B}{08:4D}らしい{08:5E}は何も無い。\n<wait>	 searched every corner of the room for a way out.\n{1E10:01003C}But there was nothing of the kind.\n<wait>			draft	reads: は脱出口が無いか、くまなく部屋を調べて回った。\n{1E10:01003C}しかし、それらしいものは何も無い。\n<wait>; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
@@ -146,10 +146,10 @@ m/MS005D.BIN	0:12	2	90	1FD2	男性：		Man:	v005
 m/MS005D.BIN	0:12	3	98	1FD3	但し{08:72}、一ヵ月の配給量には制限が{08:7B}。\n<wait>良く考えて持ち出す事だな。\n<wait>		Naturally, you can't just empty the entire warehouse at once.\nThere's a monthly limit to how much you can take.\n<wait>I suggest that you think carefully before you take anything.\n<wait>	v005		reads: 但し‥‥、一ヵ月の配給量には制限がある。\n<wait>良く考えて持ち出す事だな。\n<wait>
 m/MS005D.BIN	0:12	4	190	1FD2	男性：		Man:	v005		
 m/MS005D.BIN	0:12	5	198	1FD3	支給を受{08:29}かい？\n		Now then, do you need supplies?\n	v005		reads: 支給を受けるかい？\n
-m/MS005D.BIN	0:12	6	231	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
-m/MS005D.BIN	0:12	7	235	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
-m/MS005D.BIN	0:12	8	273	1FD2	男性：	男性：	Man:	v005		reads: 
-m/MS005D.BIN	0:12	9	281	1FD3	お前に{08:62}{08:5C}一ヵ月分の支給量を渡{08:4B}ぜ。\nま、来月{08:71}待つこ{08:51}な。\n	お前に{08:62}{08:5C}一ヵ月分の支給量を渡{08:4B}ぜ。\nま、来月{08:71}待つこ{08:51}な。\n	You've already gotten your supplies for the month.\n	v005		reads: お前には、もう一ヵ月分の支給量を渡したぜ。\nま、来月まで待つこったな。\n
+m/MS005D.BIN	0:12	6	231	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS005D.BIN	0:12	7	235	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS005D.BIN	0:12	8	273	1FD2	男性：	Man:	Man:	v005	draft	reads:  @ours-2026-09-05
+m/MS005D.BIN	0:12	9	281	1FD3	お前に{08:62}{08:5C}一ヵ月分の支給量を渡{08:4B}ぜ。\nま、来月{08:71}待つこ{08:51}な。\n	I've already given you a month's worth of supplies.\nWell, you'll just have to wait till next month.\n	You've already gotten your supplies for the month.\n	v005	draft	reads: お前には、もう一ヵ月分の支給量を渡したぜ。\nま、来月まで待つこったな。\n @ours-2026-09-05
 m/MS005D.BIN	0:12	10	359	1F83	j性：		n:	v005		
 m/MS005D.BIN	0:12	11	366	1FD3	何だ。{08:5C}荷物が一杯だぜ！\nあんま、欲張るとロクな事無いぜ！\n		Oh? Your inventory is full. You greedy bastard.\n	v005		reads: 何だ。もう荷物が一杯だぜ！\nあんま、欲張るとロクな事無いぜ！\n; reads: お前には、もう一ヵ月分の支給量を渡したぜ。\nま、来月まで待つこったな。\n
 m/MS005D.BIN	0:12	12	437	1FD2	男性：		Man:	v005		
@@ -164,19 +164,19 @@ m/MS005D.BIN	0:13	4	162	1FD2	男性：		Man:	v005
 m/MS005D.BIN	0:13	5	170	1FD3	{08:58}、金{08:26}ら{08:75}よ。\n		Don't worry. It's completely free.\n	v005		reads: なに、金はいらねえよ。\n
 m/MS005D.BIN	0:13	6	203	1FB2	是非頼むよ		Please good	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS005D.BIN	0:13	7	215	1FB2	今のま{08:71}{08:7F}		I'm good	v005		reads: 今のままでいい; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS005D.BIN	0:13	8	250	1FD2	男性：	男性：	Man:	v005		reads: 
-m/MS005D.BIN	0:13	9	258	1FD3	よし、そうこなくっちゃな。\n{08:48}で、{01:18}無敵だぜ！！\n<wait>	よし、そうこなくっちゃな。\n{08:48}で、{01:18}無敵だぜ！！\n<wait>	Alright. That's the spirit.\nWith this, you're going to be invincible!\n<wait>	v005		reads: よし、そうこなくっちゃな。\nこれで、あんた無敵だぜ！！\n<wait>
+m/MS005D.BIN	0:13	8	250	1FD2	男性：	Man:	Man:	v005	draft	reads:  @ours-2026-09-05
+m/MS005D.BIN	0:13	9	258	1FD3	よし、そうこなくっちゃな。\n{08:48}で、{01:18}無敵だぜ！！\n<wait>	Good, that's the spirit.\nWith this, you're invincible!!\n<wait>	Alright. That's the spirit.\nWith this, you're going to be invincible!\n<wait>	v005	draft	reads: よし、そうこなくっちゃな。\nこれで、あんた無敵だぜ！！\n<wait> @ours-2026-09-05
 m/MS005D.BIN	0:13	10	339	1F81	{04:F5}	{04:F5}				reads: 
 m/MS005D.BIN	0:13	11	405	1F81	{04:FF}	{04:FF}				reads: ; reads: よし、そうこなくっちゃな。\nこれで、あんた無敵だぜ！！\n<wait>
-m/MS005D.BIN	0:13	12	443	1FD2	男性：	男性：	Man:	v005		reads: 
-m/MS005D.BIN	0:13	13	451	1FD3	気が変わっ{08:50}いつ{08:56}来てくれよ！\nモノはと{08:53}く{08:42}さ{02:08}\n	気が変わっ{08:50}いつ{08:56}来てくれよ！\nモノはと{08:53}く{08:42}さ{02:08}\n	Feel free to come back whenever if you happen to change your mind.\n	v005		reads: 気が変わったらいつでも来てくれよ！\nモノはとっとくからさ‥‥‥\n
+m/MS005D.BIN	0:13	12	443	1FD2	男性：	Man:	Man:	v005	draft	reads:  @ours-2026-09-05
+m/MS005D.BIN	0:13	13	451	1FD3	気が変わっ{08:50}いつ{08:56}来てくれよ！\nモノはと{08:53}く{08:42}さ{02:08}\n	If you change your mind, come back any time!\nI'll keep the stuff for you.........\n	Feel free to come back whenever if you happen to change your mind.\n	v005	draft	reads: 気が変わったらいつでも来てくれよ！\nモノはとっとくからさ‥‥‥\n @ours-2026-09-05
 m/MS005D.BIN	0:13	14	502	00	ん？　悪いが、{08:48}以上の装備は{08:45}に無いぜ。\nどっか{08:42}仕入れら{08:2F}と{08:7F}{08:5F}がな。\n		Hmm? Sorry, but that was everything I got. Try looking somewhere else.\n	v005		reads: ん？　悪いが、これ以上の装備はここに無いぜ。\nどっかから仕入れられるといいんだがな。\n
 m/MS005D.BIN	0:14	0	24	1FD2	男性：		Man:	v005		
 m/MS005D.BIN	0:14	1	32	1FD3	よお。弾の補充に来たのか？\n		Yo. Here to get your bullets?\n	v005		
-m/MS005D.BIN	0:14	2	75	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
-m/MS005D.BIN	0:14	3	79	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
-m/MS005D.BIN	0:14	4	103	1FD2	男性：	男性：	Man:	v005		reads: 
-m/MS005D.BIN	0:14	5	117	1F7C	無駄遣いすんなよ！！\n<wait>	無駄遣いすんなよ！！\n<wait>	Don't waste them!\n<wait>	v005		
+m/MS005D.BIN	0:14	2	75	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS005D.BIN	0:14	3	79	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS005D.BIN	0:14	4	103	1FD2	男性：	Man:	Man:	v005	draft	reads:  @ours-2026-09-05
+m/MS005D.BIN	0:14	5	117	1F7C	無駄遣いすんなよ！！\n<wait>	Don't waste 'em!!\n<wait>	Don't waste them!\n<wait>	v005	draft	@ours-2026-09-05
 m/MS005D.BIN	0:14	6	148	18	お前、{08:5C}今月は支給終わっ{08:2B}だろ？\n来月{08:71}は支給は無しだ！\n<wait>		Sorry, but you've already gotten your bullets for the month.\n<wait>	v005		reads: お前、もう今月は支給終わってるだろ？\n来月までは支給は無しだ！\n<wait>; reads: お前、もう今月は支給終わってるだろ？\n来月までは支給は無しだ！\n<wait> @refalign
 m/MS005D.BIN	0:14	7	212	1FD2	男性：		Man:	v005		
 m/MS005D.BIN	0:14	8	220	1FD3	弾{08:62}お前{08:74}のモン{08:81}{08:25}{08:5F}{08:42}な！\n		Please understand.\nYou're not the only soldier around who needs to shoot stuff.\n	v005		reads: 弾は、お前だけのモンじゃないんだからな！\n; reads: お前、もう今月は支給終わってるだろ？\n来月までは支給は無しだ！\n<wait>
@@ -531,7 +531,7 @@ m/MS005D.BIN	0:4B	0	65	1FD0	いきなり、強大な{08:0B}が現わ{08:11}\n		A
 m/MS005D.BIN	0:4B	1	108	1FB2	何だ貴様は！？		Who are you!?	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS005D.BIN	0:4B	2	124	1FB2	{08:0C}	{08:0C}	Attack	v005		reads: 攻撃; menu option, declared width 20 columns
 m/MS005D.BIN	0:4B	3	156	1F01	{08:62}{08:48}以上は{08:25}素早さで、目の前の{08:0B}に一撃を浴びせ{08:69}と{08:4B}。\n<wait>	 tried to land a blow on the demon before him, as fast as he possibly\ncould.\n<wait>			draft	reads: は、これ以上はない素早さで、目の前の悪魔に一撃を浴びせようとした。\n<wait>; reads: 山瀬勇 @rebase-new @ours-2026-09-05
-m/MS005D.BIN	0:4B	4	217	1FBA	{03:0B}{08:79}{08:0C}が当たる寸前に	{03:0B}{08:79}{08:0C}が当たる寸前に	However, before your attack can connect, 	v005		reads: しかし、その攻撃が当たる寸前に
+m/MS005D.BIN	0:4B	4	217	1FBA	{03:0B}{08:79}{08:0C}が当たる寸前に	But just before the blow landed, 	However, before your attack can connect, 	v005	draft	reads: しかし、その攻撃が当たる寸前に @ours-2026-09-05
 m/MS005D.BIN	0:4B	5	250	1F01	{08:62}そう叫{08:5F}。\n<wait>{08:8F}、{08:79}短い言葉も終わらぬうちに、		You bark at the demon to identify itself.\n<wait>However, before your words can reach it, 	v005		reads: は、そう叫んだ。\n<wait>だが、その短い言葉も終わらぬうちに、; reads: は、これ以上はない素早さで、目の前の悪魔に一撃を浴びせようとした。\n<wait> @rebase-tagdiff @rebase-unmatched idx5 en=You lunge at the demon faster than you ever have.\n<wait> @refalign
 m/MS005D.BIN	0:4B	6	303	1F72	{08:0B}は一瞬に{08:4A}姿を消{08:4A}{08:1F}{02:08}\n<wait>		the demon vanishes...\n<wait>	v005		reads: 悪魔は一瞬にして姿を消してしまった‥‥‥\n<wait>; reads: しかし、その攻撃が当たる寸前に @refalign
 m/MS005D.BIN	0:4B	7	336	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: は、そう叫んだ。\n<wait>だが、その短い言葉も終わらぬうちに、 @refalign
@@ -635,8 +635,8 @@ m/MS005D.BIN	0:53	2	103	1FD2	女性：		Woman:	v005
 m/MS005D.BIN	0:53	3	111	1FD3	ひょ{08:53}{08:4A}、私達がお望みかしら？\n		Are you here to... ask us out?\n	v005		reads: ひょっとして、私達がお望みかしら？\n
 m/MS005D.BIN	0:53	4	158	1FB2	もちろん！		Of course!	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS005D.BIN	0:53	5	170	1FB2	{08:7A}訳では‥		Well, no...	v005		reads: そんな訳では‥; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS005D.BIN	0:53	6	202	1FD2	女性：	女性：	Woman:	v005		reads: ゾンビ
-m/MS005D.BIN	0:53	7	210	1FD3	くすくす{02:08}エッチな{08:5F}{08:42}！\n<wait>	くすくす{02:08}エッチな{08:5F}{08:42}！\n<wait>	Hehehe... Perv!\n<wait>	v005		reads: くすくす‥‥‥エッチなんだから！\n<wait>
+m/MS005D.BIN	0:53	6	202	1FD2	女性：	Woman:	Woman:	v005	draft	reads: ゾンビ @ours-2026-09-05
+m/MS005D.BIN	0:53	7	210	1FD3	くすくす{02:08}エッチな{08:5F}{08:42}！\n<wait>	Hee hee......... you pervert!\n<wait>	Hehehe... Perv!\n<wait>	v005	draft	reads: くすくす‥‥‥エッチなんだから！\n<wait> @ours-2026-09-05
 m/MS005D.BIN	0:53	8	244	1FD2	女性：		Woman:	v005		
 m/MS005D.BIN	0:53	9	252	1FD3	うふふ{02:08}照れちゃ{08:52}、かーわ{08:7F}！\n<wait>		Ehehe... Just look at him blush. So cute!\n<wait>	v005		reads: うふふ‥‥‥照れちゃって、かーわいい！\n<wait>; reads: くすくす‥‥‥エッチなんだから！\n<wait>
 m/MS005D.BIN	0:53	10	288	00	英雄さん。私達、貴方の事応援し{08:2B}わ！\n<wait>		We will cheer you on, Mister Hero!\n<wait>	v005		reads: 英雄さん。私達、貴方の事応援してるわ！\n<wait>
@@ -665,11 +665,11 @@ m/MS005D.BIN	0:59	0	24	1FD0	扉の中{08:42}、何発{08:5E}銃声が聞こ{08:4
 m/MS005D.BIN	0:59	1	63	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 園田： @refalign
 m/MS005D.BIN	0:59	2	69	1FD3	渡邊さんに何かあ{08:51}{08:5F}！　行こう！\n<wait>		Something's going on! Let's hurry!\n<wait>	v005		reads: 渡邊さんに何かあったんだ！　行こう！\n<wait>; reads: 渡邊さんに何かあったんだ！　行こう！\n<wait> @refalign
 m/MS005D.BIN	0:5A	0	5	09	{01:08}城へ行き{08:15}\n		Travel to Baal's castle?\n	ours		reads: バエル城へ行きますか？\n
-m/MS005D.BIN	0:5A	1	34	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
-m/MS005D.BIN	0:5A	2	38	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
+m/MS005D.BIN	0:5A	1	34	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS005D.BIN	0:5A	2	38	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
 m/MS005D.BIN	0:5A	3	80	1F03						reads: バエル
-m/MS005D.BIN	0:5A	4	153	1FD2	男性：	男性：	Man:	v005		reads: ＞どうしますか？
-m/MS005D.BIN	0:5A	5	161	1FD3	連れて参りま{08:17}！\n<wait>	連れて参りま{08:17}！\n<wait>	We brought them!\n<wait>	v005		reads: 連れて参りました！！\n<wait>
+m/MS005D.BIN	0:5A	4	153	1FD2	男性：	Man:	Man:	v005	draft	reads: ＞どうしますか？ @ours-2026-09-05
+m/MS005D.BIN	0:5A	5	161	1FD3	連れて参りま{08:17}！\n<wait>	We've brought them!!\n<wait>	We brought them!\n<wait>	v005	draft	reads: 連れて参りました！！\n<wait> @ours-2026-09-05
 m/MS005D.BIN	0:5A	6	186	1FD2	渡邊：		Watanabe:	v005		
 m/MS005D.BIN	0:5A	7	194	1FD3	よし。お前達は下が{08:52}いろ。\n<wait>		Good. You can leave now.\n<wait>	v005		reads: よし。お前達は下がっていろ。\n<wait>; reads: 連れて参りました！！\n<wait>
 m/MS005D.BIN	0:5A	8	229	1FD2	男性：		Man:	v005		
@@ -682,8 +682,8 @@ m/MS005D.BIN	0:5A	14	362	1FB2	何の事だ？		What do you mean?	v005		menu opti
 m/MS005D.BIN	0:5A	15	374	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns; reads: ‥‥何の事です？\n<wait> @refalign
 m/MS005D.BIN	0:5A	16	400	1FD2	渡邊：		Watanabe:	v005		menu option, declared width 20 columns
 m/MS005D.BIN	0:5A	17	408	1FD3	しらばっくれお{08:52}！\n先の{08:0B}軍の襲撃{08:62}貴様らが仕組{08:5F}{08:5E}{08:8C}が！\n<wait>		What the fuck do you think he means!?\nThe demon attack, that was clearly your doing!\n<wait>	v005		reads: しらばっくれおって！\n先の悪魔軍の襲撃は、貴様らが仕組んだものだろうが！\n<wait>; reads: 黙っている; menu option, declared width 20 columns
-m/MS005D.BIN	0:5A	18	474	1FD2	男性：	男性：	Man:	v005		reads: 山瀬勇
-m/MS005D.BIN	0:5A	19	482	1FD3	{08:79}上、{01:37}の暗殺ま{08:56}企てて{08:64}とはな！\n<wait>	{08:79}上、{01:37}の暗殺ま{08:56}企てて{08:64}とはな！\n<wait>	Not only that, you even had plans to assasinate him!\n<wait>	v005		reads: その上、リーダーの暗殺までも企てていたとはな！\n<wait>
+m/MS005D.BIN	0:5A	18	474	1FD2	男性：	Man:	Man:	v005	draft	reads: 山瀬勇 @ours-2026-09-05
+m/MS005D.BIN	0:5A	19	482	1FD3	{08:79}上、{01:37}の暗殺ま{08:56}企てて{08:64}とはな！\n<wait>	And on top of that, you were even plotting to assassinate the Leader!\n<wait>	Not only that, you even had plans to assasinate him!\n<wait>	v005	draft	reads: その上、リーダーの暗殺までも企てていたとはな！\n<wait> @ours-2026-09-05
 m/MS005D.BIN	0:5A	20	530	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 園田： @refalign
 m/MS005D.BIN	0:5A	21	536	1FD3	{08:7A}！　俺達が{08:7A}事{02:08}！\n<wait>		What!? No we didn't!!\n<wait>	v005		reads: そんな！　俺達がそんな事‥‥‥！\n<wait>; reads: しらばっくれおって！\n先の悪魔軍の襲撃は、貴様らが仕組んだものだろうが！\n<wait> @refalign
 m/MS005D.BIN	0:5A	22	582	1FB2	で{08:50}めだ！！		Nonsense!	v005		reads: でたらめだ！！; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
@@ -692,8 +692,8 @@ m/MS005D.BIN	0:5A	24	626	1FD2	男性：		Man:	v005		reads: 園田：
 m/MS005D.BIN	0:5A	25	634	1FD3	黙れ！！　捕虜に{08:4B}{08:0B}がそう証言{08:4B}{08:77}。\n<wait>		Silence! We have proof.\nA demon we were able to capture spilled the beans.\n<wait>	v005		reads: 黙れ！！　捕虜にした悪魔がそう証言したのだ。\n<wait>; reads: そんな！　俺達がそんな事‥‥‥！\n<wait>
 m/MS005D.BIN	0:5A	26	684	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: でたらめだ！！; menu option, declared width 20 columns @refalign
 m/MS005D.BIN	0:5A	27	690	1FD3	{08:7A}{02:08}ばかな{02:08}‥\n<wait>		That... That makes no sense...\n<wait>	v005		reads: そんな‥‥‥ばかな‥‥‥‥\n<wait>; reads: 誰がそんな事を; menu option, declared width 20 columns @refalign
-m/MS005D.BIN	0:5A	28	730	1FB2	俺は無実だ！	俺は無実だ！	We're innocent!	v005		menu option, declared width 20 columns; reads: 山瀬勇
-m/MS005D.BIN	0:5A	29	744	1FB2	{08:7A}、馬鹿な！	{08:7A}、馬鹿な！	That's bullshit!	v005		reads: そんな、馬鹿な！; menu option, declared width 20 columns
+m/MS005D.BIN	0:5A	28	730	1FB2	俺は無実だ！	I'm innocent!	We're innocent!	v005	draft	menu option, declared width 20 columns; reads: 山瀬勇 @ours-2026-09-05
+m/MS005D.BIN	0:5A	29	744	1FB2	{08:7A}、馬鹿な！	That's absurd!	That's bullshit!	v005	draft	reads: そんな、馬鹿な！; menu option, declared width 20 columns @ours-2026-09-05
 m/MS005D.BIN	0:5A	30	776	1FD0	渡邊{08:62}	Watanabe paid no heed to 			draft	reads: 渡邊は、; reads: 渡邊は、 @ours-2026-09-05
 m/MS005D.BIN	0:5A	31	788	1F01	の言葉に耳を貸さず、こう続{08:43}。\n<wait>	's words, and went on.\n<wait>			draft	reads: の言葉に耳を貸さず、こう続けた。\n<wait>; reads: 黙れ！！　捕虜にした悪魔がそう証言したのだ。\n<wait> @ours-2026-09-05
 m/MS005D.BIN	0:5A	32	827	1FD2	渡邊：	Watanabe: 			draft	reads: 園田： @ours-2026-09-05
@@ -771,10 +771,10 @@ m/MS005D.BIN	0:5A	103	3192	1FD2	渡邊：		Watanabe:	v005
 m/MS005D.BIN	0:5A	104	3200	1FD3	私など{08:62}		As for me, I spent the night lying wide awake.\nI hate to admit it, but I'm feeling a bit nervous.\n	v005		reads: 私などは、; reads: いざという時のために、十分な力を蓄えてくれたまえ。\n
 m/MS005D.BIN	0:5A	105	3215	1FD2	渡邊：		Watanabe:	v005		
 m/MS005D.BIN	0:5A	106	3223	1FD3	やはりそうか。\n<wait>		Huh. Figures.\n<wait>	v005		reads: おはよう。良く眠れたかい？\n
-m/MS005D.BIN	0:5A	107	3246	1FD2	渡邊：	渡邊：	Watanabe:	v005		reads: ＹＥＳ; menu option, declared width 20 columns
-m/MS005D.BIN	0:5A	108	3254	1FD3	私も、年がいも無く興奮{08:4A}しま{08:52}ね。\n中々寝つけ{08:19}よ。\n	私も、年がいも無く興奮{08:4A}しま{08:52}ね。\n中々寝つけ{08:19}よ。\n	I too spent the night lying wide awake.\nI hate to admit it, but I'm feeling a bit nervous.\n                                                    	v005		reads: 私も、年がいも無く興奮してしまってね。\n中々寝つけなかったよ。\n; reads: ＮＯ; menu option, declared width 20 columns
-m/MS005D.BIN	0:5A	109	3309	1FD2	渡邊：	渡邊：	Watanabe:	v005		reads: アナタ
-m/MS005D.BIN	0:5A	110	3317	1FD3	皆が落ち着いて{08:1E}ら、次の作戦を決{08:2E}会議を開こうと思っ{08:14}{08:77}が{02:08}\n<wait>	皆が落ち着いて{08:1E}ら、次の作戦を決{08:2E}会議を開こうと思っ{08:14}{08:77}が{02:08}\n<wait>	Once the folks calm down a little, I'm going to hold a conference\nwhere we go over the next step in our plan.\n<wait>	v005		reads: 皆が落ち着いてきたら、次の作戦を決める会議を開こうと思っているのだが‥‥‥\n<wait>
+m/MS005D.BIN	0:5A	107	3246	1FD2	渡邊：	Watanabe:	Watanabe:	v005	draft	reads: ＹＥＳ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS005D.BIN	0:5A	108	3254	1FD3	私も、年がいも無く興奮{08:4A}しま{08:52}ね。\n中々寝つけ{08:19}よ。\n	I got worked up too, at my age.\nI couldn't get to sleep for quite a while.\n	I too spent the night lying wide awake.\nI hate to admit it, but I'm feeling a bit nervous.\n                                                    	v005	draft	reads: 私も、年がいも無く興奮してしまってね。\n中々寝つけなかったよ。\n; reads: ＮＯ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS005D.BIN	0:5A	109	3309	1FD2	渡邊：	Watanabe:	Watanabe:	v005	draft	reads: アナタ @ours-2026-09-05
+m/MS005D.BIN	0:5A	110	3317	1FD3	皆が落ち着いて{08:1E}ら、次の作戦を決{08:2E}会議を開こうと思っ{08:14}{08:77}が{02:08}\n<wait>	Once everyone has settled down, I mean to hold a meeting to decide\nour next operation.........\n<wait>	Once the folks calm down a little, I'm going to hold a conference\nwhere we go over the next step in our plan.\n<wait>	v005	draft	reads: 皆が落ち着いてきたら、次の作戦を決める会議を開こうと思っているのだが‥‥‥\n<wait> @ours-2026-09-05
 m/MS005D.BIN	0:5A	111	3445	1FD2	渡邊：		Watanabe:	v005		
 m/MS005D.BIN	0:5A	112	3453	1FD3	{01:36}、バールゼフォン等に対抗{08:8E}為の、作戦会議を開かねば{08:7D}ん、\nと思っ{08:14}{08:77}が、皆の戦勝気分が収まらなくてね。\n<wait>		It's about time we started planning our next move.\n<wait>	v005		reads: そろそろ、バールゼフォン等に対抗する為の、作戦会議を開かねばならん、\nと思っているのだが、皆の戦勝気分が収まらなくてね。\n<wait>; reads: そうかそれは良かった。\n<wait>
 m/MS005D.BIN	0:5A	113	3565	1FD2	渡邊：		Watanabe:	v005		
