@@ -68,12 +68,17 @@ class Row:
 
 
 def write(path: str, rows: "list[Row]") -> None:
+    """Write a table.  Every row is serialised *before* the file is opened, so
+    a bad row raises without touching the file (a half-written table once
+    silently lost 350 rows)."""
+    lines = [r.to_tsv() for r in rows]
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8", newline="\n") as fh:
+    with open(path, "w", encoding="utf-8", newline="
+") as fh:
         fh.write(HEADER_COMMENT)
-        fh.write("\t".join(COLUMNS) + "\n")
-        for r in rows:
-            fh.write(r.to_tsv() + "\n")
+        for line in lines:
+            fh.write(line + "
+")
 
 
 def read(path: str) -> "list[Row]":
