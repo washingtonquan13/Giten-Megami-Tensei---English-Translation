@@ -154,7 +154,7 @@ m/MS0024.BIN	0:04	17	533	1FD3	やはり貴方{08:62}マイト‥レ{02:08}‥\n<
 m/MS0024.BIN	0:04	18	604	1F04	痼{=E2}{=FF}					
 m/MS0024.BIN	0:04	19	621	1FD0	司祭は逃げ遅{08:60}様だ{02:08}\n<wait>		The priest appears to have missed his chance to flee...\n<wait>	ours		reads: 司祭は逃げ遅れた様だ‥‥‥\n<wait>
 m/MS0024.BIN	0:04	20	656	09	{01:03}{08:62}司祭に{03:06}ついてくる{08:69}に示{08:4B}。\n<wait>		Newton signals for the priest to follow him.\n<wait>	ours		reads: ニュートンは、司祭に自分についてくるように示した。\n<wait>
-m/MS0024.BIN	0:04	21	700	1FD1	＞{02:06}\n<wait>		>{02:06}\n<wait>	ours		reads: ＞どうしますか？\n<wait>
+m/MS0024.BIN	0:04	21	700	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>	>{02:06}\n<wait>	ours	draft	reads: ＞どうしますか？\n<wait> @ours-2026-09-05
 m/MS0024.BIN	0:04	22	727	1FB2	助{08:29}		Save him	ours		reads: 助ける; menu option, declared width 20 columns
 m/MS0024.BIN	0:04	23	733	1FB2	ほ{08:53}く		Leave him	ours		reads: ほっとく; menu option, declared width 20 columns
 m/MS0024.BIN	0:04	24	771	1F01	は司祭を助{08:29}事に{08:4B}。\n<wait>	 decided to help the priest.\n<wait>			draft	reads: は司祭を助ける事にした。\n<wait> @rebase-new @ours-2026-09-05
@@ -214,12 +214,12 @@ m/MS0024.BIN	0:05	36	1094	1FD3	{08:55}が、マイトレーヤ様の御身体が
 m/MS0024.BIN	0:05	37	1163	1FD2	信者：		Devotee:	v005		
 m/MS0024.BIN	0:05	38	1171	1FD3	{08:4D}{08:71}{08:62}{08:90}かお待ち下{08:49}。\n<wait>		We appreciate your patience until then.\n<wait>	v005		reads: それまでは、どうかお待ち下さい。\n<wait>; reads: ですが、マイトレーヤ様の御身体が空き次第、また執り行われる予定です。\n<wait>
 m/MS0024.BIN	0:05	39	1199	00	救世主マイトレーヤ様に{08:62}{08:5C}会われま{08:4B}？\n<wait>		Have you already met Lord Maitreya, our saviour?\n<wait>	v005		reads: 救世主マイトレーヤ様には、もう会われました？\n<wait>
-m/MS0024.BIN	0:05	40	1260	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns; reads: それまでは、どうかお待ち下さい。\n<wait>
-m/MS0024.BIN	0:05	41	1264	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns; reads: 救世主マイトレーヤ様には、もう会われました？\n<wait>
-m/MS0024.BIN	0:05	42	1286	1FD2	信者：	信者：	Devotee:	v005		reads: はい; menu option, declared width 20 columns
-m/MS0024.BIN	0:05	43	1294	1FD3	マイトレーヤ様{08:62}偉大{08:59}力を御持ちな{08:74}でなく、{08:4D}に奢る事なく、\n誰に{08:56}救済の手を差し伸べて下さる、すばらしい御方{08:55}。\n<wait>	マイトレーヤ様{08:62}偉大{08:59}力を御持ちな{08:74}でなく、{08:4D}に奢る事なく、\n誰に{08:56}救済の手を差し伸べて下さる、すばらしい御方{08:55}。\n<wait>	Not only does Lord Maitreya possess tremendous power,\nhe extends the arm of salvation to anyone who seeks it free of charge.\n<wait>	v005		reads: マイトレーヤ様は、偉大なる力を御持ちなだけでなく、それに奢る事なく、\n誰にでも救済の手を差し伸べて下さる、すばらしい御方です。\n<wait>; reads: いいえ; menu option, declared width 20 columns
-m/MS0024.BIN	0:05	44	1416	1FD2	信者：	信者：	Devotee:	v005		reads: 山瀬勇
-m/MS0024.BIN	0:05	45	1424	1FD3	マイトレーヤ様が{08:40}限り、必ずや、千年王国建設は実現{03:0C}る{08:46}で{08:80}！\n<wait>	マイトレーヤ様が{08:40}限り、必ずや、千年王国建設は実現{03:0C}る{08:46}で{08:80}！\n<wait>	As long as he is by our side,\nthe Thousand Year Kingdom is sure to become reality!\n<wait>	v005		reads: マイトレーヤ様がいる限り、必ずや、千年王国建設は実現されることでしょう！\n<wait>
+m/MS0024.BIN	0:05	40	1260	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns; reads: それまでは、どうかお待ち下さい。\n<wait> @ours-2026-09-05
+m/MS0024.BIN	0:05	41	1264	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns; reads: 救世主マイトレーヤ様には、もう会われました？\n<wait> @ours-2026-09-05
+m/MS0024.BIN	0:05	42	1286	1FD2	信者：	Devotee:	Devotee:	v005	draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0024.BIN	0:05	43	1294	1FD3	マイトレーヤ様{08:62}偉大{08:59}力を御持ちな{08:74}でなく、{08:4D}に奢る事なく、\n誰に{08:56}救済の手を差し伸べて下さる、すばらしい御方{08:55}。\n<wait>	Lord Maitreya not only possesses tremendous power, he is never\nproud of it, and extends the hand of salvation to anyone.\nHe is a wonderful person.\n<wait>	Not only does Lord Maitreya possess tremendous power,\nhe extends the arm of salvation to anyone who seeks it free of charge.\n<wait>	v005	draft	reads: マイトレーヤ様は、偉大なる力を御持ちなだけでなく、それに奢る事なく、\n誰にでも救済の手を差し伸べて下さる、すばらしい御方です。\n<wait>; reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0024.BIN	0:05	44	1416	1FD2	信者：	Devotee:	Devotee:	v005	draft	reads: 山瀬勇 @ours-2026-09-05
+m/MS0024.BIN	0:05	45	1424	1FD3	マイトレーヤ様が{08:40}限り、必ずや、千年王国建設は実現{03:0C}る{08:46}で{08:80}！\n<wait>	As long as Lord Maitreya is with us, the Thousand Year Kingdom\nwill surely be built!\n<wait>	As long as he is by our side,\nthe Thousand Year Kingdom is sure to become reality!\n<wait>	v005	draft	reads: マイトレーヤ様がいる限り、必ずや、千年王国建設は実現されることでしょう！\n<wait> @ours-2026-09-05
 m/MS0024.BIN	0:06	0	32	1FD2	信者：		Devotee:	v005		
 m/MS0024.BIN	0:06	1	40	1FD3	{08:45}{08:62}来るべき千年王国建設に向け、{08:79}ひな形と{08:4A}作ら{08:60}場所{08:6B}だよ。\n<wait>		This facility was built to hasten the arrival of\nthe Thousand Year Kingdom, and to act as its template.\n<wait>	v005		reads: ここは、来るべき千年王国建設に向け、そのひな形として作られた場所なのだよ。\n<wait>
 m/MS0024.BIN	0:07	0	32	1FD2	信者：		Devotee:	v005		
@@ -322,7 +322,7 @@ m/MS0024.BIN	0:0D	17	435	1FD3	わ‥わ{02:08}か{08:72}身体が{02:08}‥！�
 m/MS0024.BIN	0:0D	18	510	1F04	烙{=E2}{=FF}					
 m/MS0024.BIN	0:0D	19	527	1FD0	男は逃げ遅{08:60}様だ{02:08}\n<wait>		The man appears to have missed his chance to flee...\n<wait>	ours		reads: 男は逃げ遅れた様だ‥‥‥\n<wait>
 m/MS0024.BIN	0:0D	20	557	09	{01:03}{08:62}信者に{03:06}ついてくる{08:69}に示{08:4B}。\n<wait>		Newton signals for the believer to follow him.\n<wait>	ours		reads: ニュートンは、信者に自分についてくるように示した。\n<wait>
-m/MS0024.BIN	0:0D	21	601	1FD1	＞{02:06}\n<wait>		>{02:06}\n<wait>	ours		reads: ＞どうしますか？\n<wait>
+m/MS0024.BIN	0:0D	21	601	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>	>{02:06}\n<wait>	ours	draft	reads: ＞どうしますか？\n<wait> @ours-2026-09-05
 m/MS0024.BIN	0:0D	22	628	1FB2	助{08:29}		Save him	ours		reads: 助ける; menu option, declared width 20 columns
 m/MS0024.BIN	0:0D	23	634	1FB2	ほ{08:53}く		Leave him	ours		reads: ほっとく; menu option, declared width 20 columns
 m/MS0024.BIN	0:0D	24	672	1F01	{08:62}信者の男性を助{08:29}事に{08:4B}。\n<wait>	 decided to help the devotee man.\n<wait>			draft	reads: は、信者の男性を助ける事にした。\n<wait> @rebase-new @ours-2026-09-05
@@ -364,7 +364,7 @@ m/MS0024.BIN	0:0F	15	418	1FD3	やはり貴方は{02:08}‥あっ{02:08}‥！！
 m/MS0024.BIN	0:0F	16	495	1F04	烙{=E1}{=FF}					
 m/MS0024.BIN	0:0F	17	512	1FD0	女は逃げ遅{08:60}様だ{02:08}\n<wait>		The woman appears to have missed her chance to flee...\n<wait>	ours		reads: 女は逃げ遅れた様だ‥‥‥\n<wait>
 m/MS0024.BIN	0:0F	18	542	09	{01:03}{08:62}信者に{03:06}ついてくる{08:69}に示{08:4B}。\n<wait>		Newton signals for the believer to follow him.\n<wait>	ours		reads: ニュートンは、信者に自分についてくるように示した。\n<wait>
-m/MS0024.BIN	0:0F	19	586	1FD1	＞{02:06}\n<wait>		>{02:06}\n<wait>	ours		reads: ＞どうしますか？\n<wait>
+m/MS0024.BIN	0:0F	19	586	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>	>{02:06}\n<wait>	ours	draft	reads: ＞どうしますか？\n<wait> @ours-2026-09-05
 m/MS0024.BIN	0:0F	20	613	1FB2	助{08:29}		Save her	ours		reads: 助ける; menu option, declared width 20 columns
 m/MS0024.BIN	0:0F	21	619	1FB2	ほ{08:53}く		Leave her	ours		reads: ほっとく; menu option, declared width 20 columns
 m/MS0024.BIN	0:0F	22	657	1F01	{08:62}信者の女性を助{08:29}事に{08:4B}。\n<wait>	 decided to help the devotee woman.\n<wait>			draft	reads: は、信者の女性を助ける事にした。\n<wait> @rebase-new @ours-2026-09-05
@@ -477,7 +477,7 @@ m/MS0024.BIN	0:1F	7	263	1FD2	電子音声：		Digital Voice:	v005
 m/MS0024.BIN	0:1F	8	275	1FD3	{01:1B}を入力{08:4A}下{08:49}。\n		Please enter a password.\n	v005		reads: パスワードを入力して下さい。\n
 m/MS0024.BIN	0:1F	9	308	1FB2	入力{08:8E}		Enter	v005		reads: 入力する; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0024.BIN	0:1F	10	316	1FB2	入力し{08:25}		Never mind	v005		reads: 入力しない; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0024.BIN	0:1F	11	375	1FD2	ガーディアン：	ガーディアン：	Guardian:	v005		reads: 
+m/MS0024.BIN	0:1F	11	375	1FD2	ガーディアン：	Guardian:	Guardian:	v005	draft	reads:  @ours-2026-09-05
 m/MS0024.BIN	0:1F	12	391	1FD3	待て{02:08}貴様、見{08:25}顔だな{02:08}‥\n<wait>		Wait... I don't recognize you.\n<wait>	v005		reads: 待て‥‥‥貴様、見ない顔だな‥‥‥‥\n<wait>
 m/MS0024.BIN	0:1F	13	431	1FD2	ガーディアン：		Guardian:	v005		reads: 待て‥‥‥貴様、見ない顔だな‥‥‥‥\n<wait>
 m/MS0024.BIN	0:1F	14	447	1FD3	貴様{02:08}{02:0C}に変装し、何を企んで{08:40}！？\n<wait>		Intruder!\n<wait>	v005		reads: 貴様‥‥‥我々に変装し、何を企んでいる！？\n<wait>
@@ -526,8 +526,8 @@ m/MS0024.BIN	0:20	31	980	1FD2	{08:31}：		Rui:	ours		reads: 泪：
 m/MS0024.BIN	0:20	32	986	1FD3	私の事{08:6A}て{08:72}{08:5C}忘れてたでしょ？\n<wait>		Have you perhaps... forgotten about me already?\n<wait>	v005		reads: 私の事なんて‥‥もう忘れてたでしょ？\n<wait>
 m/MS0024.BIN	0:20	33	1039	1FB2	忘れてた		I have	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0024.BIN	0:20	34	1049	1FB2	忘{08:2F}訳{08:25}！		Of course not!	v005		reads: 忘れる訳ない！; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0024.BIN	0:20	35	1079	1FD2	{08:31}：	{08:31}：	Rui:	ours		reads: 泪：; reads: だれも
-m/MS0024.BIN	0:20	36	1085	1FD3	冷{08:4E}のね。\n<wait>	冷{08:4E}のね。\n<wait>	Hmph. How cold.\n<wait>	v005		reads: 冷たいのね。\n<wait>
+m/MS0024.BIN	0:20	35	1079	1FD2	{08:31}：	Rui:	Rui:	ours	draft	reads: 泪：; reads: だれも @ours-2026-09-05
+m/MS0024.BIN	0:20	36	1085	1FD3	冷{08:4E}のね。\n<wait>	How cold.\n<wait>	Hmph. How cold.\n<wait>	v005	draft	reads: 冷たいのね。\n<wait> @ours-2026-09-05
 m/MS0024.BIN	0:20	37	1107	1FD2	{08:31}：		Rui:	ours		reads: 泪：
 m/MS0024.BIN	0:20	38	1113	1FD3	ふふ{08:72}相変わらずお人良し{08:6B}ね。\n<wait>		Fufu... Still such a pushover, huh.\n<wait>	ours		reads: ふふ‥‥相変わらずお人良しなのね。\n<wait>; reads: 冷たいのね。\n<wait>
 m/MS0024.BIN	0:20	39	1152	1FD2	{08:31}：		Rui:	ours		reads: 泪：
@@ -540,8 +540,8 @@ m/MS0024.BIN	0:20	45	1331	1FB2	{08:90}し{08:69}{08:72}		Hmm...	v005		reads: ど
 m/MS0024.BIN	0:20	46	1341	1FB2	勝手過ぎだよ！		Screw you!	v005		menu option, declared width 20 columns; reads: もう離さない‥‥ @refalign
 m/MS0024.BIN	0:20	47	1381	1FD0	あの{08:69}な事で別{08:60}{08:0F}を、再び{08:0F}に入{08:2F}のは{08:90}{08:8C}か{08:72}\n<wait>		It isn't a simple decision letting someone who once left\nyour party back in.\n<wait>	v005		reads: あのような事で別れた仲間を、再び仲間に入れるのはどうだろうか‥‥\n<wait>; reads: どうしよう‥‥; menu option, declared width 20 columns @refalign
 m/MS0024.BIN	0:20	48	1440	1F01	は躊躇{08:4B}{02:08}\n<wait>		You find yourself having trouble deciding...\n<wait>	v005		reads: は躊躇した‥‥‥\n<wait>; menu option, declared width 20 columns @rebase-tagdiff
-m/MS0024.BIN	0:20	49	1459	1FD2	{08:31}：	{08:31}：	Rui:	ours		reads: 泪：; reads: 山田
-m/MS0024.BIN	0:20	50	1465	1FD3	{08:72}お願い{08:72}今は{08:72}{08:90}{08:4A}も{02:08}私{02:08}\n<wait>	{08:72}お願い{08:72}今は{08:72}{08:90}{08:4A}も{02:08}私{02:08}\n<wait>	Please... I beg of you... I...\n<wait>	v005		reads: ‥‥お願い‥‥今は‥‥どうしても‥‥‥私‥‥‥\n<wait>; reads: ペンタグランマR; v005={02:01}R{02:FF} @rebase-unmatched idx50 en=Pentagrammaﾟ @rebase-unmatched idx50 en=Pentagrammaﾟ
+m/MS0024.BIN	0:20	49	1459	1FD2	{08:31}：	Rui:	Rui:	ours	draft	reads: 泪：; reads: 山田 @ours-2026-09-05
+m/MS0024.BIN	0:20	50	1465	1FD3	{08:72}お願い{08:72}今は{08:72}{08:90}{08:4A}も{02:08}私{02:08}\n<wait>	...Please... right now... I just......... I.........\n<wait>	Please... I beg of you... I...\n<wait>	v005	draft	reads: ‥‥お願い‥‥今は‥‥どうしても‥‥‥私‥‥‥\n<wait>; reads: ペンタグランマR; v005={02:01}R{02:FF} @rebase-unmatched idx50 en=Pentagrammaﾟ @rebase-unmatched idx50 en=Pentagrammaﾟ @ours-2026-09-05
 m/MS0024.BIN	0:20	51	1502	1FD0	{02:08}そう言{08:52}哀願{08:8E}彼女に{08:62}以前垣間見た{08:69}な影の部分は\n無い{08:69}に思わ{08:60}。\n<wait>		The woman is practically begging you. It's as if she had become\nan entirely different person compared to before.\n<wait>	v005		reads: ‥‥‥そう言って哀願する彼女には、以前垣間見たような影の部分は\n無いように思われた。\n<wait>; reads: あのような事で別れた仲間を、再び仲間に入れるのはどうだろうか‥‥\n<wait>
 m/MS0024.BIN	0:20	52	1578	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n; reads: は躊躇した‥‥‥\n<wait>
 m/MS0024.BIN	0:20	53	1599	1FB2	{08:5C}離さ{08:25}{08:72}		Don't leave me...	v005		reads: もう離さない‥‥; menu option, declared width 20 columns; reads: 泪： @refalign
@@ -550,9 +550,9 @@ m/MS0024.BIN	0:20	55	1621	1FB2	勝手過ぎだよ！		Screw you!	v005		menu opti
 m/MS0024.BIN	0:20	56	1675	1F4F	{03:17}	{03:17}				reads: ; reads: ＞どうしますか？\n
 m/MS0024.BIN	0:20	57	1693	1F4E	{03:17}	{03:17}				reads: ; reads: もう離さない‥‥; menu option, declared width 20 columns
 m/MS0024.BIN	0:20	58	1703	1F01	はそう言い、{08:31}を抱き寄せた{02:08}。\n<wait>		...said so, and pulled Rui close...\n<wait>	ours		reads: はそう言い、泪を抱き寄せた‥‥‥。\n<wait>; reads: まあいいか; menu option, declared width 20 columns @rebase-tagdiff
-m/MS0024.BIN	0:20	59	1740	1FBA	ほのかな香が、		A faint fragrance,	ours		menu option, declared width 20 columns
-m/MS0024.BIN	0:20	60	1760	1F01	の鼻孔をくすぐる{02:08}\n<wait>	の鼻孔をくすぐる{02:08}\n<wait>	...tickles your nose...\n<wait>	ours		reads: の鼻孔をくすぐる‥‥‥\n<wait>; reads: キャンプひとり @rebase-tagdiff
-m/MS0024.BIN	0:20	61	1787	1FD2	{08:31}：	{08:31}：	Rui:	ours		reads: 泪：
+m/MS0024.BIN	0:20	59	1740	1FBA	ほのかな香が、	A faint fragrance tickled 	A faint fragrance,	ours	draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS0024.BIN	0:20	60	1760	1F01	の鼻孔をくすぐる{02:08}\n<wait>	's nose.........\n<wait>	...tickles your nose...\n<wait>	ours	draft	reads: の鼻孔をくすぐる‥‥‥\n<wait>; reads: キャンプひとり @rebase-tagdiff @ours-2026-09-05
+m/MS0024.BIN	0:20	61	1787	1FD2	{08:31}：	Rui:	Rui:	ours	draft	reads: 泪： @ours-2026-09-05
 m/MS0024.BIN	0:20	62	1793	1FD3	{01:2A}{02:08}	Thank you......... 	Thank you...	ours	draft	reads: ありがとう‥‥‥ @ours-2026-09-05
 m/MS0024.BIN	0:20	63	1803	1F01	{02:08}\n<wait>	......\n<wait>	......\n<wait>	ours	draft	reads: ‥‥‥\n<wait>; reads: はそう言い、泪を抱き寄せた‥‥‥。\n<wait> @rebase-tagdiff @ours-2026-09-05
 m/MS0024.BIN	0:20	64	1814	1FD0	{08:31}はそう言{08:52}、		So saying, Rui,	ours		reads: 泪はそう言って、
@@ -564,8 +564,8 @@ m/MS0024.BIN	0:20	69	2012	1F4F	{03:17}	{03:17}				reads: ; reads: 泪はそう�
 m/MS0024.BIN	0:20	70	2016	1FD2	{08:31}：		Rui:	ours		reads: 泪：; reads: の首に手を回した。\nそして、少し背伸びをして
 m/MS0024.BIN	0:20	71	2022	1FD3	駄目{08:72}{08:7A}答え聞こえ{08:25}わ{02:08}\n<wait>		No... That's not the answer I want to hear...\n<wait>	ours		reads: 駄目‥‥そんな答え聞こえないわ‥‥‥\n<wait>; reads: の唇に自分の唇を重ねた‥‥。\n<wait>
 m/MS0024.BIN	0:20	72	2055	1FD2	{08:31}：		Rui:	ours		reads: 泪：; reads: 泪は仲間になった。\n<wait>
-m/MS0024.BIN	0:20	73	2061	1FD3	身勝手{08:6B}は分かっ{08:2B}{08:72}\n{08:56}お願いよ{08:72}貴方の側にい{02:0D}{02:08}‥\n<wait>	身勝手{08:6B}は分かっ{08:2B}{08:72}\n{08:56}お願いよ{08:72}貴方の側にい{02:0D}{02:08}‥\n<wait>	I know I'm being selfish......\nBut please...... let me stay by your side......\n<wait>	ours		reads: 身勝手なのは分かってる‥‥\nでもお願いよ‥‥貴方の側にいさせて‥‥‥‥\n<wait>
-m/MS0024.BIN	0:20	74	2121	1FD0	そう言{08:52}、{08:31}は	そう言{08:52}、{08:31}は	So saying, Rui	ours		reads: そう言って、泪は
+m/MS0024.BIN	0:20	73	2061	1FD3	身勝手{08:6B}は分かっ{08:2B}{08:72}\n{08:56}お願いよ{08:72}貴方の側にい{02:0D}{02:08}‥\n<wait>	I know I'm being selfish...\nBut please... let me stay by your side............\n<wait>	I know I'm being selfish......\nBut please...... let me stay by your side......\n<wait>	ours	draft	reads: 身勝手なのは分かってる‥‥\nでもお願いよ‥‥貴方の側にいさせて‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0024.BIN	0:20	74	2121	1FD0	そう言{08:52}、{08:31}は	So saying, Rui 	So saying, Rui	ours	draft	reads: そう言って、泪は @ours-2026-09-05
 m/MS0024.BIN	0:20	75	2141	1F01	の胸にすがりつい{08:14}{02:08}\n<wait>		...clings tightly to your chest...\n<wait>	ours		reads: の胸にすがりついている‥‥‥\n<wait>; reads: 泪： @rebase-tagdiff
 m/MS0024.BIN	0:20	76	2168	1FBA	{08:31}の鼓動が僅かに伝わ{08:52}くる{02:08}\n<wait>		You can faintly feel Rui's heartbeat...\n<wait>	ours		reads: 泪の鼓動が僅かに伝わってくる‥‥‥\n<wait>; reads: 駄目‥‥そんな答え聞こえないわ‥‥‥\n<wait>
 m/MS0024.BIN	0:20	77	2205	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n; reads: 泪：

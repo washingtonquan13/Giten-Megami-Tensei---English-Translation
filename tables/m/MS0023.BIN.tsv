@@ -90,7 +90,7 @@ m/MS0023.BIN	0:01	12	256	1F01	くん{02:08}‥\n<wait>	......\n<wait>			draft	re
 m/MS0023.BIN	0:01	13	273	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 英美： @refalign
 m/MS0023.BIN	0:01	14	279	1FD3	ごめん{08:72}悪い{08:5F}{08:84}、明日{08:71}二人きりに{02:0D}{08:72}\n<wait>		Sorry, but I'd like to spend the night with him. Alone...\n<wait>	v005		reads: ごめん‥‥悪いんだけど、明日まで二人きりにさせて‥‥\n<wait>; reads: ごめん‥‥悪いんだけど、明日まで二人きりにさせて‥‥\n<wait> @refalign
 m/MS0023.BIN	0:01	15	355	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 早坂： @refalign
-m/MS0023.BIN	0:01	16	367	1F7C	{08:90}{08:4B}	{08:90}{08:4B}	Yo, Katsuragi. What's up?\n<wait>	v005		reads: どうした
+m/MS0023.BIN	0:01	16	367	1F7C	{08:90}{08:4B}	What's up, 	Yo, Katsuragi. What's up?\n<wait>	v005	draft	reads: どうした @ours-2026-09-05
 m/MS0023.BIN	0:01	17	377	1F01	、何かあ{08:51}のか？\n<wait>	, did something happen?\n<wait>			draft	reads: 、何かあったのか？\n<wait>; reads: 、何かあったのか？\n<wait> @ours-2026-09-05
 m/MS0023.BIN	0:01	18	408	1F01	{08:62}“{08:0B}撃退{08:09}”について、全てのいきさつを{08:00}に話{08:4B}。\n<wait>	 told Hayasaka the whole story of the "Demon Repel Program".\n<wait>			draft	reads: は、“悪魔撃退プログラム”について、全てのいきさつを早坂に話した。\n<wait>; reads: は、“悪魔撃退プログラム”について、全てのいきさつを早坂に話した。\n<wait> @ours-2026-09-05
 m/MS0023.BIN	0:01	19	467	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 早坂： @refalign
@@ -106,7 +106,7 @@ m/MS0023.BIN	0:01	28	924	1FD0	{08:00}{08:62}一心不乱にキーボードを叩
 m/MS0023.BIN	0:01	29	977	1FB2	声をか{08:29}		Talk to him	v005		reads: 声をかける; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0023.BIN	0:01	30	987	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0023.BIN	0:01	31	1029	1F01	{08:62}{08:00}に声をか{08:43}。\n<wait>	 called out to Hayasaka.\n<wait>			draft	reads: は、早坂に声をかけた。\n<wait> @rebase-new @ours-2026-09-05
-m/MS0023.BIN	0:01	32	1080	1FD2	{08:00}：	{08:00}：	Hayasaka:	v005		reads: 早坂：
+m/MS0023.BIN	0:01	32	1080	1FD2	{08:00}：	Hayasaka:	Hayasaka:	v005	draft	reads: 早坂： @ours-2026-09-05
 m/MS0023.BIN	0:01	33	1086	1FD3	{02:08}何だ？\n俺は今{08:0A}の解析に忙しい{08:5F}。出て行{08:52}くれ！！\n<wait>		...What? I'm busy here.\nIf you don't have anything important to say, then get the hell out!\n<wait>	v005		reads: ‥‥‥何だ？\n俺は今データの解析に忙しいんだ。出て行ってくれ！！\n<wait>; reads: は、早坂に声をかけた。\n<wait> @rebase-unmatched idx33 en=You try talking to Hayasaka.\n<wait> @refalign
 m/MS0023.BIN	0:01	34	1150	1FD0	{08:00}は{02:0E}を無視{08:4A}、キーボードを叩き続け{08:14}{08:72}\n<wait>		Hayasaka ignores you as he continues typing.\n<wait>	v005		reads: 早坂はこちらを無視して、キーボードを叩き続けている‥‥\n<wait>; reads: 早坂： @refalign
 m/MS0023.BIN	0:01	35	1204	1F01	{08:62}そ{08:53}、{08:79}場を離{08:60}{08:72}\n<wait>		You decide that it's for the best to leave him be.\n<wait>	v005		reads: は、そっと、その場を離れた‥‥\n<wait>; reads: ‥‥‥何だ？\n俺は今データの解析に忙しいんだ。出て行ってくれ！！\n<wait> @rebase-tagdiff @refalign
@@ -118,13 +118,13 @@ m/MS0023.BIN	0:01	40	1405	1F03	{=89}{=39}	{=89}{=39}				reads: 英�
 m/MS0023.BIN	0:01	41	1434	1FD0	{08:00}{08:62}死{08:5F}{08:69}に眠っ{08:14}{02:08}\n<wait>		Hayasaka appears to be sleeping. If not for the faint sound\nof him breathing, you could easily mistake him for being dead.\n<wait>	v005		reads: 早坂は、死んだように眠っている‥‥‥\n<wait>; reads: くん‥‥‥また、明日ね‥‥‥‥。\n @refalign
 m/MS0023.BIN	0:01	42	1468	1F03						
 m/MS0023.BIN	0:01	43	1485	1FD0	{01:2E}には誰も{08:24}{02:08}\n<wait>		You enter Hayasaka's room, but there's no one there...\n<wait>	v005		reads: 部屋には誰もいない‥‥‥\n<wait>; reads: 早坂は、死んだように眠っている‥‥‥\n<wait> @refalign
-m/MS0023.BIN	0:01	44	1530	1FD2	{08:03}：	{08:03}：	Emi:	v005		reads: 英美：
+m/MS0023.BIN	0:01	44	1530	1FD2	{08:03}：	Emi:	Emi:	v005	draft	reads: 英美： @ours-2026-09-05
 m/MS0023.BIN	0:01	45	1536	1FD3	{08:01}っ{08:50}、どこいっちゃたん{08:8C}？\n<wait>		Goddammit, Tatsuya... Where the hell have you gone now?\n<wait>	v005		reads: 達也ったら、どこいっちゃたんだろう？\n<wait>; reads: 部屋には誰もいない‥‥‥\n<wait> @refalign
 m/MS0023.BIN	0:01	46	1573	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 英美： @refalign
 m/MS0023.BIN	0:01	47	1585	1F01	くん。\n悪い{08:5F}{08:84}、一緒に探すのを手伝{08:52}！\n		Sorry, Katsuragi, but I'm gonna have to ask you to help me find him!\n	v005		reads: くん。\n悪いんだけど、一緒に探すのを手伝って！\n; reads: 達也ったら、どこいっちゃたんだろう？\n<wait> @rebase-tagdiff @refalign
 m/MS0023.BIN	0:01	48	1640	1F03	{=89}{=2C}	{=89}{=2C}				reads: 英美：
 m/MS0023.BIN	0:01	49	1698	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: くん。\n悪いんだけど、一緒に探すのを手伝って！\n @refalign
-m/MS0023.BIN	0:01	50	1704	1FD3	{08:75}、	{08:75}、	Ah, Katsuragi.\n<wait>	v005		reads: ねえ、
+m/MS0023.BIN	0:01	50	1704	1FD3	{08:75}、	Hey, 	Ah, Katsuragi.\n<wait>	v005	draft	reads: ねえ、 @ours-2026-09-05
 m/MS0023.BIN	0:01	51	1714	1F01	くん。\n<wait>	.\n<wait>			draft	reads: くん。\n<wait>; reads: 英美： @ours-2026-09-05
 m/MS0023.BIN	0:01	52	1729	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: ねえ、 @refalign
 m/MS0023.BIN	0:01	53	1735	1FD3	お願い、{08:90}{08:4A}も話{08:4B}い事が{08:7B}の。\n{01:16}の{01:2E}{08:71}来て{02:08}‥\n<wait>		There's something I really gotta talk to you about.\nPlease follow me to my room.\n<wait>	v005		reads: お願い、どうしても話したい事があるの。\nあたしの部屋まで来て‥‥‥‥\n<wait>; reads: くん。\n<wait> @refalign
@@ -137,13 +137,13 @@ m/MS0023.BIN	0:01	59	1960	1FB2	会{08:51}		I have	v005		reads: 会った; menu o
 m/MS0023.BIN	0:01	60	1966	1FB2	会{08:52}{08:25}		I haven't	v005		reads: 会ってない; menu option, declared width 20 columns; reads: 、英美には会ったか？\n @refalign
 m/MS0023.BIN	0:01	61	1994	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 会った; menu option, declared width 20 columns @refalign
 m/MS0023.BIN	0:01	62	2000	1FD3	{08:03}の様子、何だか普通{08:81}{08:25}と思わ{08:25}か？\n		I is just me, or is she acting a little weird?\n	v005		reads: 英美の様子、何だか普通じゃないと思わないか？\n; reads: 会ってない; menu option, declared width 20 columns @refalign
-m/MS0023.BIN	0:01	63	2053	1FB2	思う	思う	I think so too	v005		menu option, declared width 20 columns; reads: 
+m/MS0023.BIN	0:01	63	2053	1FB2	思う	I do	I think so too	v005	draft	menu option, declared width 20 columns; reads:  @ours-2026-09-05
 m/MS0023.BIN	0:01	64	2059	1FB2	思わ{08:25}		Just you	v005		reads: 思わない; menu option, declared width 20 columns; reads: 早坂： @refalign
 m/MS0023.BIN	0:01	65	2087	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 英美の様子、何だか普通じゃないと思わないか？\n @refalign
 m/MS0023.BIN	0:01	66	2093	1FD3	やっぱり	So 			draft	menu option, declared width 20 columns @ours-2026-09-05
 m/MS0023.BIN	0:01	67	2107	1F01	も、そう思うか。\n<wait>	 thinks so too.\n<wait>			draft	reads: も、そう思うか。\n<wait>; reads: 思わない; menu option, declared width 20 columns @ours-2026-09-05
-m/MS0023.BIN	0:01	68	2132	1FD2	{08:00}：	{08:00}：	Hayasaka:	v005		reads: 早坂：
-m/MS0023.BIN	0:01	69	2138	1FD3	{08:90}も、いや、かなりおかしい{08:5F}よ。\n{01:2E}に閉じこも{08:52}、パソコンばかりいじっ{08:14}し。\n話{08:86}け{08:54}上の空{02:08}第一目つきが尋常{08:81}{08:25}。\n一体、{08:90}{08:4B}{08:52}{08:68}ん{08:8C}。\n<wait>	{08:90}も、いや、かなりおかしい{08:5F}よ。\n{01:2E}に閉じこも{08:52}、パソコンばかりいじっ{08:14}し。\n話{08:86}け{08:54}上の空{02:08}第一目つきが尋常{08:81}{08:25}。\n一体、{08:90}{08:4B}{08:52}{08:68}ん{08:8C}。\n<wait>	I knew it!\n<wait>	v005		reads: どうも、いや、かなりおかしいんだよ。\n部屋に閉じこもって、パソコンばかりいじっているし。\n話しかけても上の空‥‥‥第一目つきが尋常じゃない。\n一体、どうしたっていうんだろう。\n<wait>
+m/MS0023.BIN	0:01	68	2132	1FD2	{08:00}：	Hayasaka:	Hayasaka:	v005	draft	reads: 早坂： @ours-2026-09-05
+m/MS0023.BIN	0:01	69	2138	1FD3	{08:90}も、いや、かなりおかしい{08:5F}よ。\n{01:2E}に閉じこも{08:52}、パソコンばかりいじっ{08:14}し。\n話{08:86}け{08:54}上の空{02:08}第一目つきが尋常{08:81}{08:25}。\n一体、{08:90}{08:4B}{08:52}{08:68}ん{08:8C}。\n<wait>	Yeah, no, she's seriously acting strange.\nShe shuts herself in her room and does nothing but mess with her PC.\nTalk to her and she's miles away......... and the look in her eyes\nisn't normal. What on earth happened to her?\n<wait>	I knew it!\n<wait>	v005	draft	reads: どうも、いや、かなりおかしいんだよ。\n部屋に閉じこもって、パソコンばかりいじっているし。\n話しかけても上の空‥‥‥第一目つきが尋常じゃない。\n一体、どうしたっていうんだろう。\n<wait> @ours-2026-09-05
 m/MS0023.BIN	0:01	70	2283	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 早坂： @refalign
 m/MS0023.BIN	0:01	71	2289	1FD3	そうか{02:08}俺の考え過ぎ{08:6B}かな。\n<wait>		Huh... Right. I guess I'm just overthinking it.\n<wait>	v005		reads: そうか‥‥‥俺の考え過ぎなのかな。\n<wait>; reads: そうか‥‥‥俺の考え過ぎなのかな。\n<wait> @refalign
 m/MS0023.BIN	0:01	72	2327	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: も、そう思うか。\n<wait> @refalign
@@ -163,7 +163,7 @@ m/MS0023.BIN	0:01	85	2847	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; rea
 m/MS0023.BIN	0:01	86	2853	1FD3	俺は最近、{08:03}が分{08:42}{08:25}{02:08}いや、正直言{08:52}何だか恐ろしいよ。\n<wait>		Emi... I don't know what's up with her.\nIf I'm being honest, she kinda scares me...\n<wait>	v005		reads: 俺は最近、英美が分からない‥‥‥いや、正直言って何だか恐ろしいよ。\n<wait>; reads: ふう‥‥‥‥‥。\n<wait> @refalign
 m/MS0023.BIN	0:01	87	2916	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 早坂： @refalign
 m/MS0023.BIN	0:01	88	2922	1FD3	食事も取ら{08:25}で、{01:2E}で眠っ{08:14}{08:74}{08:72}。\n瞳はまるで死{08:5F}魚の様で、何を話{08:86}け{08:54}全く無反応な{08:5F}。\n<wait>		She spends all day in bed. She doesn't even eat anything.\nHer eyes look like those of a dead fish, and when I try\nto talk to her, she never replies...\n<wait>	v005		reads: 食事も取らないで、部屋で眠っているだけ‥‥。\n瞳はまるで死んだ魚の様で、何を話しかけても全く無反応なんだ。\n<wait>; reads: 。英美に明日の事を伝えに行かなくちゃ。\n‥‥すまないが、一緒に来てくれ‥‥\n<wait> @refalign
-m/MS0023.BIN	0:01	89	3016	1FD2	{08:00}：	{08:00}：	Hayasaka:	v005		reads: 早坂：
+m/MS0023.BIN	0:01	89	3016	1FD2	{08:00}：	Hayasaka:	Hayasaka:	v005	draft	reads: 早坂： @ours-2026-09-05
 m/MS0023.BIN	0:01	90	3022	1FD3	まるで、狂人と接{08:13}様な錯覚に陥る時も{08:7B}。\n<wait>		There are times when it feels like she's lost her goddamn mind.\n<wait>	v005		reads: まるで、狂人と接している様な錯覚に陥る時もある。\n<wait>; reads: 早坂： @refalign
 m/MS0023.BIN	0:01	91	3071	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 俺は最近、英美が分からない‥‥‥いや、正直言って何だか恐ろしいよ。\n<wait> @refalign
 m/MS0023.BIN	0:01	92	3077	1FD3	俺の方{08:71}、参{08:52}しまい{01:29}よ。\n		I can't help but feel like it's starting to affect me too...\n	v005		reads: 俺の方まで、参ってしまいそうだよ。\n; reads: 早坂： @refalign
@@ -180,20 +180,20 @@ m/MS0023.BIN	0:01	102	3343	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; re
 m/MS0023.BIN	0:01	103	3355	1F01	{08:72}実{08:62}お前に相談が{08:7B}{08:5F}。\n聞いてくれ{08:25}か？\n		Do you have a moment, Katsuragi?\nThere's something I really need to talk to you about...\n	v005		reads: ‥‥実は、お前に相談があるんだ。\n聞いてくれないか？\n; reads: 早坂： @rebase-tagdiff @refalign
 m/MS0023.BIN	0:01	104	3413	1FB2	相談に乗る		Shoot	v005		menu option, declared width 20 columns; reads: それより、今日は、すっかりお前の事引っ張りまわしちまったな。\nごめんな、 @refalign
 m/MS0023.BIN	0:01	105	3425	1FB2	乗ら{08:25}		Maybe later	v005		reads: 乗らない; menu option, declared width 20 columns; reads: 。今日は、もう休めよ。な？\n @refalign
-m/MS0023.BIN	0:01	106	3453	1FD2	{08:00}：	{08:00}：	Hayasaka:	v005		reads: 早坂：
+m/MS0023.BIN	0:01	106	3453	1FD2	{08:00}：	Hayasaka:	Hayasaka:	v005	draft	reads: 早坂： @ours-2026-09-05
 m/MS0023.BIN	0:01	107	3459	1FD3	{08:03}の様子が、いよいよも{08:52}おかしい{08:5F}よ。\n俺{01:3A}{08:81}、{08:5C}{08:90}{08:8E}事も出来{08:25}{08:72}。\nだ{08:42}	Something is seriously wrong with Emi.\nI can't handle this on my own any more...\nSo, 			draft	reads: 英美の様子が、いよいよもっておかしいんだよ。\n俺ひとりじゃ、もうどうする事も出来ない‥‥。\nだから; reads: 早坂： @ours-2026-09-05
 m/MS0023.BIN	0:01	108	3537	1F01	、俺と一緒に{08:03}の{01:2E}に行{08:52}欲しい{08:5F}。\n	, I want you to come with me to Emi's room.\n			draft	reads: 、俺と一緒に英美の部屋に行って欲しいんだ。\n; reads: ‥‥実は、お前に相談があるんだ。\n聞いてくれないか？\n @ours-2026-09-05
 m/MS0023.BIN	0:01	109	3588	1FB2	一緒に行く		Go with him	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0023.BIN	0:01	110	3600	1FB2	断る		Refuse	v005		menu option, declared width 20 columns; reads: 乗らない @refalign
-m/MS0023.BIN	0:01	111	3626	1FD2	{08:00}：	{08:00}：	Hayasaka:	v005		reads: 早坂：
-m/MS0023.BIN	0:01	112	3632	1FD3	恩に着るよ{02:08}。\n<wait>	恩に着るよ{02:08}。\n<wait>	Thanks, man...\n<wait>	v005		reads: 恩に着るよ‥‥‥。\n<wait>
+m/MS0023.BIN	0:01	111	3626	1FD2	{08:00}：	Hayasaka:	Hayasaka:	v005	draft	reads: 早坂： @ours-2026-09-05
+m/MS0023.BIN	0:01	112	3632	1FD3	恩に着るよ{02:08}。\n<wait>	I owe you one.........\n<wait>	Thanks, man...\n<wait>	v005	draft	reads: 恩に着るよ‥‥‥。\n<wait> @ours-2026-09-05
 m/MS0023.BIN	0:01	113	3661	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 早坂： @refalign
 m/MS0023.BIN	0:01	114	3667	1FD3	そうか{08:72}{01:29}よな。\n<wait>		Oh, right...\n<wait>	v005		reads: そうか‥‥そうだよな。\n<wait>; reads: 英美の様子が、いよいよもっておかしいんだよ。\n俺ひとりじゃ、もうどうする事も出来ない‥‥。\nだから @refalign
 m/MS0023.BIN	0:01	115	3692	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 、俺と一緒に英美の部屋に行って欲しいんだ。\n @refalign
 m/MS0023.BIN	0:01	116	3698	1FD3	年下のお前を相手に、{08:63}の彼女の相談{08:6A}か{08:4A}{08:72}<wait>俺も{08:90}か{08:4A}たよ。\n<wait>		It makes no sense for me to ask you for help dealing with\nmy own girlfriend.\n<wait>What am I even doing...\n<wait>	v005		reads: 年下のお前を相手に、自分の彼女の相談なんかして‥‥<wait>俺もどうかしてたよ。\n<wait>; menu option, declared width 20 columns @refalign
 m/MS0023.BIN	0:01	117	3769	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; menu option, declared width 20 columns @refalign
-m/MS0023.BIN	0:01	118	3775	1FD3	悪{08:18}な、忘れてくれ。\n<wait>	悪{08:18}な、忘れてくれ。\n<wait>	Sorry about that. Just forget I said anything.\n<wait>	v005		reads: 悪かったな、忘れてくれ。\n<wait>; reads: おかげ
-m/MS0023.BIN	0:01	119	3802	1FD2	{08:00}：	{08:00}：	Hayasaka:	v005		reads: 早坂：
+m/MS0023.BIN	0:01	118	3775	1FD3	悪{08:18}な、忘れてくれ。\n<wait>	Sorry. Forget it.\n<wait>	Sorry about that. Just forget I said anything.\n<wait>	v005	draft	reads: 悪かったな、忘れてくれ。\n<wait>; reads: おかげ @ours-2026-09-05
+m/MS0023.BIN	0:01	119	3802	1FD2	{08:00}：	Hayasaka: 	Hayasaka:	v005	draft	reads: 早坂： @ours-2026-09-05
 m/MS0023.BIN	0:01	120	3814	1F01	、悪いが{08:72}少し{01:3A}に{08:4A}くれ。\n<wait>		Sorry, Katsuragi, but I need to spend some time alone...\n<wait>	v005		reads: 、悪いが‥‥少しひとりにしてくれ。\n<wait>; reads: 早坂： @rebase-tagdiff @refalign
 m/MS0023.BIN	0:01	121	3857	1F03	{=89}{=2C}	{=89}{=2C}				reads: 恩に着るよ‥‥‥。\n<wait>
 m/MS0023.BIN	0:01	122	3916	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 早坂： @refalign
@@ -204,12 +204,12 @@ m/MS0023.BIN	0:01	126	4024	1F58	{05:00}	{05:00}				reads: はいいいえ; reads
 m/MS0023.BIN	0:01	127	4030	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 悪かったな、忘れてくれ。\n<wait> @refalign
 m/MS0023.BIN	0:01	128	4036	1FD3	ああ、{08:4D}{08:7D}話は早い。\n<wait>		Okay, great. I don't have to explain then.\n<wait>	v005		reads: ああ、それなら話は早い。\n<wait>; reads: 早坂： @refalign
 m/MS0023.BIN	0:01	129	4070	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 、悪いが‥‥少しひとりにしてくれ。\n<wait> @refalign
-m/MS0023.BIN	0:01	130	4076	1FD3	霊安室の死体安置ＢＯＸに、掻きむし{08:51}{08:69}な血の指跡があ{08:51}{08:52}話だよ。\n一体、誰が何の為にかは{08:76}分か{08:52}{08:24}{08:5F}が。\n<wait>	霊安室の死体安置ＢＯＸに、掻きむし{08:51}{08:69}な血の指跡があ{08:51}{08:52}話だよ。\n一体、誰が何の為にかは{08:76}分か{08:52}{08:24}{08:5F}が。\n<wait>	Earlier this morning, a doctor visiting the morgue made a terrifying\ndiscovery. Most of the body lockers, though unopened, were covered in\nbloody handprints as if someone had been attempting to pry them open.\nIt has yet to be determined who exactly is behind this gruesome act.\n<wait>	v005		reads: 霊安室の死体安置ＢＯＸに、掻きむしったような血の指跡があったって話だよ。\n一体、誰が何の為にかはまだ分かっていないんだが。\n<wait>
+m/MS0023.BIN	0:01	130	4076	1FD3	霊安室の死体安置ＢＯＸに、掻きむし{08:51}{08:69}な血の指跡があ{08:51}{08:52}話だよ。\n一体、誰が何の為にかは{08:76}分か{08:52}{08:24}{08:5F}が。\n<wait>	They say there were bloody finger marks, like something had clawed\nat the body lockers in the morgue.\nNobody knows yet who did it or why.\n<wait>	Earlier this morning, a doctor visiting the morgue made a terrifying\ndiscovery. Most of the body lockers, though unopened, were covered in\nbloody handprints as if someone had been attempting to pry them open.\nIt has yet to be determined who exactly is behind this gruesome act.\n<wait>	v005	draft	reads: 霊安室の死体安置ＢＯＸに、掻きむしったような血の指跡があったって話だよ。\n一体、誰が何の為にかはまだ分かっていないんだが。\n<wait> @ours-2026-09-05
 m/MS0023.BIN	0:01	131	4188	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 早坂： @refalign
 m/MS0023.BIN	0:01	132	4194	1FD3	{02:08}‥で、\n<wait>		So...\n<wait>	v005		reads: ‥‥‥‥で、\n<wait>; reads: 話って言うのは、他でもない、英美の事なんだが‥‥‥\n<wait> @refalign
 m/MS0023.BIN	0:01	133	4211	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 早坂： @refalign
 m/MS0023.BIN	0:01	134	4217	1FD3	{01:3B}、俺が一人で{08:03}の{01:2E}に{08:64}だろ？\nあの時も{08:03}は何の反応{08:5D}{08:25}で、死{08:5F}{08:69}に眠{08:52}{08:64}{08:5F}。\n<wait>		I was visiting Emi earlier.\nShe was fast asleep, and wouldn't wake up no matter I did.\n<wait>	v005		reads: さっき、俺が一人で英美の部屋にいただろ？\nあの時も英美は何の反応もしないで、死んだように眠っていたんだ。\n<wait>; reads: 、霊安室に血の跡があったって話、知ってるか？\n<wait> @refalign
-m/MS0023.BIN	0:01	135	4303	1FD2	{08:00}：	{08:00}：	Hayasaka:	v005		reads: 早坂：; reads: はいいいえニュートン
+m/MS0023.BIN	0:01	135	4303	1FD2	{08:00}：	Hayasaka:	Hayasaka:	v005	draft	reads: 早坂：; reads: はいいいえニュートン @ours-2026-09-05
 m/MS0023.BIN	0:01	136	4309	1FD3	で、ふと、{08:03}の手を見{08:50}{02:08}血だらけだ{08:51}{08:5F}よ！\n{08:86}も、{08:5C}随分前の{08:5E}らしくて、すっかり固ま{08:52}た{08:5F}。\n<wait>		I happened to glance at her hands, and... they were covered in blood!\nAnd it wasn't fresh blood, either. No, it had already begun drying up.\n<wait>	v005		reads: で、ふと、英美の手を見たら‥‥‥血だらけだったんだよ！\nしかも、もう随分前のものらしくて、すっかり固まってたんだ。\n<wait>; reads: 早坂： @refalign
 m/MS0023.BIN	0:01	137	4409	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: ああ、それなら話は早い。\n<wait> @refalign
 m/MS0023.BIN	0:01	138	4415	1FD3	俺、{01:27}{02:08}{08:03}が{02:08}何て事を考えて{02:08}‥\nなぁ、{08:03}は{08:90}しち{08:20}ん{08:8C}？\n<wait>俺の呼びかけにも答えてくれ{08:25}し{02:08}‥\n<wait>	I mean... could Emi really have... what am I even thinking......\nWhat's happened to her?\n<wait>She won't even answer me when I call her......\n<wait>			draft	reads: 俺、まさか‥‥‥英美が‥‥‥何て事を考えて‥‥‥‥\nなぁ、英美はどうしちまったんだろう？\n<wait>俺の呼びかけにも答えてくれないし‥‥‥‥\n<wait>; reads: 早坂： @ours-2026-09-05
