@@ -126,7 +126,16 @@ def test_release_exe_carries_the_overlay_hook_and_dev_adds_the_tracer():
     _calls_go_to(dev, pe2, tracer.CALL_SITES, va2)
     _calls_go_to(dev, pe2, tracer.FETCH_SITES, va)
     diffs = [i for i in range(len(rel)) if rel[i] != dev[i]]
-    assert set(diffs) <= {pe2.va2off(s) + k for s in tracer.CALL_SITES for k in (1, 2, 3, 4)} | set(range(0x1F0, 0x2E0)) | set(range(0xC0, 0x120))   # section headers incl. the 8th (.trc after .nam)
+    # allowed: the redirected rel32s, the COFF/optional-header fields that a new
+    # section moves, and the section header table.  Both are derived from the PE
+    # rather than hard-coded, so adding a section does not need this edited.
+    opt = pe2.e_lfanew + 4 + 20
+    hdrs = opt + struct.unpack_from("<H", dev, pe2.e_lfanew + 4 + 16)[0]
+    allowed = ({pe2.va2off(s) + k for s in tracer.CALL_SITES for k in (1, 2, 3, 4)}
+               | set(range(pe2.e_lfanew + 6, pe2.e_lfanew + 8))       # NumberOfSections
+               | set(range(opt + 56, opt + 60))                       # SizeOfImage
+               | set(range(hdrs, hdrs + pe2.numsec * 0x28)))          # section headers
+    assert set(diffs) <= allowed, sorted(set(diffs) - allowed)
 
 
 def test_trace_decoder_maps_a_synthetic_record_back_to_its_span():

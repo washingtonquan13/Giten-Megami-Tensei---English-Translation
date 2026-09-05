@@ -173,8 +173,9 @@ def build_image(trace: bool) -> bytes:
     image = bytearray(pe.append_section(".ovl", blob, TRC_CHARACTERISTICS))
     _redirect(image, FETCH_SITES, FETCH, ovl_va)
     _pace(image, syms["pace"])
-    from . import names
+    from . import menus, names
     image = bytearray(names.apply(bytes(image)))     # English character names (.nam)
+    image = bytearray(menus.apply(bytes(image)))     # English menu strings (.men)
     if trace:
         pe = PE(bytes(image), "dds_ovl")
         trc_va = pe.imagebase + pe.sizeimage
