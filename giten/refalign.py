@@ -239,8 +239,10 @@ def run(v005_root: str, text_dir: "str | None" = None, quiet: bool = False) -> d
                 row = by_key.get((rec.key, idx))
                 if row is None or row.en or not codec.strip_tokens(row.jp).strip():
                     continue
-                if row.ref_en and (row.ref_src == "ours" or MARK in row.note):
-                    continue                       # our own translation, or already placed here
+                if row.ref_en and row.ref_src == "ours":
+                    continue                       # our own translation is never displaced
+                if MARK in row.note:
+                    row.note = row.note.replace(" " + MERGED, "").replace(" " + MARK, "").replace(MERGED, "").replace(MARK, "").strip()
                 if text.strip() == "" and not merged:
                     continue
                 if not is_english(text) and text.strip():

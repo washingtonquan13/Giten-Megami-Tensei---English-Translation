@@ -21,9 +21,9 @@ m/MS003A.BIN	0:17	1	36	1FC4	強力な呪いにより身体が石化{08:4A}{08:1F
 m/MS003A.BIN	0:18	0	0	DATA	何の変化も見られ{08:25}。\n<wait>		Nothing seems to have happened.\n<wait>	v005		reads: 何の変化も見られない。\n<wait>; reads: 何の変化も見られない。\n<wait> @refalign
 m/MS003A.BIN	0:19	0	132	0C	！？\n					
 m/MS003A.BIN	0:19	1	170	1F2F	が黄金色に輝き始めた。\n<wait>	が黄金色に輝き始めた。\n<wait>				reads: だした @rebase-new
-m/MS003A.BIN	0:19	2	207	1F01	達は 		You obtained 	v005		@refalign @refalign
-m/MS003A.BIN	0:19	3	216	1F2F	金塊？		 began glowing with golden light.\n<wait>	v005		reads: 達は  @refalign @rebase-unmatched idx3 en=You obtained
-m/MS003A.BIN	0:19	4	226	1F2F	 を入手{08:4B}\n<wait>		"a golden nuget"	v005		reads:  を入手した\n<wait>; @refalign
+m/MS003A.BIN	0:19	2	207	1F01	達は 		 began glowing with golden light.\n<wait>	v005		@refalign
+m/MS003A.BIN	0:19	3	216	1F2F	金塊？		You obtained 	v005		reads: 達は  @rebase-unmatched idx3 en=You obtained @refalign
+m/MS003A.BIN	0:19	4	226	1F2F	 を入手{08:4B}\n<wait>		"a golden nuget"\n?\n<wait>	v005		reads:  を入手した\n<wait>; @refalign @refalign-merged
 m/MS003A.BIN	0:1A	0	0	DATA	！？\n					
 m/MS003A.BIN	0:1A	1	54	1FD2	泉の精霊：		Spring Spirit:	v005		
 m/MS003A.BIN	0:1A	2	66	1FD3	{08:72}私は{08:47}泉に棲む精霊。\n<wait>		...I am the spirit that dwells in this spring.\n<wait>	v005		reads: ‥‥私はこの泉に棲む精霊。\n<wait>
@@ -75,58 +75,58 @@ m/MS003A.BIN	0:1A	47	1819	1F2F	を置いて再び泉の中へ\n消え{08:21}{08:
 m/MS003A.BIN	0:1A	48	1928	1FD0	精霊は	精霊は	The spirit disappears into the spring,\nleaving behind 	v005		reads: 桐島英美あなたの
 m/MS003A.BIN	0:1A	49	1981	1F2F	を置いて泉の中へ消え{08:21}。\n<wait>	を置いて泉の中へ消え{08:21}。\n<wait>				reads: を置いて泉の中へ消えていった。\n<wait>; reads: くっくっく‥‥。なかなかに正直な奴ではないか。\n‥‥気に入った。望み通りこれをお前にくれてやろう。\n; reads: キャンプ
 m/MS003A.BIN	0:1B	0	0	UNTILED	ﾅ / : / e / :% / : / ｩ / f / :% / : / h / :% / : / q / i / :% / : / U / i / :% / : / 9 / i / :% / : / ･ / J / :& / : / : / ｮ /  / ﾐ澄み通 / Q水を湛 / A泉が / {。 / 泉に近づこうと / Lどこ / Bとも無く声が聞こえて / 。 / ｺ / ﾒ声： / ﾓ止まれ、若者よ。汝は我が泉を汚す者 / Yか？ / ﾁ / ﾐ / ｱ / ｲ / & / ｲ / ' / ｷ / ﾑ / ｯ /  /  / ﾒ声： / ﾓ止まれ、若者。我が泉に立ち入る / Fまかり / }ぬ。 / 早々に立ち去れい！ / ﾁ / ﾐ / ｱ / ｲ立ち去る / ｲ立ち去ら / % / ｷ / ﾑ / - /  / ｺ / ﾒ声： / ﾓでは何用か？ / ﾁ / ﾐ / ｱ / ｲ泉を使い / N / ｲ特に用は無い / ｷ / ﾑ / ｴ /  / ｲ / 6 / 7 / 8 / ' /  / - / ~ /  /  / t / l /  /  / b / ^ /  / ﾒ声： / ﾓふむ / rお主の役に立つか / 垂ｩは保証 / Mで構わぬの / |自由に使うが良い。 / ｺ / : / B / $ /  / 2 / ｺ / ﾒ声： / ﾓ / | / マッカを払う / w。 / ﾁ / ﾐ / ｱ / ｲ払う / ｲやめておく / ｷ / ﾑ / 云 /  / ｺ / ﾒ声： / ﾓ / rマッカが足りぬか。話に / }んな。 / 泉を使わ / * / 高ﾉはゆかぬ。立ち去る / w。 / : / ] / ｺ / ﾒ声： / ﾓ確かに。では御自由に使われよ。 / ｺ / : / ｺ / ﾒ声： / ﾓでは / E / B立ち去る / w。 / ｺ / ｺ / ﾒ声： / ﾓ左様か / r / |汝らを葬るのが番人たる我が役目。 / 覚悟はよいな！？ / Z / ｺ / e / f / h / i / i / i / x / ｭ / ｬ / ｪ / w / ｾ /  / d /  / d / ｾ / :% / : / :					@noedit; @untiled; record does not tile (switch entry at 0xDF has kind 174 (not 0 or 1)); read-only, copied verbatim; record does not tile (expression node 0x1F payload past end)
-m/MS003A.BIN	0:1C	0	15	1F86	番人の血で真っ赤に染{08:20}泉が{08:7B}。\n		The spring is painted red with the blood of its guardian.\n\nYou can see... two women swimming in the water.\n<wait>	v005		reads: 番人の血で真っ赤に染まった泉がある。\n; @noedit; @untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim @rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	1	54	1F86	澄み通{08:51}水を湛{08:41}泉に{08:72}２人のお姉さんが浸かっ{08:14}。\n<wait>		 	v005		reads: 澄み通った水を湛えた泉に‥‥２人のお姉さんが浸かっている。\n<wait>; reads: 澄み通った水を湛えた泉に‥‥２人のお姉さんが浸かっている。\n<wait> @rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	2	124	1FD2	泉のお姉さんα：		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	3	142	1FD3	あら。\n<wait>		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	4	157	1FD2	泉のお姉さんβ：		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	5	175	1FD3	まあ。\n<wait>		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	6	190	1FD2	泉のお姉さん達：		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	7	208	1FD3	いらっしゃ{08:89}せ～。\n<wait>		 	v005		reads: いらっしゃいませ～。\n<wait>; reads: いらっしゃいませ～。\n<wait> @rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	8	235	1FD2	泉のお姉さんα：		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	9	253	1FD3	（ん～、久しぶりのお客さんねぇ）\n<wait>		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	10	294	1FD2	泉のお姉さんβ：		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	11	312	1FD3	（{08:72}ちょ{08:53}緊張し{08:5A}ね～）\n<wait>		 	v005		reads: （‥‥ちょっと緊張しますね～）\n<wait>; reads: （‥‥ちょっと緊張しますね～）\n<wait> @rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	12	350	1FD2	泉のお姉さんα：		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	13	368	1FD3	あら。\n（げ。）\n<wait>		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	14	392	1FD2	泉のお姉さんβ：		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	15	410	1FD3	まあ。\n（ひいっ。）\n<wait>		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	16	438	1FD2	泉のお姉さん達：		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	17	456	1FD3	いらっしゃ{08:89}せ～。\n<wait>		 	v005		reads: いらっしゃいませ～。\n<wait>; reads: いらっしゃいませ～。\n<wait> @rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	18	483	1FD2	泉のお姉さんα：		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	19	501	1FD3	（{08:5B}来た{08:72}）\n<wait>		 	v005		reads: （また来た‥‥）\n<wait>; reads: （また来た‥‥）\n<wait> @rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	20	522	1FD2	泉のお姉さんβ：		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	21	540	1FD3	（ど、{08:90}し{08:69}{08:72}）\n<wait>		 	v005		reads: （ど、どうしよう‥‥）\n<wait>; reads: （ど、どうしよう‥‥）\n<wait> @rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	22	565	1FD2	泉のお姉さんα：		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	23	583	1FD3	（こら！ {08:58}弱気に{08:1A}んのよ！）\n<wait>		 	v005		reads: （こら！ なに弱気になってんのよ！）\n<wait>; reads: （こら！ なに弱気になってんのよ！）\n<wait> @rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	24	621	1FD2	泉のお姉さんβ：		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	25	639	1FD3	（そ、そうよね、{08:73}{08:46}{08:81}ダメね。{08:72}だ{08:52}私{08:4F}）\n<wait>		 	v005		reads: （そ、そうよね、こんなことじゃダメね。‥‥だって私たち）\n<wait>; reads: （そ、そうよね、こんなことじゃダメね。‥‥だって私たち）\n<wait> @rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	26	690	1FD2	泉のお姉さん達：		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	27	708	1FD3	（プロ{08:8A}！）\n<wait>		 	v005		reads: （プロだし！）\n<wait>; reads: （プロだし！）\n<wait> @rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	28	729	1FD2	泉のお姉さんα：		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	29	747	1FD3	（{08:81}あ{01:28}通りにね）\n<wait>		 	v005		reads: （じゃあいつも通りにね）\n<wait>; reads: （じゃあいつも通りにね）\n<wait> @rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	30	774	1FD2	泉のお姉さんβ：		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	31	792	1FD3	（は～い）\n<wait>		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	32	811	1FD2	泉のお姉さんα：		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	33	829	1FD3	{08:47}～\n<wait>		 	v005		reads: この～\n<wait>; reads: この～\n<wait> @rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	34	842	1FD2	泉のお姉さんβ：		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	35	860	1FD3	泉の～\n<wait>		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	36	875	1FD2	泉のお姉さん達：		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	37	893	1FD3	効能は～\n		 	v005		@rebase-new @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:1C	38	928	1FB2	聞い{08:14}		Listen	v005		reads: 聞いている; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign @refalign
-m/MS003A.BIN	0:1C	39	936	1FB2	水を飲む		Drink	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign @refalign
-m/MS003A.BIN	0:1C	40	946	1FB2	武器を投げ込む		Throw weapon	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign @refalign
-m/MS003A.BIN	0:1C	41	962	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign @refalign
-m/MS003A.BIN	0:1C	42	1012	1FB2	水を飲む		Drink	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign @refalign
-m/MS003A.BIN	0:1C	43	1022	1FB2	武器を投げ込む		Throw weapon	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign @refalign
-m/MS003A.BIN	0:1C	44	1038	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign @refalign
-m/MS003A.BIN	0:1C	45	1103	1F85	澄み通{08:51}水を湛{08:41}泉が{08:7B}。\n		There is a spring here.\n	v005		reads: 澄み通った水を湛えた泉がある。\n; reads: 澄み通った水を湛えた泉がある。\n @rebase-new @refalign @refalign
-m/MS003A.BIN	0:1C	46	1144	1FB2	水を飲む		Drink	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign @refalign
-m/MS003A.BIN	0:1C	47	1154	1FB2	武器を投げ込む		Throw weapon	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign @refalign
-m/MS003A.BIN	0:1C	48	1170	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign @refalign
+m/MS003A.BIN	0:1C	0	15	1F86	番人の血で真っ赤に染{08:20}泉が{08:7B}。\n		The spring is painted red with the blood of its guardian.\n\nYou can see... two women swimming in the water.\n<wait>	v005		reads: 番人の血で真っ赤に染まった泉がある。\n; @noedit; @untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim @rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	1	54	1F86	澄み通{08:51}水を湛{08:41}泉に{08:72}２人のお姉さんが浸かっ{08:14}。\n<wait>		 	v005		reads: 澄み通った水を湛えた泉に‥‥２人のお姉さんが浸かっている。\n<wait>; reads: 澄み通った水を湛えた泉に‥‥２人のお姉さんが浸かっている。\n<wait> @rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	2	124	1FD2	泉のお姉さんα：		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	3	142	1FD3	あら。\n<wait>		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	4	157	1FD2	泉のお姉さんβ：		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	5	175	1FD3	まあ。\n<wait>		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	6	190	1FD2	泉のお姉さん達：		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	7	208	1FD3	いらっしゃ{08:89}せ～。\n<wait>		 	v005		reads: いらっしゃいませ～。\n<wait>; reads: いらっしゃいませ～。\n<wait> @rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	8	235	1FD2	泉のお姉さんα：		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	9	253	1FD3	（ん～、久しぶりのお客さんねぇ）\n<wait>		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	10	294	1FD2	泉のお姉さんβ：		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	11	312	1FD3	（{08:72}ちょ{08:53}緊張し{08:5A}ね～）\n<wait>		 	v005		reads: （‥‥ちょっと緊張しますね～）\n<wait>; reads: （‥‥ちょっと緊張しますね～）\n<wait> @rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	12	350	1FD2	泉のお姉さんα：		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	13	368	1FD3	あら。\n（げ。）\n<wait>		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	14	392	1FD2	泉のお姉さんβ：		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	15	410	1FD3	まあ。\n（ひいっ。）\n<wait>		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	16	438	1FD2	泉のお姉さん達：		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	17	456	1FD3	いらっしゃ{08:89}せ～。\n<wait>		 	v005		reads: いらっしゃいませ～。\n<wait>; reads: いらっしゃいませ～。\n<wait> @rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	18	483	1FD2	泉のお姉さんα：		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	19	501	1FD3	（{08:5B}来た{08:72}）\n<wait>		 	v005		reads: （また来た‥‥）\n<wait>; reads: （また来た‥‥）\n<wait> @rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	20	522	1FD2	泉のお姉さんβ：		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	21	540	1FD3	（ど、{08:90}し{08:69}{08:72}）\n<wait>		 	v005		reads: （ど、どうしよう‥‥）\n<wait>; reads: （ど、どうしよう‥‥）\n<wait> @rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	22	565	1FD2	泉のお姉さんα：		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	23	583	1FD3	（こら！ {08:58}弱気に{08:1A}んのよ！）\n<wait>		 	v005		reads: （こら！ なに弱気になってんのよ！）\n<wait>; reads: （こら！ なに弱気になってんのよ！）\n<wait> @rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	24	621	1FD2	泉のお姉さんβ：		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	25	639	1FD3	（そ、そうよね、{08:73}{08:46}{08:81}ダメね。{08:72}だ{08:52}私{08:4F}）\n<wait>		 	v005		reads: （そ、そうよね、こんなことじゃダメね。‥‥だって私たち）\n<wait>; reads: （そ、そうよね、こんなことじゃダメね。‥‥だって私たち）\n<wait> @rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	26	690	1FD2	泉のお姉さん達：		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	27	708	1FD3	（プロ{08:8A}！）\n<wait>		 	v005		reads: （プロだし！）\n<wait>; reads: （プロだし！）\n<wait> @rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	28	729	1FD2	泉のお姉さんα：		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	29	747	1FD3	（{08:81}あ{01:28}通りにね）\n<wait>		 	v005		reads: （じゃあいつも通りにね）\n<wait>; reads: （じゃあいつも通りにね）\n<wait> @rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	30	774	1FD2	泉のお姉さんβ：		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	31	792	1FD3	（は～い）\n<wait>		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	32	811	1FD2	泉のお姉さんα：		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	33	829	1FD3	{08:47}～\n<wait>		 	v005		reads: この～\n<wait>; reads: この～\n<wait> @rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	34	842	1FD2	泉のお姉さんβ：		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	35	860	1FD3	泉の～\n<wait>		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	36	875	1FD2	泉のお姉さん達：		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	37	893	1FD3	効能は～\n		 	v005		@rebase-new @refalign @refalign-merged
+m/MS003A.BIN	0:1C	38	928	1FB2	聞い{08:14}		Listen	v005		reads: 聞いている; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign
+m/MS003A.BIN	0:1C	39	936	1FB2	水を飲む		Drink	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign
+m/MS003A.BIN	0:1C	40	946	1FB2	武器を投げ込む		Throw weapon	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign
+m/MS003A.BIN	0:1C	41	962	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign
+m/MS003A.BIN	0:1C	42	1012	1FB2	水を飲む		Drink	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign
+m/MS003A.BIN	0:1C	43	1022	1FB2	武器を投げ込む		Throw weapon	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign
+m/MS003A.BIN	0:1C	44	1038	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign
+m/MS003A.BIN	0:1C	45	1103	1F85	澄み通{08:51}水を湛{08:41}泉が{08:7B}。\n		There is a spring here.\n	v005		reads: 澄み通った水を湛えた泉がある。\n; reads: 澄み通った水を湛えた泉がある。\n @rebase-new @refalign
+m/MS003A.BIN	0:1C	46	1144	1FB2	水を飲む		Drink	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign
+m/MS003A.BIN	0:1C	47	1154	1FB2	武器を投げ込む		Throw weapon	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign
+m/MS003A.BIN	0:1C	48	1170	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign
 m/MS003A.BIN	0:1D	0	0	UNTILED	ｺ / ﾐ誰が飲み / :  / : / ｺ / ﾐ / > / は泉の水を飲んでみた。 / ｺ / ﾐ / 冝E / ・ / ・ / ﾐ / ｹ / G / ｹ / : / ｹ / - / ｹ / ｹ / ' / ? /  / : / : / : / : / : / : / : /  / : / : / : / : / : / : /  / : / : / : / : / : / : /  / :					@noedit; @untiled; record does not tile (switch entry at 0xA3 has kind 39 (not 0 or 1)); read-only, copied verbatim; reads: 誰が飲みますか？\n @rebase-new @rebase-unmatched idx0 en=Who will drink the water?\n @rebase-unmatched idx1 en= drank the spring water.\n<wait> @rebase-unmatched idx0 en=Who will drink the water?\n @rebase-unmatched idx1 en= drank the spring water.\n<wait>
 m/MS003A.BIN	0:1E	0	29	1F2F	を投げ込{08:5F}。\n<wait>	を投げ込{08:5F}。\n<wait>	 was thrown into the spring.\n<wait>	v005		reads: を投げ込んだ。\n<wait>; reads: だした
-m/MS003A.BIN	0:1E	1	56	1FFA	{02:09}{02:09}{02:09}・・		 was thrown into the spring.\n<wait>\n.........	v005		reads: ・・・・・・・・・・・; reads: を投げ込んだ。\n<wait> @refalign @refalign @refalign-merged
+m/MS003A.BIN	0:1E	1	56	1FFA	{02:09}{02:09}{02:09}・・		 was thrown into the spring.\n<wait>\n.........	v005		reads: ・・・・・・・・・・・; reads: を投げ込んだ。\n<wait> @refalign @refalign-merged
 m/MS003A.BIN	0:20	0	34	1F81	{03:17}{03:19}	{03:17}{03:19}				reads: 
 m/MS003A.BIN	0:21	0	40	1B	メンバー名	メンバー名	Name	v005		reads: われわれ @rebase-unmatched idx4 en={05:01}Y @rebase-unmatched idx5 en={06:01}U @rebase-unmatched idx4 en={05:01}Y @rebase-unmatched idx5 en={06:01}U
 m/MS003A.BIN	0:22	0	41	1F83	{03:17}{03:18}	{03:17}{03:18}				reads: 
@@ -164,31 +164,31 @@ m/MS003A.BIN	0:27	21	424	1FD3	ぬるぬる加減が{08:7F}感じでーす。\n<w
 m/MS003A.BIN	0:27	22	473	1FB2	水を飲む		Drink	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS003A.BIN	0:27	23	483	1FB2	武器を投げ込む		Throw weapon	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS003A.BIN	0:27	24	499	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS003A.BIN	0:28	0	4	1FD0	誰が飲み{08:15}\n		Who will drink the water?\n	v005		reads: 誰が飲みますか？\n; reads: 誰が飲みますか？\n @refalign @refalign-merged
-m/MS003A.BIN	0:28	1	46	1E3E	は泉の水を飲んでみた。\n<wait>		 drank the spring water.\n<wait>	v005		@refalign @refalign-merged
-m/MS003A.BIN	0:28	2	77	1FD0	ずずず{08:72}\n<wait>		*Glug glug glug*...\n<wait>	v005		reads: ずずず‥‥\n<wait>; reads: ずずず‥‥\n<wait> @refalign @refalign-merged
-m/MS003A.BIN	0:28	3	107	1FD2	泉のお姉さんα：		Water Woman A:	v005		@refalign @refalign-merged
-m/MS003A.BIN	0:28	4	125	1FD3	{02:08}{02:08}\n（げッ！{08:58}よこいつ、人がしゃべ{08:52}んのに！）\n		......\n(What is wrong with this person!? I was still talking!)\n	v005		reads: ‥‥‥‥‥‥\n（げッ！なによこいつ、人がしゃべってんのに！）\n; reads: ‥‥‥‥‥‥\n（げッ！なによこいつ、人がしゃべってんのに！）\n @refalign @refalign-merged
-m/MS003A.BIN	0:28	5	178	1FD2	泉のお姉さんα：		Water Woman A:	v005		@refalign @refalign-merged
-m/MS003A.BIN	0:28	6	196	1FD3	{02:08}{02:08}\n（な{08:72}{08:58}？ 何{08:6B}こいつ{08:72}）\n<wait>		.....\n(What is wrong with this person!?)\n<wait>	v005		reads: ‥‥‥‥‥‥\n（な‥‥なに？ 何なのこいつ‥‥）\n<wait>; reads: ‥‥‥‥‥‥\n（な‥‥なに？ 何なのこいつ‥‥）\n<wait> @refalign @refalign-merged
-m/MS003A.BIN	0:28	7	235	1FD2	泉のお姉さんβ：		Water Woman B:	v005		@refalign @refalign-merged
-m/MS003A.BIN	0:28	8	253	1FD3	{02:08}{02:08}\n（{08:72}うそ{08:72}）\n<wait>		.....\n(No way...)\n<wait>	v005		reads: ‥‥‥‥‥‥\n（‥‥うそ‥‥）\n<wait>; reads: ‥‥‥‥‥‥\n（‥‥うそ‥‥）\n<wait> @refalign @refalign-merged
-m/MS003A.BIN	0:28	9	282	1FD2	泉のお姉さんα：		Water Woman A:	v005		@refalign @refalign-merged
-m/MS003A.BIN	0:28	10	300	1FD3	{02:08}{02:08}\n（{08:72}変態{08:72}変態{08:72}）\n<wait>		.....\n(Pervert... Pervert...)\n<wait>	v005		reads: ‥‥‥‥‥‥\n（‥‥変態‥‥変態‥‥）\n<wait>; reads: ‥‥‥‥‥‥\n（‥‥変態‥‥変態‥‥）\n<wait> @refalign @refalign-merged
-m/MS003A.BIN	0:28	11	332	1FD2	泉のお姉さんβ：		Water Woman B:	v005		@refalign @refalign-merged
-m/MS003A.BIN	0:28	12	350	1FD3	{02:08}{02:08}\n（{08:72}しくしく{08:72}）\n<wait>		.....\n(*Sob, sob*)\n<wait>	v005		reads: ‥‥‥‥‥‥\n（‥‥しくしく‥‥）\n<wait>; reads: ‥‥‥‥‥‥\n（‥‥しくしく‥‥）\n<wait> @refalign @refalign-merged
-m/MS003A.BIN	0:28	13	380	1FD0	{08:72}ぐびぐび{08:72}\n<wait>		*Glug glug glug*...\n<wait>	v005		reads: ‥‥ぐびぐび‥‥\n<wait>; reads: ‥‥ぐびぐび‥‥\n<wait> @refalign @refalign-merged
-m/MS003A.BIN	0:28	14	406	1FD2	泉のお姉さんα：		Water Woman A:	v005		@refalign @refalign-merged
-m/MS003A.BIN	0:28	15	424	1FD3	{02:08}{02:08}\n（{02:08}{02:08}）\n<wait>		 	v005		reads: ‥‥‥‥‥‥\n（‥‥‥‥‥‥）\n<wait>; reads: ‥‥‥‥‥‥\n（‥‥‥‥‥‥）\n<wait> @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:28	16	446	1FD2	泉のお姉さんβ：		Water Woman B:	v005		@refalign @refalign-merged
-m/MS003A.BIN	0:28	17	464	1FD3	{02:08}{02:08}\n（{02:08}{02:08}）\n<wait>		 	v005		reads: ‥‥‥‥‥‥\n（‥‥‥‥‥‥）\n<wait>; reads: ‥‥‥‥‥‥\n（‥‥‥‥‥‥）\n<wait> @refalign @refalign-merged @refalign @refalign-merged
-m/MS003A.BIN	0:28	18	489	1FD2	泉のお姉さんα：		Water Woman A:	v005		@refalign @refalign-merged
-m/MS003A.BIN	0:28	19	507	1FD3	{02:08}{02:08}\n（{08:72}変態{08:72}変態へん{08:4E}ヘンタイッ！）\n<wait>		.....\n(Pervert... Pervert... Pervert pervert pervert!)\n<wait>	v005		reads: ‥‥‥‥‥‥\n（‥‥変態‥‥変態へんたいヘンタイッ！）\n<wait>; reads: ‥‥‥‥‥‥\n（‥‥変態‥‥変態へんたいヘンタイッ！）\n<wait> @refalign @refalign-merged
-m/MS003A.BIN	0:28	20	555	1FD2	泉のお姉さんβ：		Water Woman B:	v005		@refalign @refalign-merged
-m/MS003A.BIN	0:28	21	573	1FD3	{02:08}{02:08}\n（{08:72}おかあさん{08:72}）\n<wait>		.....\n(Mom... Help me...)\n<wait>	v005		reads: ‥‥‥‥‥‥\n（‥‥おかあさん‥‥）\n<wait>; reads: ‥‥‥‥‥‥\n（‥‥おかあさん‥‥）\n<wait> @refalign @refalign-merged
-m/MS003A.BIN	0:28	22	605	1FD0	{08:72}ごくん\n<wait>		*Glug*\n<wait>	v005		reads: ‥‥ごくん\n<wait>; reads: ‥‥ごくん\n<wait> @refalign @refalign-merged
-m/MS003A.BIN	0:28	23	622	1FD2	泉のお姉さん達：		Water Women:	v005		@refalign @refalign-merged
-m/MS003A.BIN	0:28	24	640	1FD3	{02:08}{02:08}\n（誰か～助けて～）\n<wait>		.....\n(Heeeeelp!)\n<wait>	v005		reads: ‥‥‥‥‥‥\n（誰か～助けて～）\n<wait>; reads: ‥‥‥‥‥‥\n（誰か～助けて～）\n<wait> @refalign @refalign-merged
+m/MS003A.BIN	0:28	0	4	1FD0	誰が飲み{08:15}\n		Who will drink the water?\n\n drank the spring water.\n<wait>\n*Glug glug glug*...\n<wait>	v005		reads: 誰が飲みますか？\n; reads: 誰が飲みますか？\n @refalign @refalign-merged
+m/MS003A.BIN	0:28	1	46	1E3E	は泉の水を飲んでみた。\n<wait>		 	v005		@refalign @refalign-merged
+m/MS003A.BIN	0:28	2	77	1FD0	ずずず{08:72}\n<wait>		 	v005		reads: ずずず‥‥\n<wait>; reads: ずずず‥‥\n<wait> @refalign @refalign-merged
+m/MS003A.BIN	0:28	3	107	1FD2	泉のお姉さんα：		 	v005		@refalign @refalign-merged
+m/MS003A.BIN	0:28	4	125	1FD3	{02:08}{02:08}\n（げッ！{08:58}よこいつ、人がしゃべ{08:52}んのに！）\n		 	v005		reads: ‥‥‥‥‥‥\n（げッ！なによこいつ、人がしゃべってんのに！）\n; reads: ‥‥‥‥‥‥\n（げッ！なによこいつ、人がしゃべってんのに！）\n @refalign @refalign-merged
+m/MS003A.BIN	0:28	5	178	1FD2	泉のお姉さんα：		 	v005		@refalign @refalign-merged
+m/MS003A.BIN	0:28	6	196	1FD3	{02:08}{02:08}\n（な{08:72}{08:58}？ 何{08:6B}こいつ{08:72}）\n<wait>		 	v005		reads: ‥‥‥‥‥‥\n（な‥‥なに？ 何なのこいつ‥‥）\n<wait>; reads: ‥‥‥‥‥‥\n（な‥‥なに？ 何なのこいつ‥‥）\n<wait> @refalign @refalign-merged
+m/MS003A.BIN	0:28	7	235	1FD2	泉のお姉さんβ：		 	v005		@refalign @refalign-merged
+m/MS003A.BIN	0:28	8	253	1FD3	{02:08}{02:08}\n（{08:72}うそ{08:72}）\n<wait>		 	v005		reads: ‥‥‥‥‥‥\n（‥‥うそ‥‥）\n<wait>; reads: ‥‥‥‥‥‥\n（‥‥うそ‥‥）\n<wait> @refalign @refalign-merged
+m/MS003A.BIN	0:28	9	282	1FD2	泉のお姉さんα：		 	v005		@refalign @refalign-merged
+m/MS003A.BIN	0:28	10	300	1FD3	{02:08}{02:08}\n（{08:72}変態{08:72}変態{08:72}）\n<wait>		 	v005		reads: ‥‥‥‥‥‥\n（‥‥変態‥‥変態‥‥）\n<wait>; reads: ‥‥‥‥‥‥\n（‥‥変態‥‥変態‥‥）\n<wait> @refalign @refalign-merged
+m/MS003A.BIN	0:28	11	332	1FD2	泉のお姉さんβ：		 	v005		@refalign @refalign-merged
+m/MS003A.BIN	0:28	12	350	1FD3	{02:08}{02:08}\n（{08:72}しくしく{08:72}）\n<wait>		 	v005		reads: ‥‥‥‥‥‥\n（‥‥しくしく‥‥）\n<wait>; reads: ‥‥‥‥‥‥\n（‥‥しくしく‥‥）\n<wait> @refalign @refalign-merged
+m/MS003A.BIN	0:28	13	380	1FD0	{08:72}ぐびぐび{08:72}\n<wait>		 	v005		reads: ‥‥ぐびぐび‥‥\n<wait>; reads: ‥‥ぐびぐび‥‥\n<wait> @refalign @refalign-merged
+m/MS003A.BIN	0:28	14	406	1FD2	泉のお姉さんα：		 	v005		@refalign @refalign-merged
+m/MS003A.BIN	0:28	15	424	1FD3	{02:08}{02:08}\n（{02:08}{02:08}）\n<wait>		 	v005		reads: ‥‥‥‥‥‥\n（‥‥‥‥‥‥）\n<wait>; reads: ‥‥‥‥‥‥\n（‥‥‥‥‥‥）\n<wait> @refalign @refalign-merged
+m/MS003A.BIN	0:28	16	446	1FD2	泉のお姉さんβ：		 	v005		@refalign @refalign-merged
+m/MS003A.BIN	0:28	17	464	1FD3	{02:08}{02:08}\n（{02:08}{02:08}）\n<wait>		 	v005		reads: ‥‥‥‥‥‥\n（‥‥‥‥‥‥）\n<wait>; reads: ‥‥‥‥‥‥\n（‥‥‥‥‥‥）\n<wait> @refalign @refalign-merged
+m/MS003A.BIN	0:28	18	489	1FD2	泉のお姉さんα：		 	v005		@refalign @refalign-merged
+m/MS003A.BIN	0:28	19	507	1FD3	{02:08}{02:08}\n（{08:72}変態{08:72}変態へん{08:4E}ヘンタイッ！）\n<wait>		 	v005		reads: ‥‥‥‥‥‥\n（‥‥変態‥‥変態へんたいヘンタイッ！）\n<wait>; reads: ‥‥‥‥‥‥\n（‥‥変態‥‥変態へんたいヘンタイッ！）\n<wait> @refalign @refalign-merged
+m/MS003A.BIN	0:28	20	555	1FD2	泉のお姉さんβ：		 	v005		@refalign @refalign-merged
+m/MS003A.BIN	0:28	21	573	1FD3	{02:08}{02:08}\n（{08:72}おかあさん{08:72}）\n<wait>		 	v005		reads: ‥‥‥‥‥‥\n（‥‥おかあさん‥‥）\n<wait>; reads: ‥‥‥‥‥‥\n（‥‥おかあさん‥‥）\n<wait> @refalign @refalign-merged
+m/MS003A.BIN	0:28	22	605	1FD0	{08:72}ごくん\n<wait>		 	v005		reads: ‥‥ごくん\n<wait>; reads: ‥‥ごくん\n<wait> @refalign @refalign-merged
+m/MS003A.BIN	0:28	23	622	1FD2	泉のお姉さん達：		 	v005		@refalign @refalign-merged
+m/MS003A.BIN	0:28	24	640	1FD3	{02:08}{02:08}\n（誰か～助けて～）\n<wait>		 	v005		reads: ‥‥‥‥‥‥\n（誰か～助けて～）\n<wait>; reads: ‥‥‥‥‥‥\n（誰か～助けて～）\n<wait> @refalign @refalign-merged
 m/MS003A.BIN	0:29	0	0	UNTILED	:" / :' / : / ｺ / ﾐ / / / / / を投げ込 / _。 / ｺ / ] / ﾓ / （わッ！ / Xよこいつ、やる気？） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （ひいっ / r） / ｺ / ﾒ泉のお姉さんα： / ﾓ / （ / r読め / %わね / r何考えてんのかしら？） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （あの / r / 垂ｵま / 、 / G / r） / ｺ / ﾒ泉のお姉さんα： / ﾓ / （ / 返 / Jあげな / Iよ） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （！？ ええ～っ、何で私が～） / ﾒ泉のお姉さんα： / ﾓ / （ / r / [ / r / [かこいつ！） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （ / rうっううっ / r） / ｺ / ﾒ泉のお姉さんα： / ﾓ / （ほら、さっさと渡しちゃいな！） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （え～っ、 / [ / Uかぁ？ たまには先輩が / r） / ｺ / ｺ / ﾒ泉のお姉さんα： / ﾓ / rあ、あのう / r / H / r / Uよね？ / （い・い・か・ら・！） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / rあの / rど、 / 垂ｼ / r。 / （ / rうぅ / rこ、こわい～ / r） / ｺ / ﾐ / / / / / を受け取 / Q。 / ｺ / ﾒ泉のお姉さんα： / ﾓ / （ / ） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （ / ） / ｺ / ﾒ泉のお姉さん達： / ﾓ / （何 / kよぉーっっ！） / ｺ / :	:" / :' / : / ｺ / ﾐ / / / / / を投げ込 / _。 / ｺ / ] / ﾓ / （わッ！ / Xよこいつ、やる気？） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （ひいっ / r） / ｺ / ﾒ泉のお姉さんα： / ﾓ / （ / r読め / %わね / r何考えてんのかしら？） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （あの / r / 垂ｵま / 、 / G / r） / ｺ / ﾒ泉のお姉さんα： / ﾓ / （ / 返 / Jあげな / Iよ） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （！？ ええ～っ、何で私が～） / ﾒ泉のお姉さんα： / ﾓ / （ / r / [ / r / [かこいつ！） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （ / rうっううっ / r） / ｺ / ﾒ泉のお姉さんα： / ﾓ / （ほら、さっさと渡しちゃいな！） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （え～っ、 / [ / Uかぁ？ たまには先輩が / r） / ｺ / ｺ / ﾒ泉のお姉さんα： / ﾓ / rあ、あのう / r / H / r / Uよね？ / （い・い・か・ら・！） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / rあの / rど、 / 垂ｼ / r。 / （ / rうぅ / rこ、こわい～ / r） / ｺ / ﾐ / / / / / を受け取 / Q。 / ｺ / ﾒ泉のお姉さんα： / ﾓ / （ / ） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （ / ） / ｺ / ﾒ泉のお姉さん達： / ﾓ / （何 / kよぉーっっ！） / ｺ / :				@noedit; @untiled; record does not tile (switch entry at 0x13 has kind 12 (not 0 or 1)); read-only, copied verbatim; reads: だした @rebase-new @rebase-unmatched idx1 en= was tossed into the water.\n<wait> @rebase-unmatched idx2 en=Water Woman A: @rebase-unmatched idx3 en=......\n(Eek! What is this person doing!?)\n<wait> @rebase-unmatched idx4 en=Water Woman B: @rebase-unmatched idx5 en=......\n(I'm scared...)\n<wait> @rebase-unmatched idx6 en=Water Woman A: @rebase-unmatched idx7 en=......\n(I can't even begin to understand what he's thinking.)\n<wait> @rebase-unmatched idx8 en=Water Woman B: @rebase-unmatched idx9 en=......\n(Umm, so... About this @rebase-unmatched idx11 en=Water Woman A: @rebase-unmatched idx12 en=......\n(Give it back to him.)\n<wait> @rebase-unmatched idx13 en=Water Woman B: @rebase-unmatched idx14 en=......\n(Whaat!? Why me!?)\n @rebase-unmatched idx15 en=Water Woman A: @rebase-unmatched idx16 en=......\n(It's... It's him again!)\n<wait> @rebase-unmatched idx17 en=Water Woman B: @rebase-unmatched idx18 en=......\n(*Sob sob*...)\n<wait> @rebase-unmatched idx19 en=Water Woman A: @rebase-unmatched idx20 en=......\n(Hey! Just give it to him already!)\n<wait> @rebase-unmatched idx21 en=Water Woman B: @rebase-unmatched idx22 en=......\n(Why me!? It's your turn this time!)\n<wait> @rebase-unmatched idx23 en=Water Woman A: @rebase-unmatched idx24 en=U-Umm... Is this... Is this yours?\n(Do it already!)\n<wait> @rebase-unmatched idx25 en=Water Woman B: @rebase-unmatched idx26 en=E-Err... Here...\n(Eek... I'm so scared...)\n<wait> @rebase-unmatched idx28 en= received.\n<wait> @rebase-unmatched idx29 en=Water Woman A: @rebase-unmatched idx31 en=Water Woman B: @rebase-unmatched idx33 en=Water Women: @rebase-unmatched idx34 en=......\n(What the hell!?)\n<wait> @rebase-unmatched idx1 en= was tossed into the water.\n<wait> @rebase-unmatched idx2 en=Water Woman A: @rebase-unmatched idx3 en=......\n(Eek! What is this person doing!?)\n<wait> @rebase-unmatched idx4 en=Water Woman B: @rebase-unmatched idx5 en=......\n(I'm scared...)\n<wait> @rebase-unmatched idx6 en=Water Woman A: @rebase-unmatched idx7 en=......\n(I can't even begin to understand what he's thinking.)\n<wait> @rebase-unmatched idx8 en=Water Woman B: @rebase-unmatched idx9 en=......\n(Umm, so... About this @rebase-unmatched idx11 en=Water Woman A: @rebase-unmatched idx12 en=......\n(Give it back to him.)\n<wait> @rebase-unmatched idx13 en=Water Woman B: @rebase-unmatched idx14 en=......\n(Whaat!? Why me!?)\n @rebase-unmatched idx15 en=Water Woman A: @rebase-unmatched idx16 en=......\n(It's... It's him again!)\n<wait> @rebase-unmatched idx17 en=Water Woman B: @rebase-unmatched idx18 en=......\n(*Sob sob*...)\n<wait> @rebase-unmatched idx19 en=Water Woman A: @rebase-unmatched idx20 en=......\n(Hey! Just give it to him already!)\n<wait> @rebase-unmatched idx21 en=Water Woman B: @rebase-unmatched idx22 en=......\n(Why me!? It's your turn this time!)\n<wait> @rebase-unmatched idx23 en=Water Woman A: @rebase-unmatched idx24 en=U-Umm... Is this... Is this yours?\n(Do it already!)\n<wait> @rebase-unmatched idx25 en=Water Woman B: @rebase-unmatched idx26 en=E-Err... Here...\n(Eek... I'm so scared...)\n<wait> @rebase-unmatched idx28 en= received.\n<wait> @rebase-unmatched idx29 en=Water Woman A: @rebase-unmatched idx31 en=Water Woman B: @rebase-unmatched idx33 en=Water Women: @rebase-unmatched idx34 en=......\n(What the hell!?)\n<wait>
 m/MS003A.BIN	0:2A	0	12	1FD2	泉のお姉さんα：		Water Woman A:	v005		
 m/MS003A.BIN	0:2A	1	30	1FD3	肩こり～眼精疲{08:72}{08:52}あら？\n<wait>		Stiff shoulders~ Sore eyes~ ...Huh?\n<wait>	v005		reads: 肩こり～眼精疲‥‥ってあら？\n<wait>
