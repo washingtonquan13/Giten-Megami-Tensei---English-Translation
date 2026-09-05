@@ -3,7 +3,7 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS6016.BIN	1:01	0	47	1F01	{02:09}・・\n		{04:FF}.....\n	ours		reads: ・・・・・\n @rebase-tagdiff
+m/MS6016.BIN	1:01	0	47	1F01	{02:09}・・\n	.....\n	{04:FF}.....\n	ours	draft	reads: ・・・・・\n @rebase-tagdiff @ours-2026-09-05
 m/MS6016.BIN	1:02	0	25	1FB2	事実を告げる		Tell the Truth	ours		menu option, declared width 20 columns
 m/MS6016.BIN	1:02	1	39	1FB2	適当にごまかす		Make an Excuse	ours		menu option, declared width 20 columns
 m/MS6016.BIN	1:A3	0	0	DATA	わ・・私を{02:09}こ・・の苦しみ{08:42}\n救い出{08:4A}{02:09}・・！\n<wait>		P-Please... save me...\nfrom this... suffering...!\n<wait>	ours		reads: わ・・私を・・・こ・・の苦しみから\n救い出して・・・・・！\n<wait>
@@ -13,7 +13,7 @@ m/MS6016.BIN	1:9D	0	0	DATA	う・・うぐぁあああ！コ		N-Nnngyaaah! K-	ou
 m/MS6016.BIN	1:9D	1	28	1FFA	・		I'll 	ours		
 m/MS6016.BIN	1:9D	2	32	1FFB	ロ		kill 	ours		
 m/MS6016.BIN	1:9D	3	36	1FFA	・		you	ours		
-m/MS6016.BIN	1:9D	4	44	1FFA	ス！\n<wait>		!\n<wait>	ours		
+m/MS6016.BIN	1:9D	4	44	1FFA	ス！\n<wait>	!\n<wait>	!\n<wait>	ours	draft	@ours-2026-09-05
 m/MS6016.BIN	1:A5	0	0	DATA	だ　ダメッ！\n{08:4D}以上近づいちゃだめぇ！\n<wait>		D-Don't!\nDon't come any closer!\n<wait>	ours		reads: だ　ダメッ！\nそれ以上近づいちゃだめぇ！\n<wait>
 m/MS6016.BIN	1:A2	0	0	DATA	こっちに{02:09}来ては{02:09}いけな・・い\n<wait>		You... mustn't... come... over here...\n<wait>	ours		reads: こっちに・・・来ては・・・いけな・・い\n<wait>
 m/MS6016.BIN	1:94	0	0	DATA	あああぁ・・私の体がぁ{02:09}崩れて{08:83}ぅぅ\n<wait>		Aaahh... my body... it's falling apart...\n<wait>	ours		reads: あああぁ・・私の体がぁ・・・崩れてしまうぅぅ\n<wait>
@@ -55,11 +55,11 @@ m/MS6016.BIN	14:19	1	39	1FFA	{02:09}	{02:09}				reads: ・・・
 m/MS6016.BIN	14:19	2	43	1FFB	死ん{08:81}{08:51}の？\n<wait>		Did I... die?\n<wait>	ours		reads: 死んじゃったの？\n<wait>
 m/MS6016.BIN	14:1A	0	0	DATA	満月の日は体が痒くて{02:09}\n掻い{08:14}と　皮膚が裂けちゃ{08:52}{02:09}\n<wait>		On the night of the full moon my body itches so...\nand when I scratch it, my skin tears open...\n<wait>	ours		reads: 満月の日は体が痒くて・・・\n掻いていると　皮膚が裂けちゃって・・・\n<wait>
 m/MS6016.BIN	14:1B	0	0	DATA	痒い{02:09}　痒いの		It itches... it itches so much	ours		reads: 痒い・・・　痒いの
-m/MS6016.BIN	14:1B	1	20	1FFA	{02:09}\n	{02:09}\n				reads: ・・・\n
+m/MS6016.BIN	14:1B	1	20	1FFA	{02:09}\n	...\n			draft	reads: ・・・\n @ours-2026-09-05
 m/MS6016.BIN	14:1B	2	25	1FFB	手が！　足が！　喉が！　眼があぁぁぁ！　\n<wait>		My hands! My legs! My throat! My eyes, aaaah!\n<wait>	ours		
 m/MS6016.BIN	14:1C	0	0	DATA	ぎゃあああああ！　あああああ！　\n<wait>		Gyaaaaah! Aaaaaah!\n<wait>	ours		
 m/MS6016.BIN	14:1D	0	0	DATA	ね・ねぇ{02:09}\n教えてよぉ{02:09}\n<wait>		H-Hey...\ntell me...\n<wait>	ours		reads: ね・ねぇ・・・\n教えてよぉ・・・\n<wait>
-m/MS6016.BIN	14:1E	0	12	1FFA	{02:09}　	{02:09}　	...	ours		reads: ・・・　
+m/MS6016.BIN	14:1E	0	12	1FFA	{02:09}　	... 	...	ours	draft	reads: ・・・　 @ours-2026-09-05
 m/MS6016.BIN	14:1E	1	18	1FFB	頭が割れそう{08:6B}{02:09}　と{08:52}も痛いの{02:09}\n<wait>		My head feels like it's splitting......\n<wait>	ours		reads: 頭が割れそうなの・・・　とっても痛いの・・・\n<wait>; reads: ・・・　
 m/MS6016.BIN	14:1E	2	57	1FBA	{08:47}ま{08:76}と　おかしくなっちゃうよぉ{02:09}\n<wait>		I'm gonna go crazy like this......\n<wait>	ours		reads: このままだと　おかしくなっちゃうよぉ・・・\n<wait>; reads: 頭が割れそうなの・・・　とっても痛いの・・・\n<wait>
 m/MS6016.BIN	14:1F	0	0	DATA	いやぁぁぁぁぁ！　こ{08:25}でぇ！　\n頭の中に！　頭の中にぃ！　何かの意識がぁ！　\n<wait>		Nooooo! Stay away!\nInside my head! Inside my head! Something else's mind is in there!\n<wait>	ours		reads: いやぁぁぁぁぁ！　こないでぇ！　\n頭の中に！　頭の中にぃ！　何かの意識がぁ！　\n<wait>
@@ -69,7 +69,7 @@ m/MS6016.BIN	14:22	0	0	DATA	一緒に消えま{08:80}？　ねぇ{02:09}　\nお
 m/MS6016.BIN	14:23	0	0	DATA	私は{02:09}		I...	ours		reads: 私は・・・
 m/MS6016.BIN	14:24	0	0	DATA	新しい生き方を探{08:4A}みるわ\n<wait>		I'll try to find a new way to live.\n<wait>	ours		reads: 新しい生き方を探してみるわ\n<wait>
 m/MS6016.BIN	14:25	0	0	DATA	おしえてぇ！		Tell me!	ours		
-m/MS6016.BIN	14:25	1	18	1FFA	{02:09}\n	{02:09}\n				reads: ・・・\n
+m/MS6016.BIN	14:25	1	18	1FFA	{02:09}\n	...\n			draft	reads: ・・・\n @ours-2026-09-05
 m/MS6016.BIN	14:25	2	29	1FBA	ウオヲ{02:09}　		Uwooh......	ours		reads: ウオヲ・・・　
 m/MS6016.BIN	14:25	3	41	1FFA	オシエテェ{02:09}\n		Tell meee......	ours		reads: オシエテェ・・・\n
 m/MS6016.BIN	14:26	0	6	1FFA	{02:09}アウアアァァァ\n		...Auaaaahh\n	ours		reads: ・・・アウアアァァァ\n
@@ -147,7 +147,7 @@ m/MS6016.BIN	14:64	0	0	DATA	一人に{02:0D}{02:09}　お願い{02:09}\n<wait>		
 m/MS6016.BIN	14:65	0	0	DATA	同じ体になり{08:4E}の？　\n<wait>		You wanna have the same body as me?\n<wait>	ours		reads: 同じ体になりたいの？　\n<wait>
 m/MS6016.BIN	14:66	0	0	DATA	{08:0E}は多い方が{08:7F}わねぇ\n<wait>		More demons really is better.\n<wait>	ours		reads: 仲魔は多い方がいいわねぇ\n<wait>
 m/MS6016.BIN	14:67	0	0	DATA	あ		Ah	ours		
-m/MS6016.BIN	14:67	1	8	1FFA	{02:09}？\n		...?\n	ours		reads: ・・・？\n
+m/MS6016.BIN	14:67	1	8	1FFA	{02:09}？\n	...?\n	...?\n	ours	draft	reads: ・・・？\n @ours-2026-09-05
 m/MS6016.BIN	14:67	2	15	1FFB	私　今何か言{08:51}っけ？\n<wait>		Did I just say something?\n<wait>	ours		reads: 私　今何か言ったっけ？\n<wait>
 m/MS6016.BIN	14:68	0	6	1FFA	{02:09}	{02:09}				reads: ・・・
 m/MS6016.BIN	14:68	1	10	1FFB	はっっ？！　ご・ごめんな{08:49}！　\nわ・私は今　何て酷い{08:46}を考えて{02:09}\n<wait>		Huh?! I-I'm so sorry!\nW-what a horrible thing I was just thinking......\n<wait>	ours		reads: はっっ？！　ご・ごめんなさい！　\nわ・私は今　何て酷いことを考えて・・・\n<wait>
@@ -174,7 +174,7 @@ m/MS6016.BIN	14:7A	0	0	DATA	う・動か{08:25}でよ！　\n<wait>		D-don't mov
 m/MS6016.BIN	14:7B	0	0	DATA	おきょきょきょきょ！\n<wait>		Okyokyokyokyo!\n<wait>	ours		
 m/MS6016.BIN	14:7C	0	0	DATA	{08:05}ーを噛んでしまい\n痺れ{08:14}！\n<wait>		It bit the computer\nand is now stunned!\n<wait>	ours		reads: コンピューターを噛んでしまい\n痺れている！\n<wait>
 m/MS6016.BIN	14:7D	0	0	DATA	お・おいしぃ		D-Delicious	ours		
-m/MS6016.BIN	14:7D	1	18	1FFA	{02:09}\n<wait>	{02:09}\n<wait>				reads: ・・・\n<wait>
+m/MS6016.BIN	14:7D	1	18	1FFA	{02:09}\n<wait>	...\n<wait>			draft	reads: ・・・\n<wait> @ours-2026-09-05
 m/MS6016.BIN	14:7E	0	0	DATA	{02:09}？　ねぇ　友達を呼ぶ{08:42}ちょ{08:53}待{08:52}！　\n約束は		...? Hey, wait just a moment -- I'm calling my friends!\nOur promise -- 	ours		reads: ・・・？　ねぇ　友達を呼ぶからちょっと待って！　\n約束は
 m/MS6016.BIN	14:7E	1	51	1FFA	{08:79}後で！\n		And after that!	ours		reads: その後で！\n
 m/MS6016.BIN	14:7F	0	0	DATA	何を考え{08:14}の？　\n早く眼をつむ{08:52}{02:09}　\n<wait>		What are you thinking?\nHurry up and close your eyes....\n<wait>	ours		reads: 何を考えているの？　\n早く眼をつむって・・・　\n<wait>
@@ -183,7 +183,7 @@ m/MS6016.BIN	14:81	0	0	DATA	貴方にも　{08:47}苦しみを！\n<wait>		You'l
 m/MS6016.BIN	14:82	0	0	DATA	貴方が欲しいの！　\n体に埋め込ん{08:56}痛く{08:25}くらいに！　\n<wait>		I want you!\nSo much I could bury you in my body and feel no pain!\n<wait>	ours		reads: 貴方が欲しいの！　\n体に埋め込んでも痛くないくらいに！　\n<wait>
 m/MS6016.BIN	14:83	0	0	DATA	呪縛をほどいて{02:09}\n<wait>		Free me from this curse....\n<wait>	ours		reads: 呪縛をほどいて・・・\n<wait>
 m/MS6016.BIN	14:84	0	0	DATA	あぁ		Ahh...	ours		
-m/MS6016.BIN	14:84	1	10	1FFA	{02:09}・・\n		....\n	ours		reads: ・・・・・\n
+m/MS6016.BIN	14:84	1	10	1FFA	{02:09}・・\n	.....\n	....\n	ours	draft	reads: ・・・・・\n @ours-2026-09-05
 m/MS6016.BIN	14:84	2	19	1FFB	{03:13}広がる　{08:47}光景{02:09}\n<wait>		This sight spreading before my eyes...\n<wait>	ours		reads: 目の前に広がる　この光景・・・\n<wait>
 m/MS6016.BIN	14:85	0	0	DATA	お肉{08:81}{08:25}{08:84}{02:09}\n<wait>		It's not meat, but......\n<wait>	ours		reads: お肉じゃないけど・・・\n<wait>
 m/MS6016.BIN	14:86	0	0	DATA	キャンディーナンディー		Candy Nandy	ours		
