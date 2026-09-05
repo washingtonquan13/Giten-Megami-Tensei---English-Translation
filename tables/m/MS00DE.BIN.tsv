@@ -3,12 +3,12 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS00DE.BIN	0:00	0	6	1F01	{08:62}様子をうかがっ{08:14}\n		{04:EC} is standing by.\n	v005		reads: は、様子をうかがっている\n; reads: は、様子をうかがっている\n @rebase-tagdiff @refalign
+m/MS00DE.BIN	0:00	0	6	1F01	{08:62}様子をうかがっ{08:14}\n	 is watching for an opening\n	{04:EC} is standing by.\n	v005	draft	reads: は、様子をうかがっている\n; reads: は、様子をうかがっている\n @rebase-tagdiff @refalign @seamfix-2026-09-05
 m/MS00DE.BIN	0:02	0	42	1ECE	{08:62}{03:04}に刃物を振り回{08:17}\n		 swang their weapon at an ally!\n	v005		reads: は、味方に刃物を振り回した！\n; reads: は、味方に刃物を振り回した！\n @refalign
 m/MS00DE.BIN	0:02	1	72	1ECF	{08:62}刃を{03:06}向{08:43}\n		 pointed their weapon at an ally.\n	v005		reads: は、刃を自分に向けた\n; reads: は、刃を自分に向けた\n @refalign
 m/MS00DE.BIN	0:02	2	88	18	は		 attacked 	v005		@refalign
-m/MS00DE.BIN	0:02	3	96	1F01	に切つ{08:43}\n		{04:EB}.\n\nattacked using [{04:01}].\n	v005		reads: に切つけた\n; reads: に切つけた\n @refalign @refalign-joined
-m/MS00DE.BIN	0:02	4	108	18	は		attacked using [{04:01}].\n	v005		@refalign
+m/MS00DE.BIN	0:02	3	96	1F01	に切つ{08:43}\n	 with a slash!\n	{04:EB}.\n\nattacked using [{04:01}].\n	v005	draft	reads: に切つけた\n; reads: に切つけた\n @refalign @refalign-joined @seamfix-2026-09-05
+m/MS00DE.BIN	0:02	4	108	18	は	 	attacked using [{04:01}].\n	v005	draft	@refalign @seamfix-2026-09-05
 m/MS00DE.BIN	0:02	5	116	1ECE	{04:01}で{03:12}か{08:18}\n		 cut themselves.\n\n attacked an ally.\n\n attacked using [{04:01}].\n	v005		reads: で切りかかった\n; reads: 切りで切りかかった\n @refalign @refalign-joined
 m/MS00DE.BIN	0:02	6	130	18	{04:01}で{03:12}まく{08:51}\n		's [{04:01}] swings wild.\n	v005		reads: で切りまくった\n; reads: 切りで切りまくった\n @refalign
 m/MS00DE.BIN	0:02	7	152	1ECF	{08:62}{08:63}を{03:12}刻んで{08:40}\n		 cut themselves.\n	v005		reads: は、自分を切り刻んでいる\n
@@ -36,21 +36,21 @@ m/MS00DE.BIN	0:04	8	173	1ECE	のショット\n		's shoots.\n	v005		@refalign
 m/MS00DE.BIN	0:04	9	187	18	は撃ちまく{08:51}\n		 fires.\n	v005		reads: は撃ちまくった\n; reads: は撃ちまくった\n @refalign
 m/MS00DE.BIN	0:05	0	0	DATA	{04:03}	{04:03}				reads: 　
 m/MS00DE.BIN	0:05	1	15	1ECF	{08:62}{08:63}をいじめ{08:14}\n		 is hitting themself.\n	v005		reads: は、自分をいじめている\n; reads: は、自分をいじめている\n @refalign
-m/MS00DE.BIN	0:05	2	44	1ECE	は		 attacks \n{04:EB}!\n	v005		@refalign @refalign-joined
+m/MS00DE.BIN	0:05	2	44	1ECE	は	 	 attacks \n{04:EB}!\n	v005	draft	@refalign @refalign-joined @seamfix-2026-09-05
 m/MS00DE.BIN	0:05	3	55	18	{08:62}{03:04}	{08:62}{03:04}	 attacks an ally!\n	v005		reads: は、味方
 m/MS00DE.BIN	0:05	4	62	18	は敵に{03:07}た！\n	 attacked the enemy!	 attacks the enemy!             \n	v005	draft	reads: は敵に襲いかかった！\n; reads: は、味方 @ours-2026-09-05
 m/MS00DE.BIN	0:05	5	84	1ECF	{08:62}もがい{08:14}\n		 is wriggling.\n	v005		reads: は、もがいている\n; reads: は敵に襲いかかった！\n @refalign
 m/MS00DE.BIN	0:05	6	105	1E5D	{08:62}{03:04}に{03:07}た！\n		 attacks an ally!\n	v005		reads: は、味方に襲いかかった！\n; reads: は、もがいている\n @refalign
 m/MS00DE.BIN	0:05	7	121	18	が{03:07}て{08:1E}\n		 launches an attack.\n	v005		reads: が襲いかかってきた\n; reads: は、味方に襲いかかった！\n @refalign
 m/MS00DE.BIN	0:06	0	35	1ECF	{08:62}{08:63}を打ちす{08:41}\n		 hits themself.\n	v005		reads: は、自分を打ちすえた\n; reads: は、自分を打ちすえた\n @refalign
-m/MS00DE.BIN	0:06	1	64	1ECE	は		 swings [{04:01}] at \n{04:EB}!\n	v005		@refalign @refalign-joined
+m/MS00DE.BIN	0:06	1	64	1ECE	は	 	 swings [{04:01}] at \n{04:EB}!\n	v005	draft	@refalign @refalign-joined @seamfix-2026-09-05
 m/MS00DE.BIN	0:06	2	75	18	{08:62}{03:04}	{08:62}{03:04}	 swings [{04:01}] at an ally!\n	v005		reads: は、味方
 m/MS00DE.BIN	0:06	3	82	18	は敵に{04:01}を振り降ろ{08:17}\n	 swung {04:01} down at the enemy!	 swings [{04:01}] at the enemy!                     \n	v005	draft	reads: は敵にを振り降ろした！\n; reads: は、味方 @ours-2026-09-05
 m/MS00DE.BIN	0:06	4	112	1ECF	{08:62}{08:63}を打ちすえ{08:14}\n		 is hitting themself.\n	v005		reads: は、自分を打ちすえている\n; reads: は敵に切りを振り降ろした！\n @refalign
 m/MS00DE.BIN	0:06	5	139	1E5D	{08:62}{03:04}に{04:01}を振り降ろ{08:4B}\n		 swings [{04:01}] at an ally.\n	v005		reads: は、味方にを振り降ろした\n; reads: は、自分を打ちすえている\n @refalign
 m/MS00DE.BIN	0:06	6	163	18	が{04:01}で殴りかか{08:52}{08:1E}\n		 swings [{04:01}].\n	v005		reads: がで殴りかかってきた\n; reads: は、味方に切りを振り降ろした\n @refalign
 m/MS00DE.BIN	0:07	0	29	1E5C	は{04:01}で\n		 uses [{04:01}]\n	v005		reads: はで\n; reads: は切りで\n @refalign
-m/MS00DE.BIN	0:07	1	42	1ECF	己		to attack themself.\n\nto attack \n{04:EB}.\n	v005		@refalign @refalign-joined
+m/MS00DE.BIN	0:07	1	42	1ECF	己	themself	to attack themself.\n\nto attack \n{04:EB}.\n	v005	draft	@refalign @refalign-joined @seamfix-2026-09-05
 m/MS00DE.BIN	0:07	2	69	18	{03:04}	{03:04}	to attack an ally.\n	v005		reads: 味方
 m/MS00DE.BIN	0:07	3	74	18	敵を突{08:64}\n	thrust at the enemy	to attack an enemy.         \n	v005	draft	reads: 敵を突いた\n; reads: 味方 @ours-2026-09-05
 m/MS00DE.BIN	0:07	4	92	1ECF	{08:62}{08:63}を突い{08:14}\n		 is attacking themself.\n	v005		reads: は、自分を突いている\n; reads: 敵を突いた\n @refalign
@@ -66,7 +66,7 @@ m/MS00DE.BIN	0:08	6	139	18	の鞭打ち！\n		 whips!\n	v005		reads: は、味�
 m/MS00DE.BIN	0:09	0	0	DATA	{04:03}	{04:03}				reads: 　
 m/MS00DE.BIN	0:09	1	9	1E5C	{08:62}	{08:62}				reads: は、
 m/MS00DE.BIN	0:09	2	17	1ECF	{03:0A}に\n		 on themself!\n	v005		reads: 自分自身に\n; reads: 自分自身に\n @refalign
-m/MS00DE.BIN	0:09	3	44	1F01	に		cast\n\n on \n{04:EB}!\n	v005		reads: に @rebase-tagdiff @refalign @refalign-joined
+m/MS00DE.BIN	0:09	3	44	1F01	に	!\n	cast\n\n on \n{04:EB}!\n	v005	draft	reads: に @rebase-tagdiff @refalign @refalign-joined @seamfix-2026-09-05
 m/MS00DE.BIN	0:09	4	49	18	{03:04}に{04:00}		cast\n	v005		reads: 味方にを唱えた！ ; reads: 味方にを唱えた！ @refalign
 m/MS00DE.BIN	0:09	5	64	1ECF	{08:62}{03:06}\n{04:00}	{08:62}{03:06}\n{04:00}	cast\n	v005		reads: は、自分に\nを唱えた！ 
 m/MS00DE.BIN	0:09	6	81	1E5D	{08:63}の{03:04}に\n{04:00}		cast\n\n on themself!\n\ncast\n\n on an ally!\n	v005		reads: 自分の味方に\nを唱えた！ ; reads: 自分の味方に\nを唱えた！ @refalign @refalign-joined
@@ -74,7 +74,7 @@ m/MS00DE.BIN	0:09	7	95	18	の		uses 	v005		@refalign
 m/MS00DE.BIN	0:0A	0	0	DATA	{04:03}{08:62}	{04:03}{08:62}				reads: 　は、
 m/MS00DE.BIN	0:0A	1	24	1ECE	{01:1C}に		cast\n	v005		reads: みんなに; reads: みんなに @refalign
 m/MS00DE.BIN	0:0A	2	37	1ECF	{08:63}で		 on everyone!\n	v005		reads: 自分で; reads: 自分で @refalign
-m/MS00DE.BIN	0:0A	3	50	1F01	に		cast\n\n on themself!\n	v005		reads: に @rebase-tagdiff @refalign @refalign-joined
+m/MS00DE.BIN	0:0A	3	50	1F01	に	!\n	cast\n\n on themself!\n	v005	draft	reads: に @rebase-tagdiff @refalign @refalign-joined @seamfix-2026-09-05
 m/MS00DE.BIN	0:0A	4	55	18	{03:11}{04:00}	{03:11}{04:00}	cast\n	v005		reads: 敵にを唱えた！ 
 m/MS00DE.BIN	0:0A	5	69	1E5C	{02:0E}に		 on 	v005		reads: こちらに; reads: こちらに @refalign
 m/MS00DE.BIN	0:0A	6	88	1ECF	{03:06}\n	{03:06}\n				reads: 自分に\n
@@ -141,9 +141,9 @@ m/MS00DE.BIN	0:2B	0	0	DATA	{04:03}の猛烈な羽ばたきの風が		{04:03}'s w
 m/MS00DE.BIN	0:2B	1	31	1E5D	{03:11}襲いかかる\n		dealing heavy damage to the foe.\n	v005		reads: 敵に襲いかかる\n; reads: 敵に襲いかかる\n @refalign
 m/MS00DE.BIN	0:2B	2	47	18	襲{08:52}{08:1E}\n		dealing heavy damage.\\	v005		reads: 襲ってきた\n; reads: 襲ってきた\n @refalign
 m/MS00DE.BIN	0:2C	0	0	DATA	{04:03}{08:62}	{04:03}{08:62}				reads: 　は、
-m/MS00DE.BIN	0:2C	1	10	1ECF	身を守っ{08:14}		 has their guard up.\n\n is guarding \n{04:EB}.\n	v005		reads: 身を守っている; reads: 身を守っている @refalign @refalign-joined
+m/MS00DE.BIN	0:2C	1	10	1ECF	身を守っ{08:14}	is guarding	 has their guard up.\n\n is guarding \n{04:EB}.\n	v005	draft	reads: 身を守っている; reads: 身を守っている @refalign @refalign-joined @seamfix-2026-09-05
 m/MS00DE.BIN	0:2C	2	44	18	何故か敵	何故か敵	 is guarding the enemy.\n	v005		reads: 
-m/MS00DE.BIN	0:2C	3	62	1E5D	{08:0E}の		 is guarding \n{04:EB}.\n	v005		reads: 仲魔の; @refalign @refalign-joined
+m/MS00DE.BIN	0:2C	3	62	1E5D	{08:0E}の	 ally's 	 is guarding \n{04:EB}.\n	v005	draft	reads: 仲魔の; @refalign @refalign-joined @seamfix-2026-09-05
 m/MS00DE.BIN	0:2C	4	75	18	何故か		 is guarding 	v005		reads: 仲魔の @refalign
 m/MS00DE.BIN	0:2C	5	87	1F01	を庇っ{08:14}	.\n			draft	reads: を庇っている @ours-2026-09-05
 m/MS00DE.BIN	0:2E	0	0	DATA	{04:03}はうろうろ{08:13}\n		{04:03} appears restless.\n	v005		reads: 　はうろうろしている\n; reads: 　はうろうろしている\n @refalign
@@ -154,8 +154,8 @@ m/MS00DE.BIN	0:32	0	0	DATA	{04:03}は目を閉じ{08:14}\n		{04:03} closes their
 m/MS00DE.BIN	0:33	0	0	DATA	{04:03}	{04:03}				reads: 　
 m/MS00DE.BIN	0:33	1	10	1A	{08:4F}{08:62}ガーディアンの制服を\n装備の上{08:42}羽織{08:51}\n		's group threw a Guardian uniform on\nover their equipment.\n	ours		reads: たちは、ガーディアンの制服を\n装備の上から羽織った\n
 m/MS00DE.BIN	0:33	2	58	19	{08:4F}{08:62}ガーディアンの制服を脱いだ\n		's group took off the Guardian uniform.\n	ours		reads: たちは、ガーディアンの制服を脱いだ\n
-m/MS00DE.BIN	0:34	0	6	1F01	{08:62}	{08:62}	{04:EC} 	ours		reads: は、 @rebase-tagdiff
-m/MS00DE.BIN	0:34	1	14	1F01	を召喚{08:4B}\n		summoned {04:EB}.\n	ours		reads: を召喚した\n @rebase-tagdiff
+m/MS00DE.BIN	0:34	0	6	1F01	{08:62}	 summoned 	{04:EC} 	ours	draft	reads: は、 @rebase-tagdiff @seamfix-2026-09-05
+m/MS00DE.BIN	0:34	1	14	1F01	を召喚{08:4B}\n	.\n	summoned {04:EB}.\n	ours	draft	reads: を召喚した\n @rebase-tagdiff @seamfix-2026-09-05
 m/MS00DE.BIN	0:35	0	0	DATA	{04:08}使{08:51}\n		 used it.\n	ours		reads: は、を使った\n
 m/MS00DE.BIN	0:36	0	0	DATA	{04:08}	{04:08}				reads: は、を
 m/MS00DE.BIN	0:36	1	8	1ECF	{08:63}	{08:63}				reads: 自分
@@ -174,7 +174,7 @@ m/MS00DE.BIN	0:3B	0	0	DATA	{04:08}発射{08:4B}\n					reads: は、を発射し�
 m/MS00DE.BIN	0:3C	0	0	DATA	{04:08}鳴ら{08:4B}\n					reads: は、を鳴らした\n
 m/MS00DE.BIN	0:3D	0	0	DATA	{04:08}撒{08:64}\n					reads: は、を撒いた\n
 m/MS00DE.BIN	0:3E	0	0	DATA	{04:08}割{08:51}\n					reads: は、を割った\n
-m/MS00DE.BIN	0:3F	0	6	1F01	は{02:0E}に気がつ{08:64}！\n		{04:EC} noticed you!\n	v005		reads: はこちらに気がついた！\n; reads: はこちらに気がついた！\n @rebase-tagdiff @refalign
+m/MS00DE.BIN	0:3F	0	6	1F01	は{02:0E}に気がつ{08:64}！\n	 has noticed you!\n	{04:EC} noticed you!\n	v005	draft	reads: はこちらに気がついた！\n; reads: はこちらに気がついた！\n @rebase-tagdiff @refalign @seamfix-2026-09-05
 m/MS00DE.BIN	0:40	0	0	DATA	{04:03}は		{04:03} is doing [	v005		reads: 　は; reads: 　は @refalign
 m/MS00DE.BIN	0:40	1	9	1F01	を{08:13}\n	 ]\n			draft	reads: をしている\n @ours-2026-09-05
 m/MS00DE.BIN	0:41	0	0	DATA	{04:03}は		{04:03} gave up [	v005		reads: 　は; reads: 　は @refalign

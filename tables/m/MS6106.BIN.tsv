@@ -3,7 +3,7 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS6106.BIN	0:72	0	45	1F01	は迫力に気圧{03:0C}た！\n		She quails before your intensity!\n	ours		reads: は迫力に気圧された！\n @rebase-tagdiff
+m/MS6106.BIN	0:72	0	45	1F01	は迫力に気圧{03:0C}た！\n	 was overwhelmed by the sheer force!\n	She quails before your intensity!\n	ours	draft	reads: は迫力に気圧された！\n @rebase-tagdiff @seamfix-2026-09-05
 m/MS6106.BIN	0:BB	0	0	DATA	戦う気は無い様{08:55}ね\n<wait>		It seems you'd\nrather not fight.\n<wait>	ours		reads: 戦う気は無い様ですね\n<wait>
 m/MS6106.BIN	0:BC	0	0	DATA	困{08:51}ときは　お互い様{08:55}\n<wait>		We must help each other\nin times of need.\n<wait>	ours		reads: 困ったときは　お互い様です\n<wait>
 m/MS6106.BIN	0:BD	0	0	DATA	用も無い{08:7D}　呼び止め{08:25}で下{08:49}\n<wait>		If you have no business with me,\nplease don't call out.\n<wait>	ours		reads: 用も無いなら　呼び止めないで下さい\n<wait>
@@ -54,7 +54,7 @@ m/MS6106.BIN	2:24	0	0	DATA	お困りの様{08:55}ね\n<wait>		You seem troubled.
 m/MS6106.BIN	2:25	0	0	DATA	助けて差し上げま{08:80}\n<wait>		Allow me to help you.\n<wait>	ours		reads: 助けて差し上げましょう\n<wait>
 m/MS6106.BIN	2:5D	0	0	DATA	頼{08:5D}い事{08:55}\n<wait>		How reassuring.\n<wait>	ours		reads: 頼もしい事です\n<wait>
 m/MS6106.BIN	2:2C	0	0	DATA	何か　私に出来る事は　あり{02:0A}か？\n<wait>		Is there anything I can do to help?\n<wait>	ours		reads: 何か　私に出来る事は　ありませんか？\n<wait>
-m/MS6106.BIN	2:2E	0	6	1F01	の方は　私には無理{08:55}\n<wait>		That's not something I'm capable of.\n<wait>	ours		reads: の方は　私には無理です\n<wait> @rebase-tagdiff
+m/MS6106.BIN	2:2E	0	6	1F01	の方は　私には無理{08:55}\n<wait>	 is beyond me.\n<wait>	That's not something I'm capable of.\n<wait>	ours	draft	reads: の方は　私には無理です\n<wait> @rebase-tagdiff @seamfix-2026-09-05
 m/MS6106.BIN	2:5E	0	0	DATA	{08:0B}の力を借りねば\n所詮　貴方は　何も出来{08:25}では{08:25}{08:55}か！\n<wait>		Without borrowing a demon's power,\nyou can't do anything at all, can you!\n<wait>	ours		reads: 悪魔の力を借りねば\n所詮　貴方は　何も出来ないではないですか！\n<wait>
 m/MS6106.BIN	2:5F	0	0	DATA	英雄を気取{08:52}も\n貴方は　やはり　{08:82}の人に過ぎ{02:0A}\n<wait>		You may play the hero,\nbut you're still just an ordinary person.\n<wait>	ours		reads: 英雄を気取っても\n貴方は　やはり　ただの人に過ぎません\n<wait>
 m/MS6106.BIN	2:60	0	0	DATA	貴方の事を　認{08:2E}{01:3E}はあり{02:0A}！\n<wait>		I have no intention of acknowledging you!\n<wait>	ours		reads: 貴方の事を　認めるつもりはありません！\n<wait>
@@ -215,7 +215,7 @@ m/MS6106.BIN	4:91	0	0	DATA	フフフ\n<wait>		Fufufu\n<wait>	ours
 m/MS6106.BIN	4:92	0	0	DATA	{08:5C}少し頂け{02:0A}か？\n<wait>		Could I not receive\na little more?\n<wait>	ours		reads: もう少し頂けませんか？\n<wait>
 m/MS6106.BIN	4:93	0	0	DATA	血も涙も無い殺戮者め！\n<wait>		You heartless\nkiller!\n<wait>	ours		
 m/MS6106.BIN	4:94	0	0	DATA	貴方は　		You 	ours		
-m/MS6106.BIN	4:94	1	14	1F01	！\n{08:79}後の調子{08:26}かが{08:55}？\n<wait>		{04:FF}!\nHow have you been since then?\n<wait>	ours		reads: ！\nその後の調子はいかがです？\n<wait> @rebase-tagdiff
+m/MS6106.BIN	4:94	1	14	1F01	！\n{08:79}後の調子{08:26}かが{08:55}？\n<wait>	!\nHow have you been since then?\n<wait>	{04:FF}!\nHow have you been since then?\n<wait>	ours	draft	reads: ！\nその後の調子はいかがです？\n<wait> @rebase-tagdiff @seamfix-2026-09-05
 m/MS6106.BIN	4:95	0	0	DATA	来{08:25}で下{08:49}！\n<wait>		Please don't\ncome near!\n<wait>	ours		reads: 来ないで下さい！\n<wait>
 m/MS6106.BIN	4:96	0	0	DATA	見逃{08:4A}あげま{08:80}\n<wait>		I'll let this\nslide.\n<wait>	ours		reads: 見逃してあげましょう\n<wait>
 m/MS6106.BIN	4:97	0	0	DATA	真{08:59}力　見{08:67}差し上げま{08:80}！\n<wait>		Allow me to show\nyou my true power!\n<wait>	ours		reads: 真なる力　見せて差し上げましょう！\n<wait>
