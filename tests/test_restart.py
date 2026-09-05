@@ -133,6 +133,7 @@ def test_release_exe_carries_the_overlay_hook_and_dev_adds_the_tracer():
     hdrs = opt + struct.unpack_from("<H", dev, pe2.e_lfanew + 4 + 16)[0]
     allowed = ({pe2.va2off(s) + k for s in tracer.CALL_SITES for k in (1, 2, 3, 4)}
                | set(range(pe2.e_lfanew + 6, pe2.e_lfanew + 8))       # NumberOfSections
+               | set(range(opt + 4, opt + 16))                        # SizeOf{Code,Init,Uninit}Data
                | set(range(opt + 56, opt + 60))                       # SizeOfImage
                | set(range(hdrs, hdrs + pe2.numsec * 0x28)))          # section headers
     assert set(diffs) <= allowed, sorted(set(diffs) - allowed)

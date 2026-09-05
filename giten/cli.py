@@ -96,6 +96,9 @@ def make_parser():
     p.add_argument("--out", default=None, help="default build/overlay.dat")
     _common(p)
 
+    p = sub.add_parser("mapnames", help="refresh tables/mapnames.tsv from the map files")
+    _common(p)
+
     p = sub.add_parser("itemdb", help="the item database -> et/et0102.bin (English builds)")
     p.add_argument("--extract", action="store_true", help="refresh tables/itemdb.tsv instead")
     p.add_argument("--out", default=None, help="default build/en/et/et0102.bin")
@@ -177,6 +180,15 @@ def main(argv=None) -> int:
     if args.cmd == "exe":
         print("built " + exepatch.build(args.which, args.out))
         return 0
+    if args.cmd == "mapnames":
+        from .exe import mapnames
+        n = mapnames.write_table(paths.ORIGINAL_DDSWIN)
+        keep, findings = mapnames.plan(mapnames.read_table())
+        for mid, msg in findings:
+            print("  REFUSED %04X: %s" % (mid, msg))
+        if not args.quiet:
+            print("%s: %d maps, %d with English" % (mapnames.TABLE, n, len(keep)))
+        return 1 if findings else 0
     if args.cmd == "itemdb":
         from . import itemdb
         from .exe import database
