@@ -73,12 +73,11 @@ def write(path: str, rows: "list[Row]") -> None:
     silently lost 350 rows)."""
     lines = [r.to_tsv() for r in rows]
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8", newline="
-") as fh:
+    with open(path, "w", encoding="utf-8", newline="\n") as fh:
         fh.write(HEADER_COMMENT)
+        fh.write("\t".join(COLUMNS) + "\n")
         for line in lines:
-            fh.write(line + "
-")
+            fh.write(line + "\n")
 
 
 def read(path: str) -> "list[Row]":
