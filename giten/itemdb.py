@@ -182,7 +182,9 @@ def cells(s: str) -> int:
 
 
 def _esc(s: str) -> str:
-    return s.replace("\\", "\\\\").replace("\t", "\t").replace("\n", "\n")
+    # the tab and newline replacements must produce a *backslash* and a letter;
+    # writing them raw would split the row and corrupt the table
+    return s.replace("\\", "\\\\").replace("\t", "\\t").replace("\n", "\\n")
 
 
 def _unesc(s: str) -> str:

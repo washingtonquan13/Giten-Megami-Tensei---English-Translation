@@ -122,3 +122,99 @@ def test_wide_table_is_needed_for_english_and_round_trips():
     assert all(offs[i] <= offs[i + 1] for i in range(len(offs) - 1))
     first = wide[offs[1]:offs[2]]
     assert first == recs[1].pack(*fat[1])
+
+
+def _engine_view(blob):
+    """What the patched engine sees: chain concatenated, u32 table, no mask."""
+    cs, end = container.split(blob)
+    assert end == len(blob), "the chain does not land on EOF"
+    base = b"".join(c.body for c in cs)
+    count = struct.unpack_from("<H", base, 0)[0]
+
+    def locate(i):                       # 0x00422D10 + the patched 0x00422D2B
+        if i >= count or i < 0:          # the engine's clamp
+            i = 1
+        return struct.unpack_from("<I", base, 2 + i * 4)[0]
+
+    return base, count, locate
+
+
+def test_every_record_is_readable_through_the_engines_own_path():
+    """End to end: build the file, then read it back the way the engine does.
+
+    The other tests check the builder and the patches separately.  This one
+    walks the container chain like the loader, indexes the u32 table like the
+    patched locate, adds the offset without a mask like our resolver, and
+    splits the record with HEADER_LEN -- then asserts every one of the 744
+    records yields exactly the strings the table asked for.
+    """
+    recs = itemdb.parse(itemdb.source_body(paths.ORIGINAL_DDSWIN))
+    table = os.path.join(paths.REPO_ROOT, "tables", "itemdb.tsv")
+    strings, findings = itemdb.strings_from_table(table, recs)
+    assert not findings, findings
+
+    blob = itemdb.pack_file(recs, strings)
+    base, count, locate = _engine_view(blob)
+    assert count == len(recs)
+
+    checked = 0
+    for rec in recs:
+        if not rec.translatable:
+            continue
+        off = locate(rec.index)
+        rest = base[off + itemdb.HEADER_LEN[rec.type]:]
+        p = rest.index(b"\x00")
+        q = rest.index(b"\x00", p + 1)
+        want_name, want_desc = strings.get(rec.index, (rec.name, rec.desc))
+        assert rest[:p] == want_name, (rec.index, rest[:p], want_name)
+        assert rest[p + 1:q] == want_desc, (rec.index, rest[p + 1:q], want_desc)
+        checked += 1
+    assert checked == 744, checked
+
+
+def test_records_really_do_live_past_the_old_64k_ceiling():
+    """If nothing sits above 0xFFFF the widening is untested by accident."""
+    recs = itemdb.parse(itemdb.source_body(paths.ORIGINAL_DDSWIN))
+    strings, _ = itemdb.strings_from_table(
+        os.path.join(paths.REPO_ROOT, "tables", "itemdb.tsv"), recs)
+    base, count, locate = _engine_view(itemdb.pack_file(recs, strings))
+
+    above = [i for i in range(count) if locate(i) > 0xFFFF]
+    assert above, "no record is past 0xFFFF -- the u32 table is not being exercised"
+
+    # and the stock u16 load really would land somewhere else entirely
+    i = above[0]
+    stock = struct.unpack_from("<H", base, 2 + i * 2)[0]
+    assert stock != locate(i)
+
+
+def test_the_u16_builder_refuses_the_current_table_instead_of_truncating():
+    """The English no longer fits the original format; that must be an error."""
+    recs = itemdb.parse(itemdb.source_body(paths.ORIGINAL_DDSWIN))
+    strings, _ = itemdb.strings_from_table(
+        os.path.join(paths.REPO_ROOT, "tables", "itemdb.tsv"), recs)
+    try:
+        itemdb.build(recs, strings)          # wide=False, the original format
+    except itemdb.ItemDbError as exc:
+        assert "u16 offset table caps it" in str(exc), exc
+    else:
+        raise AssertionError("a body past 65,535 was accepted by the u16 builder")
+
+
+def test_table_escaping_survives_a_round_trip():
+    """A tab or a backslash in a name must not corrupt the TSV."""
+    import tempfile
+
+    recs = itemdb.parse(itemdb.source_body(paths.ORIGINAL_DDSWIN))
+    nasty = {1: ("back\slash", "tab\there and a newline\nthere"),
+             2: ("trailing space ", "")}
+    tmp = os.path.join(tempfile.mkdtemp(), "t.tsv")
+    itemdb.write_table(tmp, recs, {i: (n, d, "draft", "") for i, (n, d) in nasty.items()})
+    back = itemdb.read_table(tmp)
+    for i, (n, d) in nasty.items():
+        assert back[i][0] == n, (i, back[i][0], n)
+        assert back[i][1] == d, (i, back[i][1], d)
+    # every row still has its eight columns
+    for ln in open(tmp, encoding="utf-8"):
+        if not ln.startswith("#") and ln.strip():
+            assert len(ln.rstrip("\n").split("\t")) == 8, ln
