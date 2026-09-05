@@ -15,7 +15,7 @@ et/ID00A2.BIN	0:97	8	143	1FB2	喉を撫でる		Rub Neck	v005		menu option, decla
 et/ID00A2.BIN	0:97	9	155	1FB2	や{08:2E}		Never Mind	v005		reads: やめる; menu option, declared width 20 columns
 et/ID00A2.BIN	0:97	10	161	1FB2	他の物		Other	v005		menu option, declared width 20 columns; reads: やめる
 et/ID00A2.BIN	0:97	11	216	1FB2	宝石		Gemstone	v005		menu option, declared width 20 columns
-et/ID00A2.BIN	0:97	12	222	1FB2	魔石	魔石	Magic Stone	v005		menu option, declared width 20 columns; reads: バーチャルキャンプレジスタンス
+et/ID00A2.BIN	0:97	12	222	1FB2	魔石	Magic Stone	Magic Stone	v005	draft	menu option, declared width 20 columns; reads: バーチャルキャンプレジスタンス @seamfix-2026-09-05
 et/ID00A2.BIN	0:97	13	228	1FB2	ＭＡＧ		Magnetite	v005		menu option, declared width 20 columns; reads: 燼切りM @rebase-unmatched idx13 en=燼2{01:4D} @rebase-unmatched idx13 en=燼2{01:4D}
 et/ID00A2.BIN	0:97	14	236	1FB2	金		Money	v005		menu option, declared width 20 columns
 et/ID00A2.BIN	0:97	15	240	1FB2	他の物		Other	v005		menu option, declared width 20 columns
@@ -23,11 +23,11 @@ et/ID00A2.BIN	0:97	16	292	1FB2	猫{08:81}らしを振る		Kitty Stone	v005		read
 et/ID00A2.BIN	0:97	17	308	1FB2	マタタビをあげる		Catnip	v005		menu option, declared width 20 columns
 et/ID00A2.BIN	0:97	18	326	1FB2	や{08:2E}		Never Mind	v005		reads: やめる; menu option, declared width 20 columns
 et/ID00A2.BIN	0:97	19	332	1FB2	他の物		Other	v005		menu option, declared width 20 columns; reads: 燎デビルバスター燠飛び道具燵切り早坂達也
-et/ID00A2.BIN	0:97	20	384	1F01	は喜んで{08:40}\n<wait>					reads: は喜んでいる\n<wait>; reads: 猫じゃらしを振る; menu option, declared width 20 columns @rebase-new
-et/ID00A2.BIN	0:97	21	423	1F01	はスキだらけだ！\n＞{08:0C}し{08:15}\n					reads: はスキだらけだ！\n＞攻撃しますか？\n; menu option, declared width 20 columns @rebase-new
-et/ID00A2.BIN	0:97	22	476	1F01	はと{08:54}興奮{08:13}\n<wait>					reads: はとても興奮している\n<wait>; reads: やめる; menu option, declared width 20 columns @rebase-new
+et/ID00A2.BIN	0:97	20	384	1F01	は喜んで{08:40}\n<wait>	 is delighted\n<wait>			draft	reads: は喜んでいる\n<wait>; reads: 猫じゃらしを振る; menu option, declared width 20 columns @rebase-new @seamfix-2026-09-05
+et/ID00A2.BIN	0:97	21	423	1F01	はスキだらけだ！\n＞{08:0C}し{08:15}\n	 is wide open!\n>Attack?\n			draft	reads: はスキだらけだ！\n＞攻撃しますか？\n; menu option, declared width 20 columns @rebase-new @seamfix-2026-09-05
+et/ID00A2.BIN	0:97	22	476	1F01	はと{08:54}興奮{08:13}\n<wait>	 is terribly excited\n<wait>			draft	reads: はとても興奮している\n<wait>; reads: やめる; menu option, declared width 20 columns @rebase-new @seamfix-2026-09-05
 et/ID00A2.BIN	0:97	23	495	1FBA	＞も{08:53}やり{08:15}\n		>Keep going?\n	v005		reads: ＞もっとやりますか？\n; menu option, declared width 20 columns
-et/ID00A2.BIN	0:97	24	521	0E	突然　	突然　	Suddenly, 	v005		reads: 桐島英美
+et/ID00A2.BIN	0:97	24	521	0E	突然　	Suddenly 	Suddenly, 	v005	draft	reads: 桐島英美 @seamfix-2026-09-05
 et/ID00A2.BIN	0:97	25	533	1F01	が{03:07}{08:1C}\n	 attacks!\n	{04:EF} attacks!\n	v005	draft	reads: が襲いかかってきた！\n; reads: 燼そんなこと] @rebase-unmatched idx25 en=燼;{01:5D} @rebase-tagdiff @rebase-unmatched idx25 en=燼;{01:5D} @seamfix-2026-09-05
 et/ID00A2.BIN	0:97	26	553	1F01	は尻尾をふりふり{08:13}\n<wait>	 is wagging its tail.\n<wait>	{04:EF} is wagging its tail.\n<wait>	v005	draft	reads: は尻尾をふりふりしている\n<wait>; reads: は喜んでいる\n<wait> @rebase-tagdiff @rebase-unmatched idx26 en={04:EF} seems happy.\n<wait> @seamfix-2026-09-05
 et/ID00A2.BIN	0:97	27	578	1FBA	＞も{08:53}やり{08:15}\n		>Keep going?\n	v005		reads: ＞もっとやりますか？\n; reads: はスキだらけだ！\n＞攻撃しますか？\n @rebase-unmatched idx27 en={04:EF} has left their guard down.\n>Use this opportunity to attack?\n
@@ -38,6 +38,6 @@ et/ID00A2.BIN	0:97	31	826	18	マタタビを持{08:52}{08:24}！\n<wait>		You do
 et/ID00A2.BIN	0:97	32	886	1F01	は喉をゴロゴロ鳴ら{08:13}\n	 is purring.\n	{04:EF} is purring.\n	v005	draft	reads: は喉をゴロゴロ鳴らしている\n; reads: は尻尾をふりふりしている\n<wait> @rebase-tagdiff @seamfix-2026-09-05
 et/ID00A2.BIN	0:97	33	923	1FB2	も{08:53}やる		Keep Going	v005		reads: もっとやる; menu option, declared width 20 columns; reads: ＞もっとやりますか？\n
 et/ID00A2.BIN	0:97	34	933	1FB2	やめちゃう		Stop	v005		menu option, declared width 20 columns; reads: は尻尾をふりふりしている\n<wait>
-et/ID00A2.BIN	0:97	35	1030	1F01	は眠{08:52}{08:1F}\n					reads: は眠ってしまった\n; reads: 猫じゃらしを持っていない！\n<wait> @rebase-unmatched idx43 en={04:EF} fell asleep.\n @rebase-new @rebase-unmatched idx43 en={04:EF} fell asleep.\n
+et/ID00A2.BIN	0:97	35	1030	1F01	は眠{08:52}{08:1F}\n	 fell asleep\n			draft	reads: は眠ってしまった\n; reads: 猫じゃらしを持っていない！\n<wait> @rebase-unmatched idx43 en={04:EF} fell asleep.\n @rebase-new @rebase-unmatched idx43 en={04:EF} fell asleep.\n @seamfix-2026-09-05
 et/ID00A2.BIN	15:AB	0	0	DATA	うーむ　たまらんのぉ！\n<wait>		Aah! So good!\n<wait>	v005		
 et/ID00A2.BIN	15:AC	0	0	DATA	そ　{08:4D}は！\nあぁぁ身体が勝手に！\n<wait>		O-Oh no! My body's moving on its own!\n<wait>	v005		reads: そ　それは！\nあぁぁ身体が勝手に！\n<wait>

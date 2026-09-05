@@ -48,8 +48,8 @@ m/MS610D.BIN	0:01	0	14	1FB2	{08:26}	{08:26}	Yes	ours		record reaches an engine n
 m/MS610D.BIN	0:01	1	18	1FB2	{08:27}	{08:27}	No	ours		record reaches an engine no-op opcode; verify in game; reads: いいえ; menu option, declared width 6 columns
 m/MS610D.BIN	0:01	2	31	11	{=E6}{=02}{01:00}裔		{=E6}{=02}{01:00}裔	ours		record reaches an engine no-op opcode; verify in game; reads: {=E6}{=02}早坂達也裔
 m/MS610D.BIN	0:02	0	0	UNTILED	C / 疂 / ) / ﾐ / ｱ / ｲ噛ま / * / ｲ思い直す / ｲ / ｷ / ﾑ / 畤 / # / 畧					@noedit; @untiled; record does not tile (expression node 0x00 payload past end); read-only, copied verbatim
-m/MS610D.BIN	0:04	0	14	1F01	は\n		{=FC}{=FF}\n	ours		
-m/MS610D.BIN	0:05	0	5	1F01	は		{=FC}{=FF}	ours		
+m/MS610D.BIN	0:04	0	14	1F01	は\n	 \n	{=FC}{=FF}\n	ours	draft	@seamfix-2026-09-05
+m/MS610D.BIN	0:05	0	5	1F01	は	 	{=FC}{=FF}	ours	draft	@seamfix-2026-09-05
 m/MS610D.BIN	0:06	0	11	1FB2	かま{08:2A}		Feed It	ours		record reaches an engine no-op opcode; verify in game; reads: かませる; menu option, declared width 14 columns
 m/MS610D.BIN	0:06	1	19	1FB2	えんりょしとく		I'll Pass	ours		record reaches an engine no-op opcode; verify in game; menu option, declared width 14 columns
 m/MS610D.BIN	0:06	2	44	11	裝{01:00}{=E6}{=07}		裝{01:00}{=E6}{=07}	ours		record reaches an engine no-op opcode; verify in game; reads: 裝早坂達也{=E6}{=07}
@@ -181,7 +181,7 @@ m/MS610D.BIN	0:5D	3	31	1FB2	様子を見る		Observe	ours		record reaches an eng
 m/MS610D.BIN	0:5D	4	52	11	訖{01:00}裲{02:00}訐		訖{01:00}裲Devil Buster訐	ours		record reaches an engine no-op opcode; verify in game; reads: 訖早坂達也裲デビルバスター訐
 m/MS610D.BIN	0:5E	0	0	UNTILED	熬					@noedit; @untiled; record does not tile (expression selector past end of record at 0x7); read-only, copied verbatim
 m/MS610D.BIN	0:5F	0	0	DATA	{07:37}）\n		...)\n	ours		reads: ・・・・・）\n
-m/MS610D.BIN	0:5F	1	10	1F01	は		{=FC}{=FF}	ours		
+m/MS610D.BIN	0:5F	1	10	1F01	は	 	{=FC}{=FF}	ours	draft	@seamfix-2026-09-05
 m/MS610D.BIN	0:60	0	0	UNTILED	痼					@noedit; @untiled; record does not tile (expression selector past end of record at 0x7); read-only, copied verbatim
 m/MS610D.BIN	0:61	0	0	UNTILED	( / 訝< / 裲					@noedit; @untiled; record does not tile (expression selector past end of record at 0x14); read-only, copied verbatim
 m/MS610D.BIN	0:62	0	5	1F01	はヨロヨロと{07:29}\n		{=FC}{=FF} staggers closer\n	ours		record reaches an engine no-op opcode; verify in game; reads: はヨロヨロと近づいた\n; reads: {=FC}{=FF}はヨロヨロと近づいた\n
