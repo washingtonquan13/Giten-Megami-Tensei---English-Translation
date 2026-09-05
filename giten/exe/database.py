@@ -55,6 +55,7 @@ SYMBOLS = {
     "ET_ID": ET_ID,
     "BUF_CHUNK": BUF_CHUNK,
     "BUF_COUNT": BUF_COUNT,
+    "BUF_SIZE": BUF_SIZE,
     "ROUTER": 0x00401DD0,        # (id, kind, flags) -> FILE *
     "ALLOC": 0x004044C0,         # (size, 1) -> handle
     "HANDLE2PTR": 0x00404670,    # handle -> buffer base
@@ -105,6 +106,15 @@ def assemble(cave_va: int):
         for k, v in SYMBOLS.items():
             defs += ["--defsym", "%s=0x%X" % (k, v)]
         subprocess.run(["as", "--32", *defs, "-o", obj, SOURCE], check=True)
+        # An undefined symbol is not a link error here -- there is no link step.
+        # `as` emits a relocation, objcopy drops it, and the immediate is left
+        # zero: `add ebx, BUF_SIZE` becomes `add ebx, [0]`, a null dereference
+        # that assembles clean and dies on the first frame.  Refuse instead.
+        undef = subprocess.run(["nm", "-u", obj], check=True,
+                               capture_output=True, text=True).stdout.split()
+        if undef:
+            raise RuntimeError("database.S references undefined symbols %s -- add them "
+                               "to SYMBOLS" % sorted(set(undef)))
         listing = subprocess.run(["nm", obj], check=True, capture_output=True, text=True).stdout
         syms = {}
         for line in listing.splitlines():

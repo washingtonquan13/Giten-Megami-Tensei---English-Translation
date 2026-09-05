@@ -120,3 +120,27 @@ def test_the_allocator_cannot_be_asked_for_more_than_64k_in_one_argument():
     src = open(database.SOURCE, encoding="utf-8").read()
     assert "push    BUF_COUNT" in src and "push    BUF_CHUNK" in src
     assert "push    BUF_SIZE" not in src, "the size is being passed in one argument again"
+
+
+def test_the_loader_has_no_undefined_symbols_and_no_memory_operands():
+    """An undefined --defsym does not fail the build, it silently becomes [0].
+
+    `as` has no link step here: it emits a relocation, objcopy drops it, and
+    the immediate is left as zero -- so `add ebx, BUF_SIZE` with BUF_SIZE
+    missing from SYMBOLS assembles into `add ebx, dword ptr [0]`, which is a
+    null dereference on the opening frame.  assemble() now refuses that; this
+    pins it, and also checks the loader touches no absolute memory operand
+    other than the one ds slot it is supposed to write.
+    """
+    from capstone import CS_ARCH_X86, CS_MODE_32, CS_OP_MEM, Cs
+
+    blob, syms = database.assemble(0x01000000)          # raises on undefined symbols
+    md = Cs(CS_ARCH_X86, CS_MODE_32)
+    md.detail = True
+    absolute = []
+    for ins in md.disasm(blob, 0x01000000):
+        for op in ins.operands:
+            if op.type == CS_OP_MEM and op.mem.base == 0 and op.mem.index == 0:
+                absolute.append((ins.address, ins.mnemonic, ins.op_str, op.mem.disp))
+    assert all(d == database.SYMBOLS["DEST"] for _, _, _, d in absolute), absolute
+    assert absolute, "expected the store to ds:0x4800E8"
