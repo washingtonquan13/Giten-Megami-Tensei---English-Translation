@@ -5,8 +5,8 @@
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
 m/MS6005.BIN	0:31	0	112	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
 m/MS6005.BIN	0:31	1	116	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
-m/MS6005.BIN	0:64	0	40	1F01	は		{04:FF}	ours		reads: は @rebase-tagdiff
-m/MS6005.BIN	0:64	1	48	1F01	と\n語り合{08:51}\n		 and\n{04:EF} talked things over\n	ours		reads: と\n語り合った\n @rebase-tagdiff
+m/MS6005.BIN	0:64	0	40	1F01	は	 and 	{04:FF}	ours	draft	reads: は @rebase-tagdiff @seamfix-2026-09-05
+m/MS6005.BIN	0:64	1	48	1F01	と\n語り合{08:51}\n	 talked things over\n	 and\n{04:EF} talked things over\n	ours	draft	reads: と\n語り合った\n @rebase-tagdiff @seamfix-2026-09-05
 m/MS6005.BIN	0:64	2	66	1FFA	{02:09}・・\n	.....\n	.....\n	ours	draft	reads: ・・・・・\n @ours-2026-09-05
 m/MS6005.BIN	0:73	0	133	1FB2	{08:0E}になれ		Recruit	ours		reads: 仲魔になれ; menu option, declared width 20 columns
 m/MS6005.BIN	0:73	1	143	1FB2	特に無い		Nothing Special	ours		menu option, declared width 20 columns
@@ -47,8 +47,8 @@ m/MS6005.BIN	6:00	8	469	1FB2	無視	Ignore	Understood	ours	draft	menu option, de
 m/MS6005.BIN	6:00	9	475	1FB2	謝る	Apologize	Stay Back!	ours	draft	menu option, declared width 20 columns @ours-2026-09-05
 m/MS6005.BIN	6:00	10	720	1FB2	わ{08:18}	Understood			draft	reads: わかった; menu option, declared width 20 columns; reads: なだめる @ours-2026-09-05
 m/MS6005.BIN	6:00	11	726	1FB2	来るな！	Stay away!			draft	menu option, declared width 20 columns @ours-2026-09-05
-m/MS6005.BIN	6:0F	0	35	1F01	は石を投{08:44}！{02:09}\n		{04:EF} threw a rock!...\n	ours		reads: は石を投げた！・・・\n @rebase-tagdiff
-m/MS6005.BIN	6:0F	1	63	1F01	はギリギリでかわ{08:17}\n		{04:FF} barely dodged it!\n	ours		reads: はギリギリでかわした！\n @rebase-tagdiff
+m/MS6005.BIN	6:0F	0	35	1F01	は石を投{08:44}！{02:09}\n	 threw a rock!......\n	{04:EF} threw a rock!...\n	ours	draft	reads: は石を投げた！・・・\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6005.BIN	6:0F	1	63	1F01	はギリギリでかわ{08:17}\n	 barely dodged it!\n	{04:FF} barely dodged it!\n	ours	draft	reads: はギリギリでかわした！\n @rebase-tagdiff @seamfix-2026-09-05
 m/MS6005.BIN	6:0F	2	96	18	命中！\n		Hit!\n	ours		
 m/MS6005.BIN	6:0F	3	172	0E	{02:09}	...			draft	reads: ・・・ @ours-2026-09-05
 m/MS6005.BIN	6:0F	4	301	1FB2	シラを切る		Play Dumb	ours		menu option, declared width 20 columns
