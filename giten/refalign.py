@@ -75,21 +75,22 @@ def _units(seq, english):
 
 
 def _pair_bodies(jb, eb, out):
+    """Items are (idx, text, key)."""
     if len(jb) == len(eb):
-        for (ji, _), (_, et) in zip(jb, eb):
-            out[ji] = (et, False)
+        for j, e in zip(jb, eb):
+            out[j[0]] = (e[1], False)
     elif len(jb) > len(eb):
         if not eb:
             return
-        out[jb[0][0]] = (NL.join(t for _, t in eb), True)
-        for ji, _ in jb[1:]:
-            out[ji] = (" ", True)
+        out[jb[0][0]] = (NL.join(e[1] for e in eb), True)
+        for j in jb[1:]:
+            out[j[0]] = (" ", True)
     else:
-        for k, (ji, _) in enumerate(jb):
+        for k, j in enumerate(jb):
             if k < len(jb) - 1:
-                out[ji] = (eb[k][1], False)
+                out[j[0]] = (eb[k][1], False)
             else:
-                out[ji] = (NL.join(t for _, t in eb[k:]), True)
+                out[j[0]] = (NL.join(e[1] for e in eb[k:]), True)
 
 
 def _pair_run(jp, en, out, speakers=None):
