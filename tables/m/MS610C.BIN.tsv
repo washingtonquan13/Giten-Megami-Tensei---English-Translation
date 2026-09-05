@@ -7,14 +7,14 @@ m/MS610C.BIN	0:00	0	24	1F88	＞会話可能圏外{08:55}\n　会話対象に接�
 m/MS610C.BIN	2:01	0	11	1F01	は　何か訴え{08:14}{08:69}だ。\n		It seems to be pleading for something.\n	ours		reads: は　何か訴えているようだ。\n @rebase-tagdiff
 m/MS610C.BIN	2:01	1	48	1FB2	様子を見る		Wait and See	ours		menu option, declared width 20 columns
 m/MS610C.BIN	2:01	2	60	1FB2	ほ{08:53}く		Leave It	ours		reads: ほっとく; menu option, declared width 20 columns
-m/MS610C.BIN	2:01	3	97	1F01	は　何かを差し出{08:4B}。\n<wait>	は　何かを差し出{08:4B}。\n<wait>				reads: は　何かを差し出した。\n<wait>; reads: 部屋 @rebase-new
+m/MS610C.BIN	2:01	3	97	1F01	は　何かを差し出{08:4B}。\n<wait>	 held something out.\n<wait>			draft	reads: は　何かを差し出した。\n<wait>; reads: 部屋 @rebase-new @ours-2026-09-05
 m/MS610C.BIN	2:01	4	143	1F01	は　	は　				reads: は　 @rebase-unmatched idx6 en=It @rebase-new @rebase-unmatched idx5 en=It holds something out to you.\n<wait> @rebase-unmatched idx6 en=It
 m/MS610C.BIN	2:02	0	8	1F01	は　		It	ours		reads: は　 @rebase-tagdiff
 m/MS610C.BIN	2:02	1	31	1FB2	刺激{08:4A}みる		Poke It	ours		reads: 刺激してみる; menu option, declared width 20 columns
 m/MS610C.BIN	2:02	2	43	1FB2	様子を見る		Wait and See	ours		menu option, declared width 20 columns
 m/MS610C.BIN	2:02	3	55	1FB2	立ち去る		Leave	ours		menu option, declared width 20 columns
 m/MS610C.BIN	2:02	4	93	1F01	は　	は　				reads: は　 @rebase-new
-m/MS610C.BIN	2:02	5	121	1F01	は　突然					reads: は　突然; reads: ペンタグランマﾒ @rebase-unmatched idx5 en=Pentagramﾒ @rebase-new @rebase-unmatched idx5 en=Pentagramﾒ
+m/MS610C.BIN	2:02	5	121	1F01	は　突然	 suddenly			draft	reads: は　突然; reads: ペンタグランマﾒ @rebase-unmatched idx5 en=Pentagramﾒ @rebase-new @rebase-unmatched idx5 en=Pentagramﾒ @ours-2026-09-05
 m/MS610C.BIN	2:02	6	145	1F0E	そ{08:4A}　	そ{08:4A}　	And then	ours		reads: そして　
 m/MS610C.BIN	2:02	7	157	1F01	は　突然		It suddenly	ours		reads: は　突然 @rebase-tagdiff @rebase-unmatched idx7 en=It
 m/MS610C.BIN	2:02	8	194	1F81	{04:FF}	{04:FF}				reads: ; reads: は　突然 @rebase-unmatched idx8 en=It suddenly
@@ -28,7 +28,7 @@ m/MS610C.BIN	2:03	2	59	1FB2	いら{08:25}		Pass	ours		reads: いらない; menu 
 m/MS610C.BIN	2:03	3	113	1F01	は　	は　				reads: は　; reads: おまえ @rebase-new
 m/MS610C.BIN	2:03	4	120	0D	逃げ出{08:17}\n<wait>	逃げ出{08:17}\n<wait>	ran off!\n<wait>	ours		reads: 逃げ出した！\n<wait>
 m/MS610C.BIN	2:03	5	144	18	{08:61}　逃げられ{08:25}！\n<wait>	{08:61}　逃げられ{08:25}！\n<wait>	...but couldn't get away!\n<wait>	ours		reads: しかし　逃げられない！\n<wait>
-m/MS610C.BIN	2:03	6	169	1FD1	！！！\n		!!!\n	ours		reads: は　 @rebase-unmatched idx6 en=It
+m/MS610C.BIN	2:03	6	169	1FD1	！！！\n	!!!\n	!!!\n	ours	draft	reads: は　 @rebase-unmatched idx6 en=It @ours-2026-09-05
 m/MS610C.BIN	2:03	7	190	1F01	は　恐れ{08:14}{08:69}だ。\n<wait>		It seems frightened.\n<wait>	ours		reads: は　恐れているようだ。\n<wait>; reads: 逃げ出した！\n<wait> @rebase-tagdiff
 m/MS610C.BIN	2:03	8	225	1F01	は　		It	ours		reads: は　; reads: しかし　逃げられない！\n<wait> @rebase-tagdiff
 m/MS610C.BIN	2:03	9	243	1F01	は		It	ours		reads: は @rebase-tagdiff
@@ -36,20 +36,20 @@ m/MS610C.BIN	9:10	0	28	1F01	は手招き{08:13}{08:69}だ\n		It seems to be beck
 m/MS610C.BIN	9:10	1	59	1FB2	行か{08:25}		Don't Go	ours		reads: 行かない; menu option, declared width 20 columns
 m/MS610C.BIN	9:10	2	67	1FB2	行く		Go	ours		menu option, declared width 20 columns
 m/MS610C.BIN	9:12	0	0	DATA	怒{08:51}{08:69}だ\n<wait>		Seems angry.\n<wait>	ours		reads: 怒ったようだ\n<wait>
-m/MS610C.BIN	9:14	0	5	16	！！！\n		!!!\n	ours		
-m/MS610C.BIN	9:14	1	18	1F01	は恐れ{08:14}\n<wait>					reads: は恐れている\n<wait> @rebase-new @rebase-unmatched idx1 en=It looks frightened.\n<wait>
+m/MS610C.BIN	9:14	0	5	16	！！！\n	!!!\n	!!!\n	ours	draft	@ours-2026-09-05
+m/MS610C.BIN	9:14	1	18	1F01	は恐れ{08:14}\n<wait>	 is afraid\n<wait>			draft	reads: は恐れている\n<wait> @rebase-new @rebase-unmatched idx1 en=It looks frightened.\n<wait> @ours-2026-09-05
 m/MS610C.BIN	9:14	2	49	1F01	は	は				reads: は @rebase-new
-m/MS610C.BIN	9:14	3	65	1F01	は怒{08:51}{08:69}だ\n<wait>					reads: は怒ったようだ\n<wait>; reads: は怒ったようだ\n<wait> @rebase-unmatched idx4 en=It seems to have gotten angry.\n<wait> @rebase-new @rebase-unmatched idx3 en=It @rebase-unmatched idx4 en=It seems to have gotten angry.\n<wait>
+m/MS610C.BIN	9:14	3	65	1F01	は怒{08:51}{08:69}だ\n<wait>	 seems angry\n<wait>			draft	reads: は怒ったようだ\n<wait>; reads: は怒ったようだ\n<wait> @rebase-unmatched idx4 en=It seems to have gotten angry.\n<wait> @rebase-new @rebase-unmatched idx3 en=It @rebase-unmatched idx4 en=It seems to have gotten angry.\n<wait> @ours-2026-09-05
 m/MS610C.BIN	9:15	0	6	1F01	は{02:0E}を見つめ{08:14}\n		It's staring right at you.\n	ours		reads: はこちらを見つめている\n @rebase-tagdiff
 m/MS610C.BIN	9:15	1	37	1FB2	近づく		Approach	ours		menu option, declared width 20 columns
 m/MS610C.BIN	9:15	2	45	1FB2	ＭＡＧをあげる		Give MAG	ours		menu option, declared width 20 columns
 m/MS610C.BIN	9:15	3	61	1FB2	見つ{08:2E}		Stare	ours		reads: 見つめる; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx4 en=飃Devil Buster{=E9}{=16} @rebase-unmatched idx4 en=飃Devil Buster{=E9}{=16}
-m/MS610C.BIN	9:16	0	2	1FBA	{02:09}・・		{02:09}..	ours		reads: ・・・・・
+m/MS610C.BIN	9:16	0	2	1FBA	{02:09}・・	..... 	{02:09}..	ours	draft	reads: ・・・・・ @ours-2026-09-05
 m/MS610C.BIN	9:16	1	19	1F01	に		It	ours		reads: に @rebase-tagdiff
 m/MS610C.BIN	9:16	2	36	1F01	は足に		It grabs your leg.	ours		reads: は足に @rebase-tagdiff
 m/MS610C.BIN	9:16	3	68	1FB2	払う		Pay	ours		menu option, declared width 20 columns
 m/MS610C.BIN	9:16	4	74	1FB2	様子を見る		Wait and See	ours		menu option, declared width 20 columns
-m/MS610C.BIN	9:18	0	6	1F01	は怒{08:51}{08:69}だ\n					reads: は怒ったようだ\n @rebase-new @rebase-unmatched idx0 en=It seems to have gotten angry.\n
+m/MS610C.BIN	9:18	0	6	1F01	は怒{08:51}{08:69}だ\n	 seems angry\n			draft	reads: は怒ったようだ\n @rebase-new @rebase-unmatched idx0 en=It seems to have gotten angry.\n @ours-2026-09-05
 m/MS610C.BIN	9:19	0	6	1F01	は		It	ours		reads: は @rebase-tagdiff
 m/MS610C.BIN	9:1A	0	8	1F01	は		It	ours		reads: は @rebase-tagdiff
 m/MS610C.BIN	9:1A	1	19	1F01	は胴に		It grabs your torso.	ours		reads: は胴に @rebase-tagdiff
@@ -68,7 +68,7 @@ m/MS610C.BIN	9:20	2	57	1FB2	払う		Pay	ours		menu option, declared width 20 col
 m/MS610C.BIN	9:20	3	63	1FB2	様子を見る		Wait and See	ours		menu option, declared width 20 columns
 m/MS610C.BIN	9:21	0	16	1F01	は		It	ours		reads: は @rebase-tagdiff
 m/MS610C.BIN	9:22	0	8	1F01	は		It	ours		reads: は @rebase-tagdiff
-m/MS610C.BIN	9:22	1	13	0D	{02:09}・・\n		{02:09}..\n	ours		reads: ・・・・・\n
+m/MS610C.BIN	9:22	1	13	0D	{02:09}・・\n	.....\n	{02:09}..\n	ours	draft	reads: ・・・・・\n @ours-2026-09-05
 m/MS610C.BIN	9:23	0	0	DATA	突然　					
 m/MS610C.BIN	9:23	1	12	1F01	は		It	ours		reads: は @rebase-tagdiff
 m/MS610C.BIN	9:23	2	36	1FB2	吐き出す		Spit Out	ours		menu option, declared width 20 columns
@@ -79,17 +79,17 @@ m/MS610C.BIN	9:25	0	13	1F01	は思いとど{08:20}{08:69}だ\n		It seems to have
 m/MS610C.BIN	9:26	0	0	DATA	！！！駄目だ！　		!!! No good! 	ours		
 m/MS610C.BIN	9:26	1	35	1FB2	耐{08:28}		Endure	ours		reads: 耐える; menu option, declared width 20 columns
 m/MS610C.BIN	9:26	2	41	1FB2	暴{08:2F}		Resist	ours		reads: 暴れる; menu option, declared width 20 columns
-m/MS610C.BIN	9:27	0	2	1FBA	{02:09}・・		{02:09}..	ours		reads: ・・・・・
+m/MS610C.BIN	9:27	0	2	1FBA	{02:09}・・	..... 	{02:09}..	ours	draft	reads: ・・・・・ @ours-2026-09-05
 m/MS610C.BIN	9:27	1	31	1F01	は		It	ours		reads: は @rebase-tagdiff
-m/MS610C.BIN	9:27	2	36	0D	{02:09}・・		{02:09}..	ours		reads: ・・・・・
+m/MS610C.BIN	9:27	2	36	0D	{02:09}・・	..... 	{02:09}..	ours	draft	reads: ・・・・・ @ours-2026-09-05
 m/MS610C.BIN	9:27	3	48	1F01	は					reads: は @rebase-new @rebase-unmatched idx3 en=It
-m/MS610C.BIN	9:27	4	73	1F01	は気絶{08:4B}\n	は気絶{08:4B}\n				reads: は気絶した\n @rebase-new
+m/MS610C.BIN	9:27	4	73	1F01	は気絶{08:4B}\n	 fainted\n			draft	reads: は気絶した\n @rebase-new @ours-2026-09-05
 m/MS610C.BIN	9:27	5	105	18	{02:09}・・駄目だ！　		..... No good! 	ours		reads: ・・・・・駄目だ！　; reads: は気絶した\n @rebase-unmatched idx5 en=You faint!\n @rebase-unmatched idx5 en=You faint!\n
 m/MS610C.BIN	9:27	6	130	1F01	は	は	You	ours		reads: は @rebase-tagdiff
 m/MS610C.BIN	9:28	0	6	1F01	は機嫌が直{08:51}\n<wait>		It calms down.\n<wait>	ours		reads: は機嫌が直った\n<wait> @rebase-tagdiff
 m/MS610C.BIN	9:29	0	0	DATA	ついに		Finally,	ours		
-m/MS610C.BIN	9:2A	0	5	0D	{02:09}	{02:09}				reads: ・・・
-m/MS610C.BIN	9:2A	1	15	0D	{02:09}	{02:09}				reads: ・・・
+m/MS610C.BIN	9:2A	0	5	0D	{02:09}	...			draft	reads: ・・・ @ours-2026-09-05
+m/MS610C.BIN	9:2A	1	15	0D	{02:09}	...			draft	reads: ・・・ @ours-2026-09-05
 m/MS610C.BIN	9:2A	2	22	14	おお！		Ohh!	ours		
 m/MS610C.BIN	9:2A	3	34	1F01	は					reads: は @rebase-new @rebase-unmatched idx3 en=It
 m/MS610C.BIN	9:2C	0	0	DATA	何か落ちて{08:64}\n<wait>		Something fell out.\n<wait>	ours		reads: 何か落ちていた\n<wait>
@@ -100,9 +100,9 @@ m/MS610C.BIN	9:31	0	6	1F01	が		It	ours		reads: が @rebase-tagdiff
 m/MS610C.BIN	9:31	1	20	1F01	は体が痺{08:11}\n		Its body goes numb!\n	ours		reads: は体が痺れた！\n @rebase-tagdiff
 m/MS610C.BIN	9:32	0	0	DATA	{02:09}・・\n		{02:09}..\n	ours		reads: ・・・・・\n
 m/MS610C.BIN	9:32	1	18	1F01	は機嫌が直{08:51}{08:69}だ\n		It seems to have calmed down.\n	ours		reads: は機嫌が直ったようだ\n @rebase-tagdiff
-m/MS610C.BIN	9:32	2	38	0D	{02:09}	{02:09}				reads: ・・・
+m/MS610C.BIN	9:32	2	38	0D	{02:09}	...			draft	reads: ・・・ @ours-2026-09-05
 m/MS610C.BIN	9:33	0	6	1F01	が		It	ours		reads: が @rebase-tagdiff
-m/MS610C.BIN	9:33	1	11	0D	{02:09}・・\n		{02:09}..\n	ours		reads: ・・・・・\n
+m/MS610C.BIN	9:33	1	11	0D	{02:09}・・\n	.....\n	{02:09}..\n	ours	draft	reads: ・・・・・\n @ours-2026-09-05
 m/MS610C.BIN	9:33	2	24	0E	成功！\n		Success!\n	ours		
 m/MS610C.BIN	9:33	3	37	1F01	の		Your	ours		reads: の @rebase-tagdiff
 m/MS610C.BIN	9:33	4	48	1F01	を		hold on it.	ours		reads: を @rebase-tagdiff
@@ -121,7 +121,7 @@ m/MS610C.BIN	9:3B	3	42	1FB2	無視		Skip	ours		menu option, declared width 20 co
 m/MS610C.BIN	9:3B	4	48	1FB2	{08:0C}	{08:0C}	Attack	ours		reads: 攻撃; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx5 en=颯Devil Buster髀 @rebase-unmatched idx5 en=颯Devil Buster髀
 m/MS610C.BIN	9:3C	0	13	14	の機嫌が直{08:51}{08:69}だ\n	の機嫌が直{08:51}{08:69}だ\n	's mood seems to have improved.\n	ours		reads: の機嫌が直ったようだ\n
 m/MS610C.BIN	9:3C	1	49	18	は怒っ{08:14}　{08:69}だ\n		's clearly furious.\n	ours		reads: は怒っている　ようだ\n; reads: の機嫌が直ったようだ\n
-m/MS610C.BIN	9:3C	2	70	0E	？？？\n<wait>		???\n<wait>	ours		reads: は怒っている　ようだ\n
+m/MS610C.BIN	9:3C	2	70	0E	？？？\n<wait>	???\n<wait>	???\n<wait>	ours	draft	reads: は怒っている　ようだ\n @ours-2026-09-05
 m/MS610C.BIN	9:3C	3	89	1F01	は小刻みに震え出{08:17}\n		It starts trembling!\n	ours		reads: は小刻みに震え出した！\n @rebase-tagdiff
 m/MS610C.BIN	9:3C	4	124	1FB2	傍観		View	ours		menu option, declared width 20 columns; reads: は小刻みに震え出した！\n
 m/MS610C.BIN	9:3C	5	130	1FB2	いじる		Poke	ours		menu option, declared width 20 columns
@@ -141,25 +141,25 @@ m/MS610C.BIN	9:41	0	6	1F01	は					reads: は @rebase-unmatched idx0 en=It @reba
 m/MS610C.BIN	9:41	1	21	0D	逃げ{08:21}\n<wait>		It flees.\n<wait>	ours		reads: 逃げていった\n<wait>
 m/MS610C.BIN	9:42	0	0	DATA	逃げ{08:21}\n		It flees.\n	ours		reads: 逃げていった\n
 m/MS610C.BIN	9:43	0	0	DATA	突然　					
-m/MS610C.BIN	9:44	0	2	1FBA	{02:09}・・		{02:09}..	ours		reads: ・・・・・
-m/MS610C.BIN	9:44	1	18	0E	！！！		髓!!!	ours		@rebase-tagdiff
+m/MS610C.BIN	9:44	0	2	1FBA	{02:09}・・	.....	{02:09}..	ours	draft	reads: ・・・・・ @ours-2026-09-05
+m/MS610C.BIN	9:44	1	18	0E	！！！	!!!	髓!!!	ours	draft	@rebase-tagdiff @ours-2026-09-05
 m/MS610C.BIN	9:44	2	27	0D	毒を受{08:43}\n<wait>		You've been poisoned!\n<wait>	ours		reads: 毒を受けた\n<wait>
-m/MS610C.BIN	9:45	0	13	0D	{03:07}{08:1C}\n<wait>	{03:07}{08:1C}\n<wait>				reads: 襲いかかってきた！\n<wait>
+m/MS610C.BIN	9:45	0	13	0D	{03:07}{08:1C}\n<wait>	Attacked!\n<wait>			draft	reads: 襲いかかってきた！\n<wait> @ours-2026-09-05
 m/MS610C.BIN	9:46	0	0	DATA	後ろ{08:42}{03:07}{08:1C}\n<wait>		It lunges at you from behind!\n<wait>	ours		reads: 後ろから襲いかかってきた！\n<wait>
 m/MS610C.BIN	9:47	0	0	DATA	{08:64}後に　何か落ちて{08:64}\n<wait>		After it left,\nsomething lay there.\n<wait>	ours		reads: いた後に　何か落ちていた\n<wait>
-m/MS610C.BIN	9:48	0	20	1F5F	？？？\n		???\n	ours		
+m/MS610C.BIN	9:48	0	20	1F5F	？？？\n	???\n	???\n	ours	draft	@ours-2026-09-05
 m/MS610C.BIN	9:48	1	33	1F01	は		It	ours		reads: は @rebase-tagdiff
 m/MS610C.BIN	9:48	2	44	1F01	はも{08:53}欲しがっ{08:14}\n		It wants more.\n	ours		reads: はもっと欲しがっている\n @rebase-tagdiff
 m/MS610C.BIN	9:48	3	77	1FB2	やる		Yes	ours		menu option, declared width 20 columns
 m/MS610C.BIN	9:48	4	83	1FB2	やら{08:25}		Decline	ours		reads: やらない; menu option, declared width 20 columns
 m/MS610C.BIN	9:48	5	110	18	希望の量を持{08:52}{08:24}！\n		You don't have enough on you!\n	ours		reads: 希望の量を持っていない！\n
-m/MS610C.BIN	9:49	0	20	1F5F	？？？\n<wait>		???\n<wait>	ours		
+m/MS610C.BIN	9:49	0	20	1F5F	？？？\n<wait>	???\n<wait>	???\n<wait>	ours	draft	@ours-2026-09-05
 m/MS610C.BIN	9:49	1	39	1F01	はさらに		It further	ours		reads: はさらに @rebase-tagdiff
 m/MS610C.BIN	9:49	2	56	1F01	はも{08:53}欲しがっ{08:14}\n		It wants more.\n	ours		reads: はもっと欲しがっている\n @rebase-tagdiff
 m/MS610C.BIN	9:49	3	89	1FB2	やる		Yes	ours		menu option, declared width 20 columns
 m/MS610C.BIN	9:49	4	95	1FB2	やら{08:25}		Decline	ours		reads: やらない; menu option, declared width 20 columns
 m/MS610C.BIN	9:49	5	122	18	希望の量を持{08:52}{08:24}！\n		You don't have enough on you!\n	ours		reads: 希望の量を持っていない！\n
-m/MS610C.BIN	9:4A	0	18	1F5F	？？？！！！\n		???!!!\n	ours		record reaches an engine no-op opcode; verify in game
+m/MS610C.BIN	9:4A	0	18	1F5F	？？？！！！\n	???!!!\n	???!!!\n	ours	draft	record reaches an engine no-op opcode; verify in game @ours-2026-09-05
 m/MS610C.BIN	9:4A	1	37	1F01	が突然　		It suddenly	ours		record reaches an engine no-op opcode; verify in game; reads: が突然　 @rebase-tagdiff
 m/MS610C.BIN	9:4A	2	53	18	希望の量を持{08:52}{08:24}！\n		You don't have enough on you!\n	ours		record reaches an engine no-op opcode; verify in game; reads: 希望の量を持っていない！\n
 m/MS610C.BIN	9:4A	3	84	1F01	の機嫌が悪く{08:16}\n<wait>		Its mood turns sour.\n<wait>	ours		record reaches an engine no-op opcode; verify in game; reads: の機嫌が悪くなった\n<wait> @rebase-tagdiff
@@ -194,7 +194,7 @@ m/MS610C.BIN	9:54	1	40	1F01	はキレた！\n<wait>		It snaps!\n<wait>	ours		rea
 m/MS610C.BIN	9:54	2	77	1F01	は		It	ours		reads: は @rebase-tagdiff
 m/MS610C.BIN	9:54	3	82	0D	自我崩壊を起こ{08:17}\n		It suffers a total mental breakdown!\n	ours		reads: 自我崩壊を起こした！\n
 m/MS610C.BIN	9:55	0	6	1F01	は何かをばらま{08:64}！\n<wait>		It scatters something everywhere!\n<wait>	ours		reads: は何かをばらまいた！\n<wait> @rebase-tagdiff
-m/MS610C.BIN	9:56	0	13	1F01	は恐慌状態に陥っ{08:14}！\n					reads: は恐慌状態に陥っている！\n @rebase-new @rebase-unmatched idx0 en=It's thrown into a panic!\n
+m/MS610C.BIN	9:56	0	13	1F01	は恐慌状態に陥っ{08:14}！\n	 is panicking!\n			draft	reads: は恐慌状態に陥っている！\n @rebase-new @rebase-unmatched idx0 en=It's thrown into a panic!\n @ours-2026-09-05
 m/MS610C.BIN	9:57	0	6	1F01	は何か差し出{08:4B}\n<wait>		It holds something out.\n<wait>	ours		reads: は何か差し出した\n<wait> @rebase-tagdiff
 m/MS610C.BIN	9:58	0	16	1FB2	{08:5C}一度		Again	ours		reads: もう一度; menu option, declared width 20 columns
 m/MS610C.BIN	9:58	1	24	1FB2	止{08:2E}		Stop	ours		reads: 止める; menu option, declared width 20 columns
@@ -202,18 +202,18 @@ m/MS610C.BIN	9:59	0	20	1F01	は笑っ{08:14}！\n<wait>		It's laughing!\n<wait>	
 m/MS610C.BIN	9:59	1	53	1F01	は		It	ours		reads: は @rebase-tagdiff
 m/MS610C.BIN	9:59	2	64	18	ああ！！！\n		Ahh!!!\n	ours		
 m/MS610C.BIN	9:59	3	81	1F01	は{08:6C}に怒{08:51}\n<wait>		It's completely furious now.\n<wait>	ours		reads: は完全に怒った\n<wait> @rebase-tagdiff
-m/MS610C.BIN	9:5A	0	2	1FBA	＞{02:06}\n		>{02:06}	ours		reads: ＞どうしますか？\n
+m/MS610C.BIN	9:5A	0	2	1FBA	＞{02:06}\n	>What will you do?\n	>{02:06}	ours	draft	reads: ＞どうしますか？\n @ours-2026-09-05
 m/MS610C.BIN	9:5A	1	23	1FB2	初め{08:42}		Restart	ours		reads: 初めから; menu option, declared width 20 columns
 m/MS610C.BIN	9:5A	2	31	1FB2	去る		Go!	ours		menu option, declared width 20 columns
 m/MS610C.BIN	9:5B	0	16	1F01	は		It	ours		reads: は @rebase-tagdiff
 m/MS610C.BIN	9:5B	1	24	0E	逃が{08:4A}くれ{08:25}！\n<wait>		won't let you go!\n<wait>	ours		reads: 逃がしてくれない！\n<wait>
 m/MS610C.BIN	9:5C	0	0	DATA	後ろ{08:42}{03:07}{08:1C}\n<wait>		It lunges at you from behind!\n<wait>	ours		reads: 後ろから襲いかかってきた！\n<wait>
-m/MS610C.BIN	9:5D	0	2	1FBA	＞{02:06}\n		>{02:06}	ours		reads: ＞どうしますか？\n
+m/MS610C.BIN	9:5D	0	2	1FBA	＞{02:06}\n	>What will you do?\n	>{02:06}	ours	draft	reads: ＞どうしますか？\n @ours-2026-09-05
 m/MS610C.BIN	9:5D	1	23	1FB2	水をか{08:29}		Splash It	ours		reads: 水をかける; menu option, declared width 20 columns
 m/MS610C.BIN	9:5D	2	33	1FB2	冗談を言う		Joke	ours		menu option, declared width 20 columns
 m/MS610C.BIN	9:5E	0	13	1F01	は		Someone	ours		reads: は @rebase-tagdiff
 m/MS610C.BIN	9:5E	1	24	1F01	は		Someone	ours		reads: は @rebase-tagdiff
-m/MS610C.BIN	9:5E	2	29	0D	{02:09}・・\n<wait>		.....\n<wait>	ours		reads: ・・・・・\n<wait>
+m/MS610C.BIN	9:5E	2	29	0D	{02:09}・・\n<wait>	.....\n<wait>	.....\n<wait>	ours	draft	reads: ・・・・・\n<wait> @ours-2026-09-05
 m/MS610C.BIN	9:5E	3	58	1F01	は		It	ours		reads: は @rebase-tagdiff
 m/MS610C.BIN	9:5E	4	79	1FB2	何かくれ		Give Me Something	ours		menu option, declared width 20 columns
 m/MS610C.BIN	9:5E	5	89	1FB2	失せろ		Scram!	ours		menu option, declared width 20 columns
@@ -226,9 +226,9 @@ m/MS610C.BIN	9:61	2	55	1FB2	あげ{08:25}		Refuse	ours		reads: あげない; men
 m/MS610C.BIN	9:62	0	8	1F01	は		It	ours		reads: は @rebase-tagdiff
 m/MS610C.BIN	9:62	1	16	0E	怒{08:51}\n<wait>		gets angry.\n<wait>	ours		reads: 怒った\n<wait>
 m/MS610C.BIN	9:63	0	0	DATA	寂しげだ！\n<wait>		It seems lonely!\n<wait>	ours		
-m/MS610C.BIN	9:64	0	7	16	{02:09}・・\n		{02:09}..\n	ours		reads: ・・・・・\n
-m/MS610C.BIN	9:64	1	31	1F01	は笑っ{08:14}！\n<wait>					reads: は笑っている！\n<wait> @rebase-new @rebase-unmatched idx1 en=It's laughing!\n<wait>
-m/MS610C.BIN	9:64	2	67	1F01	のお気に召さ{08:19}{08:69}だ\n					reads: のお気に召さなかったようだ\n @rebase-new @rebase-unmatched idx2 en=It doesn't seem pleased.\n
+m/MS610C.BIN	9:64	0	7	16	{02:09}・・\n	.....\n	{02:09}..\n	ours	draft	reads: ・・・・・\n @ours-2026-09-05
+m/MS610C.BIN	9:64	1	31	1F01	は笑っ{08:14}！\n<wait>	 is laughing!\n<wait>			draft	reads: は笑っている！\n<wait> @rebase-new @rebase-unmatched idx1 en=It's laughing!\n<wait> @ours-2026-09-05
+m/MS610C.BIN	9:64	2	67	1F01	のお気に召さ{08:19}{08:69}だ\n	 didn't seem to like it\n			draft	reads: のお気に召さなかったようだ\n @rebase-new @rebase-unmatched idx2 en=It doesn't seem pleased.\n @ours-2026-09-05
 m/MS610C.BIN	9:65	0	0	DATA	？？？\n		???\n	ours		
 m/MS610C.BIN	9:65	1	13	1F01	は理解できて{08:24}\n<wait>		It doesn't seem to understand.\n<wait>	ours		reads: は理解できていない\n<wait> @rebase-tagdiff
 m/MS610C.BIN	9:68	0	0	DATA	の体が		Its body	ours		
@@ -240,16 +240,16 @@ m/MS610C.BIN	9:6C	1	23	1E36	T	T
 m/MS610C.BIN	9:6D	0	0	DATA	の		Its	ours		
 m/MS610C.BIN	9:6D	1	20	1E36	U	U				
 m/MS610C.BIN	9:6E	0	9	1E36	S	S				
-m/MS610C.BIN	9:6F	0	6	1F01	は突然　\n					reads: は突然　\n @rebase-new @rebase-unmatched idx0 en=It suddenly\n
+m/MS610C.BIN	9:6F	0	6	1F01	は突然　\n	 suddenly \n			draft	reads: は突然　\n @rebase-new @rebase-unmatched idx0 en=It suddenly\n @ours-2026-09-05
 m/MS610C.BIN	9:70	0	22	1FB2	怒っ{08:14}と思う		Seems Angry	ours		reads: 怒っていると思う; menu option, declared width 20 columns
 m/MS610C.BIN	9:70	1	36	1FB2	笑っ{08:14}と思う		Seems Amused	ours		reads: 笑っていると思う; menu option, declared width 20 columns
 m/MS610C.BIN	9:70	2	50	1FB2	悲しがっ{08:14}		Seems Sad	ours		reads: 悲しがっている; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx3 en=駻Devil Buster騏 @rebase-unmatched idx3 en=駻Devil Buster騏
-m/MS610C.BIN	9:71	0	20	0E	{02:09}・・\n		{=EC}{=01}{02:09}..\n	ours		reads: ・・・・・\n; reads: {=EC}{=01}・・・・・\n @rebase-tagdiff
-m/MS610C.BIN	9:71	1	30	0C	{02:09}\n	{02:09}\n				reads: ・・・\n
+m/MS610C.BIN	9:71	0	20	0E	{02:09}・・\n	.....\n	{=EC}{=01}{02:09}..\n	ours	draft	reads: ・・・・・\n; reads: {=EC}{=01}・・・・・\n @rebase-tagdiff @ours-2026-09-05
+m/MS610C.BIN	9:71	1	30	0C	{02:09}\n	...\n			draft	reads: ・・・\n @ours-2026-09-05
 m/MS610C.BIN	9:72	0	16	1F01	は笑っ{08:14}！\n		It's laughing!\n	ours		reads: は笑っている！\n @rebase-tagdiff
 m/MS610C.BIN	9:72	1	43	1FB2	一緒に笑う		Laugh Too	ours		menu option, declared width 20 columns
 m/MS610C.BIN	9:72	2	55	1FB2	見{08:2B}		Watch	ours		reads: 見てる; menu option, declared width 20 columns
-m/MS610C.BIN	9:72	3	80	18	{02:09}\n	{02:09}\n				reads: ・・・\n
+m/MS610C.BIN	9:72	3	80	18	{02:09}\n	...\n			draft	reads: ・・・\n @ours-2026-09-05
 m/MS610C.BIN	9:72	4	92	1F01	は	は	It	ours		reads: は; reads: ・・・\n @rebase-tagdiff
 m/MS610C.BIN	9:72	5	100	0E	睨んで{08:40}\n<wait>		glares at you.\n<wait>	ours		reads: 睨んでいる\n<wait>; reads: は
 m/MS610C.BIN	9:73	0	0	DATA	突然　{02:09}		Suddenly ...	ours		reads: 突然　・・・
@@ -259,8 +259,8 @@ m/MS610C.BIN	9:74	2	65	1F01	は何か置い{08:21}\n<wait>		It leaves something 
 m/MS610C.BIN	9:75	0	13	1F01	は泣い{08:14}{02:09}\n		It's crying...\n	ours		reads: は泣いている・・・\n @rebase-tagdiff
 m/MS610C.BIN	9:75	1	40	1FB2	慰{08:2E}		Soothe	ours		reads: 慰める; menu option, declared width 20 columns
 m/MS610C.BIN	9:75	2	46	1FB2	見{08:2B}		Watch	ours		reads: 見てる; menu option, declared width 20 columns
-m/MS610C.BIN	9:75	3	83	1F01	は怒{08:51}\n<wait>					reads: は怒った\n<wait>; reads: は怒った\n<wait> @rebase-unmatched idx4 en=It gets angry.\n<wait> @rebase-new @rebase-unmatched idx4 en=It gets angry.\n<wait>
-m/MS610C.BIN	9:76	0	2	1FBA	{02:09}・・！！！\n		{02:09}..!!!\n	ours		reads: ・・・・・！！！\n
+m/MS610C.BIN	9:75	3	83	1F01	は怒{08:51}\n<wait>	 got angry\n<wait>			draft	reads: は怒った\n<wait>; reads: は怒った\n<wait> @rebase-unmatched idx4 en=It gets angry.\n<wait> @rebase-new @rebase-unmatched idx4 en=It gets angry.\n<wait> @ours-2026-09-05
+m/MS610C.BIN	9:76	0	2	1FBA	{02:09}・・！！！\n	.....!!!\n	{02:09}..!!!\n	ours	draft	reads: ・・・・・！！！\n @ours-2026-09-05
 m/MS610C.BIN	9:76	1	21	1F01	の体が		Its body	ours		reads: の体が @rebase-tagdiff
 m/MS610C.BIN	9:76	2	49	1FB2	何か{08:8E}		Do Stuff	ours		reads: 何かする; menu option, declared width 20 columns
 m/MS610C.BIN	9:76	3	57	1FB2	見{08:2B}		Watch	ours		reads: 見てる; menu option, declared width 20 columns
@@ -268,7 +268,7 @@ m/MS610C.BIN	9:77	0	13	0E	とりあえず驚{08:64}！{02:09}・・\n		It's star
 m/MS610C.BIN	9:77	1	42	1F01	は		It	ours		reads: は @rebase-tagdiff
 m/MS610C.BIN	9:77	2	61	1F01	は殺意を抱{08:64}！\n<wait>		It's overcome with bloodlust!\n<wait>	ours		reads: は殺意を抱いた！\n<wait> @rebase-tagdiff
 m/MS610C.BIN	9:78	0	12	1F01	は殺意を抱{08:64}！\n<wait>		It's overcome with bloodlust!\n<wait>	ours		reads: は殺意を抱いた！\n<wait> @rebase-tagdiff
-m/MS610C.BIN	9:79	0	11	12	{02:09}・・\n		{02:09}..\n	ours		reads: ・・・・・\n
+m/MS610C.BIN	9:79	0	11	12	{02:09}・・\n	.....\n	{02:09}..\n	ours	draft	reads: ・・・・・\n @ours-2026-09-05
 m/MS610C.BIN	9:79	1	30	1F01	は姿が消{08:41}\n<wait>		It vanishes from sight.\n<wait>	ours		reads: は姿が消えた\n<wait> @rebase-tagdiff
 m/MS610C.BIN	9:79	2	54	1F01	は驚{08:64}！\n		It's startled!\n	ours		reads: は驚いた！\n @rebase-tagdiff
 m/MS610C.BIN	9:79	3	69	1F01	は		It	ours		reads: は @rebase-tagdiff
@@ -280,14 +280,14 @@ m/MS610C.BIN	9:7B	2	39	1FB2	{08:0C}	{08:0C}	Attack	ours		reads: 攻撃; menu opt
 m/MS610C.BIN	9:7C	0	2	1FBA	{02:09}・・\n{08:90}やら　寝{08:14}{08:69}だ\n<wait>		.....\nSeems to be asleep.\n<wait>	ours		reads: ・・・・・\nどうやら　寝ているようだ\n<wait>
 m/MS610C.BIN	9:7D	0	17	1F01	は突然　		It suddenly	ours		reads: は突然　 @rebase-tagdiff
 m/MS610C.BIN	9:7E	0	0	DATA	膨らみ		It swells.	ours		
-m/MS610C.BIN	9:7E	1	14	14	{02:09}・・\n		{02:09}..\n	ours		reads: ・・・・・\n
+m/MS610C.BIN	9:7E	1	14	14	{02:09}・・\n	.....\n	{02:09}..\n	ours	draft	reads: ・・・・・\n @ours-2026-09-05
 m/MS610C.BIN	9:7E	2	27	1F01	は		It	ours		reads: は @rebase-tagdiff
 m/MS610C.BIN	9:7E	3	51	1FB2	ほ{08:53}く		Leave It	ours		reads: ほっとく; menu option, declared width 20 columns
 m/MS610C.BIN	9:7E	4	59	1FB2	邪魔{08:8E}		Butt In	ours		reads: 邪魔する; menu option, declared width 20 columns
-m/MS610C.BIN	9:7E	5	92	1F01	は驚{08:64}！\n					reads: は驚いた！\n @rebase-new
+m/MS610C.BIN	9:7E	5	92	1F01	は驚{08:64}！\n	 was surprised!\n			draft	reads: は驚いた！\n @rebase-new @ours-2026-09-05
 m/MS610C.BIN	9:7E	6	107	1F01	は					reads: は; reads: は驚いた！\n @rebase-unmatched idx7 en=It @rebase-new @rebase-unmatched idx6 en=It's startled!\n @rebase-unmatched idx7 en=It
 m/MS610C.BIN	9:7F	0	0	DATA	突然　					
-m/MS610C.BIN	9:80	0	2	1FBA	{02:09}・・\n		{02:09}..\n	ours		reads: ・・・・・\n
+m/MS610C.BIN	9:80	0	2	1FBA	{02:09}・・\n	.....\n	{02:09}..\n	ours	draft	reads: ・・・・・\n @ours-2026-09-05
 m/MS610C.BIN	9:80	1	21	1F01	は去っ{08:21}\nと思っ{08:50}\n		Just when it seemed to have left,\n	ours		reads: は去っていった\nと思ったら\n @rebase-tagdiff
 m/MS610C.BIN	9:81	0	7	14	動きが止{08:20}\n		It stops moving.\n	ours		reads: 動きが止まった\n
 m/MS610C.BIN	9:81	1	33	1F01	は興奮{08:13}{08:69}だ\n<wait>		It looks excited.\n<wait>	ours		reads: は興奮しているようだ\n<wait> @rebase-tagdiff
@@ -295,12 +295,12 @@ m/MS610C.BIN	9:82	0	14	1F01	は怯え{08:14}\n{08:69}だ\n		It looks frightened.
 m/MS610C.BIN	9:82	1	44	1FB2	慰{08:2E}		Soothe	ours		reads: 慰める; menu option, declared width 20 columns
 m/MS610C.BIN	9:82	2	50	1FB2	いじ{08:2E}		Tease It	ours		reads: いじめる; menu option, declared width 20 columns
 m/MS610C.BIN	9:82	3	58	1FB2	無視		Skip	ours		menu option, declared width 20 columns
-m/MS610C.BIN	9:82	4	93	1F01	は驚{08:64}！\n					reads: は驚いた！\n; reads: 驛デビルバスター驗 @rebase-new @rebase-unmatched idx4 en=驛Devil Buster驗
+m/MS610C.BIN	9:82	4	93	1F01	は驚{08:64}！\n	 was surprised!\n			draft	reads: は驚いた！\n; reads: 驛デビルバスター驗 @rebase-new @rebase-unmatched idx4 en=驛Devil Buster驗 @ours-2026-09-05
 m/MS610C.BIN	9:82	5	114	0E	は	は	It	ours		reads: ; reads: は驚いた！\n @rebase-unmatched idx5 en=It's startled!\n
-m/MS610C.BIN	9:83	0	2	1FBA	！！！\n		!!!\n	ours		
+m/MS610C.BIN	9:83	0	2	1FBA	！！！\n	!!!\n	!!!\n	ours	draft	@ours-2026-09-05
 m/MS610C.BIN	9:85	0	0	DATA	も驚{08:64}！\n		It's surprised too!\n	ours		reads: も驚いた！\n
 m/MS610C.BIN	9:86	0	8	1F01	は		It	ours		reads: は @rebase-tagdiff
-m/MS610C.BIN	9:86	1	19	0E	！！！\n		!!!\n	ours		
+m/MS610C.BIN	9:86	1	19	0E	！！！\n	!!!\n	!!!\n	ours	draft	@ours-2026-09-05
 m/MS610C.BIN	9:86	2	32	1F01	の		Its	ours		reads: の @rebase-tagdiff
 m/MS610C.BIN	9:86	3	49	1F01	は怒{08:51}\n<wait>		It gets angry.\n<wait>	ours		reads: は怒った\n<wait> @rebase-tagdiff
 m/MS610C.BIN	9:87	0	6	1F01	は		It	ours		reads: は @rebase-tagdiff

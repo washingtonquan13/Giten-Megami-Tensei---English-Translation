@@ -5,20 +5,20 @@
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
 m/MS6104.BIN	5:09	0	22	1FB2	やる		Yes	ours		menu option, declared width 20 columns
 m/MS6104.BIN	5:09	1	28	1FB2	遠慮{08:8E}		Decline	ours		reads: 遠慮する; menu option, declared width 20 columns
-m/MS6104.BIN	5:09	2	63	1F01	は石を差し出{08:4B}\n	は石を差し出{08:4B}\n				reads: は石を差し出した\n @rebase-new
-m/MS6104.BIN	5:09	3	91	1FFA	{02:09}\n	{02:09}\n				reads: ・・・\n; reads: は石を差し出した\n @rebase-unmatched idx3 en=It holds out a stone.\n
+m/MS6104.BIN	5:09	2	63	1F01	は石を差し出{08:4B}\n	 held out a stone\n			draft	reads: は石を差し出した\n @rebase-new @ours-2026-09-05
+m/MS6104.BIN	5:09	3	91	1FFA	{02:09}\n	...\n			draft	reads: ・・・\n; reads: は石を差し出した\n @rebase-unmatched idx3 en=It holds out a stone.\n @ours-2026-09-05
 m/MS6104.BIN	5:09	4	102	1F01	は石を砕{08:64}！\n	は石を砕{08:64}！\n	You smash the stone!\n	ours		reads: は石を砕いた！\n; reads: ・・・\n @rebase-tagdiff
-m/MS6104.BIN	5:09	5	134	1FFA	{02:09}・・		{02:09}..	ours		reads: ・・・・・; reads: は石を砕いた！\n
-m/MS6104.BIN	5:09	6	142	1FFB	！！！\n		!!!\n	ours		reads: ・・・・・
+m/MS6104.BIN	5:09	5	134	1FFA	{02:09}・・	.....	{02:09}..	ours	draft	reads: ・・・・・; reads: は石を砕いた！\n @ours-2026-09-05
+m/MS6104.BIN	5:09	6	142	1FFB	！！！\n	!!!\n	!!!\n	ours	draft	reads: ・・・・・ @ours-2026-09-05
 m/MS6104.BIN	5:09	7	155	1F01	は石を砕{08:64}！\n		You smash the stone!\n	ours		reads: は石を砕いた！\n @rebase-tagdiff
-m/MS6104.BIN	5:09	8	184	1FFA	{02:09}・・		{02:09}..	ours		reads: ・・・・・; reads: は石を砕いた！\n
+m/MS6104.BIN	5:09	8	184	1FFA	{02:09}・・	.....	{02:09}..	ours	draft	reads: ・・・・・; reads: は石を砕いた！\n @ours-2026-09-05
 m/MS6104.BIN	5:09	9	192	1FFB	石は砕け{08:19}\n		The stone held.\n	ours		reads: 石は砕けなかった\n; reads: ・・・・・
 m/MS6104.BIN	5:09	10	216	1F01	の鉄拳が炸裂！！！\n		Its iron fist explodes forward!!!\n	ours		reads: の鉄拳が炸裂！！！\n; reads: 石は砕けなかった\n @rebase-tagdiff
-m/MS6104.BIN	5:09	11	245	1FFA	{02:09}	{02:09}				reads: ・・・; reads: の鉄拳が炸裂！！！\n
+m/MS6104.BIN	5:09	11	245	1FFA	{02:09}	...			draft	reads: ・・・; reads: の鉄拳が炸裂！！！\n @ours-2026-09-05
 m/MS6104.BIN	5:09	12	249	1FFB	石は砕け{08:19}	石は砕け{08:19}	The stone held.	ours		reads: 石は砕けなかった; reads: ・・・
-m/MS6104.BIN	5:09	13	261	1FFA	{02:09}\n	{02:09}\n				reads: ・・・\n; reads: 石は砕けなかった
-m/MS6104.BIN	5:09	14	268	1FBA	{02:09}・・	{02:09}・・	{02:09}..	ours		reads: ・・・・・; reads: ・・・\n
-m/MS6104.BIN	5:09	15	289	1FFA	{02:09}・・		{02:09}..	ours		reads: ・・・・・
+m/MS6104.BIN	5:09	13	261	1FFA	{02:09}\n	...\n			draft	reads: ・・・\n; reads: 石は砕けなかった @ours-2026-09-05
+m/MS6104.BIN	5:09	14	268	1FBA	{02:09}・・	.....	{02:09}..	ours	draft	reads: ・・・・・; reads: ・・・\n @ours-2026-09-05
+m/MS6104.BIN	5:09	15	289	1FFA	{02:09}・・	.....	{02:09}..	ours	draft	reads: ・・・・・ @ours-2026-09-05
 m/MS6104.BIN	5:09	16	297	1FFB	！！！\n石は砕け{08:19}\n		!!!\nThe stone held.\n	ours		reads: ！！！\n石は砕けなかった\n; reads: ・・・・・
 m/MS6104.BIN	5:09	17	331	1F01	の鉄拳が炸裂！！！\n		Its iron fist explodes forward!!!\n	ours		reads: の鉄拳が炸裂！！！\n; reads: ！！！\n石は砕けなかった\n @rebase-tagdiff
 m/MS6104.BIN	5:09	18	352	1FBA	石は砕{08:43}！\n		Stone broke!\n	ours		reads: 石は砕けた！\n; reads: の鉄拳が炸裂！！！\n

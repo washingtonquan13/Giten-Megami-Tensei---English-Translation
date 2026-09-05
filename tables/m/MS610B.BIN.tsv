@@ -5,28 +5,28 @@
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
 m/MS610B.BIN	0:00	0	0	UNTILED	2 / ＞会話可能圏外 / U / 　会話対象に接近 / J下 / I / (					@noedit; @untiled; record does not tile (switch entry at 0x4B has kind 227 (not 0 or 1)); read-only, copied verbatim; reads: ＞会話可能圏外です\n　会話対象に接近して下さい\n<wait> @rebase-new @rebase-unmatched idx0 en=>Out of conversation range.\n  Get closer to talk.\n<wait> @rebase-unmatched idx0 en=>Out of conversation range.\n  Get closer to talk.\n<wait>
 m/MS610B.BIN	2:01	0	18	1FD0	{08:90}やら　あまり敵意は無い{08:69}だ。\n		It doesn't seem\ntoo hostile.\n	ours		reads: どうやら　あまり敵意は無いようだ。\n
-m/MS610B.BIN	2:01	1	57	1FBA	＞{02:06}\n		>{02:06}	ours		reads: ＞どうしますか？\n
+m/MS610B.BIN	2:01	1	57	1FBA	＞{02:06}\n	>What will you do?\n	>{02:06}	ours	draft	reads: ＞どうしますか？\n @ours-2026-09-05
 m/MS610B.BIN	2:01	2	78	1FB2	成仏さ{08:2A}		Put to Rest	ours		reads: 成仏させる; menu option, declared width 20 columns
 m/MS610B.BIN	2:01	3	88	1FB2	用を聞く		Hear Its Request	ours		menu option, declared width 20 columns
 m/MS610B.BIN	2:01	4	98	1FB2	ほ{08:53}く		Leave It	ours		reads: ほっとく; menu option, declared width 20 columns
-m/MS610B.BIN	2:01	5	134	1FFA	{02:09}・・\n	{02:09}・・\n	{02:09}..\n	ours		reads: ・・・・・\n
+m/MS610B.BIN	2:01	5	134	1FFA	{02:09}・・\n	.....\n	{02:09}..\n	ours	draft	reads: ・・・・・\n @ours-2026-09-05
 m/MS610B.BIN	2:01	6	171	1FD0	{08:61}　何も起こら{08:19}！\n		But nothing\nhappened at all!\n	ours		reads: しかし　何も起こらなかった！\n; reads: ペンタグランマﾍ @rebase-unmatched idx6 en=Pentagramﾍ @rebase-unmatched idx6 en=Pentagramﾍ
 m/MS610B.BIN	2:01	7	239	1F01	は　{08:63}{08:42}声を掛{08:43}事を忘れ{08:14}{08:69}だ{02:09}\n<wait>	は　{08:63}{08:42}声を掛{08:43}事を忘れ{08:14}{08:69}だ{02:09}\n<wait>	It seems to have forgotten\nthat it called out to you itself...\n<wait>	ours		reads: は　自分から声を掛けた事を忘れているようだ・・・\n<wait> @rebase-tagdiff
 m/MS610B.BIN	2:01	8	302	1FB2	{08:7F}よ		Sure	ours		reads: いいよ; menu option, declared width 20 columns; reads: ・・・・・\n
 m/MS610B.BIN	2:01	9	308	1FB2	やだ		Nope	ours		menu option, declared width 20 columns; reads: しかし　何も起こらなかった！\n
-m/MS610B.BIN	2:01	10	341	0D	{02:09}{02:09}\n<wait>	{02:09}{02:09}\n<wait>				reads: ・・・・・・\n<wait>; reads: は　自分から声を掛けた事を忘れているようだ・・・\n<wait>
-m/MS610B.BIN	2:01	11	353	0D	{02:09}{02:09}\n<wait>	{02:09}{02:09}\n<wait>				reads: ・・・・・・\n<wait>; reads: いいよ; menu option, declared width 20 columns
-m/MS610B.BIN	2:02	0	3	0D	{02:09}{02:09}\n<wait>	{02:09}{02:09}\n<wait>				reads: ・・・・・・\n<wait>
+m/MS610B.BIN	2:01	10	341	0D	{02:09}{02:09}\n<wait>	......\n<wait>			draft	reads: ・・・・・・\n<wait>; reads: は　自分から声を掛けた事を忘れているようだ・・・\n<wait> @ours-2026-09-05
+m/MS610B.BIN	2:01	11	353	0D	{02:09}{02:09}\n<wait>	......\n<wait>			draft	reads: ・・・・・・\n<wait>; reads: いいよ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS610B.BIN	2:02	0	3	0D	{02:09}{02:09}\n<wait>	......\n<wait>			draft	reads: ・・・・・・\n<wait> @ours-2026-09-05
 m/MS610B.BIN	2:03	0	28	1FB2	{08:7F}よ		Sure	v005		reads: いいよ; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS610B.BIN	2:03	1	34	1FB2	やだ		No way	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS610B.BIN	2:03	2	64	1FFA	{02:09}・・\n	{02:09}・・\n				reads: ・・・・・\n
+m/MS610B.BIN	2:03	2	64	1FFA	{02:09}・・\n	.....\n			draft	reads: ・・・・・\n @ours-2026-09-05
 m/MS610B.BIN	2:03	3	101	1FD0	{08:61}　何も起こら{08:19}！\n	{08:61}　何も起こら{08:19}！\n	However, nothing happened!\n	v005		reads: しかし　何も起こらなかった！\n
 m/MS610B.BIN	2:03	4	158	1F01	は　逃げ出{08:17}\n<wait>		{04:EF} ran away!\n<wait>	v005		reads: は　逃げ出した！\n<wait>; reads: ・・・・・\n @rebase-tagdiff @refalign
 m/MS610B.BIN	2:03	5	194	1F01	は　逃げ{08:69}と{08:4B}が　逃げられ{08:19}！\n		{04:EF} tried to run away,\nbut wasn't able to!\n	v005		reads: は　逃げようとしたが　逃げられなかった！\n; reads: しかし　何も起こらなかった！\n @rebase-tagdiff @refalign
 m/MS610B.BIN	2:33	0	0	DATA	お願いだ		Please	ours		
 m/MS610B.BIN	3:02	0	216	1FB2	なだ{08:2E}		Soothe	ours		reads: なだめる; menu option, declared width 20 columns
 m/MS610B.BIN	3:02	1	224	1FB2	逃げる		Flee	ours		menu option, declared width 20 columns
-m/MS610B.BIN	3:02	2	274	1FFA	{02:09}・・\n	{02:09}・・\n	{02:09}..\n	ours		reads: ・・・・・\n
+m/MS610B.BIN	3:02	2	274	1FFA	{02:09}・・\n	.....\n	{02:09}..\n	ours	draft	reads: ・・・・・\n @ours-2026-09-05
 m/MS610B.BIN	3:02	3	300	1F01	は一体成仏{08:4B}\n		One has been laid to rest.\n	ours		reads: は一体成仏した\n; reads: ・・・・・\n @rebase-tagdiff
 m/MS610B.BIN	3:02	4	318	18	{08:61}何も起こら{08:19}\n		But nothing happened.\n	ours		reads: しかし何も起こらなかった\n; reads: は一体成仏した\n
 m/MS610B.BIN	3:10	0	21	18	逃げられ{08:25}！\n		Can't get away!\n	ours		reads: 逃げられない！\n
@@ -52,11 +52,11 @@ m/MS610B.BIN	9:38	0	0	DATA	{02:09}・・\n					reads: ・・・・・\n
 m/MS610B.BIN	9:39	0	0	DATA	{02:09}・・\n					reads: ・・・・・\n
 m/MS610B.BIN	9:39	1	29	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
 m/MS610B.BIN	9:39	2	33	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
-m/MS610B.BIN	9:48	0	3	0D	{02:09}\n	{02:09}\n				reads: ・・・\n
+m/MS610B.BIN	9:48	0	3	0D	{02:09}\n	...\n			draft	reads: ・・・\n @ours-2026-09-05
 m/MS610B.BIN	14:3C	0	0	DATA	{08:7D}	{08:7D}				reads: なら
 m/MS610B.BIN	14:23	0	0	DATA	私は		I	ours		
 m/MS610B.BIN	15:01	0	19	1F80	6	6				@noedit; @dupid; record is not editable; copied verbatim
-m/MS610B.BIN	15:01	1	25	1E18	{02:09}・・\n		{02:09}..\n	ours		@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n
+m/MS610B.BIN	15:01	1	25	1E18	{02:09}・・\n	.....\n	{02:09}..\n	ours	draft	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n @ours-2026-09-05
 m/MS610B.BIN	15:01	2	51	1FB2	{08:26}	{08:26}	Yes	v005		@noedit; @dupid; record is not editable; copied verbatim; reads: はい; menu option, declared width 20 columns
 m/MS610B.BIN	15:01	3	55	1FB2	{08:27}	{08:27}	No	v005		@noedit; @dupid; record is not editable; copied verbatim; reads: いいえ; menu option, declared width 20 columns
 m/MS610B.BIN	15:02	0	13	1F01	はニヤリと笑{08:12}\n		{04:EF} began to grin!\n	v005		@noedit; @dupid; record is not editable; copied verbatim; reads: はニヤリと笑った！\n; reads: はニヤリと笑った！\n @rebase-tagdiff @refalign
@@ -69,7 +69,7 @@ m/MS610B.BIN	15:0A	0	24	1FB2	いやだ		No way	v005		@noedit; @dupid; record is 
 m/MS610B.BIN	15:0A	1	32	1FB2	体		Body	v005		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS610B.BIN	15:0A	2	36	1FB2	鉄拳		Fist	v005		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS610B.BIN	15:0A	3	42	1FB2	食べ物		Food	v005		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS610B.BIN	15:0E	0	25	1F01	は食べ物を\n差し出{08:17}\n	は食べ物を\n差し出{08:17}\n				@noedit; @dupid; record is not editable; copied verbatim; reads: は食べ物を\n差し出した！\n; reads: は食べ物を\n差し出した！\n @rebase-unmatched idx1 en=You hold out\nsome food!\n @rebase-new @rebase-unmatched idx1 en=You hold out\nsome food!\n
+m/MS610B.BIN	15:0E	0	25	1F01	は食べ物を\n差し出{08:17}\n	 held out\nsome food!\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: は食べ物を\n差し出した！\n; reads: は食べ物を\n差し出した！\n @rebase-unmatched idx1 en=You hold out\nsome food!\n @rebase-new @rebase-unmatched idx1 en=You hold out\nsome food!\n @ours-2026-09-05
 m/MS610B.BIN	15:0F	0	6	1F01	が{08:10}特製\n		{04:F0} has the Shelter Special\n	v005		@noedit; @dupid; record is not editable; copied verbatim; reads: がシェルター特製\n; reads: がシェルター特製\n @rebase-new @rebase-unmatched idx0 en={04:F0} has the Shelter Special\n @refalign
 m/MS610B.BIN	15:10	0	3	0D	を持{08:52}{08:64}！\n		in their inventory!\n	v005		@noedit; @dupid; record is not editable; copied verbatim; reads: を持っていた！\n; reads: を持っていた！\n @refalign
 m/MS610B.BIN	15:11	0	3	0D	を持{08:52}{08:64}！\n		in their inventory!\n	v005		@noedit; @dupid; record is not editable; copied verbatim; reads: を持っていた！\n; reads: を持っていた！\n @refalign
@@ -80,72 +80,72 @@ m/MS610B.BIN	15:15	0	3	0D	を持{08:52}{08:64}！\n		in their inventory!\n	v005	
 m/MS610B.BIN	15:16	0	6	1F01	は何も持{08:52}い{08:19}が\n食べ物を渡すふりを{08:4A}\nいきなり殴{08:52}{08:1F}！\n<wait>		{04:F0} pretends to give\nthe demon food, but punches\nit as it lowers its guard!\n<wait>	v005		@noedit; @dupid; record is not editable; copied verbatim; reads: は何も持っていなかったが\n食べ物を渡すふりをして\nいきなり殴ってしまった！\n<wait>; reads: は何も持っていなかったが\n食べ物を渡すふりをして\nいきなり殴ってしまった！\n<wait> @rebase-tagdiff @refalign
 m/MS610B.BIN	15:17	0	26	1FB2	見る		Watch	v005		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS610B.BIN	15:17	1	32	1FB2	無視		Ignore	v005		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS610B.BIN	15:17	2	63	1F01	は{02:0E}へ近寄ろうと{08:13}\n	は{02:0E}へ近寄ろうと{08:13}\n				@noedit; @dupid; record is not editable; copied verbatim; reads: はこちらへ近寄ろうとしている\n @rebase-new
+m/MS610B.BIN	15:17	2	63	1F01	は{02:0E}へ近寄ろうと{08:13}\n	 is trying to come closer\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: はこちらへ近寄ろうとしている\n @rebase-new @ours-2026-09-05
 m/MS610B.BIN	15:17	3	98	1FB2	まて！		Stop!	v005		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns; reads: はこちらへ近寄ろうとしている\n @rebase-unmatched idx3 en={04:EF} is creeping towards you.\n @rebase-unmatched idx3 en={04:EF} is creeping towards you.\n @refalign
 m/MS610B.BIN	15:17	4	106	1FB2	様子を見る		Let it	v005		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS610B.BIN	15:19	0	45	1F01	は気配が消{08:41}！\n		Its presence vanishes!\n	ours		@noedit; @dupid; record is not editable; copied verbatim; reads: は気配が消えた！\n @rebase-tagdiff
 m/MS610B.BIN	15:19	1	76	1FB2	立ち去る		Leave	ours		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns
 m/MS610B.BIN	15:19	2	86	1FB2	見回す		Look	ours		@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns
-m/MS610B.BIN	15:19	3	141	1F01	は気配が消{08:41}！\n	は気配が消{08:41}！\n				@noedit; @dupid; record is not editable; copied verbatim; reads: は気配が消えた！\n; reads: は気配が消えた！\n @rebase-unmatched idx4 en=Its presence vanishes!\n @rebase-new @rebase-unmatched idx4 en=Its presence vanishes!\n
+m/MS610B.BIN	15:19	3	141	1F01	は気配が消{08:41}！\n	's presence vanished!\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: は気配が消えた！\n; reads: は気配が消えた！\n @rebase-unmatched idx4 en=Its presence vanishes!\n @rebase-new @rebase-unmatched idx4 en=Its presence vanishes!\n @ours-2026-09-05
 m/MS610B.BIN	15:1B	0	0	DATA	何も起こら{08:19}！\n		Nothing happens!\n	ours		@noedit; @dupid; record is not editable; copied verbatim; reads: 何も起こらなかった！\n
 m/MS610B.BIN	15:1C	0	0	DATA	背後に{08:64}！\n<wait>		It was right behind you!\n<wait>	ours		@noedit; @dupid; record is not editable; copied verbatim; reads: 背後にいた！\n<wait>
 m/MS610B.BIN	15:1D	0	6	1F01	が{08:64}後に　\n何か落ちて{08:64}\n		After it was there,\nsomething was left behind.\n	ours		@noedit; @dupid; record is not editable; copied verbatim; reads: がいた後に　\n何か落ちていた\n @rebase-tagdiff
-m/MS610B.BIN	15:1E	0	14	1F0D	{02:09}・・\n					@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n
-m/MS610B.BIN	15:1F	0	24	1FB2	{08:26}	{08:26}				@noedit; @dupid; record is not editable; copied verbatim; reads: はい; menu option, declared width 20 columns
-m/MS610B.BIN	15:1F	1	28	1FB2	{08:27}	{08:27}				@noedit; @dupid; record is not editable; copied verbatim; reads: いいえ; menu option, declared width 20 columns
-m/MS610B.BIN	15:22	0	6	0D	{02:09}・・\n<wait>					@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n<wait>
-m/MS610B.BIN	15:22	1	38	1FB2	{08:26}	{08:26}				@noedit; @dupid; record is not editable; copied verbatim; reads: はい; menu option, declared width 20 columns
-m/MS610B.BIN	15:22	2	42	1FB2	{08:27}	{08:27}				@noedit; @dupid; record is not editable; copied verbatim; reads: いいえ; menu option, declared width 20 columns
-m/MS610B.BIN	15:24	0	22	0C	突然　\n					@noedit; @dupid; record is not editable; copied verbatim
-m/MS610B.BIN	15:24	1	35	1F01	が覆いかぶさっ{08:1C}\n					@noedit; @dupid; record is not editable; copied verbatim; reads: が覆いかぶさってきた！\n
-m/MS610B.BIN	15:24	2	75	1FB2	暴{08:2F}					@noedit; @dupid; record is not editable; copied verbatim; reads: 暴れる; menu option, declared width 20 columns
-m/MS610B.BIN	15:24	3	81	1FB2	無抵抗					@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns
-m/MS610B.BIN	15:25	0	42	1FB2	暴{08:2F}					@noedit; @dupid; record is not editable; copied verbatim; reads: 暴れる; menu option, declared width 20 columns
-m/MS610B.BIN	15:25	1	48	1FB2	無抵抗					@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns
-m/MS610B.BIN	15:26	0	12	0D	{02:09}\n	{02:09}\n				@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・\n
-m/MS610B.BIN	15:26	1	18	0D	{02:09}\n	{02:09}\n				@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・\n
-m/MS610B.BIN	15:26	2	37	1FB2	暴{08:2F}					@noedit; @dupid; record is not editable; copied verbatim; reads: 暴れる; menu option, declared width 20 columns
-m/MS610B.BIN	15:26	3	43	1FB2	無抵抗					@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns
-m/MS610B.BIN	15:28	0	3	0D	{02:09}\n	{02:09}\n				@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・\n
-m/MS610B.BIN	15:2F	0	61	1FE1	！！！\n<wait>	！！！\n<wait>				@noedit; @dupid; record is not editable; copied verbatim
-m/MS610B.BIN	15:2F	1	80	1F01	が\n猛スピードで距離を詰め{08:1C}！！\n					@noedit; @dupid; record is not editable; copied verbatim; reads: が\n猛スピードで距離を詰めてきた！！！\n @rebase-new
-m/MS610B.BIN	15:2F	2	128	1FBA	{02:09}が\n{08:79}{08:7E}　通りすぎてい{08:52}{08:1F}{02:09}\n					@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・が\nそのまま　通りすぎていってしまった・・・\n; reads: が\n猛スピードで距離を詰めてきた！！！\n
-m/MS610B.BIN	15:30	0	6	1F01	が{08:0C}し{08:69}と{08:13}！\n					@noedit; @dupid; record is not editable; copied verbatim; reads: が攻撃しようとしている！\n
-m/MS610B.BIN	15:30	1	37	1FB2	先制{08:0C}					@noedit; @dupid; record is not editable; copied verbatim; reads: 先制攻撃; menu option, declared width 20 columns
-m/MS610B.BIN	15:30	2	45	1FB2	無抵抗					@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns
-m/MS610B.BIN	15:31	0	14	1F0F	駄目だ！　\n間に合わ{08:25}！\n					@noedit; @dupid; record is not editable; copied verbatim; reads: 駄目だ！　\n間に合わない！\n
-m/MS610B.BIN	15:33	0	38	1F01	は{08:79}{08:7E}通りすぎ{08:21}\n					@noedit; @dupid; record is not editable; copied verbatim; reads: はそのまま通りすぎていった\n
+m/MS610B.BIN	15:1E	0	14	1F0D	{02:09}・・\n	.....\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n @ours-2026-09-05
+m/MS610B.BIN	15:1F	0	24	1FB2	{08:26}	Yes			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS610B.BIN	15:1F	1	28	1FB2	{08:27}	No			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS610B.BIN	15:22	0	6	0D	{02:09}・・\n<wait>	.....\n<wait>			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n<wait> @ours-2026-09-05
+m/MS610B.BIN	15:22	1	38	1FB2	{08:26}	Yes			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS610B.BIN	15:22	2	42	1FB2	{08:27}	No			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS610B.BIN	15:24	0	22	0C	突然　\n	Suddenly \n			draft	@noedit; @dupid; record is not editable; copied verbatim @ours-2026-09-05
+m/MS610B.BIN	15:24	1	35	1F01	が覆いかぶさっ{08:1C}\n	 came down on top of you!\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: が覆いかぶさってきた！\n @ours-2026-09-05
+m/MS610B.BIN	15:24	2	75	1FB2	暴{08:2F}	Struggle			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: 暴れる; menu option, declared width 20 columns @ours-2026-09-05
+m/MS610B.BIN	15:24	3	81	1FB2	無抵抗	Don't resist			draft	@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns @ours-2026-09-05
+m/MS610B.BIN	15:25	0	42	1FB2	暴{08:2F}	Struggle			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: 暴れる; menu option, declared width 20 columns @ours-2026-09-05
+m/MS610B.BIN	15:25	1	48	1FB2	無抵抗	Don't resist			draft	@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns @ours-2026-09-05
+m/MS610B.BIN	15:26	0	12	0D	{02:09}\n	...\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・\n @ours-2026-09-05
+m/MS610B.BIN	15:26	1	18	0D	{02:09}\n	...\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・\n @ours-2026-09-05
+m/MS610B.BIN	15:26	2	37	1FB2	暴{08:2F}	Struggle			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: 暴れる; menu option, declared width 20 columns @ours-2026-09-05
+m/MS610B.BIN	15:26	3	43	1FB2	無抵抗	Don't resist			draft	@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns @ours-2026-09-05
+m/MS610B.BIN	15:28	0	3	0D	{02:09}\n	...\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・\n @ours-2026-09-05
+m/MS610B.BIN	15:2F	0	61	1FE1	！！！\n<wait>	!!!\n<wait>			draft	@noedit; @dupid; record is not editable; copied verbatim @ours-2026-09-05
+m/MS610B.BIN	15:2F	1	80	1F01	が\n猛スピードで距離を詰め{08:1C}！！\n	 \nclosed the distance at\nferocious speed!!\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: が\n猛スピードで距離を詰めてきた！！！\n @rebase-new @ours-2026-09-05
+m/MS610B.BIN	15:2F	2	128	1FBA	{02:09}が\n{08:79}{08:7E}　通りすぎてい{08:52}{08:1F}{02:09}\n	...and\npassed right by...\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・が\nそのまま　通りすぎていってしまった・・・\n; reads: が\n猛スピードで距離を詰めてきた！！！\n @ours-2026-09-05
+m/MS610B.BIN	15:30	0	6	1F01	が{08:0C}し{08:69}と{08:13}！\n	 is about to attack!\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: が攻撃しようとしている！\n @ours-2026-09-05
+m/MS610B.BIN	15:30	1	37	1FB2	先制{08:0C}	Pre-emptive attack			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: 先制攻撃; menu option, declared width 20 columns @ours-2026-09-05
+m/MS610B.BIN	15:30	2	45	1FB2	無抵抗	Don't resist			draft	@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns @ours-2026-09-05
+m/MS610B.BIN	15:31	0	14	1F0F	駄目だ！　\n間に合わ{08:25}！\n	No good! \nToo late!\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: 駄目だ！　\n間に合わない！\n @ours-2026-09-05
+m/MS610B.BIN	15:33	0	38	1F01	は{08:79}{08:7E}通りすぎ{08:21}\n	 passed right by\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: はそのまま通りすぎていった\n @ours-2026-09-05
 m/MS610B.BIN	15:34	0	0	DATA	と思っ{08:50}\n					@noedit; @dupid; record is not editable; copied verbatim; reads: と思ったら\n
 m/MS610B.BIN	15:35	0	0	DATA	後ろに{08:64}！\n					@noedit; @dupid; record is not editable; copied verbatim; reads: 後ろにいた！\n
 m/MS610B.BIN	15:36	0	0	DATA	後ろ{08:42}\n{03:07}{08:1C}\n					@noedit; @dupid; record is not editable; copied verbatim; reads: 後ろから\n襲いかかってきた！\n
-m/MS610B.BIN	15:37	0	6	1FBA	{02:09}が\n{08:79}{08:7E}　通りすぎてい{08:52}{08:1F}{02:09}\n<wait>					@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・が\nそのまま　通りすぎていってしまった・・・\n<wait>
-m/MS610B.BIN	15:37	1	48	1F01	が{08:64}後に　\n何か\n落ちて{08:64}\n					@noedit; @dupid; record is not editable; copied verbatim; reads: がいた後に　\n何か\n落ちていた\n
-m/MS610B.BIN	15:38	0	12	1FBA	後ろ\n{08:42}\n{03:07}{08:1C}\n					@noedit; @dupid; record is not editable; copied verbatim; reads: 後ろ\nから\n襲いかかってきた！\n
-m/MS610B.BIN	15:3A	0	14	1F01	は転{08:5F}\n					@noedit; @dupid; record is not editable; copied verbatim; reads: は転んだ\n
-m/MS610B.BIN	15:3A	1	56	1FB2	起きる					@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns
-m/MS610B.BIN	15:3A	2	64	1FB2	起こ{08:4A}もらう					@noedit; @dupid; record is not editable; copied verbatim; reads: 起こしてもらう; menu option, declared width 20 columns
-m/MS610B.BIN	15:3B	0	27	1F01	が目前{08:71}来て{08:64}！\n					@noedit; @dupid; record is not editable; copied verbatim; reads: が目前まで来ていた！\n
-m/MS610B.BIN	15:3D	0	39	1F7F	{02:09}・・\n手が\n痺{08:11}\n	{02:09}・・\n手が\n痺{08:11}\n				@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n手が\n痺れた！\n
-m/MS610B.BIN	15:42	0	19	1FB2	{08:26}	{08:26}				@noedit; @dupid; record is not editable; copied verbatim; reads: はい; menu option, declared width 20 columns
-m/MS610B.BIN	15:42	1	23	1FB2	{08:27}	{08:27}				@noedit; @dupid; record is not editable; copied verbatim; reads: いいえ; menu option, declared width 20 columns
-m/MS610B.BIN	15:45	0	19	1FB2	{08:26}	{08:26}				@noedit; @dupid; record is not editable; copied verbatim; reads: はい; menu option, declared width 20 columns
-m/MS610B.BIN	15:45	1	23	1FB2	{08:27}	{08:27}				@noedit; @dupid; record is not editable; copied verbatim; reads: いいえ; menu option, declared width 20 columns
-m/MS610B.BIN	15:48	0	14	1F01	は難しい事を\n考{08:41}！\n					@noedit; @dupid; record is not editable; copied verbatim; reads: は難しい事を\n考えた！\n
-m/MS610B.BIN	15:48	1	53	1F01	は難しい事を\n考{08:41}！\n					@noedit; @dupid; record is not editable; copied verbatim; reads: は難しい事を\n考えた！\n
-m/MS610B.BIN	15:49	0	17	1F01	は{08:48}{08:71}の人生を\n考{08:41}！\n					@noedit; @dupid; record is not editable; copied verbatim; reads: はこれまでの人生を\n考えた！\n
-m/MS610B.BIN	15:49	1	58	1F01	は{08:48}{08:71}の人生を\n考{08:41}！\n					@noedit; @dupid; record is not editable; copied verbatim; reads: はこれまでの人生を\n考えた！\n
-m/MS610B.BIN	15:4B	0	6	1F01	は何も思い浮かば{08:19}\n					@noedit; @dupid; record is not editable; copied verbatim; reads: は何も思い浮かばなかった\n
+m/MS610B.BIN	15:37	0	6	1FBA	{02:09}が\n{08:79}{08:7E}　通りすぎてい{08:52}{08:1F}{02:09}\n<wait>	...and\npassed right by...\n<wait>			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・が\nそのまま　通りすぎていってしまった・・・\n<wait> @ours-2026-09-05
+m/MS610B.BIN	15:37	1	48	1F01	が{08:64}後に　\n何か\n落ちて{08:64}\n	 left\nsomething\nbehind\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: がいた後に　\n何か\n落ちていた\n @ours-2026-09-05
+m/MS610B.BIN	15:38	0	12	1FBA	後ろ\n{08:42}\n{03:07}{08:1C}\n	Attacked\nfrom\nbehind!\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: 後ろ\nから\n襲いかかってきた！\n @ours-2026-09-05
+m/MS610B.BIN	15:3A	0	14	1F01	は転{08:5F}\n	 fell over\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: は転んだ\n @ours-2026-09-05
+m/MS610B.BIN	15:3A	1	56	1FB2	起きる	Get up			draft	@noedit; @dupid; record is not editable; copied verbatim; menu option, declared width 20 columns @ours-2026-09-05
+m/MS610B.BIN	15:3A	2	64	1FB2	起こ{08:4A}もらう	Get helped up			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: 起こしてもらう; menu option, declared width 20 columns @ours-2026-09-05
+m/MS610B.BIN	15:3B	0	27	1F01	が目前{08:71}来て{08:64}！\n	 had come right up close!\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: が目前まで来ていた！\n @ours-2026-09-05
+m/MS610B.BIN	15:3D	0	39	1F7F	{02:09}・・\n手が\n痺{08:11}\n	.....\nYour hand\nwent numb!\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n手が\n痺れた！\n @ours-2026-09-05
+m/MS610B.BIN	15:42	0	19	1FB2	{08:26}	Yes			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS610B.BIN	15:42	1	23	1FB2	{08:27}	No			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS610B.BIN	15:45	0	19	1FB2	{08:26}	Yes			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS610B.BIN	15:45	1	23	1FB2	{08:27}	No			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS610B.BIN	15:48	0	14	1F01	は難しい事を\n考{08:41}！\n	 thought about\nsomething difficult!\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: は難しい事を\n考えた！\n @ours-2026-09-05
+m/MS610B.BIN	15:48	1	53	1F01	は難しい事を\n考{08:41}！\n	 thought about\nsomething difficult!\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: は難しい事を\n考えた！\n @ours-2026-09-05
+m/MS610B.BIN	15:49	0	17	1F01	は{08:48}{08:71}の人生を\n考{08:41}！\n	 thought about\nlife so far!\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: はこれまでの人生を\n考えた！\n @ours-2026-09-05
+m/MS610B.BIN	15:49	1	58	1F01	は{08:48}{08:71}の人生を\n考{08:41}！\n	 thought about\nlife so far!\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: はこれまでの人生を\n考えた！\n @ours-2026-09-05
+m/MS610B.BIN	15:4B	0	6	1F01	は何も思い浮かば{08:19}\n	 couldn't think of anything\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: は何も思い浮かばなかった\n @ours-2026-09-05
 m/MS610B.BIN	15:4D	0	0	DATA	突然　\n					@noedit; @dupid; record is not editable; copied verbatim
-m/MS610B.BIN	15:4D	1	13	1F01	が\n意識の中に　入り込んで{08:1D}\n<wait>					@noedit; @dupid; record is not editable; copied verbatim; reads: が\n意識の中に　入り込んできた！\n<wait>
-m/MS610B.BIN	15:4D	2	47	1FBA	{02:09}・・\n					@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n
-m/MS610B.BIN	15:4D	3	60	1F01	は					@noedit; @dupid; record is not editable; copied verbatim; reads: は
-m/MS610B.BIN	15:4D	4	67	16	耐え切{08:12}\n<wait>					@noedit; @dupid; record is not editable; copied verbatim; reads: 耐え切った！\n<wait>
-m/MS610B.BIN	15:4D	5	98	1F01	に憑依{03:0C}た！\n					@noedit; @dupid; record is not editable; copied verbatim; reads: に憑依された！\n
-m/MS610B.BIN	15:4E	0	3	0D	{02:09}\n	{02:09}\n				@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・\n
-m/MS610B.BIN	15:4E	1	9	0D	{02:09}\n<wait>	{02:09}\n<wait>				@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・\n<wait>
-m/MS610B.BIN	15:51	0	2	1FBA	{02:09}・・\n					@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n
-m/MS610B.BIN	15:51	1	23	0C	何も起こら{08:19}！\n					@noedit; @dupid; record is not editable; copied verbatim; reads: 何も起こらなかった！\n
-m/MS610B.BIN	15:57	0	6	1F01	\nは\n一体成仏{08:17}\n					@noedit; @dupid; record is not editable; copied verbatim; reads: \nは\n一体成仏した！\n
+m/MS610B.BIN	15:4D	1	13	1F01	が\n意識の中に　入り込んで{08:1D}\n<wait>	 \nslipped into your mind!\n<wait>			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: が\n意識の中に　入り込んできた！\n<wait> @ours-2026-09-05
+m/MS610B.BIN	15:4D	2	47	1FBA	{02:09}・・\n	.....\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n @ours-2026-09-05
+m/MS610B.BIN	15:4D	3	60	1F01	は	 has			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: は @ours-2026-09-05
+m/MS610B.BIN	15:4D	4	67	16	耐え切{08:12}\n<wait>	 endured it!\n<wait>			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: 耐え切った！\n<wait> @ours-2026-09-05
+m/MS610B.BIN	15:4D	5	98	1F01	に憑依{03:0C}た！\n	 possessed you!\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: に憑依された！\n @ours-2026-09-05
+m/MS610B.BIN	15:4E	0	3	0D	{02:09}\n	...\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・\n @ours-2026-09-05
+m/MS610B.BIN	15:4E	1	9	0D	{02:09}\n<wait>	...\n<wait>			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・\n<wait> @ours-2026-09-05
+m/MS610B.BIN	15:51	0	2	1FBA	{02:09}・・\n	.....\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: ・・・・・\n @ours-2026-09-05
+m/MS610B.BIN	15:51	1	23	0C	何も起こら{08:19}！\n	Nothing happened!\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: 何も起こらなかった！\n @ours-2026-09-05
+m/MS610B.BIN	15:57	0	6	1F01	\nは\n一体成仏{08:17}\n	 \nwas\nlaid to rest!\n			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: \nは\n一体成仏した！\n @ours-2026-09-05
 m/MS610B.BIN	15:58	0	0	DATA	何を{08:13}？\n<wait>					@noedit; @dupid; record is not editable; copied verbatim; reads: 何をしている？\n<wait>
 m/MS610B.BIN	15:59	0	0	DATA	おのれぇ！\n<wait>					@noedit; @dupid; record is not editable; copied verbatim
 m/MS610B.BIN	15:5A	0	0	DATA	来{08:25}かぁ！\n<wait>					@noedit; @dupid; record is not editable; copied verbatim; reads: 来ないかぁ！\n<wait>
@@ -221,7 +221,7 @@ m/MS610B.BIN	15:9F	0	0	DATA	やはあ{02:09}\n<wait>					@noedit; @dupid; record
 m/MS610B.BIN	15:A0	0	0	DATA	あ？					@noedit; @dupid; record is not editable; copied verbatim
 m/MS610B.BIN	15:A1	0	0	DATA	何か					@noedit; @dupid; record is not editable; copied verbatim
 m/MS610B.BIN	15:A2	0	0	DATA	二辺の角度が６０°で{08:3F}ば\n{08:4D}は正三角形で{08:7B}！\n<wait>					@noedit; @dupid; record is not editable; copied verbatim; reads: 二辺の角度が６０°であれば\nそれは正三角形である！\n<wait>
-m/MS610B.BIN	15:A2	1	50	1FBA	６つの内角が{08:4D}ぞれ６０°で{08:3F}ば、\n{08:4D}は正六角形で{08:7B}！\n<wait>					@noedit; @dupid; record is not editable; copied verbatim; reads: ６つの内角がそれぞれ６０°であれば、\nそれは正六角形である！\n<wait>
+m/MS610B.BIN	15:A2	1	50	1FBA	６つの内角が{08:4D}ぞれ６０°で{08:3F}ば、\n{08:4D}は正六角形で{08:7B}！\n<wait>	If all six interior angles are 60°,\nit is a regular hexagon!\n<wait>			draft	@noedit; @dupid; record is not editable; copied verbatim; reads: ６つの内角がそれぞれ６０°であれば、\nそれは正六角形である！\n<wait> @ours-2026-09-05
 m/MS610B.BIN	15:A3	0	0	DATA	いんいちがいち、いんにがに、\nいんさんがさん{02:09}\n<wait>					@noedit; @dupid; record is not editable; copied verbatim; reads: いんいちがいち、いんにがに、\nいんさんがさん・・・\n<wait>
 m/MS610B.BIN	15:A3	1	52	1FBA	ごいちがご、ごにじゅう、\nごさんじゅうご{02:09}\n<wait>					@noedit; @dupid; record is not editable; copied verbatim; reads: ごいちがご、ごにじゅう、\nごさんじゅうご・・・\n<wait>
 m/MS610B.BIN	15:A4	0	0	DATA	あの頃の俺{08:62}何をや{08:52}も					@noedit; @dupid; record is not editable; copied verbatim; reads: あの頃の俺は、何をやっても

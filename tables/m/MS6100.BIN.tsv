@@ -9,18 +9,18 @@ m/MS6100.BIN	0:00	2	92	1F01	と\n{08:05}{08:65}を試みた{02:09}\n<wait>		try 
 m/MS6100.BIN	0:00	3	122	0E	{08:65}は失敗{08:4B}\n<wait>		The connection fails.\n<wait>	ours		reads: 通信は失敗した\n<wait>
 m/MS6100.BIN	0:00	4	167	1FB2	入力{08:8E}		Enter It	ours		reads: 入力する; menu option, declared width 20 columns
 m/MS6100.BIN	0:00	5	175	1FB2	入力し{08:25}		Never Mind	ours		reads: 入力しない; menu option, declared width 20 columns
-m/MS6100.BIN	0:00	6	221	1FBA	＞{02:06}\n	＞{02:06}\n	>{02:06}	ours		reads: ＞どうしますか？\n
+m/MS6100.BIN	0:00	6	221	1FBA	＞{02:06}\n	>What will you do?\n	>{02:06}	ours	draft	reads: ＞どうしますか？\n @ours-2026-09-05
 m/MS6100.BIN	0:00	7	242	1FB2	ひとまず撤退！	ひとまず撤退！	Retreat!	ours		menu option, declared width 20 columns
 m/MS6100.BIN	0:00	8	258	1FB2	戦う		Fight	ours		menu option, declared width 20 columns; reads: ＞どうしますか？\n
-m/MS6100.BIN	0:00	9	302	1F01	は逃げ{08:69}と{08:4B}\n{02:09}・・\n{08:61}　\n失敗{08:17}\n<wait>					reads: は逃げようとした\n・・・・・\nしかし　\n失敗した！\n<wait>; menu option, declared width 20 columns @rebase-unmatched idx13 en=You try to flee\n.....\nBut\nyou fail!\n<wait> @rebase-new @rebase-unmatched idx13 en=You try to flee\n.....\nBut\nyou fail!\n<wait>
+m/MS6100.BIN	0:00	9	302	1F01	は逃げ{08:69}と{08:4B}\n{02:09}・・\n{08:61}　\n失敗{08:17}\n<wait>	 tried to flee\n.....\nBut \nit failed!\n<wait>			draft	reads: は逃げようとした\n・・・・・\nしかし　\n失敗した！\n<wait>; menu option, declared width 20 columns @rebase-unmatched idx13 en=You try to flee\n.....\nBut\nyou fail!\n<wait> @rebase-new @rebase-unmatched idx13 en=You try to flee\n.....\nBut\nyou fail!\n<wait> @ours-2026-09-05
 m/MS6100.BIN	2:00	0	27	1FB2	入力{08:8E}		Enter It	ours		record reaches an engine no-op opcode; verify in game; reads: 入力する; menu option, declared width 20 columns
 m/MS6100.BIN	2:00	1	35	1FB2	入力し{08:25}		Never Mind	ours		record reaches an engine no-op opcode; verify in game; reads: 入力しない; menu option, declared width 20 columns
-m/MS6100.BIN	2:00	2	65	1FFA	{02:09}・・\n	{02:09}・・\n	{02:09}..\n	ours		record reaches an engine no-op opcode; verify in game; reads: ・・・・・\n
-m/MS6100.BIN	2:00	3	92	1FBA	＞{02:06}\n	＞{02:06}\n	>{02:06}	ours		record reaches an engine no-op opcode; verify in game; reads: ＞どうしますか？\n
+m/MS6100.BIN	2:00	2	65	1FFA	{02:09}・・\n	.....\n	{02:09}..\n	ours	draft	record reaches an engine no-op opcode; verify in game; reads: ・・・・・\n @ours-2026-09-05
+m/MS6100.BIN	2:00	3	92	1FBA	＞{02:06}\n	>What will you do?\n	>{02:06}	ours	draft	record reaches an engine no-op opcode; verify in game; reads: ＞どうしますか？\n @ours-2026-09-05
 m/MS6100.BIN	2:00	4	113	1FB2	ひとまず撤退！		Retreat!	ours		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns; reads: ・・・・・\n
 m/MS6100.BIN	2:00	5	129	1FB2	戦う		Fight	ours		record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns; reads: ＞どうしますか？\n
-m/MS6100.BIN	2:00	6	175	1F01	は逃げ{08:69}と{08:4B}\n<wait>					record reaches an engine no-op opcode; verify in game; reads: は逃げようとした\n<wait>; menu option, declared width 20 columns @rebase-new
-m/MS6100.BIN	2:00	7	200	1FFA	{02:09}・・\n		{02:09}..\n	ours		record reaches an engine no-op opcode; verify in game; reads: ・・・・・\n; menu option, declared width 20 columns
+m/MS6100.BIN	2:00	6	175	1F01	は逃げ{08:69}と{08:4B}\n<wait>	 tried to flee\n<wait>			draft	record reaches an engine no-op opcode; verify in game; reads: は逃げようとした\n<wait>; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
+m/MS6100.BIN	2:00	7	200	1FFA	{02:09}・・\n	.....\n	{02:09}..\n	ours	draft	record reaches an engine no-op opcode; verify in game; reads: ・・・・・\n; menu option, declared width 20 columns @ours-2026-09-05
 m/MS6100.BIN	2:00	8	215	1FBA	{08:61}　\n失敗{08:17}\n	{08:61}　\n失敗{08:17}\n	But...\nIt failed!\n	ours		record reaches an engine no-op opcode; verify in game; reads: しかし　\n失敗した！\n @rebase-unmatched idx10 en=You try to flee.\n<wait>
 m/MS6100.BIN	4:AC	0	0	DATA	ＩＤコードノ入力ヲドウゾ{02:09}・・\n<wait>		Please enter your ID code.....\n<wait>	ours		reads: ＩＤコードノ入力ヲドウゾ・・・・・\n<wait>
 m/MS6100.BIN	4:AD	0	0	DATA	ドウゾ　オ通リクダサイ\n<wait>		Please, proceed.\n<wait>	ours		
