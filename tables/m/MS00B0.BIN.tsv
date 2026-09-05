@@ -3,13 +3,13 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS00B0.BIN	0:03	0	34	1B	バーテン	バーテン	Bartender	v005		reads: ありがとう
+m/MS00B0.BIN	0:03	0	34	1B	バーテン	Bartender	Bartender	v005	draft	reads: ありがとう @ours-2026-09-05
 m/MS00B0.BIN	0:03	1	55	1B	{02:03}	{02:03}	R.Soldier	v005		reads: レジスタンス; reads: ペンタグランマ5
-m/MS00B0.BIN	0:03	2	70	1B	娼婦	娼婦	Prostitute	v005		reads: そんなことB
-m/MS00B0.BIN	0:03	3	87	1B	{08:0B}人	{08:0B}人	Cambion	v005		reads: 悪魔人; reads: 切りO
-m/MS00B0.BIN	0:03	4	104	1B	若い男	若い男	Young Man	v005		reads: 飛び道具^ @rebase-unmatched idx4 en={05:01}r @rebase-unmatched idx4 en={05:01}r
-m/MS00B0.BIN	0:03	5	123	1B	男性	男性	Man	v005		reads: k
-m/MS00B0.BIN	0:03	6	140	1B	女性	女性	Woman	v005		
+m/MS00B0.BIN	0:03	2	70	1B	娼婦	Prostitute	Prostitute	v005	draft	reads: そんなことB @ours-2026-09-05
+m/MS00B0.BIN	0:03	3	87	1B	{08:0B}人	Demonoid	Cambion	v005	draft	reads: 悪魔人; reads: 切りO @ours-2026-09-05
+m/MS00B0.BIN	0:03	4	104	1B	若い男	Young Man	Young Man	v005	draft	reads: 飛び道具^ @rebase-unmatched idx4 en={05:01}r @rebase-unmatched idx4 en={05:01}r @ours-2026-09-05
+m/MS00B0.BIN	0:03	5	123	1B	男性	Man	Man	v005	draft	reads: k @ours-2026-09-05
+m/MS00B0.BIN	0:03	6	140	1B	女性	Woman	Woman	v005	draft	@ours-2026-09-05
 m/MS00B0.BIN	0:04	0	4	1FD2	バーテン：		Bartender:	v005		
 m/MS00B0.BIN	0:04	1	21	09	やあ、いらっしゃい{08:72}\n<wait>		Welcome to our bar.\n<wait>	v005		reads: やあ、いらっしゃい‥‥\n<wait>; reads: やあ、いらっしゃい‥‥\n<wait> @refalign
 m/MS00B0.BIN	0:04	2	50	1FD2	バーテン：		Bartender:	v005		
@@ -42,7 +42,7 @@ m/MS00B0.BIN	0:08	3	106	1FD3	サイバー手術の技術を覚{08:41}いと思{0
 m/MS00B0.BIN	0:08	4	196	1FD2	若い男：		Young Man:	v005		
 m/MS00B0.BIN	0:08	5	206	1FD3	はぁ～{02:08}\n何か、儲かる仕事は{08:25}{08:55}かねぇ。\n<wait>		Haa... Is there really no job out there for me?\n<wait>	v005		reads: はぁ～‥‥‥\n何か、儲かる仕事はないですかねぇ。\n<wait>
 m/MS00B0.BIN	0:09	0	4	1FD2	労働者風の男：		Worker:	v005		
-m/MS00B0.BIN	0:09	1	20	1FD3	{02:08}{02:08}{02:08}{02:08}‥\n<wait>	{02:08}{02:08}{02:08}{02:08}‥\n<wait>				reads: ‥‥‥‥‥‥‥‥‥‥‥‥‥\n<wait>
+m/MS00B0.BIN	0:09	1	20	1FD3	{02:08}{02:08}{02:08}{02:08}‥\n<wait>	..................			draft	reads: ‥‥‥‥‥‥‥‥‥‥‥‥‥\n<wait> @ours-2026-09-05
 m/MS00B0.BIN	0:0A	0	4	1FD2	女性：		Woman:	v005		
 m/MS00B0.BIN	0:0A	1	12	1FD3	お茶の水にも、確か{08:10}があ{08:51}わよね。\n<wait>ああ、私、親戚を探し{08:2B}のよ。\n<wait>		Hmm... I'm pretty sure that there's a shelter at Ochanomizu.\n<wait>Oh, sorry. You see, I'm looking for my relatives.\n<wait>	v005		reads: お茶の水にも、確かシェルターがあったわよね。\n<wait>ああ、私、親戚を探してるのよ。\n<wait>
 m/MS00B0.BIN	0:0A	2	88	1FD2	女性：		Woman:	v005		

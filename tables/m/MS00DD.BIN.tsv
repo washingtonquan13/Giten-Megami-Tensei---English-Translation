@@ -11,7 +11,7 @@ m/MS00DD.BIN	0:0A	0	7	1E5C	{04:05}{08:62}巧くかわ{08:17}\n		{04:05} dodged w
 m/MS00DD.BIN	0:0A	1	25	18	{03:0B}{04:05}にかわ{03:0C}た\n\n		However, {04:05} dodged.\n\n	v005		reads: しかし、　にかわされた\n\n; reads: しかし、　にかわされた\n\n @refalign
 m/MS00DD.BIN	0:0B	0	7	1E5C	{04:05}に{08:62}ダメージが無{08:18}\n		{04:05} took no damage.\n	v005		reads: 　には、ダメージが無かった\n; reads: 　には、ダメージが無かった\n @refalign
 m/MS00DD.BIN	0:0B	1	31	18	{04:05}にダメージを与えられ{08:19}\n\n		No damage was dealt to {04:05}.\n\n	v005		reads: 　にダメージを与えられなかった\n\n; reads: 　にダメージを与えられなかった\n\n @refalign
-m/MS00DD.BIN	0:0C	0	13	1E5C	{08:62}かすり傷を受け、\n	{08:62}かすり傷を受け、\n	 took only a scratch,\n	ours		reads: は、かすり傷を受け、\n
+m/MS00DD.BIN	0:0C	0	13	1E5C	{08:62}かすり傷を受け、\n	 took only a scratch,	 took only a scratch,\n	ours	draft	reads: は、かすり傷を受け、\n @ours-2026-09-05
 m/MS00DD.BIN	0:0C	1	35	18	をかすり		 was grazed	ours		reads: は、かすり傷を受け、\n
 m/MS00DD.BIN	0:0D	0	0	DATA	{04:05}{04:09}、\n					reads: 　はに、\n
 m/MS00DD.BIN	0:0E	0	25	00	{07:0C}ﾝ					reads: もっとﾝ
@@ -29,17 +29,17 @@ m/MS00DD.BIN	0:11	3	82	1F02	{03:0D}のダメージを与{08:41}\n		 damage to HP
 m/MS00DD.BIN	0:11	4	118	0C	#	#				
 m/MS00DD.BIN	0:11	5	135	1F01	に、		{04:EC} lost 	v005		reads: に、 @rebase-tagdiff @refalign
 m/MS00DD.BIN	0:11	6	143	1F02	{03:0E}を失わせた\n		 MP.\n	v005		reads: ＭＰを失わせた\n; reads: ＭＰを失わせた\n @refalign
-m/MS00DD.BIN	0:11	7	188	1F83	{04:EC}{08:62}	{04:EC}{08:62}	{04:EC} lost 	v005		reads: は、
+m/MS00DD.BIN	0:11	7	188	1F83	{04:EC}{08:62}	{04:EC} lost	{04:EC} lost 	v005	draft	reads: は、 @ours-2026-09-05
 m/MS00DD.BIN	0:11	8	196	1F02	{03:0F}を失わせた\n		 EXP.\n	v005		reads: ＥＸＰを失わせた\n; reads: ＥＸＰを失わせた\n @refalign
 m/MS00DD.BIN	0:11	9	212	18	{08:61}ダメージを与えられ{08:19}\n		However, no damage was dealt.\n	v005		reads: しかしダメージを与えられなかった\n; reads: しかしダメージを与えられなかった\n @refalign
 m/MS00DD.BIN	0:11	10	238	18	{03:0B}{04:05}に、跳ね返さ{08:11}\n		However, {04:05} struck back!\n 	v005		reads: しかし、　に、跳ね返された！\n; reads: しかし、　に、跳ね返された！\n @refalign
 m/MS00DD.BIN	0:11	11	268	1F83	{08:01}(#	{08:01}(#				reads: 達也(#
-m/MS00DD.BIN	0:11	12	288	1F01	{08:62}	{08:62}	{04:EC} took 	v005		reads: は、 @rebase-tagdiff
+m/MS00DD.BIN	0:11	12	288	1F01	{08:62}	 took	{04:EC} took 	v005	draft	reads: は、 @rebase-tagdiff @ours-2026-09-05
 m/MS00DD.BIN	0:11	13	294	1F02	{03:0D}のダメージを受{08:43}\n		 damage to HP.\n	v005		reads: ＨＰのダメージを受けた\n; reads: ＨＰのダメージを受けた\n @refalign
 m/MS00DD.BIN	0:11	14	330	0C	#	#				
-m/MS00DD.BIN	0:11	15	347	1F01	{08:62}	{08:62}	{04:EC} lost 	v005		reads: は、 @rebase-tagdiff
+m/MS00DD.BIN	0:11	15	347	1F01	{08:62}	 lost	{04:EC} lost 	v005	draft	reads: は、 @rebase-tagdiff @ours-2026-09-05
 m/MS00DD.BIN	0:11	16	353	1F02	{03:0E}を失{08:16}\n		 MP.\n	v005		reads: ＭＰを失なった\n; reads: ＭＰを失なった\n @refalign
-m/MS00DD.BIN	0:11	17	394	1F83	{04:EC}{08:62}	{04:EC}{08:62}	{04:EC} lost 	v005		reads: は、
+m/MS00DD.BIN	0:11	17	394	1F83	{04:EC}{08:62}	{04:EC} lost	{04:EC} lost 	v005	draft	reads: は、 @ours-2026-09-05
 m/MS00DD.BIN	0:11	18	402	1F02	{03:0F}を失{08:16}\n		 EXP.\n	v005		reads: ＥＸＰを失なった\n; reads: ＥＸＰを失なった\n @refalign
 m/MS00DD.BIN	0:11	19	414	18	{08:61}ダメージは{08:19}\n		However, no damage was dealt.\n	v005		reads: しかしダメージはなかった\n; reads: しかしダメージはなかった\n @refalign
 m/MS00DD.BIN	0:11	20	434	1FC4	必殺の反撃！\n		Critical strike!\n	v005		@refalign
@@ -83,12 +83,12 @@ m/MS00DD.BIN	0:1F	3	28	18	は{03:0D}を増や{08:4B}\n		HP.\n	v005		reads: は�
 m/MS00DD.BIN	0:21	0	26	0C	{04:05}{08:62}{08:05}ーに還{08:51}\n		{04:05} returned to the computer.\n	v005		reads: 　は、コンピューターに還った\n; reads: 　は、コンピューターに還った\n @refalign
 m/MS00DD.BIN	0:21	1	44	18	{04:05}{08:62}魔界に還っ{08:21}\n		{04:05} returned to Makai.\n	v005		reads: 　は、魔界に還っていった\n; reads: 　は、魔界に還っていった\n @refalign
 m/MS00DD.BIN	0:22	0	0	DATA	{04:05}	{04:05}				reads: 　
-m/MS00DD.BIN	0:22	1	9	1E5C	{08:62}	{08:62}	 recovered 	v005		reads: は、
+m/MS00DD.BIN	0:22	1	9	1E5C	{08:62}	recovered	 recovered 	v005	draft	reads: は、 @ours-2026-09-05
 m/MS00DD.BIN	0:22	2	16	1F02	{03:0D}{03:10}	{03:0D}{03:10}	 HP	v005		reads: ＨＰ回復
 m/MS00DD.BIN	0:22	3	28	1F86	{08:4A}\n{03:0D}がＭＡＸに{08:16}\n		.\nHP is full.\n	v005		reads: して\nＨＰがＭＡＸになった\n; reads: して\nＨＰがＭＡＸになった\n @refalign
 m/MS00DD.BIN	0:22	4	49	18	{08:4B}\n	.\n			draft	reads: した\n @ours-2026-09-05
 m/MS00DD.BIN	0:22	5	55	18	の{03:0D}が、\n		 recovered \n	v005		reads: のＨＰが、\n; reads: のＨＰが、\n @refalign
-m/MS00DD.BIN	0:22	6	69	1F02	{03:10}{08:4B}\n	{03:10}{08:4B}\n	 HP.\n	v005		reads: 回復した\n
+m/MS00DD.BIN	0:22	6	69	1F02	{03:10}{08:4B}\n	 recovered	 HP.\n	v005	draft	reads: 回復した\n @ours-2026-09-05
 m/MS00DD.BIN	0:24	0	0	DATA	{04:05}	{04:05}				reads: 　
 m/MS00DD.BIN	0:24	1	9	1E5C	は		 recovered 	v005		@refalign
 m/MS00DD.BIN	0:24	2	16	1F02	{03:0E}{03:10}	{03:0E}{03:10}	 MP	v005		reads: ＭＰ回復
@@ -170,12 +170,12 @@ m/MS00DD.BIN	0:4D	3	32	18	わせた\n	.\n	.\n	ours	draft	@ours-2026-09-05
 m/MS00DD.BIN	0:4D	4	49	1E5C	い\n	.\n	.\n	ours	draft	@ours-2026-09-05
 m/MS00DD.BIN	0:4D	5	55	18	わせ\n\nさらに		.\n\nFurthermore, 	ours		
 m/MS00DD.BIN	0:4F	0	90	1EB0	を倒{08:17}\n		 was defeated!\n	v005		reads: を倒した！\n; reads: 　; record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:4F	1	98	00	{08:62}機能を停止{08:4B}\n	{08:62}機能を停止{08:4B}\n	 ceased functioning.\n	v005		reads: は、機能を停止した\n; record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:4F	2	114	00	{08:62}消え去{08:51}\n	{08:62}消え去{08:51}\n	 vanished.\n	v005		reads: は、消え去った\n; reads: を倒した！\n; record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:4F	3	126	00	{08:62}崩れ落ちた\n	{08:62}崩れ落ちた\n	 crumbled down.\n	v005		reads: は、崩れ落ちた\n; reads: は、機能を停止した\n; record reaches an engine no-op opcode; verify in game; reads: '
-m/MS00DD.BIN	0:4F	4	140	00	{08:62}灰燼と化{08:4B}\n	{08:62}灰燼と化{08:4B}\n	 turned into ash.\n	v005		reads: は、灰燼と化した\n; reads: は、消え去った\n; record reaches an engine no-op opcode; verify in game; reads: (
-m/MS00DD.BIN	0:4F	5	154	00	{08:62}{08:90}と倒{08:60}\n	{08:62}{08:90}と倒{08:60}\n	 was defeated.\n	v005		reads: は、どうと倒れた\n; reads: は、崩れ落ちた\n; record reaches an engine no-op opcode; verify in game; reads: #バーチャル
-m/MS00DD.BIN	0:4F	6	166	00	{08:62}落鳥{08:4B}\n	{08:62}落鳥{08:4B}\n	 fell.\n	v005		reads: は、落鳥した\n; reads: は、灰燼と化した\n; record reaches an engine no-op opcode; verify in game @rebase-unmatched idx8 en= was defeated!\n
+m/MS00DD.BIN	0:4F	1	98	00	{08:62}機能を停止{08:4B}\n	 ceased functioning	 ceased functioning.\n	v005	draft	reads: は、機能を停止した\n; record reaches an engine no-op opcode; verify in game @ours-2026-09-05
+m/MS00DD.BIN	0:4F	2	114	00	{08:62}消え去{08:51}\n	 vanished	 vanished.\n	v005	draft	reads: は、消え去った\n; reads: を倒した！\n; record reaches an engine no-op opcode; verify in game @ours-2026-09-05
+m/MS00DD.BIN	0:4F	3	126	00	{08:62}崩れ落ちた\n	 crumbled	 crumbled down.\n	v005	draft	reads: は、崩れ落ちた\n; reads: は、機能を停止した\n; record reaches an engine no-op opcode; verify in game; reads: ' @ours-2026-09-05
+m/MS00DD.BIN	0:4F	4	140	00	{08:62}灰燼と化{08:4B}\n	 turned to ash	 turned into ash.\n	v005	draft	reads: は、灰燼と化した\n; reads: は、消え去った\n; record reaches an engine no-op opcode; verify in game; reads: ( @ours-2026-09-05
+m/MS00DD.BIN	0:4F	5	154	00	{08:62}{08:90}と倒{08:60}\n	 fell with a thud	 was defeated.\n	v005	draft	reads: は、どうと倒れた\n; reads: は、崩れ落ちた\n; record reaches an engine no-op opcode; verify in game; reads: #バーチャル @ours-2026-09-05
+m/MS00DD.BIN	0:4F	6	166	00	{08:62}落鳥{08:4B}\n	 dropped from the sky	 fell.\n	v005	draft	reads: は、落鳥した\n; reads: は、灰燼と化した\n; record reaches an engine no-op opcode; verify in game @rebase-unmatched idx8 en= was defeated!\n @ours-2026-09-05
 m/MS00DD.BIN	0:50	0	15	1F01	{08:62}がっくりと力尽{08:1E}\n		{04:EB} slumped down, strength spent.\n	ours		reads: は、がっくりと力尽きた\n @rebase-tagdiff
 m/MS00DD.BIN	0:51	0	0	DATA	{04:19}戦いに勝ち残{08:51}\n		{04:19} was victorious.\n	v005		reads: たちは戦いに勝ち残った\n; reads: たちは戦いに勝ち残った\n @refalign
 m/MS00DD.BIN	0:52	0	0	DATA	{04:19}	{04:19}	{04:19} gained 	v005		reads: たちは
@@ -202,7 +202,7 @@ m/MS00DD.BIN	0:5B	0	6	1F01	に、憑依{08:4A}{08:64}{08:0B}が落ちた\n		{04:
 m/MS00DD.BIN	0:5C	0	0	DATA	{04:06}は{03:10}{08:4B}\n		{04:06} recovered.\n	ours		reads: 味方たち　たちは回復した\n
 m/MS00DD.BIN	0:5D	0	0	DATA	{04:19}、戦いを回避{08:4B}\n		{04:19} dodged the fight.\n	v005		reads: たちは、戦いを回避した\n; reads: たちは、戦いを回避した\n @refalign
 m/MS00DD.BIN	0:5E	0	77	1F83	{04:0E}	{04:0E}				reads: はの
-m/MS00DD.BIN	0:5E	1	93	1F8A	に触{08:60}が、何も起き{08:19}\n	に触{08:60}が、何も起き{08:19}\n	 touched it, but nothing happened.\n	ours		reads: に触れたが、何も起きなかった\n; reads: 切り
+m/MS00DD.BIN	0:5E	1	93	1F8A	に触{08:60}が、何も起き{08:19}\n	 touched it, but nothing happened	 touched it, but nothing happened.\n	ours	draft	reads: に触れたが、何も起きなかった\n; reads: 切り @ours-2026-09-05
 m/MS00DD.BIN	0:5E	2	117	18	を黄金に変{08:41}\n		 turned it to gold.\n	ours		reads: を黄金に変えた\n; reads: に触れたが、何も起きなかった\n
 m/MS00DD.BIN	0:5E	3	145	18	{03:0B}\n{04:07}は武器を持{08:52}い{08:19}\n		However,\n{04:07} had no weapon.\n	ours		reads: しかし、\n敵 は武器を持っていなかった\n; reads: を黄金に変えた\n
 m/MS00DD.BIN	0:5F	0	0	DATA	{04:05}の、幻が現わ{08:11}\n		An illusion of {04:05} appeared!\n	ours		reads: 　の、幻が現われた！\n

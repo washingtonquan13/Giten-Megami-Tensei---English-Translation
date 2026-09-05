@@ -3,9 +3,9 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS00B4.BIN	0:03	0	18	1B	バーテン	バーテン	Bartender	v005		reads: わたくし
-m/MS00B4.BIN	0:03	1	39	1B	男性	男性	Man	v005		reads: ペンタグランマ'
-m/MS00B4.BIN	0:03	2	56	1B	労働者	労働者	Worker	v005		
+m/MS00B4.BIN	0:03	0	18	1B	バーテン	Bartender	Bartender	v005	draft	reads: わたくし @ours-2026-09-05
+m/MS00B4.BIN	0:03	1	39	1B	男性	Man	Man	v005	draft	reads: ペンタグランマ' @ours-2026-09-05
+m/MS00B4.BIN	0:03	2	56	1B	労働者	Worker	Worker	v005	draft	@ours-2026-09-05
 m/MS00B4.BIN	0:04	0	4	1FD2	バーテン：		Bartender:	v005		
 m/MS00B4.BIN	0:04	1	22	1F01	様！　よくぞおいで下{08:49}ま{08:17}\nど‥‥どうぞ、ごゆっくり、おくつろぎ下{08:49}ませ！\n<wait>		Mister Katsuragi! You are always welcome here.\nPlease, enjoy yourself.\n<wait>	v005		reads: 様！　よくぞおいで下さいました！\nど‥‥どうぞ、ごゆっくり、おくつろぎ下さいませ！\n<wait> @rebase-tagdiff
 m/MS00B4.BIN	0:05	0	4	1FD2	男性：		Man:	v005		
@@ -19,5 +19,5 @@ m/MS00B4.BIN	0:06	0	4	1FD2	労働者：		Worker:	v005
 m/MS00B4.BIN	0:06	1	19	09	新宿に{08:3F}程しっかり{08:4B}拠点が出来ちまうと、\n{08:47}辺りも、かなりやばく{08:1A}来る‥‥‥‥\n<wait>		With what's happening over at Shinjuku,\nit's only a matter of time till disaster strikes here...\n<wait>	v005		reads: 新宿にあれ程しっかりした拠点が出来ちまうと、\nこの辺りも、かなりやばくなって来る‥‥‥‥\n<wait>; reads: 新宿にあれ程しっかりした拠点が出来ちまうと、\nこの辺りも、かなりやばくなって来る‥‥‥‥\n<wait> @refalign
 m/MS00B4.BIN	0:06	2	105	1FD2	労働者：		Worker:	v005		
 m/MS00B4.BIN	0:06	3	115	1FD3	今更、俺{08:4F}は外では暮らせ{08:25}し‥‥‥\nどう{08:4B}らいい{08:5F}。\n		It's not like we can move to the surface. Not anymore.\nI wonder, what are we going to do going forward?...\n	v005		reads: 今更、俺たちは外では暮らせないし‥‥‥\nどうしたらいいんだ。\n
-m/MS00B4.BIN	0:06	4	170	18	嗚呼、		Aah! Mister Katsuragi! I owe you my life! Thank you!\n<wait>	v005		@refalign
-m/MS00B4.BIN	0:06	5	182	1F01	様！！\n貴方は命の恩人{08:55}！　有り難う御座いま{08:17}！\n<wait>					reads: 様！！\n貴方は命の恩人です！　有り難う御座いました！！\n<wait>
+m/MS00B4.BIN	0:06	4	170	18	嗚呼、	Aah, 	Aah! Mister Katsuragi! I owe you my life! Thank you!\n<wait>	v005	draft	@refalign @ours-2026-09-05
+m/MS00B4.BIN	0:06	5	182	1F01	様！！\n貴方は命の恩人{08:55}！　有り難う御座いま{08:17}！\n<wait>	!!			draft	reads: 様！！\n貴方は命の恩人です！　有り難う御座いました！！\n<wait> @ours-2026-09-05

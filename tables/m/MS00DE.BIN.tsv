@@ -16,13 +16,13 @@ m/MS00DE.BIN	0:02	8	179	1E5D	{08:62}{03:04}に{03:12}つけ{08:14}\n		 attacked 
 m/MS00DE.BIN	0:02	9	203	1ECE	は\n{04:01}で{03:12}かか{08:52}{08:1E}\n		 attacked using [{04:01}].\n	v005		reads: は\nで切りかかってきた\n; reads: は\n切りで切りかかってきた\n
 m/MS00DE.BIN	0:02	10	224	18	の{04:01}が舞う\n		's [{04:01}] swings wild.\n	v005		reads: のが舞う\n; reads: の切りが舞う\n
 m/MS00DE.BIN	0:03	0	0	DATA	{04:03}	{04:03}				reads: 　
-m/MS00DE.BIN	0:03	1	15	1ECF	{08:62}{03:0A}{03:02}{03:03}\n	{08:62}{03:0A}{03:02}{03:03}\n	 attacked themselves.\n	v005		reads: は、自分自身を攻撃しだした\n
+m/MS00DE.BIN	0:03	1	15	1ECF	{08:62}{03:0A}{03:02}{03:03}\n	 attacked themself	 attacked themselves.\n	v005	draft	reads: は、自分自身を攻撃しだした\n @ours-2026-09-05
 m/MS00DE.BIN	0:03	2	40	1ECE	は		 is attacking 	v005		@refalign
 m/MS00DE.BIN	0:03	3	48	1F01	に向か{08:52}{08:1E}\n	.\n			draft	reads: に向かってきた\n @ours-2026-09-05
 m/MS00DE.BIN	0:03	4	62	18	{08:62}{03:04}{03:02}{03:03}！\n		 attacked an ally!\n	v005		reads: は、味方を攻撃しだした！\n; reads: は、味方を攻撃しだした！\n @refalign
 m/MS00DE.BIN	0:03	5	76	18	の{08:0C}\n		 attacks.\n	v005		reads: の攻撃\n; reads: の攻撃\n @refalign
-m/MS00DE.BIN	0:03	6	90	1ECF	{08:62}{08:63}{03:02}{08:14}\n	{08:62}{08:63}{03:02}{08:14}\n	 is attacking themself.\n	v005		reads: は、自分を攻撃している\n
-m/MS00DE.BIN	0:03	7	109	1E5D	{08:62}{03:04}{03:02}{08:14}\n	{08:62}{03:04}{03:02}{08:14}\n	 is attacking an ally.\n	v005		reads: は、味方を攻撃している\n
+m/MS00DE.BIN	0:03	6	90	1ECF	{08:62}{08:63}{03:02}{08:14}\n	 is attacking themself	 is attacking themself.\n	v005	draft	reads: は、自分を攻撃している\n @ours-2026-09-05
+m/MS00DE.BIN	0:03	7	109	1E5D	{08:62}{03:04}{03:02}{08:14}\n	 is attacking an ally	 is attacking an ally.\n	v005	draft	reads: は、味方を攻撃している\n @ours-2026-09-05
 m/MS00DE.BIN	0:03	8	121	18	の{08:0C}\n		 attacks.\n	v005		reads: の攻撃\n; reads: の攻撃\n @refalign
 m/MS00DE.BIN	0:04	0	35	1ECF	{08:62}己に{03:05}\n		 pointed their gun at themself.\n	v005		reads: は、己に銃口を向けた\n; reads: は、己に銃口を向けた\n @refalign
 m/MS00DE.BIN	0:04	1	60	1ECE	は		 pointed their gun at 	v005		@refalign
@@ -30,7 +30,7 @@ m/MS00DE.BIN	0:04	2	68	1F01	に{03:05}\n	.\n			draft	reads: に銃口を向け�
 m/MS00DE.BIN	0:04	3	76	18	{08:62}{03:04}に{03:05}\n		 pointed their gun at an ally.\n	v005		reads: は、味方に銃口を向けた\n; reads: は、味方に銃口を向けた\n @refalign
 m/MS00DE.BIN	0:04	4	94	1ECE	の{04:02}が火を吹{08:64}\n		's [{04:02}] spew fire.\n	v005		reads: のが火を吹いた\n; reads: の切りが火を吹いた\n @refalign
 m/MS00DE.BIN	0:04	5	112	18	は{04:02}を撃ちまく{08:51}\n		 fired their [{04:02}].\n	v005		reads: はを撃ちまくった\n; reads: は切りを撃ちまくった\n @refalign
-m/MS00DE.BIN	0:04	6	138	1ECF	{08:62}{03:06}{03:05}\n	{08:62}{03:06}{03:05}\n	 pointed their gun at themself.\n	v005		reads: は、自分に銃口を向けた\n
+m/MS00DE.BIN	0:04	6	138	1ECF	{08:62}{03:06}{03:05}\n	 pointed the gun at themself	 pointed their gun at themself.\n	v005	draft	reads: は、自分に銃口を向けた\n @ours-2026-09-05
 m/MS00DE.BIN	0:04	7	155	1E5D	{08:62}{03:04}に{03:05}\n		 pointed their gun at an ally.\n	v005		reads: は、味方に銃口を向けた\n; reads: は、味方に銃口を向けた\n @refalign
 m/MS00DE.BIN	0:04	8	173	1ECE	のショット\n		's shoots.\n	v005		@refalign
 m/MS00DE.BIN	0:04	9	187	18	は撃ちまく{08:51}\n		 fires.\n	v005		reads: は撃ちまくった\n; reads: は撃ちまくった\n @refalign
@@ -38,28 +38,28 @@ m/MS00DE.BIN	0:05	0	0	DATA	{04:03}	{04:03}				reads: 　
 m/MS00DE.BIN	0:05	1	15	1ECF	{08:62}{08:63}をいじめ{08:14}\n		 is hitting themself.\n	v005		reads: は、自分をいじめている\n; reads: は、自分をいじめている\n @refalign
 m/MS00DE.BIN	0:05	2	44	1ECE	は		 attacks \n{04:EB}!\n	v005		@refalign @refalign-joined
 m/MS00DE.BIN	0:05	3	55	18	{08:62}{03:04}	{08:62}{03:04}	 attacks an ally!\n	v005		reads: は、味方
-m/MS00DE.BIN	0:05	4	62	18	は敵に{03:07}た！\n	は敵に{03:07}た！\n	 attacks the enemy!             \n	v005		reads: は敵に襲いかかった！\n; reads: は、味方
+m/MS00DE.BIN	0:05	4	62	18	は敵に{03:07}た！\n	 attacked the enemy!	 attacks the enemy!             \n	v005	draft	reads: は敵に襲いかかった！\n; reads: は、味方 @ours-2026-09-05
 m/MS00DE.BIN	0:05	5	84	1ECF	{08:62}もがい{08:14}\n		 is wriggling.\n	v005		reads: は、もがいている\n; reads: は敵に襲いかかった！\n @refalign
 m/MS00DE.BIN	0:05	6	105	1E5D	{08:62}{03:04}に{03:07}た！\n		 attacks an ally!\n	v005		reads: は、味方に襲いかかった！\n; reads: は、もがいている\n @refalign
 m/MS00DE.BIN	0:05	7	121	18	が{03:07}て{08:1E}\n		 launches an attack.\n	v005		reads: が襲いかかってきた\n; reads: は、味方に襲いかかった！\n @refalign
 m/MS00DE.BIN	0:06	0	35	1ECF	{08:62}{08:63}を打ちす{08:41}\n		 hits themself.\n	v005		reads: は、自分を打ちすえた\n; reads: は、自分を打ちすえた\n @refalign
 m/MS00DE.BIN	0:06	1	64	1ECE	は		 swings [{04:01}] at \n{04:EB}!\n	v005		@refalign @refalign-joined
 m/MS00DE.BIN	0:06	2	75	18	{08:62}{03:04}	{08:62}{03:04}	 swings [{04:01}] at an ally!\n	v005		reads: は、味方
-m/MS00DE.BIN	0:06	3	82	18	は敵に{04:01}を振り降ろ{08:17}\n	は敵に{04:01}を振り降ろ{08:17}\n	 swings [{04:01}] at the enemy!                     \n	v005		reads: は敵にを振り降ろした！\n; reads: は、味方
+m/MS00DE.BIN	0:06	3	82	18	は敵に{04:01}を振り降ろ{08:17}\n	 swung {04:01} down at the enemy!	 swings [{04:01}] at the enemy!                     \n	v005	draft	reads: は敵にを振り降ろした！\n; reads: は、味方 @ours-2026-09-05
 m/MS00DE.BIN	0:06	4	112	1ECF	{08:62}{08:63}を打ちすえ{08:14}\n		 is hitting themself.\n	v005		reads: は、自分を打ちすえている\n; reads: は敵に切りを振り降ろした！\n @refalign
 m/MS00DE.BIN	0:06	5	139	1E5D	{08:62}{03:04}に{04:01}を振り降ろ{08:4B}\n		 swings [{04:01}] at an ally.\n	v005		reads: は、味方にを振り降ろした\n; reads: は、自分を打ちすえている\n @refalign
 m/MS00DE.BIN	0:06	6	163	18	が{04:01}で殴りかか{08:52}{08:1E}\n		 swings [{04:01}].\n	v005		reads: がで殴りかかってきた\n; reads: は、味方に切りを振り降ろした\n @refalign
 m/MS00DE.BIN	0:07	0	29	1E5C	は{04:01}で\n		 uses [{04:01}]\n	v005		reads: はで\n; reads: は切りで\n @refalign
 m/MS00DE.BIN	0:07	1	42	1ECF	己		to attack themself.\n\nto attack \n{04:EB}.\n	v005		@refalign @refalign-joined
 m/MS00DE.BIN	0:07	2	69	18	{03:04}	{03:04}	to attack an ally.\n	v005		reads: 味方
-m/MS00DE.BIN	0:07	3	74	18	敵を突{08:64}\n	敵を突{08:64}\n	to attack an enemy.         \n	v005		reads: 敵を突いた\n; reads: 味方
+m/MS00DE.BIN	0:07	3	74	18	敵を突{08:64}\n	thrust at the enemy	to attack an enemy.         \n	v005	draft	reads: 敵を突いた\n; reads: 味方 @ours-2026-09-05
 m/MS00DE.BIN	0:07	4	92	1ECF	{08:62}{08:63}を突い{08:14}\n		 is attacking themself.\n	v005		reads: は、自分を突いている\n; reads: 敵を突いた\n @refalign
 m/MS00DE.BIN	0:07	5	115	1E5D	{08:62}{03:04}を突い{08:14}\n		 is attacking an ally.\n	v005		reads: は、味方を突いている\n; reads: は、自分を突いている\n @refalign
 m/MS00DE.BIN	0:07	6	131	18	の突き！\n		 attacks!\n	v005		reads: は、味方を突いている\n @refalign
 m/MS00DE.BIN	0:08	0	29	1E5C	の{04:01}が唸り、\n		's [{04:01}] cracks,\n	v005		reads: のが唸り、\n; reads: の切りが唸り、\n @refalign
 m/MS00DE.BIN	0:08	1	48	1ECF	{03:0A}	{03:0A}	hitting themself.\n	v005		reads: 自分自身
 m/MS00DE.BIN	0:08	2	75	18	{03:04}	{03:04}	hitting an ally.\n	v005		reads: 味方
-m/MS00DE.BIN	0:08	3	80	18	敵を鞭打つ\n	敵を鞭打つ\n	hitting the enemy.           \n	v005		reads: 味方
+m/MS00DE.BIN	0:08	3	80	18	敵を鞭打つ\n	whips the enemy	hitting the enemy.           \n	v005	draft	reads: 味方 @ours-2026-09-05
 m/MS00DE.BIN	0:08	4	100	1ECF	{08:62}{08:63}を鞭打つ\n		 whips themself.\n	v005		reads: は、自分を鞭打つ\n; @refalign
 m/MS00DE.BIN	0:08	5	123	1E5D	{08:62}{03:04}を鞭打つ\n		 whips an ally.\n	v005		reads: は、味方を鞭打つ\n; reads: は、自分を鞭打つ\n @refalign
 m/MS00DE.BIN	0:08	6	139	18	の鞭打ち！\n		 whips!\n	v005		reads: は、味方を鞭打つ\n @refalign
@@ -127,10 +127,10 @@ m/MS00DE.BIN	0:27	0	0	DATA	{04:03}	{04:03}				reads: 　
 m/MS00DE.BIN	0:27	1	9	1E5C	{08:62}爪で{03:07}た\n		 attacked using claws.\n	v005		reads: は、爪で襲いかかった\n; reads: は、爪で襲いかかった\n @refalign
 m/MS00DE.BIN	0:27	2	23	18	が、爪で{03:07}て{08:1E}\n		 attacked using claws.\n	v005		reads: が、爪で襲いかかってきた\n; reads: が、爪で襲いかかってきた\n @refalign
 m/MS00DE.BIN	0:28	0	0	DATA	{04:03}	{04:03}				reads: 　
-m/MS00DE.BIN	0:28	1	9	1E5C	{08:62}	{08:62}	 performs a 	v005		reads: は、
+m/MS00DE.BIN	0:28	1	9	1E5C	{08:62}	performs a 	 performs a 	v005	draft	reads: は、 @ours-2026-09-05
 m/MS00DE.BIN	0:28	2	16	1F01	{08:0C}をくらわ{08:4B}\n		 attack.\n	v005		reads: 攻撃をくらわした\n; reads: 攻撃をくらわした\n @rebase-tagdiff @refalign
 m/MS00DE.BIN	0:28	3	32	18	の		 performs a 	v005		@refalign
-m/MS00DE.BIN	0:28	4	39	1F01	{08:0C}\n	{08:0C}\n	 attack.\n	v005		reads: 攻撃\n @rebase-tagdiff
+m/MS00DE.BIN	0:28	4	39	1F01	{08:0C}\n	 attack	 attack.\n	v005	draft	reads: 攻撃\n @rebase-tagdiff @ours-2026-09-05
 m/MS00DE.BIN	0:29	0	0	DATA	{04:03}の剣が、なぎ払{08:51}かと思うと\n返す刀が素早く		{04:03} swings their blade twice,\n	v005		reads: 　の剣が、なぎ払ったかと思うと\n返す刀が素早く; reads: 　の剣が、なぎ払ったかと思うと\n返す刀が素早く @refalign
 m/MS00DE.BIN	0:29	1	50	1E5C	{03:11}{03:12}つ{08:43}！\n		cutting up the enemy.\n	v005		reads: 敵に切りつけた！\n; reads: 敵に切りつけた！\n @refalign
 m/MS00DE.BIN	0:29	2	64	18	{03:12}つけ{08:1C}\n		dealing heavy damage.\n	v005		reads: 切りつけてきた！\n; reads: 切りつけてきた！\n @refalign
@@ -159,7 +159,7 @@ m/MS00DE.BIN	0:34	1	14	1F01	を召喚{08:4B}\n		summoned {04:EB}.\n	ours		reads:
 m/MS00DE.BIN	0:35	0	0	DATA	{04:08}使{08:51}\n		 used it.\n	ours		reads: は、を使った\n
 m/MS00DE.BIN	0:36	0	0	DATA	{04:08}	{04:08}				reads: は、を
 m/MS00DE.BIN	0:36	1	8	1ECF	{08:63}	{08:63}				reads: 自分
-m/MS00DE.BIN	0:36	2	28	18	{01:1C}に使{08:51}\n	{01:1C}に使{08:51}\n	 used it on everyone.\n	ours		reads: みんなに使った\n
+m/MS00DE.BIN	0:36	2	28	18	{01:1C}に使{08:51}\n	 used it on everyone	 used it on everyone.\n	ours	draft	reads: みんなに使った\n @ours-2026-09-05
 m/MS00DE.BIN	0:37	0	0	DATA	{04:08}	{04:08}				reads: は、を
 m/MS00DE.BIN	0:37	1	8	1ECF	飲{08:5F}		 drank 	v005		reads: 飲んだ
 m/MS00DE.BIN	0:37	2	27	1F01	に					reads: に
