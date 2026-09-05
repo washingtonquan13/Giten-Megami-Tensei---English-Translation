@@ -3,96 +3,96 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0016.BIN	0:00	0	7	1FD0	ヴァーチャトレーナーのシステムは破壊{03:0C}{08:14}{02:08}‥\n		The virtual trainer system is broken...\n	v005		reads: ヴァーチャトレーナーのシステムは破壊されている‥‥‥‥\n
-m/MS0016.BIN	0:00	1	74	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0016.BIN	0:00	2	84	00	{04:FF}！　ヴァーチャルトレーナーなどやっ{08:14}暇は無い！\n行くぞ！\n		Katsuragi! This is no time for training! Let's hurry!\n	v005		reads: ！　ヴァーチャルトレーナーなどやっている暇は無い！\n行くぞ！\n
-m/MS0016.BIN	0:00	3	159	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0016.BIN	0:00	4	170	09	おい		Come on, Katsuragi. This is no time for detours. Let's hurry!\n	v005		
+m/MS0016.BIN	0:00	0	7	1FD0	ヴァーチャトレーナーのシステムは破壊{03:0C}{08:14}{02:08}‥\n		The virtual trainer system is broken...\n	v005		reads: ヴァーチャトレーナーのシステムは破壊されている‥‥‥‥\n @refalign
+m/MS0016.BIN	0:00	1	74	1FD2	{08:04}：		Nishino:	v005		reads: 西野： @refalign
+m/MS0016.BIN	0:00	2	84	00	{04:FF}！　ヴァーチャルトレーナーなどやっ{08:14}暇は無い！\n行くぞ！\n		Katsuragi! This is no time for training! Let's hurry!\n	v005		reads: ！　ヴァーチャルトレーナーなどやっている暇は無い！\n行くぞ！\n @refalign
+m/MS0016.BIN	0:00	3	159	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂： @refalign
+m/MS0016.BIN	0:00	4	170	09	おい		This is no time for training, Katsuragi. Let's hurry!\n	v005		@refalign
 m/MS0016.BIN	0:00	5	178	00	{04:FF}。{08:73}所に入っ{08:2B}暇は{08:25}。\n早く脱出し{08:69}ぜ。\n					reads: 。こんな所に入ってる暇はない。\n早く脱出しようぜ。\n
 m/MS0016.BIN	0:00	6	227	00	{04:FF}。{08:73}所に入っ{08:2B}余裕は{08:25}ぜ。\n早く行こう。\n					reads: 。こんな所に入ってる余裕はないぜ。\n早く行こう。\n
 m/MS0016.BIN	0:00	7	286	1FD2	{08:03}：		Emi:	v005		reads: 英美：
 m/MS0016.BIN	0:00	8	301	00	{04:FF}くん。{08:73}所に入っ{08:2B}暇{08:25}よ。\n早く脱出しなきゃ。\n		This is no time for training, Katsuragi. Let's hurry!\n	v005		reads: くん。こんな所に入ってる暇ないよ。\n早く脱出しなきゃ。\n
-m/MS0016.BIN	0:00	9	352	18	ねぇ。{08:73}所に入っ{08:2B}余裕{08:6A}か{08:25}よ。\n早く行かなきゃ。\n		This is no time for detours, Katsuragi. Let's hurry!\n	v005		reads: ねぇ。こんな所に入ってる余裕なんかないよ。\n早く行かなきゃ。\n
-m/MS0016.BIN	0:00	10	419	1FD2	{01:03}：		Newton:	v005		reads: ニュートン：
-m/MS0016.BIN	0:00	11	425	1FD3	バウワウ！　ウー{02:08}‥\n<wait>		*Bark!* *Growl...*\n<wait>	v005		reads: バウワウ！　ウー‥‥‥‥\n<wait>
-m/MS0016.BIN	0:00	12	454	1FD0	{01:03}はひとしきり吠え、		Newton tugs at the sleeve of your jacket.\nHe appears to be saying that this is no time for detours.\n<wait>	v005		reads: ニュートンはひとしきり吠え、
-m/MS0016.BIN	0:00	13	478	00	{04:FF}の服の裾を引っ張っ{08:14}。\n{08:90}やら、{08:73}所に入っ{08:14}暇は無いと言い{08:4E}らしい。\n<wait>					reads: の服の裾を引っ張っている。\nどうやら、こんな所に入っている暇は無いと言いたいらしい。\n<wait>
-m/MS0016.BIN	0:00	14	558	00	{04:FF}{08:62}仕方無くヴァーチャルトレーナーを後に{08:4B}。\n					reads: は、仕方無くヴァーチャルトレーナーを後にした。\n
-m/MS0016.BIN	0:00	15	609	1FD0	{08:65}機構が全て停止{08:13}今、ヴァーチャトレーナーのシステムも\n{08:6C}に沈黙{08:4A}{08:64}{02:08}‥\n		With the communications down,\nthe Virtual Trainer doesn't seem to be working either.\n	v005		reads: 通信機構が全て停止している今、ヴァーチャトレーナーのシステムも\n完全に沈黙していた‥‥‥‥\n
-m/MS0016.BIN	0:00	16	697	1FA3	おい、今は{08:73}事やっ{08:2B}場合{08:81}{08:25}ぜ。\n早く{08:03}		This is no time for detours. We've gotta hurry and find Emi	v005		reads: おい、今はこんな事やってる場合じゃないぜ。\n早く英美
+m/MS0016.BIN	0:00	9	352	18	ねぇ。{08:73}所に入っ{08:2B}余裕{08:6A}か{08:25}よ。\n早く行かなきゃ。\n		This is no time for detours, Katsuragi. Let's hurry!\n	v005		reads: ねぇ。こんな所に入ってる余裕なんかないよ。\n早く行かなきゃ。\n @refalign
+m/MS0016.BIN	0:00	10	419	1FD2	{01:03}：		Newton:	v005		reads: ニュートン： @refalign
+m/MS0016.BIN	0:00	11	425	1FD3	バウワウ！　ウー{02:08}‥\n<wait>		*Bark!* *Growl...*\n<wait>\nNewton tugs at the sleeve of your jacket.\nHe appears to be saying that this is no time for detours.\n<wait>\nDissuaded, you leave the trainer behind.\n\nWith the communications down,\nthe Virtual Trainer doesn't seem to be working either.\n\nThis is no time for detours. We've gotta hurry and find Emi	v005		reads: バウワウ！　ウー‥‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0016.BIN	0:00	12	454	1FD0	{01:03}はひとしきり吠え、		 	v005		reads: ニュートンはひとしきり吠え、 @refalign @refalign-merged
+m/MS0016.BIN	0:00	13	478	00	{04:FF}の服の裾を引っ張っ{08:14}。\n{08:90}やら、{08:73}所に入っ{08:14}暇は無いと言い{08:4E}らしい。\n<wait>		 	v005		reads: の服の裾を引っ張っている。\nどうやら、こんな所に入っている暇は無いと言いたいらしい。\n<wait> @refalign @refalign-merged
+m/MS0016.BIN	0:00	14	558	00	{04:FF}{08:62}仕方無くヴァーチャルトレーナーを後に{08:4B}。\n		 	v005		reads: は、仕方無くヴァーチャルトレーナーを後にした。\n @refalign @refalign-merged
+m/MS0016.BIN	0:00	15	609	1FD0	{08:65}機構が全て停止{08:13}今、ヴァーチャトレーナーのシステムも\n{08:6C}に沈黙{08:4A}{08:64}{02:08}‥\n		 	v005		reads: 通信機構が全て停止している今、ヴァーチャトレーナーのシステムも\n完全に沈黙していた‥‥‥‥\n @refalign @refalign-merged
+m/MS0016.BIN	0:00	16	697	1FA3	おい、今は{08:73}事やっ{08:2B}場合{08:81}{08:25}ぜ。\n早く{08:03}		 	v005		reads: おい、今はこんな事やってる場合じゃないぜ。\n早く英美 @refalign @refalign-merged
 m/MS0016.BIN	0:00	17	741	09	を探さ{08:25}と{02:08}‥\n					reads: を探さないと‥‥‥‥\n
 m/MS0016.BIN	0:00	18	759	18	の{01:2E}に行こう。\n					reads: の部屋に行こう。\n
-m/MS0016.BIN	0:00	19	784	1FA3	ねぇ、今は{08:73}事やっ{08:2B}場合{08:81}{08:25}よ。\n早く{08:01}		This is no time for detours. We've gotta hurry and find Tatsuya	v005		reads: ねぇ、今はこんな事やってる場合じゃないよ。\n早く達也
-m/MS0016.BIN	0:00	20	842	1FA3	{02:08}なぁ、{08:03}に明日の事を伝えに行こうぜ。\nトレーニング{08:62}{08:4D}{08:42}{08:56}遅くは{08:25}{08:8C}？\n		Hey, look... We've gotta let Emi know about tomorrow.\nCould you maybe do this later?\n	v005		reads: ‥‥‥なぁ、英美に明日の事を伝えに行こうぜ。\nトレーニングは、それからでも遅くはないだろう？\n
-m/MS0016.BIN	0:00	21	924	1FA3	{02:08}ねぇ、{08:01}に明日の事を伝えに行こうよ。\nトレーニング{08:62}{08:4D}{08:42}{08:56}{08:7F}でしょ？\n		Hey, look... We've gotta let Tatsuya know about tomorrow.\nCould you maybe do this later?\n	v005		reads: ‥‥‥ねぇ、達也に明日の事を伝えに行こうよ。\nトレーニングは、それからでもいいでしょ？\n
+m/MS0016.BIN	0:00	19	784	1FA3	ねぇ、今は{08:73}事やっ{08:2B}場合{08:81}{08:25}よ。\n早く{08:01}		This is no time for detours. We've gotta hurry and find Tatsuya	v005		reads: ねぇ、今はこんな事やってる場合じゃないよ。\n早く達也 @refalign
+m/MS0016.BIN	0:00	20	842	1FA3	{02:08}なぁ、{08:03}に明日の事を伝えに行こうぜ。\nトレーニング{08:62}{08:4D}{08:42}{08:56}遅くは{08:25}{08:8C}？\n		Hey, look... We've gotta let Emi know about tomorrow.\nCould you maybe do this later?\n	v005		reads: ‥‥‥なぁ、英美に明日の事を伝えに行こうぜ。\nトレーニングは、それからでも遅くはないだろう？\n @refalign
+m/MS0016.BIN	0:00	21	924	1FA3	{02:08}ねぇ、{08:01}に明日の事を伝えに行こうよ。\nトレーニング{08:62}{08:4D}{08:42}{08:56}{08:7F}でしょ？\n		Hey, look... We've gotta let Tatsuya know about tomorrow.\nCould you maybe do this later?\n	v005		reads: ‥‥‥ねぇ、達也に明日の事を伝えに行こうよ。\nトレーニングは、それからでもいいでしょ？\n @refalign
 m/MS0016.BIN	0:00	22	1018	00	{06:09}j	{06:09}j				reads: j
 m/MS0016.BIN	0:00	23	1044	09						
-m/MS0016.BIN	0:00	24	1073	00	{04:FE}：		Yuuka:	v005		reads: ：
-m/MS0016.BIN	0:00	25	1085	1F7C	あ{02:08}		Ah, Katsuragi-kun... Are you here to train as well?\n<wait>	v005		reads: あ‥‥‥
-m/MS0016.BIN	0:00	26	1093	00	{04:FF}くん。\n私、も{08:53}皆の役に立ちたくて{02:08}‥\n<wait>					reads: くん。\n私、もっと皆の役に立ちたくて‥‥‥‥\n<wait>
-m/MS0016.BIN	0:00	27	1145	00	{04:FE}：					reads: ：
-m/MS0016.BIN	0:00	28	1151	1FD3	{08:48}{08:42}、トレーニングし{08:69}と思う{08:5F}{08:84}{08:72}\n		I've been feeling like I'm not all that useful in combat lately,\nso I thought I'd spend some time in the virtual dungeon to get stronger...\nIf you'd like, maybe we could train together. 	v005		reads: これから、トレーニングしようと思うんだけど‥‥\n
-m/MS0016.BIN	0:00	29	1189	18	{08:48}{08:42}、ヴァーチャトレーナーに入る{08:87}{08:6B}。\n一緒に{02:08}やら{08:25}？\n		I was just about to get started with some training.\nIf you'd like, maybe we could train together. You in?\n         	v005		reads: これから、ヴァーチャトレーナーに入るところなの。\n一緒に‥‥‥やらない？\n
-m/MS0016.BIN	0:00	30	1272	1FD2	{02:00}：		Devil Buster:	v005		reads: デビルバスター：
-m/MS0016.BIN	0:00	31	1284	1F7C	{08:47}ヴァーチャルトレーナー{08:62}一般にも解放{03:0C}{08:14}。\n<wait>		This virtual trainer is open for anyone in the shelter to use.\n<wait>	v005		reads: このヴァーチャルトレーナーは、一般にも解放されている。\n<wait>
-m/MS0016.BIN	0:00	32	1337	1FD2	{02:00}：		Devil Buster:	v005		reads: デビルバスター：
-m/MS0016.BIN	0:00	33	1343	1FD3	{08:8F}、一般人に{08:62}レベルはＬＯＷ{08:86}選べ{08:25}。\nＭＩＤＤＬＥ、ＨＩのレベル{08:62}危険だ{08:42}な。\n<wait>		However, civilians can only choose LOW as their difficulty level.\nMIDDLE or HIGH might be too dangerous for them, you see.\n<wait>	v005		reads: だが、一般人には、レベルはＬＯＷしか選べない。\nＭＩＤＤＬＥ、ＨＩのレベルは、危険だからな。\n<wait>
-m/MS0016.BIN	0:00	34	1431	1FD2	{02:00}：		Devil Buster:	v005		reads: デビルバスター：
-m/MS0016.BIN	0:00	35	1437	1FD3	君{08:62}{02:00}隊員では{08:25}ね？\n<wait>		Seeing as you're not a Devil Buster, that applies to you as well.\n<wait>	v005		reads: 君は、デビルバスター隊員ではないね？\n<wait>
-m/MS0016.BIN	0:00	36	1466	1FD2	{02:00}：		Devil Buster:	v005		reads: デビルバスター：
-m/MS0016.BIN	0:00	37	1472	1FD3	レベル{08:62}ＬＯＷ{08:86}{08:25}が、{08:47}トレーナーを利用{08:8E}かい？\n		So, do you want to use the trainer?\nKeep in mind that you can only choose LOW as your difficulty level.\n	v005		reads: レベルは、ＬＯＷしかないが、このトレーナーを利用するかい？\n
+m/MS0016.BIN	0:00	24	1073	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0016.BIN	0:00	25	1085	1F7C	あ{02:08}		Ah, Katsuragi-kun... Are you here to train as well?\n<wait>	v005		reads: あ‥‥‥ @refalign @refalign-merged
+m/MS0016.BIN	0:00	26	1093	00	{04:FF}くん。\n私、も{08:53}皆の役に立ちたくて{02:08}‥\n<wait>		 	v005		reads: くん。\n私、もっと皆の役に立ちたくて‥‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0016.BIN	0:00	27	1145	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0016.BIN	0:00	28	1151	1FD3	{08:48}{08:42}、トレーニングし{08:69}と思う{08:5F}{08:84}{08:72}\n		I've been feeling like I'm not all that useful in combat lately,\nso I thought I'd spend some time in the virtual dungeon to get stronger...\nIf you'd like, maybe we could train together. 	v005		reads: これから、トレーニングしようと思うんだけど‥‥\n @refalign
+m/MS0016.BIN	0:00	29	1189	18	{08:48}{08:42}、ヴァーチャトレーナーに入る{08:87}{08:6B}。\n一緒に{02:08}やら{08:25}？\n		I was just about to get started with some training.\nIf you'd like, maybe we could train together. You in?\n         	v005		reads: これから、ヴァーチャトレーナーに入るところなの。\n一緒に‥‥‥やらない？\n @refalign
+m/MS0016.BIN	0:00	30	1272	1FD2	{02:00}：		Devil Buster:	v005		reads: デビルバスター： @refalign
+m/MS0016.BIN	0:00	31	1284	1F7C	{08:47}ヴァーチャルトレーナー{08:62}一般にも解放{03:0C}{08:14}。\n<wait>		This virtual trainer is open for anyone in the shelter to use.\n<wait>	v005		reads: このヴァーチャルトレーナーは、一般にも解放されている。\n<wait> @refalign
+m/MS0016.BIN	0:00	32	1337	1FD2	{02:00}：		Devil Buster:	v005		reads: デビルバスター： @refalign
+m/MS0016.BIN	0:00	33	1343	1FD3	{08:8F}、一般人に{08:62}レベルはＬＯＷ{08:86}選べ{08:25}。\nＭＩＤＤＬＥ、ＨＩのレベル{08:62}危険だ{08:42}な。\n<wait>		However, civilians can only choose LOW as their difficulty level.\nMIDDLE or HIGH might be too dangerous for them, you see.\n<wait>	v005		reads: だが、一般人には、レベルはＬＯＷしか選べない。\nＭＩＤＤＬＥ、ＨＩのレベルは、危険だからな。\n<wait> @refalign
+m/MS0016.BIN	0:00	34	1431	1FD2	{02:00}：		Devil Buster:	v005		reads: デビルバスター： @refalign
+m/MS0016.BIN	0:00	35	1437	1FD3	君{08:62}{02:00}隊員では{08:25}ね？\n<wait>		Seeing as you're not a Devil Buster, that applies to you as well.\n<wait>	v005		reads: 君は、デビルバスター隊員ではないね？\n<wait> @refalign
+m/MS0016.BIN	0:00	36	1466	1FD2	{02:00}：		Devil Buster:	v005		reads: デビルバスター： @refalign
+m/MS0016.BIN	0:00	37	1472	1FD3	レベル{08:62}ＬＯＷ{08:86}{08:25}が、{08:47}トレーナーを利用{08:8E}かい？\n		So, do you want to use the trainer?\nKeep in mind that you can only choose LOW as your difficulty level.\n	v005		reads: レベルは、ＬＯＷしかないが、このトレーナーを利用するかい？\n @refalign
 m/MS0016.BIN	0:00	38	1537	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
 m/MS0016.BIN	0:00	39	1541	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
 m/MS0016.BIN	0:00	40	1565	1FD2	{02:00}：	{02:00}：	Devil Buster:	v005		reads: デビルバスター：
 m/MS0016.BIN	0:00	41	1571	1FD3	で{08:62}{08:47}ヘッドセットをかぶ{08:52}、そ{08:47}シートにこ{08:86}けてくれ。\n<wait>	で{08:62}{08:47}ヘッドセットをかぶ{08:52}、そ{08:47}シートにこ{08:86}けてくれ。\n<wait>	Alright. Put this headset on and sit right there.\n<wait>	v005		reads: では、このヘッドセットをかぶって、そこのシートにこしかけてくれ。\n<wait>
-m/MS0016.BIN	0:00	42	1634	1FD2	{02:00}：		Devil Buster:	v005		reads: デビルバスター：
-m/MS0016.BIN	0:00	43	1640	1FD3	トレーナー内で{08:62}装備もトレーナー用の装備に{08:59}。\nあと{08:62}電子音声の指示に従{08:52}くれ。\nで{08:62}健闘を祈る！\n<wait>		You'll be granted access to a special load-out while inside the program.\nJust follow the instructions, and you'll be fine. Good luck!\n<wait>	v005		reads: トレーナー内では、装備もトレーナー用の装備になる。\nあとは、電子音声の指示に従ってくれ。\nでは、健闘を祈る！\n<wait>; reads: では、このヘッドセットをかぶって、そこのシートにこしかけてくれ。\n<wait>
-m/MS0016.BIN	0:00	44	1750	1FD2	{02:00}：		Devil Buster:	v005		reads: デビルバスター：
-m/MS0016.BIN	0:00	45	1756	1FD3	そうか、では気が向い{08:50}来ると{08:7F}。\n<wait>		Oh? Well, if you ever change your mind, do feel free to drop by again.\n<wait>	v005		reads: そうか、では気が向いたら来るといい。\n<wait>; reads: トレーナー内では、装備もトレーナー用の装備になる。\nあとは、電子音声の指示に従ってくれ。\nでは、健闘を祈る！\n<wait>
-m/MS0016.BIN	0:00	46	1803	1FD2	{02:00}：		Devil Buster:	v005		reads: デビルバスター：
-m/MS0016.BIN	0:00	47	1809	1FD3	一般人と言えど、少しは鍛えてお{08:64}方が{08:7F}{08:42}な。\n		Even civilians should know how to defend themselves.\n	v005		reads: 一般人と言えど、少しは鍛えておいた方がいいからな。\n; reads: そうか、では気が向いたら来るといい。\n<wait>
-m/MS0016.BIN	0:00	48	1855	00	ヴァーチャルトレーナーを利用{08:8E}かい？\n		Are you here to use the Virtual Trainer?\n	v005		reads: ヴァーチャルトレーナーを利用するかい？\n; reads: デビルバスター：
+m/MS0016.BIN	0:00	42	1634	1FD2	{02:00}：		Devil Buster:	v005		reads: デビルバスター： @refalign
+m/MS0016.BIN	0:00	43	1640	1FD3	トレーナー内で{08:62}装備もトレーナー用の装備に{08:59}。\nあと{08:62}電子音声の指示に従{08:52}くれ。\nで{08:62}健闘を祈る！\n<wait>		You'll be granted access to a special load-out while inside the program.\nJust follow the instructions, and you'll be fine. Good luck!\n<wait>	v005		reads: トレーナー内では、装備もトレーナー用の装備になる。\nあとは、電子音声の指示に従ってくれ。\nでは、健闘を祈る！\n<wait>; reads: では、このヘッドセットをかぶって、そこのシートにこしかけてくれ。\n<wait> @refalign
+m/MS0016.BIN	0:00	44	1750	1FD2	{02:00}：		Devil Buster:	v005		reads: デビルバスター： @refalign
+m/MS0016.BIN	0:00	45	1756	1FD3	そうか、では気が向い{08:50}来ると{08:7F}。\n<wait>		Oh? Well, if you ever change your mind, do feel free to drop by again.\n<wait>	v005		reads: そうか、では気が向いたら来るといい。\n<wait>; reads: トレーナー内では、装備もトレーナー用の装備になる。\nあとは、電子音声の指示に従ってくれ。\nでは、健闘を祈る！\n<wait> @refalign
+m/MS0016.BIN	0:00	46	1803	1FD2	{02:00}：		Devil Buster:	v005		reads: デビルバスター： @refalign
+m/MS0016.BIN	0:00	47	1809	1FD3	一般人と言えど、少しは鍛えてお{08:64}方が{08:7F}{08:42}な。\n		Even civilians should know how to defend themselves.\n	v005		reads: 一般人と言えど、少しは鍛えておいた方がいいからな。\n; reads: そうか、では気が向いたら来るといい。\n<wait> @refalign
+m/MS0016.BIN	0:00	48	1855	00	ヴァーチャルトレーナーを利用{08:8E}かい？\n		Are you here to use the Virtual Trainer?\n	v005		reads: ヴァーチャルトレーナーを利用するかい？\n; reads: デビルバスター： @refalign
 m/MS0016.BIN	0:00	49	1908	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns; reads: 一般人と言えど、少しは鍛えておいた方がいいからな。\n
 m/MS0016.BIN	0:00	50	1912	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns; reads: ヴァーチャルトレーナーを利用するかい？\n
 m/MS0016.BIN	0:00	51	1943	1F03						reads: はい; menu option, declared width 20 columns
 m/MS0016.BIN	0:00	52	1982	1FD2	{08:00}：	{08:00}：	Hayasaka:	v005		reads: 早坂：; reads: いいえ; menu option, declared width 20 columns
 m/MS0016.BIN	0:00	53	1988	1FD3	今{08:42}、ヴァーチャルトレーナーの利用説明を{08:8E}。\n<wait>	今{08:42}、ヴァーチャルトレーナーの利用説明を{08:8E}。\n<wait>	Allow me to give you the basic rundown.\n<wait>	v005		reads: 今から、ヴァーチャルトレーナーの利用説明をする。\n<wait>; reads: 
 m/MS0016.BIN	0:00	54	2041	1FD2	{08:00}：	{08:00}：	Hayasaka:	v005		reads: 早坂：
-m/MS0016.BIN	0:00	55	2047	1FD3	まず{08:62}{08:47}ポッドに乗り込み、ヘッドギアを装着。\n{08:79}後{08:62}{08:05}ー音声の指示に従えば{08:7F}。\n<wait>		First, step inside the pod and put on the virtual headgear.\nAfter that, simply follow the spoken instructions.\n<wait>	v005		reads: まずは、このポッドに乗り込み、ヘッドギアを装着。\nその後は、コンピューター音声の指示に従えばいい。\n<wait>; reads: 早坂：
-m/MS0016.BIN	0:00	56	2133	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 今から、ヴァーチャルトレーナーの利用説明をする。\n<wait>
-m/MS0016.BIN	0:00	57	2139	1FD3	{08:82}し、試験の場合と違い、通常は{08:63}でレベルの調整を行なう。\n<wait>		There are a few things to keep in mind. Unlike before,\nyou are now able to freely select your desired level of difficulty.\n<wait>	v005		reads: ただし、試験の場合と違い、通常は自分でレベルの調整を行なう。\n<wait>; reads: 早坂：
-m/MS0016.BIN	0:00	58	2204	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: まずは、このポッドに乗り込み、ヘッドギアを装着。\nその後は、コンピューター音声の指示に従えばいい。\n<wait>
-m/MS0016.BIN	0:00	59	2210	1FD3	各レベル毎に{08:0B}の強さは変化し、ボス{08:0B}の設定も同じく変化{08:8E}。\n<wait>		In addition to making the demons you face tougher,\neach difficulty level also comes with its own set of bosses.\n<wait>	v005		reads: 各レベル毎に悪魔の強さは変化し、ボス悪魔の設定も同じく変化する。\n<wait>; reads: 早坂：
-m/MS0016.BIN	0:00	60	2277	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: ただし、試験の場合と違い、通常は自分でレベルの調整を行なう。\n<wait>
-m/MS0016.BIN	0:00	61	2283	1FD3	レベルの設定は三種類。\nＨＩＧＨ／ＭＩＤＤＬＥ／ＬＯＷ{02:08}だ。\n<wait>		There are three difficulty levels available,\nthose being HIGH, MIDDLE, and LOW.\n<wait>	v005		reads: レベルの設定は三種類。\nＨＩＧＨ／ＭＩＤＤＬＥ／ＬＯＷ‥‥‥だ。\n<wait>; reads: 早坂：
-m/MS0016.BIN	0:00	62	2351	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 各レベル毎に悪魔の強さは変化し、ボス悪魔の設定も同じく変化する。\n<wait>
-m/MS0016.BIN	0:00	63	2357	1FD3	ＨＩＧＨ{08:62}レベル最高値の設定。\n<wait>		HIGH is the most difficult, and is recommended only for experts.\n<wait>	v005		reads: ＨＩＧＨは、レベル最高値の設定。\n<wait>; reads: 早坂：
-m/MS0016.BIN	0:00	64	2396	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: レベルの設定は三種類。\nＨＩＧＨ／ＭＩＤＤＬＥ／ＬＯＷ‥‥‥だ。\n<wait>
-m/MS0016.BIN	0:00	65	2402	1FD3	ＭＩＤＤＬＥ{08:62}中間のレベル設定。\n<wait>		MIDDLE on the other hand offers a good mix of challenge.\n<wait>	v005		reads: ＭＩＤＤＬＥは、中間のレベル設定。\n<wait>; reads: 早坂：
-m/MS0016.BIN	0:00	66	2443	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: ＨＩＧＨは、レベル最高値の設定。\n<wait>
-m/MS0016.BIN	0:00	67	2449	1FD3	ＬＯＷ{08:62}最弱の設定だ。\n<wait>		Lastly, LOW is perfect for beginners.\n<wait>	v005		reads: ＬＯＷは、最弱の設定だ。\n<wait>; reads: 早坂：
-m/MS0016.BIN	0:00	68	2480	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: ＭＩＤＤＬＥは、中間のレベル設定。\n<wait>
-m/MS0016.BIN	0:00	69	2486	1FD3	最初は無理の{08:25}様に、ＬＯＷ{08:42}スタート{08:8E}事だ。\n<wait>		It's recommended that you start there.\n<wait>	v005		reads: 最初は無理のない様に、ＬＯＷからスタートする事だ。\n<wait>; reads: 早坂：
-m/MS0016.BIN	0:00	70	2539	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: ＬＯＷは、最弱の設定だ。\n<wait>
-m/MS0016.BIN	0:00	71	2545	1FD3	{08:4D}と、装備もトレーナー用の装備が設定{03:0C}る。\n{08:48}も、{08:0B}の設定と同じ{08:69}に、レベル毎に変化{08:8E}。\n<wait>以上で、説明は終わりだ。\n<wait>		One more thing. You are given access to a special load-out as\nyou explore the virtual dungeon. As is the case with demons,\nthese items also get stronger on higher difficulty levels.\n<wait>That is all. You should be able to figure out the rest on your own.\n<wait>	v005		reads: それと、装備もトレーナー用の装備が設定される。\nこれも、悪魔の設定と同じように、レベル毎に変化する。\n<wait>以上で、説明は終わりだ。\n<wait>; reads: 早坂：
-m/MS0016.BIN	0:00	72	2670	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 最初は無理のない様に、ＬＯＷからスタートする事だ。\n<wait>
-m/MS0016.BIN	0:00	73	2676	1FD3	で{08:62}実際に、レベル設定ＬＯＷのヴァーチャルトレーナーで訓練を行{08:52}もらう。\n<wait>		Training will now begin with the difficulty level set on LOW.\n<wait>	v005		reads: では、実際に、レベル設定ＬＯＷのヴァーチャルトレーナーで訓練を行ってもらう。\n<wait>; reads: 早坂：
-m/MS0016.BIN	0:00	74	2757	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: それと、装備もトレーナー用の装備が設定される。\nこれも、悪魔の設定と同じように、レベル毎に変化する。\n<wait>以上で、説明は終わりだ。\n<wait>
-m/MS0016.BIN	0:00	75	2763	1FD3	ダンジョン内に設定{08:4B}ボスを倒せば、訓練終了だ。\n自動的に現実世界に戻る。\n<wait>		Defeat the boss lurking at the end of the dungeon, and you win.\n<wait>	v005		reads: ダンジョン内に設定したボスを倒せば、訓練終了だ。\n自動的に現実世界に戻る。\n<wait>; reads: 早坂：
-m/MS0016.BIN	0:00	76	2843	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: では、実際に、レベル設定ＬＯＷのヴァーチャルトレーナーで訓練を行ってもらう。\n<wait>
-m/MS0016.BIN	0:00	77	2849	1FD3	{08:5B}、死んで{08:1F}場合も同様に、現実世界に戻{08:52}くるので、\nいずれにしろ、現実世界に戻{08:51}時点で訓練は終了と{08:8E}。\n<wait>		You will be automatically transported back once the training is over.\nThe same also happens if you end up dying.\n<wait>	v005		reads: また、死んでしまった場合も同様に、現実世界に戻ってくるので、\nいずれにしろ、現実世界に戻った時点で訓練は終了とする。\n<wait>; reads: 早坂：
-m/MS0016.BIN	0:00	78	2959	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: ダンジョン内に設定したボスを倒せば、訓練終了だ。\n自動的に現実世界に戻る。\n<wait>
-m/MS0016.BIN	0:00	79	2965	1FD3	で{08:62}頑張{08:52}来いよ！\n<wait>		Now then, good luck!\n<wait>	v005		reads: では、頑張って来いよ！\n<wait>; reads: 早坂：
-m/MS0016.BIN	0:00	80	3022	1FD2	{02:00}：		Devil Buster:	v005		reads: デビルバスター：; reads: また、死んでしまった場合も同様に、現実世界に戻ってくるので、\nいずれにしろ、現実世界に戻った時点で訓練は終了とする。\n<wait>
-m/MS0016.BIN	0:00	81	3028	1FD3	君{08:62}入隊{08:4B}ばかりの者だな？\n<wait>		You're a fresh recruit, right?\n<wait>	v005		reads: 君は、入隊したばかりの者だな？\n<wait>; reads: 早坂：
-m/MS0016.BIN	0:00	82	3063	1FD2	{02:00}：		Devil Buster:	v005		reads: デビルバスター：; reads: では、頑張って来いよ！\n<wait>
-m/MS0016.BIN	0:00	83	3069	1FD3	レクチャーを受けて{08:24}と、ＬＯＷ以外のレベルの使用許可が降り{08:25}。\n<wait>		You can't access the difficulty levels beyond LOW until you have\ncompleted the first lecture.\n<wait>	v005		reads: レクチャーを受けていないと、ＬＯＷ以外のレベルの使用許可が降りない。\n<wait>; reads: デビルバスター：
-m/MS0016.BIN	0:00	84	3140	1FD2	{02:00}：		Devil Buster:	v005		reads: デビルバスター：; reads: 君は、入隊したばかりの者だな？\n<wait>
-m/MS0016.BIN	0:00	85	3146	1FD3	今{08:62}ＬＯＷレベルの選択{08:86}{08:23}が、トレーニング{08:4A}行くかい？\n		Would you like to train with the difficulty level set on LOW?\n	v005		reads: 今は、ＬＯＷレベルの選択しかできないが、トレーニングして行くかい？\n; reads: デビルバスター：
-m/MS0016.BIN	0:00	86	3220	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: レクチャーを受けていないと、ＬＯＷ以外のレベルの使用許可が降りない。\n<wait>
-m/MS0016.BIN	0:00	87	3230	00	{04:FF}くん。\n今はトレーニング{08:13}場合{08:81}{08:25}わ。\n<wait>		This is no time to be training, Katsuragi-kun.\n<wait>	v005		reads: くん。\n今はトレーニングしている場合じゃないわ。\n<wait>; reads: デビルバスター：
-m/MS0016.BIN	0:00	88	3282	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 今は、ＬＯＷレベルの選択しかできないが、トレーニングして行くかい？\n
-m/MS0016.BIN	0:00	89	3288	1FD3	早く行きま{08:80}。\n		Let's hurry.\n	v005		reads: 早く行きましょう。\n; reads: ：
+m/MS0016.BIN	0:00	55	2047	1FD3	まず{08:62}{08:47}ポッドに乗り込み、ヘッドギアを装着。\n{08:79}後{08:62}{08:05}ー音声の指示に従えば{08:7F}。\n<wait>		First, step inside the pod and put on the virtual headgear.\nAfter that, simply follow the spoken instructions.\n<wait>	v005		reads: まずは、このポッドに乗り込み、ヘッドギアを装着。\nその後は、コンピューター音声の指示に従えばいい。\n<wait>; reads: 早坂： @refalign
+m/MS0016.BIN	0:00	56	2133	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 今から、ヴァーチャルトレーナーの利用説明をする。\n<wait> @refalign
+m/MS0016.BIN	0:00	57	2139	1FD3	{08:82}し、試験の場合と違い、通常は{08:63}でレベルの調整を行なう。\n<wait>		There are a few things to keep in mind. Unlike before,\nyou are now able to freely select your desired level of difficulty.\n<wait>	v005		reads: ただし、試験の場合と違い、通常は自分でレベルの調整を行なう。\n<wait>; reads: 早坂： @refalign
+m/MS0016.BIN	0:00	58	2204	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: まずは、このポッドに乗り込み、ヘッドギアを装着。\nその後は、コンピューター音声の指示に従えばいい。\n<wait> @refalign
+m/MS0016.BIN	0:00	59	2210	1FD3	各レベル毎に{08:0B}の強さは変化し、ボス{08:0B}の設定も同じく変化{08:8E}。\n<wait>		In addition to making the demons you face tougher,\neach difficulty level also comes with its own set of bosses.\n<wait>	v005		reads: 各レベル毎に悪魔の強さは変化し、ボス悪魔の設定も同じく変化する。\n<wait>; reads: 早坂： @refalign
+m/MS0016.BIN	0:00	60	2277	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: ただし、試験の場合と違い、通常は自分でレベルの調整を行なう。\n<wait> @refalign
+m/MS0016.BIN	0:00	61	2283	1FD3	レベルの設定は三種類。\nＨＩＧＨ／ＭＩＤＤＬＥ／ＬＯＷ{02:08}だ。\n<wait>		There are three difficulty levels available,\nthose being HIGH, MIDDLE, and LOW.\n<wait>	v005		reads: レベルの設定は三種類。\nＨＩＧＨ／ＭＩＤＤＬＥ／ＬＯＷ‥‥‥だ。\n<wait>; reads: 早坂： @refalign
+m/MS0016.BIN	0:00	62	2351	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 各レベル毎に悪魔の強さは変化し、ボス悪魔の設定も同じく変化する。\n<wait> @refalign
+m/MS0016.BIN	0:00	63	2357	1FD3	ＨＩＧＨ{08:62}レベル最高値の設定。\n<wait>		HIGH is the most difficult, and is recommended only for experts.\n<wait>	v005		reads: ＨＩＧＨは、レベル最高値の設定。\n<wait>; reads: 早坂： @refalign
+m/MS0016.BIN	0:00	64	2396	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: レベルの設定は三種類。\nＨＩＧＨ／ＭＩＤＤＬＥ／ＬＯＷ‥‥‥だ。\n<wait> @refalign
+m/MS0016.BIN	0:00	65	2402	1FD3	ＭＩＤＤＬＥ{08:62}中間のレベル設定。\n<wait>		MIDDLE on the other hand offers a good mix of challenge.\n<wait>	v005		reads: ＭＩＤＤＬＥは、中間のレベル設定。\n<wait>; reads: 早坂： @refalign
+m/MS0016.BIN	0:00	66	2443	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: ＨＩＧＨは、レベル最高値の設定。\n<wait> @refalign
+m/MS0016.BIN	0:00	67	2449	1FD3	ＬＯＷ{08:62}最弱の設定だ。\n<wait>		Lastly, LOW is perfect for beginners.\n<wait>	v005		reads: ＬＯＷは、最弱の設定だ。\n<wait>; reads: 早坂： @refalign
+m/MS0016.BIN	0:00	68	2480	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: ＭＩＤＤＬＥは、中間のレベル設定。\n<wait> @refalign
+m/MS0016.BIN	0:00	69	2486	1FD3	最初は無理の{08:25}様に、ＬＯＷ{08:42}スタート{08:8E}事だ。\n<wait>		It's recommended that you start there.\n<wait>	v005		reads: 最初は無理のない様に、ＬＯＷからスタートする事だ。\n<wait>; reads: 早坂： @refalign
+m/MS0016.BIN	0:00	70	2539	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: ＬＯＷは、最弱の設定だ。\n<wait> @refalign
+m/MS0016.BIN	0:00	71	2545	1FD3	{08:4D}と、装備もトレーナー用の装備が設定{03:0C}る。\n{08:48}も、{08:0B}の設定と同じ{08:69}に、レベル毎に変化{08:8E}。\n<wait>以上で、説明は終わりだ。\n<wait>		One more thing. You are given access to a special load-out as\nyou explore the virtual dungeon. As is the case with demons,\nthese items also get stronger on higher difficulty levels.\n<wait>That is all. You should be able to figure out the rest on your own.\n<wait>	v005		reads: それと、装備もトレーナー用の装備が設定される。\nこれも、悪魔の設定と同じように、レベル毎に変化する。\n<wait>以上で、説明は終わりだ。\n<wait>; reads: 早坂： @refalign
+m/MS0016.BIN	0:00	72	2670	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 最初は無理のない様に、ＬＯＷからスタートする事だ。\n<wait> @refalign
+m/MS0016.BIN	0:00	73	2676	1FD3	で{08:62}実際に、レベル設定ＬＯＷのヴァーチャルトレーナーで訓練を行{08:52}もらう。\n<wait>		Training will now begin with the difficulty level set on LOW.\n<wait>	v005		reads: では、実際に、レベル設定ＬＯＷのヴァーチャルトレーナーで訓練を行ってもらう。\n<wait>; reads: 早坂： @refalign
+m/MS0016.BIN	0:00	74	2757	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: それと、装備もトレーナー用の装備が設定される。\nこれも、悪魔の設定と同じように、レベル毎に変化する。\n<wait>以上で、説明は終わりだ。\n<wait> @refalign
+m/MS0016.BIN	0:00	75	2763	1FD3	ダンジョン内に設定{08:4B}ボスを倒せば、訓練終了だ。\n自動的に現実世界に戻る。\n<wait>		Defeat the boss lurking at the end of the dungeon, and you win.\n<wait>	v005		reads: ダンジョン内に設定したボスを倒せば、訓練終了だ。\n自動的に現実世界に戻る。\n<wait>; reads: 早坂： @refalign
+m/MS0016.BIN	0:00	76	2843	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: では、実際に、レベル設定ＬＯＷのヴァーチャルトレーナーで訓練を行ってもらう。\n<wait> @refalign
+m/MS0016.BIN	0:00	77	2849	1FD3	{08:5B}、死んで{08:1F}場合も同様に、現実世界に戻{08:52}くるので、\nいずれにしろ、現実世界に戻{08:51}時点で訓練は終了と{08:8E}。\n<wait>		You will be automatically transported back once the training is over.\nThe same also happens if you end up dying.\n<wait>	v005		reads: また、死んでしまった場合も同様に、現実世界に戻ってくるので、\nいずれにしろ、現実世界に戻った時点で訓練は終了とする。\n<wait>; reads: 早坂： @refalign
+m/MS0016.BIN	0:00	78	2959	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: ダンジョン内に設定したボスを倒せば、訓練終了だ。\n自動的に現実世界に戻る。\n<wait> @refalign
+m/MS0016.BIN	0:00	79	2965	1FD3	で{08:62}頑張{08:52}来いよ！\n<wait>		Now then, good luck!\n<wait>	v005		reads: では、頑張って来いよ！\n<wait>; reads: 早坂： @refalign
+m/MS0016.BIN	0:00	80	3022	1FD2	{02:00}：		Devil Buster:	v005		reads: デビルバスター：; reads: また、死んでしまった場合も同様に、現実世界に戻ってくるので、\nいずれにしろ、現実世界に戻った時点で訓練は終了とする。\n<wait> @refalign
+m/MS0016.BIN	0:00	81	3028	1FD3	君{08:62}入隊{08:4B}ばかりの者だな？\n<wait>		You're a fresh recruit, right?\n<wait>	v005		reads: 君は、入隊したばかりの者だな？\n<wait>; reads: 早坂： @refalign
+m/MS0016.BIN	0:00	82	3063	1FD2	{02:00}：		Devil Buster:	v005		reads: デビルバスター：; reads: では、頑張って来いよ！\n<wait> @refalign
+m/MS0016.BIN	0:00	83	3069	1FD3	レクチャーを受けて{08:24}と、ＬＯＷ以外のレベルの使用許可が降り{08:25}。\n<wait>		You can't access the difficulty levels beyond LOW until you have\ncompleted the first lecture.\n<wait>	v005		reads: レクチャーを受けていないと、ＬＯＷ以外のレベルの使用許可が降りない。\n<wait>; reads: デビルバスター： @refalign
+m/MS0016.BIN	0:00	84	3140	1FD2	{02:00}：		Devil Buster:	v005		reads: デビルバスター：; reads: 君は、入隊したばかりの者だな？\n<wait> @refalign
+m/MS0016.BIN	0:00	85	3146	1FD3	今{08:62}ＬＯＷレベルの選択{08:86}{08:23}が、トレーニング{08:4A}行くかい？\n		Would you like to train with the difficulty level set on LOW?\n	v005		reads: 今は、ＬＯＷレベルの選択しかできないが、トレーニングして行くかい？\n; reads: デビルバスター： @refalign
+m/MS0016.BIN	0:00	86	3220	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: レクチャーを受けていないと、ＬＯＷ以外のレベルの使用許可が降りない。\n<wait> @refalign
+m/MS0016.BIN	0:00	87	3230	00	{04:FF}くん。\n今はトレーニング{08:13}場合{08:81}{08:25}わ。\n<wait>		This is no time to be training, Katsuragi-kun.\n<wait>	v005		reads: くん。\n今はトレーニングしている場合じゃないわ。\n<wait>; reads: デビルバスター： @refalign
+m/MS0016.BIN	0:00	88	3282	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 今は、ＬＯＷレベルの選択しかできないが、トレーニングして行くかい？\n @refalign
+m/MS0016.BIN	0:00	89	3288	1FD3	早く行きま{08:80}。\n		Let's hurry.\n	v005		reads: 早く行きましょう。\n; reads: ： @refalign
 m/MS0016.BIN	0:00	90	3320	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns; reads: くん。\n今はトレーニングしている場合じゃないわ。\n<wait>
 m/MS0016.BIN	0:00	91	3324	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns; reads: ：
 m/MS0016.BIN	0:00	92	3395	00	{04:FE}：					reads: ：; reads: 早く行きましょう。\n
@@ -101,38 +101,38 @@ m/MS0016.BIN	0:00	94	3415	00	{04:FF}くん！\n	{04:FF}くん！\n				reads: く
 m/MS0016.BIN	0:00	95	3428	00	{04:FF}くんもトレーニングに来たの？\n<wait>	{04:FF}くんもトレーニングに来たの？\n<wait>				reads: くんもトレーニングに来たの？\n<wait>; reads: {=F9}{=FF}
 m/MS0016.BIN	0:00	96	3471	00	{04:FE}：					reads: ：
 m/MS0016.BIN	0:00	97	3477	1FD3	{08:4D}{08:81}あ、一緒にやら{08:25}？\n		In that case, can I join you?\n	v005		reads: それじゃあ、一緒にやらない？\n
-m/MS0016.BIN	0:00	98	3503	18	あ、トレーニングしに来たの？\n{08:81}あ、いっしょにやら{08:25}？\n		Ah, are you here to train?\nIn that case, can I join you?\n	v005		reads: あ、トレーニングしに来たの？\nじゃあ、いっしょにやらない？\n; reads: くん！\n
+m/MS0016.BIN	0:00	98	3503	18	あ、トレーニングしに来たの？\n{08:81}あ、いっしょにやら{08:25}？\n		Ah, are you here to train?\nIn that case, can I join you?\n	v005		reads: あ、トレーニングしに来たの？\nじゃあ、いっしょにやらない？\n; reads: くん！\n @refalign
 m/MS0016.BIN	0:00	99	3573	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns; reads: くんもトレーニングに来たの？\n<wait>
 m/MS0016.BIN	0:00	100	3577	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns; reads: ：
-m/MS0016.BIN	0:00	101	3610	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: それじゃあ、一緒にやらない？\n
-m/MS0016.BIN	0:00	102	3621	09	レベルは{02:08}ＬＯＷ{08:72}{08:53}。\n<wait>頑張りま{08:80}ね。\n<wait>		Let's set the level on... LOW.\n<wait>Good luck.\n<wait>	v005		reads: レベルは‥‥‥ＬＯＷ‥‥っと。\n<wait>頑張りましょうね。\n<wait>; reads: あ、トレーニングしに来たの？\nじゃあ、いっしょにやらない？\n
+m/MS0016.BIN	0:00	101	3610	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: それじゃあ、一緒にやらない？\n @refalign
+m/MS0016.BIN	0:00	102	3621	09	レベルは{02:08}ＬＯＷ{08:72}{08:53}。\n<wait>頑張りま{08:80}ね。\n<wait>		Let's set the level on... LOW.\n<wait>Good luck.\n<wait>	v005		reads: レベルは‥‥‥ＬＯＷ‥‥っと。\n<wait>頑張りましょうね。\n<wait>; reads: あ、トレーニングしに来たの？\nじゃあ、いっしょにやらない？\n @refalign
 m/MS0016.BIN	0:00	103	3670	18	レベルは{08:90}{08:8E}の？\n	レベルは{08:90}{08:8E}の？\n	Which level do you want to pick?\n	v005		reads: レベルはどうするの？\n; reads: はい; menu option, declared width 20 columns
 m/MS0016.BIN	0:00	104	3706	1FB2	ビシッとＨＩＧＨ	ビシッとＨＩＧＨ	Straight to HIGH	v005		menu option, declared width 20 columns; reads: いいえ
 m/MS0016.BIN	0:00	105	3724	1FB2	やっぱりＭＩＤＤＬＥ	やっぱりＭＩＤＤＬＥ	MIDDLE's a safe bet	v005		menu option, declared width 20 columns; reads: 
 m/MS0016.BIN	0:00	106	3746	1FB2	取りあえずＬＯＷ	取りあえずＬＯＷ	Let's start with LOW	v005		menu option, declared width 20 columns
-m/MS0016.BIN	0:00	107	3792	00	{04:FE}：		Yuuka:	v005		reads: ：
-m/MS0016.BIN	0:00	108	3798	1FD3	そう{02:08}\n<wait>		Oh...\n<wait>	v005		reads: そう‥‥‥\n<wait>; reads: レベルは‥‥‥ＬＯＷ‥‥っと。\n<wait>頑張りましょうね。\n<wait>
-m/MS0016.BIN	0:00	109	3817	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: レベルはどうするの？\n
-m/MS0016.BIN	0:00	110	3823	1FD3	{08:4D}{08:81}あ、今度一緒にトレーニングしま{08:80}ね。\n		Well, maybe some other time then.\n	v005		reads: それじゃあ、今度一緒にトレーニングしましょうね。\n; menu option, declared width 20 columns
-m/MS0016.BIN	0:00	111	3898	00	{04:FE}：		Yuuka:	v005		reads: ：; menu option, declared width 20 columns
-m/MS0016.BIN	0:00	112	3919	00	{04:FF}くん！　来てく{08:60}のね。\n{08:81}あ、一緒にトレーニングし{08:25}？\n		Ah, Katsuragi-kun! Are you here to train with me?\n	v005		reads: くん！　来てくれたのね。\nじゃあ、一緒にトレーニングしない？\n; menu option, declared width 20 columns
+m/MS0016.BIN	0:00	107	3792	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0016.BIN	0:00	108	3798	1FD3	そう{02:08}\n<wait>		Oh...\n<wait>	v005		reads: そう‥‥‥\n<wait>; reads: レベルは‥‥‥ＬＯＷ‥‥っと。\n<wait>頑張りましょうね。\n<wait> @refalign
+m/MS0016.BIN	0:00	109	3817	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: レベルはどうするの？\n @refalign
+m/MS0016.BIN	0:00	110	3823	1FD3	{08:4D}{08:81}あ、今度一緒にトレーニングしま{08:80}ね。\n		Well, maybe some other time then.\n	v005		reads: それじゃあ、今度一緒にトレーニングしましょうね。\n; menu option, declared width 20 columns @refalign
+m/MS0016.BIN	0:00	111	3898	00	{04:FE}：		Yuuka:	v005		reads: ：; menu option, declared width 20 columns @refalign
+m/MS0016.BIN	0:00	112	3919	00	{04:FF}くん！　来てく{08:60}のね。\n{08:81}あ、一緒にトレーニングし{08:25}？\n		Ah, Katsuragi-kun! Are you here to train with me?\n	v005		reads: くん！　来てくれたのね。\nじゃあ、一緒にトレーニングしない？\n; menu option, declared width 20 columns @refalign
 m/MS0016.BIN	0:00	113	3994	00	{04:FF}くん。待{08:52}たわ。\nさぁ。トレーニングしま{08:80}。\n	{04:FF}くん。待{08:52}たわ。\nさぁ。トレーニングしま{08:80}。\n	Ah, Katsuragi-kun. I was just thinking about you.\nSo then, shall we get started?\n	v005		reads: くん。待ってたわ。\nさぁ。トレーニングしましょう。\n; reads: 切り
-m/MS0016.BIN	0:00	114	4043	18	{08:5B}トレーニングしに来たの？\n{08:81}あ、一緒にやりま{08:80}よ。\n		Are you here to train? In that case, is it alright if I join you?\n	v005		reads: またトレーニングしに来たの？\nじゃあ、一緒にやりましょうよ。\n; reads: ：
-m/MS0016.BIN	0:00	115	4108	1FD0	今{08:62}{08:73}所で油を売っ{08:14}場合では{08:25}{02:08}\n早く詰所に行かなくては{02:08}\n		This is no time for training. We've gotta hurry to the office.\n	v005		reads: 今は、こんな所で油を売っている場合ではない‥‥‥\n早く詰所に行かなくては‥‥‥\n; reads: そう‥‥‥\n<wait>
-m/MS0016.BIN	0:00	116	4174	1E07	ヴァーチャル空間に、入{08:52}み{08:15}\n		Do you wish to enter the Virtual Dungeon?\n	v005		reads: ヴァーチャル空間に、入ってみますか？\n; reads: ：
+m/MS0016.BIN	0:00	114	4043	18	{08:5B}トレーニングしに来たの？\n{08:81}あ、一緒にやりま{08:80}よ。\n		Are you here to train? In that case, is it alright if I join you?\n	v005		reads: またトレーニングしに来たの？\nじゃあ、一緒にやりましょうよ。\n; reads: ： @refalign
+m/MS0016.BIN	0:00	115	4108	1FD0	今{08:62}{08:73}所で油を売っ{08:14}場合では{08:25}{02:08}\n早く詰所に行かなくては{02:08}\n		This is no time for training. We've gotta hurry to the office.\n	v005		reads: 今は、こんな所で油を売っている場合ではない‥‥‥\n早く詰所に行かなくては‥‥‥\n; reads: そう‥‥‥\n<wait> @refalign
+m/MS0016.BIN	0:00	116	4174	1E07	ヴァーチャル空間に、入{08:52}み{08:15}\n		Do you wish to enter the Virtual Dungeon?\n	v005		reads: ヴァーチャル空間に、入ってみますか？\n; reads: ： @refalign
 m/MS0016.BIN	0:00	117	4219	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns; reads: それじゃあ、今度一緒にトレーニングしましょうね。\n
 m/MS0016.BIN	0:00	118	4223	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns; reads: ：
-m/MS0016.BIN	0:00	119	4245	1FBA	ヘッドセットヲ　カブリ　シートニ　コシカケテクダサイ\nジュンビカンリョウナラ{08:72}{1E10:010014}ソノ{01:22}オマチクダサイ………\n<wait>レベルヲ　セッテイ　シテクダサイ\n		PLEASE PUT ON THE HEADSET AND SIT DOWN.\n{1E10:010014}THE SIMULATION WILL BEGIN SHORTLY.\n<wait>SELECT YOUR DESIRED DIFFICULTY LEVEL\n	v005		reads: ヘッドセットヲ　カブリ　シートニ　コシカケテクダサイ\nジュンビカンリョウナラ‥‥{1E10:010014}ソノママオマチクダサイ………\n<wait>レベルヲ　セッテイ　シテクダサイ\n; reads: くん！　来てくれたのね。\nじゃあ、一緒にトレーニングしない？\n
-m/MS0016.BIN	0:00	120	4407	1FB2	ＨＩＧＨ		HIGH	v005		menu option, declared width 20 columns; reads: くん。待ってたわ。\nさぁ。トレーニングしましょう。\n
-m/MS0016.BIN	0:00	121	4417	1FB2	ＭＩＤＤＬＥ		MIDDLE	v005		menu option, declared width 20 columns; reads: またトレーニングしに来たの？\nじゃあ、一緒にやりましょうよ。\n
-m/MS0016.BIN	0:00	122	4431	1FB2	ＬＯＷ		LOW	v005		menu option, declared width 20 columns; reads: 今は、こんな所で油を売っている場合ではない‥‥‥\n早く詰所に行かなくては‥‥‥\n
-m/MS0016.BIN	0:00	123	4561	1E07	{01:39}ノ　ノウリョクデ　コノレベルヲ　シヨウスルノハ\nキケンデス\n<wait>		YOU CURRENTLY CANNOT ACCESS THIS DIFFICULTY LEVEL\n<wait>	v005		reads: アナタノ　ノウリョクデ　コノレベルヲ　シヨウスルノハ\nキケンデス\n<wait>; reads: ヴァーチャル空間に、入ってみますか？\n
+m/MS0016.BIN	0:00	119	4245	1FBA	ヘッドセットヲ　カブリ　シートニ　コシカケテクダサイ\nジュンビカンリョウナラ{08:72}{1E10:010014}ソノ{01:22}オマチクダサイ………\n<wait>レベルヲ　セッテイ　シテクダサイ\n		PLEASE PUT ON THE HEADSET AND SIT DOWN.\n{1E10:010014}THE SIMULATION WILL BEGIN SHORTLY.\n<wait>SELECT YOUR DESIRED DIFFICULTY LEVEL\n	v005		reads: ヘッドセットヲ　カブリ　シートニ　コシカケテクダサイ\nジュンビカンリョウナラ‥‥{1E10:010014}ソノママオマチクダサイ………\n<wait>レベルヲ　セッテイ　シテクダサイ\n; reads: くん！　来てくれたのね。\nじゃあ、一緒にトレーニングしない？\n @refalign
+m/MS0016.BIN	0:00	120	4407	1FB2	ＨＩＧＨ		HIGH	v005		menu option, declared width 20 columns; reads: くん。待ってたわ。\nさぁ。トレーニングしましょう。\n @refalign
+m/MS0016.BIN	0:00	121	4417	1FB2	ＭＩＤＤＬＥ		MIDDLE	v005		menu option, declared width 20 columns; reads: またトレーニングしに来たの？\nじゃあ、一緒にやりましょうよ。\n @refalign
+m/MS0016.BIN	0:00	122	4431	1FB2	ＬＯＷ		LOW	v005		menu option, declared width 20 columns; reads: 今は、こんな所で油を売っている場合ではない‥‥‥\n早く詰所に行かなくては‥‥‥\n @refalign
+m/MS0016.BIN	0:00	123	4561	1E07	{01:39}ノ　ノウリョクデ　コノレベルヲ　シヨウスルノハ\nキケンデス\n<wait>		YOU CURRENTLY CANNOT ACCESS THIS DIFFICULTY LEVEL\n<wait>	v005		reads: アナタノ　ノウリョクデ　コノレベルヲ　シヨウスルノハ\nキケンデス\n<wait>; reads: ヴァーチャル空間に、入ってみますか？\n @refalign
 m/MS0016.BIN	0:00	124	4627	1FBA	レベルセッテイヲ　サゲテクダサイ\n<wait>	レベルセッテイヲ　サゲテクダサイ\n<wait>	PLEASE SELECT A LOWER ONE\n<wait>	v005		reads: はい; menu option, declared width 20 columns
 m/MS0016.BIN	0:00	125	4674	00	{04:FE}：	{04:FE}：	Yuuka:	v005		reads: ：; reads: いいえ; menu option, declared width 20 columns
 m/MS0016.BIN	0:00	126	4680	1FD3	ごめんな{08:49}、	ごめんな{08:49}、	Sorry, Katsuragi-kun.\nLooks like I'm not strong enough...\n<wait>	v005		reads: ごめんなさい、; reads: だれも
-m/MS0016.BIN	0:00	127	4696	00	{04:FF}くん。\n私の方の能力が足り{08:25}み{08:4E}{02:08}\n<wait>					reads: くん。\n私の方の能力が足りないみたい‥‥‥\n<wait>; reads: ヘッドセットヲ　カブリ　シートニ　コシカケテクダサイ\nジュンビカンリョウナラ‥‥{1E10:010014}ソノママオマチクダサイ………\n<wait>レベルヲ　セッテイ　シテクダサイ\n
-m/MS0016.BIN	0:00	128	4750	1FC4	{01:39}ノ　ノウリョクデ　コノレベルヲ　シヨウスルノハ\nキケンデス\n<wait>		YOU CURRENTLY CANNOT ACCESS THIS DIFFICULTY LEVEL\n<wait>	v005		reads: アナタノ　ノウリョクデ　コノレベルヲ　シヨウスルノハ\nキケンデス\n<wait>; menu option, declared width 20 columns
-m/MS0016.BIN	0:00	129	4816	1FBA	レベルセッテイヲ　サゲテクダサイ\n		PLEASE SELECT A LOWER ONE\n	v005		menu option, declared width 20 columns
+m/MS0016.BIN	0:00	127	4696	00	{04:FF}くん。\n私の方の能力が足り{08:25}み{08:4E}{02:08}\n<wait>		 	v005		reads: くん。\n私の方の能力が足りないみたい‥‥‥\n<wait>; reads: ヘッドセットヲ　カブリ　シートニ　コシカケテクダサイ\nジュンビカンリョウナラ‥‥{1E10:010014}ソノママオマチクダサイ………\n<wait>レベルヲ　セッテイ　シテクダサイ\n @refalign @refalign-merged
+m/MS0016.BIN	0:00	128	4750	1FC4	{01:39}ノ　ノウリョクデ　コノレベルヲ　シヨウスルノハ\nキケンデス\n<wait>		 	v005		reads: アナタノ　ノウリョクデ　コノレベルヲ　シヨウスルノハ\nキケンデス\n<wait>; menu option, declared width 20 columns @refalign @refalign-merged
+m/MS0016.BIN	0:00	129	4816	1FBA	レベルセッテイヲ　サゲテクダサイ\n		 	v005		menu option, declared width 20 columns @refalign @refalign-merged
 m/MS0016.BIN	0:01	0	5	1EBE	{01:00}	{01:00}				reads: 早坂達也
 m/MS0016.BIN	0:01	1	8	00	{04:FF}	{04:FF}				reads: 
 m/MS0016.BIN	0:01	2	11	00	d{04:FF}	d{04:FF}				reads: d
@@ -145,53 +145,53 @@ m/MS0016.BIN	0:03	0	5	1EBE	{01:00}	{01:00}				reads: 早坂達也
 m/MS0016.BIN	0:03	1	8	00	{04:FF}	{04:FF}				reads: 
 m/MS0016.BIN	0:03	2	11	00	d{04:FF}	d{04:FF}				reads: d
 m/MS0016.BIN	0:03	3	15	00	d	d				
-m/MS0016.BIN	0:04	0	2	1FBA	ソレデハ　レベルヲ　セッテイ　シテクダサイ\n		SELECT YOUR DESIRED DIFFICULTY LEVEL\n	v005		
-m/MS0016.BIN	0:04	1	61	1FB2	ＨＩＧＨ		HIGH	v005		menu option, declared width 20 columns
-m/MS0016.BIN	0:04	2	71	1FB2	ＭＩＤＤＬＥ		MIDDLE	v005		menu option, declared width 20 columns
-m/MS0016.BIN	0:04	3	85	1FB2	ＬＯＷ		LOW	v005		menu option, declared width 20 columns
-m/MS0016.BIN	0:04	4	93	1FB2	キャンセル		Cancel	v005		menu option, declared width 20 columns
+m/MS0016.BIN	0:04	0	2	1FBA	ソレデハ　レベルヲ　セッテイ　シテクダサイ\n		SELECT YOUR DESIRED DIFFICULTY LEVEL\n	v005		@refalign
+m/MS0016.BIN	0:04	1	61	1FB2	ＨＩＧＨ		HIGH	v005		menu option, declared width 20 columns @refalign
+m/MS0016.BIN	0:04	2	71	1FB2	ＭＩＤＤＬＥ		MIDDLE	v005		menu option, declared width 20 columns @refalign
+m/MS0016.BIN	0:04	3	85	1FB2	ＬＯＷ		LOW	v005		menu option, declared width 20 columns @refalign
+m/MS0016.BIN	0:04	4	93	1FB2	キャンセル		Cancel	v005		menu option, declared width 20 columns @refalign
 m/MS0016.BIN	0:04	5	140	00	{06:09}j	{06:09}j				reads: j; reads: キャンプだした
 m/MS0016.BIN	0:04	6	149	1FC4	コノレベル　ハ　イッパンノ　カタ　ハ　ゴリヨウ　ニ　ナレマセン\n<wait>	コノレベル　ハ　イッパンノ　カタ　ハ　ゴリヨウ　ニ　ナレマセン\n<wait>	NON-DEVIL BUSTERS DO NOT HAVE ACCESS TO THIS LEVEL\n<wait>	v005		reads: j
 m/MS0016.BIN	0:04	7	229	1F04						
 m/MS0016.BIN	0:04	8	235	1FC4	レクチャー　ヲ　ウケテイナイ　カタ　ハ　コノ　レベル　ヲ\nゴリヨウニナレマセン\n	レクチャー　ヲ　ウケテイナイ　カタ　ハ　コノ　レベル　ヲ\nゴリヨウニナレマセン\n	YOU CANNOT ACCESS THIS LEVEL BEFORE THE FIRST LECTURE\n	v005		
-m/MS0016.BIN	0:04	9	418	1E07	{01:39}ノ　ノウリョクデ　コノレベルヲ　シヨウスルノハ\nキケンデス\n<wait>		YOU CURRENTLY CANNOT ACCESS THIS DIFFICULTY LEVEL\n<wait>	v005		reads: アナタノ　ノウリョクデ　コノレベルヲ　シヨウスルノハ\nキケンデス\n<wait>
-m/MS0016.BIN	0:04	10	484	1FBA	レベルセッテイヲ　サゲテクダサイ\n<wait>		PLEASE SELECT A LOWER ONE\n<wait>	v005		reads: アナタノ　ノウリョクデ　コノレベルヲ　シヨウスルノハ\nキケンデス\n<wait>
-m/MS0016.BIN	0:04	11	531	00	{04:FE}：		Yuuka:	v005		reads: ：
+m/MS0016.BIN	0:04	9	418	1E07	{01:39}ノ　ノウリョクデ　コノレベルヲ　シヨウスルノハ\nキケンデス\n<wait>		YOU CURRENTLY CANNOT ACCESS THIS DIFFICULTY LEVEL\n<wait>	v005		reads: アナタノ　ノウリョクデ　コノレベルヲ　シヨウスルノハ\nキケンデス\n<wait> @refalign
+m/MS0016.BIN	0:04	10	484	1FBA	レベルセッテイヲ　サゲテクダサイ\n<wait>		PLEASE SELECT A LOWER ONE\n<wait>	v005		reads: アナタノ　ノウリョクデ　コノレベルヲ　シヨウスルノハ\nキケンデス\n<wait> @refalign
+m/MS0016.BIN	0:04	11	531	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
 m/MS0016.BIN	0:04	12	537	1FD3	ごめんな{08:49}、		Sorry, Katsuragi-kun.\nIt looks like I'm not strong enough...\n<wait>	v005		reads: ごめんなさい、; reads: ：
-m/MS0016.BIN	0:04	13	553	00	{04:FF}くん。\n私の方の能力が足り{08:25}み{08:4E}{02:08}\n<wait>					reads: くん。\n私の方の能力が足りないみたい‥‥‥\n<wait>; reads: ごめんなさい、
-m/MS0016.BIN	0:04	14	607	1FC4	{01:39}ノ　ノウリョクデ　コノレベルヲ　シヨウスルノハ\nキケンデス\n<wait>		YOU CURRENTLY CANNOT ACCESS THIS DIFFICULTY LEVEL\n<wait>	v005		reads: アナタノ　ノウリョクデ　コノレベルヲ　シヨウスルノハ\nキケンデス\n<wait>; reads: くん。\n私の方の能力が足りないみたい‥‥‥\n<wait>
-m/MS0016.BIN	0:04	15	673	1FBA	レベルセッテイヲ　サゲテクダサイ\n		PLEASE SELECT A LOWER ONE\n	v005		reads: アナタノ　ノウリョクデ　コノレベルヲ　シヨウスルノハ\nキケンデス\n<wait>
+m/MS0016.BIN	0:04	13	553	00	{04:FF}くん。\n私の方の能力が足り{08:25}み{08:4E}{02:08}\n<wait>		 	v005		reads: くん。\n私の方の能力が足りないみたい‥‥‥\n<wait>; reads: ごめんなさい、 @refalign @refalign-merged
+m/MS0016.BIN	0:04	14	607	1FC4	{01:39}ノ　ノウリョクデ　コノレベルヲ　シヨウスルノハ\nキケンデス\n<wait>		 	v005		reads: アナタノ　ノウリョクデ　コノレベルヲ　シヨウスルノハ\nキケンデス\n<wait>; reads: くん。\n私の方の能力が足りないみたい‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0016.BIN	0:04	15	673	1FBA	レベルセッテイヲ　サゲテクダサイ\n		 	v005		reads: アナタノ　ノウリョクデ　コノレベルヲ　シヨウスルノハ\nキケンデス\n<wait> @refalign @refalign-merged
 m/MS0016.BIN	0:04	16	743	00	{06:09}j	{06:09}j				reads: j
 m/MS0016.BIN	0:04	17	752	1FC4	コノレベル　ハ　イッパンノ　カタ　ハ　ゴリヨウ　ニ　ナレマセン\n<wait>	コノレベル　ハ　イッパンノ　カタ　ハ　ゴリヨウ　ニ　ナレマセン\n<wait>	NON-DEVIL BUSTERS DO NOT HAVE ACCESS TO THIS LEVEL\n<wait>	v005		reads: j
 m/MS0016.BIN	0:04	18	832	1F04						
 m/MS0016.BIN	0:04	19	838	1FC4	レクチャー　ヲ　ウケテイナイ　カタ　ハ　コノ　レベル　ヲ\nゴリヨウニナレマセン\n	レクチャー　ヲ　ウケテイナイ　カタ　ハ　コノ　レベル　ヲ\nゴリヨウニナレマセン\n	YOU CANNOT ACCESS THIS LEVEL BEFORE THE FIRST LECTURE\n	v005		
-m/MS0016.BIN	0:04	20	1071	1A	サイリヨウ　キャンセル　シマス\nオツカレサマデシタ{08:72}\n		THE SYSTEM IS CLOSING DOWN...\n	v005		reads: サイリヨウ　キャンセル　シマス\nオツカレサマデシタ‥‥\n
-m/MS0016.BIN	0:04	21	1188	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: サイリヨウ　キャンセル　シマス\nオツカレサマデシタ‥‥\n
-m/MS0016.BIN	0:04	22	1194	1FD3	{08:4D}{08:81}あ、		Thanks for joining me, Katsuragi-kun.\nI'll stay here for a little while longer.\n<wait>	v005		reads: それじゃあ、; reads: ：
-m/MS0016.BIN	0:04	23	1206	00	{04:FF}くん。\n私、{08:5C}少しトレーニング{08:4A}いく{08:42}。\n<wait>					reads: くん。\n私、もう少しトレーニングしていくから。\n<wait>; reads: それじゃあ、
-m/MS0016.BIN	0:04	24	1260	00	{04:FE}：					reads: ：; reads: くん。\n私、もう少しトレーニングしていくから。\n<wait>
-m/MS0016.BIN	0:04	25	1266	1FD3	お疲れ様！\n<wait>		See ya!\n<wait>	v005		reads: ：
-m/MS0016.BIN	0:05	0	49	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0016.BIN	0:05	1	55	1FD3	二人とも、なかなかやる{08:81}{08:25}か！\n<wait>		Way to go, you two! That was wicked.\n<wait>	v005		reads: 二人とも、なかなかやるじゃないか！\n<wait>
-m/MS0016.BIN	0:05	2	97	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0016.BIN	0:05	3	103	1FD3	二人とも、{08:76}{08:76}だな。\n<wait>ま、最初は{08:73}モンだ。今後の訓練で精進すれば{08:7F}。\n<wait>		Looks like you two still have some way to go, huh?\n<wait>Don't feel too bad. No one starts off perfect.\nYou'll get the hang of it eventually.\n<wait>	v005		reads: 二人とも、まだまだだな。\n<wait>ま、最初はこんなモンだ。今後の訓練で精進すればいい。\n<wait>
-m/MS0016.BIN	0:05	4	183	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0016.BIN	0:05	5	189	1FD3	よし、今日の訓練は{08:48}で終了だ。\n今後{01:23}の間{08:62}自主的に訓練を行う事。\n<wait>		That does it for today's training session.\nFor the next little while, you will be on your own.\n<wait>	v005		reads: よし、今日の訓練はこれで終了だ。\n今後しばらくの間は、自主的に訓練を行う事。\n<wait>
-m/MS0016.BIN	0:05	6	263	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0016.BIN	0:05	7	269	1FD3	{08:81}あ、詰所に戻るか。\n<wait>		Now then, do you want to return to the office?\n<wait>	v005		reads: じゃあ、詰所に戻るか。\n<wait>
-m/MS0016.BIN	0:05	8	302	00	{04:FF}達{08:62}訓練を{01:31}に終え、{08:00}と共に、{08:04}らの待つ詰所に戻{08:51}。\n<wait>		You decided to quit training for now and head back to the Devil Buster\noffice where the rest of the squad is waiting for you.\n<wait>	v005		reads: 達は、訓練を無事に終え、早坂と共に、西野らの待つ詰所に戻った。\n<wait>
-m/MS0016.BIN	0:05	9	384	1FE5	ヒキツヅキ　リヨウ　サレマスカ？\n		DO YOU WISH TO CONTINUE TRAINING?\n	v005		
+m/MS0016.BIN	0:04	20	1071	1A	サイリヨウ　キャンセル　シマス\nオツカレサマデシタ{08:72}\n		 	v005		reads: サイリヨウ　キャンセル　シマス\nオツカレサマデシタ‥‥\n @refalign @refalign-merged
+m/MS0016.BIN	0:04	21	1188	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: サイリヨウ　キャンセル　シマス\nオツカレサマデシタ‥‥\n @refalign
+m/MS0016.BIN	0:04	22	1194	1FD3	{08:4D}{08:81}あ、		Thanks for joining me, Katsuragi-kun.\nI'll stay here for a little while longer.\n<wait>	v005		reads: それじゃあ、; reads: ： @refalign @refalign-merged
+m/MS0016.BIN	0:04	23	1206	00	{04:FF}くん。\n私、{08:5C}少しトレーニング{08:4A}いく{08:42}。\n<wait>		 	v005		reads: くん。\n私、もう少しトレーニングしていくから。\n<wait>; reads: それじゃあ、 @refalign @refalign-merged
+m/MS0016.BIN	0:04	24	1260	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: くん。\n私、もう少しトレーニングしていくから。\n<wait> @refalign
+m/MS0016.BIN	0:04	25	1266	1FD3	お疲れ様！\n<wait>		See ya!\n<wait>	v005		reads: ： @refalign
+m/MS0016.BIN	0:05	0	49	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂： @refalign
+m/MS0016.BIN	0:05	1	55	1FD3	二人とも、なかなかやる{08:81}{08:25}か！\n<wait>		Way to go, you two! That was wicked.\n<wait>	v005		reads: 二人とも、なかなかやるじゃないか！\n<wait> @refalign
+m/MS0016.BIN	0:05	2	97	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂： @refalign
+m/MS0016.BIN	0:05	3	103	1FD3	二人とも、{08:76}{08:76}だな。\n<wait>ま、最初は{08:73}モンだ。今後の訓練で精進すれば{08:7F}。\n<wait>		Looks like you two still have some way to go, huh?\n<wait>Don't feel too bad. No one starts off perfect.\nYou'll get the hang of it eventually.\n<wait>	v005		reads: 二人とも、まだまだだな。\n<wait>ま、最初はこんなモンだ。今後の訓練で精進すればいい。\n<wait> @refalign
+m/MS0016.BIN	0:05	4	183	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂： @refalign
+m/MS0016.BIN	0:05	5	189	1FD3	よし、今日の訓練は{08:48}で終了だ。\n今後{01:23}の間{08:62}自主的に訓練を行う事。\n<wait>		That does it for today's training session.\nFor the next little while, you will be on your own.\n<wait>	v005		reads: よし、今日の訓練はこれで終了だ。\n今後しばらくの間は、自主的に訓練を行う事。\n<wait> @refalign
+m/MS0016.BIN	0:05	6	263	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂： @refalign
+m/MS0016.BIN	0:05	7	269	1FD3	{08:81}あ、詰所に戻るか。\n<wait>		Now then, do you want to return to the office?\n<wait>	v005		reads: じゃあ、詰所に戻るか。\n<wait> @refalign
+m/MS0016.BIN	0:05	8	302	00	{04:FF}達{08:62}訓練を{01:31}に終え、{08:00}と共に、{08:04}らの待つ詰所に戻{08:51}。\n<wait>		You decided to quit training for now and head back to the Devil Buster\noffice where the rest of the squad is waiting for you.\n<wait>	v005		reads: 達は、訓練を無事に終え、早坂と共に、西野らの待つ詰所に戻った。\n<wait> @refalign
+m/MS0016.BIN	0:05	9	384	1FE5	ヒキツヅキ　リヨウ　サレマスカ？\n		DO YOU WISH TO CONTINUE TRAINING?\n	v005		@refalign
 m/MS0016.BIN	0:05	10	433	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
 m/MS0016.BIN	0:05	11	437	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
 m/MS0016.BIN	0:05	12	457	0F	オツカレサマデシタ{08:72}\n<wait>	オツカレサマデシタ{08:72}\n<wait>				reads: オツカレサマデシタ‥‥\n<wait>; reads: 山瀬勇
-m/MS0016.BIN	0:05	13	549	00	{04:FE}：					reads: ：; reads: オツカレサマデシタ‥‥\n<wait>
-m/MS0016.BIN	0:05	14	555	1FD3	{08:4D}{08:81}あ、		I think I'll stay behind and continue training for a bit longer.\n<wait>	v005		reads: それじゃあ、; reads: ： @rebase-unmatched idx14 en=Yuuka:
-m/MS0016.BIN	0:05	15	567	00	{04:FF}くん。\n私、{08:5C}少しトレーニング{08:4A}いく{08:42}。\n<wait>					reads: くん。\n私、もう少しトレーニングしていくから。\n<wait>; reads: それじゃあ、
-m/MS0016.BIN	0:05	16	621	00	{04:FE}：					reads: ：; reads: くん。\n私、もう少しトレーニングしていくから。\n<wait>
-m/MS0016.BIN	0:05	17	627	1FD3	お疲れ様！\n<wait>		Thanks for joining me, Katsuragi-kun!\n<wait>	v005		reads: ：
-m/MS0016.BIN	0:0B	0	4	1E07	{01:39}ハ　ボスニ　ショウリ　シマシタ\n<wait>		YOU DEFEATED THE BOSS\n<wait>	v005		reads: アナタハ　ボスニ　ショウリ　シマシタ\n<wait>
-m/MS0016.BIN	0:0C	0	4	1E07	{01:39}ハ　ボスニ　タオサレマシタ\n<wait>		YOU WERE DEFEATED BY THE BOSS\n<wait>	v005		reads: アナタハ　ボスニ　タオサレマシタ\n<wait>
-m/MS0016.BIN	0:0D	0	4	1E07	{01:39}　ハ　テキアクマ　ノ　コウゲキ　ニ　ヨッテ\nシボウ　シマシタ\n<wait>		YOU WERE KILLED BY AN ENEMY DEMON\n<wait>	v005		reads: アナタ　ハ　テキアクマ　ノ　コウゲキ　ニ　ヨッテ\nシボウ　シマシタ\n<wait>
+m/MS0016.BIN	0:05	13	549	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: オツカレサマデシタ‥‥\n<wait> @refalign
+m/MS0016.BIN	0:05	14	555	1FD3	{08:4D}{08:81}あ、		I think I'll stay behind and continue training for a bit longer.\n<wait>	v005		reads: それじゃあ、; reads: ： @rebase-unmatched idx14 en=Yuuka: @refalign @refalign-merged
+m/MS0016.BIN	0:05	15	567	00	{04:FF}くん。\n私、{08:5C}少しトレーニング{08:4A}いく{08:42}。\n<wait>		 	v005		reads: くん。\n私、もう少しトレーニングしていくから。\n<wait>; reads: それじゃあ、 @refalign @refalign-merged
+m/MS0016.BIN	0:05	16	621	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: くん。\n私、もう少しトレーニングしていくから。\n<wait> @refalign
+m/MS0016.BIN	0:05	17	627	1FD3	お疲れ様！\n<wait>		Thanks for joining me, Katsuragi-kun!\n<wait>	v005		reads: ： @refalign
+m/MS0016.BIN	0:0B	0	4	1E07	{01:39}ハ　ボスニ　ショウリ　シマシタ\n<wait>		YOU DEFEATED THE BOSS\n<wait>	v005		reads: アナタハ　ボスニ　ショウリ　シマシタ\n<wait> @refalign
+m/MS0016.BIN	0:0C	0	4	1E07	{01:39}ハ　ボスニ　タオサレマシタ\n<wait>		YOU WERE DEFEATED BY THE BOSS\n<wait>	v005		reads: アナタハ　ボスニ　タオサレマシタ\n<wait> @refalign
+m/MS0016.BIN	0:0D	0	4	1E07	{01:39}　ハ　テキアクマ　ノ　コウゲキ　ニ　ヨッテ\nシボウ　シマシタ\n<wait>		YOU WERE KILLED BY AN ENEMY DEMON\n<wait>	v005		reads: アナタ　ハ　テキアクマ　ノ　コウゲキ　ニ　ヨッテ\nシボウ　シマシタ\n<wait> @refalign
 m/MS0016.BIN	0:0E	0	0	UNTILED	$ / Q / $ / Q / & / Q / & / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / ! / Q / ( / " / Q /  / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / ! / d / " / b / ' / c	$ / Q / $ / Q / & / Q / & / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / Q / ( / ! / Q / ( / " / Q /  / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / d / ! / d / " / b / ' / c				@noedit; @untiled; record does not tile (switch entry at 0x104 has kind 40 (not 0 or 1)); read-only, copied verbatim; record reaches an engine no-op opcode; verify in game; reads: 早坂達也 @rebase-new
 m/MS0016.BIN	0:12	0	28	1F81	{04:FF}	{04:FF}				reads: 
 m/MS0016.BIN	0:12	1	164	1F81	{04:FE}	{04:FE}				reads: 

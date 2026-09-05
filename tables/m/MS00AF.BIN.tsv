@@ -56,19 +56,19 @@ m/MS00AF.BIN	0:0C	2	156	00	ｯ
 m/MS00AF.BIN	0:0C	3	160	0D	ｯ					
 m/MS00AF.BIN	0:1B	0	23	1B	能力値名	能力値名	LIGHT/DARK	v005		reads: ＮＯ
 m/MS00AF.BIN	0:1B	1	126	1B	Ｌ／Ｄ属性値	Ｌ／Ｄ属性値	LAW/CHAOS	v005		
-m/MS00AF.BIN	0:1B	2	153	1B	Ｌ／Ｃ属性値		LEVEL	v005		@rebase-unmatched idx2 en=Stat Name
+m/MS00AF.BIN	0:1B	2	153	1B	Ｌ／Ｃ属性値		LAW/CHAOS	v005		@rebase-unmatched idx2 en=Stat Name @refalign
 m/MS00AF.BIN	0:1B	3	180	1B	レベル	レベル	INTUITION	v005		reads: 
 m/MS00AF.BIN	0:1B	4	201	1B	直感	直感	WILLPOWER	v005		reads: ペンタグランマc
 m/MS00AF.BIN	0:1B	5	220	1B	精神力	精神力	MAGIC	v005		reads: そんなことt
-m/MS00AF.BIN	0:1B	6	241	1B	魔力		INTELLIGENCE	v005		reads: 切り{=83}{=00}飛び道具{=94}{=00}｣
-m/MS00AF.BIN	0:1B	7	260	1B	知力		DIVINE GRACE	v005		reads: ＞何をしますか？ｲ
-m/MS00AF.BIN	0:1B	8	279	1B	加護		STRENGTH	v005		reads: 達也ﾁ
+m/MS00AF.BIN	0:1B	6	241	1B	魔力		MAGIC	v005		reads: 切り{=83}{=00}飛び道具{=94}{=00}｣ @refalign
+m/MS00AF.BIN	0:1B	7	260	1B	知力		INTELLIGENCE	v005		reads: ＞何をしますか？ｲ @refalign
+m/MS00AF.BIN	0:1B	8	279	1B	加護		DIVINE GRACE	v005		reads: 達也ﾁ @refalign
 m/MS00AF.BIN	0:1B	9	298	1B	強さ	強さ	VITALITY	v005		reads: 
 m/MS00AF.BIN	0:1B	10	317	1B	体力	体力	AGILITY	v005		reads: 山瀬勇わたしをあなたは
-m/MS00AF.BIN	0:1B	11	336	1B	敏捷性		DEXTERITY	v005		
-m/MS00AF.BIN	0:1B	12	357	1B	器用さ		CHARM	v005		
-m/MS00AF.BIN	0:1B	13	378	1B	魅力		LUCK	v005		
-m/MS00AF.BIN	0:1B	14	397	1B	命運					@rebase-new
+m/MS00AF.BIN	0:1B	11	336	1B	敏捷性		AGILITY	v005		@refalign
+m/MS00AF.BIN	0:1B	12	357	1B	器用さ		DEXTERITY	v005		@refalign
+m/MS00AF.BIN	0:1B	13	378	1B	魅力		CHARM	v005		@refalign
+m/MS00AF.BIN	0:1B	14	397	1B	命運		LUCK	v005		@rebase-new @refalign
 m/MS00AF.BIN	0:1C	0	19	1B	値を増減{08:4A}ね	値を増減{08:4A}ね	Please adjust the value	ours		reads: 値を増減してね; reads: ありがとう
 m/MS00AF.BIN	0:1C	1	88	1B	ＯＫ	ＯＫ	OK	ours		
 m/MS00AF.BIN	0:1D	0	148	00	{01:1F}L{03:18}	{01:1F}L{03:18}				record reaches an engine no-op opcode; verify in game; reads: おにいちゃんL
@@ -103,18 +103,18 @@ m/MS00AF.BIN	0:23	3	109	00	{02:1E}ﾔ{03:19}{03:18}	{02:1E}ﾔ{03:19}{03:18}				
 m/MS00AF.BIN	0:23	4	150	00	-	-				reads: レジスタンス
 m/MS00AF.BIN	0:23	5	152	00	{04:00}{04:00}	{04:00}{04:00}				reads: を唱えた！ を唱えた！ ; reads: ﾔ
 m/MS00AF.BIN	0:23	6	161	1B	~OFF	~OFF				
-m/MS00AF.BIN	0:24	0	2	1FBA	＞現在の状況をセーブし{08:5A}\n　セーブ{08:8E}ファイルを選択{08:4A}下{08:49}\n		>Your progress will be saved.\n Please select a file to save to.\n	v005		reads: ＞現在の状況をセーブします\n　セーブするファイルを選択して下さい\n
-m/MS00AF.BIN	0:24	1	240	1F7F	{=84}{=08}\nを上書きし{08:5A}。よろしい{08:55}か？\n		 you wish to overwrite this save?\n	v005		reads: {=84}{=08}\nを上書きします。よろしいですか？\n
+m/MS00AF.BIN	0:24	0	2	1FBA	＞現在の状況をセーブし{08:5A}\n　セーブ{08:8E}ファイルを選択{08:4A}下{08:49}\n		>Your progress will be saved.\n Please select a file to save to.\n	v005		reads: ＞現在の状況をセーブします\n　セーブするファイルを選択して下さい\n @refalign
+m/MS00AF.BIN	0:24	1	240	1F7F	{=84}{=08}\nを上書きし{08:5A}。よろしい{08:55}か？\n		 you wish to overwrite this save?\n	v005		reads: {=84}{=08}\nを上書きします。よろしいですか？\n @refalign
 m/MS00AF.BIN	0:24	2	288	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
 m/MS00AF.BIN	0:24	3	292	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
 m/MS00AF.BIN	0:24	4	337	1F80	сZーブ終了\n<wait>	сZーブ終了\n<wait>	ved the game successfully\n<wait>	v005		reads: 
-m/MS00AF.BIN	0:24	5	358	1FD0	＞報告：{08:0A}セーブに失敗しま{08:4B}\n　　　　ハードディスクの空き容量が不足{08:4A}い{08:5A}\n<wait>		>Error: Failed to save the game\n Not enough disk space available\n<wait>	v005		reads: ＞報告：データセーブに失敗しました\n　　　　ハードディスクの空き容量が不足しています\n<wait>
+m/MS00AF.BIN	0:24	5	358	1FD0	＞報告：{08:0A}セーブに失敗しま{08:4B}\n　　　　ハードディスクの空き容量が不足{08:4A}い{08:5A}\n<wait>		>Error: Failed to save the game\n Not enough disk space available\n<wait>	v005		reads: ＞報告：データセーブに失敗しました\n　　　　ハードディスクの空き容量が不足しています\n<wait> @refalign
 m/MS00AF.BIN	0:25	0	40	1B	 プレイヤー名     LEVEL セーブ地点	 プレイヤー名     LEVEL セーブ地点	 PLAYER NAME      LEVEL LOCATION	v005		reads: われわれ
 m/MS00AF.BIN	0:25	1	180	00	+	+				reads: ペンタグランマS
 m/MS00AF.BIN	0:25	2	182	00	+	+				reads: そんなこと{=F9}{=00}切り{=F5}{=00}飛び道具{=F1}{=00}{=ED}{=00}＞何をしますか？{=E9}{=00}
 m/MS00AF.BIN	0:25	3	184	00	{01:1E}{=9B}{=03}	{01:1E}{=9B}{=03}				reads: はやく{=9B}{=03}
-m/MS00AF.BIN	0:26	0	6	1FBA	＞{08:0A}をロードし{08:5A}\n　ロード{08:8E}ファイルを選択{08:4A}下{08:49}\n		>Please select a save to load\n	v005		reads: ＞データをロードします\n　ロードするファイルを選択して下さい\n
-m/MS00AF.BIN	0:26	1	165	1FBA	＞{08:0A}をロードし{08:5A}。よろしい{08:55}か？\n		>Do you wish to load this save?\n	v005		reads: ＞データをロードします。よろしいですか？\n
+m/MS00AF.BIN	0:26	0	6	1FBA	＞{08:0A}をロードし{08:5A}\n　ロード{08:8E}ファイルを選択{08:4A}下{08:49}\n		>Please select a save to load\n	v005		reads: ＞データをロードします\n　ロードするファイルを選択して下さい\n @refalign
+m/MS00AF.BIN	0:26	1	165	1FBA	＞{08:0A}をロードし{08:5A}。よろしい{08:55}か？\n		>Do you wish to load this save?\n	v005		reads: ＞データをロードします。よろしいですか？\n @refalign
 m/MS00AF.BIN	0:26	2	214	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
 m/MS00AF.BIN	0:26	3	218	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
 m/MS00AF.BIN	0:26	4	264	1F80	＞報告：{08:0A}ロードに失敗しま{08:4B}\n　　　　セーブ{08:0A}が異常{08:55}\n<wait>	＞報告：{08:0A}ロードに失敗しま{08:4B}\n　　　　セーブ{08:0A}が異常{08:55}\n<wait>	>Error: Failed to load the save\n Save data is corrupted\n<wait>	v005		reads: ＞報告：データロードに失敗しました\n　　　　セーブデータが異常です\n<wait>; reads: おまえ

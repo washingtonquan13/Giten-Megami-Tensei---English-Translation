@@ -3,165 +3,165 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS002E.BIN	0:00	0	69	1FD2	{08:31}：		Rui:	v005		reads: 泪：
+m/MS002E.BIN	0:00	0	69	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
 m/MS002E.BIN	0:00	1	79	00	{04:FF}{02:08}<wait>	{04:FF}{02:08}<wait>				reads: ‥‥‥<wait>
-m/MS002E.BIN	0:00	2	91	00	{04:FF}来て{02:08}\n<wait>					reads: 来て‥‥‥\n<wait>
-m/MS002E.BIN	0:01	0	24	1FD2	{08:31}：					reads: 泪：
-m/MS002E.BIN	0:01	1	34	00	{04:FF}{02:08}<wait>私の愛しい狩人{02:08}\n<wait>					reads: ‥‥‥<wait>私の愛しい狩人‥‥‥\n<wait>
-m/MS002E.BIN	0:01	2	67	1FD2	{08:31}：					reads: 泪：
+m/MS002E.BIN	0:00	2	91	00	{04:FF}来て{02:08}\n<wait>		 	v005		reads: 来て‥‥‥\n<wait> @refalign @refalign-merged
+m/MS002E.BIN	0:01	0	24	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
+m/MS002E.BIN	0:01	1	34	00	{04:FF}{02:08}<wait>私の愛しい狩人{02:08}\n<wait>		Ayato... <wait>My beloved hunter...\n<wait>	v005		reads: ‥‥‥<wait>私の愛しい狩人‥‥‥\n<wait> @refalign
+m/MS002E.BIN	0:01	2	67	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
 m/MS002E.BIN	0:01	3	73	1FD3	覚え{08:14}？\n<wait>私が{08:76}{08:6C}に{01:3C}だ{08:51}頃{02:08}私と貴方は確かに出逢{08:51}。\n<wait>					reads: 覚えている？\n<wait>私がまだ完全にひとつだった頃‥‥‥私と貴方は確かに出逢った。\n<wait>
-m/MS002E.BIN	0:01	4	190	00	{04:FE}：					reads: ：
-m/MS002E.BIN	0:01	5	200	00	{04:FF}君{08:72}大好き。\n私達、も{08:53}違う時代に生まれていれば良{08:18}のにね。\nそうすれば{08:72}き{08:53}も{08:53}幸せに過ごせたのに{02:08}。\n<wait>					reads: 君‥‥大好き。\n私達、もっと違う時代に生まれていれば良かったのにね。\nそうすれば‥‥きっともっと幸せに過ごせたのに‥‥‥。\n<wait>
-m/MS002E.BIN	0:01	6	360	1FD2	{08:31}：					reads: 泪：
+m/MS002E.BIN	0:01	4	190	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS002E.BIN	0:01	5	200	00	{04:FF}君{08:72}大好き。\n私達、も{08:53}違う時代に生まれていれば良{08:18}のにね。\nそうすれば{08:72}き{08:53}も{08:53}幸せに過ごせたのに{02:08}。\n<wait>		Katsuragi-kun... I love you.\nOh how I wish that we could've been born in a different era.\nI would've loved nothing more than grow old with you...\n<wait>	v005		reads: 君‥‥大好き。\n私達、もっと違う時代に生まれていれば良かったのにね。\nそうすれば‥‥きっともっと幸せに過ごせたのに‥‥‥。\n<wait> @refalign
+m/MS002E.BIN	0:01	6	360	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
 m/MS002E.BIN	0:01	7	366	1FD3	貴方は若く雄々しく、{08:79}命と引き換えに、私を望{08:5F}{02:08}\n<wait>					reads: 貴方は若く雄々しく、その命と引き換えに、私を望んだ‥‥‥\n<wait>
-m/MS002E.BIN	0:01	8	474	00	{04:FE}：					reads: ：
-m/MS002E.BIN	0:01	9	480	1FD3	ねぇ{08:72}私、どん{08:58}今どきどき{08:13}か<wait>{08:72}解る？\n<wait>					reads: ねぇ‥‥私、どんなに今どきどきしているか<wait>‥‥解る？\n<wait>
-m/MS002E.BIN	0:01	10	535	00	{04:FE}：					reads: ：
-m/MS002E.BIN	0:01	11	541	1FD3	凄いの{08:72}止まら{08:25}のよ{08:72}{08:47}鼓動が{02:08}‥\n<wait>					reads: 凄いの‥‥止まらないのよ‥‥この鼓動が‥‥‥‥\n<wait>
-m/MS002E.BIN	0:01	12	631	1FD2	{08:31}：					reads: 泪：
-m/MS002E.BIN	0:01	13	637	1FD3	私を愛{08:4A}{02:08}\n<wait>					reads: 私を愛して‥‥‥\n<wait>
-m/MS002E.BIN	0:01	14	707	00	{04:FE}：					reads: ：
-m/MS002E.BIN	0:01	15	717	00	{04:FF}君{08:72}好きよ{02:08}\n<wait>					reads: 君‥‥好きよ‥‥‥\n<wait>
-m/MS002E.BIN	0:01	16	787	1FD2	{08:31}：					reads: 泪：
-m/MS002E.BIN	0:01	17	793	1FD3	私を愛{08:4A}{02:08}\n<wait>					reads: 私を愛して‥‥‥\n<wait>
-m/MS002E.BIN	0:01	18	863	00	{04:FE}：					reads: ：
-m/MS002E.BIN	0:01	19	869	1FD3	私を愛{08:4A}{02:08}\n<wait>					reads: 私を愛して‥‥‥\n<wait>
-m/MS002E.BIN	0:01	20	904	1FD2	声：					
-m/MS002E.BIN	0:01	21	910	1FD3	私を愛{08:4A}{02:08}					reads: 私を愛して‥‥‥
+m/MS002E.BIN	0:01	8	474	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS002E.BIN	0:01	9	480	1FD3	ねぇ{08:72}私、どん{08:58}今どきどき{08:13}か<wait>{08:72}解る？\n<wait>		Can you hear that? <wait>That's my heart beating.\n<wait>	v005		reads: ねぇ‥‥私、どんなに今どきどきしているか<wait>‥‥解る？\n<wait> @refalign
+m/MS002E.BIN	0:01	10	535	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS002E.BIN	0:01	11	541	1FD3	凄いの{08:72}止まら{08:25}のよ{08:72}{08:47}鼓動が{02:08}‥\n<wait>		It's just won't stop...\n<wait>	v005		reads: 凄いの‥‥止まらないのよ‥‥この鼓動が‥‥‥‥\n<wait> @refalign
+m/MS002E.BIN	0:01	12	631	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
+m/MS002E.BIN	0:01	13	637	1FD3	私を愛{08:4A}{02:08}\n<wait>		Love me...\n<wait>	v005		reads: 私を愛して‥‥‥\n<wait> @refalign
+m/MS002E.BIN	0:01	14	707	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS002E.BIN	0:01	15	717	00	{04:FF}君{08:72}好きよ{02:08}\n<wait>		Katsuragi-kun... I love you...\n<wait>	v005		reads: 君‥‥好きよ‥‥‥\n<wait> @refalign
+m/MS002E.BIN	0:01	16	787	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
+m/MS002E.BIN	0:01	17	793	1FD3	私を愛{08:4A}{02:08}\n<wait>		Love me...\n<wait>	v005		reads: 私を愛して‥‥‥\n<wait> @refalign
+m/MS002E.BIN	0:01	18	863	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS002E.BIN	0:01	19	869	1FD3	私を愛{08:4A}{02:08}\n<wait>		Love me...\n<wait>	v005		reads: 私を愛して‥‥‥\n<wait> @refalign @refalign-merged
+m/MS002E.BIN	0:01	20	904	1FD2	声：		 	v005		@refalign @refalign-merged
+m/MS002E.BIN	0:01	21	910	1FD3	私を愛{08:4A}{02:08}		 	v005		reads: 私を愛して‥‥‥ @refalign @refalign-merged
 m/MS002E.BIN	0:01	22	924	00	{04:FF}{02:08}‥\n<wait>	{04:FF}{02:08}‥\n<wait>				reads: ‥‥‥‥\n<wait>
-m/MS002E.BIN	0:01	23	939	1FD2	声：					
-m/MS002E.BIN	0:01	24	945	1FD3	私を求めて{02:08}					reads: 私を求めて‥‥‥
-m/MS002E.BIN	0:01	25	961	00	{04:FF}くん{08:72}\n<wait>					reads: くん‥‥\n<wait>
-m/MS002E.BIN	0:01	26	978	1FD2	声：		Rui:	v005		
-m/MS002E.BIN	0:01	27	984	1FD3	愛し{08:2B}の{02:08}\n<wait>		Ayato... <wait>My beloved hunter...\n<wait>	v005		reads: 愛してるの‥‥‥\n<wait>
-m/MS002E.BIN	0:01	28	1003	1FD2	声：		Rui:	v005		
+m/MS002E.BIN	0:01	23	939	1FD2	声：		 	v005		@refalign @refalign-merged
+m/MS002E.BIN	0:01	24	945	1FD3	私を求めて{02:08}		 	v005		reads: 私を求めて‥‥‥ @refalign @refalign-merged
+m/MS002E.BIN	0:01	25	961	00	{04:FF}くん{08:72}\n<wait>		 	v005		reads: くん‥‥\n<wait> @refalign @refalign-merged
+m/MS002E.BIN	0:01	26	978	1FD2	声：		 	v005		@refalign @refalign-merged
+m/MS002E.BIN	0:01	27	984	1FD3	愛し{08:2B}の{02:08}\n<wait>		 	v005		reads: 愛してるの‥‥‥\n<wait> @refalign @refalign-merged
+m/MS002E.BIN	0:01	28	1003	1FD2	声：		 	v005		@refalign @refalign-merged
 m/MS002E.BIN	0:01	29	1009	1FD3	愛し{08:2B}のよ{02:08}\n<wait>		Do you still remember?\n<wait>Back when I was still whole, still one... you and I truly did meet.\n<wait>	ours		reads: 愛してるのよ‥‥‥\n<wait>
-m/MS002E.BIN	0:01	30	1030	1FD2	声：		Yuuka:	v005		
-m/MS002E.BIN	0:01	31	1036	1FD3	フフフフフフ{02:08}クスクスクスクス{02:08}\n<wait>		Katsuragi-kun... I love you.\nOh how I wish that we could've been born in a different era.\nI would've loved nothing more than grow old with you...\n<wait>	v005		reads: フフフフフフ‥‥‥クスクスクスクス‥‥‥\n<wait>
-m/MS002E.BIN	0:01	32	1077	1FD2	{08:31}：		Rui:	v005		reads: 泪：
-m/MS002E.BIN	0:01	33	1087	00	{04:FF}{08:72}私を見て{02:08}！\n<wait>					reads: ‥‥私を見て‥‥‥！\n<wait>
-m/MS002E.BIN	0:01	34	1136	1FD0	{08:31}は豊かな胸を露にし、		Her bountiful breasts exposed, Rui climbs on top of you.\n<wait>	v005		reads: 泪は豊かな胸を露にし、
-m/MS002E.BIN	0:01	35	1162	00	{04:FF}の上に覆い被さる{08:69}に{08:4A}、\n					reads: の上に覆い被さるようにして、\n
-m/MS002E.BIN	0:01	36	1193	00	{04:FF}の顔を見つめ{08:14}{02:08}\n<wait>					reads: の顔を見つめている‥‥‥\n<wait>
-m/MS002E.BIN	0:01	37	1226	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n
-m/MS002E.BIN	0:01	38	1247	1FB2	見る		Stare at her	v005		menu option, declared width 20 columns
-m/MS002E.BIN	0:01	39	1253	1FB2	さわる		Touch her	v005		menu option, declared width 20 columns
-m/MS002E.BIN	0:01	40	1261	1FB2	抱きし{08:2E}		Embrace her	v005		reads: 抱きしめる; menu option, declared width 20 columns
-m/MS002E.BIN	0:01	41	1271	1FB2	キス{08:8E}		Kiss her	v005		reads: キスする; menu option, declared width 20 columns
-m/MS002E.BIN	0:01	42	1279	1FB2	抵抗{08:8E}		Fight back	v005		reads: 抵抗する; menu option, declared width 20 columns
+m/MS002E.BIN	0:01	30	1030	1FD2	声：		 	v005		@refalign @refalign-merged
+m/MS002E.BIN	0:01	31	1036	1FD3	フフフフフフ{02:08}クスクスクスクス{02:08}\n<wait>		 	v005		reads: フフフフフフ‥‥‥クスクスクスクス‥‥‥\n<wait> @refalign @refalign-merged
+m/MS002E.BIN	0:01	32	1077	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
+m/MS002E.BIN	0:01	33	1087	00	{04:FF}{08:72}私を見て{02:08}！\n<wait>		Ayato... Look at me!...\n<wait>\nHer bountiful breasts exposed, Rui climbs on top of you.\n<wait>\n>What will you do?\n	v005		reads: ‥‥私を見て‥‥‥！\n<wait> @refalign @refalign-merged
+m/MS002E.BIN	0:01	34	1136	1FD0	{08:31}は豊かな胸を露にし、		 	v005		reads: 泪は豊かな胸を露にし、 @refalign @refalign-merged
+m/MS002E.BIN	0:01	35	1162	00	{04:FF}の上に覆い被さる{08:69}に{08:4A}、\n		 	v005		reads: の上に覆い被さるようにして、\n @refalign @refalign-merged
+m/MS002E.BIN	0:01	36	1193	00	{04:FF}の顔を見つめ{08:14}{02:08}\n<wait>		 	v005		reads: の顔を見つめている‥‥‥\n<wait> @refalign @refalign-merged
+m/MS002E.BIN	0:01	37	1226	1FD1	＞{02:06}\n		 	v005		reads: ＞どうしますか？\n @refalign @refalign-merged
+m/MS002E.BIN	0:01	38	1247	1FB2	見る		Stare at her	v005		menu option, declared width 20 columns @refalign
+m/MS002E.BIN	0:01	39	1253	1FB2	さわる		Touch her	v005		menu option, declared width 20 columns @refalign
+m/MS002E.BIN	0:01	40	1261	1FB2	抱きし{08:2E}		Embrace her	v005		reads: 抱きしめる; menu option, declared width 20 columns @refalign
+m/MS002E.BIN	0:01	41	1271	1FB2	キス{08:8E}		Kiss her	v005		reads: キスする; menu option, declared width 20 columns @refalign
+m/MS002E.BIN	0:01	42	1279	1FB2	抵抗{08:8E}		Fight back	v005		reads: 抵抗する; menu option, declared width 20 columns @refalign
 m/MS002E.BIN	0:01	43	1333	1FB2	瞳	瞳	Eyes	v005		menu option, declared width 20 columns; reads: わたしをキャンプありがとう
 m/MS002E.BIN	0:01	44	1337	1FB2	唇	唇	Lips	v005		menu option, declared width 20 columns; reads: \n切り @rebase-unmatched idx44 en={=E6}{=0A}Slash{=EE}{=0E}
-m/MS002E.BIN	0:01	45	1341	1FB2	胸		Chest	v005		menu option, declared width 20 columns
-m/MS002E.BIN	0:01	46	1345	1FB2	腰		Hips	v005		menu option, declared width 20 columns
-m/MS002E.BIN	0:01	47	1349	1FB2	脚		Feet	v005		menu option, declared width 20 columns
-m/MS002E.BIN	0:01	48	1389	1F7C	{08:31}の瞳{08:62}		You stare Rui into her eyes...\n	v005		reads: 泪の瞳は、; menu option, declared width 20 columns
-m/MS002E.BIN	0:01	49	1401	00	{04:FF}の瞳を真っすぐに見つめ{08:14}{02:08}。\n					reads: の瞳を真っすぐに見つめている‥‥‥。\n; menu option, declared width 20 columns
+m/MS002E.BIN	0:01	45	1341	1FB2	胸		Chest	v005		menu option, declared width 20 columns @refalign
+m/MS002E.BIN	0:01	46	1345	1FB2	腰		Hips	v005		menu option, declared width 20 columns @refalign
+m/MS002E.BIN	0:01	47	1349	1FB2	脚		Feet	v005		menu option, declared width 20 columns @refalign
+m/MS002E.BIN	0:01	48	1389	1F7C	{08:31}の瞳{08:62}		You stare Rui into her eyes...\n	v005		reads: 泪の瞳は、; menu option, declared width 20 columns @refalign @refalign-merged
+m/MS002E.BIN	0:01	49	1401	00	{04:FF}の瞳を真っすぐに見つめ{08:14}{02:08}。\n		 	v005		reads: の瞳を真っすぐに見つめている‥‥‥。\n; menu option, declared width 20 columns @refalign @refalign-merged
 m/MS002E.BIN	0:01	50	1435	18	{08:31}の瞳の奥に{08:62}何かしら魔性の光が宿っ{08:14}{08:69}にも見{08:28}{02:08}\n<wait>	{08:31}の瞳の奥に{08:62}何かしら魔性の光が宿っ{08:14}{08:69}にも見{08:28}{02:08}\n<wait>	Deep within them, you can see glowing something demonic...\n<wait>	v005		reads: 泪の瞳の奥には、何かしら魔性の光が宿っているようにも見える‥‥‥\n<wait>
-m/MS002E.BIN	0:01	51	1495	1FD0	半開きの{08:31}の唇{08:62}濡{08:60}{08:69}な光沢を放っ{08:14}{02:08}\n<wait>		Rui's lips glisten lightly...\n<wait>	v005		reads: 半開きの泪の唇は、濡れたような光沢を放っている‥‥‥\n<wait>; reads: ペンタグランマｩ @rebase-unmatched idx51 en=Pentagramma{=9C}{=00}that kind of thingXNishino Yoshio{01:BB}{01:FF}
+m/MS002E.BIN	0:01	51	1495	1FD0	半開きの{08:31}の唇{08:62}濡{08:60}{08:69}な光沢を放っ{08:14}{02:08}\n<wait>		Rui's lips glisten lightly...\n<wait>	v005		reads: 半開きの泪の唇は、濡れたような光沢を放っている‥‥‥\n<wait>; reads: ペンタグランマｩ @rebase-unmatched idx51 en=Pentagramma{=9C}{=00}that kind of thingXNishino Yoshio{01:BB}{01:FF} @refalign
 m/MS002E.BIN	0:01	52	1549	1F7C	形の良い{08:31}の胸{08:62}{08:31}の呼吸に合わせ上下{08:13}{02:08}\n	形の良い{08:31}の胸{08:62}{08:31}の呼吸に合わせ上下{08:13}{02:08}\n	Rui's breasts, perfectly even in size,\nmove up and down as she breathes...\n	v005		reads: 形の良い泪の胸は、泪の呼吸に合わせ上下している‥‥‥\n; reads: そんなこと,西野義雄
-m/MS002E.BIN	0:01	53	1593	18	露に{08:16}胸{08:42}{08:62}何とも言え{08:25}濃密な色香が漂っ{08:14}{02:08}\n<wait>		You can smell a sweet fragrance floating in the air...\n<wait>	v005		reads: 露になった胸からは、何とも言えない濃密な色香が漂っている‥‥‥\n<wait>; reads: 泪の瞳は、
-m/MS002E.BIN	0:01	54	1646	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: の瞳を真っすぐに見つめている‥‥‥。\n
-m/MS002E.BIN	0:01	55	1652	1FD3	何を{02:08}見{08:14}の{02:08}？\n<wait>		Hey... My eyes are up here...\n<wait>	v005		reads: 何を‥‥‥見ているの‥‥‥？\n<wait>; reads: 泪の瞳の奥には、何かしら魔性の光が宿っているようにも見える‥‥‥\n<wait>
-m/MS002E.BIN	0:01	56	1678	1FD0	豊満ながらも形の良い{08:31}の腰{02:08}\n今{08:62}申し訳程度の下着一枚がそこを覆っ{08:14}{08:72}\n<wait>		Her hips, curvy yet still refined,\nare currently only covered by a thin layer of underwear...\n<wait>	v005		reads: 豊満ながらも形の良い泪の腰‥‥‥\n今は、申し訳程度の下着一枚がそこを覆っている‥‥\n<wait>; reads: 半開きの泪の唇は、濡れたような光沢を放っている‥‥‥\n<wait>
-m/MS002E.BIN	0:01	57	1761	00	{04:FF}の上に{08:5B}がる{08:69}に{08:4A}、すんなりと伸びた二本の脚が開かれ{08:14}{02:08}\n<wait>		Having straddled you,\nRui's long and thing legs are now left spread open.\n<wait>	v005		reads: の上にまたがるようにして、すんなりと伸びた二本の脚が開かれている‥‥‥\n<wait>; reads: 形の良い泪の胸は、泪の呼吸に合わせ上下している‥‥‥\n
-m/MS002E.BIN	0:01	58	1831	1FD1	＞どこを触る？\n		>Where will you touch her?\n	v005		reads: 露になった胸からは、何とも言えない濃密な色香が漂っている‥‥‥\n<wait>
-m/MS002E.BIN	0:01	59	1862	1FB2	胸		Chest	v005		menu option, declared width 20 columns; reads: 泪：
-m/MS002E.BIN	0:01	60	1866	1FB2	腰		Hips	v005		menu option, declared width 20 columns; reads: 何を‥‥‥見ているの‥‥‥？\n<wait>
-m/MS002E.BIN	0:01	61	1870	1FB2	脚		Feet	v005		menu option, declared width 20 columns; reads: 豊満ながらも形の良い泪の腰‥‥‥\n今は、申し訳程度の下着一枚がそこを覆っている‥‥\n<wait>
-m/MS002E.BIN	0:01	62	1874	1FB2	やっぱりや{08:2E}		Never mind	v005		reads: やっぱりやめる; menu option, declared width 20 columns; reads: の上にまたがるようにして、すんなりと伸びた二本の脚が開かれている‥‥‥\n<wait>
-m/MS002E.BIN	0:01	63	1920	00	{04:FF}の{03:13}{08:7B}{08:31}の胸{02:08}\n<wait>		Rui's breasts are dangling in front of you...\n<wait>	v005		reads: の目の前にある泪の胸‥‥‥\n<wait>
-m/MS002E.BIN	0:01	64	1947	00	{04:FF}は{08:79}胸に手を伸ばし、優しく手の中で弄{08:5F}{08:72}\n<wait>		You reach out, and slowly begin massaging them.\n<wait>	v005		reads: はその胸に手を伸ばし、優しく手の中で弄んだ‥‥\n<wait>; menu option, declared width 20 columns
-m/MS002E.BIN	0:01	65	1998	1FD2	{08:31}：		Rui:	v005		reads: 泪：; menu option, declared width 20 columns
-m/MS002E.BIN	0:01	66	2010	1FFA	{02:08}あ{02:08}ん{02:08}\n		Ah... Mmh...\n	v005		reads: ‥‥‥あ‥‥‥ん‥‥‥\n; menu option, declared width 20 columns
-m/MS002E.BIN	0:01	67	2033	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: やっぱりやめる; menu option, declared width 20 columns
+m/MS002E.BIN	0:01	53	1593	18	露に{08:16}胸{08:42}{08:62}何とも言え{08:25}濃密な色香が漂っ{08:14}{02:08}\n<wait>		You can smell a sweet fragrance floating in the air...\n<wait>	v005		reads: 露になった胸からは、何とも言えない濃密な色香が漂っている‥‥‥\n<wait>; reads: 泪の瞳は、 @refalign
+m/MS002E.BIN	0:01	54	1646	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: の瞳を真っすぐに見つめている‥‥‥。\n @refalign
+m/MS002E.BIN	0:01	55	1652	1FD3	何を{02:08}見{08:14}の{02:08}？\n<wait>		Hey... My eyes are up here...\n<wait>	v005		reads: 何を‥‥‥見ているの‥‥‥？\n<wait>; reads: 泪の瞳の奥には、何かしら魔性の光が宿っているようにも見える‥‥‥\n<wait> @refalign
+m/MS002E.BIN	0:01	56	1678	1FD0	豊満ながらも形の良い{08:31}の腰{02:08}\n今{08:62}申し訳程度の下着一枚がそこを覆っ{08:14}{08:72}\n<wait>		Her hips, curvy yet still refined,\nare currently only covered by a thin layer of underwear...\n<wait>	v005		reads: 豊満ながらも形の良い泪の腰‥‥‥\n今は、申し訳程度の下着一枚がそこを覆っている‥‥\n<wait>; reads: 半開きの泪の唇は、濡れたような光沢を放っている‥‥‥\n<wait> @refalign
+m/MS002E.BIN	0:01	57	1761	00	{04:FF}の上に{08:5B}がる{08:69}に{08:4A}、すんなりと伸びた二本の脚が開かれ{08:14}{02:08}\n<wait>		Having straddled you,\nRui's long and thing legs are now left spread open.\n<wait>	v005		reads: の上にまたがるようにして、すんなりと伸びた二本の脚が開かれている‥‥‥\n<wait>; reads: 形の良い泪の胸は、泪の呼吸に合わせ上下している‥‥‥\n @refalign
+m/MS002E.BIN	0:01	58	1831	1FD1	＞どこを触る？\n		>Where will you touch her?\n	v005		reads: 露になった胸からは、何とも言えない濃密な色香が漂っている‥‥‥\n<wait> @refalign
+m/MS002E.BIN	0:01	59	1862	1FB2	胸		Chest	v005		menu option, declared width 20 columns; reads: 泪： @refalign
+m/MS002E.BIN	0:01	60	1866	1FB2	腰		Hips	v005		menu option, declared width 20 columns; reads: 何を‥‥‥見ているの‥‥‥？\n<wait> @refalign
+m/MS002E.BIN	0:01	61	1870	1FB2	脚		Feet	v005		menu option, declared width 20 columns; reads: 豊満ながらも形の良い泪の腰‥‥‥\n今は、申し訳程度の下着一枚がそこを覆っている‥‥\n<wait> @refalign
+m/MS002E.BIN	0:01	62	1874	1FB2	やっぱりや{08:2E}		Never mind	v005		reads: やっぱりやめる; menu option, declared width 20 columns; reads: の上にまたがるようにして、すんなりと伸びた二本の脚が開かれている‥‥‥\n<wait> @refalign
+m/MS002E.BIN	0:01	63	1920	00	{04:FF}の{03:13}{08:7B}{08:31}の胸{02:08}\n<wait>		Rui's breasts are dangling in front of you...\n<wait>	v005		reads: の目の前にある泪の胸‥‥‥\n<wait> @refalign
+m/MS002E.BIN	0:01	64	1947	00	{04:FF}は{08:79}胸に手を伸ばし、優しく手の中で弄{08:5F}{08:72}\n<wait>		You reach out, and slowly begin massaging them.\n<wait>	v005		reads: はその胸に手を伸ばし、優しく手の中で弄んだ‥‥\n<wait>; menu option, declared width 20 columns @refalign
+m/MS002E.BIN	0:01	65	1998	1FD2	{08:31}：		Rui:	v005		reads: 泪：; menu option, declared width 20 columns @refalign
+m/MS002E.BIN	0:01	66	2010	1FFA	{02:08}あ{02:08}ん{02:08}\n		Ah... Mmh...\n	v005		reads: ‥‥‥あ‥‥‥ん‥‥‥\n; menu option, declared width 20 columns @refalign
+m/MS002E.BIN	0:01	67	2033	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: やっぱりやめる; menu option, declared width 20 columns @refalign
 m/MS002E.BIN	0:01	68	2039	1FD3	{02:08}	{02:08}	Ayato...\n<wait>	v005		reads: ‥‥‥; reads: キャンプ　
 m/MS002E.BIN	0:01	69	2045	00	{04:FF}{02:08}\n<wait>	{04:FF}{02:08}\n<wait>				reads: ‥‥‥\n<wait>; reads: の目の前にある泪の胸‥‥‥\n<wait>
-m/MS002E.BIN	0:01	70	2072	1FB2	{08:47}{08:7E}続{08:29}		Keep going	v005		reads: このまま続ける; menu option, declared width 20 columns; reads: はその胸に手を伸ばし、優しく手の中で弄んだ‥‥\n<wait>
-m/MS002E.BIN	0:01	71	2082	1FB2	{08:5C}や{08:2E}		Stop	v005		reads: もうやめる; menu option, declared width 20 columns; reads: 泪：
-m/MS002E.BIN	0:01	72	2112	00	{04:FF}は{08:79}{08:7E}、{08:31}の胸を弄び続{08:43}{02:08}\n<wait>		You continue playing with Rui's breasts.\n<wait>	v005		reads: はそのまま、泪の胸を弄び続けた‥‥‥\n<wait>; reads: ‥‥‥あ‥‥‥ん‥‥‥\n
-m/MS002E.BIN	0:01	73	2149	1FD2	{08:31}：		Rui:	v005		reads: 泪：
+m/MS002E.BIN	0:01	70	2072	1FB2	{08:47}{08:7E}続{08:29}		Keep going	v005		reads: このまま続ける; menu option, declared width 20 columns; reads: はその胸に手を伸ばし、優しく手の中で弄んだ‥‥\n<wait> @refalign
+m/MS002E.BIN	0:01	71	2082	1FB2	{08:5C}や{08:2E}		Stop	v005		reads: もうやめる; menu option, declared width 20 columns; reads: 泪： @refalign
+m/MS002E.BIN	0:01	72	2112	00	{04:FF}は{08:79}{08:7E}、{08:31}の胸を弄び続{08:43}{02:08}\n<wait>		You continue playing with Rui's breasts.\n<wait>	v005		reads: はそのまま、泪の胸を弄び続けた‥‥‥\n<wait>; reads: ‥‥‥あ‥‥‥ん‥‥‥\n @refalign
+m/MS002E.BIN	0:01	73	2149	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
 m/MS002E.BIN	0:01	74	2155	1FD3	{02:08}{08:5C}{02:08}	{02:08}{08:5C}{02:08}	Shesh... Ayato...\n	v005		reads: ‥‥‥もう‥‥‥
 m/MS002E.BIN	0:01	75	2165	00	{04:FF}{02:08}\n	{04:FF}{02:08}\n				reads: ‥‥‥\n; reads: ‥‥‥\n<wait>
-m/MS002E.BIN	0:01	76	2186	1FB2	抱き寄{08:2A}		Pull her close	v005		reads: 抱き寄せる; menu option, declared width 20 columns; reads: このまま続ける
-m/MS002E.BIN	0:01	77	2196	1FB2	下着に手を掛{08:29}		Touch her panties	v005		reads: 下着に手を掛ける; menu option, declared width 20 columns; reads: もうやめる
+m/MS002E.BIN	0:01	76	2186	1FB2	抱き寄{08:2A}		Pull her close	v005		reads: 抱き寄せる; menu option, declared width 20 columns; reads: このまま続ける @refalign
+m/MS002E.BIN	0:01	77	2196	1FB2	下着に手を掛{08:29}		Touch her panties	v005		reads: 下着に手を掛ける; menu option, declared width 20 columns; reads: もうやめる @refalign
 m/MS002E.BIN	0:01	78	2244	1F4F	{03:17}	{03:17}				reads:  @rebase-new
 m/MS002E.BIN	0:01	79	2262	1F4E	{03:17}	{03:17}				reads: 
-m/MS002E.BIN	0:01	80	2272	00	{04:FF}{08:62}{08:31}を抱き寄せた{02:08}\n<wait>					reads: は、泪を抱き寄せた‥‥‥\n<wait>; reads: はそのまま、泪の胸を弄び続けた‥‥‥\n<wait>
-m/MS002E.BIN	0:01	81	2301	1FD2	{08:31}：					reads: 泪：
+m/MS002E.BIN	0:01	80	2272	00	{04:FF}{08:62}{08:31}を抱き寄せた{02:08}\n<wait>		You embrace Rui.\n<wait>	v005		reads: は、泪を抱き寄せた‥‥‥\n<wait>; reads: はそのまま、泪の胸を弄び続けた‥‥‥\n<wait> @refalign
+m/MS002E.BIN	0:01	81	2301	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
 m/MS002E.BIN	0:01	82	2311	00	{04:FF}{08:72}\n<wait>	{04:FF}{08:72}\n<wait>				reads: ‥‥\n<wait>; reads: ‥‥‥もう‥‥‥
 m/MS002E.BIN	0:01	83	2325	1FD2	{08:31}：	{08:31}：	Rui:	v005		reads: 泪：; reads: ‥‥‥\n
 m/MS002E.BIN	0:01	84	2331	1FD3	{02:08}	{02:08}	Ayato...\n<wait>	v005		reads: ‥‥‥; reads: 抱き寄せる; menu option, declared width 20 columns
 m/MS002E.BIN	0:01	85	2337	00	{04:FF}{02:08}\n{08:72}	{04:FF}{02:08}\n{08:72}	Rui:	v005		reads: ‥‥‥\n‥‥; reads: 下着に手を掛ける; menu option, declared width 20 columns
 m/MS002E.BIN	0:01	86	2348	00	{04:FF}はやっぱり{02:08}<wait>彼女が{08:7F}のね{02:08}？\n	{04:FF}はやっぱり{02:08}<wait>彼女が{08:7F}のね{02:08}？\n	Ayato... I knew it...\n<wait>You like her more... don't you?\n	v005		reads: はやっぱり‥‥‥<wait>彼女がいいのね‥‥‥？\n
 m/MS002E.BIN	0:01	87	2399	1FB2	{01:29}	{01:29}	Yeah	v005		reads: そうだ; menu option, declared width 20 columns; reads: レジスタンス @rebase-unmatched idx87 en=Resistance
-m/MS002E.BIN	0:01	88	2403	1FB2	違うよ		You're wrong	v005		menu option, declared width 20 columns; reads: はやくﾞ @rebase-unmatched idx88 en=Quicklyﾞ
+m/MS002E.BIN	0:01	88	2403	1FB2	違うよ		You're wrong	v005		menu option, declared width 20 columns; reads: はやくﾞ @rebase-unmatched idx88 en=Quicklyﾞ @refalign
 m/MS002E.BIN	0:01	89	2443	1F4E	{03:17}	{03:17}				reads: ; reads: レジスタンス @rebase-unmatched idx89 en=Resistance
 m/MS002E.BIN	0:01	90	2461	1F4F	{03:17}	{03:17}				reads: 
 m/MS002E.BIN	0:01	91	2467	1FD2	{08:31}：	{08:31}：	Rui:	v005		reads: 泪：
 m/MS002E.BIN	0:01	92	2473	1FD3	{08:72}{08:56}{02:08}今は{08:72}私{08:74}{02:08}\n<wait>		...But... right now... it's just me...\n<wait>	ours		reads: ‥‥でも‥‥‥今は‥‥私だけ‥‥‥\n<wait>; reads: は、泪を抱き寄せた‥‥‥\n<wait>
 m/MS002E.BIN	0:01	93	2515	1F4F	{03:17}	{03:17}				reads: ; reads: 泪：
 m/MS002E.BIN	0:01	94	2533	1F4E	{03:17}	{03:17}				reads: ; reads: ‥‥\n<wait>
-m/MS002E.BIN	0:01	95	2539	1FD2	{08:31}：		Rui:	v005		reads: 泪：
+m/MS002E.BIN	0:01	95	2539	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
 m/MS002E.BIN	0:01	96	2545	1FD3	{02:08}ありがと{02:08}‥\n<wait>	{02:08}ありがと{02:08}‥\n<wait>	Thank you...\n<wait>	v005		reads: ‥‥‥ありがと‥‥‥‥\n<wait>
 m/MS002E.BIN	0:01	97	2575	00	{04:FF}{08:62}{08:31}のくび{08:60}ウエスト{08:42}下へと、{08:79}手を這わせ{08:21}{08:72}\n<wait>	{04:FF}{08:62}{08:31}のくび{08:60}ウエスト{08:42}下へと、{08:79}手を這わせ{08:21}{08:72}\n<wait>	You place your hands on Rui's waist,\nand slowly begin moving them downwards...\n<wait>	v005		reads: は、泪のくびれたウエストから下へと、その手を這わせていった‥‥\n<wait>; reads: ‥‥‥\n‥‥
-m/MS002E.BIN	0:01	98	2632	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: はやっぱり‥‥‥<wait>彼女がいいのね‥‥‥？\n
+m/MS002E.BIN	0:01	98	2632	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: はやっぱり‥‥‥<wait>彼女がいいのね‥‥‥？\n @refalign
 m/MS002E.BIN	0:01	99	2642	00	{04:FF}{08:72}ん{02:08}\n	{04:FF}{08:72}ん{02:08}\n	AYato... Hmm...\n	v005		reads: ‥‥ん‥‥‥\n; reads: そうだ; menu option, declared width 20 columns
-m/MS002E.BIN	0:01	100	2667	1FB2	{08:79}{08:7E}下着を取る		Remove her panties	v005		reads: そのまま下着を取る; menu option, declared width 20 columns
+m/MS002E.BIN	0:01	100	2667	1FB2	{08:79}{08:7E}下着を取る		Remove her panties	v005		reads: そのまま下着を取る; menu option, declared width 20 columns @refalign
 m/MS002E.BIN	0:01	101	2683	1FB2	太ももをなでる	太ももをなでる	Massage her thighs	v005		menu option, declared width 20 columns; reads: 
 m/MS002E.BIN	0:01	102	2733	1F4F	{03:17}	{03:17}				reads: 
 m/MS002E.BIN	0:01	103	2751	1F4E	{03:17}	{03:17}				reads: 
 m/MS002E.BIN	0:01	104	2759	00	{04:FF}{08:62}這わせた手を下着と共に太ももへと下ろ{08:4B}。\n<wait>	{04:FF}{08:62}這わせた手を下着と共に太ももへと下ろ{08:4B}。\n<wait>	{04:FF} slides the hand that had been tracing her down, taking her\nunderwear with it, to her thigh.\n<wait>	ours		reads: は、這わせた手を下着と共に太ももへと下ろした。\n<wait>
 m/MS002E.BIN	0:01	105	2821	00	{04:FF}{08:62}{08:79}手を{08:79}{08:7E}、太ももへと這わせた{08:72}\n{08:31}の、滑らかな肌の感触が心地よい{02:08}\n<wait>		{04:FF} lets that hand continue on, tracing along her thigh...\nThe feel of Rui's smooth skin is pleasant...\n<wait>	ours		reads: は、その手をそのまま、太ももへと這わせた‥‥\n泪の、滑らかな肌の感触が心地よい‥‥‥\n<wait>; reads: 泪：
-m/MS002E.BIN	0:01	106	2901	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: ‥‥でも‥‥‥今は‥‥私だけ‥‥‥\n<wait>
+m/MS002E.BIN	0:01	106	2901	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: ‥‥でも‥‥‥今は‥‥私だけ‥‥‥\n<wait> @refalign
 m/MS002E.BIN	0:01	107	2907	1FD3	{08:72}	{08:72}	Ayato... That tickles...\n	v005		reads: ‥‥
 m/MS002E.BIN	0:01	108	2913	00	{04:FF}{08:72}くすぐっ{08:4E}わ{02:08}\n	{04:FF}{08:72}くすぐっ{08:4E}わ{02:08}\n				reads: ‥‥くすぐったいわ‥‥‥\n
-m/MS002E.BIN	0:01	109	2948	1FB2	ごめん{08:72}		Sorry...	v005		reads: ごめん‥‥; menu option, declared width 20 columns; reads: 泪：
-m/MS002E.BIN	0:01	110	2958	1FB2	抱き寄{08:2A}		Pull her close	v005		reads: 抱き寄せる; menu option, declared width 20 columns; reads: ‥‥‥ありがと‥‥‥‥\n<wait>
+m/MS002E.BIN	0:01	109	2948	1FB2	ごめん{08:72}		Sorry...	v005		reads: ごめん‥‥; menu option, declared width 20 columns; reads: 泪： @refalign
+m/MS002E.BIN	0:01	110	2958	1FB2	抱き寄{08:2A}		Pull her close	v005		reads: 抱き寄せる; menu option, declared width 20 columns; reads: ‥‥‥ありがと‥‥‥‥\n<wait> @refalign
 m/MS002E.BIN	0:01	111	3000	1F4E	{03:17}	{03:17}				reads: ; reads: は、泪のくびれたウエストから下へと、その手を這わせていった‥‥\n<wait>
 m/MS002E.BIN	0:01	112	3018	1F4F	{03:17}	{03:17}				reads: ; reads: 泪：
-m/MS002E.BIN	0:01	113	3024	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: ‥‥ん‥‥‥\n
-m/MS002E.BIN	0:01	114	3030	1FD3	{02:08}クスクス{02:08}		Hehehe... Oh, you... Ehehehe...\n<wait>	v005		reads: ‥‥‥クスクス‥‥‥; reads: そのまま下着を取る; menu option, declared width 20 columns
-m/MS002E.BIN	0:01	115	3046	00	{04:FF}{08:52}{02:08}\n{02:08}うふふふ{02:08}\n<wait>					reads: って‥‥‥\n‥‥‥うふふふ‥‥‥\n<wait>; menu option, declared width 20 columns
+m/MS002E.BIN	0:01	113	3024	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: ‥‥ん‥‥‥\n @refalign
+m/MS002E.BIN	0:01	114	3030	1FD3	{02:08}クスクス{02:08}		Hehehe... Oh, you... Ehehehe...\n<wait>	v005		reads: ‥‥‥クスクス‥‥‥; reads: そのまま下着を取る; menu option, declared width 20 columns @refalign @refalign-merged
+m/MS002E.BIN	0:01	115	3046	00	{04:FF}{08:52}{02:08}\n{02:08}うふふふ{02:08}\n<wait>		 	v005		reads: って‥‥‥\n‥‥‥うふふふ‥‥‥\n<wait>; menu option, declared width 20 columns @refalign @refalign-merged
 m/MS002E.BIN	0:01	116	3074	1FD2	{08:31}：	{08:31}：	Rui:	v005		reads: 泪：
 m/MS002E.BIN	0:01	117	3080	1FD3	{08:56}{02:08}{08:7F}のよ{02:08}\n<wait>	{08:56}{02:08}{08:7F}のよ{02:08}\n<wait>	But... it's all right...\n<wait>	ours		reads: でも‥‥‥いいのよ‥‥‥\n<wait>
 m/MS002E.BIN	0:01	118	3110	1F7C	すらりと伸びた{08:31}の脚に触{08:2F}{02:08}\n<wait>	すらりと伸びた{08:31}の脚に触{08:2F}{02:08}\n<wait>	You touch Rui's long, slender legs...\n<wait>	ours		reads: すらりと伸びた泪の脚に触れる‥‥‥\n<wait>
 m/MS002E.BIN	0:01	119	3145	1FBA	滑らかな肌の感触が心地よい{02:08}\n	滑らかな肌の感触が心地よい{02:08}\n	The feel of her smooth skin is pleasant...\n	ours		reads: 滑らかな肌の感触が心地よい‥‥‥\n
 m/MS002E.BIN	0:01	120	3177	18	{08:31}の肌はあく{08:71}滑らかだ{02:08}\n		Rui's skin is nothing but smooth...\n	ours		reads: 泪の肌はあくまで滑らかだ‥‥‥\n; reads: は、這わせた手を下着と共に太ももへと下ろした。\n<wait>
-m/MS002E.BIN	0:01	121	3218	1FB2	抱き寄{08:2A}		Pull her close	v005		reads: 抱き寄せる; menu option, declared width 20 columns; reads: は、その手をそのまま、太ももへと這わせた‥‥\n泪の、滑らかな肌の感触が心地よい‥‥‥\n<wait>
+m/MS002E.BIN	0:01	121	3218	1FB2	抱き寄{08:2A}		Pull her close	v005		reads: 抱き寄せる; menu option, declared width 20 columns; reads: は、その手をそのまま、太ももへと這わせた‥‥\n泪の、滑らかな肌の感触が心地よい‥‥‥\n<wait> @refalign
 m/MS002E.BIN	0:01	122	3228	1FB2	脚を舐{08:2E}		Lick her leg	ours		reads: 脚を舐める; menu option, declared width 20 columns; reads: 泪：
 m/MS002E.BIN	0:01	123	3238	1FB2	他を触る	他を触る	Touch elsewhere	ours		menu option, declared width 20 columns; reads: ‥‥
 m/MS002E.BIN	0:01	124	3276	00	{04:FF}{08:62}{08:31}の滑らかな太ももに顔を寄せ、舌を這わせた。\n<wait>		{04:FF} brings their face close to Rui's smooth thigh, and traces it\nwith their tongue.\n<wait>	ours		reads: は、泪の滑らかな太ももに顔を寄せ、舌を這わせた。\n<wait>; reads: ‥‥くすぐったいわ‥‥‥\n
-m/MS002E.BIN	0:01	125	3333	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: ごめん‥‥; menu option, declared width 20 columns
+m/MS002E.BIN	0:01	125	3333	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: ごめん‥‥; menu option, declared width 20 columns @refalign
 m/MS002E.BIN	0:01	126	3339	1FD3	{02:08}あ‥ん{02:08}っ\n		...Ah... nn...!\n	ours		reads: ‥‥‥あ‥ん‥‥‥っ\n; reads: 抱き寄せる; menu option, declared width 20 columns
 m/MS002E.BIN	0:01	127	3368	1FB2	{08:5C}少し上を舐{08:2E}	{08:5C}少し上を舐{08:2E}	Lick a bit higher	ours		reads: もう少し上を舐める; menu option, declared width 20 columns; reads: わたしを
 m/MS002E.BIN	0:01	128	3384	1FB2	やっぱや{08:2E}	やっぱや{08:2E}	Never mind	ours		reads: やっぱやめる; menu option, declared width 20 columns
 m/MS002E.BIN	0:01	129	3416	1FD0	太ももに這わ{08:67}{08:64}舌を、徐々に上へと移動さ{08:2A}{02:08}\n<wait>	太ももに這わ{08:67}{08:64}舌を、徐々に上へと移動さ{08:2A}{02:08}\n<wait>	The tongue that had been tracing her thigh gradually moves upward...\n<wait>	ours		reads: 太ももに這わせていた舌を、徐々に上へと移動させる‥‥‥\n<wait>
-m/MS002E.BIN	0:01	130	3469	1FD2	{08:31}：		Rui:	v005		reads: 泪：
+m/MS002E.BIN	0:01	130	3469	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
 m/MS002E.BIN	0:01	131	3475	1FD3	{08:72}ん{08:72}っ{08:72}\n<wait>		...Nn...ah...\n<wait>	ours		reads: ‥‥ん‥‥っ‥‥\n<wait>; reads: ‥‥‥クスクス‥‥‥
-m/MS002E.BIN	0:01	132	3494	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: って‥‥‥\n‥‥‥うふふふ‥‥‥\n<wait>
+m/MS002E.BIN	0:01	132	3494	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: って‥‥‥\n‥‥‥うふふふ‥‥‥\n<wait> @refalign
 m/MS002E.BIN	0:01	133	3504	00	{04:FF}{08:72}いつの間に{08:72}{08:7A}{08:72}大胆に{08:16}{08:72}の？\n		{04:FF}... when did you... get so... bold...?\n	ours		reads: ‥‥いつの間に‥‥そんな‥‥大胆になった‥‥の？\n; reads: 泪：
 m/MS002E.BIN	0:01	134	3555	1FB2	さあ？		Who knows?	ours		menu option, declared width 20 columns; reads: でも‥‥‥いいのよ‥‥‥\n<wait>
 m/MS002E.BIN	0:01	135	3563	1FB2	昔{08:42}さ		Always have been	ours		reads: 昔からさ; menu option, declared width 20 columns; reads: すらりと伸びた泪の脚に触れる‥‥‥\n<wait>
 m/MS002E.BIN	0:01	136	3571	1FB2	俺{08:52}大胆？		Am I bold?	ours		reads: 俺って大胆？; menu option, declared width 20 columns; reads: 滑らかな肌の感触が心地よい‥‥‥\n
-m/MS002E.BIN	0:01	137	3607	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 泪の肌はあくまで滑らかだ‥‥‥\n
+m/MS002E.BIN	0:01	137	3607	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 泪の肌はあくまで滑らかだ‥‥‥\n @refalign
 m/MS002E.BIN	0:01	138	3613	1FD3	{02:08}	{02:08}				reads: ‥‥‥; reads: 抱き寄せる; menu option, declared width 20 columns
 m/MS002E.BIN	0:01	139	3619	00	{04:FF}っ{08:50}{02:08}\n		{04:FF}, honestly...\n	ours		reads: ったら‥‥‥\n; reads: 脚を舐める; menu option, declared width 20 columns
-m/MS002E.BIN	0:01	140	3635	1FD2	{08:31}：		Rui:	v005		reads: 泪：; menu option, declared width 20 columns
+m/MS002E.BIN	0:01	140	3635	1FD2	{08:31}：		Rui:	v005		reads: 泪：; menu option, declared width 20 columns @refalign
 m/MS002E.BIN	0:01	141	3641	1FD3	{02:08}うふふ{02:08}本当に{02:08}？\n	{02:08}うふふ{02:08}本当に{02:08}？\n	...Ehehe... really...?\n	ours		reads: ‥‥‥うふふ‥‥‥本当に‥‥‥？\n; reads: 山田
 m/MS002E.BIN	0:01	142	3669	1FD2	{08:31}：	{08:31}：	Rui:	v005		reads: 泪：; reads: ペンタグランマ`{=FA}{=FF} @rebase-unmatched idx142 en=Pentagramma
 m/MS002E.BIN	0:01	143	3675	1FD3	{02:08}意地悪ね{02:08}\n		...You're such a tease...\n	ours		reads: ‥‥‥意地悪ね‥‥‥\n; reads: は、泪の滑らかな太ももに顔を寄せ、舌を這わせた。\n<wait>
 m/MS002E.BIN	0:01	144	3704	1FB2	{08:5C}脱がす！		Just undress her!	ours		reads: もう脱がす！; menu option, declared width 20 columns; reads: 泪：
 m/MS002E.BIN	0:01	145	3716	1FB2	{08:5C}や{08:2E}！		Stop now!	ours		reads: もうやめる！; menu option, declared width 20 columns; reads: ‥‥‥あ‥ん‥‥‥っ\n
-m/MS002E.BIN	0:01	146	3746	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: もう少し上を舐める; menu option, declared width 20 columns
+m/MS002E.BIN	0:01	146	3746	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: もう少し上を舐める; menu option, declared width 20 columns @refalign
 m/MS002E.BIN	0:01	147	3752	1FD3	{08:45}{08:71}{08:4A}{02:08}や{08:2E}の{02:08}？\n<wait>		After going this far... you're going to stop...?\n<wait>	ours		reads: ここまでして‥‥‥やめるの‥‥‥？\n<wait>; reads: やっぱやめる; menu option, declared width 20 columns
 m/MS002E.BIN	0:01	148	3779	1FD2	{08:31}：	{08:31}：	Rui:	v005		reads: 泪：; reads: {=F9}{=FF}
 m/MS002E.BIN	0:01	149	3785	1FD3	憶病{08:6B}ね{02:08}<wait>{08:5C}{08:72}{08:73}になっちゃ{08:51}のに{02:08}\n<wait>		You're such a coward...<wait>And here I already... became like this...\n<wait>	ours		reads: 憶病なのね‥‥‥<wait>もう‥‥こんなになっちゃったのに‥‥‥\n<wait>; reads: 太ももに這わせていた舌を、徐々に上へと移動させる‥‥‥\n<wait>
-m/MS002E.BIN	0:01	150	3832	1FD2	{08:31}：		Rui:	v005		reads: 泪：
+m/MS002E.BIN	0:01	150	3832	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
 m/MS002E.BIN	0:01	151	3838	1FD3	{08:72}{08:7F}わ{08:72}私が{02:08}\n<wait>		...It's fine... I'll...\n<wait>	ours		reads: ‥‥いいわ‥‥私が‥‥‥\n<wait>; reads: ‥‥ん‥‥っ‥‥\n<wait>
 m/MS002E.BIN	0:01	152	3875	1F4E	{03:17}	{03:17}				reads: ; reads: 泪：
 m/MS002E.BIN	0:01	153	3893	1F4F	{03:17}	{03:17}				reads: ; reads: ‥‥いつの間に‥‥そんな‥‥大胆になった‥‥の？\n
 m/MS002E.BIN	0:01	154	3912	00	{04:FF}{08:62}{08:31}の唇に自らの唇を重ねた{02:08}\n<wait>		{04:FF} presses their lips against Rui's...\n<wait>	ours		reads: は、泪の唇に自らの唇を重ねた‥‥‥\n<wait>; menu option, declared width 20 columns
-m/MS002E.BIN	0:01	155	3951	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 昔からさ; menu option, declared width 20 columns
+m/MS002E.BIN	0:01	155	3951	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 昔からさ; menu option, declared width 20 columns @refalign
 m/MS002E.BIN	0:01	156	3957	1FD3	{02:08}ん{02:08}		...Mm....	ours		reads: ‥‥‥ん‥‥‥; reads: 俺って大胆？; menu option, declared width 20 columns
 m/MS002E.BIN	0:01	157	3967	00	{04:FF}{02:08}\n<wait>	{04:FF}{02:08}\n<wait>				reads: ‥‥‥\n<wait>; reads: パパ
 m/MS002E.BIN	0:01	158	3983	00	{04:FF}は{08:5C}１度、{08:31}の唇に自らの唇を重ねた{02:08}\n<wait>	{04:FF}は{08:5C}１度、{08:31}の唇に自らの唇を重ねた{02:08}\n<wait>	{04:FF} presses their lips against Rui's once more...\n<wait>	ours		reads: はもう１度、泪の唇に自らの唇を重ねた‥‥‥\n<wait>; reads: ペンタグランマ? @rebase-unmatched idx158 en=Pentagramma?
@@ -169,17 +169,17 @@ m/MS002E.BIN	0:01	159	4030	1FD2	{08:31}：	{08:31}：	Rui:	v005		reads: 泪：
 m/MS002E.BIN	0:01	160	4036	1FD3	{02:08}{08:72}\n<wait>	{02:08}{08:72}\n<wait>				reads: ‥‥‥‥‥\n<wait>; reads: 泪：
 m/MS002E.BIN	0:01	161	4049	1FD0	{08:4C}、{08:31}の舌が唇の間{08:42}滑り込んで{08:1E}{02:08}\n	{08:4C}、{08:31}の舌が唇の間{08:42}滑り込んで{08:1E}{02:08}\n	Then, Rui's tongue slips in between your lips...\n	ours		reads: すると、泪の舌が唇の間から滑り込んできた‥‥‥\n; reads: ‥‥‥
 m/MS002E.BIN	0:01	162	4100	1FB2	舌を絡{08:2E}		Tangle tongues	ours		reads: 舌を絡める; menu option, declared width 20 columns; reads: ったら‥‥‥\n
-m/MS002E.BIN	0:01	163	4110	1FB2	抵抗{08:8E}		Fight back	v005		reads: 抵抗する; menu option, declared width 20 columns; reads: 泪：
+m/MS002E.BIN	0:01	163	4110	1FB2	抵抗{08:8E}		Fight back	v005		reads: 抵抗する; menu option, declared width 20 columns; reads: 泪： @refalign
 m/MS002E.BIN	0:01	164	4140	00	{04:FF}も、{08:31}の舌の動きに合わせ、{08:79}舌を絡めた{02:08}\n<wait>		{04:FF} matches the movement of Rui's tongue, and intertwines with it...\n<wait>	ours		reads: も、泪の舌の動きに合わせ、その舌を絡めた‥‥‥\n<wait>; reads: ‥‥‥うふふ‥‥‥本当に‥‥‥？\n
-m/MS002E.BIN	0:01	165	4191	1FD2	{08:31}：		Rui:	v005		reads: 泪：
+m/MS002E.BIN	0:01	165	4191	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
 m/MS002E.BIN	0:01	166	4197	1FD3	{02:08}ん{02:08}んん{02:08}\n		...Mm... mmnn...\n	ours		reads: ‥‥‥ん‥‥‥んん‥‥‥\n; reads: ‥‥‥意地悪ね‥‥‥\n
 m/MS002E.BIN	0:01	167	4226	1FB2	腰も絡{08:2E}		Press closer too	ours		reads: 腰も絡める; menu option, declared width 20 columns; reads: もう脱がす！
-m/MS002E.BIN	0:01	168	4236	1FB2	{08:47}{08:7E}続{08:29}		Keep going	v005		reads: このまま続ける; menu option, declared width 20 columns; reads: もうやめる！
+m/MS002E.BIN	0:01	168	4236	1FB2	{08:47}{08:7E}続{08:29}		Keep going	v005		reads: このまま続ける; menu option, declared width 20 columns; reads: もうやめる！ @refalign
 m/MS002E.BIN	0:01	169	4246	1FB2	{08:5C}や{08:2E}	{08:5C}や{08:2E}	Stop	v005		reads: もうやめる; menu option, declared width 20 columns; reads: 山瀬勇
 m/MS002E.BIN	0:01	170	4292	1F4F	{03:17}	{03:17}				reads: 
 m/MS002E.BIN	0:01	171	4310	1F4E	{03:17}	{03:17}				reads: ; reads: 泪：
 m/MS002E.BIN	0:01	172	4318	00	{04:FF}は{08:79}{08:7E}、{08:31}の下着に手を掛け、一気に取り去る{08:72}\n<wait>そ{08:4A}、腰を絡めた{02:08}\n<wait>		{04:FF} keeps going, hooking a hand on Rui's underwear and pulling it\naway in one motion...\n<wait>Then, entangles with her hips...\n<wait>	ours		reads: はそのまま、泪の下着に手を掛け、一気に取り去る‥‥\n<wait>そして、腰を絡めた‥‥‥\n<wait>; reads: ここまでして‥‥‥やめるの‥‥‥？\n<wait>
-m/MS002E.BIN	0:01	173	4401	1FD2	{08:31}：		Rui:	v005		reads: 泪：
+m/MS002E.BIN	0:01	173	4401	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
 m/MS002E.BIN	0:01	174	4407	1FD3	{02:08}んん{08:72}ん{02:08}\n<wait>		...Mnn... nn...\n<wait>	ours		reads: ‥‥‥んん‥‥ん‥‥‥\n<wait>; reads: 憶病なのね‥‥‥<wait>もう‥‥こんなになっちゃったのに‥‥‥\n<wait>
 m/MS002E.BIN	0:01	175	4428	1FD0	{08:31}{08:62}声に{08:7D}{08:25}喘ぎを発{08:13}{02:08}\n<wait>		Rui lets out a voiceless gasp...\n<wait>	ours		reads: 泪は、声にならない喘ぎを発している‥‥‥\n<wait>; reads: 泪：
 m/MS002E.BIN	0:01	176	4468	00	{04:FF}{08:62}絡みつく{08:31}の舌を退け{08:69}と試みた{08:72}\n<wait>		{04:FF} tries to push away Rui's clinging tongue...\n<wait>	ours		reads: は、絡みつく泪の舌を退けようと試みた‥‥\n<wait>; reads: ‥‥いいわ‥‥私が‥‥‥\n<wait>
@@ -187,17 +187,17 @@ m/MS002E.BIN	0:01	177	4511	1FBA	{03:0B}{08:31}の舌は執拗に絡みつき、�
 m/MS002E.BIN	0:01	178	4582	1F4F	{03:17}	{03:17}				reads: 
 m/MS002E.BIN	0:01	179	4600	1F4E	{03:17}そう{08:13}間にも{08:31}{08:62}		Meanwhile, Rui,	ours		reads: そうしている間にも泪は、; reads: は、泪の唇に自らの唇を重ねた‥‥‥\n<wait>
 m/MS002E.BIN	0:01	180	4622	00	{04:FF}の衣服に手を掛け、器用に{08:4D}を取り去{08:52}いく{08:72}\n<wait>		hooks her hand on {04:FF}'s clothes, skillfully stripping them away...\n<wait>	ours		reads: の衣服に手を掛け、器用にそれを取り去っていく‥‥\n<wait>; reads: 泪：
-m/MS002E.BIN	0:01	181	4684	00	{04:FF}{08:62}覆い被さ{08:52}{08:1E}{08:31}の身体を、{08:79}{08:7E}抱き寄せた！\n<wait>		Now undressed, you pull Rui closer, and embrace her.\n<wait>	v005		reads: は、覆い被さってきた泪の身体を、そのまま抱き寄せた！\n<wait>; reads: ‥‥‥ん‥‥‥
+m/MS002E.BIN	0:01	181	4684	00	{04:FF}{08:62}覆い被さ{08:52}{08:1E}{08:31}の身体を、{08:79}{08:7E}抱き寄せた！\n<wait>		Now undressed, you pull Rui closer, and embrace her.\n<wait>	v005		reads: は、覆い被さってきた泪の身体を、そのまま抱き寄せた！\n<wait>; reads: ‥‥‥ん‥‥‥ @refalign
 m/MS002E.BIN	0:01	182	4737	1FD2	{08:31}：	{08:31}：	Rui:	v005		reads: 泪：; reads: ‥‥‥\n<wait>
 m/MS002E.BIN	0:01	183	4743	1FD3	{02:08}あ{08:72}		...Ah....	ours		reads: ‥‥‥あ‥‥; reads: はもう１度、泪の唇に自らの唇を重ねた‥‥‥\n<wait>
 m/MS002E.BIN	0:01	184	4753	00	{04:FF}っ{08:50}{02:08}\n<wait>		{04:FF}, honestly...\n<wait>	ours		reads: ったら‥‥‥\n<wait>; reads: 泪：
 m/MS002E.BIN	0:01	185	4770	1FD0	{08:31}の柔らかな身体の感触が、	{08:31}の柔らかな身体の感触が、	The feel of Rui's soft body,	ours		reads: 泪の柔らかな身体の感触が、; reads: ‥‥‥‥‥\n<wait>
 m/MS002E.BIN	0:01	186	4800	00	{04:FF}の肌に伝わる{08:72}\n		spreads across {04:FF}'s skin...\n	ours		reads: の肌に伝わる‥‥\n; reads: すると、泪の舌が唇の間から滑り込んできた‥‥‥\n
-m/MS002E.BIN	0:01	187	4833	1FB2	抱きし{08:2E}		Embrace her	v005		reads: 抱きしめる; menu option, declared width 20 columns; reads: 舌を絡める
-m/MS002E.BIN	0:01	188	4843	1FB2	キス{08:8E}		Kiss her	v005		reads: キスする; menu option, declared width 20 columns; reads: 抵抗する
+m/MS002E.BIN	0:01	187	4833	1FB2	抱きし{08:2E}		Embrace her	v005		reads: 抱きしめる; menu option, declared width 20 columns; reads: 舌を絡める @refalign
+m/MS002E.BIN	0:01	188	4843	1FB2	キス{08:8E}		Kiss her	v005		reads: キスする; menu option, declared width 20 columns; reads: 抵抗する @refalign
 m/MS002E.BIN	0:01	189	4875	00	{04:FF}{08:62}{08:31}を抱き寄せた腕に力を込めた。\n<wait>	{04:FF}{08:62}{08:31}を抱き寄せた腕に力を込めた。\n<wait>	{04:FF} tightens the arms wrapped around Rui.\n<wait>	ours		reads: は、泪を抱き寄せた腕に力を込めた。\n<wait>
 m/MS002E.BIN	0:01	190	4933	00	{04:FF}は{08:73}事{08:26}け{08:25}と思い、{08:31}をのけ{08:69}と試みた{02:08}。\n<wait>		{04:FF}, thinking this shouldn't be happening, tries to push Rui away...\n<wait>	ours		reads: はこんな事はいけないと思い、泪をのけようと試みた‥‥‥。\n<wait>; reads: も、泪の舌の動きに合わせ、その舌を絡めた‥‥‥\n<wait>
-m/MS002E.BIN	0:01	191	4986	1FD2	{08:31}：		Rui:	v005		reads: 泪：
+m/MS002E.BIN	0:01	191	4986	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
 m/MS002E.BIN	0:01	192	4992	1FD3	{02:08}だめ。私を見て{02:08}\n<wait>		...No. Look at me...\n<wait>	ours		reads: ‥‥‥だめ。私を見て‥‥‥\n<wait>; reads: ‥‥‥ん‥‥‥んん‥‥‥\n
 m/MS002E.BIN	0:01	193	5025	1FD0	{08:31}は		Rui	ours		reads: 泪は; reads: 腰も絡める; menu option, declared width 20 columns
 m/MS002E.BIN	0:01	194	5033	00	{04:FF}の衣服に手を掛け、器用に{08:4D}を取り去{08:52}いく{08:72}\n<wait>		hooks her hand on {04:FF}'s clothes, skillfully stripping them away...\n<wait>	ours		reads: の衣服に手を掛け、器用にそれを取り去っていく‥‥\n<wait>; reads: このまま続ける; menu option, declared width 20 columns
@@ -207,4 +207,4 @@ m/MS002E.BIN	0:01	197	5172	1F4F	{03:17}	{03:17}				reads: ; reads: ペンタグ�
 m/MS002E.BIN	0:01	198	5190	1F4E	{03:17}	{03:17}				reads: 
 m/MS002E.BIN	0:01	199	5198	00	{04:FF}{08:62}{08:31}の下着に手を掛け、{08:4D}をゆっくりと脱がせた{08:72}\n<wait>	{04:FF}{08:62}{08:31}の下着に手を掛け、{08:4D}をゆっくりと脱がせた{08:72}\n<wait>	{04:FF} hooks a hand on Rui's underwear, and slowly slides it off her...\n<wait>	ours		reads: は、泪の下着に手を掛け、それをゆっくりと脱がせた‥‥\n<wait>
 m/MS002E.BIN	0:01	200	5253	1FBA	{08:31}は抵抗し{08:25}{02:08}\n<wait>下着が{08:6C}に取り払わ{08:2F}と、{08:31}は腰を絡めて{08:1E}{02:08}\n<wait>		Rui doesn't resist...\n<wait>Once her underwear is completely removed, Rui wraps her hips around you...\n<wait>	ours		reads: 泪は抵抗しない‥‥‥\n<wait>下着が完全に取り払われると、泪は腰を絡めてきた‥‥‥\n<wait>; reads: はそのまま、泪の下着に手を掛け、一気に取り去る‥‥\n<wait>そして、腰を絡めた‥‥‥\n<wait>
-m/MS002E.BIN	0:01	201	5321	1FBA	例え様も無い、快楽の波が押し寄{08:67}くる{02:08}‥\n<wait>		A boundless wave of pleasure washes over you...\n<wait>	v005		reads: 例え様も無い、快楽の波が押し寄せてくる‥‥‥‥\n<wait>; reads: 泪：
+m/MS002E.BIN	0:01	201	5321	1FBA	例え様も無い、快楽の波が押し寄{08:67}くる{02:08}‥\n<wait>		A boundless wave of pleasure washes over you...\n<wait>	v005		reads: 例え様も無い、快楽の波が押し寄せてくる‥‥‥‥\n<wait>; reads: 泪： @refalign

@@ -3,499 +3,499 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0034.BIN	0:00	0	6	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:00	1	16	00	{04:FF}くん{08:62}資格取{08:60}の？\n<wait>					reads: くんは、資格取れたの？\n<wait>
-m/MS0034.BIN	0:00	2	54	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:00	3	60	1FD3	{08:76}{08:6B}ね。\n<wait>		What about you? Did you qualify?\n<wait>	v005		reads: まだなのね。\n<wait>
-m/MS0034.BIN	0:00	4	81	00	{04:FE}：		Yuuka:	v005		reads: ：
-m/MS0034.BIN	0:00	5	87	1FD3	{08:56}、絶対{01:32}よ。		Oh. You haven't heard back from them yet...\n<wait>	v005		reads: でも、絶対大丈夫よ。
-m/MS0034.BIN	0:00	6	105	00	{04:FF}くん{08:7D}{02:08}‥\n<wait>					reads: くんなら‥‥‥‥\n<wait>
-m/MS0034.BIN	0:00	7	130	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:00	8	136	1FD3	そう言えば		Don't worry. I'm sure it'll be fine. Yeah...\n<wait>	v005		
-m/MS0034.BIN	0:00	9	150	00	{04:FF}くんのお父様も、{02:00}だ{08:51}んで{08:80}？\n{08:81}あ、		Yuuka:	v005		reads: くんのお父様も、デビルバスターだったんでしょう？\nじゃあ、
-m/MS0034.BIN	0:00	10	193	00	{04:FF}くんの着{08:2B}{08:79}ブルゾン{08:62}お父様の形見{08:72}\n		Oh, that reminds me. Wasn't your father a Devil Buster?\nThat would make that blouson you're wearing his, right?\n	v005		reads: くんの着てるそのブルゾンは、お父様の形見‥‥\n
-m/MS0034.BIN	0:00	11	248	1FB2	そう、形見だよ		Yeah, it was his	v005		menu option, declared width 20 columns
-m/MS0034.BIN	0:00	12	264	1FB2	無言で頷く		Silently nod	v005		menu option, declared width 20 columns
+m/MS0034.BIN	0:00	0	6	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:00	1	16	00	{04:FF}くん{08:62}資格取{08:60}の？\n<wait>		What about you? Did you qualify?\n<wait>	v005		reads: くんは、資格取れたの？\n<wait> @refalign
+m/MS0034.BIN	0:00	2	54	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:00	3	60	1FD3	{08:76}{08:6B}ね。\n<wait>		Oh. You haven't heard back from them yet...\n<wait>	v005		reads: まだなのね。\n<wait> @refalign
+m/MS0034.BIN	0:00	4	81	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:00	5	87	1FD3	{08:56}、絶対{01:32}よ。		Don't worry. I'm sure it'll be fine. Yeah...\n<wait>	v005		reads: でも、絶対大丈夫よ。 @refalign @refalign-merged
+m/MS0034.BIN	0:00	6	105	00	{04:FF}くん{08:7D}{02:08}‥\n<wait>		 	v005		reads: くんなら‥‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:00	7	130	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:00	8	136	1FD3	そう言えば		Oh, that reminds me. Wasn't your father a Devil Buster?\nThat would make that blouson you're wearing his, right?\n	v005		@refalign @refalign-merged
+m/MS0034.BIN	0:00	9	150	00	{04:FF}くんのお父様も、{02:00}だ{08:51}んで{08:80}？\n{08:81}あ、		 	v005		reads: くんのお父様も、デビルバスターだったんでしょう？\nじゃあ、 @refalign @refalign-merged
+m/MS0034.BIN	0:00	10	193	00	{04:FF}くんの着{08:2B}{08:79}ブルゾン{08:62}お父様の形見{08:72}\n		 	v005		reads: くんの着てるそのブルゾンは、お父様の形見‥‥\n @refalign @refalign-merged
+m/MS0034.BIN	0:00	11	248	1FB2	そう、形見だよ		Yeah, it was his	v005		menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:00	12	264	1FB2	無言で頷く		Silently nod	v005		menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:00	13	300	00	{04:FE}：	{04:FE}：	Yuuka:	v005		reads: ：; reads: あなたがた
-m/MS0034.BIN	0:00	14	306	1FD3	ごめんな{08:49}。私っ{08:50}つい{02:08}‥\n<wait>		Sorry... That was very thoughtless of me.\n<wait>	v005		reads: ごめんなさい。私ったらつい‥‥‥‥\n<wait>; reads: ：
-m/MS0034.BIN	0:00	15	345	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: ごめんなさい。私ったらつい‥‥‥‥\n<wait>
-m/MS0034.BIN	0:00	16	351	1FD3	{08:56}、{08:79}ブルゾン、着心地良さそう。\n天然素材が使われ{08:14}のね。\n<wait>		Still, that blouson sure does look comfy. It's rare to find\nclothes that are made of natural materials in this day and age.\n<wait>	v005		reads: でも、そのブルゾン、着心地良さそう。\n天然素材が使われているのね。\n<wait>; reads: ：
-m/MS0034.BIN	0:00	17	421	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: でも、そのブルゾン、着心地良さそう。\n天然素材が使われているのね。\n<wait>
-m/MS0034.BIN	0:00	18	431	00	{04:FF}くん、すごく似合っ{08:2B}わ。\n		Personally, I think it looks perfect on you.\n	v005		reads: くん、すごく似合ってるわ。\n; reads: ：
-m/MS0034.BIN	0:00	19	474	1FB2	照れ笑い		Smile awkwardly	v005		menu option, declared width 20 columns; reads: くん、すごく似合ってるわ。\n
+m/MS0034.BIN	0:00	14	306	1FD3	ごめんな{08:49}。私っ{08:50}つい{02:08}‥\n<wait>		Sorry... That was very thoughtless of me.\n<wait>	v005		reads: ごめんなさい。私ったらつい‥‥‥‥\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:00	15	345	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: ごめんなさい。私ったらつい‥‥‥‥\n<wait> @refalign
+m/MS0034.BIN	0:00	16	351	1FD3	{08:56}、{08:79}ブルゾン、着心地良さそう。\n天然素材が使われ{08:14}のね。\n<wait>		Still, that blouson sure does look comfy. It's rare to find\nclothes that are made of natural materials in this day and age.\n<wait>	v005		reads: でも、そのブルゾン、着心地良さそう。\n天然素材が使われているのね。\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:00	17	421	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: でも、そのブルゾン、着心地良さそう。\n天然素材が使われているのね。\n<wait> @refalign
+m/MS0034.BIN	0:00	18	431	00	{04:FF}くん、すごく似合っ{08:2B}わ。\n		Personally, I think it looks perfect on you.\n	v005		reads: くん、すごく似合ってるわ。\n; reads: ： @refalign
+m/MS0034.BIN	0:00	19	474	1FB2	照れ笑い		Smile awkwardly	v005		menu option, declared width 20 columns; reads: くん、すごく似合ってるわ。\n @refalign
 m/MS0034.BIN	0:00	20	484	1FB2	{01:2A}	{01:2A}	Thanks	v005		reads: ありがとう; menu option, declared width 20 columns
 m/MS0034.BIN	0:00	21	512	00	{04:FE}：	{04:FE}：	Yuuka:	v005		reads: ：; reads: ありがとう; menu option, declared width 20 columns
 m/MS0034.BIN	0:00	22	518	1FD3	くすくすくす{02:08}{08:72}本当の事よ。\n本当に	くすくすくす{02:08}{08:72}本当の事よ。\n本当に	Hehehe. No, for real. You look great.\n<wait>	v005		reads: くすくすくす‥‥‥‥‥本当の事よ。\n本当に
-m/MS0034.BIN	0:00	23	557	00	{04:FF}くん似合っ{08:2B}わ。\n<wait>					reads: くん似合ってるわ。\n<wait>; reads: ：
-m/MS0034.BIN	0:00	24	588	00	{04:FE}：					reads: ：; reads: くすくすくす‥‥‥‥‥本当の事よ。\n本当に
-m/MS0034.BIN	0:00	25	594	1FD3	最近はやっ{08:2B}{08:42}、レプリカ着{08:2B}人も多い{08:84}、{08:79}中{08:56}		Replica DB jackets are all the rage these days, but I've never met\nanyone who wears it quite as well as you do, Katsuragi-kun.\n<wait>	v005		reads: 最近はやってるから、レプリカ着てる人も多いけど、その中でも; reads: くん似合ってるわ。\n<wait>
-m/MS0034.BIN	0:00	26	644	00	{04:FF}くん、\n一番似合っ{08:2B}と思うわ。\n<wait>					reads: くん、\n一番似合ってると思うわ。\n<wait>; reads: ：
-m/MS0034.BIN	0:00	27	688	00	{04:FE}：					reads: ：; reads: 最近はやってるから、レプリカ着てる人も多いけど、その中でも
-m/MS0034.BIN	0:00	28	694	1FD3	そう言えば		Speaking of, did you already visit Emi and Nishino?\nThey seemed quite interested in hearing how you did when I went by\ntheir places earlier to tell them that I qualified.\n<wait>	v005		reads: くん、\n一番似合ってると思うわ。\n<wait>
-m/MS0034.BIN	0:00	29	708	00	{04:FF}くん、{08:03}さんや{08:04}さん達の所にも行{08:51}？\n{01:3B}資格が取{08:60}{08:52}報告に行っ{08:50}、喜んで下さ{08:52}、					reads: くん、英美さんや西野さん達の所にも行った？\nさっき資格が取れたって報告に行ったら、喜んで下さって、; reads: ：
-m/MS0034.BIN	0:00	30	793	00	{04:FF}くんは\n{08:90}{08:16}のか気に{08:4A}たわ。\n<wait>					reads: くんは\nどうなったのか気にしてたわ。\n<wait>
-m/MS0034.BIN	0:00	31	835	00	{04:FE}：					reads: ：; reads: くん、英美さんや西野さん達の所にも行った？\nさっき資格が取れたって報告に行ったら、喜んで下さって、
-m/MS0034.BIN	0:00	32	841	1FD3	{08:76}行{08:52}{08:19}ら、行{08:52}{08:1E}方が{08:7F}ん{08:81}{08:25}かしら。\n<wait>		You should definitely pay them a visit if you haven't already.\n<wait>	v005		reads: まだ行ってなかったら、行ってきた方がいいんじゃないかしら。\n<wait>; reads: くんは\nどうなったのか気にしてたわ。\n<wait>
-m/MS0034.BIN	0:00	33	892	00	{04:FE}：		Yuuka:	v005		reads: ：
-m/MS0034.BIN	0:00	34	898	1FD3	{08:4D}{08:81}あ、		Well, anyway. Let me know as soon as your application passes, okay?\n	v005		reads: それじゃあ、; reads: まだ行ってなかったら、行ってきた方がいいんじゃないかしら。\n<wait>
-m/MS0034.BIN	0:00	35	910	00	{04:FF}くん、資格取れ{08:50}、私にも教えてね！\n					reads: くん、資格取れたら、私にも教えてね！\n; reads: ：
-m/MS0034.BIN	0:00	36	956	00	{04:FE}：					reads: ：; reads: それじゃあ、
-m/MS0034.BIN	0:00	37	962	1FD3	本当に似合っ{08:2B}わ。\n<wait>		It really does.\n<wait>	v005		reads: 本当に似合ってるわ。\n<wait>; reads: くん、資格取れたら、私にも教えてね！\n
-m/MS0034.BIN	0:00	38	993	00	{04:FE}：		Yuuka:	v005		reads: ：
-m/MS0034.BIN	0:00	39	999	1FD3	おまけにレプリカ{08:81}なくて、本物の旧ブルゾンな{08:5F}{08:5E}。\nかっこ{08:7F}{08:81}{08:25}。\n<wait>		Not only that, while most blousons people wear are replicas,\nyours the real deal. It's kinda cool.\n<wait>	v005		reads: おまけにレプリカじゃなくて、本物の旧ブルゾンなんだもの。\nかっこいいじゃない。\n<wait>; reads: 本当に似合ってるわ。\n<wait>
-m/MS0034.BIN	0:00	40	1082	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:00	41	1088	1FD3	{02:08}‥ごめんな{08:49}。悪い事を聞いてしま{08:52}{02:08}‥\n		I really am sorry. I meant no harm.\n	v005		reads: ‥‥‥‥ごめんなさい。悪い事を聞いてしまって‥‥‥‥\n; reads: おまけにレプリカじゃなくて、本物の旧ブルゾンなんだもの。\nかっこいいじゃない。\n<wait>
-m/MS0034.BIN	0:00	42	1145	1FB2	気にし{08:25}で		I told you, it's fine	v005		reads: 気にしないで; menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:00	43	1157	1FB2	{08:72}いや、{08:7F}{08:5F}		It's fine...	v005		reads: ‥‥いや、いいんだ; menu option, declared width 20 columns; reads: ‥‥‥‥ごめんなさい。悪い事を聞いてしまって‥‥‥‥\n
-m/MS0034.BIN	0:00	44	1195	00	{04:FE}：					reads: ：; reads: 気にしないで; menu option, declared width 20 columns
-m/MS0034.BIN	0:00	45	1201	1FD3	本当にごめんな{08:49}。悪気は無{08:18}のよ。\n		Thank you...\n<wait>	v005		reads: 本当にごめんなさい。悪気は無かったのよ。\n; reads: ‥‥いや、いいんだ; menu option, declared width 20 columns
+m/MS0034.BIN	0:00	23	557	00	{04:FF}くん似合っ{08:2B}わ。\n<wait>		 	v005		reads: くん似合ってるわ。\n<wait>; reads: ： @refalign @refalign-merged
+m/MS0034.BIN	0:00	24	588	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: くすくすくす‥‥‥‥‥本当の事よ。\n本当に @refalign
+m/MS0034.BIN	0:00	25	594	1FD3	最近はやっ{08:2B}{08:42}、レプリカ着{08:2B}人も多い{08:84}、{08:79}中{08:56}		Replica DB jackets are all the rage these days, but I've never met\nanyone who wears it quite as well as you do, Katsuragi-kun.\n<wait>	v005		reads: 最近はやってるから、レプリカ着てる人も多いけど、その中でも; reads: くん似合ってるわ。\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:00	26	644	00	{04:FF}くん、\n一番似合っ{08:2B}と思うわ。\n<wait>		 	v005		reads: くん、\n一番似合ってると思うわ。\n<wait>; reads: ： @refalign @refalign-merged
+m/MS0034.BIN	0:00	27	688	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 最近はやってるから、レプリカ着てる人も多いけど、その中でも @refalign
+m/MS0034.BIN	0:00	28	694	1FD3	そう言えば		Speaking of, did you already visit Emi and Nishino?\nThey seemed quite interested in hearing how you did when I went by\ntheir places earlier to tell them that I qualified.\n<wait>	v005		reads: くん、\n一番似合ってると思うわ。\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:00	29	708	00	{04:FF}くん、{08:03}さんや{08:04}さん達の所にも行{08:51}？\n{01:3B}資格が取{08:60}{08:52}報告に行っ{08:50}、喜んで下さ{08:52}、		 	v005		reads: くん、英美さんや西野さん達の所にも行った？\nさっき資格が取れたって報告に行ったら、喜んで下さって、; reads: ： @refalign @refalign-merged
+m/MS0034.BIN	0:00	30	793	00	{04:FF}くんは\n{08:90}{08:16}のか気に{08:4A}たわ。\n<wait>		 	v005		reads: くんは\nどうなったのか気にしてたわ。\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:00	31	835	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: くん、英美さんや西野さん達の所にも行った？\nさっき資格が取れたって報告に行ったら、喜んで下さって、 @refalign
+m/MS0034.BIN	0:00	32	841	1FD3	{08:76}行{08:52}{08:19}ら、行{08:52}{08:1E}方が{08:7F}ん{08:81}{08:25}かしら。\n<wait>		You should definitely pay them a visit if you haven't already.\n<wait>	v005		reads: まだ行ってなかったら、行ってきた方がいいんじゃないかしら。\n<wait>; reads: くんは\nどうなったのか気にしてたわ。\n<wait> @refalign
+m/MS0034.BIN	0:00	33	892	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:00	34	898	1FD3	{08:4D}{08:81}あ、		Well, anyway. Let me know as soon as your application passes, okay?\n	v005		reads: それじゃあ、; reads: まだ行ってなかったら、行ってきた方がいいんじゃないかしら。\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:00	35	910	00	{04:FF}くん、資格取れ{08:50}、私にも教えてね！\n		 	v005		reads: くん、資格取れたら、私にも教えてね！\n; reads: ： @refalign @refalign-merged
+m/MS0034.BIN	0:00	36	956	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: それじゃあ、 @refalign
+m/MS0034.BIN	0:00	37	962	1FD3	本当に似合っ{08:2B}わ。\n<wait>		It really does.\n<wait>	v005		reads: 本当に似合ってるわ。\n<wait>; reads: くん、資格取れたら、私にも教えてね！\n @refalign
+m/MS0034.BIN	0:00	38	993	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:00	39	999	1FD3	おまけにレプリカ{08:81}なくて、本物の旧ブルゾンな{08:5F}{08:5E}。\nかっこ{08:7F}{08:81}{08:25}。\n<wait>		Not only that, while most blousons people wear are replicas,\nyours the real deal. It's kinda cool.\n<wait>	v005		reads: おまけにレプリカじゃなくて、本物の旧ブルゾンなんだもの。\nかっこいいじゃない。\n<wait>; reads: 本当に似合ってるわ。\n<wait> @refalign
+m/MS0034.BIN	0:00	40	1082	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:00	41	1088	1FD3	{02:08}‥ごめんな{08:49}。悪い事を聞いてしま{08:52}{02:08}‥\n		...Sorry. I shouldn't have said that...\n	v005		reads: ‥‥‥‥ごめんなさい。悪い事を聞いてしまって‥‥‥‥\n; reads: おまけにレプリカじゃなくて、本物の旧ブルゾンなんだもの。\nかっこいいじゃない。\n<wait> @refalign
+m/MS0034.BIN	0:00	42	1145	1FB2	気にし{08:25}で		Don't worry about it	v005		reads: 気にしないで; menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:00	43	1157	1FB2	{08:72}いや、{08:7F}{08:5F}		No, it's fine	v005		reads: ‥‥いや、いいんだ; menu option, declared width 20 columns; reads: ‥‥‥‥ごめんなさい。悪い事を聞いてしまって‥‥‥‥\n @refalign
+m/MS0034.BIN	0:00	44	1195	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 気にしないで; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:00	45	1201	1FD3	本当にごめんな{08:49}。悪気は無{08:18}のよ。\n		I really am sorry. I meant no harm.\n	v005		reads: 本当にごめんなさい。悪気は無かったのよ。\n; reads: ‥‥いや、いいんだ; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:00	46	1252	1FB2	本当に気にし{08:25}で	本当に気にし{08:25}で				reads: 本当に気にしないで; menu option, declared width 20 columns
-m/MS0034.BIN	0:00	47	1270	1FB2	うん、{01:32}だ{08:42}‥					reads: うん、大丈夫だから‥; menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:00	48	1310	00	{04:FE}：					reads: ：; reads: 本当にごめんなさい。悪気は無かったのよ。\n
-m/MS0034.BIN	0:00	49	1316	1FD3	{01:2A}{02:08}‥。\n<wait>					reads: ありがとう‥‥‥‥。\n<wait>; reads: 本当に気にしないで; menu option, declared width 20 columns
-m/MS0034.BIN	0:00	50	1337	00	{04:FE}：					reads: ：; reads: うん、大丈夫だから‥; menu option, declared width 20 columns
+m/MS0034.BIN	0:00	47	1270	1FB2	うん、{01:32}だ{08:42}‥		It's fine...	v005		reads: うん、大丈夫だから‥; menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:00	48	1310	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 本当にごめんなさい。悪気は無かったのよ。\n @refalign
+m/MS0034.BIN	0:00	49	1316	1FD3	{01:2A}{02:08}‥。\n<wait>		Thank you...\n<wait>	v005		reads: ありがとう‥‥‥‥。\n<wait>; reads: 本当に気にしないで; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:00	50	1337	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: うん、大丈夫だから‥; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:00	51	1354	00	{04:FE}：	{04:FE}：				reads: ：; reads: 管理部
 m/MS0034.BIN	0:00	52	1360	1FD3	{02:08}{02:08}{02:08}{02:08}\n<wait>	{02:08}{02:08}{02:08}{02:08}\n<wait>				reads: ‥‥‥‥‥‥‥‥‥‥‥‥\n<wait>
-m/MS0034.BIN	0:00	53	1381	00	{04:FE}{08:62}すまなそうに{08:4A}、黙りこく{08:52}{08:1F}。\n					reads: は、すまなそうにして、黙りこくってしまった。\n; reads: ：
-m/MS0034.BIN	0:00	54	1432	1FB2	本当に気にし{08:25}で		I told you, it's fine	v005		reads: 本当に気にしないで; menu option, declared width 20 columns; reads: ありがとう‥‥‥‥。\n<wait>
-m/MS0034.BIN	0:00	55	1450	1FB2	一発ギャグをか{08:5A}		Make a joke	v005		reads: 一発ギャグをかます; menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:00	56	1468	1FB2	{08:81}あ、僕は{08:48}で		I'll be going	v005		reads: じゃあ、僕はこれで; menu option, declared width 20 columns; reads: ：
+m/MS0034.BIN	0:00	53	1381	00	{04:FE}{08:62}すまなそうに{08:4A}、黙りこく{08:52}{08:1F}。\n		Yuuka falls silent with an apologetic expression on her face.\n	v005		reads: は、すまなそうにして、黙りこくってしまった。\n; reads: ： @refalign
+m/MS0034.BIN	0:00	54	1432	1FB2	本当に気にし{08:25}で		I told you, it's fine	v005		reads: 本当に気にしないで; menu option, declared width 20 columns; reads: ありがとう‥‥‥‥。\n<wait> @refalign
+m/MS0034.BIN	0:00	55	1450	1FB2	一発ギャグをか{08:5A}		Make a joke	v005		reads: 一発ギャグをかます; menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:00	56	1468	1FB2	{08:81}あ、僕は{08:48}で		I'll be going	v005		reads: じゃあ、僕はこれで; menu option, declared width 20 columns; reads: ： @refalign
 m/MS0034.BIN	0:00	57	1512	00	{04:FF}は突如、一発ギャグをかま{08:17}！\n<wait>	{04:FF}は突如、一発ギャグをかま{08:17}！\n<wait>	Katsuragi makes a surprise joke!<wait>	v005		reads: は突如、一発ギャグをかました！！\n<wait>; reads: ‥‥‥‥‥‥‥‥‥‥‥‥\n<wait>
-m/MS0034.BIN	0:00	58	1555	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: は、すまなそうにして、黙りこくってしまった。\n
-m/MS0034.BIN	0:00	59	1561	1FD3	{02:08}{02:08}{02:08}{08:72}！\n<wait>					reads: ‥‥‥‥‥‥‥‥‥‥‥！\n<wait>; reads: 本当に気にしないで; menu option, declared width 20 columns
-m/MS0034.BIN	0:00	60	1580	1FD0	一瞬、呆気に取ら{08:60}{08:69}な顔を{08:4A}{08:64}		For a brief moment, Yuuka appears caught off-guard. However...\n<wait>Quickly after, she lets out a cheerful laugh.\n<wait>	v005		reads: 一瞬、呆気に取られたような顔をしていた; reads: 一発ギャグをかます; menu option, declared width 20 columns
-m/MS0034.BIN	0:00	61	1614	00	{04:FE}だ{08:51}が、\n<wait>{08:79}後に、ころころと鈴を振る{08:69}な声で笑い出{08:4B}。\n<wait>					reads: だったが、\n<wait>その後に、ころころと鈴を振るような声で笑い出した。\n<wait>; reads: じゃあ、僕はこれで; menu option, declared width 20 columns
+m/MS0034.BIN	0:00	58	1555	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: は、すまなそうにして、黙りこくってしまった。\n @refalign
+m/MS0034.BIN	0:00	59	1561	1FD3	{02:08}{02:08}{02:08}{08:72}！\n<wait>		...!...\n<wait>\nFor a brief moment, Yuuka appears caught off-guard. However...\n<wait>Quickly after, she lets out a cheerful laugh.\n<wait>\nIt appears that you haven't managed to turn her off completely.\n<wait>	v005		reads: ‥‥‥‥‥‥‥‥‥‥‥！\n<wait>; reads: 本当に気にしないで; menu option, declared width 20 columns @refalign @refalign-merged
+m/MS0034.BIN	0:00	60	1580	1FD0	一瞬、呆気に取ら{08:60}{08:69}な顔を{08:4A}{08:64}		 	v005		reads: 一瞬、呆気に取られたような顔をしていた; reads: 一発ギャグをかます; menu option, declared width 20 columns @refalign @refalign-merged
+m/MS0034.BIN	0:00	61	1614	00	{04:FE}だ{08:51}が、\n<wait>{08:79}後に、ころころと鈴を振る{08:69}な声で笑い出{08:4B}。\n<wait>		 	v005		reads: だったが、\n<wait>その後に、ころころと鈴を振るような声で笑い出した。\n<wait>; reads: じゃあ、僕はこれで; menu option, declared width 20 columns @refalign @refalign-merged
 m/MS0034.BIN	0:00	62	1680	1FBA	{02:08}‥取りあえず、嫌われ{08:19}{08:69}だ{02:08}‥\n<wait>	{02:08}‥取りあえず、嫌われ{08:19}{08:69}だ{02:08}‥\n<wait>	It appears that you haven't managed to turn her off completely.\n<wait>	v005		reads: ‥‥‥‥取りあえず、嫌われなかったようだ‥‥‥‥\n<wait>; reads: 山田
 m/MS0034.BIN	0:00	63	1725	00	{04:FE}：	{04:FE}：	Yuuka:	v005		reads: ：; reads: ペンタグランマR
-m/MS0034.BIN	0:00	64	1731	1FD3	うふふ{02:08}{08:72}苦し{08:18}{02:08}‥\n<wait>		Hehehe... Thanks.<wait>	v005		reads: うふふ‥‥‥‥‥苦しかった‥‥‥‥\n<wait>; reads: は突如、一発ギャグをかました！！\n<wait>
-m/MS0034.BIN	0:00	65	1764	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:00	66	1774	00	{04:FF}くん{08:52}、面白いのね！\n{08:7A}冗談{08:6A}て、言わ{08:25}人かと思{08:52}たわ。\n<wait>					reads: くんって、面白いのね！\nそんな冗談なんて、言わない人かと思ってたわ。\n<wait>; reads: ‥‥‥‥‥‥‥‥‥‥‥！\n<wait>
-m/MS0034.BIN	0:00	67	1849	00	{04:FE}：					reads: ：; reads: 一瞬、呆気に取られたような顔をしていた
-m/MS0034.BIN	0:00	68	1855	1FD3	あ{08:72}あの{08:72}本当にごめんな{08:49}！\n<wait>		You're such a funny guy, Katsuragi-kun.\nI don't know anyone who tells jokes like you do.\n<wait>	v005		reads: あ‥‥あの‥‥本当にごめんなさい！\n<wait>; reads: だったが、\n<wait>その後に、ころころと鈴を振るような声で笑い出した。\n<wait>
-m/MS0034.BIN	0:00	69	1896	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: ‥‥‥‥取りあえず、嫌われなかったようだ‥‥‥‥\n<wait>
-m/MS0034.BIN	0:00	70	1902	1FD3	よ{08:18}ら、資格取{08:60}か{08:90}か、教えてね{02:08}‥\n		Err... I'm really sorry!<wait>	v005		reads: よかったら、資格取れたかどうか、教えてね‥‥‥‥\n; reads: ：
-m/MS0034.BIN	0:00	71	1948	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: うふふ‥‥‥‥‥苦しかった‥‥‥‥\n<wait>
-m/MS0034.BIN	0:00	72	1954	1FD3	{02:08}ごめんな{08:49}{02:08}{08:7A}{01:3E}{08:81}無{08:18}の{02:08}\n<wait>		When you get your results, please let me know...\nPromise?\n	v005		reads: ‥‥‥ごめんなさい‥‥‥そんなつもりじゃ無かったの‥‥‥\n<wait>; reads: ：
-m/MS0034.BIN	0:00	73	1995	00	{04:FE}{08:62}心{08:42}謝っ{08:14}{08:69}だ。\n					reads: は、心から謝っているようだ。\n; reads: くんって、面白いのね！\nそんな冗談なんて、言わない人かと思ってたわ。\n<wait>
-m/MS0034.BIN	0:01	0	16	1FB2	うん、{01:29}ね		Yeah, let's do that	v005		reads: うん、そうだね; menu option, declared width 20 columns
-m/MS0034.BIN	0:01	1	28	1FB2	{08:56}、自信無いなぁ		I'm not very confident	v005		reads: でも、自信無いなぁ; menu option, declared width 20 columns
+m/MS0034.BIN	0:00	64	1731	1FD3	うふふ{02:08}{08:72}苦し{08:18}{02:08}‥\n<wait>		Hehehe... Thanks.<wait>	v005		reads: うふふ‥‥‥‥‥苦しかった‥‥‥‥\n<wait>; reads: は突如、一発ギャグをかました！！\n<wait> @refalign
+m/MS0034.BIN	0:00	65	1764	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:00	66	1774	00	{04:FF}くん{08:52}、面白いのね！\n{08:7A}冗談{08:6A}て、言わ{08:25}人かと思{08:52}たわ。\n<wait>		You're such a funny guy, Katsuragi-kun.\nI don't know anyone who tells jokes like you do.\n<wait>	v005		reads: くんって、面白いのね！\nそんな冗談なんて、言わない人かと思ってたわ。\n<wait>; reads: ‥‥‥‥‥‥‥‥‥‥‥！\n<wait> @refalign
+m/MS0034.BIN	0:00	67	1849	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 一瞬、呆気に取られたような顔をしていた @refalign
+m/MS0034.BIN	0:00	68	1855	1FD3	あ{08:72}あの{08:72}本当にごめんな{08:49}！\n<wait>		Err... I'm really sorry!<wait>	v005		reads: あ‥‥あの‥‥本当にごめんなさい！\n<wait>; reads: だったが、\n<wait>その後に、ころころと鈴を振るような声で笑い出した。\n<wait> @refalign
+m/MS0034.BIN	0:00	69	1896	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: ‥‥‥‥取りあえず、嫌われなかったようだ‥‥‥‥\n<wait> @refalign
+m/MS0034.BIN	0:00	70	1902	1FD3	よ{08:18}ら、資格取{08:60}か{08:90}か、教えてね{02:08}‥\n		When you get your results, please let me know...\nPromise?\n	v005		reads: よかったら、資格取れたかどうか、教えてね‥‥‥‥\n; reads: ： @refalign
+m/MS0034.BIN	0:00	71	1948	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: うふふ‥‥‥‥‥苦しかった‥‥‥‥\n<wait> @refalign
+m/MS0034.BIN	0:00	72	1954	1FD3	{02:08}ごめんな{08:49}{02:08}{08:7A}{01:3E}{08:81}無{08:18}の{02:08}\n<wait>		Sorry... I really didn't mean it like that...\n<wait>	v005		reads: ‥‥‥ごめんなさい‥‥‥そんなつもりじゃ無かったの‥‥‥\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:00	73	1995	00	{04:FE}{08:62}心{08:42}謝っ{08:14}{08:69}だ。\n		Yuuka appears to be apologizing from the bottom of her heart.\n	v005		reads: は、心から謝っているようだ。\n; reads: くんって、面白いのね！\nそんな冗談なんて、言わない人かと思ってたわ。\n<wait> @refalign
+m/MS0034.BIN	0:01	0	16	1FB2	うん、{01:29}ね		Yeah, let's do that	v005		reads: うん、そうだね; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:01	1	28	1FB2	{08:56}、自信無いなぁ		I'm not very confident	v005		reads: でも、自信無いなぁ; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:01	2	70	00	{04:FE}：	{04:FE}：				reads: ：
-m/MS0034.BIN	0:01	3	76	1FD3	{08:56}、試験に１回で合格{08:8E}人{08:52}、割と少{08:25}ん{08:55}{08:52}。\n		As long as we stay calm and do our best,\nI'm sure that everything will go just fine.\n	v005		reads: でも、試験に１回で合格する人って、割と少ないんですって。\n; reads: ：
-m/MS0034.BIN	0:01	4	137	1FB2	そう{08:6B}？		I'll be going now	v005		reads: そうなの？; menu option, declared width 20 columns; reads: でも、試験に１回で合格する人って、割と少ないんですって。\n
-m/MS0034.BIN	0:01	5	147	1FB2	み{08:4E}だね		Let's both pass	v005		reads: みたいだね; menu option, declared width 20 columns; reads: そうなの？
-m/MS0034.BIN	0:01	6	181	00	{04:FE}：					reads: ：; reads: みたいだね; menu option, declared width 20 columns
+m/MS0034.BIN	0:01	3	76	1FD3	{08:56}、試験に１回で合格{08:8E}人{08:52}、割と少{08:25}ん{08:55}{08:52}。\n		Uh-huh. Still, I hear that there are very few people who have managed\nto pass the trial on their first go.\n	v005		reads: でも、試験に１回で合格する人って、割と少ないんですって。\n; reads: ： @refalign
+m/MS0034.BIN	0:01	4	137	1FB2	そう{08:6B}？		Really?	v005		reads: そうなの？; menu option, declared width 20 columns; reads: でも、試験に１回で合格する人って、割と少ないんですって。\n @refalign
+m/MS0034.BIN	0:01	5	147	1FB2	み{08:4E}だね		Apparently	v005		reads: みたいだね; menu option, declared width 20 columns; reads: そうなの？ @refalign
+m/MS0034.BIN	0:01	6	181	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: みたいだね; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:01	7	187	1FD3	ええ。\n第二部隊の{08:02}さ{08:5F}{08:52}、２回落ちた{08:52}言{08:52}たわ。\n	ええ。\n第二部隊の{08:02}さ{08:5F}{08:52}、２回落ちた{08:52}言{08:52}たわ。\n	Still, it's not like you get to decide whether you succeed or fail.\nPersonally, I think we should just focus on doing our best.\n	v005		reads: ええ。\n第二部隊の山瀬さんだって、２回落ちたって言ってたわ。\n
-m/MS0034.BIN	0:01	8	253	1FB2	{01:32}だよ		True enough	v005		reads: 大丈夫だよ; menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:01	9	261	1FB2	僕らは{08:02}とは違う		I still feel nervous	v005		reads: 僕らは山瀬とは違う; menu option, declared width 20 columns; reads: ええ。\n第二部隊の山瀬さんだって、２回落ちたって言ってたわ。\n
-m/MS0034.BIN	0:01	10	303	00	{04:FE}：					reads: ：; reads: 大丈夫だよ; menu option, declared width 20 columns
-m/MS0034.BIN	0:01	11	309	1FD3	{08:72}{01:2A}。		Good luck for tomorrow then.\nOh, and sorry for talking your ear off.\n	v005		reads: ‥‥ありがとう。; reads: 僕らは山瀬とは違う; menu option, declared width 20 columns
+m/MS0034.BIN	0:01	8	253	1FB2	{01:32}だよ		It'll be fine	v005		reads: 大丈夫だよ; menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:01	9	261	1FB2	僕らは{08:02}とは違う		We're better than him	v005		reads: 僕らは山瀬とは違う; menu option, declared width 20 columns; reads: ええ。\n第二部隊の山瀬さんだって、２回落ちたって言ってたわ。\n @refalign
+m/MS0034.BIN	0:01	10	303	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 大丈夫だよ; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:01	11	309	1FD3	{08:72}{01:2A}。		...Thank you, Katsuragi-kun.<wait>	v005		reads: ‥‥ありがとう。; reads: 僕らは山瀬とは違う; menu option, declared width 20 columns @refalign @refalign-merged
 m/MS0034.BIN	0:01	12	319	00	{04:FF}くん。\n<wait>	{04:FF}くん。\n<wait>				reads: くん。\n<wait>
-m/MS0034.BIN	0:01	13	340	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:01	14	346	1FD3	落ち着いて、最善を尽くせば{01:32}よね、き{08:53}。\n		That's a trick I learned from an old book.\nIt's supposed to help you calm down.\n	v005		reads: 落ち着いて、最善を尽くせば大丈夫よね、きっと。\n; reads: ‥‥ありがとう。
-m/MS0034.BIN	0:01	15	403	1FB2	{08:81}あ僕は{08:48}で		Thanks	v005		reads: じゃあ僕はこれで; menu option, declared width 20 columns; reads: くん。\n<wait>
-m/MS0034.BIN	0:01	16	417	1FB2	一緒に合格{08:4B}いね		That's no solution	v005		reads: 一緒に合格したいね; menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:01	17	459	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 落ち着いて、最善を尽くせば大丈夫よね、きっと。\n
-m/MS0034.BIN	0:01	18	465	1FD3	あ{02:08}うん。ごめんな{08:49}。話し込ん{08:81}{08:52}。\n{08:4D}{08:81}あ、明日頑張りま{08:80}ね！\n		No problem. It's obviously not a real solution to anxiety,\nbut if it helps even slightly, then I'm glad.\n<wait>	v005		reads: あ‥‥‥うん。ごめんなさい。話し込んじゃって。\nそれじゃあ、明日頑張りましょうね！\n; reads: じゃあ僕はこれで; menu option, declared width 20 columns
-m/MS0034.BIN	0:01	19	538	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 一緒に合格したいね; menu option, declared width 20 columns
+m/MS0034.BIN	0:01	13	340	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:01	14	346	1FD3	落ち着いて、最善を尽くせば{01:32}よね、き{08:53}。\n		As long as we stay calm and do our best,\nI'm sure that everything will go just fine.\n	v005		reads: 落ち着いて、最善を尽くせば大丈夫よね、きっと。\n; reads: ‥‥ありがとう。 @refalign
+m/MS0034.BIN	0:01	15	403	1FB2	{08:81}あ僕は{08:48}で		I'll be going now	v005		reads: じゃあ僕はこれで; menu option, declared width 20 columns; reads: くん。\n<wait> @refalign
+m/MS0034.BIN	0:01	16	417	1FB2	一緒に合格{08:4B}いね		Let's both pass	v005		reads: 一緒に合格したいね; menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:01	17	459	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 落ち着いて、最善を尽くせば大丈夫よね、きっと。\n @refalign
+m/MS0034.BIN	0:01	18	465	1FD3	あ{02:08}うん。ごめんな{08:49}。話し込ん{08:81}{08:52}。\n{08:4D}{08:81}あ、明日頑張りま{08:80}ね！\n		Huh? Oh, yeah...\nSorry for talking your ear off. Now then, good luck tomorrow!\n	v005		reads: あ‥‥‥うん。ごめんなさい。話し込んじゃって。\nそれじゃあ、明日頑張りましょうね！\n; reads: じゃあ僕はこれで; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:01	19	538	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 一緒に合格したいね; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:01	20	544	1FD3	えっ{02:08}‥\nそうね！　そう{08:16}ら素敵ね。\n<wait>	えっ{02:08}‥\nそうね！　そう{08:16}ら素敵ね。\n<wait>	Yeah, I guess it really isn't...\nStill, it's better to do something rather than nothing, don't you think?\n<wait>	v005		reads: えっ‥‥‥‥\nそうね！　そうなったら素敵ね。\n<wait>
 m/MS0034.BIN	0:01	21	592	00	{04:FE}：	{04:FE}：	Yuuka:	v005		reads: ：
-m/MS0034.BIN	0:01	22	598	1FD3	話し込ん{08:81}{08:52}、ごめんな{08:49}。\n{08:81}あ、明日頑張りま{08:80}ね！\n		Well then, Katsuragi-kun.\nLet's give it our all tomorrow.\n	v005		reads: 話し込んじゃって、ごめんなさい。\nじゃあ、明日頑張りましょうね！\n; reads: ：
-m/MS0034.BIN	0:01	23	659	00	{04:FE}：					reads: ：; reads: あ‥‥‥うん。ごめんなさい。話し込んじゃって。\nそれじゃあ、明日頑張りましょうね！\n
-m/MS0034.BIN	0:01	24	665	1FD3	{08:56}、{08:63}達がそう{08:59}と決{08:20}訳{08:81}{08:25}し、\n余計な心配{08:8E}より、ベストを尽くす事を考{08:41}方が{08:7F}わよね。\n		I do agree, though. It'd be great if we could pass on our first try.\n	v005		reads: でも、自分達がそうなると決まった訳じゃないし、\n余計な心配するより、ベストを尽くす事を考えた方がいいわよね。\n; reads: ：
-m/MS0034.BIN	0:01	25	769	1FB2	{08:79}通りだね		Let's both pass	v005		reads: その通りだね; menu option, declared width 20 columns; reads: えっ‥‥‥‥\nそうね！　そうなったら素敵ね。\n<wait>
-m/MS0034.BIN	0:01	26	781	1FB2	{08:56}、緊張{08:8E}なぁ		I wonder...	v005		reads: でも、緊張するなぁ; menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:01	27	821	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 話し込んじゃって、ごめんなさい。\nじゃあ、明日頑張りましょうね！\n
-m/MS0034.BIN	0:01	28	827	1FD3	{08:4D}{08:81}あ、明日に向けて頑張りま{08:80}。\nごめんな{08:49}。話し込ん{08:81}{08:52}。\n		Yeah... Everyone's studying super hard.\nMost of the people there have probably already taken the test once, too.\n<wait>	v005		reads: それじゃあ、明日に向けて頑張りましょう。\nごめんなさい。話し込んじゃって。\n; reads: ：
-m/MS0034.BIN	0:01	29	896	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: でも、自分達がそうなると決まった訳じゃないし、\n余計な心配するより、ベストを尽くす事を考えた方がいいわよね。\n
+m/MS0034.BIN	0:01	22	598	1FD3	話し込ん{08:81}{08:52}、ごめんな{08:49}。\n{08:81}あ、明日頑張りま{08:80}ね！\n		Sorry for talking your ear off. Now then, good luck tomorrow!\n	v005		reads: 話し込んじゃって、ごめんなさい。\nじゃあ、明日頑張りましょうね！\n; reads: ： @refalign
+m/MS0034.BIN	0:01	23	659	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: あ‥‥‥うん。ごめんなさい。話し込んじゃって。\nそれじゃあ、明日頑張りましょうね！\n @refalign
+m/MS0034.BIN	0:01	24	665	1FD3	{08:56}、{08:63}達がそう{08:59}と決{08:20}訳{08:81}{08:25}し、\n余計な心配{08:8E}より、ベストを尽くす事を考{08:41}方が{08:7F}わよね。\n		Still, it's not like you get to decide whether you succeed or fail.\nPersonally, I think we should just focus on doing our best.\n	v005		reads: でも、自分達がそうなると決まった訳じゃないし、\n余計な心配するより、ベストを尽くす事を考えた方がいいわよね。\n; reads: ： @refalign
+m/MS0034.BIN	0:01	25	769	1FB2	{08:79}通りだね		True enough	v005		reads: その通りだね; menu option, declared width 20 columns; reads: えっ‥‥‥‥\nそうね！　そうなったら素敵ね。\n<wait> @refalign
+m/MS0034.BIN	0:01	26	781	1FB2	{08:56}、緊張{08:8E}なぁ		I still feel nervous	v005		reads: でも、緊張するなぁ; menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:01	27	821	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 話し込んじゃって、ごめんなさい。\nじゃあ、明日頑張りましょうね！\n @refalign
+m/MS0034.BIN	0:01	28	827	1FD3	{08:4D}{08:81}あ、明日に向けて頑張りま{08:80}。\nごめんな{08:49}。話し込ん{08:81}{08:52}。\n		Good luck for tomorrow then.\nOh, and sorry for talking your ear off.\n	v005		reads: それじゃあ、明日に向けて頑張りましょう。\nごめんなさい。話し込んじゃって。\n; reads: ： @refalign
+m/MS0034.BIN	0:01	29	896	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: でも、自分達がそうなると決まった訳じゃないし、\n余計な心配するより、ベストを尽くす事を考えた方がいいわよね。\n @refalign
 m/MS0034.BIN	0:01	30	902	1FD3	そう{08:68}ときはね、手に人と{08:68}字を３回書いて飲み込む真似を{08:4C}\n{08:7F}ん{08:55}{08:52}。\n<wait>		Still, I do think that as long as we focus and give it our best shot,\neverything will work okay in the end.\n<wait>	v005		reads: そういうときはね、手に人という字を３回書いて飲み込む真似をすると\nいいんですって。\n<wait>; reads: その通りだね; menu option, declared width 20 columns
-m/MS0034.BIN	0:01	31	982	00	{04:FE}：					reads: ：; reads: でも、緊張するなぁ; menu option, declared width 20 columns
+m/MS0034.BIN	0:01	31	982	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: でも、緊張するなぁ; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:01	32	988	1FD3	大破壊前のおまじ{08:25}よ。\n	大破壊前のおまじ{08:25}よ。\n	Ah, sorry. I should let you go get some rest...\n	v005		reads: 大破壊前のおまじないよ。\n
 m/MS0034.BIN	0:01	33	1027	1FB2	{01:2A}	{01:2A}	No worries	v005		reads: ありがとう; menu option, declared width 20 columns
-m/MS0034.BIN	0:01	34	1031	1FB2	気休めだね		You should	v005		menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:01	35	1067	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: それじゃあ、明日に向けて頑張りましょう。\nごめんなさい。話し込んじゃって。\n
-m/MS0034.BIN	0:01	36	1073	1FD3	{08:90}{08:64}しま{08:4A}。\n気休めに{08:86}{08:7D}{08:25}{08:84}、役に立つの{08:7D}嬉しいわ。\n<wait>		Thank you, Katsuragi-kun.\nI feel much more relaxed having talked with you.<wait>	v005		reads: どういたしまして。\n気休めにしかならないけど、役に立つのなら嬉しいわ。\n<wait>; reads: ：
-m/MS0034.BIN	0:01	37	1144	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: そういうときはね、手に人という字を３回書いて飲み込む真似をすると\nいいんですって。\n<wait>
-m/MS0034.BIN	0:01	38	1150	1FD3	{08:72}そうね。気休めよ。\n{08:56}、{08:4D}で気休めに{08:59}{08:7D}、{08:7F}ん{08:81}{08:25}かしら。\n<wait>		Huh? Oh, err... Sorry! Anyway. Good luck tomorrow.\n	v005		reads: ‥‥そうね。気休めよ。\nでも、それで気休めになるなら、いいんじゃないかしら。\n<wait>; reads: ：
-m/MS0034.BIN	0:01	39	1222	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 大破壊前のおまじないよ。\n
+m/MS0034.BIN	0:01	34	1031	1FB2	気休めだね		That's no solution	v005		menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:01	35	1067	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: それじゃあ、明日に向けて頑張りましょう。\nごめんなさい。話し込んじゃって。\n @refalign
+m/MS0034.BIN	0:01	36	1073	1FD3	{08:90}{08:64}しま{08:4A}。\n気休めに{08:86}{08:7D}{08:25}{08:84}、役に立つの{08:7D}嬉しいわ。\n<wait>		No problem. It's obviously not a real solution to anxiety,\nbut if it helps even slightly, then I'm glad.\n<wait>	v005		reads: どういたしまして。\n気休めにしかならないけど、役に立つのなら嬉しいわ。\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:01	37	1144	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: そういうときはね、手に人という字を３回書いて飲み込む真似をすると\nいいんですって。\n<wait> @refalign
+m/MS0034.BIN	0:01	38	1150	1FD3	{08:72}そうね。気休めよ。\n{08:56}、{08:4D}で気休めに{08:59}{08:7D}、{08:7F}ん{08:81}{08:25}かしら。\n<wait>		Yeah, I guess it really isn't...\nStill, it's better to do something rather than nothing, don't you think?\n<wait>	v005		reads: ‥‥そうね。気休めよ。\nでも、それで気休めになるなら、いいんじゃないかしら。\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:01	39	1222	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 大破壊前のおまじないよ。\n @refalign
 m/MS0034.BIN	0:01	40	1228	1FD3	{08:4D}{08:81}、	{08:4D}{08:81}、	Come on, don't say that. You can't go in expecting to fail.\n<wait>	v005		reads: それじゃ、; reads: ありがとう; menu option, declared width 20 columns
-m/MS0034.BIN	0:01	41	1238	00	{04:FF}くん。\n明日頑張りま{08:80}ね。\n					reads: くん。\n明日頑張りましょうね。\n; menu option, declared width 20 columns
+m/MS0034.BIN	0:01	41	1238	00	{04:FF}くん。\n明日頑張りま{08:80}ね。\n		 	v005		reads: くん。\n明日頑張りましょうね。\n; menu option, declared width 20 columns @refalign @refalign-merged
 m/MS0034.BIN	0:01	42	1275	00	{04:FE}：	{04:FE}：				reads: ：
 m/MS0034.BIN	0:01	43	1281	1FD3	{08:7A}事言っちゃ、{08:02}さんに悪いわ。\n<wait>	{08:7A}事言っちゃ、{08:02}さんに悪いわ。\n<wait>	Not to say that you should be overconfident either... but you know.\n<wait>	v005		reads: そんな事言っちゃ、山瀬さんに悪いわ。\n<wait>
-m/MS0034.BIN	0:01	44	1324	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:01	45	1330	1FD3	{08:56}、本当に１回で合格で{08:1E}ら{08:7F}わよね。\n		I've never been good at dealing with that. Pressure, I mean.\nI'm getting kinda nervous just thinking about it...\n	v005		reads: でも、本当に１回で合格できたらいいわよね。\n; reads: どういたしまして。\n気休めにしかならないけど、役に立つのなら嬉しいわ。\n<wait>
-m/MS0034.BIN	0:01	46	1383	1FB2	一緒に合格{08:4B}いね		It'll be fine	v005		reads: 一緒に合格したいね; menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:01	47	1401	1FB2	うまくいくかなぁ		Right	v005		menu option, declared width 20 columns; reads: ‥‥そうね。気休めよ。\nでも、それで気休めになるなら、いいんじゃないかしら。\n<wait>
-m/MS0034.BIN	0:01	48	1443	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:01	49	1449	1FD3	そうよね。\n{01:1C}勉強{08:4A}き{08:2B}ん{08:8C}し、何回目かの受験の人だっ{08:14}\nで{08:80}しね{02:08}‥\n<wait>					reads: そうよね。\nみんな勉強してきてるんだろうし、何回目かの受験の人だっている\nでしょうしね‥‥‥‥\n<wait>; reads: それじゃ、
-m/MS0034.BIN	0:01	50	1530	00	{04:FE}：					reads: ：; reads: くん。\n明日頑張りましょうね。\n
-m/MS0034.BIN	0:01	51	1536	1FD3	{08:56}、落ち着いて最善を尽くせば{02:08}{01:32}よ、き{08:53}。\n<wait>					reads: でも、落ち着いて最善を尽くせば‥‥‥大丈夫よ、きっと。\n<wait>; reads: ：
-m/MS0034.BIN	0:01	52	1591	00	{04:FE}：					reads: ：; reads: そんな事言っちゃ、山瀬さんに悪いわ。\n<wait>
-m/MS0034.BIN	0:01	53	1597	1FD3	{08:4D}に、仮に不合格だ{08:51}と{08:4A}も、二度とチャンスが無い訳{08:81}{08:25}し。\n余計な心配{08:8E}より、最善を尽くす{08:46}を考えま{08:80}よ。\n<wait>					reads: それに、仮に不合格だったとしても、二度とチャンスが無い訳じゃないし。\n余計な心配するより、最善を尽くすことを考えましょうよ。\n<wait>; reads: ：
-m/MS0034.BIN	0:01	54	1715	00	{04:FE}：					reads: ：; reads: でも、本当に１回で合格できたらいいわよね。\n
-m/MS0034.BIN	0:01	55	1721	1FD3	{08:4D}{08:81}あ、明日はお互い頑張りま{08:80}ね！\n					reads: それじゃあ、明日はお互い頑張りましょうね！\n; reads: 一緒に合格したいね; menu option, declared width 20 columns
-m/MS0034.BIN	0:01	56	1765	00	{04:FE}：					reads: ：; menu option, declared width 20 columns
+m/MS0034.BIN	0:01	44	1324	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:01	45	1330	1FD3	{08:56}、本当に１回で合格で{08:1E}ら{08:7F}わよね。\n		I do agree, though. It'd be great if we could pass on our first try.\n	v005		reads: でも、本当に１回で合格できたらいいわよね。\n; reads: どういたしまして。\n気休めにしかならないけど、役に立つのなら嬉しいわ。\n<wait> @refalign
+m/MS0034.BIN	0:01	46	1383	1FB2	一緒に合格{08:4B}いね		Let's both pass	v005		reads: 一緒に合格したいね; menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:01	47	1401	1FB2	うまくいくかなぁ		I wonder...	v005		menu option, declared width 20 columns; reads: ‥‥そうね。気休めよ。\nでも、それで気休めになるなら、いいんじゃないかしら。\n<wait> @refalign
+m/MS0034.BIN	0:01	48	1443	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:01	49	1449	1FD3	そうよね。\n{01:1C}勉強{08:4A}き{08:2B}ん{08:8C}し、何回目かの受験の人だっ{08:14}\nで{08:80}しね{02:08}‥\n<wait>		Yeah... Everyone's studying super hard.\nMost of the people there have probably already taken the test once, too.\n<wait>	v005		reads: そうよね。\nみんな勉強してきてるんだろうし、何回目かの受験の人だっている\nでしょうしね‥‥‥‥\n<wait>; reads: それじゃ、 @refalign
+m/MS0034.BIN	0:01	50	1530	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: くん。\n明日頑張りましょうね。\n @refalign
+m/MS0034.BIN	0:01	51	1536	1FD3	{08:56}、落ち着いて最善を尽くせば{02:08}{01:32}よ、き{08:53}。\n<wait>		Still, I do think that as long as we focus and give it our best shot,\neverything will work okay in the end.\n<wait>	v005		reads: でも、落ち着いて最善を尽くせば‥‥‥大丈夫よ、きっと。\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:01	52	1591	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: そんな事言っちゃ、山瀬さんに悪いわ。\n<wait> @refalign
+m/MS0034.BIN	0:01	53	1597	1FD3	{08:4D}に、仮に不合格だ{08:51}と{08:4A}も、二度とチャンスが無い訳{08:81}{08:25}し。\n余計な心配{08:8E}より、最善を尽くす{08:46}を考えま{08:80}よ。\n<wait>		Besides, it's not like we can't just try again later if we fail!\nReally, there's nothing at all to worry about.\n<wait>	v005		reads: それに、仮に不合格だったとしても、二度とチャンスが無い訳じゃないし。\n余計な心配するより、最善を尽くすことを考えましょうよ。\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:01	54	1715	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: でも、本当に１回で合格できたらいいわよね。\n @refalign
+m/MS0034.BIN	0:01	55	1721	1FD3	{08:4D}{08:81}あ、明日はお互い頑張りま{08:80}ね！\n		Well then, let's do our best tomorrow!\n	v005		reads: それじゃあ、明日はお互い頑張りましょうね！\n; reads: 一緒に合格したいね; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:01	56	1765	00	{04:FE}：		Yuuka:	v005		reads: ：; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:01	57	1771	1FD3	{08:7A}！　今{08:71}頑張{08:52}{08:1E}んで{08:80}？\n{08:4D}{08:7D}、き{08:53}{01:32}よ。\n	{08:7A}！　今{08:71}頑張{08:52}{08:1E}んで{08:80}？\n{08:4D}{08:7D}、き{08:53}{01:32}よ。\n	On one hand, I'm happy I get to take the exam,\nbut on the other, I know that the toughest part is still ahead of us...\n	v005		reads: そんな！　今まで頑張ってきたんでしょう？\nそれなら、きっと大丈夫よ。\n; reads: 山瀬勇
 m/MS0034.BIN	0:01	58	1831	1FB2	{01:2A}、心強いな	{01:2A}、心強いな	You can do it!	v005		reads: ありがとう、心強いな; menu option, declared width 20 columns
-m/MS0034.BIN	0:01	59	1845	1FB2	{01:29}ね		Hmph	v005		reads: そうだね; menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:01	60	1875	00	{04:FE}：					reads: ：; reads: そうよね。\nみんな勉強してきてるんだろうし、何回目かの受験の人だっている\nでしょうしね‥‥‥‥\n<wait>
-m/MS0034.BIN	0:01	61	1881	1FD3	え{08:72}{08:7A}{02:08}心強いだ{08:6A}て{08:72}\n<wait>					reads: え‥‥そんな‥‥‥心強いだなんて‥‥\n<wait>; reads: ：
-m/MS0034.BIN	0:01	62	1916	00	{04:FE}：					reads: ：; reads: でも、落ち着いて最善を尽くせば‥‥‥大丈夫よ、きっと。\n<wait>
-m/MS0034.BIN	0:01	63	1922	1FD3	で、{08:56}、今回試験受{08:29}人{08:52}、何人くらい{08:40}のかしら？\nライバル{08:62}少{08:25}方が{08:7F}わよね。\n		You're not nervous, Katsuragi-kun?\n	v005		reads: で、でも、今回試験受ける人って、何人くらいいるのかしら？\nライバルは、少ない方がいいわよね。\n; reads: ：
-m/MS0034.BIN	0:01	64	2016	1FB2	うん		I am	v005		menu option, declared width 20 columns; reads: それに、仮に不合格だったとしても、二度とチャンスが無い訳じゃないし。\n余計な心配するより、最善を尽くすことを考えましょうよ。\n<wait>
-m/MS0034.BIN	0:01	65	2022	1FB2	多い方が燃{08:28}		I'm not	v005		reads: 多い方が燃える; menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:01	66	2060	00	{04:FE}：					reads: ：; reads: それじゃあ、明日はお互い頑張りましょうね！\n
-m/MS0034.BIN	0:01	67	2066	1FD3	やっぱりそうよね。\n受験生が多{08:18}ら、{08:4D}{08:74}{08:56}緊張{08:4A}しまい{01:29}し{08:72}\n<wait>		You are? You don't look like it all...\n<wait>	v005		reads: やっぱりそうよね。\n受験生が多かったら、それだけでも緊張してしまいそうだし‥‥\n<wait>; reads: ：
-m/MS0034.BIN	0:01	68	2138	00	{04:FE}：					reads: ：; reads: そんな！　今まで頑張ってきたんでしょう？\nそれなら、きっと大丈夫よ。\n
-m/MS0034.BIN	0:01	69	2144	1FD3	{02:00}試験{08:62}難しいので有名{08:55}{08:5E}ね。\n		I'm so jealous of people like you.\nPersonally, I'm not at all good with handling pressure.\n	v005		reads: デビルバスター試験は、難しいので有名ですものね。\n; reads: ありがとう、心強いな; menu option, declared width 20 columns
-m/MS0034.BIN	0:01	70	2191	1FB2	受かると{08:7F}な		You are?	v005		reads: 受かるといいな; menu option, declared width 20 columns; reads: そうだね
+m/MS0034.BIN	0:01	59	1845	1FB2	{01:29}ね		I guess so	v005		reads: そうだね; menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:01	60	1875	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: そうよね。\nみんな勉強してきてるんだろうし、何回目かの受験の人だっている\nでしょうしね‥‥‥‥\n<wait> @refalign
+m/MS0034.BIN	0:01	61	1881	1FD3	え{08:72}{08:7A}{02:08}心強いだ{08:6A}て{08:72}\n<wait>		Huh? R-Really? Oh, I'm... I'm glad to hear...\n<wait>	v005		reads: え‥‥そんな‥‥‥心強いだなんて‥‥\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:01	62	1916	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: でも、落ち着いて最善を尽くせば‥‥‥大丈夫よ、きっと。\n<wait> @refalign
+m/MS0034.BIN	0:01	63	1922	1FD3	で、{08:56}、今回試験受{08:29}人{08:52}、何人くらい{08:40}のかしら？\nライバル{08:62}少{08:25}方が{08:7F}わよね。\n		Err, anyway... I wonder how many people are taking the test this time?\nNot too many, I hope. The less competition we have, the better.\n	v005		reads: で、でも、今回試験受ける人って、何人くらいいるのかしら？\nライバルは、少ない方がいいわよね。\n; reads: ： @refalign
+m/MS0034.BIN	0:01	64	2016	1FB2	うん		Agreed	v005		menu option, declared width 20 columns; reads: それに、仮に不合格だったとしても、二度とチャンスが無い訳じゃないし。\n余計な心配するより、最善を尽くすことを考えましょうよ。\n<wait> @refalign
+m/MS0034.BIN	0:01	65	2022	1FB2	多い方が燃{08:28}		I want competition	v005		reads: 多い方が燃える; menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:01	66	2060	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: それじゃあ、明日はお互い頑張りましょうね！\n @refalign
+m/MS0034.BIN	0:01	67	2066	1FD3	やっぱりそうよね。\n受験生が多{08:18}ら、{08:4D}{08:74}{08:56}緊張{08:4A}しまい{01:29}し{08:72}\n<wait>		Definitely. I feel like I'm going to get super stressed out\nif there are too many applicants...\n<wait>	v005		reads: やっぱりそうよね。\n受験生が多かったら、それだけでも緊張してしまいそうだし‥‥\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:01	68	2138	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: そんな！　今まで頑張ってきたんでしょう？\nそれなら、きっと大丈夫よ。\n @refalign
+m/MS0034.BIN	0:01	69	2144	1FD3	{02:00}試験{08:62}難しいので有名{08:55}{08:5E}ね。\n		The Devil Buster exam is known for its difficulty.\n	v005		reads: デビルバスター試験は、難しいので有名ですものね。\n; reads: ありがとう、心強いな; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:01	70	2191	1FB2	受かると{08:7F}な		It'll be fine	v005		reads: 受かるといいな; menu option, declared width 20 columns; reads: そうだね @refalign
 m/MS0034.BIN	0:01	71	2205	1FB2	１発合格は無理かなあ	１発合格は無理かなあ	I'm not THAT strong	v005		menu option, declared width 20 columns; reads: {=F8}{=FF}
-m/MS0034.BIN	0:01	72	2251	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:01	73	2257	1FD3	そうね。\n一緒に合格で{08:1E}ら{08:7F}わね。\n<wait>		I am.\n<wait>	v005		reads: そうね。\n一緒に合格できたらいいわね。\n<wait>; reads: え‥‥そんな‥‥‥心強いだなんて‥‥\n<wait>
-m/MS0034.BIN	0:01	74	2303	00	{04:FE}：		Yuuka:	v005		reads: ：
-m/MS0034.BIN	0:01	75	2309	1FD3	{08:72}あ、話し込ん{08:81}{08:52}ごめんな{08:49}！\n明日試験だ{08:52}言うのに{02:08}{08:72}\n		But, thanks. I feel like talking with you helped me relax.\n<wait>	v005		reads: ‥‥あ、話し込んじゃってごめんなさい！\n明日試験だって言うのに‥‥‥‥‥\n; reads: で、でも、今回試験受ける人って、何人くらいいるのかしら？\nライバルは、少ない方がいいわよね。\n
-m/MS0034.BIN	0:01	76	2381	1FB2	{08:7A}事無いよ					reads: そんな事無いよ; menu option, declared width 20 columns
-m/MS0034.BIN	0:01	77	2393	1FB2	ああ、{01:29}な					reads: ああ、そうだな; menu option, declared width 20 columns; reads: 多い方が燃える
+m/MS0034.BIN	0:01	72	2251	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:01	73	2257	1FD3	そうね。\n一緒に合格で{08:1E}ら{08:7F}わね。\n<wait>		Right. I do hope that we'll both pass. That'd be great.\n<wait>	v005		reads: そうね。\n一緒に合格できたらいいわね。\n<wait>; reads: え‥‥そんな‥‥‥心強いだなんて‥‥\n<wait> @refalign
+m/MS0034.BIN	0:01	74	2303	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:01	75	2309	1FD3	{08:72}あ、話し込ん{08:81}{08:52}ごめんな{08:49}！\n明日試験だ{08:52}言うのに{02:08}{08:72}\n		Ah, sorry. I should let you go get some rest...\n	v005		reads: ‥‥あ、話し込んじゃってごめんなさい！\n明日試験だって言うのに‥‥‥‥‥\n; reads: で、でも、今回試験受ける人って、何人くらいいるのかしら？\nライバルは、少ない方がいいわよね。\n @refalign
+m/MS0034.BIN	0:01	76	2381	1FB2	{08:7A}事無いよ		No worries	v005		reads: そんな事無いよ; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:01	77	2393	1FB2	ああ、{01:29}な		You should	v005		reads: ああ、そうだな; menu option, declared width 20 columns; reads: 多い方が燃える @refalign
 m/MS0034.BIN	0:01	78	2429	00	{04:FE}：	{04:FE}：				reads: ：
-m/MS0034.BIN	0:01	79	2435	1FD3	{01:2A}。		Hehehe...\n<wait>	v005		reads: ありがとう。; reads: ：
-m/MS0034.BIN	0:01	80	2443	00	{04:FF}くん。\n					reads: くん。\n; reads: やっぱりそうよね。\n受験生が多かったら、それだけでも緊張してしまいそうだし‥‥\n<wait>
-m/MS0034.BIN	0:01	81	2456	00	{04:FF}くんのお陰で、少し落ち着{08:43}わ。\n<wait>					reads: くんのお陰で、少し落ち着けたわ。\n<wait>; reads: ：
-m/MS0034.BIN	0:01	82	2506	00	{04:FE}：					reads: ：; reads: デビルバスター試験は、難しいので有名ですものね。\n
-m/MS0034.BIN	0:01	83	2512	1FD3	えっ{02:08}‥あ‥本当にごめんな{08:49}。\n{08:4D}{08:81}あ{02:08}試験、頑張りま{08:80}ね。\n		I feel like I was able to calm down a little talking with you. Thanks.\n<wait>	v005		reads: えっ‥‥‥‥あ‥本当にごめんなさい。\nそれじゃあ‥‥‥試験、頑張りましょうね。\n; reads: 受かるといいな; menu option, declared width 20 columns
-m/MS0034.BIN	0:01	84	2581	00	{04:FE}：					reads: ：; menu option, declared width 20 columns
+m/MS0034.BIN	0:01	79	2435	1FD3	{01:2A}。		Thank you, Katsuragi-kun.\nI feel much more relaxed having talked with you.<wait>	v005		reads: ありがとう。; reads: ： @refalign @refalign-merged
+m/MS0034.BIN	0:01	80	2443	00	{04:FF}くん。\n		 	v005		reads: くん。\n; reads: やっぱりそうよね。\n受験生が多かったら、それだけでも緊張してしまいそうだし‥‥\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:01	81	2456	00	{04:FF}くんのお陰で、少し落ち着{08:43}わ。\n<wait>		 	v005		reads: くんのお陰で、少し落ち着けたわ。\n<wait>; reads: ： @refalign @refalign-merged
+m/MS0034.BIN	0:01	82	2506	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: デビルバスター試験は、難しいので有名ですものね。\n @refalign
+m/MS0034.BIN	0:01	83	2512	1FD3	えっ{02:08}‥あ‥本当にごめんな{08:49}。\n{08:4D}{08:81}あ{02:08}試験、頑張りま{08:80}ね。\n		Huh? Oh, err... Sorry! Anyway. Good luck tomorrow.\n	v005		reads: えっ‥‥‥‥あ‥本当にごめんなさい。\nそれじゃあ‥‥‥試験、頑張りましょうね。\n; reads: 受かるといいな; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:01	84	2581	00	{04:FE}：		Yuuka:	v005		reads: ：; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:01	85	2587	1FD3	{08:7A}{08:72}弱気になっちゃ駄目よ。\n絶対受かる気で、自信持{08:52}なきゃ。\n<wait>	{08:7A}{08:72}弱気になっちゃ駄目よ。\n絶対受かる気で、自信持{08:52}なきゃ。\n<wait>				reads: そんな‥‥弱気になっちゃ駄目よ。\n絶対受かる気で、自信持ってなきゃ。\n<wait>
-m/MS0034.BIN	0:01	86	2659	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:01	87	2665	1FD3	自信過剰も考え{08:5E}{08:74}ど{02:08}ね。\n<wait>					reads: 自信過剰も考えものだけど‥‥‥ね。\n<wait>; reads: そうね。\n一緒に合格できたらいいわね。\n<wait>
-m/MS0034.BIN	0:01	88	2709	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:01	89	2715	1FD3	えっ？　					reads: ‥‥あ、話し込んじゃってごめんなさい！\n明日試験だって言うのに‥‥‥‥‥\n
-m/MS0034.BIN	0:01	90	2727	00	{04:FF}くん{08:52}、そう{08:6B}？\nライバルが{08:40}と燃{08:28}タイプ{08:6B}ね。\n<wait>					reads: くんって、そうなの？\nライバルがいると燃えるタイプなのね。\n<wait>; reads: そんな事無いよ; menu option, declared width 20 columns
-m/MS0034.BIN	0:01	91	2789	00	{04:FE}：					reads: ：; reads: ああ、そうだな; menu option, declared width 20 columns
+m/MS0034.BIN	0:01	86	2659	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:01	87	2665	1FD3	自信過剰も考え{08:5E}{08:74}ど{02:08}ね。\n<wait>		Not to say that you should be overconfident either... but you know.\n<wait>	v005		reads: 自信過剰も考えものだけど‥‥‥ね。\n<wait>; reads: そうね。\n一緒に合格できたらいいわね。\n<wait> @refalign
+m/MS0034.BIN	0:01	88	2709	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:01	89	2715	1FD3	えっ？　		Oh? Yeah... I guess you have always been that sort of a person.\n<wait>	v005		reads: ‥‥あ、話し込んじゃってごめんなさい！\n明日試験だって言うのに‥‥‥‥‥\n @refalign @refalign-merged
+m/MS0034.BIN	0:01	90	2727	00	{04:FF}くん{08:52}、そう{08:6B}？\nライバルが{08:40}と燃{08:28}タイプ{08:6B}ね。\n<wait>		 	v005		reads: くんって、そうなの？\nライバルがいると燃えるタイプなのね。\n<wait>; reads: そんな事無いよ; menu option, declared width 20 columns @refalign @refalign-merged
+m/MS0034.BIN	0:01	91	2789	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: ああ、そうだな; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:01	92	2795	1FD3	確かに{08:72}{08:64}方が張り合いが{08:7B}{08:84}、プレッシャーにも{08:59}わよね。\n	確かに{08:72}{08:64}方が張り合いが{08:7B}{08:84}、プレッシャーにも{08:59}わよね。\n				reads: 確かに‥‥いた方が張り合いがあるけど、プレッシャーにもなるわよね。\n
 m/MS0034.BIN	0:01	93	2868	1FB2	{08:4D}は言{08:28}	{08:4D}は言{08:28}				reads: それは言える; menu option, declared width 20 columns
-m/MS0034.BIN	0:01	94	2878	1FB2	そうかなあ					menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:01	95	2914	00	{04:FE}：					reads: ：; reads: ありがとう。
-m/MS0034.BIN	0:01	96	2920	1FD3	私、プレッシャー{08:52}あまり強く{08:25}の。\nだ{08:42}緊張しちゃうと{02:08}だめ{08:6B}よ。\n					reads: 私、プレッシャーってあまり強くないの。\nだから緊張しちゃうと‥‥‥だめなのよ。\n; reads: くん。\n
-m/MS0034.BIN	0:01	97	3002	1FB2	{01:32}だよ					reads: 大丈夫だよ; menu option, declared width 20 columns; reads: くんのお陰で、少し落ち着けたわ。\n<wait>
-m/MS0034.BIN	0:01	98	3010	1FB2	そうな{08:5F}					reads: そうなんだ; menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:01	99	3044	00	{04:FE}：					reads: ：; reads: えっ‥‥‥‥あ‥本当にごめんなさい。\nそれじゃあ‥‥‥試験、頑張りましょうね。\n
-m/MS0034.BIN	0:01	100	3050	1FD3	だ{08:42}、試験を受けら{08:2F}喜びの反面、今{08:42}ちょ{08:53}緊張しちゃ{08:52}{02:08}\n					reads: だから、試験を受けられる喜びの反面、今からちょっと緊張しちゃって‥‥‥\n; reads: ：
-m/MS0034.BIN	0:01	101	3123	1FB2	ファイト、ファイト！					menu option, declared width 20 columns; reads: そんな‥‥弱気になっちゃ駄目よ。\n絶対受かる気で、自信持ってなきゃ。\n<wait>
-m/MS0034.BIN	0:01	102	3145	1FB2	ふーん					menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:01	103	3177	00	{04:FE}：					reads: ：; reads: 自信過剰も考えものだけど‥‥‥ね。\n<wait>
-m/MS0034.BIN	0:01	104	3187	00	{04:FF}くん。全然緊張{08:4A}{08:25}の？\n					reads: くん。全然緊張してないの？\n; reads: ：
-m/MS0034.BIN	0:01	105	3228	1FB2	し{08:2B}よ					reads: してるよ; menu option, declared width 20 columns
-m/MS0034.BIN	0:01	106	3236	1FB2	{08:4A}{08:25}よ					reads: してないよ; menu option, declared width 20 columns; reads: くんって、そうなの？\nライバルがいると燃えるタイプなのね。\n<wait>
-m/MS0034.BIN	0:01	107	3268	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:01	108	3274	1FD3	そう{08:6B}？　全然そうは見え{08:25}{08:84}{02:08}{08:72}\n<wait>					reads: そうなの？　全然そうは見えないけど‥‥‥‥‥\n<wait>; reads: 確かに‥‥いた方が張り合いがあるけど、プレッシャーにもなるわよね。\n
-m/MS0034.BIN	0:01	109	3324	00	{04:FE}：					reads: ：; reads: それは言える; menu option, declared width 20 columns
-m/MS0034.BIN	0:01	110	3330	1FD3	羨ましいわ。\n<wait>					menu option, declared width 20 columns
+m/MS0034.BIN	0:01	94	2878	1FB2	そうかなあ		I suppose	v005		menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:01	95	2914	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: ありがとう。 @refalign
+m/MS0034.BIN	0:01	96	2920	1FD3	私、プレッシャー{08:52}あまり強く{08:25}の。\nだ{08:42}緊張しちゃうと{02:08}だめ{08:6B}よ。\n		I've never been good at dealing with that. Pressure, I mean.\nI'm getting kinda nervous just thinking about it...\n	v005		reads: 私、プレッシャーってあまり強くないの。\nだから緊張しちゃうと‥‥‥だめなのよ。\n; reads: くん。\n @refalign
+m/MS0034.BIN	0:01	97	3002	1FB2	{01:32}だよ		It'll be fine	v005		reads: 大丈夫だよ; menu option, declared width 20 columns; reads: くんのお陰で、少し落ち着けたわ。\n<wait> @refalign
+m/MS0034.BIN	0:01	98	3010	1FB2	そうな{08:5F}		Right	v005		reads: そうなんだ; menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:01	99	3044	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: えっ‥‥‥‥あ‥本当にごめんなさい。\nそれじゃあ‥‥‥試験、頑張りましょうね。\n @refalign
+m/MS0034.BIN	0:01	100	3050	1FD3	だ{08:42}、試験を受けら{08:2F}喜びの反面、今{08:42}ちょ{08:53}緊張しちゃ{08:52}{02:08}\n		On one hand, I'm happy I get to take the exam,\nbut on the other, I know that the toughest part is still ahead of us...\n	v005		reads: だから、試験を受けられる喜びの反面、今からちょっと緊張しちゃって‥‥‥\n; reads: ： @refalign
+m/MS0034.BIN	0:01	101	3123	1FB2	ファイト、ファイト！		You can do it!	v005		menu option, declared width 20 columns; reads: そんな‥‥弱気になっちゃ駄目よ。\n絶対受かる気で、自信持ってなきゃ。\n<wait> @refalign
+m/MS0034.BIN	0:01	102	3145	1FB2	ふーん		Hmph	v005		menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:01	103	3177	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 自信過剰も考えものだけど‥‥‥ね。\n<wait> @refalign
+m/MS0034.BIN	0:01	104	3187	00	{04:FF}くん。全然緊張{08:4A}{08:25}の？\n		You're not nervous, Katsuragi-kun?\n	v005		reads: くん。全然緊張してないの？\n; reads: ： @refalign
+m/MS0034.BIN	0:01	105	3228	1FB2	し{08:2B}よ		I am	v005		reads: してるよ; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:01	106	3236	1FB2	{08:4A}{08:25}よ		I'm not	v005		reads: してないよ; menu option, declared width 20 columns; reads: くんって、そうなの？\nライバルがいると燃えるタイプなのね。\n<wait> @refalign
+m/MS0034.BIN	0:01	107	3268	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:01	108	3274	1FD3	そう{08:6B}？　全然そうは見え{08:25}{08:84}{02:08}{08:72}\n<wait>		You are? You don't look like it all...\n<wait>	v005		reads: そうなの？　全然そうは見えないけど‥‥‥‥‥\n<wait>; reads: 確かに‥‥いた方が張り合いがあるけど、プレッシャーにもなるわよね。\n @refalign
+m/MS0034.BIN	0:01	109	3324	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: それは言える; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:01	110	3330	1FD3	羨ましいわ。\n<wait>		I'm kinda jealous.\n<wait>	v005		menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:01	111	3360	00	{04:FE}：	{04:FE}：				reads: ：
-m/MS0034.BIN	0:01	112	3366	1FD3	うふふ。					reads: ：
-m/MS0034.BIN	0:01	113	3378	00	{04:FF}くん{08:52}、強いのね。\n<wait>					reads: くんって、強いのね。\n<wait>; reads: 私、プレッシャーってあまり強くないの。\nだから緊張しちゃうと‥‥‥だめなのよ。\n
-m/MS0034.BIN	0:01	114	3411	00	{04:FE}：					reads: ：; reads: 大丈夫だよ; menu option, declared width 20 columns
-m/MS0034.BIN	0:01	115	3417	1FD3	私、プレッシャーにあんまり強く{08:25}の。\nだ{08:42}、					reads: 私、プレッシャーにあんまり強くないの。\nだから、; reads: そうなんだ; menu option, declared width 20 columns
+m/MS0034.BIN	0:01	112	3366	1FD3	うふふ。		Hehe. You really are strong, huh?\n<wait>	v005		reads: ： @refalign @refalign-merged
+m/MS0034.BIN	0:01	113	3378	00	{04:FF}くん{08:52}、強いのね。\n<wait>		 	v005		reads: くんって、強いのね。\n<wait>; reads: 私、プレッシャーってあまり強くないの。\nだから緊張しちゃうと‥‥‥だめなのよ。\n @refalign @refalign-merged
+m/MS0034.BIN	0:01	114	3411	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 大丈夫だよ; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:01	115	3417	1FD3	私、プレッシャーにあんまり強く{08:25}の。\nだ{08:42}、		I'm so jealous of people like you.\nPersonally, I'm not at all good with handling pressure.\n	v005		reads: 私、プレッシャーにあんまり強くないの。\nだから、; reads: そうなんだ; menu option, declared width 20 columns @refalign @refalign-merged
 m/MS0034.BIN	0:01	116	3464	00	{04:FF}くんみ{08:4E}な人、羨ましいわ。\n	{04:FF}くんみ{08:4E}な人、羨ましいわ。\n				reads: くんみたいな人、羨ましいわ。\n; reads: 山瀬勇
 m/MS0034.BIN	0:01	117	3509	1FB2	そう？	そう？				menu option, declared width 20 columns
-m/MS0034.BIN	0:01	118	3517	1FB2	いや～{08:4D}ほど{08:56}～					reads: いや～それほどでも～; menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:01	119	3559	00	{04:FE}：					reads: ：; reads: だから、試験を受けられる喜びの反面、今からちょっと緊張しちゃって‥‥‥\n
-m/MS0034.BIN	0:01	120	3565	1FD3	そうよ。\n<wait>					menu option, declared width 20 columns
-m/MS0034.BIN	0:01	121	3586	00	{04:FE}：					reads: ：; menu option, declared width 20 columns
+m/MS0034.BIN	0:01	118	3517	1FB2	いや～{08:4D}ほど{08:56}～		I'm not THAT strong	v005		reads: いや～それほどでも～; menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:01	119	3559	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: だから、試験を受けられる喜びの反面、今からちょっと緊張しちゃって‥‥‥\n @refalign
+m/MS0034.BIN	0:01	120	3565	1FD3	そうよ。\n<wait>		I am.\n<wait>	v005		menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:01	121	3586	00	{04:FE}：		Yuuka:	v005		reads: ：; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:01	122	3592	1FD3	{08:56}、	{08:56}、				reads: でも、; reads: 山瀬勇
 m/MS0034.BIN	0:01	123	3600	00	{04:FF}くんと話し{08:2B}間に、少しリラックスで{08:1E}み{08:4E}。\n<wait>	{04:FF}くんと話し{08:2B}間に、少しリラックスで{08:1E}み{08:4E}。\n<wait>				reads: くんと話してる間に、少しリラックスできたみたい。\n<wait>
-m/MS0034.BIN	0:01	124	3662	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:01	125	3668	1FD3	くすくすくす{02:08}{08:72}\n<wait>					reads: くすくすくす‥‥‥‥‥\n<wait>; reads: くん。全然緊張してないの？\n
-m/MS0034.BIN	0:01	126	3697	00	{04:FE}：					reads: ：; reads: してるよ; menu option, declared width 20 columns
-m/MS0034.BIN	0:01	127	3707	00	{04:FF}くんと話{08:4A}{08:50}、何だかリラックス{08:4A}{08:1E}わ。\n{01:2A}。\n<wait>					reads: くんと話してたら、何だかリラックスしてきたわ。\nありがとう。\n<wait>; reads: してないよ; menu option, declared width 20 columns
-m/MS0034.BIN	0:02	0	2	1FD0	会議室の中{08:62}ピンと張りつめた空気が漂っ{08:14}{02:08}\n<wait>		The air in the conference room is thick with anticipation...\n<wait>	v005		reads: 会議室の中は、ピンと張りつめた空気が漂っている‥‥‥\n<wait>
-m/MS0034.BIN	0:02	1	60	00	{04:FE}が、小さな声で話{08:86}けて{08:1E}。\n<wait>					reads: が、小さな声で話しかけてきた。\n<wait>
-m/MS0034.BIN	0:02	2	117	1F71	声をひそめて話{08:86}け{08:14}為、自然と					reads: 声をひそめて話しかけている為、自然と
-m/MS0034.BIN	0:02	3	151	00	{04:FE}の身体が側に来る。\n<wait>					reads: の身体が側に来る。\n<wait>
-m/MS0034.BIN	0:02	4	178	1FBA	彼女の髪{08:42}{08:8C}か。\nほのかに{08:7F}香りが漂い、		{1E10:010014}All of a sudden, Yuuka whispers something to you.\n<wait>	v005		reads: 彼女の髪からだろうか。\nほのかにいい香りが漂い、
-m/MS0034.BIN	0:02	5	221	00	{04:FF}の鼻孔をくすぐ{08:51}{02:08}\n<wait>					reads: の鼻孔をくすぐった‥‥‥\n<wait>
-m/MS0034.BIN	0:02	6	254	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:02	7	260	1FD3	ねぇ{08:72}		Hey, Katsuragi-kun...\nHow long do you think it'll take for the results to come in?\n	v005		reads: ねぇ‥‥
-m/MS0034.BIN	0:02	8	270	00	{04:FF}くん{02:08}‥\n結果は{08:76}出{08:25}のかしら{02:08}‥\n					reads: くん‥‥‥‥\n結果はまだ出ないのかしら‥‥‥‥\n
-m/MS0034.BIN	0:02	9	322	1FB2	さあ{08:72}		Who knows	v005		reads: さあ‥‥; menu option, declared width 20 columns
-m/MS0034.BIN	0:02	10	330	1FB2	き{08:53}{08:5C}すぐだよ		Shouldn't take long	v005		reads: きっともうすぐだよ; menu option, declared width 20 columns
+m/MS0034.BIN	0:01	124	3662	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:01	125	3668	1FD3	くすくすくす{02:08}{08:72}\n<wait>		Hehehe...\n<wait>	v005		reads: くすくすくす‥‥‥‥‥\n<wait>; reads: くん。全然緊張してないの？\n @refalign
+m/MS0034.BIN	0:01	126	3697	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: してるよ; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:01	127	3707	00	{04:FF}くんと話{08:4A}{08:50}、何だかリラックス{08:4A}{08:1E}わ。\n{01:2A}。\n<wait>		I feel like I was able to calm down a little talking with you. Thanks.\n<wait>	v005		reads: くんと話してたら、何だかリラックスしてきたわ。\nありがとう。\n<wait>; reads: してないよ; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:02	0	2	1FD0	会議室の中{08:62}ピンと張りつめた空気が漂っ{08:14}{02:08}\n<wait>		The air in the conference room is thick with anticipation...\n<wait>\n{1E10:010014}All of a sudden, Yuuka whispers something to you.\n<wait>\nShe leans in closer to make sure that no one else can hear.\n<wait>\nThe pleasant fragrance coming from her hair tickles Katsuragi's nose...\n<wait>	v005		reads: 会議室の中は、ピンと張りつめた空気が漂っている‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:02	1	60	00	{04:FE}が、小さな声で話{08:86}けて{08:1E}。\n<wait>		 	v005		reads: が、小さな声で話しかけてきた。\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:02	2	117	1F71	声をひそめて話{08:86}け{08:14}為、自然と		 	v005		reads: 声をひそめて話しかけている為、自然と @refalign @refalign-merged
+m/MS0034.BIN	0:02	3	151	00	{04:FE}の身体が側に来る。\n<wait>		 	v005		reads: の身体が側に来る。\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:02	4	178	1FBA	彼女の髪{08:42}{08:8C}か。\nほのかに{08:7F}香りが漂い、		 	v005		reads: 彼女の髪からだろうか。\nほのかにいい香りが漂い、 @refalign @refalign-merged
+m/MS0034.BIN	0:02	5	221	00	{04:FF}の鼻孔をくすぐ{08:51}{02:08}\n<wait>		 	v005		reads: の鼻孔をくすぐった‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:02	6	254	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:02	7	260	1FD3	ねぇ{08:72}		Hey, Katsuragi-kun...\nHow long do you think it'll take for the results to come in?\n	v005		reads: ねぇ‥‥ @refalign @refalign-merged
+m/MS0034.BIN	0:02	8	270	00	{04:FF}くん{02:08}‥\n結果は{08:76}出{08:25}のかしら{02:08}‥\n		 	v005		reads: くん‥‥‥‥\n結果はまだ出ないのかしら‥‥‥‥\n @refalign @refalign-merged
+m/MS0034.BIN	0:02	9	322	1FB2	さあ{08:72}		Who knows	v005		reads: さあ‥‥; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:02	10	330	1FB2	き{08:53}{08:5C}すぐだよ		Shouldn't take long	v005		reads: きっともうすぐだよ; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:02	11	370	00	{04:FE}：	{04:FE}：	Yuuka:	v005		reads: ：
-m/MS0034.BIN	0:02	12	376	1FD3	{08:72}そうよね。		Right... What a silly thing to ask. Sorry.\nIt's just... I can't help but feel a bit anxious...\n	v005		reads: ‥‥そうよね。; reads: ：
-m/MS0034.BIN	0:02	13	392	00	{04:FF}くんにも分{08:42}{08:25}わよね。\nごめんな{08:49}。何か不安になっちゃ{08:52}{02:08}‥\n					reads: くんにも分からないわよね。\nごめんなさい。何か不安になっちゃって‥‥‥‥\n; reads: ‥‥そうよね。
-m/MS0034.BIN	0:02	14	471	00	{04:FE}：					reads: ：; reads: くんにも分からないわよね。\nごめんなさい。何か不安になっちゃって‥‥‥‥\n
-m/MS0034.BIN	0:02	15	477	1FD3	{01:3B}の実技試験、私達途中で死ん{08:81}{08:51}で{08:80}？\nあの減点{08:52}、凄く大きいん{08:81}{08:25}かと思うの。\n		D-Do you really mean that?\nI kinda feel like I flunked the written portion, too...\n	v005		reads: さっきの実技試験、私達途中で死んじゃったでしょう？\nあの減点って、凄く大きいんじゃないかと思うの。\n; reads: ：
-m/MS0034.BIN	0:02	16	573	1FB2	君{08:7D}{01:32}だよ		Absolutely!	v005		reads: 君なら大丈夫だよ; menu option, declared width 20 columns; reads: さっきの実技試験、私達途中で死んじゃったでしょう？\nあの減点って、凄く大きいんじゃないかと思うの。\n
-m/MS0034.BIN	0:02	17	585	1FB2	{01:29}ね		Don't be so humble	v005		reads: そうだね; menu option, declared width 20 columns; reads: 君なら大丈夫だよ
-m/MS0034.BIN	0:02	18	615	00	{04:FE}：					reads: ：; reads: そうだね; menu option, declared width 20 columns
+m/MS0034.BIN	0:02	12	376	1FD3	{08:72}そうよね。		Right... What a silly thing to ask. Sorry.\nIt's just... I can't help but feel a bit anxious...\n	v005		reads: ‥‥そうよね。; reads: ： @refalign @refalign-merged
+m/MS0034.BIN	0:02	13	392	00	{04:FF}くんにも分{08:42}{08:25}わよね。\nごめんな{08:49}。何か不安になっちゃ{08:52}{02:08}‥\n		 	v005		reads: くんにも分からないわよね。\nごめんなさい。何か不安になっちゃって‥‥‥‥\n; reads: ‥‥そうよね。 @refalign @refalign-merged
+m/MS0034.BIN	0:02	14	471	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: くんにも分からないわよね。\nごめんなさい。何か不安になっちゃって‥‥‥‥\n @refalign
+m/MS0034.BIN	0:02	15	477	1FD3	{01:3B}の実技試験、私達途中で死ん{08:81}{08:51}で{08:80}？\nあの減点{08:52}、凄く大きいん{08:81}{08:25}かと思うの。\n		Like, we died in the middle of the exam.\nThey're totally gonna give us a huge minus for that.\n	v005		reads: さっきの実技試験、私達途中で死んじゃったでしょう？\nあの減点って、凄く大きいんじゃないかと思うの。\n; reads: ： @refalign
+m/MS0034.BIN	0:02	16	573	1FB2	君{08:7D}{01:32}だよ		You'll be fine	v005		reads: 君なら大丈夫だよ; menu option, declared width 20 columns; reads: さっきの実技試験、私達途中で死んじゃったでしょう？\nあの減点って、凄く大きいんじゃないかと思うの。\n @refalign
+m/MS0034.BIN	0:02	17	585	1FB2	{01:29}ね		I feel you	v005		reads: そうだね; menu option, declared width 20 columns; reads: 君なら大丈夫だよ @refalign
+m/MS0034.BIN	0:02	18	615	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: そうだね; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:02	19	621	1FD3	{08:7A}{02:08}筆記試験だ{08:52}あんまり自信無いのに{02:08}\n	{08:7A}{02:08}筆記試験だ{08:52}あんまり自信無いのに{02:08}\n	What about you, Katsuragi-kun? How are you feeling?\n	v005		reads: そんな‥‥‥筆記試験だってあんまり自信無いのに‥‥‥\n; reads: ひとつ
-m/MS0034.BIN	0:02	20	676	1FB2	絶対{01:32}だ{08:52}！		I did great	v005		reads: 絶対大丈夫だって！; menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:02	21	690	1FB2	{08:7A}に謙遜しなく{08:54}		Kinda worried	v005		reads: そんなに謙遜しなくても; menu option, declared width 20 columns; reads: そんな‥‥‥筆記試験だってあんまり自信無いのに‥‥‥\n
-m/MS0034.BIN	0:02	22	754	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 絶対大丈夫だって！; menu option, declared width 20 columns
-m/MS0034.BIN	0:02	23	760	1FD3	{02:08}‥{01:2A}。\n		That's crazy. I wish I could learn how to be half as confident as you...\n<wait>	v005		reads: ‥‥‥‥ありがとう。\n; reads: そんなに謙遜しなくても; menu option, declared width 20 columns
+m/MS0034.BIN	0:02	20	676	1FB2	絶対{01:32}だ{08:52}！		Absolutely!	v005		reads: 絶対大丈夫だって！; menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:02	21	690	1FB2	{08:7A}に謙遜しなく{08:54}		Don't be so humble	v005		reads: そんなに謙遜しなくても; menu option, declared width 20 columns; reads: そんな‥‥‥筆記試験だってあんまり自信無いのに‥‥‥\n @refalign
+m/MS0034.BIN	0:02	22	754	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 絶対大丈夫だって！; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:02	23	760	1FD3	{02:08}‥{01:2A}。\n		...Thank you, Katsuragi-kun. You're such a good guy.\n<wait>	v005		reads: ‥‥‥‥ありがとう。\n; reads: そんなに謙遜しなくても; menu option, declared width 20 columns @refalign @refalign-merged
 m/MS0034.BIN	0:02	24	773	00	{04:FF}くん{08:52}、優しいのね。\n<wait>	{04:FF}くん{08:52}、優しいのね。\n<wait>				reads: くんって、優しいのね。\n<wait>
 m/MS0034.BIN	0:02	25	841	00	{04:FE}：	{04:FE}：				reads: ：
-m/MS0034.BIN	0:02	26	847	1FD3	{02:08}{08:7A}{02:08}ホントの事よ。<wait>本当に自信無いのよ。\n		Thanks... But, what about you, Katsuragi-kun?\n	v005		reads: ‥‥‥そんな‥‥‥ホントの事よ。<wait>本当に自信無いのよ。\n; reads: ：
-m/MS0034.BIN	0:02	27	908	1FB2	ホントに？		I'll be fine	v005		menu option, declared width 20 columns; reads: ‥‥‥‥ありがとう。\n
-m/MS0034.BIN	0:02	28	920	1FB2	黙っ{08:14}		I'll probably fail	v005		reads: 黙っている; menu option, declared width 20 columns; reads: くんって、優しいのね。\n<wait>
-m/MS0034.BIN	0:02	29	952	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:02	30	958	1FD3	本当よ。\n試験の時、あがっちゃ{08:52}て{02:08}‥\n<wait>		I hope so as well.\nIt'd be great if we could both make it as Devil Busters.\n<wait>	v005		reads: 本当よ。\n試験の時、あがっちゃってて‥‥‥‥\n<wait>; reads: ‥‥‥そんな‥‥‥ホントの事よ。<wait>本当に自信無いのよ。\n
-m/MS0034.BIN	0:02	31	1008	00	{04:FE}：		Yuuka:	v005		reads: ：; menu option, declared width 20 columns
-m/MS0034.BIN	0:02	32	1014	1FD3	馬鹿な答え書いちゃ{08:51}か{08:5D}れ{08:25}{08:72}<wait>{08:7A}気が{08:8E}のよ。\n<wait>		No way!\n<wait>	v005		reads: 馬鹿な答え書いちゃったかもしれない‥‥<wait>そんな気がするのよ。\n<wait>; reads: 黙っている; menu option, declared width 20 columns
+m/MS0034.BIN	0:02	26	847	1FD3	{02:08}{08:7A}{02:08}ホントの事よ。<wait>本当に自信無いのよ。\n		It's... the truth. <wait>I really have no confidence in myself.\n	v005		reads: ‥‥‥そんな‥‥‥ホントの事よ。<wait>本当に自信無いのよ。\n; reads: ： @refalign
+m/MS0034.BIN	0:02	27	908	1FB2	ホントに？		Really?	v005		menu option, declared width 20 columns; reads: ‥‥‥‥ありがとう。\n @refalign
+m/MS0034.BIN	0:02	28	920	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns; reads: くんって、優しいのね。\n<wait> @refalign
+m/MS0034.BIN	0:02	29	952	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:02	30	958	1FD3	本当よ。\n試験の時、あがっちゃ{08:52}て{02:08}‥\n<wait>		Yes. I felt completely out of my league during the exam...\n<wait>	v005		reads: 本当よ。\n試験の時、あがっちゃってて‥‥‥‥\n<wait>; reads: ‥‥‥そんな‥‥‥ホントの事よ。<wait>本当に自信無いのよ。\n @refalign
+m/MS0034.BIN	0:02	31	1008	00	{04:FE}：		Yuuka:	v005		reads: ：; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:02	32	1014	1FD3	馬鹿な答え書いちゃ{08:51}か{08:5D}れ{08:25}{08:72}<wait>{08:7A}気が{08:8E}のよ。\n<wait>		I probably ended up clicking all the wrong answers.\n<wait>That's how it feels.\n<wait>	v005		reads: 馬鹿な答え書いちゃったかもしれない‥‥<wait>そんな気がするのよ。\n<wait>; reads: 黙っている; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:02	33	1075	00	{04:FE}：	{04:FE}：				reads: ：
-m/MS0034.BIN	0:02	34	1085	00	{04:FF}くんは{08:90}{08:6B}？\n					reads: くんはどうなの？\n; reads: ：
-m/MS0034.BIN	0:02	35	1116	1FB2	自信たっぷり		It'll be fine	v005		menu option, declared width 20 columns; reads: 本当よ。\n試験の時、あがっちゃってて‥‥‥‥\n<wait>
-m/MS0034.BIN	0:02	36	1130	1FB2	自信無いよ		You worry too much	v005		menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:02	37	1166	00	{04:FE}：					reads: ：; reads: 馬鹿な答え書いちゃったかもしれない‥‥<wait>そんな気がするのよ。\n<wait>
-m/MS0034.BIN	0:02	38	1172	1FD3	すごいのね。{08:79}自信、分け{08:54}らい{08:4E}わ{02:08}\n<wait>		...It's just how I am, I guess. I know it's bad to only focus\non the negative side of things, but I can't help it.\n	v005		reads: すごいのね。その自信、分けてもらいたいわ‥‥‥\n<wait>; reads: ：
-m/MS0034.BIN	0:02	39	1258	00	{04:FE}：					reads: ：; reads: くんはどうなの？\n
-m/MS0034.BIN	0:02	40	1264	1FD3	{08:81}あ、同じね。\n<wait>					reads: じゃあ、同じね。\n<wait>; menu option, declared width 20 columns
-m/MS0034.BIN	0:02	41	1291	00	{04:FE}：					reads: ：; menu option, declared width 20 columns
+m/MS0034.BIN	0:02	34	1085	00	{04:FF}くんは{08:90}{08:6B}？\n		What about you, Katsuragi-kun? How are you feeling?\n	v005		reads: くんはどうなの？\n; reads: ： @refalign
+m/MS0034.BIN	0:02	35	1116	1FB2	自信たっぷり		I did great	v005		menu option, declared width 20 columns; reads: 本当よ。\n試験の時、あがっちゃってて‥‥‥‥\n<wait> @refalign
+m/MS0034.BIN	0:02	36	1130	1FB2	自信無いよ		Kinda worried	v005		menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:02	37	1166	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 馬鹿な答え書いちゃったかもしれない‥‥<wait>そんな気がするのよ。\n<wait> @refalign
+m/MS0034.BIN	0:02	38	1172	1FD3	すごいのね。{08:79}自信、分け{08:54}らい{08:4E}わ{02:08}\n<wait>		That's crazy. I wish I could learn how to be half as confident as you...\n<wait>	v005		reads: すごいのね。その自信、分けてもらいたいわ‥‥‥\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:02	39	1258	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: くんはどうなの？\n @refalign
+m/MS0034.BIN	0:02	40	1264	1FD3	{08:81}あ、同じね。\n<wait>		Same as me, then?\n<wait>	v005		reads: じゃあ、同じね。\n<wait>; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:02	41	1291	00	{04:FE}：		Yuuka:	v005		reads: ：; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:02	42	1297	1FD3	{08:56}、お互いや{08:2F}{08:74}の事はや{08:51}わよね。\n{08:4D}を信じて、結果を待つ{08:86}{08:25}わね{02:08}\n<wait>	{08:56}、お互いや{08:2F}{08:74}の事はや{08:51}わよね。\n{08:4D}を信じて、結果を待つ{08:86}{08:25}わね{02:08}\n<wait>				reads: でも、お互いやれるだけの事はやったわよね。\nそれを信じて、結果を待つしかないわね‥‥‥\n<wait>
 m/MS0034.BIN	0:02	43	1384	1FD0	{02:08}二人の間に気まずい沈黙が流{08:2F}{02:08}‥\n<wait>	{02:08}二人の間に気まずい沈黙が流{08:2F}{02:08}‥\n<wait>				reads: ‥‥‥二人の間に気まずい沈黙が流れる‥‥‥‥\n<wait>
-m/MS0034.BIN	0:02	44	1464	00	{04:FE}{08:62}しんみり{08:4A}しまっ{08:14}{02:08}\n					reads: は、しんみりしてしまっている‥‥‥\n; reads: ：
-m/MS0034.BIN	0:02	45	1505	1FB2	君{08:7D}{01:32}だよ		You've gotta relax	v005		reads: 君なら大丈夫だよ; menu option, declared width 20 columns; reads: すごいのね。その自信、分けてもらいたいわ‥‥‥\n<wait>
-m/MS0034.BIN	0:02	46	1517	1FB2	ほ{08:53}く		That's no way to live	v005		reads: ほっとく; menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:02	47	1553	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: じゃあ、同じね。\n<wait>
-m/MS0034.BIN	0:02	48	1559	1FD3	{02:08}{01:2A}。\n{08:56}{08:72}		Yeah, you're right, Katsuragi-kun. I've gotta learn how to relax.\nI've gotta...\n<wait>	v005		reads: ‥‥‥ありがとう。\nでも‥‥; reads: ：
-m/MS0034.BIN	0:02	49	1574	00	{04:FF}くんは？\n					reads: くんは？\n; reads: でも、お互いやれるだけの事はやったわよね。\nそれを信じて、結果を待つしかないわね‥‥‥\n<wait>
-m/MS0034.BIN	0:02	50	1601	1FB2	{01:32}だよき{08:53}					reads: 大丈夫だよきっと; menu option, declared width 20 columns; reads: ‥‥‥二人の間に気まずい沈黙が流れる‥‥‥‥\n<wait>
-m/MS0034.BIN	0:02	51	1613	1FB2	たぶん駄目					menu option, declared width 20 columns; reads: は、しんみりしてしまっている‥‥‥\n
-m/MS0034.BIN	0:02	52	1671	00	{04:FE}：					reads: ：; reads: 君なら大丈夫だよ; menu option, declared width 20 columns
-m/MS0034.BIN	0:02	53	1677	1FD3	そうね。き{08:53}{01:32}よ。\n一緒に合格できると{08:7F}わね。\n<wait>					reads: そうね。きっと大丈夫よ。\n一緒に合格できるといいわね。\n<wait>; reads: ほっとく; menu option, declared width 20 columns
+m/MS0034.BIN	0:02	44	1464	00	{04:FE}{08:62}しんみり{08:4A}しまっ{08:14}{02:08}\n		Yuuka appears a bit sad.\n	v005		reads: は、しんみりしてしまっている‥‥‥\n; reads: ： @refalign
+m/MS0034.BIN	0:02	45	1505	1FB2	君{08:7D}{01:32}だよ		You'll be fine	v005		reads: 君なら大丈夫だよ; menu option, declared width 20 columns; reads: すごいのね。その自信、分けてもらいたいわ‥‥‥\n<wait> @refalign
+m/MS0034.BIN	0:02	46	1517	1FB2	ほ{08:53}く		Ignore her	v005		reads: ほっとく; menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:02	47	1553	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: じゃあ、同じね。\n<wait> @refalign
+m/MS0034.BIN	0:02	48	1559	1FD3	{02:08}{01:2A}。\n{08:56}{08:72}		Thanks... But, what about you, Katsuragi-kun?\n	v005		reads: ‥‥‥ありがとう。\nでも‥‥; reads: ： @refalign @refalign-merged
+m/MS0034.BIN	0:02	49	1574	00	{04:FF}くんは？\n		 	v005		reads: くんは？\n; reads: でも、お互いやれるだけの事はやったわよね。\nそれを信じて、結果を待つしかないわね‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:02	50	1601	1FB2	{01:32}だよき{08:53}		I'll be fine	v005		reads: 大丈夫だよきっと; menu option, declared width 20 columns; reads: ‥‥‥二人の間に気まずい沈黙が流れる‥‥‥‥\n<wait> @refalign
+m/MS0034.BIN	0:02	51	1613	1FB2	たぶん駄目		I'll probably fail	v005		menu option, declared width 20 columns; reads: は、しんみりしてしまっている‥‥‥\n @refalign
+m/MS0034.BIN	0:02	52	1671	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 君なら大丈夫だよ; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:02	53	1677	1FD3	そうね。き{08:53}{01:32}よ。\n一緒に合格できると{08:7F}わね。\n<wait>		I hope so as well.\nIt'd be great if we could both make it as Devil Busters.\n<wait>	v005		reads: そうね。きっと大丈夫よ。\n一緒に合格できるといいわね。\n<wait>; reads: ほっとく; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:02	54	1768	00	{04:FE}：	{04:FE}：				reads: ：
-m/MS0034.BIN	0:02	55	1774	1FD3	{08:7A}！\n<wait>					reads: そんな！\n<wait>; reads: ：
-m/MS0034.BIN	0:02	56	1787	1FD0	少し声高に					reads: ‥‥‥ありがとう。\nでも‥‥
-m/MS0034.BIN	0:02	57	1801	00	{04:FE}が言うと、他の二人の受験生の視線が					reads: が言うと、他の二人の受験生の視線が; reads: くんは？\n
-m/MS0034.BIN	0:02	58	1841	00	{04:FE}に集中{08:4B}。\n<wait>					reads: に集中した。\n<wait>; reads: 大丈夫だよきっと; menu option, declared width 20 columns
-m/MS0034.BIN	0:02	59	1864	00	{04:FE}は{08:5B}、声をひそめて					reads: はまた、声をひそめて; menu option, declared width 20 columns
+m/MS0034.BIN	0:02	55	1774	1FD3	{08:7A}！\n<wait>		No way!\n<wait>\nYuuka's sudden yelp causes another pair of test takers to turn around\nand stare at you.\n<wait>\nWanting to avoid any further attention, Yuuka goes back to whispering.\n<wait>	v005		reads: そんな！\n<wait>; reads: ： @refalign @refalign-merged
+m/MS0034.BIN	0:02	56	1787	1FD0	少し声高に		 	v005		reads: ‥‥‥ありがとう。\nでも‥‥ @refalign @refalign-merged
+m/MS0034.BIN	0:02	57	1801	00	{04:FE}が言うと、他の二人の受験生の視線が		 	v005		reads: が言うと、他の二人の受験生の視線が; reads: くんは？\n @refalign @refalign-merged
+m/MS0034.BIN	0:02	58	1841	00	{04:FE}に集中{08:4B}。\n<wait>		 	v005		reads: に集中した。\n<wait>; reads: 大丈夫だよきっと; menu option, declared width 20 columns @refalign @refalign-merged
+m/MS0034.BIN	0:02	59	1864	00	{04:FE}は{08:5B}、声をひそめて		 	v005		reads: はまた、声をひそめて; menu option, declared width 20 columns @refalign @refalign-merged
 m/MS0034.BIN	0:02	60	1888	00	{04:FF}に言{08:51}。\n<wait>	{04:FF}に言{08:51}。\n<wait>				reads: に言った。\n<wait>
 m/MS0034.BIN	0:02	61	1911	00	{04:FE}：	{04:FE}：				reads: ：
-m/MS0034.BIN	0:02	62	1917	1FD3	駄目よ。{08:7A}に簡単にあきらめちゃ{02:08}‥\n<wait>					reads: 駄目よ。そんなに簡単にあきらめちゃ‥‥‥‥\n<wait>; reads: ：
-m/MS0034.BIN	0:02	63	1964	00	{04:FE}{08:62}不安が{08:52}{08:64}{08:63}の事は棚にあげてムキになっ{08:14}{02:08}‥\n<wait>					reads: は、不安がっていた自分の事は棚にあげてムキになっている‥‥‥‥\n<wait>; reads: そうね。きっと大丈夫よ。\n一緒に合格できるといいわね。\n<wait>
-m/MS0034.BIN	0:02	64	2036	00	{04:FE}{08:62}小さなため息を一つつくと、つぶや{08:64}。\n<wait>					reads: は、小さなため息を一つつくと、つぶやいた。\n<wait>; reads: ：
-m/MS0034.BIN	0:02	65	2089	00	{04:FE}：					reads: ：; reads: そんな！\n<wait>
-m/MS0034.BIN	0:02	66	2095	1FD3	結果は{08:72}{08:76}{08:6B}かしら？\n<wait>					reads: 結果は‥‥まだなのかしら？\n<wait>
-m/MS0034.BIN	0:02	67	2139	00	{04:FE}：					reads: ：; reads: が言うと、他の二人の受験生の視線が
-m/MS0034.BIN	0:02	68	2145	1FD3	そうよね。{08:56}、{08:73}に待た{03:0C}ると何だか不安ね。\n<wait>					reads: そうよね。でも、こんなに待たされると何だか不安ね。\n<wait>; reads: に集中した。\n<wait>
-m/MS0034.BIN	0:02	69	2200	00	{04:FE}：					reads: ：; reads: はまた、声をひそめて
-m/MS0034.BIN	0:02	70	2206	1FD3	他の{01:1C}が受か{08:52}、{08:63}{08:74}落ちるん{08:81}{08:25}か{08:6A}て想像{08:4A}{08:83}わ。\n					reads: 他のみんなが受かって、自分だけ落ちるんじゃないかなんて想像してしまうわ。\n; reads: に言った。\n<wait>
-m/MS0034.BIN	0:02	71	2274	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:02	72	2280	1FD3	だ{08:52}、{01:3B}の実技試験、私達途中で死ん{08:81}{08:51}で{08:80}？\nあの減点、凄く大きいん{08:81}{08:25}かと思{08:52}{02:08}\n		Sorry about that. It's so like me to bring down the mood...\n	v005		reads: だって、さっきの実技試験、私達途中で死んじゃったでしょう？\nあの減点、凄く大きいんじゃないかと思って‥‥‥\n; reads: 駄目よ。そんなに簡単にあきらめちゃ‥‥‥‥\n<wait>
-m/MS0034.BIN	0:02	73	2378	1FB2	{01:32}だ{08:52}		It's fine	v005		reads: 大丈夫だって; menu option, declared width 20 columns; reads: は、不安がっていた自分の事は棚にあげてムキになっている‥‥‥‥\n<wait>
-m/MS0034.BIN	0:02	74	2386	1FB2	心配性な{08:5F}ね		Yeah	v005		reads: 心配性なんだね; menu option, declared width 20 columns; reads: は、小さなため息を一つつくと、つぶやいた。\n<wait>
-m/MS0034.BIN	0:02	75	2424	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:02	76	2430	1FD3	{08:72}私{08:52}心配性{08:6B}よね。\nいけ{08:25}{08:52}思{08:52}{08:54}、ついつい{08:7A}事考えて{08:83}の。\n		At this rate, I'm gonna make you feel anxious too.\n	v005		reads: ‥‥私って心配性なのよね。\nいけないって思ってても、ついついそんな事考えてしまうの。\n; reads: 結果は‥‥まだなのかしら？\n<wait>
-m/MS0034.BIN	0:02	77	2508	1FB2	気を楽にしなきゃ		You could never	v005		menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:02	78	2526	1FB2	長生きし{08:25}よ		I guess	v005		reads: 長生きしないよ; menu option, declared width 20 columns; reads: そうよね。でも、こんなに待たされると何だか不安ね。\n<wait>
-m/MS0034.BIN	0:02	79	2586	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:02	80	2592	1FD3	そうよね。		Thank you... I hope we'll both be able to pass.\n<wait>	v005		reads: 他のみんなが受かって、自分だけ落ちるんじゃないかなんて想像してしまうわ。\n
-m/MS0034.BIN	0:02	81	2606	00	{04:FF}くんの言うとおりだわ。\n{08:5C}ちょ{08:53}気を楽にしなきゃ、や{08:52}いけ{08:25}わね。き{08:53}。\n<wait>					reads: くんの言うとおりだわ。\nもうちょっと気を楽にしなきゃ、やっていけないわね。きっと。\n<wait>; reads: ：
-m/MS0034.BIN	0:02	82	2692	00	{04:FE}：					reads: ：; reads: だって、さっきの実技試験、私達途中で死んじゃったでしょう？\nあの減点、凄く大きいんじゃないかと思って‥‥‥\n
-m/MS0034.BIN	0:02	83	2698	1FD3	ごめんな{08:49}。暗い話ししちゃ{08:52}。\n		Sorry...\n<wait>	v005		reads: ごめんなさい。暗い話ししちゃって。\n; reads: 大丈夫だって; menu option, declared width 20 columns
-m/MS0034.BIN	0:02	84	2745	1FB2	いや、{08:7F}よ					reads: いや、いいよ; menu option, declared width 20 columns; reads: 心配性なんだね
+m/MS0034.BIN	0:02	62	1917	1FD3	駄目よ。{08:7A}に簡単にあきらめちゃ{02:08}‥\n<wait>		You can't just give up like that...\n<wait>	v005		reads: 駄目よ。そんなに簡単にあきらめちゃ‥‥‥‥\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:02	63	1964	00	{04:FE}{08:62}不安が{08:52}{08:64}{08:63}の事は棚にあげてムキになっ{08:14}{02:08}‥\n<wait>		Yuuka sounds genuinely pissed at you, completely ignoring the fact that\nshe herself was saying pretty much exact same thing mere moments ago.\n<wait>	v005		reads: は、不安がっていた自分の事は棚にあげてムキになっている‥‥‥‥\n<wait>; reads: そうね。きっと大丈夫よ。\n一緒に合格できるといいわね。\n<wait> @refalign
+m/MS0034.BIN	0:02	64	2036	00	{04:FE}{08:62}小さなため息を一つつくと、つぶや{08:64}。\n<wait>		A short sigh leaves Yuuka's mouth as she mumbles something to herself\nin a voice too quiet for you to make out.\n<wait>	v005		reads: は、小さなため息を一つつくと、つぶやいた。\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:02	65	2089	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: そんな！\n<wait> @refalign
+m/MS0034.BIN	0:02	66	2095	1FD3	結果は{08:72}{08:76}{08:6B}かしら？\n<wait>		I wonder how long it's going to take...\n<wait>	v005		reads: 結果は‥‥まだなのかしら？\n<wait> @refalign
+m/MS0034.BIN	0:02	67	2139	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: が言うと、他の二人の受験生の視線が @refalign
+m/MS0034.BIN	0:02	68	2145	1FD3	そうよね。{08:56}、{08:73}に待た{03:0C}ると何だか不安ね。\n<wait>		Right. Still, I don't know.\nSomething about being kept waiting makes me feel a little nervous.\n<wait>	v005		reads: そうよね。でも、こんなに待たされると何だか不安ね。\n<wait>; reads: に集中した。\n<wait> @refalign
+m/MS0034.BIN	0:02	69	2200	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: はまた、声をひそめて @refalign
+m/MS0034.BIN	0:02	70	2206	1FD3	他の{01:1C}が受か{08:52}、{08:63}{08:74}落ちるん{08:81}{08:25}か{08:6A}て想像{08:4A}{08:83}わ。\n		Like, I can't help but imagine, what if it goes badly?\nWhat if everyone else passes, and we're the only ones who don't?\n	v005		reads: 他のみんなが受かって、自分だけ落ちるんじゃないかなんて想像してしまうわ。\n; reads: に言った。\n<wait> @refalign
+m/MS0034.BIN	0:02	71	2274	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:02	72	2280	1FD3	だ{08:52}、{01:3B}の実技試験、私達途中で死ん{08:81}{08:51}で{08:80}？\nあの減点、凄く大きいん{08:81}{08:25}かと思{08:52}{02:08}\n		We did die in the middle of the exam, I mean.\nThey're totally gonna give us a huge minus for that.\n	v005		reads: だって、さっきの実技試験、私達途中で死んじゃったでしょう？\nあの減点、凄く大きいんじゃないかと思って‥‥‥\n; reads: 駄目よ。そんなに簡単にあきらめちゃ‥‥‥‥\n<wait> @refalign
+m/MS0034.BIN	0:02	73	2378	1FB2	{01:32}だ{08:52}		It'll be fine	v005		reads: 大丈夫だって; menu option, declared width 20 columns; reads: は、不安がっていた自分の事は棚にあげてムキになっている‥‥‥‥\n<wait> @refalign
+m/MS0034.BIN	0:02	74	2386	1FB2	心配性な{08:5F}ね		You worry too much	v005		reads: 心配性なんだね; menu option, declared width 20 columns; reads: は、小さなため息を一つつくと、つぶやいた。\n<wait> @refalign
+m/MS0034.BIN	0:02	75	2424	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:02	76	2430	1FD3	{08:72}私{08:52}心配性{08:6B}よね。\nいけ{08:25}{08:52}思{08:52}{08:54}、ついつい{08:7A}事考えて{08:83}の。\n		...It's just how I am, I guess. I know it's bad to only focus\non the negative side of things, but I can't help it.\n	v005		reads: ‥‥私って心配性なのよね。\nいけないって思ってても、ついついそんな事考えてしまうの。\n; reads: 結果は‥‥まだなのかしら？\n<wait> @refalign
+m/MS0034.BIN	0:02	77	2508	1FB2	気を楽にしなきゃ		You've gotta relax	v005		menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:02	78	2526	1FB2	長生きし{08:25}よ		That's no way to live	v005		reads: 長生きしないよ; menu option, declared width 20 columns; reads: そうよね。でも、こんなに待たされると何だか不安ね。\n<wait> @refalign
+m/MS0034.BIN	0:02	79	2586	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:02	80	2592	1FD3	そうよね。		Yeah, you're right, Katsuragi-kun. I've gotta learn how to relax.\nI've gotta...\n<wait>	v005		reads: 他のみんなが受かって、自分だけ落ちるんじゃないかなんて想像してしまうわ。\n @refalign @refalign-merged
+m/MS0034.BIN	0:02	81	2606	00	{04:FF}くんの言うとおりだわ。\n{08:5C}ちょ{08:53}気を楽にしなきゃ、や{08:52}いけ{08:25}わね。き{08:53}。\n<wait>		 	v005		reads: くんの言うとおりだわ。\nもうちょっと気を楽にしなきゃ、やっていけないわね。きっと。\n<wait>; reads: ： @refalign @refalign-merged
+m/MS0034.BIN	0:02	82	2692	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: だって、さっきの実技試験、私達途中で死んじゃったでしょう？\nあの減点、凄く大きいんじゃないかと思って‥‥‥\n @refalign
+m/MS0034.BIN	0:02	83	2698	1FD3	ごめんな{08:49}。暗い話ししちゃ{08:52}。\n		Sorry about that. It's so like me to bring down the mood...\n	v005		reads: ごめんなさい。暗い話ししちゃって。\n; reads: 大丈夫だって; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:02	84	2745	1FB2	いや、{08:7F}よ		It's fine	v005		reads: いや、いいよ; menu option, declared width 20 columns; reads: 心配性なんだね @refalign
 m/MS0034.BIN	0:02	85	2757	1FB2	うん	うん				menu option, declared width 20 columns; reads: 
-m/MS0034.BIN	0:02	86	2813	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:02	87	2819	1FD3	ごめんな{08:49}。本当に{02:08}{02:08}\n<wait>					reads: ごめんなさい。本当に‥‥‥‥‥‥\n<wait>; reads: ‥‥私って心配性なのよね。\nいけないって思ってても、ついついそんな事考えてしまうの。\n
-m/MS0034.BIN	0:02	88	2850	1FD0	{08:4D}っきり、					reads: それっきり、; menu option, declared width 20 columns
-m/MS0034.BIN	0:02	89	2864	00	{04:FE}は黙{08:52}{08:1F}{02:08}‥\n<wait>					reads: は黙ってしまった‥‥‥‥\n<wait>; reads: 長生きしないよ; menu option, declared width 20 columns
+m/MS0034.BIN	0:02	86	2813	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:02	87	2819	1FD3	ごめんな{08:49}。本当に{02:08}{02:08}\n<wait>		Sorry. I really mean it...\n<wait>\nHaving said that, Yuuka falls silent.\n<wait>	v005		reads: ごめんなさい。本当に‥‥‥‥‥‥\n<wait>; reads: ‥‥私って心配性なのよね。\nいけないって思ってても、ついついそんな事考えてしまうの。\n @refalign @refalign-merged
+m/MS0034.BIN	0:02	88	2850	1FD0	{08:4D}っきり、		 	v005		reads: それっきり、; menu option, declared width 20 columns @refalign @refalign-merged
+m/MS0034.BIN	0:02	89	2864	00	{04:FE}は黙{08:52}{08:1F}{02:08}‥\n<wait>		 	v005		reads: は黙ってしまった‥‥‥‥\n<wait>; reads: 長生きしないよ; menu option, declared width 20 columns @refalign @refalign-merged
 m/MS0034.BIN	0:02	90	2916	00	{04:FE}：	{04:FE}：				reads: ：
-m/MS0034.BIN	0:02	91	2922	1FD3	うふふ{08:72}					reads: うふふ‥‥; reads: ：
-m/MS0034.BIN	0:02	92	2934	00	{04:FF}くん{08:52}、前時代的な事を言うのね。\n<wait>					reads: くんって、前時代的な事を言うのね。\n<wait>
-m/MS0034.BIN	0:02	93	2981	00	{04:FE}：					reads: ：; reads: くんの言うとおりだわ。\nもうちょっと気を楽にしなきゃ、やっていけないわね。きっと。\n<wait>
-m/MS0034.BIN	0:02	94	2987	1FD3	{08:56}、{08:79}通りね。\n何{08:56}気に{08:4A}{08:50}、寿命が縮まるか{08:5D}れ{08:25}わ。\n<wait>					reads: でも、その通りね。\n何でも気にしてたら、寿命が縮まるかもしれないわ。\n<wait>; reads: ：
-m/MS0034.BIN	0:02	95	3053	00	{04:FE}：					reads: ：; reads: ごめんなさい。暗い話ししちゃって。\n
-m/MS0034.BIN	0:02	96	3059	1FD3	{01:36}、結果発表{03:0C}るかしら？\n<wait>					reads: そろそろ、結果発表されるかしら？\n<wait>; reads: いや、いいよ; menu option, declared width 20 columns
-m/MS0034.BIN	0:02	97	3107	00	{04:FE}：					reads: ：; menu option, declared width 20 columns
+m/MS0034.BIN	0:02	91	2922	1FD3	うふふ{08:72}		Hehehe... You know, Katsuragi-kun.\nYou really do sound way older than you are at times.\n<wait>	v005		reads: うふふ‥‥; reads: ： @refalign @refalign-merged
+m/MS0034.BIN	0:02	92	2934	00	{04:FF}くん{08:52}、前時代的な事を言うのね。\n<wait>		 	v005		reads: くんって、前時代的な事を言うのね。\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:02	93	2981	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: くんの言うとおりだわ。\nもうちょっと気を楽にしなきゃ、やっていけないわね。きっと。\n<wait> @refalign
+m/MS0034.BIN	0:02	94	2987	1FD3	{08:56}、{08:79}通りね。\n何{08:56}気に{08:4A}{08:50}、寿命が縮まるか{08:5D}れ{08:25}わ。\n<wait>		But, you're right. A life spent worrying about every single detail\nis not a life lived well.\n<wait>	v005		reads: でも、その通りね。\n何でも気にしてたら、寿命が縮まるかもしれないわ。\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:02	95	3053	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: ごめんなさい。暗い話ししちゃって。\n @refalign
+m/MS0034.BIN	0:02	96	3059	1FD3	{01:36}、結果発表{03:0C}るかしら？\n<wait>		I wonder if we're gonna get the results soon.\n<wait>	v005		reads: そろそろ、結果発表されるかしら？\n<wait>; reads: いや、いいよ; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:02	97	3107	00	{04:FE}：		Yuuka:	v005		reads: ：; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:02	98	3113	1FD3	え{08:72}そう{08:72}ね。\nごめんな{08:49}。心配ばかり{08:4A}て{02:08}‥。\n<wait>	え{08:72}そう{08:72}ね。\nごめんな{08:49}。心配ばかり{08:4A}て{02:08}‥。\n<wait>				reads: え‥‥そう‥‥ね。\nごめんなさい。心配ばかりしてて‥‥‥‥。\n<wait>; reads: 山瀬勇
 m/MS0034.BIN	0:02	99	3173	00	{04:FE}：	{04:FE}：				reads: ：
-m/MS0034.BIN	0:02	100	3179	1FD3	{08:73}に心配{08:4A}{08:50}、					reads: こんなに心配してたら、; reads: ：
-m/MS0034.BIN	0:02	101	3197	00	{04:FF}くん{08:71}不安に{08:59}わよね。\n					reads: くんまで不安になるわよね。\n; reads: ごめんなさい。本当に‥‥‥‥‥‥\n<wait>
-m/MS0034.BIN	0:02	102	3238	1FB2	{08:7A}事無いよ					reads: そんな事無いよ; menu option, declared width 20 columns; reads: それっきり、
-m/MS0034.BIN	0:02	103	3250	1FB2	まあね					menu option, declared width 20 columns; reads: は黙ってしまった‥‥‥‥\n<wait>
-m/MS0034.BIN	0:02	104	3304	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:02	105	3310	1FD3	{01:2A}{02:08}{08:72}\n一緒に合格できると{08:7F}ね。\n<wait>					reads: ありがとう‥‥‥‥‥\n一緒に合格できるといいね。\n<wait>; reads: うふふ‥‥
-m/MS0034.BIN	0:02	106	3365	00	{04:FE}：					reads: ：; reads: くんって、前時代的な事を言うのね。\n<wait>
-m/MS0034.BIN	0:02	107	3371	1FD3	ごめんな{08:49}{02:08}{08:72}\n<wait>					reads: ごめんなさい‥‥‥‥‥\n<wait>; reads: ：
-m/MS0034.BIN	0:03	0	0	DATA	あ、		Ah, Katsuragi-kun!\n<wait>	v005		
+m/MS0034.BIN	0:02	100	3179	1FD3	{08:73}に心配{08:4A}{08:50}、		At this rate, I'm gonna make you feel anxious too.\n	v005		reads: こんなに心配してたら、; reads: ： @refalign @refalign-merged
+m/MS0034.BIN	0:02	101	3197	00	{04:FF}くん{08:71}不安に{08:59}わよね。\n		 	v005		reads: くんまで不安になるわよね。\n; reads: ごめんなさい。本当に‥‥‥‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:02	102	3238	1FB2	{08:7A}事無いよ		You could never	v005		reads: そんな事無いよ; menu option, declared width 20 columns; reads: それっきり、 @refalign
+m/MS0034.BIN	0:02	103	3250	1FB2	まあね		I guess	v005		menu option, declared width 20 columns; reads: は黙ってしまった‥‥‥‥\n<wait> @refalign
+m/MS0034.BIN	0:02	104	3304	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:02	105	3310	1FD3	{01:2A}{02:08}{08:72}\n一緒に合格できると{08:7F}ね。\n<wait>		Thank you... I hope we'll both be able to pass.\n<wait>	v005		reads: ありがとう‥‥‥‥‥\n一緒に合格できるといいね。\n<wait>; reads: うふふ‥‥ @refalign
+m/MS0034.BIN	0:02	106	3365	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: くんって、前時代的な事を言うのね。\n<wait> @refalign
+m/MS0034.BIN	0:02	107	3371	1FD3	ごめんな{08:49}{02:08}{08:72}\n<wait>		Sorry...\n<wait>	v005		reads: ごめんなさい‥‥‥‥‥\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:03	0	0	DATA	あ、		Ah, Katsuragi-kun!\n<wait>	v005		@refalign
 m/MS0034.BIN	0:03	1	8	00	{04:FF}くん！\n<wait>					reads: くん！\n<wait>
-m/MS0034.BIN	0:03	2	29	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:03	3	35	1FD3	ねぇ、		Was your name called after I left?\nAs for me, I was summoned to the Devil Buster office.\n<wait>	v005		
-m/MS0034.BIN	0:03	4	45	00	{04:FF}くんもあの後、会議室{08:42}呼び出{03:0C}たの？\n私、{02:00}詰所に呼び出{03:0C}たで{08:80}？\n<wait>					reads: くんもあの後、会議室から呼び出されたの？\n私、デビルバスター詰所に呼び出されたでしょう？\n<wait>
-m/MS0034.BIN	0:03	5	125	00	{04:FE}{08:62}興奮{08:4B}様子で話{08:13}。\n<wait>					reads: は、興奮した様子で話している。\n<wait>
-m/MS0034.BIN	0:03	6	160	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:03	7	166	1FD3	そこで何があ{08:51}と思う？\n		Something has to have happened.\n	v005		reads: そこで何があったと思う？\n
-m/MS0034.BIN	0:03	8	205	1FB2	何があ{08:51}の？		What happened then?	v005		reads: 何があったの？; menu option, declared width 20 columns
-m/MS0034.BIN	0:03	9	219	1FB2	さあ？		Oh, were you?	v005		menu option, declared width 20 columns
+m/MS0034.BIN	0:03	2	29	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:03	3	35	1FD3	ねぇ、		Was your name called after I left?\nAs for me, I was summoned to the Devil Buster office.\n<wait>\nYuuka sounds like she's having hard time containing herself.\n<wait>	v005		@refalign @refalign-merged
+m/MS0034.BIN	0:03	4	45	00	{04:FF}くんもあの後、会議室{08:42}呼び出{03:0C}たの？\n私、{02:00}詰所に呼び出{03:0C}たで{08:80}？\n<wait>		 	v005		reads: くんもあの後、会議室から呼び出されたの？\n私、デビルバスター詰所に呼び出されたでしょう？\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:03	5	125	00	{04:FE}{08:62}興奮{08:4B}様子で話{08:13}。\n<wait>		 	v005		reads: は、興奮した様子で話している。\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:03	6	160	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:03	7	166	1FD3	そこで何があ{08:51}と思う？\n		Something has to have happened.\n	v005		reads: そこで何があったと思う？\n @refalign
+m/MS0034.BIN	0:03	8	205	1FB2	何があ{08:51}の？		What happened then?	v005		reads: 何があったの？; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:03	9	219	1FB2	さあ？		Oh, were you?	v005		menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:03	10	251	00	{04:FF}のいささか乗り気で{08:25}返事に、	{04:FF}のいささか乗り気で{08:25}返事に、				reads: のいささか乗り気でない返事に、; reads: 山瀬勇
 m/MS0034.BIN	0:03	11	285	00	{04:FE}の瞳は僅かに不満げな色を映{08:4B}。\n<wait>	{04:FE}の瞳は僅かに不満げな色を映{08:4B}。\n<wait>				reads: の瞳は僅かに不満げな色を映した。\n<wait>
-m/MS0034.BIN	0:03	12	324	1FBA	{08:8F}、{08:4D}も{08:5B}僅かの間の事で、再び		Regardless, she quickly continues explaining.\n<wait>	v005		reads: だが、それもまた僅かの間の事で、再び; reads: のいささか乗り気でない返事に、
-m/MS0034.BIN	0:03	13	358	00	{04:FE}は話し始めた。\n<wait>					reads: は話し始めた。\n<wait>; reads: の瞳は僅かに不満げな色を映した。\n<wait>
-m/MS0034.BIN	0:03	14	387	00	{04:FE}：					reads: ：; reads: だが、それもまた僅かの間の事で、再び
-m/MS0034.BIN	0:03	15	393	1FD3	{08:4D}がね、{02:00}詰所{08:71}行っ{08:50}、{08:0B}が{08:64}のよ！\n試験中に出た、マイナーデヴィルみ{08:4E}{08:6B}が３体くらい{02:08}\n		In the next moment, one of the demons charged me!\nI hate to admit it, but... I'm pretty sure that I screamed...\n	v005		reads: それがね、デビルバスター詰所まで行ったら、悪魔がいたのよ！\n試験中に出た、マイナーデヴィルみたいなのが３体くらい‥‥‥\n; reads: は話し始めた。\n<wait>
-m/MS0034.BIN	0:03	16	497	1FB2	えっ！		Haha	v005		menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:03	17	505	1FB2	ふ～ん		And? What next?	v005		menu option, declared width 20 columns; reads: それがね、デビルバスター詰所まで行ったら、悪魔がいたのよ！\n試験中に出た、マイナーデヴィルみたいなのが３体くらい‥‥‥\n
-m/MS0034.BIN	0:03	18	537	00	{04:FE}：					reads: ：; menu option, declared width 20 columns
-m/MS0034.BIN	0:03	19	543	1FD3	{02:00}隊員の人達は乱戦に{08:1A}て、倒れ{08:14}人も{08:40}し{08:72}\n私、{08:90}{08:4B}ら{08:7F}か分{08:42}なくて{02:08}{08:72}\n<wait>		I totally panicked, grabbed a knife off the floor,\nand slashed at the demon.\n<wait>	v005		reads: デビルバスター隊員の人達は乱戦になってて、倒れている人もいるし‥‥\n私、どうしたらいいか分からなくて‥‥‥‥‥\n<wait>; menu option, declared width 20 columns
+m/MS0034.BIN	0:03	12	324	1FBA	{08:8F}、{08:4D}も{08:5B}僅かの間の事で、再び		 	v005		reads: だが、それもまた僅かの間の事で、再び; reads: のいささか乗り気でない返事に、 @refalign @refalign-merged
+m/MS0034.BIN	0:03	13	358	00	{04:FE}は話し始めた。\n<wait>		 	v005		reads: は話し始めた。\n<wait>; reads: の瞳は僅かに不満げな色を映した。\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:03	14	387	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: だが、それもまた僅かの間の事で、再び @refalign
+m/MS0034.BIN	0:03	15	393	1FD3	{08:4D}がね、{02:00}詰所{08:71}行っ{08:50}、{08:0B}が{08:64}のよ！\n試験中に出た、マイナーデヴィルみ{08:4E}{08:6B}が３体くらい{02:08}\n		Once I got there, there was a demon! Three of them, even.\nThey were the same type of Minor Devil I've fought in training.\n	v005		reads: それがね、デビルバスター詰所まで行ったら、悪魔がいたのよ！\n試験中に出た、マイナーデヴィルみたいなのが３体くらい‥‥‥\n; reads: は話し始めた。\n<wait> @refalign
+m/MS0034.BIN	0:03	16	497	1FB2	えっ！		Really!?	v005		menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:03	17	505	1FB2	ふ～ん		Huh	v005		menu option, declared width 20 columns; reads: それがね、デビルバスター詰所まで行ったら、悪魔がいたのよ！\n試験中に出た、マイナーデヴィルみたいなのが３体くらい‥‥‥\n @refalign
+m/MS0034.BIN	0:03	18	537	00	{04:FE}：		Yuuka:	v005		reads: ：; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:03	19	543	1FD3	{02:00}隊員の人達は乱戦に{08:1A}て、倒れ{08:14}人も{08:40}し{08:72}\n私、{08:90}{08:4B}ら{08:7F}か分{08:42}なくて{02:08}{08:72}\n<wait>		I had a look around, and all I saw were dead Devil Busters.\nI had no idea what to do. I felt so helpless...\n<wait>	v005		reads: デビルバスター隊員の人達は乱戦になってて、倒れている人もいるし‥‥\n私、どうしたらいいか分からなくて‥‥‥‥‥\n<wait>; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:03	20	627	00	{04:FE}：	{04:FE}：				reads: ：
-m/MS0034.BIN	0:03	21	633	1FD3	そう{08:4B}ら、{08:0B}が一匹こっちに向か{08:52}{08:1E}の！\n私思わず{08:72}悲鳴をあげちゃ{08:52}{02:08}\n		Really? Are you the type that doesn't react to those sorts of things?\n	v005		reads: そうしたら、悪魔が一匹こっちに向かってきたの！\n私思わず‥‥悲鳴をあげちゃって‥‥‥\n; reads: ：
-m/MS0034.BIN	0:03	22	717	1FB2	ほほう		Actually...	v005		menu option, declared width 20 columns; reads: デビルバスター隊員の人達は乱戦になってて、倒れている人もいるし‥‥\n私、どうしたらいいか分からなくて‥‥‥‥‥\n<wait>
-m/MS0034.BIN	0:03	23	725	1FB2	{08:4D}{08:42}？		I suppose	v005		reads: それから？; menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:03	24	757	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: そうしたら、悪魔が一匹こっちに向かってきたの！\n私思わず‥‥悲鳴をあげちゃって‥‥‥\n
-m/MS0034.BIN	0:03	25	763	1FD3	側に落ちてたナイフで、{08:5C}、夢中に{08:1A}{03:12}つ{08:43}わ。\n<wait>		Huh. Well, in that case, you would've passed no problem.\nI'm honestly a bit jealous. I feel like I totally blew it...\n<wait>	v005		reads: 側に落ちてたナイフで、もう、夢中になって切りつけたわ。\n<wait>; menu option, declared width 20 columns
-m/MS0034.BIN	0:03	26	820	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: それから？; menu option, declared width 20 columns
+m/MS0034.BIN	0:03	21	633	1FD3	そう{08:4B}ら、{08:0B}が一匹こっちに向か{08:52}{08:1E}の！\n私思わず{08:72}悲鳴をあげちゃ{08:52}{02:08}\n		In the next moment, one of the demons charged me!\nI hate to admit it, but... I'm pretty sure that I screamed...\n	v005		reads: そうしたら、悪魔が一匹こっちに向かってきたの！\n私思わず‥‥悲鳴をあげちゃって‥‥‥\n; reads: ： @refalign
+m/MS0034.BIN	0:03	22	717	1FB2	ほほう		Haha	v005		menu option, declared width 20 columns; reads: デビルバスター隊員の人達は乱戦になってて、倒れている人もいるし‥‥\n私、どうしたらいいか分からなくて‥‥‥‥‥\n<wait> @refalign
+m/MS0034.BIN	0:03	23	725	1FB2	{08:4D}{08:42}？		And? What next?	v005		reads: それから？; menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:03	24	757	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: そうしたら、悪魔が一匹こっちに向かってきたの！\n私思わず‥‥悲鳴をあげちゃって‥‥‥\n @refalign
+m/MS0034.BIN	0:03	25	763	1FD3	側に落ちてたナイフで、{08:5C}、夢中に{08:1A}{03:12}つ{08:43}わ。\n<wait>		I totally panicked, grabbed a knife off the floor,\nand slashed at the demon.\n<wait>	v005		reads: 側に落ちてたナイフで、もう、夢中になって切りつけたわ。\n<wait>; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:03	26	820	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: それから？; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:03	27	826	1FD3	ナイフが当た{08:51}と思{08:51}瞬間に、{08:79}{08:0B}は消えて{08:1F}の。\n<wait>	ナイフが当た{08:51}と思{08:51}瞬間に、{08:79}{08:0B}は消えて{08:1F}の。\n<wait>	I'm just glad that my heart didn't stop.\n	v005		reads: ナイフが当たったと思った瞬間に、その悪魔は消えてしまったの。\n<wait>; reads: 山瀬勇
 m/MS0034.BIN	0:03	28	885	00	{04:FE}：	{04:FE}：	Yuuka:	v005		reads: ：
-m/MS0034.BIN	0:03	29	891	1FD3	そう{08:4B}ら、まわりの{02:00}隊員の人達が一斉に戦闘をやめて、\n<wait>”{08:48}も、試験の一環だ{08:51}{08:5F}”{08:52}言うのよ。\n<wait>		Really? Something similar also happened to you?\n<wait>	v005		reads: そうしたら、まわりのデビルバスター隊員の人達が一斉に戦闘をやめて、\n<wait>”これも、試験の一環だったんだ”って言うのよ。\n<wait>; reads: ：
-m/MS0034.BIN	0:03	30	999	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 側に落ちてたナイフで、もう、夢中になって切りつけたわ。\n<wait>
-m/MS0034.BIN	0:03	31	1005	1FD3	緊急時の行動を見る為だ{08:52}、言わ{08:60}{08:84}{02:08}\n人が悪いわよね。\n		Now I'm curious. Tell me everything.\n	v005		reads: 緊急時の行動を見る為だって、言われたけど‥‥‥\n人が悪いわよね。\n; reads: ：
-m/MS0034.BIN	0:03	32	1075	1FB2	{01:29}ね		Explain	v005		reads: そうだね; menu option, declared width 20 columns; reads: ナイフが当たったと思った瞬間に、その悪魔は消えてしまったの。\n<wait>
-m/MS0034.BIN	0:03	33	1081	1FB2	そうかなぁ		Refuse	v005		menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:03	34	1117	00	{04:FE}：					reads: ：; reads: そうしたら、まわりのデビルバスター隊員の人達が一斉に戦闘をやめて、\n<wait>”これも、試験の一環だったんだ”って言うのよ。\n<wait>
-m/MS0034.BIN	0:03	35	1123	1FD3	やっぱりそう思うわよね。\n何も、あんなやり方しなく{08:54}{08:7F}と思うわ。\n<wait>					reads: やっぱりそう思うわよね。\n何も、あんなやり方しなくてもいいと思うわ。\n<wait>; reads: ：
-m/MS0034.BIN	0:03	36	1221	00	{04:FE}：					reads: ：; reads: 緊急時の行動を見る為だって、言われたけど‥‥‥\n人が悪いわよね。\n
-m/MS0034.BIN	0:03	37	1227	1FD3	あっ！　{08:65}だわ！\n結果かしら{02:08}‥					reads: あっ！　通信だわ！\n結果かしら‥‥‥‥; reads: そうだね; menu option, declared width 20 columns
-m/MS0034.BIN	0:03	38	1262	00	{04:FF}くんちょ{08:53}待{08:52}てね！\n<wait>					reads: くんちょっと待っててね！\n<wait>; menu option, declared width 20 columns
+m/MS0034.BIN	0:03	29	891	1FD3	そう{08:4B}ら、まわりの{02:00}隊員の人達が一斉に戦闘をやめて、\n<wait>”{08:48}も、試験の一環だ{08:51}{08:5F}”{08:52}言うのよ。\n<wait>		The Devil Busters I thought had been dead also got up.\n<wait>"This was the final exam", one of them told me.\nApparently, they were testing how I'd react under pressure.\n<wait>	v005		reads: そうしたら、まわりのデビルバスター隊員の人達が一斉に戦闘をやめて、\n<wait>”これも、試験の一環だったんだ”って言うのよ。\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:03	30	999	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 側に落ちてたナイフで、もう、夢中になって切りつけたわ。\n<wait> @refalign
+m/MS0034.BIN	0:03	31	1005	1FD3	緊急時の行動を見る為だ{08:52}、言わ{08:60}{08:84}{02:08}\n人が悪いわよね。\n		While I do get the rationale behind it, I'd be lying if I said\nthat I didn't want to punch that man in the face...\n	v005		reads: 緊急時の行動を見る為だって、言われたけど‥‥‥\n人が悪いわよね。\n; reads: ： @refalign
+m/MS0034.BIN	0:03	32	1075	1FB2	{01:29}ね		I feel you	v005		reads: そうだね; menu option, declared width 20 columns; reads: ナイフが当たったと思った瞬間に、その悪魔は消えてしまったの。\n<wait> @refalign
+m/MS0034.BIN	0:03	33	1081	1FB2	そうかなぁ		I don't know...	v005		menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:03	34	1117	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: そうしたら、まわりのデビルバスター隊員の人達が一斉に戦闘をやめて、\n<wait>”これも、試験の一環だったんだ”って言うのよ。\n<wait> @refalign
+m/MS0034.BIN	0:03	35	1123	1FD3	やっぱりそう思うわよね。\n何も、あんなやり方しなく{08:54}{08:7F}と思うわ。\n<wait>		Right? There at least has to be a better way to go about it.\n<wait>	v005		reads: やっぱりそう思うわよね。\n何も、あんなやり方しなくてもいいと思うわ。\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:03	36	1221	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 緊急時の行動を見る為だって、言われたけど‥‥‥\n人が悪いわよね。\n @refalign
+m/MS0034.BIN	0:03	37	1227	1FD3	あっ！　{08:65}だわ！\n結果かしら{02:08}‥		Ah! A new message! It could be the results...\nSorry, Katsuragi-kun. This will take just a moment.\n<wait>\nHaving said that, Yuuka rushes over to her computer.\n<wait>	v005		reads: あっ！　通信だわ！\n結果かしら‥‥‥‥; reads: そうだね; menu option, declared width 20 columns @refalign @refalign-merged
+m/MS0034.BIN	0:03	38	1262	00	{04:FF}くんちょ{08:53}待{08:52}てね！\n<wait>		 	v005		reads: くんちょっと待っててね！\n<wait>; menu option, declared width 20 columns @refalign @refalign-merged
 m/MS0034.BIN	0:03	39	1297	1FD0	そう言{08:52}	そう言{08:52}	You explain in great detail how your test went.\n<wait>	v005		reads: そう言って
-m/MS0034.BIN	0:03	40	1309	00	{04:FE}{08:62}{08:05}ーの前へ駆けて行{08:51}。\n<wait>					reads: は、コンピューターの前へ駆けて行った。\n<wait>; reads: ：
-m/MS0034.BIN	0:03	41	1365	00	{04:FE}：					reads: ：; reads: やっぱりそう思うわよね。\n何も、あんなやり方しなくてもいいと思うわ。\n<wait>
-m/MS0034.BIN	0:03	42	1371	1FD3	試験結果{08:81}{08:19}わ{02:08}‥。\n結果の発表{08:52}遅いのね。\n<wait>		Huh...\n<wait>	v005		reads: 試験結果じゃなかったわ‥‥‥‥。\n結果の発表って遅いのね。\n<wait>; reads: ：
-m/MS0034.BIN	0:03	43	1427	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: あっ！　通信だわ！\n結果かしら‥‥‥‥
-m/MS0034.BIN	0:03	44	1433	1FD3	あっ、		I honestly feel like yours was tougher.\n<wait>	v005		reads: くんちょっと待っててね！\n<wait>
-m/MS0034.BIN	0:03	45	1443	00	{04:FF}くんも、結果は{08:76}{08:6A}で{08:80}？\nごめんな{08:49}。話に付き合わ{08:67}しま{08:52}{02:08}‥。\n<wait>		Yuuka:	v005		reads: くんも、結果はまだなんでしょう？\nごめんなさい。話に付き合わせてしまって‥‥‥‥。\n<wait>; reads: そう言って
-m/MS0034.BIN	0:03	46	1521	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: は、コンピューターの前へ駆けて行った。\n<wait>
-m/MS0034.BIN	0:03	47	1527	1FD3	{08:4D}{08:81}あ。お互い合格でき{08:2B}と{08:7F}わね。\n		Katsuragi-kun, you meanie! Could you please tell me? Pleeease?\n	v005		reads: それじゃあ。お互い合格できてるといいわね。\n; reads: ：
-m/MS0034.BIN	0:03	48	1571	00	{04:FE}：					reads: ：; reads: 試験結果じゃなかったわ‥‥‥‥。\n結果の発表って遅いのね。\n<wait>
-m/MS0034.BIN	0:03	49	1577	1FD3	いきなりやら{08:19}ら、緊急時の行動を見る意味が無い{08:52}事？\n<wait>					reads: いきなりやらなかったら、緊急時の行動を見る意味が無いって事？\n<wait>; reads: ：
-m/MS0034.BIN	0:03	50	1642	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:03	51	1648	1FD3	{02:08}そうね{02:08}\n{08:4D}{08:62}そうな{08:5F}{08:84}{02:08}‥\n<wait>					reads: ‥‥‥そうね‥‥‥\nそれは、そうなんだけど‥‥‥‥\n<wait>; reads: くんも、結果はまだなんでしょう？\nごめんなさい。話に付き合わせてしまって‥‥‥‥。\n<wait>
-m/MS0034.BIN	0:03	52	1690	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:03	53	1696	1FD3	{08:56}、やっぱり、あんな事しなく{08:54}{08:72}{08:52}思{08:52}{08:83}わ。\n<wait>					reads: でも、やっぱり、あんな事しなくても‥‥って思ってしまうわ。\n<wait>; reads: それじゃあ。お互い合格できてるといいわね。\n
-m/MS0034.BIN	0:03	54	1758	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:03	55	1768	00	{04:FF}くん{02:08}驚か{08:25}の？\n					reads: くん‥‥‥驚かないの？\n; reads: いきなりやらなかったら、緊急時の行動を見る意味が無いって事？\n<wait>
-m/MS0034.BIN	0:03	56	1803	1FB2	うん		Okay, okay	v005		menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:03	57	1809	1FB2	僕も似た{08:69}な目に‥		Absolutely	v005		reads: 僕も似たような目に‥; menu option, declared width 20 columns; reads: ‥‥‥そうね‥‥‥\nそれは、そうなんだけど‥‥‥‥\n<wait>
-m/MS0034.BIN	0:03	58	1853	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:03	59	1859	1FD3	何故{08:72}？\n		Huh...\n<wait>	v005		reads: 何故‥‥？\n; reads: でも、やっぱり、あんな事しなくても‥‥って思ってしまうわ。\n<wait>
-m/MS0034.BIN	0:03	60	1872	00	{04:FF}くん{08:52}、物事に動じ{08:25}タイプ{08:6B}？\n					reads: くんって、物事に動じないタイプなの？\n; reads: ：
-m/MS0034.BIN	0:03	61	1921	1FB2	僕も似た{08:69}な目に‥					reads: 僕も似たような目に‥; menu option, declared width 20 columns; reads: くん‥‥‥驚かないの？\n
-m/MS0034.BIN	0:03	62	1941	1FB2	まあね					menu option, declared width 20 columns
-m/MS0034.BIN	0:03	63	1973	00	{04:FE}：					reads: ：; reads: 僕も似たような目に‥; menu option, declared width 20 columns
+m/MS0034.BIN	0:03	40	1309	00	{04:FE}{08:62}{08:05}ーの前へ駆けて行{08:51}。\n<wait>		 	v005		reads: は、コンピューターの前へ駆けて行った。\n<wait>; reads: ： @refalign @refalign-merged
+m/MS0034.BIN	0:03	41	1365	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: やっぱりそう思うわよね。\n何も、あんなやり方しなくてもいいと思うわ。\n<wait> @refalign
+m/MS0034.BIN	0:03	42	1371	1FD3	試験結果{08:81}{08:19}わ{02:08}‥。\n結果の発表{08:52}遅いのね。\n<wait>		Nope, false alarm. Damn... They sure are taking their sweet time.\n<wait>	v005		reads: 試験結果じゃなかったわ‥‥‥‥。\n結果の発表って遅いのね。\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:03	43	1427	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: あっ！　通信だわ！\n結果かしら‥‥‥‥ @refalign
+m/MS0034.BIN	0:03	44	1433	1FD3	あっ、		Ah, right. You're also waiting on yours. Sorry, sorry.\nI shouldn't be making you waste your time like this...\n<wait>	v005		reads: くんちょっと待っててね！\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:03	45	1443	00	{04:FF}くんも、結果は{08:76}{08:6A}で{08:80}？\nごめんな{08:49}。話に付き合わ{08:67}しま{08:52}{02:08}‥。\n<wait>		 	v005		reads: くんも、結果はまだなんでしょう？\nごめんなさい。話に付き合わせてしまって‥‥‥‥。\n<wait>; reads: そう言って @refalign @refalign-merged
+m/MS0034.BIN	0:03	46	1521	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: は、コンピューターの前へ駆けて行った。\n<wait> @refalign
+m/MS0034.BIN	0:03	47	1527	1FD3	{08:4D}{08:81}あ。お互い合格でき{08:2B}と{08:7F}わね。\n		I hope that we both pass. That'd be awesome.\n	v005		reads: それじゃあ。お互い合格できてるといいわね。\n; reads: ： @refalign
+m/MS0034.BIN	0:03	48	1571	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 試験結果じゃなかったわ‥‥‥‥。\n結果の発表って遅いのね。\n<wait> @refalign
+m/MS0034.BIN	0:03	49	1577	1FD3	いきなりやら{08:19}ら、緊急時の行動を見る意味が無い{08:52}事？\n<wait>		You're saying that if they'd told me about it beforehand,\nit wouldn't have been much of a test?\n<wait>	v005		reads: いきなりやらなかったら、緊急時の行動を見る意味が無いって事？\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:03	50	1642	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:03	51	1648	1FD3	{02:08}そうね{02:08}\n{08:4D}{08:62}そうな{08:5F}{08:84}{02:08}‥\n<wait>		Right... Yeah, that's definitely true.\n<wait>	v005		reads: ‥‥‥そうね‥‥‥\nそれは、そうなんだけど‥‥‥‥\n<wait>; reads: くんも、結果はまだなんでしょう？\nごめんなさい。話に付き合わせてしまって‥‥‥‥。\n<wait> @refalign
+m/MS0034.BIN	0:03	52	1690	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:03	53	1696	1FD3	{08:56}、やっぱり、あんな事しなく{08:54}{08:72}{08:52}思{08:52}{08:83}わ。\n<wait>		Even then, I have to imagine that there's a better way to do it...\n<wait>	v005		reads: でも、やっぱり、あんな事しなくても‥‥って思ってしまうわ。\n<wait>; reads: それじゃあ。お互い合格できてるといいわね。\n @refalign
+m/MS0034.BIN	0:03	54	1758	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:03	55	1768	00	{04:FF}くん{02:08}驚か{08:25}の？\n		Katsuragi-kun. Are you saying that you wouldn't have been scared?\n	v005		reads: くん‥‥‥驚かないの？\n; reads: いきなりやらなかったら、緊急時の行動を見る意味が無いって事？\n<wait> @refalign
+m/MS0034.BIN	0:03	56	1803	1FB2	うん		Nope	v005		menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:03	57	1809	1FB2	僕も似た{08:69}な目に‥		Actually...	v005		reads: 僕も似たような目に‥; menu option, declared width 20 columns; reads: ‥‥‥そうね‥‥‥\nそれは、そうなんだけど‥‥‥‥\n<wait> @refalign
+m/MS0034.BIN	0:03	58	1853	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:03	59	1859	1FD3	何故{08:72}？\n		Really? Are you the type that doesn't react to those sorts of things?\n	v005		reads: 何故‥‥？\n; reads: でも、やっぱり、あんな事しなくても‥‥って思ってしまうわ。\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:03	60	1872	00	{04:FF}くん{08:52}、物事に動じ{08:25}タイプ{08:6B}？\n		 	v005		reads: くんって、物事に動じないタイプなの？\n; reads: ： @refalign @refalign-merged
+m/MS0034.BIN	0:03	61	1921	1FB2	僕も似た{08:69}な目に‥		Actually...	v005		reads: 僕も似たような目に‥; menu option, declared width 20 columns; reads: くん‥‥‥驚かないの？\n @refalign
+m/MS0034.BIN	0:03	62	1941	1FB2	まあね		I suppose	v005		menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:03	63	1973	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 僕も似たような目に‥; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:03	64	1979	1FD3	{08:4D}{08:7D}、あの試験は{01:32}ね。\n羨ましいわ。私{08:6A}かすっかり動転しちゃ{08:52}。\n<wait>	{08:4D}{08:7D}、あの試験は{01:32}ね。\n羨ましいわ。私{08:6A}かすっかり動転しちゃ{08:52}。\n<wait>	Well, if you don't want to talk about it, I can't make you.\n<wait>	v005		reads: それなら、あの試験は大丈夫ね。\n羨ましいわ。私なんかすっかり動転しちゃって。\n<wait>; reads: 山田
-m/MS0034.BIN	0:03	65	2055	00	{04:FE}：		Yuuka:	v005		reads: ：
-m/MS0034.BIN	0:03	66	2061	1FD3	{08:4D}に{08:4A}も、心臓が止まるかと思っちゃ{08:51}わ。\n		Anyway, I wonder when we are going to get the results...\n<wait>	v005		reads: それにしても、心臓が止まるかと思っちゃったわ。\n; reads: 何故‥‥？\n
-m/MS0034.BIN	0:03	67	2113	00	{04:FE}：					reads: ：; reads: くんって、物事に動じないタイプなの？\n
-m/MS0034.BIN	0:03	68	2119	1FD3	そう{08:6B}。					reads: そうなの。; reads: 僕も似たような目に‥; menu option, declared width 20 columns
-m/MS0034.BIN	0:03	69	2131	00	{04:FF}くんも、似た{08:69}な事をや{08:51}のね。\n<wait>					reads: くんも、似たような事をやったのね。\n<wait>; menu option, declared width 20 columns
+m/MS0034.BIN	0:03	65	2055	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:03	66	2061	1FD3	{08:4D}に{08:4A}も、心臓が止まるかと思っちゃ{08:51}わ。\n		I'm just glad that my heart didn't stop.\n	v005		reads: それにしても、心臓が止まるかと思っちゃったわ。\n; reads: 何故‥‥？\n @refalign
+m/MS0034.BIN	0:03	67	2113	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: くんって、物事に動じないタイプなの？\n @refalign
+m/MS0034.BIN	0:03	68	2119	1FD3	そう{08:6B}。		Really? Something similar also happened to you?\n<wait>	v005		reads: そうなの。; reads: 僕も似たような目に‥; menu option, declared width 20 columns @refalign @refalign-merged
+m/MS0034.BIN	0:03	69	2131	00	{04:FF}くんも、似た{08:69}な事をや{08:51}のね。\n<wait>		 	v005		reads: くんも、似たような事をやったのね。\n<wait>; menu option, declared width 20 columns @refalign @refalign-merged
 m/MS0034.BIN	0:03	70	2176	00	{04:FE}：	{04:FE}：				reads: ：; reads: 山瀬勇
 m/MS0034.BIN	0:03	71	2186	00	{04:FF}くん{08:62}どんな事をや{08:51}の？\n	{04:FF}くん{08:62}どんな事をや{08:51}の？\n				reads: くんは、どんな事をやったの？\n
-m/MS0034.BIN	0:03	72	2229	1FB2	内容を話す					menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:03	73	2241	1FB2	教えてあげ{08:25}よ					reads: 教えてあげないよ; menu option, declared width 20 columns; reads: それなら、あの試験は大丈夫ね。\n羨ましいわ。私なんかすっかり動転しちゃって。\n<wait>
-m/MS0034.BIN	0:03	74	2281	00	{04:FF}{08:62}{08:63}の試験が{08:6D}{08:69}な{08:5E}であ{08:51}かを、					reads: は、自分の試験がどのようなものであったかを、; reads: ：
-m/MS0034.BIN	0:03	75	2319	00	{04:FE}に、余す{08:87}無く語{08:51}。\n<wait>					reads: に、余すところ無く語った。\n<wait>; reads: それにしても、心臓が止まるかと思っちゃったわ。\n
-m/MS0034.BIN	0:03	76	2354	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:03	77	2360	1FD3	まあ{08:72}{01:29}{08:51}の{02:08}‥\n<wait>					reads: まあ‥‥そうだったの‥‥‥‥\n<wait>; reads: そうなの。
-m/MS0034.BIN	0:03	78	2389	00	{04:FE}：					reads: ：; reads: くんも、似たような事をやったのね。\n<wait>
-m/MS0034.BIN	0:03	79	2399	00	{04:FF}くんの方が難しそうね。\n<wait>					reads: くんの方が難しそうね。\n<wait>; reads: ：
-m/MS0034.BIN	0:03	80	2436	00	{04:FE}：					reads: ：; reads: くんは、どんな事をやったの？\n
-m/MS0034.BIN	0:03	81	2453	00	{04:FE}：					reads: ：; menu option, declared width 20 columns
-m/MS0034.BIN	0:03	82	2459	1FD3	{08:5C}！　					reads: もう！　; reads: 教えてあげないよ; menu option, declared width 20 columns
+m/MS0034.BIN	0:03	72	2229	1FB2	内容を話す		Explain	v005		menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:03	73	2241	1FB2	教えてあげ{08:25}よ		Refuse	v005		reads: 教えてあげないよ; menu option, declared width 20 columns; reads: それなら、あの試験は大丈夫ね。\n羨ましいわ。私なんかすっかり動転しちゃって。\n<wait> @refalign
+m/MS0034.BIN	0:03	74	2281	00	{04:FF}{08:62}{08:63}の試験が{08:6D}{08:69}な{08:5E}であ{08:51}かを、		You explain in great detail how your test went.\n<wait>	v005		reads: は、自分の試験がどのようなものであったかを、; reads: ： @refalign @refalign-merged
+m/MS0034.BIN	0:03	75	2319	00	{04:FE}に、余す{08:87}無く語{08:51}。\n<wait>		 	v005		reads: に、余すところ無く語った。\n<wait>; reads: それにしても、心臓が止まるかと思っちゃったわ。\n @refalign @refalign-merged
+m/MS0034.BIN	0:03	76	2354	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:03	77	2360	1FD3	まあ{08:72}{01:29}{08:51}の{02:08}‥\n<wait>		Huh...\n<wait>	v005		reads: まあ‥‥そうだったの‥‥‥‥\n<wait>; reads: そうなの。 @refalign
+m/MS0034.BIN	0:03	78	2389	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: くんも、似たような事をやったのね。\n<wait> @refalign
+m/MS0034.BIN	0:03	79	2399	00	{04:FF}くんの方が難しそうね。\n<wait>		I honestly feel like yours was tougher.\n<wait>	v005		reads: くんの方が難しそうね。\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:03	80	2436	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: くんは、どんな事をやったの？\n @refalign
+m/MS0034.BIN	0:03	81	2453	00	{04:FE}：		Yuuka:	v005		reads: ：; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:03	82	2459	1FD3	{08:5C}！　		Katsuragi-kun, you meanie! Could you please tell me? Pleeease?\n	v005		reads: もう！　; reads: 教えてあげないよ; menu option, declared width 20 columns @refalign @refalign-merged
 m/MS0034.BIN	0:03	83	2469	00	{04:FF}くん、いじわるね。\n教えてくれ{08:54}{08:7F}{08:81}{08:25}？\n	{04:FF}くん、いじわるね。\n教えてくれ{08:54}{08:7F}{08:81}{08:25}？\n				reads: くん、いじわるね。\n教えてくれてもいいじゃない？\n
 m/MS0034.BIN	0:03	84	2527	1FB2	{08:81}あ、教{08:41}げる	{08:81}あ、教{08:41}げる				reads: じゃあ、教えたげる; menu option, declared width 20 columns
-m/MS0034.BIN	0:03	85	2543	1FB2	絶対やだ					menu option, declared width 20 columns; reads: は、自分の試験がどのようなものであったかを、
-m/MS0034.BIN	0:03	86	2577	00	{04:FE}：					reads: ：; reads: に、余すところ無く語った。\n<wait>
-m/MS0034.BIN	0:03	87	2583	1FD3	{02:08}‥そう{02:08}‥\n<wait>					reads: ‥‥‥‥そう‥‥‥‥\n<wait>; reads: ：
-m/MS0034.BIN	0:03	88	2608	00	{04:FE}：					reads: ：; reads: まあ‥‥そうだったの‥‥‥‥\n<wait>
-m/MS0034.BIN	0:03	89	2614	1FD3	話{08:4B}く{08:25}{08:5F}っ{08:50}、無理には聞か{08:25}わ。\n<wait>					reads: 話したくないんだったら、無理には聞かないわ。\n<wait>; reads: ：
-m/MS0034.BIN	0:03	90	2666	00	{04:FE}：					reads: ：; reads: くんの方が難しそうね。\n<wait>
-m/MS0034.BIN	0:03	91	2672	1FD3	{08:4D}に{08:4A}も、通知こ{08:25}わね{02:08}‥\n<wait>					reads: それにしても、通知こないわね‥‥‥‥\n<wait>; reads: ：
-m/MS0034.BIN	0:04	0	6	00	{04:FE}：		Yuuka:	v005		reads: ：
-m/MS0034.BIN	0:04	1	12	1FD3	おめでとう！！\n<wait>		Congratulations!\n<wait>	v005		
-m/MS0034.BIN	0:04	2	39	00	{04:FE}：		Yuuka:	v005		reads: ：
-m/MS0034.BIN	0:04	3	45	1FD3	第二部隊と言えば、{08:04}さんが隊長を勤めてら{08:4A}、残る隊員と言えば、\n{08:00}さん、{08:03}さん、{08:02}さん{08:81}{08:25}？\n<wait>		Squad Two is the one led by Mister Nishino, correct?\nI believe that the other members are Hayasaka, Emi, and Yamase.\n<wait>	v005		reads: 第二部隊と言えば、西野さんが隊長を勤めてらして、残る隊員と言えば、\n早坂さん、英美さん、山瀬さんじゃない？\n<wait>
-m/MS0034.BIN	0:04	4	149	00	{04:FE}：		Yuuka:	v005		reads: ：
-m/MS0034.BIN	0:04	5	155	1FD3	{01:1C}、知っ{08:2B}人達ばかりよね。\n		All people you already know. Pretty nice, huh?\n	v005		reads: みんな、知ってる人達ばかりよね。\n
-m/MS0034.BIN	0:04	6	198	1FB2	君の部隊は？		What's your squad?	v005		menu option, declared width 20 columns
-m/MS0034.BIN	0:04	7	212	1FB2	第二部隊で良{08:18}～		Just as I hoped	v005		reads: 第二部隊で良かった～; menu option, declared width 20 columns
+m/MS0034.BIN	0:03	85	2543	1FB2	絶対やだ		Absolutely	v005		menu option, declared width 20 columns; reads: は、自分の試験がどのようなものであったかを、 @refalign
+m/MS0034.BIN	0:03	86	2577	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: に、余すところ無く語った。\n<wait> @refalign
+m/MS0034.BIN	0:03	87	2583	1FD3	{02:08}‥そう{02:08}‥\n<wait>		Huh...\n<wait>	v005		reads: ‥‥‥‥そう‥‥‥‥\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:03	88	2608	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: まあ‥‥そうだったの‥‥‥‥\n<wait> @refalign
+m/MS0034.BIN	0:03	89	2614	1FD3	話{08:4B}く{08:25}{08:5F}っ{08:50}、無理には聞か{08:25}わ。\n<wait>		Well, if you don't want to talk about it, I can't make you.\n<wait>	v005		reads: 話したくないんだったら、無理には聞かないわ。\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:03	90	2666	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: くんの方が難しそうね。\n<wait> @refalign
+m/MS0034.BIN	0:03	91	2672	1FD3	{08:4D}に{08:4A}も、通知こ{08:25}わね{02:08}‥\n<wait>		Anyway, I wonder when we are going to get the results...\n<wait>	v005		reads: それにしても、通知こないわね‥‥‥‥\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:04	0	6	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:04	1	12	1FD3	おめでとう！！\n<wait>		Congratulations!\n<wait>	v005		@refalign
+m/MS0034.BIN	0:04	2	39	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:04	3	45	1FD3	第二部隊と言えば、{08:04}さんが隊長を勤めてら{08:4A}、残る隊員と言えば、\n{08:00}さん、{08:03}さん、{08:02}さん{08:81}{08:25}？\n<wait>		Squad Two is the one led by Mister Nishino, correct?\nI believe that the other members are Hayasaka, Emi, and Yamase.\n<wait>	v005		reads: 第二部隊と言えば、西野さんが隊長を勤めてらして、残る隊員と言えば、\n早坂さん、英美さん、山瀬さんじゃない？\n<wait> @refalign
+m/MS0034.BIN	0:04	4	149	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:04	5	155	1FD3	{01:1C}、知っ{08:2B}人達ばかりよね。\n		All people you already know. Pretty nice, huh?\n	v005		reads: みんな、知ってる人達ばかりよね。\n @refalign
+m/MS0034.BIN	0:04	6	198	1FB2	君の部隊は？		What's your squad?	v005		menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:04	7	212	1FB2	第二部隊で良{08:18}～		Just as I hoped	v005		reads: 第二部隊で良かった～; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:04	8	254	00	{04:FE}：	{04:FE}：	Yuuka:	v005		reads: ：
-m/MS0034.BIN	0:04	9	260	1FD3	私も、同じ第二部隊よ。\nだ{08:42}、私、嬉しく{08:52}！\n		Same as you, Squad Two. I'm so happy!\n	v005		reads: 私も、同じ第二部隊よ。\nだから、私、嬉しくって！\n; reads: ：
-m/MS0034.BIN	0:04	10	320	1FB2	僕も嬉しい		Glad to hear	v005		menu option, declared width 20 columns; reads: 私も、同じ第二部隊よ。\nだから、私、嬉しくって！\n
-m/MS0034.BIN	0:04	11	332	1FB2	へ～そうな{08:5F}		Oh, really?	v005		reads: へ～そうなんだ; menu option, declared width 20 columns
-m/MS0034.BIN	0:04	12	366	1FD0	そう言うと、		As you say this, the smile on Yuuka's face grows even brighter.\n<wait>	v005		reads: へ～そうなんだ; menu option, declared width 20 columns
+m/MS0034.BIN	0:04	9	260	1FD3	私も、同じ第二部隊よ。\nだ{08:42}、私、嬉しく{08:52}！\n		Same as you, Squad Two. I'm so happy!\n	v005		reads: 私も、同じ第二部隊よ。\nだから、私、嬉しくって！\n; reads: ： @refalign
+m/MS0034.BIN	0:04	10	320	1FB2	僕も嬉しい		Glad to hear	v005		menu option, declared width 20 columns; reads: 私も、同じ第二部隊よ。\nだから、私、嬉しくって！\n @refalign
+m/MS0034.BIN	0:04	11	332	1FB2	へ～そうな{08:5F}		Oh, really?	v005		reads: へ～そうなんだ; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:04	12	366	1FD0	そう言うと、		As you say this, the smile on Yuuka's face grows even brighter.\n<wait>	v005		reads: へ～そうなんだ; menu option, declared width 20 columns @refalign @refalign-merged
 m/MS0034.BIN	0:04	13	382	00	{04:FE}の嬉しそうな表情が一段と輝{08:64}。\n<wait>	{04:FE}の嬉しそうな表情が一段と輝{08:64}。\n<wait>				reads: の嬉しそうな表情が一段と輝いた。\n<wait>
 m/MS0034.BIN	0:04	14	427	00	{04:FE}：	{04:FE}：				reads: ：
-m/MS0034.BIN	0:04	15	433	1FD3	明日{08:42}一緒に頑張りま{08:80}ね！\n		Well, anyway. We'll be starting tomorrow. See you then!\n	v005		reads: 明日から一緒に頑張りましょうね！\n
-m/MS0034.BIN	0:04	16	471	00	{04:FE}の瞳に、ほんの僅かな間落胆の色が見{08:41}。\n<wait>		A faint hint of disappointment can be seen in Yuuka's eyes.\n<wait>	v005		reads: の瞳に、ほんの僅かな間落胆の色が見えた。\n<wait>; reads: の嬉しそうな表情が一段と輝いた。\n<wait>
-m/MS0034.BIN	0:04	17	524	00	{04:FE}：		Yuuka:	v005		reads: ：
-m/MS0034.BIN	0:04	18	530	1FD3	{08:72}やっぱり、知っ{08:2B}人ばかりだと安心よね。\n他の部隊で、知ら{08:25}人ばかり{08:6B}は不安だ{08:42}{02:08}‥\n<wait>		It's quite a relief to be surrounded by people you already know.\nI don't think I could name a single person from any of the other squads...\n<wait>	v005		reads: ‥‥やっぱり、知ってる人ばかりだと安心よね。\n他の部隊で、知らない人ばかりなのは不安だから‥‥‥‥\n<wait>; reads: 明日から一緒に頑張りましょうね！\n
-m/MS0034.BIN	0:04	19	626	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: の瞳に、ほんの僅かな間落胆の色が見えた。\n<wait>
-m/MS0034.BIN	0:04	20	632	1FD3	{08:56}、本当に良{08:18}。		Really. I'm glad we got placed in the same squad.\n<wait>	v005		reads: でも、本当に良かった。; reads: ：
-m/MS0034.BIN	0:04	21	652	00	{04:FF}くんと一緒の部隊で。\n<wait>					reads: くんと一緒の部隊で。\n<wait>; reads: ‥‥やっぱり、知ってる人ばかりだと安心よね。\n他の部隊で、知らない人ばかりなのは不安だから‥‥‥‥\n<wait>
-m/MS0034.BIN	0:04	22	692	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:04	23	698	1FD3	あのね、私も第二部隊に配属{08:6B}。\nだ{08:42}、		Like you, I got put in Squad Two as well.\n	v005		reads: あのね、私も第二部隊に配属なの。\nだから、; reads: でも、本当に良かった。
-m/MS0034.BIN	0:04	24	739	00	{04:FF}くんと一緒よ。\n					reads: くんと一緒よ。\n; reads: くんと一緒の部隊で。\n<wait>
-m/MS0034.BIN	0:04	25	772	1FB2	本当に？嬉しいなぁ		Really? That's awesome	v005		menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:04	26	792	1FB2	{01:1C}一緒だね		The gang's all together	v005		reads: みんな一緒だね; menu option, declared width 20 columns; reads: あのね、私も第二部隊に配属なの。\nだから、
-m/MS0034.BIN	0:04	27	828	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: くんと一緒よ。\n
-m/MS0034.BIN	0:04	28	834	1FD3	私も嬉しいわ。\n{02:08}		I think so too. It's a bit embarrassing,\nbut I was genuinely worried that we wouldn't be able to stay together...\n<wait>	v005		reads: 私も嬉しいわ。\n‥‥‥; menu option, declared width 20 columns
-m/MS0034.BIN	0:04	29	855	00	{04:FF}くんと一緒で{02:08}‥\n<wait>					reads: くんと一緒で‥‥‥‥\n<wait>; reads: みんな一緒だね; menu option, declared width 20 columns
+m/MS0034.BIN	0:04	15	433	1FD3	明日{08:42}一緒に頑張りま{08:80}ね！\n		Well, anyway. We'll be starting tomorrow. See you then!\n	v005		reads: 明日から一緒に頑張りましょうね！\n @refalign
+m/MS0034.BIN	0:04	16	471	00	{04:FE}の瞳に、ほんの僅かな間落胆の色が見{08:41}。\n<wait>		A faint hint of disappointment can be seen in Yuuka's eyes.\n<wait>	v005		reads: の瞳に、ほんの僅かな間落胆の色が見えた。\n<wait>; reads: の嬉しそうな表情が一段と輝いた。\n<wait> @refalign
+m/MS0034.BIN	0:04	17	524	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:04	18	530	1FD3	{08:72}やっぱり、知っ{08:2B}人ばかりだと安心よね。\n他の部隊で、知ら{08:25}人ばかり{08:6B}は不安だ{08:42}{02:08}‥\n<wait>		It's quite a relief to be surrounded by people you already know.\nI don't think I could name a single person from any of the other squads...\n<wait>	v005		reads: ‥‥やっぱり、知ってる人ばかりだと安心よね。\n他の部隊で、知らない人ばかりなのは不安だから‥‥‥‥\n<wait>; reads: 明日から一緒に頑張りましょうね！\n @refalign
+m/MS0034.BIN	0:04	19	626	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: の瞳に、ほんの僅かな間落胆の色が見えた。\n<wait> @refalign
+m/MS0034.BIN	0:04	20	632	1FD3	{08:56}、本当に良{08:18}。		Really. I'm glad we got placed in the same squad.\n<wait>	v005		reads: でも、本当に良かった。; reads: ： @refalign @refalign-merged
+m/MS0034.BIN	0:04	21	652	00	{04:FF}くんと一緒の部隊で。\n<wait>		 	v005		reads: くんと一緒の部隊で。\n<wait>; reads: ‥‥やっぱり、知ってる人ばかりだと安心よね。\n他の部隊で、知らない人ばかりなのは不安だから‥‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:04	22	692	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:04	23	698	1FD3	あのね、私も第二部隊に配属{08:6B}。\nだ{08:42}、		Like you, I got put in Squad Two as well.\n	v005		reads: あのね、私も第二部隊に配属なの。\nだから、; reads: でも、本当に良かった。 @refalign @refalign-merged
+m/MS0034.BIN	0:04	24	739	00	{04:FF}くんと一緒よ。\n		 	v005		reads: くんと一緒よ。\n; reads: くんと一緒の部隊で。\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:04	25	772	1FB2	本当に？嬉しいなぁ		Really? That's awesome	v005		menu option, declared width 20 columns; reads: ： @refalign
+m/MS0034.BIN	0:04	26	792	1FB2	{01:1C}一緒だね		The gang's all together	v005		reads: みんな一緒だね; menu option, declared width 20 columns; reads: あのね、私も第二部隊に配属なの。\nだから、 @refalign
+m/MS0034.BIN	0:04	27	828	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: くんと一緒よ。\n @refalign
+m/MS0034.BIN	0:04	28	834	1FD3	私も嬉しいわ。\n{02:08}		I think so too. It's a bit embarrassing,\nbut I was genuinely worried that we wouldn't be able to stay together...\n<wait>\nYuuka's cheeks turn slightly reddish as she says that.\n<wait>	v005		reads: 私も嬉しいわ。\n‥‥‥; menu option, declared width 20 columns @refalign @refalign-merged
+m/MS0034.BIN	0:04	29	855	00	{04:FF}くんと一緒で{02:08}‥\n<wait>		 	v005		reads: くんと一緒で‥‥‥‥\n<wait>; reads: みんな一緒だね; menu option, declared width 20 columns @refalign @refalign-merged
 m/MS0034.BIN	0:04	30	886	00	{04:FE}の頬が、ぽ{08:53}桜色に染{08:20}。\n<wait>	{04:FE}の頬が、ぽ{08:53}桜色に染{08:20}。\n<wait>				reads: の頬が、ぽっと桜色に染まった。\n<wait>
 m/MS0034.BIN	0:04	31	930	00	{04:FE}：	{04:FE}：				reads: ：
-m/MS0034.BIN	0:04	32	936	1FD3	そう、{01:1C}一緒よ。\n<wait>		Right. Everyone's together.\n<wait>	v005		reads: そう、みんな一緒よ。\n<wait>; reads: ：
-m/MS0034.BIN	0:04	33	965	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 私も嬉しいわ。\n‥‥‥
-m/MS0034.BIN	0:04	34	971	1FD3	{08:56}、私一番嬉し{08:18}のは{02:08}{02:08}\n<wait>		But, the thing I'm the most happy about is...\n<wait>	v005		reads: でも、私一番嬉しかったのは‥‥‥‥‥‥\n<wait>; reads: くんと一緒で‥‥‥‥\n<wait>
-m/MS0034.BIN	0:04	35	1008	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: の頬が、ぽっと桜色に染まった。\n<wait>
-m/MS0034.BIN	0:04	36	1014	1FD3	{08:72}何{08:56}{08:25}わ。\n		...never mind.\n	v005		reads: ‥‥何でもないわ。\n; reads: ：
-m/MS0034.BIN	0:04	37	1036	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: そう、みんな一緒よ。\n<wait>
-m/MS0034.BIN	0:04	38	1042	1FD3	頑張りま{08:80}ね、		Well, anyway. We'll be starting tomorrow. See you then, Katsuragi-kun!\n<wait>	v005		reads: 頑張りましょうね、; reads: ：
-m/MS0034.BIN	0:04	39	1060	00	{04:FF}くん！\n{08:4D}{08:81}あ、{08:5B}明日。\n<wait>					reads: くん！\nそれじゃあ、また明日。\n<wait>; reads: でも、私一番嬉しかったのは‥‥‥‥‥‥\n<wait>
-m/MS0034.BIN	0:04	40	1106	00	{04:FE}は来た時の様に、慌{08:82}しく去{08:52}行{08:51}。\nよほど、嬉しいらしい。\n<wait>					reads: は来た時の様に、慌ただしく去って行った。\nよほど、嬉しいらしい。\n<wait>; reads: ：
-m/MS0034.BIN	0:05	0	6	00	{04:FE}：		Yuuka:	v005		reads: ：
-m/MS0034.BIN	0:05	1	12	1FD3	あの{02:08}気を落とさ{08:25}で、		Err... Don't feel too bad, Katsuragi-kun.\nI'm sure that you just got unlucky this time.\n	v005		reads: あの‥‥‥気を落とさないで、
-m/MS0034.BIN	0:05	2	38	00	{04:FF}くん。\n今回{08:62}た{08:5B}ま運が無{08:18}のよ。\n					reads: くん。\n今回は、たまたま運が無かったのよ。\n
-m/MS0034.BIN	0:05	3	90	1FB2	{08:72}{01:29}ね		Right...	v005		reads: ‥‥そうだね; menu option, declared width 20 columns
+m/MS0034.BIN	0:04	32	936	1FD3	そう、{01:1C}一緒よ。\n<wait>		Right. Everyone's together.\n<wait>	v005		reads: そう、みんな一緒よ。\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:04	33	965	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 私も嬉しいわ。\n‥‥‥ @refalign
+m/MS0034.BIN	0:04	34	971	1FD3	{08:56}、私一番嬉し{08:18}のは{02:08}{02:08}\n<wait>		But, the thing I'm the most happy about is...\n<wait>	v005		reads: でも、私一番嬉しかったのは‥‥‥‥‥‥\n<wait>; reads: くんと一緒で‥‥‥‥\n<wait> @refalign
+m/MS0034.BIN	0:04	35	1008	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: の頬が、ぽっと桜色に染まった。\n<wait> @refalign
+m/MS0034.BIN	0:04	36	1014	1FD3	{08:72}何{08:56}{08:25}わ。\n		...never mind.\n	v005		reads: ‥‥何でもないわ。\n; reads: ： @refalign
+m/MS0034.BIN	0:04	37	1036	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: そう、みんな一緒よ。\n<wait> @refalign
+m/MS0034.BIN	0:04	38	1042	1FD3	頑張りま{08:80}ね、		Well, anyway. We'll be starting tomorrow. See you then, Katsuragi-kun!\n<wait>\nYuuka leaves the room sprinting just as fast as when she got here.\nIt doesn't seem like she was kidding about being excited.\n<wait>	v005		reads: 頑張りましょうね、; reads: ： @refalign @refalign-merged
+m/MS0034.BIN	0:04	39	1060	00	{04:FF}くん！\n{08:4D}{08:81}あ、{08:5B}明日。\n<wait>		 	v005		reads: くん！\nそれじゃあ、また明日。\n<wait>; reads: でも、私一番嬉しかったのは‥‥‥‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:04	40	1106	00	{04:FE}は来た時の様に、慌{08:82}しく去{08:52}行{08:51}。\nよほど、嬉しいらしい。\n<wait>		 	v005		reads: は来た時の様に、慌ただしく去って行った。\nよほど、嬉しいらしい。\n<wait>; reads: ： @refalign @refalign-merged
+m/MS0034.BIN	0:05	0	6	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:05	1	12	1FD3	あの{02:08}気を落とさ{08:25}で、		Err... Don't feel too bad, Katsuragi-kun.\nI'm sure that you just got unlucky this time.\n	v005		reads: あの‥‥‥気を落とさないで、 @refalign @refalign-merged
+m/MS0034.BIN	0:05	2	38	00	{04:FF}くん。\n今回{08:62}た{08:5B}ま運が無{08:18}のよ。\n		 	v005		reads: くん。\n今回は、たまたま運が無かったのよ。\n @refalign @refalign-merged
+m/MS0034.BIN	0:05	3	90	1FB2	{08:72}{01:29}ね		Right...	v005		reads: ‥‥そうだね; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:05	4	98	1FB2	{02:08}{08:72}	{02:08}{08:72}				reads: ‥‥‥‥‥; menu option, declared width 20 columns
 m/MS0034.BIN	0:05	5	128	00	{04:FE}：	{04:FE}：				reads: ：
-m/MS0034.BIN	0:05	6	134	1FD3	元気を出{08:4A}{08:72}\n一生{02:00}になれ{08:25}訳{08:81}{08:25}{08:42}{02:08}\n		Do you really mean it? I hope you're not saying that just for my sake,\nwhile simultaneously feeling like crap inside...\n	v005		reads: 元気を出して‥‥\n一生デビルバスターになれない訳じゃないから‥‥‥\n; reads: ：
-m/MS0034.BIN	0:05	7	188	1FB2	{01:29}ね		Yes, I mean it	v005		reads: そうだね; menu option, declared width 20 columns; reads: 元気を出して‥‥\n一生デビルバスターになれない訳じゃないから‥‥‥\n
+m/MS0034.BIN	0:05	6	134	1FD3	元気を出{08:4A}{08:72}\n一生{02:00}になれ{08:25}訳{08:81}{08:25}{08:42}{02:08}\n		Just keep on trying, and I'm sure that you'll eventually make it.\n	v005		reads: 元気を出して‥‥\n一生デビルバスターになれない訳じゃないから‥‥‥\n; reads: ： @refalign
+m/MS0034.BIN	0:05	7	188	1FB2	{01:29}ね		True	v005		reads: そうだね; menu option, declared width 20 columns; reads: 元気を出して‥‥\n一生デビルバスターになれない訳じゃないから‥‥‥\n @refalign
 m/MS0034.BIN	0:05	8	194	1FB2	{02:08}{08:72}	{02:08}{08:72}	Why would I do that?	v005		reads: ‥‥‥‥‥; menu option, declared width 20 columns; reads: そうだね
 m/MS0034.BIN	0:05	9	224	00	{04:FE}：	{04:FE}：				reads: ：; reads: ‥‥‥‥‥; menu option, declared width 20 columns
 m/MS0034.BIN	0:05	10	230	1FD3	そうよ。ね、元気出{08:4A}！\n私{08:72}応援し{08:2B}{08:42}。\n<wait>	そうよ。ね、元気出{08:4A}！\n私{08:72}応援し{08:2B}{08:42}。\n<wait>	Well, that's good then...\n<wait>	v005		reads: そうよ。ね、元気出して！\n私‥‥応援してるから。\n<wait>
 m/MS0034.BIN	0:05	11	282	00	{04:FE}{08:62}	{04:FE}{08:62}				reads: は、; reads: ：
-m/MS0034.BIN	0:05	12	290	00	{04:FF}の瞳を真っすぐに見つめ{08:14}。\n					reads: の瞳を真っすぐに見つめている。\n; reads: そうよ。ね、元気出して！\n私‥‥応援してるから。\n<wait>
+m/MS0034.BIN	0:05	12	290	00	{04:FF}の瞳を真っすぐに見つめ{08:14}。\n		 	v005		reads: の瞳を真っすぐに見つめている。\n; reads: そうよ。ね、元気出して！\n私‥‥応援してるから。\n<wait> @refalign @refalign-merged
 m/MS0034.BIN	0:05	13	335	1FB2	{01:2A}	{01:2A}				reads: ありがとう; menu option, declared width 20 columns; reads: は、
-m/MS0034.BIN	0:05	14	339	1FB2	気持ち{08:74}貰{08:53}く					reads: 気持ちだけ貰っとく; menu option, declared width 20 columns; reads: の瞳を真っすぐに見つめている。\n
+m/MS0034.BIN	0:05	14	339	1FB2	気持ち{08:74}貰{08:53}く		You don't need to	v005		reads: 気持ちだけ貰っとく; menu option, declared width 20 columns; reads: の瞳を真っすぐに見つめている。\n @refalign
 m/MS0034.BIN	0:05	15	379	00	{04:FF}が礼を言うと、	{04:FF}が礼を言うと、				reads: が礼を言うと、; reads: ありがとう; menu option, declared width 20 columns
-m/MS0034.BIN	0:05	16	399	00	{04:FE}{08:62}首を振{08:51}。\n<wait>					reads: は、首を振った。\n<wait>; reads: 気持ちだけ貰っとく; menu option, declared width 20 columns
+m/MS0034.BIN	0:05	16	399	00	{04:FE}{08:62}首を振{08:51}。\n<wait>		 	v005		reads: は、首を振った。\n<wait>; reads: 気持ちだけ貰っとく; menu option, declared width 20 columns @refalign @refalign-merged
 m/MS0034.BIN	0:05	17	426	00	{04:FE}：	{04:FE}：				reads: ：
-m/MS0034.BIN	0:05	18	432	1FD3	ううん。{08:7A}お礼を言わ{08:2F}ほ{08:6D}事{08:81}{08:25}わ。\n本当に応援し{08:2B}{08:42}{02:08}‥\n<wait>		Ah! S-Sorry... I shouldn't make those sorts of assumptions...\n<wait>	v005		reads: ううん。そんなお礼を言われるほどの事じゃないわ。\n本当に応援してるから‥‥‥‥\n<wait>; reads: が礼を言うと、
-m/MS0034.BIN	0:05	19	498	1FD0	そう言{08:51}		With her face bright red, Yuuka quickly apologizes.\n<wait>	v005		reads: そう言った; reads: は、首を振った。\n<wait>
-m/MS0034.BIN	0:05	20	510	00	{04:FE}の頬が、少し桜色に染{08:20}気が{08:4B}。\n<wait>					reads: の頬が、少し桜色に染まった気がした。\n<wait>; reads: ：
-m/MS0034.BIN	0:05	21	555	00	{04:FE}：					reads: ：; reads: ううん。そんなお礼を言われるほどの事じゃないわ。\n本当に応援してるから‥‥‥‥\n<wait>
-m/MS0034.BIN	0:05	22	561	1FD3	{08:4D}{08:81}あ、					reads: それじゃあ、; reads: そう言った
-m/MS0034.BIN	0:05	23	573	00	{04:FF}くん。{08:5B}来るわね！\n<wait>					reads: くん。また来るわね！\n<wait>; reads: の頬が、少し桜色に染まった気がした。\n<wait>
-m/MS0034.BIN	0:05	24	611	00	{04:FE}：					reads: ：
-m/MS0034.BIN	0:05	25	617	1FD3	{08:73}時に、合格{08:4B}私が何を言{08:51}{08:52}嫌味よね。\n{08:56}、本当に気を落とさ{08:25}でね。\n					reads: こんな時に、合格した私が何を言ったって嫌味よね。\nでも、本当に気を落とさないでね。\n; reads: それじゃあ、
-m/MS0034.BIN	0:05	26	701	1FB2	{01:32}さ					reads: 大丈夫さ; menu option, declared width 20 columns; reads: くん。また来るわね！\n<wait>
+m/MS0034.BIN	0:05	18	432	1FD3	ううん。{08:7A}お礼を言わ{08:2F}ほ{08:6D}事{08:81}{08:25}わ。\n本当に応援し{08:2B}{08:42}{02:08}‥\n<wait>		Please, you don't need to thank me.\nI'm supporting you because I want to...\n<wait>\nYuuka's cheeks appear to grow slightly reddish as she says that.\n<wait>	v005		reads: ううん。そんなお礼を言われるほどの事じゃないわ。\n本当に応援してるから‥‥‥‥\n<wait>; reads: が礼を言うと、 @refalign @refalign-merged
+m/MS0034.BIN	0:05	19	498	1FD0	そう言{08:51}		 	v005		reads: そう言った; reads: は、首を振った。\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:05	20	510	00	{04:FE}の頬が、少し桜色に染{08:20}気が{08:4B}。\n<wait>		 	v005		reads: の頬が、少し桜色に染まった気がした。\n<wait>; reads: ： @refalign @refalign-merged
+m/MS0034.BIN	0:05	21	555	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: ううん。そんなお礼を言われるほどの事じゃないわ。\n本当に応援してるから‥‥‥‥\n<wait> @refalign
+m/MS0034.BIN	0:05	22	561	1FD3	{08:4D}{08:81}あ、		Well then, Katsuragi-kun. Talk to you later!\n<wait>	v005		reads: それじゃあ、; reads: そう言った @refalign @refalign-merged
+m/MS0034.BIN	0:05	23	573	00	{04:FF}くん。{08:5B}来るわね！\n<wait>		 	v005		reads: くん。また来るわね！\n<wait>; reads: の頬が、少し桜色に染まった気がした。\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:05	24	611	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:05	25	617	1FD3	{08:73}時に、合格{08:4B}私が何を言{08:51}{08:52}嫌味よね。\n{08:56}、本当に気を落とさ{08:25}でね。\n		I know it might sound like an insult coming from my mouth,\nbut I really don't think you should beat yourself over this.\n	v005		reads: こんな時に、合格した私が何を言ったって嫌味よね。\nでも、本当に気を落とさないでね。\n; reads: それじゃあ、 @refalign
+m/MS0034.BIN	0:05	26	701	1FB2	{01:32}さ		It's fine	v005		reads: 大丈夫さ; menu option, declared width 20 columns; reads: くん。また来るわね！\n<wait> @refalign
 m/MS0034.BIN	0:05	27	707	1FB2	{02:08}{08:72}	{02:08}{08:72}				reads: ‥‥‥‥‥; menu option, declared width 20 columns; reads: ：
-m/MS0034.BIN	0:05	28	737	00	{04:FE}：					reads: ：; reads: こんな時に、合格した私が何を言ったって嫌味よね。\nでも、本当に気を落とさないでね。\n
-m/MS0034.BIN	0:05	29	743	1FD3	本当に{02:08}本当に{01:32}？\n口ではそう言{08:52}{08:54}、実際は気落ち{08:4A}寝込{08:5F}りし{08:25}でね{08:72}\n					reads: 本当に‥‥‥本当に大丈夫？\n口ではそう言ってても、実際は気落ちして寝込んだりしないでね‥‥\n; reads: 大丈夫さ; menu option, declared width 20 columns
+m/MS0034.BIN	0:05	28	737	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: こんな時に、合格した私が何を言ったって嫌味よね。\nでも、本当に気を落とさないでね。\n @refalign
+m/MS0034.BIN	0:05	29	743	1FD3	本当に{02:08}本当に{01:32}？\n口ではそう言{08:52}{08:54}、実際は気落ち{08:4A}寝込{08:5F}りし{08:25}でね{08:72}\n		Do you really mean it? I hope you're not saying that just for my sake,\nwhile simultaneously feeling like crap inside...\n	v005		reads: 本当に‥‥‥本当に大丈夫？\n口ではそう言ってても、実際は気落ちして寝込んだりしないでね‥‥\n; reads: 大丈夫さ; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:05	30	829	1FB2	{01:32}だ{08:52}	{01:32}だ{08:52}				reads: 大丈夫だって; menu option, declared width 20 columns; reads: ‥‥‥‥‥
 m/MS0034.BIN	0:05	31	837	1FB2	な、何もそこ{08:71}{08:72}	な、何もそこ{08:71}{08:72}				reads: な、何もそこまで‥‥; menu option, declared width 20 columns
-m/MS0034.BIN	0:05	32	879	00	{04:FE}：					reads: ：
+m/MS0034.BIN	0:05	32	879	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
 m/MS0034.BIN	0:05	33	885	1FD3	{08:4D}{08:7D}{08:7F}{08:5F}{08:84}{02:08}{08:72}\n<wait>	{08:4D}{08:7D}{08:7F}{08:5F}{08:84}{02:08}{08:72}\n<wait>				reads: それならいいんだけど‥‥‥‥‥\n<wait>; reads: 本当に‥‥‥本当に大丈夫？\n口ではそう言ってても、実際は気落ちして寝込んだりしないでね‥‥\n
-m/MS0034.BIN	0:05	34	912	00	{04:FE}：					reads: ：; reads: 大丈夫だって; menu option, declared width 20 columns
-m/MS0034.BIN	0:05	35	918	1FD3	{08:5D}本当に具合が悪く{08:16}り{08:4B}ら、連絡{08:4A}ね。\n看病{08:8E}{08:42}{02:08}{08:72}\n<wait>					reads: もし本当に具合が悪くなったりしたら、連絡してね。\n看病するから‥‥‥‥‥\n<wait>; reads: な、何もそこまで‥‥; menu option, declared width 20 columns
+m/MS0034.BIN	0:05	34	912	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 大丈夫だって; menu option, declared width 20 columns @refalign
+m/MS0034.BIN	0:05	35	918	1FD3	{08:5D}本当に具合が悪く{08:16}り{08:4B}ら、連絡{08:4A}ね。\n看病{08:8E}{08:42}{02:08}{08:72}\n<wait>		Still, if you ever need someone to talk to,\nyou know you can always call me, right?\n<wait>	v005		reads: もし本当に具合が悪くなったりしたら、連絡してね。\n看病するから‥‥‥‥‥\n<wait>; reads: な、何もそこまで‥‥; menu option, declared width 20 columns @refalign
 m/MS0034.BIN	0:05	36	982	00	{04:FE}：	{04:FE}：				reads: ：
 m/MS0034.BIN	0:05	37	988	1FD3	{08:4D}{08:81}あ、{08:5B}{02:08}\n頑張{08:52}ね！　応援し{08:2B}{08:42}！\n<wait>	{08:4D}{08:81}あ、{08:5B}{02:08}\n頑張{08:52}ね！　応援し{08:2B}{08:42}！\n<wait>				reads: それじゃあ、また‥‥‥\n頑張ってね！　応援してるから！\n<wait>
-m/MS0034.BIN	0:05	38	1043	00	{04:FE}：					reads: ：
+m/MS0034.BIN	0:05	38	1043	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
 m/MS0034.BIN	0:05	39	1049	1FD3	あ、ご、ごめんな{08:49}！\n心配で{02:08}‥つい{02:08}{08:72}\n<wait>	あ、ご、ごめんな{08:49}！\n心配で{02:08}‥つい{02:08}{08:72}\n<wait>				reads: あ、ご、ごめんなさい！\n心配で‥‥‥‥つい‥‥‥‥‥\n<wait>; reads: それならいいんだけど‥‥‥‥‥\n<wait>
-m/MS0034.BIN	0:05	40	1101	00	{04:FE}{08:62}真っ赤に{08:1A}謝{08:51}。\n<wait>					reads: は、真っ赤になって謝った。\n<wait>; reads: ：
-m/MS0034.BIN	0:05	41	1134	00	{04:FE}：					reads: ：; reads: もし本当に具合が悪くなったりしたら、連絡してね。\n看病するから‥‥‥‥‥\n<wait>
-m/MS0034.BIN	0:05	42	1140	1FD3	そ、{08:4D}{08:81}あ、{08:5B}来るわね！\n頑張{08:52}ね！　応援し{08:2B}{08:42}！\n<wait>		Well, anyway... Talk to you later! Good luck, and give it your all.\n<wait>	v005		reads: そ、それじゃあ、また来るわね！\n頑張ってね！　応援してるから！\n<wait>; reads: ：
-m/MS0034.BIN	0:05	43	1198	1FD0	そう言{08:52}、		Having said that, Yuuka quickly leaves the room,\nher cheeks still glowing...\n<wait>	v005		reads: そう言って、; reads: それじゃあ、また‥‥‥\n頑張ってね！　応援してるから！\n<wait>
-m/MS0034.BIN	0:05	44	1212	00	{04:FE}は頬を赤らめた{08:7E}{01:2E}を出{08:21}{02:08}\n<wait>					reads: は頬を赤らめたまま部屋を出ていった‥‥‥\n<wait>; reads: ：
-m/MS0034.BIN	0:05	45	1258	00	{04:FE}：					reads: ：; reads: あ、ご、ごめんなさい！\n心配で‥‥‥‥つい‥‥‥‥‥\n<wait>
-m/MS0034.BIN	0:05	46	1264	1FD3	{02:08}ごめんな{08:49}{02:08}\n<wait>		Sorry...\n<wait>	v005		reads: ‥‥‥ごめんなさい‥‥‥\n<wait>; reads: は、真っ赤になって謝った。\n<wait>
-m/MS0034.BIN	0:05	47	1291	00	{04:FE}：		Yuuka:	v005		reads: ：
-m/MS0034.BIN	0:05	48	1297	1FD3	{08:73}時に、合格{08:4B}私が何を言{08:51}{08:52}嫌味よね。\n{08:56}、本当に気を落とさ{08:25}でね。\n<wait>		I know it might sound like an insult coming from my mouth,\nbut I really don't think you should beat yourself over this.\n<wait>	v005		reads: こんな時に、合格した私が何を言ったって嫌味よね。\nでも、本当に気を落とさないでね。\n<wait>; reads: そ、それじゃあ、また来るわね！\n頑張ってね！　応援してるから！\n<wait>
-m/MS0034.BIN	0:05	49	1377	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: そう言って、
-m/MS0034.BIN	0:05	50	1383	1FD3	{02:08}{08:4D}{08:81}あ、私、{08:48}で失礼{08:8E}わ。\n<wait>		Well, anyway... I'll be going now.\n<wait>	v005		reads: ‥‥‥それじゃあ、私、これで失礼するわ。\n<wait>; reads: は頬を赤らめたまま部屋を出ていった‥‥‥\n<wait>
-m/MS0034.BIN	0:05	51	1424	00	{04:FE}：		Yuuka:	v005		reads: ：
-m/MS0034.BIN	0:05	52	1430	1FD3	あの{08:72}{08:5B}{02:08}{08:5B}来るわね！\n<wait>		Err... Talk to you later!\n<wait>	v005		reads: あの‥‥また‥‥‥また来るわね！\n<wait>; reads: ‥‥‥ごめんなさい‥‥‥\n<wait>
+m/MS0034.BIN	0:05	40	1101	00	{04:FE}{08:62}真っ赤に{08:1A}謝{08:51}。\n<wait>		With her face bright red, Yuuka quickly apologizes.\n<wait>	v005		reads: は、真っ赤になって謝った。\n<wait>; reads: ： @refalign
+m/MS0034.BIN	0:05	41	1134	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: もし本当に具合が悪くなったりしたら、連絡してね。\n看病するから‥‥‥‥‥\n<wait> @refalign
+m/MS0034.BIN	0:05	42	1140	1FD3	そ、{08:4D}{08:81}あ、{08:5B}来るわね！\n頑張{08:52}ね！　応援し{08:2B}{08:42}！\n<wait>		Well, anyway... Talk to you later! Good luck, and give it your all.\n<wait>\nHaving said that, Yuuka quickly leaves the room,\nher cheeks still glowing...\n<wait>	v005		reads: そ、それじゃあ、また来るわね！\n頑張ってね！　応援してるから！\n<wait>; reads: ： @refalign @refalign-merged
+m/MS0034.BIN	0:05	43	1198	1FD0	そう言{08:52}、		 	v005		reads: そう言って、; reads: それじゃあ、また‥‥‥\n頑張ってね！　応援してるから！\n<wait> @refalign @refalign-merged
+m/MS0034.BIN	0:05	44	1212	00	{04:FE}は頬を赤らめた{08:7E}{01:2E}を出{08:21}{02:08}\n<wait>		 	v005		reads: は頬を赤らめたまま部屋を出ていった‥‥‥\n<wait>; reads: ： @refalign @refalign-merged
+m/MS0034.BIN	0:05	45	1258	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: あ、ご、ごめんなさい！\n心配で‥‥‥‥つい‥‥‥‥‥\n<wait> @refalign
+m/MS0034.BIN	0:05	46	1264	1FD3	{02:08}ごめんな{08:49}{02:08}\n<wait>		Sorry...\n<wait>	v005		reads: ‥‥‥ごめんなさい‥‥‥\n<wait>; reads: は、真っ赤になって謝った。\n<wait> @refalign
+m/MS0034.BIN	0:05	47	1291	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:05	48	1297	1FD3	{08:73}時に、合格{08:4B}私が何を言{08:51}{08:52}嫌味よね。\n{08:56}、本当に気を落とさ{08:25}でね。\n<wait>		I know it might sound like an insult coming from my mouth,\nbut I really don't think you should beat yourself over this.\n<wait>	v005		reads: こんな時に、合格した私が何を言ったって嫌味よね。\nでも、本当に気を落とさないでね。\n<wait>; reads: そ、それじゃあ、また来るわね！\n頑張ってね！　応援してるから！\n<wait> @refalign
+m/MS0034.BIN	0:05	49	1377	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: そう言って、 @refalign
+m/MS0034.BIN	0:05	50	1383	1FD3	{02:08}{08:4D}{08:81}あ、私、{08:48}で失礼{08:8E}わ。\n<wait>		Well, anyway... I'll be going now.\n<wait>	v005		reads: ‥‥‥それじゃあ、私、これで失礼するわ。\n<wait>; reads: は頬を赤らめたまま部屋を出ていった‥‥‥\n<wait> @refalign
+m/MS0034.BIN	0:05	51	1424	00	{04:FE}：		Yuuka:	v005		reads: ： @refalign
+m/MS0034.BIN	0:05	52	1430	1FD3	あの{08:72}{08:5B}{02:08}{08:5B}来るわね！\n<wait>		Err... Talk to you later!\n<wait>	v005		reads: あの‥‥また‥‥‥また来るわね！\n<wait>; reads: ‥‥‥ごめんなさい‥‥‥\n<wait> @refalign

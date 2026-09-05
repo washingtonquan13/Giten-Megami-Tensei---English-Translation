@@ -3,10 +3,10 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0002.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}‥\n		There's no one here...\n	v005		reads: 誰もいない‥‥‥‥\n
-m/MS0002.BIN	0:01	0	2	1FD0	死体が安置{03:0C}{08:14}{02:08}‥\n<wait>		A dead soldier lies here...\n<wait>	v005		reads: 死体が安置されている‥‥‥‥\n<wait>
-m/MS0002.BIN	0:02	0	2	1FD0	{02:08}‥既に死んで{08:40}様だ。\n<wait>		It looks like he's already dead...\n<wait>	v005		reads: ‥‥‥‥既に死んでいる様だ。\n<wait>
-m/MS0002.BIN	0:03	0	2	1FD0	{02:08}‥死体は食い荒ら{03:0C}{08:14}。\n<wait>		This corpse has been torn to shreds.<wait>	v005		reads: ‥‥‥‥死体は食い荒らされている。\n<wait>
+m/MS0002.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}‥\n		There's no one here...\n	v005		reads: 誰もいない‥‥‥‥\n @refalign
+m/MS0002.BIN	0:01	0	2	1FD0	死体が安置{03:0C}{08:14}{02:08}‥\n<wait>		A dead soldier lies here...\n<wait>	v005		reads: 死体が安置されている‥‥‥‥\n<wait> @refalign
+m/MS0002.BIN	0:02	0	2	1FD0	{02:08}‥既に死んで{08:40}様だ。\n<wait>		It looks like he's already dead...\n<wait>	v005		reads: ‥‥‥‥既に死んでいる様だ。\n<wait> @refalign
+m/MS0002.BIN	0:03	0	2	1FD0	{02:08}‥死体は食い荒ら{03:0C}{08:14}。\n<wait>		This corpse has been torn to shreds.<wait>	v005		reads: ‥‥‥‥死体は食い荒らされている。\n<wait> @refalign
 m/MS0002.BIN	0:04	0	2	1FD2	女性：		Woman:	v005		
 m/MS0002.BIN	0:04	1	10	1FD3	中は酷い有り様よ{02:08}\n貴方も見たで{08:80}{08:84}、{08:0F}が大勢やら{08:60}わ{02:08}\n<wait>		Things aren't going too well for us...\nAs you probably already saw, we've lost a lot of good men...\n<wait>	v005		reads: 中は酷い有り様よ‥‥‥\n貴方も見たでしょうけど、仲間が大勢やられたわ‥‥‥\n<wait>
 m/MS0002.BIN	0:05	0	2	1FD2	男性：		Man:	v005		
@@ -25,47 +25,47 @@ m/MS0002.BIN	0:09	0	2	1FD2	女性：		Woman:	v005
 m/MS0002.BIN	0:09	1	10	1FD3	あっ！　アンタ達応援部隊ね！\n早く、交戦中の部隊を支援{08:4A}あげて！\n<wait>		Ah! You guys must be the backup troops.\nPlease, help us beat the demons.\n<wait>	v005		reads: あっ！　アンタ達応援部隊ね！\n早く、交戦中の部隊を支援してあげて！\n<wait>
 m/MS0002.BIN	0:0A	0	2	1FD2	若者：		Young Man:	v005		
 m/MS0002.BIN	0:0A	1	10	1FD3	畜生{02:08}！　{01:08}め{02:08}！\n<wait>		I'm gonna kill that motherfucker Baal!...\n<wait>	ours		reads: 畜生‥‥‥！　バエルめ‥‥‥！\n<wait>
-m/MS0002.BIN	0:0B	0	32	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0002.BIN	0:0B	1	38	1FD3	俺達{08:74}、逃げる{08:6A}て{08:7A}事出来る訳が{08:25}！\n戻ろう！\n<wait>		We can't run away while the others are putting their lives on the line!\nLet's turn back!\n<wait>	v005		reads: 俺達だけ、逃げるなんてそんな事出来る訳がない！\n戻ろう！\n<wait>
-m/MS0002.BIN	0:0B	2	117	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：
-m/MS0002.BIN	0:0B	3	123	1FD3	{08:47}{08:7E}進めば外だ。\n{08:8F}、俺達{08:74}逃げる{08:6A}て、{08:7A}事出来る訳{08:25}！\n<wait>{08:72}戻ろう\n<wait>		This is the exit. However, we cannot run away while the others\nare putting their lives on the line.\n<wait>Let's turn back.\n<wait>	v005		reads: このまま進めば外だ。\nだが、俺達だけ逃げるなんて、そんな事出来る訳ない！\n<wait>‥‥戻ろう\n<wait>
-m/MS0002.BIN	0:0B	4	225	1FD2	{08:39}：		Kamikawa:	v005		reads: 上河：
-m/MS0002.BIN	0:0B	5	231	1FD3	{08:63}達{08:74}、逃げる{08:6A}て{08:7A}事出来る訳{08:25}{02:08}！\n<wait>{02:08}戻りま{08:80}\n<wait>		We can't run away while the others are putting their lives on the line.\n<wait>Let's turn back.\n<wait>	v005		reads: 自分達だけ、逃げるなんてそんな事出来る訳ない‥‥‥！\n<wait>‥‥‥戻りましょう\n<wait>
-m/MS0002.BIN	0:0B	6	316	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0002.BIN	0:0B	7	322	1FD3	{08:63}達{08:74}、逃げる{08:6A}て{08:7A}事出来る訳{08:25}わ！\n<wait>{02:08}‥戻りま{08:80}。\n<wait>		We can't run away while the others are putting their lives on the line!\n<wait>Let's turn back.\n<wait>	v005		reads: 自分達だけ、逃げるなんてそんな事出来る訳ないわ！\n<wait>‥‥‥‥戻りましょう。\n<wait>
-m/MS0002.BIN	0:0B	8	387	1FD0	{02:0E}は出口で{08:7B}。\n{03:0B}今は到底外に出る{08:46}など、出来る状態では{08:19}。\n<wait>		This is the exit. You could easily leave if you wanted to.\n<wait>	v005		reads: こちらは出口である。\nしかし、今は到底外に出ることなど、出来る状態ではなかった。\n<wait>
-m/MS0002.BIN	0:0B	9	453	1FBA	{08:63}が外に出る{08:46}で、確実に死人は増{08:28}{08:77}。\n<wait>		However, running away now is without a doubt going to result\nin a high number of casualties.\n<wait>	v005		reads: 自分が外に出ることで、確実に死人は増えるのだ。\n<wait>
-m/MS0002.BIN	0:0B	10	502	00	{04:FF}は引き返{08:4B}。\n<wait>		You decide to turn back.\n<wait>	v005		reads: は引き返した。\n<wait>
-m/MS0002.BIN	0:0C	0	26	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0002.BIN	0:0C	1	32	1FD3	{08:47}{08:7E}行くと外よ！\n{01:16}達{08:74}、逃げる訳には行か{08:25}！\n<wait>		Wrong way! We can't just walk away and leave all these people behind.\n<wait>	v005		reads: このまま行くと外よ！\nあたし達だけ、逃げる訳には行かない！\n<wait>
-m/MS0002.BIN	0:0C	2	86	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0002.BIN	0:0C	3	92	1FD3	戻りま{08:80}！\n<wait>		Let's head back and do what we came here to do.\n<wait>	v005		reads: 戻りましょう！\n<wait>
-m/MS0002.BIN	0:0C	4	136	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：
-m/MS0002.BIN	0:0C	5	142	1FD3	そっちに行くと外だ！\n俺達{08:74}、逃げる訳には行か{08:25}！\n<wait>		Wrong way! We can't just walk away and leave all these people behind.\n<wait>	v005		reads: そっちに行くと外だ！\n俺達だけ、逃げる訳には行かない！\n<wait>
-m/MS0002.BIN	0:0C	6	200	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：
-m/MS0002.BIN	0:0C	7	206	1FD3	戻ろう！\n<wait>		Let's head back and do what we came here to do.\n<wait>	v005		
-m/MS0002.BIN	0:0C	8	248	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0002.BIN	0:0C	9	254	1FD3	そっちに行くと外だ！\n俺達{08:74}、逃げる訳には行か{08:25}！\n<wait>		Wrong way! We can't just walk away and leave all these people behind.\n<wait>	v005		reads: そっちに行くと外だ！\n俺達だけ、逃げる訳には行かない！\n<wait>
-m/MS0002.BIN	0:0C	10	312	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0002.BIN	0:0C	11	318	1FD3	戻ろう！\n<wait>		Let's head back and do what we came here to do.\n<wait>	v005		
-m/MS0002.BIN	0:0C	12	360	1FD2	{08:39}：		Kamikawa:	v005		reads: 上河：
-m/MS0002.BIN	0:0C	13	366	1FD3	そっちに行くと外{08:55}！\n俺達{08:74}、逃げる訳には行き{02:0A}！\n<wait>		Wrong way! We can't just walk away and leave all these people behind.\n<wait>	v005		reads: そっちに行くと外です！\n俺達だけ、逃げる訳には行きません！\n<wait>
-m/MS0002.BIN	0:0C	14	424	1FD2	{08:39}：		Kamikawa:	v005		reads: 上河：
-m/MS0002.BIN	0:0C	15	430	1FD3	戻りま{08:80}！\n<wait>		Let's head back and do what we came here to do.\n<wait>	v005		reads: 戻りましょう！\n<wait>
-m/MS0002.BIN	0:0C	16	450	1FD0	{08:47}{08:7E}進めば外に出る{02:08}{08:72}\n<wait>		This door leads out of the building.\n<wait>	v005		reads: このまま進めば外に出る‥‥‥‥‥\n<wait>
-m/MS0002.BIN	0:0C	17	479	1FBA	{03:0B}{08:47}大事な作戦のさなか、単独で外に出たり{08:4B}ら{08:90}{08:59}か{02:08}\n<wait>		There's no way that you can just walk away and leave.\nNot before you've done what you came here to do.\n<wait>	v005		reads: しかし、この大事な作戦のさなか、単独で外に出たりしたらどうなるか‥‥‥\n<wait>
-m/MS0002.BIN	0:0C	18	542	00	{04:FF}{08:62}思い直{08:4A}戻る事に{08:4B}。\n<wait>		With those thoughts, you turn around.\n<wait>	v005		reads: は、思い直して戻る事にした。\n<wait>
-m/MS0002.BIN	0:0D	0	14	1F7C	破壊前{08:62}駐車場だ{08:51}であろうホールに足を踏み入{08:60}。\n<wait>		You enter what you assume used to be a car park\nbefore the Rapture happened.\n<wait>	v005		reads: 破壊前は、駐車場だったであろうホールに足を踏み入れた。\n<wait>
-m/MS0002.BIN	0:0D	1	69	1FBA	ホールには血と硝煙の臭いが充満{08:4A}おり、激しい戦闘があ{08:51}事を物語{08:52}{08:64}。\n<wait>		A putrid smell of blood and gunpowder lingers in the air,\nsignalling the intensity of the battle that has taken place.\n<wait>	v005		reads: ホールには血と硝煙の臭いが充満しており、激しい戦闘があった事を物語っていた。\n<wait>
-m/MS0002.BIN	0:0D	2	145	18	ホールに{08:62}血と硝煙の臭いが充満{08:13}{02:08}\n<wait>		A putrid smell of blood and gunpowder lingers in the air...\n<wait>	v005		reads: ホールには、血と硝煙の臭いが充満している‥‥‥\n<wait>
-m/MS0002.BIN	0:0D	3	217	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0002.BIN	0:0D	4	227	00	{04:FF}君{08:72}{08:90}{08:8E}{01:3E}{08:6B}？\n<wait>		Err, Katsuragi... What are you doing?<wait>	v005		reads: 君‥‥どうするつもりなの？\n<wait>
-m/MS0002.BIN	0:0D	5	275	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：
-m/MS0002.BIN	0:0D	6	285	00	{04:FF}{08:72}？　{08:90}{08:8E}{01:3E}だ？\n<wait>		Hey, Katsuragi... What are you doing?<wait>	v005		reads: ‥‥？　どうするつもりだ？\n<wait>
-m/MS0002.BIN	0:0D	7	335	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0002.BIN	0:0D	8	345	00	{04:FF}。何を{08:8E}気だ？\n<wait>		Yo, Katsuragi. What are you doing?\n<wait>	v005		reads: 。何をする気だ？\n<wait>
-m/MS0002.BIN	0:0D	9	393	1FD2	{08:39}：		Kamikawa:	v005		reads: 上河：
-m/MS0002.BIN	0:0D	10	403	00	{04:FF}さん{08:72}何を{08:8E}気{08:6A}{08:55}か？\n<wait>		Umm, Katsuragi... What are you doing?<wait>	v005		reads: さん‥‥何をする気なんですか？\n<wait>
+m/MS0002.BIN	0:0B	0	32	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂： @refalign
+m/MS0002.BIN	0:0B	1	38	1FD3	俺達{08:74}、逃げる{08:6A}て{08:7A}事出来る訳が{08:25}！\n戻ろう！\n<wait>		We can't run away while the others are putting their lives on the line!\nLet's turn back!\n<wait>	v005		reads: 俺達だけ、逃げるなんてそんな事出来る訳がない！\n戻ろう！\n<wait> @refalign
+m/MS0002.BIN	0:0B	2	117	1FD2	{08:37}：		Sonoda:	v005		reads: 園田： @refalign
+m/MS0002.BIN	0:0B	3	123	1FD3	{08:47}{08:7E}進めば外だ。\n{08:8F}、俺達{08:74}逃げる{08:6A}て、{08:7A}事出来る訳{08:25}！\n<wait>{08:72}戻ろう\n<wait>		This is the exit. However, we cannot run away while the others\nare putting their lives on the line.\n<wait>Let's turn back.\n<wait>	v005		reads: このまま進めば外だ。\nだが、俺達だけ逃げるなんて、そんな事出来る訳ない！\n<wait>‥‥戻ろう\n<wait> @refalign
+m/MS0002.BIN	0:0B	4	225	1FD2	{08:39}：		Kamikawa:	v005		reads: 上河： @refalign
+m/MS0002.BIN	0:0B	5	231	1FD3	{08:63}達{08:74}、逃げる{08:6A}て{08:7A}事出来る訳{08:25}{02:08}！\n<wait>{02:08}戻りま{08:80}\n<wait>		We can't run away while the others are putting their lives on the line.\n<wait>Let's turn back.\n<wait>	v005		reads: 自分達だけ、逃げるなんてそんな事出来る訳ない‥‥‥！\n<wait>‥‥‥戻りましょう\n<wait> @refalign
+m/MS0002.BIN	0:0B	6	316	1FD2	{08:03}：		Emi:	v005		reads: 英美： @refalign
+m/MS0002.BIN	0:0B	7	322	1FD3	{08:63}達{08:74}、逃げる{08:6A}て{08:7A}事出来る訳{08:25}わ！\n<wait>{02:08}‥戻りま{08:80}。\n<wait>		We can't run away while the others are putting their lives on the line!\n<wait>Let's turn back.\n<wait>	v005		reads: 自分達だけ、逃げるなんてそんな事出来る訳ないわ！\n<wait>‥‥‥‥戻りましょう。\n<wait> @refalign
+m/MS0002.BIN	0:0B	8	387	1FD0	{02:0E}は出口で{08:7B}。\n{03:0B}今は到底外に出る{08:46}など、出来る状態では{08:19}。\n<wait>		This is the exit. You could easily leave if you wanted to.\n<wait>	v005		reads: こちらは出口である。\nしかし、今は到底外に出ることなど、出来る状態ではなかった。\n<wait> @refalign
+m/MS0002.BIN	0:0B	9	453	1FBA	{08:63}が外に出る{08:46}で、確実に死人は増{08:28}{08:77}。\n<wait>		However, running away now is without a doubt going to result\nin a high number of casualties.\n<wait>	v005		reads: 自分が外に出ることで、確実に死人は増えるのだ。\n<wait> @refalign
+m/MS0002.BIN	0:0B	10	502	00	{04:FF}は引き返{08:4B}。\n<wait>		You decide to turn back.\n<wait>	v005		reads: は引き返した。\n<wait> @refalign
+m/MS0002.BIN	0:0C	0	26	1FD2	{08:03}：		Emi:	v005		reads: 英美： @refalign
+m/MS0002.BIN	0:0C	1	32	1FD3	{08:47}{08:7E}行くと外よ！\n{01:16}達{08:74}、逃げる訳には行か{08:25}！\n<wait>		Wrong way! We can't just walk away and leave all these people behind.\n<wait>	v005		reads: このまま行くと外よ！\nあたし達だけ、逃げる訳には行かない！\n<wait> @refalign
+m/MS0002.BIN	0:0C	2	86	1FD2	{08:03}：		Emi:	v005		reads: 英美： @refalign
+m/MS0002.BIN	0:0C	3	92	1FD3	戻りま{08:80}！\n<wait>		Let's head back and do what we came here to do.\n<wait>	v005		reads: 戻りましょう！\n<wait> @refalign
+m/MS0002.BIN	0:0C	4	136	1FD2	{08:37}：		Sonoda:	v005		reads: 園田： @refalign
+m/MS0002.BIN	0:0C	5	142	1FD3	そっちに行くと外だ！\n俺達{08:74}、逃げる訳には行か{08:25}！\n<wait>		Wrong way! We can't just walk away and leave all these people behind.\n<wait>	v005		reads: そっちに行くと外だ！\n俺達だけ、逃げる訳には行かない！\n<wait> @refalign
+m/MS0002.BIN	0:0C	6	200	1FD2	{08:37}：		Sonoda:	v005		reads: 園田： @refalign
+m/MS0002.BIN	0:0C	7	206	1FD3	戻ろう！\n<wait>		Let's head back and do what we came here to do.\n<wait>	v005		@refalign
+m/MS0002.BIN	0:0C	8	248	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂： @refalign
+m/MS0002.BIN	0:0C	9	254	1FD3	そっちに行くと外だ！\n俺達{08:74}、逃げる訳には行か{08:25}！\n<wait>		Wrong way! We can't just walk away and leave all these people behind.\n<wait>	v005		reads: そっちに行くと外だ！\n俺達だけ、逃げる訳には行かない！\n<wait> @refalign
+m/MS0002.BIN	0:0C	10	312	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂： @refalign
+m/MS0002.BIN	0:0C	11	318	1FD3	戻ろう！\n<wait>		Let's head back and do what we came here to do.\n<wait>	v005		@refalign
+m/MS0002.BIN	0:0C	12	360	1FD2	{08:39}：		Kamikawa:	v005		reads: 上河： @refalign
+m/MS0002.BIN	0:0C	13	366	1FD3	そっちに行くと外{08:55}！\n俺達{08:74}、逃げる訳には行き{02:0A}！\n<wait>		Wrong way! We can't just walk away and leave all these people behind.\n<wait>	v005		reads: そっちに行くと外です！\n俺達だけ、逃げる訳には行きません！\n<wait> @refalign
+m/MS0002.BIN	0:0C	14	424	1FD2	{08:39}：		Kamikawa:	v005		reads: 上河： @refalign
+m/MS0002.BIN	0:0C	15	430	1FD3	戻りま{08:80}！\n<wait>		Let's head back and do what we came here to do.\n<wait>	v005		reads: 戻りましょう！\n<wait> @refalign
+m/MS0002.BIN	0:0C	16	450	1FD0	{08:47}{08:7E}進めば外に出る{02:08}{08:72}\n<wait>		This door leads out of the building.\n<wait>	v005		reads: このまま進めば外に出る‥‥‥‥‥\n<wait> @refalign
+m/MS0002.BIN	0:0C	17	479	1FBA	{03:0B}{08:47}大事な作戦のさなか、単独で外に出たり{08:4B}ら{08:90}{08:59}か{02:08}\n<wait>		There's no way that you can just walk away and leave.\nNot before you've done what you came here to do.\n<wait>	v005		reads: しかし、この大事な作戦のさなか、単独で外に出たりしたらどうなるか‥‥‥\n<wait> @refalign
+m/MS0002.BIN	0:0C	18	542	00	{04:FF}{08:62}思い直{08:4A}戻る事に{08:4B}。\n<wait>		With those thoughts, you turn around.\n<wait>	v005		reads: は、思い直して戻る事にした。\n<wait> @refalign
+m/MS0002.BIN	0:0D	0	14	1F7C	破壊前{08:62}駐車場だ{08:51}であろうホールに足を踏み入{08:60}。\n<wait>		You enter what you assume used to be a car park\nbefore the Rapture happened.\n<wait>	v005		reads: 破壊前は、駐車場だったであろうホールに足を踏み入れた。\n<wait> @refalign
+m/MS0002.BIN	0:0D	1	69	1FBA	ホールには血と硝煙の臭いが充満{08:4A}おり、激しい戦闘があ{08:51}事を物語{08:52}{08:64}。\n<wait>		A putrid smell of blood and gunpowder lingers in the air,\nsignalling the intensity of the battle that has taken place.\n<wait>	v005		reads: ホールには血と硝煙の臭いが充満しており、激しい戦闘があった事を物語っていた。\n<wait> @refalign
+m/MS0002.BIN	0:0D	2	145	18	ホールに{08:62}血と硝煙の臭いが充満{08:13}{02:08}\n<wait>		A putrid smell of blood and gunpowder lingers in the air...\n<wait>	v005		reads: ホールには、血と硝煙の臭いが充満している‥‥‥\n<wait> @refalign
+m/MS0002.BIN	0:0D	3	217	1FD2	{08:03}：		Emi:	v005		reads: 英美： @refalign
+m/MS0002.BIN	0:0D	4	227	00	{04:FF}君{08:72}{08:90}{08:8E}{01:3E}{08:6B}？\n<wait>		Err, Katsuragi... What are you doing?<wait>	v005		reads: 君‥‥どうするつもりなの？\n<wait> @refalign
+m/MS0002.BIN	0:0D	5	275	1FD2	{08:37}：		Sonoda:	v005		reads: 園田： @refalign
+m/MS0002.BIN	0:0D	6	285	00	{04:FF}{08:72}？　{08:90}{08:8E}{01:3E}だ？\n<wait>		Hey, Katsuragi... What are you doing?<wait>	v005		reads: ‥‥？　どうするつもりだ？\n<wait> @refalign
+m/MS0002.BIN	0:0D	7	335	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂： @refalign
+m/MS0002.BIN	0:0D	8	345	00	{04:FF}。何を{08:8E}気だ？\n<wait>		Yo, Katsuragi. What are you doing?\n<wait>	v005		reads: 。何をする気だ？\n<wait> @refalign
+m/MS0002.BIN	0:0D	9	393	1FD2	{08:39}：		Kamikawa:	v005		reads: 上河： @refalign
+m/MS0002.BIN	0:0D	10	403	00	{04:FF}さん{08:72}何を{08:8E}気{08:6A}{08:55}か？\n<wait>		Umm, Katsuragi... What are you doing?<wait>	v005		reads: さん‥‥何をする気なんですか？\n<wait> @refalign
 m/MS0002.BIN	0:0E	0	2	1FD2	若者：		Young Man:	v005		
 m/MS0002.BIN	0:0E	1	10	1FD3	応援部隊か！　助{08:18}ぜ！\n<wait>		Are you guys the backup? Thank god!\n<wait>	v005		reads: 応援部隊か！　助かったぜ！\n<wait>
 m/MS0002.BIN	0:0F	0	2	1FD2	爆弾男：		Demoman:	v005		
@@ -82,17 +82,17 @@ m/MS0002.BIN	0:13	0	2	1FD2	女性：		Woman:	v005
 m/MS0002.BIN	0:13	1	10	1FD3	南のタワーに精鋭部隊が攻め込{08:5F}{01:29}{08:84}、あそこは{08:76}、未知のエリア{08:6B}。\n<wait>		An elite strike team was sent to capture the southern tower.\nWe've not heard back from them since.\n<wait>	v005		reads: 南のタワーに精鋭部隊が攻め込んだそうだけど、あそこはまだ、未知のエリアなの。\n<wait>
 m/MS0002.BIN	0:13	2	83	1FD2	女性：		Woman:	v005		
 m/MS0002.BIN	0:13	3	91	1FD3	危険だわ{02:08}\n<wait>		I wouldn't recommend going after them.\n<wait>	v005		reads: 危険だわ‥‥‥\n<wait>
-m/MS0002.BIN	0:14	0	26	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：
-m/MS0002.BIN	0:14	1	32	1FD3	そ{08:47}扉を出ると外だ。\n俺達には時間が無い{02:08}。戻るぞ！\n<wait>		Wrong way, Katsuragi. We have no time for this. Let's hurry.\n<wait>	v005		reads: そこの扉を出ると外だ。\n俺達には時間が無い‥‥‥。戻るぞ！\n<wait>
-m/MS0002.BIN	0:14	2	117	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0002.BIN	0:14	3	123	1FD3	そ{08:47}扉を出ると外だ。\n俺達には時間が無い{08:5F}。戻ろう！\n<wait>		Wrong way, Katsuragi. We have no time for this. Let's hurry.\n<wait>	v005		reads: そこの扉を出ると外だ。\n俺達には時間が無いんだ。戻ろう！\n<wait>
-m/MS0002.BIN	0:14	4	208	1FD2	{08:39}：		Kamikawa:	v005		reads: 上河：
-m/MS0002.BIN	0:14	5	214	1FD3	そ{08:47}扉を出ると外{02:08}‥。\n{02:08}時間があり{02:0A}。戻りま{08:80}。\n<wait>		Wrong way, Katsuragi. We have no time for this. Let's hurry.\n<wait>	v005		reads: そこの扉を出ると外‥‥‥‥。\n‥‥‥時間がありません。戻りましょう。\n<wait>
-m/MS0002.BIN	0:14	6	297	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0002.BIN	0:14	7	303	1FD3	そ{08:47}扉を出ると外だわ{02:08}。\n{08:5C}、時間が無い。戻りま{08:80}。\n<wait>		Wrong way, Katsuragi. We have no time for this. Let's hurry.\n<wait>	v005		reads: そこの扉を出ると外だわ‥‥‥。\nもう、時間が無い。戻りましょう。\n<wait>
-m/MS0002.BIN	0:14	8	364	1FD0	{02:0E}は出口で{08:7B}。\n{03:0B}今は到底外に出る{08:46}など、出来る状態では{08:19}。\n<wait>		This is the exit. You could easily leave if you wanted to.\n<wait>	v005		reads: こちらは出口である。\nしかし、今は到底外に出ることなど、出来る状態ではなかった。\n<wait>
-m/MS0002.BIN	0:14	9	430	1FBA	{08:63}が外に出る{08:46}で、確実に死人は増{08:28}{08:77}。\n<wait>		However, running away now is without a doubt going to result\nin a high number of casualties.\n<wait>	v005		reads: 自分が外に出ることで、確実に死人は増えるのだ。\n<wait>
-m/MS0002.BIN	0:14	10	479	00	{04:FF}は引き返{08:4B}。\n<wait>		You decide to turn back.\n<wait>	v005		reads: は引き返した。\n<wait>
+m/MS0002.BIN	0:14	0	26	1FD2	{08:37}：		Sonoda:	v005		reads: 園田： @refalign
+m/MS0002.BIN	0:14	1	32	1FD3	そ{08:47}扉を出ると外だ。\n俺達には時間が無い{02:08}。戻るぞ！\n<wait>		Wrong way, Katsuragi. We have no time for this. Let's hurry.\n<wait>	v005		reads: そこの扉を出ると外だ。\n俺達には時間が無い‥‥‥。戻るぞ！\n<wait> @refalign
+m/MS0002.BIN	0:14	2	117	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂： @refalign
+m/MS0002.BIN	0:14	3	123	1FD3	そ{08:47}扉を出ると外だ。\n俺達には時間が無い{08:5F}。戻ろう！\n<wait>		Wrong way, Katsuragi. We have no time for this. Let's hurry.\n<wait>	v005		reads: そこの扉を出ると外だ。\n俺達には時間が無いんだ。戻ろう！\n<wait> @refalign
+m/MS0002.BIN	0:14	4	208	1FD2	{08:39}：		Kamikawa:	v005		reads: 上河： @refalign
+m/MS0002.BIN	0:14	5	214	1FD3	そ{08:47}扉を出ると外{02:08}‥。\n{02:08}時間があり{02:0A}。戻りま{08:80}。\n<wait>		Wrong way, Katsuragi. We have no time for this. Let's hurry.\n<wait>	v005		reads: そこの扉を出ると外‥‥‥‥。\n‥‥‥時間がありません。戻りましょう。\n<wait> @refalign
+m/MS0002.BIN	0:14	6	297	1FD2	{08:03}：		Emi:	v005		reads: 英美： @refalign
+m/MS0002.BIN	0:14	7	303	1FD3	そ{08:47}扉を出ると外だわ{02:08}。\n{08:5C}、時間が無い。戻りま{08:80}。\n<wait>		Wrong way, Katsuragi. We have no time for this. Let's hurry.\n<wait>	v005		reads: そこの扉を出ると外だわ‥‥‥。\nもう、時間が無い。戻りましょう。\n<wait> @refalign
+m/MS0002.BIN	0:14	8	364	1FD0	{02:0E}は出口で{08:7B}。\n{03:0B}今は到底外に出る{08:46}など、出来る状態では{08:19}。\n<wait>		This is the exit. You could easily leave if you wanted to.\n<wait>	v005		reads: こちらは出口である。\nしかし、今は到底外に出ることなど、出来る状態ではなかった。\n<wait> @refalign
+m/MS0002.BIN	0:14	9	430	1FBA	{08:63}が外に出る{08:46}で、確実に死人は増{08:28}{08:77}。\n<wait>		However, running away now is without a doubt going to result\nin a high number of casualties.\n<wait>	v005		reads: 自分が外に出ることで、確実に死人は増えるのだ。\n<wait> @refalign
+m/MS0002.BIN	0:14	10	479	00	{04:FF}は引き返{08:4B}。\n<wait>		You decide to turn back.\n<wait>	v005		reads: は引き返した。\n<wait> @refalign
 m/MS0002.BIN	0:15	0	2	1FD2	女性：		Woman:	v005		
 m/MS0002.BIN	0:15	1	10	1FD3	{08:5C}イヤよぉ{02:08}\n何で{01:16}が、{08:73}目にあわなきゃ{08:7D}{08:25}の{02:08}\n<wait>		I can't take it any longer...\nWhy did this have to happen to me...?\n<wait>	v005		reads: もうイヤよぉ‥‥‥\n何であたしが、こんな目にあわなきゃならないの‥‥‥\n<wait>
 m/MS0002.BIN	0:16	0	2	1FD2	男性：		Man:	v005		
@@ -149,26 +149,26 @@ m/MS0002.BIN	0:22	0	2	1FD2	男性：		Man:	v005
 m/MS0002.BIN	0:22	1	10	1FD3	こっちのタワーは俺達がやる！\nお前達{08:62}南のタワーを頼む！\n<wait>		We'll secure this tower. You guys take care of the other one.\n<wait>	v005		reads: こっちのタワーは俺達がやる！\nお前達は、南のタワーを頼む！\n<wait>
 m/MS0002.BIN	0:23	0	2	1FD2	若者：		Young Man:	v005		
 m/MS0002.BIN	0:23	1	10	1FD3	う{08:72}来るなぁッ！　来{08:25}でくれえぇ！\n俺は食{08:52}{08:5C}まくねぇ。だ{08:42}{08:72}殺さ{08:25}でくれぇ！\n<wait>		St-Stay away from me! I... I don't taste good! Please, don't eat me!\n<wait>	v005		reads: う‥‥来るなぁッ！　来ないでくれえぇ！\n俺は食ってもうまくねぇ。だから‥‥殺さないでくれぇ！\n<wait>
-m/MS0002.BIN	0:24	0	51	1FD0	血だまりの中に、幾人{08:5E}死体が転がっ{08:14}{02:08}\n{08:79}中に一人、辛うじて生き{08:14}者が{08:64}。\n<wait>		A number of bloodied corpses lie across the hallway.\nYou quickly notice that one of them is still alive, albeit barely.\n<wait>	v005		reads: 血だまりの中に、幾人もの死体が転がっている‥‥‥\nその中に一人、辛うじて生きている者がいた。\n<wait>
-m/MS0002.BIN	0:24	1	133	1FD2	男性：		Man:	v005		
-m/MS0002.BIN	0:24	2	141	1FD3	おお{08:72}応援部隊か{02:08}‥\n<wait>		Oh... Are you guys... the backup...?\n<wait>	v005		reads: おお‥‥応援部隊か‥‥‥‥\n<wait>
-m/MS0002.BIN	0:24	3	170	1FD2	男性：		Man:	v005		
-m/MS0002.BIN	0:24	4	178	1FD3	見ての通り、酷いザマさ。{08:45}{08:71}来たのにな{08:72}\n{08:5C}{08:72}俺は{02:08}動け{08:25}{02:08}\n<wait>		As you can see, things haven't been going so good on our end...\nI don't think I could get up even if I wanted to...\n<wait>	v005		reads: 見ての通り、酷いザマさ。ここまで来たのにな‥‥\nもう‥‥俺は‥‥‥動けない‥‥‥\n<wait>
-m/MS0002.BIN	0:24	5	246	1FD2	男性：		Man:	v005		
-m/MS0002.BIN	0:24	6	254	1FD3	すま{08:25}{02:08}せめて{08:72}{08:48}を持{08:52}い{08:52}くれ{08:72}\n<wait>		Please, take this... It's the least I can do for you...\n<wait>	v005		reads: すまない‥‥‥せめて‥‥これを持っていってくれ‥‥\n<wait>
-m/MS0002.BIN	0:24	7	297	1FD0	そう言{08:52}、男は３種類の弾丸を差し出{08:4B}{02:08}\n<wait>		Having said that, the man hands you three types of bullets.\n<wait>	v005		reads: そう言って、男は３種類の弾丸を差し出した‥‥‥\n<wait>
+m/MS0002.BIN	0:24	0	51	1FD0	血だまりの中に、幾人{08:5E}死体が転がっ{08:14}{02:08}\n{08:79}中に一人、辛うじて生き{08:14}者が{08:64}。\n<wait>		A number of bloodied corpses lie across the hallway.\nYou quickly notice that one of them is still alive, albeit barely.\n<wait>	v005		reads: 血だまりの中に、幾人もの死体が転がっている‥‥‥\nその中に一人、辛うじて生きている者がいた。\n<wait> @refalign @refalign-merged
+m/MS0002.BIN	0:24	1	133	1FD2	男性：		 	v005		@refalign @refalign-merged
+m/MS0002.BIN	0:24	2	141	1FD3	おお{08:72}応援部隊か{02:08}‥\n<wait>		 	v005		reads: おお‥‥応援部隊か‥‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0002.BIN	0:24	3	170	1FD2	男性：		 	v005		@refalign @refalign-merged
+m/MS0002.BIN	0:24	4	178	1FD3	見ての通り、酷いザマさ。{08:45}{08:71}来たのにな{08:72}\n{08:5C}{08:72}俺は{02:08}動け{08:25}{02:08}\n<wait>		 	v005		reads: 見ての通り、酷いザマさ。ここまで来たのにな‥‥\nもう‥‥俺は‥‥‥動けない‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0002.BIN	0:24	5	246	1FD2	男性：		 	v005		@refalign @refalign-merged
+m/MS0002.BIN	0:24	6	254	1FD3	すま{08:25}{02:08}せめて{08:72}{08:48}を持{08:52}い{08:52}くれ{08:72}\n<wait>		 	v005		reads: すまない‥‥‥せめて‥‥これを持っていってくれ‥‥\n<wait> @refalign @refalign-merged
+m/MS0002.BIN	0:24	7	297	1FD0	そう言{08:52}、男は３種類の弾丸を差し出{08:4B}{02:08}\n<wait>		 	v005		reads: そう言って、男は３種類の弾丸を差し出した‥‥‥\n<wait> @refalign @refalign-merged
 m/MS0002.BIN	0:24	8	373	1F83	{03:00}	{03:00}				reads: 飛び道具
-m/MS0002.BIN	0:24	9	389	1F80	j性：		n:	v005		
-m/MS0002.BIN	0:24	10	396	1FD3	{02:08}そうか{02:08}無理に持{08:52}行{08:52}{02:08}負担に{08:1A}も仕方{08:72}{08:25}。\n本当に{02:08}いら{08:25}のか{02:08}？\n		Oh, right... I should have asked first...\nAre you sure that you don't need them...?\n	v005		reads: ‥‥‥そうか‥‥‥無理に持って行って‥‥‥負担になっても仕方‥‥ない。\n本当に‥‥‥いらないのか‥‥‥？\n
+m/MS0002.BIN	0:24	9	389	1F80	j性：		 	v005		@refalign @refalign-merged
+m/MS0002.BIN	0:24	10	396	1FD3	{02:08}そうか{02:08}無理に持{08:52}行{08:52}{02:08}負担に{08:1A}も仕方{08:72}{08:25}。\n本当に{02:08}いら{08:25}のか{02:08}？\n		 	v005		reads: ‥‥‥そうか‥‥‥無理に持って行って‥‥‥負担になっても仕方‥‥ない。\n本当に‥‥‥いらないのか‥‥‥？\n @refalign @refalign-merged
 m/MS0002.BIN	0:24	11	482	1FB2	{08:26}	{08:26}	Yeah	v005		reads: はい; menu option, declared width 20 columns
-m/MS0002.BIN	0:24	12	486	1FB2	やっぱり貰う		Actually...	v005		menu option, declared width 20 columns
+m/MS0002.BIN	0:24	12	486	1FB2	やっぱり貰う		Actually...	v005		menu option, declared width 20 columns @refalign
 m/MS0002.BIN	0:24	13	593	1F83	{03:00}	{03:00}				reads: 飛び道具; reads: 山瀬勇
 m/MS0002.BIN	0:24	14	607	1F80	j性：	j性：	n:	v005		
 m/MS0002.BIN	0:24	15	614	1FD3	{02:08}そうか{02:08}無理に持{08:52}行{08:52}{02:08}負担に{08:1A}も仕方{08:72}{08:25}。\n{08:61}{02:08}本当に{02:08}いら{08:25}のか{02:08}？\n	{02:08}そうか{02:08}無理に持{08:52}行{08:52}{02:08}負担に{08:1A}も仕方{08:72}{08:25}。\n{08:61}{02:08}本当に{02:08}いら{08:25}のか{02:08}？\n	Oh, right... I should have asked first...\nAre you sure that you don't need them...?\n	v005		reads: ‥‥‥そうか‥‥‥無理に持って行って‥‥‥負担になっても仕方‥‥ない。\nしかし‥‥‥本当に‥‥‥いらないのか‥‥‥？\n; reads: 飛び道具
 m/MS0002.BIN	0:24	16	704	1FB2	{08:26}	{08:26}	Yeah	v005		reads: はい; menu option, declared width 20 columns
-m/MS0002.BIN	0:24	17	708	1FB2	やっぱり貰う		Actually...	v005		menu option, declared width 20 columns; reads: ‥‥‥そうか‥‥‥無理に持って行って‥‥‥負担になっても仕方‥‥ない。\nしかし‥‥‥本当に‥‥‥いらないのか‥‥‥？\n
+m/MS0002.BIN	0:24	17	708	1FB2	やっぱり貰う		Actually...	v005		menu option, declared width 20 columns; reads: ‥‥‥そうか‥‥‥無理に持って行って‥‥‥負担になっても仕方‥‥ない。\nしかし‥‥‥本当に‥‥‥いらないのか‥‥‥？\n @refalign
 m/MS0002.BIN	0:24	18	814	1F83	{03:00}	{03:00}				reads: 飛び道具; reads: はい; menu option, declared width 20 columns
-m/MS0002.BIN	0:24	19	828	1F80	j性：		n:	v005		menu option, declared width 20 columns
+m/MS0002.BIN	0:24	19	828	1F80	j性：		 	v005		menu option, declared width 20 columns @refalign @refalign-merged
 m/MS0002.BIN	0:24	20	835	1FD3	{02:08}そうか{02:08}無理に持{08:52}行{08:52}{02:08}負担に{08:1A}も仕方{08:72}{08:25}。\n{08:61}{02:08}本当に{02:08}いら{08:25}のか{02:08}？\n	{02:08}そうか{02:08}無理に持{08:52}行{08:52}{02:08}負担に{08:1A}も仕方{08:72}{08:25}。\n{08:61}{02:08}本当に{02:08}いら{08:25}のか{02:08}？\n	Oh, right... I should have asked first...\nAre you sure that you don't need them...?\n	v005		reads: ‥‥‥そうか‥‥‥無理に持って行って‥‥‥負担になっても仕方‥‥ない。\nしかし‥‥‥本当に‥‥‥いらないのか‥‥‥？\n; reads: 山瀬勇
 m/MS0002.BIN	0:24	21	925	1FB2	{08:26}	{08:26}	Yeah	v005		reads: はい; menu option, declared width 20 columns
 m/MS0002.BIN	0:24	22	929	1FB2	やっぱり貰う	やっぱり貰う	Actually...	v005		menu option, declared width 20 columns; reads: 飛び道具
@@ -179,30 +179,30 @@ m/MS0002.BIN	0:24	26	1199	1F83	{03:00}	{03:00}				reads: 飛び道具; menu opti
 m/MS0002.BIN	0:24	27	1213	1F80	j性：	j性：	n:	v005		reads: 山瀬勇
 m/MS0002.BIN	0:24	28	1220	1FD3	{02:08}そうか{02:08}無理に持{08:52}行{08:52}{02:08}負担に{08:1A}も仕方{08:72}{08:25}。\n{08:61}{02:08}本当に{02:08}いら{08:25}のか{02:08}？\n	{02:08}そうか{02:08}無理に持{08:52}行{08:52}{02:08}負担に{08:1A}も仕方{08:72}{08:25}。\n{08:61}{02:08}本当に{02:08}いら{08:25}のか{02:08}？\n	Oh, right... I should have asked first...\nAre you sure that you don't need them...?\n	v005		reads: ‥‥‥そうか‥‥‥無理に持って行って‥‥‥負担になっても仕方‥‥ない。\nしかし‥‥‥本当に‥‥‥いらないのか‥‥‥？\n
 m/MS0002.BIN	0:24	29	1310	1FB2	{08:26}	{08:26}	Yeah	v005		reads: はい; menu option, declared width 20 columns
-m/MS0002.BIN	0:24	30	1314	1FB2	やっぱり貰う		Actually...	v005		menu option, declared width 20 columns; reads: それと‥‥‥これも持っていくといい‥‥‥\n‥‥俺達が持っていても‥‥もう‥役に立たない‥‥‥‥\n<wait>
+m/MS0002.BIN	0:24	30	1314	1FB2	やっぱり貰う		Actually...	v005		menu option, declared width 20 columns; reads: それと‥‥‥これも持っていくといい‥‥‥\n‥‥俺達が持っていても‥‥もう‥役に立たない‥‥‥‥\n<wait> @refalign
 m/MS0002.BIN	0:24	31	1394	1F83	{03:00}	{03:00}				reads: 飛び道具; reads: そう言って男は、傍らに転がっているセラミックブレードと\nバトルチェーンソーを指さした。\n<wait>
 m/MS0002.BIN	0:24	32	1408	1F80	j性：	j性：	n:	v005		reads: 飛び道具
-m/MS0002.BIN	0:24	33	1415	1FD3	{02:08}そうか{02:08}無理に持{08:52}行{08:52}{02:08}負担に{08:1A}も仕方{08:72}{08:25}。\n{08:61}{02:08}本当に{02:08}いら{08:25}のか{02:08}？\n		Oh, right... I should have asked first...\nAre you sure that you don't need them...?\n	v005		reads: ‥‥‥そうか‥‥‥無理に持って行って‥‥‥負担になっても仕方‥‥ない。\nしかし‥‥‥本当に‥‥‥いらないのか‥‥‥？\n
+m/MS0002.BIN	0:24	33	1415	1FD3	{02:08}そうか{02:08}無理に持{08:52}行{08:52}{02:08}負担に{08:1A}も仕方{08:72}{08:25}。\n{08:61}{02:08}本当に{02:08}いら{08:25}のか{02:08}？\n		 	v005		reads: ‥‥‥そうか‥‥‥無理に持って行って‥‥‥負担になっても仕方‥‥ない。\nしかし‥‥‥本当に‥‥‥いらないのか‥‥‥？\n @refalign @refalign-merged
 m/MS0002.BIN	0:24	34	1505	1FB2	{08:26}	{08:26}	Yeah	v005		reads: はい; menu option, declared width 20 columns; reads: ‥‥‥そうか‥‥‥無理に持って行って‥‥‥負担になっても仕方‥‥ない。\nしかし‥‥‥本当に‥‥‥いらないのか‥‥‥？\n
 m/MS0002.BIN	0:24	35	1509	1FB2	やっぱり貰う	やっぱり貰う	Actually...	v005		menu option, declared width 20 columns; reads: はい
 m/MS0002.BIN	0:24	36	1559	1FD2	男性：		Man:	v005		menu option, declared width 20 columns
 m/MS0002.BIN	0:24	37	1567	1FD3	{08:48}くらい{08:86}出来なくてすまんな{08:72}\nお前達{08:72}こいつらの仇を取{08:52}や{08:52}くれ{08:72}\n<wait>	{08:48}くらい{08:86}出来なくてすまんな{08:72}\nお前達{08:72}こいつらの仇を取{08:52}や{08:52}くれ{08:72}\n<wait>	I truly am sorry... that I cannot do more for you...\n<wait>	v005		reads: これくらいしか出来なくてすまんな‥‥\nお前達‥‥こいつらの仇を取ってやってくれ‥‥\n<wait>; reads: 
 m/MS0002.BIN	0:24	38	1642	1FD2	男性：	男性：	Man:	v005		reads: 飛び道具
 m/MS0002.BIN	0:24	39	1650	1FD3	何処へ行く{08:5F}{08:72}？\n<wait>{01:08}は目の前だ、こいつらの仇を取{08:52}くれ{08:72}\n<wait>		Where are you going...?n<wait>Baal is over that way... Please, you must kill him...\n<wait>	ours		reads: 何処へ行くんだ‥‥？\n<wait>バエルは目の前だ、こいつらの仇を取ってくれ‥‥\n<wait>
-m/MS0002.BIN	0:25	0	53	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0002.BIN	0:25	1	64	09	{08:45}{08:71}来て戻{08:51}ん{08:81}、余計消耗{08:8E}{08:74}だ{02:08}\n先に進む{08:86}{08:25}{02:08}\n		We've come too far to turn back. Let's keep going.\n	v005		reads: ここまで来て戻ったんじゃ、余計消耗するだけだ‥‥‥\n先に進むしかない‥‥‥\n
+m/MS0002.BIN	0:25	0	53	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂： @refalign
+m/MS0002.BIN	0:25	1	64	09	{08:45}{08:71}来て戻{08:51}ん{08:81}、余計消耗{08:8E}{08:74}だ{02:08}\n先に進む{08:86}{08:25}{02:08}\n		We've come too far to turn back. Let's keep going.\n	v005		reads: ここまで来て戻ったんじゃ、余計消耗するだけだ‥‥‥\n先に進むしかない‥‥‥\n @refalign
 m/MS0002.BIN	0:25	2	117	18	おい！　		Yo, Katsuragi. Where do you think you're going? Baal waits us ahead.\n<wait>	ours		
 m/MS0002.BIN	0:25	3	129	00	{04:FF}！　何処へ行く気だよ！！\n{01:08}は目前だ、{08:45}で戻っ{08:50}皆に申し訳が立たん！！\n<wait>					reads: ！　何処へ行く気だよ！！\nバエルは目前だ、ここで戻ったら皆に申し訳が立たん！！\n<wait>
-m/MS0002.BIN	0:25	4	232	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：
-m/MS0002.BIN	0:25	5	243	09	{08:45}{08:71}来て戻るの{08:62}戦力を消耗{08:8E}{08:74}だ。\n{08:5C}、後には引け{08:25}{08:72}\n		We've come too far to turn back. Let's keep going.\n	v005		reads: ここまで来て戻るのは、戦力を消耗するだけだ。\nもう、後には引けない‥‥\n
+m/MS0002.BIN	0:25	4	232	1FD2	{08:37}：		Sonoda:	v005		reads: 園田： @refalign
+m/MS0002.BIN	0:25	5	243	09	{08:45}{08:71}来て戻るの{08:62}戦力を消耗{08:8E}{08:74}だ。\n{08:5C}、後には引け{08:25}{08:72}\n		We've come too far to turn back. Let's keep going.\n	v005		reads: ここまで来て戻るのは、戦力を消耗するだけだ。\nもう、後には引けない‥‥\n @refalign
 m/MS0002.BIN	0:25	6	304	00	{04:FF}、今戻っ{08:50}全てが水の泡だ。\n死んで{08:22}人達にも申し訳が立たん！！\n<wait>		Katsuragi. If we turn back now,\nthen everyone who's dead has died for nothing.\n<wait>	v005		reads: 、今戻ったら全てが水の泡だ。\n死んでいった人達にも申し訳が立たん！！\n<wait>
 m/MS0002.BIN	0:25	7	399	1FD2	{08:03}：		Emi:	v005		reads: 英美：
 m/MS0002.BIN	0:25	8	410	09	{01:08}は目前だわ。\n{08:5C}、戻{08:52}{08:6A}かいられ{08:25}{08:72}\n		Baal waits us ahead. Let's keep going.\n	ours		reads: バエルは目前だわ。\nもう、戻ってなんかいられない‥‥\n
 m/MS0002.BIN	0:25	9	455	00	{04:FF}君、{08:90}{08:4B}の？\n{01:08}は目前だよ。頑張ろうよ！\n<wait>		What's wrong, Katsuragi? Baal waits us ahead.\n<wait>	ours		reads: 君、どうしたの？\nバエルは目前だよ。頑張ろうよ！\n<wait>
 m/MS0002.BIN	0:25	10	528	1FD2	{08:39}：		Kamikawa:	v005		reads: 上河：
-m/MS0002.BIN	0:25	11	539	09	{08:73}所{08:71}来て戻る{08:6A}て{02:08}\n{08:56}、僕一人では戻{08:2F}か{08:90}か{02:08}\n<wait>		Even if we tried, I'm not sure if we could make it back alive...\n<wait>	v005		reads: こんな所まで来て戻るなんて‥‥‥\nでも、僕一人では戻れるかどうか‥‥‥\n<wait>
-m/MS0002.BIN	0:25	12	595	1FD2	{08:39}：		Kamikawa:	v005		reads: 上河：
-m/MS0002.BIN	0:25	13	601	1FD3	{02:08}だっ{08:50}先に進{08:5C}{02:08}！\n		The only way for us to go is forward...\n	v005		reads: ‥‥‥だったら先に進もう‥‥‥！\n
+m/MS0002.BIN	0:25	11	539	09	{08:73}所{08:71}来て戻る{08:6A}て{02:08}\n{08:56}、僕一人では戻{08:2F}か{08:90}か{02:08}\n<wait>		Even if we tried, I'm not sure if we could make it back alive...\n<wait>	v005		reads: こんな所まで来て戻るなんて‥‥‥\nでも、僕一人では戻れるかどうか‥‥‥\n<wait> @refalign
+m/MS0002.BIN	0:25	12	595	1FD2	{08:39}：		Kamikawa:	v005		reads: 上河： @refalign
+m/MS0002.BIN	0:25	13	601	1FD3	{02:08}だっ{08:50}先に進{08:5C}{02:08}！\n		The only way for us to go is forward...\n	v005		reads: ‥‥‥だったら先に進もう‥‥‥！\n @refalign @refalign-merged
 m/MS0002.BIN	0:25	14	629	00	{04:FF}さん、{08:90}{08:4B}ん{08:55}か？\n{01:08}は目前{08:55}よ。\n<wait>		What's the matter, Katsuragi? Baal waits us ahead.\n<wait>	ours		reads: さん、どうしたんですか？\nバエルは目前ですよ。\n<wait>
 m/MS0002.BIN	0:25	15	673	1FD2	{08:39}：		Kamikawa:	v005		reads: 上河：
 m/MS0002.BIN	0:25	16	679	1FD3	{08:45}で戻っ{08:50}{08:72}\n俺達は一生、世間に顔向け出来{02:0A}よ。\n<wait>		Even if we tried, I'm not sure if we could make it back alive...\n<wait>	v005		reads: ここで戻ったら‥‥\n俺達は一生、世間に顔向け出来ませんよ。\n<wait>

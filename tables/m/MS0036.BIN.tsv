@@ -3,21 +3,21 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0036.BIN	0:00	0	6	1FD0	線路が分かれ{08:14}\n		The track splits in two.\n	v005		reads: 線路が分かれている\n
-m/MS0036.BIN	0:00	1	37	1FB2	左へ進む		Go left	v005		menu option, declared width 20 columns
-m/MS0036.BIN	0:00	2	47	1FB2	右へ進む		Go right	v005		menu option, declared width 20 columns
-m/MS0036.BIN	0:00	3	57	1FB2	戻る		Turn back	v005		menu option, declared width 20 columns
-m/MS0036.BIN	0:01	0	16	1FB2	駅に入る		Enter the station	v005		menu option, declared width 20 columns
-m/MS0036.BIN	0:01	1	26	1FB2	{08:79}{08:7E}進む		Keep walking	v005		reads: そのまま進む; menu option, declared width 20 columns
-m/MS0036.BIN	0:01	2	36	1FB2	戻る		Turn back	v005		menu option, declared width 20 columns @rebase-unmatched idx5 en={01:1F}
-m/MS0036.BIN	0:02	0	16	1FB2	駅に入る		Enter the station	v005		menu option, declared width 20 columns
-m/MS0036.BIN	0:02	1	26	1FB2	戻る		Turn back	v005		menu option, declared width 20 columns
+m/MS0036.BIN	0:00	0	6	1FD0	線路が分かれ{08:14}\n		The track splits in two.\n	v005		reads: 線路が分かれている\n @refalign
+m/MS0036.BIN	0:00	1	37	1FB2	左へ進む		Go left	v005		menu option, declared width 20 columns @refalign
+m/MS0036.BIN	0:00	2	47	1FB2	右へ進む		Go right	v005		menu option, declared width 20 columns @refalign
+m/MS0036.BIN	0:00	3	57	1FB2	戻る		Turn back	v005		menu option, declared width 20 columns @refalign
+m/MS0036.BIN	0:01	0	16	1FB2	駅に入る		Enter the station	v005		menu option, declared width 20 columns @refalign
+m/MS0036.BIN	0:01	1	26	1FB2	{08:79}{08:7E}進む		Keep walking	v005		reads: そのまま進む; menu option, declared width 20 columns @refalign
+m/MS0036.BIN	0:01	2	36	1FB2	戻る		Turn back	v005		menu option, declared width 20 columns @rebase-unmatched idx5 en={01:1F} @refalign
+m/MS0036.BIN	0:02	0	16	1FB2	駅に入る		Enter the station	v005		menu option, declared width 20 columns @refalign
+m/MS0036.BIN	0:02	1	26	1FB2	戻る		Turn back	v005		menu option, declared width 20 columns @refalign
 m/MS0036.BIN	0:04	0	54	00	{01:00}	{01:00}				reads: 早坂達也
 m/MS0036.BIN	0:04	1	58	00	{01:00}{02:00}	{01:00}{02:00}				reads: 早坂達也デビルバスター
 m/MS0036.BIN	0:05	0	54	00	{02:00}	{02:00}				reads: デビルバスター
 m/MS0036.BIN	0:05	1	58	00	{01:00}{02:00}	{01:00}{02:00}				reads: 早坂達也デビルバスター
-m/MS0036.BIN	0:06	0	6	1FD0	護国寺駅プラットホーム\n		Gokokuji Station\n	v005		
-m/MS0036.BIN	0:07	0	6	1FD0	東池袋駅プラットホーム\n		Higashi-Ikebukuro Station\n	v005		
+m/MS0036.BIN	0:06	0	6	1FD0	護国寺駅プラットホーム\n		Gokokuji Station\n	v005		@refalign
+m/MS0036.BIN	0:07	0	6	1FD0	東池袋駅プラットホーム\n		Higashi-Ikebukuro Station\n	v005		@refalign
 m/MS0036.BIN	0:07	1	65	00	{01:00}{02:00}	{01:00}{02:00}				reads: 早坂達也デビルバスター
 m/MS0036.BIN	0:08	0	0	UNTILED	ﾐ飯田橋駅プラットホーム / 6 /  / < /  / 9					@noedit; @untiled; record does not tile (switch entry at 0x35 has kind 3 (not 0 or 1)); read-only, copied verbatim @rebase-new @rebase-unmatched idx0 en=Iidabashi Station\n
 m/MS0036.BIN	0:0A	0	54	00	{01:00}	{01:00}				reads: 早坂達也
@@ -34,20 +34,20 @@ m/MS0036.BIN	0:10	1	60	00	{01:00}	{01:00}				reads: 早坂達也
 m/MS0036.BIN	0:11	0	54	00	{02:00}{01:00}{02:00}{01:00}	{02:00}{01:00}{02:00}{01:00}				reads: デビルバスター早坂達也デビルバスター早坂達也
 m/MS0036.BIN	0:12	0	54	00	{03:00}{06:00}	{03:00}{06:00}				reads: 飛び道具辞書５
 m/MS0036.BIN	0:12	1	60	00	{03:00}	{03:00}				reads: 飛び道具
-m/MS0036.BIN	0:13	0	6	1FD0	御茶ノ水駅プラットホーム\n		Ochanomizu Station\n	v005		
-m/MS0036.BIN	0:14	0	6	1FD0	大手町駅プラットホーム\n		Ootemachi Station\n	v005		
-m/MS0036.BIN	0:15	0	6	1FD0	霞ヶ関駅プラットホーム\n		Kasumigaseki Station\n	v005		
-m/MS0036.BIN	0:17	0	6	1FD0	明治神宮前駅プラットホーム\n		Meiji-Jinguumae Station\n	v005		
+m/MS0036.BIN	0:13	0	6	1FD0	御茶ノ水駅プラットホーム\n		Ochanomizu Station\n	v005		@refalign
+m/MS0036.BIN	0:14	0	6	1FD0	大手町駅プラットホーム\n		Ootemachi Station\n	v005		@refalign
+m/MS0036.BIN	0:15	0	6	1FD0	霞ヶ関駅プラットホーム\n		Kasumigaseki Station\n	v005		@refalign
+m/MS0036.BIN	0:17	0	6	1FD0	明治神宮前駅プラットホーム\n		Meiji-Jinguumae Station\n	v005		@refalign
 m/MS0036.BIN	0:17	1	108	1F80	{01:1E}{04:00}=	{01:1E}{04:00}=				reads: はやくを唱えた！ =
 m/MS0036.BIN	0:17	2	114	00	{03:00}{04:00}	{03:00}{04:00}				reads: 飛び道具を唱えた！ 
 m/MS0036.BIN	0:17	3	120	00	{01:18}	{01:18}				reads: あんた
 m/MS0036.BIN	0:17	4	125	0C	{04:00}=	{04:00}=				reads: を唱えた！ =
 m/MS0036.BIN	0:17	5	129	00	{03:00}{02:00}	{03:00}{02:00}				reads: 飛び道具デビルバスター
 m/MS0036.BIN	0:17	6	135	00	{03:00}	{03:00}				reads: 飛び道具
-m/MS0036.BIN	0:18	0	6	1FD0	千駄木駅プラットホーム\n		Sendagi Station\n	v005		
+m/MS0036.BIN	0:18	0	6	1FD0	千駄木駅プラットホーム\n		Sendagi Station\n	v005		@refalign
 m/MS0036.BIN	0:18	1	43	00	{01:00}{02:00}{04:00}	{01:00}{02:00}{04:00}				reads: 早坂達也デビルバスターを唱えた！ 
 m/MS0036.BIN	0:18	2	65	00	{01:00}{02:00}	{01:00}{02:00}				reads: 早坂達也デビルバスター
-m/MS0036.BIN	0:19	0	6	1FD0	代々木公園駅プラットホーム\n		Yoyogi Park Station\n	v005		
+m/MS0036.BIN	0:19	0	6	1FD0	代々木公園駅プラットホーム\n		Yoyogi Park Station\n	v005		@refalign
 m/MS0036.BIN	0:19	1	65	00	{03:00}{01:00}	{03:00}{01:00}				reads: 飛び道具早坂達也
 m/MS0036.BIN	0:19	2	71	00	{01:00}	{01:00}				reads: 早坂達也
 m/MS0036.BIN	0:1A	0	58	00	{02:00}	{02:00}				reads: デビルバスター
@@ -59,12 +59,12 @@ m/MS0036.BIN	0:1D	1	60	00	{03:00}	{03:00}				reads: 飛び道具
 m/MS0036.BIN	0:1E	0	54	00	{05:00}{01:00}	{05:00}{01:00}				reads: はいいいえ早坂達也; reads: はいいいえニュートン早坂達也
 m/MS0036.BIN	0:1E	1	60	00	{01:00}	{01:00}				reads: 早坂達也
 m/MS0036.BIN	0:1F	0	54	00	{05:00}{01:00}{02:00}{01:00}	{05:00}{01:00}{02:00}{01:00}				reads: はいいいえ早坂達也デビルバスター早坂達也; reads: はいいいえニュートン早坂達也デビルバスター早坂達也
-m/MS0036.BIN	0:20	0	6	1FD0	大手町駅プラットホーム\n		Ootemachi Station\n	v005		
-m/MS0036.BIN	0:21	0	6	1FD0	東京駅プラットホーム\n		Tokyo Station\n	v005		
-m/MS0036.BIN	0:22	0	6	1FD0	銀座駅プラットホーム\n		Ginza Station\n	v005		
+m/MS0036.BIN	0:20	0	6	1FD0	大手町駅プラットホーム\n		Ootemachi Station\n	v005		@refalign
+m/MS0036.BIN	0:21	0	6	1FD0	東京駅プラットホーム\n		Tokyo Station\n	v005		@refalign
+m/MS0036.BIN	0:22	0	6	1FD0	銀座駅プラットホーム\n		Ginza Station\n	v005		@refalign
 m/MS0036.BIN	0:23	0	0	UNTILED	ﾐ御茶ノ水駅プラットホーム / 6 /  /  / ?					@noedit; @untiled; record does not tile (switch entry at 0x37 has kind 3 (not 0 or 1)); read-only, copied verbatim @rebase-new @rebase-unmatched idx0 en=Ochanomizu Station\n
 m/MS0036.BIN	0:24	0	0	UNTILED	ﾐ霞が関駅プラットホーム / 6 /  / ' /  / ?					@noedit; @untiled; record does not tile (switch entry at 0x35 has kind 3 (not 0 or 1)); read-only, copied verbatim @rebase-new @rebase-unmatched idx0 en=Kasumigaseki Station\n
-m/MS0036.BIN	0:25	0	6	1FD0	新橋駅プラットホーム\n		Shinbashi Station\n	v005		
+m/MS0036.BIN	0:25	0	6	1FD0	新橋駅プラットホーム\n		Shinbashi Station\n	v005		@refalign
 m/MS0036.BIN	0:26	0	0	UNTILED	ﾐ銀座駅プラットホーム / 6 /  /  / A					@noedit; @untiled; record does not tile (switch entry at 0x2C has kind 6 (not 0 or 1)); read-only, copied verbatim @rebase-new @rebase-unmatched idx0 en=Ginza Station\n
 m/MS0036.BIN	0:27	0	54	00	{01:00}\n	{01:00}\n				reads: 早坂達也\n
 m/MS0036.BIN	0:27	1	60	00	{03:00}	{03:00}				reads: 飛び道具
@@ -86,21 +86,21 @@ m/MS0036.BIN	0:30	1	58	00	{01:00}{02:00}	{01:00}{02:00}				reads: 早坂達也�
 m/MS0036.BIN	0:31	0	54	00	{04:00}{02:00}{01:00}{02:00}	{04:00}{02:00}{01:00}{02:00}				reads: を唱えた！ デビルバスター早坂達也デビルバスター
 m/MS0036.BIN	0:32	0	54	00	{05:00}	{05:00}				reads: はいいいえ; reads: はいいいえニュートン
 m/MS0036.BIN	0:32	1	58	00	{04:00}	{04:00}				reads: を唱えた！ 
-m/MS0036.BIN	0:33	0	6	1FD0	六本木駅プラットホーム\n		Roppongi Station\n	v005		
+m/MS0036.BIN	0:33	0	6	1FD0	六本木駅プラットホーム\n		Roppongi Station\n	v005		@refalign
 m/MS0036.BIN	0:33	1	104	1F80	{01:1E}{04:00}C	{01:1E}{04:00}C				reads: はやくを唱えた！ C
 m/MS0036.BIN	0:33	2	112	00	{06:00}	{06:00}				reads: 辞書５
 m/MS0036.BIN	0:33	3	116	00	{01:18}	{01:18}				reads: あんた
 m/MS0036.BIN	0:33	4	121	0C	{04:00}C	{04:00}C				reads: を唱えた！ C
 m/MS0036.BIN	0:33	5	127	00	{04:00}	{04:00}				reads: を唱えた！ 
 m/MS0036.BIN	0:33	6	131	00	{03:00}	{03:00}				reads: 飛び道具
-m/MS0036.BIN	0:34	0	6	1FD0	霞が関駅プラットホーム\n		Kasumigaseki Station\n	v005		
+m/MS0036.BIN	0:34	0	6	1FD0	霞が関駅プラットホーム\n		Kasumigaseki Station\n	v005		@refalign
 m/MS0036.BIN	0:34	1	104	1F80	{01:1E}{04:00}C	{01:1E}{04:00}C				reads: はやくを唱えた！ C
 m/MS0036.BIN	0:34	2	110	00	{01:00}{08:00}	{01:00}{08:00}				reads: 早坂達也早坂
 m/MS0036.BIN	0:34	3	116	00	{01:18}	{01:18}				reads: あんた
 m/MS0036.BIN	0:34	4	121	0C	{04:00}C	{04:00}C				reads: を唱えた！ C
 m/MS0036.BIN	0:34	5	125	00	{01:00}{06:00}	{01:00}{06:00}				reads: 早坂達也辞書５
 m/MS0036.BIN	0:34	6	131	00	{03:00}	{03:00}				reads: 飛び道具
-m/MS0036.BIN	0:35	0	6	1FD0	銀座駅プラットホーム\n		Ginza Station\n	v005		
+m/MS0036.BIN	0:35	0	6	1FD0	銀座駅プラットホーム\n		Ginza Station\n	v005		@refalign
 m/MS0036.BIN	0:35	1	102	1F80	{01:1E}{04:00}C	{01:1E}{04:00}C				reads: はやくを唱えた！ C
 m/MS0036.BIN	0:35	2	108	00	{03:00}{04:00}	{03:00}{04:00}				reads: 飛び道具を唱えた！ 
 m/MS0036.BIN	0:35	3	114	00	{01:18}	{01:18}				reads: あんた
@@ -116,10 +116,10 @@ m/MS0036.BIN	0:39	0	54	00	{02:00}	{02:00}				reads: デビルバスター
 m/MS0036.BIN	0:39	1	58	00	{03:00}	{03:00}				reads: 飛び道具
 m/MS0036.BIN	0:3A	0	0	UNTILED	ﾐ三ノ輪駅プラットホーム / 6 /  / E /  / D					@noedit; @untiled; record does not tile (switch entry at 0x35 has kind 3 (not 0 or 1)); read-only, copied verbatim @rebase-new @rebase-unmatched idx0 en=Minowa Station\n
 m/MS0036.BIN	0:3B	0	0	UNTILED	ﾐ上野駅プラットホーム / 6 /  / " /  / D					@noedit; @untiled; record does not tile (switch entry at 0x33 has kind 3 (not 0 or 1)); read-only, copied verbatim @rebase-new @rebase-unmatched idx0 en=Ueno Station\n
-m/MS0036.BIN	0:3C	0	6	1FD0	線路が分かれ{08:14}\n		The track splits in two.\n	v005		reads: 線路が分かれている\n
-m/MS0036.BIN	0:3C	1	43	1FB2	左へ進む		Go left	v005		menu option, declared width 20 columns
-m/MS0036.BIN	0:3C	2	53	1FB2	右へ進む		Go right	v005		menu option, declared width 20 columns
-m/MS0036.BIN	0:3C	3	63	1FB2	戻る		Turn back	v005		menu option, declared width 20 columns
+m/MS0036.BIN	0:3C	0	6	1FD0	線路が分かれ{08:14}\n		The track splits in two.\n	v005		reads: 線路が分かれている\n @refalign
+m/MS0036.BIN	0:3C	1	43	1FB2	左へ進む		Go left	v005		menu option, declared width 20 columns @refalign
+m/MS0036.BIN	0:3C	2	53	1FB2	右へ進む		Go right	v005		menu option, declared width 20 columns @refalign
+m/MS0036.BIN	0:3C	3	63	1FB2	戻る		Turn back	v005		menu option, declared width 20 columns @refalign
 m/MS0036.BIN	0:3C	4	108	1FB2	左へ進む	左へ進む	Go left	v005		menu option, declared width 20 columns; reads: 
 m/MS0036.BIN	0:3C	5	118	1FB2	右へ進む	右へ進む	Go right	v005		menu option, declared width 20 columns; reads: ペンタグランマt
 m/MS0036.BIN	0:3C	6	128	1FB2	戻る	戻る	Turn back	v005		menu option, declared width 20 columns
@@ -133,11 +133,11 @@ m/MS0036.BIN	0:41	0	54	00	{02:00}{01:00}	{02:00}{01:00}				reads: デビルバ�
 m/MS0036.BIN	0:41	1	60	00	{01:00}	{01:00}				reads: 早坂達也
 m/MS0036.BIN	0:42	0	54	00	{01:00}	{01:00}				reads: 早坂達也
 m/MS0036.BIN	0:42	1	58	00	{01:00}	{01:00}				reads: 早坂達也
-m/MS0036.BIN	0:43	0	6	1FD0	上野駅プラットホーム\n		Ueno Station\n	v005		
+m/MS0036.BIN	0:43	0	6	1FD0	上野駅プラットホーム\n		Ueno Station\n	v005		@refalign
 m/MS0036.BIN	0:43	1	41	00	{01:00}	{01:00}				reads: 早坂達也
 m/MS0036.BIN	0:43	2	61	00	{01:00}	{01:00}				reads: 早坂達也
 m/MS0036.BIN	0:43	3	65	00	{01:00}	{01:00}				reads: 早坂達也
-m/MS0036.BIN	0:44	0	6	1FD0	浅草駅プラットホーム\n		Asakusa Station\n	v005		
+m/MS0036.BIN	0:44	0	6	1FD0	浅草駅プラットホーム\n		Asakusa Station\n	v005		@refalign
 m/MS0036.BIN	0:44	1	41	00	{01:00}{03:00}	{01:00}{03:00}				reads: 早坂達也飛び道具
 m/MS0036.BIN	0:44	2	59	00	{02:00}{04:00}	{02:00}{04:00}				reads: デビルバスターを唱えた！ 
 m/MS0036.BIN	0:44	3	65	00	{03:00}	{03:00}				reads: 飛び道具

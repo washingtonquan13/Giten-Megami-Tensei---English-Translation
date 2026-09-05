@@ -3,23 +3,23 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS003C.BIN	0:10	0	18	0D	　御利用に{08:59}サービスを選択{08:4A}下{08:49}\n					reads: 　御利用になるサービスを選択して下さい\n; @noedit; @untiled; record does not tile (expression selector past end of record at 0x90); read-only, copied verbatim @rebase-new
-m/MS003C.BIN	0:10	1	67	1FB2	ターミナル間転送					menu option, declared width 20 columns @rebase-new
-m/MS003C.BIN	0:10	2	85	1FB2	ＡＭＳ{08:0A}配布					reads: ＡＭＳデータ配布; menu option, declared width 20 columns @rebase-new
-m/MS003C.BIN	0:10	3	99	1FB2	個人{08:0A}の管理					reads: 個人データの管理; menu option, declared width 20 columns @rebase-new
-m/MS003C.BIN	0:10	4	113	1FB2	終了					menu option, declared width 20 columns @rebase-new
-m/MS003C.BIN	0:11	0	4	1FD0	＞御利用に{08:59}サービスを選択{08:4A}下{08:49}\n					reads: ＞御利用になるサービスを選択して下さい\n; @noedit; @untiled; record does not tile (expression selector past end of record at 0x82); read-only, copied verbatim @rebase-new
-m/MS003C.BIN	0:11	1	53	1FB2	ターミナル間転送					menu option, declared width 20 columns @rebase-new
-m/MS003C.BIN	0:11	2	71	1FB2	ＡＭＳ{08:0A}配布					reads: ＡＭＳデータ配布; menu option, declared width 20 columns @rebase-new
-m/MS003C.BIN	0:11	3	85	1FB2	個人{08:0A}の管理					reads: 個人データの管理; menu option, declared width 20 columns @rebase-new
-m/MS003C.BIN	0:11	4	99	1FB2	終了					menu option, declared width 20 columns @rebase-new
-m/MS003C.BIN	0:12	0	7	1FD0	＞転送先を指定{08:4A}下{08:49}\n		>Please select your destination.\n	v005		reads: ＞転送先を指定して下さい\n
-m/MS003C.BIN	0:13	0	4	1FD0	＞{08:5B}の御利用をお待ち{08:4A}い{08:5A}\n<wait>		>We look forward to serving you again.\n<wait>	v005		reads: ＞またの御利用をお待ちしています\n<wait>
-m/MS003C.BIN	0:14	0	80	1FD0	＞転送先の{08:0A}が存在し{02:0A}\n<wait>		>No other terminals were found.\n<wait>	v005		reads: ＞転送先のデータが存在しません\n<wait>
+m/MS003C.BIN	0:10	0	18	0D	　御利用に{08:59}サービスを選択{08:4A}下{08:49}\n		 Please select which service you'd like to use.\n	v005		reads: 　御利用になるサービスを選択して下さい\n; @noedit; @untiled; record does not tile (expression selector past end of record at 0x90); read-only, copied verbatim @rebase-new @refalign
+m/MS003C.BIN	0:10	1	67	1FB2	ターミナル間転送		Terminal Travel	v005		menu option, declared width 20 columns @rebase-new @refalign
+m/MS003C.BIN	0:10	2	85	1FB2	ＡＭＳ{08:0A}配布		AMS Data	v005		reads: ＡＭＳデータ配布; menu option, declared width 20 columns @rebase-new @refalign
+m/MS003C.BIN	0:10	3	99	1FB2	個人{08:0A}の管理		Personal Management	v005		reads: 個人データの管理; menu option, declared width 20 columns @rebase-new @refalign
+m/MS003C.BIN	0:10	4	113	1FB2	終了		Exit	v005		menu option, declared width 20 columns @rebase-new @refalign
+m/MS003C.BIN	0:11	0	4	1FD0	＞御利用に{08:59}サービスを選択{08:4A}下{08:49}\n		>Please select which service you'd like to use.\n	v005		reads: ＞御利用になるサービスを選択して下さい\n; @noedit; @untiled; record does not tile (expression selector past end of record at 0x82); read-only, copied verbatim @rebase-new @refalign
+m/MS003C.BIN	0:11	1	53	1FB2	ターミナル間転送		Terminal Travel	v005		menu option, declared width 20 columns @rebase-new @refalign
+m/MS003C.BIN	0:11	2	71	1FB2	ＡＭＳ{08:0A}配布		Download AMS Data	v005		reads: ＡＭＳデータ配布; menu option, declared width 20 columns @rebase-new @refalign
+m/MS003C.BIN	0:11	3	85	1FB2	個人{08:0A}の管理		Personal Management	v005		reads: 個人データの管理; menu option, declared width 20 columns @rebase-new @refalign
+m/MS003C.BIN	0:11	4	99	1FB2	終了		Exit	v005		menu option, declared width 20 columns @rebase-new @refalign
+m/MS003C.BIN	0:12	0	7	1FD0	＞転送先を指定{08:4A}下{08:49}\n		>Please select your destination.\n	v005		reads: ＞転送先を指定して下さい\n @refalign
+m/MS003C.BIN	0:13	0	4	1FD0	＞{08:5B}の御利用をお待ち{08:4A}い{08:5A}\n<wait>		>We look forward to serving you again.\n<wait>	v005		reads: ＞またの御利用をお待ちしています\n<wait> @refalign
+m/MS003C.BIN	0:14	0	80	1FD0	＞転送先の{08:0A}が存在し{02:0A}\n<wait>		>No other terminals were found.\n<wait>	v005		reads: ＞転送先のデータが存在しません\n<wait> @refalign
 m/MS003C.BIN	0:16	0	40	1B	転送先	転送先	Hatsudai	v005		reads: われわれ
 m/MS003C.BIN	0:16	1	149	1B	初台	初台	Shinjuku	v005		reads: ペンタグランマ7
-m/MS003C.BIN	0:16	2	168	1B	新宿		Shiba	v005		reads: そんなこと｢西野義雄山田カズミダンタリオン @rebase-unmatched idx2 en={03:01}{01:04}{01:C4}{01:05}{01:C0}{01:06}{01:BC}{01:07}{01:B8}
-m/MS003C.BIN	0:16	3	187	1B	芝		Ikebukuro	v005		@rebase-unmatched idx3 en=Desti.
+m/MS003C.BIN	0:16	2	168	1B	新宿		Shinjuku	v005		reads: そんなこと｢西野義雄山田カズミダンタリオン @rebase-unmatched idx2 en={03:01}{01:04}{01:C4}{01:05}{01:C0}{01:06}{01:BC}{01:07}{01:B8} @refalign
+m/MS003C.BIN	0:16	3	187	1B	芝		Shiba	v005		@rebase-unmatched idx3 en=Desti. @refalign
 m/MS003C.BIN	0:16	4	204	1B	池袋	池袋	Ikebukuro	v005		reads: 
 m/MS003C.BIN	0:16	5	223	1B	池袋	池袋	Ginza	v005		reads: そんなことS
 m/MS003C.BIN	0:16	6	242	1B	銀座	銀座	Akihabara	v005		reads: 切り` @rebase-unmatched idx6 en={04:01}k
@@ -28,29 +28,29 @@ m/MS003C.BIN	0:16	8	282	1B	品川	品川	Kanda	v005		reads: ~ @rebase-unmatched 
 m/MS003C.BIN	0:16	9	301	1B	神田	神田	Ebisu	v005		reads: ＞何をしますか？{=8D}{=00}達也{=9E}{=00} @rebase-unmatched idx9 en={08:01}
 m/MS003C.BIN	0:16	10	320	1B	恵比寿	恵比寿	Roppongi	v005		reads: 
 m/MS003C.BIN	0:16	11	341	1B	六本木	六本木	Ariake	v005		reads: 
-m/MS003C.BIN	0:16	12	362	1B	有明		Ochanomizu	v005		
-m/MS003C.BIN	0:16	13	381	1B	御茶ノ水					@rebase-new
-m/MS003C.BIN	0:16	14	404	1B	市ヶ谷					@rebase-new
-m/MS003C.BIN	0:17	0	2	1FBA	＞転送実行し{08:5A}\n<wait>		>Initiating warp.\n<wait>	v005		reads: ＞転送実行します\n<wait>
-m/MS003C.BIN	0:18	0	8	1F77	{1E10:0103}＞転送正常終了しま{08:4B}\n<wait>		{1E10:0103}>Destination reached.\n<wait>	v005		reads: {1E10:0103}＞転送正常終了しました\n<wait>
-m/MS003C.BIN	0:18	1	39	1FBA	＞{08:5B}の御利用をお待ち{08:4A}い{08:5A}\n<wait>		>We look forward to serving you again.\n<wait>	v005		reads: ＞またの御利用をお待ちしています\n<wait>
-m/MS003C.BIN	0:28	0	18	1FB2	{08:0A}セーブ					reads: データセーブ; menu option, declared width 20 columns; @noedit; @untiled; record does not tile (expression selector past end of record at 0x5D); read-only, copied verbatim @rebase-new
-m/MS003C.BIN	0:28	1	28	1FB2	{08:0A}ロード					reads: データロード; menu option, declared width 20 columns @rebase-new
-m/MS003C.BIN	0:28	2	38	1FB2	ゲームの終了					menu option, declared width 20 columns @rebase-new
-m/MS003C.BIN	0:28	3	52	1FB2	メニューに戻る					menu option, declared width 20 columns @rebase-new
-m/MS003C.BIN	0:29	0	2	1FBA	＞現在の状況をセーブし{08:5A}\n　セーブ{08:8E}ファイルを選択{08:4A}下{08:49}\n		>Your progress will be saved.\n Please select a file to save to.\n	v005		reads: ＞現在の状況をセーブします\n　セーブするファイルを選択して下さい\n
-m/MS003C.BIN	0:29	1	209	1F81	{=84}{=08}\nを上書きし{08:5A}。よろしい{08:55}か？\n		 you wish to overwrite this save?\n	v005		reads: {=84}{=08}\nを上書きします。よろしいですか？\n
+m/MS003C.BIN	0:16	12	362	1B	有明		Ariake	v005		@refalign
+m/MS003C.BIN	0:16	13	381	1B	御茶ノ水		Ochanomizu	v005		@rebase-new @refalign
+m/MS003C.BIN	0:16	14	404	1B	市ヶ谷		Ichigaya	v005		@rebase-new @refalign
+m/MS003C.BIN	0:17	0	2	1FBA	＞転送実行し{08:5A}\n<wait>		>Initiating warp.\n<wait>	v005		reads: ＞転送実行します\n<wait> @refalign
+m/MS003C.BIN	0:18	0	8	1F77	{1E10:0103}＞転送正常終了しま{08:4B}\n<wait>		{1E10:0103}>Destination reached.\n<wait>	v005		reads: {1E10:0103}＞転送正常終了しました\n<wait> @refalign
+m/MS003C.BIN	0:18	1	39	1FBA	＞{08:5B}の御利用をお待ち{08:4A}い{08:5A}\n<wait>		>We look forward to serving you again.\n<wait>	v005		reads: ＞またの御利用をお待ちしています\n<wait> @refalign
+m/MS003C.BIN	0:28	0	18	1FB2	{08:0A}セーブ		Save	v005		reads: データセーブ; menu option, declared width 20 columns; @noedit; @untiled; record does not tile (expression selector past end of record at 0x5D); read-only, copied verbatim @rebase-new @refalign
+m/MS003C.BIN	0:28	1	28	1FB2	{08:0A}ロード		Load	v005		reads: データロード; menu option, declared width 20 columns @rebase-new @refalign
+m/MS003C.BIN	0:28	2	38	1FB2	ゲームの終了		Quit	v005		menu option, declared width 20 columns @rebase-new @refalign
+m/MS003C.BIN	0:28	3	52	1FB2	メニューに戻る		Back	v005		menu option, declared width 20 columns @rebase-new @refalign
+m/MS003C.BIN	0:29	0	2	1FBA	＞現在の状況をセーブし{08:5A}\n　セーブ{08:8E}ファイルを選択{08:4A}下{08:49}\n		>Your progress will be saved.\n Please select a file to save to.\n	v005		reads: ＞現在の状況をセーブします\n　セーブするファイルを選択して下さい\n @refalign
+m/MS003C.BIN	0:29	1	209	1F81	{=84}{=08}\nを上書きし{08:5A}。よろしい{08:55}か？\n		 you wish to overwrite this save?\n	v005		reads: {=84}{=08}\nを上書きします。よろしいですか？\n @refalign
 m/MS003C.BIN	0:29	2	257	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
 m/MS003C.BIN	0:29	3	261	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
 m/MS003C.BIN	0:29	4	308	1F80	сZーブ終了\n<wait>	сZーブ終了\n<wait>	ved the game successfully\n<wait>	v005		reads: 
-m/MS003C.BIN	0:29	5	331	1FD0	＞報告：{08:0A}セーブに失敗しま{08:4B}\n　　　　ハードディスクの空き容量が不足{08:4A}い{08:5A}\n<wait>		>Error: Failed to save the game\n Not enough disk space available\n<wait>	v005		reads: ＞報告：データセーブに失敗しました\n　　　　ハードディスクの空き容量が不足しています\n<wait>
+m/MS003C.BIN	0:29	5	331	1FD0	＞報告：{08:0A}セーブに失敗しま{08:4B}\n　　　　ハードディスクの空き容量が不足{08:4A}い{08:5A}\n<wait>		>Error: Failed to save the game\n Not enough disk space available\n<wait>	v005		reads: ＞報告：データセーブに失敗しました\n　　　　ハードディスクの空き容量が不足しています\n<wait> @refalign
 m/MS003C.BIN	0:2A	0	40	1B	 プレイヤー名     LEVEL セーブ地点	 プレイヤー名     LEVEL セーブ地点	PLAYER NAME      LEVEL LOCATION	v005		reads: われわれ
 m/MS003C.BIN	0:2A	1	180	00	+	+				reads: ペンタグランマS
 m/MS003C.BIN	0:2A	2	182	00	+	+				reads: そんなこと{=F9}{=00}切り{=F5}{=00}飛び道具{=F1}{=00}{=ED}{=00}＞何をしますか？{=E9}{=00}
 m/MS003C.BIN	0:2A	3	184	00	{01:1E}{=9B}{=03}	{01:1E}{=9B}{=03}				reads: はやく{=9B}{=03}
 m/MS003C.BIN	0:2A	4	192	12	{03:14}	{03:14}				reads: 
-m/MS003C.BIN	0:2B	0	2	1FBA	＞{08:0A}をロードし{08:5A}\n　ロード{08:8E}ファイルを選択{08:4A}下{08:49}\n		>Please select a save to load\n	v005		reads: ＞データをロードします\n　ロードするファイルを選択して下さい\n
-m/MS003C.BIN	0:2B	1	167	1FBA	＞{08:0A}をロードし{08:5A}。よろしい{08:55}か？\n		>Do you wish to load this save?\n	v005		reads: ＞データをロードします。よろしいですか？\n
+m/MS003C.BIN	0:2B	0	2	1FBA	＞{08:0A}をロードし{08:5A}\n　ロード{08:8E}ファイルを選択{08:4A}下{08:49}\n		>Please select a save to load\n	v005		reads: ＞データをロードします\n　ロードするファイルを選択して下さい\n @refalign
+m/MS003C.BIN	0:2B	1	167	1FBA	＞{08:0A}をロードし{08:5A}。よろしい{08:55}か？\n		>Do you wish to load this save?\n	v005		reads: ＞データをロードします。よろしいですか？\n @refalign
 m/MS003C.BIN	0:2B	2	216	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
 m/MS003C.BIN	0:2B	3	220	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
 m/MS003C.BIN	0:2B	4	261	1F80	{=84}{=95}吹F{08:0A}ロードに失敗しま{08:4B}\n　　　　セーブ{08:0A}が異常{08:55}\n<wait>	{=84}{=95}吹F{08:0A}ロードに失敗しま{08:4B}\n　　　　セーブ{08:0A}が異常{08:55}\n<wait>	ror: Failed to load the save\n Save data is corrupted\n<wait>	v005		reads: {=84}{=95}吹Fデータロードに失敗しました\n　　　　セーブデータが異常です\n<wait>; reads: あなたが
@@ -59,6 +59,6 @@ m/MS003C.BIN	0:2C	1	180	00	+	+				reads: ペンタグランマS
 m/MS003C.BIN	0:2C	2	182	00	+	+				reads: そんなこと{=F9}{=00}切り{=F5}{=00}飛び道具{=F1}{=00}{=ED}{=00}＞何をしますか？{=E9}{=00}
 m/MS003C.BIN	0:2C	3	184	00	{01:1E}{=9B}{=03}	{01:1E}{=9B}{=03}				reads: はやく{=9B}{=03}
 m/MS003C.BIN	0:2C	4	195	00	{01:18}F	{01:18}F				reads: あんたF
-m/MS003C.BIN	0:2D	0	2	1FBA	＞ゲームを終了し{08:5A}。よろしい{08:55}か？\n		>Are you sure that you wish to exit the game?\n	v005		reads: ＞ゲームを終了します。よろしいですか？\n
+m/MS003C.BIN	0:2D	0	2	1FBA	＞ゲームを終了し{08:5A}。よろしい{08:55}か？\n		>Are you sure that you wish to exit the game?\n	v005		reads: ＞ゲームを終了します。よろしいですか？\n @refalign
 m/MS003C.BIN	0:2D	1	53	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
 m/MS003C.BIN	0:2D	2	57	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns

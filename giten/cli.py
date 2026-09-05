@@ -61,6 +61,13 @@ def make_parser():
     p.add_argument("--report", default=None, help="default build/rebase-report.txt")
     p.add_argument("-q", "--quiet", action="store_true")
 
+    p = sub.add_parser("refalign",
+                       help="place v0.05 references by aligning its game files with the "
+                            "original (speaker-aware; fixes what carry shifted)")
+    p.add_argument("--v005", required=True, help="v0.05 ddswin folder")
+    p.add_argument("--text", dest="text_dir", default=None)
+    p.add_argument("-q", "--quiet", action="store_true")
+
     p = sub.add_parser("verify",
                        help="reference-decode and re-tile every file of a build")
     p.add_argument("--dir", dest="out_dir", default=None,
@@ -124,6 +131,10 @@ def main(argv=None) -> int:
         return 1 if rep.errors else 0
     if args.cmd == "carry":
         carry.run(args.src, args.dst, args.quiet, args.report)
+        return 0
+    if args.cmd == "refalign":
+        from . import refalign
+        refalign.run(args.v005, args.text_dir, args.quiet)
         return 0
     if args.cmd == "verify":
         out_dir = args.out_dir or os.path.join(paths.BUILD_DIR, "ddswin_v2")
