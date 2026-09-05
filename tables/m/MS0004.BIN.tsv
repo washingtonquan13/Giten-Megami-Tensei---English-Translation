@@ -3,9 +3,9 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0004.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}\n<wait>		There's no one here...\n<wait>	v005		reads: 誰もいない‥‥‥\n<wait> @refalign
+m/MS0004.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}\n<wait>		There's no one here...\n<wait>	v005		reads: 誰もいない‥‥‥\n<wait>; reads: 誰もいない‥‥‥\n<wait> @refalign
 m/MS0004.BIN	0:01	0	5	1FD2	女性：		Woman:	v005		
-m/MS0004.BIN	0:01	1	25	09	ねぇ、知っ{08:2B}？\n市ヶ谷{08:10}の美形な先生{08:52}、昔、戸山{08:10}に{08:40}”概知外”な博士\nの弟子だっ{08:50}しいわよ。\n<wait>		Have you heard about this scientist guy who lives at Ichigaya?\nApparently, he used to be a student of another scientist from Toyama.\n<wait>	v005		reads: ねぇ、知ってる？\n市ヶ谷シェルターの美形な先生って、昔、戸山シェルターにいる”概知外”な博士\nの弟子だったらしいわよ。\n<wait> @refalign
+m/MS0004.BIN	0:01	1	25	09	ねぇ、知っ{08:2B}？\n市ヶ谷{08:10}の美形な先生{08:52}、昔、戸山{08:10}に{08:40}”概知外”な博士\nの弟子だっ{08:50}しいわよ。\n<wait>		Have you heard about this scientist guy who lives at Ichigaya?\nApparently, he used to be a student of another scientist from Toyama.\n<wait>	v005		reads: ねぇ、知ってる？\n市ヶ谷シェルターの美形な先生って、昔、戸山シェルターにいる”概知外”な博士\nの弟子だったらしいわよ。\n<wait>; reads: ねぇ、知ってる？\n市ヶ谷シェルターの美形な先生って、昔、戸山シェルターにいる”概知外”な博士\nの弟子だったらしいわよ。\n<wait> @refalign
 m/MS0004.BIN	0:01	2	126	1FD2	女性：		Woman:	v005		
 m/MS0004.BIN	0:01	3	134	1FD3	{08:6A}か、意外よねぇ{02:08}\n<wait>		So many scientists...\n<wait>	v005		reads: なんか、意外よねぇ‥‥‥\n<wait>
 m/MS0004.BIN	0:01	4	169	1F7C	新宿爆心地に{08:62}{08:0B}達が作{08:51}地下コロシアムが{08:7B}のよ。\n<wait>		There's a giant colosseum built by demons located\nat the ground zero site in Shinjuku.\n<wait>	v005		reads: 新宿爆心地には、悪魔達が作った地下コロシアムがあるのよ。\n<wait>
@@ -13,7 +13,7 @@ m/MS0004.BIN	0:01	5	226	1FD2	女性：		Woman:	v005
 m/MS0004.BIN	0:01	6	234	1FD3	え？　爆心地はどこか{08:52}？\nやあねぇ、{08:7A}事も知ら{08:25}の？\n<wait>		Hmm? Where is that? You seriously don't know?\n<wait>	v005		reads: え？　爆心地はどこかって？\nやあねぇ、そんな事も知らないの？\n<wait>
 m/MS0004.BIN	0:01	7	294	1FD2	女性：		Woman:	v005		
 m/MS0004.BIN	0:01	8	302	1FD3	{08:45}{08:42}少し南東に行くと、クレーターが見えてくる{08:42}すぐわかるわ。\nそこが爆心地よ。\n<wait>		Head to southeast from here, and you should come across a crater.\nThat's the place.\n<wait>	v005		reads: ここから少し南東に行くと、クレーターが見えてくるからすぐわかるわ。\nそこが爆心地よ。\n<wait>
-m/MS0004.BIN	0:01	9	396	09	{08:0D}の箱{08:52}のが、{08:47}世には{08:7B}らしいわよ。\n何が{08:0D}か{08:52}{08:68}と、宝石が無尽蔵にでてくるらしいの。\n<wait>		Have you ever heard of a thing called a Magic Chest?\nNo one knows exactly how they work, but apparently,\nthey contain an infinite supply of precious gems.\n<wait>	v005		reads: 魔法の箱ってのが、この世にはあるらしいわよ。\n何が魔法かっていうと、宝石が無尽蔵にでてくるらしいの。\n<wait> @refalign
+m/MS0004.BIN	0:01	9	396	09	{08:0D}の箱{08:52}のが、{08:47}世には{08:7B}らしいわよ。\n何が{08:0D}か{08:52}{08:68}と、宝石が無尽蔵にでてくるらしいの。\n<wait>		Have you ever heard of a thing called a Magic Chest?\nNo one knows exactly how they work, but apparently,\nthey contain an infinite supply of precious gems.\n<wait>	v005		reads: 魔法の箱ってのが、この世にはあるらしいわよ。\n何が魔法かっていうと、宝石が無尽蔵にでてくるらしいの。\n<wait>; reads: 魔法の箱ってのが、この世にはあるらしいわよ。\n何が魔法かっていうと、宝石が無尽蔵にでてくるらしいの。\n<wait> @refalign
 m/MS0004.BIN	0:01	10	490	1FD2	女性：		Woman:	v005		
 m/MS0004.BIN	0:01	11	498	1FD3	{08:56}、{01:28}{08:52}訳{08:81}無いみ{08:4E}。\n{08:6A}{08:56}、満月の時だとか{02:08}\n<wait>		The weirdest thing is that they only appear during full moons.\n<wait>	v005		reads: でも、いつもって訳じゃ無いみたい。\nなんでも、満月の時だとか‥‥‥\n<wait>
 m/MS0004.BIN	0:01	12	552	1FD2	女性：		Woman:	v005		
@@ -21,14 +21,14 @@ m/MS0004.BIN	0:01	13	560	1FD3	あ、そうそう。\n言い忘れてた{08:84}�
 m/MS0004.BIN	0:01	14	688	1F03	池袋{08:52}の{08:62}{08:45}{08:42}北の方に行{08:51}所よ。\nちょ{08:53}前{08:71}瓦礫が積も{08:52}て、通行が遮断{03:0C}てた{08:84}、今は{01:32}。\n<wait>					reads: 池袋ってのは、ここから北の方に行った所よ。\nちょっと前まで瓦礫が積もってて、通行が遮断されてたけど、今は大丈夫。\n<wait>
 m/MS0004.BIN	0:01	15	786	1FD2	女性：		Woman:	v005		
 m/MS0004.BIN	0:01	16	794	1FD3	{08:74}ど、あんまり良い噂は聞か{08:25}わ。\nシャンシャンシティに{08:40}{08:0B}が、{02:0B}を捕まえては何かし{08:2B}{08:52}{08:72}\n<wait>行く{08:7D}気を付{08:43}方が良いわよ。\n<wait>		That said, I'd suggest that you avoid going there.\nI hear that the demons at Shan Shan City have been enslaving humans.\n<wait>It's scary out there.\n<wait>	v005		reads: だけど、あんまり良い噂は聞かないわ。\nシャンシャンシティにいる悪魔が、人間を捕まえては何かしてるって‥‥\n<wait>行くなら気を付けた方が良いわよ。\n<wait>
-m/MS0004.BIN	0:01	17	927	09	そういえば、満月に人が行方不明に{08:59}{08:52}話、最近聞か{08:25}わねぇ。\n<wait>		Now that I think about it, it has been a couple of full moons now\nwithout anyone going missing. Is that whole thing done with?\n<wait>	v005		reads: そういえば、満月に人が行方不明になるって話、最近聞かないわねぇ。\n<wait> @refalign
-m/MS0004.BIN	0:01	18	993	18	{08:47}所、満月の晩に{08:59}と決ま{08:52}誰か一人行方不明に{08:59}の。\n行方不明に{08:16}人で、帰{08:52}{08:1E}人は{08:24}わ{02:08}\n<wait>		Every full moon without a fail, someone here goes missing.\nThey are never to be seen again...\n<wait>	v005		reads: この所、満月の晩になると決まって誰か一人行方不明になるの。\n行方不明になった人で、帰ってきた人はいないわ‥‥‥\n<wait> @refalign
+m/MS0004.BIN	0:01	17	927	09	そういえば、満月に人が行方不明に{08:59}{08:52}話、最近聞か{08:25}わねぇ。\n<wait>		Now that I think about it, it has been a couple of full moons now\nwithout anyone going missing. Is that whole thing done with?\n<wait>	v005		reads: そういえば、満月に人が行方不明になるって話、最近聞かないわねぇ。\n<wait>; reads: そういえば、満月に人が行方不明になるって話、最近聞かないわねぇ。\n<wait> @refalign
+m/MS0004.BIN	0:01	18	993	18	{08:47}所、満月の晩に{08:59}と決ま{08:52}誰か一人行方不明に{08:59}の。\n行方不明に{08:16}人で、帰{08:52}{08:1E}人は{08:24}わ{02:08}\n<wait>		Every full moon without a fail, someone here goes missing.\nThey are never to be seen again...\n<wait>	v005		reads: この所、満月の晩になると決まって誰か一人行方不明になるの。\n行方不明になった人で、帰ってきた人はいないわ‥‥‥\n<wait>; reads: この所、満月の晩になると決まって誰か一人行方不明になるの。\n行方不明になった人で、帰ってきた人はいないわ‥‥‥\n<wait> @refalign
 m/MS0004.BIN	0:02	0	5	1FD2	男性：		Man:	v005		
-m/MS0004.BIN	0:02	1	18	09	うそだ{02:08}！\n{02:03}が敗{08:2F}{08:6A}て{02:08}{08:73}馬鹿な事が{02:08}！\n<wait>		The Resistance is gone? That... That can't be...\n<wait>	v005		reads: うそだ‥‥‥！\nレジスタンスが敗れるなんて‥‥‥こんな馬鹿な事が‥‥‥！\n<wait> @refalign
+m/MS0004.BIN	0:02	1	18	09	うそだ{02:08}！\n{02:03}が敗{08:2F}{08:6A}て{02:08}{08:73}馬鹿な事が{02:08}！\n<wait>		The Resistance is gone? That... That can't be...\n<wait>	v005		reads: うそだ‥‥‥！\nレジスタンスが敗れるなんて‥‥‥こんな馬鹿な事が‥‥‥！\n<wait>; reads: うそだ‥‥‥！\nレジスタンスが敗れるなんて‥‥‥こんな馬鹿な事が‥‥‥！\n<wait> @refalign
 m/MS0004.BIN	0:02	2	75	1F03	おかしいな{02:08}何故{01:37}{08:62}池袋の{08:0B}の討伐をし{08:25}{08:5F}？\n池袋界隈で{08:62}{02:0B}が捕らえられて酷い目に合わ{03:0C}{08:14}と{08:68}話{08:6B}に{02:08}\n<wait>					reads: おかしいな‥‥‥何故リーダーは、池袋の悪魔の討伐をしないんだ？\n池袋界隈では、人間が捕らえられて酷い目に合わされているという話なのに‥‥‥\n<wait>
 m/MS0004.BIN	0:02	3	187	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:02	4	195	1FD3	池袋の{08:0B}と{08:68}の{08:62}元は{01:08}の手下だっ{08:50}しい。\n手下と{08:68}くらいだ{08:42}、{01:08}の力には及ば{08:25}と思う{08:77}が{02:08}\n<wait>		I hear that the leader of those demons is a former underling of Baal.\nI guess that means that he's weaker than him, so that's good.\n<wait>	ours		reads: 池袋の悪魔というのは、元はバエルの手下だったらしい。\n手下というくらいだから、バエルの力には及ばないと思うのだが‥‥‥\n<wait>
-m/MS0004.BIN	0:02	5	297	09	{08:45}{08:42}南東に少し行{08:51}所に、クレーターが{08:7B}。\nそこに、{08:0B}達が地下コロシアムを作っ{08:50}しい。\n<wait>		If you travel southeast from here, you'll come across a crater.\nIt is there that I hear the demons have built a massive colosseum.\n<wait>	v005		reads: ここから南東に少し行った所に、クレーターがある。\nそこに、悪魔達が地下コロシアムを作ったらしい。\n<wait> @refalign
+m/MS0004.BIN	0:02	5	297	09	{08:45}{08:42}南東に少し行{08:51}所に、クレーターが{08:7B}。\nそこに、{08:0B}達が地下コロシアムを作っ{08:50}しい。\n<wait>		If you travel southeast from here, you'll come across a crater.\nIt is there that I hear the demons have built a massive colosseum.\n<wait>	v005		reads: ここから南東に少し行った所に、クレーターがある。\nそこに、悪魔達が地下コロシアムを作ったらしい。\n<wait>; reads: ここから南東に少し行った所に、クレーターがある。\nそこに、悪魔達が地下コロシアムを作ったらしい。\n<wait> @refalign
 m/MS0004.BIN	0:02	6	389	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:02	7	397	1FD3	クレーターの中央{08:42}、熱狂{08:4B}叫び声が聞こえて{08:1E}ら、コロシアムで\n血みどろのショーが行われ{08:2B}証拠さ。\n<wait>		Whenever you hear screams of panic and terror coming from here,\nthat's a sign that a show is on.\n<wait>	v005		reads: クレーターの中央から、熱狂した叫び声が聞こえてきたら、コロシアムで\n血みどろのショーが行われてる証拠さ。\n<wait>
 m/MS0004.BIN	0:02	8	498	00	都庁が{08:0B}軍の襲撃を受けて{08:42}、{01:37}は何だか変な{08:5F}よ。\n<wait>		Ever since the Government Office got attacked by the demons,\nthe Leader has not been the same.\n<wait>	v005		reads: 都庁が悪魔軍の襲撃を受けてから、リーダーは何だか変なんだよ。\n<wait>
@@ -52,7 +52,7 @@ m/MS0004.BIN	0:03	12	561	18	{01:08}を倒{08:4B}{08:52}{08:68}、元{02:00}が�
 m/MS0004.BIN	0:03	13	629	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:03	14	637	1FD3	{08:79}{08:7E}真面目にや{08:52}りゃ、英雄で済{08:5F}のに、何だ{08:52}{08:5B}{08:0B}{08:6A}かに\n寝返{08:51}ん{08:8C}な？\n<wait>		I wonder, what exactly caused him to switch sides?\nEveryone loved him and treated him like a hero...\n<wait>	v005		reads: そのまま真面目にやってりゃ、英雄で済んだのに、何だってまた悪魔なんかに\n寝返ったんだろうな？\n<wait>
 m/MS0004.BIN	0:06	0	49	1FD2	女性：		Woman:	v005		
-m/MS0004.BIN	0:06	1	62	09	{08:5C}、{08:73}所、危険で住んで{08:6A}かいられ{08:25}よ！\n<wait>		I can't take living here for another second!\n<wait>	v005		reads: もう、こんな所、危険で住んでなんかいられないよ！\n<wait> @refalign
+m/MS0004.BIN	0:06	1	62	09	{08:5C}、{08:73}所、危険で住んで{08:6A}かいられ{08:25}よ！\n<wait>		I can't take living here for another second!\n<wait>	v005		reads: もう、こんな所、危険で住んでなんかいられないよ！\n<wait>; reads: もう、こんな所、危険で住んでなんかいられないよ！\n<wait> @refalign
 m/MS0004.BIN	0:06	2	109	1FD2	女性：		Woman:	v005		
 m/MS0004.BIN	0:06	3	117	1FD3	{08:56}、逃げ{08:69}と思{08:52}も行く当ては無いしねぇ{02:08}\n下手に外に出{08:50}、死ぬのを早{08:2E}{08:74}さ。\n<wait>		That said, it's not like I have anywhere else to go.\nI'm as good as dead attempting to traverse the wasteland.\n<wait>	v005		reads: でも、逃げようと思っても行く当ては無いしねぇ‥‥‥\n下手に外に出たら、死ぬのを早めるだけさ。\n<wait>
 m/MS0004.BIN	0:06	4	201	1FD2	女性：		Woman:	v005		
@@ -70,10 +70,10 @@ m/MS0004.BIN	0:06	15	477	1FD2	女性：		Woman:	v005
 m/MS0004.BIN	0:06	16	485	1FD3	ま、私は元より信じて{08:19}{08:84}ね。\n{08:0B}がいなく{08:59}{08:6A}て、早々{08:7B}訳{08:25}{08:81}{08:25}さ。\n<wait>		Well, not that I ever believed in them in the first place.\nThe demons are here to stay.\n<wait>	v005		reads: ま、私は元より信じてなかったけどね。\n悪魔がいなくなるなんて、早々ある訳ないじゃないさ。\n<wait>
 m/MS0004.BIN	0:06	17	559	1FD2	男の子：		Boy:	v005		
 m/MS0004.BIN	0:06	18	569	1FD3	そーそー{08:7B}{08:8D}{08:81}{08:25}のさッ！\n<wait>		Here to stay!\n<wait>	v005		reads: そーそーあるわけじゃないのさッ！\n<wait>
-m/MS0004.BIN	0:06	19	606	09	{08:47}間の満月{08:62}誰か行方不明に{08:16}{08:52}話を聞か{08:19}わ。\n<wait>		No one went missing last full moon, huh?\n<wait>	v005		reads: この間の満月は、誰か行方不明になったって話を聞かなかったわ。\n<wait> @refalign
+m/MS0004.BIN	0:06	19	606	09	{08:47}間の満月{08:62}誰か行方不明に{08:16}{08:52}話を聞か{08:19}わ。\n<wait>		No one went missing last full moon, huh?\n<wait>	v005		reads: この間の満月は、誰か行方不明になったって話を聞かなかったわ。\n<wait>; reads: この間の満月は、誰か行方不明になったって話を聞かなかったわ。\n<wait> @refalign
 m/MS0004.BIN	0:06	20	659	1FD2	男の子：		Boy:	v005		
 m/MS0004.BIN	0:06	21	669	1FD3	聞か{08:19}っ！！\n<wait>		No one went missing!\n<wait>	v005		reads: 聞かなかったっ！！\n<wait>
-m/MS0004.BIN	0:06	22	689	18	満月の夜に{08:59}と、決ま{08:52}、誰かが行方不明に{08:59}のよ{02:08}\n<wait>		Ever single full moon, someone goes missing.\n<wait>	v005		reads: 満月の夜になると、決まって、誰かが行方不明になるのよ‥‥‥\n<wait> @refalign
+m/MS0004.BIN	0:06	22	689	18	満月の夜に{08:59}と、決ま{08:52}、誰かが行方不明に{08:59}のよ{02:08}\n<wait>		Ever single full moon, someone goes missing.\n<wait>	v005		reads: 満月の夜になると、決まって、誰かが行方不明になるのよ‥‥‥\n<wait>; reads: 満月の夜になると、決まって、誰かが行方不明になるのよ‥‥‥\n<wait> @refalign
 m/MS0004.BIN	0:06	23	746	1FD2	女性：		Woman:	v005		
 m/MS0004.BIN	0:06	24	754	1FD3	あんまり頻繁に続くんで、満月の夜に{08:59}と、交代で見回りを出し{08:2B}{08:5F}{08:84}ね。\n<wait>		We try sending soldiers to look for them, but it's to no avail.\n<wait>	v005		reads: あんまり頻繁に続くんで、満月の夜になると、交代で見回りを出してるんだけどね。\n<wait>
 m/MS0004.BIN	0:06	25	831	1FD2	女性：		Woman:	v005		
@@ -83,7 +83,7 @@ m/MS0004.BIN	0:06	28	911	1FD3	そういえば、事件の後、変な遠吠え�
 m/MS0004.BIN	0:06	29	976	1FD2	男の子：		Boy:	v005		
 m/MS0004.BIN	0:06	30	986	1FD3	とーぼえっ！！\n<wait>		Weird howling!\n<wait>	v005		
 m/MS0004.BIN	0:07	0	27	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：
-m/MS0004.BIN	0:07	1	40	09	{08:48}で、新宿は{08:0B}のモンか{02:08}。\n<wait>		I guess this means that Shinjuku now belongs to the demons...\n<wait>	v005		reads: これで、新宿は悪魔のモンか‥‥‥。\n<wait> @refalign
+m/MS0004.BIN	0:07	1	40	09	{08:48}で、新宿は{08:0B}のモンか{02:08}。\n<wait>		I guess this means that Shinjuku now belongs to the demons...\n<wait>	v005		reads: これで、新宿は悪魔のモンか‥‥‥。\n<wait>; reads: これで、新宿は悪魔のモンか‥‥‥。\n<wait> @refalign
 m/MS0004.BIN	0:07	2	75	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：
 m/MS0004.BIN	0:07	3	83	1FD3	{08:79}うち、{08:45}もヤバく{08:59}ん{08:8C}し。\nあ～あぁ、次は何処に行こうかなぁ{08:72}。\n<wait>銀座か六本木で、働く{08:86}{08:25}よねぇ‥。\n<wait>		It's only a matter of time until this place becomes inhabitable.\nThe only question is, where should I move next?\n<wait>In the end, it comes down to either Ginza or Roppongi.\n<wait>	v005		reads: そのうち、ここもヤバくなるんだろうし。\nあ～あぁ、次は何処に行こうかなぁ‥‥。\n<wait>銀座か六本木で、働くしかないよねぇ‥。\n<wait>
 m/MS0004.BIN	0:07	4	200	09	大口叩{08:64}処で、結局{02:01}の奴ら{08:62}まんまと{08:0B}の罠に\nかか{08:52}ん{08:81}{08:25}。\nお笑いだわ！\n<wait>		Those Pentagramma folks acted like such hot shit,\nbut ended up stepping in the demons' trap all the same.\n<wait>	ours		reads: 大口叩いた処で、結局ペンタグランマの奴らは、まんまと悪魔の罠に\nかかってんじゃない。\nお笑いだわ！\n<wait>
@@ -95,22 +95,22 @@ m/MS0004.BIN	0:08	1	43	1FD3	{01:16}達{08:0B}人{08:62}何処に行{08:52}もハ
 m/MS0004.BIN	0:08	2	88	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：
 m/MS0004.BIN	0:08	3	96	1FD3	{08:0B}{08:42}は疎まれ、{02:0B}{08:42}は蔑まれて{02:08}\n<wait>{08:73}人生、早く終わらしちゃい{08:4E}わ。\n<wait>		Demons think we're too human, and humans think we're too demonic.\n<wait>Sometimes, I wish that I hadn't been born at all.\n<wait>	v005		reads: 悪魔からは疎まれ、人間からは蔑まれて‥‥‥\n<wait>こんな人生、早く終わらしちゃいたいわ。\n<wait>
 m/MS0004.BIN	0:0A	0	27	1FD2	老女：		Old Woman:	v005		
-m/MS0004.BIN	0:0A	1	40	09	{08:47}歳{08:71}生き{08:60}{08:5F}。\n今更、何が起こ{08:51}{08:52}、ち{08:53}も怖く{08:25}よ。\n<wait>		Once you live to be as old as I am,\nyou stop being afraid of what the future has in store for you.\n<wait>	v005		reads: この歳まで生きれたんだ。\n今更、何が起こったって、ちっとも怖くないよ。\n<wait> @refalign
+m/MS0004.BIN	0:0A	1	40	09	{08:47}歳{08:71}生き{08:60}{08:5F}。\n今更、何が起こ{08:51}{08:52}、ち{08:53}も怖く{08:25}よ。\n<wait>		Once you live to be as old as I am,\nyou stop being afraid of what the future has in store for you.\n<wait>	v005		reads: この歳まで生きれたんだ。\n今更、何が起こったって、ちっとも怖くないよ。\n<wait>; reads: この歳まで生きれたんだ。\n今更、何が起こったって、ちっとも怖くないよ。\n<wait> @refalign
 m/MS0004.BIN	0:0A	2	106	09	{02:01}の人達も、{08:48}で{08:63}達の力が、どんな{08:5E}か分{08:51}ろうよ。\n<wait>		Perhaps now the people of Pentagramma will finally learn\nthat they aren't that strong after all.\n<wait>	ours		reads: ペンタグランマの人達も、これで自分達の力が、どんなものか分ったろうよ。\n<wait>
 m/MS0004.BIN	0:0A	3	165	1FD2	老女：		Old Woman:	v005		
 m/MS0004.BIN	0:0A	4	173	1FD3	{02:0B}に{08:62}{08:0B}を{08:90}こう{08:8E}事{08:6A}て、出来っこ{08:25}のさ。\n<wait>		There is nothing that humans can do to fight the demons. Nothing.\n<wait>	v005		reads: 人間には、悪魔をどうこうする事なんて、出来っこないのさ。\n<wait>
-m/MS0004.BIN	0:0A	5	228	09	{08:47}前の満月{08:62}誰も行方不明に{08:7D}{08:19}そう{08:55}。\n<wait>		It seems that no one went missing the previous full moon.\n<wait>	v005		reads: この前の満月は、誰も行方不明にならなかったそうです。\n<wait> @refalign
+m/MS0004.BIN	0:0A	5	228	09	{08:47}前の満月{08:62}誰も行方不明に{08:7D}{08:19}そう{08:55}。\n<wait>		It seems that no one went missing the previous full moon.\n<wait>	v005		reads: この前の満月は、誰も行方不明にならなかったそうです。\n<wait>; reads: この前の満月は、誰も行方不明にならなかったそうです。\n<wait> @refalign
 m/MS0004.BIN	0:0A	6	275	1FD2	老女：		Old Woman:	v005		
 m/MS0004.BIN	0:0A	7	283	1FD3	{08:56}、{08:47}前はほんの偶然で、{08:5B}起こる{08:69}に{08:16}らいやだねぇ{08:72}\n<wait>		I sure do hope that that's the end of that...\n<wait>	v005		reads: でも、この前はほんの偶然で、また起こるようになったらいやだねぇ‥‥\n<wait>
-m/MS0004.BIN	0:0A	8	343	18	近頃頻繁に起こる、おかしな事件が{08:7B}ん{08:55}よ{02:08}\n<wait>		There has been a number of strange things happening recently...\n<wait>	v005		reads: 近頃頻繁に起こる、おかしな事件があるんですよ‥‥‥\n<wait> @refalign
+m/MS0004.BIN	0:0A	8	343	18	近頃頻繁に起こる、おかしな事件が{08:7B}ん{08:55}よ{02:08}\n<wait>		There has been a number of strange things happening recently...\n<wait>	v005		reads: 近頃頻繁に起こる、おかしな事件があるんですよ‥‥‥\n<wait>; reads: 近頃頻繁に起こる、おかしな事件があるんですよ‥‥‥\n<wait> @refalign
 m/MS0004.BIN	0:0A	9	394	1FD2	老女：		Old Woman:	v005		
 m/MS0004.BIN	0:0A	10	402	1FD3	満月の夜に{08:59}と、必ず、誰か一人が、行方不明に{08:1A}{08:83}ん{08:55}。\n<wait>		Every full moon without a fail, someone goes missing.\n<wait>	v005		reads: 満月の夜になると、必ず、誰か一人が、行方不明になってしまうんです。\n<wait>
 m/MS0004.BIN	0:0A	11	465	1FD2	老女：		Old Woman:	v005		
 m/MS0004.BIN	0:0A	12	473	1FD3	{08:73}所に住んで{08:40}ん{08:55}{08:42}、{08:0B}の犠牲に{08:59}の{08:62}珍しい事{08:81}あ\n{08:25}ん{08:55}が、さすがにこう決ま{08:52}だと、不安で仕方あり{02:0A}よ。\n<wait>		It's not strange for people here to get attacked by demons.\nIt's just the sort of place this is. And yet, I worry.\n<wait>	v005		reads: こんな所に住んでいるんですから、悪魔の犠牲になるのは、珍しい事じゃあ\nないんですが、さすがにこう決まってだと、不安で仕方ありませんよ。\n<wait>
 m/MS0004.BIN	0:0B	0	57	1FD2	女性：		Woman:	v005		
 m/MS0004.BIN	0:0B	1	76	1F7C	渡邊さんが、あの{08:0B}の軍勢に奇襲{03:0C}た時に、{08:0B}とすり変わ{08:52}た{08:52}話{08:62}\n{08:5C}聞{08:64}？\n<wait>		Have you heard about how Watanabe was replaced by a demon?\n<wait>	v005		reads: 渡邊さんが、あの悪魔の軍勢に奇襲された時に、悪魔とすり変わってたって話は、\nもう聞いた？\n<wait>
-m/MS0004.BIN	0:0B	2	168	1FB2	うんにゃ		Nope	v005		menu option, declared width 20 columns @refalign
-m/MS0004.BIN	0:0B	3	178	1FB2	聞{08:64}聞{08:64}		Sure have	v005		reads: 聞いた聞いた; menu option, declared width 20 columns @refalign
+m/MS0004.BIN	0:0B	2	168	1FB2	うんにゃ		Nope	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0004.BIN	0:0B	3	178	1FB2	聞{08:64}聞{08:64}		Sure have	v005		reads: 聞いた聞いた; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0004.BIN	0:0B	4	206	1FD2	女性：	女性：	Woman:	v005		reads: 
 m/MS0004.BIN	0:0B	5	214	1FD3	そう{02:08}\n<wait>	そう{02:08}\n<wait>	Huh...\n<wait>	v005		reads: そう‥‥‥\n<wait>
 m/MS0004.BIN	0:0B	6	229	1FD2	女性：		Woman:	v005		
@@ -121,7 +121,7 @@ m/MS0004.BIN	0:0B	10	492	1FD2	女性：		Woman:	v005
 m/MS0004.BIN	0:0B	11	500	1FD3	渡邊さんの態度の急変ぶり{02:08}\n<wait>せめて、{08:79}時に気づいてれば、{08:73}事には{02:08}\n<wait>		If only... <wait>If only I had noticed that something was wrong,\nthen perhaps all of this could've been avoided.\n<wait>	v005		reads: 渡邊さんの態度の急変ぶり‥‥‥\n<wait>せめて、その時に気づいてれば、こんな事には‥‥‥\n<wait>; reads: あの奇襲の時、すぐに悪魔達が撤退して行ったのが、ずっと変だとは思ってたのよ。\n<wait>アドニスが率いてた悪魔達‥‥‥‥\nあれは、私達の注意を引付けておく為の、陽動作戦だったのよ！！\n<wait>
 m/MS0004.BIN	0:0B	12	581	1FD2	女性：		Woman:	v005		
 m/MS0004.BIN	0:0B	13	589	1FD3	今更悔やん{08:56}、{08:5C}取り返しはつか{08:25}{08:84}{08:72}ね。\n<wait>		Well, not that crying over spilled milk is gonna fix anything...\n<wait>	v005		reads: 今更悔やんでも、もう取り返しはつかないけど‥‥ね。\n<wait>; reads: 渡邊さんの態度の急変ぶり‥‥‥\n<wait>せめて、その時に気づいてれば、こんな事には‥‥‥\n<wait>
-m/MS0004.BIN	0:0B	14	637	18	都庁に{08:0B}達が襲撃{08:4A}{08:1E}後、渡邊さん{08:62}すっかり人が変わ{08:52}{08:1F}の‥\n<wait>		Ever since the attack on the Government Office,\nWatanabe has felt like a totally different person.\n<wait>	v005		reads: 都庁に悪魔達が襲撃してきた後、渡邊さんは、すっかり人が変わってしまったの‥\n<wait> @refalign
+m/MS0004.BIN	0:0B	14	637	18	都庁に{08:0B}達が襲撃{08:4A}{08:1E}後、渡邊さん{08:62}すっかり人が変わ{08:52}{08:1F}の‥\n<wait>		Ever since the attack on the Government Office,\nWatanabe has felt like a totally different person.\n<wait>	v005		reads: 都庁に悪魔達が襲撃してきた後、渡邊さんは、すっかり人が変わってしまったの‥\n<wait>; reads: 都庁に悪魔達が襲撃してきた後、渡邊さんは、すっかり人が変わってしまったの‥\n<wait> @refalign
 m/MS0004.BIN	0:0B	15	704	1FD2	女性：		Woman:	v005		reads: 今更悔やんでも、もう取り返しはつかないけど‥‥ね。\n<wait>
 m/MS0004.BIN	0:0B	16	712	1FD3	{08:0B}襲撃のときに、何の役にも立た{08:19}{08:52}理由で、あん{08:58}一生懸命\n調教{08:4A}た、犬達も殺し始めて{02:08}\n<wait>		He even ordered all of the dogs to be killed,\nclaiming that they were good for nothing during the attack.\n<wait>	v005		reads: 悪魔襲撃のときに、何の役にも立たなかったって理由で、あんなに一生懸命\n調教してた、犬達も殺し始めて‥‥‥\n<wait>; reads: 都庁に悪魔達が襲撃してきた後、渡邊さんは、すっかり人が変わってしまったの‥\n<wait>
 m/MS0004.BIN	0:0B	17	806	1FD2	女性：		Woman:	v005		
@@ -132,7 +132,7 @@ m/MS0004.BIN	0:0C	0	27	1FD2	男性：		Man:	v005
 m/MS0004.BIN	0:0C	1	40	09	偽の{01:08}を倒し、都庁を取り戻{08:4B}事{08:74}で天狗に{08:1A}た、\n俺達が愚かだ{08:51}{08:5F}{02:08}。\n<wait>		We thought we were hot shit after killing a fake Baal\nand taking back some useless building. How foolish...\n<wait>	ours		reads: 偽のバエルを倒し、都庁を取り戻した事だけで天狗になってた、\n俺達が愚かだったんだ‥‥‥。\n<wait>
 m/MS0004.BIN	0:0C	2	116	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:0C	3	124	1FD3	都庁に建つ城{08:72}{08:3F}は{01:08}城{08:81}{08:25}。\n{02:0B}の浅知恵と、愚かさの城だよ{02:08}‥。\n<wait>		The castle that was built on top of the Government Office...\nThat's Baal's, right? Truly, it is a monument to human stupidity.\n<wait>	ours		reads: 都庁に建つ城‥‥あれはバエル城じゃない。\n人間の浅知恵と、愚かさの城だよ‥‥‥‥。\n<wait>
-m/MS0004.BIN	0:0C	4	200	09	渡邊さんが、偽者だ{08:51}{08:6A}て{02:08}{08:72}\n<wait>		Huh... Watanabe was an impostor...\n<wait>	v005		reads: 渡邊さんが、偽者だったなんて‥‥‥‥‥\n<wait> @refalign
+m/MS0004.BIN	0:0C	4	200	09	渡邊さんが、偽者だ{08:51}{08:6A}て{02:08}{08:72}\n<wait>		Huh... Watanabe was an impostor...\n<wait>	v005		reads: 渡邊さんが、偽者だったなんて‥‥‥‥‥\n<wait>; reads: 渡邊さんが、偽者だったなんて‥‥‥‥‥\n<wait> @refalign
 m/MS0004.BIN	0:0C	5	237	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:0C	6	245	1FD3	{08:56}、{08:7A}事、{08:90}や{08:52}、俺達に気づけ{08:52}言う{08:5F}！\n<wait>あの時の俺達に、何が出来た{08:52}？！\n<wait>		How should we have ever figured that out?\n<wait>Even if we had, what could we have done?\n<wait>	v005		reads: でも、そんな事、どうやって、俺達に気づけって言うんだ！\n<wait>あの時の俺達に、何が出来たって？！\n<wait>
 m/MS0004.BIN	0:0C	7	331	1FD2	男性：		Man:	v005		
@@ -140,9 +140,9 @@ m/MS0004.BIN	0:0C	8	339	1FD3	皆、心底渡邊さんの事、信じ切っ{08:2B
 m/MS0004.BIN	0:0C	9	394	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:0C	10	402	1FD3	たとえ、{01:37}の言動がおかしく{08:51}{08:52}、早々疑{08:51}り{08:6A}て、出来る様な\n環境{08:81}無{08:18}{08:5F}{02:08}。\n<wait>		Maybe he was acting a bit weird,\nbut it wasn't like we could bring ourselves to doubt him.\n<wait>	v005		reads: たとえ、リーダーの言動がおかしくったって、早々疑ったりなんて、出来る様な\n環境じゃ無かったんだ‥‥‥。\n<wait>
 m/MS0004.BIN	0:0C	11	491	1F7C	お前{08:72}も{08:61}て、		Hmm? Are you... Katsuragi Ayato?\n<wait>	v005		reads: お前‥‥もしかして、
-m/MS0004.BIN	0:0C	12	509	00	{04:FF}か？\n<wait>					reads: か？\n<wait>
-m/MS0004.BIN	0:0C	13	536	1FB2	人違いだよ！		Nope!	v005		menu option, declared width 20 columns @refalign
-m/MS0004.BIN	0:0C	14	550	1FB2	{01:29}よん！		That's me!	v005		reads: そうだよん！; menu option, declared width 20 columns @refalign
+m/MS0004.BIN	0:0C	12	511	1F01	か？\n<wait>					reads: か？\n<wait>
+m/MS0004.BIN	0:0C	13	536	1FB2	人違いだよ！		Nope!	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0004.BIN	0:0C	14	550	1FB2	{01:29}よん！		That's me!	v005		reads: そうだよん！; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0004.BIN	0:0C	15	578	1FD2	男性：	男性：	Man:	v005		reads: 
 m/MS0004.BIN	0:0C	16	586	1FD3	そうか{08:72}{01:29}よな、奴は処刑{03:0C}た{08:5F}。\n<wait>	そうか{08:72}{01:29}よな、奴は処刑{03:0C}た{08:5F}。\n<wait>	Right. Of course not. That guy was executed.\n<wait>	v005		reads: そうか‥‥そうだよな、奴は処刑されたんだ。\n<wait>
 m/MS0004.BIN	0:0C	17	625	1FBA	{08:45}に{08:40}訳が{08:25}。\n		No way could he be here.\n	v005		reads: ここにいる訳がない。\n
@@ -171,7 +171,7 @@ m/MS0004.BIN	0:0E	7	297	1FD3	{02:08}{02:08}{08:72}\n	{02:08}{02:08}{08:72}\n				
 m/MS0004.BIN	0:0E	8	312	09	{02:01}{08:6A}て、所詮は屑の寄せ集め{08:72}\n統率者がいなけりゃ、{01:1C}、てんでバラバラだ。\n<wait>少し{08:62}期待{08:4A}た{08:5F}がな。\n<wait>		Pentagramma. What a shitty attempt at building an organization that was.\nThe moment they lose their leader, they all scatter like cockroaches.\n<wait>What little expectations I had for them, they managed to squander.\n<wait>	ours		reads: ペンタグランマなんて、所詮は屑の寄せ集め‥‥\n統率者がいなけりゃ、みんな、てんでバラバラだ。\n<wait>少しは、期待してたんだがな。\n<wait>
 m/MS0004.BIN	0:0E	9	419	1FD2	女の子：		Girl:	v005		
 m/MS0004.BIN	0:0E	10	429	1FD3	私{08:62}大{08:4B}事{08:25}{08:52}思{08:52}たわ。\nだ{08:52}、あの人達{08:52}、結局、口ばっかりな{08:5F}{08:5E}。\n<wait>		Personally, I never thought they were all that.\nJust a bunch of hollow promises and nothing else.\n<wait>	v005		reads: 私は、大した事ないって思ってたわ。\nだって、あの人達って、結局、口ばっかりなんだもの。\n<wait>
-m/MS0004.BIN	0:0E	11	509	09	{08:47}前の満月{08:62}例の事件が起こら{08:19}らしい。\n<wait>		I hear that nothing happened the previous full moon.\\b<wait>	v005		reads: この前の満月は、例の事件が起こらなかったらしい。\n<wait> @refalign
+m/MS0004.BIN	0:0E	11	509	09	{08:47}前の満月{08:62}例の事件が起こら{08:19}らしい。\n<wait>		I hear that nothing happened the previous full moon.\\b<wait>	v005		reads: この前の満月は、例の事件が起こらなかったらしい。\n<wait>; reads: この前の満月は、例の事件が起こらなかったらしい。\n<wait> @refalign
 m/MS0004.BIN	0:0E	12	556	1FD2	女の子：		Girl:	v005		
 m/MS0004.BIN	0:0E	13	566	1FD3	{08:56}、{02:01}の連中が何かや{08:51}とは思え{08:25}わね。\n<wait>		Whatever did it, I doubt Pentagramma had any hand in it.\n<wait>	ours		reads: でも、ペンタグランマの連中が何かやったとは思えないわね。\n<wait>
 m/MS0004.BIN	0:0E	14	613	1FD2	男性：		Man:	v005		
@@ -227,12 +227,12 @@ m/MS0004.BIN	0:10	10	438	18	{02:01}の奴ら、ありゃ何な{08:5F}よ！\n<wa
 m/MS0004.BIN	0:10	11	473	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：
 m/MS0004.BIN	0:10	12	481	1FD3	何かあっ{08:50}、全部、俺達{08:0B}人のせいにしやが{08:52}。\n{08:72}{08:51}く、何様だと思{08:52}やがる{08:5F}！！\n<wait>		Whenever something happens, they blame it on us cambions.\nFuck... Who do they think they are!?\n<wait>	v005		reads: 何かあったら、全部、俺達悪魔人のせいにしやがって。\n‥‥ったく、何様だと思ってやがるんだ！！\n<wait>
 m/MS0004.BIN	0:11	0	27	1FD2	男性：		Man:	v005		
-m/MS0004.BIN	0:11	1	40	09	ああ{02:08}{08:5C}おしまいだ{02:08}\n俺達{01:1C}、殺{03:0C}ちまう{08:5F}{02:08}\n		This is it for us... We're all gonna die...\n	v005		reads: ああ‥‥‥もうおしまいだ‥‥‥\n俺達みんな、殺されちまうんだ‥‥‥\n @refalign
-m/MS0004.BIN	0:11	2	92	09	新宿は{08:5C}やばい{08:42}、マジで他に移り{08:4E}{08:5F}{08:84}、中々そうも行か{08:25}{08:5F}よ。\n<wait>		I'd love to move somewhere else, but I don't think that's happening.\n<wait>	v005		reads: 新宿はもうやばいから、マジで他に移りたいんだけど、中々そうも行かないんだよ。\n<wait> @refalign
-m/MS0004.BIN	0:11	3	167	09	毎月、満月の夜に{08:59}と、{02:0B}が行方不明に{08:59}{08:5F}。\n交代で見回りをし{08:2B}{08:84}、裏をかかれてばかり{08:72}\n<wait>		Every full moon, someone goes missing.\nWe've set up a patrol, but they've come up short so far.\n<wait>	v005		reads: 毎月、満月の夜になると、人間が行方不明になるんだ。\n交代で見回りをしてるけど、裏をかかれてばかり‥‥\n<wait> @refalign
+m/MS0004.BIN	0:11	1	40	09	ああ{02:08}{08:5C}おしまいだ{02:08}\n俺達{01:1C}、殺{03:0C}ちまう{08:5F}{02:08}\n		This is it for us... We're all gonna die...\n	v005		reads: ああ‥‥‥もうおしまいだ‥‥‥\n俺達みんな、殺されちまうんだ‥‥‥\n; reads: ああ‥‥‥もうおしまいだ‥‥‥\n俺達みんな、殺されちまうんだ‥‥‥\n @refalign
+m/MS0004.BIN	0:11	2	92	09	新宿は{08:5C}やばい{08:42}、マジで他に移り{08:4E}{08:5F}{08:84}、中々そうも行か{08:25}{08:5F}よ。\n<wait>		I'd love to move somewhere else, but I don't think that's happening.\n<wait>	v005		reads: 新宿はもうやばいから、マジで他に移りたいんだけど、中々そうも行かないんだよ。\n<wait>; reads: 新宿はもうやばいから、マジで他に移りたいんだけど、中々そうも行かないんだよ。\n<wait> @refalign
+m/MS0004.BIN	0:11	3	167	09	毎月、満月の夜に{08:59}と、{02:0B}が行方不明に{08:59}{08:5F}。\n交代で見回りをし{08:2B}{08:84}、裏をかかれてばかり{08:72}\n<wait>		Every full moon, someone goes missing.\nWe've set up a patrol, but they've come up short so far.\n<wait>	v005		reads: 毎月、満月の夜になると、人間が行方不明になるんだ。\n交代で見回りをしてるけど、裏をかかれてばかり‥‥\n<wait>; reads: 毎月、満月の夜になると、人間が行方不明になるんだ。\n交代で見回りをしてるけど、裏をかかれてばかり‥‥\n<wait> @refalign
 m/MS0004.BIN	0:11	4	261	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:11	5	269	1FD3	ま、{08:73}所に住んでる{08:5F}。\n{08:63}の身{08:62}{08:63}で守る{08:86}{08:25}{08:5F}{08:84}ね{02:08}\n<wait>		Then again, I guess that's what it's like living here.\nThe only one you've got to protect you is yourself...\n<wait>	v005		reads: ま、こんな所に住んでるんだ。\n自分の身は、自分で守るしかないんだけどね‥‥‥\n<wait>
-m/MS0004.BIN	0:11	6	328	18	{08:47}前の満月{08:62}何にも起こら{08:19}{08:5F}。\n遠吠えさえも聞こえなくて、{08:64}{08:52}静かな夜だ{08:51}。\n<wait>		Nothing happened the previous full moon.\nIt was a perfectly calm night, with no howling to be heard.\n<wait>	v005		reads: この前の満月は、何にも起こらなかったんだ。\n遠吠えさえも聞こえなくて、いたって静かな夜だった。\n<wait> @refalign
+m/MS0004.BIN	0:11	6	328	18	{08:47}前の満月{08:62}何にも起こら{08:19}{08:5F}。\n遠吠えさえも聞こえなくて、{08:64}{08:52}静かな夜だ{08:51}。\n<wait>		Nothing happened the previous full moon.\nIt was a perfectly calm night, with no howling to be heard.\n<wait>	v005		reads: この前の満月は、何にも起こらなかったんだ。\n遠吠えさえも聞こえなくて、いたって静かな夜だった。\n<wait>; reads: この前の満月は、何にも起こらなかったんだ。\n遠吠えさえも聞こえなくて、いたって静かな夜だった。\n<wait> @refalign
 m/MS0004.BIN	0:11	7	412	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:11	8	420	1FD3	{08:56}、ホントに{08:48}で解決{08:4B}のかな{02:08}\n<wait>		I wonder, is the matter solved now?\n<wait>	v005		reads: でも、ホントにこれで解決したのかな‥‥‥\n<wait>
 m/MS0004.BIN	0:12	0	27	1FD2	男性：		Man:	v005		
@@ -241,10 +241,10 @@ m/MS0004.BIN	0:12	2	107	1FD2	男性：		Man:	v005
 m/MS0004.BIN	0:12	3	115	1FD3	どっちに{03:04}{08:8E}気も{08:25}{08:84}、住みにく{08:22}ら、ありゃし{08:25}よ{08:72}全く{08:72}\n<wait>		I get that there's bad blood between them, but couldn't they at least\npretend to get along? It makes living together so difficult...\n<wait>	v005		reads: どっちに味方する気もないけど、住みにくいったら、ありゃしないよ‥‥全く‥‥\n<wait>
 m/MS0004.BIN	0:13	0	27	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:13	1	40	09	{01:08}が生き{08:2B}{08:52}噂{08:62}本当だ{08:51}{08:5F}な{08:72}\n<wait>		So, those rumours about Baal being alive were true after all...\n<wait>	ours		reads: バエルが生きてるって噂は、本当だったんだな‥‥\n<wait>
-m/MS0004.BIN	0:13	2	83	09	{01:37}が偽者だ{08:51}{08:6A}て{02:08}\n<wait>		To think that the Leader was an impostor...\n<wait>	v005		reads: リーダーが偽者だったなんて‥‥‥\n<wait> @refalign
-m/MS0004.BIN	0:13	3	109	18	お前も、{02:00}か{08:72}\n<wait>俺達{08:62}{02:00}の事{08:6A}て信用し{08:25}ぜ！\n第一、{08:0B}を操る{08:52}のが、気に入ら{08:25}{08:5F}よ。\n<wait>		You're a Devil Buster, huh?\n<wait>Word of warning. We don't like your kind around here.\nThe fact alone that you use demons makes you completely untrustworthy.\n<wait>	v005		reads: お前も、デビルバスターか‥‥\n<wait>俺達は、デビルバスターの事なんて信用しないぜ！\n第一、悪魔を操るってのが、気に入らないんだよ。\n<wait> @refalign
+m/MS0004.BIN	0:13	2	83	09	{01:37}が偽者だ{08:51}{08:6A}て{02:08}\n<wait>		To think that the Leader was an impostor...\n<wait>	v005		reads: リーダーが偽者だったなんて‥‥‥\n<wait>; reads: リーダーが偽者だったなんて‥‥‥\n<wait> @refalign
+m/MS0004.BIN	0:13	3	109	18	お前も、{02:00}か{08:72}\n<wait>俺達{08:62}{02:00}の事{08:6A}て信用し{08:25}ぜ！\n第一、{08:0B}を操る{08:52}のが、気に入ら{08:25}{08:5F}よ。\n<wait>		You're a Devil Buster, huh?\n<wait>Word of warning. We don't like your kind around here.\nThe fact alone that you use demons makes you completely untrustworthy.\n<wait>	v005		reads: お前も、デビルバスターか‥‥\n<wait>俺達は、デビルバスターの事なんて信用しないぜ！\n第一、悪魔を操るってのが、気に入らないんだよ。\n<wait>; reads: お前も、デビルバスターか‥‥\n<wait>俺達は、デビルバスターの事なんて信用しないぜ！\n第一、悪魔を操るってのが、気に入らないんだよ。\n<wait> @refalign
 m/MS0004.BIN	0:14	0	27	1FD2	謎な男：		Mysterious Man:	v005		
-m/MS0004.BIN	0:14	1	42	09	あく{08:71}噂な{08:5F}が{02:08}\n<wait>		I don't know if it's true or not. However...\n<wait>	v005		reads: あくまで噂なんだが‥‥‥\n<wait> @refalign
+m/MS0004.BIN	0:14	1	42	09	あく{08:71}噂な{08:5F}が{02:08}\n<wait>		I don't know if it's true or not. However...\n<wait>	v005		reads: あくまで噂なんだが‥‥‥\n<wait>; reads: あくまで噂なんだが‥‥‥\n<wait> @refalign
 m/MS0004.BIN	0:14	2	65	1FD2	謎な男：		Mysterious Man:	v005		
 m/MS0004.BIN	0:14	3	75	1FD3	{01:08}{08:62}{08:5E}凄く強力な{08:0B}を{08:47}世に復活させ{08:69}と、目論んで{08:40}らしいぜ。\n<wait>		The word on the street is that Baal is planning on\nsummoning an extremely powerful demon into our world.\n<wait>	ours		reads: バエルは、もの凄く強力な悪魔をこの世に復活させようと、目論んでいるらしいぜ。\n<wait>
 m/MS0004.BIN	0:14	4	144	1FD2	謎な男：		Mysterious Man:	v005		
@@ -262,12 +262,12 @@ m/MS0004.BIN	0:15	1	43	1FD3	{02:08}‥{02:00}か。\n<wait>貴様{08:6A}かと�
 m/MS0004.BIN	0:15	2	99	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:15	3	107	1FD3	と{08:53}と失せな！！\n<wait>		Get lost!\n<wait>	v005		reads: とっとと失せな！！\n<wait>
 m/MS0004.BIN	0:16	0	57	1FD2	女性：		Woman:	v005		
-m/MS0004.BIN	0:16	1	70	09	私達の{08:6C}敗北よ{02:08}\n<wait>		We... We lost...\n<wait>	v005		reads: 私達の完全敗北よ‥‥‥\n<wait> @refalign
+m/MS0004.BIN	0:16	1	70	09	私達の{08:6C}敗北よ{02:08}\n<wait>		We... We lost...\n<wait>	v005		reads: 私達の完全敗北よ‥‥‥\n<wait>; reads: 私達の完全敗北よ‥‥‥\n<wait> @refalign
 m/MS0004.BIN	0:16	2	95	1FD2	女性：		Woman:	v005		
 m/MS0004.BIN	0:16	3	103	1FD3	{08:0B}に勝{08:2B}{08:6A}て、本気で信じてた{08:5F}{08:42}、私達もおめで{08:4E}いわよね{08:72}。\n<wait>		And here I was, actually thinking we could beat the demons.\nHow foolish. How naive...\n<wait>	v005		reads: 悪魔に勝てるなんて、本気で信じてたんだから、私達もおめでたいいわよね‥‥。\n<wait>
 m/MS0004.BIN	0:16	4	179	1F7C	貴方{08:72}{02:00}ね？\n<wait>		You're a Devil Buster, aren't you?<wait>	v005		reads: 貴方‥‥デビルバスターね？\n<wait>
-m/MS0004.BIN	0:16	5	212	1FB2	違うよ！		Nope!	v005		menu option, declared width 20 columns @refalign
-m/MS0004.BIN	0:16	6	222	1FB2	{01:29}！		Sure am!	v005		reads: そうだ！; menu option, declared width 20 columns @refalign
+m/MS0004.BIN	0:16	5	212	1FB2	違うよ！		Nope!	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0004.BIN	0:16	6	222	1FB2	{01:29}！		Sure am!	v005		reads: そうだ！; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0004.BIN	0:16	7	249	1FD2	女性：	女性：	Woman:	v005		reads: 
 m/MS0004.BIN	0:16	8	257	1FD3	だっ{08:50}、{08:7A}格好し{08:25}方が{08:7F}わ。\n<wait>	だっ{08:50}、{08:7A}格好し{08:25}方が{08:7F}わ。\n<wait>	Oh? In that case, I'd recommend not dressing like one.\n<wait>	v005		reads: だったら、そんな格好しない方がいいわ。\n<wait>
 m/MS0004.BIN	0:16	9	294	1FD2	女性：		Woman:	v005		
@@ -290,19 +290,19 @@ m/MS0004.BIN	0:18	2	78	1FD2	男性：		Man:	v005
 m/MS0004.BIN	0:18	3	86	1FD3	痛い目に遭{08:64}く{08:19}ら、俺の目の前{08:42}、と{08:53}と消えなッ！！\n<wait>		If you don't want to get hurt,\nthen I suggest that you get the hell out of my sight!\n<wait>	v005		reads: 痛い目に遭いたくなかったら、俺の目の前から、とっとと消えなッ！！\n<wait>
 m/MS0004.BIN	0:19	0	35	1FD2	女性：		Woman:	v005		
 m/MS0004.BIN	0:19	1	43	1FD3	{02:08}ちょ{08:53}！\n<wait>何{08:6B}アンタ？　勝手に入{08:52}来{08:25}でよッ！！\n<wait>		...Hey!\n<wait>What the FUCK do you think you're doing!?\nYou can't just walk in like that!\n<wait>	v005		reads: ‥‥‥ちょっと！\n<wait>何なのアンタ？　勝手に入って来ないでよッ！！\n<wait>
-m/MS0004.BIN	0:19	2	109	00	{04:FF}{08:62}追い出{03:0C}て{08:1F}。\n		You ended up being chased off.\n	v005		reads: は、追い出されてしまった。\n
+m/MS0004.BIN	0:19	2	111	1F01	{08:62}追い出{03:0C}て{08:1F}。\n		You ended up being chased off.\n	v005		reads: は、追い出されてしまった。\n @rebase-tagdiff
 m/MS0004.BIN	0:1A	0	35	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：
 m/MS0004.BIN	0:1A	1	48	09	あん？　何だお前は？\n<wait>		Hmm? Who the fuck are you?\n<wait>	v005		@refalign
 m/MS0004.BIN	0:1A	2	77	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：
 m/MS0004.BIN	0:1A	3	85	1FD3	お話が{08:4B}い{08:7D}、暇なおばちゃんや、大ボケの{02:01}達に{08:56}、\n相手{08:4A}もらいな！\n<wait>		If you need someone to talk to, then go bother those Pentagramma assholes!\n<wait>	ours		reads: お話がしたいなら、暇なおばちゃんや、大ボケのペンタグランマ達にでも、\n相手してもらいな！\n<wait>
 m/MS0004.BIN	0:1A	4	161	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：
 m/MS0004.BIN	0:1A	5	169	1FD3	俺は暇{08:81}ねぇ{08:5F}。\n<wait>		Unlike them, I have actual work to do.\n<wait>	v005		reads: 俺は暇じゃねぇんだ。\n<wait>
-m/MS0004.BIN	0:1A	6	198	09	満月の夜に{08:59}と、誰か{01:3A}が、必ず行方不明に{08:59}{08:52}妙な事件が\n起こっ{08:2B}{08:5F}が{02:08}\n<wait>		Every full moon, someone goes missing.\n<wait>	v005		reads: 満月の夜になると、誰かひとりが、必ず行方不明になるって妙な事件が\n起こってるんだが‥‥‥\n<wait> @refalign
+m/MS0004.BIN	0:1A	6	198	09	満月の夜に{08:59}と、誰か{01:3A}が、必ず行方不明に{08:59}{08:52}妙な事件が\n起こっ{08:2B}{08:5F}が{02:08}\n<wait>		Every full moon, someone goes missing.\n<wait>	v005		reads: 満月の夜になると、誰かひとりが、必ず行方不明になるって妙な事件が\n起こってるんだが‥‥‥\n<wait>; reads: 満月の夜になると、誰かひとりが、必ず行方不明になるって妙な事件が\n起こってるんだが‥‥‥\n<wait> @refalign
 m/MS0004.BIN	0:1A	7	276	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：
 m/MS0004.BIN	0:1A	8	284	1FD3	住人の中に{08:62}俺達が血に飢えてや{08:52}ん{08:81}{08:25}か{08:52}、疑っ{08:2B}ヤツらも\n{08:40}み{08:4E}だ。\n<wait>		Some folks apparently think it's us who are responsible.\n<wait>	v005		reads: 住人の中には、俺達が血に飢えてやってんじゃないかって、疑ってるヤツらも\nいるみたいだ。\n<wait>
 m/MS0004.BIN	0:1A	9	362	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：
 m/MS0004.BIN	0:1A	10	370	1FD3	{08:72}{08:51}く、たまらねぇよな！\n誰が{08:7A}事{08:8E}か{08:52}{08:5F}、ふざけんなよ！！\n<wait>		Fucking hell. What do they think we are, animals?\n<wait>	v005		reads: ‥‥ったく、たまらねぇよな！\n誰がそんな事するかってんだ、ふざけんなよ！！\n<wait>
-m/MS0004.BIN	0:1A	11	437	18	{08:47}前はあの事件が起こら{08:19}が{02:08}\n{08:76}、俺がや{08:51}ん{08:81}{08:25}か{08:52}、疑っ{08:2B}馬鹿が{08:40}{08:5F}よ！\n<wait>		Nothing happened the previous full moon. And guess what?\nSome dumb idiots are still blaming us!\n<wait>	v005		reads: この前はあの事件が起こらなかったが‥‥‥\nまだ、俺がやったんじゃないかって、疑ってる馬鹿がいるんだよ！\n<wait> @refalign
+m/MS0004.BIN	0:1A	11	437	18	{08:47}前はあの事件が起こら{08:19}が{02:08}\n{08:76}、俺がや{08:51}ん{08:81}{08:25}か{08:52}、疑っ{08:2B}馬鹿が{08:40}{08:5F}よ！\n<wait>		Nothing happened the previous full moon. And guess what?\nSome dumb idiots are still blaming us!\n<wait>	v005		reads: この前はあの事件が起こらなかったが‥‥‥\nまだ、俺がやったんじゃないかって、疑ってる馬鹿がいるんだよ！\n<wait>; reads: この前はあの事件が起こらなかったが‥‥‥\nまだ、俺がやったんじゃないかって、疑ってる馬鹿がいるんだよ！\n<wait> @refalign
 m/MS0004.BIN	0:1A	12	519	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：
 m/MS0004.BIN	0:1A	13	527	1FD3	{08:51}く{08:72}！　しつこい奴らだぜ！\n<wait>		Fucking hell... I guess nothing's gonna be good enough for them.\n<wait>	v005		reads: ったく‥‥！　しつこい奴らだぜ！\n<wait>
 m/MS0004.BIN	0:1B	0	27	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：
@@ -313,26 +313,26 @@ m/MS0004.BIN	0:1B	4	195	09	私、{02:01}{08:52}大ッ嫌い！！\n<wait>だ{08:
 m/MS0004.BIN	0:1B	5	311	1F03	池袋{08:52}、何か{08:0B}が{08:40}み{08:4E}ね。\nあそこが居住区に{08:1A}る{08:52}話、聞か{08:25}{08:5E}。\n<wait>					reads: 池袋って、何か悪魔がいるみたいね。\nあそこが居住区になってるって話、聞かないもの。\n<wait>
 m/MS0004.BIN	0:1B	6	385	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：
 m/MS0004.BIN	0:1B	7	393	1FD3	{08:4D}に、あの辺りには滅多に人も近づか{08:25}み{08:4E}よ。\n噂で{08:62}シャンシャンシティに巣くっ{08:2B}{08:0B}が、{02:0B}を捕らえては血祭りに\nあげ{08:2B}{08:52}事{08:74}ど{02:08}‥{1E10:01001E}本当かしら？\n		They capture any humans who dare to tread there,\nand take them to Sanshan City to be slaughtered.\n{1E10:01001E}Sounds terrifying...\n	v005		reads: それに、あの辺りには滅多に人も近づかないみたいよ。\n噂では、シャンシャンシティに巣くってる悪魔が、人間を捕らえては血祭りに\nあげてるって事だけど‥‥‥‥{1E10:01001E}本当かしら？\n
-m/MS0004.BIN	0:1B	8	540	18	労働{02:02}の食事に{08:62}麻薬の様なモノが、入れられてたん{08:55}{08:52}ね。\n<wait>		I hear that they put some sorts of drugs into the food\nthat they feed their slaves.\n<wait>	v005		reads: 労働キャンプの食事には、麻薬の様なモノが、入れられてたんですってね。\n<wait> @refalign
+m/MS0004.BIN	0:1B	8	540	18	労働{02:02}の食事に{08:62}麻薬の様なモノが、入れられてたん{08:55}{08:52}ね。\n<wait>		I hear that they put some sorts of drugs into the food\nthat they feed their slaves.\n<wait>	v005		reads: 労働キャンプの食事には、麻薬の様なモノが、入れられてたんですってね。\n<wait>; reads: 労働キャンプの食事には、麻薬の様なモノが、入れられてたんですってね。\n<wait> @refalign
 m/MS0004.BIN	0:1B	9	605	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：
 m/MS0004.BIN	0:1B	10	613	1FD3	代々木{08:56}、やっぱり同じ{08:6B}かしら？\n<wait>		No reason to think that isn't also happening over at Yoyogi.\n<wait>	v005		reads: 代々木でも、やっぱり同じなのかしら？\n<wait>
 m/MS0004.BIN	0:1C	0	35	1FD2	女性：		Woman:	v005		
 m/MS0004.BIN	0:1C	1	43	1FD3	あの{08:72}何か私に御用{08:55}か？\n<wait>		Umm... Do you need something?\n<wait>	v005		reads: あの‥‥何か私に御用ですか？\n<wait>
 m/MS0004.BIN	0:1C	2	74	1FD0	女性{08:62}怯{08:41}目で		The woman stares at you with a scared look on her face.\n<wait>	v005		reads: 女性は、怯えた目で
-m/MS0004.BIN	0:1C	3	92	00	{04:FF}を見{08:14}。\n<wait>					reads: を見ている。\n<wait>
+m/MS0004.BIN	0:1C	3	94	1F01	を見{08:14}。\n<wait>					reads: を見ている。\n<wait>
 m/MS0004.BIN	0:1C	4	111	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n
-m/MS0004.BIN	0:1C	5	132	1FB2	お茶し{08:25}？		Tea, please	v005		reads: お茶しない？; menu option, declared width 20 columns @refalign
-m/MS0004.BIN	0:1C	6	144	1FB2	別に{08:72}		Not really...	v005		reads: 別に‥‥; menu option, declared width 20 columns @refalign
+m/MS0004.BIN	0:1C	5	132	1FB2	お茶し{08:25}？		Tea, please	v005		reads: お茶しない？; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0004.BIN	0:1C	6	144	1FB2	別に{08:72}		Not really...	v005		reads: 別に‥‥; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0004.BIN	0:1C	7	170	1FD2	女性：	女性：	Woman:	v005		reads: 山瀬勇
 m/MS0004.BIN	0:1C	8	178	1FD3	あの{08:72}困り{08:5A}。\n出て行{08:52}下{08:49}{08:72}出て行か{08:25}と{08:72}人を呼び{08:5A}よ。\n<wait>	あの{08:72}困り{08:5A}。\n出て行{08:52}下{08:49}{08:72}出て行か{08:25}と{08:72}人を呼び{08:5A}よ。\n<wait>	Err... Sorry. Could you please leave? If you don't, I'll scream.\n<wait>	v005		reads: あの‥‥困ります。\n出て行って下さい‥‥出て行かないと‥‥人を呼びますよ。\n<wait>
 m/MS0004.BIN	0:1C	9	244	1FD0	女性の目は本気だ。\n		The woman's eyes mean business.\nWithout a choice, you leave the room.\n	v005		
-m/MS0004.BIN	0:1C	10	267	00	{04:FF}{08:62}仕方なく{01:2E}を後に{08:4B}。\n					reads: は、仕方なく部屋を後にした。\n; reads: あの‥‥困ります。\n出て行って下さい‥‥出て行かないと‥‥人を呼びますよ。\n<wait>
+m/MS0004.BIN	0:1C	10	269	1F01	{08:62}仕方なく{01:2E}を後に{08:4B}。\n					reads: は、仕方なく部屋を後にした。\n; reads: あの‥‥困ります。\n出て行って下さい‥‥出て行かないと‥‥人を呼びますよ。\n<wait>
 m/MS0004.BIN	0:1E	0	41	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:1E	1	49	1FD3	胸く{08:79}悪い格好をしやが{08:52}{02:08}\n<wait>		Hmph... <wait>	v005		reads: 胸くその悪い格好をしやがって‥‥‥\n<wait>
 m/MS0004.BIN	0:1E	2	84	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:1E	3	92	1FD3	お前{08:72}何者だ？\n		And who the fuck are you?\n	v005		reads: お前‥‥何者だ？\n
-m/MS0004.BIN	0:1E	4	123	1FB2	{02:0B}さっ！		Human!	v005		reads: 人間さっ！; menu option, declared width 20 columns @refalign
-m/MS0004.BIN	0:1E	5	133	1FB2	可愛{08:68}さちゃん		Cute little rabbit	v005		reads: 可愛いうさちゃん; menu option, declared width 20 columns @refalign
+m/MS0004.BIN	0:1E	4	123	1FB2	{02:0B}さっ！		Human!	v005		reads: 人間さっ！; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0004.BIN	0:1E	5	133	1FB2	可愛{08:68}さちゃん		Cute little rabbit	v005		reads: 可愛いうさちゃん; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0004.BIN	0:1E	6	167	1FD2	男性：	男性：	Man:	v005		reads: 山瀬勇
 m/MS0004.BIN	0:1E	7	175	1FD3	あん？　ふざけんなッ！\nと{08:53}と出て行け！　ぶっ殺すぞッ！！\n<wait>	あん？　ふざけんなッ！\nと{08:53}と出て行け！　ぶっ殺すぞッ！！\n<wait>	I don't got time for your shitty jokes!\nGet the fuck out of here before I kill you!\n<wait>	v005		reads: あん？　ふざけんなッ！\nとっとと出て行け！　ぶっ殺すぞッ！！\n<wait>
 m/MS0004.BIN	0:1E	8	244	1FD2	男性：		Man:	v005		
@@ -347,7 +347,7 @@ m/MS0004.BIN	0:20	5	194	1FD3	{01:22}{08:62}僕らが寝{08:2B}間にいなく{08
 m/MS0004.BIN	0:20	6	231	1FD2	女の子：		Girl:	v005		
 m/MS0004.BIN	0:20	7	241	1FD3	お向かいのおじさんとか、来てく{08:2F}{08:84}{08:72}{08:56}{08:72}\n<wait>		The old man next door takes care of us, so we'll survive. Still...\n<wait>	v005		reads: お向かいのおじさんとか、来てくれるけど‥‥でも‥‥\n<wait>
 m/MS0004.BIN	0:22	0	71	1FD2	男性：		Man:	v005		
-m/MS0004.BIN	0:22	1	84	09	{02:08}所詮{08:62}{02:0B}は{02:0B}で{08:86}{08:25}のか{02:08}<wait>クソッ！\n<wait>		In the end, I guess there's only so much that humans can do...\n<wait>Fuck!\n<wait>	v005		reads: ‥‥‥所詮は、人間は人間でしかないのか‥‥‥<wait>クソッ！\n<wait> @refalign
+m/MS0004.BIN	0:22	1	84	09	{02:08}所詮{08:62}{02:0B}は{02:0B}で{08:86}{08:25}のか{02:08}<wait>クソッ！\n<wait>		In the end, I guess there's only so much that humans can do...\n<wait>Fuck!\n<wait>	v005		reads: ‥‥‥所詮は、人間は人間でしかないのか‥‥‥<wait>クソッ！\n<wait>; reads: ‥‥‥所詮は、人間は人間でしかないのか‥‥‥<wait>クソッ！\n<wait> @refalign
 m/MS0004.BIN	0:22	2	131	1FD2	男の子：		Boy:	v005		
 m/MS0004.BIN	0:22	3	141	1FD3	{02:08}{01:21}ぁ{02:08}僕達{08:90}なっちゃうの？\n<wait>		Daddy... What's going to happen to us?...\n<wait>	v005		reads: ‥‥‥パパぁ‥‥‥僕達どうなっちゃうの？\n<wait>
 m/MS0004.BIN	0:22	4	178	1FD2	男性：		Man:	v005		
@@ -358,10 +358,10 @@ m/MS0004.BIN	0:22	8	224	1FD2	男性：		Man:	v005
 m/MS0004.BIN	0:22	9	232	1FD3	結局私{08:62}{08:47}子達の為に何も{08:4A}やる{08:46}が出来{08:19}{02:08}\n<wait>		In the end, I wasn't able to do anything for my children...\n<wait>	v005		reads: 結局私は、この子達の為に何もしてやることが出来なかった‥‥‥\n<wait>
 m/MS0004.BIN	0:22	10	283	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:22	11	291	1FD3	{08:47}子達を{08:47}{08:7E}、{08:47}{08:69}な環境において苦しめ{08:14}より{08:62}\nいっそ、私の手で楽に{08:4A}や{08:51}方が良いのか{08:5D}れ{08:25}{02:08}‥\n		Perhaps it would be for the best if I let them go in peace,\nrather than prolong their suffering...\n	v005		reads: この子達をこのまま、このような環境において苦しめているよりは、\nいっそ、私の手で楽にしてやった方が良いのかもしれない‥‥‥‥\n
-m/MS0004.BIN	0:22	12	395	09	{08:0B}を撲滅できる{08:6A}て、夢物語だ{08:51}よ。\n<wait>		The idea that we could get rid of the demons was always a pipe dream.\n<wait>	v005		reads: 悪魔を撲滅できるなんて、夢物語だったよ。\n<wait> @refalign
+m/MS0004.BIN	0:22	12	395	09	{08:0B}を撲滅できる{08:6A}て、夢物語だ{08:51}よ。\n<wait>		The idea that we could get rid of the demons was always a pipe dream.\n<wait>	v005		reads: 悪魔を撲滅できるなんて、夢物語だったよ。\n<wait>; reads: 悪魔を撲滅できるなんて、夢物語だったよ。\n<wait> @refalign
 m/MS0004.BIN	0:22	13	438	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:22	14	446	1FD3	結局{08:62}{02:0C}{02:01}{08:62}踊ら{03:0C}た{08:74}だ{08:51}。\n{08:0B}の手の内でね{02:08}。\n<wait>		In the end, we were being played like a fiddle.\n<wait>	v005		reads: 結局は、我々ペンタグランマは、踊らされただけだった。\n悪魔の手の内でね‥‥‥。\n<wait>
-m/MS0004.BIN	0:22	15	503	18	女房が{08:7B}夜を境に行方不明に{08:16}。\n<wait>{02:08}‥満月の夜だ。\n<wait>		My wife went missing one night.\n<wait>Yes, a full moon night.\n<wait>	v005		reads: 女房がある夜を境に行方不明になった。\n<wait>‥‥‥‥満月の夜だ。\n<wait> @refalign
+m/MS0004.BIN	0:22	15	503	18	女房が{08:7B}夜を境に行方不明に{08:16}。\n<wait>{02:08}‥満月の夜だ。\n<wait>		My wife went missing one night.\n<wait>Yes, a full moon night.\n<wait>	v005		reads: 女房がある夜を境に行方不明になった。\n<wait>‥‥‥‥満月の夜だ。\n<wait>; reads: 女房がある夜を境に行方不明になった。\n<wait>‥‥‥‥満月の夜だ。\n<wait> @refalign
 m/MS0004.BIN	0:22	16	563	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:22	17	571	1FD3	{08:0B}の仕業に決まっ{08:14}！！\n{08:6B}に何も出来ず、手掛かりすらも{08:25}{02:08}！！\n<wait>		It was the work of the demons! I know it!\n<wait>	v005		reads: 悪魔の仕業に決まっている！！\nなのに何も出来ず、手掛かりすらもない‥‥‥！！\n<wait>
 m/MS0004.BIN	0:22	18	641	1FD2	男の子：		Boy:	v005		
@@ -369,77 +369,77 @@ m/MS0004.BIN	0:22	19	651	1FD3	{01:21}ぁ{02:08}\n<wait>		Daddy...\n<wait>	v005		
 m/MS0004.BIN	0:22	20	666	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:22	21	674	1FD3	{02:01}の一員だ{08:6A}て、名ばかりだよ。\n結局、{08:63}の家族{01:3C}、守れやし{08:25}{08:5F}{08:42}な{08:72}\n<wait>		I'm a member of Pentagramma, but really, it's in the name only.\nI can't even keep my own family safe...\n<wait>	ours		reads: ペンタグランマの一員だなんて、名ばかりだよ。\n結局、自分の家族ひとつ、守れやしないんだからな‥‥\n<wait>
 m/MS0004.BIN	0:23	0	27	1FD2	女性：		Woman:	v005		
-m/MS0004.BIN	0:23	1	40	09	ヤツら{08:62}最初わざと都庁を私達に陥落{02:0D}、私達が油断{08:4B}所を奇襲し、\n{01:37}とすり変わ{08:51}のよ。\n<wait>		The demons let us take back the Government Office on purpose.\nThey waited us to lower our guard, and then replaced our Leader\nwith one of their own.\n<wait>	v005		reads: ヤツらは、最初わざと都庁を私達に陥落させて、私達が油断した所を奇襲し、\nリーダーとすり変わったのよ。\n<wait> @refalign
+m/MS0004.BIN	0:23	1	40	09	ヤツら{08:62}最初わざと都庁を私達に陥落{02:0D}、私達が油断{08:4B}所を奇襲し、\n{01:37}とすり変わ{08:51}のよ。\n<wait>		The demons let us take back the Government Office on purpose.\nThey waited us to lower our guard, and then replaced our Leader\nwith one of their own.\n<wait>	v005		reads: ヤツらは、最初わざと都庁を私達に陥落させて、私達が油断した所を奇襲し、\nリーダーとすり変わったのよ。\n<wait>; reads: ヤツらは、最初わざと都庁を私達に陥落させて、私達が油断した所を奇襲し、\nリーダーとすり変わったのよ。\n<wait> @refalign
 m/MS0004.BIN	0:23	2	132	1FD2	女性：		Woman:	v005		
 m/MS0004.BIN	0:23	3	140	1FD3	内部{08:42}{08:6C}に潰{08:4A}しまえば、真っ向{08:42}戦うより、うんと効率が{08:7F}{08:5E}ね。\n<wait>		It's a perfect strategy, really. Why fight us head-on when they can\nsimply destroy our forces from the inside?\n<wait>	v005		reads: 内部から完全に潰してしまえば、真っ向から戦うより、うんと効率がいいものね。\n<wait>
 m/MS0004.BIN	0:23	4	211	1FD2	女性：		Woman:	v005		
 m/MS0004.BIN	0:23	5	219	1FD3	そ{08:4A}、私達{02:01}{08:62}まんまと{08:79}、{08:0B}達の策略にか{08:18}{08:52}訳よ。\n<wait>		We fell for their scheme hook, line, and sinker.\n<wait>	v005		reads: そして、私達ペンタグランマは、まんまとその、悪魔達の策略にかかったって訳よ。\n<wait>
 m/MS0004.BIN	0:23	6	278	1FD2	女性：		Woman:	v005		
 m/MS0004.BIN	0:23	7	286	1FD3	お笑いぐさよね{02:08}‥\n<wait>		How pathetic...\n<wait>	v005		reads: お笑いぐさよね‥‥‥‥\n<wait>
-m/MS0004.BIN	0:23	8	317	09	{01:37}が、{08:0B}とすり変わ{08:52}た{08:6A}て{02:08}\n<wait>		To think that the Leader was replaced by a demon...\n<wait>	v005		reads: リーダーが、悪魔とすり変わってたなんて‥‥‥\n<wait> @refalign
+m/MS0004.BIN	0:23	8	317	09	{01:37}が、{08:0B}とすり変わ{08:52}た{08:6A}て{02:08}\n<wait>		To think that the Leader was replaced by a demon...\n<wait>	v005		reads: リーダーが、悪魔とすり変わってたなんて‥‥‥\n<wait>; reads: リーダーが、悪魔とすり変わってたなんて‥‥‥\n<wait> @refalign
 m/MS0004.BIN	0:23	9	354	1FD2	女性：		Woman:	v005		
 m/MS0004.BIN	0:23	10	362	1FD3	{08:48}で、{02:01}は事実上壊滅だわ。\n{08:5C}誰も、{08:3F}ほ{08:6D}{02:0B}を、統率{08:6A}て出来{08:25}{08:5E}。\n<wait>		Truly, this is it for Pentagramma.\nNo one's going to be able to step up and lead that many troops.\n<wait>	ours		reads: これで、ペンタグランマは事実上壊滅だわ。\nもう誰も、あれほどの人間を、統率なんて出来ないもの。\n<wait>
-m/MS0004.BIN	0:23	11	435	18	都庁{08:62}確かに{08:0B}達に奇襲{03:0C}た{08:84}、だ{08:42}{08:52}、惨敗{08:4B}訳{08:6A}か{08:81}なく、\nちゃんと応戦{08:4A}守り抜{08:64}わ。\n<wait>		The Government Office was attacked, yes.\nHowever, that doesn't mean that we're just going to give up.\n<wait>	v005		reads: 都庁は、確かに悪魔達に奇襲されたけど、だからって、惨敗した訳なんかじゃなく、\nちゃんと応戦して守り抜いたわ。\n<wait> @refalign
+m/MS0004.BIN	0:23	11	435	18	都庁{08:62}確かに{08:0B}達に奇襲{03:0C}た{08:84}、だ{08:42}{08:52}、惨敗{08:4B}訳{08:6A}か{08:81}なく、\nちゃんと応戦{08:4A}守り抜{08:64}わ。\n<wait>		The Government Office was attacked, yes.\nHowever, that doesn't mean that we're just going to give up.\n<wait>	v005		reads: 都庁は、確かに悪魔達に奇襲されたけど、だからって、惨敗した訳なんかじゃなく、\nちゃんと応戦して守り抜いたわ。\n<wait>; reads: 都庁は、確かに悪魔達に奇襲されたけど、だからって、惨敗した訳なんかじゃなく、\nちゃんと応戦して守り抜いたわ。\n<wait> @refalign
 m/MS0004.BIN	0:23	12	529	1FD2	女性：		Woman:	v005		
 m/MS0004.BIN	0:23	13	537	1FD3	{08:6B}に{02:08}！\n<wait>		And yet... <wait>	v005		reads: なのに‥‥‥！\n<wait>
 m/MS0004.BIN	0:23	14	554	1FD2	女性：		Woman:	v005		
 m/MS0004.BIN	0:23	15	562	1FD3	{08:0B}人達{08:62}労働{02:02}解放の恩も忘れて、私達{02:01}を、\n平気で罵倒{08:8E}のよ。\n許せ{08:25}わ！\n<wait>		And yet, those cambions keep taunting us.\nUngrateful bastards!\n<wait>	v005		reads: 悪魔人達は、労働キャンプ解放の恩も忘れて、私達ペンタグランマを、\n平気で罵倒するのよ。\n許せないわ！\n<wait>
 m/MS0004.BIN	0:25	0	27	1FD2	老女：		Old Woman:	v005		
 m/MS0004.BIN	0:25	1	40	09	{02:08}{02:08}‥\n<wait>	{02:08}{02:08}‥\n<wait>				reads: ‥‥‥‥‥‥‥\n<wait>
-m/MS0004.BIN	0:25	2	55	1FD0	老女は目を閉じ、何かを悟{08:51}{08:69}に身じろぎ一つし{08:25}{02:08}\n		The woman sits perfectly motionless with her eyes shut tight,\nalmost as if she was listening to an invisible voice.\n	v005		reads: 老女は目を閉じ、何かを悟ったように身じろぎ一つしない‥‥‥\n @refalign
-m/MS0004.BIN	0:25	3	107	18	私の娘{08:62}満月の夜に行方不明に{08:16}{08:7E}{02:08}\n<wait>未だに戻{08:52}は来{02:0A}。\n<wait>		My daughter went missing the last full moon.\n<wait>She has yet to come back.\n<wait>	v005		reads: 私の娘は、満月の夜に行方不明になったまま‥‥‥\n<wait>未だに戻っては来ません。\n<wait> @refalign
+m/MS0004.BIN	0:25	2	55	1FD0	老女は目を閉じ、何かを悟{08:51}{08:69}に身じろぎ一つし{08:25}{02:08}\n		The woman sits perfectly motionless with her eyes shut tight,\nalmost as if she was listening to an invisible voice.\n	v005		reads: 老女は目を閉じ、何かを悟ったように身じろぎ一つしない‥‥‥\n; reads: 老女は目を閉じ、何かを悟ったように身じろぎ一つしない‥‥‥\n @refalign
+m/MS0004.BIN	0:25	3	107	18	私の娘{08:62}満月の夜に行方不明に{08:16}{08:7E}{02:08}\n<wait>未だに戻{08:52}は来{02:0A}。\n<wait>		My daughter went missing the last full moon.\n<wait>She has yet to come back.\n<wait>	v005		reads: 私の娘は、満月の夜に行方不明になったまま‥‥‥\n<wait>未だに戻っては来ません。\n<wait>; reads: 私の娘は、満月の夜に行方不明になったまま‥‥‥\n<wait>未だに戻っては来ません。\n<wait> @refalign
 m/MS0004.BIN	0:25	4	173	1FD2	老女：		Old Woman:	v005		
 m/MS0004.BIN	0:25	5	181	1FD3	{08:27}{08:72}<wait>戻{08:52}こ{08:25}事は分っ{08:2B}ん{08:55}。\n<wait>		No... <wait>I know that she won't.\n<wait>	v005		reads: いいえ‥‥<wait>戻ってこない事は分ってるんです。\n<wait>
 m/MS0004.BIN	0:25	6	222	1FD2	老女：		Old Woman:	v005		
 m/MS0004.BIN	0:25	7	230	1FD3	{08:82}{08:72}分{08:52}い{08:54}、諦められ{08:25}{08:5E}{08:6A}{08:55}よ。\n		I know that, and yet, I cannot bring myself to give up on hope...\n	v005		reads: ただ‥‥分っていても、諦められないものなんですよ。\n
 m/MS0004.BIN	0:26	0	11	1F04						
-m/MS0004.BIN	0:26	1	40	1FD2	{08:0B}人：		 	v005		reads: 悪魔人： @refalign @refalign-merged
-m/MS0004.BIN	0:26	2	53	09	{08:47}間の満月{08:62}何事も無く過ぎた{08:84}{08:72}\n{08:4D}{08:56}、{01:38}の友達は帰{08:52}こ{08:25}わ{08:72}\n<wait>		Nothing happened the previous full moon.\nAnd yet, my friend is still missing...\n<wait>	v005		reads: この間の満月は、何事も無く過ぎたけど‥‥\nそれでも、アタシの友達は帰ってこないわ‥‥\n<wait> @refalign
-m/MS0004.BIN	0:26	3	122	18	{01:38}のルームメイトが、満月の夜に行方不明に{08:16}{08:7E}、戻{08:52}こ{08:25}の。\n<wait>		My room-mate went missing last full moon.\n<wait>	v005		reads: アタシのルームメイトが、満月の夜に行方不明になったまま、戻ってこないの。\n<wait> @refalign
+m/MS0004.BIN	0:26	1	40	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：; reads: 悪魔人： @refalign @refalign-merged
+m/MS0004.BIN	0:26	2	53	09	{08:47}間の満月{08:62}何事も無く過ぎた{08:84}{08:72}\n{08:4D}{08:56}、{01:38}の友達は帰{08:52}こ{08:25}わ{08:72}\n<wait>		Nothing happened the previous full moon.\nAnd yet, my friend is still missing...\n<wait>	v005		reads: この間の満月は、何事も無く過ぎたけど‥‥\nそれでも、アタシの友達は帰ってこないわ‥‥\n<wait>; reads: この間の満月は、何事も無く過ぎたけど‥‥\nそれでも、アタシの友達は帰ってこないわ‥‥\n<wait> @refalign
+m/MS0004.BIN	0:26	3	122	18	{01:38}のルームメイトが、満月の夜に行方不明に{08:16}{08:7E}、戻{08:52}こ{08:25}の。\n<wait>		My room-mate went missing last full moon.\n<wait>	v005		reads: アタシのルームメイトが、満月の夜に行方不明になったまま、戻ってこないの。\n<wait>; reads: アタシのルームメイトが、満月の夜に行方不明になったまま、戻ってこないの。\n<wait> @refalign
 m/MS0004.BIN	0:26	4	187	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：
 m/MS0004.BIN	0:26	5	195	1FD3	次は{01:38}が狙わ{08:2F}ん{08:81}{08:25}か{08:52}、恐ろしくて{02:08}。\n<wait>		Am I next? It kinda freaks me out...\n<wait>	v005		reads: 次はアタシが狙われるんじゃないかって、恐ろしくて‥‥‥。\n<wait>
 m/MS0004.BIN	0:27	0	27	1FD2	男性：		Man:	v005		
-m/MS0004.BIN	0:27	1	40	09	{02:08}おしまいだ{02:08}何もかも{02:08}\n<wait>		This is it... This is the end...\n<wait>	v005		reads: ‥‥‥おしまいだ‥‥‥何もかも‥‥‥\n<wait> @refalign
-m/MS0004.BIN	0:27	2	73	1FD0	男はうわ言の{08:69}に呟き続け{08:14}{02:08}\n		The man continues groaning.\n	v005		reads: 男はうわ言のように呟き続けている‥‥‥\n @refalign
-m/MS0004.BIN	0:27	3	110	09	何かの間違いだ{08:72}俺達が{02:08}嗚呼！！！\n<wait>		There has to be some kind of a mistake... There has to be...\n<wait>	v005		reads: 何かの間違いだ‥‥俺達が‥‥‥嗚呼！！！\n<wait> @refalign
-m/MS0004.BIN	0:27	4	153	1FD0	男は		He doesn't seem to notice you entering the room.\n\n>What will you do?\n	v005		@refalign @refalign-merged
-m/MS0004.BIN	0:27	5	161	00	{04:FF}が入{08:52}来た事にも気づかず、何やらブツブツ言っ{08:14}。\n		 	v005		reads: が入って来た事にも気づかず、何やらブツブツ言っている。\n @refalign @refalign-merged
-m/MS0004.BIN	0:27	6	214	1FD1	＞{02:06}\n		 	v005		reads: ＞どうしますか？\n @refalign @refalign-merged
-m/MS0004.BIN	0:27	7	235	1FB2	声をか{08:29}		Call to him	v005		reads: 声をかける; menu option, declared width 20 columns @refalign
-m/MS0004.BIN	0:27	8	245	1FB2	{01:2E}を出る		Leave	v005		reads: 部屋を出る; menu option, declared width 20 columns @refalign
-m/MS0004.BIN	0:27	9	279	00	{04:FF}{08:62}男に声をか{08:43}。\n<wait>	{04:FF}{08:62}男に声をか{08:43}。\n<wait>	You decide to call out to the man.\n<wait>	v005		reads: は、男に声をかけた。\n<wait>
+m/MS0004.BIN	0:27	1	40	09	{02:08}おしまいだ{02:08}何もかも{02:08}\n<wait>		This is it... This is the end...\n<wait>	v005		reads: ‥‥‥おしまいだ‥‥‥何もかも‥‥‥\n<wait>; reads: ‥‥‥おしまいだ‥‥‥何もかも‥‥‥\n<wait> @refalign
+m/MS0004.BIN	0:27	2	73	1FD0	男はうわ言の{08:69}に呟き続け{08:14}{02:08}\n		The man continues groaning.\n	v005		reads: 男はうわ言のように呟き続けている‥‥‥\n; reads: 男はうわ言のように呟き続けている‥‥‥\n @refalign
+m/MS0004.BIN	0:27	3	110	09	何かの間違いだ{08:72}俺達が{02:08}嗚呼！！！\n<wait>		There has to be some kind of a mistake... There has to be...\n<wait>	v005		reads: 何かの間違いだ‥‥俺達が‥‥‥嗚呼！！！\n<wait>; reads: 何かの間違いだ‥‥俺達が‥‥‥嗚呼！！！\n<wait> @refalign
+m/MS0004.BIN	0:27	4	153	1FD0	男は		He doesn't seem to notice you entering the room.\n	v005		@refalign @refalign-merged
+m/MS0004.BIN	0:27	5	163	1F01	が入{08:52}来た事にも気づかず、何やらブツブツ言っ{08:14}。\n		 	v005		reads: が入って来た事にも気づかず、何やらブツブツ言っている。\n; reads: が入って来た事にも気づかず、何やらブツブツ言っている。\n @refalign @refalign-merged @refalign @refalign-merged
+m/MS0004.BIN	0:27	6	214	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n; reads: ＞どうしますか？\n @refalign @refalign-merged
+m/MS0004.BIN	0:27	7	235	1FB2	声をか{08:29}		Call to him	v005		reads: 声をかける; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0004.BIN	0:27	8	245	1FB2	{01:2E}を出る		Leave	v005		reads: 部屋を出る; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0004.BIN	0:27	9	281	1F01	{08:62}男に声をか{08:43}。\n<wait>	{08:62}男に声をか{08:43}。\n<wait>				reads: は、男に声をかけた。\n<wait> @rebase-new
 m/MS0004.BIN	0:27	10	306	1FD2	男性：	男性：	Man:	v005		
-m/MS0004.BIN	0:27	11	314	1FD3	{02:08}‥今、俺に話{08:86}け{08:25}でくれ！！\n<wait>		 	v005		reads: ‥‥‥‥今、俺に話しかけないでくれ！！\n<wait>; reads: は、男に声をかけた。\n<wait> @refalign @refalign-merged
-m/MS0004.BIN	0:27	12	353	1FD2	男性：		 	v005		@refalign @refalign-merged
-m/MS0004.BIN	0:27	13	361	1FD3	{08:4D}に、と{08:53}と、出て行{08:52}くれッ！！！\n<wait>		 	v005		reads: それに、とっとと、出て行ってくれッ！！！\n<wait>; reads: ‥‥‥‥今、俺に話しかけないでくれ！！\n<wait> @refalign @refalign-merged
-m/MS0004.BIN	0:27	14	408	00	{04:FF}{08:62}{01:2E}の外に追い出{03:0C}て{08:1F}。\n<wait>		 	v005		reads: は、部屋の外に追い出されてしまった。\n<wait> @refalign @refalign-merged
-m/MS0004.BIN	0:27	15	448	00	{04:FF}{08:62}そ{08:53}{01:2E}を後に{08:4B}。\n<wait>		 	v005		reads: は、そっと部屋を後にした。\n<wait>; reads: それに、とっとと、出て行ってくれッ！！！\n<wait> @refalign @refalign-merged
+m/MS0004.BIN	0:27	11	314	1FD3	{02:08}‥今、俺に話{08:86}け{08:25}でくれ！！\n<wait>		...Don't talk to me right now.\n<wait>	v005		reads: ‥‥‥‥今、俺に話しかけないでくれ！！\n<wait>; reads: は、男に声をかけた。\n<wait> @refalign @refalign-merged @rebase-unmatched idx11 en=You decide to call out to the man.\n<wait>
+m/MS0004.BIN	0:27	12	353	1FD2	男性：		Man:	v005		@refalign @refalign-merged
+m/MS0004.BIN	0:27	13	361	1FD3	{08:4D}に、と{08:53}と、出て行{08:52}くれッ！！！\n<wait>		I want to be left alone. Leave!\n<wait>	v005		reads: それに、とっとと、出て行ってくれッ！！！\n<wait>; reads: ‥‥‥‥今、俺に話しかけないでくれ！！\n<wait> @refalign @refalign-merged
+m/MS0004.BIN	0:27	14	410	1F01	{08:62}{01:2E}の外に追い出{03:0C}て{08:1F}。\n<wait>		You end up being chased out of the room.\n<wait>	v005		reads: は、部屋の外に追い出されてしまった。\n<wait>; reads: は、部屋の外に追い出されてしまった。\n<wait> @refalign @refalign-merged @rebase-tagdiff
+m/MS0004.BIN	0:27	15	450	1F01	{08:62}そ{08:53}{01:2E}を後に{08:4B}。\n<wait>		You silently leave the room behind.\n<wait>	v005		reads: は、そっと部屋を後にした。\n<wait>; reads: それに、とっとと、出て行ってくれッ！！！\n<wait> @refalign @refalign-merged @rebase-tagdiff
 m/MS0004.BIN	0:27	16	476	18	代々木労働{02:02}を、何とかし{08:25}とな！\n<wait>ま、作戦の成功は目に見え{08:2B}し、特に心配も{08:25}がね！！\n<wait>		Something's gotta be done about that camp in Roppongi!\n<wait>Then again, I guess we pretty much got it in the bag already.\n<wait>	v005		reads: 代々木労働キャンプを、何とかしないとな！\n<wait>ま、作戦の成功は目に見えてるし、特に心配もないがね！！\n<wait>; reads: は、部屋の外に追い出されてしまった。\n<wait> @refalign
 m/MS0004.BIN	0:28	0	35	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:28	1	48	09	{02:01}も役不足だ{08:51}{02:08}‥！！\n<wait>俺達{02:0B}{08:62}{08:47}{08:7E}未来永劫Ｍ{08:0B}に支配{03:0C}て、ビクビク暮らさなきゃ\n{08:7D}{08:25}{08:52}言うのか！！！\n<wait>		Pentagramma did fuck all for us.\n<wait>At this rate, we humans are going to have to spend\nthe rest of our lives serving those demon motherfuckers!\n<wait>	ours		reads: ペンタグランマも役不足だった‥‥‥‥！！\n<wait>俺達人間は、このまま未来永劫Ｍ悪魔に支配されて、ビクビク暮らさなきゃ\nならないって言うのか！！！\n<wait>
-m/MS0004.BIN	0:28	2	160	18	恋人が{08:72}満月の夜{08:72}行方不明に{08:16}{08:7E}{08:72}\n<wait>		My girlfriend... She went missing last full moon.\n<wait>	v005		reads: 恋人が‥‥満月の夜‥‥行方不明になったまま‥‥\n<wait> @refalign
+m/MS0004.BIN	0:28	2	160	18	恋人が{08:72}満月の夜{08:72}行方不明に{08:16}{08:7E}{08:72}\n<wait>		My girlfriend... She went missing last full moon.\n<wait>	v005		reads: 恋人が‥‥満月の夜‥‥行方不明になったまま‥‥\n<wait>; reads: 恋人が‥‥満月の夜‥‥行方不明になったまま‥‥\n<wait> @refalign
 m/MS0004.BIN	0:28	3	203	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:28	4	211	1FD3	{02:08}‥クソッ！！\n{08:0B}共め！　{02:0B}を牛や豚み{08:4E}に{08:72}！！\n<wait>		Fuck! Those demon son-of-a-bitches!\nThey treat us humans like we treat pigs and cows!\n<wait>	v005		reads: ‥‥‥‥クソッ！！\n悪魔共め！　人間を牛や豚みたいに‥‥！！\n<wait>
 m/MS0004.BIN	0:28	5	267	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:28	6	275	1FD3	明奈が何を{08:4B}{08:52}言う{08:5F}{08:72}何の為に{02:08}\n<wait>		Why?... Why my Akina?...\n<wait>	v005		reads: 明奈が何をしたって言うんだ‥‥何の為に‥‥‥\n<wait>
 m/MS0004.BIN	0:29	0	35	1FD2	女性：		Woman:	v005		
-m/MS0004.BIN	0:29	1	48	09	ず{08:53}{08:72}{08:47}{08:7E}、{08:0B}に怯えて暮らす{08:6A}てイヤ！！\n<wait>		We are really going to be living the rest of our lives\nconstantly afraid of the demons, huh?\n<wait>	v005		reads: ずっと‥‥このまま、悪魔に怯えて暮らすなんてイヤ！！\n<wait> @refalign
+m/MS0004.BIN	0:29	1	48	09	ず{08:53}{08:72}{08:47}{08:7E}、{08:0B}に怯えて暮らす{08:6A}てイヤ！！\n<wait>		We are really going to be living the rest of our lives\nconstantly afraid of the demons, huh?\n<wait>	v005		reads: ずっと‥‥このまま、悪魔に怯えて暮らすなんてイヤ！！\n<wait>; reads: ずっと‥‥このまま、悪魔に怯えて暮らすなんてイヤ！！\n<wait> @refalign
 m/MS0004.BIN	0:29	2	97	1FD2	女性：		Woman:	v005		
 m/MS0004.BIN	0:29	3	105	1FD3	{08:90}{08:4A}、{08:73}世界に生ま{08:60}{08:5F}ろ{02:08}<wait>{08:5C}イヤよお{02:08}！！\n<wait>		Why did I have to be born into this world?\n<wait>I can't take it any longer...\n<wait>	v005		reads: どうして、こんな世界に生まれたんだろ‥‥‥<wait>もうイヤよお‥‥‥！！\n<wait>
-m/MS0004.BIN	0:29	4	164	09	池袋{02:08}池袋に行{08:52}、生活が楽に{08:59}ん{08:7D}{08:7F}{08:84}{02:08}\n<wait>		Hmm... I wonder if life would be better at Ikebukuro.\n<wait>	v005		reads: 池袋‥‥‥池袋に行って、生活が楽になるんならいいけど‥‥‥\n<wait> @refalign
+m/MS0004.BIN	0:29	4	164	09	池袋{02:08}池袋に行{08:52}、生活が楽に{08:59}ん{08:7D}{08:7F}{08:84}{02:08}\n<wait>		Hmm... I wonder if life would be better at Ikebukuro.\n<wait>	v005		reads: 池袋‥‥‥池袋に行って、生活が楽になるんならいいけど‥‥‥\n<wait>; reads: 池袋‥‥‥池袋に行って、生活が楽になるんならいいけど‥‥‥\n<wait> @refalign
 m/MS0004.BIN	0:29	5	213	1FD2	女性：		Woman:	v005		
 m/MS0004.BIN	0:29	6	221	1FD3	{08:90}せ、どこに行{08:51}{08:52}、{08:0B}に怯えて暮らさなきゃ{08:7D}{08:25}しね。\n{08:5C}、{08:7F}わ{02:08}\n		Then again, wherever you go, you're always going to end up\nhaving to live afraid of the demons. I can't take it any longer...\n	v005		reads: どうせ、どこに行ったって、悪魔に怯えて暮らさなきゃならないしね。\nもう、いいわ‥‥‥\n
 m/MS0004.BIN	0:29	7	296	1F03	池袋{08:52}、{02:0B}が捕らえられて酷い目に合わ{03:0C}{08:2B}{08:52}、もっぱらの噂よね。\n<wait>					reads: 池袋って、人間が捕らえられて酷い目に合わされてるって、もっぱらの噂よね。\n<wait>
 m/MS0004.BIN	0:29	8	369	1FD2	女性：		Woman:	v005		
 m/MS0004.BIN	0:29	9	377	1FD3	{08:5C}、どこに行{08:51}{08:52}無駄よね。\nヤツら{08:42}逃げられっこ{08:25}{08:5F}わ{02:08}‥。\n		It's like wherever you go, life's always going to be just as shitty...\n	v005		reads: もう、どこに行ったって無駄よね。\nヤツらから逃げられっこないんだわ‥‥‥‥。\n
-m/MS0004.BIN	0:29	10	445	09	{08:47}前の満月は何とも無{08:18}{08:84}、{08:48}で終わりとは限ら{08:25}わよね{02:08}\n<wait>		Nothing happened the previous full moon.\nI wonder, is it finally over?\n<wait>	v005		reads: この前の満月は何とも無かったけど、これで終わりとは限らないわよね‥‥‥\n<wait> @refalign
-m/MS0004.BIN	0:29	11	507	18	満月の夜が怖いわ{02:08}\n次は{08:63}の番か{08:5D}れ{08:25}{02:08}{01:1C}そう思{08:52}、怯え{08:2B}のよ。\n		Full moons scare me so much.\nEvery night, I lie awake, wondering if I'm next.\n	v005		reads: 満月の夜が怖いわ‥‥‥\n次は自分の番かもしれない‥‥‥みんなそう思って、怯えてるのよ。\n @refalign
+m/MS0004.BIN	0:29	10	445	09	{08:47}前の満月は何とも無{08:18}{08:84}、{08:48}で終わりとは限ら{08:25}わよね{02:08}\n<wait>		Nothing happened the previous full moon.\nI wonder, is it finally over?\n<wait>	v005		reads: この前の満月は何とも無かったけど、これで終わりとは限らないわよね‥‥‥\n<wait>; reads: この前の満月は何とも無かったけど、これで終わりとは限らないわよね‥‥‥\n<wait> @refalign
+m/MS0004.BIN	0:29	11	507	18	満月の夜が怖いわ{02:08}\n次は{08:63}の番か{08:5D}れ{08:25}{02:08}{01:1C}そう思{08:52}、怯え{08:2B}のよ。\n		Full moons scare me so much.\nEvery night, I lie awake, wondering if I'm next.\n	v005		reads: 満月の夜が怖いわ‥‥‥\n次は自分の番かもしれない‥‥‥みんなそう思って、怯えてるのよ。\n; reads: 満月の夜が怖いわ‥‥‥\n次は自分の番かもしれない‥‥‥みんなそう思って、怯えてるのよ。\n @refalign
 m/MS0004.BIN	0:2A	0	27	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：
 m/MS0004.BIN	0:2A	1	40	09	都庁に{01:08}城が出来{08:69}と、出来まいと、だ{08:42}{08:52}、俺達にゃ関係無い{08:72}\n生きてけりゃい{08:5F}よ！\n<wait>		Whether or not Baal has built a new castle or whatever,\nthat has nothing to do with us. We should just live our lives.\n<wait>	ours		reads: 都庁にバエル城が出来ようと、出来まいと、だからって、俺達にゃ関係無い‥‥\n生きてけりゃいんだよ！\n<wait>
 m/MS0004.BIN	0:2A	2	130	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：
 m/MS0004.BIN	0:2A	3	138	1FD3	アンタもそう思うだろ？\n<wait>		You agree with me, don't you?\n<wait>	v005		
-m/MS0004.BIN	0:2A	4	183	1FB2	思うよ		I do	v005		menu option, declared width 20 columns @refalign
-m/MS0004.BIN	0:2A	5	191	1FB2	思わ{08:25}		I don't	v005		reads: 思わない; menu option, declared width 20 columns @refalign
+m/MS0004.BIN	0:2A	4	183	1FB2	思うよ		I do	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0004.BIN	0:2A	5	191	1FB2	思わ{08:25}		I don't	v005		reads: 思わない; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0004.BIN	0:2A	6	217	1FD2	{08:0B}人：	{08:0B}人：	Cambion:	v005		reads: 悪魔人：
 m/MS0004.BIN	0:2A	7	225	1FD3	だろー？\nみーんな、何を粋が{08:52}ん{08:8C}な。馬鹿みてぇ！\n<wait>	だろー？\nみーんな、何を粋が{08:52}ん{08:8C}な。馬鹿みてぇ！\n<wait>	Right? Everyone's making such a big deal about it.\nWhat a bunch of dumbasses.\n<wait>	v005		reads: だろー？\nみーんな、何を粋がってんだろうな。馬鹿みてぇ！\n<wait>
 m/MS0004.BIN	0:2A	8	282	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：
@@ -455,8 +455,8 @@ m/MS0004.BIN	0:2A	17	588	1FD3	{08:56}よ、{08:79}襲撃に持ち堪{08:41}{08:5
 m/MS0004.BIN	0:2A	18	682	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：
 m/MS0004.BIN	0:2A	19	690	1FD3	{08:7A}の自慢に{08:6A}ねぇ{08:52}。なぁ？\n		Is that really something you want to boast about?\nGetting caught with your pants down? I certainly don't think so.\n	v005		reads: そんなの自慢になんねぇって。なぁ？\n; reads: でもよ、その襲撃に持ち堪えたって事を、ペンタグランマのヤツら、自分達が\n優秀だったからだって感じで、吹聴してるんだぜ。\n<wait>
 m/MS0004.BIN	0:2B	0	27	1FD2	男性：		Man:	v005		
-m/MS0004.BIN	0:2B	1	40	09	所詮{02:0B}{08:62}{08:0B}には勝て{08:25}{08:52}のか{02:08}くそっ！！\n<wait>		I guess that in the end,\nhumans just can't hope to stand up against the demons...\n<wait>	v005		reads: 所詮人間は、悪魔には勝てないってのか‥‥‥くそっ！！\n<wait> @refalign
-m/MS0004.BIN	0:2B	2	91	09	渡邊さんが、{08:0B}とすり変わ{08:52}{08:64}{08:6A}て、{08:90}考え{08:54}悪質なデマだよ。\n<wait>		Watanabe was replaced by a demon? No matter how you slice it,\nthat's gotta be a prank, and a bad one at that.\n<wait>	v005		reads: 渡邊さんが、悪魔とすり変わっていたなんて、どう考えても悪質なデマだよ。\n<wait> @refalign
+m/MS0004.BIN	0:2B	1	40	09	所詮{02:0B}{08:62}{08:0B}には勝て{08:25}{08:52}のか{02:08}くそっ！！\n<wait>		I guess that in the end,\nhumans just can't hope to stand up against the demons...\n<wait>	v005		reads: 所詮人間は、悪魔には勝てないってのか‥‥‥くそっ！！\n<wait>; reads: 所詮人間は、悪魔には勝てないってのか‥‥‥くそっ！！\n<wait> @refalign
+m/MS0004.BIN	0:2B	2	91	09	渡邊さんが、{08:0B}とすり変わ{08:52}{08:64}{08:6A}て、{08:90}考え{08:54}悪質なデマだよ。\n<wait>		Watanabe was replaced by a demon? No matter how you slice it,\nthat's gotta be a prank, and a bad one at that.\n<wait>	v005		reads: 渡邊さんが、悪魔とすり変わっていたなんて、どう考えても悪質なデマだよ。\n<wait>; reads: 渡邊さんが、悪魔とすり変わっていたなんて、どう考えても悪質なデマだよ。\n<wait> @refalign
 m/MS0004.BIN	0:2B	3	158	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:2B	4	166	1FD3	{08:90}せ、デマを流{08:4B}のは{08:0B}人共さ！\n奴らは所詮、{08:0B}の血を引{08:64}裏{03:12}者達な{08:5F}！！\n<wait>		I bet it's cambions that are spreading those rumours!\nYeah! Those half-demon fucks were never on our side!\n<wait>	v005		reads: どうせ、デマを流したのは悪魔人共さ！\n奴らは所詮、悪魔の血を引いた裏切り者達なんだ！！\n<wait>
 m/MS0004.BIN	0:2B	5	246	1FD2	男性：		Man:	v005		
@@ -468,10 +468,10 @@ m/MS0004.BIN	0:2B	10	428	1FD2	男性：		Man:	v005
 m/MS0004.BIN	0:2B	11	436	1FD3	{01:37}は何で、討伐作戦を立て{08:25}{08:5F}？\n		Why hasn't the Leader called for an attack already?\n	v005		reads: リーダーは何で、討伐作戦を立てないんだ？\n
 m/MS0004.BIN	0:2B	12	470	18	{08:0B}の手{08:42}、{08:47}地上を奪い返す{08:5F}！\n{01:08}を倒{08:4B}俺達に{08:62}何だ{08:52}出来る筈さッ！！\n<wait>		We're gonna take the world back from the demons!\nWe killed Baal! Anything's possible for us!\n<wait>	ours		reads: 悪魔の手から、この地上を奪い返すんだ！\nバエルを倒した俺達には、何だって出来る筈さッ！！\n<wait>
 m/MS0004.BIN	0:2C	0	27	1FD2	謎な男：		Mysterious Man:	v005		
-m/MS0004.BIN	0:2C	1	42	09	{08:47}間、ちょ{08:53}ヤバイ知り合い{08:42}聞{08:64}{08:5F}が、八重洲{08:81}{08:0B}が子供達を\n守{08:52}、暮らし{08:2B}{08:52}噂らしいぜ。\n<wait>		I heard from a friend of mine that there lives a demon in Yaesu\nwho protects children.\n<wait>	v005		reads: この間、ちょっとヤバイ知り合いから聞いたんだが、八重洲じゃ悪魔が子供達を\n守って、暮らしてるって噂らしいぜ。\n<wait> @refalign
+m/MS0004.BIN	0:2C	1	42	09	{08:47}間、ちょ{08:53}ヤバイ知り合い{08:42}聞{08:64}{08:5F}が、八重洲{08:81}{08:0B}が子供達を\n守{08:52}、暮らし{08:2B}{08:52}噂らしいぜ。\n<wait>		I heard from a friend of mine that there lives a demon in Yaesu\nwho protects children.\n<wait>	v005		reads: この間、ちょっとヤバイ知り合いから聞いたんだが、八重洲じゃ悪魔が子供達を\n守って、暮らしてるって噂らしいぜ。\n<wait>; reads: この間、ちょっとヤバイ知り合いから聞いたんだが、八重洲じゃ悪魔が子供達を\n守って、暮らしてるって噂らしいぜ。\n<wait> @refalign
 m/MS0004.BIN	0:2C	2	138	1FD2	謎な男：		Mysterious Man:	v005		
 m/MS0004.BIN	0:2C	3	148	1FD3	眉つばく{08:49}が、も{08:61}{08:50}{08:0B}の中にも、そう{08:68}ヤツが{08:40}のかもな。\n<wait>		Maybe it's the case that not all demons are bad?\n<wait>	v005		reads: 眉つばくさいが、もしかしたら悪魔の中にも、そういうヤツがいるのかもな。\n<wait>
-m/MS0004.BIN	0:2C	4	217	09	{08:47}間、霊媒やっ{08:2B}知り合い{08:42}聞{08:64}{08:5F}ケド、{08:90}やら護国寺に{08:62}\n黄泉の世界{08:52}のに続く{08:52}ゲートが{08:7B}らしいぜ。\n<wait>		I heard from a friend of mine that there's gate in Gokokuji\nthat leads directly to hell.\n<wait>	v005		reads: この間、霊媒やってる知り合いから聞いたんだケド、どうやら護国寺には、\n黄泉の世界ってのに続くってゲートがあるらしいぜ。\n<wait> @refalign
+m/MS0004.BIN	0:2C	4	217	09	{08:47}間、霊媒やっ{08:2B}知り合い{08:42}聞{08:64}{08:5F}ケド、{08:90}やら護国寺に{08:62}\n黄泉の世界{08:52}のに続く{08:52}ゲートが{08:7B}らしいぜ。\n<wait>		I heard from a friend of mine that there's gate in Gokokuji\nthat leads directly to hell.\n<wait>	v005		reads: この間、霊媒やってる知り合いから聞いたんだケド、どうやら護国寺には、\n黄泉の世界ってのに続くってゲートがあるらしいぜ。\n<wait>; reads: この間、霊媒やってる知り合いから聞いたんだケド、どうやら護国寺には、\n黄泉の世界ってのに続くってゲートがあるらしいぜ。\n<wait> @refalign
 m/MS0004.BIN	0:2C	5	323	1FD2	謎な男：		Mysterious Man:	v005		
 m/MS0004.BIN	0:2C	6	333	1FD3	{08:72}{08:52}い{08:52}も、俺も信じて{08:25}{08:84}な。\n<wait>		Personally, I don't buy it.\n<wait>	v005		reads: ‥‥っていっても、俺も信じてないけどな。\n<wait>
 m/MS0004.BIN	0:2C	7	379	1F03	ちょ{08:53}ヤバイ筋{08:42}聞{08:64}話な{08:5F}{08:84}よ{02:08}‥\n池袋に{08:62}{08:47}前倒{03:0C}た{01:08}の側近とも言{08:28}{08:0B}が{08:40}らしい{02:08}\n<wait>		I heard from a friend of mine that there's a demon in Ikebukuro\nwho's said to be very close to Baal.\n<wait>	ours		reads: ちょっとヤバイ筋から聞いた話なんだけどよ‥‥‥‥\n池袋には、この前倒されたバエルの側近とも言える悪魔がいるらしい‥‥‥\n<wait>
@@ -479,7 +479,7 @@ m/MS0004.BIN	0:2C	8	473	1FD2	謎な男：		Mysterious Man:	v005
 m/MS0004.BIN	0:2C	9	483	1FD3	名前が、アバ{02:08}何だ{08:51}かな{02:08}\n<wait>		It's name is... Err...\n<wait>	v005		reads: 名前が、アバ‥‥‥何だったかな‥‥‥\n<wait>
 m/MS0004.BIN	0:2C	10	518	1FD2	謎な男：		Mysterious Man:	v005		
 m/MS0004.BIN	0:2C	11	528	1FD3	とにかく、アバ何とか{08:52}名前らしいぜ。\n		Aba-something. I can't remember.\n	v005		reads: とにかく、アバ何とかって名前らしいぜ。\n
-m/MS0004.BIN	0:2C	12	568	18	御田急ハルクに{08:62}何だか変な兄弟が住んでるぜ。\n<wait>		There lives a strange pair of brothers in Otakyuu Halc.\n<wait>	v005		reads: 御田急ハルクには、何だか変な兄弟が住んでるぜ。\n<wait> @refalign
+m/MS0004.BIN	0:2C	12	568	18	御田急ハルクに{08:62}何だか変な兄弟が住んでるぜ。\n<wait>		There lives a strange pair of brothers in Otakyuu Halc.\n<wait>	v005		reads: 御田急ハルクには、何だか変な兄弟が住んでるぜ。\n<wait>; reads: 御田急ハルクには、何だか変な兄弟が住んでるぜ。\n<wait> @refalign
 m/MS0004.BIN	0:2C	13	621	1FD2	謎な男：		Mysterious Man:	v005		
 m/MS0004.BIN	0:2C	14	631	1FD3	あそこは無人のビルな{08:5F}が、{08:8B}まあ、{08:7A}危険な所に住んでると思うよ。\n<wait>		Apparently, they reside in an abandoned apartment building.\n<wait>	v005		reads: あそこは無人のビルなんだが、よくまあ、そんな危険な所に住んでると思うよ。\n<wait>
 m/MS0004.BIN	0:2C	15	704	1FD2	謎な男：		Mysterious Man:	v005		
@@ -493,35 +493,35 @@ m/MS0004.BIN	0:2E	5	235	1FD3	だ{08:42}恵比寿に{08:62}渋谷に入る事を�
 m/MS0004.BIN	0:2E	6	339	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:2E	7	347	1FD3	{02:08}俺も行こうかなぁ。\n<wait>渋谷のお陰で、{08:0B}は少{08:25}らしい{08:42}な。\n		Hmm... Maybe I should move there myself...\n<wait>It might not be the nicest place, but at least there aren't many demons.\n	v005		reads: ‥‥‥俺も行こうかなぁ。\n<wait>渋谷のお陰で、悪魔は少ないらしいからな。\n
 m/MS0004.BIN	0:2F	0	27	1FD2	女性：		Woman:	v005		
-m/MS0004.BIN	0:2F	1	40	09	{08:5C}、お終い{02:08}{08:72}うふふふふ{02:08}‥お終い{08:6B}よ{02:08}‥\n<wait>		It's over... Ehehehe... It's all over...\n<wait>	v005		reads: もう、お終い‥‥‥‥‥うふふふふ‥‥‥‥お終いなのよ‥‥‥‥\n<wait> @refalign
-m/MS0004.BIN	0:2F	2	91	1FD0	女は虚空を見つめ、ブツブツと呟い{08:14}{02:08}‥\n		The woman keeps mumbling to herself while staring into space.\n	v005		reads: 女は虚空を見つめ、ブツブツと呟いている‥‥‥‥\n @refalign
-m/MS0004.BIN	0:2F	3	138	09	{02:03}が壊滅{08:4B}らしいわね{02:08}。\n<wait>		I hear that there's nothing left of the Resistance.\n<wait>	v005		reads: レジスタンスが壊滅したらしいわね‥‥‥。\n<wait> @refalign
+m/MS0004.BIN	0:2F	1	40	09	{08:5C}、お終い{02:08}{08:72}うふふふふ{02:08}‥お終い{08:6B}よ{02:08}‥\n<wait>		It's over... Ehehehe... It's all over...\n<wait>	v005		reads: もう、お終い‥‥‥‥‥うふふふふ‥‥‥‥お終いなのよ‥‥‥‥\n<wait>; reads: もう、お終い‥‥‥‥‥うふふふふ‥‥‥‥お終いなのよ‥‥‥‥\n<wait> @refalign
+m/MS0004.BIN	0:2F	2	91	1FD0	女は虚空を見つめ、ブツブツと呟い{08:14}{02:08}‥\n		The woman keeps mumbling to herself while staring into space.\n	v005		reads: 女は虚空を見つめ、ブツブツと呟いている‥‥‥‥\n; reads: 女は虚空を見つめ、ブツブツと呟いている‥‥‥‥\n @refalign
+m/MS0004.BIN	0:2F	3	138	09	{02:03}が壊滅{08:4B}らしいわね{02:08}。\n<wait>		I hear that there's nothing left of the Resistance.\n<wait>	v005		reads: レジスタンスが壊滅したらしいわね‥‥‥。\n<wait>; reads: レジスタンスが壊滅したらしいわね‥‥‥。\n<wait> @refalign
 m/MS0004.BIN	0:2F	4	171	1FD2	女性：		Woman:	v005		
 m/MS0004.BIN	0:2F	5	179	1FD3	ふふ{02:08}{08:5C}、{08:45}も危{08:25}わね{02:08}き{08:53}、お終いな{08:5F}わ！！\nそうよ{02:08}お終い{08:6B}よ{02:08}アハハハハハ！\n		Hehe... This is it... This is it for humanity... Ahahaha...\n	v005		reads: ふふ‥‥‥もう、ここも危ないわね‥‥‥きっと、お終いなんだわ！！\nそうよ‥‥‥お終いなのよ‥‥‥アハハハハハ！\n
-m/MS0004.BIN	0:2F	6	264	18	{08:45}の暮らしは酷いモンよ！\n<wait>{08:76}、労働{02:02}に{08:64}方が、よっぽど良{08:18}わ！！\n<wait>		This place sucks donkey butt!\n<wait>I wish I was still living at the labour camp.\n<wait>	v005		reads: ここの暮らしは酷いモンよ！\n<wait>まだ、労働キャンプにいた方が、よっぽど良かったわ！！\n<wait> @refalign
+m/MS0004.BIN	0:2F	6	264	18	{08:45}の暮らしは酷いモンよ！\n<wait>{08:76}、労働{02:02}に{08:64}方が、よっぽど良{08:18}わ！！\n<wait>		This place sucks donkey butt!\n<wait>I wish I was still living at the labour camp.\n<wait>	v005		reads: ここの暮らしは酷いモンよ！\n<wait>まだ、労働キャンプにいた方が、よっぽど良かったわ！！\n<wait>; reads: ここの暮らしは酷いモンよ！\n<wait>まだ、労働キャンプにいた方が、よっぽど良かったわ！！\n<wait> @refalign
 m/MS0004.BIN	0:31	0	27	1FD2	男の子：		Boy:	v005		
 m/MS0004.BIN	0:31	1	37	1FD3	{01:21}ー、{08:47}お兄ちゃん誰？\n<wait>		Daddy. Who is that man?\n<wait>	v005		reads: パパー、このお兄ちゃん誰？\n<wait>
 m/MS0004.BIN	0:31	2	90	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:31	3	98	1FD3	何だ？　{01:18}は？\n<wait>悪いが、出て行{08:52}もらおう！！\n<wait>		Hmm? Who are you people?\n<wait>Sorry, but I'm going to have to ask you to leave.\n<wait>	v005		reads: 何だ？　あんたは？\n<wait>悪いが、出て行ってもらおう！！\n<wait>
-m/MS0004.BIN	0:31	4	158	00	{04:FF}{08:62}追い出{03:0C}て{08:1F}。\n<wait>		And so, you were thrown out.\n<wait>	v005		reads: は、追い出されてしまった。\n<wait>
+m/MS0004.BIN	0:31	4	160	1F01	{08:62}追い出{03:0C}て{08:1F}。\n<wait>		And so, you were thrown out.\n<wait>	v005		reads: は、追い出されてしまった。\n<wait> @rebase-tagdiff
 m/MS0004.BIN	0:32	0	35	1FD2	男性：		Man:	v005		
-m/MS0004.BIN	0:32	1	48	09	うわぁぁああああ！！！！！\n<wait>東京は{08:72}東京はッ、{08:5C}お終いだぁッ！！\n<wait>		UAAAAAAAAAH!!\n<wait>Tokyo... Tokyo is done for!!\n<wait>	v005		reads: うわぁぁああああ！！！！！\n<wait>東京は‥‥東京はッ、もうお終いだぁッ！！\n<wait> @refalign
-m/MS0004.BIN	0:32	2	124	1FD0	男は錯乱{08:13}様だ。\n触らぬ神に祟りなし{08:72}		The man appears to have lost his mind.\nYou decide that it's for the best to leave him be.\n<wait>	v005		reads: 男は錯乱している様だ。\n触らぬ神に祟りなし‥‥ @refalign @refalign-merged
-m/MS0004.BIN	0:32	3	165	00	{04:FF}は{01:2E}を出た。\n<wait>		 	v005		reads: は部屋を出た。\n<wait> @refalign @refalign-merged
+m/MS0004.BIN	0:32	1	48	09	うわぁぁああああ！！！！！\n<wait>東京は{08:72}東京はッ、{08:5C}お終いだぁッ！！\n<wait>		UAAAAAAAAAH!!\n<wait>Tokyo... Tokyo is done for!!\n<wait>	v005		reads: うわぁぁああああ！！！！！\n<wait>東京は‥‥東京はッ、もうお終いだぁッ！！\n<wait>; reads: うわぁぁああああ！！！！！\n<wait>東京は‥‥東京はッ、もうお終いだぁッ！！\n<wait> @refalign
+m/MS0004.BIN	0:32	2	124	1FD0	男は錯乱{08:13}様だ。\n触らぬ神に祟りなし{08:72}		The man appears to have lost his mind.\nYou decide that it's for the best to leave him be.\n<wait>	v005		reads: 男は錯乱している様だ。\n触らぬ神に祟りなし‥‥; reads: 男は錯乱している様だ。\n触らぬ神に祟りなし‥‥ @refalign @refalign-merged
+m/MS0004.BIN	0:32	3	167	1F01	は{01:2E}を出た。\n<wait>		 	v005		reads: は部屋を出た。\n<wait>; reads: は部屋を出た。\n<wait> @refalign @refalign-merged @refalign @refalign-merged
 m/MS0004.BIN	0:32	4	195	1F03	{01:37}、池袋の{08:0B}を討伐{08:8E}作戦を早く立ててくれ{08:25}かなぁ{08:72}\nそう{08:4B}ら、元{01:08}の手下何ぞ、お茶の子{08:49}{08:49}{08:8C}に{08:72}\n		Why hasn't the Leader formed a plan for Ikebukuro yet?\nWe should act now while the servants of Baal are still weak...\n	ours		reads: リーダー、池袋の悪魔を討伐する作戦を早く立ててくれないかなぁ‥‥\nそうしたら、元バエルの手下何ぞ、お茶の子さいさいだろうに‥‥\n
-m/MS0004.BIN	0:32	5	296	18	セーバー{08:09}{08:62}特定のウイルスに対{08:4A}効力を発揮{08:8E}、\nワクチン{08:09}だ。\n<wait>		The Saver program is a vaccine that protects your computer\nagainst certain types of viruses.\n<wait>	v005		reads: セーバープログラムは、特定のウイルスに対して効力を発揮する、\nワクチンプログラムだ。\n<wait> @refalign
+m/MS0004.BIN	0:32	5	296	18	セーバー{08:09}{08:62}特定のウイルスに対{08:4A}効力を発揮{08:8E}、\nワクチン{08:09}だ。\n<wait>		The Saver program is a vaccine that protects your computer\nagainst certain types of viruses.\n<wait>	v005		reads: セーバープログラムは、特定のウイルスに対して効力を発揮する、\nワクチンプログラムだ。\n<wait>; reads: セーバープログラムは、特定のウイルスに対して効力を発揮する、\nワクチンプログラムだ。\n<wait> @refalign
 m/MS0004.BIN	0:32	6	366	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:32	7	374	1FD3	ウイルスで破壊{03:0C}た{08:09}{08:62}インストールしなおす{08:86}{08:25}{08:42}な。\nセーバーは入れとくべきだと思うね。\n		I highly recommend that you get it. If one of your programs gets hit\nwith a virus, then you're going to have no choice but to reinstall it.\n	v005		reads: ウイルスで破壊されたプログラムは、インストールしなおすしかないからな。\nセーバーは入れとくべきだと思うね。\n
 m/MS0004.BIN	0:33	0	27	1FD2	男性：		Man:	v005		
-m/MS0004.BIN	0:33	1	40	09	{08:0B}共は上手くや{08:51}よな{02:08}\n<wait>{02:0B}の知恵が、{08:0B}に劣る{08:6A}て思い{08:5D}{08:19}よ。\n<wait>		Those demons are smart bastards...\n<wait>Who would've thought that we humans would one day get outwitted?\n<wait>	v005		reads: 悪魔共は上手くやったよな‥‥‥\n<wait>人間の知恵が、悪魔に劣るなんて思いもしなかったよ。\n<wait> @refalign
+m/MS0004.BIN	0:33	1	40	09	{08:0B}共は上手くや{08:51}よな{02:08}\n<wait>{02:0B}の知恵が、{08:0B}に劣る{08:6A}て思い{08:5D}{08:19}よ。\n<wait>		Those demons are smart bastards...\n<wait>Who would've thought that we humans would one day get outwitted?\n<wait>	v005		reads: 悪魔共は上手くやったよな‥‥‥\n<wait>人間の知恵が、悪魔に劣るなんて思いもしなかったよ。\n<wait>; reads: 悪魔共は上手くやったよな‥‥‥\n<wait>人間の知恵が、悪魔に劣るなんて思いもしなかったよ。\n<wait> @refalign
 m/MS0004.BIN	0:33	2	112	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:33	3	120	1FD3	奢{08:2F}者は久し{08:42}ず{08:72}良く言{08:51}モンだ。\n<wait>		Like they say, pride before a fall...\n<wait>	v005		reads: 奢れる者は久しからず‥‥良く言ったモンだ。\n<wait>
-m/MS0004.BIN	0:33	4	167	09	{01:37}が{08:0B}とすり変わ{08:52}た{08:6A}て{02:08}\n<wait>俺達{08:62}とん{08:56}{08:25}見落としを{08:4A}た{08:5F}。\n<wait>		A demon was acting as the Leader this whole time...\n<wait>I cannot believe how no one noticed that.\n<wait>	v005		reads: リーダーが悪魔とすり変わってたなんて‥‥‥\n<wait>俺達は、とんでもない見落としをしてたんだ。\n<wait> @refalign
+m/MS0004.BIN	0:33	4	167	09	{01:37}が{08:0B}とすり変わ{08:52}た{08:6A}て{02:08}\n<wait>俺達{08:62}とん{08:56}{08:25}見落としを{08:4A}た{08:5F}。\n<wait>		A demon was acting as the Leader this whole time...\n<wait>I cannot believe how no one noticed that.\n<wait>	v005		reads: リーダーが悪魔とすり変わってたなんて‥‥‥\n<wait>俺達は、とんでもない見落としをしてたんだ。\n<wait>; reads: リーダーが悪魔とすり変わってたなんて‥‥‥\n<wait>俺達は、とんでもない見落としをしてたんだ。\n<wait> @refalign
 m/MS0004.BIN	0:33	5	239	1FD2	男性：		Man:	v005		
 m/MS0004.BIN	0:33	6	247	1FD3	{08:5C}{08:72}{02:01}は終わりだ{08:72}！！\n<wait>		I guess this is it for Pentagramma...\n<wait>	ours		reads: もう‥‥ペンタグランマは終わりだ‥‥！！\n<wait>
-m/MS0004.BIN	0:33	7	277	18	今{08:71}、{01:37}のお人好しさ加減が不満だ{08:51}が、{08:0B}に奇襲{03:0C}て以降、\n厳しい姿勢に変わ{08:51}{08:5F}。\nやっぱ、あの人はすごいよ。\n<wait>		I kinda hated how easy-going the Leader used to be.\nGlad to see that he's gotten his act up following the attack.\n<wait>	v005		reads: 今まで、リーダーのお人好しさ加減が不満だったが、悪魔に奇襲されて以降、\n厳しい姿勢に変わったんだ。\nやっぱ、あの人はすごいよ。\n<wait> @refalign
-m/MS0004.BIN	0:34	0	2	1FD0	見え{08:25}力に阻まれ、進入出来無い！\n<wait>		An invisible power blocks your path.\n<wait>	v005		reads: 見えない力に阻まれ、進入出来無い！\n<wait> @refalign
-m/MS0004.BIN	0:35	0	2	1FD0	見え{08:25}力に阻まれ、進入出来無い！\n<wait>		An invisible power blocks your path.\n<wait>	v005		reads: 見えない力に阻まれ、進入出来無い！\n<wait> @refalign
+m/MS0004.BIN	0:33	7	277	18	今{08:71}、{01:37}のお人好しさ加減が不満だ{08:51}が、{08:0B}に奇襲{03:0C}て以降、\n厳しい姿勢に変わ{08:51}{08:5F}。\nやっぱ、あの人はすごいよ。\n<wait>		I kinda hated how easy-going the Leader used to be.\nGlad to see that he's gotten his act up following the attack.\n<wait>	v005		reads: 今まで、リーダーのお人好しさ加減が不満だったが、悪魔に奇襲されて以降、\n厳しい姿勢に変わったんだ。\nやっぱ、あの人はすごいよ。\n<wait>; reads: 今まで、リーダーのお人好しさ加減が不満だったが、悪魔に奇襲されて以降、\n厳しい姿勢に変わったんだ。\nやっぱ、あの人はすごいよ。\n<wait> @refalign
+m/MS0004.BIN	0:34	0	2	1FD0	見え{08:25}力に阻まれ、進入出来無い！\n<wait>		An invisible power blocks your path.\n<wait>	v005		reads: 見えない力に阻まれ、進入出来無い！\n<wait>; reads: 見えない力に阻まれ、進入出来無い！\n<wait> @refalign
+m/MS0004.BIN	0:35	0	2	1FD0	見え{08:25}力に阻まれ、進入出来無い！\n<wait>		An invisible power blocks your path.\n<wait>	v005		reads: 見えない力に阻まれ、進入出来無い！\n<wait>; reads: 見えない力に阻まれ、進入出来無い！\n<wait> @refalign
 m/MS0004.BIN	0:38	0	8	1F03						
 m/MS0004.BIN	0:38	1	46	1F4F	{03:16}{01:A0}{05:1F}N{03:13}{03:19}	{03:16}{01:A0}{05:1F}N{03:13}{03:19}				reads: N目の前に
 m/MS0004.BIN	0:38	2	73	1F04						

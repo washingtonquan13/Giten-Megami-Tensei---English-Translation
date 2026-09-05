@@ -3,43 +3,43 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0018.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}\n		There's no one here...\n	v005		reads: 誰もいない‥‥‥\n @refalign
-m/MS0018.BIN	0:01	0	2	1FD0	エレベーターは破壊{03:0C}{08:14}{02:08}\n<wait>		The elevator is broken...\n<wait>	v005		reads: エレベーターは破壊されている‥‥‥\n<wait> @refalign
-m/MS0018.BIN	0:02	0	11	1FD0	{08:10}の内部{08:62}無残にも破壊{03:0C}て{08:64}。\n<wait>まるで異常な{08:71}の高温で焼か{08:60}かの様に、半ば溶解{08:4B}壁が物語るの{08:62}\n{08:47}{08:10}も{08:5B}原宿や初台と同じ様に、{08:0B}の襲撃にあ{08:51}{08:77}と{08:68}、\n重苦しい真実だ{08:51}{02:08}\n<wait>		The interior of the shelter has been utterly ravaged.\n<wait>The raging hellfire has melted even the metal walls,\nmaking it clear that this shelter has been attacked by demons.\n<wait>\nIt is in that moment that a person with wings appears before you.\n<wait>	v005		reads: シェルターの内部は、無残にも破壊されていた。\n<wait>まるで異常なまでの高温で焼かれたかの様に、半ば溶解した壁が物語るのは、\nこのシェルターもまた原宿や初台と同じ様に、悪魔の襲撃にあったのだという、\n重苦しい真実だった‥‥‥\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:02	1	187	1FBA	と、突然{03:13}、翼{08:7B}者のヴィジョンがあらわ{08:60}{02:08}！\n<wait>		 	v005		reads: と、突然目の前に、翼ある者のヴィジョンがあらわれた‥‥‥！\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:02	2	267	1FD2	ファニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:02	3	281	1FD3	人の子よ{02:08}‥私は天使ファニエル{02:08}‥\n<wait>		 	v005		reads: 人の子よ‥‥‥‥私は天使ファニエル‥‥‥‥\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:02	4	348	1F7F	tァニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:02	5	361	1FD3	おお何と{08:68}事{08:55}{02:08}\n<wait>まずは貴方がたを癒{08:4A}差し上げま{08:80}{08:72}\n<wait>		 	v005		reads: おお何という事です‥‥‥\n<wait>まずは貴方がたを癒して差し上げましょう‥‥\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:02	6	453	1FD2	ファニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:02	7	467	1FD3	{08:47}{08:10}{08:62}アイムと{08:68}{08:0B}によ{08:52}、今まさに壊滅の危機に\n瀕{08:4A}い{08:5A}。\n<wait>		 	v005		reads: このシェルターは、アイムという悪魔によって、今まさに壊滅の危機に\n瀕しています。\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:02	8	533	1FD2	ファニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:02	9	547	1FD3	私は{08:79}事態の余りの酷さに、兄弟達が介入を止{08:2E}中、私は見過ごす事は叶わず、\nこう{08:4A}{08:45}を守護{08:13}の{08:55}。\n<wait>		 	v005		reads: 私はその事態の余りの酷さに、兄弟達が介入を止める中、私は見過ごす事は叶わず、\nこうしてここを守護しているのです。\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:02	10	651	1FD2	ファニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:02	11	665	1FD3	{08:55}が{02:08}<wait>アイムの力は強大で、私の力では{08:5C}{08:48}以上、{08:47}{08:10}を\n守護{08:8E}事が出来{02:0A}{02:08}‥\n<wait>		 	v005		reads: ですが‥‥‥<wait>アイムの力は強大で、私の力ではもうこれ以上、このシェルターを\n守護する事が出来ません‥‥‥‥\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:02	12	751	1FD2	ファニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:02	13	765	1FD3	僅かに生き残{08:51}住民達{08:62}何とか{08:10}の最下層部に避難させたの{08:55}が、\n{08:4D}故に篭城せざるを得なく{08:1A}{08:1F}の{08:55}{02:08}\n<wait>		 	v005		reads: 僅かに生き残った住民達は、何とかシェルターの最下層部に避難させたのですが、\nそれ故に篭城せざるを得なくなってしまったのです‥‥‥\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:02	14	869	1FD2	ファニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:02	15	883	1FD3	{08:47}{08:69}な事態になっ{08:14}にも関わらず、私の兄弟達は誰一人と{08:4A}、\n{08:47}{08:10}を救おうとは{08:4A}くれ{02:0A}{02:08}\n<wait>		 	v005		reads: このような事態になっているにも関わらず、私の兄弟達は誰一人として、\nこのシェルターを救おうとはしてくれません‥‥‥\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:02	16	975	1FD2	ファニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:02	17	989	1FD3	何とも嘆かわしい事に、人界の出来事に関わる事はタブーで{08:7B}{02:08}\nと、言うのみ{08:6B}{08:55}。\n<wait>		 	v005		reads: 何とも嘆かわしい事に、人界の出来事に関わる事はタブーである‥‥‥\nと、言うのみなのです。\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:02	18	1075	1FD2	ファニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:02	19	1089	1FD3	{08:72}こう{08:13}間にも、アイムの操る炎が、徐々に住民達を追い詰めて行き{08:5A}。\n<wait>		 	v005		reads: ‥‥こうしている間にも、アイムの操る炎が、徐々に住民達を追い詰めて行きます。\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:02	20	1164	1FD2	ファニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:02	21	1178	1FD3	もはや{08:72}<wait>{08:82}滅びるのを待つ{08:74}{08:72}<wait>何の救いも見出せ{08:25}の{08:55}。\n<wait>		 	v005		reads: もはや‥‥<wait>ただ滅びるのを待つだけ‥‥<wait>何の救いも見出せないのです。\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:02	22	1247	1FD2	ファニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:02	23	1261	1FD3	{08:72}{03:0B}僅かばかり望みはあり{08:5A}。\n<wait>		 	v005		reads: ‥‥しかし、僅かばかり望みはあります。\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:02	24	1298	1FD2	ファニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:02	25	1312	1FD3	{08:4D}は{02:08}<wait>		 	v005		reads: それは‥‥‥<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:02	26	1326	00	{04:FF}殿{02:08}貴方の類い希{08:59}力{08:55}。\n<wait>		 	v005		reads: 殿‥‥‥貴方の類い希なる力です。\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:02	27	1361	1FD2	ファニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:02	28	1375	1FD3	私はアイムの口ぶり{08:42}貴方の存在を知り、貴方が訪{08:2F}事を待{08:52}{08:89}{08:4B}。\n<wait>		 	v005		reads: 私はアイムの口ぶりから貴方の存在を知り、貴方が訪れる事を待っていました。\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:02	29	1446	1FD2	ファニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:02	30	1460	1FD3	私に{08:62}もはやアイムと戦う力は残{03:0C}てい{02:0A}。\n<wait>		 	v005		reads: 私には、もはやアイムと戦う力は残されていません。\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:02	31	1509	1FD2	ファニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:02	32	1523	1FD3	貴方{08:7C}、奴と戦{08:28}力は十分に{08:7B}で{08:80}。\n<wait>{08:90}か、私の代わりにアイムを倒{08:4A}下{08:49}{02:0A}か？\n		 	v005		reads: 貴方ならば、奴と戦える力は十分にあるでしょう。\n<wait>どうか、私の代わりにアイムを倒して下さいませんか？\n @refalign @refalign-merged
-m/MS0018.BIN	0:02	33	1619	1FB2	承諾{08:8E}		Sure	v005		reads: 承諾する; menu option, declared width 20 columns @refalign
-m/MS0018.BIN	0:02	34	1627	1FB2	断る！		No way!	v005		menu option, declared width 20 columns @refalign
+m/MS0018.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}\n		There's no one here...\n	v005		reads: 誰もいない‥‥‥\n; reads: 誰もいない‥‥‥\n @refalign
+m/MS0018.BIN	0:01	0	2	1FD0	エレベーターは破壊{03:0C}{08:14}{02:08}\n<wait>		The elevator is broken...\n<wait>	v005		reads: エレベーターは破壊されている‥‥‥\n<wait>; reads: エレベーターは破壊されている‥‥‥\n<wait> @refalign
+m/MS0018.BIN	0:02	0	11	1FD0	{08:10}の内部{08:62}無残にも破壊{03:0C}て{08:64}。\n<wait>まるで異常な{08:71}の高温で焼か{08:60}かの様に、半ば溶解{08:4B}壁が物語るの{08:62}\n{08:47}{08:10}も{08:5B}原宿や初台と同じ様に、{08:0B}の襲撃にあ{08:51}{08:77}と{08:68}、\n重苦しい真実だ{08:51}{02:08}\n<wait>		The interior of the shelter has been utterly ravaged.\n<wait>The raging hellfire has melted even the metal walls,\nmaking it clear that this shelter has been attacked by demons.\n<wait>	v005		reads: シェルターの内部は、無残にも破壊されていた。\n<wait>まるで異常なまでの高温で焼かれたかの様に、半ば溶解した壁が物語るのは、\nこのシェルターもまた原宿や初台と同じ様に、悪魔の襲撃にあったのだという、\n重苦しい真実だった‥‥‥\n<wait>; reads: シェルターの内部は、無残にも破壊されていた。\n<wait>まるで異常なまでの高温で焼かれたかの様に、半ば溶解した壁が物語るのは、\nこのシェルターもまた原宿や初台と同じ様に、悪魔の襲撃にあったのだという、\n重苦しい真実だった‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:02	1	187	1FBA	と、突然{03:13}、翼{08:7B}者のヴィジョンがあらわ{08:60}{02:08}！\n<wait>		It is in that moment that a person with wings appears before you.\n<wait>	v005		reads: と、突然目の前に、翼ある者のヴィジョンがあらわれた‥‥‥！\n<wait>; reads: と、突然目の前に、翼ある者のヴィジョンがあらわれた‥‥‥！\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:02	2	267	1FD2	ファニエル：		Phanuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:02	3	281	1FD3	人の子よ{02:08}‥私は天使ファニエル{02:08}‥\n<wait>		Son of man. I am angel Phanuel.\n<wait>	v005		reads: 人の子よ‥‥‥‥私は天使ファニエル‥‥‥‥\n<wait>; reads: 人の子よ‥‥‥‥私は天使ファニエル‥‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:02	4	348	1F7F	tァニエル：		nuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:02	5	361	1FD3	おお何と{08:68}事{08:55}{02:08}\n<wait>まずは貴方がたを癒{08:4A}差し上げま{08:80}{08:72}\n<wait>		Ooh...\n<wait>First, allow me to heal your wounds.\n<wait>	v005		reads: おお何という事です‥‥‥\n<wait>まずは貴方がたを癒して差し上げましょう‥‥\n<wait>; reads: おお何という事です‥‥‥\n<wait>まずは貴方がたを癒して差し上げましょう‥‥\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:02	6	453	1FD2	ファニエル：		Phanuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:02	7	467	1FD3	{08:47}{08:10}{08:62}アイムと{08:68}{08:0B}によ{08:52}、今まさに壊滅の危機に\n瀕{08:4A}い{08:5A}。\n<wait>		This shelter has been brought to the verge of destruction\nby the demon Aym.\n<wait>	v005		reads: このシェルターは、アイムという悪魔によって、今まさに壊滅の危機に\n瀕しています。\n<wait>; reads: このシェルターは、アイムという悪魔によって、今まさに壊滅の危機に\n瀕しています。\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:02	8	533	1FD2	ファニエル：		Phanuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:02	9	547	1FD3	私は{08:79}事態の余りの酷さに、兄弟達が介入を止{08:2E}中、私は見過ごす事は叶わず、\nこう{08:4A}{08:45}を守護{08:13}の{08:55}。\n<wait>		Unlike my brothers, I simply couldn't turn a blind eye to the suffering\nof these people, which is why I have arrived to safeguard them.\n<wait>	v005		reads: 私はその事態の余りの酷さに、兄弟達が介入を止める中、私は見過ごす事は叶わず、\nこうしてここを守護しているのです。\n<wait>; reads: 私はその事態の余りの酷さに、兄弟達が介入を止める中、私は見過ごす事は叶わず、\nこうしてここを守護しているのです。\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:02	10	651	1FD2	ファニエル：		Phanuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:02	11	665	1FD3	{08:55}が{02:08}<wait>アイムの力は強大で、私の力では{08:5C}{08:48}以上、{08:47}{08:10}を\n守護{08:8E}事が出来{02:0A}{02:08}‥\n<wait>		However... <wait>Aym is strong. Too strong.\nI am afraid that I will not be able to protect this shelter alone.\n<wait>	v005		reads: ですが‥‥‥<wait>アイムの力は強大で、私の力ではもうこれ以上、このシェルターを\n守護する事が出来ません‥‥‥‥\n<wait>; reads: ですが‥‥‥<wait>アイムの力は強大で、私の力ではもうこれ以上、このシェルターを\n守護する事が出来ません‥‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:02	12	751	1FD2	ファニエル：		Phanuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:02	13	765	1FD3	僅かに生き残{08:51}住民達{08:62}何とか{08:10}の最下層部に避難させたの{08:55}が、\n{08:4D}故に篭城せざるを得なく{08:1A}{08:1F}の{08:55}{02:08}\n<wait>		The remaining survivors have retreated to the bottommost floor,\nbut the fortifications that I have set in place\ncan only last for so long.\n<wait>	v005		reads: 僅かに生き残った住民達は、何とかシェルターの最下層部に避難させたのですが、\nそれ故に篭城せざるを得なくなってしまったのです‥‥‥\n<wait>; reads: 僅かに生き残った住民達は、何とかシェルターの最下層部に避難させたのですが、\nそれ故に篭城せざるを得なくなってしまったのです‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:02	14	869	1FD2	ファニエル：		Phanuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:02	15	883	1FD3	{08:47}{08:69}な事態になっ{08:14}にも関わらず、私の兄弟達は誰一人と{08:4A}、\n{08:47}{08:10}を救おうとは{08:4A}くれ{02:0A}{02:08}\n<wait>		The situation is growing ever more dire.\nAnd yet, my brothers still refuse to send forth help.\n<wait>	v005		reads: このような事態になっているにも関わらず、私の兄弟達は誰一人として、\nこのシェルターを救おうとはしてくれません‥‥‥\n<wait>; reads: このような事態になっているにも関わらず、私の兄弟達は誰一人として、\nこのシェルターを救おうとはしてくれません‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:02	16	975	1FD2	ファニエル：		Phanuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:02	17	989	1FD3	何とも嘆かわしい事に、人界の出来事に関わる事はタブーで{08:7B}{02:08}\nと、言うのみ{08:6B}{08:55}。\n<wait>		They simply tell me that we are not to meddle in the affairs\nof the world of men...\n<wait>	v005		reads: 何とも嘆かわしい事に、人界の出来事に関わる事はタブーである‥‥‥\nと、言うのみなのです。\n<wait>; reads: 何とも嘆かわしい事に、人界の出来事に関わる事はタブーである‥‥‥\nと、言うのみなのです。\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:02	18	1075	1FD2	ファニエル：		Phanuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:02	19	1089	1FD3	{08:72}こう{08:13}間にも、アイムの操る炎が、徐々に住民達を追い詰めて行き{08:5A}。\n<wait>		With ever passing moment, the flames of Aym grow hotter.\n<wait>	v005		reads: ‥‥こうしている間にも、アイムの操る炎が、徐々に住民達を追い詰めて行きます。\n<wait>; reads: ‥‥こうしている間にも、アイムの操る炎が、徐々に住民達を追い詰めて行きます。\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:02	20	1164	1FD2	ファニエル：		Phanuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:02	21	1178	1FD3	もはや{08:72}<wait>{08:82}滅びるのを待つ{08:74}{08:72}<wait>何の救いも見出せ{08:25}の{08:55}。\n<wait>		Perhaps... <wait>Perhaps this is it... <wait>Perhaps I have failed...\n<wait>	v005		reads: もはや‥‥<wait>ただ滅びるのを待つだけ‥‥<wait>何の救いも見出せないのです。\n<wait>; reads: もはや‥‥<wait>ただ滅びるのを待つだけ‥‥<wait>何の救いも見出せないのです。\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:02	22	1247	1FD2	ファニエル：		Phanuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:02	23	1261	1FD3	{08:72}{03:0B}僅かばかり望みはあり{08:5A}。\n<wait>		...But, there is still hope.\n<wait>	v005		reads: ‥‥しかし、僅かばかり望みはあります。\n<wait>; reads: ‥‥しかし、僅かばかり望みはあります。\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:02	24	1298	1FD2	ファニエル：		Phanuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:02	25	1312	1FD3	{08:4D}は{02:08}<wait>		That is <wait>you, Katsuragi Ayato. Only you can save us.\n<wait>	v005		reads: それは‥‥‥<wait>; reads: それは‥‥‥<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:02	26	1328	1F01	殿{02:08}貴方の類い希{08:59}力{08:55}。\n<wait>		 	v005		reads: 殿‥‥‥貴方の類い希なる力です。\n<wait>; reads: 殿‥‥‥貴方の類い希なる力です。\n<wait> @refalign @refalign-merged @refalign @refalign-merged
+m/MS0018.BIN	0:02	27	1361	1FD2	ファニエル：		Phanuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:02	28	1375	1FD3	私はアイムの口ぶり{08:42}貴方の存在を知り、貴方が訪{08:2F}事を待{08:52}{08:89}{08:4B}。\n<wait>		I heard about you from Aym, and have been waiting for you to arrive.\n<wait>	v005		reads: 私はアイムの口ぶりから貴方の存在を知り、貴方が訪れる事を待っていました。\n<wait>; reads: 私はアイムの口ぶりから貴方の存在を知り、貴方が訪れる事を待っていました。\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:02	29	1446	1FD2	ファニエル：		Phanuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:02	30	1460	1FD3	私に{08:62}もはやアイムと戦う力は残{03:0C}てい{02:0A}。\n<wait>		I no longer have the strength necessary to do battle.\n<wait>	v005		reads: 私には、もはやアイムと戦う力は残されていません。\n<wait>; reads: 私には、もはやアイムと戦う力は残されていません。\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:02	31	1509	1FD2	ファニエル：		Phanuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:02	32	1523	1FD3	貴方{08:7C}、奴と戦{08:28}力は十分に{08:7B}で{08:80}。\n<wait>{08:90}か、私の代わりにアイムを倒{08:4A}下{08:49}{02:0A}か？\n		My only hope is that you will be strong enough.\n<wait>So, what do you say? Will you slay Aym in my place?\n	v005		reads: 貴方ならば、奴と戦える力は十分にあるでしょう。\n<wait>どうか、私の代わりにアイムを倒して下さいませんか？\n; reads: 貴方ならば、奴と戦える力は十分にあるでしょう。\n<wait>どうか、私の代わりにアイムを倒して下さいませんか？\n @refalign @refalign-merged
+m/MS0018.BIN	0:02	33	1619	1FB2	承諾{08:8E}		Sure	v005		reads: 承諾する; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0018.BIN	0:02	34	1627	1FB2	断る！		No way!	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0018.BIN	0:02	35	1667	1FD2	ファニエル：	ファニエル：	Phanuel:	v005		reads: 
 m/MS0018.BIN	0:02	36	1681	1FD3	{01:2A}{02:08}‥！\n{08:48}で私も、住民を守る事に集中でき{08:5A}。\n<wait>	{01:2A}{02:08}‥！\n{08:48}で私も、住民を守る事に集中でき{08:5A}。\n<wait>	Thank you. I can now focus on protecting the people.\n<wait>	v005		reads: ありがとう‥‥‥‥！\nこれで私も、住民を守る事に集中できます。\n<wait>
 m/MS0018.BIN	0:02	37	1735	1FD2	ファニエル：		Phanuel:	v005		
@@ -69,62 +69,62 @@ m/MS0018.BIN	0:02	60	2674	1FD3	いや{08:72}私にも{08:53}力が{08:3F}ば{02:
 m/MS0018.BIN	0:02	61	2719	1F03						
 m/MS0018.BIN	0:02	62	2811	1FD2	男性：		Man:	v005		reads: いや‥‥私にもっと力があれば‥‥‥\n<wait>
 m/MS0018.BIN	0:02	63	2819	1FD3	{08:47}{08:10}は今、復興作業中{08:55}。\n大変危険{08:6B}で、作業者以外は立入禁止に{08:1A}い{08:5A}。\n<wait>	{08:47}{08:10}は今、復興作業中{08:55}。\n大変危険{08:6B}で、作業者以外は立入禁止に{08:1A}い{08:5A}。\n<wait>	We are currently working to rebuild this shelter.\nIt's pretty dangerous, so if you aren't part of the construction crew,\nwe cannot let you inside.\n<wait>	v005		reads: このシェルターは今、復興作業中です。\n大変危険なので、作業者以外は立入禁止になっています。\n<wait>
-m/MS0018.BIN	0:03	0	29	1FD0	{01:2E}の中には死体が転がっ{08:14}{02:08}‥\n		A corpse lies in the middle of the room...\n	v005		reads: 部屋の中には死体が転がっている‥‥‥‥\n @refalign
-m/MS0018.BIN	0:04	0	42	1FD0	{01:2E}で{08:62}アイムが奥に進む為に扉に炎を放ち、破壊し{08:69}と{08:13}所だ{08:51}。\n<wait>		You enter the room, only to find Aym standing there,\nattempting to burn down a door leading deeper within the shelter.\n<wait>\nIt appears that Phanuel's power is stopping him from proceeding.\n<wait>	v005		reads: 部屋では、アイムが奥に進む為に扉に炎を放ち、破壊しようとしている所だった。\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:04	1	109	1FBA	{03:0B}ファニエルの力による{08:5E}{08:8C}か、中々扉は壊れ{08:25}{02:08}‥\n<wait>		 	v005		reads: しかし、ファニエルの力によるものだろうか、中々扉は壊れない‥‥‥‥\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:04	2	166	1FD2	アイム：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:04	3	176	1FD3	チッ！　腐れ天使が！\n<wait>		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:04	4	205	1FD2	アイム：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:04	5	215	1FD3	奴さえい{08:57}、とっくに{08:73}{08:10}など焼き尽く{08:13}{08:5E}を{08:72}！\n<wait>		 	v005		reads: 奴さえいなければ、とっくにこんなシェルターなど焼き尽くしているものを‥‥！\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:04	6	274	1FD2	アイム：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:04	7	284	1FD3	ん？　何だ？　お前達は？\n<wait>		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:04	8	317	1FD2	アイム：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:04	9	327	1FD3	{02:08}そうか。さては貴様ら、あの天使に頼み込まれてや{08:52}来たのか？\n<wait>		 	v005		reads: ‥‥‥そうか。さては貴様ら、あの天使に頼み込まれてやって来たのか？\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:04	10	396	1FD2	アイム：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:04	11	406	1FD3	哀れな事だ{02:08}\n腐れ天使の頼みなど聞か{08:57}、{08:45}で死ぬ事も無{08:18}{08:8C}に{02:08}。\n<wait>		 	v005		reads: 哀れな事だ‥‥‥\n腐れ天使の頼みなど聞かなければ、ここで死ぬ事も無かっただろうに‥‥‥。\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:04	12	478	1FD2	アイム：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:04	13	488	1FD3	まあ、よかろう。\n貴様らの断末魔を、あの天使や中に{08:40}{02:0B}共に聞かせ、絶望さ{08:2A}も{08:5B}一興。\n<wait>		 	v005		reads: まあ、よかろう。\n貴様らの断末魔を、あの天使や中にいる人間共に聞かせ、絶望させるもまた一興。\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:04	14	580	1FD2	アイム：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:04	15	590	1FD3	行くぞ！！\n恨むの{08:7D}、身勝手な天使共を恨む{08:46}だな{02:08}‥\n<wait>		 	v005		reads: 行くぞ！！\n恨むのなら、身勝手な天使共を恨むことだな‥‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:03	0	29	1FD0	{01:2E}の中には死体が転がっ{08:14}{02:08}‥\n		A corpse lies in the middle of the room...\n	v005		reads: 部屋の中には死体が転がっている‥‥‥‥\n; reads: 部屋の中には死体が転がっている‥‥‥‥\n @refalign
+m/MS0018.BIN	0:04	0	42	1FD0	{01:2E}で{08:62}アイムが奥に進む為に扉に炎を放ち、破壊し{08:69}と{08:13}所だ{08:51}。\n<wait>		You enter the room, only to find Aym standing there,\nattempting to burn down a door leading deeper within the shelter.\n<wait>	v005		reads: 部屋では、アイムが奥に進む為に扉に炎を放ち、破壊しようとしている所だった。\n<wait>; reads: 部屋では、アイムが奥に進む為に扉に炎を放ち、破壊しようとしている所だった。\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:04	1	109	1FBA	{03:0B}ファニエルの力による{08:5E}{08:8C}か、中々扉は壊れ{08:25}{02:08}‥\n<wait>		It appears that Phanuel's power is stopping him from proceeding.\n<wait>	v005		reads: しかし、ファニエルの力によるものだろうか、中々扉は壊れない‥‥‥‥\n<wait>; reads: しかし、ファニエルの力によるものだろうか、中々扉は壊れない‥‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:04	2	166	1FD2	アイム：		Aym:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:04	3	176	1FD3	チッ！　腐れ天使が！\n<wait>		You angel bastard! Damn you!\n<wait>	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:04	4	205	1FD2	アイム：		Aym:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:04	5	215	1FD3	奴さえい{08:57}、とっくに{08:73}{08:10}など焼き尽く{08:13}{08:5E}を{08:72}！\n<wait>		If only he didn't exist,\nI would already have burned this shelter to the ground!\n<wait>	v005		reads: 奴さえいなければ、とっくにこんなシェルターなど焼き尽くしているものを‥‥！\n<wait>; reads: 奴さえいなければ、とっくにこんなシェルターなど焼き尽くしているものを‥‥！\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:04	6	274	1FD2	アイム：		Aym:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:04	7	284	1FD3	ん？　何だ？　お前達は？\n<wait>		Hmm? And you people are?\n<wait>	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:04	8	317	1FD2	アイム：		Aym:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:04	9	327	1FD3	{02:08}そうか。さては貴様ら、あの天使に頼み込まれてや{08:52}来たのか？\n<wait>		Huh... So the angel sent you?\n<wait>	v005		reads: ‥‥‥そうか。さては貴様ら、あの天使に頼み込まれてやって来たのか？\n<wait>; reads: ‥‥‥そうか。さては貴様ら、あの天使に頼み込まれてやって来たのか？\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:04	10	396	1FD2	アイム：		Aym:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:04	11	406	1FD3	哀れな事だ{02:08}\n腐れ天使の頼みなど聞か{08:57}、{08:45}で死ぬ事も無{08:18}{08:8C}に{02:08}。\n<wait>		How pathetic. If only you hadn't followed his foolish words,\nthen you wouldn't need to die here...\n<wait>	v005		reads: 哀れな事だ‥‥‥\n腐れ天使の頼みなど聞かなければ、ここで死ぬ事も無かっただろうに‥‥‥。\n<wait>; reads: 哀れな事だ‥‥‥\n腐れ天使の頼みなど聞かなければ、ここで死ぬ事も無かっただろうに‥‥‥。\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:04	12	478	1FD2	アイム：		Aym:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:04	13	488	1FD3	まあ、よかろう。\n貴様らの断末魔を、あの天使や中に{08:40}{02:0B}共に聞かせ、絶望さ{08:2A}も{08:5B}一興。\n<wait>		Well, whatever. It'll be fun making the people inside\nlisten to your screams as I burn you alive.\n<wait>	v005		reads: まあ、よかろう。\n貴様らの断末魔を、あの天使や中にいる人間共に聞かせ、絶望させるもまた一興。\n<wait>; reads: まあ、よかろう。\n貴様らの断末魔を、あの天使や中にいる人間共に聞かせ、絶望させるもまた一興。\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:04	14	580	1FD2	アイム：		Aym:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:04	15	590	1FD3	行くぞ！！\n恨むの{08:7D}、身勝手な天使共を恨む{08:46}だな{02:08}‥\n<wait>		Come, you servants of the selfish angels!\n<wait>	v005		reads: 行くぞ！！\n恨むのなら、身勝手な天使共を恨むことだな‥‥‥‥\n<wait>; reads: 行くぞ！！\n恨むのなら、身勝手な天使共を恨むことだな‥‥‥‥\n<wait> @refalign @refalign-merged
 m/MS0018.BIN	0:04	16	651	1EBE	{01:00}{01:04}	{01:00}{01:04}				reads: 早坂達也西野義雄
 m/MS0018.BIN	0:04	17	657	00	d{04:FF}	d{04:FF}				reads: d
 m/MS0018.BIN	0:04	18	661	00	d	d				
-m/MS0018.BIN	0:04	19	684	1F82	ﾅ		 	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:04	19	684	1F82	ﾅ		 	v005		@refalign @refalign-merged @refalign @refalign-merged
 m/MS0018.BIN	0:04	20	691	00	{01:02}{=E9}{=00}	{01:02}{=E9}{=00}				reads: 桐島英美{=E9}{=00}
-m/MS0018.BIN	0:04	21	712	1FD2	アイム：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:04	22	722	1FD3	{08:72}グゥ{08:72}私の炎が敗{08:2F}とは！！\n<wait>何と{08:68}{08:72}力だ{02:08}！\n<wait>		 	v005		reads: ‥‥グゥ‥‥私の炎が敗れるとは！！\n<wait>何という‥‥力だ‥‥‥！\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:04	23	791	1FD2	アイム：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:04	24	801	1FD3	さすが{08:62}天使に見込ま{08:2F}{08:74}の事は{08:7B}{08:72}\n<wait>		 	v005		reads: さすがは、天使に見込まれるだけの事はある‥‥\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:04	25	853	1FD2	アイム：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:04	26	863	1FD3	{08:72}無念{08:72}{08:5C}少しで{08:47}{08:10}を落とせた‥{08:5E}を{02:08}！\nグハッ！！！\n<wait>		 	v005		reads: ‥‥無念‥‥もう少しでこのシェルターを落とせた‥ものを‥‥‥！\nグハッ！！！\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:04	27	977	1FD0	ファニエルのヴィジョンが現わ{08:60}{02:08}\n<wait>		 	v005		reads: ファニエルのヴィジョンが現われた‥‥‥\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:04	28	1018	1FD2	ファニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:04	29	1032	1FD3	{01:2A}{02:08}人の子よ{02:08}‥\nお陰で、避難{08:4A}{08:64}住民達も皆助かりま{08:4B}{08:72}\n<wait>		 	v005		reads: ありがとう‥‥‥人の子よ‥‥‥‥\nお陰で、避難していた住民達も皆助かりました‥‥\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:04	30	1096	1FD2	ファニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:04	31	1110	1FD3	少し時間はかかるかも知れ{02:0A}が、{08:45}も{08:5B}復興{08:4A}いく事で{08:80}{02:08}\n<wait>		 	v005		reads: 少し時間はかかるかも知れませんが、ここもまた復興していく事でしょう‥‥‥\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:04	32	1173	1FD2	ファニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:04	33	1187	1FD3	さあ、出口{08:71}送{08:52}差し上げま{08:80}。\n{02:08}{01:2A}{02:08}\n<wait>		 	v005		reads: さあ、出口まで送って差し上げましょう。\n‥‥‥ありがとう‥‥‥\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:05	0	96	1FD0	ファニエルのヴィジョンが現わ{08:60}{08:72}\n<wait>		Phanuel appears before you.\n<wait>	v005		reads: ファニエルのヴィジョンが現われた‥‥\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:05	1	137	1FD2	ファニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:05	2	151	1FD3	人の子よ{02:08}待{08:52}{08:89}{08:4B}よ{02:08}\n<wait>		 	v005		reads: 人の子よ‥‥‥待っていましたよ‥‥‥\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:05	3	182	1FD2	ファニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:05	4	196	1FD3	貴方達のお陰で、{08:47}{08:10}も壊滅を免れ、そ{08:4A}、{08:5B}{08:47}{08:69}に\n復興{08:4A}きま{08:4B}{02:08}\n<wait>		 	v005		reads: 貴方達のお陰で、このシェルターも壊滅を免れ、そして、またこのように\n復興してきました‥‥‥\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:05	5	268	1FD2	ファニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:05	6	282	1FD3	私{08:42}も礼を言わ{08:67}下{08:49}{02:08}{01:2A}{02:08}\n<wait>		 	v005		reads: 私からも礼を言わせて下さい‥‥‥ありがとう‥‥‥\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:05	7	317	1FD2	ファニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:05	8	331	1FD3	{08:47}{08:10}に、貴方の{01:2E}を用意{08:4A}おきま{08:4B}。\n地下７階の最も広い{01:2E}が、貴方の{01:2E}{08:55}{02:08}\n{08:90}ぞ、自由にお使いな{08:49}{02:08}\n<wait>		 	v005		reads: このシェルターに、貴方の部屋を用意しておきました。\n地下７階の最も広い部屋が、貴方の部屋です‥‥‥\nどうぞ、自由にお使いなさい‥‥‥\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:05	9	436	1FD2	ファニエル：		 	v005		@refalign @refalign-merged
-m/MS0018.BIN	0:05	10	450	1FD3	{08:72}私は{08:5C}行かなくては{02:08}\n{08:72}本当に{01:2A}{02:08}{08:72}\n<wait>		 	v005		reads: ‥‥私はもう行かなくては‥‥‥\n‥‥本当にありがとう‥‥‥‥‥\n<wait> @refalign @refalign-merged
-m/MS0018.BIN	0:05	11	521	1FD0	ファニエルは消えて{08:1F}{02:08}‥\n<wait>		 	v005		reads: ファニエルは消えてしまった‥‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:04	21	712	1FD2	アイム：		Aym:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:04	22	722	1FD3	{08:72}グゥ{08:72}私の炎が敗{08:2F}とは！！\n<wait>何と{08:68}{08:72}力だ{02:08}！\n<wait>		Hngh! My flames... My flames have been extinguished!\n<wait>Hngh! What power!...\n<wait>	v005		reads: ‥‥グゥ‥‥私の炎が敗れるとは！！\n<wait>何という‥‥力だ‥‥‥！\n<wait>; reads: ‥‥グゥ‥‥私の炎が敗れるとは！！\n<wait>何という‥‥力だ‥‥‥！\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:04	23	791	1FD2	アイム：		Aym:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:04	24	801	1FD3	さすが{08:62}天使に見込ま{08:2F}{08:74}の事は{08:7B}{08:72}\n<wait>		I see now why the angel chose you...\n<wait>	v005		reads: さすがは、天使に見込まれるだけの事はある‥‥\n<wait>; reads: さすがは、天使に見込まれるだけの事はある‥‥\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:04	25	853	1FD2	アイム：		Aym:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:04	26	863	1FD3	{08:72}無念{08:72}{08:5C}少しで{08:47}{08:10}を落とせた‥{08:5E}を{02:08}！\nグハッ！！！\n<wait>		How pathetic... I was so close to... burning this shelter...\nto the ground... GUAAH!\n<wait>	v005		reads: ‥‥無念‥‥もう少しでこのシェルターを落とせた‥ものを‥‥‥！\nグハッ！！！\n<wait>; reads: ‥‥無念‥‥もう少しでこのシェルターを落とせた‥ものを‥‥‥！\nグハッ！！！\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:04	27	977	1FD0	ファニエルのヴィジョンが現わ{08:60}{02:08}\n<wait>		Phanuel appears before you.\n<wait>	v005		reads: ファニエルのヴィジョンが現われた‥‥‥\n<wait>; reads: ファニエルのヴィジョンが現われた‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:04	28	1018	1FD2	ファニエル：		Phanuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:04	29	1032	1FD3	{01:2A}{02:08}人の子よ{02:08}‥\nお陰で、避難{08:4A}{08:64}住民達も皆助かりま{08:4B}{08:72}\n<wait>		Thank you, son of man...\nYou have saved the residents of this shelter...\n<wait>	v005		reads: ありがとう‥‥‥人の子よ‥‥‥‥\nお陰で、避難していた住民達も皆助かりました‥‥\n<wait>; reads: ありがとう‥‥‥人の子よ‥‥‥‥\nお陰で、避難していた住民達も皆助かりました‥‥\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:04	30	1096	1FD2	ファニエル：		Phanuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:04	31	1110	1FD3	少し時間はかかるかも知れ{02:0A}が、{08:45}も{08:5B}復興{08:4A}いく事で{08:80}{02:08}\n<wait>		This helter might have suffered through a lot,\nbut give it enough time, and I am certain that it will heal...\n<wait>	v005		reads: 少し時間はかかるかも知れませんが、ここもまた復興していく事でしょう‥‥‥\n<wait>; reads: 少し時間はかかるかも知れませんが、ここもまた復興していく事でしょう‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:04	32	1173	1FD2	ファニエル：		Phanuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:04	33	1187	1FD3	さあ、出口{08:71}送{08:52}差し上げま{08:80}。\n{02:08}{01:2A}{02:08}\n<wait>		Now, allow me to guide you back to the exit...\nOnce again, thank you...\n<wait>	v005		reads: さあ、出口まで送って差し上げましょう。\n‥‥‥ありがとう‥‥‥\n<wait>; reads: さあ、出口まで送って差し上げましょう。\n‥‥‥ありがとう‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:05	0	96	1FD0	ファニエルのヴィジョンが現わ{08:60}{08:72}\n<wait>		Phanuel appears before you.\n<wait>	v005		reads: ファニエルのヴィジョンが現われた‥‥\n<wait>; reads: ファニエルのヴィジョンが現われた‥‥\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:05	1	137	1FD2	ファニエル：		Phanuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:05	2	151	1FD3	人の子よ{02:08}待{08:52}{08:89}{08:4B}よ{02:08}\n<wait>		Son of man... I have been waiting for you...\n<wait>	v005		reads: 人の子よ‥‥‥待っていましたよ‥‥‥\n<wait>; reads: 人の子よ‥‥‥待っていましたよ‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:05	3	182	1FD2	ファニエル：		Phanuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:05	4	196	1FD3	貴方達のお陰で、{08:47}{08:10}も壊滅を免れ、そ{08:4A}、{08:5B}{08:47}{08:69}に\n復興{08:4A}きま{08:4B}{02:08}\n<wait>		You saved this shelter and its inhabitants from surefire destruction.\n<wait>	v005		reads: 貴方達のお陰で、このシェルターも壊滅を免れ、そして、またこのように\n復興してきました‥‥‥\n<wait>; reads: 貴方達のお陰で、このシェルターも壊滅を免れ、そして、またこのように\n復興してきました‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:05	5	268	1FD2	ファニエル：		Phanuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:05	6	282	1FD3	私{08:42}も礼を言わ{08:67}下{08:49}{02:08}{01:2A}{02:08}\n<wait>		Allow me to offer you my gratitude... Thank you...\n<wait>	v005		reads: 私からも礼を言わせて下さい‥‥‥ありがとう‥‥‥\n<wait>; reads: 私からも礼を言わせて下さい‥‥‥ありがとう‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:05	7	317	1FD2	ファニエル：		Phanuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:05	8	331	1FD3	{08:47}{08:10}に、貴方の{01:2E}を用意{08:4A}おきま{08:4B}。\n地下７階の最も広い{01:2E}が、貴方の{01:2E}{08:55}{02:08}\n{08:90}ぞ、自由にお使いな{08:49}{02:08}\n<wait>		A room has been prepared for you within. It is located on the 7th floor.\nUse it as you please.\n<wait>	v005		reads: このシェルターに、貴方の部屋を用意しておきました。\n地下７階の最も広い部屋が、貴方の部屋です‥‥‥\nどうぞ、自由にお使いなさい‥‥‥\n<wait>; reads: このシェルターに、貴方の部屋を用意しておきました。\n地下７階の最も広い部屋が、貴方の部屋です‥‥‥\nどうぞ、自由にお使いなさい‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:05	9	436	1FD2	ファニエル：		Phanuel:	v005		@refalign @refalign-merged
+m/MS0018.BIN	0:05	10	450	1FD3	{08:72}私は{08:5C}行かなくては{02:08}\n{08:72}本当に{01:2A}{02:08}{08:72}\n<wait>		Now, I must go. But, before that. Thank you once more.\n<wait>	v005		reads: ‥‥私はもう行かなくては‥‥‥\n‥‥本当にありがとう‥‥‥‥‥\n<wait>; reads: ‥‥私はもう行かなくては‥‥‥\n‥‥本当にありがとう‥‥‥‥‥\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:05	11	521	1FD0	ファニエルは消えて{08:1F}{02:08}‥\n<wait>		With that, Phanuel vanishes...\n<wait>	v005		reads: ファニエルは消えてしまった‥‥‥‥\n<wait>; reads: ファニエルは消えてしまった‥‥‥‥\n<wait> @refalign @refalign-merged
 m/MS0018.BIN	0:06	0	24	1FD2	作業員：		Construction Worker:	v005		
 m/MS0018.BIN	0:06	1	40	1F7C	アイムに破壊{03:0C}た所の修復が大変よ！\n<wait>		It's gonna take forever fixing this place!\n<wait>	v005		reads: アイムに破壊された所の修復が大変よ！\n<wait>
-m/MS0018.BIN	0:06	2	82	18	ちょ{08:53}小耳に挟{08:5F}{08:5F}{08:84}{02:08}\n新宿が{08:0B}達にやら{08:60}ん{08:55}{08:52}！\n<wait>		Something I happened to hear.\nApparently, Shinjuku has been attacked by the demons!\n<wait>	v005		reads: ちょっと小耳に挟んだんだけど‥‥‥\n新宿が悪魔達にやられたんですって！\n<wait> @refalign
+m/MS0018.BIN	0:06	2	82	18	ちょ{08:53}小耳に挟{08:5F}{08:5F}{08:84}{02:08}\n新宿が{08:0B}達にやら{08:60}ん{08:55}{08:52}！\n<wait>		Something I happened to hear.\nApparently, Shinjuku has been attacked by the demons!\n<wait>	v005		reads: ちょっと小耳に挟んだんだけど‥‥‥\n新宿が悪魔達にやられたんですって！\n<wait>; reads: ちょっと小耳に挟んだんだけど‥‥‥\n新宿が悪魔達にやられたんですって！\n<wait> @refalign
 m/MS0018.BIN	0:07	0	2	1FD2	女性：		Woman:	v005		
 m/MS0018.BIN	0:07	1	16	1F7C	復興が急ピッチで勧めら{08:60}お陰で、{08:47}フロア{08:62}大分賑やかに{08:1B}わ！\n<wait>		This floor is a total mess because of all the construction\nwork going on.\n<wait>	v005		reads: 復興が急ピッチで勧められたお陰で、このフロアは、大分賑やかになってきたわ！\n<wait>
 m/MS0018.BIN	0:07	2	89	09	新宿に{01:08}城が出来たと{08:68}噂よ{02:08}\n<wait>		I heard the rumours about Baal's Castle appearing in Shinjuku.\n<wait>	ours		reads: 新宿にバエル城が出来たという噂よ‥‥‥\n<wait>
 m/MS0018.BIN	0:07	3	126	1FD2	女性：		Woman:	v005		
 m/MS0018.BIN	0:07	4	134	1FD3	{08:5B}、{08:45}も{08:0B}に狙わ{08:2F}のかしら{02:08}\n<wait>		Are the demons going to be attacking us next, I wonder...\n<wait>	v005		reads: また、ここも悪魔に狙われるのかしら‥‥‥\n<wait>
-m/MS0018.BIN	0:07	5	170	18	神田には研究都市と{08:68}{08:5E}が{08:7B}らしいわ。\n{08:47}御時世に、一体何を研究{08:13}のかしらねぇ？\n<wait>		I hear that Kanda is the number one city for scientific research.\nWhat could they possibly be researching these days?\n<wait>	v005		reads: 神田には研究都市というものがあるらしいわ。\nこの御時世に、一体何を研究しているのかしらねぇ？\n<wait> @refalign
+m/MS0018.BIN	0:07	5	170	18	神田には研究都市と{08:68}{08:5E}が{08:7B}らしいわ。\n{08:47}御時世に、一体何を研究{08:13}のかしらねぇ？\n<wait>		I hear that Kanda is the number one city for scientific research.\nWhat could they possibly be researching these days?\n<wait>	v005		reads: 神田には研究都市というものがあるらしいわ。\nこの御時世に、一体何を研究しているのかしらねぇ？\n<wait>; reads: 神田には研究都市というものがあるらしいわ。\nこの御時世に、一体何を研究しているのかしらねぇ？\n<wait> @refalign
 m/MS0018.BIN	0:08	0	2	1FD2	男の子：		Boy:	v005		
 m/MS0018.BIN	0:08	1	18	1F7C	{02:08}アイム怖{08:18}よぅ{02:08}\n<wait>		I was so scared of Aym...\n<wait>	v005		reads: ‥‥‥アイム怖かったよぅ‥‥‥\n<wait>
 m/MS0018.BIN	0:08	2	42	00	ねぇ、お兄ちゃん。{08:5B}他の{08:0B}が来{08:50}{08:90}し{08:69}？\nお兄ちゃんやっつけてく{08:2F}？\n<wait>		Hey, Mister. What's going to happen if more demons show up?\nAre you going to beat them up again?\n<wait>	v005		reads: ねぇ、お兄ちゃん。また他の悪魔が来たらどうしよう？\nお兄ちゃんやっつけてくれる？\n<wait>
@@ -154,23 +154,23 @@ m/MS0018.BIN	0:0D	2	123	00	ねー天使様{08:52}、お空の上に{08:40}んで
 m/MS0018.BIN	0:0E	0	30	1FD2	女性：		Woman:	v005		
 m/MS0018.BIN	0:0E	1	38	1FD3	{08:45}が貴方のお{01:2E}{08:55}。\n{08:90}ぞ、御自由にお使い下{08:49}。\n<wait>		This is your room. Use it as you please.\n<wait>	v005		reads: ここが貴方のお部屋です。\nどうぞ、御自由にお使い下さい。\n<wait>
 m/MS0018.BIN	0:0E	2	98	1F03	C	C				
-m/MS0018.BIN	0:0E	3	145	00	{04:FF}達{08:62}個人用の培養槽を設置{08:4B}{08:72}\n<wait>		Hayasaka{04:FF} and the others have installed a personal cultivation tank...\n<wait>	ours		reads: 達は、個人用の培養槽を設置した‥‥\n<wait>
-m/MS0018.BIN	0:0E	4	184	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n @refalign
-m/MS0018.BIN	0:0E	5	230	1FB2	パーツを保存{08:8E}		Store parts	v005		reads: パーツを保存する; menu option, declared width 20 columns @refalign
-m/MS0018.BIN	0:0E	6	250	00	{04:FE}を復活さ{08:2A}					reads: を復活させる
-m/MS0018.BIN	0:0E	7	264	1FB2	休む		Resurrect Yuuka	v005		menu option, declared width 20 columns @refalign
-m/MS0018.BIN	0:0E	8	270	1FB2	{02:05}	{02:05}				reads: 出かける; menu option, declared width 20 columns
-m/MS0018.BIN	0:0E	9	317	1FB2	パーツを保存{08:8E}	パーツを保存{08:8E}	Resurrect Yuuka	v005		reads: パーツを保存する; menu option, declared width 20 columns
+m/MS0018.BIN	0:0E	3	147	1F01	達{08:62}個人用の培養槽を設置{08:4B}{08:72}\n<wait>		Hayasaka{04:FF} and the others have installed a personal cultivation tank...\n<wait>	ours		reads: 達は、個人用の培養槽を設置した‥‥\n<wait> @rebase-tagdiff
+m/MS0018.BIN	0:0E	4	184	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n; reads: ＞どうしますか？\n @refalign
+m/MS0018.BIN	0:0E	5	230	1FB2	パーツを保存{08:8E}		Store parts	v005		reads: パーツを保存する; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0018.BIN	0:0E	6	252	1F01	を復活さ{08:2A}					reads: を復活させる @rebase-new
+m/MS0018.BIN	0:0E	7	264	1FB2	休む		Resurrect Yuuka	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0018.BIN	0:0E	8	270	1FB2	{02:05}	{02:05}	Rest	v005		reads: 出かける; menu option, declared width 20 columns
+m/MS0018.BIN	0:0E	9	317	1FB2	パーツを保存{08:8E}	パーツを保存{08:8E}	Leave	v005		reads: パーツを保存する; menu option, declared width 20 columns
 m/MS0018.BIN	0:0E	10	333	1FB2	休む	休む	Rest	v005		menu option, declared width 20 columns; reads: ペンタグランマ`
 m/MS0018.BIN	0:0E	11	339	1FB2	{02:05}	{02:05}	Leave	v005		reads: 出かける; menu option, declared width 20 columns
-m/MS0018.BIN	0:0E	12	382	1FB2	休む		Leave	v005		menu option, declared width 20 columns; reads: パーツを保存する @refalign
-m/MS0018.BIN	0:0E	13	388	1FB2	{02:05}	{02:05}	Leave	v005		reads: 出かける; menu option, declared width 20 columns
+m/MS0018.BIN	0:0E	12	382	1FB2	休む		Leave	v005		menu option, declared width 20 columns; reads: パーツを保存する @refalign @rebase-new @refalign
+m/MS0018.BIN	0:0E	13	388	1FB2	{02:05}	{02:05}				reads: 出かける; menu option, declared width 20 columns @rebase-new
 m/MS0018.BIN	0:0E	14	471	00	ｮ	ｮ				reads: 出かける; menu option, declared width 20 columns
 m/MS0018.BIN	0:0E	15	473	00	ｭ	ｭ				reads: おにいちゃん
 m/MS0018.BIN	0:0E	16	475	00	ｱ	ｱ				
 m/MS0018.BIN	0:0E	17	477	00	ｲ{04:FF}					reads: ｲ; menu option, declared width 20 columns
 m/MS0018.BIN	0:0E	18	489	00	{=8B}{=00}{=8C}{=00}{=8D}{=00}{=8E}{=FF}	{=8B}{=00}{=8C}{=00}{=8D}{=00}{=8E}{=FF}				reads: 出かける; menu option, declared width 20 columns
-m/MS0018.BIN	0:0E	19	504	00	{04:FE}を復活させ{08:69}と思{08:51}が、干{08:42}びたパーツが{08:7B}。\n日下の所で再生{08:4A}もらわねば{02:08}‥\n<wait>	{04:FE}を復活させ{08:69}と思{08:51}が、干{08:42}びたパーツが{08:7B}。\n日下の所で再生{08:4A}もらわねば{02:08}‥\n<wait>				reads: を復活させようと思ったが、干からびたパーツがある。\n日下の所で再生してもらわねば‥‥‥‥\n<wait>
+m/MS0018.BIN	0:0E	19	506	1F01	を復活させ{08:69}と思{08:51}が、干{08:42}びたパーツが{08:7B}。\n日下の所で再生{08:4A}もらわねば{02:08}‥\n<wait>	を復活させ{08:69}と思{08:51}が、干{08:42}びたパーツが{08:7B}。\n日下の所で再生{08:4A}もらわねば{02:08}‥\n<wait>				reads: を復活させようと思ったが、干からびたパーツがある。\n日下の所で再生してもらわねば‥‥‥‥\n<wait> @rebase-new
 m/MS0018.BIN	0:0E	20	586	1FBA	＞全てのパーツを持{08:52}行き{08:15}\n	＞全てのパーツを持{08:52}行き{08:15}\n	>Will you take all of the parts with you?\n	v005		reads: ＞全てのパーツを持って行きますか？\n
 m/MS0018.BIN	0:0E	21	629	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
 m/MS0018.BIN	0:0E	22	633	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
@@ -187,16 +187,16 @@ m/MS0018.BIN	0:0E	32	880	00	9	9				reads: 左腕‥‥‥<wait>
 m/MS0018.BIN	0:0E	33	909	00	7	7				reads: 左脚‥‥‥<wait>
 m/MS0018.BIN	0:0E	34	938	00	:	:				reads: 右脚‥‥‥<wait>
 m/MS0018.BIN	0:0E	35	967	00	;	;				reads: 右腕‥‥‥<wait>
-m/MS0018.BIN	0:0E	36	1045	00	{04:FE}の全てのパーツを、培養槽の中{08:42}慎重に取り出す。\n各パーツ{08:62}{08:4D}ぞれが生き{08:14}{08:69}に脈動{08:13}。\n<wait>		You take out all of Yuuka's body parts.\nYou can see them pulsing faintly, almost as if alive.\n<wait>	v005		reads: の全てのパーツを、培養槽の中から慎重に取り出す。\n各パーツは、それぞれが生きているように脈動している。\n<wait>; reads: 胸部‥‥‥<wait>
+m/MS0018.BIN	0:0E	36	1047	1F01	の全てのパーツを、培養槽の中{08:42}慎重に取り出す。\n各パーツ{08:62}{08:4D}ぞれが生き{08:14}{08:69}に脈動{08:13}。\n<wait>		You take out all of Yuuka's body parts.\nYou can see them pulsing faintly, almost as if alive.\n<wait>	v005		reads: の全てのパーツを、培養槽の中から慎重に取り出す。\n各パーツは、それぞれが生きているように脈動している。\n<wait>; reads: 胸部‥‥‥<wait> @rebase-tagdiff
 m/MS0018.BIN	0:0E	37	1137	1FBA	静かに台の上に置き、パーツを近づけていく{02:08}\n<wait>		Carefully, you place them on the altar.\n<wait>	v005		reads: 静かに台の上に置き、パーツを近づけていく‥‥‥\n<wait>; reads: 腹部‥‥‥\n<wait>
 m/MS0018.BIN	0:0E	38	1190	1FC5	やがて、彼女の身体は柔らかく淡い光を放ち、パーツの切断{03:0C}た部分が\n物凄い勢いで修復{03:0C}ていく{02:08}‥\n<wait>		As you do so, Yuuka's body starts glowing with soft light,\nand the once-separated parts begin melding as one.\n<wait>	v005		reads: やがて、彼女の身体は柔らかく淡い光を放ち、パーツの切断された部分が\n物凄い勢いで修復されていく‥‥‥‥\n<wait>; reads: 以上のパーツを持ち出した‥‥‥\n<wait>
 m/MS0018.BIN	0:0E	39	1290	1FBA	今や、彼女はあの{08:10}に{08:64}時と同じ、美しい姿に戻{08:52}{08:64}。\n<wait>	今や、彼女はあの{08:10}に{08:64}時と同じ、美しい姿に戻{08:52}{08:64}。\n<wait>	Before long, she has transformed into the very same girl\nyou remember from your days at the shelter.\n<wait>	v005		reads: 今や、彼女はあのシェルターにいた時と同じ、美しい姿に戻っていた。\n<wait>
-m/MS0018.BIN	0:0E	40	1351	00	{04:FE}はゆっくりと目を開き、	{04:FE}はゆっくりと目を開き、				reads: はゆっくりと目を開き、
-m/MS0018.BIN	0:0E	41	1379	00	{04:FF}を見た。\n<wait>	{04:FF}を見た。\n<wait>				reads: を見た。\n<wait>
-m/MS0018.BIN	0:0E	42	1400	00	{04:FE}の瞳{08:62}	{04:FE}の瞳{08:62}				reads: の瞳は、
-m/MS0018.BIN	0:0E	43	1412	00	{04:FF}の姿を認{08:2E}と、歓喜で一杯に{08:16}。\n<wait>	{04:FF}の姿を認{08:2E}と、歓喜で一杯に{08:16}。\n<wait>				reads: の姿を認めると、歓喜で一杯になった。\n<wait>
+m/MS0018.BIN	0:0E	40	1353	1F01	はゆっくりと目を開き、	はゆっくりと目を開き、				reads: はゆっくりと目を開き、
+m/MS0018.BIN	0:0E	41	1381	1F01	を見た。\n<wait>	を見た。\n<wait>				reads: を見た。\n<wait>
+m/MS0018.BIN	0:0E	42	1402	1F01	の瞳{08:62}	の瞳{08:62}				reads: の瞳は、
+m/MS0018.BIN	0:0E	43	1414	1F01	の姿を認{08:2E}と、歓喜で一杯に{08:16}。\n<wait>	の姿を認{08:2E}と、歓喜で一杯に{08:16}。\n<wait>				reads: の姿を認めると、歓喜で一杯になった。\n<wait>
 m/MS0018.BIN	0:0E	44	1451	1FBA	{03:0B}{08:4D}もつかの間。	{03:0B}{08:4D}もつかの間。	Yuuka slowly opens her eyes.\n<wait>	v005		reads: しかし、それもつかの間。
-m/MS0018.BIN	0:0E	45	1471	00	{04:FE}は気を失{08:52}{08:1F}。\n心臓が無いせい{08:8C}。\n<wait>					reads: は気を失ってしまった。\n心臓が無いせいだろう。\n<wait>; reads: の全てのパーツを、培養槽の中から慎重に取り出す。\n各パーツは、それぞれが生きているように脈動している。\n<wait>
+m/MS0018.BIN	0:0E	45	1473	1F01	は気を失{08:52}{08:1F}。\n心臓が無いせい{08:8C}。\n<wait>					reads: は気を失ってしまった。\n心臓が無いせいだろう。\n<wait>; reads: の全てのパーツを、培養槽の中から慎重に取り出す。\n各パーツは、それぞれが生きているように脈動している。\n<wait>
 m/MS0018.BIN	0:0E	46	1513	1FBA	{08:4D}{08:56}あの{08:69}な反応を示{08:4B}{08:77}。\n奇跡と{08:86}言い{08:69}が無い。\n<wait>		Even then, calling this anything but a miracle\nwould be an understatement.\n<wait>	v005		reads: それでもあのような反応を示したのだ。\n奇跡としか言いようが無い。\n<wait>; reads: 静かに台の上に置き、パーツを近づけていく‥‥‥\n<wait>
 m/MS0018.BIN	0:0E	47	1591	1F71	事の一部始終を見守{08:52}{08:64}{08:31}が口を開{08:64}{08:72}\n<wait>		Having been silent this whole time, Rui at last opens her mouth.\n<wait>	v005		reads: 事の一部始終を見守っていた泪が口を開いた‥‥\n<wait>; reads: やがて、彼女の身体は柔らかく淡い光を放ち、パーツの切断された部分が\n物凄い勢いで修復されていく‥‥‥‥\n<wait>
 m/MS0018.BIN	0:0E	48	1636	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 今や、彼女はあのシェルターにいた時と同じ、美しい姿に戻っていた。\n<wait>
@@ -206,10 +206,10 @@ m/MS0018.BIN	0:0E	51	1689	1FD3	貴方を見て喜{08:5F}わ{08:72}ちゃんと�
 m/MS0018.BIN	0:0E	52	1773	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: の姿を認めると、歓喜で一杯になった。\n<wait>
 m/MS0018.BIN	0:0E	53	1779	1FD3	例え死{08:5F}{08:52}、忘{08:60}く{08:25}よね{02:08}‥\n<wait>		You must truly love a person to still remember them after death...\n<wait>	v005		reads: 例え死んだって、忘れたくないよね‥‥‥‥\n<wait>; reads: しかし、それもつかの間。
 m/MS0018.BIN	0:0E	54	1820	1FD0	{08:31}{08:62}背を向けて扉の方に歩いて行{08:51}。\n扉の前で立ち止ま{08:52}、振り返り、真っすぐに		Rui turns around and begins walking towards the door.\nHowever, before exiting the room, she gives you one last look.\n<wait>	v005		reads: 泪は、背を向けて扉の方に歩いて行った。\n扉の前で立ち止まって、振り返り、真っすぐに; reads: は気を失ってしまった。\n心臓が無いせいだろう。\n<wait>
-m/MS0018.BIN	0:0E	55	1899	00	{04:FF}を見て\n<wait>					reads: を見て\n<wait>; reads: それでもあのような反応を示したのだ。\n奇跡としか言いようが無い。\n<wait>
+m/MS0018.BIN	0:0E	55	1901	1F01	を見て\n<wait>					reads: を見て\n<wait>; reads: それでもあのような反応を示したのだ。\n奇跡としか言いようが無い。\n<wait>
 m/MS0018.BIN	0:0E	56	1938	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 事の一部始終を見守っていた泪が口を開いた‥‥\n<wait>
 m/MS0018.BIN	0:0E	57	1944	1FD3	{08:81}あね。		Good bye, Ayato. When we next meet, it'll be at Baal's Castle.\n<wait>	ours		reads: じゃあね。; reads: 泪：
-m/MS0018.BIN	0:0E	58	1956	00	{04:FF}。今度{08:62}{01:08}城で逢{08:89}{08:80}。\n<wait>					reads: 。今度は、バエル城で逢いましょう。\n<wait>; reads: すごいわ‥‥‥心臓が無くてもこれだもの‥‥‥‥‥\n<wait>
+m/MS0018.BIN	0:0E	58	1958	1F01	。今度{08:62}{01:08}城で逢{08:89}{08:80}。\n<wait>					reads: 。今度は、バエル城で逢いましょう。\n<wait>; reads: すごいわ‥‥‥心臓が無くてもこれだもの‥‥‥‥‥\n<wait>
 m/MS0018.BIN	0:0E	59	1993	1FD0	{08:4D}{08:74}言うと、{08:31}は去{08:52}行{08:51}。\n<wait>		With that, she leaves.\n<wait>	v005		reads: それだけ言うと、泪は去って行った。\n<wait>; reads: 泪：
 m/MS0018.BIN	0:0E	60	2061	1FD0	復活させ{08:69}にも、{08:45}に無いパーツが{08:7B}。\nパーツを一所に集め{08:57}{02:08}\n<wait>		There are still parts that you are missing.\nYou need to collect those first.\n<wait>	v005		reads: 復活させようにも、ここに無いパーツがある。\nパーツを一所に集めなければ‥‥‥\n<wait>; reads: 貴方を見て喜んだわ‥‥ちゃんと覚えてたのね。\nそりゃそうよね‥‥好きな人の事だもの。\n<wait>
 m/MS0018.BIN	0:0E	61	2136	00	{=8B}{=00}{=8C}{=00}{=8D}{=00}{=8E}{=FF}更に、干{08:42}びたパーツが{08:7B}。\n日下の所で再生{08:4A}もらわねば{02:08}‥\n<wait>					reads: {=8B}{=00}{=8C}{=00}{=8D}{=00}{=8E}{=FF}更に、干からびたパーツがある。\n日下の所で再生してもらわねば‥‥‥‥\n<wait>; reads: 泪：
@@ -229,22 +229,22 @@ m/MS0018.BIN	0:0E	74	2540	1F61	胸部{08:72}\n<wait>	胸部{08:72}\n<wait>	Chest
 m/MS0018.BIN	0:0E	75	2591	00	;	;				
 m/MS0018.BIN	0:0E	76	2596	1F61	腹部{08:72}\n<wait>		Stomach...\n<wait>	ours		reads: 腹部‥‥\n<wait>; reads: 左腕‥‥\n<wait>
 m/MS0018.BIN	0:0E	77	2633	09	{03:09}{04:FF}	{03:09}{04:FF}	Down{04:FF}	ours		reads: ダウン
-m/MS0018.BIN	0:0E	78	2660	00	{04:FF}はそう思{08:51}{08:5E}の、保管{08:8E}{08:69}なパーツ{08:62}何も持{08:52}い{08:19}。\n<wait>					reads: はそう思ったものの、保管するようなパーツは、何も持っていなかった。\n<wait>; reads: 左脚‥‥\n<wait>
+m/MS0018.BIN	0:0E	78	2662	1F01	はそう思{08:51}{08:5E}の、保管{08:8E}{08:69}なパーツ{08:62}何も持{08:52}い{08:19}。\n<wait>					reads: はそう思ったものの、保管するようなパーツは、何も持っていなかった。\n<wait>; reads: 左脚‥‥\n<wait> @rebase-new
 m/MS0018.BIN	0:0E	79	2729	00	8	8				
 m/MS0018.BIN	0:0E	80	2731	00	9	9				reads: 右脚‥‥\n<wait>
 m/MS0018.BIN	0:0E	81	2733	00	:	:				
 m/MS0018.BIN	0:0E	82	2735	00	;	;				reads: 右腕‥‥\n<wait>
-m/MS0018.BIN	0:0E	83	2742	00	{04:FF}{08:62}パーツをしっかりと培養槽の中に保管{08:4B}。\n<wait>	{04:FF}{08:62}パーツをしっかりと培養槽の中に保管{08:4B}。\n<wait>				reads: は、パーツをしっかりと培養槽の中に保管した。\n<wait>
+m/MS0018.BIN	0:0E	83	2744	1F01	{08:62}パーツをしっかりと培養槽の中に保管{08:4B}。\n<wait>	{08:62}パーツをしっかりと培養槽の中に保管{08:4B}。\n<wait>				reads: は、パーツをしっかりと培養槽の中に保管した。\n<wait> @rebase-new
 m/MS0018.BIN	0:0E	84	2800	00	{=8B}{=00}{=8C}{=00}{=8D}{=00}{=8E}{=FF}{08:61}{02:08}\n<wait>	{=8B}{=00}{=8C}{=00}{=8D}{=00}{=8E}{=FF}{08:61}{02:08}\n<wait>				reads: {=8B}{=00}{=8C}{=00}{=8D}{=00}{=8E}{=FF}しかし‥‥‥\n<wait>; reads: 胸部‥‥\n<wait>
 m/MS0018.BIN	0:0E	85	2835	00	{=8B}{=00}{=8C}{=00}{=8D}{=00}{=8E}{=FF}	{=8B}{=00}{=8C}{=00}{=8D}{=00}{=8E}{=FF}				
-m/MS0018.BIN	0:0E	86	2848	00	{04:FF}{08:62}パーツを保管し{08:69}と{08:4B}が、持ち歩いて{08:64}パーツが\n干{08:42}びてしま{08:52}{08:64}。\n<wait>		 	v005		reads: は、パーツを保管しようとしたが、持ち歩いていたパーツが\n干からびてしまっていた。\n<wait>; reads: 腹部‥‥\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:0E	86	2850	1F01	{08:62}パーツを保管し{08:69}と{08:4B}が、持ち歩いて{08:64}パーツが\n干{08:42}びてしま{08:52}{08:64}。\n<wait>		 	v005		reads: は、パーツを保管しようとしたが、持ち歩いていたパーツが\n干からびてしまっていた。\n<wait>; reads: 腹部‥‥\n<wait> @refalign @refalign-merged @rebase-new @refalign @refalign-merged
 m/MS0018.BIN	0:0E	87	2946	00	燕ｶ腕{02:08}\n<wait>	燕ｶ腕{02:08}\n<wait>	Left arm...\n<wait>	ours		reads: 燕ｶ腕‥‥‥\n<wait>; reads: ダウン
 m/MS0018.BIN	0:0E	88	2982	00	渇E腕{02:08}\n<wait>		Right arm...\n<wait>	ours		reads: 渇E腕‥‥‥\n<wait>; reads: はそう思ったものの、保管するようなパーツは、何も持っていなかった。\n<wait>
 m/MS0018.BIN	0:0E	89	3018	00	牛ｶ脚{02:08}\n<wait>	牛ｶ脚{02:08}\n<wait>	Left leg...\n<wait>	ours		reads: 牛ｶ脚‥‥‥\n<wait>
 m/MS0018.BIN	0:0E	90	3054	00	潔E脚{02:08}\n<wait>	潔E脚{02:08}\n<wait>	Right leg...\n<wait>	ours		reads: 潔E脚‥‥‥\n<wait>
 m/MS0018.BIN	0:0E	91	3090	00	豪ｹ{02:08}\n<wait>	豪ｹ{02:08}\n<wait>	Chest...\n<wait>	ours		reads: 豪ｹ‥‥‥\n<wait>
 m/MS0018.BIN	0:0E	92	3124	00	歯{02:08}\n<wait>以上のパーツが干{08:42}びてしまっ{08:14}。\n<wait>	歯{02:08}\n<wait>以上のパーツが干{08:42}びてしまっ{08:14}。\n<wait>	Stomach...\n<wait>The aforementioned parts are completely dried up.\n<wait>	ours		reads: 歯‥‥‥\n<wait>以上のパーツが干からびてしまっている。\n<wait>
-m/MS0018.BIN	0:0E	93	3173	1FBA	再生{08:8E}手段を取ら{08:57}{02:08}‥\n<wait>		 	v005		reads: 再生する手段を取らなければ‥‥‥‥\n<wait>; reads: は、パーツをしっかりと培養槽の中に保管した。\n<wait> @refalign @refalign-merged
+m/MS0018.BIN	0:0E	93	3173	1FBA	再生{08:8E}手段を取ら{08:57}{02:08}‥\n<wait>		You're going to need to revitalize them somehow.\n<wait>	v005		reads: 再生する手段を取らなければ‥‥‥‥\n<wait>; reads: は、パーツをしっかりと培養槽の中に保管した。\n<wait> @refalign @refalign-merged
 m/MS0018.BIN	0:0E	94	3213	1FD0	心地よい眠気が忍び寄る{02:08}\n<wait>	心地よい眠気が忍び寄る{02:08}\n<wait>	A pleasant wave of tiredness washes over you...\n<wait>	v005		reads: 心地よい眠気が忍び寄る‥‥‥\n<wait>; reads: {=8B}{=00}{=8C}{=00}{=8D}{=00}{=8E}{=FF}しかし‥‥‥\n<wait>
 m/MS0018.BIN	0:0E	95	3290	00	{01:00}	{01:00}				reads: 早坂達也
 m/MS0018.BIN	0:0E	96	3304	00	{02:00}	{02:00}				reads: デビルバスター; reads: は、パーツを保管しようとしたが、持ち歩いていたパーツが\n干からびてしまっていた。\n<wait>
@@ -392,7 +392,7 @@ m/MS0018.BIN	0:24	4	130	09	新宿都庁の上に、{01:2F}な城が建{08:51}そ
 m/MS0018.BIN	0:24	5	196	1FD2	女性：		Woman:	v005		
 m/MS0018.BIN	0:24	6	204	1FD3	{01:08}は一度、倒{03:0C}たのでは{08:19}ので{08:80}か？\n		I thought Baal was already dead?\n	ours		reads: バエルは一度、倒されたのではなかったのでしょうか？\n
 m/MS0018.BIN	0:24	7	240	00	今度の事件で、主のお力の偉大さを知りま{08:4B}。\n今{08:71}{08:62}信仰などあり{02:0A}で{08:4B}が、{08:48}{08:42}{08:62}主を信じて生きていこうと思{08:52}い{08:5A}。\n<wait>		I used to be an atheist, but after what happened,\nmy eyes have been opened to the glory of God.\nNever again will I question His might.\n<wait>	v005		reads: 今度の事件で、主のお力の偉大さを知りました。\n今までは、信仰などありませんでしたが、これからは、主を信じて生きていこうと思っています。\n<wait>
-m/MS0018.BIN	0:25	0	2	1FD0	エレベーターの扉に{08:62}”点検中”の札がかかっ{08:14}{02:08}\n<wait>		The elevator says "under inspection".\n<wait>	v005		reads: エレベーターの扉には、”点検中”の札がかかっている‥‥‥\n<wait> @refalign
+m/MS0018.BIN	0:25	0	2	1FD0	エレベーターの扉に{08:62}”点検中”の札がかかっ{08:14}{02:08}\n<wait>		The elevator says "under inspection".\n<wait>	v005		reads: エレベーターの扉には、”点検中”の札がかかっている‥‥‥\n<wait>; reads: エレベーターの扉には、”点検中”の札がかかっている‥‥‥\n<wait> @refalign
 m/MS0018.BIN	0:28	0	64	1FD2	作業員：		Construction Worker:	v005		
 m/MS0018.BIN	0:28	1	74	1FD3	{08:47}{08:10}{08:62}{08:82}{08:89}復興作業中{08:55}。\n大変危険{08:6B}で、作業者以外は立入禁止に{08:1A}い{08:5A}。\n<wait>		We are currently working to rebuild this shelter.\nIt's pretty dangerous, so if you aren't part of the construction crew,\nwe cannot let you inside.\n<wait>	v005		reads: このシェルターは、ただいま復興作業中です。\n大変危険なので、作業者以外は立入禁止になっています。\n<wait>
 m/MS0018.BIN	0:28	2	152	1FD2	作業員：		Construction Worker:	v005		

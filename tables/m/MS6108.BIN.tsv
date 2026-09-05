@@ -23,7 +23,7 @@ m/MS6108.BIN	1:2B	0	0	DATA	女神の愛や　{08:0B}の野心では\n{02:0B}を�
 m/MS6108.BIN	1:2C	0	0	DATA	{08:7A}考えでは　いつかは身を滅ぼすぞ\n<wait>		Thinking like that will be your ruin someday.\n<wait>	ours		reads: そんな考えでは　いつかは身を滅ぼすぞ\n<wait>
 m/MS6108.BIN	1:2D	0	0	DATA	おお！　同士よ！\n{08:48}{08:42}も{08:0B}を駆逐し　新た{08:59}人類の路\n正しき人の路を　作{08:52}行こう！\n<wait>		Ah, comrade!\nLet's keep driving out demons, and forge a new path for mankind...\nthe righteous path of humanity!\n<wait>	ours		reads: おお！　同士よ！\nこれからも悪魔を駆逐し　新たなる人類の路\n正しき人の路を　作って行こう！\n<wait>
 m/MS6108.BIN	1:2E	0	0	DATA	{01:10}	{01:10}				reads: あなたは
-m/MS6108.BIN	1:2E	1	6	00	{04:FF}殿！\nお噂は　本部より聞いており{08:5A}！\n<wait>		{04:FF}, sir!\nI've heard about you from headquarters!\n<wait>	ours		reads: 殿！\nお噂は　本部より聞いております！\n<wait>
+m/MS6108.BIN	1:2E	1	8	1F01	殿！\nお噂は　本部より聞いており{08:5A}！\n<wait>		{04:FF}, sir!\nI've heard about you from headquarters!\n<wait>	ours		reads: 殿！\nお噂は　本部より聞いております！\n<wait> @rebase-tagdiff
 m/MS6108.BIN	1:2F	0	0	DATA	ぜひ　私めもお供に！\n<wait>		Please, let me accompany you!\n<wait>	ours		
 m/MS6108.BIN	1:30	0	0	DATA	{08:0B}に取り入り\n姑息に生き延びんと{08:8E}輩か！\n<wait>		So you're one of those who curries favor with demons\njust to survive!\n<wait>	ours		reads: 悪魔に取り入り\n姑息に生き延びんとする輩か！\n<wait>
 m/MS6108.BIN	1:31	0	0	DATA	俺{08:4F}の子供には　かつての様な\n安全な暮らしを　{02:0D}やり{08:4E}\n<wait>		I want our children to have\na safe life again, like the old days.\n<wait>	ours		reads: 俺たちの子供には　かつての様な\n安全な暮らしを　させてやりたい\n<wait>
@@ -64,9 +64,8 @@ m/MS6108.BIN	4:04	0	0	DATA	ああそう\n<wait>		Oh, is that so.\n<wait>	ours
 m/MS6108.BIN	4:05	0	0	DATA	では　さらば！\n<wait>		Well then, farewell!\n<wait>	ours		
 m/MS6108.BIN	4:06	0	0	DATA	何が欲しい{08:5F}？\n<wait>		What do you want?\n<wait>	ours		reads: 何が欲しいんだ？\n<wait>
 m/MS6108.BIN	4:07	0	0	DATA	私は　長らく　		I've long been 	ours		
-m/MS6108.BIN	4:07	1	18	00	{04:EF}\n	{04:EF}\n				reads: \n
-m/MS6108.BIN	4:07	2	25	00	{04:EF}をやっ{08:14}者だ\n<wait>		doing this work.\n<wait>	ours		reads: をやっている者だ\n<wait>
-m/MS6108.BIN	4:07	3	46	1FBA	今後とも　よろしく頼む！\n<wait>		Let's get along\nfrom here on!\n<wait>	ours		
+m/MS6108.BIN	4:07	1	27	1F01	をやっ{08:14}者だ\n<wait>	をやっ{08:14}者だ\n<wait>				reads: をやっている者だ\n<wait>; reads: \n @rebase-new
+m/MS6108.BIN	4:07	2	46	1FBA	今後とも　よろしく頼む！\n<wait>		Let's get along\nfrom here on!\n<wait>	ours		reads: をやっている者だ\n<wait> @rebase-unmatched idx2 en=doing this work.\n<wait>
 m/MS6108.BIN	4:08	0	0	DATA	{08:48}をやろう！\n<wait>		Here, take this!\n<wait>	ours		reads: これをやろう！\n<wait>
 m/MS6108.BIN	4:09	0	0	DATA	悪いが		Sorry, but	ours		
 m/MS6108.BIN	4:0A	0	0	DATA	今は　持{08:52}{08:24}様だ\n<wait>		seems I don't have any right now.\n<wait>	ours		reads: 今は　持っていない様だ\n<wait>
@@ -208,7 +207,7 @@ m/MS6108.BIN	4:91	0	0	DATA	くくく\n<wait>		Kukuku\n<wait>	ours
 m/MS6108.BIN	4:92	0	0	DATA	{08:5C}少し　頂け{08:25}か？\n<wait>		Could I get\na bit more?\n<wait>	ours		reads: もう少し　頂けないか？\n<wait>
 m/MS6108.BIN	4:93	0	0	DATA	人殺しめ！\n<wait>		Murderer!\n<wait>	ours		
 m/MS6108.BIN	4:94	0	0	DATA	おい！　		Hey! 	ours		
-m/MS6108.BIN	4:94	1	12	00	{04:FF}だろ？\n{08:90}だ調子は？\n<wait>		{04:FF}, right?\nHow've you been?\n<wait>	ours		reads: だろ？\nどうだ調子は？\n<wait>
+m/MS6108.BIN	4:94	1	14	1F01	だろ？\n{08:90}だ調子は？\n<wait>		{04:FF}, right?\nHow've you been?\n<wait>	ours		reads: だろ？\nどうだ調子は？\n<wait> @rebase-tagdiff
 m/MS6108.BIN	4:95	0	0	DATA	来るな！\n<wait>		Away!\n<wait>	ours		
 m/MS6108.BIN	4:96	0	0	DATA	見逃{08:4A}やろう\n<wait>		I'll let\nyou off.\n<wait>	ours		reads: 見逃してやろう\n<wait>
 m/MS6108.BIN	4:97	0	0	DATA	力を見{08:67}やる！\n<wait>		Behold my\npower!\n<wait>	ours		reads: 力を見せてやる！\n<wait>
@@ -239,7 +238,7 @@ m/MS6108.BIN	13:02	0	0	DATA	{08:63}さえ良ければ　{08:4D}で{08:7F}と言�
 m/MS6108.BIN	13:07	0	0	DATA	{01:3C}　お前に　聞いてお{08:1E}い事が{08:7B}\n<wait>		{01:3C}\<, there's something\nI want to ask you.\n<wait>	ours		reads: ひとつ　お前に　聞いておきたい事がある\n<wait>
 m/MS6108.BIN	13:0C	0	0	DATA	{02:03}以外の{02:0B}の中にも\n{08:76}　お前の様な奴が{08:40}とはな\n<wait>		Even outside the Resistance,\nthere are still people like you.\n<wait>	ours		reads: レジスタンス以外の人間の中にも\nまだ　お前の様な奴がいるとはな\n<wait>
 m/MS6108.BIN	13:0E	0	0	DATA	お前{02:09}{08:5D}や　		You... could it be that you're 	ours		reads: お前・・・もしや　
-m/MS6108.BIN	13:0E	1	16	00	{04:FF}では{08:25}か？\n<wait>		{04:FF}?\n<wait>	ours		reads: ではないか？\n<wait>
+m/MS6108.BIN	13:0E	1	18	1F01	では{08:25}か？\n<wait>		{04:FF}?\n<wait>	ours		reads: ではないか？\n<wait> @rebase-tagdiff
 m/MS6108.BIN	13:0F	0	0	DATA	やはり　そうであ{08:51}か\n<wait>		I see,\nso that's how it was.\n<wait>	ours		reads: やはり　そうであったか\n<wait>
 m/MS6108.BIN	13:10	0	0	DATA	{08:0B}合体もか？\n<wait>		Demon Fusion\nas well?\n<wait>	ours		reads: 悪魔合体もか？\n<wait>
 m/MS6108.BIN	13:11	0	0	DATA	{08:4D}は　力を求{08:2E}{08:42}か？\n<wait>		Is that because\nyou seek power?\n<wait>	ours		reads: それは　力を求めるからか？\n<wait>

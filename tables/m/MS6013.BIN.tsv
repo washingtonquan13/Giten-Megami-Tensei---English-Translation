@@ -4,8 +4,8 @@
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
 m/MS6013.BIN	1:01	0	15	0D	{02:09}・・\n<wait>		.....\n<wait>	ours		reads: ・・・・・\n<wait>
-m/MS6013.BIN	1:01	1	32	00	{04:EF}は{08:79}{08:7E}通りすぎ{08:21}\n		{04:EF} jus' shuffled on by\n	ours		reads: はそのまま通りすぎていった\n
-m/MS6013.BIN	1:02	0	65	00	{04:EF}は{08:79}{08:7E}通りすぎ{08:21}\n	{04:EF}は{08:79}{08:7E}通りすぎ{08:21}\n				reads: はそのまま通りすぎていった\n; reads: わたしを @rebase-unmatched idx2 en={04:EF} jus' shuffled on by\n
+m/MS6013.BIN	1:01	1	34	1F01	は{08:79}{08:7E}通りすぎ{08:21}\n		{04:EF} jus' shuffled on by\n	ours		reads: はそのまま通りすぎていった\n @rebase-tagdiff
+m/MS6013.BIN	1:02	0	67	1F01	は{08:79}{08:7E}通りすぎ{08:21}\n	は{08:79}{08:7E}通りすぎ{08:21}\n				reads: はそのまま通りすぎていった\n; reads: わたしを @rebase-unmatched idx2 en={04:EF} jus' shuffled on by\n @rebase-new @rebase-unmatched idx2 en={04:EF} jus' shuffled on by\n
 m/MS6013.BIN	1:89	0	0	DATA	い、痛ぇょぉ		N-nngh... hurts...	ours		
 m/MS6013.BIN	1:8A	0	0	DATA	いでぇ{08:5F}よぉ！\n<wait>		It huuurts, dammit!\n<wait>	ours		reads: いでぇんだよぉ！\n<wait>
 m/MS6013.BIN	1:8B	0	0	DATA	あ{02:09}あっ{08:74}ぇ{02:09}・・\n<wait>		A-ah... jus' that much.....\n<wait>	ours		reads: あ・・・あっだけぇ・・・・・\n<wait>
@@ -32,7 +32,7 @@ m/MS6013.BIN	4:72	0	0	DATA	まずは　		First off,	ours
 m/MS6013.BIN	4:7B	0	0	DATA	死ねや！\n<wait>		Die already!\n<wait>	ours		
 m/MS6013.BIN	4:5D	0	0	DATA	知ら{08:75}ど\n<wait>		Dunno nothin'\n<wait>	ours		reads: 知らねえど\n<wait>
 m/MS6013.BIN	4:75	0	0	DATA	お前ぇが		You	ours		
-m/MS6013.BIN	4:75	1	12	00	{04:FF}があー！　\n<wait>		 -- {04:FF} -- gaaah!\n<wait>	ours		reads: があー！　\n<wait>
+m/MS6013.BIN	4:75	1	14	1F01	があー！　\n<wait>		 -- {04:FF} -- gaaah!\n<wait>	ours		reads: があー！　\n<wait> @rebase-tagdiff
 m/MS6013.BIN	4:02	0	0	DATA	{08:81}あ　		Well then	ours		reads: じゃあ　
 m/MS6013.BIN	4:05	0	0	DATA	{08:81}あな{02:09}\n<wait>		See ya round...\n<wait>	ours		reads: じゃあな・・・\n<wait>
 m/MS6013.BIN	4:7F	0	0	DATA	こっちにこいよぉ{02:09}\n<wait>		C'mon over heeere...\n<wait>	ours		reads: こっちにこいよぉ・・・\n<wait>
@@ -50,7 +50,7 @@ m/MS6013.BIN	14:14	0	0	DATA	ああ{02:09}\nな{08:5F}か気分が{08:7F}ぜぇ{0
 m/MS6013.BIN	14:15	0	0	DATA	頭がすっきりだぁ{02:09}\n<wait>		Head's all clear now......\n<wait>	ours		reads: 頭がすっきりだぁ・・・\n<wait>
 m/MS6013.BIN	14:16	0	0	DATA	さぜるがあ！　\n<wait>		I'll make ya paaay!\n<wait>	ours		
 m/MS6013.BIN	14:17	0	0	DATA	何だぁ？		Whaaat?	ours		
-m/MS6013.BIN	14:18	0	4	00	{04:FF}がぁ{02:09}\n<wait>		{04:FF}, gah...\n<wait>	ours		reads: がぁ・・・\n<wait>
+m/MS6013.BIN	14:18	0	6	1F01	がぁ{02:09}\n<wait>		{04:FF}, gah...\n<wait>	ours		reads: がぁ・・・\n<wait> @rebase-tagdiff
 m/MS6013.BIN	14:19	0	0	DATA	おでが生きてた頃は{02:09}\n<wait>		Back when I wuz alive......\n<wait>	ours		reads: おでが生きてた頃は・・・\n<wait>
 m/MS6013.BIN	14:1A	0	0	DATA	何もかもが楽し{08:18}ぁ{02:09}\n<wait>		Everythin' wuz fun back then......\n<wait>	ours		reads: 何もかもが楽しかったぁ・・・\n<wait>
 m/MS6013.BIN	14:1B	0	0	DATA	{08:4D}を{02:09}{08:4D}ををををををを！　\n<wait>		That thing... give it, give it, give it, give it!\n<wait>	ours		reads: それを・・・それををををををを！　\n<wait>
@@ -100,11 +100,11 @@ m/MS6013.BIN	14:46	0	0	DATA	やめだ！　		Forget iiit!	ours
 m/MS6013.BIN	14:47	0	0	DATA	おでは一人で生きでいく{08:5F}\n<wait>		I'm gonna live on my ooown.\n<wait>	ours		reads: おでは一人で生きでいくんだ\n<wait>
 m/MS6013.BIN	14:48	0	0	DATA	冷やが{08:86}あぁぁぁ！\nおのれえ！　\n<wait>		Was that a jooke!?\nDamn yoouu!\n<wait>	ours		reads: 冷やがしかあぁぁぁ！\nおのれえ！　\n<wait>
 m/MS6013.BIN	14:49	0	0	DATA	ガ・ガーン！　		G-gaaah!	ours		
-m/MS6013.BIN	14:4A	0	4	00	{04:EF}への礼儀を知ら{08:25}やづだ{02:09}\n<wait>		Don't know no manners toward {04:EF}...\n<wait>	ours		reads: への礼儀を知らないやづだ・・・\n<wait>
+m/MS6013.BIN	14:4A	0	6	1F01	への礼儀を知ら{08:25}やづだ{02:09}\n<wait>		Don't know no manners toward {04:EF}...\n<wait>	ours		reads: への礼儀を知らないやづだ・・・\n<wait> @rebase-tagdiff
 m/MS6013.BIN	14:4B	0	0	DATA	用が無い{08:7D}　ごえをか{08:29}なぁ！\n<wait>		Don't talk to me if ya got no reason toooo!\n<wait>	ours		reads: 用が無いなら　ごえをかけるなぁ！\n<wait>
 m/MS6013.BIN	14:4C	0	0	DATA	どおだ		Hoow's that?	ours		
 m/MS6013.BIN	14:4D	0	0	DATA	調子{08:26}いがあ？　\n<wait>		Feelin' aaalright?\n<wait>	ours		reads: 調子はいいがあ？　\n<wait>
-m/MS6013.BIN	14:4E	0	4	00	{04:EF}だ{08:52}\nたまには他人を心配{08:4B}いどぉ{02:09}\n<wait>		'Cause,\nsometimes I wanna worry 'bout someone else too...\n<wait>	ours		reads: だって\nたまには他人を心配したいどぉ・・・\n<wait>
+m/MS6013.BIN	14:4E	0	6	1F01	だ{08:52}\nたまには他人を心配{08:4B}いどぉ{02:09}\n<wait>		'Cause,\nsometimes I wanna worry 'bout someone else too...\n<wait>	ours		reads: だって\nたまには他人を心配したいどぉ・・・\n<wait> @rebase-tagdiff
 m/MS6013.BIN	14:4F	0	0	DATA	おろろーん\n<wait>		Ooorooon...\n<wait>	ours		
 m/MS6013.BIN	14:50	0	0	DATA	おお　おお！\n<wait>		Oooh, oooh!\n<wait>	ours		
 m/MS6013.BIN	14:51	0	0	DATA	よ{08:18}なあ\n<wait>		Glad t'hear iiit.\n<wait>	ours		reads: よかったなあ\n<wait>
@@ -119,7 +119,7 @@ m/MS6013.BIN	14:59	0	0	DATA	ぞんな事いわずにもっでけぇ！　\n<wait
 m/MS6013.BIN	14:5A	0	0	DATA	な？　な？　な？　\n<wait>		Right? Riight? Riiight?\n<wait>	ours		
 m/MS6013.BIN	14:5B	0	0	DATA	ぜっかくの好意を！　\n<wait>		And here I wuz bein' niiice!\n<wait>	ours		
 m/MS6013.BIN	14:5C	0	0	DATA	力になでなくてすまんなあ{02:09}\n<wait>		Sorry I couldn't heelp......\n<wait>	ours		reads: 力になでなくてすまんなあ・・・\n<wait>
-m/MS6013.BIN	14:5D	0	4	00	{04:EF}に対{08:4A}のあてつけがぁ！　\n<wait>		That's a jab at {04:EF}, gah!\n<wait>	ours		reads: に対してのあてつけがぁ！　\n<wait>
+m/MS6013.BIN	14:5D	0	6	1F01	に対{08:4A}のあてつけがぁ！　\n<wait>		That's a jab at {04:EF}, gah!\n<wait>	ours		reads: に対してのあてつけがぁ！　\n<wait> @rebase-tagdiff
 m/MS6013.BIN	14:5E	0	0	DATA	おでが		I'll...	ours		
 m/MS6013.BIN	14:5F	0	0	DATA	とどめを指{08:4A}やる\n<wait>		finish ya off myseeelf.\n<wait>	ours		reads: とどめを指してやる\n<wait>
 m/MS6013.BIN	14:60	0	0	DATA	こでで傷{08:56}なおせ\n<wait>		Heal up with thiiis.\n<wait>	ours		reads: こでで傷でもなおせ\n<wait>
@@ -145,7 +145,7 @@ m/MS6013.BIN	14:72	0	0	DATA	あだりめえ{08:8F}ぁー		'Course it iiis.	ours	
 m/MS6013.BIN	14:73	0	0	DATA	おで{08:0E}の{08:7C}　食うかもな\n<wait>		If yer my demon, might not eat ya.\n<wait>	ours		reads: おで仲魔のならば　食うかもな\n<wait>
 m/MS6013.BIN	14:74	0	0	DATA	いやな野郎{08:8F}あ！　\n<wait>		What a nasty guuuy!\n<wait>	ours		reads: いやな野郎だがあ！　\n<wait>
 m/MS6013.BIN	14:75	0	0	DATA	ナイス！　投げ返{08:4B}腕は\n		Nice! The arm you threw back\n	ours		reads: ナイス！　投げ返した腕は\n
-m/MS6013.BIN	14:75	1	27	00	{04:EF}の関節に\nスッポリとはま{08:12}　\n<wait>		fit snugly right into {04:EF}'s joint!\n<wait>	ours		reads: の関節に\nスッポリとはまった！　\n<wait>
+m/MS6013.BIN	14:75	1	29	1F01	の関節に\nスッポリとはま{08:12}　\n<wait>		fit snugly right into {04:EF}'s joint!\n<wait>	ours		reads: の関節に\nスッポリとはまった！　\n<wait> @rebase-tagdiff
 m/MS6013.BIN	14:76	0	0	DATA	{08:56}	{08:56}	But...	ours		reads: でも
 m/MS6013.BIN	14:77	0	0	DATA	不死身の体{08:26}だ{08:25}か？\n<wait>		Doesn't bein' undying huurt?\n<wait>	ours		reads: 不死身の体はいだないか？\n<wait>
 m/MS6013.BIN	14:78	0	0	DATA	すぐにずむがらな{02:09}\n<wait>		It'll heal right uup......\n<wait>	ours		reads: すぐにずむがらな・・・\n<wait>

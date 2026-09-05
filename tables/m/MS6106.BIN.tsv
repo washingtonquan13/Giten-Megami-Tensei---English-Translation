@@ -3,7 +3,7 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS6106.BIN	0:72	0	43	00	{04:FF}は迫力に気圧{03:0C}た！\n		She quails before your intensity!\n	ours		reads: は迫力に気圧された！\n
+m/MS6106.BIN	0:72	0	45	1F01	は迫力に気圧{03:0C}た！\n		She quails before your intensity!\n	ours		reads: は迫力に気圧された！\n @rebase-tagdiff
 m/MS6106.BIN	0:BB	0	0	DATA	戦う気は無い様{08:55}ね\n<wait>		It seems you'd\nrather not fight.\n<wait>	ours		reads: 戦う気は無い様ですね\n<wait>
 m/MS6106.BIN	0:BC	0	0	DATA	困{08:51}ときは　お互い様{08:55}\n<wait>		We must help each other\nin times of need.\n<wait>	ours		reads: 困ったときは　お互い様です\n<wait>
 m/MS6106.BIN	0:BD	0	0	DATA	用も無い{08:7D}　呼び止め{08:25}で下{08:49}\n<wait>		If you have no business with me,\nplease don't call out.\n<wait>	ours		reads: 用も無いなら　呼び止めないで下さい\n<wait>
@@ -12,11 +12,11 @@ m/MS6106.BIN	0:BF	0	0	DATA	私{08:42}教団の寄付を　巻き上げる{01:3E}
 m/MS6106.BIN	0:C0	0	0	DATA	{08:48}を差し上げ{08:5A}　だ{08:42}行きな{08:49}\n<wait>		Here, take this,\nand be on your way.\n<wait>	ours		reads: これを差し上げます　だから行きなさい\n<wait>
 m/MS6106.BIN	1:03	0	37	1FB2	事実を告げる		Tell the Truth	ours		menu option, declared width 20 columns
 m/MS6106.BIN	1:03	1	51	1FB2	適当にごまかす		Make an Excuse	ours		menu option, declared width 20 columns
-m/MS6106.BIN	1:03	2	127	00	{04:FF}は力説{08:17}\n	{04:FF}は力説{08:17}\n	She argues passionately!\n	ours		reads: は力説した！\n; reads: まさか
+m/MS6106.BIN	1:03	2	129	1F01	は力説{08:17}\n	は力説{08:17}\n				reads: は力説した！\n; reads: まさか @rebase-new
 m/MS6106.BIN	1:03	3	153	18	{08:61}	{08:61}				reads: しかし
-m/MS6106.BIN	1:03	4	159	00	{04:EF}は\n去る気が無い{08:69}だ\n		She\ndoesn't seem willing to leave.\n	ours		reads: は\n去る気が無いようだ\n; reads: は力説した！\n
-m/MS6106.BIN	1:03	5	215	00	{04:FE}：	{04:FE}：	{04:FE}:	ours		reads: ：; reads: しかし
-m/MS6106.BIN	1:03	6	221	1FD3	いえ、私は{08:47}人と共に歩み{08:5A}\n		No, I will walk\nalongside him.\n	ours		reads: いえ、私はこの人と共に歩みます\n; reads: は\n去る気が無いようだ\n
+m/MS6106.BIN	1:03	4	161	1F01	は\n去る気が無い{08:69}だ\n					reads: は\n去る気が無いようだ\n; reads: は力説した！\n @rebase-new @rebase-unmatched idx4 en=She argues passionately!\n
+m/MS6106.BIN	1:03	5	217	1F01	：	：				reads: ：; reads: しかし @rebase-new
+m/MS6106.BIN	1:03	6	221	1FD3	いえ、私は{08:47}人と共に歩み{08:5A}\n		No, I will walk\nalongside him.\n	ours		reads: いえ、私はこの人と共に歩みます\n; reads: は\n去る気が無いようだ\n @rebase-unmatched idx6 en=She\ndoesn't seem willing to leave.\n @rebase-unmatched idx8 en={04:FE}:
 m/MS6106.BIN	1:04	0	0	DATA	幾つの命を　奪えば気が済むの{08:55}！\n		How many lives must you take before you're satisfied!\n	ours		reads: 幾つの命を　奪えば気が済むのです！\n
 m/MS6106.BIN	1:05	0	0	DATA	貴方の様な存在は\n本来　許{03:0C}ざる{08:5E}{08:55}\n		Someone like you\nshould never be forgiven.\n	ours		reads: 貴方の様な存在は\n本来　許されざるものです\n
 m/MS6106.BIN	1:06	0	0	DATA	いつ{08:86}貴方が　分か{08:52}く{08:2F}事を\n祈りま{08:80}\n		I shall pray that, in time,\nyou come to understand.\n	ours		reads: いつしか貴方が　分かってくれる事を\n祈りましょう\n
@@ -54,7 +54,7 @@ m/MS6106.BIN	2:24	0	0	DATA	お困りの様{08:55}ね\n<wait>		You seem troubled.
 m/MS6106.BIN	2:25	0	0	DATA	助けて差し上げま{08:80}\n<wait>		Allow me to help you.\n<wait>	ours		reads: 助けて差し上げましょう\n<wait>
 m/MS6106.BIN	2:5D	0	0	DATA	頼{08:5D}い事{08:55}\n<wait>		How reassuring.\n<wait>	ours		reads: 頼もしい事です\n<wait>
 m/MS6106.BIN	2:2C	0	0	DATA	何か　私に出来る事は　あり{02:0A}か？\n<wait>		Is there anything I can do to help?\n<wait>	ours		reads: 何か　私に出来る事は　ありませんか？\n<wait>
-m/MS6106.BIN	2:2E	0	4	00	{04:F0}の方は　私には無理{08:55}\n<wait>		That's not something I'm capable of.\n<wait>	ours		reads: の方は　私には無理です\n<wait>
+m/MS6106.BIN	2:2E	0	6	1F01	の方は　私には無理{08:55}\n<wait>		That's not something I'm capable of.\n<wait>	ours		reads: の方は　私には無理です\n<wait> @rebase-tagdiff
 m/MS6106.BIN	2:5E	0	0	DATA	{08:0B}の力を借りねば\n所詮　貴方は　何も出来{08:25}では{08:25}{08:55}か！\n<wait>		Without borrowing a demon's power,\nyou can't do anything at all, can you!\n<wait>	ours		reads: 悪魔の力を借りねば\n所詮　貴方は　何も出来ないではないですか！\n<wait>
 m/MS6106.BIN	2:5F	0	0	DATA	英雄を気取{08:52}も\n貴方は　やはり　{08:82}の人に過ぎ{02:0A}\n<wait>		You may play the hero,\nbut you're still just an ordinary person.\n<wait>	ours		reads: 英雄を気取っても\n貴方は　やはり　ただの人に過ぎません\n<wait>
 m/MS6106.BIN	2:60	0	0	DATA	貴方の事を　認{08:2E}{01:3E}はあり{02:0A}！\n<wait>		I have no intention of acknowledging you!\n<wait>	ours		reads: 貴方の事を　認めるつもりはありません！\n<wait>
@@ -72,8 +72,7 @@ m/MS6106.BIN	4:04	0	0	DATA	そう{08:55}か\n<wait>		I see.\n<wait>	ours		reads:
 m/MS6106.BIN	4:05	0	0	DATA	{08:4D}では　さ{08:69}{08:7D}\n<wait>		Well then, farewell.\n<wait>	ours		reads: それでは　さようなら\n<wait>
 m/MS6106.BIN	4:06	0	0	DATA	何が望み{08:55}？\n<wait>		What is it you want?\n<wait>	ours		reads: 何が望みです？\n<wait>
 m/MS6106.BIN	4:07	0	0	DATA	私は　		I am 	ours		
-m/MS6106.BIN	4:07	1	10	00	{04:EF}　					reads: 　
-m/MS6106.BIN	4:07	2	18	00	{04:EF}と申し{08:5A}\n今後とも　よろしくお願い致し{08:5A}\n<wait>		{04:EF}. I look forward to\nworking with you.\n<wait>	ours		reads: と申します\n今後とも　よろしくお願い致します\n<wait>
+m/MS6106.BIN	4:07	1	20	1F01	と申し{08:5A}\n今後とも　よろしくお願い致し{08:5A}\n<wait>					reads: と申します\n今後とも　よろしくお願い致します\n<wait>; reads: 　 @rebase-new @rebase-unmatched idx2 en={04:EF}. I look forward to\nworking with you.\n<wait>
 m/MS6106.BIN	4:08	0	0	DATA	{08:48}を　差し上げま{08:80}\n<wait>		Please, take this.\n<wait>	ours		reads: これを　差し上げましょう\n<wait>
 m/MS6106.BIN	4:09	0	0	DATA	申し訳あり{02:0A}が　		I'm terribly sorry, but	ours		reads: 申し訳ありませんが　
 m/MS6106.BIN	4:0A	0	0	DATA	今は　持ち合わ{08:67}おり{02:0A}\n<wait>		I don't happen to have any on me right now.\n<wait>	ours		reads: 今は　持ち合わせておりません\n<wait>
@@ -216,7 +215,7 @@ m/MS6106.BIN	4:91	0	0	DATA	フフフ\n<wait>		Fufufu\n<wait>	ours
 m/MS6106.BIN	4:92	0	0	DATA	{08:5C}少し頂け{02:0A}か？\n<wait>		Could I not receive\na little more?\n<wait>	ours		reads: もう少し頂けませんか？\n<wait>
 m/MS6106.BIN	4:93	0	0	DATA	血も涙も無い殺戮者め！\n<wait>		You heartless\nkiller!\n<wait>	ours		
 m/MS6106.BIN	4:94	0	0	DATA	貴方は　		You 	ours		
-m/MS6106.BIN	4:94	1	12	00	{04:FF}！\n{08:79}後の調子{08:26}かが{08:55}？\n<wait>		{04:FF}!\nHow have you been since then?\n<wait>	ours		reads: ！\nその後の調子はいかがです？\n<wait>
+m/MS6106.BIN	4:94	1	14	1F01	！\n{08:79}後の調子{08:26}かが{08:55}？\n<wait>		{04:FF}!\nHow have you been since then?\n<wait>	ours		reads: ！\nその後の調子はいかがです？\n<wait> @rebase-tagdiff
 m/MS6106.BIN	4:95	0	0	DATA	来{08:25}で下{08:49}！\n<wait>		Please don't\ncome near!\n<wait>	ours		reads: 来ないで下さい！\n<wait>
 m/MS6106.BIN	4:96	0	0	DATA	見逃{08:4A}あげま{08:80}\n<wait>		I'll let this\nslide.\n<wait>	ours		reads: 見逃してあげましょう\n<wait>
 m/MS6106.BIN	4:97	0	0	DATA	真{08:59}力　見{08:67}差し上げま{08:80}！\n<wait>		Allow me to show\nyou my true power!\n<wait>	ours		reads: 真なる力　見せて差し上げましょう！\n<wait>
@@ -248,7 +247,7 @@ m/MS6106.BIN	13:02	0	0	DATA	{08:63}さえ良ければ　{08:4D}で{08:7F}と言�
 m/MS6106.BIN	13:07	0	0	DATA	{01:3C}　貴方に　聞いてお{08:1E}い事があり{08:5A}\n<wait>		There's one thing I'd like to ask you.\n<wait>	ours		reads: ひとつ　貴方に　聞いておきたい事があります\n<wait>
 m/MS6106.BIN	13:0C	0	0	DATA	{02:0B}の中にも　{08:76}　貴方の様な方が{08:40}とは！\n<wait>		To think there are still people like you among humankind!\n<wait>	ours		reads: 人間の中にも　まだ　貴方の様な方がいるとは！\n<wait>
 m/MS6106.BIN	13:0E	0	0	DATA	貴方は　{08:5D}や　		Could it be that you're 	ours		reads: 貴方は　もしや　
-m/MS6106.BIN	13:0E	1	18	00	{04:FF}では{08:25}{08:55}か？\n<wait>		{04:FF}?\n<wait>	ours		reads: ではないですか？\n<wait>
+m/MS6106.BIN	13:0E	1	20	1F01	では{08:25}{08:55}か？\n<wait>		{04:FF}?\n<wait>	ours		reads: ではないですか？\n<wait> @rebase-tagdiff
 m/MS6106.BIN	13:0F	0	0	DATA	やはり　そうで{08:4B}か\n<wait>		I see, so that's\nhow it is.\n<wait>	ours		reads: やはり　そうでしたか\n<wait>
 m/MS6106.BIN	13:10	0	0	DATA	{08:0B}合体も{08:55}か？\n<wait>		Demon Fusion\nas well, is it?\n<wait>	ours		reads: 悪魔合体もですか？\n<wait>
 m/MS6106.BIN	13:11	0	0	DATA	{08:4D}は　力を求{08:2E}{08:42}{08:55}か？\n<wait>		Is that because\nyou seek power?\n<wait>	ours		reads: それは　力を求めるからですか？\n<wait>

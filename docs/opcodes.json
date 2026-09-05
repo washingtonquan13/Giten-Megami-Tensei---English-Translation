@@ -3708,16 +3708,17 @@
    "handler": "0x00430137",
    "operands": [
     {
-     "kind": "u8",
-     "size": 1
+     "kind": "rtstr",
+     "size": "var"
     }
    ],
-   "fixed_size": 1,
-   "variable": false,
+   "fixed_size": null,
+   "variable": true,
    "has_offset": false,
    "offset_slots": [],
    "refs_record": false,
-   "uses": 1348
+   "uses": 1348,
+   "note": "print runtime string: [u8 selector] then [expr] (selectors 04-06,0C-0F,11,13) or [u8][expr] (all others); handler 0x436920, table 0x436A4C. Retyped 2026-09-04: the old u8-only model put span boundaries after a name print 3 bytes early (the 'Yuuka:' -> 'ka:' bug)."
   },
   "0x102": {
    "encoding": "1F 02",
@@ -14076,5 +14077,6 @@
    "uses": 1
   }
  },
- "_switch": "0E/0F operands are a 0xFF-terminated table: [u8 case][u8 kind][u16]; kind != 0 -> the u16 is a rel16 branch target (relocated), kind == 0 -> two bytes (file, record) naming another script file. Handler 0x4327C0, callers 0x4328C0 (0E, random) and 0x4328E0 (0F, menu selection byte at 0x4919E0)."
+ "_switch": "0E/0F operands are a 0xFF-terminated table: [u8 case][u8 kind][u16]; kind != 0 -> the u16 is a rel16 branch target (relocated), kind == 0 -> two bytes (file, record) naming another script file. Handler 0x4327C0, callers 0x4328C0 (0E, random) and 0x4328E0 (0F, menu selection byte at 0x4919E0).",
+ "_rtstr": "1F01 = format and print a runtime string; the selector picks the builder (07/08 = a character's name, 00 = the player's, ...). The string is executed as script from its own buffer (pc 0..) through a call frame, which is what the trace shows as pc=0 events."
 }

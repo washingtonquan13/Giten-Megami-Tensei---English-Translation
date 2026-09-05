@@ -3,48 +3,48 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS6012.BIN	0:31	0	18	00	{04:EF}は\n{02:0E}を見つめ{08:14}\n					reads: は\nこちらを見つめている\n @rebase-unmatched idx0 en={04:EF} is\nstaring intently.\n
-m/MS6012.BIN	0:31	1	52	1FB2	微笑みか{08:29}		Recruit	ours		reads: 微笑みかける; menu option, declared width 20 columns @rebase-unmatched idx1 en=Smile at her
-m/MS6012.BIN	0:31	2	64	1FB2	無視		Give Me Something	ours		menu option, declared width 20 columns @rebase-unmatched idx2 en=Ignore
+m/MS6012.BIN	0:31	0	20	1F01	は\n{02:0E}を見つめ{08:14}\n					reads: は\nこちらを見つめている\n; reads: は\nこちらを見つめている\n @rebase-unmatched idx0 en={04:EF} is\nstaring intently.\n @rebase-new @rebase-unmatched idx0 en={04:EF} is\nstaring intently.\n
+m/MS6012.BIN	0:31	1	52	1FB2	微笑みか{08:29}		Recruit	ours		reads: 微笑みかける; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx1 en=Smile at her @rebase-unmatched idx1 en=Smile at her
+m/MS6012.BIN	0:31	2	64	1FB2	無視		Give Me Something	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx2 en=Ignore @rebase-unmatched idx2 en=Ignore
 m/MS6012.BIN	0:31	3	122	1FB2	わ{08:18}	わ{08:18}	Leave	ours		reads: わかった; menu option, declared width 20 columns; reads: パパ
-m/MS6012.BIN	0:31	4	128	1FB2	{08:7A}{08:5E}{08:26}らん！		Yes!	ours		reads: そんなものはいらん！; menu option, declared width 20 columns; reads: わかった @rebase-unmatched idx4 en=I understand
-m/MS6012.BIN	0:31	5	234	1FB2	{08:0E}に{08:1A}		Not really	ours		reads: 仲魔になって; menu option, declared width 20 columns; reads: そんなものはいらん！ @rebase-unmatched idx5 en=I don't need that!
-m/MS6012.BIN	0:31	6	242	1FB2	何か下{08:49}	何か下{08:49}	Don't say that	ours		reads: 何か下さい; menu option, declared width 20 columns; reads: わたしたち
-m/MS6012.BIN	0:31	7	252	1FB2	あっち行{08:52}	あっち行{08:52}	Fine, then!	ours		reads: あっち行って; menu option, declared width 20 columns
-m/MS6012.BIN	0:31	8	378	1FB2	{08:26}！					reads: はい！; menu option, declared width 20 columns; reads: 仲魔になって @rebase-new
-m/MS6012.BIN	0:31	9	384	1FB2	{08:4D}程{08:56}					reads: それ程でも; menu option, declared width 20 columns; reads: 何か下さい @rebase-new
-m/MS6012.BIN	0:31	10	493	1FB2	{08:7A}事言わずに					reads: そんな事言わずに; menu option, declared width 20 columns; reads: あっち行って @rebase-new
-m/MS6012.BIN	0:31	11	507	1FB2	{08:81}あ{08:7F}！	{08:81}あ{08:7F}！				reads: じゃあいい！; menu option, declared width 20 columns @rebase-new
-m/MS6012.BIN	0:31	12	544	00	{04:EF}は	{04:EF}は	{04:EF} was	ours		reads: は; reads: ペンタグランマJ
-m/MS6012.BIN	0:31	13	552	00	{04:FF}の\n気迫に気圧{03:0C}た！\n<wait>		 overwhelmed by {04:FF}'s presence!\n<wait>	ours		reads: の\n気迫に気圧された！\n<wait>; reads: はい！; menu option, declared width 20 columns
-m/MS6012.BIN	0:31	14	717	00	{04:EF}は\n{08:76}{02:0E}を見つめ{08:14}\n		{04:EF} is\nstill staring intently.\n	ours		reads: は\nまだこちらを見つめている\n; reads: それ程でも; menu option, declared width 20 columns
-m/MS6012.BIN	0:31	15	753	1FB2	微笑みか{08:29}	微笑みか{08:29}	Smile at her	ours		reads: 微笑みかける; menu option, declared width 20 columns; reads: 医師
-m/MS6012.BIN	0:31	16	765	1FB2	驚かす	驚かす	Startle her	ours		menu option, declared width 20 columns
-m/MS6012.BIN	0:31	17	773	1FB2	無視		Ignore	ours		menu option, declared width 20 columns; reads: そんな事言わずに
-m/MS6012.BIN	0:31	18	831	1FB2	怒る		Get Angry	ours		menu option, declared width 20 columns; reads: じゃあいい！
-m/MS6012.BIN	0:31	19	837	1FB2	も{08:53}変な顔を{08:8E}	も{08:53}変な顔を{08:8E}	Make a weirder face	ours		reads: もっと変な顔をする; menu option, declared width 20 columns
-m/MS6012.BIN	0:31	20	939	00	{04:EF}は固まっ{08:14}\n	{04:EF}は固まっ{08:14}\n	{04:EF} freezes stiff.\n	ours		reads: は固まっている\n
-m/MS6012.BIN	0:31	21	967	1FFA	{02:09}・・\n		.....\n	ours		reads: ・・・・・\n; reads: は
-m/MS6012.BIN	0:31	22	1024	00	{04:EF}は不安げに見つめ{08:14}\n		{04:EF} watches anxiously.\n	ours		reads: は不安げに見つめている\n; reads: の\n気迫に気圧された！\n<wait>
-m/MS6012.BIN	0:31	23	1157	00	{04:EF}はスキだらけだ！\n＞{08:0C}し{08:15}\n		{04:EF} is wide open!\n>Attack?\n	ours		reads: はスキだらけだ！\n＞攻撃しますか？\n; reads: は\nまだこちらを見つめている\n
-m/MS6012.BIN	0:31	24	1267	00	{04:EF}は近づ{08:64}\n		{04:EF} drew closer.\n	ours		reads: は近づいた\n; reads: 微笑みかける; menu option, declared width 20 columns
-m/MS6012.BIN	0:31	25	1369	00	{04:EF}は微笑{08:5F}\n<wait>		{04:EF} smiled.\n<wait>	ours		reads: は微笑んだ\n<wait>; menu option, declared width 20 columns
-m/MS6012.BIN	0:31	26	1401	00	{04:FF}は魅了{03:0C}た！\n		{04:FF} was charmed completely!\n	ours		reads: は魅了された！\n; menu option, declared width 20 columns
-m/MS6012.BIN	0:31	27	1605	1FB2	貢ぐ	貢ぐ	Offer Tribute	ours		menu option, declared width 20 columns; reads: 
-m/MS6012.BIN	0:31	28	1611	1FB2	勝手にしろ		Suit yourself	ours		menu option, declared width 20 columns; reads: ペンタグランマｾ @rebase-unmatched idx28 en=Pentagramma
-m/MS6012.BIN	0:31	29	1666	14	{02:09}・・	{02:09}・・	.....	ours		reads: ・・・・・
-m/MS6012.BIN	0:73	0	10	00	{04:EF}は怯え{08:14}\n					reads: は怯えている\n @rebase-unmatched idx0 en={04:EF} is terrified.\n
-m/MS6012.BIN	0:73	1	37	1FB2	も{08:53}脅す		Then die!	ours		reads: もっと脅す; menu option, declared width 20 columns @rebase-unmatched idx1 en=Threaten her more
-m/MS6012.BIN	0:73	2	47	1FB2	謝る		Something instead	ours		menu option, declared width 20 columns @rebase-unmatched idx2 en=Apologize
-m/MS6012.BIN	0:73	3	103	1FB2	{08:0E}になれ	{08:0E}になれ	Can't be helped	ours		reads: 仲魔になれ; menu option, declared width 20 columns
+m/MS6012.BIN	0:31	4	128	1FB2	{08:7A}{08:5E}{08:26}らん！		Smile at her	ours		reads: そんなものはいらん！; menu option, declared width 20 columns; reads: わかった @rebase-unmatched idx4 en=I understand @rebase-unmatched idx4 en=I understand
+m/MS6012.BIN	0:31	5	234	1FB2	{08:0E}に{08:1A}		Startle her	ours		reads: 仲魔になって; menu option, declared width 20 columns; reads: そんなものはいらん！ @rebase-unmatched idx5 en=I don't need that! @rebase-unmatched idx5 en=I don't need that!
+m/MS6012.BIN	0:31	6	242	1FB2	何か下{08:49}	何か下{08:49}	Ignore	ours		reads: 何か下さい; menu option, declared width 20 columns; reads: わたしたち
+m/MS6012.BIN	0:31	7	252	1FB2	あっち行{08:52}	あっち行{08:52}	Get Angry	ours		reads: あっち行って; menu option, declared width 20 columns
+m/MS6012.BIN	0:31	8	378	1FB2	{08:26}！		Make a weirder face	ours		reads: はい！; menu option, declared width 20 columns; reads: 仲魔になって @rebase-new
+m/MS6012.BIN	0:31	9	384	1FB2	{08:4D}程{08:56}		Offer Tribute	ours		reads: それ程でも; menu option, declared width 20 columns; reads: 何か下さい @rebase-new
+m/MS6012.BIN	0:31	10	493	1FB2	{08:7A}事言わずに		Suit yourself	ours		reads: そんな事言わずに; menu option, declared width 20 columns; reads: あっち行って @rebase-new
+m/MS6012.BIN	0:31	11	507	1FB2	{08:81}あ{08:7F}！	{08:81}あ{08:7F}！				reads: じゃあいい！; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new
+m/MS6012.BIN	0:31	12	546	1F01	は	は				reads: は; reads: ペンタグランマJ @rebase-new
+m/MS6012.BIN	0:31	13	554	1F01	の\n気迫に気圧{03:0C}た！\n<wait>					reads: の\n気迫に気圧された！\n<wait>; reads: はい！; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx13 en=Yes!
+m/MS6012.BIN	0:31	14	719	1F01	は\n{08:76}{02:0E}を見つめ{08:14}\n					reads: は\nまだこちらを見つめている\n; reads: それ程でも; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx14 en=Not really
+m/MS6012.BIN	0:31	15	753	1FB2	微笑みか{08:29}	微笑みか{08:29}				reads: 微笑みかける; menu option, declared width 20 columns; reads: 医師 @rebase-new
+m/MS6012.BIN	0:31	16	765	1FB2	驚かす	驚かす				menu option, declared width 20 columns @rebase-new
+m/MS6012.BIN	0:31	17	773	1FB2	無視					menu option, declared width 20 columns; reads: そんな事言わずに @rebase-new @rebase-unmatched idx17 en=Don't say that
+m/MS6012.BIN	0:31	18	831	1FB2	怒る					menu option, declared width 20 columns; reads: じゃあいい！ @rebase-new @rebase-unmatched idx18 en=Fine, then!
+m/MS6012.BIN	0:31	19	837	1FB2	も{08:53}変な顔を{08:8E}	も{08:53}変な顔を{08:8E}				reads: もっと変な顔をする; menu option, declared width 20 columns @rebase-new
+m/MS6012.BIN	0:31	20	941	1F01	は固まっ{08:14}\n	は固まっ{08:14}\n				reads: は固まっている\n @rebase-new
+m/MS6012.BIN	0:31	21	967	1FFA	{02:09}・・\n					reads: ・・・・・\n; reads: は @rebase-new @rebase-unmatched idx21 en={04:EF} was
+m/MS6012.BIN	0:31	22	1026	1F01	は不安げに見つめ{08:14}\n					reads: は不安げに見つめている\n; reads: の\n気迫に気圧された！\n<wait> @rebase-new @rebase-unmatched idx22 en= overwhelmed by {04:FF}'s presence!\n<wait>
+m/MS6012.BIN	0:31	23	1159	1F01	はスキだらけだ！\n＞{08:0C}し{08:15}\n					reads: はスキだらけだ！\n＞攻撃しますか？\n; reads: は\nまだこちらを見つめている\n @rebase-new @rebase-unmatched idx23 en={04:EF} is\nstill staring intently.\n
+m/MS6012.BIN	0:31	24	1269	1F01	は近づ{08:64}\n					reads: は近づいた\n; reads: 微笑みかける; menu option, declared width 20 columns @rebase-new
+m/MS6012.BIN	0:31	25	1371	1F01	は微笑{08:5F}\n<wait>					reads: は微笑んだ\n<wait>; menu option, declared width 20 columns @rebase-new
+m/MS6012.BIN	0:31	26	1403	1F01	は魅了{03:0C}た！\n					reads: は魅了された！\n; menu option, declared width 20 columns @rebase-new
+m/MS6012.BIN	0:31	27	1605	1FB2	貢ぐ	貢ぐ				menu option, declared width 20 columns; reads:  @rebase-new
+m/MS6012.BIN	0:31	28	1611	1FB2	勝手にしろ					menu option, declared width 20 columns; reads: ペンタグランマｾ @rebase-unmatched idx28 en=Pentagramma @rebase-new @rebase-unmatched idx28 en=Pentagramma
+m/MS6012.BIN	0:31	29	1666	14	{02:09}・・	{02:09}・・	.....	ours		reads: ・・・・・ @rebase-unmatched idx34 en={04:EF} freezes stiff.\n @rebase-unmatched idx35 en=.....\n @rebase-unmatched idx36 en={04:EF} watches anxiously.\n @rebase-unmatched idx37 en={04:EF} is wide open!\n>Attack?\n @rebase-unmatched idx38 en={04:EF} drew closer.\n @rebase-unmatched idx39 en={04:EF} smiled.\n<wait> @rebase-unmatched idx40 en={04:FF} was charmed completely!\n
+m/MS6012.BIN	0:73	0	12	1F01	は怯え{08:14}\n					reads: は怯えている\n; reads: は怯えている\n @rebase-unmatched idx0 en={04:EF} is terrified.\n @rebase-new @rebase-unmatched idx0 en={04:EF} is terrified.\n
+m/MS6012.BIN	0:73	1	37	1FB2	も{08:53}脅す		Recruit	ours		reads: もっと脅す; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx1 en=Threaten her more @rebase-unmatched idx1 en=Threaten her more
+m/MS6012.BIN	0:73	2	47	1FB2	謝る		Give Me Something	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx2 en=Apologize @rebase-unmatched idx2 en=Apologize
+m/MS6012.BIN	0:73	3	103	1FB2	{08:0E}になれ	{08:0E}になれ	Something Naughty	ours		reads: 仲魔になれ; menu option, declared width 20 columns
 m/MS6012.BIN	0:73	4	113	1FB2	何かよこせ					menu option, declared width 20 columns; reads: 仲魔になれ @rebase-new @rebase-unmatched idx4 en=Recruit
-m/MS6012.BIN	0:73	5	125	1FB2	Ｈなコト					menu option, declared width 20 columns @rebase-new @rebase-unmatched idx5 en=Give Me Something
+m/MS6012.BIN	0:73	5	125	1FB2	Ｈなコト					menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx5 en=Give Me Something
 m/MS6012.BIN	0:73	6	169	16	{02:09}	{02:09}				reads: ・・・; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx6 en=Something Naughty
-m/MS6012.BIN	0:73	7	199	1FB2	{08:81}あ死ね	{08:81}あ死ね				reads: じゃあ死ね; menu option, declared width 20 columns; reads: だれも桐島英美そうだ @rebase-new
-m/MS6012.BIN	0:73	8	209	1FB2	{08:82}とは言わん	{08:82}とは言わん				reads: ただとは言わん; menu option, declared width 20 columns; reads: ・・・ @rebase-new
-m/MS6012.BIN	0:73	9	312	1FB2	{08:81}あ死ね					reads: じゃあ死ね; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx9 en=Then die!
-m/MS6012.BIN	0:73	10	322	1FB2	かわりに何かくれ					menu option, declared width 20 columns; reads: ただとは言わん @rebase-new @rebase-unmatched idx10 en=Not for free
-m/MS6012.BIN	0:73	11	340	1FB2	仕方{08:25}な	仕方{08:25}な				reads: 仕方ないな; menu option, declared width 20 columns; reads: はやく @rebase-new
+m/MS6012.BIN	0:73	7	199	1FB2	{08:81}あ死ね	{08:81}あ死ね	Then die!	ours		reads: じゃあ死ね; menu option, declared width 20 columns; reads: だれも桐島英美そうだ @rebase-new
+m/MS6012.BIN	0:73	8	209	1FB2	{08:82}とは言わん	{08:82}とは言わん	Not for free	ours		reads: ただとは言わん; menu option, declared width 20 columns; reads: ・・・ @rebase-new
+m/MS6012.BIN	0:73	9	312	1FB2	{08:81}あ死ね		Then die!	ours		reads: じゃあ死ね; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx9 en=Then die!
+m/MS6012.BIN	0:73	10	322	1FB2	かわりに何かくれ		Something instead	ours		menu option, declared width 20 columns; reads: ただとは言わん @rebase-new @rebase-unmatched idx10 en=Not for free
+m/MS6012.BIN	0:73	11	340	1FB2	仕方{08:25}な	仕方{08:25}な	Can't be helped	ours		reads: 仕方ないな; menu option, declared width 20 columns; reads: はやく @rebase-new
 m/MS6012.BIN	0:73	12	437	1FBA	{02:09}	{02:09}				reads: ・・・
 m/MS6012.BIN	0:73	13	496	0C	{02:09}	{02:09}				reads: ・・・; reads: じゃあ死ね; menu option, declared width 20 columns
 m/MS6012.BIN	0:73	14	628	1FB2	{08:0E}になれ		Recruit	ours		reads: 仲魔になれ; menu option, declared width 20 columns
@@ -71,22 +71,22 @@ m/MS6012.BIN	0:B8	0	0	DATA	彼女と仲良く{08:4A}下{08:49}ね{=EB}{=B7}\n<wa
 m/MS6012.BIN	0:B5	0	0	DATA	良{08:18}\n<wait>		Oh, how wonderful.\n<wait>	ours		reads: 良かった\n<wait>
 m/MS6012.BIN	0:B9	0	0	DATA	かわ{08:7F}方{08:55}ね\n<wait>		What a cute one you are.\n<wait>	ours		reads: かわいい方ですね\n<wait>
 m/MS6012.BIN	0:BA	0	0	DATA	意気地無し{08:6A}{08:55}ね\n<wait>		You really have no backbone, do you.\n<wait>	ours		reads: 意気地無しなんですね\n<wait>
-m/MS6012.BIN	1:03	0	28	1FB2	ちょ{08:53}待{08:52}		Gladly	ours		reads: ちょっと待って; menu option, declared width 20 columns @rebase-unmatched idx0 en=Wait a moment
-m/MS6012.BIN	1:03	1	40	1FB2	さよ{08:7D}		Can't be helped	ours		reads: さよなら; menu option, declared width 20 columns @rebase-unmatched idx1 en=Farewell
+m/MS6012.BIN	1:03	0	28	1FB2	ちょ{08:53}待{08:52}		Gladly	ours		reads: ちょっと待って; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx0 en=Wait a moment @rebase-unmatched idx0 en=Wait a moment
+m/MS6012.BIN	1:03	1	40	1FB2	さよ{08:7D}		Can't be helped	ours		reads: さよなら; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx1 en=Farewell @rebase-unmatched idx1 en=Farewell
 m/MS6012.BIN	1:03	2	85	1FB2	謝る	謝る	As if I would	ours		menu option, declared width 20 columns; reads: 
-m/MS6012.BIN	1:03	3	91	1FB2	別に					menu option, declared width 20 columns @rebase-new @rebase-unmatched idx3 en=Apologize
-m/MS6012.BIN	1:03	4	171	1FB2	よろこんで					menu option, declared width 20 columns @rebase-new @rebase-unmatched idx4 en=It's nothing
-m/MS6012.BIN	1:03	5	183	1FB2	{08:80}が{08:25}	{08:80}が{08:25}				reads: しょうがない; menu option, declared width 20 columns @rebase-new
-m/MS6012.BIN	1:03	6	191	1FB2	誰がお前{08:6A}かに					reads: 誰がお前なんかに; menu option, declared width 20 columns @rebase-new
-m/MS6012.BIN	1:03	7	290	1FB2	なだ{08:2E}					reads: なだめる; menu option, declared width 20 columns; reads: しょうがない @rebase-new
-m/MS6012.BIN	1:03	8	298	1FB2	ほ{08:53}く					reads: ほっとく; menu option, declared width 20 columns; reads: 誰がお前なんかに @rebase-new
-m/MS6012.BIN	1:03	9	347	00	{04:EF}は感動{08:13}\nスキだらけだ！\n＞{08:0C}し{08:15}\n	{04:EF}は感動{08:13}\nスキだらけだ！\n＞{08:0C}し{08:15}\n				reads: は感動している\nスキだらけだ！\n＞攻撃しますか？\n; reads: まさか
+m/MS6012.BIN	1:03	3	91	1FB2	別に		Soothe her	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx3 en=Apologize @rebase-unmatched idx3 en=Apologize
+m/MS6012.BIN	1:03	4	171	1FB2	よろこんで		Leave her be	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx4 en=It's nothing @rebase-unmatched idx4 en=It's nothing
+m/MS6012.BIN	1:03	5	183	1FB2	{08:80}が{08:25}	{08:80}が{08:25}	Soothe her	ours		reads: しょうがない; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new
+m/MS6012.BIN	1:03	6	191	1FB2	誰がお前{08:6A}かに		Ignore her	ours		reads: 誰がお前なんかに; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new
+m/MS6012.BIN	1:03	7	290	1FB2	なだ{08:2E}		That's right	ours		reads: なだめる; menu option, declared width 20 columns; reads: しょうがない @rebase-new
+m/MS6012.BIN	1:03	8	298	1FB2	ほ{08:53}く		Not really	ours		reads: ほっとく; menu option, declared width 20 columns; reads: 誰がお前なんかに @rebase-new
+m/MS6012.BIN	1:03	9	349	1F01	は感動{08:13}\nスキだらけだ！\n＞{08:0C}し{08:15}\n	は感動{08:13}\nスキだらけだ！\n＞{08:0C}し{08:15}\n				reads: は感動している\nスキだらけだ！\n＞攻撃しますか？\n; reads: まさか @rebase-new
 m/MS6012.BIN	1:03	10	558	1FB2	なだ{08:2E}	なだ{08:2E}	Soothe her	ours		reads: なだめる; menu option, declared width 20 columns; reads: ペンタグランマ{=E6}{=00}
-m/MS6012.BIN	1:03	11	566	1FB2	無視{08:8E}		Leave her be	ours		reads: 無視する; menu option, declared width 20 columns; reads: なだめる
-m/MS6012.BIN	1:03	12	692	1FB2	そう{08:55}		Soothe her	ours		reads: そうです; menu option, declared width 20 columns; reads: ほっとく
-m/MS6012.BIN	1:03	13	700	1FB2	{08:4D}ほど{08:56}{08:25}	{08:4D}ほど{08:56}{08:25}	Ignore her	ours		reads: それほどでもない; menu option, declared width 20 columns
-m/MS6012.BIN	1:03	14	885	1FB2	なだ{08:2E}	なだ{08:2E}	That's right	ours		reads: なだめる; menu option, declared width 20 columns
-m/MS6012.BIN	1:03	15	893	1FB2	無視{08:8E}		Not really	ours		reads: 無視する; menu option, declared width 20 columns; reads: は感動している\nスキだらけだ！\n＞攻撃しますか？\n @rebase-unmatched idx15 en={04:EF} is deeply moved!\nWide open!\n>Attack?\n @rebase-unmatched idx27 en=Soothe her @rebase-unmatched idx28 en=Ignore her
+m/MS6012.BIN	1:03	11	566	1FB2	無視{08:8E}		Ignore her	ours		reads: 無視する; menu option, declared width 20 columns; reads: なだめる
+m/MS6012.BIN	1:03	12	692	1FB2	そう{08:55}					reads: そうです; menu option, declared width 20 columns; reads: ほっとく @rebase-new
+m/MS6012.BIN	1:03	13	700	1FB2	{08:4D}ほど{08:56}{08:25}	{08:4D}ほど{08:56}{08:25}				reads: それほどでもない; menu option, declared width 20 columns @rebase-new
+m/MS6012.BIN	1:03	14	885	1FB2	なだ{08:2E}	なだ{08:2E}				reads: なだめる; menu option, declared width 20 columns @rebase-new
+m/MS6012.BIN	1:03	15	893	1FB2	無視{08:8E}					reads: 無視する; menu option, declared width 20 columns; reads: は感動している\nスキだらけだ！\n＞攻撃しますか？\n @rebase-unmatched idx15 en={04:EF} is deeply moved!\nWide open!\n>Attack?\n @rebase-unmatched idx27 en=Soothe her @rebase-unmatched idx28 en=Ignore her @rebase-new @rebase-unmatched idx15 en={04:EF} is deeply moved!\nWide open!\n>Attack?\n
 m/MS6012.BIN	1:72	0	0	DATA	調子に乗ら{08:25}で頂{08:1E}い{08:55}わ！\n<wait>		How terribly forward of you!\n<wait>	ours		reads: 調子に乗らないで頂きたいですわ！\n<wait>
 m/MS6012.BIN	1:57	0	0	DATA	何て方{08:6B}！　私腹が立{08:52}きま{08:4B}わ\n<wait>		What a person! You're making me quite cross.\n<wait>	ours		reads: 何て方なの！　私腹が立ってきましたわ\n<wait>
 m/MS6012.BIN	1:73	0	0	DATA	{08:47}方が　{01:1C}の言{08:52}た{02:09}？\n<wait>		So this is the person everyone was talking about...?\n<wait>	ours		reads: この方が　みんなの言ってた・・・？\n<wait>
@@ -110,7 +110,7 @@ m/MS6012.BIN	1:84	0	0	DATA	貴方{08:52}　逞しい方{08:6A}{08:55}ね{02:09}\
 m/MS6012.BIN	1:85	0	0	DATA	私に心を捧げてみ{02:0A}？\n<wait>		Won't you offer your heart to me?\n<wait>	ours		reads: 私に心を捧げてみません？\n<wait>
 m/MS6012.BIN	1:86	0	0	DATA	{08:47}辺りで　私の事を知ら{08:25}{08:6A}て\n<wait>		Not to know of me, around here of all places...\n<wait>	ours		reads: この辺りで　私の事を知らないなんて\n<wait>
 m/MS6012.BIN	1:87	0	0	DATA	私は　		I am	ours		
-m/MS6012.BIN	1:87	1	10	00	{04:EF}！\n覚えておいて下{08:49}ね！\n<wait>		 {04:EF}! Please remember that!\n<wait>	ours		reads: ！\n覚えておいて下さいね！\n<wait>
+m/MS6012.BIN	1:87	1	12	1F01	！\n覚えておいて下{08:49}ね！\n<wait>		 {04:EF}! Please remember that!\n<wait>	ours		reads: ！\n覚えておいて下さいね！\n<wait> @rebase-tagdiff
 m/MS6012.BIN	1:88	0	0	DATA	私の前を　素通りできると思っ{08:14}の{08:55}か？\n<wait>		Do you truly think you can walk right past me?\n<wait>	ours		reads: 私の前を　素通りできると思っているのですか？\n<wait>
 m/MS6012.BIN	1:A6	0	0	DATA	ちょ{08:53}待{08:52}下{08:49}！\n小さく{08:52}　見え{08:25}{08:52}言うの{08:55}か？\n<wait>		Wait just a moment, please!\nAre you saying you can't see me because I'm small?\n<wait>	ours		reads: ちょっと待って下さい！\n小さくって　見えないって言うのですか？\n<wait>
 m/MS6012.BIN	1:A8	0	0	DATA	大きい{08:42}とい{08:52}\n<wait>		Just because something is big...\n<wait>	ours		reads: 大きいからといって\n<wait>
@@ -125,7 +125,7 @@ m/MS6012.BIN	2:3C	0	0	DATA	ねぇ　		Say,	ours
 m/MS6012.BIN	2:3D	0	0	DATA	{08:7A}事よりも		more importantly...	ours		reads: そんな事よりも
 m/MS6012.BIN	2:3E	0	0	DATA	私と素敵な事し{02:0A}か？\n<wait>		Won't you do something wonderful with me?\n<wait>	ours		reads: 私と素敵な事しませんか？\n<wait>
 m/MS6012.BIN	2:3F	0	0	DATA	ヤダ{02:09}		No way...	ours		reads: ヤダ・・・
-m/MS6012.BIN	2:3F	1	10	00	{04:FF}{08:52}　エッチ{=EB}{=9F}\n<wait>		 {04:FF}, you pervert{=EB}{=9F}\n<wait>	ours		reads: って　エッチ{=EB}{=9F}\n<wait>
+m/MS6012.BIN	2:3F	1	12	1F01	{08:52}　エッチ{=EB}{=9F}\n<wait>		 {04:FF}, you pervert{=EB}{=9F}\n<wait>	ours		reads: って　エッチ{=EB}{=9F}\n<wait> @rebase-tagdiff
 m/MS6012.BIN	2:40	0	0	DATA	{08:56}　{08:48}{08:81}あ　まわりが気になり{08:5A}\n<wait>		But like this, I do worry about who's watching.\n<wait>	ours		reads: でも　これじゃあ　まわりが気になります\n<wait>
 m/MS6012.BIN	2:41	0	0	DATA	二人きりの時に{08:4A}下{08:49}ね{=EB}{=9F}\n<wait>		Please save that for when we're alone together{=EB}{=9F}\n<wait>	ours		reads: 二人きりの時にして下さいね{=EB}{=9F}\n<wait>
 m/MS6012.BIN	2:42	0	0	DATA	えーい！　ドルミナぁー！\n<wait>		There! Dormina!\n<wait>	ours		
@@ -135,7 +135,7 @@ m/MS6012.BIN	2:45	0	0	DATA	邪魔者は{01:23}は　目覚め{08:25}{08:85}{08:5
 m/MS6012.BIN	2:46	0	0	DATA	私に何を{08:4A}く{08:2F}の{08:55}か？\n<wait>		What will you do for me?\n<wait>	ours		reads: 私に何をしてくれるのですか？\n<wait>
 m/MS6012.BIN	2:47	0	0	DATA	あん{=EB}{=9F}\n<wait>		Ahn{=EB}{=9F}\n<wait>	ours		
 m/MS6012.BIN	2:48	0	0	DATA	{08:48}でおしまい？\n<wait>		Is that all, then?\n<wait>	ours		reads: これでおしまい？\n<wait>
-m/MS6012.BIN	2:49	0	4	00	{04:FF}さんて　あまり慣れて\nいらっしゃら{08:25}み{08:4E}{02:09}\n<wait>		{04:FF}, you don't seem very experienced\nwith this... do you...\n<wait>	ours		reads: さんて　あまり慣れて\nいらっしゃらないみたい・・・\n<wait>
+m/MS6012.BIN	2:49	0	6	1F01	さんて　あまり慣れて\nいらっしゃら{08:25}み{08:4E}{02:09}\n<wait>		{04:FF}, you don't seem very experienced\nwith this... do you...\n<wait>	ours		reads: さんて　あまり慣れて\nいらっしゃらないみたい・・・\n<wait> @rebase-tagdiff
 m/MS6012.BIN	2:4A	0	0	DATA	あ{02:09}すご・・い\n<wait>		Ah... a-amazing...\n<wait>	ours		reads: あ・・・すご・・い\n<wait>
 m/MS6012.BIN	2:4B	0	0	DATA	お願い　止め{08:25}で！\n<wait>		Please, don't stop!\n<wait>	ours		reads: お願い　止めないで！\n<wait>
 m/MS6012.BIN	2:4C	0	0	DATA	優しく{08:4A}下{08:49}ね{=EB}{=9F}\n<wait>		Please be gentle with me{=EB}{=9F}\n<wait>	ours		reads: 優しくして下さいね{=EB}{=9F}\n<wait>
@@ -158,8 +158,8 @@ m/MS6012.BIN	4:04	0	0	DATA	そう{08:6B}\n<wait>		Is that so.\n<wait>	ours		@dup
 m/MS6012.BIN	4:05	0	0	DATA	{08:81}あ　さ{08:69}{08:7D}\n<wait>		Well then, farewell.\n<wait>	ours		@dupid; two records share this id in one container; editable because nothing here branches; reads: じゃあ　さようなら\n<wait>
 m/MS6012.BIN	4:06	0	0	DATA	何が欲しいの？\n<wait>		What is it you want?\n<wait>	ours		@dupid; two records share this id in one container; editable because nothing here branches
 m/MS6012.BIN	4:07	0	0	DATA	私は　		I am 	ours		@dupid; two records share this id in one container; editable because nothing here branches
-m/MS6012.BIN	4:07	1	10	00	{04:EF}の		 {04:EF}. 	ours		@dupid; two records share this id in one container; editable because nothing here branches; reads: の
-m/MS6012.BIN	4:07	2	18	00	{04:EF}{08:55}\n今後とも　よろしくお願いし{08:5A}ね\n<wait>		{04:EF}.\nI do hope we shall get along.\n<wait>	ours		@dupid; two records share this id in one container; editable because nothing here branches; reads: です\n今後とも　よろしくお願いしますね\n<wait>
+m/MS6012.BIN	4:07	1	12	1F01	の		 {04:EF}. 	ours		@dupid; two records share this id in one container; editable because nothing here branches; reads: の @rebase-tagdiff
+m/MS6012.BIN	4:07	2	20	1F01	{08:55}\n今後とも　よろしくお願いし{08:5A}ね\n<wait>		{04:EF}.\nI do hope we shall get along.\n<wait>	ours		@dupid; two records share this id in one container; editable because nothing here branches; reads: です\n今後とも　よろしくお願いしますね\n<wait> @rebase-tagdiff
 m/MS6012.BIN	4:08	0	0	DATA	{08:48}を　貴方にあげるわ\n<wait>		I shall give you this.\n<wait>	ours		@dupid; two records share this id in one container; editable because nothing here branches; reads: これを　貴方にあげるわ\n<wait>
 m/MS6012.BIN	4:09	0	0	DATA	悪いの{08:74}ど		I am sorry, but 	ours		@dupid; two records share this id in one container; editable because nothing here branches; reads: 悪いのだけど
 m/MS6012.BIN	4:0A	0	0	DATA	今は　持{08:52}{08:24}み{08:4E}\n<wait>		it seems I have none at present.\n<wait>	ours		@dupid; two records share this id in one container; editable because nothing here branches; reads: 今は　持っていないみたい\n<wait>
@@ -222,7 +222,7 @@ m/MS6012.BIN	4:41	0	0	DATA	{08:7A}事{02:09}言わ{08:25}で下{08:49}\n<wait>		
 m/MS6012.BIN	4:42	0	0	DATA	{08:0E}を呼び{08:5A}よ！\n<wait>		I'll call for my demon!\n<wait>	ours		@dupid; two records share this id in one container; editable because nothing here branches; reads: 仲魔を呼びますよ！\n<wait>
 m/MS6012.BIN	4:43	0	0	DATA	{08:48}は御返しし{08:5A}\n<wait>		I shall return this to you.\n<wait>	ours		@dupid; two records share this id in one container; editable because nothing here branches; reads: これは御返しします\n<wait>
 m/MS6012.BIN	4:44	0	0	DATA	ああ　御父様　御母様{02:09}・\n{08:90}か　		Ah, Father, Mother......\nPlease, watch over 	ours		@dupid; two records share this id in one container; editable because nothing here branches; reads: ああ　御父様　御母様・・・・\nどうか　
-m/MS6012.BIN	4:44	1	35	00	{04:EF}を御守り下{08:49}！！\n<wait>		{04:EF}!!\n<wait>	ours		@dupid; two records share this id in one container; editable because nothing here branches; reads: を御守り下さい！！\n<wait>
+m/MS6012.BIN	4:44	1	37	1F01	を御守り下{08:49}！！\n<wait>		{04:EF}!!\n<wait>	ours		@dupid; two records share this id in one container; editable because nothing here branches; reads: を御守り下さい！！\n<wait> @rebase-tagdiff
 m/MS6012.BIN	4:45	0	0	DATA	何{08:55}{08:52}？\n<wait>		What did you say?\n<wait>	ours		@dupid; two records share this id in one container; editable because nothing here branches; reads: 何ですって？\n<wait>
 m/MS6012.BIN	4:46	0	0	DATA	持{08:52}いらっしゃら{08:25}では　{08:25}{08:55}か！\n<wait>		Why, you don't even have one!\n<wait>	ours		@dupid; two records share this id in one container; editable because nothing here branches; reads: 持っていらっしゃらないでは　ないですか！\n<wait>
 m/MS6012.BIN	4:47	0	0	DATA	ＭＡＧが足り{08:25}の{08:55}か？\n<wait>		Are you saying you're short on MAG?\n<wait>	ours		@dupid; two records share this id in one container; editable because nothing here branches; reads: ＭＡＧが足りないのですか？\n<wait>
@@ -302,7 +302,7 @@ m/MS6012.BIN	4:90	0	0	DATA	{08:90}{08:4A}貴方に？\n<wait>		Why on earth woul
 m/MS6012.BIN	4:91	0	0	DATA	くすくす		Tee-hee...	ours		@dupid; two records share this id in one container; editable because nothing here branches
 m/MS6012.BIN	4:92	0	0	DATA	あの{02:09}{08:5C}少し頂け{08:15}\n<wait>		Um... might I have a little more?\n<wait>	ours		@dupid; two records share this id in one container; editable because nothing here branches; reads: あの・・・もう少し頂けますか？\n<wait>
 m/MS6012.BIN	4:93	0	0	DATA	人殺し！\n<wait>		Murderer!\n<wait>	ours		@dupid; two records share this id in one container; editable because nothing here branches
-m/MS6012.BIN	4:94	0	4	00	{04:FF}{08:55}よね？\n{08:90}{08:55}か？　御元気で{08:4B}？\n<wait>		{04:FF}, is it not?\nHow have you been? Quite well, I hope?\n<wait>	ours		@dupid; two records share this id in one container; editable because nothing here branches; reads: ですよね？\nどうですか？　御元気でした？\n<wait>
+m/MS6012.BIN	4:94	0	6	1F01	{08:55}よね？\n{08:90}{08:55}か？　御元気で{08:4B}？\n<wait>		{04:FF}, is it not?\nHow have you been? Quite well, I hope?\n<wait>	ours		@dupid; two records share this id in one container; editable because nothing here branches; reads: ですよね？\nどうですか？　御元気でした？\n<wait> @rebase-tagdiff
 m/MS6012.BIN	4:95	0	0	DATA	イヤッ！　来{08:25}で！\n<wait>		No! Don't come any closer!\n<wait>	ours		@dupid; two records share this id in one container; editable because nothing here branches; reads: イヤッ！　来ないで！\n<wait>
 m/MS6012.BIN	4:96	0	0	DATA	見逃{08:4A}あげま{08:80}\n<wait>		I shall let this slide.\n<wait>	ours		@dupid; two records share this id in one container; editable because nothing here branches; reads: 見逃してあげましょう\n<wait>
 m/MS6012.BIN	4:97	0	0	DATA	私の真の姿　見{08:67}差し上げま{08:80}！\n<wait>		Allow me to show you my true form!\n<wait>	ours		@dupid; two records share this id in one container; editable because nothing here branches; reads: 私の真の姿　見せて差し上げましょう！\n<wait>
@@ -358,9 +358,9 @@ m/MS6012.BIN	11:17	0	0	DATA	素敵！\n<wait>		Wonderful!\n<wait>	ours
 m/MS6012.BIN	13:15	0	0	DATA	{08:0B}を殺{08:4A}　平気{08:6B}{08:55}か？\n<wait>		Does it not trouble you, killing demons?\n<wait>	ours		reads: 悪魔を殺して　平気なのですか？\n<wait>
 m/MS6012.BIN	13:16	0	0	DATA	{08:0B}は　存在{08:4A}は　いけ{08:25}ので{08:80}か？\n<wait>		Are demons truly not permitted to exist?\n<wait>	ours		reads: 悪魔は　存在しては　いけないのでしょうか？\n<wait>
 m/MS6012.BIN	13:17	0	0	DATA	難しい問題{08:55}ね{02:09}・\n<wait>		That is a difficult question....\n<wait>	ours		reads: 難しい問題ですね・・・・\n<wait>
-m/MS6012.BIN	13:18	0	4	00	{04:FF}　貴方{08:56}　分{08:42}{08:25}の{08:55}ね\n<wait>		So even you don't understand, do you\n<wait>	ours		reads: 　貴方でも　分からないのですね\n<wait>
+m/MS6012.BIN	13:18	0	6	1F01	　貴方{08:56}　分{08:42}{08:25}の{08:55}ね\n<wait>		So even you don't understand, do you\n<wait>	ours		reads: 　貴方でも　分からないのですね\n<wait> @rebase-tagdiff
 m/MS6012.BIN	13:19	0	0	DATA	私は　貴方の事が{02:09}好き\n<wait>		I... ... you.\n<wait>	ours		reads: 私は　貴方の事が・・・好き\n<wait>
-m/MS6012.BIN	13:1A	0	4	00	{04:FF}は　私の事が好き{08:55}か？\n<wait>		{04:FF}, do you like me?\n<wait>	ours		reads: は　私の事が好きですか？\n<wait>
+m/MS6012.BIN	13:1A	0	6	1F01	は　私の事が好き{08:55}か？\n<wait>		{04:FF}, do you like me?\n<wait>	ours		reads: は　私の事が好きですか？\n<wait> @rebase-tagdiff
 m/MS6012.BIN	13:1B	0	0	DATA	{08:0B}と{02:0B}は　共存出来{08:25}の{08:55}ね\n<wait>		So demons and humans really can't coexist, can they\n<wait>	ours		reads: 悪魔と人間は　共存出来ないのですね\n<wait>
 m/MS6012.BIN	13:1C	0	0	DATA	何だか　哀しく{08:1A}来ま{08:4B}わ{02:09}\n<wait>		Somehow, I've begun to feel quite sad....\n<wait>	ours		reads: 何だか　哀しくなって来ましたわ・・・\n<wait>
 m/MS6012.BIN	13:1D	0	0	DATA	私は　貴方の奴隷{08:55}\n<wait>		I am your slave.\n<wait>	ours		reads: 私は　貴方の奴隷です\n<wait>

@@ -3,7 +3,7 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0012.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}\n		There's nothing here...\n	v005		reads: 誰もいない‥‥‥\n @refalign
+m/MS0012.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}\n		There's nothing here...\n	v005		reads: 誰もいない‥‥‥\n; reads: 誰もいない‥‥‥\n @refalign
 m/MS0012.BIN	0:02	0	25	1FD2	酒呑童子：		Shuten-Douji:	ours		
 m/MS0012.BIN	0:02	1	37	1FD3	{08:45}より先{08:62}ヒルコ様の御寝所だ。\n{02:0B}風情が気安く通{08:2F}場所では{08:25}ぞ！\n<wait>		The bedchambers of our mistress, the noble Hiruko lie ahead.\nThe likes of humans have no business stepping inside.\n<wait>	v005		reads: ここより先は、ヒルコ様の御寝所だ。\n人間風情が気安く通れる場所ではないぞ！\n<wait>
 m/MS0012.BIN	0:02	2	109	1FD2	酒呑童子：		Shuten-Douji:	ours		
@@ -12,20 +12,20 @@ m/MS0012.BIN	0:03	0	5	1FD2	タケミナカタ：		Takeminakata:	v005
 m/MS0012.BIN	0:03	1	21	1FD3	{08:47}奥にヒルコ様がいらっしゃる。\n<wait>言うま{08:56}無いが{02:08}くれぐれも粗相の無い様にな。\n<wait>		She waits for you inside.\n<wait>I probably don't need to say this... but please, mind your manners.\n<wait>	v005		reads: この奥にヒルコ様がいらっしゃる。\n<wait>言うまでも無いが‥‥‥くれぐれも粗相の無い様にな。\n<wait>
 m/MS0012.BIN	0:04	0	110	1FD2	タケミナカタ：		Takeminakata:	v005		
 m/MS0012.BIN	0:04	1	126	1FD3	おお{02:08}		Oh......	ours		reads: おお‥‥‥
-m/MS0012.BIN	0:04	2	136	00	{04:FF}殿！！\n何と{08:68}御姿に{02:08}‥\n<wait>		{04:FF}-dono!!\nWhat a state you're in......\n<wait>	ours		reads: 殿！！\n何という御姿に‥‥‥‥\n<wait>
+m/MS0012.BIN	0:04	2	138	1F01	殿！！\n何と{08:68}御姿に{02:08}‥\n<wait>		{04:FF}-dono!!\nWhat a state you're in......\n<wait>	ours		reads: 殿！！\n何という御姿に‥‥‥‥\n<wait> @rebase-tagdiff
 m/MS0012.BIN	0:04	3	170	1FD2	タケミナカタ：		Takeminakata:	v005		
 m/MS0012.BIN	0:04	4	186	1FD3	{02:08}秘薬を{08:45}に！\n<wait>		......Bring the secret medicine, here!\n<wait>	ours		reads: ‥‥‥秘薬をここに！\n<wait>
 m/MS0012.BIN	0:04	5	209	1FD2	タケミナカタ：		Takeminakata:	v005		
 m/MS0012.BIN	0:04	6	225	1FD3	{02:08}御安心くだ{03:0C}。{08:48}は{02:0C}の間に伝わる秘薬{02:08}\nどんな重傷の者も、{08:4F}どころに{03:10}{08:8E}であろう{02:08}\n<wait>		......Rest assured. This is a secret medicine passed down among us......\nNo matter how grave the wound, it shall heal in an instant......\n<wait>	ours		reads: ‥‥‥御安心くだされ。これは我々の間に伝わる秘薬‥‥‥\nどんな重傷の者も、たちどころに回復するであろう‥‥‥\n<wait>
 m/MS0012.BIN	0:04	7	317	1FD0	タケミナカタ{08:62}		Takeminakata,	ours		reads: タケミナカタは、
-m/MS0012.BIN	0:04	8	335	00	{04:FF}に秘薬を振りか{08:43}{02:08}！\n<wait>{08:4C}、{08:4F}どころに		sprinkled the secret medicine onto {04:FF}......!\n<wait>Then, in an instant,	ours		reads: に秘薬を振りかけた‥‥‥！\n<wait>すると、たちどころに
-m/MS0012.BIN	0:04	9	380	00	{04:FF}は全快{08:17}！\n<wait>		{04:FF} was fully healed!!\n<wait>	ours		reads: は全快した！！\n<wait>
+m/MS0012.BIN	0:04	8	337	1F01	に秘薬を振りか{08:43}{02:08}！\n<wait>{08:4C}、{08:4F}どころに		sprinkled the secret medicine onto {04:FF}......!\n<wait>Then, in an instant,	ours		reads: に秘薬を振りかけた‥‥‥！\n<wait>すると、たちどころに @rebase-tagdiff
+m/MS0012.BIN	0:04	9	382	1F01	は全快{08:17}！\n<wait>		{04:FF} was fully healed!!\n<wait>	ours		reads: は全快した！！\n<wait> @rebase-tagdiff
 m/MS0012.BIN	0:04	10	401	1FD2	タケミナカタ：		Takeminakata:	v005		
 m/MS0012.BIN	0:04	11	417	1FD3	さあ、ヤマトタケル命{08:72}{08:4D}に御同伴の方々も{08:48}を{02:08}\n<wait>		Now, Yamato Takeru...... you and your companions, have some as well......\n<wait>	ours		reads: さあ、ヤマトタケル命‥‥それに御同伴の方々もこれを‥‥‥\n<wait>
 m/MS0012.BIN	0:04	12	472	1FD0	一行{08:62}秘薬を身体に振りかけ、全快{08:17}！\n<wait>		The group sprinkles the medicine over themselves, and is fully healed!!\n<wait>	ours		reads: 一行は、秘薬を身体に振りかけ、全快した！！\n<wait>
 m/MS0012.BIN	0:04	13	517	1FD2	タケミナカタ：		Takeminakata:	v005		
 m/MS0012.BIN	0:04	14	533	1FD3	{02:08}{08:48}で、きちんと{08:4B}話し合いが出来ると{08:68}{08:5E}。\n<wait>さて、		......Now we can finally have a proper discussion.\n<wait>Now then,	ours		reads: ‥‥‥これで、きちんとした話し合いが出来るというもの。\n<wait>さて、
-m/MS0012.BIN	0:04	15	590	00	{04:FF}殿。天津神達の提案と{08:62}如何{08:59}{08:5E}で{08:7B}か？\n<wait>		{04:FF}-dono. What exactly is this proposal from the heavenly gods?\n<wait>	ours		reads: 殿。天津神達の提案とは、如何なるものであるか？\n<wait>
+m/MS0012.BIN	0:04	15	592	1F01	殿。天津神達の提案と{08:62}如何{08:59}{08:5E}で{08:7B}か？\n<wait>		{04:FF}-dono. What exactly is this proposal from the heavenly gods?\n<wait>	ours		reads: 殿。天津神達の提案とは、如何なるものであるか？\n<wait> @rebase-tagdiff
 m/MS0012.BIN	0:04	16	727	1FD2	タケミナカタ：		Takeminakata:	v005		
 m/MS0012.BIN	0:04	17	743	1FD3	おお{02:08}‥ヤマトタケル命{02:08}！\n何と{08:68}事だ{02:08}！\n<wait>		Oh......! Yamato Takeru......!\nWhat is the meaning of this......!\n<wait>	ours		reads: おお‥‥‥‥ヤマトタケル命‥‥‥！\n何という事だ‥‥‥！\n<wait>
 m/MS0012.BIN	0:04	18	793	1FD2	タケミナカタ：		Takeminakata:	v005		
@@ -35,8 +35,8 @@ m/MS0012.BIN	0:04	21	848	1FD3	{02:08}御安心くだ{03:0C}。{08:48}は{02:0C}�
 m/MS0012.BIN	0:04	22	940	1FD0	タケミナカタ{08:62}ヤマトタケルに秘薬を振りか{08:43}{02:08}！\n<wait>{08:4C}、{08:4F}どころにヤマトタケルは全快{08:17}！\n<wait>		Takeminakata sprinkled the secret medicine onto Yamato Takeru......!\n<wait>Then, in an instant, Yamato Takeru was fully healed!!\n<wait>	ours		reads: タケミナカタは、ヤマトタケルに秘薬を振りかけた‥‥‥！\n<wait>すると、たちどころにヤマトタケルは全快した！！\n<wait>
 m/MS0012.BIN	0:04	23	1036	1FD2	タケミナカタ：		Takeminakata:	v005		
 m/MS0012.BIN	0:04	24	1052	1FD3	さあ、		Now then,	ours		
-m/MS0012.BIN	0:04	25	1062	00	{04:FF}殿{08:72}{08:4D}に御同伴の方々も{08:48}を{02:08}\n<wait>		{04:FF}-dono...... and those accompanying you, have some as well......\n<wait>	ours		reads: 殿‥‥それに御同伴の方々もこれを‥‥‥\n<wait>
-m/MS0012.BIN	0:04	26	1108	00	{04:FF}{08:62}アマテラス{08:42}の提案を、{08:79}{08:7E}タケミナカタに伝{08:41}。\n<wait>		You inform Takeminakata of Amaterasu's proposal.\n<wait>	v005		reads: は、アマテラスからの提案を、そのままタケミナカタに伝えた。\n<wait>
+m/MS0012.BIN	0:04	25	1064	1F01	殿{08:72}{08:4D}に御同伴の方々も{08:48}を{02:08}\n<wait>		{04:FF}-dono...... and those accompanying you, have some as well......\n<wait>	ours		reads: 殿‥‥それに御同伴の方々もこれを‥‥‥\n<wait> @rebase-tagdiff
+m/MS0012.BIN	0:04	26	1110	1F01	{08:62}アマテラス{08:42}の提案を、{08:79}{08:7E}タケミナカタに伝{08:41}。\n<wait>		You inform Takeminakata of Amaterasu's proposal.\n<wait>	v005		reads: は、アマテラスからの提案を、そのままタケミナカタに伝えた。\n<wait> @rebase-tagdiff
 m/MS0012.BIN	0:04	27	1167	1FD2	タケミナカタ：		Takeminakata:	v005		
 m/MS0012.BIN	0:04	28	1183	1FD3	俄かには信じ難い{02:08}\n{03:0B}三種の神器を携え、ヤマトタケル命を随伴させた御主の申す事だ。\n<wait>		It is quite hard for me to bring myself to believe you...\nThen again, you do wield the sacred regalia,\nand you are attended by Yamato Takeru.\n<wait>	v005		reads: 俄かには信じ難い‥‥‥\nしかし、三種の神器を携え、ヤマトタケル命を随伴させた御主の申す事だ。\n<wait>
 m/MS0012.BIN	0:04	29	1273	1FD2	タケミナカタ：		Takeminakata:	v005		
@@ -72,7 +72,7 @@ m/MS0012.BIN	0:04	58	2408	1FD3	今は確かに、国津神、天津神の間で�
 m/MS0012.BIN	0:04	59	2473	1FD2	タケミナカタ：		Takeminakata:	v005		
 m/MS0012.BIN	0:04	60	2489	1FD3	何と{08:4A}も、日本を{08:0B}共の手より守らねば{08:7D}ぬ。\nヒルコ様の御遺志を守り抜く上{08:56}{02:08}\n<wait>		Defending Japan from the demons is paramount.\nThat is what Lady Hiruko would have wanted. I'm sure of it...\n<wait>	v005		reads: 何としても、日本を悪魔共の手より守らねばならぬ。\nヒルコ様の御遺志を守り抜く上でも‥‥‥\n<wait>
 m/MS0012.BIN	0:04	61	2600	1FD2	ヤマトタケル：		Yamato Takeru:	v005		
-m/MS0012.BIN	0:04	62	2620	00	{04:FF}殿{02:08}\n<wait>		Katsuragi Ayato...\n<wait>	v005		reads: 殿‥‥‥\n<wait>
+m/MS0012.BIN	0:04	62	2622	1F01	殿{02:08}\n<wait>		Katsuragi Ayato...\n<wait>	v005		reads: 殿‥‥‥\n<wait> @rebase-tagdiff
 m/MS0012.BIN	0:04	63	2635	1FD2	ヤマトタケル：		Yamato Takeru:	v005		
 m/MS0012.BIN	0:04	64	2651	1FD3	私は{08:48}にて高天原に戻り、{08:47}事をアマテラス御大御神に報告{08:8E}事に致し{08:5A}。\n<wait>		I shall return to Takama-ga-hara to inform Lady Amaterasu\nof our success.\n<wait>	v005		reads: 私はこれにて高天原に戻り、この事をアマテラス御大御神に報告する事に致します。\n<wait>
 m/MS0012.BIN	0:04	65	2728	1FD2	ヤマトタケル：		Yamato Takeru:	v005		
@@ -98,13 +98,13 @@ m/MS0012.BIN	0:04	84	3569	1FD3	{03:0B}そこ{08:71}{08:4A}、吾に会い{08:4E}
 m/MS0012.BIN	0:04	85	3639	1FD2	ヒルコ：		Hiruko:	v005		
 m/MS0012.BIN	0:04	86	3649	1FD3	望みが{08:7B}{08:7C}、遠慮せずに言うてみるが良い。\n<wait>		Tell me, what is it that you desire.\n<wait>	v005		reads: 望みがあるならば、遠慮せずに言うてみるが良い。\n<wait>
 m/MS0012.BIN	0:04	87	3698	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>
-m/MS0012.BIN	0:04	88	3725	1FB2	勾玉について話す		Ask about Magatama	v005		menu option, declared width 20 columns @refalign
-m/MS0012.BIN	0:04	89	3743	1FB2	躊躇{08:8E}		Hesitate	v005		reads: 躊躇する; menu option, declared width 20 columns @refalign
-m/MS0012.BIN	0:04	90	3773	00	{04:FF}{08:62}ヒルコが持っ{08:14}と教えら{08:60}、ヤサカノマガタマについて話{08:4B}。\n<wait>	{04:FF}{08:62}ヒルコが持っ{08:14}と教えら{08:60}、ヤサカノマガタマについて話{08:4B}。\n<wait>				reads: は、ヒルコが持っていると教えられた、ヤサカノマガタマについて話した。\n<wait>
+m/MS0012.BIN	0:04	88	3725	1FB2	勾玉について話す		Ask about Magatama	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0012.BIN	0:04	89	3743	1FB2	躊躇{08:8E}		Hesitate	v005		reads: 躊躇する; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0012.BIN	0:04	90	3775	1F01	{08:62}ヒルコが持っ{08:14}と教えら{08:60}、ヤサカノマガタマについて話{08:4B}。\n<wait>	{08:62}ヒルコが持っ{08:14}と教えら{08:60}、ヤサカノマガタマについて話{08:4B}。\n<wait>				reads: は、ヒルコが持っていると教えられた、ヤサカノマガタマについて話した。\n<wait> @rebase-new
 m/MS0012.BIN	0:04	91	3842	1FD2	ヒルコ：	ヒルコ：	Hiruko:	v005		
-m/MS0012.BIN	0:04	92	3852	1FD3	如何にも{02:08}\nヤサカノマガタマで{08:3F}ば、吾が所蔵{08:4A}おる。\n<wait>		 	v005		reads: 如何にも‥‥‥\nヤサカノマガタマであれば、吾が所蔵しておる。\n<wait>; reads: は、ヒルコが持っていると教えられた、ヤサカノマガタマについて話した。\n<wait> @refalign @refalign-merged
-m/MS0012.BIN	0:04	93	3912	1FD2	ヒルコ：		 	v005		@refalign @refalign-merged
-m/MS0012.BIN	0:04	94	3922	1FD3	{08:79}マガタマが欲しいと、そなたは申すか？\n<wait>		 	v005		reads: そのマガタマが欲しいと、そなたは申すか？\n<wait>; reads: 如何にも‥‥‥\nヤサカノマガタマであれば、吾が所蔵しておる。\n<wait> @refalign @refalign-merged
+m/MS0012.BIN	0:04	92	3852	1FD3	如何にも{02:08}\nヤサカノマガタマで{08:3F}ば、吾が所蔵{08:4A}おる。\n<wait>		Correct. The Magatama is in my possession.\n<wait>	v005		reads: 如何にも‥‥‥\nヤサカノマガタマであれば、吾が所蔵しておる。\n<wait>; reads: は、ヒルコが持っていると教えられた、ヤサカノマガタマについて話した。\n<wait> @refalign @refalign-merged
+m/MS0012.BIN	0:04	93	3912	1FD2	ヒルコ：		Hiruko:	v005		@refalign @refalign-merged
+m/MS0012.BIN	0:04	94	3922	1FD3	{08:79}マガタマが欲しいと、そなたは申すか？\n<wait>		Are you trying to say that you would wish to take it for yourself?\n<wait>	v005		reads: そのマガタマが欲しいと、そなたは申すか？\n<wait>; reads: 如何にも‥‥‥\nヤサカノマガタマであれば、吾が所蔵しておる。\n<wait> @refalign @refalign-merged
 m/MS0012.BIN	0:04	95	3983	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
 m/MS0012.BIN	0:04	96	3987	1FB2	躊躇{08:8E}		Hesitate	v005		reads: 躊躇する; menu option, declared width 20 columns; reads: そのマガタマが欲しいと、そなたは申すか？\n<wait> @refalign
 m/MS0012.BIN	0:04	97	4013	1FD2	ヒルコ：	ヒルコ：	Hiruko:	v005		reads: はい; menu option, declared width 20 columns
@@ -160,17 +160,17 @@ m/MS0012.BIN	0:04	146	6037	1FD3	！！！！\n<wait>					reads: 残念ですが�
 m/MS0012.BIN	0:04	147	6061	1FD0	動揺{08:8E}国津神達{02:08}‥\n<wait>{08:7A}国津神達をしり目に、デカラビアは自らの五芳星の光の中で、\n既に消え{08:69}と{08:4A}{08:64}。\n<wait>		The deities aren't sure what to do...\n<wait>Sneering at them, Decarabia begins glowing with blinding light.\nIt appears that he is trying to teleport away.\n<wait>	v005		reads: 動揺する国津神達‥‥‥‥\n<wait>そんな国津神達をしり目に、デカラビアは自らの五芳星の光の中で、\n既に消えようとしていた。\n<wait>
 m/MS0012.BIN	0:04	148	6201	1FD1	＞{08:90}し{08:5A}か！！\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか！！\n<wait>; reads: 滅びの時を少々早めさせて頂きましょう！！\n<wait>
 m/MS0012.BIN	0:04	149	6238	1FB2	光の中に飛び込む		Leap at the light	v005		menu option, declared width 20 columns; reads: そう言うとデカラビアは、ヒルコ目がけて巨大な爆弾を放り投げた！！\n<wait> @refalign
-m/MS0012.BIN	0:04	150	6256	1FB2	爆弾に飛びつく		Leap at the bomb	v005		menu option, declared width 20 columns @refalign
-m/MS0012.BIN	0:04	151	6302	00	{04:FF}{08:62}光の中に飛び込{08:5F}！！\n<wait>		You leap at the light!\n<wait>	v005		reads: は、光の中に飛び込んだ！！\n<wait> @refalign
-m/MS0012.BIN	0:04	152	6387	00	{04:FF}は爆弾に飛びつ{08:64}！！\n		You leap at the bomb!\n	v005		reads: は爆弾に飛びついた！！\n; reads: 動揺する国津神達‥‥‥‥\n<wait>そんな国津神達をしり目に、デカラビアは自らの五芳星の光の中で、\n既に消えようとしていた。\n<wait> @rebase-unmatched idx159 en=You leap at the bomb!\n @refalign
+m/MS0012.BIN	0:04	150	6256	1FB2	爆弾に飛びつく		Leap at the bomb	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0012.BIN	0:04	151	6304	1F01	{08:62}光の中に飛び込{08:5F}！！\n<wait>		You leap at the light!\n<wait>	v005		reads: は、光の中に飛び込んだ！！\n<wait>; reads: は、光の中に飛び込んだ！！\n<wait> @refalign @rebase-new @refalign
+m/MS0012.BIN	0:04	152	6389	1F01	は爆弾に飛びつ{08:64}！！\n		You leap at the bomb!\n	v005		reads: は爆弾に飛びついた！！\n; reads: 動揺する国津神達‥‥‥‥\n<wait>そんな国津神達をしり目に、デカラビアは自らの五芳星の光の中で、\n既に消えようとしていた。\n<wait> @rebase-unmatched idx159 en=You leap at the bomb!\n @refalign @rebase-new @rebase-unmatched idx158 en=You leap at the light!\n<wait> @rebase-unmatched idx159 en=You leap at the bomb!\n @refalign
 m/MS0012.BIN	0:05	0	28	1FD2	ミュータント：		Mutant:	v005		
 m/MS0012.BIN	0:05	1	49	09	タケミナカタ様を負かすほ{08:6D}腕の持ち主{08:7D}、{08:47}闘技場で戦う事も{08:7B}まい。\n<wait>		If you had the skill to best Lord Takeminakata,\nyou'd have no need to fight here in this arena.\n<wait>	ours		reads: タケミナカタ様を負かすほどの腕の持ち主なら、この闘技場で戦う事もあるまい。\n<wait>
 m/MS0012.BIN	0:05	2	124	1FD2	ミュータント：		Mutant:	v005		
 m/MS0012.BIN	0:05	3	140	1FD3	お前にかなう{08:69}な者{08:62}{08:5C}{08:45}には{08:24}{02:08}\n		There's no one left here who could match you......\n	ours		reads: お前にかなうような者は、もうここにはいない‥‥‥\n
 m/MS0012.BIN	0:05	4	174	00	{02:08}‥闘技に参加{08:8E}のか？\n<wait>		...Are you interested in stepping in the arena?\n<wait>	v005		reads: ‥‥‥‥闘技に参加するのか？\n<wait>
 m/MS0012.BIN	0:05	5	205	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n
-m/MS0012.BIN	0:05	6	226	1FB2	参加{08:8E}		Yeah	v005		reads: 参加する; menu option, declared width 20 columns @refalign
-m/MS0012.BIN	0:05	7	234	1FB2	参加し{08:25}		No	v005		reads: 参加しない; menu option, declared width 20 columns @refalign
+m/MS0012.BIN	0:05	6	226	1FB2	参加{08:8E}		Yeah	v005		reads: 参加する; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0012.BIN	0:05	7	234	1FB2	参加し{08:25}		No	v005		reads: 参加しない; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0012.BIN	0:05	8	264	1FD2	ミュータント：	ミュータント：	Mutant:	v005		reads: 
 m/MS0012.BIN	0:05	9	280	1FD3	{02:08}‥そうか。\n<wait>	{02:08}‥そうか。\n<wait>	...Very well. <wait>	v005		reads: ‥‥‥‥そうか。\n<wait>
 m/MS0012.BIN	0:05	10	301	1FD2	ミュータント：		Mutant:	v005		
@@ -282,9 +282,9 @@ m/MS0012.BIN	0:0B	12	624	1FD3	{08:7A}私達{08:62}何とか{08:63}達の生き�
 m/MS0012.BIN	0:0C	0	24	1FD2	ミュータント：		Mutant:	v005		
 m/MS0012.BIN	0:0C	1	48	1F03	{08:47}先、{08:6D}様な方向に進んで行こうと、ヒルコ様の御遺志を守り、\nしっかりと見据えて歩んで行こうと思い{08:5A}。\n<wait>		Whatever direction we take from here, we'll honor Lady Hiruko's will,\nand keep our eyes fixed ahead as we walk forward.\n<wait>	ours		reads: この先、どの様な方向に進んで行こうと、ヒルコ様の御遺志を守り、\nしっかりと見据えて歩んで行こうと思います。\n<wait>
 m/MS0012.BIN	0:0C	2	163	1F03	ヒルコ様は必ずや、近い将来、{08:47}地に転生な{03:0C}{08:5A}。\n{08:79}日を待ち、私達は生きて行く{08:86}あり{02:0A}{02:08}。\n<wait>		Lady Hiruko will surely be reborn upon this land before long.\nUntil that day comes, all we can do is go on living......\n<wait>	ours		reads: ヒルコ様は必ずや、近い将来、この地に転生なされます。\nその日を待ち、私達は生きて行くしかありません‥‥‥。\n<wait>
-m/MS0012.BIN	0:0C	3	258	00	闘技場で傷つ{08:64}者{08:62}全てヒルコ様の御力によ{08:52}、戦いが終わると傷は\n癒{03:0C}{08:5A}。\n<wait>		The battles at the arena can be bloody at times, but once the fighting\nis over, all those who were injured are healed through Lady Hiruko's\ngrace.\n<wait>	v005		reads: 闘技場で傷ついた者は、全てヒルコ様の御力によって、戦いが終わると傷は\n癒されます。\n<wait> @refalign @refalign-merged
-m/MS0012.BIN	0:0C	4	338	1FD2	ミュータント：		 	v005		@refalign @refalign-merged
-m/MS0012.BIN	0:0C	5	354	1FD3	外部の方{08:42}すれば、奇妙で残酷な趣向に思{08:28}かも知れ{02:0A}が、お互いで戦い、\nお互いを高{08:2E}行為は精神の鍛錬、肉体の強化の為に止むを得{08:25}{08:5E}{08:6B}{08:55}。\n<wait>		 	v005		reads: 外部の方からすれば、奇妙で残酷な趣向に思えるかも知れませんが、お互いで戦い、\nお互いを高める行為は精神の鍛錬、肉体の強化の為に止むを得ないものなのです。\n<wait> @refalign @refalign-merged
+m/MS0012.BIN	0:0C	3	258	00	闘技場で傷つ{08:64}者{08:62}全てヒルコ様の御力によ{08:52}、戦いが終わると傷は\n癒{03:0C}{08:5A}。\n<wait>		The battles at the arena can be bloody at times, but once the fighting\nis over, all those who were injured are healed through Lady Hiruko's\ngrace.\n<wait>	v005		reads: 闘技場で傷ついた者は、全てヒルコ様の御力によって、戦いが終わると傷は\n癒されます。\n<wait>; reads: 闘技場で傷ついた者は、全てヒルコ様の御力によって、戦いが終わると傷は\n癒されます。\n<wait> @refalign @refalign-merged
+m/MS0012.BIN	0:0C	4	338	1FD2	ミュータント：		Mutant:	v005		@refalign @refalign-merged
+m/MS0012.BIN	0:0C	5	354	1FD3	外部の方{08:42}すれば、奇妙で残酷な趣向に思{08:28}かも知れ{02:0A}が、お互いで戦い、\nお互いを高{08:2E}行為は精神の鍛錬、肉体の強化の為に止むを得{08:25}{08:5E}{08:6B}{08:55}。\n<wait>		To an outsider, this might seem pointlessly cruel,\nbut I assure you that it is only done to keep our minds sharp\nand our bodies strong in case of an invasion.\n<wait>	v005		reads: 外部の方からすれば、奇妙で残酷な趣向に思えるかも知れませんが、お互いで戦い、\nお互いを高める行為は精神の鍛錬、肉体の強化の為に止むを得ないものなのです。\n<wait>; reads: 外部の方からすれば、奇妙で残酷な趣向に思えるかも知れませんが、お互いで戦い、\nお互いを高める行為は精神の鍛錬、肉体の強化の為に止むを得ないものなのです。\n<wait> @refalign @refalign-merged
 m/MS0012.BIN	0:0D	0	24	1FD2	ミュータント：		Mutant:	v005		
 m/MS0012.BIN	0:0D	1	48	1F03	天津神との同盟{08:62}現状{08:42}すれば致し方無い事とは思い{08:5A}。\n<wait>		Given our situation, allying with the heavenly gods seems unavoidable.\n<wait>	ours		reads: 天津神との同盟は、現状からすれば致し方無い事とは思います。\n<wait>
 m/MS0012.BIN	0:0D	2	111	1FD2	ミュータント：		Mutant:	v005		
@@ -342,14 +342,14 @@ m/MS0012.BIN	0:11	3	128	1FD3	不安で{08:25}と言えば嘘{08:55}。\n{08:55}�
 m/MS0012.BIN	0:11	4	202	1FD2	ミュータント：		Mutant:	v005		
 m/MS0012.BIN	0:11	5	218	1FD3	後はヒルコ様の御遺志に背かぬ様、慎重に行動{08:8E}のみ{08:55}。\n<wait>		All that's left is to act carefully, so as not to defy Lady Hiruko's will.\n<wait>	ours		reads: 後はヒルコ様の御遺志に背かぬ様、慎重に行動するのみです。\n<wait>
 m/MS0012.BIN	0:11	6	284	1F03	ヒルコ様がお亡くなりに{08:7D}{08:2F}{08:6A}て{02:08}‥\n<wait>		To think that Lady Hiruko would pass away......\n<wait>	ours		reads: ヒルコ様がお亡くなりになられるなんて‥‥‥‥\n<wait>
-m/MS0012.BIN	0:11	7	326	00	外部の{02:0B}が{08:47}地を訪{08:2F}{08:6A}て、何年ぶりの事で{08:80}！\n<wait>		It has been years since we last had an visitor from the outside!\n<wait>	v005		reads: 外部の人間がこの地を訪れるなんて、何年ぶりの事でしょう！\n<wait> @refalign @refalign-merged
-m/MS0012.BIN	0:11	8	379	1FD2	ミュータント：		 	v005		@refalign @refalign-merged
-m/MS0012.BIN	0:11	9	395	1FD3	{08:47}地に入{08:60}と{08:68}事{08:62}ヒルコ様に認めら{08:60}印し。\n{08:90}ぞ、御ゆっくりなさ{08:52}下{08:49}ね。\n<wait>		 	v005		reads: この地に入れたという事は、ヒルコ様に認められた印し。\nどうぞ、御ゆっくりなさって下さいね。\n<wait> @refalign @refalign-merged
+m/MS0012.BIN	0:11	7	326	00	外部の{02:0B}が{08:47}地を訪{08:2F}{08:6A}て、何年ぶりの事で{08:80}！\n<wait>		It has been years since we last had an visitor from the outside!\n<wait>	v005		reads: 外部の人間がこの地を訪れるなんて、何年ぶりの事でしょう！\n<wait>; reads: 外部の人間がこの地を訪れるなんて、何年ぶりの事でしょう！\n<wait> @refalign @refalign-merged
+m/MS0012.BIN	0:11	8	379	1FD2	ミュータント：		Mutant:	v005		@refalign @refalign-merged
+m/MS0012.BIN	0:11	9	395	1FD3	{08:47}地に入{08:60}と{08:68}事{08:62}ヒルコ様に認めら{08:60}印し。\n{08:90}ぞ、御ゆっくりなさ{08:52}下{08:49}ね。\n<wait>		The fact that you were able to pass through the barrier\nmeans that Lady Hiruko has given you her blessing.\n<wait>	v005		reads: この地に入れたという事は、ヒルコ様に認められた印し。\nどうぞ、御ゆっくりなさって下さいね。\n<wait>; reads: この地に入れたという事は、ヒルコ様に認められた印し。\nどうぞ、御ゆっくりなさって下さいね。\n<wait> @refalign @refalign-merged
 m/MS0012.BIN	0:12	0	2	1FD2	ミュータント：		Mutant:	v005		
 m/MS0012.BIN	0:12	1	26	1F03	{08:47}先{02:0C}を待ち受{08:29}の{08:62}{08:6D}様な未来{08:6B}か。\n今の私には何も予測が出来{02:0A}。\n<wait>		What kind of future awaits us from here on?\nRight now, I can't begin to guess.\n<wait>	ours		reads: この先我々を待ち受けるのは、どの様な未来なのか。\n今の私には何も予測が出来ません。\n<wait>
 m/MS0012.BIN	0:12	2	107	1F03	嗚呼{02:08}ヒルコ様{02:08}！！\n<wait>		Oh...... Lady Hiruko......!!\n<wait>	ours		reads: 嗚呼‥‥‥ヒルコ様‥‥‥！！\n<wait>
-m/MS0012.BIN	0:12	3	135	00	闘技場に入っ{08:50}、後の事は何も考えず、{08:82}、戦いに集中{08:8E}のみ{08:55}。\n<wait>		Once you enter the arena,\nyou should only focus on the battle in front of you.\n<wait>	v005		reads: 闘技場に入ったら、後の事は何も考えず、ただ、戦いに集中するのみです。\n<wait> @refalign @refalign-merged
-m/MS0012.BIN	0:12	4	204	1FD2	ミュータント：		 	v005		@refalign @refalign-merged
-m/MS0012.BIN	0:12	5	220	1FD3	邪念があ{08:52}{08:62}{08:79}戦いでは何も得られ{02:0A}。\n<wait>		 	v005		reads: 邪念があっては、その戦いでは何も得られません。\n<wait> @refalign @refalign-merged
+m/MS0012.BIN	0:12	3	135	00	闘技場に入っ{08:50}、後の事は何も考えず、{08:82}、戦いに集中{08:8E}のみ{08:55}。\n<wait>		Once you enter the arena,\nyou should only focus on the battle in front of you.\n<wait>	v005		reads: 闘技場に入ったら、後の事は何も考えず、ただ、戦いに集中するのみです。\n<wait>; reads: 闘技場に入ったら、後の事は何も考えず、ただ、戦いに集中するのみです。\n<wait> @refalign @refalign-merged
+m/MS0012.BIN	0:12	4	204	1FD2	ミュータント：		Mutant:	v005		@refalign @refalign-merged
+m/MS0012.BIN	0:12	5	220	1FD3	邪念があ{08:52}{08:62}{08:79}戦いでは何も得られ{02:0A}。\n<wait>		Worrying about what's going to happen will do you no good at that point.\n<wait>	v005		reads: 邪念があっては、その戦いでは何も得られません。\n<wait>; reads: 邪念があっては、その戦いでは何も得られません。\n<wait> @refalign @refalign-merged
 m/MS0012.BIN	0:13	0	2	1FD2	ミュータント：		Mutant:	v005		
 m/MS0012.BIN	0:13	1	18	1FD3	五体満足で{08:7B}事が、当り前の様に考{08:28}お前達に{08:62}私達ミュータントの\n気持ち{08:62}到底分かるまい{02:08}\n<wait>		People like you who take their physical capabilities for granted\ncould never understand how us mutants feel.\n<wait>	v005		reads: 五体満足である事が、当り前の様に考えるお前達には、私達ミュータントの\n気持ちは、到底分かるまい‥‥‥\n<wait>

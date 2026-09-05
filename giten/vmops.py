@@ -204,6 +204,41 @@ def _read_switch(data: bytes, i: int, out: list) -> int:
         i += 4
 
 
+#: ``1F01`` selectors whose only operand is an expression; every other selector
+#: reads a byte and then an expression (handler ``0x436920``, table ``0x436A4C``)
+RTSTR_EXPR_ONLY = frozenset({0x04, 0x05, 0x06, 0x0C, 0x0D, 0x0E, 0x0F, 0x11, 0x13})
+RTSTR_MAX = 0x13
+
+
+def _read_rtstr(data: bytes, i: int, out: list, tab: Table) -> int:
+    """``1F01``: print a runtime string (a name, a number, ...).  Decoded from
+    ``0x436920`` (``docs/format-notes.md`` section 2.11)::
+
+        [u8 selector]  then  selector in RTSTR_EXPR_ONLY -> [expr]
+                             otherwise                   -> [u8][expr]
+
+    ``1F01 08 00 04 FE`` is one instruction (selector 08 = a character's name,
+    u8 00, expr ``04 FE``); the recovered table had typed it as ``1F01 08``
+    followed by an end marker and a pool call, which put every span boundary
+    after a name print three bytes too early.
+    """
+    if i >= len(data):
+        raise TileError("1F01 selector past end of record at 0x%X" % i)
+    sel = data[i]
+    if sel > RTSTR_MAX:
+        raise TileError("1F01 selector 0x%02X at 0x%X is out of range" % (sel, i))
+    out.append(Operand("u8", i, 1, data[i:i + 1]))
+    i += 1
+    if sel not in RTSTR_EXPR_ONLY:
+        if i >= len(data):
+            raise TileError("1F01 operand past end of record at 0x%X" % i)
+        out.append(Operand("u8", i, 1, data[i:i + 1]))
+        i += 1
+    j = _read_expr(data, i, 0, tab)
+    out.append(Operand("expr", i, j - i, data[i:j]))
+    return j
+
+
 def _read_operands(data: bytes, i: int, slots, tab: Table) -> "tuple[int, list]":
     out = []
     for slot in slots:
@@ -223,6 +258,9 @@ def _read_operands(data: bytes, i: int, slots, tab: Table) -> "tuple[int, list]"
         elif kind == "switch":
             i = _read_switch(data, i, out)
             continue                       # entries were appended one by one
+        elif kind == "rtstr":
+            i = _read_rtstr(data, i, out, tab)
+            continue
         else:
             i += FIXED_SIZE[kind]
             if i > len(data):

@@ -649,6 +649,16 @@ jumps 783 bytes to the room exit.  The English build never relocated the 783, so
 table is now an ordinary operand, so relocation and `audit` treat it like any
 branch; the trace's `0F->` events name the case taken.
 
-### 2.11 `1F 01 nn` -- print runtime string **[VERIFIED by trace, 2026-09-04]**
+### 2.11 `1F 01` -- print runtime string **[VERIFIED by trace + disassembly, 2026-09-04]**
+
+Operands (handler `0x436920`, selector table `0x436A4C`, 20 cases): `[u8 selector]`,
+then `[expr]` for selectors `04 05 06 0C 0D 0E 0F 11 13`, else `[u8][expr]`.  So
+`1F01 08 00 04 FE` is one instruction -- selector 08 (a character's name), u8 00,
+expr `04 FE` -- and the text after it (`：`) is the whole span.  The first model
+(`1F01 nn` + a `00` end marker) was wrong: the `00` and `04 FE` were operands.
+Found when the overlay served "Yuuka:" and the engine, consuming the first three
+bytes as operands, displayed "ka:".  The string itself is executed as script
+from its own buffer through a call frame (the trace's `pc=0` events).
+
 
 `1F 01 nn` switches the interpreter to a runtime string buffer (the trace shows the PC at 0x0000 and Shift-JIS characters drawn from it until `00`), then returns. `nn = 00` is the player's name (葛城史人 by default); other indices print numbers (a `６` was observed). It is a real opcode with a real effect and must survive translation. The `00` that follows it in the data is the string terminator, not a fragment end.

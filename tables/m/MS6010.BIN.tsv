@@ -9,22 +9,22 @@ m/MS6010.BIN	0:B8	0	0	DATA	彼女と仲良くね{=EB}{=9F}\n<wait>		Be nice to h
 m/MS6010.BIN	0:B5	0	0	DATA	よ{08:18}あ\n<wait>		Yay!\n<wait>	ours		reads: よかったあ\n<wait>
 m/MS6010.BIN	0:B9	0	0	DATA	かわ{08:7F}子{08:81}{08:25}\n<wait>		Isn't she cute?\n<wait>	ours		reads: かわいい子じゃない\n<wait>
 m/MS6010.BIN	0:BA	0	0	DATA	根性{08:25}ん{08:81}ん！\n<wait>		No guts, much!\n<wait>	ours		reads: 根性ないんじゃん！\n<wait>
-m/MS6010.BIN	1:03	0	28	1FB2	ちょ{08:53}待{08:52}		Gladly	ours		reads: ちょっと待って; menu option, declared width 20 columns @rebase-unmatched idx0 en=Wait up
-m/MS6010.BIN	1:03	1	40	1FB2	さよ{08:7D}		No choice	ours		reads: さよなら; menu option, declared width 20 columns @rebase-unmatched idx1 en=Bye
+m/MS6010.BIN	1:03	0	28	1FB2	ちょ{08:53}待{08:52}		Gladly	ours		reads: ちょっと待って; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx0 en=Wait up @rebase-unmatched idx0 en=Wait up
+m/MS6010.BIN	1:03	1	40	1FB2	さよ{08:7D}		No choice	ours		reads: さよなら; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx1 en=Bye @rebase-unmatched idx1 en=Bye
 m/MS6010.BIN	1:03	2	85	1FB2	謝る	謝る	Not for you	ours		menu option, declared width 20 columns; reads: 
-m/MS6010.BIN	1:03	3	91	1FB2	別に					menu option, declared width 20 columns @rebase-new @rebase-unmatched idx3 en=Beg
-m/MS6010.BIN	1:03	4	171	1FB2	よろこんで					menu option, declared width 20 columns @rebase-new @rebase-unmatched idx4 en=Meh
-m/MS6010.BIN	1:03	5	183	1FB2	{08:80}が{08:25}	{08:80}が{08:25}				reads: しょうがない; menu option, declared width 20 columns @rebase-new
-m/MS6010.BIN	1:03	6	191	1FB2	誰がお前{08:6A}かに					reads: 誰がお前なんかに; menu option, declared width 20 columns @rebase-new
-m/MS6010.BIN	1:03	7	290	1FB2	なだ{08:2E}					reads: なだめる; menu option, declared width 20 columns; reads: しょうがない @rebase-new
-m/MS6010.BIN	1:03	8	298	1FB2	ほ{08:53}く					reads: ほっとく; menu option, declared width 20 columns; reads: 誰がお前なんかに @rebase-new
-m/MS6010.BIN	1:03	9	347	00	{04:EF}は感動{08:13}\nスキだらけだ！\n＞{08:0C}し{08:15}\n	{04:EF}は感動{08:13}\nスキだらけだ！\n＞{08:0C}し{08:15}\n				reads: は感動している\nスキだらけだ！\n＞攻撃しますか？\n; reads: まさか
+m/MS6010.BIN	1:03	3	91	1FB2	別に		Soothe	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx3 en=Beg @rebase-unmatched idx3 en=Beg
+m/MS6010.BIN	1:03	4	171	1FB2	よろこんで		Ignore	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx4 en=Meh @rebase-unmatched idx4 en=Meh
+m/MS6010.BIN	1:03	5	183	1FB2	{08:80}が{08:25}	{08:80}が{08:25}	Soothe	ours		reads: しょうがない; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new
+m/MS6010.BIN	1:03	6	191	1FB2	誰がお前{08:6A}かに		Ignore	ours		reads: 誰がお前なんかに; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new
+m/MS6010.BIN	1:03	7	290	1FB2	なだ{08:2E}		Yeah	ours		reads: なだめる; menu option, declared width 20 columns; reads: しょうがない @rebase-new
+m/MS6010.BIN	1:03	8	298	1FB2	ほ{08:53}く		Not really	ours		reads: ほっとく; menu option, declared width 20 columns; reads: 誰がお前なんかに @rebase-new
+m/MS6010.BIN	1:03	9	349	1F01	は感動{08:13}\nスキだらけだ！\n＞{08:0C}し{08:15}\n	は感動{08:13}\nスキだらけだ！\n＞{08:0C}し{08:15}\n				reads: は感動している\nスキだらけだ！\n＞攻撃しますか？\n; reads: まさか @rebase-new
 m/MS6010.BIN	1:03	10	558	1FB2	なだ{08:2E}	なだ{08:2E}	Soothe	ours		reads: なだめる; menu option, declared width 20 columns; reads: ペンタグランマ{=E6}{=00}
 m/MS6010.BIN	1:03	11	566	1FB2	無視{08:8E}		Ignore	ours		reads: 無視する; menu option, declared width 20 columns; reads: なだめる
-m/MS6010.BIN	1:03	12	692	1FB2	そう{08:55}		Soothe	ours		reads: そうです; menu option, declared width 20 columns; reads: ほっとく
-m/MS6010.BIN	1:03	13	700	1FB2	{08:4D}ほど{08:56}{08:25}	{08:4D}ほど{08:56}{08:25}	Ignore	ours		reads: それほどでもない; menu option, declared width 20 columns
-m/MS6010.BIN	1:03	14	885	1FB2	なだ{08:2E}	なだ{08:2E}	Yeah	ours		reads: なだめる; menu option, declared width 20 columns
-m/MS6010.BIN	1:03	15	893	1FB2	無視{08:8E}		Not really	ours		reads: 無視する; menu option, declared width 20 columns; reads: は感動している\nスキだらけだ！\n＞攻撃しますか？\n @rebase-unmatched idx15 en={04:EF} is totally moved!\nWide open!\n>Attack?\n @rebase-unmatched idx27 en=Soothe @rebase-unmatched idx28 en=Ignore
+m/MS6010.BIN	1:03	12	692	1FB2	そう{08:55}					reads: そうです; menu option, declared width 20 columns; reads: ほっとく @rebase-new
+m/MS6010.BIN	1:03	13	700	1FB2	{08:4D}ほど{08:56}{08:25}	{08:4D}ほど{08:56}{08:25}				reads: それほどでもない; menu option, declared width 20 columns @rebase-new
+m/MS6010.BIN	1:03	14	885	1FB2	なだ{08:2E}	なだ{08:2E}				reads: なだめる; menu option, declared width 20 columns @rebase-new
+m/MS6010.BIN	1:03	15	893	1FB2	無視{08:8E}					reads: 無視する; menu option, declared width 20 columns; reads: は感動している\nスキだらけだ！\n＞攻撃しますか？\n @rebase-unmatched idx15 en={04:EF} is totally moved!\nWide open!\n>Attack?\n @rebase-unmatched idx27 en=Soothe @rebase-unmatched idx28 en=Ignore @rebase-new @rebase-unmatched idx15 en={04:EF} is totally moved!\nWide open!\n>Attack?\n
 m/MS6010.BIN	1:72	0	0	DATA	ちょ{08:53}ー　調子クレてん{08:81}{08:25}わよ！\n<wait>		Hey, don't get carried away!\n<wait>	ours		reads: ちょっとー　調子クレてんじゃないわよ！\n<wait>
 m/MS6010.BIN	1:57	0	0	DATA	コイツ　むかつくぅー！\n<wait>		Ugh, so annoying!\n<wait>	ours		
 m/MS6010.BIN	1:73	0	0	DATA	も{08:61}てコイツぅ？\n{01:1C}が言{08:52}た　ヤツ{08:52}さー\n<wait>		Wait, is this the one?\nThe guy everyone's been talking about?\n<wait>	ours		reads: もしかしてコイツぅ？\nみんなが言ってた　ヤツってさー\n<wait>
@@ -48,7 +48,7 @@ m/MS6010.BIN	1:84	0	0	DATA	やだ　アンタ{08:52}ば\nけっこう　たく�
 m/MS6010.BIN	1:85	0	0	DATA	{01:16}に　ハート捧げてみ{08:25}？\n<wait>		Why don't you offer your heart to me?\n<wait>	ours		reads: あたしに　ハート捧げてみない？\n<wait>
 m/MS6010.BIN	1:86	0	0	DATA	{08:47}辺りで　{01:16}を知ら{08:25}{08:6A}て\n<wait>		Not knowing me around here...\n<wait>	ours		reads: この辺りで　あたしを知らないなんて\n<wait>
 m/MS6010.BIN	1:87	0	0	DATA	{01:16}は		I'm	ours		reads: あたしは
-m/MS6010.BIN	1:87	1	8	00	{04:EF}！\n覚えとくのねっ！\n<wait>		 {04:EF}! Remember that, 'kay!\n<wait>	ours		reads: ！\n覚えとくのねっ！\n<wait>
+m/MS6010.BIN	1:87	1	10	1F01	！\n覚えとくのねっ！\n<wait>		 {04:EF}! Remember that, 'kay!\n<wait>	ours		reads: ！\n覚えとくのねっ！\n<wait> @rebase-tagdiff
 m/MS6010.BIN	1:88	0	0	DATA	ちょ{08:53}ぉー　{01:38}の前をさぁー\nまんま素通りできると{08:56}　思{08:52}んのぉ？\n<wait>		Heeey, you think you can\njust waltz right past me like that?\n<wait>	ours		reads: ちょっとぉー　アタシの前をさぁー\nまんま素通りできるとでも　思ってんのぉ？\n<wait>
 m/MS6010.BIN	1:A6	0	0	DATA	ちょ{08:53}ぉ！\n小さく{08:52}　見え{08:25}{08:52}{08:68}のぉ？\n<wait>		Hey!\nSayin' I'm too small to see?\n<wait>	ours		reads: ちょっとぉ！\n小さくって　見えないっていうのぉ？\n<wait>
 m/MS6010.BIN	1:A8	0	0	DATA	おっきい{08:42}{08:52}\n<wait>		For bein' big?\n<wait>	ours		reads: おっきいからって\n<wait>
@@ -63,7 +63,7 @@ m/MS6010.BIN	2:3C	0	0	DATA	ねぇ　		Hey,	ours
 m/MS6010.BIN	2:3D	0	0	DATA	{08:7A}事よりぃ		Forget that,	ours		reads: そんな事よりぃ
 m/MS6010.BIN	2:3E	0	0	DATA	{08:7F}事し{08:25}？\n<wait>		Wanna have fun\n<wait>	ours		reads: いい事しない？\n<wait>
 m/MS6010.BIN	2:3F	0	0	DATA	やん		Ehh	ours		
-m/MS6010.BIN	2:3F	1	8	00	{04:FF}{08:52}ばエッチ！\n<wait>		 {04:FF}, you perv!\n<wait>	ours		reads: ってばエッチ！\n<wait>
+m/MS6010.BIN	2:3F	1	10	1F01	{08:52}ばエッチ！\n<wait>		 {04:FF}, you perv!\n<wait>	ours		reads: ってばエッチ！\n<wait> @rebase-tagdiff
 m/MS6010.BIN	2:40	0	0	DATA	まわりが気に{08:59}わね\n<wait>		People might see us.\n<wait>	ours		reads: まわりが気になるわね\n<wait>
 m/MS6010.BIN	2:41	0	0	DATA	ふたりっきりの時にしましょ\n<wait>		Let's make it just us.\n<wait>	ours		
 m/MS6010.BIN	2:42	0	0	DATA	えぇーい　ドルミナー！\n<wait>		Ugh, Dormina!\n<wait>	ours		
@@ -96,8 +96,8 @@ m/MS6010.BIN	4:04	0	0	DATA	あっそー\n<wait>		Oh yeah?\n<wait>	ours
 m/MS6010.BIN	4:05	0	0	DATA	{08:81}あねー！\n<wait>		See ya then!\n<wait>	ours		reads: じゃあねー！\n<wait>
 m/MS6010.BIN	4:06	0	0	DATA	何が欲しーの？\n<wait>		What ya want?\n<wait>	ours		
 m/MS6010.BIN	4:07	0	0	DATA	{01:38}は　		I'm	ours		reads: アタシは　
-m/MS6010.BIN	4:07	1	10	00	{04:EF}の		 {04:EF}'s	ours		reads: の
-m/MS6010.BIN	4:07	2	18	00	{04:EF}よ！\n今後とも　ヨロシクね{=EB}{=9F}\n<wait>		 {04:EF}! Take care of me from now on, 'kay{=EB}{=9F}\n<wait>	ours		reads: よ！\n今後とも　ヨロシクね{=EB}{=9F}\n<wait>
+m/MS6010.BIN	4:07	1	12	1F01	の		 {04:EF}'s	ours		reads: の @rebase-tagdiff
+m/MS6010.BIN	4:07	2	20	1F01	よ！\n今後とも　ヨロシクね{=EB}{=9F}\n<wait>		 {04:EF}! Take care of me from now on, 'kay{=EB}{=9F}\n<wait>	ours		reads: よ！\n今後とも　ヨロシクね{=EB}{=9F}\n<wait> @rebase-tagdiff
 m/MS6010.BIN	4:08	0	0	DATA	{08:48}あげる！\n<wait>		Take this!\n<wait>	ours		reads: これあげる！\n<wait>
 m/MS6010.BIN	4:09	0	0	DATA	悪い{08:84}		My bad,	ours		reads: 悪いけど
 m/MS6010.BIN	4:0A	0	0	DATA	今　持{08:52}{08:25}のー\n<wait>		Don't have it now.\n<wait>	ours		reads: 今　持ってないのー\n<wait>
@@ -246,7 +246,7 @@ m/MS6010.BIN	4:91	0	0	DATA	くすくす		Heh heh	ours
 m/MS6010.BIN	4:92	0	0	DATA	ねー　も{08:53}お！\n<wait>		Hey, gimme more!\n<wait>	ours		reads: ねー　もっとお！\n<wait>
 m/MS6010.BIN	4:93	0	0	DATA	人殺しッ！\n<wait>		A killer!\n<wait>	ours		
 m/MS6010.BIN	4:94	0	0	DATA	やだー　		No waaay -- 	ours		
-m/MS6010.BIN	4:94	1	12	00	{04:FF}{08:81}{08:25}！\nちょーしどおっ？\n<wait>		isn't that {04:FF}!\nHow's it going?\n<wait>	ours		reads: じゃない！\nちょーしどおっ？\n<wait>
+m/MS6010.BIN	4:94	1	14	1F01	{08:81}{08:25}！\nちょーしどおっ？\n<wait>		isn't that {04:FF}!\nHow's it going?\n<wait>	ours		reads: じゃない！\nちょーしどおっ？\n<wait> @rebase-tagdiff
 m/MS6010.BIN	4:95	0	0	DATA	来{08:25}でェ！\n<wait>		Stay away!\n<wait>	ours		reads: 来ないでェ！\n<wait>
 m/MS6010.BIN	4:96	0	0	DATA	見逃{08:4B}げるわ\n<wait>		I'll spare ya.\n<wait>	ours		reads: 見逃したげるわ\n<wait>
 m/MS6010.BIN	4:97	0	0	DATA	{01:16}のマジなトコ　見{08:4B}げる！\n<wait>		I'll show you the real me!\n<wait>	ours		reads: あたしのマジなトコ　見したげる！\n<wait>
@@ -292,15 +292,15 @@ m/MS6010.BIN	11:17	0	0	DATA	かっこいぃー！\n<wait>		So cooool!\n<wait>	ou
 m/MS6010.BIN	13:15	0	0	DATA	{08:0B}を殺{08:4A}平気{08:6B}？\n<wait>		OK killin' demons?\n<wait>	ours		reads: 悪魔を殺して平気なの？\n<wait>
 m/MS6010.BIN	13:16	0	0	DATA	{08:0B}は存在しちゃいけ{08:25}の？\n<wait>		Demons shouldn't exist, huh?\n<wait>	ours		reads: 悪魔は存在しちゃいけないの？\n<wait>
 m/MS6010.BIN	13:17	0	0	DATA	{08:8B}分かん{08:25}\n<wait>		I don't get it\n<wait>	ours		reads: よく分かんない\n<wait>
-m/MS6010.BIN	13:18	0	4	00	{04:FF}も　分かん{08:25}{08:5F}\n<wait>		{04:FF} doesn't get it either\n<wait>	ours		reads: も　分かんないんだ\n<wait>
+m/MS6010.BIN	13:18	0	6	1F01	も　分かん{08:25}{08:5F}\n<wait>		{04:FF} doesn't get it either\n<wait>	ours		reads: も　分かんないんだ\n<wait> @rebase-tagdiff
 m/MS6010.BIN	13:19	0	0	DATA	{01:38}は　		I	ours		reads: アタシは　
-m/MS6010.BIN	13:19	1	10	00	{04:FF}の事　スキ\n<wait>		 like {04:FF}\n<wait>	ours		reads: の事　スキ\n<wait>
-m/MS6010.BIN	13:1A	0	4	00	{04:FF}はスキー？\n<wait>		Do you like {04:FF}?\n<wait>	ours		reads: はスキー？\n<wait>
+m/MS6010.BIN	13:19	1	12	1F01	の事　スキ\n<wait>		 like {04:FF}\n<wait>	ours		reads: の事　スキ\n<wait> @rebase-tagdiff
+m/MS6010.BIN	13:1A	0	6	1F01	はスキー？\n<wait>		Do you like {04:FF}?\n<wait>	ours		reads: はスキー？\n<wait> @rebase-tagdiff
 m/MS6010.BIN	13:1B	0	0	DATA	{08:0B}と{02:0B}は共存{08:23}のね\n<wait>		So demons and humans can't coexist, huh\n<wait>	ours		reads: 悪魔と人間は共存できないのね\n<wait>
 m/MS6010.BIN	13:1C	0	0	DATA	何だか哀しくなっちゃ{08:51}ぁ\n<wait>		Somehow, feelin' sad now.\n<wait>	ours		reads: 何だか哀しくなっちゃったぁ\n<wait>
 m/MS6010.BIN	13:1D	0	0	DATA	{01:38}　貴方の奴隷よ！\n<wait>		I'm your slave!\n<wait>	ours		reads: アタシ　貴方の奴隷よ！\n<wait>
 m/MS6010.BIN	13:1E	0	0	DATA	だめぇ！　やっぱりだめ{08:6B}ー！\n今の		No good! I knew it, it's no good!\nWith you as you are now,	ours		reads: だめぇ！　やっぱりだめなのー！\n今の
-m/MS6010.BIN	13:1E	1	37	00	{04:FF}とは　だめ{08:6B}ー！\n<wait>		 it's no good!\n<wait>	ours		reads: とは　だめなのー！\n<wait>
+m/MS6010.BIN	13:1E	1	39	1F01	とは　だめ{08:6B}ー！\n<wait>		 it's no good!\n<wait>	ours		reads: とは　だめなのー！\n<wait> @rebase-tagdiff
 m/MS6010.BIN	13:14	0	0	DATA	{08:0B}のコトも\n{02:0B}と同じ様に扱{08:52}く{08:2F}ぅー？\n<wait>		Will you treat us demons\nthe same as humans too?\n<wait>	ours		reads: 悪魔のコトも\n人間と同じ様に扱ってくれるぅー？\n<wait>
 m/MS6010.BIN	14:0C	0	0	DATA	アンタ　{02:00}でしょ\nどー{08:4A}　{08:0B}を狩らなきゃいけ{08:25}の？\n<wait>		You're a Devil Buster, right?\nWhy do you have to hunt demons?\n<wait>	ours		reads: アンタ　デビルバスターでしょ\nどーして　悪魔を狩らなきゃいけないの？\n<wait>
 m/MS6010.BIN	14:0D	0	0	DATA	おとなしい{08:0B}だっ{08:14}{08:81}ん！\n{08:4D}に　{02:0B}だ{08:52}　牛トカ殺す{08:81}{08:25}？\nどー違うのっ？\n<wait>		There's totally gentle demons too, y'know!\nAnd besides, humans kill cows and stuff too, right?\nWhat's the difference?\n<wait>	ours		reads: おとなしい悪魔だっているじゃん！\nそれに　人間だって　牛トカ殺すじゃない？\nどー違うのっ？\n<wait>

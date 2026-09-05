@@ -5,9 +5,9 @@
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
 m/MS0051.BIN	0:00	0	51	1FD2	患者：		Patient:	v005		
 m/MS0051.BIN	0:00	1	59	1FD3	{08:10}に{08:0B}が進入{08:4A}来{08:2B}{08:52}の{08:62}本当{08:6B}か？\n		Is it really true that demons have made it inside the shelter?\n	v005		reads: シェルターに悪魔が進入して来てるってのは、本当なのか？\n
-m/MS0051.BIN	0:00	2	110	1FB2	口ごもる		Hesitate	v005		menu option, declared width 20 columns @refalign
-m/MS0051.BIN	0:00	3	120	1FB2	肯定{08:8E}		Confirm	v005		reads: 肯定する; menu option, declared width 20 columns @refalign
-m/MS0051.BIN	0:00	4	128	1FB2	否定{08:8E}		Deny	v005		reads: 否定する; menu option, declared width 20 columns @refalign
+m/MS0051.BIN	0:00	2	110	1FB2	口ごもる		Hesitate	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0051.BIN	0:00	3	120	1FB2	肯定{08:8E}		Confirm	v005		reads: 肯定する; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0051.BIN	0:00	4	128	1FB2	否定{08:8E}		Deny	v005		reads: 否定する; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0051.BIN	0:00	5	160	1FD2	患者：	患者：	Patient:	v005		reads: 山田
 m/MS0051.BIN	0:00	6	174	1FFA	{02:08}{08:72}	{02:08}{08:72}				reads: ‥‥‥‥‥; reads: ペンタグランマ;
 m/MS0051.BIN	0:00	7	184	1FFA	やはり本当な{08:5F}なッ！\n<wait>	やはり本当な{08:5F}なッ！\n<wait>	I knew it!\n<wait>	v005		reads: やはり本当なんだなッ！\n<wait>
@@ -76,7 +76,7 @@ m/MS0051.BIN	0:03	15	646	1FD3	心電図の調子が悪い{08:52}{08:42}、開け
 m/MS0051.BIN	0:04	0	16	1F04						
 m/MS0051.BIN	0:04	1	62	1FD2	医者：	医者：	Doctor:	v005		reads: 
 m/MS0051.BIN	0:04	2	78	1F04	原宿と連絡がつか{08:25}{08:5F}よ{02:08}‥困{08:51}なぁ。\n患者の症例を、問い合わせ{08:69}と思{08:52}た{08:5F}{08:84}{02:08}\n	原宿と連絡がつか{08:25}{08:5F}よ{02:08}‥困{08:51}なぁ。\n患者の症例を、問い合わせ{08:69}と思{08:52}た{08:5F}{08:84}{02:08}\n				reads: 原宿と連絡がつかないんだよ‥‥‥‥困ったなぁ。\n患者の症例を、問い合わせようと思ってたんだけど‥‥‥\n
-m/MS0051.BIN	0:04	3	161	18	忙しくて気が狂い{01:29}よ。\n<wait>医者に何かに{08:59}ん{08:81}{08:19}よ。せめてラボに行{08:52}{08:50}な。\n<wait>		I'm so busy I feel like I'm going to lose my mind.\n<wait>I should never have chosen to become a doctor.\nIf nothing else, I wish I was at least working at the lab.\n<wait>	v005		reads: 忙しくて気が狂いそうだよ。\n<wait>医者に何かになるんじゃなかったよ。せめてラボに行ってたらな。\n<wait> @refalign
+m/MS0051.BIN	0:04	3	161	18	忙しくて気が狂い{01:29}よ。\n<wait>医者に何かに{08:59}ん{08:81}{08:19}よ。せめてラボに行{08:52}{08:50}な。\n<wait>		I'm so busy I feel like I'm going to lose my mind.\n<wait>I should never have chosen to become a doctor.\nIf nothing else, I wish I was at least working at the lab.\n<wait>	v005		reads: 忙しくて気が狂いそうだよ。\n<wait>医者に何かになるんじゃなかったよ。せめてラボに行ってたらな。\n<wait>; reads: 忙しくて気が狂いそうだよ。\n<wait>医者に何かになるんじゃなかったよ。せめてラボに行ってたらな。\n<wait> @refalign
 m/MS0051.BIN	0:04	4	268	1FD2	看護婦：		Nurse:	v005		reads: 原宿と連絡がつかないんだよ‥‥‥‥困ったなぁ。\n患者の症例を、問い合わせようと思ってたんだけど‥‥‥\n
 m/MS0051.BIN	0:04	5	278	1FD3	{08:5C}、ドクターっ{08:50}。\n{08:73}に女を待たさ{08:2A}{08:6A}て{08:72}焦らすのが上手ね。\n<wait>		Come now, doctor. How long are you going to keep a lady waiting?\n<wait>	v005		reads: もう、ドクターったら。\nこんなに女を待たさせるなんて‥‥焦らすのが上手ね。\n<wait>; reads: 忙しくて気が狂いそうだよ。\n<wait>医者に何かになるんじゃなかったよ。せめてラボに行ってたらな。\n<wait>
 m/MS0051.BIN	0:04	6	346	1FD2	看護婦：		Nurse:	v005		
@@ -86,7 +86,7 @@ m/MS0051.BIN	0:04	9	409	1FD3	隣に患者さんが{08:40}のに{08:72}あんな�
 m/MS0051.BIN	0:04	10	464	1FD2	看護婦：		Nurse:	v005		
 m/MS0051.BIN	0:04	11	474	1FD3	{08:90}なさ{08:51}の？　ドクター？\n<wait>		Hmm? Is something wrong?\n<wait>	v005		reads: どうなさったの？　ドクター？\n<wait>; reads: 隣に患者さんがいるのに‥‥あんな激しいの私初めて。\n<wait>
 m/MS0051.BIN	0:04	12	511	1FD0	一方的に話し続{08:29}看護婦{08:62}		The nurse approaches the silent Katsuragi.\nShe then pushes you down and presses her lips against yours.\nLooks like you've gotten lucky.\n<wait>	v005		reads: 一方的に話し続ける看護婦は、
-m/MS0051.BIN	0:04	13	539	00	{04:FF}の側に近づいて来た。\nそ{08:4A}、肩に腕を廻し、強引に唇を押しつけてくる{02:08}ラッキーだ。\n<wait>					reads: の側に近づいて来た。\nそして、肩に腕を廻し、強引に唇を押しつけてくる‥‥‥ラッキーだ。\n<wait>; reads: どうなさったの？　ドクター？\n<wait>
+m/MS0051.BIN	0:04	13	541	1F01	の側に近づいて来た。\nそ{08:4A}、肩に腕を廻し、強引に唇を押しつけてくる{02:08}ラッキーだ。\n<wait>					reads: の側に近づいて来た。\nそして、肩に腕を廻し、強引に唇を押しつけてくる‥‥‥ラッキーだ。\n<wait>; reads: どうなさったの？　ドクター？\n<wait>
 m/MS0051.BIN	0:04	14	640	1FD2	看護婦：		Nurse:	v005		reads: 一方的に話し続ける看護婦は、
 m/MS0051.BIN	0:04	15	650	1FD3	ん{08:72}んん{08:72}何だか今日のドクター、若返{08:51}み{08:4E}{08:72}あん‥\n<wait>		Mh... Mmh... Doctor... You feel so youthful today... Ahn...\n<wait>	v005		reads: ん‥‥んん‥‥何だか今日のドクター、若返ったみたい‥‥あん‥\n<wait>; reads: の側に近づいて来た。\nそして、肩に腕を廻し、強引に唇を押しつけてくる‥‥‥ラッキーだ。\n<wait>
 m/MS0051.BIN	0:04	16	707	1FBA	{1E10:01003C}ん？\n<wait>		{1E10:01003C}Hmm?\n<wait>	v005		
@@ -114,67 +114,67 @@ m/MS0051.BIN	0:05	12	693	1FD2	女性：		Woman:	v005
 m/MS0051.BIN	0:05	13	701	1FD3	{08:45}は今、清掃中だよ！\n<wait>		I'm cleaning here!\n<wait>	v005		reads: ここは今、清掃中だよ！\n<wait>; reads: いらっしゃいませぇ！‥‥‥‥‥‥‥<wait>じゃなかった。\n<wait>ヤだわ、未だにウエイトレスの癖が抜けないみたい。\n扉が開くと、つい叫んじゃうのよぉ。\n<wait>
 m/MS0051.BIN	0:06	0	24	1F03						
 m/MS0051.BIN	0:06	1	37	1F03						
-m/MS0051.BIN	0:06	2	137	1FD2	{01:30}：		Doctor:	v005		reads: 医師： @refalign
-m/MS0051.BIN	0:06	3	143	1FD3	避難{08:4A}来た方々をとりあえず収容しま{08:4B}が、{08:47}ま{08:71}{08:62}\n怪我人が出た場合の対処に支障を来{08:4A}しまい{08:5A}。\n<wait>		We have managed to house the refugees for now.\nHowever, that leaves very little room for the patients.\n<wait>	v005		reads: 避難して来た方々をとりあえず収容しましたが、このままでは、\n怪我人が出た場合の対処に支障を来してしまいます。\n<wait> @refalign @refalign-merged
-m/MS0051.BIN	0:06	4	245	1FD2	看護婦：		 	v005		@refalign @refalign-merged
-m/MS0051.BIN	0:06	5	255	1FD3	入院患者にも迷惑が掛かり{08:5A}し{08:72}\n何処か別なエリアに避難場所を移動出来{08:25}ので{08:80}か？\n<wait>		 	v005		reads: 入院患者にも迷惑が掛かりますし‥‥\n何処か別なエリアに避難場所を移動出来ないのでしょうか？\n<wait> @refalign @refalign-merged
-m/MS0051.BIN	0:06	6	343	1FD2	{01:30}：		Nurse:	v005		reads: 医師： @refalign
-m/MS0051.BIN	0:06	7	349	1FD3	{02:0C}も最善の協力を致し{08:5A}{08:42}、{08:90}か{08:47}件を至急検討{08:4A}下{08:49}。\n<wait>		This arrangement is quite bad for the patients.\nIs there really no other area where the refugees could be placed?\n<wait>	v005		reads: 我々も最善の協力を致しますから、どうかこの件を至急検討して下さい。\n<wait> @refalign @refalign-merged
-m/MS0051.BIN	0:06	8	410	1FD2	看護婦：		 	v005		@refalign @refalign-merged
-m/MS0051.BIN	0:06	9	420	1FD3	お願いし{08:5A}。\n<wait>		 	v005		reads: お願いします。\n<wait> @refalign @refalign-merged
+m/MS0051.BIN	0:06	2	137	1FD2	{01:30}：		Doctor:	v005		reads: 医師：; reads: 医師： @refalign
+m/MS0051.BIN	0:06	3	143	1FD3	避難{08:4A}来た方々をとりあえず収容しま{08:4B}が、{08:47}ま{08:71}{08:62}\n怪我人が出た場合の対処に支障を来{08:4A}しまい{08:5A}。\n<wait>		We have managed to house the refugees for now.\nHowever, that leaves very little room for the patients.\n<wait>	v005		reads: 避難して来た方々をとりあえず収容しましたが、このままでは、\n怪我人が出た場合の対処に支障を来してしまいます。\n<wait>; reads: 避難して来た方々をとりあえず収容しましたが、このままでは、\n怪我人が出た場合の対処に支障を来してしまいます。\n<wait> @refalign @refalign-merged
+m/MS0051.BIN	0:06	4	245	1FD2	看護婦：		Nurse:	v005		@refalign @refalign-merged
+m/MS0051.BIN	0:06	5	255	1FD3	入院患者にも迷惑が掛かり{08:5A}し{08:72}\n何処か別なエリアに避難場所を移動出来{08:25}ので{08:80}か？\n<wait>		This arrangement is quite bad for the patients.\nIs there really no other area where the refugees could be placed?\n<wait>	v005		reads: 入院患者にも迷惑が掛かりますし‥‥\n何処か別なエリアに避難場所を移動出来ないのでしょうか？\n<wait>; reads: 入院患者にも迷惑が掛かりますし‥‥\n何処か別なエリアに避難場所を移動出来ないのでしょうか？\n<wait> @refalign @refalign-merged
+m/MS0051.BIN	0:06	6	343	1FD2	{01:30}：		Doctor:	v005		reads: 医師：; reads: 医師： @refalign
+m/MS0051.BIN	0:06	7	349	1FD3	{02:0C}も最善の協力を致し{08:5A}{08:42}、{08:90}か{08:47}件を至急検討{08:4A}下{08:49}。\n<wait>		We will offer you our full support. Please, find out what's going on.\n<wait>	v005		reads: 我々も最善の協力を致しますから、どうかこの件を至急検討して下さい。\n<wait>; reads: 我々も最善の協力を致しますから、どうかこの件を至急検討して下さい。\n<wait> @refalign @refalign-merged
+m/MS0051.BIN	0:06	8	410	1FD2	看護婦：		Nurse:	v005		@refalign @refalign-merged
+m/MS0051.BIN	0:06	9	420	1FD3	お願いし{08:5A}。\n<wait>		You're our only hope.\n<wait>	v005		reads: お願いします。\n<wait>; reads: お願いします。\n<wait> @refalign @refalign-merged
 m/MS0051.BIN	0:06	10	479	1FD2	医者：	医者：	Yuuka:	v005		reads: 
 m/MS0051.BIN	0:06	11	487	1FD3	何だね？\n<wait>用が無い{08:7D}、無闇に入{08:52}来{08:25}でく{08:60}まえ。\n<wait>	何だね？\n<wait>用が無い{08:7D}、無闇に入{08:52}来{08:25}でく{08:60}まえ。\n<wait>	Yeah... I'll let you know.\n<wait>	v005		reads: 何だね？\n<wait>用が無いなら、無闇に入って来ないでくれたまえ。\n<wait>
 m/MS0051.BIN	0:06	12	568	1FD2	看護婦：	看護婦：	Yuuka:	v005		
-m/MS0051.BIN	0:06	13	578	1FD3	予め言{08:52}置き{08:5A}{08:84}、<wait>電話番号は教え{02:0A}。\nＢＷＨのサイズも、ノーコメント{08:55}。\n<wait>多いん{08:55}よね、そう{08:68}事聞く人{08:52}。\n<wait>		 	v005		reads: 予め言って置きますけど、<wait>電話番号は教えません。\nＢＷＨのサイズも、ノーコメントです。\n<wait>多いんですよね、そういう事聞く人って。\n<wait> @refalign @refalign-merged
-m/MS0051.BIN	0:06	14	720	1FD2	女性：		 	v005		reads: 何だね？\n<wait>用が無いなら、無闇に入って来ないでくれたまえ。\n<wait> @refalign @refalign-merged
-m/MS0051.BIN	0:06	15	728	1FD3	お見舞いだっ{08:50}、病室が違うん{08:81}{08:25}かい？\n<wait>{08:45}は今清掃中だよ。\n<wait>		 	v005		reads: お見舞いだったら、病室が違うんじゃないかい？\n<wait>ここは今清掃中だよ。\n<wait> @refalign @refalign-merged
-m/MS0051.BIN	0:06	16	842	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 予め言って置きますけど、<wait>電話番号は教えません。\nＢＷＨのサイズも、ノーコメントです。\n<wait>多いんですよね、そういう事聞く人って。\n<wait> @refalign
-m/MS0051.BIN	0:06	17	848	1FD3	{01:2A}、		Thank you, Katsuragi-kun.\nI can't remember the last time I felt this horrible...\n<wait>\nYuuka's face looks completely pale.\nAgain, it's not like you can blame her.\n<wait>\n>What will you do?\n<wait>	v005		reads: ありがとう、 @refalign @refalign-merged
-m/MS0051.BIN	0:06	18	856	00	{04:FF}くん。\nやっぱり、何だか気分が悪いの{08:72}吐きそうな感じ。\n<wait>		 	v005		reads: くん。\nやっぱり、何だか気分が悪いの‥‥吐きそうな感じ。\n<wait>; reads: お見舞いだったら、病室が違うんじゃないかい？\n<wait>ここは今清掃中だよ。\n<wait> @refalign @refalign-merged
-m/MS0051.BIN	0:06	19	924	00	{04:FE}は真っ青な顔を{08:4A}そう言{08:51}。\n{02:08}無理も{08:25}。\n<wait>		 	v005		reads: は真っ青な顔をしてそう言った。\n‥‥‥無理もない。\n<wait>; reads: ： @refalign @refalign-merged
-m/MS0051.BIN	0:06	20	974	1FD1	＞{02:06}\n<wait>		 	v005		reads: ＞どうしますか？\n<wait>; reads: ありがとう、 @refalign @refalign-merged
-m/MS0051.BIN	0:06	21	1001	1FB2	{01:32}？		Will you be alright?	v005		reads: 大丈夫？; menu option, declared width 20 columns; reads: くん。\nやっぱり、何だか気分が悪いの‥‥吐きそうな感じ。\n<wait> @refalign
-m/MS0051.BIN	0:06	22	1007	1FB2	何か出来る事{08:7B}？		Can I do something?	v005		reads: 何か出来る事ある？; menu option, declared width 20 columns; reads: は真っ青な顔をしてそう言った。\n‥‥‥無理もない。\n<wait> @refalign
-m/MS0051.BIN	0:06	23	1025	1FB2	{08:81}あ僕は{08:48}で		I'll be going now	v005		reads: じゃあ僕はこれで; menu option, declared width 20 columns; reads: ＞どうしますか？\n<wait> @refalign
-m/MS0051.BIN	0:06	24	1065	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 大丈夫？; menu option, declared width 20 columns @refalign
-m/MS0051.BIN	0:06	25	1071	1FD3	{01:32}、{08:63}で何とか出来るわ{08:72}。\n{08:56}、服とか少し緩め{08:4E}の{08:72}悪いの{08:74}ど{02:08}。\n<wait>		Don't worry about me. I'll pull through somehow. Now, how to put this...\nI kinda want to take some of this armour off. I hate to ask,\nbut could you...?\n<wait>	v005		reads: 大丈夫、自分で何とか出来るわ‥‥。\nでも、服とか少し緩めたいの‥‥悪いのだけど‥‥‥。\n<wait>; reads: 何か出来る事ある？; menu option, declared width 20 columns @refalign
-m/MS0051.BIN	0:06	26	1149	00	{04:FE}は少し頬を赤らめ、目を逸らしながらそう言うと、後ろを向いて{08:1F}。\n<wait>		Too embarrassed to continue, Yuuka turns her back to you.\n<wait>	v005		reads: は少し頬を赤らめ、目を逸らしながらそう言うと、後ろを向いてしまった。\n<wait>; reads: じゃあ僕はこれで; menu option, declared width 20 columns @refalign
+m/MS0051.BIN	0:06	13	578	1FD3	予め言{08:52}置き{08:5A}{08:84}、<wait>電話番号は教え{02:0A}。\nＢＷＨのサイズも、ノーコメント{08:55}。\n<wait>多いん{08:55}よね、そう{08:68}事聞く人{08:52}。\n<wait>		Thank you, Katsuragi-kun.\n<wait>	v005		reads: 予め言って置きますけど、<wait>電話番号は教えません。\nＢＷＨのサイズも、ノーコメントです。\n<wait>多いんですよね、そういう事聞く人って。\n<wait>; reads: 予め言って置きますけど、<wait>電話番号は教えません。\nＢＷＨのサイズも、ノーコメントです。\n<wait>多いんですよね、そういう事聞く人って。\n<wait> @refalign @refalign-merged
+m/MS0051.BIN	0:06	14	720	1FD2	女性：		Yuuka:	v005		reads: 何だね？\n<wait>用が無いなら、無闇に入って来ないでくれたまえ。\n<wait> @refalign @refalign-merged
+m/MS0051.BIN	0:06	15	728	1FD3	お見舞いだっ{08:50}、病室が違うん{08:81}{08:25}かい？\n<wait>{08:45}は今清掃中だよ。\n<wait>		Whoa! What the heck, Katsuragi-kun!?\nDon't just walk in like that!\n<wait>	v005		reads: お見舞いだったら、病室が違うんじゃないかい？\n<wait>ここは今清掃中だよ。\n<wait>; reads: お見舞いだったら、病室が違うんじゃないかい？\n<wait>ここは今清掃中だよ。\n<wait> @refalign @refalign-merged
+m/MS0051.BIN	0:06	16	844	1F01	：		:	v005		reads: ：; reads: 予め言って置きますけど、<wait>電話番号は教えません。\nＢＷＨのサイズも、ノーコメントです。\n<wait>多いんですよね、そういう事聞く人って。\n<wait> @refalign @refalign
+m/MS0051.BIN	0:06	17	848	1FD3	{01:2A}、		Thank you, Katsuragi-kun.\nI can't remember the last time I felt this horrible...\n<wait>\nYuuka's face looks completely pale.\nAgain, it's not like you can blame her.\n<wait>\n>What will you do?\n<wait>	v005		reads: ありがとう、; reads: ありがとう、 @refalign @refalign-merged @refalign @refalign-merged
+m/MS0051.BIN	0:06	18	858	1F01	くん。\nやっぱり、何だか気分が悪いの{08:72}吐きそうな感じ。\n<wait>		 	v005		reads: くん。\nやっぱり、何だか気分が悪いの‥‥吐きそうな感じ。\n<wait>; reads: お見舞いだったら、病室が違うんじゃないかい？\n<wait>ここは今清掃中だよ。\n<wait> @refalign @refalign-merged @refalign @refalign-merged
+m/MS0051.BIN	0:06	19	926	1F01	は真っ青な顔を{08:4A}そう言{08:51}。\n{02:08}無理も{08:25}。\n<wait>		 	v005		reads: は真っ青な顔をしてそう言った。\n‥‥‥無理もない。\n<wait>; reads: ： @refalign @refalign-merged @refalign @refalign-merged
+m/MS0051.BIN	0:06	20	974	1FD1	＞{02:06}\n<wait>		 	v005		reads: ＞どうしますか？\n<wait>; reads: ありがとう、 @refalign @refalign-merged @refalign @refalign-merged
+m/MS0051.BIN	0:06	21	1001	1FB2	{01:32}？		Will you be alright?	v005		reads: 大丈夫？; menu option, declared width 20 columns; reads: くん。\nやっぱり、何だか気分が悪いの‥‥吐きそうな感じ。\n<wait> @refalign @refalign
+m/MS0051.BIN	0:06	22	1007	1FB2	何か出来る事{08:7B}？		Can I do something?	v005		reads: 何か出来る事ある？; menu option, declared width 20 columns; reads: は真っ青な顔をしてそう言った。\n‥‥‥無理もない。\n<wait> @refalign @refalign
+m/MS0051.BIN	0:06	23	1025	1FB2	{08:81}あ僕は{08:48}で		I'll be going now	v005		reads: じゃあ僕はこれで; menu option, declared width 20 columns; reads: ＞どうしますか？\n<wait> @refalign @refalign
+m/MS0051.BIN	0:06	24	1067	1F01	：		:	v005		reads: ：; reads: 大丈夫？; menu option, declared width 20 columns @refalign @rebase-new @refalign
+m/MS0051.BIN	0:06	25	1071	1FD3	{01:32}、{08:63}で何とか出来るわ{08:72}。\n{08:56}、服とか少し緩め{08:4E}の{08:72}悪いの{08:74}ど{02:08}。\n<wait>		Don't worry about me. I'll pull through somehow. Now, how to put this...\nI kinda want to take some of this armour off. I hate to ask,\nbut could you...?\n<wait>	v005		reads: 大丈夫、自分で何とか出来るわ‥‥。\nでも、服とか少し緩めたいの‥‥悪いのだけど‥‥‥。\n<wait>; reads: 何か出来る事ある？; menu option, declared width 20 columns @refalign @refalign
+m/MS0051.BIN	0:06	26	1151	1F01	は少し頬を赤らめ、目を逸らしながらそう言うと、後ろを向いて{08:1F}。\n<wait>		Too embarrassed to continue, Yuuka turns her back to you.\n<wait>	v005		reads: は少し頬を赤らめ、目を逸らしながらそう言うと、後ろを向いてしまった。\n<wait>; reads: じゃあ僕はこれで; menu option, declared width 20 columns @refalign @refalign
 m/MS0051.BIN	0:06	27	1262	1FB2	あ、ごめん{08:72}	あ、ごめん{08:72}				reads: あ、ごめん‥‥; menu option, declared width 20 columns; reads: 山田
 m/MS0051.BIN	0:06	28	1276	1FB2	{08:81}あ僕は{08:48}で	{08:81}あ僕は{08:48}で				reads: じゃあ僕はこれで; menu option, declared width 20 columns; reads: ペンタグランマ9
-m/MS0051.BIN	0:06	29	1315	00	{04:FE}が服を脱ごうと{08:13}{08:77}。\nいつま{08:56}{08:45}にいては迷惑だ。\n<wait>		Yuuka is clearly signalling that she wants to undress.\nStaying here for any longer than necessary is just going to make things\nawkward.\n<wait>	v005		reads: が服を脱ごうとしているのだ。\nいつまでもここにいては迷惑だ。\n<wait>; reads: ： @refalign
-m/MS0051.BIN	0:06	30	1377	00	{04:FF}は退室{08:8E}事に{08:4B}。\n		You decide to take your leave.\n	v005		reads: は退室する事にした。\n; reads: 大丈夫、自分で何とか出来るわ‥‥。\nでも、服とか少し緩めたいの‥‥悪いのだけど‥‥‥。\n<wait> @refalign
-m/MS0051.BIN	0:06	31	1412	1FB2	何かあっ{08:50}呼んで		If something happens...	v005		reads: 何かあったら呼んで; menu option, declared width 20 columns; reads: は少し頬を赤らめ、目を逸らしながらそう言うと、後ろを向いてしまった。\n<wait> @refalign
-m/MS0051.BIN	0:06	32	1430	1FB2	何も言わず退室{08:8E}		Leave without a word	v005		reads: 何も言わず退室する; menu option, declared width 20 columns; reads: あ、ごめん‥‥ @refalign
-m/MS0051.BIN	0:06	33	1470	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: じゃあ僕はこれで; menu option, declared width 20 columns @refalign
+m/MS0051.BIN	0:06	29	1317	1F01	が服を脱ごうと{08:13}{08:77}。\nいつま{08:56}{08:45}にいては迷惑だ。\n<wait>		Yuuka is clearly signalling that she wants to undress.\nStaying here for any longer than necessary is just going to make things\nawkward.\n<wait>	v005		reads: が服を脱ごうとしているのだ。\nいつまでもここにいては迷惑だ。\n<wait>; reads: ： @refalign @rebase-new @refalign
+m/MS0051.BIN	0:06	30	1379	1F01	は退室{08:8E}事に{08:4B}。\n		You decide to take your leave.\n	v005		reads: は退室する事にした。\n; reads: 大丈夫、自分で何とか出来るわ‥‥。\nでも、服とか少し緩めたいの‥‥悪いのだけど‥‥‥。\n<wait> @refalign @rebase-new @refalign
+m/MS0051.BIN	0:06	31	1412	1FB2	何かあっ{08:50}呼んで		If something happens...	v005		reads: 何かあったら呼んで; menu option, declared width 20 columns; reads: は少し頬を赤らめ、目を逸らしながらそう言うと、後ろを向いてしまった。\n<wait> @refalign @refalign
+m/MS0051.BIN	0:06	32	1430	1FB2	何も言わず退室{08:8E}		Leave without a word	v005		reads: 何も言わず退室する; menu option, declared width 20 columns; reads: あ、ごめん‥‥ @refalign @refalign
+m/MS0051.BIN	0:06	33	1472	1F01	：		:	v005		reads: ：; reads: じゃあ僕はこれで; menu option, declared width 20 columns @refalign @rebase-new @refalign
 m/MS0051.BIN	0:06	34	1476	1FD3	{08:72}うん。\n<wait>	{08:72}うん。\n<wait>				reads: ‥‥うん。\n<wait>
-m/MS0051.BIN	0:06	35	1497	00	{04:FE}：	{04:FE}：				reads: ：
-m/MS0051.BIN	0:06	36	1507	00	{04:FF}くん、{01:2A}ね。\n<wait>		Thank you, Katsuragi-kun.\n<wait>	v005		reads: くん、ありがとうね。\n<wait>; reads: が服を脱ごうとしているのだ。\nいつまでもここにいては迷惑だ。\n<wait> @refalign
-m/MS0051.BIN	0:06	37	1563	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: は退室する事にした。\n @refalign
-m/MS0051.BIN	0:06	38	1569	1FD3	きゃっ！\nひどいわ、		Whoa! What the heck, Katsuragi-kun!?\nDon't just walk in like that!\n<wait>\nYou notice that Yuuka's tank top has been folded neatly\non top of the bed.\n<wait>\nWait... Does this mean what you think it means? It does!\nIf she were to remove her blouson, she'd be completely topless.\n<wait>	v005		reads: 何かあったら呼んで; menu option, declared width 20 columns @refalign @refalign-merged
-m/MS0051.BIN	0:06	39	1592	00	{04:FF}くん。入{08:52}来ちゃいや{02:08}。\n<wait>		 	v005		reads: くん。入って来ちゃいや‥‥‥。\n<wait>; reads: 何も言わず退室する; menu option, declared width 20 columns @refalign @refalign-merged
+m/MS0051.BIN	0:06	35	1499	1F01	：	：				reads: ：
+m/MS0051.BIN	0:06	36	1509	1F01	くん、{01:2A}ね。\n<wait>		Thank you, Katsuragi-kun.\n<wait>	v005		reads: くん、ありがとうね。\n<wait>; reads: が服を脱ごうとしているのだ。\nいつまでもここにいては迷惑だ。\n<wait> @refalign @refalign
+m/MS0051.BIN	0:06	37	1565	1F01	：		:	v005		reads: ：; reads: は退室する事にした。\n @refalign @refalign
+m/MS0051.BIN	0:06	38	1569	1FD3	きゃっ！\nひどいわ、		Whoa! What the heck, Katsuragi-kun!?\nDon't just walk in like that!\n<wait>\nYou notice that Yuuka's tank top has been folded neatly\non top of the bed.\n<wait>\nWait... Does this mean what you think it means? It does!\nIf she were to remove her blouson, she'd be completely topless.\n<wait>	v005		reads: 何かあったら呼んで; menu option, declared width 20 columns @refalign @refalign-merged @refalign @refalign-merged
+m/MS0051.BIN	0:06	39	1594	1F01	くん。入{08:52}来ちゃいや{02:08}。\n<wait>		 	v005		reads: くん。入って来ちゃいや‥‥‥。\n<wait>; reads: 何も言わず退室する; menu option, declared width 20 columns @refalign @refalign-merged @refalign @refalign-merged
 m/MS0051.BIN	0:06	40	1627	1FD0	ベッドの上に{08:62}	ベッドの上に{08:62}	You notice that Yuuka's tank top has been folded neatly\non top of the bed.\n<wait>	v005		reads: ベッドの上には、; reads: みんな
-m/MS0051.BIN	0:06	41	1645	00	{04:FE}のタンクトップが、きちんと畳んで置いてあ{08:51}。\n<wait>	{04:FE}のタンクトップが、きちんと畳んで置いてあ{08:51}。\n<wait>				reads: のタンクトップが、きちんと畳んで置いてあった。\n<wait>
-m/MS0051.BIN	0:06	42	1698	1FBA	‥お{02:08}‥と{08:68}事{08:62}今ブルゾンを脱げばトップレスで{08:7B}。\n<wait>		 	v005		reads: ‥お‥‥‥‥という事は、今ブルゾンを脱げばトップレスである。\n<wait>; reads: ： @refalign @refalign-merged
-m/MS0051.BIN	0:06	43	1761	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: ‥‥うん。\n<wait> @refalign
-m/MS0051.BIN	0:06	44	1767	1FD3	{08:5C}{08:72}出て行{08:52}くれなきゃ、私、動け{08:25}わ。\n<wait>		Err... Can you just go? Please?\n<wait>\nStay for any longer than this, and there will be consequences.\nDeciding that your imagination will have to satisfy you this time,\nyou quickly take your leave.<wait>\nAs you enter the room,\nyou are met by Yuuka taking care of Emi's injuries.\n<wait>	v005		reads: もう‥‥出て行ってくれなきゃ、私、動けないわ。\n<wait>; reads: ： @refalign @refalign-merged
-m/MS0051.BIN	0:06	45	1814	1FD0	{08:48}以上{08:40}と嫌われ{01:29}。\n今は想像{08:74}に留め、		 	v005		reads: これ以上いると嫌われそうだ。\n今は想像だけに留め、; reads: くん、ありがとうね。\n<wait> @refalign @refalign-merged
-m/MS0051.BIN	0:06	46	1857	00	{04:FF}は病室の外に出た。\n<wait>		 	v005		reads: は病室の外に出た。\n<wait>; reads: ： @refalign @refalign-merged
-m/MS0051.BIN	0:06	47	1966	1FD0	病室内に入ると、		 	v005		@refalign @refalign-merged
-m/MS0051.BIN	0:06	48	1986	00	{04:FE}が{08:03}の治療を{08:4A}{08:64}。\n<wait>		 	v005		reads: が英美の治療をしていた。\n<wait>; reads: くん。入って来ちゃいや‥‥‥。\n<wait> @refalign @refalign-merged
-m/MS0051.BIN	0:06	49	2015	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: ベッドの上には、 @refalign
-m/MS0051.BIN	0:06	50	2021	1FD3	食料調達{08:4A}{08:1E}ぞ。\n<wait>		Here comes the food.\n<wait>	v005		reads: 食料調達してきたぞ。\n<wait>; reads: のタンクトップが、きちんと畳んで置いてあった。\n<wait> @refalign
-m/MS0051.BIN	0:06	51	2046	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: ‥お‥‥‥‥という事は、今ブルゾンを脱げばトップレスである。\n<wait> @refalign
-m/MS0051.BIN	0:06	52	2052	1FD3	御苦労さま！\n<wait>		Nice! I've starving.\n<wait>	v005		reads: ： @refalign
-m/MS0051.BIN	0:06	53	2077	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: もう‥‥出て行ってくれなきゃ、私、動けないわ。\n<wait> @refalign
-m/MS0051.BIN	0:06	54	2083	1FD3	お帰りな{08:49}！\n<wait>		I'm glad everyone's okay.\n<wait>	v005		reads: お帰りなさい！\n<wait>; reads: これ以上いると嫌われそうだ。\n今は想像だけに留め、 @refalign
-m/MS0051.BIN	0:06	55	2104	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: は病室の外に出た。\n<wait> @refalign
-m/MS0051.BIN	0:06	56	2110	1FD3	扉はロック{08:4B}{08:42}、一応は安全だ。\n治療が済{08:5F}ら、皆で食事を取{08:52}しまおう。\n<wait>		The door has been locked. We should be safe for now.\nTreat your injuries, and have something to eat.\n<wait>	v005		reads: 扉はロックしたから、一応は安全だ。\n治療が済んだら、皆で食事を取ってしまおう。\n<wait> @refalign
-m/MS0051.BIN	0:06	57	2188	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: が英美の治療をしていた。\n<wait> @refalign
-m/MS0051.BIN	0:06	58	2194	1FD3	分かりま{08:17}\n<wait>		Alright!\n<wait>	v005		reads: 分かりました！\n<wait>; reads: 早坂： @refalign
-m/MS0051.BIN	0:06	59	2217	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: 食料調達してきたぞ。\n<wait> @refalign
-m/MS0051.BIN	0:06	60	2223	1FD3	{08:48}でよし！　{08:03}さん終わりま{08:4B}よ。\n<wait>		And with that, we're done.\n<wait>	v005		reads: これでよし！　英美さん終わりましたよ。\n<wait>; reads: 英美： @refalign
-m/MS0051.BIN	0:06	61	2264	1FD2	{08:03}：		Emi:	v005		reads: 英美： @refalign
-m/MS0051.BIN	0:06	62	2274	00	{04:FE}ちゃん、貴方{08:52}腕が{08:7F}よ。\n全然痛く{08:19}わ。\n<wait>		Wow, Yuuka. You're so good at this. It barely hurt at all.\n<wait>	v005		reads: ちゃん、貴方って腕がいいよ。\n全然痛くなかったわ。\n<wait>; reads: ： @refalign
+m/MS0051.BIN	0:06	41	1647	1F01	のタンクトップが、きちんと畳んで置いてあ{08:51}。\n<wait>	のタンクトップが、きちんと畳んで置いてあ{08:51}。\n<wait>				reads: のタンクトップが、きちんと畳んで置いてあった。\n<wait>
+m/MS0051.BIN	0:06	42	1698	1FBA	‥お{02:08}‥と{08:68}事{08:62}今ブルゾンを脱げばトップレスで{08:7B}。\n<wait>		Wait... Does this mean what you think it means? It does!\nIf she were to remove her blouson, she'd be completely topless.\n<wait>	v005		reads: ‥お‥‥‥‥という事は、今ブルゾンを脱げばトップレスである。\n<wait>; reads: ： @refalign @refalign-merged
+m/MS0051.BIN	0:06	43	1763	1F01	：		:	v005		reads: ：; reads: ‥‥うん。\n<wait> @refalign @refalign
+m/MS0051.BIN	0:06	44	1767	1FD3	{08:5C}{08:72}出て行{08:52}くれなきゃ、私、動け{08:25}わ。\n<wait>		Err... Can you just go? Please?\n<wait>\nStay for any longer than this, and there will be consequences.\nDeciding that your imagination will have to satisfy you this time,\nyou quickly take your leave.<wait>\nAs you enter the room,\nyou are met by Yuuka taking care of Emi's injuries.\n<wait>	v005		reads: もう‥‥出て行ってくれなきゃ、私、動けないわ。\n<wait>; reads: ： @refalign @refalign-merged @refalign @refalign-merged
+m/MS0051.BIN	0:06	45	1814	1FD0	{08:48}以上{08:40}と嫌われ{01:29}。\n今は想像{08:74}に留め、		 	v005		reads: これ以上いると嫌われそうだ。\n今は想像だけに留め、; reads: くん、ありがとうね。\n<wait> @refalign @refalign-merged @refalign @refalign-merged
+m/MS0051.BIN	0:06	46	1859	1F01	は病室の外に出た。\n<wait>		 	v005		reads: は病室の外に出た。\n<wait>; reads: ： @refalign @refalign-merged @refalign @refalign-merged
+m/MS0051.BIN	0:06	47	1966	1FD0	病室内に入ると、		 	v005		@refalign @refalign-merged @refalign @refalign-merged
+m/MS0051.BIN	0:06	48	1988	1F01	が{08:03}の治療を{08:4A}{08:64}。\n<wait>		 	v005		reads: が英美の治療をしていた。\n<wait>; reads: くん。入って来ちゃいや‥‥‥。\n<wait> @refalign @refalign-merged @refalign @refalign-merged
+m/MS0051.BIN	0:06	49	2015	1FD2	{08:00}：		Yuuka:	v005		reads: 早坂：; reads: ベッドの上には、 @refalign
+m/MS0051.BIN	0:06	50	2021	1FD3	食料調達{08:4A}{08:1E}ぞ。\n<wait>		Err... Can you just go? Please?\n<wait>	v005		reads: 食料調達してきたぞ。\n<wait>; reads: のタンクトップが、きちんと畳んで置いてあった。\n<wait> @refalign
+m/MS0051.BIN	0:06	51	2046	1FD2	{08:03}：		Hayasaka:	v005		reads: 英美：; reads: ‥お‥‥‥‥という事は、今ブルゾンを脱げばトップレスである。\n<wait> @refalign
+m/MS0051.BIN	0:06	52	2052	1FD3	御苦労さま！\n<wait>		Nice! I've starving.\n<wait>	v005		reads: ： @refalign @refalign
+m/MS0051.BIN	0:06	53	2079	1F01	：		:	v005		reads: ：; reads: もう‥‥出て行ってくれなきゃ、私、動けないわ。\n<wait> @refalign @refalign
+m/MS0051.BIN	0:06	54	2083	1FD3	お帰りな{08:49}！\n<wait>		Here comes the food.\n<wait>	v005		reads: お帰りなさい！\n<wait>; reads: これ以上いると嫌われそうだ。\n今は想像だけに留め、 @refalign
+m/MS0051.BIN	0:06	55	2104	1FD2	{08:04}：		Emi:	v005		reads: 西野：; reads: は病室の外に出た。\n<wait> @refalign
+m/MS0051.BIN	0:06	56	2110	1FD3	扉はロック{08:4B}{08:42}、一応は安全だ。\n治療が済{08:5F}ら、皆で食事を取{08:52}しまおう。\n<wait>		Nice! I've starving.\n<wait>	v005		reads: 扉はロックしたから、一応は安全だ。\n治療が済んだら、皆で食事を取ってしまおう。\n<wait>; reads: 扉はロックしたから、一応は安全だ。\n治療が済んだら、皆で食事を取ってしまおう。\n<wait> @refalign
+m/MS0051.BIN	0:06	57	2188	1FD2	{08:03}：		Yuuka:	v005		reads: 英美：; reads: が英美の治療をしていた。\n<wait> @refalign
+m/MS0051.BIN	0:06	58	2194	1FD3	分かりま{08:17}\n<wait>		I'm glad everyone's okay.\n<wait>	v005		reads: 分かりました！\n<wait>; reads: 早坂： @refalign
+m/MS0051.BIN	0:06	59	2219	1F01	：		Nishino:	v005		reads: ：; reads: 食料調達してきたぞ。\n<wait> @refalign @rebase-tagdiff
+m/MS0051.BIN	0:06	60	2223	1FD3	{08:48}でよし！　{08:03}さん終わりま{08:4B}よ。\n<wait>		The door has been locked. We should be safe for now.\nTreat your injuries, and have something to eat.\n<wait>	v005		reads: これでよし！　英美さん終わりましたよ。\n<wait>; reads: 英美： @refalign
+m/MS0051.BIN	0:06	61	2264	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 英美： @refalign
+m/MS0051.BIN	0:06	62	2276	1F01	ちゃん、貴方{08:52}腕が{08:7F}よ。\n全然痛く{08:19}わ。\n<wait>		Wow, Yuuka. You're so good at this. It barely hurt at all.\n<wait>	v005		reads: ちゃん、貴方って腕がいいよ。\n全然痛くなかったわ。\n<wait>; reads: ： @refalign @refalign
 m/MS0051.BIN	0:06	63	2324	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: お帰りなさい！\n<wait> @refalign
 m/MS0051.BIN	0:06	64	2330	1FD3	{08:03}の治療{08:62}必要以上に痛い{08:42}な！\n<wait>		Yeah, that's because it's not supposed to.\n<wait>	v005		reads: 英美の治療は、必要以上に痛いからな！\n<wait>; reads: 西野： @refalign
 m/MS0051.BIN	0:06	65	2367	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 扉はロックしたから、一応は安全だ。\n治療が済んだら、皆で食事を取ってしまおう。\n<wait> @refalign
@@ -186,56 +186,56 @@ m/MS0051.BIN	0:06	70	2591	1FBA	皆、努めて明るく振る舞い、場には�
 m/MS0051.BIN	0:06	71	2652	1FBA	{08:4D}が偽りで{08:7B}事{08:62}言わなくとも誰もが分か{08:52}{08:64}。\n{08:82}、皆{08:4D}に気づかぬふりをし、ひとときの安らぎを守{08:51}{08:77}。\n<wait>		That is a lie, of course. You all know that.\nAnd yet, no one says anything to break the illusions.\n<wait>	v005		reads: それが偽りである事は、言わなくとも誰もが分かっていた。\nただ、皆それに気づかぬふりをし、ひとときの安らぎを守ったのだ。\n<wait>; reads: ちゃん、貴方って腕がいいよ。\n全然痛くなかったわ。\n<wait> @refalign
 m/MS0051.BIN	0:06	72	2890	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 早坂： @refalign
 m/MS0051.BIN	0:06	73	2896	1FD3	食事も終わ{08:51}{08:46}だ。今後の作戦を錬り{08:4E}と思う。\n<wait>よいかな？\n<wait>		Alright. I would now like to discuss our strategy going forward.\n<wait>Everyone ready?\n<wait>	v005		reads: 食事も終わったことだ。今後の作戦を錬りたいと思う。\n<wait>よいかな？\n<wait>; reads: 英美の治療は、必要以上に痛いからな！\n<wait> @refalign @refalign-merged
-m/MS0051.BIN	0:06	74	2964	1FD2	一同：		 	v005		reads: 英美： @refalign @refalign-merged
-m/MS0051.BIN	0:06	75	2972	1FD3	{08:26}ッ！！\n<wait>		 	v005		reads: はいッ！！\n<wait>; reads: あんたが痛がりなんでしょッ！\n<wait> @refalign @refalign-merged
-m/MS0051.BIN	0:06	76	2989	1FD2	{08:04}：		Everyone:	v005		reads: 西野： @refalign
-m/MS0051.BIN	0:06	77	2995	1FD3	まず、見過す訳には行か{08:25}のが、階下の生存者の確認作業だ。\n{02:0C}の様に難を逃れ、連絡手段を絶た{08:60}{08:7E}、どこかに身を潜め{08:14}{02:0B}が\n{08:24}とは限ら{08:25}。\n<wait>		Yes sir!\n<wait>	v005		reads: まず、見過す訳には行かないのが、階下の生存者の確認作業だ。\n我々の様に難を逃れ、連絡手段を絶たれたまま、どこかに身を潜めている人間が\nいないとは限らない。\n<wait>; reads: ほら、騒いでないで、さっさと仕度をしろ。\n<wait> @refalign
+m/MS0051.BIN	0:06	74	2964	1FD2	一同：		Everyone:	v005		reads: 英美： @refalign @refalign-merged
+m/MS0051.BIN	0:06	75	2972	1FD3	{08:26}ッ！！\n<wait>		Yes sir!\n<wait>	v005		reads: はいッ！！\n<wait>; reads: あんたが痛がりなんでしょッ！\n<wait> @refalign @refalign-merged
+m/MS0051.BIN	0:06	76	2989	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
+m/MS0051.BIN	0:06	77	2995	1FD3	まず、見過す訳には行か{08:25}のが、階下の生存者の確認作業だ。\n{02:0C}の様に難を逃れ、連絡手段を絶た{08:60}{08:7E}、どこかに身を潜め{08:14}{02:0B}が\n{08:24}とは限ら{08:25}。\n<wait>		To start off with, we must check the lower floors for any survivors.\nIt is possible that there are people who managed to flee while the\ncommunications were down and are still hiding somewhere.\n<wait>	v005		reads: まず、見過す訳には行かないのが、階下の生存者の確認作業だ。\n我々の様に難を逃れ、連絡手段を絶たれたまま、どこかに身を潜めている人間が\nいないとは限らない。\n<wait>; reads: ほら、騒いでないで、さっさと仕度をしろ。\n<wait> @refalign
 m/MS0051.BIN	0:06	78	3136	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 一同は、調達してきた食料で簡素な食事を摂った。\n<wait> @refalign
-m/MS0051.BIN	0:06	79	3142	1FD3	更に、Ｂ８Ｆには武器庫が{08:7B}。\nＢ８Ｆをクリーン化{08:8E}事{08:62}やる{08:74}の価値は{08:7B}{08:77}。\n<wait>		To start off with, we must check the lower floors for any survivors.\nIt is possible that there are people who managed to flee while the\ncommunications were down and are still hiding somewhere.\n<wait>	v005		reads: 更に、Ｂ８Ｆには武器庫がある。\nＢ８Ｆをクリーン化する事は、やるだけの価値はあるのだ。\n<wait>; reads: 皆、努めて明るく振る舞い、場には和んだ雰囲気が流れはした。\n<wait> @refalign
-m/MS0051.BIN	0:06	80	3224	1FD2	{08:03}：		Nishino:	v005		reads: 英美：; reads: それが偽りである事は、言わなくとも誰もが分かっていた。\nただ、皆それに気づかぬふりをし、ひとときの安らぎを守ったのだ。\n<wait> @refalign
-m/MS0051.BIN	0:06	81	3230	1FD3	{08:55}が、階下には{01:2B}が溢れてい{08:5A}。\n<wait>{08:90}{08:8E}ん{08:55}か？\n<wait>		In addition, B8F is where the armoury is located.\nSecuring the floor would give us a great tactical advantage.\n<wait>	v005		reads: ですが、階下にはゾンビが溢れています。\n<wait>どうするんですか？\n<wait>; reads: 西野： @refalign
-m/MS0051.BIN	0:06	82	3286	1FD2	{08:04}：		Emi:	v005		reads: 西野：; reads: 食事も終わったことだ。今後の作戦を錬りたいと思う。\n<wait>よいかな？\n<wait> @refalign
-m/MS0051.BIN	0:06	83	3292	1FD3	そこで、{01:3C}のプランが{08:7B}。\n<wait>		Easier said than done with zombies swarming the place.\n<wait>What are we going to do about that?\n<wait>	v005		reads: そこで、ひとつのプランがある。\n<wait> @refalign
+m/MS0051.BIN	0:06	79	3142	1FD3	更に、Ｂ８Ｆには武器庫が{08:7B}。\nＢ８Ｆをクリーン化{08:8E}事{08:62}やる{08:74}の価値は{08:7B}{08:77}。\n<wait>		In addition, B8F is where the armoury is located.\nSecuring the floor would give us a great tactical advantage.\n<wait>	v005		reads: 更に、Ｂ８Ｆには武器庫がある。\nＢ８Ｆをクリーン化する事は、やるだけの価値はあるのだ。\n<wait>; reads: 皆、努めて明るく振る舞い、場には和んだ雰囲気が流れはした。\n<wait> @refalign
+m/MS0051.BIN	0:06	80	3224	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: それが偽りである事は、言わなくとも誰もが分かっていた。\nただ、皆それに気づかぬふりをし、ひとときの安らぎを守ったのだ。\n<wait> @refalign
+m/MS0051.BIN	0:06	81	3230	1FD3	{08:55}が、階下には{01:2B}が溢れてい{08:5A}。\n<wait>{08:90}{08:8E}ん{08:55}か？\n<wait>		Easier said than done with zombies swarming the place.\n<wait>What are we going to do about that?\n<wait>	v005		reads: ですが、階下にはゾンビが溢れています。\n<wait>どうするんですか？\n<wait>; reads: 西野： @refalign
+m/MS0051.BIN	0:06	82	3286	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 食事も終わったことだ。今後の作戦を錬りたいと思う。\n<wait>よいかな？\n<wait> @refalign
+m/MS0051.BIN	0:06	83	3292	1FD3	そこで、{01:3C}のプランが{08:7B}。\n<wait>		Let me finish.\n<wait>	v005		reads: そこで、ひとつのプランがある。\n<wait>; reads: そこで、ひとつのプランがある。\n<wait> @refalign
 m/MS0051.BIN	0:06	84	3325	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: はいッ！！\n<wait> @refalign
-m/MS0051.BIN	0:06	85	3331	1FD3	各階の{01:2B}を、{08:79}階毎に{08:6C}に駆逐し、順々にクリーン化{08:4A}行く方法だ。\n<wait>		Let me finish.\n<wait>	v005		reads: 各階のゾンビを、その階毎に完全に駆逐し、順々にクリーン化して行く方法だ。\n<wait>; reads: 西野： @refalign
+m/MS0051.BIN	0:06	85	3331	1FD3	各階の{01:2B}を、{08:79}階毎に{08:6C}に駆逐し、順々にクリーン化{08:4A}行く方法だ。\n<wait>		We will employ a strategy of cleaning up the floors one by one.\n<wait>	v005		reads: 各階のゾンビを、その階毎に完全に駆逐し、順々にクリーン化して行く方法だ。\n<wait>; reads: 西野： @refalign
 m/MS0051.BIN	0:06	86	3402	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: まず、見過す訳には行かないのが、階下の生存者の確認作業だ。\n我々の様に難を逃れ、連絡手段を絶たれたまま、どこかに身を潜めている人間が\nいないとは限らない。\n<wait> @refalign
-m/MS0051.BIN	0:06	87	3408	1FD3	まず、１フロア降りる毎に、{08:79}階の侵入口全てを溶接{08:4A}塞ぐ。\n<wait>		We will employ a strategy of cleaning up the floors one by one.\n<wait>	v005		reads: まず、１フロア降りる毎に、その階の侵入口全てを溶接して塞ぐ。\n<wait>; reads: 西野： @refalign
+m/MS0051.BIN	0:06	87	3408	1FD3	まず、１フロア降りる毎に、{08:79}階の侵入口全てを溶接{08:4A}塞ぐ。\n<wait>		First, we will move down one floor, and weld all of the entrances shut.\n<wait>	v005		reads: まず、１フロア降りる毎に、その階の侵入口全てを溶接して塞ぐ。\n<wait>; reads: 西野： @refalign
 m/MS0051.BIN	0:06	88	3473	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 更に、Ｂ８Ｆには武器庫がある。\nＢ８Ｆをクリーン化する事は、やるだけの価値はあるのだ。\n<wait> @refalign
-m/MS0051.BIN	0:06	89	3479	1FD3	そ{08:4A}、{08:6C}に全ての出入りを禁じ、{01:2B}の駆逐に取りかかる。\n<wait>		First, we will move down one floor, and weld all of the entrances shut.\n<wait>	v005		reads: そして、完全に全ての出入りを禁じ、ゾンビの駆逐に取りかかる。\n<wait>; reads: 英美： @refalign
+m/MS0051.BIN	0:06	89	3479	1FD3	そ{08:4A}、{08:6C}に全ての出入りを禁じ、{01:2B}の駆逐に取りかかる。\n<wait>		After that, we will then eliminate every single zombie we can find.\n<wait>	v005		reads: そして、完全に全ての出入りを禁じ、ゾンビの駆逐に取りかかる。\n<wait>; reads: 英美： @refalign
 m/MS0051.BIN	0:06	90	3540	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: ですが、階下にはゾンビが溢れています。\n<wait>どうするんですか？\n<wait> @refalign
-m/MS0051.BIN	0:06	91	3546	1FD3	{01:2B}を全て倒{08:4B}ら生存者の確認をし、生存者がいれば保護し、\nまずは医療施設へ行き、血液検査を行なう。\n<wait>		After that, we will then eliminate every single zombie we can find.\n<wait>	v005		reads: ゾンビを全て倒したら生存者の確認をし、生存者がいれば保護し、\nまずは医療施設へ行き、血液検査を行なう。\n<wait>; reads: 西野： @refalign
-m/MS0051.BIN	0:06	92	3654	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: そこで、ひとつのプランがある。\n<wait> @refalign
-m/MS0051.BIN	0:06	93	3660	1FD3	{08:90}{08:4A}、血液検査を？\n<wait>		Huh? Why do we need to do that?\n<wait>	v005		reads: どうして、血液検査を？\n<wait>; reads: 西野： @refalign
-m/MS0051.BIN	0:06	94	3687	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 各階のゾンビを、その階毎に完全に駆逐し、順々にクリーン化して行く方法だ。\n<wait> @refalign
-m/MS0051.BIN	0:06	95	3693	1FD3	噛み付か{08:60}り、ひっかか{08:60}り{08:4A}、{01:2B}に汚染{03:0C}た{02:0B}の血液の中に{08:62}\nＺＭＶと呼ば{08:2F}ウイルスが{08:40}のよ。\n<wait>		There's a special virus that zombies spread. ZMV, it's called.\n<wait>	v005		reads: 噛み付かれたり、ひっかかれたりして、ゾンビに汚染された人間の血液の中には、\nＺＭＶと呼ばれるウイルスがいるのよ。\n<wait>; reads: 西野： @refalign
-m/MS0051.BIN	0:06	96	3793	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: まず、１フロア降りる毎に、その階の侵入口全てを溶接して塞ぐ。\n<wait> @refalign
-m/MS0051.BIN	0:06	97	3799	1FD3	{08:79}ウイルスが検出{03:0C}{08:50}、{08:79}人は数時間以内に死亡{08:8E}し、死亡{08:4B}後は\n{01:2B}化{08:4A}{08:83}の{02:08}。\n<wait>		Anyone infected by it is sure to die in a matter of hours.\nAfter that, they will turn into a zombie themselves...\n<wait>	v005		reads: そのウイルスが検出されたら、その人は数時間以内に死亡するし、死亡した後は\nゾンビ化してしまうの‥‥‥。\n<wait>; reads: 西野： @refalign
-m/MS0051.BIN	0:06	98	3883	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: そして、完全に全ての出入りを禁じ、ゾンビの駆逐に取りかかる。\n<wait> @refalign
-m/MS0051.BIN	0:06	99	3889	1FD3	治療用の血清剤は{08:7B}には{08:7B}{08:5F}{08:84}、血清を投与{08:4A}も治ら{08:25}{02:0B}も{08:40}わ。\n<wait>		While blood transfusion is a possible cure,\nthere have been cases where it hasn't yielded results.\n<wait>	v005		reads: 治療用の血清剤はあるにはあるんだけど、血清を投与しても治らない人間もいるわ。\n<wait>; reads: 西野： @refalign
-m/MS0051.BIN	0:06	100	3962	00	{04:FE}：		Yuuka:	v005		reads: ：; reads: ゾンビを全て倒したら生存者の確認をし、生存者がいれば保護し、\nまずは医療施設へ行き、血液検査を行なう。\n<wait> @refalign
-m/MS0051.BIN	0:06	101	3968	1FD3	そう{08:6A}{08:55}か{08:72}\n<wait>		I see...\n<wait>	v005		reads: そうなんですか‥‥\n<wait>; reads: ： @refalign
-m/MS0051.BIN	0:06	102	3989	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: どうして、血液検査を？\n<wait> @refalign
-m/MS0051.BIN	0:06	103	3995	1FD3	{01:29}。\n血液中にＺＭＶが検出{03:0C}た者に{08:62}血清を投与し、{08:47}病棟に一旦隔離{08:8E}。\n<wait>		Kirishima is correct. We will test the survivors' blood,\nand if ZMV is detected, we'll perform a blood transfusion\nand place them under quarantine.\n<wait>	v005		reads: そうだ。\n血液中にＺＭＶが検出された者には、血清を投与し、この病棟に一旦隔離する。\n<wait>; reads: 英美： @refalign
-m/MS0051.BIN	0:06	104	4073	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 噛み付かれたり、ひっかかれたりして、ゾンビに汚染された人間の血液の中には、\nＺＭＶと呼ばれるウイルスがいるのよ。\n<wait> @refalign
-m/MS0051.BIN	0:06	105	4079	1FD3	{03:10}すればファームへ移し、{03:10}し{08:19}場合は{02:08}‥\n<wait>		If they recover, they're sent to safety at the farm.\nAnd if not, then...\n<wait>	v005		reads: 回復すればファームへ移し、回復しなかった場合は‥‥‥‥\n<wait>; reads: 英美： @refalign
-m/MS0051.BIN	0:06	106	4128	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: そのウイルスが検出されたら、その人は数時間以内に死亡するし、死亡した後は\nゾンビ化してしまうの‥‥‥。\n<wait> @refalign
-m/MS0051.BIN	0:06	107	4134	1FD3	殺す{08:86}{08:25}と{02:08}‥\n<wait>		We've gotta kill them...\n<wait>	v005		reads: 殺すしかないと‥‥‥‥\n<wait>; reads: 英美： @refalign
-m/MS0051.BIN	0:06	108	4157	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 治療用の血清剤はあるにはあるんだけど、血清を投与しても治らない人間もいるわ。\n<wait> @refalign
-m/MS0051.BIN	0:06	109	4163	1FD3	残念{08:8F}、そう{08:68}事だ。\n無論、{01:2B}化を起{08:4A}{08:42}{08:8F}な。\n<wait>		As unfortunate as it is, there is little else we can do.\n<wait>	v005		reads: 残念だが、そういう事だ。\n無論、ゾンビ化を起してからだがな。\n<wait>; reads: ： @refalign
-m/MS0051.BIN	0:06	110	4217	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: そうなんですか‥‥\n<wait> @refalign
-m/MS0051.BIN	0:06	111	4223	1FD3	そうや{08:52}侵入口を塞ぎ、{08:79}階の{01:2B}を、{08:79}階の中で駆逐{08:4A}行けば、\n{01:3C}ずつ階がクリーンに{08:1A}ゆく{08:52}訳{08:55}ね。\n<wait>		So, to recap, the plan is to seal the entrances, take care of all\nthe zombies there, and then proceed to the next floor until they\nhave all been cleared?\n<wait>	v005		reads: そうやって侵入口を塞ぎ、その階のゾンビを、その階の中で駆逐して行けば、\nひとつずつ階がクリーンになってゆくって訳ですね。\n<wait>; reads: 西野： @refalign
+m/MS0051.BIN	0:06	91	3546	1FD3	{01:2B}を全て倒{08:4B}ら生存者の確認をし、生存者がいれば保護し、\nまずは医療施設へ行き、血液検査を行なう。\n<wait>		With the zombies dead, we will then look for survivors,\nand if there are any, we'll bring them back here and test their blood.\n<wait>	v005		reads: ゾンビを全て倒したら生存者の確認をし、生存者がいれば保護し、\nまずは医療施設へ行き、血液検査を行なう。\n<wait>; reads: 西野： @refalign
+m/MS0051.BIN	0:06	92	3656	1F01	：		:	v005		reads: ：; reads: そこで、ひとつのプランがある。\n<wait> @refalign @refalign
+m/MS0051.BIN	0:06	93	3660	1FD3	{08:90}{08:4A}、血液検査を？\n<wait>		Huh? Why do we need to do that?\n<wait>	v005		reads: どうして、血液検査を？\n<wait>; reads: 西野： @refalign @refalign
+m/MS0051.BIN	0:06	94	3687	1FD2	{08:03}：		Yuuka:	v005		reads: 英美：; reads: 各階のゾンビを、その階毎に完全に駆逐し、順々にクリーン化して行く方法だ。\n<wait> @refalign
+m/MS0051.BIN	0:06	95	3693	1FD3	噛み付か{08:60}り、ひっかか{08:60}り{08:4A}、{01:2B}に汚染{03:0C}た{02:0B}の血液の中に{08:62}\nＺＭＶと呼ば{08:2F}ウイルスが{08:40}のよ。\n<wait>		There's a special virus that zombies spread. ZMV, it's called.\n<wait>	v005		reads: 噛み付かれたり、ひっかかれたりして、ゾンビに汚染された人間の血液の中には、\nＺＭＶと呼ばれるウイルスがいるのよ。\n<wait>; reads: 西野： @refalign @refalign
+m/MS0051.BIN	0:06	96	3793	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: まず、１フロア降りる毎に、その階の侵入口全てを溶接して塞ぐ。\n<wait> @refalign @refalign
+m/MS0051.BIN	0:06	97	3799	1FD3	{08:79}ウイルスが検出{03:0C}{08:50}、{08:79}人は数時間以内に死亡{08:8E}し、死亡{08:4B}後は\n{01:2B}化{08:4A}{08:83}の{02:08}。\n<wait>		Anyone infected by it is sure to die in a matter of hours.\nAfter that, they will turn into a zombie themselves...\n<wait>	v005		reads: そのウイルスが検出されたら、その人は数時間以内に死亡するし、死亡した後は\nゾンビ化してしまうの‥‥‥。\n<wait>; reads: 西野： @refalign @refalign
+m/MS0051.BIN	0:06	98	3883	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: そして、完全に全ての出入りを禁じ、ゾンビの駆逐に取りかかる。\n<wait> @refalign @refalign
+m/MS0051.BIN	0:06	99	3889	1FD3	治療用の血清剤は{08:7B}には{08:7B}{08:5F}{08:84}、血清を投与{08:4A}も治ら{08:25}{02:0B}も{08:40}わ。\n<wait>		While blood transfusion is a possible cure,\nthere have been cases where it hasn't yielded results.\n<wait>	v005		reads: 治療用の血清剤はあるにはあるんだけど、血清を投与しても治らない人間もいるわ。\n<wait>; reads: 西野： @refalign @refalign
+m/MS0051.BIN	0:06	100	3964	1F01	：		:	v005		reads: ：; reads: ゾンビを全て倒したら生存者の確認をし、生存者がいれば保護し、\nまずは医療施設へ行き、血液検査を行なう。\n<wait> @refalign @refalign
+m/MS0051.BIN	0:06	101	3968	1FD3	そう{08:6A}{08:55}か{08:72}\n<wait>		Huh? Why do we need to do that?\n<wait>	v005		reads: そうなんですか‥‥\n<wait>; reads: ： @refalign
+m/MS0051.BIN	0:06	102	3989	1FD2	{08:04}：		Emi:	v005		reads: 西野：; reads: どうして、血液検査を？\n<wait> @refalign
+m/MS0051.BIN	0:06	103	3995	1FD3	{01:29}。\n血液中にＺＭＶが検出{03:0C}た者に{08:62}血清を投与し、{08:47}病棟に一旦隔離{08:8E}。\n<wait>		There's a special virus that zombies spread. ZMV, it's called.\n<wait>	v005		reads: そうだ。\n血液中にＺＭＶが検出された者には、血清を投与し、この病棟に一旦隔離する。\n<wait>; reads: 英美： @refalign
+m/MS0051.BIN	0:06	104	4073	1FD2	{08:04}：		Emi:	v005		reads: 西野：; reads: 噛み付かれたり、ひっかかれたりして、ゾンビに汚染された人間の血液の中には、\nＺＭＶと呼ばれるウイルスがいるのよ。\n<wait> @refalign
+m/MS0051.BIN	0:06	105	4079	1FD3	{03:10}すればファームへ移し、{03:10}し{08:19}場合は{02:08}‥\n<wait>		Anyone infected by it is sure to die in a matter of hours.\nAfter that, they will turn into a zombie themselves...\n<wait>	v005		reads: 回復すればファームへ移し、回復しなかった場合は‥‥‥‥\n<wait>; reads: 英美： @refalign
+m/MS0051.BIN	0:06	106	4128	1FD2	{08:00}：		Emi:	v005		reads: 早坂：; reads: そのウイルスが検出されたら、その人は数時間以内に死亡するし、死亡した後は\nゾンビ化してしまうの‥‥‥。\n<wait> @refalign
+m/MS0051.BIN	0:06	107	4134	1FD3	殺す{08:86}{08:25}と{02:08}‥\n<wait>		While blood transfusion is a possible cure,\nthere have been cases where it hasn't yielded results.\n<wait>	v005		reads: 殺すしかないと‥‥‥‥\n<wait>; reads: 英美： @refalign
+m/MS0051.BIN	0:06	108	4157	1FD2	{08:04}：		Yuuka:	v005		reads: 西野：; reads: 治療用の血清剤はあるにはあるんだけど、血清を投与しても治らない人間もいるわ。\n<wait> @refalign
+m/MS0051.BIN	0:06	109	4163	1FD3	残念{08:8F}、そう{08:68}事だ。\n無論、{01:2B}化を起{08:4A}{08:42}{08:8F}な。\n<wait>		I see...\n<wait>	v005		reads: 残念だが、そういう事だ。\n無論、ゾンビ化を起してからだがな。\n<wait>; reads: ： @refalign
+m/MS0051.BIN	0:06	110	4217	1FD2	{08:00}：		Nishino:	v005		reads: 早坂：; reads: そうなんですか‥‥\n<wait> @refalign
+m/MS0051.BIN	0:06	111	4223	1FD3	そうや{08:52}侵入口を塞ぎ、{08:79}階の{01:2B}を、{08:79}階の中で駆逐{08:4A}行けば、\n{01:3C}ずつ階がクリーンに{08:1A}ゆく{08:52}訳{08:55}ね。\n<wait>		Kirishima is correct. We will test the survivors' blood,\nand if ZMV is detected, we'll perform a blood transfusion\nand place them under quarantine.\n<wait>	v005		reads: そうやって侵入口を塞ぎ、その階のゾンビを、その階の中で駆逐して行けば、\nひとつずつ階がクリーンになってゆくって訳ですね。\n<wait>; reads: 西野： @refalign
 m/MS0051.BIN	0:06	112	4327	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: そうだ。\n血液中にＺＭＶが検出された者には、血清を投与し、この病棟に一旦隔離する。\n<wait> @refalign
-m/MS0051.BIN	0:06	113	4333	1FD3	{08:79}通りだ。\n<wait>		Exactly.\n<wait>	v005		reads: その通りだ。\n<wait>; reads: 西野： @refalign
+m/MS0051.BIN	0:06	113	4333	1FD3	{08:79}通りだ。\n<wait>		If they recover, they're sent to safety at the farm.\nAnd if not, then...\n<wait>	v005		reads: その通りだ。\n<wait>; reads: 西野： @refalign
 m/MS0051.BIN	0:06	114	4352	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 回復すればファームへ移し、回復しなかった場合は‥‥‥‥\n<wait> @refalign
-m/MS0051.BIN	0:06	115	4358	1FD3	了解しま{08:4B}。\n<wait>		Roger that.\n<wait>	v005		reads: 了解しました。\n<wait>; reads: 早坂： @refalign
+m/MS0051.BIN	0:06	115	4358	1FD3	了解しま{08:4B}。\n<wait>		We've gotta kill them...\n<wait>	v005		reads: 了解しました。\n<wait>; reads: 早坂： @refalign
 m/MS0051.BIN	0:06	116	4379	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 殺すしかないと‥‥‥‥\n<wait> @refalign
-m/MS0051.BIN	0:06	117	4385	1FD3	で{08:62}必要な物資を調達せねば{08:7D}ん。\n網膜ＩＤが変更{03:0C}{08:14}為、まずは扉を破壊し{08:57}。\n<wait>		We'll need some tools to open the locked doors.\n<wait>	v005		reads: では、必要な物資を調達せねばならん。\n網膜ＩＤが変更されている為、まずは扉を破壊しなければ。\n<wait>; reads: 西野： @refalign
-m/MS0051.BIN	0:06	118	4469	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 残念だが、そういう事だ。\n無論、ゾンビ化を起してからだがな。\n<wait> @refalign
-m/MS0051.BIN	0:06	119	4475	1FD3	あ、{08:4D}{08:7D}{01:32}{08:55}。\n<wait>階段の扉くらい{08:7D}、私が今持っ{08:2B}機材で何とかなり{08:5A}。\n<wait>実{08:62}溶接機材を取りに行{08:51}時に、調達{08:4A}お{08:64}ん{08:55}。\n<wait>		Oh, that's not a problem.\n<wait>I actually already have everything I need.\n<wait>I figured it'd come to this, so I went ahead and got the tools ready\nwhile I was retrieving the welding equipment.\n<wait>	v005		reads: あ、それなら大丈夫です。\n<wait>階段の扉くらいなら、私が今持ってる機材で何とかなります。\n<wait>実は、溶接機材を取りに行った時に、調達しておいたんです。\n<wait>; reads: 早坂： @refalign
+m/MS0051.BIN	0:06	117	4385	1FD3	で{08:62}必要な物資を調達せねば{08:7D}ん。\n網膜ＩＤが変更{03:0C}{08:14}為、まずは扉を破壊し{08:57}。\n<wait>		As unfortunate as it is, there is little else we can do.\n<wait>	v005		reads: では、必要な物資を調達せねばならん。\n網膜ＩＤが変更されている為、まずは扉を破壊しなければ。\n<wait>; reads: 西野： @refalign
+m/MS0051.BIN	0:06	118	4469	1FD2	{08:03}：		Hayasaka:	v005		reads: 英美：; reads: 残念だが、そういう事だ。\n無論、ゾンビ化を起してからだがな。\n<wait> @refalign
+m/MS0051.BIN	0:06	119	4475	1FD3	あ、{08:4D}{08:7D}{01:32}{08:55}。\n<wait>階段の扉くらい{08:7D}、私が今持っ{08:2B}機材で何とかなり{08:5A}。\n<wait>実{08:62}溶接機材を取りに行{08:51}時に、調達{08:4A}お{08:64}ん{08:55}。\n<wait>		So, to recap, the plan is to seal the entrances, take care of all\nthe zombies there, and then proceed to the next floor until they\nhave all been cleared?\n<wait>	v005		reads: あ、それなら大丈夫です。\n<wait>階段の扉くらいなら、私が今持ってる機材で何とかなります。\n<wait>実は、溶接機材を取りに行った時に、調達しておいたんです。\n<wait>; reads: 早坂： @refalign
 m/MS0051.BIN	0:06	120	4604	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: そうやって侵入口を塞ぎ、その階のゾンビを、その階の中で駆逐して行けば、\nひとつずつ階がクリーンになってゆくって訳ですね。\n<wait> @refalign
-m/MS0051.BIN	0:06	121	4610	1FD3	で{08:62}階段を利用し、階下に降りる作戦を行なおう。\n<wait>異論は無いな？\n<wait>		Good. Very well then. Let us proceed.\n<wait>Everyone ready?\n<wait>	v005		reads: では、階段を利用し、階下に降りる作戦を行なおう。\n<wait>異論は無いな？\n<wait>; reads: 西野： @refalign @refalign-merged
-m/MS0051.BIN	0:06	122	4684	1FD2	一同：		 	v005		reads: その通りだ。\n<wait> @refalign @refalign-merged
-m/MS0051.BIN	0:06	123	4692	1FD3	あり{02:0A}！！\n<wait>		 	v005		reads: ありません！！\n<wait>; reads: 早坂： @refalign @refalign-merged
+m/MS0051.BIN	0:06	121	4610	1FD3	で{08:62}階段を利用し、階下に降りる作戦を行なおう。\n<wait>異論は無いな？\n<wait>		Exactly.\n<wait>	v005		reads: では、階段を利用し、階下に降りる作戦を行なおう。\n<wait>異論は無いな？\n<wait>; reads: 西野： @refalign @refalign-merged
+m/MS0051.BIN	0:06	122	4684	1FD2	一同：		Hayasaka:	v005		reads: その通りだ。\n<wait> @refalign @refalign-merged
+m/MS0051.BIN	0:06	123	4692	1FD3	あり{02:0A}！！\n<wait>		Roger that.\n<wait>	v005		reads: ありません！！\n<wait>; reads: 早坂： @refalign @refalign-merged
 m/MS0051.BIN	0:07	0	45	1FD2	看護婦：		Nurse:	v005		
 m/MS0051.BIN	0:07	1	55	1FD3	申し訳あり{02:0A}が、{08:45}は緊急患者用に空室に{08:4A}{02:08}\n<wait>あら、{02:00}の方で{08:4B}のね。\n<wait>		I apologise, but I must ask you to leave.\nThis room is for emergency patients only.\n<wait>Oh, are you a Devil Buster?\n<wait>	v005		reads: 申し訳ありませんが、ここは緊急患者用に空室にして‥‥‥\n<wait>あら、デビルバスターの方でしたのね。\n<wait>
 m/MS0051.BIN	0:07	2	133	1FD2	看護婦：		Nurse:	v005		

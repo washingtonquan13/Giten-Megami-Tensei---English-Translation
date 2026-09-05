@@ -3,7 +3,7 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS00A7.BIN	0:01	0	0	DATA	＞品川ターミナルへ{08:69}こそ\n		>Welcome to Shinagawa Terminal.\n	v005		reads: ＞品川ターミナルへようこそ\n @refalign
-m/MS00A7.BIN	0:03	0	0	DATA	{01:23}お待ち{08:6E}		Please wait a moment	v005		reads: しばらくお待ちください @refalign
+m/MS00A7.BIN	0:01	0	0	DATA	＞品川ターミナルへ{08:69}こそ\n		>Welcome to Shinagawa Terminal.\n	v005		reads: ＞品川ターミナルへようこそ\n; reads: ＞品川ターミナルへようこそ\n @refalign
+m/MS00A7.BIN	0:03	0	0	DATA	{01:23}お待ち{08:6E}		Please wait a moment	v005		reads: しばらくお待ちください; reads: しばらくお待ちください @refalign
 m/MS00A7.BIN	0:03	1	16	1FFA	．．．\n					
-m/MS00A7.BIN	0:03	2	27	1FBA	＞ＡＭＳ用マップ{08:0A}が登録{03:0C}てい{02:0A}\n<wait>		>AMS map data unavailable.\n<wait>	v005		reads: ＞ＡＭＳ用マップデータが登録されていません\n<wait> @refalign
+m/MS00A7.BIN	0:03	2	27	1FBA	＞ＡＭＳ用マップ{08:0A}が登録{03:0C}てい{02:0A}\n<wait>		>AMS map data unavailable.\n<wait>	v005		reads: ＞ＡＭＳ用マップデータが登録されていません\n<wait>; reads: ＞ＡＭＳ用マップデータが登録されていません\n<wait> @refalign

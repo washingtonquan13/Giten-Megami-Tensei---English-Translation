@@ -206,6 +206,8 @@ def run(v005_root: str, text_dir: "str | None" = None, quiet: bool = False) -> d
                     continue
                 if not is_english(text) and text.strip():
                     continue                       # v0.05 left it Japanese too
+                if row.jp.strip() == "：" and _is_name(text, True):
+                    text = ":"                     # the engine prints the name; v0.05 hard-coded it
                 if row.ref_en and row.ref_en != text:
                     st["replaced"] += 1            # the tag-sequence carry had shifted this one
                 row.ref_en, row.ref_src = text, "v005"

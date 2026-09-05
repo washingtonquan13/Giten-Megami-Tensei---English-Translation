@@ -3,174 +3,170 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS000E.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}\n		There's no one here...\n	v005		reads: 誰もいない‥‥‥\n @refalign
-m/MS000E.BIN	0:01	0	20	1FD0	一行の前に一匹の{08:0B}が忽然と現わ{08:60}。\n<wait>		You're just about to exit the building when all of a sudden,\na demon appears before you.\n<wait>	v005		reads: 一行の前に一匹の悪魔が忽然と現われた。\n<wait> @refalign
-m/MS000E.BIN	0:01	1	90	1FD2	{08:0B}：		Demon:	v005		reads: 悪魔： @refalign
-m/MS000E.BIN	0:01	2	96	1FD3	こいつが{02:08}		He is... Katsuragi Ayato.\n<wait>\nHaving said that, the demon points at Katsuragi.\n<wait>	v005		reads: こいつが‥‥‥ @refalign @refalign-merged
-m/MS000E.BIN	0:01	3	110	00	{04:FF}か{02:08}？\n<wait>		 	v005		reads: か‥‥‥？\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:01	4	127	1FD0	{08:0B}はそう言{08:52}、		 	v005		reads: 悪魔はそう言って、 @refalign @refalign-merged
-m/MS000E.BIN	0:01	5	145	00	{04:FF}の身体を指さ{08:4B}。\n<wait>		 	v005		reads: の身体を指さした。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:01	6	177	1FD2	{08:37}：		Sonoda:	v005		reads: 園田： @refalign
-m/MS000E.BIN	0:01	7	183	1FD3	ああ、{01:29}。{02:08}{08:8F}、貴様は何者だ{02:08}？\n<wait>		Yeah, he is. And you are?\n<wait>	v005		reads: ああ、そうだ。‥‥‥だが、貴様は何者だ‥‥‥？\n<wait> @refalign
-m/MS000E.BIN	0:01	8	224	1FD0	{08:37}は身構{08:41}。\n<wait>		Sonoda readies his weapon.\n<wait>	v005		reads: 園田は身構えた。\n<wait> @refalign
-m/MS000E.BIN	0:01	9	246	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
-m/MS000E.BIN	0:01	10	252	1FD3	そうよ。{02:08}‥アンタ{08:72}何？\n<wait>		Yeah, he is. And you are?\n<wait>	v005		reads: そうよ。‥‥‥‥アンタ‥‥何？\n<wait> @refalign
-m/MS000E.BIN	0:01	11	286	1FD2	{08:0B}：		Demon:	v005		reads: 悪魔： @refalign
-m/MS000E.BIN	0:01	12	292	1FD3	{08:72}お前が		You're... Katsuragi Ayato.\n	v005		reads: ‥‥お前が @refalign @refalign-merged
-m/MS000E.BIN	0:01	13	304	00	{04:FF}{08:72}だな？\n		 	v005		reads: ‥‥だな？\n @refalign @refalign-merged
-m/MS000E.BIN	0:01	14	331	1FB2	何者だ？		And you are?	v005		menu option, declared width 20 columns @refalign
-m/MS000E.BIN	0:01	15	341	1FB2	身構{08:28}		Ready your weapon	v005		reads: 身構える; menu option, declared width 20 columns @refalign
-m/MS000E.BIN	0:01	16	349	1FB2	人違いだ		Wrong person, sorry	v005		menu option, declared width 20 columns @refalign
+m/MS000E.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}\n		There's no one here...\n	v005		reads: 誰もいない‥‥‥\n; reads: 誰もいない‥‥‥\n @refalign
+m/MS000E.BIN	0:01	0	20	1FD0	一行の前に一匹の{08:0B}が忽然と現わ{08:60}。\n<wait>		You're just about to exit the building when all of a sudden,\na demon appears before you.\n<wait>	v005		reads: 一行の前に一匹の悪魔が忽然と現われた。\n<wait>; reads: 一行の前に一匹の悪魔が忽然と現われた。\n<wait> @refalign
+m/MS000E.BIN	0:01	1	90	1FD2	{08:0B}：		Demon:	v005		reads: 悪魔：; reads: 悪魔： @refalign
+m/MS000E.BIN	0:01	2	96	1FD3	こいつが{02:08}		He is... Katsuragi Ayato.\n<wait>	v005		reads: こいつが‥‥‥; reads: こいつが‥‥‥ @refalign @refalign-merged
+m/MS000E.BIN	0:01	3	112	1F01	か{02:08}？\n<wait>		 	v005		reads: か‥‥‥？\n<wait>; reads: か‥‥‥？\n<wait> @refalign @refalign-merged @refalign @refalign-merged
+m/MS000E.BIN	0:01	4	127	1FD0	{08:0B}はそう言{08:52}、		Having said that, the demon points at Katsuragi.\n<wait>	v005		reads: 悪魔はそう言って、; reads: 悪魔はそう言って、 @refalign @refalign-merged
+m/MS000E.BIN	0:01	5	147	1F01	の身体を指さ{08:4B}。\n<wait>		 	v005		reads: の身体を指さした。\n<wait>; reads: の身体を指さした。\n<wait> @refalign @refalign-merged @refalign @refalign-merged
+m/MS000E.BIN	0:01	6	177	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 園田： @refalign
+m/MS000E.BIN	0:01	7	183	1FD3	ああ、{01:29}。{02:08}{08:8F}、貴様は何者だ{02:08}？\n<wait>		Yeah, he is. And you are?\n<wait>	v005		reads: ああ、そうだ。‥‥‥だが、貴様は何者だ‥‥‥？\n<wait>; reads: ああ、そうだ。‥‥‥だが、貴様は何者だ‥‥‥？\n<wait> @refalign
+m/MS000E.BIN	0:01	8	224	1FD0	{08:37}は身構{08:41}。\n<wait>		Sonoda readies his weapon.\n<wait>	v005		reads: 園田は身構えた。\n<wait>; reads: 園田は身構えた。\n<wait> @refalign
+m/MS000E.BIN	0:01	9	246	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 泪： @refalign
+m/MS000E.BIN	0:01	10	252	1FD3	そうよ。{02:08}‥アンタ{08:72}何？\n<wait>		Yeah, he is. And you are?\n<wait>	v005		reads: そうよ。‥‥‥‥アンタ‥‥何？\n<wait>; reads: そうよ。‥‥‥‥アンタ‥‥何？\n<wait> @refalign
+m/MS000E.BIN	0:01	11	286	1FD2	{08:0B}：		Demon:	v005		reads: 悪魔：; reads: 悪魔： @refalign
+m/MS000E.BIN	0:01	12	292	1FD3	{08:72}お前が		You're... Katsuragi Ayato.\n	v005		reads: ‥‥お前が; reads: ‥‥お前が @refalign @refalign-merged
+m/MS000E.BIN	0:01	13	306	1F01	{08:72}だな？\n		 	v005		reads: ‥‥だな？\n; reads: ‥‥だな？\n @refalign @refalign-merged @refalign @refalign-merged
+m/MS000E.BIN	0:01	14	331	1FB2	何者だ？		And you are?	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS000E.BIN	0:01	15	341	1FB2	身構{08:28}		Ready your weapon	v005		reads: 身構える; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS000E.BIN	0:01	16	349	1FB2	人違いだ		Wrong person, sorry	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS000E.BIN	0:01	17	383	1FD2	{08:0B}：	{08:0B}：	Demon:	v005		reads: 悪魔：; reads: 山田
-m/MS000E.BIN	0:01	18	389	1FD3	お{08:53}。{08:45}で、お前達とやり合う気は無い。\n<wait>	お{08:53}。{08:45}で、お前達とやり合う気は無い。\n<wait>	I must apologize, but I am not interested in chitchat.<wait>	v005		reads: おっと。ここで、お前達とやり合う気は無い。\n<wait>; reads: ペンタグランマ9 @rebase-unmatched idx18 en={02:01}J
+m/MS000E.BIN	0:01	18	389	1FD3	お{08:53}。{08:45}で、お前達とやり合う気は無い。\n<wait>	お{08:53}。{08:45}で、お前達とやり合う気は無い。\n<wait>	I must apologize, but I am not interested in chitchat.<wait>	v005		reads: おっと。ここで、お前達とやり合う気は無い。\n<wait>; reads: ペンタグランマ9 @rebase-unmatched idx18 en={02:01}J @rebase-unmatched idx18 en={02:01}J
 m/MS000E.BIN	0:01	19	439	1FD2	{08:0B}：	{08:0B}：	Demon:	v005		reads: 悪魔：
 m/MS000E.BIN	0:01	20	445	1FD3	しらばっくれ{08:54}無駄だ。\n<wait>		Don't even try it. I recognize you.\n<wait>	v005		reads: しらばっくれても無駄だ。\n<wait>; reads: 悪魔： @refalign
 m/MS000E.BIN	0:01	21	476	1FD2	{08:0B}：		Demon:	v005		reads: 悪魔：; reads: おっと。ここで、お前達とやり合う気は無い。\n<wait> @refalign
 m/MS000E.BIN	0:01	22	482	1FD3	俺{08:62}アドニス様{08:42}の書状を預か{08:52}{08:1E}者だ。\n{08:4D}さえ渡せば、お前達に用は無い。\n<wait>		I have a message to you from Lord Adonis. Here.\n<wait>	v005		reads: 俺は、アドニス様からの書状を預かってきた者だ。\nそれさえ渡せば、お前達に用は無い。\n<wait>; reads: 悪魔： @refalign
 m/MS000E.BIN	0:01	23	562	1FD0	そう言うと{08:0B}{08:62}今時珍しい、白い紙で出来た封筒を差し出{08:4B}。\n<wait>		With that, the demon hands you a letter written on real paper,\nsomething that you don't see often these days.\n<wait>	v005		reads: そう言うと悪魔は、今時珍しい、白い紙で出来た封筒を差し出した。\n<wait>; reads: しらばっくれても無駄だ。\n<wait> @refalign
-m/MS000E.BIN	0:01	24	634	00	{04:FF}	{04:FF}	Katsuragi	v005		reads: ; reads: 悪魔：
-m/MS000E.BIN	0:01	25	644	0B	{08:37}	{08:37}	Sonoda	v005		reads: 園田; reads: 俺は、アドニス様からの書状を預かってきた者だ。\nそれさえ渡せば、お前達に用は無い。\n<wait>
-m/MS000E.BIN	0:01	26	654	0B	{08:31}は{08:4D}を受けと{08:51}。\n<wait>		Rui takes it.      \n<wait>	v005		reads: 泪はそれを受けとった。\n<wait>; reads: そう言うと悪魔は、今時珍しい、白い紙で出来た封筒を差し出した。\n<wait> @refalign
-m/MS000E.BIN	0:01	27	681	1FD2	{08:0B}：	{08:0B}：	Demon:	v005		reads: 悪魔：
-m/MS000E.BIN	0:01	28	687	1FD3	{02:08}{08:81}あな！\n<wait>	{02:08}{08:81}あな！\n<wait>	...Later!\n<wait>	v005		reads: ‥‥‥じゃあな！\n<wait>; reads: 園田
-m/MS000E.BIN	0:01	29	710	1FD0	{08:0B}{08:62}現わ{08:60}時と同じ{08:69}に忽然と消{08:41}。\n<wait>		 	v005		reads: 悪魔は、現われた時と同じように忽然と消えた。\n<wait>; reads: 泪はそれを受けとった。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:01	30	760	00	{04:FF}	{04:FF}	Katsuragi	v005		reads: ; reads: 悪魔：
-m/MS000E.BIN	0:01	31	770	0B	{08:37}	{08:37}	Sonoda	v005		reads: 園田; reads: ‥‥‥じゃあな！\n<wait>
-m/MS000E.BIN	0:01	32	780	0B	{08:31}は封筒を開いてみた。\n{1E10:01003C}		 	v005		reads: 泪は封筒を開いてみた。\n{1E10:01003C}; reads: 悪魔は、現われた時と同じように忽然と消えた。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:01	33	810	1FBA	封筒を開き、中の書状を読んでみると、{08:4D}は	封筒を開き、中の書状を読んでみると、{08:4D}は	Inside, there is a challenge directed towards Katsuragi.\n<wait>	v005		reads: 封筒を開き、中の書状を読んでみると、それは
-m/MS000E.BIN	0:01	34	854	00	{04:FF}への挑戦状だ{08:51}。\n<wait>	{04:FF}への挑戦状だ{08:51}。\n<wait>				reads: への挑戦状だった。\n<wait>; reads: 園田
-m/MS000E.BIN	0:01	35	879	1FBA	挑戦の内容{08:62}新宿爆心地コロシアムにて一騎打ちを行い、{01:3F}の実力が上かを\n決め{08:69}との事だ{08:51}。\n<wait>		 	v005		reads: 挑戦の内容は、新宿爆心地コロシアムにて一騎打ちを行い、どちらの実力が上かを\n決めようとの事だった。\n<wait>; reads: 泪は封筒を開いてみた。\n{1E10:01003C} @refalign @refalign-merged
-m/MS000E.BIN	0:01	36	981	1F03	さらに、紙面の隅にはこう{08:4B}ためられ{08:14}{02:08}\n<wait>					reads: さらに、紙面の隅にはこうしたためられている‥‥‥\n<wait>; reads: 封筒を開き、中の書状を読んでみると、それは
-m/MS000E.BIN	0:01	37	1038	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: への挑戦状だった。\n<wait> @refalign
-m/MS000E.BIN	0:01	38	1049	0B	おい！　{08:45}を見てみろよ！！\n<wait>		Hey! Have a look at this!\n<wait>	v005		reads: おい！　ここを見てみろよ！！\n<wait>; reads: 挑戦の内容は、新宿爆心地コロシアムにて一騎打ちを行い、どちらの実力が上かを\n決めようとの事だった。\n<wait> @refalign
-m/MS000E.BIN	0:01	39	1084	1FD0	横{08:42}覗き込んで{08:64}、{08:37}		Sonoda peeks over your shoulder and 	v005		reads: 横から覗き込んでいた、園田; reads: さらに、紙面の隅にはこうしたためられている‥‥‥\n<wait> @refalign
-m/MS000E.BIN	0:01	40	1107	18	{02:08}何だと！？\n<wait>		...What!?\n<wait>	v005		reads: ‥‥‥何だと！？\n<wait>; reads: 園田： @refalign
-m/MS000E.BIN	0:01	41	1128	1FD0	追伸に目をや{08:51}、{08:37}の顔が強張る。\n<wait>		As he reaches the postscript, Sonoda's face suddenly stiffens.\n<wait>	v005		reads: 追伸に目をやった、園田の顔が強張る。\n<wait>; reads: おい！　ここを見てみろよ！！\n<wait> @refalign
-m/MS000E.BIN	0:01	42	1175	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 横から覗き込んでいた、園田 @refalign
-m/MS000E.BIN	0:01	43	1186	0B	ちょ{08:53}、{08:45}{02:08}{08:72}！\n<wait>		This is...\n<wait>	ours		reads: ちょっと、ここ‥‥‥‥‥！\n<wait>; reads: ‥‥‥何だと！？\n<wait>
-m/MS000E.BIN	0:01	44	1211	1FD0	横{08:42}覗き込んで{08:64}、{08:31}		Rui peeks over your shoulder and 	v005		reads: 横から覗き込んでいた、泪; reads: 追伸に目をやった、園田の顔が強張る。\n<wait> @refalign
-m/MS000E.BIN	0:01	45	1234	18	{02:08}！？\n<wait>					reads: ‥‥‥！？\n<wait>; reads: 泪：
-m/MS000E.BIN	0:01	46	1249	1FD0	追伸に目をや{08:51}、{08:31}の目が細まる。\n<wait>		As he reaches the postscript, Rui's face suddenly stiffens.\n<wait>	v005		reads: 追伸に目をやった、泪の目が細まる。\n<wait>; reads: ちょっと、ここ‥‥‥‥‥！\n<wait> @refalign
-m/MS000E.BIN	0:01	47	1291	18	が紙面の隅を指し声を上{08:44}。\nそこに{08:62}こう{08:4B}ためられて{08:64}{02:08}\n<wait>		points at the corner of the letter.\nThis is what it says.\n<wait>	v005		reads: が紙面の隅を指し声を上げた。\nそこには、こうしたためられていた‥‥‥\n<wait>; reads: 横から覗き込んでいた、泪 @refalign
-m/MS000E.BIN	0:01	48	1353	1FBA	追伸{08:72}挑戦を受けず、爆心地に現われ{08:25}場合{08:62}一日毎に無関係な{02:0B}を\n磔にし、コロシアム入口前に並べておく{02:08}\n<wait>		PS. For every day that you fail to show up,\nanother innocent person gets crucified.\n<wait>	v005		reads: 追伸‥‥挑戦を受けず、爆心地に現われない場合は、一日毎に無関係な人間を\n磔にし、コロシアム入口前に並べておく‥‥‥\n<wait>; reads: ‥‥‥！？\n<wait> @refalign
-m/MS000E.BIN	0:01	49	1468	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 追伸に目をやった、泪の目が細まる。\n<wait> @refalign
-m/MS000E.BIN	0:01	50	1474	1FD3	クソッ！！　何て卑劣な{02:08}‥！\n<wait>		That cowardly son of a bitch!\n<wait>	v005		reads: クソッ！！　何て卑劣な‥‥‥‥！\n<wait>; reads: が紙面の隅を指し声を上げた。\nそこには、こうしたためられていた‥‥‥\n<wait> @refalign
-m/MS000E.BIN	0:01	51	1511	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 追伸‥‥挑戦を受けず、爆心地に現われない場合は、一日毎に無関係な人間を\n磔にし、コロシアム入口前に並べておく‥‥‥\n<wait> @refalign
-m/MS000E.BIN	0:01	52	1526	00	{04:FF}。{08:90}やら、挑戦を受けざるを得なくなっち{08:20}な。\n{08:45}{08:42}爆心地{08:71}{08:62}{08:7A}に距離は無い。\n<wait>		Katsuragi. I hate to say it, but it looks like we have no choice.\nThe ground zero is not that far from here.\n<wait>	v005		reads: 。どうやら、挑戦を受けざるを得なくなっちまったな。\nここから爆心地までは、そんなに距離は無い。\n<wait>; reads: 園田： @refalign
-m/MS000E.BIN	0:01	53	1612	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: クソッ！！　何て卑劣な‥‥‥‥！\n<wait> @refalign
-m/MS000E.BIN	0:01	54	1618	1FD3	磔に{03:0C}る人が一人{08:56}出{08:25}{08:69}に、すぐ爆心地に向かおう！！\n<wait>		Let's hurry there before a single innocent person gets hurt!\n<wait>	v005		reads: 磔にされる人が一人でも出ないように、すぐ爆心地に向かおう！！\n<wait>; reads: 園田： @refalign
-m/MS000E.BIN	0:01	55	1678	18	{08:48}で{08:62}挑戦を受けざるを得{08:25}{08:81}{08:25}か！！\n<wait>		Shit. He's made it so that we cannot refuse his challenge!\n<wait>	v005		reads: これでは、挑戦を受けざるを得ないじゃないか！！\n<wait>; reads: 。どうやら、挑戦を受けざるを得なくなっちまったな。\nここから爆心地までは、そんなに距離は無い。\n<wait> @refalign
-m/MS000E.BIN	0:01	56	1723	1FD2	{08:37}：		Sonoda:	v005		reads: 園田： @refalign
-m/MS000E.BIN	0:01	57	1733	00	{04:FF}	{04:FF}	Katsuragi	v005		reads: ; reads: 磔にされる人が一人でも出ないように、すぐ爆心地に向かおう！！\n<wait>
-m/MS000E.BIN	0:01	58	1740	09	と{08:31}の手当てを{08:4A}、爆心地に急が{08:57}{02:08}！\n<wait>		 and Rui... Wait just a bit longer...\n<wait>	v005		reads: と泪の手当てをして、爆心地に急がなければ‥‥‥！\n<wait>; reads: これでは、挑戦を受けざるを得ないじゃないか！！\n<wait> @refalign
-m/MS000E.BIN	0:01	59	1791	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 園田： @refalign
-m/MS000E.BIN	0:01	60	1797	1FD3	{02:08}ふん{08:72}卑怯な手を、使う{08:5E}ね{02:08}\n<wait>	{02:08}ふん{08:72}卑怯な手を、使う{08:5E}ね{02:08}\n<wait>	Hmph... What a coward...\n<wait>	v005		reads: ‥‥‥ふん‥‥卑怯な手を、使うものね‥‥‥\n<wait>
-m/MS000E.BIN	0:01	61	1836	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: と泪の手当てをして、爆心地に急がなければ‥‥‥！\n<wait> @refalign
-m/MS000E.BIN	0:01	62	1851	00	{04:FF}。{08:90}やら、挑戦を受けざるを得なくなっちゃ{08:51}み{08:4E}ね。\n<wait>		Ayato. It looks like we cannot refuse his challenge.\n<wait>	v005		reads: 。どうやら、挑戦を受けざるを得なくなっちゃったみたいね。\n<wait>; reads: 泪： @refalign
-m/MS000E.BIN	0:01	63	1912	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: ‥‥‥ふん‥‥卑怯な手を、使うものね‥‥‥\n<wait> @refalign
-m/MS000E.BIN	0:01	64	1918	1FD3	面倒く{08:49}事{08:4A}く{08:2F}わよね！\n<wait>		What a freaking bother.\n<wait>	v005		reads: 面倒くさい事してくれるわよね！\n<wait>; reads: 泪： @refalign
-m/MS000E.BIN	0:01	65	1951	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 。どうやら、挑戦を受けざるを得なくなっちゃったみたいね。\n<wait> @refalign
-m/MS000E.BIN	0:01	66	1957	1FD3	{08:5C}、ちゃっちゃと行{08:52}、ちゃっちゃと倒しちゃ{08:89}{08:80}よ！\n<wait>		Let's get over there and kick his ass!\n<wait>	v005		reads: もう、ちゃっちゃと行って、ちゃっちゃと倒しちゃいましょうよ！\n<wait>; reads: 泪： @refalign
-m/MS000E.BIN	0:01	67	2015	18	随分、面倒な事を{08:4A}く{08:2F}{08:81}{08:25}{02:08}？\n<wait>		Sounds like a real pain in the ass...\n<wait>	v005		reads: 随分、面倒な事をしてくれるじゃない‥‥‥？\n<wait>; reads: 面倒くさい事してくれるわよね！\n<wait> @refalign
-m/MS000E.BIN	0:01	68	2054	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
-m/MS000E.BIN	0:01	69	2064	00	{04:FF}	{04:FF}	Ayato	v005		reads: ; reads: もう、ちゃっちゃと行って、ちゃっちゃと倒しちゃいましょうよ！\n<wait>
-m/MS000E.BIN	0:01	70	2071	09	と{08:37}君の手当てを{08:4A}、爆心地に行{08:51}方が良いわね{08:72}。\n<wait>		 and Sonoda... Wait just a bit longer...       \n<wait>	v005		reads: と園田君の手当てをして、爆心地に行った方が良いわね‥‥。\n<wait>; reads: 随分、面倒な事をしてくれるじゃない‥‥‥？\n<wait> @refalign
-m/MS000E.BIN	0:01	71	2129	1FD0	{08:90}やら、挑戦を受けざるを得なく{08:1A}{08:1F}{08:69}だ{02:08}\n<wait>		It appears that this is a challenge that you cannot refuse.\n<wait>\nHowever, before that, you need to get Rui and Sonoda treated.\n<wait>	v005		reads: どうやら、挑戦を受けざるを得なくなってしまったようだ‥‥‥\n<wait>; reads: 泪： @refalign @refalign-merged
-m/MS000E.BIN	0:01	72	2176	1FBA	{03:0B}まずは{08:31}と{08:37}の手当てをし{08:57}{02:08}\n<wait>	{03:0B}まずは{08:31}と{08:37}の手当てをし{08:57}{02:08}\n<wait>	However, before that, you need to get Rui and Sonoda treated.\n<wait>	v005		reads: しかし、まずは泪と園田の手当てをしなければ‥‥‥\n<wait>
-m/MS000E.BIN	0:01	73	2269	1FD2	男の声：		 	v005		reads: と園田君の手当てをして、爆心地に行った方が良いわね‥‥。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:01	74	2279	1FD3	ギャアアアアアア！！！\n<wait>		 	v005		reads: どうやら、挑戦を受けざるを得なくなってしまったようだ‥‥‥\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:01	75	2308	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: しかし、まずは泪と園田の手当てをしなければ‥‥‥\n<wait> @refalign
-m/MS000E.BIN	0:01	76	2314	1FD3	何だ！　今の声は！！\n<wait>		Huh? What was that!?\n<wait>	v005		@refalign @refalign-merged
-m/MS000E.BIN	0:01	77	2343	1FD2	獣の声：		 	v005		@refalign @refalign-merged
-m/MS000E.BIN	0:01	78	2353	1FD3	ウオォォーーーーオオオオオオ！！\n<wait>		 	v005		reads: 園田： @refalign @refalign-merged
-m/MS000E.BIN	0:01	79	2394	1FD2	{08:37}：		Sonoda:	v005		reads: 園田： @refalign
-m/MS000E.BIN	0:01	80	2400	1FD3	上の方{08:42}だ！\n		It's coming from above! Hurry!\n<wait>	v005		reads: 上の方からだ！\n @refalign @refalign-merged
-m/MS000E.BIN	0:01	81	2417	00	{04:FF}、急ごう！！\n<wait>		 	v005		reads: 、急ごう！！\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:01	82	2469	1F03						reads: 園田：
-m/MS000E.BIN	0:01	83	2473	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 上の方からだ！\n @refalign
-m/MS000E.BIN	0:01	84	2479	1FD3	メイちゃんを預{08:18}の{08:26}い{08:84}{02:08}‥\n満月が過ぎる{08:71}、どこにいれば{08:7F}のかしら{02:08}。\n<wait>		We should probably decide this before we leave.\nWhere we will take Mei?\n<wait>	v005		reads: メイちゃんを預かったのはいいけど‥‥‥‥\n満月が過ぎるまで、どこにいればいいのかしら‥‥‥。\n<wait>; reads: 、急ごう！！\n<wait> @refalign
-m/MS000E.BIN	0:01	85	2559	1FD2	{08:31}：	{08:31}：	Rui:	v005		reads: 泪：
-m/MS000E.BIN	0:01	86	2565	1FD3	{08:47}子の身体{08:81}、長旅は無理{08:8A}{02:08}\n<wait>		Given her condition, I really wouldn't want to travel far with her...\n<wait>	v005		reads: この子の身体じゃ、長旅は無理だし‥‥‥\n<wait>; reads: 泪： @refalign
-m/MS000E.BIN	0:01	87	2602	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: メイちゃんを預かったのはいいけど‥‥‥‥\n満月が過ぎるまで、どこにいればいいのかしら‥‥‥。\n<wait> @refalign
-m/MS000E.BIN	0:01	88	2608	1FD3	おまけに、{08:37}君も		These two also need some rest.\n<wait>Hmm... Where indeed...\n<wait>	v005		reads: おまけに、園田君も; reads: 泪： @refalign @refalign-merged
-m/MS000E.BIN	0:01	89	2628	00	{04:FF}も{08:48}{08:8A}。\n<wait>どこか近くに落ち着{08:29}場所は{02:08}‥\n<wait>		 	v005		reads: もこれだし。\n<wait>どこか近くに落ち着ける場所は‥‥‥‥\n<wait>; reads: この子の身体じゃ、長旅は無理だし‥‥‥\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:01	90	2682	1FD2	メイ：		 	v005		reads: 泪： @refalign @refalign-merged
-m/MS000E.BIN	0:01	91	2690	1FD3	{02:08}お姉ちゃん。メイ、お兄ちゃんに聞{08:64}{08:46}が{08:7B}の。\n<wait>		 	v005		reads: ‥‥‥お姉ちゃん。メイ、お兄ちゃんに聞いたことがあるの。\n<wait>; reads: おまけに、園田君も @refalign @refalign-merged
-m/MS000E.BIN	0:01	92	2745	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: もこれだし。\n<wait>どこか近くに落ち着ける場所は‥‥‥‥\n<wait> @refalign
-m/MS000E.BIN	0:01	93	2751	1FD3	え？\n<wait>		Hmm?\n<wait>	v005		@refalign @refalign-merged
-m/MS000E.BIN	0:01	94	2764	1FD2	メイ：		 	v005		reads: ‥‥‥お姉ちゃん。メイ、お兄ちゃんに聞いたことがあるの。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:01	95	2772	1FD3	あのね。雑司が谷{08:52}所に、鬼子母神{08:52}{08:68}お寺が{08:7B}{08:5F}{08:52}。\n{08:4D}で、そ{08:47}お坊さんが優しい{08:5F}{08:52}{02:08}\n<wait>		 	v005		reads: あのね。雑司が谷って所に、鬼子母神っていうお寺があるんだって。\nそれで、そこのお坊さんが優しいんだって‥‥‥\n<wait>; reads: 泪： @refalign @refalign-merged
-m/MS000E.BIN	0:01	96	2864	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
-m/MS000E.BIN	0:01	97	2870	1FD3	鬼子母神{02:08}‥\n<wait>		Oh, yeah. You must be talking about Kishimojin.\n<wait>	v005		reads: 鬼子母神‥‥‥‥\n<wait> @refalign
-m/MS000E.BIN	0:01	98	2891	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: あのね。雑司が谷って所に、鬼子母神っていうお寺があるんだって。\nそれで、そこのお坊さんが優しいんだって‥‥‥\n<wait> @refalign
-m/MS000E.BIN	0:01	99	2897	1FD3	そうね、わ{08:18}わ。鬼子母神に行きま{08:80}。\n<wait>		That sounds good. Let's head there.\n<wait>	v005		reads: そうね、わかったわ。鬼子母神に行きましょう。\n<wait>; reads: 泪： @refalign
-m/MS000E.BIN	0:01	100	2943	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 鬼子母神‥‥‥‥\n<wait> @refalign
-m/MS000E.BIN	0:01	101	2949	1FD3	メイちゃんを預{08:18}の{08:26}い{08:84}、満月が過ぎる{08:71}何処に{08:40}{01:3E}{08:6B}？\n<wait>		We should probably decide this before we leave.\nWhere we will take Mei?\n<wait>	v005		reads: メイちゃんを預かったのはいいけど、満月が過ぎるまで何処にいるつもりなの？\n<wait>; reads: 泪： @refalign
-m/MS000E.BIN	0:01	102	3012	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: そうね、わかったわ。鬼子母神に行きましょう。\n<wait> @refalign
-m/MS000E.BIN	0:01	103	3018	1FD3	{08:47}子の体{08:81}あ、旅を続{08:29}{08:52}訳にも行か{08:25}わ。\n<wait>		Given her condition, I really wouldn't want to travel far with her...\n<wait>	v005		reads: この子の体じゃあ、旅を続けるって訳にも行かないわ。\n<wait>; reads: 泪： @refalign
-m/MS000E.BIN	0:01	104	3072	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: メイちゃんを預かったのはいいけど、満月が過ぎるまで何処にいるつもりなの？\n<wait> @refalign
-m/MS000E.BIN	0:01	105	3078	1FD3	{02:08}{01:29}！　俺の知り合いが鬼子母神に{08:40}{08:85}だ。\nそこに満月が過ぎる{08:71}、泊め{08:54}らおう！\n<wait>		...Oh, I know! I have a friend at Kishimojin.\nThey'll surely let her stay there.\n<wait>	v005		reads: ‥‥‥そうだ！　俺の知り合いが鬼子母神にいるはずだ。\nそこに満月が過ぎるまで、泊めてもらおう！\n<wait>; reads: 泪： @refalign
-m/MS000E.BIN	0:01	106	3164	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: この子の体じゃあ、旅を続けるって訳にも行かないわ。\n<wait> @refalign
-m/MS000E.BIN	0:01	107	3170	1FD3	{08:81}あ、{08:4D}で{08:7F}わ。\n早くいきま{08:80}。\n<wait>		Sounds good to me. Let's get going then.\n<wait>	v005		reads: じゃあ、それでいいわ。\n早くいきましょう。\n<wait>; reads: 園田： @refalign
-m/MS000E.BIN	0:01	108	3213	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: ‥‥‥そうだ！　俺の知り合いが鬼子母神にいるはずだ。\nそこに満月が過ぎるまで、泊めてもらおう！\n<wait> @refalign
-m/MS000E.BIN	0:01	109	3219	1FD3	どこか、落ち着{08:29}場所無いかしら？\n<wait>		Is there anywhere we could go?\n<wait>	v005		reads: どこか、落ち着ける場所無いかしら？\n<wait>; reads: 泪： @refalign
-m/MS000E.BIN	0:01	110	3274	1FB2	マイシテーは？		MyCity, maybe?	v005		menu option, declared width 20 columns; reads: じゃあ、それでいいわ。\n早くいきましょう。\n<wait> @refalign
-m/MS000E.BIN	0:01	111	3290	1FB2	う～ん。{08:90}し{08:69}		Hmm...	v005		reads: う～ん。どうしよう; menu option, declared width 20 columns; reads: 泪： @refalign
-m/MS000E.BIN	0:01	112	3324	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: どこか、落ち着ける場所無いかしら？\n<wait> @refalign
-m/MS000E.BIN	0:01	113	3330	1FD3	だめよ。あそこは。\n考え{08:54}みな{08:49}よ。{01:16}達{02:01}{08:42}追放{03:0C}たのよ？\n<wait>		That's a terrible idea. Use your head a little.\nWe're still being chased by Pentagramma.\n<wait>	ours		reads: だめよ。あそこは。\n考えてもみなさいよ。あたし達ペンタグランマから追放されたのよ？\n<wait>; menu option, declared width 20 columns
-m/MS000E.BIN	0:01	114	3396	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: う～ん。どうしよう; menu option, declared width 20 columns @refalign
-m/MS000E.BIN	0:01	115	3402	1FD3	{02:08}追放{08:52}{08:68}か、処刑{03:0C}て死んでる事に{08:1A}るみ{08:4E}{08:74}ど。\n<wait>	{02:08}追放{08:52}{08:68}か、処刑{03:0C}て死んでる事に{08:1A}るみ{08:4E}{08:74}ど。\n<wait>	They catch us, and that's it. We're dead.\n<wait>	v005		reads: ‥‥‥追放っていうか、処刑されて死んでる事になってるみたいだけど。\n<wait>
-m/MS000E.BIN	0:01	116	3459	1FD2	{08:31}：	{08:31}：	Rui:	v005		reads: 泪：
-m/MS000E.BIN	0:01	117	3465	1FD3	あそこ{08:62}{02:01}のメンバーも多い{08:5F}{08:42}、いつ嗅ぎつけられて\n面倒な事に{08:7D}{08:25}とも限ら{08:25}わ。\n<wait>		We should pick a place where they don't have a presence...\n<wait>\nA place to rest...\n<wait>It hurts to say, but this really does fall outside of your\narea of expertise.\n<wait>	v005		reads: あそこは、ペンタグランマのメンバーも多いんだから、いつ嗅ぎつけられて\n面倒な事にならないとも限らないわ。\n<wait>; reads: 泪： @refalign @refalign-merged
-m/MS000E.BIN	0:01	118	3556	1FD0	近くに落ち着{08:29}場所{02:08}{08:72}\n<wait>{08:10}育ちの		 	v005		reads: 近くに落ち着ける場所‥‥‥‥‥\n<wait>シェルター育ちの; reads: だめよ。あそこは。\n考えてもみなさいよ。あたし達ペンタグランマから追放されたのよ？\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:01	119	3595	00	{04:FF}に、{08:7A}心当たりは無{08:18}。\n<wait>		 	v005		reads: に、そんな心当たりは無かった。\n<wait>; reads: 泪： @refalign @refalign-merged
-m/MS000E.BIN	0:01	120	3644	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: ‥‥‥追放っていうか、処刑されて死んでる事になってるみたいだけど。\n<wait> @refalign
-m/MS000E.BIN	0:01	121	3650	1FD3	メイちゃんを預{08:18}の{08:26}いが{02:08}\n彼女の身体で長旅は無理{08:8A}{02:08}\n<wait>		We should probably decide this before we leave.\nWhere we will take Mei?\n<wait>	v005		reads: メイちゃんを預かったのはいいが‥‥‥\n彼女の身体で長旅は無理だし‥‥‥\n<wait>; reads: 泪： @refalign
-m/MS000E.BIN	0:01	122	3712	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: あそこは、ペンタグランマのメンバーも多いんだから、いつ嗅ぎつけられて\n面倒な事にならないとも限らないわ。\n<wait> @refalign
-m/MS000E.BIN	0:01	123	3718	1FD3	近くで落ち着{08:29}場所{08:72}\n{1E10:01003C}		Hmm... What would be a good place...\n{1E10:01003C}	v005		reads: 近くで落ち着ける場所‥‥\n{1E10:01003C}; reads: 近くに落ち着ける場所‥‥‥‥‥\n<wait>シェルター育ちの @refalign
-m/MS000E.BIN	0:01	124	3748	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: に、そんな心当たりは無かった。\n<wait> @refalign
-m/MS000E.BIN	0:01	125	3754	1FD3	{01:29}！　鬼子母神が{08:7F}！\nあそこには俺の友達が{08:40}{08:5F}！\n<wait>		...Oh, I know! Kishimojin. I have friends there.\n<wait>	v005		reads: そうだ！　鬼子母神がいい！\nあそこには俺の友達がいるんだ！\n<wait>; reads: 園田： @refalign
-m/MS000E.BIN	0:01	126	3810	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: メイちゃんを預かったのはいいが‥‥‥\n彼女の身体で長旅は無理だし‥‥‥\n<wait> @refalign
-m/MS000E.BIN	0:01	127	3816	1FD3	鬼子母神に満月が過ぎる{08:71}、泊め{08:54}らおう。\nそうと決{08:20}ら、早く行こうぜ。\n<wait>		That's the perfect place for us go.\n<wait>	v005		reads: 鬼子母神に満月が過ぎるまで、泊めてもらおう。\nそうと決まったら、早く行こうぜ。\n<wait>; reads: 園田： @refalign
-m/MS000E.BIN	0:01	128	3894	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 近くで落ち着ける場所‥‥\n{1E10:01003C} @refalign
-m/MS000E.BIN	0:01	129	3900	1FD3	メイちゃんを早く休ま{08:67}やら{08:25}とな！\n{08:4D}に、{08:31}の治療も出来るか{08:5D}れ{08:25}。\n<wait>		Mei can rest there. Plus, we might also be able to get Rui treated.\n<wait>	v005		reads: メイちゃんを早く休ませてやらないとな！\nそれに、泪の治療も出来るかもしれない。\n<wait>; reads: 園田： @refalign
-m/MS000E.BIN	0:01	130	3977	1FD0	メイを預{08:18}{08:26}いが、{08:48}{08:42}次の満月が過ぎる{08:71}、どこに身をおけば\n良いの{08:8C}か{02:08}‥\n<wait>		Before you leave, you should probably decide where you will take Mei.\n<wait>	v005		reads: メイを預かったはいいが、これから次の満月が過ぎるまで、どこに身をおけば\n良いのだろうか‥‥‥‥\n<wait>; reads: そうだ！　鬼子母神がいい！\nあそこには俺の友達がいるんだ！\n<wait> @refalign
-m/MS000E.BIN	0:01	131	4073	1FB2	マイシテー		MyCity	v005		menu option, declared width 20 columns; reads: 園田： @refalign
-m/MS000E.BIN	0:01	132	4085	1FB2	どこか遠くへ		Somewhere far	v005		menu option, declared width 20 columns; reads: 鬼子母神に満月が過ぎるまで、泊めてもらおう。\nそうと決まったら、早く行こうぜ。\n<wait> @refalign
-m/MS000E.BIN	0:01	133	4099	1FB2	{08:90}し{08:69}{08:72}		Hmm...	v005		reads: どうしよう‥‥; menu option, declared width 20 columns; reads: 園田： @refalign
-m/MS000E.BIN	0:01	134	4129	0F	一番近い所で、マイシテー{08:8C}か{02:08}。\n<wait>		What about MyCity? That's pretty close.\n<wait>	v005		reads: 一番近い所で、マイシテーだろうか‥‥‥。\n<wait>; reads: メイちゃんを早く休ませてやらないとな！\nそれに、泪の治療も出来るかもしれない。\n<wait> @refalign
-m/MS000E.BIN	0:01	135	4168	1FBA	{03:0B}マイシテー内には{02:03}の{02:0B}が数多く{08:40}。\n処刑{03:0C}たと{08:68}事に{08:1A}{08:26}る{08:5E}の、いつ面倒な事に{08:7D}{08:25}とも限ら{08:25}。\n<wait>		Then again, that place is controlled by the Resistance.\nIf they catch you, that might be it for you.\n<wait>	v005		reads: しかし、マイシテー内にはレジスタンスの人間が数多くいる。\n処刑されたという事になってはいるものの、いつ面倒な事にならないとも限らない。\n<wait>; reads: メイを預かったはいいが、これから次の満月が過ぎるまで、どこに身をおけば\n良いのだろうか‥‥‥‥\n<wait> @refalign
-m/MS000E.BIN	0:01	136	4270	1FBA	マイシテーは避{08:43}方が良い{08:8C}{02:08}‥\n<wait>		Probably for the best if you stay away...\n<wait>	v005		reads: マイシテーは避けた方が良いだろう‥‥‥‥\n<wait>; menu option, declared width 20 columns @refalign
-m/MS000E.BIN	0:01	137	4308	18	どこか遠くへ{02:08}		What about somewhere far away? You hate to admit it,\nbut this really isn't one of your expertise.\n<wait>	v005		reads: どこか遠くへ‥‥‥; menu option, declared width 20 columns @refalign
-m/MS000E.BIN	0:01	138	4326	00	{04:FF}はそう考{08:41}が、{08:10}育ちの		Furthermore, you also doubt if Mei can travel very far.\n<wait>	v005		reads: はそう考えたが、シェルター育ちの; reads: どうしよう‥‥; menu option, declared width 20 columns @refalign @refalign-merged
-m/MS000E.BIN	0:01	139	4354	00	{04:FF}には\n都合の良い場所など、簡単に思いつか{08:19}。\n<wait>	{04:FF}には\n都合の良い場所など、簡単に思いつか{08:19}。\n<wait>				reads: には\n都合の良い場所など、簡単に思いつかなかった。\n<wait>
-m/MS000E.BIN	0:01	140	4406	1FBA	第一、メイの身体では長旅は無理{08:8C}{02:08}。\n<wait>		 	v005		reads: 第一、メイの身体では長旅は無理だろう‥‥‥。\n<wait>; reads: ペンタグランマB一番近い所で、マイシテーだろうか‥‥‥。\n<wait> @rebase-unmatched idx140 en={02:01}r{01:FF}What about MyCity? That's pretty close.\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:01	141	4450	18	{08:10}育ちの		Nothing really comes to your mind.\n<wait>	v005		reads: シェルター育ちの; reads: しかし、マイシテー内にはレジスタンスの人間が数多くいる。\n処刑されたという事になってはいるものの、いつ面倒な事にならないとも限らない。\n<wait> @refalign
-m/MS000E.BIN	0:01	142	4462	00	{04:FF}に、そう簡単に良い場所など\n思いつく{08:85}も無{08:18}{02:08}‥\n<wait>		It is there that Mei speaks up.\n<wait>	v005		reads: に、そう簡単に良い場所など\n思いつくはずも無かった‥‥‥‥\n<wait>; reads: マイシテーは避けた方が良いだろう‥‥‥‥\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:01	143	4522	00	{04:FF}が悩んで{08:40}と、メイが声をかけて{08:1E}。\n<wait>		 	v005		reads: が悩んでいると、メイが声をかけてきた。\n<wait>; reads: どこか遠くへ‥‥‥ @refalign @refalign-merged
-m/MS000E.BIN	0:01	144	4567	1FD2	メイ：		 	v005		reads: はそう考えたが、シェルター育ちの @refalign @refalign-merged
-m/MS000E.BIN	0:01	145	4575	1FD3	{08:72}	{08:72}	Hey. I have an idea.\n<wait>	v005		reads: ‥‥; reads: には\n都合の良い場所など、簡単に思いつかなかった。\n<wait>
-m/MS000E.BIN	0:01	146	4581	00	{04:FF}お兄ちゃん。メイね、お兄ちゃんに聞{08:64}事{08:7B}の。\n<wait>		 	v005		reads: お兄ちゃん。メイね、お兄ちゃんに聞いた事あるの。\n<wait>; reads: 第一、メイの身体では長旅は無理だろう‥‥‥。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:01	147	4636	1FD2	メイ：		 	v005		reads: シェルター育ちの @refalign @refalign-merged
-m/MS000E.BIN	0:01	148	4644	1FD3	雑司が谷{08:52}{08:68}所に、鬼子母神{08:52}{08:68}お寺があ{08:52}、そ{08:47}お坊さんが、\n優しい人な{08:5F}{08:52}言{08:52}たよ。\n<wait>		 	v005		reads: 雑司が谷っていう所に、鬼子母神っていうお寺があって、そこのお坊さんが、\n優しい人なんだって言ってたよ。\n<wait>; reads: に、そう簡単に良い場所など\n思いつくはずも無かった‥‥‥‥\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:01	149	4736	1FD0	鬼子母神{08:7C}、メイの身体{08:56}何とか{08:59}{08:8C}。\n<wait>特に行くあてなど無い		 	v005		reads: 鬼子母神ならば、メイの身体でも何とかなるだろう。\n<wait>特に行くあてなど無い; reads: が悩んでいると、メイが声をかけてきた。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:01	150	4801	00	{04:FF}{08:62}メイの言葉に従い、鬼子母神に向かう{08:46}に{08:4B}。\n<wait>		 	v005		reads: は、メイの言葉に従い、鬼子母神に向かうことにした。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:01	151	4857	1FD2	{08:37}：	{08:37}：	Sonoda:	v005		reads: 園田：; reads: ‥‥
-m/MS000E.BIN	0:01	152	4863	1FD3	さて、{08:48}{08:42}どこで次の満月{08:71}を過ごすか{02:08}\n<wait>		Now, where to go.\n<wait>	v005		reads: さて、これからどこで次の満月までを過ごすか‥‥‥\n<wait>; reads: お兄ちゃん。メイね、お兄ちゃんに聞いた事あるの。\n<wait> @refalign
-m/MS000E.BIN	0:01	153	4910	1FD2	{08:37}：		Sonoda:	v005		reads: 園田： @refalign
-m/MS000E.BIN	0:01	154	4916	1FD3	メイちゃんの身体{08:81}、長旅は無理{08:8A}な{02:08}\n{1E10:01003C}		I kinda doubt that Mei can travel very far.\n  {1E10:01003C}	v005		reads: メイちゃんの身体じゃ、長旅は無理だしな‥‥‥\n{1E10:01003C}; reads: 雑司が谷っていう所に、鬼子母神っていうお寺があって、そこのお坊さんが、\n優しい人なんだって言ってたよ。\n<wait> @refalign
-m/MS000E.BIN	0:01	155	4962	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 鬼子母神ならば、メイの身体でも何とかなるだろう。\n<wait>特に行くあてなど無い @refalign
-m/MS000E.BIN	0:01	156	4968	1FD3	{01:29}！　あそこが{08:7F}！\n鬼子母神{08:7D}、俺の友達も{08:40}{08:85}{08:8A}、{08:31}と		...Oh, I know! I have a friend at Kishimojin.\nThey'll surely let her stay there.\n<wait>	v005		reads: そうだ！　あそこがいい！\n鬼子母神なら、俺の友達もいるはずだし、泪と; reads: は、メイの言葉に従い、鬼子母神に向かうことにした。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:01	157	5025	00	{04:FF}の手当{08:54}出来るかも知れ{08:25}。\n<wait>		 	v005		reads: の手当ても出来るかも知れない。\n<wait>; reads: 園田： @refalign @refalign-merged
-m/MS000E.BIN	0:01	158	5062	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: さて、これからどこで次の満月までを過ごすか‥‥‥\n<wait> @refalign
-m/MS000E.BIN	0:01	159	5068	1FD3	メイちゃん。そこ{08:71}我慢できるよね？\n<wait>		Do you think that you can make it that far, Mei?\\<wait>	v005		reads: メイちゃん。そこまで我慢できるよね？\n<wait>; reads: 園田： @refalign @refalign-merged
-m/MS000E.BIN	0:01	160	5111	1FD2	メイ：		 	v005		reads: メイちゃんの身体じゃ、長旅は無理だしな‥‥‥\n{1E10:01003C} @refalign @refalign-merged
-m/MS000E.BIN	0:01	161	5119	1FD3	うん！\n<wait>		 	v005		reads: 園田： @refalign @refalign-merged
-m/MS000E.BIN	0:01	162	5134	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: そうだ！　あそこがいい！\n鬼子母神なら、俺の友達もいるはずだし、泪と @refalign
-m/MS000E.BIN	0:01	163	5140	1FD3	よし！　{08:81}あ急いで行こうぜ！\n<wait>		Good. Let's get going then.\n<wait>	v005		reads: よし！　じゃあ急いで行こうぜ！\n<wait>; reads: の手当ても出来るかも知れない。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:01	164	5320	1FD2	獣の声：		 	v005		reads: 園田： @refalign @refalign-merged
-m/MS000E.BIN	0:01	165	5330	1FD3	ウオォォーーーーオオオオオオン{02:08}‥\n<wait>		 	v005		reads: ウオォォーーーーオオオオオオン‥‥‥‥\n<wait>; reads: メイちゃん。そこまで我慢できるよね？\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:01	166	5373	1FD0	何処{08:42}か、獣の遠吠えの様な声が聞こえて来た。\n<wait>		 	v005		reads: 何処からか、獣の遠吠えの様な声が聞こえて来た。\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:01	24	644	0B	{08:37}	{08:37}	Sonoda	v005		reads: 園田; reads: 悪魔：
+m/MS000E.BIN	0:01	25	654	0B	{08:31}は{08:4D}を受けと{08:51}。\n<wait>	{08:31}は{08:4D}を受けと{08:51}。\n<wait>	Rui takes it.      \n<wait>	v005		reads: 泪はそれを受けとった。\n<wait>; reads: 園田; reads: 俺は、アドニス様からの書状を預かってきた者だ。\nそれさえ渡せば、お前達に用は無い。\n<wait>
+m/MS000E.BIN	0:01	26	681	1FD2	{08:0B}：		Demon:	v005		reads: 悪魔：; reads: 泪はそれを受けとった。\n<wait>; reads: そう言うと悪魔は、今時珍しい、白い紙で出来た封筒を差し出した。\n<wait> @refalign
+m/MS000E.BIN	0:01	27	687	1FD3	{02:08}{08:81}あな！\n<wait>	{02:08}{08:81}あな！\n<wait>	...Later!\n<wait>	v005		reads: ‥‥‥じゃあな！\n<wait>; reads: 悪魔： @rebase-unmatched idx27 en=Katsuragi
+m/MS000E.BIN	0:01	28	710	1FD0	{08:0B}{08:62}現わ{08:60}時と同じ{08:69}に忽然と消{08:41}。\n<wait>	{08:0B}{08:62}現わ{08:60}時と同じ{08:69}に忽然と消{08:41}。\n<wait>	The demon vanishes just as swiftly as he appeared.\n<wait>	v005		reads: 悪魔は、現われた時と同じように忽然と消えた。\n<wait>; reads: ‥‥‥じゃあな！\n<wait>; reads: 園田
+m/MS000E.BIN	0:01	29	770	0B	{08:37}	{08:37}	Sonoda	v005		reads: 園田; reads: 悪魔は、現われた時と同じように忽然と消えた。\n<wait>; reads: 泪はそれを受けとった。\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:01	30	780	0B	{08:31}は封筒を開いてみた。\n{1E10:01003C}	{08:31}は封筒を開いてみた。\n{1E10:01003C}	Rui opens the letter.  \n{1E10:01003C}	v005		reads: 泪は封筒を開いてみた。\n{1E10:01003C}; reads: 悪魔：
+m/MS000E.BIN	0:01	31	810	1FBA	封筒を開き、中の書状を読んでみると、{08:4D}は	封筒を開き、中の書状を読んでみると、{08:4D}は	Inside, there is a challenge directed towards Katsuragi.\n<wait>	v005		reads: 封筒を開き、中の書状を読んでみると、それは; reads: 園田; reads: ‥‥‥じゃあな！\n<wait>
+m/MS000E.BIN	0:01	32	856	1F01	への挑戦状だ{08:51}。\n<wait>		Inside, there is a challenge directed towards Katsuragi.\n<wait>	v005		reads: への挑戦状だった。\n<wait>; reads: 泪は封筒を開いてみた。\n{1E10:01003C}; reads: 悪魔は、現われた時と同じように忽然と消えた。\n<wait> @refalign @refalign-merged @refalign
+m/MS000E.BIN	0:01	33	879	1FBA	挑戦の内容{08:62}新宿爆心地コロシアムにて一騎打ちを行い、{01:3F}の実力が上かを\n決め{08:69}との事だ{08:51}。\n<wait>	挑戦の内容{08:62}新宿爆心地コロシアムにて一騎打ちを行い、{01:3F}の実力が上かを\n決め{08:69}との事だ{08:51}。\n<wait>	It appears that Adonis wants you to duel him at the colosseum located\nwithin the ground zero at Shinjuku to decide once and for all which\none of you is stronger.\n<wait>	v005		reads: 挑戦の内容は、新宿爆心地コロシアムにて一騎打ちを行い、どちらの実力が上かを\n決めようとの事だった。\n<wait>; reads: 封筒を開き、中の書状を読んでみると、それは @rebase-unmatched idx33 en=Katsuragi
+m/MS000E.BIN	0:01	34	981	1F03	さらに、紙面の隅にはこう{08:4B}ためられ{08:14}{02:08}\n<wait>	さらに、紙面の隅にはこう{08:4B}ためられ{08:14}{02:08}\n<wait>				reads: さらに、紙面の隅にはこうしたためられている‥‥‥\n<wait>; reads: への挑戦状だった。\n<wait>; reads: 園田
+m/MS000E.BIN	0:01	35	1038	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 挑戦の内容は、新宿爆心地コロシアムにて一騎打ちを行い、どちらの実力が上かを\n決めようとの事だった。\n<wait>; reads: 泪は封筒を開いてみた。\n{1E10:01003C} @refalign @refalign-merged
+m/MS000E.BIN	0:01	36	1049	0B	おい！　{08:45}を見てみろよ！！\n<wait>		Hey! Have a look at this!\n<wait>	v005		reads: おい！　ここを見てみろよ！！\n<wait>; reads: さらに、紙面の隅にはこうしたためられている‥‥‥\n<wait>; reads: 封筒を開き、中の書状を読んでみると、それは @refalign
+m/MS000E.BIN	0:01	37	1084	1FD0	横{08:42}覗き込んで{08:64}、{08:37}		Sonoda peeks over your shoulder and 	v005		reads: 横から覗き込んでいた、園田; reads: 園田：; reads: への挑戦状だった。\n<wait> @refalign
+m/MS000E.BIN	0:01	38	1107	18	{02:08}何だと！？\n<wait>		...What!?\n<wait>	v005		reads: ‥‥‥何だと！？\n<wait>; reads: おい！　ここを見てみろよ！！\n<wait>; reads: 挑戦の内容は、新宿爆心地コロシアムにて一騎打ちを行い、どちらの実力が上かを\n決めようとの事だった。\n<wait> @refalign
+m/MS000E.BIN	0:01	39	1128	1FD0	追伸に目をや{08:51}、{08:37}の顔が強張る。\n<wait>		As he reaches the postscript, Sonoda's face suddenly stiffens.\n<wait>	v005		reads: 追伸に目をやった、園田の顔が強張る。\n<wait>; reads: 横から覗き込んでいた、園田; reads: さらに、紙面の隅にはこうしたためられている‥‥‥\n<wait> @refalign
+m/MS000E.BIN	0:01	40	1175	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: ‥‥‥何だと！？\n<wait>; reads: 園田： @refalign
+m/MS000E.BIN	0:01	41	1186	0B	ちょ{08:53}、{08:45}{02:08}{08:72}！\n<wait>		This is...\n<wait>	ours		reads: ちょっと、ここ‥‥‥‥‥！\n<wait>; reads: 追伸に目をやった、園田の顔が強張る。\n<wait>; reads: おい！　ここを見てみろよ！！\n<wait> @refalign
+m/MS000E.BIN	0:01	42	1211	1FD0	横{08:42}覗き込んで{08:64}、{08:31}		Rui peeks over your shoulder and 	v005		reads: 横から覗き込んでいた、泪; reads: 泪：; reads: 横から覗き込んでいた、園田 @refalign
+m/MS000E.BIN	0:01	43	1234	18	{02:08}！？\n<wait>					reads: ‥‥‥！？\n<wait>; reads: ちょっと、ここ‥‥‥‥‥！\n<wait>; reads: ‥‥‥何だと！？\n<wait>
+m/MS000E.BIN	0:01	44	1249	1FD0	追伸に目をや{08:51}、{08:31}の目が細まる。\n<wait>		As he reaches the postscript, Rui's face suddenly stiffens.\n<wait>	v005		reads: 追伸に目をやった、泪の目が細まる。\n<wait>; reads: 横から覗き込んでいた、泪; reads: 追伸に目をやった、園田の顔が強張る。\n<wait> @refalign
+m/MS000E.BIN	0:01	45	1291	18	が紙面の隅を指し声を上{08:44}。\nそこに{08:62}こう{08:4B}ためられて{08:64}{02:08}\n<wait>		points at the corner of the letter.\nThis is what it says.\n<wait>	v005		reads: が紙面の隅を指し声を上げた。\nそこには、こうしたためられていた‥‥‥\n<wait>; reads: ‥‥‥！？\n<wait>; reads: 泪： @refalign
+m/MS000E.BIN	0:01	46	1353	1FBA	追伸{08:72}挑戦を受けず、爆心地に現われ{08:25}場合{08:62}一日毎に無関係な{02:0B}を\n磔にし、コロシアム入口前に並べておく{02:08}\n<wait>		PS. For every day that you fail to show up,\nanother innocent person gets crucified.\n<wait>	v005		reads: 追伸‥‥挑戦を受けず、爆心地に現われない場合は、一日毎に無関係な人間を\n磔にし、コロシアム入口前に並べておく‥‥‥\n<wait>; reads: 追伸に目をやった、泪の目が細まる。\n<wait>; reads: ちょっと、ここ‥‥‥‥‥！\n<wait> @refalign
+m/MS000E.BIN	0:01	47	1468	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: が紙面の隅を指し声を上げた。\nそこには、こうしたためられていた‥‥‥\n<wait>; reads: 横から覗き込んでいた、泪 @refalign
+m/MS000E.BIN	0:01	48	1474	1FD3	クソッ！！　何て卑劣な{02:08}‥！\n<wait>		That cowardly son of a bitch!\n<wait>	v005		reads: クソッ！！　何て卑劣な‥‥‥‥！\n<wait>; reads: 追伸‥‥挑戦を受けず、爆心地に現われない場合は、一日毎に無関係な人間を\n磔にし、コロシアム入口前に並べておく‥‥‥\n<wait>; reads: ‥‥‥！？\n<wait> @refalign
+m/MS000E.BIN	0:01	49	1511	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 追伸に目をやった、泪の目が細まる。\n<wait> @refalign
+m/MS000E.BIN	0:01	50	1528	1F01	。{08:90}やら、挑戦を受けざるを得なくなっち{08:20}な。\n{08:45}{08:42}爆心地{08:71}{08:62}{08:7A}に距離は無い。\n<wait>		Katsuragi. I hate to say it, but it looks like we have no choice.\nThe ground zero is not that far from here.\n<wait>	v005		reads: 。どうやら、挑戦を受けざるを得なくなっちまったな。\nここから爆心地までは、そんなに距離は無い。\n<wait>; reads: クソッ！！　何て卑劣な‥‥‥‥！\n<wait>; reads: が紙面の隅を指し声を上げた。\nそこには、こうしたためられていた‥‥‥\n<wait> @refalign @rebase-tagdiff
+m/MS000E.BIN	0:01	51	1612	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 追伸‥‥挑戦を受けず、爆心地に現われない場合は、一日毎に無関係な人間を\n磔にし、コロシアム入口前に並べておく‥‥‥\n<wait> @refalign
+m/MS000E.BIN	0:01	52	1618	1FD3	磔に{03:0C}る人が一人{08:56}出{08:25}{08:69}に、すぐ爆心地に向かおう！！\n<wait>		Let's hurry there before a single innocent person gets hurt!\n<wait>	v005		reads: 磔にされる人が一人でも出ないように、すぐ爆心地に向かおう！！\n<wait>; reads: 。どうやら、挑戦を受けざるを得なくなっちまったな。\nここから爆心地までは、そんなに距離は無い。\n<wait>; reads: 園田： @refalign
+m/MS000E.BIN	0:01	53	1678	18	{08:48}で{08:62}挑戦を受けざるを得{08:25}{08:81}{08:25}か！！\n<wait>		Shit. He's made it so that we cannot refuse his challenge!\n<wait>	v005		reads: これでは、挑戦を受けざるを得ないじゃないか！！\n<wait>; reads: 園田：; reads: クソッ！！　何て卑劣な‥‥‥‥！\n<wait> @refalign
+m/MS000E.BIN	0:01	54	1723	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 磔にされる人が一人でも出ないように、すぐ爆心地に向かおう！！\n<wait>; reads: 園田： @refalign
+m/MS000E.BIN	0:01	55	1740	09	と{08:31}の手当てを{08:4A}、爆心地に急が{08:57}{02:08}！\n<wait>		 and Rui... Wait just a bit longer...\n<wait>	v005		reads: と泪の手当てをして、爆心地に急がなければ‥‥‥！\n<wait>; reads: これでは、挑戦を受けざるを得ないじゃないか！！\n<wait>; reads: 。どうやら、挑戦を受けざるを得なくなっちまったな。\nここから爆心地までは、そんなに距離は無い。\n<wait> @refalign
+m/MS000E.BIN	0:01	56	1791	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 園田： @refalign
+m/MS000E.BIN	0:01	57	1797	1FD3	{02:08}ふん{08:72}卑怯な手を、使う{08:5E}ね{02:08}\n<wait>	{02:08}ふん{08:72}卑怯な手を、使う{08:5E}ね{02:08}\n<wait>	Hmph... What a coward...\n<wait>	v005		reads: ‥‥‥ふん‥‥卑怯な手を、使うものね‥‥‥\n<wait>; reads: 磔にされる人が一人でも出ないように、すぐ爆心地に向かおう！！\n<wait>
+m/MS000E.BIN	0:01	58	1836	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: と泪の手当てをして、爆心地に急がなければ‥‥‥！\n<wait>; reads: これでは、挑戦を受けざるを得ないじゃないか！！\n<wait> @refalign
+m/MS000E.BIN	0:01	59	1853	1F01	。{08:90}やら、挑戦を受けざるを得なくなっちゃ{08:51}み{08:4E}ね。\n<wait>		Ayato. It looks like we cannot refuse his challenge.\n<wait>	v005		reads: 。どうやら、挑戦を受けざるを得なくなっちゃったみたいね。\n<wait>; reads: 泪：; reads: 園田： @refalign @rebase-tagdiff
+m/MS000E.BIN	0:01	60	1912	1FD2	{08:31}：	{08:31}：	Rui:	v005		reads: 泪：; reads: ‥‥‥ふん‥‥卑怯な手を、使うものね‥‥‥\n<wait> @rebase-unmatched idx60 en=Katsuragi
+m/MS000E.BIN	0:01	61	1918	1FD3	面倒く{08:49}事{08:4A}く{08:2F}わよね！\n<wait>		What a freaking bother.\n<wait>	v005		reads: 面倒くさい事してくれるわよね！\n<wait>; reads: 泪：; reads: と泪の手当てをして、爆心地に急がなければ‥‥‥！\n<wait> @refalign
+m/MS000E.BIN	0:01	62	1951	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 。どうやら、挑戦を受けざるを得なくなっちゃったみたいね。\n<wait>; reads: 泪： @refalign
+m/MS000E.BIN	0:01	63	1957	1FD3	{08:5C}、ちゃっちゃと行{08:52}、ちゃっちゃと倒しちゃ{08:89}{08:80}よ！\n<wait>		Let's get over there and kick his ass!\n<wait>	v005		reads: もう、ちゃっちゃと行って、ちゃっちゃと倒しちゃいましょうよ！\n<wait>; reads: 泪：; reads: ‥‥‥ふん‥‥卑怯な手を、使うものね‥‥‥\n<wait> @refalign
+m/MS000E.BIN	0:01	64	2015	18	随分、面倒な事を{08:4A}く{08:2F}{08:81}{08:25}{02:08}？\n<wait>		Sounds like a real pain in the ass...\n<wait>	v005		reads: 随分、面倒な事をしてくれるじゃない‥‥‥？\n<wait>; reads: 面倒くさい事してくれるわよね！\n<wait>; reads: 泪： @refalign
+m/MS000E.BIN	0:01	65	2054	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 。どうやら、挑戦を受けざるを得なくなっちゃったみたいね。\n<wait> @refalign
+m/MS000E.BIN	0:01	66	2071	09	と{08:37}君の手当てを{08:4A}、爆心地に行{08:51}方が良いわね{08:72}。\n<wait>		 and Sonoda... Wait just a bit longer...       \n<wait>	v005		reads: と園田君の手当てをして、爆心地に行った方が良いわね‥‥。\n<wait>; reads: もう、ちゃっちゃと行って、ちゃっちゃと倒しちゃいましょうよ！\n<wait>; reads: 泪： @refalign
+m/MS000E.BIN	0:01	67	2129	1FD0	{08:90}やら、挑戦を受けざるを得なく{08:1A}{08:1F}{08:69}だ{02:08}\n<wait>		It appears that this is a challenge that you cannot refuse.\n<wait>	v005		reads: どうやら、挑戦を受けざるを得なくなってしまったようだ‥‥‥\n<wait>; reads: 随分、面倒な事をしてくれるじゃない‥‥‥？\n<wait>; reads: 面倒くさい事してくれるわよね！\n<wait> @refalign
+m/MS000E.BIN	0:01	68	2176	1FBA	{03:0B}まずは{08:31}と{08:37}の手当てをし{08:57}{02:08}\n<wait>		However, before that, you need to get Rui and Sonoda treated.\n<wait>	v005		reads: しかし、まずは泪と園田の手当てをしなければ‥‥‥\n<wait>; reads: 泪： @refalign
+m/MS000E.BIN	0:01	69	2269	1FD2	男の声：	男の声：	Man's Voice:	v005		reads: ; reads: もう、ちゃっちゃと行って、ちゃっちゃと倒しちゃいましょうよ！\n<wait>
+m/MS000E.BIN	0:01	70	2279	1FD3	ギャアアアアアア！！！\n<wait>		GYAAAAAAAH!!\n<wait>	v005		reads: と園田君の手当てをして、爆心地に行った方が良いわね‥‥。\n<wait>; reads: 随分、面倒な事をしてくれるじゃない‥‥‥？\n<wait> @refalign
+m/MS000E.BIN	0:01	71	2308	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: どうやら、挑戦を受けざるを得なくなってしまったようだ‥‥‥\n<wait>; reads: 泪： @refalign @refalign-merged
+m/MS000E.BIN	0:01	72	2314	1FD3	何だ！　今の声は！！\n<wait>	何だ！　今の声は！！\n<wait>	Huh? What was that!?\n<wait>	v005		reads: しかし、まずは泪と園田の手当てをしなければ‥‥‥\n<wait> @rebase-unmatched idx72 en=Ayato
+m/MS000E.BIN	0:01	73	2343	1FD2	獣の声：		Beastly Voice:	v005		reads: と園田君の手当てをして、爆心地に行った方が良いわね‥‥。\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:01	74	2353	1FD3	ウオォォーーーーオオオオオオ！！\n<wait>		AAAAAAAAOOOOOOOOOH!\n<wait>	v005		reads: どうやら、挑戦を受けざるを得なくなってしまったようだ‥‥‥\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:01	75	2394	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: しかし、まずは泪と園田の手当てをしなければ‥‥‥\n<wait> @refalign
+m/MS000E.BIN	0:01	76	2400	1FD3	上の方{08:42}だ！\n		It's coming from above! Hurry!\n<wait>	v005		reads: 上の方からだ！\n; @refalign @refalign-merged
+m/MS000E.BIN	0:01	77	2419	1F01	、急ごう！！\n<wait>		 	v005		@refalign @refalign-merged @refalign @refalign-merged
+m/MS000E.BIN	0:01	78	2469	1F03						reads: 園田： @refalign @refalign-merged
+m/MS000E.BIN	0:01	79	2473	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 園田： @refalign
+m/MS000E.BIN	0:01	80	2479	1FD3	メイちゃんを預{08:18}の{08:26}い{08:84}{02:08}‥\n満月が過ぎる{08:71}、どこにいれば{08:7F}のかしら{02:08}。\n<wait>		We should probably decide this before we leave.\nWhere we will take Mei?\n<wait>	v005		reads: メイちゃんを預かったのはいいけど‥‥‥‥\n満月が過ぎるまで、どこにいればいいのかしら‥‥‥。\n<wait>; reads: 上の方からだ！\n @refalign @refalign-merged
+m/MS000E.BIN	0:01	81	2559	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 、急ごう！！\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:01	82	2565	1FD3	{08:47}子の身体{08:81}、長旅は無理{08:8A}{02:08}\n<wait>	{08:47}子の身体{08:81}、長旅は無理{08:8A}{02:08}\n<wait>	Given her condition, I really wouldn't want to travel far with her...\n<wait>	v005		reads: この子の身体じゃ、長旅は無理だし‥‥‥\n<wait>; reads: 園田：
+m/MS000E.BIN	0:01	83	2602	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 上の方からだ！\n @refalign
+m/MS000E.BIN	0:01	84	2608	1FD3	おまけに、{08:37}君も		These two also need some rest.\n<wait>Hmm... Where indeed...\n<wait>	v005		reads: おまけに、園田君も; reads: メイちゃんを預かったのはいいけど‥‥‥‥\n満月が過ぎるまで、どこにいればいいのかしら‥‥‥。\n<wait>; reads: 、急ごう！！\n<wait> @refalign
+m/MS000E.BIN	0:01	85	2630	1F01	も{08:48}{08:8A}。\n<wait>どこか近くに落ち着{08:29}場所は{02:08}‥\n<wait>	も{08:48}{08:8A}。\n<wait>どこか近くに落ち着{08:29}場所は{02:08}‥\n<wait>				reads: もこれだし。\n<wait>どこか近くに落ち着ける場所は‥‥‥‥\n<wait>; reads: 泪：
+m/MS000E.BIN	0:01	86	2682	1FD2	メイ：		Mei:	v005		reads: この子の身体じゃ、長旅は無理だし‥‥‥\n<wait>; reads: 泪： @refalign
+m/MS000E.BIN	0:01	87	2690	1FD3	{02:08}お姉ちゃん。メイ、お兄ちゃんに聞{08:64}{08:46}が{08:7B}の。\n<wait>		Hey. I have an idea.\n<wait>	v005		reads: ‥‥‥お姉ちゃん。メイ、お兄ちゃんに聞いたことがあるの。\n<wait>; reads: 泪：; reads: メイちゃんを預かったのはいいけど‥‥‥‥\n満月が過ぎるまで、どこにいればいいのかしら‥‥‥。\n<wait> @refalign
+m/MS000E.BIN	0:01	88	2745	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: おまけに、園田君も; reads: 泪： @refalign @refalign-merged
+m/MS000E.BIN	0:01	89	2751	1FD3	え？\n<wait>		Hmm?\n<wait>	v005		reads: もこれだし。\n<wait>どこか近くに落ち着ける場所は‥‥‥‥\n<wait>; reads: この子の身体じゃ、長旅は無理だし‥‥‥\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:01	90	2764	1FD2	メイ：		Mei:	v005		reads: 泪： @refalign @refalign-merged
+m/MS000E.BIN	0:01	91	2772	1FD3	あのね。雑司が谷{08:52}所に、鬼子母神{08:52}{08:68}お寺が{08:7B}{08:5F}{08:52}。\n{08:4D}で、そ{08:47}お坊さんが優しい{08:5F}{08:52}{02:08}\n<wait>		My brother told me about this shrine at Zoushigaya.\nApparently, the monks there are really nice.\n<wait>	v005		reads: あのね。雑司が谷って所に、鬼子母神っていうお寺があるんだって。\nそれで、そこのお坊さんが優しいんだって‥‥‥\n<wait>; reads: ‥‥‥お姉ちゃん。メイ、お兄ちゃんに聞いたことがあるの。\n<wait>; reads: おまけに、園田君も @refalign @refalign-merged
+m/MS000E.BIN	0:01	92	2864	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: もこれだし。\n<wait>どこか近くに落ち着ける場所は‥‥‥‥\n<wait> @refalign
+m/MS000E.BIN	0:01	93	2870	1FD3	鬼子母神{02:08}‥\n<wait>		Oh, yeah. You must be talking about Kishimojin.\n<wait>	v005		reads: 鬼子母神‥‥‥‥\n<wait>; @refalign @refalign-merged
+m/MS000E.BIN	0:01	94	2891	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: ‥‥‥お姉ちゃん。メイ、お兄ちゃんに聞いたことがあるの。\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:01	95	2897	1FD3	そうね、わ{08:18}わ。鬼子母神に行きま{08:80}。\n<wait>		That sounds good. Let's head there.\n<wait>	v005		reads: そうね、わかったわ。鬼子母神に行きましょう。\n<wait>; reads: あのね。雑司が谷って所に、鬼子母神っていうお寺があるんだって。\nそれで、そこのお坊さんが優しいんだって‥‥‥\n<wait>; reads: 泪： @refalign @refalign-merged
+m/MS000E.BIN	0:01	96	2943	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 泪： @refalign
+m/MS000E.BIN	0:01	97	2949	1FD3	メイちゃんを預{08:18}の{08:26}い{08:84}、満月が過ぎる{08:71}何処に{08:40}{01:3E}{08:6B}？\n<wait>		We should probably decide this before we leave.\nWhere we will take Mei?\n<wait>	v005		reads: メイちゃんを預かったのはいいけど、満月が過ぎるまで何処にいるつもりなの？\n<wait>; reads: 鬼子母神‥‥‥‥\n<wait> @refalign
+m/MS000E.BIN	0:01	98	3012	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: あのね。雑司が谷って所に、鬼子母神っていうお寺があるんだって。\nそれで、そこのお坊さんが優しいんだって‥‥‥\n<wait> @refalign
+m/MS000E.BIN	0:01	99	3018	1FD3	{08:47}子の体{08:81}あ、旅を続{08:29}{08:52}訳にも行か{08:25}わ。\n<wait>		Given her condition, I really wouldn't want to travel far with her...\n<wait>	v005		reads: この子の体じゃあ、旅を続けるって訳にも行かないわ。\n<wait>; reads: そうね、わかったわ。鬼子母神に行きましょう。\n<wait>; reads: 泪： @refalign
+m/MS000E.BIN	0:01	100	3072	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 泪：; reads: 鬼子母神‥‥‥‥\n<wait> @refalign
+m/MS000E.BIN	0:01	101	3078	1FD3	{02:08}{01:29}！　俺の知り合いが鬼子母神に{08:40}{08:85}だ。\nそこに満月が過ぎる{08:71}、泊め{08:54}らおう！\n<wait>		...Oh, I know! I have a friend at Kishimojin.\nThey'll surely let her stay there.\n<wait>	v005		reads: ‥‥‥そうだ！　俺の知り合いが鬼子母神にいるはずだ。\nそこに満月が過ぎるまで、泊めてもらおう！\n<wait>; reads: メイちゃんを預かったのはいいけど、満月が過ぎるまで何処にいるつもりなの？\n<wait>; reads: 泪： @refalign
+m/MS000E.BIN	0:01	102	3164	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: そうね、わかったわ。鬼子母神に行きましょう。\n<wait> @refalign
+m/MS000E.BIN	0:01	103	3170	1FD3	{08:81}あ、{08:4D}で{08:7F}わ。\n早くいきま{08:80}。\n<wait>		Sounds good to me. Let's get going then.\n<wait>	v005		reads: じゃあ、それでいいわ。\n早くいきましょう。\n<wait>; reads: この子の体じゃあ、旅を続けるって訳にも行かないわ。\n<wait>; reads: 泪： @refalign
+m/MS000E.BIN	0:01	104	3213	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 園田：; reads: メイちゃんを預かったのはいいけど、満月が過ぎるまで何処にいるつもりなの？\n<wait> @refalign
+m/MS000E.BIN	0:01	105	3219	1FD3	どこか、落ち着{08:29}場所無いかしら？\n<wait>		Is there anywhere we could go?\n<wait>	v005		reads: どこか、落ち着ける場所無いかしら？\n<wait>; reads: ‥‥‥そうだ！　俺の知り合いが鬼子母神にいるはずだ。\nそこに満月が過ぎるまで、泊めてもらおう！\n<wait>; reads: 泪： @refalign
+m/MS000E.BIN	0:01	106	3274	1FB2	マイシテーは？		MyCity, maybe?	v005		menu option, declared width 20 columns; reads: 泪：; reads: この子の体じゃあ、旅を続けるって訳にも行かないわ。\n<wait> @refalign
+m/MS000E.BIN	0:01	107	3290	1FB2	う～ん。{08:90}し{08:69}		Hmm...	v005		reads: う～ん。どうしよう; menu option, declared width 20 columns; reads: じゃあ、それでいいわ。\n早くいきましょう。\n<wait>; reads: 園田： @refalign
+m/MS000E.BIN	0:01	108	3324	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: ‥‥‥そうだ！　俺の知り合いが鬼子母神にいるはずだ。\nそこに満月が過ぎるまで、泊めてもらおう！\n<wait> @refalign
+m/MS000E.BIN	0:01	109	3330	1FD3	だめよ。あそこは。\n考え{08:54}みな{08:49}よ。{01:16}達{02:01}{08:42}追放{03:0C}たのよ？\n<wait>		That's a terrible idea. Use your head a little.\nWe're still being chased by Pentagramma.\n<wait>	ours		reads: だめよ。あそこは。\n考えてもみなさいよ。あたし達ペンタグランマから追放されたのよ？\n<wait>; reads: どこか、落ち着ける場所無いかしら？\n<wait>; reads: 泪： @refalign
+m/MS000E.BIN	0:01	110	3396	1FD2	{08:31}：		Rui:	v005		reads: 泪：; menu option, declared width 20 columns; reads: じゃあ、それでいいわ。\n早くいきましょう。\n<wait> @refalign
+m/MS000E.BIN	0:01	111	3402	1FD3	{02:08}追放{08:52}{08:68}か、処刑{03:0C}て死んでる事に{08:1A}るみ{08:4E}{08:74}ど。\n<wait>		They catch us, and that's it. We're dead.\n<wait>	v005		reads: ‥‥‥追放っていうか、処刑されて死んでる事になってるみたいだけど。\n<wait>; reads: う～ん。どうしよう; menu option, declared width 20 columns; reads: 泪： @refalign
+m/MS000E.BIN	0:01	112	3459	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: どこか、落ち着ける場所無いかしら？\n<wait> @refalign
+m/MS000E.BIN	0:01	113	3465	1FD3	あそこ{08:62}{02:01}のメンバーも多い{08:5F}{08:42}、いつ嗅ぎつけられて\n面倒な事に{08:7D}{08:25}とも限ら{08:25}わ。\n<wait>		We should pick a place where they don't have a presence...\n<wait>\nA place to rest...\n<wait>It hurts to say, but this really does fall outside of your\narea of expertise.\n<wait>	v005		reads: あそこは、ペンタグランマのメンバーも多いんだから、いつ嗅ぎつけられて\n面倒な事にならないとも限らないわ。\n<wait>; reads: だめよ。あそこは。\n考えてもみなさいよ。あたし達ペンタグランマから追放されたのよ？\n<wait>; menu option, declared width 20 columns @refalign @refalign-merged
+m/MS000E.BIN	0:01	114	3556	1FD0	近くに落ち着{08:29}場所{02:08}{08:72}\n<wait>{08:10}育ちの		A place to rest...\n<wait>It hurts to say, but this really does fall outside of your\narea of expertise.\n<wait>	v005		reads: 近くに落ち着ける場所‥‥‥‥‥\n<wait>シェルター育ちの; reads: 泪：; reads: う～ん。どうしよう; menu option, declared width 20 columns @refalign
+m/MS000E.BIN	0:01	115	3597	1F01	に、{08:7A}心当たりは無{08:18}。\n<wait>	に、{08:7A}心当たりは無{08:18}。\n<wait>				reads: に、そんな心当たりは無かった。\n<wait>; reads: ‥‥‥追放っていうか、処刑されて死んでる事になってるみたいだけど。\n<wait>
+m/MS000E.BIN	0:01	116	3644	1FD2	{08:37}：	{08:37}：	Sonoda:	v005		reads: 園田：; reads: 泪：
+m/MS000E.BIN	0:01	117	3650	1FD3	メイちゃんを預{08:18}の{08:26}いが{02:08}\n彼女の身体で長旅は無理{08:8A}{02:08}\n<wait>		We should probably decide this before we leave.\nWhere we will take Mei?\n<wait>	v005		reads: メイちゃんを預かったのはいいが‥‥‥\n彼女の身体で長旅は無理だし‥‥‥\n<wait>; reads: あそこは、ペンタグランマのメンバーも多いんだから、いつ嗅ぎつけられて\n面倒な事にならないとも限らないわ。\n<wait>; reads: 泪： @refalign @refalign-merged
+m/MS000E.BIN	0:01	118	3712	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 近くに落ち着ける場所‥‥‥‥‥\n<wait>シェルター育ちの; reads: だめよ。あそこは。\n考えてもみなさいよ。あたし達ペンタグランマから追放されたのよ？\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:01	119	3718	1FD3	近くで落ち着{08:29}場所{08:72}\n{1E10:01003C}		Hmm... What would be a good place...\n{1E10:01003C}	v005		reads: 近くで落ち着ける場所‥‥\n{1E10:01003C}; reads: に、そんな心当たりは無かった。\n<wait>; reads: 泪： @refalign @refalign-merged
+m/MS000E.BIN	0:01	120	3748	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: ‥‥‥追放っていうか、処刑されて死んでる事になってるみたいだけど。\n<wait> @refalign
+m/MS000E.BIN	0:01	121	3754	1FD3	{01:29}！　鬼子母神が{08:7F}！\nあそこには俺の友達が{08:40}{08:5F}！\n<wait>		...Oh, I know! Kishimojin. I have friends there.\n<wait>	v005		reads: そうだ！　鬼子母神がいい！\nあそこには俺の友達がいるんだ！\n<wait>; reads: メイちゃんを預かったのはいいが‥‥‥\n彼女の身体で長旅は無理だし‥‥‥\n<wait>; reads: 泪： @refalign
+m/MS000E.BIN	0:01	122	3810	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: あそこは、ペンタグランマのメンバーも多いんだから、いつ嗅ぎつけられて\n面倒な事にならないとも限らないわ。\n<wait> @refalign
+m/MS000E.BIN	0:01	123	3816	1FD3	鬼子母神に満月が過ぎる{08:71}、泊め{08:54}らおう。\nそうと決{08:20}ら、早く行こうぜ。\n<wait>		That's the perfect place for us go.\n<wait>	v005		reads: 鬼子母神に満月が過ぎるまで、泊めてもらおう。\nそうと決まったら、早く行こうぜ。\n<wait>; reads: 近くで落ち着ける場所‥‥\n{1E10:01003C}; reads: 近くに落ち着ける場所‥‥‥‥‥\n<wait>シェルター育ちの @refalign
+m/MS000E.BIN	0:01	124	3894	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: に、そんな心当たりは無かった。\n<wait> @refalign
+m/MS000E.BIN	0:01	125	3900	1FD3	メイちゃんを早く休ま{08:67}やら{08:25}とな！\n{08:4D}に、{08:31}の治療も出来るか{08:5D}れ{08:25}。\n<wait>		Mei can rest there. Plus, we might also be able to get Rui treated.\n<wait>	v005		reads: メイちゃんを早く休ませてやらないとな！\nそれに、泪の治療も出来るかもしれない。\n<wait>; reads: そうだ！　鬼子母神がいい！\nあそこには俺の友達がいるんだ！\n<wait>; reads: 園田： @refalign
+m/MS000E.BIN	0:01	126	3977	1FD0	メイを預{08:18}{08:26}いが、{08:48}{08:42}次の満月が過ぎる{08:71}、どこに身をおけば\n良いの{08:8C}か{02:08}‥\n<wait>		Before you leave, you should probably decide where you will take Mei.\n<wait>	v005		reads: メイを預かったはいいが、これから次の満月が過ぎるまで、どこに身をおけば\n良いのだろうか‥‥‥‥\n<wait>; reads: 園田：; reads: メイちゃんを預かったのはいいが‥‥‥\n彼女の身体で長旅は無理だし‥‥‥\n<wait> @refalign
+m/MS000E.BIN	0:01	127	4073	1FB2	マイシテー		MyCity	v005		menu option, declared width 20 columns; reads: 鬼子母神に満月が過ぎるまで、泊めてもらおう。\nそうと決まったら、早く行こうぜ。\n<wait>; reads: 園田： @refalign
+m/MS000E.BIN	0:01	128	4085	1FB2	どこか遠くへ		Somewhere far	v005		menu option, declared width 20 columns; reads: 園田：; reads: 近くで落ち着ける場所‥‥\n{1E10:01003C} @refalign
+m/MS000E.BIN	0:01	129	4099	1FB2	{08:90}し{08:69}{08:72}		Hmm...	v005		reads: どうしよう‥‥; menu option, declared width 20 columns; reads: メイちゃんを早く休ませてやらないとな！\nそれに、泪の治療も出来るかもしれない。\n<wait>; reads: 園田： @refalign
+m/MS000E.BIN	0:01	130	4129	0F	一番近い所で、マイシテー{08:8C}か{02:08}。\n<wait>		What about MyCity? That's pretty close.\n<wait>	v005		reads: 一番近い所で、マイシテーだろうか‥‥‥。\n<wait>; reads: メイを預かったはいいが、これから次の満月が過ぎるまで、どこに身をおけば\n良いのだろうか‥‥‥‥\n<wait>; reads: そうだ！　鬼子母神がいい！\nあそこには俺の友達がいるんだ！\n<wait> @refalign @refalign
+m/MS000E.BIN	0:01	131	4168	1FBA	{03:0B}マイシテー内には{02:03}の{02:0B}が数多く{08:40}。\n処刑{03:0C}たと{08:68}事に{08:1A}{08:26}る{08:5E}の、いつ面倒な事に{08:7D}{08:25}とも限ら{08:25}。\n<wait>		Then again, that place is controlled by the Resistance.\nIf they catch you, that might be it for you.\n<wait>	v005		reads: しかし、マイシテー内にはレジスタンスの人間が数多くいる。\n処刑されたという事になってはいるものの、いつ面倒な事にならないとも限らない。\n<wait>; menu option, declared width 20 columns; reads: 園田： @refalign
+m/MS000E.BIN	0:01	132	4270	1FBA	マイシテーは避{08:43}方が良い{08:8C}{02:08}‥\n<wait>		Probably for the best if you stay away...\n<wait>	v005		reads: マイシテーは避けた方が良いだろう‥‥‥‥\n<wait>; menu option, declared width 20 columns; reads: 鬼子母神に満月が過ぎるまで、泊めてもらおう。\nそうと決まったら、早く行こうぜ。\n<wait> @refalign
+m/MS000E.BIN	0:01	133	4308	18	どこか遠くへ{02:08}		What about somewhere far away? You hate to admit it,\nbut this really isn't one of your expertise.\n<wait>	v005		reads: どこか遠くへ‥‥‥; reads: どうしよう‥‥; menu option, declared width 20 columns; reads: 園田： @refalign
+m/MS000E.BIN	0:01	134	4328	1F01	はそう考{08:41}が、{08:10}育ちの		Furthermore, you also doubt if Mei can travel very far.\n<wait>	v005		reads: はそう考えたが、シェルター育ちの; reads: 一番近い所で、マイシテーだろうか‥‥‥。\n<wait>; reads: メイちゃんを早く休ませてやらないとな！\nそれに、泪の治療も出来るかもしれない。\n<wait> @refalign @refalign @refalign-merged
+m/MS000E.BIN	0:01	135	4356	1F01	には\n都合の良い場所など、簡単に思いつか{08:19}。\n<wait>		 	v005		reads: には\n都合の良い場所など、簡単に思いつかなかった。\n<wait>; reads: しかし、マイシテー内にはレジスタンスの人間が数多くいる。\n処刑されたという事になってはいるものの、いつ面倒な事にならないとも限らない。\n<wait>; reads: メイを預かったはいいが、これから次の満月が過ぎるまで、どこに身をおけば\n良いのだろうか‥‥‥‥\n<wait> @refalign @refalign @refalign-merged
+m/MS000E.BIN	0:01	136	4406	1FBA	第一、メイの身体では長旅は無理{08:8C}{02:08}。\n<wait>		Furthermore, you also doubt if Mei can travel very far.\n<wait>	v005		reads: 第一、メイの身体では長旅は無理だろう‥‥‥。\n<wait>; reads: マイシテーは避けた方が良いだろう‥‥‥‥\n<wait>; menu option, declared width 20 columns @refalign
+m/MS000E.BIN	0:01	137	4450	18	{08:10}育ちの		Nothing really comes to your mind.\n<wait>	v005		reads: シェルター育ちの; reads: どこか遠くへ‥‥‥; menu option, declared width 20 columns @refalign
+m/MS000E.BIN	0:01	138	4464	1F01	に、そう簡単に良い場所など\n思いつく{08:85}も無{08:18}{02:08}‥\n<wait>		It is there that Mei speaks up.\n<wait>	v005		reads: に、そう簡単に良い場所など\n思いつくはずも無かった‥‥‥‥\n<wait>; reads: はそう考えたが、シェルター育ちの; reads: どうしよう‥‥; menu option, declared width 20 columns @refalign @refalign-merged @refalign @refalign-merged
+m/MS000E.BIN	0:01	139	4524	1F01	が悩んで{08:40}と、メイが声をかけて{08:1E}。\n<wait>	が悩んで{08:40}と、メイが声をかけて{08:1E}。\n<wait>				reads: が悩んでいると、メイが声をかけてきた。\n<wait>; reads: には\n都合の良い場所など、簡単に思いつかなかった。\n<wait>
+m/MS000E.BIN	0:01	140	4567	1FD2	メイ：		Mei:	v005		reads: 第一、メイの身体では長旅は無理だろう‥‥‥。\n<wait>; reads: ペンタグランマB一番近い所で、マイシテーだろうか‥‥‥。\n<wait> @rebase-unmatched idx140 en={02:01}r{01:FF}What about MyCity? That's pretty close.\n<wait> @refalign @refalign-merged @rebase-unmatched idx140 en={02:01}r{01:FF}What about MyCity? That's pretty close.\n<wait>
+m/MS000E.BIN	0:01	141	4575	1FD3	{08:72}	{08:72}	Hey. I have an idea.\n<wait>	v005		reads: ‥‥; reads: シェルター育ちの; reads: しかし、マイシテー内にはレジスタンスの人間が数多くいる。\n処刑されたという事になってはいるものの、いつ面倒な事にならないとも限らない。\n<wait> @refalign
+m/MS000E.BIN	0:01	142	4583	1F01	お兄ちゃん。メイね、お兄ちゃんに聞{08:64}事{08:7B}の。\n<wait>		 	v005		reads: お兄ちゃん。メイね、お兄ちゃんに聞いた事あるの。\n<wait>; reads: に、そう簡単に良い場所など\n思いつくはずも無かった‥‥‥‥\n<wait>; reads: マイシテーは避けた方が良いだろう‥‥‥‥\n<wait> @refalign @refalign-merged @refalign @refalign-merged
+m/MS000E.BIN	0:01	143	4636	1FD2	メイ：		Mei:	v005		reads: が悩んでいると、メイが声をかけてきた。\n<wait>; reads: どこか遠くへ‥‥‥ @refalign @refalign-merged
+m/MS000E.BIN	0:01	144	4644	1FD3	雑司が谷{08:52}{08:68}所に、鬼子母神{08:52}{08:68}お寺があ{08:52}、そ{08:47}お坊さんが、\n優しい人な{08:5F}{08:52}言{08:52}たよ。\n<wait>		My brother told me about this shrine at Zoushigaya.\nApparently, the monks there are really nice.\n<wait>	v005		reads: 雑司が谷っていう所に、鬼子母神っていうお寺があって、そこのお坊さんが、\n優しい人なんだって言ってたよ。\n<wait>; reads: はそう考えたが、シェルター育ちの @refalign @refalign-merged
+m/MS000E.BIN	0:01	145	4736	1FD0	鬼子母神{08:7C}、メイの身体{08:56}何とか{08:59}{08:8C}。\n<wait>特に行くあてなど無い	鬼子母神{08:7C}、メイの身体{08:56}何とか{08:59}{08:8C}。\n<wait>特に行くあてなど無い	Oh, yeah. That sounds like it could work.\n<wait>You decide to head there.\n<wait>	v005		reads: 鬼子母神ならば、メイの身体でも何とかなるだろう。\n<wait>特に行くあてなど無い; reads: ‥‥; reads: には\n都合の良い場所など、簡単に思いつかなかった。\n<wait>
+m/MS000E.BIN	0:01	146	4803	1F01	{08:62}メイの言葉に従い、鬼子母神に向かう{08:46}に{08:4B}。\n<wait>		 	v005		reads: は、メイの言葉に従い、鬼子母神に向かうことにした。\n<wait>; reads: お兄ちゃん。メイね、お兄ちゃんに聞いた事あるの。\n<wait>; reads: 第一、メイの身体では長旅は無理だろう‥‥‥。\n<wait> @refalign @refalign-merged @refalign @refalign-merged
+m/MS000E.BIN	0:01	147	4857	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: シェルター育ちの @refalign @refalign-merged
+m/MS000E.BIN	0:01	148	4863	1FD3	さて、{08:48}{08:42}どこで次の満月{08:71}を過ごすか{02:08}\n<wait>		Now, where to go.\n<wait>	v005		reads: さて、これからどこで次の満月までを過ごすか‥‥‥\n<wait>; reads: 雑司が谷っていう所に、鬼子母神っていうお寺があって、そこのお坊さんが、\n優しい人なんだって言ってたよ。\n<wait>; reads: に、そう簡単に良い場所など\n思いつくはずも無かった‥‥‥‥\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:01	149	4910	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 鬼子母神ならば、メイの身体でも何とかなるだろう。\n<wait>特に行くあてなど無い; reads: が悩んでいると、メイが声をかけてきた。\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:01	150	4916	1FD3	メイちゃんの身体{08:81}、長旅は無理{08:8A}な{02:08}\n{1E10:01003C}		I kinda doubt that Mei can travel very far.\n  {1E10:01003C}	v005		reads: メイちゃんの身体じゃ、長旅は無理だしな‥‥‥\n{1E10:01003C}; reads: は、メイの言葉に従い、鬼子母神に向かうことにした。\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:01	151	4962	1FD2	{08:37}：	{08:37}：	Sonoda:	v005		reads: 園田：; reads: ‥‥
+m/MS000E.BIN	0:01	152	4968	1FD3	{01:29}！　あそこが{08:7F}！\n鬼子母神{08:7D}、俺の友達も{08:40}{08:85}{08:8A}、{08:31}と		...Oh, I know! I have a friend at Kishimojin.\nThey'll surely let her stay there.\n<wait>	v005		reads: そうだ！　あそこがいい！\n鬼子母神なら、俺の友達もいるはずだし、泪と; reads: さて、これからどこで次の満月までを過ごすか‥‥‥\n<wait>; reads: お兄ちゃん。メイね、お兄ちゃんに聞いた事あるの。\n<wait> @refalign
+m/MS000E.BIN	0:01	153	5027	1F01	の手当{08:54}出来るかも知れ{08:25}。\n<wait>		 	v005		reads: の手当ても出来るかも知れない。\n<wait>; reads: 園田： @refalign @refalign @refalign-merged
+m/MS000E.BIN	0:01	154	5062	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: メイちゃんの身体じゃ、長旅は無理だしな‥‥‥\n{1E10:01003C}; reads: 雑司が谷っていう所に、鬼子母神っていうお寺があって、そこのお坊さんが、\n優しい人なんだって言ってたよ。\n<wait> @refalign
+m/MS000E.BIN	0:01	155	5068	1FD3	メイちゃん。そこ{08:71}我慢できるよね？\n<wait>		Do you think that you can make it that far, Mei?\\<wait>	v005		reads: メイちゃん。そこまで我慢できるよね？\n<wait>; reads: 園田：; reads: 鬼子母神ならば、メイの身体でも何とかなるだろう。\n<wait>特に行くあてなど無い @refalign
+m/MS000E.BIN	0:01	156	5111	1FD2	メイ：		Mei:	v005		reads: そうだ！　あそこがいい！\n鬼子母神なら、俺の友達もいるはずだし、泪と; reads: は、メイの言葉に従い、鬼子母神に向かうことにした。\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:01	157	5119	1FD3	うん！\n<wait>		Yeah!\n<wait>	v005		reads: の手当ても出来るかも知れない。\n<wait>; reads: 園田： @refalign @refalign-merged
+m/MS000E.BIN	0:01	158	5134	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: さて、これからどこで次の満月までを過ごすか‥‥‥\n<wait> @refalign
+m/MS000E.BIN	0:01	159	5140	1FD3	よし！　{08:81}あ急いで行こうぜ！\n<wait>		Good. Let's get going then.\n<wait>	v005		reads: よし！　じゃあ急いで行こうぜ！\n<wait>; reads: メイちゃん。そこまで我慢できるよね？\n<wait>; reads: 園田： @refalign @refalign-merged
+m/MS000E.BIN	0:01	160	5320	1FD2	獣の声：		Beastly Voice:	v005		reads: メイちゃんの身体じゃ、長旅は無理だしな‥‥‥\n{1E10:01003C} @refalign @refalign-merged
+m/MS000E.BIN	0:01	161	5330	1FD3	ウオォォーーーーオオオオオオン{02:08}‥\n<wait>		Owooooooaah...\n<wait>	v005		reads: ウオォォーーーーオオオオオオン‥‥‥‥\n<wait>; reads: 園田： @refalign @refalign-merged
+m/MS000E.BIN	0:01	162	5373	1FD0	何処{08:42}か、獣の遠吠えの様な声が聞こえて来た。\n<wait>		You can hear what sounds like a beast howling in the distance.\n<wait>	v005		reads: 何処からか、獣の遠吠えの様な声が聞こえて来た。\n<wait>; reads: 園田：; reads: そうだ！　あそこがいい！\n鬼子母神なら、俺の友達もいるはずだし、泪と @refalign
 m/MS000E.BIN	0:02	0	7	1FD2	獣の声：		Beastly Voice:	v005		
 m/MS000E.BIN	0:02	1	17	1FD3	ウオォォーーーーオオオオオオン{02:08}‥\n<wait>		Owooooooaah...\n<wait>	v005		reads: ウオォォーーーーオオオオオオン‥‥‥‥\n<wait>
 m/MS000E.BIN	0:02	2	60	1FD0	何処{08:42}か、獣の遠吠えの様な声が聞こえて来た。\n<wait>		You can hear what sounds like a beast howling in the distance.\n<wait>	v005		reads: 何処からか、獣の遠吠えの様な声が聞こえて来た。\n<wait>
@@ -178,264 +174,263 @@ m/MS000E.BIN	0:03	0	10	1FD2	獣の声：		Beastly Voice:	v005
 m/MS000E.BIN	0:03	1	20	1FD3	ウオォォーーーーオオオオオオン{02:08}‥\n<wait>		Owooooooaah...\n<wait>	v005		reads: ウオォォーーーーオオオオオオン‥‥‥‥\n<wait>
 m/MS000E.BIN	0:03	2	63	1FD0	何処{08:42}か、獣の遠吠えの様な声が聞こえて来た。\n<wait>		You can hear what sounds like a beast howling in the distance.\n<wait>	v005		reads: 何処からか、獣の遠吠えの様な声が聞こえて来た。\n<wait>
 m/MS000E.BIN	0:03	3	122	1FD0	一瞬、前方の通路を、黒い大きな影が横切{08:12}！\n<wait>		A large black shadow passes through the hallway before you!\n<wait>	v005		reads: 一瞬、前方の通路を、黒い大きな影が横切った！！\n<wait>
-m/MS000E.BIN	0:03	4	176	1FD2	{08:37}：		Sonoda:	v005		reads: 園田： @refalign
-m/MS000E.BIN	0:03	5	182	1FD3	何だ？　今のはッ！！\nクソッ、一体何が潜んでやがる{08:5F}！？\n<wait>		Wh-What was that? A demon!?\n<wait>	v005		reads: 何だ？　今のはッ！！\nクソッ、一体何が潜んでやがるんだ！？\n<wait> @refalign
-m/MS000E.BIN	0:03	6	252	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
-m/MS000E.BIN	0:03	7	258	1FD3	何{02:08}？　今の{02:08}一体何が潜んでるの！？\n<wait>		Wh-What was that? A demon!?\n<wait>	v005		reads: 何‥‥‥？　今の‥‥‥一体何が潜んでるの！？\n<wait> @refalign
-m/MS000E.BIN	0:07	0	10	1FD0	扉の奥{08:42}{08:62}男の啜り泣きの声が聞こえて来る{02:08}\n<wait>		You can hear a man sobbing on the other side of the door.\n<wait>\nSonoda.\nIt's coming from here. Let's go, Katsuragi!\n<wait>	v005		reads: 扉の奥からは、男の啜り泣きの声が聞こえて来る‥‥‥\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:03	4	176	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 園田： @refalign
+m/MS000E.BIN	0:03	5	182	1FD3	何だ？　今のはッ！！\nクソッ、一体何が潜んでやがる{08:5F}！？\n<wait>		Wh-What was that? A demon!?\n<wait>	v005		reads: 何だ？　今のはッ！！\nクソッ、一体何が潜んでやがるんだ！？\n<wait>; reads: 何だ？　今のはッ！！\nクソッ、一体何が潜んでやがるんだ！？\n<wait> @refalign
+m/MS000E.BIN	0:03	6	252	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 泪： @refalign
+m/MS000E.BIN	0:03	7	258	1FD3	何{02:08}？　今の{02:08}一体何が潜んでるの！？\n<wait>		Wh-What was that? A demon!?\n<wait>	v005		reads: 何‥‥‥？　今の‥‥‥一体何が潜んでるの！？\n<wait>; reads: 何‥‥‥？　今の‥‥‥一体何が潜んでるの！？\n<wait> @refalign
+m/MS000E.BIN	0:07	0	10	1FD0	扉の奥{08:42}{08:62}男の啜り泣きの声が聞こえて来る{02:08}\n<wait>		You can hear a man sobbing on the other side of the door.\n<wait>	v005		reads: 扉の奥からは、男の啜り泣きの声が聞こえて来る‥‥‥\n<wait>; reads: 扉の奥からは、男の啜り泣きの声が聞こえて来る‥‥‥\n<wait> @refalign @refalign-merged
 m/MS000E.BIN	0:07	1	66	1FD2	{08:37}：		Sonoda:	ours		reads: 園田：
 m/MS000E.BIN	0:07	2	72	1FD3	やっぱり、{08:45}{08:42}だ。\n		It's coming from here. Let's go, Katsuragi!\n<wait>	v005		reads: やっぱり、ここからだ。\n
-m/MS000E.BIN	0:07	3	95	00	{04:FF}、入るぞ！！\n<wait>					reads: 、入るぞ！！\n<wait>
-m/MS000E.BIN	0:07	4	117	18	おそらく、先程{08:42}の遠吠えな{08:88}{08:45}{08:42}{08:8C}。\n		The roaring you heard earlier appears to have come from here.\nYou decide to enter the room.\n<wait>	v005		reads: おそらく、先程からの遠吠えなどもここからだろう。\n @refalign
-m/MS000E.BIN	0:07	5	158	00	{04:FF}{08:62}{01:2E}の中に踏み込{08:5F}。\n<wait>					reads: は、部屋の中に踏み込んだ。\n<wait>
+m/MS000E.BIN	0:07	3	97	1F01	、入るぞ！！\n<wait>					reads: 、入るぞ！！\n<wait>
+m/MS000E.BIN	0:07	4	117	18	おそらく、先程{08:42}の遠吠えな{08:88}{08:45}{08:42}{08:8C}。\n		The roaring you heard earlier appears to have come from here.\nYou decide to enter the room.\n<wait>	v005		reads: おそらく、先程からの遠吠えなどもここからだろう。\n; reads: おそらく、先程からの遠吠えなどもここからだろう。\n @refalign
+m/MS000E.BIN	0:07	5	160	1F01	{08:62}{01:2E}の中に踏み込{08:5F}。\n<wait>					reads: は、部屋の中に踏み込んだ。\n<wait>
 m/MS000E.BIN	0:09	0	0	UNTILED	` /  / ﾅ /  /  /  /  ! / J / ! /  /  /  ! / | / J / ! /  /  /  ! / | / J / ` / ! /  /  /  ! / | / J / ` / ` / ; / $ /  /  /  /  ! / | / J / ) / ! / ` / ` /  /  /  /   / ! / `	` /  / ﾅ /  /  /  /  ! / J / ! /  /  /  ! / | / J / ! /  /  /  ! / | / J / ` / ! /  /  /  ! / | / J / ` / ` / ; / $ /  /  /  /  ! / | / J / ) / ! / ` / ` /  /  /  /   / ! / `				@noedit; @untiled; record does not tile (switch entry at 0x2C has kind 31 (not 0 or 1)); read-only, copied verbatim; record reaches an engine no-op opcode; verify in game @rebase-new
 m/MS000E.BIN	0:0A	0	7	1F17	{01:F9}{07:1C}{01:1E}	{01:F9}{07:1C}{01:1E}				reads: わかってくれたはやく
 m/MS000E.BIN	0:0A	1	19	14	`	`				
-m/MS000E.BIN	0:0A	2	25	09	奥の方{08:42}小さな物音が{08:4B}。\n<wait>		you hear a faint sound from deeper inside the room.\n<wait>	v005		reads: 奥の方から小さな物音がした。\n<wait> @refalign
-m/MS000E.BIN	0:0A	3	68	1FD2	{08:37}：		Sonoda:	v005		reads: 園田： @refalign
+m/MS000E.BIN	0:0A	2	25	09	奥の方{08:42}小さな物音が{08:4B}。\n<wait>		you hear a faint sound from deeper inside the room.\n<wait>	v005		reads: 奥の方から小さな物音がした。\n<wait>; reads: 奥の方から小さな物音がした。\n<wait> @refalign
+m/MS000E.BIN	0:0A	3	68	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 園田： @refalign
 m/MS000E.BIN	0:0A	4	74	1FD3	誰だ！？\n<wait>		Who goes there!?\\<wait>	v005		@refalign
-m/MS000E.BIN	0:0A	5	99	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
-m/MS000E.BIN	0:0A	6	105	1FD3	誰{02:08}！？\n<wait>		Who goes there!?\n<wait>	v005		reads: 誰‥‥‥！？\n<wait> @refalign
-m/MS000E.BIN	0:0A	7	125	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait> @refalign
-m/MS000E.BIN	0:0A	8	152	1FB2	誰だ！		Who goes there!?	v005		menu option, declared width 20 columns @refalign
-m/MS000E.BIN	0:0A	9	160	1FB2	ごめん下さ～い！		Sorry!	v005		menu option, declared width 20 columns @refalign
+m/MS000E.BIN	0:0A	5	99	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 泪： @refalign
+m/MS000E.BIN	0:0A	6	105	1FD3	誰{02:08}！？\n<wait>		Who goes there!?\n<wait>	v005		reads: 誰‥‥‥！？\n<wait>; reads: 誰‥‥‥！？\n<wait> @refalign
+m/MS000E.BIN	0:0A	7	125	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>; reads: ＞どうしますか？\n<wait> @refalign
+m/MS000E.BIN	0:0A	8	152	1FB2	誰だ！		Who goes there!?	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS000E.BIN	0:0A	9	160	1FB2	ごめん下さ～い！		Sorry!	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS000E.BIN	0:0A	10	196	1FD0	物音の{08:4B}方向に向かい、	物音の{08:4B}方向に向かい、	Turning into the direction of the noise, 	v005		reads: 物音のした方向に向かい、; reads: 山瀬勇
-m/MS000E.BIN	0:0A	11	227	00	{04:FF}	{04:FF}	Katsuragi	v005		reads: 
-m/MS000E.BIN	0:0A	12	237	0B	{08:37}	{08:37}	Sonoda	v005		reads: 園田; reads: 物音のした方向に向かい、
-m/MS000E.BIN	0:0A	13	242	18	{08:31}は叫{08:5F}。\n<wait>	{08:31}は叫{08:5F}。\n<wait>	Rui yells.\n  <wait>	v005		reads: 泪は叫んだ。\n<wait>
-m/MS000E.BIN	0:0A	14	261	1FD0	{08:4C}{02:08}物陰{08:42}、怯{08:41}表情の少女がちょこんと姿を現わ{08:4B}。\n<wait>	{08:4C}{02:08}物陰{08:42}、怯{08:41}表情の少女がちょこんと姿を現わ{08:4B}。\n<wait>	Soon after, a girl appears from the shadows.\nOne look at her face makes it clear that she's terribly frightened.\n<wait>	v005		reads: すると‥‥‥物陰から、怯えた表情の少女がちょこんと姿を現わした。\n<wait>; reads: 園田
-m/MS000E.BIN	0:0A	15	342	1FD2	女の子：		 	v005		reads: 泪は叫んだ。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	16	352	1FD3	{02:08}{02:08}{02:08}\n<wait>	{02:08}{02:08}{02:08}\n<wait>				reads: ‥‥‥‥‥‥‥‥‥\n<wait>; reads: すると‥‥‥物陰から、怯えた表情の少女がちょこんと姿を現わした。\n<wait>
-m/MS000E.BIN	0:0A	17	367	1FD0	少女は身動きもせず、怯{08:41}眼で{02:0E}を見つめ{08:14}{02:08}\n<wait>		 	v005		reads: 少女は身動きもせず、怯えた眼でこちらを見つめている‥‥‥\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	18	428	1FD2	{08:37}：	{08:37}：	Sonoda:	v005		reads: 園田：; reads: ‥‥‥‥‥‥‥‥‥\n<wait>
-m/MS000E.BIN	0:0A	19	434	1FD3	君{02:08}‥{08:73}所で{08:90}{08:4B}{08:5F}い？\n<wait>		What are you doing here?\n<wait>	v005		reads: 君‥‥‥‥こんな所でどうしたんだい？\n<wait>; reads: 少女は身動きもせず、怯えた眼でこちらを見つめている‥‥‥\n<wait> @refalign
-m/MS000E.BIN	0:0A	20	468	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 園田： @refalign
-m/MS000E.BIN	0:0A	21	474	1FD3	{02:08}？　何で{08:73}所に、{08:73}小さな子が{08:72}\n<wait>		What are you doing here?\n<wait>	v005		reads: ‥‥‥？　何でこんな所に、こんな小さな子が‥‥\n<wait>; reads: 君‥‥‥‥こんな所でどうしたんだい？\n<wait> @refalign
-m/MS000E.BIN	0:0A	22	515	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
-m/MS000E.BIN	0:0A	23	521	1FD3	{08:90}{08:4B}の{08:72}？　{08:73}所で{02:08}\n<wait>		This is no place for little girls.\n<wait>	v005		reads: どうしたの‥‥？　こんな所で‥‥‥\n<wait>; reads: ‥‥‥？　何でこんな所に、こんな小さな子が‥‥\n<wait> @refalign
-m/MS000E.BIN	0:0A	24	553	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>; reads: 泪： @refalign
-m/MS000E.BIN	0:0A	25	580	1FB2	優しく声をか{08:29}		Greet her gently	v005		reads: 優しく声をかける; menu option, declared width 20 columns; reads: どうしたの‥‥？　こんな所で‥‥‥\n<wait> @refalign
-m/MS000E.BIN	0:0A	26	596	1FB2	無視{08:13}		Ignore her	v005		reads: 無視している; menu option, declared width 20 columns; reads: ＞どうしますか？\n<wait> @refalign
-m/MS000E.BIN	0:0A	27	628	00	{04:FF}{08:62}{08:48}以上少女を怯えさせ{08:25}様に、優しく声をか{08:43}。\n<wait>		You decide to approach the girl gently as not to frighten her\nany further.\n<wait>	v005		reads: は、これ以上少女を怯えさせない様に、優しく声をかけた。\n<wait>; reads: 優しく声をかける; menu option, declared width 20 columns @refalign @refalign-merged
-m/MS000E.BIN	0:0A	28	685	1FD2	女の子：		 	v005		reads: 無視している; menu option, declared width 20 columns @refalign @refalign-merged
-m/MS000E.BIN	0:0A	29	695	1FD3	{02:08}{02:08}{02:08}\n<wait>	{02:08}{02:08}{02:08}\n<wait>				reads: ‥‥‥‥‥‥‥‥‥\n<wait>
-m/MS000E.BIN	0:0A	30	715	1FD2	{08:37}：	{08:37}：	Sonoda:	v005		reads: 園田：
-m/MS000E.BIN	0:0A	31	721	1FD3	君{08:62}{08:45}に住んでる子{08:6B}かい？\n		Do you live here by any chance?\n	v005		reads: 君は、ここに住んでる子なのかい？\n; reads: は、これ以上少女を怯えさせない様に、優しく声をかけた。\n<wait> @refalign
-m/MS000E.BIN	0:0A	32	758	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
-m/MS000E.BIN	0:0A	33	764	1FD3	{08:45}に住んで{08:40}の？\n	{08:45}に住んで{08:40}の？\n	Do you live here by any chance?\n	v005		reads: ここに住んでいるの？\n; reads: ‥‥‥‥‥‥‥‥‥\n<wait>
-m/MS000E.BIN	0:0A	34	786	1FD0	少女は何も言わ{08:25}。\n<wait>		 	v005		reads: 少女は何も言わない。\n<wait>; reads: 園田： @refalign @refalign-merged
-m/MS000E.BIN	0:0A	35	822	00	{04:FF}は面倒に思い、少女を無視{08:8E}事に{08:4B}。\n<wait>		 	v005		reads: は面倒に思い、少女を無視する事にした。\n<wait>; reads: 君は、ここに住んでる子なのかい？\n @refalign @refalign-merged
-m/MS000E.BIN	0:0A	36	878	1FD0	少女はきびすを返{08:4A}、再び奥に消えて行{08:51}。\n<wait>		 	v005		reads: 少女はきびすを返して、再び奥に消えて行った。\n<wait>; reads: 泪： @refalign @refalign-merged
-m/MS000E.BIN	0:0A	37	925	1FBA	そ{08:4A}奥{08:42}{08:62}少女が誰かに、話{08:86}け{08:14}声が聞こえて来た。\n<wait>		 	v005		reads: そして奥からは、少女が誰かに、話しかけている声が聞こえて来た。\n<wait>; reads: ここに住んでいるの？\n @refalign @refalign-merged
-m/MS000E.BIN	0:0A	38	984	1FD2	女の子：		 	v005		reads: 少女は何も言わない。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	39	994	1FD3	お兄ちゃん{08:72}{01:06}お兄ちゃん！！\n<wait>		 	v005		reads: お兄ちゃん‥‥カズミお兄ちゃん！！\n<wait>; reads: は面倒に思い、少女を無視する事にした。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	40	1031	1FD2	男性：		 	v005		reads: 少女はきびすを返して、再び奥に消えて行った。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	41	1039	1FD3	{02:08}{08:90}{08:4B}{08:5F}、メイ？\n<wait>		 	v005		reads: ‥‥‥どうしたんだ、メイ？\n<wait>; reads: そして奥からは、少女が誰かに、話しかけている声が聞こえて来た。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	42	1064	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ： @refalign
-m/MS000E.BIN	0:0A	43	1070	1FD3	寝てなきゃ駄目{08:81}{08:25}か。\n{08:5B}発作が起{08:1E}ら、つらいのはお前な{08:5F}{08:42}{02:08}\n<wait>		You know that you've gotta sleep.\nIf you have another episode, it might end up being bad.\n<wait>	v005		reads: 寝てなきゃ駄目じゃないか。\nまた発作が起きたら、つらいのはお前なんだから‥‥‥\n<wait>; reads: お兄ちゃん‥‥カズミお兄ちゃん！！\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	44	1140	1FD2	メイ：		 	v005		@refalign @refalign-merged
-m/MS000E.BIN	0:0A	45	1148	1FD3	{08:72}{08:4D}より、お客さんみ{08:4E}。\n<wait>		 	v005		reads: ‥‥それより、お客さんみたい。\n<wait>; reads: ‥‥‥どうしたんだ、メイ？\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	46	1181	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ： @refalign
-m/MS000E.BIN	0:0A	47	1187	1FD3	{02:08}客{08:72}？\n<wait>		...Guests?<wait>	v005		reads: ‥‥‥客‥‥？\n<wait>; reads: 寝てなきゃ駄目じゃないか。\nまた発作が起きたら、つらいのはお前なんだから‥‥‥\n<wait> @refalign
-m/MS000E.BIN	0:0A	48	1214	1FD2	{08:37}：		Sonoda:	v005		reads: 園田： @refalign
-m/MS000E.BIN	0:0A	49	1220	1FD3	誰か、他にも{08:40}み{08:4E}だな{08:72}\n		It sounds like she's not alone...\n	v005		reads: 誰か、他にもいるみたいだな‥‥\n; reads: ‥‥それより、お客さんみたい。\n<wait> @refalign
-m/MS000E.BIN	0:0A	50	1255	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: カズミ： @refalign
-m/MS000E.BIN	0:0A	51	1261	1FD3	誰か、他に{08:40}み{08:4E}ね{02:08}\n		It sounds like she's not alone...\n	v005		reads: 誰か、他にいるみたいね‥‥‥\n; reads: ‥‥‥客‥‥？\n<wait> @refalign
-m/MS000E.BIN	0:0A	52	1287	1FD0	{08:90}やら、誰か他に{08:40}{08:69}だ{02:08}\n<wait>		It sounds like the girl's not alone...\n<wait>	v005		reads: どうやら、誰か他にいるようだ‥‥‥\n<wait>; reads: 園田： @refalign
-m/MS000E.BIN	0:0A	53	1342	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: 誰か、他にもいるみたいだな‥‥\n @refalign
-m/MS000E.BIN	0:0A	54	1348	1FD3	{02:08}何だお前達？\n<wait>		...And who might you people be?\n<wait>	v005		reads: ‥‥‥何だお前達？\n<wait>; reads: 泪： @refalign
-m/MS000E.BIN	0:0A	55	1371	1FD0	男{08:62}鋭い視線を一行に向けて、無感情にそう言{08:51}。\n<wait>		The man gives the party a stern look.\nIt doesn't look like you're welcome.\n<wait>	v005		reads: 男は、鋭い視線を一行に向けて、無感情にそう言った。\n<wait>; reads: 誰か、他にいるみたいね‥‥‥\n @refalign
-m/MS000E.BIN	0:0A	56	1436	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: どうやら、誰か他にいるようだ‥‥‥\n<wait> @refalign
-m/MS000E.BIN	0:0A	57	1442	1FD3	俺達{08:62}決{08:4A}怪しい者{08:81}{08:25}{08:72}\n俺{08:62}{08:37}。で、そっちが{08:72}\n		I promise you, we're not here to hurt you.\nI'm Sonoda. These two are...\n	v005		reads: 俺達は、決して怪しい者じゃない‥‥\n俺は、園田。で、そっちが‥‥\n; reads: カズミ： @refalign
-m/MS000E.BIN	0:0A	58	1495	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: ‥‥‥何だお前達？\n<wait> @refalign
-m/MS000E.BIN	0:0A	59	1501	1FD3	{01:16}達{08:62}怪しい者{08:81}{08:25}わ。\n{08:82}、{08:45}を{08:72}\n<wait>		I promise you, we're not here to hurt you.\nWe kinda ended up stumbling here, and...\n<wait>	v005		reads: あたし達は、怪しい者じゃないわ。\nただ、ここを‥‥\n<wait>; reads: 男は、鋭い視線を一行に向けて、無感情にそう言った。\n<wait> @refalign
-m/MS000E.BIN	0:0A	60	1541	1FBA	{03:0B}男は全く興味を示す気配はなく、\n		However, the man clearly does not care.\n	v005		reads: しかし、男は全く興味を示す気配はなく、\n; reads: 園田： @refalign
-m/MS000E.BIN	0:0A	61	1579	0B	{08:37}	{08:37}	Sonoda	v005		reads: 園田; reads: 俺達は、決して怪しい者じゃない‥‥\n俺は、園田。で、そっちが‥‥\n
-m/MS000E.BIN	0:0A	62	1584	18	{08:31}の言葉を途中で遮り、荒々しく言い放{08:51}。\n<wait>		Rui gets ignored as he lashes back.\n       <wait>	v005		reads: 泪の言葉を途中で遮り、荒々しく言い放った。\n<wait>; reads: 泪： @refalign
-m/MS000E.BIN	0:0A	63	1636	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n; reads: あたし達は、怪しい者じゃないわ。\nただ、ここを‥‥\n<wait> @refalign
-m/MS000E.BIN	0:0A	64	1657	1FB2	思わず口ごもる		Mumble something	v005		menu option, declared width 20 columns; reads: しかし、男は全く興味を示す気配はなく、\n @refalign
-m/MS000E.BIN	0:0A	65	1673	1FB2	名乗る	名乗る	Introduce yourself	v005		menu option, declared width 20 columns; reads: 園田
-m/MS000E.BIN	0:0A	66	1705	00	{04:FF}は答えに困り、思わず口ごも{08:51}。\n<wait>		Nervous, you end up getting your words all mixed up.\n<wait>\nYou introduce yourself first, followed by Sonoda and Rui.\n<wait>\nHowever, the man clearly does not care.\nYou get ignored as he lashes back.\n<wait>	v005		reads: は答えに困り、思わず口ごもった。\n<wait>; reads: 泪の言葉を途中で遮り、荒々しく言い放った。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	67	1755	00	{04:FF}{08:62}まず{08:63}の名前を名乗り、続けて、{08:37}と{08:31}も紹介し{08:69}と{08:4B}。\n<wait>		 	v005		reads: は、まず自分の名前を名乗り、続けて、園田と泪も紹介しようとした。\n<wait>; reads: ＞どうしますか？\n @refalign @refalign-merged
-m/MS000E.BIN	0:0A	68	1818	1FBA	{03:0B}男は全く興味を示す気配はなく、\n		 	v005		reads: しかし、男は全く興味を示す気配はなく、\n; menu option, declared width 20 columns @refalign @refalign-merged
-m/MS000E.BIN	0:0A	69	1855	00	{04:FF}の言葉を途中で遮り、荒々しく言い放{08:51}。\n<wait>		 	v005		reads: の言葉を途中で遮り、荒々しく言い放った。\n<wait>; menu option, declared width 20 columns @refalign @refalign-merged
-m/MS000E.BIN	0:0A	70	1904	1FD2	{01:06}：	{01:06}：	Kazumi:	v005		reads: カズミ：; reads: きみ
-m/MS000E.BIN	0:0A	71	1910	1FD3	{02:08}お前達に用など無い。\n<wait>	{02:08}お前達に用など無い。\n<wait>	...I have no business with you people.\n<wait>	v005		reads: ‥‥‥お前達に用など無い。\n<wait>
-m/MS000E.BIN	0:0A	72	1941	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: は答えに困り、思わず口ごもった。\n<wait> @refalign
-m/MS000E.BIN	0:0A	73	1947	1FD3	迷惑だ{08:72}帰{08:52}くれ！！\n<wait>		Leave. Leave at once!\n<wait>	v005		reads: 迷惑だ‥‥帰ってくれ！！\n<wait>; reads: は、まず自分の名前を名乗り、続けて、園田と泪も紹介しようとした。\n<wait>
-m/MS000E.BIN	0:0A	74	1976	1FD0	男の言葉に{08:62}口を挟む余地など無{08:18}。\n<wait>		 	v005		reads: 男の言葉には、口を挟む余地など無かった。\n<wait>; reads: しかし、男は全く興味を示す気配はなく、\n @refalign @refalign-merged
-m/MS000E.BIN	0:0A	75	2017	1FBA	一行{08:62}仕方なく{01:2E}を後に{08:4B}。\n<wait>		 	v005		reads: 一行は、仕方なく部屋を後にした。\n<wait>; reads: の言葉を途中で遮り、荒々しく言い放った。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	76	2058	1FC4	奥の方{08:42}小さな物音がし、可愛らしい少女が飛び出{08:4A}来た。\n<wait>		From somewhere deeper in, a small sound is heard,\nand a cute girl comes bursting out.<wait>	ours		reads: 奥の方から小さな物音がし、可愛らしい少女が飛び出して来た。\n<wait>; reads: カズミ：
-m/MS000E.BIN	0:0A	77	2147	1FD2	女の子：		 	v005		reads: ‥‥‥お前達に用など無い。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	78	2157	1FD3	お兄ちゃん？　{01:06}お兄ちゃん{08:6B}！！\n<wait>		 	v005		reads: お兄ちゃん？　カズミお兄ちゃんなの！！\n<wait>; reads: カズミ： @refalign @refalign-merged
-m/MS000E.BIN	0:0A	79	2198	1FD2	女の子：		 	v005		reads: 迷惑だ‥‥帰ってくれ！！\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	80	2208	1FD3	{02:08}あっ？！\n<wait>		 	v005		reads: ‥‥‥あっ？！\n<wait>; reads: 男の言葉には、口を挟む余地など無かった。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	81	2227	1FD0	{08:90}やら少女は一行が入{08:52}来たのを、{08:63}の兄が帰{08:52}{08:1E}と勘違い{08:4B}様だ。\n<wait>		 	v005		reads: どうやら少女は一行が入って来たのを、自分の兄が帰ってきたと勘違いした様だ。\n<wait>; reads: 一行は、仕方なく部屋を後にした。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	82	2296	1FBA	間違いに気づ{08:64}少女{08:62}途端に表情が固くなり、怯{08:28}様に身体を強張らせた。\n<wait>		 	v005		reads: 間違いに気づいた少女は、途端に表情が固くなり、怯える様に身体を強張らせた。\n<wait>; reads: 奥の方から小さな物音がし、可愛らしい少女が飛び出して来た。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	83	2383	1FD2	{08:37}：		Sonoda:	v005		reads: 園田： @refalign
-m/MS000E.BIN	0:0A	84	2389	1FD3	君、{08:73}所で{08:90}{08:4B}の{02:08}？\n<wait>		What are you doing up here?\n<wait>	v005		reads: 君、こんな所でどうしたの‥‥‥？\n<wait>; reads: お兄ちゃん？　カズミお兄ちゃんなの！！\n<wait> @refalign
-m/MS000E.BIN	0:0A	85	2421	1FD2	{08:31}：		Rui:	v005		reads: 泪： @refalign
-m/MS000E.BIN	0:0A	86	2427	1FD3	{08:73}所で{08:90}{08:4B}の{02:08}？\n<wait>		What are you doing up here?\n<wait>	v005		reads: こんな所でどうしたの‥‥‥？\n<wait>; reads: ‥‥‥あっ？！\n<wait> @refalign
-m/MS000E.BIN	0:0A	87	2455	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n; reads: どうやら少女は一行が入って来たのを、自分の兄が帰ってきたと勘違いした様だ。\n<wait> @refalign
-m/MS000E.BIN	0:0A	88	2476	1FB2	優しく声をか{08:29}		Greet her gently	v005		reads: 優しく声をかける; menu option, declared width 20 columns; reads: 間違いに気づいた少女は、途端に表情が固くなり、怯える様に身体を強張らせた。\n<wait> @refalign
-m/MS000E.BIN	0:0A	89	2492	1FB2	無視{08:13}		Ignore her	v005		reads: 無視している; menu option, declared width 20 columns; reads: 園田： @refalign
-m/MS000E.BIN	0:0A	90	2524	00	{04:FF}{08:62}{08:48}以上少女を怯えさせ{08:25}様に、優しく声をか{08:43}。\n<wait>		You decide to approach the girl gently as not to frighten her\nany further.\n<wait>	v005		reads: は、これ以上少女を怯えさせない様に、優しく声をかけた。\n<wait>; reads: 君、こんな所でどうしたの‥‥‥？\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	91	2581	1FD2	女の子：		 	v005		reads: 泪： @refalign @refalign-merged
-m/MS000E.BIN	0:0A	92	2591	1FD3	{02:08}{02:08}{02:08}\n<wait>	{02:08}{02:08}{02:08}\n<wait>				reads: ‥‥‥‥‥‥‥‥‥\n<wait>; reads: こんな所でどうしたの‥‥‥？\n<wait>
-m/MS000E.BIN	0:0A	93	2611	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: ＞どうしますか？\n @refalign
-m/MS000E.BIN	0:0A	94	2617	1FD3	君{08:62}{08:45}に住んでるのかい？\n<wait>		Do you live here?\n<wait>	v005		reads: 君は、ここに住んでるのかい？\n<wait>; reads: 優しく声をかける; menu option, declared width 20 columns @refalign
-m/MS000E.BIN	0:0A	95	2650	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 無視している; menu option, declared width 20 columns @refalign
-m/MS000E.BIN	0:0A	96	2656	1FD3	君{08:72}名前は？\n<wait>	君{08:72}名前は？\n<wait>	What's your name?\n<wait>	v005		reads: 君‥‥名前は？\n<wait>; reads: さっき
-m/MS000E.BIN	0:0A	97	2685	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: は、これ以上少女を怯えさせない様に、優しく声をかけた。\n<wait> @refalign
-m/MS000E.BIN	0:0A	98	2691	1FD3	{08:45}に住んでるの？\n<wait>		Do you live here?\n<wait>	v005		reads: ここに住んでるの？\n<wait> @refalign
-m/MS000E.BIN	0:0A	99	2716	1FD2	{08:31}：	{08:31}：	Rui:	v005		reads: 泪：; reads: ‥‥‥‥‥‥‥‥‥\n<wait>
-m/MS000E.BIN	0:0A	100	2722	1FD3	{01:39}{08:72}名前は？\n<wait>		What's your name?\n<wait>	v005		reads: アナタ‥‥名前は？\n<wait>; reads: 園田： @refalign
-m/MS000E.BIN	0:0A	101	2746	1FD0	少女は怯{08:41}{08:69}に黙っ{08:14}{02:08}\n<wait>		The girl remains silent, as if too scared to speak.\n<wait>	v005		reads: 少女は怯えたように黙っている‥‥‥\n<wait>; reads: 君は、ここに住んでるのかい？\n<wait> @refalign
-m/MS000E.BIN	0:0A	102	2791	1FB2	名前を訊{08:2C}		Ask her name	v005		reads: 名前を訊ねる; menu option, declared width 20 columns; reads: 園田： @refalign
-m/MS000E.BIN	0:0A	103	2803	1FB2	無視{08:8E}		Ignore her	v005		reads: 無視する; menu option, declared width 20 columns; reads: 君‥‥名前は？\n<wait> @refalign
-m/MS000E.BIN	0:0A	104	2838	00	{04:FF}は面倒に思い、少女を無視{08:8E}事に{08:4B}。\n<wait>		You decide to ignore the girl. After everything that has happened,\nyou really can't be bothered to deal with her.\n<wait>\nYou decide to ignore the girl. After everything that has happened,\nyou really can't be bothered to deal with her.\n<wait>	v005		reads: は面倒に思い、少女を無視する事にした。\n<wait>; reads: 泪： @refalign @refalign-merged
-m/MS000E.BIN	0:0A	105	2892	00	{04:FF}は面倒に思い、少女を無視{08:8E}事に{08:4B}。\n<wait>		 	v005		reads: は面倒に思い、少女を無視する事にした。\n<wait>; reads: ここに住んでるの？\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	106	2937	1FD2	女の子：		 	v005		reads: 泪： @refalign @refalign-merged
-m/MS000E.BIN	0:0A	107	2947	1FD3	{08:72}お兄ちゃん、メイの所へ{08:90}{08:4A}来たの{02:08}？\n<wait>		 	v005		reads: ‥‥お兄ちゃん、メイの所へどうして来たの‥‥‥？\n<wait>; reads: アナタ‥‥名前は？\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	108	2994	1FD0	{08:90}やら、少女の名はメイと{08:68}らしい。\n<wait>		 	v005		reads: どうやら、少女の名はメイというらしい。\n<wait>; reads: 少女は怯えたように黙っている‥‥‥\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	109	3051	1FB2	優しく声を掛{08:29}		Approach gently	v005		reads: 優しく声を掛ける; menu option, declared width 20 columns; reads: 名前を訊ねる @refalign
-m/MS000E.BIN	0:0A	110	3067	1FB2	あく{08:71}無視		Keep ignoring her	v005		reads: あくまで無視; menu option, declared width 20 columns; reads: 無視する @refalign
-m/MS000E.BIN	0:0A	111	3099	00	{04:FF}{08:62}あく{08:71}{08:79}少女{02:08}メイを無視{08:4B}。\n<wait>	{04:FF}{08:62}あく{08:71}{08:79}少女{02:08}メイを無視{08:4B}。\n<wait>				reads: は、あくまでその少女‥‥‥メイを無視した。\n<wait>; reads: ひとり
-m/MS000E.BIN	0:0A	112	3138	1FBA	メイ{08:62}{08:7A}	メイ{08:62}{08:7A}	Mei, at those	ours		reads: メイは、そんな
-m/MS000E.BIN	0:0A	113	3150	00	{04:FF}の態度を見、身体を強張らせ怯{08:41}様子を崩さ{08:19}。\n<wait>		{04:FF}'s attitude, her body stiffens, and she doesn't lose her frightened look.\n<wait>	ours		reads: の態度を見、身体を強張らせ怯えた様子を崩さなかった。\n<wait>; reads: は面倒に思い、少女を無視する事にした。\n<wait>
-m/MS000E.BIN	0:0A	114	3203	1FBA	{03:0B}すぐに真剣な表情になり、真っすぐ		But, her face quickly turns serious, and looking straight	ours		reads: しかし、すぐに真剣な表情になり、真っすぐ; reads: は面倒に思い、少女を無視する事にした。\n<wait>
-m/MS000E.BIN	0:0A	115	3241	00	{04:FF}の顔を見つめて\nこう言{08:51}{02:08}\n<wait>		at {04:FF}'s face,\nshe says this...\n<wait>	ours		reads: の顔を見つめて\nこう言った‥‥‥\n<wait>
-m/MS000E.BIN	0:0A	116	3280	1FD0	怯{08:41}表情に変化は見られ{08:25}{08:5E}の、\n少女はか細い声で、		Though her frightened expression doesn't change,\nthe girl, in a thin voice,	ours		reads: 怯えた表情に変化は見られないものの、\n少女はか細い声で、; reads: ‥‥お兄ちゃん、メイの所へどうして来たの‥‥‥？\n<wait>
-m/MS000E.BIN	0:0A	117	3334	0B	{08:37}	{08:37}	Sonoda	v005		reads: 園田; reads: どうやら、少女の名はメイというらしい。\n<wait>
-m/MS000E.BIN	0:0A	118	3344	0B	{08:31}	{08:31}	Rui	ours		reads: 泪; reads: 優しく声を掛ける; menu option, declared width 20 columns
-m/MS000E.BIN	0:0A	119	3353	00	{04:FF}の問いかけに応{08:41}。\n<wait>		answered {04:FF}'s question.\n<wait>	ours		reads: の問いかけに応えた。\n<wait>; reads: あくまで無視; menu option, declared width 20 columns
-m/MS000E.BIN	0:0A	120	3382	1FD2	女の子：	女の子：	Girl:	v005		reads: 山瀬勇
-m/MS000E.BIN	0:0A	121	3392	1FD3	{02:08}メイ。\n<wait>	{02:08}メイ。\n<wait>	...Mei.\n<wait>	ours		reads: ‥‥‥メイ。\n<wait>
-m/MS000E.BIN	0:0A	122	3414	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: は、あくまでその少女‥‥‥メイを無視した。\n<wait>
-m/MS000E.BIN	0:0A	123	3420	1FD3	メイちゃん{08:52}言う{08:5F}。\n僕達は別に、君に何かし{08:69}{08:52}訳{08:81}{08:25}{08:5F}。{08:82}{02:08}\n<wait>		So it's Mei-chan, huh.\nWe're not trying to do anything to you, honestly. It's just...\n<wait>	ours		reads: メイちゃんって言うんだ。\n僕達は別に、君に何かしようって訳じゃないんだ。ただ‥‥‥\n<wait>; reads: メイは、そんな
-m/MS000E.BIN	0:0A	124	3498	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: の態度を見、身体を強張らせ怯えた様子を崩さなかった。\n<wait>
-m/MS000E.BIN	0:0A	125	3504	1FD3	メイちゃん{08:52}言うのね。\n{01:16}達は別に、{01:39}に何かし{08:69}{08:52}訳{08:81}{08:25}わ。{08:82}{02:08}\n<wait>		So it's Mei-chan, huh.\nWe're not trying to do anything to you. It's just......\n<wait>	ours		reads: メイちゃんって言うのね。\nあたし達は別に、アナタに何かしようって訳じゃないわ。ただ‥‥‥\n<wait>; reads: しかし、すぐに真剣な表情になり、真っすぐ
-m/MS000E.BIN	0:0A	126	3579	1FD0	少女は答{08:41}後、すぐ真剣な表情に{08:1A}言{08:51}。\n<wait>		After answering, the girl immediately turns serious and speaks.\n<wait>	ours		reads: 少女は答えた後、すぐ真剣な表情になって言った。\n<wait>; reads: の顔を見つめて\nこう言った‥‥‥\n<wait>
-m/MS000E.BIN	0:0A	127	3629	1FD0	少女は		The girl cuts off	ours		reads: 怯えた表情に変化は見られないものの、\n少女はか細い声で、
-m/MS000E.BIN	0:0A	128	3640	0B	{08:37}	{08:37}	Sonoda	v005		reads: 園田
-m/MS000E.BIN	0:0A	129	3645	18	{08:31}の言葉を遮り、真剣な表情で言{08:51}。\n<wait>	{08:31}の言葉を遮り、真剣な表情で言{08:51}。\n<wait>	's words and speaks with a serious expression.\n<wait>	ours		reads: 泪の言葉を遮り、真剣な表情で言った。\n<wait>
-m/MS000E.BIN	0:0A	130	3688	1FD2	メイ：		Mei:	v005		reads: の問いかけに応えた。\n<wait>
-m/MS000E.BIN	0:0A	131	3696	1FD3	満月の日は{08:72}{08:45}に来ちゃダメ{08:72}！\n<wait>{01:1E}{08:72}{01:1E}帰{08:52}{08:6E}{08:72}！\n<wait>		On the night of the full moon... you mustn't come here...!\n<wait>Quickly... please go home quickly...!\n<wait>	ours		reads: 満月の日は‥‥ここに来ちゃダメ‥‥！\n<wait>はやく‥‥はやく帰ってください‥‥！\n<wait>
-m/MS000E.BIN	0:0A	132	3761	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: ‥‥‥メイ。\n<wait> @refalign
-m/MS000E.BIN	0:0A	133	3777	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 園田： @refalign
-m/MS000E.BIN	0:0A	134	3802	1FB2	{08:90}{08:4A}？		Why?	ours		reads: どうして？; menu option, declared width 20 columns; reads: メイちゃんって言うんだ。\n僕達は別に、君に何かしようって訳じゃないんだ。ただ‥‥‥\n<wait>
-m/MS000E.BIN	0:0A	135	3810	1FB2	{08:4D}{08:81}帰る		We'll leave then	ours		reads: それじゃ帰る; menu option, declared width 20 columns; reads: 泪：
-m/MS000E.BIN	0:0A	136	3840	00	{04:FF}{08:62}素直に{08:79}言葉に従う事に{08:4B}。\n<wait>		{04:FF} decided to obediently follow her words.\n<wait>	ours		reads: は、素直にその言葉に従う事にした。\n<wait>; reads: メイちゃんって言うのね。\nあたし達は別に、アナタに何かしようって訳じゃないわ。ただ‥‥‥\n<wait>
-m/MS000E.BIN	0:0A	137	3879	1FD2	メイ：		 	v005		reads: 少女は答えた後、すぐ真剣な表情になって言った。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	138	3887	1FD3	{02:08}‥早く、{08:45}{08:42}{08:72}出てい{08:52}下{08:49}{02:08}！\n{08:72}お兄ちゃんが帰{08:52}{02:08}\n<wait>		...Please... hurry and get out of here...!\n...Onii-chan's coming back...\n<wait>	ours		reads: ‥‥‥‥早く、ここから‥‥出ていって下さい‥‥‥！\n‥‥お兄ちゃんが帰って‥‥‥\n<wait>
-m/MS000E.BIN	0:0A	139	3953	00	{04:FF}{08:62}メイの精一杯強気な風を装{08:51}声を背に、{01:2E}{08:42}出た。\n	{04:FF}{08:62}メイの精一杯強気な風を装{08:51}声を背に、{01:2E}{08:42}出た。\n	{04:FF}, with Mei's voice trying its best to sound tough\nbehind him, left the room.	ours		reads: は、メイの精一杯強気な風を装った声を背に、部屋から出た。\n; reads: 園田
-m/MS000E.BIN	0:0A	140	4005	00	{08:4D}は{08:72}{08:90}{08:4A}{08:6B}？\n<wait>		That's... why is that?\n<wait>	ours		reads: それは‥‥どうしてなの？\n<wait>; reads: 泪の言葉を遮り、真剣な表情で言った。\n<wait>
-m/MS000E.BIN	0:0A	141	4033	0B	{08:37}	{08:37}	Sonoda	v005		reads: 園田
-m/MS000E.BIN	0:0A	142	4043	0B	{08:31}	{08:31}	Rui	ours		reads: 泪; reads: 満月の日は‥‥ここに来ちゃダメ‥‥！\n<wait>はやく‥‥はやく帰ってください‥‥！\n<wait>
-m/MS000E.BIN	0:0A	143	4052	00	{04:FF}はメイに向かい、優しい調子で問いか{08:43}。\n<wait>		{04:FF} turned to Mei and asked gently.\n<wait>	ours		reads: はメイに向かい、優しい調子で問いかけた。\n<wait>; reads: 園田：
-m/MS000E.BIN	0:0A	144	4099	1FBA	{08:4D}に答{08:28}代わりに、メイは首を横にふ{08:51}。\n<wait>		Instead of answering, Mei shakes her head.\n<wait>	ours		reads: それに答える代わりに、メイは首を横にふった。\n<wait>; reads: 泪：
-m/MS000E.BIN	0:0A	145	4151	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: どうして？; menu option, declared width 20 columns @refalign
-m/MS000E.BIN	0:0A	146	4157	1FD3	{08:72}{08:8D}は話せ{08:25}{08:52}事？\n<wait>		...You mean you can't tell us why?\n<wait>	ours		reads: ‥‥わけは話せないって事？\n<wait>; reads: それじゃ帰る; menu option, declared width 20 columns
-m/MS000E.BIN	0:0A	147	4192	1FD2	{08:31}：	{08:31}：	Rui:	v005		reads: 泪：; reads: 山瀬勇
-m/MS000E.BIN	0:0A	148	4198	1FD3	{08:72}訳は話せ{08:25}の{08:72}？\n<wait>	{08:72}訳は話せ{08:25}の{08:72}？\n<wait>	...You can't tell us why...?\n<wait>	ours		reads: ‥‥訳は話せないの‥‥？\n<wait>
-m/MS000E.BIN	0:0A	149	4225	1FD2	メイ：		 	v005		reads: は、素直にその言葉に従う事にした。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	150	4233	1FD3	{02:08}帰{08:52}{08:6E}{08:72}お願い{08:72}{08:55}{08:72}\n{02:08}お兄ちゃんが{08:72}帰{08:52}来ちゃう{02:08}\n<wait>		...Please... go home... I'm begging you...\n...Onii-chan's going to come back...\n<wait>	ours		reads: ‥‥‥帰ってください‥‥お願い‥‥です‥‥\n‥‥‥お兄ちゃんが‥‥帰って来ちゃう‥‥‥\n<wait>
-m/MS000E.BIN	0:0A	151	4300	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: ‥‥‥‥早く、ここから‥‥出ていって下さい‥‥‥！\n‥‥お兄ちゃんが帰って‥‥‥\n<wait> @refalign
-m/MS000E.BIN	0:0A	152	4306	1FD3	{08:79}お兄ちゃん{02:08}<wait>{01:3B}{01:06}{08:52}言{08:52}た人だよね。\n<wait>		That Onii-chan...<wait>That's the person you called Kazumi earlier, right?\n<wait>	ours		reads: そのお兄ちゃん‥‥‥<wait>さっきカズミって言ってた人だよね。\n<wait>; reads: は、メイの精一杯強気な風を装った声を背に、部屋から出た。\n
-m/MS000E.BIN	0:0A	153	4355	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: それは‥‥どうしてなの？\n<wait> @refalign
-m/MS000E.BIN	0:0A	154	4361	1FD3	{08:79}お兄ちゃんと、何か関係が{08:7B}の？\n<wait>	{08:79}お兄ちゃんと、何か関係が{08:7B}の？\n<wait>	Does it have something to do with your brother?\n<wait>	ours		reads: そのお兄ちゃんと、何か関係があるの？\n<wait>; reads: 園田
-m/MS000E.BIN	0:0A	155	4402	1FD0	{08:37}	{08:37}	Sonoda	v005		reads: 園田; reads: 泪
-m/MS000E.BIN	0:0A	156	4414	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: はメイに向かい、優しい調子で問いかけた。\n<wait> @refalign
-m/MS000E.BIN	0:0A	157	4420	1FD3	お兄ちゃん{08:72}？\n<wait>{01:3B}、{01:06}{08:52}言{08:52}た人ね。\n<wait>		Onii-chan...?\n<wait>That's the one you called Kazumi just now.\n<wait>	ours		reads: お兄ちゃん‥‥？\n<wait>さっき、カズミって言ってた人ね。\n<wait>; reads: それに答える代わりに、メイは首を横にふった。\n<wait>
-m/MS000E.BIN	0:0A	158	4468	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 園田： @refalign
-m/MS000E.BIN	0:0A	159	4474	1FD3	{08:79}お兄ちゃんと、何か関係が{08:7B}のかしら？\n<wait>		Does it have something to do with your brother?\n<wait>	ours		reads: そのお兄ちゃんと、何か関係があるのかしら？\n<wait>; reads: ‥‥わけは話せないって事？\n<wait>
-m/MS000E.BIN	0:0A	160	4521	1FD0	{08:31}	{08:31}	Rui	ours		reads: 泪; reads: 泪：
-m/MS000E.BIN	0:0A	161	4542	1FB2	お兄ちゃんと関係が‥？		Related to him...?	ours		menu option, declared width 20 columns; reads: ‥‥訳は話せないの‥‥？\n<wait>
-m/MS000E.BIN	0:0A	162	4566	1FB2	素直に帰る		Just go home	ours		menu option, declared width 20 columns
-m/MS000E.BIN	0:0A	163	4596	1FD0	{08:48}以上、何を聞い{08:54}無駄{08:8C}。\n		There's probably no point asking anything more.\n	ours		reads: これ以上、何を聞いても無駄だろう。\n; reads: ‥‥‥帰ってください‥‥お願い‥‥です‥‥\n‥‥‥お兄ちゃんが‥‥帰って来ちゃう‥‥‥\n<wait>
-m/MS000E.BIN	0:0A	164	4627	00	{04:FF}{08:62}メイの言葉に従{08:52}{01:2E}を出た。\n		{04:FF} followed Mei's words and left the room.\n	ours		reads: は、メイの言葉に従って部屋を出た。\n; reads: 園田：
-m/MS000E.BIN	0:0A	165	4661	1FD0	お兄ちゃん{02:08}\n<wait>先程メイが言{08:52}{08:64}、{01:06}と{08:68}人物の事{08:8C}。\n<wait>		Onii-chan...\n<wait>Surely that refers to the person named Kazumi that Mei mentioned earlier.\n<wait>	ours		reads: お兄ちゃん‥‥‥\n<wait>先程メイが言っていた、カズミという人物の事だろう。\n<wait>; reads: そのお兄ちゃん‥‥‥<wait>さっきカズミって言ってた人だよね。\n<wait>
-m/MS000E.BIN	0:0A	166	4725	00	{04:FF}{08:62}{08:79}人物と何か関係の{08:7B}事{08:6B}か訊ねた。\n<wait>		{04:FF} asked whether it had something to do with that person.\n<wait>	ours		reads: は、その人物と何か関係のある事なのか訊ねた。\n<wait>; reads: 園田：
-m/MS000E.BIN	0:0A	167	4774	00	{04:FF}がそう聞き返すと、メイの表情{08:62}みるみるうちに強張{08:51}。\n<wait>		{04:FF} asked this, and Mei's expression stiffened before their very eyes.\n<wait>	ours		reads: がそう聞き返すと、メイの表情は、みるみるうちに強張った。\n<wait>; reads: そのお兄ちゃんと、何か関係があるの？\n<wait>
-m/MS000E.BIN	0:0A	168	4835	1FBA	そ{08:4A}、きゅ{08:53}両手の拳を握り締め、精一杯と{08:22}感じの、\n{08:4D}{08:56}先程よりやや大きい程度の声で、	そ{08:4A}、きゅ{08:53}両手の拳を握り締め、精一杯と{08:22}感じの、\n{08:4D}{08:56}先程よりやや大きい程度の声で、	Then, clenching both fists tightly, with what seems like all her effort,\nbut still only slightly louder than before,	ours		reads: そして、きゅっと両手の拳を握り締め、精一杯といった感じの、\nそれでも先程よりやや大きい程度の声で、; reads: 園田
-m/MS000E.BIN	0:0A	169	4924	00	{04:FF}達に向か{08:52}言{08:51}。\n<wait>		she turned toward {04:FF} and the group, and said.\n<wait>	ours		reads: 達に向かって言った。\n<wait>; reads: 泪：
-m/MS000E.BIN	0:0A	170	4951	1FD2	女の子：		 	v005		reads: お兄ちゃん‥‥？\n<wait>さっき、カズミって言ってた人ね。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	171	4961	1FD3	とにかく、{01:1E}、{08:45}{08:42}出て{08:52}下{08:49}！！\n<wait>		Anyway, quickly, please get out of here!!\n<wait>	ours		reads: とにかく、はやく、ここから出てって下さい！！\n<wait>; reads: 泪：
-m/MS000E.BIN	0:0A	172	5002	1FD2	女の子：		 	v005		reads: そのお兄ちゃんと、何か関係があるのかしら？\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	173	5012	1FD3	{02:08}出て{08:52}！　{08:45}には来{08:25}でっ！！\n<wait>	{02:08}出て{08:52}！　{08:45}には来{08:25}でっ！！\n<wait>	...Get out! Don't ever come here again!!\n<wait>	ours		reads: ‥‥‥出てって！　ここには来ないでっ！！\n<wait>; reads: 泪
-m/MS000E.BIN	0:0A	174	5056	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; menu option, declared width 20 columns @refalign
-m/MS000E.BIN	0:0A	175	5062	1FD3	ち{08:72}ちょ{08:53}{08:72}\n<wait>		H-Hold on...\n<wait>	ours		reads: ち‥‥ちょっと‥‥\n<wait>; menu option, declared width 20 columns
-m/MS000E.BIN	0:0A	176	5091	1FD2	{08:31}：	{08:31}：	Rui:	v005		reads: 泪：; reads: 山瀬勇
-m/MS000E.BIN	0:0A	177	5097	1FD3	ちょ{08:72}ちょ{08:53}待っ{02:08}\n<wait>	ちょ{08:72}ちょ{08:53}待っ{02:08}\n<wait>	H-Hold on a se-...\n<wait>	ours		reads: ちょ‥‥ちょっと待っ‥‥‥\n<wait>
-m/MS000E.BIN	0:0A	178	5128	00	{04:FF}達{08:62}少女に{01:2E}{08:42}追い出{03:0C}て{08:1F}。\n<wait>		{04:FF} and the others ended up being thrown out of the room by the girl.\n<wait>	ours		reads: 達は、少女に部屋から追い出されてしまった。\n<wait>; reads: これ以上、何を聞いても無駄だろう。\n
-m/MS000E.BIN	0:0A	179	5191	1FD2	女の子：		 	v005		reads: は、メイの言葉に従って部屋を出た。\n @refalign @refalign-merged
-m/MS000E.BIN	0:0A	180	5201	1FD3	{08:72}コンコン{02:08}‥ゴホッ{08:72}ゴホゴホ{02:08}\n<wait>		...*Cough, cough*... *Hack*... *cough cough*...\n<wait>	ours		reads: ‥‥コンコン‥‥‥‥ゴホッ‥‥ゴホゴホ‥‥‥\n<wait>; reads: お兄ちゃん‥‥‥\n<wait>先程メイが言っていた、カズミという人物の事だろう。\n<wait>
-m/MS000E.BIN	0:0A	181	5242	1FD0	少女{08:62}急に苦しそうに咳き込んで{08:40}。\n<wait>		The girl suddenly starts coughing painfully.\n<wait>	ours		reads: 少女は、急に苦しそうに咳き込んでいる。\n<wait>; reads: は、その人物と何か関係のある事なのか訊ねた。\n<wait>
-m/MS000E.BIN	0:0A	182	5290	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: がそう聞き返すと、メイの表情は、みるみるうちに強張った。\n<wait> @refalign
-m/MS000E.BIN	0:0A	183	5296	1FD3	{01:32}かい？\n<wait>		Are you all right?\n<wait>	ours		reads: 大丈夫かい？\n<wait>; reads: そして、きゅっと両手の拳を握り締め、精一杯といった感じの、\nそれでも先程よりやや大きい程度の声で、
-m/MS000E.BIN	0:0A	184	5321	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 達に向かって言った。\n<wait> @refalign
-m/MS000E.BIN	0:0A	185	5327	1FD3	ちょ{08:53}{02:08}{01:32}{08:72}？\n<wait>		Hey... are you okay...?\n<wait>	ours		reads: ちょっと‥‥‥大丈夫‥‥？\n<wait>
-m/MS000E.BIN	0:0A	186	5350	1FD0	{08:79}時、背後で扉の開く気配がし、長身の男が虚ろな表情で入{08:52}来た。\n男{08:62}一行には目もくれず、ゆっくりと少女に向か{08:52}歩いて行{08:51}。\n<wait>		Just then, a door creaks open behind them, and a tall man enters,\nhis stare hollow -- ignoring the group, he walks straight for the girl.\n<wait>	ours		reads: その時、背後で扉の開く気配がし、長身の男が虚ろな表情で入って来た。\n男は、一行には目もくれず、ゆっくりと少女に向かって歩いて行った。\n<wait>; reads: とにかく、はやく、ここから出てって下さい！！\n<wait>
-m/MS000E.BIN	0:0A	187	5502	1FD2	男性：		 	v005		@refalign @refalign-merged
-m/MS000E.BIN	0:0A	188	5510	1FD3	{02:08}メ{02:08}イ{02:08}‥\n<wait>		...M... ei...\n<wait>	ours		reads: ‥‥‥メ‥‥‥イ‥‥‥‥\n<wait>; reads: ‥‥‥出てって！　ここには来ないでっ！！\n<wait>
-m/MS000E.BIN	0:0A	189	5531	1FD2	メイ：		 	v005		reads: 園田： @refalign @refalign-merged
-m/MS000E.BIN	0:0A	190	5539	1FD3	{08:72}{01:06}{08:72}お兄ちゃ‥ん{02:08}ゴホゴホッ{08:72}\n<wait>		...Kazumi... Onii-cha...n... *cough cough*...\n<wait>	ours		reads: ‥‥カズミ‥‥お兄ちゃ‥ん‥‥‥ゴホゴホッ‥‥\n<wait>; reads: ち‥‥ちょっと‥‥\n<wait>
-m/MS000E.BIN	0:0A	191	5580	1FD0	咳き込む少女を見て、男は突然正気を取り戻{08:4B}かの様に、少女に向か{08:52}言{08:51}。\n<wait>		Seeing the coughing girl, the man suddenly seems to snap back\nto his senses, and speaks to her.<wait>	ours		reads: 咳き込む少女を見て、男は突然正気を取り戻したかの様に、少女に向かって言った。\n<wait>; reads: 泪：
-m/MS000E.BIN	0:0A	192	5659	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: ちょ‥‥ちょっと待っ‥‥‥\n<wait> @refalign
-m/MS000E.BIN	0:0A	193	5665	1FD3	ハッ{02:08}{08:90}{08:4B}{08:5F}メイ！　{08:5B}発作かッ！\n<wait>		Huh...! What's wrong, Mei!? Another attack!?\n<wait>	ours		reads: ハッ‥‥‥どうしたんだメイ！　また発作かッ！\n<wait>; reads: 達は、少女に部屋から追い出されてしまった。\n<wait>
-m/MS000E.BIN	0:0A	194	5706	1FD2	メイ：		 	v005		@refalign @refalign-merged
-m/MS000E.BIN	0:0A	195	5714	1FD3	{02:08}う{08:72}ゴホゴホゴホッ！！\n<wait>		...Ugh... *cough cough cough*!!\n<wait>	ours		reads: ‥‥‥う‥‥ゴホゴホゴホッ！！\n<wait>; reads: ‥‥コンコン‥‥‥‥ゴホッ‥‥ゴホゴホ‥‥‥\n<wait>
-m/MS000E.BIN	0:0A	196	5747	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: 少女は、急に苦しそうに咳き込んでいる。\n<wait> @refalign
-m/MS000E.BIN	0:0A	197	5753	1FD3	メイ、喋っちゃダメだ。\n今、薬をやる{08:42}{08:72}布団に行{08:52}寝{08:2B}{08:5F}。\n<wait>		Mei, don't talk.\nI'll get you some medicine now... go lie down in bed.\n<wait>	ours		reads: メイ、喋っちゃダメだ。\n今、薬をやるから‥‥布団に行って寝てるんだ。\n<wait>; reads: 園田：
-m/MS000E.BIN	0:0A	198	5819	1FD2	メイ：		 	v005		reads: 大丈夫かい？\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0A	199	5827	1FD3	うん{02:08}\n<wait>		Mm...\n<wait>	ours		reads: うん‥‥‥\n<wait>; reads: 泪：
-m/MS000E.BIN	0:0A	200	5872	1FD0	少女は苦しそうに咳をしながら、奥へと消えて行{08:51}。\n<wait>		Coughing painfully, the girl disappears into the back room.\n<wait>	ours		reads: 少女は苦しそうに咳をしながら、奥へと消えて行った。\n<wait>; reads: ちょっと‥‥‥大丈夫‥‥？\n<wait>
-m/MS000E.BIN	0:0A	201	5927	1FBA	男は鋭い眼で		The man, with a sharp glare,	ours		reads: その時、背後で扉の開く気配がし、長身の男が虚ろな表情で入って来た。\n男は、一行には目もくれず、ゆっくりと少女に向かって歩いて行った。\n<wait>
-m/MS000E.BIN	0:0A	202	5943	00	{04:FF}達を睨み、怒りも露に怒鳴{08:51}。\n<wait>		glared at {04:FF} and the others, and shouted, his anger plain to see.\n<wait>	ours		reads: 達を睨み、怒りも露に怒鳴った。\n<wait>
-m/MS000E.BIN	0:0A	203	5982	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: ‥‥‥メ‥‥‥イ‥‥‥‥\n<wait> @refalign
-m/MS000E.BIN	0:0A	204	5988	1FD3	{08:72}何だお前達は{02:08}{08:45}でを何を{08:4A}たッ！！\n<wait>		...Who the hell are you...! What were you doing here!!\n<wait>	ours		reads: ‥‥何だお前達は‥‥‥ここでを何をしてたッ！！\n<wait>
-m/MS000E.BIN	0:0A	205	6038	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: ‥‥カズミ‥‥お兄ちゃ‥ん‥‥‥ゴホゴホッ‥‥\n<wait> @refalign
-m/MS000E.BIN	0:0A	206	6044	1FD3	あの、俺達は{02:08}‥\n<wait>		Um, we were just...\n<wait>	ours		reads: あの、俺達は‥‥‥‥\n<wait>; reads: 咳き込む少女を見て、男は突然正気を取り戻したかの様に、少女に向かって言った。\n<wait>
-m/MS000E.BIN	0:0A	207	6077	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: カズミ： @refalign
-m/MS000E.BIN	0:0A	208	6083	1FD3	{01:16}達{08:62}何も{02:08}\n<wait>		We didn't do anything...\n<wait>	ours		reads: あたし達は、何も‥‥‥\n<wait>; reads: ハッ‥‥‥どうしたんだメイ！　また発作かッ！\n<wait>
-m/MS000E.BIN	0:0A	209	6121	1FB2	別に何も{08:4A}{08:24}		Didn't do anything	ours		reads: 別に何もしていない; menu option, declared width 20 columns
-m/MS000E.BIN	0:0A	210	6135	1FB2	まずは名乗る		Give my name first	ours		menu option, declared width 20 columns; reads: ‥‥‥う‥‥ゴホゴホゴホッ！！\n<wait>
-m/MS000E.BIN	0:0A	211	6167	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ： @refalign
-m/MS000E.BIN	0:0A	212	6173	1FD3	黙れ！！\n<wait>		Shut up!!\n<wait>	ours		reads: メイ、喋っちゃダメだ。\n今、薬をやるから‥‥布団に行って寝てるんだ。\n<wait>
-m/MS000E.BIN	0:0A	213	6194	1FD0	男{08:62}		The man,	ours		reads: 男は、
-m/MS000E.BIN	0:0A	214	6202	00	{04:FF}達を乱暴に突き飛ば{08:4B}。\n<wait>		shoved {04:FF} and the others roughly aside.\n<wait>	ours		reads: 達を乱暴に突き飛ばした。\n<wait>; reads: うん‥‥‥\n<wait>
-m/MS000E.BIN	0:0A	215	6240	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 少女は苦しそうに咳をしながら、奥へと消えて行った。\n<wait> @refalign
-m/MS000E.BIN	0:0A	216	6246	1FD3	何を{08:8E}{08:5F}！\n		What are you doing!?\n	ours		reads: 何をするんだ！\n
-m/MS000E.BIN	0:0A	217	6267	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 達を睨み、怒りも露に怒鳴った。\n<wait> @refalign
-m/MS000E.BIN	0:0A	218	6273	1FD3	なっ！　何{08:8E}のよ！！\n<wait>		Wha! What do you think you're doing!?\n<wait>	ours		reads: なっ！　何するのよ！！\n<wait>; reads: カズミ：
-m/MS000E.BIN	0:0A	219	6302	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: ‥‥何だお前達は‥‥‥ここでを何をしてたッ！！\n<wait> @refalign
-m/MS000E.BIN	0:0A	220	6308	1FD3	と{08:53}と出て行けッ！！　出て行か{08:25}と、貴様らを殺すッ！！\n<wait>		Get out, now!! If you don't leave, I'll kill you!!\n<wait>	ours		reads: とっとと出て行けッ！！　出て行かないと、貴様らを殺すッ！！\n<wait>; reads: 園田：
-m/MS000E.BIN	0:0A	221	6371	1FD0	男の態度は気迫に満ち、何を言{08:52}も無駄な事は一目瞭然だ{08:51}。\n<wait>		The man's demeanor was so intense that it was obvious\nnothing they said would do any good.<wait>	ours		reads: 男の態度は気迫に満ち、何を言っても無駄な事は一目瞭然だった。\n<wait>; reads: あの、俺達は‥‥‥‥\n<wait>
-m/MS000E.BIN	0:0A	222	6438	00	{04:FF}達{08:62}仕方なく{01:2E}を後に{08:4B}。\n<wait>		{04:FF} and the others had no choice but to leave the room.\n<wait>	ours		reads: 達は、仕方なく部屋を後にした。\n<wait>; reads: 泪：
+m/MS000E.BIN	0:0A	11	237	0B	{08:37}	{08:37}	Sonoda	v005		reads: 園田
+m/MS000E.BIN	0:0A	12	242	18	{08:31}は叫{08:5F}。\n<wait>	{08:31}は叫{08:5F}。\n<wait>	Rui yells.\n  <wait>	v005		reads: 泪は叫んだ。\n<wait>; reads: 園田; reads: 物音のした方向に向かい、
+m/MS000E.BIN	0:0A	13	261	1FD0	{08:4C}{02:08}物陰{08:42}、怯{08:41}表情の少女がちょこんと姿を現わ{08:4B}。\n<wait>	{08:4C}{02:08}物陰{08:42}、怯{08:41}表情の少女がちょこんと姿を現わ{08:4B}。\n<wait>	Soon after, a girl appears from the shadows.\nOne look at her face makes it clear that she's terribly frightened.\n<wait>	v005		reads: すると‥‥‥物陰から、怯えた表情の少女がちょこんと姿を現わした。\n<wait>; reads: 泪は叫んだ。\n<wait> @rebase-unmatched idx13 en=Katsuragi
+m/MS000E.BIN	0:0A	14	342	1FD2	女の子：	女の子：	Girl:	v005		reads: すると‥‥‥物陰から、怯えた表情の少女がちょこんと姿を現わした。\n<wait>; reads: 園田
+m/MS000E.BIN	0:0A	15	352	1FD3	{02:08}{02:08}{02:08}\n<wait>	{02:08}{02:08}{02:08}\n<wait>				reads: ‥‥‥‥‥‥‥‥‥\n<wait>; reads: 泪は叫んだ。\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	16	367	1FD0	少女は身動きもせず、怯{08:41}眼で{02:0E}を見つめ{08:14}{02:08}\n<wait>	少女は身動きもせず、怯{08:41}眼で{02:0E}を見つめ{08:14}{02:08}\n<wait>	Motionless, she stares at you with her large eyes.\n<wait>	v005		reads: 少女は身動きもせず、怯えた眼でこちらを見つめている‥‥‥\n<wait>; reads: ‥‥‥‥‥‥‥‥‥\n<wait>; reads: すると‥‥‥物陰から、怯えた表情の少女がちょこんと姿を現わした。\n<wait>
+m/MS000E.BIN	0:0A	17	428	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 少女は身動きもせず、怯えた眼でこちらを見つめている‥‥‥\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	18	434	1FD3	君{02:08}‥{08:73}所で{08:90}{08:4B}{08:5F}い？\n<wait>	君{02:08}‥{08:73}所で{08:90}{08:4B}{08:5F}い？\n<wait>	What are you doing here?\n<wait>	v005		reads: 君‥‥‥‥こんな所でどうしたんだい？\n<wait>; reads: 園田：; reads: ‥‥‥‥‥‥‥‥‥\n<wait>
+m/MS000E.BIN	0:0A	19	468	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 君‥‥‥‥こんな所でどうしたんだい？\n<wait>; reads: 少女は身動きもせず、怯えた眼でこちらを見つめている‥‥‥\n<wait> @refalign
+m/MS000E.BIN	0:0A	20	474	1FD3	{02:08}？　何で{08:73}所に、{08:73}小さな子が{08:72}\n<wait>		What are you doing here?\n<wait>	v005		reads: ‥‥‥？　何でこんな所に、こんな小さな子が‥‥\n<wait>; reads: 泪：; reads: 園田： @refalign
+m/MS000E.BIN	0:0A	21	515	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: ‥‥‥？　何でこんな所に、こんな小さな子が‥‥\n<wait>; reads: 君‥‥‥‥こんな所でどうしたんだい？\n<wait> @refalign
+m/MS000E.BIN	0:0A	22	521	1FD3	{08:90}{08:4B}の{08:72}？　{08:73}所で{02:08}\n<wait>		This is no place for little girls.\n<wait>	v005		reads: どうしたの‥‥？　こんな所で‥‥‥\n<wait>; reads: 泪： @refalign
+m/MS000E.BIN	0:0A	23	553	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>; reads: どうしたの‥‥？　こんな所で‥‥‥\n<wait>; reads: ‥‥‥？　何でこんな所に、こんな小さな子が‥‥\n<wait> @refalign
+m/MS000E.BIN	0:0A	24	580	1FB2	優しく声をか{08:29}		Greet her gently	v005		reads: 優しく声をかける; menu option, declared width 20 columns; reads: ＞どうしますか？\n<wait>; reads: 泪： @refalign
+m/MS000E.BIN	0:0A	25	596	1FB2	無視{08:13}		Ignore her	v005		reads: 無視している; menu option, declared width 20 columns; reads: 優しく声をかける; reads: どうしたの‥‥？　こんな所で‥‥‥\n<wait> @refalign
+m/MS000E.BIN	0:0A	26	630	1F01	{08:62}{08:48}以上少女を怯えさせ{08:25}様に、優しく声をか{08:43}。\n<wait>		You decide to approach the girl gently as not to frighten her\nany further.\n<wait>	v005		reads: は、これ以上少女を怯えさせない様に、優しく声をかけた。\n<wait>; reads: 無視している; menu option, declared width 20 columns; reads: ＞どうしますか？\n<wait> @refalign @rebase-new @refalign @refalign-merged
+m/MS000E.BIN	0:0A	27	685	1FD2	女の子：		Girl:	v005		reads: は、これ以上少女を怯えさせない様に、優しく声をかけた。\n<wait>; reads: 優しく声をかける; menu option, declared width 20 columns @refalign @refalign-merged
+m/MS000E.BIN	0:0A	28	695	1FD3	{02:08}{02:08}{02:08}\n<wait>	{02:08}{02:08}{02:08}\n<wait>				reads: ‥‥‥‥‥‥‥‥‥\n<wait>; reads: 無視している; menu option, declared width 20 columns @refalign @refalign-merged
+m/MS000E.BIN	0:0A	29	715	1FD2	{08:37}：	{08:37}：	Sonoda:	v005		reads: 園田：; reads: ‥‥‥‥‥‥‥‥‥\n<wait>
+m/MS000E.BIN	0:0A	30	721	1FD3	君{08:62}{08:45}に住んでる子{08:6B}かい？\n	君{08:62}{08:45}に住んでる子{08:6B}かい？\n	Do you live here by any chance?\n	v005		reads: 君は、ここに住んでる子なのかい？\n; reads: 園田：
+m/MS000E.BIN	0:0A	31	758	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 君は、ここに住んでる子なのかい？\n; reads: は、これ以上少女を怯えさせない様に、優しく声をかけた。\n<wait> @refalign @rebase-unmatched idx31 en=You decide to approach the girl gently as not to frighten her\nany further.\n<wait>
+m/MS000E.BIN	0:0A	32	764	1FD3	{08:45}に住んで{08:40}の？\n		Do you live here by any chance?\n	v005		reads: ここに住んでいるの？\n; reads: 泪： @refalign
+m/MS000E.BIN	0:0A	33	786	1FD0	少女は何も言わ{08:25}。\n<wait>	少女は何も言わ{08:25}。\n<wait>	The girl doesn't reply.\n<wait>	v005		reads: 少女は何も言わない。\n<wait>; reads: ここに住んでいるの？\n; reads: ‥‥‥‥‥‥‥‥‥\n<wait>
+m/MS000E.BIN	0:0A	34	824	1F01	は面倒に思い、少女を無視{08:8E}事に{08:4B}。\n<wait>		You decide to ignore the girl. After everything that has happened,\nyou really can't be bothered to deal with her.\n<wait>	v005		reads: は面倒に思い、少女を無視する事にした。\n<wait>; reads: 少女は何も言わない。\n<wait>; reads: 園田： @refalign @refalign-merged @rebase-tagdiff
+m/MS000E.BIN	0:0A	35	878	1FD0	少女はきびすを返{08:4A}、再び奥に消えて行{08:51}。\n<wait>		She turns around and vanishes back into the shadows.\n<wait>	v005		reads: 少女はきびすを返して、再び奥に消えて行った。\n<wait>; reads: は面倒に思い、少女を無視する事にした。\n<wait>; reads: 君は、ここに住んでる子なのかい？\n @refalign @refalign-merged
+m/MS000E.BIN	0:0A	36	925	1FBA	そ{08:4A}奥{08:42}{08:62}少女が誰かに、話{08:86}け{08:14}声が聞こえて来た。\n<wait>		Shortly after, you can hear her talking with someone.\n<wait>	v005		reads: そして奥からは、少女が誰かに、話しかけている声が聞こえて来た。\n<wait>; reads: 少女はきびすを返して、再び奥に消えて行った。\n<wait>; reads: 泪： @refalign @refalign-merged
+m/MS000E.BIN	0:0A	37	984	1FD2	女の子：		Girl:	v005		reads: そして奥からは、少女が誰かに、話しかけている声が聞こえて来た。\n<wait>; reads: ここに住んでいるの？\n @refalign @refalign-merged
+m/MS000E.BIN	0:0A	38	994	1FD3	お兄ちゃん{08:72}{01:06}お兄ちゃん！！\n<wait>		Kazumi... Kazumi!\n<wait>	v005		reads: お兄ちゃん‥‥カズミお兄ちゃん！！\n<wait>; reads: 少女は何も言わない。\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	39	1031	1FD2	男性：		Man:	v005		reads: お兄ちゃん‥‥カズミお兄ちゃん！！\n<wait>; reads: は面倒に思い、少女を無視する事にした。\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	40	1039	1FD3	{02:08}{08:90}{08:4B}{08:5F}、メイ？\n<wait>		What's the matter, Mei?\n<wait>	v005		reads: ‥‥‥どうしたんだ、メイ？\n<wait>; reads: 少女はきびすを返して、再び奥に消えて行った。\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	41	1064	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: ‥‥‥どうしたんだ、メイ？\n<wait>; reads: そして奥からは、少女が誰かに、話しかけている声が聞こえて来た。\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	42	1070	1FD3	寝てなきゃ駄目{08:81}{08:25}か。\n{08:5B}発作が起{08:1E}ら、つらいのはお前な{08:5F}{08:42}{02:08}\n<wait>		You know that you've gotta sleep.\nIf you have another episode, it might end up being bad.\n<wait>	v005		reads: 寝てなきゃ駄目じゃないか。\nまた発作が起きたら、つらいのはお前なんだから‥‥‥\n<wait>; reads: カズミ： @refalign
+m/MS000E.BIN	0:0A	43	1140	1FD2	メイ：		Mei:	v005		reads: 寝てなきゃ駄目じゃないか。\nまた発作が起きたら、つらいのはお前なんだから‥‥‥\n<wait>; reads: お兄ちゃん‥‥カズミお兄ちゃん！！\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	44	1148	1FD3	{08:72}{08:4D}より、お客さんみ{08:4E}。\n<wait>		I know. It's just, we have guests.\n<wait>	v005		reads: ‥‥それより、お客さんみたい。\n<wait>; @refalign @refalign-merged
+m/MS000E.BIN	0:0A	45	1181	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: ‥‥それより、お客さんみたい。\n<wait>; reads: ‥‥‥どうしたんだ、メイ？\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	46	1187	1FD3	{02:08}客{08:72}？\n<wait>		...Guests?<wait>	v005		reads: ‥‥‥客‥‥？\n<wait>; reads: カズミ： @refalign
+m/MS000E.BIN	0:0A	47	1214	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: ‥‥‥客‥‥？\n<wait>; reads: 寝てなきゃ駄目じゃないか。\nまた発作が起きたら、つらいのはお前なんだから‥‥‥\n<wait> @refalign
+m/MS000E.BIN	0:0A	48	1220	1FD3	誰か、他にも{08:40}み{08:4E}だな{08:72}\n		It sounds like she's not alone...\n	v005		reads: 誰か、他にもいるみたいだな‥‥\n; reads: 園田： @refalign
+m/MS000E.BIN	0:0A	49	1255	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 誰か、他にもいるみたいだな‥‥\n; reads: ‥‥それより、お客さんみたい。\n<wait> @refalign
+m/MS000E.BIN	0:0A	50	1261	1FD3	誰か、他に{08:40}み{08:4E}ね{02:08}\n		It sounds like she's not alone...\n	v005		reads: 誰か、他にいるみたいね‥‥‥\n; reads: 泪：; reads: カズミ： @refalign
+m/MS000E.BIN	0:0A	51	1287	1FD0	{08:90}やら、誰か他に{08:40}{08:69}だ{02:08}\n<wait>		It sounds like the girl's not alone...\n<wait>	v005		reads: どうやら、誰か他にいるようだ‥‥‥\n<wait>; reads: 誰か、他にいるみたいね‥‥‥\n; reads: ‥‥‥客‥‥？\n<wait> @refalign
+m/MS000E.BIN	0:0A	52	1342	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: どうやら、誰か他にいるようだ‥‥‥\n<wait>; reads: 園田： @refalign
+m/MS000E.BIN	0:0A	53	1348	1FD3	{02:08}何だお前達？\n<wait>		...And who might you people be?\n<wait>	v005		reads: ‥‥‥何だお前達？\n<wait>; reads: カズミ：; reads: 誰か、他にもいるみたいだな‥‥\n @refalign
+m/MS000E.BIN	0:0A	54	1371	1FD0	男{08:62}鋭い視線を一行に向けて、無感情にそう言{08:51}。\n<wait>		The man gives the party a stern look.\nIt doesn't look like you're welcome.\n<wait>	v005		reads: 男は、鋭い視線を一行に向けて、無感情にそう言った。\n<wait>; reads: ‥‥‥何だお前達？\n<wait>; reads: 泪： @refalign
+m/MS000E.BIN	0:0A	55	1436	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 男は、鋭い視線を一行に向けて、無感情にそう言った。\n<wait>; reads: 誰か、他にいるみたいね‥‥‥\n @refalign
+m/MS000E.BIN	0:0A	56	1442	1FD3	俺達{08:62}決{08:4A}怪しい者{08:81}{08:25}{08:72}\n俺{08:62}{08:37}。で、そっちが{08:72}\n		I promise you, we're not here to hurt you.\nI'm Sonoda. These two are...\n	v005		reads: 俺達は、決して怪しい者じゃない‥‥\n俺は、園田。で、そっちが‥‥\n; reads: 園田：; reads: どうやら、誰か他にいるようだ‥‥‥\n<wait> @refalign
+m/MS000E.BIN	0:0A	57	1495	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 俺達は、決して怪しい者じゃない‥‥\n俺は、園田。で、そっちが‥‥\n; reads: カズミ： @refalign
+m/MS000E.BIN	0:0A	58	1501	1FD3	{01:16}達{08:62}怪しい者{08:81}{08:25}わ。\n{08:82}、{08:45}を{08:72}\n<wait>		I promise you, we're not here to hurt you.\nWe kinda ended up stumbling here, and...\n<wait>	v005		reads: あたし達は、怪しい者じゃないわ。\nただ、ここを‥‥\n<wait>; reads: 泪：; reads: ‥‥‥何だお前達？\n<wait> @refalign
+m/MS000E.BIN	0:0A	59	1541	1FBA	{03:0B}男は全く興味を示す気配はなく、\n		However, the man clearly does not care.\n	v005		reads: しかし、男は全く興味を示す気配はなく、\n; reads: あたし達は、怪しい者じゃないわ。\nただ、ここを‥‥\n<wait>; reads: 男は、鋭い視線を一行に向けて、無感情にそう言った。\n<wait> @refalign
+m/MS000E.BIN	0:0A	60	1579	0B	{08:37}	{08:37}	Sonoda	v005		reads: 園田; reads: しかし、男は全く興味を示す気配はなく、\n; reads: 園田： @refalign
+m/MS000E.BIN	0:0A	61	1584	18	{08:31}の言葉を途中で遮り、荒々しく言い放{08:51}。\n<wait>	{08:31}の言葉を途中で遮り、荒々しく言い放{08:51}。\n<wait>	Rui gets ignored as he lashes back.\n       <wait>	v005		reads: 泪の言葉を途中で遮り、荒々しく言い放った。\n<wait>; reads: 園田; reads: 俺達は、決して怪しい者じゃない‥‥\n俺は、園田。で、そっちが‥‥\n
+m/MS000E.BIN	0:0A	62	1636	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n; reads: 泪の言葉を途中で遮り、荒々しく言い放った。\n<wait>; reads: 泪： @refalign
+m/MS000E.BIN	0:0A	63	1657	1FB2	思わず口ごもる		Mumble something	v005		menu option, declared width 20 columns; reads: ＞どうしますか？\n; reads: あたし達は、怪しい者じゃないわ。\nただ、ここを‥‥\n<wait> @refalign
+m/MS000E.BIN	0:0A	64	1673	1FB2	名乗る		Introduce yourself	v005		menu option, declared width 20 columns; reads: しかし、男は全く興味を示す気配はなく、\n @refalign
+m/MS000E.BIN	0:0A	65	1707	1F01	は答えに困り、思わず口ごも{08:51}。\n<wait>	は答えに困り、思わず口ごも{08:51}。\n<wait>				reads: は答えに困り、思わず口ごもった。\n<wait>; menu option, declared width 20 columns; reads: 園田 @rebase-new
+m/MS000E.BIN	0:0A	66	1757	1F01	{08:62}まず{08:63}の名前を名乗り、続けて、{08:37}と{08:31}も紹介し{08:69}と{08:4B}。\n<wait>		 	v005		reads: は、まず自分の名前を名乗り、続けて、園田と泪も紹介しようとした。\n<wait>; reads: は答えに困り、思わず口ごもった。\n<wait>; reads: 泪の言葉を途中で遮り、荒々しく言い放った。\n<wait> @refalign @refalign-merged @rebase-new @refalign @refalign-merged
+m/MS000E.BIN	0:0A	67	1818	1FBA	{03:0B}男は全く興味を示す気配はなく、\n		However, the man clearly does not care.\nYou get ignored as he lashes back.\n<wait>	v005		reads: しかし、男は全く興味を示す気配はなく、\n; reads: は、まず自分の名前を名乗り、続けて、園田と泪も紹介しようとした。\n<wait>; reads: ＞どうしますか？\n @refalign @refalign-merged
+m/MS000E.BIN	0:0A	68	1857	1F01	の言葉を途中で遮り、荒々しく言い放{08:51}。\n<wait>		 	v005		reads: の言葉を途中で遮り、荒々しく言い放った。\n<wait>; reads: しかし、男は全く興味を示す気配はなく、\n; menu option, declared width 20 columns @refalign @refalign-merged @refalign @refalign-merged
+m/MS000E.BIN	0:0A	69	1904	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: の言葉を途中で遮り、荒々しく言い放った。\n<wait>; menu option, declared width 20 columns @refalign @refalign-merged
+m/MS000E.BIN	0:0A	70	1910	1FD3	{02:08}お前達に用など無い。\n<wait>	{02:08}お前達に用など無い。\n<wait>	...I have no business with you people.\n<wait>	v005		reads: ‥‥‥お前達に用など無い。\n<wait>; reads: カズミ：; reads: きみ
+m/MS000E.BIN	0:0A	71	1941	1FD2	{01:06}：	{01:06}：	Kazumi:	v005		reads: カズミ：; reads: ‥‥‥お前達に用など無い。\n<wait>
+m/MS000E.BIN	0:0A	72	1947	1FD3	迷惑だ{08:72}帰{08:52}くれ！！\n<wait>		Leave. Leave at once!\n<wait>	v005		reads: 迷惑だ‥‥帰ってくれ！！\n<wait>; reads: カズミ：; reads: は答えに困り、思わず口ごもった。\n<wait> @refalign @rebase-unmatched idx72 en=Nervous, you end up getting your words all mixed up.\n<wait>
+m/MS000E.BIN	0:0A	73	1976	1FD0	男の言葉に{08:62}口を挟む余地など無{08:18}。\n<wait>		 	v005		reads: 男の言葉には、口を挟む余地など無かった。\n<wait>; reads: 迷惑だ‥‥帰ってくれ！！\n<wait>; reads: は、まず自分の名前を名乗り、続けて、園田と泪も紹介しようとした。\n<wait> @rebase-unmatched idx73 en=You introduce yourself first, followed by Sonoda and Rui.\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	74	2017	1FBA	一行{08:62}仕方なく{01:2E}を後に{08:4B}。\n<wait>		Frustrated, you end up leaving the room behind.\n<wait>	v005		reads: 一行は、仕方なく部屋を後にした。\n<wait>; reads: 男の言葉には、口を挟む余地など無かった。\n<wait>; reads: しかし、男は全く興味を示す気配はなく、\n @refalign @refalign-merged
+m/MS000E.BIN	0:0A	75	2058	1FC4	奥の方{08:42}小さな物音がし、可愛らしい少女が飛び出{08:4A}来た。\n<wait>		From somewhere deeper in, a small sound is heard,\nand a cute girl comes bursting out.<wait>	ours		reads: 奥の方から小さな物音がし、可愛らしい少女が飛び出して来た。\n<wait>; reads: 一行は、仕方なく部屋を後にした。\n<wait>; reads: の言葉を途中で遮り、荒々しく言い放った。\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	76	2147	1FD2	女の子：		 	v005		reads: 奥の方から小さな物音がし、可愛らしい少女が飛び出して来た。\n<wait>; reads: カズミ： @refalign @refalign-merged
+m/MS000E.BIN	0:0A	77	2157	1FD3	お兄ちゃん？　{01:06}お兄ちゃん{08:6B}！！\n<wait>		Kazumi? Kazumi!\n<wait>	v005		reads: お兄ちゃん？　カズミお兄ちゃんなの！！\n<wait>; reads: ‥‥‥お前達に用など無い。\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	78	2198	1FD2	女の子：		Girl:	v005		reads: お兄ちゃん？　カズミお兄ちゃんなの！！\n<wait>; reads: カズミ： @refalign @refalign-merged
+m/MS000E.BIN	0:0A	79	2208	1FD3	{02:08}あっ？！\n<wait>		...Ah!\n<wait>	v005		reads: ‥‥‥あっ？！\n<wait>; reads: 迷惑だ‥‥帰ってくれ！！\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	80	2227	1FD0	{08:90}やら少女は一行が入{08:52}来たのを、{08:63}の兄が帰{08:52}{08:1E}と勘違い{08:4B}様だ。\n<wait>		It would appear that the girl mistook you for her brother.\n<wait>	v005		reads: どうやら少女は一行が入って来たのを、自分の兄が帰ってきたと勘違いした様だ。\n<wait>; reads: ‥‥‥あっ？！\n<wait>; reads: 男の言葉には、口を挟む余地など無かった。\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	81	2296	1FBA	間違いに気づ{08:64}少女{08:62}途端に表情が固くなり、怯{08:28}様に身体を強張らせた。\n<wait>		Having realised her mistake,\nshe turns towards you with a firm expression on her face.\n<wait>	v005		reads: 間違いに気づいた少女は、途端に表情が固くなり、怯える様に身体を強張らせた。\n<wait>; reads: どうやら少女は一行が入って来たのを、自分の兄が帰ってきたと勘違いした様だ。\n<wait>; reads: 一行は、仕方なく部屋を後にした。\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	82	2383	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 間違いに気づいた少女は、途端に表情が固くなり、怯える様に身体を強張らせた。\n<wait>; reads: 奥の方から小さな物音がし、可愛らしい少女が飛び出して来た。\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	83	2389	1FD3	君、{08:73}所で{08:90}{08:4B}の{02:08}？\n<wait>		What are you doing up here?\n<wait>	v005		reads: 君、こんな所でどうしたの‥‥‥？\n<wait>; reads: 園田： @refalign
+m/MS000E.BIN	0:0A	84	2421	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 君、こんな所でどうしたの‥‥‥？\n<wait>; reads: お兄ちゃん？　カズミお兄ちゃんなの！！\n<wait> @refalign
+m/MS000E.BIN	0:0A	85	2427	1FD3	{08:73}所で{08:90}{08:4B}の{02:08}？\n<wait>		What are you doing up here?\n<wait>	v005		reads: こんな所でどうしたの‥‥‥？\n<wait>; reads: 泪： @refalign
+m/MS000E.BIN	0:0A	86	2455	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n; reads: こんな所でどうしたの‥‥‥？\n<wait>; reads: ‥‥‥あっ？！\n<wait> @refalign
+m/MS000E.BIN	0:0A	87	2476	1FB2	優しく声をか{08:29}		Greet her gently	v005		reads: 優しく声をかける; menu option, declared width 20 columns; reads: ＞どうしますか？\n; reads: どうやら少女は一行が入って来たのを、自分の兄が帰ってきたと勘違いした様だ。\n<wait> @refalign
+m/MS000E.BIN	0:0A	88	2492	1FB2	無視{08:13}		Ignore her	v005		reads: 無視している; menu option, declared width 20 columns; reads: 優しく声をかける; reads: 間違いに気づいた少女は、途端に表情が固くなり、怯える様に身体を強張らせた。\n<wait> @refalign
+m/MS000E.BIN	0:0A	89	2526	1F01	{08:62}{08:48}以上少女を怯えさせ{08:25}様に、優しく声をか{08:43}。\n<wait>		You decide to approach the girl gently as not to frighten her\nany further.\n<wait>	v005		reads: は、これ以上少女を怯えさせない様に、優しく声をかけた。\n<wait>; reads: 無視している; menu option, declared width 20 columns; reads: 園田： @refalign @rebase-new @refalign @refalign-merged
+m/MS000E.BIN	0:0A	90	2581	1FD2	女の子：		Girl:	v005		reads: は、これ以上少女を怯えさせない様に、優しく声をかけた。\n<wait>; reads: 君、こんな所でどうしたの‥‥‥？\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	91	2591	1FD3	{02:08}{02:08}{02:08}\n<wait>	{02:08}{02:08}{02:08}\n<wait>				reads: ‥‥‥‥‥‥‥‥‥\n<wait>; reads: 泪： @refalign @refalign-merged
+m/MS000E.BIN	0:0A	92	2611	1FD2	{08:37}：	{08:37}：	Sonoda:	v005		reads: 園田：; reads: ‥‥‥‥‥‥‥‥‥\n<wait>; reads: こんな所でどうしたの‥‥‥？\n<wait>
+m/MS000E.BIN	0:0A	93	2617	1FD3	君{08:62}{08:45}に住んでるのかい？\n<wait>		Do you live here?\n<wait>	v005		reads: 君は、ここに住んでるのかい？\n<wait>; reads: 園田：; reads: ＞どうしますか？\n @refalign
+m/MS000E.BIN	0:0A	94	2650	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 君は、ここに住んでるのかい？\n<wait>; reads: 優しく声をかける; menu option, declared width 20 columns @refalign
+m/MS000E.BIN	0:0A	95	2656	1FD3	君{08:72}名前は？\n<wait>		What's your name?\n<wait>	v005		reads: 君‥‥名前は？\n<wait>; reads: 園田：; reads: 無視している; menu option, declared width 20 columns @refalign
+m/MS000E.BIN	0:0A	96	2685	1FD2	{08:31}：	{08:31}：	Rui:	v005		reads: 泪：; reads: 君‥‥名前は？\n<wait>; reads: さっき
+m/MS000E.BIN	0:0A	97	2691	1FD3	{08:45}に住んでるの？\n<wait>		Do you live here?\n<wait>	v005		reads: ここに住んでるの？\n<wait>; reads: 泪：; reads: は、これ以上少女を怯えさせない様に、優しく声をかけた。\n<wait> @refalign @rebase-unmatched idx97 en=You decide to approach the girl gently as not to frighten her\nany further.\n<wait>
+m/MS000E.BIN	0:0A	98	2716	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: ここに住んでるの？\n<wait> @refalign
+m/MS000E.BIN	0:0A	99	2722	1FD3	{01:39}{08:72}名前は？\n<wait>	{01:39}{08:72}名前は？\n<wait>	What's your name?\n<wait>	v005		reads: アナタ‥‥名前は？\n<wait>; reads: 泪：; reads: ‥‥‥‥‥‥‥‥‥\n<wait>
+m/MS000E.BIN	0:0A	100	2746	1FD0	少女は怯{08:41}{08:69}に黙っ{08:14}{02:08}\n<wait>		The girl remains silent, as if too scared to speak.\n<wait>	v005		reads: 少女は怯えたように黙っている‥‥‥\n<wait>; reads: アナタ‥‥名前は？\n<wait>; reads: 園田： @refalign
+m/MS000E.BIN	0:0A	101	2791	1FB2	名前を訊{08:2C}		Ask her name	v005		reads: 名前を訊ねる; menu option, declared width 20 columns; reads: 少女は怯えたように黙っている‥‥‥\n<wait>; reads: 君は、ここに住んでるのかい？\n<wait> @refalign
+m/MS000E.BIN	0:0A	102	2803	1FB2	無視{08:8E}		Ignore her	v005		reads: 無視する; menu option, declared width 20 columns; reads: 名前を訊ねる; reads: 園田： @refalign
+m/MS000E.BIN	0:0A	103	2840	1F01	は面倒に思い、少女を無視{08:8E}事に{08:4B}。\n<wait>		You decide to ignore the girl. After everything that has happened,\nyou really can't be bothered to deal with her.\n<wait>\nYou decide to ignore the girl. After everything that has happened,\nyou really can't be bothered to deal with her.\n<wait>	v005		reads: は面倒に思い、少女を無視する事にした。\n<wait>; reads: 無視する; menu option, declared width 20 columns; reads: 君‥‥名前は？\n<wait> @refalign @rebase-new @refalign @refalign-merged
+m/MS000E.BIN	0:0A	104	2894	1F01	は面倒に思い、少女を無視{08:8E}事に{08:4B}。\n<wait>		 	v005		reads: は面倒に思い、少女を無視する事にした。\n<wait>; reads: 泪： @refalign @refalign-merged @rebase-new @refalign @refalign-merged
+m/MS000E.BIN	0:0A	105	2937	1FD2	女の子：		Girl:	v005		reads: は面倒に思い、少女を無視する事にした。\n<wait>; reads: ここに住んでるの？\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	106	2947	1FD3	{08:72}お兄ちゃん、メイの所へ{08:90}{08:4A}来たの{02:08}？\n<wait>		...I'm Mei. Who are you? Why did you come here?`\n<wait>	v005		reads: ‥‥お兄ちゃん、メイの所へどうして来たの‥‥‥？\n<wait>; reads: 泪： @refalign @refalign-merged
+m/MS000E.BIN	0:0A	107	2994	1FD0	{08:90}やら、少女の名はメイと{08:68}らしい。\n<wait>		Mei. So that's her name.\n<wait>	v005		reads: どうやら、少女の名はメイというらしい。\n<wait>; reads: ‥‥お兄ちゃん、メイの所へどうして来たの‥‥‥？\n<wait>; reads: アナタ‥‥名前は？\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	108	3051	1FB2	優しく声を掛{08:29}		Approach gently	v005		reads: 優しく声を掛ける; menu option, declared width 20 columns; reads: どうやら、少女の名はメイというらしい。\n<wait>; reads: 少女は怯えたように黙っている‥‥‥\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	109	3067	1FB2	あく{08:71}無視		Keep ignoring her	v005		reads: あくまで無視; menu option, declared width 20 columns; reads: 優しく声を掛ける; reads: 名前を訊ねる @refalign
+m/MS000E.BIN	0:0A	110	3101	1F01	{08:62}あく{08:71}{08:79}少女{02:08}メイを無視{08:4B}。\n<wait>					reads: は、あくまでその少女‥‥‥メイを無視した。\n<wait>; reads: あくまで無視; menu option, declared width 20 columns; reads: 無視する @refalign @rebase-new
+m/MS000E.BIN	0:0A	111	3138	1FBA	メイ{08:62}{08:7A}	メイ{08:62}{08:7A}	Mei, at those	ours		reads: メイは、そんな; reads: は、あくまでその少女‥‥‥メイを無視した。\n<wait>; reads: ひとり
+m/MS000E.BIN	0:0A	112	3152	1F01	の態度を見、身体を強張らせ怯{08:41}様子を崩さ{08:19}。\n<wait>	の態度を見、身体を強張らせ怯{08:41}様子を崩さ{08:19}。\n<wait>	{04:FF}'s attitude, her body stiffens, and she doesn't lose her frightened look.\n<wait>	ours		reads: の態度を見、身体を強張らせ怯えた様子を崩さなかった。\n<wait>; reads: メイは、そんな @rebase-tagdiff
+m/MS000E.BIN	0:0A	113	3203	1FBA	{03:0B}すぐに真剣な表情になり、真っすぐ		But, her face quickly turns serious, and looking straight	ours		reads: しかし、すぐに真剣な表情になり、真っすぐ; reads: の態度を見、身体を強張らせ怯えた様子を崩さなかった。\n<wait>; reads: は面倒に思い、少女を無視する事にした。\n<wait> @rebase-unmatched idx113 en=You decide to ignore the girl. After everything that has happened,\nyou really can't be bothered to deal with her.\n<wait>
+m/MS000E.BIN	0:0A	114	3243	1F01	の顔を見つめて\nこう言{08:51}{02:08}\n<wait>		at {04:FF}'s face,\nshe says this...\n<wait>	ours		reads: の顔を見つめて\nこう言った‥‥‥\n<wait>; reads: しかし、すぐに真剣な表情になり、真っすぐ; reads: は面倒に思い、少女を無視する事にした。\n<wait> @rebase-tagdiff @rebase-unmatched idx114 en=You decide to ignore the girl. After everything that has happened,\nyou really can't be bothered to deal with her.\n<wait>
+m/MS000E.BIN	0:0A	115	3280	1FD0	怯{08:41}表情に変化は見られ{08:25}{08:5E}の、\n少女はか細い声で、		Though her frightened expression doesn't change,\nthe girl, in a thin voice,	ours		reads: 怯えた表情に変化は見られないものの、\n少女はか細い声で、; reads: の顔を見つめて\nこう言った‥‥‥\n<wait>
+m/MS000E.BIN	0:0A	116	3334	0B	{08:37}	{08:37}	Sonoda	v005		reads: 園田; reads: 怯えた表情に変化は見られないものの、\n少女はか細い声で、; reads: ‥‥お兄ちゃん、メイの所へどうして来たの‥‥‥？\n<wait>
+m/MS000E.BIN	0:0A	117	3344	0B	{08:31}	{08:31}	Rui	ours		reads: 泪; reads: 園田; reads: どうやら、少女の名はメイというらしい。\n<wait>
+m/MS000E.BIN	0:0A	118	3355	1F01	の問いかけに応{08:41}。\n<wait>	の問いかけに応{08:41}。\n<wait>	answered {04:FF}'s question.\n<wait>	ours		reads: の問いかけに応えた。\n<wait>; reads: 泪; reads: 優しく声を掛ける; menu option, declared width 20 columns @rebase-tagdiff
+m/MS000E.BIN	0:0A	119	3382	1FD2	女の子：		Girl:	v005		reads: の問いかけに応えた。\n<wait>; reads: あくまで無視; menu option, declared width 20 columns
+m/MS000E.BIN	0:0A	120	3392	1FD3	{02:08}メイ。\n<wait>	{02:08}メイ。\n<wait>	...Mei.\n<wait>	ours		reads: ‥‥‥メイ。\n<wait>; reads: 山瀬勇
+m/MS000E.BIN	0:0A	121	3414	1FD2	{08:37}：	{08:37}：	Sonoda:	v005		reads: 園田：; reads: ‥‥‥メイ。\n<wait>
+m/MS000E.BIN	0:0A	122	3420	1FD3	メイちゃん{08:52}言う{08:5F}。\n僕達は別に、君に何かし{08:69}{08:52}訳{08:81}{08:25}{08:5F}。{08:82}{02:08}\n<wait>		So it's Mei-chan, huh.\nWe're not trying to do anything to you, honestly. It's just...\n<wait>	ours		reads: メイちゃんって言うんだ。\n僕達は別に、君に何かしようって訳じゃないんだ。ただ‥‥‥\n<wait>; reads: 園田：; reads: は、あくまでその少女‥‥‥メイを無視した。\n<wait>
+m/MS000E.BIN	0:0A	123	3498	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: メイちゃんって言うんだ。\n僕達は別に、君に何かしようって訳じゃないんだ。ただ‥‥‥\n<wait>; reads: メイは、そんな
+m/MS000E.BIN	0:0A	124	3504	1FD3	メイちゃん{08:52}言うのね。\n{01:16}達は別に、{01:39}に何かし{08:69}{08:52}訳{08:81}{08:25}わ。{08:82}{02:08}\n<wait>		So it's Mei-chan, huh.\nWe're not trying to do anything to you. It's just......\n<wait>	ours		reads: メイちゃんって言うのね。\nあたし達は別に、アナタに何かしようって訳じゃないわ。ただ‥‥‥\n<wait>; reads: 泪：; reads: の態度を見、身体を強張らせ怯えた様子を崩さなかった。\n<wait>
+m/MS000E.BIN	0:0A	125	3579	1FD0	少女は答{08:41}後、すぐ真剣な表情に{08:1A}言{08:51}。\n<wait>		After answering, the girl immediately turns serious and speaks.\n<wait>	ours		reads: 少女は答えた後、すぐ真剣な表情になって言った。\n<wait>; reads: メイちゃんって言うのね。\nあたし達は別に、アナタに何かしようって訳じゃないわ。ただ‥‥‥\n<wait>; reads: しかし、すぐに真剣な表情になり、真っすぐ
+m/MS000E.BIN	0:0A	126	3629	1FD0	少女は		The girl cuts off	ours		reads: 少女は答えた後、すぐ真剣な表情になって言った。\n<wait>; reads: の顔を見つめて\nこう言った‥‥‥\n<wait>
+m/MS000E.BIN	0:0A	127	3640	0B	{08:37}	{08:37}	Sonoda	v005		reads: 園田; reads: 怯えた表情に変化は見られないものの、\n少女はか細い声で、
+m/MS000E.BIN	0:0A	128	3645	18	{08:31}の言葉を遮り、真剣な表情で言{08:51}。\n<wait>	{08:31}の言葉を遮り、真剣な表情で言{08:51}。\n<wait>	's words and speaks with a serious expression.\n<wait>	ours		reads: 泪の言葉を遮り、真剣な表情で言った。\n<wait>; reads: 園田
+m/MS000E.BIN	0:0A	129	3688	1FD2	メイ：	メイ：	Mei:	v005		reads: 泪の言葉を遮り、真剣な表情で言った。\n<wait>
+m/MS000E.BIN	0:0A	130	3696	1FD3	満月の日は{08:72}{08:45}に来ちゃダメ{08:72}！\n<wait>{01:1E}{08:72}{01:1E}帰{08:52}{08:6E}{08:72}！\n<wait>		On the night of the full moon... you mustn't come here...!\n<wait>Quickly... please go home quickly...!\n<wait>	ours		reads: 満月の日は‥‥ここに来ちゃダメ‥‥！\n<wait>はやく‥‥はやく帰ってください‥‥！\n<wait>; reads: の問いかけに応えた。\n<wait>
+m/MS000E.BIN	0:0A	131	3761	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 満月の日は‥‥ここに来ちゃダメ‥‥！\n<wait>はやく‥‥はやく帰ってください‥‥！\n<wait> @refalign
+m/MS000E.BIN	0:0A	132	3777	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 園田：; reads: ‥‥‥メイ。\n<wait> @refalign
+m/MS000E.BIN	0:0A	133	3802	1FB2	{08:90}{08:4A}？		Why?	ours		reads: どうして？; menu option, declared width 20 columns; reads: 泪：; reads: 園田： @refalign
+m/MS000E.BIN	0:0A	134	3810	1FB2	{08:4D}{08:81}帰る		We'll leave then	ours		reads: それじゃ帰る; menu option, declared width 20 columns; reads: どうして？; reads: メイちゃんって言うんだ。\n僕達は別に、君に何かしようって訳じゃないんだ。ただ‥‥‥\n<wait>
+m/MS000E.BIN	0:0A	135	3842	1F01	{08:62}素直に{08:79}言葉に従う事に{08:4B}。\n<wait>					reads: は、素直にその言葉に従う事にした。\n<wait>; reads: それじゃ帰る; menu option, declared width 20 columns; reads: 泪： @rebase-new
+m/MS000E.BIN	0:0A	136	3879	1FD2	メイ：		 	v005		reads: は、素直にその言葉に従う事にした。\n<wait>; reads: メイちゃんって言うのね。\nあたし達は別に、アナタに何かしようって訳じゃないわ。ただ‥‥‥\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	137	3887	1FD3	{02:08}‥早く、{08:45}{08:42}{08:72}出てい{08:52}下{08:49}{02:08}！\n{08:72}お兄ちゃんが帰{08:52}{02:08}\n<wait>		...Please... hurry and get out of here...!\n...Onii-chan's coming back...\n<wait>	ours		reads: ‥‥‥‥早く、ここから‥‥出ていって下さい‥‥‥！\n‥‥お兄ちゃんが帰って‥‥‥\n<wait>; reads: 少女は答えた後、すぐ真剣な表情になって言った。\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	138	3955	1F01	{08:62}メイの精一杯強気な風を装{08:51}声を背に、{01:2E}{08:42}出た。\n		{04:FF}, with Mei's voice trying its best to sound tough\nbehind him, left the room.	ours		reads: は、メイの精一杯強気な風を装った声を背に、部屋から出た。\n; reads: ‥‥‥‥早く、ここから‥‥出ていって下さい‥‥‥！\n‥‥お兄ちゃんが帰って‥‥‥\n<wait> @rebase-tagdiff
+m/MS000E.BIN	0:0A	139	4005	00	{08:4D}は{08:72}{08:90}{08:4A}{08:6B}？\n<wait>	{08:4D}は{08:72}{08:90}{08:4A}{08:6B}？\n<wait>	That's... why is that?\n<wait>	ours		reads: それは‥‥どうしてなの？\n<wait>; reads: は、メイの精一杯強気な風を装った声を背に、部屋から出た。\n; reads: 園田
+m/MS000E.BIN	0:0A	140	4033	0B	{08:37}	{08:37}	Sonoda	v005		reads: 園田; reads: それは‥‥どうしてなの？\n<wait>; reads: 泪の言葉を遮り、真剣な表情で言った。\n<wait>
+m/MS000E.BIN	0:0A	141	4043	0B	{08:31}	{08:31}	Rui	ours		reads: 泪; reads: 園田
+m/MS000E.BIN	0:0A	142	4054	1F01	はメイに向かい、優しい調子で問いか{08:43}。\n<wait>	はメイに向かい、優しい調子で問いか{08:43}。\n<wait>	{04:FF} turned to Mei and asked gently.\n<wait>	ours		reads: はメイに向かい、優しい調子で問いかけた。\n<wait>; reads: 泪; reads: 満月の日は‥‥ここに来ちゃダメ‥‥！\n<wait>はやく‥‥はやく帰ってください‥‥！\n<wait> @rebase-tagdiff
+m/MS000E.BIN	0:0A	143	4099	1FBA	{08:4D}に答{08:28}代わりに、メイは首を横にふ{08:51}。\n<wait>		Instead of answering, Mei shakes her head.\n<wait>	ours		reads: それに答える代わりに、メイは首を横にふった。\n<wait>; reads: はメイに向かい、優しい調子で問いかけた。\n<wait>; reads: 園田：
+m/MS000E.BIN	0:0A	144	4151	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: それに答える代わりに、メイは首を横にふった。\n<wait>; reads: 泪： @refalign
+m/MS000E.BIN	0:0A	145	4157	1FD3	{08:72}{08:8D}は話せ{08:25}{08:52}事？\n<wait>		...You mean you can't tell us why?\n<wait>	ours		reads: ‥‥わけは話せないって事？\n<wait>; reads: 園田：; reads: どうして？; menu option, declared width 20 columns @refalign
+m/MS000E.BIN	0:0A	146	4192	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: ‥‥わけは話せないって事？\n<wait>; reads: それじゃ帰る; menu option, declared width 20 columns @refalign
+m/MS000E.BIN	0:0A	147	4198	1FD3	{08:72}訳は話せ{08:25}の{08:72}？\n<wait>	{08:72}訳は話せ{08:25}の{08:72}？\n<wait>	...You can't tell us why...?\n<wait>	ours		reads: ‥‥訳は話せないの‥‥？\n<wait>; reads: 泪：; reads: 山瀬勇
+m/MS000E.BIN	0:0A	148	4225	1FD2	メイ：	メイ：	Mei:	v005		reads: ‥‥訳は話せないの‥‥？\n<wait>
+m/MS000E.BIN	0:0A	149	4233	1FD3	{02:08}帰{08:52}{08:6E}{08:72}お願い{08:72}{08:55}{08:72}\n{02:08}お兄ちゃんが{08:72}帰{08:52}来ちゃう{02:08}\n<wait>		...Please... go home... I'm begging you...\n...Onii-chan's going to come back...\n<wait>	ours		reads: ‥‥‥帰ってください‥‥お願い‥‥です‥‥\n‥‥‥お兄ちゃんが‥‥帰って来ちゃう‥‥‥\n<wait>; reads: は、素直にその言葉に従う事にした。\n<wait> @refalign @refalign-merged @rebase-unmatched idx149 en={04:FF} decided to obediently follow her words.\n<wait>
+m/MS000E.BIN	0:0A	150	4300	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: ‥‥‥帰ってください‥‥お願い‥‥です‥‥\n‥‥‥お兄ちゃんが‥‥帰って来ちゃう‥‥‥\n<wait> @refalign
+m/MS000E.BIN	0:0A	151	4306	1FD3	{08:79}お兄ちゃん{02:08}<wait>{01:3B}{01:06}{08:52}言{08:52}た人だよね。\n<wait>		That Onii-chan...<wait>That's the person you called Kazumi earlier, right?\n<wait>	ours		reads: そのお兄ちゃん‥‥‥<wait>さっきカズミって言ってた人だよね。\n<wait>; reads: 園田：; reads: ‥‥‥‥早く、ここから‥‥出ていって下さい‥‥‥！\n‥‥お兄ちゃんが帰って‥‥‥\n<wait> @refalign
+m/MS000E.BIN	0:0A	152	4355	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: そのお兄ちゃん‥‥‥<wait>さっきカズミって言ってた人だよね。\n<wait>; reads: は、メイの精一杯強気な風を装った声を背に、部屋から出た。\n @refalign
+m/MS000E.BIN	0:0A	153	4361	1FD3	{08:79}お兄ちゃんと、何か関係が{08:7B}の？\n<wait>		Does it have something to do with your brother?\n<wait>	ours		reads: そのお兄ちゃんと、何か関係があるの？\n<wait>; reads: 園田：; reads: それは‥‥どうしてなの？\n<wait> @refalign
+m/MS000E.BIN	0:0A	154	4402	1FD0	{08:37}	{08:37}	Sonoda	v005		reads: 園田; reads: そのお兄ちゃんと、何か関係があるの？\n<wait>
+m/MS000E.BIN	0:0A	155	4414	1FD2	{08:31}：	{08:31}：	Rui:	v005		reads: 泪：; reads: 園田
+m/MS000E.BIN	0:0A	156	4420	1FD3	お兄ちゃん{08:72}？\n<wait>{01:3B}、{01:06}{08:52}言{08:52}た人ね。\n<wait>		Onii-chan...?\n<wait>That's the one you called Kazumi just now.\n<wait>	ours		reads: お兄ちゃん‥‥？\n<wait>さっき、カズミって言ってた人ね。\n<wait>; reads: 泪：; reads: はメイに向かい、優しい調子で問いかけた。\n<wait> @refalign
+m/MS000E.BIN	0:0A	157	4468	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: お兄ちゃん‥‥？\n<wait>さっき、カズミって言ってた人ね。\n<wait>; reads: それに答える代わりに、メイは首を横にふった。\n<wait> @refalign
+m/MS000E.BIN	0:0A	158	4474	1FD3	{08:79}お兄ちゃんと、何か関係が{08:7B}のかしら？\n<wait>		Does it have something to do with your brother?\n<wait>	ours		reads: そのお兄ちゃんと、何か関係があるのかしら？\n<wait>; reads: 泪：; reads: 園田： @refalign
+m/MS000E.BIN	0:0A	159	4521	1FD0	{08:31}	{08:31}	Rui	ours		reads: 泪; reads: そのお兄ちゃんと、何か関係があるのかしら？\n<wait>; reads: ‥‥わけは話せないって事？\n<wait>
+m/MS000E.BIN	0:0A	160	4542	1FB2	お兄ちゃんと関係が‥？	お兄ちゃんと関係が‥？	Related to him...?	ours		menu option, declared width 20 columns; reads: 泪; reads: 泪：
+m/MS000E.BIN	0:0A	161	4566	1FB2	素直に帰る		Just go home	ours		menu option, declared width 20 columns; reads: ‥‥訳は話せないの‥‥？\n<wait>
+m/MS000E.BIN	0:0A	162	4596	1FD0	{08:48}以上、何を聞い{08:54}無駄{08:8C}。\n		There's probably no point asking anything more.\n	ours		reads: これ以上、何を聞いても無駄だろう。\n; menu option, declared width 20 columns
+m/MS000E.BIN	0:0A	163	4629	1F01	{08:62}メイの言葉に従{08:52}{01:2E}を出た。\n		{04:FF} followed Mei's words and left the room.\n	ours		reads: は、メイの言葉に従って部屋を出た。\n; reads: これ以上、何を聞いても無駄だろう。\n; reads: ‥‥‥帰ってください‥‥お願い‥‥です‥‥\n‥‥‥お兄ちゃんが‥‥帰って来ちゃう‥‥‥\n<wait> @rebase-tagdiff
+m/MS000E.BIN	0:0A	164	4661	1FD0	お兄ちゃん{02:08}\n<wait>先程メイが言{08:52}{08:64}、{01:06}と{08:68}人物の事{08:8C}。\n<wait>		Onii-chan...\n<wait>Surely that refers to the person named Kazumi that Mei mentioned earlier.\n<wait>	ours		reads: お兄ちゃん‥‥‥\n<wait>先程メイが言っていた、カズミという人物の事だろう。\n<wait>; reads: は、メイの言葉に従って部屋を出た。\n; reads: 園田：
+m/MS000E.BIN	0:0A	165	4727	1F01	{08:62}{08:79}人物と何か関係の{08:7B}事{08:6B}か訊ねた。\n<wait>		{04:FF} asked whether it had something to do with that person.\n<wait>	ours		reads: は、その人物と何か関係のある事なのか訊ねた。\n<wait>; reads: お兄ちゃん‥‥‥\n<wait>先程メイが言っていた、カズミという人物の事だろう。\n<wait>; reads: そのお兄ちゃん‥‥‥<wait>さっきカズミって言ってた人だよね。\n<wait> @rebase-tagdiff
+m/MS000E.BIN	0:0A	166	4776	1F01	がそう聞き返すと、メイの表情{08:62}みるみるうちに強張{08:51}。\n<wait>		{04:FF} asked this, and Mei's expression stiffened before their very eyes.\n<wait>	ours		reads: がそう聞き返すと、メイの表情は、みるみるうちに強張った。\n<wait>; reads: は、その人物と何か関係のある事なのか訊ねた。\n<wait>; reads: 園田： @rebase-tagdiff
+m/MS000E.BIN	0:0A	167	4835	1FBA	そ{08:4A}、きゅ{08:53}両手の拳を握り締め、精一杯と{08:22}感じの、\n{08:4D}{08:56}先程よりやや大きい程度の声で、		Then, clenching both fists tightly, with what seems like all her effort,\nbut still only slightly louder than before,	ours		reads: そして、きゅっと両手の拳を握り締め、精一杯といった感じの、\nそれでも先程よりやや大きい程度の声で、; reads: がそう聞き返すと、メイの表情は、みるみるうちに強張った。\n<wait>; reads: そのお兄ちゃんと、何か関係があるの？\n<wait>
+m/MS000E.BIN	0:0A	168	4926	1F01	達に向か{08:52}言{08:51}。\n<wait>	達に向か{08:52}言{08:51}。\n<wait>	she turned toward {04:FF} and the group, and said.\n<wait>	ours		reads: 達に向かって言った。\n<wait>; reads: そして、きゅっと両手の拳を握り締め、精一杯といった感じの、\nそれでも先程よりやや大きい程度の声で、; reads: 園田 @rebase-tagdiff
+m/MS000E.BIN	0:0A	169	4951	1FD2	女の子：		 	v005		reads: 達に向かって言った。\n<wait>; reads: 泪： @refalign @refalign-merged
+m/MS000E.BIN	0:0A	170	4961	1FD3	とにかく、{01:1E}、{08:45}{08:42}出て{08:52}下{08:49}！！\n<wait>		Anyway, quickly, please get out of here!!\n<wait>	ours		reads: とにかく、はやく、ここから出てって下さい！！\n<wait>; reads: お兄ちゃん‥‥？\n<wait>さっき、カズミって言ってた人ね。\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	171	5002	1FD2	女の子：		 	v005		reads: とにかく、はやく、ここから出てって下さい！！\n<wait>; reads: 泪： @refalign @refalign-merged
+m/MS000E.BIN	0:0A	172	5012	1FD3	{02:08}出て{08:52}！　{08:45}には来{08:25}でっ！！\n<wait>		...Get out! Don't ever come here again!!\n<wait>	ours		reads: ‥‥‥出てって！　ここには来ないでっ！！\n<wait>; reads: そのお兄ちゃんと、何か関係があるのかしら？\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	173	5056	1FD2	{08:37}：	{08:37}：	Sonoda:	v005		reads: 園田：; reads: ‥‥‥出てって！　ここには来ないでっ！！\n<wait>; reads: 泪
+m/MS000E.BIN	0:0A	174	5062	1FD3	ち{08:72}ちょ{08:53}{08:72}\n<wait>		H-Hold on...\n<wait>	ours		reads: ち‥‥ちょっと‥‥\n<wait>; reads: 園田：; menu option, declared width 20 columns @refalign
+m/MS000E.BIN	0:0A	175	5091	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: ち‥‥ちょっと‥‥\n<wait>; menu option, declared width 20 columns @refalign
+m/MS000E.BIN	0:0A	176	5097	1FD3	ちょ{08:72}ちょ{08:53}待っ{02:08}\n<wait>	ちょ{08:72}ちょ{08:53}待っ{02:08}\n<wait>	H-Hold on a se-...\n<wait>	ours		reads: ちょ‥‥ちょっと待っ‥‥‥\n<wait>; reads: 泪：; reads: 山瀬勇
+m/MS000E.BIN	0:0A	177	5130	1F01	達{08:62}少女に{01:2E}{08:42}追い出{03:0C}て{08:1F}。\n<wait>	達{08:62}少女に{01:2E}{08:42}追い出{03:0C}て{08:1F}。\n<wait>	{04:FF} and the others ended up being thrown out of the room by the girl.\n<wait>	ours		reads: 達は、少女に部屋から追い出されてしまった。\n<wait>; reads: ちょ‥‥ちょっと待っ‥‥‥\n<wait> @rebase-tagdiff
+m/MS000E.BIN	0:0A	178	5191	1FD2	女の子：		 	v005		reads: 達は、少女に部屋から追い出されてしまった。\n<wait>; reads: これ以上、何を聞いても無駄だろう。\n @refalign @refalign-merged
+m/MS000E.BIN	0:0A	179	5201	1FD3	{08:72}コンコン{02:08}‥ゴホッ{08:72}ゴホゴホ{02:08}\n<wait>		...*Cough, cough*... *Hack*... *cough cough*...\n<wait>	ours		reads: ‥‥コンコン‥‥‥‥ゴホッ‥‥ゴホゴホ‥‥‥\n<wait>; reads: は、メイの言葉に従って部屋を出た。\n @refalign @refalign-merged
+m/MS000E.BIN	0:0A	180	5242	1FD0	少女{08:62}急に苦しそうに咳き込んで{08:40}。\n<wait>		The girl suddenly starts coughing painfully.\n<wait>	ours		reads: 少女は、急に苦しそうに咳き込んでいる。\n<wait>; reads: ‥‥コンコン‥‥‥‥ゴホッ‥‥ゴホゴホ‥‥‥\n<wait>; reads: お兄ちゃん‥‥‥\n<wait>先程メイが言っていた、カズミという人物の事だろう。\n<wait>
+m/MS000E.BIN	0:0A	181	5290	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 少女は、急に苦しそうに咳き込んでいる。\n<wait>; reads: は、その人物と何か関係のある事なのか訊ねた。\n<wait> @refalign
+m/MS000E.BIN	0:0A	182	5296	1FD3	{01:32}かい？\n<wait>		Are you all right?\n<wait>	ours		reads: 大丈夫かい？\n<wait>; reads: 園田：; reads: がそう聞き返すと、メイの表情は、みるみるうちに強張った。\n<wait> @refalign
+m/MS000E.BIN	0:0A	183	5321	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 大丈夫かい？\n<wait>; reads: そして、きゅっと両手の拳を握り締め、精一杯といった感じの、\nそれでも先程よりやや大きい程度の声で、 @refalign
+m/MS000E.BIN	0:0A	184	5327	1FD3	ちょ{08:53}{02:08}{01:32}{08:72}？\n<wait>		Hey... are you okay...?\n<wait>	ours		reads: ちょっと‥‥‥大丈夫‥‥？\n<wait>; reads: 泪：; reads: 達に向かって言った。\n<wait> @refalign
+m/MS000E.BIN	0:0A	185	5350	1FD0	{08:79}時、背後で扉の開く気配がし、長身の男が虚ろな表情で入{08:52}来た。\n男{08:62}一行には目もくれず、ゆっくりと少女に向か{08:52}歩いて行{08:51}。\n<wait>		Just then, a door creaks open behind them, and a tall man enters,\nhis stare hollow -- ignoring the group, he walks straight for the girl.\n<wait>	ours		reads: その時、背後で扉の開く気配がし、長身の男が虚ろな表情で入って来た。\n男は、一行には目もくれず、ゆっくりと少女に向かって歩いて行った。\n<wait>; reads: ちょっと‥‥‥大丈夫‥‥？\n<wait>
+m/MS000E.BIN	0:0A	186	5502	1FD2	男性：		 	v005		reads: その時、背後で扉の開く気配がし、長身の男が虚ろな表情で入って来た。\n男は、一行には目もくれず、ゆっくりと少女に向かって歩いて行った。\n<wait>; reads: とにかく、はやく、ここから出てって下さい！！\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	187	5510	1FD3	{02:08}メ{02:08}イ{02:08}‥\n<wait>		...M... ei...\n<wait>	ours		reads: ‥‥‥メ‥‥‥イ‥‥‥‥\n<wait>; @refalign @refalign-merged
+m/MS000E.BIN	0:0A	188	5531	1FD2	メイ：		 	v005		reads: ‥‥‥メ‥‥‥イ‥‥‥‥\n<wait>; reads: ‥‥‥出てって！　ここには来ないでっ！！\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	189	5539	1FD3	{08:72}{01:06}{08:72}お兄ちゃ‥ん{02:08}ゴホゴホッ{08:72}\n<wait>		...Kazumi... Onii-cha...n... *cough cough*...\n<wait>	ours		reads: ‥‥カズミ‥‥お兄ちゃ‥ん‥‥‥ゴホゴホッ‥‥\n<wait>; reads: 園田： @refalign @refalign-merged
+m/MS000E.BIN	0:0A	190	5580	1FD0	咳き込む少女を見て、男は突然正気を取り戻{08:4B}かの様に、少女に向か{08:52}言{08:51}。\n<wait>		Seeing the coughing girl, the man suddenly seems to snap back\nto his senses, and speaks to her.<wait>	ours		reads: 咳き込む少女を見て、男は突然正気を取り戻したかの様に、少女に向かって言った。\n<wait>; reads: ‥‥カズミ‥‥お兄ちゃ‥ん‥‥‥ゴホゴホッ‥‥\n<wait>; reads: ち‥‥ちょっと‥‥\n<wait>
+m/MS000E.BIN	0:0A	191	5659	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: 咳き込む少女を見て、男は突然正気を取り戻したかの様に、少女に向かって言った。\n<wait>; reads: 泪： @refalign
+m/MS000E.BIN	0:0A	192	5665	1FD3	ハッ{02:08}{08:90}{08:4B}{08:5F}メイ！　{08:5B}発作かッ！\n<wait>		Huh...! What's wrong, Mei!? Another attack!?\n<wait>	ours		reads: ハッ‥‥‥どうしたんだメイ！　また発作かッ！\n<wait>; reads: カズミ：; reads: ちょ‥‥ちょっと待っ‥‥‥\n<wait> @refalign
+m/MS000E.BIN	0:0A	193	5706	1FD2	メイ：		 	v005		reads: ハッ‥‥‥どうしたんだメイ！　また発作かッ！\n<wait>; reads: 達は、少女に部屋から追い出されてしまった。\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	194	5714	1FD3	{02:08}う{08:72}ゴホゴホゴホッ！！\n<wait>		...Ugh... *cough cough cough*!!\n<wait>	ours		reads: ‥‥‥う‥‥ゴホゴホゴホッ！！\n<wait>; @refalign @refalign-merged
+m/MS000E.BIN	0:0A	195	5747	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: ‥‥‥う‥‥ゴホゴホゴホッ！！\n<wait>; reads: ‥‥コンコン‥‥‥‥ゴホッ‥‥ゴホゴホ‥‥‥\n<wait> @refalign
+m/MS000E.BIN	0:0A	196	5753	1FD3	メイ、喋っちゃダメだ。\n今、薬をやる{08:42}{08:72}布団に行{08:52}寝{08:2B}{08:5F}。\n<wait>		Mei, don't talk.\nI'll get you some medicine now... go lie down in bed.\n<wait>	ours		reads: メイ、喋っちゃダメだ。\n今、薬をやるから‥‥布団に行って寝てるんだ。\n<wait>; reads: カズミ：; reads: 少女は、急に苦しそうに咳き込んでいる。\n<wait> @refalign
+m/MS000E.BIN	0:0A	197	5819	1FD2	メイ：		 	v005		reads: メイ、喋っちゃダメだ。\n今、薬をやるから‥‥布団に行って寝てるんだ。\n<wait>; reads: 園田： @refalign @refalign-merged
+m/MS000E.BIN	0:0A	198	5827	1FD3	うん{02:08}\n<wait>		Mm...\n<wait>	ours		reads: うん‥‥‥\n<wait>; reads: 大丈夫かい？\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0A	199	5872	1FD0	少女は苦しそうに咳をしながら、奥へと消えて行{08:51}。\n<wait>		Coughing painfully, the girl disappears into the back room.\n<wait>	ours		reads: 少女は苦しそうに咳をしながら、奥へと消えて行った。\n<wait>; reads: うん‥‥‥\n<wait>; reads: 泪：
+m/MS000E.BIN	0:0A	200	5927	1FBA	男は鋭い眼で		The man, with a sharp glare,	ours		reads: 少女は苦しそうに咳をしながら、奥へと消えて行った。\n<wait>; reads: ちょっと‥‥‥大丈夫‥‥？\n<wait>
+m/MS000E.BIN	0:0A	201	5945	1F01	達を睨み、怒りも露に怒鳴{08:51}。\n<wait>		glared at {04:FF} and the others, and shouted, his anger plain to see.\n<wait>	ours		reads: 達を睨み、怒りも露に怒鳴った。\n<wait>; reads: その時、背後で扉の開く気配がし、長身の男が虚ろな表情で入って来た。\n男は、一行には目もくれず、ゆっくりと少女に向かって歩いて行った。\n<wait> @rebase-tagdiff
+m/MS000E.BIN	0:0A	202	5982	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: 達を睨み、怒りも露に怒鳴った。\n<wait> @refalign
+m/MS000E.BIN	0:0A	203	5988	1FD3	{08:72}何だお前達は{02:08}{08:45}でを何を{08:4A}たッ！！\n<wait>		...Who the hell are you...! What were you doing here!!\n<wait>	ours		reads: ‥‥何だお前達は‥‥‥ここでを何をしてたッ！！\n<wait>; reads: カズミ：; reads: ‥‥‥メ‥‥‥イ‥‥‥‥\n<wait> @refalign
+m/MS000E.BIN	0:0A	204	6038	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: ‥‥何だお前達は‥‥‥ここでを何をしてたッ！！\n<wait> @refalign
+m/MS000E.BIN	0:0A	205	6044	1FD3	あの、俺達は{02:08}‥\n<wait>		Um, we were just...\n<wait>	ours		reads: あの、俺達は‥‥‥‥\n<wait>; reads: 園田：; reads: ‥‥カズミ‥‥お兄ちゃ‥ん‥‥‥ゴホゴホッ‥‥\n<wait> @refalign
+m/MS000E.BIN	0:0A	206	6077	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: あの、俺達は‥‥‥‥\n<wait>; reads: 咳き込む少女を見て、男は突然正気を取り戻したかの様に、少女に向かって言った。\n<wait> @refalign
+m/MS000E.BIN	0:0A	207	6083	1FD3	{01:16}達{08:62}何も{02:08}\n<wait>		We didn't do anything...\n<wait>	ours		reads: あたし達は、何も‥‥‥\n<wait>; reads: 泪：; reads: カズミ： @refalign
+m/MS000E.BIN	0:0A	208	6121	1FB2	別に何も{08:4A}{08:24}		Didn't do anything	ours		reads: 別に何もしていない; menu option, declared width 20 columns; reads: あたし達は、何も‥‥‥\n<wait>; reads: ハッ‥‥‥どうしたんだメイ！　また発作かッ！\n<wait>
+m/MS000E.BIN	0:0A	209	6135	1FB2	まずは名乗る		Give my name first	ours		menu option, declared width 20 columns; reads: 別に何もしていない
+m/MS000E.BIN	0:0A	210	6167	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; menu option, declared width 20 columns; reads: ‥‥‥う‥‥ゴホゴホゴホッ！！\n<wait> @refalign
+m/MS000E.BIN	0:0A	211	6173	1FD3	黙れ！！\n<wait>		Shut up!!\n<wait>	ours		reads: カズミ： @refalign
+m/MS000E.BIN	0:0A	212	6194	1FD0	男{08:62}		The man,	ours		reads: 男は、; reads: メイ、喋っちゃダメだ。\n今、薬をやるから‥‥布団に行って寝てるんだ。\n<wait>
+m/MS000E.BIN	0:0A	213	6204	1F01	達を乱暴に突き飛ば{08:4B}。\n<wait>		shoved {04:FF} and the others roughly aside.\n<wait>	ours		reads: 達を乱暴に突き飛ばした。\n<wait>; reads: 男は、 @rebase-tagdiff
+m/MS000E.BIN	0:0A	214	6240	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 達を乱暴に突き飛ばした。\n<wait>; reads: うん‥‥‥\n<wait> @refalign
+m/MS000E.BIN	0:0A	215	6246	1FD3	何を{08:8E}{08:5F}！\n		What are you doing!?\n	ours		reads: 何をするんだ！\n; reads: 園田：; reads: 少女は苦しそうに咳をしながら、奥へと消えて行った。\n<wait> @refalign
+m/MS000E.BIN	0:0A	216	6267	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 何をするんだ！\n @refalign
+m/MS000E.BIN	0:0A	217	6273	1FD3	なっ！　何{08:8E}のよ！！\n<wait>		Wha! What do you think you're doing!?\n<wait>	ours		reads: なっ！　何するのよ！！\n<wait>; reads: 泪：; reads: 達を睨み、怒りも露に怒鳴った。\n<wait> @refalign
+m/MS000E.BIN	0:0A	218	6302	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: なっ！　何するのよ！！\n<wait> @refalign
+m/MS000E.BIN	0:0A	219	6308	1FD3	と{08:53}と出て行けッ！！　出て行か{08:25}と、貴様らを殺すッ！！\n<wait>		Get out, now!! If you don't leave, I'll kill you!!\n<wait>	ours		reads: とっとと出て行けッ！！　出て行かないと、貴様らを殺すッ！！\n<wait>; reads: カズミ：; reads: ‥‥何だお前達は‥‥‥ここでを何をしてたッ！！\n<wait> @refalign
+m/MS000E.BIN	0:0A	220	6371	1FD0	男の態度は気迫に満ち、何を言{08:52}も無駄な事は一目瞭然だ{08:51}。\n<wait>		The man's demeanor was so intense that it was obvious\nnothing they said would do any good.<wait>	ours		reads: 男の態度は気迫に満ち、何を言っても無駄な事は一目瞭然だった。\n<wait>; reads: とっとと出て行けッ！！　出て行かないと、貴様らを殺すッ！！\n<wait>; reads: 園田：
+m/MS000E.BIN	0:0A	221	6440	1F01	達{08:62}仕方なく{01:2E}を後に{08:4B}。\n<wait>		{04:FF} and the others had no choice but to leave the room.\n<wait>	ours		reads: 達は、仕方なく部屋を後にした。\n<wait>; reads: 男の態度は気迫に満ち、何を言っても無駄な事は一目瞭然だった。\n<wait>; reads: あの、俺達は‥‥‥‥\n<wait> @rebase-tagdiff
 m/MS000E.BIN	0:0B	0	7	1F17	{01:FC}	{01:FC}				reads: 
 m/MS000E.BIN	0:0B	1	11	1C	{01:99}{01:FF}	{01:99}{01:FF}				reads: 
 m/MS000E.BIN	0:0B	2	23	1F03						
 m/MS000E.BIN	0:0B	3	74	1FD2	メイ：		Mei:	v005		
 m/MS000E.BIN	0:0B	4	82	1FD3	あっ{02:08}！\n<wait>		Ah!\n<wait>	v005		reads: あっ‥‥‥！\n<wait>
-m/MS000E.BIN	0:0B	5	99	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ： @refalign
-m/MS000E.BIN	0:0B	6	105	1FD3	{08:5B}、お前達か！\n<wait>		You people again?\n<wait>	v005		reads: また、お前達か！\n<wait> @refalign
-m/MS000E.BIN	0:0B	7	128	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ： @refalign
-m/MS000E.BIN	0:0B	8	134	1FD3	帰れと言{08:51}筈だ{02:08}お前達の耳は節穴か？！\n<wait>		Do you have hearing problems or something?\nI'm pretty sure that I told you to fuck off.\n<wait>	v005		reads: 帰れと言った筈だ‥‥‥お前達の耳は節穴か？！\n<wait> @refalign
-m/MS000E.BIN	0:0B	9	181	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ： @refalign
-m/MS000E.BIN	0:0B	10	187	1FD3	お前達などに用は{08:25}{08:5F}{08:72}出て行けッ！！\n<wait>		I have no business with you. Now, leave!\n<wait>\nYou end up being forced out of the room.\n<wait>	v005		reads: お前達などに用はないんだ‥‥出て行けッ！！\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0B	11	236	00	{04:FF}達{08:62}追い出{03:0C}て{08:1F}。\n<wait>		 	v005		reads: 達は、追い出されてしまった。\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0B	12	286	1FD2	メイ：		 	v005		@refalign @refalign-merged
+m/MS000E.BIN	0:0B	5	99	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS000E.BIN	0:0B	6	105	1FD3	{08:5B}、お前達か！\n<wait>		You people again?\n<wait>	v005		reads: また、お前達か！\n<wait>; reads: また、お前達か！\n<wait> @refalign
+m/MS000E.BIN	0:0B	7	128	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS000E.BIN	0:0B	8	134	1FD3	帰れと言{08:51}筈だ{02:08}お前達の耳は節穴か？！\n<wait>		Do you have hearing problems or something?\nI'm pretty sure that I told you to fuck off.\n<wait>	v005		reads: 帰れと言った筈だ‥‥‥お前達の耳は節穴か？！\n<wait>; reads: 帰れと言った筈だ‥‥‥お前達の耳は節穴か？！\n<wait> @refalign
+m/MS000E.BIN	0:0B	9	181	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS000E.BIN	0:0B	10	187	1FD3	お前達などに用は{08:25}{08:5F}{08:72}出て行けッ！！\n<wait>		I have no business with you. Now, leave!\n<wait>	v005		reads: お前達などに用はないんだ‥‥出て行けッ！！\n<wait>; reads: お前達などに用はないんだ‥‥出て行けッ！！\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0B	11	238	1F01	達{08:62}追い出{03:0C}て{08:1F}。\n<wait>		You end up being forced out of the room.\n<wait>	v005		reads: 達は、追い出されてしまった。\n<wait>; reads: 達は、追い出されてしまった。\n<wait> @refalign @refalign-merged @rebase-tagdiff
+m/MS000E.BIN	0:0B	12	286	1FD2	メイ：		Mei:	v005		@refalign @refalign-merged
 m/MS000E.BIN	0:0B	13	294	1FD3	{08:90}{08:4A}{02:08}‥\n<wait>	{08:90}{08:4A}{02:08}‥\n<wait>	Why...\n<wait>	v005		reads: どうして‥‥‥‥\n<wait>
-m/MS000E.BIN	0:0B	14	311	1FD2	メイ：		 	v005		@refalign @refalign-merged
-m/MS000E.BIN	0:0B	15	319	1FD3	お願い{08:55}！　出て{08:52}下{08:49}！\n<wait>		 	v005		reads: お願いです！　出てって下さい！\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0B	16	352	1FD2	メイ：		 	v005		@refalign @refalign-merged
-m/MS000E.BIN	0:0B	17	360	1FD3	{01:1E}{08:72}{08:45}{08:42}離れて！！\n<wait>		 	v005		reads: はやく‥‥ここから離れて！！\n<wait> @refalign @refalign-merged
-m/MS000E.BIN	0:0B	18	391	00	{04:FF}達{08:62}少女に{01:2E}{08:42}追い出{03:0C}て{08:1F}。\n		 	v005		reads: 達は、少女に部屋から追い出されてしまった。\n @refalign @refalign-merged
+m/MS000E.BIN	0:0B	14	311	1FD2	メイ：		Mei:	v005		@refalign @refalign-merged
+m/MS000E.BIN	0:0B	15	319	1FD3	お願い{08:55}！　出て{08:52}下{08:49}！\n<wait>		Please! Get out of here!\n<wait>	v005		reads: お願いです！　出てって下さい！\n<wait>; reads: お願いです！　出てって下さい！\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0B	16	352	1FD2	メイ：		Mei:	v005		@refalign @refalign-merged
+m/MS000E.BIN	0:0B	17	360	1FD3	{01:1E}{08:72}{08:45}{08:42}離れて！！\n<wait>		You must leave this place!\n<wait>	v005		reads: はやく‥‥ここから離れて！！\n<wait>; reads: はやく‥‥ここから離れて！！\n<wait> @refalign @refalign-merged
+m/MS000E.BIN	0:0B	18	393	1F01	達{08:62}少女に{01:2E}{08:42}追い出{03:0C}て{08:1F}。\n		The girl forces you out of the room.\n	v005		reads: 達は、少女に部屋から追い出されてしまった。\n; reads: 達は、少女に部屋から追い出されてしまった。\n @refalign @refalign-merged @rebase-tagdiff
 m/MS000E.BIN	0:0C	0	7	1F17	{01:F0}	{01:F0}				reads: 
 m/MS000E.BIN	0:0C	1	12	0C	v	v				
 m/MS000E.BIN	0:0C	2	42	1FD2	メイ：	メイ：	Mei:	ours		
 m/MS000E.BIN	0:0C	3	50	1FD3	あ、貴方{08:4F}は{02:08}\n<wait>		Oh, you're the...\n<wait>	ours		reads: あ、貴方たちは‥‥‥\n<wait>
-m/MS000E.BIN	0:0C	4	77	00	{04:FF}達の訪問に、メイは驚き、そ{08:4A}怯え{08:14}様だ{08:51}。\n<wait>		At {04:FF} and the others' visit, Mei looked startled, and seemed frightened.\n<wait>	ours		reads: 達の訪問に、メイは驚き、そして怯えている様だった。\n<wait>; reads: あ、貴方たちは‥‥‥\n<wait>
+m/MS000E.BIN	0:0C	4	79	1F01	達の訪問に、メイは驚き、そ{08:4A}怯え{08:14}様だ{08:51}。\n<wait>		At {04:FF} and the others' visit, Mei looked startled, and seemed frightened.\n<wait>	ours		reads: 達の訪問に、メイは驚き、そして怯えている様だった。\n<wait>; reads: あ、貴方たちは‥‥‥\n<wait> @rebase-tagdiff
 m/MS000E.BIN	0:0C	5	135	1FD1	＞{02:06}\n<wait>		>{02:06}\n<wait>	ours		reads: ＞どうしますか？\n<wait>; reads: 達の訪問に、メイは驚き、そして怯えている様だった。\n<wait>
 m/MS000E.BIN	0:0C	6	162	1FB2	冗談を言う		Crack a joke	ours		menu option, declared width 20 columns; reads: ＞どうしますか？\n<wait>
 m/MS000E.BIN	0:0C	7	174	1FB2	挨拶を{08:8E}		Say hello	ours		reads: 挨拶をする; menu option, declared width 20 columns
@@ -447,8 +442,8 @@ m/MS000E.BIN	0:0C	12	362	1FD2	{08:31}：		Rui:	ours		reads: 泪：; reads: 園�
 m/MS000E.BIN	0:0C	13	368	1FD3	メイちゃん。こんにちは！\nお姉さん達の事、覚え{08:2B}？\n<wait>		Mei-chan. Hello there!\nDo you remember us?\n<wait>	ours		reads: メイちゃん。こんにちは！\nお姉さん達の事、覚えてる？\n<wait>; reads: メイちゃんのお兄ちゃんには、嫌われてるみたいだけど、また来ちゃったんだ！\n
 m/MS000E.BIN	0:0C	14	426	1FD2	{08:31}：		Rui:	ours		reads: 泪：
 m/MS000E.BIN	0:0C	15	432	1FD3	メイちゃんのお兄さんに{08:62}嫌われ{08:2B}み{08:4E}{08:74}ど、{08:5B}来ちゃ{08:51}{02:08}\n<wait>		Looks like Mei-chan's brother doesn't like us,\nbut we came back anyway...\n<wait>	ours		reads: メイちゃんのお兄さんには、嫌われてるみたいだけど、また来ちゃった‥‥‥\n<wait>; reads: メイちゃん。こんにちは！\nお姉さん達の事、覚えてる？\n<wait>
-m/MS000E.BIN	0:0C	16	504	00	{04:FF}{08:62}怯{08:28}メイの心を開く為、冗談を言{08:51}。\n<wait>		{04:FF} cracked a joke, hoping to open the frightened Mei's heart.\n<wait>	ours		reads: は、怯えるメイの心を開く為、冗談を言った。\n<wait>; reads: 泪：
-m/MS000E.BIN	0:0C	17	560	00	{04:FF}{08:62}怯{08:28}メイの心を開く為、明るく挨拶を{08:4B}。\n<wait>		{04:FF} greeted her cheerfully, hoping to open the frightened Mei's heart.\n<wait>	ours		reads: は、怯えるメイの心を開く為、明るく挨拶をした。\n<wait>; reads: メイちゃんのお兄さんには、嫌われてるみたいだけど、また来ちゃった‥‥‥\n<wait>
+m/MS000E.BIN	0:0C	16	506	1F01	{08:62}怯{08:28}メイの心を開く為、冗談を言{08:51}。\n<wait>		{04:FF} cracked a joke, hoping to open the frightened Mei's heart.\n<wait>	ours		reads: は、怯えるメイの心を開く為、冗談を言った。\n<wait>; reads: 泪： @rebase-tagdiff
+m/MS000E.BIN	0:0C	17	562	1F01	{08:62}怯{08:28}メイの心を開く為、明るく挨拶を{08:4B}。\n<wait>		{04:FF} greeted her cheerfully, hoping to open the frightened Mei's heart.\n<wait>	ours		reads: は、怯えるメイの心を開く為、明るく挨拶をした。\n<wait>; reads: メイちゃんのお兄さんには、嫌われてるみたいだけど、また来ちゃった‥‥‥\n<wait> @rebase-tagdiff
 m/MS000E.BIN	0:0C	18	614	1FD2	メイ：		Mei:	ours		reads: は、怯えるメイの心を開く為、冗談を言った。\n<wait>
 m/MS000E.BIN	0:0C	19	622	1FD3	{02:08}‥<wait>クスクスクス！\n<wait>		......<wait>Hehehe!\n<wait>	ours		reads: ‥‥‥‥<wait>クスクスクス！\n<wait>; reads: は、怯えるメイの心を開く為、明るく挨拶をした。\n<wait>
 m/MS000E.BIN	0:0C	20	653	1FD0	突然の事に、一瞬きょとんと{08:4B}メイだ{08:51}が、すぐに、鈴を転がす様な声で\n笑い{03:03}。\n<wait>		Caught off guard for a moment, Mei blinks in surprise, but soon\nbursts into laughter, her voice like tinkling bells.\n<wait>	ours		reads: 突然の事に、一瞬きょとんとしたメイだったが、すぐに、鈴を転がす様な声で\n笑いだした。\n<wait>
@@ -462,7 +457,7 @@ m/MS000E.BIN	0:0C	27	941	1FD2	{08:31}：	{08:31}：	Rui:	ours		reads: 泪：
 m/MS000E.BIN	0:0C	28	947	1FD3	うふふふ{02:08}可愛いのね。\n<wait>		Ufufu... You really are cute.\n<wait>	ours		reads: うふふふ‥‥‥可愛いのね。\n<wait>; reads: 園田：
 m/MS000E.BIN	0:0C	29	978	1FD2	{08:31}：		Rui:	ours		reads: 泪：; reads: 笑った顔も可愛いね。\nところで‥‥お兄さんて、何をしてる人なの？\n
 m/MS000E.BIN	0:0C	30	984	1FD3	メイちゃん、お兄さんと一緒に住んでるんでしょ？\nお兄さんは何をし{08:2B}人{08:6B}？\n<wait>		Mei-chan, you live with your brother, right?\nWhat does he do?\n<wait>	ours		reads: メイちゃん、お兄さんと一緒に住んでるんでしょ？\nお兄さんは何をしてる人なの？\n<wait>; reads: 泪：
-m/MS000E.BIN	0:0C	31	1073	00	{04:FF}{08:62}メイの兄で{08:7B}らしい、{01:06}について尋ねた。\n<wait>		{04:FF} asked about Kazumi, who seemed to be Mei's older brother.\n<wait>	ours		reads: は、メイの兄であるらしい、カズミについて尋ねた。\n<wait>; reads: うふふふ‥‥‥可愛いのね。\n<wait>
+m/MS000E.BIN	0:0C	31	1075	1F01	{08:62}メイの兄で{08:7B}らしい、{01:06}について尋ねた。\n<wait>		{04:FF} asked about Kazumi, who seemed to be Mei's older brother.\n<wait>	ours		reads: は、メイの兄であるらしい、カズミについて尋ねた。\n<wait>; reads: うふふふ‥‥‥可愛いのね。\n<wait> @rebase-tagdiff
 m/MS000E.BIN	0:0C	32	1124	1FD2	メイ：		Mei:	ours		reads: 泪：
 m/MS000E.BIN	0:0C	33	1132	1FD3	{02:08}{02:08}{08:72}\n<wait>	{02:08}{02:08}{08:72}\n<wait>				reads: ‥‥‥‥‥‥‥‥\n<wait>; reads: メイちゃん、お兄さんと一緒に住んでるんでしょ？\nお兄さんは何をしてる人なの？\n<wait>
 m/MS000E.BIN	0:0C	34	1147	1FD0	聞か{08:60}途端、メイの表情{08:62}再び固く強張{08:52}{08:1F}。\n<wait>		The moment she's asked, Mei's expression stiffens up again.\n<wait>	ours		reads: 聞かれた途端、メイの表情は、再び固く強張ってしまった。\n<wait>; reads: は、メイの兄であるらしい、カズミについて尋ねた。\n<wait>
@@ -480,16 +475,16 @@ m/MS000E.BIN	0:0C	45	1410	1FD3	え{08:72}あら、{08:90}{08:4B}の{02:08}‥？
 m/MS000E.BIN	0:0C	46	1441	1FD2	{08:31}：		Rui:	ours		reads: 泪：; reads: 園田：
 m/MS000E.BIN	0:0C	47	1447	1FD3	{02:08}‥まあ{08:7F}わ。\n{08:81}あ{02:08}メイちゃんは今、いくつ{08:6B}？\n<wait>		...Well, never mind.\nSo then... how old are you now, Mei-chan?\n<wait>	ours		reads: ‥‥‥‥まあいいわ。\nじゃあ‥‥‥メイちゃんは今、いくつなの？\n<wait>; reads: んー。じゃあ、メイちゃんは今いくつなの？\n
 m/MS000E.BIN	0:0C	48	1508	1FD0	聞いては不味い事を、聞いて{08:1F}様だ。\n仕方が無いので、		It seems they'd asked something better left unasked.\nWith no other choice,	ours		reads: 聞いては不味い事を、聞いてしまった様だ。\n仕方が無いので、; reads: 泪：
-m/MS000E.BIN	0:0C	49	1563	00	{04:FF}{08:62}話題をメイ自身の事に変{08:41}。\n<wait>		{04:FF} changed the subject to Mei herself.\n<wait>	ours		reads: は、話題をメイ自身の事に変えた。\n<wait>; reads: え‥‥あら、どうしたの‥‥‥‥？\n<wait>
+m/MS000E.BIN	0:0C	49	1565	1F01	{08:62}話題をメイ自身の事に変{08:41}。\n<wait>		{04:FF} changed the subject to Mei herself.\n<wait>	ours		reads: は、話題をメイ自身の事に変えた。\n<wait>; reads: え‥‥あら、どうしたの‥‥‥‥？\n<wait> @rebase-tagdiff
 m/MS000E.BIN	0:0C	50	1607	1FD0	聞いては不味い事を、聞いて{08:1F}様だ。\n{03:0B}		It seems they'd asked something better left unasked.\nHowever,	ours		reads: 聞いては不味い事を、聞いてしまった様だ。\nしかし、; reads: 泪：
-m/MS000E.BIN	0:0C	51	1648	00	{04:FF}{08:62}尚も{01:06}について尋ねた。\n<wait>		{04:FF} pressed on and asked about Kazumi anyway.\n<wait>	ours		reads: は、尚もカズミについて尋ねた。\n<wait>; reads: ‥‥‥‥まあいいわ。\nじゃあ‥‥‥メイちゃんは今、いくつなの？\n<wait>
+m/MS000E.BIN	0:0C	51	1650	1F01	{08:62}尚も{01:06}について尋ねた。\n<wait>		{04:FF} pressed on and asked about Kazumi anyway.\n<wait>	ours		reads: は、尚もカズミについて尋ねた。\n<wait>; reads: ‥‥‥‥まあいいわ。\nじゃあ‥‥‥メイちゃんは今、いくつなの？\n<wait> @rebase-tagdiff
 m/MS000E.BIN	0:0C	52	1681	1FBA	別に、話せ{08:25}{08:69}な悪い事を{08:13}訳では{08:25}{08:8C}に{02:08}\n<wait>		It's not as if they're doing anything so bad they can't talk about it...\n<wait>	ours		reads: 別に、話せないような悪い事をしている訳ではないだろうに‥‥‥\n<wait>; reads: 聞いては不味い事を、聞いてしまった様だ。\n仕方が無いので、
 m/MS000E.BIN	0:0C	53	1730	1FD2	メイ：		Mei:	ours		reads: は、話題をメイ自身の事に変えた。\n<wait>
 m/MS000E.BIN	0:0C	54	1738	1FD3	{02:08}‥お兄ちゃん{08:62}悪く{08:25}もん。\n<wait>		...Onii-chan didn't do anything wrong.\n<wait>	ours		reads: ‥‥‥‥お兄ちゃんは、悪くないもん。\n<wait>; reads: 聞いては不味い事を、聞いてしまった様だ。\nしかし、
 m/MS000E.BIN	0:0C	55	1775	1FD2	メイ：		Mei:	ours		reads: は、尚もカズミについて尋ねた。\n<wait>
 m/MS000E.BIN	0:0C	56	1783	1FD3	{02:08}‥お兄ちゃん{08:62}メイにすごく優しいもん！\n<wait>		...Onii-chan is really, really kind to me!\n<wait>	ours		reads: ‥‥‥‥お兄ちゃんは、メイにすごく優しいもん！\n<wait>; reads: 別に、話せないような悪い事をしている訳ではないだろうに‥‥‥\n<wait>
 m/MS000E.BIN	0:0C	57	1832	1FD0	メイがそう言い終{08:41}時、背後{08:42}{01:06}が姿を現{08:4B}。\n<wait>		Just as Mei finishes saying that, Kazumi appears from behind.\n<wait>	ours		reads: メイがそう言い終えた時、背後からカズミが姿を現した。\n<wait>
-m/MS000E.BIN	0:0C	58	1890	00	{04:FF}{08:62}取りあえずメイの歳を訊ねた。\n<wait>		{04:FF}, for the moment, asked Mei her age instead.\n<wait>	ours		reads: は、取りあえずメイの歳を訊ねた。\n<wait>; reads: ‥‥‥‥お兄ちゃんは、悪くないもん。\n<wait>
+m/MS000E.BIN	0:0C	58	1892	1F01	{08:62}取りあえずメイの歳を訊ねた。\n<wait>		{04:FF}, for the moment, asked Mei her age instead.\n<wait>	ours		reads: は、取りあえずメイの歳を訊ねた。\n<wait>; reads: ‥‥‥‥お兄ちゃんは、悪くないもん。\n<wait> @rebase-tagdiff
 m/MS000E.BIN	0:0C	59	1931	1FD2	メイ：		Mei:	ours		
 m/MS000E.BIN	0:0C	60	1939	1FD3	{02:08}分ら{08:25}{02:08}‥\n<wait>		...I don't know...\n<wait>	ours		reads: ‥‥‥分らない‥‥‥‥\n<wait>; reads: ‥‥‥‥お兄ちゃんは、メイにすごく優しいもん！\n<wait>
 m/MS000E.BIN	0:0C	61	1960	1FD0	メイ{08:62}戸惑いながらそう答{08:41}。\n<wait>		Mei answers this, looking flustered.\n<wait>	ours		reads: メイは、戸惑いながらそう答えた。\n<wait>; reads: メイがそう言い終えた時、背後からカズミが姿を現した。\n<wait>
@@ -503,10 +498,10 @@ m/MS000E.BIN	0:0C	68	2102	1FD3	{02:08}そうな{08:5F}{02:08}\n		...I see...\n	o
 m/MS000E.BIN	0:0C	69	2120	1FD2	{08:31}：	{08:31}：	Rui:	ours		reads: 泪：
 m/MS000E.BIN	0:0C	70	2126	1FD3	えっ{02:08}‥{08:90}{08:4A}？\n<wait>	えっ{02:08}‥{08:90}{08:4A}？\n<wait>	Huh...? Why?\n<wait>	ours		reads: えっ‥‥‥‥どうして？\n<wait>
 m/MS000E.BIN	0:0C	71	2154	1FD0	おかしな事を言うメイに、		At Mei saying something so strange,	ours		reads: 園田：
-m/MS000E.BIN	0:0C	72	2182	00	{04:FF}は理由を尋ねた。\n<wait>		{04:FF} asked for the reason.\n<wait>	ours		reads: は理由を尋ねた。\n<wait>; reads: えっ‥‥‥？\n<wait>
+m/MS000E.BIN	0:0C	72	2184	1F01	は理由を尋ねた。\n<wait>		{04:FF} asked for the reason.\n<wait>	ours		reads: は理由を尋ねた。\n<wait>; reads: えっ‥‥‥？\n<wait> @rebase-tagdiff
 m/MS000E.BIN	0:0C	73	2214	1FD0	{08:63}の歳が分ら{08:25}など、おかしな事を言う{02:08}\n<wait>		Not knowing your own age... that's a strange thing to say...\n<wait>	ours		reads: 自分の歳が分らないなど、おかしな事を言う‥‥‥\n<wait>; reads: 園田：
 m/MS000E.BIN	0:0C	74	2259	1FBA	真剣に取り合{08:52}も、仕方が無いと思{08:51}		figuring there was no point taking it too seriously,	ours		reads: 真剣に取り合っても、仕方が無いと思った; reads: ‥‥‥そうなんだ‥‥‥\n
-m/MS000E.BIN	0:0C	75	2297	00	{04:FF}{08:62}メイの言葉を適当に受け流{08:4B}。\n<wait>		{04:FF} let Mei's words slide, brushing it off casually.\n<wait>	ours		reads: は、メイの言葉を適当に受け流した。\n<wait>; reads: 泪：
+m/MS000E.BIN	0:0C	75	2299	1F01	{08:62}メイの言葉を適当に受け流{08:4B}。\n<wait>		{04:FF} let Mei's words slide, brushing it off casually.\n<wait>	ours		reads: は、メイの言葉を適当に受け流した。\n<wait>; reads: 泪： @rebase-tagdiff
 m/MS000E.BIN	0:0C	76	2338	1FD2	メイ：		Mei:	ours		reads: えっ‥‥‥‥どうして？\n<wait>
 m/MS000E.BIN	0:0C	77	2346	1FD3	{02:08}だ{08:52}、メイには分ら{08:25}{08:5F}もん{02:08}\n<wait>		...But, I really don't know...\n<wait>	ours		reads: ‥‥‥だって、メイには分らないんだもん‥‥‥\n<wait>
 m/MS000E.BIN	0:0C	78	2385	1FD0	メイ{08:62}泣きそうな表情を{08:4A}そう言{08:51}。\n<wait>		Mei says this, looking like she's about to cry.\n<wait>	ours		reads: メイは、泣きそうな表情をしてそう言った。\n<wait>; reads: は理由を尋ねた。\n<wait>
@@ -534,7 +529,7 @@ m/MS000E.BIN	0:0C	99	2999	1FD2	{01:06}：		{01:06}:	ours		reads: カズミ：; m
 m/MS000E.BIN	0:0C	100	3005	1FD3	{02:08}‥<wait>しつこく尋ねて来る{08:42}、そう思{08:51}{08:5F}！\n<wait>		......<wait>Because you kept pestering me with questions, that's why!\n<wait>	ours		reads: ‥‥‥‥<wait>しつこく尋ねて来るから、そう思ったんだ！\n<wait>; reads: 怪しいから; menu option, declared width 20 columns
 m/MS000E.BIN	0:0C	101	3056	1FD2	{01:06}：	{01:06}：	{01:06}:	ours		reads: カズミ：
 m/MS000E.BIN	0:0C	102	3062	1FD3	そう{08:81}{08:25}{08:7D}、{08:5C}放{08:53}いてくれ！！\n<wait>	そう{08:81}{08:25}{08:7D}、{08:5C}放{08:53}いてくれ！！\n<wait>	If that's not it, then just leave us alone already!!\n<wait>	ours		reads: そうじゃないなら、もう放っといてくれ！！\n<wait>
-m/MS000E.BIN	0:0C	103	3105	00	{04:FF}達{08:62}{01:2E}{08:42}追い出{03:0C}て{08:1F}。\n<wait>		{04:FF} and the others ended up thrown out of the room.\n<wait>	ours		reads: 達は、部屋から追い出されてしまった。\n<wait>; reads: 園田：
+m/MS000E.BIN	0:0C	103	3107	1F01	達{08:62}{01:2E}{08:42}追い出{03:0C}て{08:1F}。\n<wait>		{04:FF} and the others ended up thrown out of the room.\n<wait>	ours		reads: 達は、部屋から追い出されてしまった。\n<wait>; reads: 園田： @rebase-tagdiff
 m/MS000E.BIN	0:0C	104	3139	1FBA	{02:08}‥<wait>{08:7F}加減に{08:4A}くれ！\n<wait>		......<wait>Enough already!\n<wait>	ours		reads: ‥‥‥‥<wait>いい加減にしてくれ！\n<wait>; reads: ‥‥‥‥何故‥‥そう思うんだ？\n
 m/MS000E.BIN	0:0C	105	3172	1FD2	{01:06}：		{01:06}:	ours		reads: カズミ：; reads: 泪：
 m/MS000E.BIN	0:0C	106	3178	1FD3	妹は肺を患{08:52}て、{08:82}でさえ安静にしなちゃ{08:7D}{08:25}{08:72}。\n<wait>お前達のくだら{08:25}好奇心に、振り回{03:0C}るのは迷惑な{08:5F}！\n<wait>		My sister has a lung condition, she needs to stay resting as it is....\n<wait>Being dragged around by your pointless curiosity is a nuisance!\n<wait>	ours		reads: 妹は肺を患ってて、ただでさえ安静にしなちゃならない‥‥。\n<wait>お前達のくだらない好奇心に、振り回されるのは迷惑なんだ！\n<wait>; reads: ‥‥何故、そう思うのかしら‥‥‥？\n<wait>
@@ -563,7 +558,7 @@ m/MS000E.BIN	0:0C	128	3977	1FD3	{02:08}{08:47}人{02:08}？\n<wait>		...This per
 m/MS000E.BIN	0:0C	129	3996	1FD2	{08:31}：		Rui:	ours		reads: 泪：; reads: カズミは両手で頭を抱え、ひたすらブツブツと呟いている。\n<wait>
 m/MS000E.BIN	0:0C	130	4002	1FD3	{02:08}今{08:62}声を掛け{08:54}無駄な{08:69}ね{08:72}\n<wait>		...Seems like talking to him won't do any good right now...\n<wait>	ours		reads: ‥‥‥今は、声を掛けても無駄なようね‥‥\n<wait>; reads: ＞どうしますか\n
 m/MS000E.BIN	0:0C	131	4044	1FD0	尋常で{08:25}様子の{01:06}に、		{01:06}, in an abnormal state,	ours		reads: 尋常でない様子のカズミに、; reads: 声をかける; menu option, declared width 20 columns
-m/MS000E.BIN	0:0C	132	4068	00	{04:FF}は声をかけてみた。\n<wait>		{04:FF} tried calling out to him anyway.\n<wait>	ours		reads: は声をかけてみた。\n<wait>; reads: そっとしとく; menu option, declared width 20 columns
+m/MS000E.BIN	0:0C	132	4070	1F01	は声をかけてみた。\n<wait>		{04:FF} tried calling out to him anyway.\n<wait>	ours		reads: は声をかけてみた。\n<wait>; reads: そっとしとく; menu option, declared width 20 columns @rebase-tagdiff
 m/MS000E.BIN	0:0C	133	4097	1FD2	{01:06}：	{01:06}：	{01:06}:	ours		reads: カズミ：; reads: リーダー
 m/MS000E.BIN	0:0C	134	4103	1FD3	{08:72}{08:47}{08:7E}{08:81}{08:72}俺はメイ{08:71}{08:72}メイ{08:72}メイ{02:08}\n<wait>		...At this rate... even Mei, I'll... Mei... Mei...\n<wait>	ours		reads: ‥‥このままじゃ‥‥俺はメイまで‥‥メイ‥‥メイ‥‥‥\n<wait>; reads: 園田：
 m/MS000E.BIN	0:0C	135	4146	1FD0	声をかけ{08:54}、{01:06}には全く聞こえて{08:24}様だ{08:51}。\n<wait>		Even when spoken to, Kazumi seemed not to hear a thing.\n<wait>	ours		reads: 声をかけても、カズミには全く聞こえていない様だった。\n<wait>; reads: おい！？　どうしたんだ？　おいっ！\n<wait>
@@ -572,11 +567,11 @@ m/MS000E.BIN	0:0C	137	4229	1FD0	尋常で{08:25}様子の{01:06}に、一行は�
 m/MS000E.BIN	0:0D	0	7	1F17	{01:AF}	{01:AF}				reads: 
 m/MS000E.BIN	0:0D	1	11	1C	{01:CC}	{01:CC}				reads: 
 m/MS000E.BIN	0:0D	2	14	00						
-m/MS000E.BIN	0:0D	3	47	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ： @refalign
-m/MS000E.BIN	0:0D	4	53	1FD3	放{08:52}おいてくれと言っ{08:2B}だろ！！\n<wait>		I told you to leave us alone!\n<wait>	v005		reads: 放っておいてくれと言ってるだろ！！\n<wait> @refalign
-m/MS000E.BIN	0:0D	5	92	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ： @refalign
-m/MS000E.BIN	0:0D	6	98	1FD3	お前達{08:6A}かに{08:72}俺達兄弟の苦しみなど分ら{08:25}{08:5F}ッ！！\n<wait>		You could never understand what we've gone through! Never!\n<wait>	v005		reads: お前達なんかに‥‥俺達兄弟の苦しみなど分らないんだッ！！\n<wait> @refalign
-m/MS000E.BIN	0:0D	7	159	00	{04:FF}達{08:62}{01:2E}を追い出{03:0C}て{08:1F}。\n		You end up being forced out of the room.\n	v005		reads: 達は、部屋を追い出されてしまった。\n @refalign
+m/MS000E.BIN	0:0D	3	47	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS000E.BIN	0:0D	4	53	1FD3	放{08:52}おいてくれと言っ{08:2B}だろ！！\n<wait>		I told you to leave us alone!\n<wait>	v005		reads: 放っておいてくれと言ってるだろ！！\n<wait>; reads: 放っておいてくれと言ってるだろ！！\n<wait> @refalign
+m/MS000E.BIN	0:0D	5	92	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS000E.BIN	0:0D	6	98	1FD3	お前達{08:6A}かに{08:72}俺達兄弟の苦しみなど分ら{08:25}{08:5F}ッ！！\n<wait>		You could never understand what we've gone through! Never!\n<wait>	v005		reads: お前達なんかに‥‥俺達兄弟の苦しみなど分らないんだッ！！\n<wait>; reads: お前達なんかに‥‥俺達兄弟の苦しみなど分らないんだッ！！\n<wait> @refalign
+m/MS000E.BIN	0:0D	7	161	1F01	達{08:62}{01:2E}を追い出{03:0C}て{08:1F}。\n		You end up being forced out of the room.\n	v005		reads: 達は、部屋を追い出されてしまった。\n; reads: 達は、部屋を追い出されてしまった。\n @refalign @rebase-tagdiff
 m/MS000E.BIN	0:0E	0	7	1F17	{01:4C}	{01:4C}				reads: 
 m/MS000E.BIN	0:0E	1	45	1FD2	メイ：		Mei:	ours		
 m/MS000E.BIN	0:0E	2	53	1FD3	あ{02:08}！\n<wait>		Ah...!\n<wait>	ours		reads: あ‥‥‥！\n<wait>
@@ -637,8 +632,8 @@ m/MS000E.BIN	0:0E	56	1823	1FD2	{08:37}：		Sonoda:	ours		reads: 園田：; reads
 m/MS000E.BIN	0:0E	57	1829	1FD3	不味いな{02:08}\n<wait>		This isn't good...\n<wait>	ours		reads: 不味いな‥‥‥\n<wait>
 m/MS000E.BIN	0:0E	58	1856	1FD2	{08:31}：		Rui:	ours		reads: 泪：; reads: ‥‥‥お兄ちゃんは‥‥悪くないもん‥‥‥\n<wait>
 m/MS000E.BIN	0:0E	59	1862	1FD3	あら{08:72}マズイ所に{02:08}\n<wait>		Oh dear... what bad timing...\n<wait>	ours		reads: あら‥‥マズイ所に‥‥‥\n<wait>; reads: メイは、泣きだしそうな顔になった。\n
-m/MS000E.BIN	0:0E	60	1893	00	{04:FF}達{08:62}{01:06}が当然怒り出すと身構{08:41}が、意に反{08:4A}、{01:06}は穏やかに\n		{04:FF} and the others braced themselves, expecting {01:06} to fly\ninto a rage as always, but instead, {01:06} spoke to them calmly	ours		reads: 達は、カズミが当然怒り出すと身構えたが、意に反して、カズミは穏やかに\n; reads: 園田が
-m/MS000E.BIN	0:0E	61	1954	00	{04:FF}達に言{08:51}。\n<wait>		and said this to {04:FF} and the others.\n<wait>	ours		reads: 達に言った。\n<wait>; reads: 泪が慌てて慰めようとしたその時、カズミが外から戻って来た。\n<wait>
+m/MS000E.BIN	0:0E	60	1895	1F01	達{08:62}{01:06}が当然怒り出すと身構{08:41}が、意に反{08:4A}、{01:06}は穏やかに\n		{04:FF} and the others braced themselves, expecting {01:06} to fly\ninto a rage as always, but instead, {01:06} spoke to them calmly	ours		reads: 達は、カズミが当然怒り出すと身構えたが、意に反して、カズミは穏やかに\n; reads: 園田が @rebase-tagdiff
+m/MS000E.BIN	0:0E	61	1956	1F01	達に言{08:51}。\n<wait>		and said this to {04:FF} and the others.\n<wait>	ours		reads: 達に言った。\n<wait>; reads: 泪が慌てて慰めようとしたその時、カズミが外から戻って来た。\n<wait> @rebase-tagdiff
 m/MS000E.BIN	0:0E	62	1973	1FBA	{08:79}姿{08:62}{08:45}ろな{08:86}以前と比べ、酷くやつれて見{08:41}。\n<wait>		Compared to before, he looks noticeably more haggard, somehow.\n<wait>	ours		reads: その姿は、こころなしか以前と比べ、酷くやつれて見えた。\n<wait>; reads: 園田：
 m/MS000E.BIN	0:0E	63	2026	1FD2	{01:06}：		{01:06}:	ours		reads: カズミ：; reads: 不味いな‥‥‥\n<wait>
 m/MS000E.BIN	0:0E	64	2032	1FD3	メイ{08:62}お前達の事が気に入{08:51}様だな{08:72}\n<wait>		Seems Mei's taken a liking to you all...\n<wait>	ours		reads: メイは、お前達の事が気に入った様だな‥‥\n<wait>; reads: 泪：
@@ -647,19 +642,19 @@ m/MS000E.BIN	0:0E	66	2081	1FD3	{08:5C}分{08:51}と思うが、俺達には両�
 m/MS000E.BIN	0:0E	67	2177	1FD2	{01:06}：		{01:06}:	ours		reads: カズミ：; reads: 達に言った。\n<wait>
 m/MS000E.BIN	0:0E	68	2183	1FD3	頼む{08:42}、俺達には構わ{08:25}でくれ。\n俺達のささやかな生活を、壊{08:4A}しまわ{08:25}でくれ{08:72}<wait>頼む。\n<wait>		Please, just leave us be.\nDon't go and ruin our small, quiet life... <wait>I'm begging you.\n<wait>	ours		reads: 頼むから、俺達には構わないでくれ。\n俺達のささやかな生活を、壊してしまわないでくれ‥‥<wait>頼む。\n<wait>; reads: その姿は、こころなしか以前と比べ、酷くやつれて見えた。\n<wait>
 m/MS000E.BIN	0:0E	69	2277	1FD0	{01:06}はそう言うと、		{01:06}, having said that,	ours		reads: カズミはそう言うと、; reads: カズミ：
-m/MS000E.BIN	0:0E	70	2297	00	{04:FF}達を見つめた。\n哀しみを帯びた{08:79}眼{08:62}真剣{08:79}{08:5E}だ{08:51}。\n<wait>		looked straight at {04:FF} and the others.\nHis sorrow-tinged eyes were the picture of seriousness.\n<wait>	ours		reads: 達を見つめた。\n哀しみを帯びたその眼は、真剣そのものだった。\n<wait>; reads: メイは、お前達の事が気に入った様だな‥‥\n<wait>
+m/MS000E.BIN	0:0E	70	2299	1F01	達を見つめた。\n哀しみを帯びた{08:79}眼{08:62}真剣{08:79}{08:5E}だ{08:51}。\n<wait>		looked straight at {04:FF} and the others.\nHis sorrow-tinged eyes were the picture of seriousness.\n<wait>	ours		reads: 達を見つめた。\n哀しみを帯びたその眼は、真剣そのものだった。\n<wait>; reads: メイは、お前達の事が気に入った様だな‥‥\n<wait> @rebase-tagdiff
 m/MS000E.BIN	0:0E	71	2362	1FD1	＞{02:06}\n		>{02:06}	ours		reads: ＞どうしますか？\n; reads: カズミ：
 m/MS000E.BIN	0:0E	72	2383	1FB2	理由を尋{08:2C}		Ask why	ours		reads: 理由を尋ねる; menu option, declared width 20 columns; reads: もう分ったと思うが、俺達には両親なんていない。\n子供の頃からこうやって、ふたりでひっそりと暮らして来た。\n<wait>
 m/MS000E.BIN	0:0E	73	2395	1FB2	黙り込む		Stay silent	ours		menu option, declared width 20 columns; reads: カズミ：
-m/MS000E.BIN	0:0E	74	2435	00	{04:FF}{08:62}{01:06}に対し、何故外部の{02:0B}と接触{08:8E}事が、{01:06}達兄妹の生活を\n壊す事につながるのか、{08:79}理由を尋ねた。\n<wait>		{04:FF} asked {01:06} just why contact with outside people would lead to\nthe destruction of his and his sister's life together.\n<wait>	ours		reads: は、カズミに対し、何故外部の人間と接触する事が、カズミ達兄妹の生活を\n壊す事につながるのか、その理由を尋ねた。\n<wait>; reads: 頼むから、俺達には構わないでくれ。\n俺達のささやかな生活を、壊してしまわないでくれ‥‥<wait>頼む。\n<wait>
+m/MS000E.BIN	0:0E	74	2437	1F01	{08:62}{01:06}に対し、何故外部の{02:0B}と接触{08:8E}事が、{01:06}達兄妹の生活を\n壊す事につながるのか、{08:79}理由を尋ねた。\n<wait>					reads: は、カズミに対し、何故外部の人間と接触する事が、カズミ達兄妹の生活を\n壊す事につながるのか、その理由を尋ねた。\n<wait>; reads: 頼むから、俺達には構わないでくれ。\n俺達のささやかな生活を、壊してしまわないでくれ‥‥<wait>頼む。\n<wait> @rebase-new
 m/MS000E.BIN	0:0E	75	2539	1FD2	{01:06}：		{01:06}:	ours		reads: カズミ：; reads: カズミはそう言うと、
 m/MS000E.BIN	0:0E	76	2545	1FD3	{02:08}‥<wait>{08:4D}を、話す訳には行か{08:25}{08:5F}。\n<wait>		......<wait>That's something I can't tell you.\n<wait>	ours		reads: ‥‥‥‥<wait>それを、話す訳には行かないんだ。\n<wait>; reads: 達を見つめた。\n哀しみを帯びたその眼は、真剣そのものだった。\n<wait>
 m/MS000E.BIN	0:0E	77	2593	1FD0	{08:79}真剣な瞳に圧倒{03:0C}、		Overwhelmed by the seriousness in his eyes,	ours		reads: その真剣な瞳に圧倒され、; reads: ＞どうしますか？\n
-m/MS000E.BIN	0:0E	78	2617	00	{04:FF}{08:62}何も言う事が出来{08:19}。\n<wait>		{04:FF} couldn't find anything to say.\n<wait>	ours		reads: は、何も言う事が出来なかった。\n<wait>; reads: 理由を尋ねる; menu option, declared width 20 columns
+m/MS000E.BIN	0:0E	78	2619	1F01	{08:62}何も言う事が出来{08:19}。\n<wait>		{04:FF} couldn't find anything to say.\n<wait>	ours		reads: は、何も言う事が出来なかった。\n<wait>; reads: 理由を尋ねる; menu option, declared width 20 columns @rebase-tagdiff
 m/MS000E.BIN	0:0E	79	2653	0B	代わりに、{08:37}		Instead, Sonoda	ours		reads: 代わりに、園田; menu option, declared width 20 columns
 m/MS000E.BIN	0:0E	80	2673	0B	代わりに、{08:31}	代わりに、{08:31}	Instead, Rui	ours		reads: 代わりに、泪
 m/MS000E.BIN	0:0E	81	2691	18	が口を開{08:64}。\n<wait>	が口を開{08:64}。\n<wait>	spoke up.\n<wait>	ours		reads: が口を開いた。\n<wait>
-m/MS000E.BIN	0:0E	82	2717	1FD2	{08:37}：		Sonoda:	ours		reads: 園田：; reads: は、カズミに対し、何故外部の人間と接触する事が、カズミ達兄妹の生活を\n壊す事につながるのか、その理由を尋ねた。\n<wait>
+m/MS000E.BIN	0:0E	82	2717	1FD2	{08:37}：		Sonoda:	ours		reads: 園田：; reads: は、カズミに対し、何故外部の人間と接触する事が、カズミ達兄妹の生活を\n壊す事につながるのか、その理由を尋ねた。\n<wait> @rebase-unmatched idx82 en={04:FF} asked {01:06} just why contact with outside people would lead to\nthe destruction of his and his sister's life together.\n<wait>
 m/MS000E.BIN	0:0E	83	2723	1FD3	{08:8F}、俺達{08:62}も{08:61}{08:50}力にな{08:2F}かも知れ{08:25}。\n<wait>		But maybe, just maybe, we could actually help.\n<wait>	ours		reads: だが、俺達は、もしかしたら力になれるかも知れない。\n<wait>; reads: カズミ：
 m/MS000E.BIN	0:0E	84	2768	1FD2	{08:37}：		Sonoda:	ours		reads: 園田：; reads: ‥‥‥‥<wait>それを、話す訳には行かないんだ。\n<wait>
 m/MS000E.BIN	0:0E	85	2774	1FD3	俺達も、ま{08:53}うな{02:0B}{08:81}{08:25}{08:5F}。\n<wait>		We're not exactly upstanding people ourselves.\n<wait>	ours		reads: 俺達も、まっとうな人間じゃないんだ。\n<wait>; reads: その真剣な瞳に圧倒され、
@@ -697,9 +692,9 @@ m/MS000E.BIN	0:0E	116	3698	1FD0	{01:06}は哀しそうな瞳を{08:4A}、メイ�
 m/MS000E.BIN	0:0E	117	3756	1FD0	{01:06}{08:62}哀しそうな瞳で	{01:06}{08:62}哀しそうな瞳で	{01:06}, with sorrowful eyes,	ours		reads: カズミは、哀しそうな瞳で
 m/MS000E.BIN	0:0E	118	3779	0B	{08:37}	{08:37}	Sonoda	ours		reads: 園田; reads: カズミ：
 m/MS000E.BIN	0:0E	119	3789	0B	{08:31}	{08:31}	Rui	ours		reads: 泪; reads: そろそろ、メイを寝かさなければならない。\n<wait>もう行ってくれ‥‥‥‥<wait>じゃあな。\n<wait>
-m/MS000E.BIN	0:0E	120	3798	00	{04:FF}を見つめ、首を横にふ{08:51}。\n<wait>		looked at {04:FF} and shook his head.\n<wait>	ours		reads: を見つめ、首を横にふった。\n<wait>; reads: 園田：
+m/MS000E.BIN	0:0E	120	3800	1F01	を見つめ、首を横にふ{08:51}。\n<wait>		looked at {04:FF} and shook his head.\n<wait>	ours		reads: を見つめ、首を横にふった。\n<wait>; reads: 園田： @rebase-tagdiff
 m/MS000E.BIN	0:0E	121	3831	1FBA	{08:48}以上{08:62}{08:5C}何を言{08:52}も無駄らしい。\n<wait>		It seems there's nothing more to be said at this point.\n<wait>	ours		reads: これ以上は、もう何を言っても無駄らしい。\n<wait>; reads: 待ってくれ‥‥\n<wait>
-m/MS000E.BIN	0:0E	122	3874	00	{04:FF}達{08:62}わだかまりを覚えながら、{01:2E}の外に出た。\n<wait>		{04:FF} and the others, left feeling unsettled, stepped out of the room.\n<wait>	ours		reads: 達は、わだかまりを覚えながら、部屋の外に出た。\n<wait>; reads: 泪：
+m/MS000E.BIN	0:0E	122	3876	1F01	達{08:62}わだかまりを覚えながら、{01:2E}の外に出た。\n<wait>		{04:FF} and the others, left feeling unsettled, stepped out of the room.\n<wait>	ours		reads: 達は、わだかまりを覚えながら、部屋の外に出た。\n<wait>; reads: 泪： @rebase-tagdiff
 m/MS000E.BIN	0:0E	123	3953	1FD2	メイ：		Mei:	ours		reads: あ‥‥‥ちょっと‥‥\n<wait>
 m/MS000E.BIN	0:0E	124	3961	1FD3	お兄ちゃん達！　{08:45}に来ちゃダメ！！\n<wait>		Please! Leave at once! You mustn't come here!\n<wait>	v005		reads: お兄ちゃん達！　ここに来ちゃダメ！！\n<wait>; reads: 待ってくれ; menu option, declared width 20 columns
 m/MS000E.BIN	0:0E	125	4009	1FD2	{08:37}：		Sonoda:	ours		reads: 園田：; reads: そうするよ; menu option, declared width 20 columns
@@ -718,5 +713,5 @@ m/MS000E.BIN	0:0E	137	4393	1FD2	{08:31}：		Rui:	ours		reads: 泪：; reads: 園
 m/MS000E.BIN	0:0E	138	4399	1FD3	メイちゃんのお兄さんと、満月と{08:72}一体{08:90}{08:68}関係が{08:7B}の？\nお姉ちゃん達に教えて。ね？\n<wait>		He will what? Talk to us, Mei.\nWhat is it with your brother and the full moon?\n<wait>	v005		reads: メイちゃんのお兄さんと、満月と‥‥一体どういう関係があるの？\nお姉ちゃん達に教えて。ね？\n<wait>; reads: どうしてなんだい？\n<wait>
 m/MS000E.BIN	0:0E	139	4504	1FB2	満月と{08:90}{08:68}関係が？		Full moon?	v005		reads: 満月とどういう関係が？; menu option, declared width 20 columns; reads: 泪： @refalign
 m/MS000E.BIN	0:0E	140	4524	1FB2	お兄ちゃんが？		He will what?	v005		menu option, declared width 20 columns; reads: 一体どうしてなの？\n<wait> @refalign
-m/MS000E.BIN	0:0E	141	4562	00	{04:FF}{08:62}満月と{01:06}と一体{08:90}{08:68}関係が{08:7B}のか、メイに訊ねた。\n<wait>		You ask Mei to explain what is the significance of the full moon.\n<wait>	v005		reads: は、満月とカズミと一体どういう関係があるのか、メイに訊ねた。\n<wait>; reads: 一体どうして？; menu option, declared width 20 columns @refalign
-m/MS000E.BIN	0:0E	142	4628	00	{04:FF}{08:62}お兄ちゃんが{08:90}{08:4B}のか訊ねた。\n<wait>		You ask Mei to explain what will happen to her brother.\n<wait>	v005		reads: は、お兄ちゃんがどうしたのか訊ねた。\n<wait>; reads: 突然‥‥何？; menu option, declared width 20 columns @rebase-unmatched idx158 en=You ask Mei to explain what will happen to her brother.\n<wait> @refalign
+m/MS000E.BIN	0:0E	141	4564	1F01	{08:62}満月と{01:06}と一体{08:90}{08:68}関係が{08:7B}のか、メイに訊ねた。\n<wait>		You ask Mei to explain what is the significance of the full moon.\n<wait>	v005		reads: は、満月とカズミと一体どういう関係があるのか、メイに訊ねた。\n<wait>; reads: 一体どうして？; menu option, declared width 20 columns @refalign @rebase-new @refalign
+m/MS000E.BIN	0:0E	142	4630	1F01	{08:62}お兄ちゃんが{08:90}{08:4B}のか訊ねた。\n<wait>		You ask Mei to explain what will happen to her brother.\n<wait>	v005		reads: は、お兄ちゃんがどうしたのか訊ねた。\n<wait>; reads: 突然‥‥何？; menu option, declared width 20 columns @rebase-unmatched idx158 en=You ask Mei to explain what will happen to her brother.\n<wait> @refalign @rebase-new @rebase-unmatched idx157 en=You ask Mei to explain what is the significance of the full moon.\n<wait> @rebase-unmatched idx158 en=You ask Mei to explain what will happen to her brother.\n<wait> @refalign

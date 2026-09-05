@@ -62,8 +62,7 @@ m/MS600E.BIN	4:04	0	0	DATA	ソウカ\n<wait>		I see<wait>	ours
 m/MS600E.BIN	4:05	0	0	DATA	サラバダ！\n<wait>		Farewell.\n<wait>	ours		
 m/MS600E.BIN	4:06	0	0	DATA	何ガ　欲シイノダ？\n<wait>		What do you want?\n<wait>	ours		
 m/MS600E.BIN	4:07	0	0	DATA	我ハ　		I am 	ours		
-m/MS600E.BIN	4:07	1	10	00	{04:EF}　		 {04:EF}. 	ours		reads: 　
-m/MS600E.BIN	4:07	2	18	00	{04:EF}\n今後トモ　ヨロシク！\n<wait>		{04:EF}.\nWe will cooperate from now.\n<wait>	ours		reads: \n今後トモ　ヨロシク！\n<wait>
+m/MS600E.BIN	4:07	1	20	1F01	\n今後トモ　ヨロシク！\n<wait>					reads: 　 @rebase-new @rebase-unmatched idx1 en= {04:EF}. @rebase-unmatched idx2 en={04:EF}.\nWe will cooperate from now.\n<wait>
 m/MS600E.BIN	4:08	0	0	DATA	コレヲ　ヤロウ！\n<wait>		Take this then!<wait>	ours		
 m/MS600E.BIN	4:09	0	0	DATA	悪イガ　		Sadly,	ours		
 m/MS600E.BIN	4:0A	0	0	DATA	今ハ　持ッテイナイ\n<wait>		I have none now.\n<wait>	ours		
@@ -86,7 +85,7 @@ m/MS600E.BIN	4:1A	0	0	DATA	オマエト話ス事ナドナイ！\n<wait>		Nothing
 m/MS600E.BIN	4:1B	0	0	DATA	話シヲ　シタカッタダケカ？\n<wait>		You wanted to talk?<wait>	ours		
 m/MS600E.BIN	4:1C	0	0	DATA	ナラバ　ヤッテミロ！\n<wait>		Then go ahead, try!<wait>	ours		
 m/MS600E.BIN	4:1D	0	0	DATA	ウオオーン！\n<wait>		Uooohn!\n<wait>	ours		
-m/MS600E.BIN	4:1D	1	25	00	{04:EF}は　ひと声鳴{08:64}\n<wait>		{04:EF} let out a single cry.\n<wait>	ours		reads: は　ひと声鳴いた\n<wait>
+m/MS600E.BIN	4:1D	1	27	1F01	は　ひと声鳴{08:64}\n<wait>		{04:EF} let out a single cry.\n<wait>	ours		reads: は　ひと声鳴いた\n<wait> @rebase-tagdiff
 m/MS600E.BIN	4:1E	0	0	DATA	何デモ言ウ事ヲキク　ダカラ勘弁シテクレ\n<wait>		I will obey, so please forgive me!\n<wait>	ours		
 m/MS600E.BIN	4:1F	0	0	DATA	覚エテロ！\n<wait>		Remember!\n<wait>	ours		
 m/MS600E.BIN	4:20	0	0	DATA	アリガトウ\n<wait>		Thank you<wait>	ours		
@@ -206,7 +205,7 @@ m/MS600E.BIN	4:90	0	0	DATA	何デ　オマエ何カニ\n<wait>		Why must you now
 m/MS600E.BIN	4:91	0	0	DATA	クックックッ		Ku-ku-ku-ku	ours		
 m/MS600E.BIN	4:92	0	0	DATA	モットダ！　モットクレ！\n<wait>		More! Give me more!\n<wait>	ours		
 m/MS600E.BIN	4:93	0	0	DATA	薄汚イ殺シ屋メ！\n<wait>		A vile killer!\n<wait>	ours		
-m/MS600E.BIN	4:94	0	4	00	{04:FF}ジャナイカ！\nウマクヤッテルカ？\n<wait>		{04:FF}. It is you.\nAre you functioning well?\n<wait>	ours		reads: ジャナイカ！\nウマクヤッテルカ？\n<wait>
+m/MS600E.BIN	4:94	0	6	1F01	ジャナイカ！\nウマクヤッテルカ？\n<wait>		{04:FF}. It is you.\nAre you functioning well?\n<wait>	ours		reads: ジャナイカ！\nウマクヤッテルカ？\n<wait> @rebase-tagdiff
 m/MS600E.BIN	4:95	0	0	DATA	来ルナ！\n<wait>		Halt!\n<wait>	ours		
 m/MS600E.BIN	4:96	0	0	DATA	見逃シテヤロウ\n<wait>		I spare you.\n<wait>	ours		
 m/MS600E.BIN	4:97	0	0	DATA	真ナルチカラ　見セテヤル！\n<wait>		Behold my true power!\n<wait>	ours		
@@ -223,13 +222,13 @@ m/MS600E.BIN	4:A1	0	0	DATA	思イ出サセテヤロウ！\n<wait>		I will remind
 m/MS600E.BIN	4:A2	0	0	DATA	ワタシノ好意ヲ　無ニスルナンテ\n<wait>		Wasting my kindness thus,\n<wait>	ours		
 m/MS600E.BIN	5:19	0	0	DATA	私ノ力ヲ　頼ッテキタノカ？\n<wait>		Relying on my power now?\n<wait>	ours		
 m/MS600E.BIN	5:1A	0	0	DATA	欲ノナイ奴ダ\n<wait>		Not greedy.\n<wait>	ours		
-m/MS600E.BIN	5:1B	0	4	00	{04:FF}ジャナイカ！\nふぁんナノダ\n<wait>		{04:FF}. It is you.\nI am a fan.\n<wait>	ours		reads: ジャナイカ！\nふぁんナノダ\n<wait>
+m/MS600E.BIN	5:1B	0	6	1F01	ジャナイカ！\nふぁんナノダ\n<wait>		{04:FF}. It is you.\nI am a fan.\n<wait>	ours		reads: ジャナイカ！\nふぁんナノダ\n<wait> @rebase-tagdiff
 m/MS600E.BIN	5:1C	0	0	DATA	見ル目ガアルジャナイカ\n<wait>		You have a good eye.\n<wait>	ours		
 m/MS600E.BIN	5:1D	0	0	DATA	チカラ比ベヲシテ　勝ッタラ\n<wait>		If you win at strength,\n<wait>	ours		
 m/MS600E.BIN	5:1E	0	0	DATA	{08:0E}ナッテヤル\n<wait>		I'll join you<wait>	ours		reads: 仲魔ナッテヤル\n<wait>
 m/MS600E.BIN	5:1F	0	0	DATA	コレ砕イテミロ\n<wait>		Shatter this.\n<wait>	ours		
 m/MS600E.BIN	5:20	0	0	DATA	握手シテクレ\n<wait>		Shake hands<wait>	ours		
-m/MS600E.BIN	5:21	0	4	00	{04:FF}様ガ　何ノ御用デ？\n<wait>		{04:FF}. What is your purpose here?\n<wait>	ours		reads: 様ガ　何ノ御用デ？\n<wait>
+m/MS600E.BIN	5:21	0	6	1F01	様ガ　何ノ御用デ？\n<wait>		{04:FF}. What is your purpose here?\n<wait>	ours		reads: 様ガ　何ノ御用デ？\n<wait> @rebase-tagdiff
 m/MS600E.BIN	5:22	0	0	DATA	変ナヤツダ\n<wait>		Quite odd<wait>	ours		
 m/MS600E.BIN	6:13	0	0	DATA	オマエヲ　イタブッテ\n気ヲ紛ラワスノガ　ヨサソウダナ！\n<wait>		Tormentin' you\nsounds like a fine distraction!<wait>	ours		
 m/MS600E.BIN	6:14	0	0	DATA	オマエナド　殺シテヤル！\n<wait>		I will kill you now!\n<wait>	ours		

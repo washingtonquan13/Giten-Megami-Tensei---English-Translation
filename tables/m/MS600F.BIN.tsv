@@ -9,8 +9,8 @@ m/MS600F.BIN	0:B8	0	0	DATA	仲睦まじく　やるがよいぞよ\n<wait>		Go o
 m/MS600F.BIN	0:B5	0	0	DATA	よ{08:18}\n<wait>		Good.\n<wait>	ours		reads: よかった\n<wait>
 m/MS600F.BIN	0:B9	0	0	DATA	美しいおなごでは　{08:25}かえ\n<wait>		Am I not a lovely lady?\n<wait>	ours		reads: 美しいおなごでは　ないかえ\n<wait>
 m/MS600F.BIN	0:BA	0	0	DATA	意気地の無い男よの\n<wait>		Quite spineless.\n<wait>	ours		
-m/MS600F.BIN	1:03	0	25	1FB2	謝る		Gladly	ours		menu option, declared width 20 columns @rebase-unmatched idx0 en=Beg
-m/MS600F.BIN	1:03	1	31	1FB2	無視{08:8E}		No choice	ours		reads: 無視する; menu option, declared width 20 columns @rebase-unmatched idx1 en=Ignore
+m/MS600F.BIN	1:03	0	25	1FB2	謝る		Gladly	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx0 en=Beg @rebase-unmatched idx0 en=Beg
+m/MS600F.BIN	1:03	1	31	1FB2	無視{08:8E}		No choice	ours		reads: 無視する; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx1 en=Ignore @rebase-unmatched idx1 en=Ignore
 m/MS600F.BIN	1:03	2	193	1FB2	よろこんで	よろこんで	Not for you	ours		menu option, declared width 20 columns; reads: ふたつ
 m/MS600F.BIN	1:03	3	205	1FB2	{08:80}が{08:25}	{08:80}が{08:25}	Soothe	ours		reads: しょうがない; menu option, declared width 20 columns; reads: わたしは
 m/MS600F.BIN	1:03	4	213	1FB2	誰がお前{08:6A}かに	誰がお前{08:6A}かに	Scold	ours		reads: 誰がお前なんかに; menu option, declared width 20 columns
@@ -82,8 +82,7 @@ m/MS600F.BIN	4:04	0	0	DATA	ほう　そうかえ\n<wait>		Oh? Is that so.\n<wait
 m/MS600F.BIN	4:05	0	0	DATA	では　さらば{08:81}！\n<wait>		Then, farewell!\n<wait>	ours		reads: では　さらばじゃ！\n<wait>
 m/MS600F.BIN	4:06	0	0	DATA	何が望みか　申すが良いぞ！\n<wait>		Speak thy wish, then!\n<wait>	ours		
 m/MS600F.BIN	4:07	0	0	DATA	わらわは　		I am 	ours		
-m/MS600F.BIN	4:07	1	14	00	{04:EF}　		 {04:EF}. 	ours		reads: 　
-m/MS600F.BIN	4:07	2	22	00	{04:EF}\n今後とも　よし{08:58}願うぞえ\n<wait>		{04:EF}.\nI trust thou wilt treat me well hereafter.\n<wait>	ours		reads: \n今後とも　よしなに願うぞえ\n<wait>
+m/MS600F.BIN	4:07	1	24	1F01	\n今後とも　よし{08:58}願うぞえ\n<wait>					reads: \n今後とも　よしなに願うぞえ\n<wait>; reads: 　 @rebase-new @rebase-unmatched idx1 en= {04:EF}. @rebase-unmatched idx2 en={04:EF}.\nI trust thou wilt treat me well hereafter.\n<wait>
 m/MS600F.BIN	4:08	0	0	DATA	{08:48}を授け{08:69}\n<wait>		I shall bestow this upon thee.\n<wait>	ours		reads: これを授けよう\n<wait>
 m/MS600F.BIN	4:09	0	0	DATA	すまぬが		Alas,	ours		
 m/MS600F.BIN	4:0A	0	0	DATA	今は　持ち合わ{08:67}おらぬの{08:81}\n<wait>		I have none on me now.\n<wait>	ours		reads: 今は　持ち合わせておらぬのじゃ\n<wait>
@@ -225,7 +224,7 @@ m/MS600F.BIN	4:90	0	0	DATA	何ゆえ　そなたなぞに\n<wait>		Why, to thee 
 m/MS600F.BIN	4:91	0	0	DATA	ホホホホ		Hohoho	ours		
 m/MS600F.BIN	4:92	0	0	DATA	も{08:53}{08:81}！\n<wait>		Give me more\n<wait>	ours		reads: もっとじゃ！\n<wait>
 m/MS600F.BIN	4:93	0	0	DATA	人の姿を{08:4B}鬼とは　そなたの事よ！\n<wait>		A demon wearin' human skin, thee!\n<wait>	ours		reads: 人の姿をした鬼とは　そなたの事よ！\n<wait>
-m/MS600F.BIN	4:94	0	4	00	{04:FF}では{08:25}かえ\n{08:79}後の調子は{08:90}{08:81}？\n<wait>		Why, {04:FF}.\nAnd how dost thou fare of late?\n<wait>	ours		reads: ではないかえ\nその後の調子はどうじゃ？\n<wait>
+m/MS600F.BIN	4:94	0	6	1F01	では{08:25}かえ\n{08:79}後の調子は{08:90}{08:81}？\n<wait>		Why, {04:FF}.\nAnd how dost thou fare of late?\n<wait>	ours		reads: ではないかえ\nその後の調子はどうじゃ？\n<wait> @rebase-tagdiff
 m/MS600F.BIN	4:95	0	0	DATA	近寄るで無いぞえ！\n<wait>		Do not draw near!\n<wait>	ours		
 m/MS600F.BIN	4:96	0	0	DATA	見逃{08:4A}やるわ\n<wait>		I spare thee.\n<wait>	ours		reads: 見逃してやるわ\n<wait>
 m/MS600F.BIN	4:97	0	0	DATA	わらわの力　見{08:67}く{08:2F}わ！\n<wait>		I shall show thee my power!\n<wait>	ours		reads: わらわの力　見せてくれるわ！\n<wait>
@@ -273,7 +272,7 @@ m/MS600F.BIN	13:16	0	0	DATA	{08:0B}は存在{08:4A}は　{08:7D}ぬと言うの�
 m/MS600F.BIN	13:17	0	0	DATA	{08:8B}分{08:42}ぬ\n<wait>		I do not understand.\n<wait>	ours		reads: よく分からぬ\n<wait>
 m/MS600F.BIN	13:18	0	0	DATA	そなた{08:56}　わ{08:42}ぬの{08:81}な\n<wait>		So even thou dost not see.\n<wait>	ours		reads: そなたでも　わからぬのじゃな\n<wait>
 m/MS600F.BIN	13:19	0	0	DATA	わらわは　		I hold 	ours		
-m/MS600F.BIN	13:19	1	14	00	{04:FF}の事が　愛しい\n<wait>		{04:FF} dear to me.\n<wait>	ours		reads: の事が　愛しい\n<wait>
+m/MS600F.BIN	13:19	1	16	1F01	の事が　愛しい\n<wait>		{04:FF} dear to me.\n<wait>	ours		reads: の事が　愛しい\n<wait> @rebase-tagdiff
 m/MS600F.BIN	13:1A	0	0	DATA	そなたは　{08:90}{08:6B}{08:81}？\n<wait>		And what of thee, then?\n<wait>	ours		reads: そなたは　どうなのじゃ？\n<wait>
 m/MS600F.BIN	13:1B	0	0	DATA	{08:0B}と{02:0B}とは　共に生きれぬの{08:81}な\n<wait>		So demons and humans cannot live together.\n<wait>	ours		reads: 悪魔と人間とは　共に生きれぬのじゃな\n<wait>
 m/MS600F.BIN	13:1C	0	0	DATA	何やら　哀しゅう{08:1A}来たわ\n<wait>		Somehow, I feel rather sad.\n<wait>	ours		reads: 何やら　哀しゅうなって来たわ\n<wait>

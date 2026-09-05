@@ -3,12 +3,12 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0044.BIN	0:00	0	0	DATA	ホームに降りる階段が{08:7B}\n移動し{08:15}\n		There are stairs leading to the platform here.\nGo down them?\n	v005		reads: ホームに降りる階段がある\n移動しますか？\n @refalign
+m/MS0044.BIN	0:00	0	0	DATA	ホームに降りる階段が{08:7B}\n移動し{08:15}\n		There are stairs leading to the platform here.\nGo down them?\n	v005		reads: ホームに降りる階段がある\n移動しますか？\n; reads: ホームに降りる階段がある\n移動しますか？\n @refalign
 m/MS0044.BIN	0:00	1	36	1F58	{05:00}	{05:00}				reads: はいいいえ; reads: はいいいえニュートン
 m/MS0044.BIN	0:01	0	0	DATA	プラットホーム\n		 Platform.\n	v005		@refalign
-m/MS0044.BIN	0:01	1	17	1FD1	<wait>ホーム{08:42}線路に降りて移動{08:8E}{08:46}ができ{08:5A}\n		<wait>You can hop down onto the tracks\nand use the railway to travel between stations.\n	v005		reads: <wait>ホームから線路に降りて移動することができます\n @refalign
-m/MS0044.BIN	0:02	0	19	1FB2	線路に降りる		Hop onto tracks	v005		menu option, declared width 20 columns @refalign
-m/MS0044.BIN	0:02	1	33	1FB2	戻る		Return	v005		menu option, declared width 20 columns @refalign
+m/MS0044.BIN	0:01	1	17	1FD1	<wait>ホーム{08:42}線路に降りて移動{08:8E}{08:46}ができ{08:5A}\n		<wait>You can hop down onto the tracks\nand use the railway to travel between stations.\n	v005		reads: <wait>ホームから線路に降りて移動することができます\n; reads: <wait>ホームから線路に降りて移動することができます\n @refalign
+m/MS0044.BIN	0:02	0	19	1FB2	線路に降りる		Hop onto tracks	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0044.BIN	0:02	1	33	1FB2	戻る		Return	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0044.BIN	0:03	0	0	DATA	大手町駅・丸ノ内線		Ootemachi-Marunouchi	v005		record reaches an engine no-op opcode; verify in game @refalign
 m/MS0044.BIN	0:03	1	21	0D	大手町駅・丸ノ内線		Ootemachi-Marunouchi	v005		record reaches an engine no-op opcode; verify in game @refalign
 m/MS0044.BIN	0:03	2	58	1FB2	御茶ノ水方面		Ochanomizu	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
