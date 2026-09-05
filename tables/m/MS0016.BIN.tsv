@@ -5,13 +5,13 @@
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
 m/MS0016.BIN	0:00	0	7	1FD0	ヴァーチャトレーナーのシステムは破壊{03:0C}{08:14}{02:08}‥\n		The virtual trainer system is broken...\n	v005		reads: ヴァーチャトレーナーのシステムは破壊されている‥‥‥‥\n; reads: ヴァーチャトレーナーのシステムは破壊されている‥‥‥‥\n @refalign
 m/MS0016.BIN	0:00	1	74	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
-m/MS0016.BIN	0:00	2	86	1F01	！　ヴァーチャルトレーナーなどやっ{08:14}暇は無い！\n行くぞ！\n		Katsuragi! This is no time for training! Let's hurry!\n	v005		reads: ！　ヴァーチャルトレーナーなどやっている暇は無い！\n行くぞ！\n; reads: ！　ヴァーチャルトレーナーなどやっている暇は無い！\n行くぞ！\n @rebase-tagdiff @refalign
+m/MS0016.BIN	0:00	2	86	1F01	！　ヴァーチャルトレーナーなどやっ{08:14}暇は無い！\n行くぞ！\n	! There's no time for the Virtual Trainer!\nLet's move!\n	Katsuragi! This is no time for training! Let's hurry!\n	v005	draft	reads: ！　ヴァーチャルトレーナーなどやっている暇は無い！\n行くぞ！\n; reads: ！　ヴァーチャルトレーナーなどやっている暇は無い！\n行くぞ！\n @rebase-tagdiff @refalign @seamfix-2026-09-05
 m/MS0016.BIN	0:00	3	159	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 早坂： @refalign
 m/MS0016.BIN	0:00	4	170	09	おい	Hey, 	This is no time for training, Katsuragi. Let's hurry!\n	v005	draft	@refalign @ours-2026-09-05
 m/MS0016.BIN	0:00	5	180	1F01	。{08:73}所に入っ{08:2B}暇は{08:25}。\n早く脱出し{08:69}ぜ。\n	. No time to be going in there.\nLet's get out of here, quick.\n			draft	reads: 。こんな所に入ってる暇はない。\n早く脱出しようぜ。\n @ours-2026-09-05
 m/MS0016.BIN	0:00	6	229	1F01	。{08:73}所に入っ{08:2B}余裕は{08:25}ぜ。\n早く行こう。\n	. No time to be going in there.\nLet's get moving.\n			draft	reads: 。こんな所に入ってる余裕はないぜ。\n早く行こう。\n @ours-2026-09-05
 m/MS0016.BIN	0:00	7	286	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0016.BIN	0:00	8	303	1F01	くん。{08:73}所に入っ{08:2B}暇{08:25}よ。\n早く脱出しなきゃ。\n		This is no time for training, Katsuragi. Let's hurry!\n	v005		reads: くん。こんな所に入ってる暇ないよ。\n早く脱出しなきゃ。\n @rebase-tagdiff
+m/MS0016.BIN	0:00	8	303	1F01	くん。{08:73}所に入っ{08:2B}暇{08:25}よ。\n早く脱出しなきゃ。\n	-kun. There's no time to be in a place like this.\nWe have to get out, fast.\n	This is no time for training, Katsuragi. Let's hurry!\n	v005	draft	reads: くん。こんな所に入ってる暇ないよ。\n早く脱出しなきゃ。\n @rebase-tagdiff @seamfix-2026-09-05
 m/MS0016.BIN	0:00	9	352	18	ねぇ。{08:73}所に入っ{08:2B}余裕{08:6A}か{08:25}よ。\n早く行かなきゃ。\n		This is no time for detours, Katsuragi. Let's hurry!\n	v005		reads: ねぇ。こんな所に入ってる余裕なんかないよ。\n早く行かなきゃ。\n; reads: ねぇ。こんな所に入ってる余裕なんかないよ。\n早く行かなきゃ。\n @refalign
 m/MS0016.BIN	0:00	10	419	1FD2	{01:03}：		Newton:	v005		reads: ニュートン：; reads: ニュートン： @refalign
 m/MS0016.BIN	0:00	11	425	1FD3	バウワウ！　ウー{02:08}‥\n<wait>	Bow-wow! Grrr.........\n<wait>			draft	reads: バウワウ！　ウー‥‥‥‥\n<wait>; reads: バウワウ！　ウー‥‥‥‥\n<wait> @ours-2026-09-05
@@ -179,7 +179,7 @@ m/MS0016.BIN	0:05	4	183	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads
 m/MS0016.BIN	0:05	5	189	1FD3	よし、今日の訓練は{08:48}で終了だ。\n今後{01:23}の間{08:62}自主的に訓練を行う事。\n<wait>		That does it for today's training session.\nFor the next little while, you will be on your own.\n<wait>	v005		reads: よし、今日の訓練はこれで終了だ。\n今後しばらくの間は、自主的に訓練を行う事。\n<wait>; reads: よし、今日の訓練はこれで終了だ。\n今後しばらくの間は、自主的に訓練を行う事。\n<wait> @refalign
 m/MS0016.BIN	0:05	6	263	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 早坂： @refalign
 m/MS0016.BIN	0:05	7	269	1FD3	{08:81}あ、詰所に戻るか。\n<wait>		Now then, do you want to return to the office?\n<wait>	v005		reads: じゃあ、詰所に戻るか。\n<wait>; reads: じゃあ、詰所に戻るか。\n<wait> @refalign
-m/MS0016.BIN	0:05	8	304	1F01	達{08:62}訓練を{01:31}に終え、{08:00}と共に、{08:04}らの待つ詰所に戻{08:51}。\n<wait>		You decided to quit training for now and head back to the Devil Buster\noffice where the rest of the squad is waiting for you.\n<wait>	v005		reads: 達は、訓練を無事に終え、早坂と共に、西野らの待つ詰所に戻った。\n<wait>; reads: 達は、訓練を無事に終え、早坂と共に、西野らの待つ詰所に戻った。\n<wait> @rebase-tagdiff @refalign
+m/MS0016.BIN	0:05	8	304	1F01	達{08:62}訓練を{01:31}に終え、{08:00}と共に、{08:04}らの待つ詰所に戻{08:51}。\n<wait>	 and the others finished training safely and went back with Hayasaka\nto the post where Nishino and the rest were waiting.\n<wait>	You decided to quit training for now and head back to the Devil Buster\noffice where the rest of the squad is waiting for you.\n<wait>	v005	draft	reads: 達は、訓練を無事に終え、早坂と共に、西野らの待つ詰所に戻った。\n<wait>; reads: 達は、訓練を無事に終え、早坂と共に、西野らの待つ詰所に戻った。\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
 m/MS0016.BIN	0:05	9	384	1FE5	ヒキツヅキ　リヨウ　サレマスカ？\n		DO YOU WISH TO CONTINUE TRAINING?\n	v005		@refalign
 m/MS0016.BIN	0:05	10	433	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
 m/MS0016.BIN	0:05	11	437	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05

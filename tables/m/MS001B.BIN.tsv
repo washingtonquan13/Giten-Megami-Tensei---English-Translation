@@ -6,7 +6,7 @@ file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
 m/MS001B.BIN	0:00	0	11	1FD0	エレベーターは今１Ｆに{08:40}。階段で行{08:51}方が早い！\n<wait>		The elevator is currently on 1F. It's faster to take the stairs.\n<wait>	v005		reads: エレベーターは今１Ｆにいる。階段で行った方が早い！\n<wait>; reads: エレベーターは今１Ｆにいる。階段で行った方が早い！\n<wait> @refalign
 m/MS001B.BIN	0:01	0	20	09						
 m/MS001B.BIN	0:01	1	51	1F01	：	: 	:	v005	draft	reads: ： @refalign @ours-2026-09-05
-m/MS001B.BIN	0:01	2	61	1F01	くん。そっちは外よ。\n寄り道し{08:2B}場合{08:81}{08:25}わ！\n<wait>		Wrong way, Katsuragi. This is no time for detours.\n<wait>	v005		reads: くん。そっちは外よ。\n寄り道してる場合じゃないわ！\n<wait>; reads: くん。そっちは外よ。\n寄り道してる場合じゃないわ！\n<wait> @refalign
+m/MS001B.BIN	0:01	2	61	1F01	くん。そっちは外よ。\n寄り道し{08:2B}場合{08:81}{08:25}わ！\n<wait>	-kun. That way is outside.\nThis is no time for detours!\n<wait>	Wrong way, Katsuragi. This is no time for detours.\n<wait>	v005	draft	reads: くん。そっちは外よ。\n寄り道してる場合じゃないわ！\n<wait>; reads: くん。そっちは外よ。\n寄り道してる場合じゃないわ！\n<wait> @refalign @seamfix-2026-09-05
 m/MS001B.BIN	0:01	3	119	1F03						
 m/MS001B.BIN	0:01	4	129	1F01	：	:	:	v005	draft	reads: ： @refalign @ours-2026-09-05
 m/MS001B.BIN	0:01	5	133	1FD3	早くし{08:25}と、本当に遅刻しちゃう。\n詰所に行きま{08:80}！\n<wait>		We've gotta hurry or we'll be late. Let's hurry to the office.\n<wait>	v005		reads: 早くしないと、本当に遅刻しちゃう。\n詰所に行きましょう！\n<wait>; reads: 早くしないと、本当に遅刻しちゃう。\n詰所に行きましょう！\n<wait> @refalign
@@ -64,7 +64,7 @@ m/MS001B.BIN	0:01	56	2034	00	d	d
 m/MS001B.BIN	0:01	57	2062	09						
 m/MS001B.BIN	0:01	58	2103	1FD2	ガードロボット：		Guard Robot:	v005		
 m/MS001B.BIN	0:01	59	2121	1FD3	ココカラ先ハ　危険デス\n<wait>許可ナキ場合ハ　オ通シデキマセン\n<wait>		THIS AREA IS OFF LIMITS\n<wait>YOU CANNOT PASS WITHOUT AUTHORIZATION\n<wait>	v005		
-m/MS001B.BIN	0:01	60	2195	1F01	{08:62}アームターミナルをガードロボットに接続{08:4B}。\n<wait>		You connect your Arm Terminal to the guard robot.\n<wait>	v005		reads: は、アームターミナルをガードロボットに接続した。\n<wait> @rebase-tagdiff
+m/MS001B.BIN	0:01	60	2195	1F01	{08:62}アームターミナルをガードロボットに接続{08:4B}。\n<wait>	 connected his Arm Terminal to the guard robot.\n<wait>	You connect your Arm Terminal to the guard robot.\n<wait>	v005	draft	reads: は、アームターミナルをガードロボットに接続した。\n<wait> @rebase-tagdiff @seamfix-2026-09-05
 m/MS001B.BIN	0:01	61	2248	1FD2	ガードロボット：		Guard Robot:	v005		
 m/MS001B.BIN	0:01	62	2266	1FD3	{02:08}{02:00}戦闘員　		...KATSURAGI AYATO, DEVIL BUSTER.n<wait>	v005		reads: ‥‥‥デビルバスター戦闘員　
 m/MS001B.BIN	0:01	63	2291	1FBA	ＩＤ確認イタシマシタ　貴方ノ通行ハ許可サレテイマス\n<wait>ドウゾ　オ通リクダサイ\n<wait>	ID CONFIRMED. YOUR PASSAGE IS AUTHORISED\n<wait>PLEASE PROCEED\n<wait>	IDENTITY VERIFIED. YOU MAY PASS.\n<wait>THIS WAY, PLEASE\n<wait>	v005	draft	reads: \n<wait> @ours-2026-09-05
@@ -142,7 +142,7 @@ m/MS001B.BIN	0:05	13	430	1FD0	学者の絶叫が響き渡り、{08:4D}を追{08:
 m/MS001B.BIN	0:05	14	582	1F71	{02:08}‥そこで{08:62}まさに地獄絵が展開{03:0C}て{08:64}。\n<wait>		It's like a picture of hell.\n<wait>	v005		reads: ‥‥‥‥そこでは、まさに地獄絵が展開されていた。\n<wait>
 m/MS001B.BIN	0:05	15	627	1FBA	人々の呻きと、{08:43}たましい笑い声が交差{08:8E}中{02:08}。\n<wait>		A mixture of wicked laughter and cries of pain echoes through the area.\n<wait>	v005		reads: 人々の呻きと、けたたましい笑い声が交差する中‥‥‥。\n<wait>; reads: 学者の絶叫が響き渡り、それを追って用心深く歩を進めた一行の前に\n悪魔化し血に染まった人間や、ゾンビ化した人間が姿を現した‥‥‥\n<wait>
 m/MS001B.BIN	0:05	16	678	1FBA	{08:0B}と化{08:4B}{02:0B}が、{08:76}{08:0B}化{08:4A}{08:24}者を襲い、{08:79}肉を裂き、\n頭{08:42}貪り喰う。\n<wait>		Everywhere you look, you can see those who have yet to turn into demons\nbeing torn apart and devoured alive by those who have.\n<wait>	v005		reads: 悪魔と化した人間が、まだ悪魔化していない者を襲い、その肉を裂き、\n頭から貪り喰う。\n<wait>; reads: ‥‥‥‥そこでは、まさに地獄絵が展開されていた。\n<wait>
-m/MS001B.BIN	0:05	17	874	1F01	は立ち尽くし、なす術も無く{08:79}光景を眺めて{08:64}。\n<wait>		The sight is too much for you to take in.\nAll you can do is stare at it in silence.\n<wait>	v005		reads: は立ち尽くし、なす術も無くその光景を眺めていた。\n<wait>; reads: 人々の呻きと、けたたましい笑い声が交差する中‥‥‥。\n<wait> @rebase-tagdiff
+m/MS001B.BIN	0:05	17	874	1F01	は立ち尽くし、なす術も無く{08:79}光景を眺めて{08:64}。\n<wait>	 stood rooted, watching the scene, powerless to do anything.\n<wait>	The sight is too much for you to take in.\nAll you can do is stare at it in silence.\n<wait>	v005	draft	reads: は立ち尽くし、なす術も無くその光景を眺めていた。\n<wait>; reads: 人々の呻きと、けたたましい笑い声が交差する中‥‥‥。\n<wait> @rebase-tagdiff @seamfix-2026-09-05
 m/MS001B.BIN	0:05	18	925	1FBA	{08:79}頭に突如、以前{08:04}{08:42}聞{08:64}事柄が浮かんで{08:1E}。\n<wait>		It is there that a concept you once heard about from Nishino\npops up into your mind.\n<wait>	v005		reads: その頭に突如、以前西野から聞いた事柄が浮かんできた。\n<wait>; reads: 悪魔と化した人間が、まだ悪魔化していない者を襲い、その肉を裂き、\n頭から貪り喰う。\n<wait>
 m/MS001B.BIN	0:05	19	974	1FBA	{02:08}‥{08:0B}憑依現象{02:08}‥\n<wait>		The demonification phenomenon...\n<wait>	v005		reads: ‥‥‥‥悪魔憑依現象‥‥‥‥\n<wait>; reads: は立ち尽くし、なす術も無くその光景を眺めていた。\n<wait>
 m/MS001B.BIN	0:05	20	999	1FBA	{01:34}が破壊{03:0C}た今、{08:10}内は霊的清浄さが失われ、憑依{03:0C}た者は次々と\n{08:0B}化{08:4A}いく{08:72}と。\n<wait>		As the shelter's protective barrier stops functions,\nthe indoors areas are quickly flooded by powerful ghosts and spirits.\nThey possess everyone and anyone they encounter, and gradually,\nthose people begin turning into demons themselves.\n<wait>	v005		reads: 結界が破壊された今、シェルター内は霊的清浄さが失われ、憑依された者は次々と\n悪魔化していく‥‥と。\n<wait>; reads: その頭に突如、以前西野から聞いた事柄が浮かんできた。\n<wait>
@@ -199,10 +199,10 @@ m/MS001B.BIN	0:05	70	2448	1FD0	{08:03}{08:62}わなわなと唇を震わせ立�
 m/MS001B.BIN	0:05	71	2526	1F01	：	:	Yuuka:	v005	draft	reads: ：; reads: あ‥‥そ‥そんな‥‥‥‥‥\n<wait> @rebase-tagdiff
 m/MS001B.BIN	0:05	72	2530	1FD3	そ{08:72}{08:7A}{02:08}おばさま{08:72}知多くん{02:08}‥\n<wait>		Chito... Youko...\n<wait>	v005		reads: そ‥‥そんな‥‥‥おばさま‥‥知多くん‥‥‥‥\n<wait>; reads: 英美は、わなわなと唇を震わせ立ち尽くした。\n<wait>
 m/MS001B.BIN	0:05	73	2575	1F01	は力無く呟き、立ち尽く{08:4B}。\n<wait>	 murmured feebly and stood rooted to the spot.\n<wait>			draft	reads: は力無く呟き、立ち尽くした。\n<wait>; reads: ： @ours-2026-09-05
-m/MS001B.BIN	0:05	74	2637	1FD0	あまりの事に、		So does Yuuka.\n<wait>	v005		reads: そ‥‥そんな‥‥‥おばさま‥‥知多くん‥‥‥‥\n<wait>
-m/MS001B.BIN	0:05	75	2657	1F01	はなす術も無く{08:79}場に立ち尽く{08:4B}{08:72}\n<wait>		You find yourself standing there motionless,\nunable to as much as move a muscle.\n<wait>	v005		reads: はなす術も無くその場に立ち尽くした‥‥\n<wait>; reads: は力無く呟き、立ち尽くした。\n<wait> @rebase-tagdiff
+m/MS001B.BIN	0:05	74	2637	1FD0	あまりの事に、	It was too much to take in, and 	So does Yuuka.\n<wait>	v005	draft	reads: そ‥‥そんな‥‥‥おばさま‥‥知多くん‥‥‥‥\n<wait> @seamfix-2026-09-05
+m/MS001B.BIN	0:05	75	2657	1F01	はなす術も無く{08:79}場に立ち尽く{08:4B}{08:72}\n<wait>	 could only stand there, unable to move......\n<wait>	You find yourself standing there motionless,\nunable to as much as move a muscle.\n<wait>	v005	draft	reads: はなす術も無くその場に立ち尽くした‥‥\n<wait>; reads: は力無く呟き、立ち尽くした。\n<wait> @rebase-tagdiff @seamfix-2026-09-05
 m/MS001B.BIN	0:05	76	2717	1E16	{03:0B}{08:79}{08:69}な事態に直面{08:13}にも関わらず、\n<wait>{08:04}の表情は穏やかだ{08:51}{02:08}‥\n<wait>		And yet, as you turn towards Nishino to see how he's reacting,\n<wait>you find that there has been no change whatsoever in his expression.\n<wait>	v005		reads: しかし、そのような事態に直面しているにも関わらず、\n<wait>西野の表情は穏やかだった‥‥‥‥\n<wait>
-m/MS001B.BIN	0:05	77	2796	1F01	は心配になり、{08:04}の顔を見た。\n{03:0B}予想に反し、{08:04}の表情は穏やかだ{08:51}。\n<wait>		Worried as to how Nishino might react, you quickly turn around to have\nlook at him, only to find that he seems barely affected.\n<wait>	v005		reads: は心配になり、西野の顔を見た。\nしかし、予想に反し、西野の表情は穏やかだった。\n<wait>; reads: はなす術も無くその場に立ち尽くした‥‥\n<wait> @rebase-tagdiff
+m/MS001B.BIN	0:05	77	2796	1F01	は心配になり、{08:04}の顔を見た。\n{03:0B}予想に反し、{08:04}の表情は穏やかだ{08:51}。\n<wait>	 grew worried and looked at Nishino's face.\nBut against expectation, Nishino's expression was calm.\n<wait>	Worried as to how Nishino might react, you quickly turn around to have\nlook at him, only to find that he seems barely affected.\n<wait>	v005	draft	reads: は心配になり、西野の顔を見た。\nしかし、予想に反し、西野の表情は穏やかだった。\n<wait>; reads: はなす術も無くその場に立ち尽くした‥‥\n<wait> @rebase-tagdiff @seamfix-2026-09-05
 m/MS001B.BIN	0:05	78	2870	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: しかし、そのような事態に直面しているにも関わらず、\n<wait>西野の表情は穏やかだった‥‥‥‥\n<wait>
 m/MS001B.BIN	0:05	79	2885	1E16	最後{08:71}母さんと	To the very end, with your mother	Chito... I'm glad that you	v005	draft	reads: 最後まで母さんと; reads: は心配になり、西野の顔を見た。\nしかし、予想に反し、西野の表情は穏やかだった。\n<wait> @ours-2026-09-05
 m/MS001B.BIN	0:05	80	2905	1FFA	{02:08}‥	......			draft	reads: ‥‥‥‥; reads: 西野： @ours-2026-09-05
@@ -223,7 +223,7 @@ m/MS001B.BIN	0:05	94	3208	1FD2	{08:0B}：	Demon:	Demon:	v005	draft	reads: 悪魔
 m/MS001B.BIN	0:05	95	3214	1FD3	{08:72}貴方{08:72}い{08:52}らっしゃい{08:72}{01:21}{08:72}ロボット買{08:52}よ{08:72}\n<wait>		Welcome home... dear... Daddy... buy me... a toy...<wait>	v005		reads: ‥‥貴方‥‥いってらっしゃい‥‥パパ‥‥ロボット買ってよ‥‥\n<wait>; reads: 兄ちゃん‥‥僕もねえ‥‥デビルバスター‥‥‥\n<wait> @refalign
 m/MS001B.BIN	0:05	96	3290	1FB2	{08:0B}に話{08:86}{08:29}		Talk to the demon	v005		reads: 悪魔に話しかける; menu option, declared width 20 columns; reads: 悪魔： @refalign
 m/MS001B.BIN	0:05	97	3302	1FB2	早く楽に{02:0D}やろう		Put it out its misery	v005		reads: 早く楽にさせてやろう; menu option, declared width 20 columns; reads: ‥‥貴方‥‥いってらっしゃい‥‥パパ‥‥ロボット買ってよ‥‥\n<wait> @refalign
-m/MS001B.BIN	0:05	98	3350	1F01	{08:62}{08:0B}人に話{08:86}けてみた{02:08}\n<wait>		You decide to try talking to the demon.\n<wait>	v005		reads: は、悪魔人に話しかけてみた‥‥‥\n<wait>; reads: 悪魔に話しかける; menu option, declared width 20 columns @rebase-new @refalign
+m/MS001B.BIN	0:05	98	3350	1F01	{08:62}{08:0B}人に話{08:86}けてみた{02:08}\n<wait>	 tried speaking to the demonoid......\n<wait>	You decide to try talking to the demon.\n<wait>	v005	draft	reads: は、悪魔人に話しかけてみた‥‥‥\n<wait>; reads: 悪魔に話しかける; menu option, declared width 20 columns @rebase-new @refalign @seamfix-2026-09-05
 m/MS001B.BIN	0:05	99	3381	1FD2	{08:0B}：		Demon:	v005		reads: 悪魔：; reads: 早く楽にさせてやろう; menu option, declared width 20 columns @refalign
 m/MS001B.BIN	0:05	100	3387	1FD3	ググ{08:72}ガ{02:08}	Gugh... gah......... 	Aa... Aah... Ayato... Big Bro...\n<wait>	v005	draft	reads: ググ‥‥ガ‥‥‥; reads: ググ‥‥ガ‥‥‥ @rebase-unmatched idx100 en=That's right{01:FF} @rebase-unmatched idx100 en=That's right{01:FF} @ours-2026-09-05
 m/MS001B.BIN	0:05	101	3403	1F01	くん{02:08}	............ 			draft	reads: くん‥‥‥ @ours-2026-09-05
@@ -241,7 +241,7 @@ m/MS001B.BIN	0:05	112	3886	1FD3	い{08:72}や{08:72}{08:5C}嫌！　{08:73}の�
 m/MS001B.BIN	0:05	113	3956	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 英美： @refalign
 m/MS001B.BIN	0:05	114	3962	1FD3	う{02:08}あ{08:72}{08:73}{08:72}{08:73}事ッ！\n<wait>		This... This can't be happening...\n<wait>	v005		reads: う‥‥‥あ‥‥こんな‥‥こんな事ッ！\n<wait>; reads: い‥‥や‥‥もう嫌！　こんなの嫌よぉッ！！！\n<wait> @refalign
 m/MS001B.BIN	0:05	115	4013	1E16	あまりにも無残な地獄絵図であ{08:51}{02:08}{08:72}\n<wait>		The scene playing out before you is straight from a nightmare.\n<wait>	v005		reads: あまりにも無残な地獄絵図であった‥‥‥‥‥\n<wait>; reads: ： @refalign
-m/MS001B.BIN	0:05	116	4065	1F01	{08:62}あまりの無残な姿に思わず目を逸ら{08:4B}。\n<wait>		You can only look for so long before averting your eyes.\n<wait>	v005		reads: は、あまりの無残な姿に思わず目を逸らした。\n<wait>; reads: い‥‥や‥‥もう嫌！　こんなの嫌よぉッ！！！\n<wait> @rebase-tagdiff @refalign
+m/MS001B.BIN	0:05	116	4065	1F01	{08:62}あまりの無残な姿に思わず目を逸ら{08:4B}。\n<wait>	 looked away in spite of himself from so pitiful a sight.\n<wait>	You can only look for so long before averting your eyes.\n<wait>	v005	draft	reads: は、あまりの無残な姿に思わず目を逸らした。\n<wait>; reads: い‥‥や‥‥もう嫌！　こんなの嫌よぉッ！！！\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
 m/MS001B.BIN	0:05	117	4148	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 早坂： @refalign
 m/MS001B.BIN	0:05	118	4163	1E16	頼むぞ	I'm counting on you	Go... 	v005	draft	reads: う‥‥‥あ‥‥こんな‥‥こんな事ッ！\n<wait> @refalign @ours-2026-09-05
 m/MS001B.BIN	0:05	119	4175	1FFA	{02:08}‥	......			draft	reads: ‥‥‥‥; reads: あまりにも無残な地獄絵図であった‥‥‥‥‥\n<wait> @ours-2026-09-05
@@ -345,7 +345,7 @@ m/MS001B.BIN	0:05	216	6910	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; rea
 m/MS001B.BIN	0:05	217	6916	1FD3	まず{08:62}医療施設で皆を蘇生さ{08:2A}ぞ！\n<wait>		First things first, lets head over to the medical ward\nand revive the fallen.\n<wait>	v005		reads: まずは、医療施設で皆を蘇生させるぞ！\n<wait>; reads: 行くぞ！　ニュートン！\n<wait> @refalign
 m/MS001B.BIN	0:05	218	6957	1FD2	{01:03}：		Newton:	v005		reads: ニュートン：; reads: 西野： @refalign
 m/MS001B.BIN	0:05	219	6963	1FD3	ワオン！\n		Woof!\n	v005		reads: 我々はデビルバスターだ。\n例えどのような人間であろうとも、見捨てる訳にはいかん！\n<wait> @refalign
-m/MS001B.BIN	0:05	220	6979	1F01	上官{02:08}{02:00}で{08:7B}{02:0C}{08:62}例え貴方{08:56}\n見捨ては致し{02:0A}{02:08}‥。\n<wait>		We are Devil Busters. Our job is to protect humans,\nregardless of what kinds of sins they may have committed.\n<wait>	v005		reads: 上官‥‥‥デビルバスターである我々は、例え貴方でも\n見捨ては致しません‥‥‥‥。\n<wait>; reads: 西野： @rebase-tagdiff @refalign
+m/MS001B.BIN	0:05	220	6979	1F01	上官{02:08}{02:00}で{08:7B}{02:0C}{08:62}例え貴方{08:56}\n見捨ては致し{02:0A}{02:08}‥。\n<wait>	, sir...... we are Devil Busters. We will not abandon anyone,\nnot even you......\n<wait>	We are Devil Busters. Our job is to protect humans,\nregardless of what kinds of sins they may have committed.\n<wait>	v005	draft	reads: 上官‥‥‥デビルバスターである我々は、例え貴方でも\n見捨ては致しません‥‥‥‥。\n<wait>; reads: 西野： @rebase-tagdiff @refalign @seamfix-2026-09-05
 m/MS001B.BIN	0:05	221	7129	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: まずは、医療施設で皆を蘇生させるぞ！\n<wait> @refalign
 m/MS001B.BIN	0:05	222	7144	1E16	管制{08:05}ー室{08:72}危険だな{08:72}\n		The main computer room... That's not good...\n	v005		reads: 管制コンピューター室‥‥危険だな‥‥\n; reads: ニュートン： @refalign
 m/MS001B.BIN	0:05	223	7182	18	隊長、危険{08:55}！\n<wait>		Commander, this is bad!\n<wait>	v005		reads: 隊長、危険です！\n<wait>; reads: 隊長、危険です！\n<wait> @refalign
