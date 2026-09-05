@@ -29,7 +29,7 @@ m/MS0005.BIN	0:01	21	668	1FD1	＞{02:06}\n	>What will you do?\n			draft	reads: �
 m/MS0005.BIN	0:01	22	689	1FB2	飲む		Drink it	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0005.BIN	0:01	23	695	1FB2	断る		Refuse	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0005.BIN	0:01	24	725	1F01	は少女の差し出{08:4B}小瓶を受け取り、一気に飲み干{08:17}\n<wait>	 took the vial the girl held out and drank it down in one go!\n<wait>			draft	reads: は少女の差し出した小瓶を受け取り、一気に飲み干した！\n<wait> @rebase-new @ours-2026-09-05
-m/MS0005.BIN	0:01	25	813	1FD2	少女：	少女：	Girl:	v005		
+m/MS0005.BIN	0:01	25	813	1FD2	少女：	Girl:	Girl:	v005	draft	@ours-2026-09-05
 m/MS0005.BIN	0:01	26	821	1FD3	そう{08:55}か{02:08}\n<wait>	I see......\n<wait>			draft	reads: そうですか‥‥‥\n<wait>; reads: は少女の差し出した小瓶を受け取り、一気に飲み干した！\n<wait> @rebase-unmatched idx26 en=You take the vial and chug its contents in one go!\n<wait> @ours-2026-09-05
 m/MS0005.BIN	0:01	27	840	1FD2	少女：	Girl:			draft	@ours-2026-09-05
 m/MS0005.BIN	0:01	28	848	1FD3	あ{08:72}{08:6F}、{08:5C}行かなきゃ！\n<wait>	Oh... I have to go!\n<wait>			draft	reads: あ‥‥わたし、もう行かなきゃ！\n<wait>; reads: そうですか‥‥‥\n<wait> @ours-2026-09-05
@@ -40,17 +40,17 @@ m/MS0005.BIN	0:01	32	979	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads:
 m/MS0005.BIN	0:01	33	991	1F01	、俺{08:7D}{08:5C}{01:32}だ。\nアドニスのヤツの所へ行こう！！\n<wait>		We're good to go. Let's find Adonis and kick his ass!\n<wait>	v005		reads: 、俺ならもう大丈夫だ。\nアドニスのヤツの所へ行こう！！\n<wait>; reads: そう言うと、少女は走り去ってしまった。\n<wait> @rebase-tagdiff @refalign
 m/MS0005.BIN	0:01	34	1064	1F03						reads: 園田：
 m/MS0005.BIN	0:01	35	1068	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 、俺ならもう大丈夫だ。\nアドニスのヤツの所へ行こう！！\n<wait> @refalign
-m/MS0005.BIN	0:01	36	1080	1F01	{02:08}戻る{01:3E}{08:6B}？\n<wait>	{02:08}戻る{01:3E}{08:6B}？\n<wait>	Ayato... Are you really turning back?\n<wait>	v005		reads: ‥‥‥戻るつもりなの？\n<wait> @rebase-tagdiff
+m/MS0005.BIN	0:01	36	1080	1F01	{02:08}戻る{01:3E}{08:6B}？\n<wait>	.........are you planning to go back?\n<wait>	Ayato... Are you really turning back?\n<wait>	v005	draft	reads: ‥‥‥戻るつもりなの？\n<wait> @rebase-tagdiff @ours-2026-09-05
 m/MS0005.BIN	0:01	37	1101	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 泪： @refalign
 m/MS0005.BIN	0:01	38	1107	1FD3	{08:45}{08:71}来たのよ。\n<wait>ヤツに復讐{08:4A}やらなきゃ気が済ま{08:25}わ。\n<wait>		After we've come all this way?\n<wait>I won't feel good until I get revenge on that bastard.\n<wait>	v005		reads: ここまで来たのよ。\n<wait>ヤツに復讐してやらなきゃ気が済まないわ。\n<wait>; reads: ‥‥‥戻るつもりなの？\n<wait> @refalign
 m/MS0005.BIN	0:01	39	1171	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 泪： @refalign
 m/MS0005.BIN	0:01	40	1177	1FD3	{02:08}<wait>{08:37}君の事が心配{08:6B}？\n<wait>		...<wait>Is it Sonoda that you're worried about?\n<wait>	v005		reads: ‥‥‥<wait>園田君の事が心配なの？\n<wait>; reads: ここまで来たのよ。\n<wait>ヤツに復讐してやらなきゃ気が済まないわ。\n<wait> @refalign
 m/MS0005.BIN	0:01	41	1224	1FB2	{01:29}	{01:29}	Yeah	v005		reads: そうだ; menu option, declared width 20 columns; reads: 泪：
 m/MS0005.BIN	0:01	42	1228	1FB2	いや‥		N-No...	v005		menu option, declared width 20 columns; reads: ‥‥‥<wait>園田君の事が心配なの？\n<wait> @refalign
-m/MS0005.BIN	0:01	43	1254	1FD2	{08:31}：	{08:31}：	Rui:	v005		reads: 泪：; reads: そうだ; menu option, declared width 20 columns
+m/MS0005.BIN	0:01	43	1254	1FD2	{08:31}：	Rui:	Rui:	v005	draft	reads: 泪：; reads: そうだ; menu option, declared width 20 columns @ours-2026-09-05
 m/MS0005.BIN	0:01	44	1260	1FD3	{01:3A}欠{08:43}{08:42}{08:52}{02:08}‥\n<wait>	Just because we're one short......\n<wait>			draft	reads: ひとり欠けたからって‥‥‥‥\n<wait>; menu option, declared width 20 columns @ours-2026-09-05
-m/MS0005.BIN	0:01	45	1283	1FD2	少女：	少女：	Girl:	v005		reads: 山瀬勇
-m/MS0005.BIN	0:01	46	1291	1FD3	あ{08:72}あのう{02:08}\n<wait>	あ{08:72}あのう{02:08}\n<wait>	H-Hey... <wait>	v005		reads: あ‥‥あのう‥‥‥\n<wait>
+m/MS0005.BIN	0:01	45	1283	1FD2	少女：	Girl:	Girl:	v005	draft	reads: 山瀬勇 @ours-2026-09-05
+m/MS0005.BIN	0:01	46	1291	1FD3	あ{08:72}あのう{02:08}\n<wait>	U... um.........\n<wait>	H-Hey... <wait>	v005	draft	reads: あ‥‥あのう‥‥‥\n<wait> @ours-2026-09-05
 m/MS0005.BIN	0:01	47	1312	1FD2	少女：	Girl:			draft	reads: 泪： @ours-2026-09-05
 m/MS0005.BIN	0:01	48	1320	1FD3	行か{08:25}で{08:72}\n<wait>ア{08:72}<wait>アドニスを倒{08:4A}下{08:49}！！\n<wait>	Don't go...\n<wait>A...<wait>Please defeat Adonis!!\n<wait>			draft	reads: 行かないで‥‥\n<wait>ア‥‥<wait>アドニスを倒して下さい！！\n<wait>; reads: ひとり欠けたからって‥‥‥‥\n<wait> @ours-2026-09-05
 m/MS0005.BIN	0:01	49	1374	1FD2	少女：	Girl:			draft	@ours-2026-09-05
@@ -66,10 +66,10 @@ m/MS0005.BIN	0:01	58	1716	1F81	{04:FF}	{04:FF}				reads: ; reads: 仲間の方�
 m/MS0005.BIN	0:01	59	1767	1F81	{04:FF}	{04:FF}				reads: 
 m/MS0005.BIN	0:01	60	1804	1F03						reads: だから‥‥‥これ‥‥‥\n<wait>
 m/MS0005.BIN	0:01	61	1817	1F03						reads: そう言うと、少女は園田に小瓶に入った液体を飲ませた。\n<wait>
-m/MS0005.BIN	0:01	62	1821	1FD2	少女：	少女：	Girl:	v005		reads: 
-m/MS0005.BIN	0:01	63	1829	1FD3	あの{08:72}{08:48}を{02:08}\n<wait>	あの{08:72}{08:48}を{02:08}\n<wait>	Err... Y-You should have some as well.\n<wait>	v005		reads: あの‥‥これを‥‥‥\n<wait>
-m/MS0005.BIN	0:01	64	1850	1FD0	震{08:28}手つきで、少女は{08:31}にも小瓶に入{08:51}液体を勧めた。\n<wait>	震{08:28}手つきで、少女は{08:31}にも小瓶に入{08:51}液体を勧めた。\n<wait>	You can see her hands trembling as she gives the vial to Rui.\n<wait>	v005		reads: 震える手つきで、少女は泪にも小瓶に入った液体を勧めた。\n<wait>
-m/MS0005.BIN	0:01	65	1909	1FD2	{08:31}：	{08:31}：	Rui:	v005		reads: 泪：
+m/MS0005.BIN	0:01	62	1821	1FD2	少女：	Girl:	Girl:	v005	draft	reads:  @ours-2026-09-05
+m/MS0005.BIN	0:01	63	1829	1FD3	あの{08:72}{08:48}を{02:08}\n<wait>	Um... take this.........\n<wait>	Err... Y-You should have some as well.\n<wait>	v005	draft	reads: あの‥‥これを‥‥‥\n<wait> @ours-2026-09-05
+m/MS0005.BIN	0:01	64	1850	1FD0	震{08:28}手つきで、少女は{08:31}にも小瓶に入{08:51}液体を勧めた。\n<wait>	With trembling hands, the girl offered Rui too the small vial of\nliquid.\n<wait>	You can see her hands trembling as she gives the vial to Rui.\n<wait>	v005	draft	reads: 震える手つきで、少女は泪にも小瓶に入った液体を勧めた。\n<wait> @ours-2026-09-05
+m/MS0005.BIN	0:01	65	1909	1FD2	{08:31}：	Rui:	Rui:	v005	draft	reads: 泪： @ours-2026-09-05
 m/MS0005.BIN	0:01	66	1915	1FD3	アドニスが持{08:52}{08:64}秘薬ね？\n<wait>		Did you steal this from Adonis?\n<wait>	v005		reads: アドニスが持っていた秘薬ね？\n<wait>; reads: アドニスが持っていた秘薬ね？\n<wait> @refalign
 m/MS0005.BIN	0:01	67	1948	1FD0	少女はこっくりとうなず{08:64}。\n<wait>		The girl nods.\n<wait>	v005		reads: 少女はこっくりとうなずいた。\n<wait>; reads: あの‥‥これを‥‥‥\n<wait> @refalign
 m/MS0005.BIN	0:01	68	1983	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 震える手つきで、少女は泪にも小瓶に入った液体を勧めた。\n<wait> @refalign
@@ -90,7 +90,7 @@ m/MS0005.BIN	0:01	82	2419	1F03						reads: 少女はこっくりと�
 m/MS0005.BIN	0:01	83	2423	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 泪： @refalign
 m/MS0005.BIN	0:01	84	2435	1F01	{02:08}戻る{01:3E}{08:6B}か？\n<wait>		Ayato... Are you really turning back?\n<wait>	v005		reads: ‥‥‥戻るつもりなのか？\n<wait>; reads: ありがとう。頂くわ。\n<wait> @rebase-tagdiff @refalign
 m/MS0005.BIN	0:01	85	2458	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: そう言うと泪は少女から小瓶を受け取り、液体を喉に流し込んだ。\n<wait> @refalign
-m/MS0005.BIN	0:01	86	2464	1FD3	いや{08:72}確かに戻{08:51}方が懸命だな。\n<wait>	いや{08:72}確かに戻{08:51}方が懸命だな。\n<wait>	Actually, you might be right. Maybe we should turn back.\n<wait>	v005		reads: いや‥‥確かに戻った方が懸命だな。\n<wait>
+m/MS0005.BIN	0:01	86	2464	1FD3	いや{08:72}確かに戻{08:51}方が懸命だな。\n<wait>	No... you're right, going back would be wiser.\n<wait>	Actually, you might be right. Maybe we should turn back.\n<wait>	v005	draft	reads: いや‥‥確かに戻った方が懸命だな。\n<wait> @ours-2026-09-05
 m/MS0005.BIN	0:01	87	2503	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 園田： @refalign
 m/MS0005.BIN	0:01	88	2509	1FD3	彼女が{08:73}状態では{02:08}\n<wait>	With her in this state......\n<wait>			draft	reads: 彼女がこんな状態では‥‥‥\n<wait>; reads: ‥‥‥戻るつもりなのか？\n<wait> @ours-2026-09-05
 m/MS0005.BIN	0:01	89	2536	1FD2	少女：	Girl:			draft	reads: 園田： @ours-2026-09-05
@@ -110,10 +110,10 @@ m/MS0005.BIN	0:01	102	2969	1F81	{04:FF}	{04:FF}				reads: ; reads: 仲間の方�
 m/MS0005.BIN	0:01	103	3020	1F81	{04:F5}	{04:F5}				reads: 
 m/MS0005.BIN	0:01	104	3057	1F03						reads: だから‥‥‥これ‥‥‥\n<wait>
 m/MS0005.BIN	0:01	105	3070	1F03						reads: そう言うと、少女は泪に小瓶に入った液体を飲ませた。\n<wait>
-m/MS0005.BIN	0:01	106	3074	1FD2	少女：	少女：	Girl:	v005		reads: 
-m/MS0005.BIN	0:01	107	3082	1FD3	あの{08:72}{08:48}を{02:08}\n<wait>	あの{08:72}{08:48}を{02:08}\n<wait>	Err... Y-You should have some as well.\n<wait>	v005		reads: あの‥‥これを‥‥‥\n<wait>
-m/MS0005.BIN	0:01	108	3103	1FD0	震{08:28}手つきで、少女は{08:37}にも小瓶に入{08:51}液体を勧めた。\n<wait>	震{08:28}手つきで、少女は{08:37}にも小瓶に入{08:51}液体を勧めた。\n<wait>	You can see her hands trembling as she gives the vial to Sonoda.\n<wait>	v005		reads: 震える手つきで、少女は園田にも小瓶に入った液体を勧めた。\n<wait>
-m/MS0005.BIN	0:01	109	3162	1FD2	{08:37}：	{08:37}：	Sonoda:	v005		reads: 園田：
+m/MS0005.BIN	0:01	106	3074	1FD2	少女：	Girl:	Girl:	v005	draft	reads:  @ours-2026-09-05
+m/MS0005.BIN	0:01	107	3082	1FD3	あの{08:72}{08:48}を{02:08}\n<wait>	Um... take this.........\n<wait>	Err... Y-You should have some as well.\n<wait>	v005	draft	reads: あの‥‥これを‥‥‥\n<wait> @ours-2026-09-05
+m/MS0005.BIN	0:01	108	3103	1FD0	震{08:28}手つきで、少女は{08:37}にも小瓶に入{08:51}液体を勧めた。\n<wait>	With trembling hands, the girl offered Sonoda too the small vial of\nliquid.\n<wait>	You can see her hands trembling as she gives the vial to Sonoda.\n<wait>	v005	draft	reads: 震える手つきで、少女は園田にも小瓶に入った液体を勧めた。\n<wait> @ours-2026-09-05
+m/MS0005.BIN	0:01	109	3162	1FD2	{08:37}：	Sonoda:	Sonoda:	v005	draft	reads: 園田： @ours-2026-09-05
 m/MS0005.BIN	0:01	110	3168	1FD3	{08:4D}は？\n<wait>	What's that?\n<wait>			draft	reads: それは？\n<wait>; reads: それは？\n<wait> @ours-2026-09-05
 m/MS0005.BIN	0:01	111	3183	1FD2	少女：	Girl:			draft	reads: あの‥‥これを‥‥‥\n<wait> @ours-2026-09-05
 m/MS0005.BIN	0:01	112	3191	1FD3	ア{08:72}<wait>アドニスが持{08:52}{08:64}ん{08:55}。{03:10}薬{08:55}。\n<wait>	A...<wait>Adonis had it. It's a healing potion.\n<wait>			draft	reads: ア‥‥<wait>アドニスが持っていたんです。回復薬です。\n<wait>; reads: 震える手つきで、少女は園田にも小瓶に入った液体を勧めた。\n<wait> @ours-2026-09-05
@@ -146,7 +146,7 @@ m/MS0005.BIN	0:01	138	3994	1F03						reads: 園田：
 m/MS0005.BIN	0:01	139	3998	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: アドニスに捕われている人達を救おう！\n<wait> @refalign
 m/MS0005.BIN	0:01	140	4004	1FD3	{08:87}で{02:08}{08:45}を出て何処へ向かう{01:3E}？\n<wait>		By the way... Where are we planning on heading next?\n<wait>	v005		reads: ところで‥‥‥ここを出て何処へ向かうつもり？\n<wait>; reads: 園田： @refalign
 m/MS0005.BIN	0:01	141	4043	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: それに、アドニスにはいろいろとやられたしな。\n奴に受けた恨みを晴らそうぜ！\n<wait> @refalign
-m/MS0005.BIN	0:01	142	4049	1FD3	新宿に向かおうと思う。新宿辺りだっ{08:50}何かできるかも知れ{08:25}。\n<wait>	新宿に向かおうと思う。新宿辺りだっ{08:50}何かできるかも知れ{08:25}。\n<wait>	I was thinking of Shinjuku. For what we're trying to accomplish,\nit seems like the perfect place.\n<wait>	v005		reads: 新宿に向かおうと思う。新宿辺りだったら何かできるかも知れない。\n<wait>
+m/MS0005.BIN	0:01	142	4049	1FD3	新宿に向かおうと思う。新宿辺りだっ{08:50}何かできるかも知れ{08:25}。\n<wait>	I'm thinking of heading for Shinjuku. Around Shinjuku we might be able\nto do something.\n<wait>	I was thinking of Shinjuku. For what we're trying to accomplish,\nit seems like the perfect place.\n<wait>	v005	draft	reads: 新宿に向かおうと思う。新宿辺りだったら何かできるかも知れない。\n<wait> @ours-2026-09-05
 m/MS0005.BIN	0:01	143	4116	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 泪： @refalign
 m/MS0005.BIN	0:01	144	4122	1FD3	{08:56}、{02:01}のメンバーが{08:40}ん{08:81}{08:25}？\n<wait>		Isn't Shinjuku under the control of Pentagramma?\n<wait>	ours		reads: でも、ペンタグランマのメンバーがいるんじゃない？\n<wait>; reads: ところで‥‥‥ここを出て何処へ向かうつもり？\n<wait>
 m/MS0005.BIN	0:01	145	4159	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 園田： @refalign
@@ -157,22 +157,22 @@ m/MS0005.BIN	0:01	149	4313	1F03						reads: 園田：
 m/MS0005.BIN	0:01	150	4317	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 新宿駅の辺りは、ペンタグランマの居住エリアなんだ。\nそこまでは俺達の事、手が回ってるとは思えないからな。\n<wait> @refalign
 m/MS0005.BIN	0:01	151	4323	1FD3	{08:87}で{02:08}{08:45}を出て何処へ向かう{01:3E}？\n		By the way... Where are we planning on heading next?\n	v005		reads: ところで‥‥‥ここを出て何処へ向かうつもり？\n; reads: 泪： @refalign
 m/MS0005.BIN	0:01	152	4370	1FB2	解ら{08:25}{08:84}		Dunno	v005		reads: 解らないけど; menu option, declared width 20 columns; reads: まあいいわ。とにかく、新宿方面に向かいましょう。\n<wait> @refalign
-m/MS0005.BIN	0:01	153	4380	1FB2	そりゃあ{08:72}	そりゃあ{08:72}	Let's see...	v005		reads: そりゃあ‥‥; menu option, declared width 20 columns
+m/MS0005.BIN	0:01	153	4380	1FB2	そりゃあ{08:72}	Well.........	Let's see...	v005	draft	reads: そりゃあ‥‥; menu option, declared width 20 columns @ours-2026-09-05
 m/MS0005.BIN	0:01	154	4392	1FB2	どこが{08:7F}？		I wonder	v005		reads: どこがいい？; menu option, declared width 20 columns; reads: 泪： @refalign
 m/MS0005.BIN	0:01	155	4430	1FD1	＞{08:90}答え{08:15}\n		>What will you say?\n	v005		reads: ＞どう答えますか？\n; reads: ところで‥‥‥ここを出て何処へ向かうつもり？\n @refalign
 m/MS0005.BIN	0:01	156	4457	1FB2	新宿		Shinjuku	v005		menu option, declared width 20 columns; reads: 解らないけど @refalign
 m/MS0005.BIN	0:01	157	4463	1FB2	池袋		Ikebukuro	v005		menu option, declared width 20 columns; reads: そりゃあ‥‥ @refalign
 m/MS0005.BIN	0:01	158	4469	1FB2	六本木		Roppongi	v005		menu option, declared width 20 columns; reads: どこがいい？ @refalign
-m/MS0005.BIN	0:01	159	4477	1FB2	実は決めて{08:25}	実は決めて{08:25}	I don't know	v005		reads: 実は決めてない; menu option, declared width 20 columns; reads: 山田
-m/MS0005.BIN	0:01	160	4519	1FD2	{08:31}：	{08:31}：	Rui:	ours		reads: 泪：; reads: ペンタグランマ^
+m/MS0005.BIN	0:01	159	4477	1FB2	実は決めて{08:25}	Not decided yet	I don't know	v005	draft	reads: 実は決めてない; menu option, declared width 20 columns; reads: 山田 @ours-2026-09-05
+m/MS0005.BIN	0:01	160	4519	1FD2	{08:31}：	Rui:	Rui:	ours	draft	reads: 泪：; reads: ペンタグランマ^ @ours-2026-09-05
 m/MS0005.BIN	0:01	161	4525	1FD3	{08:76}貴方には無理よ{08:72}\n<wait>		You're hopeless...\n<wait>	v005		reads: まだ貴方には無理よ‥‥\n<wait>; reads: ＞どう答えますか？\n @refalign
 m/MS0005.BIN	0:01	162	4557	1FD2	{08:31}：		Rui:	v005		reads: 泪：; menu option, declared width 20 columns @refalign
 m/MS0005.BIN	0:01	163	4563	1FD3	{08:72}歓楽街目当てだ{08:6A}て、言わ{08:25}で{08:80}ね？\n<wait>		...You're not saying that just because you want to visit\nthe red light district, are you?\n<wait>	v005		reads: ‥‥歓楽街目当てだなんて、言わないでしょうね？\n<wait>; menu option, declared width 20 columns @refalign
 m/MS0005.BIN	0:01	164	4611	1FD2	{08:31}：		Rui:	v005		reads: 泪：; menu option, declared width 20 columns @refalign
 m/MS0005.BIN	0:01	165	4617	1FD3	{08:4D}よりも、新宿に行{08:51}方が良いと思うわ。\n<wait>新宿は{02:01}の居住エリアらしい{08:84}、前線の連中{08:81}{08:25}{08:42}{01:32}だと思うし{02:08}。\n<wait>		I have something better in mind.\n<wait>Pentagramma has a camp at Shinjuku.\nI know we just got in trouble with them, but this is\nthankfully a separate branch, so I think it should be fine.\n<wait>	ours		reads: それよりも、新宿に行った方が良いと思うわ。\n<wait>新宿はペンタグランマの居住エリアらしいけど、前線の連中じゃないから大丈夫だと思うし‥‥‥。\n<wait>; reads: 実は決めてない; menu option, declared width 20 columns
-m/MS0005.BIN	0:01	166	4731	1FD2	{08:31}：	{08:31}：	Rui:	v005		reads: 泪：; reads: わたしたち
-m/MS0005.BIN	0:01	167	4737	1FD3	何より物が揃っ{08:14}{08:42}、{01:15}と行動し易いわ。\n<wait>	何より物が揃っ{08:14}{08:42}、{01:15}と行動し易いわ。\n<wait>	More importantly, we could really use some new gear.\n<wait>	v005		reads: 何より物が揃っているから、いろいろと行動し易いわ。\n<wait>; reads: ペンタグランマ+
-m/MS0005.BIN	0:01	168	4784	1FD2	{08:31}：	{08:31}：	Rui:	v005		reads: 泪：; reads: そんなことを攻撃し
+m/MS0005.BIN	0:01	166	4731	1FD2	{08:31}：	Rui:	Rui:	v005	draft	reads: 泪：; reads: わたしたち @ours-2026-09-05
+m/MS0005.BIN	0:01	167	4737	1FD3	何より物が揃っ{08:14}{08:42}、{01:15}と行動し易いわ。\n<wait>	Above all, everything's available there, so it's easy to get things\ndone.\n<wait>	More importantly, we could really use some new gear.\n<wait>	v005	draft	reads: 何より物が揃っているから、いろいろと行動し易いわ。\n<wait>; reads: ペンタグランマ+ @ours-2026-09-05
+m/MS0005.BIN	0:01	168	4784	1FD2	{08:31}：	Rui:	Rui:	v005	draft	reads: 泪：; reads: そんなことを攻撃し @ours-2026-09-05
 m/MS0005.BIN	0:01	169	4790	1FD3	とにかく、新宿方面に向か{08:89}{08:80}。\n<wait>		It's decided then. Off to Shinjuku we go.\n<wait>	v005		reads: とにかく、新宿方面に向かいましょう。\n<wait>; reads: 泪： @refalign
 m/MS0005.BIN	0:01	170	4828	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: まだ貴方には無理よ‥‥\n<wait> @refalign
 m/MS0005.BIN	0:01	171	4834	1FD3	{08:7F}アイデアね。\n<wait>		Good idea, right?\n<wait>	v005		reads: いいアイデアね。\n<wait>; reads: 泪： @refalign
@@ -201,7 +201,7 @@ m/MS0005.BIN	0:01	193	5362	1FD3	特にあてが無い{08:7D}、新宿に向か�
 m/MS0005.BIN	0:01	194	5456	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 何より物が揃っているから、いろいろと行動し易いわ。\n<wait> @refalign
 m/MS0005.BIN	0:01	195	5462	1FD3	懸念と言えば、新宿は{02:01}の居住エリアだ{08:52}事な{08:5F}が{02:08}\n<wait>		One downside is that there's a Pentagramma camp there.\n<wait>	ours		reads: 懸念と言えば、新宿はペンタグランマの居住エリアだって事なんだが‥‥‥\n<wait>; reads: 泪：
 m/MS0005.BIN	0:01	196	5519	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: とにかく、新宿方面に向かいましょう。\n<wait> @refalign
-m/MS0005.BIN	0:01	197	5525	1FD3	そこ{08:71}は手が回っ{08:2B}とは思え{08:25}。\n<wait>	そこ{08:71}は手が回っ{08:2B}とは思え{08:25}。\n<wait>	Still, I highly doubt that the word has gotten that far.\n<wait>	v005		reads: そこまでは手が回ってるとは思えない。\n<wait>
+m/MS0005.BIN	0:01	197	5525	1FD3	そこ{08:71}は手が回っ{08:2B}とは思え{08:25}。\n<wait>	I doubt word has reached that far.\n<wait>	Still, I highly doubt that the word has gotten that far.\n<wait>	v005	draft	reads: そこまでは手が回ってるとは思えない。\n<wait> @ours-2026-09-05
 m/MS0005.BIN	0:01	198	5564	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 園田： @refalign
 m/MS0005.BIN	0:01	199	5570	1FD3	何よりもあそこは{08:76}しも安全で、物も豊富に{08:7B}。\nまずは立ち寄{08:52}みるに限ると思う{08:5F}。\n<wait>		They're mostly safe from demons, plus we could use some new gear.\n<wait>	v005		reads: 何よりもあそこはまだしも安全で、物も豊富にある。\nまずは立ち寄ってみるに限ると思うんだ。\n<wait>; reads: ところで‥‥ @refalign
 m/MS0005.BIN	0:01	200	5658	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; reads: 、ここを出て何処へ向かうつもりなんだ？\n<wait> @refalign
@@ -364,8 +364,8 @@ m/MS0005.BIN	0:13	50	1333	1FD0	青年{08:62}動揺しながらも{08:65}に手�
 m/MS0005.BIN	0:13	51	1372	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n
 m/MS0005.BIN	0:13	52	1393	1FB2	脅す！		Threaten him	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0005.BIN	0:13	53	1401	1FB2	ほ{08:53}く		Ignore him	v005		reads: ほっとく; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0005.BIN	0:13	54	1427	1FD2	若者：	若者：	Young Man:	v005		reads: 
-m/MS0005.BIN	0:13	55	1435	1FD3	う{08:72}うわぁッ！！\n<wait>	う{08:72}うわぁッ！！\n<wait>	Whoa!\n<wait>	v005		reads: う‥‥うわぁッ！！\n<wait>
+m/MS0005.BIN	0:13	54	1427	1FD2	若者：	Young Man:	Young Man:	v005	draft	reads:  @ours-2026-09-05
+m/MS0005.BIN	0:13	55	1435	1FD3	う{08:72}うわぁッ！！\n<wait>	Wh... whoa!!\n<wait>	Whoa!\n<wait>	v005	draft	reads: う‥‥うわぁッ！！\n<wait> @ours-2026-09-05
 m/MS0005.BIN	0:13	56	1460	1FD2	若者：		Young Man:	v005		
 m/MS0005.BIN	0:13	57	1468	1FD3	ご{08:72}<wait>ごめんな{08:49}！！\n<wait>		I... <wait>I'm sorry! <wait>	v005		reads: ご‥‥<wait>ごめんなさい！！\n<wait>; reads: う‥‥うわぁッ！！\n<wait>
 m/MS0005.BIN	0:13	58	1499	1FD2	若者：		Young Man:	v005		
@@ -427,8 +427,8 @@ m/MS0005.BIN	0:2F	1	47	1F03		
 m/MS0005.BIN	0:2F	2	52	1A	御兄ちゃん達、だ{08:3F}？\nアドニス様に、新しく選ば{08:60}人達？\n		Who are you, mister?\nWere you chosen by Lord Adonis as well?\n	v005		reads: 御兄ちゃん達、だあれ？\nアドニス様に、新しく選ばれた人達？\n; reads: 御兄ちゃん達、だあれ？\nアドニス様に、新しく選ばれた人達？\n @refalign
 m/MS0005.BIN	0:2F	3	122	1FB2	{01:29}よぉ！		That's right!	v005		reads: そうだよぉ！; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0005.BIN	0:2F	4	132	1FB2	誰があんな奴！		Adonis who?	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0005.BIN	0:2F	5	171	1FD2	男の子：	男の子：	Boy:	v005		reads: 
-m/MS0005.BIN	0:2F	6	181	1FD3	ふうん{08:72}\nアドニス様{08:52}、好みが変わら{08:60}{08:5F}ね{08:72}\n<wait>	ふうん{08:72}\nアドニス様{08:52}、好みが変わら{08:60}{08:5F}ね{08:72}\n<wait>	Hmph... Guess his tastes must have changed...\n<wait>	v005		reads: ふうん‥‥\nアドニス様って、好みが変わられたんだね‥‥\n<wait>
+m/MS0005.BIN	0:2F	5	171	1FD2	男の子：	Boy:	Boy:	v005	draft	reads:  @ours-2026-09-05
+m/MS0005.BIN	0:2F	6	181	1FD3	ふうん{08:72}\nアドニス様{08:52}、好みが変わら{08:60}{08:5F}ね{08:72}\n<wait>	Hmm.........\nLord Adonis's tastes must have changed.........\n<wait>	Hmph... Guess his tastes must have changed...\n<wait>	v005	draft	reads: ふうん‥‥\nアドニス様って、好みが変わられたんだね‥‥\n<wait> @ours-2026-09-05
 m/MS0005.BIN	0:2F	7	234	1FD2	男の子：		Boy:	v005		
 m/MS0005.BIN	0:2F	8	244	1FD3	なあ{08:5F}、新しい使用人か。\n<wait>		Oh? A servant then?\n<wait>	v005		reads: なあんだ、新しい使用人か。\n<wait>; reads: ふうん‥‥\nアドニス様って、好みが変わられたんだね‥‥\n<wait>
 m/MS0005.BIN	0:2F	9	277	1FD2	男の子：		Boy:	v005		
@@ -444,8 +444,8 @@ m/MS0005.BIN	0:31	1	47	1F03		
 m/MS0005.BIN	0:31	2	52	1A	御兄ちゃん達、だ{08:3F}？\nアドニス様に、新しく選ば{08:60}人達？\n		And who might you be? Were you chosen by Lord Adonis?\n	v005		reads: 御兄ちゃん達、だあれ？\nアドニス様に、新しく選ばれた人達？\n; reads: 御兄ちゃん達、だあれ？\nアドニス様に、新しく選ばれた人達？\n @refalign
 m/MS0005.BIN	0:31	3	122	1FB2	{01:29}よぉ！		You got it!	v005		reads: そうだよぉ！; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0005.BIN	0:31	4	132	1FB2	誰があんな奴！		Who are YOU?	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0005.BIN	0:31	5	168	1FD2	男の子：	男の子：	Boy:	v005		reads: アタシ
-m/MS0005.BIN	0:31	6	178	1FD3	ふうん{08:72}\n{08:7A}に美形には見え{08:25}{08:84}なぁ{02:08}\n<wait>	ふうん{08:72}\n{08:7A}に美形には見え{08:25}{08:84}なぁ{02:08}\n<wait>	Hmph. I'm surprised. You don't really have the looks...\n<wait>	v005		reads: ふうん‥‥\nそんなに美形には見えないけどなぁ‥‥‥\n<wait>
+m/MS0005.BIN	0:31	5	168	1FD2	男の子：	Boy:	Boy:	v005	draft	reads: アタシ @ours-2026-09-05
+m/MS0005.BIN	0:31	6	178	1FD3	ふうん{08:72}\n{08:7A}に美形には見え{08:25}{08:84}なぁ{02:08}\n<wait>	Hmm.........\nYou don't look all that handsome, though............\n<wait>	Hmph. I'm surprised. You don't really have the looks...\n<wait>	v005	draft	reads: ふうん‥‥\nそんなに美形には見えないけどなぁ‥‥‥\n<wait> @ours-2026-09-05
 m/MS0005.BIN	0:31	7	223	1FD2	男の子：		Boy:	v005		
 m/MS0005.BIN	0:31	8	233	1FD3	なあ{08:5F}、新しい使用人か。\n<wait>		Oh, I know. You must be new servants. That's it.\n<wait>	v005		reads: なあんだ、新しい使用人か。\n<wait>; reads: ふうん‥‥\nそんなに美形には見えないけどなぁ‥‥‥\n<wait>
 m/MS0005.BIN	0:31	9	266	1FD2	男の子：		Boy:	v005		
@@ -465,8 +465,8 @@ m/MS0005.BIN	0:39	0	29	1FD2	青年：		Young Man:	v005
 m/MS0005.BIN	0:39	1	43	1F7C	何だお前達は！！\n{08:45}を何処だと思っ{08:14}{08:5F}？！\n<wait>		Who the hell are you people!?\nWhat right do you think you have to tread here!?\n<wait>	v005		reads: 何だお前達は！！\nここを何処だと思っているんだ？！\n<wait>
 m/MS0005.BIN	0:39	2	107	1FB2	何処かなぁ！		Here? Where?	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0005.BIN	0:39	3	121	1FB2	だ{08:42}何？		Say what?	v005		reads: だから何？; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0005.BIN	0:39	4	149	1FD2	青年：	青年：	Young Man:	v005		reads: 山瀬勇
-m/MS0005.BIN	0:39	5	157	1FD3	{01:08}様の選ば{08:60}、唯一の後継者{08:72}\n偉大{08:59}アドニス様の、神聖{08:59}御所で{08:7B}ぞ！！\n<wait>	{01:08}様の選ば{08:60}、唯一の後継者{08:72}\n偉大{08:59}アドニス様の、神聖{08:59}御所で{08:7B}ぞ！！\n<wait>	This is a holy temple of Adonis the Great, a chosen follower of Baal.\n<wait>	ours		reads: バエル様の選ばれた、唯一の後継者‥‥\n偉大なるアドニス様の、神聖なる御所であるぞ！！\n<wait>
+m/MS0005.BIN	0:39	4	149	1FD2	青年：	Young Man:	Young Man:	v005	draft	reads: 山瀬勇 @ours-2026-09-05
+m/MS0005.BIN	0:39	5	157	1FD3	{01:08}様の選ば{08:60}、唯一の後継者{08:72}\n偉大{08:59}アドニス様の、神聖{08:59}御所で{08:7B}ぞ！！\n<wait>	This is the holy residence of the great Adonis,\nthe sole successor chosen by Lord Bael!!\n<wait>	This is a holy temple of Adonis the Great, a chosen follower of Baal.\n<wait>	ours	draft	reads: バエル様の選ばれた、唯一の後継者‥‥\n偉大なるアドニス様の、神聖なる御所であるぞ！！\n<wait> @ours-2026-09-05
 m/MS0005.BIN	0:39	6	235	1FD2	青年：		Young Man:	v005		
 m/MS0005.BIN	0:39	7	243	1FD3	お前達の様な無粋な輩{08:62}即刻立ち去るが{08:7F}！！\n<wait>		Filth like you has no place here. Leave at once!\n<wait>	v005		reads: お前達の様な無粋な輩は、即刻立ち去るがいい！！\n<wait>; reads: バエル様の選ばれた、唯一の後継者‥‥\n偉大なるアドニス様の、神聖なる御所であるぞ！！\n<wait>
 m/MS0005.BIN	0:39	8	302	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 泪： @refalign
@@ -499,7 +499,7 @@ m/MS0005.BIN	0:3B	0	29	1FD2	青年：		Young Man:	v005
 m/MS0005.BIN	0:3B	1	43	1F7C	{02:08}{08:79}姿{02:08}貴方がたは{02:00}{08:55}かッ！！\n		Those clothes... You guys are Devil Busters!\n	v005		reads: ‥‥‥その姿‥‥‥貴方がたはデビルバスターですかッ！！\n
 m/MS0005.BIN	0:3B	2	90	1FB2	{01:29}！		That's right!	v005		reads: そうだ！; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0005.BIN	0:3B	3	96	1FB2	違うよん！		No we're not!	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0005.BIN	0:3B	4	129	1FD2	青年：	青年：	Young Man:	v005		reads: いつも
+m/MS0005.BIN	0:3B	4	129	1FD2	青年：	Young Man:	Young Man:	v005	draft	reads: いつも @ours-2026-09-05
 m/MS0005.BIN	0:3B	5	137	1FD3	良{08:18}{08:72}助けに来てく{08:60}の{08:55}ね！！\n<wait>		Thank god... You're here to help us, aren't you?\n<wait>	v005		reads: 良かった‥‥助けに来てくれたのですね！！\n<wait>
 m/MS0005.BIN	0:3B	6	176	1FD2	青年：		Young Man:	v005		reads: 良かった‥‥助けに来てくれたのですね！！\n<wait>
 m/MS0005.BIN	0:3B	7	184	1FD3	{08:90}か、あのアドニスを倒{08:4A}下{08:49}！\n<wait>僕は特異体質らしく{08:52}、平気だ{08:51}ん{08:55}{08:84}{02:08}\n<wait>奴{08:62}妙な薬を使{08:52}、人々を惑わ{08:13}の{08:55}！！\n<wait>		Please, you've gotta defeat Adonis!\n<wait>I'm a bit special, and was able to retain my sanity.\nHowever, the others...\n<wait>I think that he's using drugs of some sort to brainwash them.\n<wait>	v005		reads: どうか、あのアドニスを倒して下さい！\n<wait>僕は特異体質らしくって、平気だったんですけど‥‥‥\n<wait>奴は、妙な薬を使って、人々を惑わしているのです！！\n<wait>
@@ -516,8 +516,8 @@ m/MS0005.BIN	0:3C	0	29	1FD2	少女：		Girl:	v005
 m/MS0005.BIN	0:3C	1	43	1F7C	あ{08:72}貴方がたは一体？\n何だか、見かけ{08:25}顔{08:55}わ{02:08}ね。\n<wait>		Hmm? Who are you people? I don't remember seeing you before...\n<wait>	v005		reads: あ‥‥貴方がたは一体？\n何だか、見かけない顔ですわ‥‥‥ね。\n<wait>
 m/MS0005.BIN	0:3C	2	115	1FB2	気のせいだよ		We're from here	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0005.BIN	0:3C	3	129	1FB2	そう？		Hmm?	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0005.BIN	0:3C	4	155	1FD2	少女：	少女：	Girl:	v005		reads: 山瀬勇
-m/MS0005.BIN	0:3C	5	163	1FD3	そう{08:72}{08:55}わよね。\n{08:45}はアドニス様に仕{08:28}、{08:0B}達に守られて{08:5A}{08:5E}。\n<wait>	そう{08:72}{08:55}わよね。\n{08:45}はアドニス様に仕{08:28}、{08:0B}達に守られて{08:5A}{08:5E}。\n<wait>	Right... I must just be imagining things.\nWe're under the protection of Lord Adonis.\n<wait>	v005		reads: そう‥‥ですわよね。\nここはアドニス様に仕える、悪魔達に守られてますもの。\n<wait>
+m/MS0005.BIN	0:3C	4	155	1FD2	少女：	Girl:	Girl:	v005	draft	reads: 山瀬勇 @ours-2026-09-05
+m/MS0005.BIN	0:3C	5	163	1FD3	そう{08:72}{08:55}わよね。\n{08:45}はアドニス様に仕{08:28}、{08:0B}達に守られて{08:5A}{08:5E}。\n<wait>	Yes... that's right.\nThis place is protected by the demons who serve Lord Adonis.\n<wait>	Right... I must just be imagining things.\nWe're under the protection of Lord Adonis.\n<wait>	v005	draft	reads: そう‥‥ですわよね。\nここはアドニス様に仕える、悪魔達に守られてますもの。\n<wait> @ours-2026-09-05
 m/MS0005.BIN	0:3C	6	231	1FD2	少女：		Girl:	v005		
 m/MS0005.BIN	0:3C	7	239	1FD3	怪しい者が{08:73}所{08:71}、来る{08:85}あり{02:0A}わ。\n		There's no way that someone could get here with the intention\nof hurting us.\n	v005		reads: 怪しい者がこんな所まで、来るはずありませんわ。\n; reads: そう‥‥ですわよね。\nここはアドニス様に仕える、悪魔達に守られてますもの。\n<wait>
 m/MS0005.BIN	0:3C	8	275	00	あの{02:08}何か御用{08:55}か？\n<wait>		Err... Do you need something?<wait>	v005		reads: あの‥‥‥何か御用ですか？\n<wait>
@@ -527,7 +527,7 @@ m/MS0005.BIN	0:3D	2	103	1FD3	侵入者が{08:40}。と言う話は聞いて{08:6
 m/MS0005.BIN	0:3D	3	164	1FD2	アドニス：	Adonis:			draft	@ours-2026-09-05
 m/MS0005.BIN	0:3D	4	176	1FD3	私のハーレムを汚い足で踏み荒らし、優雅な時間を台無しに{08:4B}罪は重い{02:08}\n<wait>	Trampling my harem with your filthy feet and ruining my elegant hours...\na grave crime......\n<wait>			draft	reads: 私のハーレムを汚い足で踏み荒らし、優雅な時間を台無しにした罪は重い‥‥‥\n<wait>; reads: 私のハーレムを汚い足で踏み荒らし、優雅な時間を台無しにした罪は重い‥‥‥\n<wait> @ours-2026-09-05
 m/MS0005.BIN	0:3D	5	256	1FD2	アドニス：	Adonis:			draft	@ours-2026-09-05
-m/MS0005.BIN	0:3D	6	268	1FD3	{02:08}	{02:08}	Katsuragi... {1E10:01003C}It pains me that I must fight you.\n<wait>	v005		reads: ‥‥‥
+m/MS0005.BIN	0:3D	6	268	1FD3	{02:08}	...... 	Katsuragi... {1E10:01003C}It pains me that I must fight you.\n<wait>	v005	draft	reads: ‥‥‥ @ours-2026-09-05
 m/MS0005.BIN	0:3D	7	276	1F01	君。{1E10:01003C}君と戦わ{08:57}{08:7D}{08:25}とは残念だよ。\n<wait>	.{1E10:01003C}It's a pity I must fight you.\n<wait>			draft	reads: 君。{1E10:01003C}君と戦わなければならないとは残念だよ。\n<wait>; reads: 君。{1E10:01003C}君と戦わなければならないとは残念だよ。\n<wait> @ours-2026-09-05
 m/MS0005.BIN	0:3D	8	322	1FD2	アドニス：	Adonis:			draft	@ours-2026-09-05
 m/MS0005.BIN	0:3D	9	334	1FD3	君の事を信じて{08:64}のに{02:08}{02:08}\n<wait>	And I had such faith in you............\n<wait>			draft	reads: 君の事を信じていたのに‥‥‥‥‥‥\n<wait>; reads: 君の事を信じていたのに‥‥‥‥‥‥\n<wait> @ours-2026-09-05
@@ -558,7 +558,7 @@ m/MS0005.BIN	0:48	2	161	1FBA	一行{08:62}手ごろな空き{01:2E}が{08:7B}{08
 m/MS0005.BIN	0:49	0	17	18	＞一休みし{08:15}\n		>Do you wish to take a break?\n	v005		reads: ＞一休みしますか？\n; reads: ＞一休みしますか？\n @refalign
 m/MS0005.BIN	0:49	1	46	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
 m/MS0005.BIN	0:49	2	50	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
-m/MS0005.BIN	0:49	3	78	1FD0	ひとごこちつ{08:64}一行{08:62}小{01:2E}を後に{08:4B}{02:08}\n	ひとごこちつ{08:64}一行{08:62}小{01:2E}を後に{08:4B}{02:08}\n	After a small break, you leave the room.\n	v005		reads: ひとごこちついた一行は、小部屋を後にした‥‥‥\n; reads: 開発 @rebase-unmatched idx3 en=Alright @rebase-unmatched idx3 en=Alright
+m/MS0005.BIN	0:49	3	78	1FD0	ひとごこちつ{08:64}一行{08:62}小{01:2E}を後に{08:4B}{02:08}\n	Feeling somewhat recovered, the party left the small room.........\n	After a small break, you leave the room.\n	v005	draft	reads: ひとごこちついた一行は、小部屋を後にした‥‥‥\n; reads: 開発 @rebase-unmatched idx3 en=Alright @rebase-unmatched idx3 en=Alright @ours-2026-09-05
 m/MS0005.BIN	0:4A	0	31	00	{01:00}	{01:00}				reads: 早坂達也
 m/MS0005.BIN	0:4A	1	45	00	{02:00}	{02:00}				reads: デビルバスター
 m/MS0005.BIN	0:4A	2	59	00	{04:00}	{04:00}				reads: を唱えた！ 
