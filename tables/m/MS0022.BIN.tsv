@@ -3,21 +3,21 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0022.BIN	0:00	0	34	1F01	は自室に戻り、{08:05}ーを睨みつけ、\n試験結果の通知が送られて来るのを待{08:51}。\n<wait>					reads: は自室に戻り、コンピューターを睨みつけ、\n試験結果の通知が送られて来るのを待った。\n<wait>; reads: は自室に戻り、コンピューターを睨みつけ、\n試験結果の通知が送られて来るのを待った。\n<wait>
-m/MS0022.BIN	0:00	1	110	1FBA	{1E10:01003C}{1E10:01003C}{08:76}通知は来{08:25}{02:08}\n<wait>					reads: {1E10:01003C}{1E10:01003C}まだ通知は来ない‥‥‥\n<wait>; reads: {1E10:01003C}{1E10:01003C}まだ通知は来ない‥‥‥\n<wait>
-m/MS0022.BIN	0:00	2	141	1FBA	そこに、					
-m/MS0022.BIN	0:00	3	155	1F01	が、{01:2E}の中に飛び込んで来た。\n					reads: が、部屋の中に飛び込んで来た。\n; reads: が、部屋の中に飛び込んで来た。\n
-m/MS0022.BIN	0:00	4	196	1FC5	顔は上気し、息が切れ{08:14}。走{08:52}来た様だ。\n<wait>					reads: 顔は上気し、息が切れている。走って来た様だ。\n<wait>; reads: 顔は上気し、息が切れている。走って来た様だ。\n<wait>
-m/MS0022.BIN	0:00	5	275	1F01	：		:	v005		reads: ： @refalign
+m/MS0022.BIN	0:00	0	34	1F01	は自室に戻り、{08:05}ーを睨みつけ、\n試験結果の通知が送られて来るのを待{08:51}。\n<wait>	 returned to his room, stared at the computer, and waited for the\nnotification of his exam results to arrive.\n<wait>			draft	reads: は自室に戻り、コンピューターを睨みつけ、\n試験結果の通知が送られて来るのを待った。\n<wait>; reads: は自室に戻り、コンピューターを睨みつけ、\n試験結果の通知が送られて来るのを待った。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:00	1	110	1FBA	{1E10:01003C}{1E10:01003C}{08:76}通知は来{08:25}{02:08}\n<wait>	{1E10:01003C}{1E10:01003C}Still no notification.........\n<wait>			draft	reads: {1E10:01003C}{1E10:01003C}まだ通知は来ない‥‥‥\n<wait>; reads: {1E10:01003C}{1E10:01003C}まだ通知は来ない‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:00	2	141	1FBA	そこに、	Just then, 			draft	@ours-2026-09-05
+m/MS0022.BIN	0:00	3	155	1F01	が、{01:2E}の中に飛び込んで来た。\n	 burst into the room.\n			draft	reads: が、部屋の中に飛び込んで来た。\n; reads: が、部屋の中に飛び込んで来た。\n @ours-2026-09-05
+m/MS0022.BIN	0:00	4	196	1FC5	顔は上気し、息が切れ{08:14}。走{08:52}来た様だ。\n<wait>	Her face was flushed and she was out of breath. She seemed to have run\nhere.\n<wait>			draft	reads: 顔は上気し、息が切れている。走って来た様だ。\n<wait>; reads: 顔は上気し、息が切れている。走って来た様だ。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:00	5	275	1F01	：	: 	:	v005	draft	reads: ： @refalign @ours-2026-09-05
 m/MS0022.BIN	0:00	6	285	1F01	くんッ！　私{08:72}私、合格{08:4B}わ！！\n<wait>		Katsuragi-kun! I... I passed the exam!\n<wait>	v005		reads: くんッ！　私‥‥私、合格したわ！！\n<wait>; reads: くんッ！　私‥‥私、合格したわ！！\n<wait> @refalign
-m/MS0022.BIN	0:00	7	330	1F01	：		:	v005		reads: ： @refalign
-m/MS0022.BIN	0:00	8	340	1F01	くんは？！\n<wait>					reads: くんは？！\n<wait>
-m/MS0022.BIN	0:00	9	409	1FD0	{08:65}が入{08:51}{08:72}恐らく、試験結果の通知{08:8C}。\n<wait>					reads: 通信が入った‥‥恐らく、試験結果の通知だろう。\n<wait>; reads: 通信が入った‥‥恐らく、試験結果の通知だろう。\n<wait>
-m/MS0022.BIN	0:00	10	452	1FBA	震{08:28}手でキーボードを打つ、					reads: 震える手でキーボードを打つ、; reads: 震える手でキーボードを打つ、
-m/MS0022.BIN	0:00	11	484	1F01	。\n<wait>結果が画面に写し出{03:0C}た。\n<wait>					reads: 。\n<wait>結果が画面に写し出された。\n<wait>; reads: 。\n<wait>結果が画面に写し出された。\n<wait>
+m/MS0022.BIN	0:00	7	330	1F01	：	: 	:	v005	draft	reads: ： @refalign @ours-2026-09-05
+m/MS0022.BIN	0:00	8	340	1F01	くんは？！\n<wait>	?!\n<wait>			draft	reads: くんは？！\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:00	9	409	1FD0	{08:65}が入{08:51}{08:72}恐らく、試験結果の通知{08:8C}。\n<wait>	A transmission came in... most likely the exam result notification.\n<wait>			draft	reads: 通信が入った‥‥恐らく、試験結果の通知だろう。\n<wait>; reads: 通信が入った‥‥恐らく、試験結果の通知だろう。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:00	10	452	1FBA	震{08:28}手でキーボードを打つ、	With trembling hands, 			draft	reads: 震える手でキーボードを打つ、; reads: 震える手でキーボードを打つ、 @ours-2026-09-05
+m/MS0022.BIN	0:00	11	484	1F01	。\n<wait>結果が画面に写し出{03:0C}た。\n<wait>	 typed at the keyboard.\n<wait>The results appeared on the screen.\n<wait>			draft	reads: 。\n<wait>結果が画面に写し出された。\n<wait>; reads: 。\n<wait>結果が画面に写し出された。\n<wait> @ours-2026-09-05
 m/MS0022.BIN	0:00	12	528	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：; reads: 管理部： @refalign
-m/MS0022.BIN	0:00	13	534	1FD3	受験番号０９１６　					
-m/MS0022.BIN	0:00	14	558	1F01	殿。\n<wait>					reads: 殿。\n<wait>
+m/MS0022.BIN	0:00	13	534	1FD3	受験番号０９１６　	Examinee No. 0916, 			draft	@ours-2026-09-05
+m/MS0022.BIN	0:00	14	558	1F01	殿。\n<wait>	.\n<wait>			draft	reads: 殿。\n<wait> @ours-2026-09-05
 m/MS0022.BIN	0:00	15	598	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：; reads: 管理部： @refalign
 m/MS0022.BIN	0:00	16	604	1FD3	貴殿を、{08:82}今を以て、\n{02:00}隊員と{08:4A}承認{08:8E}。\n<wait>		We would like to inform you that you have\nthus been accepted as a member of\nthe Devil Busters.\n<wait>	v005		reads: 貴殿を、ただ今を以て、\nデビルバスター隊員として承認する。\n<wait>; reads: 貴殿を、ただ今を以て、\nデビルバスター隊員として承認する。\n<wait> @refalign
 m/MS0022.BIN	0:00	17	652	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：; reads: 管理部： @refalign
@@ -45,46 +45,46 @@ m/MS0022.BIN	0:00	38	1276	1FD3	{08:47}技能に磨きをかけ、再試験に臨
 m/MS0022.BIN	0:00	39	1327	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：; reads: 管理部： @refalign
 m/MS0022.BIN	0:00	40	1333	1FD3	日頃の鍛錬は怠らぬ{08:69}に。\n<wait>		Do not let this setback stop\nyou from improving yourself.\n<wait>	v005		reads: 日頃の鍛錬は怠らぬように。\n<wait>; reads: 日頃の鍛錬は怠らぬように。\n<wait> @refalign
 m/MS0022.BIN	0:00	41	1366	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：; reads: 管理部： @refalign
-m/MS0022.BIN	0:00	42	1372	1FD3	又、追試の日取りに付いて{08:62}お{08:52}{02:0E}{08:42}\n連絡{08:8E}。\n<wait>　　　　　　　　　　　　　　以上。\n<wait>					reads: 又、追試の日取りに付いては、おってこちらから\n連絡する。\n<wait>　　　　　　　　　　　　　　以上。\n<wait>; reads: 又、追試の日取りに付いては、おってこちらから\n連絡する。\n<wait>　　　　　　　　　　　　　　以上。\n<wait>
-m/MS0022.BIN	0:00	43	1471	1F01	{08:62}{08:05}ーに向かい、追試希望の旨を伝{08:28}メールを、\n黙々と打{08:51}。\n<wait>					reads: は、コンピューターに向かい、追試希望の旨を伝えるメールを、\n黙々と打った。\n<wait>; reads: は、コンピューターに向かい、追試希望の旨を伝えるメールを、\n黙々と打った。\n<wait> @rebase-tagdiff
-m/MS0022.BIN	0:00	44	1535	1FBA	{08:79}側で、					reads: その側で、; reads: その側で、
-m/MS0022.BIN	0:00	45	1549	1F01	が所在なさ気に立っ{08:14}。\n<wait>					reads: が所在なさ気に立っている。\n<wait>; reads: が所在なさ気に立っている。\n<wait>
-m/MS0022.BIN	0:01	0	74	1FD0	{08:65}が入っ{08:14}{02:08}{08:72}\n<wait>					reads: 通信が入っている‥‥‥‥‥\n<wait>; reads: 通信が入っている‥‥‥‥‥\n<wait>
-m/MS0022.BIN	0:01	1	105	1FD2	原宿{08:10}：					reads: 原宿シェルター：; reads: 原宿シェルター：
-m/MS0022.BIN	0:01	2	115	1FD3	{02:0E}原宿{08:10}\n<wait>					reads: こちら原宿シェルター\n<wait>; reads: こちら原宿シェルター\n<wait>
-m/MS0022.BIN	0:01	3	132	1FD2	原宿{08:10}：					reads: 原宿シェルター：; reads: 原宿シェルター：
-m/MS0022.BIN	0:01	4	142	1FD3	“{08:0B}撃退{08:09}”完成により、戦況は逆転。\n{08:0B}の駆逐に成功。\n<wait>					reads: “悪魔撃退プログラム”完成により、戦況は逆転。\n悪魔の駆逐に成功。\n<wait>; reads: “悪魔撃退プログラム”完成により、戦況は逆転。\n悪魔の駆逐に成功。\n<wait>
-m/MS0022.BIN	0:01	5	204	1FD2	原宿{08:10}：					reads: 原宿シェルター：; reads: 原宿シェルター：
-m/MS0022.BIN	0:01	6	214	1FD3	但し、{01:2B}ウイルス感染者に関{08:4A}{08:62}\n今後の{03:10}の見込みが望め{08:25}事{08:42}{08:72}\n<wait>					reads: 但し、ゾンビウイルス感染者に関しては、\n今後の回復の見込みが望めない事から‥‥\n<wait>; reads: 但し、ゾンビウイルス感染者に関しては、\n今後の回復の見込みが望めない事から‥‥\n<wait>
-m/MS0022.BIN	0:01	7	284	1FD2	原宿{08:10}：					reads: 原宿シェルター：; reads: 原宿シェルター：
-m/MS0022.BIN	0:01	8	294	1FD3	内部的に処分を行{08:16}。\n<wait>					reads: 内部的に処分を行なった。\n<wait>; reads: 内部的に処分を行なった。\n<wait>
-m/MS0022.BIN	0:01	9	323	1FD2	原宿{08:10}：					reads: 原宿シェルター：; reads: 原宿シェルター：
-m/MS0022.BIN	0:01	10	333	1FD3	住民のパニックも沈静。\n現在、捕虜の訊問をおこなっ{08:14}。\n<wait>					reads: 住民のパニックも沈静。\n現在、捕虜の訊問をおこなっている。\n<wait>; reads: 住民のパニックも沈静。\n現在、捕虜の訊問をおこなっている。\n<wait>
-m/MS0022.BIN	0:01	11	393	1FD2	原宿{08:10}：					reads: 原宿シェルター：; reads: 原宿シェルター：
-m/MS0022.BIN	0:01	12	403	1FD3	極めて有用な{08:47}{08:09}を、転送{08:4A}おく。\n<wait>					reads: 極めて有用なこのプログラムを、転送しておく。\n<wait>; reads: 極めて有用なこのプログラムを、転送しておく。\n<wait>
-m/MS0022.BIN	0:01	13	444	1FD2	原宿{08:10}：					reads: 原宿シェルター：; reads: 原宿シェルター：
-m/MS0022.BIN	0:01	14	454	1FD3	大抵の{08:0B}に{08:62}{08:79}効力を発揮{08:8E}{08:85}だ。\n<wait>					reads: 大抵の悪魔には、その効力を発揮するはずだ。\n<wait>; reads: 大抵の悪魔には、その効力を発揮するはずだ。\n<wait>
-m/MS0022.BIN	0:01	15	495	1FD0	{08:0A}の種類は圧縮{08:0A}。{08:0A}容量は１．５ギガバイト{08:55}。\n<wait>					reads: データの種類は圧縮データ。データ容量は１．５ギガバイトです。\n<wait>; reads: データの種類は圧縮データ。データ容量は１．５ギガバイトです。\n<wait>
-m/MS0022.BIN	0:01	16	548	1FBA	{08:0A}の{03:09}ロードを開始し{08:5A}。\n<wait>					reads: データのダウンロードを開始します。\n<wait>; reads: データのダウンロードを開始します。\n<wait>
-m/MS0022.BIN	0:01	17	585	1FFA	{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{08:72}\n<wait>	{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{08:72}\n<wait>				reads: ‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥\n<wait>
-m/MS0022.BIN	0:01	18	618	1FFA	{03:09}ロード終了\n<wait>					reads: ダウンロード終了\n<wait>; reads: ダウンロード終了\n<wait>
-m/MS0022.BIN	0:01	19	641	1F72	“{08:0B}撃退{08:09}”を{03:09}ロード{08:4B}。\n<wait>					reads: “悪魔撃退プログラム”をダウンロードした。\n<wait>; reads: “悪魔撃退プログラム”をダウンロードした。\n<wait>
-m/MS0022.BIN	0:01	20	676	1FD1	＞{02:06}\n<wait>					reads: ＞どうしますか？\n<wait>; reads: ＞どうしますか？\n<wait>
+m/MS0022.BIN	0:00	42	1372	1FD3	又、追試の日取りに付いて{08:62}お{08:52}{02:0E}{08:42}\n連絡{08:8E}。\n<wait>　　　　　　　　　　　　　　以上。\n<wait>	Also, you will be contacted separately regarding the date of the\nre-examination.\n<wait>                              End of message.\n<wait>			draft	reads: 又、追試の日取りに付いては、おってこちらから\n連絡する。\n<wait>　　　　　　　　　　　　　　以上。\n<wait>; reads: 又、追試の日取りに付いては、おってこちらから\n連絡する。\n<wait>　　　　　　　　　　　　　　以上。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:00	43	1471	1F01	{08:62}{08:05}ーに向かい、追試希望の旨を伝{08:28}メールを、\n黙々と打{08:51}。\n<wait>	 sat at the computer and silently typed an email requesting the\nre-examination.\n<wait>			draft	reads: は、コンピューターに向かい、追試希望の旨を伝えるメールを、\n黙々と打った。\n<wait>; reads: は、コンピューターに向かい、追試希望の旨を伝えるメールを、\n黙々と打った。\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS0022.BIN	0:00	44	1535	1FBA	{08:79}側で、	Beside him, 			draft	reads: その側で、; reads: その側で、 @ours-2026-09-05
+m/MS0022.BIN	0:00	45	1549	1F01	が所在なさ気に立っ{08:14}。\n<wait>	 stood there looking at a loss.\n<wait>			draft	reads: が所在なさ気に立っている。\n<wait>; reads: が所在なさ気に立っている。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	0	74	1FD0	{08:65}が入っ{08:14}{02:08}{08:72}\n<wait>	There is an incoming transmission............\n<wait>			draft	reads: 通信が入っている‥‥‥‥‥\n<wait>; reads: 通信が入っている‥‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	1	105	1FD2	原宿{08:10}：	Harajuku Shelter:			draft	reads: 原宿シェルター：; reads: 原宿シェルター： @ours-2026-09-05
+m/MS0022.BIN	0:01	2	115	1FD3	{02:0E}原宿{08:10}\n<wait>	This is Harajuku Shelter\n<wait>			draft	reads: こちら原宿シェルター\n<wait>; reads: こちら原宿シェルター\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	3	132	1FD2	原宿{08:10}：	Harajuku Shelter:			draft	reads: 原宿シェルター：; reads: 原宿シェルター： @ours-2026-09-05
+m/MS0022.BIN	0:01	4	142	1FD3	“{08:0B}撃退{08:09}”完成により、戦況は逆転。\n{08:0B}の駆逐に成功。\n<wait>	With the completion of the "Demon Repelling Program", the tide of battle\nhas turned.\nThe demons have been driven out.\n<wait>			draft	reads: “悪魔撃退プログラム”完成により、戦況は逆転。\n悪魔の駆逐に成功。\n<wait>; reads: “悪魔撃退プログラム”完成により、戦況は逆転。\n悪魔の駆逐に成功。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	5	204	1FD2	原宿{08:10}：	Harajuku Shelter:			draft	reads: 原宿シェルター：; reads: 原宿シェルター： @ours-2026-09-05
+m/MS0022.BIN	0:01	6	214	1FD3	但し、{01:2B}ウイルス感染者に関{08:4A}{08:62}\n今後の{03:10}の見込みが望め{08:25}事{08:42}{08:72}\n<wait>	However, as there is no prospect of recovery for those infected with\nthe zombie virus...\n<wait>			draft	reads: 但し、ゾンビウイルス感染者に関しては、\n今後の回復の見込みが望めない事から‥‥\n<wait>; reads: 但し、ゾンビウイルス感染者に関しては、\n今後の回復の見込みが望めない事から‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	7	284	1FD2	原宿{08:10}：	Harajuku Shelter:			draft	reads: 原宿シェルター：; reads: 原宿シェルター： @ours-2026-09-05
+m/MS0022.BIN	0:01	8	294	1FD3	内部的に処分を行{08:16}。\n<wait>	they have been disposed of internally.\n<wait>			draft	reads: 内部的に処分を行なった。\n<wait>; reads: 内部的に処分を行なった。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	9	323	1FD2	原宿{08:10}：	Harajuku Shelter:			draft	reads: 原宿シェルター：; reads: 原宿シェルター： @ours-2026-09-05
+m/MS0022.BIN	0:01	10	333	1FD3	住民のパニックも沈静。\n現在、捕虜の訊問をおこなっ{08:14}。\n<wait>	The residents' panic has subsided.\nInterrogation of prisoners is currently under way.\n<wait>			draft	reads: 住民のパニックも沈静。\n現在、捕虜の訊問をおこなっている。\n<wait>; reads: 住民のパニックも沈静。\n現在、捕虜の訊問をおこなっている。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	11	393	1FD2	原宿{08:10}：	Harajuku Shelter:			draft	reads: 原宿シェルター：; reads: 原宿シェルター： @ours-2026-09-05
+m/MS0022.BIN	0:01	12	403	1FD3	極めて有用な{08:47}{08:09}を、転送{08:4A}おく。\n<wait>	We are transferring this extremely useful program to you.\n<wait>			draft	reads: 極めて有用なこのプログラムを、転送しておく。\n<wait>; reads: 極めて有用なこのプログラムを、転送しておく。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	13	444	1FD2	原宿{08:10}：	Harajuku Shelter:			draft	reads: 原宿シェルター：; reads: 原宿シェルター： @ours-2026-09-05
+m/MS0022.BIN	0:01	14	454	1FD3	大抵の{08:0B}に{08:62}{08:79}効力を発揮{08:8E}{08:85}だ。\n<wait>	It should prove effective against most demons.\n<wait>			draft	reads: 大抵の悪魔には、その効力を発揮するはずだ。\n<wait>; reads: 大抵の悪魔には、その効力を発揮するはずだ。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	15	495	1FD0	{08:0A}の種類は圧縮{08:0A}。{08:0A}容量は１．５ギガバイト{08:55}。\n<wait>	Data type: compressed data. Data size: 1.5 gigabytes.\n<wait>			draft	reads: データの種類は圧縮データ。データ容量は１．５ギガバイトです。\n<wait>; reads: データの種類は圧縮データ。データ容量は１．５ギガバイトです。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	16	548	1FBA	{08:0A}の{03:09}ロードを開始し{08:5A}。\n<wait>	Beginning data download.\n<wait>			draft	reads: データのダウンロードを開始します。\n<wait>; reads: データのダウンロードを開始します。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	17	585	1FFA	{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{08:72}\n<wait>	..............................\n<wait>			draft	reads: ‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	18	618	1FFA	{03:09}ロード終了\n<wait>	Download complete\n<wait>			draft	reads: ダウンロード終了\n<wait>; reads: ダウンロード終了\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	19	641	1F72	“{08:0B}撃退{08:09}”を{03:09}ロード{08:4B}。\n<wait>	Downloaded the "Demon Repelling Program".\n<wait>			draft	reads: “悪魔撃退プログラム”をダウンロードした。\n<wait>; reads: “悪魔撃退プログラム”をダウンロードした。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	20	676	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>			draft	reads: ＞どうしますか？\n<wait>; reads: ＞どうしますか？\n<wait> @ours-2026-09-05
 m/MS0022.BIN	0:01	21	703	1FB2	{08:04}に報告		Inform Nishino	v005		reads: 西野に報告; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0022.BIN	0:01	22	713	1FB2	{01:2D}に報告		Inform Administration	v005		reads: 管理部に報告; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0022.BIN	0:01	23	723	1FB2	{08:00}に相談		Consult Hayasaka	v005		reads: 早坂に相談; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0022.BIN	0:01	24	733	1FB2	{08:63}で解析{08:8E}		Analyse it yourself	v005		reads: 自分で解析する; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0022.BIN	0:01	25	777	1F01	{08:62}{08:65}で{08:04}を呼び出{08:4B}{08:72}\n<wait>	{08:62}{08:65}で{08:04}を呼び出{08:4B}{08:72}\n<wait>				reads: は、通信で西野を呼び出した‥‥\n<wait>; reads: あなたに切り＞外す仲魔を選んで下さい @rebase-new
+m/MS0022.BIN	0:01	25	777	1F01	{08:62}{08:65}で{08:04}を呼び出{08:4B}{08:72}\n<wait>	 called Nishino over the comm...\n<wait>			draft	reads: は、通信で西野を呼び出した‥‥\n<wait>; reads: あなたに切り＞外す仲魔を選んで下さい @rebase-new @ours-2026-09-05
 m/MS0022.BIN	0:01	26	849	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: は、通信で西野を呼び出した‥‥\n<wait> @refalign
-m/MS0022.BIN	0:01	27	855	1FD3	{08:26}、{02:0E}{08:04}。\n何だ、					reads: はい、こちら西野。\n何だ、; reads: 西野：
-m/MS0022.BIN	0:01	28	878	1F01	か。{08:90}か{08:4B}のか？\n<wait>					reads: か。どうかしたのか？\n<wait>; reads: はい、こちら西野。\n何だ、
-m/MS0022.BIN	0:01	29	909	1F01	{08:62}{08:04}に、原宿{08:42}の{08:65}について{08:72}。\nそ{08:4A}一緒に送られて来た“{08:0B}撃退{08:09}”と称{08:8E}、不可解な{08:0A}に\nついて、全てを詳細に報告{08:4B}。\n<wait>					reads: は、西野に、原宿からの通信について‥‥。\nそして一緒に送られて来た“悪魔撃退プログラム”と称する、不可解なデータに\nついて、全てを詳細に報告した。\n<wait>; reads: か。どうかしたのか？\n<wait>
+m/MS0022.BIN	0:01	27	855	1FD3	{08:26}、{02:0E}{08:04}。\n何だ、	Yes, this is Nishino.\nOh, it's you, 			draft	reads: はい、こちら西野。\n何だ、; reads: 西野： @ours-2026-09-05
+m/MS0022.BIN	0:01	28	878	1F01	か。{08:90}か{08:4B}のか？\n<wait>	. Something wrong?\n<wait>			draft	reads: か。どうかしたのか？\n<wait>; reads: はい、こちら西野。\n何だ、 @ours-2026-09-05
+m/MS0022.BIN	0:01	29	909	1F01	{08:62}{08:04}に、原宿{08:42}の{08:65}について{08:72}。\nそ{08:4A}一緒に送られて来た“{08:0B}撃退{08:09}”と称{08:8E}、不可解な{08:0A}に\nついて、全てを詳細に報告{08:4B}。\n<wait>	 reported everything in detail to Nishino: the transmission from\nHarajuku, and the mysterious data sent with it, called the "Demon\nRepelling Program".\n<wait>			draft	reads: は、西野に、原宿からの通信について‥‥。\nそして一緒に送られて来た“悪魔撃退プログラム”と称する、不可解なデータに\nついて、全てを詳細に報告した。\n<wait>; reads: か。どうかしたのか？\n<wait> @ours-2026-09-05
 m/MS0022.BIN	0:01	30	1038	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: は、西野に、原宿からの通信について‥‥。\nそして一緒に送られて来た“悪魔撃退プログラム”と称する、不可解なデータに\nついて、全てを詳細に報告した。\n<wait> @refalign
 m/MS0022.BIN	0:01	31	1044	1FD3	{02:08}‥{08:59}ほど。\n<wait>		Hmm... How curious.\n<wait>	v005		reads: ‥‥‥‥なるほど。\n<wait>; reads: 西野： @refalign
 m/MS0022.BIN	0:01	32	1065	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: ‥‥‥‥なるほど。\n<wait> @refalign
-m/MS0022.BIN	0:01	33	1071	1FD3	私の方{08:42}、今すぐ{01:2D}に報告し{08:69}。\n					reads: 私の方から、今すぐ管理部に報告しよう。\n; reads: 西野：
-m/MS0022.BIN	0:01	34	1108	1F01	、悪いが少し待{08:52}いてくれ。\n<wait>					reads: 、悪いが少し待っていてくれ。\n<wait>; reads: 私の方から、今すぐ管理部に報告しよう。\n
-m/MS0022.BIN	0:01	35	1153	1F01	{08:62}{08:04}の連絡を待{08:51}{02:08}‥\n<wait>					reads: は、西野の連絡を待った‥‥‥‥\n<wait>; reads: 、悪いが少し待っていてくれ。\n<wait>
+m/MS0022.BIN	0:01	33	1071	1FD3	私の方{08:42}、今すぐ{01:2D}に報告し{08:69}。\n	I'll report to Administration myself, right away.\n			draft	reads: 私の方から、今すぐ管理部に報告しよう。\n; reads: 西野： @ours-2026-09-05
+m/MS0022.BIN	0:01	34	1108	1F01	、悪いが少し待{08:52}いてくれ。\n<wait>	, sorry, but wait a little.\n<wait>			draft	reads: 、悪いが少し待っていてくれ。\n<wait>; reads: 私の方から、今すぐ管理部に報告しよう。\n @ours-2026-09-05
+m/MS0022.BIN	0:01	35	1153	1F01	{08:62}{08:04}の連絡を待{08:51}{02:08}‥\n<wait>	 waited for word from Nishino............\n<wait>			draft	reads: は、西野の連絡を待った‥‥‥‥\n<wait>; reads: 、悪いが少し待っていてくれ。\n<wait> @ours-2026-09-05
 m/MS0022.BIN	0:01	36	1224	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: は、西野の連絡を待った‥‥‥‥\n<wait> @refalign
 m/MS0022.BIN	0:01	37	1236	1F01	、{08:48}{08:42}言う事は良く聞いて、\nきちんと対処{08:4A}欲しい。\n<wait>		Listen closely, Ayato.\n<wait>	v005		reads: 、これから言う事は良く聞いて、\nきちんと対処して欲しい。\n<wait>; reads: 西野： @rebase-tagdiff @refalign
 m/MS0022.BIN	0:01	38	1294	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 、これから言う事は良く聞いて、\nきちんと対処して欲しい。\n<wait> @refalign
@@ -102,77 +102,77 @@ m/MS0022.BIN	0:01	49	1667	1FD3	ラボも{01:2D}も、{08:09}に関心は示{08:1
 m/MS0022.BIN	0:01	50	1737	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>; reads: ラボも管理部も、プログラムに関心は示しているのだよ。\n済まないが、宜しく頼んだぞ。\n<wait> @refalign
 m/MS0022.BIN	0:01	51	1764	1FB2	{08:63}で解析		Analyse it by yourself	v005		reads: 自分で解析; menu option, declared width 20 columns; reads: ＞どうしますか？\n<wait> @refalign
 m/MS0022.BIN	0:01	52	1774	1FB2	{08:03}に解析さ{08:2A}		Let Emi do it	v005		reads: 英美に解析させる; menu option, declared width 20 columns; reads: 自分で解析 @refalign
-m/MS0022.BIN	0:01	53	1812	1F01	{08:62}すぐさま{01:2D}に{08:65}を入{08:60}。\n<wait>					reads: は、すぐさま管理部に通信を入れた。\n<wait>; reads: 英美に解析させる; menu option, declared width 20 columns @rebase-new
-m/MS0022.BIN	0:01	54	1880	1FD2	オペレーター：	オペレーター：	Operator:	v005		reads: 
-m/MS0022.BIN	0:01	55	1896	1FD3	{08:26}、{02:0E}{01:2D}{08:55}。\n<wait>					reads: はい、こちら管理部です。\n<wait>; reads: は、すぐさま管理部に通信を入れた。\n<wait> @rebase-unmatched idx55 en=You decide to report the matter to the Administrator's Office.\n<wait>
-m/MS0022.BIN	0:01	56	1923	1F01	{08:62}事のいきさつを全て報告{08:4B}。\n<wait>					reads: は、事のいきさつを全て報告した。\n<wait>; reads: は、事のいきさつを全て報告した。\n<wait> @rebase-tagdiff
-m/MS0022.BIN	0:01	57	1964	1FD2	オペレーター：					reads: はい、こちら管理部です。\n<wait>
-m/MS0022.BIN	0:01	58	1980	1FD3	{02:08}‥分かりま{08:4B}。\n至急ラボと上層に{08:79}旨を伝え、指示を仰ぎ{08:5A}。\n<wait>					reads: ‥‥‥‥分かりました。\n至急ラボと上層にその旨を伝え、指示を仰ぎます。\n<wait>; reads: は、事のいきさつを全て報告した。\n<wait>
-m/MS0022.BIN	0:01	59	2046	1FD2	オペレーター：					
-m/MS0022.BIN	0:01	60	2062	1FD3	{08:79}{08:7E}、お待ち下{08:49}。\n<wait>					reads: そのまま、お待ち下さい。\n<wait>; reads: ‥‥‥‥分かりました。\n至急ラボと上層にその旨を伝え、指示を仰ぎます。\n<wait>
-m/MS0022.BIN	0:01	61	2099	1F01	{08:62}{01:2D}{08:42}の返答を待{08:51}{02:08}‥\n<wait>					reads: は、管理部からの返答を待った‥‥‥‥\n<wait>; reads: は、管理部からの返答を待った‥‥‥‥\n<wait> @rebase-tagdiff
-m/MS0022.BIN	0:01	62	2172	1FD2	オペレーター：					reads: そのまま、お待ち下さい。\n<wait>
-m/MS0022.BIN	0:01	63	2188	1FD3	現在、ラボでは大規模なプロジェクトが\n発動{03:0C}ており{02:08}\n<wait>					reads: 現在、ラボでは大規模なプロジェクトが\n発動されており‥‥‥\n<wait>; reads: は、管理部からの返答を待った‥‥‥‥\n<wait>
-m/MS0022.BIN	0:01	64	2248	1FD2	オペレーター：					
-m/MS0022.BIN	0:01	65	2264	1FD3	{08:09}の解析を行なう為の人員を、廻す事が\n出来{08:25}との事{08:55}。\n<wait>					reads: プログラムの解析を行なう為の人員を、廻す事が\n出来ないとの事です。\n<wait>; reads: 現在、ラボでは大規模なプロジェクトが\n発動されており‥‥‥\n<wait>
-m/MS0022.BIN	0:01	66	2326	1FD2	オペレーター：					
-m/MS0022.BIN	0:01	67	2342	1FD3	更に、上層部{08:42}の意向で{08:62}貴方自身が解析を実行し、\n{08:09}内容の確認を行なうか{02:08}\n<wait>					reads: 更に、上層部からの意向では、貴方自身が解析を実行し、\nプログラム内容の確認を行なうか‥‥‥\n<wait>; reads: プログラムの解析を行なう為の人員を、廻す事が\n出来ないとの事です。\n<wait>
-m/MS0022.BIN	0:01	68	2422	1FD2	オペレーター：					
-m/MS0022.BIN	0:01	69	2438	1FD3	{08:5D}く{08:62}{01:02}に{08:0A}を受け渡し、\n解析さ{08:2A}かの、いずれかの方法で作業を進め{02:08}\n<wait>					reads: もしくは、桐島英美にデータを受け渡し、\n解析させるかの、いずれかの方法で作業を進め‥‥‥\n<wait>; reads: 更に、上層部からの意向では、貴方自身が解析を実行し、\nプログラム内容の確認を行なうか‥‥‥\n<wait>
-m/MS0022.BIN	0:01	70	2512	1FD2	オペレーター：					
-m/MS0022.BIN	0:01	71	2528	1FD3	結果を{01:2D}に報告{08:8E}様にとの事{08:55}。\n<wait>					reads: 結果を管理部に報告する様にとの事です。\n<wait>; reads: もしくは、桐島英美にデータを受け渡し、\n解析させるかの、いずれかの方法で作業を進め‥‥‥\n<wait>
-m/MS0022.BIN	0:01	72	2567	1FD2	オペレーター：					
-m/MS0022.BIN	0:01	73	2583	1FD3	{01:3F}が適任で{08:7B}かの判断{08:62}貴方自身に任{08:2A}\nとの事{08:55}ので、そちらで判断し、対処願い{08:5A}。\n<wait>					reads: どちらが適任であるかの判断は、貴方自身に任せる\nとの事ですので、そちらで判断し、対処願います。\n<wait>; reads: 結果を管理部に報告する様にとの事です。\n<wait>
-m/MS0022.BIN	0:01	74	2669	1FD2	オペレーター：					
-m/MS0022.BIN	0:01	75	2685	1FD3	以上で、{08:65}を終了致し{08:5A}。\n<wait>					reads: 以上で、通信を終了致します。\n<wait>; reads: どちらが適任であるかの判断は、貴方自身に任せる\nとの事ですので、そちらで判断し、対処願います。\n<wait>
-m/MS0022.BIN	0:01	76	2740	1F01	{08:62}{08:00}の所に{03:09}ロード{08:4B}{08:0A}を持{08:52}いく事に{08:4B}{02:08}‥\n<wait>					reads: は、早坂の所にダウンロードしたデータを持っていく事にした‥‥‥‥\n<wait>; reads: は、早坂の所にダウンロードしたデータを持っていく事にした‥‥‥‥\n<wait> @rebase-tagdiff
-m/MS0022.BIN	0:01	77	2822	1F01	{08:62}{08:03}の所に{03:09}ロード{08:4B}{08:0A}を持{08:52}いく事に{08:4B}{02:08}‥\n<wait>					reads: は、英美の所にダウンロードしたデータを持っていく事にした‥‥‥‥\n<wait>; reads: 以上で、通信を終了致します。\n<wait> @rebase-tagdiff
-m/MS0022.BIN	0:01	78	2921	1F01	{08:62}{08:63}で{08:47}{08:0A}を解凍し、解析{08:8E}事に{08:4B}。\n<wait>					reads: は、自分でこのデータを解凍し、解析する事にした。\n<wait>; reads: は、早坂の所にダウンロードしたデータを持っていく事にした‥‥‥‥\n<wait> @rebase-tagdiff
+m/MS0022.BIN	0:01	53	1812	1F01	{08:62}すぐさま{01:2D}に{08:65}を入{08:60}。\n<wait>	 immediately contacted Administration.\n<wait>			draft	reads: は、すぐさま管理部に通信を入れた。\n<wait>; reads: 英美に解析させる; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
+m/MS0022.BIN	0:01	54	1880	1FD2	オペレーター：	Operator:	Operator:	v005	draft	reads:  @ours-2026-09-05
+m/MS0022.BIN	0:01	55	1896	1FD3	{08:26}、{02:0E}{01:2D}{08:55}。\n<wait>	Yes, this is Administration.\n<wait>			draft	reads: はい、こちら管理部です。\n<wait>; reads: は、すぐさま管理部に通信を入れた。\n<wait> @rebase-unmatched idx55 en=You decide to report the matter to the Administrator's Office.\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	56	1923	1F01	{08:62}事のいきさつを全て報告{08:4B}。\n<wait>	 reported the whole story.\n<wait>			draft	reads: は、事のいきさつを全て報告した。\n<wait>; reads: は、事のいきさつを全て報告した。\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS0022.BIN	0:01	57	1964	1FD2	オペレーター：	Operator:			draft	reads: はい、こちら管理部です。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	58	1980	1FD3	{02:08}‥分かりま{08:4B}。\n至急ラボと上層に{08:79}旨を伝え、指示を仰ぎ{08:5A}。\n<wait>	.........Understood.\nI will pass this on to the Lab and the upper levels at once and ask for\ninstructions.\n<wait>			draft	reads: ‥‥‥‥分かりました。\n至急ラボと上層にその旨を伝え、指示を仰ぎます。\n<wait>; reads: は、事のいきさつを全て報告した。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	59	2046	1FD2	オペレーター：	Operator:			draft	@ours-2026-09-05
+m/MS0022.BIN	0:01	60	2062	1FD3	{08:79}{08:7E}、お待ち下{08:49}。\n<wait>	Please hold.\n<wait>			draft	reads: そのまま、お待ち下さい。\n<wait>; reads: ‥‥‥‥分かりました。\n至急ラボと上層にその旨を伝え、指示を仰ぎます。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	61	2099	1F01	{08:62}{01:2D}{08:42}の返答を待{08:51}{02:08}‥\n<wait>	 waited for Administration's reply............\n<wait>			draft	reads: は、管理部からの返答を待った‥‥‥‥\n<wait>; reads: は、管理部からの返答を待った‥‥‥‥\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS0022.BIN	0:01	62	2172	1FD2	オペレーター：	Operator:			draft	reads: そのまま、お待ち下さい。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	63	2188	1FD3	現在、ラボでは大規模なプロジェクトが\n発動{03:0C}ており{02:08}\n<wait>	At present, a large-scale project is under way at the Lab.........\n<wait>			draft	reads: 現在、ラボでは大規模なプロジェクトが\n発動されており‥‥‥\n<wait>; reads: は、管理部からの返答を待った‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	64	2248	1FD2	オペレーター：	Operator:			draft	@ours-2026-09-05
+m/MS0022.BIN	0:01	65	2264	1FD3	{08:09}の解析を行なう為の人員を、廻す事が\n出来{08:25}との事{08:55}。\n<wait>	They say they cannot spare personnel to analyse the program.\n<wait>			draft	reads: プログラムの解析を行なう為の人員を、廻す事が\n出来ないとの事です。\n<wait>; reads: 現在、ラボでは大規模なプロジェクトが\n発動されており‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	66	2326	1FD2	オペレーター：	Operator:			draft	@ours-2026-09-05
+m/MS0022.BIN	0:01	67	2342	1FD3	更に、上層部{08:42}の意向で{08:62}貴方自身が解析を実行し、\n{08:09}内容の確認を行なうか{02:08}\n<wait>	Furthermore, the upper levels wish for you to either run the analysis\nyourself and verify the program's contents.........\n<wait>			draft	reads: 更に、上層部からの意向では、貴方自身が解析を実行し、\nプログラム内容の確認を行なうか‥‥‥\n<wait>; reads: プログラムの解析を行なう為の人員を、廻す事が\n出来ないとの事です。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	68	2422	1FD2	オペレーター：	Operator:			draft	@ours-2026-09-05
+m/MS0022.BIN	0:01	69	2438	1FD3	{08:5D}く{08:62}{01:02}に{08:0A}を受け渡し、\n解析さ{08:2A}かの、いずれかの方法で作業を進め{02:08}\n<wait>	or hand the data over to Kirishima Emi and have her analyse it, and\nproceed by one of those two methods.........\n<wait>			draft	reads: もしくは、桐島英美にデータを受け渡し、\n解析させるかの、いずれかの方法で作業を進め‥‥‥\n<wait>; reads: 更に、上層部からの意向では、貴方自身が解析を実行し、\nプログラム内容の確認を行なうか‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	70	2512	1FD2	オペレーター：	Operator:			draft	@ours-2026-09-05
+m/MS0022.BIN	0:01	71	2528	1FD3	結果を{01:2D}に報告{08:8E}様にとの事{08:55}。\n<wait>	and report the results to Administration.\n<wait>			draft	reads: 結果を管理部に報告する様にとの事です。\n<wait>; reads: もしくは、桐島英美にデータを受け渡し、\n解析させるかの、いずれかの方法で作業を進め‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	72	2567	1FD2	オペレーター：	Operator:			draft	@ours-2026-09-05
+m/MS0022.BIN	0:01	73	2583	1FD3	{01:3F}が適任で{08:7B}かの判断{08:62}貴方自身に任{08:2A}\nとの事{08:55}ので、そちらで判断し、対処願い{08:5A}。\n<wait>	The judgement as to who is better suited is left to you, so please\ndecide and act accordingly.\n<wait>			draft	reads: どちらが適任であるかの判断は、貴方自身に任せる\nとの事ですので、そちらで判断し、対処願います。\n<wait>; reads: 結果を管理部に報告する様にとの事です。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	74	2669	1FD2	オペレーター：	Operator:			draft	@ours-2026-09-05
+m/MS0022.BIN	0:01	75	2685	1FD3	以上で、{08:65}を終了致し{08:5A}。\n<wait>	This ends the transmission.\n<wait>			draft	reads: 以上で、通信を終了致します。\n<wait>; reads: どちらが適任であるかの判断は、貴方自身に任せる\nとの事ですので、そちらで判断し、対処願います。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	76	2740	1F01	{08:62}{08:00}の所に{03:09}ロード{08:4B}{08:0A}を持{08:52}いく事に{08:4B}{02:08}‥\n<wait>	 decided to take the downloaded data to Hayasaka............\n<wait>			draft	reads: は、早坂の所にダウンロードしたデータを持っていく事にした‥‥‥‥\n<wait>; reads: は、早坂の所にダウンロードしたデータを持っていく事にした‥‥‥‥\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS0022.BIN	0:01	77	2822	1F01	{08:62}{08:03}の所に{03:09}ロード{08:4B}{08:0A}を持{08:52}いく事に{08:4B}{02:08}‥\n<wait>	 decided to take the downloaded data to Emi............\n<wait>			draft	reads: は、英美の所にダウンロードしたデータを持っていく事にした‥‥‥‥\n<wait>; reads: 以上で、通信を終了致します。\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS0022.BIN	0:01	78	2921	1F01	{08:62}{08:63}で{08:47}{08:0A}を解凍し、解析{08:8E}事に{08:4B}。\n<wait>	 decided to decompress and analyse the data himself.\n<wait>			draft	reads: は、自分でこのデータを解凍し、解析する事にした。\n<wait>; reads: は、早坂の所にダウンロードしたデータを持っていく事にした‥‥‥‥\n<wait> @rebase-tagdiff @ours-2026-09-05
 m/MS0022.BIN	0:01	79	2968	1E07	MURMUR.BIN	MURMUR.BIN				reads: は、英美の所にダウンロードしたデータを持っていく事にした‥‥‥‥\n<wait>
-m/MS0022.BIN	0:01	80	2984	1FFA	{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{08:72}\n<wait>	{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{08:72}\n<wait>				reads: ‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥\n<wait>; reads: は、自分でこのデータを解凍し、解析する事にした。\n<wait>
-m/MS0022.BIN	0:01	81	3015	1FD0	画面に写し出{03:0C}た膨大な{08:0A}を見た瞬間、身体中に、言い様の無い\n悪寒が走{08:51}{02:08}‥\n<wait>	画面に写し出{03:0C}た膨大な{08:0A}を見た瞬間、身体中に、言い様の無い\n悪寒が走{08:51}{02:08}‥\n<wait>	As soon as the data is displayed on the screen,\nyour body begins to shiver, and you quickly collapse on the floor.\n<wait>	v005		reads: 画面に写し出された膨大なデータを見た瞬間、身体中に、言い様の無い\n悪寒が走った‥‥‥‥\n<wait>
-m/MS0022.BIN	0:01	82	3184	1FBD	{02:08}{02:08}メイルを{03:08}ロードし{08:5A}。\n<wait>	{02:08}{02:08}メイルを{03:08}ロードし{08:5A}。\n<wait>	......Uploading attachment.\n<wait>	v005		reads: ‥‥‥‥‥‥メイルをアップロードします。\n<wait>; reads: ‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥\n<wait>
-m/MS0022.BIN	0:01	83	3217	1FBA	AIM.BIN　１．２ギガバイト					reads: 画面に写し出された膨大なデータを見た瞬間、身体中に、言い様の無い\n悪寒が走った‥‥‥‥\n<wait>
-m/MS0022.BIN	0:01	84	3248	1FFA	{02:08}{02:08}{08:72}\n	{02:08}{02:08}{08:72}\n				reads: ‥‥‥‥‥‥‥‥\n; reads: ‥‥‥‥‥‥メイルをアップロードします。\n<wait>
-m/MS0022.BIN	0:01	85	3261	1FFA	{1E10:01003C}{03:08}ロード完了。\n送信先を指定{08:4A}{08:6E}。\n					reads: {1E10:01003C}アップロード完了。\n送信先を指定してください。\n; reads: {1E10:01003C}アップロード完了。\n送信先を指定してください。\n
-m/MS0022.BIN	0:01	86	3306	1FFA	{02:08}{02:08}{08:72}	{02:08}{02:08}{08:72}				reads: ‥‥‥‥‥‥‥‥; reads: ‥‥‥‥‥‥‥‥\n
-m/MS0022.BIN	0:01	87	3318	1FFA	{1E10:01003C}御茶ノ水{08:10}\n					reads: {1E10:01003C}御茶ノ水シェルター\n; reads: {1E10:01003C}アップロード完了。\n送信先を指定してください。\n
-m/MS0022.BIN	0:01	88	3340	1FFA	{02:08}{02:08}{08:72}	{02:08}{02:08}{08:72}				reads: ‥‥‥‥‥‥‥‥
-m/MS0022.BIN	0:01	89	3352	1FFA	{1E10:01001E}送信完了\n何かキーを押{08:4A}{08:6E}。{08:65}を終了し{08:5A}。\n<wait>					reads: {1E10:01001E}送信完了\n何かキーを押してください。通信を終了します。\n<wait>; reads: {1E10:01003C}御茶ノ水シェルター\n
-m/MS0022.BIN	0:01	90	3454	1FD0	{02:08}‥頬に冷{08:4E}床の感触が伝わ{08:52}くる{02:08}{08:72}\n<wait>	{02:08}‥頬に冷{08:4E}床の感触が伝わ{08:52}くる{02:08}{08:72}\n<wait>	...You wake up to the sensation of the cold, hard floor\npressing against your cheek.\n<wait>	v005		reads: ‥‥‥‥頬に冷たい床の感触が伝わってくる‥‥‥‥‥\n<wait>; reads: ‥‥‥‥‥‥‥‥
-m/MS0022.BIN	0:01	91	3497	1FBA	ゆっくりと目を開くと、					reads: {1E10:01001E}送信完了\n何かキーを押してください。通信を終了します。\n<wait>
-m/MS0022.BIN	0:01	92	3525	1F01	{08:62}床の上に直に倒れて{08:64}。\n<wait>					reads: は、床の上に直に倒れていた。\n<wait>; reads: ‥‥‥‥頬に冷たい床の感触が伝わってくる‥‥‥‥‥\n<wait>
-m/MS0022.BIN	0:01	93	3556	1FBA	いつの間にか意識を失{08:52}{08:64}様だ。\n<wait>					reads: いつの間にか意識を失っていた様だ。\n<wait>; reads: いつの間にか意識を失っていた様だ。\n<wait>
-m/MS0022.BIN	0:01	94	3593	1FBA	胃が{08:72}いや、内臓全てが、あたかも腐敗{08:4B}かの様に熱く、\n<wait>そ{08:4A}重苦しく感じられ、嘔吐感が耐えずのど元に居座っ{08:14}。\n<wait>					reads: 胃が‥‥いや、内臓全てが、あたかも腐敗したかの様に熱く、\n<wait>そして重苦しく感じられ、嘔吐感が耐えずのど元に居座っている。\n<wait>; reads: は、床の上に直に倒れていた。\n<wait>
-m/MS0022.BIN	0:01	95	3711	1FBA	意識も{08:5B}、焦点の定まら{08:25}レンズの様に、手掛かりを掴みかけては\n遠のいて行く{08:72}\n<wait>					reads: 意識もまた、焦点の定まらないレンズの様に、手掛かりを掴みかけては\n遠のいて行く‥‥\n<wait>; reads: いつの間にか意識を失っていた様だ。\n<wait>
-m/MS0022.BIN	0:01	96	3797	1F72	{08:7A}状態の中、何とか起き上がると、煌々と灯る{08:05}ー画面に\n目が行{08:51}。\n<wait>					reads: そんな状態の中、何とか起き上がると、煌々と灯るコンピューター画面に\n目が行った。\n<wait>; reads: 胃が‥‥いや、内臓全てが、あたかも腐敗したかの様に熱く、\n<wait>そして重苦しく感じられ、嘔吐感が耐えずのど元に居座っている。\n<wait>
-m/MS0022.BIN	0:01	97	3890	1F71	画面に浮かび上がる文字を読んで行くと、{08:90}やら{08:63}の記憶には{08:25}が、\n御茶ノ水{08:10}に向け、得体の知れ{08:25}{08:0A}を送信{08:4A}{08:64}様だ。\n<wait>					reads: 画面に浮かび上がる文字を読んで行くと、どうやら自分の記憶にはないが、\n御茶ノ水シェルターに向け、得体の知れないデータを送信していた様だ。\n<wait>; reads: 意識もまた、焦点の定まらないレンズの様に、手掛かりを掴みかけては\n遠のいて行く‥‥\n<wait>
-m/MS0022.BIN	0:01	98	4008	1FBA	何とか思い出そうと、画面に目を懲らす					reads: そんな状態の中、何とか起き上がると、煌々と灯るコンピューター画面に\n目が行った。\n<wait>
-m/MS0022.BIN	0:01	99	4050	1F01	{08:72}。\n{03:0B}思い出そうとすれば{08:8E}ほど、頭を耐えが{08:4E}痛みが走る。\n<wait>					reads: ‥‥。\nしかし、思い出そうとすればするほど、頭を耐えがたい痛みが走る。\n<wait>; reads: 画面に浮かび上がる文字を読んで行くと、どうやら自分の記憶にはないが、\n御茶ノ水シェルターに向け、得体の知れないデータを送信していた様だ。\n<wait>
-m/MS0022.BIN	0:01	100	4124	1F01	{08:62}よろめきながらもベッドに移動し、倒れ込む様にベッドに横たわる。\n<wait>					reads: は、よろめきながらもベッドに移動し、倒れ込む様にベッドに横たわる。\n<wait>; reads: は、よろめきながらもベッドに移動し、倒れ込む様にベッドに横たわる。\n<wait>
+m/MS0022.BIN	0:01	80	2984	1FFA	{02:08}{02:08}{02:08}{02:08}{02:08}{02:08}{08:72}\n<wait>	..................\n<wait>			draft	reads: ‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥\n<wait>; reads: は、自分でこのデータを解凍し、解析する事にした。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	81	3015	1FD0	画面に写し出{03:0C}た膨大な{08:0A}を見た瞬間、身体中に、言い様の無い\n悪寒が走{08:51}{02:08}‥\n<wait>	The moment he saw the vast quantity of data displayed on the screen, an\nindescribable chill ran through his whole body............\n<wait>	As soon as the data is displayed on the screen,\nyour body begins to shiver, and you quickly collapse on the floor.\n<wait>	v005	draft	reads: 画面に写し出された膨大なデータを見た瞬間、身体中に、言い様の無い\n悪寒が走った‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	82	3184	1FBD	{02:08}{02:08}メイルを{03:08}ロードし{08:5A}。\n<wait>	..................Uploading mail.\n<wait>	......Uploading attachment.\n<wait>	v005	draft	reads: ‥‥‥‥‥‥メイルをアップロードします。\n<wait>; reads: ‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	83	3217	1FBA	AIM.BIN　１．２ギガバイト	AIM.BIN  1.2 gigabytes			draft	reads: 画面に写し出された膨大なデータを見た瞬間、身体中に、言い様の無い\n悪寒が走った‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	84	3248	1FFA	{02:08}{02:08}{08:72}\n	.........\n			draft	reads: ‥‥‥‥‥‥‥‥\n; reads: ‥‥‥‥‥‥メイルをアップロードします。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	85	3261	1FFA	{1E10:01003C}{03:08}ロード完了。\n送信先を指定{08:4A}{08:6E}。\n	{1E10:01003C}Upload complete.\nSpecify the destination.\n			draft	reads: {1E10:01003C}アップロード完了。\n送信先を指定してください。\n; reads: {1E10:01003C}アップロード完了。\n送信先を指定してください。\n @ours-2026-09-05
+m/MS0022.BIN	0:01	86	3306	1FFA	{02:08}{02:08}{08:72}	.........			draft	reads: ‥‥‥‥‥‥‥‥; reads: ‥‥‥‥‥‥‥‥\n @ours-2026-09-05
+m/MS0022.BIN	0:01	87	3318	1FFA	{1E10:01003C}御茶ノ水{08:10}\n	{1E10:01003C}Ochanomizu Shelter\n			draft	reads: {1E10:01003C}御茶ノ水シェルター\n; reads: {1E10:01003C}アップロード完了。\n送信先を指定してください。\n @ours-2026-09-05
+m/MS0022.BIN	0:01	88	3340	1FFA	{02:08}{02:08}{08:72}	.........			draft	reads: ‥‥‥‥‥‥‥‥ @ours-2026-09-05
+m/MS0022.BIN	0:01	89	3352	1FFA	{1E10:01001E}送信完了\n何かキーを押{08:4A}{08:6E}。{08:65}を終了し{08:5A}。\n<wait>	{1E10:01001E}Transmission complete\nPress any key. Ending communication.\n<wait>			draft	reads: {1E10:01001E}送信完了\n何かキーを押してください。通信を終了します。\n<wait>; reads: {1E10:01003C}御茶ノ水シェルター\n @ours-2026-09-05
+m/MS0022.BIN	0:01	90	3454	1FD0	{02:08}‥頬に冷{08:4E}床の感触が伝わ{08:52}くる{02:08}{08:72}\n<wait>	............The feel of the cold floor against his cheek............\n<wait>	...You wake up to the sensation of the cold, hard floor\npressing against your cheek.\n<wait>	v005	draft	reads: ‥‥‥‥頬に冷たい床の感触が伝わってくる‥‥‥‥‥\n<wait>; reads: ‥‥‥‥‥‥‥‥ @ours-2026-09-05
+m/MS0022.BIN	0:01	91	3497	1FBA	ゆっくりと目を開くと、	Slowly opening his eyes, 			draft	reads: {1E10:01001E}送信完了\n何かキーを押してください。通信を終了します。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	92	3525	1F01	{08:62}床の上に直に倒れて{08:64}。\n<wait>	 found himself lying directly on the floor.\n<wait>			draft	reads: は、床の上に直に倒れていた。\n<wait>; reads: ‥‥‥‥頬に冷たい床の感触が伝わってくる‥‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	93	3556	1FBA	いつの間にか意識を失{08:52}{08:64}様だ。\n<wait>	He seemed to have lost consciousness at some point.\n<wait>			draft	reads: いつの間にか意識を失っていた様だ。\n<wait>; reads: いつの間にか意識を失っていた様だ。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	94	3593	1FBA	胃が{08:72}いや、内臓全てが、あたかも腐敗{08:4B}かの様に熱く、\n<wait>そ{08:4A}重苦しく感じられ、嘔吐感が耐えずのど元に居座っ{08:14}。\n<wait>	His stomach... no, all his organs felt hot, as though they had rotted,\n<wait>and heavy, and a constant nausea sat lodged in his throat.\n<wait>			draft	reads: 胃が‥‥いや、内臓全てが、あたかも腐敗したかの様に熱く、\n<wait>そして重苦しく感じられ、嘔吐感が耐えずのど元に居座っている。\n<wait>; reads: は、床の上に直に倒れていた。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	95	3711	1FBA	意識も{08:5B}、焦点の定まら{08:25}レンズの様に、手掛かりを掴みかけては\n遠のいて行く{08:72}\n<wait>	His mind, too, like a lens that would not focus, grasped at a thread\nonly to have it slip away...\n<wait>			draft	reads: 意識もまた、焦点の定まらないレンズの様に、手掛かりを掴みかけては\n遠のいて行く‥‥\n<wait>; reads: いつの間にか意識を失っていた様だ。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	96	3797	1F72	{08:7A}状態の中、何とか起き上がると、煌々と灯る{08:05}ー画面に\n目が行{08:51}。\n<wait>	In that state, he somehow got up, and his eyes went to the brightly\nglowing computer screen.\n<wait>			draft	reads: そんな状態の中、何とか起き上がると、煌々と灯るコンピューター画面に\n目が行った。\n<wait>; reads: 胃が‥‥いや、内臓全てが、あたかも腐敗したかの様に熱く、\n<wait>そして重苦しく感じられ、嘔吐感が耐えずのど元に居座っている。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	97	3890	1F71	画面に浮かび上がる文字を読んで行くと、{08:90}やら{08:63}の記憶には{08:25}が、\n御茶ノ水{08:10}に向け、得体の知れ{08:25}{08:0A}を送信{08:4A}{08:64}様だ。\n<wait>	Reading the text on the screen, it seemed that, though he had no memory\nof it, he had sent some unidentifiable data to Ochanomizu Shelter.\n<wait>			draft	reads: 画面に浮かび上がる文字を読んで行くと、どうやら自分の記憶にはないが、\n御茶ノ水シェルターに向け、得体の知れないデータを送信していた様だ。\n<wait>; reads: 意識もまた、焦点の定まらないレンズの様に、手掛かりを掴みかけては\n遠のいて行く‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	98	4008	1FBA	何とか思い出そうと、画面に目を懲らす	Straining to remember, 			draft	reads: そんな状態の中、何とか起き上がると、煌々と灯るコンピューター画面に\n目が行った。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	99	4050	1F01	{08:72}。\n{03:0B}思い出そうとすれば{08:8E}ほど、頭を耐えが{08:4E}痛みが走る。\n<wait>	 stared at the screen...\nBut the harder he tried to remember, the more an unbearable pain shot\nthrough his head.\n<wait>			draft	reads: ‥‥。\nしかし、思い出そうとすればするほど、頭を耐えがたい痛みが走る。\n<wait>; reads: 画面に浮かび上がる文字を読んで行くと、どうやら自分の記憶にはないが、\n御茶ノ水シェルターに向け、得体の知れないデータを送信していた様だ。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:01	100	4124	1F01	{08:62}よろめきながらもベッドに移動し、倒れ込む様にベッドに横たわる。\n<wait>	 staggered over to the bed and collapsed onto it.\n<wait>			draft	reads: は、よろめきながらもベッドに移動し、倒れ込む様にベッドに横たわる。\n<wait>; reads: は、よろめきながらもベッドに移動し、倒れ込む様にベッドに横たわる。\n<wait> @ours-2026-09-05
 m/MS0022.BIN	0:01	101	4218	1F71	もはや、何かを考え{08:69}と{08:68}気力{08:62}全く失われて{08:64}。\n{08:82}、安らかな眠り{08:74}が、今の		By now, I no longer had any will left to think about anything.\nAll that was left was a peaceful sleep, and that was all	ours		reads: もはや、何かを考えようという気力は、全く失われていた。\nただ、安らかな眠りだけが、今の; reads: ‥‥。\nしかし、思い出そうとすればするほど、頭を耐えがたい痛みが走る。\n<wait>
 m/MS0022.BIN	0:01	102	4297	1F01	の望む{08:5E}であ{08:51}。\n<wait>		...I wanted, right now.\n<wait>	ours		reads: の望むものであった。\n<wait>; reads: は、よろめきながらもベッドに移動し、倒れ込む様にベッドに横たわる。\n<wait> @rebase-tagdiff
-m/MS0022.BIN	0:01	103	4326	1F01	を、深い眠りが襲う{02:08}{02:08}{08:72}\n<wait>					reads: を、深い眠りが襲う‥‥‥‥‥‥‥‥\n<wait>; reads: もはや、何かを考えようという気力は、全く失われていた。\nただ、安らかな眠りだけが、今の @rebase-tagdiff
+m/MS0022.BIN	0:01	103	4326	1F01	を、深い眠りが襲う{02:08}{02:08}{08:72}\n<wait>	 was overtaken by a deep sleep............\n<wait>			draft	reads: を、深い眠りが襲う‥‥‥‥‥‥‥‥\n<wait>; reads: もはや、何かを考えようという気力は、全く失われていた。\nただ、安らかな眠りだけが、今の @rebase-tagdiff @ours-2026-09-05
 m/MS0022.BIN	0:02	0	32	1F03						
-m/MS0022.BIN	0:02	1	67	1FD0	ベッドの中で身じろぎもせず、					
-m/MS0022.BIN	0:02	2	101	1F01	は異常な{08:71}の虚脱感を全身に感じながら、\nゆっくりと目を開{08:64}。\n<wait>					reads: は異常なまでの虚脱感を全身に感じながら、\nゆっくりと目を開いた。\n<wait>; reads: は異常なまでの虚脱感を全身に感じながら、\nゆっくりと目を開いた。\n<wait>
-m/MS0022.BIN	0:02	3	167	1FBA	急激な目まいが、天井をまるで悪夢の様に歪{08:2E}{08:72}\n<wait>					reads: 急激な目まいが、天井をまるで悪夢の様に歪める‥‥\n<wait>; reads: 急激な目まいが、天井をまるで悪夢の様に歪める‥‥\n<wait>
-m/MS0022.BIN	0:02	4	224	1F01	に{08:62}動く事も、思考{08:8E}事も{08:72}\nそ{08:4A}、息を{08:4C}{08:68}事にさえも、全く関心が動かなく{08:1A}{08:64}。\n<wait>					reads: には、動く事も、思考する事も‥‥\nそして、息をするという事にさえも、全く関心が動かなくなっていた。\n<wait>; reads: には、動く事も、思考する事も‥‥\nそして、息をするという事にさえも、全く関心が動かなくなっていた。\n<wait>
-m/MS0022.BIN	0:02	5	308	1FBA	{01:23}瞬きもせずに虚空を見つめ、再びゆっくりと目を閉じる{02:08}\n<wait>					reads: しばらく瞬きもせずに虚空を見つめ、再びゆっくりと目を閉じる‥‥‥\n<wait>; reads: しばらく瞬きもせずに虚空を見つめ、再びゆっくりと目を閉じる‥‥‥\n<wait>
-m/MS0022.BIN	0:02	6	369	1FBA	睡魔が再び					
-m/MS0022.BIN	0:02	7	385	1F01	を、深淵の縁へと誘{08:52}行く{02:08}\n<wait>					reads: を、深淵の縁へと誘って行く‥‥‥\n<wait>; reads: を、深淵の縁へと誘って行く‥‥‥\n<wait>
-m/MS0022.BIN	0:02	8	475	1FD0	電話の音が鳴り響い{08:14}。\n<wait>					reads: 電話の音が鳴り響いている。\n<wait>; reads: 電話の音が鳴り響いている。\n<wait>
-m/MS0022.BIN	0:02	9	544	1FC4	出る者の{08:24}電話の音{08:62}まるでうつろな叫びの声の様に、{01:2E}の中に\n響き渡る{08:74}だ{08:51}{02:08}\n<wait>					reads: 出る者のいない電話の音は、まるでうつろな叫びの声の様に、部屋の中に\n響き渡るだけだった‥‥‥\n<wait>; reads: 出る者のいない電話の音は、まるでうつろな叫びの声の様に、部屋の中に\n響き渡るだけだった‥‥‥\n<wait>
+m/MS0022.BIN	0:02	1	67	1FD0	ベッドの中で身じろぎもせず、	Not stirring in the bed, 			draft	@ours-2026-09-05
+m/MS0022.BIN	0:02	2	101	1F01	は異常な{08:71}の虚脱感を全身に感じながら、\nゆっくりと目を開{08:64}。\n<wait>	 slowly opened his eyes, feeling an abnormal lethargy through his whole\nbody.\n<wait>			draft	reads: は異常なまでの虚脱感を全身に感じながら、\nゆっくりと目を開いた。\n<wait>; reads: は異常なまでの虚脱感を全身に感じながら、\nゆっくりと目を開いた。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	3	167	1FBA	急激な目まいが、天井をまるで悪夢の様に歪{08:2E}{08:72}\n<wait>	A sudden dizziness warped the ceiling like a nightmare...\n<wait>			draft	reads: 急激な目まいが、天井をまるで悪夢の様に歪める‥‥\n<wait>; reads: 急激な目まいが、天井をまるで悪夢の様に歪める‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	4	224	1F01	に{08:62}動く事も、思考{08:8E}事も{08:72}\nそ{08:4A}、息を{08:4C}{08:68}事にさえも、全く関心が動かなく{08:1A}{08:64}。\n<wait>	 had lost all interest in moving, in thinking...\nand even in breathing.\n<wait>			draft	reads: には、動く事も、思考する事も‥‥\nそして、息をするという事にさえも、全く関心が動かなくなっていた。\n<wait>; reads: には、動く事も、思考する事も‥‥\nそして、息をするという事にさえも、全く関心が動かなくなっていた。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	5	308	1FBA	{01:23}瞬きもせずに虚空を見つめ、再びゆっくりと目を閉じる{02:08}\n<wait>	For a while he stared into space without blinking, then slowly closed\nhis eyes again.........\n<wait>			draft	reads: しばらく瞬きもせずに虚空を見つめ、再びゆっくりと目を閉じる‥‥‥\n<wait>; reads: しばらく瞬きもせずに虚空を見つめ、再びゆっくりと目を閉じる‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	6	369	1FBA	睡魔が再び	Sleep once more lured 			draft	@ours-2026-09-05
+m/MS0022.BIN	0:02	7	385	1F01	を、深淵の縁へと誘{08:52}行く{02:08}\n<wait>	 towards the edge of the abyss.........\n<wait>			draft	reads: を、深淵の縁へと誘って行く‥‥‥\n<wait>; reads: を、深淵の縁へと誘って行く‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	8	475	1FD0	電話の音が鳴り響い{08:14}。\n<wait>	The phone is ringing.\n<wait>			draft	reads: 電話の音が鳴り響いている。\n<wait>; reads: 電話の音が鳴り響いている。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	9	544	1FC4	出る者の{08:24}電話の音{08:62}まるでうつろな叫びの声の様に、{01:2E}の中に\n響き渡る{08:74}だ{08:51}{02:08}\n<wait>	With no one to answer it, the ringing merely echoed through the room\nlike a hollow cry.........\n<wait>			draft	reads: 出る者のいない電話の音は、まるでうつろな叫びの声の様に、部屋の中に\n響き渡るだけだった‥‥‥\n<wait>; reads: 出る者のいない電話の音は、まるでうつろな叫びの声の様に、部屋の中に\n響き渡るだけだった‥‥‥\n<wait> @ours-2026-09-05
 m/MS0022.BIN	0:02	10	665	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 早坂： @refalign
-m/MS0022.BIN	0:02	11	677	1F01	！\nそこに{08:40}{08:5F}ろ、					reads: ！\nそこにいるんだろ、; reads: ！\nそこにいるんだろ、
-m/MS0022.BIN	0:02	12	700	1F01	ッ！！\n					reads: ッ！！\n
+m/MS0022.BIN	0:02	11	677	1F01	！\nそこに{08:40}{08:5F}ろ、	!\nYou're in there, aren't you, 			draft	reads: ！\nそこにいるんだろ、; reads: ！\nそこにいるんだろ、 @ours-2026-09-05
+m/MS0022.BIN	0:02	12	700	1F01	ッ！！\n	!!\n			draft	reads: ッ！！\n @ours-2026-09-05
 m/MS0022.BIN	0:02	13	723	1FB2	応答し{08:69}と試みる		Try to answer	v005		reads: 応答しようと試みる; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0022.BIN	0:02	14	741	1FB2	放{08:52}おく		Ignore it	v005		reads: 放っておく; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0022.BIN	0:02	15	784	1F01	{08:62}重{08:89}ぶたを無理やり開き、{08:00}の呼びかけに応え{08:69}と{08:4B}。\n<wait>	{08:62}重{08:89}ぶたを無理やり開き、{08:00}の呼びかけに応え{08:69}と{08:4B}。\n<wait>				reads: は、重いまぶたを無理やり開き、早坂の呼びかけに応えようとした。\n<wait>; reads: いろいろ @rebase-new
+m/MS0022.BIN	0:02	15	784	1F01	{08:62}重{08:89}ぶたを無理やり開き、{08:00}の呼びかけに応え{08:69}と{08:4B}。\n<wait>	 forced his heavy eyelids open and tried to answer Hayasaka's call.\n<wait>			draft	reads: は、重いまぶたを無理やり開き、早坂の呼びかけに応えようとした。\n<wait>; reads: いろいろ @rebase-new @ours-2026-09-05
 m/MS0022.BIN	0:02	16	872	1F71	{03:0B}	{03:0B}	And yet, it's to no avail.\nYour body's as heavy as a brick, and refuses to listen to you.\n<wait>	v005		reads: しかし、; reads: は、重いまぶたを無理やり開き、早坂の呼びかけに応えようとした。\n<wait> @rebase-unmatched idx16 en=Despite your eyelids feeling as if they were made out of lead,\nyou force them open and attempt to call back to Hayasaka.\n<wait>
-m/MS0022.BIN	0:02	17	880	1F01	の身体は言う{08:46}を聞かず、腕も足も石に{08:16}{08:69}に重{08:18}。\n<wait>	の身体は言う{08:46}を聞かず、腕も足も石に{08:16}{08:69}に重{08:18}。\n<wait>				reads: の身体は言うことを聞かず、腕も足も石になったように重かった。\n<wait>; reads: しかし、
-m/MS0022.BIN	0:02	18	935	1FBA	何とか応答し{08:69}と試みた{08:5E}の、{08:79}口{08:42}は音は発せられ{08:19}。\n<wait>					reads: 何とか応答しようと試みたものの、その口からは音は発せられなかった。\n<wait>; reads: の身体は言うことを聞かず、腕も足も石になったように重かった。\n<wait>
-m/MS0022.BIN	0:02	19	994	1FBA	スピーカー{08:42}{08:62}{08:00}の声が聞こえてくる{02:08}‥\n<wait>					reads: スピーカーからは、早坂の声が聞こえてくる‥‥‥‥\n<wait>; reads: 何とか応答しようと試みたものの、その口からは音は発せられなかった。\n<wait>
+m/MS0022.BIN	0:02	17	880	1F01	の身体は言う{08:46}を聞かず、腕も足も石に{08:16}{08:69}に重{08:18}。\n<wait>	's body would not obey; his arms and legs were as heavy as stone.\n<wait>			draft	reads: の身体は言うことを聞かず、腕も足も石になったように重かった。\n<wait>; reads: しかし、 @ours-2026-09-05
+m/MS0022.BIN	0:02	18	935	1FBA	何とか応答し{08:69}と試みた{08:5E}の、{08:79}口{08:42}は音は発せられ{08:19}。\n<wait>	He tried somehow to answer, but no sound came from his mouth.\n<wait>			draft	reads: 何とか応答しようと試みたものの、その口からは音は発せられなかった。\n<wait>; reads: の身体は言うことを聞かず、腕も足も石になったように重かった。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	19	994	1FBA	スピーカー{08:42}{08:62}{08:00}の声が聞こえてくる{02:08}‥\n<wait>	Hayasaka's voice comes from the speaker............\n<wait>			draft	reads: スピーカーからは、早坂の声が聞こえてくる‥‥‥‥\n<wait>; reads: 何とか応答しようと試みたものの、その口からは音は発せられなかった。\n<wait> @ours-2026-09-05
 m/MS0022.BIN	0:02	20	1052	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: スピーカーからは、早坂の声が聞こえてくる‥‥‥‥\n<wait> @refalign
 m/MS0022.BIN	0:02	21	1058	1FD3	何の連絡もよこさずに、\nお前一体そこで何をし{08:2B}{08:5F}？！\n<wait>		What's going on in there!?\nHey, answer me!\n<wait>	v005		reads: 何の連絡もよこさずに、\nお前一体そこで何をしてるんだ？！\n<wait>; reads: 早坂： @refalign
 m/MS0022.BIN	0:02	22	1118	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 何の連絡もよこさずに、\nお前一体そこで何をしてるんだ？！\n<wait> @refalign
@@ -184,9 +184,9 @@ m/MS0022.BIN	0:02	27	1217	1FD3	なあ、お前一体{08:90}しち{08:20}{08:5F}�
 m/MS0022.BIN	0:02	28	1283	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: なあ、お前一体どうしちまったんだ？\n食事にすら来てないって言うじゃないか。\n<wait> @refalign
 m/MS0022.BIN	0:02	29	1289	1FD3	何か悩み事が{08:7B}{08:7D}、相談{08:4A}くれよ。\n<wait>身体の具合が悪い{08:7D}、連絡{08:4A}くれれば、\nすぐに{08:56}、お前の{01:2E}{08:71}迎えに行く。\n<wait>		If there's something weighing on your mind,\nyou can always come talk with me.\n<wait>Call me if you don't start feeling better.\nI'll come see you right away.\n<wait>	v005		reads: 何か悩み事があるなら、相談してくれよ。\n<wait>身体の具合が悪いなら、連絡してくれれば、\nすぐにでも、お前の部屋まで迎えに行く。\n<wait>; reads: 早坂： @refalign
 m/MS0022.BIN	0:02	30	1402	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 何か悩み事があるなら、相談してくれよ。\n<wait>身体の具合が悪いなら、連絡してくれれば、\nすぐにでも、お前の部屋まで迎えに行く。\n<wait> @refalign
-m/MS0022.BIN	0:02	31	1414	1F01	さんや、隊長も心配し{08:2B}。\nとにかく、連絡くれ。待っ{08:2B}{08:42}{08:72}\n<wait>					reads: さんや、隊長も心配してる。\nとにかく、連絡くれ。待ってるから‥‥\n<wait>; reads: 早坂： @rebase-tagdiff
-m/MS0022.BIN	0:02	32	1490	1FD0	そこ{08:71}聞{08:64}{08:87}で					reads: そこまで聞いたところで; reads: さんや、隊長も心配してる。\nとにかく、連絡くれ。待ってるから‥‥\n<wait>
-m/MS0022.BIN	0:02	33	1510	1F01	{08:62}{08:5B}も強烈な睡魔に襲われ、\n意識が遠くなっ{08:21}{02:08}‥\n<wait>					reads: は、またも強烈な睡魔に襲われ、\n意識が遠くなっていった‥‥‥‥\n<wait>; reads: そこまで聞いたところで
+m/MS0022.BIN	0:02	31	1414	1F01	さんや、隊長も心配し{08:2B}。\nとにかく、連絡くれ。待っ{08:2B}{08:42}{08:72}\n<wait>	 and the Captain are worried too.\nAnyway, call me. I'll be waiting...\n<wait>			draft	reads: さんや、隊長も心配してる。\nとにかく、連絡くれ。待ってるから‥‥\n<wait>; reads: 早坂： @rebase-tagdiff @ours-2026-09-05
+m/MS0022.BIN	0:02	32	1490	1FD0	そこ{08:71}聞{08:64}{08:87}で	Having heard that much, 			draft	reads: そこまで聞いたところで; reads: さんや、隊長も心配してる。\nとにかく、連絡くれ。待ってるから‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	33	1510	1F01	{08:62}{08:5B}も強烈な睡魔に襲われ、\n意識が遠くなっ{08:21}{02:08}‥\n<wait>	 was again overcome by a powerful drowsiness,\nand his consciousness faded............\n<wait>			draft	reads: は、またも強烈な睡魔に襲われ、\n意識が遠くなっていった‥‥‥‥\n<wait>; reads: そこまで聞いたところで @ours-2026-09-05
 m/MS0022.BIN	0:02	34	1617	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: は、またも強烈な睡魔に襲われ、\n意識が遠くなっていった‥‥‥‥\n<wait> @refalign
 m/MS0022.BIN	0:02	35	1634	1F01	、出たく{08:25}の{08:7D}、{08:79}{08:7E}{08:65}には\n出なくて{08:7F}。\n<wait>		Katsuragi. If you don't want to talk,\nthen that's fine.\n<wait>	v005		reads: 、出たくないのなら、そのまま通信には\n出なくていい。\n<wait>; reads: 西野： @rebase-tagdiff
 m/MS0022.BIN	0:02	36	1682	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 、出たくないのなら、そのまま通信には\n出なくていい。\n<wait>
@@ -198,7 +198,7 @@ m/MS0022.BIN	0:02	41	1760	1FD3	{03:0B}{08:6D}様な状況下にあ{08:52}も、{
 m/MS0022.BIN	0:02	42	1839	1F01	{08:72}一体{08:90}{08:4B}{08:5F}？\n私も含め、皆、お前の事を心配{08:13}。\nせめて連絡の{01:3C}くらい、入れてくれ。\n<wait>		What on earth is going on with you, Katsuragi?\nI'm seriously worried about you. We all are.\nCan you at least tell us what's wrong?\n<wait>	v005		reads: ‥‥一体どうしたんだ？\n私も含め、皆、お前の事を心配している。\nせめて連絡のひとつくらい、入れてくれ。\n<wait>; reads: しかし、どの様な状況下にあっても、デビルバスターで\nあるならば、任務を放棄する事は許されないのだ。\n<wait> @rebase-tagdiff
 m/MS0022.BIN	0:02	43	1940	1FD0	{02:08}{08:72}頭の中に懐かしい声が響いて来る{02:08}{08:72}\n<wait>		......You can hear a familiar voice echo through your mind......\n<wait>	v005		reads: ‥‥‥‥‥頭の中に懐かしい声が響いて来る‥‥‥‥‥\n<wait>; reads: ‥‥一体どうしたんだ？\n私も含め、皆、お前の事を心配している。\nせめて連絡のひとつくらい、入れてくれ。\n<wait>
 m/MS0022.BIN	0:02	44	1985	1FBA	{03:0B}	{03:0B}	However, you're too tired to respond.\n<wait>	v005		reads: しかし、; reads: ‥‥‥‥‥頭の中に懐かしい声が響いて来る‥‥‥‥‥\n<wait>
-m/MS0022.BIN	0:02	45	1993	1F01	に{08:62}何も考{08:28}気力が無い。\n<wait>	に{08:62}何も考{08:28}気力が無い。\n<wait>				reads: には、何も考える気力が無い。\n<wait>; reads: しかし、
+m/MS0022.BIN	0:02	45	1993	1F01	に{08:62}何も考{08:28}気力が無い。\n<wait>	 had no will to think about anything.\n<wait>			draft	reads: には、何も考える気力が無い。\n<wait>; reads: しかし、 @ours-2026-09-05
 m/MS0022.BIN	0:02	46	2073	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: には、何も考える気力が無い。\n<wait>
 m/MS0022.BIN	0:02	47	2085	1F01	くん！\nねぇ、{08:40}んでしょ！？\n		Hey, Katsuragi-kun. I know you're in there.\nCould you please talk to me?\n	v005		reads: くん！\nねぇ、いるんでしょ！？\n; reads: 英美： @rebase-tagdiff
 m/MS0022.BIN	0:02	48	2129	1FB2	応答し{08:69}と試みる		Try to answer	v005		reads: 応答しようと試みる; menu option, declared width 20 columns; reads: くん！\nねぇ、いるんでしょ！？\n @refalign
@@ -207,8 +207,8 @@ m/MS0022.BIN	0:02	50	2228	1F01	は苦労{08:4A}、瞼を開{08:64}。\n<wait>		Y
 m/MS0022.BIN	0:02	51	2284	1F71	{03:0B}眼球一つ動かすのも大儀で、応答し{08:69}と{08:4A}も、と{08:54}無理な事が\n分{08:18}にすぎ{08:19}。\n<wait>	{03:0B}眼球一つ動かすのも大儀で、応答し{08:69}と{08:4A}も、と{08:54}無理な事が\n分{08:18}にすぎ{08:19}。\n<wait>	However, that alone uses up all of your energy.\nYou simply do not have it in you to reply.\n<wait>	v005		reads: しかし、眼球一つ動かすのも大儀で、応答しようとしても、とても無理な事が\n分かったにすぎなかった。\n<wait>
 m/MS0022.BIN	0:02	52	2364	1FBA	心配気な{08:03}の声が、スピーカー{08:42}響いてくる{02:08}‥\n<wait>		Emi's voice can be heard through the speaker phone...\n<wait>	v005		reads: 心配気な英美の声が、スピーカーから響いてくる‥‥‥‥\n<wait>; reads: は苦労して、瞼を開いた。\n<wait> @rebase-unmatched idx52 en=You force your eyelids open.\n<wait> @refalign
 m/MS0022.BIN	0:02	53	2418	18	応答し{08:69}と{08:4B}{08:5E}の、		You attempt to say something,\nbut once again, your body refuses to listen.\n<wait>	v005		reads: 応答しようとしたものの、; reads: しかし、眼球一つ動かすのも大儀で、応答しようとしても、とても無理な事が\n分かったにすぎなかった。\n<wait> @refalign
-m/MS0022.BIN	0:02	54	2442	1F01	の身体{08:62}{08:79}主の命令を何一つ聞こうとは\nし{08:19}。\n<wait>					reads: の身体は、その主の命令を何一つ聞こうとは\nしなかった。\n<wait>; reads: 心配気な英美の声が、スピーカーから響いてくる‥‥‥‥\n<wait>
-m/MS0022.BIN	0:02	55	2492	1FBA	スピーカー{08:42}{08:62}{08:03}の声が{01:2E}中に響い{08:14}{02:08}‥\n<wait>					reads: スピーカーからは、英美の声が部屋中に響いている‥‥‥‥\n<wait>; reads: 応答しようとしたものの、
+m/MS0022.BIN	0:02	54	2442	1F01	の身体{08:62}{08:79}主の命令を何一つ聞こうとは\nし{08:19}。\n<wait>	's body refused to obey a single command from its master.\n<wait>			draft	reads: の身体は、その主の命令を何一つ聞こうとは\nしなかった。\n<wait>; reads: 心配気な英美の声が、スピーカーから響いてくる‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	55	2492	1FBA	スピーカー{08:42}{08:62}{08:03}の声が{01:2E}中に響い{08:14}{02:08}‥\n<wait>	Emi's voice echoes through the room from the speaker............\n<wait>			draft	reads: スピーカーからは、英美の声が部屋中に響いている‥‥‥‥\n<wait>; reads: 応答しようとしたものの、 @ours-2026-09-05
 m/MS0022.BIN	0:02	56	2550	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: の身体は、その主の命令を何一つ聞こうとは\nしなかった。\n<wait> @refalign
 m/MS0022.BIN	0:02	57	2562	1F01	くん。\n連絡{08:5D}{08:25}で、一体{08:90}{08:13}の？\n<wait>		Katsuragi-kun.\nPlease, just tell me what's wrong.\n<wait>	v005		reads: くん。\n連絡もしないで、一体どうしているの？\n<wait>; reads: スピーカーからは、英美の声が部屋中に響いている‥‥‥‥\n<wait> @refalign
 m/MS0022.BIN	0:02	58	2602	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 英美： @refalign
@@ -228,135 +228,135 @@ m/MS0022.BIN	0:02	71	2965	1FD3	連絡{08:74}は入れて、お願いだ{08:42}�
 m/MS0022.BIN	0:02	72	3026	1F01	の意識{08:62}{08:5B}深淵へと飲み込まれ{08:21}{02:08}\n<wait>		Your mind once again descends into the abyss...\n<wait>	v005		reads: の意識は、また深淵へと飲み込まれていった‥‥‥\n<wait>; reads: 英美： @refalign
 m/MS0022.BIN	0:02	73	3135	1FD0	電話の音が鳴り響い{08:14}。\n		You can hear a phone ringing.\n	v005		reads: 電話の音が鳴り響いている。\n; reads: 連絡だけは入れて、お願いだから、ね。\n<wait> @refalign
 m/MS0022.BIN	0:02	74	3204	1FBA	{01:23}の間鳴り続{08:43}後、電話の音は突然に止み、室内は再び静寂に\n包ま{08:60}{02:08}‥\n<wait>		A few moments later, the ringing stops,\nand the room is once again filled by silence...\n<wait>	v005		reads: しばらくの間鳴り続けた後、電話の音は突然に止み、室内は再び静寂に\n包まれた‥‥‥‥\n<wait>; reads: の意識は、また深淵へと飲み込まれていった‥‥‥\n<wait> @refalign
-m/MS0022.BIN	0:02	75	3289	1E07	誰かが、		You wake up to someone shaking your body...\n<wait>	v005		reads: 電話の音が鳴り響いている。\n @refalign
-m/MS0022.BIN	0:02	76	3303	1F01	の身体を揺さぶっ{08:14}{02:08}\n<wait>					reads: の身体を揺さぶっている‥‥‥\n<wait>; reads: しばらくの間鳴り続けた後、電話の音は突然に止み、室内は再び静寂に\n包まれた‥‥‥‥\n<wait>
-m/MS0022.BIN	0:02	77	3398	1F01	：		:	v005		reads: ： @refalign
-m/MS0022.BIN	0:02	78	3408	1F01	くん！　					reads: くん！　; reads: の身体を揺さぶっている‥‥‥\n<wait>
-m/MS0022.BIN	0:02	79	3422	1F01	くん！\n<wait>					reads: くん！\n<wait>; reads: ：
-m/MS0022.BIN	0:02	80	3437	1FD0	さすがの虚脱感も、{08:79}声に束の間追い払わ{08:60}{08:69}だ{02:08}。\n					reads: さすがの虚脱感も、その声に束の間追い払われたようだ‥‥‥。\n; reads: くん！
-m/MS0022.BIN	0:02	81	3492	1F01	{08:62}何とか{08:79}目を開{08:64}。\n<wait>					reads: は、何とかその目を開いた。\n<wait>; reads: くん！\n<wait>
-m/MS0022.BIN	0:02	82	3527	1F01	：		:	v005		reads: ：; reads: さすがの虚脱感も、その声に束の間追い払われたようだ‥‥‥。\n @refalign
+m/MS0022.BIN	0:02	75	3289	1E07	誰かが、	Someone is shaking 	You wake up to someone shaking your body...\n<wait>	v005	draft	reads: 電話の音が鳴り響いている。\n @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	76	3303	1F01	の身体を揺さぶっ{08:14}{02:08}\n<wait>	's body.........\n<wait>			draft	reads: の身体を揺さぶっている‥‥‥\n<wait>; reads: しばらくの間鳴り続けた後、電話の音は突然に止み、室内は再び静寂に\n包まれた‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	77	3398	1F01	：	: 	:	v005	draft	reads: ： @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	78	3408	1F01	くん！　	! 			draft	reads: くん！　; reads: の身体を揺さぶっている‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	79	3422	1F01	くん！\n<wait>	!\n<wait>			draft	reads: くん！\n<wait>; reads: ： @ours-2026-09-05
+m/MS0022.BIN	0:02	80	3437	1FD0	さすがの虚脱感も、{08:79}声に束の間追い払わ{08:60}{08:69}だ{02:08}。\n	Even the lethargy seemed driven off for a moment by that voice.........\n			draft	reads: さすがの虚脱感も、その声に束の間追い払われたようだ‥‥‥。\n; reads: くん！ @ours-2026-09-05
+m/MS0022.BIN	0:02	81	3492	1F01	{08:62}何とか{08:79}目を開{08:64}。\n<wait>	 somehow opened his eyes.\n<wait>			draft	reads: は、何とかその目を開いた。\n<wait>; reads: くん！\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	82	3527	1F01	：	:	:	v005	draft	reads: ：; reads: さすがの虚脱感も、その声に束の間追い払われたようだ‥‥‥。\n @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	83	3531	1FD3	{02:08}‥良{08:18}、息もあんまりし{08:25}{08:5F}{08:5E}。\n睡眠薬か何かを飲んで、昏睡し{08:2B}のかと思{08:51}。\n<wait>		I'm so glad...\nYou were hardly breathing, and I thought you might have...\n<wait>	v005		reads: ‥‥‥‥良かった、息もあんまりしないんだもの。\n睡眠薬か何かを飲んで、昏睡してるのかと思った。\n<wait>; reads: は、何とかその目を開いた。\n<wait> @refalign
-m/MS0022.BIN	0:02	84	3621	1F01	：		:	v005		reads: ： @refalign
-m/MS0022.BIN	0:02	85	3631	1F01	{08:72}くん？\n<wait>ねぇ{08:72}{01:32}？　私が誰だか分かる？\n<wait>					reads: ‥‥くん？\n<wait>ねぇ‥‥大丈夫？　私が誰だか分かる？\n<wait>; reads: ‥‥‥‥良かった、息もあんまりしないんだもの。\n睡眠薬か何かを飲んで、昏睡してるのかと思った。\n<wait>
-m/MS0022.BIN	0:02	86	3689	1F01	{08:62}	{08:62}				reads: は、; reads: ：
-m/MS0022.BIN	0:02	87	3697	1F01	の手に{08:63}の手を重ね、{08:79}手を引き寄せ{08:69}と{08:4B}。\n<wait>					reads: の手に自分の手を重ね、その手を引き寄せようとした。\n<wait>; reads: ‥‥くん？\n<wait>ねぇ‥‥大丈夫？　私が誰だか分かる？\n<wait>
-m/MS0022.BIN	0:02	88	3754	1F01	：	：				reads: ：; reads: は、
+m/MS0022.BIN	0:02	84	3621	1F01	：	: 	:	v005	draft	reads: ： @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	85	3631	1F01	{08:72}くん？\n<wait>ねぇ{08:72}{01:32}？　私が誰だか分かる？\n<wait>	...?\n<wait>Hey... are you okay? Do you know who I am?\n<wait>			draft	reads: ‥‥くん？\n<wait>ねぇ‥‥大丈夫？　私が誰だか分かる？\n<wait>; reads: ‥‥‥‥良かった、息もあんまりしないんだもの。\n睡眠薬か何かを飲んで、昏睡してるのかと思った。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	86	3689	1F01	{08:62}	 laid her hand over 			draft	reads: は、; reads: ： @ours-2026-09-05
+m/MS0022.BIN	0:02	87	3697	1F01	の手に{08:63}の手を重ね、{08:79}手を引き寄せ{08:69}と{08:4B}。\n<wait>	's hand and tried to pull it closer.\n<wait>			draft	reads: の手に自分の手を重ね、その手を引き寄せようとした。\n<wait>; reads: ‥‥くん？\n<wait>ねぇ‥‥大丈夫？　私が誰だか分かる？\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	88	3754	1F01	：	:			draft	reads: ：; reads: は、 @ours-2026-09-05
 m/MS0022.BIN	0:02	89	3758	1FD3	キャアッ！！\n<wait>		Eek!\n<wait>	v005		reads: の手に自分の手を重ね、その手を引き寄せようとした。\n<wait> @refalign
 m/MS0022.BIN	0:02	90	3785	1F01	の両手に{08:62}血が乾いてこびり付き、周囲のシーツに{08:62}どす黒い血の痕が\n染み込んで{08:64}。\n<wait>		Your hands are covered in black, dried-up blood.\nSo is the mattress. And the sheets.\n<wait>	v005		reads: の両手には、血が乾いてこびり付き、周囲のシーツには、どす黒い血の痕が\n染み込んでいた。\n<wait>; reads: ： @refalign
-m/MS0022.BIN	0:02	91	3879	1F01	：		:	v005		reads: ： @refalign
+m/MS0022.BIN	0:02	91	3879	1F01	：	: 	:	v005	draft	reads: ： @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	92	3889	1F01	くん{02:08}‥爪が裂け{08:2B}。\n{08:90}{08:4A}、{08:73}に酷く{08:16}の？\n<wait>		Katsuragi-kun, your nails... What happened to you?\n<wait>	v005		reads: くん‥‥‥‥爪が裂けてる。\nどうして、こんなに酷くなったの？\n<wait>; reads: の両手には、血が乾いてこびり付き、周囲のシーツには、どす黒い血の痕が\n染み込んでいた。\n<wait> @refalign
-m/MS0022.BIN	0:02	93	3945	1F01	：		:	v005		reads: ： @refalign
-m/MS0022.BIN	0:02	94	3949	1FD3	{08:7F}わ理由{08:6A}て。{08:7A}事より、すぐ手当てをしなきゃ。\n					reads: いいわ理由なんて。そんな事より、すぐ手当てをしなきゃ。\n; reads: くん‥‥‥‥爪が裂けてる。\nどうして、こんなに酷くなったの？\n<wait>
-m/MS0022.BIN	0:02	95	4002	1F01	くん、私、医療キットを取{08:52}来る{08:42}、{08:45}{08:42}動いちゃ駄目よ。\n<wait>					reads: くん、私、医療キットを取って来るから、ここから動いちゃ駄目よ。\n<wait>; reads: ：
-m/MS0022.BIN	0:02	96	4102	1F01	は足早に、					reads: は足早に、; reads: いいわ理由なんて。そんな事より、すぐ手当てをしなきゃ。\n
-m/MS0022.BIN	0:02	97	4118	1F01	の{01:2E}を出て行{08:51}。\n<wait>					reads: の部屋を出て行った。\n<wait>; reads: くん、私、医療キットを取って来るから、ここから動いちゃ駄目よ。\n<wait>
-m/MS0022.BIN	0:02	98	4141	1FBA	{01:23}、虚空を見つめて{08:64}{08:74}だ{08:51}					reads: しばらく、虚空を見つめていただけだった; reads: は足早に、
-m/MS0022.BIN	0:02	99	4173	1F01	{08:62}ひどい空腹感を感じ{08:14}事に\n気づ{08:64}。\n<wait>					reads: は、ひどい空腹感を感じている事に\n気づいた。\n<wait>; reads: の部屋を出て行った。\n<wait>
-m/MS0022.BIN	0:02	100	4247	1F01	の足{08:62}自然と{01:2E}の外に向かい歩き出{08:4B}。\n<wait>					reads: の足は、自然と部屋の外に向かい歩き出した。\n<wait>; reads: しばらく、虚空を見つめていただけだった
+m/MS0022.BIN	0:02	93	3945	1F01	：	:	:	v005	draft	reads: ： @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	94	3949	1FD3	{08:7F}わ理由{08:6A}て。{08:7A}事より、すぐ手当てをしなきゃ。\n	Never mind why. What matters is treating this right away.\n			draft	reads: いいわ理由なんて。そんな事より、すぐ手当てをしなきゃ。\n; reads: くん‥‥‥‥爪が裂けてる。\nどうして、こんなに酷くなったの？\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	95	4002	1F01	くん、私、医療キットを取{08:52}来る{08:42}、{08:45}{08:42}動いちゃ駄目よ。\n<wait>	, I'm going to get the medical kit, so don't you move from here.\n<wait>			draft	reads: くん、私、医療キットを取って来るから、ここから動いちゃ駄目よ。\n<wait>; reads: ： @ours-2026-09-05
+m/MS0022.BIN	0:02	96	4102	1F01	は足早に、	 hurried out of 			draft	reads: は足早に、; reads: いいわ理由なんて。そんな事より、すぐ手当てをしなきゃ。\n @ours-2026-09-05
+m/MS0022.BIN	0:02	97	4118	1F01	の{01:2E}を出て行{08:51}。\n<wait>	's room.\n<wait>			draft	reads: の部屋を出て行った。\n<wait>; reads: くん、私、医療キットを取って来るから、ここから動いちゃ駄目よ。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	98	4141	1FBA	{01:23}、虚空を見つめて{08:64}{08:74}だ{08:51}	After staring into space for a while, 			draft	reads: しばらく、虚空を見つめていただけだった; reads: は足早に、 @ours-2026-09-05
+m/MS0022.BIN	0:02	99	4173	1F01	{08:62}ひどい空腹感を感じ{08:14}事に\n気づ{08:64}。\n<wait>	 noticed that he was terribly hungry.\n<wait>			draft	reads: は、ひどい空腹感を感じている事に\n気づいた。\n<wait>; reads: の部屋を出て行った。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	100	4247	1F01	の足{08:62}自然と{01:2E}の外に向かい歩き出{08:4B}。\n<wait>	's feet naturally carried him out of the room.\n<wait>			draft	reads: の足は、自然と部屋の外に向かい歩き出した。\n<wait>; reads: しばらく、虚空を見つめていただけだった @ours-2026-09-05
 m/MS0022.BIN	0:02	101	4333	1F03						reads: は、ひどい空腹感を感じている事に\n気づいた。\n<wait>
-m/MS0022.BIN	0:02	102	4353	1F01	{08:62}直に床に座り、\n調達{08:4A}来た大量のＤＢ専用食を、貪ぼる様に喰い散らか{08:13}。\n<wait>					reads: は、直に床に座り、\n調達して来た大量のＤＢ専用食を、貪ぼる様に喰い散らかしている。\n<wait>; reads: の足は、自然と部屋の外に向かい歩き出した。\n<wait>
-m/MS0022.BIN	0:02	103	4431	1FBA	そこにあ{08:51}の{08:62}かつての	そこにあ{08:51}の{08:62}かつての				reads: そこにあったのは、かつての
-m/MS0022.BIN	0:02	104	4459	1F01	の面影等{08:25}、濁{08:51}瞳を{08:4B}、頬の痩{08:43}\n狂人の姿だ{08:51}。\n<wait>					reads: の面影等ない、濁った瞳をした、頬の痩けた\n狂人の姿だった。\n<wait>; reads: は、直に床に座り、\n調達して来た大量のＤＢ専用食を、貪ぼる様に喰い散らかしている。\n<wait>
-m/MS0022.BIN	0:02	105	4521	1F01	：		:	v005		reads: ：; reads: そこにあったのは、かつての @refalign
-m/MS0022.BIN	0:02	106	4531	1F01	{08:72}くん{02:08}‥。\n<wait>					reads: ‥‥くん‥‥‥‥。\n<wait>; reads: の面影等ない、濁った瞳をした、頬の痩けた\n狂人の姿だった。\n<wait>
-m/MS0022.BIN	0:02	107	4618	1F01	{08:62}目に涙を溜めながら、黙{08:52}傷の手当てを{08:8E}。\nこびりついてかなかな取れ{08:25}血を、優しく丁寧にふき取{08:52}行く。\n<wait>					reads: は、目に涙を溜めながら、黙って傷の手当てをする。\nこびりついてかなかな取れない血を、優しく丁寧にふき取って行く。\n<wait>; reads: ：
-m/MS0022.BIN	0:02	108	4726	1FBA	屈み込む姿勢のせいで、首筋{08:42}肩に流{08:2F}、柔らかそうな栗色の髪が、\n首筋を露にし、肩{08:42}滑り落ちる{02:08}\n<wait>					reads: 屈み込む姿勢のせいで、首筋から肩に流れる、柔らかそうな栗色の髪が、\n首筋を露にし、肩から滑り落ちる‥‥‥\n<wait>; reads: ‥‥くん‥‥‥‥。\n<wait>
-m/MS0022.BIN	0:02	109	4826	1FBA	{08:79}瞬間、					reads: その瞬間、; reads: は、目に涙を溜めながら、黙って傷の手当てをする。\nこびりついてかなかな取れない血を、優しく丁寧にふき取って行く。\n<wait>
-m/MS0022.BIN	0:02	110	4840	1F01	の脳裏の中で、何かが弾{08:43}！\n<wait>					reads: の脳裏の中で、何かが弾けた！\n<wait>; reads: 屈み込む姿勢のせいで、首筋から肩に流れる、柔らかそうな栗色の髪が、\n首筋を露にし、肩から滑り落ちる‥‥‥\n<wait>
-m/MS0022.BIN	0:02	111	4873	1FBA	{08:4D}{08:62}狂おしい程の欲望と劣情{08:72}\nいや、{08:4D}にも似た、激しい血への餓え、血への欲求であ{08:51}。\n<wait>					reads: それは、狂おしい程の欲望と劣情‥‥\nいや、それにも似た、激しい血への餓え、血への欲求であった。\n<wait>; reads: その瞬間、
-m/MS0022.BIN	0:02	112	5001	1F01	：		:	v005		reads: ：; reads: の脳裏の中で、何かが弾けた！\n<wait> @refalign
+m/MS0022.BIN	0:02	102	4353	1F01	{08:62}直に床に座り、\n調達{08:4A}来た大量のＤＢ専用食を、貪ぼる様に喰い散らか{08:13}。\n<wait>	 sat right on the floor, greedily devouring the huge amount of DB rations\nhe had brought back, scattering them everywhere.\n<wait>			draft	reads: は、直に床に座り、\n調達して来た大量のＤＢ専用食を、貪ぼる様に喰い散らかしている。\n<wait>; reads: の足は、自然と部屋の外に向かい歩き出した。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	103	4431	1FBA	そこにあ{08:51}の{08:62}かつての	There sat someone with no trace of the former 			draft	reads: そこにあったのは、かつての @ours-2026-09-05
+m/MS0022.BIN	0:02	104	4459	1F01	の面影等{08:25}、濁{08:51}瞳を{08:4B}、頬の痩{08:43}\n狂人の姿だ{08:51}。\n<wait>	: a madman with clouded eyes and hollow cheeks.\n<wait>			draft	reads: の面影等ない、濁った瞳をした、頬の痩けた\n狂人の姿だった。\n<wait>; reads: は、直に床に座り、\n調達して来た大量のＤＢ専用食を、貪ぼる様に喰い散らかしている。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	105	4521	1F01	：	: 	:	v005	draft	reads: ：; reads: そこにあったのは、かつての @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	106	4531	1F01	{08:72}くん{02:08}‥。\n<wait>	............\n<wait>			draft	reads: ‥‥くん‥‥‥‥。\n<wait>; reads: の面影等ない、濁った瞳をした、頬の痩けた\n狂人の姿だった。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	107	4618	1F01	{08:62}目に涙を溜めながら、黙{08:52}傷の手当てを{08:8E}。\nこびりついてかなかな取れ{08:25}血を、優しく丁寧にふき取{08:52}行く。\n<wait>	, with tears welling in her eyes, silently treated the wounds,\ngently and carefully wiping away the blood that clung stubbornly.\n<wait>			draft	reads: は、目に涙を溜めながら、黙って傷の手当てをする。\nこびりついてかなかな取れない血を、優しく丁寧にふき取って行く。\n<wait>; reads: ： @ours-2026-09-05
+m/MS0022.BIN	0:02	108	4726	1FBA	屈み込む姿勢のせいで、首筋{08:42}肩に流{08:2F}、柔らかそうな栗色の髪が、\n首筋を露にし、肩{08:42}滑り落ちる{02:08}\n<wait>	Because of her bent posture, her soft chestnut hair, flowing from her\nnape to her shoulders, slid down and left her neck exposed.........\n<wait>			draft	reads: 屈み込む姿勢のせいで、首筋から肩に流れる、柔らかそうな栗色の髪が、\n首筋を露にし、肩から滑り落ちる‥‥‥\n<wait>; reads: ‥‥くん‥‥‥‥。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	109	4826	1FBA	{08:79}瞬間、	In that instant, inside 			draft	reads: その瞬間、; reads: は、目に涙を溜めながら、黙って傷の手当てをする。\nこびりついてかなかな取れない血を、優しく丁寧にふき取って行く。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	110	4840	1F01	の脳裏の中で、何かが弾{08:43}！\n<wait>	's mind, something snapped!\n<wait>			draft	reads: の脳裏の中で、何かが弾けた！\n<wait>; reads: 屈み込む姿勢のせいで、首筋から肩に流れる、柔らかそうな栗色の髪が、\n首筋を露にし、肩から滑り落ちる‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	111	4873	1FBA	{08:4D}{08:62}狂おしい程の欲望と劣情{08:72}\nいや、{08:4D}にも似た、激しい血への餓え、血への欲求であ{08:51}。\n<wait>	It was a maddening desire and lust...\nNo, something like them: a violent hunger for blood, a craving for\nblood.\n<wait>			draft	reads: それは、狂おしい程の欲望と劣情‥‥\nいや、それにも似た、激しい血への餓え、血への欲求であった。\n<wait>; reads: その瞬間、 @ours-2026-09-05
+m/MS0022.BIN	0:02	112	5001	1F01	：	: 	:	v005	draft	reads: ：; reads: の脳裏の中で、何かが弾けた！\n<wait> @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	113	5011	1F01	くん、何を見{08:14}の？\n<wait>		Umm, is everything okay...?\n<wait>	v005		reads: くん、何を見ているの？\n<wait>; reads: それは、狂おしい程の欲望と劣情‥‥\nいや、それにも似た、激しい血への餓え、血への欲求であった。\n<wait> @refalign
-m/MS0022.BIN	0:02	114	5044	1F01	：		:	v005		reads: ： @refalign
-m/MS0022.BIN	0:02	115	5054	1F01	くん？{02:08}い‥嫌ッ！！！\n<wait>					reads: くん？‥‥‥い‥嫌ッ！！！\n<wait>; reads: くん、何を見ているの？\n<wait>
-m/MS0022.BIN	0:02	116	5091	1F01	を懸命に想い、信じる					reads: を懸命に想い、信じる; reads: ：
-m/MS0022.BIN	0:02	117	5117	1F01	{08:55}らも、{08:79}視線の奥に潜む邪悪な欲求を、\n無意識に感じ取{08:51}様だ。\n<wait>					reads: ですらも、その視線の奥に潜む邪悪な欲求を、\n無意識に感じ取った様だ。\n<wait>; reads: くん？‥‥‥い‥嫌ッ！！！\n<wait>
-m/MS0022.BIN	0:02	118	5193	1F01	：		:	v005		reads: ：; reads: を懸命に想い、信じる @refalign
-m/MS0022.BIN	0:02	119	5197	1FD3	貴方は{08:72}貴方{08:62}					reads: 貴方は‥‥貴方は、; reads: ですらも、その視線の奥に潜む邪悪な欲求を、\n無意識に感じ取った様だ。\n<wait>
-m/MS0022.BIN	0:02	120	5217	1F01	くん{08:81}{08:25}わ！\n<wait>					reads: くんじゃないわ！\n<wait>; reads: ： @rebase-tagdiff
-m/MS0022.BIN	0:02	121	5252	1F01	{08:62}怯えて去{08:52}行{08:51}{02:08}\n<wait>					reads: は、怯えて去って行った‥‥‥\n<wait>; reads: 貴方は‥‥貴方は、 @rebase-tagdiff
-m/MS0022.BIN	0:02	122	5277	1FBA	室内を、重苦しい静寂が包みこむ{02:08}‥\n<wait>					reads: 室内を、重苦しい静寂が包みこむ‥‥‥‥\n<wait>; reads: くんじゃないわ！\n<wait>
-m/MS0022.BIN	0:02	123	5324	1F01	を、抗え{08:25}睡魔が再び襲{08:52}来た。\n<wait>					reads: を、抗えない睡魔が再び襲って来た。\n<wait>; reads: は、怯えて去って行った‥‥‥\n<wait> @rebase-tagdiff
-m/MS0022.BIN	0:02	124	5390	1F01	{08:62}再び深い眠りにつ{08:64}{02:08}{08:72}\n<wait>					reads: は、再び深い眠りについた‥‥‥‥‥\n<wait>; reads: 室内を、重苦しい静寂が包みこむ‥‥‥‥\n<wait> @rebase-tagdiff
-m/MS0022.BIN	0:02	125	5444	1FD0	そ{08:4A}翌日{02:08}。\n<wait>					reads: そして翌日‥‥‥。\n<wait>; reads: を、抗えない睡魔が再び襲って来た。\n<wait>
-m/MS0022.BIN	0:02	126	5463	1FBA	ベッドで目覚めた					reads: は、再び深い眠りについた‥‥‥‥‥\n<wait>
-m/MS0022.BIN	0:02	127	5485	1F01	{08:62}{08:63}の身に久々にまともな感覚、\nまともな感情が戻{08:52}来た事を感じた。\n<wait>					reads: は、自分の身に久々にまともな感覚、\nまともな感情が戻って来た事を感じた。\n<wait>; reads: そして翌日‥‥‥。\n<wait>
-m/MS0022.BIN	0:02	128	5557	1FBA	ベッドの中でゆっくりと深呼吸をし、昨日{08:71}の事を振り返る{02:08}‥\n<wait>					reads: ベッドの中でゆっくりと深呼吸をし、昨日までの事を振り返る‥‥‥‥\n<wait>; reads: ベッドの中でゆっくりと深呼吸をし、昨日までの事を振り返る‥‥‥‥\n<wait>
-m/MS0022.BIN	0:02	129	5622	1FBA	{08:63}が異常な行動を取{08:52}{08:1F}事。\n{08:4D}は“{08:0B}撃退{08:09}”を解凍{08:4B}時{08:42}始{08:20}事。\n<wait>					reads: 自分が異常な行動を取ってしまった事。\nそれは“悪魔撃退プログラム”を解凍した時から始まった事。\n<wait>; reads: は、自分の身に久々にまともな感覚、\nまともな感情が戻って来た事を感じた。\n<wait>
-m/MS0022.BIN	0:02	130	5692	1FBA	{08:4D}らを頭の中で整理{08:4A}行くうちに、{08:7B}{01:3C}の事件を思い出{08:4B}。\n丁度、{08:63}がおかしく{08:16}当日の夜、{08:05}ー画面に残{03:0C}た、\nあの奇妙な{08:0A}送信文の事を{02:08}。\n<wait>					reads: それらを頭の中で整理して行くうちに、あるひとつの事件を思い出した。\n丁度、自分がおかしくなった当日の夜、コンピューター画面に残された、\nあの奇妙なデータ送信文の事を‥‥‥。\n<wait>; reads: ベッドの中でゆっくりと深呼吸をし、昨日までの事を振り返る‥‥‥‥\n<wait>
-m/MS0022.BIN	0:02	131	5837	1F01	{08:62}急いで{08:05}ーに向{08:18}。\n<wait>					reads: は、急いでコンピューターに向かった。\n<wait>; reads: 自分が異常な行動を取ってしまった事。\nそれは“悪魔撃退プログラム”を解凍した時から始まった事。\n<wait>
-m/MS0022.BIN	0:02	132	5905	1FD0	{08:05}ーに{08:62}常時ロックが掛けられ{08:14}。\nロックを解除し{08:57}、何{01:3C}操作は出来{08:25}。\nそ{08:4A}、ロック解除に{08:62}{01:1B}入力が必要だ。\n<wait>					reads: コンピューターには、常時ロックが掛けられている。\nロックを解除しなければ、何ひとつ操作は出来ない。\nそして、ロック解除には、パスワード入力が必要だ。\n<wait>; reads: それらを頭の中で整理して行くうちに、あるひとつの事件を思い出した。\n丁度、自分がおかしくなった当日の夜、コンピューター画面に残された、\nあの奇妙なデータ送信文の事を‥‥‥。\n<wait>
-m/MS0022.BIN	0:02	133	6018	1FBA	{01:1B}名は“ＺＯＷＹ－ＴＨＥ－ＫＩＴＴＹ”\n					reads: パスワード名は“ＺＯＷＹ－ＴＨＥ－ＫＩＴＴＹ”\n; reads: は、急いでコンピューターに向かった。\n<wait>
-m/MS0022.BIN	0:02	134	6063	1F01	以外に{08:62}誰も知る者は{08:24}。\n<wait>					reads: 以外には、誰も知る者はいない。\n<wait>; reads: コンピューターには、常時ロックが掛けられている。\nロックを解除しなければ、何ひとつ操作は出来ない。\nそして、ロック解除には、パスワード入力が必要だ。\n<wait>
-m/MS0022.BIN	0:02	135	6094	1FBA	{08:79}{01:1B}名{08:62}					reads: そのパスワード名は、; reads: パスワード名は“ＺＯＷＹ－ＴＨＥ－ＫＩＴＴＹ”\n
-m/MS0022.BIN	0:02	136	6108	1F01	が幼い頃、両親に買{08:52}貰{08:51}小さなロボット猫に\n付{08:43}名前だ{08:51}。\n<wait>					reads: が幼い頃、両親に買って貰った小さなロボット猫に\n付けた名前だった。\n<wait>; reads: 以外には、誰も知る者はいない。\n<wait>
-m/MS0022.BIN	0:02	137	6172	1FBA	{01:28}の様に{01:1B}を入力し、ロック解除{08:8E}					reads: いつもの様にパスワードを入力し、ロック解除する; reads: そのパスワード名は、
-m/MS0022.BIN	0:02	138	6210	1F01	。\nそ{08:4A}、{08:0A}{08:65}のTENPを開き、問題の夜の記録を探す{02:08}\n<wait>					reads: 。\nそして、データ通信のTENPを開き、問題の夜の記録を探す‥‥‥\n<wait>; reads: が幼い頃、両親に買って貰った小さなロボット猫に\n付けた名前だった。\n<wait>
-m/MS0022.BIN	0:02	139	6278	1FBD	{02:08}メイルを{03:08}ロードし{08:5A}\n<wait>					reads: ‥‥‥メイルをアップロードします\n<wait>; reads: いつもの様にパスワードを入力し、ロック解除する
-m/MS0022.BIN	0:02	140	6307	1FBA	AIM.BIN　１．２ギガバイト{02:08}{02:08}{08:72}\n<wait>					reads: AIM.BIN　１．２ギガバイト‥‥‥‥‥‥‥‥\n<wait>; reads: 。\nそして、データ通信のTENPを開き、問題の夜の記録を探す‥‥‥\n<wait>
-m/MS0022.BIN	0:02	141	6345	1FBA	{03:08}ロード完了\n<wait>					reads: アップロード完了\n<wait>; reads: ‥‥‥メイルをアップロードします\n<wait>
-m/MS0022.BIN	0:02	142	6364	1FBA	送信先を指定{08:4A}{08:6E}\n{02:08}{02:08}{08:72}御茶ノ水{08:10}\n<wait>					reads: 送信先を指定してください\n‥‥‥‥‥‥‥‥御茶ノ水シェルター\n<wait>; reads: AIM.BIN　１．２ギガバイト‥‥‥‥‥‥‥‥\n<wait>
-m/MS0022.BIN	0:02	143	6404	1FBA	{02:08}{02:08}{08:72}送信完了\n<wait>					reads: ‥‥‥‥‥‥‥‥送信完了\n<wait>; reads: アップロード完了\n<wait>
-m/MS0022.BIN	0:02	144	6425	1FBA	何かキーを押{08:4A}{08:6E}。{08:65}を終了し{08:5A}。\n<wait>					reads: 何かキーを押してください。通信を終了します。\n<wait>; reads: 送信先を指定してください\n‥‥‥‥‥‥‥‥御茶ノ水シェルター\n<wait>
-m/MS0022.BIN	0:02	145	6466	1FD0	御茶の水{08:10}に宛て、{08:0B}の名前とおぼしきファイルを送信{08:13}。\n<wait>					reads: 御茶の水シェルターに宛て、悪魔の名前とおぼしきファイルを送信している。\n<wait>; reads: ‥‥‥‥‥‥‥‥送信完了\n<wait>
-m/MS0022.BIN	0:02	146	6527	1FBA	前後の動き{08:42}、{08:48}らの{08:0A}が“{08:0B}撃退{08:09}”内に圧縮{03:0C}て{08:64}\n{08:0A}で{08:7B}事に間違いは{08:25}。\n<wait>					reads: 前後の動きから、これらのデータが“悪魔撃退プログラム”内に圧縮されていた\nデータである事に間違いはない。\n<wait>; reads: 何かキーを押してください。通信を終了します。\n<wait>
-m/MS0022.BIN	0:02	147	6607	1FBA	画面を見つ{08:2E}					reads: 画面を見つめる; reads: 御茶の水シェルターに宛て、悪魔の名前とおぼしきファイルを送信している。\n<wait>
-m/MS0022.BIN	0:02	148	6625	1F01	{08:62}{08:7B}奇妙な事に気付{08:64}。\n<wait>					reads: は、ある奇妙な事に気付いた。\n<wait>; reads: 前後の動きから、これらのデータが“悪魔撃退プログラム”内に圧縮されていた\nデータである事に間違いはない。\n<wait>
-m/MS0022.BIN	0:02	149	6654	1FBA	あの{08:09}は					reads: あのプログラムは; reads: 画面を見つめる
-m/MS0022.BIN	0:02	150	6668	1FFA	{02:08}{02:08}	{02:08}{02:08}				reads: ‥‥‥‥‥‥; reads: は、ある奇妙な事に気付いた。\n<wait>
-m/MS0022.BIN	0:02	151	6678	1FFA	？\nそこには記憶がおかしく{08:59}直前に見た、あの莫大な{08:0A}量のMURMUR.BINと{08:68}\n名のファイル{08:62}忽然と消{08:41}かの様に見当{08:50}{08:19}。\n<wait>					reads: ？\nそこには記憶がおかしくなる直前に見た、あの莫大なデータ量のMURMUR.BINという\n名のファイルは、忽然と消えたかの様に見当たらなかった。\n<wait>; reads: あのプログラムは
-m/MS0022.BIN	0:02	152	6797	1FBA	{02:08}{08:72}Ｄ.Ｄ.Ｍ　デジタル・{08:06}・メイル　{02:08}‥\n<wait>	{02:08}{08:72}Ｄ.Ｄ.Ｍ　デジタル・{08:06}・メイル　{02:08}‥\n<wait>	DDM (Digital Devil Mail)...\n<wait>	v005		reads: ‥‥‥‥‥Ｄ.Ｄ.Ｍ　デジタル・デビル・メイル　‥‥‥‥\n<wait>; reads: ‥‥‥‥‥‥
-m/MS0022.BIN	0:02	153	6850	1F01	の頭に{08:62}以前{08:02}に見せら{08:60}、{08:0A}化{08:4B}{08:0B}を{08:05}ー・\nネットワークを通じて、相手に送り付{08:29}事が出来ると{08:68}ソフトの名が浮か{08:5F}。\n<wait>					reads: の頭には、以前山瀬に見せられた、データ化した悪魔をコンピューター・\nネットワークを通じて、相手に送り付ける事が出来るというソフトの名が浮かんだ。\n<wait>; reads: ？\nそこには記憶がおかしくなる直前に見た、あの莫大なデータ量のMURMUR.BINという\n名のファイルは、忽然と消えたかの様に見当たらなかった。\n<wait>
-m/MS0022.BIN	0:02	154	6970	1FBA	{08:72}経路不明の{08:0B}侵入{08:72}奇妙な霊的磁場の増大{02:08}\n<wait>					reads: ‥‥経路不明の悪魔侵入‥‥奇妙な霊的磁場の増大‥‥‥\n<wait>; reads: ‥‥‥‥‥Ｄ.Ｄ.Ｍ　デジタル・デビル・メイル　‥‥‥‥\n<wait>
-m/MS0022.BIN	0:02	155	7019	1FBA	{08:72}{08:0A}化{08:4B}肉体を持たぬ{08:0B}{02:08}{08:0B}憑依{02:08}\n<wait>					reads: ‥‥データ化した肉体を持たぬ悪魔‥‥‥悪魔憑依‥‥‥\n<wait>; reads: の頭には、以前山瀬に見せられた、データ化した悪魔をコンピューター・\nネットワークを通じて、相手に送り付ける事が出来るというソフトの名が浮かんだ。\n<wait>
-m/MS0022.BIN	0:02	156	7064	1F01	の脳裏で、{01:3C}の絶望的な予測が形を作り出{08:4A}来た。\n<wait>{08:79}時、<wait>背後で扉の開く音が{08:4B}。\n<wait>					reads: の脳裏で、ひとつの絶望的な予測が形を作り出して来た。\n<wait>その時、<wait>背後で扉の開く音がした。\n<wait>; reads: ‥‥経路不明の悪魔侵入‥‥奇妙な霊的磁場の増大‥‥‥\n<wait>
-m/MS0022.BIN	0:02	157	7196	1F01	：		:	v005		reads: ：; reads: ‥‥データ化した肉体を持たぬ悪魔‥‥‥悪魔憑依‥‥‥\n<wait> @refalign
+m/MS0022.BIN	0:02	114	5044	1F01	：	: 	:	v005	draft	reads: ： @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	115	5054	1F01	くん？{02:08}い‥嫌ッ！！！\n<wait>	?.........N... no!!!\n<wait>			draft	reads: くん？‥‥‥い‥嫌ッ！！！\n<wait>; reads: くん、何を見ているの？\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	116	5091	1F01	を懸命に想い、信じる	 was cared for and believed in with all her heart, yet even 			draft	reads: を懸命に想い、信じる; reads: ： @ours-2026-09-05
+m/MS0022.BIN	0:02	117	5117	1F01	{08:55}らも、{08:79}視線の奥に潜む邪悪な欲求を、\n無意識に感じ取{08:51}様だ。\n<wait>	 seemed to have unconsciously sensed the evil craving lurking behind\nthat gaze.\n<wait>			draft	reads: ですらも、その視線の奥に潜む邪悪な欲求を、\n無意識に感じ取った様だ。\n<wait>; reads: くん？‥‥‥い‥嫌ッ！！！\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	118	5193	1F01	：	:	:	v005	draft	reads: ：; reads: を懸命に想い、信じる @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	119	5197	1FD3	貴方は{08:72}貴方{08:62}	You're... you're not 			draft	reads: 貴方は‥‥貴方は、; reads: ですらも、その視線の奥に潜む邪悪な欲求を、\n無意識に感じ取った様だ。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	120	5217	1F01	くん{08:81}{08:25}わ！\n<wait>	!\n<wait>			draft	reads: くんじゃないわ！\n<wait>; reads: ： @rebase-tagdiff @ours-2026-09-05
+m/MS0022.BIN	0:02	121	5252	1F01	{08:62}怯えて去{08:52}行{08:51}{02:08}\n<wait>	 fled in terror.........\n<wait>			draft	reads: は、怯えて去って行った‥‥‥\n<wait>; reads: 貴方は‥‥貴方は、 @rebase-tagdiff @ours-2026-09-05
+m/MS0022.BIN	0:02	122	5277	1FBA	室内を、重苦しい静寂が包みこむ{02:08}‥\n<wait>	A heavy silence enveloped the room............\n<wait>			draft	reads: 室内を、重苦しい静寂が包みこむ‥‥‥‥\n<wait>; reads: くんじゃないわ！\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	123	5324	1F01	を、抗え{08:25}睡魔が再び襲{08:52}来た。\n<wait>	 was again assailed by an irresistible drowsiness.\n<wait>			draft	reads: を、抗えない睡魔が再び襲って来た。\n<wait>; reads: は、怯えて去って行った‥‥‥\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS0022.BIN	0:02	124	5390	1F01	{08:62}再び深い眠りにつ{08:64}{02:08}{08:72}\n<wait>	 fell into a deep sleep once more............\n<wait>			draft	reads: は、再び深い眠りについた‥‥‥‥‥\n<wait>; reads: 室内を、重苦しい静寂が包みこむ‥‥‥‥\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS0022.BIN	0:02	125	5444	1FD0	そ{08:4A}翌日{02:08}。\n<wait>	And the next day.........\n<wait>			draft	reads: そして翌日‥‥‥。\n<wait>; reads: を、抗えない睡魔が再び襲って来た。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	126	5463	1FBA	ベッドで目覚めた	Waking in bed, 			draft	reads: は、再び深い眠りについた‥‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	127	5485	1F01	{08:62}{08:63}の身に久々にまともな感覚、\nまともな感情が戻{08:52}来た事を感じた。\n<wait>	 felt that, for the first time in a long while, normal sensations and\nnormal feelings had returned to him.\n<wait>			draft	reads: は、自分の身に久々にまともな感覚、\nまともな感情が戻って来た事を感じた。\n<wait>; reads: そして翌日‥‥‥。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	128	5557	1FBA	ベッドの中でゆっくりと深呼吸をし、昨日{08:71}の事を振り返る{02:08}‥\n<wait>	Breathing slowly and deeply in bed, he looked back over the events up\nto yesterday............\n<wait>			draft	reads: ベッドの中でゆっくりと深呼吸をし、昨日までの事を振り返る‥‥‥‥\n<wait>; reads: ベッドの中でゆっくりと深呼吸をし、昨日までの事を振り返る‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	129	5622	1FBA	{08:63}が異常な行動を取{08:52}{08:1F}事。\n{08:4D}は“{08:0B}撃退{08:09}”を解凍{08:4B}時{08:42}始{08:20}事。\n<wait>	That he had behaved abnormally.\nThat it had begun when he decompressed the "Demon Repelling Program".\n<wait>			draft	reads: 自分が異常な行動を取ってしまった事。\nそれは“悪魔撃退プログラム”を解凍した時から始まった事。\n<wait>; reads: は、自分の身に久々にまともな感覚、\nまともな感情が戻って来た事を感じた。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	130	5692	1FBA	{08:4D}らを頭の中で整理{08:4A}行くうちに、{08:7B}{01:3C}の事件を思い出{08:4B}。\n丁度、{08:63}がおかしく{08:16}当日の夜、{08:05}ー画面に残{03:0C}た、\nあの奇妙な{08:0A}送信文の事を{02:08}。\n<wait>	As he sorted through these things in his head, he recalled one incident.\nThat strange data transmission left on the computer screen, on the very\nnight he had gone strange.........\n<wait>			draft	reads: それらを頭の中で整理して行くうちに、あるひとつの事件を思い出した。\n丁度、自分がおかしくなった当日の夜、コンピューター画面に残された、\nあの奇妙なデータ送信文の事を‥‥‥。\n<wait>; reads: ベッドの中でゆっくりと深呼吸をし、昨日までの事を振り返る‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	131	5837	1F01	{08:62}急いで{08:05}ーに向{08:18}。\n<wait>	 hurried to the computer.\n<wait>			draft	reads: は、急いでコンピューターに向かった。\n<wait>; reads: 自分が異常な行動を取ってしまった事。\nそれは“悪魔撃退プログラム”を解凍した時から始まった事。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	132	5905	1FD0	{08:05}ーに{08:62}常時ロックが掛けられ{08:14}。\nロックを解除し{08:57}、何{01:3C}操作は出来{08:25}。\nそ{08:4A}、ロック解除に{08:62}{01:1B}入力が必要だ。\n<wait>	The computer is always kept locked.\nUnless the lock is released, nothing at all can be done.\nAnd releasing the lock requires a password.\n<wait>			draft	reads: コンピューターには、常時ロックが掛けられている。\nロックを解除しなければ、何ひとつ操作は出来ない。\nそして、ロック解除には、パスワード入力が必要だ。\n<wait>; reads: それらを頭の中で整理して行くうちに、あるひとつの事件を思い出した。\n丁度、自分がおかしくなった当日の夜、コンピューター画面に残された、\nあの奇妙なデータ送信文の事を‥‥‥。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	133	6018	1FBA	{01:1B}名は“ＺＯＷＹ－ＴＨＥ－ＫＩＴＴＹ”\n	The password is "ZOWY-THE-KITTY"\n			draft	reads: パスワード名は“ＺＯＷＹ－ＴＨＥ－ＫＩＴＴＹ”\n; reads: は、急いでコンピューターに向かった。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	134	6063	1F01	以外に{08:62}誰も知る者は{08:24}。\n<wait>	 is the only one who knows it.\n<wait>			draft	reads: 以外には、誰も知る者はいない。\n<wait>; reads: コンピューターには、常時ロックが掛けられている。\nロックを解除しなければ、何ひとつ操作は出来ない。\nそして、ロック解除には、パスワード入力が必要だ。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	135	6094	1FBA	{08:79}{01:1B}名{08:62}	The password was the name 			draft	reads: そのパスワード名は、; reads: パスワード名は“ＺＯＷＹ－ＴＨＥ－ＫＩＴＴＹ”\n @ours-2026-09-05
+m/MS0022.BIN	0:02	136	6108	1F01	が幼い頃、両親に買{08:52}貰{08:51}小さなロボット猫に\n付{08:43}名前だ{08:51}。\n<wait>	 gave to the little robot cat his parents bought him as a child.\n<wait>			draft	reads: が幼い頃、両親に買って貰った小さなロボット猫に\n付けた名前だった。\n<wait>; reads: 以外には、誰も知る者はいない。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	137	6172	1FBA	{01:28}の様に{01:1B}を入力し、ロック解除{08:8E}	As always, 			draft	reads: いつもの様にパスワードを入力し、ロック解除する; reads: そのパスワード名は、 @ours-2026-09-05
+m/MS0022.BIN	0:02	138	6210	1F01	。\nそ{08:4A}、{08:0A}{08:65}のTENPを開き、問題の夜の記録を探す{02:08}\n<wait>	 entered the password and released the lock.\nThen he opened the data comm TEMP folder and searched for the record of\nthat night.........\n<wait>			draft	reads: 。\nそして、データ通信のTENPを開き、問題の夜の記録を探す‥‥‥\n<wait>; reads: が幼い頃、両親に買って貰った小さなロボット猫に\n付けた名前だった。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	139	6278	1FBD	{02:08}メイルを{03:08}ロードし{08:5A}\n<wait>	.........Uploading mail\n<wait>			draft	reads: ‥‥‥メイルをアップロードします\n<wait>; reads: いつもの様にパスワードを入力し、ロック解除する @ours-2026-09-05
+m/MS0022.BIN	0:02	140	6307	1FBA	AIM.BIN　１．２ギガバイト{02:08}{02:08}{08:72}\n<wait>	AIM.BIN  1.2 gigabytes.........\n<wait>			draft	reads: AIM.BIN　１．２ギガバイト‥‥‥‥‥‥‥‥\n<wait>; reads: 。\nそして、データ通信のTENPを開き、問題の夜の記録を探す‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	141	6345	1FBA	{03:08}ロード完了\n<wait>	Upload complete\n<wait>			draft	reads: アップロード完了\n<wait>; reads: ‥‥‥メイルをアップロードします\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	142	6364	1FBA	送信先を指定{08:4A}{08:6E}\n{02:08}{02:08}{08:72}御茶ノ水{08:10}\n<wait>	Specify the destination\n.........Ochanomizu Shelter\n<wait>			draft	reads: 送信先を指定してください\n‥‥‥‥‥‥‥‥御茶ノ水シェルター\n<wait>; reads: AIM.BIN　１．２ギガバイト‥‥‥‥‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	143	6404	1FBA	{02:08}{02:08}{08:72}送信完了\n<wait>	.........Transmission complete\n<wait>			draft	reads: ‥‥‥‥‥‥‥‥送信完了\n<wait>; reads: アップロード完了\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	144	6425	1FBA	何かキーを押{08:4A}{08:6E}。{08:65}を終了し{08:5A}。\n<wait>	Press any key. Ending communication.\n<wait>			draft	reads: 何かキーを押してください。通信を終了します。\n<wait>; reads: 送信先を指定してください\n‥‥‥‥‥‥‥‥御茶ノ水シェルター\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	145	6466	1FD0	御茶の水{08:10}に宛て、{08:0B}の名前とおぼしきファイルを送信{08:13}。\n<wait>	He had sent a file that appeared to be a demon's name to Ochanomizu\nShelter.\n<wait>			draft	reads: 御茶の水シェルターに宛て、悪魔の名前とおぼしきファイルを送信している。\n<wait>; reads: ‥‥‥‥‥‥‥‥送信完了\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	146	6527	1FBA	前後の動き{08:42}、{08:48}らの{08:0A}が“{08:0B}撃退{08:09}”内に圧縮{03:0C}て{08:64}\n{08:0A}で{08:7B}事に間違いは{08:25}。\n<wait>	From the sequence of events, there was no doubt that this data had been\ncompressed inside the "Demon Repelling Program".\n<wait>			draft	reads: 前後の動きから、これらのデータが“悪魔撃退プログラム”内に圧縮されていた\nデータである事に間違いはない。\n<wait>; reads: 何かキーを押してください。通信を終了します。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	147	6607	1FBA	画面を見つ{08:2E}	Staring at the screen, 			draft	reads: 画面を見つめる; reads: 御茶の水シェルターに宛て、悪魔の名前とおぼしきファイルを送信している。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	148	6625	1F01	{08:62}{08:7B}奇妙な事に気付{08:64}。\n<wait>	 noticed something strange.\n<wait>			draft	reads: は、ある奇妙な事に気付いた。\n<wait>; reads: 前後の動きから、これらのデータが“悪魔撃退プログラム”内に圧縮されていた\nデータである事に間違いはない。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	149	6654	1FBA	あの{08:09}は	That program			draft	reads: あのプログラムは; reads: 画面を見つめる @ours-2026-09-05
+m/MS0022.BIN	0:02	150	6668	1FFA	{02:08}{02:08}	......			draft	reads: ‥‥‥‥‥‥; reads: は、ある奇妙な事に気付いた。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	151	6678	1FFA	？\nそこには記憶がおかしく{08:59}直前に見た、あの莫大な{08:0A}量のMURMUR.BINと{08:68}\n名のファイル{08:62}忽然と消{08:41}かの様に見当{08:50}{08:19}。\n<wait>	?\nThe huge MURMUR.BIN file he had seen just before his memory went\nstrange was nowhere to be found, as if it had vanished into thin air.\n<wait>			draft	reads: ？\nそこには記憶がおかしくなる直前に見た、あの莫大なデータ量のMURMUR.BINという\n名のファイルは、忽然と消えたかの様に見当たらなかった。\n<wait>; reads: あのプログラムは @ours-2026-09-05
+m/MS0022.BIN	0:02	152	6797	1FBA	{02:08}{08:72}Ｄ.Ｄ.Ｍ　デジタル・{08:06}・メイル　{02:08}‥\n<wait>	............D.D.M  Digital Devil Mail............\n<wait>	DDM (Digital Devil Mail)...\n<wait>	v005	draft	reads: ‥‥‥‥‥Ｄ.Ｄ.Ｍ　デジタル・デビル・メイル　‥‥‥‥\n<wait>; reads: ‥‥‥‥‥‥ @ours-2026-09-05
+m/MS0022.BIN	0:02	153	6850	1F01	の頭に{08:62}以前{08:02}に見せら{08:60}、{08:0A}化{08:4B}{08:0B}を{08:05}ー・\nネットワークを通じて、相手に送り付{08:29}事が出来ると{08:68}ソフトの名が浮か{08:5F}。\n<wait>	's mind turned to the name of the software Yamase had once shown him,\nwhich could send a digitised demon to a target over a computer network.\n<wait>			draft	reads: の頭には、以前山瀬に見せられた、データ化した悪魔をコンピューター・\nネットワークを通じて、相手に送り付ける事が出来るというソフトの名が浮かんだ。\n<wait>; reads: ？\nそこには記憶がおかしくなる直前に見た、あの莫大なデータ量のMURMUR.BINという\n名のファイルは、忽然と消えたかの様に見当たらなかった。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	154	6970	1FBA	{08:72}経路不明の{08:0B}侵入{08:72}奇妙な霊的磁場の増大{02:08}\n<wait>	...Demon intrusion by unknown route... a strange increase in the\nspiritual magnetic field.........\n<wait>			draft	reads: ‥‥経路不明の悪魔侵入‥‥奇妙な霊的磁場の増大‥‥‥\n<wait>; reads: ‥‥‥‥‥Ｄ.Ｄ.Ｍ　デジタル・デビル・メイル　‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	155	7019	1FBA	{08:72}{08:0A}化{08:4B}肉体を持たぬ{08:0B}{02:08}{08:0B}憑依{02:08}\n<wait>	...A digitised demon without a physical body......... demonic\npossession.........\n<wait>			draft	reads: ‥‥データ化した肉体を持たぬ悪魔‥‥‥悪魔憑依‥‥‥\n<wait>; reads: の頭には、以前山瀬に見せられた、データ化した悪魔をコンピューター・\nネットワークを通じて、相手に送り付ける事が出来るというソフトの名が浮かんだ。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	156	7064	1F01	の脳裏で、{01:3C}の絶望的な予測が形を作り出{08:4A}来た。\n<wait>{08:79}時、<wait>背後で扉の開く音が{08:4B}。\n<wait>	's mind began to form a single despairing conclusion.\n<wait>Just then,<wait>he heard the door open behind him.\n<wait>			draft	reads: の脳裏で、ひとつの絶望的な予測が形を作り出して来た。\n<wait>その時、<wait>背後で扉の開く音がした。\n<wait>; reads: ‥‥経路不明の悪魔侵入‥‥奇妙な霊的磁場の増大‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	157	7196	1F01	：	: 	:	v005	draft	reads: ：; reads: ‥‥データ化した肉体を持たぬ悪魔‥‥‥悪魔憑依‥‥‥\n<wait> @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	158	7206	1F01	くん大変{08:6B}！　妹が{08:72}私の妹が！！\n<wait>		Katsuragi-kun, listen! My sister... My sister has!...\n<wait>	v005		reads: くん大変なの！　妹が‥‥私の妹が！！\n<wait>; reads: の脳裏で、ひとつの絶望的な予測が形を作り出して来た。\n<wait>その時、<wait>背後で扉の開く音がした。\n<wait> @refalign
 m/MS0022.BIN	0:02	159	7253	1F01	の両目{08:62}涙に濡れ、赤くなっ{08:14}。\n<wait>		Yuuka's eyes are red and teary.\n<wait>	v005		reads: の両目は、涙に濡れ、赤くなっている。\n<wait>; reads: ： @refalign
 m/MS0022.BIN	0:02	160	7290	1FBA	{08:5B}{08:72}何かが起{08:51}のか{02:08}\n<wait>		Has something happened?\n<wait>	v005		reads: また‥‥何かが起ったのか‥‥‥\n<wait>; reads: くん大変なの！　妹が‥‥私の妹が！！\n<wait> @refalign
 m/MS0022.BIN	0:02	161	7375	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: の両目は、涙に濡れ、赤くなっている。\n<wait> @refalign
-m/MS0022.BIN	0:02	162	7381	1FD3	あ、					reads: また‥‥何かが起ったのか‥‥‥\n<wait>
-m/MS0022.BIN	0:02	163	7391	1F01	さんも来てたのか。\n{08:5C}話は？\n<wait>					reads: さんも来てたのか。\nもう話は？\n<wait>; reads: 早坂：
-m/MS0022.BIN	0:02	164	7433	1F01	は黙{08:51}{08:7E}、首を横に振る。\n<wait>					reads: は黙ったまま、首を横に振る。\n<wait>; reads: は黙ったまま、首を横に振る。\n<wait>
+m/MS0022.BIN	0:02	162	7381	1FD3	あ、	Oh, 			draft	reads: また‥‥何かが起ったのか‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	163	7391	1F01	さんも来てたのか。\n{08:5C}話は？\n<wait>	 came too, huh.\nHave you told him yet?\n<wait>			draft	reads: さんも来てたのか。\nもう話は？\n<wait>; reads: 早坂： @ours-2026-09-05
+m/MS0022.BIN	0:02	164	7433	1F01	は黙{08:51}{08:7E}、首を横に振る。\n<wait>	 silently shook her head.\n<wait>			draft	reads: は黙ったまま、首を横に振る。\n<wait>; reads: は黙ったまま、首を横に振る。\n<wait> @ours-2026-09-05
 m/MS0022.BIN	0:02	165	7466	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: さんも来てたのか。\nもう話は？\n<wait> @refalign
 m/MS0022.BIN	0:02	166	7472	1FD3	そうか{08:72}。\n<wait>		Oh...\n<wait>	v005		reads: そうか‥‥。\n<wait>; reads: は黙ったまま、首を横に振る。\n<wait> @refalign
 m/MS0022.BIN	0:02	167	7491	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 早坂： @refalign
-m/MS0022.BIN	0:02	168	7497	1FD3	実はな					reads: そうか‥‥。\n<wait>
-m/MS0022.BIN	0:02	169	7509	1F01	、今日、ファームの樹木エリアで変死体が発見{03:0C}た{08:5F}。\n<wait>					reads: 、今日、ファームの樹木エリアで変死体が発見されたんだ。\n<wait>; reads: 早坂：
-m/MS0022.BIN	0:02	170	7566	1FBA	被害者は					
-m/MS0022.BIN	0:02	171	7580	1FFA	{02:08}\n	{02:08}\n				reads: ‥‥‥\n; reads: 、今日、ファームの樹木エリアで変死体が発見されたんだ。\n<wait>
-m/MS0022.BIN	0:02	172	7595	1F01	さんの腹違いの妹さんで{08:7B}、					reads: さんの腹違いの妹さんである、; reads: さんの腹違いの妹さんである、
-m/MS0022.BIN	0:02	173	7627	1F01	美莉ちゃ{08:5F}。\n<wait>	美莉ちゃ{08:5F}。\n<wait>				reads: 美莉ちゃんだ。\n<wait>; reads: ‥‥‥\n
+m/MS0022.BIN	0:02	168	7497	1FD3	実はな	The thing is, 			draft	reads: そうか‥‥。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	169	7509	1F01	、今日、ファームの樹木エリアで変死体が発見{03:0C}た{08:5F}。\n<wait>	, today a body was found under suspicious circumstances in the farm's\ntree area.\n<wait>			draft	reads: 、今日、ファームの樹木エリアで変死体が発見されたんだ。\n<wait>; reads: 早坂： @ours-2026-09-05
+m/MS0022.BIN	0:02	170	7566	1FBA	被害者は	The victim was			draft	@ours-2026-09-05
+m/MS0022.BIN	0:02	171	7580	1FFA	{02:08}\n	......\n			draft	reads: ‥‥‥\n; reads: 、今日、ファームの樹木エリアで変死体が発見されたんだ。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	172	7595	1F01	さんの腹違いの妹さんで{08:7B}、	's half-sister, 			draft	reads: さんの腹違いの妹さんである、; reads: さんの腹違いの妹さんである、 @ours-2026-09-05
+m/MS0022.BIN	0:02	173	7627	1F01	美莉ちゃ{08:5F}。\n<wait>	 Miri.\n<wait>			draft	reads: 美莉ちゃんだ。\n<wait>; reads: ‥‥‥\n @ours-2026-09-05
 m/MS0022.BIN	0:02	174	7648	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: さんの腹違いの妹さんである、 @refalign
 m/MS0022.BIN	0:02	175	7654	1FD3	死亡時刻{08:62}昨日の深夜か今日未明。\n		We aren't sure about her time of death.\nAll we know is that it happened sometime between last night and today.\nAlso	v005		reads: 死亡時刻は、昨日の深夜か今日未明。\n; reads: 美莉ちゃんだ。\n<wait> @refalign
-m/MS0022.BIN	0:02	176	7693	1FFA	{02:08}	{02:08}				reads: ‥‥‥; reads: 早坂：
+m/MS0022.BIN	0:02	176	7693	1FFA	{02:08}	......			draft	reads: ‥‥‥; reads: 早坂： @ours-2026-09-05
 m/MS0022.BIN	0:02	177	7701	1FFA	死体{08:42}、血が一滴も残さず吸い取られて{08:64}。\n<wait>		When we found the body, it was completely dry.\nAll of her blood had been sucked away. Every last drop of it.\n<wait>	v005		reads: 死体から、血が一滴も残さず吸い取られていた。\n<wait>; reads: 死亡時刻は、昨日の深夜か今日未明。\n @refalign
 m/MS0022.BIN	0:02	178	7750	1FD2	{08:00}：	{08:00}：	Hayasaka:	v005		reads: 早坂：; reads: ‥‥‥
 m/MS0022.BIN	0:02	179	7756	1FD3	{03:0B}周囲には血痕はおろか、遺体には外傷{01:3C}見られ{08:25}。\n<wait>		Despite this, there weren't any bloodstains in the area. Not only that,\nthe girl appears to not have suffered any external injuries.\n<wait>	v005		reads: しかし、周囲には血痕はおろか、遺体には外傷ひとつ見られない。\n<wait>; reads: 死体から、血が一滴も残さず吸い取られていた。\n<wait> @refalign
-m/MS0022.BIN	0:02	180	7819	1F01	：		:	v005		reads: ：; reads: 早坂： @rebase-tagdiff @refalign
-m/MS0022.BIN	0:02	181	7823	1FD3	{02:08}う‥うっ{02:08}‥\n<wait>					reads: ‥‥‥う‥うっ‥‥‥‥\n<wait>; reads: しかし、周囲には血痕はおろか、遺体には外傷ひとつ見られない。\n<wait>
-m/MS0022.BIN	0:02	182	7846	1FD0	気丈にも耐えて{08:64}					reads: 気丈にも耐えていた; reads: ：
-m/MS0022.BIN	0:02	183	7868	1F01	{08:62}ついに肩を振るわせ嗚咽し始めて{08:1F}。\n<wait>					reads: は、ついに肩を振るわせ嗚咽し始めてしまった。\n<wait>; reads: ‥‥‥う‥うっ‥‥‥‥\n<wait>
+m/MS0022.BIN	0:02	180	7819	1F01	：	:	:	v005	draft	reads: ：; reads: 早坂： @rebase-tagdiff @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	181	7823	1FD3	{02:08}う‥うっ{02:08}‥\n<wait>	.........Ugh... uh.........\n<wait>			draft	reads: ‥‥‥う‥うっ‥‥‥‥\n<wait>; reads: しかし、周囲には血痕はおろか、遺体には外傷ひとつ見られない。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	182	7846	1FD0	気丈にも耐えて{08:64}	Having bravely held it in, 			draft	reads: 気丈にも耐えていた; reads: ： @ours-2026-09-05
+m/MS0022.BIN	0:02	183	7868	1F01	{08:62}ついに肩を振るわせ嗚咽し始めて{08:1F}。\n<wait>	 finally began to sob, her shoulders shaking.\n<wait>			draft	reads: は、ついに肩を振るわせ嗚咽し始めてしまった。\n<wait>; reads: ‥‥‥う‥うっ‥‥‥‥\n<wait> @ours-2026-09-05
 m/MS0022.BIN	0:02	184	7913	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 気丈にも耐えていた @refalign
 m/MS0022.BIN	0:02	185	7925	1F01	さん{02:08}<wait>ごめん。\n<wait>		Tachibana... <wait>Sorry.\n<wait>	v005		reads: さん‥‥‥<wait>ごめん。\n<wait>; reads: は、ついに肩を振るわせ嗚咽し始めてしまった。\n<wait> @rebase-tagdiff @refalign
-m/MS0022.BIN	0:02	186	7958	1F01	：		:	v005		reads: ：; reads: 早坂： @rebase-tagdiff @refalign
+m/MS0022.BIN	0:02	186	7958	1F01	：	:	:	v005	draft	reads: ：; reads: 早坂： @rebase-tagdiff @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	187	7962	1FD3	{08:72}{08:7F}の{08:72}<wait>続けて{08:72}\n<wait>		It's fine... <wait>Please, continue...\n<wait>	v005		reads: ‥‥いいの‥‥<wait>続けて‥‥\n<wait>; reads: さん‥‥‥<wait>ごめん。\n<wait> @refalign
 m/MS0022.BIN	0:02	188	7991	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: ： @refalign
-m/MS0022.BIN	0:02	189	8003	1FFA	{02:08}	{02:08}				reads: ‥‥‥; reads: ‥‥いいの‥‥<wait>続けて‥‥\n<wait>
+m/MS0022.BIN	0:02	189	8003	1FFA	{02:08}	......			draft	reads: ‥‥‥; reads: ‥‥いいの‥‥<wait>続けて‥‥\n<wait> @ours-2026-09-05
 m/MS0022.BIN	0:02	190	8011	1FFA	犯人の特定{08:62}{08:76}出来て{08:24}。\n死体の状況{08:42}見て、{08:10}内に{08:0B}が侵入{08:4B}事にまず間違いは{08:25}{08:8C}。\n<wait>		We've yet to been able to identify any potential suspects.\nJudging by the state of her corpse, it would appear that\na demon has managed to enter the shelter.\n<wait>	v005		reads: 犯人の特定は、まだ出来ていない。\n死体の状況から見て、シェルター内に悪魔が侵入した事にまず間違いはないだろう。\n<wait>; reads: 早坂： @refalign
 m/MS0022.BIN	0:02	191	8107	1F01	の心臓の鼓動が高鳴る。\n静まりかえ{08:51}{01:2E}に、{08:79}音が木霊{08:8E}かの様に思わ{08:60}。\n<wait>	の心臓の鼓動が高鳴る。\n静まりかえ{08:51}{01:2E}に、{08:79}音が木霊{08:8E}かの様に思わ{08:60}。\n<wait>	You can hear your heart louder than ever before.\nIt's to the point where it almost sounds like an earthquake happening.\n<wait>	v005		reads: の心臓の鼓動が高鳴る。\n静まりかえった部屋に、その音が木霊するかの様に思われた。\n<wait>; reads: ‥‥‥ @rebase-tagdiff
 m/MS0022.BIN	0:02	192	8185	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 犯人の特定は、まだ出来ていない。\n死体の状況から見て、シェルター内に悪魔が侵入した事にまず間違いはないだろう。\n<wait> @refalign
-m/MS0022.BIN	0:02	193	8191	1FD3	謹慎中の身で{08:7B}{02:0C}第二部隊に{08:62}何も成す術が{08:25}。\n口惜しい事{08:8F}{02:08}\n<wait>					reads: 謹慎中の身である我々第二部隊には、何も成す術がない。\n口惜しい事だが‥‥‥\n<wait>; reads: の心臓の鼓動が高鳴る。\n静まりかえった部屋に、その音が木霊するかの様に思われた。\n<wait>
-m/MS0022.BIN	0:02	194	8259	1FD0	下を向き、嗚咽{08:4A}{08:64}					reads: 下を向き、嗚咽していた; reads: 早坂：
-m/MS0022.BIN	0:02	195	8283	1F01	が、{08:79}時驚愕の小さな悲鳴を上{08:44}。\n<wait>					reads: が、その時驚愕の小さな悲鳴を上げた。\n<wait>; reads: 謹慎中の身である我々第二部隊には、何も成す術がない。\n口惜しい事だが‥‥‥\n<wait>
-m/MS0022.BIN	0:02	196	8330	1F01	：		:	v005		reads: ：; reads: 下を向き、嗚咽していた @refalign
+m/MS0022.BIN	0:02	193	8191	1FD3	謹慎中の身で{08:7B}{02:0C}第二部隊に{08:62}何も成す術が{08:25}。\n口惜しい事{08:8F}{02:08}\n<wait>	We of Second Squad, under suspension, can do nothing.\nIt's galling, but.........\n<wait>			draft	reads: 謹慎中の身である我々第二部隊には、何も成す術がない。\n口惜しい事だが‥‥‥\n<wait>; reads: の心臓の鼓動が高鳴る。\n静まりかえった部屋に、その音が木霊するかの様に思われた。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	194	8259	1FD0	下を向き、嗚咽{08:4A}{08:64}	Head down, sobbing, 			draft	reads: 下を向き、嗚咽していた; reads: 早坂： @ours-2026-09-05
+m/MS0022.BIN	0:02	195	8283	1F01	が、{08:79}時驚愕の小さな悲鳴を上{08:44}。\n<wait>	 then let out a small cry of shock.\n<wait>			draft	reads: が、その時驚愕の小さな悲鳴を上げた。\n<wait>; reads: 謹慎中の身である我々第二部隊には、何も成す術がない。\n口惜しい事だが‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	196	8330	1F01	：	:	:	v005	draft	reads: ：; reads: 下を向き、嗚咽していた @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	197	8334	1FD3	ま{08:72}さか{08:72}{08:7A}！！\n<wait>		W-Wait, no... This can't be!\n<wait>	v005		reads: ま‥‥さか‥‥そんな！！\n<wait>; reads: が、その時驚愕の小さな悲鳴を上げた。\n<wait> @refalign
 m/MS0022.BIN	0:02	198	8359	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: ： @refalign
-m/MS0022.BIN	0:02	199	8365	1FD3	{08:90}{08:4B}？！\n<wait>					reads: どうした？！\n<wait>; reads: ま‥‥さか‥‥そんな！！\n<wait>
-m/MS0022.BIN	0:02	200	8388	1F01	の凝視{08:8E}方を目で追い、{08:00}もギクリと身体を硬直させた。\n<wait>					reads: の凝視する方を目で追い、早坂もギクリと身体を硬直させた。\n<wait>; reads: 早坂： @rebase-tagdiff
-m/MS0022.BIN	0:02	201	8447	1FBA	ふたりの視線{08:62}					reads: ふたりの視線は、; reads: どうした？！\n<wait>
-m/MS0022.BIN	0:02	202	8467	1F01	の足元に注がれて{08:64}。\n<wait>					reads: の足元に注がれていた。\n<wait>; reads: の凝視する方を目で追い、早坂もギクリと身体を硬直させた。\n<wait>
-m/MS0022.BIN	0:02	203	8502	1F01	：		:	v005		reads: ：; reads: ふたりの視線は、 @refalign
+m/MS0022.BIN	0:02	199	8365	1FD3	{08:90}{08:4B}？！\n<wait>	What is it?!\n<wait>			draft	reads: どうした？！\n<wait>; reads: ま‥‥さか‥‥そんな！！\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	200	8388	1F01	の凝視{08:8E}方を目で追い、{08:00}もギクリと身体を硬直させた。\n<wait>	 was staring at something; Hayasaka followed her gaze, and his body\nstiffened with a jolt too.\n<wait>			draft	reads: の凝視する方を目で追い、早坂もギクリと身体を硬直させた。\n<wait>; reads: 早坂： @rebase-tagdiff @ours-2026-09-05
+m/MS0022.BIN	0:02	201	8447	1FBA	ふたりの視線{08:62}	Both their gazes were fixed on 			draft	reads: ふたりの視線は、; reads: どうした？！\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	202	8467	1F01	の足元に注がれて{08:64}。\n<wait>	's feet.\n<wait>			draft	reads: の足元に注がれていた。\n<wait>; reads: の凝視する方を目で追い、早坂もギクリと身体を硬直させた。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	203	8502	1F01	：	: 	:	v005	draft	reads: ：; reads: ふたりの視線は、 @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	204	8512	1F01	くん、{08:79}足{08:72}<wait>{08:90}{08:4A}？\n<wait>		Katsuragi-kun... <wait>Why?\n<wait>	v005		reads: くん、その足‥‥<wait>どうして？\n<wait>; reads: の足元に注がれていた。\n<wait> @refalign
 m/MS0022.BIN	0:02	205	8549	1F01	の靴に{08:62}柔らかい土を踏み散らか{08:4B}後の様に土が付着し、汚れて{08:64}。\n<wait>		Your boots are covered in a layer of dirt.\n<wait>	v005		reads: の靴には、柔らかい土を踏み散らかした後の様に土が付着し、汚れていた。\n<wait>; reads: ： @refalign
 m/MS0022.BIN	0:02	206	8618	1FBA	人工物だらけの{08:10}内で、土が付着{08:8E}様な場所といえば、\nファーム以外には{08:25}。\n<wait>		Given the nature of the shelter,\nthe only place where dirt can be found here is the farm.\n<wait>	v005		reads: 人工物だらけのシェルター内で、土が付着する様な場所といえば、\nファーム以外にはない。\n<wait>; reads: くん、その足‥‥<wait>どうして？\n<wait> @refalign
@@ -371,37 +371,37 @@ m/MS0022.BIN	0:02	214	8948	1F01	{08:62}絶望の色を湛{08:41}瞳で{08:00}を
 m/MS0022.BIN	0:02	215	9007	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: そうだと思う; menu option, declared width 20 columns @refalign
 m/MS0022.BIN	0:02	216	9013	1FD3	何だよ！　{08:79}分{08:42}{08:25}{08:52}のは！！\nお前、{08:63}が殺人を犯{08:4B}か{08:90}かも、分{08:42}{08:25}{08:52}のか？！\n<wait>	何だよ！　{08:79}分{08:42}{08:25}{08:52}のは！！\nお前、{08:63}が殺人を犯{08:4B}か{08:90}かも、分{08:42}{08:25}{08:52}のか？！\n<wait>	What the hell!? That doesn't make any fucking sense!\nHow can you not know if you killed someone!?\n<wait>	v005		reads: 何だよ！　その分からないってのは！！\nお前、自分が殺人を犯したかどうかも、分からないってのか？！\n<wait>
 m/MS0022.BIN	0:02	217	9106	1F01	{08:62}絶望の色を湛{08:41}瞳で{08:00}を見つめ、哀しげな笑いを浮かべそう答{08:41}。\n<wait>	{08:62}絶望の色を湛{08:41}瞳で{08:00}を見つめ、哀しげな笑いを浮かべそう答{08:41}。\n<wait>	Your voice dry and with a sad smile on your face, you answer Hayasaka.\n<wait>	v005		reads: は、絶望の色を湛えた瞳で早坂を見つめ、哀しげな笑いを浮かべそう答えた。\n<wait> @rebase-tagdiff
-m/MS0022.BIN	0:02	218	9183	1F01	：		:	v005		reads: ：; reads: は、絶望の色を湛えた瞳で早坂を見つめ、乾いた声でそう答えた。\n<wait> @rebase-tagdiff @rebase-unmatched idx218 en=Your voice dry and your eyes filled with despair, you answer Hayasaka.\n<wait> @refalign
+m/MS0022.BIN	0:02	218	9183	1F01	：	:	:	v005	draft	reads: ：; reads: は、絶望の色を湛えた瞳で早坂を見つめ、乾いた声でそう答えた。\n<wait> @rebase-tagdiff @rebase-unmatched idx218 en=Your voice dry and your eyes filled with despair, you answer Hayasaka.\n<wait> @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	219	9187	1FD3	やめてッ！！　嘘よ、{08:7A}訳無いわよ！\n<wait>		Stop it! That's not funny!!\n<wait>	v005		reads: やめてッ！！　嘘よ、そんな訳無いわよ！\n<wait>; reads: 早坂： @refalign
-m/MS0022.BIN	0:02	220	9236	1F01	：		:	v005		reads: ：; reads: 何だよ！　その分からないってのは！！\nお前、自分が殺人を犯したかどうかも、分からないってのか？！\n<wait> @rebase-tagdiff @refalign
-m/MS0022.BIN	0:02	221	9240	1FD3	だ{08:52}、					reads: だって、; reads: は、絶望の色を湛えた瞳で早坂を見つめ、哀しげな笑いを浮かべそう答えた。\n<wait>
-m/MS0022.BIN	0:02	222	9252	1F01	くんが、美莉を殺す理由{08:6A}て無いわ！\n<wait>					reads: くんが、美莉を殺す理由なんて無いわ！\n<wait>; reads: ：
+m/MS0022.BIN	0:02	220	9236	1F01	：	:	:	v005	draft	reads: ：; reads: 何だよ！　その分からないってのは！！\nお前、自分が殺人を犯したかどうかも、分からないってのか？！\n<wait> @rebase-tagdiff @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	221	9240	1FD3	だ{08:52}、	I mean, 			draft	reads: だって、; reads: は、絶望の色を湛えた瞳で早坂を見つめ、哀しげな笑いを浮かべそう答えた。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	222	9252	1F01	くんが、美莉を殺す理由{08:6A}て無いわ！\n<wait>	 has no reason to kill Miri!\n<wait>			draft	reads: くんが、美莉を殺す理由なんて無いわ！\n<wait>; reads: ： @ours-2026-09-05
 m/MS0022.BIN	0:02	223	9309	1FB2	理由は{08:7B}よ		I have a reason	v005		reads: 理由はあるよ; menu option, declared width 20 columns; reads: やめてッ！！　嘘よ、そんな訳無いわよ！\n<wait> @refalign
 m/MS0022.BIN	0:02	224	9321	1FB2	{08:7A}事は関係無い		It doesn't matter	v005		reads: そんな事は関係無い; menu option, declared width 20 columns; reads: ： @refalign
-m/MS0022.BIN	0:02	225	9361	1F01	：		:	v005		reads: ：; reads: だって、 @rebase-new @refalign
+m/MS0022.BIN	0:02	225	9361	1F01	：	:	:	v005	draft	reads: ：; reads: だって、 @rebase-new @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	226	9365	1FD3	え？\n<wait>		Huh?\n<wait>	v005		reads: くんが、美莉を殺す理由なんて無いわ！\n<wait> @refalign
 m/MS0022.BIN	0:02	227	9392	1FB2	血だよ{08:72}		Blood...	v005		reads: 血だよ‥‥; menu option, declared width 20 columns; reads: 理由はあるよ @refalign
-m/MS0022.BIN	0:02	228	9422	1F01	：		:	v005		reads: ：; reads: そんな事は関係無い; menu option, declared width 20 columns @refalign
-m/MS0022.BIN	0:02	229	9426	1FD3	え？\n<wait>	え？\n<wait>				reads: つもり
-m/MS0022.BIN	0:02	230	9448	1F01	の身体の中に、何かが蠢くおぞましい感触が走{08:51}。\n<wait>	の身体の中に、何かが蠢くおぞましい感触が走{08:51}。\n<wait>				reads: の身体の中に、何かが蠢くおぞましい感触が走った。\n<wait>
+m/MS0022.BIN	0:02	228	9422	1F01	：	:	:	v005	draft	reads: ：; reads: そんな事は関係無い; menu option, declared width 20 columns @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	229	9426	1FD3	え？\n<wait>	What?\n<wait>			draft	reads: つもり @ours-2026-09-05
+m/MS0022.BIN	0:02	230	9448	1F01	の身体の中に、何かが蠢くおぞましい感触が走{08:51}。\n<wait>	 felt a loathsome sensation of something squirming inside his body.\n<wait>			draft	reads: の身体の中に、何かが蠢くおぞましい感触が走った。\n<wait> @ours-2026-09-05
 m/MS0022.BIN	0:02	231	9503	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: ： @refalign
 m/MS0022.BIN	0:02	232	9509	1FD3	{02:08}‥	{02:08}‥	Huh?\n<wait>	v005		reads: ‥‥‥‥
-m/MS0022.BIN	0:02	233	9519	1F01	、何を一体{02:08}\n<wait>					reads: 、何を一体‥‥‥\n<wait>; reads: 血だよ‥‥; menu option, declared width 20 columns
-m/MS0022.BIN	0:02	234	9546	1F01	{08:62}まるで{08:63}の口が勝手に動くかの様な感覚に囚われながら、\n頭の中で整理{08:4B}最も信じたくは{08:25}考えを、					reads: は、まるで自分の口が勝手に動くかの様な感覚に囚われながら、\n頭の中で整理した最も信じたくはない考えを、; reads: ：
-m/MS0022.BIN	0:02	235	9645	1F01	と{08:00}に語{08:51}。\n<wait>					reads: と早坂に語った。\n<wait>; reads: と早坂に語った。\n<wait>
-m/MS0022.BIN	0:02	236	9664	1FBA	真実に触{08:2F}言葉を発{08:8E}度、					reads: 真実に触れる言葉を発する度、; reads: の身体の中に、何かが蠢くおぞましい感触が走った。\n<wait>
-m/MS0022.BIN	0:02	237	9694	1F01	の体内を耐え難い苦痛とおぞましい\n感触とが襲う					reads: の体内を耐え難い苦痛とおぞましい\n感触とが襲う; reads: 早坂：
-m/MS0022.BIN	0:02	238	9745	1FFA	{02:08}<wait>	{02:08}<wait>				reads: ‥‥‥<wait>; reads: ‥‥‥‥
-m/MS0022.BIN	0:02	239	9757	1FFA	{08:4D}{08:56}	{08:4D}{08:56}				reads: それでも; reads: 、何を一体‥‥‥\n<wait>
-m/MS0022.BIN	0:02	240	9767	1F01	は話す事を止め{08:19}。\n<wait>					reads: は話す事を止めなかった。\n<wait>; reads: は、まるで自分の口が勝手に動くかの様な感覚に囚われながら、\n頭の中で整理した最も信じたくはない考えを、
+m/MS0022.BIN	0:02	233	9519	1F01	、何を一体{02:08}\n<wait>	, what on earth are you.........\n<wait>			draft	reads: 、何を一体‥‥‥\n<wait>; reads: 血だよ‥‥; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0022.BIN	0:02	234	9546	1F01	{08:62}まるで{08:63}の口が勝手に動くかの様な感覚に囚われながら、\n頭の中で整理{08:4B}最も信じたくは{08:25}考えを、	, gripped by the sensation that his mouth was moving of its own accord,\ntold the thought he had pieced together in his head, the one he least\nwanted to believe, to 			draft	reads: は、まるで自分の口が勝手に動くかの様な感覚に囚われながら、\n頭の中で整理した最も信じたくはない考えを、; reads: ： @ours-2026-09-05
+m/MS0022.BIN	0:02	235	9645	1F01	と{08:00}に語{08:51}。\n<wait>	 and Hayasaka.\n<wait>			draft	reads: と早坂に語った。\n<wait>; reads: と早坂に語った。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	236	9664	1FBA	真実に触{08:2F}言葉を発{08:8E}度、	Each time he uttered words touching on the truth, 			draft	reads: 真実に触れる言葉を発する度、; reads: の身体の中に、何かが蠢くおぞましい感触が走った。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	237	9694	1F01	の体内を耐え難い苦痛とおぞましい\n感触とが襲う	's insides were assailed by an unbearable agony and a loathsome\nsensation			draft	reads: の体内を耐え難い苦痛とおぞましい\n感触とが襲う; reads: 早坂： @ours-2026-09-05
+m/MS0022.BIN	0:02	238	9745	1FFA	{02:08}<wait>	......<wait>			draft	reads: ‥‥‥<wait>; reads: ‥‥‥‥ @ours-2026-09-05
+m/MS0022.BIN	0:02	239	9757	1FFA	{08:4D}{08:56}	Even so, 			draft	reads: それでも; reads: 、何を一体‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	240	9767	1F01	は話す事を止め{08:19}。\n<wait>	 did not stop talking.\n<wait>			draft	reads: は話す事を止めなかった。\n<wait>; reads: は、まるで自分の口が勝手に動くかの様な感覚に囚われながら、\n頭の中で整理した最も信じたくはない考えを、 @ours-2026-09-05
 m/MS0022.BIN	0:02	241	9794	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: と早坂に語った。\n<wait> @refalign
-m/MS0022.BIN	0:02	242	9806	1FFA	{08:5C}{08:7F}{08:72}<wait>	{08:5C}{08:7F}{08:72}<wait>				reads: もういい‥‥<wait>; reads: 真実に触れる言葉を発する度、
+m/MS0022.BIN	0:02	242	9806	1FFA	{08:5C}{08:7F}{08:72}<wait>	Enough...<wait>			draft	reads: もういい‥‥<wait>; reads: 真実に触れる言葉を発する度、 @ours-2026-09-05
 m/MS0022.BIN	0:02	243	9822	1FFA	{08:5C}、{08:4D}以上言うな。\n<wait>		Say no more.\n<wait>	v005		reads: もう、それ以上言うな。\n<wait>; reads: の体内を耐え難い苦痛とおぞましい\n感触とが襲う @refalign
-m/MS0022.BIN	0:02	244	9855	1F01	：	：				reads: ：; reads: ‥‥‥<wait>
-m/MS0022.BIN	0:02	245	9865	1F01	くんが{08:72}？\n<wait>	くんが{08:72}？\n<wait>				reads: くんが‥‥？\n<wait>; reads: それでも
-m/MS0022.BIN	0:02	246	9886	1F01	くんも知ら{08:25}内に美莉を					reads: くんも知らない内に美莉を; reads: は話す事を止めなかった。\n<wait>
-m/MS0022.BIN	0:02	247	9914	1FFA	{08:72}信じ{08:25}{08:72}					reads: ‥‥信じない‥‥; reads: 早坂：
-m/MS0022.BIN	0:02	248	9930	1FFA	{08:7A}事、私信じ{08:25}わ{02:08}。\n<wait>{08:72}絶対信じ{08:25}{08:72}\n<wait>	{08:7A}事、私信じ{08:25}わ{02:08}。\n<wait>{08:72}絶対信じ{08:25}{08:72}\n<wait>	And yet, you don't.\n<wait>	v005		reads: そんな事、私信じないわ‥‥‥。\n<wait>‥‥絶対信じない‥‥\n<wait>; reads: もういい‥‥<wait>
+m/MS0022.BIN	0:02	244	9855	1F01	：	: 			draft	reads: ：; reads: ‥‥‥<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	245	9865	1F01	くんが{08:72}？\n<wait>	 did...?\n<wait>			draft	reads: くんが‥‥？\n<wait>; reads: それでも @ours-2026-09-05
+m/MS0022.BIN	0:02	246	9886	1F01	くんも知ら{08:25}内に美莉を	 killed Miri without even knowing it			draft	reads: くんも知らない内に美莉を; reads: は話す事を止めなかった。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	247	9914	1FFA	{08:72}信じ{08:25}{08:72}	...I don't believe it...			draft	reads: ‥‥信じない‥‥; reads: 早坂： @ours-2026-09-05
+m/MS0022.BIN	0:02	248	9930	1FFA	{08:7A}事、私信じ{08:25}わ{02:08}。\n<wait>{08:72}絶対信じ{08:25}{08:72}\n<wait>	I don't believe such a thing.........\n<wait>...I'll never believe it...\n<wait>	And yet, you don't.\n<wait>	v005	draft	reads: そんな事、私信じないわ‥‥‥。\n<wait>‥‥絶対信じない‥‥\n<wait>; reads: もういい‥‥<wait> @ours-2026-09-05
 m/MS0022.BIN	0:02	249	9983	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: もう、それ以上言うな。\n<wait> @refalign
 m/MS0022.BIN	0:02	250	9995	1F01	、<wait>お前は{08:45}を一歩も出るな。\n<wait>		Listen, Katsuragi. <wait>Do not take a step outside this room.\n<wait>	v005		reads: 、<wait>お前はここを一歩も出るな。\n<wait>; reads: ： @refalign
 m/MS0022.BIN	0:02	251	10034	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: くんが‥‥？\n<wait> @refalign
@@ -411,40 +411,40 @@ m/MS0022.BIN	0:02	254	10075	1FD3	俺{08:62}隊長に{08:47}事を相談{08:8E}�
 m/MS0022.BIN	0:02	255	10175	1FD0	{08:00}{08:62}痛みを堪{08:28}かの様な顔をし、足早に{01:2E}を出て行{08:51}。\n<wait>		With that, Hayasaka leaves the room.\nIt's clear that he has no idea what to think.\n<wait>	v005		reads: 早坂は、痛みを堪えるかの様な顔をし、足早に部屋を出て行った。\n<wait>; reads: 早坂： @refalign
 m/MS0022.BIN	0:02	256	10238	1F01	の中を、様々な想いが駆け抜{08:29}。\n<wait>		Same goes for you.\nAll sorts of thoughts run through your mind.\n<wait>	v005		reads: の中を、様々な想いが駆け抜ける。\n<wait>; reads: 、<wait>お前はここを一歩も出るな。\n<wait> @refalign
 m/MS0022.BIN	0:02	257	10275	1FBA	父に憧れ、{02:00}に憧れて{08:64}{08:63}{02:08}<wait>苦い思い出{08:72}楽し{08:18}日々\n<wait>{08:72}平坦に流れて行くと感じた、{08:63}の人生の残骸を{08:72}。\n<wait>		You wanted to be like your father. You wanted to be a Devil Buster.\n<wait>You worked so hard, and after you finally made it, this happened...\n<wait>Was it really all for nothing? Did you really just throw your life away?\n<wait>	v005		reads: 父に憧れ、デビルバスターに憧れていた自分‥‥‥<wait>苦い思い出‥‥楽しかった日々\n<wait>‥‥平坦に流れて行くと感じた、自分の人生の残骸を‥‥。\n<wait>; reads: 早坂： @refalign
-m/MS0022.BIN	0:02	258	10395	1F01	：		:	v005		reads: ：; reads: そして、誰にも会うな。\n<wait> @refalign
-m/MS0022.BIN	0:02	259	10405	1F01	くん。\n<wait>					reads: くん。\n<wait>; reads: 早坂：
-m/MS0022.BIN	0:02	260	10420	1FD0	{08:79}時、					reads: その時、; reads: 俺は、隊長にこの事を相談する。\n<wait>少ししたら、改めて連絡する‥‥だから、それまで信じて待っていてくれ。\n<wait>
-m/MS0022.BIN	0:02	261	10432	1F01	が声をかけて来た。\n<wait>					reads: が声をかけて来た。\n<wait>; reads: 早坂は、痛みを堪えるかの様な顔をし、足早に部屋を出て行った。\n<wait>
-m/MS0022.BIN	0:02	262	10457	1FBA	殺人者で{08:7B}{08:63}を恐れ、そ{08:4A}、憎しみの視線を投げかけ{08:14}であろう事を\n確信しながら、					reads: 殺人者である自分を恐れ、そして、憎しみの視線を投げかけているであろう事を\n確信しながら、; reads: の中を、様々な想いが駆け抜ける。\n<wait>
-m/MS0022.BIN	0:02	263	10540	1F01	は					reads: は; reads: 父に憧れ、デビルバスターに憧れていた自分‥‥‥<wait>苦い思い出‥‥楽しかった日々\n<wait>‥‥平坦に流れて行くと感じた、自分の人生の残骸を‥‥。\n<wait>
-m/MS0022.BIN	0:02	264	10548	1F01	を見た。\n<wait>					reads: を見た。\n<wait>; reads: ：
-m/MS0022.BIN	0:02	265	10563	1FBA	{03:0B}そこにあ{08:51}の{08:62}深い哀しみに縁どられて{08:26}る{08:5E}の、\nまるで恋人か我が子を見る様な、愛に満ちた優しい瞳だ{08:51}。\n<wait>					reads: しかし、そこにあったのは、深い哀しみに縁どられてはいるものの、\nまるで恋人か我が子を見る様な、愛に満ちた優しい瞳だった。\n<wait>; reads: くん。\n<wait>
+m/MS0022.BIN	0:02	258	10395	1F01	：	: 	:	v005	draft	reads: ：; reads: そして、誰にも会うな。\n<wait> @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	259	10405	1F01	くん。\n<wait>	.\n<wait>			draft	reads: くん。\n<wait>; reads: 早坂： @ours-2026-09-05
+m/MS0022.BIN	0:02	260	10420	1FD0	{08:79}時、	Just then, 			draft	reads: その時、; reads: 俺は、隊長にこの事を相談する。\n<wait>少ししたら、改めて連絡する‥‥だから、それまで信じて待っていてくれ。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	261	10432	1F01	が声をかけて来た。\n<wait>	 spoke to him.\n<wait>			draft	reads: が声をかけて来た。\n<wait>; reads: 早坂は、痛みを堪えるかの様な顔をし、足早に部屋を出て行った。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	262	10457	1FBA	殺人者で{08:7B}{08:63}を恐れ、そ{08:4A}、憎しみの視線を投げかけ{08:14}であろう事を\n確信しながら、	Certain that she must be looking at him, a murderer, with fear and\nhatred, 			draft	reads: 殺人者である自分を恐れ、そして、憎しみの視線を投げかけているであろう事を\n確信しながら、; reads: の中を、様々な想いが駆け抜ける。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	263	10540	1F01	は	 looked at 			draft	reads: は; reads: 父に憧れ、デビルバスターに憧れていた自分‥‥‥<wait>苦い思い出‥‥楽しかった日々\n<wait>‥‥平坦に流れて行くと感じた、自分の人生の残骸を‥‥。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	264	10548	1F01	を見た。\n<wait>	.\n<wait>			draft	reads: を見た。\n<wait>; reads: ： @ours-2026-09-05
+m/MS0022.BIN	0:02	265	10563	1FBA	{03:0B}そこにあ{08:51}の{08:62}深い哀しみに縁どられて{08:26}る{08:5E}の、\nまるで恋人か我が子を見る様な、愛に満ちた優しい瞳だ{08:51}。\n<wait>	But what he found there were gentle eyes full of love, though edged\nwith deep sorrow, as if looking at a lover or her own child.\n<wait>			draft	reads: しかし、そこにあったのは、深い哀しみに縁どられてはいるものの、\nまるで恋人か我が子を見る様な、愛に満ちた優しい瞳だった。\n<wait>; reads: くん。\n<wait> @ours-2026-09-05
 m/MS0022.BIN	0:02	266	10689	1FB2	何か言おうと{08:8E}		Try to speak	v005		reads: 何か言おうとする; menu option, declared width 20 columns; reads: その時、 @refalign
 m/MS0022.BIN	0:02	267	10705	1FB2	黙{08:52}見つ{08:2E}		Say nothing	v005		reads: 黙って見つめる; menu option, declared width 20 columns; reads: が声をかけて来た。\n<wait> @refalign
-m/MS0022.BIN	0:02	268	10741	1F01	：		:	v005		reads: ：; reads: 殺人者である自分を恐れ、そして、憎しみの視線を投げかけているであろう事を\n確信しながら、 @rebase-new @refalign
-m/MS0022.BIN	0:02	269	10745	1FD3	うん、					reads: は
-m/MS0022.BIN	0:02	270	10757	1F01	くん、解っ{08:2B}{08:72}解っ{08:2B}よ。\n<wait>					reads: くん、解ってる‥‥解ってるよ。\n<wait>; reads: を見た。\n<wait>
-m/MS0022.BIN	0:02	271	10796	1F01	：		:	v005		reads: ：; reads: しかし、そこにあったのは、深い哀しみに縁どられてはいるものの、\nまるで恋人か我が子を見る様な、愛に満ちた優しい瞳だった。\n<wait> @refalign
+m/MS0022.BIN	0:02	268	10741	1F01	：	:	:	v005	draft	reads: ：; reads: 殺人者である自分を恐れ、そして、憎しみの視線を投げかけているであろう事を\n確信しながら、 @rebase-new @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	269	10745	1FD3	うん、	Yes, 			draft	reads: は @ours-2026-09-05
+m/MS0022.BIN	0:02	270	10757	1F01	くん、解っ{08:2B}{08:72}解っ{08:2B}よ。\n<wait>	, I understand... I understand.\n<wait>			draft	reads: くん、解ってる‥‥解ってるよ。\n<wait>; reads: を見た。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	271	10796	1F01	：	:	:	v005	draft	reads: ：; reads: しかし、そこにあったのは、深い哀しみに縁どられてはいるものの、\nまるで恋人か我が子を見る様な、愛に満ちた優しい瞳だった。\n<wait> @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	272	10800	1FD3	私ね、今や{08:53}気づ{08:64}の。\n<wait>		You know, I finally see it now.\n<wait>	v005		reads: 私ね、今やっと気づいたの。\n<wait>; reads: 何か言おうとする; menu option, declared width 20 columns @refalign
-m/MS0022.BIN	0:02	273	10837	1F01	：		:	v005		reads: ：; reads: 黙って見つめる; menu option, declared width 20 columns @rebase-tagdiff @refalign
+m/MS0022.BIN	0:02	273	10837	1F01	：	:	:	v005	draft	reads: ：; reads: 黙って見つめる; menu option, declared width 20 columns @rebase-tagdiff @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	274	10841	1FD3	私{08:72}入隊試験で貴方と会{08:52}{08:42}、<wait>ううん{08:72}も{08:53}前{08:42}{02:08}\n<wait>貴方の事が好きだ{08:51}の。本当よ。\n<wait>	私{08:72}入隊試験で貴方と会{08:52}{08:42}、<wait>ううん{08:72}も{08:53}前{08:42}{02:08}\n<wait>貴方の事が好きだ{08:51}の。本当よ。\n<wait>	Ever since we took the entrance exam together...\n<wait>No, even before that... <wait>I've always loved you. I really have.\n<wait>	v005		reads: 私‥‥入隊試験で貴方と会ってから、<wait>ううん‥‥もっと前から‥‥‥\n<wait>貴方の事が好きだったの。本当よ。\n<wait>; reads: 山瀬勇
 m/MS0022.BIN	0:02	275	10949	1FB2	殺人者{08:6B}に？	殺人者{08:6B}に？	A murderer like me?	v005		reads: 殺人者なのに？; menu option, declared width 20 columns
 m/MS0022.BIN	0:02	276	10963	1FB2	僕も{08:72}		Me too...	v005		reads: 僕も‥‥; menu option, declared width 20 columns; reads: ： @rebase-unmatched idx276 en=Yuuka: @refalign
-m/MS0022.BIN	0:02	277	10989	1FD0	言葉に出{08:4A}答{08:28}に{08:62}{08:4D}が精一杯だ{08:51}。\n強張{08:51}口とは裏腹に、					reads: 言葉に出して答えるには、それが精一杯だった。\n強張った口とは裏腹に、; reads: 言葉に出して答えるには、それが精一杯だった。\n強張った口とは裏腹に、
-m/MS0022.BIN	0:02	278	11050	1F01	の頭の中を、					reads: の頭の中を、; reads: くん、解ってる‥‥解ってるよ。\n<wait>
-m/MS0022.BIN	0:02	279	11068	1F01	への強い想いが駆け巡る。\n<wait>					reads: への強い想いが駆け巡る。\n<wait>; reads: ：
-m/MS0022.BIN	0:02	280	11099	1FBA	{01:29}{08:51}{02:08}\n<wait>彼女の事は何{01:3C}知ら{08:25}のに、最初{08:42}{08:72}まるで定めの様に彼女に惹かれ、\n彼女を求めて{08:64}。\n<wait>					reads: そうだった‥‥‥\n<wait>彼女の事は何ひとつ知らないのに、最初から‥‥まるで定めの様に彼女に惹かれ、\n彼女を求めていた。\n<wait>; reads: 私ね、今やっと気づいたの。\n<wait>
+m/MS0022.BIN	0:02	277	10989	1FD0	言葉に出{08:4A}答{08:28}に{08:62}{08:4D}が精一杯だ{08:51}。\n強張{08:51}口とは裏腹に、	Putting it into words, that was all he could manage.\nIn contrast to his stiff mouth, 			draft	reads: 言葉に出して答えるには、それが精一杯だった。\n強張った口とは裏腹に、; reads: 言葉に出して答えるには、それが精一杯だった。\n強張った口とは裏腹に、 @ours-2026-09-05
+m/MS0022.BIN	0:02	278	11050	1F01	の頭の中を、	's head was filled with a rush of strong feelings for 			draft	reads: の頭の中を、; reads: くん、解ってる‥‥解ってるよ。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	279	11068	1F01	への強い想いが駆け巡る。\n<wait>	.\n<wait>			draft	reads: への強い想いが駆け巡る。\n<wait>; reads: ： @ours-2026-09-05
+m/MS0022.BIN	0:02	280	11099	1FBA	{01:29}{08:51}{02:08}\n<wait>彼女の事は何{01:3C}知ら{08:25}のに、最初{08:42}{08:72}まるで定めの様に彼女に惹かれ、\n彼女を求めて{08:64}。\n<wait>	That was it.........\n<wait>Though he knew nothing about her, from the very start... as if by fate,\nhe had been drawn to her, had longed for her.\n<wait>			draft	reads: そうだった‥‥‥\n<wait>彼女の事は何ひとつ知らないのに、最初から‥‥まるで定めの様に彼女に惹かれ、\n彼女を求めていた。\n<wait>; reads: 私ね、今やっと気づいたの。\n<wait> @ours-2026-09-05
 m/MS0022.BIN	0:02	281	11198	1FBA	{08:61}	{08:61}	And yet...	v005		reads: しかし; reads: ：
-m/MS0022.BIN	0:02	282	11206	1FFA	{02:08}‥\n<wait>	{02:08}‥\n<wait>				reads: ‥‥‥‥\n<wait>; reads: 私‥‥入隊試験で貴方と会ってから、<wait>ううん‥‥もっと前から‥‥‥\n<wait>貴方の事が好きだったの。本当よ。\n<wait>
-m/MS0022.BIN	0:02	283	11223	1FFA	例え{08:0B}のせいだと{08:4A}も、彼女の妹を殺{08:4B}事に何の代わりも無い。\n<wait>					reads: 例え悪魔のせいだとしても、彼女の妹を殺した事に何の代わりも無い。\n<wait>; reads: 殺人者なのに？; menu option, declared width 20 columns
-m/MS0022.BIN	0:02	284	11294	1F01	を想う気持ちの果てに在る、{08:79}凍てつく様な現実に突き当た{08:51}。\n					reads: を想う気持ちの果てに在る、その凍てつく様な現実に突き当たった。\n; reads: 僕も‥‥; menu option, declared width 20 columns
-m/MS0022.BIN	0:02	285	11359	1F01	{08:62}更{08:59}絶望を感じて硬直{08:4B}。\n<wait>	{08:62}更{08:59}絶望を感じて硬直{08:4B}。\n<wait>				reads: は、更なる絶望を感じて硬直した。\n<wait>; reads: 山瀬勇
-m/MS0022.BIN	0:02	286	11392	1FBA	全てが夢{08:7C}{02:08}\n<wait>	全てが夢{08:7C}{02:08}\n<wait>	How could you ever love someone after doing that to them?\nHow could they ever love you back?\n<wait>	v005		reads: 全てが夢ならば‥‥‥\n<wait>
-m/MS0022.BIN	0:02	287	11411	1FBA	冷や汗をかいて目を覚ませば、そこに{01:28}の朝、\n変わり無い日常が在るの{08:7D}{02:08}。\n<wait>					reads: 冷や汗をかいて目を覚ませば、そこにいつもの朝、\n変わり無い日常が在るのなら‥‥‥。\n<wait>; reads: 言葉に出して答えるには、それが精一杯だった。\n強張った口とは裏腹に、
-m/MS0022.BIN	0:02	288	11489	1FBA	{08:63}はどれほど神に感謝を捧げるか知れ{08:25}{02:08}\n<wait>{08:8F}、{08:4D}こそが幻想、{08:4D}こそが叶わぬ夢{08:6B}だ。\n<wait>					reads: 自分はどれほど神に感謝を捧げるか知れない‥‥‥\n<wait>だが、それこそが幻想、それこそが叶わぬ夢なのだ。\n<wait>; reads: の頭の中を、
-m/MS0022.BIN	0:02	289	11587	1F01	：		:	v005		reads: ：; reads: への強い想いが駆け巡る。\n<wait> @refalign
+m/MS0022.BIN	0:02	282	11206	1FFA	{02:08}‥\n<wait>	......\n<wait>			draft	reads: ‥‥‥‥\n<wait>; reads: 私‥‥入隊試験で貴方と会ってから、<wait>ううん‥‥もっと前から‥‥‥\n<wait>貴方の事が好きだったの。本当よ。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	283	11223	1FFA	例え{08:0B}のせいだと{08:4A}も、彼女の妹を殺{08:4B}事に何の代わりも無い。\n<wait>	Even if a demon was to blame, it changed nothing: he had killed her\nsister.\n<wait>At the end of his feelings for 			draft	reads: 例え悪魔のせいだとしても、彼女の妹を殺した事に何の代わりも無い。\n<wait>; reads: 殺人者なのに？; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0022.BIN	0:02	284	11294	1F01	を想う気持ちの果てに在る、{08:79}凍てつく様な現実に突き当た{08:51}。\n	 lay a freezing reality, and he ran straight into it.\n			draft	reads: を想う気持ちの果てに在る、その凍てつく様な現実に突き当たった。\n; reads: 僕も‥‥; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0022.BIN	0:02	285	11359	1F01	{08:62}更{08:59}絶望を感じて硬直{08:4B}。\n<wait>	 stiffened, feeling an even deeper despair.\n<wait>			draft	reads: は、更なる絶望を感じて硬直した。\n<wait>; reads: 山瀬勇 @ours-2026-09-05
+m/MS0022.BIN	0:02	286	11392	1FBA	全てが夢{08:7C}{02:08}\n<wait>	If only it were all a dream.........\n<wait>	How could you ever love someone after doing that to them?\nHow could they ever love you back?\n<wait>	v005	draft	reads: 全てが夢ならば‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	287	11411	1FBA	冷や汗をかいて目を覚ませば、そこに{01:28}の朝、\n変わり無い日常が在るの{08:7D}{02:08}。\n<wait>	If he woke in a cold sweat to find the usual morning, the unchanged\neveryday, waiting there.........\n<wait>			draft	reads: 冷や汗をかいて目を覚ませば、そこにいつもの朝、\n変わり無い日常が在るのなら‥‥‥。\n<wait>; reads: 言葉に出して答えるには、それが精一杯だった。\n強張った口とは裏腹に、 @ours-2026-09-05
+m/MS0022.BIN	0:02	288	11489	1FBA	{08:63}はどれほど神に感謝を捧げるか知れ{08:25}{02:08}\n<wait>{08:8F}、{08:4D}こそが幻想、{08:4D}こそが叶わぬ夢{08:6B}だ。\n<wait>	How he would thank God.........\n<wait>But that was the illusion; that was the dream that could not come true.\n<wait>			draft	reads: 自分はどれほど神に感謝を捧げるか知れない‥‥‥\n<wait>だが、それこそが幻想、それこそが叶わぬ夢なのだ。\n<wait>; reads: の頭の中を、 @ours-2026-09-05
+m/MS0022.BIN	0:02	289	11587	1F01	：	: 	:	v005	draft	reads: ：; reads: への強い想いが駆け巡る。\n<wait> @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	290	11597	1F01	くん。\n<wait>		Katsuragi-kun.\n<wait>	v005		reads: くん。\n<wait>; reads: そうだった‥‥‥\n<wait>彼女の事は何ひとつ知らないのに、最初から‥‥まるで定めの様に彼女に惹かれ、\n彼女を求めていた。\n<wait> @refalign
-m/MS0022.BIN	0:02	291	11621	1F01	：	：				reads: ：; reads: しかし
+m/MS0022.BIN	0:02	291	11621	1F01	：	:			draft	reads: ：; reads: しかし @ours-2026-09-05
 m/MS0022.BIN	0:02	292	11625	1FD3	私{08:62}酷い{02:0B}{08:6B}かも知れ{08:25}。\n美莉が死んで哀しい{08:85}{08:6B}に、<wait>貴方を憎まなきゃ{08:7D}{08:25}のに、\n<wait>湧き起こ{08:52}来て止められ{08:25}の。貴方が好きだ{08:52}{08:47}気持ちが{02:08}‥。\n<wait>	私{08:62}酷い{02:0B}{08:6B}かも知れ{08:25}。\n美莉が死んで哀しい{08:85}{08:6B}に、<wait>貴方を憎まなきゃ{08:7D}{08:25}のに、\n<wait>湧き起こ{08:52}来て止められ{08:25}の。貴方が好きだ{08:52}{08:47}気持ちが{02:08}‥。\n<wait>	I know I should be sad that my sister's dead.\n<wait>I know that I should despise you...\n<wait>And yet, I can't bring myself to.\nIt might make me a monster, but in this moment, I just love you...\n<wait>	v005		reads: 私は、酷い人間なのかも知れない。\n美莉が死んで哀しいはずなのに、<wait>貴方を憎まなきゃならないのに、\n<wait>湧き起こって来て止められないの。貴方が好きだってこの気持ちが‥‥‥‥。\n<wait>; reads: ‥‥‥‥\n<wait>
 m/MS0022.BIN	0:02	293	11822	1FD0	ふたりは見つめ合{08:51}{08:7E}{08:72}{08:5C}、何も語ら{08:19}。\n<wait>		You two stare at one another with neither of you saying anything.\n<wait>	v005		reads: ふたりは見つめ合ったまま‥‥もう、何も語らなかった。\n<wait>; reads: 例え悪魔のせいだとしても、彼女の妹を殺した事に何の代わりも無い。\n<wait> @refalign
 m/MS0022.BIN	0:02	294	11867	1FBA	何もかもが動く事を止めて{08:1F}かの様に{08:72}\n<wait>{08:79}一瞬が、永遠に続く神話で{08:7B}かの様に{08:72}\n<wait>		It was as if the whole world had stopped...\n<wait>As if this one moment could last an eternity...\n<wait>	v005		reads: 何もかもが動く事を止めてしまったかの様に‥‥\n<wait>その一瞬が、永遠に続く神話であるかの様に‥‥\n<wait>; reads: を想う気持ちの果てに在る、その凍てつく様な現実に突き当たった。\n @refalign
@@ -458,8 +458,8 @@ m/MS0022.BIN	0:02	301	12237	1FD3	本当{08:7C}、今すぐに{08:56}話が{08:4B
 m/MS0022.BIN	0:02	302	12317	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 私は、酷い人間なのかも知れない。\n美莉が死んで哀しいはずなのに、<wait>貴方を憎まなきゃならないのに、\n<wait>湧き起こって来て止められないの。貴方が好きだってこの気持ちが‥‥‥‥。\n<wait> @refalign
 m/MS0022.BIN	0:02	303	12323	1FD3	{08:90}やら、今日一日は会議{08:42}抜け出れそうも\n無いらしい。\n<wait>		So, yeah. It's gonna have to wait till tomorrow.\n<wait>	v005		reads: どうやら、今日一日は会議から抜け出れそうも\n無いらしい。\n<wait>; reads: ふたりは見つめ合ったまま‥‥もう、何も語らなかった。\n<wait> @refalign
 m/MS0022.BIN	0:02	304	12383	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 何もかもが動く事を止めてしまったかの様に‥‥\n<wait>その一瞬が、永遠に続く神話であるかの様に‥‥\n<wait> @refalign
-m/MS0022.BIN	0:02	305	12389	1FD3	{08:4D}と{02:08}\n<wait>					reads: それと‥‥‥\n<wait>; reads: 言葉は、もはや何の意味を成しはしなかった。\n<wait>
-m/MS0022.BIN	0:02	306	12406	1F01	、明日はお前{01:3A}で来てくれ。\n<wait>					reads: 、明日はお前ひとりで来てくれ。\n<wait>; reads: どのぐらい、そうしていただろうか。\n<wait>
+m/MS0022.BIN	0:02	305	12389	1FD3	{08:4D}と{02:08}\n<wait>	And.........\n<wait>			draft	reads: それと‥‥‥\n<wait>; reads: 言葉は、もはや何の意味を成しはしなかった。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	306	12406	1F01	、明日はお前{01:3A}で来てくれ。\n<wait>	, tomorrow, come alone.\n<wait>			draft	reads: 、明日はお前ひとりで来てくれ。\n<wait>; reads: どのぐらい、そうしていただろうか。\n<wait> @ours-2026-09-05
 m/MS0022.BIN	0:02	307	12441	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 通信を知らせる音で、ふたりの間の時間が再び動き出した。\n<wait> @refalign
 m/MS0022.BIN	0:02	308	12453	1F01	さん。\n<wait>君も聞こえ{08:14}と思う{08:84}、そう{08:68}事に\n決{08:20}{08:5F}。\n<wait>		That means you, Tachibana.<wait>Like it or not, it's what's been decided.\n<wait>	v005		reads: さん。\n<wait>君も聞こえていると思うけど、そういう事に\n決まったんだ。\n<wait>; reads: 早坂： @rebase-tagdiff @refalign
 m/MS0022.BIN	0:02	309	12514	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 明日、Ｂ５の詰め所で、隊長も交え話し合う事になった。\n<wait> @refalign
@@ -467,206 +467,206 @@ m/MS0022.BIN	0:02	310	12520	1FD3	{02:08}宜しく頼むよ。\n<wait>		I hope yo
 m/MS0022.BIN	0:02	311	12543	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 本当ならば、今すぐにでも話がしたいのだが‥‥\n隊長は今、管理部での上層会議に出席中なんだ。\n<wait> @refalign
 m/MS0022.BIN	0:02	312	12549	1FD3	{08:81}あ、明日に{08:16}ら迎えに行く。\n<wait>以上だ。\n<wait>		I'll be there to pick you up in the morning.\n<wait>That's all.\n<wait>	v005		reads: じゃあ、明日になったら迎えに行く。\n<wait>以上だ。\n<wait>; reads: 早坂： @refalign
 m/MS0022.BIN	0:02	313	12605	1FD0	{08:00}{08:42}の{08:65}が切{08:60}{02:08}‥\n<wait>		That's where the message ends.\n<wait>	v005		reads: 早坂からの通信が切れた‥‥‥‥\n<wait>; reads: どうやら、今日一日は会議から抜け出れそうも\n無いらしい。\n<wait> @refalign
-m/MS0022.BIN	0:02	314	12638	1F01	：		:	v005		reads: ：; reads: 早坂： @rebase-tagdiff @refalign
+m/MS0022.BIN	0:02	314	12638	1F01	：	:	:	v005	draft	reads: ：; reads: 早坂： @rebase-tagdiff @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	315	12642	1FD3	私、明日{08:71}、{08:45}にい{08:54}{08:7F}で{08:80}？\n<wait>		That means I'm free to stay here till tomorrow, right?\n<wait>	v005		reads: 私、明日まで、ここにいてもいいでしょう？\n<wait>; reads: それと‥‥‥\n<wait> @refalign
-m/MS0022.BIN	0:02	316	12685	1F01	：		:	v005		reads: ：; reads: 、明日はお前ひとりで来てくれ。\n<wait> @rebase-tagdiff @refalign
+m/MS0022.BIN	0:02	316	12685	1F01	：	:	:	v005	draft	reads: ：; reads: 、明日はお前ひとりで来てくれ。\n<wait> @rebase-tagdiff @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	317	12689	1FD3	{02:08}離{08:60}く{08:25}の。\n<wait>		I... I don't want to leave you by yourself.\n<wait>	v005		reads: ‥‥‥離れたくないの。\n<wait>; reads: 早坂： @refalign
-m/MS0022.BIN	0:02	318	12718	1F01	：		:	v005		reads: ：; reads: さん。\n<wait>君も聞こえていると思うけど、そういう事に\n決まったんだ。\n<wait> @rebase-tagdiff @refalign
-m/MS0022.BIN	0:02	319	12722	1FD3	今{08:45}を離れ{08:50}、何だか一生会え{08:25}気が{08:4A}					reads: 今ここを離れたら、何だか一生会えない気がして; reads: 早坂：
-m/MS0022.BIN	0:02	320	12764	1FFA	{02:08}‥\n<wait>	{02:08}‥\n<wait>				reads: ‥‥‥‥\n<wait>; reads: ‥‥‥宜しく頼むよ。\n<wait>
-m/MS0022.BIN	0:02	321	12783	1FD0	そう言{08:52}、					reads: そう言って、; reads: 早坂：
-m/MS0022.BIN	0:02	322	12799	1F01	は					reads: は; reads: じゃあ、明日になったら迎えに行く。\n<wait>以上だ。\n<wait>
-m/MS0022.BIN	0:02	323	12807	1F01	にしがみつ{08:64}。\n<wait>					reads: にしがみついた。\n<wait>; reads: 早坂からの通信が切れた‥‥‥‥\n<wait>
-m/MS0022.BIN	0:02	324	12834	1F01	{08:62}{08:63}の胸にしがみつき、肩を震わせ{08:14}					reads: は、自分の胸にしがみつき、肩を震わせている; reads: ：
-m/MS0022.BIN	0:02	325	12874	1F01	の髪を優しく撫で、\nそ{08:4A}抱きしめた{02:08}。\n<wait>					reads: の髪を優しく撫で、\nそして抱きしめた‥‥‥。\n<wait>; reads: 私、明日まで、ここにいてもいいでしょう？\n<wait>
-m/MS0022.BIN	0:02	326	12952	1F01	：		:	v005		reads: ： @refalign
+m/MS0022.BIN	0:02	318	12718	1F01	：	:	:	v005	draft	reads: ：; reads: さん。\n<wait>君も聞こえていると思うけど、そういう事に\n決まったんだ。\n<wait> @rebase-tagdiff @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	319	12722	1FD3	今{08:45}を離れ{08:50}、何だか一生会え{08:25}気が{08:4A}	If I leave here now, I feel like I'll never see you again			draft	reads: 今ここを離れたら、何だか一生会えない気がして; reads: 早坂： @ours-2026-09-05
+m/MS0022.BIN	0:02	320	12764	1FFA	{02:08}‥\n<wait>	............\n<wait>			draft	reads: ‥‥‥‥\n<wait>; reads: ‥‥‥宜しく頼むよ。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	321	12783	1FD0	そう言{08:52}、	So saying, 			draft	reads: そう言って、; reads: 早坂： @ours-2026-09-05
+m/MS0022.BIN	0:02	322	12799	1F01	は	 clung to 			draft	reads: は; reads: じゃあ、明日になったら迎えに行く。\n<wait>以上だ。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	323	12807	1F01	にしがみつ{08:64}。\n<wait>	.\n<wait>			draft	reads: にしがみついた。\n<wait>; reads: 早坂からの通信が切れた‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	324	12834	1F01	{08:62}{08:63}の胸にしがみつき、肩を震わせ{08:14}	 gently stroked the hair of 			draft	reads: は、自分の胸にしがみつき、肩を震わせている; reads: ： @ours-2026-09-05
+m/MS0022.BIN	0:02	325	12874	1F01	の髪を優しく撫で、\nそ{08:4A}抱きしめた{02:08}。\n<wait>	, who clung to his chest with trembling shoulders,\nand then held her close.........\n<wait>			draft	reads: の髪を優しく撫で、\nそして抱きしめた‥‥‥。\n<wait>; reads: 私、明日まで、ここにいてもいいでしょう？\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	326	12952	1F01	：	: 	:	v005	draft	reads: ： @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	327	12962	1F01	くん		Katsuragi-kun	v005		reads: くん; reads: ‥‥‥離れたくないの。\n<wait> @refalign
-m/MS0022.BIN	0:02	328	12972	1FFA	{02:08}	{02:08}				reads: ‥‥‥; reads: ：
+m/MS0022.BIN	0:02	328	12972	1FFA	{02:08}	......			draft	reads: ‥‥‥; reads: ： @ours-2026-09-05
 m/MS0022.BIN	0:02	329	12980	1FFA	好き		I love you	v005		reads: 今ここを離れたら、何だか一生会えない気がして @refalign
-m/MS0022.BIN	0:02	330	12990	1FFA	{02:08}\n<wait>	{02:08}\n<wait>				reads: ‥‥‥\n<wait>; reads: ‥‥‥‥\n<wait>
-m/MS0022.BIN	0:02	331	13013	1F01	：		:	v005		reads: ：; reads: そう言って、 @refalign
+m/MS0022.BIN	0:02	330	12990	1FFA	{02:08}\n<wait>	......\n<wait>			draft	reads: ‥‥‥\n<wait>; reads: ‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	331	13013	1F01	：	: 	:	v005	draft	reads: ：; reads: そう言って、 @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	332	13023	1F01	くん{08:72}<wait>も{08:53}強く抱きしめて{08:72}離さ{08:25}で{02:08}\n<wait>		Katsuragi-kun... <wait>Hold me tight... And don't let me go...\n<wait>	v005		reads: くん‥‥<wait>もっと強く抱きしめて‥‥離さないで‥‥‥\n<wait>; reads: は @refalign
-m/MS0022.BIN	0:02	333	13078	1F01	：		:	v005		reads: ：; reads: にしがみついた。\n<wait> @refalign
-m/MS0022.BIN	0:02	334	13082	1FD3	そ{08:4A}{08:72}<wait>キス{08:4A}{02:08}<wait>愛し{08:2B}の{02:08}\n<wait>					reads: そして‥‥<wait>キスして‥‥‥<wait>愛してるの‥‥‥\n<wait>; reads: は、自分の胸にしがみつき、肩を震わせている
-m/MS0022.BIN	0:02	335	13151	1F01	の鼓動が、密着{08:8E}身体を伝わり、甘美なパルスと{08:1A}、\n					reads: の鼓動が、密着する身体を伝わり、甘美なパルスとなって、\n; reads: の髪を優しく撫で、\nそして抱きしめた‥‥‥。\n<wait>
-m/MS0022.BIN	0:02	336	13206	1F01	の内部へと届いて来る{08:72}。\n<wait>					reads: の内部へと届いて来る‥‥。\n<wait>; reads: ：
-m/MS0022.BIN	0:02	337	13237	1FBA	{08:79}潤{08:5F}瞳は固く閉じられ、{08:76}涙に濡{08:2F}長い睫毛が、恥じらいと緊張で\n震え{08:14}{02:08}。\n<wait>					reads: その潤んだ瞳は固く閉じられ、まだ涙に濡れる長い睫毛が、恥じらいと緊張で\n震えている‥‥‥。\n<wait>; reads: くん
-m/MS0022.BIN	0:02	338	13323	1F01	{08:62}脳が灼{08:29}{08:69}な甘い衝撃に襲わ{08:60}。\n<wait>	{08:62}脳が灼{08:29}{08:69}な甘い衝撃に襲わ{08:60}。\n<wait>	A burning sensation travels through your mind.\n<wait>	v005		reads: は、脳が灼けるような甘い衝撃に襲われた。\n<wait>; reads: ‥‥‥ @rebase-tagdiff
-m/MS0022.BIN	0:02	339	13364	1FD1	＞{02:06}\n<wait>					reads: ＞どうしますか？\n<wait>; reads: ＞どうしますか？\n<wait>
-m/MS0022.BIN	0:02	340	13391	1FB2	優しく口づ{08:29}	優しく口づ{08:29}	Softly kiss her	v005		reads: 優しく口づける; menu option, declared width 20 columns; reads: ‥‥‥\n<wait>
+m/MS0022.BIN	0:02	333	13078	1F01	：	:	:	v005	draft	reads: ：; reads: にしがみついた。\n<wait> @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	334	13082	1FD3	そ{08:4A}{08:72}<wait>キス{08:4A}{02:08}<wait>愛し{08:2B}の{02:08}\n<wait>	And...<wait>kiss me.........<wait>I love you.........\n<wait>			draft	reads: そして‥‥<wait>キスして‥‥‥<wait>愛してるの‥‥‥\n<wait>; reads: は、自分の胸にしがみつき、肩を震わせている @ours-2026-09-05
+m/MS0022.BIN	0:02	335	13151	1F01	の鼓動が、密着{08:8E}身体を伝わり、甘美なパルスと{08:1A}、\n	's heartbeat travelled through their pressed-together bodies, becoming\na sweet pulse that reached\n			draft	reads: の鼓動が、密着する身体を伝わり、甘美なパルスとなって、\n; reads: の髪を優しく撫で、\nそして抱きしめた‥‥‥。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	336	13206	1F01	の内部へと届いて来る{08:72}。\n<wait>	's very core...\n<wait>			draft	reads: の内部へと届いて来る‥‥。\n<wait>; reads: ： @ours-2026-09-05
+m/MS0022.BIN	0:02	337	13237	1FBA	{08:79}潤{08:5F}瞳は固く閉じられ、{08:76}涙に濡{08:2F}長い睫毛が、恥じらいと緊張で\n震え{08:14}{02:08}。\n<wait>	Her moist eyes were shut tight, and her long lashes, still wet with\ntears, trembled with shyness and tension.........\n<wait>			draft	reads: その潤んだ瞳は固く閉じられ、まだ涙に濡れる長い睫毛が、恥じらいと緊張で\n震えている‥‥‥。\n<wait>; reads: くん @ours-2026-09-05
+m/MS0022.BIN	0:02	338	13323	1F01	{08:62}脳が灼{08:29}{08:69}な甘い衝撃に襲わ{08:60}。\n<wait>	 was struck by a sweet shock that seemed to sear his brain.\n<wait>	A burning sensation travels through your mind.\n<wait>	v005	draft	reads: は、脳が灼けるような甘い衝撃に襲われた。\n<wait>; reads: ‥‥‥ @rebase-tagdiff @ours-2026-09-05
+m/MS0022.BIN	0:02	339	13364	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>			draft	reads: ＞どうしますか？\n<wait>; reads: ＞どうしますか？\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	340	13391	1FB2	優しく口づ{08:29}	Kiss her gently	Softly kiss her	v005	draft	reads: 優しく口づける; menu option, declared width 20 columns; reads: ‥‥‥\n<wait> @ours-2026-09-05
 m/MS0022.BIN	0:02	341	13405	1FB2	戸惑い躊躇{08:8E}		Hesitate	v005		reads: 戸惑い躊躇する; menu option, declared width 20 columns; reads: ： @refalign
 m/MS0022.BIN	0:02	342	13419	1FB2	{08:79}{08:7E}押し倒す		Push her down	v005		reads: そのまま押し倒す; menu option, declared width 20 columns; reads: くん‥‥<wait>もっと強く抱きしめて‥‥離さないで‥‥‥\n<wait> @refalign
-m/MS0022.BIN	0:02	343	13461	1F01	{08:62}	{08:62}				reads: は、; reads: ： @rebase-new
-m/MS0022.BIN	0:02	344	13469	1F01	の唇を優しく塞いだ{02:08}。\n<wait>					reads: の唇を優しく塞いだ‥‥‥。\n<wait>; reads: そして‥‥<wait>キスして‥‥‥<wait>愛してるの‥‥‥\n<wait> @rebase-new
-m/MS0022.BIN	0:02	345	13506	1F01	：		:	v005		reads: ：; reads: の鼓動が、密着する身体を伝わり、甘美なパルスとなって、\n @rebase-new @refalign
+m/MS0022.BIN	0:02	343	13461	1F01	{08:62}	 gently covered 			draft	reads: は、; reads: ： @rebase-new @ours-2026-09-05
+m/MS0022.BIN	0:02	344	13469	1F01	の唇を優しく塞いだ{02:08}。\n<wait>	's lips with his own.........\n<wait>			draft	reads: の唇を優しく塞いだ‥‥‥。\n<wait>; reads: そして‥‥<wait>キスして‥‥‥<wait>愛してるの‥‥‥\n<wait> @rebase-new @ours-2026-09-05
+m/MS0022.BIN	0:02	345	13506	1F01	：	:	:	v005	draft	reads: ：; reads: の鼓動が、密着する身体を伝わり、甘美なパルスとなって、\n @rebase-new @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	346	13510	1FD3	ん{02:08}\n<wait>		Mhh...\n<wait>	v005		reads: ん‥‥‥\n<wait>; reads: の内部へと届いて来る‥‥。\n<wait> @refalign
 m/MS0022.BIN	0:02	347	13529	1F01	の唇はし{08:53}りと柔らかく、{08:79}華奢で薄い唇{08:42}漏{08:2F}吐息{08:62}\n全てを癒し包み込む女神の様だ{08:72}。\n<wait>		Her lips are so soft, yet so frail at the same time.\nAnd her sweet, sweet breath... Ah... You can feel yourself\nreinvigorating as you breathe it in. She's like... a goddess.\n<wait>	v005		reads: の唇はしっとりと柔らかく、その華奢で薄い唇から漏れる吐息は、\n全てを癒し包み込む女神の様だ‥‥。\n<wait>; reads: その潤んだ瞳は固く閉じられ、まだ涙に濡れる長い睫毛が、恥じらいと緊張で\n震えている‥‥‥。\n<wait> @rebase-tagdiff @refalign
-m/MS0022.BIN	0:02	348	13631	1F01	：		:	v005		reads: ：; reads: は、脳が灼けるような甘い衝撃に襲われた。\n<wait> @rebase-tagdiff @refalign
+m/MS0022.BIN	0:02	348	13631	1F01	：	: 	:	v005	draft	reads: ：; reads: は、脳が灼けるような甘い衝撃に襲われた。\n<wait> @rebase-tagdiff @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	349	13647	1F01	くん{02:08}\n<wait>		Katsuragi-kun...\n<wait>	v005		reads: くん‥‥‥\n<wait>; reads: ＞どうしますか？\n<wait> @rebase-tagdiff @refalign
 m/MS0022.BIN	0:02	350	13674	1F01	は上気{08:4B}顔で、囁く様にそう呟{08:64}。\n<wait>		She quietly whispers your name.\n<wait>	v005		reads: は上気した顔で、囁く様にそう呟いた。\n<wait>; reads: 優しく口づける; menu option, declared width 20 columns @rebase-tagdiff @refalign
 m/MS0022.BIN	0:02	351	13715	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>; reads: 戸惑い躊躇する; menu option, declared width 20 columns @refalign
 m/MS0022.BIN	0:02	352	13742	1FB2	{08:5C}一度キス{08:8E}		Kiss her again	v005		reads: もう一度キスする; menu option, declared width 20 columns; reads: そのまま押し倒す @refalign
 m/MS0022.BIN	0:02	353	13756	1FB2	髪にそ{08:53}触{08:2F}	髪にそ{08:53}触{08:2F}	Touch her hair	v005		reads: 髪にそっと触れる; menu option, declared width 20 columns; reads: 桐島英美
 m/MS0022.BIN	0:02	354	13770	1FB2	{08:79}{08:7E}押し倒す	{08:79}{08:7E}押し倒す	Push her down	v005		reads: そのまま押し倒す; menu option, declared width 20 columns; reads: は、
-m/MS0022.BIN	0:02	355	13838	1F01	：		:	v005		reads: ：; reads: の唇を優しく塞いだ‥‥‥。\n<wait> @rebase-new @refalign
+m/MS0022.BIN	0:02	355	13838	1F01	：	:	:	v005	draft	reads: ：; reads: の唇を優しく塞いだ‥‥‥。\n<wait> @rebase-new @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	356	13842	1FD3	私の事が{02:08}<wait>キライ？\n<wait>		Do you... <wait>not like me?\n<wait>	v005		reads: 私の事が‥‥‥<wait>キライ？\n<wait>; reads: ： @refalign
 m/MS0022.BIN	0:02	357	13887	1FB2	{08:7A}訳{08:25}！		Of course I do!	v005		reads: そんな訳ない！; menu option, declared width 20 columns; reads: ん‥‥‥\n<wait> @refalign
 m/MS0022.BIN	0:02	358	13897	1FB2	黙っ{08:14}{08:72}		Say nothing	v005		reads: 黙っている‥‥; menu option, declared width 20 columns; reads: の唇はしっとりと柔らかく、その華奢で薄い唇から漏れる吐息は、\n全てを癒し包み込む女神の様だ‥‥。\n<wait> @refalign
 m/MS0022.BIN	0:02	359	13907	1FB2	{08:79}{08:7E}押し倒す		Push her down	v005		reads: そのまま押し倒す; menu option, declared width 20 columns; reads: ： @refalign
-m/MS0022.BIN	0:02	360	13943	1FD0	{08:7A}	{08:7A}	There's no way you can keep yourself in check here.\n<wait>	v005		reads: そんな; reads: くん‥‥‥\n<wait>
-m/MS0022.BIN	0:02	361	13951	1F01	を前に、					reads: を前に、; reads: は上気した顔で、囁く様にそう呟いた。\n<wait>
-m/MS0022.BIN	0:02	362	13965	1F01	の理性は吹き飛{08:5F}。\n<wait>					reads: の理性は吹き飛んだ。\n<wait>; reads: ＞どうしますか？\n<wait>
-m/MS0022.BIN	0:02	363	13990	1FBA	{08:90}{08:1A}も構わ{08:25}。\n<wait>今は{08:82}、					reads: どうなっても構わない。\n<wait>今はただ、; reads: もう一度キスする; menu option, declared width 20 columns
-m/MS0022.BIN	0:02	364	14023	1F01	の全てが欲し{08:18}。\n<wait>					reads: の全てが欲しかった。\n<wait>; reads: 髪にそっと触れる; menu option, declared width 20 columns
-m/MS0022.BIN	0:02	365	14052	1F01	は					reads: は; reads: そのまま押し倒す; menu option, declared width 20 columns
-m/MS0022.BIN	0:02	366	14060	1F01	を引き離し、ベッドに押し倒そうと{08:4B}{08:72}\n<wait>	を引き離し、ベッドに押し倒そうと{08:4B}{08:72}\n<wait>				reads: を引き離し、ベッドに押し倒そうとした‥‥\n<wait>; reads: まさか切りはやく
-m/MS0022.BIN	0:02	367	14137	1F01	：		:	v005		reads: ： @rebase-unmatched idx367 en=Yuuka: @refalign
-m/MS0022.BIN	0:02	368	14141	1FD3	いや{02:08}<wait>酷いわ{08:72}<wait>					reads: いや‥‥‥<wait>酷いわ‥‥<wait>; reads: 私の事が‥‥‥<wait>キライ？\n<wait>
-m/MS0022.BIN	0:02	369	14169	1F01	くん、本当に私の事が好き{08:6B}？\n<wait>					reads: くん、本当に私の事が好きなの？\n<wait>; reads: そんな訳ない！; menu option, declared width 20 columns
-m/MS0022.BIN	0:02	370	14212	1F01	は身体を強張らせ、					reads: は身体を強張らせ、; reads: 黙っている‥‥; menu option, declared width 20 columns
-m/MS0022.BIN	0:02	371	14236	1F01	{08:42}身体を離{08:4B}。\n<wait>					reads: から身体を離した。\n<wait>; reads: そのまま押し倒す; menu option, declared width 20 columns
-m/MS0022.BIN	0:02	372	14259	1FD1	＞{02:06}\n<wait>	＞{02:06}\n<wait>	>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>; reads: ＞どうやって？山瀬勇
+m/MS0022.BIN	0:02	360	13943	1FD0	{08:7A}	Faced with 	There's no way you can keep yourself in check here.\n<wait>	v005	draft	reads: そんな; reads: くん‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	361	13951	1F01	を前に、	 like that, 			draft	reads: を前に、; reads: は上気した顔で、囁く様にそう呟いた。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	362	13965	1F01	の理性は吹き飛{08:5F}。\n<wait>	's reason was blown away.\n<wait>			draft	reads: の理性は吹き飛んだ。\n<wait>; reads: ＞どうしますか？\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	363	13990	1FBA	{08:90}{08:1A}も構わ{08:25}。\n<wait>今は{08:82}、	He didn't care what happened.\n<wait>Right now, he simply wanted all of 			draft	reads: どうなっても構わない。\n<wait>今はただ、; reads: もう一度キスする; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0022.BIN	0:02	364	14023	1F01	の全てが欲し{08:18}。\n<wait>	.\n<wait>			draft	reads: の全てが欲しかった。\n<wait>; reads: 髪にそっと触れる; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0022.BIN	0:02	365	14052	1F01	は	 pulled 			draft	reads: は; reads: そのまま押し倒す; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0022.BIN	0:02	366	14060	1F01	を引き離し、ベッドに押し倒そうと{08:4B}{08:72}\n<wait>	 away and tried to push her down onto the bed...\n<wait>			draft	reads: を引き離し、ベッドに押し倒そうとした‥‥\n<wait>; reads: まさか切りはやく @ours-2026-09-05
+m/MS0022.BIN	0:02	367	14137	1F01	：	:	:	v005	draft	reads: ： @rebase-unmatched idx367 en=Yuuka: @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	368	14141	1FD3	いや{02:08}<wait>酷いわ{08:72}<wait>	No.........<wait>that's cruel...<wait>			draft	reads: いや‥‥‥<wait>酷いわ‥‥<wait>; reads: 私の事が‥‥‥<wait>キライ？\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	369	14169	1F01	くん、本当に私の事が好き{08:6B}？\n<wait>	, do you really love me?\n<wait>			draft	reads: くん、本当に私の事が好きなの？\n<wait>; reads: そんな訳ない！; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0022.BIN	0:02	370	14212	1F01	は身体を強張らせ、	 stiffened and pulled her body away from 			draft	reads: は身体を強張らせ、; reads: 黙っている‥‥; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0022.BIN	0:02	371	14236	1F01	{08:42}身体を離{08:4B}。\n<wait>	.\n<wait>			draft	reads: から身体を離した。\n<wait>; reads: そのまま押し倒す; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0022.BIN	0:02	372	14259	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>	>What will you do?\n<wait>	v005	draft	reads: ＞どうしますか？\n<wait>; reads: ＞どうやって？山瀬勇 @ours-2026-09-05
 m/MS0022.BIN	0:02	373	14286	1FB2	愛{08:13}と囁く	愛{08:13}と囁く	Whisper "I love you"	v005		reads: 愛していると囁く; menu option, declared width 20 columns
 m/MS0022.BIN	0:02	374	14298	1FB2	怒る	怒る	Get angry	v005		menu option, declared width 20 columns; reads: そんな
 m/MS0022.BIN	0:02	375	14304	1FB2	沈黙{08:8E}		Say nothing	v005		reads: 沈黙する; menu option, declared width 20 columns; reads: を前に、 @refalign
-m/MS0022.BIN	0:02	376	14334	1FD0	今度は少し強引に、					reads: の理性は吹き飛んだ。\n<wait>
-m/MS0022.BIN	0:02	377	14358	1F01	は					reads: は; reads: どうなっても構わない。\n<wait>今はただ、
-m/MS0022.BIN	0:02	378	14366	1F01	の唇を奪{08:51}。\n<wait>					reads: の唇を奪った。\n<wait>; reads: の全てが欲しかった。\n<wait>
-m/MS0022.BIN	0:02	379	14393	1F01	：		:	v005		reads: ：; reads: は @refalign
-m/MS0022.BIN	0:02	380	14397	1FD3	あ{08:72}！\n<wait>					reads: あ‥‥！\n<wait>; reads: を引き離し、ベッドに押し倒そうとした‥‥\n<wait>
-m/MS0022.BIN	0:02	381	14434	1FD0	かすかに開か{08:60}{08:79}唇に、					reads: かすかに開かれたその唇に、; reads: ：
-m/MS0022.BIN	0:02	382	14462	1F01	は{08:63}の舌を滑り込ませた。\n<wait>					reads: は自分の舌を滑り込ませた。\n<wait>; reads: いや‥‥‥<wait>酷いわ‥‥<wait>
-m/MS0022.BIN	0:02	383	14499	1F01	は戸惑い抵抗し{08:69}と試みたが、すぐに思い止まり、ぎこちなく\n舌を絡ま{08:67}来た{08:72}。\n<wait>					reads: は戸惑い抵抗しようと試みたが、すぐに思い止まり、ぎこちなく\n舌を絡ませて来た‥‥。\n<wait>; reads: くん、本当に私の事が好きなの？\n<wait>
-m/MS0022.BIN	0:02	384	14583	1FD1	＞{02:06}\n<wait>					reads: ＞どうしますか？\n<wait>; reads: は身体を強張らせ、
+m/MS0022.BIN	0:02	376	14334	1FD0	今度は少し強引に、	This time a little more forcefully, 			draft	reads: の理性は吹き飛んだ。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	377	14358	1F01	は	 stole 			draft	reads: は; reads: どうなっても構わない。\n<wait>今はただ、 @ours-2026-09-05
+m/MS0022.BIN	0:02	378	14366	1F01	の唇を奪{08:51}。\n<wait>	's lips.\n<wait>			draft	reads: の唇を奪った。\n<wait>; reads: の全てが欲しかった。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	379	14393	1F01	：	:	:	v005	draft	reads: ：; reads: は @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	380	14397	1FD3	あ{08:72}！\n<wait>	Ah...!\n<wait>			draft	reads: あ‥‥！\n<wait>; reads: を引き離し、ベッドに押し倒そうとした‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	381	14434	1FD0	かすかに開か{08:60}{08:79}唇に、	Into those faintly parted lips, 			draft	reads: かすかに開かれたその唇に、; reads: ： @ours-2026-09-05
+m/MS0022.BIN	0:02	382	14462	1F01	は{08:63}の舌を滑り込ませた。\n<wait>	 slid his tongue.\n<wait>			draft	reads: は自分の舌を滑り込ませた。\n<wait>; reads: いや‥‥‥<wait>酷いわ‥‥<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	383	14499	1F01	は戸惑い抵抗し{08:69}と試みたが、すぐに思い止まり、ぎこちなく\n舌を絡ま{08:67}来た{08:72}。\n<wait>	 was flustered and tried to resist, but soon thought better of it and\nawkwardly entwined her tongue with his...\n<wait>			draft	reads: は戸惑い抵抗しようと試みたが、すぐに思い止まり、ぎこちなく\n舌を絡ませて来た‥‥。\n<wait>; reads: くん、本当に私の事が好きなの？\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	384	14583	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>			draft	reads: ＞どうしますか？\n<wait>; reads: は身体を強張らせ、 @ours-2026-09-05
 m/MS0022.BIN	0:02	385	14610	1FB2	愛し{08:2B}と囁く		Whisper "I love you"	v005		reads: 愛してると囁く; menu option, declared width 20 columns; reads: から身体を離した。\n<wait> @refalign
 m/MS0022.BIN	0:02	386	14624	1FB2	{08:79}{08:7E}押し倒す		Push her down	v005		reads: そのまま押し倒す; menu option, declared width 20 columns; reads: ＞どうしますか？\n<wait> @refalign
 m/MS0022.BIN	0:02	387	14638	1FB2	{08:5C}止{08:2E}		Stop	v005		reads: もう止める; menu option, declared width 20 columns; reads: 愛していると囁く @refalign
-m/MS0022.BIN	0:02	388	14668	1FD0	{08:79}時{02:08}					reads: その時‥‥‥; menu option, declared width 20 columns
-m/MS0022.BIN	0:02	389	14680	1F01	には冷静さが戻{08:51}。\n<wait>					reads: には冷静さが戻った。\n<wait>; reads: 沈黙する; menu option, declared width 20 columns
-m/MS0022.BIN	0:02	390	14705	1FBA	{08:73}事を{08:4A}{08:26}け{08:25}{02:08}\n刹那の劣情に押{03:0C}て、{08:73}事を{08:8E}のは間違っ{08:14}。\n<wait>	{08:73}事を{08:4A}{08:26}け{08:25}{02:08}\n刹那の劣情に押{03:0C}て、{08:73}事を{08:8E}のは間違っ{08:14}。\n<wait>	You can't do this.\nYou can't let yourself be controlled by your primal instincts.\n<wait>	v005		reads: こんな事をしてはいけない‥‥‥\n刹那の劣情に押されて、こんな事をするのは間違っている。\n<wait>; reads: ＞どうやって？
-m/MS0022.BIN	0:02	391	14777	1F01	は優しく、そ{08:4A}少し哀しげな眼で					reads: は優しく、そして少し哀しげな眼で; reads: は優しく、そして少し哀しげな眼で
-m/MS0022.BIN	0:02	392	14813	1F01	を見、そ{08:4A}、そ{08:53}彼女の身体を\n引き離{08:4B}。\n<wait>					reads: を見、そして、そっと彼女の身体を\n引き離した。\n<wait>; reads: は
-m/MS0022.BIN	0:02	393	14870	1F01	：		:	v005		reads: ：; reads: の唇を奪った。\n<wait> @refalign
-m/MS0022.BIN	0:02	394	14880	1F01	くん{08:72}<wait>何だか変{08:6B}{02:08}<wait>死にそうなくらい恥ずかしいのに{08:72}					reads: くん‥‥<wait>何だか変なの‥‥‥<wait>死にそうなくらい恥ずかしいのに‥‥; reads: ：
-m/MS0022.BIN	0:02	395	14944	1FFA	私{02:08}‥\n<wait>					reads: 私‥‥‥‥\n<wait>; reads: あ‥‥！\n<wait>
-m/MS0022.BIN	0:02	396	14965	1FD0	熱い吐息を洩らしながら、切なげに					reads: かすかに開かれたその唇に、
-m/MS0022.BIN	0:02	397	15003	1F01	はそう言{08:51}。\n<wait>					reads: はそう言った。\n<wait>; reads: は自分の舌を滑り込ませた。\n<wait>
-m/MS0022.BIN	0:02	398	15024	1FD1	＞{02:06}\n<wait>					reads: ＞どうしますか？\n<wait>; reads: は戸惑い抵抗しようと試みたが、すぐに思い止まり、ぎこちなく\n舌を絡ませて来た‥‥。\n<wait>
+m/MS0022.BIN	0:02	388	14668	1FD0	{08:79}時{02:08}	At that moment......... 			draft	reads: その時‥‥‥; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0022.BIN	0:02	389	14680	1F01	には冷静さが戻{08:51}。\n<wait>	's composure returned.\n<wait>			draft	reads: には冷静さが戻った。\n<wait>; reads: 沈黙する; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0022.BIN	0:02	390	14705	1FBA	{08:73}事を{08:4A}{08:26}け{08:25}{02:08}\n刹那の劣情に押{03:0C}て、{08:73}事を{08:8E}のは間違っ{08:14}。\n<wait>	He mustn't do this.........\nTo do this, driven by a moment's lust, is wrong.\n<wait>	You can't do this.\nYou can't let yourself be controlled by your primal instincts.\n<wait>	v005	draft	reads: こんな事をしてはいけない‥‥‥\n刹那の劣情に押されて、こんな事をするのは間違っている。\n<wait>; reads: ＞どうやって？ @ours-2026-09-05
+m/MS0022.BIN	0:02	391	14777	1F01	は優しく、そ{08:4A}少し哀しげな眼で	 looked at 			draft	reads: は優しく、そして少し哀しげな眼で; reads: は優しく、そして少し哀しげな眼で @ours-2026-09-05
+m/MS0022.BIN	0:02	392	14813	1F01	を見、そ{08:4A}、そ{08:53}彼女の身体を\n引き離{08:4B}。\n<wait>	 with gentle, slightly sad eyes, and then softly pushed her body away.\n<wait>			draft	reads: を見、そして、そっと彼女の身体を\n引き離した。\n<wait>; reads: は @ours-2026-09-05
+m/MS0022.BIN	0:02	393	14870	1F01	：	: 	:	v005	draft	reads: ：; reads: の唇を奪った。\n<wait> @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	394	14880	1F01	くん{08:72}<wait>何だか変{08:6B}{02:08}<wait>死にそうなくらい恥ずかしいのに{08:72}	...<wait>Something's strange.........<wait>I'm so embarrassed I could die, but...			draft	reads: くん‥‥<wait>何だか変なの‥‥‥<wait>死にそうなくらい恥ずかしいのに‥‥; reads: ： @ours-2026-09-05
+m/MS0022.BIN	0:02	395	14944	1FFA	私{02:08}‥\n<wait>	I............\n<wait>			draft	reads: 私‥‥‥‥\n<wait>; reads: あ‥‥！\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	396	14965	1FD0	熱い吐息を洩らしながら、切なげに	Breathing hotly, with a pained look, 			draft	reads: かすかに開かれたその唇に、 @ours-2026-09-05
+m/MS0022.BIN	0:02	397	15003	1F01	はそう言{08:51}。\n<wait>	 said so.\n<wait>			draft	reads: はそう言った。\n<wait>; reads: は自分の舌を滑り込ませた。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	398	15024	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>			draft	reads: ＞どうしますか？\n<wait>; reads: は戸惑い抵抗しようと試みたが、すぐに思い止まり、ぎこちなく\n舌を絡ませて来た‥‥。\n<wait> @ours-2026-09-05
 m/MS0022.BIN	0:02	399	15051	1FB2	君が欲しい{02:08}		I want you...	v005		reads: 君が欲しい‥‥‥; menu option, declared width 20 columns; reads: ＞どうしますか？\n<wait> @refalign
 m/MS0022.BIN	0:02	400	15065	1FB2	{08:5C}一度キス{08:8E}		Kiss her again	v005		reads: もう一度キスする; menu option, declared width 20 columns; reads: 愛してると囁く @refalign
 m/MS0022.BIN	0:02	401	15079	1FB2	{08:79}{08:7E}押し倒す		Push her down	v005		reads: そのまま押し倒す; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0022.BIN	0:02	402	15115	1FD0	{08:7A}	{08:7A}	There's no way you can keep yourself in check here.\n<wait>	v005		reads: そんな; reads: もう止める; menu option, declared width 20 columns
-m/MS0022.BIN	0:02	403	15123	1F01	を前に、	を前に、				reads: を前に、; reads: 桐島英美山瀬勇
-m/MS0022.BIN	0:02	404	15137	1F01	の理性は吹き飛{08:5F}。\n<wait>	の理性は吹き飛{08:5F}。\n<wait>				reads: の理性は吹き飛んだ。\n<wait>
-m/MS0022.BIN	0:02	405	15162	1FBA	{08:90}{08:1A}も構わ{08:25}。\n<wait>今は{08:82}、					reads: どうなっても構わない。\n<wait>今はただ、; reads: その時‥‥‥
-m/MS0022.BIN	0:02	406	15195	1F01	の全てが欲し{08:18}。\n<wait>					reads: の全てが欲しかった。\n<wait>; reads: には冷静さが戻った。\n<wait>
-m/MS0022.BIN	0:02	407	15224	1F01	は					reads: は; reads: こんな事をしてはいけない‥‥‥\n刹那の劣情に押されて、こんな事をするのは間違っている。\n<wait>
-m/MS0022.BIN	0:02	408	15232	1F01	を引き離し、ベッドに押し倒そうと{08:4B}{08:72}\n<wait>					reads: を引き離し、ベッドに押し倒そうとした‥‥\n<wait>; reads: は優しく、そして少し哀しげな眼で
-m/MS0022.BIN	0:02	409	15305	1F01	：		:	v005		reads: ：; reads: を見、そして、そっと彼女の身体を\n引き離した。\n<wait> @refalign
-m/MS0022.BIN	0:02	410	15309	1FD3	いや{02:08}‥<wait>					reads: いや‥‥‥‥<wait>; reads: ：
-m/MS0022.BIN	0:02	411	15327	1F01	くん{08:72}怖い{08:72}\n<wait>					reads: くん‥‥怖い‥‥\n<wait>; reads: くん‥‥<wait>何だか変なの‥‥‥<wait>死にそうなくらい恥ずかしいのに‥‥
-m/MS0022.BIN	0:02	412	15354	1F01	は身を強張らせた。\n<wait>					reads: は身を強張らせた。\n<wait>; reads: 私‥‥‥‥\n<wait>
-m/MS0022.BIN	0:02	413	15381	1FD1	＞{02:06}\n<wait>					reads: ＞どうしますか？\n<wait>; reads: ＞どうしますか？\n<wait>
+m/MS0022.BIN	0:02	402	15115	1FD0	{08:7A}	Faced with 	There's no way you can keep yourself in check here.\n<wait>	v005	draft	reads: そんな; reads: もう止める; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0022.BIN	0:02	403	15123	1F01	を前に、	 like that, 			draft	reads: を前に、; reads: 桐島英美山瀬勇 @ours-2026-09-05
+m/MS0022.BIN	0:02	404	15137	1F01	の理性は吹き飛{08:5F}。\n<wait>	's reason was blown away.\n<wait>			draft	reads: の理性は吹き飛んだ。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	405	15162	1FBA	{08:90}{08:1A}も構わ{08:25}。\n<wait>今は{08:82}、	He didn't care what happened.\n<wait>Right now, he simply wanted all of 			draft	reads: どうなっても構わない。\n<wait>今はただ、; reads: その時‥‥‥ @ours-2026-09-05
+m/MS0022.BIN	0:02	406	15195	1F01	の全てが欲し{08:18}。\n<wait>	.\n<wait>			draft	reads: の全てが欲しかった。\n<wait>; reads: には冷静さが戻った。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	407	15224	1F01	は	 pulled 			draft	reads: は; reads: こんな事をしてはいけない‥‥‥\n刹那の劣情に押されて、こんな事をするのは間違っている。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	408	15232	1F01	を引き離し、ベッドに押し倒そうと{08:4B}{08:72}\n<wait>	 away and tried to push her down onto the bed...\n<wait>			draft	reads: を引き離し、ベッドに押し倒そうとした‥‥\n<wait>; reads: は優しく、そして少し哀しげな眼で @ours-2026-09-05
+m/MS0022.BIN	0:02	409	15305	1F01	：	:	:	v005	draft	reads: ：; reads: を見、そして、そっと彼女の身体を\n引き離した。\n<wait> @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	410	15309	1FD3	いや{02:08}‥<wait>	No............<wait>			draft	reads: いや‥‥‥‥<wait>; reads: ： @ours-2026-09-05
+m/MS0022.BIN	0:02	411	15327	1F01	くん{08:72}怖い{08:72}\n<wait>	... I'm scared...\n<wait>			draft	reads: くん‥‥怖い‥‥\n<wait>; reads: くん‥‥<wait>何だか変なの‥‥‥<wait>死にそうなくらい恥ずかしいのに‥‥ @ours-2026-09-05
+m/MS0022.BIN	0:02	412	15354	1F01	は身を強張らせた。\n<wait>	 stiffened.\n<wait>			draft	reads: は身を強張らせた。\n<wait>; reads: 私‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	413	15381	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>			draft	reads: ＞どうしますか？\n<wait>; reads: ＞どうしますか？\n<wait> @ours-2026-09-05
 m/MS0022.BIN	0:02	414	15408	1FB2	あやまる		Apologize	v005		menu option, declared width 20 columns; reads: はそう言った。\n<wait> @refalign
 m/MS0022.BIN	0:02	415	15418	1FB2	愛し{08:2B}と囁く		Whisper "I love you"	v005		reads: 愛してると囁く; menu option, declared width 20 columns; reads: ＞どうしますか？\n<wait> @refalign
 m/MS0022.BIN	0:02	416	15432	1FB2	{08:5C}止{08:2E}		Stop	v005		reads: もう止める; menu option, declared width 20 columns; reads: 君が欲しい‥‥‥ @refalign
-m/MS0022.BIN	0:02	417	15468	1F01	：		:	v005		reads: ：; reads: もう一度キスする; menu option, declared width 20 columns @rebase-new @refalign
-m/MS0022.BIN	0:02	418	15478	1FFA	{02:08}{02:08}‥	{02:08}{02:08}‥				reads: ‥‥‥‥‥‥‥; reads: そのまま押し倒す; menu option, declared width 20 columns
-m/MS0022.BIN	0:02	419	15490	1FFA	本当に？\n<wait>	本当に？\n<wait>	Really?\n<wait>	v005		reads: {=FC}{=02}
+m/MS0022.BIN	0:02	417	15468	1F01	：	:	:	v005	draft	reads: ：; reads: もう一度キスする; menu option, declared width 20 columns @rebase-new @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	418	15478	1FFA	{02:08}{02:08}‥	.........			draft	reads: ‥‥‥‥‥‥‥; reads: そのまま押し倒す; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0022.BIN	0:02	419	15490	1FFA	本当に？\n<wait>	Really?\n<wait>	Really?\n<wait>	v005	draft	reads: {=FC}{=02} @ours-2026-09-05
 m/MS0022.BIN	0:02	420	15521	1FB2	抱きし{08:2E}	抱きし{08:2E}	Embrace her	v005		reads: 抱きしめる; menu option, declared width 20 columns; reads: そんな
 m/MS0022.BIN	0:02	421	15531	1FB2	黙っ{08:14}{08:72}		Say nothing	v005		reads: 黙っている‥‥; menu option, declared width 20 columns; reads: を前に、 @refalign
 m/MS0022.BIN	0:02	422	15541	1FB2	{08:79}{08:7E}押し倒す		Push her down	v005		reads: そのまま押し倒す; menu option, declared width 20 columns; reads: の理性は吹き飛んだ。\n<wait> @refalign
-m/MS0022.BIN	0:02	423	15583	1F01	：		:	v005		reads: ：; reads: どうなっても構わない。\n<wait>今はただ、 @rebase-new @refalign
+m/MS0022.BIN	0:02	423	15583	1F01	：	: 	:	v005	draft	reads: ：; reads: どうなっても構わない。\n<wait>今はただ、 @rebase-new @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	424	15593	1F01	くん{02:08}私{02:08}‥\n<wait>		Katsuragi-kun... I...\n<wait>	v005		reads: くん‥‥‥私‥‥‥‥\n<wait>; reads: の全てが欲しかった。\n<wait> @rebase-new @refalign
 m/MS0022.BIN	0:02	425	15614	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>; reads: は @refalign
 m/MS0022.BIN	0:02	426	15641	1FB2	{08:76}可哀相だ{08:72}		It's not time...	v005		reads: まだ可哀相だ‥‥; menu option, declared width 20 columns; reads: を引き離し、ベッドに押し倒そうとした‥‥\n<wait> @refalign
 m/MS0022.BIN	0:02	427	15655	1FB2	{08:79}{08:7E}押し倒す		Push her down	v005		reads: そのまま押し倒す; menu option, declared width 20 columns; reads: ： @refalign
-m/MS0022.BIN	0:02	428	15693	1F01	{08:62}	{08:62}				reads: は、; reads: いや‥‥‥‥<wait> @rebase-new
-m/MS0022.BIN	0:02	429	15701	1F01	を強く抱きしめた。\n<wait>					reads: を強く抱きしめた。\n<wait>; reads: くん‥‥怖い‥‥\n<wait> @rebase-new
-m/MS0022.BIN	0:02	430	15738	1F01	：		:	v005		reads: ：; reads: は身を強張らせた。\n<wait> @rebase-new @refalign
-m/MS0022.BIN	0:02	431	15742	1FD3	あ{08:72}					reads: あ‥‥; reads: ＞どうしますか？\n<wait>
-m/MS0022.BIN	0:02	432	15752	1F01	くん{02:08}\n<wait>					reads: くん‥‥‥\n<wait>; menu option, declared width 20 columns
-m/MS0022.BIN	0:02	433	15789	1FD0	そ{08:4A}、					reads: そして、; reads: 愛してると囁く; menu option, declared width 20 columns
-m/MS0022.BIN	0:02	434	15819	1F01	：		:	v005		reads: ：; reads: もう止める; menu option, declared width 20 columns @rebase-tagdiff @refalign
-m/MS0022.BIN	0:02	435	15823	1FD3	ごめんな{08:49}{02:08}\n<wait>	ごめんな{08:49}{02:08}\n<wait>	Ah... Katsuragi-kun...\n<wait>	v005		reads: ごめんなさい‥‥‥\n<wait>; reads: バーチャル{=FC}{=FF}
-m/MS0022.BIN	0:02	436	15850	1F01	：		:	v005		reads: ： @rebase-unmatched idx436 en=Yuuka: @refalign
-m/MS0022.BIN	0:02	437	15854	1FD3	私っ{08:50}、	私っ{08:50}、	Sorry...\n<wait>	v005		reads: 私ったら、; reads: ‥‥‥‥‥‥‥
-m/MS0022.BIN	0:02	438	15868	1F01	くんの気持ちも考えずに{02:08}<wait>{08:90}か{08:4A}{08:64}わ。\n<wait>					reads: くんの気持ちも考えずに‥‥‥<wait>どうかしていたわ。\n<wait>; reads: くんの気持ちも考えずに‥‥‥<wait>どうかしていたわ。\n<wait>
-m/MS0022.BIN	0:02	439	15931	1F01	：		:	v005		reads: ：; reads: 抱きしめる; menu option, declared width 20 columns @refalign
+m/MS0022.BIN	0:02	428	15693	1F01	{08:62}	 held 			draft	reads: は、; reads: いや‥‥‥‥<wait> @rebase-new @ours-2026-09-05
+m/MS0022.BIN	0:02	429	15701	1F01	を強く抱きしめた。\n<wait>	 tightly.\n<wait>			draft	reads: を強く抱きしめた。\n<wait>; reads: くん‥‥怖い‥‥\n<wait> @rebase-new @ours-2026-09-05
+m/MS0022.BIN	0:02	430	15738	1F01	：	:	:	v005	draft	reads: ：; reads: は身を強張らせた。\n<wait> @rebase-new @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	431	15742	1FD3	あ{08:72}	Ah... 			draft	reads: あ‥‥; reads: ＞どうしますか？\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	432	15752	1F01	くん{02:08}\n<wait>	.........\n<wait>			draft	reads: くん‥‥‥\n<wait>; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0022.BIN	0:02	433	15789	1FD0	そ{08:4A}、	And then, 			draft	reads: そして、; reads: 愛してると囁く; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0022.BIN	0:02	434	15819	1F01	：	:	:	v005	draft	reads: ：; reads: もう止める; menu option, declared width 20 columns @rebase-tagdiff @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	435	15823	1FD3	ごめんな{08:49}{02:08}\n<wait>	I'm sorry.........\n<wait>	Ah... Katsuragi-kun...\n<wait>	v005	draft	reads: ごめんなさい‥‥‥\n<wait>; reads: バーチャル{=FC}{=FF} @ours-2026-09-05
+m/MS0022.BIN	0:02	436	15850	1F01	：	:	:	v005	draft	reads: ： @rebase-unmatched idx436 en=Yuuka: @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	437	15854	1FD3	私っ{08:50}、	I never even thought about 	Sorry...\n<wait>	v005	draft	reads: 私ったら、; reads: ‥‥‥‥‥‥‥ @ours-2026-09-05
+m/MS0022.BIN	0:02	438	15868	1F01	くんの気持ちも考えずに{02:08}<wait>{08:90}か{08:4A}{08:64}わ。\n<wait>	's feelings.........<wait>I must have been out of my mind.\n<wait>			draft	reads: くんの気持ちも考えずに‥‥‥<wait>どうかしていたわ。\n<wait>; reads: くんの気持ちも考えずに‥‥‥<wait>どうかしていたわ。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	439	15931	1F01	：	:	:	v005	draft	reads: ：; reads: 抱きしめる; menu option, declared width 20 columns @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	440	15935	1FD3	ごめんな{08:49}{02:08}\n<wait>		Sorry...\n<wait>	v005		reads: ごめんなさい‥‥‥\n<wait>; reads: 黙っている‥‥; menu option, declared width 20 columns @refalign
-m/MS0022.BIN	0:02	441	15962	1F01	：		:	v005		reads: ：; reads: そのまま押し倒す; menu option, declared width 20 columns @refalign
-m/MS0022.BIN	0:02	442	15966	1FD3	私{08:72}<wait>ちょ{08:53}{08:90}か{08:4A}たの{02:08}<wait>ごめんな{08:49}{02:08}\n<wait>	私{08:72}<wait>ちょ{08:53}{08:90}か{08:4A}たの{02:08}<wait>ごめんな{08:49}{02:08}\n<wait>	I... <wait>I did something wrong, didn't I? <wait>Sorry...\n<wait>	v005		reads: 私‥‥<wait>ちょっとどうかしてたの‥‥‥<wait>ごめんなさい‥‥‥\n<wait>
+m/MS0022.BIN	0:02	441	15962	1F01	：	:	:	v005	draft	reads: ：; reads: そのまま押し倒す; menu option, declared width 20 columns @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	442	15966	1FD3	私{08:72}<wait>ちょ{08:53}{08:90}か{08:4A}たの{02:08}<wait>ごめんな{08:49}{02:08}\n<wait>	I...<wait>I was a little out of my mind.........<wait>I'm sorry.........\n<wait>	I... <wait>I did something wrong, didn't I? <wait>Sorry...\n<wait>	v005	draft	reads: 私‥‥<wait>ちょっとどうかしてたの‥‥‥<wait>ごめんなさい‥‥‥\n<wait> @ours-2026-09-05
 m/MS0022.BIN	0:02	443	16031	1FB2	僕の方こそ{08:72}	僕の方こそ{08:72}	No, it's my fault	v005		reads: 僕の方こそ‥‥; menu option, declared width 20 columns; reads: ペンタグランマ
 m/MS0022.BIN	0:02	444	16045	1FB2	愛し{08:2B}と囁く		Whisper "I love you"	v005		reads: 愛してると囁く; menu option, declared width 20 columns; reads: ： @refalign
 m/MS0022.BIN	0:02	445	16059	1FB2	{08:5C}止{08:2E}		Stop	v005		reads: もう止める; menu option, declared width 20 columns; reads: くん‥‥‥私‥‥‥‥\n<wait> @refalign
-m/MS0022.BIN	0:02	446	16114	1F01	：		:	v005		reads: ：; reads: ＞どうしますか？\n<wait> @rebase-new @refalign
-m/MS0022.BIN	0:02	447	16118	1FD3	イヤッ！！\n<wait>					reads: まだ可哀相だ‥‥; menu option, declared width 20 columns
-m/MS0022.BIN	0:02	448	16143	1F01	は					reads: は; reads: そのまま押し倒す; menu option, declared width 20 columns
-m/MS0022.BIN	0:02	449	16151	1F01	の腕をふりはらい、側を離{08:60}。\n<wait>	の腕をふりはらい、側を離{08:60}。\n<wait>				reads: の腕をふりはらい、側を離れた。\n<wait>
-m/MS0022.BIN	0:02	450	16186	1FBA	{08:6C}に怯え{08:14}様子だ{02:08}。\n<wait>	{08:6C}に怯え{08:14}様子だ{02:08}。\n<wait>	Just by looking at her, it's clear that she's frightened.\n<wait>	v005		reads: 完全に怯えている様子だ‥‥‥。\n<wait>; reads: は、
-m/MS0022.BIN	0:02	451	16237	1F01	：		:	v005		reads: ：; reads: を強く抱きしめた。\n<wait> @rebase-tagdiff @refalign
+m/MS0022.BIN	0:02	446	16114	1F01	：	:	:	v005	draft	reads: ：; reads: ＞どうしますか？\n<wait> @rebase-new @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	447	16118	1FD3	イヤッ！！\n<wait>	No!!\n<wait>			draft	reads: まだ可哀相だ‥‥; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0022.BIN	0:02	448	16143	1F01	は	 shook off 			draft	reads: は; reads: そのまま押し倒す; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0022.BIN	0:02	449	16151	1F01	の腕をふりはらい、側を離{08:60}。\n<wait>	's arms and moved away from him.\n<wait>			draft	reads: の腕をふりはらい、側を離れた。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	450	16186	1FBA	{08:6C}に怯え{08:14}様子だ{02:08}。\n<wait>	She seems completely terrified.........\n<wait>	Just by looking at her, it's clear that she's frightened.\n<wait>	v005	draft	reads: 完全に怯えている様子だ‥‥‥。\n<wait>; reads: は、 @ours-2026-09-05
+m/MS0022.BIN	0:02	451	16237	1F01	：	:	:	v005	draft	reads: ：; reads: を強く抱きしめた。\n<wait> @rebase-tagdiff @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	452	16241	1FD3	ごめんな{08:49}{02:08}\n<wait>		Sorry...\n<wait>	v005		reads: ごめんなさい‥‥‥\n<wait>; reads: ： @refalign
-m/MS0022.BIN	0:02	453	16268	1F01	：		:	v005		reads: ：; reads: あ‥‥ @rebase-tagdiff @refalign
+m/MS0022.BIN	0:02	453	16268	1F01	：	:	:	v005	draft	reads: ：; reads: あ‥‥ @rebase-tagdiff @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	454	16272	1FD3	私{08:72}<wait>ちょ{08:53}{08:90}か{08:4A}たの{02:08}<wait>ごめんな{08:49}{02:08}\n<wait>		I... <wait>I did something wrong, didn't I? <wait>Sorry...\n<wait>	v005		reads: 私‥‥<wait>ちょっとどうかしてたの‥‥‥<wait>ごめんなさい‥‥‥\n<wait>; reads: くん‥‥‥\n<wait> @refalign
 m/MS0022.BIN	0:02	455	16337	1F4F	{03:17}	{03:17}				reads: ; reads: そして、
 m/MS0022.BIN	0:02	456	16341	1FD0	{01:3B}{08:71}の雰囲気は嘘の様に消え去り、{01:2E}には気まずい空気が流{08:60}。\n<wait>		You suddenly find yourself feeling incredibly awkward about the whole\nsituation. It's as if everything leading up to this point never\nhappened at all.\n<wait>	v005		reads: さっきまでの雰囲気は嘘の様に消え去り、部屋には気まずい空気が流れた。\n<wait>; reads: ： @refalign
-m/MS0022.BIN	0:02	457	16436	1F01	：		:	v005		reads: ：; reads: ごめんなさい‥‥‥\n<wait> @refalign
+m/MS0022.BIN	0:02	457	16436	1F01	：	: 	:	v005	draft	reads: ：; reads: ごめんなさい‥‥‥\n<wait> @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	458	16446	1F01	くん。\nあ{08:72}明日の事が{08:7B}{08:5F}し、{08:5C}休{08:5F}方が良いと思うわ。\n<wait>		Hey, Katsuragi-kun. You should probably try to get some rest.\nTomorrow's a pretty important day and all...\n<wait>	v005		reads: くん。\nあ‥‥明日の事があるんだし、もう休んだ方が良いと思うわ。\n<wait>; reads: ： @refalign
-m/MS0022.BIN	0:02	459	16514	1F01	：		:	v005		reads: ：; reads: 私ったら、 @refalign
-m/MS0022.BIN	0:02	460	16518	1FD3	あの{08:72}私、あの辺を片付{08:29}わ。\n私の事は気にし{08:25}で、					reads: あの‥‥私、あの辺を片付けるわ。\n私の事は気にしないで、; reads: くんの気持ちも考えずに‥‥‥<wait>どうかしていたわ。\n<wait>
-m/MS0022.BIN	0:02	461	16573	1F01	くんは寝て頂戴ね。\n<wait>					reads: くんは寝て頂戴ね。\n<wait>; reads: ：
-m/MS0022.BIN	0:02	462	16604	1FD0	そう言うと					reads: ごめんなさい‥‥‥\n<wait>
-m/MS0022.BIN	0:02	463	16620	1F01	{08:62}	{08:62}				reads: は、; reads: ：
-m/MS0022.BIN	0:02	464	16628	1F01	を避{08:29}様に奥の{01:2E}へ行{08:52}{08:1F}。\n<wait>					reads: を避ける様に奥の部屋へ行ってしまった。\n<wait>; reads: 私‥‥<wait>ちょっとどうかしてたの‥‥‥<wait>ごめんなさい‥‥‥\n<wait>
-m/MS0022.BIN	0:02	465	16661	1FBA	{08:5C}、何を言{08:52}も無駄{08:8C}{02:08}。\n<wait>					reads: もう、何を言っても無駄だろう‥‥‥。\n<wait>; reads: 僕の方こそ‥‥; menu option, declared width 20 columns
-m/MS0022.BIN	0:02	466	16698	1F01	がいなく{08:16}途端、					reads: がいなくなった途端、; reads: 愛してると囁く; menu option, declared width 20 columns
-m/MS0022.BIN	0:02	467	16720	1F01	の胸を言い表せぬ不安が襲{08:51}。\n<wait>					reads: の胸を言い表せぬ不安が襲った。\n<wait>; reads: もう止める; menu option, declared width 20 columns
-m/MS0022.BIN	0:02	468	16755	1FBA	明日{08:72}<wait>詰所で{08:63}を待ち受け{08:14}運命は{02:08}。\n<wait>	明日{08:72}<wait>詰所で{08:63}を待ち受け{08:14}運命は{02:08}。\n<wait>	This is it.\nThere is nothing more left for you to say to make things right.\n<wait>	v005		reads: 明日‥‥<wait>詰所で自分を待ち受けている運命は‥‥‥。\n<wait>; reads: を攻撃し山瀬勇
-m/MS0022.BIN	0:02	469	16802	1FBA	何者かが嘲笑{08:8E}声が聞こ{08:28}様な気がし、	何者かが嘲笑{08:8E}声が聞こ{08:28}様な気がし、	No words can describe the helplessness you feel as you watch Yuuka\nwalk away from you.\n<wait>	v005		reads: 何者かが嘲笑する声が聞こえる様な気がし、
-m/MS0022.BIN	0:02	470	16844	1F01	はたまらなくなり、\nベッドに潜り込{08:5F}。\n<wait>					reads: はたまらなくなり、\nベッドに潜り込んだ。\n<wait>; reads: ： @rebase-unmatched idx470 en=Yuuka:
-m/MS0022.BIN	0:02	471	16888	1FBA	奥の{01:2E}{08:42}食器を片付{08:29}音が聞こえて{08:64}が、程無く{08:4A}{08:4D}も薄れ、\n					reads: 奥の部屋から食器を片付ける音が聞こえていたが、程無くしてそれも薄れ、\n; reads: 奥の部屋から食器を片付ける音が聞こえていたが、程無くしてそれも薄れ、\n
-m/MS0022.BIN	0:02	472	16951	1F01	は絶望の淵で深い眠りに落ちて行{08:51}{02:08}。\n<wait>					reads: は絶望の淵で深い眠りに落ちて行った‥‥‥。\n<wait>; reads: は絶望の淵で深い眠りに落ちて行った‥‥‥。\n<wait> @rebase-tagdiff
-m/MS0022.BIN	0:02	473	17005	1F01	はそう言うと、					reads: はそう言うと、; reads: の腕をふりはらい、側を離れた。\n<wait> @rebase-tagdiff
-m/MS0022.BIN	0:02	474	17025	1F01	を見つめた。\n<wait>					reads: を見つめた。\n<wait>; reads: 完全に怯えている様子だ‥‥‥。\n<wait> @rebase-tagdiff
-m/MS0022.BIN	0:02	475	17056	1F01	：		:	v005		reads: ： @rebase-tagdiff @refalign
+m/MS0022.BIN	0:02	459	16514	1F01	：	:	:	v005	draft	reads: ：; reads: 私ったら、 @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	460	16518	1FD3	あの{08:72}私、あの辺を片付{08:29}わ。\n私の事は気にし{08:25}で、	Um... I'll tidy up over there.\nDon't mind me, 			draft	reads: あの‥‥私、あの辺を片付けるわ。\n私の事は気にしないで、; reads: くんの気持ちも考えずに‥‥‥<wait>どうかしていたわ。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	461	16573	1F01	くんは寝て頂戴ね。\n<wait>	, you go to sleep, okay.\n<wait>			draft	reads: くんは寝て頂戴ね。\n<wait>; reads: ： @ours-2026-09-05
+m/MS0022.BIN	0:02	462	16604	1FD0	そう言うと	So saying, 			draft	reads: ごめんなさい‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	463	16620	1F01	{08:62}	 went off to the back room, as if avoiding 			draft	reads: は、; reads: ： @ours-2026-09-05
+m/MS0022.BIN	0:02	464	16628	1F01	を避{08:29}様に奥の{01:2E}へ行{08:52}{08:1F}。\n<wait>	.\n<wait>			draft	reads: を避ける様に奥の部屋へ行ってしまった。\n<wait>; reads: 私‥‥<wait>ちょっとどうかしてたの‥‥‥<wait>ごめんなさい‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	465	16661	1FBA	{08:5C}、何を言{08:52}も無駄{08:8C}{02:08}。\n<wait>	Nothing he could say now would do any good.........\n<wait>The moment 			draft	reads: もう、何を言っても無駄だろう‥‥‥。\n<wait>; reads: 僕の方こそ‥‥; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0022.BIN	0:02	466	16698	1F01	がいなく{08:16}途端、	 was gone, an inexpressible unease assailed 			draft	reads: がいなくなった途端、; reads: 愛してると囁く; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0022.BIN	0:02	467	16720	1F01	の胸を言い表せぬ不安が襲{08:51}。\n<wait>	's heart.\n<wait>			draft	reads: の胸を言い表せぬ不安が襲った。\n<wait>; reads: もう止める; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0022.BIN	0:02	468	16755	1FBA	明日{08:72}<wait>詰所で{08:63}を待ち受け{08:14}運命は{02:08}。\n<wait>	Tomorrow...<wait>the fate awaiting him at the squad station.........\n<wait>	This is it.\nThere is nothing more left for you to say to make things right.\n<wait>	v005	draft	reads: 明日‥‥<wait>詰所で自分を待ち受けている運命は‥‥‥。\n<wait>; reads: を攻撃し山瀬勇 @ours-2026-09-05
+m/MS0022.BIN	0:02	469	16802	1FBA	何者かが嘲笑{08:8E}声が聞こ{08:28}様な気がし、	He thought he could hear someone's mocking laughter, and 	No words can describe the helplessness you feel as you watch Yuuka\nwalk away from you.\n<wait>	v005	draft	reads: 何者かが嘲笑する声が聞こえる様な気がし、 @ours-2026-09-05
+m/MS0022.BIN	0:02	470	16844	1F01	はたまらなくなり、\nベッドに潜り込{08:5F}。\n<wait>	 could bear it no longer, and burrowed into the bed.\n<wait>			draft	reads: はたまらなくなり、\nベッドに潜り込んだ。\n<wait>; reads: ： @rebase-unmatched idx470 en=Yuuka: @ours-2026-09-05
+m/MS0022.BIN	0:02	471	16888	1FBA	奥の{01:2E}{08:42}食器を片付{08:29}音が聞こえて{08:64}が、程無く{08:4A}{08:4D}も薄れ、\n	The sound of dishes being cleared came from the back room, but before\nlong it too faded, and\n			draft	reads: 奥の部屋から食器を片付ける音が聞こえていたが、程無くしてそれも薄れ、\n; reads: 奥の部屋から食器を片付ける音が聞こえていたが、程無くしてそれも薄れ、\n @ours-2026-09-05
+m/MS0022.BIN	0:02	472	16951	1F01	は絶望の淵で深い眠りに落ちて行{08:51}{02:08}。\n<wait>	 fell into a deep sleep on the brink of despair.........\n<wait>			draft	reads: は絶望の淵で深い眠りに落ちて行った‥‥‥。\n<wait>; reads: は絶望の淵で深い眠りに落ちて行った‥‥‥。\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS0022.BIN	0:02	473	17005	1F01	はそう言うと、	 said so, and gazed at 			draft	reads: はそう言うと、; reads: の腕をふりはらい、側を離れた。\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS0022.BIN	0:02	474	17025	1F01	を見つめた。\n<wait>	.\n<wait>			draft	reads: を見つめた。\n<wait>; reads: 完全に怯えている様子だ‥‥‥。\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS0022.BIN	0:02	475	17056	1F01	：	: 	:	v005	draft	reads: ： @rebase-tagdiff @refalign @ours-2026-09-05
 m/MS0022.BIN	0:02	476	17066	1F01	<wait>くん{02:08}\n<wait>		Katsuragi<wait>-kun...\n<wait>	v005		reads: <wait>くん‥‥‥\n<wait>; reads: ごめんなさい‥‥‥\n<wait> @rebase-tagdiff @refalign
 m/MS0022.BIN	0:02	477	17090	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>; reads: ： @refalign
 m/MS0022.BIN	0:02	478	17117	1FB2	押し倒す！		Push her down!	v005		menu option, declared width 20 columns; reads: 私‥‥<wait>ちょっとどうかしてたの‥‥‥<wait>ごめんなさい‥‥‥\n<wait> @refalign
 m/MS0022.BIN	0:02	479	17129	1FB2	{08:5C}止{08:2E}	{08:5C}止{08:2E}	Stop	v005		reads: もう止める; menu option, declared width 20 columns
 m/MS0022.BIN	0:02	480	17137	1FB2	愛し{08:2B}と囁く		Whisper "I love you"	v005		reads: 愛してると囁く; menu option, declared width 20 columns; reads: さっきまでの雰囲気は嘘の様に消え去り、部屋には気まずい空気が流れた。\n<wait> @refalign
-m/MS0022.BIN	0:02	481	17179	1F01	は					reads: は; reads: ： @rebase-new
-m/MS0022.BIN	0:02	482	17187	1F01	をベッドに押し倒{08:4B}。\n<wait>					reads: をベッドに押し倒した。\n<wait>; reads: くん。\nあ‥‥明日の事があるんだし、もう休んだ方が良いと思うわ。\n<wait> @rebase-new
-m/MS0022.BIN	0:02	483	17218	1F01	は{1E10:01003C}抵抗し{08:25}{02:08}\n<wait>					reads: は{1E10:01003C}抵抗しない‥‥‥\n<wait>; reads: ： @rebase-new
-m/MS0022.BIN	0:02	484	17250	1F01	：		:	v005		reads: ：; reads: あの‥‥私、あの辺を片付けるわ。\n私の事は気にしないで、 @rebase-new @refalign
-m/MS0022.BIN	0:02	485	17254	1FD3	愛し{08:2B}わ{08:72}					reads: 愛してるわ‥‥; reads: くんは寝て頂戴ね。\n<wait>
-m/MS0022.BIN	0:02	486	17270	1F01	くん{02:08}\n<wait>					reads: くん‥‥‥\n<wait>; reads: くん‥‥‥\n<wait>
-m/MS0022.BIN	0:02	487	17291	1F01	は	は				reads: は; reads: は、
-m/MS0022.BIN	0:02	488	17299	1F01	の服に手をか{08:43}。\n<wait>					reads: の服に手をかけた。\n<wait>; reads: を避ける様に奥の部屋へ行ってしまった。\n<wait>
-m/MS0022.BIN	0:02	489	17417	1A	露に{08:16}真珠の様にすべらかな肌に、					reads: 露になった真珠の様にすべらかな肌に、; reads: もう、何を言っても無駄だろう‥‥‥。\n<wait>
-m/MS0022.BIN	0:02	490	17455	1F01	は唇を沿わ{08:2A}。\n					reads: は唇を沿わせる。\n; reads: がいなくなった途端、
-m/MS0022.BIN	0:02	491	17476	1FFA	{02:08}{02:08}{02:08}\n<wait>	{02:08}{02:08}{02:08}\n<wait>				reads: ‥‥‥‥‥‥‥‥‥\n<wait>; reads: の胸を言い表せぬ不安が襲った。\n<wait>
-m/MS0022.BIN	0:02	492	17499	1F5E	小さな喘ぎと衣擦れの音{02:08}‥\n<wait>ふたりはお互いの想いを確かめあいながら、静寂な深淵へと落ちて行{08:51}。\n<wait>					reads: 小さな喘ぎと衣擦れの音‥‥‥‥\n<wait>ふたりはお互いの想いを確かめあいながら、静寂な深淵へと落ちて行った。\n<wait>; reads: 明日‥‥<wait>詰所で自分を待ち受けている運命は‥‥‥。\n<wait>
-m/MS0022.BIN	0:02	493	17650	1F01	が何やら立ち動い{08:14}音で、					reads: が何やら立ち動いている音で、; reads: 何者かが嘲笑する声が聞こえる様な気がし、
-m/MS0022.BIN	0:02	494	17680	1F01	は目を覚ま{08:4B}。\n<wait>					reads: は目を覚ました。\n<wait>; reads: はたまらなくなり、\nベッドに潜り込んだ。\n<wait>
-m/MS0022.BIN	0:02	495	17717	1FD0	奥の{01:2E}{08:42}は珈琲の香が漂{08:52}来{08:14}。\n<wait>					reads: 奥の部屋からは珈琲の香が漂って来ている。\n<wait>; reads: 奥の部屋から食器を片付ける音が聞こえていたが、程無くしてそれも薄れ、\n
-m/MS0022.BIN	0:02	496	17754	1FBA	幸福な瞬間{02:08}\n					reads: 幸福な瞬間‥‥‥\n; reads: は絶望の淵で深い眠りに落ちて行った‥‥‥。\n<wait>
-m/MS0022.BIN	0:02	497	17770	18	翌朝、目覚めた		You wake up the following morning feeling quite dizzy...\n<wait>	v005		reads: はそう言うと、 @refalign
-m/MS0022.BIN	0:02	498	17790	1F01	{02:08}。\n<wait>					reads: ‥‥‥。\n<wait>; reads: を見つめた。\n<wait>
-m/MS0022.BIN	0:02	499	17817	1FD0	まどろみの中で、{01:28}と変わらぬ室内を見渡す。\n<wait>					reads: まどろみの中で、いつもと変わらぬ室内を見渡す。\n<wait>; reads: ：
-m/MS0022.BIN	0:02	500	17872	1F01	は{02:08}{1E10:01001E}{08:64}{02:08}\n彼女{08:62}傍らのテーブルでうたたねを{08:13}{08:69}だ{02:08}\n<wait>					reads: は‥‥‥{1E10:01001E}いた‥‥‥\n彼女は、傍らのテーブルでうたたねをしているようだ‥‥‥\n<wait>; reads: <wait>くん‥‥‥\n<wait> @rebase-tagdiff
-m/MS0022.BIN	0:02	501	17933	1FBA	{02:08}{01:2E}の中は静寂に包まれ{08:14}{02:08}\n{1E10:01001E}全てが夢だ{08:51}のかとすら思えて{08:83}{02:08}\n<wait>					reads: ‥‥‥部屋の中は静寂に包まれている‥‥‥\n{1E10:01001E}全てが夢だったのかとすら思えてしまう‥‥‥\n<wait>; reads: ＞どうしますか？\n<wait>
-m/MS0022.BIN	0:02	502	18004	1FBA	{03:0B}{08:7A}思いなど手易く木端微塵に砕いて{08:83}、容赦の無い現実が訪{08:60}。\n<wait>					reads: しかし、そんな思いなど手易く木端微塵に砕いてしまう、容赦の無い現実が訪れた。\n<wait>; menu option, declared width 20 columns
-m/MS0022.BIN	0:02	503	18071	1FBA	{08:00}が迎えに現{08:60}{08:77}{02:08}‥\n<wait>					reads: 早坂が迎えに現れたのだ‥‥‥‥\n<wait>; reads: もう止める; menu option, declared width 20 columns
+m/MS0022.BIN	0:02	481	17179	1F01	は	 pushed 			draft	reads: は; reads: ： @rebase-new @ours-2026-09-05
+m/MS0022.BIN	0:02	482	17187	1F01	をベッドに押し倒{08:4B}。\n<wait>	 down onto the bed.\n<wait>			draft	reads: をベッドに押し倒した。\n<wait>; reads: くん。\nあ‥‥明日の事があるんだし、もう休んだ方が良いと思うわ。\n<wait> @rebase-new @ours-2026-09-05
+m/MS0022.BIN	0:02	483	17218	1F01	は{1E10:01003C}抵抗し{08:25}{02:08}\n<wait>	 did{1E10:01003C} not resist.........\n<wait>			draft	reads: は{1E10:01003C}抵抗しない‥‥‥\n<wait>; reads: ： @rebase-new @ours-2026-09-05
+m/MS0022.BIN	0:02	484	17250	1F01	：	:	:	v005	draft	reads: ：; reads: あの‥‥私、あの辺を片付けるわ。\n私の事は気にしないで、 @rebase-new @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	485	17254	1FD3	愛し{08:2B}わ{08:72}	I love you... 			draft	reads: 愛してるわ‥‥; reads: くんは寝て頂戴ね。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	486	17270	1F01	くん{02:08}\n<wait>	.........\n<wait>			draft	reads: くん‥‥‥\n<wait>; reads: くん‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	487	17291	1F01	は	 reached for 			draft	reads: は; reads: は、 @ours-2026-09-05
+m/MS0022.BIN	0:02	488	17299	1F01	の服に手をか{08:43}。\n<wait>	's clothes.\n<wait>			draft	reads: の服に手をかけた。\n<wait>; reads: を避ける様に奥の部屋へ行ってしまった。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	489	17417	1A	露に{08:16}真珠の様にすべらかな肌に、	Onto the pearl-smooth skin now laid bare, 			draft	reads: 露になった真珠の様にすべらかな肌に、; reads: もう、何を言っても無駄だろう‥‥‥。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	490	17455	1F01	は唇を沿わ{08:2A}。\n	 pressed his lips.\n			draft	reads: は唇を沿わせる。\n; reads: がいなくなった途端、 @ours-2026-09-05
+m/MS0022.BIN	0:02	491	17476	1FFA	{02:08}{02:08}{02:08}\n<wait>	.........\n<wait>			draft	reads: ‥‥‥‥‥‥‥‥‥\n<wait>; reads: の胸を言い表せぬ不安が襲った。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	492	17499	1F5E	小さな喘ぎと衣擦れの音{02:08}‥\n<wait>ふたりはお互いの想いを確かめあいながら、静寂な深淵へと落ちて行{08:51}。\n<wait>	Soft gasps and the rustle of clothing............\n<wait>Affirming their feelings for each other, the two sank into a silent\nabyss.\n<wait>			draft	reads: 小さな喘ぎと衣擦れの音‥‥‥‥\n<wait>ふたりはお互いの想いを確かめあいながら、静寂な深淵へと落ちて行った。\n<wait>; reads: 明日‥‥<wait>詰所で自分を待ち受けている運命は‥‥‥。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	493	17650	1F01	が何やら立ち動い{08:14}音で、	 was up and moving about; the sound woke 			draft	reads: が何やら立ち動いている音で、; reads: 何者かが嘲笑する声が聞こえる様な気がし、 @ours-2026-09-05
+m/MS0022.BIN	0:02	494	17680	1F01	は目を覚ま{08:4B}。\n<wait>	.\n<wait>			draft	reads: は目を覚ました。\n<wait>; reads: はたまらなくなり、\nベッドに潜り込んだ。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	495	17717	1FD0	奥の{01:2E}{08:42}は珈琲の香が漂{08:52}来{08:14}。\n<wait>	The scent of coffee drifts in from the back room.\n<wait>			draft	reads: 奥の部屋からは珈琲の香が漂って来ている。\n<wait>; reads: 奥の部屋から食器を片付ける音が聞こえていたが、程無くしてそれも薄れ、\n @ours-2026-09-05
+m/MS0022.BIN	0:02	496	17754	1FBA	幸福な瞬間{02:08}\n	A happy moment.........\n			draft	reads: 幸福な瞬間‥‥‥\n; reads: は絶望の淵で深い眠りに落ちて行った‥‥‥。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	497	17770	18	翌朝、目覚めた	The next morning, 	You wake up the following morning feeling quite dizzy...\n<wait>	v005	draft	reads: はそう言うと、 @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	498	17790	1F01	{02:08}。\n<wait>	 awoke.........\n<wait>			draft	reads: ‥‥‥。\n<wait>; reads: を見つめた。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	499	17817	1FD0	まどろみの中で、{01:28}と変わらぬ室内を見渡す。\n<wait>	Half-asleep, he looked around the room, the same as ever.\n<wait>			draft	reads: まどろみの中で、いつもと変わらぬ室内を見渡す。\n<wait>; reads: ： @ours-2026-09-05
+m/MS0022.BIN	0:02	500	17872	1F01	は{02:08}{1E10:01001E}{08:64}{02:08}\n彼女{08:62}傍らのテーブルでうたたねを{08:13}{08:69}だ{02:08}\n<wait>	 was.........{1E10:01001E}there.........\nShe seemed to be dozing at the table beside him.........\n<wait>			draft	reads: は‥‥‥{1E10:01001E}いた‥‥‥\n彼女は、傍らのテーブルでうたたねをしているようだ‥‥‥\n<wait>; reads: <wait>くん‥‥‥\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS0022.BIN	0:02	501	17933	1FBA	{02:08}{01:2E}の中は静寂に包まれ{08:14}{02:08}\n{1E10:01001E}全てが夢だ{08:51}のかとすら思えて{08:83}{02:08}\n<wait>	.........The room was wrapped in silence.........\n{1E10:01001E}He could almost believe it had all been a dream.........\n<wait>			draft	reads: ‥‥‥部屋の中は静寂に包まれている‥‥‥\n{1E10:01001E}全てが夢だったのかとすら思えてしまう‥‥‥\n<wait>; reads: ＞どうしますか？\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	502	18004	1FBA	{03:0B}{08:7A}思いなど手易く木端微塵に砕いて{08:83}、容赦の無い現実が訪{08:60}。\n<wait>	But a merciless reality arrived that shattered such thoughts to pieces\nwith ease.\n<wait>			draft	reads: しかし、そんな思いなど手易く木端微塵に砕いてしまう、容赦の無い現実が訪れた。\n<wait>; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0022.BIN	0:02	503	18071	1FBA	{08:00}が迎えに現{08:60}{08:77}{02:08}‥\n<wait>	Hayasaka had come to fetch him............\n<wait>			draft	reads: 早坂が迎えに現れたのだ‥‥‥‥\n<wait>; reads: もう止める; menu option, declared width 20 columns @ours-2026-09-05
 m/MS0022.BIN	0:02	504	18135	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 愛してると囁く; menu option, declared width 20 columns @refalign
 m/MS0022.BIN	0:02	505	18141	1FD3	隊長も他の皆も揃っ{08:14}{02:08}‥{1E10:01001E}さあ、一緒に詰所に行こう。\n<wait>	隊長も他の皆も揃っ{08:14}{02:08}‥{1E10:01001E}さあ、一緒に詰所に行こう。\n<wait>	Everyone's already waiting. {1E10:01001E}Now then, let's get going.\n<wait>	v005		reads: 隊長も他の皆も揃っている‥‥‥‥{1E10:01001E}さあ、一緒に詰所に行こう。\n<wait>; reads: ひとつ{=F6}{=02}{=F6}{=FF}
-m/MS0022.BIN	0:02	506	18210	09	背後で、		You can sense Yuuka walking away behind you.\nAnd yet, you lack the courage to turn around and face her.\n	v005		reads: は @refalign
-m/MS0022.BIN	0:02	507	18224	1F01	が奥{08:42}出て来る気配が{08:4B}。\n					reads: が奥から出て来る気配がした。\n; reads: をベッドに押し倒した。\n<wait>
-m/MS0022.BIN	0:02	508	18252	18	{08:00}に付き添われ、{01:2E}を出る		You follow Hayasaka and leave your room.\n<wait>	v005		reads: 早坂に付き添われ、部屋を出る; reads: は{1E10:01003C}抵抗しない‥‥‥\n<wait> @refalign
-m/MS0022.BIN	0:02	509	18282	1F01	{02:08}\n<wait>	{02:08}\n<wait>				reads: ‥‥‥\n<wait>; reads: ：
-m/MS0022.BIN	0:02	510	18291	1FBA	背後で、					reads: 愛してるわ‥‥
-m/MS0022.BIN	0:02	511	18305	1F01	の目覚{08:2E}気配が{08:8E}。\n{08:8F}、					reads: の目覚める気配がする。\nだが、; reads: くん‥‥‥\n<wait>
-m/MS0022.BIN	0:02	512	18334	1F01	にはふり向く{08:74}の{08:33}気は無{08:18}{02:08}\n<wait>					reads: にはふり向くだけの勇気は無かった‥‥‥\n<wait>; reads: は
-m/MS0022.BIN	0:02	513	18390	1FE5	＞{02:06}\n<wait>					reads: ＞どうしますか？\n<wait>; reads: の服に手をかけた。\n<wait>
+m/MS0022.BIN	0:02	506	18210	09	背後で、	Behind him, he sensed 	You can sense Yuuka walking away behind you.\nAnd yet, you lack the courage to turn around and face her.\n	v005	draft	reads: は @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	507	18224	1F01	が奥{08:42}出て来る気配が{08:4B}。\n	 coming out from the back room.\n			draft	reads: が奥から出て来る気配がした。\n; reads: をベッドに押し倒した。\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	508	18252	18	{08:00}に付き添われ、{01:2E}を出る	Accompanied by Hayasaka, 	You follow Hayasaka and leave your room.\n<wait>	v005	draft	reads: 早坂に付き添われ、部屋を出る; reads: は{1E10:01003C}抵抗しない‥‥‥\n<wait> @refalign @ours-2026-09-05
+m/MS0022.BIN	0:02	509	18282	1F01	{02:08}\n<wait>	 left the room.........\n<wait>			draft	reads: ‥‥‥\n<wait>; reads: ： @ours-2026-09-05
+m/MS0022.BIN	0:02	510	18291	1FBA	背後で、	Behind him, he sensed 			draft	reads: 愛してるわ‥‥ @ours-2026-09-05
+m/MS0022.BIN	0:02	511	18305	1F01	の目覚{08:2E}気配が{08:8E}。\n{08:8F}、	 waking.\nBut 			draft	reads: の目覚める気配がする。\nだが、; reads: くん‥‥‥\n<wait> @ours-2026-09-05
+m/MS0022.BIN	0:02	512	18334	1F01	にはふり向く{08:74}の{08:33}気は無{08:18}{02:08}\n<wait>	 did not have the courage to turn around.........\n<wait>			draft	reads: にはふり向くだけの勇気は無かった‥‥‥\n<wait>; reads: は @ours-2026-09-05
+m/MS0022.BIN	0:02	513	18390	1FE5	＞{02:06}\n<wait>	>What will you do?\n<wait>			draft	reads: ＞どうしますか？\n<wait>; reads: の服に手をかけた。\n<wait> @ours-2026-09-05
 m/MS0022.BIN	0:02	514	18417	1FB2	{02:07}	{02:07}	Open terminal	v005		reads: 通信をする; menu option, declared width 20 columns; reads: 露になった真珠の様にすべらかな肌に、
 m/MS0022.BIN	0:02	515	18421	1FB2	休む		Rest	v005		menu option, declared width 20 columns; reads: は唇を沿わせる。\n @refalign
 m/MS0022.BIN	0:02	516	18427	1FB2	{02:05}	{02:05}	Leave	v005		reads: 出かける; menu option, declared width 20 columns; reads: ‥‥‥‥‥‥‥‥‥\n<wait>
@@ -684,8 +684,8 @@ m/MS0022.BIN	0:02	527	18842	1FB2	{02:07}	{02:07}	Open terminal	v005		reads: 通�
 m/MS0022.BIN	0:02	528	18846	1FB2	休む		Rest	v005		menu option, declared width 20 columns; reads: 早坂が迎えに現れたのだ‥‥‥‥\n<wait> @refalign
 m/MS0022.BIN	0:02	529	18852	1FB2	{02:05}	{02:05}	Leave	v005		reads: 出かける; menu option, declared width 20 columns; reads: 早坂：
 m/MS0022.BIN	0:02	530	18890	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 隊長も他の皆も揃っている‥‥‥‥{1E10:01001E}さあ、一緒に詰所に行こう。\n<wait> @refalign
-m/MS0022.BIN	0:02	531	18896	1FD3	なぁ、					
-m/MS0022.BIN	0:02	532	18908	1F01	。\n一緒に来てくれ{08:52}頼{08:5F}俺が、こう{08:68}事を言うのもな{08:5F}{08:84}さ。\n<wait>					reads: 。\n一緒に来てくれって頼んだ俺が、こういう事を言うのもなんだけどさ。\n<wait>; reads: が奥から出て来る気配がした。\n
+m/MS0022.BIN	0:02	531	18896	1FD3	なぁ、	Hey, 			draft	@ours-2026-09-05
+m/MS0022.BIN	0:02	532	18908	1F01	。\n一緒に来てくれ{08:52}頼{08:5F}俺が、こう{08:68}事を言うのもな{08:5F}{08:84}さ。\n<wait>	.\nI'm the one who asked you to come along, so it's odd for me to say this,\nbut...\n<wait>			draft	reads: 。\n一緒に来てくれって頼んだ俺が、こういう事を言うのもなんだけどさ。\n<wait>; reads: が奥から出て来る気配がした。\n @ours-2026-09-05
 m/MS0022.BIN	0:02	533	18974	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 早坂に付き添われ、部屋を出る @refalign
 m/MS0022.BIN	0:02	534	18980	1FD3	休む前にちょ{08:53}、{08:03}の{01:2E}に行こうぜ。\n頼むよ{02:08}\n	休む前にちょ{08:53}、{08:03}の{01:2E}に行こうぜ。\n頼むよ{02:08}\n	You can rest after we've visited Emi. Please...\n	v005		reads: 休む前にちょっと、英美の部屋に行こうぜ。\n頼むよ‥‥‥\n; reads: ‥‥‥\n<wait>
 m/MS0022.BIN	0:02	535	19029	1FD0	相談が{08:7B}とい{08:52}{08:64}{08:00}{02:08}‥\n{08:04}にも相談せずに{08:40}{08:87}を見ると、{08:8B}{08:8B}の事{08:8C}。\n<wait>		Hayasaka told you that there was something he needed\nto talk to you about.\n<wait>	v005		reads: 相談があるといっていた早坂‥‥‥‥\n西野にも相談せずにいるところを見ると、よくよくの事だろう。\n<wait>; reads: 相談があるといっていた早坂‥‥‥‥\n西野にも相談せずにいるところを見ると、よくよくの事だろう。\n<wait> @refalign
