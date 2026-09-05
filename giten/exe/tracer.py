@@ -32,6 +32,13 @@ HOOK_LD = os.path.join(HERE, "hook.ld")
 #: the interpreter's byte fetch (``giten/overlay.py``) and its five call sites
 FETCH = 0x438E50
 FETCH_SITES = (0x438E8D, 0x438E9B, 0x438F0D, 0x438F32, 0x438FAD)
+
+#: the main loop's tick gate (``hook.c`` pace()): at 0x45108A the original does
+#: ``call [timeGetTime]; cmp eax,edi; jbe 0x45104E`` -- one tick per millisecond.
+#: It becomes ``call pace; test eax,eax; je 0x45104E; nop``: one tick per 1/60 s.
+PACE_SITE = 0x45108A
+PACE_OLD = bytes.fromhex("ff15d84146003bc776ba")
+PACE_NEW_TAIL = bytes.fromhex("85c074bb90")          # test eax,eax; je -0x45; nop
 CFLAGS = ["-m32", "-O2", "-ffreestanding", "-nostdlib", "-fno-builtin",
           "-fno-stack-protector", "-fno-asynchronous-unwind-tables", "-fno-ident",
           "-mno-stack-arg-probe", "-fno-pic", "-fcf-protection=none",
@@ -97,8 +104,9 @@ def short_path(p: str) -> str:
     return p
 
 
-def compile_hook(cave_va: int) -> bytes:
-    """``hook.c`` -> a flat blob linked at ``cave_va`` (``hook.ld``), hook first."""
+def compile_hook_ex(cave_va: int) -> "tuple[bytes, dict[str, int]]":
+    """``hook.c`` -> (flat blob linked at ``cave_va`` per ``hook.ld``, hook first;
+    the VA of every global function in it, e.g. ``hook`` and ``pace``)."""
     for tool in ("gcc", "ld", "objcopy", "nm"):
         if shutil.which(tool) is None:
             raise RuntimeError("%s not found (GNU binutils + gcc are required)" % tool)
@@ -115,11 +123,32 @@ def compile_hook(cave_va: int) -> bytes:
         subprocess.run(["objcopy", "-O", "binary", "-j", ".text", pe_, binp], check=True)
         with open(binp, "rb") as fh:
             blob = fh.read()
+        syms = {}
+        for ln in subprocess.run(["nm", pe_], check=True, capture_output=True, text=True).stdout.splitlines():
+            parts = ln.split()
+            if len(parts) == 3 and parts[1] == "T":
+                syms[parts[2].lstrip("_")] = int(parts[0], 16)
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
     if not blob or len(blob) > 0x2000:
         raise RuntimeError("unexpected hook size %d" % len(blob))
-    return blob
+    if syms.get("hook") != cave_va or "pace" not in syms:
+        raise RuntimeError("hook.c layout: %r" % syms)
+    return blob, syms
+
+
+def compile_hook(cave_va: int) -> bytes:
+    """``hook.c`` -> a flat blob linked at ``cave_va`` (``hook.ld``), hook first."""
+    return compile_hook_ex(cave_va)[0]
+
+
+def _pace(image: bytearray, pace_va: int) -> None:
+    """Point the main loop's tick gate at pace() (see PACE_SITE)."""
+    pe = PE(bytes(image), "image")
+    off = pe.va2off(PACE_SITE)
+    if bytes(image[off:off + len(PACE_OLD)]) != PACE_OLD:
+        raise RuntimeError("main loop at 0x%X is not the original's" % PACE_SITE)
+    image[off:off + len(PACE_OLD)] = b"\xE8" + struct.pack("<i", pace_va - (PACE_SITE + 5)) + PACE_NEW_TAIL
 
 
 def _redirect(image: bytearray, sites, old_target: int, new_target: int) -> None:
@@ -140,8 +169,10 @@ def build_image(trace: bool) -> bytes:
         image = patch.apply(fh.read(), "release")
     pe = PE(image, "dds_release")
     ovl_va = pe.imagebase + pe.sizeimage             # where append_section will put it
-    image = bytearray(pe.append_section(".ovl", compile_hook(ovl_va), TRC_CHARACTERISTICS))
+    blob, syms = compile_hook_ex(ovl_va)
+    image = bytearray(pe.append_section(".ovl", blob, TRC_CHARACTERISTICS))
     _redirect(image, FETCH_SITES, FETCH, ovl_va)
+    _pace(image, syms["pace"])
     if trace:
         pe = PE(bytes(image), "dds_ovl")
         trc_va = pe.imagebase + pe.sizeimage
@@ -160,7 +191,7 @@ def _write(out_dir, name, trace):
 
 
 def build_release(out_dir: "str | None" = None) -> str:
-    """``dds.exe``: locale fixes + the runtime overlay.  What players run."""
+    """``dds.exe``: locale fixes + the runtime overlay + 60 Hz pacing.  What players run."""
     return _write(out_dir, "dds.exe", False)
 
 

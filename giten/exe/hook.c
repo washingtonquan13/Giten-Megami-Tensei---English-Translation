@@ -28,15 +28,23 @@ typedef dword(__attribute__((stdcall)) * GetFileSize_t)(HANDLE, dword *);
 typedef int(__attribute__((stdcall)) * ReadFile_t)(HANDLE, void *, dword, dword *, void *);
 typedef void *(__attribute__((stdcall)) * VirtualAlloc_t)(void *, u32, u32, u32);
 typedef int(__attribute__((stdcall)) * CloseHandle_t)(HANDLE);
+typedef dword(__attribute__((stdcall)) * timeGetTime_t)(void);
+typedef HANDLE(__attribute__((stdcall)) * GetModuleHandleA_t)(const char *);
+typedef void *(__attribute__((stdcall)) * GetProcAddress_t)(HANDLE, const char *);
 #define pCreateFileA (*(CreateFileA_t *)0x464074)
 #define pGetFileSize (*(GetFileSize_t *)0x464078)
 #define pReadFile (*(ReadFile_t *)0x464070)
 #define pVirtualAlloc (*(VirtualAlloc_t *)0x4640A8)
 #define pCloseHandle (*(CloseHandle_t *)0x464080)
+#define pTimeGetTime (*(timeGetTime_t *)0x4641D8)
+#define pGetModuleHandleA (*(GetModuleHandleA_t *)0x46411C)
+#define pGetProcAddress (*(GetProcAddress_t *)0x46405C)
 #define ENTRY __attribute__((section(".text.entry"), used))
+#define EXPORT __attribute__((used))
 #else
 #include "hook_harness.h"
 #define ENTRY
+#define EXPORT
 #endif
 
 #define OVERLAY_NAME "overlay.dat"
@@ -189,4 +197,52 @@ ENTRY u8 hook(u32 handle, u16 *pcp)
     else
         *pcp = (u16)(pc + 1);
     return ovl[s->data_off + k];
+}
+
+/* Frame pacing -- the game tick at 60 per second.
+ *
+ * The main loop (0x45104E) runs one update+render whenever timeGetTime has
+ * advanced by a millisecond, so on anything faster than 1999 hardware -- or
+ * whenever DirectDraw's Flip no longer blocks on the vertical retrace -- it
+ * ticks up to 1000 times a second, and everything frame-counted (movement,
+ * turning, menus, battle animation) runs that much too fast.  The builder
+ * replaces the loop's "call timeGetTime; cmp eax,edi; jbe again" with
+ * "call pace; test eax,eax; je again": a tick is due when this returns 1.
+ *
+ * Deadlines are kept in thirds of a millisecond and advanced by 50 per tick
+ * (16 2/3 ms, exactly 60 Hz), so nothing drifts.  timeGetTime can step in
+ * 15.6 ms increments on Windows 10/11 unless someone asks for finer
+ * resolution, so the first call requests 1 ms via timeBeginPeriod; even
+ * without it the accumulating deadline still averages 60 ticks a second.
+ * After a stall (a window drag, a disk hitch) the deadline is re-based rather
+ * than letting the game burst through the missed ticks. */
+#define TICK3 50                /* one tick, in thirds of a millisecond */
+#define STALL3 (3 * 250)        /* re-base if we are this far behind */
+
+static u32 deadline3;
+static int pace_state;          /* 0 first call, 1 running */
+
+EXPORT int pace(void)
+{
+    u32 now3;
+    int behind;
+    if (pace_state == 0) {
+        HANDLE m = pGetModuleHandleA("winmm.dll");
+        if (m) {
+            u32(__attribute__((stdcall)) * begin)(u32) = 0;
+            *(void **)&begin = pGetProcAddress(m, "timeBeginPeriod");
+            if (begin)
+                begin(1);
+        }
+        deadline3 = pTimeGetTime() * 3;
+        pace_state = 1;
+    }
+    now3 = pTimeGetTime() * 3;
+    behind = (int)(now3 - deadline3);
+    if (behind < 0)
+        return 0;
+    if (behind > STALL3)
+        deadline3 = now3;
+    deadline3 += TICK3;
+    return 1;
 }

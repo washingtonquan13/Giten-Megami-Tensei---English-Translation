@@ -188,4 +188,16 @@ def test_c_hook_serves_the_same_bytes_as_the_model():
     out = subprocess.run([exe, os.path.join(tmp, "img.bin"), "0x1234", "3", str(base[2]), str(base[2] + 8)],
                          cwd=tmp, capture_output=True, text=True, check=True).stdout.split()
     assert bytes.fromhex(out[0]) == img[base[2]:base[2] + 8]
+    # pace(): 60 ticks a second whether the clock is fine (1 ms) or coarse
+    # (Windows' 15.6 ms default), and no burst of catch-up ticks after a stall
+    def pace(granularity, total, stall_at=0, stall=0):
+        out = subprocess.run([exe, "pace", str(granularity), str(total), str(stall_at), str(stall)],
+                             cwd=tmp, capture_output=True, text=True, check=True).stdout.split()
+        return dict(kv.split("=") for kv in out)
+    for g in (1, 16):
+        r = pace(g, 10000)
+        assert abs(int(r["ticks"]) - 600) <= 2, (g, r)
+    r = pace(1, 10000, 5000, 2000)
+    assert abs(int(r["ticks"]) - 480) <= 3, r                # 8 s of running time
+    assert int(r["after_stall"]) <= 3, r                     # ~2.4 ticks fit in 40 ms; no burst
     shutil.rmtree(tmp, ignore_errors=True)

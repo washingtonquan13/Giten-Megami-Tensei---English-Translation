@@ -4,6 +4,14 @@ Source of truth for `python -m giten exe build-*`. Every row is applied to `orig
 
 Sets: `xp` (base), `locale` (release = base + locale), `dev` (dev = release + tracer + debug arm; see below).
 
+Builder-applied patches (`giten/exe/tracer.py`, not table rows because their rel32 depends on where the appended section lands; the builder still asserts the old bytes):
+
+| build | VA | old | new | note |
+|---|---|---|---|---|
+| release, dev | 0x438E8D, 0x438E9B, 0x438F0D, 0x438F32, 0x438FAD | `E8 <fetch 0x438E50>` | `E8 <.ovl hook>` | runtime text overlay (docs/overlay.md) |
+| release, dev | 0x45108A | `ff15d8414600 3bc7 76ba` (`call [timeGetTime]; cmp eax,edi; jbe 0x45104E`) | `E8 <.ovl pace> 85c0 74bb 90` (`call pace; test eax,eax; je 0x45104E`) | **60 Hz tick gate.** The main loop ran one game tick per millisecond, relying on DirectDraw Flip's vertical-retrace wait for pacing; without that wait (modern drivers, wrappers) movement, menus and battle animation ran up to 16x too fast. `pace()` (hook.c) advances a 1/3-ms deadline by 50 per tick, requests `timeBeginPeriod(1)` once (the exe never did; timeGetTime otherwise steps 15.6 ms on Win10/11), and re-bases after a stall > 250 ms instead of bursting. The XP tool did *not* change the battle wait (0x1FF17 is `05` in both exes), so nothing else needs reverting. |
+| dev | 0x4390C4, 0x439103, 0x43913C | `E8 <exec_token 0x439020>` | `E8 <.trc wrapper>` | interpreter tracer |
+
 | set | file offset | old | new | note |
 |---|---|---|---|---|
 | xp | 0x506BC | `837c240c07772c33d28a4c142083c2048ac1c0f9` | `8bd8c1eb02837c240c07772c33d28a4c142083c2` | XP compatibility patch r0.2b (code only; its font edits at 0x69E42+ are NOT carried) |

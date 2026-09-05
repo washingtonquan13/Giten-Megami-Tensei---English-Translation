@@ -10,6 +10,7 @@ typedef DWORD dword;
 extern u16 g_fileid;
 extern u8 *g_bases[16];
 u8 orig_fetch(u32 handle, u16 *pcp);
+u32 fake_time(void);            /* the harness's simulated timeGetTime */
 
 #define ORIG_FETCH orig_fetch
 #define FILEID g_fileid
@@ -19,3 +20,6 @@ u8 orig_fetch(u32 handle, u16 *pcp);
 #define pReadFile ReadFile
 #define pVirtualAlloc VirtualAlloc
 #define pCloseHandle CloseHandle
+#define pTimeGetTime fake_time
+#define pGetModuleHandleA GetModuleHandleA
+#define pGetProcAddress(m, n) ((void *)GetProcAddress((m), (n)))

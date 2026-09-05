@@ -93,11 +93,19 @@ def test_release_exe_carries_the_overlay_hook_and_dev_adds_the_tracer():
     sec = pe.section(".ovl")
     assert sec is not None
     va = pe.imagebase + sec["vaddr"]
-    blob = tracer.compile_hook(va)
+    blob, syms = tracer.compile_hook_ex(va)
     assert rel[sec["rawptr"]:sec["rawptr"] + sec["vsize"]] == blob
     assert struct.pack("<I", tracer.FETCH) in blob                    # the passthrough call
     assert b"overlay.dat\0" in blob
     _calls_go_to(rel, pe, tracer.FETCH_SITES, va)
+    # the main loop's tick gate now asks pace() in the cave
+    assert va < syms["pace"] < va + len(blob)
+    _calls_go_to(rel, pe, (tracer.PACE_SITE,), syms["pace"])
+    off = pe.va2off(tracer.PACE_SITE)
+    assert rel[off + 5:off + 10] == tracer.PACE_NEW_TAIL
+    org = open(patch.ORG, "rb").read()
+    assert org[off:off + 10] == tracer.PACE_OLD
+    assert b"timeBeginPeriod\0" in blob and b"winmm.dll\0" in blob
     # the plain locale patches are still there underneath
     assert rel[0x509A9] == 0x80 and rel[0x59DE0:0x59DE5] == bytes.fromhex("68a4030000")
     # dev = release + .trc + the three exec_token redirects, nothing else
