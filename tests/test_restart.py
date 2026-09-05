@@ -108,7 +108,7 @@ def test_release_exe_carries_the_overlay_hook_and_dev_adds_the_tracer():
     _calls_go_to(dev, pe2, tracer.CALL_SITES, va2)
     _calls_go_to(dev, pe2, tracer.FETCH_SITES, va)
     diffs = [i for i in range(len(rel)) if rel[i] != dev[i]]
-    assert set(diffs) <= {pe2.va2off(s) + k for s in tracer.CALL_SITES for k in (1, 2, 3, 4)} | set(range(0x1F0, 0x290)) | set(range(0xC0, 0x120))
+    assert set(diffs) <= {pe2.va2off(s) + k for s in tracer.CALL_SITES for k in (1, 2, 3, 4)} | set(range(0x1F0, 0x2C0)) | set(range(0xC0, 0x120))   # section headers incl. the 7th
 
 
 def test_trace_decoder_maps_a_synthetic_record_back_to_its_span():

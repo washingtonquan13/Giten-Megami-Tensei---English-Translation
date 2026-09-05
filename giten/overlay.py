@@ -33,8 +33,9 @@ frame push/pop, menu rescanner), so a virtual PC survives all of them.
     data     the English bytes (codec-encoded: inline opcodes included)
 
 ``fid`` is the engine's current-file id (``0x4911B0``); ``fp`` is FNV-1a over
-the first :data:`FP_BYTES` bytes of the engine's own record index at the start
-of the buffer, which tells the containers of a multi-container file apart.
+the engine's own 0x400-byte record index at the start of the buffer, which
+tells the containers of a multi-container file apart (the hook only hashes a
+buffer whose entry 0 sits at 0x400, i.e. a script buffer).
 The hook (``giten/exe/hook.c``) and :class:`Model` implement the same rules;
 ``tests/test_overlay.py`` runs both over the same data and demands the same
 bytes.
@@ -48,7 +49,7 @@ from . import build_v2, codec, extract_v2, files, records, script
 
 MAGIC = b"GTOV"
 VERSION = 1
-FP_BYTES = 128                  # 32 index entries: enough to tell containers apart
+FP_BYTES = 0x400                # the whole record index (two MS610B containers agree on 32 entries)
 PC_LIMIT = 0x10000
 
 HDR = struct.Struct("<4sIII")

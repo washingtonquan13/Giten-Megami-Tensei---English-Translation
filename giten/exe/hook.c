@@ -40,7 +40,7 @@ typedef int(__attribute__((stdcall)) * CloseHandle_t)(HANDLE);
 #endif
 
 #define OVERLAY_NAME "overlay.dat"
-#define FP_BYTES 128
+#define FP_BYTES 0x400          /* the whole record index */
 
 struct hdr { u32 magic, version, nfiles, reserved; };
 struct dir { u16 fid, pad; u32 fp; u16 image_end, nspans; u32 spans_off; };
@@ -107,8 +107,8 @@ static struct dir *rebind(u32 handle, u16 fid)
     if (i == ndirs)
         return 0;                       /* no translation for this file id */
     base = HANDLE_BASE(handle);
-    if (!base)
-        return 0;
+    if (!base || *(const u16 *)base != 0x0400)
+        return 0;                       /* not a script buffer: entry 0 always sits at 0x400 */
     fp = fnv1a(base, FP_BYTES);
     for (; i < ndirs; i++)
         if (dirs[i].fid == fid && dirs[i].fp == fp)
