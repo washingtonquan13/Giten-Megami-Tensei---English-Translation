@@ -10,10 +10,10 @@ m/MS001C.BIN	0:00	3	63	1F03		
 m/MS001C.BIN	0:00	4	78	1FD0	{01:28}{08:40}{08:85}の勝をはじめ、食料庫には誰も{08:24}{02:08}‥\n<wait>		The pantry feels like an entirely different place without Masaru\nthere to greet you.TEST...\n<wait>	ours		reads: いつもいるはずの勝をはじめ、食料庫には誰もいない‥‥‥‥\n<wait>
 m/MS001C.BIN	0:00	5	150	1FB2	{01:31}{08:8C}か		I hope he's okay	v005		reads: 無事だろうか; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS001C.BIN	0:00	6	158	1FB2	心配{08:4A}も仕方{08:25}		We need to hurry	v005		reads: 心配しても仕方ない; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS001C.BIN	0:00	7	218	1FB2	{01:31}{08:8C}か	{01:31}{08:8C}か	I hope he's okay	v005		reads: 無事だろうか; menu option, declared width 20 columns
+m/MS001C.BIN	0:00	7	218	1FB2	{01:31}{08:8C}か	I hope he's all right	I hope he's okay	v005	draft	reads: 無事だろうか; menu option, declared width 20 columns @ours-2026-09-05
 m/MS001C.BIN	0:00	8	226	1FB2	心配{08:4A}も仕方{08:25}		We need to hurry	v005		reads: 心配しても仕方ない; menu option, declared width 20 columns; reads: 無事だろうか @refalign
 m/MS001C.BIN	0:00	9	263	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 心配しても仕方ない; menu option, declared width 20 columns @refalign
-m/MS001C.BIN	0:00	10	269	1FD3	親父{02:08}{01:31}{08:6B}か{02:08}？\n	親父{02:08}{01:31}{08:6B}か{02:08}？\n	I hope Dad's alright...\n	v005		reads: 親父‥‥‥無事なのか‥‥‥？\n
+m/MS001C.BIN	0:00	10	269	1FD3	親父{02:08}{01:31}{08:6B}か{02:08}？\n	Dad......... is he all right.........?\n	I hope Dad's alright...\n	v005	draft	reads: 親父‥‥‥無事なのか‥‥‥？\n @ours-2026-09-05
 m/MS001C.BIN	0:00	11	317	1FD2	{08:00}の父＿勝：		Hayasaka's Father - Masaru:	v005		reads: 早坂の父＿勝：; reads: 早坂： @refalign
 m/MS001C.BIN	0:00	12	338	1FA3	おう{08:01}！　{08:90}だ調子は？　ん？\n<wait>		Ah, Tatsuya! How's it going?\n<wait>	v005		reads: おう達也！　どうだ調子は？　ん？\n<wait>; reads: 親父‥‥‥無事なのか‥‥‥？\n @refalign
 m/MS001C.BIN	0:00	13	375	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 早坂の父＿勝： @refalign
@@ -52,20 +52,20 @@ m/MS001C.BIN	0:00	45	1699	00	おう、	Oh, 			draft	reads: 早坂の父＿勝：
 m/MS001C.BIN	0:00	46	1711	1F01	くんか。\n{08:01}の奴は口下手{08:8F}、{08:3F}で根{08:26}い奴な{08:5F}。\n今後とも、宜しく頼むよ。\n<wait>	, is it.\nTatsuya's no good with words, but he's a good lad at heart.\nLook after him, will you.\n<wait>			draft	reads: くんか。\n達也の奴は口下手だが、あれで根はいい奴なんだ。\n今後とも、宜しく頼むよ。\n<wait>; reads: 達也！　こんな時こそ、お前がしっかりついててやらなきゃいかんぞ！！\n @ours-2026-09-05
 m/MS001C.BIN	0:00	47	1795	1F03						
 m/MS001C.BIN	0:00	48	1808	1F03						reads: くんか。\n達也の奴は口下手だが、あれで根はいい奴なんだ。\n今後とも、宜しく頼むよ。\n<wait>
-m/MS001C.BIN	0:00	49	1855	1F01	は食料庫の中に入り、皆の分の食料を調達{08:8E}事に{08:4B}。\n<wait>	は食料庫の中に入り、皆の分の食料を調達{08:8E}事に{08:4B}。\n<wait>	You enter the pantry with the goal of finding food for the team.\n<wait>	v005		reads: は食料庫の中に入り、皆の分の食料を調達する事にした。\n<wait> @rebase-tagdiff
-m/MS001C.BIN	0:00	50	1912	1FD1	＞何を持{08:52}いき{08:15}\n	＞何を持{08:52}いき{08:15}\n	>What will you take?\n	v005		reads: ＞何を持っていきますか？\n
+m/MS001C.BIN	0:00	49	1855	1F01	は食料庫の中に入り、皆の分の食料を調達{08:8E}事に{08:4B}。\n<wait>	 went into the pantry to gather food for everyone.\n<wait>	You enter the pantry with the goal of finding food for the team.\n<wait>	v005	draft	reads: は食料庫の中に入り、皆の分の食料を調達する事にした。\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS001C.BIN	0:00	50	1912	1FD1	＞何を持{08:52}いき{08:15}\n	>What will you take?\n	>What will you take?\n	v005	draft	reads: ＞何を持っていきますか？\n @ours-2026-09-05
 m/MS001C.BIN	0:00	51	1945	1FB2	レーション		Rations	v005		menu option, declared width 20 columns; reads: は食料庫の中に入り、皆の分の食料を調達する事にした。\n<wait> @refalign
 m/MS001C.BIN	0:00	52	1957	1FB2	合成肉ステーキ		Synthetic Steak	v005		menu option, declared width 20 columns; reads: ＞何を持っていきますか？\n @refalign
 m/MS001C.BIN	0:00	53	1973	1FB2	冷凍カキフライ		Frozen Oysters	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS001C.BIN	0:00	54	2019	1F01	は調理しなく{08:54}食べら{08:2F}{08:5E}と{08:4A}、レーションを全員に十分行き渡る\n量を確保{08:4B}。\n<wait>		You need to make sure to pick something that doesn't need to be\nprepared first. For that, rations seem like the perfect choice.\n<wait>	v005		reads: は調理しなくても食べられるものとして、レーションを全員に十分行き渡る\n量を確保した。\n<wait>; menu option, declared width 20 columns @rebase-new @refalign
 m/MS001C.BIN	0:00	55	2099	1FBA	{03:0B}{01:28}は{08:45}に{08:40}{08:85}の、{08:00}の父の姿が見当{08:50}{08:25}。\n		Still, it is quite strange. Hayasaka's father is nowhere to be seen.\n	v005		reads: しかし、いつもはここにいるはずの、早坂の父の姿が見当たらない。\n; menu option, declared width 20 columns @refalign
-m/MS001C.BIN	0:00	56	2156	1FB2	{01:31}{08:8C}か	{01:31}{08:8C}か	I hope he's okay	v005		reads: 無事だろうか; menu option, declared width 20 columns; reads: リーダー桐島英美きみ
+m/MS001C.BIN	0:00	56	2156	1FB2	{01:31}{08:8C}か	I hope he's all right	I hope he's okay	v005	draft	reads: 無事だろうか; menu option, declared width 20 columns; reads: リーダー桐島英美きみ @ours-2026-09-05
 m/MS001C.BIN	0:00	57	2164	1FB2	心配{08:4A}も仕方{08:25}		We need to hurry	v005		reads: 心配しても仕方ない; menu option, declared width 20 columns; reads: は調理しなくても食べられるものとして、レーションを全員に十分行き渡る\n量を確保した。\n<wait> @rebase-unmatched idx57 en=You need to make sure to pick something that doesn't need to be\nprepared first. For that, rations seem like the perfect choice.\n<wait> @refalign
 m/MS001C.BIN	0:00	58	2198	1FBA	{08:00}の父は{01:31}{08:8C}か{02:08}‥\n	Is Hayasaka's father all right.........\n			draft	reads: 早坂の父は無事だろうか‥‥‥‥\n; reads: しかし、いつもはここにいるはずの、早坂の父の姿が見当たらない。\n @ours-2026-09-05
 m/MS001C.BIN	0:00	59	2222	1FBA	死体が見つ{08:18}訳{08:56}{08:25}し、余計な心配を{08:4A}も仕方が{08:25}。\n<wait>	No body has been found, so there's no use worrying needlessly.\n<wait>			draft	reads: 死体が見つかった訳でもないし、余計な心配をしても仕方がない。\n<wait>; reads: 無事だろうか; menu option, declared width 20 columns @ours-2026-09-05
 m/MS001C.BIN	0:00	60	2281	1F01	はそう思いつつ食料庫を後に{08:4B}。\n	 thought so as he left the pantry.\n			draft	reads: はそう思いつつ食料庫を後にした。\n; reads: 心配しても仕方ない; menu option, declared width 20 columns @ours-2026-09-05
-m/MS001C.BIN	0:00	61	2319	1FD0	{03:0B}{08:48}は調理しなくては食べられ{08:25}。他の物を選ばなくては{02:08}‥\n<wait>	{03:0B}{08:48}は調理しなくては食べられ{08:25}。他の物を選ばなくては{02:08}‥\n<wait>	Hmm... This probably won't do.\nYou should pick something that doesn't need to be prepared first.\n<wait>	v005		reads: しかし、これは調理しなくては食べられない。他の物を選ばなくては‥‥‥‥\n<wait>; reads: われわれ @rebase-unmatched idx61 en=Password @rebase-unmatched idx61 en=Password
-m/MS001C.BIN	0:00	62	2387	1FD2	{08:00}：	{08:00}：	Hayasaka:	v005		reads: 早坂：
+m/MS001C.BIN	0:00	61	2319	1FD0	{03:0B}{08:48}は調理しなくては食べられ{08:25}。他の物を選ばなくては{02:08}‥\n<wait>	But this can't be eaten without cooking. Better choose something\nelse............\n<wait>	Hmm... This probably won't do.\nYou should pick something that doesn't need to be prepared first.\n<wait>	v005	draft	reads: しかし、これは調理しなくては食べられない。他の物を選ばなくては‥‥‥‥\n<wait>; reads: われわれ @rebase-unmatched idx61 en=Password @rebase-unmatched idx61 en=Password @ours-2026-09-05
+m/MS001C.BIN	0:00	62	2387	1FD2	{08:00}：	Hayasaka:	Hayasaka:	v005	draft	reads: 早坂： @ours-2026-09-05
 m/MS001C.BIN	0:00	63	2393	1FD3	{08:81}あ、俺が食料を捜{08:4A}くる{08:42}、	Then I'll go and look for food, so 			draft	reads: じゃあ、俺が食料を捜してくるから、; reads: 早坂の父は無事だろうか‥‥‥‥\n @ours-2026-09-05
 m/MS001C.BIN	0:00	64	2427	1F01	{08:62}{08:45}で見張{08:52}てくれ。\n<wait>	, you keep watch here.\n<wait>			draft	reads: は、ここで見張っててくれ。\n<wait>; reads: 死体が見つかった訳でもないし、余計な心配をしても仕方がない。\n<wait> @ours-2026-09-05
 m/MS001C.BIN	0:00	65	2456	1FD0	そう言うと、{08:00}は食料庫の中に消{08:41}。\n<wait>	So saying, Hayasaka disappeared into the pantry.\n<wait>			draft	reads: そう言うと、早坂は食料庫の中に消えた。\n<wait>; reads: はそう思いつつ食料庫を後にした。\n @ours-2026-09-05
@@ -81,7 +81,7 @@ m/MS001C.BIN	0:00	74	2873	1F80	｡{08:62}皆の分の食料調達をしに来た
 m/MS001C.BIN	0:00	75	3004	1F01	{08:62}皆に十分行き渡る量の食料を調達{08:8E}事に{08:4B}。\n<wait>		Food time. Now, what would the folks like to eat?\n<wait>	v005		reads: は、皆に十分行き渡る量の食料を調達する事にした。\n<wait>; reads: それにしても、親父の姿が無かった‥‥‥\n避難してるとは思うんだが‥‥‥無事なんだろうか‥‥\n<wait> @rebase-tagdiff @refalign
 m/MS001C.BIN	0:00	76	3066	1F01	{08:62}食料庫の中{08:42}皆に行き渡る量のレーションを調達{08:4B}。\n		Rations. Rations are good, right? Yeah.\n	v005		reads: は、食料庫の中から皆に行き渡る量のレーションを調達した。\n; reads: 早坂： @rebase-tagdiff @refalign
 m/MS001C.BIN	0:00	77	3122	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 死体があった訳じゃないしな。余計な心配ばかりしても仕方ない‥‥\n<wait>戻ろう。\n<wait> @refalign
-m/MS001C.BIN	0:00	78	3128	1FD3	{08:81}あ、俺が捜{08:4A}くるよ。\n	{08:81}あ、俺が捜{08:4A}くるよ。\n	Alright then. I'm gonna go in and have a look.\nYou wait here, Katsuragi.\n<wait>	v005		reads: じゃあ、俺が捜してくるよ。\n; reads: 飛び道具
+m/MS001C.BIN	0:00	78	3128	1FD3	{08:81}あ、俺が捜{08:4A}くるよ。\n	Then I'll go look.\n	Alright then. I'm gonna go in and have a look.\nYou wait here, Katsuragi.\n<wait>	v005	draft	reads: じゃあ、俺が捜してくるよ。\n; reads: 飛び道具 @ours-2026-09-05
 m/MS001C.BIN	0:00	79	3157	1F01	{08:62}{08:45}で見張{08:52}てくれ。\n<wait>	, you keep watch here.\n<wait>			draft	reads: は、ここで見張っててくれ。\n<wait>; reads: ｡は、皆の分の食料調達をしに来たのだ。\n不要な物を捨てでも、食料を確保せねばなるまい。\n<wait> @ours-2026-09-05
 m/MS001C.BIN	0:00	80	3186	1FD0	そう言{08:52}、{08:00}は食料庫の中へと消{08:41}{02:08}\n<wait>	So saying, Hayasaka disappeared into the pantry.........\n<wait>			draft	reads: そう言って、早坂は食料庫の中へと消えた‥‥‥\n<wait>; reads: は、皆に十分行き渡る量の食料を調達する事にした。\n<wait> @ours-2026-09-05
 m/MS001C.BIN	0:00	81	3248	1F77	{01:23}{08:4A}、{08:00}が戻{08:52}{08:1E}。\n<wait>		After a while, Hayasaka came back.\n<wait>	ours		reads: しばらくして、早坂が戻ってきた。\n<wait>; reads: は、食料庫の中から皆に行き渡る量のレーションを調達した。\n
@@ -99,7 +99,7 @@ m/MS001C.BIN	0:00	92	3714	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; rea
 m/MS001C.BIN	0:00	93	3720	1FD3	{08:72}レーションパック、{08:5C}十分{08:7B}{08:42}な{02:08}\n<wait>		...We already have plenty of rations.\n<wait>	v005		reads: ‥‥レーションパック、もう十分あるからな‥‥‥\n<wait>; reads: 英美： @refalign
 m/MS001C.BIN	0:00	94	3763	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 分かったわ。手分けしてやりましょう！\n<wait> @refalign
 m/MS001C.BIN	0:00	95	3769	1FD3	用心にと思{08:51}が、{08:48}以上荷物を増や{08:4A}も仕方が無い。\n今{08:7B}{08:5E}{08:55}ませ{08:69}。\n		There's no situation in which having more food would benefit\nus in anyway. What we're already carrying is plenty.\n	v005		reads: 用心にと思ったが、これ以上荷物を増やしても仕方が無い。\n今あるものですませよう。\n; reads: 一行は各自分担し、食料の調達を行った‥‥‥‥\n<wait> @refalign
-m/MS001C.BIN	0:00	96	3838	1FD2	{08:00}：	{08:00}：	Hayasaka:	v005		reads: 早坂：; reads: 飛び道具
+m/MS001C.BIN	0:00	96	3838	1FD2	{08:00}：	Hayasaka:	Hayasaka:	v005	draft	reads: 早坂：; reads: 飛び道具 @ours-2026-09-05
 m/MS001C.BIN	0:00	97	3844	1FD3	おい、{08:48}{08:74}{08:81}、すぐに食べる{08:5E}が無く{08:59}ぜ。\n<wait>どれ{08:74}、さま{08:69}事に{08:59}か分{08:42}{08:25}{08:5F}{08:42}さ、食料は出来る{08:74}\n持{08:52}いこうぜ。\n<wait>		Yo. How long do you think this much food is going to last us?\n<wait>We don't know what awaits us up ahead.\nLet's take as much food with us as we're able to carry.\n<wait>	v005		reads: おい、これだけじゃ、すぐに食べるものが無くなるぜ。\n<wait>どれだけ、さまよう事になるか分からないんだからさ、食料は出来るだけ\n持っていこうぜ。\n<wait>; reads: 早坂： @refalign
 m/MS001C.BIN	0:00	98	3996	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: ‥‥レーションパック、もう十分あるからな‥‥‥\n<wait> @refalign
 m/MS001C.BIN	0:00	99	4002	1FD3	レーションパックを３つ{02:08}<wait>大体{08:73}{08:87}が限界ね。\n<wait>		Three packs of rations...\n<wait>That's probably the most we can realistically carry.\n<wait>	v005		reads: レーションパックを３つ‥‥‥<wait>大体こんなところが限界ね。\n<wait>; reads: 早坂： @refalign
@@ -117,16 +117,16 @@ m/MS001C.BIN	0:00	110	4432	1F01	の為の食料と{08:4A}、レーションパ�
 m/MS001C.BIN	0:00	111	4530	1F83	{03:00}	{03:00}	Ranged Weapon	ours		reads: 飛び道具
 m/MS001C.BIN	0:00	112	4544	1F80	ﾇれ{08:74}、{08:10}の外をさま{08:69}事に{08:59}か分{08:42}{08:25}。\nレーションパックを一つくらいは持っ{08:21}方が良い{08:8C}{02:08}。\n<wait>					reads: ﾇれだけ、シェルターの外をさまよう事になるか分からない。\nレーションパックを一つくらいは持っていった方が良いだろう‥‥‥。\n<wait>; reads: 食料庫にたどり着いたニュートン。\n<wait>
 m/MS001C.BIN	0:00	113	4639	1FBA	{01:03}{08:62}不要な物を捨てていく決心を{08:4B}。\n<wait>	Newton resolved to throw away what he didn't need.\n<wait>			draft	reads: ニュートンは、不要な物を捨てていく決心をした。\n<wait>; reads: このシェルターを脱出しても、身を置く安全な場所が見つかるまで、\nどのくらいの時間を必要とするか、皆目見当がつかない‥‥‥\n<wait> @ours-2026-09-05
-m/MS001C.BIN	0:00	114	4692	1F01	の頭に、{08:7B}考えが浮か{08:5F}。\n<wait>	の頭に、{08:7B}考えが浮か{08:5F}。\n<wait>	You begin to think.\n<wait>	v005		reads: の頭に、ある考えが浮かんだ。\n<wait>; reads: ニュートンは、 @rebase-tagdiff
+m/MS001C.BIN	0:00	114	4692	1F01	の頭に、{08:7B}考えが浮か{08:5F}。\n<wait>	 had an idea.\n<wait>	You begin to think.\n<wait>	v005	draft	reads: の頭に、ある考えが浮かんだ。\n<wait>; reads: ニュートンは、 @rebase-tagdiff @ours-2026-09-05
 m/MS001C.BIN	0:00	115	4723	1FBA	外に出るに{08:4A}も、身を置く安全な場所が見つかる{08:71}、{08:6D}くらいの時間を\n必要と{08:8E}か、皆目見当がつか{08:25}{02:08}\n<wait>	Even going outside, there was no telling how long it would take to\nfind a safe place to stay.........\n<wait>			draft	reads: 外に出るにしても、身を置く安全な場所が見つかるまで、どのくらいの時間を\n必要とするか、皆目見当がつかない‥‥‥\n<wait>; reads: の為の食料として、レーションパックを１つ\n荷物に加え、食料庫を後にした。\n @ours-2026-09-05
-m/MS001C.BIN	0:00	116	4825	1FBA	出来る{08:74}、食料を持{08:52}行{08:51}方が得策{08:6B}では{08:25}か{02:08}？\n<wait>	出来る{08:74}、食料を持{08:52}行{08:51}方が得策{08:6B}では{08:25}か{02:08}？\n<wait>	You should probably bring some food with you.\n<wait>	v005		reads: 出来るだけ、食料を持って行った方が得策なのではないか‥‥‥？\n<wait>; reads: 飛び道具
+m/MS001C.BIN	0:00	116	4825	1FBA	出来る{08:74}、食料を持{08:52}行{08:51}方が得策{08:6B}では{08:25}か{02:08}？\n<wait>	Wouldn't it be wiser to take as much food as possible.........?\n<wait>	You should probably bring some food with you.\n<wait>	v005	draft	reads: 出来るだけ、食料を持って行った方が得策なのではないか‥‥‥？\n<wait>; reads: 飛び道具 @ours-2026-09-05
 m/MS001C.BIN	0:00	117	4912	1F01	{08:62}出来る{08:74}多く、{03:0B}邪魔に{08:7D}{08:25}分量と{08:4A}、\nレーションパックを一つ{08:74}荷物に加{08:41}。\n<wait>	 added just one ration pack to the baggage: as much as possible,\nbut not so much as to get in the way.\n<wait>			draft	reads: は、出来るだけ多く、しかし、邪魔にならない分量として、\nレーションパックを一つだけ荷物に加えた。\n<wait>; reads: ﾇれだけ、シェルターの外をさまよう事になるか分からない。\nレーションパックを一つくらいは持っていった方が良いだろう‥‥‥。\n<wait> @rebase-tagdiff @ours-2026-09-05
 m/MS001C.BIN	0:00	118	5024	1F83	{03:00}	{03:00}	Ranged Weapon	ours		reads: 飛び道具; reads: ニュートンは、不要な物を捨てていく決心をした。\n<wait>
 m/MS001C.BIN	0:00	119	5038	1F80	ﾇれ{08:74}、{08:10}の外をさま{08:69}事に{08:59}か分{08:42}{08:25}。\nレーションパックを一つくらいは持っ{08:21}方が良い{08:8C}{02:08}。\n<wait>					reads: ﾇれだけ、シェルターの外をさまよう事になるか分からない。\nレーションパックを一つくらいは持っていった方が良いだろう‥‥‥。\n<wait>; reads: の頭に、ある考えが浮かんだ。\n<wait>
 m/MS001C.BIN	0:00	120	5154	1F01	は食料調達を終え、食料庫を後に{08:4B}。\n<wait>	 finished gathering food and left the pantry.\n<wait>			draft	reads: は食料調達を終え、食料庫を後にした。\n<wait>; reads: 外に出るにしても、身を置く安全な場所が見つかるまで、どのくらいの時間を\n必要とするか、皆目見当がつかない‥‥‥\n<wait> @rebase-tagdiff @ours-2026-09-05
 m/MS001C.BIN	0:00	121	5198	1FD0	{08:48}以上持つと、移動に負担が掛か{08:52}{08:83}。\n{1E10:01003C}欲張{08:52}もきりが{08:25}。\n<wait>	Carrying any more would make travelling a burden.\n{1E10:01003C}There's no end to greed.\n<wait>			draft	reads: これ以上持つと、移動に負担が掛かってしまう。\n{1E10:01003C}欲張ってもきりがない。\n<wait>; reads: 出来るだけ、食料を持って行った方が得策なのではないか‥‥‥？\n<wait> @ours-2026-09-05
 m/MS001C.BIN	0:00	122	5288	1FD0	{01:03}は諦めて食料庫を後に{08:4B}。\n<wait>	Newton gave up and left the pantry.\n<wait>			draft	reads: ニュートンは諦めて食料庫を後にした。\n<wait>; reads: は、出来るだけ多く、しかし、邪魔にならない分量として、\nレーションパックを一つだけ荷物に加えた。\n<wait> @ours-2026-09-05
-m/MS001C.BIN	0:00	123	5326	1F01	は諦{08:2E}事に{08:4B}。\n<wait>	は諦{08:2E}事に{08:4B}。\n<wait>	You leave the pantry behind.\n<wait>	v005		reads: は諦める事にした。\n<wait>; reads: 飛び道具 @rebase-tagdiff
+m/MS001C.BIN	0:00	123	5326	1F01	は諦{08:2E}事に{08:4B}。\n<wait>	 decided to give up.\n<wait>	You leave the pantry behind.\n<wait>	v005	draft	reads: は諦める事にした。\n<wait>; reads: 飛び道具 @rebase-tagdiff @ours-2026-09-05
 m/MS001C.BIN	0:01	0	51	1FD2	{08:00}の母＿道恵：	Hayasaka's Mother, Michie:			draft	reads: 早坂の母＿道恵：; reads: 早坂の母＿道恵： @ours-2026-09-05
 m/MS001C.BIN	0:01	1	74	1FA3	あら{08:01}。まあ、{08:4D}に	Oh, Tatsuya. My, and 			draft	reads: あら達也。まあ、それに; reads: あら達也。まあ、それに @ours-2026-09-05
 m/MS001C.BIN	0:01	2	98	1F01	くんも！\n<wait>わざわざ会いに来てく{08:60}の？\n<wait>	 too!\n<wait>Did you come all this way just to see me?\n<wait>			draft	reads: くんも！\n<wait>わざわざ会いに来てくれたの？\n<wait>; reads: くんも！\n<wait>わざわざ会いに来てくれたの？\n<wait> @ours-2026-09-05
@@ -174,8 +174,8 @@ m/MS001C.BIN	0:01	43	1540	1FD3	{02:08}誰も{08:24}{02:08}‥\nおふくろ{08:7
 m/MS001C.BIN	0:01	44	1588	1FD0	調理場の中に{08:62}{01:28}{08:40}筈の道恵をはじめ、誰も{08:24}{02:08}‥\n<wait>		The kitchen feels so empty without Michie there to greet you.\n<wait>	v005		reads: 調理場の中には、いつもいる筈の道恵をはじめ、誰もいない‥‥‥‥\n<wait>; reads: 調理場の中には、いつもいる筈の道恵をはじめ、誰もいない‥‥‥‥\n<wait> @refalign
 m/MS001C.BIN	0:01	45	1657	1FB2	{01:31}{08:8C}か		I hope she's okay	v005		reads: 無事だろうか; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS001C.BIN	0:01	46	1665	1FB2	心配{08:4A}も仕方{08:25}		We need to hurry	v005		reads: 心配しても仕方ない; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS001C.BIN	0:01	47	1699	1FBA	{08:00}の母は{01:31}{08:8C}か{02:08}‥\n	{08:00}の母は{01:31}{08:8C}か{02:08}‥\n	Is she still okay...?\n	v005		reads: 早坂の母は無事だろうか‥‥‥‥\n; reads: われわれ @rebase-unmatched idx47 en=Everyone @rebase-unmatched idx47 en=Everyone
-m/MS001C.BIN	0:01	48	1723	1FBA	死体が見つ{08:18}訳{08:56}{08:25}し、余計な心配を{08:4A}も仕方が{08:25}。\n<wait>	死体が見つ{08:18}訳{08:56}{08:25}し、余計な心配を{08:4A}も仕方が{08:25}。\n<wait>	In any case, you worrying about it is not going to change anything.\nYou ought to focus on the matters at hand.\n<wait>With those thoughts, you leave the pantry behind.TEST\n	v005		reads: 死体が見つかった訳でもないし、余計な心配をしても仕方がない。\n<wait>
+m/MS001C.BIN	0:01	47	1699	1FBA	{08:00}の母は{01:31}{08:8C}か{02:08}‥\n	Is Hayasaka's mother all right............\n	Is she still okay...?\n	v005	draft	reads: 早坂の母は無事だろうか‥‥‥‥\n; reads: われわれ @rebase-unmatched idx47 en=Everyone @rebase-unmatched idx47 en=Everyone @ours-2026-09-05
+m/MS001C.BIN	0:01	48	1723	1FBA	死体が見つ{08:18}訳{08:56}{08:25}し、余計な心配を{08:4A}も仕方が{08:25}。\n<wait>	It's not as if a body was found; there's no point worrying needlessly.\n<wait>	In any case, you worrying about it is not going to change anything.\nYou ought to focus on the matters at hand.\n<wait>With those thoughts, you leave the pantry behind.TEST\n	v005	draft	reads: 死体が見つかった訳でもないし、余計な心配をしても仕方がない。\n<wait> @ours-2026-09-05
 m/MS001C.BIN	0:01	49	1782	1F01	はそう思いつつ食料庫を後に{08:4B}。\n	 thought so as he left the pantry.\n			draft	reads: はそう思いつつ食料庫を後にした。\n; reads: 早坂の母は無事だろうか‥‥‥‥\n @ours-2026-09-05
 m/MS001C.BIN	0:02	0	51	1FD2	ウエイトレス：		Waitress:	v005		
 m/MS001C.BIN	0:02	1	67	1FD3	いらっしゃ{08:89}せー！\n<wait>		Welcome! What can I get you?\n<wait>	v005		reads: いらっしゃいませー！\n<wait>
@@ -188,7 +188,7 @@ m/MS001C.BIN	0:05	3	120	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 英
 m/MS001C.BIN	0:05	4	126	1FD3	隊長も心配し{08:2B}わ、一体{08:90}{08:4B}の？\n<wait>		Do you have any idea how worried we've been about you?<wait>	v005		reads: 隊長も心配してるわ、一体どうしたの？\n<wait>; reads: 隊長も心配してるわ、一体どうしたの？\n<wait> @refalign
 m/MS001C.BIN	0:05	5	171	1F01	{08:62}テイクアウト{08:4A}来た大量の食料を、まるで\n<wait>{08:00}達に盗られまいと{08:8E}かの様に抱え直し、ゾッと{08:8E}様な目で、{08:00}達を睨{08:5F}。\n<wait>		You take the boxes of food you're carrying and hold them tight\nagainst your body.\n<wait>You appear quite defensive, almost as if you were expecting the others\nto try and take them from you.\n<wait>	v005		reads: は、テイクアウトして来た大量の食料を、まるで\n<wait>早坂達に盗られまいとするかの様に抱え直し、ゾッとする様な目で、早坂達を睨んだ。\n<wait>; reads: は、テイクアウトして来た大量の食料を、まるで\n<wait>早坂達に盗られまいとするかの様に抱え直し、ゾッとする様な目で、早坂達を睨んだ。\n<wait> @rebase-tagdiff @refalign
 m/MS001C.BIN	0:05	6	293	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 早坂： @refalign
-m/MS001C.BIN	0:05	7	299	1FD3	{02:08}	{02:08}	You're clearly not okay...\n<wait>	v005		reads: ‥‥‥
+m/MS001C.BIN	0:05	7	299	1FD3	{02:08}	......... 	You're clearly not okay...\n<wait>	v005	draft	reads: ‥‥‥ @ours-2026-09-05
 m/MS001C.BIN	0:05	8	307	1F01	、お前変だぞ。\n<wait>	, you're acting strange.\n<wait>			draft	reads: 、お前変だぞ。\n<wait> @ours-2026-09-05
 m/MS001C.BIN	0:05	9	330	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 英美： @refalign
 m/MS001C.BIN	0:05	10	336	1FD3	{08:90}{08:4B}の？　	What's wrong, 			draft	reads: どうしたの？　; reads: どうしたの？ @ours-2026-09-05
@@ -199,7 +199,7 @@ m/MS001C.BIN	0:05	14	516	1FB2	善人ぶるな		Stop your act	v005		menu option, 
 m/MS001C.BIN	0:05	15	528	1FB2	僕に構うな		Fuck off	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS001C.BIN	0:05	16	540	1FB2	そこを退け		Out of my way	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS001C.BIN	0:05	17	580	1F01	{08:62}思いっきり{08:00}達を突き飛ば{08:4B}。\n<wait>	 shoved Hayasaka and the others aside with all his might.\n<wait>			draft	reads: は、思いっきり早坂達を突き飛ばした。\n<wait>; reads: 山田 @rebase-new @ours-2026-09-05
-m/MS001C.BIN	0:05	18	655	1FD2	{08:03}：	{08:03}：	Emi:	v005		reads: 英美：; reads: ペンタグランマ早坂達也
+m/MS001C.BIN	0:05	18	655	1FD2	{08:03}：	Emi:	Emi:	v005	draft	reads: 英美：; reads: ペンタグランマ早坂達也 @ours-2026-09-05
 m/MS001C.BIN	0:05	19	661	1FD3	キャッ！\n<wait>		Eek!\n<wait>	v005		reads: は、思いっきり早坂達を突き飛ばした。\n<wait> @rebase-unmatched idx19 en=You shove the group aside.\n<wait> @refalign
 m/MS001C.BIN	0:05	20	678	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 英美： @refalign
 m/MS001C.BIN	0:05	21	690	1F01	ッ！！\n<wait>		Katsuragi!\n<wait>	v005		reads: ッ！！\n<wait> @rebase-tagdiff @refalign

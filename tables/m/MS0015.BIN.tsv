@@ -89,16 +89,16 @@ m/MS0015.BIN	0:07	1	58	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞�
 m/MS0015.BIN	0:07	2	79	1FB2	縄を切る		Cut the rope	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0015.BIN	0:07	3	89	1FB2	無視{08:4A}通る		Ignore it	v005		reads: 無視して通る; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0015.BIN	0:07	4	101	1FB2	戻る		Turn back	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0015.BIN	0:07	5	143	1FD0	しめ縄を無視し、{08:79}{08:7E}通ろうと{08:4B}。\n<wait>	しめ縄を無視し、{08:79}{08:7E}通ろうと{08:4B}。\n<wait>	You decide to ignore the rope and walk past it.\n<wait>	v005		reads: しめ縄を無視し、そのまま通ろうとした。\n<wait>; reads: あなたが
-m/MS0015.BIN	0:07	6	182	1FBA	{03:0B}不思議な力が作用し、しめ縄より先は{08:90}{08:4A}も進め{08:19}。\n<wait>	{03:0B}不思議な力が作用し、しめ縄より先は{08:90}{08:4A}も進め{08:19}。\n<wait>	However, as you do, a mysterious force blocks your path.\n<wait>	v005		reads: しかし、不思議な力が作用し、しめ縄より先はどうしても進めなかった。\n<wait>; reads: ペンタグランマt
-m/MS0015.BIN	0:07	7	252	1F01	{08:62}一旦戻る{08:46}に{08:4B}。\n<wait>	{08:62}一旦戻る{08:46}に{08:4B}。\n<wait>	You're forced to turn back.\n<wait>	v005		reads: は、一旦戻ることにした。\n<wait> @rebase-tagdiff
+m/MS0015.BIN	0:07	5	143	1FD0	しめ縄を無視し、{08:79}{08:7E}通ろうと{08:4B}。\n<wait>	You ignored the sacred rope and tried to walk on past it.\n<wait>	You decide to ignore the rope and walk past it.\n<wait>	v005	draft	reads: しめ縄を無視し、そのまま通ろうとした。\n<wait>; reads: あなたが @ours-2026-09-05
+m/MS0015.BIN	0:07	6	182	1FBA	{03:0B}不思議な力が作用し、しめ縄より先は{08:90}{08:4A}も進め{08:19}。\n<wait>	But a mysterious force was at work, and you could not go any further\nthan the rope.\n<wait>	However, as you do, a mysterious force blocks your path.\n<wait>	v005	draft	reads: しかし、不思議な力が作用し、しめ縄より先はどうしても進めなかった。\n<wait>; reads: ペンタグランマt @ours-2026-09-05
+m/MS0015.BIN	0:07	7	252	1F01	{08:62}一旦戻る{08:46}に{08:4B}。\n<wait>	 decided to turn back for now.\n<wait>	You're forced to turn back.\n<wait>	v005	draft	reads: は、一旦戻ることにした。\n<wait> @rebase-tagdiff @ours-2026-09-05
 m/MS0015.BIN	0:08	0	29	1F71	高天原へと続く、光の穴が{08:7B}。\n<wait>		This hole leads to Takama-ga-hara.\n<wait>	v005		reads: 高天原へと続く、光の穴がある。\n<wait>; reads: 高天原へと続く、光の穴がある。\n<wait> @refalign
 m/MS0015.BIN	0:08	1	66	1FD1	＞中に入り{08:15}\n		>Will you enter?\n	v005		reads: ＞中に入りますか？\n; reads: ＞中に入りますか？\n @refalign
-m/MS0015.BIN	0:08	2	95	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
-m/MS0015.BIN	0:08	3	99	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
-m/MS0015.BIN	0:08	4	163	0B	相変わらず、死者達が困{08:51}様子でたむろ{08:13}。\n<wait>	相変わらず、死者達が困{08:51}様子でたむろ{08:13}。\n<wait>	The dead wander around, as lost as ever.\n<wait>	v005		reads: 相変わらず、死者達が困った様子でたむろしている。\n<wait>
-m/MS0015.BIN	0:08	5	212	1FD1	＞{02:06}\n	＞{02:06}\n	>What will you do?\n	v005		reads: ＞どうしますか？\n
-m/MS0015.BIN	0:08	6	233	1FB2	岩をどかす	岩をどかす	Move the boulder	v005		menu option, declared width 20 columns; reads: ＞どうしますか？デビルバスター
+m/MS0015.BIN	0:08	2	95	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:08	3	99	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:08	4	163	0B	相変わらず、死者達が困{08:51}様子でたむろ{08:13}。\n<wait>	As ever, the dead mill about looking lost.\n<wait>	The dead wander around, as lost as ever.\n<wait>	v005	draft	reads: 相変わらず、死者達が困った様子でたむろしている。\n<wait> @ours-2026-09-05
+m/MS0015.BIN	0:08	5	212	1FD1	＞{02:06}\n	>What will you do?\n	>What will you do?\n	v005	draft	reads: ＞どうしますか？\n @ours-2026-09-05
+m/MS0015.BIN	0:08	6	233	1FB2	岩をどかす	Move the boulder	Move the boulder	v005	draft	menu option, declared width 20 columns; reads: ＞どうしますか？デビルバスター @ours-2026-09-05
 m/MS0015.BIN	0:08	7	245	1FB2	戻る		Turn back	v005		menu option, declared width 20 columns; reads: 相変わらず、死者達が困った様子でたむろしている。\n<wait> @refalign
 m/MS0015.BIN	0:08	8	271	1FD0	{08:48}{08:74}の岩{08:62}{02:0B}の力では動か{08:2A}物では{08:25}。\n{08:45}{08:62}{08:0B}の力を借りるのが妥当{08:8C}。\n<wait>		However, this thing is far too heavy for a person to move.\nPerhaps a demon would be more suitable for this task.\n<wait>	v005		reads: これだけの岩は、人間の力では動かせる物ではない。\nここは、悪魔の力を借りるのが妥当だろう。\n<wait>; reads: ＞どうしますか？\n @rebase-new @refalign
 m/MS0015.BIN	0:08	9	350	09	{03:0B}{08:79}{08:0B}を呼び出す事や、命令の出来る	But 	However, this thing is far too heavy for a person to move.\nPerhaps a demon would be more suitable for this task.\n<wait>	ours	draft	reads: しかし、その悪魔を呼び出す事や、命令の出来る; menu option, declared width 20 columns @ours-2026-09-05
@@ -116,8 +116,8 @@ m/MS0015.BIN	0:08	20	771	1F01	に岩をどかす{08:69}指示{08:4B}。\n<wait>	
 m/MS0015.BIN	0:08	21	806	1FFA	{02:08}{02:08}{02:08}‥\n<wait>	.........\n<wait>			draft	reads: ‥‥‥‥‥‥‥‥‥‥\n<wait>; reads: だした; reads: 力や体力のある悪魔を検索していると、今召喚してある\n @ours-2026-09-05
 m/MS0015.BIN	0:08	22	837	1F01	{08:62}見事に岩を動か{08:17}！\n<wait>	 moved the rock magnificently!!\n<wait>			draft	reads: は、見事に岩を動かした！！\n<wait>; reads: 竄ﾇかすよう指示した。\n<wait>; reads: だした @ours-2026-09-05
 m/MS0015.BIN	0:08	23	941	1F77	岩がどけら{08:2F}と、{08:79}後ろには光の穴が出現{08:4B}。\n<wait>	With the rock moved, a hole of light appeared behind it.\n<wait>	Behind the boulder, you find a hole with light shining through.\n<wait>	v005	draft	reads: 岩がどけられると、その後ろには光の穴が出現した。\n<wait>; reads: ‥‥‥‥‥‥‥‥‥‥\n<wait>; reads: ｼが目についた。\n<wait> @rebase-unmatched idx23 en=, already summoned in your party.\n<wait> @ours-2026-09-05
-m/MS0015.BIN	0:08	24	990	1FBA	高天原に通じる穴{08:6B}{08:8C}。\n死者達{08:62}喜んで穴の中に消え{08:21}{02:08}。\n<wait>	高天原に通じる穴{08:6B}{08:8C}。\n死者達{08:62}喜んで穴の中に消え{08:21}{02:08}。\n<wait>	This must be the entrance to Takama-ga-hara.\nThe dead run in with joy.\n<wait>	v005		reads: 高天原に通じる穴なのだろう。\n死者達は、喜んで穴の中に消えていった‥‥‥。\n<wait>; reads: だした; reads: は、 @rebase-unmatched idx24 en=You order [
-m/MS0015.BIN	0:08	25	1058	18	検索の結果、{08:0E}に{08:40}{08:46}{08:26}る{08:77}が、今はＣＯ{03:0E}の中で{08:7B}。\n<wait>	検索の結果、{08:0E}に{08:40}{08:46}{08:26}る{08:77}が、今はＣＯ{03:0E}の中で{08:7B}。\n<wait>	You do manage to find a suitable demon.\nHowever, it's currently residing inside your COMP.\n<wait>	v005		reads: 検索の結果、仲魔にいることはいるのだが、今はＣＯＭＰの中である。\n<wait>; reads: ｩ事に岩を動かした！！\n<wait>; reads: だした
+m/MS0015.BIN	0:08	24	990	1FBA	高天原に通じる穴{08:6B}{08:8C}。\n死者達{08:62}喜んで穴の中に消え{08:21}{02:08}。\n<wait>	It must be a hole leading to Takama-ga-hara.\nThe dead joyfully vanished into the hole.........\n<wait>	This must be the entrance to Takama-ga-hara.\nThe dead run in with joy.\n<wait>	v005	draft	reads: 高天原に通じる穴なのだろう。\n死者達は、喜んで穴の中に消えていった‥‥‥。\n<wait>; reads: だした; reads: は、 @rebase-unmatched idx24 en=You order [ @ours-2026-09-05
+m/MS0015.BIN	0:08	25	1058	18	検索の結果、{08:0E}に{08:40}{08:46}{08:26}る{08:77}が、今はＣＯ{03:0E}の中で{08:7B}。\n<wait>	The search found one among your allies, but it is currently inside\nthe COMP.\n<wait>	You do manage to find a suitable demon.\nHowever, it's currently residing inside your COMP.\n<wait>	v005	draft	reads: 検索の結果、仲魔にいることはいるのだが、今はＣＯＭＰの中である。\n<wait>; reads: ｩ事に岩を動かした！！\n<wait>; reads: だした @ours-2026-09-05
 m/MS0015.BIN	0:08	26	1117	1FD1	＞召喚し{08:15}\n		>Will you summon the demon?\n	v005		reads: ＞召喚しますか？\n; reads: 岩がどけられると、その後ろには光の穴が出現した。\n<wait>; reads: 竄ﾇかすよう指示した。\n<wait> @refalign
 m/MS0015.BIN	0:08	27	1132	1F58	{05:00}	{05:00}				reads: はいいいえ; reads: 高天原に通じる穴なのだろう。\n死者達は、喜んで穴の中に消えていった‥‥‥。\n<wait>; reads: ‥‥‥‥‥‥‥‥‥‥\n<wait>
 m/MS0015.BIN	0:08	28	1154	1F82	{08:62}{08:0B}を呼び出すのをやめ、{08:47}場を離{08:60}。\n<wait>	 gave up summoning a demon and left.\n<wait>	You give up on summoning the demon and leave the area.\n<wait>	ours	draft	reads: は、悪魔を呼び出すのをやめ、この場を離れた。\n<wait>; reads: 検索の結果、仲魔にいることはいるのだが、今はＣＯＭＰの中である。\n<wait>; reads: だした @ours-2026-09-05
@@ -128,8 +128,8 @@ m/MS0015.BIN	0:08	32	1335	1FD1	＞他の{08:0B}を呼び出し{08:15}\n<wait>	>S
 m/MS0015.BIN	0:08	33	1366	1F58	{05:00}	{05:00}				reads: はいいいえ; reads: しかし、肝心の; reads: ＞召喚しますか？\n
 m/MS0015.BIN	0:08	34	1391	1FE8	{03:0B}パーティーには{08:48}以上呼び出すスペースが無い。\n<wait>	But there is no room in the party to summon any more.\n<wait>	However, there's no more room in your party to summon another demon.\n<wait>	ours	draft	reads: しかし、パーティーにはこれ以上呼び出すスペースが無い。\n<wait>; reads: だした; reads: はいいいえニュートン @ours-2026-09-05
 m/MS0015.BIN	0:08	35	1444	1FBA	誰か、ＣＯ{03:0E}内に戻そうか{02:08}\n<wait>		Should someone be sent back into the COMP......\n<wait>	ours		reads: 誰か、ＣＯＭＰ内に戻そうか‥‥‥\n<wait>; reads: は、悪魔を呼び出すのをやめ、この場を離れた。\n<wait>
-m/MS0015.BIN	0:08	36	1493	1FB2	戻す	戻す	Send back	ours		menu option, declared width 20 columns; reads: ＞他の悪魔を呼び出しますか？\n<wait>; reads: アップ
-m/MS0015.BIN	0:08	37	1499	1FB2	戻さ{08:25}	戻さ{08:25}	Don't	ours		reads: 戻さない; menu option, declared width 20 columns; reads: はいいいえ; reads: しかし、肝心の
+m/MS0015.BIN	0:08	36	1493	1FB2	戻す	Send back	Send back	ours	draft	menu option, declared width 20 columns; reads: ＞他の悪魔を呼び出しますか？\n<wait>; reads: アップ @ours-2026-09-05
+m/MS0015.BIN	0:08	37	1499	1FB2	戻さ{08:25}	Don't	Don't	ours	draft	reads: 戻さない; menu option, declared width 20 columns; reads: はいいいえ; reads: しかし、肝心の @ours-2026-09-05
 m/MS0015.BIN	0:08	38	1537	1F82	{08:62}{08:0B}を戻すのを止め{08:79}場を離{08:60}{08:72}。\n<wait>	 decided not to return a demon, and left...\n<wait>	You decide against sending the demon back and leave the area......\n<wait>	ours	draft	reads: は、悪魔を戻すのを止めその場を離れた‥‥。\n<wait>; reads: しかし、パーティーにはこれ以上呼び出すスペースが無い。\n<wait>; reads: だした @ours-2026-09-05
 m/MS0015.BIN	0:08	39	1614	1F01	{08:62}	 summoned 			draft	reads: は、; reads: 誰か、ＣＯＭＰ内に戻そうか‥‥‥\n<wait> @rebase-unmatched idx39 en=is unable to act.\n<wait> @ours-2026-09-05
 m/MS0015.BIN	0:08	40	1622	1F01	を呼び出し、\n岩をどかす{08:69}に指示{08:4B}。\n<wait>	 and\nordered it to move the rock.\n<wait>			draft	reads: を呼び出し、\n岩をどかすように指示した。\n<wait>; menu option, declared width 20 columns; reads: ＞他の悪魔を呼び出しますか？\n<wait> @ours-2026-09-05
@@ -138,7 +138,7 @@ m/MS0015.BIN	0:08	42	1736	1F01	がい{08:57}{08:90}し{08:69}も{08:25}ので、
 m/MS0015.BIN	0:08	43	1765	1F01	{08:62}一旦{08:47}場を立ち去{08:51}。\n	 left for the time being.\n			draft	reads: は、一旦この場を立ち去った。\n; reads: 誰か、ＣＯＭＰ内に戻そうか‥‥‥\n<wait> @rebase-new @ours-2026-09-05
 m/MS0015.BIN	0:08	44	1793	1FBA	{08:8F}、今の{08:0E}にそこ{08:71}力と体力の{08:7B}{08:0B}{08:26}{08:19}。\n<wait>	But none of his current allies had that much strength and stamina.\n<wait>	But none of the party's demons had enough strength and stamina for that.\n<wait>	ours	draft	reads: だが、今の仲魔にそこまで力と体力のある悪魔はいなかった。\n<wait>; reads: だした; menu option, declared width 20 columns @ours-2026-09-05
 m/MS0015.BIN	0:08	45	1838	1FBA	一行{08:62}仕方なく{08:79}場を立ち去る{08:46}に{08:4B}。\n		With no other choice, the group decides to leave the area.\n	ours		reads: 一行は、仕方なくその場を立ち去ることにした。\n; reads: ﾄび出し、\n岩をどかすように指示した。\n<wait>; reads: 戻さない; menu option, declared width 20 columns @refalign @refalign-merged
-m/MS0015.BIN	0:08	46	1902	1FD0	そこは巨大なドーム状の空間だ{08:51}。\n奥にしめ縄で括ら{08:60}巨大な岩が{08:7B}。\n<wait>	そこは巨大なドーム状の空間だ{08:51}。\n奥にしめ縄で括ら{08:60}巨大な岩が{08:7B}。\n<wait>	You enter a vast cavern. At the end of it,\nyou can see a boulder with a rope tied around it.\n<wait>	v005		reads: そこは巨大なドーム状の空間だった。\n奥にしめ縄で括られた巨大な岩がある。\n<wait>; reads: は、悪魔を呼び出そうにも、ＭＡＧが足りない事に気付いた。\n<wait>; reads: わたしは
+m/MS0015.BIN	0:08	46	1902	1FD0	そこは巨大なドーム状の空間だ{08:51}。\n奥にしめ縄で括ら{08:60}巨大な岩が{08:7B}。\n<wait>	It was a huge dome-shaped space.\nAt the back stood a giant boulder bound with a sacred rope.\n<wait>	You enter a vast cavern. At the end of it,\nyou can see a boulder with a rope tied around it.\n<wait>	v005	draft	reads: そこは巨大なドーム状の空間だった。\n奥にしめ縄で括られた巨大な岩がある。\n<wait>; reads: は、悪魔を呼び出そうにも、ＭＡＧが足りない事に気付いた。\n<wait>; reads: わたしは @ours-2026-09-05
 m/MS0015.BIN	0:08	47	1998	1FD2	男性：	Man:	Man:	v005	draft	reads: だした @ours-2026-09-05
 m/MS0015.BIN	0:08	48	2006	1FD3	冗談{08:81}ねぇ{08:72}何で高天原の入口が塞がれ{08:2B}{08:5F}{02:08}\n<wait>	You gotta be kidding... why is the way into Takamagahara blocked......\n<wait>			draft	reads: 冗談じゃねぇ‥‥何で高天原の入口が塞がれてるんだ‥‥‥\n<wait>; reads: ｢なければどうしようもないので、\n; reads: は、悪魔を戻すのを止めその場を離れた‥‥。\n<wait> @ours-2026-09-05
 m/MS0015.BIN	0:08	49	2083	1FD2	女性：	Woman:	Woman:	ours	draft	reads: は、一旦この場を立ち去った。\n @rebase-unmatched idx49 en=You summon [ @ours-2026-09-05
@@ -154,7 +154,7 @@ m/MS0015.BIN	0:08	58	2466	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: �
 m/MS0015.BIN	0:08	59	2487	1FB2	岩を動かす		Move the boulder	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0015.BIN	0:08	60	2499	1FB2	戻る		Turn back	v005		menu option, declared width 20 columns; reads: 冗談じゃねぇ‥‥何で高天原の入口が塞がれてるんだ‥‥‥\n<wait> @refalign
 m/MS0015.BIN	0:08	61	2544	0B	{08:31}	{08:31}	Rui tries to move the boulder...\n	v005		reads: 泪; menu option, declared width 20 columns @refalign
-m/MS0015.BIN	0:08	62	2549	18	{01:03}{08:62}岩を押{08:4B}り引{08:64}り{08:4A}みた。\n{03:0B}	{01:03}{08:62}岩を押{08:4B}り引{08:64}り{08:4A}みた。\n{03:0B}	Newton tries to move the boulder...                               \n	v005		reads: ニュートンは、岩を押したり引いたりしてみた。\nしかし、; reads: 何でなの‥‥？\n何で、死んでからもこんな苦しい思いをしなきゃいけないの‥‥\n<wait> @rebase-unmatched idx69 en={02:01}{01:FF} @rebase-unmatched idx70 en=You try to move the boulder...\n @rebase-unmatched idx78 en=You try to move the boulder...\n
+m/MS0015.BIN	0:08	62	2549	18	{01:03}{08:62}岩を押{08:4B}り引{08:64}り{08:4A}みた。\n{03:0B}	Newton tried pushing and pulling the boulder.\nHowever,	Newton tries to move the boulder...                               \n	v005	draft	reads: ニュートンは、岩を押したり引いたりしてみた。\nしかし、; reads: 何でなの‥‥？\n何で、死んでからもこんな苦しい思いをしなきゃいけないの‥‥\n<wait> @rebase-unmatched idx69 en={02:01}{01:FF} @rebase-unmatched idx70 en=You try to move the boulder...\n @rebase-unmatched idx78 en=You try to move the boulder...\n @ours-2026-09-05
 m/MS0015.BIN	0:09	0	13	1FD0	誰も{08:24}{02:08}\n	No one is here......\n			draft	reads: 誰もいない‥‥‥\n; reads: 誰もいない‥‥‥\n @ours-2026-09-05
 m/MS0015.BIN	0:09	1	48	1FD2	アマテラス：	Amaterasu:			draft	@ours-2026-09-05
 m/MS0015.BIN	0:09	2	68	1F7C	良うや{08:52}く{08:60}{02:08}	Well done...... 			draft	reads: 良うやってくれた‥‥‥; reads: 良うやってくれた‥‥‥ @ours-2026-09-05
@@ -193,7 +193,7 @@ m/MS0015.BIN	0:09	34	1489	1FD2	アマテラス：	Amaterasu:			draft	@ours-2026-
 m/MS0015.BIN	0:09	35	1503	1FD3	{08:90}{08:81}？　や{08:52}く{08:2F}か？\n	Well? Wilt thou do it?\n			draft	reads: どうじゃ？　やってくれるか？\n; reads: どうじゃ？　やってくれるか？\n @ours-2026-09-05
 m/MS0015.BIN	0:09	36	1540	1FB2	やりま{08:80}		I'll do it	v005		reads: やりましょう; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0015.BIN	0:09	37	1550	1FB2	イヤ{08:55}		No way	v005		reads: イヤです; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0015.BIN	0:09	38	1587	1FD2	アマテラス：	アマテラス：	Amaterasu:	v005		reads: ダンタリオン
+m/MS0015.BIN	0:09	38	1587	1FD2	アマテラス：	Amaterasu:	Amaterasu:	v005	draft	reads: ダンタリオン @ours-2026-09-05
 m/MS0015.BIN	0:09	39	1601	1FD3	おお！　や{08:52}く{08:2F}か{02:08}！\n有り難い事よ{02:08}\n<wait>		Ah, wonderful! I thank you so...\n<wait>	v005		reads: おお！　やってくれるか‥‥‥！\n有り難い事よ‥‥‥\n<wait>
 m/MS0015.BIN	0:09	40	1647	1FD2	アマテラス：		Amaterasu:	v005		reads: おお！　やってくれるか‥‥‥！\n有り難い事よ‥‥‥\n<wait>
 m/MS0015.BIN	0:09	41	1661	1FD3	随伴に、ヤマトタケルをつけ{08:69}ぞ。\n存分に役立{08:2B}がよい。\n<wait>		I will have Yamato Takeru escort you. May his strength be of us to you.\n<wait>	v005		reads: 随伴に、ヤマトタケルをつけようぞ。\n存分に役立てるがよい。\n<wait>
@@ -204,8 +204,8 @@ m/MS0015.BIN	0:09	45	1854	1FD3	お願い{08:81}{02:08}お主が行けば、必�
 m/MS0015.BIN	0:09	46	1915	1FB2	承知{08:8E}		Okay	v005		reads: 承知する; menu option, declared width 20 columns; reads: お願いじゃ‥‥‥お主が行けば、必ずや上手く行く‥‥‥‥\n @refalign
 m/MS0015.BIN	0:09	47	1923	1FB2	断固拒否		No	v005		menu option, declared width 20 columns; reads: 承知する @refalign
 m/MS0015.BIN	0:09	48	1953	1FD2	アマテラス：		Amaterasu:	v005		menu option, declared width 20 columns
-m/MS0015.BIN	0:09	49	1967	1FD3	そうか{02:08}お主も先を急ぐ旅{08:81}{08:42}な{02:08}\n<wait>	そうか{02:08}お主も先を急ぐ旅{08:81}{08:42}な{02:08}\n<wait>	Right... I suppose you have your own journey to complete.\n<wait>	v005		reads: そうか‥‥‥お主も先を急ぐ旅じゃからな‥‥‥\n<wait>; reads: 山瀬勇
-m/MS0015.BIN	0:09	50	2008	1FD2	アマテラス：	アマテラス：	Amaterasu:	v005		
+m/MS0015.BIN	0:09	49	1967	1FD3	そうか{02:08}お主も先を急ぐ旅{08:81}{08:42}な{02:08}\n<wait>	I see......... you too have a journey to hurry along on.........\n<wait>	Right... I suppose you have your own journey to complete.\n<wait>	v005	draft	reads: そうか‥‥‥お主も先を急ぐ旅じゃからな‥‥‥\n<wait>; reads: 山瀬勇 @ours-2026-09-05
+m/MS0015.BIN	0:09	50	2008	1FD2	アマテラス：	Amaterasu:	Amaterasu:	v005	draft	@ours-2026-09-05
 m/MS0015.BIN	0:09	51	2022	1FD3	いや、そもそも我らの問題を、部外者に解決を頼{08:5F}{08:77}{08:42}、\n{02:0C}がいけ{08:19}の{08:81}。\n<wait>		I apologize.\nIt was unbecoming of me to push our problems onto an outsider.\n<wait>	v005		reads: いや、そもそも我らの問題を、部外者に解決を頼んだのだから、\n我々がいけなかったのじゃ。\n<wait>
 m/MS0015.BIN	0:09	52	2100	1FD2	アマテラス：		Amaterasu:	v005		reads: そうか‥‥‥お主も先を急ぐ旅じゃからな‥‥‥\n<wait>
 m/MS0015.BIN	0:09	53	2114	1FD3	済ま{08:19}{02:08}お主{08:62}お主自身の道を歩まれよ。\n使者{08:62}誰か見繕{08:52}送ろう{02:08}\n		Goodbye. A herald shall guide you back to your world.\n	v005		reads: 済まなかった‥‥‥お主は、お主自身の道を歩まれよ。\n使者は、誰か見繕って送ろう‥‥‥\n
@@ -218,34 +218,34 @@ m/MS0015.BIN	0:09	59	2439	1FD2	アマテラス：	Amaterasu:			draft	reads: こ�
 m/MS0015.BIN	0:09	60	2453	1FD3	お主も重々用心め{03:0C}い。\n<wait>	Thou too must take great care.\n<wait>			draft	reads: お主も重々用心めされい。\n<wait>; reads: 使者の件、よしなに願うぞえ‥‥‥‥\n<wait> @ours-2026-09-05
 m/MS0015.BIN	0:0A	0	82	1F03						
 m/MS0015.BIN	0:0A	1	136	1F03						
-m/MS0015.BIN	0:0A	2	248	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
-m/MS0015.BIN	0:0A	3	252	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
-m/MS0015.BIN	0:0A	4	294	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
-m/MS0015.BIN	0:0A	5	298	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
-m/MS0015.BIN	0:0A	6	345	1F83	{08:62}オニキスを不動像の瞳にはめた。\n<wait>	{08:62}オニキスを不動像の瞳にはめた。\n<wait>	 inserted an onyx into the statue's eye.\n<wait>	v005		reads: は、オニキスを不動像の瞳にはめた。\n<wait>; reads: はい; menu option, declared width 20 columns
-m/MS0015.BIN	0:0A	7	417	1F61	{08:5C}片方の瞳にもはめ{08:15}\n	{08:5C}片方の瞳にもはめ{08:15}\n	Insert another gemstone?\n	v005		reads: もう片方の瞳にもはめますか？\n; reads: いいえ; menu option, declared width 20 columns
-m/MS0015.BIN	0:0A	8	454	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
-m/MS0015.BIN	0:0A	9	458	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
+m/MS0015.BIN	0:0A	2	248	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0A	3	252	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0A	4	294	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0A	5	298	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0A	6	345	1F83	{08:62}オニキスを不動像の瞳にはめた。\n<wait>	 set the onyx into the Fudo statue's eye.\n<wait>	 inserted an onyx into the statue's eye.\n<wait>	v005	draft	reads: は、オニキスを不動像の瞳にはめた。\n<wait>; reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0A	7	417	1F61	{08:5C}片方の瞳にもはめ{08:15}\n	Set one in the other eye as well?\n	Insert another gemstone?\n	v005	draft	reads: もう片方の瞳にもはめますか？\n; reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0A	8	454	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0A	9	458	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
 m/MS0015.BIN	0:0B	0	82	1F03						
 m/MS0015.BIN	0:0B	1	136	1F03						
-m/MS0015.BIN	0:0B	2	248	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
-m/MS0015.BIN	0:0B	3	252	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
-m/MS0015.BIN	0:0B	4	294	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
-m/MS0015.BIN	0:0B	5	298	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
-m/MS0015.BIN	0:0B	6	345	1F83	{08:62}ダイアモンドを不動像の瞳にはめた。\n<wait>	{08:62}ダイアモンドを不動像の瞳にはめた。\n<wait>	 inserted a diamond into the statue's eye.\n<wait>	v005		reads: は、ダイアモンドを不動像の瞳にはめた。\n<wait>; reads: はい; menu option, declared width 20 columns
-m/MS0015.BIN	0:0B	7	421	1F61	{08:5C}片方の瞳にもはめ{08:15}\n	{08:5C}片方の瞳にもはめ{08:15}\n	Insert another gemstone?\n	v005		reads: もう片方の瞳にもはめますか？\n; reads: いいえ; menu option, declared width 20 columns
-m/MS0015.BIN	0:0B	8	458	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
-m/MS0015.BIN	0:0B	9	462	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
+m/MS0015.BIN	0:0B	2	248	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0B	3	252	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0B	4	294	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0B	5	298	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0B	6	345	1F83	{08:62}ダイアモンドを不動像の瞳にはめた。\n<wait>	 set the diamond into the Fudo statue's eye.\n<wait>	 inserted a diamond into the statue's eye.\n<wait>	v005	draft	reads: は、ダイアモンドを不動像の瞳にはめた。\n<wait>; reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0B	7	421	1F61	{08:5C}片方の瞳にもはめ{08:15}\n	Set one in the other eye as well?\n	Insert another gemstone?\n	v005	draft	reads: もう片方の瞳にもはめますか？\n; reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0B	8	458	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0B	9	462	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
 m/MS0015.BIN	0:0C	0	82	1F03						
 m/MS0015.BIN	0:0C	1	136	1F03						
-m/MS0015.BIN	0:0C	2	248	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
-m/MS0015.BIN	0:0C	3	252	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
-m/MS0015.BIN	0:0C	4	294	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
-m/MS0015.BIN	0:0C	5	298	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
-m/MS0015.BIN	0:0C	6	345	1F83	{08:62}ルビーを不動像の瞳にはめた。\n<wait>	{08:62}ルビーを不動像の瞳にはめた。\n<wait>	 inserted a ruby into the statue's eye.\n<wait>	v005		reads: は、ルビーを不動像の瞳にはめた。\n<wait>; reads: はい; menu option, declared width 20 columns
-m/MS0015.BIN	0:0C	7	411	1F71	{08:5C}片方の瞳にもはめ{08:15}\n	{08:5C}片方の瞳にもはめ{08:15}\n	Insert another gemstone?\n	v005		reads: もう片方の瞳にもはめますか？\n; reads: いいえ; menu option, declared width 20 columns
-m/MS0015.BIN	0:0C	8	452	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
-m/MS0015.BIN	0:0C	9	456	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
+m/MS0015.BIN	0:0C	2	248	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0C	3	252	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0C	4	294	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0C	5	298	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0C	6	345	1F83	{08:62}ルビーを不動像の瞳にはめた。\n<wait>	 set the ruby into the Fudo statue's eye.\n<wait>	 inserted a ruby into the statue's eye.\n<wait>	v005	draft	reads: は、ルビーを不動像の瞳にはめた。\n<wait>; reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0C	7	411	1F71	{08:5C}片方の瞳にもはめ{08:15}\n	Set one in the other eye as well?\n	Insert another gemstone?\n	v005	draft	reads: もう片方の瞳にもはめますか？\n; reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0C	8	452	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0C	9	456	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
 m/MS0015.BIN	0:0D	0	76	1FD2	樹海：		Jukai:	v005		
 m/MS0015.BIN	0:0D	1	84	1FD3	で{08:62}{08:79}青き石を{02:0E}へ{02:08}‥\n<wait>		Here we are. Allow me to place the stones where they belong.\n<wait>	v005		reads: では、その青き石をこちらへ‥‥‥‥\n<wait>
 m/MS0015.BIN	0:0D	2	123	1FD0	樹海{08:62}サファイアを不動の両目にはめ込{08:5F}。\n		Jukai takes the pair of sapphires and places them into\nthe statue's eye sockets.\n	v005		reads: 樹海は、サファイアを不動の両目にはめ込んだ。\n
@@ -267,14 +267,14 @@ m/MS0015.BIN	0:0D	17	870	1FD2	樹海：		Jukai:	v005
 m/MS0015.BIN	0:0D	18	878	1FD3	さて、残りの不動の所に向かわねばな{02:08}。\n		We can use the doors to easily warp between the shrines.\n	v005		reads: さて、残りの不動の所に向かわねばな‥‥‥。\n
 m/MS0015.BIN	0:0E	0	82	1F03						
 m/MS0015.BIN	0:0E	1	136	1F03						
-m/MS0015.BIN	0:0E	2	248	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
-m/MS0015.BIN	0:0E	3	252	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
-m/MS0015.BIN	0:0E	4	294	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
-m/MS0015.BIN	0:0E	5	298	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
-m/MS0015.BIN	0:0E	6	345	1F83	{08:62}トパーズを不動像の瞳にはめた。\n<wait>	{08:62}トパーズを不動像の瞳にはめた。\n<wait>	 inserted a topaz into the statue's eye.\n<wait>	v005		reads: は、トパーズを不動像の瞳にはめた。\n<wait>; reads: はい; menu option, declared width 20 columns
-m/MS0015.BIN	0:0E	7	417	1F61	{08:5C}片方の瞳にもはめ{08:15}\n	{08:5C}片方の瞳にもはめ{08:15}\n	Insert another gemstone?\n	v005		reads: もう片方の瞳にもはめますか？\n; reads: いいえ; menu option, declared width 20 columns
-m/MS0015.BIN	0:0E	8	454	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
-m/MS0015.BIN	0:0E	9	458	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
+m/MS0015.BIN	0:0E	2	248	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0E	3	252	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0E	4	294	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0E	5	298	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0E	6	345	1F83	{08:62}トパーズを不動像の瞳にはめた。\n<wait>	 set the topaz into the Fudo statue's eye.\n<wait>	 inserted a topaz into the statue's eye.\n<wait>	v005	draft	reads: は、トパーズを不動像の瞳にはめた。\n<wait>; reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0E	7	417	1F61	{08:5C}片方の瞳にもはめ{08:15}\n	Set one in the other eye as well?\n	Insert another gemstone?\n	v005	draft	reads: もう片方の瞳にもはめますか？\n; reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0E	8	454	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0015.BIN	0:0E	9	458	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns @ours-2026-09-05
 m/MS0015.BIN	0:0F	0	2	1FD0	不動像の両目{08:62}何かで抉ら{08:60}{08:69}に空洞になっ{08:14}。\n<wait>		The eyes of the great statue have two holes\nthat look like they could be filled with something.\n<wait>	v005		reads: 不動像の両目は、何かで抉られたように空洞になっている。\n<wait>; reads: 不動像の両目は、何かで抉られたように空洞になっている。\n<wait> @refalign
 m/MS0015.BIN	0:0F	1	53	1FBA	瞳を入れてやり{08:15}\n		Insert gemstones?\n	v005		reads: 瞳を入れてやりますか？\n; reads: 瞳を入れてやりますか？\n @refalign
 m/MS0015.BIN	0:10	0	2	1FD0	不動像の片目{08:62}相変わらず空洞のま{08:76}{02:08}\n<wait>		One of the eyes of the great statue is still empty.\n<wait>	v005		reads: 不動像の片目は、相変わらず空洞のままだ‥‥‥\n<wait>; reads: 不動像の片目は、相変わらず空洞のままだ‥‥‥\n<wait> @refalign
@@ -340,7 +340,7 @@ m/MS0015.BIN	0:19	10	644	1F01	の身体に衝撃が走{08:51}。\n<wait>	's body
 m/MS0015.BIN	0:19	11	671	1FBA	{08:86}も、しめ縄は何事も無{08:18}かの{08:69}に、傷一つ無い。\n<wait>	What's more, the rope was untouched, as if nothing had happened.\n<wait>			draft	reads: しかも、しめ縄は何事も無かったかのように、傷一つ無い。\n<wait>; reads: しかも、しめ縄は何事も無かったかのように、傷一つ無い。\n<wait> @ours-2026-09-05
 m/MS0015.BIN	0:19	12	766	1F01	{08:62}大岩に武器を振り下ろ{08:17}\n<wait>	 swung a weapon down at the boulder!\n<wait>			draft	reads: は、大岩に武器を振り下ろした！\n<wait>; reads: だした‥‥‥b大岩に武器を振り下ろした！\n<wait> @ours-2026-09-05
 m/MS0015.BIN	0:19	13	801	1FC4	{03:0B}岩はひび一つどころか欠け{08:5D}{08:19}{02:08}\n<wait>	But the rock was not so much as chipped, let alone cracked......\n<wait>			draft	reads: しかし、岩はひび一つどころか欠けもしなかった‥‥‥\n<wait>; reads: しかし、岩はひび一つどころか欠けもしなかった‥‥‥\n<wait> @ours-2026-09-05
-m/MS0015.BIN	0:1A	0	40	1B	メンバー	メンバー	Member	v005		reads: われわれ
+m/MS0015.BIN	0:1A	0	40	1B	メンバー	Member	Member	v005	draft	reads: われわれ @ours-2026-09-05
 m/MS0015.BIN	0:1C	0	2	1FD0	突然、辺りに声が響{08:64}！\n<wait>		Suddenly, a voice echoes through the area!\n<wait>	ours		reads: 突然、辺りに声が響いた！\n<wait>
 m/MS0015.BIN	0:1C	1	33	1FD2	声：		Voice:	ours		
 m/MS0015.BIN	0:1C	2	39	1FD3	{08:45}を通るには証が必要{02:08}\n<wait>		To pass here, you require proof......\n<wait>	ours		reads: ここを通るには証が必要‥‥‥\n<wait>
