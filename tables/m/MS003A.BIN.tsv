@@ -126,7 +126,7 @@ m/MS003A.BIN	0:1C	47	1154	1FB2	武器を投げ込む		Throw weapon	v005		menu op
 m/MS003A.BIN	0:1C	48	1170	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign @refalign
 m/MS003A.BIN	0:1D	0	0	UNTILED	ｺ / ﾐ誰が飲み / :  / : / ｺ / ﾐ / > / は泉の水を飲んでみた。 / ｺ / ﾐ / 冝E / ・ / ・ / ﾐ / ｹ / G / ｹ / : / ｹ / - / ｹ / ｹ / ' / ? /  / : / : / : / : / : / : / : /  / : / : / : / : / : / : /  / : / : / : / : / : / : /  / :					@noedit; @untiled; record does not tile (switch entry at 0xA3 has kind 39 (not 0 or 1)); read-only, copied verbatim; reads: 誰が飲みますか？\n @rebase-new @rebase-unmatched idx0 en=Who will drink the water?\n @rebase-unmatched idx1 en= drank the spring water.\n<wait> @rebase-unmatched idx0 en=Who will drink the water?\n @rebase-unmatched idx1 en= drank the spring water.\n<wait>
 m/MS003A.BIN	0:1E	0	29	1F2F	を投げ込{08:5F}。\n<wait>	を投げ込{08:5F}。\n<wait>	 was thrown into the spring.\n<wait>	v005		reads: を投げ込んだ。\n<wait>; reads: だした
-m/MS003A.BIN	0:1E	1	56	1FFA	{02:09}{02:09}{02:09}・・					reads: ・・・・・・・・・・・; reads: を投げ込んだ。\n<wait> @refalign
+m/MS003A.BIN	0:1E	1	56	1FFA	{02:09}{02:09}{02:09}・・		 was thrown into the spring.\n<wait>\n.........	v005		reads: ・・・・・・・・・・・; reads: を投げ込んだ。\n<wait> @refalign @refalign @refalign-merged
 m/MS003A.BIN	0:20	0	34	1F81	{03:17}{03:19}	{03:17}{03:19}				reads: 
 m/MS003A.BIN	0:21	0	40	1B	メンバー名	メンバー名	Name	v005		reads: われわれ @rebase-unmatched idx4 en={05:01}Y @rebase-unmatched idx5 en={06:01}U @rebase-unmatched idx4 en={05:01}Y @rebase-unmatched idx5 en={06:01}U
 m/MS003A.BIN	0:22	0	41	1F83	{03:17}{03:18}	{03:17}{03:18}				reads: 

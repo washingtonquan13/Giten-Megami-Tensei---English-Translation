@@ -33,8 +33,28 @@ import difflib
 import os
 import re
 
-from . import codec, files, paths, script, tables
+import contextlib
+import copy
+import json
+
+from . import codec, files, paths, script, tables, vmops
 from .carry import is_english
+
+
+@contextlib.contextmanager
+def v005_grammar():
+    """Tokenize v0.05's files the way v0.05 understood them: it stripped the
+    ``00 04 FE`` operands of every ``1F01`` name print (format-notes 2.11), so
+    under the engine's real grammar its files do not tile.  For alignment we
+    read them with the old one-byte model; only the *original* is ever built."""
+    real = vmops.table()
+    doc = copy.deepcopy(real.doc)
+    doc["opcodes"]["0x101"]["operands"] = [{"kind": "u8", "size": 1}]
+    vmops._TABLE = vmops.Table(doc)
+    try:
+        yield
+    finally:
+        vmops._TABLE = real
 
 MARK = "@refalign"
 MERGED = "@refalign-merged"
@@ -201,7 +221,8 @@ def run(v005_root: str, text_dir: "str | None" = None, quiet: bool = False) -> d
         if not os.path.exists(vpath):
             continue
         a = script.parse(rel, files.read_source(rel))
-        b = script.parse(rel, open(vpath, "rb").read())
+        with v005_grammar():
+            b = script.parse(rel, open(vpath, "rb").read())
         if not (a.ok and b.ok):
             continue
         by_key = {(r.rec, r.idx): r for r in rows}
