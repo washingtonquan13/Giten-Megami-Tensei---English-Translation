@@ -78,9 +78,13 @@ def test_overlay_dat_round_trips():
            [[(s.start, s.end, s.virt, s.data) for s in e.spans] for e in entries]
     e = entries[0]
     assert e.spans == sorted(e.spans, key=lambda s: s.start)
-    assert e.spans[0].virt == e.image_end and e.spans[-1].vend <= overlay.PC_LIMIT
-    for a, b in zip(e.spans, e.spans[1:]):
+    tails = e.tails
+    assert tails and tails[0].virt == e.image_end and tails[-1].vend <= overlay.PC_LIMIT
+    for a, b in zip(tails, tails[1:]):
         assert a.vend == b.virt and a.end <= b.start
+    assert all(s.virt == 0 for s in e.spans if not s.tail)
+    assert all(s.head == min(len(s.data), s.end - s.start) for s in e.spans)
+    assert sum(s.tail for s in e.spans) < sum(len(s.data) for s in e.spans)   # virtual space is only the excess
 
 
 def test_model_walk_equals_the_byte_edit_build_modulo_displacements():
@@ -105,6 +109,39 @@ def test_model_walk_equals_the_byte_edit_build_modulo_displacements():
         assert _masked_tokens(stream) == _masked_tokens(rec2.data), "record %02X" % rec.id
         checked += 1
     assert checked > 5 and sum(1 for _ in ent.spans) > 50
+
+
+def test_short_english_is_served_in_place_and_costs_no_virtual_space():
+    sc = script.parse(REL, files.read_source(REL))
+    rows = _rows(REL, sc, lambda rec, sp, jp: "ok" if "{" not in jp and sp.end - sp.off >= 2 else None)
+    entries, findings = overlay.plan(rows)
+    assert not findings and entries and not entries[0].tails and len(entries[0].spans) > 100
+    e = entries[0]
+    recs = [records.Record(r.id, r.data) for r in sc.containers[0]]
+    m = overlay.Model(e, overlay.image_bytes(recs))
+    s = e.spans[0]
+    b0, pc = m.fetch(s.start)
+    b1, pc = m.fetch(pc)
+    assert (b0, b1, pc) == (ord("o"), ord("k"), s.end)              # two bytes in place, then the hand-back
+
+
+def test_a_longer_line_runs_in_place_then_through_its_virtual_tail():
+    sc = script.parse(REL, files.read_source(REL))
+    rows = _rows(REL, sc, lambda rec, sp, jp: "abcdefghij" if "{" not in jp and sp.end - sp.off == 4 else None)
+    entries, findings = overlay.plan(rows)
+    assert not findings and entries
+    e = entries[0]
+    s = next(x for x in e.spans if x.tail)
+    assert (s.head, s.tail) == (4, 6)
+    recs = [records.Record(r.id, r.data) for r in sc.containers[0]]
+    m = overlay.Model(e, overlay.image_bytes(recs))
+    seen, pc = [], s.start
+    for _ in range(10):
+        b, pc = m.fetch(pc)
+        seen.append(b)
+        if len(seen) == 4:
+            assert pc == s.virt                                       # head done: into the tail
+    assert bytes(seen) == b"abcdefghij" and pc == s.end
 
 
 def test_virtual_space_is_bounded_per_file():

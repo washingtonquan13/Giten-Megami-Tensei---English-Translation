@@ -15,9 +15,17 @@ section 2.6) and the image ends well below 0x10000.  Every translated span is
 given a **virtual PC range** above the image end; serving English is then a
 pure function of the PC:
 
-* real PC == span.start          -> serve en[0], PC := virt + 1
-* virt <= PC < virt + len        -> serve en[PC - virt], PC := PC + 1
-* the last byte served           -> PC := span.end (back in the real stream)
+Every span is served **in place** first: for ``start <= PC < start + head``,
+where ``head = min(len(en), len(jp))``, the hook returns ``en[PC - start]`` at
+the real address.  If the English is longer, the remaining ``tail = len(en) -
+head`` bytes live in a virtual range ``[virt, virt + tail)`` above the image;
+the last in-place byte hands the PC to ``virt``, the last tail byte hands it to
+``span.end``.  If the English is shorter, the last byte hands the PC to
+``span.end`` directly.  Virtual space is therefore only ever spent on the
+*excess* of English over Japanese, and serving is a pure function of the PC:
+
+* start <= PC < start + head     -> en[PC - start]; next: PC+1, or virt (head done, tail exists), or end
+* virt <= PC < virt + tail       -> en[head + PC - virt]; next: PC+1, or end
 
 Every write the engine makes to the PC is a plain value store (jump, call
 frame push/pop, menu rescanner), so a virtual PC survives all of them.
@@ -26,10 +34,14 @@ frame push/pop, menu rescanner), so a virtual PC survives all of them.
 --------------------------------------
 ::
 
-    header   4s magic "GTOV", u32 version, u32 nfiles, u32 reserved
-    dir      nfiles x { u16 fid, u16 pad, u32 fp, u16 image_end, u16 nspans, u32 spans_off }
-    spans    per file, sorted by start:
-             { u16 start, u16 end, u16 virt, u16 len, u32 data_off }
+    header   4s magic "GTOV", u32 version (3), u32 nfiles, u32 reserved
+    dir      nfiles x { u16 fid, u16 pad, u32 fp, u16 image_end, u16 nspans, u32 spans_off,
+                        u16 ntails, u16 pad, u32 tails_off }
+    spans    per file, sorted by start:   { u16 start, u16 end, u16 virt, u16 len, u32 data_off }
+             (virt == 0 when the English fits in place)
+    tails    per file, sorted by virt, one per span with an excess:
+             { u16 start = virt, u16 end, u16 virt, u16 len = tail bytes, u32 data_off (of the tail) }
+             -- the same struct, so one range search serves both arrays
     data     the English bytes (codec-encoded: inline opcodes included)
 
 ``fid`` is the engine's current-file id (``0x4911B0``); ``fp`` is FNV-1a over
@@ -48,12 +60,12 @@ from dataclasses import dataclass, field
 from . import build_v2, codec, extract_v2, files, records, script
 
 MAGIC = b"GTOV"
-VERSION = 1
+VERSION = 3
 FP_BYTES = 0x400                # the whole record index (two MS610B containers agree on 32 entries)
 PC_LIMIT = 0x10000
 
 HDR = struct.Struct("<4sIII")
-DIR = struct.Struct("<HHIHHI")
+DIR = struct.Struct("<HHIHHIHHI")
 SPAN = struct.Struct("<HHHHI")
 
 
@@ -103,14 +115,23 @@ def image_end(recs) -> int:
 class SpanEntry:
     start: int              # real PC of the first Japanese byte
     end: int                # real PC just past the Japanese span
-    virt: int               # first virtual PC
+    virt: int               # first virtual PC of the tail (0 = no tail)
     data: bytes             # the English bytes served
     rec_id: int = -1
     idx: int = -1
 
     @property
+    def head(self) -> int:
+        """Bytes served in place: as many as the Japanese occupied, at most."""
+        return min(len(self.data), self.end - self.start)
+
+    @property
+    def tail(self) -> int:
+        return len(self.data) - self.head
+
+    @property
     def vend(self) -> int:
-        return self.virt + len(self.data)
+        return self.virt + self.tail
 
 
 @dataclass
@@ -120,7 +141,11 @@ class Entry:
     fid: int
     fp: int
     image_end: int
-    spans: "list[SpanEntry]" = field(default_factory=list)
+    spans: "list[SpanEntry]" = field(default_factory=list)      # every span, by start
+
+    @property
+    def tails(self) -> "list[SpanEntry]":
+        return [s for s in self.spans if s.tail]
 
 
 def _fid(rel: str) -> int:
@@ -182,7 +207,10 @@ def plan(rows, root=None):
             cursor = ent.image_end
             kept = []
             for s in ent.spans:
-                if cursor + len(s.data) > PC_LIMIT:
+                if not s.tail:
+                    kept.append(s)                          # fits in place, no virtual space
+                    continue
+                if cursor + s.tail > PC_LIMIT:
                     findings.append(("%s %d:%02X[%d]" % (rel, ci, s.rec_id, s.idx),
                                      "overlay-space: the file's virtual PC space is full "
                                      "(image ends at 0x%04X, %d English bytes before this "
@@ -190,7 +218,7 @@ def plan(rows, root=None):
                                      % (ent.image_end, cursor - ent.image_end)))
                     continue
                 s.virt = cursor
-                cursor += len(s.data)
+                cursor += s.tail
                 kept.append(s)
             ent.spans = kept
             if kept:
@@ -201,13 +229,20 @@ def plan(rows, root=None):
 def build(entries: "list[Entry]") -> bytes:
     dir_off = HDR.size
     spans_off = dir_off + DIR.size * len(entries)
-    data_off = spans_off + SPAN.size * sum(len(e.spans) for e in entries)
+    data_off = spans_off + SPAN.size * sum(len(e.spans) + len(e.tails) for e in entries)
     dirs, spans, data = bytearray(), bytearray(), bytearray()
     for e in entries:
-        dirs += DIR.pack(e.fid, 0, e.fp, e.image_end, len(e.spans), spans_off + len(spans))
+        soff = spans_off + len(spans)
+        doffs = {}
         for s in e.spans:
-            spans += SPAN.pack(s.start, s.end, s.virt, len(s.data), data_off + len(data))
+            doffs[id(s)] = data_off + len(data)
+            spans += SPAN.pack(s.start, s.end, s.virt, len(s.data), doffs[id(s)])
             data += s.data
+        toff = spans_off + len(spans)
+        tails = e.tails
+        for s in tails:
+            spans += SPAN.pack(s.virt, s.end, s.virt, s.tail, doffs[id(s)] + s.head)
+        dirs += DIR.pack(e.fid, 0, e.fp, e.image_end, len(e.spans), soff, len(tails), 0, toff)
     return HDR.pack(MAGIC, VERSION, len(entries), 0) + bytes(dirs) + bytes(spans) + bytes(data)
 
 
@@ -217,11 +252,16 @@ def parse(blob: bytes) -> "list[Entry]":
         raise ValueError("not an overlay.dat")
     out = []
     for i in range(nfiles):
-        fid, _, fp, iend, n, soff = DIR.unpack_from(blob, HDR.size + i * DIR.size)
+        fid, _, fp, iend, n, soff, nt, _, toff = DIR.unpack_from(blob, HDR.size + i * DIR.size)
         e = Entry("m/MS%04X.BIN" % fid, -1, fid, fp, iend)
         for k in range(n):
             start, end, virt, ln, doff = SPAN.unpack_from(blob, soff + k * SPAN.size)
             e.spans.append(SpanEntry(start, end, virt, blob[doff:doff + ln]))
+        # the tails array is derived from the spans; check it says the same thing
+        for k in range(nt):
+            vstart, end, virt, tlen, doff = SPAN.unpack_from(blob, toff + k * SPAN.size)
+            s = next(s for s in e.spans if s.virt == virt and s.tail)
+            assert (vstart, end, tlen, blob[doff:doff + tlen]) == (s.virt, s.end, s.tail, s.data[s.head:])
         out.append(e)
     return out
 
@@ -239,13 +279,20 @@ class Model:
         if e is not None:
             if pc >= e.image_end:
                 for s in e.spans:                       # the hook binary-searches; same answer
-                    if s.virt <= pc < s.vend:
-                        b = s.data[pc - s.virt]
-                        return b, (s.end if pc + 1 == s.vend else pc + 1)
+                    if s.tail and s.virt <= pc < s.vend:
+                        k = pc - s.virt
+                        return s.data[s.head + k], (s.end if k + 1 == s.tail else pc + 1)
             else:
                 for s in e.spans:
-                    if s.start == pc:
-                        return s.data[0], (s.end if len(s.data) == 1 else s.virt + 1)
+                    if s.start <= pc < s.start + s.head:
+                        k = pc - s.start
+                        if k + 1 == len(s.data):
+                            nxt = s.end
+                        elif k + 1 == s.head:
+                            nxt = s.virt
+                        else:
+                            nxt = pc + 1
+                        return s.data[k], nxt
         return self.image[pc], (pc + 1) & 0xFFFF
 
     def walk(self, pc: int, stop: int, limit: int = 1 << 20) -> bytes:

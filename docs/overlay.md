@@ -23,11 +23,15 @@ gives each translated span a *virtual PC range* above the file's image end;
 `giten/exe/hook.c` then serves English as a pure function of the PC:
 
 ```
-real PC == span.start     -> serve en[0], PC := virt + 1
-virt <= PC < virt + len   -> serve en[PC - virt], PC := PC + 1
-last English byte served  -> PC := span.end          (back in the Japanese stream)
-anything else             -> the original fetch
+start <= PC < start + head   -> en[PC - start]     head = min(len(en), len(jp)): served IN PLACE
+   last head byte            -> PC := virt (if a tail exists) else span.end
+virt <= PC < virt + tail     -> en[head + PC - virt]  the excess over the Japanese, in virtual space
+   last tail byte            -> PC := span.end
+anything else                -> the original fetch
 ```
+
+Virtual space is spent only on the *excess* of English over Japanese, so
+the whole game fits with room to spare (worst file `m/MS0030` at 50%).
 
 Every PC write in the engine is a plain value store (jump `0x433C40`, call
 frame push/pop `0x43C1F0`/`0x43C260`, new context `0x438DF0`, menu rescanner
@@ -45,8 +49,9 @@ containers of a multi-container file apart.  A buffer whose entry 0 is not at
   that line; it cannot move a branch or crash the interpreter.
 * A span is diverted only when entered at its first byte.  The lines a branch
   lands *inside* (`@noedit`, 115 in the corpus) keep their Japanese tail.
-* Per file, English must fit between the image end and 0x10000
-  (`overlay-space` in `check`).  `m/MS006A` (the BBS) is the tight one.
+* Per file, the English *excess* over the Japanese must fit between the image
+  end and 0x10000 (`overlay-space` in `check`).  Whole game: 0 refused rows,
+  worst file `m/MS0030` at 50%.
 * Still direct edits, still bounded by the old rules: `p/` names (8 bytes),
   the 255-byte capture buffer (`1B`..`1C`), line width.  `et/ID*` tables are
   read by other code paths and are not covered by the hook.

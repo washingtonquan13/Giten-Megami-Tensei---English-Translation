@@ -173,14 +173,15 @@ def main(argv=None) -> int:
             fh.write(blob)
         if not args.quiet:
             for e in entries:
-                used = sum(len(s.data) for s in e.spans)
-                print("  %-16s c%d  %4d spans  %6d bytes  virtual 0x%04X..0x%04X (%d%% of the room)"
-                      % (e.rel, e.ci, len(e.spans), used, e.image_end, e.image_end + used,
+                used = sum(s.tail for s in e.spans)
+                print("  %-16s c%d  %4d spans, %4d with a virtual tail (%6d bytes, 0x%04X..0x%04X, %d%% of the room)"
+                      % (e.rel, e.ci, len(e.spans), len(e.tails), used, e.image_end, e.image_end + used,
                          100 * used // max(1, overlay.PC_LIMIT - e.image_end)))
             for where, msg in findings:
                 print("  REFUSED %s: %s" % (where, msg))
-            print("wrote %s: %d files, %d spans, %d bytes; %d rows refused"
-                  % (out, len(entries), sum(len(e.spans) for e in entries), len(blob), len(findings)))
+            print("wrote %s: %d files, %d spans (%d with a virtual tail), %d bytes; %d rows refused"
+                  % (out, len(entries), sum(len(e.spans) for e in entries),
+                     sum(len(e.tails) for e in entries), len(blob), len(findings)))
         return 1 if findings else 0
     if args.cmd == "where":
         print("game (read-only): %s" % paths.game_root())

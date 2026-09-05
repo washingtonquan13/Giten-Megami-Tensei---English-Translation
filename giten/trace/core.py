@@ -94,7 +94,7 @@ class _Image:
         if e is None:
             return None
         for s in e.spans:
-            # inside the virtual range, or the hand-back to s.end after the
+            # inside the in-place head, inside the virtual tail, or the hand-back to s.end after the
             # last English token -- which must then be what was logged: the
             # last character, or the opcode byte of a trailing inline opcode
             # (a page wait or newline ending the line).  A jump can land on
@@ -105,9 +105,11 @@ class _Image:
                 last, kind = s.data[lt.off], vmops.table().encoding(lt.idx)
             else:
                 last, kind = int.from_bytes(s.data[lt.off:lt.end], "big"), "TEXT"
-            if s.virt < pc <= s.vend:
+            in_head = s.start < pc <= s.start + s.head
+            in_tail = s.tail and s.virt < pc <= s.vend
+            if in_head or in_tail:
                 kind = "TEXT"
-            if s.virt < pc <= s.vend or (pc == s.end and ch == last):
+            if in_head or in_tail or (pc == s.end and ch == last):
                 rec_id = max((i for i, b in self.base.items() if b <= s.start), default=None)
                 r = self.by_id.get(rec_id)
                 if r is None or r.tokens is None:

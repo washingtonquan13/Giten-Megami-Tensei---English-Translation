@@ -43,7 +43,7 @@ typedef int(__attribute__((stdcall)) * CloseHandle_t)(HANDLE);
 #define FP_BYTES 0x400          /* the whole record index */
 
 struct hdr { u32 magic, version, nfiles, reserved; };
-struct dir { u16 fid, pad; u32 fp; u16 image_end, nspans; u32 spans_off; };
+struct dir { u16 fid, pad; u32 fp; u16 image_end, nspans; u32 spans_off; u16 ntails, pad2; u32 tails_off; };
 struct span { u16 start, end, virt, len; u32 data_off; };
 
 static u8 *ovl;                 /* the whole overlay.dat in memory */
@@ -90,7 +90,7 @@ static void load(void)
     }
     pCloseHandle(f);
     h = (struct hdr *)ovl;
-    if (h->magic != 0x564F5447u /* "GTOV" */ || h->version != 1)
+    if (h->magic != 0x564F5447u /* "GTOV" */ || h->version != 3)
         return;
     dirs = (struct dir *)(ovl + sizeof(struct hdr));
     ndirs = h->nfiles;
@@ -131,34 +131,21 @@ static struct dir *lookup(u32 handle, u16 fid)
     return c_dir[k];
 }
 
-/* span whose start == pc, or 0 */
-static struct span *by_start(struct dir *d, u16 pc)
+/* the entry of a sorted, non-overlapping array whose [start, start+len)
+ * holds pc, or 0.  For the spans array the served length is the head,
+ * min(len, end - start); for the tails array start == virt and len == tail. */
+static struct span *in_range(struct span *s, u32 n, u16 pc, int heads)
 {
-    struct span *s = (struct span *)(ovl + d->spans_off);
-    int lo = 0, hi = (int)d->nspans - 1;
+    int lo = 0, hi = (int)n - 1;
     while (lo <= hi) {
         int mid = (lo + hi) >> 1;
-        if (s[mid].start == pc)
-            return &s[mid];
-        if (s[mid].start < pc)
-            lo = mid + 1;
-        else
-            hi = mid - 1;
-    }
-    return 0;
-}
-
-/* span whose virtual range holds pc, or 0 (virt ranges ascend with start) */
-static struct span *by_virt(struct dir *d, u16 pc)
-{
-    struct span *s = (struct span *)(ovl + d->spans_off);
-    int lo = 0, hi = (int)d->nspans - 1;
-    while (lo <= hi) {
-        int mid = (lo + hi) >> 1;
-        u32 v = s[mid].virt;
+        u32 v = s[mid].start;
+        u32 l = s[mid].len;
+        if (heads && l > (u32)(s[mid].end - s[mid].start))
+            l = s[mid].end - s[mid].start;
         if (pc < v)
             hi = mid - 1;
-        else if (pc >= v + s[mid].len)
+        else if (pc >= v + l)
             lo = mid + 1;
         else
             return &s[mid];
@@ -171,6 +158,7 @@ ENTRY u8 hook(u32 handle, u16 *pcp)
     struct dir *d;
     struct span *s;
     u16 pc;
+    u32 k, head;
     if (state == 0)
         load();
     if (state < 0)
@@ -180,18 +168,25 @@ ENTRY u8 hook(u32 handle, u16 *pcp)
         return ORIG_FETCH(handle, pcp);
     pc = *pcp;
     if (pc >= d->image_end) {
-        s = by_virt(d, pc);
+        s = in_range((struct span *)(ovl + d->tails_off), d->ntails, pc, 0);
         if (!s)
             return ORIG_FETCH(handle, pcp);
-        {
-            u32 k = pc - s->virt;
-            *pcp = (k + 1 == s->len) ? s->end : (u16)(pc + 1);
-            return ovl[s->data_off + k];
-        }
+        k = pc - s->start;
+        *pcp = (k + 1 == s->len) ? s->end : (u16)(pc + 1);
+        return ovl[s->data_off + k];
     }
-    s = by_start(d, pc);
+    s = in_range((struct span *)(ovl + d->spans_off), d->nspans, pc, 1);
     if (!s)
         return ORIG_FETCH(handle, pcp);
-    *pcp = (s->len == 1) ? s->end : (u16)(s->virt + 1);
-    return ovl[s->data_off];
+    k = pc - s->start;
+    head = s->end - s->start;
+    if (head > s->len)
+        head = s->len;
+    if (k + 1 == s->len)
+        *pcp = s->end;                  /* the English is done */
+    else if (k + 1 == head)
+        *pcp = s->virt;                 /* head done, the tail is virtual */
+    else
+        *pcp = (u16)(pc + 1);
+    return ovl[s->data_off + k];
 }
