@@ -662,3 +662,67 @@ from its own buffer through a call frame (the trace's `pc=0` events).
 
 
 `1F 01 nn` switches the interpreter to a runtime string buffer (the trace shows the PC at 0x0000 and Shift-JIS characters drawn from it until `00`), then returns. `nn = 00` is the player's name (葛城史人 by default); other indices print numbers (a `６` was observed). It is a real opcode with a real effect and must survive translation. The `00` that follows it in the data is the string terminator, not a fragment end.
+
+---
+
+## 6. The item / equipment / gem database `et/ET0001.BIN` **[VERIFIED by disassembly, 2026-09-05]**
+
+### 6.1 On-disk layout
+
+One container (`u16 hdr` + XOR body, body = 59,636 bytes in the original). The body is:
+
+```
++0x0000  u16 count            = 745
++0x0002  u16 offset[count]    byte offsets into the body, monotonic, offset[0] = 2 + count*2
+         records              variable length, addressed only through the table
+```
+
+A record is a binary header whose shape depends on a **type byte**, followed by
+NUL-terminated cp932 strings: the display name, then the description. 744 of the 745
+records carry text: 8,167 bytes of names and 34,569 bytes of descriptions.
+
+The status-screen stat labels (直感 / 精神力 / 魔力 / 知力 / 加護力 / 強さ / 体力 /
+敏捷性 / 器用さ / 魅力) live in here too, not in the exe.
+
+### 6.2 The read path
+
+| VA | what it does |
+|---|---|
+| `0x004232C0` | init: router(id=1, kind=0x0B) -> `0x401C30` -> image pointer stored at **`ds:0x4800E8`** |
+| `0x00401C30` | reads **exactly one** container: one `u16` header, `0x4044C0` allocates, `0x401BA0` reads + decrypts. It does **not** walk the chain. |
+| `0x00422D00` | `[0x4800E8]` -> `0x404680` -> body base pointer |
+| `0x00422D10` | record locator. Clamps the index against `word [base]`, then **`0x00422D2B: mov dx, word ptr [eax + ecx*2 + 2]`** — the only read of the offset table — then `0x00422D32: call 0x40B840` |
+| `0x0040B840` | `return base + (offset & 0xFFFF)`. **17 callers**, so it must not be patched in place. |
+| `0x00422D40` | decodes one record into a 0x46-byte scratch struct (the shop/status code passes `0x4911C0`); `switch (type-1)` through the jump table at `0x00423180`, 0x13 cases; each case calls a small field-copier first (`0x4231D0` and neighbours) |
+
+### 6.3 Why the file is capped at 65,535 bytes, and how to lift it
+
+Three independent limits, all of them small patches:
+
+1. **Container size.** `0x401C30` reads a single `u16` length. *Fix:* repoint only the
+   `call 0x401C30` at `0x004232D3` to a new loader that walks the whole chain and
+   concatenates, reusing `0x401B20` / `0x4044C0` / `0x401BA0`. The file stays a legal
+   container chain, so `container.py` needs no change.
+2. **`u16` offsets in the file.** *Fix:* widen the table to `u32` and patch
+   `0x00422D2B` `66 8B 54 48 02` (5 bytes) to `mov edx, dword ptr [eax + ecx*4 + 2]`
+   = `8B 54 88 02` + one `nop` — exactly 5 bytes, no relocation needed.
+3. **The `& 0xFFFF` in the resolver.** *Fix:* repoint the `call 0x40B840` at
+   `0x00422D32` to a private six-byte resolver in the appended section
+   (`mov eax,[esp+8]; add eax,[esp+4]; ret`), leaving the other 16 callers alone.
+
+With all three, the database can grow to whatever the offsets allow, which is enough
+for English names *and* descriptions (the Japanese is 42,736 bytes; English needs
+roughly +21,000).
+
+### 6.4 Other menu strings
+
+| element | where |
+|---|---|
+| system menu (オートマッピング / オートナビゲーション / ゲーム中断) | `.rdata` table at `0x00468310`: `u32 count=3`, then 6-byte entries `[u16 flag][u32 ptr]`; a second set of 2 follows at `+0x20` |
+| equip labels (技能 命中 攻撃 回避 防御 弾数) | `u32` pointer array at `0x0046A148`, referenced from `0x00442A06` / `0x00442A54` |
+| `所持アイテム %1d/8` | `0x0046A540`, pushed at `0x004448E4` |
+| `合計 %10ld` | `0x00468DAC`, `0x00468DCC`, `0x00468DE4` |
+| location indicator (`初台ｼｪﾙﾀｰ`) | the `m/M####.BIN` map files (a different family from `m/MS####`), stored as **half-width katakana** |
+
+Both string tables are pointer arrays, so re-pointing them at an appended section is
+the same technique as `giten/exe/names.py` — no push-immediate rewriting needed.
