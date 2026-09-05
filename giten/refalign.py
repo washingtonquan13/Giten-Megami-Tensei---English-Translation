@@ -19,10 +19,11 @@ This pass aligns per record on what v0.05 could not have changed:
    with wherever both sides already agree, so a dropped or added speaker
    turn does not shift every line after it;
 3. between two names, **body spans** pair positionally when the counts agree;
-   when Japanese has more (a name print splits the line) the whole v0.05 text
-   goes into the first Japanese span and the rest get a single space, with
-   :data:`MERGED` in the note so a translator re-splits it around the name;
-   when v0.05 has more, its extra lines are appended to the last pair.
+   when Japanese has more (the engine prints a name inside the line and v0.05
+   hard-coded it) the rows are left **untranslated**: a draft that cannot be
+   split back around the print is worse than an empty row (decision
+   2026-09-05); when v0.05 has more, its extra lines are appended to the last
+   pair and the row is marked :data:`JOINED`.
 
 Only rows without a reference are touched, and only with ``ref_src = v005``.
 Everything this pass writes is a *draft candidate*; it is never ``en``.
@@ -57,7 +58,8 @@ def v005_grammar():
         vmops._TABLE = real
 
 MARK = "@refalign"
-MERGED = "@refalign-merged"
+MERGED = "@refalign-merged"       # historical: no longer written, cleared on sight
+JOINED = "@refalign-joined"       # v0.05 split one Japanese line into several
 NL = "\\n"                    # the rendered newline token, as the tables carry it
 
 #: tags of spans whose position v0.05 could not change: menu options and the
@@ -100,11 +102,10 @@ def _pair_bodies(jb, eb, out):
         for j, e in zip(jb, eb):
             out[j[0]] = (e[1], False)
     elif len(jb) > len(eb):
-        if not eb:
-            return
-        out[jb[0][0]] = (NL.join(e[1] for e in eb), True)
-        for j in jb[1:]:
-            out[j[0]] = (" ", True)
+        # the engine prints a name inside this line and v0.05 hard-coded it:
+        # its English cannot be split back around the print, so these rows are
+        # left untranslated for us to write (decision 2026-09-05)
+        return
     else:
         for k, j in enumerate(jb):
             if k < len(jb) - 1:
@@ -208,7 +209,7 @@ def align_record(a: "script.Rec", b: "script.Rec", speakers=None) -> "dict[int, 
 
 def run(v005_root: str, text_dir: "str | None" = None, quiet: bool = False) -> dict:
     text_dir = text_dir or paths.TEXT_DIR
-    st = {"filled": 0, "merged": 0, "files": 0, "replaced": 0}
+    st = {"filled": 0, "merged": 0, "files": 0, "replaced": 0, "dropped": 0}
     for path in tables.iter_tables(text_dir):
         rows = tables.read(path)
         if not rows or not rows[0].file.startswith("m/"):
@@ -234,6 +235,13 @@ def run(v005_root: str, text_dir: "str | None" = None, quiet: bool = False) -> d
                  and bmap[(rec.ci, rec.id)].tokens is not None]
         speakers = learn_speakers([run for x, y in pairs for run in text_runs(x, y)[0]])
         changed = False
+        for r in rows:                             # earlier merged placements are dropped
+            if MERGED in r.note and r.ref_src == "v005" and not r.en:
+                r.ref_en, r.ref_src = "", ""
+                for m in (MERGED, MARK):
+                    r.note = r.note.replace(" " + m, "").replace(m, "").strip()
+                st["dropped"] += 1
+                changed = True
         for rec, other in pairs:
             for idx, (text, merged) in align_record(rec, other, speakers).items():
                 row = by_key.get((rec.key, idx))
@@ -242,7 +250,8 @@ def run(v005_root: str, text_dir: "str | None" = None, quiet: bool = False) -> d
                 if row.ref_en and row.ref_src == "ours":
                     continue                       # our own translation is never displaced
                 if MARK in row.note:
-                    row.note = row.note.replace(" " + MERGED, "").replace(" " + MARK, "").replace(MERGED, "").replace(MARK, "").strip()
+                    for m in (MERGED, JOINED, MARK):
+                        row.note = row.note.replace(" " + m, "").replace(m, "").strip()
                 if text.strip() == "" and not merged:
                     continue
                 if not is_english(text) and text.strip():
@@ -252,7 +261,7 @@ def run(v005_root: str, text_dir: "str | None" = None, quiet: bool = False) -> d
                 if row.ref_en and row.ref_en != text:
                     st["replaced"] += 1            # the tag-sequence carry had shifted this one
                 row.ref_en, row.ref_src = text, "v005"
-                row.note = (row.note + " " + MARK + (" " + MERGED if merged else "")).strip()
+                row.note = (row.note + " " + MARK + (" " + JOINED if merged else "")).strip()
                 st["filled"] += 1
                 st["merged"] += merged
                 changed = True
@@ -261,5 +270,6 @@ def run(v005_root: str, text_dir: "str | None" = None, quiet: bool = False) -> d
             tables.write(path, rows)
     if not quiet:
         print("refalign: placed %d v0.05 references in %d files (%d replaced a shifted carry, "
-              "%d merged around a name print)" % (st["filled"], st["files"], st["replaced"], st["merged"]))
+              "%d joined v0.05 splits, %d merged-around-a-name-print rows dropped)"
+              % (st["filled"], st["files"], st["replaced"], st["merged"], st["dropped"]))
     return st
