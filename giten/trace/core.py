@@ -94,7 +94,20 @@ class _Image:
         if e is None:
             return None
         for s in e.spans:
-            if s.virt < pc <= s.vend or (pc == s.end and ch < 0x100):
+            # inside the virtual range, or the hand-back to s.end after the
+            # last English token -- which must then be what was logged: the
+            # last character, or the opcode byte of a trailing inline opcode
+            # (a page wait or newline ending the line).  A jump can land on
+            # s.end too, and its ch is a different opcode, so it is not taken.
+            toks = vmops.tokenize(s.data)
+            lt = toks[-1]
+            if lt.kind == "op":
+                last, kind = s.data[lt.off], vmops.table().encoding(lt.idx)
+            else:
+                last, kind = int.from_bytes(s.data[lt.off:lt.end], "big"), "TEXT"
+            if s.virt < pc <= s.vend:
+                kind = "TEXT"
+            if s.virt < pc <= s.vend or (pc == s.end and ch == last):
                 rec_id = max((i for i, b in self.base.items() if b <= s.start), default=None)
                 r = self.by_id.get(rec_id)
                 if r is None or r.tokens is None:
@@ -105,7 +118,7 @@ class _Image:
                     return None
                 anchor = sum(1 for u in r.tokens[:k] if u.kind == "op" and u.idx not in codec.INLINE_OPS)
                 span = next((sp.idx for sp in r.spans if sp.tok_lo <= k < sp.tok_hi), None)
-                return span, anchor, "TEXT", True
+                return span, anchor, kind, True
         return None
 
     def locate(self, rec_id: int, pc: int, ch: int, base: "int | None" = None):
