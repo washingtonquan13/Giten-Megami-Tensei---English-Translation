@@ -24,3 +24,8 @@ Every re-adopted module carries an entry here.  An entry is closed only by evide
 ## exe
 - Debug-menu arming is unverified (the table at `0x468318` is not four contiguous pointers).
 - `HKCU\Software\ASCII\GITEN_DDS\DevConfig` must exist at startup; written by `Config.exe`.
+
+## overlay (runtime translation)
+- Spans are diverted only when entered at their first byte; a branch landing inside a translated span shows the Japanese tail (same 115 lines `@noedit` blocks).
+- `et/ID*` tables are read by other code paths, not the interpreter fetch; the hook does not cover them.
+- Not yet play-tested as of 2026-09-04 evening; `docs/overlay.md` has the test setup.
