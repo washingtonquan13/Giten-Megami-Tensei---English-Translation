@@ -3,114 +3,114 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS00D1.BIN	0:00	0	16	1FB2	フォント系					menu option, declared width 20 columns
-m/MS00D1.BIN	0:00	1	28	1FB2	テーブル系					menu option, declared width 20 columns
-m/MS00D1.BIN	0:00	2	40	1FB2	？？？					menu option, declared width 20 columns
-m/MS00D1.BIN	0:00	3	48	1FB2	空間座標					menu option, declared width 20 columns
-m/MS00D1.BIN	0:00	4	58	1FB2	終了					menu option, declared width 20 columns
-m/MS00D1.BIN	0:01	0	16	1FB2	敵フォント					menu option, declared width 20 columns
-m/MS00D1.BIN	0:01	1	28	1FB2	ＮＰＣフォント					menu option, declared width 20 columns
-m/MS00D1.BIN	0:01	2	44	1FB2	背景フォント					menu option, declared width 20 columns
-m/MS00D1.BIN	0:01	3	58	1FB2	全画面フォント					menu option, declared width 20 columns
-m/MS00D1.BIN	0:01	4	74	1FB2	戻る					menu option, declared width 20 columns
-m/MS00D1.BIN	0:02	0	2	1FBA	敵フォント表示\n					
-m/MS00D1.BIN	0:02	1	58	1FB2	番号入力					menu option, declared width 20 columns
-m/MS00D1.BIN	0:02	2	68	1FB2	次フォント					menu option, declared width 20 columns
-m/MS00D1.BIN	0:02	3	80	1FB2	前フォント					menu option, declared width 20 columns
-m/MS00D1.BIN	0:02	4	92	1FB2	次距離					menu option, declared width 20 columns
-m/MS00D1.BIN	0:02	5	100	1FB2	次パレット					menu option, declared width 20 columns
-m/MS00D1.BIN	0:02	6	112	1FB2	ウィンドウ消去					menu option, declared width 20 columns
-m/MS00D1.BIN	0:02	7	128	1FB2	戻る					menu option, declared width 20 columns
-m/MS00D1.BIN	0:02	8	174	18	表示{08:8E}フォント番号を入力{08:4A}{08:6E}\n	表示{08:8E}フォント番号を入力{08:4A}{08:6E}\n				reads: 表示するフォント番号を入力してください\n
+m/MS00D1.BIN	0:00	0	16	1FB2	フォント系	Fonts			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:00	1	28	1FB2	テーブル系	Tables			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:00	2	40	1FB2	？？？	???			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:00	3	48	1FB2	空間座標	Spatial coords			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:00	4	58	1FB2	終了	Exit			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:01	0	16	1FB2	敵フォント	Enemy font			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:01	1	28	1FB2	ＮＰＣフォント	NPC font			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:01	2	44	1FB2	背景フォント	Background font			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:01	3	58	1FB2	全画面フォント	Fullscreen font			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:01	4	74	1FB2	戻る	Back			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:02	0	2	1FBA	敵フォント表示\n	Enemy font display\n			draft	@ours-2026-09-05
+m/MS00D1.BIN	0:02	1	58	1FB2	番号入力	Enter number			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:02	2	68	1FB2	次フォント	Next font			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:02	3	80	1FB2	前フォント	Prev font			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:02	4	92	1FB2	次距離	Next distance			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:02	5	100	1FB2	次パレット	Next palette			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:02	6	112	1FB2	ウィンドウ消去	Clear window			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:02	7	128	1FB2	戻る	Back			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:02	8	174	18	表示{08:8E}フォント番号を入力{08:4A}{08:6E}\n	Enter the font number to display\n			draft	reads: 表示するフォント番号を入力してください\n @ours-2026-09-05
 m/MS00D1.BIN	0:02	9	255	1F82	ﾅ小値{08:55}\n	ﾅ小値{08:55}\n				reads: ﾅ小値です\n; reads: ペンタグランマZ
-m/MS00D1.BIN	0:02	10	349	1FFB	フォント番号：	フォント番号：				reads: そんなことu
-m/MS00D1.BIN	0:02	11	373	1F02	距離　（ＦＣ	距離　（ＦＣ				reads: 切り{=8B}{=00}飛び道具{=9F}{=00}
+m/MS00D1.BIN	0:02	10	349	1FFB	フォント番号：	Font no.:			draft	reads: そんなことu @ours-2026-09-05
+m/MS00D1.BIN	0:02	11	373	1F02	距離　（ＦＣ	Distance  (FC			draft	reads: 切り{=8B}{=00}飛び道具{=9F}{=00} @ours-2026-09-05
 m/MS00D1.BIN	0:02	12	404	00	{02:1F}N{03:00}{01:00} {05:0A}）　パレット番号：	{02:1F}N{03:00}{01:00} {05:0A}）　パレット番号：				reads: N飛び道具早坂達也 切り切り切り切り切り切り）　パレット番号：
 m/MS00D1.BIN	0:02	13	450	1F4F	{01:FF}	{01:FF}				reads: ; reads: 表示するフォント番号を入力してください\n
-m/MS00D1.BIN	0:03	0	2	1FBA	ＮＰＣフォント表示\n					
-m/MS00D1.BIN	0:03	1	62	1FB2	番号入力					menu option, declared width 20 columns
-m/MS00D1.BIN	0:03	2	72	1FB2	次フォント					menu option, declared width 20 columns
-m/MS00D1.BIN	0:03	3	84	1FB2	前フォント					menu option, declared width 20 columns
-m/MS00D1.BIN	0:03	4	96	1FB2	次ＣＧＥＮ					menu option, declared width 20 columns
-m/MS00D1.BIN	0:03	5	108	1FB2	次パレット					menu option, declared width 20 columns
-m/MS00D1.BIN	0:03	6	120	1FB2	ウィンドウ消去					menu option, declared width 20 columns
-m/MS00D1.BIN	0:03	7	136	1FB2	戻る					menu option, declared width 20 columns
-m/MS00D1.BIN	0:03	8	182	18	表示{08:8E}フォント番号を入力{08:4A}{08:6E}\n	表示{08:8E}フォント番号を入力{08:4A}{08:6E}\n				reads: 表示するフォント番号を入力してください\n
+m/MS00D1.BIN	0:03	0	2	1FBA	ＮＰＣフォント表示\n	NPC font display\n			draft	@ours-2026-09-05
+m/MS00D1.BIN	0:03	1	62	1FB2	番号入力	Enter number			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:03	2	72	1FB2	次フォント	Next font			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:03	3	84	1FB2	前フォント	Prev font			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:03	4	96	1FB2	次ＣＧＥＮ	Next CGEN			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:03	5	108	1FB2	次パレット	Next palette			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:03	6	120	1FB2	ウィンドウ消去	Clear window			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:03	7	136	1FB2	戻る	Back			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:03	8	182	18	表示{08:8E}フォント番号を入力{08:4A}{08:6E}\n	Enter the font number to display\n			draft	reads: 表示するフォント番号を入力してください\n @ours-2026-09-05
 m/MS00D1.BIN	0:03	9	263	1F82	ﾅ小値{08:55}\n	ﾅ小値{08:55}\n				reads: ﾅ小値です\n; reads: ペンタグランマZ
-m/MS00D1.BIN	0:03	10	355	1FFB	フォント番号：	フォント番号：				reads: そんなことu
-m/MS00D1.BIN	0:03	11	373	1F02	（ＦＣ	（ＦＣ				reads: 切り{=89}{=00}飛び道具{=9D}{=00}{=9E}{=00}
+m/MS00D1.BIN	0:03	10	355	1FFB	フォント番号：	Font no.:			draft	reads: そんなことu @ours-2026-09-05
+m/MS00D1.BIN	0:03	11	373	1F02	（ＦＣ	(FC			draft	reads: 切り{=89}{=00}飛び道具{=9D}{=00}{=9E}{=00} @ours-2026-09-05
 m/MS00D1.BIN	0:03	12	388	1F44	{05:0A}）　ＣＧＥＮ番号：					reads: 切り切り切り切り切り切り）　ＣＧＥＮ番号：; reads: 表示するフォント番号を入力してください\n
-m/MS00D1.BIN	0:03	13	412	1F02	　パレット番号：					reads: ﾅ小値です\n
-m/MS00D1.BIN	0:04	0	2	1FBA	背景フォント表示\n					
-m/MS00D1.BIN	0:04	1	60	1FB2	番号入力					menu option, declared width 20 columns
-m/MS00D1.BIN	0:04	2	70	1FB2	次フォント					menu option, declared width 20 columns
-m/MS00D1.BIN	0:04	3	82	1FB2	前フォント					menu option, declared width 20 columns
-m/MS00D1.BIN	0:04	4	94	1FB2	次ＣＧＥＮ					menu option, declared width 20 columns
-m/MS00D1.BIN	0:04	5	106	1FB2	次パレット					menu option, declared width 20 columns
-m/MS00D1.BIN	0:04	6	118	1FB2	ウィンドウ消去					menu option, declared width 20 columns
-m/MS00D1.BIN	0:04	7	134	1FB2	戻る					menu option, declared width 20 columns
-m/MS00D1.BIN	0:04	8	180	18	表示{08:8E}フォント番号を入力{08:4A}{08:6E}\n	表示{08:8E}フォント番号を入力{08:4A}{08:6E}\n				reads: 表示するフォント番号を入力してください\n
+m/MS00D1.BIN	0:03	13	412	1F02	　パレット番号：	  Palette no.:			draft	reads: ﾅ小値です\n @ours-2026-09-05
+m/MS00D1.BIN	0:04	0	2	1FBA	背景フォント表示\n	Background font display\n			draft	@ours-2026-09-05
+m/MS00D1.BIN	0:04	1	60	1FB2	番号入力	Enter number			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:04	2	70	1FB2	次フォント	Next font			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:04	3	82	1FB2	前フォント	Prev font			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:04	4	94	1FB2	次ＣＧＥＮ	Next CGEN			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:04	5	106	1FB2	次パレット	Next palette			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:04	6	118	1FB2	ウィンドウ消去	Clear window			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:04	7	134	1FB2	戻る	Back			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:04	8	180	18	表示{08:8E}フォント番号を入力{08:4A}{08:6E}\n	Enter the font number to display\n			draft	reads: 表示するフォント番号を入力してください\n @ours-2026-09-05
 m/MS00D1.BIN	0:04	9	261	1F82	ﾅ小値{08:55}\n	ﾅ小値{08:55}\n				reads: ﾅ小値です\n; reads: ペンタグランマZ
-m/MS00D1.BIN	0:04	10	339	1FFB	フォント番号：	フォント番号：				reads: そんなことu
-m/MS00D1.BIN	0:04	11	357	1F02	（ＦＣ	（ＦＣ				reads: 切り{=89}{=00}飛び道具{=9D}{=00}{=9E}{=00}
+m/MS00D1.BIN	0:04	10	339	1FFB	フォント番号：	Font no.:			draft	reads: そんなことu @ours-2026-09-05
+m/MS00D1.BIN	0:04	11	357	1F02	（ＦＣ	(FC			draft	reads: 切り{=89}{=00}飛び道具{=9D}{=00}{=9E}{=00} @ours-2026-09-05
 m/MS00D1.BIN	0:04	12	372	1F44	{05:0A}）　ＣＧＥＮ番号：					reads: 切り切り切り切り切り切り）　ＣＧＥＮ番号：; reads: 表示するフォント番号を入力してください\n
-m/MS00D1.BIN	0:04	13	396	1F02	　パレット番号：					reads: ﾅ小値です\n
-m/MS00D1.BIN	0:05	0	32	1FFB	終了{08:8E}場合は絵を右クリック{08:4A}{08:6E}\n					reads: 終了する場合は絵を右クリックしてください\n
-m/MS00D1.BIN	0:05	1	149	1FC3	ウィンドウ内画面座標　Ｘ＝					
-m/MS00D1.BIN	0:05	2	179	1F02	、Ｙ＝					
+m/MS00D1.BIN	0:04	13	396	1F02	　パレット番号：	  Palette no.:			draft	reads: ﾅ小値です\n @ours-2026-09-05
+m/MS00D1.BIN	0:05	0	32	1FFB	終了{08:8E}場合は絵を右クリック{08:4A}{08:6E}\n	Right-click the picture to exit\n			draft	reads: 終了する場合は絵を右クリックしてください\n @ours-2026-09-05
+m/MS00D1.BIN	0:05	1	149	1FC3	ウィンドウ内画面座標　Ｘ＝	Screen coords in window  X=			draft	@ours-2026-09-05
+m/MS00D1.BIN	0:05	2	179	1F02	、Ｙ＝	, Y=			draft	@ours-2026-09-05
 m/MS00D1.BIN	0:05	3	212	1F4F	{01:DB}{02:1F}M{03:01}{01:19}{01:1F}{=ED}{=03}{01:1F}N{03:01}	{01:DB}{02:1F}M{03:01}{01:19}{01:1F}{=ED}{=03}{01:1F}N{03:01}				reads: Mそんなことわれわれおにいちゃん{=ED}{=03}おにいちゃんNそんなこと
 m/MS00D1.BIN	0:05	4	231	00	{=E9}{=1F}O{03:00}{01:40}{01:1F}L{03:00}{01:DB}{02:1F}M{03:00}{01:19}{01:8B}ﾔ座標　Ｘ＝					reads: {=E9}{=1F}O飛び道具おにいちゃんL飛び道具M飛び道具われわれﾔ座標　Ｘ＝
-m/MS00D1.BIN	0:05	5	271	1F02	、Ｙ＝					
-m/MS00D1.BIN	0:05	6	281	1F02	、Ｚ＝					
-m/MS00D1.BIN	0:06	0	16	1FB2	{08:0D}テーブル					reads: 魔法テーブル; menu option, declared width 20 columns
-m/MS00D1.BIN	0:06	1	28	1FB2	{02:04}	{02:04}				reads: アイテム; menu option, declared width 20 columns
-m/MS00D1.BIN	0:06	2	32	1FB2	敵整合性					menu option, declared width 20 columns
-m/MS00D1.BIN	0:06	3	42	1FB2	金額入手					menu option, declared width 20 columns
-m/MS00D1.BIN	0:06	4	52	1FB2	戻る					menu option, declared width 20 columns
+m/MS00D1.BIN	0:05	5	271	1F02	、Ｙ＝	, Y=			draft	@ours-2026-09-05
+m/MS00D1.BIN	0:05	6	281	1F02	、Ｚ＝	, Z=			draft	@ours-2026-09-05
+m/MS00D1.BIN	0:06	0	16	1FB2	{08:0D}テーブル	Magic table			draft	reads: 魔法テーブル; menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:06	1	28	1FB2	{02:04}	Items			draft	reads: アイテム; menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:06	2	32	1FB2	敵整合性	Enemy consistency			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:06	3	42	1FB2	金額入手	Get money			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:06	4	52	1FB2	戻る	Back			draft	menu option, declared width 20 columns @ours-2026-09-05
 m/MS00D1.BIN	0:07	0	0	UNTILED	ﾁ / ﾐ / ｱ / ｲ表示のみ / ｲ表示と修得 / ｷ / ﾑ / ﾏ /  / W / ｦ /  / ｧ / C / ･ / ｺ / デバッグ（修得） / ｩ / ｬ / X / X / ｪ / ﾁ / ﾐ / ｱ / ｲ番号入力 / ｲ次 / ｲ前 / ｲ終了 / ｲ修得 / ｷ / ﾑ / ､ /  / ｲ /  / ｺ / デバッグ / ｩ / ｬ / X / X / ｪ / ﾁ / ﾐ / ｱ / ｲ番号入力 / ｲ次 / ｲ前 / ｲ終了 / ｷ / ﾑ / d /  / ｼ / Y / 番号を入力 / J / n / ﾘ / 値は / 迄 / U / ｹ / X / Y / 最大値 / U / E / X / * / 最小値 / U / X / D / ｫ / ＩＤ： / ﾕ / F / ? / X / ｫ / X / ｫ / J / X / ﾈ / ｫ / X / ｫ / X / ﾓ / ｫ / X / ﾋ / ｫ / X / K / ｫ / X / ｫ / X / , / ｫ / X / ﾃ / ｫ / X / ｦ / ｫ / X / ｫ / X / ｫ / 特殊コード： / B / E / H / I / J / O / V / ] / d / k / r / s / z / } /  / 通常 / 通常 / 4 / 能力操作 / ドレイン / ダメージ / ドレイン / ドレイン / カウンター / 反 / 4 / 反能力操作 / 移動 / 召還 / 変身 / 特殊 / 計算式： / ？？ / 系 / 格闘系 / 射撃系 / 加護系 / 修得： / z / { / ~ /  / ｣ / ｨ / ｫ / ｬ / ｭ / ｰ / ｳ / ｴ / ｵ / ｸ / ｻ / ｾ / ｿ / ﾀ / ﾃ / ﾄ / ﾅ / ？？ / 無し / アギ系 / ザン系 / ダムド系 / ジオ系 / ブフ系 / ハマ系 / メギド系 / 治癒系 / 精神系 / 繰魔系 / 禁為系 / 幻術系 / 黒魔術系 / 操力系 / 4系 / 系 / 呪い系 / 戦士系 / 獣系 / 鳥系 / 大獣系 / 火炎系 / 氷結系 / 水系 / 毒系 / 舞踏系 / 歌系 / 針系 / 格闘系 / 体数： / J / P /  / 無作為 / 全員 / 体に / P / 回づつ / 使用状況： / F /  / ３ / － / F /  / ２ / － / F /  / 戦 / － / F /  / 特 / － / レベル： / 消費： /  / P /  / 全 / 全 / 範囲： / " / # / & / ) / * / + / , / - / ？？ / 無し / エリア / 未定義 / 方向 / 前列 / 後列 / 貫通 / 全体 / ﾘｽﾄｱｯﾌﾟ対象： / ｰ / > / ? / H / K / J / Q / T / _ / h / q / x / { / ) / 無し / ﾊﾟｰﾃｨｰ / B１体 / 敵１体 / c / ﾊﾟｰﾃｨｰ全体 / 敵全体 / ﾊﾟｰﾃｨｰと敵全体 / ＣＯ / B１体 / 全体 / B１体 / ＣＯ / 全体 / 全体 / ﾊﾟｰﾃｨｰの / B１体 / ﾊﾟｰﾃｨｰの / 全体 / の / B１体 / の / 全体 / 相性： / ( / ' / & / % / $ / # / " / ! / ？ / 剣 / 物 / 火 / 氷 / 風 / 雷 / 聖 / 心 / 禁 / 魔 / 治癒： /  / ｡ / ｢ / ｣ / ､ / ･ / ｦ / ｧ / ｪ / ｭ / ｮ / ｯ / ｲ / ｳ / ｴ / ! / ｵ / " / ｶ / / /  / ｳ / ？ / 無し / 死 / 瀕死 / 昏倒 / 石化 / 麻痺 / 凍結 / 憑依 / + / 呪い / 気絶 / 窒息 / 緊縛 / 眠り / 恐慌 / 毒 / 幻覚 / 魅了 / 混乱 / 舞踏 / 感電 / 氷結 / 炎上 / 盲目 / 封魔 / 居眠り / 狂戦士 / ハイ / 幸せ / ほろ酔 / 泥酔 / ｽﾗｲﾑ / 猛毒 / 吸血 / 外傷 / 特殊( / ) / 追加効果： /  / ｡ / ｢ / ｣ / ､ / ･ / ｦ / ｧ / ｪ / ｭ / ｮ / ｯ / ｲ / ｳ / ｴ / ! / ｵ / " / ｶ / / /  / ｳ / ？ / 無し / 死 / 瀕死 / 昏倒 / 石化 / 麻痺 / 凍結 / 憑依 / + / 呪い / 気絶 / 窒息 / 緊縛 / 眠り / 恐慌 / 毒 / 幻覚 / 魅了 / 混乱 / 舞踏 / 感電 / 氷結 / 炎上 / 盲目 / 封魔 / 居眠り / 狂戦士 / ハイ / 幸せ / ほろ酔 / 泥酔 / ｽﾗｲﾑ / 猛毒 / 吸血 / 外傷 / 特殊( / ) / 距離： / T / P / － / F					@noedit; @untiled; record does not tile (switch entry at 0xB60 has kind 10 (not 0 or 1)); read-only, copied verbatim; record reaches an engine no-op opcode; verify in game; menu option, declared width 20 columns @rebase-new
-m/MS00D1.BIN	0:08	0	2	1FBA	全画面フォント表示\n					
-m/MS00D1.BIN	0:08	1	62	1FB2	番号入力					menu option, declared width 20 columns
-m/MS00D1.BIN	0:08	2	72	1FB2	次フォント					menu option, declared width 20 columns
-m/MS00D1.BIN	0:08	3	84	1FB2	前フォント					menu option, declared width 20 columns
-m/MS00D1.BIN	0:08	4	96	1FB2	次ＣＧＥＮ					menu option, declared width 20 columns
-m/MS00D1.BIN	0:08	5	108	1FB2	次パレット					menu option, declared width 20 columns
-m/MS00D1.BIN	0:08	6	120	1FB2	ウィンドウ消去					menu option, declared width 20 columns
-m/MS00D1.BIN	0:08	7	136	1FB2	戻る					menu option, declared width 20 columns
-m/MS00D1.BIN	0:08	8	186	1E07	表示{08:8E}フォント番号を入力{08:4A}{08:6E}\n	表示{08:8E}フォント番号を入力{08:4A}{08:6E}\n				reads: 表示するフォント番号を入力してください\n
-m/MS00D1.BIN	0:08	9	272	1F82	最小値{08:55}\n<wait>	最小値{08:55}\n<wait>				reads: 最小値です\n<wait>; reads: ペンタグランマ`
-m/MS00D1.BIN	0:0B	0	75	1FB2	再度実行					menu option, declared width 20 columns
-m/MS00D1.BIN	0:0B	1	85	1FB2	終了					menu option, declared width 20 columns
-m/MS00D1.BIN	0:0C	0	35	1B	表示文字	表示文字				reads: バエル
+m/MS00D1.BIN	0:08	0	2	1FBA	全画面フォント表示\n	Fullscreen font display\n			draft	@ours-2026-09-05
+m/MS00D1.BIN	0:08	1	62	1FB2	番号入力	Enter number			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:08	2	72	1FB2	次フォント	Next font			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:08	3	84	1FB2	前フォント	Prev font			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:08	4	96	1FB2	次ＣＧＥＮ	Next CGEN			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:08	5	108	1FB2	次パレット	Next palette			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:08	6	120	1FB2	ウィンドウ消去	Clear window			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:08	7	136	1FB2	戻る	Back			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:08	8	186	1E07	表示{08:8E}フォント番号を入力{08:4A}{08:6E}\n	Enter the font number to display\n			draft	reads: 表示するフォント番号を入力してください\n @ours-2026-09-05
+m/MS00D1.BIN	0:08	9	272	1F82	最小値{08:55}\n<wait>	Minimum value\n<wait>			draft	reads: 最小値です\n<wait>; reads: ペンタグランマ` @ours-2026-09-05
+m/MS00D1.BIN	0:0B	0	75	1FB2	再度実行	Run again			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:0B	1	85	1FB2	終了	Exit			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:0C	0	35	1B	表示文字	Display text			draft	reads: バエル @ours-2026-09-05
 m/MS00D1.BIN	0:0D	0	0	DATA	呼ばれま{08:4B}\n					reads: 呼ばれました\n
 m/MS00D1.BIN	0:0D	1	36	1F7F	ﾑ\n次の呼び出し{08:71}					reads: ﾑ\n次の呼び出しまで
 m/MS00D1.BIN	0:0D	2	70	1EC4	{03:01}	{03:01}				reads: そんなこと
 m/MS00D1.BIN	0:0D	3	76	18	{03:01}	{03:01}				reads: そんなこと
 m/MS00D1.BIN	0:0D	4	82	18	{08:00}{03:02}	{08:00}{03:02}				reads: 早坂を攻撃し
-m/MS00D1.BIN	0:0D	5	90	1F02	日					
-m/MS00D1.BIN	0:0D	6	102	1F7F	時間					
-m/MS00D1.BIN	0:0D	7	110	1F02	分{08:55}<wait>					reads: 分です<wait>
-m/MS00D1.BIN	0:0E	0	2	1FBA	敵{08:0A}整合性デバッグ\n					reads: 敵データ整合性デバッグ\n
-m/MS00D1.BIN	0:0E	1	90	1FB2	番号入力					menu option, declared width 20 columns
-m/MS00D1.BIN	0:0E	2	100	1FB2	次					menu option, declared width 20 columns
-m/MS00D1.BIN	0:0E	3	104	1FB2	前					menu option, declared width 20 columns
-m/MS00D1.BIN	0:0E	4	108	1FB2	{08:0E}	{08:0E}				reads: 仲魔; menu option, declared width 20 columns
-m/MS00D1.BIN	0:0E	5	112	1FB2	終了					menu option, declared width 20 columns
-m/MS00D1.BIN	0:0E	6	163	1E07	{08:0B}番号を入力{08:4A}{08:6E}	{08:0B}番号を入力{08:4A}{08:6E}				reads: 悪魔番号を入力してください
-m/MS00D1.BIN	0:0E	7	208	1E07	値は					reads: ペンタグランマﾁ
-m/MS00D1.BIN	0:0E	8	216	1F02	未満迄{08:55}\n<wait>	未満迄{08:55}\n<wait>				reads: 未満迄です\n<wait>; reads: そんなこと
-m/MS00D1.BIN	0:0E	9	246	1E07	値は３２以上{08:55}\n<wait>	値は３２以上{08:55}\n<wait>				reads: 値は３２以上です\n<wait>
-m/MS00D1.BIN	0:0E	10	300	1E07	最大値{08:55}\n<wait>					reads: 最大値です\n<wait>; reads: 悪魔番号を入力してください
-m/MS00D1.BIN	0:0E	11	347	1E07	最小値{08:55}\n<wait>					reads: 最小値です\n<wait>
-m/MS00D1.BIN	0:0E	12	380	1FBA	ＩＤ：					reads: 未満迄です\n<wait>
+m/MS00D1.BIN	0:0D	5	90	1F02	日	 days			draft	@ours-2026-09-05
+m/MS00D1.BIN	0:0D	6	102	1F7F	時間	 hours			draft	@ours-2026-09-05
+m/MS00D1.BIN	0:0D	7	110	1F02	分{08:55}<wait>	 minutes<wait>			draft	reads: 分です<wait> @ours-2026-09-05
+m/MS00D1.BIN	0:0E	0	2	1FBA	敵{08:0A}整合性デバッグ\n	Enemy data consistency debug\n			draft	reads: 敵データ整合性デバッグ\n @ours-2026-09-05
+m/MS00D1.BIN	0:0E	1	90	1FB2	番号入力	Enter number			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:0E	2	100	1FB2	次	Next			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:0E	3	104	1FB2	前	Prev			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:0E	4	108	1FB2	{08:0E}	Allies			draft	reads: 仲魔; menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:0E	5	112	1FB2	終了	Exit			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:0E	6	163	1E07	{08:0B}番号を入力{08:4A}{08:6E}	Enter the demon number			draft	reads: 悪魔番号を入力してください @ours-2026-09-05
+m/MS00D1.BIN	0:0E	7	208	1E07	値は	Values go up to			draft	reads: ペンタグランマﾁ @ours-2026-09-05
+m/MS00D1.BIN	0:0E	8	216	1F02	未満迄{08:55}\n<wait>	 (exclusive)\n<wait>			draft	reads: 未満迄です\n<wait>; reads: そんなこと @ours-2026-09-05
+m/MS00D1.BIN	0:0E	9	246	1E07	値は３２以上{08:55}\n<wait>	Value is 32 or more\n<wait>			draft	reads: 値は３２以上です\n<wait> @ours-2026-09-05
+m/MS00D1.BIN	0:0E	10	300	1E07	最大値{08:55}\n<wait>	Maximum value\n<wait>			draft	reads: 最大値です\n<wait>; reads: 悪魔番号を入力してください @ours-2026-09-05
+m/MS00D1.BIN	0:0E	11	347	1E07	最小値{08:55}\n<wait>	Minimum value\n<wait>			draft	reads: 最小値です\n<wait> @ours-2026-09-05
+m/MS00D1.BIN	0:0E	12	380	1FBA	ＩＤ：	ID:			draft	reads: 未満迄です\n<wait> @ours-2026-09-05
 m/MS00D1.BIN	0:0E	13	463	00	@	@				reads: 値は３２以上です\n<wait>
 m/MS00D1.BIN	0:0E	14	529	00	{04:18}	{04:18}				reads: させ; reads: 最大値です\n<wait>
 m/MS00D1.BIN	0:0E	15	546	00	{01:18}{06:00}	{01:18}{06:00}				reads: あんた辞書５; reads: 最小値です\n<wait>
 m/MS00D1.BIN	0:0E	16	557	1F51	ﾂ別ファイル\n					
 m/MS00D1.BIN	0:0E	17	616	1F4E	eーブル\n	eーブル\n				
-m/MS00D1.BIN	0:0E	18	724	00	レベル：	レベル：				reads: させ
-m/MS00D1.BIN	0:0E	19	737	00	種族：	種族：				reads: あんた辞書５
-m/MS00D1.BIN	0:0E	20	750	00	神族：					reads: ニュートンを唱えた！ 神族：
-m/MS00D1.BIN	0:0E	21	763	00	属性：					reads: ニュートンを唱えた！ 属性：
+m/MS00D1.BIN	0:0E	18	724	00	レベル：	Level:			draft	reads: させ @ours-2026-09-05
+m/MS00D1.BIN	0:0E	19	737	00	種族：	Race:			draft	reads: あんた辞書５ @ours-2026-09-05
+m/MS00D1.BIN	0:0E	20	750	00	神族：	Pantheon:			draft	reads: ニュートンを唱えた！ 神族： @ours-2026-09-05
+m/MS00D1.BIN	0:0E	21	763	00	属性：	Alignment:			draft	reads: ニュートンを唱えた！ 属性： @ours-2026-09-05
 m/MS00D1.BIN	0:0E	22	785	1F86	Ｌ					
 m/MS00D1.BIN	0:0E	23	798	1F86	Ｎ					
 m/MS00D1.BIN	0:0E	24	811	1F86	Ｄ					reads: ニュートンを唱えた！ 神族：
@@ -120,25 +120,25 @@ m/MS00D1.BIN	0:0E	27	849	1F86	Ｎ
 m/MS00D1.BIN	0:0E	28	862	1F86	Ｃ					
 m/MS00D1.BIN	0:0E	29	867	18	？					
 m/MS00D1.BIN	0:0F	0	0	DATA	{02:04}情報表示\n					reads: アイテム情報表示\n
-m/MS00D1.BIN	0:0F	1	80	1FB2	番号入力					menu option, declared width 20 columns
-m/MS00D1.BIN	0:0F	2	90	1FB2	次					menu option, declared width 20 columns
-m/MS00D1.BIN	0:0F	3	94	1FB2	前					menu option, declared width 20 columns
-m/MS00D1.BIN	0:0F	4	98	1FB2	入手					menu option, declared width 20 columns
-m/MS00D1.BIN	0:0F	5	104	1FB2	終了					menu option, declared width 20 columns
+m/MS00D1.BIN	0:0F	1	80	1FB2	番号入力	Enter number			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:0F	2	90	1FB2	次	Next			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:0F	3	94	1FB2	前	Prev			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:0F	4	98	1FB2	入手	Obtain			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:0F	5	104	1FB2	終了	Exit			draft	menu option, declared width 20 columns @ours-2026-09-05
 m/MS00D1.BIN	0:0F	6	175	1F7F	{03:00}	{03:00}				reads: 飛び道具
-m/MS00D1.BIN	0:0F	7	206	1E07	{02:04}番号を入力{08:4A}{08:6E}					reads: アイテム番号を入力してください; reads: ペンタグランマﾈ
-m/MS00D1.BIN	0:0F	8	251	1E07	値は	値は				reads: そんなこと
-m/MS00D1.BIN	0:0F	9	259	1F02	迄{08:55}\n<wait>	迄{08:55}\n<wait>				reads: 迄です\n<wait>
-m/MS00D1.BIN	0:0F	10	303	1E07	最大値{08:55}\n<wait>	最大値{08:55}\n<wait>				reads: 最大値です\n<wait>; reads: 飛び道具
-m/MS00D1.BIN	0:0F	11	344	1F82	最小値{08:55}\n<wait>					reads: 最小値です\n<wait>; reads: アイテム番号を入力してください
-m/MS00D1.BIN	0:0F	12	381	1EFC	ＩＤ：					
-m/MS00D1.BIN	0:0F	13	403	1EAC	価格：					reads: 迄です\n<wait>
-m/MS00D1.BIN	0:0F	14	430	1EAC	種類：	種類：				reads: アップ\n; reads: 最大値です\n<wait>
-m/MS00D1.BIN	0:0F	15	452	1EAC	呪い：					reads: 最小値です\n<wait>
-m/MS00D1.BIN	0:0F	16	474	1EAC	レベル：					
-m/MS00D1.BIN	0:0F	17	503	1FE8	破壊：{05:0D}\n					reads: 破壊：切り\n
-m/MS00D1.BIN	0:10	0	16	1FB2	マグ入手					menu option, declared width 20 columns
-m/MS00D1.BIN	0:10	1	26	1FB2	マッカ入手					menu option, declared width 20 columns
-m/MS00D1.BIN	0:10	2	38	1FB2	終了					menu option, declared width 20 columns
-m/MS00D1.BIN	0:10	3	75	1E07	マグを入力{08:4A}{08:6E}	マグを入力{08:4A}{08:6E}				reads: マグを入力してください; reads: きみ
-m/MS00D1.BIN	0:10	4	115	1E07	マッカを入力{08:4A}{08:6E}	マッカを入力{08:4A}{08:6E}				reads: マッカを入力してください; reads: ペンタグランマを唱えた！ 
+m/MS00D1.BIN	0:0F	7	206	1E07	{02:04}番号を入力{08:4A}{08:6E}	Enter the item number			draft	reads: アイテム番号を入力してください; reads: ペンタグランマﾈ @ours-2026-09-05
+m/MS00D1.BIN	0:0F	8	251	1E07	値は	Values go up to			draft	reads: そんなこと @ours-2026-09-05
+m/MS00D1.BIN	0:0F	9	259	1F02	迄{08:55}\n<wait>	.\n<wait>			draft	reads: 迄です\n<wait> @ours-2026-09-05
+m/MS00D1.BIN	0:0F	10	303	1E07	最大値{08:55}\n<wait>	Maximum value\n<wait>			draft	reads: 最大値です\n<wait>; reads: 飛び道具 @ours-2026-09-05
+m/MS00D1.BIN	0:0F	11	344	1F82	最小値{08:55}\n<wait>	Minimum value\n<wait>			draft	reads: 最小値です\n<wait>; reads: アイテム番号を入力してください @ours-2026-09-05
+m/MS00D1.BIN	0:0F	12	381	1EFC	ＩＤ：	ID:			draft	@ours-2026-09-05
+m/MS00D1.BIN	0:0F	13	403	1EAC	価格：	Price:			draft	reads: 迄です\n<wait> @ours-2026-09-05
+m/MS00D1.BIN	0:0F	14	430	1EAC	種類：	Type:			draft	reads: アップ\n; reads: 最大値です\n<wait> @ours-2026-09-05
+m/MS00D1.BIN	0:0F	15	452	1EAC	呪い：	Curse:			draft	reads: 最小値です\n<wait> @ours-2026-09-05
+m/MS00D1.BIN	0:0F	16	474	1EAC	レベル：	Level:			draft	@ours-2026-09-05
+m/MS00D1.BIN	0:0F	17	503	1FE8	破壊：{05:0D}\n	Break:{05:0D}\n			draft	reads: 破壊：切り\n @ours-2026-09-05
+m/MS00D1.BIN	0:10	0	16	1FB2	マグ入手	Get MAG			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:10	1	26	1FB2	マッカ入手	Get Macca			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:10	2	38	1FB2	終了	Exit			draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS00D1.BIN	0:10	3	75	1E07	マグを入力{08:4A}{08:6E}	Enter MAG amount			draft	reads: マグを入力してください; reads: きみ @ours-2026-09-05
+m/MS00D1.BIN	0:10	4	115	1E07	マッカを入力{08:4A}{08:6E}	Enter Macca amount			draft	reads: マッカを入力してください; reads: ペンタグランマを唱えた！  @ours-2026-09-05
