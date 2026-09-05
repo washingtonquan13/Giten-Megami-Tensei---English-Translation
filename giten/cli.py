@@ -97,6 +97,7 @@ def make_parser():
     _common(p)
 
     p = sub.add_parser("itemdb", help="the item database -> et/et0102.bin (English builds)")
+    p.add_argument("--extract", action="store_true", help="refresh tables/itemdb.tsv instead")
     p.add_argument("--out", default=None, help="default build/en/et/et0102.bin")
     _common(p)
 
@@ -181,15 +182,25 @@ def main(argv=None) -> int:
         from .exe import database
         database.check_free(os.path.join(paths.ORIGINAL_DDSWIN, "et"))
         recs = itemdb.parse(itemdb.source_body(paths.ORIGINAL_DDSWIN))
-        blob = itemdb.pack_file(recs)
+        table = os.path.join(paths.REPO_ROOT, "tables", "itemdb.tsv")
+        if args.extract:
+            itemdb.write_table(table, recs, itemdb.read_table(table))
+            if not args.quiet:
+                print("wrote %s: %d rows" % (table, sum(1 for r in recs if r.translatable)))
+            return 0
+        strings, findings = itemdb.strings_from_table(table, recs)
+        for idx, msg in findings:
+            print("  REFUSED %d: %s" % (idx, msg))
+        blob = itemdb.pack_file(recs, strings)
         out = args.out or os.path.join(paths.BUILD_DIR, "en", "et", "et%04x.bin" % database.ET_ID)
         os.makedirs(os.path.dirname(out), exist_ok=True)
         with open(out, "wb") as fh:
             fh.write(blob)
         if not args.quiet:
             n = sum(1 for r in recs if r.translatable)
-            print("wrote %s: %d bytes, %d records (%d translatable)" % (out, len(blob), len(recs), n))
-        return 0
+            print("wrote %s: %d bytes, %d records (%d translatable, %d English)"
+                  % (out, len(blob), len(recs), n, len(strings)))
+        return 1 if findings else 0
     if args.cmd == "overlay":
         from . import overlay, tables
         text_dir = args.text_dir or extract_v2.text_v2_dir()

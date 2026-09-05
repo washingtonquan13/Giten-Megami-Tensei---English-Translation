@@ -167,3 +167,96 @@ def pack_file(records, strings=None) -> bytes:
         raise ItemDbError("body is %d bytes; the loader allocates %d" % (len(body), BUF_SIZE))
     chunks = [body[i:i + CHUNK] for i in range(0, len(body), CHUNK)] or [b""]
     return container.join(chunks)
+
+
+TABLE_HEADER = ("index", "type", "jp_name", "en_name", "jp_desc", "en_desc", "status", "note")
+
+#: widest name in the Japanese, in half-width cells -- the list columns are
+#: sized for it, so English beyond this is asking for trouble
+NAME_CELLS = 20
+
+
+def cells(s: str) -> int:
+    """Display width in half-width cells."""
+    return sum(1 if (ord(c) < 0x80 or 0xFF61 <= ord(c) <= 0xFF9F) else 2 for c in s)
+
+
+def _esc(s: str) -> str:
+    return s.replace("\\", "\\\\").replace("\t", "\t").replace("\n", "\n")
+
+
+def _unesc(s: str) -> str:
+    out, i = [], 0
+    while i < len(s):
+        if s[i] == "\\" and i + 1 < len(s):
+            out.append({"\\": "\\", "t": "\t", "n": "\n"}.get(s[i + 1], s[i + 1]))
+            i += 2
+        else:
+            out.append(s[i])
+            i += 1
+    return "".join(out)
+
+
+def write_table(path: str, records, existing=None) -> None:
+    """Records -> an editable TSV, keeping any English already in ``existing``."""
+    have = existing or {}
+    lines = ["# Giten item / equipment / gem database (et/ET0001.BIN)",
+             "# Edit en_name and en_desc.  Leave a cell empty to keep the Japanese.",
+             "# " + "\t".join(TABLE_HEADER)]
+    for r in records:
+        if not r.translatable:
+            continue
+        en_name, en_desc, status, note = have.get(r.index, ("", "", "", ""))
+        lines.append("\t".join([
+            str(r.index), str(r.type),
+            _esc(r.name.decode("cp932")), _esc(en_name),
+            _esc(r.desc.decode("cp932")), _esc(en_desc), status, note]))
+    with open(path, "w", encoding="utf-8", newline="\n") as fh:
+        fh.write("\n".join(lines) + "\n")
+
+
+def read_table(path: str):
+    """The TSV -> ``{index: (en_name, en_desc, status, note)}``."""
+    out = {}
+    if not os.path.exists(path):
+        return out
+    with open(path, encoding="utf-8") as fh:
+        for ln in fh:
+            if ln.startswith("#") or not ln.strip():
+                continue
+            f = ln.rstrip("\n").split("\t")
+            f += [""] * (8 - len(f))
+            out[int(f[0])] = (_unesc(f[3]), _unesc(f[5]), f[6], f[7])
+    return out
+
+
+def strings_from_table(path: str, records):
+    """The TSV -> the ``{index: (name, desc)}`` override :func:`build` wants."""
+    table = read_table(path)
+    by_index = {r.index: r for r in records}
+    out, findings = {}, []
+    for idx, (en_name, en_desc, _status, _note) in sorted(table.items()):
+        rec = by_index.get(idx)
+        if rec is None or not rec.translatable:
+            findings.append((idx, "no such translatable record"))
+            continue
+        name, desc = rec.name, rec.desc
+        if en_name:
+            if cells(en_name) > NAME_CELLS:
+                findings.append((idx, "name is %d cells, the column fits %d: %r"
+                                 % (cells(en_name), NAME_CELLS, en_name)))
+                continue
+            try:
+                name = en_name.encode("cp932")
+            except UnicodeEncodeError:
+                findings.append((idx, "name is not cp932-encodable: %r" % en_name))
+                continue
+        if en_desc:
+            try:
+                desc = en_desc.encode("cp932")
+            except UnicodeEncodeError:
+                findings.append((idx, "description is not cp932-encodable: %r" % en_desc))
+                continue
+        if name is not rec.name or desc is not rec.desc:
+            out[idx] = (name, desc)
+    return out, findings
