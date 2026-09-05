@@ -21,7 +21,7 @@ m/MS0066.BIN	0:02	2	86	1FB2	{08:7F}よ		Sure	v005		reads: いいよ; menu option
 m/MS0066.BIN	0:02	3	92	1FB2	だめ！		Hell no!	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0066.BIN	0:02	4	120	1FD2	男の子：	Boy:	Boy:	v005	draft	reads:  @ours-2026-09-05
 m/MS0066.BIN	0:02	5	130	1FD3	や{08:51}ー！\n<wait>		Hooray!\n<wait>	v005		reads: やったー！\n<wait>
-m/MS0066.BIN	0:02	6	153	1F01	{08:62}男の子と話を{08:4B}{02:08}‥\n<wait>		You spend the next few moments talking with the boy.\n<wait>	v005		reads: は、男の子と話をした‥‥‥‥\n<wait>; reads: やったー！\n<wait> @rebase-tagdiff
+m/MS0066.BIN	0:02	6	153	1F01	{08:62}男の子と話を{08:4B}{02:08}‥\n<wait>	 talked with the boy for a while......\n<wait>	You spend the next few moments talking with the boy.\n<wait>	v005	draft	reads: は、男の子と話をした‥‥‥‥\n<wait>; reads: やったー！\n<wait> @rebase-tagdiff @seamfix-2026-09-05
 m/MS0066.BIN	0:02	7	182	1FD2	男の子：		Boy:	v005		reads: は、男の子と話をした‥‥‥‥\n<wait>
 m/MS0066.BIN	0:02	8	197	09	そういえばねぇ、{08:47}前お兄ちゃんの着{08:2B}のと、似た{08:69}な服を着た人が、\n運ばれて{08:51}よ。<wait>お兄ちゃんの友達？\n<wait>		That reminds me. A while ago, I saw a man wearing clothes\njust like the ones you're wearing being brought here.\n<wait>Was he a friend of yours?\n<wait>	v005		reads: そういえばねぇ、この前お兄ちゃんの着てるのと、似たような服を着た人が、\n運ばれてったよ。<wait>お兄ちゃんの友達？\n<wait>; reads: そういえばねぇ、この前お兄ちゃんの着てるのと、似たような服を着た人が、\n運ばれてったよ。<wait>お兄ちゃんの友達？\n<wait> @refalign
 m/MS0066.BIN	0:02	9	307	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: そういえばねぇ、この前お兄ちゃんの着てるのと、似たような服を着た人が、\n運ばれてったよ。<wait>お兄ちゃんの友達？\n<wait> @refalign
@@ -68,14 +68,14 @@ m/MS0066.BIN	0:06	12	344	1FD2	{01:30}：		Doctor:	v005		reads: 医師：; reads:
 m/MS0066.BIN	0:06	13	350	1FD3	ああ{02:08}{08:7A}患者が{08:47}前運び込まれて来たな。\n<wait>		Oh, yes. I remember him.\n<wait>	v005		reads: ああ‥‥‥そんな患者がこの前運び込まれて来たな。\n<wait>; reads: 他の医師の方に、あなたが担当したと聞いたもので。\n<wait> @refalign
 m/MS0066.BIN	0:06	14	397	1FD2	{01:30}：		Doctor:	v005		reads: 医師：; reads: 医師： @refalign
 m/MS0066.BIN	0:06	15	403	1FD3	{02:08}{03:0B}{02:0E}も手を尽く{08:4B}{08:77}が、彼は亡く{08:16}よ。\n<wait>		We tried our best, but unfortunately... he is dead.\n<wait>	v005		reads: ‥‥‥しかし、こちらも手を尽くしたのだが、彼は亡くなったよ。\n<wait>; reads: ああ‥‥‥そんな患者がこの前運び込まれて来たな。\n<wait> @refalign
-m/MS0066.BIN	0:06	16	461	1F01	{08:62}{08:00}と{08:68}大火傷を負{08:51}患者が運びこま{08:60}と{08:68}事。\n{08:79}担当が、山本{01:30}であ{08:51}と聞{08:64}事などを挙げ、威圧的な態度で\n{08:00}の事を訊ねた。\n<wait>		You tell the doctor that you know that Hayasaka was brought here,\nand demand to know where he is being kept.\n<wait>	v005		reads: は、早坂という大火傷を負った患者が運びこまれたという事。\nその担当が、山本医師であったと聞いた事などを挙げ、威圧的な態度で\n早坂の事を訊ねた。\n<wait>; reads: 医師： @rebase-tagdiff @refalign
+m/MS0066.BIN	0:06	16	461	1F01	{08:62}{08:00}と{08:68}大火傷を負{08:51}患者が運びこま{08:60}と{08:68}事。\n{08:79}担当が、山本{01:30}であ{08:51}と聞{08:64}事などを挙げ、威圧的な態度で\n{08:00}の事を訊ねた。\n<wait>	 laid it out -- that a badly burned patient named Hayasaka had been\nbrought in, and that Doctor Yamamoto had been in charge -- and pressed\nhard for news of Hayasaka.\n<wait>	You tell the doctor that you know that Hayasaka was brought here,\nand demand to know where he is being kept.\n<wait>	v005	draft	reads: は、早坂という大火傷を負った患者が運びこまれたという事。\nその担当が、山本医師であったと聞いた事などを挙げ、威圧的な態度で\n早坂の事を訊ねた。\n<wait>; reads: 医師： @rebase-tagdiff @refalign @seamfix-2026-09-05
 m/MS0066.BIN	0:06	17	588	1FD2	{01:30}：		Doctor:	v005		reads: 医師：; reads: ‥‥‥しかし、こちらも手を尽くしたのだが、彼は亡くなったよ。\n<wait> @refalign
 m/MS0066.BIN	0:06	18	594	1FD3	君！　人に{08:5E}を聞く割に{08:62}随分な態度{08:81}{08:25}か！\nまるで、私が悪い事を{08:13}と{08:56}言う{08:69}な{02:08}\n<wait>		Is that how you talk to your elders?\nHeavens, it's as if you were accusing me of wrongdoing!\n<wait>	v005		reads: 君！　人にものを聞く割には、随分な態度じゃないか！\nまるで、私が悪い事をしているとでも言うような‥‥‥\n<wait>; reads: は、早坂という大火傷を負った患者が運びこまれたという事。\nその担当が、山本医師であったと聞いた事などを挙げ、威圧的な態度で\n早坂の事を訊ねた。\n<wait> @refalign
 m/MS0066.BIN	0:06	19	682	1FD2	{01:30}：		Doctor:	v005		reads: 医師：; reads: 医師： @refalign
 m/MS0066.BIN	0:06	20	688	1FD3	君の{08:69}な、失礼な者に答えてやる義務は無い！\n		It interests me not to talk with the likes of you. Please leave.\n	v005		reads: 君のような、失礼な者に答えてやる義務は無い！\n; reads: 君！　人にものを聞く割には、随分な態度じゃないか！\nまるで、私が悪い事をしているとでも言うような‥‥‥\n<wait> @refalign
 m/MS0066.BIN	0:06	21	747	1FB2	態度を改{08:2E}		Apologize	v005		reads: 態度を改める; menu option, declared width 20 columns; reads: 医師： @refalign
 m/MS0066.BIN	0:06	22	759	1FB2	あく{08:71}威圧的		Keep pressing	v005		reads: あくまで威圧的; menu option, declared width 20 columns; reads: 君のような、失礼な者に答えてやる義務は無い！\n @refalign
-m/MS0066.BIN	0:06	23	799	1F01	は態度を改め、{01:30}に謝罪{08:4B}。\n<wait>		You quickly apologize to the doctor.\n<wait>	v005		reads: は態度を改め、医師に謝罪した。\n<wait>; reads: 態度を改める; menu option, declared width 20 columns @rebase-new @refalign
+m/MS0066.BIN	0:06	23	799	1F01	は態度を改め、{01:30}に謝罪{08:4B}。\n<wait>	 changed his manner and apologised to the doctor.\n<wait>	You quickly apologize to the doctor.\n<wait>	v005	draft	reads: は態度を改め、医師に謝罪した。\n<wait>; reads: 態度を改める; menu option, declared width 20 columns @rebase-new @refalign @seamfix-2026-09-05
 m/MS0066.BIN	0:06	24	834	1FD2	{01:30}：		Doctor:	v005		reads: 医師：; reads: あくまで威圧的; menu option, declared width 20 columns @refalign
 m/MS0066.BIN	0:06	25	840	1FD3	ふん。分かれば{08:7F}{08:5F}。\n<wait>	Hmph. As long as you understand.\n<wait>	Hmph. Well, at least you understand.\n<wait>	v005	draft	reads: ふん。分かればいいんだ。\n<wait> @ours-2026-09-05
 m/MS0066.BIN	0:06	26	869	1FD2	{01:30}：	Doctor:	Doctor:	v005	draft	reads: 医師： @ours-2026-09-05
@@ -86,7 +86,7 @@ m/MS0066.BIN	0:06	30	927	1FD2	{01:30}：		Doctor:	v005		reads: 医師：; reads:
 m/MS0066.BIN	0:06	31	933	1FD3	彼{08:62}{08:45}に運び込ま{08:60}時酷い大火傷でね。\n<wait>		His body was covered in burns all over when he was brought here.\n<wait>	v005		reads: 彼は、ここに運び込まれた時酷い大火傷でね。\n<wait>; reads: で、早坂と言う患者だったな？\n<wait> @refalign
 m/MS0066.BIN	0:06	32	978	1FD2	{01:30}：		Doctor:	v005		reads: 医師：; reads: 英美： @refalign
 m/MS0066.BIN	0:06	33	984	1FD3	私も手を尽く{08:4B}{08:77}が{02:08}<wait>彼{08:62}亡く{08:16}よ。\n<wait>		I tried my best to treat him. Unfortunately... <wait>he passed away.\n<wait>	v005		reads: 私も手を尽くしたのだが‥‥‥<wait>彼は、亡くなったよ。\n<wait>; reads: はい。\n<wait> @refalign
-m/MS0066.BIN	0:06	34	1042	1F01	{08:62}あく{08:71}威圧的な態度を改めず{01:30}に詰め寄{08:51}。\n<wait>		You continue pressuring the doctor.\n<wait>	v005		reads: は、あくまで威圧的な態度を改めず医師に詰め寄った。\n<wait>; reads: 医師： @rebase-tagdiff @refalign
+m/MS0066.BIN	0:06	34	1042	1F01	{08:62}あく{08:71}威圧的な態度を改めず{01:30}に詰め寄{08:51}。\n<wait>	 kept up the pressure and pushed the doctor harder.\n<wait>	You continue pressuring the doctor.\n<wait>	v005	draft	reads: は、あくまで威圧的な態度を改めず医師に詰め寄った。\n<wait>; reads: 医師： @rebase-tagdiff @refalign @seamfix-2026-09-05
 m/MS0066.BIN	0:06	35	1093	1FD2	{01:30}：		Doctor:	v005		reads: 医師：; reads: 彼は、ここに運び込まれた時酷い大火傷でね。\n<wait> @refalign
 m/MS0066.BIN	0:06	36	1099	1FD3	失礼な奴だな！！　人を呼ぶぞ！！\n<wait>		You insolent brat! You leave me no choice. Security!!\n<wait>	v005		reads: 医師： @refalign
 m/MS0066.BIN	0:06	37	1140	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 私も手を尽くしたのだが‥‥‥<wait>彼は、亡くなったよ。\n<wait> @refalign
@@ -106,7 +106,7 @@ m/MS0066.BIN	0:06	50	1509	1FBA	{08:79}ジャケットを見た山本{01:30}が�
 m/MS0066.BIN	0:06	51	1568	1F01	は見逃さ{08:19}。\n	 did not miss it.\n			draft	reads: は見逃さなかった。\n; reads: 英美： @ours-2026-09-05
 m/MS0066.BIN	0:06	52	1597	1FB2	丁寧に出所を説明		Explain calmly	v005		menu option, declared width 20 columns; reads: ‥‥‥そんな‥‥‥じゃあ‥‥‥\nじゃあ、このジャケットは‥‥‥\n<wait> @refalign
 m/MS0066.BIN	0:06	53	1615	1FB2	威圧的に詰め寄る		Start pushing	v005		menu option, declared width 20 columns; reads: そう言って、英美はジャケットを握り締めた。\n<wait> @refalign
-m/MS0066.BIN	0:06	54	1659	1F01	{08:62}丁寧に{08:47}{08:00}のジャケットの出所を説明{08:4B}。\n<wait>		You calmly explain how you came to obtain Hayasaka's jacket.\n<wait>	v005		reads: は、丁寧にこの早坂のジャケットの出所を説明した。\n<wait>; reads: そのジャケットを見た山本医師が、一瞬驚いたような顔をしたのを、\n @rebase-new @refalign
+m/MS0066.BIN	0:06	54	1659	1F01	{08:62}丁寧に{08:47}{08:00}のジャケットの出所を説明{08:4B}。\n<wait>	 explained politely how he had come by Hayasaka's jacket.\n<wait>	You calmly explain how you came to obtain Hayasaka's jacket.\n<wait>	v005	draft	reads: は、丁寧にこの早坂のジャケットの出所を説明した。\n<wait>; reads: そのジャケットを見た山本医師が、一瞬驚いたような顔をしたのを、\n @rebase-new @refalign @seamfix-2026-09-05
 m/MS0066.BIN	0:06	55	1708	1FD2	{08:3C}：		Sanshirou:	v005		reads: 三四郎：; reads: は見逃さなかった。\n @refalign
 m/MS0066.BIN	0:06	56	1714	1FD3	{08:48}が{08:90}{08:4A}、ジャンク屋の所にあ{08:51}んで{08:80}ね。\n普通、遺留品は余程のゴミでは{08:25}限り、死体と共にケースに入れておく筈では？\n<wait>		How come that something like this ended up with a junk seller?\nI thought it was standard practice that when a person dies,\ntheir belongings get put under ice with their body,\nnot thrown out in the trash.\n<wait>	v005		reads: これがどうして、ジャンク屋の所にあったんでしょうね。\n普通、遺留品は余程のゴミではない限り、死体と共にケースに入れておく筈では？\n<wait>; menu option, declared width 20 columns @refalign
 m/MS0066.BIN	0:06	57	1836	1FD2	{08:3C}：		Sanshirou:	v005		reads: 三四郎：; menu option, declared width 20 columns @refalign
@@ -136,7 +136,7 @@ m/MS0066.BIN	0:06	80	2564	1FD3	{08:47}記録を持{08:52}、他の{01:30}の方�
 m/MS0066.BIN	0:06	81	2644	1FD2	{01:30}：		Doctor:	v005		reads: 医師：; reads: だめだと言ってるだろう！\n<wait> @refalign
 m/MS0066.BIN	0:06	82	2650	1FD3	{02:08}クッ{02:08}！\n<wait>		Ghh!\n<wait>	v005		reads: ‥‥‥クッ‥‥‥！\n<wait>; reads: 三四郎： @refalign
 m/MS0066.BIN	0:06	83	2674	1FD0	何故{01:30}はジャケットを見て、驚{08:64}{08:69}な顔を{08:4B}のか？\n{08:4D}{08:62}{08:47}ジャケットが{08:45}に{08:7B}筈が無い{08:5E}と、思{08:51}{08:42}では\n{08:25}{08:8C}か？\n<wait>		Why did the doctor look shocked when he saw the jacket?\nIt's almost like... he didn't expect to see it here.\n<wait>	v005		reads: 何故医師はジャケットを見て、驚いたような顔をしたのか？\nそれは、このジャケットがここにある筈が無いものと、思ったからでは\nないだろうか？\n<wait>; reads: ‥‥失礼ですが、この会話の一部始終を僕達のアームターミナルに\n記録させて頂きました。\n<wait> @refalign
-m/MS0066.BIN	0:06	84	2791	1F01	はそう思い、{01:30}に詰め寄{08:51}。\n<wait>		You start pressuring the man.\n<wait>	v005		reads: はそう思い、医師に詰め寄った。\n<wait>; reads: 三四郎： @rebase-tagdiff @refalign
+m/MS0066.BIN	0:06	84	2791	1F01	はそう思い、{01:30}に詰め寄{08:51}。\n<wait>	 thought so, and pressed the doctor.\n<wait>	You start pressuring the man.\n<wait>	v005	draft	reads: はそう思い、医師に詰め寄った。\n<wait>; reads: 三四郎： @rebase-tagdiff @refalign @seamfix-2026-09-05
 m/MS0066.BIN	0:06	85	2826	1FD2	{08:3C}：		Sanshirou:	v005		reads: 三四郎：; reads: この記録を持って、他の医師の方々にあたってみます。\n本当にそんな規則が存在するのか‥‥ね。\n<wait> @refalign
 m/MS0066.BIN	0:06	86	2832	1FD3	{08:86}も、{08:79}ジャンク屋は{08:47}病院のゴミ捨て場{08:42}拾{08:52}{08:1E}。\nそう言{08:52}{08:64}ん{08:55}よ。\n		The junk merchant told us that he got the jacket from this hospital's\njunk yard. I find that very, very interesting...\n	v005		reads: しかも、そのジャンク屋はこの病院のゴミ捨て場から拾ってきた。\nそう言っていたんですよ。\n; reads: 医師： @refalign
 m/MS0066.BIN	0:06	87	2902	1FD2	{01:30}：		Doctor:	v005		reads: 医師：; reads: ‥‥‥クッ‥‥‥！\n<wait> @refalign
