@@ -81,6 +81,9 @@ DUPID_NOTE = "@dupid"
 #: past the end of such a container and what it finds there is garbage either
 #: way.  ``m/MS600A`` and ``m/MS610B`` between them hold 318 finished lines.
 PARTIAL_NOTE = "@partial"
+#: a record that only tiles up to a point; its verified spans may be overlaid but
+#: it must never be byte-rebuilt (see giten/partial.py)
+PREFIX_NOTE = "@prefix"
 
 
 # --- model ------------------------------------------------------------------
@@ -123,6 +126,10 @@ class Rec:
     blocked: "str | None" = None
     #: advisory markers that do *not* stop an edit (currently ``@partial``)
     flags: "list[str]" = field(default_factory=list)
+    #: for a prefix-tiled record: how many bytes the walk got through
+    tiled_bytes: "int | None" = None
+    #: how many of its spans the safety kernel refused
+    rejected_spans: int = 0
 
     @property
     def untiled(self) -> bool:
@@ -283,6 +290,24 @@ def parse(rel: str, raw: bytes, tab=None) -> Script:
                     rec.tokens = vmops.tokenize(r.data, tab)
                 except vmops.TileError as exc:
                     rec.tile_error = str(exc)
+                    # Opt-in per file: keep the tokens the walk did produce, and
+                    # expose only the spans that pass the safety kernel.  The
+                    # record stays `blocked` below -- _rebuild_record works from
+                    # rec.tokens, so byte-building one of these would drop
+                    # everything past the failure point.  The overlay does not
+                    # rebuild anything, which is why it can serve them.
+                    from . import partial
+                    if rel in partial.PREFIX_TILE_FILES:
+                        toks, ok = partial.tokenize_prefix(r.data, tab)
+                        keep, _ok, rejected = partial.safe_spans(
+                            rel, c.index, r.id, r.data, tab)
+                        if keep:
+                            rec.tokens = toks
+                            rec.spans = keep
+                            rec.tiled_bytes = ok
+                            rec.rejected_spans = len(rejected)
+                            rec.blocked = PREFIX_NOTE
+
                 else:
                     rec.unimplemented = vmops.uses_unimplemented(rec.tokens, tab)
                     rec.spans = find_spans(c.index, r.id, r.data, rec.tokens)

@@ -139,3 +139,64 @@ def test_prefix_tiling_is_opt_in_per_file():
     assert SHOPS in partial.PREFIX_TILE_FILES
     assert len(partial.PREFIX_TILE_FILES) == 1, \
         "widen this only after the added file has been play-tested"
+
+
+def test_serving_english_never_changes_a_byte_outside_a_span():
+    """The end-to-end safety proof for the overlay path.
+
+    Stated exactly: outside the served ranges the hook must return the original
+    image byte.  Inline ops *inside* a span (pool calls, newlines) are span
+    content and may differ -- the English for r03 drops two {08:25} calls.  What
+    may never change is a byte the interpreter dispatches as structure, and in
+    particular the six-byte trailer that defeats the tokenizer.
+    """
+    from giten import extract_v2, overlay, paths, pool, records
+
+    rows = extract_v2.rows_for(SHOPS, files.read_source(SHOPS),
+                               pool.load(paths.ORIGINAL_DDSWIN))
+    assert len(rows) == 10, len(rows)
+    for r in rows:
+        if not r.en:
+            r.en = "English placeholder"
+    entry_list, findings = overlay.plan(rows, paths.ORIGINAL_DDSWIN)
+    assert not findings, findings
+    entry = entry_list[0]
+
+    sc = script.parse(SHOPS, files.read_source(SHOPS))
+    cont = sc.containers[0]
+    rr = [records.Record(r.id, r.data) for r in cont]
+    base = records.bases(rr)
+    image = bytearray(0x10000)
+    idx = overlay.engine_index(rr)
+    image[:len(idx)] = idx
+    for r in cont:
+        image[base[r.id]:base[r.id] + len(r.data)] = r.data
+    image = bytes(image)
+
+    hook = overlay.Model(entry, image)
+    served = [(s.start, s.start + s.head) for s in entry.spans]
+    FOOT = bytes.fromhex("1f0010010100")
+
+    checked = 0
+    for r in cont:
+        if not r.data:
+            continue
+        lo, hi = base[r.id], base[r.id] + len(r.data)
+        foot_at = hi - len(FOOT)
+        # no span may reach into the trailer
+        assert not [1 for a, b in served if a < hi and b > foot_at], \
+            "a span overlaps the trailer of record 0x%02X" % r.id
+        for pc in range(lo, hi):
+            if any(a <= pc < b for a, b in served):
+                continue
+            got, _nxt = hook.fetch(pc)
+            assert got == image[pc], \
+                "pc 0x%04X outside every span served %02X, image has %02X" \
+                % (pc, got, image[pc])
+            checked += 1
+    assert checked > 50, checked
+
+    # and every span resumes on the untouched image
+    for s in entry.spans:
+        if s.end < len(image):
+            assert hook.fetch(s.end)[0] == image[s.end], hex(s.end)

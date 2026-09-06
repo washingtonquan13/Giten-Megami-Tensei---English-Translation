@@ -335,7 +335,13 @@ def test_tokenizer_reproduces_the_published_tiling_numbers():
     # engine no-op (their switch table had been tiled as opcodes) and 25 records
     # that only *looked* tiled -- the walk was out of step before a switch, and a
     # 5-byte guess happened to resync -- are now refused, i.e. not editable.
-    assert (ok, stray, unimpl, overrun) == (19330, 1117, 95, 148), (ok, stray, unimpl, overrun)
+    # 2026-09-06, prefix tiling (giten/partial.py): 19 330 / 1 117 / 95 / 148
+    # became 19 330 / 1 117 / 100 / 143.  Exactly the five records of
+    # m/MS0080.BIN -- the town's shopkeepers -- moved from `overrun` to
+    # `unimpl`: they now tile to byte N via the opt-in prefix walk, and what
+    # they reach is the 1F 00 engine no-op.  No record changed its tiling, and
+    # `ok` and `stray` are untouched, so nothing that shipped before moved.
+    assert (ok, stray, unimpl, overrun) == (19330, 1117, 100, 143), (ok, stray, unimpl, overrun)
 
 
 def test_operands_are_never_text():
