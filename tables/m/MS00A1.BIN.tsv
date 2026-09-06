@@ -3,13 +3,13 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS00A1.BIN	0:01	0	0	DATA	＞新宿ターミナルへ{08:69}こそ\n		>Welcome to Shinjuku Terminal.\n	v005		reads: ＞新宿ターミナルへようこそ\n; reads: ＞新宿ターミナルへようこそ\n @refalign
-m/MS00A1.BIN	0:03	0	0	DATA	{01:23}お待ち{08:6E}		Please wait a moment	v005		reads: しばらくお待ちください; reads: しばらくお待ちください @refalign
-m/MS00A1.BIN	0:03	1	16	1FFA	．．．\n	...			draft	@ours-2026-09-05
-m/MS00A1.BIN	0:03	2	27	1FBA	＞ＡＭＳ用マップ{08:0A}を確認しま{08:4B}\n　{03:09}ロードを始め{08:5A}\n		>AMS map data found. Download it?\n	v005		reads: ＞ＡＭＳ用マップデータを確認しました\n　ダウンロードを始めます\n; reads: ＞ＡＭＳ用マップデータを確認しました\n　ダウンロードを始めます\n @refalign
-m/MS00A1.BIN	0:03	3	93	1FB2	実行		Proceed	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS00A1.BIN	0:03	4	99	1FB2	中止		Cancel	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS00A1.BIN	0:03	5	123	1FBA	{03:09}ロード{08:4A}い{08:5A}	Downloading	Downloading	v005	draft	reads: ダウンロードしています @ours-2026-09-05
-m/MS00A1.BIN	0:03	6	143	1FFA	．．．\n	...			draft	@ours-2026-09-05
-m/MS00A1.BIN	0:03	7	158	1FBA	＞{03:09}ロード正常終了しま{08:4B}\n<wait>		>Download completed successfully.\n<wait>	v005		reads: ＞ダウンロード正常終了しました\n<wait>; reads: ダウンロードしています @refalign
-m/MS00A1.BIN	0:03	8	195	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>		>Download cancelled.\n<wait>	v005		reads: ＞ダウンロードを中止します\n<wait>; reads: ＞ダウンロードを中止します\n<wait> @refalign
+m/MS00A1.BIN	0:01	0	0	DATA	＞新宿ターミナルへ{08:69}こそ\n					reads: ＞新宿ターミナルへようこそ\n; reads: ＞新宿ターミナルへようこそ\n @refalign
+m/MS00A1.BIN	0:03	0	0	DATA	{01:23}お待ち{08:6E}					reads: しばらくお待ちください; reads: しばらくお待ちください @refalign
+m/MS00A1.BIN	0:03	1	16	1FFA	．．．\n	...				@ours-2026-09-05
+m/MS00A1.BIN	0:03	2	27	1FBA	＞ＡＭＳ用マップ{08:0A}を確認しま{08:4B}\n　{03:09}ロードを始め{08:5A}\n					reads: ＞ＡＭＳ用マップデータを確認しました\n　ダウンロードを始めます\n; reads: ＞ＡＭＳ用マップデータを確認しました\n　ダウンロードを始めます\n @refalign
+m/MS00A1.BIN	0:03	3	93	1FB2	実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS00A1.BIN	0:03	4	99	1FB2	中止					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS00A1.BIN	0:03	5	123	1FBA	{03:09}ロード{08:4A}い{08:5A}	Downloading				reads: ダウンロードしています; reads: ダウンロードしています @ours-2026-09-05
+m/MS00A1.BIN	0:03	6	143	1FFA	．．．\n	...				@ours-2026-09-05
+m/MS00A1.BIN	0:03	7	158	1FBA	＞{03:09}ロード正常終了しま{08:4B}\n<wait>					reads: ＞ダウンロード正常終了しました\n<wait>; reads: ダウンロードしています @refalign
+m/MS00A1.BIN	0:03	8	195	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>					reads: ＞ダウンロードを中止します\n<wait>; reads: ＞ダウンロードを中止します\n<wait> @refalign

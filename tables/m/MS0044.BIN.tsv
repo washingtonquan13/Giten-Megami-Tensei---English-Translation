@@ -3,113 +3,113 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0044.BIN	0:00	0	0	DATA	ホームに降りる階段が{08:7B}\n移動し{08:15}\n		There are stairs leading to the platform here.\nGo down them?\n	v005		reads: ホームに降りる階段がある\n移動しますか？\n; reads: ホームに降りる階段がある\n移動しますか？\n @refalign
+m/MS0044.BIN	0:00	0	0	DATA	ホームに降りる階段が{08:7B}\n移動し{08:15}\n					reads: ホームに降りる階段がある\n移動しますか？\n; reads: ホームに降りる階段がある\n移動しますか？\n @refalign
 m/MS0044.BIN	0:00	1	36	1F58	{05:00}	{05:00}				reads: はいいいえ; reads: はいいいえニュートン
-m/MS0044.BIN	0:01	0	0	DATA	プラットホーム\n		 Platform.\n	v005		@refalign
-m/MS0044.BIN	0:01	1	17	1FD1	<wait>ホーム{08:42}線路に降りて移動{08:8E}{08:46}ができ{08:5A}\n		<wait>You can hop down onto the tracks\nand use the railway to travel between stations.\n	v005		reads: <wait>ホームから線路に降りて移動することができます\n; reads: <wait>ホームから線路に降りて移動することができます\n @refalign
-m/MS0044.BIN	0:02	0	19	1FB2	線路に降りる		Hop onto tracks	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0044.BIN	0:02	1	33	1FB2	戻る		Return	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0044.BIN	0:03	0	0	DATA	大手町駅・丸ノ内線		Ootemachi-Marunouchi	v005		record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:03	1	21	0D	大手町駅・丸ノ内線		Ootemachi-Marunouchi	v005		record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:03	2	58	1FB2	御茶ノ水方面		Ochanomizu	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:03	3	72	1FB2	銀座方面		Ginza	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:03	4	82	1FB2	戻る		Go back	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:04	0	0	DATA	大手町駅・千代田線		Ootemachi-Chiyoda	v005		record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:04	1	21	0D	大手町駅・千代田線		Ootemachi-Chiyoda	v005		record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:04	2	58	1FB2	御茶ノ水方面		Ochanomizu	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:04	3	72	1FB2	霞ヶ関方面		Kasumigaseki	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:04	4	84	1FB2	戻る		Go back	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:06	0	0	DATA	銀座駅・丸ノ内線		Ginza-Marunouchi	v005		record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:06	1	19	0D	銀座駅・丸ノ内線		Ginza-Marunouchi	v005		record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:06	2	54	1FB2	大手町方面		Ootemachi	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:06	3	66	1FB2	霞ヶ関方面		Kasumigaseki	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:06	4	78	1FB2	戻る		Go back	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:07	0	0	DATA	銀座駅・日比谷線		Ginza-Hibiya	v005		record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:07	1	19	0D	銀座駅・日比谷線		Ginza-Hibiya	v005		record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:07	2	54	1FB2	霞ヶ関方面		Kasumigaseki	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:07	3	66	1FB2	秋葉原方面		Akihabara	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:07	4	78	1FB2	戻る		Go back	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:08	0	0	DATA	銀座駅・銀座線		Ginza-Ginza	v005		@refalign
-m/MS0044.BIN	0:08	1	17	0D	銀座駅・銀座線		Ginza-Ginza	v005		@refalign
+m/MS0044.BIN	0:01	0	0	DATA	プラットホーム\n					@refalign
+m/MS0044.BIN	0:01	1	17	1FD1	<wait>ホーム{08:42}線路に降りて移動{08:8E}{08:46}ができ{08:5A}\n					reads: <wait>ホームから線路に降りて移動することができます\n; reads: <wait>ホームから線路に降りて移動することができます\n @refalign
+m/MS0044.BIN	0:02	0	19	1FB2	線路に降りる					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0044.BIN	0:02	1	33	1FB2	戻る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0044.BIN	0:03	0	0	DATA	大手町駅・丸ノ内線					record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:03	1	21	0D	大手町駅・丸ノ内線					record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:03	2	58	1FB2	御茶ノ水方面					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:03	3	72	1FB2	銀座方面					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:03	4	82	1FB2	戻る					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:04	0	0	DATA	大手町駅・千代田線					record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:04	1	21	0D	大手町駅・千代田線					record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:04	2	58	1FB2	御茶ノ水方面					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:04	3	72	1FB2	霞ヶ関方面					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:04	4	84	1FB2	戻る					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:06	0	0	DATA	銀座駅・丸ノ内線					record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:06	1	19	0D	銀座駅・丸ノ内線					record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:06	2	54	1FB2	大手町方面					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:06	3	66	1FB2	霞ヶ関方面					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:06	4	78	1FB2	戻る					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:07	0	0	DATA	銀座駅・日比谷線					record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:07	1	19	0D	銀座駅・日比谷線					record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:07	2	54	1FB2	霞ヶ関方面					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:07	3	66	1FB2	秋葉原方面					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:07	4	78	1FB2	戻る					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:08	0	0	DATA	銀座駅・銀座線					@refalign
+m/MS0044.BIN	0:08	1	17	0D	銀座駅・銀座線					@refalign
 m/MS0044.BIN	0:08	2	49	00	{01:00}{02:1F}w	{01:00}{02:1F}w				reads: 早坂達也w
-m/MS0044.BIN	0:09	0	0	DATA	御茶ノ水駅・千代田線		Ochanomizu-Chiyoda	v005		record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:09	1	23	0D	御茶ノ水駅・千代田線		Ochanomizu-Chiyoda	v005		record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:09	2	62	1FB2	千駄木方面		Sendagi	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:09	3	74	1FB2	大手町方面		Ootemachi	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:09	4	86	1FB2	戻る		Go back	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:0A	0	0	DATA	御茶ノ水駅・丸ノ内線		Ochanomizu-Marunouchi	v005		@refalign
-m/MS0044.BIN	0:0A	1	23	0D	御茶ノ水駅・丸ノ内線		Ochanomizu-Marunouchi	v005		@refalign
+m/MS0044.BIN	0:09	0	0	DATA	御茶ノ水駅・千代田線					record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:09	1	23	0D	御茶ノ水駅・千代田線					record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:09	2	62	1FB2	千駄木方面					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:09	3	74	1FB2	大手町方面					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:09	4	86	1FB2	戻る					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:0A	0	0	DATA	御茶ノ水駅・丸ノ内線					@refalign
+m/MS0044.BIN	0:0A	1	23	0D	御茶ノ水駅・丸ノ内線					@refalign
 m/MS0044.BIN	0:0A	2	61	00	{01:00}{02:1F}w	{01:00}{02:1F}w				reads: 早坂達也w
-m/MS0044.BIN	0:0B	0	0	DATA	新橋駅・臨海新交通		Shinbashi-Waterfront	v005		@refalign
-m/MS0044.BIN	0:0B	1	21	0D	新橋駅・臨海新交通		Shinbashi-Waterfront	v005		@refalign
+m/MS0044.BIN	0:0B	0	0	DATA	新橋駅・臨海新交通					@refalign
+m/MS0044.BIN	0:0B	1	21	0D	新橋駅・臨海新交通					@refalign
 m/MS0044.BIN	0:0B	2	57	00	{01:00}{02:1F}w	{01:00}{02:1F}w				reads: 早坂達也w
-m/MS0044.BIN	0:0C	0	0	DATA	新橋駅・銀座線		Shinbashi-Ginza	v005		record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:0C	1	17	0D	新橋駅・銀座線		Shinbashi-Ginza	v005		record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:0C	2	50	1FB2	銀座方面		Ginza	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:0C	3	60	1FB2	虎ノ門方面		Toranomon	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:0C	4	72	1FB2	戻る		Go back	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:0D	0	0	DATA	上野駅・銀座線		Ueno-Ginza	v005		@refalign
-m/MS0044.BIN	0:0D	1	17	0D	上野駅・銀座線		Ueno-Ginza	v005		@refalign
+m/MS0044.BIN	0:0C	0	0	DATA	新橋駅・銀座線					record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:0C	1	17	0D	新橋駅・銀座線					record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:0C	2	50	1FB2	銀座方面					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:0C	3	60	1FB2	虎ノ門方面					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:0C	4	72	1FB2	戻る					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:0D	0	0	DATA	上野駅・銀座線					@refalign
+m/MS0044.BIN	0:0D	1	17	0D	上野駅・銀座線					@refalign
 m/MS0044.BIN	0:0D	2	47	00	{01:00}	{01:00}				reads: 早坂達也
 m/MS0044.BIN	0:0D	3	51	00	{01:1F}w	{01:1F}w				reads: おにいちゃんw
-m/MS0044.BIN	0:0E	0	0	DATA	上野駅・日比谷線		Ueno-Hibiya	v005		@refalign
-m/MS0044.BIN	0:0E	1	19	0D	上野駅・日比谷線		Ueno-Hibiya	v005		@refalign
+m/MS0044.BIN	0:0E	0	0	DATA	上野駅・日比谷線					@refalign
+m/MS0044.BIN	0:0E	1	19	0D	上野駅・日比谷線					@refalign
 m/MS0044.BIN	0:0E	2	49	00	{01:00}	{01:00}				reads: 早坂達也
 m/MS0044.BIN	0:0E	3	53	00	{05:00}	{05:00}				reads: はいいいえ; reads: はいいいえニュートン
-m/MS0044.BIN	0:0F	0	0	DATA	浅草駅・銀座線		Asakusa-Ginza	v005		@refalign
-m/MS0044.BIN	0:0F	1	17	0D	浅草駅・銀座線		Asakusa-Ginza	v005		@refalign
+m/MS0044.BIN	0:0F	0	0	DATA	浅草駅・銀座線					@refalign
+m/MS0044.BIN	0:0F	1	17	0D	浅草駅・銀座線					@refalign
 m/MS0044.BIN	0:0F	2	45	00	{02:00}{04:00}	{02:00}{04:00}				reads: デビルバスターを唱えた！ 
 m/MS0044.BIN	0:0F	3	51	00	{03:1F}w	{03:1F}w				reads: w
-m/MS0044.BIN	0:10	0	0	DATA	霞ヶ関駅・丸ノ内線		Kasumigaseki-Marunounchi	v005		@refalign
-m/MS0044.BIN	0:10	1	21	0D	霞ヶ関駅・丸ノ内線		Kasumigaseki-Marunounchi	v005		@refalign
+m/MS0044.BIN	0:10	0	0	DATA	霞ヶ関駅・丸ノ内線					@refalign
+m/MS0044.BIN	0:10	1	21	0D	霞ヶ関駅・丸ノ内線					@refalign
 m/MS0044.BIN	0:10	2	53	00	{06:00}{01:00}	{06:00}{01:00}				reads: 辞書５早坂達也
 m/MS0044.BIN	0:10	3	59	00	{01:1F}w	{01:1F}w				reads: おにいちゃんw
-m/MS0044.BIN	0:11	0	0	DATA	霞ヶ関駅・日比谷線		Kasumigaseki-Hibiya	v005		record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:11	1	21	0D	霞ヶ関駅・日比谷線		Kasumigaseki-Hibiya	v005		record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:11	2	58	1FB2	六本木方面		Roppongi	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:11	3	70	1FB2	銀座方面		Ginza	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:11	4	80	1FB2	戻る		Go back	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:12	0	0	DATA	霞ヶ関駅・千代田線		Kasumigaseki-Chiyoda	v005		record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:12	1	21	0D	霞ヶ関駅・千代田線		Kasumigaseki-Chiyoda	v005		record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:12	2	58	1FB2	大手町方面		Ootemachi	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:12	3	70	1FB2	明治神宮前方面		Meiji-Jinguumae	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:12	4	86	1FB2	戻る		Go back	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:13	0	0	DATA	六本木駅・日比谷線		Roppongi-Hibiya	v005		record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:13	1	21	0D	六本木駅・日比谷線		Roppongi-Hibiya	v005		record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:13	2	58	1FB2	恵比寿方面		Ebisu	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:13	3	70	1FB2	霞ヶ関方面		Kasumigaseki	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:13	4	82	1FB2	戻る		Go back	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:14	0	0	DATA	東池袋駅・有楽町線		Ikebukuro-Urakumachi	v005		@refalign
-m/MS0044.BIN	0:14	1	21	0D	東池袋駅・有楽町線		Ikebukuro-Urakumachi	v005		@refalign
+m/MS0044.BIN	0:11	0	0	DATA	霞ヶ関駅・日比谷線					record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:11	1	21	0D	霞ヶ関駅・日比谷線					record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:11	2	58	1FB2	六本木方面					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:11	3	70	1FB2	銀座方面					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:11	4	80	1FB2	戻る					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:12	0	0	DATA	霞ヶ関駅・千代田線					record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:12	1	21	0D	霞ヶ関駅・千代田線					record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:12	2	58	1FB2	大手町方面					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:12	3	70	1FB2	明治神宮前方面					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:12	4	86	1FB2	戻る					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:13	0	0	DATA	六本木駅・日比谷線					record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:13	1	21	0D	六本木駅・日比谷線					record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:13	2	58	1FB2	恵比寿方面					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:13	3	70	1FB2	霞ヶ関方面					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:13	4	82	1FB2	戻る					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:14	0	0	DATA	東池袋駅・有楽町線					@refalign
+m/MS0044.BIN	0:14	1	21	0D	東池袋駅・有楽町線					@refalign
 m/MS0044.BIN	0:14	2	57	00	{01:00}{02:1F}w	{01:00}{02:1F}w				reads: 早坂達也w
-m/MS0044.BIN	0:15	0	0	DATA	護国寺駅・有楽町線		Gokokuji-Urakumachi	v005		record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:15	1	21	0D	護国寺駅・有楽町線		Gokokuji-Urakumachi	v005		record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:15	2	58	1FB2	東池袋方面		Higashi-Ikebukuro	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:15	3	70	1FB2	飯田橋方面		Iidabashi	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:15	4	82	1FB2	戻る		Go back	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:16	0	0	DATA	飯田橋駅・有楽町線		Iidabashi-Urakumachi	v005		@refalign
-m/MS0044.BIN	0:16	1	21	0D	飯田橋駅・有楽町線		Iidabashi-Urakumachi	v005		@refalign
+m/MS0044.BIN	0:15	0	0	DATA	護国寺駅・有楽町線					record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:15	1	21	0D	護国寺駅・有楽町線					record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:15	2	58	1FB2	東池袋方面					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:15	3	70	1FB2	飯田橋方面					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:15	4	82	1FB2	戻る					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:16	0	0	DATA	飯田橋駅・有楽町線					@refalign
+m/MS0044.BIN	0:16	1	21	0D	飯田橋駅・有楽町線					@refalign
 m/MS0044.BIN	0:16	2	53	00	{01:00}	{01:00}				reads: 早坂達也
 m/MS0044.BIN	0:16	3	57	00	{05:00}	{05:00}				reads: はいいいえ; reads: はいいいえニュートン
-m/MS0044.BIN	0:17	0	0	DATA	明治神宮前駅・千代田線		Meiji-Chiyoda	v005		record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:17	1	25	0D	明治神宮前駅・千代田線		Meiji-Chiyoda	v005		record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:17	2	66	1FB2	代々木公園方面		Yoyogi Park	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:17	3	82	1FB2	霞ヶ関方面		Kasumigaseki	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:17	4	94	1FB2	戻る		Go back	v005		menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
-m/MS0044.BIN	0:18	0	0	DATA	千駄木駅・千代田線		Sendagi-Chiyoda	v005		@refalign
-m/MS0044.BIN	0:18	1	21	0D	千駄木駅・千代田線		Sendagi-Chiyoda	v005		@refalign
+m/MS0044.BIN	0:17	0	0	DATA	明治神宮前駅・千代田線					record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:17	1	25	0D	明治神宮前駅・千代田線					record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:17	2	66	1FB2	代々木公園方面					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:17	3	82	1FB2	霞ヶ関方面					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:17	4	94	1FB2	戻る					menu option, declared width 20 columns; record reaches an engine no-op opcode; verify in game @refalign
+m/MS0044.BIN	0:18	0	0	DATA	千駄木駅・千代田線					@refalign
+m/MS0044.BIN	0:18	1	21	0D	千駄木駅・千代田線					@refalign
 m/MS0044.BIN	0:18	2	57	00	{01:00}{02:1F}w	{01:00}{02:1F}w				reads: 早坂達也w
-m/MS0044.BIN	0:19	0	0	DATA	三ノ輪駅・日比谷線		Minowa-Hibiya	v005		@refalign
-m/MS0044.BIN	0:19	1	21	0D	三ノ輪駅・日比谷線		Minowa-Hibiya	v005		@refalign
+m/MS0044.BIN	0:19	0	0	DATA	三ノ輪駅・日比谷線					@refalign
+m/MS0044.BIN	0:19	1	21	0D	三ノ輪駅・日比谷線					@refalign
 m/MS0044.BIN	0:19	2	55	00	{01:00}	{01:00}				reads: 早坂達也
 m/MS0044.BIN	0:19	3	59	00	{01:1F}w	{01:1F}w				reads: おにいちゃんw
-m/MS0044.BIN	0:1A	0	0	DATA	芝浦埠頭駅・臨海新交通		Harbour-Waterfront	v005		@refalign
-m/MS0044.BIN	0:1A	1	25	0D	芝浦埠頭駅・臨海新交通		Harbour-Waterfront	v005		@refalign
-m/MS0044.BIN	0:1B	0	0	DATA	秋葉原駅・日比谷線		Akihabara-Hibiya	v005		@refalign
-m/MS0044.BIN	0:1B	1	21	0D	秋葉原駅・日比谷線		Akihabara-Hibiya	v005		@refalign
+m/MS0044.BIN	0:1A	0	0	DATA	芝浦埠頭駅・臨海新交通					@refalign
+m/MS0044.BIN	0:1A	1	25	0D	芝浦埠頭駅・臨海新交通					@refalign
+m/MS0044.BIN	0:1B	0	0	DATA	秋葉原駅・日比谷線					@refalign
+m/MS0044.BIN	0:1B	1	21	0D	秋葉原駅・日比谷線					@refalign
 m/MS0044.BIN	0:1B	2	53	00	{05:00}	{05:00}				reads: はいいいえ; reads: はいいいえニュートン
 m/MS0044.BIN	0:1B	3	57	00	{01:00}{02:1F}w	{01:00}{02:1F}w				reads: 早坂達也w
-m/MS0044.BIN	0:1C	0	0	DATA	代々木公園駅・千代田線		Yoyogi-Chiyoda	v005		@refalign
-m/MS0044.BIN	0:1C	1	25	0D	代々木公園駅・千代田線		Yoyogi-Chiyoda	v005		@refalign
+m/MS0044.BIN	0:1C	0	0	DATA	代々木公園駅・千代田線					@refalign
+m/MS0044.BIN	0:1C	1	25	0D	代々木公園駅・千代田線					@refalign
 m/MS0044.BIN	0:1C	2	61	00	{03:00}{01:00}	{03:00}{01:00}				reads: 飛び道具早坂達也
 m/MS0044.BIN	0:1C	3	67	00	{01:1F}w	{01:1F}w				reads: おにいちゃんw

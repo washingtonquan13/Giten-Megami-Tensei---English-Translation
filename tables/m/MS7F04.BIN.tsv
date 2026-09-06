@@ -3,16 +3,16 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS7F04.BIN	0:00	0	16	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
-m/MS7F04.BIN	0:00	1	20	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
+m/MS7F04.BIN	0:00	0	16	1FB2	{08:26}	{08:26}				reads: はい; menu option, declared width 20 columns
+m/MS7F04.BIN	0:00	1	20	1FB2	{08:27}	{08:27}				reads: いいえ; menu option, declared width 20 columns
 m/MS7F04.BIN	0:01	0	24	1F53	{03:00}	{03:00}				reads: 飛び道具
 m/MS7F04.BIN	0:02	0	36	1F50	{03:12}	{03:12}				reads: 切り
 m/MS7F04.BIN	0:03	0	24	1F53	{03:19}{03:00}	{03:19}{03:00}				reads: 飛び道具
 m/MS7F04.BIN	0:05	0	75	1F4C	{03:19}{03:00}	{03:19}{03:00}				reads: 飛び道具
 m/MS7F04.BIN	0:05	1	97	1F4D	{03:02}	{03:02}				reads: を攻撃し
 m/MS7F04.BIN	0:05	2	125	1F4C	{03:02}	{03:02}				reads: を攻撃し
-m/MS7F04.BIN	0:07	0	35	1EB0	上	Up/			draft	reads: わたしに @ours-2026-09-05
-m/MS7F04.BIN	0:07	1	40	18	下へ続く階段が{08:7B}\n移動し{08:15}\n	Down: a staircase leads from here.\nProceed?\n	There is a staircase leading down here.\nProceed?\n                         	v005	draft	reads: 下へ続く階段がある\n移動しますか？\n; reads: {=90}{=01}はいいいえニュートン{=91}{=01}辞書５上 @refalign @ours-2026-09-05
+m/MS7F04.BIN	0:07	0	35	1EB0	上	Up/				reads: わたしに @ours-2026-09-05
+m/MS7F04.BIN	0:07	1	40	18	下へ続く階段が{08:7B}\n移動し{08:15}\n	Down: a staircase leads from here.\nProceed?\n				reads: 下へ続く階段がある\n移動しますか？\n; reads: {=90}{=01}はいいいえニュートン{=91}{=01}辞書５上 @refalign @ours-2026-09-05
 m/MS7F04.BIN	0:07	2	114	1F58	{05:00}	{05:00}				reads: はいいいえ; reads: 下へ続く階段がある\n移動しますか？\n
 m/MS7F04.BIN	0:07	3	146	1EB2	{05:08}{05:09}	{05:08}{05:09}				reads: ; reads: はいいいえニュートン
 m/MS7F04.BIN	0:0A	0	100	1FEA	{05:0E}	{05:0E}				reads: ; reads: ママ
@@ -23,8 +23,8 @@ m/MS7F04.BIN	0:0B	0	18	00	{03:12}{05:0C}	{03:12}{05:0C}				reads: 切り切り�
 m/MS7F04.BIN	0:0C	0	18	00	{03:12}{05:0D}	{03:12}{05:0D}				reads: 切り切り; reads: 切り切り山瀬勇?ペンタグランマ>そんなこと=切り<飛び道具;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ
 m/MS7F04.BIN	0:0D	0	18	00	{03:12}{05:0E}	{03:12}{05:0E}				reads: 切り; reads: 切り山瀬勇?ペンタグランマ>そんなこと=切り<飛び道具;:＞何をしますか？9達也8そろそろ結界1？０１２３４５６７８９ａｂｃｄｅｆ
 m/MS7F04.BIN	0:0E	0	0	UNTILED	P / @ / ? / > / = / < / ; / : / 9 / 8 / 7 / 6 / 5 / 4 / 3 / 2 / 1 / ？ / ０ / １ / ２ / ３ / ４ / ５ / ６ / ７ / ８ / ９ / ａ / ｂ / ｃ / ｄ / ｅ / ｆ	P / @ / ? / > / = / < / ; / : / 9 / 8 / 7 / 6 / 5 / 4 / 3 / 2 / 1 / ？ / ０ / １ / ２ / ３ / ４ / ５ / ６ / ７ / ８ / ９ / ａ / ｂ / ｃ / ｄ / ｅ / ｆ				@noedit; @untiled; record does not tile (switch entry at 0x49 has kind 50 (not 0 or 1)); read-only, copied verbatim; reads:  @rebase-new @rebase-unmatched idx12 en=? @rebase-unmatched idx13 en=0 @rebase-unmatched idx14 en=1 @rebase-unmatched idx15 en=2 @rebase-unmatched idx16 en=3 @rebase-unmatched idx17 en=4 @rebase-unmatched idx18 en=5 @rebase-unmatched idx19 en=6 @rebase-unmatched idx20 en=7 @rebase-unmatched idx21 en=8 @rebase-unmatched idx22 en=9 @rebase-unmatched idx23 en=a @rebase-unmatched idx24 en=b @rebase-unmatched idx25 en=c @rebase-unmatched idx26 en=d @rebase-unmatched idx27 en=e @rebase-unmatched idx28 en=f @rebase-unmatched idx12 en=? @rebase-unmatched idx13 en=0 @rebase-unmatched idx14 en=1 @rebase-unmatched idx15 en=2 @rebase-unmatched idx16 en=3 @rebase-unmatched idx17 en=4 @rebase-unmatched idx18 en=5 @rebase-unmatched idx19 en=6 @rebase-unmatched idx20 en=7 @rebase-unmatched idx21 en=8 @rebase-unmatched idx22 en=9 @rebase-unmatched idx23 en=a @rebase-unmatched idx24 en=b @rebase-unmatched idx25 en=c @rebase-unmatched idx26 en=d @rebase-unmatched idx27 en=e @rebase-unmatched idx28 en=f
-m/MS7F04.BIN	0:10	0	0	DATA	{04:04}は逃げ出{08:4B}\n{1E10:010214}		{04:04} ran away.\n{1E10:010214}	v005		reads: 味方たちは逃げ出した\n{1E10:010214}; reads: 味方たちは逃げ出した\n{1E10:010214} @refalign
-m/MS7F04.BIN	0:11	0	0	DATA	逃げられ{08:19}！\n{1E10:010214}		Failed to run away!\n{1E10:010214}	v005		reads: 逃げられなかった！\n{1E10:010214}; reads: 逃げられなかった！\n{1E10:010214} @refalign
+m/MS7F04.BIN	0:10	0	0	DATA	{04:04}は逃げ出{08:4B}\n{1E10:010214}					reads: 味方たちは逃げ出した\n{1E10:010214}; reads: 味方たちは逃げ出した\n{1E10:010214} @refalign
+m/MS7F04.BIN	0:11	0	0	DATA	逃げられ{08:19}！\n{1E10:010214}					reads: 逃げられなかった！\n{1E10:010214}; reads: 逃げられなかった！\n{1E10:010214} @refalign
 m/MS7F04.BIN	0:12	0	211	1F82	{04:FF}	{04:FF}				reads: 
 m/MS7F04.BIN	0:12	1	214	00	{05:13}	{05:13}				reads: 
 m/MS7F04.BIN	0:12	2	226	1F82	{04:FF}	{04:FF}				reads: 

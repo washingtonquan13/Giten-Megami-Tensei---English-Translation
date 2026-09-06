@@ -3,91 +3,91 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0038.BIN	0:00	0	2	1FD0	転送装置が設置{03:0C}{08:14}。\n<wait>転送を行い{08:15}\n		There is a transporter here.\n<wait>Do you wish to use the transporter?\n	v005		reads: 転送装置が設置されている。\n<wait>転送を行いますか？\n; reads: 転送装置が設置されている。\n<wait>転送を行いますか？\n @refalign
-m/MS0038.BIN	0:01	0	4	1FD0	転送を開始し{08:5A}{02:09}\n<wait>		Beginning transportation...\n<wait>	v005		reads: 転送を開始します・・・\n<wait>; reads: 転送を開始します・・・\n<wait> @refalign
-m/MS0038.BIN	0:01	1	47	1F77	{1E10:0103}転送終了しま{08:4B}。\n<wait>		{1E10:0103}Transportation completed.\n<wait>	v005		reads: {1E10:0103}転送終了しました。\n<wait>; reads: {1E10:0103}転送終了しました。\n<wait> @refalign
-m/MS0038.BIN	0:02	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:02	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:03	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:03	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:04	0	2	1FD0	転送装置が設置{03:0C}{08:14}。\n<wait>受信専用の装置らしく、操作用のコンソールが見当{08:50}{08:25}。\n<wait>		There is a transporter here.\n<wait>There are no controls anywhere to be seen,\nsignalling that this terminal can only be used as a receiver.\n<wait>	v005		reads: 転送装置が設置されている。\n<wait>受信専用の装置らしく、操作用のコンソールが見当たらない。\n<wait>; reads: 転送装置が設置されている。\n<wait>受信専用の装置らしく、操作用のコンソールが見当たらない。\n<wait> @refalign
-m/MS0038.BIN	0:05	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:05	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:06	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:06	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:07	0	2	1FD0	転送装置が設置{03:0C}{08:14}。\n<wait>受信専用の装置らしく、操作用のコンソールが見当{08:50}{08:25}。\n<wait>		There is a transporter here.\n<wait>There are no controls anywhere to be seen,\nsignalling that this terminal can only be used as a receiver.\n<wait>	v005		reads: 転送装置が設置されている。\n<wait>受信専用の装置らしく、操作用のコンソールが見当たらない。\n<wait>; reads: 転送装置が設置されている。\n<wait>受信専用の装置らしく、操作用のコンソールが見当たらない。\n<wait> @refalign
-m/MS0038.BIN	0:08	0	19	1FB2	転送実行α	Transfer: alpha			draft	menu option, declared width 20 columns @ours-2026-09-05
-m/MS0038.BIN	0:08	1	31	1FB2	転送実行β	Transfer: beta			draft	menu option, declared width 20 columns @ours-2026-09-05
-m/MS0038.BIN	0:08	2	43	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:09	0	19	1FB2	転送実行α	Transfer: alpha			draft	menu option, declared width 20 columns @ours-2026-09-05
-m/MS0038.BIN	0:09	1	31	1FB2	転送実行β	Transfer: beta			draft	menu option, declared width 20 columns @ours-2026-09-05
-m/MS0038.BIN	0:09	2	43	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:0A	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:0A	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:0B	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:0B	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:0C	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:0C	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:0D	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:0D	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:0E	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:0E	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:0F	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:0F	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:10	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:10	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:11	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:11	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:12	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:12	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:13	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:13	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:14	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:14	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:15	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:15	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:16	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:16	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:17	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:17	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:18	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:18	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:19	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:19	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:1A	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:1A	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:1B	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:1B	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:1C	0	2	1FD0	転送装置が設置{03:0C}{08:14}。\n<wait>受信専用の装置らしく、操作用のコンソールが見当{08:50}{08:25}。\n<wait>		There is a transporter here.\n<wait>There are no controls anywhere to be seen,\nsignalling that this terminal can only be used as a receiver.\n<wait>	v005		reads: 転送装置が設置されている。\n<wait>受信専用の装置らしく、操作用のコンソールが見当たらない。\n<wait>; reads: 転送装置が設置されている。\n<wait>受信専用の装置らしく、操作用のコンソールが見当たらない。\n<wait> @refalign
-m/MS0038.BIN	0:1D	0	19	1FB2	転送実行α	Transfer: alpha			draft	menu option, declared width 20 columns @ours-2026-09-05
-m/MS0038.BIN	0:1D	1	31	1FB2	転送実行β	Transfer: beta			draft	menu option, declared width 20 columns @ours-2026-09-05
-m/MS0038.BIN	0:1D	2	43	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:1E	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:1E	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:1F	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:1F	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:20	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:20	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:21	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:21	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:22	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:22	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:23	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:23	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:24	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:24	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:25	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:25	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:26	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:26	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:27	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:27	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:28	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:28	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:29	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:29	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:2A	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:2A	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:2B	0	19	1FB2	転送実行		Transport	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:2B	1	29	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0038.BIN	0:2C	0	2	1FD0	転送装置が設置{03:0C}{08:14}。\n<wait>受信専用の装置らしく、操作用のコンソールが見当{08:50}{08:25}。\n<wait>		There is a transporter here.\n<wait>There are no controls anywhere to be seen,\nsignalling that this terminal can only be used as a receiver.\n<wait>	v005		reads: 転送装置が設置されている。\n<wait>受信専用の装置らしく、操作用のコンソールが見当たらない。\n<wait>; reads: 転送装置が設置されている。\n<wait>受信専用の装置らしく、操作用のコンソールが見当たらない。\n<wait> @refalign
+m/MS0038.BIN	0:00	0	2	1FD0	転送装置が設置{03:0C}{08:14}。\n<wait>転送を行い{08:15}\n					reads: 転送装置が設置されている。\n<wait>転送を行いますか？\n; reads: 転送装置が設置されている。\n<wait>転送を行いますか？\n @refalign
+m/MS0038.BIN	0:01	0	4	1FD0	転送を開始し{08:5A}{02:09}\n<wait>					reads: 転送を開始します・・・\n<wait>; reads: 転送を開始します・・・\n<wait> @refalign
+m/MS0038.BIN	0:01	1	47	1F77	{1E10:0103}転送終了しま{08:4B}。\n<wait>					reads: {1E10:0103}転送終了しました。\n<wait>; reads: {1E10:0103}転送終了しました。\n<wait> @refalign
+m/MS0038.BIN	0:02	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:02	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:03	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:03	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:04	0	2	1FD0	転送装置が設置{03:0C}{08:14}。\n<wait>受信専用の装置らしく、操作用のコンソールが見当{08:50}{08:25}。\n<wait>					reads: 転送装置が設置されている。\n<wait>受信専用の装置らしく、操作用のコンソールが見当たらない。\n<wait>; reads: 転送装置が設置されている。\n<wait>受信専用の装置らしく、操作用のコンソールが見当たらない。\n<wait> @refalign
+m/MS0038.BIN	0:05	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:05	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:06	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:06	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:07	0	2	1FD0	転送装置が設置{03:0C}{08:14}。\n<wait>受信専用の装置らしく、操作用のコンソールが見当{08:50}{08:25}。\n<wait>					reads: 転送装置が設置されている。\n<wait>受信専用の装置らしく、操作用のコンソールが見当たらない。\n<wait>; reads: 転送装置が設置されている。\n<wait>受信専用の装置らしく、操作用のコンソールが見当たらない。\n<wait> @refalign
+m/MS0038.BIN	0:08	0	19	1FB2	転送実行α	Transfer: alpha				menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0038.BIN	0:08	1	31	1FB2	転送実行β	Transfer: beta				menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0038.BIN	0:08	2	43	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:09	0	19	1FB2	転送実行α	Transfer: alpha				menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0038.BIN	0:09	1	31	1FB2	転送実行β	Transfer: beta				menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0038.BIN	0:09	2	43	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:0A	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:0A	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:0B	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:0B	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:0C	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:0C	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:0D	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:0D	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:0E	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:0E	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:0F	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:0F	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:10	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:10	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:11	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:11	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:12	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:12	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:13	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:13	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:14	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:14	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:15	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:15	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:16	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:16	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:17	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:17	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:18	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:18	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:19	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:19	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:1A	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:1A	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:1B	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:1B	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:1C	0	2	1FD0	転送装置が設置{03:0C}{08:14}。\n<wait>受信専用の装置らしく、操作用のコンソールが見当{08:50}{08:25}。\n<wait>					reads: 転送装置が設置されている。\n<wait>受信専用の装置らしく、操作用のコンソールが見当たらない。\n<wait>; reads: 転送装置が設置されている。\n<wait>受信専用の装置らしく、操作用のコンソールが見当たらない。\n<wait> @refalign
+m/MS0038.BIN	0:1D	0	19	1FB2	転送実行α	Transfer: alpha				menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0038.BIN	0:1D	1	31	1FB2	転送実行β	Transfer: beta				menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0038.BIN	0:1D	2	43	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:1E	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:1E	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:1F	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:1F	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:20	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:20	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:21	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:21	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:22	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:22	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:23	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:23	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:24	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:24	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:25	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:25	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:26	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:26	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:27	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:27	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:28	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:28	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:29	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:29	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:2A	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:2A	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:2B	0	19	1FB2	転送実行					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:2B	1	29	1FB2	立ち去る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0038.BIN	0:2C	0	2	1FD0	転送装置が設置{03:0C}{08:14}。\n<wait>受信専用の装置らしく、操作用のコンソールが見当{08:50}{08:25}。\n<wait>					reads: 転送装置が設置されている。\n<wait>受信専用の装置らしく、操作用のコンソールが見当たらない。\n<wait>; reads: 転送装置が設置されている。\n<wait>受信専用の装置らしく、操作用のコンソールが見当たらない。\n<wait> @refalign

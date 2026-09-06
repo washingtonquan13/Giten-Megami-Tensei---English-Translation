@@ -3,71 +3,71 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0037.BIN	0:00	0	30	1FD0	宝箱が置かれ{08:14}。\n		There is a treasure chest here.\n	v005		reads: 宝箱が置かれている。\n; reads: 宝箱が置かれている。\n @refalign
-m/MS0037.BIN	0:01	0	34	1FD0	豪華な装飾を施{08:4B}箱が置かれ{08:14}。\n		There is an ornate chest here.\n	v005		reads: 豪華な装飾を施した箱が置かれている。\n; reads: 豪華な装飾を施した箱が置かれている。\n @refalign
-m/MS0037.BIN	0:04	0	17	1FBA	誰が開け{08:15}\n		Who will try to open it?\n	v005		reads: 誰が開けますか？\n; reads: 誰が開けますか？\n @refalign
+m/MS0037.BIN	0:00	0	30	1FD0	宝箱が置かれ{08:14}。\n					reads: 宝箱が置かれている。\n; reads: 宝箱が置かれている。\n @refalign
+m/MS0037.BIN	0:01	0	34	1FD0	豪華な装飾を施{08:4B}箱が置かれ{08:14}。\n					reads: 豪華な装飾を施した箱が置かれている。\n; reads: 豪華な装飾を施した箱が置かれている。\n @refalign
+m/MS0037.BIN	0:04	0	17	1FBA	誰が開け{08:15}\n					reads: 誰が開けますか？\n; reads: 誰が開けますか？\n @refalign
 m/MS0037.BIN	0:04	1	46	1F17	{01:08}	{01:08}				reads: バエル
 m/MS0037.BIN	0:04	2	51	00	7	7				
-m/MS0037.BIN	0:04	3	104	1FFA	・\n・\n・\n	.\n.\n.\n			draft	@ours-2026-09-05
+m/MS0037.BIN	0:04	3	104	1FFA	・\n・\n・\n	.\n.\n.\n				@ours-2026-09-05
 m/MS0037.BIN	0:04	4	196	1F4C	{03:19}	{03:19}				reads: ; reads: いろいろ
-m/MS0037.BIN	0:04	5	251	18	トラップが仕掛けられて{08:64}！\n<wait>	A trap had been set!\n<wait>	A trap has been set off!\n<wait>	v005	draft	reads: トラップが仕掛けられていた！\n<wait>; reads: ペンタグランマ @ours-2026-09-05
-m/MS0037.BIN	0:04	6	291	1E3E	がトラップを見つ{08:43}。\n{08:47}{08:7E}	found a trap.\nWill			draft	reads: がトラップを見つけた。\nこのまま; reads: 切り @ours-2026-09-05
-m/MS0037.BIN	0:04	7	320	1E3E	がトラップを解除し{08:15}\n	disarm the trap now?\n			draft	reads: がトラップを解除しますか？\n; reads: ｳ @ours-2026-09-05
-m/MS0037.BIN	0:04	8	357	1FB2	{08:79}{08:7E}解除{08:8E}	Go ahead	They	v005	draft	reads: そのまま解除する; menu option, declared width 20 columns @ours-2026-09-05
-m/MS0037.BIN	0:04	9	369	1FB2	他の者が解除{08:8E}		Someone else	v005		reads: 他の者が解除する; menu option, declared width 20 columns; reads: トラップが仕掛けられていた！\n<wait> @refalign
-m/MS0037.BIN	0:04	10	385	1FB2	宝箱をあきら{08:2E}		Back off	v005		reads: 宝箱をあきらめる; menu option, declared width 20 columns; reads: がトラップを見つけた。\nこのまま @refalign
-m/MS0037.BIN	0:04	11	423	1FBA	誰がトラップを解除し{08:15}\n		Who will try to disable the trap?\n	v005		reads: 誰がトラップを解除しますか？\n; reads: がトラップを解除しますか？\n @rebase-new @refalign
-m/MS0037.BIN	0:04	12	460	1FFA	・\n・\n・\n	.\n.\n.\n			draft	reads: そのまま解除する; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0037.BIN	0:04	5	251	18	トラップが仕掛けられて{08:64}！\n<wait>	A trap had been set!\n<wait>				reads: トラップが仕掛けられていた！\n<wait>; reads: ペンタグランマ @ours-2026-09-05
+m/MS0037.BIN	0:04	6	291	1E3E	がトラップを見つ{08:43}。\n{08:47}{08:7E}	found a trap.\nWill				reads: がトラップを見つけた。\nこのまま; reads: 切り @ours-2026-09-05
+m/MS0037.BIN	0:04	7	320	1E3E	がトラップを解除し{08:15}\n	disarm the trap now?\n				reads: がトラップを解除しますか？\n; reads: ｳ @ours-2026-09-05
+m/MS0037.BIN	0:04	8	357	1FB2	{08:79}{08:7E}解除{08:8E}	Go ahead				reads: そのまま解除する; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0037.BIN	0:04	9	369	1FB2	他の者が解除{08:8E}					reads: 他の者が解除する; menu option, declared width 20 columns; reads: トラップが仕掛けられていた！\n<wait> @refalign
+m/MS0037.BIN	0:04	10	385	1FB2	宝箱をあきら{08:2E}					reads: 宝箱をあきらめる; menu option, declared width 20 columns; reads: がトラップを見つけた。\nこのまま @refalign
+m/MS0037.BIN	0:04	11	423	1FBA	誰がトラップを解除し{08:15}\n					reads: 誰がトラップを解除しますか？\n; reads: がトラップを解除しますか？\n @rebase-new @refalign
+m/MS0037.BIN	0:04	12	460	1FFA	・\n・\n・\n	.\n.\n.\n				reads: そのまま解除する; menu option, declared width 20 columns @ours-2026-09-05
 m/MS0037.BIN	0:04	13	497	1F4C	{03:19}	{03:19}				reads: ; reads: 他の者が解除する; menu option, declared width 20 columns
-m/MS0037.BIN	0:04	14	549	1E3E	はトラップを解除{08:4B}。\n<wait>		 disabled the trap.\n<wait>	v005		reads: はトラップを解除した。\n<wait>; reads: 宝箱をあきらめる; menu option, declared width 20 columns @refalign
-m/MS0037.BIN	0:04	15	577	0C	トラップが作動{08:17}\n<wait>	The trap went off!\n<wait>	The trap activated!\n<wait>	v005	draft	reads: トラップが作動した！\n<wait>; reads: 山田 @ours-2026-09-05
-m/MS0037.BIN	0:04	16	663	1EAA	{08:0B}が出現{08:17}\n{1E10:01023C}	A demon appeared!\n{1E10:01023C}	A demon appeared!\n{1E10:01023C}	ours	draft	reads: 悪魔が出現した！\n{1E10:01023C}; reads: デビルバスター7 @ours-2026-09-05
+m/MS0037.BIN	0:04	14	549	1E3E	はトラップを解除{08:4B}。\n<wait>					reads: はトラップを解除した。\n<wait>; reads: 宝箱をあきらめる; menu option, declared width 20 columns @refalign
+m/MS0037.BIN	0:04	15	577	0C	トラップが作動{08:17}\n<wait>	The trap went off!\n<wait>				reads: トラップが作動した！\n<wait>; reads: 山田 @ours-2026-09-05
+m/MS0037.BIN	0:04	16	663	1EAA	{08:0B}が出現{08:17}\n{1E10:01023C}	A demon appeared!\n{1E10:01023C}				reads: 悪魔が出現した！\n{1E10:01023C}; reads: デビルバスター7 @ours-2026-09-05
 m/MS0037.BIN	0:04	17	732	00	{04:FF}	{04:FF}				reads: ; reads: がトラップを解除しますか？\n @rebase-unmatched idx17 en=o will try to disable the trap?\n @rebase-unmatched idx17 en=o will try to disable the trap?\n
 m/MS0037.BIN	0:04	18	735	00	d{04:FF}	d{04:FF}				reads: d
 m/MS0037.BIN	0:04	19	739	00	d	d				reads: 
 m/MS0037.BIN	0:05	0	34	1F81	{03:17}{03:19}	{03:17}{03:19}				reads: 
-m/MS0037.BIN	0:05	1	149	1F01	達は宝箱をあきらめた\n<wait>	 and the others gave up on the treasure chest.\n<wait>	You decide to back off.\n<wait>	v005	draft	reads: 達は宝箱をあきらめた\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS0037.BIN	0:05	2	262	1E3E	は行動不能状態{08:55}\n<wait>		 is in no working condition.\n<wait>	v005		reads: は行動不能状態です\n<wait>; reads: は行動不能状態です\n<wait> @refalign
-m/MS0037.BIN	0:06	0	40	1B	メンバー	Member	Member	v005	draft	reads: われわれ @ours-2026-09-05
-m/MS0037.BIN	0:07	0	63	1F19	爆発のトラップ！\n	An explosion trap!\n			draft	reads: わたしを @ours-2026-09-05
+m/MS0037.BIN	0:05	1	149	1F01	達は宝箱をあきらめた\n<wait>	 and the others gave up on the treasure chest.\n<wait>				reads: 達は宝箱をあきらめた\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS0037.BIN	0:05	2	262	1E3E	は行動不能状態{08:55}\n<wait>					reads: は行動不能状態です\n<wait>; reads: は行動不能状態です\n<wait> @refalign
+m/MS0037.BIN	0:06	0	40	1B	メンバー	Member				reads: われわれ @ours-2026-09-05
+m/MS0037.BIN	0:07	0	63	1F19	爆発のトラップ！\n	An explosion trap!\n				reads: わたしを @ours-2026-09-05
 m/MS0037.BIN	0:07	1	165	17	{03:17}	{03:17}				reads: ; reads: そんなことw
-m/MS0037.BIN	0:07	2	184	1F89	{08:72}が運良くかわす{08:46}がで{08:1E}\n		...Thankfully, you were able to dodge in time.\n	v005		reads: ‥‥が運良くかわすことができた\n; reads: 切り{=F5}{=00}飛び道具`爆発のトラップ！\n @rebase-unmatched idx2 en={04:01}A{01:05}{01:B5}{01:FF}A bomb explodes!\n @rebase-unmatched idx2 en={04:01}A{01:05}{01:B5}{01:FF}A bomb explodes!\n @refalign
-m/MS0037.BIN	0:07	3	212	18	毒針に刺さ{08:11}\n	Stabbed by poison needles!\n	Poison needles are launched!\n	v005	draft	reads: 毒針に刺された！\n @ours-2026-09-05
-m/MS0037.BIN	0:07	4	249	1F89	{08:72}が運良くかわす{08:46}がで{08:1E}\n		...Thankfully, you were able to dodge in time.\n	v005		reads: ‥‥が運良くかわすことができた\n; reads: ‥‥が運良くかわすことができた\n @refalign
-m/MS0037.BIN	0:07	5	277	18	毒針に刺さ{08:11}\n		Poison needles are launched!\n	v005		reads: 毒針に刺された！\n; reads: 毒針に刺された！\n @refalign
-m/MS0037.BIN	0:07	6	303	18	ガスが吹き出{08:17}\n		Poison gas is released!\n	v005		reads: ガスが吹き出した！\n; reads: ‥‥が運良くかわすことができた\n @refalign
+m/MS0037.BIN	0:07	2	184	1F89	{08:72}が運良くかわす{08:46}がで{08:1E}\n					reads: ‥‥が運良くかわすことができた\n; reads: 切り{=F5}{=00}飛び道具`爆発のトラップ！\n @rebase-unmatched idx2 en={04:01}A{01:05}{01:B5}{01:FF}A bomb explodes!\n @rebase-unmatched idx2 en={04:01}A{01:05}{01:B5}{01:FF}A bomb explodes!\n @refalign
+m/MS0037.BIN	0:07	3	212	18	毒針に刺さ{08:11}\n	Stabbed by poison needles!\n				reads: 毒針に刺された！\n; reads: 毒針に刺された！\n @ours-2026-09-05
+m/MS0037.BIN	0:07	4	249	1F89	{08:72}が運良くかわす{08:46}がで{08:1E}\n					reads: ‥‥が運良くかわすことができた\n; reads: ‥‥が運良くかわすことができた\n @refalign
+m/MS0037.BIN	0:07	5	277	18	毒針に刺さ{08:11}\n					reads: 毒針に刺された！\n; reads: 毒針に刺された！\n @refalign
+m/MS0037.BIN	0:07	6	303	18	ガスが吹き出{08:17}\n					reads: ガスが吹き出した！\n; reads: ‥‥が運良くかわすことができた\n @refalign
 m/MS0037.BIN	0:07	7	406	17	{03:17}	{03:17}				reads: ; reads: 毒針に刺された！\n
-m/MS0037.BIN	0:07	8	425	1F89	{08:72}が運良くかわす{08:46}がで{08:1E}\n		...Thankfully, you were able to dodge in time.\n	v005		reads: ‥‥が運良くかわすことができた\n; reads: ガスが吹き出した！\n @refalign
-m/MS0037.BIN	0:07	9	478	1F77	{1E10:0103}呪わ{08:11}\n	{1E10:0103}Cursed!\n	{1E10:0103}You have been cursed!\n	v005	draft	reads: {1E10:0103}呪われた！\n @ours-2026-09-05
-m/MS0037.BIN	0:08	0	81	18	宝箱の中には何も入{08:52}{08:24}。\n	There is nothing in the chest.\n	There is nothing inside the chest.\n	v005	draft	reads: 宝箱の中には何も入っていない。\n; reads: 医師 @ours-2026-09-05
-m/MS0037.BIN	0:08	1	115	1F01	達は	 and the others obtained 	You obtained 	v005	draft	reads: 達は; reads: ペンタグランマP @rebase-tagdiff @ours-2026-09-05
-m/MS0037.BIN	0:08	2	123	1F02	マッカ入手{08:4B}。\n	 Macca.\n	 Macca.\n	ours	draft	reads: マッカ入手した。\n @ours-2026-09-05
-m/MS0037.BIN	0:08	3	151	1F01	達は生体マグネタイトを\n	 and the others obtained Bio-Magnetite\n	You obtained \n	v005	draft	reads: 達は生体マグネタイトを\n; reads: 宝箱の中には何も入っていない。\n @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS0037.BIN	0:08	4	178	1F02	ＭＡＧ入手{08:4B}。\n		 MAG.\n	v005		reads: ＭＡＧ入手した。\n; reads: 達は @refalign
+m/MS0037.BIN	0:07	8	425	1F89	{08:72}が運良くかわす{08:46}がで{08:1E}\n					reads: ‥‥が運良くかわすことができた\n; reads: ガスが吹き出した！\n @refalign
+m/MS0037.BIN	0:07	9	478	1F77	{1E10:0103}呪わ{08:11}\n	{1E10:0103}Cursed!\n				reads: {1E10:0103}呪われた！\n; reads: {1E10:0103}呪われた！\n @ours-2026-09-05
+m/MS0037.BIN	0:08	0	81	18	宝箱の中には何も入{08:52}{08:24}。\n	There is nothing in the chest.\n				reads: 宝箱の中には何も入っていない。\n; reads: 医師 @ours-2026-09-05
+m/MS0037.BIN	0:08	1	115	1F01	達は	 and the others obtained 				reads: 達は; reads: ペンタグランマP @rebase-tagdiff @ours-2026-09-05
+m/MS0037.BIN	0:08	2	123	1F02	マッカ入手{08:4B}。\n	 Macca.\n				reads: マッカ入手した。\n; reads: マッカ入手した。\n @ours-2026-09-05
+m/MS0037.BIN	0:08	3	151	1F01	達は生体マグネタイトを\n	 and the others obtained Bio-Magnetite\n				reads: 達は生体マグネタイトを\n; reads: 宝箱の中には何も入っていない。\n @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS0037.BIN	0:08	4	178	1F02	ＭＡＧ入手{08:4B}。\n					reads: ＭＡＧ入手した。\n; reads: 達は @refalign
 m/MS0037.BIN	0:09	0	44	1F4C	{03:16}	{03:16}				reads: 
 m/MS0037.BIN	0:09	1	47	00	{05:1F}{=E8}{=03}	{05:1F}{=E8}{=03}				reads: {=E8}{=03}
-m/MS0037.BIN	0:0D	0	11	0D	{08:58}も入{08:52}い{08:19}\n<wait>		You optained nothing.\n<wait>	v005		reads: なにも入っていなかった\n<wait>; reads: なにも入っていなかった\n<wait> @refalign
+m/MS0037.BIN	0:0D	0	11	0D	{08:58}も入{08:52}い{08:19}\n<wait>					reads: なにも入っていなかった\n<wait>; reads: なにも入っていなかった\n<wait> @refalign
 m/MS0037.BIN	0:0F	0	11	00	{01:1F}{=E8}{=03}	{01:1F}{=E8}{=03}				reads: おにいちゃん{=E8}{=03}
-m/MS0037.BIN	0:0F	1	36	1F83	{04:FF}達は		 found 	v005		reads: 達は; reads: 達は @refalign
-m/MS0037.BIN	0:0F	2	55	1F86	を発見{08:4B}。\n	.\n			draft	reads: を発見した。\n; reads: 飛び道具 @ours-2026-09-05
-m/MS0037.BIN	0:0F	3	69	18	を	 x	You threw 	v005	draft	reads: を発見した。\n @refalign @ours-2026-09-05
-m/MS0037.BIN	0:0F	4	75	1F02	個発見{08:4B}。\n<wait>	 found.\n<wait>			draft	reads: 個発見した。\n<wait>; @ours-2026-09-05
-m/MS0037.BIN	0:0F	5	111	1F80	{04:FF}は	{04:FF} put			draft	reads: は; reads: 個発見した。\n<wait> @ours-2026-09-05
-m/MS0037.BIN	0:0F	6	135	1F02	個の	 of the			draft	reads: は @ours-2026-09-05
-m/MS0037.BIN	0:0F	7	152	1F86	を元に戻{08:4B}\n	 back.\n			draft	reads: を元に戻した\n; @ours-2026-09-05
-m/MS0037.BIN	0:0F	8	166	0C	をあきらめた\n	 was left behind.\n			draft	reads: 目の前に @ours-2026-09-05
-m/MS0037.BIN	0:0F	9	191	1F01	は	 threw away 			draft	reads: を元に戻した\n @ours-2026-09-05
-m/MS0037.BIN	0:0F	10	198	1F01	を捨て、	, and			draft	@ours-2026-09-05
+m/MS0037.BIN	0:0F	1	36	1F83	{04:FF}達は					reads: 達は; reads: 達は @refalign
+m/MS0037.BIN	0:0F	2	55	1F86	を発見{08:4B}。\n	.\n				reads: を発見した。\n; reads: 飛び道具 @ours-2026-09-05
+m/MS0037.BIN	0:0F	3	69	18	を	 x				reads: を発見した。\n @refalign @ours-2026-09-05
+m/MS0037.BIN	0:0F	4	75	1F02	個発見{08:4B}。\n<wait>	 found.\n<wait>				reads: 個発見した。\n<wait>; @ours-2026-09-05
+m/MS0037.BIN	0:0F	5	111	1F80	{04:FF}は	{04:FF} put				reads: は; reads: 個発見した。\n<wait> @ours-2026-09-05
+m/MS0037.BIN	0:0F	6	135	1F02	個の	 of the				reads: は @ours-2026-09-05
+m/MS0037.BIN	0:0F	7	152	1F86	を元に戻{08:4B}\n	 back.\n				reads: を元に戻した\n; @ours-2026-09-05
+m/MS0037.BIN	0:0F	8	166	0C	をあきらめた\n	 was left behind.\n				reads: 目の前に @ours-2026-09-05
+m/MS0037.BIN	0:0F	9	191	1F01	は	 threw away 				reads: を元に戻した\n @ours-2026-09-05
+m/MS0037.BIN	0:0F	10	198	1F01	を捨て、	, and				@ours-2026-09-05
 m/MS0037.BIN	0:0F	11	241	1F7F	{03:01}{03:12}を					reads: そんなこと切りを; reads: は
-m/MS0037.BIN	0:0F	12	251	1F02	個入手{08:4B}\n<wait>	 obtained.\n<wait>			draft	reads: 個入手した\n<wait>; reads: 飛び道具を捨て、 @ours-2026-09-05
-m/MS0037.BIN	0:0F	13	266	1FBA	{08:76}残り	There are still	There is still 	v005	draft	reads: まだ残り; reads: 飛び道具 @ours-2026-09-05
-m/MS0037.BIN	0:0F	14	276	1F02	個の\n	 more\n			draft	reads: そんなこと切りを @ours-2026-09-05
-m/MS0037.BIN	0:0F	15	286	1F01	が{08:7B}\n<wait>	 left.\n<wait>			draft	reads: がある\n<wait>; reads: 個入手した\n<wait> @ours-2026-09-05
-m/MS0037.BIN	0:0F	16	300	18	を入手{08:4B}\n<wait>	 obtained.\n<wait>			draft	reads: を入手した\n<wait>; reads: まだ残り @ours-2026-09-05
-m/MS0037.BIN	0:0F	17	327	1F01	達は	 and the others obtained			draft	@refalign @refalign-merged @ours-2026-09-05
-m/MS0037.BIN	0:0F	18	344	1F88	を	 x			draft	reads: 飛び道具がある\n<wait> @refalign @refalign-merged @ours-2026-09-05
-m/MS0037.BIN	0:0F	19	350	1F02	個入手{08:4B}。\n	.\n			draft	reads: 個入手した。\n; reads: を入手した\n<wait> @ours-2026-09-05
-m/MS0037.BIN	0:0F	20	364	18	を入手{08:4B}。\n		You found 	v005		reads: を入手した。\n; reads: 達は @refalign
+m/MS0037.BIN	0:0F	12	251	1F02	個入手{08:4B}\n<wait>	 obtained.\n<wait>				reads: 個入手した\n<wait>; reads: 飛び道具を捨て、 @ours-2026-09-05
+m/MS0037.BIN	0:0F	13	266	1FBA	{08:76}残り	There are still				reads: まだ残り; reads: 飛び道具 @ours-2026-09-05
+m/MS0037.BIN	0:0F	14	276	1F02	個の\n	 more\n				reads: そんなこと切りを @ours-2026-09-05
+m/MS0037.BIN	0:0F	15	286	1F01	が{08:7B}\n<wait>	 left.\n<wait>				reads: がある\n<wait>; reads: 個入手した\n<wait> @ours-2026-09-05
+m/MS0037.BIN	0:0F	16	300	18	を入手{08:4B}\n<wait>	 obtained.\n<wait>				reads: を入手した\n<wait>; reads: まだ残り @ours-2026-09-05
+m/MS0037.BIN	0:0F	17	327	1F01	達は	 and the others obtained				@refalign @refalign-merged @ours-2026-09-05
+m/MS0037.BIN	0:0F	18	344	1F88	を	 x				reads: 飛び道具がある\n<wait> @refalign @refalign-merged @ours-2026-09-05
+m/MS0037.BIN	0:0F	19	350	1F02	個入手{08:4B}。\n	.\n				reads: 個入手した。\n; reads: を入手した\n<wait> @ours-2026-09-05
+m/MS0037.BIN	0:0F	20	364	18	を入手{08:4B}。\n					reads: を入手した。\n; reads: 達は @refalign
 m/MS0037.BIN	0:12	0	73	00	{01:00}	{01:00}				reads: 早坂達也
 m/MS0037.BIN	0:12	1	87	00	{02:00}	{02:00}				reads: デビルバスター
 m/MS0037.BIN	0:12	2	101	00	{03:00}	{03:00}				reads: 飛び道具

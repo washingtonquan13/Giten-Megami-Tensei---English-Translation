@@ -3,53 +3,53 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-et/ID0099.BIN	0:97	0	0	DATA	＞{02:06}\n		>{02:06}\n	ours		reads: ＞どうしますか？\n
-et/ID0099.BIN	0:97	1	21	1FB2	宝石		Gemstone	ours		menu option, declared width 20 columns
-et/ID0099.BIN	0:97	2	27	1FB2	魔石		Magic Stone	ours		menu option, declared width 20 columns
-et/ID0099.BIN	0:97	3	33	1FB2	ＭＡＧ		MAG	ours		menu option, declared width 20 columns
-et/ID0099.BIN	0:97	4	41	1FB2	金		Money	ours		menu option, declared width 20 columns
-et/ID0099.BIN	0:97	5	45	1FB2	他の物		Other	ours		menu option, declared width 20 columns
-et/ID0099.BIN	0:97	6	97	1FB2	肉をあげる		Give Meat	ours		menu option, declared width 20 columns; reads: 燎デビルバスター燠飛び道具燵切り早坂達也 @rebase-unmatched idx6 en=燎Devil Buster燠Ranged Weapon燵{04:01}{01:00} @rebase-unmatched idx6 en=燎Devil Buster燠Ranged Weapon燵{04:01}{01:00}
-et/ID0099.BIN	0:97	7	109	1FB2	骨をあげる		Give Bone	ours		menu option, declared width 20 columns
-et/ID0099.BIN	0:97	8	121	1FB2	や{08:2E}		Cancel	ours		reads: やめる; menu option, declared width 20 columns
-et/ID0099.BIN	0:97	9	127	1FB2	他の物		Other	ours		menu option, declared width 20 columns; reads: やめる
-et/ID0099.BIN	0:97	10	232	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
-et/ID0099.BIN	0:97	11	236	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns; reads: あなたが桐島英美
-et/ID0099.BIN	0:97	12	240	1FB2	{08:5C}無い		No More	ours		reads: もう無い; menu option, declared width 20 columns; reads: 燼そんなことg @rebase-unmatched idx12 en=燼such a thingg @rebase-unmatched idx12 en=燼such a thingg
-et/ID0099.BIN	0:97	13	284	00	{08:5C}肉が無い！\n	You have no meat!\n	No more meat!\n	ours	draft	reads: もう肉が無い！\n; reads: はい; menu option, declared width 20 columns @seamfix-2026-09-05
-et/ID0099.BIN	0:97	14	378	18	肉を持{08:52}{08:24}！\n	You had meat!\n	You don't have any meat!\n	ours	draft	reads: 肉を持っていない！\n; reads: いいえ; menu option, declared width 20 columns @seamfix-2026-09-05
-et/ID0099.BIN	0:97	15	449	1FB2	そこを何とか		Just This Once	ours		menu option, declared width 20 columns; reads: もう無い
-et/ID0099.BIN	0:97	16	463	1FB2	骨を投げる	Throw a bone 	Throw a Bone	ours	draft	menu option, declared width 20 columns; reads: ひとつ @seamfix-2026-09-05
-et/ID0099.BIN	0:97	17	551	1F01	は骨を追いかけ{08:21}\n	 chases after the bone\n			draft	reads: は骨を追いかけていった\n; reads: ペンタグランマ[ @rebase-new @seamfix-2026-09-05
-et/ID0099.BIN	0:97	18	579	12	{02:09}・・\n	{02:09}・・\n	{02:09}..\n	ours		reads: ・・・・・\n
-et/ID0099.BIN	0:97	19	592	1F01	は骨をくわえて戻{08:52}{08:1E}\n	 comes back with the bone in its mouth.\n	It comes back with the bone in its mouth.\n	ours	draft	reads: は骨をくわえて戻ってきた\n; reads: もう肉が無い！\n @rebase-tagdiff @seamfix-2026-09-05
-et/ID0099.BIN	0:97	20	640	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns; reads: 肉を持っていない！\n
-et/ID0099.BIN	0:97	21	644	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
-et/ID0099.BIN	0:97	22	648	1FB2	{08:90}し{08:69}かな…		What now...?	ours		reads: どうしようかな…; menu option, declared width 20 columns
-et/ID0099.BIN	0:97	23	728	1FB2	仕方{08:25}な	Oh, all right	I guess so	ours	draft	reads: 仕方ないな; menu option, declared width 20 columns; reads: ゾンビ @seamfix-2026-09-05
-et/ID0099.BIN	0:97	24	738	1FB2	{08:90}し{08:69}かな…	Maybe I should......	What now...?	ours	draft	reads: どうしようかな…; menu option, declared width 20 columns @seamfix-2026-09-05
-et/ID0099.BIN	0:97	25	859	18	骨を持{08:52}{08:24}！\n		You don't have any bones!\n	ours		reads: 骨を持っていない！\n; reads: は骨を追いかけていった\n @rebase-unmatched idx25 en=It chases after the bone.\n
-et/ID0099.BIN	2:02	0	19	1FB2	意地{08:56}通る		Push Through	ours		reads: 意地でも通る; menu option, declared width 20 columns
-et/ID0099.BIN	2:02	1	31	1FB2	お願い{08:8E}		Beg	ours		reads: お願いする; menu option, declared width 20 columns
-et/ID0099.BIN	2:02	2	41	1FB2	骨を投げる		Throw a Bone	ours		menu option, declared width 20 columns
-et/ID0099.BIN	2:02	3	129	1F01	は\n	 			draft	reads: は\n @rebase-new @seamfix-2026-09-05
-et/ID0099.BIN	2:02	4	138	1F01	の迫力に気圧{03:0C}た！\n	 was overwhelmed by the sheer force!\n			draft	reads: の迫力に気圧された！\n; reads: ペンタグランマ @rebase-new @seamfix-2026-09-05
-et/ID0099.BIN	2:02	5	159	1FBA	{02:09}・・\n	{02:09}・・\n	{02:09}..\n	ours		reads: ・・・・・\n
-et/ID0099.BIN	2:02	6	240	1FB2	他の物{08:7D}あげる		Give Something	ours		reads: 他の物ならあげる; menu option, declared width 20 columns; reads: は\n @rebase-unmatched idx6 en=It\n
-et/ID0099.BIN	2:02	7	256	1FB2	土下座{08:4A}頼む		Grovel	ours		reads: 土下座して頼む; menu option, declared width 20 columns; reads: の迫力に気圧された！\n @rebase-unmatched idx7 en=cowers before your intensity!\n
-et/ID0099.BIN	2:02	8	304	16	{02:09}・・		{02:09}..	ours		reads: ・・・・・; reads: ・・・・・\n
-et/ID0099.BIN	2:02	9	334	13	骨を持{08:52}{08:24}！\n		You don't have any bones!\n	ours		reads: 骨を持っていない！\n; reads: 他の物ならあげる; menu option, declared width 20 columns
-et/ID0099.BIN	2:02	10	387	1F01	は\n骨を追いかけ{08:21}\n	 chases after the bone.\n	It\nchases after the bone.\n	ours	draft	reads: は\n骨を追いかけていった\n; reads: 土下座して頼む; menu option, declared width 20 columns @rebase-tagdiff @seamfix-2026-09-05
-et/ID0099.BIN	2:02	11	418	1F01	は\n骨をくわえて戻{08:52}{08:1E}\n	 comes back with the bone in its mouth.\n	It\ncomes back with the bone in its mouth.\n	ours	draft	reads: は\n骨をくわえて戻ってきた\n; reads: バエル @rebase-tagdiff @seamfix-2026-09-05
-et/ID0099.BIN	2:02	12	467	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
-et/ID0099.BIN	2:02	13	471	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns; reads: ・・・・・
-et/ID0099.BIN	2:02	14	475	1FB2	{08:90}し{08:69}かな…		What now...?	ours		reads: どうしようかな…; menu option, declared width 20 columns; reads: 骨を持っていない！\n
-et/ID0099.BIN	2:02	15	563	1FB2	仕方{08:25}な		I guess so	ours		reads: 仕方ないな; menu option, declared width 20 columns; reads: は\n骨を追いかけていった\n
-et/ID0099.BIN	2:02	16	573	1FB2	{08:90}し{08:69}かな…		What now...?	ours		reads: どうしようかな…; menu option, declared width 20 columns; reads: は\n骨をくわえて戻ってきた\n
-et/ID0099.BIN	3:1E	0	0	DATA	ウマイゾ！\n<wait>		Delicious!\n<wait>	ours		
-et/ID0099.BIN	15:BA	0	0	DATA	何ノツモリダ？\n<wait>		What's the meaning of this?\n<wait>	ours		
-et/ID0099.BIN	15:AC	0	0	DATA	カ　身体ガ勝手ニ！\n<wait>		...my body moved on its own!\n<wait>	ours		
-et/ID0099.BIN	15:BB	0	0	DATA	シマッタ　ツイ{02:09}！\n<wait>		Dammit, I just...!\n<wait>	ours		reads: シマッタ　ツイ・・・！\n<wait>
-et/ID0099.BIN	15:BC	0	0	DATA	コノ事ハ　他ノ者ニハ黙ッテイテモラエナイカ？\n<wait>		Could you keep this between us?\n<wait>	ours		
-et/ID0099.BIN	15:BD	0	0	DATA	コノ地獄ノ番犬　		As this hound of hell, 	ours		
-et/ID0099.BIN	15:BD	1	22	1F01	ノ名ニカケテ\nココハ通サン！！\n<wait>	's name I swear it --\nyou shall not pass!!\n<wait>	I swear upon the name {04:EF}...\nyou shall not pass!!\n<wait>	ours	draft	reads: ノ名ニカケテ\nココハ通サン！！\n<wait> @rebase-tagdiff @seamfix-2026-09-05
+et/ID0099.BIN	0:97	0	0	DATA	＞{02:06}\n					reads: ＞どうしますか？\n
+et/ID0099.BIN	0:97	1	21	1FB2	宝石					menu option, declared width 20 columns
+et/ID0099.BIN	0:97	2	27	1FB2	魔石					menu option, declared width 20 columns
+et/ID0099.BIN	0:97	3	33	1FB2	ＭＡＧ					menu option, declared width 20 columns
+et/ID0099.BIN	0:97	4	41	1FB2	金					menu option, declared width 20 columns
+et/ID0099.BIN	0:97	5	45	1FB2	他の物					menu option, declared width 20 columns
+et/ID0099.BIN	0:97	6	97	1FB2	肉をあげる					menu option, declared width 20 columns; reads: 燎デビルバスター燠飛び道具燵切り早坂達也 @rebase-unmatched idx6 en=燎Devil Buster燠Ranged Weapon燵{04:01}{01:00} @rebase-unmatched idx6 en=燎Devil Buster燠Ranged Weapon燵{04:01}{01:00}
+et/ID0099.BIN	0:97	7	109	1FB2	骨をあげる					menu option, declared width 20 columns
+et/ID0099.BIN	0:97	8	121	1FB2	や{08:2E}					reads: やめる; menu option, declared width 20 columns
+et/ID0099.BIN	0:97	9	127	1FB2	他の物					menu option, declared width 20 columns; reads: やめる
+et/ID0099.BIN	0:97	10	232	1FB2	{08:26}	{08:26}				reads: はい; menu option, declared width 20 columns
+et/ID0099.BIN	0:97	11	236	1FB2	{08:27}	{08:27}				reads: いいえ; menu option, declared width 20 columns; reads: あなたが桐島英美
+et/ID0099.BIN	0:97	12	240	1FB2	{08:5C}無い					reads: もう無い; menu option, declared width 20 columns; reads: 燼そんなことg @rebase-unmatched idx12 en=燼such a thingg @rebase-unmatched idx12 en=燼such a thingg
+et/ID0099.BIN	0:97	13	284	00	{08:5C}肉が無い！\n	You have no meat!\n				reads: もう肉が無い！\n; reads: はい; menu option, declared width 20 columns @seamfix-2026-09-05
+et/ID0099.BIN	0:97	14	378	18	肉を持{08:52}{08:24}！\n	You had meat!\n				reads: 肉を持っていない！\n; reads: いいえ; menu option, declared width 20 columns @seamfix-2026-09-05
+et/ID0099.BIN	0:97	15	449	1FB2	そこを何とか					menu option, declared width 20 columns; reads: もう無い
+et/ID0099.BIN	0:97	16	463	1FB2	骨を投げる	Throw a bone 				menu option, declared width 20 columns; reads: ひとつ @seamfix-2026-09-05
+et/ID0099.BIN	0:97	17	551	1F01	は骨を追いかけ{08:21}\n	 chases after the bone\n				reads: は骨を追いかけていった\n; reads: ペンタグランマ[ @rebase-new @seamfix-2026-09-05
+et/ID0099.BIN	0:97	18	579	12	{02:09}・・\n	{02:09}・・\n				reads: ・・・・・\n
+et/ID0099.BIN	0:97	19	592	1F01	は骨をくわえて戻{08:52}{08:1E}\n	 comes back with the bone in its mouth.\n				reads: は骨をくわえて戻ってきた\n; reads: もう肉が無い！\n @rebase-tagdiff @seamfix-2026-09-05
+et/ID0099.BIN	0:97	20	640	1FB2	{08:26}	{08:26}				reads: はい; menu option, declared width 20 columns; reads: 肉を持っていない！\n
+et/ID0099.BIN	0:97	21	644	1FB2	{08:27}	{08:27}				reads: いいえ; menu option, declared width 20 columns
+et/ID0099.BIN	0:97	22	648	1FB2	{08:90}し{08:69}かな…					reads: どうしようかな…; menu option, declared width 20 columns
+et/ID0099.BIN	0:97	23	728	1FB2	仕方{08:25}な	Oh, all right				reads: 仕方ないな; menu option, declared width 20 columns; reads: ゾンビ @seamfix-2026-09-05
+et/ID0099.BIN	0:97	24	738	1FB2	{08:90}し{08:69}かな…	Maybe I should......				reads: どうしようかな…; menu option, declared width 20 columns; menu option, declared width 20 columns @seamfix-2026-09-05
+et/ID0099.BIN	0:97	25	859	18	骨を持{08:52}{08:24}！\n					reads: 骨を持っていない！\n; reads: は骨を追いかけていった\n @rebase-unmatched idx25 en=It chases after the bone.\n
+et/ID0099.BIN	2:02	0	19	1FB2	意地{08:56}通る					reads: 意地でも通る; menu option, declared width 20 columns
+et/ID0099.BIN	2:02	1	31	1FB2	お願い{08:8E}					reads: お願いする; menu option, declared width 20 columns
+et/ID0099.BIN	2:02	2	41	1FB2	骨を投げる					menu option, declared width 20 columns
+et/ID0099.BIN	2:02	3	129	1F01	は\n	 				reads: は\n @rebase-new @seamfix-2026-09-05
+et/ID0099.BIN	2:02	4	138	1F01	の迫力に気圧{03:0C}た！\n	 was overwhelmed by the sheer force!\n				reads: の迫力に気圧された！\n; reads: ペンタグランマ @rebase-new @seamfix-2026-09-05
+et/ID0099.BIN	2:02	5	159	1FBA	{02:09}・・\n	{02:09}・・\n				reads: ・・・・・\n
+et/ID0099.BIN	2:02	6	240	1FB2	他の物{08:7D}あげる					reads: 他の物ならあげる; menu option, declared width 20 columns; reads: は\n @rebase-unmatched idx6 en=It\n
+et/ID0099.BIN	2:02	7	256	1FB2	土下座{08:4A}頼む					reads: 土下座して頼む; menu option, declared width 20 columns; reads: の迫力に気圧された！\n @rebase-unmatched idx7 en=cowers before your intensity!\n
+et/ID0099.BIN	2:02	8	304	16	{02:09}・・					reads: ・・・・・; reads: ・・・・・\n
+et/ID0099.BIN	2:02	9	334	13	骨を持{08:52}{08:24}！\n					reads: 骨を持っていない！\n; reads: 他の物ならあげる; menu option, declared width 20 columns
+et/ID0099.BIN	2:02	10	387	1F01	は\n骨を追いかけ{08:21}\n	 chases after the bone.\n				reads: は\n骨を追いかけていった\n; reads: 土下座して頼む; menu option, declared width 20 columns @rebase-tagdiff @seamfix-2026-09-05
+et/ID0099.BIN	2:02	11	418	1F01	は\n骨をくわえて戻{08:52}{08:1E}\n	 comes back with the bone in its mouth.\n				reads: は\n骨をくわえて戻ってきた\n; reads: バエル @rebase-tagdiff @seamfix-2026-09-05
+et/ID0099.BIN	2:02	12	467	1FB2	{08:26}	{08:26}				reads: はい; menu option, declared width 20 columns
+et/ID0099.BIN	2:02	13	471	1FB2	{08:27}	{08:27}				reads: いいえ; menu option, declared width 20 columns; reads: ・・・・・
+et/ID0099.BIN	2:02	14	475	1FB2	{08:90}し{08:69}かな…					reads: どうしようかな…; menu option, declared width 20 columns; reads: 骨を持っていない！\n
+et/ID0099.BIN	2:02	15	563	1FB2	仕方{08:25}な					reads: 仕方ないな; menu option, declared width 20 columns; reads: は\n骨を追いかけていった\n
+et/ID0099.BIN	2:02	16	573	1FB2	{08:90}し{08:69}かな…					reads: どうしようかな…; menu option, declared width 20 columns; reads: は\n骨をくわえて戻ってきた\n
+et/ID0099.BIN	3:1E	0	0	DATA	ウマイゾ！\n<wait>					
+et/ID0099.BIN	15:BA	0	0	DATA	何ノツモリダ？\n<wait>					
+et/ID0099.BIN	15:AC	0	0	DATA	カ　身体ガ勝手ニ！\n<wait>					
+et/ID0099.BIN	15:BB	0	0	DATA	シマッタ　ツイ{02:09}！\n<wait>					reads: シマッタ　ツイ・・・！\n<wait>
+et/ID0099.BIN	15:BC	0	0	DATA	コノ事ハ　他ノ者ニハ黙ッテイテモラエナイカ？\n<wait>					
+et/ID0099.BIN	15:BD	0	0	DATA	コノ地獄ノ番犬　					
+et/ID0099.BIN	15:BD	1	22	1F01	ノ名ニカケテ\nココハ通サン！！\n<wait>	's name I swear it --\nyou shall not pass!!\n<wait>				reads: ノ名ニカケテ\nココハ通サン！！\n<wait> @rebase-tagdiff @seamfix-2026-09-05

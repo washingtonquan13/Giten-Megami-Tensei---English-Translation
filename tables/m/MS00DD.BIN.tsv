@@ -3,232 +3,232 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS00DD.BIN	0:03	0	0	DATA	{04:05}に{08:62}効果が無{08:18}\n		No effect on {04:05}.\n	v005		reads: 　には、効果が無かった\n; reads: 　には、効果が無かった\n @refalign
-m/MS00DD.BIN	0:04	0	0	DATA	{08:61}{04:05}に、かわ{03:0C}て{08:1F}\n		However, {04:05} dodged.\n	v005		reads: しかし　に、かわされてしまった\n; reads: しかし　に、かわされてしまった\n @refalign
+m/MS00DD.BIN	0:03	0	0	DATA	{04:05}に{08:62}効果が無{08:18}\n					reads: 　には、効果が無かった\n; reads: 　には、効果が無かった\n @refalign
+m/MS00DD.BIN	0:04	0	0	DATA	{08:61}{04:05}に、かわ{03:0C}て{08:1F}\n					reads: しかし　に、かわされてしまった\n; reads: しかし　に、かわされてしまった\n @refalign
 m/MS00DD.BIN	0:09	0	27	00	ﾝ\n{01:00}ﾝ					reads: ﾝ\n早坂達也ﾝ
 m/MS00DD.BIN	0:09	1	37	0B	{05:00}ﾝ					reads: はいいいえﾝ; reads: はいいいえニュートンﾝ
-m/MS00DD.BIN	0:0A	0	7	1E5C	{04:05}{08:62}巧くかわ{08:17}\n		{04:05} dodged with ease!\n	v005		reads: 　は、巧くかわした！\n; reads: 　は、巧くかわした！\n @refalign
-m/MS00DD.BIN	0:0A	1	25	18	{03:0B}{04:05}にかわ{03:0C}た\n\n		However, {04:05} dodged.\n\n	v005		reads: しかし、　にかわされた\n\n; reads: しかし、　にかわされた\n\n @refalign
-m/MS00DD.BIN	0:0B	0	7	1E5C	{04:05}に{08:62}ダメージが無{08:18}\n		{04:05} took no damage.\n	v005		reads: 　には、ダメージが無かった\n; reads: 　には、ダメージが無かった\n @refalign
-m/MS00DD.BIN	0:0B	1	31	18	{04:05}にダメージを与えられ{08:19}\n\n		No damage was dealt to {04:05}.\n\n	v005		reads: 　にダメージを与えられなかった\n\n; reads: 　にダメージを与えられなかった\n\n @refalign
-m/MS00DD.BIN	0:0C	0	13	1E5C	{08:62}かすり傷を受け、\n	 took only a scratch,	 took only a scratch,\n	ours	draft	reads: は、かすり傷を受け、\n @ours-2026-09-05
-m/MS00DD.BIN	0:0C	1	35	18	をかすり		 was grazed	ours		reads: は、かすり傷を受け、\n
+m/MS00DD.BIN	0:0A	0	7	1E5C	{04:05}{08:62}巧くかわ{08:17}\n					reads: 　は、巧くかわした！\n; reads: 　は、巧くかわした！\n @refalign
+m/MS00DD.BIN	0:0A	1	25	18	{03:0B}{04:05}にかわ{03:0C}た\n\n					reads: しかし、　にかわされた\n\n; reads: しかし、　にかわされた\n\n @refalign
+m/MS00DD.BIN	0:0B	0	7	1E5C	{04:05}に{08:62}ダメージが無{08:18}\n					reads: 　には、ダメージが無かった\n; reads: 　には、ダメージが無かった\n @refalign
+m/MS00DD.BIN	0:0B	1	31	18	{04:05}にダメージを与えられ{08:19}\n\n					reads: 　にダメージを与えられなかった\n\n; reads: 　にダメージを与えられなかった\n\n @refalign
+m/MS00DD.BIN	0:0C	0	13	1E5C	{08:62}かすり傷を受け、\n	 took only a scratch,				reads: は、かすり傷を受け、\n; reads: は、かすり傷を受け、\n @ours-2026-09-05
+m/MS00DD.BIN	0:0C	1	35	18	をかすり					reads: は、かすり傷を受け、\n
 m/MS00DD.BIN	0:0D	0	0	DATA	{04:05}{04:09}、\n					reads: 　はに、\n
 m/MS00DD.BIN	0:0E	0	25	00	{07:0C}ﾝ					reads: もっとﾝ
-m/MS00DD.BIN	0:0E	1	51	13	会心の一撃！\n		Critical strike!\n	v005		@refalign
-m/MS00DD.BIN	0:0E	2	67	18	痛烈な一撃！\n		Fierce blow!\n	v005		@refalign
-m/MS00DD.BIN	0:0E	3	90	1F01	{04:09}、	 	{04:EB} on {04:09}, 	ours	draft	reads: はに、 @rebase-tagdiff @seamfix-2026-09-05
-m/MS00DD.BIN	0:0F	0	60	1E5D	必殺の一撃！\n		Critical strike!\n	v005		@refalign
-m/MS00DD.BIN	0:0F	1	76	18	痛恨の一撃！\n		Fierce blow!\n	v005		@refalign
-m/MS00DD.BIN	0:10	0	13	1F01	に{08:62}効か{08:25}	 is unaffected 	No effect on 	v005	draft	reads: には、効かない; reads: には、効かない @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:10	1	32	1F01	には{08:20}く効か{08:25}\n	 is completely unaffected\n			draft	reads: にはまったく効かない\n @ours-2026-09-05
-m/MS00DD.BIN	0:11	0	28	1E5C	{03:0B}{04:05}{08:62}跳ね返{08:17}\n		However, {04:05} struck back!\n 	v005		reads: しかし、　は、跳ね返した！\n; reads: しかし、　は、跳ね返した！\n @refalign
+m/MS00DD.BIN	0:0E	1	51	13	会心の一撃！\n					@refalign
+m/MS00DD.BIN	0:0E	2	67	18	痛烈な一撃！\n					@refalign
+m/MS00DD.BIN	0:0E	3	90	1F01	{04:09}、	 				reads: はに、; reads: はに、 @rebase-tagdiff @seamfix-2026-09-05
+m/MS00DD.BIN	0:0F	0	60	1E5D	必殺の一撃！\n					@refalign
+m/MS00DD.BIN	0:0F	1	76	18	痛恨の一撃！\n					@refalign
+m/MS00DD.BIN	0:10	0	13	1F01	に{08:62}効か{08:25}	 is unaffected 				reads: には、効かない; reads: には、効かない @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:10	1	32	1F01	には{08:20}く効か{08:25}\n	 is completely unaffected\n				reads: にはまったく効かない\n; reads: にはまったく効かない\n @ours-2026-09-05
+m/MS00DD.BIN	0:11	0	28	1E5C	{03:0B}{04:05}{08:62}跳ね返{08:17}\n					reads: しかし、　は、跳ね返した！\n; reads: しかし、　は、跳ね返した！\n @refalign
 m/MS00DD.BIN	0:11	1	54	1F83	{08:01}(#	{08:01}(#				reads: 達也(#
-m/MS00DD.BIN	0:11	2	74	1F01	に、	 	{04:EC} took 	v005	draft	reads: に、 @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:11	3	82	1F02	{03:0D}のダメージを与{08:41}\n		 damage to HP.\n	v005		reads: ＨＰのダメージを与えた\n; reads: ＨＰのダメージを与えた\n @refalign
+m/MS00DD.BIN	0:11	2	74	1F01	に、	 				reads: に、 @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:11	3	82	1F02	{03:0D}のダメージを与{08:41}\n					reads: ＨＰのダメージを与えた\n; reads: ＨＰのダメージを与えた\n @refalign
 m/MS00DD.BIN	0:11	4	118	0C	#	#				
-m/MS00DD.BIN	0:11	5	135	1F01	に、	 	{04:EC} lost 	v005	draft	reads: に、 @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:11	6	143	1F02	{03:0E}を失わせた\n		 MP.\n	v005		reads: ＭＰを失わせた\n; reads: ＭＰを失わせた\n @refalign
-m/MS00DD.BIN	0:11	7	188	1F83	{04:EC}{08:62}	{04:EC} lost	{04:EC} lost 	v005	draft	reads: は、 @ours-2026-09-05
-m/MS00DD.BIN	0:11	8	196	1F02	{03:0F}を失わせた\n		 EXP.\n	v005		reads: ＥＸＰを失わせた\n; reads: ＥＸＰを失わせた\n @refalign
-m/MS00DD.BIN	0:11	9	212	18	{08:61}ダメージを与えられ{08:19}\n		However, no damage was dealt.\n	v005		reads: しかしダメージを与えられなかった\n; reads: しかしダメージを与えられなかった\n @refalign
-m/MS00DD.BIN	0:11	10	238	18	{03:0B}{04:05}に、跳ね返さ{08:11}\n		However, {04:05} struck back!\n 	v005		reads: しかし、　に、跳ね返された！\n; reads: しかし、　に、跳ね返された！\n @refalign
+m/MS00DD.BIN	0:11	5	135	1F01	に、	 				reads: に、 @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:11	6	143	1F02	{03:0E}を失わせた\n					reads: ＭＰを失わせた\n; reads: ＭＰを失わせた\n @refalign
+m/MS00DD.BIN	0:11	7	188	1F83	{04:EC}{08:62}	{04:EC} lost				reads: は、; reads: は、 @ours-2026-09-05
+m/MS00DD.BIN	0:11	8	196	1F02	{03:0F}を失わせた\n					reads: ＥＸＰを失わせた\n; reads: ＥＸＰを失わせた\n @refalign
+m/MS00DD.BIN	0:11	9	212	18	{08:61}ダメージを与えられ{08:19}\n					reads: しかしダメージを与えられなかった\n; reads: しかしダメージを与えられなかった\n @refalign
+m/MS00DD.BIN	0:11	10	238	18	{03:0B}{04:05}に、跳ね返さ{08:11}\n					reads: しかし、　に、跳ね返された！\n; reads: しかし、　に、跳ね返された！\n @refalign
 m/MS00DD.BIN	0:11	11	268	1F83	{08:01}(#	{08:01}(#				reads: 達也(#
-m/MS00DD.BIN	0:11	12	288	1F01	{08:62}	 took	{04:EC} took 	v005	draft	reads: は、 @rebase-tagdiff @ours-2026-09-05
-m/MS00DD.BIN	0:11	13	294	1F02	{03:0D}のダメージを受{08:43}\n		 damage to HP.\n	v005		reads: ＨＰのダメージを受けた\n; reads: ＨＰのダメージを受けた\n @refalign
+m/MS00DD.BIN	0:11	12	288	1F01	{08:62}	 took				reads: は、; reads: は、 @rebase-tagdiff @ours-2026-09-05
+m/MS00DD.BIN	0:11	13	294	1F02	{03:0D}のダメージを受{08:43}\n					reads: ＨＰのダメージを受けた\n; reads: ＨＰのダメージを受けた\n @refalign
 m/MS00DD.BIN	0:11	14	330	0C	#	#				
-m/MS00DD.BIN	0:11	15	347	1F01	{08:62}	 lost	{04:EC} lost 	v005	draft	reads: は、 @rebase-tagdiff @ours-2026-09-05
-m/MS00DD.BIN	0:11	16	353	1F02	{03:0E}を失{08:16}\n		 MP.\n	v005		reads: ＭＰを失なった\n; reads: ＭＰを失なった\n @refalign
-m/MS00DD.BIN	0:11	17	394	1F83	{04:EC}{08:62}	{04:EC} lost	{04:EC} lost 	v005	draft	reads: は、 @ours-2026-09-05
-m/MS00DD.BIN	0:11	18	402	1F02	{03:0F}を失{08:16}\n		 EXP.\n	v005		reads: ＥＸＰを失なった\n; reads: ＥＸＰを失なった\n @refalign
-m/MS00DD.BIN	0:11	19	414	18	{08:61}ダメージは{08:19}\n		However, no damage was dealt.\n	v005		reads: しかしダメージはなかった\n; reads: しかしダメージはなかった\n @refalign
-m/MS00DD.BIN	0:11	20	434	1FC4	必殺の反撃！\n		Critical strike!\n	v005		@refalign
-m/MS00DD.BIN	0:11	21	452	1FC4	痛恨の反撃！\n		Fierce blow!\n	v005		@refalign
+m/MS00DD.BIN	0:11	15	347	1F01	{08:62}	 lost				reads: は、; reads: は、 @rebase-tagdiff @ours-2026-09-05
+m/MS00DD.BIN	0:11	16	353	1F02	{03:0E}を失{08:16}\n					reads: ＭＰを失なった\n; reads: ＭＰを失なった\n @refalign
+m/MS00DD.BIN	0:11	17	394	1F83	{04:EC}{08:62}	{04:EC} lost				reads: は、; reads: は、 @ours-2026-09-05
+m/MS00DD.BIN	0:11	18	402	1F02	{03:0F}を失{08:16}\n					reads: ＥＸＰを失なった\n; reads: ＥＸＰを失なった\n @refalign
+m/MS00DD.BIN	0:11	19	414	18	{08:61}ダメージは{08:19}\n					reads: しかしダメージはなかった\n; reads: しかしダメージはなかった\n @refalign
+m/MS00DD.BIN	0:11	20	434	1FC4	必殺の反撃！\n					@refalign
+m/MS00DD.BIN	0:11	21	452	1FC4	痛恨の反撃！\n					@refalign
 m/MS00DD.BIN	0:12	0	0	DATA	{04:05}	{04:05}				reads: 　
-m/MS00DD.BIN	0:12	1	9	1E5C	は吸収{08:4A}、		 absorbed 	v005		reads: は吸収して、; reads: は吸収して、 @refalign
-m/MS00DD.BIN	0:12	2	24	1F02	{03:0D}を得た		 points of HP.\n	v005		reads: ＨＰを得た; reads: ＨＰを得た @refalign
-m/MS00DD.BIN	0:12	3	35	18	に、{03:0D}吸収{03:0C}た		 absorbed some HP.\n	v005		reads: に、ＨＰ吸収された; reads: に、ＨＰ吸収された @refalign
+m/MS00DD.BIN	0:12	1	9	1E5C	は吸収{08:4A}、					reads: は吸収して、; reads: は吸収して、 @refalign
+m/MS00DD.BIN	0:12	2	24	1F02	{03:0D}を得た					reads: ＨＰを得た; reads: ＨＰを得た @refalign
+m/MS00DD.BIN	0:12	3	35	18	に、{03:0D}吸収{03:0C}た					reads: に、ＨＰ吸収された; reads: に、ＨＰ吸収された @refalign
 m/MS00DD.BIN	0:13	0	0	DATA	{04:05}	{04:05}				reads: 　
-m/MS00DD.BIN	0:13	1	9	1E5C	は吸収{08:4A}、		 absorbed it and 	ours		reads: は吸収して、
-m/MS00DD.BIN	0:13	2	24	1F02	{03:0E}を得た\n		 gained MP.\n	ours		reads: ＭＰを得た\n
-m/MS00DD.BIN	0:13	3	36	18	に、{03:0E}吸収{03:0C}た\n		 absorbed some MP.\n	v005		reads: に、ＭＰ吸収された\n; reads: に、ＭＰ吸収された\n @refalign
+m/MS00DD.BIN	0:13	1	9	1E5C	は吸収{08:4A}、					reads: は吸収して、
+m/MS00DD.BIN	0:13	2	24	1F02	{03:0E}を得た\n					reads: ＭＰを得た\n
+m/MS00DD.BIN	0:13	3	36	18	に、{03:0E}吸収{03:0C}た\n					reads: に、ＭＰ吸収された\n; reads: に、ＭＰ吸収された\n @refalign
 m/MS00DD.BIN	0:14	0	0	DATA	{04:05}	{04:05}				reads: 　
-m/MS00DD.BIN	0:14	1	9	1E5C	{08:62}回避{08:4B}\n		 dodged.\n	v005		reads: は、回避した\n; reads: は、回避した\n @refalign
-m/MS00DD.BIN	0:14	2	21	18	に、回避{03:0C}た\n\n		 dodged.\n	v005		reads: に、回避された\n\n; reads: に、回避された\n\n @refalign
+m/MS00DD.BIN	0:14	1	9	1E5C	{08:62}回避{08:4B}\n					reads: は、回避した\n; reads: は、回避した\n @refalign
+m/MS00DD.BIN	0:14	2	21	18	に、回避{03:0C}た\n\n					reads: に、回避された\n\n; reads: に、回避された\n\n @refalign
 m/MS00DD.BIN	0:15	0	0	DATA	{04:05}	{04:05}				reads: 　
-m/MS00DD.BIN	0:15	1	9	1E5C	{08:62}耐{08:41}\n		 resisted.\n	v005		reads: は、耐えた\n; reads: は、耐えた\n @refalign
-m/MS00DD.BIN	0:15	2	19	18	には効か{08:19}\n\n		 dodged the effect.\n	v005		reads: には効かなかった\n\n; reads: には効かなかった\n\n @refalign
+m/MS00DD.BIN	0:15	1	9	1E5C	{08:62}耐{08:41}\n					reads: は、耐えた\n; reads: は、耐えた\n @refalign
+m/MS00DD.BIN	0:15	2	19	18	には効か{08:19}\n\n					reads: には効かなかった\n\n; reads: には効かなかった\n\n @refalign
 m/MS00DD.BIN	0:17	0	0	DATA	{04:05}	{04:05}				reads: 　
-m/MS00DD.BIN	0:17	1	9	1E5C	{08:62}かすり傷を受け\n		 took only a scratch\n	ours		reads: は、かすり傷を受け\n
-m/MS00DD.BIN	0:17	2	29	18	をかすり\n		 was grazed\n	ours		
+m/MS00DD.BIN	0:17	1	9	1E5C	{08:62}かすり傷を受け\n					reads: は、かすり傷を受け\n
+m/MS00DD.BIN	0:17	2	29	18	をかすり\n					
 m/MS00DD.BIN	0:18	0	0	DATA	{04:05}{04:09}	{04:05}{04:09}				reads: 　はに
-m/MS00DD.BIN	0:19	0	0	DATA	{04:05}{04:0B}	{04:05}{04:0B}	Absorbed from {04:05}	v005		reads: 　はから; record reaches an engine no-op opcode; verify in game
+m/MS00DD.BIN	0:19	0	0	DATA	{04:05}{04:0B}	{04:05}{04:0B}				reads: 　はから; record reaches an engine no-op opcode; verify in game
 m/MS00DD.BIN	0:19	1	21	1F1A	を吸い取{04:0C}た\n	を吸い取{04:0C}た\n				reads: を吸い取られった\n; record reaches an engine no-op opcode; verify in game; reads: パスワード
-m/MS00DD.BIN	0:19	2	40	1F02	{03:0D}	{03:0D}	 HP.\n	v005		reads: ＨＰ; record reaches an engine no-op opcode; verify in game; reads: 達也
-m/MS00DD.BIN	0:19	3	48	1F02	{03:0E}	{03:0E}	 MP.\n	v005		reads: ＭＰ; record reaches an engine no-op opcode; verify in game; reads: を吸い取られった\n
-m/MS00DD.BIN	0:19	4	56	1F02	{03:0F}	{03:0F}	 EXP.\n	v005		reads: ＥＸＰ; record reaches an engine no-op opcode; verify in game; reads: ＨＰ
-m/MS00DD.BIN	0:1B	0	29	1F83	ｳらに		Furthermore, 	ours		
-m/MS00DD.BIN	0:1B	1	61	1F87	{04:05}の{03:0D}はＭＡＸだ\n		{04:05}'s HP is full.\n	v005		reads: 　のＨＰはＭＡＸだ\n; reads: 　のＨＰはＭＡＸだ\n @refalign
-m/MS00DD.BIN	0:1C	0	43	1F87	{04:05}の{03:0E}はＭＡＸだ\n		{04:05}'s MP is full.\n	v005		reads: 　のＭＰはＭＡＸだ\n; reads: 　のＭＰはＭＡＸだ\n @refalign
+m/MS00DD.BIN	0:19	2	40	1F02	{03:0D}	{03:0D}				reads: ＨＰ; record reaches an engine no-op opcode; verify in game; reads: 達也
+m/MS00DD.BIN	0:19	3	48	1F02	{03:0E}	{03:0E}				reads: ＭＰ; record reaches an engine no-op opcode; verify in game; reads: を吸い取られった\n
+m/MS00DD.BIN	0:19	4	56	1F02	{03:0F}	{03:0F}				reads: ＥＸＰ; record reaches an engine no-op opcode; verify in game; reads: ＨＰ
+m/MS00DD.BIN	0:1B	0	29	1F83	ｳらに					
+m/MS00DD.BIN	0:1B	1	61	1F87	{04:05}の{03:0D}はＭＡＸだ\n					reads: 　のＨＰはＭＡＸだ\n; reads: 　のＨＰはＭＡＸだ\n @refalign
+m/MS00DD.BIN	0:1C	0	43	1F87	{04:05}の{03:0E}はＭＡＸだ\n					reads: 　のＭＰはＭＡＸだ\n; reads: 　のＭＰはＭＡＸだ\n @refalign
 m/MS00DD.BIN	0:1D	0	0	DATA	{04:05}	{04:05}				reads: 　
-m/MS00DD.BIN	0:1D	1	9	1E5C	の{03:0D}は{08:6C}に{03:10}{08:4B}\n		's HP was restored.\n	v005		reads: のＨＰは完全に回復した\n; reads: のＨＰは完全に回復した\n @refalign
-m/MS00DD.BIN	0:1D	2	27	18	の傷が{08:6C}に癒{08:41}\n		's wounds were healed.\n	v005		reads: の傷が完全に癒えた\n; reads: の傷が完全に癒えた\n @refalign
+m/MS00DD.BIN	0:1D	1	9	1E5C	の{03:0D}は{08:6C}に{03:10}{08:4B}\n					reads: のＨＰは完全に回復した\n; reads: のＨＰは完全に回復した\n @refalign
+m/MS00DD.BIN	0:1D	2	27	18	の傷が{08:6C}に癒{08:41}\n					reads: の傷が完全に癒えた\n; reads: の傷が完全に癒えた\n @refalign
 m/MS00DD.BIN	0:1E	0	0	DATA	{04:05}	{04:05}				reads: 　
-m/MS00DD.BIN	0:1E	1	9	1E5C	の{03:0E}は{08:6C}に{03:10}{08:4B}\n		's MP was restored.\n	v005		reads: のＭＰは完全に回復した\n; reads: のＭＰは完全に回復した\n @refalign
-m/MS00DD.BIN	0:1E	2	27	18	は{08:0D}のパワーを取り戻{08:4B}\n		's magic power returned.\n	v005		reads: は魔法のパワーを取り戻した\n; reads: は魔法のパワーを取り戻した\n @refalign
+m/MS00DD.BIN	0:1E	1	9	1E5C	の{03:0E}は{08:6C}に{03:10}{08:4B}\n					reads: のＭＰは完全に回復した\n; reads: のＭＰは完全に回復した\n @refalign
+m/MS00DD.BIN	0:1E	2	27	18	は{08:0D}のパワーを取り戻{08:4B}\n					reads: は魔法のパワーを取り戻した\n; reads: は魔法のパワーを取り戻した\n @refalign
 m/MS00DD.BIN	0:1F	0	0	DATA	{04:05}	{04:05}				reads: 　
-m/MS00DD.BIN	0:1F	1	9	1E5C	は		's 	ours		
-m/MS00DD.BIN	0:1F	2	16	1F02	{03:0D}増加{08:4B}\n		HP increased.\n	ours		reads: ＨＰ増加した\n
-m/MS00DD.BIN	0:1F	3	28	18	は{03:0D}を増や{08:4B}\n		HP.\n	v005		reads: はＨＰを増やした\n; reads: はＨＰを増やした\n @refalign
-m/MS00DD.BIN	0:21	0	26	0C	{04:05}{08:62}{08:05}ーに還{08:51}\n		{04:05} returned to the computer.\n	v005		reads: 　は、コンピューターに還った\n; reads: 　は、コンピューターに還った\n @refalign
-m/MS00DD.BIN	0:21	1	44	18	{04:05}{08:62}魔界に還っ{08:21}\n		{04:05} returned to Makai.\n	v005		reads: 　は、魔界に還っていった\n; reads: 　は、魔界に還っていった\n @refalign
+m/MS00DD.BIN	0:1F	1	9	1E5C	は					
+m/MS00DD.BIN	0:1F	2	16	1F02	{03:0D}増加{08:4B}\n					reads: ＨＰ増加した\n
+m/MS00DD.BIN	0:1F	3	28	18	は{03:0D}を増や{08:4B}\n					reads: はＨＰを増やした\n; reads: はＨＰを増やした\n @refalign
+m/MS00DD.BIN	0:21	0	26	0C	{04:05}{08:62}{08:05}ーに還{08:51}\n					reads: 　は、コンピューターに還った\n; reads: 　は、コンピューターに還った\n @refalign
+m/MS00DD.BIN	0:21	1	44	18	{04:05}{08:62}魔界に還っ{08:21}\n					reads: 　は、魔界に還っていった\n; reads: 　は、魔界に還っていった\n @refalign
 m/MS00DD.BIN	0:22	0	0	DATA	{04:05}	{04:05}				reads: 　
-m/MS00DD.BIN	0:22	1	9	1E5C	{08:62}	recovered	 recovered 	v005	draft	reads: は、 @ours-2026-09-05
-m/MS00DD.BIN	0:22	2	16	1F02	{03:0D}{03:10}	{03:0D}{03:10}	 HP	v005		reads: ＨＰ回復
-m/MS00DD.BIN	0:22	3	28	1F86	{08:4A}\n{03:0D}がＭＡＸに{08:16}\n		.\nHP is full.\n	v005		reads: して\nＨＰがＭＡＸになった\n; reads: して\nＨＰがＭＡＸになった\n @refalign
-m/MS00DD.BIN	0:22	4	49	18	{08:4B}\n	.\n			draft	reads: した\n @ours-2026-09-05
-m/MS00DD.BIN	0:22	5	55	18	の{03:0D}が、\n		 recovered \n	v005		reads: のＨＰが、\n; reads: のＨＰが、\n @refalign
-m/MS00DD.BIN	0:22	6	69	1F02	{03:10}{08:4B}\n	 recovered	 HP.\n	v005	draft	reads: 回復した\n @ours-2026-09-05
+m/MS00DD.BIN	0:22	1	9	1E5C	{08:62}	recovered				reads: は、; reads: は、 @ours-2026-09-05
+m/MS00DD.BIN	0:22	2	16	1F02	{03:0D}{03:10}	{03:0D}{03:10}				reads: ＨＰ回復
+m/MS00DD.BIN	0:22	3	28	1F86	{08:4A}\n{03:0D}がＭＡＸに{08:16}\n					reads: して\nＨＰがＭＡＸになった\n; reads: して\nＨＰがＭＡＸになった\n @refalign
+m/MS00DD.BIN	0:22	4	49	18	{08:4B}\n	.\n				reads: した\n; reads: した\n @ours-2026-09-05
+m/MS00DD.BIN	0:22	5	55	18	の{03:0D}が、\n					reads: のＨＰが、\n; reads: のＨＰが、\n @refalign
+m/MS00DD.BIN	0:22	6	69	1F02	{03:10}{08:4B}\n	 recovered				reads: 回復した\n; reads: 回復した\n @ours-2026-09-05
 m/MS00DD.BIN	0:24	0	0	DATA	{04:05}	{04:05}				reads: 　
-m/MS00DD.BIN	0:24	1	9	1E5C	は		 recovered 	v005		@refalign
-m/MS00DD.BIN	0:24	2	16	1F02	{03:0E}{03:10}	{03:0E}{03:10}	 MP	v005		reads: ＭＰ回復
-m/MS00DD.BIN	0:24	3	28	1F86	{08:4A}\n{03:0E}がＭＡＸに{08:16}\n		.\nMP is full.\n	v005		reads: して\nＭＰがＭＡＸになった\n; reads: して\nＭＰがＭＡＸになった\n @refalign
-m/MS00DD.BIN	0:24	4	49	18	{08:4B}\n	.\n			draft	reads: した\n @ours-2026-09-05
-m/MS00DD.BIN	0:24	5	55	18	は{08:0D}のパワーを取り戻{08:4B}\n		's magic power returned.\\	v005		reads: は魔法のパワーを取り戻した\n; reads: は魔法のパワーを取り戻した\n @refalign
-m/MS00DD.BIN	0:26	0	15	1F86	{04:05}{04:0E}{08:0C}力{04:13}{03:09}させ		{04:05}'s ATTACK went down	v005		reads: 　はの攻撃力がをダウンさせ; reads: 　はの攻撃力がをダウンさせ @refalign
-m/MS00DD.BIN	0:26	1	38	1E5C	られた\n	.\n			draft	@ours-2026-09-05
-m/MS00DD.BIN	0:27	0	15	1F86	{04:05}{04:0E}命中度{04:13}{03:09}させ		{04:05}'s ACCURACY went down	v005		reads: 　はの命中度がをダウンさせ; reads: 　はの命中度がをダウンさせ @refalign
-m/MS00DD.BIN	0:27	1	40	1E5C	られた\n	.\n			draft	@ours-2026-09-05
-m/MS00DD.BIN	0:28	0	15	1F86	{04:05}{04:0E}防御力{04:13}{03:09}させ		{04:05}'s DEFENSE went down	v005		reads: 　はの防御力がをダウンさせ; reads: 　はの防御力がをダウンさせ @refalign
-m/MS00DD.BIN	0:28	1	40	1E5C	られた\n	.\n			draft	@ours-2026-09-05
-m/MS00DD.BIN	0:29	0	15	1F86	{04:05}{04:0E}{08:0D}の能力{04:13}{03:09}させ		{04:05}'s MAGIC went down	v005		reads: 　はの魔法の能力がをダウンさせ; reads: 　はの魔法の能力がをダウンさせ @refalign
-m/MS00DD.BIN	0:29	1	42	1E5C	られた\n	.\n			draft	@ours-2026-09-05
-m/MS00DD.BIN	0:2A	0	15	1F86	{04:05}{04:0E}{08:0C}力{04:14}{03:08}{04:10}た\n		{04:05}'s ATTACK went up.\n	v005		reads: 　はの攻撃力をがアップさせした\n; reads: 　はの攻撃力をがアップさせした\n @refalign
-m/MS00DD.BIN	0:2B	0	15	1F86	{04:05}{04:0E}命中度{04:14}{03:08}{04:10}た\n		{04:05}'s ACCURACY went up.\n	v005		reads: 　はの命中度をがアップさせした\n; reads: 　はの命中度をがアップさせした\n @refalign
-m/MS00DD.BIN	0:2C	0	15	1F86	{04:05}{04:0E}防御力{04:14}{03:08}{04:10}た\n		{04:05}'s DEFENSE went up.\n	v005		reads: 　はの防御力をがアップさせした\n; reads: 　はの防御力をがアップさせした\n @refalign
-m/MS00DD.BIN	0:2D	0	15	1F86	{04:05}{04:0E}{08:0D}の能力{04:14}{03:08}{04:10}た\n		{04:05}'s MAGIC went up.\n	v005		reads: 　はの魔法の能力をがアップさせした\n; reads: 　はの魔法の能力をがアップさせした\n @refalign
-m/MS00DD.BIN	0:2E	0	15	1F86	{04:06}の廻りに、{08:0D}の{01:34}が張り巡ら{03:0C}た\n		Magical barrier formed around {04:06}.\n	v005		reads: 味方たち　たちの廻りに、魔法の結界が張り巡らされた\n; reads: 味方たち　たちの廻りに、魔法の結界が張り巡らされた\n @refalign
-m/MS00DD.BIN	0:2F	0	15	1F86	{04:06}の前に、ブラックホールが現わ{08:60}\n		Black hole appeared before {04:06}.\n	v005		reads: 味方たち　たちの前に、ブラックホールが現われた\n; reads: 味方たち　たちの前に、ブラックホールが現われた\n @refalign
-m/MS00DD.BIN	0:30	0	15	1F86	{04:05}につきまとう幻を消し去{08:51}\n		The spirits haunting {04:05} vanished.\n	v005		reads: 　につきまとう幻を消し去った\n; reads: 　につきまとう幻を消し去った\n @refalign
+m/MS00DD.BIN	0:24	1	9	1E5C	は					@refalign
+m/MS00DD.BIN	0:24	2	16	1F02	{03:0E}{03:10}	{03:0E}{03:10}				reads: ＭＰ回復
+m/MS00DD.BIN	0:24	3	28	1F86	{08:4A}\n{03:0E}がＭＡＸに{08:16}\n					reads: して\nＭＰがＭＡＸになった\n; reads: して\nＭＰがＭＡＸになった\n @refalign
+m/MS00DD.BIN	0:24	4	49	18	{08:4B}\n	.\n				reads: した\n; reads: した\n @ours-2026-09-05
+m/MS00DD.BIN	0:24	5	55	18	は{08:0D}のパワーを取り戻{08:4B}\n					reads: は魔法のパワーを取り戻した\n; reads: は魔法のパワーを取り戻した\n @refalign
+m/MS00DD.BIN	0:26	0	15	1F86	{04:05}{04:0E}{08:0C}力{04:13}{03:09}させ					reads: 　はの攻撃力がをダウンさせ; reads: 　はの攻撃力がをダウンさせ @refalign
+m/MS00DD.BIN	0:26	1	38	1E5C	られた\n	.\n				@ours-2026-09-05
+m/MS00DD.BIN	0:27	0	15	1F86	{04:05}{04:0E}命中度{04:13}{03:09}させ					reads: 　はの命中度がをダウンさせ; reads: 　はの命中度がをダウンさせ @refalign
+m/MS00DD.BIN	0:27	1	40	1E5C	られた\n	.\n				@ours-2026-09-05
+m/MS00DD.BIN	0:28	0	15	1F86	{04:05}{04:0E}防御力{04:13}{03:09}させ					reads: 　はの防御力がをダウンさせ; reads: 　はの防御力がをダウンさせ @refalign
+m/MS00DD.BIN	0:28	1	40	1E5C	られた\n	.\n				@ours-2026-09-05
+m/MS00DD.BIN	0:29	0	15	1F86	{04:05}{04:0E}{08:0D}の能力{04:13}{03:09}させ					reads: 　はの魔法の能力がをダウンさせ; reads: 　はの魔法の能力がをダウンさせ @refalign
+m/MS00DD.BIN	0:29	1	42	1E5C	られた\n	.\n				@ours-2026-09-05
+m/MS00DD.BIN	0:2A	0	15	1F86	{04:05}{04:0E}{08:0C}力{04:14}{03:08}{04:10}た\n					reads: 　はの攻撃力をがアップさせした\n; reads: 　はの攻撃力をがアップさせした\n @refalign
+m/MS00DD.BIN	0:2B	0	15	1F86	{04:05}{04:0E}命中度{04:14}{03:08}{04:10}た\n					reads: 　はの命中度をがアップさせした\n; reads: 　はの命中度をがアップさせした\n @refalign
+m/MS00DD.BIN	0:2C	0	15	1F86	{04:05}{04:0E}防御力{04:14}{03:08}{04:10}た\n					reads: 　はの防御力をがアップさせした\n; reads: 　はの防御力をがアップさせした\n @refalign
+m/MS00DD.BIN	0:2D	0	15	1F86	{04:05}{04:0E}{08:0D}の能力{04:14}{03:08}{04:10}た\n					reads: 　はの魔法の能力をがアップさせした\n; reads: 　はの魔法の能力をがアップさせした\n @refalign
+m/MS00DD.BIN	0:2E	0	15	1F86	{04:06}の廻りに、{08:0D}の{01:34}が張り巡ら{03:0C}た\n					reads: 味方たち　たちの廻りに、魔法の結界が張り巡らされた\n; reads: 味方たち　たちの廻りに、魔法の結界が張り巡らされた\n @refalign
+m/MS00DD.BIN	0:2F	0	15	1F86	{04:06}の前に、ブラックホールが現わ{08:60}\n					reads: 味方たち　たちの前に、ブラックホールが現われた\n; reads: 味方たち　たちの前に、ブラックホールが現われた\n @refalign
+m/MS00DD.BIN	0:30	0	15	1F86	{04:05}につきまとう幻を消し去{08:51}\n					reads: 　につきまとう幻を消し去った\n; reads: 　につきまとう幻を消し去った\n @refalign
 m/MS00DD.BIN	0:31	0	88	1F83	{01:3B}{01:03}	{01:3B}{01:03}				reads: さっきニュートン
-m/MS00DD.BIN	0:31	1	101	12	@き落と{03:0C}{08:19}\n		{03:12}]\ncould not be knocked away.\n	v005		reads: @き落とされなかった\n; reads: @き落とされなかった\n @refalign
+m/MS00DD.BIN	0:31	1	101	12	@き落と{03:0C}{08:19}\n					reads: @き落とされなかった\n; reads: @き落とされなかった\n @refalign
 m/MS00DD.BIN	0:31	2	116	18	{04:07}{04:0E}	{04:07}{04:0E}				reads: 敵 はの
-m/MS00DD.BIN	0:31	3	125	1F01	を叩き落と{04:0F}た\n		{03:12}]\nwas knocked away.\n	v005		reads: を叩き落とされした\n; reads: 切りを叩き落とされした\n @refalign
-m/MS00DD.BIN	0:31	4	181	1F01	を素早く拾{08:12}\n	 was quickly picked up!\n	You quickly pick up [\n{03:12}]!\n	v005	draft	reads: を素早く拾った！\n; reads: 切りを素早く拾った！\n @refalign @refalign-joined @seamfix-2026-09-05
-m/MS00DD.BIN	0:31	5	208	18	{03:0B}\n{04:07}は武器を持{08:52}い{08:19}\n\n		However,\n{04:07} isn't holding a weapon.\n	v005		reads: しかし、\n敵 は武器を持っていなかった\n\n; reads: しかし、\n敵 は武器を持っていなかった\n\n @refalign
-m/MS00DD.BIN	0:32	0	6	1F01	は	 	{04:EB} is 	ours	draft	reads: は @rebase-tagdiff @seamfix-2026-09-05
-m/MS00DD.BIN	0:32	1	14	1F01	だ\n	.\n	{04:EB}.\n	ours	draft	reads: だ\n @rebase-tagdiff @ours-2026-09-05
-m/MS00DD.BIN	0:33	0	6	1F01	は踊っ{08:14}\n	 is dancing.\n	{04:EB} is dancing.\n	ours	draft	reads: は踊っている\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS00DD.BIN	0:34	0	0	DATA	{08:61}{08:0D}を封じられ{08:14}\n		However, magic is sealed.\n	ours		reads: しかし魔法を封じられている\n
-m/MS00DD.BIN	0:35	0	6	1F01	は	 	{04:EB} is 	ours	draft	reads: は @rebase-tagdiff @seamfix-2026-09-05
-m/MS00DD.BIN	0:35	1	14	1F01	{08:13}\n	.\n			draft	reads: している\n @ours-2026-09-05
+m/MS00DD.BIN	0:31	3	125	1F01	を叩き落と{04:0F}た\n					reads: を叩き落とされした\n; reads: 切りを叩き落とされした\n @refalign
+m/MS00DD.BIN	0:31	4	181	1F01	を素早く拾{08:12}\n	 was quickly picked up!\n				reads: を素早く拾った！\n; reads: 切りを素早く拾った！\n @refalign @refalign-joined @seamfix-2026-09-05
+m/MS00DD.BIN	0:31	5	208	18	{03:0B}\n{04:07}は武器を持{08:52}い{08:19}\n\n					reads: しかし、\n敵 は武器を持っていなかった\n\n; reads: しかし、\n敵 は武器を持っていなかった\n\n @refalign
+m/MS00DD.BIN	0:32	0	6	1F01	は	 				reads: は @rebase-tagdiff @seamfix-2026-09-05
+m/MS00DD.BIN	0:32	1	14	1F01	だ\n	.\n				reads: だ\n @rebase-tagdiff @ours-2026-09-05
+m/MS00DD.BIN	0:33	0	6	1F01	は踊っ{08:14}\n	 is dancing.\n				reads: は踊っている\n; reads: は踊っている\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS00DD.BIN	0:34	0	0	DATA	{08:61}{08:0D}を封じられ{08:14}\n					reads: しかし魔法を封じられている\n
+m/MS00DD.BIN	0:35	0	6	1F01	は	 				reads: は @rebase-tagdiff @seamfix-2026-09-05
+m/MS00DD.BIN	0:35	1	14	1F01	{08:13}\n	.\n				reads: している\n; reads: している\n @ours-2026-09-05
 m/MS00DD.BIN	0:36	0	32	1F83	ｻ{08:4A}					reads: ｻして
-m/MS00DD.BIN	0:36	1	40	1F02	{03:0D}{03:10}{08:4B}\n	 HP recovered\n			draft	reads: ＨＰ回復した\n @ours-2026-09-05
-m/MS00DD.BIN	0:36	2	55	1F83	ｳらに		Furthermore, 	ours		
-m/MS00DD.BIN	0:36	3	65	1F02	{03:0E}{03:10}{08:4B}\n	 MP recovered\n			draft	reads: ＭＰ回復した\n @ours-2026-09-05
+m/MS00DD.BIN	0:36	1	40	1F02	{03:0D}{03:10}{08:4B}\n	 HP recovered\n				reads: ＨＰ回復した\n; reads: ＨＰ回復した\n @ours-2026-09-05
+m/MS00DD.BIN	0:36	2	55	1F83	ｳらに					
+m/MS00DD.BIN	0:36	3	65	1F02	{03:0E}{03:10}{08:4B}\n	 MP recovered\n				reads: ＭＰ回復した\n; reads: ＭＰ回復した\n @ours-2026-09-05
 m/MS00DD.BIN	0:36	4	85	1F83	{04:05}	{04:05}				reads: 　
-m/MS00DD.BIN	0:36	5	119	09	らに		Furthermore, 	ours		
+m/MS00DD.BIN	0:36	5	119	09	らに					
 m/MS00DD.BIN	0:36	6	126	18	{04:05}{08:62}	{04:05}{08:62}				reads: 　は、
-m/MS00DD.BIN	0:36	7	150	1F86	{03:0B}復活に失敗{08:17}\n		However, the revival failed!\n	ours		reads: しかし、復活に失敗した！\n
-m/MS00DD.BIN	0:36	8	183	1F80	{08:0D}は効果が無い\n		Magic has no effect.\n	ours		reads: 魔法は効果が無い\n
+m/MS00DD.BIN	0:36	7	150	1F86	{03:0B}復活に失敗{08:17}\n					reads: しかし、復活に失敗した！\n
+m/MS00DD.BIN	0:36	8	183	1F80	{08:0D}は効果が無い\n					reads: 魔法は効果が無い\n
 m/MS00DD.BIN	0:37	0	144	1E5E	{03:0B}	{03:0B}				reads: しかし、; record reaches an engine no-op opcode; verify in game; reads: ﾝ8飛び道具ﾝ9を唱えた！ ﾝ8はいいいえニュートンﾝE辞書５ﾝ?＞どうしますか？ﾝ\<早坂ﾝ=
-m/MS00DD.BIN	0:38	0	10	1F01	は復活{08:4B}\n	 revived.\n	{04:EB} recovered health.\n	v005	draft	reads: は復活した\n; reads: は復活した\n @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:39	0	10	1F01	は目覚めた\n	 woke up.\n	{04:EB} woke up.\n	v005	draft	reads: は目覚めた\n @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:3A	0	10	1F01	は正気に戻{08:51}\n	 came to their senses.\n	{04:EB} came to their senses.\n	v005	draft	reads: は正気に戻った\n; reads: は正気に戻った\n @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:3B	0	10	1F01	{08:62}ふと我に返{08:51}\n	 suddenly came to.\n	{04:EB} got hold of themselves.\n	v005	draft	reads: は、ふと我に返った\n; reads: は、ふと我に返った\n @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:3C	0	10	1F01	の体は自由に{08:16}\n	's body is free again.\n	{04:EB} regain control over their body.\n	v005	draft	reads: の体は自由になった\n; reads: の体は自由になった\n @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:3D	0	10	1F01	は元に戻{08:51}\n	 returned to normal.\n	{04:EB} returned to their senses.\n	v005	draft	reads: は元に戻った\n; reads: は元に戻った\n @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:3E	0	10	1F01	の眠りが覚めて{08:1E}\n	 is waking from sleep.\n	{04:EB} woke up.\n	v005	draft	reads: の眠りが覚めてきた\n; reads: の眠りが覚めてきた\n @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:3F	0	6	1F01	の氷が溶け出{08:4B}\n	's ice began to melt.\n	{04:EB}'s body melted.\n	v005	draft	reads: の氷が溶け出した\n; reads: の氷が溶け出した\n @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:40	0	6	1F01	の酔いが少し醒めた\n	 sobered up a little.\n	{04:EB} is slightly less drunk.\n	v005	draft	reads: の酔いが少し醒めた\n @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:41	0	10	1F01	の目が見{08:28}{08:69}に{08:16}\n	 can see again.\n	{04:EB} can now see again.\n	v005	draft	reads: の目が見えるようになった\n; reads: の目が見えるようになった\n @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:42	0	10	1F01	の酔いが醒めた\n	 sobered up.\n	{04:EB} is no longer drunk.\n	v005	draft	reads: の酔いが醒めた\n @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:43	0	10	1F01	の	's 	{04:EB}'s	v005	draft	reads: の @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:43	1	20	1F86	封魔が解{08:43}\n		 magic is no longer sealed.\n	v005		reads: 封魔が解けた\n; reads: 封魔が解けた\n @refalign
-m/MS00DD.BIN	0:43	2	34	18	呪いが解{08:43}\n		 curse was lifted.\n	v005		reads: 呪いが解けた\n; reads: 呪いが解けた\n @refalign
-m/MS00DD.BIN	0:44	0	10	1F01	の火が消{08:41}\n	's flames went out.\n	{04:EB} is no longer on fire.\n	v005	draft	reads: の火が消えた\n; reads: の火が消えた\n @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:45	0	10	1F01	の		 is no longer poisoned.\n	v005		reads: の
-m/MS00DD.BIN	0:45	1	20	1F86	毒が引{08:64}\n		 is no longer poisoned.\n	v005		reads: 毒が引いた\n; reads: 毒が引いた\n @refalign
-m/MS00DD.BIN	0:45	2	32	18	麻痺が{03:10}{08:4B}\n		 is no longer paralyzed.\n	v005		reads: 麻痺が回復した\n; reads: 麻痺が回復した\n @refalign
-m/MS00DD.BIN	0:46	0	10	1F01	の毒が少し引{08:64}\n	's poison eased a little.\n	{04:EB} is no longer badly poisoned.\n	v005	draft	reads: の毒が少し引いた\n; reads: の毒が少し引いた\n @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:47	0	10	1F01	は狂戦士と化{08:4B}\n	 went berserk.\n	{04:EB} has gone berserk.\n	v005	draft	reads: は狂戦士と化した\n; reads: は狂戦士と化した\n @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:48	0	10	1F01	は混乱し出{08:4B}\n	 became confused.\n	{04:EB} has lost their mind.\n	v005	draft	reads: は混乱し出した\n; reads: は混乱し出した\n @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:49	0	10	1F01	は踊り出{08:4B}\n	 started dancing.\n	{04:EB} began dancing.\n	v005	draft	reads: は踊り出した\n; reads: は踊り出した\n @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:4A	0	10	1F01	は炎上{08:4B}\n	 burst into flames.\n	{04:EB} has been set aflame.\n	v005	draft	reads: は炎上した\n; reads: は炎上した\n @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:4B	0	4	1FC4	新たに		A new 	v005		@refalign
-m/MS00DD.BIN	0:4B	1	16	1F01	が現わ{08:60}\n	 appeared.\n	{04:EC} appeared.\n	v005	draft	reads: が現われた\n; reads: が現われた\n @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:4C	0	11	1F02	{03:0D}のダメージを{04:0A}		took 	v005		reads: ＨＰのダメージを受け与え; reads: ＨＰのダメージを受け与え @refalign
-m/MS00DD.BIN	0:4C	1	31	1E5F	た\n		 damage	v005		@refalign
+m/MS00DD.BIN	0:38	0	10	1F01	は復活{08:4B}\n	 revived.\n				reads: は復活した\n; reads: は復活した\n @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:39	0	10	1F01	は目覚めた\n	 woke up.\n				reads: は目覚めた\n @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:3A	0	10	1F01	は正気に戻{08:51}\n	 came to their senses.\n				reads: は正気に戻った\n; reads: は正気に戻った\n @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:3B	0	10	1F01	{08:62}ふと我に返{08:51}\n	 suddenly came to.\n				reads: は、ふと我に返った\n; reads: は、ふと我に返った\n @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:3C	0	10	1F01	の体は自由に{08:16}\n	's body is free again.\n				reads: の体は自由になった\n; reads: の体は自由になった\n @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:3D	0	10	1F01	は元に戻{08:51}\n	 returned to normal.\n				reads: は元に戻った\n; reads: は元に戻った\n @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:3E	0	10	1F01	の眠りが覚めて{08:1E}\n	 is waking from sleep.\n				reads: の眠りが覚めてきた\n; reads: の眠りが覚めてきた\n @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:3F	0	6	1F01	の氷が溶け出{08:4B}\n	's ice began to melt.\n				reads: の氷が溶け出した\n; reads: の氷が溶け出した\n @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:40	0	6	1F01	の酔いが少し醒めた\n	 sobered up a little.\n				reads: の酔いが少し醒めた\n @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:41	0	10	1F01	の目が見{08:28}{08:69}に{08:16}\n	 can see again.\n				reads: の目が見えるようになった\n; reads: の目が見えるようになった\n @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:42	0	10	1F01	の酔いが醒めた\n	 sobered up.\n				reads: の酔いが醒めた\n @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:43	0	10	1F01	の	's 				reads: の @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:43	1	20	1F86	封魔が解{08:43}\n					reads: 封魔が解けた\n; reads: 封魔が解けた\n @refalign
+m/MS00DD.BIN	0:43	2	34	18	呪いが解{08:43}\n					reads: 呪いが解けた\n; reads: 呪いが解けた\n @refalign
+m/MS00DD.BIN	0:44	0	10	1F01	の火が消{08:41}\n	's flames went out.\n				reads: の火が消えた\n; reads: の火が消えた\n @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:45	0	10	1F01	の					reads: の
+m/MS00DD.BIN	0:45	1	20	1F86	毒が引{08:64}\n					reads: 毒が引いた\n; reads: 毒が引いた\n @refalign
+m/MS00DD.BIN	0:45	2	32	18	麻痺が{03:10}{08:4B}\n					reads: 麻痺が回復した\n; reads: 麻痺が回復した\n @refalign
+m/MS00DD.BIN	0:46	0	10	1F01	の毒が少し引{08:64}\n	's poison eased a little.\n				reads: の毒が少し引いた\n; reads: の毒が少し引いた\n @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:47	0	10	1F01	は狂戦士と化{08:4B}\n	 went berserk.\n				reads: は狂戦士と化した\n; reads: は狂戦士と化した\n @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:48	0	10	1F01	は混乱し出{08:4B}\n	 became confused.\n				reads: は混乱し出した\n; reads: は混乱し出した\n @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:49	0	10	1F01	は踊り出{08:4B}\n	 started dancing.\n				reads: は踊り出した\n; reads: は踊り出した\n @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:4A	0	10	1F01	は炎上{08:4B}\n	 burst into flames.\n				reads: は炎上した\n; reads: は炎上した\n @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:4B	0	4	1FC4	新たに					@refalign
+m/MS00DD.BIN	0:4B	1	16	1F01	が現わ{08:60}\n	 appeared.\n				reads: が現われた\n; reads: が現われた\n @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:4C	0	11	1F02	{03:0D}のダメージを{04:0A}					reads: ＨＰのダメージを受け与え; reads: ＨＰのダメージを受け与え @refalign
+m/MS00DD.BIN	0:4C	1	31	1E5F	た\n					@refalign
 m/MS00DD.BIN	0:4C	2	91	00	{02:03}	{02:03}				reads: レジスタンス
-m/MS00DD.BIN	0:4C	3	119	1F01	{08:62}居眠り{08:42}醒めた\n	 woke from a doze.\n	{04:EB} woke from dozing.\n	ours	draft	reads: は、居眠りから醒めた\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS00DD.BIN	0:4C	4	170	1F01	{08:62}眠り{08:42}居眠り{08:71}醒めた\n	 stirred from sleep into a doze.\n	{04:EB} stirred from sleep into a doze.\n	ours	draft	reads: は、眠りから居眠りまで醒めた\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS00DD.BIN	0:4C	5	266	18	\nさらに		,\nand 	v005		@refalign
-m/MS00DD.BIN	0:4D	0	0	DATA	、		, 	ours		
-m/MS00DD.BIN	0:4D	1	7	1F02	{03:0E}を失な		lost MP	ours		reads: ＭＰを失な
-m/MS00DD.BIN	0:4D	2	26	1E5C	{08:51}\n	.\n	.\n	ours	draft	reads: った\n @ours-2026-09-05
-m/MS00DD.BIN	0:4D	3	32	18	わせた\n	.\n	.\n	ours	draft	@ours-2026-09-05
-m/MS00DD.BIN	0:4D	4	49	1E5C	い\n	.\n	.\n	ours	draft	@ours-2026-09-05
-m/MS00DD.BIN	0:4D	5	55	18	わせ\n\nさらに		.\n\nFurthermore, 	ours		
-m/MS00DD.BIN	0:4F	0	90	1EB0	を倒{08:17}\n		 was defeated!\n	v005		reads: を倒した！\n; reads: 　; record reaches an engine no-op opcode; verify in game
-m/MS00DD.BIN	0:4F	1	98	00	{08:62}機能を停止{08:4B}\n	 ceased functioning	 ceased functioning.\n	v005	draft	reads: は、機能を停止した\n; record reaches an engine no-op opcode; verify in game @ours-2026-09-05
-m/MS00DD.BIN	0:4F	2	114	00	{08:62}消え去{08:51}\n	 vanished	 vanished.\n	v005	draft	reads: は、消え去った\n; reads: を倒した！\n; record reaches an engine no-op opcode; verify in game @ours-2026-09-05
-m/MS00DD.BIN	0:4F	3	126	00	{08:62}崩れ落ちた\n	 crumbled	 crumbled down.\n	v005	draft	reads: は、崩れ落ちた\n; reads: は、機能を停止した\n; record reaches an engine no-op opcode; verify in game; reads: ' @ours-2026-09-05
-m/MS00DD.BIN	0:4F	4	140	00	{08:62}灰燼と化{08:4B}\n	 turned to ash	 turned into ash.\n	v005	draft	reads: は、灰燼と化した\n; reads: は、消え去った\n; record reaches an engine no-op opcode; verify in game; reads: ( @ours-2026-09-05
-m/MS00DD.BIN	0:4F	5	154	00	{08:62}{08:90}と倒{08:60}\n	 fell with a thud	 was defeated.\n	v005	draft	reads: は、どうと倒れた\n; reads: は、崩れ落ちた\n; record reaches an engine no-op opcode; verify in game; reads: #バーチャル @ours-2026-09-05
-m/MS00DD.BIN	0:4F	6	166	00	{08:62}落鳥{08:4B}\n	 dropped from the sky	 fell.\n	v005	draft	reads: は、落鳥した\n; reads: は、灰燼と化した\n; record reaches an engine no-op opcode; verify in game @rebase-unmatched idx8 en= was defeated!\n @ours-2026-09-05
-m/MS00DD.BIN	0:50	0	15	1F01	{08:62}がっくりと力尽{08:1E}\n	 slumped down, strength spent.\n	{04:EB} slumped down, strength spent.\n	ours	draft	reads: は、がっくりと力尽きた\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS00DD.BIN	0:51	0	0	DATA	{04:19}戦いに勝ち残{08:51}\n		{04:19} was victorious.\n	v005		reads: たちは戦いに勝ち残った\n; reads: たちは戦いに勝ち残った\n @refalign
-m/MS00DD.BIN	0:52	0	0	DATA	{04:19}	{04:19}	{04:19} gained 	v005		reads: たちは
-m/MS00DD.BIN	0:52	1	7	1F02	{03:0F}の経験を積{08:5F}\n		 EXP.\n	v005		reads: ＥＸＰの経験を積んだ\n; reads: ＥＸＰの経験を積んだ\n @refalign
-m/MS00DD.BIN	0:53	0	0	DATA	￥	￥	Obtained 	v005		
-m/MS00DD.BIN	0:53	1	7	1F02	の金を拾{08:51}\n		 yens' worth of money.\n	v005		reads: の金を拾った\n; reads: の金を拾った\n @refalign
-m/MS00DD.BIN	0:54	0	5	1F02	ポイントの生体マグネタイトを吸収{08:4B}\n		 points of Magnetite.\n	v005		reads: ポイントの生体マグネタイトを吸収した\n
+m/MS00DD.BIN	0:4C	3	119	1F01	{08:62}居眠り{08:42}醒めた\n	 woke from a doze.\n				reads: は、居眠りから醒めた\n; reads: は、居眠りから醒めた\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS00DD.BIN	0:4C	4	170	1F01	{08:62}眠り{08:42}居眠り{08:71}醒めた\n	 stirred from sleep into a doze.\n				reads: は、眠りから居眠りまで醒めた\n; reads: は、眠りから居眠りまで醒めた\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS00DD.BIN	0:4C	5	266	18	\nさらに					@refalign
+m/MS00DD.BIN	0:4D	0	0	DATA	、					
+m/MS00DD.BIN	0:4D	1	7	1F02	{03:0E}を失な					reads: ＭＰを失な
+m/MS00DD.BIN	0:4D	2	26	1E5C	{08:51}\n	.\n				reads: った\n; reads: った\n @ours-2026-09-05
+m/MS00DD.BIN	0:4D	3	32	18	わせた\n	.\n				@ours-2026-09-05
+m/MS00DD.BIN	0:4D	4	49	1E5C	い\n	.\n				@ours-2026-09-05
+m/MS00DD.BIN	0:4D	5	55	18	わせ\n\nさらに					
+m/MS00DD.BIN	0:4F	0	90	1EB0	を倒{08:17}\n					reads: を倒した！\n; reads: 　; record reaches an engine no-op opcode; verify in game
+m/MS00DD.BIN	0:4F	1	98	00	{08:62}機能を停止{08:4B}\n	 ceased functioning				reads: は、機能を停止した\n; record reaches an engine no-op opcode; verify in game @ours-2026-09-05
+m/MS00DD.BIN	0:4F	2	114	00	{08:62}消え去{08:51}\n	 vanished				reads: は、消え去った\n; reads: を倒した！\n; record reaches an engine no-op opcode; verify in game @ours-2026-09-05
+m/MS00DD.BIN	0:4F	3	126	00	{08:62}崩れ落ちた\n	 crumbled				reads: は、崩れ落ちた\n; reads: は、機能を停止した\n; record reaches an engine no-op opcode; verify in game; reads: ' @ours-2026-09-05
+m/MS00DD.BIN	0:4F	4	140	00	{08:62}灰燼と化{08:4B}\n	 turned to ash				reads: は、灰燼と化した\n; reads: は、消え去った\n; record reaches an engine no-op opcode; verify in game; reads: ( @ours-2026-09-05
+m/MS00DD.BIN	0:4F	5	154	00	{08:62}{08:90}と倒{08:60}\n	 fell with a thud				reads: は、どうと倒れた\n; reads: は、崩れ落ちた\n; record reaches an engine no-op opcode; verify in game; reads: #バーチャル @ours-2026-09-05
+m/MS00DD.BIN	0:4F	6	166	00	{08:62}落鳥{08:4B}\n	 dropped from the sky				reads: は、落鳥した\n; reads: は、灰燼と化した\n; record reaches an engine no-op opcode; verify in game @rebase-unmatched idx8 en= was defeated!\n @ours-2026-09-05
+m/MS00DD.BIN	0:50	0	15	1F01	{08:62}がっくりと力尽{08:1E}\n	 slumped down, strength spent.\n				reads: は、がっくりと力尽きた\n; reads: は、がっくりと力尽きた\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS00DD.BIN	0:51	0	0	DATA	{04:19}戦いに勝ち残{08:51}\n					reads: たちは戦いに勝ち残った\n; reads: たちは戦いに勝ち残った\n @refalign
+m/MS00DD.BIN	0:52	0	0	DATA	{04:19}	{04:19}				reads: たちは
+m/MS00DD.BIN	0:52	1	7	1F02	{03:0F}の経験を積{08:5F}\n					reads: ＥＸＰの経験を積んだ\n; reads: ＥＸＰの経験を積んだ\n @refalign
+m/MS00DD.BIN	0:53	0	0	DATA	￥	￥				
+m/MS00DD.BIN	0:53	1	7	1F02	の金を拾{08:51}\n					reads: の金を拾った\n; reads: の金を拾った\n @refalign
+m/MS00DD.BIN	0:54	0	5	1F02	ポイントの生体マグネタイトを吸収{08:4B}\n					reads: ポイントの生体マグネタイトを吸収した\n
 m/MS00DD.BIN	0:55	0	98	1F80						
-m/MS00DD.BIN	0:55	1	105	1F01	は	 	 	v005	draft	reads: は @seamfix-2026-09-05
-m/MS00DD.BIN	0:55	2	112	1F01	をあきらめた\n	 was given up.\n	Katsuragi Ayato threw away 	v005	draft	reads: しかし、をあきらめた\n @rebase-new @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:55	3	138	1F01	は	 	 	v005	draft	reads: は @rebase-new @seamfix-2026-09-05
-m/MS00DD.BIN	0:55	4	145	1F01	を捨て、	 was thrown away, and 	obtained 	v005	draft	reads: 飛び道具を捨て、 @refalign @seamfix-2026-09-05
-m/MS00DD.BIN	0:55	5	180	1F80	は	 	 	v005	draft	@seamfix-2026-09-05
-m/MS00DD.BIN	0:55	6	193	1F01	を	 	 	v005	draft	reads: しかし、を @seamfix-2026-09-05
-m/MS00DD.BIN	0:55	7	207	1F02	個手に入{08:60}\n		 copies).       \n	v005		reads: 個手に入れた\n; reads: 個手に入れた\n @refalign
-m/MS00DD.BIN	0:56	0	0	DATA	{04:19}、戦いに勝利{08:4B}\n		{04:19} was victorious.\n	v005		reads: たちは、戦いに勝利した\n; reads: たちは、戦いに勝利した\n @refalign
-m/MS00DD.BIN	0:57	0	0	DATA	敵は逃げて{08:1F}\n		The enemy ran away.\n	v005		reads: 敵は逃げてしまった\n; reads: 敵は逃げてしまった\n @refalign
-m/MS00DD.BIN	0:58	0	0	DATA	{04:19}、戦いを生き延びた\n		{04:19} was victorious.\n	v005		reads: たちは、戦いを生き延びた\n; reads: たちは、戦いを生き延びた\n @refalign
-m/MS00DD.BIN	0:59	0	116	1F83	とに{08:62}何かが残{03:0C}て{08:64}{02:09}\n{1E10:01023C}		dition, the enemy left behind something.\n{1E10:01023C}	v005		reads: とには、何かが残されていた・・・\n{1E10:01023C}; reads: とには、何かが残されていた・・・\n{1E10:01023C} @refalign
-m/MS00DD.BIN	0:5A	0	23	1F87	{04:03}{08:62}戦いを拒否{08:13}\n		{04:03} is refusing to fight.\n	v005		reads: 　は、戦いを拒否している\n; reads: 　は、戦いを拒否している\n @refalign
-m/MS00DD.BIN	0:5A	1	48	1F41	{04:03}{08:62}{08:05}ーに還{08:51}\n		{04:03} returned to the computer.\n	ours		reads: 　は、コンピューターに還った\n
-m/MS00DD.BIN	0:5A	2	68	1ED2	{04:03}{08:62}逃げ{08:21}\n		{04:03} fled.\n	ours		reads: 　は、逃げていった\n
-m/MS00DD.BIN	0:5B	0	6	1F01	に、憑依{08:4A}{08:64}{08:0B}が落ちた\n	 -- the possessing demon fell away.\n	{04:EB} disappeared.\n	v005	draft	reads: に、憑依していた悪魔が落ちた\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS00DD.BIN	0:5C	0	0	DATA	{04:06}は{03:10}{08:4B}\n		{04:06} recovered.\n	ours		reads: 味方たち　たちは回復した\n
-m/MS00DD.BIN	0:5D	0	0	DATA	{04:19}、戦いを回避{08:4B}\n		{04:19} dodged the fight.\n	v005		reads: たちは、戦いを回避した\n; reads: たちは、戦いを回避した\n @refalign
+m/MS00DD.BIN	0:55	1	105	1F01	は	 				reads: は @seamfix-2026-09-05
+m/MS00DD.BIN	0:55	2	112	1F01	をあきらめた\n	 was given up.\n				reads: しかし、をあきらめた\n @rebase-new @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:55	3	138	1F01	は	 				reads: は @rebase-new @seamfix-2026-09-05
+m/MS00DD.BIN	0:55	4	145	1F01	を捨て、	 was thrown away, and 				reads: 飛び道具を捨て、 @refalign @seamfix-2026-09-05
+m/MS00DD.BIN	0:55	5	180	1F80	は	 				@seamfix-2026-09-05
+m/MS00DD.BIN	0:55	6	193	1F01	を	 				reads: しかし、を @seamfix-2026-09-05
+m/MS00DD.BIN	0:55	7	207	1F02	個手に入{08:60}\n					reads: 個手に入れた\n; reads: 個手に入れた\n @refalign
+m/MS00DD.BIN	0:56	0	0	DATA	{04:19}、戦いに勝利{08:4B}\n					reads: たちは、戦いに勝利した\n; reads: たちは、戦いに勝利した\n @refalign
+m/MS00DD.BIN	0:57	0	0	DATA	敵は逃げて{08:1F}\n					reads: 敵は逃げてしまった\n; reads: 敵は逃げてしまった\n @refalign
+m/MS00DD.BIN	0:58	0	0	DATA	{04:19}、戦いを生き延びた\n					reads: たちは、戦いを生き延びた\n; reads: たちは、戦いを生き延びた\n @refalign
+m/MS00DD.BIN	0:59	0	116	1F83	とに{08:62}何かが残{03:0C}て{08:64}{02:09}\n{1E10:01023C}					reads: とには、何かが残されていた・・・\n{1E10:01023C}; reads: とには、何かが残されていた・・・\n{1E10:01023C} @refalign
+m/MS00DD.BIN	0:5A	0	23	1F87	{04:03}{08:62}戦いを拒否{08:13}\n					reads: 　は、戦いを拒否している\n; reads: 　は、戦いを拒否している\n @refalign
+m/MS00DD.BIN	0:5A	1	48	1F41	{04:03}{08:62}{08:05}ーに還{08:51}\n					reads: 　は、コンピューターに還った\n
+m/MS00DD.BIN	0:5A	2	68	1ED2	{04:03}{08:62}逃げ{08:21}\n					reads: 　は、逃げていった\n
+m/MS00DD.BIN	0:5B	0	6	1F01	に、憑依{08:4A}{08:64}{08:0B}が落ちた\n	 -- the possessing demon fell away.\n				reads: に、憑依していた悪魔が落ちた\n; reads: に、憑依していた悪魔が落ちた\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS00DD.BIN	0:5C	0	0	DATA	{04:06}は{03:10}{08:4B}\n					reads: 味方たち　たちは回復した\n
+m/MS00DD.BIN	0:5D	0	0	DATA	{04:19}、戦いを回避{08:4B}\n					reads: たちは、戦いを回避した\n; reads: たちは、戦いを回避した\n @refalign
 m/MS00DD.BIN	0:5E	0	77	1F83	{04:0E}	{04:0E}				reads: はの
-m/MS00DD.BIN	0:5E	1	93	1F8A	に触{08:60}が、何も起き{08:19}\n	 touched it, but nothing happened	 touched it, but nothing happened.\n	ours	draft	reads: に触れたが、何も起きなかった\n; reads: 切り @ours-2026-09-05
-m/MS00DD.BIN	0:5E	2	117	18	を黄金に変{08:41}\n		 turned it to gold.\n	ours		reads: を黄金に変えた\n; reads: に触れたが、何も起きなかった\n
-m/MS00DD.BIN	0:5E	3	145	18	{03:0B}\n{04:07}は武器を持{08:52}い{08:19}\n		However,\n{04:07} had no weapon.\n	ours		reads: しかし、\n敵 は武器を持っていなかった\n; reads: を黄金に変えた\n
-m/MS00DD.BIN	0:5F	0	0	DATA	{04:05}の、幻が現わ{08:11}\n		An illusion of {04:05} appeared!\n	ours		reads: 　の、幻が現われた！\n
-m/MS00DD.BIN	0:60	0	0	DATA	{04:05}の{01:34}が無効化{08:4B}\n		{04:05}'s barrier was nullified.\n	ours		reads: 　の結界が無効化した\n
-m/MS00DD.BIN	0:61	0	0	DATA	{04:05}{08:62}{01:34}によ{08:52}護ら{08:60}\n		{04:05} was protected by the barrier.\n	ours		reads: 　は、結界によって護られた\n
-m/MS00DD.BIN	0:62	0	0	DATA	{04:05}の姿が消{08:41}\n		{04:05} vanished from sight.\n	ours		reads: 　の姿が消えた\n
-m/MS00DD.BIN	0:63	0	18	1E5D	必殺の一撃！\nすべての{03:0E}を失わせた！\n		Critical strike!\nAll MP drained!\n	ours		reads: 必殺の一撃！\nすべてのＭＰを失わせた！\n
-m/MS00DD.BIN	0:63	1	57	18	痛恨の一撃！\nすべての{03:0E}を失{08:12}\n		Fierce blow!\nAll MP lost!\n	ours		reads: 痛恨の一撃！\nすべてのＭＰを失った！\n
-m/MS00DD.BIN	0:64	0	0	DATA	{04:05}は１０{03:0E}を受けと{08:51}\n		{04:05} received 10 MP.\n	ours		reads: 　は１０ＭＰを受けとった\n
+m/MS00DD.BIN	0:5E	1	93	1F8A	に触{08:60}が、何も起き{08:19}\n	 touched it, but nothing happened				reads: に触れたが、何も起きなかった\n; reads: 切り @ours-2026-09-05
+m/MS00DD.BIN	0:5E	2	117	18	を黄金に変{08:41}\n					reads: を黄金に変えた\n; reads: に触れたが、何も起きなかった\n
+m/MS00DD.BIN	0:5E	3	145	18	{03:0B}\n{04:07}は武器を持{08:52}い{08:19}\n					reads: しかし、\n敵 は武器を持っていなかった\n; reads: を黄金に変えた\n
+m/MS00DD.BIN	0:5F	0	0	DATA	{04:05}の、幻が現わ{08:11}\n					reads: 　の、幻が現われた！\n
+m/MS00DD.BIN	0:60	0	0	DATA	{04:05}の{01:34}が無効化{08:4B}\n					reads: 　の結界が無効化した\n
+m/MS00DD.BIN	0:61	0	0	DATA	{04:05}{08:62}{01:34}によ{08:52}護ら{08:60}\n					reads: 　は、結界によって護られた\n
+m/MS00DD.BIN	0:62	0	0	DATA	{04:05}の姿が消{08:41}\n					reads: 　の姿が消えた\n
+m/MS00DD.BIN	0:63	0	18	1E5D	必殺の一撃！\nすべての{03:0E}を失わせた！\n					reads: 必殺の一撃！\nすべてのＭＰを失わせた！\n
+m/MS00DD.BIN	0:63	1	57	18	痛恨の一撃！\nすべての{03:0E}を失{08:12}\n					reads: 痛恨の一撃！\nすべてのＭＰを失った！\n
+m/MS00DD.BIN	0:64	0	0	DATA	{04:05}は１０{03:0E}を受けと{08:51}\n					reads: 　は１０ＭＰを受けとった\n
 m/MS00DD.BIN	0:64	1	45	1F4E	{05:2C}{03:06}	{05:2C}{03:06}				reads: 自分に
 m/MS00DD.BIN	0:65	0	0	DATA	{04:05}{04:09}、\n					reads: 　はに、\n
-m/MS00DD.BIN	0:65	1	18	1F02	{03:0D}のダメージを{04:0A}た\n		took 	v005		reads: ＨＰのダメージを受け与えた\n; reads: ＨＰのダメージを受け与えた\n @refalign
+m/MS00DD.BIN	0:65	1	18	1F02	{03:0D}のダメージを{04:0A}た\n					reads: ＨＰのダメージを受け与えた\n; reads: ＨＰのダメージを受け与えた\n @refalign
 m/MS00DD.BIN	0:65	2	47	1F4D	{=EC}{=03}{08:04}{03:08}b	{=EC}{=03}{08:04}{03:08}b				reads: {=EC}{=03}西野アップb
-m/MS00DD.BIN	0:65	3	58	1F02	{03:0E}増加{08:4B}\n		MP increased.\n	ours		reads: ＭＰ増加した\n
-m/MS00DD.BIN	0:66	0	46	1F4E	{07:2B}{03:0D}{04:03}{08:62}	{07:2B}{03:0D}{04:03}{08:62}	{07:2B}{03:0D}{04:03} gained 	v005		reads: 全身全霊を込めて　ＨＰ　は、
-m/MS00DD.BIN	0:66	1	58	1F02	{03:0D}増加{08:4B}\n		 HP.\n	v005		reads: ＨＰ増加した\n; reads: ＨＰ増加した\n @refalign
+m/MS00DD.BIN	0:65	3	58	1F02	{03:0E}増加{08:4B}\n					reads: ＭＰ増加した\n
+m/MS00DD.BIN	0:66	0	46	1F4E	{07:2B}{03:0D}{04:03}{08:62}	{07:2B}{03:0D}{04:03}{08:62}				reads: 全身全霊を込めて　ＨＰ　は、
+m/MS00DD.BIN	0:66	1	58	1F02	{03:0D}増加{08:4B}\n					reads: ＨＰ増加した\n; reads: ＨＰ増加した\n @refalign
 m/MS00DD.BIN	0:66	2	139	00	{02:1F}{=F4}{=03}	{02:1F}{=F4}{=03}				reads: {=F4}{=03}
 m/MS00DD.BIN	0:66	3	204	1F4E	{07:2B}{03:0D}	{07:2B}{03:0D}				reads: 全身全霊を込めて　ＨＰ
-m/MS00DD.BIN	0:66	4	234	1F4E	{07:2C}{03:0D}{04:03}{08:62}{04:05}を吸収し、\n{03:0D}と{03:0E}を奪{08:51}\n		Called out to the spirit! {04:03} absorbed {04:05},\nand drained its HP and MP.\n	ours		reads: 精神に語りかけた！ＨＰ　は、　を吸収し、\nＨＰとＭＰを奪った\n
+m/MS00DD.BIN	0:66	4	234	1F4E	{07:2C}{03:0D}{04:03}{08:62}{04:05}を吸収し、\n{03:0D}と{03:0E}を奪{08:51}\n					reads: 精神に語りかけた！ＨＰ　は、　を吸収し、\nＨＰとＭＰを奪った\n
 m/MS00DD.BIN	0:66	5	334	0B	{03:00}	{03:00}				reads: 飛び道具
 m/MS00DD.BIN	0:66	6	372	00	{01:1F}{=83}{=27}	{01:1F}{=83}{=27}				reads: おにいちゃん{=83}{=27}
 m/MS00DD.BIN	0:66	7	377	00	{03:09}	{03:09}				reads: ダウン
-m/MS00DD.BIN	0:66	8	390	1EDD	さらに戦闘能力が上昇{08:17}\n		Combat ability rose even further!\n	ours		reads: さらに戦闘能力が上昇した！\n
+m/MS00DD.BIN	0:66	8	390	1EDD	さらに戦闘能力が上昇{08:17}\n					reads: さらに戦闘能力が上昇した！\n
 m/MS00DD.BIN	0:66	9	444	1F4E	{07:24}{03:0B}	{07:24}{03:0B}				reads: 命中！しかし、
 m/MS00DD.BIN	0:66	10	466	1F4E	{07:1E}{03:0B}	{07:1E}{03:0B}				reads: 割り込んできた！しかし、
 m/MS00DD.BIN	0:66	11	488	1F4E	{07:1F}{03:0B}	{07:1F}{03:0B}				reads: 暴れ出した！しかし、
 m/MS00DD.BIN	0:66	12	510	1F4E	{07:1B}{03:0B}	{07:1B}{03:0B}				reads: 会話できない！しかし、
-m/MS00DD.BIN	0:66	13	522	18	さらに能力値が上昇{08:17}\n		Stats rose even further!\n	ours		reads: さらに能力値が上昇した！\n
+m/MS00DD.BIN	0:66	13	522	18	さらに能力値が上昇{08:17}\n					reads: さらに能力値が上昇した！\n
 m/MS00DD.BIN	0:67	0	16	1F4C	{04:FF}	{04:FF}				reads: 

@@ -3,329 +3,329 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS6004.BIN	0:31	0	37	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
-m/MS6004.BIN	0:31	1	41	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
-m/MS6004.BIN	0:31	2	99	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
-m/MS6004.BIN	0:31	3	103	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns; reads: はい
-m/MS6004.BIN	0:31	4	183	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns; reads: いいえ
-m/MS6004.BIN	0:31	5	187	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
-m/MS6004.BIN	0:31	6	253	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
-m/MS6004.BIN	0:31	7	257	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
-m/MS6004.BIN	0:57	0	30	1FB2	わ{08:18}		Understood	ours		reads: わかった; menu option, declared width 20 columns
-m/MS6004.BIN	0:57	1	36	1FB2	駄目		No Good	ours		menu option, declared width 20 columns
-m/MS6004.BIN	0:59	0	95	18	{02:09}・・引き寄せら{08:2F}？？？\n		.....Am I being drawn in???\n	ours		reads: ・・・・・引き寄せられる？？？\n
-m/MS6004.BIN	0:5A	0	20	1F01	は涙を流{08:13}\n	 has tears streaming down.\n	{04:EF} has tears streaming down.\n	ours	draft	reads: は涙を流している\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	0:5C	0	82	1F01	は後ずさろうと{08:4B}が後退{08:23}！\n	 tried to back away but can't retreat!\n			draft	reads: は後ずさろうとしたが後退できない！\n; reads: は後ずさろうとしたが後退できない！\n @rebase-unmatched idx2 en={04:EF} tried to step back, but can't back away!\n @rebase-new @rebase-unmatched idx2 en={04:EF} tried to step back, but can't back away!\n @ours-2026-09-05
-m/MS6004.BIN	0:5F	0	6	1F01	は誘惑し{08:1C}\n	 tried to tempt you!\n	{04:EF} tried to tempt you!\n	ours	draft	reads: は誘惑してきた！\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	0:5F	1	28	1FFA	{02:09}	...			draft	reads: ・・・ @ours-2026-09-05
-m/MS6004.BIN	0:5F	2	32	1FFB	？？？	??? 	???	ours	draft	@ours-2026-09-05
-m/MS6004.BIN	0:5F	3	44	1F01	は魅了{03:0C}た！\n	 was charmed completely!\n	{04:FF} was charmed completely!\n	ours	draft	reads: は魅了された！\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	0:5F	4	87	0E	{02:09}チュッ\n		...Mwah!\n	ours		reads: ・・・チュッ\n
-m/MS6004.BIN	0:5F	5	118	1FA3	{08:03}が睨んで{08:40}{02:09}\n		Emi is glaring...\n	ours		reads: 英美が睨んでいる・・・\n
-m/MS6004.BIN	0:5F	6	146	0E	{08:03}のメガトンパンチが炸裂！！！\n		Emi's Megaton Punch explodes!!!\n	ours		reads: 英美のメガトンパンチが炸裂！！！\n
-m/MS6004.BIN	0:5F	7	219	1FA3	{08:31}が睨んで{08:40}{02:09}\n		Rui is glaring...\n	ours		reads: 泪が睨んでいる・・・\n
-m/MS6004.BIN	0:5F	8	247	0E	{08:31}の鉄拳が		Rui's Iron Fist	ours		reads: 泪の鉄拳が
-m/MS6004.BIN	0:62	0	6	1FFA	{02:09}	...			draft	reads: ・・・ @ours-2026-09-05
-m/MS6004.BIN	0:62	1	10	1FFB	{01:23}お待ち下{08:49}		{01:23}#Please Wait	ours		reads: しばらくお待ち下さい
-m/MS6004.BIN	0:62	2	24	1FFA	{02:09}\n	...\n			draft	reads: ・・・\n @ours-2026-09-05
-m/MS6004.BIN	0:73	0	6	1F01	は怯え{08:14}{08:69}だ\n	 seems terrified.\n	{04:EF} seems terrified.\n	ours	draft	reads: は怯えているようだ\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	0:73	1	35	1FB2	威嚇射撃		Warning Shot	ours		menu option, declared width 20 columns
-m/MS6004.BIN	0:73	2	45	1FB2	近づく		Approach	ours		menu option, declared width 20 columns
-m/MS6004.BIN	0:73	3	53	1FB2	様子を見る		Wait and See	ours		menu option, declared width 20 columns
-m/MS6004.BIN	0:73	4	65	1FB2	{08:0C}	{08:0C}	Attack	ours		reads: 攻撃; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx5 en=煢Devil Buster煌Ranged Weapon熏 @rebase-unmatched idx5 en=煢Devil Buster煌Ranged Weapon熏
-m/MS6004.BIN	0:84	0	6	1FAE	ガンを装備{08:4A}{08:24}！\n		Not equipped with a gun!\n	ours		reads: ガンを装備していない！\n
-m/MS6004.BIN	0:84	1	139	1F01	は涙を流{08:13}\n	 has tears streaming down.\n	{04:EF} has tears streaming down.\n	ours	draft	reads: は涙を流している\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	0:84	2	166	1FB2	脅す		Threaten Them	ours		menu option, declared width 20 columns
-m/MS6004.BIN	0:84	3	172	1FB2	謝る		Apologize	ours		menu option, declared width 20 columns
-m/MS6004.BIN	0:84	4	178	1FB2	ほ{08:53}く		Leave It Alone	ours		reads: ほっとく; menu option, declared width 20 columns
-m/MS6004.BIN	0:84	5	298	1FFA	{02:09}	...			draft	reads: ・・・; reads: アナタ @ours-2026-09-05
-m/MS6004.BIN	0:84	6	302	1FFB	ウソ泣きだ！\n	Fake crying!\n	Fake crying!\n	ours	draft	reads: ペンタグランマP @ours-2026-09-05
-m/MS6004.BIN	0:84	7	331	1FB2	怒る	Get angry	Get Angry	ours	draft	menu option, declared width 20 columns @ours-2026-09-05
-m/MS6004.BIN	0:84	8	337	1FB2	ほ{08:53}く	Leave it 	Leave It Alone	ours	draft	reads: ほっとく; menu option, declared width 20 columns; reads: ・・・ @ours-2026-09-05
-m/MS6004.BIN	0:84	9	370	1F01	は泣い{08:14}{02:09}・・\n	 is crying.....\n			draft	reads: は泣いている・・・・・\n @rebase-new @ours-2026-09-05
-m/MS6004.BIN	0:84	10	401	1FB2	脅す		Threaten Them	ours		menu option, declared width 20 columns
-m/MS6004.BIN	0:84	11	407	1FB2	謝る		Apologize	ours		menu option, declared width 20 columns; reads: ほっとく @rebase-unmatched idx13 en={04:EF} is crying.....\n @rebase-unmatched idx13 en={04:EF} is crying.....\n
-m/MS6004.BIN	0:86	0	2	1FBA	{02:09}\n	...\n			draft	reads: ・・・\n @ours-2026-09-05
-m/MS6004.BIN	0:87	0	8	1F01	は泣きや{08:5F}\n	 stopped crying.\n	{04:EF} stopped crying.\n	ours	draft	reads: は泣きやんだ\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	0:87	1	37	1F01	は睨んで{08:40}{02:09}・・\n	 is glaring......\n	{04:EF} is glaring.....\n	ours	draft	reads: は睨んでいる・・・・・\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	0:8A	0	95	1FB2	本当		It's True	ours		menu option, declared width 20 columns
-m/MS6004.BIN	0:8A	1	101	1FB2	嘘		A Lie	ours		menu option, declared width 20 columns
-m/MS6004.BIN	0:8E	0	6	1F01	は指を鳴ら{08:17}\n	 snapped its fingers!\n	{04:EF} snapped its fingers!\n	ours	draft	reads: は指を鳴らした！\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	0:8F	0	6	1F01	は涙を流{08:13}\n	 has tears streaming down.\n	{04:EF} has tears streaming down.\n	ours	draft	reads: は涙を流している\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	0:8F	1	33	1FB2	脅す		Threaten Them	ours		menu option, declared width 20 columns
-m/MS6004.BIN	0:8F	2	39	1FB2	謝る		Apologize	ours		menu option, declared width 20 columns
-m/MS6004.BIN	0:8F	3	45	1FB2	ほ{08:53}く		Leave It Alone	ours		reads: ほっとく; menu option, declared width 20 columns
-m/MS6004.BIN	0:8F	4	101	1FFA	{02:09}{02:09}\n	......\n			draft	reads: ・・・・・・\n; reads: ゾンビ @ours-2026-09-05
-m/MS6004.BIN	0:8F	5	153	1F01	は{08:76}　泣い{08:14}\n	 is still crying\n	{04:EF} is still crying.\n	ours	draft	reads: はまだ　泣いている\n; reads: ペンタグランマC @rebase-tagdiff @ours-2026-09-05
-m/MS6004.BIN	0:90	0	30	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
-m/MS6004.BIN	0:90	1	34	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
-m/MS6004.BIN	0:90	2	121	1F01	は後ずさろうと{08:4B}が後退{08:23}！\n	 tried to back away but can't retreat!\n			draft	reads: は後ずさろうとしたが後退できない！\n; reads: 山瀬勇 @rebase-new @ours-2026-09-05
-m/MS6004.BIN	0:90	3	192	1F01	は泣き出{08:17}\n	 burst into tears!\n			draft	reads: は泣き出した！\n @rebase-new @ours-2026-09-05
-m/MS6004.BIN	0:90	4	231	1FB2	{08:0E}	{08:0E}	Ally	ours		reads: 仲魔; menu option, declared width 20 columns
-m/MS6004.BIN	0:90	5	235	1FB2	キミ		You	ours		menu option, declared width 20 columns; reads: は後ずさろうとしたが後退できない！\n @rebase-unmatched idx5 en={04:EF} tried to step back, but can't back away!\n
-m/MS6004.BIN	0:90	6	241	1FB2	お前の命		Your Life	ours		menu option, declared width 20 columns; reads: は泣き出した！\n @rebase-unmatched idx10 en=熬Devil Buster燗 @rebase-unmatched idx6 en={04:EF} burst into tears!\n @rebase-unmatched idx10 en=熬Devil Buster燗
-m/MS6004.BIN	0:92	0	13	1FA3	{08:03}が睨んで{08:40}{02:09}\n		Emi is glaring...\n	ours		reads: 英美が睨んでいる・・・\n
-m/MS6004.BIN	0:92	1	48	1FA3	{08:31}が		Rui	ours		reads: 泪が
-m/MS6004.BIN	0:92	2	72	1FFA	{02:09}	...			draft	reads: ・・・ @ours-2026-09-05
-m/MS6004.BIN	0:92	3	83	1FFA	{02:09}{02:09}	......			draft	reads: ・・・・・・ @ours-2026-09-05
-m/MS6004.BIN	0:92	4	89	1FFB	{01:23}お待ち下{08:49}		{01:23}#Please Wait	ours		reads: しばらくお待ち下さい
-m/MS6004.BIN	0:92	5	103	1FFA	{02:09}{02:09}\n	......\n			draft	reads: ・・・・・・\n @ours-2026-09-05
-m/MS6004.BIN	1:03	0	28	1FB2	ちょ{08:53}待{08:52}		Gladly	ours		reads: ちょっと待って; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx0 en=Wait a Moment @rebase-unmatched idx0 en=Wait a Moment
-m/MS6004.BIN	1:03	1	40	1FB2	さよ{08:7D}		Can't Be Helped	ours		reads: さよなら; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx1 en=Goodbye @rebase-unmatched idx1 en=Goodbye
-m/MS6004.BIN	1:03	2	85	1FB2	謝る	Apologize	Not for You!	ours	draft	menu option, declared width 20 columns; reads:  @ours-2026-09-05
-m/MS6004.BIN	1:03	3	91	1FB2	別に		Calm Them Down	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx3 en=Apologize @rebase-unmatched idx3 en=Apologize
-m/MS6004.BIN	1:03	4	172	1FB2	よろこんで		Leave It Alone	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx4 en=Nothing Much @rebase-unmatched idx4 en=Nothing Much
-m/MS6004.BIN	1:03	5	184	1FB2	{08:80}が{08:25}	Can't be helped	Calm Them Down	ours	draft	reads: しょうがない; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
-m/MS6004.BIN	1:03	6	192	1FB2	誰がお前{08:6A}かに		Ignore Them	ours		reads: 誰がお前なんかに; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new
-m/MS6004.BIN	1:03	7	291	1FB2	なだ{08:2E}		That's Right	ours		reads: なだめる; menu option, declared width 20 columns; reads: しょうがない @rebase-new
-m/MS6004.BIN	1:03	8	299	1FB2	ほ{08:53}く		Not Really	ours		reads: ほっとく; menu option, declared width 20 columns; reads: 誰がお前なんかに @rebase-new
-m/MS6004.BIN	1:03	9	352	1F01	は感動{08:13}\nスキだらけだ！\n＞{08:0C}し{08:15}\n	 is moved\nWide open!\n>Attack?\n			draft	reads: は感動している\nスキだらけだ！\n＞攻撃しますか？\n; reads: まさか @rebase-new @ours-2026-09-05
-m/MS6004.BIN	1:03	10	564	1FB2	なだ{08:2E}	Soothe	Calm Them Down	ours	draft	reads: なだめる; menu option, declared width 20 columns; reads: ペンタグランマ{=EB}{=00} @ours-2026-09-05
-m/MS6004.BIN	1:03	11	572	1FB2	無視{08:8E}		Ignore Them	ours		reads: 無視する; menu option, declared width 20 columns; reads: なだめる
-m/MS6004.BIN	1:03	12	699	1FB2	そう{08:55}	That's right			draft	reads: そうです; menu option, declared width 20 columns; reads: ほっとく @rebase-new @ours-2026-09-05
-m/MS6004.BIN	1:03	13	707	1FB2	{08:4D}ほど{08:56}{08:25}	Not really			draft	reads: それほどでもない; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
-m/MS6004.BIN	1:03	14	893	1FB2	なだ{08:2E}	Soothe			draft	reads: なだめる; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
-m/MS6004.BIN	1:03	15	901	1FB2	無視{08:8E}	Ignore			draft	reads: 無視する; menu option, declared width 20 columns; reads: は感動している\nスキだらけだ！\n＞攻撃しますか？\n @rebase-unmatched idx15 en={04:EF} is deeply moved!\nWide open!\n>Attack?\n @rebase-unmatched idx27 en=Calm Them Down @rebase-unmatched idx28 en=Ignore Them @rebase-new @rebase-unmatched idx15 en={04:EF} is deeply moved!\nWide open!\n>Attack?\n @ours-2026-09-05
-m/MS6004.BIN	2:01	0	22	1FB2	{08:0B}狩り	Demon hunting			draft	reads: 悪魔狩り; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx0 en=Demon Hunting @rebase-unmatched idx0 en=Demon Hunting @ours-2026-09-05
-m/MS6004.BIN	2:01	1	30	1FB2	散歩		MAG	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx1 en=Taking a Walk @rebase-unmatched idx1 en=Taking a Walk
-m/MS6004.BIN	2:01	2	87	1FB2	まあね	Sort of	Macca	ours	draft	menu option, declared width 20 columns; reads: 早坂達也 @ours-2026-09-05
-m/MS6004.BIN	2:01	3	95	1FB2	仕方が無い		Sorry!	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx3 en=I Guess @rebase-unmatched idx3 en=I Guess
-m/MS6004.BIN	2:01	4	149	1FB2	うーん‥		It's the Truth	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx4 en=Can't Be Helped @rebase-unmatched idx4 en=Can't Be Helped
-m/MS6004.BIN	2:01	5	159	1FB2	そうかもね	Maybe so	Not Right Now...	ours	draft	menu option, declared width 20 columns; reads:  @ours-2026-09-05
-m/MS6004.BIN	2:01	6	222	1FB2	スキだよ		I suppose so	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx6 en=Hmm... @rebase-unmatched idx6 en=Hmm...
-m/MS6004.BIN	2:01	7	232	1FB2	うーん‥		No Way!	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx7 en=Maybe So @rebase-unmatched idx7 en=Maybe So
-m/MS6004.BIN	2:01	8	303	1FB2	もちろん	Of course	Fine, But	ours	draft	menu option, declared width 20 columns; reads:  @ours-2026-09-05
-m/MS6004.BIN	2:01	9	313	1FB2	今は結構		Offer Tribute	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx9 en=I Like You @rebase-unmatched idx9 en=I Like You
-m/MS6004.BIN	2:01	10	399	1FB2	{02:04}	{02:04}	Something Naughty	ours		reads: アイテム; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx10 en=Hmm... @rebase-unmatched idx10 en=Hmm...
-m/MS6004.BIN	2:01	11	403	1FB2	ＭＡＧ	MAG			draft	menu option, declared width 20 columns; reads: アタシ @rebase-new @ours-2026-09-05
-m/MS6004.BIN	2:01	12	411	1FB2	マッカ	Macca			draft	menu option, declared width 20 columns; reads: あなたの @rebase-new @ours-2026-09-05
-m/MS6004.BIN	2:01	13	613	1FB2	ごめん！	Sorry!			draft	menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx13 en=Of Course @rebase-unmatched idx13 en=Of Course @ours-2026-09-05
-m/MS6004.BIN	2:01	14	623	1FB2	本当の事だ	It's the truth			draft	menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx14 en=Not Right Now @rebase-unmatched idx14 en=Not Right Now @ours-2026-09-05
-m/MS6004.BIN	2:01	15	736	1FB2	今はね‥	For now...			draft	menu option, declared width 20 columns; reads:  @rebase-new @ours-2026-09-05
-m/MS6004.BIN	2:01	16	746	1FB2	{01:29}な	I suppose			draft	reads: そうだな; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
-m/MS6004.BIN	2:01	17	849	1FB2	ヤダ！	No way!			draft	menu option, declared width 20 columns; reads: アイテム @rebase-new @ours-2026-09-05
-m/MS6004.BIN	2:01	18	857	1FB2	{08:7F}ケド	Fine, but			draft	reads: いいケド; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
-m/MS6004.BIN	2:01	19	942	1FB2	貢ぐ	Offer tribute			draft	menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
-m/MS6004.BIN	2:01	20	948	1FB2	Ｈな事	Something naughty			draft	menu option, declared width 20 columns; reads: そろそろ @rebase-new @ours-2026-09-05
-m/MS6004.BIN	2:0C	0	16	1FB2	甘くささやく		Whisper Sweetly	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:0C	1	30	1FB2	{08:5C}止{08:2E}		Stop It Now	ours		reads: もう止める; menu option, declared width 20 columns
-m/MS6004.BIN	2:0C	2	38	1FB2	押し倒す！		Push Them Down!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:0C	3	50	1FB2	イケナイ所をいぢ{08:2E}！		Tease Naughty Spots!	ours		reads: イケナイ所をいぢめる！; menu option, declared width 20 columns
-m/MS6004.BIN	2:0C	4	72	1FB2	身体中触りまくる！		Touch All Over!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:0C	5	182	1FB2	{01:29}！	That's right!	That's right!	ours	draft	reads: そうだ！; menu option, declared width 20 columns; reads: 管理部 @ours-2026-09-05
-m/MS6004.BIN	2:0C	6	188	1FB2	{08:76}{08:76}	Not yet	Not Yet	ours	draft	reads: まだまだ; menu option, declared width 20 columns; reads: ペンタグランマ{=9C}{=00}そんなことｰ @ours-2026-09-05
-m/MS6004.BIN	2:0D	0	16	1FB2	押し倒す！		Recruit	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx0 en=Push Them Down! @rebase-unmatched idx0 en=Push Them Down!
-m/MS6004.BIN	2:0D	1	28	1FB2	無理やり試みる！		Give Me Something	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx1 en=Force It Through! @rebase-unmatched idx1 en=Force It Through!
-m/MS6004.BIN	2:0D	2	98	1FB2	今更ムダだ！	Too late for that!	Use Your Mouth	ours	draft	menu option, declared width 20 columns; reads: 山瀬勇 @ours-2026-09-05
-m/MS6004.BIN	2:0D	3	112	1FB2	ごめん！！	Sorry!!			draft	menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
-m/MS6004.BIN	2:0D	4	166	1FB2	{08:0E}になれ	Become my ally			draft	reads: 仲魔になれ; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx4 en=Too Late Now! @rebase-unmatched idx4 en=Too Late Now! @ours-2026-09-05
-m/MS6004.BIN	2:0D	5	176	1FB2	何かくれ	Give me something			draft	menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx5 en=Sorry!! @rebase-unmatched idx5 en=Sorry!! @ours-2026-09-05
-m/MS6004.BIN	2:0D	6	186	1FB2	{08:81}あ口で{08:4A}	Then use your mouth			draft	reads: じゃあ口でして; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
-m/MS6004.BIN	2:0D	7	256	1FFA	{02:09}・・{02:09}\n	........\n	........\n	ours	draft	reads: ・・・・・・・・\n; reads: 仲魔になれ; menu option, declared width 20 columns @ours-2026-09-05
-m/MS6004.BIN	2:0D	8	289	1FB2	分{08:18}		Understood	ours		reads: 分かった; menu option, declared width 20 columns
-m/MS6004.BIN	2:0D	9	295	1FB2	絶対許さん		Never Forgive You	ours		menu option, declared width 20 columns; reads: じゃあ口でして
-m/MS6004.BIN	2:0D	10	337	1FFA	{02:09}・・	.....	.....	ours	draft	reads: ・・・・・; reads: {=EC}{=0A}ペンタグランマ{=8D}{=00} @ours-2026-09-05
-m/MS6004.BIN	2:0D	11	407	1FB2	断る！		Refuse!	ours		menu option, declared width 20 columns; reads: ・・・・・・・・\n
-m/MS6004.BIN	2:0D	12	415	1FB2	分{08:18}		Understood	ours		reads: 分かった; menu option, declared width 20 columns
-m/MS6004.BIN	2:0D	13	479	1F01	は\n	 ××'d\n			draft	reads: は\n; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
-m/MS6004.BIN	2:0D	14	488	1F01	の××を××{08:17}\n	's ××!\n			draft	reads: の××を××した！\n; reads: わたしが @rebase-new @ours-2026-09-05
-m/MS6004.BIN	2:0D	15	524	1FB2	{08:76}{08:76}	Not yet	Not Yet	ours	draft	reads: まだまだ; menu option, declared width 20 columns @ours-2026-09-05
-m/MS6004.BIN	2:0D	16	530	1FB2	{01:29}な		I suppose so	ours		reads: そうだな; menu option, declared width 20 columns; reads: ・・・・・
-m/MS6004.BIN	2:0D	17	631	1FB2	そう{08:8E}		I'll Do That	ours		reads: そうする; menu option, declared width 20 columns
-m/MS6004.BIN	2:0D	18	639	1FB2	{08:76}{08:76}	Not yet	Not Yet	ours	draft	reads: まだまだ; menu option, declared width 20 columns; reads: 分かった @rebase-unmatched idx21 en={04:EF}\n @rebase-unmatched idx22 en= did XX to {04:FF}'s XX!\n @ours-2026-09-05
-m/MS6004.BIN	2:0E	0	30	1FB2	すかさず押し倒す！		Push Down at Once!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:0E	1	50	1FB2	ボディにソフトタッチ		A Gentle Touch	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:0F	0	30	1FB2	もちろん		Of Course	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:0F	1	40	1FB2	ふざ{08:29}な！		Knock It Off!	ours		reads: ふざけるな！; menu option, declared width 20 columns
-m/MS6004.BIN	2:10	0	22	1FB2	そりゃマズイ		That's Bad	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:10	1	36	1FB2	もちろん		Of Course	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:11	0	22	1FB2	{01:29}な		I suppose so	ours		reads: そうだな; menu option, declared width 20 columns
-m/MS6004.BIN	2:11	1	28	1FB2	構うな		Don't Mind Me	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:12	0	16	1FB2	そ{08:53}抱きし{08:2E}		Hold Them Gently	ours		reads: そっと抱きしめる; menu option, declared width 20 columns
-m/MS6004.BIN	2:12	1	30	1FB2	いきなり押し倒す！		Suddenly Push Down!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:12	2	50	1FB2	キス{08:8E}		Kiss Them	ours		reads: キスする; menu option, declared width 20 columns
-m/MS6004.BIN	2:13	0	37	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
-m/MS6004.BIN	2:13	1	41	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
-m/MS6004.BIN	2:14	0	16	1FB2	何を？		What?	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:14	1	24	1FB2	断る！		Refuse!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:14	2	90	1FB2	Ｈな事を{08:8E}	Do something naughty	Do Something Naughty	ours	draft	reads: Ｈな事をする; menu option, declared width 20 columns @ours-2026-09-05
-m/MS6004.BIN	2:14	3	102	1FB2	さっぱり分{08:42}ん	I have no clue	I Have No Clue	ours	draft	reads: さっぱり分からん; menu option, declared width 20 columns @ours-2026-09-05
-m/MS6004.BIN	2:15	0	29	1FFA	{02:09}・・\n	.....\n	.....\n	ours	draft	reads: ・・・・・\n @ours-2026-09-05
-m/MS6004.BIN	2:18	0	8	1F01	は\n	 \n	{04:FF}\n	ours	draft	reads: は\n @rebase-tagdiff @ours-2026-09-05
-m/MS6004.BIN	2:18	1	17	1F01	と×××{08:17}\n	 did XXX together!\n	 did XXX with {04:EF}!\n	ours	draft	reads: と×××した！\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	2:18	2	30	1FBA	{02:09}・・{02:09}・・\n	..........\n	..........\n	ours	draft	reads: ・・・・・・・・・・\n @ours-2026-09-05
-m/MS6004.BIN	2:18	3	107	0C	{08:5C}体力が残{08:52}{08:24}！\n＞{02:06}\n	No strength left!\n>What will you do?\n	There's no strength left!\n>What will you do?\n	ours	draft	reads: もう体力が残っていない！\n＞どうしますか？\n; reads: あなたは @ours-2026-09-05
-m/MS6004.BIN	2:18	4	145	1FB2	逃げる！	Run away!	Run Away!	ours	draft	menu option, declared width 20 columns; reads: \<あなたに @ours-2026-09-05
-m/MS6004.BIN	2:18	5	155	1FB2	謝る	Apologize	Apologize	ours	draft	menu option, declared width 20 columns @ours-2026-09-05
-m/MS6004.BIN	2:18	6	192	1FBA	逃げられ{08:25}！\n		Can't escape!\n	ours		reads: 逃げられない！\n; reads: もう体力が残っていない！\n＞どうしますか？\n
-m/MS6004.BIN	2:02	0	45	1F01	の鉄拳が炸裂！！！\n	's Iron Fist explodes!!!\n	{04:EF}'s Iron Fist explodes!!!\n	ours	draft	reads: の鉄拳が炸裂！！！\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	2:02	1	225	1FB2	怒る		Get Angry	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:02	2	231	1FB2	謝る		Apologize	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:02	3	237	1FB2	引き下がる		Back Down	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx5 en=Pentagramma @rebase-unmatched idx5 en=Pentagramma
-m/MS6004.BIN	2:04	0	112	1F01	は誘惑し{08:1C}\n	 tried to tempt you!\n			draft	reads: は誘惑してきた！\n @rebase-new @ours-2026-09-05
-m/MS6004.BIN	2:04	1	136	1F01	は耐え切{08:12}\n	 endured it!\n			draft	reads: は耐え切った！\n; reads: は誘惑してきた！\n @rebase-new @rebase-unmatched idx1 en={04:EF} tried to tempt you!\n @ours-2026-09-05
-m/MS6004.BIN	2:04	2	163	1FB2	威嚇射撃		Warning Shot	ours		menu option, declared width 20 columns; reads: は耐え切った！\n @rebase-unmatched idx2 en={04:FF} held out to the end!\n
-m/MS6004.BIN	2:04	3	173	1FB2	見逃す		Let It Go	ours		menu option, declared width 20 columns
-m/MS6004.BIN	2:04	4	181	1FB2	{08:0C}	{08:0C}	Attack	ours		reads: 攻撃; menu option, declared width 20 columns
-m/MS6004.BIN	2:04	5	217	1F01	はガンを装備{08:4A}{08:24}！\n	 has no gun equipped!\n			draft	reads: はガンを装備していない！\n; reads: 攻撃; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
-m/MS6004.BIN	2:04	6	291	0D	チュッ\n	Smooch\n	Mwah!\n	ours	draft	reads: ひとり @ours-2026-09-05
-m/MS6004.BIN	2:04	7	306	1F01	は幸せだ\n	 is happy\n	{04:FF} is happy.\n	ours	draft	reads: は幸せだ\n; reads: ペンタグランマD @rebase-tagdiff @ours-2026-09-05
-m/MS6004.BIN	2:04	8	341	1FD2	{08:03}：	Emi:	Emi:	ours	draft	reads: 英美： @ours-2026-09-05
-m/MS6004.BIN	2:04	9	347	1FD3	何鼻の下のば{08:4A}んのよ！！\n		Quit making googly eyes!!\n	ours		reads: 何鼻の下のばしてんのよ！！\n; reads: はガンを装備していない！\n @rebase-unmatched idx9 en={04:FF} isn't equipped with a gun!\n
-m/MS6004.BIN	2:04	10	374	1FBA	{08:03}のメガトンパンチが		Emi's Megaton Punch	ours		reads: 英美のメガトンパンチが
-m/MS6004.BIN	2:04	11	406	1FD2	{08:31}：		Rui:	ours		reads: 泪：; reads: は幸せだ\n
-m/MS6004.BIN	2:04	12	412	1FD3	何鼻の下のば{08:4A}んのよ！！\n		Quit making googly eyes!!\n	ours		reads: 何鼻の下のばしてんのよ！！\n; reads: 英美：
-m/MS6004.BIN	2:04	13	439	1FBA	{08:31}の鉄拳が		Rui's Iron Fist	ours		reads: 泪の鉄拳が; reads: 何鼻の下のばしてんのよ！！\n
-m/MS6004.BIN	2:04	14	455	18	炸裂！！！\n		Detonation!!!\n	ours		reads: 英美のメガトンパンチが
-m/MS6004.BIN	3:07	0	24	1F01	は迫っ{08:1C}\n	 closed right in!\n	{04:EF} closed right in!\n	ours	draft	reads: は迫ってきた！\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	3:07	1	47	1FA3	{08:03}が睨んで{08:40}{02:09}\n		Emi is glaring...\n	ours		reads: 英美が睨んでいる・・・\n
-m/MS6004.BIN	3:07	2	75	0E	{08:03}のメガトンパンチが炸裂！！！\n		Emi's Megaton Punch explodes!!!\n	ours		reads: 英美のメガトンパンチが炸裂！！！\n
-m/MS6004.BIN	3:07	3	133	1FA3	{08:31}が睨んで{08:40}{02:09}\n		Rui is glaring...\n	ours		reads: 泪が睨んでいる・・・\n
-m/MS6004.BIN	3:07	4	161	0E	{08:31}の鉄拳が		Rui's Iron Fist	ours		reads: 泪の鉄拳が
-m/MS6004.BIN	3:0A	0	6	0E	チュッ\n		Mwah!\n	ours		
-m/MS6004.BIN	3:0B	0	8	1FFA	{02:09}	...			draft	reads: ・・・ @ours-2026-09-05
-m/MS6004.BIN	3:0B	1	12	1FFB	{01:23}お待ち下{08:49}		{01:23}#Please Wait	ours		reads: しばらくお待ち下さい
-m/MS6004.BIN	3:0B	2	30	1FFA	{02:09}\n	...\n			draft	reads: ・・・\n @ours-2026-09-05
-m/MS6004.BIN	3:08	0	19	1FB2	{01:32}？		Are you okay?	ours		reads: 大丈夫？; menu option, declared width 20 columns
-m/MS6004.BIN	3:08	1	25	1FB2	様子を見る		Wait and See	ours		menu option, declared width 20 columns
-m/MS6004.BIN	3:08	2	194	1FB2	{01:29}よ	That's right	That's right	ours	draft	reads: そうだよ; menu option, declared width 20 columns @ours-2026-09-05
-m/MS6004.BIN	3:08	3	200	1FB2	{08:7A}訳では	That's not it	That's Not It	ours	draft	reads: そんな訳では; menu option, declared width 20 columns @ours-2026-09-05
-m/MS6004.BIN	3:0F	0	120	1FB2	駄目		No Good	ours		menu option, declared width 20 columns
-m/MS6004.BIN	3:0F	1	126	1FB2	わ{08:18}よ		Got It	ours		reads: わかったよ; menu option, declared width 20 columns
-m/MS6004.BIN	5:00	0	78	1F01	は去ろうと{08:13}\n	 is about to leave\n	{04:EF} is about to leave\n	ours	draft	reads: は去ろうとしている\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	5:00	1	107	1FB2	呼び止{08:2E}		Call Out to Them	ours		reads: 呼び止める; menu option, declared width 20 columns
-m/MS6004.BIN	5:00	2	117	1FB2	ほ{08:53}く		Leave It Alone	ours		reads: ほっとく; menu option, declared width 20 columns
-m/MS6004.BIN	5:00	3	208	1FBA	チュッ\n	Smooch\n	Mwah!\n	ours	draft	reads: まさか @ours-2026-09-05
-m/MS6004.BIN	5:00	4	379	1FB2	{08:0B}狩り	Demon hunting	Demon Hunting	ours	draft	reads: 悪魔狩り; menu option, declared width 20 columns @ours-2026-09-05
-m/MS6004.BIN	5:00	5	387	1FB2	{08:0E}探し		Seeking Allies	ours		reads: 仲魔探し; menu option, declared width 20 columns
-m/MS6004.BIN	5:00	6	395	1FB2	物乞い		Begging	ours		menu option, declared width 20 columns; reads: 悪魔狩り
-m/MS6004.BIN	5:00	7	403	1FB2	別に…		Nothing...	ours		menu option, declared width 20 columns; reads: 仲魔探し
-m/MS6004.BIN	5:28	0	99	1F01	はスキだらけだ！\n＞{08:0C}し{08:15}\n	 is wide open!\n>Attack?\n	{04:EF} is wide open!\n>Attack?\n	ours	draft	reads: はスキだらけだ！\n＞攻撃しますか？\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	5:0A	0	6	0E	チュッ\n		Mwah!\n	ours		
-m/MS6004.BIN	5:0C	0	14	1FA3	{08:03}が睨んで{08:40}\n{02:09}\n		Emi is glaring\n...\n	ours		reads: 英美が睨んでいる\n・・・\n
-m/MS6004.BIN	5:0C	1	43	0E	{08:03}のメガトンパンチが炸裂！！！\n		Emi's Megaton Punch explodes!!!\n	ours		reads: 英美のメガトンパンチが炸裂！！！\n
-m/MS6004.BIN	5:0C	2	99	1FA3	{08:31}が睨んで{08:40}{02:09}\n		Rui is glaring...\n	ours		reads: 泪が睨んでいる・・・\n
-m/MS6004.BIN	5:0C	3	127	0E	{08:31}の鉄拳が炸裂！！！\n		Rui's Iron Fist explodes!!!\n	ours		reads: 泪の鉄拳が炸裂！！！\n
-m/MS6004.BIN	5:0D	0	6	1FFA	{02:09}・・	.....	.....	ours	draft	reads: ・・・・・ @ours-2026-09-05
-m/MS6004.BIN	5:0D	1	14	1FFB	{01:23}お待ち下{08:49}		{01:23}#Please Wait	ours		reads: しばらくお待ち下さい
-m/MS6004.BIN	5:0D	2	28	1FFA	{02:09}・・\n	.....\n	.....\n	ours	draft	reads: ・・・・・\n @ours-2026-09-05
-m/MS6004.BIN	5:0E	0	16	1F01	は踊{08:12}\n	 danced!\n	{04:FF} danced!\n	ours	draft	reads: は踊った！\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	5:0F	0	5	1FBA	＞も{08:53}やり{08:15}\n		>Give more?\n	ours		reads: ＞もっとやりますか？\n
-m/MS6004.BIN	5:0F	1	40	1F01	は踊{08:12}\n	 danced!\n	{04:FF} danced!\n	ours	draft	reads: は踊った！\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	6:00	0	30	1FB2	そこを何とか		Offer Tribute	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx0 en=Just This Once @rebase-unmatched idx0 en=Just This Once
-m/MS6004.BIN	6:00	1	44	1FB2	引き下がる		Apologize	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx1 en=Back Down @rebase-unmatched idx1 en=Back Down
-m/MS6004.BIN	6:00	2	56	1FB2	{08:0C}	{08:0C}	Back Down	ours		reads: 攻撃; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx2 en=Attack @rebase-unmatched idx2 en=Attack
-m/MS6004.BIN	6:00	3	106	1FB2	{08:0E}になれ	Become my ally	Ignore Them	ours	draft	reads: 仲魔になれ; menu option, declared width 20 columns; reads: 桐島英美 @ours-2026-09-05
-m/MS6004.BIN	6:00	4	116	1FB2	何かくれ	Give me something			draft	menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
-m/MS6004.BIN	6:00	5	126	1FB2	あっち行け	Go away			draft	menu option, declared width 20 columns; reads: 仲魔になれ @rebase-new @rebase-unmatched idx5 en=Recruit @rebase-unmatched idx5 en=Recruit @ours-2026-09-05
-m/MS6004.BIN	6:00	6	182	1FB2	そこを何とか	Come on, please			draft	menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx6 en=Give Me Something @rebase-unmatched idx6 en=Give Me Something @ours-2026-09-05
-m/MS6004.BIN	6:00	7	196	1FB2	あきら{08:2E}	Give up			draft	reads: あきらめる; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx7 en=Go Away @rebase-unmatched idx7 en=Go Away @ours-2026-09-05
-m/MS6004.BIN	6:00	8	368	1FB2	そこを何とか	Come on, please			draft	menu option, declared width 20 columns; reads:  @rebase-new @ours-2026-09-05
-m/MS6004.BIN	6:00	9	382	1FB2	引き下がる	Back down			draft	menu option, declared width 20 columns; reads: ペンタグランマ{=83}{=00} @rebase-new @ours-2026-09-05
-m/MS6004.BIN	6:00	10	460	1FB2	貢ぐ	Offer tribute			draft	menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx10 en=Just This Once @rebase-unmatched idx10 en=Just This Once @ours-2026-09-05
-m/MS6004.BIN	6:00	11	466	1FB2	謝る	Apologise			draft	menu option, declared width 20 columns; reads: あきらめる @rebase-new @rebase-unmatched idx11 en=Give Up @rebase-unmatched idx11 en=Give Up @ours-2026-09-05
-m/MS6004.BIN	6:00	12	472	1FB2	引き下がる	Back down			draft	menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
-m/MS6004.BIN	6:00	13	484	1FB2	無視	Ignore			draft	menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx13 en=Just This Once @rebase-unmatched idx14 en=Back Down @rebase-unmatched idx13 en=Just This Once @rebase-unmatched idx14 en=Back Down @ours-2026-09-05
-m/MS6004.BIN	6:0D	0	6	1F01	は{02:0E}を睨んで{08:40}{02:09}・・\n	 is glaring this way......\n	{04:EF} is glaring this way.....\n	ours	draft	reads: はこちらを睨んでいる・・・・・\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	6:0D	1	43	1FB2	怒る		Get Angry	ours		menu option, declared width 20 columns
-m/MS6004.BIN	6:0D	2	49	1FB2	貢ぐ		Offer Tribute	ours		menu option, declared width 20 columns
-m/MS6004.BIN	6:0D	3	55	1FB2	受けを狙う		Play It Safe	ours		menu option, declared width 20 columns
-m/MS6004.BIN	6:0D	4	67	1FB2	睨む		Glare	ours		menu option, declared width 20 columns
-m/MS6004.BIN	6:0D	5	73	1FB2	{08:0C}	{08:0C}	Attack	ours		reads: 攻撃; menu option, declared width 20 columns
-m/MS6004.BIN	6:0D	6	153	1FFA	{02:09}・・{02:09}・・\n	..........\n	..........\n	ours	draft	reads: ・・・・・・・・・・\n @ours-2026-09-05
-m/MS6004.BIN	6:0D	7	200	1F01	は	 has	{04:FF}	ours	draft	reads: は; reads: ペンタグランマ` @rebase-tagdiff @ours-2026-09-05
-m/MS6004.BIN	6:0D	8	207	16	ウィットに富{08:5F}ジョークを言{08:12}\n	 told a witty joke!\n	 told a witty joke!\n	ours	draft	reads: ウィットに富んだジョークを言った！\n; reads: そんなこと{=EF}{=00}を唱えた！ {=E6}{=0E} @ours-2026-09-05
-m/MS6004.BIN	6:0D	9	273	18	こてこてのギャグをかま{08:17}\n		Pulled off a real corny gag!\n	ours		reads: こてこてのギャグをかました！\n; reads: ・・・・・・・・・・\n
-m/MS6004.BIN	6:0D	10	350	1FDA	にらみ合いは続く{02:09}・・\n		The staredown continues.....\n	ours		reads: にらみ合いは続く・・・・・\n; reads: は
-m/MS6004.BIN	6:0D	11	389	1FB2	続{08:29}		Keep Going	ours		reads: 続ける; menu option, declared width 20 columns; reads: ウィットに富んだジョークを言った！\n
-m/MS6004.BIN	6:0D	12	395	1FB2	目をそらす		Look Away	ours		menu option, declared width 20 columns; reads: こてこてのギャグをかました！\n
-m/MS6004.BIN	7:00	0	151	1FB2	{08:26}	Yes			draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
-m/MS6004.BIN	7:00	1	155	1FB2	{08:27}	{08:27}	Money	ours		reads: いいえ; menu option, declared width 20 columns
-m/MS6004.BIN	7:00	2	231	1FB2	{02:04}	{02:04}	MAG	ours		reads: アイテム; menu option, declared width 20 columns; reads: はい @rebase-unmatched idx2 en=Yes @rebase-unmatched idx2 en=Yes
-m/MS6004.BIN	7:00	3	235	1FB2	金	Money	You	ours	draft	menu option, declared width 20 columns; reads: いいえ @rebase-unmatched idx3 en=No @rebase-unmatched idx3 en=No @ours-2026-09-05
-m/MS6004.BIN	7:00	4	239	1FB2	ＭＡＧ	MAG			draft	menu option, declared width 20 columns; reads:  @rebase-new @ours-2026-09-05
-m/MS6004.BIN	7:00	5	247	1FB2	キミ	You			draft	menu option, declared width 20 columns; reads: アイテム @rebase-new @ours-2026-09-05
-m/MS6004.BIN	7:0B	0	59	1FFA	{02:09}・・	.....	.....	ours	draft	reads: ・・・・・ @ours-2026-09-05
-m/MS6004.BIN	7:0B	1	67	1FFB	{01:23}お待ち下{08:49}	Please wait a moment	{01:23}#Please Wait	ours	draft	reads: しばらくお待ち下さい; reads: P @ours-2026-09-05
-m/MS6004.BIN	7:0B	2	81	1FFA	{02:09}・・\n	.....\n	.....\n	ours	draft	reads: ・・・・・\n @ours-2026-09-05
-m/MS6004.BIN	7:0E	0	10	0D	＞{02:06}\n		>What will you do?\n	ours		reads: ＞どうしますか？\n
-m/MS6004.BIN	7:0E	1	31	1FB2	踊れ		Dance!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	7:0E	2	37	1FB2	何かくれ		Give Me Something	ours		menu option, declared width 20 columns
-m/MS6004.BIN	7:0E	3	47	1FB2	Ｈな事		Something Naughty	ours		menu option, declared width 20 columns
-m/MS6004.BIN	7:0E	4	55	1FB2	死ね		Die!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	7:0E	5	98	1F01	は	 danced			draft	reads: は @rebase-new @ours-2026-09-05
-m/MS6004.BIN	7:0E	6	106	0E	美しく舞{08:51}{02:09}・・\n	 beautifully.....\n	 danced beautifully.....\n	ours	draft	reads: 美しく舞った・・・・・\n; reads: デビルバスター{=E7}{=0F}そんなことC @ours-2026-09-05
-m/MS6004.BIN	7:0E	7	147	1F01	は幸せだ\n	 is happy\n	{04:FF} is happy.\n	ours	draft	reads: は幸せだ\n @rebase-tagdiff @rebase-unmatched idx7 en={04:EF} @seamfix-2026-09-05
-m/MS6004.BIN	7:0E	8	183	1F01	は妖しく踊{08:51}{02:09}・・\n	 danced with eerie grace......\n	{04:EF} danced with eerie grace.....\n	ours	draft	reads: は妖しく踊った・・・・・\n; reads: 美しく舞った・・・・・\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	7:0E	9	237	1F01	は魅了{03:0C}た！\n	 was charmed completely!\n	{04:FF} was charmed completely!\n	ours	draft	reads: は魅了された！\n; reads: は幸せだ\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	7:0E	10	313	1FB2	{02:04}	Item			draft	reads: アイテム; menu option, declared width 20 columns; reads: は妖しく踊った・・・・・\n @ours-2026-09-05
-m/MS6004.BIN	7:0E	11	317	1FB2	金		Money	ours		menu option, declared width 20 columns; reads: は魅了された！\n
-m/MS6004.BIN	7:0E	12	321	1FB2	ＭＡＧ	MAG	MAG	ours	draft	menu option, declared width 20 columns; reads: アイテム @ours-2026-09-05
-m/MS6004.BIN	7:0E	13	329	1FB2	魔石		Magic Stone	ours		menu option, declared width 20 columns
-m/MS6004.BIN	7:0E	14	335	1FB2	宝玉		Jewel	ours		menu option, declared width 20 columns
-m/MS6004.BIN	7:0F	0	34	1FFA	{02:09}・・	.....	.....	ours	draft	reads: ・・・・・ @ours-2026-09-05
-m/MS6004.BIN	7:0F	1	42	1FFB	{01:23}お待ち下{08:49}		{01:23}#Please Wait	ours		reads: しばらくお待ち下さい
-m/MS6004.BIN	7:0F	2	56	1FFA	{02:09}・・\n	.....\n	.....\n	ours	draft	reads: ・・・・・\n @ours-2026-09-05
-m/MS6004.BIN	7:0F	3	98	1FFA	{02:09}・・\n	.....\n	.....\n	ours	draft	reads: ・・・・・\n @ours-2026-09-05
-m/MS6004.BIN	7:0F	4	114	1FFA	{02:09}・・	.....	.....	ours	draft	reads: ・・・・・ @ours-2026-09-05
-m/MS6004.BIN	7:0F	5	122	1FFB	{01:23}お待ち下{08:49}		{01:23}#Please Wait	ours		reads: しばらくお待ち下さい
-m/MS6004.BIN	7:0F	6	136	1FFA	{02:09}・・\n	.....\n	.....\n	ours	draft	reads: ・・・・・\n @ours-2026-09-05
-m/MS6004.BIN	8:18	0	30	1F01	は魅了{03:0C}た！\n	 was charmed completely!\n	{04:EF} was charmed completely!\n	ours	draft	reads: は魅了された！\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	8:11	0	67	1F01	はすがる{08:69}な瞳で見{08:14}\n	 is watching with pleading eyes.\n	{04:EF} is looking at you with pleading eyes.\n	ours	draft	reads: はすがるような瞳で見ている\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	8:11	1	104	1FB2	だめ		No Good	ours		menu option, declared width 20 columns
-m/MS6004.BIN	8:11	2	110	1FB2	まあ{08:7F}		That's Fine	ours		reads: まあいい; menu option, declared width 20 columns
-m/MS6004.BIN	10:09	0	11	1F01	は涙を流{08:13}\n<wait>	 has tears streaming down.\n<wait>	{04:EF} has tears streaming down.\n<wait>	ours	draft	reads: は涙を流している\n<wait> @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	10:09	1	28	1FBA	＞{02:06}\n	>What will you do?\n	>{02:06}	ours	draft	reads: ＞どうしますか？\n @ours-2026-09-05
-m/MS6004.BIN	10:09	2	49	1FB2	近づく		Approach	ours		menu option, declared width 20 columns
-m/MS6004.BIN	10:09	3	57	1FB2	様子を見る		Wait and See	ours		menu option, declared width 20 columns
-m/MS6004.BIN	10:09	4	69	1FB2	去る		Leave	ours		menu option, declared width 20 columns
-m/MS6004.BIN	10:09	5	136	1F01	は{08:76}　泣い{08:14}\n<wait>	 is still crying\n<wait>			draft	reads: はまだ　泣いている\n<wait>; reads: {=EA}{=0C}ペンタグランマ{=86}{=00} @rebase-new @ours-2026-09-05
-m/MS6004.BIN	10:09	6	155	1FBA	＞{02:06}\n	>What will you do?\n	>{02:06}	ours	draft	reads: ＞どうしますか？\n; reads: はまだ　泣いている\n<wait> @rebase-unmatched idx6 en={04:EF} is still crying.\n<wait> @rebase-unmatched idx6 en={04:EF} is still crying.\n<wait> @ours-2026-09-05
-m/MS6004.BIN	10:09	7	176	1FB2	近づく		Approach	ours		menu option, declared width 20 columns; reads: ＞どうしますか？\n
-m/MS6004.BIN	10:09	8	184	1FB2	様子を見る		Wait and See	ours		menu option, declared width 20 columns
-m/MS6004.BIN	10:09	9	196	1FB2	去る		Leave	ours		menu option, declared width 20 columns
-m/MS6004.BIN	10:0A	0	64	1F01	はニヤリと笑{08:12}\n	 grinned wickedly!\n	{04:EF} grinned wickedly!\n	ours	draft	reads: はニヤリと笑った！\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	10:0B	0	0	DATA	{02:09}ウソ泣きだ！\n<wait>		...just crocodile tears!\n<wait>	ours		reads: ・・・ウソ泣きだ！\n<wait>
-m/MS6004.BIN	10:0C	0	2	1FBA	{02:09}・・	.....	.....	ours	draft	reads: ・・・・・ @ours-2026-09-05
-m/MS6004.BIN	11:0A	0	11	1F01	は悩んで{08:40}\n	 looks troubled.\n	{04:EF} looks troubled.\n	ours	draft	reads: は悩んでいる\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS6004.BIN	11:0A	1	38	1FB2	好きな物あげる		Give What You Like	ours		menu option, declared width 20 columns
-m/MS6004.BIN	11:0A	2	54	1FB2	素敵な{08:0B}と合体		A Nice Demon Fusion	ours		reads: 素敵な悪魔と合体; menu option, declared width 20 columns
-m/MS6004.BIN	11:0A	3	70	1FB2	黙{08:52}俺についてこい		Silently Follow Me	ours		reads: 黙って俺についてこい; menu option, declared width 20 columns
-m/MS6004.BIN	11:0A	4	90	1FB2	特典は無い		There's No Reward	ours		menu option, declared width 20 columns
-m/MS6004.BIN	11:0A	5	161	1F01	は悩んで{08:40}\n	 is troubled\n			draft	reads: は悩んでいる\n; reads: おにいちゃん @rebase-new @ours-2026-09-05
-m/MS6004.BIN	11:0A	6	188	1FB2	{08:5C}一押し		One More Push	ours		reads: もう一押し; menu option, declared width 20 columns; reads: ペンタグランマｻ @rebase-unmatched idx6 en=Pentagramma @rebase-unmatched idx6 en=Pentagramma
-m/MS6004.BIN	11:0A	7	198	1FB2	待つ		Wait	ours		menu option, declared width 20 columns; reads: そんなことﾎ @rebase-unmatched idx7 en=Something like that @rebase-unmatched idx7 en=Something like that
-m/MS6004.BIN	11:0A	8	253	1FBA	{02:09}・・	..... 	.....	ours	draft	reads: ・・・・・ @ours-2026-09-05
-m/MS6004.BIN	11:0A	9	347	1F01	の機嫌をそこねた{08:69}だ\n<wait>	's mood was soured\n<wait>			draft	reads: の機嫌をそこねたようだ\n<wait>; reads: は悩んでいる\n @rebase-new @rebase-unmatched idx9 en={04:EF} looks troubled.\n @ours-2026-09-05
-m/MS6004.BIN	11:0A	10	374	1FBA	＞{02:06}\n	>What will you do?\n	>{02:06}	ours	draft	reads: ＞どうしますか？\n; reads: もう一押し; menu option, declared width 20 columns @ours-2026-09-05
-m/MS6004.BIN	11:0A	11	395	1FB2	貢ぐ		Offer Tribute	ours		menu option, declared width 20 columns
-m/MS6004.BIN	11:0A	12	401	1FB2	おだ{08:2B}	Flatter	Butter Up	ours	draft	reads: おだてる; menu option, declared width 20 columns; reads: おねえちゃん @rebase-unmatched idx17 en={04:EF} seems to have been put in a bad mood.\n<wait> @ours-2026-09-05
-m/MS6004.BIN	13:00	0	56	1FB2	{08:7F}{08:8C}	Very well	Very Well	ours	draft	reads: いいだろう; menu option, declared width 20 columns @ours-2026-09-05
-m/MS6004.BIN	13:00	1	62	1FB2	断る！		Refuse!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	13:00	2	201	1F0D	{02:09}・・	.....	.....	ours	draft	reads: ・・・・・; reads: わたしに @ours-2026-09-05
-m/MS6004.BIN	13:00	3	226	1FB2	もちろん	Of course	Of Course	ours	draft	menu option, declared width 20 columns @ours-2026-09-05
-m/MS6004.BIN	13:00	4	236	1FB2	ウソ！		Liar!	ours		menu option, declared width 20 columns; reads: ・・・・・
-m/MS6004.BIN	13:00	5	289	1FB2	{08:26}	Yes			draft	reads: はい; menu option, declared width 20 columns @ours-2026-09-05
-m/MS6004.BIN	13:00	6	293	1FB2	{08:4D}は…		Can't Be Helped	ours		reads: それは…; menu option, declared width 20 columns
-m/MS6004.BIN	13:00	7	391	1FB2	人に害を成せば	If they harm people	That's Wrong!	ours	draft	menu option, declared width 20 columns; reads:  @ours-2026-09-05
-m/MS6004.BIN	13:00	8	407	1FB2	{08:0B}による	Depends on the demon	Leave It Alone	ours	draft	reads: 悪魔による; menu option, declared width 20 columns; reads: はい @rebase-unmatched idx8 en=Yes @rebase-unmatched idx8 en=Yes @ours-2026-09-05
-m/MS6004.BIN	13:00	9	504	1FB2	{01:29}	{01:29}	Calm Them Down	ours		reads: そうだ; menu option, declared width 20 columns; reads: それは… @rebase-unmatched idx9 en=Well... @rebase-unmatched idx9 en=Well...
-m/MS6004.BIN	13:00	10	508	1FB2	違う！	Wrong!	Get Angry	ours	draft	menu option, declared width 20 columns; reads: そろそろ @ours-2026-09-05
-m/MS6004.BIN	13:00	11	553	1FB2	{01:29}	That's right			draft	reads: そうだ; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
-m/MS6004.BIN	13:00	12	557	1FB2	仕方{08:25}	Can't be helped			draft	reads: 仕方ない; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx12 en=If They Harm People @rebase-new @rebase-unmatched idx12 en=If They Harm People @ours-2026-09-05
-m/MS6004.BIN	13:00	13	565	1FB2	違う！	That's wrong! 			draft	menu option, declared width 20 columns; reads: 悪魔による @rebase-unmatched idx13 en=Because It's a Demon @rebase-new @rebase-unmatched idx13 en=Because It's a Demon @ours-2026-09-05
-m/MS6004.BIN	13:00	14	609	1F01	の\n機嫌をそこねた\n＞{02:06}\n	's\nmood was soured\n>What will you do?\n			draft	reads: の\n機嫌をそこねた\n＞どうしますか？\n; reads: ママ @rebase-new @ours-2026-09-05
-m/MS6004.BIN	13:00	15	648	1FB2	ほ{08:53}く	Leave it			draft	reads: ほっとく; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
-m/MS6004.BIN	13:00	16	656	1FB2	説得{08:8E}	Persuade			draft	reads: 説得する; menu option, declared width 20 columns; reads: そうだ @rebase-new @ours-2026-09-05
-m/MS6004.BIN	13:00	17	765	1FB2	世界の為だ	For the world			draft	menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx17 en=That's Wrong! @rebase-new @rebase-unmatched idx17 en=That's Wrong! @ours-2026-09-05
-m/MS6004.BIN	13:00	18	777	1FB2	恋人の為だ	For my lover			draft	menu option, declared width 20 columns; reads:  @rebase-new @ours-2026-09-05
-m/MS6004.BIN	13:00	19	926	1FB2	いかにも	Indeed			draft	menu option, declared width 20 columns; reads: そうだ @rebase-new @ours-2026-09-05
-m/MS6004.BIN	13:00	20	936	1FB2	とん{08:56}{08:25}	Not at all 			draft	reads: とんでもない; menu option, declared width 20 columns; reads: 仕方ない @rebase-new @ours-2026-09-05
-m/MS6004.BIN	13:00	21	989	1F01	の\n機嫌をそこねた\n＞{02:06}\n	's\nmood was soured\n>What will you do?\n			draft	reads: の\n機嫌をそこねた\n＞どうしますか？\n; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
-m/MS6004.BIN	13:00	22	1028	1FB2	ほ{08:53}く	Leave it			draft	reads: ほっとく; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
-m/MS6004.BIN	13:00	23	1036	1FB2	なだ{08:2E}	Soothe			draft	reads: なだめる; menu option, declared width 20 columns; reads: ペンタグランマ達也 @rebase-new @ours-2026-09-05
-m/MS6004.BIN	13:00	24	1044	1FB2	怒る	Get angry			draft	menu option, declared width 20 columns; reads: の\n機嫌をそこねた\n＞どうしますか？\n @rebase-new @rebase-unmatched idx24 en={04:EF}\nwas put in a bad mood.\n>What will you do?\n @rebase-unmatched idx24 en={04:EF}\nwas put in a bad mood.\n>What will you do?\n @rebase-unmatched idx25 en=Leave It Alone @rebase-unmatched idx26 en=Persuade Them @rebase-unmatched idx29 en=For the World @rebase-unmatched idx30 en=For My Lover @rebase-unmatched idx33 en=Indeed @rebase-unmatched idx34 en=No Way @rebase-unmatched idx37 en={04:EF}\nwas put in a bad mood.\n>What will you do?\n @ours-2026-09-05
-m/MS6004.BIN	14:00	0	19	1FB2	人に害をなす{08:42}		They Harm People	ours		reads: 人に害をなすから; menu option, declared width 20 columns
-m/MS6004.BIN	14:00	1	35	1FB2	趣味！		It's a Hobby!	ours		menu option, declared width 20 columns
-m/MS6004.BIN	14:00	2	80	1FB2	人は牛とは違う	People aren't cattle	Humans Aren't Cattle	ours	draft	menu option, declared width 20 columns; reads:  @ours-2026-09-05
-m/MS6004.BIN	14:00	3	96	1FB2	難しいな…	That's a tough one...	That's Tricky...	ours	draft	menu option, declared width 20 columns @ours-2026-09-05
+m/MS6004.BIN	0:31	0	37	1FB2	{08:26}	{08:26}				reads: はい; menu option, declared width 20 columns
+m/MS6004.BIN	0:31	1	41	1FB2	{08:27}	{08:27}				reads: いいえ; menu option, declared width 20 columns
+m/MS6004.BIN	0:31	2	99	1FB2	{08:26}	{08:26}				reads: はい; menu option, declared width 20 columns
+m/MS6004.BIN	0:31	3	103	1FB2	{08:27}	{08:27}				reads: いいえ; menu option, declared width 20 columns; reads: はい
+m/MS6004.BIN	0:31	4	183	1FB2	{08:26}	{08:26}				reads: はい; menu option, declared width 20 columns; reads: いいえ
+m/MS6004.BIN	0:31	5	187	1FB2	{08:27}	{08:27}				reads: いいえ; menu option, declared width 20 columns
+m/MS6004.BIN	0:31	6	253	1FB2	{08:26}	{08:26}				reads: はい; menu option, declared width 20 columns
+m/MS6004.BIN	0:31	7	257	1FB2	{08:27}	{08:27}				reads: いいえ; menu option, declared width 20 columns
+m/MS6004.BIN	0:57	0	30	1FB2	わ{08:18}					reads: わかった; menu option, declared width 20 columns
+m/MS6004.BIN	0:57	1	36	1FB2	駄目					menu option, declared width 20 columns
+m/MS6004.BIN	0:59	0	95	18	{02:09}・・引き寄せら{08:2F}？？？\n					reads: ・・・・・引き寄せられる？？？\n
+m/MS6004.BIN	0:5A	0	20	1F01	は涙を流{08:13}\n	 has tears streaming down.\n				reads: は涙を流している\n; reads: は涙を流している\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	0:5C	0	82	1F01	は後ずさろうと{08:4B}が後退{08:23}！\n	 tried to back away but can't retreat!\n				reads: は後ずさろうとしたが後退できない！\n; reads: は後ずさろうとしたが後退できない！\n @rebase-unmatched idx2 en={04:EF} tried to step back, but can't back away!\n @rebase-new @rebase-unmatched idx2 en={04:EF} tried to step back, but can't back away!\n @ours-2026-09-05
+m/MS6004.BIN	0:5F	0	6	1F01	は誘惑し{08:1C}\n	 tried to tempt you!\n				reads: は誘惑してきた！\n; reads: は誘惑してきた！\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	0:5F	1	28	1FFA	{02:09}	...				reads: ・・・; reads: ・・・ @ours-2026-09-05
+m/MS6004.BIN	0:5F	2	32	1FFB	？？？	??? 				@ours-2026-09-05
+m/MS6004.BIN	0:5F	3	44	1F01	は魅了{03:0C}た！\n	 was charmed completely!\n				reads: は魅了された！\n; reads: は魅了された！\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	0:5F	4	87	0E	{02:09}チュッ\n					reads: ・・・チュッ\n
+m/MS6004.BIN	0:5F	5	118	1FA3	{08:03}が睨んで{08:40}{02:09}\n					reads: 英美が睨んでいる・・・\n
+m/MS6004.BIN	0:5F	6	146	0E	{08:03}のメガトンパンチが炸裂！！！\n					reads: 英美のメガトンパンチが炸裂！！！\n
+m/MS6004.BIN	0:5F	7	219	1FA3	{08:31}が睨んで{08:40}{02:09}\n					reads: 泪が睨んでいる・・・\n
+m/MS6004.BIN	0:5F	8	247	0E	{08:31}の鉄拳が					reads: 泪の鉄拳が
+m/MS6004.BIN	0:62	0	6	1FFA	{02:09}	...				reads: ・・・; reads: ・・・ @ours-2026-09-05
+m/MS6004.BIN	0:62	1	10	1FFB	{01:23}お待ち下{08:49}					reads: しばらくお待ち下さい
+m/MS6004.BIN	0:62	2	24	1FFA	{02:09}\n	...\n				reads: ・・・\n; reads: ・・・\n @ours-2026-09-05
+m/MS6004.BIN	0:73	0	6	1F01	は怯え{08:14}{08:69}だ\n	 seems terrified.\n				reads: は怯えているようだ\n; reads: は怯えているようだ\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	0:73	1	35	1FB2	威嚇射撃					menu option, declared width 20 columns
+m/MS6004.BIN	0:73	2	45	1FB2	近づく					menu option, declared width 20 columns
+m/MS6004.BIN	0:73	3	53	1FB2	様子を見る					menu option, declared width 20 columns
+m/MS6004.BIN	0:73	4	65	1FB2	{08:0C}	{08:0C}				reads: 攻撃; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx5 en=煢Devil Buster煌Ranged Weapon熏 @rebase-unmatched idx5 en=煢Devil Buster煌Ranged Weapon熏
+m/MS6004.BIN	0:84	0	6	1FAE	ガンを装備{08:4A}{08:24}！\n					reads: ガンを装備していない！\n
+m/MS6004.BIN	0:84	1	139	1F01	は涙を流{08:13}\n	 has tears streaming down.\n				reads: は涙を流している\n; reads: は涙を流している\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	0:84	2	166	1FB2	脅す					menu option, declared width 20 columns
+m/MS6004.BIN	0:84	3	172	1FB2	謝る					menu option, declared width 20 columns
+m/MS6004.BIN	0:84	4	178	1FB2	ほ{08:53}く					reads: ほっとく; menu option, declared width 20 columns
+m/MS6004.BIN	0:84	5	298	1FFA	{02:09}	...				reads: ・・・; reads: アナタ @ours-2026-09-05
+m/MS6004.BIN	0:84	6	302	1FFB	ウソ泣きだ！\n	Fake crying!\n				reads: ペンタグランマP @ours-2026-09-05
+m/MS6004.BIN	0:84	7	331	1FB2	怒る	Get angry				menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS6004.BIN	0:84	8	337	1FB2	ほ{08:53}く	Leave it 				reads: ほっとく; menu option, declared width 20 columns; reads: ・・・ @ours-2026-09-05
+m/MS6004.BIN	0:84	9	370	1F01	は泣い{08:14}{02:09}・・\n	 is crying.....\n				reads: は泣いている・・・・・\n; reads: は泣いている・・・・・\n @rebase-new @ours-2026-09-05
+m/MS6004.BIN	0:84	10	401	1FB2	脅す					menu option, declared width 20 columns
+m/MS6004.BIN	0:84	11	407	1FB2	謝る					menu option, declared width 20 columns; reads: ほっとく @rebase-unmatched idx13 en={04:EF} is crying.....\n @rebase-unmatched idx13 en={04:EF} is crying.....\n
+m/MS6004.BIN	0:86	0	2	1FBA	{02:09}\n	...\n				reads: ・・・\n; reads: ・・・\n @ours-2026-09-05
+m/MS6004.BIN	0:87	0	8	1F01	は泣きや{08:5F}\n	 stopped crying.\n				reads: は泣きやんだ\n; reads: は泣きやんだ\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	0:87	1	37	1F01	は睨んで{08:40}{02:09}・・\n	 is glaring......\n				reads: は睨んでいる・・・・・\n; reads: は睨んでいる・・・・・\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	0:8A	0	95	1FB2	本当					menu option, declared width 20 columns
+m/MS6004.BIN	0:8A	1	101	1FB2	嘘					menu option, declared width 20 columns
+m/MS6004.BIN	0:8E	0	6	1F01	は指を鳴ら{08:17}\n	 snapped its fingers!\n				reads: は指を鳴らした！\n; reads: は指を鳴らした！\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	0:8F	0	6	1F01	は涙を流{08:13}\n	 has tears streaming down.\n				reads: は涙を流している\n; reads: は涙を流している\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	0:8F	1	33	1FB2	脅す					menu option, declared width 20 columns
+m/MS6004.BIN	0:8F	2	39	1FB2	謝る					menu option, declared width 20 columns
+m/MS6004.BIN	0:8F	3	45	1FB2	ほ{08:53}く					reads: ほっとく; menu option, declared width 20 columns
+m/MS6004.BIN	0:8F	4	101	1FFA	{02:09}{02:09}\n	......\n				reads: ・・・・・・\n; reads: ゾンビ @ours-2026-09-05
+m/MS6004.BIN	0:8F	5	153	1F01	は{08:76}　泣い{08:14}\n	 is still crying\n				reads: はまだ　泣いている\n; reads: ペンタグランマC @rebase-tagdiff @ours-2026-09-05
+m/MS6004.BIN	0:90	0	30	1FB2	{08:26}	{08:26}				reads: はい; menu option, declared width 20 columns
+m/MS6004.BIN	0:90	1	34	1FB2	{08:27}	{08:27}				reads: いいえ; menu option, declared width 20 columns
+m/MS6004.BIN	0:90	2	121	1F01	は後ずさろうと{08:4B}が後退{08:23}！\n	 tried to back away but can't retreat!\n				reads: は後ずさろうとしたが後退できない！\n; reads: 山瀬勇 @rebase-new @ours-2026-09-05
+m/MS6004.BIN	0:90	3	192	1F01	は泣き出{08:17}\n	 burst into tears!\n				reads: は泣き出した！\n; reads: は泣き出した！\n @rebase-new @ours-2026-09-05
+m/MS6004.BIN	0:90	4	231	1FB2	{08:0E}	{08:0E}				reads: 仲魔; menu option, declared width 20 columns
+m/MS6004.BIN	0:90	5	235	1FB2	キミ					menu option, declared width 20 columns; reads: は後ずさろうとしたが後退できない！\n @rebase-unmatched idx5 en={04:EF} tried to step back, but can't back away!\n
+m/MS6004.BIN	0:90	6	241	1FB2	お前の命					menu option, declared width 20 columns; reads: は泣き出した！\n @rebase-unmatched idx10 en=熬Devil Buster燗 @rebase-unmatched idx6 en={04:EF} burst into tears!\n @rebase-unmatched idx10 en=熬Devil Buster燗
+m/MS6004.BIN	0:92	0	13	1FA3	{08:03}が睨んで{08:40}{02:09}\n					reads: 英美が睨んでいる・・・\n
+m/MS6004.BIN	0:92	1	48	1FA3	{08:31}が					reads: 泪が
+m/MS6004.BIN	0:92	2	72	1FFA	{02:09}	...				reads: ・・・; reads: ・・・ @ours-2026-09-05
+m/MS6004.BIN	0:92	3	83	1FFA	{02:09}{02:09}	......				reads: ・・・・・・; reads: ・・・・・・ @ours-2026-09-05
+m/MS6004.BIN	0:92	4	89	1FFB	{01:23}お待ち下{08:49}					reads: しばらくお待ち下さい
+m/MS6004.BIN	0:92	5	103	1FFA	{02:09}{02:09}\n	......\n				reads: ・・・・・・\n; reads: ・・・・・・\n @ours-2026-09-05
+m/MS6004.BIN	1:03	0	28	1FB2	ちょ{08:53}待{08:52}					reads: ちょっと待って; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx0 en=Wait a Moment @rebase-unmatched idx0 en=Wait a Moment
+m/MS6004.BIN	1:03	1	40	1FB2	さよ{08:7D}					reads: さよなら; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx1 en=Goodbye @rebase-unmatched idx1 en=Goodbye
+m/MS6004.BIN	1:03	2	85	1FB2	謝る	Apologize				menu option, declared width 20 columns; reads:  @ours-2026-09-05
+m/MS6004.BIN	1:03	3	91	1FB2	別に					menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx3 en=Apologize @rebase-unmatched idx3 en=Apologize
+m/MS6004.BIN	1:03	4	172	1FB2	よろこんで					menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx4 en=Nothing Much @rebase-unmatched idx4 en=Nothing Much
+m/MS6004.BIN	1:03	5	184	1FB2	{08:80}が{08:25}	Can't be helped				reads: しょうがない; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
+m/MS6004.BIN	1:03	6	192	1FB2	誰がお前{08:6A}かに					reads: 誰がお前なんかに; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new
+m/MS6004.BIN	1:03	7	291	1FB2	なだ{08:2E}					reads: なだめる; menu option, declared width 20 columns; reads: しょうがない @rebase-new
+m/MS6004.BIN	1:03	8	299	1FB2	ほ{08:53}く					reads: ほっとく; menu option, declared width 20 columns; reads: 誰がお前なんかに @rebase-new
+m/MS6004.BIN	1:03	9	352	1F01	は感動{08:13}\nスキだらけだ！\n＞{08:0C}し{08:15}\n	 is moved\nWide open!\n>Attack?\n				reads: は感動している\nスキだらけだ！\n＞攻撃しますか？\n; reads: まさか @rebase-new @ours-2026-09-05
+m/MS6004.BIN	1:03	10	564	1FB2	なだ{08:2E}	Soothe				reads: なだめる; menu option, declared width 20 columns; reads: ペンタグランマ{=EB}{=00} @ours-2026-09-05
+m/MS6004.BIN	1:03	11	572	1FB2	無視{08:8E}					reads: 無視する; menu option, declared width 20 columns; reads: なだめる
+m/MS6004.BIN	1:03	12	699	1FB2	そう{08:55}	That's right				reads: そうです; menu option, declared width 20 columns; reads: ほっとく @rebase-new @ours-2026-09-05
+m/MS6004.BIN	1:03	13	707	1FB2	{08:4D}ほど{08:56}{08:25}	Not really				reads: それほどでもない; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
+m/MS6004.BIN	1:03	14	893	1FB2	なだ{08:2E}	Soothe				reads: なだめる; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
+m/MS6004.BIN	1:03	15	901	1FB2	無視{08:8E}	Ignore				reads: 無視する; menu option, declared width 20 columns; reads: は感動している\nスキだらけだ！\n＞攻撃しますか？\n @rebase-unmatched idx15 en={04:EF} is deeply moved!\nWide open!\n>Attack?\n @rebase-unmatched idx27 en=Calm Them Down @rebase-unmatched idx28 en=Ignore Them @rebase-new @rebase-unmatched idx15 en={04:EF} is deeply moved!\nWide open!\n>Attack?\n @ours-2026-09-05
+m/MS6004.BIN	2:01	0	22	1FB2	{08:0B}狩り	Demon hunting				reads: 悪魔狩り; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx0 en=Demon Hunting @rebase-unmatched idx0 en=Demon Hunting @ours-2026-09-05
+m/MS6004.BIN	2:01	1	30	1FB2	散歩					menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx1 en=Taking a Walk @rebase-unmatched idx1 en=Taking a Walk
+m/MS6004.BIN	2:01	2	87	1FB2	まあね	Sort of				menu option, declared width 20 columns; reads: 早坂達也 @ours-2026-09-05
+m/MS6004.BIN	2:01	3	95	1FB2	仕方が無い					menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx3 en=I Guess @rebase-unmatched idx3 en=I Guess
+m/MS6004.BIN	2:01	4	149	1FB2	うーん‥					menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx4 en=Can't Be Helped @rebase-unmatched idx4 en=Can't Be Helped
+m/MS6004.BIN	2:01	5	159	1FB2	そうかもね	Maybe so				menu option, declared width 20 columns; reads:  @ours-2026-09-05
+m/MS6004.BIN	2:01	6	222	1FB2	スキだよ					menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx6 en=Hmm... @rebase-unmatched idx6 en=Hmm...
+m/MS6004.BIN	2:01	7	232	1FB2	うーん‥					menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx7 en=Maybe So @rebase-unmatched idx7 en=Maybe So
+m/MS6004.BIN	2:01	8	303	1FB2	もちろん	Of course				menu option, declared width 20 columns; reads:  @ours-2026-09-05
+m/MS6004.BIN	2:01	9	313	1FB2	今は結構					menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx9 en=I Like You @rebase-unmatched idx9 en=I Like You
+m/MS6004.BIN	2:01	10	399	1FB2	{02:04}	{02:04}				reads: アイテム; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx10 en=Hmm... @rebase-unmatched idx10 en=Hmm...
+m/MS6004.BIN	2:01	11	403	1FB2	ＭＡＧ	MAG				menu option, declared width 20 columns; reads: アタシ @rebase-new @ours-2026-09-05
+m/MS6004.BIN	2:01	12	411	1FB2	マッカ	Macca				menu option, declared width 20 columns; reads: あなたの @rebase-new @ours-2026-09-05
+m/MS6004.BIN	2:01	13	613	1FB2	ごめん！	Sorry!				menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx13 en=Of Course @rebase-unmatched idx13 en=Of Course @ours-2026-09-05
+m/MS6004.BIN	2:01	14	623	1FB2	本当の事だ	It's the truth				menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx14 en=Not Right Now @rebase-unmatched idx14 en=Not Right Now @ours-2026-09-05
+m/MS6004.BIN	2:01	15	736	1FB2	今はね‥	For now...				menu option, declared width 20 columns; reads:  @rebase-new @ours-2026-09-05
+m/MS6004.BIN	2:01	16	746	1FB2	{01:29}な	I suppose				reads: そうだな; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
+m/MS6004.BIN	2:01	17	849	1FB2	ヤダ！	No way!				menu option, declared width 20 columns; reads: アイテム @rebase-new @ours-2026-09-05
+m/MS6004.BIN	2:01	18	857	1FB2	{08:7F}ケド	Fine, but				reads: いいケド; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
+m/MS6004.BIN	2:01	19	942	1FB2	貢ぐ	Offer tribute				menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
+m/MS6004.BIN	2:01	20	948	1FB2	Ｈな事	Something naughty				menu option, declared width 20 columns; reads: そろそろ @rebase-new @ours-2026-09-05
+m/MS6004.BIN	2:0C	0	16	1FB2	甘くささやく					menu option, declared width 20 columns
+m/MS6004.BIN	2:0C	1	30	1FB2	{08:5C}止{08:2E}					reads: もう止める; menu option, declared width 20 columns
+m/MS6004.BIN	2:0C	2	38	1FB2	押し倒す！					menu option, declared width 20 columns
+m/MS6004.BIN	2:0C	3	50	1FB2	イケナイ所をいぢ{08:2E}！					reads: イケナイ所をいぢめる！; menu option, declared width 20 columns
+m/MS6004.BIN	2:0C	4	72	1FB2	身体中触りまくる！					menu option, declared width 20 columns
+m/MS6004.BIN	2:0C	5	182	1FB2	{01:29}！	That's right!				reads: そうだ！; menu option, declared width 20 columns; reads: 管理部 @ours-2026-09-05
+m/MS6004.BIN	2:0C	6	188	1FB2	{08:76}{08:76}	Not yet				reads: まだまだ; menu option, declared width 20 columns; reads: ペンタグランマ{=9C}{=00}そんなことｰ @ours-2026-09-05
+m/MS6004.BIN	2:0D	0	16	1FB2	押し倒す！					menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx0 en=Push Them Down! @rebase-unmatched idx0 en=Push Them Down!
+m/MS6004.BIN	2:0D	1	28	1FB2	無理やり試みる！					menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx1 en=Force It Through! @rebase-unmatched idx1 en=Force It Through!
+m/MS6004.BIN	2:0D	2	98	1FB2	今更ムダだ！	Too late for that!				menu option, declared width 20 columns; reads: 山瀬勇 @ours-2026-09-05
+m/MS6004.BIN	2:0D	3	112	1FB2	ごめん！！	Sorry!!				menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
+m/MS6004.BIN	2:0D	4	166	1FB2	{08:0E}になれ	Become my ally				reads: 仲魔になれ; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx4 en=Too Late Now! @rebase-unmatched idx4 en=Too Late Now! @ours-2026-09-05
+m/MS6004.BIN	2:0D	5	176	1FB2	何かくれ	Give me something				menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx5 en=Sorry!! @rebase-unmatched idx5 en=Sorry!! @ours-2026-09-05
+m/MS6004.BIN	2:0D	6	186	1FB2	{08:81}あ口で{08:4A}	Then use your mouth				reads: じゃあ口でして; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
+m/MS6004.BIN	2:0D	7	256	1FFA	{02:09}・・{02:09}\n	........\n				reads: ・・・・・・・・\n; reads: 仲魔になれ; menu option, declared width 20 columns @ours-2026-09-05
+m/MS6004.BIN	2:0D	8	289	1FB2	分{08:18}					reads: 分かった; menu option, declared width 20 columns
+m/MS6004.BIN	2:0D	9	295	1FB2	絶対許さん					menu option, declared width 20 columns; reads: じゃあ口でして
+m/MS6004.BIN	2:0D	10	337	1FFA	{02:09}・・	.....				reads: ・・・・・; reads: {=EC}{=0A}ペンタグランマ{=8D}{=00} @ours-2026-09-05
+m/MS6004.BIN	2:0D	11	407	1FB2	断る！					menu option, declared width 20 columns; reads: ・・・・・・・・\n
+m/MS6004.BIN	2:0D	12	415	1FB2	分{08:18}					reads: 分かった; menu option, declared width 20 columns
+m/MS6004.BIN	2:0D	13	479	1F01	は\n	 ××'d\n				reads: は\n; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
+m/MS6004.BIN	2:0D	14	488	1F01	の××を××{08:17}\n	's ××!\n				reads: の××を××した！\n; reads: わたしが @rebase-new @ours-2026-09-05
+m/MS6004.BIN	2:0D	15	524	1FB2	{08:76}{08:76}	Not yet				reads: まだまだ; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS6004.BIN	2:0D	16	530	1FB2	{01:29}な					reads: そうだな; menu option, declared width 20 columns; reads: ・・・・・
+m/MS6004.BIN	2:0D	17	631	1FB2	そう{08:8E}					reads: そうする; menu option, declared width 20 columns
+m/MS6004.BIN	2:0D	18	639	1FB2	{08:76}{08:76}	Not yet				reads: まだまだ; menu option, declared width 20 columns; reads: 分かった @rebase-unmatched idx21 en={04:EF}\n @rebase-unmatched idx22 en= did XX to {04:FF}'s XX!\n @ours-2026-09-05
+m/MS6004.BIN	2:0E	0	30	1FB2	すかさず押し倒す！					menu option, declared width 20 columns
+m/MS6004.BIN	2:0E	1	50	1FB2	ボディにソフトタッチ					menu option, declared width 20 columns
+m/MS6004.BIN	2:0F	0	30	1FB2	もちろん					menu option, declared width 20 columns
+m/MS6004.BIN	2:0F	1	40	1FB2	ふざ{08:29}な！					reads: ふざけるな！; menu option, declared width 20 columns
+m/MS6004.BIN	2:10	0	22	1FB2	そりゃマズイ					menu option, declared width 20 columns
+m/MS6004.BIN	2:10	1	36	1FB2	もちろん					menu option, declared width 20 columns
+m/MS6004.BIN	2:11	0	22	1FB2	{01:29}な					reads: そうだな; menu option, declared width 20 columns
+m/MS6004.BIN	2:11	1	28	1FB2	構うな					menu option, declared width 20 columns
+m/MS6004.BIN	2:12	0	16	1FB2	そ{08:53}抱きし{08:2E}					reads: そっと抱きしめる; menu option, declared width 20 columns
+m/MS6004.BIN	2:12	1	30	1FB2	いきなり押し倒す！					menu option, declared width 20 columns
+m/MS6004.BIN	2:12	2	50	1FB2	キス{08:8E}					reads: キスする; menu option, declared width 20 columns
+m/MS6004.BIN	2:13	0	37	1FB2	{08:26}	{08:26}				reads: はい; menu option, declared width 20 columns
+m/MS6004.BIN	2:13	1	41	1FB2	{08:27}	{08:27}				reads: いいえ; menu option, declared width 20 columns
+m/MS6004.BIN	2:14	0	16	1FB2	何を？					menu option, declared width 20 columns
+m/MS6004.BIN	2:14	1	24	1FB2	断る！					menu option, declared width 20 columns
+m/MS6004.BIN	2:14	2	90	1FB2	Ｈな事を{08:8E}	Do something naughty				reads: Ｈな事をする; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS6004.BIN	2:14	3	102	1FB2	さっぱり分{08:42}ん	I have no clue				reads: さっぱり分からん; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS6004.BIN	2:15	0	29	1FFA	{02:09}・・\n	.....\n				reads: ・・・・・\n; reads: ・・・・・\n @ours-2026-09-05
+m/MS6004.BIN	2:18	0	8	1F01	は\n	 \n				reads: は\n @rebase-tagdiff @ours-2026-09-05
+m/MS6004.BIN	2:18	1	17	1F01	と×××{08:17}\n	 did XXX together!\n				reads: と×××した！\n; reads: と×××した！\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	2:18	2	30	1FBA	{02:09}・・{02:09}・・\n	..........\n				reads: ・・・・・・・・・・\n; reads: ・・・・・・・・・・\n @ours-2026-09-05
+m/MS6004.BIN	2:18	3	107	0C	{08:5C}体力が残{08:52}{08:24}！\n＞{02:06}\n	No strength left!\n>What will you do?\n				reads: もう体力が残っていない！\n＞どうしますか？\n; reads: あなたは @ours-2026-09-05
+m/MS6004.BIN	2:18	4	145	1FB2	逃げる！	Run away!				menu option, declared width 20 columns; reads: \<あなたに @ours-2026-09-05
+m/MS6004.BIN	2:18	5	155	1FB2	謝る	Apologize				menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS6004.BIN	2:18	6	192	1FBA	逃げられ{08:25}！\n					reads: 逃げられない！\n; reads: もう体力が残っていない！\n＞どうしますか？\n
+m/MS6004.BIN	2:02	0	45	1F01	の鉄拳が炸裂！！！\n	's Iron Fist explodes!!!\n				reads: の鉄拳が炸裂！！！\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	2:02	1	225	1FB2	怒る					menu option, declared width 20 columns
+m/MS6004.BIN	2:02	2	231	1FB2	謝る					menu option, declared width 20 columns
+m/MS6004.BIN	2:02	3	237	1FB2	引き下がる					menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx5 en=Pentagramma @rebase-unmatched idx5 en=Pentagramma
+m/MS6004.BIN	2:04	0	112	1F01	は誘惑し{08:1C}\n	 tried to tempt you!\n				reads: は誘惑してきた！\n; reads: は誘惑してきた！\n @rebase-new @ours-2026-09-05
+m/MS6004.BIN	2:04	1	136	1F01	は耐え切{08:12}\n	 endured it!\n				reads: は耐え切った！\n; reads: は誘惑してきた！\n @rebase-new @rebase-unmatched idx1 en={04:EF} tried to tempt you!\n @ours-2026-09-05
+m/MS6004.BIN	2:04	2	163	1FB2	威嚇射撃					menu option, declared width 20 columns; reads: は耐え切った！\n @rebase-unmatched idx2 en={04:FF} held out to the end!\n
+m/MS6004.BIN	2:04	3	173	1FB2	見逃す					menu option, declared width 20 columns
+m/MS6004.BIN	2:04	4	181	1FB2	{08:0C}	{08:0C}				reads: 攻撃; menu option, declared width 20 columns
+m/MS6004.BIN	2:04	5	217	1F01	はガンを装備{08:4A}{08:24}！\n	 has no gun equipped!\n				reads: はガンを装備していない！\n; reads: 攻撃; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
+m/MS6004.BIN	2:04	6	291	0D	チュッ\n	Smooch\n				reads: ひとり @ours-2026-09-05
+m/MS6004.BIN	2:04	7	306	1F01	は幸せだ\n	 is happy\n				reads: は幸せだ\n; reads: ペンタグランマD @rebase-tagdiff @ours-2026-09-05
+m/MS6004.BIN	2:04	8	341	1FD2	{08:03}：	Emi:				reads: 英美：; reads: 英美： @ours-2026-09-05
+m/MS6004.BIN	2:04	9	347	1FD3	何鼻の下のば{08:4A}んのよ！！\n					reads: 何鼻の下のばしてんのよ！！\n; reads: はガンを装備していない！\n @rebase-unmatched idx9 en={04:FF} isn't equipped with a gun!\n
+m/MS6004.BIN	2:04	10	374	1FBA	{08:03}のメガトンパンチが					reads: 英美のメガトンパンチが
+m/MS6004.BIN	2:04	11	406	1FD2	{08:31}：					reads: 泪：; reads: は幸せだ\n
+m/MS6004.BIN	2:04	12	412	1FD3	何鼻の下のば{08:4A}んのよ！！\n					reads: 何鼻の下のばしてんのよ！！\n; reads: 英美：
+m/MS6004.BIN	2:04	13	439	1FBA	{08:31}の鉄拳が					reads: 泪の鉄拳が; reads: 何鼻の下のばしてんのよ！！\n
+m/MS6004.BIN	2:04	14	455	18	炸裂！！！\n					reads: 英美のメガトンパンチが
+m/MS6004.BIN	3:07	0	24	1F01	は迫っ{08:1C}\n	 closed right in!\n				reads: は迫ってきた！\n; reads: は迫ってきた！\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	3:07	1	47	1FA3	{08:03}が睨んで{08:40}{02:09}\n					reads: 英美が睨んでいる・・・\n
+m/MS6004.BIN	3:07	2	75	0E	{08:03}のメガトンパンチが炸裂！！！\n					reads: 英美のメガトンパンチが炸裂！！！\n
+m/MS6004.BIN	3:07	3	133	1FA3	{08:31}が睨んで{08:40}{02:09}\n					reads: 泪が睨んでいる・・・\n
+m/MS6004.BIN	3:07	4	161	0E	{08:31}の鉄拳が					reads: 泪の鉄拳が
+m/MS6004.BIN	3:0A	0	6	0E	チュッ\n					
+m/MS6004.BIN	3:0B	0	8	1FFA	{02:09}	...				reads: ・・・; reads: ・・・ @ours-2026-09-05
+m/MS6004.BIN	3:0B	1	12	1FFB	{01:23}お待ち下{08:49}					reads: しばらくお待ち下さい
+m/MS6004.BIN	3:0B	2	30	1FFA	{02:09}\n	...\n				reads: ・・・\n; reads: ・・・\n @ours-2026-09-05
+m/MS6004.BIN	3:08	0	19	1FB2	{01:32}？					reads: 大丈夫？; menu option, declared width 20 columns
+m/MS6004.BIN	3:08	1	25	1FB2	様子を見る					menu option, declared width 20 columns
+m/MS6004.BIN	3:08	2	194	1FB2	{01:29}よ	That's right				reads: そうだよ; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS6004.BIN	3:08	3	200	1FB2	{08:7A}訳では	That's not it				reads: そんな訳では; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS6004.BIN	3:0F	0	120	1FB2	駄目					menu option, declared width 20 columns
+m/MS6004.BIN	3:0F	1	126	1FB2	わ{08:18}よ					reads: わかったよ; menu option, declared width 20 columns
+m/MS6004.BIN	5:00	0	78	1F01	は去ろうと{08:13}\n	 is about to leave\n				reads: は去ろうとしている\n; reads: は去ろうとしている\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	5:00	1	107	1FB2	呼び止{08:2E}					reads: 呼び止める; menu option, declared width 20 columns
+m/MS6004.BIN	5:00	2	117	1FB2	ほ{08:53}く					reads: ほっとく; menu option, declared width 20 columns
+m/MS6004.BIN	5:00	3	208	1FBA	チュッ\n	Smooch\n				reads: まさか @ours-2026-09-05
+m/MS6004.BIN	5:00	4	379	1FB2	{08:0B}狩り	Demon hunting				reads: 悪魔狩り; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS6004.BIN	5:00	5	387	1FB2	{08:0E}探し					reads: 仲魔探し; menu option, declared width 20 columns
+m/MS6004.BIN	5:00	6	395	1FB2	物乞い					menu option, declared width 20 columns; reads: 悪魔狩り
+m/MS6004.BIN	5:00	7	403	1FB2	別に…					menu option, declared width 20 columns; reads: 仲魔探し
+m/MS6004.BIN	5:28	0	99	1F01	はスキだらけだ！\n＞{08:0C}し{08:15}\n	 is wide open!\n>Attack?\n				reads: はスキだらけだ！\n＞攻撃しますか？\n; reads: はスキだらけだ！\n＞攻撃しますか？\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	5:0A	0	6	0E	チュッ\n					
+m/MS6004.BIN	5:0C	0	14	1FA3	{08:03}が睨んで{08:40}\n{02:09}\n					reads: 英美が睨んでいる\n・・・\n
+m/MS6004.BIN	5:0C	1	43	0E	{08:03}のメガトンパンチが炸裂！！！\n					reads: 英美のメガトンパンチが炸裂！！！\n
+m/MS6004.BIN	5:0C	2	99	1FA3	{08:31}が睨んで{08:40}{02:09}\n					reads: 泪が睨んでいる・・・\n
+m/MS6004.BIN	5:0C	3	127	0E	{08:31}の鉄拳が炸裂！！！\n					reads: 泪の鉄拳が炸裂！！！\n
+m/MS6004.BIN	5:0D	0	6	1FFA	{02:09}・・	.....				reads: ・・・・・; reads: ・・・・・ @ours-2026-09-05
+m/MS6004.BIN	5:0D	1	14	1FFB	{01:23}お待ち下{08:49}					reads: しばらくお待ち下さい
+m/MS6004.BIN	5:0D	2	28	1FFA	{02:09}・・\n	.....\n				reads: ・・・・・\n; reads: ・・・・・\n @ours-2026-09-05
+m/MS6004.BIN	5:0E	0	16	1F01	は踊{08:12}\n	 danced!\n				reads: は踊った！\n; reads: は踊った！\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	5:0F	0	5	1FBA	＞も{08:53}やり{08:15}\n					reads: ＞もっとやりますか？\n
+m/MS6004.BIN	5:0F	1	40	1F01	は踊{08:12}\n	 danced!\n				reads: は踊った！\n; reads: は踊った！\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	6:00	0	30	1FB2	そこを何とか					menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx0 en=Just This Once @rebase-unmatched idx0 en=Just This Once
+m/MS6004.BIN	6:00	1	44	1FB2	引き下がる					menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx1 en=Back Down @rebase-unmatched idx1 en=Back Down
+m/MS6004.BIN	6:00	2	56	1FB2	{08:0C}	{08:0C}				reads: 攻撃; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx2 en=Attack @rebase-unmatched idx2 en=Attack
+m/MS6004.BIN	6:00	3	106	1FB2	{08:0E}になれ	Become my ally				reads: 仲魔になれ; menu option, declared width 20 columns; reads: 桐島英美 @ours-2026-09-05
+m/MS6004.BIN	6:00	4	116	1FB2	何かくれ	Give me something				menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
+m/MS6004.BIN	6:00	5	126	1FB2	あっち行け	Go away				menu option, declared width 20 columns; reads: 仲魔になれ @rebase-new @rebase-unmatched idx5 en=Recruit @rebase-unmatched idx5 en=Recruit @ours-2026-09-05
+m/MS6004.BIN	6:00	6	182	1FB2	そこを何とか	Come on, please				menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx6 en=Give Me Something @rebase-unmatched idx6 en=Give Me Something @ours-2026-09-05
+m/MS6004.BIN	6:00	7	196	1FB2	あきら{08:2E}	Give up				reads: あきらめる; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx7 en=Go Away @rebase-unmatched idx7 en=Go Away @ours-2026-09-05
+m/MS6004.BIN	6:00	8	368	1FB2	そこを何とか	Come on, please				menu option, declared width 20 columns; reads:  @rebase-new @ours-2026-09-05
+m/MS6004.BIN	6:00	9	382	1FB2	引き下がる	Back down				menu option, declared width 20 columns; reads: ペンタグランマ{=83}{=00} @rebase-new @ours-2026-09-05
+m/MS6004.BIN	6:00	10	460	1FB2	貢ぐ	Offer tribute				menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx10 en=Just This Once @rebase-unmatched idx10 en=Just This Once @ours-2026-09-05
+m/MS6004.BIN	6:00	11	466	1FB2	謝る	Apologise				menu option, declared width 20 columns; reads: あきらめる @rebase-new @rebase-unmatched idx11 en=Give Up @rebase-unmatched idx11 en=Give Up @ours-2026-09-05
+m/MS6004.BIN	6:00	12	472	1FB2	引き下がる	Back down				menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
+m/MS6004.BIN	6:00	13	484	1FB2	無視	Ignore				menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx13 en=Just This Once @rebase-unmatched idx14 en=Back Down @rebase-unmatched idx13 en=Just This Once @rebase-unmatched idx14 en=Back Down @ours-2026-09-05
+m/MS6004.BIN	6:0D	0	6	1F01	は{02:0E}を睨んで{08:40}{02:09}・・\n	 is glaring this way......\n				reads: はこちらを睨んでいる・・・・・\n; reads: はこちらを睨んでいる・・・・・\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	6:0D	1	43	1FB2	怒る					menu option, declared width 20 columns
+m/MS6004.BIN	6:0D	2	49	1FB2	貢ぐ					menu option, declared width 20 columns
+m/MS6004.BIN	6:0D	3	55	1FB2	受けを狙う					menu option, declared width 20 columns
+m/MS6004.BIN	6:0D	4	67	1FB2	睨む					menu option, declared width 20 columns
+m/MS6004.BIN	6:0D	5	73	1FB2	{08:0C}	{08:0C}				reads: 攻撃; menu option, declared width 20 columns
+m/MS6004.BIN	6:0D	6	153	1FFA	{02:09}・・{02:09}・・\n	..........\n				reads: ・・・・・・・・・・\n; reads: ・・・・・・・・・・\n @ours-2026-09-05
+m/MS6004.BIN	6:0D	7	200	1F01	は	 has				reads: は; reads: ペンタグランマ` @rebase-tagdiff @ours-2026-09-05
+m/MS6004.BIN	6:0D	8	207	16	ウィットに富{08:5F}ジョークを言{08:12}\n	 told a witty joke!\n				reads: ウィットに富んだジョークを言った！\n; reads: そんなこと{=EF}{=00}を唱えた！ {=E6}{=0E} @ours-2026-09-05
+m/MS6004.BIN	6:0D	9	273	18	こてこてのギャグをかま{08:17}\n					reads: こてこてのギャグをかました！\n; reads: ・・・・・・・・・・\n
+m/MS6004.BIN	6:0D	10	350	1FDA	にらみ合いは続く{02:09}・・\n					reads: にらみ合いは続く・・・・・\n; reads: は
+m/MS6004.BIN	6:0D	11	389	1FB2	続{08:29}					reads: 続ける; menu option, declared width 20 columns; reads: ウィットに富んだジョークを言った！\n
+m/MS6004.BIN	6:0D	12	395	1FB2	目をそらす					menu option, declared width 20 columns; reads: こてこてのギャグをかました！\n
+m/MS6004.BIN	7:00	0	151	1FB2	{08:26}	Yes				reads: はい; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS6004.BIN	7:00	1	155	1FB2	{08:27}	{08:27}				reads: いいえ; menu option, declared width 20 columns
+m/MS6004.BIN	7:00	2	231	1FB2	{02:04}	{02:04}				reads: アイテム; menu option, declared width 20 columns; reads: はい @rebase-unmatched idx2 en=Yes @rebase-unmatched idx2 en=Yes
+m/MS6004.BIN	7:00	3	235	1FB2	金	Money				menu option, declared width 20 columns; reads: いいえ @rebase-unmatched idx3 en=No @rebase-unmatched idx3 en=No @ours-2026-09-05
+m/MS6004.BIN	7:00	4	239	1FB2	ＭＡＧ	MAG				menu option, declared width 20 columns; reads:  @rebase-new @ours-2026-09-05
+m/MS6004.BIN	7:00	5	247	1FB2	キミ	You				menu option, declared width 20 columns; reads: アイテム @rebase-new @ours-2026-09-05
+m/MS6004.BIN	7:0B	0	59	1FFA	{02:09}・・	.....				reads: ・・・・・; reads: ・・・・・ @ours-2026-09-05
+m/MS6004.BIN	7:0B	1	67	1FFB	{01:23}お待ち下{08:49}	Please wait a moment				reads: しばらくお待ち下さい; reads: P @ours-2026-09-05
+m/MS6004.BIN	7:0B	2	81	1FFA	{02:09}・・\n	.....\n				reads: ・・・・・\n; reads: ・・・・・\n @ours-2026-09-05
+m/MS6004.BIN	7:0E	0	10	0D	＞{02:06}\n					reads: ＞どうしますか？\n
+m/MS6004.BIN	7:0E	1	31	1FB2	踊れ					menu option, declared width 20 columns
+m/MS6004.BIN	7:0E	2	37	1FB2	何かくれ					menu option, declared width 20 columns
+m/MS6004.BIN	7:0E	3	47	1FB2	Ｈな事					menu option, declared width 20 columns
+m/MS6004.BIN	7:0E	4	55	1FB2	死ね					menu option, declared width 20 columns
+m/MS6004.BIN	7:0E	5	98	1F01	は	 danced				reads: は @rebase-new @ours-2026-09-05
+m/MS6004.BIN	7:0E	6	106	0E	美しく舞{08:51}{02:09}・・\n	 beautifully.....\n				reads: 美しく舞った・・・・・\n; reads: デビルバスター{=E7}{=0F}そんなことC @ours-2026-09-05
+m/MS6004.BIN	7:0E	7	147	1F01	は幸せだ\n	 is happy\n				reads: は幸せだ\n @rebase-tagdiff @rebase-unmatched idx7 en={04:EF} @seamfix-2026-09-05
+m/MS6004.BIN	7:0E	8	183	1F01	は妖しく踊{08:51}{02:09}・・\n	 danced with eerie grace......\n				reads: は妖しく踊った・・・・・\n; reads: 美しく舞った・・・・・\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	7:0E	9	237	1F01	は魅了{03:0C}た！\n	 was charmed completely!\n				reads: は魅了された！\n; reads: は幸せだ\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	7:0E	10	313	1FB2	{02:04}	Item				reads: アイテム; menu option, declared width 20 columns; reads: は妖しく踊った・・・・・\n @ours-2026-09-05
+m/MS6004.BIN	7:0E	11	317	1FB2	金					menu option, declared width 20 columns; reads: は魅了された！\n
+m/MS6004.BIN	7:0E	12	321	1FB2	ＭＡＧ	MAG				menu option, declared width 20 columns; reads: アイテム @ours-2026-09-05
+m/MS6004.BIN	7:0E	13	329	1FB2	魔石					menu option, declared width 20 columns
+m/MS6004.BIN	7:0E	14	335	1FB2	宝玉					menu option, declared width 20 columns
+m/MS6004.BIN	7:0F	0	34	1FFA	{02:09}・・	.....				reads: ・・・・・; reads: ・・・・・ @ours-2026-09-05
+m/MS6004.BIN	7:0F	1	42	1FFB	{01:23}お待ち下{08:49}					reads: しばらくお待ち下さい
+m/MS6004.BIN	7:0F	2	56	1FFA	{02:09}・・\n	.....\n				reads: ・・・・・\n; reads: ・・・・・\n @ours-2026-09-05
+m/MS6004.BIN	7:0F	3	98	1FFA	{02:09}・・\n	.....\n				reads: ・・・・・\n; reads: ・・・・・\n @ours-2026-09-05
+m/MS6004.BIN	7:0F	4	114	1FFA	{02:09}・・	.....				reads: ・・・・・; reads: ・・・・・ @ours-2026-09-05
+m/MS6004.BIN	7:0F	5	122	1FFB	{01:23}お待ち下{08:49}					reads: しばらくお待ち下さい
+m/MS6004.BIN	7:0F	6	136	1FFA	{02:09}・・\n	.....\n				reads: ・・・・・\n; reads: ・・・・・\n @ours-2026-09-05
+m/MS6004.BIN	8:18	0	30	1F01	は魅了{03:0C}た！\n	 was charmed completely!\n				reads: は魅了された！\n; reads: は魅了された！\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	8:11	0	67	1F01	はすがる{08:69}な瞳で見{08:14}\n	 is watching with pleading eyes.\n				reads: はすがるような瞳で見ている\n; reads: はすがるような瞳で見ている\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	8:11	1	104	1FB2	だめ					menu option, declared width 20 columns
+m/MS6004.BIN	8:11	2	110	1FB2	まあ{08:7F}					reads: まあいい; menu option, declared width 20 columns
+m/MS6004.BIN	10:09	0	11	1F01	は涙を流{08:13}\n<wait>	 has tears streaming down.\n<wait>				reads: は涙を流している\n<wait>; reads: は涙を流している\n<wait> @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	10:09	1	28	1FBA	＞{02:06}\n	>What will you do?\n				reads: ＞どうしますか？\n; reads: ＞どうしますか？\n @ours-2026-09-05
+m/MS6004.BIN	10:09	2	49	1FB2	近づく					menu option, declared width 20 columns
+m/MS6004.BIN	10:09	3	57	1FB2	様子を見る					menu option, declared width 20 columns
+m/MS6004.BIN	10:09	4	69	1FB2	去る					menu option, declared width 20 columns
+m/MS6004.BIN	10:09	5	136	1F01	は{08:76}　泣い{08:14}\n<wait>	 is still crying\n<wait>				reads: はまだ　泣いている\n<wait>; reads: {=EA}{=0C}ペンタグランマ{=86}{=00} @rebase-new @ours-2026-09-05
+m/MS6004.BIN	10:09	6	155	1FBA	＞{02:06}\n	>What will you do?\n				reads: ＞どうしますか？\n; reads: はまだ　泣いている\n<wait> @rebase-unmatched idx6 en={04:EF} is still crying.\n<wait> @rebase-unmatched idx6 en={04:EF} is still crying.\n<wait> @ours-2026-09-05
+m/MS6004.BIN	10:09	7	176	1FB2	近づく					menu option, declared width 20 columns; reads: ＞どうしますか？\n
+m/MS6004.BIN	10:09	8	184	1FB2	様子を見る					menu option, declared width 20 columns
+m/MS6004.BIN	10:09	9	196	1FB2	去る					menu option, declared width 20 columns
+m/MS6004.BIN	10:0A	0	64	1F01	はニヤリと笑{08:12}\n	 grinned wickedly!\n				reads: はニヤリと笑った！\n; reads: はニヤリと笑った！\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	10:0B	0	0	DATA	{02:09}ウソ泣きだ！\n<wait>					reads: ・・・ウソ泣きだ！\n<wait>
+m/MS6004.BIN	10:0C	0	2	1FBA	{02:09}・・	.....				reads: ・・・・・; reads: ・・・・・ @ours-2026-09-05
+m/MS6004.BIN	11:0A	0	11	1F01	は悩んで{08:40}\n	 looks troubled.\n				reads: は悩んでいる\n; reads: は悩んでいる\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS6004.BIN	11:0A	1	38	1FB2	好きな物あげる					menu option, declared width 20 columns
+m/MS6004.BIN	11:0A	2	54	1FB2	素敵な{08:0B}と合体					reads: 素敵な悪魔と合体; menu option, declared width 20 columns
+m/MS6004.BIN	11:0A	3	70	1FB2	黙{08:52}俺についてこい					reads: 黙って俺についてこい; menu option, declared width 20 columns
+m/MS6004.BIN	11:0A	4	90	1FB2	特典は無い					menu option, declared width 20 columns
+m/MS6004.BIN	11:0A	5	161	1F01	は悩んで{08:40}\n	 is troubled\n				reads: は悩んでいる\n; reads: おにいちゃん @rebase-new @ours-2026-09-05
+m/MS6004.BIN	11:0A	6	188	1FB2	{08:5C}一押し					reads: もう一押し; menu option, declared width 20 columns; reads: ペンタグランマｻ @rebase-unmatched idx6 en=Pentagramma @rebase-unmatched idx6 en=Pentagramma
+m/MS6004.BIN	11:0A	7	198	1FB2	待つ					menu option, declared width 20 columns; reads: そんなことﾎ @rebase-unmatched idx7 en=Something like that @rebase-unmatched idx7 en=Something like that
+m/MS6004.BIN	11:0A	8	253	1FBA	{02:09}・・	..... 				reads: ・・・・・; reads: ・・・・・ @ours-2026-09-05
+m/MS6004.BIN	11:0A	9	347	1F01	の機嫌をそこねた{08:69}だ\n<wait>	's mood was soured\n<wait>				reads: の機嫌をそこねたようだ\n<wait>; reads: は悩んでいる\n @rebase-new @rebase-unmatched idx9 en={04:EF} looks troubled.\n @ours-2026-09-05
+m/MS6004.BIN	11:0A	10	374	1FBA	＞{02:06}\n	>What will you do?\n				reads: ＞どうしますか？\n; reads: もう一押し; menu option, declared width 20 columns @ours-2026-09-05
+m/MS6004.BIN	11:0A	11	395	1FB2	貢ぐ					menu option, declared width 20 columns
+m/MS6004.BIN	11:0A	12	401	1FB2	おだ{08:2B}	Flatter				reads: おだてる; menu option, declared width 20 columns; reads: おねえちゃん @rebase-unmatched idx17 en={04:EF} seems to have been put in a bad mood.\n<wait> @ours-2026-09-05
+m/MS6004.BIN	13:00	0	56	1FB2	{08:7F}{08:8C}	Very well				reads: いいだろう; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS6004.BIN	13:00	1	62	1FB2	断る！					menu option, declared width 20 columns
+m/MS6004.BIN	13:00	2	201	00	{02:09}・・	.....				reads: ・・・・・; reads: わたしに @ours-2026-09-05
+m/MS6004.BIN	13:00	3	226	1FB2	もちろん	Of course				menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS6004.BIN	13:00	4	236	1FB2	ウソ！					menu option, declared width 20 columns; reads: ・・・・・
+m/MS6004.BIN	13:00	5	289	1FB2	{08:26}	Yes				reads: はい; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS6004.BIN	13:00	6	293	1FB2	{08:4D}は…					reads: それは…; menu option, declared width 20 columns
+m/MS6004.BIN	13:00	7	391	1FB2	人に害を成せば	If they harm people				menu option, declared width 20 columns; reads:  @ours-2026-09-05
+m/MS6004.BIN	13:00	8	407	1FB2	{08:0B}による	Depends on the demon				reads: 悪魔による; menu option, declared width 20 columns; reads: はい @rebase-unmatched idx8 en=Yes @rebase-unmatched idx8 en=Yes @ours-2026-09-05
+m/MS6004.BIN	13:00	9	504	1FB2	{01:29}	{01:29}				reads: そうだ; menu option, declared width 20 columns; reads: それは… @rebase-unmatched idx9 en=Well... @rebase-unmatched idx9 en=Well...
+m/MS6004.BIN	13:00	10	508	1FB2	違う！	Wrong!				menu option, declared width 20 columns; reads: そろそろ @ours-2026-09-05
+m/MS6004.BIN	13:00	11	553	1FB2	{01:29}	That's right				reads: そうだ; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
+m/MS6004.BIN	13:00	12	557	1FB2	仕方{08:25}	Can't be helped				reads: 仕方ない; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx12 en=If They Harm People @rebase-new @rebase-unmatched idx12 en=If They Harm People @ours-2026-09-05
+m/MS6004.BIN	13:00	13	565	1FB2	違う！	That's wrong! 				menu option, declared width 20 columns; reads: 悪魔による @rebase-unmatched idx13 en=Because It's a Demon @rebase-new @rebase-unmatched idx13 en=Because It's a Demon @ours-2026-09-05
+m/MS6004.BIN	13:00	14	609	1F01	の\n機嫌をそこねた\n＞{02:06}\n	's\nmood was soured\n>What will you do?\n				reads: の\n機嫌をそこねた\n＞どうしますか？\n; reads: ママ @rebase-new @ours-2026-09-05
+m/MS6004.BIN	13:00	15	648	1FB2	ほ{08:53}く	Leave it				reads: ほっとく; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
+m/MS6004.BIN	13:00	16	656	1FB2	説得{08:8E}	Persuade				reads: 説得する; menu option, declared width 20 columns; reads: そうだ @rebase-new @ours-2026-09-05
+m/MS6004.BIN	13:00	17	765	1FB2	世界の為だ	For the world				menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx17 en=That's Wrong! @rebase-new @rebase-unmatched idx17 en=That's Wrong! @ours-2026-09-05
+m/MS6004.BIN	13:00	18	777	1FB2	恋人の為だ	For my lover				menu option, declared width 20 columns; reads:  @rebase-new @ours-2026-09-05
+m/MS6004.BIN	13:00	19	926	1FB2	いかにも	Indeed				menu option, declared width 20 columns; reads: そうだ @rebase-new @ours-2026-09-05
+m/MS6004.BIN	13:00	20	936	1FB2	とん{08:56}{08:25}	Not at all 				reads: とんでもない; menu option, declared width 20 columns; reads: 仕方ない @rebase-new @ours-2026-09-05
+m/MS6004.BIN	13:00	21	989	1F01	の\n機嫌をそこねた\n＞{02:06}\n	's\nmood was soured\n>What will you do?\n				reads: の\n機嫌をそこねた\n＞どうしますか？\n; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
+m/MS6004.BIN	13:00	22	1028	1FB2	ほ{08:53}く	Leave it				reads: ほっとく; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
+m/MS6004.BIN	13:00	23	1036	1FB2	なだ{08:2E}	Soothe				reads: なだめる; menu option, declared width 20 columns; reads: ペンタグランマ達也 @rebase-new @ours-2026-09-05
+m/MS6004.BIN	13:00	24	1044	1FB2	怒る	Get angry				menu option, declared width 20 columns; reads: の\n機嫌をそこねた\n＞どうしますか？\n @rebase-new @rebase-unmatched idx24 en={04:EF}\nwas put in a bad mood.\n>What will you do?\n @rebase-unmatched idx24 en={04:EF}\nwas put in a bad mood.\n>What will you do?\n @rebase-unmatched idx25 en=Leave It Alone @rebase-unmatched idx26 en=Persuade Them @rebase-unmatched idx29 en=For the World @rebase-unmatched idx30 en=For My Lover @rebase-unmatched idx33 en=Indeed @rebase-unmatched idx34 en=No Way @rebase-unmatched idx37 en={04:EF}\nwas put in a bad mood.\n>What will you do?\n @ours-2026-09-05
+m/MS6004.BIN	14:00	0	19	1FB2	人に害をなす{08:42}					reads: 人に害をなすから; menu option, declared width 20 columns
+m/MS6004.BIN	14:00	1	35	1FB2	趣味！					menu option, declared width 20 columns
+m/MS6004.BIN	14:00	2	80	1FB2	人は牛とは違う	People aren't cattle				menu option, declared width 20 columns; reads:  @ours-2026-09-05
+m/MS6004.BIN	14:00	3	96	1FB2	難しいな…	That's a tough one...				menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05

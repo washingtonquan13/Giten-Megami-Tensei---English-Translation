@@ -3,281 +3,281 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS6109.BIN	0:72	0	22	1FB2	や{08:52}やる		I'll Do It	ours		reads: やってやる; menu option, declared width 20 columns
-m/MS6109.BIN	0:72	1	32	1FB2	やめとく		No Way	ours		menu option, declared width 20 columns
-m/MS6109.BIN	0:BB	0	0	DATA	やる気は無いみ{08:4E}だな\n<wait>		Guess you got\nno guts for this.\n<wait>	ours		reads: やる気は無いみたいだな\n<wait>
-m/MS6109.BIN	0:BC	0	0	DATA	困{08:51}ときは　お互い様{08:52}な！\n<wait>		We look out for\neach other, ya know!\n<wait>	ours		reads: 困ったときは　お互い様ってな！\n<wait>
-m/MS6109.BIN	0:BD	0	0	DATA	用もねぇ{08:7D}　呼び止めんなよ！\n<wait>		Don't go callin'\nme over for nothin'!\n<wait>	ours		reads: 用もねぇなら　呼び止めんなよ！\n<wait>
-m/MS6109.BIN	0:BE	0	0	DATA	お前とは　話が合わねぇな\n<wait>		You and me just\ndon't click, huh.\n<wait>	ours		
-m/MS6109.BIN	0:BF	0	0	DATA	オレ{08:42}上前　ハネ{08:69}{08:52}のか？\n<wait>		Tryin' to skim\na cut off me, huh?\n<wait>	ours		reads: オレから上前　ハネようってのか？\n<wait>
-m/MS6109.BIN	0:C0	0	0	DATA	{08:48}をやる{08:42}　失せな！\n<wait>		Take this and\nbeat it!\n<wait>	ours		reads: これをやるから　失せな！\n<wait>
-m/MS6109.BIN	0:C1	0	0	DATA	{08:5C}遅い\n<wait>		Too late\n<wait>	ours		reads: もう遅い\n<wait>
-m/MS6109.BIN	0:C2	0	0	DATA	カモが{08:40}ぜぇ！　ネギしょ{08:52}よぉ！！\n<wait>		A sucker just\nwalked right into my hands!!\n<wait>	ours		reads: カモがいるぜぇ！　ネギしょってよぉ！！\n<wait>
-m/MS6109.BIN	1:01	0	0	DATA	狂っ{08:14}！\n		This guy's lost it!\n	ours		reads: 狂っている！\n
-m/MS6109.BIN	1:01	1	25	1F01	は{03:07}{08:1C}\n	 attacked!\n			draft	reads: は襲いかかってきた！\n @rebase-new @ours-2026-09-05
-m/MS6109.BIN	1:01	2	45	1F01	は呆然と{08:13}！\nスキだらけだ！\n＞{08:0C}し{08:15}\n	 is stunned!\nWide open!\n>Attack?\n			draft	reads: は呆然としている！\nスキだらけだ！\n＞攻撃しますか？\n @rebase-new @ours-2026-09-05
-m/MS6109.BIN	1:01	3	104	1F01	は{08:79}{08:7E}通りすぎ{08:21}\n	 passed right by\n			draft	reads: はそのまま通りすぎていった\n; reads: は襲いかかってきた！\n @rebase-unmatched idx5 en=He just walks on past.\n @rebase-new @rebase-unmatched idx3 en=He lunges at you!\n @rebase-unmatched idx4 en=He's frozen in shock!\nHe's wide open!\n>Attack?\n @rebase-unmatched idx5 en=He just walks on past.\n @ours-2026-09-05
-m/MS6109.BIN	1:03	0	28	1FB2	ちょ{08:53}待{08:52}		Gladly	ours		reads: ちょっと待って; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx0 en=Hold on! @rebase-unmatched idx0 en=Hold on!
-m/MS6109.BIN	1:03	1	40	1FB2	さよ{08:7D}		Guess so	ours		reads: さよなら; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx1 en=Goodbye @rebase-unmatched idx1 en=Goodbye
-m/MS6109.BIN	1:03	2	85	1FB2	謝る	Apologize	Not for You	ours	draft	menu option, declared width 20 columns; reads:  @ours-2026-09-05
-m/MS6109.BIN	1:03	3	91	1FB2	別に		Oops	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx3 en=Oops @rebase-unmatched idx3 en=Oops
-m/MS6109.BIN	1:03	4	253	1FB2	よろこんで		Scold	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx4 en=Meh @rebase-unmatched idx4 en=Meh
-m/MS6109.BIN	1:03	5	265	1FB2	{08:80}が{08:25}	Can't help it			draft	reads: しょうがない; menu option, declared width 20 columns; reads: そろそろ @rebase-new @ours-2026-09-05
-m/MS6109.BIN	1:03	6	273	1FB2	誰がお前{08:6A}かに	Who'd do that for you			draft	reads: 誰がお前なんかに; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
-m/MS6109.BIN	1:03	7	546	1FB2	謝る	Apologise			draft	menu option, declared width 20 columns; reads: しょうがない @rebase-new @ours-2026-09-05
-m/MS6109.BIN	1:03	8	552	1FB2	{08:86}る	Scold 			draft	reads: しかる; menu option, declared width 20 columns; reads: 誰がお前なんかに @rebase-new @ours-2026-09-05
-m/MS6109.BIN	1:03	9	626	1F01	は感動{08:13}\nスキだらけだ！\n＞{08:0C}し{08:15}\n	 is moved\nWide open!\n>Attack?\n			draft	reads: は感動している\nスキだらけだ！\n＞攻撃しますか？\n; reads: ＮＯ @rebase-unmatched idx22 en=He's deeply moved.\nHe's wide open!\n>Attack?\n @rebase-new @rebase-unmatched idx22 en=He's deeply moved.\nHe's wide open!\n>Attack?\n @ours-2026-09-05
-m/MS6109.BIN	1:02	0	33	1F01	は怯え{08:14}\n	 is frightened\n			draft	reads: は怯えている\n; reads: さっき @rebase-new @ours-2026-09-05
-m/MS6109.BIN	1:02	1	51	1F01	はかなり興奮{08:13}{08:69}だ\n	 seems quite worked up\n			draft	reads: はかなり興奮しているようだ\n @rebase-new @ours-2026-09-05
-m/MS6109.BIN	1:02	2	79	1F01	は泣きながら笑っ{08:14}！\n	 is laughing through tears!\n			draft	reads: は泣きながら笑っている！\n; reads: ( @rebase-new @ours-2026-09-05
-m/MS6109.BIN	1:02	3	109	1F01	は自我崩壊を起こ{08:17}\n	 suffered an ego collapse!\n			draft	reads: は自我崩壊を起こした！\n @rebase-new @ours-2026-09-05
-m/MS6109.BIN	1:02	4	137	1F01	は小刻みに震え出{08:17}\n	 started trembling!\n			draft	reads: は小刻みに震え出した！\n; reads: は小刻みに震え出した！\n @rebase-unmatched idx7 en=He's laughing through tears!\n @rebase-unmatched idx8 en=He suffers a total mental breakdown!\n @rebase-unmatched idx9 en=He starts trembling!\n @rebase-new @rebase-unmatched idx5 en=He looks frightened.\n @rebase-unmatched idx6 en=He seems quite worked up.\n @rebase-unmatched idx7 en=He's laughing through tears!\n @rebase-unmatched idx8 en=He suffers a total mental breakdown!\n @rebase-unmatched idx9 en=He starts trembling!\n @ours-2026-09-05
-m/MS6109.BIN	1:56	0	0	DATA	てめぇの顔{08:6A}ざ　見たくもねぇや\n<wait>		I don't wanna look at your ugly mug.\n<wait>	ours		reads: てめぇの顔なんざ　見たくもねぇや\n<wait>
-m/MS6109.BIN	1:33	0	0	DATA	コイツ　むかつく野郎だなぁ！\n<wait>		This guy's really pissin' me off!\n<wait>	ours		
-m/MS6109.BIN	1:58	0	0	DATA	あ{08:5F}よ？　何か言いてぇ事{08:56}あんのかぁ？\n<wait>		Whaddya want? Got somethin' to say?\n<wait>	ours		reads: あんだよ？　何か言いてぇ事でもあんのかぁ？\n<wait>
-m/MS6109.BIN	1:59	0	0	DATA	も{08:53}頭をさげなぁ！！\n<wait>		Bow lower, why don'tcha!!\n<wait>	ours		reads: もっと頭をさげなぁ！！\n<wait>
-m/MS6109.BIN	1:34	0	0	DATA	よーし{08:7F}子だなぁ！\n<wait>		That's a good boy!\n<wait>	ours		reads: よーしいい子だなぁ！\n<wait>
-m/MS6109.BIN	1:35	0	0	DATA	今のうちだぜ！\n<wait>		Now's your chance!\n<wait>	ours		
-m/MS6109.BIN	1:36	0	0	DATA	血ぃ見る事に{08:59}ぜぇ！\n<wait>		This is gonna get bloody!\n<wait>	ours		reads: 血ぃ見る事になるぜぇ！\n<wait>
-m/MS6109.BIN	1:37	0	0	DATA	言葉何かいらねぇ　物{08:8A}な！\n<wait>		Don't need words--I got somethin' better!\n<wait>	ours		reads: 言葉何かいらねぇ　物だしな！\n<wait>
-m/MS6109.BIN	1:5D	0	0	DATA	気に入{08:51}ぜ！\n<wait>		I like ya!\n<wait>	ours		reads: 気に入ったぜ！\n<wait>
-m/MS6109.BIN	1:38	0	0	DATA	お前　面白{01:29}な\n<wait>		You look like fun.\n<wait>	ours		reads: お前　面白そうだな\n<wait>
-m/MS6109.BIN	1:5F	0	0	DATA	調子ぶっこいてん{08:81}ねーぞ！\n<wait>		Don't get cocky with me!\n<wait>	ours		reads: 調子ぶっこいてんじゃねーぞ！\n<wait>
-m/MS6109.BIN	1:60	0	0	DATA	て、てめぇ！\n<wait>		Y-you bastard!\n<wait>	ours		
-m/MS6109.BIN	1:39	0	0	DATA	きょ、今日の{08:87}は\n{08:48}ぐらいにしといてやらぁ！\n<wait>		F-fine, I'll let it slide\nfor today!\n<wait>	ours		reads: きょ、今日のところは\nこれぐらいにしといてやらぁ！\n<wait>
-m/MS6109.BIN	1:3A	0	0	DATA	オレらの事は　眼に入んね{08:52}よ！\n<wait>		Says he don't even notice guys like us!\n<wait>	ours		reads: オレらの事は　眼に入んねってよ！\n<wait>
-m/MS6109.BIN	1:3B	0	0	DATA	{08:47}次は　覚悟しとけよ！\n<wait>		Next time, you'd better be ready!\n<wait>	ours		reads: この次は　覚悟しとけよ！\n<wait>
-m/MS6109.BIN	1:64	0	0	DATA	暗い夜には　気をつ{08:29}事だな！\n<wait>		Watch yourself on dark nights!\n<wait>	ours		reads: 暗い夜には　気をつける事だな！\n<wait>
-m/MS6109.BIN	1:3C	0	0	DATA	ひははヒヒひはヒひ！\n<wait>		Hyahaha hihi hyahihi!\n<wait>	ours		
-m/MS6109.BIN	2:1B	0	19	1FB2	睨む		Eye	ours		menu option, declared width 20 columns
-m/MS6109.BIN	2:1B	1	25	1FB2	金を出す		Pay Up	ours		menu option, declared width 20 columns
-m/MS6109.BIN	2:1B	2	35	1FB2	威嚇射撃		Warning Shot	ours		menu option, declared width 20 columns
-m/MS6109.BIN	2:1B	3	72	14	{02:09}	...			draft	reads: ・・・; reads: おかげ @ours-2026-09-05
-m/MS6109.BIN	2:1B	4	98	1FBA	＞どれくらい出し{08:15}\n	>How much will you pay?\n	>How much\nwill you pay?\n	ours	draft	reads: ＞どれくらい出しますか？\n; reads: ペンタグランマ& @ours-2026-09-05
-m/MS6109.BIN	2:1B	5	133	1FB2	１マッカ	1 Macca	1 Macca	ours	draft	menu option, declared width 20 columns; reads: ・・・ @ours-2026-09-05
-m/MS6109.BIN	2:1B	6	143	1FB2	１０マッカ		10 Macca	ours		menu option, declared width 20 columns; reads: ＞どれくらい出しますか？\n
-m/MS6109.BIN	2:1B	7	155	1FB2	１００マッカ		100 Macca	ours		menu option, declared width 20 columns
-m/MS6109.BIN	2:1B	8	370	1F01	のガンが火を噴く！\n	's gun spits fire!\n			draft	reads: のガンが火を噴く！\n; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
-m/MS6109.BIN	2:1B	9	419	18	ガンを装備{08:4A}{08:24}！\n		No gun equipped!\n	ours		reads: ガンを装備していない！\n; menu option, declared width 20 columns @rebase-unmatched idx15 en=Your gun roars to life!\n
-m/MS6109.BIN	2:56	0	0	DATA	{08:4D}が命取りに{08:59}ぜぇ\n<wait>		That'll be the death of ya.\n<wait>	ours		reads: それが命取りになるぜぇ\n<wait>
-m/MS6109.BIN	2:57	0	0	DATA	そうか\n<wait>		I see.\n<wait>	ours		
-m/MS6109.BIN	2:58	0	0	DATA	お前に{08:6A}か　騙{03:0C}ねぇぞ！\n<wait>		Ain't gonna be fooled by you!\n<wait>	ours		reads: お前になんか　騙されねぇぞ！\n<wait>
-m/MS6109.BIN	2:59	0	0	DATA	失敬な野郎だ！\n<wait>		What a rude bastard!\n<wait>	ours		
-m/MS6109.BIN	2:5A	0	0	DATA	{08:79}格好\n<wait>		That getup\n<wait>	ours		reads: その格好\n<wait>
-m/MS6109.BIN	2:21	0	0	DATA	{08:73}所で　何{08:4A}{08:5F}？\n<wait>		Whatcha doin' in a place like this?\n<wait>	ours		reads: こんな所で　何してんだ？\n<wait>
-m/MS6109.BIN	2:5B	0	0	DATA	戦いは好きかぁ？\n<wait>		You like fightin'?\n<wait>	ours		
-m/MS6109.BIN	2:5C	0	0	DATA	キサマ　何故戦う？\n		Why do you fight?\n	ours		
-m/MS6109.BIN	2:23	0	0	DATA	呑気なモンだな！\n<wait>		How carefree of ya!\n<wait>	ours		
-m/MS6109.BIN	2:24	0	0	DATA	困っ{08:2B}み{08:4E}だな\n<wait>		Looks like you're in trouble.\n<wait>	ours		reads: 困ってるみたいだな\n<wait>
-m/MS6109.BIN	2:25	0	0	DATA	助けてやろう\n<wait>		I'll lend ya a hand.\n<wait>	ours		
-m/MS6109.BIN	2:5D	0	0	DATA	偉いこ{08:51}な\n<wait>		That's real admirable.\n<wait>	ours		reads: 偉いこったな\n<wait>
-m/MS6109.BIN	2:2C	0	0	DATA	何か　オレに出来る事は{08:7B}か？\n<wait>		Is there anything I can do?\n<wait>	ours		reads: 何か　オレに出来る事はあるか？\n<wait>
-m/MS6109.BIN	2:2E	0	0	DATA	そっちの奴は　{08:5C}手遅れだな\n<wait>		That one's already a lost cause.\n<wait>	ours		reads: そっちの奴は　もう手遅れだな\n<wait>
-m/MS6109.BIN	2:5E	0	0	DATA	{08:0B}の力を借りなけりゃ\n貴様は　{08:82}のクズ{08:8C}がぁ！\n<wait>		Without borrowin' a demon's power,\nyou're nothin' but trash, ain'tcha!\n<wait>	ours		reads: 悪魔の力を借りなけりゃ\n貴様は　ただのクズだろうがぁ！\n<wait>
-m/MS6109.BIN	2:5F	0	0	DATA	ヒーロー面{08:4A}も\n所詮は貴様も　{08:82}の{02:0B}だ！\n<wait>		Play the hero all ya want,\nyou're still just a plain ol' human!\n<wait>	ours		reads: ヒーロー面しても\n所詮は貴様も　ただの人間だ！\n<wait>
-m/MS6109.BIN	2:60	0	0	DATA	オレは　貴様の事など認め{08:25}な！\n<wait>		I ain't gonna acknowledge you!\n<wait>	ours		reads: オレは　貴様の事など認めないな！\n<wait>
-m/MS6109.BIN	2:61	0	0	DATA	{08:4D}を忘{08:2F}なよ！\n<wait>		Don't you forget it!\n<wait>	ours		reads: それを忘れるなよ！\n<wait>
-m/MS6109.BIN	2:62	0	0	DATA	誠意の証と{08:4A}\n<wait>		As proof of your sincerity,\n<wait>	ours		reads: 誠意の証として\n<wait>
-m/MS6109.BIN	2:28	0	0	DATA	クックック！\n<wait>		Kukukuk!\n<wait>	ours		
-m/MS6109.BIN	2:31	0	0	DATA	頼む！　見逃{08:4A}くれ\n<wait>		Please! Let me off the hook!\n<wait>	ours		reads: 頼む！　見逃してくれ\n<wait>
-m/MS6109.BIN	2:32	0	0	DATA	命{08:74}は　助けてくれ\n<wait>		Just spare my life.\n<wait>	ours		reads: 命だけは　助けてくれ\n<wait>
-m/MS6109.BIN	2:33	0	0	DATA	{08:90}か頼む！　\n<wait>		Please, I'm beggin' ya! \n<wait>	ours		reads: どうか頼む！　\n<wait>
-m/MS6109.BIN	3:01	0	6	0E	駄目だ！　話に{08:7D}{08:25}！\n		No good! There's no reasoning with him!\n	ours		reads: 駄目だ！　話にならない！\n
-m/MS6109.BIN	3:2A	0	0	DATA	満月だぁ！\n<wait>		Full moon!\n<wait>	ours		
-m/MS6109.BIN	3:2D	0	0	DATA	血が騒ぐぜぇ！\n<wait>		Gets my\nblood pumpin'!\n<wait>	ours		
-m/MS6109.BIN	3:2E	0	0	DATA	オレ様は気分が{08:7F}ぜ\n<wait>		I'm feelin'\npretty damn good.\n<wait>	ours		reads: オレ様は気分がいいぜ\n<wait>
-m/MS6109.BIN	4:00	0	0	DATA	キサマ　何者だ？\n<wait>		Who the hell\nare you?\n<wait>	ours		
-m/MS6109.BIN	4:01	0	0	DATA	{08:0F}に{08:1A}　欲しいのか？\n<wait>		Want me to\njoin your crew?\n<wait>	ours		reads: 仲間になって　欲しいのか？\n<wait>
-m/MS6109.BIN	4:02	0	0	DATA	{08:81}あ		Then	ours		reads: じゃあ
-m/MS6109.BIN	4:03	0	0	DATA	何か欲しいのか？\n<wait>		You want\nsomethin'?\n<wait>	ours		
-m/MS6109.BIN	4:04	0	0	DATA	あっそう\n<wait>		Oh yeah?\n<wait>	ours		
-m/MS6109.BIN	4:05	0	0	DATA	{08:81}あな！\n<wait>		See ya!\n<wait>	ours		reads: じゃあな！\n<wait>
-m/MS6109.BIN	4:06	0	0	DATA	何が欲しい？\n<wait>		What d'ya\nwant?\n<wait>	ours		
-m/MS6109.BIN	4:07	0	0	DATA	オレは　		I'm 	ours		
-m/MS6109.BIN	4:07	1	23	1F01	だ\n今後とも　よろしく\n<wait>	.\nLooking forward to it\n<wait>			draft	reads: 　\n @rebase-new @rebase-unmatched idx1 en={04:EF}\n @rebase-unmatched idx2 en={04:EF}. Good to have ya on board.\n<wait> @ours-2026-09-05
-m/MS6109.BIN	4:08	0	0	DATA	{08:48}{08:56}　持{08:52}きな！\n<wait>		Take this\nand get lost!\n<wait>	ours		reads: これでも　持ってきな！\n<wait>
-m/MS6109.BIN	4:09	0	0	DATA	あいにく		Too Bad	ours		
-m/MS6109.BIN	4:0A	0	0	DATA	今は　持{08:52}ねぇな\n<wait>		Ain't got\nany right now.\n<wait>	ours		reads: 今は　持ってねぇな\n<wait>
-m/MS6109.BIN	4:0B	0	0	DATA	代わりに\n		Instead\n	ours		
-m/MS6109.BIN	4:0C	0	0	DATA	何か貰{08:28}のか？\n<wait>		Gonna give\nme somethin'?\n<wait>	ours		reads: 何か貰えるのか？\n<wait>
-m/MS6109.BIN	4:0D	0	0	DATA	お前とは　うまくや{08:52}け{08:25}な\n<wait>		Guess you and me\njust don't mix.\n<wait>	ours		reads: お前とは　うまくやってけないな\n<wait>
-m/MS6109.BIN	4:0E	0	0	DATA	いやだね\n<wait>		No way.\n<wait>	ours		
-m/MS6109.BIN	4:0F	0	0	DATA	すま{08:19}なぁ\n<wait>		Sorry 'bout\nthat.\n<wait>	ours		reads: すまなかったなぁ\n<wait>
-m/MS6109.BIN	4:10	0	0	DATA	何の用だ？\n<wait>		What d'ya\nwant?\n<wait>	ours		
-m/MS6109.BIN	4:11	0	0	DATA	{08:76}　用が{08:7B}のか？\n<wait>		Still got\nbusiness with me?\n<wait>	ours		reads: まだ　用があるのか？\n<wait>
-m/MS6109.BIN	4:12	0	0	DATA	ヘッ　ムシの{08:7F}奴だ！\n<wait>		Heh. Real\nnervy of you!\n<wait>	ours		reads: ヘッ　ムシのいい奴だ！\n<wait>
-m/MS6109.BIN	4:13	0	0	DATA	付き合{08:52}られ{08:25}な\n<wait>		Can't be\nbothered with this.\n<wait>	ours		reads: 付き合ってられないな\n<wait>
-m/MS6109.BIN	4:14	0	0	DATA	まあ{08:7F}さ\n<wait>		Whatever.\n<wait>	ours		reads: まあいいさ\n<wait>
-m/MS6109.BIN	4:15	0	0	DATA	オレに二度と　{08:73}事が出来{08:25}様に\n{08:4A}やるぜ！\n<wait>		I'll make sure\nyou never pull this again!\n<wait>	ours		reads: オレに二度と　こんな事が出来ない様に\nしてやるぜ！\n<wait>
-m/MS6109.BIN	4:16	0	0	DATA	甘いぜ！\n<wait>		Naive!\n<wait>	ours		
-m/MS6109.BIN	4:17	0	0	DATA	何{08:8E}{08:5F}！？\n<wait>		What're you\ndoin'!?\n<wait>	ours		reads: 何するんだ！？\n<wait>
-m/MS6109.BIN	4:18	0	0	DATA	やめろぉッ！！\n<wait>		Stop it!!\n<wait>	ours		
-m/MS6109.BIN	4:19	0	0	DATA	ふざ{08:29}なよ！\n<wait>		Don't\nmess with me!\n<wait>	ours		reads: ふざけるなよ！\n<wait>
-m/MS6109.BIN	4:1A	0	0	DATA	お前と話す事{08:6A}て無い\n<wait>		Got nothin'\nto say to you.\n<wait>	ours		reads: お前と話す事なんて無い\n<wait>
-m/MS6109.BIN	4:1B	0	0	DATA	話が{08:4B}{08:18}{08:74}か？\n<wait>		Just wanted\nto talk, huh?\n<wait>	ours		reads: 話がしたかっただけか？\n<wait>
-m/MS6109.BIN	4:1C	0	0	DATA	ケッ　や{08:2F}モン{08:7D}　や{08:52}みなよ\n<wait>		Tch. If you think\nyou can, then try it.\n<wait>	ours		reads: ケッ　やれるモンなら　やってみなよ\n<wait>
-m/MS6109.BIN	4:1D	0	0	DATA	う、うわぁぁッ！！\n<wait>		Gwaaaaugh!!\n<wait>	ours		
-m/MS6109.BIN	4:1E	0	0	DATA	何{08:56}{08:68}事を聞く　だ{08:42}許{08:4A}くれ！\n<wait>		I'll do anything,\nso please forgive me!\n<wait>	ours		reads: 何でもいう事を聞く　だから許してくれ！\n<wait>
-m/MS6109.BIN	4:1F	0	0	DATA	覚えてなッ！\n<wait>		Remember it!\n<wait>	ours		
-m/MS6109.BIN	4:20	0	0	DATA	ありがとな\n<wait>		Thanks.\n<wait>	ours		
-m/MS6109.BIN	4:21	0	0	DATA	{08:74}ど		But	ours		reads: だけど
-m/MS6109.BIN	4:22	0	0	DATA	教えてやろうか\n<wait>		Want me\nto tell ya?\n<wait>	ours		
-m/MS6109.BIN	4:23	0	0	DATA	{08:7F}事を＿		Good news_	ours		reads: いい事を＿
-m/MS6109.BIN	4:24	0	0	DATA	つまん{08:25}ぜ！\n<wait>		That's boring!\n<wait>	ours		reads: つまんないぜ！\n<wait>
-m/MS6109.BIN	4:25	0	0	DATA	何だ　同じ{08:0F}が{08:40}ぞ\n<wait>		Huh, same crew\nover here too.\n<wait>	ours		reads: 何だ　同じ仲間がいるぞ\n<wait>
-m/MS6109.BIN	4:26	0	0	DATA	{08:0F}の具合が　悪{01:29}な\n<wait>		My buddy's hurt{01:29})\n<wait>	ours		reads: 仲間の具合が　悪そうだな\n<wait>
-m/MS6109.BIN	4:27	0	0	DATA	お、オレの{08:0F}がぁ！！！！\n<wait>		M-My buddy!!!!\n<wait>	ours		reads: お、オレの仲間がぁ！！！！\n<wait>
-m/MS6109.BIN	4:28	0	0	DATA	許せ{08:25}なぁ{02:09}・\n<wait>		Can't forgive that....\n<wait>	ours		reads: 許せないなぁ・・・・\n<wait>
-m/MS6109.BIN	4:29	0	0	DATA	{08:0F}は治{08:4A}やるよ\n<wait>		I'll heal\nyour buddy.\n<wait>	ours		reads: 仲間は治してやるよ\n<wait>
-m/MS6109.BIN	4:2A	0	0	DATA	ちゃんと　治{08:4A}や{08:52}くれ\n<wait>		Make sure you\nheal him up right.\n<wait>	ours		reads: ちゃんと　治してやってくれ\n<wait>
-m/MS6109.BIN	4:2B	0	0	DATA	{08:0F}によろしくな\n<wait>		Say hi to\nyour crew.\n<wait>	ours		reads: 仲間によろしくな\n<wait>
-m/MS6109.BIN	4:2C	0	0	DATA	オレは{08:0F}以外と　つるむ気は{08:25}ぜ\n<wait>		I don't hang\nwith anyone but my own crew.\n<wait>	ours		reads: オレは仲間以外と　つるむ気はないぜ\n<wait>
-m/MS6109.BIN	4:2D	0	0	DATA	{08:0F}がいっぱいだぞ　誰か抜{08:29}のか？\n<wait>		Crew's full up...\nsomeone droppin' out?\n<wait>	ours		reads: 仲間がいっぱいだぞ　誰か抜けるのか？\n<wait>
-m/MS6109.BIN	4:2E	0	0	DATA	面白いな{02:09}・\n<wait>		Interesting....\n<wait>	ours		reads: 面白いな・・・・\n<wait>
-m/MS6109.BIN	4:2F	0	0	DATA	お前の心臓{08:56}　もらおうか！\n<wait>		How about I take\nyour heart instead!\n<wait>	ours		reads: お前の心臓でも　もらおうか！\n<wait>
-m/MS6109.BIN	4:30	0	0	DATA	お前の事は　忘れ{08:25}ぜ\n<wait>		I won't\nforget you.\n<wait>	ours		reads: お前の事は　忘れないぜ\n<wait>
-m/MS6109.BIN	4:31	0	0	DATA	お前何かに用は{08:25}\n<wait>		Got no business\nwith you.\n<wait>	ours		reads: お前何かに用はない\n<wait>
-m/MS6109.BIN	4:32	0	6	1F02	よこしな！\n<wait>		Hand it over!\n<wait>	ours		
-m/MS6109.BIN	4:33	0	6	1F02	をくれよ！\n<wait>		Gimme that!\n<wait>	ours		
-m/MS6109.BIN	4:34	0	0	DATA	魔石を出しな！\n<wait>		Hand over\nan ore!\n<wait>	ours		
-m/MS6109.BIN	4:35	0	0	DATA	宝石で手をうつぜ！\n<wait>		I'll settle\nfor a gem!\n<wait>	ours		
-m/MS6109.BIN	4:36	0	0	DATA	{08:73}奴と話{08:4A}も　何の意味も無い\n<wait>		No point talkin'\nto a guy like this.\n<wait>	ours		reads: こんな奴と話しても　何の意味も無い\n<wait>
-m/MS6109.BIN	4:37	0	0	DATA	{01:1C}　行こうぜ！\n<wait>		C'mon, let's go!\n<wait>	ours		reads: みんな　行こうぜ！\n<wait>
-m/MS6109.BIN	4:38	0	0	DATA	お前か！　オレの{08:0F}に酷い事し{08:2B}のは！\n<wait>		So it's you!\nYou're the one hurtin' my crew!\n<wait>	ours		reads: お前か！　オレの仲間に酷い事してるのは！\n<wait>
-m/MS6109.BIN	4:39	0	0	DATA	オレを無視{08:8E}なぁ！！\n<wait>		Don't you\nignore me!!\n<wait>	ours		reads: オレを無視するなぁ！！\n<wait>
-m/MS6109.BIN	4:3A	0	0	DATA	信用出来{08:25}ね\n<wait>		Can't trust\nya.\n<wait>	ours		reads: 信用出来ないね\n<wait>
-m/MS6109.BIN	4:3B	0	0	DATA	オレが{08:40}前で\n何		Right in front of me,\nwhat	ours		record reaches an engine no-op opcode; verify in game; reads: オレがいる前で\n何
-m/MS6109.BIN	4:3B	1	17	1E3F	と話し{08:2B}{08:5F}ぁ？\n<wait>		are you talking to him about, huh?\n<wait>	ours		record reaches an engine no-op opcode; verify in game; reads: と話してるんだぁ？\n<wait>
-m/MS6109.BIN	4:3C	0	0	DATA	邪魔者{08:52}ワケか？\n<wait>		So I'm in\nyour way, huh?\n<wait>	ours		reads: 邪魔者ってワケか？\n<wait>
-m/MS6109.BIN	4:3D	0	0	DATA	誠意をみせ{08:54}らおうか？\n<wait>		Show me\nsome sincerity, huh?\n<wait>	ours		reads: 誠意をみせてもらおうか？\n<wait>
-m/MS6109.BIN	4:3E	0	0	DATA	お前　{08:7F}奴だな\n<wait>		You're\nalright, huh.\n<wait>	ours		reads: お前　いい奴だな\n<wait>
-m/MS6109.BIN	4:3F	0	0	DATA	ケッ　気分悪りぃぜ！\n<wait>		Tch, that pisses\nme off!\n<wait>	ours		
-m/MS6109.BIN	4:40	0	0	DATA	{08:5C}{08:7F}！\n<wait>		Enough!\n<wait>	ours		reads: もういい！\n<wait>
-m/MS6109.BIN	4:41	0	0	DATA	{08:7A}事　言わ{08:25}でくれ\n<wait>		Don't say\nsomething like that.\n<wait>	ours		reads: そんな事　言わないでくれ\n<wait>
-m/MS6109.BIN	4:42	0	0	DATA	暴れてやる！\n<wait>		I'll tear\nthis up!\n<wait>	ours		
-m/MS6109.BIN	4:43	0	0	DATA	{08:73}{08:5E}返すぜ\n<wait>		Here, take\nthis back.\n<wait>	ours		reads: こんなもの返すぜ\n<wait>
-m/MS6109.BIN	4:44	0	0	DATA	ぐ{02:09}・ぐおぉぉぉ！！\n<wait>		Gu....guoooohh!!\n<wait>	ours		reads: ぐ・・・・ぐおぉぉぉ！！\n<wait>
-m/MS6109.BIN	4:45	0	0	DATA	何だとッ！！\n<wait>		The hell!?\n<wait>	ours		
-m/MS6109.BIN	4:46	0	0	DATA	持{08:52}{08:25}{08:81}{08:25}か！\n<wait>		You don't even\nhave any!\n<wait>	ours		reads: 持ってないじゃないか！\n<wait>
-m/MS6109.BIN	4:47	0	0	DATA	ＭＡＧが足り{08:25}だと？\n<wait>		Short on MAG,\nare you?\n<wait>	ours		reads: ＭＡＧが足りないだと？\n<wait>
-m/MS6109.BIN	4:48	0	0	DATA	マッカが足り{08:25}だと？\n<wait>		Short on Macca,\nare you?\n<wait>	ours		reads: マッカが足りないだと？\n<wait>
-m/MS6109.BIN	4:49	0	0	DATA	仕方{08:25}な\n<wait>		Guess so.\n<wait>	ours		reads: 仕方ないな\n<wait>
-m/MS6109.BIN	4:4A	0	0	DATA	{08:5C}	{08:5C}	More	ours		reads: もう
-m/MS6109.BIN	4:4B	0	0	DATA	今度は		Next	ours		
-m/MS6109.BIN	4:4C	0	0	DATA	何だか面白く{08:25}なぁ\n<wait>		This ain't\nfun at all.\n<wait>	ours		reads: 何だか面白くないなぁ\n<wait>
-m/MS6109.BIN	4:4D	0	0	DATA	{08:5C}一つ		One More	ours		reads: もう一つ
-m/MS6109.BIN	4:4E	0	0	DATA	ケッ　つまらん奴とは　付き合え{08:25}な！\n<wait>		Tch, can't deal\nwith a boring guy like you!\n<wait>	ours		reads: ケッ　つまらん奴とは　付き合えないな！\n<wait>
-m/MS6109.BIN	4:4F	0	0	DATA	{08:0F}に{08:4A}くれよ\n<wait>		Make me\nyour crew.\n<wait>	ours		reads: 仲間にしてくれよ\n<wait>
-m/MS6109.BIN	4:50	0	0	DATA	分{08:18}\n<wait>		Got it.\n<wait>	ours		reads: 分かった\n<wait>
-m/MS6109.BIN	4:51	0	0	DATA	オレを殺す気か？\n<wait>		Tryin' to\nkill me?\n<wait>	ours		
-m/MS6109.BIN	4:52	0	0	DATA	{08:0F}に{08:59}{08:42}　勘弁{08:4A}くれ！\n<wait>		I'll join up,\nso cut me some slack!\n<wait>	ours		reads: 仲間になるから　勘弁してくれ！\n<wait>
-m/MS6109.BIN	4:53	0	0	DATA	馬鹿野郎がぁ！\n<wait>		You idiot!\n<wait>	ours		
-m/MS6109.BIN	4:54	0	0	DATA	せめて　{08:48}を\n<wait>		At least,\ntake this.\n<wait>	ours		reads: せめて　これを\n<wait>
-m/MS6109.BIN	4:55	0	0	DATA	やる気は無いのか？\n<wait>		No guts\nfor this?\n<wait>	ours		
-m/MS6109.BIN	4:56	0	0	DATA	{08:0F}を捨てろ{08:52}？\n<wait>		Ditch my\ncrew, huh?\n<wait>	ours		reads: 仲間を捨てろって？\n<wait>
-m/MS6109.BIN	4:57	0	0	DATA	{08:48}をやる{08:42}　勘弁{08:4A}くれ！\n<wait>		Take this,\nso cut me some slack!\n<wait>	ours		reads: これをやるから　勘弁してくれ！\n<wait>
-m/MS6109.BIN	4:58	0	0	DATA	今更　何言いやがる！\n<wait>		The hell are\nyou sayin' now!\n<wait>	ours		
-m/MS6109.BIN	4:59	0	0	DATA	過去の事は{08:5C}{08:7F}よ\n<wait>		Let's just\nforget the past.\n<wait>	ours		reads: 過去の事はもういいよ\n<wait>
-m/MS6109.BIN	4:5A	0	0	DATA	話を聞いてやるぜ\n<wait>		I'll hear\nya out.\n<wait>	ours		
-m/MS6109.BIN	4:5B	0	0	DATA	裏切{08:51}な！\n<wait>		You sold me\nout!\n<wait>	ours		reads: 裏切ったな！\n<wait>
-m/MS6109.BIN	4:5C	0	0	DATA	聞{08:64}事{08:7B}な\n<wait>		Heard that\none before.\n<wait>	ours		reads: 聞いた事あるな\n<wait>
-m/MS6109.BIN	4:5D	0	0	DATA	さあ　知ら{08:25}なあ\n<wait>		Hmm, no\nidea.\n<wait>	ours		reads: さあ　知らないなあ\n<wait>
-m/MS6109.BIN	4:5E	0	0	DATA	カンに障るヤツだ！\n<wait>		You really\nget on my nerves!\n<wait>	ours		
-m/MS6109.BIN	4:5F	0	0	DATA	覚えておくぜ！\n<wait>		I'll remember\nthis!\n<wait>	ours		
-m/MS6109.BIN	4:60	0	0	DATA	オレは　{08:90}{08:56}{08:7F}{08:5F}な？\n<wait>		So I don't\nmatter to you at all?\n<wait>	ours		reads: オレは　どうでもいいんだな？\n<wait>
-m/MS6109.BIN	4:61	0	0	DATA	あー？　お前み{08:4E}なヤツが？\n<wait>		Huh? Someone\nlike you?\n<wait>	ours		reads: あー？　お前みたいなヤツが？\n<wait>
-m/MS6109.BIN	4:62	0	0	DATA	オレを倒{08:2A}か？\n<wait>		Think you\ncan beat me?\n<wait>	ours		reads: オレを倒せるか？\n<wait>
-m/MS6109.BIN	4:63	0	0	DATA	許{08:4A}やる\n<wait>		I'll let\nit slide.\n<wait>	ours		reads: 許してやる\n<wait>
-m/MS6109.BIN	4:64	0	0	DATA	偽善者め！\n<wait>		Hypocrite!\n<wait>	ours		
-m/MS6109.BIN	4:65	0	0	DATA	可哀相なヤツ\n<wait>		Poor guy.\n<wait>	ours		
-m/MS6109.BIN	4:66	0	0	DATA	話に{08:6A}ねぇな！\n<wait>		Pointless\ntalk!\n<wait>	ours		reads: 話になんねぇな！\n<wait>
-m/MS6109.BIN	4:67	0	0	DATA	せいぜい頑張りな！\n<wait>		Do your\nbest, then!\n<wait>	ours		
-m/MS6109.BIN	4:68	0	0	DATA	{08:82}し		But	ours		reads: ただし
-m/MS6109.BIN	4:69	0	0	DATA	噂通りの		As Said	ours		
-m/MS6109.BIN	4:6A	0	0	DATA	酷いヤツだな！\n<wait>		That's cold!\n<wait>	ours		
-m/MS6109.BIN	4:6B	0	0	DATA	面白れぇなぁ！　記憶喪失{08:52}ヤツか？\n<wait>		Funny! You\ntryin' the amnesia bit?\n<wait>	ours		reads: 面白れぇなぁ！　記憶喪失ってヤツか？\n<wait>
-m/MS6109.BIN	4:6C	0	0	DATA	へーえ\n<wait>		Heh.\n<wait>	ours		
-m/MS6109.BIN	4:6D	0	0	DATA	笑わ{08:67}く{08:2F}ぜ\n<wait>		Now you're\nfunny.\n<wait>	ours		reads: 笑わせてくれるぜ\n<wait>
-m/MS6109.BIN	4:6E	0	0	DATA	こう{08:4A}やらぁ！\n<wait>		Take this,\nthen!\n<wait>	ours		reads: こうしてやらぁ！\n<wait>
-m/MS6109.BIN	4:6F	0	0	DATA	嘘をつくな！\n<wait>		Don't lie!\n<wait>	ours		
-m/MS6109.BIN	4:70	0	0	DATA	本当か？\n<wait>		Really?\n<wait>	ours		
-m/MS6109.BIN	4:71	0	0	DATA	信用{08:4A}やる\n<wait>		I'll trust\nya.\n<wait>	ours		reads: 信用してやる\n<wait>
-m/MS6109.BIN	4:72	0	0	DATA	まずは		First	ours		
-m/MS6109.BIN	4:73	0	0	DATA	{08:87}で		Anyway	ours		reads: ところで
-m/MS6109.BIN	4:74	0	0	DATA	残念だな\n<wait>		A shame.\n<wait>	ours		
-m/MS6109.BIN	4:75	0	0	DATA	お前が{01:29}{08:6A}てな\n<wait>		So you{01:29})...\n<wait>	ours		reads: お前がそうだなんてな\n<wait>
-m/MS6109.BIN	4:76	0	0	DATA	大{08:4B}事ねぇなぁ！\n<wait>		That's not\nmuch, huh!\n<wait>	ours		reads: 大した事ねぇなぁ！\n<wait>
-m/MS6109.BIN	4:77	0	0	DATA	一緒に連れて{08:52}くれよ！\n<wait>		Take me along\nwith you!\n<wait>	ours		reads: 一緒に連れてってくれよ！\n<wait>
-m/MS6109.BIN	4:78	0	0	DATA	{08:0F}は{01:32}か？\n<wait>		At {01:32}2?\n<wait>	ours		reads: 仲間は大丈夫か？\n<wait>
-m/MS6109.BIN	4:79	0	0	DATA	{08:5B}な！\n<wait>		Later!\n<wait>	ours		reads: またな！\n<wait>
-m/MS6109.BIN	4:7A	0	0	DATA	楽し{08:18}ぜ\n<wait>		Fun times.\n<wait>	ours		reads: 楽しかったぜ\n<wait>
-m/MS6109.BIN	4:7B	0	0	DATA	死にやがれッ！\n<wait>		Drop dead!\n<wait>	ours		
-m/MS6109.BIN	4:7C	0	0	DATA	恵んでやるよ\n<wait>		I'll show\nmercy.\n<wait>	ours		
-m/MS6109.BIN	4:7D	0	0	DATA	お前は　お前だ　何も変わんねぇよ\n<wait>		You are who you are -\nnothin's gonna change that.\n<wait>	ours		
-m/MS6109.BIN	4:7E	0	0	DATA	ガンを置きな！\n<wait>		Drop\nyour gun.\n<wait>	ours		
-m/MS6109.BIN	4:7F	0	0	DATA	も{08:53}近くに来いよ！\n<wait>		Come a bit\ncloser.\n<wait>	ours		reads: もっと近くに来いよ！\n<wait>
-m/MS6109.BIN	4:80	0	0	DATA	こっち{08:42}行くぜぇ！\n<wait>		I'll come\nto you.\n<wait>	ours		reads: こっちから行くぜぇ！\n<wait>
-m/MS6109.BIN	4:81	0	0	DATA	素直だな\n<wait>		Honest.\n<wait>	ours		
-m/MS6109.BIN	4:82	0	0	DATA	お前何かに言わ{08:2F}とは\n<wait>		To be told so\nby the likes of you...\n<wait>	ours		reads: お前何かに言われるとは\n<wait>
-m/MS6109.BIN	4:83	0	0	DATA	{08:48}で安心{08:4A}　話{08:2A}なぁ！\n<wait>		Now we can\ntalk without worry!\n<wait>	ours		reads: これで安心して　話せるなぁ！\n<wait>
-m/MS6109.BIN	4:84	0	0	DATA	信用出来{08:25}のか？\n<wait>		Can't trust\nme, huh?\n<wait>	ours		reads: 信用出来ないのか？\n<wait>
-m/MS6109.BIN	4:85	0	0	DATA	{08:0F}が黙っちゃ{08:24}ぜ\n<wait>		My crew\nwon't stay quiet.\n<wait>	ours		reads: 仲間が黙っちゃいないぜ\n<wait>
-m/MS6109.BIN	4:86	0	0	DATA	{08:4D}{08:56}{08:7F}のか？\n<wait>		Are you sure\nabout that?\n<wait>	ours		reads: それでもいいのか？\n<wait>
-m/MS6109.BIN	4:87	0	0	DATA	何てヤツ\n<wait>		Some guy\n<wait>	ours		
-m/MS6109.BIN	4:88	0	0	DATA	そう　{08:4D}で{08:7F}ぜぇ！\n<wait>		Yeah, that's\nfine by me!\n<wait>	ours		reads: そう　それでいいぜぇ！\n<wait>
-m/MS6109.BIN	4:89	0	0	DATA	{08:7F}度胸し{08:2B}なぁ！\n<wait>		That's some\nnerve you've got!\n<wait>	ours		reads: いい度胸してるなぁ！\n<wait>
-m/MS6109.BIN	4:8A	0	0	DATA	んな事{08:8C}とは　思{08:51}ぜ！\n<wait>		Figured that's\njust how it'd be!\n<wait>	ours		reads: んな事だろうとは　思ったぜ！\n<wait>
-m/MS6109.BIN	4:8B	0	0	DATA	考え{08:54}{08:7F}ぜ\n<wait>		Might\nconsider it.\n<wait>	ours		reads: 考えてもいいぜ\n<wait>
-m/MS6109.BIN	4:8C	0	0	DATA	んな暇は無いなあ！\n<wait>		Ain't got\ntime for that!\n<wait>	ours		
-m/MS6109.BIN	4:8D	0	0	DATA	関係無いね\n<wait>		Not my\nproblem.\n<wait>	ours		
-m/MS6109.BIN	4:8E	0	0	DATA	オレを合体に使おう{08:52}　魂胆か？\n<wait>		Plannin' to use me\nfor a fusion, huh?\n<wait>	ours		reads: オレを合体に使おうって　魂胆か？\n<wait>
-m/MS6109.BIN	4:8F	0	0	DATA	{08:7A}に　困っ{08:2B}のかよ？\n<wait>		That desperate,\nare ya?\n<wait>	ours		reads: そんなに　困ってるのかよ？\n<wait>
-m/MS6109.BIN	4:90	0	0	DATA	何で　お前{08:6A}かに？\n<wait>		Why you,\nof all people?\n<wait>	ours		reads: 何で　お前なんかに？\n<wait>
-m/MS6109.BIN	4:91	0	0	DATA	ククククッ\n<wait>		Kukukuku\n<wait>	ours		
-m/MS6109.BIN	4:92	0	0	DATA	も{08:53}くれ\n<wait>		Give more.\n<wait>	ours		reads: もっとくれ\n<wait>
-m/MS6109.BIN	4:93	0	0	DATA	イカレ野郎が！\n<wait>		Crazy bastard!\n<wait>	ours		
-m/MS6109.BIN	4:94	0	0	DATA	お前　		You 	ours		
-m/MS6109.BIN	4:94	1	12	1F01	か？　やっぱりな！\n{08:90}だぁ調子は？\n<wait>	, is it? Knew it!\nHow's it goin'?\n<wait>	{04:FF}, huh? Knew it!\nHow's it goin'?\n<wait>	ours	draft	reads: か？　やっぱりな！\nどうだぁ調子は？\n<wait> @rebase-tagdiff @seamfix-2026-09-05
-m/MS6109.BIN	4:95	0	0	DATA	来るなッ！！\n<wait>		Stay back!!\n<wait>	ours		
-m/MS6109.BIN	4:96	0	0	DATA	見逃{08:4A}やるぜ！\n<wait>		I'll let\nyou off!\n<wait>	ours		reads: 見逃してやるぜ！\n<wait>
-m/MS6109.BIN	4:97	0	0	DATA	オレの力見{08:67}やる！\n<wait>		I'll show you\nmy power!\n<wait>	ours		reads: オレの力見せてやる！\n<wait>
-m/MS6109.BIN	4:98	0	0	DATA	ど{01:28}こ{01:28}　血祭りだぁ！\n<wait>	Every last one of you, a bloodbath!\n<wait>			draft	reads: どいつもこいつも　血祭りだぁ！\n<wait> @ours-2026-09-05
-m/MS6109.BIN	4:99	0	0	DATA	話{08:86}{08:29}なよ		Don't talk to me	ours		reads: 話しかけるなよ
-m/MS6109.BIN	4:99	1	16	1FFA	・・	..	...	ours	draft	@ours-2026-09-05
-m/MS6109.BIN	4:99	2	22	1FFB	気分が悪い{08:5F}		Feeling sick.	ours		reads: 気分が悪いんだ
-m/MS6109.BIN	4:99	3	36	1FFA	{02:09}・\n	....\n	{02:09}.\n	ours	draft	reads: ・・・・\n @ours-2026-09-05
-m/MS6109.BIN	4:9A	0	0	DATA	お前のお情けは　いらねぇよ！\n<wait>		I don't need\nyour pity!\n<wait>	ours		
-m/MS6109.BIN	4:9B	0	0	DATA	気持ち{08:7F}夜だなぁ！\n<wait>		Nice night,\nain't it!\n<wait>	ours		reads: 気持ちいい夜だなぁ！\n<wait>
-m/MS6109.BIN	4:9C	0	0	DATA	同情{08:6A}か受{08:43}くねぇ！\n<wait>		I want no part\nof your pity, ever!\n<wait>	ours		reads: 同情なんか受けたくねぇ！\n<wait>
-m/MS6109.BIN	4:9D	0	0	DATA	何も聞{08:1E}くねぇなぁ！\n<wait>		Don't wanna\nhear a word of it!\n<wait>	ours		reads: 何も聞きたくねぇなぁ！\n<wait>
-m/MS6109.BIN	4:9E	0	0	DATA	{01:3B}は		{01:3B};	ours		reads: さっきは
-m/MS6109.BIN	4:9F	0	0	DATA	{08:7A}物{08:81}　オレは騙{03:0C}{08:25}ぜぇ！\n<wait>		Somethin' like that ain't gonna fool me!\n<wait>	ours		reads: そんな物じゃ　オレは騙されないぜぇ！\n<wait>
-m/MS6109.BIN	8:4D	0	0	DATA	や{08:51}ぜ！\n<wait>		Hell yeah!\n<wait>	ours		reads: やったぜ！\n<wait>
-m/MS6109.BIN	8:4E	0	0	DATA	たまんねぇぜ　お前は最高だ！\n<wait>		Can't get enough...\nyou're the best!\n<wait>	ours		
-m/MS6109.BIN	8:4F	0	0	DATA	{08:45}{08:74}の話{08:74}どよ\n<wait>		Just between\nus...\n<wait>	ours		reads: ここだけの話だけどよ\n<wait>
-m/MS6109.BIN	8:50	0	0	DATA	お前は　敵み{08:4E}だな\n<wait>		Seems you're\nan enemy.\n<wait>	ours		reads: お前は　敵みたいだな\n<wait>
-m/MS6109.BIN	8:51	0	0	DATA	お前は　オレと同じ{08:0F}だな\n<wait>		Seems you're\nan ally, same as me.\n<wait>	ours		reads: お前は　オレと同じ仲間だな\n<wait>
-m/MS6109.BIN	8:52	0	0	DATA	オレの救世主様！\n<wait>		My savior!\n<wait>	ours		
-m/MS6109.BIN	8:53	0	0	DATA	{08:90}か　{08:48}を！\n<wait>		Please,\ntake this!\n<wait>	ours		reads: どうか　これを！\n<wait>
-m/MS6109.BIN	8:54	0	0	DATA	ケッ！\n正義の{03:04}み{08:4E}な　ふりをしやが{08:52}！！\n<wait>		Tch!\nActin' like some hero of justice!!\n<wait>	ours		reads: ケッ！\n正義の味方みたいな　ふりをしやがって！！\n<wait>
-m/MS6109.BIN	8:55	0	0	DATA	名乗ら{08:25}{08:52}か？\n<wait>		Won't give\nyour name?\n<wait>	ours		reads: 名乗らないってか？\n<wait>
-m/MS6109.BIN	8:56	0	0	DATA	ま　{08:4D}も悪くねぇ\n<wait>		Well, that's\nnot bad.\n<wait>	ours		reads: ま　それも悪くねぇ\n<wait>
-m/MS6109.BIN	8:28	0	0	DATA	{08:33}ましい{08:46}だなぁ！\n<wait>		How brave\nof you!\n<wait>	ours		reads: 勇ましいことだなぁ！\n<wait>
-m/MS6109.BIN	8:33	0	0	DATA	{02:00}の様な　民衆の犬{08:6A}ざ\n大人しく{08:4A}いれば{08:7F}{08:5F}よ！\n<wait>		A dog of the masses like a Devil Buster\nshould just stay quiet!\n<wait>	ours		reads: デビルバスターの様な　民衆の犬なんざ\n大人しくしていればいいんだよ！\n<wait>
-m/MS6109.BIN	10:14	0	0	DATA	ケッ！　見損{08:16}ぜ！\n<wait>		Tch! I misjudged ya!\n<wait>	ours		reads: ケッ！　見損なったぜ！\n<wait>
-m/MS6109.BIN	11:0D	0	0	DATA	民衆の犬の分際で！\n<wait>		As if a dog of the masses has any right!\n<wait>	ours		
-m/MS6109.BIN	13:01	0	0	DATA	キサマは　テメェの信じる道を行く為にゃ\n多少の犠牲は　やむを得{08:25}{02:09}{08:52}ぇ\n考えの持ち主か？\n<wait>		Are you the sort who thinks some sacrifice\nis unavoidable to walk the road you believe in?\n<wait>	ours		reads: キサマは　テメェの信じる道を行く為にゃ\n多少の犠牲は　やむを得ない・・・ってぇ\n考えの持ち主か？\n<wait>
-m/MS6109.BIN	13:02	0	0	DATA	{08:63}さえ良ければ　{08:4D}で{08:7F}のかよぉ？\n<wait>		So it's fine as long\nas you come out ahead, is that it?\n<wait>	ours		reads: 自分さえ良ければ　それでいいのかよぉ？\n<wait>
-m/MS6109.BIN	13:07	0	0	DATA	{01:3C}　キサマに　聞いてお{08:1E}い\n<wait>		{01:3C}\<, there's something\nI want to ask you.\n<wait>	ours		reads: ひとつ　キサマに　聞いておきたい\n<wait>
-m/MS6109.BIN	13:0C	0	0	DATA	{02:03}のヤツら以外の　{02:0B}の中にも\n{08:76}　キサマの様な奴が{08:40}とはねぇ！\n<wait>		So there's still folks like you\noutside the Resistance too, huh!\n<wait>	ours		reads: レジスタンスのヤツら以外の　人間の中にも\nまだ　キサマの様な奴がいるとはねぇ！\n<wait>
-m/MS6109.BIN	13:0E	0	0	DATA	テメェ{02:09}{08:5D}や　		You... could it be that you're 	ours		reads: テメェ・・・もしや　
-m/MS6109.BIN	13:0E	1	20	1F01	か？\n<wait>	?\n<wait>	{04:FF}?\n<wait>	ours	draft	reads: か？\n<wait> @rebase-tagdiff @ours-2026-09-05
-m/MS6109.BIN	13:0F	0	0	DATA	はん{02:09}・やっぱ　そうか！\n<wait>		Heh....knew it!\n<wait>	ours		reads: はん・・・・やっぱ　そうか！\n<wait>
-m/MS6109.BIN	13:10	0	0	DATA	{08:0B}合体もか？\n<wait>		Demon Fusion\nas well?\n<wait>	ours		reads: 悪魔合体もか？\n<wait>
-m/MS6109.BIN	13:11	0	0	DATA	{08:4D}は　力を求{08:2E}{08:42}{08:52}ヤツか？\n<wait>		Is that because\nyou're after power?\n<wait>	ours		reads: それは　力を求めるからってヤツか？\n<wait>
-m/MS6109.BIN	13:12	0	0	DATA	何な{08:5F}よ？\n<wait>		What now?\n<wait>	ours		reads: 何なんだよ？\n<wait>
-m/MS6109.BIN	13:13	0	0	DATA	ケッ　いきが{08:51}{08:87}でよぉ　考えてみろよ\nキサマ{01:3A}に　何が出来る{08:52}ぇ？\n<wait>		Tch. Talk tough all you want -\nwhat can the likes of you{01:3A}: do?\n<wait>	ours		reads: ケッ　いきがったところでよぉ　考えてみろよ\nキサマひとりに　何が出来るってぇ？\n<wait>
-m/MS6109.BIN	14:0F	0	0	DATA	貴様　死は恐ろしいか？\n<wait>		Do you fear\ndeath?\n<wait>	ours		
-m/MS6109.BIN	14:10	0	0	DATA	{08:7D}　{08:79}愛{08:8E}者の為に\n命張る事も　恐ろしくて出来{08:25}と言うのか？\n<wait>		Then tell me,\nwould you fear dying for love?\n<wait>	ours		reads: なら　その愛する者の為に\n命張る事も　恐ろしくて出来ないと言うのか？\n<wait>
-m/MS6109.BIN	14:11	0	0	DATA	弱者には　死{08:7B}のみだ！！\n<wait>		For the weak,\nonly death awaits!!\n<wait>	ours		reads: 弱者には　死あるのみだ！！\n<wait>
-m/MS6109.BIN	14:12	0	0	DATA	何故　恐れ{08:25}？\n<wait>		Why aren't\nyou scared?\n<wait>	ours		reads: 何故　恐れない？\n<wait>
+m/MS6109.BIN	0:72	0	22	1FB2	や{08:52}やる					reads: やってやる; menu option, declared width 20 columns
+m/MS6109.BIN	0:72	1	32	1FB2	やめとく					menu option, declared width 20 columns
+m/MS6109.BIN	0:BB	0	0	DATA	やる気は無いみ{08:4E}だな\n<wait>					reads: やる気は無いみたいだな\n<wait>
+m/MS6109.BIN	0:BC	0	0	DATA	困{08:51}ときは　お互い様{08:52}な！\n<wait>					reads: 困ったときは　お互い様ってな！\n<wait>
+m/MS6109.BIN	0:BD	0	0	DATA	用もねぇ{08:7D}　呼び止めんなよ！\n<wait>					reads: 用もねぇなら　呼び止めんなよ！\n<wait>
+m/MS6109.BIN	0:BE	0	0	DATA	お前とは　話が合わねぇな\n<wait>					
+m/MS6109.BIN	0:BF	0	0	DATA	オレ{08:42}上前　ハネ{08:69}{08:52}のか？\n<wait>					reads: オレから上前　ハネようってのか？\n<wait>
+m/MS6109.BIN	0:C0	0	0	DATA	{08:48}をやる{08:42}　失せな！\n<wait>					reads: これをやるから　失せな！\n<wait>
+m/MS6109.BIN	0:C1	0	0	DATA	{08:5C}遅い\n<wait>					reads: もう遅い\n<wait>
+m/MS6109.BIN	0:C2	0	0	DATA	カモが{08:40}ぜぇ！　ネギしょ{08:52}よぉ！！\n<wait>					reads: カモがいるぜぇ！　ネギしょってよぉ！！\n<wait>
+m/MS6109.BIN	1:01	0	0	DATA	狂っ{08:14}！\n					reads: 狂っている！\n
+m/MS6109.BIN	1:01	1	25	1F01	は{03:07}{08:1C}\n	 attacked!\n				reads: は襲いかかってきた！\n; reads: は襲いかかってきた！\n @rebase-new @ours-2026-09-05
+m/MS6109.BIN	1:01	2	45	1F01	は呆然と{08:13}！\nスキだらけだ！\n＞{08:0C}し{08:15}\n	 is stunned!\nWide open!\n>Attack?\n				reads: は呆然としている！\nスキだらけだ！\n＞攻撃しますか？\n; reads: は呆然としている！\nスキだらけだ！\n＞攻撃しますか？\n @rebase-new @ours-2026-09-05
+m/MS6109.BIN	1:01	3	104	1F01	は{08:79}{08:7E}通りすぎ{08:21}\n	 passed right by\n				reads: はそのまま通りすぎていった\n; reads: は襲いかかってきた！\n @rebase-unmatched idx5 en=He just walks on past.\n @rebase-new @rebase-unmatched idx3 en=He lunges at you!\n @rebase-unmatched idx4 en=He's frozen in shock!\nHe's wide open!\n>Attack?\n @rebase-unmatched idx5 en=He just walks on past.\n @ours-2026-09-05
+m/MS6109.BIN	1:03	0	28	1FB2	ちょ{08:53}待{08:52}					reads: ちょっと待って; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx0 en=Hold on! @rebase-unmatched idx0 en=Hold on!
+m/MS6109.BIN	1:03	1	40	1FB2	さよ{08:7D}					reads: さよなら; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx1 en=Goodbye @rebase-unmatched idx1 en=Goodbye
+m/MS6109.BIN	1:03	2	85	1FB2	謝る	Apologize				menu option, declared width 20 columns; reads:  @ours-2026-09-05
+m/MS6109.BIN	1:03	3	91	1FB2	別に					menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx3 en=Oops @rebase-unmatched idx3 en=Oops
+m/MS6109.BIN	1:03	4	253	1FB2	よろこんで					menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx4 en=Meh @rebase-unmatched idx4 en=Meh
+m/MS6109.BIN	1:03	5	265	1FB2	{08:80}が{08:25}	Can't help it				reads: しょうがない; menu option, declared width 20 columns; reads: そろそろ @rebase-new @ours-2026-09-05
+m/MS6109.BIN	1:03	6	273	1FB2	誰がお前{08:6A}かに	Who'd do that for you				reads: 誰がお前なんかに; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
+m/MS6109.BIN	1:03	7	546	1FB2	謝る	Apologise				menu option, declared width 20 columns; reads: しょうがない @rebase-new @ours-2026-09-05
+m/MS6109.BIN	1:03	8	552	1FB2	{08:86}る	Scold 				reads: しかる; menu option, declared width 20 columns; reads: 誰がお前なんかに @rebase-new @ours-2026-09-05
+m/MS6109.BIN	1:03	9	626	1F01	は感動{08:13}\nスキだらけだ！\n＞{08:0C}し{08:15}\n	 is moved\nWide open!\n>Attack?\n				reads: は感動している\nスキだらけだ！\n＞攻撃しますか？\n; reads: ＮＯ @rebase-unmatched idx22 en=He's deeply moved.\nHe's wide open!\n>Attack?\n @rebase-new @rebase-unmatched idx22 en=He's deeply moved.\nHe's wide open!\n>Attack?\n @ours-2026-09-05
+m/MS6109.BIN	1:02	0	33	1F01	は怯え{08:14}\n	 is frightened\n				reads: は怯えている\n; reads: さっき @rebase-new @ours-2026-09-05
+m/MS6109.BIN	1:02	1	51	1F01	はかなり興奮{08:13}{08:69}だ\n	 seems quite worked up\n				reads: はかなり興奮しているようだ\n; reads: はかなり興奮しているようだ\n @rebase-new @ours-2026-09-05
+m/MS6109.BIN	1:02	2	79	1F01	は泣きながら笑っ{08:14}！\n	 is laughing through tears!\n				reads: は泣きながら笑っている！\n; reads: ( @rebase-new @ours-2026-09-05
+m/MS6109.BIN	1:02	3	109	1F01	は自我崩壊を起こ{08:17}\n	 suffered an ego collapse!\n				reads: は自我崩壊を起こした！\n; reads: は自我崩壊を起こした！\n @rebase-new @ours-2026-09-05
+m/MS6109.BIN	1:02	4	137	1F01	は小刻みに震え出{08:17}\n	 started trembling!\n				reads: は小刻みに震え出した！\n; reads: は小刻みに震え出した！\n @rebase-unmatched idx7 en=He's laughing through tears!\n @rebase-unmatched idx8 en=He suffers a total mental breakdown!\n @rebase-unmatched idx9 en=He starts trembling!\n @rebase-new @rebase-unmatched idx5 en=He looks frightened.\n @rebase-unmatched idx6 en=He seems quite worked up.\n @rebase-unmatched idx7 en=He's laughing through tears!\n @rebase-unmatched idx8 en=He suffers a total mental breakdown!\n @rebase-unmatched idx9 en=He starts trembling!\n @ours-2026-09-05
+m/MS6109.BIN	1:56	0	0	DATA	てめぇの顔{08:6A}ざ　見たくもねぇや\n<wait>					reads: てめぇの顔なんざ　見たくもねぇや\n<wait>
+m/MS6109.BIN	1:33	0	0	DATA	コイツ　むかつく野郎だなぁ！\n<wait>					
+m/MS6109.BIN	1:58	0	0	DATA	あ{08:5F}よ？　何か言いてぇ事{08:56}あんのかぁ？\n<wait>					reads: あんだよ？　何か言いてぇ事でもあんのかぁ？\n<wait>
+m/MS6109.BIN	1:59	0	0	DATA	も{08:53}頭をさげなぁ！！\n<wait>					reads: もっと頭をさげなぁ！！\n<wait>
+m/MS6109.BIN	1:34	0	0	DATA	よーし{08:7F}子だなぁ！\n<wait>					reads: よーしいい子だなぁ！\n<wait>
+m/MS6109.BIN	1:35	0	0	DATA	今のうちだぜ！\n<wait>					
+m/MS6109.BIN	1:36	0	0	DATA	血ぃ見る事に{08:59}ぜぇ！\n<wait>					reads: 血ぃ見る事になるぜぇ！\n<wait>
+m/MS6109.BIN	1:37	0	0	DATA	言葉何かいらねぇ　物{08:8A}な！\n<wait>					reads: 言葉何かいらねぇ　物だしな！\n<wait>
+m/MS6109.BIN	1:5D	0	0	DATA	気に入{08:51}ぜ！\n<wait>					reads: 気に入ったぜ！\n<wait>
+m/MS6109.BIN	1:38	0	0	DATA	お前　面白{01:29}な\n<wait>					reads: お前　面白そうだな\n<wait>
+m/MS6109.BIN	1:5F	0	0	DATA	調子ぶっこいてん{08:81}ねーぞ！\n<wait>					reads: 調子ぶっこいてんじゃねーぞ！\n<wait>
+m/MS6109.BIN	1:60	0	0	DATA	て、てめぇ！\n<wait>					
+m/MS6109.BIN	1:39	0	0	DATA	きょ、今日の{08:87}は\n{08:48}ぐらいにしといてやらぁ！\n<wait>					reads: きょ、今日のところは\nこれぐらいにしといてやらぁ！\n<wait>
+m/MS6109.BIN	1:3A	0	0	DATA	オレらの事は　眼に入んね{08:52}よ！\n<wait>					reads: オレらの事は　眼に入んねってよ！\n<wait>
+m/MS6109.BIN	1:3B	0	0	DATA	{08:47}次は　覚悟しとけよ！\n<wait>					reads: この次は　覚悟しとけよ！\n<wait>
+m/MS6109.BIN	1:64	0	0	DATA	暗い夜には　気をつ{08:29}事だな！\n<wait>					reads: 暗い夜には　気をつける事だな！\n<wait>
+m/MS6109.BIN	1:3C	0	0	DATA	ひははヒヒひはヒひ！\n<wait>					
+m/MS6109.BIN	2:1B	0	19	1FB2	睨む					menu option, declared width 20 columns
+m/MS6109.BIN	2:1B	1	25	1FB2	金を出す					menu option, declared width 20 columns
+m/MS6109.BIN	2:1B	2	35	1FB2	威嚇射撃					menu option, declared width 20 columns
+m/MS6109.BIN	2:1B	3	72	14	{02:09}	...				reads: ・・・; reads: おかげ @ours-2026-09-05
+m/MS6109.BIN	2:1B	4	98	1FBA	＞どれくらい出し{08:15}\n	>How much will you pay?\n				reads: ＞どれくらい出しますか？\n; reads: ペンタグランマ& @ours-2026-09-05
+m/MS6109.BIN	2:1B	5	133	1FB2	１マッカ	1 Macca				menu option, declared width 20 columns; reads: ・・・ @ours-2026-09-05
+m/MS6109.BIN	2:1B	6	143	1FB2	１０マッカ					menu option, declared width 20 columns; reads: ＞どれくらい出しますか？\n
+m/MS6109.BIN	2:1B	7	155	1FB2	１００マッカ					menu option, declared width 20 columns
+m/MS6109.BIN	2:1B	8	370	1F01	のガンが火を噴く！\n	's gun spits fire!\n				reads: のガンが火を噴く！\n; menu option, declared width 20 columns @rebase-new @ours-2026-09-05
+m/MS6109.BIN	2:1B	9	419	18	ガンを装備{08:4A}{08:24}！\n					reads: ガンを装備していない！\n; menu option, declared width 20 columns @rebase-unmatched idx15 en=Your gun roars to life!\n
+m/MS6109.BIN	2:56	0	0	DATA	{08:4D}が命取りに{08:59}ぜぇ\n<wait>					reads: それが命取りになるぜぇ\n<wait>
+m/MS6109.BIN	2:57	0	0	DATA	そうか\n<wait>					
+m/MS6109.BIN	2:58	0	0	DATA	お前に{08:6A}か　騙{03:0C}ねぇぞ！\n<wait>					reads: お前になんか　騙されねぇぞ！\n<wait>
+m/MS6109.BIN	2:59	0	0	DATA	失敬な野郎だ！\n<wait>					
+m/MS6109.BIN	2:5A	0	0	DATA	{08:79}格好\n<wait>					reads: その格好\n<wait>
+m/MS6109.BIN	2:21	0	0	DATA	{08:73}所で　何{08:4A}{08:5F}？\n<wait>					reads: こんな所で　何してんだ？\n<wait>
+m/MS6109.BIN	2:5B	0	0	DATA	戦いは好きかぁ？\n<wait>					
+m/MS6109.BIN	2:5C	0	0	DATA	キサマ　何故戦う？\n					
+m/MS6109.BIN	2:23	0	0	DATA	呑気なモンだな！\n<wait>					
+m/MS6109.BIN	2:24	0	0	DATA	困っ{08:2B}み{08:4E}だな\n<wait>					reads: 困ってるみたいだな\n<wait>
+m/MS6109.BIN	2:25	0	0	DATA	助けてやろう\n<wait>					
+m/MS6109.BIN	2:5D	0	0	DATA	偉いこ{08:51}な\n<wait>					reads: 偉いこったな\n<wait>
+m/MS6109.BIN	2:2C	0	0	DATA	何か　オレに出来る事は{08:7B}か？\n<wait>					reads: 何か　オレに出来る事はあるか？\n<wait>
+m/MS6109.BIN	2:2E	0	0	DATA	そっちの奴は　{08:5C}手遅れだな\n<wait>					reads: そっちの奴は　もう手遅れだな\n<wait>
+m/MS6109.BIN	2:5E	0	0	DATA	{08:0B}の力を借りなけりゃ\n貴様は　{08:82}のクズ{08:8C}がぁ！\n<wait>					reads: 悪魔の力を借りなけりゃ\n貴様は　ただのクズだろうがぁ！\n<wait>
+m/MS6109.BIN	2:5F	0	0	DATA	ヒーロー面{08:4A}も\n所詮は貴様も　{08:82}の{02:0B}だ！\n<wait>					reads: ヒーロー面しても\n所詮は貴様も　ただの人間だ！\n<wait>
+m/MS6109.BIN	2:60	0	0	DATA	オレは　貴様の事など認め{08:25}な！\n<wait>					reads: オレは　貴様の事など認めないな！\n<wait>
+m/MS6109.BIN	2:61	0	0	DATA	{08:4D}を忘{08:2F}なよ！\n<wait>					reads: それを忘れるなよ！\n<wait>
+m/MS6109.BIN	2:62	0	0	DATA	誠意の証と{08:4A}\n<wait>					reads: 誠意の証として\n<wait>
+m/MS6109.BIN	2:28	0	0	DATA	クックック！\n<wait>					
+m/MS6109.BIN	2:31	0	0	DATA	頼む！　見逃{08:4A}くれ\n<wait>					reads: 頼む！　見逃してくれ\n<wait>
+m/MS6109.BIN	2:32	0	0	DATA	命{08:74}は　助けてくれ\n<wait>					reads: 命だけは　助けてくれ\n<wait>
+m/MS6109.BIN	2:33	0	0	DATA	{08:90}か頼む！　\n<wait>					reads: どうか頼む！　\n<wait>
+m/MS6109.BIN	3:01	0	6	0E	駄目だ！　話に{08:7D}{08:25}！\n					reads: 駄目だ！　話にならない！\n
+m/MS6109.BIN	3:2A	0	0	DATA	満月だぁ！\n<wait>					
+m/MS6109.BIN	3:2D	0	0	DATA	血が騒ぐぜぇ！\n<wait>					
+m/MS6109.BIN	3:2E	0	0	DATA	オレ様は気分が{08:7F}ぜ\n<wait>					reads: オレ様は気分がいいぜ\n<wait>
+m/MS6109.BIN	4:00	0	0	DATA	キサマ　何者だ？\n<wait>					
+m/MS6109.BIN	4:01	0	0	DATA	{08:0F}に{08:1A}　欲しいのか？\n<wait>					reads: 仲間になって　欲しいのか？\n<wait>
+m/MS6109.BIN	4:02	0	0	DATA	{08:81}あ					reads: じゃあ
+m/MS6109.BIN	4:03	0	0	DATA	何か欲しいのか？\n<wait>					
+m/MS6109.BIN	4:04	0	0	DATA	あっそう\n<wait>					
+m/MS6109.BIN	4:05	0	0	DATA	{08:81}あな！\n<wait>					reads: じゃあな！\n<wait>
+m/MS6109.BIN	4:06	0	0	DATA	何が欲しい？\n<wait>					
+m/MS6109.BIN	4:07	0	0	DATA	オレは　					
+m/MS6109.BIN	4:07	1	23	1F01	だ\n今後とも　よろしく\n<wait>	.\nLooking forward to it\n<wait>				reads: 　\n @rebase-new @rebase-unmatched idx1 en={04:EF}\n @rebase-unmatched idx2 en={04:EF}. Good to have ya on board.\n<wait> @ours-2026-09-05
+m/MS6109.BIN	4:08	0	0	DATA	{08:48}{08:56}　持{08:52}きな！\n<wait>					reads: これでも　持ってきな！\n<wait>
+m/MS6109.BIN	4:09	0	0	DATA	あいにく					
+m/MS6109.BIN	4:0A	0	0	DATA	今は　持{08:52}ねぇな\n<wait>					reads: 今は　持ってねぇな\n<wait>
+m/MS6109.BIN	4:0B	0	0	DATA	代わりに\n					
+m/MS6109.BIN	4:0C	0	0	DATA	何か貰{08:28}のか？\n<wait>					reads: 何か貰えるのか？\n<wait>
+m/MS6109.BIN	4:0D	0	0	DATA	お前とは　うまくや{08:52}け{08:25}な\n<wait>					reads: お前とは　うまくやってけないな\n<wait>
+m/MS6109.BIN	4:0E	0	0	DATA	いやだね\n<wait>					
+m/MS6109.BIN	4:0F	0	0	DATA	すま{08:19}なぁ\n<wait>					reads: すまなかったなぁ\n<wait>
+m/MS6109.BIN	4:10	0	0	DATA	何の用だ？\n<wait>					
+m/MS6109.BIN	4:11	0	0	DATA	{08:76}　用が{08:7B}のか？\n<wait>					reads: まだ　用があるのか？\n<wait>
+m/MS6109.BIN	4:12	0	0	DATA	ヘッ　ムシの{08:7F}奴だ！\n<wait>					reads: ヘッ　ムシのいい奴だ！\n<wait>
+m/MS6109.BIN	4:13	0	0	DATA	付き合{08:52}られ{08:25}な\n<wait>					reads: 付き合ってられないな\n<wait>
+m/MS6109.BIN	4:14	0	0	DATA	まあ{08:7F}さ\n<wait>					reads: まあいいさ\n<wait>
+m/MS6109.BIN	4:15	0	0	DATA	オレに二度と　{08:73}事が出来{08:25}様に\n{08:4A}やるぜ！\n<wait>					reads: オレに二度と　こんな事が出来ない様に\nしてやるぜ！\n<wait>
+m/MS6109.BIN	4:16	0	0	DATA	甘いぜ！\n<wait>					
+m/MS6109.BIN	4:17	0	0	DATA	何{08:8E}{08:5F}！？\n<wait>					reads: 何するんだ！？\n<wait>
+m/MS6109.BIN	4:18	0	0	DATA	やめろぉッ！！\n<wait>					
+m/MS6109.BIN	4:19	0	0	DATA	ふざ{08:29}なよ！\n<wait>					reads: ふざけるなよ！\n<wait>
+m/MS6109.BIN	4:1A	0	0	DATA	お前と話す事{08:6A}て無い\n<wait>					reads: お前と話す事なんて無い\n<wait>
+m/MS6109.BIN	4:1B	0	0	DATA	話が{08:4B}{08:18}{08:74}か？\n<wait>					reads: 話がしたかっただけか？\n<wait>
+m/MS6109.BIN	4:1C	0	0	DATA	ケッ　や{08:2F}モン{08:7D}　や{08:52}みなよ\n<wait>					reads: ケッ　やれるモンなら　やってみなよ\n<wait>
+m/MS6109.BIN	4:1D	0	0	DATA	う、うわぁぁッ！！\n<wait>					
+m/MS6109.BIN	4:1E	0	0	DATA	何{08:56}{08:68}事を聞く　だ{08:42}許{08:4A}くれ！\n<wait>					reads: 何でもいう事を聞く　だから許してくれ！\n<wait>
+m/MS6109.BIN	4:1F	0	0	DATA	覚えてなッ！\n<wait>					
+m/MS6109.BIN	4:20	0	0	DATA	ありがとな\n<wait>					
+m/MS6109.BIN	4:21	0	0	DATA	{08:74}ど					reads: だけど
+m/MS6109.BIN	4:22	0	0	DATA	教えてやろうか\n<wait>					
+m/MS6109.BIN	4:23	0	0	DATA	{08:7F}事を＿					reads: いい事を＿
+m/MS6109.BIN	4:24	0	0	DATA	つまん{08:25}ぜ！\n<wait>					reads: つまんないぜ！\n<wait>
+m/MS6109.BIN	4:25	0	0	DATA	何だ　同じ{08:0F}が{08:40}ぞ\n<wait>					reads: 何だ　同じ仲間がいるぞ\n<wait>
+m/MS6109.BIN	4:26	0	0	DATA	{08:0F}の具合が　悪{01:29}な\n<wait>					reads: 仲間の具合が　悪そうだな\n<wait>
+m/MS6109.BIN	4:27	0	0	DATA	お、オレの{08:0F}がぁ！！！！\n<wait>					reads: お、オレの仲間がぁ！！！！\n<wait>
+m/MS6109.BIN	4:28	0	0	DATA	許せ{08:25}なぁ{02:09}・\n<wait>					reads: 許せないなぁ・・・・\n<wait>
+m/MS6109.BIN	4:29	0	0	DATA	{08:0F}は治{08:4A}やるよ\n<wait>					reads: 仲間は治してやるよ\n<wait>
+m/MS6109.BIN	4:2A	0	0	DATA	ちゃんと　治{08:4A}や{08:52}くれ\n<wait>					reads: ちゃんと　治してやってくれ\n<wait>
+m/MS6109.BIN	4:2B	0	0	DATA	{08:0F}によろしくな\n<wait>					reads: 仲間によろしくな\n<wait>
+m/MS6109.BIN	4:2C	0	0	DATA	オレは{08:0F}以外と　つるむ気は{08:25}ぜ\n<wait>					reads: オレは仲間以外と　つるむ気はないぜ\n<wait>
+m/MS6109.BIN	4:2D	0	0	DATA	{08:0F}がいっぱいだぞ　誰か抜{08:29}のか？\n<wait>					reads: 仲間がいっぱいだぞ　誰か抜けるのか？\n<wait>
+m/MS6109.BIN	4:2E	0	0	DATA	面白いな{02:09}・\n<wait>					reads: 面白いな・・・・\n<wait>
+m/MS6109.BIN	4:2F	0	0	DATA	お前の心臓{08:56}　もらおうか！\n<wait>					reads: お前の心臓でも　もらおうか！\n<wait>
+m/MS6109.BIN	4:30	0	0	DATA	お前の事は　忘れ{08:25}ぜ\n<wait>					reads: お前の事は　忘れないぜ\n<wait>
+m/MS6109.BIN	4:31	0	0	DATA	お前何かに用は{08:25}\n<wait>					reads: お前何かに用はない\n<wait>
+m/MS6109.BIN	4:32	0	6	1F02	よこしな！\n<wait>					
+m/MS6109.BIN	4:33	0	6	1F02	をくれよ！\n<wait>					
+m/MS6109.BIN	4:34	0	0	DATA	魔石を出しな！\n<wait>					
+m/MS6109.BIN	4:35	0	0	DATA	宝石で手をうつぜ！\n<wait>					
+m/MS6109.BIN	4:36	0	0	DATA	{08:73}奴と話{08:4A}も　何の意味も無い\n<wait>					reads: こんな奴と話しても　何の意味も無い\n<wait>
+m/MS6109.BIN	4:37	0	0	DATA	{01:1C}　行こうぜ！\n<wait>					reads: みんな　行こうぜ！\n<wait>
+m/MS6109.BIN	4:38	0	0	DATA	お前か！　オレの{08:0F}に酷い事し{08:2B}のは！\n<wait>					reads: お前か！　オレの仲間に酷い事してるのは！\n<wait>
+m/MS6109.BIN	4:39	0	0	DATA	オレを無視{08:8E}なぁ！！\n<wait>					reads: オレを無視するなぁ！！\n<wait>
+m/MS6109.BIN	4:3A	0	0	DATA	信用出来{08:25}ね\n<wait>					reads: 信用出来ないね\n<wait>
+m/MS6109.BIN	4:3B	0	0	DATA	オレが{08:40}前で\n何					record reaches an engine no-op opcode; verify in game; reads: オレがいる前で\n何
+m/MS6109.BIN	4:3B	1	17	1E3F	と話し{08:2B}{08:5F}ぁ？\n<wait>					record reaches an engine no-op opcode; verify in game; reads: と話してるんだぁ？\n<wait>
+m/MS6109.BIN	4:3C	0	0	DATA	邪魔者{08:52}ワケか？\n<wait>					reads: 邪魔者ってワケか？\n<wait>
+m/MS6109.BIN	4:3D	0	0	DATA	誠意をみせ{08:54}らおうか？\n<wait>					reads: 誠意をみせてもらおうか？\n<wait>
+m/MS6109.BIN	4:3E	0	0	DATA	お前　{08:7F}奴だな\n<wait>					reads: お前　いい奴だな\n<wait>
+m/MS6109.BIN	4:3F	0	0	DATA	ケッ　気分悪りぃぜ！\n<wait>					
+m/MS6109.BIN	4:40	0	0	DATA	{08:5C}{08:7F}！\n<wait>					reads: もういい！\n<wait>
+m/MS6109.BIN	4:41	0	0	DATA	{08:7A}事　言わ{08:25}でくれ\n<wait>					reads: そんな事　言わないでくれ\n<wait>
+m/MS6109.BIN	4:42	0	0	DATA	暴れてやる！\n<wait>					
+m/MS6109.BIN	4:43	0	0	DATA	{08:73}{08:5E}返すぜ\n<wait>					reads: こんなもの返すぜ\n<wait>
+m/MS6109.BIN	4:44	0	0	DATA	ぐ{02:09}・ぐおぉぉぉ！！\n<wait>					reads: ぐ・・・・ぐおぉぉぉ！！\n<wait>
+m/MS6109.BIN	4:45	0	0	DATA	何だとッ！！\n<wait>					
+m/MS6109.BIN	4:46	0	0	DATA	持{08:52}{08:25}{08:81}{08:25}か！\n<wait>					reads: 持ってないじゃないか！\n<wait>
+m/MS6109.BIN	4:47	0	0	DATA	ＭＡＧが足り{08:25}だと？\n<wait>					reads: ＭＡＧが足りないだと？\n<wait>
+m/MS6109.BIN	4:48	0	0	DATA	マッカが足り{08:25}だと？\n<wait>					reads: マッカが足りないだと？\n<wait>
+m/MS6109.BIN	4:49	0	0	DATA	仕方{08:25}な\n<wait>					reads: 仕方ないな\n<wait>
+m/MS6109.BIN	4:4A	0	0	DATA	{08:5C}	{08:5C}				reads: もう
+m/MS6109.BIN	4:4B	0	0	DATA	今度は					
+m/MS6109.BIN	4:4C	0	0	DATA	何だか面白く{08:25}なぁ\n<wait>					reads: 何だか面白くないなぁ\n<wait>
+m/MS6109.BIN	4:4D	0	0	DATA	{08:5C}一つ					reads: もう一つ
+m/MS6109.BIN	4:4E	0	0	DATA	ケッ　つまらん奴とは　付き合え{08:25}な！\n<wait>					reads: ケッ　つまらん奴とは　付き合えないな！\n<wait>
+m/MS6109.BIN	4:4F	0	0	DATA	{08:0F}に{08:4A}くれよ\n<wait>					reads: 仲間にしてくれよ\n<wait>
+m/MS6109.BIN	4:50	0	0	DATA	分{08:18}\n<wait>					reads: 分かった\n<wait>
+m/MS6109.BIN	4:51	0	0	DATA	オレを殺す気か？\n<wait>					
+m/MS6109.BIN	4:52	0	0	DATA	{08:0F}に{08:59}{08:42}　勘弁{08:4A}くれ！\n<wait>					reads: 仲間になるから　勘弁してくれ！\n<wait>
+m/MS6109.BIN	4:53	0	0	DATA	馬鹿野郎がぁ！\n<wait>					
+m/MS6109.BIN	4:54	0	0	DATA	せめて　{08:48}を\n<wait>					reads: せめて　これを\n<wait>
+m/MS6109.BIN	4:55	0	0	DATA	やる気は無いのか？\n<wait>					
+m/MS6109.BIN	4:56	0	0	DATA	{08:0F}を捨てろ{08:52}？\n<wait>					reads: 仲間を捨てろって？\n<wait>
+m/MS6109.BIN	4:57	0	0	DATA	{08:48}をやる{08:42}　勘弁{08:4A}くれ！\n<wait>					reads: これをやるから　勘弁してくれ！\n<wait>
+m/MS6109.BIN	4:58	0	0	DATA	今更　何言いやがる！\n<wait>					
+m/MS6109.BIN	4:59	0	0	DATA	過去の事は{08:5C}{08:7F}よ\n<wait>					reads: 過去の事はもういいよ\n<wait>
+m/MS6109.BIN	4:5A	0	0	DATA	話を聞いてやるぜ\n<wait>					
+m/MS6109.BIN	4:5B	0	0	DATA	裏切{08:51}な！\n<wait>					reads: 裏切ったな！\n<wait>
+m/MS6109.BIN	4:5C	0	0	DATA	聞{08:64}事{08:7B}な\n<wait>					reads: 聞いた事あるな\n<wait>
+m/MS6109.BIN	4:5D	0	0	DATA	さあ　知ら{08:25}なあ\n<wait>					reads: さあ　知らないなあ\n<wait>
+m/MS6109.BIN	4:5E	0	0	DATA	カンに障るヤツだ！\n<wait>					
+m/MS6109.BIN	4:5F	0	0	DATA	覚えておくぜ！\n<wait>					
+m/MS6109.BIN	4:60	0	0	DATA	オレは　{08:90}{08:56}{08:7F}{08:5F}な？\n<wait>					reads: オレは　どうでもいいんだな？\n<wait>
+m/MS6109.BIN	4:61	0	0	DATA	あー？　お前み{08:4E}なヤツが？\n<wait>					reads: あー？　お前みたいなヤツが？\n<wait>
+m/MS6109.BIN	4:62	0	0	DATA	オレを倒{08:2A}か？\n<wait>					reads: オレを倒せるか？\n<wait>
+m/MS6109.BIN	4:63	0	0	DATA	許{08:4A}やる\n<wait>					reads: 許してやる\n<wait>
+m/MS6109.BIN	4:64	0	0	DATA	偽善者め！\n<wait>					
+m/MS6109.BIN	4:65	0	0	DATA	可哀相なヤツ\n<wait>					
+m/MS6109.BIN	4:66	0	0	DATA	話に{08:6A}ねぇな！\n<wait>					reads: 話になんねぇな！\n<wait>
+m/MS6109.BIN	4:67	0	0	DATA	せいぜい頑張りな！\n<wait>					
+m/MS6109.BIN	4:68	0	0	DATA	{08:82}し					reads: ただし
+m/MS6109.BIN	4:69	0	0	DATA	噂通りの					
+m/MS6109.BIN	4:6A	0	0	DATA	酷いヤツだな！\n<wait>					
+m/MS6109.BIN	4:6B	0	0	DATA	面白れぇなぁ！　記憶喪失{08:52}ヤツか？\n<wait>					reads: 面白れぇなぁ！　記憶喪失ってヤツか？\n<wait>
+m/MS6109.BIN	4:6C	0	0	DATA	へーえ\n<wait>					
+m/MS6109.BIN	4:6D	0	0	DATA	笑わ{08:67}く{08:2F}ぜ\n<wait>					reads: 笑わせてくれるぜ\n<wait>
+m/MS6109.BIN	4:6E	0	0	DATA	こう{08:4A}やらぁ！\n<wait>					reads: こうしてやらぁ！\n<wait>
+m/MS6109.BIN	4:6F	0	0	DATA	嘘をつくな！\n<wait>					
+m/MS6109.BIN	4:70	0	0	DATA	本当か？\n<wait>					
+m/MS6109.BIN	4:71	0	0	DATA	信用{08:4A}やる\n<wait>					reads: 信用してやる\n<wait>
+m/MS6109.BIN	4:72	0	0	DATA	まずは					
+m/MS6109.BIN	4:73	0	0	DATA	{08:87}で					reads: ところで
+m/MS6109.BIN	4:74	0	0	DATA	残念だな\n<wait>					
+m/MS6109.BIN	4:75	0	0	DATA	お前が{01:29}{08:6A}てな\n<wait>					reads: お前がそうだなんてな\n<wait>
+m/MS6109.BIN	4:76	0	0	DATA	大{08:4B}事ねぇなぁ！\n<wait>					reads: 大した事ねぇなぁ！\n<wait>
+m/MS6109.BIN	4:77	0	0	DATA	一緒に連れて{08:52}くれよ！\n<wait>					reads: 一緒に連れてってくれよ！\n<wait>
+m/MS6109.BIN	4:78	0	0	DATA	{08:0F}は{01:32}か？\n<wait>					reads: 仲間は大丈夫か？\n<wait>
+m/MS6109.BIN	4:79	0	0	DATA	{08:5B}な！\n<wait>					reads: またな！\n<wait>
+m/MS6109.BIN	4:7A	0	0	DATA	楽し{08:18}ぜ\n<wait>					reads: 楽しかったぜ\n<wait>
+m/MS6109.BIN	4:7B	0	0	DATA	死にやがれッ！\n<wait>					
+m/MS6109.BIN	4:7C	0	0	DATA	恵んでやるよ\n<wait>					
+m/MS6109.BIN	4:7D	0	0	DATA	お前は　お前だ　何も変わんねぇよ\n<wait>					
+m/MS6109.BIN	4:7E	0	0	DATA	ガンを置きな！\n<wait>					
+m/MS6109.BIN	4:7F	0	0	DATA	も{08:53}近くに来いよ！\n<wait>					reads: もっと近くに来いよ！\n<wait>
+m/MS6109.BIN	4:80	0	0	DATA	こっち{08:42}行くぜぇ！\n<wait>					reads: こっちから行くぜぇ！\n<wait>
+m/MS6109.BIN	4:81	0	0	DATA	素直だな\n<wait>					
+m/MS6109.BIN	4:82	0	0	DATA	お前何かに言わ{08:2F}とは\n<wait>					reads: お前何かに言われるとは\n<wait>
+m/MS6109.BIN	4:83	0	0	DATA	{08:48}で安心{08:4A}　話{08:2A}なぁ！\n<wait>					reads: これで安心して　話せるなぁ！\n<wait>
+m/MS6109.BIN	4:84	0	0	DATA	信用出来{08:25}のか？\n<wait>					reads: 信用出来ないのか？\n<wait>
+m/MS6109.BIN	4:85	0	0	DATA	{08:0F}が黙っちゃ{08:24}ぜ\n<wait>					reads: 仲間が黙っちゃいないぜ\n<wait>
+m/MS6109.BIN	4:86	0	0	DATA	{08:4D}{08:56}{08:7F}のか？\n<wait>					reads: それでもいいのか？\n<wait>
+m/MS6109.BIN	4:87	0	0	DATA	何てヤツ\n<wait>					
+m/MS6109.BIN	4:88	0	0	DATA	そう　{08:4D}で{08:7F}ぜぇ！\n<wait>					reads: そう　それでいいぜぇ！\n<wait>
+m/MS6109.BIN	4:89	0	0	DATA	{08:7F}度胸し{08:2B}なぁ！\n<wait>					reads: いい度胸してるなぁ！\n<wait>
+m/MS6109.BIN	4:8A	0	0	DATA	んな事{08:8C}とは　思{08:51}ぜ！\n<wait>					reads: んな事だろうとは　思ったぜ！\n<wait>
+m/MS6109.BIN	4:8B	0	0	DATA	考え{08:54}{08:7F}ぜ\n<wait>					reads: 考えてもいいぜ\n<wait>
+m/MS6109.BIN	4:8C	0	0	DATA	んな暇は無いなあ！\n<wait>					
+m/MS6109.BIN	4:8D	0	0	DATA	関係無いね\n<wait>					
+m/MS6109.BIN	4:8E	0	0	DATA	オレを合体に使おう{08:52}　魂胆か？\n<wait>					reads: オレを合体に使おうって　魂胆か？\n<wait>
+m/MS6109.BIN	4:8F	0	0	DATA	{08:7A}に　困っ{08:2B}のかよ？\n<wait>					reads: そんなに　困ってるのかよ？\n<wait>
+m/MS6109.BIN	4:90	0	0	DATA	何で　お前{08:6A}かに？\n<wait>					reads: 何で　お前なんかに？\n<wait>
+m/MS6109.BIN	4:91	0	0	DATA	ククククッ\n<wait>					
+m/MS6109.BIN	4:92	0	0	DATA	も{08:53}くれ\n<wait>					reads: もっとくれ\n<wait>
+m/MS6109.BIN	4:93	0	0	DATA	イカレ野郎が！\n<wait>					
+m/MS6109.BIN	4:94	0	0	DATA	お前　					
+m/MS6109.BIN	4:94	1	12	1F01	か？　やっぱりな！\n{08:90}だぁ調子は？\n<wait>	, is it? Knew it!\nHow's it goin'?\n<wait>				reads: か？　やっぱりな！\nどうだぁ調子は？\n<wait>; reads: か？　やっぱりな！\nどうだぁ調子は？\n<wait> @rebase-tagdiff @seamfix-2026-09-05
+m/MS6109.BIN	4:95	0	0	DATA	来るなッ！！\n<wait>					
+m/MS6109.BIN	4:96	0	0	DATA	見逃{08:4A}やるぜ！\n<wait>					reads: 見逃してやるぜ！\n<wait>
+m/MS6109.BIN	4:97	0	0	DATA	オレの力見{08:67}やる！\n<wait>					reads: オレの力見せてやる！\n<wait>
+m/MS6109.BIN	4:98	0	0	DATA	ど{01:28}こ{01:28}　血祭りだぁ！\n<wait>	Every last one of you, a bloodbath!\n<wait>				reads: どいつもこいつも　血祭りだぁ！\n<wait>; reads: どいつもこいつも　血祭りだぁ！\n<wait> @ours-2026-09-05
+m/MS6109.BIN	4:99	0	0	DATA	話{08:86}{08:29}なよ					reads: 話しかけるなよ
+m/MS6109.BIN	4:99	1	16	1FFA	・・	..				@ours-2026-09-05
+m/MS6109.BIN	4:99	2	22	1FFB	気分が悪い{08:5F}					reads: 気分が悪いんだ
+m/MS6109.BIN	4:99	3	36	1FFA	{02:09}・\n	....\n				reads: ・・・・\n; reads: ・・・・\n @ours-2026-09-05
+m/MS6109.BIN	4:9A	0	0	DATA	お前のお情けは　いらねぇよ！\n<wait>					
+m/MS6109.BIN	4:9B	0	0	DATA	気持ち{08:7F}夜だなぁ！\n<wait>					reads: 気持ちいい夜だなぁ！\n<wait>
+m/MS6109.BIN	4:9C	0	0	DATA	同情{08:6A}か受{08:43}くねぇ！\n<wait>					reads: 同情なんか受けたくねぇ！\n<wait>
+m/MS6109.BIN	4:9D	0	0	DATA	何も聞{08:1E}くねぇなぁ！\n<wait>					reads: 何も聞きたくねぇなぁ！\n<wait>
+m/MS6109.BIN	4:9E	0	0	DATA	{01:3B}は					reads: さっきは
+m/MS6109.BIN	4:9F	0	0	DATA	{08:7A}物{08:81}　オレは騙{03:0C}{08:25}ぜぇ！\n<wait>					reads: そんな物じゃ　オレは騙されないぜぇ！\n<wait>
+m/MS6109.BIN	8:4D	0	0	DATA	や{08:51}ぜ！\n<wait>					reads: やったぜ！\n<wait>
+m/MS6109.BIN	8:4E	0	0	DATA	たまんねぇぜ　お前は最高だ！\n<wait>					
+m/MS6109.BIN	8:4F	0	0	DATA	{08:45}{08:74}の話{08:74}どよ\n<wait>					reads: ここだけの話だけどよ\n<wait>
+m/MS6109.BIN	8:50	0	0	DATA	お前は　敵み{08:4E}だな\n<wait>					reads: お前は　敵みたいだな\n<wait>
+m/MS6109.BIN	8:51	0	0	DATA	お前は　オレと同じ{08:0F}だな\n<wait>					reads: お前は　オレと同じ仲間だな\n<wait>
+m/MS6109.BIN	8:52	0	0	DATA	オレの救世主様！\n<wait>					
+m/MS6109.BIN	8:53	0	0	DATA	{08:90}か　{08:48}を！\n<wait>					reads: どうか　これを！\n<wait>
+m/MS6109.BIN	8:54	0	0	DATA	ケッ！\n正義の{03:04}み{08:4E}な　ふりをしやが{08:52}！！\n<wait>					reads: ケッ！\n正義の味方みたいな　ふりをしやがって！！\n<wait>
+m/MS6109.BIN	8:55	0	0	DATA	名乗ら{08:25}{08:52}か？\n<wait>					reads: 名乗らないってか？\n<wait>
+m/MS6109.BIN	8:56	0	0	DATA	ま　{08:4D}も悪くねぇ\n<wait>					reads: ま　それも悪くねぇ\n<wait>
+m/MS6109.BIN	8:28	0	0	DATA	{08:33}ましい{08:46}だなぁ！\n<wait>					reads: 勇ましいことだなぁ！\n<wait>
+m/MS6109.BIN	8:33	0	0	DATA	{02:00}の様な　民衆の犬{08:6A}ざ\n大人しく{08:4A}いれば{08:7F}{08:5F}よ！\n<wait>					reads: デビルバスターの様な　民衆の犬なんざ\n大人しくしていればいいんだよ！\n<wait>
+m/MS6109.BIN	10:14	0	0	DATA	ケッ！　見損{08:16}ぜ！\n<wait>					reads: ケッ！　見損なったぜ！\n<wait>
+m/MS6109.BIN	11:0D	0	0	DATA	民衆の犬の分際で！\n<wait>					
+m/MS6109.BIN	13:01	0	0	DATA	キサマは　テメェの信じる道を行く為にゃ\n多少の犠牲は　やむを得{08:25}{02:09}{08:52}ぇ\n考えの持ち主か？\n<wait>					reads: キサマは　テメェの信じる道を行く為にゃ\n多少の犠牲は　やむを得ない・・・ってぇ\n考えの持ち主か？\n<wait>
+m/MS6109.BIN	13:02	0	0	DATA	{08:63}さえ良ければ　{08:4D}で{08:7F}のかよぉ？\n<wait>					reads: 自分さえ良ければ　それでいいのかよぉ？\n<wait>
+m/MS6109.BIN	13:07	0	0	DATA	{01:3C}　キサマに　聞いてお{08:1E}い\n<wait>					reads: ひとつ　キサマに　聞いておきたい\n<wait>
+m/MS6109.BIN	13:0C	0	0	DATA	{02:03}のヤツら以外の　{02:0B}の中にも\n{08:76}　キサマの様な奴が{08:40}とはねぇ！\n<wait>					reads: レジスタンスのヤツら以外の　人間の中にも\nまだ　キサマの様な奴がいるとはねぇ！\n<wait>
+m/MS6109.BIN	13:0E	0	0	DATA	テメェ{02:09}{08:5D}や　					reads: テメェ・・・もしや　
+m/MS6109.BIN	13:0E	1	20	1F01	か？\n<wait>	?\n<wait>				reads: か？\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS6109.BIN	13:0F	0	0	DATA	はん{02:09}・やっぱ　そうか！\n<wait>					reads: はん・・・・やっぱ　そうか！\n<wait>
+m/MS6109.BIN	13:10	0	0	DATA	{08:0B}合体もか？\n<wait>					reads: 悪魔合体もか？\n<wait>
+m/MS6109.BIN	13:11	0	0	DATA	{08:4D}は　力を求{08:2E}{08:42}{08:52}ヤツか？\n<wait>					reads: それは　力を求めるからってヤツか？\n<wait>
+m/MS6109.BIN	13:12	0	0	DATA	何な{08:5F}よ？\n<wait>					reads: 何なんだよ？\n<wait>
+m/MS6109.BIN	13:13	0	0	DATA	ケッ　いきが{08:51}{08:87}でよぉ　考えてみろよ\nキサマ{01:3A}に　何が出来る{08:52}ぇ？\n<wait>					reads: ケッ　いきがったところでよぉ　考えてみろよ\nキサマひとりに　何が出来るってぇ？\n<wait>
+m/MS6109.BIN	14:0F	0	0	DATA	貴様　死は恐ろしいか？\n<wait>					
+m/MS6109.BIN	14:10	0	0	DATA	{08:7D}　{08:79}愛{08:8E}者の為に\n命張る事も　恐ろしくて出来{08:25}と言うのか？\n<wait>					reads: なら　その愛する者の為に\n命張る事も　恐ろしくて出来ないと言うのか？\n<wait>
+m/MS6109.BIN	14:11	0	0	DATA	弱者には　死{08:7B}のみだ！！\n<wait>					reads: 弱者には　死あるのみだ！！\n<wait>
+m/MS6109.BIN	14:12	0	0	DATA	何故　恐れ{08:25}？\n<wait>					reads: 何故　恐れない？\n<wait>

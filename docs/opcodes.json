@@ -3995,52 +3995,40 @@
    "encoding": "1F 0D",
    "implemented": true,
    "handler": "0x00430201",
-   "operands": [
-    {
-     "kind": "expr",
-     "size": "var"
-    }
-   ],
-   "fixed_size": null,
-   "variable": true,
+   "operands": [],
+   "fixed_size": 0,
+   "variable": false,
    "has_offset": false,
    "offset_slots": [],
    "refs_record": false,
-   "uses": 713
+   "uses": 713,
+   "note": "handler 0x00430201 pushes a constant and calls 0x00433490, which reaches no operand reader -- unlike a real rel16 opcode, whose reader (0x00433EC0) calls into the 0x438F.. family and adds the result to the PC.  The recovered table gave this an expr it never consumes; the leftover bytes of the untiled records are literally `1f 0d 1f e5`, i.e. the next opcode.  Removing it tiles 41 more records and breaks none."
   },
   "0x10E": {
    "encoding": "1F 0E",
    "implemented": true,
    "handler": "0x0043020D",
-   "operands": [
-    {
-     "kind": "expr",
-     "size": "var"
-    }
-   ],
-   "fixed_size": null,
-   "variable": true,
+   "operands": [],
+   "fixed_size": 0,
+   "variable": false,
    "has_offset": false,
    "offset_slots": [],
    "refs_record": false,
-   "uses": 137
+   "uses": 137,
+   "note": "handler 0x0043020D pushes a constant and calls 0x00433490, which reaches no operand reader -- unlike a real rel16 opcode, whose reader (0x00433EC0) calls into the 0x438F.. family and adds the result to the PC.  The recovered table gave this an expr it never consumes; the leftover bytes of the untiled records are literally `1f 0d 1f e5`, i.e. the next opcode.  Removing it tiles 41 more records and breaks none."
   },
   "0x10F": {
    "encoding": "1F 0F",
    "implemented": true,
    "handler": "0x00430219",
-   "operands": [
-    {
-     "kind": "expr",
-     "size": "var"
-    }
-   ],
-   "fixed_size": null,
-   "variable": true,
+   "operands": [],
+   "fixed_size": 0,
+   "variable": false,
    "has_offset": false,
    "offset_slots": [],
    "refs_record": false,
-   "uses": 62
+   "uses": 62,
+   "note": "handler 0x00430219 pushes a constant and calls 0x00433490, which reaches no operand reader -- unlike a real rel16 opcode, whose reader (0x00433EC0) calls into the 0x438F.. family and adds the result to the PC.  The recovered table gave this an expr it never consumes; the leftover bytes of the untiled records are literally `1f 0d 1f e5`, i.e. the next opcode.  Removing it tiles 41 more records and breaks none."
   },
   "0x110": {
    "encoding": "1F 10",
