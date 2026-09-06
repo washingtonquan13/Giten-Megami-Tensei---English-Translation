@@ -1150,3 +1150,61 @@ def test_the_builder_still_relocates_every_branch_correctly():
         assert getattr(rep, "tail_anchored", 0) == 0, rel
         n += 1
     assert n > 20, n
+
+
+def test_the_japanese_rule_reads_rows_the_way_the_engine_does():
+    """`japanese` must expand pool calls with the ENGLISH column, not the Japanese.
+
+    This is the whole point of the rule.  A row whose English is the bare call
+    `{08:26}` is correct: the pool renders it "Yes".  Expanding with
+    `pool.reading` -- the Japanese pool -- says はい and condemns 199 working
+    Yes/No prompts.  Meanwhile a row that IS translated can still ship Japanese,
+    because its own punctuation sits beside a call that renders English:
+    `{08:03}：` shows "Emi：" with a full-width colon.
+    """
+    from giten import check_v2, findings, tables
+
+    def row(**kw):
+        r = tables.Row("m/MS0000.BIN", "0:00", 0, 0, kw.pop("tag", "1FD3"),
+                       kw.pop("jp", "x"), kw.pop("en", ""))
+        for k, v in kw.items():
+            setattr(r, k, v)
+        return r
+
+    pools = [
+        tables.Row("m/MS7F07.BIN", "0:26", 0, 0, "DATA", "はい", "Yes"),
+        tables.Row("m/MS7F07.BIN", "0:03", 0, 0, "DATA", "英美", "Emi"),
+        tables.Row("m/MS7F07.BIN", "0:72", 0, 0, "DATA", "‥‥", ""),   # untranslated
+    ]
+    ep = check_v2.english_pool(pools)
+    assert check_v2.render_english("{08:26}", ep) == "Yes"
+    assert check_v2.render_english("{08:03}：", ep) == "Emi："
+    # an untranslated entry falls back to its Japanese, which is the point
+    assert check_v2.render_english("{08:72}", ep) == "‥‥"
+
+    def flagged(en, jp="x", tag="1FD3"):
+        rep = findings.Report()
+        check_v2.check_rows(rep, pools + [row(jp=jp, en=en, tag=tag, status="draft")])
+        return [f for f in rep.errors + rep.warnings if f.rule == "japanese"]
+
+    assert not flagged("{08:26}", jp="{08:26}"), "a bare call rendering English is fine"
+    assert not flagged("Just plain English."), "ASCII must not be flagged"
+    assert flagged("{08:03}：", jp="{08:03}："), "a full-width colon reaches the screen"
+    assert flagged("{08:72}", jp="{08:72}"), "an untranslated pool entry reaches the screen"
+
+
+def test_the_japanese_rule_sees_rows_whose_en_merely_copies_their_jp():
+    """Those are the rows that ship Japanese, and they are not `edited`.
+
+    `check_rows` skips a row that is not `edited`, and a row whose `en` equals
+    its `jp` is not.  Running the rule after that gate found 1 problem in the
+    whole corpus; running it before found 305.
+    """
+    from giten import check_v2, findings, tables
+
+    pools = [tables.Row("m/MS7F07.BIN", "0:72", 0, 0, "DATA", "‥‥", "")]
+    r = tables.Row("m/MS0000.BIN", "0:00", 0, 0, "1FD3", "{08:72}", "{08:72}")
+    assert not r.edited, "a row whose en copies its jp is not edited"
+    rep = findings.Report()
+    check_v2.check_rows(rep, pools + [r])
+    assert [f for f in rep.errors + rep.warnings if f.rule == "japanese"]

@@ -24,16 +24,25 @@ Rules
 ``tokens``     the ``en`` **adds** a pool call the ``jp`` does not have, naming a
                record nothing has checked exists.  Dropping one is normal and is
                not reported: an English line spells the word out.
+``japanese``   the row still puts Japanese on screen once its pool calls are
+               expanded *with the English column*.  A row can be "translated"
+               and still fail this: its own full-width colon beside a call that
+               does render English (`{08:03}：` -> "Emi："), or a pool entry
+               translated to itself, which 80 rows inherited from one such entry.
+               Expanding with :func:`pool.reading` instead -- the Japanese pool --
+               cannot see any of it, and wrongly condemns 199 working Yes/No
+               prompts whose English is the bare call ``{08:26}``.
 
 ``identity``, ``decode``, ``tile``, ``encode``, ``editable`` and ``pname`` are
-errors; the width family, ``missing`` and ``tokens`` are warnings, because the
-engine auto-wraps rather than clipping (``docs/format-notes.md`` §3.2) and an
+errors; the width family, ``missing``, ``tokens`` and ``japanese`` are warnings,
+because the engine auto-wraps rather than clipping (``docs/format-notes.md`` §3.2) and an
 over-wide line is cosmetic.
 """
 from __future__ import annotations
 
 import collections
 import os
+import re
 
 from . import findings as check
 from . import script
@@ -155,6 +164,48 @@ def verify_tree(out_dir: str, root=None, report: "Report | None" = None) -> dict
 def _where(row) -> str:
     return "%s %s[%d]" % (row.file, row.rec, row.idx)
 
+#: a pool call, `{01:2D}` .. `{08:7F}`
+_CALL = re.compile(r"\{(0[1-8]):([0-9A-F]{2})\}")
+#: kana and CJK, plus the full-width punctuation that reads as Japanese on screen
+_JAPANESE = re.compile("[぀-ヿ㐀-鿿ｦ-ﾟ"
+                       "！？：；‥、。]")
+#: pool index -> the file holding it; pool 1 is m/MS7F00, pool 8 is m/MS7F07
+_POOL_FILE = {"%02d" % (i + 1): "m/MS7F%02X.BIN" % i for i in range(8)}
+_POOL_REL = {v: k for k, v in _POOL_FILE.items()}
+
+
+def english_pool(rows) -> dict:
+    """``{(pool, entry): text}`` -- what each pool call puts on screen.
+
+    The English column when it has one, the Japanese when it does not, because
+    that is what the player sees either way.
+    """
+    out = {}
+    for r in rows:
+        pi = _POOL_REL.get(r.file)
+        if pi is None:
+            continue
+        out[(pi, r.rec.split(":")[-1])] = r.en or r.jp
+    return out
+
+
+def render_english(text: str, epool: dict, depth: int = 0) -> str:
+    """Expand every pool call the way the ENGINE will, using English entries.
+
+    Not to be confused with :func:`pool.reading`, which expands with the
+    *Japanese* pool -- that answers "what does a Japanese player see" and cannot
+    answer "does this still show Japanese".  Reading rows the Japanese way once
+    made 199 working Yes/No prompts look broken: their English is the bare call
+    ``{08:26}``, and the pool renders it "Yes".
+    """
+    if depth > 6:
+        return text
+    def sub(m):
+        e = epool.get((m.group(1), m.group(2)))
+        return m.group(0) if e is None else render_english(e, epool, depth + 1)
+    return _CALL.sub(sub, text)
+
+
 def check_rows(report: Report, rows, pools=None,
                line_columns=width.LINE_COLUMNS, page_rows=width.PAGE_ROWS) -> None:
     # (s) workflow: an en is only real once someone has marked it, and an en that
@@ -167,6 +218,7 @@ def check_rows(report: Report, rows, pools=None,
             report.add("status", check.ERROR, _where(row),
                        "en equals ref_en; mark it reviewed or change it")
 
+    epool = english_pool(rows)
     for r in rows:
         where = "%s %s[%d]" % (r.file, r.rec, r.idx)
         blocked = script.NOEDIT_NOTE in r.note
@@ -175,6 +227,22 @@ def check_rows(report: Report, rows, pools=None,
             if not any(m in r.note.lower() for m in SKIP_MARKERS):
                 report.add("missing", WARN, where, "untranslated")
             continue
+
+        # What actually reaches the screen.  Checked BEFORE the `edited` gate:
+        # a row whose en merely copies its jp is not "edited", and those are
+        # exactly the ones that ship Japanese.  A row can also be genuinely
+        # translated and still fail -- its own full-width colon beside a call
+        # that does render English (`{08:03}：` -> "Emi：") -- or inherit the
+        # fault from a pool entry translated to itself, as 80 rows did from
+        # m/MS7F07 0:72 (`‥‥` -> `‥‥`).
+        if r.en and not blocked and r.tag != extract_v2.UNTILED_TAG:
+            shown = render_english(r.en, epool)
+            stray = _JAPANESE.findall(shown)
+            if stray:
+                report.add("japanese", WARN, where,
+                           "reaches the screen as %r -- still shows %s"
+                           % (shown[:48], " ".join(sorted(set(stray)))))
+
         if not r.edited:
             continue
 
