@@ -385,7 +385,21 @@ def test_tokenizer_reproduces_the_published_tiling_numbers():
     # carries the engine's own length, and at 529 sites the engine took exactly 6
     # bytes where the model claimed 9-12.  Engine boundary agreement over 30 802
     # traced token PCs moved 93.33%% -> 96.83%%, and `impossible` 46 -> 43.
-    assert (ok, stray, unimpl, overrun) == (19424, 1099, 93, 74), (ok, stray, unimpl, overrun)
+    # 2026-09-06, the last four of that same family: 19 424 / 1 099 / 93 / 74 ->
+    # 19 425 / 1 099 / 93 / 73.  `0x152`-`0x155` push $1 into 0x004335E0 exactly
+    # as `0x14C`-`0x151` do, and were left carrying the extra `expr` -- six of the
+    # ten mode-1 entries had been fixed and the last four missed.  Found by
+    # sweeping the dispatch table for every `push <imm8>; call <thunk>` that
+    # forwards to that worker (all 22 of them, 11 per mode), which is what
+    # `test_the_0x4335e0_family_splits_cleanly_into_mode_0_and_mode_1` now pins.
+    # The counters barely move because the records still *tiled* before -- they
+    # tiled wrongly.  The witness is `m/MS00DB` c0 r28: six iterations of one
+    # block, identical but for a counter running 0x16 down to 0x11, exactly 25
+    # bytes apart.  The old model spent 29 bytes an iteration and read the
+    # counters themselves as opcodes 0x15, 0x14, 0x13, 0x12, 0x11.  rel16 landing
+    # against the whole container image rose 92.52%% -> 92.60%%, unrelocatable
+    # branches fell 14 -> 5, and `m/MS00D1` gained a record that never tiled.
+    assert (ok, stray, unimpl, overrun) == (19425, 1099, 93, 73), (ok, stray, unimpl, overrun)
 
 
 def test_operands_are_never_text():
@@ -1482,3 +1496,66 @@ def test_the_expression_table_is_the_engines_own_two_tables():
 
     # the one that matters: 0x0F reads a u16, exactly like 0x01
     assert nodes["0x0f"] == ["u16"] == nodes["0x01"]
+
+
+def test_the_0x4335e0_family_splits_cleanly_into_mode_0_and_mode_1():
+    """22 opcodes share one worker; the mode immediate decides the operand list.
+
+    `0x004335E0` reads two u8 via `0x004335A0`, then `0x004335C0` -- which reads
+    an expression **only when its argument is 0** -- then always one more.  So
+    mode 0 is `u8 u8 expr expr` and mode 1 is `u8 u8 expr`, and every entry
+    reaching it is `push <mode>; call <thunk>` with the mode as a literal.
+
+    `1E C4` (0x2C4) was corrected this way earlier.  Sweeping the whole dispatch
+    table for the same shape then found `0x152`-`0x155` still carrying the extra
+    expression -- six of the ten mode-1 entries had been fixed and the last four
+    missed, which no counter noticed because the records still tiled.
+
+    The corpus witness is `m/MS00DB` c0 r28: six iterations of one block, byte
+    for byte identical except a counter running 0x16 down to 0x11, **exactly 25
+    bytes apart**.  The tokens of one iteration must sum to 25, and they do only
+    when `0x153` is six bytes -- with the old model the walk drifted and read the
+    loop counters themselves as opcodes 0x15, 0x14, 0x13, 0x12, 0x11.
+
+    Kept as a tripwire because the ten mode-1 entries look interchangeable in a
+    table and six of them were already right.
+    """
+    import io
+    import json
+    import os
+    import struct
+
+    from giten import paths
+    from giten.exe import patch
+    from giten.exe.pe import PE
+
+    img = patch.apply(open(patch.ORG, "rb").read(), "release")
+    pe = PE(img, "o")
+    worker = 0x004335E0
+
+    def rel32(va, off):
+        return va + off + 5 + struct.unpack_from("<i", img, pe.va2off(va) + off + 1)[0]
+
+    def forwards(fn):
+        b = img[pe.va2off(fn):pe.va2off(fn) + 24]
+        return any(b[k] == 0xE8 and rel32(fn, k) == worker for k in range(16))
+
+    ops = json.load(io.open(os.path.join(paths.REPO_ROOT, "docs", "opcodes.json"),
+                            encoding="utf-8"))["opcodes"]
+    found = {}
+    for idx in range(0x2FE):
+        h = struct.unpack_from("<I", img, pe.va2off(0x004318B0 + idx * 4))[0]
+        b = img[pe.va2off(h):pe.va2off(h) + 16]
+        if b[0] != 0x6A or b[2] != 0xE8:          # push imm8 ; call
+            continue
+        if not forwards(rel32(h, 2)):
+            continue
+        found[idx] = b[1]
+
+    assert len(found) == 22, sorted("0x%03X" % i for i in found)
+    assert sorted(found.values()) == [0] * 11 + [1] * 11, found
+
+    for idx, mode in sorted(found.items()):
+        want = ["u8", "u8", "expr"] if mode else ["u8", "u8", "expr", "expr"]
+        got = [o["kind"] for o in ops["0x%03X" % idx]["operands"]]
+        assert got == want, ("0x%03X" % idx, mode, got, want)
