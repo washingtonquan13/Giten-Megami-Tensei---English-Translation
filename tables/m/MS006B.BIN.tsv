@@ -3,252 +3,252 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS006B.BIN	0:00	0	4	1FEC	1.	1.				@ours-2026-09-05
+m/MS006B.BIN	0:00	0	4	1FEC	1.	1.			draft	@ours-2026-09-05
 m/MS006B.BIN	0:00	1	20	1F03						
-m/MS006B.BIN	0:00	2	34	1F01	：明日は頑張りま{08:80}ね\n	: Let's do our best tomorrow\n				reads: ：明日は頑張りましょうね\n; reads: ：明日は頑張りましょうね\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS006B.BIN	0:00	2	34	1F01	：明日は頑張りま{08:80}ね\n	: Let's do our best tomorrow\n	{04:FE}: Let's do our best tomorrow\n	ours	draft	reads: ：明日は頑張りましょうね\n; reads: ：明日は頑張りましょうね\n @rebase-tagdiff @seamfix-2026-09-05
 m/MS006B.BIN	0:00	3	76	1F03						
-m/MS006B.BIN	0:00	4	90	1F01	：一緒に合格うれしいな。\n	: I'm glad we passed together.\n				reads: ：一緒に合格うれしいな。\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS006B.BIN	0:00	4	90	1F01	：一緒に合格うれしいな。\n	: I'm glad we passed together.\n	{04:FE}: I'm happy we passed together.\n	ours	draft	reads: ：一緒に合格うれしいな。\n @rebase-tagdiff @seamfix-2026-09-05
 m/MS006B.BIN	0:00	5	136	1F03						
-m/MS006B.BIN	0:00	6	150	1F01	：気を落とさ{08:25}でね{08:72}\n	: Don't let it get you down......\n				reads: ：気を落とさないでね‥‥\n; reads: ：気を落とさないでね‥‥\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS006B.BIN	0:00	6	150	1F01	：気を落とさ{08:25}でね{08:72}\n	: Don't let it get you down......\n	{04:FE}: Don't let it get you down......\n	ours	draft	reads: ：気を落とさないでね‥‥\n; reads: ：気を落とさないでね‥‥\n @rebase-tagdiff @seamfix-2026-09-05
 m/MS006B.BIN	0:00	7	192	1F03						
-m/MS006B.BIN	0:00	8	206	1F01	：ちょ{08:53}{08:74}{08:72}\n	: Just a little......\n				reads: ：ちょっとだけ‥‥\n; reads: ：ちょっとだけ‥‥\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS006B.BIN	0:00	8	206	1F01	：ちょ{08:53}{08:74}{08:72}\n	: Just a little......\n	{04:FE}: Just a little bit......\n	ours	draft	reads: ：ちょっとだけ‥‥\n; reads: ：ちょっとだけ‥‥\n @rebase-tagdiff @seamfix-2026-09-05
 m/MS006B.BIN	0:00	9	240	1F03						
-m/MS006B.BIN	0:00	10	248	1A	{01:00}：や{08:51}な！　					reads: 早坂達也：やったな！　
-m/MS006B.BIN	0:00	11	268	1F01	！\n	!\n				reads: ！\n @rebase-tagdiff @ours-2026-09-05
+m/MS006B.BIN	0:00	10	248	1A	{01:00}：や{08:51}な！　		{01:00}: You did it!  	ours		reads: 早坂達也：やったな！　
+m/MS006B.BIN	0:00	11	268	1F01	！\n	!\n	{04:FF}!\n	ours	draft	reads: ！\n @rebase-tagdiff @ours-2026-09-05
 m/MS006B.BIN	0:00	12	292	1F03						
-m/MS006B.BIN	0:00	13	300	1A	{01:00}：{08:7A}に気を落とすなよ\n					reads: 早坂達也：そんなに気を落とすなよ\n
+m/MS006B.BIN	0:00	13	300	1A	{01:00}：{08:7A}に気を落とすなよ\n		{01:00}: Don't let it get you down that much\n	ours		reads: 早坂達也：そんなに気を落とすなよ\n
 m/MS006B.BIN	0:00	14	344	1F03						
-m/MS006B.BIN	0:00	15	352	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:00	15	352	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:00}: Actually, there's something I want to ask......\n	ours		reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:00	16	398	1F03						
-m/MS006B.BIN	0:00	17	406	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:00	17	406	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:02}: Actually, there's something I want to ask......\n	ours		reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:00	18	452	1F03						
-m/MS006B.BIN	0:00	19	460	1A	{01:04}：合格おめでとう\n					reads: 西野義雄：合格おめでとう\n
+m/MS006B.BIN	0:00	19	460	1A	{01:04}：合格おめでとう\n		{01:04}: Congratulations on passing\n	ours		reads: 西野義雄：合格おめでとう\n
 m/MS006B.BIN	0:00	20	500	1F03						
-m/MS006B.BIN	0:00	21	508	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n					reads: 西野義雄：まだ機会はあるぞ\n
-m/MS006B.BIN	0:00	22	544	1FE8	2.	2.				@ours-2026-09-05
+m/MS006B.BIN	0:00	21	508	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n		{01:04}: There's still another chance\n	ours		reads: 西野義雄：まだ機会はあるぞ\n
+m/MS006B.BIN	0:00	22	544	1FE8	2.	2.			draft	@ours-2026-09-05
 m/MS006B.BIN	0:00	23	554	1F03	{=88}{=15}	{=88}{=15}				
-m/MS006B.BIN	0:00	24	570	1F01	：一緒に合格うれしいな。\n	: I'm glad we passed together.\n				reads: ：一緒に合格うれしいな。\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS006B.BIN	0:00	24	570	1F01	：一緒に合格うれしいな。\n	: I'm glad we passed together.\n	{04:FE}: I'm happy we passed together.\n	ours	draft	reads: ：一緒に合格うれしいな。\n @rebase-tagdiff @seamfix-2026-09-05
 m/MS006B.BIN	0:00	25	616	1F03	{=88}{=16}	{=88}{=16}				
-m/MS006B.BIN	0:00	26	632	1F01	：気を落とさ{08:25}でね{08:72}\n	: Don't let it get you down......\n				reads: ：気を落とさないでね‥‥\n; reads: ：気を落とさないでね‥‥\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS006B.BIN	0:00	26	632	1F01	：気を落とさ{08:25}でね{08:72}\n	: Don't let it get you down......\n	{04:FE}: Don't let it get you down......\n	ours	draft	reads: ：気を落とさないでね‥‥\n; reads: ：気を落とさないでね‥‥\n @rebase-tagdiff @seamfix-2026-09-05
 m/MS006B.BIN	0:00	27	674	1F03	{=88}{=17}	{=88}{=17}				
-m/MS006B.BIN	0:00	28	690	1F01	：ちょ{08:53}{08:74}{08:72}\n	: Just a little......\n				reads: ：ちょっとだけ‥‥\n; reads: ：ちょっとだけ‥‥\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS006B.BIN	0:00	28	690	1F01	：ちょ{08:53}{08:74}{08:72}\n	: Just a little......\n	{04:FE}: Just a little bit......\n	ours	draft	reads: ：ちょっとだけ‥‥\n; reads: ：ちょっとだけ‥‥\n @rebase-tagdiff @seamfix-2026-09-05
 m/MS006B.BIN	0:00	29	724	1F03	{=88}{=18}	{=88}{=18}				
-m/MS006B.BIN	0:00	30	734	1A	{01:00}：や{08:51}な！　					reads: 早坂達也：やったな！　
-m/MS006B.BIN	0:00	31	754	1F01	！\n	!\n				reads: ！\n @rebase-tagdiff @ours-2026-09-05
+m/MS006B.BIN	0:00	30	734	1A	{01:00}：や{08:51}な！　		{01:00}: You did it!  	ours		reads: 早坂達也：やったな！　
+m/MS006B.BIN	0:00	31	754	1F01	！\n	!\n	{04:FF}!\n	ours	draft	reads: ！\n @rebase-tagdiff @ours-2026-09-05
 m/MS006B.BIN	0:00	32	778	1F03	{=88}{=19}	{=88}{=19}				
-m/MS006B.BIN	0:00	33	788	1A	{01:00}：{08:7A}に気を落とすなよ\n					reads: 早坂達也：そんなに気を落とすなよ\n
+m/MS006B.BIN	0:00	33	788	1A	{01:00}：{08:7A}に気を落とすなよ\n		{01:00}: Don't let it get you down that much\n	ours		reads: 早坂達也：そんなに気を落とすなよ\n
 m/MS006B.BIN	0:00	34	832	1F03	{=88}{=1A}	{=88}{=1A}				
-m/MS006B.BIN	0:00	35	842	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:00	35	842	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:00}: Actually, there's something I want to ask......\n	ours		reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:00	36	888	1F03	{=88}{=1B}	{=88}{=1B}				
-m/MS006B.BIN	0:00	37	898	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:00	37	898	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:02}: Actually, there's something I want to ask......\n	ours		reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:00	38	944	1F03	{=88}{=1C}	{=88}{=1C}				
-m/MS006B.BIN	0:00	39	954	1A	{01:04}：合格おめでとう\n					reads: 西野義雄：合格おめでとう\n
+m/MS006B.BIN	0:00	39	954	1A	{01:04}：合格おめでとう\n		{01:04}: Congratulations on passing\n	ours		reads: 西野義雄：合格おめでとう\n
 m/MS006B.BIN	0:00	40	994	1F03	{=88}{=1D}	{=88}{=1D}				
-m/MS006B.BIN	0:00	41	1004	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n					reads: 西野義雄：まだ機会はあるぞ\n
-m/MS006B.BIN	0:00	42	1040	1FE8	3.	3.				@ours-2026-09-05
+m/MS006B.BIN	0:00	41	1004	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n		{01:04}: There's still another chance\n	ours		reads: 西野義雄：まだ機会はあるぞ\n
+m/MS006B.BIN	0:00	42	1040	1FE8	3.	3.			draft	@ours-2026-09-05
 m/MS006B.BIN	0:00	43	1050	1F03	{=88}{=17}	{=88}{=17}				
-m/MS006B.BIN	0:00	44	1066	1F01	：ちょ{08:53}{08:74}{08:72}\n	: Just a little......\n				reads: ：ちょっとだけ‥‥\n; reads: ：ちょっとだけ‥‥\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS006B.BIN	0:00	44	1066	1F01	：ちょ{08:53}{08:74}{08:72}\n	: Just a little......\n	{04:FE}: Just a little bit......\n	ours	draft	reads: ：ちょっとだけ‥‥\n; reads: ：ちょっとだけ‥‥\n @rebase-tagdiff @seamfix-2026-09-05
 m/MS006B.BIN	0:00	45	1100	1F03	{=88}{=18}	{=88}{=18}				
-m/MS006B.BIN	0:00	46	1110	1A	{01:00}：や{08:51}な！　					reads: 早坂達也：やったな！　
-m/MS006B.BIN	0:00	47	1130	1F01	！\n	!\n				reads: ！\n @rebase-tagdiff @ours-2026-09-05
+m/MS006B.BIN	0:00	46	1110	1A	{01:00}：や{08:51}な！　		{01:00}: You did it!  	ours		reads: 早坂達也：やったな！　
+m/MS006B.BIN	0:00	47	1130	1F01	！\n	!\n	{04:FF}!\n	ours	draft	reads: ！\n @rebase-tagdiff @ours-2026-09-05
 m/MS006B.BIN	0:00	48	1154	1F03	{=88}{=19}	{=88}{=19}				
-m/MS006B.BIN	0:00	49	1164	1A	{01:00}：{08:7A}に気を落とすなよ\n					reads: 早坂達也：そんなに気を落とすなよ\n
+m/MS006B.BIN	0:00	49	1164	1A	{01:00}：{08:7A}に気を落とすなよ\n		{01:00}: Don't let it get you down that much\n	ours		reads: 早坂達也：そんなに気を落とすなよ\n
 m/MS006B.BIN	0:00	50	1208	1F03	{=88}{=1A}	{=88}{=1A}				
-m/MS006B.BIN	0:00	51	1218	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:00	51	1218	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:00}: Actually, there's something I want to ask......\n	ours		reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:00	52	1264	1F03	{=88}{=1B}	{=88}{=1B}				
-m/MS006B.BIN	0:00	53	1274	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:00	53	1274	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:02}: Actually, there's something I want to ask......\n	ours		reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:00	54	1320	1F03	{=88}{=1C}	{=88}{=1C}				
-m/MS006B.BIN	0:00	55	1330	1A	{01:04}：合格おめでとう\n					reads: 西野義雄：合格おめでとう\n
+m/MS006B.BIN	0:00	55	1330	1A	{01:04}：合格おめでとう\n		{01:04}: Congratulations on passing\n	ours		reads: 西野義雄：合格おめでとう\n
 m/MS006B.BIN	0:00	56	1370	1F03	{=88}{=1D}	{=88}{=1D}				
-m/MS006B.BIN	0:00	57	1380	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n					reads: 西野義雄：まだ機会はあるぞ\n
-m/MS006B.BIN	0:00	58	1417	1FE8	4.	4.				@ours-2026-09-05
+m/MS006B.BIN	0:00	57	1380	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n		{01:04}: There's still another chance\n	ours		reads: 西野義雄：まだ機会はあるぞ\n
+m/MS006B.BIN	0:00	58	1417	1FE8	4.	4.			draft	@ours-2026-09-05
 m/MS006B.BIN	0:00	59	1427	1F03	{=88}{=18}	{=88}{=18}				
-m/MS006B.BIN	0:00	60	1437	1A	{01:00}：や{08:51}な！　					reads: 早坂達也：やったな！　
-m/MS006B.BIN	0:00	61	1457	1F01	！\n	!\n				reads: ！\n @rebase-tagdiff @ours-2026-09-05
+m/MS006B.BIN	0:00	60	1437	1A	{01:00}：や{08:51}な！　		{01:00}: You did it!  	ours		reads: 早坂達也：やったな！　
+m/MS006B.BIN	0:00	61	1457	1F01	！\n	!\n	{04:FF}!\n	ours	draft	reads: ！\n @rebase-tagdiff @ours-2026-09-05
 m/MS006B.BIN	0:00	62	1481	1F03	{=88}{=19}	{=88}{=19}				
-m/MS006B.BIN	0:00	63	1491	1A	{01:00}：{08:7A}に気を落とすなよ\n					reads: 早坂達也：そんなに気を落とすなよ\n
+m/MS006B.BIN	0:00	63	1491	1A	{01:00}：{08:7A}に気を落とすなよ\n		{01:00}: Don't let it get you down that much\n	ours		reads: 早坂達也：そんなに気を落とすなよ\n
 m/MS006B.BIN	0:00	64	1535	1F03	{=88}{=1A}	{=88}{=1A}				
-m/MS006B.BIN	0:00	65	1545	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:00	65	1545	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:00}: Actually, there's something I want to ask......\n	ours		reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:00	66	1591	1F03	{=88}{=1B}	{=88}{=1B}				
-m/MS006B.BIN	0:00	67	1601	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:00	67	1601	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:02}: Actually, there's something I want to ask......\n	ours		reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:00	68	1647	1F03	{=88}{=1C}	{=88}{=1C}				
-m/MS006B.BIN	0:00	69	1657	1A	{01:04}：合格おめでとう\n					reads: 西野義雄：合格おめでとう\n
+m/MS006B.BIN	0:00	69	1657	1A	{01:04}：合格おめでとう\n		{01:04}: Congratulations on passing\n	ours		reads: 西野義雄：合格おめでとう\n
 m/MS006B.BIN	0:00	70	1697	1F03	{=88}{=1D}	{=88}{=1D}				
-m/MS006B.BIN	0:00	71	1707	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n					reads: 西野義雄：まだ機会はあるぞ\n
-m/MS006B.BIN	0:00	72	1744	1FE8	5.	5.				@ours-2026-09-05
+m/MS006B.BIN	0:00	71	1707	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n		{01:04}: There's still another chance\n	ours		reads: 西野義雄：まだ機会はあるぞ\n
+m/MS006B.BIN	0:00	72	1744	1FE8	5.	5.			draft	@ours-2026-09-05
 m/MS006B.BIN	0:00	73	1754	1F03	{=88}{=18}	{=88}{=18}				
-m/MS006B.BIN	0:00	74	1764	1A	{01:00}：や{08:51}な！　					reads: 早坂達也：やったな！　
-m/MS006B.BIN	0:00	75	1784	1F01	！\n	!\n				reads: ！\n @rebase-tagdiff @ours-2026-09-05
+m/MS006B.BIN	0:00	74	1764	1A	{01:00}：や{08:51}な！　		{01:00}: You did it!  	ours		reads: 早坂達也：やったな！　
+m/MS006B.BIN	0:00	75	1784	1F01	！\n	!\n	{04:FF}!\n	ours	draft	reads: ！\n @rebase-tagdiff @ours-2026-09-05
 m/MS006B.BIN	0:00	76	1808	1F03	{=88}{=19}	{=88}{=19}				
-m/MS006B.BIN	0:00	77	1818	1A	{01:00}：{08:7A}に気を落とすなよ\n					reads: 早坂達也：そんなに気を落とすなよ\n
+m/MS006B.BIN	0:00	77	1818	1A	{01:00}：{08:7A}に気を落とすなよ\n		{01:00}: Don't let it get you down that much\n	ours		reads: 早坂達也：そんなに気を落とすなよ\n
 m/MS006B.BIN	0:00	78	1862	1F03	{=88}{=1A}	{=88}{=1A}				
-m/MS006B.BIN	0:00	79	1872	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:00	79	1872	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:00}: Actually, there's something I want to ask......\n	ours		reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:00	80	1918	1F03	{=88}{=1B}	{=88}{=1B}				
-m/MS006B.BIN	0:00	81	1928	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:00	81	1928	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:02}: Actually, there's something I want to ask......\n	ours		reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:00	82	1974	1F03	{=88}{=1C}	{=88}{=1C}				
-m/MS006B.BIN	0:00	83	1984	1A	{01:04}：合格おめでとう\n					reads: 西野義雄：合格おめでとう\n
+m/MS006B.BIN	0:00	83	1984	1A	{01:04}：合格おめでとう\n		{01:04}: Congratulations on passing\n	ours		reads: 西野義雄：合格おめでとう\n
 m/MS006B.BIN	0:00	84	2024	1F03	{=88}{=1D}	{=88}{=1D}				
-m/MS006B.BIN	0:00	85	2034	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n					reads: 西野義雄：まだ機会はあるぞ\n
-m/MS006B.BIN	0:00	86	2071	1FE8	6.	6.				@ours-2026-09-05
+m/MS006B.BIN	0:00	85	2034	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n		{01:04}: There's still another chance\n	ours		reads: 西野義雄：まだ機会はあるぞ\n
+m/MS006B.BIN	0:00	86	2071	1FE8	6.	6.			draft	@ours-2026-09-05
 m/MS006B.BIN	0:00	87	2081	1F03	{=88}{=18}	{=88}{=18}				
-m/MS006B.BIN	0:00	88	2091	1A	{01:00}：や{08:51}な！　					reads: 早坂達也：やったな！　
-m/MS006B.BIN	0:00	89	2111	1F01	！\n	!\n				reads: ！\n @rebase-tagdiff @ours-2026-09-05
+m/MS006B.BIN	0:00	88	2091	1A	{01:00}：や{08:51}な！　		{01:00}: You did it!  	ours		reads: 早坂達也：やったな！　
+m/MS006B.BIN	0:00	89	2111	1F01	！\n	!\n	{04:FF}!\n	ours	draft	reads: ！\n @rebase-tagdiff @ours-2026-09-05
 m/MS006B.BIN	0:00	90	2135	1F03	{=88}{=19}	{=88}{=19}				
-m/MS006B.BIN	0:00	91	2145	1A	{01:00}：{08:7A}に気を落とすなよ\n					reads: 早坂達也：そんなに気を落とすなよ\n
+m/MS006B.BIN	0:00	91	2145	1A	{01:00}：{08:7A}に気を落とすなよ\n		{01:00}: Don't let it get you down that much\n	ours		reads: 早坂達也：そんなに気を落とすなよ\n
 m/MS006B.BIN	0:00	92	2189	1F03	{=88}{=1A}	{=88}{=1A}				
-m/MS006B.BIN	0:00	93	2199	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:00	93	2199	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:00}: Actually, there's something I want to ask......\n	ours		reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:00	94	2245	1F03	{=88}{=1B}	{=88}{=1B}				
-m/MS006B.BIN	0:00	95	2255	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:00	95	2255	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:02}: Actually, there's something I want to ask......\n	ours		reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:00	96	2301	1F03	{=88}{=1C}	{=88}{=1C}				
-m/MS006B.BIN	0:00	97	2311	1A	{01:04}：合格おめでとう\n					reads: 西野義雄：合格おめでとう\n
+m/MS006B.BIN	0:00	97	2311	1A	{01:04}：合格おめでとう\n		{01:04}: Congratulations on passing\n	ours		reads: 西野義雄：合格おめでとう\n
 m/MS006B.BIN	0:00	98	2351	1F03	{=88}{=1D}	{=88}{=1D}				
-m/MS006B.BIN	0:00	99	2361	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n					reads: 西野義雄：まだ機会はあるぞ\n
-m/MS006B.BIN	0:00	100	2398	1FE8	7.	7.				@ours-2026-09-05
+m/MS006B.BIN	0:00	99	2361	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n		{01:04}: There's still another chance\n	ours		reads: 西野義雄：まだ機会はあるぞ\n
+m/MS006B.BIN	0:00	100	2398	1FE8	7.	7.			draft	@ours-2026-09-05
 m/MS006B.BIN	0:00	101	2408	1F03	{=88}{=18}	{=88}{=18}				
-m/MS006B.BIN	0:00	102	2418	1A	{01:00}：や{08:51}な！　					reads: 早坂達也：やったな！　
-m/MS006B.BIN	0:00	103	2438	1F01	！\n	!\n				reads: ！\n @rebase-tagdiff @ours-2026-09-05
+m/MS006B.BIN	0:00	102	2418	1A	{01:00}：や{08:51}な！　		{01:00}: You did it!  	ours		reads: 早坂達也：やったな！　
+m/MS006B.BIN	0:00	103	2438	1F01	！\n	!\n	{04:FF}!\n	ours	draft	reads: ！\n @rebase-tagdiff @ours-2026-09-05
 m/MS006B.BIN	0:00	104	2462	1F03	{=88}{=19}	{=88}{=19}				
-m/MS006B.BIN	0:00	105	2472	1A	{01:00}：{08:7A}に気を落とすなよ\n					reads: 早坂達也：そんなに気を落とすなよ\n
+m/MS006B.BIN	0:00	105	2472	1A	{01:00}：{08:7A}に気を落とすなよ\n		{01:00}: Don't let it get you down that much\n	ours		reads: 早坂達也：そんなに気を落とすなよ\n
 m/MS006B.BIN	0:00	106	2516	1F03	{=88}{=1A}	{=88}{=1A}				
-m/MS006B.BIN	0:00	107	2526	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:00	107	2526	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:00}: Actually, there's something I want to ask......\n	ours		reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:00	108	2572	1F03	{=88}{=1B}	{=88}{=1B}				
-m/MS006B.BIN	0:00	109	2582	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:00	109	2582	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:02}: Actually, there's something I want to ask......\n	ours		reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:00	110	2628	1F03	{=88}{=1C}	{=88}{=1C}				
-m/MS006B.BIN	0:00	111	2638	1A	{01:04}：合格おめでとう\n					reads: 西野義雄：合格おめでとう\n
+m/MS006B.BIN	0:00	111	2638	1A	{01:04}：合格おめでとう\n		{01:04}: Congratulations on passing\n	ours		reads: 西野義雄：合格おめでとう\n
 m/MS006B.BIN	0:00	112	2678	1F03	{=88}{=1D}	{=88}{=1D}				
-m/MS006B.BIN	0:00	113	2688	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n					reads: 西野義雄：まだ機会はあるぞ\n
-m/MS006B.BIN	0:00	114	2725	1FE8	8.	8.				@ours-2026-09-05
+m/MS006B.BIN	0:00	113	2688	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n		{01:04}: There's still another chance\n	ours		reads: 西野義雄：まだ機会はあるぞ\n
+m/MS006B.BIN	0:00	114	2725	1FE8	8.	8.			draft	@ours-2026-09-05
 m/MS006B.BIN	0:00	115	2735	1F03	{=88}{=18}	{=88}{=18}				
-m/MS006B.BIN	0:00	116	2745	1A	{01:00}：や{08:51}な！　					reads: 早坂達也：やったな！　
-m/MS006B.BIN	0:00	117	2765	1F01	！\n	!\n				reads: ！\n @rebase-tagdiff @ours-2026-09-05
+m/MS006B.BIN	0:00	116	2745	1A	{01:00}：や{08:51}な！　		{01:00}: You did it!  	ours		reads: 早坂達也：やったな！　
+m/MS006B.BIN	0:00	117	2765	1F01	！\n	!\n	{04:FF}!\n	ours	draft	reads: ！\n @rebase-tagdiff @ours-2026-09-05
 m/MS006B.BIN	0:00	118	2786	1F03	{=88}{=19}	{=88}{=19}				
-m/MS006B.BIN	0:00	119	2796	1A	{01:00}：{08:7A}に気を落とすなよ\n					reads: 早坂達也：そんなに気を落とすなよ\n
+m/MS006B.BIN	0:00	119	2796	1A	{01:00}：{08:7A}に気を落とすなよ\n		{01:00}: Don't let it get you down that much\n	ours		reads: 早坂達也：そんなに気を落とすなよ\n
 m/MS006B.BIN	0:00	120	2837	1F03	{=88}{=1A}	{=88}{=1A}				
-m/MS006B.BIN	0:00	121	2847	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:00	121	2847	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:00}: Actually, there's something I want to ask......\n	ours		reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:00	122	2890	1F03	{=88}{=1B}	{=88}{=1B}				
-m/MS006B.BIN	0:00	123	2900	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:00	123	2900	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:02}: Actually, there's something I want to ask......\n	ours		reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:00	124	2943	1F03	{=88}{=1C}	{=88}{=1C}				
-m/MS006B.BIN	0:00	125	2953	1A	{01:04}：合格おめでとう\n					reads: 西野義雄：合格おめでとう\n
+m/MS006B.BIN	0:00	125	2953	1A	{01:04}：合格おめでとう\n		{01:04}: Congratulations on passing\n	ours		reads: 西野義雄：合格おめでとう\n
 m/MS006B.BIN	0:00	126	2990	1F03	{=88}{=1D}	{=88}{=1D}				
-m/MS006B.BIN	0:00	127	3000	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n					reads: 西野義雄：まだ機会はあるぞ\n
-m/MS006B.BIN	0:01	0	4	1FEC	1.	1. 				@ours-2026-09-05
-m/MS006B.BIN	0:01	1	29	1F01	：明日は頑張りま{08:80}ね\n	: Let's do our best tomorrow\n				reads: ：明日は頑張りましょうね\n; reads: ：明日は頑張りましょうね\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS006B.BIN	0:01	2	80	1F01	：一緒に合格うれしいな。\n	: I'm glad we passed together.\n				reads: ：一緒に合格うれしいな。\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS006B.BIN	0:01	3	135	1F01	：気を落とさ{08:25}でね{08:72}\n	: Don't let it get you down......\n				reads: ：気を落とさないでね‥‥\n; reads: ：気を落とさないでね‥‥\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS006B.BIN	0:01	4	186	1F01	：ちょ{08:53}{08:74}{08:72}\n	: Just a little......\n				reads: ：ちょっとだけ‥‥\n; reads: ：ちょっとだけ‥‥\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS006B.BIN	0:01	5	223	1A	{01:00}：や{08:51}な！　					reads: 早坂達也：やったな！　
-m/MS006B.BIN	0:01	6	243	1F01	！\n	!\n				reads: ！\n @rebase-tagdiff @ours-2026-09-05
-m/MS006B.BIN	0:01	7	270	1A	{01:00}：{08:7A}に気を落とすなよ\n					reads: 早坂達也：そんなに気を落とすなよ\n
-m/MS006B.BIN	0:01	8	317	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
-m/MS006B.BIN	0:01	9	366	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
-m/MS006B.BIN	0:01	10	415	1A	{01:04}：合格おめでとう\n					reads: 西野義雄：合格おめでとう\n
-m/MS006B.BIN	0:01	11	458	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n					reads: 西野義雄：まだ機会はあるぞ\n
-m/MS006B.BIN	0:01	12	494	1FE8	2.	2.				@ours-2026-09-05
+m/MS006B.BIN	0:00	127	3000	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n		{01:04}: There's still another chance\n	ours		reads: 西野義雄：まだ機会はあるぞ\n
+m/MS006B.BIN	0:01	0	4	1FEC	1.	1. 			draft	@ours-2026-09-05
+m/MS006B.BIN	0:01	1	29	1F01	：明日は頑張りま{08:80}ね\n	: Let's do our best tomorrow\n	{04:FE}: Let's do our best tomorrow\n	ours	draft	reads: ：明日は頑張りましょうね\n; reads: ：明日は頑張りましょうね\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS006B.BIN	0:01	2	80	1F01	：一緒に合格うれしいな。\n	: I'm glad we passed together.\n	{04:FE}: I'm happy we passed together.\n	ours	draft	reads: ：一緒に合格うれしいな。\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS006B.BIN	0:01	3	135	1F01	：気を落とさ{08:25}でね{08:72}\n	: Don't let it get you down......\n	{04:FE}: Don't let it get you down......\n	ours	draft	reads: ：気を落とさないでね‥‥\n; reads: ：気を落とさないでね‥‥\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS006B.BIN	0:01	4	186	1F01	：ちょ{08:53}{08:74}{08:72}\n	: Just a little......\n	{04:FE}: Just a little bit......\n	ours	draft	reads: ：ちょっとだけ‥‥\n; reads: ：ちょっとだけ‥‥\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS006B.BIN	0:01	5	223	1A	{01:00}：や{08:51}な！　		{01:00}: You did it!  	ours		reads: 早坂達也：やったな！　
+m/MS006B.BIN	0:01	6	243	1F01	！\n	!\n	{04:FF}!\n	ours	draft	reads: ！\n @rebase-tagdiff @ours-2026-09-05
+m/MS006B.BIN	0:01	7	270	1A	{01:00}：{08:7A}に気を落とすなよ\n		{01:00}: Don't let it get you down that much\n	ours		reads: 早坂達也：そんなに気を落とすなよ\n
+m/MS006B.BIN	0:01	8	317	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:00}: Actually, there's something I want to ask......\n	ours		reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:01	9	366	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:02}: Actually, there's something I want to ask......\n	ours		reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:01	10	415	1A	{01:04}：合格おめでとう\n		{01:04}: Congratulations on passing\n	ours		reads: 西野義雄：合格おめでとう\n
+m/MS006B.BIN	0:01	11	458	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n		{01:04}: There's still another chance\n	ours		reads: 西野義雄：まだ機会はあるぞ\n
+m/MS006B.BIN	0:01	12	494	1FE8	2.	2.			draft	@ours-2026-09-05
 m/MS006B.BIN	0:01	13	504	1F03						
-m/MS006B.BIN	0:01	14	518	1F01	：一緒に合格うれしいな。\n	: I'm glad we passed together.\n				reads: ：一緒に合格うれしいな。\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS006B.BIN	0:01	14	518	1F01	：一緒に合格うれしいな。\n	: I'm glad we passed together.\n	{04:FE}: I'm happy we passed together.\n	ours	draft	reads: ：一緒に合格うれしいな。\n @rebase-tagdiff @seamfix-2026-09-05
 m/MS006B.BIN	0:01	15	564	1F03						
-m/MS006B.BIN	0:01	16	578	1F01	：気を落とさ{08:25}でね{08:72}\n	: Don't let it get you down......\n				reads: ：気を落とさないでね‥‥\n; reads: ：気を落とさないでね‥‥\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS006B.BIN	0:01	16	578	1F01	：気を落とさ{08:25}でね{08:72}\n	: Don't let it get you down......\n	{04:FE}: Don't let it get you down......\n	ours	draft	reads: ：気を落とさないでね‥‥\n; reads: ：気を落とさないでね‥‥\n @rebase-tagdiff @seamfix-2026-09-05
 m/MS006B.BIN	0:01	17	620	1F03						
-m/MS006B.BIN	0:01	18	634	1F01	：ちょ{08:53}{08:74}{08:72}\n	: Just a little......\n				reads: ：ちょっとだけ‥‥\n; reads: ：ちょっとだけ‥‥\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS006B.BIN	0:01	18	634	1F01	：ちょ{08:53}{08:74}{08:72}\n	: Just a little......\n	{04:FE}: Just a little bit......\n	ours	draft	reads: ：ちょっとだけ‥‥\n; reads: ：ちょっとだけ‥‥\n @rebase-tagdiff @seamfix-2026-09-05
 m/MS006B.BIN	0:01	19	668	1F03						
-m/MS006B.BIN	0:01	20	676	1A	{01:00}：や{08:51}な！　					reads: 早坂達也：やったな！　
-m/MS006B.BIN	0:01	21	696	1F01	！\n	!\n				reads: ！\n @rebase-tagdiff @ours-2026-09-05
+m/MS006B.BIN	0:01	20	676	1A	{01:00}：や{08:51}な！　		{01:00}: You did it!  	ours		reads: 早坂達也：やったな！　
+m/MS006B.BIN	0:01	21	696	1F01	！\n	!\n	{04:FF}!\n	ours	draft	reads: ！\n @rebase-tagdiff @ours-2026-09-05
 m/MS006B.BIN	0:01	22	720	1F03						
-m/MS006B.BIN	0:01	23	728	1A	{01:00}：{08:7A}に気を落とすなよ\n					reads: 早坂達也：そんなに気を落とすなよ\n
+m/MS006B.BIN	0:01	23	728	1A	{01:00}：{08:7A}に気を落とすなよ\n		{01:00}: Don't let it get you down that much\n	ours		reads: 早坂達也：そんなに気を落とすなよ\n
 m/MS006B.BIN	0:01	24	772	1F03						
-m/MS006B.BIN	0:01	25	780	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:01	25	780	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:00}: Actually, there's something I want to ask......\n	ours		reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:01	26	826	1F03						
-m/MS006B.BIN	0:01	27	834	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:01	27	834	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:02}: Actually, there's something I want to ask......\n	ours		reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:01	28	880	1F03						
-m/MS006B.BIN	0:01	29	888	1A	{01:04}：合格おめでとう\n					reads: 西野義雄：合格おめでとう\n
+m/MS006B.BIN	0:01	29	888	1A	{01:04}：合格おめでとう\n		{01:04}: Congratulations on passing\n	ours		reads: 西野義雄：合格おめでとう\n
 m/MS006B.BIN	0:01	30	928	1F03						
-m/MS006B.BIN	0:01	31	936	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n					reads: 西野義雄：まだ機会はあるぞ\n
-m/MS006B.BIN	0:01	32	972	1FE8	3.	3.				@ours-2026-09-05
+m/MS006B.BIN	0:01	31	936	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n		{01:04}: There's still another chance\n	ours		reads: 西野義雄：まだ機会はあるぞ\n
+m/MS006B.BIN	0:01	32	972	1FE8	3.	3.			draft	@ours-2026-09-05
 m/MS006B.BIN	0:01	33	982	1F03						
-m/MS006B.BIN	0:01	34	996	1F01	：ちょ{08:53}{08:74}{08:72}\n	: Just a little......\n				reads: ：ちょっとだけ‥‥\n; reads: ：ちょっとだけ‥‥\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS006B.BIN	0:01	34	996	1F01	：ちょ{08:53}{08:74}{08:72}\n	: Just a little......\n	{04:FE}: Just a little bit......\n	ours	draft	reads: ：ちょっとだけ‥‥\n; reads: ：ちょっとだけ‥‥\n @rebase-tagdiff @seamfix-2026-09-05
 m/MS006B.BIN	0:01	35	1030	1F03						
-m/MS006B.BIN	0:01	36	1038	1A	{01:00}：や{08:51}な！　					reads: 早坂達也：やったな！　
-m/MS006B.BIN	0:01	37	1058	1F01	！\n	!\n				reads: ！\n @rebase-tagdiff @ours-2026-09-05
+m/MS006B.BIN	0:01	36	1038	1A	{01:00}：や{08:51}な！　		{01:00}: You did it!  	ours		reads: 早坂達也：やったな！　
+m/MS006B.BIN	0:01	37	1058	1F01	！\n	!\n	{04:FF}!\n	ours	draft	reads: ！\n @rebase-tagdiff @ours-2026-09-05
 m/MS006B.BIN	0:01	38	1082	1F03						
-m/MS006B.BIN	0:01	39	1090	1A	{01:00}：{08:7A}に気を落とすなよ\n					reads: 早坂達也：そんなに気を落とすなよ\n
+m/MS006B.BIN	0:01	39	1090	1A	{01:00}：{08:7A}に気を落とすなよ\n		{01:00}: Don't let it get you down that much\n	ours		reads: 早坂達也：そんなに気を落とすなよ\n
 m/MS006B.BIN	0:01	40	1134	1F03						
-m/MS006B.BIN	0:01	41	1142	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:01	41	1142	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:00}: Actually, there's something I want to ask......\n	ours		reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:01	42	1188	1F03						
-m/MS006B.BIN	0:01	43	1196	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:01	43	1196	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:02}: Actually, there's something I want to ask......\n	ours		reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:01	44	1242	1F03						
-m/MS006B.BIN	0:01	45	1250	1A	{01:04}：合格おめでとう\n					reads: 西野義雄：合格おめでとう\n
+m/MS006B.BIN	0:01	45	1250	1A	{01:04}：合格おめでとう\n		{01:04}: Congratulations on passing\n	ours		reads: 西野義雄：合格おめでとう\n
 m/MS006B.BIN	0:01	46	1290	1F03						
-m/MS006B.BIN	0:01	47	1298	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n					reads: 西野義雄：まだ機会はあるぞ\n
-m/MS006B.BIN	0:01	48	1335	1FE8	4.	4.				@ours-2026-09-05
+m/MS006B.BIN	0:01	47	1298	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n		{01:04}: There's still another chance\n	ours		reads: 西野義雄：まだ機会はあるぞ\n
+m/MS006B.BIN	0:01	48	1335	1FE8	4.	4.			draft	@ours-2026-09-05
 m/MS006B.BIN	0:01	49	1345	1F03						
-m/MS006B.BIN	0:01	50	1353	1A	{01:00}：や{08:51}な！　					reads: 早坂達也：やったな！　
-m/MS006B.BIN	0:01	51	1373	1F01	！\n	!\n				reads: ！\n @rebase-tagdiff @ours-2026-09-05
+m/MS006B.BIN	0:01	50	1353	1A	{01:00}：や{08:51}な！　		{01:00}: You did it!  	ours		reads: 早坂達也：やったな！　
+m/MS006B.BIN	0:01	51	1373	1F01	！\n	!\n	{04:FF}!\n	ours	draft	reads: ！\n @rebase-tagdiff @ours-2026-09-05
 m/MS006B.BIN	0:01	52	1397	1F03						
-m/MS006B.BIN	0:01	53	1405	1A	{01:00}：{08:7A}に気を落とすなよ\n					reads: 早坂達也：そんなに気を落とすなよ\n
+m/MS006B.BIN	0:01	53	1405	1A	{01:00}：{08:7A}に気を落とすなよ\n		{01:00}: Don't let it get you down that much\n	ours		reads: 早坂達也：そんなに気を落とすなよ\n
 m/MS006B.BIN	0:01	54	1449	1F03						
-m/MS006B.BIN	0:01	55	1457	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:01	55	1457	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:00}: Actually, there's something I want to ask......\n	ours		reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:01	56	1503	1F03						
-m/MS006B.BIN	0:01	57	1511	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:01	57	1511	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:02}: Actually, there's something I want to ask......\n	ours		reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:01	58	1557	1F03						
-m/MS006B.BIN	0:01	59	1565	1A	{01:04}：合格おめでとう\n					reads: 西野義雄：合格おめでとう\n
+m/MS006B.BIN	0:01	59	1565	1A	{01:04}：合格おめでとう\n		{01:04}: Congratulations on passing\n	ours		reads: 西野義雄：合格おめでとう\n
 m/MS006B.BIN	0:01	60	1605	1F03						
-m/MS006B.BIN	0:01	61	1613	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n					reads: 西野義雄：まだ機会はあるぞ\n
-m/MS006B.BIN	0:01	62	1650	1FE8	5.	5.				@ours-2026-09-05
+m/MS006B.BIN	0:01	61	1613	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n		{01:04}: There's still another chance\n	ours		reads: 西野義雄：まだ機会はあるぞ\n
+m/MS006B.BIN	0:01	62	1650	1FE8	5.	5.			draft	@ours-2026-09-05
 m/MS006B.BIN	0:01	63	1660	1F03						
-m/MS006B.BIN	0:01	64	1668	1A	{01:00}：や{08:51}な！　					reads: 早坂達也：やったな！　
-m/MS006B.BIN	0:01	65	1688	1F01	！\n	!\n				reads: ！\n @rebase-tagdiff @ours-2026-09-05
+m/MS006B.BIN	0:01	64	1668	1A	{01:00}：や{08:51}な！　		{01:00}: You did it!  	ours		reads: 早坂達也：やったな！　
+m/MS006B.BIN	0:01	65	1688	1F01	！\n	!\n	{04:FF}!\n	ours	draft	reads: ！\n @rebase-tagdiff @ours-2026-09-05
 m/MS006B.BIN	0:01	66	1712	1F03						
-m/MS006B.BIN	0:01	67	1720	1A	{01:00}：{08:7A}に気を落とすなよ\n					reads: 早坂達也：そんなに気を落とすなよ\n
+m/MS006B.BIN	0:01	67	1720	1A	{01:00}：{08:7A}に気を落とすなよ\n		{01:00}: Don't let it get you down that much\n	ours		reads: 早坂達也：そんなに気を落とすなよ\n
 m/MS006B.BIN	0:01	68	1764	1F03						
-m/MS006B.BIN	0:01	69	1772	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:01	69	1772	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:00}: Actually, there's something I want to ask......\n	ours		reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:01	70	1818	1F03						
-m/MS006B.BIN	0:01	71	1826	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:01	71	1826	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:02}: Actually, there's something I want to ask......\n	ours		reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:01	72	1872	1F03						
-m/MS006B.BIN	0:01	73	1880	1A	{01:04}：合格おめでとう\n					reads: 西野義雄：合格おめでとう\n
+m/MS006B.BIN	0:01	73	1880	1A	{01:04}：合格おめでとう\n		{01:04}: Congratulations on passing\n	ours		reads: 西野義雄：合格おめでとう\n
 m/MS006B.BIN	0:01	74	1920	1F03						
-m/MS006B.BIN	0:01	75	1928	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n					reads: 西野義雄：まだ機会はあるぞ\n
-m/MS006B.BIN	0:01	76	1965	1FE8	6.	6.				@ours-2026-09-05
+m/MS006B.BIN	0:01	75	1928	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n		{01:04}: There's still another chance\n	ours		reads: 西野義雄：まだ機会はあるぞ\n
+m/MS006B.BIN	0:01	76	1965	1FE8	6.	6.			draft	@ours-2026-09-05
 m/MS006B.BIN	0:01	77	1975	1F03						
-m/MS006B.BIN	0:01	78	1983	1A	{01:00}：や{08:51}な！　					reads: 早坂達也：やったな！　
-m/MS006B.BIN	0:01	79	2003	1F01	！\n	!\n				reads: ！\n @rebase-tagdiff @ours-2026-09-05
+m/MS006B.BIN	0:01	78	1983	1A	{01:00}：や{08:51}な！　		{01:00}: You did it!  	ours		reads: 早坂達也：やったな！　
+m/MS006B.BIN	0:01	79	2003	1F01	！\n	!\n	{04:FF}!\n	ours	draft	reads: ！\n @rebase-tagdiff @ours-2026-09-05
 m/MS006B.BIN	0:01	80	2027	1F03						
-m/MS006B.BIN	0:01	81	2035	1A	{01:00}：{08:7A}に気を落とすなよ\n					reads: 早坂達也：そんなに気を落とすなよ\n
+m/MS006B.BIN	0:01	81	2035	1A	{01:00}：{08:7A}に気を落とすなよ\n		{01:00}: Don't let it get you down that much\n	ours		reads: 早坂達也：そんなに気を落とすなよ\n
 m/MS006B.BIN	0:01	82	2079	1F03						
-m/MS006B.BIN	0:01	83	2087	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:01	83	2087	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:00}: Actually, there's something I want to ask......\n	ours		reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:01	84	2133	1F03						
-m/MS006B.BIN	0:01	85	2141	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:01	85	2141	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:02}: Actually, there's something I want to ask......\n	ours		reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:01	86	2187	1F03						
-m/MS006B.BIN	0:01	87	2195	1A	{01:04}：合格おめでとう\n					reads: 西野義雄：合格おめでとう\n
+m/MS006B.BIN	0:01	87	2195	1A	{01:04}：合格おめでとう\n		{01:04}: Congratulations on passing\n	ours		reads: 西野義雄：合格おめでとう\n
 m/MS006B.BIN	0:01	88	2235	1F03						
-m/MS006B.BIN	0:01	89	2243	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n					reads: 西野義雄：まだ機会はあるぞ\n
-m/MS006B.BIN	0:01	90	2280	1FE8	7.	7.				@ours-2026-09-05
+m/MS006B.BIN	0:01	89	2243	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n		{01:04}: There's still another chance\n	ours		reads: 西野義雄：まだ機会はあるぞ\n
+m/MS006B.BIN	0:01	90	2280	1FE8	7.	7.			draft	@ours-2026-09-05
 m/MS006B.BIN	0:01	91	2290	1F03						
-m/MS006B.BIN	0:01	92	2298	1A	{01:00}：や{08:51}な！　					reads: 早坂達也：やったな！　
-m/MS006B.BIN	0:01	93	2318	1F01	！\n	!\n				reads: ！\n @rebase-tagdiff @ours-2026-09-05
+m/MS006B.BIN	0:01	92	2298	1A	{01:00}：や{08:51}な！　		{01:00}: You did it!  	ours		reads: 早坂達也：やったな！　
+m/MS006B.BIN	0:01	93	2318	1F01	！\n	!\n	{04:FF}!\n	ours	draft	reads: ！\n @rebase-tagdiff @ours-2026-09-05
 m/MS006B.BIN	0:01	94	2342	1F03						
-m/MS006B.BIN	0:01	95	2350	1A	{01:00}：{08:7A}に気を落とすなよ\n					reads: 早坂達也：そんなに気を落とすなよ\n
+m/MS006B.BIN	0:01	95	2350	1A	{01:00}：{08:7A}に気を落とすなよ\n		{01:00}: Don't let it get you down that much\n	ours		reads: 早坂達也：そんなに気を落とすなよ\n
 m/MS006B.BIN	0:01	96	2394	1F03						
-m/MS006B.BIN	0:01	97	2402	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:01	97	2402	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:00}: Actually, there's something I want to ask......\n	ours		reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:01	98	2448	1F03						
-m/MS006B.BIN	0:01	99	2456	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:01	99	2456	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:02}: Actually, there's something I want to ask......\n	ours		reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:01	100	2502	1F03						
-m/MS006B.BIN	0:01	101	2510	1A	{01:04}：合格おめでとう\n					reads: 西野義雄：合格おめでとう\n
+m/MS006B.BIN	0:01	101	2510	1A	{01:04}：合格おめでとう\n		{01:04}: Congratulations on passing\n	ours		reads: 西野義雄：合格おめでとう\n
 m/MS006B.BIN	0:01	102	2550	1F03						
-m/MS006B.BIN	0:01	103	2558	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n					reads: 西野義雄：まだ機会はあるぞ\n
-m/MS006B.BIN	0:01	104	2595	1FE8	8.	8.				@ours-2026-09-05
+m/MS006B.BIN	0:01	103	2558	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n		{01:04}: There's still another chance\n	ours		reads: 西野義雄：まだ機会はあるぞ\n
+m/MS006B.BIN	0:01	104	2595	1FE8	8.	8.			draft	@ours-2026-09-05
 m/MS006B.BIN	0:01	105	2605	1F03						
-m/MS006B.BIN	0:01	106	2613	1A	{01:00}：や{08:51}な！　					reads: 早坂達也：やったな！　
-m/MS006B.BIN	0:01	107	2633	1F01	！\n	!\n				reads: ！\n @rebase-tagdiff @ours-2026-09-05
+m/MS006B.BIN	0:01	106	2613	1A	{01:00}：や{08:51}な！　		{01:00}: You did it!  	ours		reads: 早坂達也：やったな！　
+m/MS006B.BIN	0:01	107	2633	1F01	！\n	!\n	{04:FF}!\n	ours	draft	reads: ！\n @rebase-tagdiff @ours-2026-09-05
 m/MS006B.BIN	0:01	108	2654	1F03						
-m/MS006B.BIN	0:01	109	2662	1A	{01:00}：{08:7A}に気を落とすなよ\n					reads: 早坂達也：そんなに気を落とすなよ\n
+m/MS006B.BIN	0:01	109	2662	1A	{01:00}：{08:7A}に気を落とすなよ\n		{01:00}: Don't let it get you down that much\n	ours		reads: 早坂達也：そんなに気を落とすなよ\n
 m/MS006B.BIN	0:01	110	2703	1F03						
-m/MS006B.BIN	0:01	111	2711	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:01	111	2711	1A	{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:00}: Actually, there's something I want to ask......\n	ours		reads: 早坂達也：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:01	112	2754	1F03						
-m/MS006B.BIN	0:01	113	2762	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n					reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
+m/MS006B.BIN	0:01	113	2762	1A	{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n		{01:02}: Actually, there's something I want to ask......\n	ours		reads: 桐島英美：ちょっと、聞きたい事が‥‥\n
 m/MS006B.BIN	0:01	114	2805	1F03						
-m/MS006B.BIN	0:01	115	2813	1A	{01:04}：合格おめでとう\n					reads: 西野義雄：合格おめでとう\n
+m/MS006B.BIN	0:01	115	2813	1A	{01:04}：合格おめでとう\n		{01:04}: Congratulations on passing\n	ours		reads: 西野義雄：合格おめでとう\n
 m/MS006B.BIN	0:01	116	2850	1F03						
-m/MS006B.BIN	0:01	117	2858	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n					reads: 西野義雄：まだ機会はあるぞ\n
+m/MS006B.BIN	0:01	117	2858	1A	{01:04}：{08:76}機会は{08:7B}ぞ\n		{01:04}: There's still another chance\n	ours		reads: 西野義雄：まだ機会はあるぞ\n
 m/MS006B.BIN	0:02	0	8	1F03	{=88}{=14}	{=88}{=14}				
 m/MS006B.BIN	0:02	1	24	1F03	{=88}{=15}	{=88}{=15}				
 m/MS006B.BIN	0:02	2	40	1F03	{=88}{=16}	{=88}{=16}				
@@ -269,48 +269,48 @@ m/MS006B.BIN	0:03	6	92	1F03		
 m/MS006B.BIN	0:03	7	106	1F03						
 m/MS006B.BIN	0:03	8	120	1F03						
 m/MS006B.BIN	0:03	9	134	1F03						
-m/MS006B.BIN	0:0F	0	10	1FD2	人工音声：					
-m/MS006B.BIN	0:0F	1	22	1FD3	正しい番号を入力{08:4A}下{08:49}{08:72}\n<wait>					reads: 正しい番号を入力して下さい‥‥\n<wait>
-m/MS006B.BIN	0:10	0	8	1A	［題名］　	[Subject] 				@ours-2026-09-05
-m/MS006B.BIN	0:10	1	24	1F01	：明日は頑張りま{08:80}ね\n\n突然{08:55}が、	: Let's do our best tomorrow\n\nSorry for the sudden mail. It's 				reads: ：明日は頑張りましょうね\n\n突然ですが、; reads: ：明日は頑張りましょうね\n\n突然ですが、 @rebase-new @rebase-unmatched idx1 en={04:FE}: Let's do our best tomorrow\n\nThis may seem sudden, but @ours-2026-09-05
-m/MS006B.BIN	0:10	2	62	1F01	{08:55}。\n{01:3B}{08:62}訪ねてくれて{01:2A}。つい、何だか\n嬉しくて、お手紙を書いてしま{08:89}{08:4B}。\n\n{01:3A}だと緊張{08:4A}、なかなか眠れ{08:25}{08:87}だ{08:51}\n{08:84}、お陰で何だか安心{08:4A}眠れそう{08:55}。\n\n明日はお互い精一杯頑張りま{08:80}ね。\n\n一緒に合格出来{08:50}{08:7F}のにな{02:08}。\n\nで{08:62}おやすみな{08:49}。\n\n　　　　　　　　　　　　　　　	 here.\nThank you for coming by earlier. I was so happy that I\nended up writing you a letter.\n\nAlone, I was nervous and couldn't get to sleep, but\nthanks to you I feel like I can rest easy now.\n\nLet's both do our very best tomorrow.\n\nIt would be nice if we could pass together......\n\nWell then, good night.\n\n				reads: です。\nさっきは、訪ねてくれてありがとう。つい、何だか\n嬉しくて、お手紙を書いてしまいました。\n\nひとりだと緊張して、なかなか眠れないところだった\nけど、お陰で何だか安心して眠れそうです。\n\n明日はお互い精一杯頑張りましょうね。\n\n一緒に合格出来たらいいのにな‥‥‥。\n\nでは、おやすみなさい。\n\n　　　　　　　　　　　　　　　; reads: です。\nさっきは、訪ねてくれてありがとう。つい、何だか\n嬉しくて、お手紙を書いてしまいました。\n\nひとりだと緊張して、なかなか眠れないところだった\nけど、お陰で何だか安心して眠れそうです。\n\n明日はお互い精一杯頑張りましょうね。\n\n一緒に合格出来たらいいのにな‥‥‥。\n\nでは、おやすみなさい。\n\n　　　　　　　　　　　　　　　 @rebase-new @rebase-unmatched idx2 en=it's {04:FE}.\nThank you for visiting earlier. Somehow, it just made me\nso happy that I ended up writing you a letter.\n\nWhen I'm alone I get so nervous I can hardly sleep,\nbut thanks to you, I feel like I can sleep peacefully tonight.\n\nLet's both do our very best tomorrow.\n\nIt would be wonderful if we could pass together.\n\nWell then, good night.\n\n @ours-2026-09-05
-m/MS006B.BIN	0:10	3	335	1FBA	\n\n－受信完了－\n<wait>	 				reads: \n\n<wait> @ours-2026-09-05
-m/MS006B.BIN	0:11	0	8	1A	［題名］　	[Subject] 				@ours-2026-09-05
-m/MS006B.BIN	0:11	1	24	1F01	：一緒に合格うれしいな。\n\n一緒に合格出来て、と{08:54}うれしい{08:55}。\n神様に感謝{08:4A}しまい{08:5A}。\n\n明日は{02:00}初日{02:08}。\n緊張{08:4A}ドジを{08:4A}しまわ{08:25}かと、不安でいっぱい\n{08:55}が、	: I'm so happy we passed together.\n\nI'm so happy that we passed together.\nI find myself thanking God.\n\nTomorrow is our first day as Devil Busters......\nI'm full of worry that I'll get nervous and mess up,\nbut I'll do my best not to be a burden to you, 				reads: ：一緒に合格うれしいな。\n\n一緒に合格出来て、とてもうれしいです。\n神様に感謝してしまいます。\n\n明日はデビルバスター初日‥‥‥。\n緊張してドジをしてしまわないかと、不安でいっぱい\nですが、; reads: ：一緒に合格うれしいな。\n\n一緒に合格出来て、とてもうれしいです。\n神様に感謝してしまいます。\n\n明日はデビルバスター初日‥‥‥。\n緊張してドジをしてしまわないかと、不安でいっぱい\nですが、 @rebase-new @rebase-unmatched idx1 en={04:FE}: I'm happy we passed together.\n\nI'm so happy we got to pass together.\nI could just thank God for it.\n\nTomorrow is our first day as {02:00}s......\nI'm so anxious I might get nervous and mess something up,\nbut @ours-2026-09-05
-m/MS006B.BIN	0:11	2	181	1F01	君に迷惑をかけ{08:25}様に頑張り{08:5A}。\n\nで{08:62}{08:5B}明日{08:72}。\n\n　　　　　　　　　　　　　　　	.\n\nWell then, see you tomorrow...\n\n				reads: 君に迷惑をかけない様に頑張ります。\n\nでは、また明日‥‥。\n\n　　　　　　　　　　　　　　　; reads: 君に迷惑をかけない様に頑張ります。\n\nでは、また明日‥‥。\n\n　　　　　　　　　　　　　　　 @rebase-new @rebase-unmatched idx2 en=I'll do my best not to be a burden to you, {04:FF}.\n\nWell then, see you tomorrow..\n\n @ours-2026-09-05
-m/MS006B.BIN	0:11	3	273	1FBA	\n\n－受信完了－\n<wait>	 				reads: \n\n<wait> @ours-2026-09-05
-m/MS006B.BIN	0:12	0	8	1A	［題名］　	[Subject] 				@ours-2026-09-05
-m/MS006B.BIN	0:12	1	24	1F01	：気を落とさ{08:25}でね{08:72}\n\nあん{08:58}頑張{08:51}、	: Don't let it get you down...\n\nI can't believe that after all your hard work, 				reads: ：気を落とさないでね‥‥\n\nあんなに頑張った、; reads: ：気を落とさないでね‥‥\n\nあんなに頑張った、 @rebase-new @rebase-unmatched idx1 en={04:FE}: Don't let it get you down......\n\nAfter you tried so hard, @ours-2026-09-05
-m/MS006B.BIN	0:12	2	66	1F01	君が合格出来なくて、\n私何かが合格{08:4A}{08:83}{08:6A}て、と{08:54}信じられ{02:0A}。\n\n一緒に合格{08:4B}{08:18}な{08:72}神様は意地悪{08:55}。\n\n{08:56}、本当に気を落とさ{08:25}で下{08:49}ね。\n\n皆が言う様に、	, you didn't pass, and someone like me did.\n\nI wish we could have passed together... God is cruel.\n\nBut please, really, don't let it get you down.\n\nLike everyone says, 				reads: 君が合格出来なくて、\n私何かが合格してしまうなんて、とても信じられません。\n\n一緒に合格したかったな‥‥神様は意地悪です。\n\nでも、本当に気を落とさないで下さいね。\n\n皆が言う様に、; reads: 君が合格出来なくて、\n私何かが合格してしまうなんて、とても信じられません。\n\n一緒に合格したかったな‥‥神様は意地悪です。\n\nでも、本当に気を落とさないで下さいね。\n\n皆が言う様に、 @rebase-new @rebase-unmatched idx2 en=for you not to pass, {04:FF}, while somehow I did, I just\ncan't believe it.\n\nI wanted us to pass together...... God can be so unkind.\n\nBut please, really, don't let it get you down.\n\nLike everyone's been saying, @ours-2026-09-05
-m/MS006B.BIN	0:12	3	217	1F01	君{08:7D}絶対に合格出来ると思うし、\n{08:48}が最後{08:81}{08:25}{08:42}{02:08}。\n\n{08:4D}{08:74}{08:72}かな。\n元気だ{08:4A}ね、	, I'm sure you'll pass next time,\nand this isn't the end......\n\nThat's all... I suppose.\nChin up, 				reads: 君なら絶対に合格出来ると思うし、\nこれが最後じゃないから‥‥‥。\n\nそれだけ‥‥かな。\n元気だしてね、; reads: 君なら絶対に合格出来ると思うし、\nこれが最後じゃないから‥‥‥。\n\nそれだけ‥‥かな。\n元気だしてね、 @rebase-new @rebase-unmatched idx3 en=I'm sure you'll definitely pass too, {04:FF},\nand this isn't the last chance......\n\nI guess that's about all I wanted to say.\nCheer up, okay, @ours-2026-09-05
-m/MS006B.BIN	0:12	4	299	1F01	君。\n\n　　　　　　　　　　　　　　　	.\n\n				reads: 君。\n\n　　　　　　　　　　　　　　　 @rebase-new @rebase-unmatched idx4 en={04:FF}.\n\n @ours-2026-09-05
-m/MS006B.BIN	0:12	5	349	1FBA	\n\n－受信完了－\n<wait>	 				reads: \n\n<wait> @ours-2026-09-05
-m/MS006B.BIN	0:13	0	8	1A	［題名］　	[Subject] 				@ours-2026-09-05
-m/MS006B.BIN	0:13	1	24	1F01	：ちょ{08:53}{08:74}{08:72}\n\n自宅謹慎{08:6B}は仕方が無いの{08:74}れど、何だか{01:2D}の、\n{08:27}、父の酷いやり方を思うと、本当に悔しくて涙が\n出そう{08:55}。\n最低だと感じてしまい{08:5A}。\n\n{08:04}隊長にも申し訳{08:25}し{02:08}。\n\nごめんな{08:49}。\n{08:73}、メールで愚痴{08:51}り{08:4A}。駄目だな私{08:52}。\n\n勝手な気持ちだと思うし、何故だか分{08:42}{08:25}の{08:74}ど、\n{08:56}、{08:90}{08:4A}も私{08:72}	: Just a little......\n\nBeing confined to quarters can't be helped, but when I\nthink of how cruelly the Administrator's Office, no,\nmy father has handled this, I'm so frustrated I could\ncry.\nIt feels like the lowest thing imaginable.\n\nAnd I feel terrible towards Captain Nishino......\n\nI'm sorry.\nComplaining like this in a mail. I'm hopeless.\n\nI know it's selfish, and I don't know why, but\nsomehow I just... wanted to tell you, 				reads: ：ちょっとだけ‥‥\n\n自宅謹慎なのは仕方が無いのだけれど、何だか管理部の、\nいいえ、父の酷いやり方を思うと、本当に悔しくて涙が\n出そうです。\n最低だと感じてしまいます。\n\n西野隊長にも申し訳ないし‥‥‥。\n\nごめんなさい。\nこんな、メールで愚痴ったりして。駄目だな私って。\n\n勝手な気持ちだと思うし、何故だか分からないのだけど、\nでも、どうしても私‥‥; reads: ：ちょっとだけ‥‥\n\n自宅謹慎なのは仕方が無いのだけれど、何だか管理部の、\nいいえ、父の酷いやり方を思うと、本当に悔しくて涙が\n出そうです。\n最低だと感じてしまいます。\n\n西野隊長にも申し訳ないし‥‥‥。\n\nごめんなさい。\nこんな、メールで愚痴ったりして。駄目だな私って。\n\n勝手な気持ちだと思うし、何故だか分からないのだけど、\nでも、どうしても私‥‥ @rebase-new @rebase-unmatched idx1 en={04:FE}: Just a little bit......\n\nBeing confined to quarters can't be helped, but somehow it's\nthe {01:2D}'s fault - no, when I think about my father's terrible\nway of doing things, I really feel like I might cry.\nI just feel awful about it.\n\nI feel bad for Captain Nishino too......\n\nI'm sorry.\nComplaining to you in an email like this. I'm hopeless, aren't I.\n\nI know it's selfish of me, and I don't really know why, but,\nstill, no matter what, I just @ours-2026-09-05
-m/MS006B.BIN	0:13	2	313	1F01	君に言{08:64}く{08:1A}{08:1F}の{02:08}。\n\n気にし{08:25}でね、ごめんな{08:49}。\n{08:4D}{08:81}あ{08:72}。\n\n　　　　　　　　　　　　　　　　	......\n\nDon't worry about it, sorry.\nWell then...\n\n				reads: 君に言いたくなってしまったの‥‥‥。\n\n気にしないでね、ごめんなさい。\nそれじゃあ‥‥。\n\n　　　　　　　　　　　　　　　　; reads: 君に言いたくなってしまったの‥‥‥。\n\n気にしないでね、ごめんなさい。\nそれじゃあ‥‥。\n\n　　　　　　　　　　　　　　　　 @rebase-new @rebase-unmatched idx2 en=had to tell you, {04:FF}......\n\nDon't worry about it, sorry.\nThat's all......\n\n @ours-2026-09-05
-m/MS006B.BIN	0:13	3	420	1FBA	\n\n－受信完了－\n<wait>	 				reads: \n\n<wait> @ours-2026-09-05
-m/MS006B.BIN	0:14	0	8	1A	［題名］　{01:00}：や{08:51}な！　	[Subject] Hayasaka Tatsuya: You did it! 				reads: ［題名］　早坂達也：やったな！　; reads: ［題名］　早坂達也：やったな！　 @ours-2026-09-05
-m/MS006B.BIN	0:14	1	38	1F01	！\n\n合格おめでとう！\n明日{08:42}、俺の後輩{08:52}訳だな！\n\n明日{08:62}{02:00}のレクチャーだぜ。\nま、きっちりしごいてやる{08:42}、覚悟{08:4A}ろよな。\n\n取りあえず今夜はゆっくり休めよ。\n明日、遅{08:2F}ん{08:81}{08:25}ぞ！\n\n　　　　　　　　　　　　　　　　　　　　{08:00}\n\n<wait>	!\n\nCongratulations on passing!\nStarting tomorrow, you're my junior!\n\nTomorrow is the Devil Buster lecture.\nI'll be putting you through your paces, so brace yourself.\n\nFor now, get a good night's rest.\nAnd don't be late tomorrow!\n\n                                        Hayasaka\n\n<wait>				reads: ！\n\n合格おめでとう！\n明日から、俺の後輩って訳だな！\n\n明日は、デビルバスターのレクチャーだぜ。\nま、きっちりしごいてやるから、覚悟してろよな。\n\n取りあえず今夜はゆっくり休めよ。\n明日、遅れるんじゃないぞ！\n\n　　　　　　　　　　　　　　　　　　　　早坂\n\n<wait>; reads: ！\n\n合格おめでとう！\n明日から、俺の後輩って訳だな！\n\n明日は、デビルバスターのレクチャーだぜ。\nま、きっちりしごいてやるから、覚悟してろよな。\n\n取りあえず今夜はゆっくり休めよ。\n明日、遅れるんじゃないぞ！\n\n　　　　　　　　　　　　　　　　　　　　早坂\n\n<wait> @rebase-tagdiff @ours-2026-09-05
-m/MS006B.BIN	0:14	2	263	1FBA	\n\n－受信完了－\n<wait>					
-m/MS006B.BIN	0:15	0	8	1A	［題名］　{01:00}：{08:7A}に気を落とすなよ\n\n	[Subject] Hayasaka Tatsuya: Don't let it get you down\n\n				reads: ［題名］　早坂達也：そんなに気を落とすなよ\n\n; reads: ［題名］　早坂達也：そんなに気を落とすなよ\n\n @ours-2026-09-05
-m/MS006B.BIN	0:15	1	48	1F01	。試験残念だ{08:51}な。\n{08:76}チャンスが{08:7B}{08:5F}{08:42}、{08:7A}に気を落とすなよ。\n\n{08:4D}に、俺達{08:72}第二部隊全員が、あのヴァーチャ\nダンジョンでの戦い{08:62}評価{08:13}。\n{08:3F}を見て、俺はお前は必ず{02:00}に{08:59}。\nそう思{08:51}よ。\n\nだ{08:42}、な。き{08:53}次は{01:32}だよ。\n何か、上手く表現{08:23}{08:84}、がんばれよ！\n\n　　　　　　　　　　　　　　　　　　　　{08:00}\n\n<wait>	. Rough luck on the exam.\nThere's still another chance, so don't get too down about it.\n\nBesides, all of us... the whole of Squad Two rated how\nyou fought in that virtual dungeon.\nWatching that, I thought: this guy is going to be a\nDevil Buster for sure.\n\nSo, yeah. Next time you'll make it.\nI'm not great at putting this stuff into words, but\nhang in there!\n\n                                        Hayasaka\n\n<wait>				reads: 。試験残念だったな。\nまだチャンスがあるんだから、そんなに気を落とすなよ。\n\nそれに、俺達‥‥第二部隊全員が、あのヴァーチャ\nダンジョンでの戦いは、評価している。\nあれを見て、俺はお前は必ずデビルバスターになる。\nそう思ったよ。\n\nだから、な。きっと次は大丈夫だよ。\n何か、上手く表現できないけど、がんばれよ！\n\n　　　　　　　　　　　　　　　　　　　　早坂\n\n<wait>; reads: 。試験残念だったな。\nまだチャンスがあるんだから、そんなに気を落とすなよ。\n\nそれに、俺達‥‥第二部隊全員が、あのヴァーチャ\nダンジョンでの戦いは、評価している。\nあれを見て、俺はお前は必ずデビルバスターになる。\nそう思ったよ。\n\nだから、な。きっと次は大丈夫だよ。\n何か、上手く表現できないけど、がんばれよ！\n\n　　　　　　　　　　　　　　　　　　　　早坂\n\n<wait> @rebase-tagdiff @ours-2026-09-05
-m/MS006B.BIN	0:15	2	341	1FBA	\n\n－受信完了－\n<wait>					
-m/MS006B.BIN	0:16	0	8	1A	［題名］　{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n\nちょ{08:53}聞{08:1E}い{08:5F}が、最近{08:03}が何か言{08:52}\n{08:19}か？\n\n{08:19}ら、{08:7F}{08:5F}が{02:08}{08:72}\n\nいや、うん。{08:4D}{08:74}な{08:5F}。\n{08:4D}{08:81}あ{02:08}ま、何にも{08:19}ら{08:7F}{08:5F}よ。\n{08:81}あな！\n\n　　　　　　　　　　　　　　　　　　　　{08:00}\n\n<wait>	[Subject] Hayasaka Tatsuya: Actually, there's something I want to ask...\n\nJust wanted to ask, has Emi said anything to you\nlately?\n\nIf not, that's fine......\n\nNo, yeah. That's all.\nWell then...... yeah, if there's nothing, that's fine.\nSee you!\n\n                                        Hayasaka\n\n<wait>				reads: ［題名］　早坂達也：ちょっと、聞きたい事が‥‥\n\nちょっと聞きたいんだが、最近英美が何か言って\nなかったか？\n\nなかったら、いいんだが‥‥‥‥‥\n\nいや、うん。それだけなんだ。\nそれじゃあ‥‥‥ま、何にもなかったらいいんだよ。\nじゃあな！\n\n　　　　　　　　　　　　　　　　　　　　早坂\n\n<wait>; reads: ［題名］　早坂達也：ちょっと、聞きたい事が‥‥\n\nちょっと聞きたいんだが、最近英美が何か言って\nなかったか？\n\nなかったら、いいんだが‥‥‥‥‥\n\nいや、うん。それだけなんだ。\nそれじゃあ‥‥‥ま、何にもなかったらいいんだよ。\nじゃあな！\n\n　　　　　　　　　　　　　　　　　　　　早坂\n\n<wait> @ours-2026-09-05
-m/MS006B.BIN	0:16	1	219	1FBA	\n\n－受信完了－\n<wait>					
-m/MS006B.BIN	0:17	0	8	1A	［題名］　{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n\nちょ{08:53}聞{08:1E}い{08:5F}{08:84}{02:08}‥\n\n	[Subject] Kirishima Emi: Actually, there's something I want to ask...\n\nJust wanted to ask you something......\n\n				reads: ［題名］　桐島英美：ちょっと、聞きたい事が‥‥\n\nちょっと聞きたいんだけど‥‥‥‥\n\n; reads: ［題名］　桐島英美：ちょっと、聞きたい事が‥‥\n\nちょっと聞きたいんだけど‥‥‥‥\n\n @ours-2026-09-05
-m/MS006B.BIN	0:17	1	72	1F01	くん。\n最近、{08:01}{08:42}何か言{08:52}こ{08:19}？\n\n何にも無{08:18}ら{08:7F}{08:5F}{08:84}ね{02:08}\n\nうん。まあ{08:7F}や。\nごめんね急に。あんまり気にし{08:25}で。\n\n{08:4D}{08:81}。\n\n　　　　　　　　　　　　　　　　　　　　{08:03}\n\n<wait>	.\nHas Tatsuya said anything to you lately?\n\nIf not, that's fine......\n\nYeah. Never mind.\nSorry for the sudden question. Don't worry about it.\n\nSee you.\n\n                                        Emi\n\n<wait>				reads: くん。\n最近、達也から何か言ってこなかった？\n\n何にも無かったらいいんだけどね‥‥‥\n\nうん。まあいいや。\nごめんね急に。あんまり気にしないで。\n\nそれじゃ。\n\n　　　　　　　　　　　　　　　　　　　　英美\n\n<wait>; reads: くん。\n最近、達也から何か言ってこなかった？\n\n何にも無かったらいいんだけどね‥‥‥\n\nうん。まあいいや。\nごめんね急に。あんまり気にしないで。\n\nそれじゃ。\n\n　　　　　　　　　　　　　　　　　　　　英美\n\n<wait> @rebase-tagdiff @ours-2026-09-05
-m/MS006B.BIN	0:17	2	240	1FBA	\n\n－受信完了－\n<wait>					
-m/MS006B.BIN	0:18	0	8	1A	［題名］　{01:04}：合格おめでとう\n\n	[Subject] Nishino Yoshio: Congratulations on passing\n\n				reads: ［題名］　西野義雄：合格おめでとう\n\n; reads: ［題名］　西野義雄：合格おめでとう\n\n @ours-2026-09-05
-m/MS006B.BIN	0:18	1	44	1F01	。合格おめでとう。\n\n{08:86}も、配属が私の部隊と{08:1A}、ほ{08:53}{08:13}。\n他の部隊で、色々と辛い目に会わ{08:25}とも限らん{08:42}な。\n\n{03:0B}私の部隊だ{08:42}と言{08:52}手加減はし{08:25}ぞ。\n\n	. Congratulations on passing.\n\nI am relieved, too, that you have been assigned to my squad.\nIn another squad you might have been put through a good deal.\n\nThat said, do not expect me to go easy on you because of it.\n\n				reads: 。合格おめでとう。\n\nしかも、配属が私の部隊となって、ほっとしている。\n他の部隊で、色々と辛い目に会わないとも限らんからな。\n\nしかし、私の部隊だからと言って手加減はしないぞ。\n\n; reads: 。合格おめでとう。\n\nしかも、配属が私の部隊となって、ほっとしている。\n他の部隊で、色々と辛い目に会わないとも限らんからな。\n\nしかし、私の部隊だからと言って手加減はしないぞ。\n\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS006B.BIN	0:18	2	193	1F01	も、{02:00}に{08:16}以上責任感を持{08:52}\n行動{08:8E}{08:69}に。\n\n明日は{02:00}初日だ。\n装備品の支給と、レクチャーが行わ{08:2F}。\n{08:4D}に備えて、今日は{08:5C}休むと{08:7F}。\n\n　　　　　　　　　　　　　　　　　　{01:04}\n\n<wait>	, now that you are a Devil Buster,\nact with a sense of responsibility.\n\nTomorrow is your first day as a Devil Buster.\nEquipment will be issued and a lecture given.\nIn preparation, you should get some rest today.\n\n                                    Nishino Yoshio\n\n<wait>				reads: も、デビルバスターになった以上責任感を持って\n行動するように。\n\n明日はデビルバスター初日だ。\n装備品の支給と、レクチャーが行われる。\nそれに備えて、今日はもう休むといい。\n\n　　　　　　　　　　　　　　　　　　西野義雄\n\n<wait>; reads: も、デビルバスターになった以上責任感を持って\n行動するように。\n\n明日はデビルバスター初日だ。\n装備品の支給と、レクチャーが行われる。\nそれに備えて、今日はもう休むといい。\n\n　　　　　　　　　　　　　　　　　　西野義雄\n\n<wait> @rebase-tagdiff @ours-2026-09-05
-m/MS006B.BIN	0:18	3	366	1FBA	\n\n－受信完了－\n<wait>					
-m/MS006B.BIN	0:19	0	8	1A	［題名］　{01:04}：{08:76}機会は{08:7B}ぞ\n\n	[Subject] Nishino Yoshio: There's still another chance\n\n				reads: ［題名］　西野義雄：まだ機会はあるぞ\n\n; reads: ［題名］　西野義雄：まだ機会はあるぞ\n\n @ours-2026-09-05
-m/MS006B.BIN	0:19	1	42	1F01	。試験の事は本当に残念だ{08:51}な。\n{08:8F}、{08:76}チャンスは{08:7B}。\n{08:5B}の機会にかければ{08:7F}{08:5F}。\n\n{02:00}試験{08:62}難しい事{08:56}知られ{08:14}。\n１回で合格{08:8E}事の方が、珍しい{08:77}よ。\n\n	. I am truly sorry about the exam.\nBut there is still another chance.\nSet your sights on the next one.\n\nThe Devil Buster exam is known for being hard.\nPassing on the first try is the rare exception.\n\n				reads: 。試験の事は本当に残念だったな。\nだが、まだチャンスはある。\nまたの機会にかければいいんだ。\n\nデビルバスター試験は、難しい事でも知られている。\n１回で合格する事の方が、珍しいのだよ。\n\n; reads: 。試験の事は本当に残念だったな。\nだが、まだチャンスはある。\nまたの機会にかければいいんだ。\n\nデビルバスター試験は、難しい事でも知られている。\n１回で合格する事の方が、珍しいのだよ。\n\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS006B.BIN	0:19	2	191	1F01	、{08:48}で挫けて{08:26}かんぞ。\n{01:3B}も書{08:64}とおり、{08:76}チャンスは{08:7B}{08:77}{08:42}。\n\n　　　　　　　　　　　　　　　　　　{01:04}\n\n<wait>	, don't let this break you.\nAs I wrote just now, there is still another chance.\n\n                                    Nishino Yoshio\n\n<wait>				reads: 、これで挫けてはいかんぞ。\nさっきも書いたとおり、まだチャンスはあるのだから。\n\n　　　　　　　　　　　　　　　　　　西野義雄\n\n<wait>; reads: 、これで挫けてはいかんぞ。\nさっきも書いたとおり、まだチャンスはあるのだから。\n\n　　　　　　　　　　　　　　　　　　西野義雄\n\n<wait> @rebase-tagdiff @ours-2026-09-05
-m/MS006B.BIN	0:19	3	298	1FBA	\n\n－受信完了－\n<wait>					
-m/MS006B.BIN	0:1A	0	0	DATA	雨宮きつね：変な夢の話(笑)\n［題名］　雨宮きつね：変な夢の話(笑)\n\nオンラインでは{01:28}{08:90}も。雨宮{08:55}。\n昨夜、妙な夢を見たの{08:55}が、何だか気に{08:16}{08:42}\n御報告。自称チャネラー{08:55}{08:42}(苦笑)。\n\n会{08:51}事も無いのに変{08:6B}{08:55}が、実は夢の中に	Amemiya Kitsune: A Strange Dream (lol)\n[Subject] Amemiya Kitsune: A Strange Dream (lol)\n\nHello as always from online. Amemiya here.\nI had an odd dream last night, and it bothered me,\nso I'm reporting it. Self-styled channeler, after all.\n(wry laugh)\n\nIt's strange, since we've never met, but you, 				reads: 雨宮きつね：変な夢の話(笑)\n［題名］　雨宮きつね：変な夢の話(笑)\n\nオンラインではいつもどうも。雨宮です。\n昨夜、妙な夢を見たのですが、何だか気になったから\n御報告。自称チャネラーですから(苦笑)。\n\n会った事も無いのに変なのですが、実は夢の中に; reads: 雨宮きつね：変な夢の話(笑)\n［題名］　雨宮きつね：変な夢の話(笑)\n\nオンラインではいつもどうも。雨宮です。\n昨夜、妙な夢を見たのですが、何だか気になったから\n御報告。自称チャネラーですから(苦笑)。\n\n会った事も無いのに変なのですが、実は夢の中に @ours-2026-09-05
-m/MS006B.BIN	0:1A	1	217	1F01	君が出て来たの{08:55}よ。\n\nで、内容{08:55}が、君と関わりの{08:7B}親しい人々が、シ\nェルターの外で事故に遭{08:52}、君が{08:4D}を助{08:29}とい\nう{08:5E}だ{08:51}の{08:74}ど、おかしな事に結果が幾つかあ\n{08:52}{02:08}。\n\nとにかく、早く助ければ助{08:29}程、君が{08:06}バスタ\nーに{08:59}確率が高まるとか、{08:7A}感じで{08:4B}。（ど\nんな感じだ(^^;)）\n\n何だかさっぱり訳が分かり{02:0A}が、すぐに伝{08:41}方\nが良い様な気が{08:4A}、メールを書きま{08:4B}。\n\n\n{08:4D}{08:74}{08:55}。\nで{08:62}{08:5B}ネットワークでお会いしま{08:80}。(^^)V\n\n　　　　　　　　　　　　　　　　　　　雨宮きつね\n\n<wait>	, appeared in that dream.\n\nAs for what happened: people close to you were in an\naccident outside the shelter, and you saved them.\nThe odd thing was, there were several different\noutcomes......\n\nAnyway, the sooner you saved them, the higher your\nchances of becoming a Devil Buster, or something like\nthat. (Whatever that means (^^;))\n\nI have no idea what it's about, but I felt I should\ntell you right away, so I wrote this mail.\n\n\nThat's all.\nWell then, see you on the network. (^^)V\n\n                                  Amemiya Kitsune\n\n<wait>				reads: 君が出て来たのですよ。\n\nで、内容ですが、君と関わりのある親しい人々が、シ\nェルターの外で事故に遭って、君がそれを助けるとい\nうものだったのだけど、おかしな事に結果が幾つかあ\nって‥‥‥。\n\nとにかく、早く助ければ助ける程、君がデビルバスタ\nーになる確率が高まるとか、そんな感じでした。（ど\nんな感じだ(^^;)）\n\n何だかさっぱり訳が分かりませんが、すぐに伝えた方\nが良い様な気がして、メールを書きました。\n\n\nそれだけです。\nでは、またネットワークでお会いしましょう。(^^)V\n\n　　　　　　　　　　　　　　　　　　　雨宮きつね\n\n<wait>; reads: 君が出て来たのですよ。\n\nで、内容ですが、君と関わりのある親しい人々が、シ\nェルターの外で事故に遭って、君がそれを助けるとい\nうものだったのだけど、おかしな事に結果が幾つかあ\nって‥‥‥。\n\nとにかく、早く助ければ助ける程、君がデビルバスタ\nーになる確率が高まるとか、そんな感じでした。（ど\nんな感じだ(^^;)）\n\n何だかさっぱり訳が分かりませんが、すぐに伝えた方\nが良い様な気がして、メールを書きました。\n\n\nそれだけです。\nでは、またネットワークでお会いしましょう。(^^)V\n\n　　　　　　　　　　　　　　　　　　　雨宮きつね\n\n<wait> @rebase-tagdiff @ours-2026-09-05
-m/MS006B.BIN	0:1A	2	669	1FBA	\n\n－受信完了－\n<wait>					
-m/MS006B.BIN	0:1C	0	0	DATA	＞次の発言を読み{08:15}\n					reads: ＞次の発言を読みますか？\n
-m/MS006B.BIN	0:1C	1	35	1FB2	{08:26}	Yes				reads: はい; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
-m/MS006B.BIN	0:1C	2	39	1FB2	{08:27}	No				reads: いいえ; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS006B.BIN	0:0F	0	10	1FD2	人工音声：		Robotic Voice:	v005		
+m/MS006B.BIN	0:0F	1	22	1FD3	正しい番号を入力{08:4A}下{08:49}{08:72}\n<wait>		Please select a valid option.\n<wait>	v005		reads: 正しい番号を入力して下さい‥‥\n<wait>
+m/MS006B.BIN	0:10	0	8	1A	［題名］　	[Subject] 	[Subject]　	ours	draft	@ours-2026-09-05
+m/MS006B.BIN	0:10	1	24	1F01	：明日は頑張りま{08:80}ね\n\n突然{08:55}が、	: Let's do our best tomorrow\n\nSorry for the sudden mail. It's 			draft	reads: ：明日は頑張りましょうね\n\n突然ですが、; reads: ：明日は頑張りましょうね\n\n突然ですが、 @rebase-new @rebase-unmatched idx1 en={04:FE}: Let's do our best tomorrow\n\nThis may seem sudden, but @ours-2026-09-05
+m/MS006B.BIN	0:10	2	62	1F01	{08:55}。\n{01:3B}{08:62}訪ねてくれて{01:2A}。つい、何だか\n嬉しくて、お手紙を書いてしま{08:89}{08:4B}。\n\n{01:3A}だと緊張{08:4A}、なかなか眠れ{08:25}{08:87}だ{08:51}\n{08:84}、お陰で何だか安心{08:4A}眠れそう{08:55}。\n\n明日はお互い精一杯頑張りま{08:80}ね。\n\n一緒に合格出来{08:50}{08:7F}のにな{02:08}。\n\nで{08:62}おやすみな{08:49}。\n\n　　　　　　　　　　　　　　　	 here.\nThank you for coming by earlier. I was so happy that I\nended up writing you a letter.\n\nAlone, I was nervous and couldn't get to sleep, but\nthanks to you I feel like I can rest easy now.\n\nLet's both do our very best tomorrow.\n\nIt would be nice if we could pass together......\n\nWell then, good night.\n\n			draft	reads: です。\nさっきは、訪ねてくれてありがとう。つい、何だか\n嬉しくて、お手紙を書いてしまいました。\n\nひとりだと緊張して、なかなか眠れないところだった\nけど、お陰で何だか安心して眠れそうです。\n\n明日はお互い精一杯頑張りましょうね。\n\n一緒に合格出来たらいいのにな‥‥‥。\n\nでは、おやすみなさい。\n\n　　　　　　　　　　　　　　　; reads: です。\nさっきは、訪ねてくれてありがとう。つい、何だか\n嬉しくて、お手紙を書いてしまいました。\n\nひとりだと緊張して、なかなか眠れないところだった\nけど、お陰で何だか安心して眠れそうです。\n\n明日はお互い精一杯頑張りましょうね。\n\n一緒に合格出来たらいいのにな‥‥‥。\n\nでは、おやすみなさい。\n\n　　　　　　　　　　　　　　　 @rebase-new @rebase-unmatched idx2 en=it's {04:FE}.\nThank you for visiting earlier. Somehow, it just made me\nso happy that I ended up writing you a letter.\n\nWhen I'm alone I get so nervous I can hardly sleep,\nbut thanks to you, I feel like I can sleep peacefully tonight.\n\nLet's both do our very best tomorrow.\n\nIt would be wonderful if we could pass together.\n\nWell then, good night.\n\n @ours-2026-09-05
+m/MS006B.BIN	0:10	3	335	1FBA	\n\n－受信完了－\n<wait>	 	\n\n-Message Received-\n<wait>	ours	draft	reads: \n\n<wait> @ours-2026-09-05
+m/MS006B.BIN	0:11	0	8	1A	［題名］　	[Subject] 	[Subject]　	ours	draft	@ours-2026-09-05
+m/MS006B.BIN	0:11	1	24	1F01	：一緒に合格うれしいな。\n\n一緒に合格出来て、と{08:54}うれしい{08:55}。\n神様に感謝{08:4A}しまい{08:5A}。\n\n明日は{02:00}初日{02:08}。\n緊張{08:4A}ドジを{08:4A}しまわ{08:25}かと、不安でいっぱい\n{08:55}が、	: I'm so happy we passed together.\n\nI'm so happy that we passed together.\nI find myself thanking God.\n\nTomorrow is our first day as Devil Busters......\nI'm full of worry that I'll get nervous and mess up,\nbut I'll do my best not to be a burden to you, 			draft	reads: ：一緒に合格うれしいな。\n\n一緒に合格出来て、とてもうれしいです。\n神様に感謝してしまいます。\n\n明日はデビルバスター初日‥‥‥。\n緊張してドジをしてしまわないかと、不安でいっぱい\nですが、; reads: ：一緒に合格うれしいな。\n\n一緒に合格出来て、とてもうれしいです。\n神様に感謝してしまいます。\n\n明日はデビルバスター初日‥‥‥。\n緊張してドジをしてしまわないかと、不安でいっぱい\nですが、 @rebase-new @rebase-unmatched idx1 en={04:FE}: I'm happy we passed together.\n\nI'm so happy we got to pass together.\nI could just thank God for it.\n\nTomorrow is our first day as {02:00}s......\nI'm so anxious I might get nervous and mess something up,\nbut @ours-2026-09-05
+m/MS006B.BIN	0:11	2	181	1F01	君に迷惑をかけ{08:25}様に頑張り{08:5A}。\n\nで{08:62}{08:5B}明日{08:72}。\n\n　　　　　　　　　　　　　　　	.\n\nWell then, see you tomorrow...\n\n			draft	reads: 君に迷惑をかけない様に頑張ります。\n\nでは、また明日‥‥。\n\n　　　　　　　　　　　　　　　; reads: 君に迷惑をかけない様に頑張ります。\n\nでは、また明日‥‥。\n\n　　　　　　　　　　　　　　　 @rebase-new @rebase-unmatched idx2 en=I'll do my best not to be a burden to you, {04:FF}.\n\nWell then, see you tomorrow..\n\n @ours-2026-09-05
+m/MS006B.BIN	0:11	3	273	1FBA	\n\n－受信完了－\n<wait>	 	\n\n-Message Received-\n<wait>	ours	draft	reads: \n\n<wait> @ours-2026-09-05
+m/MS006B.BIN	0:12	0	8	1A	［題名］　	[Subject] 	[Subject]　	ours	draft	@ours-2026-09-05
+m/MS006B.BIN	0:12	1	24	1F01	：気を落とさ{08:25}でね{08:72}\n\nあん{08:58}頑張{08:51}、	: Don't let it get you down...\n\nI can't believe that after all your hard work, 			draft	reads: ：気を落とさないでね‥‥\n\nあんなに頑張った、; reads: ：気を落とさないでね‥‥\n\nあんなに頑張った、 @rebase-new @rebase-unmatched idx1 en={04:FE}: Don't let it get you down......\n\nAfter you tried so hard, @ours-2026-09-05
+m/MS006B.BIN	0:12	2	66	1F01	君が合格出来なくて、\n私何かが合格{08:4A}{08:83}{08:6A}て、と{08:54}信じられ{02:0A}。\n\n一緒に合格{08:4B}{08:18}な{08:72}神様は意地悪{08:55}。\n\n{08:56}、本当に気を落とさ{08:25}で下{08:49}ね。\n\n皆が言う様に、	, you didn't pass, and someone like me did.\n\nI wish we could have passed together... God is cruel.\n\nBut please, really, don't let it get you down.\n\nLike everyone says, 			draft	reads: 君が合格出来なくて、\n私何かが合格してしまうなんて、とても信じられません。\n\n一緒に合格したかったな‥‥神様は意地悪です。\n\nでも、本当に気を落とさないで下さいね。\n\n皆が言う様に、; reads: 君が合格出来なくて、\n私何かが合格してしまうなんて、とても信じられません。\n\n一緒に合格したかったな‥‥神様は意地悪です。\n\nでも、本当に気を落とさないで下さいね。\n\n皆が言う様に、 @rebase-new @rebase-unmatched idx2 en=for you not to pass, {04:FF}, while somehow I did, I just\ncan't believe it.\n\nI wanted us to pass together...... God can be so unkind.\n\nBut please, really, don't let it get you down.\n\nLike everyone's been saying, @ours-2026-09-05
+m/MS006B.BIN	0:12	3	217	1F01	君{08:7D}絶対に合格出来ると思うし、\n{08:48}が最後{08:81}{08:25}{08:42}{02:08}。\n\n{08:4D}{08:74}{08:72}かな。\n元気だ{08:4A}ね、	, I'm sure you'll pass next time,\nand this isn't the end......\n\nThat's all... I suppose.\nChin up, 			draft	reads: 君なら絶対に合格出来ると思うし、\nこれが最後じゃないから‥‥‥。\n\nそれだけ‥‥かな。\n元気だしてね、; reads: 君なら絶対に合格出来ると思うし、\nこれが最後じゃないから‥‥‥。\n\nそれだけ‥‥かな。\n元気だしてね、 @rebase-new @rebase-unmatched idx3 en=I'm sure you'll definitely pass too, {04:FF},\nand this isn't the last chance......\n\nI guess that's about all I wanted to say.\nCheer up, okay, @ours-2026-09-05
+m/MS006B.BIN	0:12	4	299	1F01	君。\n\n　　　　　　　　　　　　　　　	.\n\n			draft	reads: 君。\n\n　　　　　　　　　　　　　　　 @rebase-new @rebase-unmatched idx4 en={04:FF}.\n\n @ours-2026-09-05
+m/MS006B.BIN	0:12	5	349	1FBA	\n\n－受信完了－\n<wait>	 	\n\n-Message Received-\n<wait>	ours	draft	reads: \n\n<wait> @ours-2026-09-05
+m/MS006B.BIN	0:13	0	8	1A	［題名］　	[Subject] 	[Subject]　	ours	draft	@ours-2026-09-05
+m/MS006B.BIN	0:13	1	24	1F01	：ちょ{08:53}{08:74}{08:72}\n\n自宅謹慎{08:6B}は仕方が無いの{08:74}れど、何だか{01:2D}の、\n{08:27}、父の酷いやり方を思うと、本当に悔しくて涙が\n出そう{08:55}。\n最低だと感じてしまい{08:5A}。\n\n{08:04}隊長にも申し訳{08:25}し{02:08}。\n\nごめんな{08:49}。\n{08:73}、メールで愚痴{08:51}り{08:4A}。駄目だな私{08:52}。\n\n勝手な気持ちだと思うし、何故だか分{08:42}{08:25}の{08:74}ど、\n{08:56}、{08:90}{08:4A}も私{08:72}	: Just a little......\n\nBeing confined to quarters can't be helped, but when I\nthink of how cruelly the Administrator's Office, no,\nmy father has handled this, I'm so frustrated I could\ncry.\nIt feels like the lowest thing imaginable.\n\nAnd I feel terrible towards Captain Nishino......\n\nI'm sorry.\nComplaining like this in a mail. I'm hopeless.\n\nI know it's selfish, and I don't know why, but\nsomehow I just... wanted to tell you, 			draft	reads: ：ちょっとだけ‥‥\n\n自宅謹慎なのは仕方が無いのだけれど、何だか管理部の、\nいいえ、父の酷いやり方を思うと、本当に悔しくて涙が\n出そうです。\n最低だと感じてしまいます。\n\n西野隊長にも申し訳ないし‥‥‥。\n\nごめんなさい。\nこんな、メールで愚痴ったりして。駄目だな私って。\n\n勝手な気持ちだと思うし、何故だか分からないのだけど、\nでも、どうしても私‥‥; reads: ：ちょっとだけ‥‥\n\n自宅謹慎なのは仕方が無いのだけれど、何だか管理部の、\nいいえ、父の酷いやり方を思うと、本当に悔しくて涙が\n出そうです。\n最低だと感じてしまいます。\n\n西野隊長にも申し訳ないし‥‥‥。\n\nごめんなさい。\nこんな、メールで愚痴ったりして。駄目だな私って。\n\n勝手な気持ちだと思うし、何故だか分からないのだけど、\nでも、どうしても私‥‥ @rebase-new @rebase-unmatched idx1 en={04:FE}: Just a little bit......\n\nBeing confined to quarters can't be helped, but somehow it's\nthe {01:2D}'s fault - no, when I think about my father's terrible\nway of doing things, I really feel like I might cry.\nI just feel awful about it.\n\nI feel bad for Captain Nishino too......\n\nI'm sorry.\nComplaining to you in an email like this. I'm hopeless, aren't I.\n\nI know it's selfish of me, and I don't really know why, but,\nstill, no matter what, I just @ours-2026-09-05
+m/MS006B.BIN	0:13	2	313	1F01	君に言{08:64}く{08:1A}{08:1F}の{02:08}。\n\n気にし{08:25}でね、ごめんな{08:49}。\n{08:4D}{08:81}あ{08:72}。\n\n　　　　　　　　　　　　　　　　	......\n\nDon't worry about it, sorry.\nWell then...\n\n			draft	reads: 君に言いたくなってしまったの‥‥‥。\n\n気にしないでね、ごめんなさい。\nそれじゃあ‥‥。\n\n　　　　　　　　　　　　　　　　; reads: 君に言いたくなってしまったの‥‥‥。\n\n気にしないでね、ごめんなさい。\nそれじゃあ‥‥。\n\n　　　　　　　　　　　　　　　　 @rebase-new @rebase-unmatched idx2 en=had to tell you, {04:FF}......\n\nDon't worry about it, sorry.\nThat's all......\n\n @ours-2026-09-05
+m/MS006B.BIN	0:13	3	420	1FBA	\n\n－受信完了－\n<wait>	 	\n\n-Message Received-\n<wait>	ours	draft	reads: \n\n<wait> @ours-2026-09-05
+m/MS006B.BIN	0:14	0	8	1A	［題名］　{01:00}：や{08:51}な！　	[Subject] Hayasaka Tatsuya: You did it! 	[Subject]　{01:00}: You did it!　	ours	draft	reads: ［題名］　早坂達也：やったな！　; reads: ［題名］　早坂達也：やったな！　 @ours-2026-09-05
+m/MS006B.BIN	0:14	1	38	1F01	！\n\n合格おめでとう！\n明日{08:42}、俺の後輩{08:52}訳だな！\n\n明日{08:62}{02:00}のレクチャーだぜ。\nま、きっちりしごいてやる{08:42}、覚悟{08:4A}ろよな。\n\n取りあえず今夜はゆっくり休めよ。\n明日、遅{08:2F}ん{08:81}{08:25}ぞ！\n\n　　　　　　　　　　　　　　　　　　　　{08:00}\n\n<wait>	!\n\nCongratulations on passing!\nStarting tomorrow, you're my junior!\n\nTomorrow is the Devil Buster lecture.\nI'll be putting you through your paces, so brace yourself.\n\nFor now, get a good night's rest.\nAnd don't be late tomorrow!\n\n                                        Hayasaka\n\n<wait>	{04:FF}!\n\nCongratulations on passing!\nStarting tomorrow, you're my junior!\n\nTomorrow's the {02:00} lecture, you know.\nWell, I'll be sure to put you through the wringer, so be ready.\n\nAnyway, get some good rest tonight.\nDon't be late tomorrow!\n\n　　　　　　　　　　　　　　　　　　　　{08:00}\n\n<wait>	ours	draft	reads: ！\n\n合格おめでとう！\n明日から、俺の後輩って訳だな！\n\n明日は、デビルバスターのレクチャーだぜ。\nま、きっちりしごいてやるから、覚悟してろよな。\n\n取りあえず今夜はゆっくり休めよ。\n明日、遅れるんじゃないぞ！\n\n　　　　　　　　　　　　　　　　　　　　早坂\n\n<wait>; reads: ！\n\n合格おめでとう！\n明日から、俺の後輩って訳だな！\n\n明日は、デビルバスターのレクチャーだぜ。\nま、きっちりしごいてやるから、覚悟してろよな。\n\n取りあえず今夜はゆっくり休めよ。\n明日、遅れるんじゃないぞ！\n\n　　　　　　　　　　　　　　　　　　　　早坂\n\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS006B.BIN	0:14	2	263	1FBA	\n\n－受信完了－\n<wait>		\n\n-Message Received-\n<wait>	ours		
+m/MS006B.BIN	0:15	0	8	1A	［題名］　{01:00}：{08:7A}に気を落とすなよ\n\n	[Subject] Hayasaka Tatsuya: Don't let it get you down\n\n	[Subject]　{01:00}: Don't let it get you down that much\n\n	ours	draft	reads: ［題名］　早坂達也：そんなに気を落とすなよ\n\n; reads: ［題名］　早坂達也：そんなに気を落とすなよ\n\n @ours-2026-09-05
+m/MS006B.BIN	0:15	1	48	1F01	。試験残念だ{08:51}な。\n{08:76}チャンスが{08:7B}{08:5F}{08:42}、{08:7A}に気を落とすなよ。\n\n{08:4D}に、俺達{08:72}第二部隊全員が、あのヴァーチャ\nダンジョンでの戦い{08:62}評価{08:13}。\n{08:3F}を見て、俺はお前は必ず{02:00}に{08:59}。\nそう思{08:51}よ。\n\nだ{08:42}、な。き{08:53}次は{01:32}だよ。\n何か、上手く表現{08:23}{08:84}、がんばれよ！\n\n　　　　　　　　　　　　　　　　　　　　{08:00}\n\n<wait>	. Rough luck on the exam.\nThere's still another chance, so don't get too down about it.\n\nBesides, all of us... the whole of Squad Two rated how\nyou fought in that virtual dungeon.\nWatching that, I thought: this guy is going to be a\nDevil Buster for sure.\n\nSo, yeah. Next time you'll make it.\nI'm not great at putting this stuff into words, but\nhang in there!\n\n                                        Hayasaka\n\n<wait>	{04:FF}. Rough luck on the exam.\nThere's still another chance, so don't let it get you down too much.\n\nOn top of that, all of Squad Two, us included, got evaluated on\nour fight in that virtual dungeon.\nWatching you fight, I'm sure you'll definitely become a {02:00}.\nThat's what I really think.\n\nSo, well. I'm sure you'll be {01:32} next time.\nSomehow I'm not saying this too well, but hang in there!\n\n　　　　　　　　　　　　　　　　　　　　{08:00}\n\n<wait>	ours	draft	reads: 。試験残念だったな。\nまだチャンスがあるんだから、そんなに気を落とすなよ。\n\nそれに、俺達‥‥第二部隊全員が、あのヴァーチャ\nダンジョンでの戦いは、評価している。\nあれを見て、俺はお前は必ずデビルバスターになる。\nそう思ったよ。\n\nだから、な。きっと次は大丈夫だよ。\n何か、上手く表現できないけど、がんばれよ！\n\n　　　　　　　　　　　　　　　　　　　　早坂\n\n<wait>; reads: 。試験残念だったな。\nまだチャンスがあるんだから、そんなに気を落とすなよ。\n\nそれに、俺達‥‥第二部隊全員が、あのヴァーチャ\nダンジョンでの戦いは、評価している。\nあれを見て、俺はお前は必ずデビルバスターになる。\nそう思ったよ。\n\nだから、な。きっと次は大丈夫だよ。\n何か、上手く表現できないけど、がんばれよ！\n\n　　　　　　　　　　　　　　　　　　　　早坂\n\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS006B.BIN	0:15	2	341	1FBA	\n\n－受信完了－\n<wait>		\n\n-Message Received-\n<wait>	ours		
+m/MS006B.BIN	0:16	0	8	1A	［題名］　{01:00}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n\nちょ{08:53}聞{08:1E}い{08:5F}が、最近{08:03}が何か言{08:52}\n{08:19}か？\n\n{08:19}ら、{08:7F}{08:5F}が{02:08}{08:72}\n\nいや、うん。{08:4D}{08:74}な{08:5F}。\n{08:4D}{08:81}あ{02:08}ま、何にも{08:19}ら{08:7F}{08:5F}よ。\n{08:81}あな！\n\n　　　　　　　　　　　　　　　　　　　　{08:00}\n\n<wait>	[Subject] Hayasaka Tatsuya: Actually, there's something I want to ask...\n\nJust wanted to ask, has Emi said anything to you\nlately?\n\nIf not, that's fine......\n\nNo, yeah. That's all.\nWell then...... yeah, if there's nothing, that's fine.\nSee you!\n\n                                        Hayasaka\n\n<wait>	[Subject]　{01:00}: Actually, there's something I want to ask......\n\nHey, I wanted to ask, has Emi said anything to you\nlately?\n\nIf she has, then that's fine......\n\nNo, actually, never mind.\nForget it. Well, it's nothing, forget I said anything.\nSee ya!\n\n　　　　　　　　　　　　　　　　　　　　{08:00}\n\n<wait>	ours	draft	reads: ［題名］　早坂達也：ちょっと、聞きたい事が‥‥\n\nちょっと聞きたいんだが、最近英美が何か言って\nなかったか？\n\nなかったら、いいんだが‥‥‥‥‥\n\nいや、うん。それだけなんだ。\nそれじゃあ‥‥‥ま、何にもなかったらいいんだよ。\nじゃあな！\n\n　　　　　　　　　　　　　　　　　　　　早坂\n\n<wait>; reads: ［題名］　早坂達也：ちょっと、聞きたい事が‥‥\n\nちょっと聞きたいんだが、最近英美が何か言って\nなかったか？\n\nなかったら、いいんだが‥‥‥‥‥\n\nいや、うん。それだけなんだ。\nそれじゃあ‥‥‥ま、何にもなかったらいいんだよ。\nじゃあな！\n\n　　　　　　　　　　　　　　　　　　　　早坂\n\n<wait> @ours-2026-09-05
+m/MS006B.BIN	0:16	1	219	1FBA	\n\n－受信完了－\n<wait>		\n\n-Message Received-\n<wait>	ours		
+m/MS006B.BIN	0:17	0	8	1A	［題名］　{01:02}：ちょ{08:53}、聞{08:1E}い事が{08:72}\n\nちょ{08:53}聞{08:1E}い{08:5F}{08:84}{02:08}‥\n\n	[Subject] Kirishima Emi: Actually, there's something I want to ask...\n\nJust wanted to ask you something......\n\n	[Subject]　{01:02}: Actually, there's something I want to ask......\n\nI wanted to ask you something, but......\n\n	ours	draft	reads: ［題名］　桐島英美：ちょっと、聞きたい事が‥‥\n\nちょっと聞きたいんだけど‥‥‥‥\n\n; reads: ［題名］　桐島英美：ちょっと、聞きたい事が‥‥\n\nちょっと聞きたいんだけど‥‥‥‥\n\n @ours-2026-09-05
+m/MS006B.BIN	0:17	1	72	1F01	くん。\n最近、{08:01}{08:42}何か言{08:52}こ{08:19}？\n\n何にも無{08:18}ら{08:7F}{08:5F}{08:84}ね{02:08}\n\nうん。まあ{08:7F}や。\nごめんね急に。あんまり気にし{08:25}で。\n\n{08:4D}{08:81}。\n\n　　　　　　　　　　　　　　　　　　　　{08:03}\n\n<wait>	.\nHas Tatsuya said anything to you lately?\n\nIf not, that's fine......\n\nYeah. Never mind.\nSorry for the sudden question. Don't worry about it.\n\nSee you.\n\n                                        Emi\n\n<wait>	{04:FF}.\nHas Hayasaka said anything lately?\n\nIf it's nothing, then never mind......\n\nYeah. Never mind, then.\nSorry for asking out of nowhere. Don't worry about it too much.\n\nThat's all.\n\n　　　　　　　　　　　　　　　　　　　　{08:03}\n\n<wait>	ours	draft	reads: くん。\n最近、達也から何か言ってこなかった？\n\n何にも無かったらいいんだけどね‥‥‥\n\nうん。まあいいや。\nごめんね急に。あんまり気にしないで。\n\nそれじゃ。\n\n　　　　　　　　　　　　　　　　　　　　英美\n\n<wait>; reads: くん。\n最近、達也から何か言ってこなかった？\n\n何にも無かったらいいんだけどね‥‥‥\n\nうん。まあいいや。\nごめんね急に。あんまり気にしないで。\n\nそれじゃ。\n\n　　　　　　　　　　　　　　　　　　　　英美\n\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS006B.BIN	0:17	2	240	1FBA	\n\n－受信完了－\n<wait>		\n\n-Message Received-\n<wait>	ours		
+m/MS006B.BIN	0:18	0	8	1A	［題名］　{01:04}：合格おめでとう\n\n	[Subject] Nishino Yoshio: Congratulations on passing\n\n	[Subject]　{01:04}: Congratulations on passing\n\n	ours	draft	reads: ［題名］　西野義雄：合格おめでとう\n\n; reads: ［題名］　西野義雄：合格おめでとう\n\n @ours-2026-09-05
+m/MS006B.BIN	0:18	1	44	1F01	。合格おめでとう。\n\n{08:86}も、配属が私の部隊と{08:1A}、ほ{08:53}{08:13}。\n他の部隊で、色々と辛い目に会わ{08:25}とも限らん{08:42}な。\n\n{03:0B}私の部隊だ{08:42}と言{08:52}手加減はし{08:25}ぞ。\n\n	. Congratulations on passing.\n\nI am relieved, too, that you have been assigned to my squad.\nIn another squad you might have been put through a good deal.\n\nThat said, do not expect me to go easy on you because of it.\n\n	{04:FF}. Congratulations on passing.\n\nHowever, now that you're assigned to my squad, I'll be tough on you.\nNo telling what hardships another squad might have put you through.\n\nBut since you're in my squad, don't expect me to go easy on you either.\n\n	ours	draft	reads: 。合格おめでとう。\n\nしかも、配属が私の部隊となって、ほっとしている。\n他の部隊で、色々と辛い目に会わないとも限らんからな。\n\nしかし、私の部隊だからと言って手加減はしないぞ。\n\n; reads: 。合格おめでとう。\n\nしかも、配属が私の部隊となって、ほっとしている。\n他の部隊で、色々と辛い目に会わないとも限らんからな。\n\nしかし、私の部隊だからと言って手加減はしないぞ。\n\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS006B.BIN	0:18	2	193	1F01	も、{02:00}に{08:16}以上責任感を持{08:52}\n行動{08:8E}{08:69}に。\n\n明日は{02:00}初日だ。\n装備品の支給と、レクチャーが行わ{08:2F}。\n{08:4D}に備えて、今日は{08:5C}休むと{08:7F}。\n\n　　　　　　　　　　　　　　　　　　{01:04}\n\n<wait>	, now that you are a Devil Buster,\nact with a sense of responsibility.\n\nTomorrow is your first day as a Devil Buster.\nEquipment will be issued and a lecture given.\nIn preparation, you should get some rest today.\n\n                                    Nishino Yoshio\n\n<wait>	You too, {04:FF}, need to carry yourself with the responsibility\nbefitting a {02:00} from now on.\n\nTomorrow is your first day as a {02:00}.\nYou'll be issued your equipment, and given a lecture.\nRest up well tonight to prepare for it.\n\n　　　　　　　　　　　　　　　　　　{01:04}\n\n<wait>	ours	draft	reads: も、デビルバスターになった以上責任感を持って\n行動するように。\n\n明日はデビルバスター初日だ。\n装備品の支給と、レクチャーが行われる。\nそれに備えて、今日はもう休むといい。\n\n　　　　　　　　　　　　　　　　　　西野義雄\n\n<wait>; reads: も、デビルバスターになった以上責任感を持って\n行動するように。\n\n明日はデビルバスター初日だ。\n装備品の支給と、レクチャーが行われる。\nそれに備えて、今日はもう休むといい。\n\n　　　　　　　　　　　　　　　　　　西野義雄\n\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS006B.BIN	0:18	3	366	1FBA	\n\n－受信完了－\n<wait>		\n\n-Message Received-\n<wait>	ours		
+m/MS006B.BIN	0:19	0	8	1A	［題名］　{01:04}：{08:76}機会は{08:7B}ぞ\n\n	[Subject] Nishino Yoshio: There's still another chance\n\n	[Subject]　{01:04}: There's still another chance\n\n	ours	draft	reads: ［題名］　西野義雄：まだ機会はあるぞ\n\n; reads: ［題名］　西野義雄：まだ機会はあるぞ\n\n @ours-2026-09-05
+m/MS006B.BIN	0:19	1	42	1F01	。試験の事は本当に残念だ{08:51}な。\n{08:8F}、{08:76}チャンスは{08:7B}。\n{08:5B}の機会にかければ{08:7F}{08:5F}。\n\n{02:00}試験{08:62}難しい事{08:56}知られ{08:14}。\n１回で合格{08:8E}事の方が、珍しい{08:77}よ。\n\n	. I am truly sorry about the exam.\nBut there is still another chance.\nSet your sights on the next one.\n\nThe Devil Buster exam is known for being hard.\nPassing on the first try is the rare exception.\n\n	{04:FF}. I'm truly sorry about the exam.\nBut, there's still another chance.\nJust set your sights on the next opportunity.\n\nThe {02:00} exam is known to be difficult.\nPassing on the first try is the rare exception, not the rule.\n\n	ours	draft	reads: 。試験の事は本当に残念だったな。\nだが、まだチャンスはある。\nまたの機会にかければいいんだ。\n\nデビルバスター試験は、難しい事でも知られている。\n１回で合格する事の方が、珍しいのだよ。\n\n; reads: 。試験の事は本当に残念だったな。\nだが、まだチャンスはある。\nまたの機会にかければいいんだ。\n\nデビルバスター試験は、難しい事でも知られている。\n１回で合格する事の方が、珍しいのだよ。\n\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS006B.BIN	0:19	2	191	1F01	、{08:48}で挫けて{08:26}かんぞ。\n{01:3B}も書{08:64}とおり、{08:76}チャンスは{08:7B}{08:77}{08:42}。\n\n　　　　　　　　　　　　　　　　　　{01:04}\n\n<wait>	, don't let this break you.\nAs I wrote just now, there is still another chance.\n\n                                    Nishino Yoshio\n\n<wait>	{04:FF}, don't let this break your spirit.\nAs I mentioned earlier too, there's always another chance.\n\n　　　　　　　　　　　　　　　　　　{01:04}\n\n<wait>	ours	draft	reads: 、これで挫けてはいかんぞ。\nさっきも書いたとおり、まだチャンスはあるのだから。\n\n　　　　　　　　　　　　　　　　　　西野義雄\n\n<wait>; reads: 、これで挫けてはいかんぞ。\nさっきも書いたとおり、まだチャンスはあるのだから。\n\n　　　　　　　　　　　　　　　　　　西野義雄\n\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS006B.BIN	0:19	3	298	1FBA	\n\n－受信完了－\n<wait>		\n\n-Message Received-\n<wait>	ours		
+m/MS006B.BIN	0:1A	0	0	DATA	雨宮きつね：変な夢の話(笑)\n［題名］　雨宮きつね：変な夢の話(笑)\n\nオンラインでは{01:28}{08:90}も。雨宮{08:55}。\n昨夜、妙な夢を見たの{08:55}が、何だか気に{08:16}{08:42}\n御報告。自称チャネラー{08:55}{08:42}(苦笑)。\n\n会{08:51}事も無いのに変{08:6B}{08:55}が、実は夢の中に	Amemiya Kitsune: A Strange Dream (lol)\n[Subject] Amemiya Kitsune: A Strange Dream (lol)\n\nHello as always from online. Amemiya here.\nI had an odd dream last night, and it bothered me,\nso I'm reporting it. Self-styled channeler, after all.\n(wry laugh)\n\nIt's strange, since we've never met, but you, 	Amemiya Kitsune: A Strange Dream Story (lol)\n[Subject]　Amemiya Kitsune: A Strange Dream Story (lol)\n\nSome of you may know me from online. I'm Kitsune.\nLast night I had such a strange dream I felt I had to report it.\nI'm a self-proclaimed channeler, after all (wry laugh).\n\nIt's odd, since we've never even met, but actually you,	ours	draft	reads: 雨宮きつね：変な夢の話(笑)\n［題名］　雨宮きつね：変な夢の話(笑)\n\nオンラインではいつもどうも。雨宮です。\n昨夜、妙な夢を見たのですが、何だか気になったから\n御報告。自称チャネラーですから(苦笑)。\n\n会った事も無いのに変なのですが、実は夢の中に; reads: 雨宮きつね：変な夢の話(笑)\n［題名］　雨宮きつね：変な夢の話(笑)\n\nオンラインではいつもどうも。雨宮です。\n昨夜、妙な夢を見たのですが、何だか気になったから\n御報告。自称チャネラーですから(苦笑)。\n\n会った事も無いのに変なのですが、実は夢の中に @ours-2026-09-05
+m/MS006B.BIN	0:1A	1	217	1F01	君が出て来たの{08:55}よ。\n\nで、内容{08:55}が、君と関わりの{08:7B}親しい人々が、シ\nェルターの外で事故に遭{08:52}、君が{08:4D}を助{08:29}とい\nう{08:5E}だ{08:51}の{08:74}ど、おかしな事に結果が幾つかあ\n{08:52}{02:08}。\n\nとにかく、早く助ければ助{08:29}程、君が{08:06}バスタ\nーに{08:59}確率が高まるとか、{08:7A}感じで{08:4B}。（ど\nんな感じだ(^^;)）\n\n何だかさっぱり訳が分かり{02:0A}が、すぐに伝{08:41}方\nが良い様な気が{08:4A}、メールを書きま{08:4B}。\n\n\n{08:4D}{08:74}{08:55}。\nで{08:62}{08:5B}ネットワークでお会いしま{08:80}。(^^)V\n\n　　　　　　　　　　　　　　　　　　　雨宮きつね\n\n<wait>	, appeared in that dream.\n\nAs for what happened: people close to you were in an\naccident outside the shelter, and you saved them.\nThe odd thing was, there were several different\noutcomes......\n\nAnyway, the sooner you saved them, the higher your\nchances of becoming a Devil Buster, or something like\nthat. (Whatever that means (^^;))\n\nI have no idea what it's about, but I felt I should\ntell you right away, so I wrote this mail.\n\n\nThat's all.\nWell then, see you on the network. (^^)V\n\n                                  Amemiya Kitsune\n\n<wait>	{04:FF}, appeared in that dream.\n\nAnd get this - some close friends of yours had an accident outside\nthe shelter, and you were the one who saved them, but oddly enough,\nthere were several different possible outcomes......\n\nAnyway, it seemed like the sooner you saved them, the higher the\nchance you'd end up becoming a Devil Buster, or something like\nthat. (What kind of feeling is that even supposed to be? (^^;))\n\nI really have no idea what to make of it, but I felt like I should\nlet you know right away, so I'm writing this email.\n\n\nThat's about it.\nWell then, let's talk again on the network sometime. (^^)V\n\n　　　　　　　　　　　　　　　　　　　Amemiya Kitsune\n\n<wait>	ours	draft	reads: 君が出て来たのですよ。\n\nで、内容ですが、君と関わりのある親しい人々が、シ\nェルターの外で事故に遭って、君がそれを助けるとい\nうものだったのだけど、おかしな事に結果が幾つかあ\nって‥‥‥。\n\nとにかく、早く助ければ助ける程、君がデビルバスタ\nーになる確率が高まるとか、そんな感じでした。（ど\nんな感じだ(^^;)）\n\n何だかさっぱり訳が分かりませんが、すぐに伝えた方\nが良い様な気がして、メールを書きました。\n\n\nそれだけです。\nでは、またネットワークでお会いしましょう。(^^)V\n\n　　　　　　　　　　　　　　　　　　　雨宮きつね\n\n<wait>; reads: 君が出て来たのですよ。\n\nで、内容ですが、君と関わりのある親しい人々が、シ\nェルターの外で事故に遭って、君がそれを助けるとい\nうものだったのだけど、おかしな事に結果が幾つかあ\nって‥‥‥。\n\nとにかく、早く助ければ助ける程、君がデビルバスタ\nーになる確率が高まるとか、そんな感じでした。（ど\nんな感じだ(^^;)）\n\n何だかさっぱり訳が分かりませんが、すぐに伝えた方\nが良い様な気がして、メールを書きました。\n\n\nそれだけです。\nでは、またネットワークでお会いしましょう。(^^)V\n\n　　　　　　　　　　　　　　　　　　　雨宮きつね\n\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS006B.BIN	0:1A	2	669	1FBA	\n\n－受信完了－\n<wait>		\n\n-Message Received-\n<wait>	ours		
+m/MS006B.BIN	0:1C	0	0	DATA	＞次の発言を読み{08:15}\n		>Read the next post?\n	ours		reads: ＞次の発言を読みますか？\n
+m/MS006B.BIN	0:1C	1	35	1FB2	{08:26}	Yes			draft	reads: はい; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS006B.BIN	0:1C	2	39	1FB2	{08:27}	No			draft	reads: いいえ; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05

@@ -143,7 +143,7 @@ def run(family: str = "all", root: "str | None" = None,
 
     by_table, order = {}, []
     st = {"files": 0, "rows": 0, "tables": 0, "untiled": 0, "blocked": 0,
-          "nonscript": 0}
+          "nonscript": 0, "reanchored": 0, "unanchored": 0}
 
     for rel in files.iter_files(fams, root):
         raw = files.read_source(rel, root)
@@ -164,15 +164,44 @@ def run(family: str = "all", root: "str | None" = None,
 
     for path in order:
         rows = by_table[path]
-        old = {r.key: r for r in tables.read(path)}
+        old_rows = tables.read(path)
+        old = {r.key: r for r in old_rows}
+        # Span numbering is a property of the tokenizer, so it moves whenever the
+        # opcode model improves -- and a table is addressed by span index.
+        # Carrying `en` forward on the index alone would put a translation on a
+        # neighbouring line, silently.  (1F 0D/0E/0F, 2026-09-06: two records
+        # renumbered and five translations would have slid by one.)  `jp` is the
+        # row's fingerprint: if it still matches, the index is trustworthy; if it
+        # does not, re-anchor on the Japanese, and only when that is unambiguous.
+        # build_v2.stale_rows protects the *builder* the same way.
+        by_content: "dict[tuple, list]" = {}
+        for o in old_rows:
+            if o.en or o.ref_en or o.status:
+                by_content.setdefault((o.rec, o.jp), []).append(o)
         for r in rows:
             prev = old.get(r.key)
+            if prev is None or prev.jp != r.jp:
+                # Either the index moved under this line, or the record grew and
+                # this index did not exist before.  Both are answered the same
+                # way: find the old row whose Japanese is this row's, and only
+                # when that is unambiguous.
+                cands = by_content.get((r.rec, r.jp)) or []
+                picked = cands[0] if len(cands) == 1 else None
+                if prev is not None:            # there *was* a row here
+                    st["reanchored" if picked else "unanchored"] += 1
+                prev = picked
             if prev is None:
                 continue
             if prev.en and prev.en != prev.jp:
                 r.en = prev.en                  # a real translation survives
             elif prev.en:
                 r.en = r.jp                     # a stale pre-fill: refresh it
+            # ref_en / ref_src / status were never carried at all, so every
+            # re-extract used to drop 35,000 reference translations on the floor
+            if prev.ref_en and not r.ref_en:
+                r.ref_en, r.ref_src = prev.ref_en, prev.ref_src
+            if prev.status and not r.status:
+                r.status = prev.status
             if prev.note and prev.note != r.note:
                 extra = [p for p in prev.note.split("; ")
                          if p and p not in r.note]
@@ -191,4 +220,8 @@ def run(family: str = "all", root: "str | None" = None,
         print("  %d rows are @untiled (read-only), %d are @dupid, "
               "%d files have no text layer this pipeline understands"
               % (st["untiled"], st["blocked"], st["nonscript"]))
+        if st["reanchored"] or st["unanchored"]:
+            print("  span numbering moved: %d row(s) re-anchored on their "
+                  "Japanese, %d could not be matched and kept nothing"
+                  % (st["reanchored"], st["unanchored"]))
     return st

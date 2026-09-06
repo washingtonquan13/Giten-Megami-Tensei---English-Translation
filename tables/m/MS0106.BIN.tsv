@@ -3,26 +3,26 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0106.BIN	0:00	0	0	DATA	他には何かあり{08:15}\n					reads: 他には何かありますか？\n
-m/MS0106.BIN	0:01	0	0	DATA	{08:72}いらっしゃ{08:89}せ。\n					reads: ‥‥いらっしゃいませ。\n
-m/MS0106.BIN	0:02	0	0	DATA	当店の販売品リスト{08:55}。{08:90}ぞ。\n					reads: 当店の販売品リストです。どうぞ。\n
-m/MS0106.BIN	0:03	0	0	DATA	{08:72}うちで扱っ{08:2B}物をお持ちで{08:25}{08:69}{08:55}ね。\n					reads: ‥‥うちで扱ってる物をお持ちでないようですね。\n
-m/MS0106.BIN	0:04	0	0	DATA	何を買い取ればよろしいので{08:80}か？\n					reads: 何を買い取ればよろしいのでしょうか？\n
-m/MS0106.BIN	0:05	0	0	DATA	{08:72}あの。お金が足り{08:25}{08:69}{08:55}が。\n					reads: ‥‥あの。お金が足りないようですが。\n
-m/MS0106.BIN	0:06	0	0	DATA	お買い上げの品は{08:48}でよろしい{08:55}ね？\n					reads: お買い上げの品はこれでよろしいですね？\n
-m/MS0106.BIN	0:07	0	0	DATA	{08:72}あの。{08:7A}には持て{08:25}{08:69}{08:55}が{08:72}。\n					reads: ‥‥あの。そんなには持てないようですが‥‥。\n
-m/MS0106.BIN	0:08	0	0	DATA	こ、困り{08:5A}。\n					reads: こ、困ります。\n
-m/MS0106.BIN	0:09	0	0	DATA	{08:72}{08:47}くらいでお願い{08:23}で{08:80}か？\n					reads: ‥‥このくらいでお願いできないでしょうか？\n
-m/MS0106.BIN	0:0A	0	0	DATA	{08:72}分かりま{08:4B}。\n					reads: ‥‥分かりました。\n
-m/MS0106.BIN	0:0B	0	0	DATA	{01:2A}ござい{08:5A}。\n					reads: ありがとうございます。\n
-m/MS0106.BIN	0:0C	0	0	DATA	{02:0E}を買い取ればよろしいん{08:55}ね？\n					reads: こちらを買い取ればよろしいんですね？\n
-m/MS0106.BIN	0:0D	0	0	DATA	こ、困り{08:5A}。\n					reads: こ、困ります。\n
-m/MS0106.BIN	0:0E	0	0	DATA	こ、困り{08:5A}。{08:72}{08:47}くらいでは{08:90}で{08:80}か？\n					reads: こ、困ります。‥‥このくらいではどうでしょうか？\n
-m/MS0106.BIN	0:0F	0	0	DATA	{08:72}分かりま{08:4B}。\n					reads: ‥‥分かりました。\n
-m/MS0106.BIN	0:10	0	0	DATA	{01:2A}ござい{08:5A}。\n					reads: ありがとうございます。\n
-m/MS0106.BIN	0:11	0	0	DATA	{08:72}あ、少しお待ち{08:6E}。\n					reads: ‥‥あ、少しお待ちください。\n
-m/MS0106.BIN	0:12	0	0	DATA	{08:72}{01:2A}ござ{08:89}{08:4B}。お気を付けて。\n					reads: ‥‥ありがとうございました。お気を付けて。\n
-m/MS0106.BIN	0:13	0	0	DATA	{08:72}{01:2A}ござ{08:89}{08:4B}。{08:5B}おこし{08:6E}。\n					reads: ‥‥ありがとうございました。またおこしください。\n
-m/MS0106.BIN	0:14	0	0	DATA	{02:08}‥{01:2A}ござ{08:89}{08:4B}。\n					reads: ‥‥‥‥ありがとうございました。\n
-m/MS0106.BIN	0:15	0	4	1FD2	店員：					
-m/MS0106.BIN	0:15	1	12	1FD3	あの{08:72}。つまら{08:25}物{08:55}が、お役立て下{08:49}。\n					reads: あの‥‥。つまらない物ですが、お役立て下さい。\n
+m/MS0106.BIN	0:00	0	0	DATA	他には何かあり{08:15}\n		Is there anything else?\n	ours		reads: 他には何かありますか？\n
+m/MS0106.BIN	0:01	0	0	DATA	{08:72}いらっしゃ{08:89}せ。\n		...... Welcome.\n	ours		reads: ‥‥いらっしゃいませ。\n
+m/MS0106.BIN	0:02	0	0	DATA	当店の販売品リスト{08:55}。{08:90}ぞ。\n		This is our shop's product list. Here you go.\n	ours		reads: 当店の販売品リストです。どうぞ。\n
+m/MS0106.BIN	0:03	0	0	DATA	{08:72}うちで扱っ{08:2B}物をお持ちで{08:25}{08:69}{08:55}ね。\n		...... It doesn't look like you're carrying anything we deal in.\n	ours		reads: ‥‥うちで扱ってる物をお持ちでないようですね。\n
+m/MS0106.BIN	0:04	0	0	DATA	何を買い取ればよろしいので{08:80}か？\n		What would you like me to buy?\n	ours		reads: 何を買い取ればよろしいのでしょうか？\n
+m/MS0106.BIN	0:05	0	0	DATA	{08:72}あの。お金が足り{08:25}{08:69}{08:55}が。\n		...... Um. It seems you don't have enough money.\n	ours		reads: ‥‥あの。お金が足りないようですが。\n
+m/MS0106.BIN	0:06	0	0	DATA	お買い上げの品は{08:48}でよろしい{08:55}ね？\n		This is everything you're purchasing, correct?\n	ours		reads: お買い上げの品はこれでよろしいですね？\n
+m/MS0106.BIN	0:07	0	0	DATA	{08:72}あの。{08:7A}には持て{08:25}{08:69}{08:55}が{08:72}。\n		...... Um. It seems you can't carry that much......\n	ours		reads: ‥‥あの。そんなには持てないようですが‥‥。\n
+m/MS0106.BIN	0:08	0	0	DATA	こ、困り{08:5A}。\n		T-that's a problem.\n	ours		reads: こ、困ります。\n
+m/MS0106.BIN	0:09	0	0	DATA	{08:72}{08:47}くらいでお願い{08:23}で{08:80}か？\n		...... Could I ask you to accept about this much?\n	ours		reads: ‥‥このくらいでお願いできないでしょうか？\n
+m/MS0106.BIN	0:0A	0	0	DATA	{08:72}分かりま{08:4B}。\n		...... Understood.\n	ours		reads: ‥‥分かりました。\n
+m/MS0106.BIN	0:0B	0	0	DATA	{01:2A}ござい{08:5A}。\n		Thank you very much.\n	ours		reads: ありがとうございます。\n
+m/MS0106.BIN	0:0C	0	0	DATA	{02:0E}を買い取ればよろしいん{08:55}ね？\n		You'd like me to buy this, correct?\n	ours		reads: こちらを買い取ればよろしいんですね？\n
+m/MS0106.BIN	0:0D	0	0	DATA	こ、困り{08:5A}。\n		T-that's a problem.\n	ours		reads: こ、困ります。\n
+m/MS0106.BIN	0:0E	0	0	DATA	こ、困り{08:5A}。{08:72}{08:47}くらいでは{08:90}で{08:80}か？\n		T-that's a problem. ...... How about around this much?\n	ours		reads: こ、困ります。‥‥このくらいではどうでしょうか？\n
+m/MS0106.BIN	0:0F	0	0	DATA	{08:72}分かりま{08:4B}。\n		...... Understood.\n	ours		reads: ‥‥分かりました。\n
+m/MS0106.BIN	0:10	0	0	DATA	{01:2A}ござい{08:5A}。\n		Thank you very much.\n	ours		reads: ありがとうございます。\n
+m/MS0106.BIN	0:11	0	0	DATA	{08:72}あ、少しお待ち{08:6E}。\n		...... Ah, please wait just a moment.\n	ours		reads: ‥‥あ、少しお待ちください。\n
+m/MS0106.BIN	0:12	0	0	DATA	{08:72}{01:2A}ござ{08:89}{08:4B}。お気を付けて。\n		...... Thank you very much. Take care.\n	ours		reads: ‥‥ありがとうございました。お気を付けて。\n
+m/MS0106.BIN	0:13	0	0	DATA	{08:72}{01:2A}ござ{08:89}{08:4B}。{08:5B}おこし{08:6E}。\n		...... Thank you very much. Please come again.\n	ours		reads: ‥‥ありがとうございました。またおこしください。\n
+m/MS0106.BIN	0:14	0	0	DATA	{02:08}‥{01:2A}ござ{08:89}{08:4B}。\n		...... ...... Thank you very much.\n	ours		reads: ‥‥‥‥ありがとうございました。\n
+m/MS0106.BIN	0:15	0	4	1FD2	店員：		Clerk:	ours		
+m/MS0106.BIN	0:15	1	12	1FD3	あの{08:72}。つまら{08:25}物{08:55}が、お役立て下{08:49}。\n		Um... It's nothing much, but I hope it's\nuseful.\n	ours		reads: あの‥‥。つまらない物ですが、お役立て下さい。\n

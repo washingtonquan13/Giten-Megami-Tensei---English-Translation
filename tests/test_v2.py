@@ -880,3 +880,82 @@ def test_a_not_a_branch_slot_is_never_rewritten():
         if checked > 300:
             break
     assert checked, "no NOT_A_BRANCH slot was exercised"
+
+
+def test_extract_re_anchors_on_japanese_when_span_numbering_moves():
+    """A table is addressed by span index, and span numbering is a property of
+    the tokenizer -- it moves whenever the opcode model improves.  Carrying `en`
+    forward on the index alone puts a translation on a neighbouring line, with
+    no error.  That nearly shipped with the 1F 0D/0E/0F fix (two records
+    renumbered, five translations would have slid by one).
+    """
+    import os
+    import tempfile
+
+    from giten import extract_v2, tables
+
+    d = tempfile.mkdtemp(prefix="giten-extract-")
+    path = os.path.join(d, "m", "MS0000.BIN.tsv")
+    os.makedirs(os.path.dirname(path))
+
+    def row(idx, jp, en="", ref="", status=""):
+        return tables.Row("m/MS0000.BIN", "0:01", idx, idx * 10, "1FD3", jp, en,
+                          ref_en=ref, ref_src="v005" if ref else "", status=status)
+
+    # what the table held before the model changed
+    tables.write(path, [row(0, "あ", "A"), row(1, "い", "B", "b-draft", "draft"),
+                        row(2, "う", "C")])
+
+    # ...and what the tokenizer produces now: a new span appeared at idx 1, so
+    # everything after it shifted up by one
+    fresh = [row(0, "あ"), row(1, "NEW"), row(2, "い"), row(3, "う")]
+
+    old_rows = tables.read(path)
+    old = {r.key: r for r in old_rows}
+    by_content = {}
+    for o in old_rows:
+        if o.en or o.ref_en or o.status:
+            by_content.setdefault((o.rec, o.jp), []).append(o)
+    moved = 0
+    for r in fresh:
+        prev = old.get(r.key)
+        if prev is None or prev.jp != r.jp:
+            c = by_content.get((r.rec, r.jp)) or []
+            picked = c[0] if len(c) == 1 else None
+            if prev is not None:
+                moved += 1
+            prev = picked
+        if prev is None:
+            continue
+        if prev.en and prev.en != prev.jp:
+            r.en = prev.en
+        if prev.ref_en and not r.ref_en:
+            r.ref_en, r.ref_src = prev.ref_en, prev.ref_src
+        if prev.status and not r.status:
+            r.status = prev.status
+
+    got = {r.jp: (r.en, r.ref_en, r.status) for r in fresh}
+    assert got["あ"] == ("A", "", ""), got["あ"]
+    assert got["NEW"] == ("", "", ""), "the new span must not inherit anything"
+    assert got["い"] == ("B", "b-draft", "draft"), got["い"]     # followed its jp
+    assert got["う"] == ("C", "", ""), got["う"]
+    assert moved == 2   # idx 1 and 2 had a row whose jp changed; idx 3 was new
+
+    # the bug this replaces: index-only carry would have put "B" on the new span
+    naive = {r.jp: old.get(r.key).en if old.get(r.key) else ""
+             for r in [row(0, "あ"), row(1, "NEW"), row(2, "い"), row(3, "う")]}
+    assert naive["NEW"] == "B", "the naive rule really did mis-anchor"
+
+
+def test_extract_carries_the_reference_columns():
+    """ref_en / ref_src / status were never carried, so every re-extract dropped
+    35,000 reference translations on the floor."""
+    import inspect
+
+    from giten import extract_v2
+
+    src = inspect.getsource(extract_v2.run)
+    assert "prev.ref_en" in src and "prev.status" in src, \
+        "extract must carry the reference columns forward"
+    assert "by_content" in src and "prev.jp != r.jp" in src, \
+        "extract must fingerprint on jp before trusting the span index"

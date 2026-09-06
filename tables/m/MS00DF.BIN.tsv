@@ -3,23 +3,23 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS00DF.BIN	0:00	0	6	1F01	は逃げ出{08:17}\n<wait>	 fled!\n<wait>				reads: は逃げ出した！\n<wait>; reads: は逃げ出した！\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DF.BIN	0:01	0	6	1F01	は去っ{08:21}\n<wait>	 went away.\n<wait>				reads: は去っていった\n<wait>; reads: は去っていった\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS00DF.BIN	0:02	0	6	1F01	は	 				reads: は @seamfix-2026-09-05
-m/MS00DF.BIN	0:02	1	53	1EB0	{08:58}もくれ{08:19}\n	gave you nothing 				reads: なにもくれなかった\n; reads: 不気味 @ours-2026-09-05
-m/MS00DF.BIN	0:02	2	72	1F01	をおい{08:21}\n	 was left behind				reads: をおいていった\n; reads: 目の前にをおいていった\n; reads: ペンタグランマ+ @ours-2026-09-05
+m/MS00DF.BIN	0:00	0	6	1F01	は逃げ出{08:17}\n<wait>	 fled!\n<wait>	{04:EF} fled!\n<wait>	v005	draft	reads: は逃げ出した！\n<wait>; reads: は逃げ出した！\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DF.BIN	0:01	0	6	1F01	は去っ{08:21}\n<wait>	 went away.\n<wait>	{04:EF} ran away.\n<wait>	v005	draft	reads: は去っていった\n<wait>; reads: は去っていった\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DF.BIN	0:02	0	6	1F01	は	 	offered you nothing.\n	v005	draft	reads: は @seamfix-2026-09-05
+m/MS00DF.BIN	0:02	1	53	1EB0	{08:58}もくれ{08:19}\n	gave you nothing 			draft	reads: なにもくれなかった\n; reads: 不気味 @ours-2026-09-05
+m/MS00DF.BIN	0:02	2	72	1F01	をおい{08:21}\n	 was left behind			draft	reads: をおいていった\n; reads: 目の前にをおいていった\n; reads: ペンタグランマ+ @ours-2026-09-05
 m/MS00DF.BIN	0:02	3	99	1F7F	{03:00}	{03:00}				reads: 飛び道具; reads: そんなこと'
 m/MS00DF.BIN	0:02	4	120	1F83	{03:14}{03:14}	{03:14}{03:14}				reads: ; reads: 切りe
-m/MS00DF.BIN	0:02	5	137	1F02	マッカをおい{08:21}\n	 Macca was left behind				reads: マッカをおいていった\n; reads: 飛び道具w @ours-2026-09-05
-m/MS00DF.BIN	0:02	6	159	1F02	マグをおい{08:21}\n					reads: マグをおいていった\n; reads: {=87}{=00}＞何をしますか？{=95}{=00}達也｡ @refalign
-m/MS00DF.BIN	0:02	7	179	1F02	{03:0F}をおい{08:21}\n					reads: ＥＸＰをおいていった\n; reads: なにもくれなかった\n @rebase-unmatched idx7 en=offered you nothing.\n @rebase-unmatched idx7 en=offered you nothing.\n @refalign
-m/MS00DF.BIN	0:02	8	193	00	{03:0D}を{03:10}{08:4A}く{08:60}\n					reads: ＨＰを回復してくれた\n; reads: 目の前にをおいていった\n
-m/MS00DF.BIN	0:02	9	209	00	ボムを投{08:44}！\n	threw a bomb!				reads: ボムを投げた！\n; reads: 飛び道具 @ours-2026-09-05
+m/MS00DF.BIN	0:02	5	137	1F02	マッカをおい{08:21}\n	 Macca was left behind	 Macca.\n	ours	draft	reads: マッカをおいていった\n; reads: 飛び道具w @ours-2026-09-05
+m/MS00DF.BIN	0:02	6	159	1F02	マグをおい{08:21}\n		offered you 	v005		reads: マグをおいていった\n; reads: {=87}{=00}＞何をしますか？{=95}{=00}達也｡ @refalign
+m/MS00DF.BIN	0:02	7	179	1F02	{03:0F}をおい{08:21}\n		 macca.\n	v005		reads: ＥＸＰをおいていった\n; reads: なにもくれなかった\n @rebase-unmatched idx7 en=offered you nothing.\n @rebase-unmatched idx7 en=offered you nothing.\n @refalign
+m/MS00DF.BIN	0:02	8	193	00	{03:0D}を{03:10}{08:4A}く{08:60}\n		restored your HP.\n	ours		reads: ＨＰを回復してくれた\n; reads: 目の前にをおいていった\n
+m/MS00DF.BIN	0:02	9	209	00	ボムを投{08:44}！\n	threw a bomb!	threw a bomb!\n	ours	draft	reads: ボムを投げた！\n; reads: 飛び道具 @ours-2026-09-05
 m/MS00DF.BIN	0:02	10	248	1F81	#{03:03}	#{03:03}				reads: #だした
 m/MS00DF.BIN	0:02	11	257	00	{02:1F}E{03:16}{03:13}{03:16}	{02:1F}E{03:16}{03:13}{03:16}				reads: E目の前に; reads: マッカをおいていった\n
 m/MS00DF.BIN	0:02	12	279	00	{01:1F}{=E8}{=03}	{01:1F}{=E8}{=03}				reads: おにいちゃん{=E8}{=03}; reads: マグをおいていった\n
-m/MS00DF.BIN	0:02	13	315	00	パンチを喰らわ{08:17}\n{05:12}					reads: パンチを喰らわした！\n; reads: ＥＸＰをおいていった\n
+m/MS00DF.BIN	0:02	13	315	00	パンチを喰らわ{08:17}\n{05:12}		landed a punch on you!\n{05:12}	ours		reads: パンチを喰らわした！\n; reads: ＥＸＰをおいていった\n
 m/MS00DF.BIN	0:02	14	344	1F81	#{03:03}{01:1F}M{03:16}	#{03:03}{01:1F}M{03:16}				reads: #だしたおにいちゃんM; reads: ＨＰを回復してくれた\n
 m/MS00DF.BIN	0:02	15	353	00	{05:1F}E{03:16}{03:13}{03:16}	{05:1F}E{03:16}{03:13}{03:16}				reads: E目の前に; reads: ボムを投げた！\n
 m/MS00DF.BIN	0:02	16	375	00	{01:1F}{=E8}{=03}	{01:1F}{=E8}{=03}				reads: おにいちゃん{=E8}{=03}; reads: #だした
-m/MS00DF.BIN	0:03	0	6	1F01	の{01:34}が破ら{08:60}\n	's barrier was broken.\n				reads: の結界が破られた\n; reads: の結界が破られた\n @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS00DF.BIN	0:03	0	6	1F01	の{01:34}が破ら{08:60}\n	's barrier was broken.\n	{04:EB}'s barrier broke down.\n	v005	draft	reads: の結界が破られた\n; reads: の結界が破られた\n @rebase-tagdiff @refalign @seamfix-2026-09-05

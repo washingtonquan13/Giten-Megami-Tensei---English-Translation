@@ -3,514 +3,514 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0011.BIN	0:00	0	8	1FD0	そういえば平沢博士が、研究所に通じ{08:14}近道を開けておくと言{08:52}{08:64}……\n<wait>					reads: そういえば平沢博士が、研究所に通じている近道を開けておくと言っていた……\n<wait>; reads: そういえば平沢博士が、研究所に通じている近道を開けておくと言っていた……\n<wait> @refalign
-m/MS0011.BIN	0:00	1	85	1E12	出口の近くに{08:7B}扉だと{08:68}{08:46}{08:8F}{02:08}\n<wait>					reads: 出口の近くにある扉だということだが‥‥‥\n<wait>; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0011.BIN	0:00	2	127	1E12	恐らく、そこに見え{08:14}扉が{01:29}ろう。\n<wait>					reads: 恐らく、そこに見えている扉がそうだろう。\n<wait>; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0011.BIN	0:00	3	182	1E12	恐らく、右手に見え{08:14}扉が{01:29}ろう。\n<wait>					reads: 恐らく、右手に見えている扉がそうだろう。\n<wait>; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0011.BIN	0:00	0	8	1FD0	そういえば平沢博士が、研究所に通じ{08:14}近道を開けておくと言{08:52}{08:64}……\n<wait>		You remember Doctor Hirasawa saying that he'd leave the door\nto his lab open.\n<wait>	v005		reads: そういえば平沢博士が、研究所に通じている近道を開けておくと言っていた……\n<wait>; reads: そういえば平沢博士が、研究所に通じている近道を開けておくと言っていた……\n<wait> @refalign
+m/MS0011.BIN	0:00	1	85	1E12	出口の近くに{08:7B}扉だと{08:68}{08:46}{08:8F}{02:08}\n<wait>		It should be somewhere near the entrance.\n<wait>	v005		reads: 出口の近くにある扉だということだが‥‥‥\n<wait>; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0011.BIN	0:00	2	127	1E12	恐らく、そこに見え{08:14}扉が{01:29}ろう。\n<wait>		You can see it over there.\n<wait>	v005		reads: 恐らく、そこに見えている扉がそうだろう。\n<wait>; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0011.BIN	0:00	3	182	1E12	恐らく、右手に見え{08:14}扉が{01:29}ろう。\n<wait>		You can see it on your right.\n<wait>	v005		reads: 恐らく、右手に見えている扉がそうだろう。\n<wait>; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0011.BIN	0:01	0	46	1F03						
 m/MS0011.BIN	0:01	1	59	1F03	H	H				
 m/MS0011.BIN	0:01	2	75	00	H	H				
 m/MS0011.BIN	0:01	3	89	1F03						
-m/MS0011.BIN	0:02	0	8	1FD2	平沢：					
-m/MS0011.BIN	0:02	1	23	1FD2	学者：					
-m/MS0011.BIN	0:02	2	31	1FD3	何だ？　近頃は外{08:42}の妙な客人が多いな。\n<wait>					reads: 何だ？　近頃は外からの妙な客人が多いな。\n<wait>
-m/MS0011.BIN	0:02	3	78	1FD2	学者：					
-m/MS0011.BIN	0:02	4	86	1FD3	ま、歓迎{08:8E}理由は{08:25}が、迷路を抜けてわざわざ来た{08:5F}。\n少しは休んで行きな{08:49}。\n<wait>					reads: ま、歓迎する理由はないが、迷路を抜けてわざわざ来たんだ。\n少しは休んで行きなさい。\n<wait>
-m/MS0011.BIN	0:02	5	178	1F7F	w者：					
-m/MS0011.BIN	0:02	6	185	1FD3	何だ？　良く見{08:50}酷い状態では{08:25}か{08:72}。\n<wait>					reads: 何だ？　良く見たら酷い状態ではないか‥‥。\n<wait>
-m/MS0011.BIN	0:02	7	230	1FD2	学者：					
-m/MS0011.BIN	0:02	8	238	1FD3	{08:7A}辛気臭い連中相手で{08:62}美味しく茶も飲めん。\n<wait>					reads: そんな辛気臭い連中相手では、美味しく茶も飲めん。\n<wait>
-m/MS0011.BIN	0:02	9	289	1FD2	学者：					
-m/MS0011.BIN	0:02	10	297	1FD3	やれやれ仕方無いのぅ{08:72}どれ、わしが診てやろう。\n<wait>					reads: やれやれ仕方無いのぅ‥‥どれ、わしが診てやろう。\n<wait>
-m/MS0011.BIN	0:02	11	365	1FD0	そう言うと、男{08:26}かにも面倒だと{08:68}そぶりで	With that, the man, looking thoroughly put out, approached 				reads: そう言うと、男はいかにも面倒だというそぶりで; reads: そう言うと、男はいかにも面倒だというそぶりで @ours-2026-09-05
-m/MS0011.BIN	0:02	12	411	1F01	達に近づき、\n	 and the others, and\n				reads: 達に近づき、\n @ours-2026-09-05
-m/MS0011.BIN	0:02	13	430	1F01	達に治療を施{08:4A}く{08:60}。\n<wait>	 and the others were treated.\n<wait>				reads: 達に治療を施してくれた。\n<wait>; reads: 達に治療を施してくれた。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	14	457	1FBA	口ぶりとは裏腹に、{08:79}手つきや接し方{08:62}神業とも言{08:28}{08:5E}であ{08:51}。\n<wait>					reads: 口ぶりとは裏腹に、その手つきや接し方は、神業とも言えるものであった。\n<wait>
-m/MS0011.BIN	0:02	15	571	1FD2	学者：					
-m/MS0011.BIN	0:02	16	579	1FD3	{02:08}面倒な客を招き入れて{08:1F}{08:5E}だ。\n<wait>					reads: ‥‥‥面倒な客を招き入れてしまったものだ。\n<wait>
-m/MS0011.BIN	0:02	17	618	1FD2	学者：					
-m/MS0011.BIN	0:02	18	626	1FD3	ま、済{08:5F}事は仕方{08:25}。\n<wait>					reads: ま、済んだ事は仕方ない。\n<wait>
-m/MS0011.BIN	0:02	19	655	1FD0	初老の学者風の男{08:62}そう言うと、パチンと指を鳴ら{08:4B}。\n<wait>					reads: 初老の学者風の男は、そう言うと、パチンと指を鳴らした。\n<wait>
-m/MS0011.BIN	0:02	20	714	1FD2	学者：					
-m/MS0011.BIN	0:02	21	722	1FD3	ハーブティーぐらい{08:86}無いが、飲んで行くかね？\n<wait>					reads: ハーブティーぐらいしか無いが、飲んで行くかね？\n<wait>
-m/MS0011.BIN	0:02	22	775	1FD1	＞{02:06}\n					reads: ＞どうしますか？\n
-m/MS0011.BIN	0:02	23	796	1FB2	頂き{08:5A}！					reads: 頂きます！; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0011.BIN	0:02	24	806	1FB2	遠慮し{08:5A}					reads: 遠慮します; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0011.BIN	0:02	25	836	1FD2	学者：	Scientist:				reads:  @ours-2026-09-05
-m/MS0011.BIN	0:02	26	844	1FD3	わしの育てたハーブだ{08:42}な、味は保証付きだ。\n<wait>	I grew these herbs myself, so I can vouch for the taste.\n<wait>				reads: わしの育てたハーブだからな、味は保証付きだ。\n<wait>; reads: わしの育てたハーブだからな、味は保証付きだ。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	27	900	1FD2	学者：					
-m/MS0011.BIN	0:02	28	908	1FD3	そうか、{08:7C}わし{08:74}飲{08:5C}。\n<wait>わしの育てたハーブだ{08:42}な、味は保証付きな{08:5F}が、\nま、無理強いは{08:66}主義だ。\n<wait>					reads: そうか、ならばわしだけ飲もう。\n<wait>わしの育てたハーブだからな、味は保証付きなんだが、\nま、無理強いはせん主義だ。\n<wait>; reads: わしの育てたハーブだからな、味は保証付きだ。\n<wait>
-m/MS0011.BIN	0:02	29	1015	1FD2	{08:31}：	Rui:				reads: 泪：; reads: 泪： @refalign @ours-2026-09-05
-m/MS0011.BIN	0:02	30	1021	1FD3	私は頂き{08:5A}わ。\nハーブティーは大好き{08:55}の{08:72}\n<wait>	I'll have some.\nI adore herbal tea...\n<wait>				reads: 私は頂きますわ。\nハーブティーは大好きですの‥‥\n<wait>; reads: そうか、ならばわしだけ飲もう。\n<wait>わしの育てたハーブだからな、味は保証付きなんだが、\nま、無理強いはせん主義だ。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	31	1071	1FD2	学者：	Scientist:				reads: 泪： @ours-2026-09-05
-m/MS0011.BIN	0:02	32	1079	1FD3	{08:4D}は素晴らしい！\nで{08:62}さっそく、極上のを持たせま{08:80}。\n<wait>	Splendid!\nThen I'll have the finest brought at once.\n<wait>				reads: それは素晴らしい！\nでは、さっそく、極上のを持たせましょう。\n<wait>; reads: 私は頂きますわ。\nハーブティーは大好きですの‥‥\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	33	1139	1FD0	初老の学者はそう言い終わ{08:51}時、奥{08:42}奇妙な{02:0B}が、機械仕掛けの人形の様な\n動きで、テクテクと歩いて来た。\n<wait>	As the elderly scientist finished speaking, a strange person came\ntoddling in from the back, moving like a clockwork doll.\n<wait>				reads: 初老の学者はそう言い終わった時、奥から奇妙な人間が、機械仕掛けの人形の様な\n動きで、テクテクと歩いて来た。\n<wait>; reads: 初老の学者はそう言い終わった時、奥から奇妙な人間が、機械仕掛けの人形の様な\n動きで、テクテクと歩いて来た。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	34	1269	1FD2	トランプ兵士：	Card Soldier:				reads: それは素晴らしい！\nでは、さっそく、極上のを持たせましょう。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	35	1285	1FD3	お呼びで{08:80}か？　博士。\n<wait>	You called, Doctor?\n<wait>				reads: お呼びでしょうか？　博士。\n<wait>; reads: 初老の学者はそう言い終わった時、奥から奇妙な人間が、機械仕掛けの人形の様な\n動きで、テクテクと歩いて来た。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	36	1316	1FD2	学者：	Scientist:				@ours-2026-09-05
-m/MS0011.BIN	0:02	37	1324	1FD3	お{08:72}来たか、少々遅いな！\n<wait>	Oh... there you are. A little slow!\n<wait>				reads: お‥‥来たか、少々遅いな！\n<wait>; reads: お呼びでしょうか？　博士。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	38	1357	1FD2	トランプ兵士：	Card Soldier:				@ours-2026-09-05
-m/MS0011.BIN	0:02	39	1373	1FD3	申し訳ござい{02:0A}、博士。\n帽子屋が一向に、離{08:4A}くれ{08:19}{08:5E}で{02:08}。\n<wait>	My apologies, Doctor.\nThe Hatter simply wouldn't let me go......\n<wait>				reads: 申し訳ございません、博士。\n帽子屋が一向に、離してくれなかったもので‥‥‥。\n<wait>; reads: お‥‥来たか、少々遅いな！\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	40	1439	1FD2	学者：	Scientist:				@ours-2026-09-05
-m/MS0011.BIN	0:02	41	1447	1FD3	ハーブティーを持{08:52}来な{08:49}。\nお、{08:4D}と昨日、兎が焼いと{08:51}スコーンもな！\n<wait>	Bring the herbal tea.\nOh, and the scones the rabbit baked yesterday, too!\n<wait>				reads: ハーブティーを持って来なさい。\nお、それと昨日、兎が焼いとったスコーンもな！\n<wait>; reads: 申し訳ございません、博士。\n帽子屋が一向に、離してくれなかったもので‥‥‥。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	42	1523	1FD2	トランプ兵士：	Card Soldier:				@ours-2026-09-05
-m/MS0011.BIN	0:02	43	1539	1FD3	かしこまりま{08:4B}。\n<wait>	Very good, sir.\n<wait>				reads: かしこまりました。\n<wait>; reads: ハーブティーを持って来なさい。\nお、それと昨日、兎が焼いとったスコーンもな！\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	44	1564	1FD0	お伽話の世界に住んでる様な、トランプの兵士の様な{02:0B}{08:62}\nうやうやしく一礼{08:4C}、再びテクテクと引っ込んで行{08:51}。\n<wait>	The person, like a card soldier out of a fairy tale, bowed\nreverently and toddled off again.\n<wait>				reads: お伽話の世界に住んでる様な、トランプの兵士の様な人間は、\nうやうやしく一礼すると、再びテクテクと引っ込んで行った。\n<wait>; reads: お伽話の世界に住んでる様な、トランプの兵士の様な人間は、\nうやうやしく一礼すると、再びテクテクと引っ込んで行った。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	45	1680	1FD2	学者：	Scientist:				reads: かしこまりました。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	46	1688	1FD3	おどろ{08:64}か？\n<wait>{08:3F}{08:62}わしが作{08:51}デミ・ヒューマン{08:72}つまる{08:87}人造{02:0B}だ。\n<wait>	Surprised?\n<wait>That was a demi-human I made... an artificial human, in short.\n<wait>				reads: おどろいたか？\n<wait>あれは、わしが作ったデミ・ヒューマン‥‥つまるところ人造人間だ。\n<wait>; reads: お伽話の世界に住んでる様な、トランプの兵士の様な人間は、\nうやうやしく一礼すると、再びテクテクと引っ込んで行った。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	47	1772	1FD2	{08:31}：	Rui:				reads: 泪：; reads: 泪： @refalign @ours-2026-09-05
-m/MS0011.BIN	0:02	48	1778	1FD3	貴方が、平沢博士{08:55}か？\n<wait>	Are you Dr. Hirasawa?\n<wait>				reads: 貴方が、平沢博士ですか？\n<wait>; reads: おどろいたか？\n<wait>あれは、わしが作ったデミ・ヒューマン‥‥つまるところ人造人間だ。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	49	1809	1FD2	平沢博士：	Dr. Hirasawa:				reads: 泪： @ours-2026-09-05
-m/MS0011.BIN	0:02	50	1821	1FD3	可愛らしいお嬢さん{08:72}{08:8B}、わしの名を御存知{08:55}な。\n<wait>	A charming young lady... and you know my name, I see.\n<wait>				reads: 可愛らしいお嬢さん‥‥よく、わしの名を御存知ですな。\n<wait>; reads: 貴方が、平沢博士ですか？\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	51	1876	1FD2	{08:31}：					reads: 泪：; reads: 泪： @refalign
-m/MS0011.BIN	0:02	52	1882	1FD3	博士の名声{08:62}一部では大変な{08:5E}{08:55}わ。\nデミ・ヒューマンの権威でいらっしゃい{08:5A}{08:5E}{02:08}\n<wait>	Your fame is considerable in certain circles, Doctor.\nYou are the authority on demi-humans......\n<wait>				reads: 博士の名声は、一部では大変なものですわ。\nデミ・ヒューマンの権威でいらっしゃいますもの‥‥‥\n<wait>; reads: 可愛らしいお嬢さん‥‥よく、わしの名を御存知ですな。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	53	1968	1FD2	平沢博士：	Dr. Hirasawa:				reads: 泪： @ours-2026-09-05
-m/MS0011.BIN	0:02	54	1980	1FD3	{02:08}昔の話だ。\n今で{08:62}概知外博士だの、マッドサイエンティストだの、好き放題言われとる。\n<wait>	......Old news.\nThese days they call me whatever they like: crackpot, mad scientist.\n<wait>				reads: ‥‥‥昔の話だ。\n今では、概知外博士だの、マッドサイエンティストだの、好き放題言われとる。\n<wait>; reads: 博士の名声は、一部では大変なものですわ。\nデミ・ヒューマンの権威でいらっしゃいますもの‥‥‥\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	55	2072	1FD0	そこへ、トランプの兵士が、ティーセットを持{08:52}入{08:52}来た。\n{08:79}後ろに{08:62}燕尾服を来た兎が、山盛りのスコーンが入{08:51}バスケットを\n持{08:52}ついて来て{08:64}。\n<wait>	Just then the card soldier came in carrying a tea set.\nBehind it followed a rabbit in a tailcoat, carrying a basket piled\nhigh with scones.\n<wait>				reads: そこへ、トランプの兵士が、ティーセットを持って入って来た。\nその後ろには、燕尾服を来た兎が、山盛りのスコーンが入ったバスケットを\n持ってついて来ていた。\n<wait>; reads: そこへ、トランプの兵士が、ティーセットを持って入って来た。\nその後ろには、燕尾服を来た兎が、山盛りのスコーンが入ったバスケットを\n持ってついて来ていた。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	56	2261	1FD2	トランプ兵士：	Card Soldier:				reads: ‥‥‥昔の話だ。\n今では、概知外博士だの、マッドサイエンティストだの、好き放題言われとる。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	57	2277	1FD3	お待たせ致しま{08:4B}、博士。\n<wait>	Sorry to keep you waiting, Doctor.\n<wait>				reads: お待たせ致しました、博士。\n<wait>; reads: そこへ、トランプの兵士が、ティーセットを持って入って来た。\nその後ろには、燕尾服を来た兎が、山盛りのスコーンが入ったバスケットを\n持ってついて来ていた。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	58	2310	1FD2	時計兎：	Watch Rabbit:				@ours-2026-09-05
-m/MS0011.BIN	0:02	59	2320	1FD3	ティータイムに{08:62}少々中途半端なお時間{08:55}が、スコーンはふっくらこんがり！\n<wait>	Rather an odd hour for teatime, but the scones are fluffy and golden!\n<wait>				reads: ティータイムには、少々中途半端なお時間ですが、スコーンはふっくらこんがり！\n<wait>; reads: お待たせ致しました、博士。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	60	2399	1FD2	時計兎：	Watch Rabbit:				@ours-2026-09-05
-m/MS0011.BIN	0:02	61	2409	1FD3	薔薇のジャムも上出来{08:55}！\n<wait>	The rose jam came out well too!\n<wait>				reads: 薔薇のジャムも上出来です！\n<wait>; reads: ティータイムには、少々中途半端なお時間ですが、スコーンはふっくらこんがり！\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	62	2442	1FD2	平沢博士：	Dr. Hirasawa:				@ours-2026-09-05
-m/MS0011.BIN	0:02	63	2454	1FD3	{08:4D}{08:62}大変結構！\n<wait>	Most excellent!\n<wait>				reads: それは、大変結構！\n<wait>; reads: 薔薇のジャムも上出来です！\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	64	2477	1FD2	平沢博士：	Dr. Hirasawa:				@ours-2026-09-05
-m/MS0011.BIN	0:02	65	2489	1FD3	さ、ティータイムと洒落込{08:5C}！\n<wait>	Now, let's have ourselves a teatime!\n<wait>				reads: さ、ティータイムと洒落込もう！\n<wait>; reads: それは、大変結構！\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	66	2526	1FD2	トランプ兵士：	Card Soldier:				@ours-2026-09-05
-m/MS0011.BIN	0:02	67	2542	1FD3	で{08:62}ごゆっくり{02:08}\n<wait>	Enjoy, then......\n<wait>				reads: では、ごゆっくり‥‥‥\n<wait>; reads: さ、ティータイムと洒落込もう！\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	68	2567	1FD2	時計兎：	Watch Rabbit:				@ours-2026-09-05
-m/MS0011.BIN	0:02	69	2577	1FD3	あ～忙しい、忙しい！！\nローストチキンに、グレイヴィをか{08:29}時間だ！！\n<wait>	Oh, so busy, so busy!!\nTime to pour the gravy on the roast chicken!!\n<wait>				reads: あ～忙しい、忙しい！！\nローストチキンに、グレイヴィをかける時間だ！！\n<wait>; reads: では、ごゆっくり‥‥‥\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	70	2653	1FD0	トランプ兵士{08:62}相変わらずテクテクと{02:08}\n<wait>燕尾服の兎{08:62}懐中時計をせわしなく見ながら、落ち着きの無い足取りで\n去{08:52}行{08:51}。\n<wait>	The card soldier toddled off as ever......\n<wait>The tailcoated rabbit left with restless steps, fussing over its\npocket watch.\n<wait>				reads: トランプ兵士は、相変わらずテクテクと‥‥‥\n<wait>燕尾服の兎は、懐中時計をせわしなく見ながら、落ち着きの無い足取りで\n去って行った。\n<wait>; reads: トランプ兵士は、相変わらずテクテクと‥‥‥\n<wait>燕尾服の兎は、懐中時計をせわしなく見ながら、落ち着きの無い足取りで\n去って行った。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	71	2792	1F01	達{08:62}前時代の珍しい食べ物を頬張り、結局は全員が、ハーブティーでの\n珍妙なティータイムを過{08:4B}。\n<wait>	 and the others stuffed themselves with rare old-world food, and in\nthe end everyone spent a peculiar teatime over herbal tea.\n<wait>				reads: 達は、前時代の珍しい食べ物を頬張り、結局は全員が、ハーブティーでの\n珍妙なティータイムを過した。\n<wait>; reads: あ～忙しい、忙しい！！\nローストチキンに、グレイヴィをかける時間だ！！\n<wait> @rebase-tagdiff @ours-2026-09-05
-m/MS0011.BIN	0:02	72	2897	1FD2	平沢博士：	Dr. Hirasawa:				reads: トランプ兵士は、相変わらずテクテクと‥‥‥\n<wait>燕尾服の兎は、懐中時計をせわしなく見ながら、落ち着きの無い足取りで\n去って行った。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	73	2909	1FD3	さてと{02:08}\n<wait>君達は一体何の用で、{08:73}所{08:71}来たのかな？\n	Now then......\n<wait>What on earth brings you all the way out here?\n				reads: さてと‥‥‥\n<wait>君達は一体何の用で、こんな所まで来たのかな？\n; reads: 達は、前時代の珍しい食べ物を頬張り、結局は全員が、ハーブティーでの\n珍妙なティータイムを過した。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	74	2977	1FB2	{08:82}偶然に{08:72}					reads: ただ偶然に‥‥; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0011.BIN	0:02	75	2989	1FB2	博士に会いに！					menu option, declared width 20 columns; reads: さてと‥‥‥\n<wait>君達は一体何の用で、こんな所まで来たのかな？\n @refalign
-m/MS0011.BIN	0:02	76	3025	1FD2	平沢博士：					reads: ただ偶然に‥‥; menu option, declared width 20 columns
-m/MS0011.BIN	0:02	77	3037	1FD3	{08:7A}理由で、あの迷宮を抜けて来たと言うのか。\n{02:08}面白い冗談だ。\n<wait>					reads: そんな理由で、あの迷宮を抜けて来たと言うのか。\n‥‥‥面白い冗談だ。\n<wait>; menu option, declared width 20 columns
-m/MS0011.BIN	0:02	78	3105	1FD2	平沢博士：	Doctor Hirasawa:				reads: 山瀬勇 @ours-2026-09-05
-m/MS0011.BIN	0:02	79	3117	1FD3	そう言えば、つい数ヶ月ほど前にも、{02:00}制服姿の男が、\n{08:45}に迷い込んで来たな。\n<wait>	Come to think of it, a few months ago a man in a Devil Buster\nuniform wandered in here too.\n<wait>				reads: そう言えば、つい数ヶ月ほど前にも、デビルバスター制服姿の男が、\nここに迷い込んで来たな。\n<wait>; reads: そう言えば、つい数ヶ月ほど前にも、デビルバスター制服姿の男が、\nここに迷い込んで来たな。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	80	3199	1FD2	平沢博士：					
-m/MS0011.BIN	0:02	81	3211	1FD3	そう{08:72}確か、{08:04}とか言う名前だ{08:51}。\n<wait>					reads: そう‥‥確か、西野とか言う名前だった。\n<wait>; reads: そんな理由で、あの迷宮を抜けて来たと言うのか。\n‥‥‥面白い冗談だ。\n<wait>
-m/MS0011.BIN	0:02	82	3252	1FD2	平沢博士：					
-m/MS0011.BIN	0:02	83	3264	1FD3	{02:08}ん？　{08:90}{08:4B}ね？　知り合いかね？\n					reads: ‥‥‥ん？　どうしたね？　知り合いかね？\n; reads: そう言えば、つい数ヶ月ほど前にも、デビルバスター制服姿の男が、\nここに迷い込んで来たな。\n<wait>
-m/MS0011.BIN	0:02	84	3313	1FB2	そう{08:55}！					reads: そうです！; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0011.BIN	0:02	85	3323	1FB2	いえ別に{08:72}					reads: いえ別に‥‥; menu option, declared width 20 columns; reads: そう‥‥確か、西野とか言う名前だった。\n<wait> @refalign
-m/MS0011.BIN	0:02	86	3355	1FD2	平沢博士：					
-m/MS0011.BIN	0:02	87	3367	1FD3	ほう{02:08}\n<wait>					reads: ほう‥‥‥\n<wait>; reads: ‥‥‥ん？　どうしたね？　知り合いかね？\n
-m/MS0011.BIN	0:02	88	3382	1FD2	平沢博士：					reads: そうです！; menu option, declared width 20 columns
-m/MS0011.BIN	0:02	89	3394	1FD3	確か{08:79}男{08:62}秋葉原に向かうとか言{08:53}{08:51}な。\n理由は特に聞か{08:19}が、あの様子{08:42}{08:4C}、当てがあ{08:52}の事で{08:62}\n無さ{01:29}{08:51}が{02:08}。\n<wait>					reads: 確かその男は、秋葉原に向かうとか言っとったな。\n理由は特に聞かなかったが、あの様子からすると、当てがあっての事では、\n無さそうだったが‥‥‥。\n<wait>; reads: いえ別に‥‥; menu option, declared width 20 columns
-m/MS0011.BIN	0:02	90	3509	1FD2	平沢博士：	Doctor Hirasawa:				reads: 山瀬勇 @ours-2026-09-05
-m/MS0011.BIN	0:02	91	3521	1FD3	さてと{02:08}\n<wait>わし{08:62}研究に戻らせ{08:54}らうよ。\n<wait>	Now then.........\n<wait>I'll be getting back to my research.\n<wait>				reads: さてと‥‥‥\n<wait>わしは、研究に戻らせてもらうよ。\n<wait>; reads: さてと‥‥‥\n<wait>わしは、研究に戻らせてもらうよ。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	92	3571	1FD2	平沢博士：					
-m/MS0011.BIN	0:02	93	3583	1FD3	ま、君達は好きに{08:4B}まえ。\n見た{08:87}、君達もアウトサイダーの様だ。\nそう{08:22}{02:0B}{08:7D}、わしも嫌いでは{08:25}。\n<wait>					reads: ま、君達は好きにしたまえ。\n見たところ、君達もアウトサイダーの様だ。\nそういった人間なら、わしも嫌いではない。\n<wait>; reads: ほう‥‥‥\n<wait>
-m/MS0011.BIN	0:02	94	3684	1FD2	平沢博士：					
-m/MS0011.BIN	0:02	95	3696	1FD3	何か様があっ{08:50}、声{08:56}かけてくれ。\n<wait>用が無い場合は駄目だ。\n<wait>					reads: 何か様があったら、声でもかけてくれ。\n<wait>用が無い場合は駄目だ。\n<wait>; reads: 確かその男は、秋葉原に向かうとか言っとったな。\n理由は特に聞かなかったが、あの様子からすると、当てがあっての事では、\n無さそうだったが‥‥‥。\n<wait>
-m/MS0011.BIN	0:02	96	3764	1FD2	平沢博士：					
-m/MS0011.BIN	0:02	97	3776	1FD3	では諸君、ご機嫌{08:69}{08:72}\n<wait>					reads: では諸君、ご機嫌よう‥‥\n<wait>; reads: さてと‥‥‥\n<wait>わしは、研究に戻らせてもらうよ。\n<wait>
-m/MS0011.BIN	0:02	98	3805	1FD0	そう言うと平沢博士{08:62}	With that, Dr. Hirasawa politely showed 				reads: そう言うと平沢博士は、; reads: そう言うと平沢博士は、 @ours-2026-09-05
-m/MS0011.BIN	0:02	99	3831	1F01	達を{01:2E}の外に丁重に送り出{08:4B}。\n<wait>	 and the others out of the room.\n<wait>				reads: 達を部屋の外に丁重に送り出した。\n<wait>; reads: ま、君達は好きにしたまえ。\n見たところ、君達もアウトサイダーの様だ。\nそういった人間なら、わしも嫌いではない。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	100	3872	1F01	達{08:62}体{08:8B}追い出{03:0C}る形に{08:16}。\n<wait>	 and the others had, in effect, been shown the door.\n<wait>				reads: 達は、体よく追い出される形になった。\n<wait>; reads: 達は、体よく追い出される形になった。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	101	3906	1FD2	学者：					reads: 何か様があったら、声でもかけてくれ。\n<wait>用が無い場合は駄目だ。\n<wait>
-m/MS0011.BIN	0:02	102	3914	1FD3	何だ？　近頃は外{08:42}の妙な客人が多いな。\n<wait>					reads: 何だ？　近頃は外からの妙な客人が多いな。\n<wait>
-m/MS0011.BIN	0:02	103	3961	1FD2	学者：					reads: では諸君、ご機嫌よう‥‥\n<wait>
-m/MS0011.BIN	0:02	104	3969	1FD3	ま、歓迎{08:8E}理由は{08:25}が、迷路を抜けてわざわざ来た{08:5F}。\n少しは休んで行きな{08:49}。\n<wait>					reads: ま、歓迎する理由はないが、迷路を抜けてわざわざ来たんだ。\n少しは休んで行きなさい。\n<wait>; reads: そう言うと平沢博士は、
-m/MS0011.BIN	0:02	105	4061	1F7F	w者：					reads: 達を部屋の外に丁重に送り出した。\n<wait>
-m/MS0011.BIN	0:02	106	4068	1FD3	何だ？　良く見{08:50}酷い状態では{08:25}か{08:72}。\n<wait>					reads: 何だ？　良く見たら酷い状態ではないか‥‥。\n<wait>; reads: 達は、体よく追い出される形になった。\n<wait>
-m/MS0011.BIN	0:02	107	4113	1FD2	学者：					
-m/MS0011.BIN	0:02	108	4121	1FD3	{08:7A}辛気臭い連中相手で{08:62}美味しく茶も飲めん。\n<wait>					reads: そんな辛気臭い連中相手では、美味しく茶も飲めん。\n<wait>; reads: 何だ？　近頃は外からの妙な客人が多いな。\n<wait>
-m/MS0011.BIN	0:02	109	4172	1FD2	学者：					
-m/MS0011.BIN	0:02	110	4180	1FD3	やれやれ仕方無いのぅ{08:72}どれ、わしが診てやろう。\n<wait>					reads: やれやれ仕方無いのぅ‥‥どれ、わしが診てやろう。\n<wait>; reads: ま、歓迎する理由はないが、迷路を抜けてわざわざ来たんだ。\n少しは休んで行きなさい。\n<wait>
-m/MS0011.BIN	0:02	111	4248	1FD0	そう言うと、男{08:26}かにも面倒だと{08:68}そぶりで	With that, the man, looking thoroughly put out, approached 				reads: そう言うと、男はいかにも面倒だというそぶりで; reads: そう言うと、男はいかにも面倒だというそぶりで @ours-2026-09-05
-m/MS0011.BIN	0:02	112	4294	1F01	達に近づき、\n	 and the others, and\n				reads: 達に近づき、\n; reads: 何だ？　良く見たら酷い状態ではないか‥‥。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	113	4313	1F01	達に治療を施{08:4A}く{08:60}。\n<wait>	 and the others were treated.\n<wait>				reads: 達に治療を施してくれた。\n<wait>; reads: 達に治療を施してくれた。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	114	4340	1FBA	口ぶりとは裏腹に、{08:79}手つきや接し方{08:62}神業とも言{08:28}{08:5E}であ{08:51}。\n<wait>					reads: 口ぶりとは裏腹に、その手つきや接し方は、神業とも言えるものであった。\n<wait>; reads: そんな辛気臭い連中相手では、美味しく茶も飲めん。\n<wait>
-m/MS0011.BIN	0:02	115	4454	1FD2	学者：					
-m/MS0011.BIN	0:02	116	4462	1FD3	{02:08}面倒な客を招き入れて{08:1F}{08:5E}だ。\n<wait>					reads: ‥‥‥面倒な客を招き入れてしまったものだ。\n<wait>; reads: やれやれ仕方無いのぅ‥‥どれ、わしが診てやろう。\n<wait>
-m/MS0011.BIN	0:02	117	4501	1FD2	学者：					reads: そう言うと、男はいかにも面倒だというそぶりで
-m/MS0011.BIN	0:02	118	4509	1FD3	ま、済{08:5F}事は仕方{08:25}。\n<wait>					reads: ま、済んだ事は仕方ない。\n<wait>; reads: 達に近づき、\n
-m/MS0011.BIN	0:02	119	4538	1FD0	初老の学者風の男{08:62}そう言うと、パチンと指を鳴ら{08:4B}。\n<wait>					reads: 初老の学者風の男は、そう言うと、パチンと指を鳴らした。\n<wait>; reads: 達に治療を施してくれた。\n<wait>
-m/MS0011.BIN	0:02	120	4597	1FD2	学者：					reads: 口ぶりとは裏腹に、その手つきや接し方は、神業とも言えるものであった。\n<wait>
-m/MS0011.BIN	0:02	121	4605	1FD3	ハーブティーぐらい{08:86}無いが、飲んで行くかね？\n<wait>					reads: ハーブティーぐらいしか無いが、飲んで行くかね？\n<wait>
-m/MS0011.BIN	0:02	122	4660	1FD1	＞{02:06}\n					reads: ＞どうしますか？\n; reads: ‥‥‥面倒な客を招き入れてしまったものだ。\n<wait>
-m/MS0011.BIN	0:02	123	4681	1FB2	頂き{08:5A}！					reads: 頂きます！; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0011.BIN	0:02	124	4691	1FB2	遠慮し{08:5A}					reads: 遠慮します; menu option, declared width 20 columns; reads: ま、済んだ事は仕方ない。\n<wait> @refalign
-m/MS0011.BIN	0:02	125	4721	1FD2	学者：					reads: 初老の学者風の男は、そう言うと、パチンと指を鳴らした。\n<wait>
-m/MS0011.BIN	0:02	126	4729	1FD3	そうか、{08:7C}わし{08:74}飲{08:5C}。\n<wait>わしの育てたハーブだ{08:42}な、味は保証付きな{08:5F}が、\nま、無理強いは{08:66}主義だ。\n<wait>					reads: そうか、ならばわしだけ飲もう。\n<wait>わしの育てたハーブだからな、味は保証付きなんだが、\nま、無理強いはせん主義だ。\n<wait>
-m/MS0011.BIN	0:02	127	4839	1FD2	学者：					reads: ハーブティーぐらいしか無いが、飲んで行くかね？\n<wait>
-m/MS0011.BIN	0:02	128	4847	1FD3	そうそう、自己紹介を忘れと{08:51}な。\n<wait>					reads: そうそう、自己紹介を忘れとったな。\n<wait>; reads: ＞どうしますか？\n
-m/MS0011.BIN	0:02	129	4888	1FD2	学者：					reads: 頂きます！; menu option, declared width 20 columns
-m/MS0011.BIN	0:02	130	4896	1FD3	わしの名は平沢晋だ。\n<wait>					reads: 遠慮します; menu option, declared width 20 columns
-m/MS0011.BIN	0:02	131	4925	1FD2	平沢博士：	Doctor Hirasawa:				reads: 山瀬勇 @ours-2026-09-05
-m/MS0011.BIN	0:02	132	4937	1FD3	わしを知る外部の{02:0B}{08:62}皆、概知外博士だの、マッドサイエンティストだのと、\n好き放題言{08:52}おるがな。\n<wait>	Everyone outside who knows of me calls me a crackpot professor,\na mad scientist, whatever they please.\n<wait>				reads: わしを知る外部の人間は、皆、概知外博士だの、マッドサイエンティストだのと、\n好き放題言っておるがな。\n<wait>; reads: わしを知る外部の人間は、皆、概知外博士だの、マッドサイエンティストだのと、\n好き放題言っておるがな。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:02	133	5039	1FD2	平沢博士：					
-m/MS0011.BIN	0:02	134	5051	1FD3	{08:47}研究所に引っ込んで{08:42}、{08:5C}随分と経つ{02:08}\n<wait>恐らく君の様な若い人に{08:62}{08:5C}わしの事を知る者{08:62}殆ど{08:24}{08:8C}。\n<wait>					reads: この研究所に引っ込んでから、もう随分と経つ‥‥‥\n<wait>恐らく君の様な若い人には、もうわしの事を知る者は、殆どいないだろう。\n<wait>; reads: そうか、ならばわしだけ飲もう。\n<wait>わしの育てたハーブだからな、味は保証付きなんだが、\nま、無理強いはせん主義だ。\n<wait>
-m/MS0011.BIN	0:02	135	5157	1FD0	そこへ、トランプの兵士が、ティーセットを持{08:52}入{08:52}来た。\n{08:79}後ろに{08:62}燕尾服を来た兎が、山盛りのスコーンが入{08:51}バスケットを持{08:52}\nついて来て{08:64}。\n<wait>					reads: そこへ、トランプの兵士が、ティーセットを持って入って来た。\nその後ろには、燕尾服を来た兎が、山盛りのスコーンが入ったバスケットを持って\nついて来ていた。\n<wait>
-m/MS0011.BIN	0:02	136	5346	1FD2	トランプ兵士：					reads: そうそう、自己紹介を忘れとったな。\n<wait>
-m/MS0011.BIN	0:02	137	5362	1FD3	お待たせ致しま{08:4B}、博士。\n<wait>					reads: お待たせ致しました、博士。\n<wait>
-m/MS0011.BIN	0:02	138	5395	1FD2	時計兎：					
-m/MS0011.BIN	0:02	139	5405	1FD3	ティータイムに{08:62}少々中途半端なお時間{08:55}が、スコーンはふっくらこんがり！\n<wait>					reads: ティータイムには、少々中途半端なお時間ですが、スコーンはふっくらこんがり！\n<wait>
-m/MS0011.BIN	0:02	140	5484	1FD2	時計兎：					reads: わしを知る外部の人間は、皆、概知外博士だの、マッドサイエンティストだのと、\n好き放題言っておるがな。\n<wait>
-m/MS0011.BIN	0:02	141	5494	1FD3	薔薇のジャムも上出来{08:55}！\n<wait>					reads: 薔薇のジャムも上出来です！\n<wait>
-m/MS0011.BIN	0:02	142	5527	1FD2	平沢博士：					reads: この研究所に引っ込んでから、もう随分と経つ‥‥‥\n<wait>恐らく君の様な若い人には、もうわしの事を知る者は、殆どいないだろう。\n<wait>
-m/MS0011.BIN	0:02	143	5539	1FD3	{08:4D}{08:62}大変結構！\n<wait>					reads: それは、大変結構！\n<wait>; reads: そこへ、トランプの兵士が、ティーセットを持って入って来た。\nその後ろには、燕尾服を来た兎が、山盛りのスコーンが入ったバスケットを持って\nついて来ていた。\n<wait>
-m/MS0011.BIN	0:02	144	5562	1FD2	平沢博士：					
-m/MS0011.BIN	0:02	145	5574	1FD3	さ、ティータイムと洒落込{08:5C}！\n<wait>					reads: さ、ティータイムと洒落込もう！\n<wait>; reads: お待たせ致しました、博士。\n<wait>
-m/MS0011.BIN	0:02	146	5611	1FD2	トランプ兵士：					
-m/MS0011.BIN	0:02	147	5627	1FD3	で{08:62}ごゆっくり{02:08}\n<wait>					reads: では、ごゆっくり‥‥‥\n<wait>; reads: ティータイムには、少々中途半端なお時間ですが、スコーンはふっくらこんがり！\n<wait>
-m/MS0011.BIN	0:02	148	5652	1FD2	時計兎：					
-m/MS0011.BIN	0:02	149	5662	1FD3	あ～忙しい、忙しい！！\nローストチキンに、グレイヴィをか{08:29}時間だ！！\n<wait>					reads: あ～忙しい、忙しい！！\nローストチキンに、グレイヴィをかける時間だ！！\n<wait>; reads: 薔薇のジャムも上出来です！\n<wait>
-m/MS0011.BIN	0:02	150	5738	1FD0	トランプ兵士{08:62}相変わらずテクテクと{02:08}\n<wait>燕尾服の兎{08:62}懐中時計をせわしなく見ながら、落ち着きの無い足取りで\n去{08:52}行{08:51}。\n<wait>					reads: トランプ兵士は、相変わらずテクテクと‥‥‥\n<wait>燕尾服の兎は、懐中時計をせわしなく見ながら、落ち着きの無い足取りで\n去って行った。\n<wait>
-m/MS0011.BIN	0:02	151	5877	1F01	{08:62}前時代の珍しい食べ物を頬張り、ハーブティーでの珍妙なティータイムを\n過ご{08:4B}。\n<wait>	 stuffed himself with rare food of the old world, and spent a very\nodd tea-time over herbal tea.\n<wait>				reads: は、前時代の珍しい食べ物を頬張り、ハーブティーでの珍妙なティータイムを\n過ごした。\n<wait>; reads: それは、大変結構！\n<wait> @rebase-tagdiff @seamfix-2026-09-05
-m/MS0011.BIN	0:02	152	5968	1FD2	平沢博士：					
-m/MS0011.BIN	0:02	153	5980	1FD3	さてと{02:08}\n<wait>君は一体何の用で、{08:73}所{08:71}来たのかな？\n<wait>					reads: さてと‥‥‥\n<wait>君は一体何の用で、こんな所まで来たのかな？\n<wait>; reads: さ、ティータイムと洒落込もう！\n<wait>
-m/MS0011.BIN	0:02	154	6052	1FB2	パーツの保存					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0011.BIN	0:02	155	6066	1FB2	何{08:56}{08:25}					reads: 何でもない; menu option, declared width 20 columns; reads: では、ごゆっくり‥‥‥\n<wait> @refalign
-m/MS0011.BIN	0:02	156	6092	1FD2	平沢博士：					
-m/MS0011.BIN	0:02	157	6104	1FD3	理由も無いのに、{08:73}所{08:71}迷宮を抜けて来たのか？\n{02:08}面白い冗談だ。\n<wait>					reads: 理由も無いのに、こんな所まで迷宮を抜けて来たのか？\n‥‥‥面白い冗談だ。\n<wait>; reads: あ～忙しい、忙しい！！\nローストチキンに、グレイヴィをかける時間だ！！\n<wait>
-m/MS0011.BIN	0:02	158	6174	1FD2	平沢博士：					reads: トランプ兵士は、相変わらずテクテクと‥‥‥\n<wait>燕尾服の兎は、懐中時計をせわしなく見ながら、落ち着きの無い足取りで\n去って行った。\n<wait>
-m/MS0011.BIN	0:02	159	6186	1FD3	そう言えば、つい数ヶ月ほど前にも、{02:00}制服姿の男が、\n{08:45}に迷い込んで来たな。\n<wait>					reads: そう言えば、つい数ヶ月ほど前にも、デビルバスター制服姿の男が、\nここに迷い込んで来たな。\n<wait>; reads: は、前時代の珍しい食べ物を頬張り、ハーブティーでの珍妙なティータイムを\n過ごした。\n<wait>
-m/MS0011.BIN	0:02	160	6268	1FD2	平沢博士：					
-m/MS0011.BIN	0:02	161	6280	1FD3	そう{08:72}確か、{08:04}とか言う名前だ{08:51}。\n<wait>					reads: そう‥‥確か、西野とか言う名前だった。\n<wait>; reads: さてと‥‥‥\n<wait>君は一体何の用で、こんな所まで来たのかな？\n<wait>
-m/MS0011.BIN	0:02	162	6321	1FD2	平沢博士：					menu option, declared width 20 columns
-m/MS0011.BIN	0:02	163	6333	1FD3	{02:08}ん？　{08:90}{08:4B}ね？　知り合いかね？\n					reads: ‥‥‥ん？　どうしたね？　知り合いかね？\n; reads: 何でもない; menu option, declared width 20 columns
-m/MS0011.BIN	0:02	164	6382	1FB2	そう{08:55}！	I do!				reads: そうです！; menu option, declared width 20 columns; reads: 山瀬勇 @ours-2026-09-05
-m/MS0011.BIN	0:02	165	6392	1FB2	いえ別に{08:72}	No, not really...				reads: いえ別に‥‥; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
-m/MS0011.BIN	0:02	166	6424	1FD2	平沢博士：					
-m/MS0011.BIN	0:02	167	6436	1FD3	ほう{02:08}\n<wait>					reads: ほう‥‥‥\n<wait>; reads: 理由も無いのに、こんな所まで迷宮を抜けて来たのか？\n‥‥‥面白い冗談だ。\n<wait>
-m/MS0011.BIN	0:02	168	6451	1FD2	平沢博士：					
-m/MS0011.BIN	0:02	169	6463	1FD3	確か{08:79}男{08:62}秋葉原に向かうとか言{08:53}{08:51}な。\n理由は特に聞か{08:19}が、あの様子{08:42}{08:4C}、当てがあ{08:52}の事で{08:62}\n無さ{01:29}{08:51}が{02:08}。\n<wait>					reads: 確かその男は、秋葉原に向かうとか言っとったな。\n理由は特に聞かなかったが、あの様子からすると、当てがあっての事では、\n無さそうだったが‥‥‥。\n<wait>; reads: そう言えば、つい数ヶ月ほど前にも、デビルバスター制服姿の男が、\nここに迷い込んで来たな。\n<wait>
-m/MS0011.BIN	0:03	0	8	1FD2	平沢博士：					
-m/MS0011.BIN	0:03	1	20	1FD3	そうそう{08:72}君達の様な若者に{08:62}わしの弟子で{08:7B}、日下章人の方が、\n色々と面白いかも知れん。\n<wait>					reads: そうそう‥‥君達の様な若者には、わしの弟子である、日下章人の方が、\n色々と面白いかも知れん。\n<wait>
-m/MS0011.BIN	0:03	2	114	1FD2	平沢博士：					
-m/MS0011.BIN	0:03	3	126	1FD3	奴の研究所は市ヶ谷に{08:7B}。\n<wait>					reads: 奴の研究所は市ヶ谷にある。\n<wait>
-m/MS0011.BIN	0:03	4	159	1FD2	平沢博士：					
-m/MS0011.BIN	0:03	5	171	1FD3	わしの様に古く{08:49}デミ・ヒューマンの研究{08:81}なく、奴{08:62}サイバネック医療を\n中心に、かなり派手な研究をしとる筈だ。\n<wait>					reads: わしの様に古くさいデミ・ヒューマンの研究じゃなく、奴は、サイバネック医療を\n中心に、かなり派手な研究をしとる筈だ。\n<wait>
-m/MS0011.BIN	0:03	6	287	1FD2	平沢博士：					
-m/MS0011.BIN	0:03	7	299	1FD3	但し、奴は大概偏屈でな。\n簡単に招き入れて貰{08:28}か{08:90}か{08:62}わしにも分らん。\n<wait>					reads: 但し、奴は大概偏屈でな。\n簡単に招き入れて貰えるかどうかは、わしにも分らん。\n<wait>
-m/MS0011.BIN	0:03	8	377	1FD2	平沢博士：					
-m/MS0011.BIN	0:03	9	389	1FD3	ま、暇{08:7C}、一度行{08:52}み{08:54}良かろう。\n<wait>					reads: ま、暇ならば、一度行ってみても良かろう。\n<wait>
-m/MS0011.BIN	0:03	10	433	1FD2	平沢博士：					
-m/MS0011.BIN	0:03	11	445	1FD3	{08:72}ん？　わしに何か用かな？\n<wait>特に用が無い{08:7D}、デミ・ヒューマン共に{08:56}構{08:52}貰うと{08:7F}。\n<wait>					reads: ‥‥ん？　わしに何か用かな？\n<wait>特に用が無いなら、デミ・ヒューマン共にでも構って貰うといい。\n<wait>
-m/MS0011.BIN	0:03	12	537	1FD2	平沢博士：					
-m/MS0011.BIN	0:03	13	549	1FD3	やつらも、話し相手ぐらいには{08:59}。\n<wait>					reads: やつらも、話し相手ぐらいにはなる。\n<wait>
-m/MS0011.BIN	0:04	0	5	1FD2	平沢博士：					
-m/MS0011.BIN	0:04	1	17	1FD3	{02:08}ん？　{08:90}{08:4B}ね？\n<wait>					reads: ‥‥‥ん？　どうしたね？\n<wait>
-m/MS0011.BIN	0:04	2	49	1FD2	平沢博士：					
-m/MS0011.BIN	0:04	3	61	1FD3	{02:08}何だ？\n<wait>良く見{08:50}、とん{08:56}{08:25}状態では無いか{02:08}\n<wait>					reads: ‥‥‥何だ？\n<wait>良く見たら、とんでもない状態では無いか‥‥‥\n<wait>
-m/MS0011.BIN	0:04	4	117	1FD2	平沢博士：					
-m/MS0011.BIN	0:04	5	129	1FD3	近頃の若いもんは{02:08}{02:08}\n<wait>					reads: 近頃の若いもんは‥‥‥‥‥‥\n<wait>
-m/MS0011.BIN	0:04	6	182	1FD2	平沢博士：					
-m/MS0011.BIN	0:04	7	194	1FD3	訪ねて来る{08:7C}、礼儀{08:52}{08:5E}が{08:7B}{08:8C}に{08:72}\n<wait>					reads: 訪ねて来るならば、礼儀ってものがあるだろうに‥‥\n<wait>
-m/MS0011.BIN	0:04	8	235	1FD2	平沢博士：					
-m/MS0011.BIN	0:04	9	247	1FD3	さて、わしに何か用かな？\n<wait>					
-m/MS0011.BIN	0:04	10	292	1FB2	パーツについて相談					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0011.BIN	0:04	11	312	1FB2	黙っ{08:14}					reads: 黙っている; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0011.BIN	0:04	12	346	1F01	{08:62}	 showed 				reads: は、; reads: は、 @rebase-new @ours-2026-09-05
-m/MS0011.BIN	0:04	13	354	1F01	のパーツを平沢博士に見せ、何とか保存が出来{08:25}かを相談{08:4B}。\n<wait>	's parts to Dr. Hirasawa and asked whether they could somehow\nbe preserved.\n<wait>				reads: のパーツを平沢博士に見せ、何とか保存が出来ないかを相談した。\n<wait>; reads: は、 @rebase-new @ours-2026-09-05
-m/MS0011.BIN	0:04	14	419	1FD2	平沢博士：	Dr. Hirasawa:				reads: のパーツを平沢博士に見せ、何とか保存が出来ないかを相談した。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:04	15	431	1FD3	ふむ{08:72}残念{08:8F}、きちんと{08:4B}生体を保存{08:8E}培養槽{08:62}\n{08:5C}、わしの所では置いておらん{08:77}。\n<wait>	Hmm... I'm sorry to say I no longer keep a proper culture tank for\npreserving living tissue here.\n<wait>				reads: ふむ‥‥残念だが、きちんとした生体を保存する培養槽は、\nもう、わしの所では置いておらんのだ。\n<wait>; reads: ふむ‥‥残念だが、きちんとした生体を保存する培養槽は、\nもう、わしの所では置いておらんのだ。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:04	16	517	1FD2	平沢博士：	Dr. Hirasawa:				reads: ふむ‥‥残念だが、きちんとした生体を保存する培養槽は、\nもう、わしの所では置いておらんのだ。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:04	17	529	1FD3	{08:8F}安心しな{08:49}。\nわしの弟子で{08:7B}、日下章人の研究所{08:7C}、腐るほど置いて{08:7B}筈だ。\n<wait>	But don't worry.\nMy pupil Kusaka Akihito's laboratory should have more than enough.\n<wait>				reads: だが安心しなさい。\nわしの弟子である、日下章人の研究所ならば、腐るほど置いてある筈だ。\n<wait>; reads: だが安心しなさい。\nわしの弟子である、日下章人の研究所ならば、腐るほど置いてある筈だ。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:04	18	611	1FD2	平沢博士：	Dr. Hirasawa:				reads: だが安心しなさい。\nわしの弟子である、日下章人の研究所ならば、腐るほど置いてある筈だ。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:04	19	623	1FD3	今{08:42}紹介状を書いてあげ{08:69}。\n<wait>	I'll write you a letter of introduction now.\n<wait>				reads: 今から紹介状を書いてあげよう。\n<wait>; reads: 今から紹介状を書いてあげよう。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:04	20	658	1FD2	平沢博士：	Dr. Hirasawa:				reads: 今から紹介状を書いてあげよう。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:04	21	670	1FD3	奴{08:62}わしより偏屈だ{08:42}な。\n{08:82}持{08:52}行{08:51}{08:74}で{08:62}相手に{08:4A}貰えん{08:8C}。\n<wait>	He's even more eccentric than I am.\nJust turning up there, he won't give you the time of day.\n<wait>				reads: 奴は、わしより偏屈だからな。\nただ持って行っただけでは、相手にして貰えんだろう。\n<wait>; reads: 奴は、わしより偏屈だからな。\nただ持って行っただけでは、相手にして貰えんだろう。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:04	22	738	1FD2	平沢博士：	Dr. Hirasawa:				reads: 奴は、わしより偏屈だからな。\nただ持って行っただけでは、相手にして貰えんだろう。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:04	23	750	1FD3	少し、そこで待{08:52}{08:64}まえ。\n<wait>	Wait there a moment.\n<wait>				reads: 少し、そこで待っていたまえ。\n<wait>; reads: 少し、そこで待っていたまえ。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:04	24	787	1FD0	平沢博士{08:62}奥の方に引っ込んで行{08:51}{02:08}\n<wait>	Dr. Hirasawa withdrew into the back......\n<wait>				reads: 平沢博士は、奥の方に引っ込んで行った‥‥‥\n<wait>; reads: 少し、そこで待っていたまえ。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:04	25	857	1FD2	平沢博士：	Dr. Hirasawa:				reads: 平沢博士は、奥の方に引っ込んで行った‥‥‥\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:04	26	869	1FD3	さ、{08:48}が紹介状だ。\n{08:48}を持{08:52}行けば、さし{08:5E}奴も断れん{08:8C}。\n<wait>	Here, the letter of introduction.\nTake this along, and even he won't be able to refuse.\n<wait>				reads: さ、これが紹介状だ。\nこれを持って行けば、さしもの奴も断れんだろう。\n<wait>; reads: さ、これが紹介状だ。\nこれを持って行けば、さしもの奴も断れんだろう。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:04	27	933	1FD2	平沢博士：	Dr. Hirasawa:				reads: さ、これが紹介状だ。\nこれを持って行けば、さしもの奴も断れんだろう。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:04	28	945	1FD3	お{08:53}、忘{08:2F}所だ{08:51}{02:08}日下章人の研究所は市ヶ谷に{08:7B}。\nかつて、軍部の{08:10}があ{08:51}場所だ{08:42}、すぐ分る{08:8C}。\n<wait>	Oh, I nearly forgot...... Kusaka Akihito's laboratory is in Ichigaya.\nIt's where the military shelter used to be, so you'll find it easily.\n<wait>				reads: おっと、忘れる所だった‥‥‥日下章人の研究所は市ヶ谷にある。\nかつて、軍部のシェルターがあった場所だから、すぐ分るだろう。\n<wait>; reads: おっと、忘れる所だった‥‥‥日下章人の研究所は市ヶ谷にある。\nかつて、軍部のシェルターがあった場所だから、すぐ分るだろう。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:04	29	1057	1FD2	平沢博士：	Dr. Hirasawa:				reads: おっと、忘れる所だった‥‥‥日下章人の研究所は市ヶ谷にある。\nかつて、軍部のシェルターがあった場所だから、すぐ分るだろう。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:04	30	1069	1FD3	何も無いと{08:68}事はなかろう？\n<wait>					reads: 何も無いという事はなかろう？\n<wait>
-m/MS0011.BIN	0:04	31	1106	1FD1	＞{02:06}\n	>What will you do?\n				reads: ＞どうしますか？\n; reads: 何も無いという事はなかろう？\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:04	32	1127	1FB2	パーツについて相談					menu option, declared width 20 columns; reads: ＞どうしますか？\n @refalign
-m/MS0011.BIN	0:04	33	1147	1FB2	黙っ{08:14}					reads: 黙っている; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0011.BIN	0:04	34	1175	1FD2	平沢博士：					reads: 黙っている; menu option, declared width 20 columns
-m/MS0011.BIN	0:04	35	1187	1FD3	全く{02:08}じれっ{08:4E}の。\n<wait>	Honestly......... how exasperating.\n<wait>				reads: 全く‥‥‥じれったいの。\n<wait>; reads: 山瀬勇 @ours-2026-09-05
-m/MS0011.BIN	0:04	36	1214	1FD2	平沢博士：	Doctor Hirasawa:				@ours-2026-09-05
-m/MS0011.BIN	0:04	37	1226	1FD3	言い{08:4E}事が{08:7B}{08:7D}、まずは言{08:52}みる事{08:8C}？\n<wait>					reads: 言いたい事があるなら、まずは言ってみる事だろう？\n<wait>
-m/MS0011.BIN	0:04	38	1273	1FD1	＞{02:06}\n					reads: ＞どうしますか？\n; reads: 全く‥‥‥じれったいの。\n<wait>
-m/MS0011.BIN	0:04	39	1294	1FB2	パーツについて相談					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0011.BIN	0:04	40	1314	1FB2	黙っ{08:14}					reads: 黙っている; menu option, declared width 20 columns; reads: 言いたい事があるなら、まずは言ってみる事だろう？\n<wait> @refalign
-m/MS0011.BIN	0:05	0	5	1FD0	博士がそう言い終{08:41}所で、{01:3A}の少女が、仔兎の様に元気良く飛び込んで来た。\n<wait>	Just as the doctor finished speaking, a girl bounded in, lively as a\nbaby rabbit.\n<wait>				reads: 博士がそう言い終えた所で、ひとりの少女が、仔兎の様に元気良く飛び込んで来た。\n<wait>; reads: 博士がそう言い終えた所で、ひとりの少女が、仔兎の様に元気良く飛び込んで来た。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:05	1	106	1FD2	メイ：	Mei:				@ours-2026-09-05
-m/MS0011.BIN	0:05	2	114	1FD3	平沢おじいちゃん！　大変{08:6B}！！\n<wait>時計兎さんが、クッキーを焦しちゃ{08:52}{02:08}\n<wait>	Grandpa Hirasawa! It's terrible!!\n<wait>Mr. Watch Rabbit burnt the cookies......\n<wait>				reads: 平沢おじいちゃん！　大変なの！！\n<wait>時計兎さんが、クッキーを焦しちゃって‥‥‥\n<wait>; reads: 平沢おじいちゃん！　大変なの！！\n<wait>時計兎さんが、クッキーを焦しちゃって‥‥‥\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:05	3	199	1FD2	メイ：	Mei:				@ours-2026-09-05
-m/MS0011.BIN	0:05	4	207	1FD3	ああ～ッ！！　お兄ちゃん！！\n<wait>	Aaah!! Big brother!!\n<wait>				@ours-2026-09-05
-m/MS0011.BIN	0:05	5	244	1FD2	平沢博士：	Dr. Hirasawa:				@ours-2026-09-05
-m/MS0011.BIN	0:05	6	256	1FD3	何だ？　メイの知り合いか？\n<wait>	What? A friend of yours, Mei?\n<wait>				@ours-2026-09-05
-m/MS0011.BIN	0:05	7	291	1FD2	メイ：	Mei:				@ours-2026-09-05
-m/MS0011.BIN	0:05	8	299	1FD3	うんっ！\n{01:06}お兄ちゃんとメイ{08:62}{08:47}お兄ちゃんに助けて貰{08:51}の！\n<wait>	Yeah!\nThis big brother saved Kazumi and me!\n<wait>				reads: うんっ！\nカズミお兄ちゃんとメイは、このお兄ちゃんに助けて貰ったの！\n<wait>; reads: うんっ！\nカズミお兄ちゃんとメイは、このお兄ちゃんに助けて貰ったの！\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:05	9	365	1FD2	平沢博士：	Dr. Hirasawa:				@ours-2026-09-05
-m/MS0011.BIN	0:05	10	377	1FD3	ほう{08:72}{01:29}{08:51}のか？\n<wait>	Oh...... is that so?\n<wait>				reads: ほう‥‥そうだったのか？\n<wait>; reads: ほう‥‥そうだったのか？\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:05	11	402	1FD2	メイ：	Mei:				@ours-2026-09-05
-m/MS0011.BIN	0:05	12	410	1FD3	{08:56}、何でお兄ちゃんが{08:45}に？！\n	But why are you here, big brother?!\n				reads: でも、何でお兄ちゃんがここに？！\n; reads: でも、何でお兄ちゃんがここに？！\n @ours-2026-09-05
-m/MS0011.BIN	0:05	13	455	1FB2	そっちこそ！					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0011.BIN	0:05	14	469	1FB2	ええ{08:53}{08:72}					reads: ええっと‥‥; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0011.BIN	0:05	15	499	1FD2	メイ：	Mei:				reads: 山瀬勇 @ours-2026-09-05
-m/MS0011.BIN	0:05	16	507	1FD3	メイはねぇ、あの後、お兄ちゃんといっぱい歩いてぇ{02:08}\n<wait>{08:45}に来れば、メイに{08:7F}お薬が貰{08:28}かも{08:52}聞{08:64}{08:42}、頑張{08:52}、\nお兄ちゃんと一緒に来たの！\n<wait>	After that, Mei walked and walked with big brother.........\n<wait>Mei heard that if she came here she might get good medicine,\nso she tried really hard and came with big brother!\n<wait>				reads: メイはねぇ、あの後、お兄ちゃんといっぱい歩いてぇ‥‥‥\n<wait>ここに来れば、メイにいいお薬が貰えるかもって聞いたから、頑張って、\nお兄ちゃんと一緒に来たの！\n<wait>; reads: メイはねぇ、あの後、お兄ちゃんといっぱい歩いてぇ‥‥‥\n<wait>ここに来れば、メイにいいお薬が貰えるかもって聞いたから、頑張って、\nお兄ちゃんと一緒に来たの！\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:05	17	650	1FD2	平沢博士：					
-m/MS0011.BIN	0:05	18	662	1FD3	わしの孫に似せた、デミ・ノイドのアリスが、行方不明に{08:1A}お{08:51}\n矢先だ{08:51}のでな{08:72}\n<wait>					reads: わしの孫に似せた、デミ・ノイドのアリスが、行方不明になっておった\n矢先だったのでな‥‥\n<wait>; reads: メイはねぇ、あの後、お兄ちゃんといっぱい歩いてぇ‥‥‥\n<wait>ここに来れば、メイにいいお薬が貰えるかもって聞いたから、頑張って、\nお兄ちゃんと一緒に来たの！\n<wait>
-m/MS0011.BIN	0:05	19	746	1FD2	平沢博士：					
-m/MS0011.BIN	0:05	20	758	1FD3	柄にもなく、わしが、メイを預かる事に{08:4B}{08:77}よ。\n<wait>{08:47}子の病気の治療に{08:62}旅など向いとらんのでね。\n<wait>					reads: 柄にもなく、わしが、メイを預かる事にしたのだよ。\n<wait>この子の病気の治療には、旅など向いとらんのでね。\n<wait>; reads: わしの孫に似せた、デミ・ノイドのアリスが、行方不明になっておった\n矢先だったのでな‥‥\n<wait>
-m/MS0011.BIN	0:05	21	860	1FD2	メイ：					
-m/MS0011.BIN	0:05	22	868	1FD3	メイね、ずいぶん元気に{08:16}の！\n{08:76}咳とか出る{08:84}、走{08:51}り出来る{08:5F}よ！！\n<wait>					reads: メイね、ずいぶん元気になったの！\nまだ咳とか出るけど、走ったり出来るんだよ！！\n<wait>; reads: 柄にもなく、わしが、メイを預かる事にしたのだよ。\n<wait>この子の病気の治療には、旅など向いとらんのでね。\n<wait>
-m/MS0011.BIN	0:05	23	942	1FD2	平沢博士：					
-m/MS0011.BIN	0:05	24	954	1FD3	東京は広いと言えど、{08:47}様な出会いも{08:7B}{08:77}な。\n<wait>					reads: 東京は広いと言えど、この様な出会いもあるのだな。\n<wait>; reads: メイね、ずいぶん元気になったの！\nまだ咳とか出るけど、走ったり出来るんだよ！！\n<wait>
-m/MS0011.BIN	0:05	25	1005	1FD2	平沢博士：					
-m/MS0011.BIN	0:05	26	1017	1FD3	さてと{08:72}\nわしは研究の方に、戻ら{08:67}貰うよ。\n<wait>					reads: さてと‥‥\nわしは研究の方に、戻らせて貰うよ。\n<wait>; reads: 東京は広いと言えど、この様な出会いもあるのだな。\n<wait>
-m/MS0011.BIN	0:05	27	1067	1FD2	メイ：					
-m/MS0011.BIN	0:05	28	1075	1FD3	平沢おじいちゃん！　私、クッキー焼い{08:54}{08:7F}？\n<wait>					reads: 平沢おじいちゃん！　私、クッキー焼いてもいい？\n<wait>; reads: さてと‥‥\nわしは研究の方に、戻らせて貰うよ。\n<wait>
-m/MS0011.BIN	0:05	29	1126	1FD2	平沢博士：					
-m/MS0011.BIN	0:05	30	1138	1FD3	良いとも！\n時計兎に上手な焼き方を、教えて貰いな{08:49}。\n<wait>					reads: 良いとも！\n時計兎に上手な焼き方を、教えて貰いなさい。\n<wait>; reads: 平沢おじいちゃん！　私、クッキー焼いてもいい？\n<wait>
-m/MS0011.BIN	0:05	31	1198	1FD2	メイ：					
-m/MS0011.BIN	0:05	32	1206	1FD3	わあ～い！\n{08:81}あ、お兄ちゃん、{08:5B}ねッ！！\n<wait>					reads: わあ～い！\nじゃあ、お兄ちゃん、またねッ！！\n<wait>; reads: 良いとも！\n時計兎に上手な焼き方を、教えて貰いなさい。\n<wait>
-m/MS0011.BIN	0:05	33	1258	1FD0	メイはそう言うと、元気良く走{08:52}行{08:51}。\n<wait>					reads: メイはそう言うと、元気良く走って行った。\n<wait>
-m/MS0011.BIN	0:05	34	1303	1FD2	平沢博士：					reads: わあ～い！\nじゃあ、お兄ちゃん、またねッ！！\n<wait>
-m/MS0011.BIN	0:05	35	1315	1FD3	子供と{08:68}のは邪気が{08:25}{08:72}良い{08:5E}だ。\n<wait>					reads: 子供というのは邪気がない‥‥良いものだ。\n<wait>; reads: メイはそう言うと、元気良く走って行った。\n<wait>
-m/MS0011.BIN	0:05	36	1356	1FD2	平沢博士：					
-m/MS0011.BIN	0:05	37	1368	1FD3	さて、君は{08:90}{08:8E}{08:5F}？\n<wait>					reads: さて、君はどうするんだ？\n<wait>; reads: 子供というのは邪気がない‥‥良いものだ。\n<wait>
-m/MS0011.BIN	0:05	38	1395	1FD2	平沢博士：					
-m/MS0011.BIN	0:05	39	1407	1FD3	メイの知り合い{08:7C}、わしも心{08:42}歓迎{08:8E}。\n研究所の中が見たければ、好きな様に{08:4A}く{08:60}まえ。\n<wait>					reads: メイの知り合いならば、わしも心から歓迎する。\n研究所の中が見たければ、好きな様にしてくれたまえ。\n<wait>; reads: さて、君はどうするんだ？\n<wait>
-m/MS0011.BIN	0:05	40	1506	1FD2	平沢博士：					
-m/MS0011.BIN	0:05	41	1518	1FD3	そういえば{02:08}{01:06}君と一緒に、片腕の無い男も来たが{02:08}\n彼も君達の知り合いかね？\n<wait>					reads: そういえば‥‥‥カズミ君と一緒に、片腕の無い男も来たが‥‥‥\n彼も君達の知り合いかね？\n<wait>; reads: メイの知り合いならば、わしも心から歓迎する。\n研究所の中が見たければ、好きな様にしてくれたまえ。\n<wait>
-m/MS0011.BIN	0:05	42	1600	1FD2	平沢博士：					
-m/MS0011.BIN	0:05	43	1612	1FD3	まぁ良い。何か用があっ{08:50}、声をかけてくれれば{08:7F}。\n<wait>{08:8F}、用が無い場合は駄目だ{08:72}{08:7F}かね？\n					reads: まぁ良い。何か用があったら、声をかけてくれればいい。\n<wait>だが、用が無い場合は駄目だ‥‥いいかね？\n; reads: そういえば‥‥‥カズミ君と一緒に、片腕の無い男も来たが‥‥‥\n彼も君達の知り合いかね？\n<wait>
-m/MS0011.BIN	0:06	0	2	1FD2	平沢博士：					
-m/MS0011.BIN	0:06	1	14	1FD3	{02:08}ん？　何か私に用かね？\n<wait>					reads: ‥‥‥ん？　何か私に用かね？\n<wait>
-m/MS0011.BIN	0:06	2	54	1FD2	平沢博士：					
-m/MS0011.BIN	0:06	3	66	1FD3	{02:08}何だ？\n<wait>良く見{08:50}、とん{08:56}{08:25}状態では無いか{02:08}\n<wait>					reads: ‥‥‥何だ？\n<wait>良く見たら、とんでもない状態では無いか‥‥‥\n<wait>
-m/MS0011.BIN	0:06	4	122	1FD2	平沢博士：					
-m/MS0011.BIN	0:06	5	134	1FD3	近頃の若いもんは{02:08}{02:08}\n<wait>					reads: 近頃の若いもんは‥‥‥‥‥‥\n<wait>
-m/MS0011.BIN	0:06	6	187	1FD2	平沢博士：					
-m/MS0011.BIN	0:06	7	199	1FD3	訪ねて来る{08:7C}、礼儀{08:52}{08:5E}が{08:7B}{08:8C}に{08:72}\n<wait>					reads: 訪ねて来るならば、礼儀ってものがあるだろうに‥‥\n<wait>
-m/MS0011.BIN	0:06	8	240	1FD2	平沢博士：					
-m/MS0011.BIN	0:06	9	252	1FD3	さて、わしに何か用かな？\n<wait>					
-m/MS0011.BIN	0:06	10	297	1FB2	パーツについて相談					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0011.BIN	0:06	11	317	1FB2	黙っ{08:14}					reads: 黙っている; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0011.BIN	0:06	12	351	1F01	{08:62}	 showed 				reads: は、; reads: は、 @rebase-new @ours-2026-09-05
-m/MS0011.BIN	0:06	13	359	1F01	のパーツを平沢博士に見せ、何とか保存が出来{08:25}かを相談{08:4B}。\n<wait>	's parts to Dr. Hirasawa and asked whether they could somehow\nbe preserved.\n<wait>				reads: のパーツを平沢博士に見せ、何とか保存が出来ないかを相談した。\n<wait>; reads: は、 @rebase-new @ours-2026-09-05
-m/MS0011.BIN	0:06	14	424	1FD2	平沢博士：	Dr. Hirasawa:				reads: のパーツを平沢博士に見せ、何とか保存が出来ないかを相談した。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:06	15	436	1FD3	ふむ{08:72}残念{08:8F}、きちんと{08:4B}生体を保存{08:8E}培養槽{08:62}\n{08:5C}、わしの所では置いておらん{08:77}。\n<wait>	Hmm... I'm sorry to say I no longer keep a proper culture tank for\npreserving living tissue here.\n<wait>				reads: ふむ‥‥残念だが、きちんとした生体を保存する培養槽は、\nもう、わしの所では置いておらんのだ。\n<wait>; reads: ふむ‥‥残念だが、きちんとした生体を保存する培養槽は、\nもう、わしの所では置いておらんのだ。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:06	16	522	1FD2	平沢博士：	Dr. Hirasawa:				reads: ふむ‥‥残念だが、きちんとした生体を保存する培養槽は、\nもう、わしの所では置いておらんのだ。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:06	17	534	1FD3	{08:8F}安心しな{08:49}。\nわしの弟子で{08:7B}、日下章人の研究所{08:7C}、腐るほど置いて{08:7B}筈だ。\n<wait>	But don't worry.\nMy pupil Kusaka Akihito's laboratory should have more than enough.\n<wait>				reads: だが安心しなさい。\nわしの弟子である、日下章人の研究所ならば、腐るほど置いてある筈だ。\n<wait>; reads: だが安心しなさい。\nわしの弟子である、日下章人の研究所ならば、腐るほど置いてある筈だ。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:06	18	616	1FD2	平沢博士：	Dr. Hirasawa:				reads: だが安心しなさい。\nわしの弟子である、日下章人の研究所ならば、腐るほど置いてある筈だ。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:06	19	628	1FD3	今{08:42}紹介状を書いてあげ{08:69}。\n<wait>	I'll write you a letter of introduction now.\n<wait>				reads: 今から紹介状を書いてあげよう。\n<wait>; reads: 今から紹介状を書いてあげよう。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:06	20	663	1FD2	平沢博士：	Dr. Hirasawa:				reads: 今から紹介状を書いてあげよう。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:06	21	675	1FD3	奴{08:62}わしより偏屈だ{08:42}な。\n{08:82}持{08:52}行{08:51}{08:74}で{08:62}相手に{08:4A}貰えん{08:8C}。\n<wait>	He's even more eccentric than I am.\nJust turning up there, he won't give you the time of day.\n<wait>				reads: 奴は、わしより偏屈だからな。\nただ持って行っただけでは、相手にして貰えんだろう。\n<wait>; reads: 奴は、わしより偏屈だからな。\nただ持って行っただけでは、相手にして貰えんだろう。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:06	22	743	1FD2	平沢博士：	Dr. Hirasawa:				reads: 奴は、わしより偏屈だからな。\nただ持って行っただけでは、相手にして貰えんだろう。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:06	23	755	1FD3	少し、そこで待{08:52}{08:64}まえ。\n<wait>	Wait there a moment.\n<wait>				reads: 少し、そこで待っていたまえ。\n<wait>; reads: 少し、そこで待っていたまえ。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:06	24	792	1FD0	平沢博士{08:62}奥の方に引っ込んで行{08:51}{02:08}\n<wait>	Dr. Hirasawa withdrew into the back......\n<wait>				reads: 平沢博士は、奥の方に引っ込んで行った‥‥‥\n<wait>; reads: 少し、そこで待っていたまえ。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:06	25	862	1FD2	平沢博士：	Dr. Hirasawa:				reads: 平沢博士は、奥の方に引っ込んで行った‥‥‥\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:06	26	874	1FD3	さ、{08:48}が紹介状だ。\n{08:48}を持{08:52}行けば、さし{08:5E}奴も断れん{08:8C}。\n<wait>	Here, the letter of introduction.\nTake this along, and even he won't be able to refuse.\n<wait>				reads: さ、これが紹介状だ。\nこれを持って行けば、さしもの奴も断れんだろう。\n<wait>; reads: さ、これが紹介状だ。\nこれを持って行けば、さしもの奴も断れんだろう。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:06	27	938	1FD2	平沢博士：	Dr. Hirasawa:				reads: さ、これが紹介状だ。\nこれを持って行けば、さしもの奴も断れんだろう。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:06	28	950	1FD3	お{08:53}、忘{08:2F}所だ{08:51}{02:08}日下章人の研究所は市ヶ谷に{08:7B}。\nかつて、軍部の{08:10}があ{08:51}場所だ{08:42}、すぐ分る{08:8C}。\n<wait>	Oh, I nearly forgot...... Kusaka Akihito's laboratory is in Ichigaya.\nIt's where the military shelter used to be, so you'll find it easily.\n<wait>				reads: おっと、忘れる所だった‥‥‥日下章人の研究所は市ヶ谷にある。\nかつて、軍部のシェルターがあった場所だから、すぐ分るだろう。\n<wait>; reads: おっと、忘れる所だった‥‥‥日下章人の研究所は市ヶ谷にある。\nかつて、軍部のシェルターがあった場所だから、すぐ分るだろう。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:06	29	1062	1FD2	平沢博士：	Dr. Hirasawa:				reads: おっと、忘れる所だった‥‥‥日下章人の研究所は市ヶ谷にある。\nかつて、軍部のシェルターがあった場所だから、すぐ分るだろう。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:06	30	1074	1FD3	何も無いと{08:68}事はなかろう？\n<wait>					reads: 何も無いという事はなかろう？\n<wait>
-m/MS0011.BIN	0:06	31	1111	1FD1	＞{02:06}\n	>What will you do?\n				reads: ＞どうしますか？\n; reads: 何も無いという事はなかろう？\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:06	32	1132	1FB2	パーツについて相談					menu option, declared width 20 columns; reads: ＞どうしますか？\n @refalign
-m/MS0011.BIN	0:06	33	1152	1FB2	黙っ{08:14}					reads: 黙っている; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0011.BIN	0:06	34	1180	1FD2	平沢博士：					reads: 黙っている; menu option, declared width 20 columns
-m/MS0011.BIN	0:06	35	1192	1FD3	全く{02:08}じれっ{08:4E}の。\n<wait>	Honestly......... how exasperating.\n<wait>				reads: 全く‥‥‥じれったいの。\n<wait>; reads: 山瀬勇 @ours-2026-09-05
-m/MS0011.BIN	0:06	36	1219	1FD2	平沢博士：	Doctor Hirasawa:				@ours-2026-09-05
-m/MS0011.BIN	0:06	37	1231	1FD3	言い{08:4E}事が{08:7B}{08:7D}、まずは言{08:52}みる事{08:8C}？\n<wait>					reads: 言いたい事があるなら、まずは言ってみる事だろう？\n<wait>
-m/MS0011.BIN	0:06	38	1278	1FD1	＞{02:06}\n					reads: ＞どうしますか？\n; reads: 全く‥‥‥じれったいの。\n<wait>
-m/MS0011.BIN	0:06	39	1299	1FB2	パーツについて相談					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0011.BIN	0:06	40	1319	1FB2	黙っ{08:14}					reads: 黙っている; menu option, declared width 20 columns; reads: 言いたい事があるなら、まずは言ってみる事だろう？\n<wait> @refalign
-m/MS0011.BIN	0:07	0	2	1FD2	平沢博士：					
-m/MS0011.BIN	0:07	1	14	1FD3	{02:08}ん？　何か私に用かね？\n<wait>特に急ぎの用で無い{08:7D}、済ま{08:25}が後に{08:4A}くれんか？\n<wait>					reads: ‥‥‥ん？　何か私に用かね？\n<wait>特に急ぎの用で無いなら、済まないが後にしてくれんか？\n<wait>
-m/MS0011.BIN	0:08	0	8	1FD2	平沢博士：					
-m/MS0011.BIN	0:08	1	20	1FD3	メイ{08:7C}{02:08}‥\n{01:06}君に連れられて、{08:45}を出て行{08:51}よ。\n<wait>					reads: メイならば‥‥‥‥\nカズミ君に連れられて、ここを出て行ったよ。\n<wait>
-m/MS0011.BIN	0:08	2	74	1FD2	平沢博士：					
-m/MS0011.BIN	0:08	3	86	1FD3	彼女の発作もほぼ完治{08:4B}し、アリスの修繕も終わ{08:51}。\n何もかもが元通りだよ{02:08}\n<wait>					reads: 彼女の発作もほぼ完治したし、アリスの修繕も終わった。\n何もかもが元通りだよ‥‥‥\n<wait>
-m/MS0011.BIN	0:08	4	166	1FD2	平沢博士：					
-m/MS0011.BIN	0:08	5	178	1FD3	そう{08:72}何もかもが元通りだ{02:08}\n<wait>					reads: そう‥‥何もかもが元通りだ‥‥‥\n<wait>
+m/MS0011.BIN	0:02	0	8	1FD2	平沢：		Hirasawa:	v005		
+m/MS0011.BIN	0:02	1	23	1FD2	学者：		Scientist:	v005		
+m/MS0011.BIN	0:02	2	31	1FD3	何だ？　近頃は外{08:42}の妙な客人が多いな。\n<wait>		What's this? More strange visitors from the surface?\nWe've been getting a lot of those as of late.\n<wait>	v005		reads: 何だ？　近頃は外からの妙な客人が多いな。\n<wait>
+m/MS0011.BIN	0:02	3	78	1FD2	学者：		Scientist:	v005		
+m/MS0011.BIN	0:02	4	86	1FD3	ま、歓迎{08:8E}理由は{08:25}が、迷路を抜けてわざわざ来た{08:5F}。\n少しは休んで行きな{08:49}。\n<wait>		It must've been an awful lot of work making you way down here.\nWhy don't you take a quick break?\n<wait>	v005		reads: ま、歓迎する理由はないが、迷路を抜けてわざわざ来たんだ。\n少しは休んで行きなさい。\n<wait>
+m/MS0011.BIN	0:02	5	178	1F7F	w者：		entist:	v005		
+m/MS0011.BIN	0:02	6	185	1FD3	何だ？　良く見{08:50}酷い状態では{08:25}か{08:72}。\n<wait>		Hmm? Upon closer inspection, you guys look like shit...\n<wait>	v005		reads: 何だ？　良く見たら酷い状態ではないか‥‥。\n<wait>
+m/MS0011.BIN	0:02	7	230	1FD2	学者：		Scientist:	v005		
+m/MS0011.BIN	0:02	8	238	1FD3	{08:7A}辛気臭い連中相手で{08:62}美味しく茶も飲めん。\n<wait>		Apologize my language,\nbut I'm not about to let a bunch of filthy hobos into my laboratory.\n<wait>	v005		reads: そんな辛気臭い連中相手では、美味しく茶も飲めん。\n<wait>
+m/MS0011.BIN	0:02	9	289	1FD2	学者：		Scientist:	v005		
+m/MS0011.BIN	0:02	10	297	1FD3	やれやれ仕方無いのぅ{08:72}どれ、わしが診てやろう。\n<wait>		God damn... Come here. I'll patch you up.\n<wait>	v005		reads: やれやれ仕方無いのぅ‥‥どれ、わしが診てやろう。\n<wait>
+m/MS0011.BIN	0:02	11	365	1FD0	そう言うと、男{08:26}かにも面倒だと{08:68}そぶりで	With that, the man, looking thoroughly put out, approached 	With that, the man walks over to you and begins treating your wounds.\nHis body language screams that he has better things to be doing.\n<wait>	v005	draft	reads: そう言うと、男はいかにも面倒だというそぶりで; reads: そう言うと、男はいかにも面倒だというそぶりで @ours-2026-09-05
+m/MS0011.BIN	0:02	12	411	1F01	達に近づき、\n	 and the others, and\n			draft	reads: 達に近づき、\n @ours-2026-09-05
+m/MS0011.BIN	0:02	13	430	1F01	達に治療を施{08:4A}く{08:60}。\n<wait>	 and the others were treated.\n<wait>			draft	reads: 達に治療を施してくれた。\n<wait>; reads: 達に治療を施してくれた。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	14	457	1FBA	口ぶりとは裏腹に、{08:79}手つきや接し方{08:62}神業とも言{08:28}{08:5E}であ{08:51}。\n<wait>		That said, when it comes to the quality of his work, it's immediately\nobvious even to a layman like you that he's one of the best.\n<wait>	v005		reads: 口ぶりとは裏腹に、その手つきや接し方は、神業とも言えるものであった。\n<wait>
+m/MS0011.BIN	0:02	15	571	1FD2	学者：		Scientist:	v005		
+m/MS0011.BIN	0:02	16	579	1FD3	{02:08}面倒な客を招き入れて{08:1F}{08:5E}だ。\n<wait>		Why do I always get the most annoying visitors...\n<wait>	v005		reads: ‥‥‥面倒な客を招き入れてしまったものだ。\n<wait>
+m/MS0011.BIN	0:02	17	618	1FD2	学者：		Scientist:	v005		
+m/MS0011.BIN	0:02	18	626	1FD3	ま、済{08:5F}事は仕方{08:25}。\n<wait>		Well, no point in crying about it now.\n<wait>	v005		reads: ま、済んだ事は仕方ない。\n<wait>
+m/MS0011.BIN	0:02	19	655	1FD0	初老の学者風の男{08:62}そう言うと、パチンと指を鳴ら{08:4B}。\n<wait>		Having said that, the man snaps his fingers.\n<wait>	v005		reads: 初老の学者風の男は、そう言うと、パチンと指を鳴らした。\n<wait>
+m/MS0011.BIN	0:02	20	714	1FD2	学者：		Scientist:	v005		
+m/MS0011.BIN	0:02	21	722	1FD3	ハーブティーぐらい{08:86}無いが、飲んで行くかね？\n<wait>		Care to have a drink?\nI'm afraid that all I have is herb tea.\n<wait>	v005		reads: ハーブティーぐらいしか無いが、飲んで行くかね？\n<wait>
+m/MS0011.BIN	0:02	22	775	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n
+m/MS0011.BIN	0:02	23	796	1FB2	頂き{08:5A}！		Accept gratefully	v005		reads: 頂きます！; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0011.BIN	0:02	24	806	1FB2	遠慮し{08:5A}		Politely refuse	v005		reads: 遠慮します; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0011.BIN	0:02	25	836	1FD2	学者：	Scientist:	Scientist:	v005	draft	reads:  @ours-2026-09-05
+m/MS0011.BIN	0:02	26	844	1FD3	わしの育てたハーブだ{08:42}な、味は保証付きだ。\n<wait>	I grew these herbs myself, so I can vouch for the taste.\n<wait>	I've grown these herbs myself,\nso I can guarantee that they taste delicious.\n<wait>	v005	draft	reads: わしの育てたハーブだからな、味は保証付きだ。\n<wait>; reads: わしの育てたハーブだからな、味は保証付きだ。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	27	900	1FD2	学者：		Scientist:	v005		
+m/MS0011.BIN	0:02	28	908	1FD3	そうか、{08:7C}わし{08:74}飲{08:5C}。\n<wait>わしの育てたハーブだ{08:42}な、味は保証付きな{08:5F}が、\nま、無理強いは{08:66}主義だ。\n<wait>		Oh? Well, I suppose that I will just have some myself then.\n<wait>I don't make a habit of forcing people to do things that\nthey don't want to.\n<wait>	v005		reads: そうか、ならばわしだけ飲もう。\n<wait>わしの育てたハーブだからな、味は保証付きなんだが、\nま、無理強いはせん主義だ。\n<wait>; reads: わしの育てたハーブだからな、味は保証付きだ。\n<wait>
+m/MS0011.BIN	0:02	29	1015	1FD2	{08:31}：	Rui:	Scientist:	v005	draft	reads: 泪：; reads: 泪： @refalign @ours-2026-09-05
+m/MS0011.BIN	0:02	30	1021	1FD3	私は頂き{08:5A}わ。\nハーブティーは大好き{08:55}の{08:72}\n<wait>	I'll have some.\nI adore herbal tea...\n<wait>			draft	reads: 私は頂きますわ。\nハーブティーは大好きですの‥‥\n<wait>; reads: そうか、ならばわしだけ飲もう。\n<wait>わしの育てたハーブだからな、味は保証付きなんだが、\nま、無理強いはせん主義だ。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	31	1071	1FD2	学者：	Scientist:			draft	reads: 泪： @ours-2026-09-05
+m/MS0011.BIN	0:02	32	1079	1FD3	{08:4D}は素晴らしい！\nで{08:62}さっそく、極上のを持たせま{08:80}。\n<wait>	Splendid!\nThen I'll have the finest brought at once.\n<wait>			draft	reads: それは素晴らしい！\nでは、さっそく、極上のを持たせましょう。\n<wait>; reads: 私は頂きますわ。\nハーブティーは大好きですの‥‥\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	33	1139	1FD0	初老の学者はそう言い終わ{08:51}時、奥{08:42}奇妙な{02:0B}が、機械仕掛けの人形の様な\n動きで、テクテクと歩いて来た。\n<wait>	As the elderly scientist finished speaking, a strange person came\ntoddling in from the back, moving like a clockwork doll.\n<wait>			draft	reads: 初老の学者はそう言い終わった時、奥から奇妙な人間が、機械仕掛けの人形の様な\n動きで、テクテクと歩いて来た。\n<wait>; reads: 初老の学者はそう言い終わった時、奥から奇妙な人間が、機械仕掛けの人形の様な\n動きで、テクテクと歩いて来た。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	34	1269	1FD2	トランプ兵士：	Card Soldier:			draft	reads: それは素晴らしい！\nでは、さっそく、極上のを持たせましょう。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	35	1285	1FD3	お呼びで{08:80}か？　博士。\n<wait>	You called, Doctor?\n<wait>			draft	reads: お呼びでしょうか？　博士。\n<wait>; reads: 初老の学者はそう言い終わった時、奥から奇妙な人間が、機械仕掛けの人形の様な\n動きで、テクテクと歩いて来た。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	36	1316	1FD2	学者：	Scientist:			draft	@ours-2026-09-05
+m/MS0011.BIN	0:02	37	1324	1FD3	お{08:72}来たか、少々遅いな！\n<wait>	Oh... there you are. A little slow!\n<wait>			draft	reads: お‥‥来たか、少々遅いな！\n<wait>; reads: お呼びでしょうか？　博士。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	38	1357	1FD2	トランプ兵士：	Card Soldier:			draft	@ours-2026-09-05
+m/MS0011.BIN	0:02	39	1373	1FD3	申し訳ござい{02:0A}、博士。\n帽子屋が一向に、離{08:4A}くれ{08:19}{08:5E}で{02:08}。\n<wait>	My apologies, Doctor.\nThe Hatter simply wouldn't let me go......\n<wait>			draft	reads: 申し訳ございません、博士。\n帽子屋が一向に、離してくれなかったもので‥‥‥。\n<wait>; reads: お‥‥来たか、少々遅いな！\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	40	1439	1FD2	学者：	Scientist:			draft	@ours-2026-09-05
+m/MS0011.BIN	0:02	41	1447	1FD3	ハーブティーを持{08:52}来な{08:49}。\nお、{08:4D}と昨日、兎が焼いと{08:51}スコーンもな！\n<wait>	Bring the herbal tea.\nOh, and the scones the rabbit baked yesterday, too!\n<wait>			draft	reads: ハーブティーを持って来なさい。\nお、それと昨日、兎が焼いとったスコーンもな！\n<wait>; reads: 申し訳ございません、博士。\n帽子屋が一向に、離してくれなかったもので‥‥‥。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	42	1523	1FD2	トランプ兵士：	Card Soldier:			draft	@ours-2026-09-05
+m/MS0011.BIN	0:02	43	1539	1FD3	かしこまりま{08:4B}。\n<wait>	Very good, sir.\n<wait>			draft	reads: かしこまりました。\n<wait>; reads: ハーブティーを持って来なさい。\nお、それと昨日、兎が焼いとったスコーンもな！\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	44	1564	1FD0	お伽話の世界に住んでる様な、トランプの兵士の様な{02:0B}{08:62}\nうやうやしく一礼{08:4C}、再びテクテクと引っ込んで行{08:51}。\n<wait>	The person, like a card soldier out of a fairy tale, bowed\nreverently and toddled off again.\n<wait>			draft	reads: お伽話の世界に住んでる様な、トランプの兵士の様な人間は、\nうやうやしく一礼すると、再びテクテクと引っ込んで行った。\n<wait>; reads: お伽話の世界に住んでる様な、トランプの兵士の様な人間は、\nうやうやしく一礼すると、再びテクテクと引っ込んで行った。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	45	1680	1FD2	学者：	Scientist:			draft	reads: かしこまりました。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	46	1688	1FD3	おどろ{08:64}か？\n<wait>{08:3F}{08:62}わしが作{08:51}デミ・ヒューマン{08:72}つまる{08:87}人造{02:0B}だ。\n<wait>	Surprised?\n<wait>That was a demi-human I made... an artificial human, in short.\n<wait>			draft	reads: おどろいたか？\n<wait>あれは、わしが作ったデミ・ヒューマン‥‥つまるところ人造人間だ。\n<wait>; reads: お伽話の世界に住んでる様な、トランプの兵士の様な人間は、\nうやうやしく一礼すると、再びテクテクと引っ込んで行った。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	47	1772	1FD2	{08:31}：	Rui:	Scientist:	v005	draft	reads: 泪：; reads: 泪： @refalign @ours-2026-09-05
+m/MS0011.BIN	0:02	48	1778	1FD3	貴方が、平沢博士{08:55}か？\n<wait>	Are you Dr. Hirasawa?\n<wait>			draft	reads: 貴方が、平沢博士ですか？\n<wait>; reads: おどろいたか？\n<wait>あれは、わしが作ったデミ・ヒューマン‥‥つまるところ人造人間だ。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	49	1809	1FD2	平沢博士：	Dr. Hirasawa:			draft	reads: 泪： @ours-2026-09-05
+m/MS0011.BIN	0:02	50	1821	1FD3	可愛らしいお嬢さん{08:72}{08:8B}、わしの名を御存知{08:55}な。\n<wait>	A charming young lady... and you know my name, I see.\n<wait>			draft	reads: 可愛らしいお嬢さん‥‥よく、わしの名を御存知ですな。\n<wait>; reads: 貴方が、平沢博士ですか？\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	51	1876	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 泪： @refalign
+m/MS0011.BIN	0:02	52	1882	1FD3	博士の名声{08:62}一部では大変な{08:5E}{08:55}わ。\nデミ・ヒューマンの権威でいらっしゃい{08:5A}{08:5E}{02:08}\n<wait>	Your fame is considerable in certain circles, Doctor.\nYou are the authority on demi-humans......\n<wait>			draft	reads: 博士の名声は、一部では大変なものですわ。\nデミ・ヒューマンの権威でいらっしゃいますもの‥‥‥\n<wait>; reads: 可愛らしいお嬢さん‥‥よく、わしの名を御存知ですな。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	53	1968	1FD2	平沢博士：	Dr. Hirasawa:			draft	reads: 泪： @ours-2026-09-05
+m/MS0011.BIN	0:02	54	1980	1FD3	{02:08}昔の話だ。\n今で{08:62}概知外博士だの、マッドサイエンティストだの、好き放題言われとる。\n<wait>	......Old news.\nThese days they call me whatever they like: crackpot, mad scientist.\n<wait>			draft	reads: ‥‥‥昔の話だ。\n今では、概知外博士だの、マッドサイエンティストだの、好き放題言われとる。\n<wait>; reads: 博士の名声は、一部では大変なものですわ。\nデミ・ヒューマンの権威でいらっしゃいますもの‥‥‥\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	55	2072	1FD0	そこへ、トランプの兵士が、ティーセットを持{08:52}入{08:52}来た。\n{08:79}後ろに{08:62}燕尾服を来た兎が、山盛りのスコーンが入{08:51}バスケットを\n持{08:52}ついて来て{08:64}。\n<wait>	Just then the card soldier came in carrying a tea set.\nBehind it followed a rabbit in a tailcoat, carrying a basket piled\nhigh with scones.\n<wait>			draft	reads: そこへ、トランプの兵士が、ティーセットを持って入って来た。\nその後ろには、燕尾服を来た兎が、山盛りのスコーンが入ったバスケットを\n持ってついて来ていた。\n<wait>; reads: そこへ、トランプの兵士が、ティーセットを持って入って来た。\nその後ろには、燕尾服を来た兎が、山盛りのスコーンが入ったバスケットを\n持ってついて来ていた。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	56	2261	1FD2	トランプ兵士：	Card Soldier:			draft	reads: ‥‥‥昔の話だ。\n今では、概知外博士だの、マッドサイエンティストだの、好き放題言われとる。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	57	2277	1FD3	お待たせ致しま{08:4B}、博士。\n<wait>	Sorry to keep you waiting, Doctor.\n<wait>			draft	reads: お待たせ致しました、博士。\n<wait>; reads: そこへ、トランプの兵士が、ティーセットを持って入って来た。\nその後ろには、燕尾服を来た兎が、山盛りのスコーンが入ったバスケットを\n持ってついて来ていた。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	58	2310	1FD2	時計兎：	Watch Rabbit:			draft	@ours-2026-09-05
+m/MS0011.BIN	0:02	59	2320	1FD3	ティータイムに{08:62}少々中途半端なお時間{08:55}が、スコーンはふっくらこんがり！\n<wait>	Rather an odd hour for teatime, but the scones are fluffy and golden!\n<wait>			draft	reads: ティータイムには、少々中途半端なお時間ですが、スコーンはふっくらこんがり！\n<wait>; reads: お待たせ致しました、博士。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	60	2399	1FD2	時計兎：	Watch Rabbit:			draft	@ours-2026-09-05
+m/MS0011.BIN	0:02	61	2409	1FD3	薔薇のジャムも上出来{08:55}！\n<wait>	The rose jam came out well too!\n<wait>			draft	reads: 薔薇のジャムも上出来です！\n<wait>; reads: ティータイムには、少々中途半端なお時間ですが、スコーンはふっくらこんがり！\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	62	2442	1FD2	平沢博士：	Dr. Hirasawa:			draft	@ours-2026-09-05
+m/MS0011.BIN	0:02	63	2454	1FD3	{08:4D}{08:62}大変結構！\n<wait>	Most excellent!\n<wait>			draft	reads: それは、大変結構！\n<wait>; reads: 薔薇のジャムも上出来です！\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	64	2477	1FD2	平沢博士：	Dr. Hirasawa:			draft	@ours-2026-09-05
+m/MS0011.BIN	0:02	65	2489	1FD3	さ、ティータイムと洒落込{08:5C}！\n<wait>	Now, let's have ourselves a teatime!\n<wait>			draft	reads: さ、ティータイムと洒落込もう！\n<wait>; reads: それは、大変結構！\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	66	2526	1FD2	トランプ兵士：	Card Soldier:			draft	@ours-2026-09-05
+m/MS0011.BIN	0:02	67	2542	1FD3	で{08:62}ごゆっくり{02:08}\n<wait>	Enjoy, then......\n<wait>			draft	reads: では、ごゆっくり‥‥‥\n<wait>; reads: さ、ティータイムと洒落込もう！\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	68	2567	1FD2	時計兎：	Watch Rabbit:			draft	@ours-2026-09-05
+m/MS0011.BIN	0:02	69	2577	1FD3	あ～忙しい、忙しい！！\nローストチキンに、グレイヴィをか{08:29}時間だ！！\n<wait>	Oh, so busy, so busy!!\nTime to pour the gravy on the roast chicken!!\n<wait>			draft	reads: あ～忙しい、忙しい！！\nローストチキンに、グレイヴィをかける時間だ！！\n<wait>; reads: では、ごゆっくり‥‥‥\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	70	2653	1FD0	トランプ兵士{08:62}相変わらずテクテクと{02:08}\n<wait>燕尾服の兎{08:62}懐中時計をせわしなく見ながら、落ち着きの無い足取りで\n去{08:52}行{08:51}。\n<wait>	The card soldier toddled off as ever......\n<wait>The tailcoated rabbit left with restless steps, fussing over its\npocket watch.\n<wait>			draft	reads: トランプ兵士は、相変わらずテクテクと‥‥‥\n<wait>燕尾服の兎は、懐中時計をせわしなく見ながら、落ち着きの無い足取りで\n去って行った。\n<wait>; reads: トランプ兵士は、相変わらずテクテクと‥‥‥\n<wait>燕尾服の兎は、懐中時計をせわしなく見ながら、落ち着きの無い足取りで\n去って行った。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	71	2792	1F01	達{08:62}前時代の珍しい食べ物を頬張り、結局は全員が、ハーブティーでの\n珍妙なティータイムを過{08:4B}。\n<wait>	 and the others stuffed themselves with rare old-world food, and in\nthe end everyone spent a peculiar teatime over herbal tea.\n<wait>			draft	reads: 達は、前時代の珍しい食べ物を頬張り、結局は全員が、ハーブティーでの\n珍妙なティータイムを過した。\n<wait>; reads: あ～忙しい、忙しい！！\nローストチキンに、グレイヴィをかける時間だ！！\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS0011.BIN	0:02	72	2897	1FD2	平沢博士：	Dr. Hirasawa:			draft	reads: トランプ兵士は、相変わらずテクテクと‥‥‥\n<wait>燕尾服の兎は、懐中時計をせわしなく見ながら、落ち着きの無い足取りで\n去って行った。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	73	2909	1FD3	さてと{02:08}\n<wait>君達は一体何の用で、{08:73}所{08:71}来たのかな？\n	Now then......\n<wait>What on earth brings you all the way out here?\n			draft	reads: さてと‥‥‥\n<wait>君達は一体何の用で、こんな所まで来たのかな？\n; reads: 達は、前時代の珍しい食べ物を頬張り、結局は全員が、ハーブティーでの\n珍妙なティータイムを過した。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	74	2977	1FB2	{08:82}偶然に{08:72}		No reason	v005		reads: ただ偶然に‥‥; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0011.BIN	0:02	75	2989	1FB2	博士に会いに！		We came to see you!	v005		menu option, declared width 20 columns; reads: さてと‥‥‥\n<wait>君達は一体何の用で、こんな所まで来たのかな？\n @refalign
+m/MS0011.BIN	0:02	76	3025	1FD2	平沢博士：		Doctor Hirasawa:	v005		reads: ただ偶然に‥‥; menu option, declared width 20 columns
+m/MS0011.BIN	0:02	77	3037	1FD3	{08:7A}理由で、あの迷宮を抜けて来たと言うのか。\n{02:08}面白い冗談だ。\n<wait>		You passed through that maze for "no reason"?\nHmph... Funny.\n<wait>	v005		reads: そんな理由で、あの迷宮を抜けて来たと言うのか。\n‥‥‥面白い冗談だ。\n<wait>; menu option, declared width 20 columns
+m/MS0011.BIN	0:02	78	3105	1FD2	平沢博士：	Doctor Hirasawa:	Doctor Hirasawa:	v005	draft	reads: 山瀬勇 @ours-2026-09-05
+m/MS0011.BIN	0:02	79	3117	1FD3	そう言えば、つい数ヶ月ほど前にも、{02:00}制服姿の男が、\n{08:45}に迷い込んで来たな。\n<wait>	Come to think of it, a few months ago a man in a Devil Buster\nuniform wandered in here too.\n<wait>	Actually, that reminds me. A few months ago,\na man passed by here wearing a Devil Buster uniform.\n<wait>	v005	draft	reads: そう言えば、つい数ヶ月ほど前にも、デビルバスター制服姿の男が、\nここに迷い込んで来たな。\n<wait>; reads: そう言えば、つい数ヶ月ほど前にも、デビルバスター制服姿の男が、\nここに迷い込んで来たな。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	80	3199	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:02	81	3211	1FD3	そう{08:72}確か、{08:04}とか言う名前だ{08:51}。\n<wait>		I believe that his name was... Nishino.\n<wait>	v005		reads: そう‥‥確か、西野とか言う名前だった。\n<wait>; reads: そんな理由で、あの迷宮を抜けて来たと言うのか。\n‥‥‥面白い冗談だ。\n<wait>
+m/MS0011.BIN	0:02	82	3252	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:02	83	3264	1FD3	{02:08}ん？　{08:90}{08:4B}ね？　知り合いかね？\n		Hmm? What's that? You know him?\n	v005		reads: ‥‥‥ん？　どうしたね？　知り合いかね？\n; reads: そう言えば、つい数ヶ月ほど前にも、デビルバスター制服姿の男が、\nここに迷い込んで来たな。\n<wait>
+m/MS0011.BIN	0:02	84	3313	1FB2	そう{08:55}！		I do!	v005		reads: そうです！; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0011.BIN	0:02	85	3323	1FB2	いえ別に{08:72}		No...	v005		reads: いえ別に‥‥; menu option, declared width 20 columns; reads: そう‥‥確か、西野とか言う名前だった。\n<wait> @refalign
+m/MS0011.BIN	0:02	86	3355	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:02	87	3367	1FD3	ほう{02:08}\n<wait>		Huh.<wait>	v005		reads: ほう‥‥‥\n<wait>; reads: ‥‥‥ん？　どうしたね？　知り合いかね？\n
+m/MS0011.BIN	0:02	88	3382	1FD2	平沢博士：		Doctor Hirasawa:	v005		reads: そうです！; menu option, declared width 20 columns
+m/MS0011.BIN	0:02	89	3394	1FD3	確か{08:79}男{08:62}秋葉原に向かうとか言{08:53}{08:51}な。\n理由は特に聞か{08:19}が、あの様子{08:42}{08:4C}、当てがあ{08:52}の事で{08:62}\n無さ{01:29}{08:51}が{02:08}。\n<wait>		I believe he mentioned that he was heading down to Akihabara.\nHe didn't say it explicitly, but he did seem kinda lost.\n<wait>	v005		reads: 確かその男は、秋葉原に向かうとか言っとったな。\n理由は特に聞かなかったが、あの様子からすると、当てがあっての事では、\n無さそうだったが‥‥‥。\n<wait>; reads: いえ別に‥‥; menu option, declared width 20 columns
+m/MS0011.BIN	0:02	90	3509	1FD2	平沢博士：	Doctor Hirasawa:	Doctor Hirasawa:	v005	draft	reads: 山瀬勇 @ours-2026-09-05
+m/MS0011.BIN	0:02	91	3521	1FD3	さてと{02:08}\n<wait>わし{08:62}研究に戻らせ{08:54}らうよ。\n<wait>	Now then.........\n<wait>I'll be getting back to my research.\n<wait>	Now then...\n<wait>Now then, I should be getting back to work.\n<wait>	v005	draft	reads: さてと‥‥‥\n<wait>わしは、研究に戻らせてもらうよ。\n<wait>; reads: さてと‥‥‥\n<wait>わしは、研究に戻らせてもらうよ。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	92	3571	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:02	93	3583	1FD3	ま、君達は好きに{08:4B}まえ。\n見た{08:87}、君達もアウトサイダーの様だ。\nそう{08:22}{02:0B}{08:7D}、わしも嫌いでは{08:25}。\n<wait>		Make yourself home. Fellow outsiders are always welcome here.\n<wait>	v005		reads: ま、君達は好きにしたまえ。\n見たところ、君達もアウトサイダーの様だ。\nそういった人間なら、わしも嫌いではない。\n<wait>; reads: ほう‥‥‥\n<wait>
+m/MS0011.BIN	0:02	94	3684	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:02	95	3696	1FD3	何か様があっ{08:50}、声{08:56}かけてくれ。\n<wait>用が無い場合は駄目だ。\n<wait>		If you need something, let me know.\n<wait>Just... Make sure not to waste my time.\n<wait>	v005		reads: 何か様があったら、声でもかけてくれ。\n<wait>用が無い場合は駄目だ。\n<wait>; reads: 確かその男は、秋葉原に向かうとか言っとったな。\n理由は特に聞かなかったが、あの様子からすると、当てがあっての事では、\n無さそうだったが‥‥‥。\n<wait>
+m/MS0011.BIN	0:02	96	3764	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:02	97	3776	1FD3	では諸君、ご機嫌{08:69}{08:72}\n<wait>		Take care.\n<wait>	v005		reads: では諸君、ご機嫌よう‥‥\n<wait>; reads: さてと‥‥‥\n<wait>わしは、研究に戻らせてもらうよ。\n<wait>
+m/MS0011.BIN	0:02	98	3805	1FD0	そう言うと平沢博士{08:62}	With that, Dr. Hirasawa politely showed 	With that, Hirasawa escorts you outside.\n<wait>	v005	draft	reads: そう言うと平沢博士は、; reads: そう言うと平沢博士は、 @ours-2026-09-05
+m/MS0011.BIN	0:02	99	3831	1F01	達を{01:2E}の外に丁重に送り出{08:4B}。\n<wait>	 and the others out of the room.\n<wait>			draft	reads: 達を部屋の外に丁重に送り出した。\n<wait>; reads: ま、君達は好きにしたまえ。\n見たところ、君達もアウトサイダーの様だ。\nそういった人間なら、わしも嫌いではない。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	100	3872	1F01	達{08:62}体{08:8B}追い出{03:0C}る形に{08:16}。\n<wait>	 and the others had, in effect, been shown the door.\n<wait>			draft	reads: 達は、体よく追い出される形になった。\n<wait>; reads: 達は、体よく追い出される形になった。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	101	3906	1FD2	学者：		Scientist:	v005		reads: 何か様があったら、声でもかけてくれ。\n<wait>用が無い場合は駄目だ。\n<wait>
+m/MS0011.BIN	0:02	102	3914	1FD3	何だ？　近頃は外{08:42}の妙な客人が多いな。\n<wait>		What's this? More strange visitors from the surface?\nWe've been getting a lot of those as of late.\n<wait>	v005		reads: 何だ？　近頃は外からの妙な客人が多いな。\n<wait>
+m/MS0011.BIN	0:02	103	3961	1FD2	学者：		Scientist:	v005		reads: では諸君、ご機嫌よう‥‥\n<wait>
+m/MS0011.BIN	0:02	104	3969	1FD3	ま、歓迎{08:8E}理由は{08:25}が、迷路を抜けてわざわざ来た{08:5F}。\n少しは休んで行きな{08:49}。\n<wait>		It must've been an awful lot of work making you way down here.\nWhy don't you take a quick break?\n<wait>	v005		reads: ま、歓迎する理由はないが、迷路を抜けてわざわざ来たんだ。\n少しは休んで行きなさい。\n<wait>; reads: そう言うと平沢博士は、
+m/MS0011.BIN	0:02	105	4061	1F7F	w者：		entist:	v005		reads: 達を部屋の外に丁重に送り出した。\n<wait>
+m/MS0011.BIN	0:02	106	4068	1FD3	何だ？　良く見{08:50}酷い状態では{08:25}か{08:72}。\n<wait>		Hmm? Upon closer inspection, you guys look like shit...\n<wait>	v005		reads: 何だ？　良く見たら酷い状態ではないか‥‥。\n<wait>; reads: 達は、体よく追い出される形になった。\n<wait>
+m/MS0011.BIN	0:02	107	4113	1FD2	学者：		Scientist:	v005		
+m/MS0011.BIN	0:02	108	4121	1FD3	{08:7A}辛気臭い連中相手で{08:62}美味しく茶も飲めん。\n<wait>		Apologize my language,\nbut I'm not about to let a bunch of filthy hobos into my laboratory.\n<wait>	v005		reads: そんな辛気臭い連中相手では、美味しく茶も飲めん。\n<wait>; reads: 何だ？　近頃は外からの妙な客人が多いな。\n<wait>
+m/MS0011.BIN	0:02	109	4172	1FD2	学者：		Scientist:	v005		
+m/MS0011.BIN	0:02	110	4180	1FD3	やれやれ仕方無いのぅ{08:72}どれ、わしが診てやろう。\n<wait>		God damn... Come here. I'll patch you up.\n<wait>	v005		reads: やれやれ仕方無いのぅ‥‥どれ、わしが診てやろう。\n<wait>; reads: ま、歓迎する理由はないが、迷路を抜けてわざわざ来たんだ。\n少しは休んで行きなさい。\n<wait>
+m/MS0011.BIN	0:02	111	4248	1FD0	そう言うと、男{08:26}かにも面倒だと{08:68}そぶりで	With that, the man, looking thoroughly put out, approached 	With that, the man walks over to you and begins treating your wounds.\nHis body language screams that he has better things to be doing.\n<wait>	v005	draft	reads: そう言うと、男はいかにも面倒だというそぶりで; reads: そう言うと、男はいかにも面倒だというそぶりで @ours-2026-09-05
+m/MS0011.BIN	0:02	112	4294	1F01	達に近づき、\n	 and the others, and\n			draft	reads: 達に近づき、\n; reads: 何だ？　良く見たら酷い状態ではないか‥‥。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	113	4313	1F01	達に治療を施{08:4A}く{08:60}。\n<wait>	 and the others were treated.\n<wait>			draft	reads: 達に治療を施してくれた。\n<wait>; reads: 達に治療を施してくれた。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	114	4340	1FBA	口ぶりとは裏腹に、{08:79}手つきや接し方{08:62}神業とも言{08:28}{08:5E}であ{08:51}。\n<wait>		That said, when it comes to the quality of his work, it's immediately\nobvious even to a layman like you that he's one of the best.\n<wait>	v005		reads: 口ぶりとは裏腹に、その手つきや接し方は、神業とも言えるものであった。\n<wait>; reads: そんな辛気臭い連中相手では、美味しく茶も飲めん。\n<wait>
+m/MS0011.BIN	0:02	115	4454	1FD2	学者：		Scientist:	v005		
+m/MS0011.BIN	0:02	116	4462	1FD3	{02:08}面倒な客を招き入れて{08:1F}{08:5E}だ。\n<wait>		Why do I always get the most annoying visitors...\n<wait>	v005		reads: ‥‥‥面倒な客を招き入れてしまったものだ。\n<wait>; reads: やれやれ仕方無いのぅ‥‥どれ、わしが診てやろう。\n<wait>
+m/MS0011.BIN	0:02	117	4501	1FD2	学者：		Scientist:	v005		reads: そう言うと、男はいかにも面倒だというそぶりで
+m/MS0011.BIN	0:02	118	4509	1FD3	ま、済{08:5F}事は仕方{08:25}。\n<wait>		Well, no point in crying about it now.\n<wait>	v005		reads: ま、済んだ事は仕方ない。\n<wait>; reads: 達に近づき、\n
+m/MS0011.BIN	0:02	119	4538	1FD0	初老の学者風の男{08:62}そう言うと、パチンと指を鳴ら{08:4B}。\n<wait>		Having said that, the man snaps his fingers.\n<wait>	v005		reads: 初老の学者風の男は、そう言うと、パチンと指を鳴らした。\n<wait>; reads: 達に治療を施してくれた。\n<wait>
+m/MS0011.BIN	0:02	120	4597	1FD2	学者：		Scientist:	v005		reads: 口ぶりとは裏腹に、その手つきや接し方は、神業とも言えるものであった。\n<wait>
+m/MS0011.BIN	0:02	121	4605	1FD3	ハーブティーぐらい{08:86}無いが、飲んで行くかね？\n<wait>		Care to have a drink?\nI'm afraid that all I have is herb tea.\n<wait>	v005		reads: ハーブティーぐらいしか無いが、飲んで行くかね？\n<wait>
+m/MS0011.BIN	0:02	122	4660	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n; reads: ‥‥‥面倒な客を招き入れてしまったものだ。\n<wait>
+m/MS0011.BIN	0:02	123	4681	1FB2	頂き{08:5A}！		Accept gratefully	v005		reads: 頂きます！; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0011.BIN	0:02	124	4691	1FB2	遠慮し{08:5A}		Politely refuse	v005		reads: 遠慮します; menu option, declared width 20 columns; reads: ま、済んだ事は仕方ない。\n<wait> @refalign
+m/MS0011.BIN	0:02	125	4721	1FD2	学者：		Scientist:	v005		reads: 初老の学者風の男は、そう言うと、パチンと指を鳴らした。\n<wait>
+m/MS0011.BIN	0:02	126	4729	1FD3	そうか、{08:7C}わし{08:74}飲{08:5C}。\n<wait>わしの育てたハーブだ{08:42}な、味は保証付きな{08:5F}が、\nま、無理強いは{08:66}主義だ。\n<wait>		Oh? Well, I suppose that I will just have some myself then.\n<wait>I don't make a habit of forcing people to do things that\nthey don't want to.\n<wait>	v005		reads: そうか、ならばわしだけ飲もう。\n<wait>わしの育てたハーブだからな、味は保証付きなんだが、\nま、無理強いはせん主義だ。\n<wait>
+m/MS0011.BIN	0:02	127	4839	1FD2	学者：		Scientist:	v005		reads: ハーブティーぐらいしか無いが、飲んで行くかね？\n<wait>
+m/MS0011.BIN	0:02	128	4847	1FD3	そうそう、自己紹介を忘れと{08:51}な。\n<wait>		Ah, speaking of which. I forgot to introduce myself.\n<wait>	v005		reads: そうそう、自己紹介を忘れとったな。\n<wait>; reads: ＞どうしますか？\n
+m/MS0011.BIN	0:02	129	4888	1FD2	学者：		Scientist:	v005		reads: 頂きます！; menu option, declared width 20 columns
+m/MS0011.BIN	0:02	130	4896	1FD3	わしの名は平沢晋だ。\n<wait>		My name is Hirasawa Susumu.\n<wait>	v005		reads: 遠慮します; menu option, declared width 20 columns
+m/MS0011.BIN	0:02	131	4925	1FD2	平沢博士：	Doctor Hirasawa:	Doctor Hirasawa:	v005	draft	reads: 山瀬勇 @ours-2026-09-05
+m/MS0011.BIN	0:02	132	4937	1FD3	わしを知る外部の{02:0B}{08:62}皆、概知外博士だの、マッドサイエンティストだのと、\n好き放題言{08:52}おるがな。\n<wait>	Everyone outside who knows of me calls me a crackpot professor,\na mad scientist, whatever they please.\n<wait>	I was once a respected member of the scientific community,\nbut I have been long since excommunicated.\n<wait>	v005	draft	reads: わしを知る外部の人間は、皆、概知外博士だの、マッドサイエンティストだのと、\n好き放題言っておるがな。\n<wait>; reads: わしを知る外部の人間は、皆、概知外博士だの、マッドサイエンティストだのと、\n好き放題言っておるがな。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:02	133	5039	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:02	134	5051	1FD3	{08:47}研究所に引っ込んで{08:42}、{08:5C}随分と経つ{02:08}\n<wait>恐らく君の様な若い人に{08:62}{08:5C}わしの事を知る者{08:62}殆ど{08:24}{08:8C}。\n<wait>		It was years ago that I locked myself down here.\n<wait>I doubt that youngsters like you have even heard my name.\n<wait>	v005		reads: この研究所に引っ込んでから、もう随分と経つ‥‥‥\n<wait>恐らく君の様な若い人には、もうわしの事を知る者は、殆どいないだろう。\n<wait>; reads: そうか、ならばわしだけ飲もう。\n<wait>わしの育てたハーブだからな、味は保証付きなんだが、\nま、無理強いはせん主義だ。\n<wait>
+m/MS0011.BIN	0:02	135	5157	1FD0	そこへ、トランプの兵士が、ティーセットを持{08:52}入{08:52}来た。\n{08:79}後ろに{08:62}燕尾服を来た兎が、山盛りのスコーンが入{08:51}バスケットを持{08:52}\nついて来て{08:64}。\n<wait>		It is there that the Trump Soldier returns carrying a tea set.\nBehind him, you can see a rabbit dressed in a tailcoat,\nholding up a basket filled to the brim with scones.\n<wait>	v005		reads: そこへ、トランプの兵士が、ティーセットを持って入って来た。\nその後ろには、燕尾服を来た兎が、山盛りのスコーンが入ったバスケットを持って\nついて来ていた。\n<wait>
+m/MS0011.BIN	0:02	136	5346	1FD2	トランプ兵士：		Trump Soldier:	v005		reads: そうそう、自己紹介を忘れとったな。\n<wait>
+m/MS0011.BIN	0:02	137	5362	1FD3	お待たせ致しま{08:4B}、博士。\n<wait>		I apologize for the wait.\n<wait>	v005		reads: お待たせ致しました、博士。\n<wait>
+m/MS0011.BIN	0:02	138	5395	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:02	139	5405	1FD3	ティータイムに{08:62}少々中途半端なお時間{08:55}が、スコーンはふっくらこんがり！\n<wait>		Tea time is still some time away,\nbut the scones are cooked and ready!\n<wait>	v005		reads: ティータイムには、少々中途半端なお時間ですが、スコーンはふっくらこんがり！\n<wait>
+m/MS0011.BIN	0:02	140	5484	1FD2	時計兎：		Watch Rabbit:	v005		reads: わしを知る外部の人間は、皆、概知外博士だの、マッドサイエンティストだのと、\n好き放題言っておるがな。\n<wait>
+m/MS0011.BIN	0:02	141	5494	1FD3	薔薇のジャムも上出来{08:55}！\n<wait>		All with rose jam on top!\n<wait>	v005		reads: 薔薇のジャムも上出来です！\n<wait>
+m/MS0011.BIN	0:02	142	5527	1FD2	平沢博士：		Doctor Hirasawa:	v005		reads: この研究所に引っ込んでから、もう随分と経つ‥‥‥\n<wait>恐らく君の様な若い人には、もうわしの事を知る者は、殆どいないだろう。\n<wait>
+m/MS0011.BIN	0:02	143	5539	1FD3	{08:4D}{08:62}大変結構！\n<wait>		I think I'll do without, thank you.\n<wait>	v005		reads: それは、大変結構！\n<wait>; reads: そこへ、トランプの兵士が、ティーセットを持って入って来た。\nその後ろには、燕尾服を来た兎が、山盛りのスコーンが入ったバスケットを持って\nついて来ていた。\n<wait>
+m/MS0011.BIN	0:02	144	5562	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:02	145	5574	1FD3	さ、ティータイムと洒落込{08:5C}！\n<wait>		Now then, let us drink!\n<wait>	v005		reads: さ、ティータイムと洒落込もう！\n<wait>; reads: お待たせ致しました、博士。\n<wait>
+m/MS0011.BIN	0:02	146	5611	1FD2	トランプ兵士：		Trump Soldier:	v005		
+m/MS0011.BIN	0:02	147	5627	1FD3	で{08:62}ごゆっくり{02:08}\n<wait>		Enjoy yourselves...\n<wait>	v005		reads: では、ごゆっくり‥‥‥\n<wait>; reads: ティータイムには、少々中途半端なお時間ですが、スコーンはふっくらこんがり！\n<wait>
+m/MS0011.BIN	0:02	148	5652	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:02	149	5662	1FD3	あ～忙しい、忙しい！！\nローストチキンに、グレイヴィをか{08:29}時間だ！！\n<wait>		Heavens! So busy, so busy!\nI must go and apply gravy on the chicken!\n<wait>	v005		reads: あ～忙しい、忙しい！！\nローストチキンに、グレイヴィをかける時間だ！！\n<wait>; reads: 薔薇のジャムも上出来です！\n<wait>
+m/MS0011.BIN	0:02	150	5738	1FD0	トランプ兵士{08:62}相変わらずテクテクと{02:08}\n<wait>燕尾服の兎{08:62}懐中時計をせわしなく見ながら、落ち着きの無い足取りで\n去{08:52}行{08:51}。\n<wait>		The Trump Soldier trudges away.\n<wait>The rabbit quickly follows after him,\nconstantly checking his pocket watch as he goes.\n<wait>	v005		reads: トランプ兵士は、相変わらずテクテクと‥‥‥\n<wait>燕尾服の兎は、懐中時計をせわしなく見ながら、落ち着きの無い足取りで\n去って行った。\n<wait>
+m/MS0011.BIN	0:02	151	5877	1F01	{08:62}前時代の珍しい食べ物を頬張り、ハーブティーでの珍妙なティータイムを\n過ご{08:4B}。\n<wait>	 stuffed himself with rare food of the old world, and spent a very\nodd tea-time over herbal tea.\n<wait>	You take this opportunity to fill up your stomach.\nThere's no telling when you'll next be able to eat this well.\n<wait>	v005	draft	reads: は、前時代の珍しい食べ物を頬張り、ハーブティーでの珍妙なティータイムを\n過ごした。\n<wait>; reads: それは、大変結構！\n<wait> @rebase-tagdiff @seamfix-2026-09-05
+m/MS0011.BIN	0:02	152	5968	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:02	153	5980	1FD3	さてと{02:08}\n<wait>君は一体何の用で、{08:73}所{08:71}来たのかな？\n<wait>		Now then...\n<wait>What might bring you down here?\n<wait>	v005		reads: さてと‥‥‥\n<wait>君は一体何の用で、こんな所まで来たのかな？\n<wait>; reads: さ、ティータイムと洒落込もう！\n<wait>
+m/MS0011.BIN	0:02	154	6052	1FB2	パーツの保存		Need to store limbs	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0011.BIN	0:02	155	6066	1FB2	何{08:56}{08:25}		No reason	v005		reads: 何でもない; menu option, declared width 20 columns; reads: では、ごゆっくり‥‥‥\n<wait> @refalign
+m/MS0011.BIN	0:02	156	6092	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:02	157	6104	1FD3	理由も無いのに、{08:73}所{08:71}迷宮を抜けて来たのか？\n{02:08}面白い冗談だ。\n<wait>		You passed through that maze for "no reason"?\nHmph... Funny.\n<wait>	v005		reads: 理由も無いのに、こんな所まで迷宮を抜けて来たのか？\n‥‥‥面白い冗談だ。\n<wait>; reads: あ～忙しい、忙しい！！\nローストチキンに、グレイヴィをかける時間だ！！\n<wait>
+m/MS0011.BIN	0:02	158	6174	1FD2	平沢博士：		Doctor Hirasawa:	v005		reads: トランプ兵士は、相変わらずテクテクと‥‥‥\n<wait>燕尾服の兎は、懐中時計をせわしなく見ながら、落ち着きの無い足取りで\n去って行った。\n<wait>
+m/MS0011.BIN	0:02	159	6186	1FD3	そう言えば、つい数ヶ月ほど前にも、{02:00}制服姿の男が、\n{08:45}に迷い込んで来たな。\n<wait>		Actually, that reminds me. A few months ago,\na man passed by here wearing a Devil Buster uniform.\n<wait>	v005		reads: そう言えば、つい数ヶ月ほど前にも、デビルバスター制服姿の男が、\nここに迷い込んで来たな。\n<wait>; reads: は、前時代の珍しい食べ物を頬張り、ハーブティーでの珍妙なティータイムを\n過ごした。\n<wait>
+m/MS0011.BIN	0:02	160	6268	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:02	161	6280	1FD3	そう{08:72}確か、{08:04}とか言う名前だ{08:51}。\n<wait>		I believe that his name was... Nishino.\n<wait>	v005		reads: そう‥‥確か、西野とか言う名前だった。\n<wait>; reads: さてと‥‥‥\n<wait>君は一体何の用で、こんな所まで来たのかな？\n<wait>
+m/MS0011.BIN	0:02	162	6321	1FD2	平沢博士：		Doctor Hirasawa:	v005		menu option, declared width 20 columns
+m/MS0011.BIN	0:02	163	6333	1FD3	{02:08}ん？　{08:90}{08:4B}ね？　知り合いかね？\n		Hmm? What's that? You know him?\n	v005		reads: ‥‥‥ん？　どうしたね？　知り合いかね？\n; reads: 何でもない; menu option, declared width 20 columns
+m/MS0011.BIN	0:02	164	6382	1FB2	そう{08:55}！	I do!	I do!	v005	draft	reads: そうです！; menu option, declared width 20 columns; reads: 山瀬勇 @ours-2026-09-05
+m/MS0011.BIN	0:02	165	6392	1FB2	いえ別に{08:72}	No, not really...	No...	v005	draft	reads: いえ別に‥‥; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0011.BIN	0:02	166	6424	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:02	167	6436	1FD3	ほう{02:08}\n<wait>		Huh.<wait>	v005		reads: ほう‥‥‥\n<wait>; reads: 理由も無いのに、こんな所まで迷宮を抜けて来たのか？\n‥‥‥面白い冗談だ。\n<wait>
+m/MS0011.BIN	0:02	168	6451	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:02	169	6463	1FD3	確か{08:79}男{08:62}秋葉原に向かうとか言{08:53}{08:51}な。\n理由は特に聞か{08:19}が、あの様子{08:42}{08:4C}、当てがあ{08:52}の事で{08:62}\n無さ{01:29}{08:51}が{02:08}。\n<wait>		I believe he mentioned that he was heading down to Akihabara.\nHe didn't say it explicitly, but he did seem kinda lost.\n<wait>	v005		reads: 確かその男は、秋葉原に向かうとか言っとったな。\n理由は特に聞かなかったが、あの様子からすると、当てがあっての事では、\n無さそうだったが‥‥‥。\n<wait>; reads: そう言えば、つい数ヶ月ほど前にも、デビルバスター制服姿の男が、\nここに迷い込んで来たな。\n<wait>
+m/MS0011.BIN	0:03	0	8	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:03	1	20	1FD3	そうそう{08:72}君達の様な若者に{08:62}わしの弟子で{08:7B}、日下章人の方が、\n色々と面白いかも知れん。\n<wait>		Yes, yes. For younglings like yourselves, my student Kusaka\nmight come across as quite the interesting fellow.\n<wait>	v005		reads: そうそう‥‥君達の様な若者には、わしの弟子である、日下章人の方が、\n色々と面白いかも知れん。\n<wait>
+m/MS0011.BIN	0:03	2	114	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:03	3	126	1FD3	奴の研究所は市ヶ谷に{08:7B}。\n<wait>		His laboratory is located in Ichigaya.\n<wait>	v005		reads: 奴の研究所は市ヶ谷にある。\n<wait>
+m/MS0011.BIN	0:03	4	159	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:03	5	171	1FD3	わしの様に古く{08:49}デミ・ヒューマンの研究{08:81}なく、奴{08:62}サイバネック医療を\n中心に、かなり派手な研究をしとる筈だ。\n<wait>		Unlike me with my dusty old Demi-Human research,\nhe focuses on the new and flashy field of cybernetics.\n<wait>	v005		reads: わしの様に古くさいデミ・ヒューマンの研究じゃなく、奴は、サイバネック医療を\n中心に、かなり派手な研究をしとる筈だ。\n<wait>
+m/MS0011.BIN	0:03	6	287	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:03	7	299	1FD3	但し、奴は大概偏屈でな。\n簡単に招き入れて貰{08:28}か{08:90}か{08:62}わしにも分らん。\n<wait>		That said, he can come across a bit, let's say, narrow-minded.\nWhether he'll let you in or not, even I don't know that.\n<wait>	v005		reads: 但し、奴は大概偏屈でな。\n簡単に招き入れて貰えるかどうかは、わしにも分らん。\n<wait>
+m/MS0011.BIN	0:03	8	377	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:03	9	389	1FD3	ま、暇{08:7C}、一度行{08:52}み{08:54}良かろう。\n<wait>		Still, if you have the time, you might as well give it a shot.\n<wait>	v005		reads: ま、暇ならば、一度行ってみても良かろう。\n<wait>
+m/MS0011.BIN	0:03	10	433	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:03	11	445	1FD3	{08:72}ん？　わしに何か用かな？\n<wait>特に用が無い{08:7D}、デミ・ヒューマン共に{08:56}構{08:52}貰うと{08:7F}。\n<wait>		Hmm? You need something?\n<wait>If it's not important, then please talk to one of the Demi-Humans.\n<wait>	v005		reads: ‥‥ん？　わしに何か用かな？\n<wait>特に用が無いなら、デミ・ヒューマン共にでも構って貰うといい。\n<wait>
+m/MS0011.BIN	0:03	12	537	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:03	13	549	1FD3	やつらも、話し相手ぐらいには{08:59}。\n<wait>		They make for fine listeners.\n<wait>	v005		reads: やつらも、話し相手ぐらいにはなる。\n<wait>
+m/MS0011.BIN	0:04	0	5	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:04	1	17	1FD3	{02:08}ん？　{08:90}{08:4B}ね？\n<wait>		Hmm? You need something?\n<wait>	v005		reads: ‥‥‥ん？　どうしたね？\n<wait>
+m/MS0011.BIN	0:04	2	49	1FD2	平沢博士：		Doctor Hirasawa:	ours		
+m/MS0011.BIN	0:04	3	61	1FD3	{02:08}何だ？\n<wait>良く見{08:50}、とん{08:56}{08:25}状態では無いか{02:08}\n<wait>		...Huh?\n<wait>Upon closer inspection, you don't look too good.\n<wait>	v005		reads: ‥‥‥何だ？\n<wait>良く見たら、とんでもない状態では無いか‥‥‥\n<wait>
+m/MS0011.BIN	0:04	4	117	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:04	5	129	1FD3	近頃の若いもんは{02:08}{02:08}\n<wait>		Kids these days...\n<wait>	v005		reads: 近頃の若いもんは‥‥‥‥‥‥\n<wait>
+m/MS0011.BIN	0:04	6	182	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:04	7	194	1FD3	訪ねて来る{08:7C}、礼儀{08:52}{08:5E}が{08:7B}{08:8C}に{08:72}\n<wait>		What happened to having manners?\n<wait>	v005		reads: 訪ねて来るならば、礼儀ってものがあるだろうに‥‥\n<wait>
+m/MS0011.BIN	0:04	8	235	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:04	9	247	1FD3	さて、わしに何か用かな？\n<wait>		Now, do you need something from me?\n<wait>	v005		
+m/MS0011.BIN	0:04	10	292	1FB2	パーツについて相談		Explain in detail	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0011.BIN	0:04	11	312	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0011.BIN	0:04	12	346	1F01	{08:62}	 showed 			draft	reads: は、; reads: は、 @rebase-new @ours-2026-09-05
+m/MS0011.BIN	0:04	13	354	1F01	のパーツを平沢博士に見せ、何とか保存が出来{08:25}かを相談{08:4B}。\n<wait>	's parts to Dr. Hirasawa and asked whether they could somehow\nbe preserved.\n<wait>			draft	reads: のパーツを平沢博士に見せ、何とか保存が出来ないかを相談した。\n<wait>; reads: は、 @rebase-new @ours-2026-09-05
+m/MS0011.BIN	0:04	14	419	1FD2	平沢博士：	Dr. Hirasawa:			draft	reads: のパーツを平沢博士に見せ、何とか保存が出来ないかを相談した。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:04	15	431	1FD3	ふむ{08:72}残念{08:8F}、きちんと{08:4B}生体を保存{08:8E}培養槽{08:62}\n{08:5C}、わしの所では置いておらん{08:77}。\n<wait>	Hmm... I'm sorry to say I no longer keep a proper culture tank for\npreserving living tissue here.\n<wait>			draft	reads: ふむ‥‥残念だが、きちんとした生体を保存する培養槽は、\nもう、わしの所では置いておらんのだ。\n<wait>; reads: ふむ‥‥残念だが、きちんとした生体を保存する培養槽は、\nもう、わしの所では置いておらんのだ。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:04	16	517	1FD2	平沢博士：	Dr. Hirasawa:			draft	reads: ふむ‥‥残念だが、きちんとした生体を保存する培養槽は、\nもう、わしの所では置いておらんのだ。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:04	17	529	1FD3	{08:8F}安心しな{08:49}。\nわしの弟子で{08:7B}、日下章人の研究所{08:7C}、腐るほど置いて{08:7B}筈だ。\n<wait>	But don't worry.\nMy pupil Kusaka Akihito's laboratory should have more than enough.\n<wait>			draft	reads: だが安心しなさい。\nわしの弟子である、日下章人の研究所ならば、腐るほど置いてある筈だ。\n<wait>; reads: だが安心しなさい。\nわしの弟子である、日下章人の研究所ならば、腐るほど置いてある筈だ。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:04	18	611	1FD2	平沢博士：	Dr. Hirasawa:			draft	reads: だが安心しなさい。\nわしの弟子である、日下章人の研究所ならば、腐るほど置いてある筈だ。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:04	19	623	1FD3	今{08:42}紹介状を書いてあげ{08:69}。\n<wait>	I'll write you a letter of introduction now.\n<wait>			draft	reads: 今から紹介状を書いてあげよう。\n<wait>; reads: 今から紹介状を書いてあげよう。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:04	20	658	1FD2	平沢博士：	Dr. Hirasawa:			draft	reads: 今から紹介状を書いてあげよう。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:04	21	670	1FD3	奴{08:62}わしより偏屈だ{08:42}な。\n{08:82}持{08:52}行{08:51}{08:74}で{08:62}相手に{08:4A}貰えん{08:8C}。\n<wait>	He's even more eccentric than I am.\nJust turning up there, he won't give you the time of day.\n<wait>			draft	reads: 奴は、わしより偏屈だからな。\nただ持って行っただけでは、相手にして貰えんだろう。\n<wait>; reads: 奴は、わしより偏屈だからな。\nただ持って行っただけでは、相手にして貰えんだろう。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:04	22	738	1FD2	平沢博士：	Dr. Hirasawa:			draft	reads: 奴は、わしより偏屈だからな。\nただ持って行っただけでは、相手にして貰えんだろう。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:04	23	750	1FD3	少し、そこで待{08:52}{08:64}まえ。\n<wait>	Wait there a moment.\n<wait>			draft	reads: 少し、そこで待っていたまえ。\n<wait>; reads: 少し、そこで待っていたまえ。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:04	24	787	1FD0	平沢博士{08:62}奥の方に引っ込んで行{08:51}{02:08}\n<wait>	Dr. Hirasawa withdrew into the back......\n<wait>			draft	reads: 平沢博士は、奥の方に引っ込んで行った‥‥‥\n<wait>; reads: 少し、そこで待っていたまえ。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:04	25	857	1FD2	平沢博士：	Dr. Hirasawa:			draft	reads: 平沢博士は、奥の方に引っ込んで行った‥‥‥\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:04	26	869	1FD3	さ、{08:48}が紹介状だ。\n{08:48}を持{08:52}行けば、さし{08:5E}奴も断れん{08:8C}。\n<wait>	Here, the letter of introduction.\nTake this along, and even he won't be able to refuse.\n<wait>			draft	reads: さ、これが紹介状だ。\nこれを持って行けば、さしもの奴も断れんだろう。\n<wait>; reads: さ、これが紹介状だ。\nこれを持って行けば、さしもの奴も断れんだろう。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:04	27	933	1FD2	平沢博士：	Dr. Hirasawa:			draft	reads: さ、これが紹介状だ。\nこれを持って行けば、さしもの奴も断れんだろう。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:04	28	945	1FD3	お{08:53}、忘{08:2F}所だ{08:51}{02:08}日下章人の研究所は市ヶ谷に{08:7B}。\nかつて、軍部の{08:10}があ{08:51}場所だ{08:42}、すぐ分る{08:8C}。\n<wait>	Oh, I nearly forgot...... Kusaka Akihito's laboratory is in Ichigaya.\nIt's where the military shelter used to be, so you'll find it easily.\n<wait>			draft	reads: おっと、忘れる所だった‥‥‥日下章人の研究所は市ヶ谷にある。\nかつて、軍部のシェルターがあった場所だから、すぐ分るだろう。\n<wait>; reads: おっと、忘れる所だった‥‥‥日下章人の研究所は市ヶ谷にある。\nかつて、軍部のシェルターがあった場所だから、すぐ分るだろう。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:04	29	1057	1FD2	平沢博士：	Dr. Hirasawa:			draft	reads: おっと、忘れる所だった‥‥‥日下章人の研究所は市ヶ谷にある。\nかつて、軍部のシェルターがあった場所だから、すぐ分るだろう。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:04	30	1069	1FD3	何も無いと{08:68}事はなかろう？\n<wait>		There must be something to tell me, right?\n<wait>	ours		reads: 何も無いという事はなかろう？\n<wait>
+m/MS0011.BIN	0:04	31	1106	1FD1	＞{02:06}\n	>What will you do?\n			draft	reads: ＞どうしますか？\n; reads: 何も無いという事はなかろう？\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:04	32	1127	1FB2	パーツについて相談		Explain in detail	v005		menu option, declared width 20 columns; reads: ＞どうしますか？\n @refalign
+m/MS0011.BIN	0:04	33	1147	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0011.BIN	0:04	34	1175	1FD2	平沢博士：		Doctor Hirasawa:	v005		reads: 黙っている; menu option, declared width 20 columns
+m/MS0011.BIN	0:04	35	1187	1FD3	全く{02:08}じれっ{08:4E}の。\n<wait>	Honestly......... how exasperating.\n<wait>	Hmph.n<wait>	v005	draft	reads: 全く‥‥‥じれったいの。\n<wait>; reads: 山瀬勇 @ours-2026-09-05
+m/MS0011.BIN	0:04	36	1214	1FD2	平沢博士：	Doctor Hirasawa:	Doctor Hirasawa:	v005	draft	@ours-2026-09-05
+m/MS0011.BIN	0:04	37	1226	1FD3	言い{08:4E}事が{08:7B}{08:7D}、まずは言{08:52}みる事{08:8C}？\n<wait>		If you have something to say, just say it.\n<wait>	v005		reads: 言いたい事があるなら、まずは言ってみる事だろう？\n<wait>
+m/MS0011.BIN	0:04	38	1273	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n; reads: 全く‥‥‥じれったいの。\n<wait>
+m/MS0011.BIN	0:04	39	1294	1FB2	パーツについて相談		Explain in detail	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0011.BIN	0:04	40	1314	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns; reads: 言いたい事があるなら、まずは言ってみる事だろう？\n<wait> @refalign
+m/MS0011.BIN	0:05	0	5	1FD0	博士がそう言い終{08:41}所で、{01:3A}の少女が、仔兎の様に元気良く飛び込んで来た。\n<wait>	Just as the doctor finished speaking, a girl bounded in, lively as a\nbaby rabbit.\n<wait>			draft	reads: 博士がそう言い終えた所で、ひとりの少女が、仔兎の様に元気良く飛び込んで来た。\n<wait>; reads: 博士がそう言い終えた所で、ひとりの少女が、仔兎の様に元気良く飛び込んで来た。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:05	1	106	1FD2	メイ：	Mei:			draft	@ours-2026-09-05
+m/MS0011.BIN	0:05	2	114	1FD3	平沢おじいちゃん！　大変{08:6B}！！\n<wait>時計兎さんが、クッキーを焦しちゃ{08:52}{02:08}\n<wait>	Grandpa Hirasawa! It's terrible!!\n<wait>Mr. Watch Rabbit burnt the cookies......\n<wait>			draft	reads: 平沢おじいちゃん！　大変なの！！\n<wait>時計兎さんが、クッキーを焦しちゃって‥‥‥\n<wait>; reads: 平沢おじいちゃん！　大変なの！！\n<wait>時計兎さんが、クッキーを焦しちゃって‥‥‥\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:05	3	199	1FD2	メイ：	Mei:			draft	@ours-2026-09-05
+m/MS0011.BIN	0:05	4	207	1FD3	ああ～ッ！！　お兄ちゃん！！\n<wait>	Aaah!! Big brother!!\n<wait>			draft	@ours-2026-09-05
+m/MS0011.BIN	0:05	5	244	1FD2	平沢博士：	Dr. Hirasawa:			draft	@ours-2026-09-05
+m/MS0011.BIN	0:05	6	256	1FD3	何だ？　メイの知り合いか？\n<wait>	What? A friend of yours, Mei?\n<wait>			draft	@ours-2026-09-05
+m/MS0011.BIN	0:05	7	291	1FD2	メイ：	Mei:			draft	@ours-2026-09-05
+m/MS0011.BIN	0:05	8	299	1FD3	うんっ！\n{01:06}お兄ちゃんとメイ{08:62}{08:47}お兄ちゃんに助けて貰{08:51}の！\n<wait>	Yeah!\nThis big brother saved Kazumi and me!\n<wait>			draft	reads: うんっ！\nカズミお兄ちゃんとメイは、このお兄ちゃんに助けて貰ったの！\n<wait>; reads: うんっ！\nカズミお兄ちゃんとメイは、このお兄ちゃんに助けて貰ったの！\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:05	9	365	1FD2	平沢博士：	Dr. Hirasawa:			draft	@ours-2026-09-05
+m/MS0011.BIN	0:05	10	377	1FD3	ほう{08:72}{01:29}{08:51}のか？\n<wait>	Oh...... is that so?\n<wait>			draft	reads: ほう‥‥そうだったのか？\n<wait>; reads: ほう‥‥そうだったのか？\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:05	11	402	1FD2	メイ：	Mei:			draft	@ours-2026-09-05
+m/MS0011.BIN	0:05	12	410	1FD3	{08:56}、何でお兄ちゃんが{08:45}に？！\n	But why are you here, big brother?!\n			draft	reads: でも、何でお兄ちゃんがここに？！\n; reads: でも、何でお兄ちゃんがここに？！\n @ours-2026-09-05
+m/MS0011.BIN	0:05	13	455	1FB2	そっちこそ！		That's my line!	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0011.BIN	0:05	14	469	1FB2	ええ{08:53}{08:72}		Err...	v005		reads: ええっと‥‥; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0011.BIN	0:05	15	499	1FD2	メイ：	Mei:	Mei:	v005	draft	reads: 山瀬勇 @ours-2026-09-05
+m/MS0011.BIN	0:05	16	507	1FD3	メイはねぇ、あの後、お兄ちゃんといっぱい歩いてぇ{02:08}\n<wait>{08:45}に来れば、メイに{08:7F}お薬が貰{08:28}かも{08:52}聞{08:64}{08:42}、頑張{08:52}、\nお兄ちゃんと一緒に来たの！\n<wait>	After that, Mei walked and walked with big brother.........\n<wait>Mei heard that if she came here she might get good medicine,\nso she tried really hard and came with big brother!\n<wait>	After we parted ways with you, Kazumi and I were left wandering around.\n<wait>We walked so, so long before finally coming here in search of medicine.\n<wait>	v005	draft	reads: メイはねぇ、あの後、お兄ちゃんといっぱい歩いてぇ‥‥‥\n<wait>ここに来れば、メイにいいお薬が貰えるかもって聞いたから、頑張って、\nお兄ちゃんと一緒に来たの！\n<wait>; reads: メイはねぇ、あの後、お兄ちゃんといっぱい歩いてぇ‥‥‥\n<wait>ここに来れば、メイにいいお薬が貰えるかもって聞いたから、頑張って、\nお兄ちゃんと一緒に来たの！\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:05	17	650	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:05	18	662	1FD3	わしの孫に似せた、デミ・ノイドのアリスが、行方不明に{08:1A}お{08:51}\n矢先だ{08:51}のでな{08:72}\n<wait>		Indeed. This was just after Alice,\na demi-noid modelled after my dear granddaughter, went missing.\n<wait>	v005		reads: わしの孫に似せた、デミ・ノイドのアリスが、行方不明になっておった\n矢先だったのでな‥‥\n<wait>; reads: メイはねぇ、あの後、お兄ちゃんといっぱい歩いてぇ‥‥‥\n<wait>ここに来れば、メイにいいお薬が貰えるかもって聞いたから、頑張って、\nお兄ちゃんと一緒に来たの！\n<wait>
+m/MS0011.BIN	0:05	19	746	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:05	20	758	1FD3	柄にもなく、わしが、メイを預かる事に{08:4B}{08:77}よ。\n<wait>{08:47}子の病気の治療に{08:62}旅など向いとらんのでね。\n<wait>		Perhaps that was the reason why I acted so unlike myself and gave her\na home here. <wait>Travelling around the wasteland is that last thing\nthis girl should be doing in her condition.\n<wait>	v005		reads: 柄にもなく、わしが、メイを預かる事にしたのだよ。\n<wait>この子の病気の治療には、旅など向いとらんのでね。\n<wait>; reads: わしの孫に似せた、デミ・ノイドのアリスが、行方不明になっておった\n矢先だったのでな‥‥\n<wait>
+m/MS0011.BIN	0:05	21	860	1FD2	メイ：		Mei:	v005		
+m/MS0011.BIN	0:05	22	868	1FD3	メイね、ずいぶん元気に{08:16}の！\n{08:76}咳とか出る{08:84}、走{08:51}り出来る{08:5F}よ！！\n<wait>		I've gotten so, so much better!\nYeah, I still cough and stuff, but now I can run!\n<wait>	v005		reads: メイね、ずいぶん元気になったの！\nまだ咳とか出るけど、走ったり出来るんだよ！！\n<wait>; reads: 柄にもなく、わしが、メイを預かる事にしたのだよ。\n<wait>この子の病気の治療には、旅など向いとらんのでね。\n<wait>
+m/MS0011.BIN	0:05	23	942	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:05	24	954	1FD3	東京は広いと言えど、{08:47}様な出会いも{08:7B}{08:77}な。\n<wait>		Tokyo might be a big place,\nbut there is still room for people to run into each other.\n<wait>	v005		reads: 東京は広いと言えど、この様な出会いもあるのだな。\n<wait>; reads: メイね、ずいぶん元気になったの！\nまだ咳とか出るけど、走ったり出来るんだよ！！\n<wait>
+m/MS0011.BIN	0:05	25	1005	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:05	26	1017	1FD3	さてと{08:72}\nわしは研究の方に、戻ら{08:67}貰うよ。\n<wait>		Now then... I should be getting back to my research.\n<wait>	v005		reads: さてと‥‥\nわしは研究の方に、戻らせて貰うよ。\n<wait>; reads: 東京は広いと言えど、この様な出会いもあるのだな。\n<wait>
+m/MS0011.BIN	0:05	27	1067	1FD2	メイ：		Mei:	v005		
+m/MS0011.BIN	0:05	28	1075	1FD3	平沢おじいちゃん！　私、クッキー焼い{08:54}{08:7F}？\n<wait>		Hirasawa, may I bake some cookies?\n<wait>	v005		reads: 平沢おじいちゃん！　私、クッキー焼いてもいい？\n<wait>; reads: さてと‥‥\nわしは研究の方に、戻らせて貰うよ。\n<wait>
+m/MS0011.BIN	0:05	29	1126	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:05	30	1138	1FD3	良いとも！\n時計兎に上手な焼き方を、教えて貰いな{08:49}。\n<wait>		Of course. Just ask the rabbit, and he'll teach you.\n<wait>	v005		reads: 良いとも！\n時計兎に上手な焼き方を、教えて貰いなさい。\n<wait>; reads: 平沢おじいちゃん！　私、クッキー焼いてもいい？\n<wait>
+m/MS0011.BIN	0:05	31	1198	1FD2	メイ：		Mei:	v005		
+m/MS0011.BIN	0:05	32	1206	1FD3	わあ～い！\n{08:81}あ、お兄ちゃん、{08:5B}ねッ！！\n<wait>		Hooray! See you later, Katsuragi!\n<wait>	v005		reads: わあ～い！\nじゃあ、お兄ちゃん、またねッ！！\n<wait>; reads: 良いとも！\n時計兎に上手な焼き方を、教えて貰いなさい。\n<wait>
+m/MS0011.BIN	0:05	33	1258	1FD0	メイはそう言うと、元気良く走{08:52}行{08:51}。\n<wait>		With that, Mei prances off.\n<wait>	v005		reads: メイはそう言うと、元気良く走って行った。\n<wait>
+m/MS0011.BIN	0:05	34	1303	1FD2	平沢博士：		Doctor Hirasawa:	v005		reads: わあ～い！\nじゃあ、お兄ちゃん、またねッ！！\n<wait>
+m/MS0011.BIN	0:05	35	1315	1FD3	子供と{08:68}のは邪気が{08:25}{08:72}良い{08:5E}だ。\n<wait>		Children truly are innocent...\n<wait>	v005		reads: 子供というのは邪気がない‥‥良いものだ。\n<wait>; reads: メイはそう言うと、元気良く走って行った。\n<wait>
+m/MS0011.BIN	0:05	36	1356	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:05	37	1368	1FD3	さて、君は{08:90}{08:8E}{08:5F}？\n<wait>		Now then, what do you plan to do next?\n<wait>	v005		reads: さて、君はどうするんだ？\n<wait>; reads: 子供というのは邪気がない‥‥良いものだ。\n<wait>
+m/MS0011.BIN	0:05	38	1395	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:05	39	1407	1FD3	メイの知り合い{08:7C}、わしも心{08:42}歓迎{08:8E}。\n研究所の中が見たければ、好きな様に{08:4A}く{08:60}まえ。\n<wait>		A friend of Mei is a friend of mine.\nYou're free to take whatever you'd like from the lab.\n<wait>	v005		reads: メイの知り合いならば、わしも心から歓迎する。\n研究所の中が見たければ、好きな様にしてくれたまえ。\n<wait>; reads: さて、君はどうするんだ？\n<wait>
+m/MS0011.BIN	0:05	40	1506	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:05	41	1518	1FD3	そういえば{02:08}{01:06}君と一緒に、片腕の無い男も来たが{02:08}\n彼も君達の知り合いかね？\n<wait>		Oh, that reminds me. A man came here with Kazumi,\na man missing his arm. Do you know him as well?\n<wait>	v005		reads: そういえば‥‥‥カズミ君と一緒に、片腕の無い男も来たが‥‥‥\n彼も君達の知り合いかね？\n<wait>; reads: メイの知り合いならば、わしも心から歓迎する。\n研究所の中が見たければ、好きな様にしてくれたまえ。\n<wait>
+m/MS0011.BIN	0:05	42	1600	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:05	43	1612	1FD3	まぁ良い。何か用があっ{08:50}、声をかけてくれれば{08:7F}。\n<wait>{08:8F}、用が無い場合は駄目だ{08:72}{08:7F}かね？\n		If you need something, let me know.\n<wait>Just... Just make sure that you're not wasting my time.\n	v005		reads: まぁ良い。何か用があったら、声をかけてくれればいい。\n<wait>だが、用が無い場合は駄目だ‥‥いいかね？\n; reads: そういえば‥‥‥カズミ君と一緒に、片腕の無い男も来たが‥‥‥\n彼も君達の知り合いかね？\n<wait>
+m/MS0011.BIN	0:06	0	2	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:06	1	14	1FD3	{02:08}ん？　何か私に用かね？\n<wait>		Hmm? You need something?\n<wait>	v005		reads: ‥‥‥ん？　何か私に用かね？\n<wait>
+m/MS0011.BIN	0:06	2	54	1FD2	平沢博士：		Doctor Hirasawa:	ours		
+m/MS0011.BIN	0:06	3	66	1FD3	{02:08}何だ？\n<wait>良く見{08:50}、とん{08:56}{08:25}状態では無いか{02:08}\n<wait>		...Huh?\n<wait>Upon closer inspection, you don't look too good.\n<wait>	v005		reads: ‥‥‥何だ？\n<wait>良く見たら、とんでもない状態では無いか‥‥‥\n<wait>
+m/MS0011.BIN	0:06	4	122	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:06	5	134	1FD3	近頃の若いもんは{02:08}{02:08}\n<wait>		Kids these days...\n<wait>	v005		reads: 近頃の若いもんは‥‥‥‥‥‥\n<wait>
+m/MS0011.BIN	0:06	6	187	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:06	7	199	1FD3	訪ねて来る{08:7C}、礼儀{08:52}{08:5E}が{08:7B}{08:8C}に{08:72}\n<wait>		What happened to having manners?\n<wait>	v005		reads: 訪ねて来るならば、礼儀ってものがあるだろうに‥‥\n<wait>
+m/MS0011.BIN	0:06	8	240	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:06	9	252	1FD3	さて、わしに何か用かな？\n<wait>		Now, do you need something from me?\n<wait>	v005		
+m/MS0011.BIN	0:06	10	297	1FB2	パーツについて相談		About the parts...	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0011.BIN	0:06	11	317	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0011.BIN	0:06	12	351	1F01	{08:62}	 showed 			draft	reads: は、; reads: は、 @rebase-new @ours-2026-09-05
+m/MS0011.BIN	0:06	13	359	1F01	のパーツを平沢博士に見せ、何とか保存が出来{08:25}かを相談{08:4B}。\n<wait>	's parts to Dr. Hirasawa and asked whether they could somehow\nbe preserved.\n<wait>			draft	reads: のパーツを平沢博士に見せ、何とか保存が出来ないかを相談した。\n<wait>; reads: は、 @rebase-new @ours-2026-09-05
+m/MS0011.BIN	0:06	14	424	1FD2	平沢博士：	Dr. Hirasawa:			draft	reads: のパーツを平沢博士に見せ、何とか保存が出来ないかを相談した。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:06	15	436	1FD3	ふむ{08:72}残念{08:8F}、きちんと{08:4B}生体を保存{08:8E}培養槽{08:62}\n{08:5C}、わしの所では置いておらん{08:77}。\n<wait>	Hmm... I'm sorry to say I no longer keep a proper culture tank for\npreserving living tissue here.\n<wait>			draft	reads: ふむ‥‥残念だが、きちんとした生体を保存する培養槽は、\nもう、わしの所では置いておらんのだ。\n<wait>; reads: ふむ‥‥残念だが、きちんとした生体を保存する培養槽は、\nもう、わしの所では置いておらんのだ。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:06	16	522	1FD2	平沢博士：	Dr. Hirasawa:			draft	reads: ふむ‥‥残念だが、きちんとした生体を保存する培養槽は、\nもう、わしの所では置いておらんのだ。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:06	17	534	1FD3	{08:8F}安心しな{08:49}。\nわしの弟子で{08:7B}、日下章人の研究所{08:7C}、腐るほど置いて{08:7B}筈だ。\n<wait>	But don't worry.\nMy pupil Kusaka Akihito's laboratory should have more than enough.\n<wait>			draft	reads: だが安心しなさい。\nわしの弟子である、日下章人の研究所ならば、腐るほど置いてある筈だ。\n<wait>; reads: だが安心しなさい。\nわしの弟子である、日下章人の研究所ならば、腐るほど置いてある筈だ。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:06	18	616	1FD2	平沢博士：	Dr. Hirasawa:			draft	reads: だが安心しなさい。\nわしの弟子である、日下章人の研究所ならば、腐るほど置いてある筈だ。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:06	19	628	1FD3	今{08:42}紹介状を書いてあげ{08:69}。\n<wait>	I'll write you a letter of introduction now.\n<wait>			draft	reads: 今から紹介状を書いてあげよう。\n<wait>; reads: 今から紹介状を書いてあげよう。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:06	20	663	1FD2	平沢博士：	Dr. Hirasawa:			draft	reads: 今から紹介状を書いてあげよう。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:06	21	675	1FD3	奴{08:62}わしより偏屈だ{08:42}な。\n{08:82}持{08:52}行{08:51}{08:74}で{08:62}相手に{08:4A}貰えん{08:8C}。\n<wait>	He's even more eccentric than I am.\nJust turning up there, he won't give you the time of day.\n<wait>			draft	reads: 奴は、わしより偏屈だからな。\nただ持って行っただけでは、相手にして貰えんだろう。\n<wait>; reads: 奴は、わしより偏屈だからな。\nただ持って行っただけでは、相手にして貰えんだろう。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:06	22	743	1FD2	平沢博士：	Dr. Hirasawa:			draft	reads: 奴は、わしより偏屈だからな。\nただ持って行っただけでは、相手にして貰えんだろう。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:06	23	755	1FD3	少し、そこで待{08:52}{08:64}まえ。\n<wait>	Wait there a moment.\n<wait>			draft	reads: 少し、そこで待っていたまえ。\n<wait>; reads: 少し、そこで待っていたまえ。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:06	24	792	1FD0	平沢博士{08:62}奥の方に引っ込んで行{08:51}{02:08}\n<wait>	Dr. Hirasawa withdrew into the back......\n<wait>			draft	reads: 平沢博士は、奥の方に引っ込んで行った‥‥‥\n<wait>; reads: 少し、そこで待っていたまえ。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:06	25	862	1FD2	平沢博士：	Dr. Hirasawa:			draft	reads: 平沢博士は、奥の方に引っ込んで行った‥‥‥\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:06	26	874	1FD3	さ、{08:48}が紹介状だ。\n{08:48}を持{08:52}行けば、さし{08:5E}奴も断れん{08:8C}。\n<wait>	Here, the letter of introduction.\nTake this along, and even he won't be able to refuse.\n<wait>			draft	reads: さ、これが紹介状だ。\nこれを持って行けば、さしもの奴も断れんだろう。\n<wait>; reads: さ、これが紹介状だ。\nこれを持って行けば、さしもの奴も断れんだろう。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:06	27	938	1FD2	平沢博士：	Dr. Hirasawa:			draft	reads: さ、これが紹介状だ。\nこれを持って行けば、さしもの奴も断れんだろう。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:06	28	950	1FD3	お{08:53}、忘{08:2F}所だ{08:51}{02:08}日下章人の研究所は市ヶ谷に{08:7B}。\nかつて、軍部の{08:10}があ{08:51}場所だ{08:42}、すぐ分る{08:8C}。\n<wait>	Oh, I nearly forgot...... Kusaka Akihito's laboratory is in Ichigaya.\nIt's where the military shelter used to be, so you'll find it easily.\n<wait>			draft	reads: おっと、忘れる所だった‥‥‥日下章人の研究所は市ヶ谷にある。\nかつて、軍部のシェルターがあった場所だから、すぐ分るだろう。\n<wait>; reads: おっと、忘れる所だった‥‥‥日下章人の研究所は市ヶ谷にある。\nかつて、軍部のシェルターがあった場所だから、すぐ分るだろう。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:06	29	1062	1FD2	平沢博士：	Dr. Hirasawa:			draft	reads: おっと、忘れる所だった‥‥‥日下章人の研究所は市ヶ谷にある。\nかつて、軍部のシェルターがあった場所だから、すぐ分るだろう。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:06	30	1074	1FD3	何も無いと{08:68}事はなかろう？\n<wait>		There must be something to tell me, right?\n<wait>	ours		reads: 何も無いという事はなかろう？\n<wait>
+m/MS0011.BIN	0:06	31	1111	1FD1	＞{02:06}\n	>What will you do?\n			draft	reads: ＞どうしますか？\n; reads: 何も無いという事はなかろう？\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:06	32	1132	1FB2	パーツについて相談		About the parts...	v005		menu option, declared width 20 columns; reads: ＞どうしますか？\n @refalign
+m/MS0011.BIN	0:06	33	1152	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0011.BIN	0:06	34	1180	1FD2	平沢博士：		Doctor Hirasawa:	v005		reads: 黙っている; menu option, declared width 20 columns
+m/MS0011.BIN	0:06	35	1192	1FD3	全く{02:08}じれっ{08:4E}の。\n<wait>	Honestly......... how exasperating.\n<wait>	Hmph...\n<wait>	v005	draft	reads: 全く‥‥‥じれったいの。\n<wait>; reads: 山瀬勇 @ours-2026-09-05
+m/MS0011.BIN	0:06	36	1219	1FD2	平沢博士：	Doctor Hirasawa:	Doctor Hirasawa:	v005	draft	@ours-2026-09-05
+m/MS0011.BIN	0:06	37	1231	1FD3	言い{08:4E}事が{08:7B}{08:7D}、まずは言{08:52}みる事{08:8C}？\n<wait>		If you have something to say, just say it.\n<wait>	v005		reads: 言いたい事があるなら、まずは言ってみる事だろう？\n<wait>
+m/MS0011.BIN	0:06	38	1278	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n; reads: 全く‥‥‥じれったいの。\n<wait>
+m/MS0011.BIN	0:06	39	1299	1FB2	パーツについて相談		About the parts...	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0011.BIN	0:06	40	1319	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns; reads: 言いたい事があるなら、まずは言ってみる事だろう？\n<wait> @refalign
+m/MS0011.BIN	0:07	0	2	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:07	1	14	1FD3	{02:08}ん？　何か私に用かね？\n<wait>特に急ぎの用で無い{08:7D}、済ま{08:25}が後に{08:4A}くれんか？\n<wait>		Hmm? You need something?\n<wait>I'm sorry, but if it's not urgent, could we do this some other time?\nI'm awfully busy at the moment, you see.\n<wait>	v005		reads: ‥‥‥ん？　何か私に用かね？\n<wait>特に急ぎの用で無いなら、済まないが後にしてくれんか？\n<wait>
+m/MS0011.BIN	0:08	0	8	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:08	1	20	1FD3	メイ{08:7C}{02:08}‥\n{01:06}君に連れられて、{08:45}を出て行{08:51}よ。\n<wait>		If it's Mei you're looking for, then she's not here anymore.\nShe left with Kazumi.\n<wait>	v005		reads: メイならば‥‥‥‥\nカズミ君に連れられて、ここを出て行ったよ。\n<wait>
+m/MS0011.BIN	0:08	2	74	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:08	3	86	1FD3	彼女の発作もほぼ完治{08:4B}し、アリスの修繕も終わ{08:51}。\n何もかもが元通りだよ{02:08}\n<wait>		I was able to cure her cough. That, and Alice has been repaired as well.\nWith this, things are back to how they used to be.\n<wait>	v005		reads: 彼女の発作もほぼ完治したし、アリスの修繕も終わった。\n何もかもが元通りだよ‥‥‥\n<wait>
+m/MS0011.BIN	0:08	4	166	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:08	5	178	1FD3	そう{08:72}何もかもが元通りだ{02:08}\n<wait>		Yes... Back to how they used to be...\n<wait>	v005		reads: そう‥‥何もかもが元通りだ‥‥‥\n<wait>
 m/MS0011.BIN	0:08	6	220	1F04						
-m/MS0011.BIN	0:08	7	224	1FD2	平沢博士：					
-m/MS0011.BIN	0:08	8	236	1FD3	日下が目指す{08:5E}{08:62}死を生に作り替{08:28}と{08:68}事だ。\n<wait>					reads: 日下が目指すものは、死を生に作り替えるという事だ。\n<wait>
-m/MS0011.BIN	0:08	9	285	1FD2	平沢博士：					
-m/MS0011.BIN	0:08	10	297	1FD3	{08:8F}、わしが目指す{08:5E}{08:62}{08:4D}とは似て否成る{08:5E}だ。\n<wait>					reads: だが、わしが目指すものは、それとは似て否成るものだ。\n<wait>
-m/MS0011.BIN	0:08	11	348	1FD2	平沢博士：					
-m/MS0011.BIN	0:08	12	360	1FD3	わしが目指{08:13}の{08:62}限り無く完璧に近い人形{08:72}\n<wait>					reads: わしが目指しているのは、限り無く完璧に近い人形‥‥\n<wait>
-m/MS0011.BIN	0:08	13	409	1FD2	平沢博士：					
-m/MS0011.BIN	0:08	14	421	1FD3	時空に支配{03:0C}る事なく、くるくると踊り続{08:29}{02:08}\n幻想の永久機関を生み出す事{08:6B}だよ。\n<wait>					reads: 時空に支配される事なく、くるくると踊り続ける‥‥‥\n幻想の永久機関を生み出す事なのだよ。\n<wait>
-m/MS0011.BIN	0:08	15	513	1FD2	平沢博士：					
-m/MS0011.BIN	0:08	16	525	1FD3	アリスが戻{08:52}来てく{08:60}{08:74}で、わしは十分幸せだ{08:72}\n<wait>勿論、メイがいなく{08:16}事が、寂しく{08:25}とは言わ{08:25}。\n<wait>					reads: アリスが戻って来てくれただけで、わしは十分幸せだ‥‥\n<wait>勿論、メイがいなくなった事が、寂しくないとは言わない。\n<wait>
-m/MS0011.BIN	0:08	17	629	1FD2	平沢博士：					
-m/MS0011.BIN	0:08	18	641	1FD3	{08:8F}、相手は生身の{02:0B}だ。\nおもちゃの様に、自由に出来る{08:5E}では{08:25}{08:42}な。\n<wait>					reads: だが、相手は生身の人間だ。\nおもちゃの様に、自由に出来るものではないからな。\n<wait>
-m/MS0011.BIN	0:08	19	716	1FD2	平沢博士：					
-m/MS0011.BIN	0:08	20	728	1FD3	{01:29}、{01:29}{02:08}‥\n<wait>君が来{08:50}、教えてやろうと思{08:52}{08:64}事があ{08:51}。\n<wait>					reads: そうだ、そうだ‥‥‥‥\n<wait>君が来たら、教えてやろうと思っていた事があった。\n<wait>
-m/MS0011.BIN	0:08	21	792	1FD2	平沢博士：					
-m/MS0011.BIN	0:08	22	804	1FD3	危うく忘{08:2F}{08:87}だ{08:51}わい。\n<wait>					reads: 危うく忘れるところだったわい。\n<wait>
-m/MS0011.BIN	0:08	23	835	1FD2	平沢博士：					
-m/MS0011.BIN	0:08	24	847	1FD3	神田に{08:7B}学究都市に{08:62}個人{08:56}購入出来る、比較的小型の培養槽が\n売られ{08:14}らしいぞ。\n<wait>					reads: 神田にある学究都市には、個人でも購入出来る、比較的小型の培養槽が\n売られているらしいぞ。\n<wait>
-m/MS0011.BIN	0:08	25	933	1FD2	平沢博士：					
-m/MS0011.BIN	0:08	26	945	1FD3	{08:76}培養槽が必要{08:7D}、行{08:52}みると{08:7F}。\n<wait>					reads: まだ培養槽が必要なら、行ってみるといい。\n<wait>
-m/MS0011.BIN	0:09	0	35	1FD2	時計兎：					
-m/MS0011.BIN	0:09	1	45	1FD3	あ～忙しい{08:72}忙しい！！\n<wait>					reads: あ～忙しい‥‥忙しい！！\n<wait>
-m/MS0011.BIN	0:09	2	76	1FD0	おとぎの世界{08:42}抜け出{08:4B}様な、燕尾服を来た兎が、懐中時計を片手に、\n苛々と忙しそうに{08:13}{02:08}。\n<wait>					reads: おとぎの世界から抜け出した様な、燕尾服を来た兎が、懐中時計を片手に、\n苛々と忙しそうにしている‥‥‥。\n<wait>
-m/MS0011.BIN	0:09	3	172	1FD2	時計兎：					
-m/MS0011.BIN	0:09	4	182	1FD3	何{08:55}か貴方？\n拝見致しま{08:4B}{08:87}、貴方は時計をお持ちで{08:25}！！\n<wait>					reads: 何ですか貴方？\n拝見致しましたところ、貴方は時計をお持ちでない！！\n<wait>
-m/MS0011.BIN	0:09	5	246	1FD2	時計兎：					
-m/MS0011.BIN	0:09	6	256	1FD3	{08:47}世で時計を持たぬ存在が、果た{08:4A}、自己の存在意義を確立出来得るので\nありま{08:80}か！？\n<wait>					reads: この世で時計を持たぬ存在が、果たして、自己の存在意義を確立出来得るので\nありましょうか！？\n<wait>
-m/MS0011.BIN	0:09	7	346	1FD2	時計兎：					
-m/MS0011.BIN	0:09	8	356	1FD3	良い{08:55}か？\n<wait>					reads: 良いですか？\n<wait>
-m/MS0011.BIN	0:09	9	375	1FD2	時計兎：					
-m/MS0011.BIN	0:09	10	385	1FD3	ローストチキン{08:62}強めの火できっかり４５分間オーヴンで焼き、\n<wait>{08:79}後は５分毎に、滴り落ちたグレイヴィをスポイドで吸い上げ、\n<wait>全体に満遍なくかけねば、成立し{08:25}の{08:55}。\n<wait>					reads: ローストチキンは、強めの火できっかり４５分間オーヴンで焼き、\n<wait>その後は５分毎に、滴り落ちたグレイヴィをスポイドで吸い上げ、\n<wait>全体に満遍なくかけねば、成立しないのです。\n<wait>
-m/MS0011.BIN	0:09	11	558	1FD2	時計兎：					
-m/MS0011.BIN	0:09	12	568	1FD3	あまつさえ貴方、クリスマス・プディングに至{08:52}は{02:08}\n<wait>					reads: あまつさえ貴方、クリスマス・プディングに至っては‥‥‥\n<wait>
-m/MS0011.BIN	0:09	13	625	1FD0	燕尾服姿の兎{08:62}絶えず時計を確認しながら、何やら料理の手順を雄弁に語り出し、\n止まらなく{08:16}{02:08}\n<wait>					reads: 燕尾服姿の兎は、絶えず時計を確認しながら、何やら料理の手順を雄弁に語り出し、\n止まらなくなった‥‥‥\n<wait>
-m/MS0011.BIN	0:09	14	723	1FD2	時計兎：					
-m/MS0011.BIN	0:09	15	733	1FD3	ああッ、何たる事！\n<wait>貴方と話{08:4A}{08:64}お陰で、五分を十秒も過ぎて{08:1F}では{08:25}{08:55}か！！\n<wait>					reads: ああッ、何たる事！\n<wait>貴方と話していたお陰で、五分を十秒も過ぎてしまったではないですか！！\n<wait>
-m/MS0011.BIN	0:09	16	819	1FD2	時計兎：					
-m/MS0011.BIN	0:09	17	829	1FD3	あ～忙しい{08:72}忙しい！！\n<wait>貴方！　私は忙しいので、{08:48}{08:42}話{08:86}け{08:25}で下{08:49}！\n<wait>					reads: あ～忙しい‥‥忙しい！！\n<wait>貴方！　私は忙しいので、これから話しかけないで下さい！\n<wait>
-m/MS0011.BIN	0:09	18	908	1FD2	時計兎：					
-m/MS0011.BIN	0:09	19	918	1FD3	あ～忙しい{08:72}忙しい！！\n<wait>					reads: あ～忙しい‥‥忙しい！！\n<wait>
-m/MS0011.BIN	0:09	20	949	1FD0	燕尾服姿の兎は相も変わらず、忙しそうに動き廻っ{08:14}。\n<wait>					reads: 燕尾服姿の兎は相も変わらず、忙しそうに動き廻っている。\n<wait>
-m/MS0011.BIN	0:09	21	1047	1FD2	時計兎：					
-m/MS0011.BIN	0:09	22	1057	1FD3	あ～忙しい{08:72}忙しい！！\n<wait>					reads: あ～忙しい‥‥忙しい！！\n<wait>
-m/MS0011.BIN	0:09	23	1088	1FD0	燕尾服姿の兎は相も変わらず、忙しそうに動き廻っ{08:14}。\n<wait>					reads: 燕尾服姿の兎は相も変わらず、忙しそうに動き廻っている。\n<wait>
-m/MS0011.BIN	0:09	24	1145	1FBA	{08:79}隣でアリス{08:62}山盛りに積ま{08:60}リンゴを弄びながら、いそいそと動き廻る、\n兎の姿を真ん丸な瞳で見つめ{08:14}。\n<wait>					reads: その隣でアリスは、山盛りに積まれたリンゴを弄びながら、いそいそと動き廻る、\n兎の姿を真ん丸な瞳で見つめている。\n<wait>
-m/MS0011.BIN	0:09	25	1253	1FD2	アリス：					
-m/MS0011.BIN	0:09	26	1263	1FD3	ねぇ、{08:90}{08:4A}リンゴは赤いの？\n<wait>{01:28}、怒{08:52}ばかり{08:64}のかしら？\n<wait>					reads: ねぇ、どうしてリンゴは赤いの？\n<wait>いつも、怒ってばかりいたのかしら？\n<wait>
-m/MS0011.BIN	0:09	27	1329	1FD2	時計兎：					
-m/MS0011.BIN	0:09	28	1339	1FD3	そりゃあ、違い{08:5A}よ！\n<wait>リンゴは大変におくゆかしい果物で{08:4A}ね{02:08}実は。\n<wait>					reads: そりゃあ、違いますよ！\n<wait>リンゴは大変におくゆかしい果物でしてね‥‥‥実は。\n<wait>
-m/MS0011.BIN	0:09	29	1417	1FD2	アリス：					
-m/MS0011.BIN	0:09	30	1427	1FD3	おくゆかしい{08:52}？\n<wait>					reads: おくゆかしいって？\n<wait>
-m/MS0011.BIN	0:09	31	1452	1FD2	時計兎：					
-m/MS0011.BIN	0:09	32	1462	1FD3	良い所に気づきま{08:4B}ね！！\nおくゆかしいと{08:68}言葉に{08:62}非常に様々な物語が{02:08}\n<wait>					reads: 良い所に気づきましたね！！\nおくゆかしいという言葉には、非常に様々な物語が‥‥‥\n<wait>
-m/MS0011.BIN	0:09	33	1540	1FD0	時計兎は眼鏡をちょいと掛け直し、“おくゆかしさ”にまつわる、\n長い物語を語り始めた。\n<wait>					
-m/MS0011.BIN	0:09	34	1630	1FBA	おとぎの世界の住人達{08:62}おとぎの世界の視点を忠実に守り、研究所の中で、\n仮初めの生を営んで{08:40}。\n<wait>					reads: おとぎの世界の住人達は、おとぎの世界の視点を忠実に守り、研究所の中で、\n仮初めの生を営んでいる。\n<wait>
-m/MS0011.BIN	0:09	35	1728	1FBA	修繕{03:0C}たアリス{08:62}プリンス・ホテルで見たアリスではなく、永遠の少女を\n演じ続{08:29}、無機質な存在で{08:86}{08:25}{02:08}\n<wait>					reads: 修繕されたアリスは、プリンス・ホテルで見たアリスではなく、永遠の少女を\n演じ続ける、無機質な存在でしかない‥‥‥\n<wait>
-m/MS0011.BIN	0:09	36	1832	1FBA	複雑な思いを胸に、					
-m/MS0011.BIN	0:09	37	1856	1F01	は静かに{01:2E}を後に{08:4B}。\n<wait>	 quietly left the room.\n<wait>				reads: は静かに部屋を後にした。\n<wait>; reads: は静かに部屋を後にした。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:09	38	1890	1FD2	時計兎：					
-m/MS0011.BIN	0:09	39	1900	1FD3	{02:08}で{08:62}異刻式懐中時計を御存知かな？\n<wait>					reads: ‥‥‥では、異刻式懐中時計を御存知かな？\n<wait>
-m/MS0011.BIN	0:09	40	1943	1FD2	アリス：					
-m/MS0011.BIN	0:09	41	1953	1FD3	いこくしき？\n<wait>					
-m/MS0011.BIN	0:09	42	1974	1FD2	時計兎：					
-m/MS0011.BIN	0:09	43	1984	1FD3	特殊な性能、つまり{08:72}時計が時間に従うのではなく、時間が時計に従うの{08:55}よ。\n<wait>					reads: 特殊な性能、つまり‥‥時計が時間に従うのではなく、時間が時計に従うのですよ。\n<wait>
-m/MS0011.BIN	0:09	44	2065	1FD2	アリス：					
-m/MS0011.BIN	0:09	45	2075	1FD3	ふうん{08:72}{08:7A}時計があっ{08:50}、すごい事に{08:59}わね。\n<wait>					reads: ふうん‥‥そんな時計があったら、すごい事になるわね。\n<wait>
-m/MS0011.BIN	0:09	46	2126	1FD2	アリス：					
-m/MS0011.BIN	0:09	47	2136	1FD3	ねぇ、{08:7A}事より！\n{08:47}間、お庭で遊んでい{08:50}、木のウロを見つ{08:43}の{02:08}\n<wait>					reads: ねぇ、そんな事より！\nこの間、お庭で遊んでいたら、木のウロを見つけたの‥‥‥\n<wait>
-m/MS0011.BIN	0:09	48	2206	1FD0	アリスは少女らしい仕草を織り交ぜながら、幻想の物語を語り始めた。\n<wait>					
-m/MS0011.BIN	0:09	49	2277	1FBA	{08:7A}アリスの醸し出す出来過ぎた言葉の抑揚が、かえ{08:52}アリスの無機質さを\n強調{08:4A}見{08:41}{02:08}\n<wait>					reads: そんなアリスの醸し出す出来過ぎた言葉の抑揚が、かえってアリスの無機質さを\n強調して見えた‥‥‥\n<wait>
-m/MS0011.BIN	0:09	50	2363	1FBA	おとぎ話に終わりは{08:25}{02:08}\n<wait>そこで{08:62}合わせ鏡の迷宮の様な時間が、終わる事の無い機織りの様に続いて{08:64}。\n					reads: おとぎ話に終わりはない‥‥‥\n<wait>そこでは、合わせ鏡の迷宮の様な時間が、終わる事の無い機織りの様に続いていた。\n
-m/MS0011.BIN	0:09	51	2466	1FD2	時計兎：					
-m/MS0011.BIN	0:09	52	2476	1FD3	あ～忙しい{08:72}忙しい！！\n<wait>					reads: あ～忙しい‥‥忙しい！！\n<wait>
-m/MS0011.BIN	0:09	53	2507	1FD2	アリス：					
-m/MS0011.BIN	0:09	54	2517	1FD3	いつだ{08:52}、そう言っ{08:2B}わ。\n忙しい{08:7D}、時計{08:6A}て捨ててしまえば{08:7F}と思う。\n<wait>					reads: いつだって、そう言ってるわ。\n忙しいなら、時計なんて捨ててしまえばいいと思う。\n<wait>
-m/MS0011.BIN	0:09	55	2593	1FD2	時計兎：					
-m/MS0011.BIN	0:09	56	2603	1FD3	何て事をおっしゃい{08:5A}！\n時計を捨{08:2B}{08:6A}て、何と非論理的な！！\n<wait>					reads: 何て事をおっしゃいます！\n時計を捨てるなんて、何と非論理的な！！\n<wait>
-m/MS0011.BIN	0:09	57	2669	1FD2	アリス：					
-m/MS0011.BIN	0:09	58	2679	1FD3	そうかなぁ{08:72}そうは思わ{08:25}{08:84}。\n<wait>					reads: そうかなぁ‥‥そうは思わないけど。\n<wait>
-m/MS0011.BIN	0:09	59	2716	1FD2	時計兎：					
-m/MS0011.BIN	0:09	60	2726	1FD3	時計が無くて{08:62}何事も始まらず、{08:86}も終わり{02:0A}よ。\nあ～忙しい{08:72}忙しい！！\n<wait>					reads: 時計が無くては、何事も始まらず、しかも終わりませんよ。\nあ～忙しい‥‥忙しい！！\n<wait>
+m/MS0011.BIN	0:08	7	224	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:08	8	236	1FD3	日下が目指す{08:5E}{08:62}死を生に作り替{08:28}と{08:68}事だ。\n<wait>		Kusaka's aim is to convert death into life.\n<wait>	v005		reads: 日下が目指すものは、死を生に作り替えるという事だ。\n<wait>
+m/MS0011.BIN	0:08	9	285	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:08	10	297	1FD3	{08:8F}、わしが目指す{08:5E}{08:62}{08:4D}とは似て否成る{08:5E}だ。\n<wait>		However, that is where our goals differ.\n<wait>	v005		reads: だが、わしが目指すものは、それとは似て否成るものだ。\n<wait>
+m/MS0011.BIN	0:08	11	348	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:08	12	360	1FD3	わしが目指{08:13}の{08:62}限り無く完璧に近い人形{08:72}\n<wait>		What I'm trying to create is a doll as close to\nperfection as possible.\n<wait>	v005		reads: わしが目指しているのは、限り無く完璧に近い人形‥‥\n<wait>
+m/MS0011.BIN	0:08	13	409	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:08	14	421	1FD3	時空に支配{03:0C}る事なく、くるくると踊り続{08:29}{02:08}\n幻想の永久機関を生み出す事{08:6B}だよ。\n<wait>		A doll that can continue dancing for all eternity,\nlimited by neither time nor space. An eternal machine.\n<wait>	v005		reads: 時空に支配される事なく、くるくると踊り続ける‥‥‥\n幻想の永久機関を生み出す事なのだよ。\n<wait>
+m/MS0011.BIN	0:08	15	513	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:08	16	525	1FD3	アリスが戻{08:52}来てく{08:60}{08:74}で、わしは十分幸せだ{08:72}\n<wait>勿論、メイがいなく{08:16}事が、寂しく{08:25}とは言わ{08:25}。\n<wait>		I'm quite pleased to have Alice back.\n<wait>That's not to say that I don't miss Mei.\n<wait>	v005		reads: アリスが戻って来てくれただけで、わしは十分幸せだ‥‥\n<wait>勿論、メイがいなくなった事が、寂しくないとは言わない。\n<wait>
+m/MS0011.BIN	0:08	17	629	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:08	18	641	1FD3	{08:8F}、相手は生身の{02:0B}だ。\nおもちゃの様に、自由に出来る{08:5E}では{08:25}{08:42}な。\n<wait>		Still, at the end of the day, she's a human being, flesh and blood.\nShe is not to be deprived of her freedom like some kind of a toy.\n<wait>	v005		reads: だが、相手は生身の人間だ。\nおもちゃの様に、自由に出来るものではないからな。\n<wait>
+m/MS0011.BIN	0:08	19	716	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:08	20	728	1FD3	{01:29}、{01:29}{02:08}‥\n<wait>君が来{08:50}、教えてやろうと思{08:52}{08:64}事があ{08:51}。\n<wait>		Ah, yes, yes...\n<wait>I nearly forgot.\n<wait>	v005		reads: そうだ、そうだ‥‥‥‥\n<wait>君が来たら、教えてやろうと思っていた事があった。\n<wait>
+m/MS0011.BIN	0:08	21	792	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:08	22	804	1FD3	危うく忘{08:2F}{08:87}だ{08:51}わい。\n<wait>		There's something I wanted to tell you.\n<wait>	v005		reads: 危うく忘れるところだったわい。\n<wait>
+m/MS0011.BIN	0:08	23	835	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:08	24	847	1FD3	神田に{08:7B}学究都市に{08:62}個人{08:56}購入出来る、比較的小型の培養槽が\n売られ{08:14}らしいぞ。\n<wait>		It recently reached my ear that they're selling personal\ncultivation tanks at the Science Town in Kanda.\n<wait>	v005		reads: 神田にある学究都市には、個人でも購入出来る、比較的小型の培養槽が\n売られているらしいぞ。\n<wait>
+m/MS0011.BIN	0:08	25	933	1FD2	平沢博士：		Doctor Hirasawa:	v005		
+m/MS0011.BIN	0:08	26	945	1FD3	{08:76}培養槽が必要{08:7D}、行{08:52}みると{08:7F}。\n<wait>		If you're still in need of one, consider paying them a visit.\n<wait>	v005		reads: まだ培養槽が必要なら、行ってみるといい。\n<wait>
+m/MS0011.BIN	0:09	0	35	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	1	45	1FD3	あ～忙しい{08:72}忙しい！！\n<wait>		Oh dear, oh dear. So busy...\n<wait>	v005		reads: あ～忙しい‥‥忙しい！！\n<wait>
+m/MS0011.BIN	0:09	2	76	1FD0	おとぎの世界{08:42}抜け出{08:4B}様な、燕尾服を来た兎が、懐中時計を片手に、\n苛々と忙しそうに{08:13}{02:08}。\n<wait>		You find yourself face to face with what looks like a character\nripped straight out off the page of a children's book:\nA rabbit wearing a tailcoat and holding a pocket watch.\n<wait>	v005		reads: おとぎの世界から抜け出した様な、燕尾服を来た兎が、懐中時計を片手に、\n苛々と忙しそうにしている‥‥‥。\n<wait>
+m/MS0011.BIN	0:09	3	172	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	4	182	1FD3	何{08:55}か貴方？\n拝見致しま{08:4B}{08:87}、貴方は時計をお持ちで{08:25}！！\n<wait>		And who might you be, good sir?\nHeavens, you don't even have a watch!\n<wait>	v005		reads: 何ですか貴方？\n拝見致しましたところ、貴方は時計をお持ちでない！！\n<wait>
+m/MS0011.BIN	0:09	5	246	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	6	256	1FD3	{08:47}世で時計を持たぬ存在が、果た{08:4A}、自己の存在意義を確立出来得るので\nありま{08:80}か！？\n<wait>		How do you plan on going about establishing your\nraison d'etre without a watch?\n<wait>	v005		reads: この世で時計を持たぬ存在が、果たして、自己の存在意義を確立出来得るので\nありましょうか！？\n<wait>
+m/MS0011.BIN	0:09	7	346	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	8	356	1FD3	良い{08:55}か？\n<wait>		Listen carefully now.\n<wait>	v005		reads: 良いですか？\n<wait>
+m/MS0011.BIN	0:09	9	375	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	10	385	1FD3	ローストチキン{08:62}強めの火できっかり４５分間オーヴンで焼き、\n<wait>{08:79}後は５分毎に、滴り落ちたグレイヴィをスポイドで吸い上げ、\n<wait>全体に満遍なくかけねば、成立し{08:25}の{08:55}。\n<wait>		Roast the chicken for 45 minutes on high heat in the oven.\n<wait>Then, every five minutes, use a syringe to scoop up\nall of the fallen gravy <wait>and pump it back in evenly.\n<wait>	v005		reads: ローストチキンは、強めの火できっかり４５分間オーヴンで焼き、\n<wait>その後は５分毎に、滴り落ちたグレイヴィをスポイドで吸い上げ、\n<wait>全体に満遍なくかけねば、成立しないのです。\n<wait>
+m/MS0011.BIN	0:09	11	558	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	12	568	1FD3	あまつさえ貴方、クリスマス・プディングに至{08:52}は{02:08}\n<wait>		Next, when it comes to the Christmas pudding...\n<wait>	ours		reads: あまつさえ貴方、クリスマス・プディングに至っては‥‥‥\n<wait>
+m/MS0011.BIN	0:09	13	625	1FD0	燕尾服姿の兎{08:62}絶えず時計を確認しながら、何やら料理の手順を雄弁に語り出し、\n止まらなく{08:16}{02:08}\n<wait>		The rabbit continues listing off what sound like cooking instructions\nall the while constantly checking his watch.\n<wait>	v005		reads: 燕尾服姿の兎は、絶えず時計を確認しながら、何やら料理の手順を雄弁に語り出し、\n止まらなくなった‥‥‥\n<wait>
+m/MS0011.BIN	0:09	14	723	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	15	733	1FD3	ああッ、何たる事！\n<wait>貴方と話{08:4A}{08:64}お陰で、五分を十秒も過ぎて{08:1F}では{08:25}{08:55}か！！\n<wait>		Heavens!\n<wait>I've gone over five minutes by ten whole seconds\ntalking with you!\n<wait>	v005		reads: ああッ、何たる事！\n<wait>貴方と話していたお陰で、五分を十秒も過ぎてしまったではないですか！！\n<wait>
+m/MS0011.BIN	0:09	16	819	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	17	829	1FD3	あ～忙しい{08:72}忙しい！！\n<wait>貴方！　私は忙しいので、{08:48}{08:42}話{08:86}け{08:25}で下{08:49}！\n<wait>		Oh dear, oh dear. So busy...\n<wait>Could you please leave me be? I do not have the time for you!\n<wait>	v005		reads: あ～忙しい‥‥忙しい！！\n<wait>貴方！　私は忙しいので、これから話しかけないで下さい！\n<wait>
+m/MS0011.BIN	0:09	18	908	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	19	918	1FD3	あ～忙しい{08:72}忙しい！！\n<wait>		Oh dear, oh dear. So busy...\n<wait>	v005		reads: あ～忙しい‥‥忙しい！！\n<wait>
+m/MS0011.BIN	0:09	20	949	1FD0	燕尾服姿の兎は相も変わらず、忙しそうに動き廻っ{08:14}。\n<wait>		The tailcoat rabbit continues running around nervously.\n<wait>	v005		reads: 燕尾服姿の兎は相も変わらず、忙しそうに動き廻っている。\n<wait>
+m/MS0011.BIN	0:09	21	1047	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	22	1057	1FD3	あ～忙しい{08:72}忙しい！！\n<wait>		Oh dear, oh dear. So busy...\n<wait>	v005		reads: あ～忙しい‥‥忙しい！！\n<wait>
+m/MS0011.BIN	0:09	23	1088	1FD0	燕尾服姿の兎は相も変わらず、忙しそうに動き廻っ{08:14}。\n<wait>		The tailcoat rabbit continues running around nervously.\n<wait>	v005		reads: 燕尾服姿の兎は相も変わらず、忙しそうに動き廻っている。\n<wait>
+m/MS0011.BIN	0:09	24	1145	1FBA	{08:79}隣でアリス{08:62}山盛りに積ま{08:60}リンゴを弄びながら、いそいそと動き廻る、\n兎の姿を真ん丸な瞳で見つめ{08:14}。\n<wait>		Next to him is Alice, staring at the rabbit with\nwide eyes, while simultaneously toying with a pile of apples.\n<wait>	v005		reads: その隣でアリスは、山盛りに積まれたリンゴを弄びながら、いそいそと動き廻る、\n兎の姿を真ん丸な瞳で見つめている。\n<wait>
+m/MS0011.BIN	0:09	25	1253	1FD2	アリス：		Alice:	v005		
+m/MS0011.BIN	0:09	26	1263	1FD3	ねぇ、{08:90}{08:4A}リンゴは赤いの？\n<wait>{01:28}、怒{08:52}ばかり{08:64}のかしら？\n<wait>		Hey. Why are apples red?\n<wait>Is it because they are angry all the time?\n<wait>	v005		reads: ねぇ、どうしてリンゴは赤いの？\n<wait>いつも、怒ってばかりいたのかしら？\n<wait>
+m/MS0011.BIN	0:09	27	1329	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	28	1339	1FD3	そりゃあ、違い{08:5A}よ！\n<wait>リンゴは大変におくゆかしい果物で{08:4A}ね{02:08}実は。\n<wait>		Absolutely not!\n<wait>Apples are the most prestigious members of the family of fruits.\n<wait>	v005		reads: そりゃあ、違いますよ！\n<wait>リンゴは大変におくゆかしい果物でしてね‥‥‥実は。\n<wait>
+m/MS0011.BIN	0:09	29	1417	1FD2	アリス：		Alice:	v005		
+m/MS0011.BIN	0:09	30	1427	1FD3	おくゆかしい{08:52}？\n<wait>		What does "prestigious" mean?\n<wait>	v005		reads: おくゆかしいって？\n<wait>
+m/MS0011.BIN	0:09	31	1452	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	32	1462	1FD3	良い所に気づきま{08:4B}ね！！\nおくゆかしいと{08:68}言葉に{08:62}非常に様々な物語が{02:08}\n<wait>		Ah! I know just the story for this.\n<wait>	v005		reads: 良い所に気づきましたね！！\nおくゆかしいという言葉には、非常に様々な物語が‥‥‥\n<wait>
+m/MS0011.BIN	0:09	33	1540	1FD0	時計兎は眼鏡をちょいと掛け直し、“おくゆかしさ”にまつわる、\n長い物語を語り始めた。\n<wait>		The Watch Rabbit adjusts his glasses before launching into\na lengthy story regarding the word and its usage.\n<wait>	v005		
+m/MS0011.BIN	0:09	34	1630	1FBA	おとぎの世界の住人達{08:62}おとぎの世界の視点を忠実に守り、研究所の中で、\n仮初めの生を営んで{08:40}。\n<wait>		The fairytale people are endlessly devoted to\nkeeping the story going on forever.\n<wait>	v005		reads: おとぎの世界の住人達は、おとぎの世界の視点を忠実に守り、研究所の中で、\n仮初めの生を営んでいる。\n<wait>
+m/MS0011.BIN	0:09	35	1728	1FBA	修繕{03:0C}たアリス{08:62}プリンス・ホテルで見たアリスではなく、永遠の少女を\n演じ続{08:29}、無機質な存在で{08:86}{08:25}{02:08}\n<wait>		This Alice is not the same one you saw at Prince Hotel.\nShe's but a machine playing the role of an eternally young little girl.\n<wait>	v005		reads: 修繕されたアリスは、プリンス・ホテルで見たアリスではなく、永遠の少女を\n演じ続ける、無機質な存在でしかない‥‥‥\n<wait>
+m/MS0011.BIN	0:09	36	1832	1FBA	複雑な思いを胸に、		Not entirely sure how to feel about the situation,\nyou quietly leave the room.\n<wait>	v005		
+m/MS0011.BIN	0:09	37	1856	1F01	は静かに{01:2E}を後に{08:4B}。\n<wait>	 quietly left the room.\n<wait>			draft	reads: は静かに部屋を後にした。\n<wait>; reads: は静かに部屋を後にした。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:09	38	1890	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	39	1900	1FD3	{02:08}で{08:62}異刻式懐中時計を御存知かな？\n<wait>		...Now, do you know what a Reverse Pocket Watch is?<wait>	v005		reads: ‥‥‥では、異刻式懐中時計を御存知かな？\n<wait>
+m/MS0011.BIN	0:09	40	1943	1FD2	アリス：		Alice:	v005		
+m/MS0011.BIN	0:09	41	1953	1FD3	いこくしき？\n<wait>		Err... No?\n<wait>	v005		
+m/MS0011.BIN	0:09	42	1974	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	43	1984	1FD3	特殊な性能、つまり{08:72}時計が時間に従うのではなく、時間が時計に従うの{08:55}よ。\n<wait>		It is a special device where, to put it simply,\nthe watch doesn't follow the time, but rather,\ntime follows the watch.\n<wait>	v005		reads: 特殊な性能、つまり‥‥時計が時間に従うのではなく、時間が時計に従うのですよ。\n<wait>
+m/MS0011.BIN	0:09	44	2065	1FD2	アリス：		Alice:	v005		
+m/MS0011.BIN	0:09	45	2075	1FD3	ふうん{08:72}{08:7A}時計があっ{08:50}、すごい事に{08:59}わね。\n<wait>		Huh... Yeah, that kind of thing would be amazing!\n<wait>	v005		reads: ふうん‥‥そんな時計があったら、すごい事になるわね。\n<wait>
+m/MS0011.BIN	0:09	46	2126	1FD2	アリス：		Alice:	v005		
+m/MS0011.BIN	0:09	47	2136	1FD3	ねぇ、{08:7A}事より！\n{08:47}間、お庭で遊んでい{08:50}、木のウロを見つ{08:43}の{02:08}\n<wait>		Anyway, while I was playing outside earlier,\nI found this tree with a huge hole in it, and...\n<wait>	ours		reads: ねぇ、そんな事より！\nこの間、お庭で遊んでいたら、木のウロを見つけたの‥‥‥\n<wait>
+m/MS0011.BIN	0:09	48	2206	1FD0	アリスは少女らしい仕草を織り交ぜながら、幻想の物語を語り始めた。\n<wait>		In a style bringing to mind the image of a schoolgirl,\nAlice begins reciting another one of her stories.\n<wait>	v005		
+m/MS0011.BIN	0:09	49	2277	1FBA	{08:7A}アリスの醸し出す出来過ぎた言葉の抑揚が、かえ{08:52}アリスの無機質さを\n強調{08:4A}見{08:41}{02:08}\n<wait>		Even the very manner in which she pronounces words\noozes with innocence.\n<wait>	v005		reads: そんなアリスの醸し出す出来過ぎた言葉の抑揚が、かえってアリスの無機質さを\n強調して見えた‥‥‥\n<wait>
+m/MS0011.BIN	0:09	50	2363	1FBA	おとぎ話に終わりは{08:25}{02:08}\n<wait>そこで{08:62}合わせ鏡の迷宮の様な時間が、終わる事の無い機織りの様に続いて{08:64}。\n		Fairytales do not have an ending...\n<wait>They go on and on forever, like an endless hall of mirrors,\nsplintering off to an infinite series of reflections.	v005		reads: おとぎ話に終わりはない‥‥‥\n<wait>そこでは、合わせ鏡の迷宮の様な時間が、終わる事の無い機織りの様に続いていた。\n
+m/MS0011.BIN	0:09	51	2466	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	52	2476	1FD3	あ～忙しい{08:72}忙しい！！\n<wait>		Oh dear, oh dear. So busy...\n<wait>	v005		reads: あ～忙しい‥‥忙しい！！\n<wait>
+m/MS0011.BIN	0:09	53	2507	1FD2	アリス：		Alice:	v005		
+m/MS0011.BIN	0:09	54	2517	1FD3	いつだ{08:52}、そう言っ{08:2B}わ。\n忙しい{08:7D}、時計{08:6A}て捨ててしまえば{08:7F}と思う。\n<wait>		You're always saying that. If you're that busy,\nthen why not just throw your watch away?\n<wait>	v005		reads: いつだって、そう言ってるわ。\n忙しいなら、時計なんて捨ててしまえばいいと思う。\n<wait>
+m/MS0011.BIN	0:09	55	2593	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	56	2603	1FD3	何て事をおっしゃい{08:5A}！\n時計を捨{08:2B}{08:6A}て、何と非論理的な！！\n<wait>		What are you saying? Toss my watch away?\nThat is simply illogical!\n<wait>	v005		reads: 何て事をおっしゃいます！\n時計を捨てるなんて、何と非論理的な！！\n<wait>
+m/MS0011.BIN	0:09	57	2669	1FD2	アリス：		Alice:	v005		
+m/MS0011.BIN	0:09	58	2679	1FD3	そうかなぁ{08:72}そうは思わ{08:25}{08:84}。\n<wait>		Is it? I don't really think so...\n<wait>	v005		reads: そうかなぁ‥‥そうは思わないけど。\n<wait>
+m/MS0011.BIN	0:09	59	2716	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	60	2726	1FD3	時計が無くて{08:62}何事も始まらず、{08:86}も終わり{02:0A}よ。\nあ～忙しい{08:72}忙しい！！\n<wait>		Without a watch, things can never start,\nnor can they ever end. Aah, busy, busy...\n<wait>	v005		reads: 時計が無くては、何事も始まらず、しかも終わりませんよ。\nあ～忙しい‥‥忙しい！！\n<wait>
 m/MS0011.BIN	0:09	61	2814	1F03						
-m/MS0011.BIN	0:09	62	2824	1FD2	時計兎：					
-m/MS0011.BIN	0:09	63	2834	1FD3	おお、貴方良い{08:87}に来ま{08:4B}ね。\n<wait>今まさに、私は重大な発見を{08:4B}{08:87}{08:6B}{08:55}！！\n<wait>					reads: おお、貴方良いところに来ましたね。\n<wait>今まさに、私は重大な発見をしたところなのです！！\n<wait>
-m/MS0011.BIN	0:09	64	2914	1FD2	時計兎：					
-m/MS0011.BIN	0:09	65	2924	1FD3	幸運な貴方に、{08:79}今世紀最大の発見を、特別にお教えしま{08:80}！！\n<wait>					reads: 幸運な貴方に、その今世紀最大の発見を、特別にお教えしましょう！！\n<wait>
-m/MS0011.BIN	0:09	66	2991	1FD0	そう言うと兎{08:62}大鍋で色が変わるほど茹でた奇妙な野菜を、\n	With that, the rabbit took a strange vegetable, boiled in a great pot\nuntil its colour changed, and held it up reverently before 				reads: そう言うと兎は、大鍋で色が変わるほど茹でた奇妙な野菜を、\n; reads: そう言うと兎は、大鍋で色が変わるほど茹でた奇妙な野菜を、\n @seamfix-2026-09-05
-m/MS0011.BIN	0:09	67	3052	1F01	の前に、うやうやしく掲{08:44}。\n<wait>	.\n<wait>				reads: の前に、うやうやしく掲げた。\n<wait>; reads: の前に、うやうやしく掲げた。\n<wait> @rebase-tagdiff @seamfix-2026-09-05
-m/MS0011.BIN	0:09	68	3087	1FD2	時計兎：					
-m/MS0011.BIN	0:09	69	3097	1FD3	よぉく、お聞きな{08:49}！\n“野菜は茹で過ぎて{08:26}け{08:25}”{08:72}お分りになりま{08:4B}かな？\n<wait>					reads: よぉく、お聞きなさい！\n“野菜は茹で過ぎてはいけない”‥‥お分りになりましたかな？\n<wait>
-m/MS0011.BIN	0:09	70	3177	1FD2	時計兎：					
-m/MS0011.BIN	0:09	71	3187	1FD3	野菜を茹で過ぎると、{08:47}様にクタクタな物質になり{08:5A}が、\n適切な茹で時間と{08:72}{08:45}が大事{08:6B}{08:55}が{08:72}少々の塩を混ぜて茹でると、\n素晴らしい仕上がりに{08:59}の{08:55}！！\n<wait>					reads: 野菜を茹で過ぎると、この様にクタクタな物質になりますが、\n適切な茹で時間と‥‥ここが大事なのですが‥‥少々の塩を混ぜて茹でると、\n素晴らしい仕上がりになるのです！！\n<wait>
-m/MS0011.BIN	0:09	72	3340	1FD0	喜々と{08:4A}、野菜の茹で具合について語る兎を放置し、					reads: 喜々として、野菜の茹で具合について語る兎を放置し、
-m/MS0011.BIN	0:09	73	3394	1F01	は{01:2E}を後に{08:4B}。\n	 left the room.\n				reads: は部屋を後にした。\n; reads: は部屋を後にした。\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS0011.BIN	0:09	62	2824	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	63	2834	1FD3	おお、貴方良い{08:87}に来ま{08:4B}ね。\n<wait>今まさに、私は重大な発見を{08:4B}{08:87}{08:6B}{08:55}！！\n<wait>		Ah. You've come at the perfect time.\n<wait>I have just now made a most significant discovery!!\n<wait>	ours		reads: おお、貴方良いところに来ましたね。\n<wait>今まさに、私は重大な発見をしたところなのです！！\n<wait>
+m/MS0011.BIN	0:09	64	2914	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	65	2924	1FD3	幸運な貴方に、{08:79}今世紀最大の発見を、特別にお教えしま{08:80}！！\n<wait>		As the fortunate one that you are, allow me to specially share\nwith you the greatest discovery of this century!!<wait>	ours		reads: 幸運な貴方に、その今世紀最大の発見を、特別にお教えしましょう！！\n<wait>
+m/MS0011.BIN	0:09	66	2991	1FD0	そう言うと兎{08:62}大鍋で色が変わるほど茹でた奇妙な野菜を、\n	With that, the rabbit took a strange vegetable, boiled in a great pot\nuntil its colour changed, and held it up reverently before 	With that, the rabbit holds up a strange vegetable\nboiled in a great pot until it changed color,\n	ours	draft	reads: そう言うと兎は、大鍋で色が変わるほど茹でた奇妙な野菜を、\n; reads: そう言うと兎は、大鍋で色が変わるほど茹でた奇妙な野菜を、\n @seamfix-2026-09-05
+m/MS0011.BIN	0:09	67	3052	1F01	の前に、うやうやしく掲{08:44}。\n<wait>	.\n<wait>	and presents it before {04:FF} with great reverence.\n<wait>	ours	draft	reads: の前に、うやうやしく掲げた。\n<wait>; reads: の前に、うやうやしく掲げた。\n<wait> @rebase-tagdiff @seamfix-2026-09-05
+m/MS0011.BIN	0:09	68	3087	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	69	3097	1FD3	よぉく、お聞きな{08:49}！\n“野菜は茹で過ぎて{08:26}け{08:25}”{08:72}お分りになりま{08:4B}かな？\n<wait>		Listen closely!\n"One must never overboil their vegetables"... Do you understand?\n<wait>	ours		reads: よぉく、お聞きなさい！\n“野菜は茹で過ぎてはいけない”‥‥お分りになりましたかな？\n<wait>
+m/MS0011.BIN	0:09	70	3177	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	71	3187	1FD3	野菜を茹で過ぎると、{08:47}様にクタクタな物質になり{08:5A}が、\n適切な茹で時間と{08:72}{08:45}が大事{08:6B}{08:55}が{08:72}少々の塩を混ぜて茹でると、\n素晴らしい仕上がりに{08:59}の{08:55}！！\n<wait>		Overboil your vegetables, and they become a limp mess like this,\nbut time it right -- and this is the key part -- plus a pinch of salt,\nyou get a truly wonderful result!!\n<wait>	ours		reads: 野菜を茹で過ぎると、この様にクタクタな物質になりますが、\n適切な茹で時間と‥‥ここが大事なのですが‥‥少々の塩を混ぜて茹でると、\n素晴らしい仕上がりになるのです！！\n<wait>
+m/MS0011.BIN	0:09	72	3340	1FD0	喜々と{08:4A}、野菜の茹で具合について語る兎を放置し、		Leaving the rabbit to happily ramble about the vegetable's boiling,	ours		reads: 喜々として、野菜の茹で具合について語る兎を放置し、
+m/MS0011.BIN	0:09	73	3394	1F01	は{01:2E}を後に{08:4B}。\n	 left the room.\n	{04:FF} left the room.\n	ours	draft	reads: は部屋を後にした。\n; reads: は部屋を後にした。\n @rebase-tagdiff @seamfix-2026-09-05
 m/MS0011.BIN	0:09	74	3424	1F03						
-m/MS0011.BIN	0:09	75	3434	1FD2	時計兎：					
-m/MS0011.BIN	0:09	76	3444	1FD3	おお、丁度良{08:18}。\n<wait>貴方は{08:47}人生において、“伸縮自在の鰐”について何か、考察をなさ{08:51}事{08:62}\nおあり{08:55}かな？\n					reads: おお、丁度良かった。\n<wait>貴方はこの人生において、“伸縮自在の鰐”について何か、考察をなさった事は、\nおありですかな？\n
-m/MS0011.BIN	0:09	77	3565	1FB2	断じて無い！					menu option, declared width 20 columns
-m/MS0011.BIN	0:09	78	3579	1FB2	少しは{08:72}					reads: 少しは‥‥; menu option, declared width 20 columns
-m/MS0011.BIN	0:09	79	3609	1FD2	時計兎：	Watch Rabbit:				reads:  @ours-2026-09-05
-m/MS0011.BIN	0:09	80	3619	1FD3	そうで{08:80}！　そうで{08:80}！！\n<wait>	I thought as much! I thought as much!!\n<wait>				reads: そうでしょう！　そうでしょう！！\n<wait>; reads: そうでしょう！　そうでしょう！！\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:09	81	3652	1FD2	時計兎：					
-m/MS0011.BIN	0:09	82	3662	1FD3	全くも{08:52}、そう{08:6B}{08:55}！\n伸縮自在の鰐に関{08:8E}考察{08:62}今{08:71}誰にもな{03:0C}て来{08:19}、\n大い{08:59}課題{08:6B}{08:55}！\n<wait>					reads: 全くもって、そうなのです！\n伸縮自在の鰐に関する考察は、今まで誰にもなされて来なかった、\n大いなる課題なのです！\n<wait>; reads: そうでしょう！　そうでしょう！！\n<wait>
-m/MS0011.BIN	0:09	83	3760	1FD2	時計兎：					
-m/MS0011.BIN	0:09	84	3770	1FD3	ほほう{08:72}お有りに{08:59}？\n<wait>					reads: ほほう‥‥お有りになる？\n<wait>; reads: 全くもって、そうなのです！\n伸縮自在の鰐に関する考察は、今まで誰にもなされて来なかった、\n大いなる課題なのです！\n<wait>
-m/MS0011.BIN	0:09	85	3799	1FD2	時計兎：					
-m/MS0011.BIN	0:09	86	3809	1FD3	{08:4D}は素晴らしい！！\n<wait>常々私{08:62}“伸縮自在の鰐”についての考察を論文にし、発表し{08:69}と\n考えて{08:64}の{08:55}。\n<wait>					reads: それは素晴らしい！！\n<wait>常々私は、“伸縮自在の鰐”についての考察を論文にし、発表しようと\n考えていたのです。\n<wait>; reads: ほほう‥‥お有りになる？\n<wait>
-m/MS0011.BIN	0:09	87	3916	1FD2	時計兎：					
-m/MS0011.BIN	0:09	88	3926	1FD3	思わぬ所に同志が{08:40}とは{08:72}！！\n<wait>					reads: 思わぬ所に同志がいるとは‥‥！！\n<wait>; reads: それは素晴らしい！！\n<wait>常々私は、“伸縮自在の鰐”についての考察を論文にし、発表しようと\n考えていたのです。\n<wait>
-m/MS0011.BIN	0:09	89	3963	1FD2	時計兎：					
-m/MS0011.BIN	0:09	90	3973	1FD3	お{08:53}、{08:5C}三分と四十秒も経{08:52}{08:1F}！\n<wait>					reads: おっと、もう三分と四十秒も経ってしまった！\n<wait>; reads: 思わぬ所に同志がいるとは‥‥！！\n<wait>
-m/MS0011.BIN	0:09	91	4012	1FD2	時計兎：					
-m/MS0011.BIN	0:09	92	4022	1FD3	いや、大変貴重な御意見、誠に感謝致し{08:5A}。\n<wait>					reads: いや、大変貴重な御意見、誠に感謝致します。\n<wait>; reads: おっと、もう三分と四十秒も経ってしまった！\n<wait>
-m/MS0011.BIN	0:09	93	4071	1FD0	兎は再び、いそいそと動き始めた。\nもはや兎に{08:62}	The rabbit hurried busily back into motion.\nBy now it seemed to have no eyes at all for 				reads: 兎は再び、いそいそと動き始めた。\nもはや兎には、; reads: 兎は再び、いそいそと動き始めた。\nもはや兎には、 @seamfix-2026-09-05
-m/MS0011.BIN	0:09	94	4122	1F01	の事など眼中には無い様だ{08:51}。\n<wait>	.\n<wait>				reads: の事など眼中には無い様だった。\n<wait>; reads: いや、大変貴重な御意見、誠に感謝致します。\n<wait> @rebase-tagdiff @seamfix-2026-09-05
+m/MS0011.BIN	0:09	75	3434	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	76	3444	1FD3	おお、丁度良{08:18}。\n<wait>貴方は{08:47}人生において、“伸縮自在の鰐”について何か、考察をなさ{08:51}事{08:62}\nおあり{08:55}かな？\n		Oh, how fortunate you are here.\n<wait>Tell me, have you ever, in this life of yours, given any thought\nto the "infinitely stretchable crocodile"?\n	ours		reads: おお、丁度良かった。\n<wait>貴方はこの人生において、“伸縮自在の鰐”について何か、考察をなさった事は、\nおありですかな？\n
+m/MS0011.BIN	0:09	77	3565	1FB2	断じて無い！		Absolutely not!	ours		menu option, declared width 20 columns
+m/MS0011.BIN	0:09	78	3579	1FB2	少しは{08:72}		A little...	ours		reads: 少しは‥‥; menu option, declared width 20 columns
+m/MS0011.BIN	0:09	79	3609	1FD2	時計兎：	Watch Rabbit:	Watch Rabbit:	v005	draft	reads:  @ours-2026-09-05
+m/MS0011.BIN	0:09	80	3619	1FD3	そうで{08:80}！　そうで{08:80}！！\n<wait>	I thought as much! I thought as much!!\n<wait>	I thought as much! I thought as much!!\n<wait>	ours	draft	reads: そうでしょう！　そうでしょう！！\n<wait>; reads: そうでしょう！　そうでしょう！！\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:09	81	3652	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	82	3662	1FD3	全くも{08:52}、そう{08:6B}{08:55}！\n伸縮自在の鰐に関{08:8E}考察{08:62}今{08:71}誰にもな{03:0C}て来{08:19}、\n大い{08:59}課題{08:6B}{08:55}！\n<wait>		Indeed, quite so!\nNo one has ever studied the ever-stretching crocodile before --\nit is truly a momentous undertaking!\n<wait>	ours		reads: 全くもって、そうなのです！\n伸縮自在の鰐に関する考察は、今まで誰にもなされて来なかった、\n大いなる課題なのです！\n<wait>; reads: そうでしょう！　そうでしょう！！\n<wait>
+m/MS0011.BIN	0:09	83	3760	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	84	3770	1FD3	ほほう{08:72}お有りに{08:59}？\n<wait>		Oho... So you have, have you?\n<wait>	ours		reads: ほほう‥‥お有りになる？\n<wait>; reads: 全くもって、そうなのです！\n伸縮自在の鰐に関する考察は、今まで誰にもなされて来なかった、\n大いなる課題なのです！\n<wait>
+m/MS0011.BIN	0:09	85	3799	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	86	3809	1FD3	{08:4D}は素晴らしい！！\n<wait>常々私{08:62}“伸縮自在の鰐”についての考察を論文にし、発表し{08:69}と\n考えて{08:64}の{08:55}。\n<wait>		How wonderful!!\n<wait>I have long been meaning to write my thoughts on the\n"infinitely stretchable crocodile" into a paper for the world.\n<wait>	ours		reads: それは素晴らしい！！\n<wait>常々私は、“伸縮自在の鰐”についての考察を論文にし、発表しようと\n考えていたのです。\n<wait>; reads: ほほう‥‥お有りになる？\n<wait>
+m/MS0011.BIN	0:09	87	3916	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	88	3926	1FD3	思わぬ所に同志が{08:40}とは{08:72}！！\n<wait>		To think I'd find a kindred spirit in such an unexpected place...!!\n<wait>	ours		reads: 思わぬ所に同志がいるとは‥‥！！\n<wait>; reads: それは素晴らしい！！\n<wait>常々私は、“伸縮自在の鰐”についての考察を論文にし、発表しようと\n考えていたのです。\n<wait>
+m/MS0011.BIN	0:09	89	3963	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	90	3973	1FD3	お{08:53}、{08:5C}三分と四十秒も経{08:52}{08:1F}！\n<wait>		Oh dear, three minutes and forty seconds have already passed!\n<wait>	ours		reads: おっと、もう三分と四十秒も経ってしまった！\n<wait>; reads: 思わぬ所に同志がいるとは‥‥！！\n<wait>
+m/MS0011.BIN	0:09	91	4012	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	92	4022	1FD3	いや、大変貴重な御意見、誠に感謝致し{08:5A}。\n<wait>		Well now, thank you truly for your most valuable opinion.\n<wait>	ours		reads: いや、大変貴重な御意見、誠に感謝致します。\n<wait>; reads: おっと、もう三分と四十秒も経ってしまった！\n<wait>
+m/MS0011.BIN	0:09	93	4071	1FD0	兎は再び、いそいそと動き始めた。\nもはや兎に{08:62}	The rabbit hurried busily back into motion.\nBy now it seemed to have no eyes at all for 	The rabbit hurries busily back into motion once more.\nBy now, the rabbit	ours	draft	reads: 兎は再び、いそいそと動き始めた。\nもはや兎には、; reads: 兎は再び、いそいそと動き始めた。\nもはや兎には、 @seamfix-2026-09-05
+m/MS0011.BIN	0:09	94	4122	1F01	の事など眼中には無い様だ{08:51}。\n<wait>	.\n<wait>	no longer seemed to have eyes for {04:FF} at all.\n<wait>	ours	draft	reads: の事など眼中には無い様だった。\n<wait>; reads: いや、大変貴重な御意見、誠に感謝致します。\n<wait> @rebase-tagdiff @seamfix-2026-09-05
 m/MS0011.BIN	0:09	95	4170	1F03						reads: 兎は再び、いそいそと動き始めた。\nもはや兎には、
-m/MS0011.BIN	0:09	96	4202	1FD2	時計兎：					reads: の事など眼中には無い様だった。\n<wait>
-m/MS0011.BIN	0:09	97	4212	1FD3	クッキーを焦{08:4A}{08:83}何て、何と言う事態{08:8C}{02:08}\n<wait>	To burn the cookies, of all things... what a disaster.........\n<wait>				reads: クッキーを焦してしまう何て、何と言う事態だろう‥‥‥\n<wait>; reads: クッキーを焦してしまう何て、何と言う事態だろう‥‥‥\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:09	98	4259	1FD2	メイ：					
-m/MS0011.BIN	0:09	99	4267	1FD3	オーヴンが調子にのり過ぎた{08:74}だと思うわ。\n{08:5C}一回焼きま{08:80}！\n<wait>					reads: オーヴンが調子にのり過ぎただけだと思うわ。\nもう一回焼きましょう！\n<wait>; reads: クッキーを焦してしまう何て、何と言う事態だろう‥‥‥\n<wait>
-m/MS0011.BIN	0:09	100	4333	1FD2	時計兎：					
-m/MS0011.BIN	0:09	101	4343	1FD3	そう{08:55}ね{08:72}\n{08:47}オーヴン{08:62}時々ハメを外すくせが{08:7B}ので{08:4B}。\n<wait>					reads: そうですね‥‥\nこのオーヴンは、時々ハメを外すくせがあるのでした。\n<wait>; reads: オーヴンが調子にのり過ぎただけだと思うわ。\nもう一回焼きましょう！\n<wait>
-m/MS0011.BIN	0:09	102	4405	1FD2	メイ：					
-m/MS0011.BIN	0:09	103	4413	1FD3	博士が、メイもクッキー焼いて良い{08:52}！\nだ{08:42}、メイも手伝うわ！\n<wait>					reads: 博士が、メイもクッキー焼いて良いって！\nだから、メイも手伝うわ！\n<wait>; reads: そうですね‥‥\nこのオーヴンは、時々ハメを外すくせがあるのでした。\n<wait>
-m/MS0011.BIN	0:09	104	4481	1FD2	時計兎：					
-m/MS0011.BIN	0:09	105	4491	1FD3	で{08:62}気を取り直{08:4A}やりま{08:80}。\n<wait>					reads: では、気を取り直してやりましょう。\n<wait>; reads: 博士が、メイもクッキー焼いて良いって！\nだから、メイも手伝うわ！\n<wait>
-m/MS0011.BIN	0:09	106	4526	1FD2	メイ：					
-m/MS0011.BIN	0:09	107	4534	1FD3	うん！！\n<wait>					reads: では、気を取り直してやりましょう。\n<wait>
-m/MS0011.BIN	0:09	108	4551	1FD0	メイ{08:62}巨大な伸し棒を引きずりながら、テーブル{08:71}運んで{08:40}。\n<wait>					reads: メイは、巨大な伸し棒を引きずりながら、テーブルまで運んでいる。\n<wait>
-m/MS0011.BIN	0:09	109	4614	1FBA	兎は大量の卵と格闘しながら、果敢にクッキー造りに取り組み始めた。\n<wait>					
-m/MS0011.BIN	0:09	110	4685	1FBA	ふたりの邪魔をし{08:25}様に、					reads: ふたりの邪魔をしない様に、; reads: メイは、巨大な伸し棒を引きずりながら、テーブルまで運んでいる。\n<wait>
-m/MS0011.BIN	0:09	111	4715	1F01	はそ{08:53}{01:2E}を後に{08:4B}。\n<wait>	 quietly left the room.\n<wait>				reads: はそっと部屋を後にした。\n<wait>; reads: はそっと部屋を後にした。\n<wait> @rebase-tagdiff @seamfix-2026-09-05
-m/MS0011.BIN	0:09	112	4743	1FD2	時計兎：					reads: ふたりの邪魔をしない様に、
-m/MS0011.BIN	0:09	113	4753	1FD3	あ～忙しい{08:72}忙しい！！\n<wait>					reads: あ～忙しい‥‥忙しい！！\n<wait>; reads: はそっと部屋を後にした。\n<wait>
-m/MS0011.BIN	0:09	114	4784	1FD0	燕尾服姿の兎は相も変わらず、忙しそうに動き廻っ{08:14}。\n<wait>					reads: 燕尾服姿の兎は相も変わらず、忙しそうに動き廻っている。\n<wait>
-m/MS0011.BIN	0:09	115	4841	1FBA	{08:79}隣でメイも同じ様に、いそいそとナプキンを畳んではバスケットに詰め{08:14}。\n<wait>					reads: その隣でメイも同じ様に、いそいそとナプキンを畳んではバスケットに詰めている。\n<wait>; reads: あ～忙しい‥‥忙しい！！\n<wait>
-m/MS0011.BIN	0:09	116	4920	1FD2	時計兎：					reads: 燕尾服姿の兎は相も変わらず、忙しそうに動き廻っている。\n<wait>
-m/MS0011.BIN	0:09	117	4930	1FD3	折り目{08:62}きっかり４５度の角度{08:55}よ。\nそうでなくて{08:62}気持ち悪い{08:55}{08:42}ね！\n<wait>					reads: 折り目は、きっかり４５度の角度ですよ。\nそうでなくては、気持ち悪いですからね！\n<wait>; reads: その隣でメイも同じ様に、いそいそとナプキンを畳んではバスケットに詰めている。\n<wait>
-m/MS0011.BIN	0:09	118	5006	1FD2	メイ：					
-m/MS0011.BIN	0:09	119	5014	1FD3	はぁ～い！\n<wait>					reads: 折り目は、きっかり４５度の角度ですよ。\nそうでなくては、気持ち悪いですからね！\n<wait>
-m/MS0011.BIN	0:09	120	5033	1FD2	時計兎：					
-m/MS0011.BIN	0:09	121	5043	1FD3	さて、オーヴンの調子は{08:90}で{08:80}かね？\n<wait>					reads: さて、オーヴンの調子はどうでしょうかね？\n<wait>
-m/MS0011.BIN	0:09	122	5086	1FD2	時計兎：					
-m/MS0011.BIN	0:09	123	5096	1FD3	あ～忙しい{08:72}忙しい！！\n<wait>					reads: あ～忙しい‥‥忙しい！！\n<wait>; reads: さて、オーヴンの調子はどうでしょうかね？\n<wait>
-m/MS0011.BIN	0:09	124	5127	1FD0	メイ{08:62}{08:64}{08:52}楽しそうに{08:13}。\n<wait>					reads: メイは、いたって楽しそうにしている。\n<wait>
-m/MS0011.BIN	0:09	125	5158	1FBA	{08:45}はおとぎの世界{08:79}{08:5E}だ。\n<wait>子供にと{08:52}{08:62}{08:48}以上楽しい環境は{08:25}の{08:8C}。\n<wait>					reads: ここはおとぎの世界そのものだ。\n<wait>子供にとっては、これ以上楽しい環境はないのだろう。\n<wait>; reads: あ～忙しい‥‥忙しい！！\n<wait>
-m/MS0011.BIN	0:09	126	5273	1FD2	時計兎：					reads: メイは、いたって楽しそうにしている。\n<wait>
-m/MS0011.BIN	0:09	127	5283	1FD3	近頃、お茶の時間と言えば、ハンプティ・ダンプティ・プディングと、\n決まっ{08:14}の{08:55}よ。\n<wait>					reads: 近頃、お茶の時間と言えば、ハンプティ・ダンプティ・プディングと、\n決まっているのですよ。\n<wait>; reads: ここはおとぎの世界そのものだ。\n<wait>子供にとっては、これ以上楽しい環境はないのだろう。\n<wait>
-m/MS0011.BIN	0:09	128	5373	1FD2	時計兎：					
-m/MS0011.BIN	0:09	129	5383	1FD3	{08:48}が{08:5B}、恐ろしい程手間の掛かるお菓子で{08:4A}ね{08:72}\nオーヴンに入{08:2F}時間を少し{08:56}間違うと、見るも無残に萎んで{08:83}ん{08:55}。\n<wait>					reads: これがまた、恐ろしい程手間の掛かるお菓子でしてね‥‥\nオーヴンに入れる時間を少しでも間違うと、見るも無残に萎んでしまうんです。\n<wait>; reads: 近頃、お茶の時間と言えば、ハンプティ・ダンプティ・プディングと、\n決まっているのですよ。\n<wait>
-m/MS0011.BIN	0:09	130	5499	1FD2	時計兎：					
-m/MS0011.BIN	0:09	131	5509	1FD3	そうそう、雀蜂の顔の様にね！！\n<wait>					reads: これがまた、恐ろしい程手間の掛かるお菓子でしてね‥‥\nオーヴンに入れる時間を少しでも間違うと、見るも無残に萎んでしまうんです。\n<wait>
-m/MS0011.BIN	0:09	132	5548	1FD2	メイ：					
-m/MS0011.BIN	0:09	133	5556	1FD3	こ{08:25}だ{08:62}大爆発{08:4B}のよ！\n{08:5C}、ムクムク{08:52}出てきちゃ{08:52}、すご{08:18}の！\n<wait>					reads: こないだは、大爆発したのよ！\nもう、ムクムクって出てきちゃって、すごかったの！\n<wait>
-m/MS0011.BIN	0:09	134	5626	1FD2	時計兎：					
-m/MS0011.BIN	0:09	135	5636	1FD3	嗚呼！　{08:4D}を言{08:52}{08:26}け{02:0A}！！\n<wait>					reads: 嗚呼！　それを言ってはいけません！！\n<wait>; reads: こないだは、大爆発したのよ！\nもう、ムクムクって出てきちゃって、すごかったの！\n<wait>
-m/MS0011.BIN	0:09	136	5671	1FD2	メイ：					
-m/MS0011.BIN	0:09	137	5679	1FD3	クスクスクス{02:08}\n<wait>					reads: クスクスクス‥‥‥\n<wait>; reads: 嗚呼！　それを言ってはいけません！！\n<wait>
-m/MS0011.BIN	0:0A	0	30	1FD2	トランプ兵士：					
-m/MS0011.BIN	0:0A	1	46	1FD3	{02:08}ぐー‥ぐー{02:08}すぴー{08:72}すぱぱ{02:08}‥\n<wait>					reads: ‥‥‥ぐー‥ぐー‥‥‥すぴー‥‥すぱぱ‥‥‥‥\n<wait>
-m/MS0011.BIN	0:0A	2	87	1FD0	トランプの兵士{08:62}居眠りを{08:13}様だ。\n<wait>					reads: トランプの兵士は、居眠りをしている様だ。\n<wait>
-m/MS0011.BIN	0:0A	3	178	1FD1	＞{02:06}\n					reads: ＞どうしますか？\n
-m/MS0011.BIN	0:0A	4	199	1FB2	大声を出す！					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0011.BIN	0:0A	5	213	1FB2	そ{08:53}しとく					reads: そっとしとく; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0011.BIN	0:0A	6	245	1FD0	意地悪を{08:4A}みたく{08:16}	Play a prank on him 				reads: 意地悪をしてみたくなった; reads: 意地悪をしてみたくなった @ours-2026-09-05
-m/MS0011.BIN	0:0A	7	269	1F01	{08:62}トランプ兵士の側{08:71}近づき、\n突然大声を張上{08:44}！！\n<wait>	 went right up to the card soldier and\nsuddenly bellowed at the top of his voice!!\n<wait>				reads: は、トランプ兵士の側まで近づき、\n突然大声を張上げた！！\n<wait>; reads: 意地悪をしてみたくなった @ours-2026-09-05
-m/MS0011.BIN	0:0A	8	333	1F01	：	:				reads: ：; reads: は、トランプ兵士の側まで近づき、\n突然大声を張上げた！！\n<wait> @refalign
-m/MS0011.BIN	0:0A	9	337	1FD3	敵軍襲来！　敵軍襲来ぃぃ！！！\n<wait>	Enemy attack! Enemy attaaack!!!\n<wait>				reads: ： @ours-2026-09-05
-m/MS0011.BIN	0:0A	10	376	1FD2	トランプ兵士：	Card Soldier:				@ours-2026-09-05
-m/MS0011.BIN	0:0A	11	392	1FD3	うわぁぁああッ！！\nどどどどど{08:72}敵は何処だっ！　{08:5B}{08:5B}ネズミかッ！！\n<wait>	Waaaaah!!\nW-w-w-where's the enemy! Not the rats again!!\n<wait>				reads: うわぁぁああッ！！\nどどどどど‥‥敵は何処だっ！　またまたネズミかッ！！\n<wait>; reads: うわぁぁああッ！！\nどどどどど‥‥敵は何処だっ！　またまたネズミかッ！！\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:0A	12	476	1FC4	ドンガラガッシャーン！！\n<wait>	CRASH! BANG! CLATTER!!\n<wait>				reads: うわぁぁああッ！！\nどどどどど‥‥敵は何処だっ！　またまたネズミかッ！！\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:0A	13	509	1FD2	トランプ兵士：	Card Soldier:				@ours-2026-09-05
-m/MS0011.BIN	0:0A	14	525	1FD3	うわぁぁぁぁぁ！！　やら{08:60}ぁぁぁあ！！\n<wait>	Waaaaaah!! They got meeee!!\n<wait>				reads: うわぁぁぁぁぁ！！　やられたぁぁぁあ！！\n<wait>; reads: うわぁぁぁぁぁ！！　やられたぁぁぁあ！！\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:0A	15	572	1FD0	トランプ兵士は猛烈な勢いで走り出し、{08:79}挙げ句、思いっきり棚に激突{08:4B}。\n<wait>	The card soldier tore off at a furious pace and ended up slamming\nheadlong into a shelf.\n<wait>				reads: トランプ兵士は猛烈な勢いで走り出し、その挙げ句、思いっきり棚に激突した。\n<wait>; reads: うわぁぁぁぁぁ！！　やられたぁぁぁあ！！\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:0A	16	649	1FD2	トランプ兵士：	Card Soldier:				reads: トランプ兵士は猛烈な勢いで走り出し、その挙げ句、思いっきり棚に激突した。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:0A	17	665	1FD3	{02:08}うう{08:72}ハッ！　私は{08:90}{08:4A}{08:45}に？\n<wait>	......Ugh... Ah! Why am I here?\n<wait>				reads: ‥‥‥うう‥‥ハッ！　私はどうしてここに？\n<wait>; reads: ‥‥‥うう‥‥ハッ！　私はどうしてここに？\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:0A	18	726	1FD2	トランプ兵士：	Card Soldier:				reads: ‥‥‥うう‥‥ハッ！　私はどうしてここに？\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:0A	19	742	1FD3	何だか{08:72}壮絶な寝ぼけ方を{08:4B}み{08:4E}{08:55}。\nいやいや、お恥ずかしい！\n<wait>	It seems... I've been sleepwalking rather spectacularly.\nDear me, how embarrassing!\n<wait>				reads: 何だか‥‥壮絶な寝ぼけ方をしたみたいです。\nいやいや、お恥ずかしい！\n<wait>; reads: 何だか‥‥壮絶な寝ぼけ方をしたみたいです。\nいやいや、お恥ずかしい！\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:0A	20	836	1FD0	そう言うと、トランプ兵士は再び眠り始めて{08:1F}{02:08}\n<wait>	With that, the card soldier fell asleep again......\n<wait>				reads: そう言うと、トランプ兵士は再び眠り始めてしまった‥‥‥\n<wait>; reads: 何だか‥‥壮絶な寝ぼけ方をしたみたいです。\nいやいや、お恥ずかしい！\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:0A	21	890	1FD0	起こすのも可哀相だと思{08:51}	Feeling it would be cruel to wake him, 				reads: 起こすのも可哀相だと思った; reads: そう言うと、トランプ兵士は再び眠り始めてしまった‥‥‥\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:0A	22	920	1F01	{08:62}{08:59}べく音をたて{08:25}様に、\nそう{08:53}{01:2E}を後に{08:4B}。\n<wait>	 slipped out of the room as quietly as he could.\n<wait>				reads: は、なるべく音をたてない様に、\nそうっと部屋を後にした。\n<wait>; reads: 起こすのも可哀相だと思った @ours-2026-09-05
-m/MS0011.BIN	0:0A	23	993	1FD2	トランプ兵士：	Card Soldier:				reads: は、なるべく音をたてない様に、\nそうっと部屋を後にした。\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:0A	24	1009	1FD3	{02:08}ぐー‥ぐー{02:08}すぴー{08:72}すぱぱ{02:08}‥\n<wait>	......Zzz... zzz...... snore... snuffle.........\n<wait>				reads: ‥‥‥ぐー‥ぐー‥‥‥すぴー‥‥すぱぱ‥‥‥‥\n<wait>; reads: ‥‥‥ぐー‥ぐー‥‥‥すぴー‥‥すぱぱ‥‥‥‥\n<wait> @ours-2026-09-05
-m/MS0011.BIN	0:0A	25	1050	1FD0	トランプの兵士{08:62}居眠りを{08:13}{02:08}\n<wait>	The card soldier is dozing......\n<wait>				reads: トランプの兵士は、居眠りをしている‥‥‥\n<wait>; reads: ‥‥‥ぐー‥ぐー‥‥‥すぴー‥‥すぱぱ‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:09	96	4202	1FD2	時計兎：		Watch Rabbit:	v005		reads: の事など眼中には無い様だった。\n<wait>
+m/MS0011.BIN	0:09	97	4212	1FD3	クッキーを焦{08:4A}{08:83}何て、何と言う事態{08:8C}{02:08}\n<wait>	To burn the cookies, of all things... what a disaster.........\n<wait>	To burn the cookies, of all things... what a disaster...\n<wait>	ours	draft	reads: クッキーを焦してしまう何て、何と言う事態だろう‥‥‥\n<wait>; reads: クッキーを焦してしまう何て、何と言う事態だろう‥‥‥\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:09	98	4259	1FD2	メイ：		Mei:	v005		
+m/MS0011.BIN	0:09	99	4267	1FD3	オーヴンが調子にのり過ぎた{08:74}だと思うわ。\n{08:5C}一回焼きま{08:80}！\n<wait>		I think the oven just got a little carried away.\nLet's bake another batch!\n<wait>	ours		reads: オーヴンが調子にのり過ぎただけだと思うわ。\nもう一回焼きましょう！\n<wait>; reads: クッキーを焦してしまう何て、何と言う事態だろう‥‥‥\n<wait>
+m/MS0011.BIN	0:09	100	4333	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	101	4343	1FD3	そう{08:55}ね{08:72}\n{08:47}オーヴン{08:62}時々ハメを外すくせが{08:7B}ので{08:4B}。\n<wait>		You're right...\nThis oven does have a habit of getting out of hand every now and then.\n<wait>	ours		reads: そうですね‥‥\nこのオーヴンは、時々ハメを外すくせがあるのでした。\n<wait>; reads: オーヴンが調子にのり過ぎただけだと思うわ。\nもう一回焼きましょう！\n<wait>
+m/MS0011.BIN	0:09	102	4405	1FD2	メイ：		Mei:	v005		
+m/MS0011.BIN	0:09	103	4413	1FD3	博士が、メイもクッキー焼いて良い{08:52}！\nだ{08:42}、メイも手伝うわ！\n<wait>		The doctor said Mei could bake cookies too!\nSo Mei's gonna help out!\n<wait>	ours		reads: 博士が、メイもクッキー焼いて良いって！\nだから、メイも手伝うわ！\n<wait>; reads: そうですね‥‥\nこのオーヴンは、時々ハメを外すくせがあるのでした。\n<wait>
+m/MS0011.BIN	0:09	104	4481	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	105	4491	1FD3	で{08:62}気を取り直{08:4A}やりま{08:80}。\n<wait>		Well then, let's pull ourselves together and try again.\n<wait>	ours		reads: では、気を取り直してやりましょう。\n<wait>; reads: 博士が、メイもクッキー焼いて良いって！\nだから、メイも手伝うわ！\n<wait>
+m/MS0011.BIN	0:09	106	4526	1FD2	メイ：		Mei:	v005		
+m/MS0011.BIN	0:09	107	4534	1FD3	うん！！\n<wait>		Yeah!!\n<wait>	ours		reads: では、気を取り直してやりましょう。\n<wait>
+m/MS0011.BIN	0:09	108	4551	1FD0	メイ{08:62}巨大な伸し棒を引きずりながら、テーブル{08:71}運んで{08:40}。\n<wait>		Mei drags an enormous rolling pin across to the table.\n<wait>	ours		reads: メイは、巨大な伸し棒を引きずりながら、テーブルまで運んでいる。\n<wait>
+m/MS0011.BIN	0:09	109	4614	1FBA	兎は大量の卵と格闘しながら、果敢にクッキー造りに取り組み始めた。\n<wait>		The rabbit bravely sets to work making cookies,\nwrestling with a mountain of eggs.<wait>	ours		
+m/MS0011.BIN	0:09	110	4685	1FBA	ふたりの邪魔をし{08:25}様に、		So as not to get in the way of the two of them,	ours		reads: ふたりの邪魔をしない様に、; reads: メイは、巨大な伸し棒を引きずりながら、テーブルまで運んでいる。\n<wait>
+m/MS0011.BIN	0:09	111	4715	1F01	はそ{08:53}{01:2E}を後に{08:4B}。\n<wait>	 quietly left the room.\n<wait>	{04:FF} quietly left the room.\n<wait>	ours	draft	reads: はそっと部屋を後にした。\n<wait>; reads: はそっと部屋を後にした。\n<wait> @rebase-tagdiff @seamfix-2026-09-05
+m/MS0011.BIN	0:09	112	4743	1FD2	時計兎：		Watch Rabbit:	v005		reads: ふたりの邪魔をしない様に、
+m/MS0011.BIN	0:09	113	4753	1FD3	あ～忙しい{08:72}忙しい！！\n<wait>		Oh dear, oh dear. So busy...\n<wait>	v005		reads: あ～忙しい‥‥忙しい！！\n<wait>; reads: はそっと部屋を後にした。\n<wait>
+m/MS0011.BIN	0:09	114	4784	1FD0	燕尾服姿の兎は相も変わらず、忙しそうに動き廻っ{08:14}。\n<wait>		The tailcoat rabbit continues running around nervously.\n<wait>	v005		reads: 燕尾服姿の兎は相も変わらず、忙しそうに動き廻っている。\n<wait>
+m/MS0011.BIN	0:09	115	4841	1FBA	{08:79}隣でメイも同じ様に、いそいそとナプキンを畳んではバスケットに詰め{08:14}。\n<wait>		Beside him, Mei is likewise busy folding napkins\nand packing them into a basket.<wait>	ours		reads: その隣でメイも同じ様に、いそいそとナプキンを畳んではバスケットに詰めている。\n<wait>; reads: あ～忙しい‥‥忙しい！！\n<wait>
+m/MS0011.BIN	0:09	116	4920	1FD2	時計兎：		Watch Rabbit:	v005		reads: 燕尾服姿の兎は相も変わらず、忙しそうに動き廻っている。\n<wait>
+m/MS0011.BIN	0:09	117	4930	1FD3	折り目{08:62}きっかり４５度の角度{08:55}よ。\nそうでなくて{08:62}気持ち悪い{08:55}{08:42}ね！\n<wait>		The fold must be at precisely a forty-five degree angle.\nAnything else would just feel wrong!\n<wait>	ours		reads: 折り目は、きっかり４５度の角度ですよ。\nそうでなくては、気持ち悪いですからね！\n<wait>; reads: その隣でメイも同じ様に、いそいそとナプキンを畳んではバスケットに詰めている。\n<wait>
+m/MS0011.BIN	0:09	118	5006	1FD2	メイ：		Mei:	v005		
+m/MS0011.BIN	0:09	119	5014	1FD3	はぁ～い！\n<wait>		Okaaay!\n<wait>	ours		reads: 折り目は、きっかり４５度の角度ですよ。\nそうでなくては、気持ち悪いですからね！\n<wait>
+m/MS0011.BIN	0:09	120	5033	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	121	5043	1FD3	さて、オーヴンの調子は{08:90}で{08:80}かね？\n<wait>		Now then, I wonder how the oven is doing?\n<wait>	ours		reads: さて、オーヴンの調子はどうでしょうかね？\n<wait>
+m/MS0011.BIN	0:09	122	5086	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	123	5096	1FD3	あ～忙しい{08:72}忙しい！！\n<wait>		Oh dear, oh dear. So busy...\n<wait>	v005		reads: あ～忙しい‥‥忙しい！！\n<wait>; reads: さて、オーヴンの調子はどうでしょうかね？\n<wait>
+m/MS0011.BIN	0:09	124	5127	1FD0	メイ{08:62}{08:64}{08:52}楽しそうに{08:13}。\n<wait>		Mei looks like she's having a great deal of fun.\n<wait>	ours		reads: メイは、いたって楽しそうにしている。\n<wait>
+m/MS0011.BIN	0:09	125	5158	1FBA	{08:45}はおとぎの世界{08:79}{08:5E}だ。\n<wait>子供にと{08:52}{08:62}{08:48}以上楽しい環境は{08:25}の{08:8C}。\n<wait>		This place really is a fairy-tale world.\n<wait>There's probably no more fun environment for a child than this.\n<wait>	ours		reads: ここはおとぎの世界そのものだ。\n<wait>子供にとっては、これ以上楽しい環境はないのだろう。\n<wait>; reads: あ～忙しい‥‥忙しい！！\n<wait>
+m/MS0011.BIN	0:09	126	5273	1FD2	時計兎：		Watch Rabbit:	v005		reads: メイは、いたって楽しそうにしている。\n<wait>
+m/MS0011.BIN	0:09	127	5283	1FD3	近頃、お茶の時間と言えば、ハンプティ・ダンプティ・プディングと、\n決まっ{08:14}の{08:55}よ。\n<wait>		These days, teatime around here always means\nHumpty Dumpty Pudding, without fail.\n<wait>	ours		reads: 近頃、お茶の時間と言えば、ハンプティ・ダンプティ・プディングと、\n決まっているのですよ。\n<wait>; reads: ここはおとぎの世界そのものだ。\n<wait>子供にとっては、これ以上楽しい環境はないのだろう。\n<wait>
+m/MS0011.BIN	0:09	128	5373	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	129	5383	1FD3	{08:48}が{08:5B}、恐ろしい程手間の掛かるお菓子で{08:4A}ね{08:72}\nオーヴンに入{08:2F}時間を少し{08:56}間違うと、見るも無残に萎んで{08:83}ん{08:55}。\n<wait>		It's a fearsomely labor-intensive treat, mind you...\nGet the oven time a little wrong, and it shrivels into a pitiful mess.\n<wait>	ours		reads: これがまた、恐ろしい程手間の掛かるお菓子でしてね‥‥\nオーヴンに入れる時間を少しでも間違うと、見るも無残に萎んでしまうんです。\n<wait>; reads: 近頃、お茶の時間と言えば、ハンプティ・ダンプティ・プディングと、\n決まっているのですよ。\n<wait>
+m/MS0011.BIN	0:09	130	5499	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	131	5509	1FD3	そうそう、雀蜂の顔の様にね！！\n<wait>		Ah yes, just like a hornet's face!!\n<wait>	ours		reads: これがまた、恐ろしい程手間の掛かるお菓子でしてね‥‥\nオーヴンに入れる時間を少しでも間違うと、見るも無残に萎んでしまうんです。\n<wait>
+m/MS0011.BIN	0:09	132	5548	1FD2	メイ：		Mei:	v005		
+m/MS0011.BIN	0:09	133	5556	1FD3	こ{08:25}だ{08:62}大爆発{08:4B}のよ！\n{08:5C}、ムクムク{08:52}出てきちゃ{08:52}、すご{08:18}の！\n<wait>		Last time it exploded completely!\nIt just came puffing out everywhere, it was amazing!\n<wait>	ours		reads: こないだは、大爆発したのよ！\nもう、ムクムクって出てきちゃって、すごかったの！\n<wait>
+m/MS0011.BIN	0:09	134	5626	1FD2	時計兎：		Watch Rabbit:	v005		
+m/MS0011.BIN	0:09	135	5636	1FD3	嗚呼！　{08:4D}を言{08:52}{08:26}け{02:0A}！！\n<wait>		Oh dear! You mustn't say that!!\n<wait>	ours		reads: 嗚呼！　それを言ってはいけません！！\n<wait>; reads: こないだは、大爆発したのよ！\nもう、ムクムクって出てきちゃって、すごかったの！\n<wait>
+m/MS0011.BIN	0:09	136	5671	1FD2	メイ：		Mei:	v005		
+m/MS0011.BIN	0:09	137	5679	1FD3	クスクスクス{02:08}\n<wait>		Tee-hee-hee...\n<wait>	ours		reads: クスクスクス‥‥‥\n<wait>; reads: 嗚呼！　それを言ってはいけません！！\n<wait>
+m/MS0011.BIN	0:0A	0	30	1FD2	トランプ兵士：		Trump Soldier:	v005		
+m/MS0011.BIN	0:0A	1	46	1FD3	{02:08}ぐー‥ぐー{02:08}すぴー{08:72}すぱぱ{02:08}‥\n<wait>		Zzz... Zzz...\n<wait>	v005		reads: ‥‥‥ぐー‥ぐー‥‥‥すぴー‥‥すぱぱ‥‥‥‥\n<wait>
+m/MS0011.BIN	0:0A	2	87	1FD0	トランプの兵士{08:62}居眠りを{08:13}様だ。\n<wait>		The Trump Soldier appears to be sleeping.\n<wait>	v005		reads: トランプの兵士は、居眠りをしている様だ。\n<wait>
+m/MS0011.BIN	0:0A	3	178	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n
+m/MS0011.BIN	0:0A	4	199	1FB2	大声を出す！		Yell loudly!	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0011.BIN	0:0A	5	213	1FB2	そ{08:53}しとく		Leave him be	v005		reads: そっとしとく; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0011.BIN	0:0A	6	245	1FD0	意地悪を{08:4A}みたく{08:16}	Play a prank on him 	Finding yourself in a mischievous mood,\nyou walk over to the soldier and place your mouth right next to his ear.\n<wait>	v005	draft	reads: 意地悪をしてみたくなった; reads: 意地悪をしてみたくなった @ours-2026-09-05
+m/MS0011.BIN	0:0A	7	269	1F01	{08:62}トランプ兵士の側{08:71}近づき、\n突然大声を張上{08:44}！！\n<wait>	 went right up to the card soldier and\nsuddenly bellowed at the top of his voice!!\n<wait>			draft	reads: は、トランプ兵士の側まで近づき、\n突然大声を張上げた！！\n<wait>; reads: 意地悪をしてみたくなった @ours-2026-09-05
+m/MS0011.BIN	0:0A	8	333	1F01	：	:	:	v005	draft	reads: ：; reads: は、トランプ兵士の側まで近づき、\n突然大声を張上げた！！\n<wait> @refalign
+m/MS0011.BIN	0:0A	9	337	1FD3	敵軍襲来！　敵軍襲来ぃぃ！！！\n<wait>	Enemy attack! Enemy attaaack!!!\n<wait>			draft	reads: ： @ours-2026-09-05
+m/MS0011.BIN	0:0A	10	376	1FD2	トランプ兵士：	Card Soldier:			draft	@ours-2026-09-05
+m/MS0011.BIN	0:0A	11	392	1FD3	うわぁぁああッ！！\nどどどどど{08:72}敵は何処だっ！　{08:5B}{08:5B}ネズミかッ！！\n<wait>	Waaaaah!!\nW-w-w-where's the enemy! Not the rats again!!\n<wait>			draft	reads: うわぁぁああッ！！\nどどどどど‥‥敵は何処だっ！　またまたネズミかッ！！\n<wait>; reads: うわぁぁああッ！！\nどどどどど‥‥敵は何処だっ！　またまたネズミかッ！！\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:0A	12	476	1FC4	ドンガラガッシャーン！！\n<wait>	CRASH! BANG! CLATTER!!\n<wait>			draft	reads: うわぁぁああッ！！\nどどどどど‥‥敵は何処だっ！　またまたネズミかッ！！\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:0A	13	509	1FD2	トランプ兵士：	Card Soldier:			draft	@ours-2026-09-05
+m/MS0011.BIN	0:0A	14	525	1FD3	うわぁぁぁぁぁ！！　やら{08:60}ぁぁぁあ！！\n<wait>	Waaaaaah!! They got meeee!!\n<wait>			draft	reads: うわぁぁぁぁぁ！！　やられたぁぁぁあ！！\n<wait>; reads: うわぁぁぁぁぁ！！　やられたぁぁぁあ！！\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:0A	15	572	1FD0	トランプ兵士は猛烈な勢いで走り出し、{08:79}挙げ句、思いっきり棚に激突{08:4B}。\n<wait>	The card soldier tore off at a furious pace and ended up slamming\nheadlong into a shelf.\n<wait>			draft	reads: トランプ兵士は猛烈な勢いで走り出し、その挙げ句、思いっきり棚に激突した。\n<wait>; reads: うわぁぁぁぁぁ！！　やられたぁぁぁあ！！\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:0A	16	649	1FD2	トランプ兵士：	Card Soldier:			draft	reads: トランプ兵士は猛烈な勢いで走り出し、その挙げ句、思いっきり棚に激突した。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:0A	17	665	1FD3	{02:08}うう{08:72}ハッ！　私は{08:90}{08:4A}{08:45}に？\n<wait>	......Ugh... Ah! Why am I here?\n<wait>			draft	reads: ‥‥‥うう‥‥ハッ！　私はどうしてここに？\n<wait>; reads: ‥‥‥うう‥‥ハッ！　私はどうしてここに？\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:0A	18	726	1FD2	トランプ兵士：	Card Soldier:			draft	reads: ‥‥‥うう‥‥ハッ！　私はどうしてここに？\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:0A	19	742	1FD3	何だか{08:72}壮絶な寝ぼけ方を{08:4B}み{08:4E}{08:55}。\nいやいや、お恥ずかしい！\n<wait>	It seems... I've been sleepwalking rather spectacularly.\nDear me, how embarrassing!\n<wait>			draft	reads: 何だか‥‥壮絶な寝ぼけ方をしたみたいです。\nいやいや、お恥ずかしい！\n<wait>; reads: 何だか‥‥壮絶な寝ぼけ方をしたみたいです。\nいやいや、お恥ずかしい！\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:0A	20	836	1FD0	そう言うと、トランプ兵士は再び眠り始めて{08:1F}{02:08}\n<wait>	With that, the card soldier fell asleep again......\n<wait>			draft	reads: そう言うと、トランプ兵士は再び眠り始めてしまった‥‥‥\n<wait>; reads: 何だか‥‥壮絶な寝ぼけ方をしたみたいです。\nいやいや、お恥ずかしい！\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:0A	21	890	1FD0	起こすのも可哀相だと思{08:51}	Feeling it would be cruel to wake him, 			draft	reads: 起こすのも可哀相だと思った; reads: そう言うと、トランプ兵士は再び眠り始めてしまった‥‥‥\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:0A	22	920	1F01	{08:62}{08:59}べく音をたて{08:25}様に、\nそう{08:53}{01:2E}を後に{08:4B}。\n<wait>	 slipped out of the room as quietly as he could.\n<wait>			draft	reads: は、なるべく音をたてない様に、\nそうっと部屋を後にした。\n<wait>; reads: 起こすのも可哀相だと思った @ours-2026-09-05
+m/MS0011.BIN	0:0A	23	993	1FD2	トランプ兵士：	Card Soldier:			draft	reads: は、なるべく音をたてない様に、\nそうっと部屋を後にした。\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:0A	24	1009	1FD3	{02:08}ぐー‥ぐー{02:08}すぴー{08:72}すぱぱ{02:08}‥\n<wait>	......Zzz... zzz...... snore... snuffle.........\n<wait>			draft	reads: ‥‥‥ぐー‥ぐー‥‥‥すぴー‥‥すぱぱ‥‥‥‥\n<wait>; reads: ‥‥‥ぐー‥ぐー‥‥‥すぴー‥‥すぱぱ‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0011.BIN	0:0A	25	1050	1FD0	トランプの兵士{08:62}居眠りを{08:13}{02:08}\n<wait>	The card soldier is dozing......\n<wait>			draft	reads: トランプの兵士は、居眠りをしている‥‥‥\n<wait>; reads: ‥‥‥ぐー‥ぐー‥‥‥すぴー‥‥すぱぱ‥‥‥‥\n<wait> @ours-2026-09-05

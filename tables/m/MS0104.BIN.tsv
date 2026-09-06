@@ -3,27 +3,27 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0104.BIN	0:00	0	0	DATA	他にご用件はあり{08:15}\n					reads: 他にご用件はありますか？\n; reads: 他にご用件はありますか？\n @refalign
-m/MS0104.BIN	0:01	0	0	DATA	あら、	Oh, 				@refalign @ours-2026-09-05
-m/MS0104.BIN	0:01	1	12	1F01	さん。いらっしゃ{08:89}せ。\nご用件を{08:90}ぞ。\n	. Welcome.				reads: さん。いらっしゃいませ。\nご用件をどうぞ。\n; reads: さん。いらっしゃいませ。\nご用件をどうぞ。\n @ours-2026-09-05
-m/MS0104.BIN	0:02	0	0	DATA	そなえ{08:3F}ば憂い無し。どれも良い品{08:55}よ。\nゆっくり見てい{08:52}下{08:49}。\n					reads: そなえあれば憂い無し。どれも良い品ですよ。\nゆっくり見ていって下さい。\n; reads: そなえあれば憂い無し。どれも良い品ですよ。\nゆっくり見ていって下さい。\n @refalign
-m/MS0104.BIN	0:03	0	0	DATA	うちで扱っ{08:2B}物を持{08:52}{08:24}み{08:4E}{08:55}よ。\n					reads: うちで扱ってる物を持っていないみたいですよ。\n; reads: うちで扱ってる物を持っていないみたいですよ。\n @refalign
-m/MS0104.BIN	0:04	0	0	DATA	どれを買い取ればよろしい{08:55}か？\n					reads: どれを買い取ればよろしいですか？\n; reads: どれを買い取ればよろしいですか？\n @refalign
-m/MS0104.BIN	0:05	0	0	DATA	{08:72}あの、お金が足り{08:25}{08:69}{08:55}が？\n					reads: ‥‥あの、お金が足りないようですが？\n; reads: ‥‥あの、お金が足りないようですが？\n @refalign
-m/MS0104.BIN	0:06	0	0	DATA	お買い上げの品は{02:0E}でよろしい{08:55}ね？\n					reads: お買い上げの品はこちらでよろしいですね？\n; reads: お買い上げの品はこちらでよろしいですね？\n @refalign
-m/MS0104.BIN	0:07	0	0	DATA	{08:7A}に持ち切れ{02:0A}よ。\n					reads: そんなに持ち切れませんよ。\n
-m/MS0104.BIN	0:08	0	0	DATA	こう{08:68}物にお金をけち{08:52}も{08:7F}{08:46}{08:6A}て\nあり{02:0A}よ。\n					reads: こういう物にお金をけちってもいいことなんて\nありませんよ。\n
-m/MS0104.BIN	0:09	0	0	DATA	うーん、{08:79}値では{08:72}。せめて、{08:47}くらいで。\n					reads: うーん、その値では‥‥。せめて、このくらいで。\n
-m/MS0104.BIN	0:0A	0	0	DATA	{08:7F}で{08:80}！ お売りし{08:5A}。\n					reads: いいでしょう！ お売りします。\n
-m/MS0104.BIN	0:0B	0	0	DATA	{01:2A}ござい{08:5A}。\n用法と分量は守{08:52}使{08:52}下{08:49}ね。\n					reads: ありがとうございます。\n用法と分量は守って使って下さいね。\n
-m/MS0104.BIN	0:0C	0	0	DATA	引き取る品は{02:0E}でよろしい{08:55}ね？\n					reads: 引き取る品はこちらでよろしいですね？\n
-m/MS0104.BIN	0:0D	0	0	DATA	いくら{08:6A}{08:56}高すぎ{08:5A}よ。\n{08:72}{08:5C}少し安くはなり{02:0A}か？\n					reads: いくらなんでも高すぎますよ。\n‥‥もう少し安くはなりませんか？\n
-m/MS0104.BIN	0:0E	0	0	DATA	{08:4D}{08:81}ちょ{08:53}高い{08:55}ね。\n{08:72}せめて{08:47}くらいになり{02:0A}か？\n					reads: それじゃちょっと高いですね。\n‥‥せめてこのくらいになりませんか？\n
-m/MS0104.BIN	0:0F	0	0	DATA	{08:7F}で{08:80}。{08:79}値で買い取り{08:5A}。\n					reads: いいでしょう。その値で買い取ります。\n
-m/MS0104.BIN	0:10	0	0	DATA	{01:2A}ござい{08:5A}。\n					reads: ありがとうございます。\n
-m/MS0104.BIN	0:11	0	0	DATA	あ{08:72}{01:29}わ。\n					reads: あ‥‥そうだわ。\n
-m/MS0104.BIN	0:12	0	0	DATA	{01:2A}ござ{08:89}{08:4B}。\n次{08:42}もごひいきにお願いし{08:5A}。\n					reads: ありがとうございました。\n次からもごひいきにお願いします。\n; reads: ありがとうございました。\n次からもごひいきにお願いします。\n @refalign
-m/MS0104.BIN	0:13	0	0	DATA	{08:5B}要ら{08:25}{08:5E}があっ{08:50}お願いし{08:5A}よ。\n					reads: また要らないものがあったらお願いしますよ。\n; reads: また要らないものがあったらお願いしますよ。\n @refalign
-m/MS0104.BIN	0:14	0	6	1F01	さん、ひやかしはやめて下{08:49}よ。\n	-san, please don't come just to browse.\n				reads: さん、ひやかしはやめて下さいよ。\n; reads: さん、ひやかしはやめて下さいよ。\n @rebase-tagdiff @seamfix-2026-09-05
-m/MS0104.BIN	0:15	0	4	1FD2	店員：					
-m/MS0104.BIN	0:15	1	18	1F01	さん、良{08:18}ら使{08:52}下{08:49}。\nつまん{08:25}物{08:55}{08:84}。\n	-san, please take this if you like.\nIt's nothing much.\n				reads: さん、良かったら使って下さい。\nつまんない物ですけど。\n; reads: さん、良かったら使って下さい。\nつまんない物ですけど。\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS0104.BIN	0:00	0	0	DATA	他にご用件はあり{08:15}\n		Do you need anything else?\n	v005		reads: 他にご用件はありますか？\n; reads: 他にご用件はありますか？\n @refalign
+m/MS0104.BIN	0:01	0	0	DATA	あら、	Oh, 	Ah, Katsuragi. Welcome.\nHow can I help you today?\n	v005	draft	@refalign @ours-2026-09-05
+m/MS0104.BIN	0:01	1	12	1F01	さん。いらっしゃ{08:89}せ。\nご用件を{08:90}ぞ。\n	. Welcome.			draft	reads: さん。いらっしゃいませ。\nご用件をどうぞ。\n; reads: さん。いらっしゃいませ。\nご用件をどうぞ。\n @ours-2026-09-05
+m/MS0104.BIN	0:02	0	0	DATA	そなえ{08:3F}ば憂い無し。どれも良い品{08:55}よ。\nゆっくり見てい{08:52}下{08:49}。\n		It's always good to be prepared.\nHere's everything we have on sale. Please, have a look.\n	v005		reads: そなえあれば憂い無し。どれも良い品ですよ。\nゆっくり見ていって下さい。\n; reads: そなえあれば憂い無し。どれも良い品ですよ。\nゆっくり見ていって下さい。\n @refalign
+m/MS0104.BIN	0:03	0	0	DATA	うちで扱っ{08:2B}物を持{08:52}{08:24}み{08:4E}{08:55}よ。\n		Sorry, but it seems like you don't have anything\nwith you that I can buy.\n	v005		reads: うちで扱ってる物を持っていないみたいですよ。\n; reads: うちで扱ってる物を持っていないみたいですよ。\n @refalign
+m/MS0104.BIN	0:04	0	0	DATA	どれを買い取ればよろしい{08:55}か？\n		What would you like to sell?\n	v005		reads: どれを買い取ればよろしいですか？\n; reads: どれを買い取ればよろしいですか？\n @refalign
+m/MS0104.BIN	0:05	0	0	DATA	{08:72}あの、お金が足り{08:25}{08:69}{08:55}が？\n		Sorry, but it seems like you don't have enough money.\n	v005		reads: ‥‥あの、お金が足りないようですが？\n; reads: ‥‥あの、お金が足りないようですが？\n @refalign
+m/MS0104.BIN	0:06	0	0	DATA	お買い上げの品は{02:0E}でよろしい{08:55}ね？\n		Will this be all?\n	v005		reads: お買い上げの品はこちらでよろしいですね？\n; reads: お買い上げの品はこちらでよろしいですね？\n @refalign
+m/MS0104.BIN	0:07	0	0	DATA	{08:7A}に持ち切れ{02:0A}よ。\n		You can't carry that much.\n	ours		reads: そんなに持ち切れませんよ。\n
+m/MS0104.BIN	0:08	0	0	DATA	こう{08:68}物にお金をけち{08:52}も{08:7F}{08:46}{08:6A}て\nあり{02:0A}よ。\n		There's no upside to skimping on money for something like this.\n	ours		reads: こういう物にお金をけちってもいいことなんて\nありませんよ。\n
+m/MS0104.BIN	0:09	0	0	DATA	うーん、{08:79}値では{08:72}。せめて、{08:47}くらいで。\n		Hmm, at that price...... At least come up to about this much.\n	ours		reads: うーん、その値では‥‥。せめて、このくらいで。\n
+m/MS0104.BIN	0:0A	0	0	DATA	{08:7F}で{08:80}！ お売りし{08:5A}。\n		All right! I'll sell it to you.\n	ours		reads: いいでしょう！ お売りします。\n
+m/MS0104.BIN	0:0B	0	0	DATA	{01:2A}ござい{08:5A}。\n用法と分量は守{08:52}使{08:52}下{08:49}ね。\n		Thank you very much.\nPlease be sure to follow the dosage and directions.\n	ours		reads: ありがとうございます。\n用法と分量は守って使って下さいね。\n
+m/MS0104.BIN	0:0C	0	0	DATA	引き取る品は{02:0E}でよろしい{08:55}ね？\n		These are the items you'd like to sell, correct?\n	ours		reads: 引き取る品はこちらでよろしいですね？\n
+m/MS0104.BIN	0:0D	0	0	DATA	いくら{08:6A}{08:56}高すぎ{08:5A}よ。\n{08:72}{08:5C}少し安くはなり{02:0A}か？\n		That's way too expensive, no matter how you look at it.\n...... Could you bring it down a bit more?\n	ours		reads: いくらなんでも高すぎますよ。\n‥‥もう少し安くはなりませんか？\n
+m/MS0104.BIN	0:0E	0	0	DATA	{08:4D}{08:81}ちょ{08:53}高い{08:55}ね。\n{08:72}せめて{08:47}くらいになり{02:0A}か？\n		That's a bit pricey.\n...... Could you get it down to at least about this much?\n	ours		reads: それじゃちょっと高いですね。\n‥‥せめてこのくらいになりませんか？\n
+m/MS0104.BIN	0:0F	0	0	DATA	{08:7F}で{08:80}。{08:79}値で買い取り{08:5A}。\n		All right. I'll buy it at that price.\n	ours		reads: いいでしょう。その値で買い取ります。\n
+m/MS0104.BIN	0:10	0	0	DATA	{01:2A}ござい{08:5A}。\n		Thank you very much.\n	ours		reads: ありがとうございます。\n
+m/MS0104.BIN	0:11	0	0	DATA	あ{08:72}{01:29}わ。\n		Ah...... that's right.\n	ours		reads: あ‥‥そうだわ。\n
+m/MS0104.BIN	0:12	0	0	DATA	{01:2A}ござ{08:89}{08:4B}。\n次{08:42}もごひいきにお願いし{08:5A}。\n		Thank you very much. Please come by again.\n	v005		reads: ありがとうございました。\n次からもごひいきにお願いします。\n; reads: ありがとうございました。\n次からもごひいきにお願いします。\n @refalign
+m/MS0104.BIN	0:13	0	0	DATA	{08:5B}要ら{08:25}{08:5E}があっ{08:50}お願いし{08:5A}よ。\n		If you ever need something, please come by again.\n	v005		reads: また要らないものがあったらお願いしますよ。\n; reads: また要らないものがあったらお願いしますよ。\n @refalign
+m/MS0104.BIN	0:14	0	6	1F01	さん、ひやかしはやめて下{08:49}よ。\n	-san, please don't come just to browse.\n	Please don't come by if you're not going to buy anything.\n	v005	draft	reads: さん、ひやかしはやめて下さいよ。\n; reads: さん、ひやかしはやめて下さいよ。\n @rebase-tagdiff @seamfix-2026-09-05
+m/MS0104.BIN	0:15	0	4	1FD2	店員：		Clerk:	v005		
+m/MS0104.BIN	0:15	1	18	1F01	さん、良{08:18}ら使{08:52}下{08:49}。\nつまん{08:25}物{08:55}{08:84}。\n	-san, please take this if you like.\nIt's nothing much.\n	I'd like you to have this, Katsuragi.\nIt's not much, but I hope it may prove useful on your journey.\n	v005	draft	reads: さん、良かったら使って下さい。\nつまんない物ですけど。\n; reads: さん、良かったら使って下さい。\nつまんない物ですけど。\n @rebase-tagdiff @seamfix-2026-09-05

@@ -3,38 +3,38 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-et/ID00C1.BIN	0:97	0	0	DATA	＞{02:06}\n					reads: ＞どうしますか？\n
-et/ID00C1.BIN	0:97	1	21	1FB2	宝石	Gems				menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @seamfix-2026-09-05
-et/ID00C1.BIN	0:97	2	27	1FB2	魔石	Magic Stones				menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @seamfix-2026-09-05
+et/ID00C1.BIN	0:97	0	0	DATA	＞{02:06}\n		>{02:06}\n	ours		reads: ＞どうしますか？\n
+et/ID00C1.BIN	0:97	1	21	1FB2	宝石	Gems			draft	menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @seamfix-2026-09-05
+et/ID00C1.BIN	0:97	2	27	1FB2	魔石	Magic Stones			draft	menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @seamfix-2026-09-05
 et/ID00C1.BIN	0:97	3	33	1FB2	ＭＡＧ					menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new
-et/ID00C1.BIN	0:97	4	41	1FB2	金	Money				menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @seamfix-2026-09-05
-et/ID00C1.BIN	0:97	5	45	1FB2	他の物					menu option, declared width 20 columns
-et/ID00C1.BIN	0:97	6	97	1FB2	お菓子をあげる					menu option, declared width 20 columns; reads: 燎デビルバスター燠飛び道具燵切り早坂達也
-et/ID00C1.BIN	0:97	7	113	1FB2	パンプキンヘッド					menu option, declared width 20 columns
-et/ID00C1.BIN	0:97	8	131	1FB2	や{08:2E}					reads: やめる; menu option, declared width 20 columns
-et/ID00C1.BIN	0:97	9	137	1FB2	他の物					menu option, declared width 20 columns; reads: やめる
-et/ID00C1.BIN	0:97	10	212	00	お菓子を持{08:52}{08:24}！\n	You had sweets!\n				reads: お菓子を持っていない！\n; menu option, declared width 20 columns @rebase-unmatched idx10 en=Other @rebase-unmatched idx10 en=Other @seamfix-2026-09-05
-et/ID00C1.BIN	0:97	11	291	1FB2	仕方{08:25}な	Oh, all right				reads: 仕方ないな; menu option, declared width 20 columns; reads: 桐島英美 @seamfix-2026-09-05
-et/ID00C1.BIN	0:97	12	301	1FB2	駄目っ{08:50}駄目！					reads: 駄目ったら駄目！; menu option, declared width 20 columns; reads: 燼そんなこと] @rebase-unmatched idx12 en=燼such a thing] @rebase-unmatched idx12 en=燼such a thing]
-et/ID00C1.BIN	0:97	13	317	1FB2	{08:5C}持{08:52}{08:25}					reads: もう持ってない; menu option, declared width 20 columns; reads: お菓子を持っていない！\n @rebase-unmatched idx13 en=You don't have any candy!\n @rebase-unmatched idx13 en=You don't have any candy!\n
-et/ID00C1.BIN	0:97	14	358	00	お菓子を持{08:52}{08:24}！\n	You had sweets!\n				reads: お菓子を持っていない！\n; reads: われわれ @seamfix-2026-09-05
-et/ID00C1.BIN	0:97	15	481	18	お菓子を持{08:52}{08:24}！\n	You had sweets!\n				reads: お菓子を持っていない！\n; reads: お菓子を持っていない！\n @seamfix-2026-09-05
-et/ID00C1.BIN	0:97	16	534	17	{08:7A}物は持{08:52}{08:24}！\n	You had one!\n				reads: そんな物は持っていない！\n; reads: そんな物は持っていない！\n @seamfix-2026-09-05
-et/ID00C1.BIN	0:97	17	612	1FB2	そっくり{08:6B}に					reads: そっくりなのに; menu option, declared width 20 columns; reads: 仕方ないな @rebase-unmatched idx17 en=I guess so @rebase-unmatched idx17 en=I guess so
-et/ID00C1.BIN	0:97	18	626	1FB2	ごめんな{08:49}					reads: ごめんなさい; menu option, declared width 20 columns; reads: 駄目ったら駄目！ @rebase-unmatched idx18 en=No means no! @rebase-unmatched idx19 en=Don't Have Any @rebase-unmatched idx18 en=No means no! @rebase-unmatched idx19 en=Don't Have Any
-et/ID00C1.BIN	5:09	0	26	1F01	は\n辺りに火をつけ{08:69}と{08:13}！\n	 is\nabout to set the area on fire!\n				reads: は\n辺りに火をつけようとしている！\n; reads: は\n辺りに火をつけようとしている！\n @rebase-tagdiff @seamfix-2026-09-05
-et/ID00C1.BIN	5:09	1	68	1FB2	一緒にやる					menu option, declared width 20 columns
-et/ID00C1.BIN	5:09	2	80	1FB2	そりゃヤバイ					menu option, declared width 20 columns
-et/ID00C1.BIN	5:09	3	94	1FB2	ほ{08:53}く					reads: ほっとく; menu option, declared width 20 columns
-et/ID00C1.BIN	5:09	4	218	1FB2	駄目っ{08:50}駄目！	No means no!				reads: 駄目ったら駄目！; menu option, declared width 20 columns; menu option, declared width 20 columns @seamfix-2026-09-05
-et/ID00C1.BIN	5:09	5	234	1FB2	仕方{08:25}な					reads: 仕方ないな; menu option, declared width 20 columns; reads: ペンタグランマｸ @rebase-unmatched idx5 en=Pentagramｸ @rebase-unmatched idx5 en=Pentagramｸ
-et/ID00C1.BIN	5:09	6	355	1FB2	仕方{08:25}な	Oh, all right				reads: 仕方ないな; menu option, declared width 20 columns; menu option, declared width 20 columns @seamfix-2026-09-05
-et/ID00C1.BIN	5:09	7	365	1FB2	絶対いや					menu option, declared width 20 columns; reads: 駄目ったら駄目！
-et/ID00C1.BIN	5:25	0	0	DATA	ねーねー　遊ぼうよー！\n<wait>					
-et/ID00C1.BIN	15:AE	0	0	DATA	れぇーっつ{02:09}ふぁいやぁー！\n<wait>					reads: れぇーっつ・・・ふぁいやぁー！\n<wait>
-et/ID00C1.BIN	15:AF	0	0	DATA	にーちゃんやる{08:81}ん！\n<wait>					reads: にーちゃんやるじゃん！\n<wait>
-et/ID00C1.BIN	15:B0	0	0	DATA	燃{08:28}男に{08:4A}やるぜぇ！\nそぉーれアギぃ！\n<wait>					reads: 燃える男にしてやるぜぇ！\nそぉーれアギぃ！\n<wait>
-et/ID00C1.BIN	15:B1	0	0	DATA	遊んでく{08:2F}{08:52}言{08:51}のにぃ\n<wait>					reads: 遊んでくれるって言ったのにぃ\n<wait>
-et/ID00C1.BIN	15:B2	0	0	DATA	何{08:4D}？\n{08:78}っち{08:7A}にヘンなカオ{08:81}なぁーい！\n<wait>					reads: 何それ？\nおれっちそんなにヘンなカオじゃなぁーい！\n<wait>
-et/ID00C1.BIN	15:B3	0	0	DATA	すっげーハンサム！\n{08:48}でかわいー女の子も\nオッケーだぁ！\n<wait>					reads: すっげーハンサム！\nこれでかわいー女の子も\nオッケーだぁ！\n<wait>
-et/ID00C1.BIN	15:B5	0	0	DATA	けちー！\n<wait>					
+et/ID00C1.BIN	0:97	4	41	1FB2	金	Money			draft	menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @seamfix-2026-09-05
+et/ID00C1.BIN	0:97	5	45	1FB2	他の物		Gemstone	ours		menu option, declared width 20 columns
+et/ID00C1.BIN	0:97	6	97	1FB2	お菓子をあげる		Magic Stone	ours		menu option, declared width 20 columns; reads: 燎デビルバスター燠飛び道具燵切り早坂達也
+et/ID00C1.BIN	0:97	7	113	1FB2	パンプキンヘッド		MAG	ours		menu option, declared width 20 columns
+et/ID00C1.BIN	0:97	8	131	1FB2	や{08:2E}		Money	ours		reads: やめる; menu option, declared width 20 columns
+et/ID00C1.BIN	0:97	9	137	1FB2	他の物		Other	ours		menu option, declared width 20 columns; reads: やめる
+et/ID00C1.BIN	0:97	10	212	00	お菓子を持{08:52}{08:24}！\n	You had sweets!\n	燎Devil Buster燠Ranged Weapon燵{04:01}{01:00}	ours	draft	reads: お菓子を持っていない！\n; menu option, declared width 20 columns @rebase-unmatched idx10 en=Other @rebase-unmatched idx10 en=Other @seamfix-2026-09-05
+et/ID00C1.BIN	0:97	11	291	1FB2	仕方{08:25}な	Oh, all right	Give Candy	ours	draft	reads: 仕方ないな; menu option, declared width 20 columns; reads: 桐島英美 @seamfix-2026-09-05
+et/ID00C1.BIN	0:97	12	301	1FB2	駄目っ{08:50}駄目！		Pumpkin Head	ours		reads: 駄目ったら駄目！; menu option, declared width 20 columns; reads: 燼そんなこと] @rebase-unmatched idx12 en=燼such a thing] @rebase-unmatched idx12 en=燼such a thing]
+et/ID00C1.BIN	0:97	13	317	1FB2	{08:5C}持{08:52}{08:25}		Cancel	ours		reads: もう持ってない; menu option, declared width 20 columns; reads: お菓子を持っていない！\n @rebase-unmatched idx13 en=You don't have any candy!\n @rebase-unmatched idx13 en=You don't have any candy!\n
+et/ID00C1.BIN	0:97	14	358	00	お菓子を持{08:52}{08:24}！\n	You had sweets!\n	You don't have any candy!\n	ours	draft	reads: お菓子を持っていない！\n; reads: われわれ @seamfix-2026-09-05
+et/ID00C1.BIN	0:97	15	481	18	お菓子を持{08:52}{08:24}！\n	You had sweets!\n	You don't have any candy!\n	ours	draft	reads: お菓子を持っていない！\n; reads: お菓子を持っていない！\n @seamfix-2026-09-05
+et/ID00C1.BIN	0:97	16	534	17	{08:7A}物は持{08:52}{08:24}！\n	You had one!\n	You don't have anything like that!\n	ours	draft	reads: そんな物は持っていない！\n; reads: そんな物は持っていない！\n @seamfix-2026-09-05
+et/ID00C1.BIN	0:97	17	612	1FB2	そっくり{08:6B}に		Looks the Same	ours		reads: そっくりなのに; menu option, declared width 20 columns; reads: 仕方ないな @rebase-unmatched idx17 en=I guess so @rebase-unmatched idx17 en=I guess so
+et/ID00C1.BIN	0:97	18	626	1FB2	ごめんな{08:49}		I'm Sorry	ours		reads: ごめんなさい; menu option, declared width 20 columns; reads: 駄目ったら駄目！ @rebase-unmatched idx18 en=No means no! @rebase-unmatched idx19 en=Don't Have Any @rebase-unmatched idx18 en=No means no! @rebase-unmatched idx19 en=Don't Have Any
+et/ID00C1.BIN	5:09	0	26	1F01	は\n辺りに火をつけ{08:69}と{08:13}！\n	 is\nabout to set the area on fire!\n	It's\nabout to set the area on fire!\n	ours	draft	reads: は\n辺りに火をつけようとしている！\n; reads: は\n辺りに火をつけようとしている！\n @rebase-tagdiff @seamfix-2026-09-05
+et/ID00C1.BIN	5:09	1	68	1FB2	一緒にやる		Join In	ours		menu option, declared width 20 columns
+et/ID00C1.BIN	5:09	2	80	1FB2	そりゃヤバイ		That's Bad	ours		menu option, declared width 20 columns
+et/ID00C1.BIN	5:09	3	94	1FB2	ほ{08:53}く		Leave It	ours		reads: ほっとく; menu option, declared width 20 columns
+et/ID00C1.BIN	5:09	4	218	1FB2	駄目っ{08:50}駄目！	No means no!	No means no!	ours	draft	reads: 駄目ったら駄目！; menu option, declared width 20 columns; menu option, declared width 20 columns @seamfix-2026-09-05
+et/ID00C1.BIN	5:09	5	234	1FB2	仕方{08:25}な		I guess so	ours		reads: 仕方ないな; menu option, declared width 20 columns; reads: ペンタグランマｸ @rebase-unmatched idx5 en=Pentagramｸ @rebase-unmatched idx5 en=Pentagramｸ
+et/ID00C1.BIN	5:09	6	355	1FB2	仕方{08:25}な	Oh, all right	I guess so	ours	draft	reads: 仕方ないな; menu option, declared width 20 columns; menu option, declared width 20 columns @seamfix-2026-09-05
+et/ID00C1.BIN	5:09	7	365	1FB2	絶対いや		No Way	ours		menu option, declared width 20 columns; reads: 駄目ったら駄目！
+et/ID00C1.BIN	5:25	0	0	DATA	ねーねー　遊ぼうよー！\n<wait>		Hey hey, let's play!\n<wait>	ours		
+et/ID00C1.BIN	15:AE	0	0	DATA	れぇーっつ{02:09}ふぁいやぁー！\n<wait>		Reeeaady...fiiire!\n<wait>	ours		reads: れぇーっつ・・・ふぁいやぁー！\n<wait>
+et/ID00C1.BIN	15:AF	0	0	DATA	にーちゃんやる{08:81}ん！\n<wait>		Not bad, mister!\n<wait>	ours		reads: にーちゃんやるじゃん！\n<wait>
+et/ID00C1.BIN	15:B0	0	0	DATA	燃{08:28}男に{08:4A}やるぜぇ！\nそぉーれアギぃ！\n<wait>		I'll turn you into a burnin' man!\nHeeere goes, Agi!\n<wait>	ours		reads: 燃える男にしてやるぜぇ！\nそぉーれアギぃ！\n<wait>
+et/ID00C1.BIN	15:B1	0	0	DATA	遊んでく{08:2F}{08:52}言{08:51}のにぃ\n<wait>		But you said you'd play with me...\n<wait>	ours		reads: 遊んでくれるって言ったのにぃ\n<wait>
+et/ID00C1.BIN	15:B2	0	0	DATA	何{08:4D}？\n{08:78}っち{08:7A}にヘンなカオ{08:81}なぁーい！\n<wait>		Whaaat's that?\nI don't have that weird a face!\n<wait>	ours		reads: 何それ？\nおれっちそんなにヘンなカオじゃなぁーい！\n<wait>
+et/ID00C1.BIN	15:B3	0	0	DATA	すっげーハンサム！\n{08:48}でかわいー女の子も\nオッケーだぁ！\n<wait>		Su-per handsome!\nNow even cute girls\nare totally okay with me!\n<wait>	ours		reads: すっげーハンサム！\nこれでかわいー女の子も\nオッケーだぁ！\n<wait>
+et/ID00C1.BIN	15:B5	0	0	DATA	けちー！\n<wait>		Stingy!\n<wait>	ours		

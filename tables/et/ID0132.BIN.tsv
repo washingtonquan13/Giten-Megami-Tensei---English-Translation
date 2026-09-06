@@ -3,30 +3,30 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-et/ID0132.BIN	0:00	0	18	1F88	＞会話可能圏外{08:55}\n　会話対象に接近{08:4A}下{08:49}\n<wait>					reads: ＞会話可能圏外です\n　会話対象に接近して下さい\n<wait>
-et/ID0132.BIN	0:00	1	143	1FB2	{08:4D}はちょ{08:53}…	That is a bit......				reads: それはちょっと…; menu option, declared width 20 columns; menu option, declared width 20 columns @seamfix-2026-09-05
-et/ID0132.BIN	0:00	2	157	1FB2	まあ{08:7F}{08:84}	Well, all right				reads: まあいいけど; menu option, declared width 20 columns; menu option, declared width 20 columns @seamfix-2026-09-05
-et/ID0132.BIN	0:00	3	226	1FB2	{08:26}	{08:26}				reads: はい; menu option, declared width 20 columns
-et/ID0132.BIN	0:00	4	230	1FB2	思い直す					menu option, declared width 20 columns; reads: それはちょっと…
-et/ID0132.BIN	0:00	5	281	1FB2	怒る					menu option, declared width 20 columns; reads: まあいいけど
-et/ID0132.BIN	0:00	6	287	1FB2	黙っ{08:2B}	Stay silent				reads: 黙ってる; menu option, declared width 20 columns; reads: おまえ @seamfix-2026-09-05
-et/ID0132.BIN	0:00	7	348	1FB2	{08:4D}で{08:7F}{08:55}	That will do				reads: それでいいです; menu option, declared width 20 columns; menu option, declared width 20 columns @seamfix-2026-09-05
-et/ID0132.BIN	0:00	8	358	1FB2	冗談{08:81}{08:25}	You're joking				reads: 冗談じゃない; menu option, declared width 20 columns; reads: はい @seamfix-2026-09-05
-et/ID0132.BIN	0:00	9	454	1FB2	欲しい					menu option, declared width 20 columns
-et/ID0132.BIN	0:00	10	462	1FB2	いら{08:25}	I don't need it				reads: いらない; menu option, declared width 20 columns; menu option, declared width 20 columns @seamfix-2026-09-05
-et/ID0132.BIN	0:00	11	560	1FFA	{02:09}・・\n					reads: ・・・・・\n; menu option, declared width 20 columns
-et/ID0132.BIN	0:00	12	577	1F01	は成仏{08:4B}\n	 has been laid to rest.\n				reads: は成仏した\n; reads: 黙ってる; menu option, declared width 20 columns @rebase-tagdiff @seamfix-2026-09-05
-et/ID0132.BIN	0:00	13	616	1FFA	{02:09}・・	{02:09}・・				reads: ・・・・・; reads: わたしが
-et/ID0132.BIN	0:00	14	624	1FFB	{01:23}お待ち下{08:49}	please wait a moment				reads: しばらくお待ち下さい; reads: しばらくお待ち下さい @seamfix-2026-09-05
-et/ID0132.BIN	0:00	15	638	1FFA	{02:09}・・\n					reads: ・・・・・\n; reads: それでいいです; menu option, declared width 20 columns
-et/ID0132.BIN	0:00	16	740	1FB2	仕方{08:25}な					reads: 仕方ないな; menu option, declared width 20 columns; reads: 冗談じゃない
-et/ID0132.BIN	0:00	17	750	1FB2	絶対やらん	Absolutely not				menu option, declared width 20 columns; reads: いろいろ @seamfix-2026-09-05
-et/ID0132.BIN	0:00	18	811	1FBA	！！！\n	！！！\n				
-et/ID0132.BIN	0:00	19	825	1FBA	{02:09}！\n					reads: ・・・！\n; menu option, declared width 20 columns
-et/ID0132.BIN	4:84	0	0	DATA	信用{08:23}{08:52}訳？\n<wait>					reads: 信用できないって訳？\n<wait>
-et/ID0132.BIN	4:47	0	0	DATA	ＭＡＧが足り{08:25}{08:55}{08:52}！\n<wait>					reads: ＭＡＧが足りないですって！\n<wait>
-et/ID0132.BIN	4:66	0	0	DATA	お話に{08:7D}{08:25}わ！\n<wait>					reads: お話にならないわ！\n<wait>
-et/ID0132.BIN	8:40	0	0	DATA	{08:7F}男					reads: いい男
-et/ID0132.BIN	11:16	0	0	DATA	生意気！\n<wait>					
-et/ID0132.BIN	15:C6	0	0	DATA	近くで見ると　{08:89}いち{08:6B}よねぇ\n<wait>					reads: 近くで見ると　いまいちなのよねぇ\n<wait>
-et/ID0132.BIN	15:C7	0	0	DATA	取り巻きぐらい{08:7D}　{02:0D}あげ{08:54}{08:7F}わ\n<wait>					reads: 取り巻きぐらいなら　させてあげてもいいわ\n<wait>
+et/ID0132.BIN	0:00	0	18	1F88	＞会話可能圏外{08:55}\n　会話対象に接近{08:4A}下{08:49}\n<wait>		>Out of conversation range.\n  Get closer to talk.\n<wait>	ours		reads: ＞会話可能圏外です\n　会話対象に接近して下さい\n<wait>
+et/ID0132.BIN	0:00	1	143	1FB2	{08:4D}はちょ{08:53}…	That is a bit......	That's a bit...	ours	draft	reads: それはちょっと…; menu option, declared width 20 columns; menu option, declared width 20 columns @seamfix-2026-09-05
+et/ID0132.BIN	0:00	2	157	1FB2	まあ{08:7F}{08:84}	Well, all right	Well, Okay	ours	draft	reads: まあいいけど; menu option, declared width 20 columns; menu option, declared width 20 columns @seamfix-2026-09-05
+et/ID0132.BIN	0:00	3	226	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
+et/ID0132.BIN	0:00	4	230	1FB2	思い直す		Rethink	ours		menu option, declared width 20 columns; reads: それはちょっと…
+et/ID0132.BIN	0:00	5	281	1FB2	怒る		Get Angry	ours		menu option, declared width 20 columns; reads: まあいいけど
+et/ID0132.BIN	0:00	6	287	1FB2	黙っ{08:2B}	Stay silent	Silence	ours	draft	reads: 黙ってる; menu option, declared width 20 columns; reads: おまえ @seamfix-2026-09-05
+et/ID0132.BIN	0:00	7	348	1FB2	{08:4D}で{08:7F}{08:55}	That will do	That's Fine	ours	draft	reads: それでいいです; menu option, declared width 20 columns; menu option, declared width 20 columns @seamfix-2026-09-05
+et/ID0132.BIN	0:00	8	358	1FB2	冗談{08:81}{08:25}	You're joking	No Joke	ours	draft	reads: 冗談じゃない; menu option, declared width 20 columns; reads: はい @seamfix-2026-09-05
+et/ID0132.BIN	0:00	9	454	1FB2	欲しい		I Want	ours		menu option, declared width 20 columns
+et/ID0132.BIN	0:00	10	462	1FB2	いら{08:25}	I don't need it	Pass	ours	draft	reads: いらない; menu option, declared width 20 columns; menu option, declared width 20 columns @seamfix-2026-09-05
+et/ID0132.BIN	0:00	11	560	1FFA	{02:09}・・\n		{02:09}..\n	ours		reads: ・・・・・\n; menu option, declared width 20 columns
+et/ID0132.BIN	0:00	12	577	1F01	は成仏{08:4B}\n	 has been laid to rest.\n	It's been laid to rest.\n	ours	draft	reads: は成仏した\n; reads: 黙ってる; menu option, declared width 20 columns @rebase-tagdiff @seamfix-2026-09-05
+et/ID0132.BIN	0:00	13	616	1FFA	{02:09}・・	{02:09}・・	{02:09}..	ours		reads: ・・・・・; reads: わたしが
+et/ID0132.BIN	0:00	14	624	1FFB	{01:23}お待ち下{08:49}	please wait a moment	{01:23}#Please wait	ours	draft	reads: しばらくお待ち下さい; reads: しばらくお待ち下さい @seamfix-2026-09-05
+et/ID0132.BIN	0:00	15	638	1FFA	{02:09}・・\n		{02:09}..\n	ours		reads: ・・・・・\n; reads: それでいいです; menu option, declared width 20 columns
+et/ID0132.BIN	0:00	16	740	1FB2	仕方{08:25}な		I guess so	ours		reads: 仕方ないな; menu option, declared width 20 columns; reads: 冗談じゃない
+et/ID0132.BIN	0:00	17	750	1FB2	絶対やらん	Absolutely not	Never!	ours	draft	menu option, declared width 20 columns; reads: いろいろ @seamfix-2026-09-05
+et/ID0132.BIN	0:00	18	811	1FBA	！！！\n	！！！\n	!!!\n	ours		
+et/ID0132.BIN	0:00	19	825	1FBA	{02:09}！\n		{02:09}!\n	ours		reads: ・・・！\n; menu option, declared width 20 columns
+et/ID0132.BIN	4:84	0	0	DATA	信用{08:23}{08:52}訳？\n<wait>		So you're saying you don't trust me?\n<wait>	ours		reads: 信用できないって訳？\n<wait>
+et/ID0132.BIN	4:47	0	0	DATA	ＭＡＧが足り{08:25}{08:55}{08:52}！\n<wait>		Not enough MAG, you say!\n<wait>	ours		reads: ＭＡＧが足りないですって！\n<wait>
+et/ID0132.BIN	4:66	0	0	DATA	お話に{08:7D}{08:25}わ！\n<wait>		This conversation is pointless!\n<wait>	ours		reads: お話にならないわ！\n<wait>
+et/ID0132.BIN	8:40	0	0	DATA	{08:7F}男		A fine man	ours		reads: いい男
+et/ID0132.BIN	11:16	0	0	DATA	生意気！\n<wait>		How cheeky!\n<wait>	ours		
+et/ID0132.BIN	15:C6	0	0	DATA	近くで見ると　{08:89}いち{08:6B}よねぇ\n<wait>		Up close, you're kind of underwhelming.\n<wait>	ours		reads: 近くで見ると　いまいちなのよねぇ\n<wait>
+et/ID0132.BIN	15:C7	0	0	DATA	取り巻きぐらい{08:7D}　{02:0D}あげ{08:54}{08:7F}わ\n<wait>		I suppose I could let you be one of my entourage.\n<wait>	ours		reads: 取り巻きぐらいなら　させてあげてもいいわ\n<wait>

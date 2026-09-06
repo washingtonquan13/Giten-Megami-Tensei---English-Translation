@@ -3,451 +3,451 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0032.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}\n					reads: 誰もいない‥‥‥\n; reads: 誰もいない‥‥‥\n @refalign
-m/MS0032.BIN	0:01	0	37	1FD2	ヴェパル：					
-m/MS0032.BIN	0:01	1	49	1FD3	ほう{02:08}{02:0B}風情が{08:73}所{08:71}来るとは{02:08}‥\n{08:8B}{08:45}{08:71}来{08:60}{08:5E}ぞ！\n<wait>					reads: ほう‥‥‥人間風情がこんな所まで来るとは‥‥‥‥\nよくここまで来れたものぞ！\n<wait>
-m/MS0032.BIN	0:01	2	107	1FD2	ヴェパル：					
-m/MS0032.BIN	0:01	3	119	1FD3	と、言い{08:4E}所{08:81}が{02:08}\n<wait>					reads: と、言いたい所じゃが‥‥‥\n<wait>
-m/MS0032.BIN	0:01	4	146	1FD2	ヴェパル：					
-m/MS0032.BIN	0:01	5	158	1FD3	わらわの居城に、無断で立ち入り、狼藉を働くとは{02:08}無礼な奴よ！\n					reads: わらわの居城に、無断で立ち入り、狼藉を働くとは‥‥‥無礼な奴よ！\n
-m/MS0032.BIN	0:01	6	227	09	<wait>許す訳には行かぬぞえ{02:08}‥\n					reads: <wait>許す訳には行かぬぞえ‥‥‥‥\n; reads: <wait>許す訳には行かぬぞえ‥‥‥‥\n @refalign
-m/MS0032.BIN	0:01	7	275	1FB2	謝る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:01	8	281	1FB2	知ら{08:19}					reads: 知らなかった; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:01	9	289	1FB2	問答無用！覚悟！					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:01	10	331	1FD2	ヴェパル：	Vepar:				reads:  @ours-2026-09-05
-m/MS0032.BIN	0:01	11	343	1FD3	ホホホホ{02:08}中々、素直なをのこでは{08:25}かえ。\n<wait>	Hohoho......... what an honest little man you are.\n<wait>				reads: ホホホホ‥‥‥中々、素直なをのこではないかえ。\n<wait>; reads: ホホホホ‥‥‥中々、素直なをのこではないかえ。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:01	12	392	1FD2	ヴェパル：					@rebase-unmatched idx12 en=Vepar: @rebase-unmatched idx12 en=Vepar:
-m/MS0032.BIN	0:01	13	404	1FD3	{03:0B}世の中には謝{08:52}済むと{08:68}、問題ばかりでは無い{08:42}のう{02:08}\n					reads: しかし、世の中には謝って済むという、問題ばかりでは無いからのう‥‥‥\n; reads: ホホホホ‥‥‥中々、素直なをのこではないかえ。\n<wait> @rebase-unmatched idx13 en=Hohoho... What a good little boy you are...\n<wait> @rebase-unmatched idx13 en=Hohoho... What a good little boy you are...\n<wait>
-m/MS0032.BIN	0:01	14	473	1FB2	聞く耳持たん					menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx14 en=Vepar: @rebase-unmatched idx14 en=Vepar: @refalign
-m/MS0032.BIN	0:01	15	487	1FB2	{08:90}しろと？					reads: どうしろと？; menu option, declared width 20 columns; reads: しかし、世の中には謝って済むという、問題ばかりでは無いからのう‥‥‥\n @rebase-unmatched idx15 en=Even so, you must understand that not all mistakes can be fixed\nwith a simple apology.\n @rebase-unmatched idx15 en=Even so, you must understand that not all mistakes can be fixed\nwith a simple apology.\n @refalign
-m/MS0032.BIN	0:01	16	519	1FD2	ヴェパル：	Vepar:				menu option, declared width 20 columns @rebase-new @rebase-unmatched idx16 en=I don't @rebase-unmatched idx16 en=I don't @ours-2026-09-05
-m/MS0032.BIN	0:01	17	531	1FD3	{08:72}おや{08:72}随分と強気{08:81}のう{08:72}\n<wait>	...Oh my... quite the bold one, aren't we...\n<wait>				reads: ‥‥おや‥‥随分と強気じゃのう‥‥\n<wait>; reads: どうしろと？; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx17 en=What do you want? @rebase-unmatched idx17 en=What do you want? @ours-2026-09-05
-m/MS0032.BIN	0:01	18	566	1FD2	ヴェパル：	Vepar:				reads: \n @rebase-new @ours-2026-09-05
-m/MS0032.BIN	0:01	19	578	1FD3	先程の詫び{08:62}偽り{08:81}と言うのか？\n	You're saying that apology just now was a lie?\n				reads: 先程の詫びは、偽りじゃと言うのか？\n; reads: 先程の詫びは、偽りじゃと言うのか？\n @rebase-new @ours-2026-09-05
-m/MS0032.BIN	0:01	20	625	1FB2	{08:79}通り！					reads: その通り！; menu option, declared width 20 columns; reads: ‥‥おや‥‥随分と強気じゃのう‥‥\n<wait> @rebase-new @refalign
-m/MS0032.BIN	0:01	21	635	1FB2	{08:7A}訳では					reads: そんな訳では; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign
-m/MS0032.BIN	0:01	22	665	1FD2	ヴェパル：					reads: 先程の詫びは、偽りじゃと言うのか？\n
-m/MS0032.BIN	0:01	23	677	1FD3	何と！！\n<wait>					reads: その通り！; menu option, declared width 20 columns
-m/MS0032.BIN	0:01	24	694	1FD2	ヴェパル：					reads: そんな訳では; menu option, declared width 20 columns
-m/MS0032.BIN	0:01	25	706	1FD3	フフ{02:08}ホホホホホ！！\n面白いをのこ{08:81}！\n<wait>	Heh heh......... hohohoho!!\nWhat an amusing man!\n<wait>				reads: フフ‥‥‥ホホホホホ！！\n面白いをのこじゃ！\n<wait>; reads: フフ‥‥‥ホホホホホ！！\n面白いをのこじゃ！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:01	26	752	1FD2	ヴェパル：					
-m/MS0032.BIN	0:01	27	764	1FD3	わらわにそこ{08:71}の口をき{08:64}{02:0B}{08:62}今{08:71}おらぬぞよ！\n用向き{08:74}{08:56}聞いてやろうぞ！\n<wait>					reads: わらわにそこまでの口をきいた人間は、今までおらぬぞよ！\n用向きだけでも聞いてやろうぞ！\n<wait>
-m/MS0032.BIN	0:01	28	844	1FD2	ヴェパル：					
-m/MS0032.BIN	0:01	29	856	1FD3	何故、わらわの元に参{08:51}のか？\n					reads: 何故、わらわの元に参ったのか？\n; reads: フフ‥‥‥ホホホホホ！！\n面白いをのこじゃ！\n<wait>
-m/MS0032.BIN	0:01	30	901	1FB2	貴様を倒す為					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:01	31	915	1FB2	何となく					menu option, declared width 20 columns; reads: わらわにそこまでの口をきいた人間は、今までおらぬぞよ！\n用向きだけでも聞いてやろうぞ！\n<wait> @refalign
-m/MS0032.BIN	0:01	32	945	1FD2	ヴェパル：					
-m/MS0032.BIN	0:01	33	957	1FD3	ほう{08:72}豪胆なをのこ{08:81}{02:08}\nわらわを倒す為に、わざわざ{08:45}{08:71}ま{08:22}と{08:68}かや？\n<wait>					reads: ほう‥‥豪胆なをのこじゃ‥‥‥\nわらわを倒す為に、わざわざここまでまいったというかや？\n<wait>; reads: 何故、わらわの元に参ったのか？\n
-m/MS0032.BIN	0:01	34	1033	1FD2	ヴェパル：					menu option, declared width 20 columns
-m/MS0032.BIN	0:01	35	1045	1FD3	{08:61}{02:08}何故わらわを倒そうと{08:68}の{08:81}？\n					reads: しかし‥‥‥何故わらわを倒そうというのじゃ？\n; menu option, declared width 20 columns
-m/MS0032.BIN	0:01	36	1094	1FB2	{08:0B}は許さん！	I won't forgive demons!				reads: 悪魔は許さん！; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
-m/MS0032.BIN	0:01	37	1108	1FB2	恋人の体を返せ					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:01	38	1124	1FB2	問答無用					menu option, declared width 20 columns; reads: ほう‥‥豪胆なをのこじゃ‥‥‥\nわらわを倒す為に、わざわざここまでまいったというかや？\n<wait> @refalign
-m/MS0032.BIN	0:01	39	1134	1FB2	{08:4D}がさだめ{08:6B}だ					reads: それがさだめなのだ; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:01	40	1187	1FD2	ヴェパル：					reads: しかし‥‥‥何故わらわを倒そうというのじゃ？\n
-m/MS0032.BIN	0:01	41	1199	1FD3	ほほほほ{02:08}‥！！\n{08:4D}が、さだめだと申すのかや！？\n<wait>					reads: ほほほほ‥‥‥‥！！\nそれが、さだめだと申すのかや！？\n<wait>; reads: 悪魔は許さん！; menu option, declared width 20 columns
-m/MS0032.BIN	0:01	42	1255	1FD2	ヴェパル：					menu option, declared width 20 columns
-m/MS0032.BIN	0:01	43	1267	1FD3	{08:4D}{08:62}間違い{08:81}{02:08}\n<wait>何故{08:7D}、そなたは{08:45}で、わらわに倒{03:0C}るの{08:42}{08:81}！\n					reads: それは、間違いじゃ‥‥‥\n<wait>何故なら、そなたはここで、わらわに倒されるのからじゃ！\n; menu option, declared width 20 columns
-m/MS0032.BIN	0:01	44	1344	1FD2	ヴェパル：					reads: それがさだめなのだ; menu option, declared width 20 columns
-m/MS0032.BIN	0:01	45	1356	1FD3	ふん{08:72}！　正義感と言う奴か{02:08}？\n<wait>	Hmph...! A sense of justice, is it.........?\n<wait>				reads: ふん‥‥！　正義感と言う奴か‥‥‥？\n<wait>; reads: 桐島英美レジスタンス山瀬勇 @ours-2026-09-05
-m/MS0032.BIN	0:01	46	1395	1FD2	ヴェパル：	Vepar:				@ours-2026-09-05
-m/MS0032.BIN	0:01	47	1407	1FD3	{02:0B}と{08:68}物{08:62}つまらぬ感情を持{08:52}おる{08:5E}よ{08:72}！\n<wait>					reads: 人間という物は、つまらぬ感情を持っておるものよ‥‥！\n<wait>
-m/MS0032.BIN	0:01	48	1456	1FD2	ヴェパル：					reads: ほほほほ‥‥‥‥！！\nそれが、さだめだと申すのかや！？\n<wait>
-m/MS0032.BIN	0:01	49	1468	1FD3	そこ{08:71}言い切るので{08:3F}ば、相手を{08:4A}やろうぞ！！\n己の無謀さを後悔{08:8E}が良い！！\n					reads: そこまで言い切るのであれば、相手をしてやろうぞ！！\n己の無謀さを後悔するが良い！！\n
-m/MS0032.BIN	0:01	50	1549	1FD2	ヴェパル：					reads: それは、間違いじゃ‥‥‥\n<wait>何故なら、そなたはここで、わらわに倒されるのからじゃ！\n
-m/MS0032.BIN	0:01	51	1561	1FD3	{08:72}はて{08:72}恋人の肉体とな{08:72}？\n<wait>{08:79}{08:69}な物、わらわは知らぬぞよ。\n<wait>					reads: ‥‥はて‥‥恋人の肉体とな‥‥？\n<wait>そのような物、わらわは知らぬぞよ。\n<wait>
-m/MS0032.BIN	0:01	52	1631	1FD2	ヴェパル：					reads: ふん‥‥！　正義感と言う奴か‥‥‥？\n<wait>
-m/MS0032.BIN	0:01	53	1643	1FD3	そもそも、そなたと相まみ{08:28}のも、{08:48}が初めてでは{08:25}かえ。\n<wait>					reads: そもそも、そなたと相まみえるのも、これが初めてではないかえ。\n<wait>
-m/MS0032.BIN	0:01	54	1706	1FD2	ヴェパル：					reads: 人間という物は、つまらぬ感情を持っておるものよ‥‥！\n<wait>
-m/MS0032.BIN	0:01	55	1718	1FD3	つまらぬ言いがかり{08:62}よすの{08:81}！！\n<wait>					reads: つまらぬ言いがかりは、よすのじゃ！！\n<wait>
-m/MS0032.BIN	0:01	56	1759	1FD2	ヴェパル：					reads: そこまで言い切るのであれば、相手をしてやろうぞ！！\n己の無謀さを後悔するが良い！！\n
-m/MS0032.BIN	0:01	57	1771	1FD3	いかに勘違いを{08:4A}お{08:51}とは言え、{08:47}狼藉、許{08:2A}物では無い！\nそなたの命{08:56}{08:52}、償{08:52}もらおうかや！！\n					reads: いかに勘違いをしておったとは言え、この狼藉、許せる物では無い！\nそなたの命でもって、償ってもらおうかや！！\n
-m/MS0032.BIN	0:01	58	1876	1FD2	ヴェパル：					reads: ‥‥はて‥‥恋人の肉体とな‥‥？\n<wait>そのような物、わらわは知らぬぞよ。\n<wait>
-m/MS0032.BIN	0:01	59	1888	1FD3	{02:08}あく{08:71}わらわを倒そうと{08:68}か！\n<wait>					reads: ‥‥‥あくまでわらわを倒そうというか！\n<wait>
-m/MS0032.BIN	0:01	60	1927	1FD2	ヴェパル：					reads: そもそも、そなたと相まみえるのも、これが初めてではないかえ。\n<wait>
-m/MS0032.BIN	0:01	61	1939	1FD3	{08:72}まあよい。そこ{08:71}言うなれば、相手を{08:4A}やろうぞ！\nわらわも退屈{08:4A}{08:64}所{08:81}{02:08}\n<wait>					reads: ‥‥まあよい。そこまで言うなれば、相手をしてやろうぞ！\nわらわも退屈していた所じゃ‥‥‥\n<wait>
-m/MS0032.BIN	0:01	62	2019	1FD2	ヴェパル：					reads: つまらぬ言いがかりは、よすのじゃ！！\n<wait>
-m/MS0032.BIN	0:01	63	2031	1FD3	{08:48}より後、そなたがどん{08:58}詫び{08:69}とも、許しはせぬぞえ{08:72}\n覚悟{08:8E}がよいわ！！\n					reads: これより後、そなたがどんなに詫びようとも、許しはせぬぞえ‥‥\n覚悟するがよいわ！！\n
-m/MS0032.BIN	0:01	64	2110	1FD2	ヴェパル：					reads: いかに勘違いをしておったとは言え、この狼藉、許せる物では無い！\nそなたの命でもって、償ってもらおうかや！！\n
-m/MS0032.BIN	0:01	65	2122	1FD3	{02:08}おかしな奴よ{02:08}\n目的も無くわらわの居城に侵入し、狼藉を働{08:64}と言うか？\n<wait>					reads: ‥‥‥おかしな奴よ‥‥‥\n目的も無くわらわの居城に侵入し、狼藉を働いたと言うか？\n<wait>
-m/MS0032.BIN	0:01	66	2200	1FD2	ヴェパル：					reads: ‥‥‥あくまでわらわを倒そうというか！\n<wait>
-m/MS0032.BIN	0:01	67	2212	1FD3	{02:08}許せぬな{02:08}\n<wait>					reads: ‥‥‥許せぬな‥‥‥\n<wait>
-m/MS0032.BIN	0:01	68	2233	1FD2	ヴェパル：					reads: ‥‥まあよい。そこまで言うなれば、相手をしてやろうぞ！\nわらわも退屈していた所じゃ‥‥‥\n<wait>
-m/MS0032.BIN	0:01	69	2245	1FD3	{08:47}{08:69}な事、{02:0B}界{08:56}まかり通らぬでは{08:25}か？\n{08:4D}なりの償いを{08:4A}もらわねば{08:59}まいぞ。\n<wait>					reads: このような事、人間界でもまかり通らぬではないか？\nそれなりの償いをしてもらわねばなるまいぞ。\n<wait>
-m/MS0032.BIN	0:01	70	2329	1FD2	ヴェパル：					reads: これより後、そなたがどんなに詫びようとも、許しはせぬぞえ‥‥\n覚悟するがよいわ！！\n
-m/MS0032.BIN	0:01	71	2341	1FD3	償いは{02:08}‥そなたの命で{08:4A}もらおうか！\n					reads: 償いは‥‥‥‥そなたの命でしてもらおうか！\n
-m/MS0032.BIN	0:01	72	2385	1FD2	ヴェパル：					reads: ‥‥‥おかしな奴よ‥‥‥\n目的も無くわらわの居城に侵入し、狼藉を働いたと言うか？\n<wait>
-m/MS0032.BIN	0:01	73	2397	1FD3	では何かえ？　謝る{08:74}で事が済むと思{08:52}おるのかや？\n{02:08}甘いぞよ{02:08}‥\n<wait>					reads: では何かえ？　謝るだけで事が済むと思っておるのかや？\n‥‥‥甘いぞよ‥‥‥‥\n<wait>
-m/MS0032.BIN	0:01	74	2469	1FD2	ヴェパル：					reads: ‥‥‥許せぬな‥‥‥\n<wait>
-m/MS0032.BIN	0:01	75	2481	1FD3	わらわの城に侵入し、挙げ句に我が倦族の者ま{08:56}手にか{08:43}者を、\n詫びの言葉一つで許す訳に{08:26}かぬ！\n<wait>					reads: わらわの城に侵入し、挙げ句に我が倦族の者までも手にかけた者を、\n詫びの言葉一つで許す訳にはいかぬ！\n<wait>
-m/MS0032.BIN	0:01	76	2581	1FD2	ヴェパル：					reads: このような事、人間界でもまかり通らぬではないか？\nそれなりの償いをしてもらわねばなるまいぞ。\n<wait>
-m/MS0032.BIN	0:01	77	2593	1FD3	そなたの身体{02:08}水に沈め、我が倦族のせめ{08:54}の供養とし{08:69}ぞ！！\n					reads: そなたの身体‥‥‥水に沈め、我が倦族のせめてもの供養としようぞ！！\n
-m/MS0032.BIN	0:01	78	2668	1FB2	戦う					menu option, declared width 20 columns; reads: 償いは‥‥‥‥そなたの命でしてもらおうか！\n @refalign
-m/MS0032.BIN	0:01	79	2674	1FB2	逃げる					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:01	80	2702	1FD2	ヴェパル：					reads: では何かえ？　謝るだけで事が済むと思っておるのかや？\n‥‥‥甘いぞよ‥‥‥‥\n<wait>
-m/MS0032.BIN	0:01	81	2714	1FD3	良い心掛け{08:81}{02:08}相手にと{08:52}不足は無い{08:72}\n<wait>行くぞ！！！\n					reads: 良い心掛けじゃ‥‥‥相手にとって不足は無い‥‥\n<wait>行くぞ！！！\n
-m/MS0032.BIN	0:01	82	2781	1F01	{08:62}逃げ{08:69}と{08:4B}{02:08}\n<wait>{03:0B}入{08:52}{08:1E}扉は堅く閉ざ{03:0C}て{08:64}{02:08}\n<wait>	 tried to flee......\n<wait>But the door he had come in by was shut fast......\n<wait>				reads: は、逃げようとした‥‥‥\n<wait>しかし、入ってきた扉は堅く閉ざされていた‥‥‥\n<wait>; reads: わらわの城に侵入し、挙げ句に我が倦族の者までも手にかけた者を、\n詫びの言葉一つで許す訳にはいかぬ！\n<wait> @rebase-tagdiff @seamfix-2026-09-05
-m/MS0032.BIN	0:01	83	2837	1FD2	ヴェパル：					
-m/MS0032.BIN	0:01	84	2849	1FD3	おや{02:08}{08:45}{08:71}来て、逃げる{01:3E}かえ？\n何とも腰抜けなをのこよの。\n<wait>					reads: おや‥‥‥ここまで来て、逃げるつもりかえ？\n何とも腰抜けなをのこよの。\n<wait>; reads: そなたの身体‥‥‥水に沈め、我が倦族のせめてもの供養としようぞ！！\n
-m/MS0032.BIN	0:01	85	2915	1FD2	ヴェパル：					menu option, declared width 20 columns
-m/MS0032.BIN	0:01	86	2927	1FD3	{08:81}が、逃げ{08:69}と{08:4A}も無駄。\n入口の扉{08:62}わらわがすでに封印{08:4B}わ。\n<wait>					reads: じゃが、逃げようとしても無駄。\n入口の扉は、わらわがすでに封印したわ。\n<wait>; menu option, declared width 20 columns
-m/MS0032.BIN	0:01	87	2995	1FD2	ヴェパル：	Vepar:				reads:  @ours-2026-09-05
-m/MS0032.BIN	0:01	88	3007	1FD3	{08:47}わらわの前に出たが、そなたの運の尽きよ。\n<wait>	Coming before me was where your luck ran out.\n<wait>				reads: このわらわの前に出たが、そなたの運の尽きよ。\n<wait>; reads: このわらわの前に出たが、そなたの運の尽きよ。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:01	89	3058	1FD2	ヴェパル：					
-m/MS0032.BIN	0:01	90	3070	1FD3	そなたも、をのこであろう？\nなれば、万に一つわらわに勝つと{08:68}望みを賭け、神妙に勝負せい！！\n<wait>					reads: そなたも、をのこであろう？\nなれば、万に一つわらわに勝つという望みを賭け、神妙に勝負せい！！\n<wait>; reads: 良い心掛けじゃ‥‥‥相手にとって不足は無い‥‥\n<wait>行くぞ！！！\n
-m/MS0032.BIN	0:01	91	3168	1FD2	ヴェパル：					reads: は、逃げようとした‥‥‥\n<wait>しかし、入ってきた扉は堅く閉ざされていた‥‥‥\n<wait>
-m/MS0032.BIN	0:01	92	3180	1FD3	行くぞ！！\n					
-m/MS0032.BIN	0:01	93	3198	1FD2	ヴェパル：					reads: おや‥‥‥ここまで来て、逃げるつもりかえ？\n何とも腰抜けなをのこよの。\n<wait>
-m/MS0032.BIN	0:01	94	3210	1FD3	ふふふ{02:08}素直なをのこ{08:81}。\n今時、珍しいのでは{08:25}かえ？\n<wait>					reads: ふふふ‥‥‥素直なをのこじゃ。\n今時、珍しいのではないかえ？\n<wait>
-m/MS0032.BIN	0:01	95	3270	1FD2	ヴェパル：					reads: じゃが、逃げようとしても無駄。\n入口の扉は、わらわがすでに封印したわ。\n<wait>
-m/MS0032.BIN	0:01	96	3282	1FD3	{08:58}、簡単な事{08:81}。\nそなたの命。{08:4D}で償{08:52}もらおうでは{08:25}か？\n<wait>					reads: なに、簡単な事じゃ。\nそなたの命。それで償ってもらおうではないか？\n<wait>
-m/MS0032.BIN	0:01	97	3346	1FD2	ヴェパル：					reads: このわらわの前に出たが、そなたの運の尽きよ。\n<wait>
-m/MS0032.BIN	0:01	98	3358	1FD3	そなたを喰えば、かなりの力を得られそう{08:81}{02:08}‥\nさすれば、{01:08}共にも引けは取らぬわ{02:08}\n<wait>					reads: そなたを喰えば、かなりの力を得られそうじゃ‥‥‥‥\nさすれば、バエル共にも引けは取らぬわ‥‥‥\n<wait>
-m/MS0032.BIN	0:01	99	3446	1FD2	ヴェパル：					reads: そなたも、をのこであろう？\nなれば、万に一つわらわに勝つという望みを賭け、神妙に勝負せい！！\n<wait>
-m/MS0032.BIN	0:01	100	3458	1FD3	{02:08}さあ！　大人しくわらわに{08:79}身捧げるの{08:81}！！\n					reads: ‥‥‥さあ！　大人しくわらわにその身捧げるのじゃ！！\n
-m/MS0032.BIN	0:01	101	3510	1FD2	ヴェパル：					
-m/MS0032.BIN	0:01	102	3522	1FD3	知ら{08:19}{02:08}‥とな？\n知らずに{08:45}{08:71}参{08:51}と{08:68}のかや？\n<wait>					reads: 知らなかった‥‥‥‥とな？\n知らずにここまで参ったというのかや？\n<wait>
-m/MS0032.BIN	0:01	103	3576	1FD2	ヴェパル：					reads: ふふふ‥‥‥素直なをのこじゃ。\n今時、珍しいのではないかえ？\n<wait>
-m/MS0032.BIN	0:01	104	3588	1FD3	{03:0B}我が倦族を手にか{08:43}と{08:68}は許せぬ！！\n					reads: しかし、我が倦族を手にかけたというは許せぬ！！\n
-m/MS0032.BIN	0:01	105	3641	1FB2	襲{08:52}{08:1E}{08:42}					reads: 襲ってきたから; menu option, declared width 20 columns; reads: なに、簡単な事じゃ。\nそなたの命。それで償ってもらおうではないか？\n<wait> @refalign
-m/MS0032.BIN	0:01	106	3651	1FB2	黙っ{08:14}					reads: 黙っている; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:01	107	3679	1FD2	ヴェパル：					reads: そなたを喰えば、かなりの力を得られそうじゃ‥‥‥‥\nさすれば、バエル共にも引けは取らぬわ‥‥‥\n<wait>
-m/MS0032.BIN	0:01	108	3691	1FD3	ふむ{02:08}降りかかる火の粉は払う{02:08}<wait>そう{08:68}事か{02:08}‥\n<wait>					reads: ふむ‥‥‥降りかかる火の粉は払う‥‥‥<wait>そういう事か‥‥‥‥\n<wait>
-m/MS0032.BIN	0:01	109	3748	1FD2	ヴェパル：					reads: ‥‥‥さあ！　大人しくわらわにその身捧げるのじゃ！！\n
-m/MS0032.BIN	0:01	110	3760	1FD3	{08:4D}も{08:5B}一理{08:7B}。\n<wait>					reads: それもまた一理ある。\n<wait>
-m/MS0032.BIN	0:01	111	3783	1FD2	ヴェパル：					reads: 知らなかった‥‥‥‥とな？\n知らずにここまで参ったというのかや？\n<wait>
-m/MS0032.BIN	0:01	112	3795	1FD3	{08:81}が、わらわも{08:47}場所を統べる者。\n我が倦族を倒{03:0C}て黙{08:52}{08:64}とあ{08:52}{08:62}わらわの名がすたると{08:68}{08:5E}{02:08}\n<wait>					reads: じゃが、わらわもこの場所を統べる者。\n我が倦族を倒されて黙っていたとあっては、わらわの名がすたるというもの‥‥‥\n<wait>
-m/MS0032.BIN	0:01	113	3893	1FD2	ヴェパル：					reads: しかし、我が倦族を手にかけたというは許せぬ！！\n
-m/MS0032.BIN	0:01	114	3905	1FD3	{08:90}{08:81}？　{08:47}わらわと{08:68}火の粉を払{08:28}かの？\n					reads: どうじゃ？　このわらわという火の粉を払えるかの？\n; reads: 襲ってきたから; menu option, declared width 20 columns
-m/MS0032.BIN	0:01	115	3960	1FB2	戦う					menu option, declared width 20 columns; reads: 黙っている @refalign
-m/MS0032.BIN	0:01	116	3966	1FB2	逃げる	Run 				menu option, declared width 20 columns; reads: ひとつ @ours-2026-09-05
-m/MS0032.BIN	0:01	117	4000	1F01	は黙{08:52}{08:64}{02:08}‥\n<wait>	 stayed silent............\n<wait>				reads: は黙っていた‥‥‥‥\n<wait>; reads: は黙っていた‥‥‥‥\n<wait> @rebase-new @ours-2026-09-05
-m/MS0032.BIN	0:01	118	4021	1FD2	ヴェパル：	Vepar:				reads: ふむ‥‥‥降りかかる火の粉は払う‥‥‥<wait>そういう事か‥‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:01	119	4033	1FD3	{08:72}理由は{08:90}{08:3F}、わらわも{08:47}地を統べる者{08:81}。\n我が倦族を倒{03:0C}て黙{08:52}{08:64}とあ{08:52}{08:62}わらわの名がすたると{08:68}{08:5E}{02:08}\n<wait>	...Whatever the reason, I too am one who rules this land.\nWere I to stay silent while my kin are slain, my name would be\ndisgraced.........\n<wait>				reads: ‥‥理由はどうあれ、わらわもこの地を統べる者じゃ。\n我が倦族を倒されて黙っていたとあっては、わらわの名がすたるというもの‥‥‥\n<wait>; reads: ‥‥理由はどうあれ、わらわもこの地を統べる者じゃ。\n我が倦族を倒されて黙っていたとあっては、わらわの名がすたるというもの‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:01	120	4139	1FD2	ヴェパル：	Vepar:				reads: それもまた一理ある。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:01	121	4151	1FD3	わらわと勝負し勝たぬ限り、そなたは{08:45}{08:42}出る事は出来ぬ。\n万一そなたが勝てば{08:47}命、潔くそなたにくれてやろうぞ！！\n	Unless you fight me and win, you shall not leave this place.\nShould you by chance win, I'll gladly give you this life of mine!!\n				reads: わらわと勝負し勝たぬ限り、そなたはここから出る事は出来ぬ。\n万一そなたが勝てばこの命、潔くそなたにくれてやろうぞ！！\n; reads: わらわと勝負し勝たぬ限り、そなたはここから出る事は出来ぬ。\n万一そなたが勝てばこの命、潔くそなたにくれてやろうぞ！！\n @ours-2026-09-05
-m/MS0032.BIN	0:01	122	4268	1FD2	ヴェパル：	Vepar:				reads: じゃが、わらわもこの場所を統べる者。\n我が倦族を倒されて黙っていたとあっては、わらわの名がすたるというもの‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:01	123	4280	1FD3	そなた、{08:0B}が憎いのかや？\n	You there, do you hate demons?\n				reads: そなた、悪魔が憎いのかや？\n; reads: そなた、悪魔が憎いのかや？\n @ours-2026-09-05
-m/MS0032.BIN	0:01	124	4321	1FB2	憎い！					menu option, declared width 20 columns; reads: どうじゃ？　このわらわという火の粉を払えるかの？\n @refalign
-m/MS0032.BIN	0:01	125	4329	1FB2	別に					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:01	126	4335	1FB2	世界は{02:0B}の{08:5E}だ					reads: 世界は人間のものだ; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:01	127	4381	1FD2	ヴェパル：	Vepar:				reads: つもり{=FB}{=FF} @ours-2026-09-05
-m/MS0032.BIN	0:01	128	4393	1FD3	ホホホホホ！！\n未だに、{08:79}{08:69}な思想を抱い{08:14}{08:5E}がおるとは{02:08}\n<wait>					reads: ホホホホホ！！\n未だに、そのような思想を抱いているものがおるとは‥‥‥\n<wait>; reads: は黙っていた‥‥‥‥\n<wait> @rebase-unmatched idx128 en=You remain silent.\n<wait>
-m/MS0032.BIN	0:01	129	4457	1FD2	ヴェパル：					
-m/MS0032.BIN	0:01	130	4469	1FD3	愚かな{08:5E}よのう{02:08}\n{08:47}世界の有り様を見れば、真実を理解できるであろうに{02:08}\n<wait>					reads: 愚かなものよのう‥‥‥\nこの世界の有り様を見れば、真実を理解できるであろうに‥‥‥\n<wait>; reads: ‥‥理由はどうあれ、わらわもこの地を統べる者じゃ。\n我が倦族を倒されて黙っていたとあっては、わらわの名がすたるというもの‥‥‥\n<wait>
-m/MS0032.BIN	0:01	131	4547	1FD2	ヴェパル：					
-m/MS0032.BIN	0:01	132	4559	1FD3	そなた一人の力で{08:62}{08:90}{08:8E}{08:46}も出来ぬ{02:08}‥\n諦{08:2E}{08:46}{08:81}{02:08}<wait>そな{08:50}の、命と共に{02:08}\n					reads: そなた一人の力では、どうすることも出来ぬ‥‥‥‥\n諦めることじゃ‥‥‥<wait>そなたらの、命と共に‥‥‥\n; reads: わらわと勝負し勝たぬ限り、そなたはここから出る事は出来ぬ。\n万一そなたが勝てばこの命、潔くそなたにくれてやろうぞ！！\n
-m/MS0032.BIN	0:01	133	4644	1FD2	ヴェパル：					
-m/MS0032.BIN	0:01	134	4656	1FD3	憎しみ{08:72}憎しみ{08:74}で、{08:47}わらわを倒そうとは思うな！\nそなたごときに、わらわは倒{03:0C}はせぬ！！\n<wait>					reads: 憎しみ‥‥憎しみだけで、このわらわを倒そうとは思うな！\nそなたごときに、わらわは倒されはせぬ！！\n<wait>; reads: そなた、悪魔が憎いのかや？\n
-m/MS0032.BIN	0:01	135	4752	1FD2	ヴェパル：					menu option, declared width 20 columns
-m/MS0032.BIN	0:01	136	4764	1FD3	覚悟{08:8E}の{08:62}そなたの方{08:81}！！\n					reads: 覚悟するのは、そなたの方じゃ！！\n; menu option, declared width 20 columns
-m/MS0032.BIN	0:01	137	4807	1FD2	ヴェパル：					reads: 世界は人間のものだ; menu option, declared width 20 columns
-m/MS0032.BIN	0:01	138	4819	1FD3	ぞなた{08:72}慰みに{08:0B}を殺{08:2E}者か？\n{02:08}{08:7C}容赦はせぬぞよ！！\n<wait>	You... are one who slays demons for amusement?\n.........Then I shall show no mercy!!\n<wait>				reads: ぞなた‥‥慰みに悪魔を殺める者か？\n‥‥‥ならば容赦はせぬぞよ！！\n<wait>; reads: 桐島英美山瀬勇 @ours-2026-09-05
-m/MS0032.BIN	0:01	139	4879	1FD2	ヴェパル：	Vepar:				@ours-2026-09-05
-m/MS0032.BIN	0:01	140	4891	1FD3	わらわは今{08:71}の者と{08:62}違うぞえ！！\n覚悟！！\n<wait>					reads: わらわは今までの者とは、違うぞえ！！\n覚悟！！\n<wait>
-m/MS0032.BIN	0:01	141	4941	1FD0	ヴェパルが{03:07}{08:1C}！\n<wait>					reads: ヴェパルが襲いかかってきた！！\n<wait>; reads: ホホホホホ！！\n未だに、そのような思想を抱いているものがおるとは‥‥‥\n<wait>
+m/MS0032.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}\n		There's no one here...\n	v005		reads: 誰もいない‥‥‥\n; reads: 誰もいない‥‥‥\n @refalign
+m/MS0032.BIN	0:01	0	37	1FD2	ヴェパル：		Vepar:	v005		
+m/MS0032.BIN	0:01	1	49	1FD3	ほう{02:08}{02:0B}風情が{08:73}所{08:71}来るとは{02:08}‥\n{08:8B}{08:45}{08:71}来{08:60}{08:5E}ぞ！\n<wait>		Humans? Oh my... You've done well making it this far...\n<wait>	v005		reads: ほう‥‥‥人間風情がこんな所まで来るとは‥‥‥‥\nよくここまで来れたものぞ！\n<wait>
+m/MS0032.BIN	0:01	2	107	1FD2	ヴェパル：		Vepar:	v005		
+m/MS0032.BIN	0:01	3	119	1FD3	と、言い{08:4E}所{08:81}が{02:08}\n<wait>		Well, some might say that.\n<wait>	v005		reads: と、言いたい所じゃが‥‥‥\n<wait>
+m/MS0032.BIN	0:01	4	146	1FD2	ヴェパル：		Vepar:	v005		
+m/MS0032.BIN	0:01	5	158	1FD3	わらわの居城に、無断で立ち入り、狼藉を働くとは{02:08}無礼な奴よ！\n		Myself, I'm the most appalled that you'd dare to enter my castle\nwithout my approval, and take the lives of my minions.\n	v005		reads: わらわの居城に、無断で立ち入り、狼藉を働くとは‥‥‥無礼な奴よ！\n
+m/MS0032.BIN	0:01	6	227	09	<wait>許す訳には行かぬぞえ{02:08}‥\n		<wait>This is unforgivable...\n	v005		reads: <wait>許す訳には行かぬぞえ‥‥‥‥\n; reads: <wait>許す訳には行かぬぞえ‥‥‥‥\n @refalign
+m/MS0032.BIN	0:01	7	275	1FB2	謝る		Sorry	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:01	8	281	1FB2	知ら{08:19}		We didn't know	v005		reads: 知らなかった; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:01	9	289	1FB2	問答無用！覚悟！		You die now!	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:01	10	331	1FD2	ヴェパル：	Vepar:	Vepar:	ours	draft	reads:  @ours-2026-09-05
+m/MS0032.BIN	0:01	11	343	1FD3	ホホホホ{02:08}中々、素直なをのこでは{08:25}かえ。\n<wait>	Hohoho......... what an honest little man you are.\n<wait>	My, aren't you a fierce one.\n<wait>	v005	draft	reads: ホホホホ‥‥‥中々、素直なをのこではないかえ。\n<wait>; reads: ホホホホ‥‥‥中々、素直なをのこではないかえ。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:01	12	392	1FD2	ヴェパル：		Vepar:	v005		@rebase-unmatched idx12 en=Vepar: @rebase-unmatched idx12 en=Vepar:
+m/MS0032.BIN	0:01	13	404	1FD3	{03:0B}世の中には謝{08:52}済むと{08:68}、問題ばかりでは無い{08:42}のう{02:08}\n		Are you telling me that your apology earlier wasn't genuine?\n	v005		reads: しかし、世の中には謝って済むという、問題ばかりでは無いからのう‥‥‥\n; reads: ホホホホ‥‥‥中々、素直なをのこではないかえ。\n<wait> @rebase-unmatched idx13 en=Hohoho... What a good little boy you are...\n<wait> @rebase-unmatched idx13 en=Hohoho... What a good little boy you are...\n<wait>
+m/MS0032.BIN	0:01	14	473	1FB2	聞く耳持たん		I don't	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx14 en=Vepar: @rebase-unmatched idx14 en=Vepar: @refalign
+m/MS0032.BIN	0:01	15	487	1FB2	{08:90}しろと？		What do you want?	v005		reads: どうしろと？; menu option, declared width 20 columns; reads: しかし、世の中には謝って済むという、問題ばかりでは無いからのう‥‥‥\n @rebase-unmatched idx15 en=Even so, you must understand that not all mistakes can be fixed\nwith a simple apology.\n @rebase-unmatched idx15 en=Even so, you must understand that not all mistakes can be fixed\nwith a simple apology.\n @refalign
+m/MS0032.BIN	0:01	16	519	1FD2	ヴェパル：	Vepar:			draft	menu option, declared width 20 columns @rebase-new @rebase-unmatched idx16 en=I don't @rebase-unmatched idx16 en=I don't @ours-2026-09-05
+m/MS0032.BIN	0:01	17	531	1FD3	{08:72}おや{08:72}随分と強気{08:81}のう{08:72}\n<wait>	...Oh my... quite the bold one, aren't we...\n<wait>			draft	reads: ‥‥おや‥‥随分と強気じゃのう‥‥\n<wait>; reads: どうしろと？; menu option, declared width 20 columns @rebase-new @rebase-unmatched idx17 en=What do you want? @rebase-unmatched idx17 en=What do you want? @ours-2026-09-05
+m/MS0032.BIN	0:01	18	566	1FD2	ヴェパル：	Vepar:			draft	reads: \n @rebase-new @ours-2026-09-05
+m/MS0032.BIN	0:01	19	578	1FD3	先程の詫び{08:62}偽り{08:81}と言うのか？\n	You're saying that apology just now was a lie?\n			draft	reads: 先程の詫びは、偽りじゃと言うのか？\n; reads: 先程の詫びは、偽りじゃと言うのか？\n @rebase-new @ours-2026-09-05
+m/MS0032.BIN	0:01	20	625	1FB2	{08:79}通り！		Exactly!	v005		reads: その通り！; menu option, declared width 20 columns; reads: ‥‥おや‥‥随分と強気じゃのう‥‥\n<wait> @rebase-new @refalign
+m/MS0032.BIN	0:01	21	635	1FB2	{08:7A}訳では		Of course not	v005		reads: そんな訳では; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-new @refalign
+m/MS0032.BIN	0:01	22	665	1FD2	ヴェパル：		Vepar:	v005		reads: 先程の詫びは、偽りじゃと言うのか？\n
+m/MS0032.BIN	0:01	23	677	1FD3	何と！！\n<wait>		What!?\n<wait>	v005		reads: その通り！; menu option, declared width 20 columns
+m/MS0032.BIN	0:01	24	694	1FD2	ヴェパル：		Vepar:	v005		reads: そんな訳では; menu option, declared width 20 columns
+m/MS0032.BIN	0:01	25	706	1FD3	フフ{02:08}ホホホホホ！！\n面白いをのこ{08:81}！\n<wait>	Heh heh......... hohohoho!!\nWhat an amusing man!\n<wait>	Hehe... Hohohoho! What an interesting man you are!\n<wait>	v005	draft	reads: フフ‥‥‥ホホホホホ！！\n面白いをのこじゃ！\n<wait>; reads: フフ‥‥‥ホホホホホ！！\n面白いをのこじゃ！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:01	26	752	1FD2	ヴェパル：		Vepar:	v005		
+m/MS0032.BIN	0:01	27	764	1FD3	わらわにそこ{08:71}の口をき{08:64}{02:0B}{08:62}今{08:71}おらぬぞよ！\n用向き{08:74}{08:56}聞いてやろうぞ！\n<wait>		No man before has dared to argue against me.\nYou have caught my attention. Go ahead, state your business.\n<wait>	v005		reads: わらわにそこまでの口をきいた人間は、今までおらぬぞよ！\n用向きだけでも聞いてやろうぞ！\n<wait>
+m/MS0032.BIN	0:01	28	844	1FD2	ヴェパル：		Vepar:	v005		
+m/MS0032.BIN	0:01	29	856	1FD3	何故、わらわの元に参{08:51}のか？\n		What is it that brings you here?\n	v005		reads: 何故、わらわの元に参ったのか？\n; reads: フフ‥‥‥ホホホホホ！！\n面白いをのこじゃ！\n<wait>
+m/MS0032.BIN	0:01	30	901	1FB2	貴様を倒す為		Killing you	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:01	31	915	1FB2	何となく		No reason	v005		menu option, declared width 20 columns; reads: わらわにそこまでの口をきいた人間は、今までおらぬぞよ！\n用向きだけでも聞いてやろうぞ！\n<wait> @refalign
+m/MS0032.BIN	0:01	32	945	1FD2	ヴェパル：		Vepar:	v005		
+m/MS0032.BIN	0:01	33	957	1FD3	ほう{08:72}豪胆なをのこ{08:81}{02:08}\nわらわを倒す為に、わざわざ{08:45}{08:71}ま{08:22}と{08:68}かや？\n<wait>		Is that truly it? You've come all this way just to kill me?\n<wait>	v005		reads: ほう‥‥豪胆なをのこじゃ‥‥‥\nわらわを倒す為に、わざわざここまでまいったというかや？\n<wait>; reads: 何故、わらわの元に参ったのか？\n
+m/MS0032.BIN	0:01	34	1033	1FD2	ヴェパル：		Vepar:	v005		menu option, declared width 20 columns
+m/MS0032.BIN	0:01	35	1045	1FD3	{08:61}{02:08}何故わらわを倒そうと{08:68}の{08:81}？\n		Why is that?\n	v005		reads: しかし‥‥‥何故わらわを倒そうというのじゃ？\n; menu option, declared width 20 columns
+m/MS0032.BIN	0:01	36	1094	1FB2	{08:0B}は許さん！	I won't forgive demons!	I hate demons!	v005	draft	reads: 悪魔は許さん！; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0032.BIN	0:01	37	1108	1FB2	恋人の体を返せ		My lover's body...	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:01	38	1124	1FB2	問答無用		Refuse to say	v005		menu option, declared width 20 columns; reads: ほう‥‥豪胆なをのこじゃ‥‥‥\nわらわを倒す為に、わざわざここまでまいったというかや？\n<wait> @refalign
+m/MS0032.BIN	0:01	39	1134	1FB2	{08:4D}がさだめ{08:6B}だ		It's fate	v005		reads: それがさだめなのだ; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:01	40	1187	1FD2	ヴェパル：		Vepar:	v005		reads: しかし‥‥‥何故わらわを倒そうというのじゃ？\n
+m/MS0032.BIN	0:01	41	1199	1FD3	ほほほほ{02:08}‥！！\n{08:4D}が、さだめだと申すのかや！？\n<wait>		Hohoho! Fate, you say?\n<wait>	v005		reads: ほほほほ‥‥‥‥！！\nそれが、さだめだと申すのかや！？\n<wait>; reads: 悪魔は許さん！; menu option, declared width 20 columns
+m/MS0032.BIN	0:01	42	1255	1FD2	ヴェパル：		Vepar:	v005		menu option, declared width 20 columns
+m/MS0032.BIN	0:01	43	1267	1FD3	{08:4D}{08:62}間違い{08:81}{02:08}\n<wait>何故{08:7D}、そなたは{08:45}で、わらわに倒{03:0C}るの{08:42}{08:81}！\n		I think you have it the wrong way around.\n<wait>It is you who's going to die here!\n	v005		reads: それは、間違いじゃ‥‥‥\n<wait>何故なら、そなたはここで、わらわに倒されるのからじゃ！\n; menu option, declared width 20 columns
+m/MS0032.BIN	0:01	44	1344	1FD2	ヴェパル：		Vepar:	v005		reads: それがさだめなのだ; menu option, declared width 20 columns
+m/MS0032.BIN	0:01	45	1356	1FD3	ふん{08:72}！　正義感と言う奴か{02:08}？\n<wait>	Hmph...! A sense of justice, is it.........?\n<wait>	Hmph. One of those, huh?\n<wait>	v005	draft	reads: ふん‥‥！　正義感と言う奴か‥‥‥？\n<wait>; reads: 桐島英美レジスタンス山瀬勇 @ours-2026-09-05
+m/MS0032.BIN	0:01	46	1395	1FD2	ヴェパル：	Vepar:	Vepar:	v005	draft	@ours-2026-09-05
+m/MS0032.BIN	0:01	47	1407	1FD3	{02:0B}と{08:68}物{08:62}つまらぬ感情を持{08:52}おる{08:5E}よ{08:72}！\n<wait>		I don't think that I will ever stop laughing at the stupidity\nof human emotions.\n<wait>	v005		reads: 人間という物は、つまらぬ感情を持っておるものよ‥‥！\n<wait>
+m/MS0032.BIN	0:01	48	1456	1FD2	ヴェパル：		Vepar:	v005		reads: ほほほほ‥‥‥‥！！\nそれが、さだめだと申すのかや！？\n<wait>
+m/MS0032.BIN	0:01	49	1468	1FD3	そこ{08:71}言い切るので{08:3F}ば、相手を{08:4A}やろうぞ！！\n己の無謀さを後悔{08:8E}が良い！！\n		Very well then. If it's a fight you want, then a fight you will get!\nPrepare to put those foolish ambitions of yours to rest!\n	v005		reads: そこまで言い切るのであれば、相手をしてやろうぞ！！\n己の無謀さを後悔するが良い！！\n
+m/MS0032.BIN	0:01	50	1549	1FD2	ヴェパル：		Vepar:	v005		reads: それは、間違いじゃ‥‥‥\n<wait>何故なら、そなたはここで、わらわに倒されるのからじゃ！\n
+m/MS0032.BIN	0:01	51	1561	1FD3	{08:72}はて{08:72}恋人の肉体とな{08:72}？\n<wait>{08:79}{08:69}な物、わらわは知らぬぞよ。\n<wait>		Your lover's... body?...\n<wait>I have not the slightest clue what you're referring to.\n<wait>	v005		reads: ‥‥はて‥‥恋人の肉体とな‥‥？\n<wait>そのような物、わらわは知らぬぞよ。\n<wait>
+m/MS0032.BIN	0:01	52	1631	1FD2	ヴェパル：		Vepar:	v005		reads: ふん‥‥！　正義感と言う奴か‥‥‥？\n<wait>
+m/MS0032.BIN	0:01	53	1643	1FD3	そもそも、そなたと相まみ{08:28}のも、{08:48}が初めてでは{08:25}かえ。\n<wait>		I haven't ever even seen you before.\n<wait>	v005		reads: そもそも、そなたと相まみえるのも、これが初めてではないかえ。\n<wait>
+m/MS0032.BIN	0:01	54	1706	1FD2	ヴェパル：		Vepar:	v005		reads: 人間という物は、つまらぬ感情を持っておるものよ‥‥！\n<wait>
+m/MS0032.BIN	0:01	55	1718	1FD3	つまらぬ言いがかり{08:62}よすの{08:81}！！\n<wait>		Now, enough talk.\n<wait>	v005		reads: つまらぬ言いがかりは、よすのじゃ！！\n<wait>
+m/MS0032.BIN	0:01	56	1759	1FD2	ヴェパル：		Vepar:	v005		reads: そこまで言い切るのであれば、相手をしてやろうぞ！！\n己の無謀さを後悔するが良い！！\n
+m/MS0032.BIN	0:01	57	1771	1FD3	いかに勘違いを{08:4A}お{08:51}とは言え、{08:47}狼藉、許{08:2A}物では無い！\nそなたの命{08:56}{08:52}、償{08:52}もらおうかや！！\n		Saying that you're sorry will not save you here.\nYou shall pay for your insolence with your life!\n	v005		reads: いかに勘違いをしておったとは言え、この狼藉、許せる物では無い！\nそなたの命でもって、償ってもらおうかや！！\n
+m/MS0032.BIN	0:01	58	1876	1FD2	ヴェパル：		Vepar:	v005		reads: ‥‥はて‥‥恋人の肉体とな‥‥？\n<wait>そのような物、わらわは知らぬぞよ。\n<wait>
+m/MS0032.BIN	0:01	59	1888	1FD3	{02:08}あく{08:71}わらわを倒そうと{08:68}か！\n<wait>		...So, you wish to kill me then?\n<wait>	v005		reads: ‥‥‥あくまでわらわを倒そうというか！\n<wait>
+m/MS0032.BIN	0:01	60	1927	1FD2	ヴェパル：		Vepar:	v005		reads: そもそも、そなたと相まみえるのも、これが初めてではないかえ。\n<wait>
+m/MS0032.BIN	0:01	61	1939	1FD3	{08:72}まあよい。そこ{08:71}言うなれば、相手を{08:4A}やろうぞ！\nわらわも退屈{08:4A}{08:64}所{08:81}{02:08}\n<wait>		Very well. If it's a fight you want, then a fight you shall get!\nI was just thinking about ways to alleviate boredom!\n<wait>	v005		reads: ‥‥まあよい。そこまで言うなれば、相手をしてやろうぞ！\nわらわも退屈していた所じゃ‥‥‥\n<wait>
+m/MS0032.BIN	0:01	62	2019	1FD2	ヴェパル：		Vepar:	v005		reads: つまらぬ言いがかりは、よすのじゃ！！\n<wait>
+m/MS0032.BIN	0:01	63	2031	1FD3	{08:48}より後、そなたがどん{08:58}詫び{08:69}とも、許しはせぬぞえ{08:72}\n覚悟{08:8E}がよいわ！！\n		Prepare yourself! No matter how hard you cry and beg,\nI will not stop until you draw your final breath!\n	v005		reads: これより後、そなたがどんなに詫びようとも、許しはせぬぞえ‥‥\n覚悟するがよいわ！！\n
+m/MS0032.BIN	0:01	64	2110	1FD2	ヴェパル：		Vepar:	v005		reads: いかに勘違いをしておったとは言え、この狼藉、許せる物では無い！\nそなたの命でもって、償ってもらおうかや！！\n
+m/MS0032.BIN	0:01	65	2122	1FD3	{02:08}おかしな奴よ{02:08}\n目的も無くわらわの居城に侵入し、狼藉を働{08:64}と言うか？\n<wait>		Heh. How curious. You barge into my castle,\nyet have no reason to offer for your actions.\n<wait>	v005		reads: ‥‥‥おかしな奴よ‥‥‥\n目的も無くわらわの居城に侵入し、狼藉を働いたと言うか？\n<wait>
+m/MS0032.BIN	0:01	66	2200	1FD2	ヴェパル：		Vepar:	v005		reads: ‥‥‥あくまでわらわを倒そうというか！\n<wait>
+m/MS0032.BIN	0:01	67	2212	1FD3	{02:08}許せぬな{02:08}\n<wait>		...Such a thing can not be forgiven.\n<wait>	v005		reads: ‥‥‥許せぬな‥‥‥\n<wait>
+m/MS0032.BIN	0:01	68	2233	1FD2	ヴェパル：		Vepar:	v005		reads: ‥‥まあよい。そこまで言うなれば、相手をしてやろうぞ！\nわらわも退屈していた所じゃ‥‥‥\n<wait>
+m/MS0032.BIN	0:01	69	2245	1FD3	{08:47}{08:69}な事、{02:0B}界{08:56}まかり通らぬでは{08:25}か？\n{08:4D}なりの償いを{08:4A}もらわねば{08:59}まいぞ。\n<wait>		I doubt such behaviour would fly even in the world of men.\nNo, you're going to need to pay for your insolence.\n<wait>	v005		reads: このような事、人間界でもまかり通らぬではないか？\nそれなりの償いをしてもらわねばなるまいぞ。\n<wait>
+m/MS0032.BIN	0:01	70	2329	1FD2	ヴェパル：		Vepar:	v005		reads: これより後、そなたがどんなに詫びようとも、許しはせぬぞえ‥‥\n覚悟するがよいわ！！\n
+m/MS0032.BIN	0:01	71	2341	1FD3	償いは{02:08}‥そなたの命で{08:4A}もらおうか！\n		That payment will be done... in blood!\n	v005		reads: 償いは‥‥‥‥そなたの命でしてもらおうか！\n
+m/MS0032.BIN	0:01	72	2385	1FD2	ヴェパル：		Vepar:	v005		reads: ‥‥‥おかしな奴よ‥‥‥\n目的も無くわらわの居城に侵入し、狼藉を働いたと言うか？\n<wait>
+m/MS0032.BIN	0:01	73	2397	1FD3	では何かえ？　謝る{08:74}で事が済むと思{08:52}おるのかや？\n{02:08}甘いぞよ{02:08}‥\n<wait>		What? You expect you can just say "sorry" and walk away?\nOh, how naive...\n<wait>	v005		reads: では何かえ？　謝るだけで事が済むと思っておるのかや？\n‥‥‥甘いぞよ‥‥‥‥\n<wait>
+m/MS0032.BIN	0:01	74	2469	1FD2	ヴェパル：		Vepar:	v005		reads: ‥‥‥許せぬな‥‥‥\n<wait>
+m/MS0032.BIN	0:01	75	2481	1FD3	わらわの城に侵入し、挙げ句に我が倦族の者ま{08:56}手にか{08:43}者を、\n詫びの言葉一つで許す訳に{08:26}かぬ！\n<wait>		You barge into MY castle and slaughter MY acolytes.\nSuch a sin needs to be repaid in full.\n<wait>	v005		reads: わらわの城に侵入し、挙げ句に我が倦族の者までも手にかけた者を、\n詫びの言葉一つで許す訳にはいかぬ！\n<wait>
+m/MS0032.BIN	0:01	76	2581	1FD2	ヴェパル：		Vepar:	v005		reads: このような事、人間界でもまかり通らぬではないか？\nそれなりの償いをしてもらわねばなるまいぞ。\n<wait>
+m/MS0032.BIN	0:01	77	2593	1FD3	そなたの身体{02:08}水に沈め、我が倦族のせめ{08:54}の供養とし{08:69}ぞ！！\n		That body of yours shall make a fine gravestone\nfor the lives you have taken!\n	v005		reads: そなたの身体‥‥‥水に沈め、我が倦族のせめてもの供養としようぞ！！\n
+m/MS0032.BIN	0:01	78	2668	1FB2	戦う		Fight	v005		menu option, declared width 20 columns; reads: 償いは‥‥‥‥そなたの命でしてもらおうか！\n @refalign
+m/MS0032.BIN	0:01	79	2674	1FB2	逃げる		Run	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:01	80	2702	1FD2	ヴェパル：		Vepar:	v005		reads: では何かえ？　謝るだけで事が済むと思っておるのかや？\n‥‥‥甘いぞよ‥‥‥‥\n<wait>
+m/MS0032.BIN	0:01	81	2714	1FD3	良い心掛け{08:81}{02:08}相手にと{08:52}不足は無い{08:72}\n<wait>行くぞ！！！\n		I like that... You might just make a worthy foe...\n<wait>Come!\n	v005		reads: 良い心掛けじゃ‥‥‥相手にとって不足は無い‥‥\n<wait>行くぞ！！！\n
+m/MS0032.BIN	0:01	82	2781	1F01	{08:62}逃げ{08:69}と{08:4B}{02:08}\n<wait>{03:0B}入{08:52}{08:1E}扉は堅く閉ざ{03:0C}て{08:64}{02:08}\n<wait>	 tried to flee......\n<wait>But the door he had come in by was shut fast......\n<wait>	You attempt to run away.\n<wait>However, the door through which you entered is now sealed shut.\n<wait>	v005	draft	reads: は、逃げようとした‥‥‥\n<wait>しかし、入ってきた扉は堅く閉ざされていた‥‥‥\n<wait>; reads: わらわの城に侵入し、挙げ句に我が倦族の者までも手にかけた者を、\n詫びの言葉一つで許す訳にはいかぬ！\n<wait> @rebase-tagdiff @seamfix-2026-09-05
+m/MS0032.BIN	0:01	83	2837	1FD2	ヴェパル：		Vepar:	v005		
+m/MS0032.BIN	0:01	84	2849	1FD3	おや{02:08}{08:45}{08:71}来て、逃げる{01:3E}かえ？\n何とも腰抜けなをのこよの。\n<wait>		Oh? You come all this way, and now you are just going to run?\n<wait>	v005		reads: おや‥‥‥ここまで来て、逃げるつもりかえ？\n何とも腰抜けなをのこよの。\n<wait>; reads: そなたの身体‥‥‥水に沈め、我が倦族のせめてもの供養としようぞ！！\n
+m/MS0032.BIN	0:01	85	2915	1FD2	ヴェパル：		Vepar:	v005		menu option, declared width 20 columns
+m/MS0032.BIN	0:01	86	2927	1FD3	{08:81}が、逃げ{08:69}と{08:4A}も無駄。\n入口の扉{08:62}わらわがすでに封印{08:4B}わ。\n<wait>		Give it up. I've sealed all of the exits.\n<wait>	v005		reads: じゃが、逃げようとしても無駄。\n入口の扉は、わらわがすでに封印したわ。\n<wait>; menu option, declared width 20 columns
+m/MS0032.BIN	0:01	87	2995	1FD2	ヴェパル：	Vepar:	Vepar:	v005	draft	reads:  @ours-2026-09-05
+m/MS0032.BIN	0:01	88	3007	1FD3	{08:47}わらわの前に出たが、そなたの運の尽きよ。\n<wait>	Coming before me was where your luck ran out.\n<wait>	Your fate was sealed the moment you stepped here.\n<wait>	v005	draft	reads: このわらわの前に出たが、そなたの運の尽きよ。\n<wait>; reads: このわらわの前に出たが、そなたの運の尽きよ。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:01	89	3058	1FD2	ヴェパル：		Vepar:	v005		
+m/MS0032.BIN	0:01	90	3070	1FD3	そなたも、をのこであろう？\nなれば、万に一つわらわに勝つと{08:68}望みを賭け、神妙に勝負せい！！\n<wait>		You are a man, are you not? Then face me like one!\n<wait>	v005		reads: そなたも、をのこであろう？\nなれば、万に一つわらわに勝つという望みを賭け、神妙に勝負せい！！\n<wait>; reads: 良い心掛けじゃ‥‥‥相手にとって不足は無い‥‥\n<wait>行くぞ！！！\n
+m/MS0032.BIN	0:01	91	3168	1FD2	ヴェパル：		Vepar:	v005		reads: は、逃げようとした‥‥‥\n<wait>しかし、入ってきた扉は堅く閉ざされていた‥‥‥\n<wait>
+m/MS0032.BIN	0:01	92	3180	1FD3	行くぞ！！\n		Come!\n	v005		
+m/MS0032.BIN	0:01	93	3198	1FD2	ヴェパル：		Vepar:	v005		reads: おや‥‥‥ここまで来て、逃げるつもりかえ？\n何とも腰抜けなをのこよの。\n<wait>
+m/MS0032.BIN	0:01	94	3210	1FD3	ふふふ{02:08}素直なをのこ{08:81}。\n今時、珍しいのでは{08:25}かえ？\n<wait>		Hehehe... What a good boy you are. There aren't many like you left.\n<wait>	v005		reads: ふふふ‥‥‥素直なをのこじゃ。\n今時、珍しいのではないかえ？\n<wait>
+m/MS0032.BIN	0:01	95	3270	1FD2	ヴェパル：		Vepar:	v005		reads: じゃが、逃げようとしても無駄。\n入口の扉は、わらわがすでに封印したわ。\n<wait>
+m/MS0032.BIN	0:01	96	3282	1FD3	{08:58}、簡単な事{08:81}。\nそなたの命。{08:4D}で償{08:52}もらおうでは{08:25}か？\n<wait>		It's simple, really. Offer me your life.\nThen, I will forgive your sins.\n<wait>	v005		reads: なに、簡単な事じゃ。\nそなたの命。それで償ってもらおうではないか？\n<wait>
+m/MS0032.BIN	0:01	97	3346	1FD2	ヴェパル：		Vepar:	v005		reads: このわらわの前に出たが、そなたの運の尽きよ。\n<wait>
+m/MS0032.BIN	0:01	98	3358	1FD3	そなたを喰えば、かなりの力を得られそう{08:81}{02:08}‥\nさすれば、{01:08}共にも引けは取らぬわ{02:08}\n<wait>		You look like eating you would make me quite powerful.\nPerhaps powerful enough to take down the mighty Lord Baal himself...\n<wait>	ours		reads: そなたを喰えば、かなりの力を得られそうじゃ‥‥‥‥\nさすれば、バエル共にも引けは取らぬわ‥‥‥\n<wait>
+m/MS0032.BIN	0:01	99	3446	1FD2	ヴェパル：		Vepar:	v005		reads: そなたも、をのこであろう？\nなれば、万に一つわらわに勝つという望みを賭け、神妙に勝負せい！！\n<wait>
+m/MS0032.BIN	0:01	100	3458	1FD3	{02:08}さあ！　大人しくわらわに{08:79}身捧げるの{08:81}！！\n		Now, enough talk! Submit your flesh to me!\n	v005		reads: ‥‥‥さあ！　大人しくわらわにその身捧げるのじゃ！！\n
+m/MS0032.BIN	0:01	101	3510	1FD2	ヴェパル：		Vepar:	v005		
+m/MS0032.BIN	0:01	102	3522	1FD3	知ら{08:19}{02:08}‥とな？\n知らずに{08:45}{08:71}参{08:51}と{08:68}のかや？\n<wait>		You... didn't know?\nYou came this far without knowing where you were?\n<wait>	v005		reads: 知らなかった‥‥‥‥とな？\n知らずにここまで参ったというのかや？\n<wait>
+m/MS0032.BIN	0:01	103	3576	1FD2	ヴェパル：		Vepar:	v005		reads: ふふふ‥‥‥素直なをのこじゃ。\n今時、珍しいのではないかえ？\n<wait>
+m/MS0032.BIN	0:01	104	3588	1FD3	{03:0B}我が倦族を手にか{08:43}と{08:68}は許せぬ！！\n		And yet, you killed my acolytes!\n	v005		reads: しかし、我が倦族を手にかけたというは許せぬ！！\n
+m/MS0032.BIN	0:01	105	3641	1FB2	襲{08:52}{08:1E}{08:42}		They attacked me	v005		reads: 襲ってきたから; menu option, declared width 20 columns; reads: なに、簡単な事じゃ。\nそなたの命。それで償ってもらおうではないか？\n<wait> @refalign
+m/MS0032.BIN	0:01	106	3651	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:01	107	3679	1FD2	ヴェパル：		Vepar:	v005		reads: そなたを喰えば、かなりの力を得られそうじゃ‥‥‥‥\nさすれば、バエル共にも引けは取らぬわ‥‥‥\n<wait>
+m/MS0032.BIN	0:01	108	3691	1FD3	ふむ{02:08}降りかかる火の粉は払う{02:08}<wait>そう{08:68}事か{02:08}‥\n<wait>		So, you're saying it was self-defence?\n<wait>Hmmm...<wait>	v005		reads: ふむ‥‥‥降りかかる火の粉は払う‥‥‥<wait>そういう事か‥‥‥‥\n<wait>
+m/MS0032.BIN	0:01	109	3748	1FD2	ヴェパル：		Vepar:	v005		reads: ‥‥‥さあ！　大人しくわらわにその身捧げるのじゃ！！\n
+m/MS0032.BIN	0:01	110	3760	1FD3	{08:4D}も{08:5B}一理{08:7B}。\n<wait>		Well, that does make sense.\n<wait>	v005		reads: それもまた一理ある。\n<wait>
+m/MS0032.BIN	0:01	111	3783	1FD2	ヴェパル：		Vepar:	v005		reads: 知らなかった‥‥‥‥とな？\n知らずにここまで参ったというのかや？\n<wait>
+m/MS0032.BIN	0:01	112	3795	1FD3	{08:81}が、わらわも{08:47}場所を統べる者。\n我が倦族を倒{03:0C}て黙{08:52}{08:64}とあ{08:52}{08:62}わらわの名がすたると{08:68}{08:5E}{02:08}\n<wait>		Regardless, this is my domain, and I am its lord.\nIt'd be a great stain upon my name were I to let you walk away.\n<wait>	v005		reads: じゃが、わらわもこの場所を統べる者。\n我が倦族を倒されて黙っていたとあっては、わらわの名がすたるというもの‥‥‥\n<wait>
+m/MS0032.BIN	0:01	113	3893	1FD2	ヴェパル：		Vepar:	v005		reads: しかし、我が倦族を手にかけたというは許せぬ！！\n
+m/MS0032.BIN	0:01	114	3905	1FD3	{08:90}{08:81}？　{08:47}わらわと{08:68}火の粉を払{08:28}かの？\n		Let us see if you can defend yourself against me!\n	v005		reads: どうじゃ？　このわらわという火の粉を払えるかの？\n; reads: 襲ってきたから; menu option, declared width 20 columns
+m/MS0032.BIN	0:01	115	3960	1FB2	戦う		Fight	v005		menu option, declared width 20 columns; reads: 黙っている @refalign
+m/MS0032.BIN	0:01	116	3966	1FB2	逃げる	Run 	Run	v005	draft	menu option, declared width 20 columns; reads: ひとつ @ours-2026-09-05
+m/MS0032.BIN	0:01	117	4000	1F01	は黙{08:52}{08:64}{02:08}‥\n<wait>	 stayed silent............\n<wait>			draft	reads: は黙っていた‥‥‥‥\n<wait>; reads: は黙っていた‥‥‥‥\n<wait> @rebase-new @ours-2026-09-05
+m/MS0032.BIN	0:01	118	4021	1FD2	ヴェパル：	Vepar:			draft	reads: ふむ‥‥‥降りかかる火の粉は払う‥‥‥<wait>そういう事か‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:01	119	4033	1FD3	{08:72}理由は{08:90}{08:3F}、わらわも{08:47}地を統べる者{08:81}。\n我が倦族を倒{03:0C}て黙{08:52}{08:64}とあ{08:52}{08:62}わらわの名がすたると{08:68}{08:5E}{02:08}\n<wait>	...Whatever the reason, I too am one who rules this land.\nWere I to stay silent while my kin are slain, my name would be\ndisgraced.........\n<wait>			draft	reads: ‥‥理由はどうあれ、わらわもこの地を統べる者じゃ。\n我が倦族を倒されて黙っていたとあっては、わらわの名がすたるというもの‥‥‥\n<wait>; reads: ‥‥理由はどうあれ、わらわもこの地を統べる者じゃ。\n我が倦族を倒されて黙っていたとあっては、わらわの名がすたるというもの‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:01	120	4139	1FD2	ヴェパル：	Vepar:			draft	reads: それもまた一理ある。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:01	121	4151	1FD3	わらわと勝負し勝たぬ限り、そなたは{08:45}{08:42}出る事は出来ぬ。\n万一そなたが勝てば{08:47}命、潔くそなたにくれてやろうぞ！！\n	Unless you fight me and win, you shall not leave this place.\nShould you by chance win, I'll gladly give you this life of mine!!\n			draft	reads: わらわと勝負し勝たぬ限り、そなたはここから出る事は出来ぬ。\n万一そなたが勝てばこの命、潔くそなたにくれてやろうぞ！！\n; reads: わらわと勝負し勝たぬ限り、そなたはここから出る事は出来ぬ。\n万一そなたが勝てばこの命、潔くそなたにくれてやろうぞ！！\n @ours-2026-09-05
+m/MS0032.BIN	0:01	122	4268	1FD2	ヴェパル：	Vepar:			draft	reads: じゃが、わらわもこの場所を統べる者。\n我が倦族を倒されて黙っていたとあっては、わらわの名がすたるというもの‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:01	123	4280	1FD3	そなた、{08:0B}が憎いのかや？\n	You there, do you hate demons?\n			draft	reads: そなた、悪魔が憎いのかや？\n; reads: そなた、悪魔が憎いのかや？\n @ours-2026-09-05
+m/MS0032.BIN	0:01	124	4321	1FB2	憎い！		I hate them!	v005		menu option, declared width 20 columns; reads: どうじゃ？　このわらわという火の粉を払えるかの？\n @refalign
+m/MS0032.BIN	0:01	125	4329	1FB2	別に		No really	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:01	126	4335	1FB2	世界は{02:0B}の{08:5E}だ		Humans rule the world!	v005		reads: 世界は人間のものだ; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:01	127	4381	1FD2	ヴェパル：	Vepar:	Vepar:	v005	draft	reads: つもり{=FB}{=FF} @ours-2026-09-05
+m/MS0032.BIN	0:01	128	4393	1FD3	ホホホホホ！！\n未だに、{08:79}{08:69}な思想を抱い{08:14}{08:5E}がおるとは{02:08}\n<wait>		Hehehehe! I am fascinated to see that there still\nexist people who think that!\n<wait>	v005		reads: ホホホホホ！！\n未だに、そのような思想を抱いているものがおるとは‥‥‥\n<wait>; reads: は黙っていた‥‥‥‥\n<wait> @rebase-unmatched idx128 en=You remain silent.\n<wait>
+m/MS0032.BIN	0:01	129	4457	1FD2	ヴェパル：		Vepar:	v005		
+m/MS0032.BIN	0:01	130	4469	1FD3	愚かな{08:5E}よのう{02:08}\n{08:47}世界の有り様を見れば、真実を理解できるであろうに{02:08}\n<wait>		Can you not look at the state of the world around you\nand see how foolish that is?\n<wait>	v005		reads: 愚かなものよのう‥‥‥\nこの世界の有り様を見れば、真実を理解できるであろうに‥‥‥\n<wait>; reads: ‥‥理由はどうあれ、わらわもこの地を統べる者じゃ。\n我が倦族を倒されて黙っていたとあっては、わらわの名がすたるというもの‥‥‥\n<wait>
+m/MS0032.BIN	0:01	131	4547	1FD2	ヴェパル：		Vepar:	v005		
+m/MS0032.BIN	0:01	132	4559	1FD3	そなた一人の力で{08:62}{08:90}{08:8E}{08:46}も出来ぬ{02:08}‥\n諦{08:2E}{08:46}{08:81}{02:08}<wait>そな{08:50}の、命と共に{02:08}\n		Surely you do not think you can change anything by yourself.\n<wait>Well, if you wish to forfeit your life,\nthen who am I to stop you.\n	v005		reads: そなた一人の力では、どうすることも出来ぬ‥‥‥‥\n諦めることじゃ‥‥‥<wait>そなたらの、命と共に‥‥‥\n; reads: わらわと勝負し勝たぬ限り、そなたはここから出る事は出来ぬ。\n万一そなたが勝てばこの命、潔くそなたにくれてやろうぞ！！\n
+m/MS0032.BIN	0:01	133	4644	1FD2	ヴェパル：		Vepar:	v005		
+m/MS0032.BIN	0:01	134	4656	1FD3	憎しみ{08:72}憎しみ{08:74}で、{08:47}わらわを倒そうとは思うな！\nそなたごときに、わらわは倒{03:0C}はせぬ！！\n<wait>		Hatred... Do you think hatred alone will help you kill me!?\n<wait>	v005		reads: 憎しみ‥‥憎しみだけで、このわらわを倒そうとは思うな！\nそなたごときに、わらわは倒されはせぬ！！\n<wait>; reads: そなた、悪魔が憎いのかや？\n
+m/MS0032.BIN	0:01	135	4752	1FD2	ヴェパル：		Vepar:	v005		menu option, declared width 20 columns
+m/MS0032.BIN	0:01	136	4764	1FD3	覚悟{08:8E}の{08:62}そなたの方{08:81}！！\n		No, you are the one who will die here!\n	v005		reads: 覚悟するのは、そなたの方じゃ！！\n; menu option, declared width 20 columns
+m/MS0032.BIN	0:01	137	4807	1FD2	ヴェパル：		Vepar:	v005		reads: 世界は人間のものだ; menu option, declared width 20 columns
+m/MS0032.BIN	0:01	138	4819	1FD3	ぞなた{08:72}慰みに{08:0B}を殺{08:2E}者か？\n{02:08}{08:7C}容赦はせぬぞよ！！\n<wait>	You... are one who slays demons for amusement?\n.........Then I shall show no mercy!!\n<wait>	Are you saying that you kill demons just for fun?\nYou are going to pay for that!\n<wait>	v005	draft	reads: ぞなた‥‥慰みに悪魔を殺める者か？\n‥‥‥ならば容赦はせぬぞよ！！\n<wait>; reads: 桐島英美山瀬勇 @ours-2026-09-05
+m/MS0032.BIN	0:01	139	4879	1FD2	ヴェパル：	Vepar:	Vepar:	v005	draft	@ours-2026-09-05
+m/MS0032.BIN	0:01	140	4891	1FD3	わらわは今{08:71}の者と{08:62}違うぞえ！！\n覚悟！！\n<wait>		Prepare yourself!\n<wait>	v005		reads: わらわは今までの者とは、違うぞえ！！\n覚悟！！\n<wait>
+m/MS0032.BIN	0:01	141	4941	1FD0	ヴェパルが{03:07}{08:1C}！\n<wait>		Vepar attacks!\n<wait>	v005		reads: ヴェパルが襲いかかってきた！！\n<wait>; reads: ホホホホホ！！\n未だに、そのような思想を抱いているものがおるとは‥‥‥\n<wait>
 m/MS0032.BIN	0:01	142	4969	1EBE	{01:00}	{01:00}				reads: 早坂達也
 m/MS0032.BIN	0:01	143	4972	00	{04:FF}	{04:FF}				reads: ; reads: 愚かなものよのう‥‥‥\nこの世界の有り様を見れば、真実を理解できるであろうに‥‥‥\n<wait>
 m/MS0032.BIN	0:01	144	4975	00	d{04:FF}	d{04:FF}				reads: d
 m/MS0032.BIN	0:01	145	4979	00	d	d				reads: そなた一人の力では、どうすることも出来ぬ‥‥‥‥\n諦めることじゃ‥‥‥<wait>そなたらの、命と共に‥‥‥\n
 m/MS0032.BIN	0:01	146	5002	1F82	p	p				
 m/MS0032.BIN	0:01	147	5005	00	{01:72}{=E9}{=00}	{01:72}{=E9}{=00}				reads: {=E9}{=00}; reads: 憎しみ‥‥憎しみだけで、このわらわを倒そうとは思うな！\nそなたごときに、わらわは倒されはせぬ！！\n<wait>
-m/MS0032.BIN	0:01	148	5026	1FD2	ヴェパル：					
-m/MS0032.BIN	0:01	149	5038	1FD3	おお{02:08}何と{08:68}{08:46}{08:81}{02:08}\n信じられぬ{02:08}‥{02:0B}に{08:47}{08:69}な力を持つ者が{08:40}とは{02:08}\n<wait>					reads: おお‥‥‥何ということじゃ‥‥‥\n信じられぬ‥‥‥‥人間にこのような力を持つ者がいるとは‥‥‥\n<wait>; reads: 覚悟するのは、そなたの方じゃ！！\n
-m/MS0032.BIN	0:01	150	5110	1FD2	ヴェパル：					
-m/MS0032.BIN	0:01	151	5122	1FD3	{02:08}わらわの真の姿を見た者は{08:72}そなたが初めて{08:81}{02:08}\n覚悟{08:8E}の{08:81}{02:08}！！\n<wait>					reads: ‥‥‥わらわの真の姿を見た者は‥‥そなたが初めてじゃ‥‥‥\n覚悟するのじゃ‥‥‥！！\n<wait>; reads: ぞなた‥‥慰みに悪魔を殺める者か？\n‥‥‥ならば容赦はせぬぞよ！！\n<wait>
+m/MS0032.BIN	0:01	148	5026	1FD2	ヴェパル：		Vepar:	v005		
+m/MS0032.BIN	0:01	149	5038	1FD3	おお{02:08}何と{08:68}{08:46}{08:81}{02:08}\n信じられぬ{02:08}‥{02:0B}に{08:47}{08:69}な力を持つ者が{08:40}とは{02:08}\n<wait>		Oooh... I didn't know there were humans this powerful out there...\n<wait>	v005		reads: おお‥‥‥何ということじゃ‥‥‥\n信じられぬ‥‥‥‥人間にこのような力を持つ者がいるとは‥‥‥\n<wait>; reads: 覚悟するのは、そなたの方じゃ！！\n
+m/MS0032.BIN	0:01	150	5110	1FD2	ヴェパル：		Vepar:	v005		
+m/MS0032.BIN	0:01	151	5122	1FD3	{02:08}わらわの真の姿を見た者は{08:72}そなたが初めて{08:81}{02:08}\n覚悟{08:8E}の{08:81}{02:08}！！\n<wait>		...No one before... has seen my true form...\nPrepare yourself!\n<wait>	v005		reads: ‥‥‥わらわの真の姿を見た者は‥‥そなたが初めてじゃ‥‥‥\n覚悟するのじゃ‥‥‥！！\n<wait>; reads: ぞなた‥‥慰みに悪魔を殺める者か？\n‥‥‥ならば容赦はせぬぞよ！！\n<wait>
 m/MS0032.BIN	0:01	152	5217	1EBE	{01:00}	{01:00}				reads: 早坂達也
 m/MS0032.BIN	0:01	153	5220	00	{04:FF}	{04:FF}				reads: ; reads: わらわは今までの者とは、違うぞえ！！\n覚悟！！\n<wait>
 m/MS0032.BIN	0:01	154	5223	00	d{04:FF}	d{04:FF}				reads: d; reads: ヴェパルが襲いかかってきた！！\n<wait>
 m/MS0032.BIN	0:01	155	5227	00	d	d				reads: 早坂達也
-m/MS0032.BIN	0:01	156	5241	1F82	ﾒヴェパル：	ﾒヴェパル：				reads: 
-m/MS0032.BIN	0:01	157	5254	1FD3	{08:72}惜しい{08:72}惜しいぞよ{02:08}{08:72}\nそなたの力得られれば、	...A pity... a pity............\nHad I only gained your power, I would				reads: ‥‥惜しい‥‥惜しいぞよ‥‥‥‥‥\nそなたの力得られれば、; reads: d @ours-2026-09-05
-m/MS0032.BIN	0:01	158	5307	1FFA	さ‥ぞ{02:08}‥	 sure...ly............				reads: さ‥ぞ‥‥‥‥; reads: さ‥ぞ‥‥‥‥ @ours-2026-09-05
-m/MS0032.BIN	0:01	159	5323	1FFA	グッ！！\n	Gagh!!\n				@ours-2026-09-05
-m/MS0032.BIN	0:02	0	2	1FD0	{08:0B}達が水槽の中で泳いで{08:40}{02:08}\n					reads: 悪魔達が水槽の中で泳いでいる‥‥‥\n; reads: 悪魔達が水槽の中で泳いでいる‥‥‥\n @refalign
-m/MS0032.BIN	0:03	0	7	1FD0	デミ・ヒューマンの死体が{08:7B}{02:08}\n	There is the corpse of a demi-human.........\n				reads: デミ・ヒューマンの死体がある‥‥‥\n; reads: デミ・ヒューマンの死体がある‥‥‥\n @ours-2026-09-05
-m/MS0032.BIN	0:03	1	66	1FD2	ウサギ：	Rabbit:				@ours-2026-09-05
-m/MS0032.BIN	0:03	2	76	1FD3	アリス様を悲しま{08:2A}輩{08:62}許し{02:0A}！！\n<wait>	I won't forgive anyone who makes Lady Alice sad!!\n<wait>				reads: アリス様を悲しませる輩は、許しません！！\n<wait>; reads: アリス様を悲しませる輩は、許しません！！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:03	3	117	1FD0	ウサギが{03:07}{08:1C}！\n<wait>	The Rabbit attacks!\n<wait>				reads: ウサギが襲いかかってきた！！\n<wait>; reads: ウサギが襲いかかってきた！！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:01	156	5241	1F82	ﾒヴェパル：	ﾒヴェパル：	Vepar:	ours		reads: 
+m/MS0032.BIN	0:01	157	5254	1FD3	{08:72}惜しい{08:72}惜しいぞよ{02:08}{08:72}\nそなたの力得られれば、	...A pity... a pity............\nHad I only gained your power, I would	If only... If only I could have... obtained your 	v005	draft	reads: ‥‥惜しい‥‥惜しいぞよ‥‥‥‥‥\nそなたの力得られれば、; reads: d @ours-2026-09-05
+m/MS0032.BIN	0:01	158	5307	1FFA	さ‥ぞ{02:08}‥	 sure...ly............	power... 	v005	draft	reads: さ‥ぞ‥‥‥‥; reads: さ‥ぞ‥‥‥‥ @ours-2026-09-05
+m/MS0032.BIN	0:01	159	5323	1FFA	グッ！！\n	Gagh!!\n	Gaagh!\n	v005	draft	@ours-2026-09-05
+m/MS0032.BIN	0:02	0	2	1FD0	{08:0B}達が水槽の中で泳いで{08:40}{02:08}\n		You can see demons swimming in the pool...\n	v005		reads: 悪魔達が水槽の中で泳いでいる‥‥‥\n; reads: 悪魔達が水槽の中で泳いでいる‥‥‥\n @refalign
+m/MS0032.BIN	0:03	0	7	1FD0	デミ・ヒューマンの死体が{08:7B}{02:08}\n	There is the corpse of a demi-human.........\n			draft	reads: デミ・ヒューマンの死体がある‥‥‥\n; reads: デミ・ヒューマンの死体がある‥‥‥\n @ours-2026-09-05
+m/MS0032.BIN	0:03	1	66	1FD2	ウサギ：	Rabbit:			draft	@ours-2026-09-05
+m/MS0032.BIN	0:03	2	76	1FD3	アリス様を悲しま{08:2A}輩{08:62}許し{02:0A}！！\n<wait>	I won't forgive anyone who makes Lady Alice sad!!\n<wait>			draft	reads: アリス様を悲しませる輩は、許しません！！\n<wait>; reads: アリス様を悲しませる輩は、許しません！！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:03	3	117	1FD0	ウサギが{03:07}{08:1C}！\n<wait>	The Rabbit attacks!\n<wait>			draft	reads: ウサギが襲いかかってきた！！\n<wait>; reads: ウサギが襲いかかってきた！！\n<wait> @ours-2026-09-05
 m/MS0032.BIN	0:03	4	159	00	{04:FF}	{04:FF}				reads: 
 m/MS0032.BIN	0:03	5	162	00	d{04:FF}	d{04:FF}				reads: d
 m/MS0032.BIN	0:03	6	166	00	d	d				
-m/MS0032.BIN	0:03	7	194	09	ウサギ：					@refalign
-m/MS0032.BIN	0:03	8	204	1FD3	いらっしゃ{08:89}せ。\nアリス様は最上階にいらっしゃい{08:5A}{02:08}\n					reads: いらっしゃいませ。\nアリス様は最上階にいらっしゃいます‥‥‥\n; reads: いらっしゃいませ。\nアリス様は最上階にいらっしゃいます‥‥‥\n @refalign
-m/MS0032.BIN	0:05	0	36	1FD0	{01:2E}に入ると、アリスは悲しげな瞳で	Entering the room, Alice gazed at 				reads: 部屋に入ると、アリスは悲しげな瞳で; reads: 部屋に入ると、アリスは悲しげな瞳で @ours-2026-09-05
-m/MS0032.BIN	0:05	1	74	1F01	達を見つめた。\n<wait>	 and the others with sorrowful eyes.\n<wait>				reads: 達を見つめた。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	2	97	1FD2	アリス：	Alice:				@ours-2026-09-05
-m/MS0032.BIN	0:05	3	107	1FD3	{08:90}{08:4A}{08:7A}事{08:8E}の？\nアリスの大事な宝物、取ら{08:25}でよ{02:08}\n<wait>	Why would you do such a thing?\nDon't take Alice's precious treasure.........\n<wait>				reads: どうしてそんな事するの？\nアリスの大事な宝物、取らないでよ‥‥‥\n<wait>; reads: どうしてそんな事するの？\nアリスの大事な宝物、取らないでよ‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	4	163	1FD2	アリス：	Alice:				@ours-2026-09-05
-m/MS0032.BIN	0:05	5	173	1FD3	{08:72}ひどいよ{08:72}ひどい{02:08}\n<wait>	...That's cruel... cruel.........\n<wait>				reads: ‥‥ひどいよ‥‥ひどい‥‥‥\n<wait>; reads: ‥‥ひどいよ‥‥ひどい‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	6	202	1FD0	そうい{08:52}、アリスは泣き出{08:4B}{08:72}\n<wait>	So saying, Alice began to cry...\n<wait>				reads: そういって、アリスは泣き出した‥‥\n<wait>; reads: そういって、アリスは泣き出した‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	7	239	1FD2	アリス：	Alice:				@ours-2026-09-05
-m/MS0032.BIN	0:05	8	249	1FD3	ひどい{08:72}ゆ‥せ{08:25}{08:72}許せ{08:25}{02:08}許せ{08:25}！！\n<wait>	Cruel... un... forgivable... unforgivable......... unforgivable!!\n<wait>				reads: ひどい‥‥ゆ‥せない‥‥許せない‥‥‥許せない！！\n<wait>; reads: ひどい‥‥ゆ‥せない‥‥許せない‥‥‥許せない！！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	9	294	1FD0	{08:79}瞬間に、アリスは	In that instant, Alice shoved 				reads: その瞬間に、アリスは; reads: その瞬間に、アリスは @ours-2026-09-05
-m/MS0032.BIN	0:05	10	318	1F01	を子供とは思え{08:25}力で{01:2E}の外へ押し出{08:4B}。\n<wait>	 out of the room with a strength no child should have.\n<wait>				reads: を子供とは思えない力で部屋の外へ押し出した。\n<wait>; reads: を子供とは思えない力で部屋の外へ押し出した。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	11	370	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:05	12	382	1F01	君！！\n<wait>	-kun!!\n<wait>				reads: 君！！\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS0032.BIN	0:05	13	405	1FD2	{08:3C}：					reads: 三四郎：; reads: 三四郎： @refalign
-m/MS0032.BIN	0:05	14	417	1F01	ッ！！\n<wait>	!!\n<wait>				reads: ッ！！\n<wait> @rebase-tagdiff @ours-2026-09-05
-m/MS0032.BIN	0:05	15	459	1FD0	{01:2E}の中に足を踏み入{08:2F}と、そこには古めかしい服を着た、可憐な少女が{08:64}。\n<wait>	Stepping into the room, they found a pretty girl in old-fashioned\nclothes.\n<wait>				reads: 部屋の中に足を踏み入れると、そこには古めかしい服を着た、可憐な少女がいた。\n<wait>; reads: 部屋の中に足を踏み入れると、そこには古めかしい服を着た、可憐な少女がいた。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	16	536	1FD2	少女：	Girl:				@ours-2026-09-05
-m/MS0032.BIN	0:05	17	544	1FD3	あら？　新しいお客様ね！　{08:69}こそ！\n<wait>	Oh? New guests! Welcome!\n<wait>				reads: あら？　新しいお客様ね！　ようこそ！\n<wait>; reads: あら？　新しいお客様ね！　ようこそ！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	18	594	1FD2	少女：	Girl:				@ours-2026-09-05
-m/MS0032.BIN	0:05	19	602	1FD3	あっ！　王子様も一緒{08:6B}ね。\n{08:81}あ、お兄ちゃん達も、王子様の友達？\n<wait>	Ah! The Prince is with you too.\nThen are you big brothers friends of the Prince?\n<wait>				reads: あっ！　王子様も一緒なのね。\nじゃあ、お兄ちゃん達も、王子様の友達？\n<wait>; reads: あっ！　王子様も一緒なのね。\nじゃあ、お兄ちゃん達も、王子様の友達？\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	20	691	1FD2	少女：	Girl:				@ours-2026-09-05
-m/MS0032.BIN	0:05	21	699	1FD3	{08:56}{02:08}そっちのお兄ちゃん苦しそう{02:08}\n<wait>	But......... that big brother there looks like he's in pain.........\n<wait>				reads: でも‥‥‥そっちのお兄ちゃん苦しそう‥‥‥\n<wait>; reads: でも‥‥‥そっちのお兄ちゃん苦しそう‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	22	740	1FD2	少女：	Girl:				@ours-2026-09-05
-m/MS0032.BIN	0:05	23	748	1FD3	待{08:52}て、今治{08:4A}あげる！\n<wait>	Wait there, I'll heal you right now!\n<wait>				reads: 待ってて、今治してあげる！\n<wait>; reads: 待ってて、今治してあげる！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	24	779	1FD0	少女がそう言{08:52}手をかざすと、{08:79}掌{08:42}キラキラと光がこぼれ落ち、\n一行の身体を包{08:5F}。\n<wait>	As the girl said this and held out her hands, glittering light spilled\nfrom her palms and enveloped the party.\n<wait>				reads: 少女がそう言って手をかざすと、その掌からキラキラと光がこぼれ落ち、\n一行の身体を包んだ。\n<wait>; reads: 少女がそう言って手をかざすと、その掌からキラキラと光がこぼれ落ち、\n一行の身体を包んだ。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	25	865	1FBA	{08:79}様子{08:62}お伽話の{08:0D}{08:79}{08:5E}だ{08:51}{02:08}‥\n<wait>	It was exactly like magic from a fairy tale............\n<wait>				reads: その様子は、お伽話の魔法そのものだった‥‥‥‥\n<wait>; reads: その様子は、お伽話の魔法そのものだった‥‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	26	930	1F77	一行{08:62}少女の不思議な力で{03:10}{08:4B}。\n<wait>	The party was healed by the girl's mysterious power.\n<wait>				reads: 一行は、少女の不思議な力で回復した。\n<wait>; reads: 一行は、少女の不思議な力で回復した。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	27	969	1FD2	少女：	Girl:				@ours-2026-09-05
-m/MS0032.BIN	0:05	28	977	1FD3	さあ、{08:48}で{01:32}よ。{08:5C}痛く{08:25}で{08:80}？\n<wait>	There, you're all right now. It doesn't hurt any more, does it?\n<wait>				reads: さあ、これで大丈夫よ。もう痛くないでしょう？\n<wait>; reads: さあ、これで大丈夫よ。もう痛くないでしょう？\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	29	1033	1FD2	少女：	Girl:				@ours-2026-09-05
-m/MS0032.BIN	0:05	30	1041	1FD3	{08:56}{02:08}そっちのワンちゃん苦しそう{02:08}\n<wait>	But......... that doggy there looks like he's in pain.........\n<wait>				reads: でも‥‥‥そっちのワンちゃん苦しそう‥‥‥\n<wait>; reads: でも‥‥‥そっちのワンちゃん苦しそう‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	31	1085	1FD2	少女：	Girl:				@ours-2026-09-05
-m/MS0032.BIN	0:05	32	1093	1FD3	お名前は何ておっしゃるの？\n	What's your name?\n				@ours-2026-09-05
-m/MS0032.BIN	0:05	33	1136	1FB2	名乗る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:05	34	1144	1FB2	黙っ{08:14}					reads: 黙っている; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:05	35	1178	1F01	{08:62}礼儀正しく名乗{08:51}。\n<wait>	 politely gave his name.\n<wait>				reads: は、礼儀正しく名乗った。\n<wait>; reads: は、礼儀正しく名乗った。\n<wait> @rebase-new @ours-2026-09-05
-m/MS0032.BIN	0:05	36	1207	1FD2	{08:3C}：					reads: 三四郎：; reads: は、礼儀正しく名乗った。\n<wait> @refalign
-m/MS0032.BIN	0:05	37	1213	1FD3	俺{08:62}{08:3B}{08:3C}だよ。\n<wait>	I'm Souma Sanshirou.\n<wait>				reads: 俺は、相馬三四郎だよ。\n<wait>; reads: 三四郎： @ours-2026-09-05
-m/MS0032.BIN	0:05	38	1236	1FD2	少女：	Girl: 				reads: 俺は、相馬三四郎だよ。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	39	1250	1F01	さんと、{08:3B}{08:3C}さんね！　面白いお名前！\n<wait>	 and Souma Sanshirou! What funny names!\n<wait>				reads: さんと、相馬三四郎さんね！　面白いお名前！\n<wait>; reads: さんと、相馬三四郎さんね！　面白いお名前！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	40	1302	1FD2	少女：	Girl:				reads: さんと、相馬三四郎さんね！　面白いお名前！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	41	1310	1FD3	そっちのワンちゃんは？\n<wait>	And that doggy?\n<wait>				@ours-2026-09-05
-m/MS0032.BIN	0:05	42	1347	1F01	{08:62}{01:03}を紹介{08:4B}。\n<wait>	 introduced Newton.\n<wait>				reads: は、ニュートンを紹介した。\n<wait>; reads: は、ニュートンを紹介した。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	43	1370	1FD2	少女：	Girl:				reads: は、ニュートンを紹介した。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	44	1378	1FD3	{01:03}{08:52}{08:68}のね！　かっこ{08:7F}お名前ね。\nよろしくね、{01:03}！\n<wait>	Newton, is it! What a cool name.\nNice to meet you, Newton!\n<wait>				reads: ニュートンっていうのね！　かっこいいお名前ね。\nよろしくね、ニュートン！\n<wait>; reads: ニュートンっていうのね！　かっこいいお名前ね。\nよろしくね、ニュートン！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	45	1436	1FD2	{01:03}：	Newton:				reads: ニュートン：; reads: ニュートンっていうのね！　かっこいいお名前ね。\nよろしくね、ニュートン！\n<wait> @refalign @ours-2026-09-05
-m/MS0032.BIN	0:05	46	1442	1FD3	ワオン！\n<wait>	Woof!\n<wait>				reads: ニュートン： @ours-2026-09-05
-m/MS0032.BIN	0:05	47	1459	1FD2	少女：	Girl:				@ours-2026-09-05
-m/MS0032.BIN	0:05	48	1467	1FD3	私はアリスよ。{08:45}に住んでるの。\n	I'm Alice. I live here.\n				reads: 私はアリスよ。ここに住んでるの。\n; reads: 私はアリスよ。ここに住んでるの。\n @ours-2026-09-05
-m/MS0032.BIN	0:05	49	1511	1F01	{08:62}黙{08:52}{08:64}{02:08}‥\n<wait>	 stayed silent............\n<wait>				reads: は、黙っていた‥‥‥‥\n<wait>; reads: 私はアリスよ。ここに住んでるの。\n @ours-2026-09-05
-m/MS0032.BIN	0:05	50	1532	1FD2	少女：	Girl:				reads: は、黙っていた‥‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	51	1540	1FD3	{02:08}{08:72}教えてくれ{08:25}の？\n私は{08:72}私{08:62}アリス{08:52}{08:68}のよ！\n<wait>	............You won't tell me?\nI'm... I'm Alice!\n<wait>				reads: ‥‥‥‥‥教えてくれないの？\n私は‥‥私は、アリスっていうのよ！\n<wait>; reads: ‥‥‥‥‥教えてくれないの？\n私は‥‥私は、アリスっていうのよ！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	52	1596	1FD2	アリス：	Alice:				reads: ‥‥‥‥‥教えてくれないの？\n私は‥‥私は、アリスっていうのよ！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	53	1606	1FD3	さあ！　私は名前を教{08:41}わ！\n{08:63}{08:74}黙っ{08:2B}{08:6A}て、ずるいわよ！　ね、教えて？\n<wait>	Come on! I told you my name!\nStaying quiet all by yourself isn't fair! Come on, tell me?\n<wait>				reads: さあ！　私は名前を教えたわ！\n自分だけ黙ってるなんて、ずるいわよ！　ね、教えて？\n<wait>; reads: さあ！　私は名前を教えたわ！\n自分だけ黙ってるなんて、ずるいわよ！　ね、教えて？\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	54	1684	1FD0	少女は真っすぐに	The girl is gazing straight at 				reads: さあ！　私は名前を教えたわ！\n自分だけ黙ってるなんて、ずるいわよ！　ね、教えて？\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	55	1706	1F01	達を見つめ{08:14}。\n{08:3C}{08:62}苦笑しながらもアリスに{08:63}の名を名乗{08:51}。\n<wait>	 and the others.\nSanshirou, with a wry smile, gave Alice his name.\n<wait>				reads: 達を見つめている。\n三四郎は、苦笑しながらもアリスに自分の名を名乗った。\n<wait>; reads: 達を見つめている。\n三四郎は、苦笑しながらもアリスに自分の名を名乗った。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	56	1772	1FD2	{08:3C}：	Sanshirou:				reads: 三四郎：; reads: 達を見つめている。\n三四郎は、苦笑しながらもアリスに自分の名を名乗った。\n<wait> @refalign @ours-2026-09-05
-m/MS0032.BIN	0:05	57	1778	1FD3	俺{08:62}{08:3B}{08:3C}{08:52}言う{08:5F}。\n<wait>	I'm called Souma Sanshirou.\n<wait>				reads: 俺は、相馬三四郎って言うんだ。\n<wait>; reads: 三四郎： @ours-2026-09-05
-m/MS0032.BIN	0:05	58	1805	1FD0	こう{08:1A}{08:62}{08:63}{08:74}名乗ら{08:25}訳にも行か{08:25}{08:8C}。\n	At this point, he could hardly be the only one not to give his name.\n				reads: こうなっては、自分だけ名乗らない訳にも行かないだろう。\n; reads: 俺は、相馬三四郎って言うんだ。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	59	1848	1F01	{08:62}仕方なく名乗{08:51}。\n<wait>	 reluctantly gave his name.\n<wait>				reads: は、仕方なく名乗った。\n<wait>; reads: こうなっては、自分だけ名乗らない訳にも行かないだろう。\n @ours-2026-09-05
-m/MS0032.BIN	0:05	60	1875	1FD2	少女：	Girl: 				reads: は、仕方なく名乗った。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	61	1889	1F01	さんと、{08:3B}{08:3C}さんね！　面白いお名前！\n<wait>	 and Souma Sanshirou! What funny names!\n<wait>				reads: さんと、相馬三四郎さんね！　面白いお名前！\n<wait>; reads: さんと、相馬三四郎さんね！　面白いお名前！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	62	1941	1FD2	少女：	Girl:				reads: さんと、相馬三四郎さんね！　面白いお名前！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	63	1949	1FD3	そっちのワンちゃんは？\n<wait>	And that doggy?\n<wait>				@ours-2026-09-05
-m/MS0032.BIN	0:05	64	1986	1F01	{08:62}{01:03}を紹介{08:4B}。\n<wait>	 introduced Newton.\n<wait>				reads: は、ニュートンを紹介した。\n<wait>; reads: は、ニュートンを紹介した。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	65	2009	1FD2	少女：	Girl:				reads: は、ニュートンを紹介した。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	66	2017	1FD3	{01:03}{08:52}{08:68}のね！　かっこ{08:7F}お名前ね。\nよろしくね、{01:03}！\n<wait>	Newton, is it! What a cool name.\nNice to meet you, Newton!\n<wait>				reads: ニュートンっていうのね！　かっこいいお名前ね。\nよろしくね、ニュートン！\n<wait>; reads: ニュートンっていうのね！　かっこいいお名前ね。\nよろしくね、ニュートン！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	67	2075	1FD2	{01:03}：	Newton:				reads: ニュートン：; reads: ニュートンっていうのね！　かっこいいお名前ね。\nよろしくね、ニュートン！\n<wait> @refalign @ours-2026-09-05
-m/MS0032.BIN	0:05	68	2081	1FD3	ワオン！\n<wait>	Woof!\n<wait>				reads: ニュートン： @ours-2026-09-05
-m/MS0032.BIN	0:05	69	2098	1FD2	アリス：	Alice:				@ours-2026-09-05
-m/MS0032.BIN	0:05	70	2108	1FD3	私{08:62}ず{08:53}{08:45}に住んでるの。\n	I've lived here all along.\n				reads: 私は、ずっとここに住んでるの。\n; reads: 私は、ずっとここに住んでるの。\n @ours-2026-09-05
-m/MS0032.BIN	0:05	71	2149	1FB2	親は？					menu option, declared width 20 columns; reads: 私は、ずっとここに住んでるの。\n @refalign
-m/MS0032.BIN	0:05	72	2157	1FB2	寂しく{08:25}？					reads: 寂しくない？; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:05	73	2189	1FD2	アリス：					reads: 寂しくない？; menu option, declared width 20 columns
-m/MS0032.BIN	0:05	74	2199	1FD3	{02:08}{08:24}わ{02:08}‥\n<wait>	.........I don't have any............\n<wait>				reads: ‥‥‥いないわ‥‥‥‥\n<wait>; reads: ‥‥‥いないわ‥‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	75	2218	1FD2	アリス：	Alice:				@ours-2026-09-05
-m/MS0032.BIN	0:05	76	2228	1FD3	{08:56}、寂しく{08:6A}か無い。\n{01:1C}優しいし、{08:4D}に{08:72}王子様だっ{08:14}{08:5E}！\n					reads: でも、寂しくなんか無い。\nみんな優しいし、それに‥‥王子様だっているもの！\n
-m/MS0032.BIN	0:05	77	2291	1FD2	アリス：					reads: ‥‥‥いないわ‥‥‥‥\n<wait>
-m/MS0032.BIN	0:05	78	2301	1FD3	寂しく{08:6A}か無いわ！\n{01:1C}優しいし、{08:4D}に{08:72}王子様だっ{08:14}{08:5E}！\n<wait>					reads: 寂しくなんか無いわ！\nみんな優しいし、それに‥‥王子様だっているもの！\n<wait>
-m/MS0032.BIN	0:05	79	2370	1FD0	そう言{08:52}、アリスは{01:06}に向か{08:52}とびきりの笑顔を見せた。\n<wait>					reads: そう言って、アリスはカズミに向かってとびきりの笑顔を見せた。\n<wait>; reads: でも、寂しくなんか無い。\nみんな優しいし、それに‥‥王子様だっているもの！\n
-m/MS0032.BIN	0:05	80	2431	1FD2	アリス：					
-m/MS0032.BIN	0:05	81	2441	1FD3	あっ！　{01:36}お茶の時間ね。\n一緒にお茶会しましょ！\n<wait>					reads: あっ！　そろそろお茶の時間ね。\n一緒にお茶会しましょ！\n<wait>; reads: 寂しくなんか無いわ！\nみんな優しいし、それに‥‥王子様だっているもの！\n<wait>
-m/MS0032.BIN	0:05	82	2519	1FD0	アリスがそう言うと、どこ{08:42}ともなくトランプの兵隊が現れ\nお茶の用意を{08:4C}、去{08:52}行{08:51}{02:08}\n<wait>					reads: アリスがそう言うと、どこからともなくトランプの兵隊が現れ\nお茶の用意をすると、去って行った‥‥‥\n<wait>; reads: そう言って、アリスはカズミに向かってとびきりの笑顔を見せた。\n<wait>
-m/MS0032.BIN	0:05	83	2613	1FD2	アリス：					
-m/MS0032.BIN	0:05	84	2623	1FD3	さぁ、{08:90}ぞ。\n					reads: さぁ、どうぞ。\n; reads: あっ！　そろそろお茶の時間ね。\n一緒にお茶会しましょ！\n<wait>
-m/MS0032.BIN	0:05	85	2652	1FB2	お茶に{08:8E}					reads: お茶にする; menu option, declared width 20 columns; reads: アリスがそう言うと、どこからともなくトランプの兵隊が現れ\nお茶の用意をすると、去って行った‥‥‥\n<wait> @refalign
-m/MS0032.BIN	0:05	86	2662	1FB2	遠慮{08:8E}					reads: 遠慮する; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:05	87	2696	1F01	{08:62}誘いをありがたく受{08:29}事に{08:4B}。\n<wait>	 decided to accept the invitation gratefully.\n<wait>				reads: は、誘いをありがたく受ける事にした。\n<wait>; reads: さぁ、どうぞ。\n @rebase-new @refalign @seamfix-2026-09-05
-m/MS0032.BIN	0:05	88	2733	1FBA	お茶会の間中、アリスは少女らしい微笑みを浮かべながら、他愛も無い話に\n興じて{08:64}。\n<wait>					reads: お茶会の間中、アリスは少女らしい微笑みを浮かべながら、他愛も無い話に\n興じていた。\n<wait>; reads: お茶にする; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:05	89	2819	1FBA	ふと気付くと、かなりの時間が経過{08:4A}{08:64}。\n<wait>					reads: ふと気付くと、かなりの時間が経過していた。\n<wait>; reads: 遠慮する; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:05	90	2864	1FBA	＞{02:06}\n<wait>	>What will you do?\n<wait>				reads: ＞どうしますか？\n<wait>; reads: ＞どうしますか？\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	91	2889	1FB2	{08:76}話を{08:8E}					reads: まだ話をする; menu option, declared width 20 columns; reads: は、誘いをありがたく受ける事にした。\n<wait> @rebase-unmatched idx91 en=You accept the girl's invitation.\n<wait> @refalign
-m/MS0032.BIN	0:05	92	2899	1FB2	{08:5C}帰る					reads: もう帰る; menu option, declared width 20 columns; reads: お茶会の間中、アリスは少女らしい微笑みを浮かべながら、他愛も無い話に\n興じていた。\n<wait> @refalign
-m/MS0032.BIN	0:05	93	2931	1F01	{08:62}アリスと会話を楽し{08:5F}{02:08}\n<wait>	 enjoyed talking with Alice.........\n<wait>				reads: は、アリスと会話を楽しんだ‥‥‥\n<wait>; reads: ふと気付くと、かなりの時間が経過していた。\n<wait> @rebase-new @ours-2026-09-05
-m/MS0032.BIN	0:05	94	2962	1FBA	いつ{08:86}、	Before he knew it, 				reads: いつしか、; reads: ＞どうしますか？\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	95	2976	1F01	{08:62}アリスの話に引き込まれ、時間の経つのも忘れて{08:64}{02:08}‥\n<wait>	 was drawn into Alice's stories and lost all track of time............\n<wait>				reads: は、アリスの話に引き込まれ、時間の経つのも忘れていた‥‥‥‥\n<wait>; reads: まだ話をする; menu option, declared width 20 columns @ours-2026-09-05
-m/MS0032.BIN	0:05	96	3035	1FBA	{1E10:01003C}{08:6D}くらいの間、そう{08:4A}{08:64}{08:8C}か{02:08}\n<wait>	{1E10:01003C}How long had they been like that.........\n<wait>				reads: {1E10:01003C}どのくらいの間、そうしていただろうか‥‥‥\n<wait>; reads: もう帰る; menu option, declared width 20 columns @ours-2026-09-05
-m/MS0032.BIN	0:05	97	3081	1F01	{08:62}かなりの時間が経過{08:13}事に気付き、は{08:53}{08:4A}我にかえ{08:51}。\n<wait>	 realised that a considerable time had passed, and came to himself with\na start.\n<wait>				reads: は、かなりの時間が経過している事に気付き、はっとして我にかえった。\n<wait>; reads: は、かなりの時間が経過している事に気付き、はっとして我にかえった。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	98	3140	1FBA	{08:4D}を見て取{08:51}アリスの顔{08:62}落胆の色に曇{08:51}。\n<wait>	Seeing this, Alice's face clouded with disappointment.\n<wait>				reads: それを見て取ったアリスの顔は、落胆の色に曇った。\n<wait>; reads: は、アリスと会話を楽しんだ‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	99	3189	1FD2	アリス：	Alice:				reads: いつしか、 @ours-2026-09-05
-m/MS0032.BIN	0:05	100	3199	1FD3	{08:79}顔{02:08}{08:5C}帰っちゃう気{08:6B}ね？\n{08:56}{08:7F}わ、私には{08:5C}、素敵な王子様が{08:40}{08:5E}！！\n<wait>	That face......... you're going home already, aren't you?\nBut that's fine, I already have a wonderful Prince!!\n<wait>				reads: その顔‥‥‥もう帰っちゃう気なのね？\nでもいいわ、私にはもう、素敵な王子様がいるもの！！\n<wait>; reads: は、アリスの話に引き込まれ、時間の経つのも忘れていた‥‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	101	3275	1FD2	アリス：	Alice:				reads: {1E10:01003C}どのくらいの間、そうしていただろうか‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	102	3285	1FD3	{08:56}{02:08}{08:5B}来てね、絶対よ！！\n<wait>	But......... come again, promise!!\n<wait>				reads: でも‥‥‥また来てね、絶対よ！！\n<wait>; reads: は、かなりの時間が経過している事に気付き、はっとして我にかえった。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	103	3318	1FD2	アリス：	Alice:				reads: それを見て取ったアリスの顔は、落胆の色に曇った。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	104	3328	1FD3	アリスは楽しい事が好き{08:72}さみしいのは絶対に嫌！！\n<wait>	Alice likes fun things... I absolutely hate being lonely!!\n<wait>				reads: アリスは楽しい事が好き‥‥さみしいのは絶対に嫌！！\n<wait>; reads: アリスは楽しい事が好き‥‥さみしいのは絶対に嫌！！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	105	3385	1FD2	アリス：	Alice:				reads: その顔‥‥‥もう帰っちゃう気なのね？\nでもいいわ、私にはもう、素敵な王子様がいるもの！！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	106	3395	1FD3	だ{08:42}{08:72}ね。{08:5B}来て、絶対よ{08:72}！！\n<wait>	So... okay? Come again, promise...!!\n<wait>				reads: だから‥‥ね。また来て、絶対よ‥‥！！\n<wait>; reads: だから‥‥ね。また来て、絶対よ‥‥！！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	107	3441	1F01	は丁重に礼を言い、立ち去る事に{08:4B}。\n<wait>	 thanked her politely and decided to leave.\n<wait>				reads: は丁重に礼を言い、立ち去る事にした。\n<wait>; reads: でも‥‥‥また来てね、絶対よ！！\n<wait> @rebase-tagdiff @ours-2026-09-05
-m/MS0032.BIN	0:05	108	3484	1FD2	アリス：	Alice:				@ours-2026-09-05
-m/MS0032.BIN	0:05	109	3494	1FD3	えっ？　{08:5C}帰っちゃうの{02:08}‥？\n{02:08}大人{08:52}忙しい{08:5E}ね{02:08}‥\n<wait>	Huh? You're going home already............?\n.........Grown-ups are so busy............\n<wait>				reads: えっ？　もう帰っちゃうの‥‥‥‥？\n‥‥‥大人って忙しいものね‥‥‥‥\n<wait>; reads: アリスは楽しい事が好き‥‥さみしいのは絶対に嫌！！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	110	3554	1FD2	アリス：	Alice:				@ours-2026-09-05
-m/MS0032.BIN	0:05	111	3564	1FD3	{08:90}せ{08:7D}、ず{08:53}{08:45}で暮らせば{08:7F}のに{02:08}\n{08:56}{08:7F}わ、私には{08:5C}、素敵な王子様が{08:40}{08:5E}！！\n<wait>	You might as well just live here forever.........\nBut that's fine, I already have a wonderful Prince!!\n<wait>				reads: どうせなら、ずっとここで暮らせばいいのに‥‥‥\nでもいいわ、私にはもう、素敵な王子様がいるもの！！\n<wait>; reads: だから‥‥ね。また来て、絶対よ‥‥！！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	112	3646	1FD2	アリス：	Alice:				reads: は丁重に礼を言い、立ち去る事にした。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	113	3656	1FD3	{08:56}、{08:5B}来てね{08:72}絶対よ！！\n	But come again... promise!!\n				reads: でも、また来てね‥‥絶対よ！！\n; reads: でも、また来てね‥‥絶対よ！！\n @ours-2026-09-05
-m/MS0032.BIN	0:05	114	3689	1FD2	アリス：	Alice:				reads: えっ？　もう帰っちゃうの‥‥‥‥？\n‥‥‥大人って忙しいものね‥‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	115	3705	1F7C	王子様！！　お兄ちゃん達も！！\n<wait>	Prince!! And you big brothers too!!\n<wait>				@ours-2026-09-05
-m/MS0032.BIN	0:05	116	3744	1FD2	アリス：	Alice:				reads: どうせなら、ずっとここで暮らせばいいのに‥‥‥\nでもいいわ、私にはもう、素敵な王子様がいるもの！！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	117	3754	1FD3	仲良く{08:16}のね。よか{08:12}\n<wait>	You've made friends. How nice!\n<wait>				reads: 仲良くなったのね。よかった！\n<wait>; reads: 仲良くなったのね。よかった！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	118	3783	1FD0	アリスはひまわりの{08:69}に微笑む{02:08}{08:72}\n<wait>	Alice smiles like a sunflower............\n<wait>				reads: アリスはひまわりのように微笑む‥‥‥‥‥\n<wait>; reads: でも、また来てね‥‥絶対よ！！\n @ours-2026-09-05
-m/MS0032.BIN	0:05	119	3824	1FD2	アリス：	Alice:				@ours-2026-09-05
-m/MS0032.BIN	0:05	120	3834	1FD3	{08:4D}{08:81}あ、お祝いに{01:1C}でお茶会にしま{08:80}！\n<wait>	Then let's all have a tea party to celebrate!\n<wait>				reads: それじゃあ、お祝いにみんなでお茶会にしましょう！\n<wait>; reads: それじゃあ、お祝いにみんなでお茶会にしましょう！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	121	3901	1FD0	アリスがそう言うと、どこ{08:42}ともなくトランプの兵隊が現れ、\nお茶の用意を{08:4C}、去{08:52}行{08:51}{02:08}\n<wait>	As Alice said this, card soldiers appeared from nowhere, prepared the\ntea, and went away.........\n<wait>				reads: アリスがそう言うと、どこからともなくトランプの兵隊が現れ、\nお茶の用意をすると、去って行った‥‥‥\n<wait>; reads: アリスがそう言うと、どこからともなくトランプの兵隊が現れ、\nお茶の用意をすると、去って行った‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	122	3993	1FD2	{01:06}：					reads: カズミ：; reads: 仲良くなったのね。よかった！\n<wait> @refalign
-m/MS0032.BIN	0:05	123	3999	1FD3	{02:08}‥アリス{02:08}‥\n<wait>	............Alice............\n<wait>				reads: ‥‥‥‥アリス‥‥‥‥\n<wait>; reads: アリスはひまわりのように微笑む‥‥‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	124	4028	1F01	と{01:06}{08:62}本来の目的を言い出せぬ{08:7E}に、アリスとお茶会を{08:4B}{02:08}‥\n<wait>	 and Kazumi had tea with Alice, never able to bring up their real\npurpose............\n<wait>				reads: とカズミは、本来の目的を言い出せぬままに、アリスとお茶会をした‥‥‥‥\n<wait>; reads: とカズミは、本来の目的を言い出せぬままに、アリスとお茶会をした‥‥‥‥\n<wait> @rebase-tagdiff @ours-2026-09-05
-m/MS0032.BIN	0:05	125	4093	1FD2	アリス：	Alice:				reads: それじゃあ、お祝いにみんなでお茶会にしましょう！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	126	4103	1FD3	{08:75}、お兄ちゃんも{08:45}で一緒に暮らしま{08:80}！\n毎日お茶会を{08:4A}、楽しく暮らすのよ{02:08}。\n<wait>	Hey, big brother, you should live here with us too!\nWe'll have tea parties every day and live happily.........\n<wait>				reads: ねえ、お兄ちゃんもここで一緒に暮らしましょう！\n毎日お茶会をして、楽しく暮らすのよ‥‥‥。\n<wait>; reads: アリスがそう言うと、どこからともなくトランプの兵隊が現れ、\nお茶の用意をすると、去って行った‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	127	4187	1FD2	アリス：	Alice:				reads: カズミ： @ours-2026-09-05
-m/MS0032.BIN	0:05	128	4197	1FD3	そうすれば、絶対楽しい{08:5E}！　ね？\n	If we do that, it'll definitely be fun! Right?\n				reads: そうすれば、絶対楽しいもの！　ね？\n; reads: ‥‥‥‥アリス‥‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	129	4231	00	王子様！　{08:5B}後でお茶会しま{08:80}。\n<wait>	Prince! Let's have another tea party later.\n<wait>				reads: 王子様！　また後でお茶会しましょう。\n<wait>; reads: とカズミは、本来の目的を言い出せぬままに、アリスとお茶会をした‥‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	130	4270	1FD2	アリス：	Alice:				@ours-2026-09-05
-m/MS0032.BIN	0:05	131	4280	1FD3	お兄ちゃんも来て！　絶対よ！\n	You come too, big brother! Promise!\n				reads: ねえ、お兄ちゃんもここで一緒に暮らしましょう！\n毎日お茶会をして、楽しく暮らすのよ‥‥‥。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	132	4315	1FD2	アリス：	Alice:				@ours-2026-09-05
-m/MS0032.BIN	0:05	133	4325	1FD3	あっ！　{08:5B}来てく{08:60}のね！\n<wait>	Ah! You came again!\n<wait>				reads: あっ！　また来てくれたのね！\n<wait>; reads: そうすれば、絶対楽しいもの！　ね？\n @ours-2026-09-05
-m/MS0032.BIN	0:05	134	4375	1FD2	アリス：	Alice:				reads: 王子様！　また後でお茶会しましょう。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	135	4385	1FD3	{08:56}{08:72}そっちのお兄ちゃん{08:72}苦しそう。\nアリスが治{08:4A}あげるね！\n<wait>	But... that big brother there... looks like he's in pain.\nAlice will heal you!\n<wait>				reads: でも‥‥そっちのお兄ちゃん‥‥苦しそう。\nアリスが治してあげるね！\n<wait>; reads: でも‥‥そっちのお兄ちゃん‥‥苦しそう。\nアリスが治してあげるね！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	136	4451	1FD0	アリスの掌{08:42}、キラキラと光がこぼれ落ち、一行の身体を包{08:5F}。\n{08:79}様はお伽話の{08:69}だ{08:51}{02:08}\n<wait>	Glittering light spilled from Alice's palms and enveloped the party.\nIt was like something from a fairy tale.........\n<wait>				reads: アリスの掌から、キラキラと光がこぼれ落ち、一行の身体を包んだ。\nその様はお伽話のようだった‥‥‥\n<wait>; reads: アリスの掌から、キラキラと光がこぼれ落ち、一行の身体を包んだ。\nその様はお伽話のようだった‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	137	4567	1F77	一行{08:62}少女の不思議な力で{03:10}{08:4B}。\n<wait>	The party was healed by the girl's mysterious power.\n<wait>				reads: 一行は、少女の不思議な力で回復した。\n<wait>; reads: 一行は、少女の不思議な力で回復した。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	138	4606	1FD2	少女：	Girl:				reads: あっ！　また来てくれたのね！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	139	4614	1FD3	{08:48}で{01:32}よ。{08:5C}痛く{08:25}で{08:80}？\n<wait>	You're all right now. It doesn't hurt any more, does it?\n<wait>				reads: これで大丈夫よ。もう痛くないでしょう？\n<wait>; reads: これで大丈夫よ。もう痛くないでしょう？\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	140	4647	1FD2	少女：	Girl:				reads: でも‥‥そっちのお兄ちゃん‥‥苦しそう。\nアリスが治してあげるね！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:05	141	4655	1FD3	さあ！　お茶会にしま{08:80}！\n<wait>	Now! Let's have a tea party!\n<wait>				reads: さあ！　お茶会にしましょう！\n<wait>; reads: アリスの掌から、キラキラと光がこぼれ落ち、一行の身体を包んだ。\nその様はお伽話のようだった‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:07	0	20	1FD2	トランプ兵隊：					
-m/MS0032.BIN	0:07	1	60	1F71	やれやれ。アリス様は今日も王子様に熱をあげて{08:72}\n					reads: やれやれ。アリス様は今日も王子様に熱をあげて‥‥\n
-m/MS0032.BIN	0:09	0	20	1FD2	トランプ兵隊：					
-m/MS0032.BIN	0:09	1	60	1F71	アリス様は最上階にいらっしゃい{08:5A}。\nおお。{01:36}お茶会の時間{08:55}な。\n					reads: アリス様は最上階にいらっしゃいます。\nおお。そろそろお茶会の時間ですな。\n
-m/MS0032.BIN	0:0B	0	20	1FD2	トランプ兵隊：					
-m/MS0032.BIN	0:0B	1	60	1F71	今日もアリス様{08:62}王子様と楽しくお茶会！\n					reads: 今日もアリス様は、王子様と楽しくお茶会！\n
-m/MS0032.BIN	0:0D	0	20	1FD2	トランプ兵隊：					
-m/MS0032.BIN	0:0D	1	60	1F71	今日も、お茶は最高の入り具合だ！\n今日のお茶会も、楽しい{08:46}で{08:80}！\n					reads: 今日も、お茶は最高の入り具合だ！\n今日のお茶会も、楽しいことでしょう！\n
-m/MS0032.BIN	0:10	0	20	1FD2	トランプ兵隊：					
-m/MS0032.BIN	0:10	1	60	1F71	アリス様が悲しんでおら{08:2F}と、{02:0C}も悲しく{08:1A}しまい{08:5A}。\n					reads: アリス様が悲しんでおられると、我々も悲しくなってしまいます。\n
-m/MS0032.BIN	0:12	0	20	1FD2	トランプ兵隊：					
-m/MS0032.BIN	0:12	1	60	1F71	アリス様が喜んでおら{08:2F}と、{02:0C}も楽しくなり{08:5A}。\n					reads: アリス様が喜んでおられると、我々も楽しくなります。\n
-m/MS0032.BIN	0:13	0	20	1FD2	トランプ兵隊：					
-m/MS0032.BIN	0:13	1	60	1F71	アリス様のひまわりの{08:69}な微笑み！\nまるで天使の{08:69}{08:55}！\n					reads: アリス様のひまわりのような微笑み！\nまるで天使のようです！\n
-m/MS0032.BIN	0:14	0	20	1FD2	トランプ兵隊：					
-m/MS0032.BIN	0:14	1	60	1F71	アリス様はお茶会が大好き！\n{08:46}に、王子様が一緒だと{08:5C}大変な喜び{08:69}{08:55}。\n					reads: アリス様はお茶会が大好き！\nことに、王子様が一緒だともう大変な喜びようです。\n
-m/MS0032.BIN	0:16	0	20	1FD2	トランプ兵隊：					
-m/MS0032.BIN	0:16	1	60	1F71	おやおや{08:70}！\n{08:7A}に汚{08:60}格好で{02:08}{08:72}！\n<wait>					reads: おやおやあなた！\nそんなに汚れた格好で‥‥‥‥‥！\n<wait>
-m/MS0032.BIN	0:16	2	102	1FD2	トランプ兵隊：					
-m/MS0032.BIN	0:16	3	118	1FD3	アリス様のお召し物を汚さ{08:25}で下{08:49}よ！\n					reads: アリス様のお召し物を汚さないで下さいよ！\n
-m/MS0032.BIN	0:17	0	20	1FD2	トランプ兵隊：					
-m/MS0032.BIN	0:17	1	60	1F71	アリス様の笑顔を見ると、心が安らぎ{08:5A}よ{02:08}\n					reads: アリス様の笑顔を見ると、心が安らぎますよ‥‥‥\n
-m/MS0032.BIN	0:19	0	20	1FD2	トランプ兵隊：					
-m/MS0032.BIN	0:19	1	60	1F71	王子様{08:62}最近{08:45}に来ら{08:60}。\n<wait>					reads: 王子様は、最近ここに来られた。\n<wait>
-m/MS0032.BIN	0:19	2	93	1FD2	トランプ兵隊：					
-m/MS0032.BIN	0:19	3	109	1FD3	アリス様は彼の事が気に入られて、{08:45}に滞在{08:4A}頂い{08:14}の{08:55}。\n					reads: アリス様は彼の事が気に入られて、ここに滞在して頂いているのです。\n
-m/MS0032.BIN	0:1A	0	20	1FD2	トランプ兵隊：					
-m/MS0032.BIN	0:1A	1	60	1F71	お客様、アリス様のお茶会には{08:5C}参加{03:0C}ま{08:4B}か？\n					reads: お客様、アリス様のお茶会にはもう参加されましたか？\n
-m/MS0032.BIN	0:1B	0	20	1FD2	トランプ兵隊：					
-m/MS0032.BIN	0:1B	1	60	1F71	ぐぅ～～～すぴぴぴぴ{02:08}{08:72}\n<wait>					reads: ぐぅ～～～すぴぴぴぴ‥‥‥‥‥\n<wait>
-m/MS0032.BIN	0:1B	2	93	1FD0	トランプ兵{08:62}{08:8B}眠っ{08:14}{02:08}{08:72}\n					reads: トランプ兵は、よく眠っている‥‥‥‥‥\n
-m/MS0032.BIN	0:1E	0	20	1FD2	トランプ兵隊：					
-m/MS0032.BIN	0:1E	1	60	1F71	アリス様{08:62}突き当たりのお{01:2E}にいらっしゃい{08:5A}よ。\n					reads: アリス様は、突き当たりのお部屋にいらっしゃいますよ。\n
-m/MS0032.BIN	0:1F	0	36	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:1F	1	48	1F7C	！！　君は	!! You're 				@ours-2026-09-05
-m/MS0032.BIN	0:1F	2	64	1F01	君！？　何故{08:45}に？\n<wait>	!? Why are you here?\n<wait>				reads: 君！？　何故ここに？\n<wait>; reads: 君！？　何故ここに？\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:1F	3	97	1F01	{08:62}{08:45}に来る{08:71}の経過を手短に話{08:4B}。\n<wait>	 briefly recounted what had happened on the way here.\n<wait>				reads: は、ここに来るまでの経過を手短に話した。\n<wait>; reads: は、ここに来るまでの経過を手短に話した。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:1F	4	138	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:1F	5	144	1FD3	{01:29}{08:51}のか{02:08}俺{08:62}修業の旅を続{08:29}傍ら、平沢博士と約束{08:4B}、\nアリスを捜す事も平行{08:4A}や{08:52}た{08:5F}。\n<wait>					reads: そうだったのか‥‥‥俺は、修業の旅を続ける傍ら、平沢博士と約束した、\nアリスを捜す事も平行してやってたんだ。\n<wait>; reads: そうだったのか‥‥‥俺は、修業の旅を続ける傍ら、平沢博士と約束した、\nアリスを捜す事も平行してやってたんだ。\n<wait> @refalign
-m/MS0032.BIN	0:1F	6	238	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:1F	7	244	1FD3	そ{08:4A}、や{08:53}捜し当てたのが{08:45}さ。\n<wait>					reads: そして、やっと捜し当てたのがここさ。\n<wait>; reads: そして、やっと捜し当てたのがここさ。\n<wait> @refalign
-m/MS0032.BIN	0:1F	8	283	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:1F	9	289	1FD3	{08:8F}{08:72}･･困{08:51}事に軟禁状態に陥{08:51}のさ。\n{08:90}やら、彼女に気に入られて{08:1F}らしく{08:52}ね。\n<wait>					reads: だが‥‥･･困った事に軟禁状態に陥ったのさ。\nどうやら、彼女に気に入られてしまったらしくってね。\n<wait>; reads: だが‥‥･･困った事に軟禁状態に陥ったのさ。\nどうやら、彼女に気に入られてしまったらしくってね。\n<wait> @refalign
-m/MS0032.BIN	0:1F	10	373	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:1F	11	379	1FD3	一人で外に出{08:69}と{08:4C}、あのトランプの兵隊に連れ戻{03:0C}る。\n<wait>一緒に外に出{08:69}と{08:4A}も、泣き{08:81}く{08:52}手がつけられ{08:25}し、\n{08:79}うちトランプの兵隊が飛んで来る{08:5F}{08:72}{08:79}繰り返しさ。\n<wait>					reads: 一人で外に出ようとすると、あのトランプの兵隊に連れ戻される。\n<wait>一緒に外に出ようとしても、泣きじゃくって手がつけられないし、\nそのうちトランプの兵隊が飛んで来るんだ‥‥その繰り返しさ。\n<wait>; reads: 一人で外に出ようとすると、あのトランプの兵隊に連れ戻される。\n<wait>一緒に外に出ようとしても、泣きじゃくって手がつけられないし、\nそのうちトランプの兵隊が飛んで来るんだ‥‥その繰り返しさ。\n<wait> @refalign
-m/MS0032.BIN	0:1F	12	546	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:1F	13	552	1FD3	無理やり連れ出す事も、出来無くは{08:25}ん{08:8C}が{08:72}\n{08:90}も、俺には嫌な予感が{08:8E}{08:5F}。\n<wait>					reads: 無理やり連れ出す事も、出来無くはないんだろうが‥‥\nどうも、俺には嫌な予感がするんだ。\n<wait>; reads: 無理やり連れ出す事も、出来無くはないんだろうが‥‥\nどうも、俺には嫌な予感がするんだ。\n<wait> @refalign
-m/MS0032.BIN	0:1F	14	632	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:1F	15	638	1FD3	かつてのメイも{01:29}{08:51}が、俺はアリスの背後に、拭い去れ{08:25}\n「死」のにおいを感じる。\n<wait>					reads: かつてのメイもそうだったが、俺はアリスの背後に、拭い去れない\n「死」のにおいを感じる。\n<wait>; reads: かつてのメイもそうだったが、俺はアリスの背後に、拭い去れない\n「死」のにおいを感じる。\n<wait> @refalign
-m/MS0032.BIN	0:1F	16	724	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:1F	17	730	1FD3	彼女は{08:45}で、誰に咎めら{08:2F}{08:46}も無く、楽しく暮らす事を望んで{08:40}{08:74}だ‥\n<wait>					reads: 彼女はここで、誰に咎められることも無く、楽しく暮らす事を望んでいるだけだ‥\n<wait>; reads: 彼女はここで、誰に咎められることも無く、楽しく暮らす事を望んでいるだけだ‥\n<wait> @refalign
-m/MS0032.BIN	0:1F	18	803	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:1F	19	809	1FD3	俺{08:62}無理に引き戻すのはまずいと思{08:52}、{01:23}一緒に{08:64}{08:5F}よ････\n<wait>					reads: 俺は、無理に引き戻すのはまずいと思って、しばらく一緒にいたんだよ････\n<wait>; reads: 俺は、無理に引き戻すのはまずいと思って、しばらく一緒にいたんだよ････\n<wait> @refalign
-m/MS0032.BIN	0:1F	20	872	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:1F	21	878	1FD3	{03:0B}{01:36}潮時だ。何とか{08:45}{08:42}出{08:57}{08:7D}{08:25}。\n博士との約束も果たさなくては{08:72}{08:4D}に、メイの事も心配だ。\n<wait>					reads: しかし、そろそろ潮時だ。何とかここから出なければならない。\n博士との約束も果たさなくては‥‥それに、メイの事も心配だ。\n<wait>; reads: しかし、そろそろ潮時だ。何とかここから出なければならない。\n博士との約束も果たさなくては‥‥それに、メイの事も心配だ。\n<wait> @refalign
-m/MS0032.BIN	0:1F	22	974	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:1F	23	986	1F01	君{02:08}\n君と一緒だっ{08:50}、彼女も大人しく従うかも知れ{08:25}。\n<wait>	-kun......\nWith you along, she might come quietly.\n<wait>				reads: 君‥‥‥\n君と一緒だったら、彼女も大人しく従うかも知れない。\n<wait>; reads: 君‥‥‥\n君と一緒だったら、彼女も大人しく従うかも知れない。\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS0032.BIN	0:1F	24	1044	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:1F	25	1050	1FD3	手を貸{08:4A}くれ{08:25}か？\n					reads: 手を貸してくれないか？\n; reads: 手を貸してくれないか？\n @refalign
-m/MS0032.BIN	0:1F	26	1085	1FB2	承知{08:8E}					reads: 承知する; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:1F	27	1093	1FB2	断る					menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:1F	28	1119	1FD2	{01:06}：	Kazumi:				reads: カズミ：; reads: 山瀬勇 @ours-2026-09-05
-m/MS0032.BIN	0:1F	29	1125	1FD3	{02:08}そうか。\n君は君でやらねば{08:7D}{08:25}事が{08:7B}{08:42}な、仕方が{08:25}。\n<wait>	.........I see.\nYou have your own things to do, so it can't be helped.\n<wait>				reads: ‥‥‥そうか。\n君は君でやらねばならない事があるからな、仕方がない。\n<wait>; reads: ‥‥‥そうか。\n君は君でやらねばならない事があるからな、仕方がない。\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:1F	30	1187	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:1F	31	1193	1FD3	俺は{08:5C}少し、手を考えてみる事に{08:8E}よ。\n					reads: 俺はもう少し、手を考えてみる事にするよ。\n; reads: ‥‥‥そうか。\n君は君でやらねばならない事があるからな、仕方がない。\n<wait> @refalign
-m/MS0032.BIN	0:1F	32	1233	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:1F	33	1245	1F01	君か。\n俺の方{08:62}{08:76}何も上手い手が考えつか{08:25}。\n<wait>	-kun, is it.\nAs for me, I still can't think of anything clever.\n<wait>				reads: 君か。\n俺の方は、まだ何も上手い手が考えつかない。\n<wait>; reads: 俺はもう少し、手を考えてみる事にするよ。\n @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS0032.BIN	0:1F	34	1297	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:1F	35	1303	1FD3	彼女だ{08:52}、{01:36}家が恋しい{08:85}{08:8F}、俺に対{08:4A}{08:62}意地になっ{08:14}\n部分も強いの{08:8C}。\n<wait>					reads: 彼女だって、そろそろ家が恋しいはずだが、俺に対しては、意地になっている\n部分も強いのだろう。\n<wait>; reads: 君か。\n俺の方は、まだ何も上手い手が考えつかない。\n<wait> @refalign
-m/MS0032.BIN	0:1F	36	1379	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:1F	37	1385	1FD3	見ず知らずの{02:0B}で{08:7B}君が、手伝{08:52}くれれば、彼女も大人しく従うと思う{08:5F}。\n<wait>					reads: 見ず知らずの人間である君が、手伝ってくれれば、彼女も大人しく従うと思うんだ。\n<wait>; reads: 彼女だって、そろそろ家が恋しいはずだが、俺に対しては、意地になっている\n部分も強いのだろう。\n<wait> @refalign
-m/MS0032.BIN	0:1F	38	1462	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:1F	39	1468	1FD3	{08:90}{08:8C}{08:72}手を貸{08:4A}くれ{08:25}か？\n					reads: どうだろう‥‥手を貸してくれないか？\n; reads: 見ず知らずの人間である君が、手伝ってくれれば、彼女も大人しく従うと思うんだ。\n<wait> @refalign
-m/MS0032.BIN	0:1F	40	1509	1FB2	承知{08:8E}					reads: 承知する; menu option, declared width 20 columns; reads: カズミ： @refalign
-m/MS0032.BIN	0:1F	41	1517	1FB2	断る					menu option, declared width 20 columns; reads: どうだろう‥‥手を貸してくれないか？\n @refalign
-m/MS0032.BIN	0:1F	42	1543	1FD2	{01:06}：					reads: カズミ：; reads: 承知する; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:1F	43	1549	1FD3	{01:2A}！　恩に着るよ。\n{03:0B}君には世話になりっぱなしだな{02:08}！\n					reads: ありがとう！　恩に着るよ。\nしかし、君には世話になりっぱなしだな‥‥‥！\n; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:20	0	20	1FD2	トランプ兵隊：					
-m/MS0032.BIN	0:20	1	60	1F71	王子様がいら{08:4A}{08:42}のアリス様{08:62}以前にもま{08:4A}{08:8B}お笑いに{08:59}{08:72}\n微笑ましい限り{08:55}な。\n					reads: 王子様がいらしてからのアリス様は、以前にもましてよくお笑いになる‥‥\n微笑ましい限りですな。\n
-m/MS0032.BIN	0:21	0	6	1FD0	何処{08:42}ともなく少女の声が{08:8E}{02:08}\n<wait>	A girl's voice comes from nowhere.........\n<wait>				reads: 何処からともなく少女の声がする‥‥‥\n<wait>; reads: 何処からともなく少女の声がする‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:21	1	43	1FD2	声：	Voice:				@ours-2026-09-05
-m/MS0032.BIN	0:21	2	49	1FD3	私の大事な王子様を、連れていく{08:6A}て酷い{08:72}許せ{08:25}{08:72}\n<wait>	Taking away my precious Prince... how cruel... unforgivable...\n<wait>				reads: 私の大事な王子様を、連れていくなんて酷い‥‥許せない‥‥\n<wait>; reads: 私の大事な王子様を、連れていくなんて酷い‥‥許せない‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:21	3	106	1FD2	声：	Voice:				@ours-2026-09-05
-m/MS0032.BIN	0:21	4	112	1FD3	王子様{02:08}私の元へ戻{08:52}きて{02:08}‥\n<wait>	Prince......... come back to me............\n<wait>				reads: 王子様‥‥‥私の元へ戻ってきて‥‥‥‥\n<wait>; reads: 王子様‥‥‥私の元へ戻ってきて‥‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:21	5	149	1FD0	見え{08:25}力に押し戻{03:0C}る！\n<wait>	They are pushed back by an unseen force!\n<wait>				reads: 見えない力に押し戻される！\n<wait>; reads: 見えない力に押し戻される！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:21	6	186	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:21	7	192	1FD3	{08:47}声はアリスだ！{02:08}{03:0B}何だ{08:47}力は？\n<wait>アリスは{08:72}アリスに{08:62}一体何が起き{08:2B}{08:5F}？\n<wait>					reads: この声はアリスだ！‥‥‥しかし、何だこの力は？\n<wait>アリスは‥‥アリスには、一体何が起きてるんだ？\n<wait>; reads: この声はアリスだ！‥‥‥しかし、何だこの力は？\n<wait>アリスは‥‥アリスには、一体何が起きてるんだ？\n<wait> @refalign
-m/MS0032.BIN	0:21	8	276	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:21	9	282	1FD3	まさ‥か{08:72}{08:0B}に憑依{03:0C}て{02:08}！！\n<wait>					reads: まさ‥か‥‥悪魔に憑依されて‥‥‥！！\n<wait>; reads: まさ‥か‥‥悪魔に憑依されて‥‥‥！！\n<wait> @refalign
-m/MS0032.BIN	0:21	10	319	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:21	11	331	1F01	君、アリスの所に戻ろう！\n{08:5D}{08:0B}に憑依{03:0C}{08:14}{08:77}と{08:4B}ら、一刻の猶予も無い。\n何とか、彼女を助け{08:57}！！\n<wait>	-kun, let's get back to Alice!\nIf she really is possessed by a demon, there's not a moment to lose.\nWe have to save her somehow!!\n<wait>				reads: 君、アリスの所に戻ろう！\nもし悪魔に憑依されているのだとしたら、一刻の猶予も無い。\n何とか、彼女を助けなければ！！\n<wait>; reads: 君、アリスの所に戻ろう！\nもし悪魔に憑依されているのだとしたら、一刻の猶予も無い。\n何とか、彼女を助けなければ！！\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS0032.BIN	0:21	12	445	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:21	13	451	1FD3	君も知っ{08:14}{08:85}だ！\n{08:0B}に憑依{03:0C}た{02:0B}{08:62}{08:0B}によ{08:52}徐々に{08:79}魂を蝕ま{08:2F}。\n<wait>					reads: 君も知っているはずだ！\n悪魔に憑依された人間は、悪魔によって徐々にその魂を蝕まれる。\n<wait>; reads: 君も知っているはずだ！\n悪魔に憑依された人間は、悪魔によって徐々にその魂を蝕まれる。\n<wait> @refalign
-m/MS0032.BIN	0:21	14	521	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:21	15	527	1FD3	一刻も早く、体内{08:42}{08:0B}を追い出さ{08:25}と、取り返しのつか{08:25}事に{08:59}{02:08}\n<wait>					reads: 一刻も早く、体内から悪魔を追い出さないと、取り返しのつかない事になる‥‥‥\n<wait>; reads: 一刻も早く、体内から悪魔を追い出さないと、取り返しのつかない事になる‥‥‥\n<wait> @refalign
-m/MS0032.BIN	0:21	16	596	1FD2	{01:06}：					reads: カズミ：; reads: カズミ： @refalign
-m/MS0032.BIN	0:21	17	602	1FD3	急ごう！！\n<wait>					@refalign
+m/MS0032.BIN	0:03	7	194	09	ウサギ：		Rabbit:	v005		@refalign
+m/MS0032.BIN	0:03	8	204	1FD3	いらっしゃ{08:89}せ。\nアリス様は最上階にいらっしゃい{08:5A}{02:08}\n		Welcome. If you are looking for Lady Alice,\nshe is currently staying at the topmost floor.\n	v005		reads: いらっしゃいませ。\nアリス様は最上階にいらっしゃいます‥‥‥\n; reads: いらっしゃいませ。\nアリス様は最上階にいらっしゃいます‥‥‥\n @refalign
+m/MS0032.BIN	0:05	0	36	1FD0	{01:2E}に入ると、アリスは悲しげな瞳で	Entering the room, Alice gazed at 			draft	reads: 部屋に入ると、アリスは悲しげな瞳で; reads: 部屋に入ると、アリスは悲しげな瞳で @ours-2026-09-05
+m/MS0032.BIN	0:05	1	74	1F01	達を見つめた。\n<wait>	 and the others with sorrowful eyes.\n<wait>			draft	reads: 達を見つめた。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	2	97	1FD2	アリス：	Alice:			draft	@ours-2026-09-05
+m/MS0032.BIN	0:05	3	107	1FD3	{08:90}{08:4A}{08:7A}事{08:8E}の？\nアリスの大事な宝物、取ら{08:25}でよ{02:08}\n<wait>	Why would you do such a thing?\nDon't take Alice's precious treasure.........\n<wait>			draft	reads: どうしてそんな事するの？\nアリスの大事な宝物、取らないでよ‥‥‥\n<wait>; reads: どうしてそんな事するの？\nアリスの大事な宝物、取らないでよ‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	4	163	1FD2	アリス：	Alice:			draft	@ours-2026-09-05
+m/MS0032.BIN	0:05	5	173	1FD3	{08:72}ひどいよ{08:72}ひどい{02:08}\n<wait>	...That's cruel... cruel.........\n<wait>			draft	reads: ‥‥ひどいよ‥‥ひどい‥‥‥\n<wait>; reads: ‥‥ひどいよ‥‥ひどい‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	6	202	1FD0	そうい{08:52}、アリスは泣き出{08:4B}{08:72}\n<wait>	So saying, Alice began to cry...\n<wait>			draft	reads: そういって、アリスは泣き出した‥‥\n<wait>; reads: そういって、アリスは泣き出した‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	7	239	1FD2	アリス：	Alice:			draft	@ours-2026-09-05
+m/MS0032.BIN	0:05	8	249	1FD3	ひどい{08:72}ゆ‥せ{08:25}{08:72}許せ{08:25}{02:08}許せ{08:25}！！\n<wait>	Cruel... un... forgivable... unforgivable......... unforgivable!!\n<wait>			draft	reads: ひどい‥‥ゆ‥せない‥‥許せない‥‥‥許せない！！\n<wait>; reads: ひどい‥‥ゆ‥せない‥‥許せない‥‥‥許せない！！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	9	294	1FD0	{08:79}瞬間に、アリスは	In that instant, Alice shoved 			draft	reads: その瞬間に、アリスは; reads: その瞬間に、アリスは @ours-2026-09-05
+m/MS0032.BIN	0:05	10	318	1F01	を子供とは思え{08:25}力で{01:2E}の外へ押し出{08:4B}。\n<wait>	 out of the room with a strength no child should have.\n<wait>			draft	reads: を子供とは思えない力で部屋の外へ押し出した。\n<wait>; reads: を子供とは思えない力で部屋の外へ押し出した。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	11	370	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:05	12	382	1F01	君！！\n<wait>	-kun!!\n<wait>	Katsuragi!\n<wait>	v005	draft	reads: 君！！\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS0032.BIN	0:05	13	405	1FD2	{08:3C}：		Sanshirou:	v005		reads: 三四郎：; reads: 三四郎： @refalign
+m/MS0032.BIN	0:05	14	417	1F01	ッ！！\n<wait>	!!\n<wait>			draft	reads: ッ！！\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS0032.BIN	0:05	15	459	1FD0	{01:2E}の中に足を踏み入{08:2F}と、そこには古めかしい服を着た、可憐な少女が{08:64}。\n<wait>	Stepping into the room, they found a pretty girl in old-fashioned\nclothes.\n<wait>			draft	reads: 部屋の中に足を踏み入れると、そこには古めかしい服を着た、可憐な少女がいた。\n<wait>; reads: 部屋の中に足を踏み入れると、そこには古めかしい服を着た、可憐な少女がいた。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	16	536	1FD2	少女：	Girl:			draft	@ours-2026-09-05
+m/MS0032.BIN	0:05	17	544	1FD3	あら？　新しいお客様ね！　{08:69}こそ！\n<wait>	Oh? New guests! Welcome!\n<wait>			draft	reads: あら？　新しいお客様ね！　ようこそ！\n<wait>; reads: あら？　新しいお客様ね！　ようこそ！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	18	594	1FD2	少女：	Girl:			draft	@ours-2026-09-05
+m/MS0032.BIN	0:05	19	602	1FD3	あっ！　王子様も一緒{08:6B}ね。\n{08:81}あ、お兄ちゃん達も、王子様の友達？\n<wait>	Ah! The Prince is with you too.\nThen are you big brothers friends of the Prince?\n<wait>			draft	reads: あっ！　王子様も一緒なのね。\nじゃあ、お兄ちゃん達も、王子様の友達？\n<wait>; reads: あっ！　王子様も一緒なのね。\nじゃあ、お兄ちゃん達も、王子様の友達？\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	20	691	1FD2	少女：	Girl:			draft	@ours-2026-09-05
+m/MS0032.BIN	0:05	21	699	1FD3	{08:56}{02:08}そっちのお兄ちゃん苦しそう{02:08}\n<wait>	But......... that big brother there looks like he's in pain.........\n<wait>			draft	reads: でも‥‥‥そっちのお兄ちゃん苦しそう‥‥‥\n<wait>; reads: でも‥‥‥そっちのお兄ちゃん苦しそう‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	22	740	1FD2	少女：	Girl:			draft	@ours-2026-09-05
+m/MS0032.BIN	0:05	23	748	1FD3	待{08:52}て、今治{08:4A}あげる！\n<wait>	Wait there, I'll heal you right now!\n<wait>			draft	reads: 待ってて、今治してあげる！\n<wait>; reads: 待ってて、今治してあげる！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	24	779	1FD0	少女がそう言{08:52}手をかざすと、{08:79}掌{08:42}キラキラと光がこぼれ落ち、\n一行の身体を包{08:5F}。\n<wait>	As the girl said this and held out her hands, glittering light spilled\nfrom her palms and enveloped the party.\n<wait>			draft	reads: 少女がそう言って手をかざすと、その掌からキラキラと光がこぼれ落ち、\n一行の身体を包んだ。\n<wait>; reads: 少女がそう言って手をかざすと、その掌からキラキラと光がこぼれ落ち、\n一行の身体を包んだ。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	25	865	1FBA	{08:79}様子{08:62}お伽話の{08:0D}{08:79}{08:5E}だ{08:51}{02:08}‥\n<wait>	It was exactly like magic from a fairy tale............\n<wait>			draft	reads: その様子は、お伽話の魔法そのものだった‥‥‥‥\n<wait>; reads: その様子は、お伽話の魔法そのものだった‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	26	930	1F77	一行{08:62}少女の不思議な力で{03:10}{08:4B}。\n<wait>	The party was healed by the girl's mysterious power.\n<wait>			draft	reads: 一行は、少女の不思議な力で回復した。\n<wait>; reads: 一行は、少女の不思議な力で回復した。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	27	969	1FD2	少女：	Girl:			draft	@ours-2026-09-05
+m/MS0032.BIN	0:05	28	977	1FD3	さあ、{08:48}で{01:32}よ。{08:5C}痛く{08:25}で{08:80}？\n<wait>	There, you're all right now. It doesn't hurt any more, does it?\n<wait>			draft	reads: さあ、これで大丈夫よ。もう痛くないでしょう？\n<wait>; reads: さあ、これで大丈夫よ。もう痛くないでしょう？\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	29	1033	1FD2	少女：	Girl:			draft	@ours-2026-09-05
+m/MS0032.BIN	0:05	30	1041	1FD3	{08:56}{02:08}そっちのワンちゃん苦しそう{02:08}\n<wait>	But......... that doggy there looks like he's in pain.........\n<wait>			draft	reads: でも‥‥‥そっちのワンちゃん苦しそう‥‥‥\n<wait>; reads: でも‥‥‥そっちのワンちゃん苦しそう‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	31	1085	1FD2	少女：	Girl:			draft	@ours-2026-09-05
+m/MS0032.BIN	0:05	32	1093	1FD3	お名前は何ておっしゃるの？\n	What's your name?\n			draft	@ours-2026-09-05
+m/MS0032.BIN	0:05	33	1136	1FB2	名乗る		Introduce yourself	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:05	34	1144	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:05	35	1178	1F01	{08:62}礼儀正しく名乗{08:51}。\n<wait>	 politely gave his name.\n<wait>			draft	reads: は、礼儀正しく名乗った。\n<wait>; reads: は、礼儀正しく名乗った。\n<wait> @rebase-new @ours-2026-09-05
+m/MS0032.BIN	0:05	36	1207	1FD2	{08:3C}：		Sanshirou:	v005		reads: 三四郎：; reads: は、礼儀正しく名乗った。\n<wait> @refalign
+m/MS0032.BIN	0:05	37	1213	1FD3	俺{08:62}{08:3B}{08:3C}だよ。\n<wait>	I'm Souma Sanshirou.\n<wait>			draft	reads: 俺は、相馬三四郎だよ。\n<wait>; reads: 三四郎： @ours-2026-09-05
+m/MS0032.BIN	0:05	38	1236	1FD2	少女：	Girl: 			draft	reads: 俺は、相馬三四郎だよ。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	39	1250	1F01	さんと、{08:3B}{08:3C}さんね！　面白いお名前！\n<wait>	 and Souma Sanshirou! What funny names!\n<wait>			draft	reads: さんと、相馬三四郎さんね！　面白いお名前！\n<wait>; reads: さんと、相馬三四郎さんね！　面白いお名前！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	40	1302	1FD2	少女：	Girl:			draft	reads: さんと、相馬三四郎さんね！　面白いお名前！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	41	1310	1FD3	そっちのワンちゃんは？\n<wait>	And that doggy?\n<wait>			draft	@ours-2026-09-05
+m/MS0032.BIN	0:05	42	1347	1F01	{08:62}{01:03}を紹介{08:4B}。\n<wait>	 introduced Newton.\n<wait>			draft	reads: は、ニュートンを紹介した。\n<wait>; reads: は、ニュートンを紹介した。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	43	1370	1FD2	少女：	Girl:			draft	reads: は、ニュートンを紹介した。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	44	1378	1FD3	{01:03}{08:52}{08:68}のね！　かっこ{08:7F}お名前ね。\nよろしくね、{01:03}！\n<wait>	Newton, is it! What a cool name.\nNice to meet you, Newton!\n<wait>			draft	reads: ニュートンっていうのね！　かっこいいお名前ね。\nよろしくね、ニュートン！\n<wait>; reads: ニュートンっていうのね！　かっこいいお名前ね。\nよろしくね、ニュートン！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	45	1436	1FD2	{01:03}：	Newton:	Girl:	v005	draft	reads: ニュートン：; reads: ニュートンっていうのね！　かっこいいお名前ね。\nよろしくね、ニュートン！\n<wait> @refalign @ours-2026-09-05
+m/MS0032.BIN	0:05	46	1442	1FD3	ワオン！\n<wait>	Woof!\n<wait>			draft	reads: ニュートン： @ours-2026-09-05
+m/MS0032.BIN	0:05	47	1459	1FD2	少女：	Girl:			draft	@ours-2026-09-05
+m/MS0032.BIN	0:05	48	1467	1FD3	私はアリスよ。{08:45}に住んでるの。\n	I'm Alice. I live here.\n			draft	reads: 私はアリスよ。ここに住んでるの。\n; reads: 私はアリスよ。ここに住んでるの。\n @ours-2026-09-05
+m/MS0032.BIN	0:05	49	1511	1F01	{08:62}黙{08:52}{08:64}{02:08}‥\n<wait>	 stayed silent............\n<wait>			draft	reads: は、黙っていた‥‥‥‥\n<wait>; reads: 私はアリスよ。ここに住んでるの。\n @ours-2026-09-05
+m/MS0032.BIN	0:05	50	1532	1FD2	少女：	Girl:			draft	reads: は、黙っていた‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	51	1540	1FD3	{02:08}{08:72}教えてくれ{08:25}の？\n私は{08:72}私{08:62}アリス{08:52}{08:68}のよ！\n<wait>	............You won't tell me?\nI'm... I'm Alice!\n<wait>			draft	reads: ‥‥‥‥‥教えてくれないの？\n私は‥‥私は、アリスっていうのよ！\n<wait>; reads: ‥‥‥‥‥教えてくれないの？\n私は‥‥私は、アリスっていうのよ！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	52	1596	1FD2	アリス：	Alice:			draft	reads: ‥‥‥‥‥教えてくれないの？\n私は‥‥私は、アリスっていうのよ！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	53	1606	1FD3	さあ！　私は名前を教{08:41}わ！\n{08:63}{08:74}黙っ{08:2B}{08:6A}て、ずるいわよ！　ね、教えて？\n<wait>	Come on! I told you my name!\nStaying quiet all by yourself isn't fair! Come on, tell me?\n<wait>			draft	reads: さあ！　私は名前を教えたわ！\n自分だけ黙ってるなんて、ずるいわよ！　ね、教えて？\n<wait>; reads: さあ！　私は名前を教えたわ！\n自分だけ黙ってるなんて、ずるいわよ！　ね、教えて？\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	54	1684	1FD0	少女は真っすぐに	The girl is gazing straight at 			draft	reads: さあ！　私は名前を教えたわ！\n自分だけ黙ってるなんて、ずるいわよ！　ね、教えて？\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	55	1706	1F01	達を見つめ{08:14}。\n{08:3C}{08:62}苦笑しながらもアリスに{08:63}の名を名乗{08:51}。\n<wait>	 and the others.\nSanshirou, with a wry smile, gave Alice his name.\n<wait>			draft	reads: 達を見つめている。\n三四郎は、苦笑しながらもアリスに自分の名を名乗った。\n<wait>; reads: 達を見つめている。\n三四郎は、苦笑しながらもアリスに自分の名を名乗った。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	56	1772	1FD2	{08:3C}：	Sanshirou:	Girl:	v005	draft	reads: 三四郎：; reads: 達を見つめている。\n三四郎は、苦笑しながらもアリスに自分の名を名乗った。\n<wait> @refalign @ours-2026-09-05
+m/MS0032.BIN	0:05	57	1778	1FD3	俺{08:62}{08:3B}{08:3C}{08:52}言う{08:5F}。\n<wait>	I'm called Souma Sanshirou.\n<wait>			draft	reads: 俺は、相馬三四郎って言うんだ。\n<wait>; reads: 三四郎： @ours-2026-09-05
+m/MS0032.BIN	0:05	58	1805	1FD0	こう{08:1A}{08:62}{08:63}{08:74}名乗ら{08:25}訳にも行か{08:25}{08:8C}。\n	At this point, he could hardly be the only one not to give his name.\n			draft	reads: こうなっては、自分だけ名乗らない訳にも行かないだろう。\n; reads: 俺は、相馬三四郎って言うんだ。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	59	1848	1F01	{08:62}仕方なく名乗{08:51}。\n<wait>	 reluctantly gave his name.\n<wait>			draft	reads: は、仕方なく名乗った。\n<wait>; reads: こうなっては、自分だけ名乗らない訳にも行かないだろう。\n @ours-2026-09-05
+m/MS0032.BIN	0:05	60	1875	1FD2	少女：	Girl: 			draft	reads: は、仕方なく名乗った。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	61	1889	1F01	さんと、{08:3B}{08:3C}さんね！　面白いお名前！\n<wait>	 and Souma Sanshirou! What funny names!\n<wait>			draft	reads: さんと、相馬三四郎さんね！　面白いお名前！\n<wait>; reads: さんと、相馬三四郎さんね！　面白いお名前！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	62	1941	1FD2	少女：	Girl:			draft	reads: さんと、相馬三四郎さんね！　面白いお名前！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	63	1949	1FD3	そっちのワンちゃんは？\n<wait>	And that doggy?\n<wait>			draft	@ours-2026-09-05
+m/MS0032.BIN	0:05	64	1986	1F01	{08:62}{01:03}を紹介{08:4B}。\n<wait>	 introduced Newton.\n<wait>			draft	reads: は、ニュートンを紹介した。\n<wait>; reads: は、ニュートンを紹介した。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	65	2009	1FD2	少女：	Girl:			draft	reads: は、ニュートンを紹介した。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	66	2017	1FD3	{01:03}{08:52}{08:68}のね！　かっこ{08:7F}お名前ね。\nよろしくね、{01:03}！\n<wait>	Newton, is it! What a cool name.\nNice to meet you, Newton!\n<wait>			draft	reads: ニュートンっていうのね！　かっこいいお名前ね。\nよろしくね、ニュートン！\n<wait>; reads: ニュートンっていうのね！　かっこいいお名前ね。\nよろしくね、ニュートン！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	67	2075	1FD2	{01:03}：	Newton:	Girl:	v005	draft	reads: ニュートン：; reads: ニュートンっていうのね！　かっこいいお名前ね。\nよろしくね、ニュートン！\n<wait> @refalign @ours-2026-09-05
+m/MS0032.BIN	0:05	68	2081	1FD3	ワオン！\n<wait>	Woof!\n<wait>			draft	reads: ニュートン： @ours-2026-09-05
+m/MS0032.BIN	0:05	69	2098	1FD2	アリス：	Alice:			draft	@ours-2026-09-05
+m/MS0032.BIN	0:05	70	2108	1FD3	私{08:62}ず{08:53}{08:45}に住んでるの。\n	I've lived here all along.\n			draft	reads: 私は、ずっとここに住んでるの。\n; reads: 私は、ずっとここに住んでるの。\n @ours-2026-09-05
+m/MS0032.BIN	0:05	71	2149	1FB2	親は？		Your parents?	v005		menu option, declared width 20 columns; reads: 私は、ずっとここに住んでるの。\n @refalign
+m/MS0032.BIN	0:05	72	2157	1FB2	寂しく{08:25}？		You're not lonely?	v005		reads: 寂しくない？; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:05	73	2189	1FD2	アリス：		Alice:	v005		reads: 寂しくない？; menu option, declared width 20 columns
+m/MS0032.BIN	0:05	74	2199	1FD3	{02:08}{08:24}わ{02:08}‥\n<wait>	.........I don't have any............\n<wait>	...I don't have any.\n<wait>	v005	draft	reads: ‥‥‥いないわ‥‥‥‥\n<wait>; reads: ‥‥‥いないわ‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	75	2218	1FD2	アリス：	Alice:	Alice:	v005	draft	@ours-2026-09-05
+m/MS0032.BIN	0:05	76	2228	1FD3	{08:56}、寂しく{08:6A}か無い。\n{01:1C}優しいし、{08:4D}に{08:72}王子様だっ{08:14}{08:5E}！\n		But, I'm not lonely. Everyone is so kind to me.\nAnd, I have my prince to keep me company!\n	v005		reads: でも、寂しくなんか無い。\nみんな優しいし、それに‥‥王子様だっているもの！\n
+m/MS0032.BIN	0:05	77	2291	1FD2	アリス：		Alice:	v005		reads: ‥‥‥いないわ‥‥‥‥\n<wait>
+m/MS0032.BIN	0:05	78	2301	1FD3	寂しく{08:6A}か無いわ！\n{01:1C}優しいし、{08:4D}に{08:72}王子様だっ{08:14}{08:5E}！\n<wait>		No, I'm not. Everyone is so kind to me.\nAnd, I have my prince to keep me company!\n<wait>	v005		reads: 寂しくなんか無いわ！\nみんな優しいし、それに‥‥王子様だっているもの！\n<wait>
+m/MS0032.BIN	0:05	79	2370	1FD0	そう言{08:52}、アリスは{01:06}に向か{08:52}とびきりの笑顔を見せた。\n<wait>		Having said that, Alice turns towards Kazumi\nand shoots a bright smile his way.\n<wait>	v005		reads: そう言って、アリスはカズミに向かってとびきりの笑顔を見せた。\n<wait>; reads: でも、寂しくなんか無い。\nみんな優しいし、それに‥‥王子様だっているもの！\n
+m/MS0032.BIN	0:05	80	2431	1FD2	アリス：		Alice:	v005		
+m/MS0032.BIN	0:05	81	2441	1FD3	あっ！　{01:36}お茶の時間ね。\n一緒にお茶会しましょ！\n<wait>		That reminds me. It's almost time for tea.\nWill you join me?\n<wait>	v005		reads: あっ！　そろそろお茶の時間ね。\n一緒にお茶会しましょ！\n<wait>; reads: 寂しくなんか無いわ！\nみんな優しいし、それに‥‥王子様だっているもの！\n<wait>
+m/MS0032.BIN	0:05	82	2519	1FD0	アリスがそう言うと、どこ{08:42}ともなくトランプの兵隊が現れ\nお茶の用意を{08:4C}、去{08:52}行{08:51}{02:08}\n<wait>		A trump soldier appears out of nowhere,\nplaces a tea set on the table, and runs off...\n<wait>	v005		reads: アリスがそう言うと、どこからともなくトランプの兵隊が現れ\nお茶の用意をすると、去って行った‥‥‥\n<wait>; reads: そう言って、アリスはカズミに向かってとびきりの笑顔を見せた。\n<wait>
+m/MS0032.BIN	0:05	83	2613	1FD2	アリス：		Alice:	v005		
+m/MS0032.BIN	0:05	84	2623	1FD3	さぁ、{08:90}ぞ。\n		Go ahead, please.\n	v005		reads: さぁ、どうぞ。\n; reads: あっ！　そろそろお茶の時間ね。\n一緒にお茶会しましょ！\n<wait>
+m/MS0032.BIN	0:05	85	2652	1FB2	お茶に{08:8E}		Drink the tea	v005		reads: お茶にする; menu option, declared width 20 columns; reads: アリスがそう言うと、どこからともなくトランプの兵隊が現れ\nお茶の用意をすると、去って行った‥‥‥\n<wait> @refalign
+m/MS0032.BIN	0:05	86	2662	1FB2	遠慮{08:8E}		Refuse	v005		reads: 遠慮する; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:05	87	2696	1F01	{08:62}誘いをありがたく受{08:29}事に{08:4B}。\n<wait>	 decided to accept the invitation gratefully.\n<wait>	You accept the girl's invitation.\n<wait>	v005	draft	reads: は、誘いをありがたく受ける事にした。\n<wait>; reads: さぁ、どうぞ。\n @rebase-new @refalign @seamfix-2026-09-05
+m/MS0032.BIN	0:05	88	2733	1FBA	お茶会の間中、アリスは少女らしい微笑みを浮かべながら、他愛も無い話に\n興じて{08:64}。\n<wait>		The next few moments are spent with Alice giggling\nand talking about all sorts of silly nonsense.\n<wait>	v005		reads: お茶会の間中、アリスは少女らしい微笑みを浮かべながら、他愛も無い話に\n興じていた。\n<wait>; reads: お茶にする; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:05	89	2819	1FBA	ふと気付くと、かなりの時間が経過{08:4A}{08:64}。\n<wait>		You realise that quite a lot of time has passed.\n<wait>	v005		reads: ふと気付くと、かなりの時間が経過していた。\n<wait>; reads: 遠慮する; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:05	90	2864	1FBA	＞{02:06}\n<wait>	>What will you do?\n<wait>	>What will you do?\n<wait>	v005	draft	reads: ＞どうしますか？\n<wait>; reads: ＞どうしますか？\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	91	2889	1FB2	{08:76}話を{08:8E}		Keep talking	v005		reads: まだ話をする; menu option, declared width 20 columns; reads: は、誘いをありがたく受ける事にした。\n<wait> @rebase-unmatched idx91 en=You accept the girl's invitation.\n<wait> @refalign
+m/MS0032.BIN	0:05	92	2899	1FB2	{08:5C}帰る		Leave	v005		reads: もう帰る; menu option, declared width 20 columns; reads: お茶会の間中、アリスは少女らしい微笑みを浮かべながら、他愛も無い話に\n興じていた。\n<wait> @refalign
+m/MS0032.BIN	0:05	93	2931	1F01	{08:62}アリスと会話を楽し{08:5F}{02:08}\n<wait>	 enjoyed talking with Alice.........\n<wait>			draft	reads: は、アリスと会話を楽しんだ‥‥‥\n<wait>; reads: ふと気付くと、かなりの時間が経過していた。\n<wait> @rebase-new @ours-2026-09-05
+m/MS0032.BIN	0:05	94	2962	1FBA	いつ{08:86}、	Before he knew it, 			draft	reads: いつしか、; reads: ＞どうしますか？\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	95	2976	1F01	{08:62}アリスの話に引き込まれ、時間の経つのも忘れて{08:64}{02:08}‥\n<wait>	 was drawn into Alice's stories and lost all track of time............\n<wait>			draft	reads: は、アリスの話に引き込まれ、時間の経つのも忘れていた‥‥‥‥\n<wait>; reads: まだ話をする; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0032.BIN	0:05	96	3035	1FBA	{1E10:01003C}{08:6D}くらいの間、そう{08:4A}{08:64}{08:8C}か{02:08}\n<wait>	{1E10:01003C}How long had they been like that.........\n<wait>			draft	reads: {1E10:01003C}どのくらいの間、そうしていただろうか‥‥‥\n<wait>; reads: もう帰る; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0032.BIN	0:05	97	3081	1F01	{08:62}かなりの時間が経過{08:13}事に気付き、は{08:53}{08:4A}我にかえ{08:51}。\n<wait>	 realised that a considerable time had passed, and came to himself with\na start.\n<wait>			draft	reads: は、かなりの時間が経過している事に気付き、はっとして我にかえった。\n<wait>; reads: は、かなりの時間が経過している事に気付き、はっとして我にかえった。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	98	3140	1FBA	{08:4D}を見て取{08:51}アリスの顔{08:62}落胆の色に曇{08:51}。\n<wait>	Seeing this, Alice's face clouded with disappointment.\n<wait>			draft	reads: それを見て取ったアリスの顔は、落胆の色に曇った。\n<wait>; reads: は、アリスと会話を楽しんだ‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	99	3189	1FD2	アリス：	Alice:			draft	reads: いつしか、 @ours-2026-09-05
+m/MS0032.BIN	0:05	100	3199	1FD3	{08:79}顔{02:08}{08:5C}帰っちゃう気{08:6B}ね？\n{08:56}{08:7F}わ、私には{08:5C}、素敵な王子様が{08:40}{08:5E}！！\n<wait>	That face......... you're going home already, aren't you?\nBut that's fine, I already have a wonderful Prince!!\n<wait>			draft	reads: その顔‥‥‥もう帰っちゃう気なのね？\nでもいいわ、私にはもう、素敵な王子様がいるもの！！\n<wait>; reads: は、アリスの話に引き込まれ、時間の経つのも忘れていた‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	101	3275	1FD2	アリス：	Alice:			draft	reads: {1E10:01003C}どのくらいの間、そうしていただろうか‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	102	3285	1FD3	{08:56}{02:08}{08:5B}来てね、絶対よ！！\n<wait>	But......... come again, promise!!\n<wait>			draft	reads: でも‥‥‥また来てね、絶対よ！！\n<wait>; reads: は、かなりの時間が経過している事に気付き、はっとして我にかえった。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	103	3318	1FD2	アリス：	Alice:			draft	reads: それを見て取ったアリスの顔は、落胆の色に曇った。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	104	3328	1FD3	アリスは楽しい事が好き{08:72}さみしいのは絶対に嫌！！\n<wait>	Alice likes fun things... I absolutely hate being lonely!!\n<wait>			draft	reads: アリスは楽しい事が好き‥‥さみしいのは絶対に嫌！！\n<wait>; reads: アリスは楽しい事が好き‥‥さみしいのは絶対に嫌！！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	105	3385	1FD2	アリス：	Alice:			draft	reads: その顔‥‥‥もう帰っちゃう気なのね？\nでもいいわ、私にはもう、素敵な王子様がいるもの！！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	106	3395	1FD3	だ{08:42}{08:72}ね。{08:5B}来て、絶対よ{08:72}！！\n<wait>	So... okay? Come again, promise...!!\n<wait>			draft	reads: だから‥‥ね。また来て、絶対よ‥‥！！\n<wait>; reads: だから‥‥ね。また来て、絶対よ‥‥！！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	107	3441	1F01	は丁重に礼を言い、立ち去る事に{08:4B}。\n<wait>	 thanked her politely and decided to leave.\n<wait>			draft	reads: は丁重に礼を言い、立ち去る事にした。\n<wait>; reads: でも‥‥‥また来てね、絶対よ！！\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS0032.BIN	0:05	108	3484	1FD2	アリス：	Alice:			draft	@ours-2026-09-05
+m/MS0032.BIN	0:05	109	3494	1FD3	えっ？　{08:5C}帰っちゃうの{02:08}‥？\n{02:08}大人{08:52}忙しい{08:5E}ね{02:08}‥\n<wait>	Huh? You're going home already............?\n.........Grown-ups are so busy............\n<wait>			draft	reads: えっ？　もう帰っちゃうの‥‥‥‥？\n‥‥‥大人って忙しいものね‥‥‥‥\n<wait>; reads: アリスは楽しい事が好き‥‥さみしいのは絶対に嫌！！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	110	3554	1FD2	アリス：	Alice:			draft	@ours-2026-09-05
+m/MS0032.BIN	0:05	111	3564	1FD3	{08:90}せ{08:7D}、ず{08:53}{08:45}で暮らせば{08:7F}のに{02:08}\n{08:56}{08:7F}わ、私には{08:5C}、素敵な王子様が{08:40}{08:5E}！！\n<wait>	You might as well just live here forever.........\nBut that's fine, I already have a wonderful Prince!!\n<wait>			draft	reads: どうせなら、ずっとここで暮らせばいいのに‥‥‥\nでもいいわ、私にはもう、素敵な王子様がいるもの！！\n<wait>; reads: だから‥‥ね。また来て、絶対よ‥‥！！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	112	3646	1FD2	アリス：	Alice:			draft	reads: は丁重に礼を言い、立ち去る事にした。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	113	3656	1FD3	{08:56}、{08:5B}来てね{08:72}絶対よ！！\n	But come again... promise!!\n			draft	reads: でも、また来てね‥‥絶対よ！！\n; reads: でも、また来てね‥‥絶対よ！！\n @ours-2026-09-05
+m/MS0032.BIN	0:05	114	3689	1FD2	アリス：	Alice:			draft	reads: えっ？　もう帰っちゃうの‥‥‥‥？\n‥‥‥大人って忙しいものね‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	115	3705	1F7C	王子様！！　お兄ちゃん達も！！\n<wait>	Prince!! And you big brothers too!!\n<wait>			draft	@ours-2026-09-05
+m/MS0032.BIN	0:05	116	3744	1FD2	アリス：	Alice:			draft	reads: どうせなら、ずっとここで暮らせばいいのに‥‥‥\nでもいいわ、私にはもう、素敵な王子様がいるもの！！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	117	3754	1FD3	仲良く{08:16}のね。よか{08:12}\n<wait>	You've made friends. How nice!\n<wait>			draft	reads: 仲良くなったのね。よかった！\n<wait>; reads: 仲良くなったのね。よかった！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	118	3783	1FD0	アリスはひまわりの{08:69}に微笑む{02:08}{08:72}\n<wait>	Alice smiles like a sunflower............\n<wait>			draft	reads: アリスはひまわりのように微笑む‥‥‥‥‥\n<wait>; reads: でも、また来てね‥‥絶対よ！！\n @ours-2026-09-05
+m/MS0032.BIN	0:05	119	3824	1FD2	アリス：	Alice:			draft	@ours-2026-09-05
+m/MS0032.BIN	0:05	120	3834	1FD3	{08:4D}{08:81}あ、お祝いに{01:1C}でお茶会にしま{08:80}！\n<wait>	Then let's all have a tea party to celebrate!\n<wait>			draft	reads: それじゃあ、お祝いにみんなでお茶会にしましょう！\n<wait>; reads: それじゃあ、お祝いにみんなでお茶会にしましょう！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	121	3901	1FD0	アリスがそう言うと、どこ{08:42}ともなくトランプの兵隊が現れ、\nお茶の用意を{08:4C}、去{08:52}行{08:51}{02:08}\n<wait>	As Alice said this, card soldiers appeared from nowhere, prepared the\ntea, and went away.........\n<wait>			draft	reads: アリスがそう言うと、どこからともなくトランプの兵隊が現れ、\nお茶の用意をすると、去って行った‥‥‥\n<wait>; reads: アリスがそう言うと、どこからともなくトランプの兵隊が現れ、\nお茶の用意をすると、去って行った‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	122	3993	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: 仲良くなったのね。よかった！\n<wait> @refalign
+m/MS0032.BIN	0:05	123	3999	1FD3	{02:08}‥アリス{02:08}‥\n<wait>	............Alice............\n<wait>			draft	reads: ‥‥‥‥アリス‥‥‥‥\n<wait>; reads: アリスはひまわりのように微笑む‥‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	124	4028	1F01	と{01:06}{08:62}本来の目的を言い出せぬ{08:7E}に、アリスとお茶会を{08:4B}{02:08}‥\n<wait>	 and Kazumi had tea with Alice, never able to bring up their real\npurpose............\n<wait>			draft	reads: とカズミは、本来の目的を言い出せぬままに、アリスとお茶会をした‥‥‥‥\n<wait>; reads: とカズミは、本来の目的を言い出せぬままに、アリスとお茶会をした‥‥‥‥\n<wait> @rebase-tagdiff @ours-2026-09-05
+m/MS0032.BIN	0:05	125	4093	1FD2	アリス：	Alice:			draft	reads: それじゃあ、お祝いにみんなでお茶会にしましょう！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	126	4103	1FD3	{08:75}、お兄ちゃんも{08:45}で一緒に暮らしま{08:80}！\n毎日お茶会を{08:4A}、楽しく暮らすのよ{02:08}。\n<wait>	Hey, big brother, you should live here with us too!\nWe'll have tea parties every day and live happily.........\n<wait>			draft	reads: ねえ、お兄ちゃんもここで一緒に暮らしましょう！\n毎日お茶会をして、楽しく暮らすのよ‥‥‥。\n<wait>; reads: アリスがそう言うと、どこからともなくトランプの兵隊が現れ、\nお茶の用意をすると、去って行った‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	127	4187	1FD2	アリス：	Alice:			draft	reads: カズミ： @ours-2026-09-05
+m/MS0032.BIN	0:05	128	4197	1FD3	そうすれば、絶対楽しい{08:5E}！　ね？\n	If we do that, it'll definitely be fun! Right?\n			draft	reads: そうすれば、絶対楽しいもの！　ね？\n; reads: ‥‥‥‥アリス‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	129	4231	00	王子様！　{08:5B}後でお茶会しま{08:80}。\n<wait>	Prince! Let's have another tea party later.\n<wait>			draft	reads: 王子様！　また後でお茶会しましょう。\n<wait>; reads: とカズミは、本来の目的を言い出せぬままに、アリスとお茶会をした‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	130	4270	1FD2	アリス：	Alice:			draft	@ours-2026-09-05
+m/MS0032.BIN	0:05	131	4280	1FD3	お兄ちゃんも来て！　絶対よ！\n	You come too, big brother! Promise!\n			draft	reads: ねえ、お兄ちゃんもここで一緒に暮らしましょう！\n毎日お茶会をして、楽しく暮らすのよ‥‥‥。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	132	4315	1FD2	アリス：	Alice:			draft	@ours-2026-09-05
+m/MS0032.BIN	0:05	133	4325	1FD3	あっ！　{08:5B}来てく{08:60}のね！\n<wait>	Ah! You came again!\n<wait>			draft	reads: あっ！　また来てくれたのね！\n<wait>; reads: そうすれば、絶対楽しいもの！　ね？\n @ours-2026-09-05
+m/MS0032.BIN	0:05	134	4375	1FD2	アリス：	Alice:			draft	reads: 王子様！　また後でお茶会しましょう。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	135	4385	1FD3	{08:56}{08:72}そっちのお兄ちゃん{08:72}苦しそう。\nアリスが治{08:4A}あげるね！\n<wait>	But... that big brother there... looks like he's in pain.\nAlice will heal you!\n<wait>			draft	reads: でも‥‥そっちのお兄ちゃん‥‥苦しそう。\nアリスが治してあげるね！\n<wait>; reads: でも‥‥そっちのお兄ちゃん‥‥苦しそう。\nアリスが治してあげるね！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	136	4451	1FD0	アリスの掌{08:42}、キラキラと光がこぼれ落ち、一行の身体を包{08:5F}。\n{08:79}様はお伽話の{08:69}だ{08:51}{02:08}\n<wait>	Glittering light spilled from Alice's palms and enveloped the party.\nIt was like something from a fairy tale.........\n<wait>			draft	reads: アリスの掌から、キラキラと光がこぼれ落ち、一行の身体を包んだ。\nその様はお伽話のようだった‥‥‥\n<wait>; reads: アリスの掌から、キラキラと光がこぼれ落ち、一行の身体を包んだ。\nその様はお伽話のようだった‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	137	4567	1F77	一行{08:62}少女の不思議な力で{03:10}{08:4B}。\n<wait>	The party was healed by the girl's mysterious power.\n<wait>			draft	reads: 一行は、少女の不思議な力で回復した。\n<wait>; reads: 一行は、少女の不思議な力で回復した。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	138	4606	1FD2	少女：	Girl:			draft	reads: あっ！　また来てくれたのね！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	139	4614	1FD3	{08:48}で{01:32}よ。{08:5C}痛く{08:25}で{08:80}？\n<wait>	You're all right now. It doesn't hurt any more, does it?\n<wait>			draft	reads: これで大丈夫よ。もう痛くないでしょう？\n<wait>; reads: これで大丈夫よ。もう痛くないでしょう？\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	140	4647	1FD2	少女：	Girl:			draft	reads: でも‥‥そっちのお兄ちゃん‥‥苦しそう。\nアリスが治してあげるね！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:05	141	4655	1FD3	さあ！　お茶会にしま{08:80}！\n<wait>	Now! Let's have a tea party!\n<wait>			draft	reads: さあ！　お茶会にしましょう！\n<wait>; reads: アリスの掌から、キラキラと光がこぼれ落ち、一行の身体を包んだ。\nその様はお伽話のようだった‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:07	0	20	1FD2	トランプ兵隊：		Trump Soldier:	v005		
+m/MS0032.BIN	0:07	1	60	1F71	やれやれ。アリス様は今日も王子様に熱をあげて{08:72}\n		Oh my, oh my. I thought that with time, Lady Alice would stop being\nso infatuated with that Prince of hers, but if anything,\nit has only gotten worse.\n	v005		reads: やれやれ。アリス様は今日も王子様に熱をあげて‥‥\n
+m/MS0032.BIN	0:09	0	20	1FD2	トランプ兵隊：		Trump Soldier:	v005		
+m/MS0032.BIN	0:09	1	60	1F71	アリス様は最上階にいらっしゃい{08:5A}。\nおお。{01:36}お茶会の時間{08:55}な。\n		Lady Alice is staying at the topmost floor.\nOoh, it is almost time for tea.\n	v005		reads: アリス様は最上階にいらっしゃいます。\nおお。そろそろお茶会の時間ですな。\n
+m/MS0032.BIN	0:0B	0	20	1FD2	トランプ兵隊：		Trump Soldier:	v005		
+m/MS0032.BIN	0:0B	1	60	1F71	今日もアリス様{08:62}王子様と楽しくお茶会！\n		Lady Alice is having yet another tea party with the Prince.\nHow lovely!\n	v005		reads: 今日もアリス様は、王子様と楽しくお茶会！\n
+m/MS0032.BIN	0:0D	0	20	1FD2	トランプ兵隊：		Trump Soldier:	v005		
+m/MS0032.BIN	0:0D	1	60	1F71	今日も、お茶は最高の入り具合だ！\n今日のお茶会も、楽しい{08:46}で{08:80}！\n		I hope you're looking forward to today's part,\nbecause the tea is tasting won-der-ful!\n	v005		reads: 今日も、お茶は最高の入り具合だ！\n今日のお茶会も、楽しいことでしょう！\n
+m/MS0032.BIN	0:10	0	20	1FD2	トランプ兵隊：		Trump Soldier:	v005		
+m/MS0032.BIN	0:10	1	60	1F71	アリス様が悲しんでおら{08:2F}と、{02:0C}も悲しく{08:1A}しまい{08:5A}。\n		When Lady Alice is sad, so are we.\n	v005		reads: アリス様が悲しんでおられると、我々も悲しくなってしまいます。\n
+m/MS0032.BIN	0:12	0	20	1FD2	トランプ兵隊：		Trump Soldier:	v005		
+m/MS0032.BIN	0:12	1	60	1F71	アリス様が喜んでおら{08:2F}と、{02:0C}も楽しくなり{08:5A}。\n		When Lady Alice is happy, so are we.\n	v005		reads: アリス様が喜んでおられると、我々も楽しくなります。\n
+m/MS0032.BIN	0:13	0	20	1FD2	トランプ兵隊：		Trump Soldier:	v005		
+m/MS0032.BIN	0:13	1	60	1F71	アリス様のひまわりの{08:69}な微笑み！\nまるで天使の{08:69}{08:55}！\n		The smile of Lady Alice is like a sunflower!\n	v005		reads: アリス様のひまわりのような微笑み！\nまるで天使のようです！\n
+m/MS0032.BIN	0:14	0	20	1FD2	トランプ兵隊：		Trump Soldier:	v005		
+m/MS0032.BIN	0:14	1	60	1F71	アリス様はお茶会が大好き！\n{08:46}に、王子様が一緒だと{08:5C}大変な喜び{08:69}{08:55}。\n		Tea parties are one of Lady Alice's favourite events.\nEspecially when the Prince joins her.\n	v005		reads: アリス様はお茶会が大好き！\nことに、王子様が一緒だともう大変な喜びようです。\n
+m/MS0032.BIN	0:16	0	20	1FD2	トランプ兵隊：		Trump Soldier:	v005		
+m/MS0032.BIN	0:16	1	60	1F71	おやおや{08:70}！\n{08:7A}に汚{08:60}格好で{02:08}{08:72}！\n<wait>		What are you wearing!? So filthy!\n<wait>	v005		reads: おやおやあなた！\nそんなに汚れた格好で‥‥‥‥‥！\n<wait>
+m/MS0032.BIN	0:16	2	102	1FD2	トランプ兵隊：		Trump Soldier:	v005		
+m/MS0032.BIN	0:16	3	118	1FD3	アリス様のお召し物を汚さ{08:25}で下{08:49}よ！\n		Do not touch Lady Alice with your dirty hands!\n	v005		reads: アリス様のお召し物を汚さないで下さいよ！\n
+m/MS0032.BIN	0:17	0	20	1FD2	トランプ兵隊：		Trump Soldier:	v005		
+m/MS0032.BIN	0:17	1	60	1F71	アリス様の笑顔を見ると、心が安らぎ{08:5A}よ{02:08}\n		It truly makes my heart melt seeing Lady Alice smile...\n	v005		reads: アリス様の笑顔を見ると、心が安らぎますよ‥‥‥\n
+m/MS0032.BIN	0:19	0	20	1FD2	トランプ兵隊：		Trump Soldier:	v005		
+m/MS0032.BIN	0:19	1	60	1F71	王子様{08:62}最近{08:45}に来ら{08:60}。\n<wait>		It wasn't long ago that the Prince was brought here.\n<wait>	v005		reads: 王子様は、最近ここに来られた。\n<wait>
+m/MS0032.BIN	0:19	2	93	1FD2	トランプ兵隊：		Trump Soldier:	v005		
+m/MS0032.BIN	0:19	3	109	1FD3	アリス様は彼の事が気に入られて、{08:45}に滞在{08:4A}頂い{08:14}の{08:55}。\n		Lady Alice instantly took a liking to him, and allowed him to stay.\n	v005		reads: アリス様は彼の事が気に入られて、ここに滞在して頂いているのです。\n
+m/MS0032.BIN	0:1A	0	20	1FD2	トランプ兵隊：		Trump Soldier:	v005		
+m/MS0032.BIN	0:1A	1	60	1F71	お客様、アリス様のお茶会には{08:5C}参加{03:0C}ま{08:4B}か？\n		Have you been invited to attend Lady Alice's tea party already?\n	v005		reads: お客様、アリス様のお茶会にはもう参加されましたか？\n
+m/MS0032.BIN	0:1B	0	20	1FD2	トランプ兵隊：		Trump Soldier:	v005		
+m/MS0032.BIN	0:1B	1	60	1F71	ぐぅ～～～すぴぴぴぴ{02:08}{08:72}\n<wait>		Zzzz pipipipi...\n<wait>	v005		reads: ぐぅ～～～すぴぴぴぴ‥‥‥‥‥\n<wait>
+m/MS0032.BIN	0:1B	2	93	1FD0	トランプ兵{08:62}{08:8B}眠っ{08:14}{02:08}{08:72}\n		The trump soldier is fast asleep...\n	v005		reads: トランプ兵は、よく眠っている‥‥‥‥‥\n
+m/MS0032.BIN	0:1E	0	20	1FD2	トランプ兵隊：		Trump Soldier:	v005		
+m/MS0032.BIN	0:1E	1	60	1F71	アリス様{08:62}突き当たりのお{01:2E}にいらっしゃい{08:5A}よ。\n		You can find Lady Alice in her room at the end of the hallway.\n	v005		reads: アリス様は、突き当たりのお部屋にいらっしゃいますよ。\n
+m/MS0032.BIN	0:1F	0	36	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:1F	1	48	1F7C	！！　君は	!! You're 			draft	@ours-2026-09-05
+m/MS0032.BIN	0:1F	2	64	1F01	君！？　何故{08:45}に？\n<wait>	!? Why are you here?\n<wait>			draft	reads: 君！？　何故ここに？\n<wait>; reads: 君！？　何故ここに？\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:1F	3	97	1F01	{08:62}{08:45}に来る{08:71}の経過を手短に話{08:4B}。\n<wait>	 briefly recounted what had happened on the way here.\n<wait>			draft	reads: は、ここに来るまでの経過を手短に話した。\n<wait>; reads: は、ここに来るまでの経過を手短に話した。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:1F	4	138	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:1F	5	144	1FD3	{01:29}{08:51}のか{02:08}俺{08:62}修業の旅を続{08:29}傍ら、平沢博士と約束{08:4B}、\nアリスを捜す事も平行{08:4A}や{08:52}た{08:5F}。\n<wait>		Interesting...\nMyself, I promised Doctor Hirasawa that I'd look for Alice.\n<wait>	v005		reads: そうだったのか‥‥‥俺は、修業の旅を続ける傍ら、平沢博士と約束した、\nアリスを捜す事も平行してやってたんだ。\n<wait>; reads: そうだったのか‥‥‥俺は、修業の旅を続ける傍ら、平沢博士と約束した、\nアリスを捜す事も平行してやってたんだ。\n<wait> @refalign
+m/MS0032.BIN	0:1F	6	238	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:1F	7	244	1FD3	そ{08:4A}、や{08:53}捜し当てたのが{08:45}さ。\n<wait>		Not long after, I found her here.\n<wait>	v005		reads: そして、やっと捜し当てたのがここさ。\n<wait>; reads: そして、やっと捜し当てたのがここさ。\n<wait> @refalign
+m/MS0032.BIN	0:1F	8	283	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:1F	9	289	1FD3	{08:8F}{08:72}･･困{08:51}事に軟禁状態に陥{08:51}のさ。\n{08:90}やら、彼女に気に入られて{08:1F}らしく{08:52}ね。\n<wait>		Unfortunately, it appears that the girl has taken quite\\a liking towards me. I'm not allowed to leave this place, you see.\n<wait>	v005		reads: だが‥‥･･困った事に軟禁状態に陥ったのさ。\nどうやら、彼女に気に入られてしまったらしくってね。\n<wait>; reads: だが‥‥･･困った事に軟禁状態に陥ったのさ。\nどうやら、彼女に気に入られてしまったらしくってね。\n<wait> @refalign
+m/MS0032.BIN	0:1F	10	373	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:1F	11	379	1FD3	一人で外に出{08:69}と{08:4C}、あのトランプの兵隊に連れ戻{03:0C}る。\n<wait>一緒に外に出{08:69}と{08:4A}も、泣き{08:81}く{08:52}手がつけられ{08:25}し、\n{08:79}うちトランプの兵隊が飛んで来る{08:5F}{08:72}{08:79}繰り返しさ。\n<wait>		If I try to leave by myself, the Trump Soldiers stop me,\nand drag me back.\n<wait>I even tried leaving with the girl, but she just started crying,\nand I couldn't calm her down. Then the Trump Soldiers arrived,\nand yeah, you can guess the rest.\n<wait>	v005		reads: 一人で外に出ようとすると、あのトランプの兵隊に連れ戻される。\n<wait>一緒に外に出ようとしても、泣きじゃくって手がつけられないし、\nそのうちトランプの兵隊が飛んで来るんだ‥‥その繰り返しさ。\n<wait>; reads: 一人で外に出ようとすると、あのトランプの兵隊に連れ戻される。\n<wait>一緒に外に出ようとしても、泣きじゃくって手がつけられないし、\nそのうちトランプの兵隊が飛んで来るんだ‥‥その繰り返しさ。\n<wait> @refalign
+m/MS0032.BIN	0:1F	12	546	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:1F	13	552	1FD3	無理やり連れ出す事も、出来無くは{08:25}ん{08:8C}が{08:72}\n{08:90}も、俺には嫌な予感が{08:8E}{08:5F}。\n<wait>		All in all, the whole thing kinda freaks me out...\n<wait>	v005		reads: 無理やり連れ出す事も、出来無くはないんだろうが‥‥\nどうも、俺には嫌な予感がするんだ。\n<wait>; reads: 無理やり連れ出す事も、出来無くはないんだろうが‥‥\nどうも、俺には嫌な予感がするんだ。\n<wait> @refalign
+m/MS0032.BIN	0:1F	14	632	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:1F	15	638	1FD3	かつてのメイも{01:29}{08:51}が、俺はアリスの背後に、拭い去れ{08:25}\n「死」のにおいを感じる。\n<wait>		I don't know how to explain, but Alice just smells like... death.\n<wait>	v005		reads: かつてのメイもそうだったが、俺はアリスの背後に、拭い去れない\n「死」のにおいを感じる。\n<wait>; reads: かつてのメイもそうだったが、俺はアリスの背後に、拭い去れない\n「死」のにおいを感じる。\n<wait> @refalign
+m/MS0032.BIN	0:1F	16	724	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:1F	17	730	1FD3	彼女は{08:45}で、誰に咎めら{08:2F}{08:46}も無く、楽しく暮らす事を望んで{08:40}{08:74}だ‥\n<wait>		All she wants is to stay here with someone to keep her company.\n<wait>	v005		reads: 彼女はここで、誰に咎められることも無く、楽しく暮らす事を望んでいるだけだ‥\n<wait>; reads: 彼女はここで、誰に咎められることも無く、楽しく暮らす事を望んでいるだけだ‥\n<wait> @refalign
+m/MS0032.BIN	0:1F	18	803	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:1F	19	809	1FD3	俺{08:62}無理に引き戻すのはまずいと思{08:52}、{01:23}一緒に{08:64}{08:5F}よ････\n<wait>		I figured that if I can't leave,\nI want as well fill that role for her.\n<wait>	v005		reads: 俺は、無理に引き戻すのはまずいと思って、しばらく一緒にいたんだよ････\n<wait>; reads: 俺は、無理に引き戻すのはまずいと思って、しばらく一緒にいたんだよ････\n<wait> @refalign
+m/MS0032.BIN	0:1F	20	872	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:1F	21	878	1FD3	{03:0B}{01:36}潮時だ。何とか{08:45}{08:42}出{08:57}{08:7D}{08:25}。\n博士との約束も果たさなくては{08:72}{08:4D}に、メイの事も心配だ。\n<wait>		However, it's been too long. I've gotta get out.\nI'm starting to get worried about Mei...\n<wait>	v005		reads: しかし、そろそろ潮時だ。何とかここから出なければならない。\n博士との約束も果たさなくては‥‥それに、メイの事も心配だ。\n<wait>; reads: しかし、そろそろ潮時だ。何とかここから出なければならない。\n博士との約束も果たさなくては‥‥それに、メイの事も心配だ。\n<wait> @refalign
+m/MS0032.BIN	0:1F	22	974	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:1F	23	986	1F01	君{02:08}\n君と一緒だっ{08:50}、彼女も大人しく従うかも知れ{08:25}。\n<wait>	-kun......\nWith you along, she might come quietly.\n<wait>	Katsuragi. If you help me, there's a chance that she might listen.\n<wait>	v005	draft	reads: 君‥‥‥\n君と一緒だったら、彼女も大人しく従うかも知れない。\n<wait>; reads: 君‥‥‥\n君と一緒だったら、彼女も大人しく従うかも知れない。\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS0032.BIN	0:1F	24	1044	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:1F	25	1050	1FD3	手を貸{08:4A}くれ{08:25}か？\n		Will you lend me a hand?\n	v005		reads: 手を貸してくれないか？\n; reads: 手を貸してくれないか？\n @refalign
+m/MS0032.BIN	0:1F	26	1085	1FB2	承知{08:8E}		Accept	v005		reads: 承知する; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:1F	27	1093	1FB2	断る		Refuse	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:1F	28	1119	1FD2	{01:06}：	Kazumi:	Kazumi:	v005	draft	reads: カズミ：; reads: 山瀬勇 @ours-2026-09-05
+m/MS0032.BIN	0:1F	29	1125	1FD3	{02:08}そうか。\n君は君でやらねば{08:7D}{08:25}事が{08:7B}{08:42}な、仕方が{08:25}。\n<wait>	.........I see.\nYou have your own things to do, so it can't be helped.\n<wait>	Huh... Well, I guess you have your own stuff to worry about.\nNo worries.\n<wait>	v005	draft	reads: ‥‥‥そうか。\n君は君でやらねばならない事があるからな、仕方がない。\n<wait>; reads: ‥‥‥そうか。\n君は君でやらねばならない事があるからな、仕方がない。\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:1F	30	1187	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:1F	31	1193	1FD3	俺は{08:5C}少し、手を考えてみる事に{08:8E}よ。\n		I'm just gonna think of something else.\n	v005		reads: 俺はもう少し、手を考えてみる事にするよ。\n; reads: ‥‥‥そうか。\n君は君でやらねばならない事があるからな、仕方がない。\n<wait> @refalign
+m/MS0032.BIN	0:1F	32	1233	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:1F	33	1245	1F01	君か。\n俺の方{08:62}{08:76}何も上手い手が考えつか{08:25}。\n<wait>	-kun, is it.\nAs for me, I still can't think of anything clever.\n<wait>	Oh, Katsuragi. Me?\nStill trying to come up with a plan to deal with this shit.\n<wait>	v005	draft	reads: 君か。\n俺の方は、まだ何も上手い手が考えつかない。\n<wait>; reads: 俺はもう少し、手を考えてみる事にするよ。\n @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS0032.BIN	0:1F	34	1297	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:1F	35	1303	1FD3	彼女だ{08:52}、{01:36}家が恋しい{08:85}{08:8F}、俺に対{08:4A}{08:62}意地になっ{08:14}\n部分も強いの{08:8C}。\n<wait>		The girl misses her home too. I know she does.\nIt's just, she's too stubborn to admit it to me.\n<wait>	v005		reads: 彼女だって、そろそろ家が恋しいはずだが、俺に対しては、意地になっている\n部分も強いのだろう。\n<wait>; reads: 君か。\n俺の方は、まだ何も上手い手が考えつかない。\n<wait> @refalign
+m/MS0032.BIN	0:1F	36	1379	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:1F	37	1385	1FD3	見ず知らずの{02:0B}で{08:7B}君が、手伝{08:52}くれれば、彼女も大人しく従うと思う{08:5F}。\n<wait>		You, on the other hand, are practically a stranger.\nIf you were to talk to her, I bet she'd be willing to open up.\n<wait>	v005		reads: 見ず知らずの人間である君が、手伝ってくれれば、彼女も大人しく従うと思うんだ。\n<wait>; reads: 彼女だって、そろそろ家が恋しいはずだが、俺に対しては、意地になっている\n部分も強いのだろう。\n<wait> @refalign
+m/MS0032.BIN	0:1F	38	1462	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:1F	39	1468	1FD3	{08:90}{08:8C}{08:72}手を貸{08:4A}くれ{08:25}か？\n		So, what do you say? Will you lend me a hand?\n	v005		reads: どうだろう‥‥手を貸してくれないか？\n; reads: 見ず知らずの人間である君が、手伝ってくれれば、彼女も大人しく従うと思うんだ。\n<wait> @refalign
+m/MS0032.BIN	0:1F	40	1509	1FB2	承知{08:8E}		Accept	v005		reads: 承知する; menu option, declared width 20 columns; reads: カズミ： @refalign
+m/MS0032.BIN	0:1F	41	1517	1FB2	断る		Refuse	v005		menu option, declared width 20 columns; reads: どうだろう‥‥手を貸してくれないか？\n @refalign
+m/MS0032.BIN	0:1F	42	1543	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: 承知する; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:1F	43	1549	1FD3	{01:2A}！　恩に着るよ。\n{03:0B}君には世話になりっぱなしだな{02:08}！\n		Thanks! It means a lot to me.\nI hope you don't find having to help me out all the time a burden...\n	v005		reads: ありがとう！　恩に着るよ。\nしかし、君には世話になりっぱなしだな‥‥‥！\n; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:20	0	20	1FD2	トランプ兵隊：		Trump Soldier:	v005		
+m/MS0032.BIN	0:20	1	60	1F71	王子様がいら{08:4A}{08:42}のアリス様{08:62}以前にもま{08:4A}{08:8B}お笑いに{08:59}{08:72}\n微笑ましい限り{08:55}な。\n		Lady Alice has been smiling a lot more since the prince arrived.\nI am quite pleased.\n	v005		reads: 王子様がいらしてからのアリス様は、以前にもましてよくお笑いになる‥‥\n微笑ましい限りですな。\n
+m/MS0032.BIN	0:21	0	6	1FD0	何処{08:42}ともなく少女の声が{08:8E}{02:08}\n<wait>	A girl's voice comes from nowhere.........\n<wait>			draft	reads: 何処からともなく少女の声がする‥‥‥\n<wait>; reads: 何処からともなく少女の声がする‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:21	1	43	1FD2	声：	Voice:			draft	@ours-2026-09-05
+m/MS0032.BIN	0:21	2	49	1FD3	私の大事な王子様を、連れていく{08:6A}て酷い{08:72}許せ{08:25}{08:72}\n<wait>	Taking away my precious Prince... how cruel... unforgivable...\n<wait>			draft	reads: 私の大事な王子様を、連れていくなんて酷い‥‥許せない‥‥\n<wait>; reads: 私の大事な王子様を、連れていくなんて酷い‥‥許せない‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:21	3	106	1FD2	声：	Voice:			draft	@ours-2026-09-05
+m/MS0032.BIN	0:21	4	112	1FD3	王子様{02:08}私の元へ戻{08:52}きて{02:08}‥\n<wait>	Prince......... come back to me............\n<wait>			draft	reads: 王子様‥‥‥私の元へ戻ってきて‥‥‥‥\n<wait>; reads: 王子様‥‥‥私の元へ戻ってきて‥‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:21	5	149	1FD0	見え{08:25}力に押し戻{03:0C}る！\n<wait>	They are pushed back by an unseen force!\n<wait>			draft	reads: 見えない力に押し戻される！\n<wait>; reads: 見えない力に押し戻される！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:21	6	186	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:21	7	192	1FD3	{08:47}声はアリスだ！{02:08}{03:0B}何だ{08:47}力は？\n<wait>アリスは{08:72}アリスに{08:62}一体何が起き{08:2B}{08:5F}？\n<wait>		It's Alice! Hngh! She's too powerful! <wait>What is happening to her!?\n<wait>	v005		reads: この声はアリスだ！‥‥‥しかし、何だこの力は？\n<wait>アリスは‥‥アリスには、一体何が起きてるんだ？\n<wait>; reads: この声はアリスだ！‥‥‥しかし、何だこの力は？\n<wait>アリスは‥‥アリスには、一体何が起きてるんだ？\n<wait> @refalign
+m/MS0032.BIN	0:21	8	276	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:21	9	282	1FD3	まさ‥か{08:72}{08:0B}に憑依{03:0C}て{02:08}！！\n<wait>		Could it be?... Is this... a demon!?\n<wait>	v005		reads: まさ‥か‥‥悪魔に憑依されて‥‥‥！！\n<wait>; reads: まさ‥か‥‥悪魔に憑依されて‥‥‥！！\n<wait> @refalign
+m/MS0032.BIN	0:21	10	319	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:21	11	331	1F01	君、アリスの所に戻ろう！\n{08:5D}{08:0B}に憑依{03:0C}{08:14}{08:77}と{08:4B}ら、一刻の猶予も無い。\n何とか、彼女を助け{08:57}！！\n<wait>	-kun, let's get back to Alice!\nIf she really is possessed by a demon, there's not a moment to lose.\nWe have to save her somehow!!\n<wait>	Katsuragi! We have to go check up on Alice! If she truly is being\npossessed by a demon, then there is not a second to waste!\n<wait>	v005	draft	reads: 君、アリスの所に戻ろう！\nもし悪魔に憑依されているのだとしたら、一刻の猶予も無い。\n何とか、彼女を助けなければ！！\n<wait>; reads: 君、アリスの所に戻ろう！\nもし悪魔に憑依されているのだとしたら、一刻の猶予も無い。\n何とか、彼女を助けなければ！！\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS0032.BIN	0:21	12	445	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:21	13	451	1FD3	君も知っ{08:14}{08:85}だ！\n{08:0B}に憑依{03:0C}た{02:0B}{08:62}{08:0B}によ{08:52}徐々に{08:79}魂を蝕ま{08:2F}。\n<wait>		You of all people should know how quickly a demon\ncan devour a person's soul!\n<wait>	v005		reads: 君も知っているはずだ！\n悪魔に憑依された人間は、悪魔によって徐々にその魂を蝕まれる。\n<wait>; reads: 君も知っているはずだ！\n悪魔に憑依された人間は、悪魔によって徐々にその魂を蝕まれる。\n<wait> @refalign
+m/MS0032.BIN	0:21	14	521	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:21	15	527	1FD3	一刻も早く、体内{08:42}{08:0B}を追い出さ{08:25}と、取り返しのつか{08:25}事に{08:59}{02:08}\n<wait>		There is no time to waste!\n<wait>	v005		reads: 一刻も早く、体内から悪魔を追い出さないと、取り返しのつかない事になる‥‥‥\n<wait>; reads: 一刻も早く、体内から悪魔を追い出さないと、取り返しのつかない事になる‥‥‥\n<wait> @refalign
+m/MS0032.BIN	0:21	16	596	1FD2	{01:06}：		Kazumi:	v005		reads: カズミ：; reads: カズミ： @refalign
+m/MS0032.BIN	0:21	17	602	1FD3	急ごう！！\n<wait>		Let's hurry!\n<wait>	v005		@refalign
 m/MS0032.BIN	0:22	0	0	UNTILED	ﾅ / ﾐ / .の外へ押し出 / た / 。 / ｺそ / Jアリス / b涙を流しながら / . / B出て / 。 / ｺ / p / W / q / ( / ﾒアリス： / ﾓ王子様を連れてっちゃう / jて / ‥ / 絶対 / z事させ / %！！！ / ｺ / ﾐアリスの叫びを引き金に、何処 / Bともなく現わ / `トランプ兵達が / ｺ / r / p / W / ｾ /  / d /  / d / ｾ / ｾ /  / d /  / d / ｾ / ｾ /  / d /  / d / ｾ / ｾ /  / d /  / d / ｾ / ｾ /  / d /  / d / ｾ / ｾ /  / d /  / d / ｾ / ﾅ / p / W / q / ( / ﾐ / て / お伽の国の住人を、全て倒 / K / 達。 / ｺアリスは泣き顔の / ~、ドアの前に立 / R / d。 / ｺ / ﾒアリス： / ﾓ / r大人 / jて大キライッ！！ / ｺ / ﾐアリスが叫 / _途端に、辺りが白い光に包ま / ｺ / x / r / p / 底 / W / q / ( / w / ﾐ光が消え、目を開くと、そこには少女アリスの姿は無く、 / 妖艶な女性の姿があ / Q / ｺ / ﾒアリス： / ﾓ / r許せ / % / 王子様は / r王子様 / b私 / tの / ^よ / ‥ / 誰にも渡さ / %！！ / ｺ / ﾐアリスは絶叫し、 / ！ / ｺ / ｾ /  / d /  / d / ｾ /  / ﾅ / p / 底 / W / q / ( / ﾒアリス： / ﾓ私は / 毎日‥楽しく / r誰にも邪魔 / ずに / r / ｺ / , / - / ﾂ / ｦ / X / x / ﾀ					@noedit; @untiled; record does not tile (switch entry at 0x1B1 has kind 112 (not 0 or 1)); read-only, copied verbatim; reads: 部屋の外へ押し出された @rebase-new @rebase-unmatched idx0 en=You land in the hallway.\n<wait> @rebase-unmatched idx2 en=Tears flowing down her cheeks, Alice follows after you.\n<wait> @rebase-unmatched idx3 en=Alice: @rebase-unmatched idx4 en=How dare you take my prince away from me...\n<wait>You're going to pay for this!\n<wait> @rebase-unmatched idx5 en=A number of Trump Soldiers appear behind Alice and attack you!\n<wait> @rebase-unmatched idx30 en=The creatures of Wonderland are all dead.\n<wait> @rebase-unmatched idx32 en=Alice alone remains, crying by the door frame.\n<wait> @rebase-unmatched idx33 en=Alice: @rebase-unmatched idx34 en=I hate adults! I hate them! I hate all of them!\n<wait> @rebase-unmatched idx35 en=Just then, the world flashes white!\n<wait> @rebase-unmatched idx36 en=As you next open your eyes, the little girl is gone,\nand in her place now stands a grown woman.\n<wait> @rebase-unmatched idx37 en=Alice: @rebase-unmatched idx38 en=The prince is mine... Mine allow...\nI won't allow anyone to take him away from me!\n<wait> @rebase-unmatched idx39 en=Alice attacks you!\n<wait> @rebase-unmatched idx45 en=Alice: @rebase-unmatched idx46 en=All I wanted... was to be... happy...\n<wait> @rebase-unmatched idx0 en=You land in the hallway.\n<wait> @rebase-unmatched idx2 en=Tears flowing down her cheeks, Alice follows after you.\n<wait> @rebase-unmatched idx3 en=Alice: @rebase-unmatched idx4 en=How dare you take my prince away from me...\n<wait>You're going to pay for this!\n<wait> @rebase-unmatched idx5 en=A number of Trump Soldiers appear behind Alice and attack you!\n<wait> @rebase-unmatched idx30 en=The creatures of Wonderland are all dead.\n<wait> @rebase-unmatched idx32 en=Alice alone remains, crying by the door frame.\n<wait> @rebase-unmatched idx33 en=Alice: @rebase-unmatched idx34 en=I hate adults! I hate them! I hate all of them!\n<wait> @rebase-unmatched idx35 en=Just then, the world flashes white!\n<wait> @rebase-unmatched idx36 en=As you next open your eyes, the little girl is gone,\nand in her place now stands a grown woman.\n<wait> @rebase-unmatched idx37 en=Alice: @rebase-unmatched idx38 en=The prince is mine... Mine allow...\nI won't allow anyone to take him away from me!\n<wait> @rebase-unmatched idx39 en=Alice attacks you!\n<wait> @rebase-unmatched idx45 en=Alice: @rebase-unmatched idx46 en=All I wanted... was to be... happy...\n<wait>
-m/MS0032.BIN	0:23	0	24	1FD0	デミ・ヒューマンの死体が{08:7B}{02:08}‥\n					reads: デミ・ヒューマンの死体がある‥‥‥‥\n; reads: デミ・ヒューマンの死体がある‥‥‥‥\n @refalign
-m/MS0032.BIN	0:25	0	27	1FD2	{08:31}：					reads: 泪：; reads: 泪： @refalign
-m/MS0032.BIN	0:25	1	33	1FD3	{02:08}{02:08}{08:72}\n	.........\n				reads: ‥‥‥‥‥‥‥‥\n; reads: ‥‥‥‥‥‥‥‥\n @ours-2026-09-05
-m/MS0032.BIN	0:25	2	50	1FD0	{08:31}{08:62}つい、と向きを変{08:28}と、逃げる{08:69}に{08:4A}走り去{08:52}{08:1F}{08:72}\n<wait>					reads: 泪は、つい、と向きを変えると、逃げるようにして走り去ってしまった‥‥\n<wait>; reads: 泪は、つい、と向きを変えると、逃げるようにして走り去ってしまった‥‥\n<wait> @refalign
-m/MS0032.BIN	0:26	0	70	1FD0	再び{08:31}が一行の前に現わ{08:60}。\n<wait>					reads: 再び泪が一行の前に現われた。\n<wait>; reads: 再び泪が一行の前に現われた。\n<wait> @refalign
-m/MS0032.BIN	0:26	1	108	09	突如、{08:31}の身体{08:42}、まばゆい光が発せら{08:11}\n<wait>					reads: 突如、泪の身体から、まばゆい光が発せられた！\n<wait>; reads: 突如、泪の身体から、まばゆい光が発せられた！\n<wait> @refalign
-m/MS0032.BIN	0:26	2	425	1F77	光が収まると、	When the light faded, 				@ours-2026-09-05
-m/MS0032.BIN	0:26	3	445	1F01	の傷は跡形も無く{08:1A}{08:64}！\n<wait>	's wounds had vanished without a trace!\n<wait>				reads: の傷は跡形も無くなっていた！\n<wait>; reads: の傷は跡形も無くなっていた！\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:26	4	474	1FBA	{03:0B}{08:31}の様子がおかしい。\n	But something was wrong with Rui.\n				reads: しかし、泪の様子がおかしい。\n; reads: しかし、泪の様子がおかしい。\n @ours-2026-09-05
-m/MS0032.BIN	0:26	5	503	1F01	の眼を見つ{08:2E}{08:31}の{08:4D}に{08:62}濃い影が見{08:28}{02:08}\n<wait>	's eyes met Rui's, and in hers a dark shadow could be seen.........\n<wait>				reads: の眼を見つめる泪のそれには、濃い影が見える‥‥‥\n<wait>; reads: の眼を見つめる泪のそれには、濃い影が見える‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:26	6	548	1FD2	{08:31}：					reads: 泪：; reads: 泪： @refalign
-m/MS0032.BIN	0:26	7	560	1F01	{02:08}貴方{08:62}かつての恋人と私{02:08}<wait>どっちをとるの？\n	...... your old love, or me......<wait>which will you choose?\n				reads: ‥‥‥貴方は、かつての恋人と私‥‥‥<wait>どっちをとるの？\n; reads: ‥‥‥貴方は、かつての恋人と私‥‥‥<wait>どっちをとるの？\n @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS0032.BIN	0:26	8	623	1FB2	突然何を{08:72}？					reads: 突然何を‥‥？; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:26	9	637	1FB2	今{08:71}{08:90}{08:4A}た{08:5F}					reads: 今までどうしてたんだ; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:26	10	651	1FB2	何故{08:7A}事を					reads: 何故そんな事を; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0032.BIN	0:26	11	687	1FD2	{08:31}：	Rui:				reads: 泪：; reads: 山田 @ours-2026-09-05
-m/MS0032.BIN	0:26	12	693	1FD3	二人の女を、同時に愛{08:2A}{02:08}？\n<wait>	Can you love two women at the same time.........?\n<wait>				reads: 二人の女を、同時に愛せる‥‥‥？\n<wait>; reads: ペンタグランマ早坂達也 @ours-2026-09-05
-m/MS0032.BIN	0:26	13	728	1FD0	{08:31}{08:62}	Rui did not answer 				reads: 泪は、; reads: 泪： @ours-2026-09-05
-m/MS0032.BIN	0:26	14	738	1F01	の発{08:4B}言葉には答え{08:19}。\n<wait>{08:31}の眼の奥に{08:7B}影{08:62}いよいよ濃さを増{08:13}{02:08}\n<wait>	's words.\n<wait>The shadow deep in Rui's eyes grew ever darker.........\n<wait>				reads: の発した言葉には答えなかった。\n<wait>泪の眼の奥にある影は、いよいよ濃さを増している‥‥‥\n<wait>; reads: 二人の女を、同時に愛せる‥‥‥？\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:26	15	812	1FD2	{08:31}：	Rui:				reads: 泪：; reads: 泪は、 @ours-2026-09-05
-m/MS0032.BIN	0:26	16	818	1FD3	私は恋人の代わり？\n{08:82}寂しい{08:42}私を受け入{08:2F}の？\n					reads: 私は恋人の代わり？\nただ寂しいから私を受け入れるの？\n; reads: の発した言葉には答えなかった。\n<wait>泪の眼の奥にある影は、いよいよ濃さを増している‥‥‥\n<wait> @refalign
-m/MS0032.BIN	0:26	17	880	1FB2	そうか{08:5D}れ{08:25}					reads: そうかもしれない; menu option, declared width 20 columns; reads: 泪： @refalign
-m/MS0032.BIN	0:26	18	894	1FB2	{08:7A}事は{08:25}					reads: そんな事はない; menu option, declared width 20 columns; reads: 私は恋人の代わり？\nただ寂しいから私を受け入れるの？\n @refalign
+m/MS0032.BIN	0:23	0	24	1FD0	デミ・ヒューマンの死体が{08:7B}{02:08}‥\n		There is a dead Demi-Human here.\n	v005		reads: デミ・ヒューマンの死体がある‥‥‥‥\n; reads: デミ・ヒューマンの死体がある‥‥‥‥\n @refalign
+m/MS0032.BIN	0:25	0	27	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 泪： @refalign
+m/MS0032.BIN	0:25	1	33	1FD3	{02:08}{02:08}{08:72}\n	.........\n			draft	reads: ‥‥‥‥‥‥‥‥\n; reads: ‥‥‥‥‥‥‥‥\n @ours-2026-09-05
+m/MS0032.BIN	0:25	2	50	1FD0	{08:31}{08:62}つい、と向きを変{08:28}と、逃げる{08:69}に{08:4A}走り去{08:52}{08:1F}{08:72}\n<wait>		It's Rui. She sees you, turns around, and runs away.\n<wait>	v005		reads: 泪は、つい、と向きを変えると、逃げるようにして走り去ってしまった‥‥\n<wait>; reads: 泪は、つい、と向きを変えると、逃げるようにして走り去ってしまった‥‥\n<wait> @refalign
+m/MS0032.BIN	0:26	0	70	1FD0	再び{08:31}が一行の前に現わ{08:60}。\n<wait>		Rui appears before you.\n<wait>	v005		reads: 再び泪が一行の前に現われた。\n<wait>; reads: 再び泪が一行の前に現われた。\n<wait> @refalign
+m/MS0032.BIN	0:26	1	108	09	突如、{08:31}の身体{08:42}、まばゆい光が発せら{08:11}\n<wait>		Her body glows with soft light.<wait>	v005		reads: 突如、泪の身体から、まばゆい光が発せられた！\n<wait>; reads: 突如、泪の身体から、まばゆい光が発せられた！\n<wait> @refalign
+m/MS0032.BIN	0:26	2	425	1F77	光が収まると、	When the light faded, 			draft	@ours-2026-09-05
+m/MS0032.BIN	0:26	3	445	1F01	の傷は跡形も無く{08:1A}{08:64}！\n<wait>	's wounds had vanished without a trace!\n<wait>			draft	reads: の傷は跡形も無くなっていた！\n<wait>; reads: の傷は跡形も無くなっていた！\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:26	4	474	1FBA	{03:0B}{08:31}の様子がおかしい。\n	But something was wrong with Rui.\n			draft	reads: しかし、泪の様子がおかしい。\n; reads: しかし、泪の様子がおかしい。\n @ours-2026-09-05
+m/MS0032.BIN	0:26	5	503	1F01	の眼を見つ{08:2E}{08:31}の{08:4D}に{08:62}濃い影が見{08:28}{02:08}\n<wait>	's eyes met Rui's, and in hers a dark shadow could be seen.........\n<wait>			draft	reads: の眼を見つめる泪のそれには、濃い影が見える‥‥‥\n<wait>; reads: の眼を見つめる泪のそれには、濃い影が見える‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:26	6	548	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 泪： @refalign
+m/MS0032.BIN	0:26	7	560	1F01	{02:08}貴方{08:62}かつての恋人と私{02:08}<wait>どっちをとるの？\n	...... your old love, or me......<wait>which will you choose?\n	Ayato... Between me and your former lover...\n<wait>Which one would you choose?\n	v005	draft	reads: ‥‥‥貴方は、かつての恋人と私‥‥‥<wait>どっちをとるの？\n; reads: ‥‥‥貴方は、かつての恋人と私‥‥‥<wait>どっちをとるの？\n @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS0032.BIN	0:26	8	623	1FB2	突然何を{08:72}？		Why do you ask?	v005		reads: 突然何を‥‥？; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:26	9	637	1FB2	今{08:71}{08:90}{08:4A}た{08:5F}		Where you've been?	v005		reads: 今までどうしてたんだ; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:26	10	651	1FB2	何故{08:7A}事を		What's this about?	v005		reads: 何故そんな事を; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0032.BIN	0:26	11	687	1FD2	{08:31}：	Rui:	Rui:	v005	draft	reads: 泪：; reads: 山田 @ours-2026-09-05
+m/MS0032.BIN	0:26	12	693	1FD3	二人の女を、同時に愛{08:2A}{02:08}？\n<wait>	Can you love two women at the same time.........?\n<wait>	Can you really love two women at the same time?...\n<wait>	v005	draft	reads: 二人の女を、同時に愛せる‥‥‥？\n<wait>; reads: ペンタグランマ早坂達也 @ours-2026-09-05
+m/MS0032.BIN	0:26	13	728	1FD0	{08:31}{08:62}	Rui did not answer 	She does not answer your question.\n<wait>You can see the darkness in her eyes growing ever deeper.\n<wait>	v005	draft	reads: 泪は、; reads: 泪： @ours-2026-09-05
+m/MS0032.BIN	0:26	14	738	1F01	の発{08:4B}言葉には答え{08:19}。\n<wait>{08:31}の眼の奥に{08:7B}影{08:62}いよいよ濃さを増{08:13}{02:08}\n<wait>	's words.\n<wait>The shadow deep in Rui's eyes grew ever darker.........\n<wait>			draft	reads: の発した言葉には答えなかった。\n<wait>泪の眼の奥にある影は、いよいよ濃さを増している‥‥‥\n<wait>; reads: 二人の女を、同時に愛せる‥‥‥？\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:26	15	812	1FD2	{08:31}：	Rui:	Rui:	v005	draft	reads: 泪：; reads: 泪は、 @ours-2026-09-05
+m/MS0032.BIN	0:26	16	818	1FD3	私は恋人の代わり？\n{08:82}寂しい{08:42}私を受け入{08:2F}の？\n		Was I just her replacement?\nDid you only choose me because you were lonely?\n	v005		reads: 私は恋人の代わり？\nただ寂しいから私を受け入れるの？\n; reads: の発した言葉には答えなかった。\n<wait>泪の眼の奥にある影は、いよいよ濃さを増している‥‥‥\n<wait> @refalign
+m/MS0032.BIN	0:26	17	880	1FB2	そうか{08:5D}れ{08:25}		Maybe	v005		reads: そうかもしれない; menu option, declared width 20 columns; reads: 泪： @refalign
+m/MS0032.BIN	0:26	18	894	1FB2	{08:7A}事は{08:25}		Of course not	v005		reads: そんな事はない; menu option, declared width 20 columns; reads: 私は恋人の代わり？\nただ寂しいから私を受け入れるの？\n @refalign
 m/MS0032.BIN	0:26	19	938	1F4F	{03:17}	{03:17}				reads: ; reads: そうかもしれない; menu option, declared width 20 columns
 m/MS0032.BIN	0:26	20	956	1F4E	{03:17}	{03:17}				reads: ; reads: そんな事はない; menu option, declared width 20 columns
-m/MS0032.BIN	0:26	21	960	1FD2	{08:31}：	Rui:				reads: 泪：; reads: 山瀬勇 @ours-2026-09-05
-m/MS0032.BIN	0:26	22	966	1FD3	私を愛し{08:2B}{08:7D}、私が欲しい{08:7D}{02:08}\n<wait>	If you love me, if you want me.........\n<wait>				reads: 私を愛してるなら、私が欲しいなら‥‥‥\n<wait>; reads: 私を愛してるなら、私が欲しいなら‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:26	21	960	1FD2	{08:31}：	Rui:	Rui:	v005	draft	reads: 泪：; reads: 山瀬勇 @ours-2026-09-05
+m/MS0032.BIN	0:26	22	966	1FD3	私を愛し{08:2B}{08:7D}、私が欲しい{08:7D}{02:08}\n<wait>	If you love me, if you want me.........\n<wait>	If you truly love me... If you truly want me... Then...\n<wait>	v005	draft	reads: 私を愛してるなら、私が欲しいなら‥‥‥\n<wait>; reads: 私を愛してるなら、私が欲しいなら‥‥‥\n<wait> @ours-2026-09-05
 m/MS0032.BIN	0:26	23	1017	1F4E	{03:17}	{03:17}				reads: 
 m/MS0032.BIN	0:26	24	1035	1F4F	{03:17}	{03:17}				reads: 
-m/MS0032.BIN	0:26	25	1039	1FD2	{08:31}：					reads: 泪：; reads: 泪： @refalign
-m/MS0032.BIN	0:26	26	1045	1FD3	私{08:74}を見て、駄目、私{08:42}逃げて{02:08}\n殺せ{08:25}{08:72}{08:27}、殺{08:4A}{08:83}わ{02:08}嗚呼解ら{08:25}{08:72}解ら{08:25}のよ！！\n<wait>					reads: 私だけを見て、駄目、私から逃げて‥‥‥\n殺せない‥‥いいえ、殺してしまうわ‥‥‥嗚呼解らない‥‥解らないのよ！！\n<wait>; reads: 私を愛してるなら、私が欲しいなら‥‥‥\n<wait> @refalign
-m/MS0032.BIN	0:26	27	1137	1FD0	そう言うと、{08:31}は走り去{08:52}{08:1F}{02:08}\n<wait>	So saying, Rui ran off............\n<wait>				reads: そう言うと、泪は走り去ってしまった‥‥‥\n<wait>; reads: そう言うと、泪は走り去ってしまった‥‥‥\n<wait> @ours-2026-09-05
-m/MS0032.BIN	0:27	0	12	1F71	アリス様を悲しま{08:2A}輩{08:62}許し{02:0A}！！\n<wait>					reads: アリス様を悲しませる輩は、許しません！！\n<wait>; reads: アリス様を悲しませる輩は、許しません！！\n<wait> @refalign
-m/MS0032.BIN	0:27	1	53	1FD0	トランプ兵が{03:07}{08:1C}！\n<wait>					reads: トランプ兵が襲いかかってきた！！\n<wait>; reads: トランプ兵が襲いかかってきた！！\n<wait> @refalign
+m/MS0032.BIN	0:26	25	1039	1FD2	{08:31}：		Rui:	v005		reads: 泪：; reads: 泪： @refalign
+m/MS0032.BIN	0:26	26	1045	1FD3	私{08:74}を見て、駄目、私{08:42}逃げて{02:08}\n殺せ{08:25}{08:72}{08:27}、殺{08:4A}{08:83}わ{02:08}嗚呼解ら{08:25}{08:72}解ら{08:25}のよ！！\n<wait>		Look only at me... No, leave me alone. I can't kill you...\nNo, I can. I will kill you... Aah! My head hurts...\n<wait>	v005		reads: 私だけを見て、駄目、私から逃げて‥‥‥\n殺せない‥‥いいえ、殺してしまうわ‥‥‥嗚呼解らない‥‥解らないのよ！！\n<wait>; reads: 私を愛してるなら、私が欲しいなら‥‥‥\n<wait> @refalign
+m/MS0032.BIN	0:26	27	1137	1FD0	そう言うと、{08:31}は走り去{08:52}{08:1F}{02:08}\n<wait>	So saying, Rui ran off............\n<wait>	With that, she runs off.\n<wait>	v005	draft	reads: そう言うと、泪は走り去ってしまった‥‥‥\n<wait>; reads: そう言うと、泪は走り去ってしまった‥‥‥\n<wait> @ours-2026-09-05
+m/MS0032.BIN	0:27	0	12	1F71	アリス様を悲しま{08:2A}輩{08:62}許し{02:0A}！！\n<wait>		I will not forgive anyone who makes Lady Alice cry!\n<wait>	v005		reads: アリス様を悲しませる輩は、許しません！！\n<wait>; reads: アリス様を悲しませる輩は、許しません！！\n<wait> @refalign
+m/MS0032.BIN	0:27	1	53	1FD0	トランプ兵が{03:07}{08:1C}！\n<wait>		The trump soldier attacks you!\n<wait>	v005		reads: トランプ兵が襲いかかってきた！！\n<wait>; reads: トランプ兵が襲いかかってきた！！\n<wait> @refalign
 m/MS0032.BIN	0:27	2	99	00	{04:FF}	{04:FF}				reads: 
 m/MS0032.BIN	0:27	3	102	00	d{04:FF}	d{04:FF}				reads: d
 m/MS0032.BIN	0:27	4	106	00	d	d				

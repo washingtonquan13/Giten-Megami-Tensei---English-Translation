@@ -3,283 +3,283 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS600F.BIN	0:B6	0	0	DATA	そなたなぞ　{08:5C}知らぬわ！\n<wait>					reads: そなたなぞ　もう知らぬわ！\n<wait>
-m/MS600F.BIN	0:B7	0	0	DATA	わらわが望みかえ？\n<wait>					
-m/MS600F.BIN	0:B8	0	0	DATA	仲睦まじく　やるがよいぞよ\n<wait>					
-m/MS600F.BIN	0:B5	0	0	DATA	よ{08:18}\n<wait>					reads: よかった\n<wait>
-m/MS600F.BIN	0:B9	0	0	DATA	美しいおなごでは　{08:25}かえ\n<wait>					reads: 美しいおなごでは　ないかえ\n<wait>
-m/MS600F.BIN	0:BA	0	0	DATA	意気地の無い男よの\n<wait>					
-m/MS600F.BIN	1:03	0	25	1FB2	謝る					menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx0 en=Beg @rebase-unmatched idx0 en=Beg
-m/MS600F.BIN	1:03	1	31	1FB2	無視{08:8E}					reads: 無視する; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx1 en=Ignore @rebase-unmatched idx1 en=Ignore
-m/MS600F.BIN	1:03	2	193	1FB2	よろこんで	Gladly				menu option, declared width 20 columns; reads: ふたつ @ours-2026-09-05
-m/MS600F.BIN	1:03	3	205	1FB2	{08:80}が{08:25}	Can't be helped				reads: しょうがない; menu option, declared width 20 columns; reads: わたしは @ours-2026-09-05
-m/MS600F.BIN	1:03	4	213	1FB2	誰がお前{08:6A}かに	Who'd give you anything				reads: 誰がお前なんかに; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
-m/MS600F.BIN	1:03	5	449	1FB2	なだ{08:2E}					reads: なだめる; menu option, declared width 20 columns
-m/MS600F.BIN	1:03	6	457	1FB2	{08:86}る					reads: しかる; menu option, declared width 20 columns; reads: しょうがない
-m/MS600F.BIN	1:03	7	505	1FB2	そう{08:55}	That's right				reads: そうです; menu option, declared width 20 columns; reads: 誰がお前なんかに @ours-2026-09-05
-m/MS600F.BIN	1:03	8	513	1FB2	{08:7A}事{08:25}	Not at all				reads: そんな事ない; menu option, declared width 20 columns; reads: パパ @ours-2026-09-05
-m/MS600F.BIN	1:4A	0	0	DATA	なかなかに\n見どころが　{08:7B}では{08:25}かえ\n<wait>					reads: なかなかに\n見どころが　あるではないかえ\n<wait>
-m/MS600F.BIN	1:65	0	0	DATA	{08:79}様な　浮き雲の様な言葉では\nわらわの心は　揺るぎはせぬわ！\n<wait>					reads: その様な　浮き雲の様な言葉では\nわらわの心は　揺るぎはせぬわ！\n<wait>
-m/MS600F.BIN	1:66	0	0	DATA	わらわの前に　かしずくの{08:81}\n<wait>					reads: わらわの前に　かしずくのじゃ\n<wait>
-m/MS600F.BIN	1:67	0	0	DATA	おう　おう　うい奴{08:81}のう\n<wait>					reads: おう　おう　うい奴じゃのう\n<wait>
-m/MS600F.BIN	1:68	0	0	DATA	おのこが軽々しく　こうべを下げるとは\n<wait>					
-m/MS600F.BIN	1:69	0	0	DATA	恥を知れ！\n<wait>					
-m/MS600F.BIN	1:6A	0	0	DATA	{08:4D}でこそ　武士と言う{08:5E}ぞ！\n<wait>					reads: それでこそ　武士と言うものぞ！\n<wait>
-m/MS600F.BIN	1:6B	0	0	DATA	そなたの様な　うつけ者なぞ\n見とうも無いわ！\n<wait>					
-m/MS600F.BIN	1:6C	0	0	DATA	無粋よの\n<wait>					
-m/MS600F.BIN	1:6D	0	0	DATA	わらわに心より貢がば　許さぬ事も{08:25}ぞえ\n<wait>					reads: わらわに心より貢がば　許さぬ事もないぞえ\n<wait>
-m/MS600F.BIN	1:6E	0	0	DATA	{08:79}若さも　わらわに捧げるの{08:81}！\n<wait>					reads: その若さも　わらわに捧げるのじゃ！\n<wait>
-m/MS600F.BIN	1:6F	0	0	DATA	ええい！\n謝句の一つも言えぬのか！\n<wait>					
-m/MS600F.BIN	1:70	0	0	DATA	何を{08:4A}おる！\n{02:0E}を見るの{08:81}！！\n<wait>					reads: 何をしておる！\nこちらを見るのじゃ！！\n<wait>
-m/MS600F.BIN	1:71	0	0	DATA	わらわを　嫌うておるのかえ？\n<wait>					
-m/MS600F.BIN	1:45	0	0	DATA	そなたの眼には　曇りが見{08:28}わ！\n<wait>					reads: そなたの眼には　曇りが見えるわ！\n<wait>
-m/MS600F.BIN	1:54	0	0	DATA	{08:79}態度					reads: その態度
-m/MS600F.BIN	1:55	0	0	DATA	償{08:52}もらうぞ！\n<wait>					reads: 償ってもらうぞ！\n<wait>
-m/MS600F.BIN	1:A6	0	0	DATA	わらわの姿が小さく　見え{08:25}と申すか？\n<wait>					reads: わらわの姿が小さく　見えないと申すか？\n<wait>
-m/MS600F.BIN	1:7A	0	0	DATA	許す訳には　行かぬのう\n<wait>					
-m/MS600F.BIN	1:A8	0	0	DATA	少しばかり　姿が大きい{08:42}と{08:68}て\n<wait>					reads: 少しばかり　姿が大きいからというて\n<wait>
-m/MS600F.BIN	1:72	0	0	DATA	調子に乗るで{08:25}ぞ！\n<wait>					reads: 調子に乗るでないぞ！\n<wait>
-m/MS600F.BIN	1:AA	0	0	DATA	くぬぅ！　口惜しや！！\n<wait>					
-m/MS600F.BIN	1:AB	0	0	DATA	そなた　{08:90}も　信じられぬわ\n<wait>					reads: そなた　どうも　信じられぬわ\n<wait>
-m/MS600F.BIN	1:AC	0	0	DATA	両の眼が　笑ろうておるぞよ！\n<wait>					
-m/MS600F.BIN	1:AD	0	0	DATA	ふん　今更何を！\n<wait>					
-m/MS600F.BIN	1:AE	0	0	DATA	のう　誠に見えておらぬのかえ？\n<wait>					
-m/MS600F.BIN	1:AF	0	0	DATA	{08:48}　{08:48}　そなた\n<wait>					reads: これ　これ　そなた\n<wait>
-m/MS600F.BIN	1:35	0	0	DATA	好都合と言う{08:5E}ぞ！\n<wait>					reads: 好都合と言うものぞ！\n<wait>
-m/MS600F.BIN	2:3C	0	0	DATA	のう　					
-m/MS600F.BIN	2:3D	0	0	DATA	{08:79}様な事より					reads: その様な事より
-m/MS600F.BIN	2:3E	0	0	DATA	良い事をせぬか？\n<wait>					
-m/MS600F.BIN	2:3F	0	0	DATA	ほほ　そなたも好き者よの\n<wait>					
-m/MS600F.BIN	2:40	0	0	DATA	{08:48}では　人目が気に{08:59}ぞえ\n<wait>					reads: これでは　人目が気になるぞえ\n<wait>
-m/MS600F.BIN	2:41	0	0	DATA	二人{08:74}の機会に致しま{08:80}ぞ\n<wait>					reads: 二人だけの機会に致しましょうぞ\n<wait>
-m/MS600F.BIN	2:42	0	0	DATA	ええい！　ドルミナー！\n<wait>					
-m/MS600F.BIN	2:43	0	0	DATA	しくじ{08:51}様{08:81}\n<wait>					reads: しくじった様じゃ\n<wait>
-m/MS600F.BIN	2:44	0	0	DATA	ほほ　上手く行{08:51}わ\n<wait>					reads: ほほ　上手く行ったわ\n<wait>
-m/MS600F.BIN	2:45	0	0	DATA	邪魔者は　{01:23}目は覚まさぬ\n<wait>					reads: 邪魔者は　しばらく目は覚まさぬ\n<wait>
-m/MS600F.BIN	2:46	0	0	DATA	わらわに　何を{08:4A}く{08:2F}のかえ？\n<wait>					reads: わらわに　何をしてくれるのかえ？\n<wait>
-m/MS600F.BIN	2:47	0	0	DATA	あ{02:09}{=EB}{=9F}\n<wait>					reads: あ・・・{=EB}{=9F}\n<wait>
-m/MS600F.BIN	2:48	0	0	DATA	{08:48}で　終わりかえ？\n<wait>					reads: これで　終わりかえ？\n<wait>
-m/MS600F.BIN	2:49	0	0	DATA	そなた　あまり手慣れては　おらぬ様{08:81}な\n<wait>					reads: そなた　あまり手慣れては　おらぬ様じゃな\n<wait>
-m/MS600F.BIN	2:4A	0	0	DATA	すごいぞえ！\n<wait>					
-m/MS600F.BIN	2:4B	0	0	DATA	お願い{08:81}　も{08:53}！\n<wait>					reads: お願いじゃ　もっと！\n<wait>
-m/MS600F.BIN	2:4C	0	0	DATA	優しく{08:4A}たもれ{=EB}{=9F}\n<wait>					reads: 優しくしてたもれ{=EB}{=9F}\n<wait>
-m/MS600F.BIN	2:4D	0	0	DATA	{08:5C}終わりかえ？\n<wait>					reads: もう終わりかえ？\n<wait>
-m/MS600F.BIN	2:4E	0	0	DATA	やはり					
-m/MS600F.BIN	2:4F	0	0	DATA	{08:76}{08:81}　{08:76}　焦{08:52}は{08:7D}ぬ\n<wait>					reads: まだじゃ　まだ　焦ってはならぬ\n<wait>
-m/MS600F.BIN	2:50	0	0	DATA	{08:4D}とも					reads: それとも
-m/MS600F.BIN	2:51	0	0	DATA	女心を微塵も解さぬ奴{08:81}！\n<wait>					reads: 女心を微塵も解さぬ奴じゃ！\n<wait>
-m/MS600F.BIN	2:52	0	0	DATA	大胆よの\n<wait>					
-m/MS600F.BIN	2:53	0	0	DATA	わらわの口{08:42}言わ{08:2A}で{08:25}　分{08:42}ぬか？\n<wait>					reads: わらわの口から言わせるでない　分からぬか？\n<wait>
-m/MS600F.BIN	2:54	0	0	DATA	そうではなく					
-m/MS600F.BIN	2:55	0	0	DATA	{08:90}致そうか{02:09}・\n<wait>					reads: どう致そうか・・・・\n<wait>
-m/MS600F.BIN	2:31	0	0	DATA	{08:47}通り{08:81}　見逃{08:4A}たもれ！\n<wait>					reads: この通りじゃ　見逃してたもれ！\n<wait>
-m/MS600F.BIN	3:29	0	0	DATA	そなたは　冷{08:4E}男よの\n{03:0C}ど　{08:79}冷たさが　わらわの心を捕ら{08:28}の{08:81}\n<wait>					reads: そなたは　冷たい男よの\nされど　その冷たさが　わらわの心を捕らえるのじゃ\n<wait>
-m/MS600F.BIN	4:00	0	0	DATA	そなた　何者ぞ？\n<wait>					
-m/MS600F.BIN	4:01	0	0	DATA	{08:0E}に{08:1A}　欲しいのかえ？\n<wait>					reads: 仲魔になって　欲しいのかえ？\n<wait>
+m/MS600F.BIN	0:B6	0	0	DATA	そなたなぞ　{08:5C}知らぬわ！\n<wait>		I'll not know thee more!\n<wait>	ours		reads: そなたなぞ　もう知らぬわ！\n<wait>
+m/MS600F.BIN	0:B7	0	0	DATA	わらわが望みかえ？\n<wait>		Dost thou want me?\n<wait>	ours		
+m/MS600F.BIN	0:B8	0	0	DATA	仲睦まじく　やるがよいぞよ\n<wait>		Go on, get along nicely.\n<wait>	ours		
+m/MS600F.BIN	0:B5	0	0	DATA	よ{08:18}\n<wait>		Good.\n<wait>	ours		reads: よかった\n<wait>
+m/MS600F.BIN	0:B9	0	0	DATA	美しいおなごでは　{08:25}かえ\n<wait>		Am I not a lovely lady?\n<wait>	ours		reads: 美しいおなごでは　ないかえ\n<wait>
+m/MS600F.BIN	0:BA	0	0	DATA	意気地の無い男よの\n<wait>		Quite spineless.\n<wait>	ours		
+m/MS600F.BIN	1:03	0	25	1FB2	謝る		Gladly	ours		menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx0 en=Beg @rebase-unmatched idx0 en=Beg
+m/MS600F.BIN	1:03	1	31	1FB2	無視{08:8E}		No choice	ours		reads: 無視する; menu option, declared width 20 columns; menu option, declared width 20 columns @rebase-unmatched idx1 en=Ignore @rebase-unmatched idx1 en=Ignore
+m/MS600F.BIN	1:03	2	193	1FB2	よろこんで	Gladly	Not for you	ours	draft	menu option, declared width 20 columns; reads: ふたつ @ours-2026-09-05
+m/MS600F.BIN	1:03	3	205	1FB2	{08:80}が{08:25}	Can't be helped	Soothe	ours	draft	reads: しょうがない; menu option, declared width 20 columns; reads: わたしは @ours-2026-09-05
+m/MS600F.BIN	1:03	4	213	1FB2	誰がお前{08:6A}かに	Who'd give you anything	Scold	ours	draft	reads: 誰がお前なんかに; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS600F.BIN	1:03	5	449	1FB2	なだ{08:2E}		Indeed	ours		reads: なだめる; menu option, declared width 20 columns
+m/MS600F.BIN	1:03	6	457	1FB2	{08:86}る		Not at all	ours		reads: しかる; menu option, declared width 20 columns; reads: しょうがない
+m/MS600F.BIN	1:03	7	505	1FB2	そう{08:55}	That's right			draft	reads: そうです; menu option, declared width 20 columns; reads: 誰がお前なんかに @ours-2026-09-05
+m/MS600F.BIN	1:03	8	513	1FB2	{08:7A}事{08:25}	Not at all			draft	reads: そんな事ない; menu option, declared width 20 columns; reads: パパ @ours-2026-09-05
+m/MS600F.BIN	1:4A	0	0	DATA	なかなかに\n見どころが　{08:7B}では{08:25}かえ\n<wait>		Not bad,\nthou hast an eye for talent.\n<wait>	ours		reads: なかなかに\n見どころが　あるではないかえ\n<wait>
+m/MS600F.BIN	1:65	0	0	DATA	{08:79}様な　浮き雲の様な言葉では\nわらわの心は　揺るぎはせぬわ！\n<wait>		Such fleeting, cloudy words\nshall never sway my heart!\n<wait>	ours		reads: その様な　浮き雲の様な言葉では\nわらわの心は　揺るぎはせぬわ！\n<wait>
+m/MS600F.BIN	1:66	0	0	DATA	わらわの前に　かしずくの{08:81}\n<wait>		Kneel before me, thou shalt.\n<wait>	ours		reads: わらわの前に　かしずくのじゃ\n<wait>
+m/MS600F.BIN	1:67	0	0	DATA	おう　おう　うい奴{08:81}のう\n<wait>		Oh ho, a charming one.\n<wait>	ours		reads: おう　おう　うい奴じゃのう\n<wait>
+m/MS600F.BIN	1:68	0	0	DATA	おのこが軽々しく　こうべを下げるとは\n<wait>		For a man to bow so easily,\n<wait>	ours		
+m/MS600F.BIN	1:69	0	0	DATA	恥を知れ！\n<wait>		For shame!\n<wait>	ours		
+m/MS600F.BIN	1:6A	0	0	DATA	{08:4D}でこそ　武士と言う{08:5E}ぞ！\n<wait>		That is what a warrior is!\n<wait>	ours		reads: それでこそ　武士と言うものぞ！\n<wait>
+m/MS600F.BIN	1:6B	0	0	DATA	そなたの様な　うつけ者なぞ\n見とうも無いわ！\n<wait>		A fool such as thou,\nnot fit to see!\n<wait>	ours		
+m/MS600F.BIN	1:6C	0	0	DATA	無粋よの\n<wait>		Crude.\n<wait>	ours		
+m/MS600F.BIN	1:6D	0	0	DATA	わらわに心より貢がば　許さぬ事も{08:25}ぞえ\n<wait>		Devote thyself, and I may forgive.\n<wait>	ours		reads: わらわに心より貢がば　許さぬ事もないぞえ\n<wait>
+m/MS600F.BIN	1:6E	0	0	DATA	{08:79}若さも　わらわに捧げるの{08:81}！\n<wait>		Offer up thy youth to me as well!\n<wait>	ours		reads: その若さも　わらわに捧げるのじゃ！\n<wait>
+m/MS600F.BIN	1:6F	0	0	DATA	ええい！\n謝句の一つも言えぬのか！\n<wait>		Enough!\nNot even one poem back?\n<wait>	ours		
+m/MS600F.BIN	1:70	0	0	DATA	何を{08:4A}おる！\n{02:0E}を見るの{08:81}！！\n<wait>		What art thou doing!\nLook this way!!\n<wait>	ours		reads: 何をしておる！\nこちらを見るのじゃ！！\n<wait>
+m/MS600F.BIN	1:71	0	0	DATA	わらわを　嫌うておるのかえ？\n<wait>		Dost thou despise me, then?\n<wait>	ours		
+m/MS600F.BIN	1:45	0	0	DATA	そなたの眼には　曇りが見{08:28}わ！\n<wait>		Thine eyes are clouded indeed!\n<wait>	ours		reads: そなたの眼には　曇りが見えるわ！\n<wait>
+m/MS600F.BIN	1:54	0	0	DATA	{08:79}態度		That air	ours		reads: その態度
+m/MS600F.BIN	1:55	0	0	DATA	償{08:52}もらうぞ！\n<wait>		Thou wilt atone!\n<wait>	ours		reads: 償ってもらうぞ！\n<wait>
+m/MS600F.BIN	1:A6	0	0	DATA	わらわの姿が小さく　見え{08:25}と申すか？\n<wait>		Sayest I appear too small to see?\n<wait>	ours		reads: わらわの姿が小さく　見えないと申すか？\n<wait>
+m/MS600F.BIN	1:7A	0	0	DATA	許す訳には　行かぬのう\n<wait>		I cannot forgive that.\n<wait>	ours		
+m/MS600F.BIN	1:A8	0	0	DATA	少しばかり　姿が大きい{08:42}と{08:68}て\n<wait>		Just for bein' a bit larger,\n<wait>	ours		reads: 少しばかり　姿が大きいからというて\n<wait>
+m/MS600F.BIN	1:72	0	0	DATA	調子に乗るで{08:25}ぞ！\n<wait>		Do not get so bold!\n<wait>	ours		reads: 調子に乗るでないぞ！\n<wait>
+m/MS600F.BIN	1:AA	0	0	DATA	くぬぅ！　口惜しや！！\n<wait>		Kunuu! How vexing!!\n<wait>	ours		
+m/MS600F.BIN	1:AB	0	0	DATA	そなた　{08:90}も　信じられぬわ\n<wait>		I find thee hard to believe.\n<wait>	ours		reads: そなた　どうも　信じられぬわ\n<wait>
+m/MS600F.BIN	1:AC	0	0	DATA	両の眼が　笑ろうておるぞよ！\n<wait>		Both eyes are laughing!\n<wait>	ours		
+m/MS600F.BIN	1:AD	0	0	DATA	ふん　今更何を！\n<wait>		Hmph, too late!\n<wait>	ours		
+m/MS600F.BIN	1:AE	0	0	DATA	のう　誠に見えておらぬのかえ？\n<wait>		Canst thou truly not see it?\n<wait>	ours		
+m/MS600F.BIN	1:AF	0	0	DATA	{08:48}　{08:48}　そなた\n<wait>		Now, now, thou.\n<wait>	ours		reads: これ　これ　そなた\n<wait>
+m/MS600F.BIN	1:35	0	0	DATA	好都合と言う{08:5E}ぞ！\n<wait>		How convenient!\n<wait>	ours		reads: 好都合と言うものぞ！\n<wait>
+m/MS600F.BIN	2:3C	0	0	DATA	のう　		Hmm,	ours		
+m/MS600F.BIN	2:3D	0	0	DATA	{08:79}様な事より		Forget that,	ours		reads: その様な事より
+m/MS600F.BIN	2:3E	0	0	DATA	良い事をせぬか？\n<wait>		Shall we not enjoy ourselves?\n<wait>	ours		
+m/MS600F.BIN	2:3F	0	0	DATA	ほほ　そなたも好き者よの\n<wait>		Ho ho, quite the rascal.\n<wait>	ours		
+m/MS600F.BIN	2:40	0	0	DATA	{08:48}では　人目が気に{08:59}ぞえ\n<wait>		Others' eyes concern me now.\n<wait>	ours		reads: これでは　人目が気になるぞえ\n<wait>
+m/MS600F.BIN	2:41	0	0	DATA	二人{08:74}の機会に致しま{08:80}ぞ\n<wait>		Let this be for us alone.\n<wait>	ours		reads: 二人だけの機会に致しましょうぞ\n<wait>
+m/MS600F.BIN	2:42	0	0	DATA	ええい！　ドルミナー！\n<wait>		Enough! Dormina!\n<wait>	ours		
+m/MS600F.BIN	2:43	0	0	DATA	しくじ{08:51}様{08:81}\n<wait>		Seems I failed.\n<wait>	ours		reads: しくじった様じゃ\n<wait>
+m/MS600F.BIN	2:44	0	0	DATA	ほほ　上手く行{08:51}わ\n<wait>		Ho ho, it went well.\n<wait>	ours		reads: ほほ　上手く行ったわ\n<wait>
+m/MS600F.BIN	2:45	0	0	DATA	邪魔者は　{01:23}目は覚まさぬ\n<wait>		The nuisance shall not wake for a while.\n<wait>	ours		reads: 邪魔者は　しばらく目は覚まさぬ\n<wait>
+m/MS600F.BIN	2:46	0	0	DATA	わらわに　何を{08:4A}く{08:2F}のかえ？\n<wait>		What wilt thou do for me, then?\n<wait>	ours		reads: わらわに　何をしてくれるのかえ？\n<wait>
+m/MS600F.BIN	2:47	0	0	DATA	あ{02:09}{=EB}{=9F}\n<wait>		Ah...{=EB}{=9F}\n<wait>	ours		reads: あ・・・{=EB}{=9F}\n<wait>
+m/MS600F.BIN	2:48	0	0	DATA	{08:48}で　終わりかえ？\n<wait>		Is this the end?\n<wait>	ours		reads: これで　終わりかえ？\n<wait>
+m/MS600F.BIN	2:49	0	0	DATA	そなた　あまり手慣れては　おらぬ様{08:81}な\n<wait>		Not very experienced, art thou?\n<wait>	ours		reads: そなた　あまり手慣れては　おらぬ様じゃな\n<wait>
+m/MS600F.BIN	2:4A	0	0	DATA	すごいぞえ！\n<wait>		Amazing!\n<wait>	ours		
+m/MS600F.BIN	2:4B	0	0	DATA	お願い{08:81}　も{08:53}！\n<wait>		Please, I beg, more!\n<wait>	ours		reads: お願いじゃ　もっと！\n<wait>
+m/MS600F.BIN	2:4C	0	0	DATA	優しく{08:4A}たもれ{=EB}{=9F}\n<wait>		Be gentle with me{=EB}{=9F}\n<wait>	ours		reads: 優しくしてたもれ{=EB}{=9F}\n<wait>
+m/MS600F.BIN	2:4D	0	0	DATA	{08:5C}終わりかえ？\n<wait>		Already over?\n<wait>	ours		reads: もう終わりかえ？\n<wait>
+m/MS600F.BIN	2:4E	0	0	DATA	やはり		Still,	ours		
+m/MS600F.BIN	2:4F	0	0	DATA	{08:76}{08:81}　{08:76}　焦{08:52}は{08:7D}ぬ\n<wait>		Not yet. Don't be hasty.\n<wait>	ours		reads: まだじゃ　まだ　焦ってはならぬ\n<wait>
+m/MS600F.BIN	2:50	0	0	DATA	{08:4D}とも		Or maybe	ours		reads: それとも
+m/MS600F.BIN	2:51	0	0	DATA	女心を微塵も解さぬ奴{08:81}！\n<wait>		Knows naught of my heart!\n<wait>	ours		reads: 女心を微塵も解さぬ奴じゃ！\n<wait>
+m/MS600F.BIN	2:52	0	0	DATA	大胆よの\n<wait>		How bold\n<wait>	ours		
+m/MS600F.BIN	2:53	0	0	DATA	わらわの口{08:42}言わ{08:2A}で{08:25}　分{08:42}ぬか？\n<wait>		Must I say it myself? Dost thou not see?\n<wait>	ours		reads: わらわの口から言わせるでない　分からぬか？\n<wait>
+m/MS600F.BIN	2:54	0	0	DATA	そうではなく		Not that...	ours		
+m/MS600F.BIN	2:55	0	0	DATA	{08:90}致そうか{02:09}・\n<wait>		What shall I do......\n<wait>	ours		reads: どう致そうか・・・・\n<wait>
+m/MS600F.BIN	2:31	0	0	DATA	{08:47}通り{08:81}　見逃{08:4A}たもれ！\n<wait>		As thou seest, do spare me!\n<wait>	ours		reads: この通りじゃ　見逃してたもれ！\n<wait>
+m/MS600F.BIN	3:29	0	0	DATA	そなたは　冷{08:4E}男よの\n{03:0C}ど　{08:79}冷たさが　わらわの心を捕ら{08:28}の{08:81}\n<wait>		Thou art a cold man.\nYet it is that coldness which captures my heart.\n<wait>	ours		reads: そなたは　冷たい男よの\nされど　その冷たさが　わらわの心を捕らえるのじゃ\n<wait>
+m/MS600F.BIN	4:00	0	0	DATA	そなた　何者ぞ？\n<wait>		Thou there, what art thou?\n<wait>	ours		
+m/MS600F.BIN	4:01	0	0	DATA	{08:0E}に{08:1A}　欲しいのかえ？\n<wait>		Wouldst thou have me as thy demon?\n<wait>	ours		reads: 仲魔になって　欲しいのかえ？\n<wait>
 m/MS600F.BIN	4:02	0	0	DATA	{08:7C}	{08:7C}				reads: ならば
-m/MS600F.BIN	4:03	0	0	DATA	何か望み{08:56}　{08:7B}のかえ？\n<wait>					reads: 何か望みでも　あるのかえ？\n<wait>
-m/MS600F.BIN	4:04	0	0	DATA	ほう　そうかえ\n<wait>					
-m/MS600F.BIN	4:05	0	0	DATA	では　さらば{08:81}！\n<wait>					reads: では　さらばじゃ！\n<wait>
-m/MS600F.BIN	4:06	0	0	DATA	何が望みか　申すが良いぞ！\n<wait>					
-m/MS600F.BIN	4:07	0	0	DATA	わらわは　					
-m/MS600F.BIN	4:07	1	24	1F01	\n今後とも　よし{08:58}願うぞえ\n<wait>	.\nI trust we shall get along.\n<wait>				reads: \n今後とも　よしなに願うぞえ\n<wait>; reads: 　 @rebase-new @rebase-unmatched idx1 en= {04:EF}. @rebase-unmatched idx2 en={04:EF}.\nI trust thou wilt treat me well hereafter.\n<wait> @ours-2026-09-05
-m/MS600F.BIN	4:08	0	0	DATA	{08:48}を授け{08:69}\n<wait>					reads: これを授けよう\n<wait>
-m/MS600F.BIN	4:09	0	0	DATA	すまぬが					
-m/MS600F.BIN	4:0A	0	0	DATA	今は　持ち合わ{08:67}おらぬの{08:81}\n<wait>					reads: 今は　持ち合わせておらぬのじゃ\n<wait>
-m/MS600F.BIN	4:0B	0	0	DATA	代わりに\n<wait>					
-m/MS600F.BIN	4:0C	0	0	DATA	何か　贈り物{08:56}{08:7B}と申すか？\n<wait>					reads: 何か　贈り物でもあると申すか？\n<wait>
-m/MS600F.BIN	4:0D	0	0	DATA	そなたとは　反りが合わぬわ\n<wait>					
-m/MS600F.BIN	4:0E	0	0	DATA	お断り{08:81}\n<wait>					reads: お断りじゃ\n<wait>
-m/MS600F.BIN	4:0F	0	0	DATA	わらわが悪{08:18}　謝るぞえ\n<wait>					reads: わらわが悪かった　謝るぞえ\n<wait>
-m/MS600F.BIN	4:10	0	0	DATA	何用{08:81}？\n<wait>					reads: 何用じゃ？\n<wait>
-m/MS600F.BIN	4:11	0	0	DATA	{08:76}　用が{08:7B}と申すか？\n<wait>					reads: まだ　用があると申すか？\n<wait>
-m/MS600F.BIN	4:12	0	0	DATA	ムシが良すぎるぞえ！\n<wait>					
-m/MS600F.BIN	4:13	0	0	DATA	付き合い切れぬ{02:09}\n<wait>					reads: 付き合い切れぬ・・・\n<wait>
-m/MS600F.BIN	4:14	0	0	DATA	まあ良いわ\n<wait>					
-m/MS600F.BIN	4:15	0	0	DATA	{08:79}性根　叩き直{08:4A}くれ{08:69}ぞ！\n<wait>					reads: その性根　叩き直してくれようぞ！\n<wait>
-m/MS600F.BIN	4:16	0	0	DATA	甘いわ！\n<wait>					
-m/MS600F.BIN	4:17	0	0	DATA	何を{08:8E}の{08:81}！？\n<wait>					reads: 何をするのじゃ！？\n<wait>
-m/MS600F.BIN	4:18	0	0	DATA	{08:3F}　止{08:2E}の{08:81}！\n<wait>					reads: あれ　止めるのじゃ！\n<wait>
-m/MS600F.BIN	4:19	0	0	DATA	ふざ{08:29}で{08:25}ぞよ！\n<wait>					reads: ふざけるでないぞよ！\n<wait>
-m/MS600F.BIN	4:1A	0	0	DATA	話す事なぞ無いわ！\n<wait>					
-m/MS600F.BIN	4:1B	0	0	DATA	話{08:4B}{08:18}{08:74}かえ？\n<wait>					reads: 話したかっただけかえ？\n<wait>
-m/MS600F.BIN	4:1C	0	0	DATA	や{08:2F}{08:5E}{08:7C}　や{08:52}みるが{08:7F}ぞえ\n<wait>					reads: やれるものならば　やってみるがいいぞえ\n<wait>
-m/MS600F.BIN	4:1D	0	0	DATA	ヒイィー！\n<wait>					
-m/MS600F.BIN	4:1E	0	0	DATA	何{08:56}　そなたの望む{08:7E}に致す\n{08:90}か　堪忍{08:4A}たも！\n<wait>					reads: 何でも　そなたの望むままに致す\nどうか　堪忍してたも！\n<wait>
-m/MS600F.BIN	4:1F	0	0	DATA	覚えておくが{08:7F}ぞえ！\n<wait>					reads: 覚えておくがいいぞえ！\n<wait>
-m/MS600F.BIN	4:20	0	0	DATA	有り難い事よ\n<wait>					
-m/MS600F.BIN	4:21	0	0	DATA	{03:0C}ど					reads: されど
-m/MS600F.BIN	4:22	0	0	DATA	教えてやろうぞ\n<wait>					
-m/MS600F.BIN	4:23	0	0	DATA	よい事を＿					
-m/MS600F.BIN	4:24	0	0	DATA	つまらぬわ！\n<wait>					
-m/MS600F.BIN	4:25	0	0	DATA	同じ{08:0E}がおる様{08:81}\n<wait>					reads: 同じ仲魔がおる様じゃ\n<wait>
-m/MS600F.BIN	4:26	0	0	DATA	{08:0E}の具合が　優れぬ様子\n<wait>					reads: 仲魔の具合が　優れぬ様子\n<wait>
-m/MS600F.BIN	4:27	0	0	DATA	おお　わらわの{08:0E}が！！！\n<wait>					reads: おお　わらわの仲魔が！！！\n<wait>
-m/MS600F.BIN	4:28	0	0	DATA	許す訳には行かぬぞえ！！\n<wait>					
-m/MS600F.BIN	4:29	0	0	DATA	わらわが　治{08:4A}しんぜ{08:69}\n<wait>					reads: わらわが　治してしんぜよう\n<wait>
-m/MS600F.BIN	4:2A	0	0	DATA	きちんと　治{08:4A}たもれ\n<wait>					reads: きちんと　治してたもれ\n<wait>
-m/MS600F.BIN	4:2B	0	0	DATA	{08:0E}によし{08:58}　伝えてたもれ\n<wait>					reads: 仲魔によしなに　伝えてたもれ\n<wait>
-m/MS600F.BIN	4:2C	0	0	DATA	{08:0E}を裏切る訳には　行かぬぞえ\n<wait>					reads: 仲魔を裏切る訳には　行かぬぞえ\n<wait>
-m/MS600F.BIN	4:2D	0	0	DATA	{08:0E}が多過ぎる様{08:81}　誰かを外すのかえ？\n<wait>					reads: 仲魔が多過ぎる様じゃ　誰かを外すのかえ？\n<wait>
-m/MS600F.BIN	4:2E	0	0	DATA	いとおかし！\n<wait>					
-m/MS600F.BIN	4:2F	0	0	DATA	そなたの魂　わらわが貰い受{08:29}ぞえ\n<wait>					reads: そなたの魂　わらわが貰い受けるぞえ\n<wait>
-m/MS600F.BIN	4:30	0	0	DATA	そなたの事は　忘れぬぞよ\n<wait>					
-m/MS600F.BIN	4:31	0	0	DATA	そなたなぞに　用は{08:25}わ！\n<wait>					reads: そなたなぞに　用はないわ！\n<wait>
-m/MS600F.BIN	4:32	0	6	1F02	を望むぞえ\n<wait>					
-m/MS600F.BIN	4:33	0	6	1F02	が望み{08:81}\n<wait>					reads: が望みじゃ\n<wait>
-m/MS600F.BIN	4:34	0	0	DATA	わらわは　魔石が欲しいの{08:81}\n<wait>					reads: わらわは　魔石が欲しいのじゃ\n<wait>
-m/MS600F.BIN	4:35	0	0	DATA	宝石{08:81}　宝石を出すが良いぞえ\n<wait>					reads: 宝石じゃ　宝石を出すが良いぞえ\n<wait>
-m/MS600F.BIN	4:36	0	0	DATA	{08:47}様な者と話{08:4B}処で　らちはあかぬ\n<wait>					reads: この様な者と話した処で　らちはあかぬ\n<wait>
-m/MS600F.BIN	4:37	0	0	DATA	みな　帰るぞよ！\n<wait>					
-m/MS600F.BIN	4:38	0	0	DATA	そなたか！　悪行の限りを尽くし\nわらわ達を　苦しめておると{08:68}者は！\n<wait>					reads: そなたか！　悪行の限りを尽くし\nわらわ達を　苦しめておるという者は！\n<wait>
-m/MS600F.BIN	4:39	0	0	DATA	無視{08:8E}で無いぞよ！\n<wait>					reads: 無視するで無いぞよ！\n<wait>
-m/MS600F.BIN	4:3A	0	0	DATA	信ずるに足りぬぞえ\n<wait>					
-m/MS600F.BIN	4:3B	0	0	DATA	無礼者！　わらわをさておき\n					record reaches an engine no-op opcode; verify in game
-m/MS600F.BIN	4:3B	1	29	1E3F	とばかり　話{08:13}で{08:25}ぞよ！\n<wait>					record reaches an engine no-op opcode; verify in game; reads: とばかり　話しているでないぞよ！\n<wait>
-m/MS600F.BIN	4:3C	0	0	DATA	わらわが　邪魔だと申すのか！\n<wait>					
-m/MS600F.BIN	4:3D	0	0	DATA	誠意を見せ{08:54}らおうぞ\n<wait>					reads: 誠意を見せてもらおうぞ\n<wait>
-m/MS600F.BIN	4:3E	0	0	DATA	そなた　よいおとこ{08:81}\n<wait>					reads: そなた　よいおとこじゃ\n<wait>
-m/MS600F.BIN	4:3F	0	0	DATA	気分を害{08:4B}ぞえ！\n<wait>					reads: 気分を害したぞえ！\n<wait>
-m/MS600F.BIN	4:40	0	0	DATA	{08:5C}よいわ！\n<wait>					reads: もうよいわ！\n<wait>
-m/MS600F.BIN	4:41	0	0	DATA	{08:79}様な事を　申すで{08:25}ぞえ\n<wait>					reads: その様な事を　申すでないぞえ\n<wait>
-m/MS600F.BIN	4:42	0	0	DATA	無礼者め！　わらわを何と心得る！！\n<wait>					
-m/MS600F.BIN	4:43	0	0	DATA	返すぞえ\n<wait>					
-m/MS600F.BIN	4:44	0	0	DATA	クッ{02:09}もはや{08:48}{08:71}！\n{08:7C}　死出の道連れに{08:4A}くれ{08:69}ぞ！！\n<wait>					reads: クッ・・・もはやこれまで！\nならば　死出の道連れにしてくれようぞ！！\n<wait>
-m/MS600F.BIN	4:45	0	0	DATA	何と申すか！\n<wait>					
-m/MS600F.BIN	4:46	0	0	DATA	持{08:52}おらぬでは{08:25}か！\n<wait>					reads: 持っておらぬではないか！\n<wait>
-m/MS600F.BIN	4:47	0	0	DATA	ＭＡＧが足りぬと　申すのかえ？\n<wait>					
-m/MS600F.BIN	4:48	0	0	DATA	マッカが足りぬと　申すのかえ？\n<wait>					
-m/MS600F.BIN	4:49	0	0	DATA	仕方の{08:25}\n<wait>					reads: 仕方のない\n<wait>
-m/MS600F.BIN	4:4A	0	0	DATA	{08:5C}	{08:5C}				reads: もう
-m/MS600F.BIN	4:4B	0	0	DATA	今度は					
-m/MS600F.BIN	4:4C	0	0	DATA	物足りぬ{02:09}・\n<wait>					reads: 物足りぬ・・・・\n<wait>
-m/MS600F.BIN	4:4D	0	0	DATA	{08:5C}一つ					reads: もう一つ
-m/MS600F.BIN	4:4E	0	0	DATA	薄情な奴よ\n付き合い切れぬわ！\n<wait>					
-m/MS600F.BIN	4:4F	0	0	DATA	{08:0E}に{08:4A}たもれ\n<wait>					reads: 仲魔にしてたもれ\n<wait>
-m/MS600F.BIN	4:50	0	0	DATA	分{08:18}ぞえ\n<wait>					reads: 分かったぞえ\n<wait>
-m/MS600F.BIN	4:51	0	0	DATA	殺す気か？\n<wait>					
-m/MS600F.BIN	4:52	0	0	DATA	{08:0E}になろうぞ\nだ{08:42}　{08:90}か許{08:4A}たもれ\n<wait>					reads: 仲魔になろうぞ\nだから　どうか許してたもれ\n<wait>
-m/MS600F.BIN	4:53	0	0	DATA	愚か者め！\n<wait>					
-m/MS600F.BIN	4:54	0	0	DATA	せめて　{08:48}を\n<wait>					reads: せめて　これを\n<wait>
-m/MS600F.BIN	4:55	0	0	DATA	戦う気が　無いと申すのかえ？\n<wait>					
-m/MS600F.BIN	4:56	0	0	DATA	そなた　わらわに{08:0E}を裏切れと\nそう申すのかえ？\n<wait>					reads: そなた　わらわに仲魔を裏切れと\nそう申すのかえ？\n<wait>
-m/MS600F.BIN	4:57	0	0	DATA	{08:48}を　そなたに授{08:29}\nだ{08:42}　{08:47}通り{08:81}　許{08:4A}たもれ\n<wait>					reads: これを　そなたに授ける\nだから　この通りじゃ　許してたもれ\n<wait>
-m/MS600F.BIN	4:58	0	0	DATA	今更　何を申すか！\n<wait>					
-m/MS600F.BIN	4:59	0	0	DATA	過去は水に流すぞえ\n<wait>					
-m/MS600F.BIN	4:5A	0	0	DATA	話を続{08:29}がよい\n<wait>					reads: 話を続けるがよい\n<wait>
-m/MS600F.BIN	4:5B	0	0	DATA	そなた　裏切{08:51}か！\n<wait>					reads: そなた　裏切ったか！\n<wait>
-m/MS600F.BIN	4:5C	0	0	DATA	知{08:52}おるぞ\n<wait>					reads: 知っておるぞ\n<wait>
-m/MS600F.BIN	4:5D	0	0	DATA	さて　知らぬわ\n<wait>					
-m/MS600F.BIN	4:5E	0	0	DATA	無礼な！\n<wait>					
-m/MS600F.BIN	4:5F	0	0	DATA	覚えておくぞよ\n<wait>					
-m/MS600F.BIN	4:60	0	0	DATA	わらわの事など　{08:90}{08:56}良いの{08:81}な？\n<wait>					reads: わらわの事など　どうでも良いのじゃな？\n<wait>
-m/MS600F.BIN	4:61	0	0	DATA	そなたの様な　者がかえ？\n<wait>					
-m/MS600F.BIN	4:62	0	0	DATA	わらわを倒{08:2A}かえ？\n<wait>					reads: わらわを倒せるかえ？\n<wait>
-m/MS600F.BIN	4:63	0	0	DATA	許{08:4A}やろうぞ\n<wait>					reads: 許してやろうぞ\n<wait>
-m/MS600F.BIN	4:64	0	0	DATA	偽善よの！\n<wait>					
-m/MS600F.BIN	4:65	0	0	DATA	哀れよのう\n<wait>					
-m/MS600F.BIN	4:66	0	0	DATA	話に{08:7D}ぬぞえ！\n<wait>					reads: 話にならぬぞえ！\n<wait>
-m/MS600F.BIN	4:67	0	0	DATA	せいぜい頑張るがよいぞよ\n<wait>					
-m/MS600F.BIN	4:68	0	0	DATA	{08:82}し・・{08:81}					reads: ただし・・じゃ
-m/MS600F.BIN	4:69	0	0	DATA	噂に違わぬ					
-m/MS600F.BIN	4:6A	0	0	DATA	酷いおとこよ\n<wait>					
-m/MS600F.BIN	4:6B	0	0	DATA	記憶を失{08:51}と{08:56}　申すのかえ？\n<wait>					reads: 記憶を失ったとでも　申すのかえ？\n<wait>
-m/MS600F.BIN	4:6C	0	0	DATA	ほう{02:09}\n<wait>					reads: ほう・・・\n<wait>
-m/MS600F.BIN	4:6D	0	0	DATA	笑わ{08:2A}で{08:25}ぞよ！\n<wait>					reads: 笑わせるでないぞよ！\n<wait>
-m/MS600F.BIN	4:6E	0	0	DATA	こう{08:4A}く{08:2F}！\n<wait>					reads: こうしてくれる！\n<wait>
-m/MS600F.BIN	4:6F	0	0	DATA	偽りを申すな！\n<wait>					
-m/MS600F.BIN	4:70	0	0	DATA	{08:4D}は誠かえ？\n<wait>					reads: それは誠かえ？\n<wait>
-m/MS600F.BIN	4:71	0	0	DATA	そなたを　信じるぞえ\n<wait>					
-m/MS600F.BIN	4:72	0	0	DATA	まずは					
-m/MS600F.BIN	4:73	0	0	DATA	{08:87}で					reads: ところで
-m/MS600F.BIN	4:74	0	0	DATA	残念で{08:7D}ぬわ\n<wait>					reads: 残念でならぬわ\n<wait>
-m/MS600F.BIN	4:75	0	0	DATA	そなたが　そうであ{08:51}とは\n<wait>					reads: そなたが　そうであったとは\n<wait>
-m/MS600F.BIN	4:76	0	0	DATA	大{08:4B}事の{08:25}奴{08:81}！\n<wait>					reads: 大した事のない奴じゃ！\n<wait>
-m/MS600F.BIN	4:77	0	0	DATA	共に連れて行{08:52}は　くれぬかえ？\n<wait>					reads: 共に連れて行っては　くれぬかえ？\n<wait>
-m/MS600F.BIN	4:78	0	0	DATA	{08:0E}に不足は無いのかえ？\n<wait>					reads: 仲魔に不足は無いのかえ？\n<wait>
-m/MS600F.BIN	4:79	0	0	DATA	{08:5B}会おうぞよ\n<wait>					reads: また会おうぞよ\n<wait>
-m/MS600F.BIN	4:7A	0	0	DATA	楽しませ{08:54}ら{08:51}ぞよ\n<wait>					reads: 楽しませてもらったぞよ\n<wait>
-m/MS600F.BIN	4:7B	0	0	DATA	死ぬが{08:7F}わ！\n<wait>					reads: 死ぬがいいわ！\n<wait>
-m/MS600F.BIN	4:7C	0	0	DATA	施しを受{08:29}がよい\n<wait>					reads: 施しを受けるがよい\n<wait>
-m/MS600F.BIN	4:7D	0	0	DATA	そなたは　そなた{08:81}　{08:4D}でよい\n<wait>					reads: そなたは　そなたじゃ　それでよい\n<wait>
-m/MS600F.BIN	4:7E	0	0	DATA	{08:79}忌まわしい物を\nわらわの前{08:42}　遠ざ{08:29}の{08:81}！\n<wait>					reads: その忌まわしい物を\nわらわの前から　遠ざけるのじゃ！\n<wait>
-m/MS600F.BIN	4:7F	0	0	DATA	も{08:53}近こう　寄るがよいぞえ！\n<wait>					reads: もっと近こう　寄るがよいぞえ！\n<wait>
-m/MS600F.BIN	4:80	0	0	DATA	{02:0E}{08:42}　出向くとし{08:69}ぞ\n<wait>					reads: こちらから　出向くとしようぞ\n<wait>
-m/MS600F.BIN	4:81	0	0	DATA	素直なおのこよ\n<wait>					
-m/MS600F.BIN	4:82	0	0	DATA	そなたごときに　言わ{08:2F}とは\n<wait>					reads: そなたごときに　言われるとは\n<wait>
-m/MS600F.BIN	4:83	0	0	DATA	{08:48}で心地{08:8B}　話が出来ると{08:68}{08:5E}ぞ\n<wait>					reads: これで心地よく　話が出来るというものぞ\n<wait>
-m/MS600F.BIN	4:84	0	0	DATA	信用出来ぬと申すのか！\n<wait>					
-m/MS600F.BIN	4:85	0	0	DATA	{08:0E}が黙{08:52}はおるまい\n<wait>					reads: 仲魔が黙ってはおるまい\n<wait>
-m/MS600F.BIN	4:86	0	0	DATA	{08:4D}{08:56}良いと　申すのかえ？\n<wait>					reads: それでも良いと　申すのかえ？\n<wait>
-m/MS600F.BIN	4:87	0	0	DATA	何と{08:68}奴{08:81}！\n<wait>					reads: 何という奴じゃ！\n<wait>
-m/MS600F.BIN	4:88	0	0	DATA	そう{08:81}　{08:4D}で良いの{08:81}\n<wait>					reads: そうじゃ　それで良いのじゃ\n<wait>
-m/MS600F.BIN	4:89	0	0	DATA	度胸{08:74}は　据わ{08:52}おる様{08:81}の\n<wait>					reads: 度胸だけは　据わっておる様じゃの\n<wait>
-m/MS600F.BIN	4:8A	0	0	DATA	{08:79}様な事であろうと　思{08:51}わ！\n<wait>					reads: その様な事であろうと　思ったわ！\n<wait>
-m/MS600F.BIN	4:8B	0	0	DATA	考えぬ{08:56}{08:25}ぞえ\n<wait>					reads: 考えぬでもないぞえ\n<wait>
-m/MS600F.BIN	4:8C	0	0	DATA	{08:79}様な暇なぞ　わらわには{08:25}の{08:81}\n<wait>					reads: その様な暇なぞ　わらわにはないのじゃ\n<wait>
-m/MS600F.BIN	4:8D	0	0	DATA	関わりの無い事{08:81}\n<wait>					reads: 関わりの無い事じゃ\n<wait>
-m/MS600F.BIN	4:8E	0	0	DATA	よもや　わらわを　あの忌まわしき\n合体と申す事に　使う気では{08:7B}まいな？\n<wait>					reads: よもや　わらわを　あの忌まわしき\n合体と申す事に　使う気ではあるまいな？\n<wait>
-m/MS600F.BIN	4:8F	0	0	DATA	そこ{08:71}　困{08:52}おるのかえ？\n<wait>					reads: そこまで　困っておるのかえ？\n<wait>
-m/MS600F.BIN	4:90	0	0	DATA	何ゆえ　そなたなぞに\n<wait>					
-m/MS600F.BIN	4:91	0	0	DATA	ホホホホ					
-m/MS600F.BIN	4:92	0	0	DATA	も{08:53}{08:81}！\n<wait>					reads: もっとじゃ！\n<wait>
-m/MS600F.BIN	4:93	0	0	DATA	人の姿を{08:4B}鬼とは　そなたの事よ！\n<wait>					reads: 人の姿をした鬼とは　そなたの事よ！\n<wait>
-m/MS600F.BIN	4:94	0	6	1F01	では{08:25}かえ\n{08:79}後の調子は{08:90}{08:81}？\n<wait>	, is it not.\nAnd how dost thou fare of late?\n<wait>				reads: ではないかえ\nその後の調子はどうじゃ？\n<wait>; reads: ではないかえ\nその後の調子はどうじゃ？\n<wait> @rebase-tagdiff @seamfix-2026-09-05
-m/MS600F.BIN	4:95	0	0	DATA	近寄るで無いぞえ！\n<wait>					
-m/MS600F.BIN	4:96	0	0	DATA	見逃{08:4A}やるわ\n<wait>					reads: 見逃してやるわ\n<wait>
-m/MS600F.BIN	4:97	0	0	DATA	わらわの力　見{08:67}く{08:2F}わ！\n<wait>					reads: わらわの力　見せてくれるわ！\n<wait>
-m/MS600F.BIN	4:98	0	0	DATA	肝{08:81}{02:09}わらわに肝をおくれ！！\n<wait>					reads: 肝じゃ・・・わらわに肝をおくれ！！\n<wait>
-m/MS600F.BIN	4:99	0	0	DATA	気分が優れぬ{02:09}・\n<wait>					reads: 気分が優れぬ・・・・\n<wait>
-m/MS600F.BIN	4:9A	0	0	DATA	そなたの施しは　受けぬぞよ\n<wait>					
-m/MS600F.BIN	4:9B	0	0	DATA	良い月夜{08:81}\n<wait>					reads: 良い月夜じゃ\n<wait>
-m/MS600F.BIN	4:9C	0	0	DATA	そなたの同情なぞ　受けとう{08:25}わ\n<wait>					reads: そなたの同情なぞ　受けとうないわ\n<wait>
-m/MS600F.BIN	4:9D	0	0	DATA	聞く耳持たぬわ！\n<wait>					
-m/MS600F.BIN	4:9E	0	0	DATA	先程は					
-m/MS600F.BIN	4:9F	0	0	DATA	{08:79}様な物では　誤魔化{03:0C}ぬぞよ\n<wait>					reads: その様な物では　誤魔化されぬぞよ\n<wait>
-m/MS600F.BIN	4:A0	0	0	DATA	久方ぶりに 菓子なぞ食{08:4B}い{08:5E}よ\n<wait>					reads: 久方ぶりに 菓子なぞ食したいものよ\n<wait>
-m/MS600F.BIN	4:A1	0	0	DATA	思い出{02:0D}くれ{08:69}ぞ！\n<wait>					reads: 思い出させてくれようぞ！\n<wait>
-m/MS600F.BIN	4:A2	0	0	DATA	わらわの心遣いを　無下に{08:4C}は！\n<wait>					reads: わらわの心遣いを　無下にするとは！\n<wait>
-m/MS600F.BIN	5:23	0	0	DATA	か{08:69}な所で　何を{08:4A}おるの{08:81}？\n<wait>					reads: かような所で　何をしておるのじゃ？\n<wait>
-m/MS600F.BIN	5:24	0	0	DATA	良い男には　勝てぬぞよ\n<wait>					
-m/MS600F.BIN	5:25	0	0	DATA	楽し{08:5C}では{08:25}か\n<wait>					reads: 楽しもうではないか\n<wait>
-m/MS600F.BIN	5:26	0	0	DATA	舞いを　舞おうぞよ\n<wait>					
-m/MS600F.BIN	5:27	0	0	DATA	雅で無いぞえ！\n<wait>					
-m/MS600F.BIN	6:17	0	0	DATA	くぬうぅ！\n<wait>					
-m/MS600F.BIN	6:18	0	0	DATA	二度と再び　わらわの目前に現{08:2F}で{08:25}ぞよ！\n<wait>					reads: 二度と再び　わらわの目前に現れるでないぞよ！\n<wait>
-m/MS600F.BIN	7:15	0	0	DATA	{08:4D}{08:74}は　勘弁{08:4A}たもれ\n<wait>					reads: それだけは　勘弁してたもれ\n<wait>
-m/MS600F.BIN	7:16	0	0	DATA	{08:48}でよいの{08:81}な\n<wait>					reads: これでよいのじゃな\n<wait>
-m/MS600F.BIN	8:40	0	0	DATA	よいおのこ{08:81}\n<wait>					reads: よいおのこじゃ\n<wait>
-m/MS600F.BIN	8:41	0	0	DATA	そなたの生気を　わらわにおくれ\n<wait>					
-m/MS600F.BIN	8:42	0	0	DATA	見目が良いとは　言えぬの\n<wait>					
-m/MS600F.BIN	8:43	0	0	DATA	{08:79}様な者は　わらわには不用{08:81}！\n<wait>					reads: その様な者は　わらわには不用じゃ！\n<wait>
-m/MS600F.BIN	8:44	0	0	DATA	優しいの{08:81}な\n<wait>					reads: 優しいのじゃな\n<wait>
-m/MS600F.BIN	8:45	0	0	DATA	嬉しいぞえ\n<wait>					
-m/MS600F.BIN	8:46	0	0	DATA	ギクッ\n<wait>					
-m/MS600F.BIN	8:47	0	0	DATA	意地が悪いぞえ！\n<wait>					
-m/MS600F.BIN	8:48	0	0	DATA	つれ{08:25}よのう\n<wait>					reads: つれないよのう\n<wait>
-m/MS600F.BIN	8:49	0	0	DATA	ホホホホ\n<wait>					
-m/MS600F.BIN	8:4A	0	0	DATA	{08:90}{08:4A}も　駄目だと申すのか？\n<wait>					reads: どうしても　駄目だと申すのか？\n<wait>
-m/MS600F.BIN	8:4B	0	0	DATA	何と酷い\n<wait>					
-m/MS600F.BIN	8:4C	0	0	DATA	うぶ{08:81}の\n<wait>					reads: うぶじゃの\n<wait>
-m/MS600F.BIN	8:33	0	0	DATA	人{08:7C}　人らしく\n大人しく{08:4A}{08:78}ば　良いの{08:81}\n<wait>					reads: 人ならば　人らしく\n大人しくしておれば　良いのじゃ\n<wait>
-m/MS600F.BIN	10:11	0	0	DATA	見破ら{08:60}様{08:81}の\n<wait>					reads: 見破られた様じゃの\n<wait>
-m/MS600F.BIN	10:12	0	0	DATA	信じてく{08:60}の{08:81}な\n<wait>					reads: 信じてくれたのじゃな\n<wait>
-m/MS600F.BIN	10:13	0	0	DATA	そなたが　いねば良い事{08:81}！\n<wait>					reads: そなたが　いねば良い事じゃ！\n<wait>
-m/MS600F.BIN	11:16	0	0	DATA	生意気な口を　きくでは{08:25}かえ！\n<wait>					reads: 生意気な口を　きくではないかえ！\n<wait>
-m/MS600F.BIN	11:17	0	0	DATA	すばらしい\n<wait>					
-m/MS600F.BIN	13:15	0	0	DATA	{08:0B}を殺{08:4A}平気{08:6B}かえ？\n<wait>					reads: 悪魔を殺して平気なのかえ？\n<wait>
-m/MS600F.BIN	13:16	0	0	DATA	{08:0B}は存在{08:4A}は　{08:7D}ぬと言うのか？\n<wait>					reads: 悪魔は存在しては　ならぬと言うのか？\n<wait>
-m/MS600F.BIN	13:17	0	0	DATA	{08:8B}分{08:42}ぬ\n<wait>					reads: よく分からぬ\n<wait>
-m/MS600F.BIN	13:18	0	0	DATA	そなた{08:56}　わ{08:42}ぬの{08:81}な\n<wait>					reads: そなたでも　わからぬのじゃな\n<wait>
-m/MS600F.BIN	13:19	0	0	DATA	わらわは　					
-m/MS600F.BIN	13:19	1	16	1F01	の事が　愛しい\n<wait>	 is dear to me.\n<wait>				reads: の事が　愛しい\n<wait> @rebase-tagdiff @seamfix-2026-09-05
-m/MS600F.BIN	13:1A	0	0	DATA	そなたは　{08:90}{08:6B}{08:81}？\n<wait>					reads: そなたは　どうなのじゃ？\n<wait>
-m/MS600F.BIN	13:1B	0	0	DATA	{08:0B}と{02:0B}とは　共に生きれぬの{08:81}な\n<wait>					reads: 悪魔と人間とは　共に生きれぬのじゃな\n<wait>
-m/MS600F.BIN	13:1C	0	0	DATA	何やら　哀しゅう{08:1A}来たわ\n<wait>					reads: 何やら　哀しゅうなって来たわ\n<wait>
-m/MS600F.BIN	13:1D	0	0	DATA	わらわは　そなたの奴隷{08:81}！\n<wait>					reads: わらわは　そなたの奴隷じゃ！\n<wait>
-m/MS600F.BIN	13:1E	0	0	DATA	駄目{08:81}　やはり駄目{08:6B}{08:81}！\n今のそなたとは　結ばれぬが定め{02:09}・\n<wait>					reads: 駄目じゃ　やはり駄目なのじゃ！\n今のそなたとは　結ばれぬが定め・・・・\n<wait>
-m/MS600F.BIN	13:14	0	0	DATA	我ら{08:0B}の事も\n人と同じく扱{08:52}く{08:2F}のかえ？\n<wait>					reads: 我ら悪魔の事も\n人と同じく扱ってくれるのかえ？\n<wait>
-m/MS600F.BIN	14:0C	0	0	DATA	そなた　{02:00}であろう\n何故ゆえに　{08:0B}を狩らねば{08:7D}ぬの{08:81}？\n<wait>					reads: そなた　デビルバスターであろう\n何故ゆえに　悪魔を狩らねばならぬのじゃ？\n<wait>
-m/MS600F.BIN	14:0D	0	0	DATA	おとなしい{08:0B}だ{08:52}おる\n{08:4D}に{02:0B}とて　食う為に　牛や豚を殺すでは{08:25}か\nどこが違うの{08:81}？\n<wait>					reads: おとなしい悪魔だっておる\nそれに人間とて　食う為に　牛や豚を殺すではないか\nどこが違うのじゃ？\n<wait>
-m/MS600F.BIN	14:0E	0	0	DATA	違わぬわ！\n{02:0B}{08:74}が特別だなど＿身勝手な話し{08:81}！\n<wait>					reads: 違わぬわ！\n人間だけが特別だなど＿身勝手な話しじゃ！\n<wait>
-m/MS600F.BIN	14:0B	0	0	DATA	{02:0B}さえ　良ければ良いと言うのかえ？\n<wait>					reads: 人間さえ　良ければ良いと言うのかえ？\n<wait>
+m/MS600F.BIN	4:03	0	0	DATA	何か望み{08:56}　{08:7B}のかえ？\n<wait>		Hast thou some wish, perchance?\n<wait>	ours		reads: 何か望みでも　あるのかえ？\n<wait>
+m/MS600F.BIN	4:04	0	0	DATA	ほう　そうかえ\n<wait>		Oh? Is that so.\n<wait>	ours		
+m/MS600F.BIN	4:05	0	0	DATA	では　さらば{08:81}！\n<wait>		Then, farewell!\n<wait>	ours		reads: では　さらばじゃ！\n<wait>
+m/MS600F.BIN	4:06	0	0	DATA	何が望みか　申すが良いぞ！\n<wait>		Speak thy wish, then!\n<wait>	ours		
+m/MS600F.BIN	4:07	0	0	DATA	わらわは　		I am 	ours		
+m/MS600F.BIN	4:07	1	24	1F01	\n今後とも　よし{08:58}願うぞえ\n<wait>	.\nI trust we shall get along.\n<wait>			draft	reads: \n今後とも　よしなに願うぞえ\n<wait>; reads: 　 @rebase-new @rebase-unmatched idx1 en= {04:EF}. @rebase-unmatched idx2 en={04:EF}.\nI trust thou wilt treat me well hereafter.\n<wait> @ours-2026-09-05
+m/MS600F.BIN	4:08	0	0	DATA	{08:48}を授け{08:69}\n<wait>		I shall bestow this upon thee.\n<wait>	ours		reads: これを授けよう\n<wait>
+m/MS600F.BIN	4:09	0	0	DATA	すまぬが		Alas,	ours		
+m/MS600F.BIN	4:0A	0	0	DATA	今は　持ち合わ{08:67}おらぬの{08:81}\n<wait>		I have none on me now.\n<wait>	ours		reads: 今は　持ち合わせておらぬのじゃ\n<wait>
+m/MS600F.BIN	4:0B	0	0	DATA	代わりに\n<wait>		Instead\n<wait>	ours		
+m/MS600F.BIN	4:0C	0	0	DATA	何か　贈り物{08:56}{08:7B}と申すか？\n<wait>		Dost thou speak of some gift?\n<wait>	ours		reads: 何か　贈り物でもあると申すか？\n<wait>
+m/MS600F.BIN	4:0D	0	0	DATA	そなたとは　反りが合わぬわ\n<wait>		We shall not get along.\n<wait>	ours		
+m/MS600F.BIN	4:0E	0	0	DATA	お断り{08:81}\n<wait>		I refuse.\n<wait>	ours		reads: お断りじゃ\n<wait>
+m/MS600F.BIN	4:0F	0	0	DATA	わらわが悪{08:18}　謝るぞえ\n<wait>		I was wrong. I apologize.\n<wait>	ours		reads: わらわが悪かった　謝るぞえ\n<wait>
+m/MS600F.BIN	4:10	0	0	DATA	何用{08:81}？\n<wait>		What now?\n<wait>	ours		reads: 何用じゃ？\n<wait>
+m/MS600F.BIN	4:11	0	0	DATA	{08:76}　用が{08:7B}と申すか？\n<wait>		Still more, sayest thou?\n<wait>	ours		reads: まだ　用があると申すか？\n<wait>
+m/MS600F.BIN	4:12	0	0	DATA	ムシが良すぎるぞえ！\n<wait>		Quite convenient!\n<wait>	ours		
+m/MS600F.BIN	4:13	0	0	DATA	付き合い切れぬ{02:09}\n<wait>		Can't bear thee...\n<wait>	ours		reads: 付き合い切れぬ・・・\n<wait>
+m/MS600F.BIN	4:14	0	0	DATA	まあ良いわ\n<wait>		Fine then\n<wait>	ours		
+m/MS600F.BIN	4:15	0	0	DATA	{08:79}性根　叩き直{08:4A}くれ{08:69}ぞ！\n<wait>		I'll correct thy rotten nature!\n<wait>	ours		reads: その性根　叩き直してくれようぞ！\n<wait>
+m/MS600F.BIN	4:16	0	0	DATA	甘いわ！\n<wait>		Too soft\n<wait>	ours		
+m/MS600F.BIN	4:17	0	0	DATA	何を{08:8E}の{08:81}！？\n<wait>		What art thou at!?\n<wait>	ours		reads: 何をするのじゃ！？\n<wait>
+m/MS600F.BIN	4:18	0	0	DATA	{08:3F}　止{08:2E}の{08:81}！\n<wait>		There, cease this!\n<wait>	ours		reads: あれ　止めるのじゃ！\n<wait>
+m/MS600F.BIN	4:19	0	0	DATA	ふざ{08:29}で{08:25}ぞよ！\n<wait>		Do not mock me so!\n<wait>	ours		reads: ふざけるでないぞよ！\n<wait>
+m/MS600F.BIN	4:1A	0	0	DATA	話す事なぞ無いわ！\n<wait>		Naught to say!\n<wait>	ours		
+m/MS600F.BIN	4:1B	0	0	DATA	話{08:4B}{08:18}{08:74}かえ？\n<wait>		Merely wished to talk?\n<wait>	ours		reads: 話したかっただけかえ？\n<wait>
+m/MS600F.BIN	4:1C	0	0	DATA	や{08:2F}{08:5E}{08:7C}　や{08:52}みるが{08:7F}ぞえ\n<wait>		If thou thinkest thou canst, try!\n<wait>	ours		reads: やれるものならば　やってみるがいいぞえ\n<wait>
+m/MS600F.BIN	4:1D	0	0	DATA	ヒイィー！\n<wait>		Hiiie!\n<wait>	ours		
+m/MS600F.BIN	4:1E	0	0	DATA	何{08:56}　そなたの望む{08:7E}に致す\n{08:90}か　堪忍{08:4A}たも！\n<wait>		I shall do as thou wishest,\nso please have mercy!\n<wait>	ours		reads: 何でも　そなたの望むままに致す\nどうか　堪忍してたも！\n<wait>
+m/MS600F.BIN	4:1F	0	0	DATA	覚えておくが{08:7F}ぞえ！\n<wait>		Remember this well!\n<wait>	ours		reads: 覚えておくがいいぞえ！\n<wait>
+m/MS600F.BIN	4:20	0	0	DATA	有り難い事よ\n<wait>		Most kind.\n<wait>	ours		
+m/MS600F.BIN	4:21	0	0	DATA	{03:0C}ど		Yet, 	ours		reads: されど
+m/MS600F.BIN	4:22	0	0	DATA	教えてやろうぞ\n<wait>		I'll tell thee\n<wait>	ours		
+m/MS600F.BIN	4:23	0	0	DATA	よい事を＿		Good news_	ours		
+m/MS600F.BIN	4:24	0	0	DATA	つまらぬわ！\n<wait>		How boring!\n<wait>	ours		
+m/MS600F.BIN	4:25	0	0	DATA	同じ{08:0E}がおる様{08:81}\n<wait>		Another one like it.\n<wait>	ours		reads: 同じ仲魔がおる様じゃ\n<wait>
+m/MS600F.BIN	4:26	0	0	DATA	{08:0E}の具合が　優れぬ様子\n<wait>		My demon seems unwell.\n<wait>	ours		reads: 仲魔の具合が　優れぬ様子\n<wait>
+m/MS600F.BIN	4:27	0	0	DATA	おお　わらわの{08:0E}が！！！\n<wait>		Oh! My demon, oh no!!!\n<wait>	ours		reads: おお　わらわの仲魔が！！！\n<wait>
+m/MS600F.BIN	4:28	0	0	DATA	許す訳には行かぬぞえ！！\n<wait>		I cannot allow this!!\n<wait>	ours		
+m/MS600F.BIN	4:29	0	0	DATA	わらわが　治{08:4A}しんぜ{08:69}\n<wait>		I shall heal it myself.\n<wait>	ours		reads: わらわが　治してしんぜよう\n<wait>
+m/MS600F.BIN	4:2A	0	0	DATA	きちんと　治{08:4A}たもれ\n<wait>		Heal it well, please.\n<wait>	ours		reads: きちんと　治してたもれ\n<wait>
+m/MS600F.BIN	4:2B	0	0	DATA	{08:0E}によし{08:58}　伝えてたもれ\n<wait>		Give my demon my regards.\n<wait>	ours		reads: 仲魔によしなに　伝えてたもれ\n<wait>
+m/MS600F.BIN	4:2C	0	0	DATA	{08:0E}を裏切る訳には　行かぬぞえ\n<wait>		I cannot betray my own demon.\n<wait>	ours		reads: 仲魔を裏切る訳には　行かぬぞえ\n<wait>
+m/MS600F.BIN	4:2D	0	0	DATA	{08:0E}が多過ぎる様{08:81}　誰かを外すのかえ？\n<wait>		Too many demons, it seems. Drop one?\n<wait>	ours		reads: 仲魔が多過ぎる様じゃ　誰かを外すのかえ？\n<wait>
+m/MS600F.BIN	4:2E	0	0	DATA	いとおかし！\n<wait>		How amusing!\n<wait>	ours		
+m/MS600F.BIN	4:2F	0	0	DATA	そなたの魂　わらわが貰い受{08:29}ぞえ\n<wait>		I'll take thy soul for mine own!\n<wait>	ours		reads: そなたの魂　わらわが貰い受けるぞえ\n<wait>
+m/MS600F.BIN	4:30	0	0	DATA	そなたの事は　忘れぬぞよ\n<wait>		I'll not forget thee.\n<wait>	ours		
+m/MS600F.BIN	4:31	0	0	DATA	そなたなぞに　用は{08:25}わ！\n<wait>		No business with thee!\n<wait>	ours		reads: そなたなぞに　用はないわ！\n<wait>
+m/MS600F.BIN	4:32	0	6	1F02	を望むぞえ\n<wait>		 is my wish.\n<wait>	ours		
+m/MS600F.BIN	4:33	0	6	1F02	が望み{08:81}\n<wait>		 is my desire.\n<wait>	ours		reads: が望みじゃ\n<wait>
+m/MS600F.BIN	4:34	0	0	DATA	わらわは　魔石が欲しいの{08:81}\n<wait>		I do desire a Magic Stone.\n<wait>	ours		reads: わらわは　魔石が欲しいのじゃ\n<wait>
+m/MS600F.BIN	4:35	0	0	DATA	宝石{08:81}　宝石を出すが良いぞえ\n<wait>		A Gemstone. Give one to me.\n<wait>	ours		reads: 宝石じゃ　宝石を出すが良いぞえ\n<wait>
+m/MS600F.BIN	4:36	0	0	DATA	{08:47}様な者と話{08:4B}処で　らちはあかぬ\n<wait>		Talking to thee is a waste of time.\n<wait>	ours		reads: この様な者と話した処で　らちはあかぬ\n<wait>
+m/MS600F.BIN	4:37	0	0	DATA	みな　帰るぞよ！\n<wait>		All, go home!\n<wait>	ours		
+m/MS600F.BIN	4:38	0	0	DATA	そなたか！　悪行の限りを尽くし\nわらわ達を　苦しめておると{08:68}者は！\n<wait>		So it is thee, who wrought\nsuch misery upon us all!\n<wait>	ours		reads: そなたか！　悪行の限りを尽くし\nわらわ達を　苦しめておるという者は！\n<wait>
+m/MS600F.BIN	4:39	0	0	DATA	無視{08:8E}で無いぞよ！\n<wait>		Do not ignore me so!\n<wait>	ours		reads: 無視するで無いぞよ！\n<wait>
+m/MS600F.BIN	4:3A	0	0	DATA	信ずるに足りぬぞえ\n<wait>		Not worth trust.\n<wait>	ours		
+m/MS600F.BIN	4:3B	0	0	DATA	無礼者！　わらわをさておき\n		Insolent! Setting me aside,\n	ours		record reaches an engine no-op opcode; verify in game
+m/MS600F.BIN	4:3B	1	29	1E3F	とばかり　話{08:13}で{08:25}ぞよ！\n<wait>		 is all thou speakest of! Cease it!\n<wait>	ours		record reaches an engine no-op opcode; verify in game; reads: とばかり　話しているでないぞよ！\n<wait>
+m/MS600F.BIN	4:3C	0	0	DATA	わらわが　邪魔だと申すのか！\n<wait>		Am I in thy way, then?\n<wait>	ours		
+m/MS600F.BIN	4:3D	0	0	DATA	誠意を見せ{08:54}らおうぞ\n<wait>		Show me thy sincerity.\n<wait>	ours		reads: 誠意を見せてもらおうぞ\n<wait>
+m/MS600F.BIN	4:3E	0	0	DATA	そなた　よいおとこ{08:81}\n<wait>		Quite the fine man.\n<wait>	ours		reads: そなた　よいおとこじゃ\n<wait>
+m/MS600F.BIN	4:3F	0	0	DATA	気分を害{08:4B}ぞえ！\n<wait>		Spoiled my mood!\n<wait>	ours		reads: 気分を害したぞえ！\n<wait>
+m/MS600F.BIN	4:40	0	0	DATA	{08:5C}よいわ！\n<wait>		Enough now!\n<wait>	ours		reads: もうよいわ！\n<wait>
+m/MS600F.BIN	4:41	0	0	DATA	{08:79}様な事を　申すで{08:25}ぞえ\n<wait>		Do not say such a thing!\n<wait>	ours		reads: その様な事を　申すでないぞえ\n<wait>
+m/MS600F.BIN	4:42	0	0	DATA	無礼者め！　わらわを何と心得る！！\n<wait>		Insolent one! Know thy place!!\n<wait>	ours		
+m/MS600F.BIN	4:43	0	0	DATA	返すぞえ\n<wait>		I return it.\n<wait>	ours		
+m/MS600F.BIN	4:44	0	0	DATA	クッ{02:09}もはや{08:48}{08:71}！\n{08:7C}　死出の道連れに{08:4A}くれ{08:69}ぞ！！\n<wait>		Kuh... This is the end!\nThen thou shalt accompany me into death!!\n<wait>	ours		reads: クッ・・・もはやこれまで！\nならば　死出の道連れにしてくれようぞ！！\n<wait>
+m/MS600F.BIN	4:45	0	0	DATA	何と申すか！\n<wait>		What sayest!\n<wait>	ours		
+m/MS600F.BIN	4:46	0	0	DATA	持{08:52}おらぬでは{08:25}か！\n<wait>		Thou hast it not!\n<wait>	ours		reads: 持っておらぬではないか！\n<wait>
+m/MS600F.BIN	4:47	0	0	DATA	ＭＡＧが足りぬと　申すのかえ？\n<wait>		Sayest thou lack enough MAG?\n<wait>	ours		
+m/MS600F.BIN	4:48	0	0	DATA	マッカが足りぬと　申すのかえ？\n<wait>		Dost thou say thou lackest Macca?\n<wait>	ours		
+m/MS600F.BIN	4:49	0	0	DATA	仕方の{08:25}\n<wait>		No helping\n<wait>	ours		reads: 仕方のない\n<wait>
+m/MS600F.BIN	4:4A	0	0	DATA	{08:5C}	{08:5C}	Now	ours		reads: もう
+m/MS600F.BIN	4:4B	0	0	DATA	今度は		Next	ours		
+m/MS600F.BIN	4:4C	0	0	DATA	物足りぬ{02:09}・\n<wait>		Not enough......\n<wait>	ours		reads: 物足りぬ・・・・\n<wait>
+m/MS600F.BIN	4:4D	0	0	DATA	{08:5C}一つ		One more	ours		reads: もう一つ
+m/MS600F.BIN	4:4E	0	0	DATA	薄情な奴よ\n付き合い切れぬわ！\n<wait>		Heartless,\nCan't stand thee!\n<wait>	ours		
+m/MS600F.BIN	4:4F	0	0	DATA	{08:0E}に{08:4A}たもれ\n<wait>		Take me, demon.\n<wait>	ours		reads: 仲魔にしてたもれ\n<wait>
+m/MS600F.BIN	4:50	0	0	DATA	分{08:18}ぞえ\n<wait>		Understood.\n<wait>	ours		reads: 分かったぞえ\n<wait>
+m/MS600F.BIN	4:51	0	0	DATA	殺す気か？\n<wait>		Kill me?\n<wait>	ours		
+m/MS600F.BIN	4:52	0	0	DATA	{08:0E}になろうぞ\nだ{08:42}　{08:90}か許{08:4A}たもれ\n<wait>		I'll join thee\nso please do forgive me.\n<wait>	ours		reads: 仲魔になろうぞ\nだから　どうか許してたもれ\n<wait>
+m/MS600F.BIN	4:53	0	0	DATA	愚か者め！\n<wait>		Fool!\n<wait>	ours		
+m/MS600F.BIN	4:54	0	0	DATA	せめて　{08:48}を\n<wait>		At least this.\n<wait>	ours		reads: せめて　これを\n<wait>
+m/MS600F.BIN	4:55	0	0	DATA	戦う気が　無いと申すのかえ？\n<wait>		No will to fight, sayest?\n<wait>	ours		
+m/MS600F.BIN	4:56	0	0	DATA	そなた　わらわに{08:0E}を裏切れと\nそう申すのかえ？\n<wait>		Dost thou bid me betray my kin?\nIs that thy meaning?\n<wait>	ours		reads: そなた　わらわに仲魔を裏切れと\nそう申すのかえ？\n<wait>
+m/MS600F.BIN	4:57	0	0	DATA	{08:48}を　そなたに授{08:29}\nだ{08:42}　{08:47}通り{08:81}　許{08:4A}たもれ\n<wait>		I grant this to thee,\nso as thou seest, do forgive me.\n<wait>	ours		reads: これを　そなたに授ける\nだから　この通りじゃ　許してたもれ\n<wait>
+m/MS600F.BIN	4:58	0	0	DATA	今更　何を申すか！\n<wait>		Why say that now!\n<wait>	ours		
+m/MS600F.BIN	4:59	0	0	DATA	過去は水に流すぞえ\n<wait>		Past flows by now.\n<wait>	ours		
+m/MS600F.BIN	4:5A	0	0	DATA	話を続{08:29}がよい\n<wait>		Continue, then.\n<wait>	ours		reads: 話を続けるがよい\n<wait>
+m/MS600F.BIN	4:5B	0	0	DATA	そなた　裏切{08:51}か！\n<wait>		Thou hast betrayed!\n<wait>	ours		reads: そなた　裏切ったか！\n<wait>
+m/MS600F.BIN	4:5C	0	0	DATA	知{08:52}おるぞ\n<wait>		I know it.\n<wait>	ours		reads: 知っておるぞ\n<wait>
+m/MS600F.BIN	4:5D	0	0	DATA	さて　知らぬわ\n<wait>		I know it not.\n<wait>	ours		
+m/MS600F.BIN	4:5E	0	0	DATA	無礼な！\n<wait>		So rude!\n<wait>	ours		
+m/MS600F.BIN	4:5F	0	0	DATA	覚えておくぞよ\n<wait>		I shall recall\n<wait>	ours		
+m/MS600F.BIN	4:60	0	0	DATA	わらわの事など　{08:90}{08:56}良いの{08:81}な？\n<wait>		So it matters not what becomes of me?\n<wait>	ours		reads: わらわの事など　どうでも良いのじゃな？\n<wait>
+m/MS600F.BIN	4:61	0	0	DATA	そなたの様な　者がかえ？\n<wait>		One such as thee, is it?\n<wait>	ours		
+m/MS600F.BIN	4:62	0	0	DATA	わらわを倒{08:2A}かえ？\n<wait>		Canst thou best me?\n<wait>	ours		reads: わらわを倒せるかえ？\n<wait>
+m/MS600F.BIN	4:63	0	0	DATA	許{08:4A}やろうぞ\n<wait>		I'll forgive.\n<wait>	ours		reads: 許してやろうぞ\n<wait>
+m/MS600F.BIN	4:64	0	0	DATA	偽善よの！\n<wait>		How false!\n<wait>	ours		
+m/MS600F.BIN	4:65	0	0	DATA	哀れよのう\n<wait>		Pitiful.\n<wait>	ours		
+m/MS600F.BIN	4:66	0	0	DATA	話に{08:7D}ぬぞえ！\n<wait>		Not worth words!\n<wait>	ours		reads: 話にならぬぞえ！\n<wait>
+m/MS600F.BIN	4:67	0	0	DATA	せいぜい頑張るがよいぞよ\n<wait>		Do try thy very best.\n<wait>	ours		
+m/MS600F.BIN	4:68	0	0	DATA	{08:82}し・・{08:81}		However...	ours		reads: ただし・・じゃ
+m/MS600F.BIN	4:69	0	0	DATA	噂に違わぬ		As rumored	ours		
+m/MS600F.BIN	4:6A	0	0	DATA	酷いおとこよ\n<wait>		how cruel.\n<wait>	ours		
+m/MS600F.BIN	4:6B	0	0	DATA	記憶を失{08:51}と{08:56}　申すのかえ？\n<wait>		Sayest thou lost thy memory?\n<wait>	ours		reads: 記憶を失ったとでも　申すのかえ？\n<wait>
+m/MS600F.BIN	4:6C	0	0	DATA	ほう{02:09}\n<wait>		Ohh...\n<wait>	ours		reads: ほう・・・\n<wait>
+m/MS600F.BIN	4:6D	0	0	DATA	笑わ{08:2A}で{08:25}ぞよ！\n<wait>		Don't make me laugh!\n<wait>	ours		reads: 笑わせるでないぞよ！\n<wait>
+m/MS600F.BIN	4:6E	0	0	DATA	こう{08:4A}く{08:2F}！\n<wait>		I'll do this!\n<wait>	ours		reads: こうしてくれる！\n<wait>
+m/MS600F.BIN	4:6F	0	0	DATA	偽りを申すな！\n<wait>		Do not lie so!\n<wait>	ours		
+m/MS600F.BIN	4:70	0	0	DATA	{08:4D}は誠かえ？\n<wait>		Is that truth?\n<wait>	ours		reads: それは誠かえ？\n<wait>
+m/MS600F.BIN	4:71	0	0	DATA	そなたを　信じるぞえ\n<wait>		I'll believe thee.\n<wait>	ours		
+m/MS600F.BIN	4:72	0	0	DATA	まずは		First,	ours		
+m/MS600F.BIN	4:73	0	0	DATA	{08:87}で		Anyway,	ours		reads: ところで
+m/MS600F.BIN	4:74	0	0	DATA	残念で{08:7D}ぬわ\n<wait>		Quite a pity.\n<wait>	ours		reads: 残念でならぬわ\n<wait>
+m/MS600F.BIN	4:75	0	0	DATA	そなたが　そうであ{08:51}とは\n<wait>		So that is what thou wert.\n<wait>	ours		reads: そなたが　そうであったとは\n<wait>
+m/MS600F.BIN	4:76	0	0	DATA	大{08:4B}事の{08:25}奴{08:81}！\n<wait>		Not much to this one!\n<wait>	ours		reads: 大した事のない奴じゃ！\n<wait>
+m/MS600F.BIN	4:77	0	0	DATA	共に連れて行{08:52}は　くれぬかえ？\n<wait>		Wilt thou take me along too?\n<wait>	ours		reads: 共に連れて行っては　くれぬかえ？\n<wait>
+m/MS600F.BIN	4:78	0	0	DATA	{08:0E}に不足は無いのかえ？\n<wait>		Enough demons, is it?\n<wait>	ours		reads: 仲魔に不足は無いのかえ？\n<wait>
+m/MS600F.BIN	4:79	0	0	DATA	{08:5B}会おうぞよ\n<wait>		Until we meet.\n<wait>	ours		reads: また会おうぞよ\n<wait>
+m/MS600F.BIN	4:7A	0	0	DATA	楽しませ{08:54}ら{08:51}ぞよ\n<wait>		That was pleasant.\n<wait>	ours		reads: 楽しませてもらったぞよ\n<wait>
+m/MS600F.BIN	4:7B	0	0	DATA	死ぬが{08:7F}わ！\n<wait>		Best thou die!\n<wait>	ours		reads: 死ぬがいいわ！\n<wait>
+m/MS600F.BIN	4:7C	0	0	DATA	施しを受{08:29}がよい\n<wait>		Accept my charity.\n<wait>	ours		reads: 施しを受けるがよい\n<wait>
+m/MS600F.BIN	4:7D	0	0	DATA	そなたは　そなた{08:81}　{08:4D}でよい\n<wait>		Thou art thou, and that's fine.\n<wait>	ours		reads: そなたは　そなたじゃ　それでよい\n<wait>
+m/MS600F.BIN	4:7E	0	0	DATA	{08:79}忌まわしい物を\nわらわの前{08:42}　遠ざ{08:29}の{08:81}！\n<wait>		That vile object,\nkeep it far from my presence!\n<wait>	ours		reads: その忌まわしい物を\nわらわの前から　遠ざけるのじゃ！\n<wait>
+m/MS600F.BIN	4:7F	0	0	DATA	も{08:53}近こう　寄るがよいぞえ！\n<wait>		Come, draw yet closer to me!\n<wait>	ours		reads: もっと近こう　寄るがよいぞえ！\n<wait>
+m/MS600F.BIN	4:80	0	0	DATA	{02:0E}{08:42}　出向くとし{08:69}ぞ\n<wait>		Then I shall come to thee myself.\n<wait>	ours		reads: こちらから　出向くとしようぞ\n<wait>
+m/MS600F.BIN	4:81	0	0	DATA	素直なおのこよ\n<wait>		How obedient.\n<wait>	ours		
+m/MS600F.BIN	4:82	0	0	DATA	そなたごときに　言わ{08:2F}とは\n<wait>		Told this by thee, of all,\n<wait>	ours		reads: そなたごときに　言われるとは\n<wait>
+m/MS600F.BIN	4:83	0	0	DATA	{08:48}で心地{08:8B}　話が出来ると{08:68}{08:5E}ぞ\n<wait>		Now we may talk at ease, indeed.\n<wait>	ours		reads: これで心地よく　話が出来るというものぞ\n<wait>
+m/MS600F.BIN	4:84	0	0	DATA	信用出来ぬと申すのか！\n<wait>		Dost thou say thou canst not trust me!\n<wait>	ours		
+m/MS600F.BIN	4:85	0	0	DATA	{08:0E}が黙{08:52}はおるまい\n<wait>		My kin won't be quiet.\n<wait>	ours		reads: 仲魔が黙ってはおるまい\n<wait>
+m/MS600F.BIN	4:86	0	0	DATA	{08:4D}{08:56}良いと　申すのかえ？\n<wait>		Fine as well, sayest thou?\n<wait>	ours		reads: それでも良いと　申すのかえ？\n<wait>
+m/MS600F.BIN	4:87	0	0	DATA	何と{08:68}奴{08:81}！\n<wait>		What a fool!\n<wait>	ours		reads: 何という奴じゃ！\n<wait>
+m/MS600F.BIN	4:88	0	0	DATA	そう{08:81}　{08:4D}で良いの{08:81}\n<wait>		Aye, that shall be fine.\n<wait>	ours		reads: そうじゃ　それで良いのじゃ\n<wait>
+m/MS600F.BIN	4:89	0	0	DATA	度胸{08:74}は　据わ{08:52}おる様{08:81}の\n<wait>		Thy nerve, at least, is steady.\n<wait>	ours		reads: 度胸だけは　据わっておる様じゃの\n<wait>
+m/MS600F.BIN	4:8A	0	0	DATA	{08:79}様な事であろうと　思{08:51}わ！\n<wait>		I thought as much would happen!\n<wait>	ours		reads: その様な事であろうと　思ったわ！\n<wait>
+m/MS600F.BIN	4:8B	0	0	DATA	考えぬ{08:56}{08:25}ぞえ\n<wait>		Might consider it.\n<wait>	ours		reads: 考えぬでもないぞえ\n<wait>
+m/MS600F.BIN	4:8C	0	0	DATA	{08:79}様な暇なぞ　わらわには{08:25}の{08:81}\n<wait>		I've no such leisure time to spare.\n<wait>	ours		reads: その様な暇なぞ　わらわにはないのじゃ\n<wait>
+m/MS600F.BIN	4:8D	0	0	DATA	関わりの無い事{08:81}\n<wait>		Not my concern.\n<wait>	ours		reads: 関わりの無い事じゃ\n<wait>
+m/MS600F.BIN	4:8E	0	0	DATA	よもや　わらわを　あの忌まわしき\n合体と申す事に　使う気では{08:7B}まいな？\n<wait>		Surely thou dost not mean to use me\nin that vile business they call Fusion?\n<wait>	ours		reads: よもや　わらわを　あの忌まわしき\n合体と申す事に　使う気ではあるまいな？\n<wait>
+m/MS600F.BIN	4:8F	0	0	DATA	そこ{08:71}　困{08:52}おるのかえ？\n<wait>		That troubled, art thou?\n<wait>	ours		reads: そこまで　困っておるのかえ？\n<wait>
+m/MS600F.BIN	4:90	0	0	DATA	何ゆえ　そなたなぞに\n<wait>		Why, to thee of all?\n<wait>	ours		
+m/MS600F.BIN	4:91	0	0	DATA	ホホホホ		Hohoho	ours		
+m/MS600F.BIN	4:92	0	0	DATA	も{08:53}{08:81}！\n<wait>		Give me more\n<wait>	ours		reads: もっとじゃ！\n<wait>
+m/MS600F.BIN	4:93	0	0	DATA	人の姿を{08:4B}鬼とは　そなたの事よ！\n<wait>		A demon wearin' human skin, thee!\n<wait>	ours		reads: 人の姿をした鬼とは　そなたの事よ！\n<wait>
+m/MS600F.BIN	4:94	0	6	1F01	では{08:25}かえ\n{08:79}後の調子は{08:90}{08:81}？\n<wait>	, is it not.\nAnd how dost thou fare of late?\n<wait>	Why, {04:FF}.\nAnd how dost thou fare of late?\n<wait>	ours	draft	reads: ではないかえ\nその後の調子はどうじゃ？\n<wait>; reads: ではないかえ\nその後の調子はどうじゃ？\n<wait> @rebase-tagdiff @seamfix-2026-09-05
+m/MS600F.BIN	4:95	0	0	DATA	近寄るで無いぞえ！\n<wait>		Do not draw near!\n<wait>	ours		
+m/MS600F.BIN	4:96	0	0	DATA	見逃{08:4A}やるわ\n<wait>		I spare thee.\n<wait>	ours		reads: 見逃してやるわ\n<wait>
+m/MS600F.BIN	4:97	0	0	DATA	わらわの力　見{08:67}く{08:2F}わ！\n<wait>		I shall show thee my power!\n<wait>	ours		reads: わらわの力　見せてくれるわ！\n<wait>
+m/MS600F.BIN	4:98	0	0	DATA	肝{08:81}{02:09}わらわに肝をおくれ！！\n<wait>		Liver... Give me thy liver!!\n<wait>	ours		reads: 肝じゃ・・・わらわに肝をおくれ！！\n<wait>
+m/MS600F.BIN	4:99	0	0	DATA	気分が優れぬ{02:09}・\n<wait>		Feeling ill...\n<wait>	ours		reads: 気分が優れぬ・・・・\n<wait>
+m/MS600F.BIN	4:9A	0	0	DATA	そなたの施しは　受けぬぞよ\n<wait>		I'll take no charity!\n<wait>	ours		
+m/MS600F.BIN	4:9B	0	0	DATA	良い月夜{08:81}\n<wait>		A fine moon.\n<wait>	ours		reads: 良い月夜じゃ\n<wait>
+m/MS600F.BIN	4:9C	0	0	DATA	そなたの同情なぞ　受けとう{08:25}わ\n<wait>		I do not wish for thy pity!\n<wait>	ours		reads: そなたの同情なぞ　受けとうないわ\n<wait>
+m/MS600F.BIN	4:9D	0	0	DATA	聞く耳持たぬわ！\n<wait>		No ear for jest!\n<wait>	ours		
+m/MS600F.BIN	4:9E	0	0	DATA	先程は		Before	ours		
+m/MS600F.BIN	4:9F	0	0	DATA	{08:79}様な物では　誤魔化{03:0C}ぬぞよ\n<wait>		Such a thing shall not deceive me.\n<wait>	ours		reads: その様な物では　誤魔化されぬぞよ\n<wait>
+m/MS600F.BIN	4:A0	0	0	DATA	久方ぶりに 菓子なぞ食{08:4B}い{08:5E}よ\n<wait>		Long since I've craved sweets so.\n<wait>	ours		reads: 久方ぶりに 菓子なぞ食したいものよ\n<wait>
+m/MS600F.BIN	4:A1	0	0	DATA	思い出{02:0D}くれ{08:69}ぞ！\n<wait>		I shall remind thee!\n<wait>	ours		reads: 思い出させてくれようぞ！\n<wait>
+m/MS600F.BIN	4:A2	0	0	DATA	わらわの心遣いを　無下に{08:4C}は！\n<wait>		To spurn my kindness so coldly!\n<wait>	ours		reads: わらわの心遣いを　無下にするとは！\n<wait>
+m/MS600F.BIN	5:23	0	0	DATA	か{08:69}な所で　何を{08:4A}おるの{08:81}？\n<wait>		What doest thou in such a place?\n<wait>	ours		reads: かような所で　何をしておるのじゃ？\n<wait>
+m/MS600F.BIN	5:24	0	0	DATA	良い男には　勝てぬぞよ\n<wait>		Can't best a good man.\n<wait>	ours		
+m/MS600F.BIN	5:25	0	0	DATA	楽し{08:5C}では{08:25}か\n<wait>		Let's enjoy this.\n<wait>	ours		reads: 楽しもうではないか\n<wait>
+m/MS600F.BIN	5:26	0	0	DATA	舞いを　舞おうぞよ\n<wait>		Let us do a dance.\n<wait>	ours		
+m/MS600F.BIN	5:27	0	0	DATA	雅で無いぞえ！\n<wait>		How graceless!\n<wait>	ours		
+m/MS600F.BIN	6:17	0	0	DATA	くぬうぅ！\n<wait>		Kunnngh!\n<wait>	ours		
+m/MS600F.BIN	6:18	0	0	DATA	二度と再び　わらわの目前に現{08:2F}で{08:25}ぞよ！\n<wait>		Never again appear before mine eyes!\n<wait>	ours		reads: 二度と再び　わらわの目前に現れるでないぞよ！\n<wait>
+m/MS600F.BIN	7:15	0	0	DATA	{08:4D}{08:74}は　勘弁{08:4A}たもれ\n<wait>		That, at least, I beg thee spare me.\n<wait>	ours		reads: それだけは　勘弁してたもれ\n<wait>
+m/MS600F.BIN	7:16	0	0	DATA	{08:48}でよいの{08:81}な\n<wait>		This will do, then?\n<wait>	ours		reads: これでよいのじゃな\n<wait>
+m/MS600F.BIN	8:40	0	0	DATA	よいおのこ{08:81}\n<wait>		A fine man.\n<wait>	ours		reads: よいおのこじゃ\n<wait>
+m/MS600F.BIN	8:41	0	0	DATA	そなたの生気を　わらわにおくれ\n<wait>		Give thy life force unto me.\n<wait>	ours		
+m/MS600F.BIN	8:42	0	0	DATA	見目が良いとは　言えぬの\n<wait>		Not exactly handsome.\n<wait>	ours		
+m/MS600F.BIN	8:43	0	0	DATA	{08:79}様な者は　わらわには不用{08:81}！\n<wait>		One such as that, I have no use!\n<wait>	ours		reads: その様な者は　わらわには不用じゃ！\n<wait>
+m/MS600F.BIN	8:44	0	0	DATA	優しいの{08:81}な\n<wait>		Quite gentle.\n<wait>	ours		reads: 優しいのじゃな\n<wait>
+m/MS600F.BIN	8:45	0	0	DATA	嬉しいぞえ\n<wait>		How joyous\n<wait>	ours		
+m/MS600F.BIN	8:46	0	0	DATA	ギクッ\n<wait>		Gasp!\n<wait>	ours		
+m/MS600F.BIN	8:47	0	0	DATA	意地が悪いぞえ！\n<wait>		How cruel of thee!\n<wait>	ours		
+m/MS600F.BIN	8:48	0	0	DATA	つれ{08:25}よのう\n<wait>		How heartless.\n<wait>	ours		reads: つれないよのう\n<wait>
+m/MS600F.BIN	8:49	0	0	DATA	ホホホホ\n<wait>		Hohoho.\n<wait>	ours		
+m/MS600F.BIN	8:4A	0	0	DATA	{08:90}{08:4A}も　駄目だと申すのか？\n<wait>		No matter what, it won't do?\n<wait>	ours		reads: どうしても　駄目だと申すのか？\n<wait>
+m/MS600F.BIN	8:4B	0	0	DATA	何と酷い\n<wait>		Cruel.\n<wait>	ours		
+m/MS600F.BIN	8:4C	0	0	DATA	うぶ{08:81}の\n<wait>		How naive.\n<wait>	ours		reads: うぶじゃの\n<wait>
+m/MS600F.BIN	8:33	0	0	DATA	人{08:7C}　人らしく\n大人しく{08:4A}{08:78}ば　良いの{08:81}\n<wait>		Be thou human,\nact human, and stay quiet.\n<wait>	ours		reads: 人ならば　人らしく\n大人しくしておれば　良いのじゃ\n<wait>
+m/MS600F.BIN	10:11	0	0	DATA	見破ら{08:60}様{08:81}の\n<wait>		Found out, am I?\n<wait>	ours		reads: 見破られた様じゃの\n<wait>
+m/MS600F.BIN	10:12	0	0	DATA	信じてく{08:60}の{08:81}な\n<wait>		So thou believed me.\n<wait>	ours		reads: 信じてくれたのじゃな\n<wait>
+m/MS600F.BIN	10:13	0	0	DATA	そなたが　いねば良い事{08:81}！\n<wait>		Better if thou wert gone!\n<wait>	ours		reads: そなたが　いねば良い事じゃ！\n<wait>
+m/MS600F.BIN	11:16	0	0	DATA	生意気な口を　きくでは{08:25}かえ！\n<wait>		What an impudent tongue thou hast!\n<wait>	ours		reads: 生意気な口を　きくではないかえ！\n<wait>
+m/MS600F.BIN	11:17	0	0	DATA	すばらしい\n<wait>		Splendid.\n<wait>	ours		
+m/MS600F.BIN	13:15	0	0	DATA	{08:0B}を殺{08:4A}平気{08:6B}かえ？\n<wait>		Fine with killing demons?\n<wait>	ours		reads: 悪魔を殺して平気なのかえ？\n<wait>
+m/MS600F.BIN	13:16	0	0	DATA	{08:0B}は存在{08:4A}は　{08:7D}ぬと言うのか？\n<wait>		Sayest demons mustn't exist at all?\n<wait>	ours		reads: 悪魔は存在しては　ならぬと言うのか？\n<wait>
+m/MS600F.BIN	13:17	0	0	DATA	{08:8B}分{08:42}ぬ\n<wait>		I do not understand.\n<wait>	ours		reads: よく分からぬ\n<wait>
+m/MS600F.BIN	13:18	0	0	DATA	そなた{08:56}　わ{08:42}ぬの{08:81}な\n<wait>		So even thou dost not see.\n<wait>	ours		reads: そなたでも　わからぬのじゃな\n<wait>
+m/MS600F.BIN	13:19	0	0	DATA	わらわは　		I hold 	ours		
+m/MS600F.BIN	13:19	1	16	1F01	の事が　愛しい\n<wait>	 is dear to me.\n<wait>	{04:FF} dear to me.\n<wait>	ours	draft	reads: の事が　愛しい\n<wait> @rebase-tagdiff @seamfix-2026-09-05
+m/MS600F.BIN	13:1A	0	0	DATA	そなたは　{08:90}{08:6B}{08:81}？\n<wait>		And what of thee, then?\n<wait>	ours		reads: そなたは　どうなのじゃ？\n<wait>
+m/MS600F.BIN	13:1B	0	0	DATA	{08:0B}と{02:0B}とは　共に生きれぬの{08:81}な\n<wait>		So demons and humans cannot live together.\n<wait>	ours		reads: 悪魔と人間とは　共に生きれぬのじゃな\n<wait>
+m/MS600F.BIN	13:1C	0	0	DATA	何やら　哀しゅう{08:1A}来たわ\n<wait>		Somehow, I feel rather sad.\n<wait>	ours		reads: 何やら　哀しゅうなって来たわ\n<wait>
+m/MS600F.BIN	13:1D	0	0	DATA	わらわは　そなたの奴隷{08:81}！\n<wait>		I am thy slave, it seems!\n<wait>	ours		reads: わらわは　そなたの奴隷じゃ！\n<wait>
+m/MS600F.BIN	13:1E	0	0	DATA	駄目{08:81}　やはり駄目{08:6B}{08:81}！\n今のそなたとは　結ばれぬが定め{02:09}・\n<wait>		No good. It's truly no good!\nWe're not fated to unite now...\n<wait>	ours		reads: 駄目じゃ　やはり駄目なのじゃ！\n今のそなたとは　結ばれぬが定め・・・・\n<wait>
+m/MS600F.BIN	13:14	0	0	DATA	我ら{08:0B}の事も\n人と同じく扱{08:52}く{08:2F}のかえ？\n<wait>		We demons too,\nwilt thou treat us as humans?\n<wait>	ours		reads: 我ら悪魔の事も\n人と同じく扱ってくれるのかえ？\n<wait>
+m/MS600F.BIN	14:0C	0	0	DATA	そなた　{02:00}であろう\n何故ゆえに　{08:0B}を狩らねば{08:7D}ぬの{08:81}？\n<wait>		Thou art a Devil Buster, art thou not.\nWhy must thou hunt demons so?\n<wait>	ours		reads: そなた　デビルバスターであろう\n何故ゆえに　悪魔を狩らねばならぬのじゃ？\n<wait>
+m/MS600F.BIN	14:0D	0	0	DATA	おとなしい{08:0B}だ{08:52}おる\n{08:4D}に{02:0B}とて　食う為に　牛や豚を殺すでは{08:25}か\nどこが違うの{08:81}？\n<wait>		There are gentle demons too.\nAnd humans slaughter cattle and swine to eat.\nWherein lies the difference?\n<wait>	ours		reads: おとなしい悪魔だっておる\nそれに人間とて　食う為に　牛や豚を殺すではないか\nどこが違うのじゃ？\n<wait>
+m/MS600F.BIN	14:0E	0	0	DATA	違わぬわ！\n{02:0B}{08:74}が特別だなど＿身勝手な話し{08:81}！\n<wait>		There is none!\nThat humans alone are special is mere conceit!\n<wait>	ours		reads: 違わぬわ！\n人間だけが特別だなど＿身勝手な話しじゃ！\n<wait>
+m/MS600F.BIN	14:0B	0	0	DATA	{02:0B}さえ　良ければ良いと言うのかえ？\n<wait>		Dost thou say all is well so long as humans are?\n<wait>	ours		reads: 人間さえ　良ければ良いと言うのかえ？\n<wait>
