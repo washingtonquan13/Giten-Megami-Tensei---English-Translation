@@ -455,13 +455,24 @@ class BuildReport:
     #: ``rel16`` slots left alone because the operand does not behave like a
     #: branch at all (see :func:`_is_branch`)
     not_a_branch: int = 0
+    #: spans a branch jumps into that were edited anyway, because the target sits
+    #: on a trailing escape the translation preserves byte-for-byte
+    #: (see :func:`_drop_branched_into`)
+    tail_anchored: int = 0
     size_delta: int = 0
     errors: "list[str]" = field(default_factory=list)
     warnings: "list[str]" = field(default_factory=list)
 
 
-def _rebuild_record(rec: Rec, edits: "dict[int, str]", report: BuildReport):
-    """New bytes for one record plus its unchanged-run map ``[(lo, hi, delta)]``."""
+def _rebuild_record(rec: Rec, edits: "dict[int, str]", report: BuildReport,
+                    interior=()):
+    """New bytes for one record plus its unchanged-run map ``[(lo, hi, delta)]``.
+
+    ``interior`` is the record-relative offsets of branch targets that land
+    inside a span, as passed through by :func:`_drop_branched_into`; a target
+    whose trailing bytes survive the edit gets an anchor at the same distance
+    from the end of the new text.
+    """
     if not edits:
         return rec.data, [(0, len(rec.data), 0)], {}, False
     out = bytearray()
@@ -491,6 +502,13 @@ def _rebuild_record(rec: Rec, edits: "dict[int, str]", report: BuildReport):
         anchors[sp.off] = len(out)
         out += new
         anchors[sp.end] = len(out)
+        # A branch onto the span's trailing page wait / newline: the byte still
+        # exists, the same distance from the end.  _drop_branched_into only let
+        # this edit through because that tail is byte-identical.
+        for t in interior:
+            k = sp.end - t
+            if sp.off < t < sp.end and preserved_tail(old, new, k):
+                anchors[t] = len(out) - k
         cursor = sp.end
         changed = True
         report.changed_spans += 1
@@ -568,14 +586,34 @@ def _branch_targets(recs, old_base) -> "set[int]":
     return out
 
 
+def preserved_tail(old: bytes, new: bytes, k: int) -> bool:
+    """Do ``old`` and ``new`` end in the same ``k`` bytes?
+
+    If they do, a branch that pointed ``k`` bytes back from the end of the old
+    span has an honest destination in the new one: the same byte, the same
+    distance from the end.  See :func:`_drop_branched_into`.
+    """
+    return 0 < k <= min(len(old), len(new)) and old[-k:] == new[-k:]
+
+
 def _drop_branched_into(rel, rec, per, base, landed, report: BuildReport):
     """Refuse an edit to a span that some branch jumps *into the middle of*.
 
     A target on the span's first byte is fine -- it moves with the span.  A target
-    strictly inside it names a byte that the replacement text does not have, so
-    there is no honest answer, and quietly leaving the old displacement would
-    point a jump into the middle of a new English sentence.  Skip that span,
-    keep the rest of the record, and say so.
+    strictly inside it usually names a byte the replacement text does not have,
+    so there is no honest answer, and quietly leaving the old displacement would
+    point a jump into the middle of a new English sentence.
+
+    **Except when the tail is preserved.**  Nearly half of these targets are a
+    branch onto the span's own trailing ``1E 10`` page wait or ``0A`` newline --
+    "skip the words, go straight to the page break" -- and a translation keeps
+    those trailing escapes verbatim, because they are what ends the line.  When
+    the last *k* bytes survive the edit unchanged, the target still exists at the
+    same distance from the end, and :func:`_rebuild_record` anchors it there.
+    Refusing those cost 314 finished lines that never reached the screen.
+
+    Anything else is still refused: a target in the middle of prose names a byte
+    the English genuinely does not have.
     """
     if not per:
         return per
@@ -587,6 +625,16 @@ def _drop_branched_into(rel, rec, per, base, landed, report: BuildReport):
             continue
         hit = [t for t in landed if base + sp.off < t < base + sp.end]
         if hit:
+            old = rec.data[sp.off:sp.end]
+            try:
+                new = codec.encode(text)
+            except codec.CodecError:
+                new = None                      # _rebuild_record reports the error
+            if new is not None and all(
+                    preserved_tail(old, new, base + sp.end - t) for t in hit):
+                report.tail_anchored += 1
+                keep[idx] = text
+                continue
             report.branched_into += 1
             report.errors.append(
                 "%s %s[%d]: a branch jumps into the middle of this span "
@@ -705,9 +753,11 @@ def build(sc: Script, edits: "dict[tuple[int, int, int], str]") -> "tuple[bytes,
                     "verbatim" % (sc.rel, r.key, r.blocked,
                                   r.tile_error or "ambiguous record id"))
                 per = {}
-            per = _drop_branched_into(sc.rel, r, per, omap.old_base.get(r.id, 0),
-                                      landed, report)
-            data, runs, anchors, changed = _rebuild_record(r, per, report)
+            rbase = omap.old_base.get(r.id, 0)
+            per = _drop_branched_into(sc.rel, r, per, rbase, landed, report)
+            inner = [t - rbase for t in landed
+                     if rbase <= t < rbase + len(r.data)]
+            data, runs, anchors, changed = _rebuild_record(r, per, report, inner)
             if changed:
                 report.changed_records += 1
             new_data[pos] = data

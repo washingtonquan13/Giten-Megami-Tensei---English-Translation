@@ -1100,3 +1100,53 @@ def test_expression_model_agrees_with_the_engine():
     # kind 0x0D, which delegates through 0x00438C40 = READ_U8 + READ_EXPR_DEREF
     for i in range(0x19, 0x24):
         assert ours[i] == ["u8", "expr"], (i, ours[i])
+
+
+def test_a_branch_onto_a_trailing_escape_no_longer_blocks_the_edit():
+    """Finished English was being withheld from the screen for no good reason.
+
+    `_drop_branched_into` refuses an edit when a branch targets a byte strictly
+    inside the span, because the replacement usually has no such byte.  But of
+    322 such targets corpus-wide, 144 point at the span's own trailing `1E 10`
+    page wait and 7 at a trailing `0A` -- "skip the words, go to the page break"
+    -- and a translation keeps those escapes verbatim, because they are what
+    ends the line.  When the last k bytes survive the edit unchanged the target
+    still exists, k bytes from the end, and that is an honest anchor.
+
+    Refusing them cost 37 lines that are written and were not shipping.
+    """
+    data = ("Hello".encode("cp932") + b"\x1e\x10\x01\x01"     # span: text + page wait
+            + b"\x00")
+    # the tail (the 1E10 page wait) is preserved by any sane translation
+    old = data[:len(data) - 1]
+    assert script.preserved_tail(old, "Goodbye".encode("cp932") + b"\x1e\x10\x01\x01", 4)
+    # ... and is not preserved if the translator drops the page wait
+    assert not script.preserved_tail(old, "Goodbye".encode("cp932"), 4)
+    # a target in the middle of prose is still refused: the byte is gone
+    assert not script.preserved_tail(b"abcdef", b"xyzdef", 6)
+    assert script.preserved_tail(b"abcdef", b"xyzdef", 3)
+
+
+def test_the_builder_still_relocates_every_branch_correctly():
+    """The tail anchor must not buy shipped lines at the cost of a wrong jump.
+
+    An anchor is a claim that some old byte lives at some new offset.  A wrong
+    one silently points a branch into the middle of an English sentence, which
+    is the exact corruption `_drop_branched_into` exists to prevent -- so the
+    identity build is the check that matters: with no edits at all, every
+    displacement must come out unchanged and every file byte-identical.
+    """
+    from giten import files, records
+
+    n = 0
+    for rel in list(files.iter_files(("ms",)))[:40]:
+        raw = files.read_source(rel)
+        sc = script.parse(rel, raw)
+        if not sc.ok:
+            continue
+        out, rep = script.build(sc, {})           # no edits -> identity
+        assert out == raw, "%s: identity build is not byte-exact" % rel
+        assert rep.branched_into == 0, rel
+        assert getattr(rep, "tail_anchored", 0) == 0, rel
+        n += 1
+    assert n > 20, n

@@ -25,7 +25,7 @@ Every re-adopted module carries an entry here.  An entry is closed only by evide
 - One span in the original (`m/MS0061` 0:0B[32]) contains `FA 82` (冾, IBM extension); cp932 re-encodes it as the NEC duplicate `ED 65`.  Text tokens that do not re-encode to their own bytes are rendered as raw `{=HH}` tokens.
 
 ## script / relocation
-- Branches whose target is strictly inside an edited span block the edit (115 lines ship untranslated).
+- ~~Branches whose target is strictly inside an edited span block the edit (115 lines ship untranslated).~~  **Partly closed 2026-09-06.**  Of 322 such targets corpus-wide, 144 point at the span's own trailing `1E 10` page wait and 7 at a trailing `0A` -- a branch that skips the words and goes straight to the page break.  A translation keeps those escapes verbatim, so the last *k* bytes survive the edit and the target still exists *k* bytes from the end; `_rebuild_record` now anchors it there and the edit ships.  **37 finished lines that were written and not reaching the screen now do.**  The remaining **71** are branches into actual prose, where the English genuinely has no such byte -- those are still refused, and the honest fix for them is to split the span at the target so each fragment is separately translatable (the translator then has to write text that reads correctly both with and without the skipped part, as was done by hand for `m/MS0002` 0:27).  `verify` reports 0 tiling regressions.
 - Text-capture mode (`1B`..`1C`, 256-byte buffer) is enforced by `check` (`capture`) from the static token walk; a region entered by a branch from elsewhere is not modelled.
 
 ## exe
