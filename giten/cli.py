@@ -104,6 +104,11 @@ def make_parser():
     p.add_argument("--out", default=None, help="default build/en/et/et0102.bin")
     _common(p)
 
+    p = sub.add_parser("racenames", help="race / lineage / title tables -> et/ET0000.BIN")
+    p.add_argument("--extract", action="store_true", help="refresh tables/racenames.tsv instead")
+    p.add_argument("--out", default=None, help="default build/en/et/ET0000.BIN")
+    _common(p)
+
     p = sub.add_parser("exe", help="build patched exes from docs/exe-patches.md")
     p.add_argument("which", choices=("base", "release", "dev"))
     p.add_argument("--out", default=None, help="default build/exe/")
@@ -189,6 +194,29 @@ def main(argv=None) -> int:
         if not args.quiet:
             print("%s: %d maps, %d with English" % (mapnames.TABLE, n, len(keep)))
         return 1 if findings else 0
+    if args.cmd == "racenames":
+        from . import racenames
+        raw = racenames.source(paths.ORIGINAL_DDSWIN)
+        if args.extract:
+            n = racenames.write_table(raw)
+            if not args.quiet:
+                print("wrote %s: %d rows" % (racenames.TABLE, n))
+            return 0
+        english = racenames.read_table()
+        _rows, findings = racenames.plan(raw, english)
+        for kind, idx, msg in findings:
+            print("  REFUSED %s %d: %s" % (kind, idx, msg))
+        if findings:
+            return 1
+        blob = racenames.build(raw, english)
+        out = args.out or os.path.join(paths.BUILD_DIR, "en", "et", "ET0000.BIN")
+        os.makedirs(os.path.dirname(out), exist_ok=True)
+        with open(out, "wb") as fh:
+            fh.write(blob)
+        if not args.quiet:
+            print("wrote %s: %d bytes, %d strings English (was %d bytes)"
+                  % (out, len(blob), len(english), len(raw)))
+        return 0
     if args.cmd == "itemdb":
         from . import itemdb
         from .exe import database

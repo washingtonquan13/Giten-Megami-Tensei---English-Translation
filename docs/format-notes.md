@@ -681,8 +681,10 @@ A record is a binary header whose shape depends on a **type byte**, followed by
 NUL-terminated cp932 strings: the display name, then the description. 744 of the 745
 records carry text: 8,167 bytes of names and 34,569 bytes of descriptions.
 
-The status-screen stat labels (直感 / 精神力 / 魔力 / 知力 / 加護力 / 強さ / 体力 /
-敏捷性 / 器用さ / 魅力) live in here too, not in the exe.
+(An earlier revision of this section claimed the status-screen stat labels live
+in here.  They do not -- they are exe `.rdata` pointers at `0x0046A118`; see
+section 6.4.  They were missed by a plain string search because they are
+space-padded to a fixed width: `直  感`, not `直感`.)
 
 ### 6.2 The read path
 
@@ -731,6 +733,59 @@ roughly +21,000).
 | `所持アイテム %1d/8` | `0x0046A540`, pushed at `0x004448E4` |
 | `合計 %10ld` | `0x00468DAC`, `0x00468DCC`, `0x00468DE4` |
 | location indicator (`初台ｼｪﾙﾀｰ`) | the `m/M####.BIN` map files (a different family from `m/MS####`), stored as **half-width katakana** |
+| status stat labels (`直  感` .. `命  運`) | the same `u32` pointer array, at `0x0046A118`; **space-padded**, which is why a plain search for `直感` misses them |
+| status number lines (`LEVEL` / `HP` / `MP` / `仲魔` / `EXP` / `NEXT` / `CP`) | literals at `0x0046A400`; every one renders **exactly 14 half-width cells**, right-aligning the numbers against each other, so a wider label has to be paid for out of the `printf` field widths |
+| status conditions (`灰` .. `外傷`) | **not** a pointer array: a packed struct array at `0x004647E0`, `[u8 id][7-byte NUL-terminated cp932 name]`, stride 8, 35 entries. The name is inline, so it is rewritten in place with a hard **6-character** budget -- which `%-6.6s` at `0x0046A47C` fixes independently |
 
 Both string tables are pointer arrays, so re-pointing them at an appended section is
 the same technique as `giten/exe/names.py` — no push-immediate rewriting needed.
+
+### 6.5 The race / lineage / title tables `et/ET0000.BIN` **[VERIFIED by disassembly, 2026-09-05]**
+
+The status screen's Race and Title lines are not in the exe.  `et/ET0000.BIN`
+is a bundle of six containers, and the loader at `0x0040FF30` opens the file
+once and calls `0x00401C30` **six times** -- once per container -- storing the
+handles at `ds:0x0047B0D0` .. `ds:0x0047B0E4`, then closes it.  The count is
+hard-coded, so the file must keep exactly six containers.
+
+| container | handle | bytes | contents |
+|---|---|---|---|
+| 0 | `0x0047B0D0` | 1730 | binary |
+| 1 | `0x0047B0D4` | 51 | race index -> group index, one byte per race |
+| 2 | `0x0047B0D8` | 393 | 51 races (`人` = Human is index 33) |
+| 3 | `0x0047B0DC` | 303 | 23 lineages (`X神族`, a demon's pantheon) |
+| 4 | `0x0047B0E0` | 53 | 7 titles (`愚者` Fool .. `神` God) |
+| 5 | `0x0047B0E4` | 148 | 16 major race groups (`大種族`) |
+
+Each string container is `u16 count; u16 offset[count]; strings`, and the
+accessors read it exactly that way -- `0x00410180` for the titles:
+
+```
+mov eax,[0x47B0E0] ; call 0x404680      ; handle -> base
+movsx ecx,word [esp+8]                  ; index
+mov dx, word [eax+ecx*2+2]              ; offset[index]; the +2 skips count
+push edx ; push eax ; call 0x40B840     ; base + (offset & 0xFFFF)
+```
+
+Note there is **no bounds clamp** here, unlike the item database's locator at
+`0x00422D10` -- the caller is trusted, so the entry count must not change.
+
+**Why this one needs no exe patch.**  `0x00401C30` sizes its allocation from
+each container's own `u16` header, so the containers are self-sizing; the only
+ceiling is the `& 0xFFFF` in `0x0040B840`, i.e. 65,535 bytes *per container*
+against a current maximum of 1,730.  Unlike `ET0001` (section 6.3) there is
+nothing to lift, so `giten racenames` simply rebuilds the file.  Containers 0
+and 1 are copied through byte-for-byte.
+
+**Width budget.**  `0x00441C30` chooses between the two tables --
+
+```
+mov ax,[esi] ; cmp ax,0x20 ; jge demon
+  movzx edx,[esi+0x6c] ; call 0x00410180   ; human -> title table
+demon:
+  call 0x00410140                          ; -> race table
+```
+
+-- and draws either through the same `strcpy`-then-`0x00441940` path with no
+`printf` field width.  So race and title share one budget: the widest thing the
+game already draws there, `イシュタル信者` at 14 half-width cells.
