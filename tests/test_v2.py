@@ -376,7 +376,16 @@ def test_tokenizer_reproduces_the_published_tiling_numbers():
     # against build/trace/jp*.bin, agreement rose 97.73% -> 97.84% (18 258 ->
     # 18 279 of 18 683 traced token PCs), and `impossible` fell 50 -> 46.  `stray`
     # rose by 3, which is why it is not the metric.
-    assert (ok, stray, unimpl, overrun) == (19398, 1084, 97, 111), (ok, stray, unimpl, overrun)
+    # 2026-09-06, the 0x14C-0x151 family: 19 398 / 1 084 / 97 / 111 ->
+    # 19 424 / 1 099 / 93 / 74.  All six push $1 into 0x004335E0, whose middle
+    # call 0x004335C0 reads an expression ONLY when its argument is 0 -- so the
+    # second `expr` in our model was never read, and the walk over-consumed 3-6
+    # bytes at each of 404 sites.  37 records stopped overrunning.
+    # Found by the tracer, not by a table: with pc0 (trace v2) every logged token
+    # carries the engine's own length, and at 529 sites the engine took exactly 6
+    # bytes where the model claimed 9-12.  Engine boundary agreement over 30 802
+    # traced token PCs moved 93.33%% -> 96.83%%, and `impossible` 46 -> 43.
+    assert (ok, stray, unimpl, overrun) == (19424, 1099, 93, 74), (ok, stray, unimpl, overrun)
 
 
 def test_operands_are_never_text():
@@ -435,7 +444,13 @@ def test_codec_round_trips_every_span_in_the_corpus():
             assert codec.encode(txt) == rec.data[sp.off:sp.end], \
                 "%s %s[%d]: %r" % (rel, sp.rec_key, sp.idx, txt)
             n += 1
-    assert n > 45000, n
+    # A floor, not a target.  The span count *falls* as the operand model gets
+    # more correct: bytes that were over-consumed and mis-tiled used to surface
+    # as spurious text spans, and every one of them is a line a translator could
+    # have been asked to translate.  46 334 -> 45 609 (1F03/1F04) -> 44 810
+    # (0x14C-0x151).  What this test actually asserts is the round-trip above,
+    # for every span; the count only guarantees it checked a real corpus.
+    assert n > 44000, n
 
 
 def test_pool_calls_fold_their_operand_into_one_token():
@@ -1032,8 +1047,9 @@ def test_no_more_records_carry_an_impossible_expression_selector():
     assert total > 20000, total
     # 2026-09-06: 78, then 50 once 0x17F-0x184 stopped reading a second
     # expression they never read, then 46 once 0x103/0x104 stopped reading four
-    # fixed u8 in place of an FF-terminated term list.  Must never rise.
-    assert len(bad) <= 46, ("%d records now carry an impossible selector: %s"
+    # fixed u8 in place of an FF-terminated term list, then 43 once 0x14C-0x151
+    # stopped reading a second expression the engine never reads.  Must never rise.
+    assert len(bad) <= 43, ("%d records now carry an impossible selector: %s"
                             % (len(bad), bad[:5]))
 
 

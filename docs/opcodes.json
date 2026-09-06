@@ -5149,10 +5149,6 @@
     {
      "kind": "expr",
      "size": "var"
-    },
-    {
-     "kind": "expr",
-     "size": "var"
     }
    ],
    "fixed_size": null,
@@ -5160,7 +5156,8 @@
    "has_offset": false,
    "offset_slots": [],
    "refs_record": false,
-   "uses": 23
+   "uses": 23,
+   "note": "reads [u8][u8][expr] -- ONE expression, not two.  All six handlers 0x14C-0x151 push $1 and route through 0x004335E0, which is call 0x4335A0 (two READ_U8), then call 0x4335C0(arg), then call 0x437490 (one expression, unconditional).  0x004335C0 is 'cmpw $0x0,0x4(%esp) / jne 0x4335cd / jmp 0x437490' -- it reads an expression ONLY when its argument is 0, and every one of these opcodes passes 1, so it takes a global (0x481354) instead and consumes no stream bytes.  The old model read that second expression, over-consuming 3-6 bytes at each of 404 sites; it rarely surfaced as a tiling failure because the walk usually resynchronised.  Measured against the engine 2026-09-06: at 529 traced sites the engine consumed exactly 6 bytes where the model claimed 9-12.  Correcting it moved engine boundary agreement 93.33% -> 96.83% (30,802 traced token PCs), untiled records 111 -> 74, and records carrying an impossible expression selector 46 -> 43."
   },
   "0x14D": {
    "encoding": "1F 4D",
@@ -5178,10 +5175,6 @@
     {
      "kind": "expr",
      "size": "var"
-    },
-    {
-     "kind": "expr",
-     "size": "var"
     }
    ],
    "fixed_size": null,
@@ -5189,7 +5182,8 @@
    "has_offset": false,
    "offset_slots": [],
    "refs_record": false,
-   "uses": 8
+   "uses": 8,
+   "note": "reads [u8][u8][expr] -- ONE expression, not two.  All six handlers 0x14C-0x151 push $1 and route through 0x004335E0, which is call 0x4335A0 (two READ_U8), then call 0x4335C0(arg), then call 0x437490 (one expression, unconditional).  0x004335C0 is 'cmpw $0x0,0x4(%esp) / jne 0x4335cd / jmp 0x437490' -- it reads an expression ONLY when its argument is 0, and every one of these opcodes passes 1, so it takes a global (0x481354) instead and consumes no stream bytes.  The old model read that second expression, over-consuming 3-6 bytes at each of 404 sites; it rarely surfaced as a tiling failure because the walk usually resynchronised.  Measured against the engine 2026-09-06: at 529 traced sites the engine consumed exactly 6 bytes where the model claimed 9-12.  Correcting it moved engine boundary agreement 93.33% -> 96.83% (30,802 traced token PCs), untiled records 111 -> 74, and records carrying an impossible expression selector 46 -> 43."
   },
   "0x14E": {
    "encoding": "1F 4E",
@@ -5207,10 +5201,6 @@
     {
      "kind": "expr",
      "size": "var"
-    },
-    {
-     "kind": "expr",
-     "size": "var"
     }
    ],
    "fixed_size": null,
@@ -5218,7 +5208,8 @@
    "has_offset": false,
    "offset_slots": [],
    "refs_record": false,
-   "uses": 209
+   "uses": 209,
+   "note": "reads [u8][u8][expr] -- ONE expression, not two.  All six handlers 0x14C-0x151 push $1 and route through 0x004335E0, which is call 0x4335A0 (two READ_U8), then call 0x4335C0(arg), then call 0x437490 (one expression, unconditional).  0x004335C0 is 'cmpw $0x0,0x4(%esp) / jne 0x4335cd / jmp 0x437490' -- it reads an expression ONLY when its argument is 0, and every one of these opcodes passes 1, so it takes a global (0x481354) instead and consumes no stream bytes.  The old model read that second expression, over-consuming 3-6 bytes at each of 404 sites; it rarely surfaced as a tiling failure because the walk usually resynchronised.  Measured against the engine 2026-09-06: at 529 traced sites the engine consumed exactly 6 bytes where the model claimed 9-12.  Correcting it moved engine boundary agreement 93.33% -> 96.83% (30,802 traced token PCs), untiled records 111 -> 74, and records carrying an impossible expression selector 46 -> 43."
   },
   "0x14F": {
    "encoding": "1F 4F",
@@ -5236,10 +5227,6 @@
     {
      "kind": "expr",
      "size": "var"
-    },
-    {
-     "kind": "expr",
-     "size": "var"
     }
    ],
    "fixed_size": null,
@@ -5247,7 +5234,8 @@
    "has_offset": false,
    "offset_slots": [],
    "refs_record": false,
-   "uses": 53
+   "uses": 53,
+   "note": "reads [u8][u8][expr] -- ONE expression, not two.  All six handlers 0x14C-0x151 push $1 and route through 0x004335E0, which is call 0x4335A0 (two READ_U8), then call 0x4335C0(arg), then call 0x437490 (one expression, unconditional).  0x004335C0 is 'cmpw $0x0,0x4(%esp) / jne 0x4335cd / jmp 0x437490' -- it reads an expression ONLY when its argument is 0, and every one of these opcodes passes 1, so it takes a global (0x481354) instead and consumes no stream bytes.  The old model read that second expression, over-consuming 3-6 bytes at each of 404 sites; it rarely surfaced as a tiling failure because the walk usually resynchronised.  Measured against the engine 2026-09-06: at 529 traced sites the engine consumed exactly 6 bytes where the model claimed 9-12.  Correcting it moved engine boundary agreement 93.33% -> 96.83% (30,802 traced token PCs), untiled records 111 -> 74, and records carrying an impossible expression selector 46 -> 43."
   },
   "0x150": {
    "encoding": "1F 50",
@@ -5265,10 +5253,6 @@
     {
      "kind": "expr",
      "size": "var"
-    },
-    {
-     "kind": "expr",
-     "size": "var"
     }
    ],
    "fixed_size": null,
@@ -5276,7 +5260,8 @@
    "has_offset": false,
    "offset_slots": [],
    "refs_record": false,
-   "uses": 54
+   "uses": 54,
+   "note": "reads [u8][u8][expr] -- ONE expression, not two.  All six handlers 0x14C-0x151 push $1 and route through 0x004335E0, which is call 0x4335A0 (two READ_U8), then call 0x4335C0(arg), then call 0x437490 (one expression, unconditional).  0x004335C0 is 'cmpw $0x0,0x4(%esp) / jne 0x4335cd / jmp 0x437490' -- it reads an expression ONLY when its argument is 0, and every one of these opcodes passes 1, so it takes a global (0x481354) instead and consumes no stream bytes.  The old model read that second expression, over-consuming 3-6 bytes at each of 404 sites; it rarely surfaced as a tiling failure because the walk usually resynchronised.  Measured against the engine 2026-09-06: at 529 traced sites the engine consumed exactly 6 bytes where the model claimed 9-12.  Correcting it moved engine boundary agreement 93.33% -> 96.83% (30,802 traced token PCs), untiled records 111 -> 74, and records carrying an impossible expression selector 46 -> 43."
   },
   "0x151": {
    "encoding": "1F 51",
@@ -5294,10 +5279,6 @@
     {
      "kind": "expr",
      "size": "var"
-    },
-    {
-     "kind": "expr",
-     "size": "var"
     }
    ],
    "fixed_size": null,
@@ -5305,7 +5286,8 @@
    "has_offset": false,
    "offset_slots": [],
    "refs_record": false,
-   "uses": 181
+   "uses": 181,
+   "note": "reads [u8][u8][expr] -- ONE expression, not two.  All six handlers 0x14C-0x151 push $1 and route through 0x004335E0, which is call 0x4335A0 (two READ_U8), then call 0x4335C0(arg), then call 0x437490 (one expression, unconditional).  0x004335C0 is 'cmpw $0x0,0x4(%esp) / jne 0x4335cd / jmp 0x437490' -- it reads an expression ONLY when its argument is 0, and every one of these opcodes passes 1, so it takes a global (0x481354) instead and consumes no stream bytes.  The old model read that second expression, over-consuming 3-6 bytes at each of 404 sites; it rarely surfaced as a tiling failure because the walk usually resynchronised.  Measured against the engine 2026-09-06: at 529 traced sites the engine consumed exactly 6 bytes where the model claimed 9-12.  Correcting it moved engine boundary agreement 93.33% -> 96.83% (30,802 traced token PCs), untiled records 111 -> 74, and records carrying an impossible expression selector 46 -> 43."
   },
   "0x152": {
    "encoding": "1F 52",
