@@ -57,9 +57,18 @@ _start:
         mov     word ptr [edi+0], ax
         mov     ax, word ptr [RECID]
         mov     word ptr [edi+2], ax
+        # CTX is null between scripts -- the engine clears it when a script
+        # ends (the last record before it does so logs r=-1, pc=0), and
+        # exec_token is still reached once afterwards.  Dereferencing it there
+        # is an access violation that kills the game, and it killed it in the
+        # post-battle reward sequence.  The second read of CTX below already
+        # guarded this; this one did not.
         mov     ecx, dword ptr [CTX]
+        xor     eax, eax                    # no context -> log pc 0
+        test    ecx, ecx
+        jz      6f
         mov     ax, word ptr [ecx+0x0E]
-        mov     word ptr [edi+4], ax
+6:      mov     word ptr [edi+4], ax
         mov     word ptr [edi+6], dx        # ch
         mov     word ptr [edi+8], bx        # r
         mov     al, byte ptr [CAPFLAG]

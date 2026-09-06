@@ -417,3 +417,36 @@ def test_every_iat_constant_in_hook_c_names_the_function_it_claims():
     assert img[off:off + 2] == b"\xff\x15", img[off:off + 2].hex()
     called = struct.unpack_from("<I", img, off + 2)[0]
     assert want.get(called, "").lower() == "timegettime", (hex(called), want.get(called))
+
+
+def test_the_tracer_never_dereferences_the_script_context_unguarded():
+    """CTX (ds:0x491160) is null between scripts: the engine clears it when a
+    script ends, and exec_token is still reached once afterwards.  Reading
+    [ecx+0x0E] there is an access violation that kills the game -- it did, in
+    the post-battle reward sequence, faulting at .trc+0x74.
+
+    Every `mov ecx,[CTX]` must be followed by `test ecx,ecx` before ecx is
+    dereferenced.
+    """
+    code = tracer.assemble()
+    load = bytes.fromhex("8b0d") + struct.pack("<I", tracer.SYMBOLS["CTX"])
+    test_ecx = bytes.fromhex("85c9")
+
+    sites, i = [], code.find(load)
+    while i >= 0:
+        sites.append(i)
+        i = code.find(load, i + 1)
+    assert len(sites) >= 2, "expected both CTX reads, found %d" % len(sites)
+
+    for off in sites:
+        window = code[off + len(load):off + len(load) + 8]
+        assert test_ecx in window, (
+            "mov ecx,[CTX] at +0x%02X is not null-checked (next bytes %s)"
+            % (off, window.hex(" ")))
+        # and the check must come before any [ecx+disp] dereference
+        deref = window.find(bytes.fromhex("8b41"))
+        if deref < 0:
+            deref = window.find(bytes.fromhex("668b41"))
+        if deref >= 0:
+            assert window.find(test_ecx) < deref, (
+                "the dereference at +0x%02X precedes its null check" % off)
