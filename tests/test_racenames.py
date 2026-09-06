@@ -92,3 +92,21 @@ def test_a_container_that_outgrew_the_u16_offsets_is_refused():
 def test_split_and_join_are_inverses():
     for strings in racenames.parse(racenames.source()).values():
         assert racenames.split_table(racenames.join_table(strings)) == strings
+
+
+def test_a_plain_build_does_not_revert_the_race_tables():
+    """et/ET0000.BIN is not a script file -- `script.parse` rejects it, so
+    `extract` never gives it a table and `build_v2` would emit an identity copy,
+    silently reverting `giten racenames`.  DATA_TABLE_BUILDERS closes that."""
+    from giten import build_v2, files, script
+
+    raw = files.read_source("et/ET0000.BIN")
+    assert not script.parse("et/ET0000.BIN", raw).ok, \
+        "ET0000 now parses as a script; the reason for the special case is gone"
+    assert "et/ET0000.BIN" in build_v2.DATA_TABLE_BUILDERS
+    # ET0001 must NOT be in there: it is never modified in place
+    assert "et/ET0001.BIN" not in build_v2.DATA_TABLE_BUILDERS
+
+    built = build_v2.DATA_TABLE_BUILDERS["et/ET0000.BIN"](raw)
+    assert built != raw, "a normal build would ship the Japanese"
+    assert built == racenames.build(raw, racenames.read_table())

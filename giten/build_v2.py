@@ -131,6 +131,20 @@ def build_file(rel: str, raw: bytes, rows) -> Result:
                   list(rep.errors), list(rep.warnings))
 
 
+def _racenames(raw):
+    from . import racenames
+    return racenames.build(raw)
+
+
+#: ``dir/FILE.BIN`` -> a function from the original bytes to the built bytes,
+#: for files the script pipeline cannot parse.  ``et/ET0001.BIN`` is deliberately
+#: absent: the item database is never modified in place, its English ships as the
+#: separate ``et/et0102.bin`` (``giten itemdb``), so an identity copy is correct.
+DATA_TABLE_BUILDERS = {
+    "et/ET0000.BIN": _racenames,          # giten racenames
+}
+
+
 def run(out_dir: "str | None" = None, family: str = "all",
         root: "str | None" = None, text_dir: "str | None" = None,
         quiet: bool = False, ignore_tables: bool = False,
@@ -142,6 +156,14 @@ def run(out_dir: "str | None" = None, family: str = "all",
     as identity copies, so the output is always a complete game tree -- this is
     what lets a translation be switched on one section at a time and each
     section play-tested before the next is enabled.
+
+    A few files in ``et/`` are not record-structured scripts at all but flat
+    ``u16 count; u16 offset[]; strings`` tables, so ``script.parse`` rejects them
+    ("record 1 overruns the body"), ``extract`` never writes them a table, and
+    this builder would otherwise emit an identity copy -- quietly reverting work
+    that a different command owns.  :data:`DATA_TABLE_BUILDERS` hands those files
+    to the command that does understand them.  ``--identity`` still bypasses this,
+    so the round-trip guarantee is unaffected.
     """
     out_dir = out_dir or os.path.join(paths.BUILD_DIR, "ddswin_v2")
     text_dir = text_dir or extract_v2.text_v2_dir()
@@ -167,6 +189,8 @@ def run(out_dir: "str | None" = None, family: str = "all",
             rows = [r for r in cache[tp] if r.file == rel]
 
         res = build_file(rel, raw, rows)
+        if not ignore_tables and rel in wanted and rel in DATA_TABLE_BUILDERS:
+            res.raw = DATA_TABLE_BUILDERS[rel](raw)
         st["files"] += 1
         st["changed_spans"] += res.changed_spans
         st["changed_records"] += res.changed_records
