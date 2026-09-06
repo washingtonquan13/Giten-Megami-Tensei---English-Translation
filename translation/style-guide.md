@@ -27,6 +27,17 @@
 >
 > Also obsolete: the file/tool paths in section (d) refer to the old `tools/`
 > layout. The current pipeline is `giten/` with `docs/format-notes.md`.
+>
+> **5. Section (b) quotes inherited lines as voice evidence, and some of them are
+>    mistranslations.** The guide was written by sampling the shipped English,
+>    most of which came from v0.05 and had never been checked against the
+>    Japanese. At least one citation is provably wrong: Nishino's
+>    *"Check her pulse!"* renders 「心拍はないのか！！！」, which is a **question**
+>    ("Is there no heartbeat!?") -- and the reply, 「あ‥‥有りますッ！！」 ("Th-There
+>    is!!"), only makes sense as an answer to one. Calibrating a character's voice
+>    on that line teaches the wrong register. **Treat section (b)'s quotes as
+>    hypotheses to check against the Japanese, not as settled evidence**, and
+>    prefer lines this project wrote to inherited ones when judging voice.
 
 
 Companion document to `translation/glossary.tsv`. Covers the register/conventions the
@@ -130,7 +141,7 @@ single lines from the cited file.
   exclamatory, quick to anger or panic: *"Y-Yamase!? You're alive?"*, *"The hell did
   you just say!?"*, *"Wh-What the hell, Katsuragi!? What has gotten into you!?"*
 - **Nishino (Yoshio)** — "Nishino:". Commanding under pressure (*"Kirishima!
-  Hayasaka!"*, *"Check her pulse!"*), gentle in a domestic scene with his daughter
+  Hayasaka!"*, ~~*"Check her pulse!"*~~ — **see the warning below**), gentle in a domestic scene with his daughter
   Chita (`m/MS0029.BIN`).
 - **Hayasaka (Tatsuya)** — "Hayasaka:". Hot-tempered: *"The hell!?"*, *"Who would
   ever want to be a demon's lackey!?"*
