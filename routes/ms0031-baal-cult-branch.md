@@ -73,7 +73,9 @@ Then:
 4. Decode **against the tree that ran**:
 
 ```
-python -m giten trace decode build/trace/jp-ms0031.bin     --dir "C:/Giten Megami Tensei - English - v0.05/play/warp/ddswin"
+WARP="C:/Giten Megami Tensei - English - v0.05/play/warp/ddswin"
+python -m giten trace selfcheck build/trace/jp-ms0031.bin --build "$WARP"
+python -m giten trace decode    build/trace/jp-ms0031.bin --build "$WARP"
 ```
 
 The Japanese install is the oracle either way: on `play/en` every PC inside a
