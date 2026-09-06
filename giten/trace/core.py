@@ -1,8 +1,14 @@
 """Decode and diff interpreter traces written by the dev exe's ``.trc`` hook.
 
-A trace is a flat file of 12-byte records (see ``exe/trace.S``)::
+A trace is a flat file of fixed-size records (see ``exe/trace.S``).  v2 carries
+an 8-byte ``"GTRC"`` header and 20-byte records::
 
-    u16 file, u16 rec, u16 pc, u16 ch, i16 r, u8 capflag, u8 caplen
+    u16 file, u16 rec, u16 pc, u16 ch, i16 r, u8 capflag, u8 caplen,
+    u16 idx_off, u16 idx_len, u16 pc0, u16 flags
+
+v1 is headerless with 16-byte records (no ``pc0``/``flags``); both decode, since
+the traces taken before 2026-09-06 are still the oracle the opcode model is
+checked against.
 
 ``decode`` maps each record back to the script: the hook logs after exec_token
 returns, so ``pc`` is the byte after the whole token (operands included), and
@@ -28,6 +34,15 @@ What this does not know
 * Whether ``FILEID``/``RECID`` are current on every path (they are written at
   two sites).  The self-check compares the logged ``ch`` with the bytes at the
   decoded offset; a run of mismatches means the globals were stale there.
+
+Closed in v2: a token that *ended* a script used to be unplaceable.  The engine
+clears the context when a script ends, and v1 read ``file``/``rec``/``pc`` and
+the index entry only after ``exec_token`` returned -- so all four came back
+zero.  That was 106 of 18,683 events on the traced routes, a hole in the oracle
+rather than in the model.  v2 snapshots them before the call and adds ``pc0``,
+the PC the token started at, which places the event even when the post-call PC
+is gone.  ``pc0`` with ``pc`` also gives the engine's own length for every
+token, which is the thing an operand model is judged on.
 """
 from __future__ import annotations
 
@@ -38,9 +53,25 @@ from dataclasses import dataclass
 
 from .. import codec, files, overlay, paths, records, script, vmops
 
-#: file, rec, pc, ch, r, capflag, caplen, idx_off, idx_len -- the last two are the
-#: engine's own index entry for the current record, read from the script buffer
-RECORD = struct.Struct("<HHHHhBBHH")
+#: v1: file, rec, pc, ch, r, capflag, caplen, idx_off, idx_len.  Headerless, and
+#: everything was read *after* exec_token returned -- so a token that ended a
+#: script logged pc 0 and idx_off 0, because the engine had already cleared the
+#: context.  Those events cannot be placed at all.  Kept because the traces taken
+#: before 2026-09-06 are still the oracle.
+RECORD_V1 = struct.Struct("<HHHHhBBHH")
+
+#: v2 adds pc0 (the PC *before* the token, i.e. where it starts) and flags, and
+#: takes file/rec/pc0/idx from a snapshot made before the call, when the context
+#: is guaranteed live.  Behind an 8-byte header so both formats decode.
+RECORD_V2 = struct.Struct("<HHHHhBBHHHH")
+MAGIC = b"GTRC"
+HEADER = struct.Struct("<4sHH")
+
+#: ``flags``
+CTX_NULL_BEFORE = 1
+CTX_NULL_AFTER = 2
+
+RECORD = RECORD_V1          # kept for callers that only want the v1 field order
 
 
 @dataclass
@@ -55,6 +86,8 @@ class Event:
     caplen: int
     idx_off: int = 0        # where the ENGINE put this record (0 = not logged)
     idx_len: int = 0        # how long the ENGINE thinks it is
+    pc0: int = 0            # PC before the token ran, i.e. where it starts (v2)
+    flags: int = 0          # CTX_NULL_BEFORE | CTX_NULL_AFTER (v2)
     rel: str = ""           # "m/MS0017.BIN"
     span: "int | None" = None
     anchor: "int | None" = None
@@ -123,7 +156,8 @@ class _Image:
                 return span, anchor, kind, True
         return None
 
-    def locate(self, rec_id: int, pc: int, ch: int, base: "int | None" = None):
+    def locate(self, rec_id: int, pc: int, ch: int, base: "int | None" = None,
+               pc0: "int | None" = None):
         r = self.by_id.get(rec_id)
         if r is None or r.tokens is None:
             return None
@@ -136,9 +170,13 @@ class _Image:
         hit_ = self._overlay_hit(pc, ch)
         if hit_ is not None:
             return hit_
-        end = pc - (base if base else self.base[rec_id])
+        b = base if base else self.base[rec_id]
+        end = pc - b
         if not 0 <= end <= len(r.data):
-            return None
+            # a v2 trace can still place this by where the token started
+            if pc0 is None:
+                return None
+            end = -1
         want = bytes([ch]) if ch <= 0xFF else bytes([ch >> 8, ch & 0xFF])
         def hit(k, t, jumped):
             anchor = sum(1 for u in r.tokens[:k]
@@ -160,6 +198,17 @@ class _Image:
         for k, t in enumerate(r.tokens):
             if t.off == end:
                 return hit(k, t, True)
+        # 3. v2 only: the token that *starts* at pc0.  The post-call pc is 0
+        #    whenever the token ended the script, because the engine clears the
+        #    context before the hook reads it back -- but pc0 was snapshotted
+        #    before the call and is always good.  This is what rescues those
+        #    events; it is a weaker anchor than 1., so it is tried last.
+        if pc0 is not None:
+            start = pc0 - b
+            if 0 <= start < len(r.data):
+                for k, t in enumerate(r.tokens):
+                    if t.off == start:
+                        return hit(k, t, False)
         return None
 
 
@@ -173,16 +222,27 @@ def decode(trace_path: str, build_dir: "str | None" = None) -> "list[Event]":
     if os.path.exists(ovl):
         with open(ovl, "rb") as fh:
             entries = overlay.parse(fh.read())
+    if data[:4] == MAGIC:
+        _, ver, size = HEADER.unpack_from(data, 0)
+        if ver != 2 or size != RECORD_V2.size:
+            raise ValueError("%s: unknown trace format v%d, %d-byte records"
+                             % (trace_path, ver, size))
+        rs, body = RECORD_V2, data[HEADER.size:]
+    else:
+        rs, body = RECORD_V1, data          # pre-2026-09-06, headerless
     images = {}
     out = []
-    for n in range(len(data) // RECORD.size):
-        f, rec, pc, ch, r, capflag, caplen, ioff, ilen = RECORD.unpack_from(data, n * RECORD.size)
-        ev = Event(n, f, rec, pc, ch, r, capflag, caplen, ioff, ilen, rel=_rel_of(f))
+    for n in range(len(body) // rs.size):
+        f = rs.unpack_from(body, n * rs.size)
+        pc0, flags = (f[9], f[10]) if rs is RECORD_V2 else (0, 0)
+        ev = Event(n, f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8],
+                   pc0, flags, rel=_rel_of(f[0]))
         if ev.rel not in images:
             p = os.path.join(build_dir, *ev.rel.split("/"))
             images[ev.rel] = _Image(ev.rel, open(p, "rb").read(), entries) if os.path.exists(p) else None
         img = images[ev.rel]
-        hit = img.locate(rec, pc, ch, ioff or None) if img else None
+        hit = img.locate(ev.rec, ev.pc, ev.ch, ev.idx_off or None,
+                         ev.pc0 or None) if img else None
         if hit:
             ev.span, ev.anchor, ev.kind, ev.ok = hit
         out.append(ev)

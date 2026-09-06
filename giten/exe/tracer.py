@@ -63,9 +63,13 @@ SYMBOLS = {
 #: IMAGE_SCN_CNT_CODE | CNT_INITIALIZED_DATA | MEM_EXECUTE | MEM_READ | MEM_WRITE
 TRC_CHARACTERISTICS = 0xE0000060
 
-#: file, rec, pc, ch, r, capflag, caplen, idx_off, idx_len
-RECORD = struct.Struct("<HHHHhBBHH")
+#: file, rec, pc, ch, r, capflag, caplen, idx_off, idx_len, pc0, flags
+#: (v2; behind an 8-byte "GTRC" header.  giten/trace/core.py decodes v1 too.)
+RECORD = struct.Struct("<HHHHhBBHHHH")
 RECORD_SIZE = RECORD.size
+TRACE_MAGIC = b"GTRC"
+TRACE_VERSION = 2
+TRACE_HEADER_SIZE = 8
 
 
 def assemble(source: str = SOURCE) -> bytes:

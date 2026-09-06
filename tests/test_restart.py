@@ -450,3 +450,88 @@ def test_the_tracer_never_dereferences_the_script_context_unguarded():
         if deref >= 0:
             assert window.find(test_ecx) < deref, (
                 "the dereference at +0x%02X precedes its null check" % off)
+
+
+def test_tracer_snapshots_the_record_base_before_the_call():
+    """The v2 hook must read the context *before* exec_token, not after.
+
+    The engine clears the script context when a script ends, and exec_token is
+    still reached once afterwards.  v1 read file/rec/pc and the index entry only
+    after the real call returned, so every token that ended a script logged
+    pc = 0 and idx_off = 0 and could not be placed at all -- 106 of 18,683 events
+    on the traced routes.  That is a hole in the oracle, not in the opcode model,
+    which is exactly the kind of gap that makes a model look less certain than it
+    is.
+
+    Checked structurally: the snapshot must be reached before the `call eax`
+    that runs the real function, and it must land in stack locals, because it
+    spans that call and a re-entrant token would otherwise overwrite a shared
+    buffer before the outer invocation wrote it.
+    """
+    blob = tracer.assemble()
+    call = blob.find(b"\xB8" + struct.pack("<I", tracer.EXEC_TOKEN) + b"\xFF\xD0")
+    assert call > 0, "no `mov eax, exec_token; call eax`"
+
+    # the context pointer is read before the call ...
+    ctx = b"\x8B\x0D" + struct.pack("<I", tracer.SYMBOLS["CTX"])
+    assert blob.find(ctx) < call, "CTX is not read before the real call"
+    # ... and so is the handle table it indexes to reach the record base
+    assert blob.find(struct.pack("<I", tracer.SYMBOLS["HANDLE_TABLE"])) < call
+
+    # the snapshot goes to stack locals (sub esp, 12 ... leave), not the cave
+    assert blob[3:6] == b"\x83\xEC\x0C", "no `sub esp, 12` for the locals"
+    assert b"\xC9\xC3" in blob, "no `leave; ret` to match the frame"
+
+    # the record is 20 bytes behind an 8-byte header, and both are written
+    assert tracer.RECORD.size == 20
+    assert tracer.TRACE_MAGIC + struct.pack("<HH", tracer.TRACE_VERSION,
+                                            tracer.RECORD.size) in blob
+    assert b"\x6A\x14" in blob, "no `push 20` for the record WriteFile"
+    assert b"\x6A\x08" in blob, "no `push 8` for the header WriteFile"
+
+
+def test_trace_decoder_reads_both_formats_and_pc0_rescues_a_lost_event():
+    """v1 traces must keep decoding, and v2's pc0 must place what v1 lost."""
+    import io as _io
+
+    from giten import files, script
+    from giten.trace import core
+
+    rel = "m/MS0017.BIN"
+    sc = script.parse(rel, files.read_source(rel))
+    rec = next(r for r in sc.containers[0] if r.data and r.tokens)
+    base = core._Image(rel, files.read_source(rel)).base[rec.id]
+    tok = rec.tokens[1]                      # not the first, so a start != base
+    ch = rec.data[tok.off] if tok.kind == "op" else int.from_bytes(
+        rec.data[tok.off:tok.end], "big")
+
+    fid = int(rel[4:8], 16)
+    common = (fid, rec.id)
+    tail = (ch, 0, 0, 0, base, len(rec.data))
+
+    # v1: the token placed the normal way, by the PC it ended at
+    v1 = core.RECORD_V1.pack(*common, base + tok.end, *tail)
+    ev = _decode_bytes(v1)
+    assert ev.ok and ev.pc0 == 0, ev
+
+    # v2: the context vanished during the token, so pc came back 0 -- v1 could
+    # not place this at all; pc0 still says where the token began
+    v2 = core.MAGIC + struct.pack("<HH", 2, core.RECORD_V2.size) + \
+        core.RECORD_V2.pack(*common, 0, *tail, base + tok.off,
+                            core.CTX_NULL_AFTER)
+    ev = _decode_bytes(v2)
+    assert ev.pc0 == base + tok.off
+    assert ev.flags & core.CTX_NULL_AFTER
+    assert ev.anchor is not None, "pc0 did not rescue the event"
+
+
+def _decode_bytes(data):
+    import tempfile as _tf
+
+    from giten import paths
+    from giten.trace import core
+    d = _tf.mkdtemp()
+    p = os.path.join(d, "t.bin")
+    with open(p, "wb") as fh:
+        fh.write(data)
+    return core.decode(p, os.path.join(paths.REPO_ROOT, "original", "ddswin"))[0]
