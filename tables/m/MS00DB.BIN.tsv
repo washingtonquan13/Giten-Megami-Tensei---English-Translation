@@ -3,7 +3,7 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS00DB.BIN	0:01	0	26	1F80	{03:08}b	{03:08}b				reads: アップb
+m/MS00DB.BIN	0:01	0	25	00	{04:03}{08:62}	{04:03}{08:62}				reads: 　は、
 m/MS00DB.BIN	0:01	1	208	00	何者かに護られ、\n	 is protected by someone,	 is protected by their guardian spirit,\n	v005	draft	reads:  @ours-2026-09-05
 m/MS00DB.BIN	0:01	2	233	00	憑依者の言葉に従{08:51}\n	 obeyed the possessor's words\n			draft	reads: 憑依者の言葉に従った\n; reads: ペンタグランマ｣ @ours-2026-09-05
 m/MS00DB.BIN	0:01	3	253	00	憑依{08:4B}{08:0B}の言葉を退{08:43}\n	 rejected the possessing demon's words\n			draft	reads: 憑依した悪魔の言葉を退けた\n; reads: そんなことｸ @ours-2026-09-05
@@ -34,69 +34,66 @@ m/MS00DB.BIN	0:01	27	730	00	見境がつか{08:25}！\n		 cannot tell friend fro
 m/MS00DB.BIN	0:01	28	753	18	無茶な{08:0C}を{08:86}{08:43}！\n		 attacks randomly!\n	v005		reads: 無茶な攻撃をしかけた！\n; reads: おかげで @refalign
 m/MS00DB.BIN	0:01	29	785	1FC8	{03:06}	{03:06}				reads: 自分に; reads: 何かくだを巻いている\n
 m/MS00DB.BIN	0:01	30	798	18	狂戦士と化{08:17}！\n		 has gone berserk!\n	v005		reads: 狂戦士と化した！！\n; reads: 大笑いしている\n @refalign
-m/MS00DB.BIN	0:01	31	931	1F83	{01:3B}	{01:3B}				reads: さっき; reads: しんみりとしている\n
-m/MS00DB.BIN	0:01	32	956	1F83	{01:3C}	{01:3C}				reads: ひとつ; reads: あらぬところに攻撃している\n
-m/MS00DB.BIN	0:01	33	963	18	うろうろ{08:13}\n		 does nothing.\n	v005		reads: うろうろしている\n; reads: 転倒してしまった\n @refalign
-m/MS00DB.BIN	0:01	34	980	1F01	を、放り出{08:17}\n	 was thrown out!\n			draft	reads: を、放り出した！\n; reads: 飛び道具を、放り出した！\n; reads: ＮＯ @ours-2026-09-05
-m/MS00DB.BIN	0:01	35	998	00	{08:63}を殴っ{08:14}\n	 is hitting themself	 is punching themselves.\n	ours	draft	reads: 自分を殴っている\n; reads: 自分を殴っている\n @ours-2026-09-05
-m/MS00DB.BIN	0:01	36	1021	00	転倒{08:4A}気絶{08:4A}{08:1F}！\n		 fell and fainted!\n	v005		reads: 転倒して気絶してしまった！\n; reads: 絶叫している\n{1E10:01021E}
-m/MS00DB.BIN	0:01	37	1057	00	{08:8D}の判ら{08:25}{08:46}を口走っ{08:14}\n		 fell and fainted!\n	v005		reads: わけの判らないことを口走っている\n; reads: 立ちすくんでいる\n @refalign
-m/MS00DB.BIN	0:01	38	1081	00	ぐるぐる廻っ{08:14}\n		 spouts out utter nonsense.\n	v005		reads: ぐるぐる廻っている\n; reads: 身動きが出来ない\n @refalign
-m/MS00DB.BIN	0:01	39	1097	00	何で{08:0C}し{08:69}か迷っ{08:14}\n		 spins around wildly.\n	v005		reads: 何で攻撃しようか迷っている\n; reads: 何で攻撃しようか迷っている\n @refalign
-m/MS00DB.BIN	0:01	40	1117	00	引きつ{08:51}{08:69}に笑っ{08:14}\n		 holds back their attack.\n	v005		reads: 引きつったように笑っている\n; reads: 見境がつかない！\n @refalign
-m/MS00DB.BIN	0:01	41	1137	00	頭を抱えこんで{08:40}\n		 giggles like crazy.\n	v005		reads: 頭を抱えこんでいる\n; reads: 無茶な攻撃をしかけた！\n @refalign
-m/MS00DB.BIN	0:01	42	1155	00	メギドラオンを唱{08:41}！\n{1E10:010228}\n？？？{02:09}{08:61}何も起ら{08:19}\n	 cast Megidolaon!	 casts Megidolaon!\n{1E10:010228}\n...However, nothing happened.\n	v005	draft	reads: メギドラオンを唱えた！\n{1E10:010228}\n？？？・・・しかし何も起らなかった\n; reads: 自分に @ours-2026-09-05
-m/MS00DB.BIN	0:01	43	1204	00	何やら呪文を唱え{08:14}\n{1E10:010228}\n？？？{08:90}やら、出まかせの{08:69}だ\n		 casts Megidolaon!\n{1E10:010228}\n...However, nothing happened.\n	v005		reads: 何やら呪文を唱えている\n{1E10:010228}\n？？？どうやら、出まかせのようだ\n; reads: 狂戦士と化した！！\n @refalign
-m/MS00DB.BIN	0:01	44	1259	00	忘れ物を思い出{08:4B}\n	 remembered something left behind	 remembered something.\n	v005	draft	reads: 忘れ物を思い出した\n; reads: わたしのdあんた @ours-2026-09-05
-m/MS00DB.BIN	0:01	45	1277	00	混乱{08:13}\n	 is confused	 struck by confusion.\n	v005	draft	reads: 混乱している\n; reads: 混乱している\n @ours-2026-09-05
-m/MS00DB.BIN	0:01	46	1285	00	チェンジ！\n	: Change!	: Change!\n	v005	draft	reads: AKわたしをひとり開発 @ours-2026-09-05
-m/MS00DB.BIN	0:01	47	1297	00	一瞬我に返{08:51}\n	 came to for a moment	 came to their senses.\n	v005	draft	reads: 一瞬我に返った\n; reads: 一瞬我に返った\n @ours-2026-09-05
-m/MS00DB.BIN	0:01	48	1311	00	ふと気がつ{08:64}{08:69}だ\n	 seems to have snapped out of it	 suddenly came to.\n	v005	draft	reads: ふと気がついたようだ\n; reads: d @ours-2026-09-05
-m/MS00DB.BIN	0:01	49	1329	00	幻覚を払いの{08:43}！\n	 shook off the illusion!	 warded off the Visions!\n	v005	draft	reads: 幻覚を払いのけた！\n; reads: 幻覚を払いのけた！\n @ours-2026-09-05
-m/MS00DB.BIN	0:01	50	1394	0E	おかしな事を口走っ{08:14}\n	 is babbling nonsense\n			draft	reads: おかしな事を口走っている\n; reads: さっき @ours-2026-09-05
-m/MS00DB.BIN	0:01	51	1416	00	幻覚{03:02}{08:14}\n	 is attacking an illusion	K{01:60}	v005	draft	reads: 幻覚を攻撃している\n; reads: ひとつ @ours-2026-09-05
-m/MS00DB.BIN	0:01	52	1433	0B	{1E10:010214}幻は消えうせた！\n		{1E10:010214} freed from the Visions!\n	v005		reads: うろうろしている\n @refalign
-m/MS00DB.BIN	0:01	53	1467	00	幻と話{08:13}\n		 talks with the Visions.\n	v005		reads: 幻と話している\n; reads: 飛び道具を、放り出した！\n @refalign
-m/MS00DB.BIN	0:01	54	1484	0B	{1E10:010214}幻は消えうせた！\n		{1E10:010214} freed from the Visions!\n	v005		reads: 自分を殴っている\n @refalign
-m/MS00DB.BIN	0:01	55	1524	00	見ては{08:7D}ぬ{08:5E}を垣間見てしまい、\n		 peeps at the horrors.\n	v005		reads: 見てはならぬものを垣間見てしまい、\n; reads: 転倒して気絶してしまった！\n @refalign
-m/MS00DB.BIN	0:01	56	1569	00	死のイメージに取りつか{08:11}\n		 are overcome by the image of Death!\n	v005		reads: 死のイメージに取りつかれた！\n; reads: わけの判らないことを口走っている\n @refalign
-m/MS00DB.BIN	0:01	57	1619	00	幻の中で{03:12}裂か{08:11}\n		 are torn apart by the Visions!\n	v005		reads: 幻の中で切り裂かれた！\n; reads: ぐるぐる廻っている\n @refalign
-m/MS00DB.BIN	0:01	58	1676	18	人智を越{08:41}存在が襲いかかる！！\n		 are attacked by beings beyond the human mind!\n	v005		reads: 人智を越えた存在が襲いかかる！！\n; reads: 何で攻撃しようか迷っている\n @refalign
-m/MS00DB.BIN	0:01	59	1708	00	ひどい幻覚に捕らわれ{08:14}！\n		 are trapped in a world of nightmares!\n	v005		reads: ひどい幻覚に捕らわれている！\n; reads: 引きつったように笑っている\n @refalign
-m/MS00DB.BIN	0:01	60	1758	1FC4	高笑いを{08:13}\n		 is laughing like crazy.\n	v005		reads: 高笑いをしている\n; reads: 頭を抱えこんでいる\n @refalign
-m/MS00DB.BIN	0:01	61	1770	00	ハイ{08:42}目が醒めた\n		 gets down from their high.\n	v005		reads: ハイから目が醒めた\n; reads: メギドラオンを唱えた！\n{1E10:010228}\n？？？・・・しかし何も起らなかった\n @refalign
-m/MS00DB.BIN	0:01	62	1799	00	気持ち{08:8B}踊っ{08:14}\n		 is dancing crazy.\n	v005		reads: 気持ちよく踊っている\n; reads: 何やら呪文を唱えている\n{1E10:010228}\n？？？どうやら、出まかせのようだ\n @refalign
-m/MS00DB.BIN	0:01	63	1819	1FC4	戦いを楽しんで{08:40}\n		 is enjoying the battle.\n	v005		reads: 戦いを楽しんでいる\n; reads: 忘れ物を思い出した\n @refalign
-m/MS00DB.BIN	0:01	64	1837	00	やる気を出{08:4B}\n		 is filled with will to fight.\n	v005		reads: やる気を出した\n; reads: 混乱している\n @refalign
-m/MS00DB.BIN	0:01	65	1851	00	戦いを止めに入{08:51}\n		 doesn't want to fight.\n	v005		reads: 戦いを止めに入った\n; reads: 戦いを止めに入った\n @refalign
-m/MS00DB.BIN	0:01	66	1869	00	しぶしぶ戦闘に加わ{08:51}\n		 reluctantly joins the battle.\n	v005		reads: しぶしぶ戦闘に加わった\n; reads: 一瞬我に返った\n @refalign
-m/MS00DB.BIN	0:01	67	1891	00	喜んで戦闘に加わ{08:51}\n		 happily joins the battle.\n	v005		reads: 喜んで戦闘に加わった\n; reads: ふと気がついたようだ\n @refalign
-m/MS00DB.BIN	0:01	68	1911	00	リラックス{08:13}\n		 is relaxing.\n	v005		reads: リラックスしている\n; reads: 幻覚を払いのけた！\n @refalign
-m/MS00DB.BIN	0:01	69	1943	1FC4	{04:03}の{03:0D}が	{04:03}'s HP	{04:03}'s HP went up by 	v005	draft	reads: 　のＨＰが; reads: 無事 @ours-2026-09-05
-m/MS00DB.BIN	0:01	70	1955	1F02	増進{08:4B}\n	 increased\n			draft	reads: 増進した\n; reads: K @ours-2026-09-05
-m/MS00DB.BIN	0:01	71	1969	1FC9	さらに{03:0E}が	Furthermore, MP	Furthermore, their MP went up by 	v005	draft	reads: さらにＭＰが; reads: d @ours-2026-09-05
-m/MS00DB.BIN	0:01	72	1983	1F02	増進{08:4B}\n	 increased\n			draft	reads: 増進した\n; reads: 増進した\n @ours-2026-09-05
-m/MS00DB.BIN	0:01	73	2021	00	幸せそうに微笑んで{08:40}\n	 is smiling happily	 is giggling happily.\n	v005	draft	reads: 幸せそうに微笑んでいる\n; reads: 幸せそうに微笑んでいる\n @ours-2026-09-05
-m/MS00DB.BIN	0:01	74	2043	00	幸せそうに踊っ{08:14}\n	 is dancing happily	 is dancing happily.\n	v005	draft	reads: 幸せそうに踊っている\n; reads: P @ours-2026-09-05
-m/MS00DB.BIN	0:01	75	2079	1F4E	{=EC}{=03}{03:8E}兜氓ﾉ包まれながら、{03:0E}が	{=EC}{=03}{03:8E}兜氓ﾉ包まれながら、{03:0E}が	{=EC}{=03}{03:54}heir MP went up by 	v005		reads: {=EC}{=03}兜氓ﾉ包まれながら、ＭＰが; reads: d
-m/MS00DB.BIN	0:01	76	2110	1F02	増加{08:4B}\n	 increased\n			draft	reads: 増加した\n; reads: おかしな事を口走っている\n @ours-2026-09-05
-m/MS00DB.BIN	0:01	77	2118	00	強烈な駄洒落をかま{08:17}\n{1E10:010296}{02:09}{02:09}・\n<wait>何もかもが白々と{08:4A}見{08:28}\n{04:03}以外の目には{02:09}・\n		 tries to tell a joke!\n{1E10:010296}......\n<wait>No one else seems to find it funny...\n	v005		reads: 強烈な駄洒落をかました！\n{1E10:010296}・・・・・・・\n<wait>何もかもが白々として見える\n　以外の目には・・・・\n; reads: 幻覚を攻撃している\n @rebase-unmatched idx77 en= attacks the Visions.\n @rebase-unmatched idx77 en= attacks the Visions.\n @refalign
-m/MS00DB.BIN	0:01	78	2198	00	ほろ酔い気分だ\n		 is feeling slightly buzzed.\n	v005		@refalign
-m/MS00DB.BIN	0:01	79	2221	1E5C	見境無しに{08:0C}{08:13}！\n		 is throwing punches wildly!\n	v005		reads: 見境無しに攻撃している！\n; reads: 幻と話している\n @refalign
-m/MS00DB.BIN	0:01	80	2246	1E5C	無茶な{08:0C}を{08:86}{08:43}！\n		 attacks randomly!\n	v005		reads: 無茶な攻撃をしかけた！\n; reads: 無茶な攻撃をしかけた！\n @refalign
-m/MS00DB.BIN	0:01	81	2266	18	無茶くちゃな{08:0C}をし{08:1C}\n		 is attacking with no reservation!\n	v005		reads: 無茶くちゃな攻撃をしてきた！\n; reads: 見てはならぬものを垣間見てしまい、\n @refalign
-m/MS00DB.BIN	0:01	82	2295	1F43	{03:06}	{03:06}				reads: 自分に; reads: 死のイメージに取りつかれた！\n @rebase-unmatched idx85 en= are trapped in a world of nightmares!\n @rebase-unmatched idx85 en= are trapped in a world of nightmares!\n
+m/MS00DB.BIN	0:01	31	963	18	うろうろ{08:13}\n		 does nothing.\n	v005		reads: うろうろしている\n; reads: 転倒してしまった\n @refalign
+m/MS00DB.BIN	0:01	32	980	1F01	を、放り出{08:17}\n	 was thrown out!\n			draft	reads: を、放り出した！\n; reads: 飛び道具を、放り出した！\n; reads: ＮＯ @ours-2026-09-05
+m/MS00DB.BIN	0:01	33	998	00	{08:63}を殴っ{08:14}\n	 is hitting themself	 is punching themselves.\n	ours	draft	reads: 自分を殴っている\n; reads: 自分を殴っている\n @ours-2026-09-05
+m/MS00DB.BIN	0:01	34	1021	00	転倒{08:4A}気絶{08:4A}{08:1F}！\n		 fell and fainted!\n	v005		reads: 転倒して気絶してしまった！\n; reads: 絶叫している\n{1E10:01021E}
+m/MS00DB.BIN	0:01	35	1057	00	{08:8D}の判ら{08:25}{08:46}を口走っ{08:14}\n		 fell and fainted!\n	v005		reads: わけの判らないことを口走っている\n; reads: 立ちすくんでいる\n @refalign
+m/MS00DB.BIN	0:01	36	1081	00	ぐるぐる廻っ{08:14}\n		 spouts out utter nonsense.\n	v005		reads: ぐるぐる廻っている\n; reads: 身動きが出来ない\n @refalign
+m/MS00DB.BIN	0:01	37	1097	00	何で{08:0C}し{08:69}か迷っ{08:14}\n		 spins around wildly.\n	v005		reads: 何で攻撃しようか迷っている\n; reads: 何で攻撃しようか迷っている\n @refalign
+m/MS00DB.BIN	0:01	38	1117	00	引きつ{08:51}{08:69}に笑っ{08:14}\n		 holds back their attack.\n	v005		reads: 引きつったように笑っている\n; reads: 見境がつかない！\n @refalign
+m/MS00DB.BIN	0:01	39	1137	00	頭を抱えこんで{08:40}\n		 giggles like crazy.\n	v005		reads: 頭を抱えこんでいる\n; reads: 無茶な攻撃をしかけた！\n @refalign
+m/MS00DB.BIN	0:01	40	1155	00	メギドラオンを唱{08:41}！\n{1E10:010228}\n？？？{02:09}{08:61}何も起ら{08:19}\n	 cast Megidolaon!	 casts Megidolaon!\n{1E10:010228}\n...However, nothing happened.\n	v005	draft	reads: メギドラオンを唱えた！\n{1E10:010228}\n？？？・・・しかし何も起らなかった\n; reads: 自分に @ours-2026-09-05
+m/MS00DB.BIN	0:01	41	1204	00	何やら呪文を唱え{08:14}\n{1E10:010228}\n？？？{08:90}やら、出まかせの{08:69}だ\n		 casts Megidolaon!\n{1E10:010228}\n...However, nothing happened.\n	v005		reads: 何やら呪文を唱えている\n{1E10:010228}\n？？？どうやら、出まかせのようだ\n; reads: 狂戦士と化した！！\n @refalign
+m/MS00DB.BIN	0:01	42	1259	00	忘れ物を思い出{08:4B}\n	 remembered something left behind	 remembered something.\n	v005	draft	reads: 忘れ物を思い出した\n; reads: わたしのdあんた @ours-2026-09-05
+m/MS00DB.BIN	0:01	43	1277	00	混乱{08:13}\n	 is confused	 struck by confusion.\n	v005	draft	reads: 混乱している\n; reads: 混乱している\n @ours-2026-09-05
+m/MS00DB.BIN	0:01	44	1285	00	チェンジ！\n	: Change!	: Change!\n	v005	draft	reads: AKわたしをひとり開発 @ours-2026-09-05
+m/MS00DB.BIN	0:01	45	1297	00	一瞬我に返{08:51}\n	 came to for a moment	 came to their senses.\n	v005	draft	reads: 一瞬我に返った\n; reads: 一瞬我に返った\n @ours-2026-09-05
+m/MS00DB.BIN	0:01	46	1311	00	ふと気がつ{08:64}{08:69}だ\n	 seems to have snapped out of it	 suddenly came to.\n	v005	draft	reads: ふと気がついたようだ\n; reads: d @ours-2026-09-05
+m/MS00DB.BIN	0:01	47	1329	00	幻覚を払いの{08:43}！\n	 shook off the illusion!	 warded off the Visions!\n	v005	draft	reads: 幻覚を払いのけた！\n; reads: 幻覚を払いのけた！\n @ours-2026-09-05
+m/MS00DB.BIN	0:01	48	1394	0E	おかしな事を口走っ{08:14}\n	 is babbling nonsense\n			draft	reads: おかしな事を口走っている\n; reads: さっき @ours-2026-09-05
+m/MS00DB.BIN	0:01	49	1416	00	幻覚{03:02}{08:14}\n	 is attacking an illusion	K{01:60}	v005	draft	reads: 幻覚を攻撃している\n; reads: ひとつ @ours-2026-09-05
+m/MS00DB.BIN	0:01	50	1433	0B	{1E10:010214}幻は消えうせた！\n		{1E10:010214} freed from the Visions!\n	v005		reads: うろうろしている\n @refalign
+m/MS00DB.BIN	0:01	51	1467	00	幻と話{08:13}\n		 talks with the Visions.\n	v005		reads: 幻と話している\n; reads: 飛び道具を、放り出した！\n @refalign
+m/MS00DB.BIN	0:01	52	1484	0B	{1E10:010214}幻は消えうせた！\n		{1E10:010214} freed from the Visions!\n	v005		reads: うろうろしている\n @refalign
+m/MS00DB.BIN	0:01	53	1524	00	見ては{08:7D}ぬ{08:5E}を垣間見てしまい、\n		 peeps at the horrors.\n	v005		reads: 見てはならぬものを垣間見てしまい、\n; reads: 転倒して気絶してしまった！\n @refalign
+m/MS00DB.BIN	0:01	54	1569	00	死のイメージに取りつか{08:11}\n		 are overcome by the image of Death!\n	v005		reads: 死のイメージに取りつかれた！\n; reads: わけの判らないことを口走っている\n @refalign
+m/MS00DB.BIN	0:01	55	1619	00	幻の中で{03:12}裂か{08:11}\n		 are torn apart by the Visions!\n	v005		reads: 幻の中で切り裂かれた！\n; reads: ぐるぐる廻っている\n @refalign
+m/MS00DB.BIN	0:01	56	1676	18	人智を越{08:41}存在が襲いかかる！！\n		 are attacked by beings beyond the human mind!\n	v005		reads: 人智を越えた存在が襲いかかる！！\n; reads: 何で攻撃しようか迷っている\n @refalign
+m/MS00DB.BIN	0:01	57	1708	00	ひどい幻覚に捕らわれ{08:14}！\n		 are trapped in a world of nightmares!\n	v005		reads: ひどい幻覚に捕らわれている！\n; reads: 引きつったように笑っている\n @refalign
+m/MS00DB.BIN	0:01	58	1758	1FC4	高笑いを{08:13}\n		 is laughing like crazy.\n	v005		reads: 高笑いをしている\n; reads: 頭を抱えこんでいる\n @refalign
+m/MS00DB.BIN	0:01	59	1770	00	ハイ{08:42}目が醒めた\n		 gets down from their high.\n	v005		reads: ハイから目が醒めた\n; reads: メギドラオンを唱えた！\n{1E10:010228}\n？？？・・・しかし何も起らなかった\n @refalign
+m/MS00DB.BIN	0:01	60	1799	00	気持ち{08:8B}踊っ{08:14}\n		 is dancing crazy.\n	v005		reads: 気持ちよく踊っている\n; reads: 何やら呪文を唱えている\n{1E10:010228}\n？？？どうやら、出まかせのようだ\n @refalign
+m/MS00DB.BIN	0:01	61	1819	1FC4	戦いを楽しんで{08:40}\n		 is enjoying the battle.\n	v005		reads: 戦いを楽しんでいる\n; reads: 忘れ物を思い出した\n @refalign
+m/MS00DB.BIN	0:01	62	1837	00	やる気を出{08:4B}\n		 is filled with will to fight.\n	v005		reads: やる気を出した\n; reads: 混乱している\n @refalign
+m/MS00DB.BIN	0:01	63	1851	00	戦いを止めに入{08:51}\n		 doesn't want to fight.\n	v005		reads: 戦いを止めに入った\n; reads: 戦いを止めに入った\n @refalign
+m/MS00DB.BIN	0:01	64	1869	00	しぶしぶ戦闘に加わ{08:51}\n		 reluctantly joins the battle.\n	v005		reads: しぶしぶ戦闘に加わった\n; reads: 一瞬我に返った\n @refalign
+m/MS00DB.BIN	0:01	65	1891	00	喜んで戦闘に加わ{08:51}\n		 happily joins the battle.\n	v005		reads: 喜んで戦闘に加わった\n; reads: ふと気がついたようだ\n @refalign
+m/MS00DB.BIN	0:01	66	1911	00	リラックス{08:13}\n		 is relaxing.\n	v005		reads: リラックスしている\n; reads: 幻覚を払いのけた！\n @refalign
+m/MS00DB.BIN	0:01	67	1943	1FC4	{04:03}の{03:0D}が	{04:03}'s HP	{04:03}'s HP went up by 	v005	draft	reads: 　のＨＰが; reads: 無事 @ours-2026-09-05
+m/MS00DB.BIN	0:01	68	1955	1F02	増進{08:4B}\n	 increased\n			draft	reads: 増進した\n; reads: K @ours-2026-09-05
+m/MS00DB.BIN	0:01	69	1969	1FC9	さらに{03:0E}が	Furthermore, MP	Furthermore, their MP went up by 	v005	draft	reads: さらにＭＰが; reads: d @ours-2026-09-05
+m/MS00DB.BIN	0:01	70	1983	1F02	増進{08:4B}\n	 increased\n			draft	reads: 増進した\n; reads: K @ours-2026-09-05
+m/MS00DB.BIN	0:01	71	2021	00	幸せそうに微笑んで{08:40}\n	 is smiling happily	 is giggling happily.\n	v005	draft	reads: 幸せそうに微笑んでいる\n; reads: 幸せそうに微笑んでいる\n @ours-2026-09-05
+m/MS00DB.BIN	0:01	72	2043	00	幸せそうに踊っ{08:14}\n	 is dancing happily	 is dancing happily.\n	v005	draft	reads: 幸せそうに踊っている\n; reads: P @ours-2026-09-05
+m/MS00DB.BIN	0:01	73	2079	1F4E	{=EC}{=03}{03:8E}兜氓ﾉ包まれながら、{03:0E}が	{=EC}{=03}{03:8E}兜氓ﾉ包まれながら、{03:0E}が	{=EC}{=03}{03:54}heir MP went up by 	v005		reads: {=EC}{=03}兜氓ﾉ包まれながら、ＭＰが; reads: d
+m/MS00DB.BIN	0:01	74	2110	1F02	増加{08:4B}\n	 increased\n			draft	reads: 増加した\n; reads: おかしな事を口走っている\n @ours-2026-09-05
+m/MS00DB.BIN	0:01	75	2118	00	強烈な駄洒落をかま{08:17}\n{1E10:010296}{02:09}{02:09}・\n<wait>何もかもが白々と{08:4A}見{08:28}\n{04:03}以外の目には{02:09}・\n		 tries to tell a joke!\n{1E10:010296}......\n<wait>No one else seems to find it funny...\n	v005		reads: 強烈な駄洒落をかました！\n{1E10:010296}・・・・・・・\n<wait>何もかもが白々として見える\n　以外の目には・・・・\n; reads: 幻覚を攻撃している\n @rebase-unmatched idx77 en= attacks the Visions.\n @rebase-unmatched idx77 en= attacks the Visions.\n @refalign
+m/MS00DB.BIN	0:01	76	2198	00	ほろ酔い気分だ\n		 is feeling slightly buzzed.\n	v005		@refalign
+m/MS00DB.BIN	0:01	77	2221	1E5C	見境無しに{08:0C}{08:13}！\n		 is throwing punches wildly!\n	v005		reads: 見境無しに攻撃している！\n; reads: 幻と話している\n @refalign
+m/MS00DB.BIN	0:01	78	2246	1E5C	無茶な{08:0C}を{08:86}{08:43}！\n		 attacks randomly!\n	v005		reads: 無茶な攻撃をしかけた！\n; reads: おかげで @refalign
+m/MS00DB.BIN	0:01	79	2266	18	無茶くちゃな{08:0C}をし{08:1C}\n		 is attacking with no reservation!\n	v005		reads: 無茶くちゃな攻撃をしてきた！\n; reads: 見てはならぬものを垣間見てしまい、\n @refalign
+m/MS00DB.BIN	0:01	80	2295	1F43	{03:06}	{03:06}				reads: 自分に; reads: 何かくだを巻いている\n
 m/MS00DB.BIN	0:0C	0	10	1F4E	{=EC}{=03}{03:1F}{02:03}{03:03}	{=EC}{=03}{03:1F}{02:03}{03:03}	{=EC}{=03}{03:53}uffered 	v005		reads: {=EC}{=03}レジスタンスだした
 m/MS00DB.BIN	0:0C	1	21	0D	ダメージをあびた\n		 damage to HP.\n	v005		@refalign
 m/MS00DB.BIN	0:0D	0	0	UNTILED	N / ﾊ / を失 / Q	N / ﾊ / を失 / Q				@noedit; @untiled; record does not tile (switch entry at 0x13 has kind 240 (not 0 or 1)); read-only, copied verbatim; reads: {=EC}{=03}レジスタンスだした @rebase-new @rebase-unmatched idx0 en={=EC}{=03}{03:4C}ost @rebase-unmatched idx0 en={=EC}{=03}{03:4C}ost
 m/MS00DB.BIN	0:26	0	19	00	{05:03}	{05:03}				reads: 飛び道具
 m/MS00DB.BIN	0:27	0	30	1FEC	{05:03}	{05:03}				reads: 飛び道具
-m/MS00DB.BIN	0:27	1	51	11	{05:03}	{05:03}				reads: 飛び道具
-m/MS00DB.BIN	0:27	2	72	12	{05:03}	{05:03}				reads: 飛び道具
-m/MS00DB.BIN	0:27	3	93	13	{05:03}	{05:03}				reads: 飛び道具
-m/MS00DB.BIN	0:27	4	114	14	{05:03}	{05:03}				reads: 飛び道具
-m/MS00DB.BIN	0:27	5	135	15	{05:03}	{05:03}				reads: 飛び道具
-m/MS00DB.BIN	0:27	6	156	16	{03:00}	{03:00}				reads: 飛び道具
+m/MS00DB.BIN	0:27	1	51	1FEF	{05:03}	{05:03}				reads: 飛び道具
+m/MS00DB.BIN	0:27	2	72	1FEF	{05:03}	{05:03}				reads: 飛び道具
+m/MS00DB.BIN	0:27	3	93	1FEF	{05:03}	{05:03}				reads: 飛び道具
+m/MS00DB.BIN	0:27	4	114	1FEF	{05:03}	{05:03}				reads: 飛び道具
+m/MS00DB.BIN	0:27	5	135	1FEF	{05:03}	{05:03}				reads: 飛び道具
 m/MS00DB.BIN	0:28	0	60	18	{03:19}	{03:19}				reads: 
 m/MS00DB.BIN	0:28	1	85	18	{03:19}	{03:19}				reads: 
 m/MS00DB.BIN	0:28	2	110	18	{03:19}	{03:19}				reads: 

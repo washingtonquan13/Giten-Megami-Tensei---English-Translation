@@ -127,10 +127,8 @@ m/MS003A.BIN	0:1C	48	1170	1FB2	立ち去る		Leave	v005		menu option, declared w
 m/MS003A.BIN	0:1D	0	0	UNTILED	ｺ / ﾐ誰が飲み / :  / : / ｺ / ﾐ / > / は泉の水を飲んでみた。 / ｺ / ﾐ / 冝E / ・ / ・ / ﾐ / ｹ / G / ｹ / : / ｹ / - / ｹ / ｹ / ' / ? /  / : / : / : / : / : / : / : /  / : / : / : / : / : / : /  / : / : / : / : / : / : /  / :					@noedit; @untiled; record does not tile (switch entry at 0xA3 has kind 39 (not 0 or 1)); read-only, copied verbatim; reads: 誰が飲みますか？\n @rebase-new @rebase-unmatched idx0 en=Who will drink the water?\n @rebase-unmatched idx1 en= drank the spring water.\n<wait> @rebase-unmatched idx0 en=Who will drink the water?\n @rebase-unmatched idx1 en= drank the spring water.\n<wait>
 m/MS003A.BIN	0:1E	0	29	1F2F	を投げ込{08:5F}。\n<wait>	 was thrown into the spring.\n<wait>	 was thrown into the spring.\n<wait>	v005	draft	reads: を投げ込んだ。\n<wait>; reads: だした @ours-2026-09-05
 m/MS003A.BIN	0:1E	1	56	1FFA	{02:09}{02:09}{02:09}・・		 was thrown into the spring.\n<wait>\n.........	v005		reads: ・・・・・・・・・・・; reads: を投げ込んだ。\n<wait> @refalign @refalign-joined
-m/MS003A.BIN	0:20	0	34	1F81	{03:17}{03:19}	{03:17}{03:19}				reads: 
 m/MS003A.BIN	0:21	0	40	1B	メンバー名	Member Name	Name	v005	draft	reads: われわれ @rebase-unmatched idx4 en={05:01}Y @rebase-unmatched idx5 en={06:01}U @rebase-unmatched idx4 en={05:01}Y @rebase-unmatched idx5 en={06:01}U @ours-2026-09-05
-m/MS003A.BIN	0:22	0	41	1F83	{03:17}{03:18}	{03:17}{03:18}				reads: 
-m/MS003A.BIN	0:22	1	72	1F80	ﾉ投げ込{08:2E}武器を持{08:52}い{02:0A}。\n<wait>		 have no weapons to throw into the spring.\n<wait>	v005		reads: ﾉ投げ込める武器を持っていません。\n<wait>; reads: ﾉ投げ込める武器を持っていません。\n<wait> @refalign
+m/MS003A.BIN	0:22	0	71	1F80	泉に投げ込{08:2E}武器を持{08:52}い{02:0A}。\n<wait>					reads: 泉に投げ込める武器を持っていません。\n<wait>
 m/MS003A.BIN	0:23	0	40	1B	{02:04}名	Item Name	Item	v005	draft	reads: アイテム名; reads: われわれ @ours-2026-09-05
 m/MS003A.BIN	0:24	0	73	00	{01:00}	{01:00}				reads: 早坂達也
 m/MS003A.BIN	0:24	1	87	00	{02:00}	{02:00}				reads: デビルバスター
@@ -138,7 +136,26 @@ m/MS003A.BIN	0:24	2	101	00	{03:00}	{03:00}				reads: 飛び道具
 m/MS003A.BIN	0:24	3	115	00	{04:00}	{04:00}				reads: を唱えた！ 
 m/MS003A.BIN	0:24	4	129	00	{05:00}	{05:00}				reads: はいいいえ; reads: はいいいえニュートン
 m/MS003A.BIN	0:24	5	142	1F51	{03:18}	{03:18}				reads: 
-m/MS003A.BIN	0:26	0	0	UNTILED	ﾐ澄み通 / Q水を湛 / A泉が / {。 / 泉に近づこうと / Lどこ / Bとも無く声が聞こえて / 。 / ｺ / ﾒ声： / ﾓ待たれよ、若者。おぬし、よい剣をさげておるな。 / ﾁ / ﾐ / ｱ / ｲ / Mほど / V / ｲとん / V / % / ｷ / ﾑ /  / ｺ / ﾒ声： / ﾓ / Mはかの名剣、まさしく天叢雲剣。 / r / Mがしに譲 / Rはくれぬか？ / ﾁ / ﾐ / ｱ / ｲ困り / Z / ｲとん / V / % / ｷ / ﾑ /  / ｺ / ﾒ声： / ﾓそこを曲げてお頼み申す！  / ﾁ / ﾐ / ｱ / ｲだーめーだっ / ｲ死ん / Vやらん / ｷ / ﾑ / 1 /  / ｺ / ﾒハアゲンティ： / ﾓ / rぬうぅ / r / |腕ずくに / V！ / ｺ / ﾒハアゲンティ： / ﾓ / |死ね！ / Z / ｺ / ｭ / ｬ / ｪ / w / ｾ /  / d /  / d / ｾ					@noedit; @untiled; record does not tile (expression node 0x0D payload past end); read-only, copied verbatim
+m/MS003A.BIN	0:26	0	2	1FD0	澄み通{08:51}水を湛{08:41}泉が{08:7B}。\n泉に近づこうと{08:4C}どこ{08:42}とも無く声が聞こえて{08:1E}。\n<wait>					reads: 澄み通った水を湛えた泉がある。\n泉に近づこうとするとどこからとも無く声が聞こえてきた。\n<wait>
+m/MS003A.BIN	0:26	1	82	1FD2	声：					
+m/MS003A.BIN	0:26	2	88	1FD3	待たれよ、若者。おぬし、よい剣をさげておるな。\n					
+m/MS003A.BIN	0:26	3	151	1FB2	{08:4D}ほど{08:56}					reads: それほどでも; menu option, declared width 20 columns
+m/MS003A.BIN	0:26	4	161	1FB2	とん{08:56}{08:25}					reads: とんでもない; menu option, declared width 20 columns
+m/MS003A.BIN	0:26	5	191	1FD2	声：					
+m/MS003A.BIN	0:26	6	197	1FD3	{08:4D}はかの名剣、まさしく天叢雲剣。\n{08:72}{08:4D}がしに譲{08:52}はくれぬか？\n					reads: それはかの名剣、まさしく天叢雲剣。\n‥‥それがしに譲ってはくれぬか？\n
+m/MS003A.BIN	0:26	7	273	1FB2	困り{08:5A}					reads: 困ります; menu option, declared width 20 columns
+m/MS003A.BIN	0:26	8	281	1FB2	とん{08:56}{08:25}					reads: とんでもない; menu option, declared width 20 columns
+m/MS003A.BIN	0:26	9	311	1FD2	声：					
+m/MS003A.BIN	0:26	10	317	1FD3	そこを曲げてお頼み申す！ \n					
+m/MS003A.BIN	0:26	11	359	1FB2	だーめーだっ					menu option, declared width 20 columns
+m/MS003A.BIN	0:26	12	373	1FB2	死ん{08:56}やらん					reads: 死んでもやらん; menu option, declared width 20 columns
+m/MS003A.BIN	0:26	13	407	1FD2	ハアゲンティ：					
+m/MS003A.BIN	0:26	14	423	1FD3	{08:72}ぬうぅ{08:72}{08:7C}腕ずくに{08:56}！\n					reads: ‥‥ぬうぅ‥‥ならば腕ずくにでも！\n
+m/MS003A.BIN	0:26	15	455	1FD2	ハアゲンティ：					
+m/MS003A.BIN	0:26	16	471	1FD3	{08:7C}死ね！\n					reads: ならば死ね！\n
+m/MS003A.BIN	0:26	17	542	00	{04:FF}	{04:FF}				reads: 
+m/MS003A.BIN	0:26	18	545	00	d{04:FF}	d{04:FF}				reads: d
+m/MS003A.BIN	0:26	19	549	00	d	d				
 m/MS003A.BIN	0:27	0	4	1FD2	泉のお姉さんα：		Water Woman A:	v005		
 m/MS003A.BIN	0:27	1	22	1FD3	肩こり～眼精疲労～\n<wait>		Stiff shoulders~ Sore eyes~\n<wait>	v005		
 m/MS003A.BIN	0:27	2	49	1FD2	泉のお姉さんβ：		Water Woman B:	v005		
@@ -189,7 +206,39 @@ m/MS003A.BIN	0:28	21	573	1FD3	{02:08}{02:08}\n（{08:72}おかあさん{08:72}�
 m/MS003A.BIN	0:28	22	605	1FD0	{08:72}ごくん\n<wait>	...Gulp.\n<wait>			draft	reads: ‥‥ごくん\n<wait>; reads: ‥‥ごくん\n<wait> @ours-2026-09-05
 m/MS003A.BIN	0:28	23	622	1FD2	泉のお姉さん達：	Spring Ladies:			draft	@ours-2026-09-05
 m/MS003A.BIN	0:28	24	640	1FD3	{02:08}{02:08}\n（誰か～助けて～）\n<wait>	............\n(Somebody~ help~)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（誰か～助けて～）\n<wait>; reads: ‥‥‥‥‥‥\n（誰か～助けて～）\n<wait> @ours-2026-09-05
-m/MS003A.BIN	0:29	0	0	UNTILED	:" / :' / : / ｺ / ﾐ / / / / / を投げ込 / _。 / ｺ / ] / ﾓ / （わッ！ / Xよこいつ、やる気？） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （ひいっ / r） / ｺ / ﾒ泉のお姉さんα： / ﾓ / （ / r読め / %わね / r何考えてんのかしら？） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （あの / r / 垂ｵま / 、 / G / r） / ｺ / ﾒ泉のお姉さんα： / ﾓ / （ / 返 / Jあげな / Iよ） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （！？ ええ～っ、何で私が～） / ﾒ泉のお姉さんα： / ﾓ / （ / r / [ / r / [かこいつ！） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （ / rうっううっ / r） / ｺ / ﾒ泉のお姉さんα： / ﾓ / （ほら、さっさと渡しちゃいな！） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （え～っ、 / [ / Uかぁ？ たまには先輩が / r） / ｺ / ｺ / ﾒ泉のお姉さんα： / ﾓ / rあ、あのう / r / H / r / Uよね？ / （い・い・か・ら・！） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / rあの / rど、 / 垂ｼ / r。 / （ / rうぅ / rこ、こわい～ / r） / ｺ / ﾐ / / / / / を受け取 / Q。 / ｺ / ﾒ泉のお姉さんα： / ﾓ / （ / ） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （ / ） / ｺ / ﾒ泉のお姉さん達： / ﾓ / （何 / kよぉーっっ！） / ｺ / :	:" / :' / : / ｺ / ﾐ / / / / / を投げ込 / _。 / ｺ / ] / ﾓ / （わッ！ / Xよこいつ、やる気？） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （ひいっ / r） / ｺ / ﾒ泉のお姉さんα： / ﾓ / （ / r読め / %わね / r何考えてんのかしら？） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （あの / r / 垂ｵま / 、 / G / r） / ｺ / ﾒ泉のお姉さんα： / ﾓ / （ / 返 / Jあげな / Iよ） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （！？ ええ～っ、何で私が～） / ﾒ泉のお姉さんα： / ﾓ / （ / r / [ / r / [かこいつ！） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （ / rうっううっ / r） / ｺ / ﾒ泉のお姉さんα： / ﾓ / （ほら、さっさと渡しちゃいな！） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （え～っ、 / [ / Uかぁ？ たまには先輩が / r） / ｺ / ｺ / ﾒ泉のお姉さんα： / ﾓ / rあ、あのう / r / H / r / Uよね？ / （い・い・か・ら・！） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / rあの / rど、 / 垂ｼ / r。 / （ / rうぅ / rこ、こわい～ / r） / ｺ / ﾐ / / / / / を受け取 / Q。 / ｺ / ﾒ泉のお姉さんα： / ﾓ / （ / ） / ｺ / ﾒ泉のお姉さんβ： / ﾓ / （ / ） / ｺ / ﾒ泉のお姉さん達： / ﾓ / （何 / kよぉーっっ！） / ｺ / :				@noedit; @untiled; record does not tile (switch entry at 0x13 has kind 12 (not 0 or 1)); read-only, copied verbatim; reads: だした @rebase-new @rebase-unmatched idx1 en= was tossed into the water.\n<wait> @rebase-unmatched idx2 en=Water Woman A: @rebase-unmatched idx3 en=......\n(Eek! What is this person doing!?)\n<wait> @rebase-unmatched idx4 en=Water Woman B: @rebase-unmatched idx5 en=......\n(I'm scared...)\n<wait> @rebase-unmatched idx6 en=Water Woman A: @rebase-unmatched idx7 en=......\n(I can't even begin to understand what he's thinking.)\n<wait> @rebase-unmatched idx8 en=Water Woman B: @rebase-unmatched idx9 en=......\n(Umm, so... About this @rebase-unmatched idx11 en=Water Woman A: @rebase-unmatched idx12 en=......\n(Give it back to him.)\n<wait> @rebase-unmatched idx13 en=Water Woman B: @rebase-unmatched idx14 en=......\n(Whaat!? Why me!?)\n @rebase-unmatched idx15 en=Water Woman A: @rebase-unmatched idx16 en=......\n(It's... It's him again!)\n<wait> @rebase-unmatched idx17 en=Water Woman B: @rebase-unmatched idx18 en=......\n(*Sob sob*...)\n<wait> @rebase-unmatched idx19 en=Water Woman A: @rebase-unmatched idx20 en=......\n(Hey! Just give it to him already!)\n<wait> @rebase-unmatched idx21 en=Water Woman B: @rebase-unmatched idx22 en=......\n(Why me!? It's your turn this time!)\n<wait> @rebase-unmatched idx23 en=Water Woman A: @rebase-unmatched idx24 en=U-Umm... Is this... Is this yours?\n(Do it already!)\n<wait> @rebase-unmatched idx25 en=Water Woman B: @rebase-unmatched idx26 en=E-Err... Here...\n(Eek... I'm so scared...)\n<wait> @rebase-unmatched idx28 en= received.\n<wait> @rebase-unmatched idx29 en=Water Woman A: @rebase-unmatched idx31 en=Water Woman B: @rebase-unmatched idx33 en=Water Women: @rebase-unmatched idx34 en=......\n(What the hell!?)\n<wait> @rebase-unmatched idx1 en= was tossed into the water.\n<wait> @rebase-unmatched idx2 en=Water Woman A: @rebase-unmatched idx3 en=......\n(Eek! What is this person doing!?)\n<wait> @rebase-unmatched idx4 en=Water Woman B: @rebase-unmatched idx5 en=......\n(I'm scared...)\n<wait> @rebase-unmatched idx6 en=Water Woman A: @rebase-unmatched idx7 en=......\n(I can't even begin to understand what he's thinking.)\n<wait> @rebase-unmatched idx8 en=Water Woman B: @rebase-unmatched idx9 en=......\n(Umm, so... About this @rebase-unmatched idx11 en=Water Woman A: @rebase-unmatched idx12 en=......\n(Give it back to him.)\n<wait> @rebase-unmatched idx13 en=Water Woman B: @rebase-unmatched idx14 en=......\n(Whaat!? Why me!?)\n @rebase-unmatched idx15 en=Water Woman A: @rebase-unmatched idx16 en=......\n(It's... It's him again!)\n<wait> @rebase-unmatched idx17 en=Water Woman B: @rebase-unmatched idx18 en=......\n(*Sob sob*...)\n<wait> @rebase-unmatched idx19 en=Water Woman A: @rebase-unmatched idx20 en=......\n(Hey! Just give it to him already!)\n<wait> @rebase-unmatched idx21 en=Water Woman B: @rebase-unmatched idx22 en=......\n(Why me!? It's your turn this time!)\n<wait> @rebase-unmatched idx23 en=Water Woman A: @rebase-unmatched idx24 en=U-Umm... Is this... Is this yours?\n(Do it already!)\n<wait> @rebase-unmatched idx25 en=Water Woman B: @rebase-unmatched idx26 en=E-Err... Here...\n(Eek... I'm so scared...)\n<wait> @rebase-unmatched idx28 en= received.\n<wait> @rebase-unmatched idx29 en=Water Woman A: @rebase-unmatched idx31 en=Water Woman B: @rebase-unmatched idx33 en=Water Women: @rebase-unmatched idx34 en=......\n(What the hell!?)\n<wait>
+m/MS003A.BIN	0:29	0	40	1F2F	を投げ込{08:5F}。\n<wait>					reads: を投げ込んだ。\n<wait>
+m/MS003A.BIN	0:29	1	66	1FD2	泉のお姉さんα：					
+m/MS003A.BIN	0:29	2	84	1FD3	{02:08}{02:08}\n（わッ！{08:58}よこいつ、やる気？）\n<wait>					reads: ‥‥‥‥‥‥\n（わッ！なによこいつ、やる気？）\n<wait>
+m/MS003A.BIN	0:29	3	128	1FD2	泉のお姉さんβ：					
+m/MS003A.BIN	0:29	4	146	1FD3	{02:08}{02:08}\n（ひいっ{08:72}）\n<wait>					reads: ‥‥‥‥‥‥\n（ひいっ‥‥）\n<wait>
+m/MS003A.BIN	0:29	5	172	1FD2	泉のお姉さんα：					
+m/MS003A.BIN	0:29	6	190	1FD3	{02:08}{02:08}\n（{08:72}読め{08:25}わね{08:72}何考えてんのかしら？）\n<wait>					reads: ‥‥‥‥‥‥\n（‥‥読めないわね‥‥何考えてんのかしら？）\n<wait>
+m/MS003A.BIN	0:29	7	242	1FD2	泉のお姉さんβ：					
+m/MS003A.BIN	0:29	8	260	1FD3	{02:08}{02:08}\n（あの{08:72}{08:90}しま{08:80}、{08:47}					reads: ‥‥‥‥‥‥\n（あの‥‥どうしましょう、この
+m/MS003A.BIN	0:29	9	290	1F01	{08:72}）\n<wait>					reads: ‥‥）\n<wait>
+m/MS003A.BIN	0:29	10	303	1FD2	泉のお姉さんα：					
+m/MS003A.BIN	0:29	11	321	1FD3	{02:08}{02:08}\n（{01:18}返{08:4A}あげな{08:49}よ）\n<wait>					reads: ‥‥‥‥‥‥\n（あんた返してあげなさいよ）\n<wait>
+m/MS003A.BIN	0:29	12	355	1FD2	泉のお姉さんβ：					
+m/MS003A.BIN	0:29	13	373	1FD3	{02:08}{02:08}\n（！？ ええ～っ、何で私が～）\n					reads: ‥‥‥‥‥‥\n（！？ ええ～っ、何で私が～）\n
+m/MS003A.BIN	0:29	14	413	1FD2	泉のお姉さんα：					
+m/MS003A.BIN	0:29	15	431	1FD3	{02:08}{02:08}\n（{08:72}{08:5B}{08:72}{08:5B}かこいつ！）\n<wait>					reads: ‥‥‥‥‥‥\n（‥‥また‥‥またかこいつ！）\n<wait>
+m/MS003A.BIN	0:29	16	467	1FD2	泉のお姉さんβ：					
+m/MS003A.BIN	0:29	17	485	1FD3	{02:08}{02:08}\n（{08:72}うっううっ{08:72}）\n<wait>					reads: ‥‥‥‥‥‥\n（‥‥うっううっ‥‥）\n<wait>
+m/MS003A.BIN	0:29	18	517	1FD2	泉のお姉さんα：					
+m/MS003A.BIN	0:29	19	535	1FD3	{02:08}{02:08}\n（ほら、さっさと渡しちゃいな！）\n<wait>					reads: ‥‥‥‥‥‥\n（ほら、さっさと渡しちゃいな！）\n<wait>
+m/MS003A.BIN	0:29	20	581	1FD2	泉のお姉さんβ：					
+m/MS003A.BIN	0:29	21	599	1FD3	{02:08}{02:08}\n（え～っ、{08:5B}{08:55}かぁ？ たまには先輩が{08:72}）\n<wait>					reads: ‥‥‥‥‥‥\n（え～っ、またですかぁ？ たまには先輩が‥‥）\n<wait>
+m/MS003A.BIN	0:29	22	658	1FD2	泉のお姉さんα：					
+m/MS003A.BIN	0:29	23	676	1FD3	{08:72}あ、あのう{08:72}{08:48}{08:72}{01:12}{08:55}よね？\n（い・い・か・ら・！）\n<wait>					reads: ‥‥あ、あのう‥‥これ‥‥あなたのですよね？\n（い・い・か・ら・！）\n<wait>
+m/MS003A.BIN	0:29	24	736	1FD2	泉のお姉さんβ：					
+m/MS003A.BIN	0:29	25	754	1FD3	{08:72}あの{08:72}ど、{08:90}ぞ{08:72}。\n（{08:72}うぅ{08:72}こ、こわい～{08:72}）\n<wait>					reads: ‥‥あの‥‥ど、どうぞ‥‥。\n（‥‥うぅ‥‥こ、こわい～‥‥）\n<wait>
+m/MS003A.BIN	0:29	26	823	1F2F	を受け取{08:51}。\n<wait>					reads: を受け取った。\n<wait>
+m/MS003A.BIN	0:29	27	844	1FD2	泉のお姉さんα：					
+m/MS003A.BIN	0:29	28	862	1FD3	{02:08}{02:08}\n（{02:08}{02:08}）\n<wait>					reads: ‥‥‥‥‥‥\n（‥‥‥‥‥‥）\n<wait>
+m/MS003A.BIN	0:29	29	884	1FD2	泉のお姉さんβ：					
+m/MS003A.BIN	0:29	30	902	1FD3	{02:08}{02:08}\n（{02:08}{02:08}）\n<wait>					reads: ‥‥‥‥‥‥\n（‥‥‥‥‥‥）\n<wait>
+m/MS003A.BIN	0:29	31	924	1FD2	泉のお姉さん達：					
+m/MS003A.BIN	0:29	32	942	1FD3	{02:08}{02:08}\n（何{08:6B}よぉーっっ！）\n<wait>					reads: ‥‥‥‥‥‥\n（何なのよぉーっっ！）\n<wait>
 m/MS003A.BIN	0:2A	0	12	1FD2	泉のお姉さんα：		Water Woman A:	v005		
 m/MS003A.BIN	0:2A	1	30	1FD3	肩こり～眼精疲{08:72}{08:52}あら？\n<wait>		Stiff shoulders~ Sore eyes~ ...Huh?\n<wait>	v005		reads: 肩こり～眼精疲‥‥ってあら？\n<wait>
 m/MS003A.BIN	0:2A	2	63	1FD2	泉のお姉さんβ：		Water Woman B:	v005		

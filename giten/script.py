@@ -519,12 +519,19 @@ def _rebuild_record(rec: Rec, edits: "dict[int, str]", report: BuildReport):
 #: ``tests/test_v2.py`` re-derives this from the game files, so an opcode that
 #: changes side is a test failure rather than a silent behaviour change.
 #:
-#: Opcodes between the two extremes (``012`` 78.5%, ``013`` 65.5%, ``016`` 89.9%,
-#: ``017`` 62.6%, ``180`` 78.3%, ``183`` 84.3%) are left classified as branches:
-#: they are most likely real branches that happen to sit in the records the
-#: tokenizer tiles a byte out of step (``docs/format-notes.md`` §2.10), and
+#: Opcodes between the two extremes (``012``, ``013``, ``016``, ``017``, ``180``,
+#: ``183``) are left classified as branches: they are most likely real branches
+#: that happen to sit in the records the tokenizer tiles a byte out of step, and
 #: relocating a real branch matters more than skipping a rare phantom.
-NOT_A_BRANCH = frozenset({0x010, 0x011, 0x182})
+#:
+#: 2026-09-06: that prediction came true for ``182``.  It scored 40.4% and sat
+#: here as "not a branch"; once ``0x17F``-``0x184`` stopped reading a second
+#: expression they never read (their handlers pass A=0 to ``0x00434740``, which
+#: reads the second one only when A==1), the walk stopped being a byte out of
+#: step and the corpus re-derivation moved it to the branch side on its own.
+#: That is the strongest evidence for the operand fix: an independent measure,
+#: not aimed at it, agreeing.
+NOT_A_BRANCH = frozenset({0x010, 0x011})
 
 
 def _is_branch(tok) -> bool:

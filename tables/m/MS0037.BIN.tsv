@@ -25,9 +25,8 @@ m/MS0037.BIN	0:04	16	663	1EAA	{08:0B}が出現{08:17}\n{1E10:01023C}	A demon app
 m/MS0037.BIN	0:04	17	732	00	{04:FF}	{04:FF}				reads: ; reads: がトラップを解除しますか？\n @rebase-unmatched idx17 en=o will try to disable the trap?\n @rebase-unmatched idx17 en=o will try to disable the trap?\n
 m/MS0037.BIN	0:04	18	735	00	d{04:FF}	d{04:FF}				reads: d
 m/MS0037.BIN	0:04	19	739	00	d	d				reads: 
-m/MS0037.BIN	0:05	0	34	1F81	{03:17}{03:19}	{03:17}{03:19}				reads: 
-m/MS0037.BIN	0:05	1	149	1F01	達は宝箱をあきらめた\n<wait>	 and the others gave up on the treasure chest.\n<wait>	You decide to back off.\n<wait>	v005	draft	reads: 達は宝箱をあきらめた\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS0037.BIN	0:05	2	262	1E3E	は行動不能状態{08:55}\n<wait>		 is in no working condition.\n<wait>	v005		reads: は行動不能状態です\n<wait>; reads: は行動不能状態です\n<wait> @refalign
+m/MS0037.BIN	0:05	0	149	1F01	達は宝箱をあきらめた\n<wait>	 and the others gave up on the treasure chest.\n<wait>	You decide to back off.\n<wait>	v005	draft	reads: 達は宝箱をあきらめた\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS0037.BIN	0:05	1	262	1E3E	は行動不能状態{08:55}\n<wait>		 is in no working condition.\n<wait>	v005		reads: は行動不能状態です\n<wait>; reads: は行動不能状態です\n<wait> @refalign
 m/MS0037.BIN	0:06	0	40	1B	メンバー	Member	Member	v005	draft	reads: われわれ @ours-2026-09-05
 m/MS0037.BIN	0:07	0	63	1F19	爆発のトラップ！\n	An explosion trap!\n			draft	reads: わたしを @ours-2026-09-05
 m/MS0037.BIN	0:07	1	165	17	{03:17}	{03:17}				reads: ; reads: そんなことw
@@ -47,27 +46,26 @@ m/MS0037.BIN	0:08	4	178	1F02	ＭＡＧ入手{08:4B}。\n		 MAG.\n	v005		reads: �
 m/MS0037.BIN	0:09	0	44	1F4C	{03:16}	{03:16}				reads: 
 m/MS0037.BIN	0:09	1	47	00	{05:1F}{=E8}{=03}	{05:1F}{=E8}{=03}				reads: {=E8}{=03}
 m/MS0037.BIN	0:0D	0	11	0D	{08:58}も入{08:52}い{08:19}\n<wait>		You optained nothing.\n<wait>	v005		reads: なにも入っていなかった\n<wait>; reads: なにも入っていなかった\n<wait> @refalign
-m/MS0037.BIN	0:0F	0	11	00	{01:1F}{=E8}{=03}	{01:1F}{=E8}{=03}				reads: おにいちゃん{=E8}{=03}
-m/MS0037.BIN	0:0F	1	36	1F83	{04:FF}達は		 found 	v005		reads: 達は; reads: 達は @refalign
-m/MS0037.BIN	0:0F	2	55	1F86	を発見{08:4B}。\n	.\n			draft	reads: を発見した。\n; reads: 飛び道具 @ours-2026-09-05
-m/MS0037.BIN	0:0F	3	69	18	を	 x	You threw 	v005	draft	reads: を発見した。\n @refalign @ours-2026-09-05
-m/MS0037.BIN	0:0F	4	75	1F02	個発見{08:4B}。\n<wait>	 found.\n<wait>			draft	reads: 個発見した。\n<wait>; @ours-2026-09-05
-m/MS0037.BIN	0:0F	5	111	1F80	{04:FF}は	{04:FF} put			draft	reads: は; reads: 個発見した。\n<wait> @ours-2026-09-05
-m/MS0037.BIN	0:0F	6	135	1F02	個の	 of the			draft	reads: は @ours-2026-09-05
-m/MS0037.BIN	0:0F	7	152	1F86	を元に戻{08:4B}\n	 back.\n			draft	reads: を元に戻した\n; @ours-2026-09-05
-m/MS0037.BIN	0:0F	8	166	0C	をあきらめた\n	 was left behind.\n			draft	reads: 目の前に @ours-2026-09-05
-m/MS0037.BIN	0:0F	9	191	1F01	は	 threw away 			draft	reads: を元に戻した\n @ours-2026-09-05
-m/MS0037.BIN	0:0F	10	198	1F01	を捨て、	, and			draft	@ours-2026-09-05
-m/MS0037.BIN	0:0F	11	241	1F7F	{03:01}{03:12}を					reads: そんなこと切りを; reads: は
-m/MS0037.BIN	0:0F	12	251	1F02	個入手{08:4B}\n<wait>	 obtained.\n<wait>			draft	reads: 個入手した\n<wait>; reads: 飛び道具を捨て、 @ours-2026-09-05
-m/MS0037.BIN	0:0F	13	266	1FBA	{08:76}残り	There are still	There is still 	v005	draft	reads: まだ残り; reads: 飛び道具 @ours-2026-09-05
-m/MS0037.BIN	0:0F	14	276	1F02	個の\n	 more\n			draft	reads: そんなこと切りを @ours-2026-09-05
-m/MS0037.BIN	0:0F	15	286	1F01	が{08:7B}\n<wait>	 left.\n<wait>			draft	reads: がある\n<wait>; reads: 個入手した\n<wait> @ours-2026-09-05
-m/MS0037.BIN	0:0F	16	300	18	を入手{08:4B}\n<wait>	 obtained.\n<wait>			draft	reads: を入手した\n<wait>; reads: まだ残り @ours-2026-09-05
-m/MS0037.BIN	0:0F	17	327	1F01	達は	 and the others obtained			draft	@refalign @refalign-merged @ours-2026-09-05
-m/MS0037.BIN	0:0F	18	344	1F88	を	 x			draft	reads: 飛び道具がある\n<wait> @refalign @refalign-merged @ours-2026-09-05
-m/MS0037.BIN	0:0F	19	350	1F02	個入手{08:4B}。\n	.\n			draft	reads: 個入手した。\n; reads: を入手した\n<wait> @ours-2026-09-05
-m/MS0037.BIN	0:0F	20	364	18	を入手{08:4B}。\n		You found 	v005		reads: を入手した。\n; reads: 達は @refalign
+m/MS0037.BIN	0:0F	0	38	1F01	達は	 and the others obtained			draft	@refalign @refalign-merged @ours-2026-09-05
+m/MS0037.BIN	0:0F	1	55	1F86	を発見{08:4B}。\n	.\n			draft	reads: を発見した。\n; reads: 飛び道具 @ours-2026-09-05
+m/MS0037.BIN	0:0F	2	69	18	を					
+m/MS0037.BIN	0:0F	3	75	1F02	個発見{08:4B}。\n<wait>	 found.\n<wait>			draft	reads: 個発見した。\n<wait>; @ours-2026-09-05
+m/MS0037.BIN	0:0F	4	113	1F01	は	 threw away 			draft	reads: を元に戻した\n @ours-2026-09-05
+m/MS0037.BIN	0:0F	5	135	1F02	個の	 of the			draft	reads: は @ours-2026-09-05
+m/MS0037.BIN	0:0F	6	152	1F86	を元に戻{08:4B}\n	 back.\n			draft	reads: を元に戻した\n; @ours-2026-09-05
+m/MS0037.BIN	0:0F	7	166	0C	をあきらめた\n	 was left behind.\n			draft	reads: 目の前に @ours-2026-09-05
+m/MS0037.BIN	0:0F	8	191	1F01	は	 threw away 			draft	reads: を元に戻した\n @ours-2026-09-05
+m/MS0037.BIN	0:0F	9	198	1F01	を捨て、	, and			draft	@ours-2026-09-05
+m/MS0037.BIN	0:0F	10	245	1F45	を					
+m/MS0037.BIN	0:0F	11	251	1F02	個入手{08:4B}\n<wait>	 obtained.\n<wait>			draft	reads: 個入手した\n<wait>; reads: 飛び道具を捨て、 @ours-2026-09-05
+m/MS0037.BIN	0:0F	12	266	1FBA	{08:76}残り	There are still	There is still 	v005	draft	reads: まだ残り; reads: 飛び道具 @ours-2026-09-05
+m/MS0037.BIN	0:0F	13	276	1F02	個の\n	 more\n			draft	reads: そんなこと切りを @ours-2026-09-05
+m/MS0037.BIN	0:0F	14	286	1F01	が{08:7B}\n<wait>	 left.\n<wait>			draft	reads: がある\n<wait>; reads: 個入手した\n<wait> @ours-2026-09-05
+m/MS0037.BIN	0:0F	15	300	18	を入手{08:4B}\n<wait>	 obtained.\n<wait>			draft	reads: を入手した\n<wait>; reads: まだ残り @ours-2026-09-05
+m/MS0037.BIN	0:0F	16	327	1F01	達は	 and the others obtained			draft	@refalign @refalign-merged @ours-2026-09-05
+m/MS0037.BIN	0:0F	17	344	1F88	を					
+m/MS0037.BIN	0:0F	18	350	1F02	個入手{08:4B}。\n	.\n			draft	reads: 個入手した。\n; reads: を入手した\n<wait> @ours-2026-09-05
+m/MS0037.BIN	0:0F	19	364	18	を入手{08:4B}。\n		You found 	v005		reads: を入手した。\n; reads: 達は @refalign
 m/MS0037.BIN	0:12	0	73	00	{01:00}	{01:00}				reads: 早坂達也
 m/MS0037.BIN	0:12	1	87	00	{02:00}	{02:00}				reads: デビルバスター
 m/MS0037.BIN	0:12	2	101	00	{03:00}	{03:00}				reads: 飛び道具

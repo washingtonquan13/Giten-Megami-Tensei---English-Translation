@@ -161,7 +161,7 @@ m/MS0052.BIN	0:02	1	70	00	{02:00}	{02:00}				reads: デビルバスター
 m/MS0052.BIN	0:02	2	85	1F51	治療システムが{08:7B}。\n治療{08:4A}いき{08:15}\n		{02:03}\nHealing system online. Do you wish to heal?\n	v005		reads: 治療システムがある。\n治療していきますか？\n; reads: 治療システムがある。\n治療していきますか？\n @refalign @refalign-joined
 m/MS0052.BIN	0:02	3	133	1FB2	治療{08:8E}		Heal	v005		reads: 治療する; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0052.BIN	0:02	4	141	1FB2	治療し{08:25}		Don't heal	v005		reads: 治療しない; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0052.BIN	0:02	5	184	1F80	{=FC}{=1F}ﾒ{08:04}：	{=FC}{=1F}ﾒ{08:04}：	{=FC}{=1F}Nishino:	ours		reads: {=FC}{=1F}ﾒ西野：; reads: 早坂達也
+m/MS0052.BIN	0:02	5	187	1FD2	{08:04}：					reads: 西野：
 m/MS0052.BIN	0:02	6	193	1FD3	治療の必要な者は{08:24}{08:69}だな{02:08}\nあまり悠長にや{08:52}{08:26}られん。行くぞ！\n		Doesn't look like anyone's in need of healing. Let's get going!\n	v005		reads: 治療の必要な者はいないようだな‥‥‥\nあまり悠長にやってはいられん。行くぞ！\n; reads: {=FC}{=1F}ﾒ西野： @refalign
 m/MS0052.BIN	0:02	7	265	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 治療の必要な者はいないようだな‥‥‥\nあまり悠長にやってはいられん。行くぞ！\n @refalign
 m/MS0052.BIN	0:02	8	271	1FD3	治療の必要が{08:7B}奴は{08:24}ぜ。行こう。\nあまり、悠長には{08:4A}いられ{08:25}{08:42}な。\n		Doesn't look like anyone's in need of healing. Let's get going!\n	v005		reads: 治療の必要がある奴はいないぜ。行こう。\nあまり、悠長にはしていられないからな。\n; reads: 早坂： @refalign
@@ -197,7 +197,7 @@ m/MS0052.BIN	0:02	37	1195	09	治療{08:4B}いのかね？\n{08:58}、{08:47}非�
 m/MS0052.BIN	0:02	38	1259	1FB2	治療{08:4A}もらう		Get healed	v005		reads: 治療してもらう; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS0052.BIN	0:02	39	1273	1FB2	治療し{08:25}		Don't heal	v005		reads: 治療しない; menu option, declared width 20 columns; reads: さて、管理部の呼び出しが掛かっているんだろう？\n早く行きたまえ。私も患者が控えているんでな。\n<wait> @refalign
 m/MS0052.BIN	0:02	40	1303	1FD2	医者：		Doctor:	v005		reads: 西野：
-m/MS0052.BIN	0:02	41	1321	1F80	rと言{08:52}も、治療が必要な{02:0B}は{08:24}{08:69}{08:8F}{08:72}？\n<wait>		ually, it doesn't seem like there's anyone in need of healing...\n<wait>	v005		reads: rと言っても、治療が必要な人間はいないようだが‥‥？\n<wait>; reads: ‥‥ありがとうございました。\n<wait>
+m/MS0052.BIN	0:02	41	1320	1F80	{08:72}と言{08:52}も、治療が必要な{02:0B}は{08:24}{08:69}{08:8F}{08:72}？\n<wait>					reads: ‥‥と言っても、治療が必要な人間はいないようだが‥‥？\n<wait>
 m/MS0052.BIN	0:02	42	1367	1FD2	医者：		Doctor:	v005		reads: 西野：
 m/MS0052.BIN	0:02	43	1375	1FD3	早く、{08:47}騒ぎを何とか{08:4A}もらい{08:4E}{08:5E}{08:55}な。\n		I know it's hard, but please, you've gotta fix this mess somehow.\n	v005		reads: 早く、この騒ぎを何とかしてもらいたいものですな。\n; reads: みんな！　行くぞ！！\n<wait>
 m/MS0052.BIN	0:02	44	1415	00	{02:08}{08:48}で{01:32}だ。\n<wait>		...That'll do.\n<wait>	v005		reads: ‥‥‥これで大丈夫だ。\n<wait>
@@ -206,7 +206,7 @@ m/MS0052.BIN	0:02	46	1444	1FD3	早く、{08:47}騒ぎを何とか{08:4A}下{08:4
 m/MS0052.BIN	0:02	47	1478	1FD2	医者：		Doctor:	v005		reads: 治療してもらう; menu option, declared width 20 columns
 m/MS0052.BIN	0:02	48	1486	1FD3	そうか、無理{08:8E}ん{08:81}{08:25}ぞ！\n		Right. Well, don't push yourself too hard!\n	v005		reads: そうか、無理するんじゃないぞ！\n; reads: 治療しない; menu option, declared width 20 columns
 m/MS0052.BIN	0:02	49	1512	00	何だね君は？　今は君の番{08:81}{08:25}{08:8C}。\n診療を望むの{08:7C}、受付に行{08:1E}まえ。\n	Who are you? It's not your turn.\nIf you want an examination, go to reception.\n	And what do you want? It's not your turn.\nIf you want to be examined, go talk to the reception.\n	v005	draft	reads: 何だね君は？　今は君の番じゃないだろう。\n診療を望むのならば、受付に行きたまえ。\n; reads: 何だね君は？　今は君の番じゃないだろう。\n診療を望むのならば、受付に行きたまえ。\n @ours-2026-09-05
-m/MS0052.BIN	0:02	50	1597	00	：	:	asaka:	v005	draft	
+m/MS0052.BIN	0:02	50	1595	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 治療の必要な者はいないようだな‥‥‥\nあまり悠長にやってはいられん。行くぞ！\n @refalign
 m/MS0052.BIN	0:02	51	1601	1FD3	おい、	Hey, 			draft	@ours-2026-09-05
 m/MS0052.BIN	0:02	52	1613	1F01	。\n早いとこ食料を調達{08:4A}、休憩を取ろうぜ。\n{01:1C}も待っ{08:2B}{08:5F}しさ。\n	.\nLet's hurry up and get the food, then take a break.\nEveryone's waiting, too.\n			draft	reads: 。\n早いとこ食料を調達して、休憩を取ろうぜ。\nみんなも待ってるんだしさ。\n; reads: rと言っても、治療が必要な人間はいないようだが‥‥？\n<wait> @ours-2026-09-05
 m/MS0052.BIN	0:02	53	1712	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 西野： @refalign
@@ -214,7 +214,7 @@ m/MS0052.BIN	0:02	54	1718	1FD3	{08:90}だ？　様子は。\n何はとも{08:3F}
 m/MS0052.BIN	0:02	55	1781	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: ‥‥‥これで大丈夫だ。\n<wait> @refalign
 m/MS0052.BIN	0:02	56	1787	1FD3	{08:4D}で{08:72}食料の方は{08:90}だ？\n<wait>		So, what about the food?\n<wait>	v005		reads: それで‥‥食料の方はどうだ？\n<wait>; reads: それで‥‥食料の方はどうだ？\n<wait> @refalign
 m/MS0052.BIN	0:02	57	1836	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: 早く、この騒ぎを何とかして下さい！\n @refalign
-m/MS0052.BIN	0:02	58	1853	1F80	A調達できて{08:25}のか。\n休み無し{08:55}ま{08:25}が、皆の食料を調達{08:4A}きてくれ。\n<wait>		 still haven't gotten it?\nLook, I know you're tired, but we all need to eat.\n<wait>	v005		reads: A調達できてないのか。\n休み無しですまないが、皆の食料を調達してきてくれ。\n<wait>; reads: A調達できてないのか。\n休み無しですまないが、皆の食料を調達してきてくれ。\n<wait> @refalign
+m/MS0052.BIN	0:02	58	1848	1F80	{02:08}{08:76}、調達できて{08:25}のか。\n休み無し{08:55}ま{08:25}が、皆の食料を調達{08:4A}きてくれ。\n<wait>					reads: ‥‥‥まだ、調達できてないのか。\n休み無しですまないが、皆の食料を調達してきてくれ。\n<wait>
 m/MS0052.BIN	0:02	59	1926	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; reads: そうか、無理するんじゃないぞ！\n @refalign
 m/MS0052.BIN	0:02	60	1932	1FD3	頼{08:5F}ぞ！\n		Please!\n	v005		reads: 頼んだぞ！\n; reads: 何だね君は？　今は君の番じゃないだろう。\n診療を望むのならば、受付に行きたまえ。\n @refalign
 m/MS0052.BIN	0:02	61	1965	1A	{02:08}{08:79}量で{08:62}全員に食料が行き渡らん{08:8C}。\nも{08:53}多めに調達{08:4A}きてくれ。\n<wait>		That's hardly enough to feed us all.\nI'm going to have to ask you to go back and get some more.\n<wait>	v005		reads: ‥‥‥その量では、全員に食料が行き渡らんだろう。\nもっと多めに調達してきてくれ。\n<wait>; reads: ‥‥‥その量では、全員に食料が行き渡らんだろう。\nもっと多めに調達してきてくれ。\n<wait> @refalign

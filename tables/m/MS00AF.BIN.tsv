@@ -48,10 +48,9 @@ m/MS00AF.BIN	0:0B	3	196	1B	ナンバー＋１００	Number +100	Number -100	ours
 m/MS00AF.BIN	0:0B	4	227	1B	ナンバー－１００	Number -100	Obtain	ours	draft	reads: ペンタグランマP @ours-2026-09-05
 m/MS00AF.BIN	0:0B	5	258	1B	入手	Obtain	EXIT	ours	draft	reads: そんなことi @ours-2026-09-05
 m/MS00AF.BIN	0:0B	6	277	1B	ＥＸＩＴ	EXIT			draft	reads: 切り{=84}{=00}飛び道具{=9F}{=00}ｮ @rebase-new @ours-2026-09-05
-m/MS00AF.BIN	0:0C	0	27	1F82	C{03:02}	C{03:02}				reads: Cを攻撃し
-m/MS00AF.BIN	0:0C	1	149	00	{01:1F}	{01:1F}				reads: おにいちゃん
-m/MS00AF.BIN	0:0C	2	156	00	ｯ					
-m/MS00AF.BIN	0:0C	3	160	0D	ｯ					
+m/MS00AF.BIN	0:0C	0	149	00	{01:1F}	{01:1F}				reads: おにいちゃん
+m/MS00AF.BIN	0:0C	1	156	00	ｯ					
+m/MS00AF.BIN	0:0C	2	160	0D	ｯ					
 m/MS00AF.BIN	0:1B	0	23	1B	能力値名	Stat Name	LIGHT/DARK	v005	draft	reads: ＮＯ @ours-2026-09-05
 m/MS00AF.BIN	0:1B	1	126	1B	Ｌ／Ｄ属性値	L/D Alignment	LAW/CHAOS	v005	draft	@ours-2026-09-05
 m/MS00AF.BIN	0:1B	2	153	1B	Ｌ／Ｃ属性値		LAW/CHAOS	v005		@rebase-unmatched idx2 en=Stat Name @rebase-unmatched idx2 en=Stat Name @refalign
@@ -98,26 +97,20 @@ m/MS00AF.BIN	0:23	0	76	1F4C	{03:01}	{03:01}				reads: そんなこと; reads: �
 m/MS00AF.BIN	0:23	1	98	1F4E	{03:18}	{03:18}				reads: 
 m/MS00AF.BIN	0:23	2	101	00	{02:03}	{02:03}				reads: レジスタンス; reads: そんなこと
 m/MS00AF.BIN	0:23	3	109	00	{02:1E}ﾔ{03:19}{03:18}	{02:1E}ﾔ{03:19}{03:18}				reads: ﾔ
-m/MS00AF.BIN	0:23	4	150	00	-	-				reads: レジスタンス
-m/MS00AF.BIN	0:23	5	152	00	{04:00}{04:00}	{04:00}{04:00}				reads: を唱えた！ を唱えた！ ; reads: ﾔ
-m/MS00AF.BIN	0:23	6	161	1B	~OFF	~OFF			draft	@ours-2026-09-05
+m/MS00AF.BIN	0:23	4	143	1B	~ON	~ON				
+m/MS00AF.BIN	0:23	5	161	1B	~OFF	~OFF			draft	@ours-2026-09-05
 m/MS00AF.BIN	0:24	0	2	1FBA	＞現在の状況をセーブし{08:5A}\n　セーブ{08:8E}ファイルを選択{08:4A}下{08:49}\n		>Your progress will be saved.\n Please select a file to save to.\n	v005		reads: ＞現在の状況をセーブします\n　セーブするファイルを選択して下さい\n; reads: ＞現在の状況をセーブします\n　セーブするファイルを選択して下さい\n @refalign
-m/MS00AF.BIN	0:24	1	240	1F7F	{=84}{=08}\nを上書きし{08:5A}。よろしい{08:55}か？\n		 you wish to overwrite this save?\n	v005		reads: {=84}{=08}\nを上書きします。よろしいですか？\n; reads: {=84}{=08}\nを上書きします。よろしいですか？\n @refalign
+m/MS00AF.BIN	0:24	1	239	1FBA	＞{08:0A}を上書きし{08:5A}。よろしい{08:55}か？\n					reads: ＞データを上書きします。よろしいですか？\n
 m/MS00AF.BIN	0:24	2	288	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
 m/MS00AF.BIN	0:24	3	292	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
-m/MS00AF.BIN	0:24	4	337	1F80	сZーブ終了\n<wait>	сZーブ終了\n<wait>	ved the game successfully\n<wait>	v005		reads: 
+m/MS00AF.BIN	0:24	4	336	1FD0	＞セーブ終了\n<wait>					
 m/MS00AF.BIN	0:24	5	358	1FD0	＞報告：{08:0A}セーブに失敗しま{08:4B}\n　　　　ハードディスクの空き容量が不足{08:4A}い{08:5A}\n<wait>		>Error: Failed to save the game\n Not enough disk space available\n<wait>	v005		reads: ＞報告：データセーブに失敗しました\n　　　　ハードディスクの空き容量が不足しています\n<wait>; reads: ＞報告：データセーブに失敗しました\n　　　　ハードディスクの空き容量が不足しています\n<wait> @refalign
 m/MS00AF.BIN	0:25	0	40	1B	 プレイヤー名     LEVEL セーブ地点	 PLAYER NAME      LEVEL LOCATION	 PLAYER NAME      LEVEL LOCATION	v005	draft	reads: われわれ @ours-2026-09-05
-m/MS00AF.BIN	0:25	1	180	00	+	+				reads: ペンタグランマS
-m/MS00AF.BIN	0:25	2	182	00	+	+				reads: そんなこと{=F9}{=00}切り{=F5}{=00}飛び道具{=F1}{=00}{=ED}{=00}＞何をしますか？{=E9}{=00}
-m/MS00AF.BIN	0:25	3	184	00	{01:1E}{=9B}{=03}	{01:1E}{=9B}{=03}				reads: はやく{=9B}{=03}
+m/MS00AF.BIN	0:25	1	132	1B	 ---------------- ----- ------------------	 ---------------- ----- ------------------				
 m/MS00AF.BIN	0:26	0	6	1FBA	＞{08:0A}をロードし{08:5A}\n　ロード{08:8E}ファイルを選択{08:4A}下{08:49}\n		>Please select a save to load\n	v005		reads: ＞データをロードします\n　ロードするファイルを選択して下さい\n; reads: ＞データをロードします\n　ロードするファイルを選択して下さい\n @refalign
 m/MS00AF.BIN	0:26	1	165	1FBA	＞{08:0A}をロードし{08:5A}。よろしい{08:55}か？\n		>Do you wish to load this save?\n	v005		reads: ＞データをロードします。よろしいですか？\n; reads: ＞データをロードします。よろしいですか？\n @refalign
 m/MS00AF.BIN	0:26	2	214	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
 m/MS00AF.BIN	0:26	3	218	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
-m/MS00AF.BIN	0:26	4	264	1F80	＞報告：{08:0A}ロードに失敗しま{08:4B}\n　　　　セーブ{08:0A}が異常{08:55}\n<wait>	>Error: Failed to load data	>Error: Failed to load the save\n Save data is corrupted\n<wait>	v005	draft	reads: ＞報告：データロードに失敗しました\n　　　　セーブデータが異常です\n<wait>; reads: おまえ @ours-2026-09-05
+m/MS00AF.BIN	0:26	4	264	1E07	＞報告：{08:0A}ロードに失敗しま{08:4B}\n　　　　セーブ{08:0A}が異常{08:55}\n<wait>	>Error: Failed to load data	>Error: Failed to load the save\n Save data is corrupted\n<wait>	v005	draft	reads: ＞報告：データロードに失敗しました\n　　　　セーブデータが異常です\n<wait>; reads: おまえ @ours-2026-09-05
 m/MS00AF.BIN	0:27	0	40	1B	 プレイヤー名     LEVEL セーブ地点	 PLAYER NAME      LEVEL LOCATION	 PLAYER NAME      LEVEL LOCATION	v005	draft	reads: われわれ @ours-2026-09-05
-m/MS00AF.BIN	0:27	1	180	00	+	+				reads: ペンタグランマS
-m/MS00AF.BIN	0:27	2	182	00	+	+				reads: そんなこと{=F9}{=00}切り{=F5}{=00}飛び道具{=F1}{=00}{=ED}{=00}＞何をしますか？{=E9}{=00}
-m/MS00AF.BIN	0:27	3	184	00	{01:1E}{=9B}{=03}	{01:1E}{=9B}{=03}				reads: はやく{=9B}{=03}
-m/MS00AF.BIN	0:27	4	195	00	{01:18}F	{01:18}F				reads: あんたF
+m/MS00AF.BIN	0:27	1	132	1B	 ---------------- ----- ------------------	 ---------------- ----- ------------------				

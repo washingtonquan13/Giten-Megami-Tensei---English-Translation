@@ -267,7 +267,7 @@ m/MS005A.BIN	0:0B	74	2415	1F01	。\n<wait>	.\n<wait>			draft	reads: 。\n<wait> 
 m/MS005A.BIN	0:0B	75	2431	1FD2	医者：		Doctor:	ours		
 m/MS005A.BIN	0:0B	76	2439	1FD3	治療が必要か？\n<wait>		Need some healing?\n<wait>	v005		
 m/MS005A.BIN	0:0B	77	2462	1F58	{05:00}	{05:00}				reads: はいいいえ; reads: はいいいえニュートン
-m/MS005A.BIN	0:0B	78	2478	1F80	緕ﾒ：					
+m/MS005A.BIN	0:0B	78	2477	1FD2	医者：		Doctor:	ours		
 m/MS005A.BIN	0:0B	79	2485	1FD3	何だ。治療が必要な奴は{08:24}{08:81}{08:25}か。\n必要な時に来いよ。\n		Hmm? Wait a second... No you don't!\nScrew off! I have real patients to tend to!\n	v005		reads: 何だ。治療が必要な奴はいないじゃないか。\n必要な時に来いよ。\n
 m/MS005A.BIN	0:0B	80	2544	1FD2	医者：		Doctor:	ours		
 m/MS005A.BIN	0:0B	81	2552	1FD3	ほい。{08:48}で{01:32}だ。\n<wait>		That should do it.\n<wait>	v005		reads: ほい。これで大丈夫だ。\n<wait>
@@ -631,7 +631,7 @@ m/MS005A.BIN	0:31	6	211	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu opti
 m/MS005A.BIN	0:31	7	215	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
 m/MS005A.BIN	0:31	8	257	1FD2	男性：	Man:	Man:	v005	draft	reads:  @ours-2026-09-05
 m/MS005A.BIN	0:31	9	265	1FD3	お前に{08:62}{08:5C}一ヵ月分の支給量を渡{08:4B}ぜ。\nま、来月{08:71}待つこ{08:51}な。\n	I've already given you a month's worth of supplies.\nWell, you'll just have to wait till next month.\n	I've already given you a month's worth of supplies.\nWell, guess you'll just have to wait till next month.\n	ours	draft	reads: お前には、もう一ヵ月分の支給量を渡したぜ。\nま、来月まで待つこったな。\n; reads: お前には、もう一ヵ月分の支給量を渡したぜ。\nま、来月まで待つこったな。\n @ours-2026-09-05
-m/MS005A.BIN	0:31	10	343	1F83	j性：		n:	v005		
+m/MS005A.BIN	0:31	10	342	1FD2	男性：					
 m/MS005A.BIN	0:31	11	350	1FD3	何だ。{08:5C}荷物が一杯{08:81}ねぇか。\nあんまり欲張るん{08:81}ねぇぞ。\n		What's this. Your bags are already full.\nDon't be too greedy now.\n	ours		reads: 何だ。もう荷物が一杯じゃねぇか。\nあんまり欲張るんじゃねぇぞ。\n; reads: お前には、もう一ヵ月分の支給量を渡したぜ。\nま、来月まで待つこったな。\n
 m/MS005A.BIN	0:31	12	419	1FD2	男性：		Man:	v005		
 m/MS005A.BIN	0:31	13	427	1FD3	ほらよ。あんまり無駄にすん{08:81}ねーぜ！\n		Here you go. Don't waste them!\n	v005		reads: ほらよ。あんまり無駄にすんじゃねーぜ！\n; reads: 何だ。もう荷物が一杯じゃねぇか。\nあんまり欲張るんじゃねぇぞ。\n
@@ -642,52 +642,41 @@ m/MS005A.BIN	0:33	0	2	1FD2	オヤジ：		Man:	v005
 m/MS005A.BIN	0:33	1	12	1FD3	新入り！　お前さんの扱{08:28}のは{08:73}モンだぜ。\nどっちに{08:8E}？\n		Yo, newbie! Here's what I can get you. What would you like?\n	v005		reads: 新入り！　お前さんの扱えるのはこんなモンだぜ。\nどっちにする？\n
 m/MS005A.BIN	0:33	2	82	1FB2	モスバーグＭ５００		Mossberg M500	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
 m/MS005A.BIN	0:33	3	102	1FB2	６４式自動小銃		Type 64 Auto	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS005A.BIN	0:33	4	179	1F83	{03:00}	{03:00}				reads: 飛び道具; reads: アタシ
-m/MS005A.BIN	0:33	5	193	1F80	j性：	j性：	Woman:	ours		reads: 飛び道具
-m/MS005A.BIN	0:33	6	200	1FD3	あー{08:72}お前ちょ{08:53}、ＳＳ通常弾ど{08:5F}け持っ{08:2B}か見{08:67}み？\n<wait>		Ah......hold on a sec, let me see how many standard SS rounds you've got?\n<wait>	ours		reads: あー‥‥お前ちょっと、ＳＳ通常弾どんだけ持ってるか見せてみ？\n<wait>
-m/MS005A.BIN	0:33	7	274	1FD2	男性：		Man:	ours		reads: あー‥‥お前ちょっと、ＳＳ通常弾どんだけ持ってるか見せてみ？\n<wait>
-m/MS005A.BIN	0:33	8	290	1F89	んー{08:72}{08:47}数だと、ちょ{08:53}キツいなぁ{02:08}\n他のモン捨てて、弾薬入れ{08:69}ぜ？　な？\n<wait>		Hmm......with that many, it's gonna be a bit tight......\nWhy don't you ditch some other stuff and load up on ammo? How about it?\n<wait>	ours		reads: んー‥‥この数だと、ちょっとキツいなぁ‥‥‥\n他のモン捨てて、弾薬入れようぜ？　な？\n<wait>
-m/MS005A.BIN	0:33	9	383	18	こ{08:5F}けありゃあ、十分か{02:08}{08:48}で{08:7F}な。\n<wait>		With this much, should be enough...... guess this'll do.\n<wait>	ours		reads: こんだけありゃあ、十分か‥‥‥これでいいな。\n<wait>; reads: んー‥‥この数だと、ちょっとキツいなぁ‥‥‥\n他のモン捨てて、弾薬入れようぜ？　な？\n<wait>
-m/MS005A.BIN	0:33	10	490	1F83	{03:00}	{03:00}				reads: 飛び道具; reads: こんだけありゃあ、十分か‥‥‥これでいいな。\n<wait>
-m/MS005A.BIN	0:33	11	504	1F80	j性：	j性：	Woman:	ours		reads: 飛び道具
-m/MS005A.BIN	0:33	12	511	1FD3	あー{08:72}お前ちょ{08:53}、７．６２ｍｍパラど{08:5F}け持っ{08:2B}か見{08:67}み？\n<wait>		Ah......hold on a sec, let me see how many 7.62mm Para rounds you've got?\n<wait>	ours		reads: あー‥‥お前ちょっと、７．６２ｍｍパラどんだけ持ってるか見せてみ？\n<wait>
-m/MS005A.BIN	0:33	13	591	1FD2	男性：		Man:	ours		reads: あー‥‥お前ちょっと、７．６２ｍｍパラどんだけ持ってるか見せてみ？\n<wait>
-m/MS005A.BIN	0:33	14	607	1F89	んー{08:72}{08:47}数だと、ちょ{08:53}キツいなぁ{02:08}\n他のモン捨てて、弾薬入れ{08:69}ぜ？　な？\n<wait>		Hmm......with that many, it's gonna be a bit tight......\nWhy don't you ditch some other stuff and load up on ammo? How about it?\n<wait>	ours		reads: んー‥‥この数だと、ちょっとキツいなぁ‥‥‥\n他のモン捨てて、弾薬入れようぜ？　な？\n<wait>
-m/MS005A.BIN	0:33	15	700	18	こ{08:5F}けありゃあ、十分か{02:08}{08:48}で{08:7F}な。\n<wait>		With this much, should be enough...... guess this'll do.\n<wait>	ours		reads: こんだけありゃあ、十分か‥‥‥これでいいな。\n<wait>; reads: んー‥‥この数だと、ちょっとキツいなぁ‥‥‥\n他のモン捨てて、弾薬入れようぜ？　な？\n<wait>
-m/MS005A.BIN	0:33	16	793	1F01	を装備{08:4B}。\n<wait>	 equipped.\n<wait>	.\n<wait>	ours	draft	reads: を装備した。\n<wait>; reads: こんだけありゃあ、十分か‥‥‥これでいいな。\n<wait> @ours-2026-09-05
-m/MS005A.BIN	0:33	17	812	1FD2	オヤジ：	Old Man:			draft	reads: を装備した。\n<wait> @ours-2026-09-05
-m/MS005A.BIN	0:33	18	822	1FD3	ほらよ！　{08:48}も持{08:52}きな！\n<wait>	Here! Take this too!\n<wait>			draft	reads: ほらよ！　これも持ってきな！\n<wait>; reads: ほらよ！　これも持ってきな！\n<wait> @ours-2026-09-05
-m/MS005A.BIN	0:33	19	878	1FD0	フリッツヘルムとサーベルも貰{08:51}。\n	Also received a Fritz helm and a sabre.\n			draft	reads: フリッツヘルムとサーベルも貰った。\n; reads: ほらよ！　これも持ってきな！\n<wait> @ours-2026-09-05
-m/MS005A.BIN	0:33	20	948	1FD2	男性：		Man:	ours		reads: フリッツヘルムとサーベルも貰った。\n
-m/MS005A.BIN	0:33	21	956	1FD3	{08:4D}{08:81}あ、お前の部隊の全員分を支給しとくぜ！\n<wait>		Well then, I'll issue supplies for your whole squad!\n<wait>	ours		reads: それじゃあ、お前の部隊の全員分を支給しとくぜ！\n<wait>
-m/MS005A.BIN	0:33	22	1027	1F81	{04:FB}	{04:FB}				reads: ; reads: それじゃあ、お前の部隊の全員分を支給しとくぜ！\n<wait>
-m/MS005A.BIN	0:33	23	1068	1F83	{03:00}	{03:00}				reads: 飛び道具
-m/MS005A.BIN	0:33	24	1082	1F80	j性：	j性：	Woman:	ours		reads: 飛び道具
-m/MS005A.BIN	0:33	25	1089	1FD3	ＳＳ通常弾ど{08:5F}け持っ{08:2B}か、ちょ{08:53}見{08:67}くれ、な？\n<wait>		Let me see how many standard SS rounds you've got, would you?\n<wait>	ours		reads: ＳＳ通常弾どんだけ持ってるか、ちょっと見せてくれ、な？\n<wait>
-m/MS005A.BIN	0:33	26	1159	1FD2	男性：		Man:	ours		reads: ＳＳ通常弾どんだけ持ってるか、ちょっと見せてくれ、な？\n<wait>
-m/MS005A.BIN	0:33	27	1175	1F89	んー{08:72}{08:47}数だと、ちょ{08:53}キツいなぁ{02:08}\n他のモン捨てて、弾薬入れ{08:69}ぜ？　な？\n<wait>		Hmm......with that many, it's gonna be a bit tight......\nWhy don't you ditch some other stuff and load up on ammo? How about it?\n<wait>	ours		reads: んー‥‥この数だと、ちょっとキツいなぁ‥‥‥\n他のモン捨てて、弾薬入れようぜ？　な？\n<wait>
-m/MS005A.BIN	0:33	28	1268	18	こ{08:5F}けありゃあ、十分か{02:08}{08:48}でよし{08:72}{08:53}。\n<wait>		With this much, should be enough...... there we go.\n<wait>	ours		reads: こんだけありゃあ、十分か‥‥‥これでよし‥‥っと。\n<wait>; reads: んー‥‥この数だと、ちょっとキツいなぁ‥‥‥\n他のモン捨てて、弾薬入れようぜ？　な？\n<wait>
-m/MS005A.BIN	0:33	29	1362	1F83	{03:00}	{03:00}				reads: 飛び道具; reads: こんだけありゃあ、十分か‥‥‥これでよし‥‥っと。\n<wait>
-m/MS005A.BIN	0:33	30	1376	1F80	j性：	j性：	Woman:	ours		reads: 飛び道具
-m/MS005A.BIN	0:33	31	1383	1FD3	悪い{08:46}{08:26}わん。ＳＳ光子弾、持{08:52}{08:51}方が{08:7F}ぜ。\nこう{08:68}特殊弾{08:62}ありゃ便利なモンだ{08:42}な。\n<wait>		Take my advice. You'd better bring some SS photon rounds too.\nSpecial rounds like these come in handy, you know.\n<wait>	ours		reads: 悪いことはいわん。ＳＳ光子弾、持ってった方がいいぜ。\nこういう特殊弾は、ありゃ便利なモンだからな。\n<wait>
-m/MS005A.BIN	0:33	32	1518	1F81	{04:F9}	{04:F9}				reads: ; reads: 悪いことはいわん。ＳＳ光子弾、持ってった方がいいぜ。\nこういう特殊弾は、ありゃ便利なモンだからな。\n<wait>
-m/MS005A.BIN	0:33	33	1560	1F83	{03:00}	{03:00}				reads: 飛び道具
-m/MS005A.BIN	0:33	34	1574	1F80	j性：	j性：	Woman:	ours		reads: 飛び道具
-m/MS005A.BIN	0:33	35	1581	1FD3	あー{08:72}お前ちょ{08:53}、７．６２ｍｍパラど{08:5F}け持っ{08:2B}か見{08:67}み？\n<wait>		Ah......hold on a sec, let me see how many 7.62mm Para rounds you've got?\n<wait>	ours		reads: あー‥‥お前ちょっと、７．６２ｍｍパラどんだけ持ってるか見せてみ？\n<wait>
-m/MS005A.BIN	0:33	36	1661	1FD2	男性：		Man:	ours		reads: あー‥‥お前ちょっと、７．６２ｍｍパラどんだけ持ってるか見せてみ？\n<wait>
-m/MS005A.BIN	0:33	37	1677	1F89	んー{08:72}{08:47}数だと、ちょ{08:53}キツいなぁ{02:08}\n他のモン捨てて、弾薬入れ{08:69}ぜ？　な？\n<wait>		Hmm......with that many, it's gonna be a bit tight......\nWhy don't you ditch some other stuff and load up on ammo? How about it?\n<wait>	ours		reads: んー‥‥この数だと、ちょっとキツいなぁ‥‥‥\n他のモン捨てて、弾薬入れようぜ？　な？\n<wait>
-m/MS005A.BIN	0:33	38	1770	18	こ{08:5F}けありゃあ、十分か{02:08}\n<wait>		With this much, should be enough......\n<wait>	ours		reads: こんだけありゃあ、十分か‥‥‥\n<wait>; reads: んー‥‥この数だと、ちょっとキツいなぁ‥‥‥\n他のモン捨てて、弾薬入れようぜ？　な？\n<wait>
-m/MS005A.BIN	0:33	39	1851	1F81	{04:F4}	{04:F4}				reads: ; reads: こんだけありゃあ、十分か‥‥‥\n<wait>
-m/MS005A.BIN	0:33	40	1910	1F83	{03:00}	{03:00}				reads: 飛び道具
-m/MS005A.BIN	0:33	41	1924	1F80	j性：	j性：	Woman:	ours		reads: 飛び道具
-m/MS005A.BIN	0:33	42	1931	1FD3	強化弾{08:62}中々支給できん{08:42}な。\n持{08:52}{08:29}時に持{08:52}きな！！\n<wait>		Reinforced rounds, those are hard to keep in supply.\nTake them when you can!!\n<wait>	ours		reads: 強化弾は、中々支給できんからな。\n持ってける時に持ってきな！！\n<wait>
-m/MS005A.BIN	0:33	43	2036	1F81	{04:F5}	{04:F5}				reads: ; reads: 強化弾は、中々支給できんからな。\n持ってける時に持ってきな！！\n<wait>
-m/MS005A.BIN	0:33	44	2077	1F83	{03:00}	{03:00}				reads: 飛び道具
-m/MS005A.BIN	0:33	45	2091	1F80	j性：	j性：	Woman:	ours		reads: 飛び道具
-m/MS005A.BIN	0:33	46	2098	1FD3	ＳＳ通常弾ど{08:5F}け持っ{08:2B}か、ちょ{08:53}見{08:67}くれ、な？\n<wait>		Let me see how many standard SS rounds you've got, would you?\n<wait>	ours		reads: ＳＳ通常弾どんだけ持ってるか、ちょっと見せてくれ、な？\n<wait>
-m/MS005A.BIN	0:33	47	2168	1FD2	男性：		Man:	ours		reads: ＳＳ通常弾どんだけ持ってるか、ちょっと見せてくれ、な？\n<wait>
-m/MS005A.BIN	0:33	48	2184	1F89	んー{08:72}{08:47}数だと、ちょ{08:53}キツいなぁ{02:08}\n他のモン捨てて、弾薬入れ{08:69}ぜ？　な？\n<wait>		Hmm......with that many, it's gonna be a bit tight......\nWhy don't you ditch some other stuff and load up on ammo? How about it?\n<wait>	ours		reads: んー‥‥この数だと、ちょっとキツいなぁ‥‥‥\n他のモン捨てて、弾薬入れようぜ？　な？\n<wait>
-m/MS005A.BIN	0:33	49	2277	18	こ{08:5F}けありゃあ、十分か{02:08}{08:48}でよしとし{08:69}か。\n<wait>		With this much, should be enough...... guess this'll do.\n<wait>	ours		reads: こんだけありゃあ、十分か‥‥‥これでよしとしようか。\n<wait>; reads: んー‥‥この数だと、ちょっとキツいなぁ‥‥‥\n他のモン捨てて、弾薬入れようぜ？　な？\n<wait>
+m/MS005A.BIN	0:33	4	192	1FD2	男性：		Man:	ours		reads: あー‥‥お前ちょっと、ＳＳ通常弾どんだけ持ってるか見せてみ？\n<wait>
+m/MS005A.BIN	0:33	5	200	1FD3	あー{08:72}お前ちょ{08:53}、ＳＳ通常弾ど{08:5F}け持っ{08:2B}か見{08:67}み？\n<wait>		Ah......hold on a sec, let me see how many standard SS rounds you've got?\n<wait>	ours		reads: あー‥‥お前ちょっと、ＳＳ通常弾どんだけ持ってるか見せてみ？\n<wait>
+m/MS005A.BIN	0:33	6	274	1FD2	男性：		Man:	ours		reads: あー‥‥お前ちょっと、ＳＳ通常弾どんだけ持ってるか見せてみ？\n<wait>
+m/MS005A.BIN	0:33	7	290	1F89	んー{08:72}{08:47}数だと、ちょ{08:53}キツいなぁ{02:08}\n他のモン捨てて、弾薬入れ{08:69}ぜ？　な？\n<wait>		Hmm......with that many, it's gonna be a bit tight......\nWhy don't you ditch some other stuff and load up on ammo? How about it?\n<wait>	ours		reads: んー‥‥この数だと、ちょっとキツいなぁ‥‥‥\n他のモン捨てて、弾薬入れようぜ？　な？\n<wait>
+m/MS005A.BIN	0:33	8	383	18	こ{08:5F}けありゃあ、十分か{02:08}{08:48}で{08:7F}な。\n<wait>		With this much, should be enough...... guess this'll do.\n<wait>	ours		reads: こんだけありゃあ、十分か‥‥‥これでいいな。\n<wait>; reads: んー‥‥この数だと、ちょっとキツいなぁ‥‥‥\n他のモン捨てて、弾薬入れようぜ？　な？\n<wait>
+m/MS005A.BIN	0:33	9	503	1FD2	男性：		Man:	ours		reads: あー‥‥お前ちょっと、ＳＳ通常弾どんだけ持ってるか見せてみ？\n<wait>
+m/MS005A.BIN	0:33	10	511	1FD3	あー{08:72}お前ちょ{08:53}、７．６２ｍｍパラど{08:5F}け持っ{08:2B}か見{08:67}み？\n<wait>		Ah......hold on a sec, let me see how many 7.62mm Para rounds you've got?\n<wait>	ours		reads: あー‥‥お前ちょっと、７．６２ｍｍパラどんだけ持ってるか見せてみ？\n<wait>
+m/MS005A.BIN	0:33	11	591	1FD2	男性：		Man:	ours		reads: あー‥‥お前ちょっと、ＳＳ通常弾どんだけ持ってるか見せてみ？\n<wait>
+m/MS005A.BIN	0:33	12	607	1F89	んー{08:72}{08:47}数だと、ちょ{08:53}キツいなぁ{02:08}\n他のモン捨てて、弾薬入れ{08:69}ぜ？　な？\n<wait>		Hmm......with that many, it's gonna be a bit tight......\nWhy don't you ditch some other stuff and load up on ammo? How about it?\n<wait>	ours		reads: んー‥‥この数だと、ちょっとキツいなぁ‥‥‥\n他のモン捨てて、弾薬入れようぜ？　な？\n<wait>
+m/MS005A.BIN	0:33	13	700	18	こ{08:5F}けありゃあ、十分か{02:08}{08:48}で{08:7F}な。\n<wait>		With this much, should be enough...... guess this'll do.\n<wait>	ours		reads: こんだけありゃあ、十分か‥‥‥これでいいな。\n<wait>; reads: んー‥‥この数だと、ちょっとキツいなぁ‥‥‥\n他のモン捨てて、弾薬入れようぜ？　な？\n<wait>
+m/MS005A.BIN	0:33	14	793	1F01	を装備{08:4B}。\n<wait>	 equipped.\n<wait>	.\n<wait>	ours	draft	reads: を装備した。\n<wait>; reads: こんだけありゃあ、十分か‥‥‥これでいいな。\n<wait> @ours-2026-09-05
+m/MS005A.BIN	0:33	15	812	1FD2	オヤジ：					
+m/MS005A.BIN	0:33	16	822	1FD3	ほらよ！　{08:48}も持{08:52}きな！\n<wait>	Here! Take this too!\n<wait>			draft	reads: ほらよ！　これも持ってきな！\n<wait>; reads: ほらよ！　これも持ってきな！\n<wait> @ours-2026-09-05
+m/MS005A.BIN	0:33	17	878	1FD0	フリッツヘルムとサーベルも貰{08:51}。\n	Also received a Fritz helm and a sabre.\n			draft	reads: フリッツヘルムとサーベルも貰った。\n; reads: ほらよ！　これも持ってきな！\n<wait> @ours-2026-09-05
+m/MS005A.BIN	0:33	18	948	1FD2	男性：		Man:	ours		reads: あー‥‥お前ちょっと、ＳＳ通常弾どんだけ持ってるか見せてみ？\n<wait>
+m/MS005A.BIN	0:33	19	956	1FD3	{08:4D}{08:81}あ、お前の部隊の全員分を支給しとくぜ！\n<wait>		Well then, I'll issue supplies for your whole squad!\n<wait>	ours		reads: それじゃあ、お前の部隊の全員分を支給しとくぜ！\n<wait>
+m/MS005A.BIN	0:33	20	1081	1FD2	男性：		Man:	ours		reads: フリッツヘルムとサーベルも貰った。\n
+m/MS005A.BIN	0:33	21	1089	1FD3	ＳＳ通常弾ど{08:5F}け持っ{08:2B}か、ちょ{08:53}見{08:67}くれ、な？\n<wait>		Let me see how many standard SS rounds you've got, would you?\n<wait>	ours		reads: ＳＳ通常弾どんだけ持ってるか、ちょっと見せてくれ、な？\n<wait>
+m/MS005A.BIN	0:33	22	1159	1FD2	男性：		Man:	ours		reads: あー‥‥お前ちょっと、ＳＳ通常弾どんだけ持ってるか見せてみ？\n<wait>
+m/MS005A.BIN	0:33	23	1175	1F89	んー{08:72}{08:47}数だと、ちょ{08:53}キツいなぁ{02:08}\n他のモン捨てて、弾薬入れ{08:69}ぜ？　な？\n<wait>		Hmm......with that many, it's gonna be a bit tight......\nWhy don't you ditch some other stuff and load up on ammo? How about it?\n<wait>	ours		reads: んー‥‥この数だと、ちょっとキツいなぁ‥‥‥\n他のモン捨てて、弾薬入れようぜ？　な？\n<wait>
+m/MS005A.BIN	0:33	24	1268	18	こ{08:5F}けありゃあ、十分か{02:08}{08:48}でよし{08:72}{08:53}。\n<wait>		With this much, should be enough...... there we go.\n<wait>	ours		reads: こんだけありゃあ、十分か‥‥‥これでよし‥‥っと。\n<wait>; reads: んー‥‥この数だと、ちょっとキツいなぁ‥‥‥\n他のモン捨てて、弾薬入れようぜ？　な？\n<wait>
+m/MS005A.BIN	0:33	25	1375	1FD2	男性：		Man:	ours		reads: あー‥‥お前ちょっと、ＳＳ通常弾どんだけ持ってるか見せてみ？\n<wait>
+m/MS005A.BIN	0:33	26	1383	1FD3	悪い{08:46}{08:26}わん。ＳＳ光子弾、持{08:52}{08:51}方が{08:7F}ぜ。\nこう{08:68}特殊弾{08:62}ありゃ便利なモンだ{08:42}な。\n<wait>		Take my advice. You'd better bring some SS photon rounds too.\nSpecial rounds like these come in handy, you know.\n<wait>	ours		reads: 悪いことはいわん。ＳＳ光子弾、持ってった方がいいぜ。\nこういう特殊弾は、ありゃ便利なモンだからな。\n<wait>
+m/MS005A.BIN	0:33	27	1573	1FD2	男性：		Man:	ours		reads: あー‥‥お前ちょっと、ＳＳ通常弾どんだけ持ってるか見せてみ？\n<wait>
+m/MS005A.BIN	0:33	28	1581	1FD3	あー{08:72}お前ちょ{08:53}、７．６２ｍｍパラど{08:5F}け持っ{08:2B}か見{08:67}み？\n<wait>		Ah......hold on a sec, let me see how many 7.62mm Para rounds you've got?\n<wait>	ours		reads: あー‥‥お前ちょっと、７．６２ｍｍパラどんだけ持ってるか見せてみ？\n<wait>
+m/MS005A.BIN	0:33	29	1661	1FD2	男性：		Man:	ours		reads: あー‥‥お前ちょっと、ＳＳ通常弾どんだけ持ってるか見せてみ？\n<wait>
+m/MS005A.BIN	0:33	30	1677	1F89	んー{08:72}{08:47}数だと、ちょ{08:53}キツいなぁ{02:08}\n他のモン捨てて、弾薬入れ{08:69}ぜ？　な？\n<wait>		Hmm......with that many, it's gonna be a bit tight......\nWhy don't you ditch some other stuff and load up on ammo? How about it?\n<wait>	ours		reads: んー‥‥この数だと、ちょっとキツいなぁ‥‥‥\n他のモン捨てて、弾薬入れようぜ？　な？\n<wait>
+m/MS005A.BIN	0:33	31	1770	18	こ{08:5F}けありゃあ、十分か{02:08}\n<wait>		With this much, should be enough......\n<wait>	ours		reads: こんだけありゃあ、十分か‥‥‥\n<wait>; reads: んー‥‥この数だと、ちょっとキツいなぁ‥‥‥\n他のモン捨てて、弾薬入れようぜ？　な？\n<wait>
+m/MS005A.BIN	0:33	32	1923	1FD2	男性：		Man:	ours		reads: あー‥‥お前ちょっと、ＳＳ通常弾どんだけ持ってるか見せてみ？\n<wait>
+m/MS005A.BIN	0:33	33	1931	1FD3	強化弾{08:62}中々支給できん{08:42}な。\n持{08:52}{08:29}時に持{08:52}きな！！\n<wait>		Reinforced rounds, those are hard to keep in supply.\nTake them when you can!!\n<wait>	ours		reads: 強化弾は、中々支給できんからな。\n持ってける時に持ってきな！！\n<wait>
+m/MS005A.BIN	0:33	34	2090	1FD2	男性：		Man:	ours		reads: あー‥‥お前ちょっと、ＳＳ通常弾どんだけ持ってるか見せてみ？\n<wait>
+m/MS005A.BIN	0:33	35	2098	1FD3	ＳＳ通常弾ど{08:5F}け持っ{08:2B}か、ちょ{08:53}見{08:67}くれ、な？\n<wait>		Let me see how many standard SS rounds you've got, would you?\n<wait>	ours		reads: ＳＳ通常弾どんだけ持ってるか、ちょっと見せてくれ、な？\n<wait>
+m/MS005A.BIN	0:33	36	2168	1FD2	男性：		Man:	ours		reads: あー‥‥お前ちょっと、７．６２ｍｍパラどんだけ持ってるか見せてみ？\n<wait>
+m/MS005A.BIN	0:33	37	2184	1F89	んー{08:72}{08:47}数だと、ちょ{08:53}キツいなぁ{02:08}\n他のモン捨てて、弾薬入れ{08:69}ぜ？　な？\n<wait>		Hmm......with that many, it's gonna be a bit tight......\nWhy don't you ditch some other stuff and load up on ammo? How about it?\n<wait>	ours		reads: んー‥‥この数だと、ちょっとキツいなぁ‥‥‥\n他のモン捨てて、弾薬入れようぜ？　な？\n<wait>
+m/MS005A.BIN	0:33	38	2277	18	こ{08:5F}けありゃあ、十分か{02:08}{08:48}でよしとし{08:69}か。\n<wait>		With this much, should be enough...... guess this'll do.\n<wait>	ours		reads: こんだけありゃあ、十分か‥‥‥これでよしとしようか。\n<wait>; reads: んー‥‥この数だと、ちょっとキツいなぁ‥‥‥\n他のモン捨てて、弾薬入れようぜ？　な？\n<wait>
 m/MS005A.BIN	0:34	0	59	1FD2	{08:03}：		Emi:	v005		reads: 英美：; reads: 英美： @refalign
 m/MS005A.BIN	0:34	1	65	1FD3	{01:16}達、本当に{01:08}倒しちゃ{08:51}{08:5F}ね{02:08}！\n<wait>		So, we did it, huh? We took down Baal...\n<wait>	ours		reads: あたし達、本当にバエル倒しちゃったんだね‥‥‥！\n<wait>
 m/MS005A.BIN	0:34	2	106	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; reads: 早坂： @refalign

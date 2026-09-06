@@ -4,13 +4,13 @@
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
 m/MS0042.BIN	0:03	0	18	00	{03:17}	{03:17}				reads: 
-m/MS0042.BIN	0:04	0	0	UNTILED	P /  / O / P /  / O / B					@noedit; @untiled; record does not tile (u8 operand past end of record at 0x33); read-only, copied verbatim
-m/MS0042.BIN	0:05	0	0	UNTILED	P /  / B / P /  / B					@noedit; @untiled; record does not tile (expression selector past end of record at 0x2B); read-only, copied verbatim
+m/MS0042.BIN	0:04	0	0	UNTILED	P /  / O / P /  / O / B					@noedit; @untiled; record does not tile (expression node 0x03 payload past end); read-only, copied verbatim; record does not tile (u8 operand past end of record at 0x33)
+m/MS0042.BIN	0:05	0	26	00	{02:1F}P{03:17}{03:00}	{02:1F}P{03:17}{03:00}				reads: P飛び道具
 m/MS0042.BIN	0:06	0	20	00	{01:1F}Q{03:00}{03:17}	{01:1F}Q{03:00}{03:17}				reads: おにいちゃんQ飛び道具
 m/MS0042.BIN	0:06	1	113	1F4E	{03:02}{03:19}	{03:02}{03:19}				reads: を攻撃し
 m/MS0042.BIN	0:06	2	118	00	{02:03}	{02:03}				reads: レジスタンス
 m/MS0042.BIN	0:06	3	123	18	{08:00}{03:18}{01:FF}	{08:00}{03:18}{01:FF}				reads: 早坂
-m/MS0042.BIN	0:06	4	304	1F82	fバッグＭＳＧ：		Debug MSG:	ours		
+m/MS0042.BIN	0:06	4	303	1FD2	デバッグＭＳＧ：					
 m/MS0042.BIN	0:06	5	321	1FD3	選択{08:4B}{02:04}{08:42}フラグが拾え{02:0A}。\n関連テーブルのチェックが必要{08:55}。\n<wait>		Cannot read a flag from the selected item.\nThe related table needs checking.\n<wait>	ours		reads: 選択したアイテムからフラグが拾えません。\n関連テーブルのチェックが必要です。\n<wait>
 m/MS0042.BIN	0:06	6	417	1F4E	{03:16}	{03:16}				reads: 
 m/MS0042.BIN	0:06	7	420	00	{02:03}	{02:03}				reads: レジスタンス

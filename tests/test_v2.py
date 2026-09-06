@@ -350,7 +350,14 @@ def test_tokenizer_reproduces_the_published_tiling_numbers():
     # tables at 0x437380 (selector -> kind) and 0x437288 (kind -> handler), and a
     # first reading of those disagrees with our nodes for 67 of 94 selectors.
     # Fix the root there, not by removing an operand that exists.
-    assert (ok, stray, unimpl, overrun) == (19330, 1117, 100, 143), (ok, stray, unimpl, overrun)
+    # 2026-09-06, the name-print operand fix (0x17F-0x184 read ONE expression,
+    # not two): 19 330 / 1 117 / 100 / 143 -> 19 394 / 1 081 / 99 / 116.
+    # 27 records stopped overrunning and `stray` fell by 36 -- more records now
+    # end on their terminator, which is what a correct walk does.  The stronger
+    # evidence is elsewhere: garbage-prefix spans 118 -> 28, records carrying an
+    # expression selector the engine would refuse 78 -> 50, and the NOT_A_BRANCH
+    # re-derivation moving 0x182 to the branch side on its own.
+    assert (ok, stray, unimpl, overrun) == (19394, 1081, 99, 116), (ok, stray, unimpl, overrun)
 
 
 def test_operands_are_never_text():
@@ -1004,7 +1011,7 @@ def test_no_more_records_carry_an_impossible_expression_selector():
                         continue
                     break
     assert total > 20000, total
-    # 2026-09-06: 78.  docs/expr-nodes.json is the engine's own model and should
-    # bring this down; it must never rise.
-    assert len(bad) <= 78, ("%d records now carry an impossible selector: %s"
+    # 2026-09-06: 78, then 50 once 0x17F-0x184 stopped reading a second
+    # expression they never read.  Must never rise.
+    assert len(bad) <= 50, ("%d records now carry an impossible selector: %s"
                             % (len(bad), bad[:5]))

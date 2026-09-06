@@ -186,7 +186,17 @@ def run(family: str = "all", root: "str | None" = None,
                 # way: find the old row whose Japanese is this row's, and only
                 # when that is unambiguous.
                 cands = by_content.get((r.rec, r.jp)) or []
-                picked = cands[0] if len(cands) == 1 else None
+                # "Unambiguous" means the candidates *agree*, not that there is
+                # only one of them.  A record often repeats a line verbatim --
+                # the same narration for each party member, say -- and every
+                # copy carries the same English, so refusing on count alone
+                # threw away hundreds of translations that were never in doubt.
+                # Disagreement is still refused: that is a real ambiguity.
+                picked = None
+                if cands:
+                    vals = {(c.en, c.ref_en, c.status) for c in cands}
+                    if len(vals) == 1:
+                        picked = cands[0]
                 if prev is not None:            # there *was* a row here
                     st["reanchored" if picked else "unanchored"] += 1
                 prev = picked
