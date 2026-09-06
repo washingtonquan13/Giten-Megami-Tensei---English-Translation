@@ -21,6 +21,7 @@ Rules
 ``page-rows``  a page holds more than 4 lines before a ``<wait>``.
 ``width-choice`` a menu option exceeds the width its ``1F B1`` declares.
 ``missing``    a non-empty ``jp`` with an empty ``en``.
+``name-macro`` the ``en`` drops a pool call that prints a runtime name
 ``tokens``     the ``en`` **adds** a pool call the ``jp`` does not have, naming a
                record nothing has checked exists.  Dropping one is normal and is
                not reported: an English line spells the word out.
@@ -224,8 +225,47 @@ def render_english(text: str, epool: dict, depth: int = 0) -> str:
     return _CALL.sub(sub, text)
 
 
+_NAME_MACROS: dict = {}
+
+
+def name_macros(root=None) -> set:
+    """The pool calls that print a runtime name.
+
+    A pool record holding a ``1F01`` prints a party-member name when the engine
+    expands the call -- ``m/MS7F03`` r05 is three of them around one ideographic
+    space.  ``pool.reading`` shows only the literal text, so such an entry reads
+    as `　` and looks like decoration; thirteen battle lines lost their actor's
+    name to an English `" "` before this rule existed.  Ten entries qualify,
+    all in pool 4.
+    """
+    if root not in _NAME_MACROS:
+        out = set()
+        for i in range(8):
+            rel = "m/MS7F%02X.BIN" % i
+            try:
+                sc = script.parse(rel, files.read_source(rel, root))
+            except Exception:
+                continue
+            if not sc.ok or not sc.containers:
+                continue
+            for rec in sc.containers[0]:
+                if not rec.data:
+                    continue
+                try:
+                    toks = vmops.tokenize(rec.data)
+                except Exception:
+                    continue
+                if any(t.kind == "op"
+                       and vmops.table().encoding(t.idx).replace(" ", "") == "1F01"
+                       for t in toks):
+                    out.add("{%02d:%02X}" % (i + 1, rec.id))
+        _NAME_MACROS[root] = out
+    return _NAME_MACROS[root]
+
+
 def check_rows(report: Report, rows, pools=None,
-               line_columns=width.LINE_COLUMNS, page_rows=width.PAGE_ROWS) -> None:
+               line_columns=width.LINE_COLUMNS, page_rows=width.PAGE_ROWS,
+               root=None) -> None:
     # (s) workflow: an en is only real once someone has marked it, and an en that
     # merely copies its ref_en candidate needs a reviewer's word for it.
     for row in rows:
@@ -298,6 +338,16 @@ def check_rows(report: Report, rows, pools=None,
             report.add("tokens", WARN, where,
                        "adds pool calls the source line does not have: %s"
                        % " ".join(sorted(added.elements())))
+
+        # ...with one exception: a call that prints a runtime *name* is not
+        # decoration to spell out, it is the name.  Dropping one is silent --
+        # the line still reads, it just has nobody in it -- which is how a
+        # battle table ended up saying " is charmed" with no one charmed.
+        lost = name_macros(root) & set(jp_calls) - set(en_calls)
+        if lost:
+            report.add("name-macro", ERROR, where,
+                       "drops %s, which prints a runtime name; the line would "
+                       "have no one in it" % " ".join(sorted(lost)))
 
         is_choice = r.tag in script.CHOICE_TAGS
         cw = _declared_width(r)
@@ -439,7 +489,7 @@ def run(root=None, text_dir=None, family="all", skip_identity=False,
     for path in tables.iter_tables(text_dir):
         rows.extend(tables.read(path))
     report.counts["rows"] = len(rows)
-    check_rows(report, rows, pool.load(root))
+    check_rows(report, rows, pool.load(root), root=root)
     check_capture(report, rows, root)
     check_record_size(report, rows, root)
     check_stale(report, rows, root)

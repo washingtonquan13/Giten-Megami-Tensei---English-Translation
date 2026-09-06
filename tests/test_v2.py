@@ -1283,3 +1283,45 @@ def test_the_name_buffer_is_not_counted_against_the_opcode_model():
     assert agree == 18644, agree
     # every classified event must really be one the script cannot hold
     assert agree - named == 18392, agree - named
+
+
+def test_dropping_a_pool_call_that_prints_a_name_is_an_error():
+    """`{04:03}` is not decoration; it is the actor.
+
+    m/MS7F03 r03 and r05 hold three `1F01` opcodes around a single ideographic
+    space, so the engine prints a party-member name when the call is expanded.
+    `pool.reading` shows only that space, which is how thirteen battle lines lost
+    their actor to an English `" "` -- and lost it *silently*, because the line
+    still reads, it just has nobody in it.
+
+    Dropping an ordinary pool call stays correct and unreported: an English line
+    spells the word out instead of splicing a Japanese macro.  Only the ten
+    name-printing entries are protected.
+    """
+    from giten import check_v2, findings, paths
+    from giten import tables as tbl
+
+    root = paths.game_root()
+    macros = check_v2.name_macros(root)
+    assert "{04:03}" in macros and "{04:05}" in macros, sorted(macros)
+    assert "{08:62}" not in macros            # は、 is a grammar fragment
+    assert len(macros) == 10, sorted(macros)
+
+    def row(jp, en):
+        return tbl.Row(file="m/MS00DE.BIN", rec="0:21", idx=0, off=0, tag="DATA",
+                       jp=jp, en=en, status="draft")
+
+    rep = findings.Report()
+    check_v2.check_rows(rep, [row("{04:03}{08:62}", " ")], root=root)
+    kinds = [f.rule for f in rep.errors]
+    assert "name-macro" in kinds, kinds
+
+    rep = findings.Report()
+    check_v2.check_rows(rep, [row("{04:03}{08:62}", "{04:03} spewed ")],
+                        root=root)
+    assert "name-macro" not in [f.rule for f in rep.errors]
+
+    # the ordinary case: dropping a grammar fragment is fine
+    rep = findings.Report()
+    check_v2.check_rows(rep, [row("{08:62}", " ")], root=root)
+    assert "name-macro" not in [f.rule for f in rep.errors]
