@@ -959,3 +959,52 @@ def test_extract_carries_the_reference_columns():
         "extract must carry the reference columns forward"
     assert "by_content" in src and "prev.jp != r.jp" in src, \
         "extract must fingerprint on jp before trusting the span index"
+
+
+def test_no_more_records_carry_an_impossible_expression_selector():
+    """The engine bounds expression selectors: 0x00436B00 does
+
+        call 0x00438FA0 ; cmp esi,0x5D ; ja <error>
+
+    so a selector above 0x5D is a value it would refuse.  A record that tiles
+    "successfully" while containing one is therefore mis-tiled *silently* -- the
+    walk is out of step and the operand bytes it is reading are not operands.
+
+    This is the honest acceptance metric for opcode/expression model work: it
+    must go down, never up.  `stray` and "records that tile" can both improve
+    while the walk gets worse; this cannot.
+    """
+    import glob
+    import os
+
+    from giten import files, script, vmops
+
+    tab = vmops.table()
+    bad = []
+    total = 0
+    for p in sorted(glob.glob("original/ddswin/m/MS*.BIN")):
+        rel = "m/" + os.path.basename(p)
+        try:
+            sc = script.parse(rel, files.read_source(rel))
+        except Exception:
+            continue
+        if not sc.ok:
+            continue
+        for cont in sc.containers:
+            for r in cont:
+                if not r.data or r.untiled:
+                    continue
+                total += 1
+                for t in r.tokens:
+                    for o in t.ops:
+                        if o.kind == "expr" and o.raw and o.raw[0] > 0x5D:
+                            bad.append((rel, r.id, o.raw[0]))
+                            break
+                    else:
+                        continue
+                    break
+    assert total > 20000, total
+    # 2026-09-06: 78.  docs/expr-nodes.json is the engine's own model and should
+    # bring this down; it must never rise.
+    assert len(bad) <= 78, ("%d records now carry an impossible selector: %s"
+                            % (len(bad), bad[:5]))
