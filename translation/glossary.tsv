@@ -1,0 +1,205 @@
+jp	en	category	source	note
+史人	Ayato	character	exe pairs.txt cluster @0x67b58; m/MS0000.BIN+	Given name of the protagonist. Called "Ayato" by close family/friends (Nishino: "Ayato! The ID is 58147!"); usually addressed by surname otherwise.
+葛城	Katsuragi	character	m/MS0000.BIN, MS0001.BIN, MS0002.BIN, MS0003.BIN (pervasive)	Protagonist's surname; his default speaker tag "Katsuragi:". Kanji itself is left UNTOUCHED in the exe string table (sjis_inventory.md UNTOUCHED off 00067b60) — only used as running text in story files, not the HUD.
+橘	Tachibana	character	untranslated in exe (kanji retained, sjis_inventory.md off 00067b70); surname inferred, never used as a speaker tag	Surname of Yuuka. NOT used as a speaker tag anywhere in MS0000-MS006D — she is always "Yuuka:".
+由宇香	Yuuka	character	exe pairs.txt @0x67b68 "Yuuka"; m/MS0007.BIN etc.	Given name of Tachibana Yuuka; ALWAYS the speaker tag (never "Tachibana:"). Warm/soft voice, contraction-heavy. Uses "Katsuragi-kun" (honorific kept) consistently, ~15 instances.
+達也	Tatsuya	character	exe pairs.txt @0x67b90 "Tatsuya"	Given name of Hayasaka Tatsuya; rarely used alone in dialogue (surname preferred).
+早坂	Hayasaka	character	m/MS0000.BIN "Hayasaka:"	Surname, standard speaker tag. Hot-tempered voice: "The hell!?", "Who would ever want to be a demon's lackey!?"
+義雄	Yoshio	character	exe pairs.txt @0x67b80 "Yoshio"	Given name of Nishino Yoshio; rarely used alone (surname preferred).
+西野	Nishino	character	m/MS0000.BIN "Nishino:"	Surname, standard speaker tag. Commanding in crisis ("Kirishima! Hayasaka!"), warm in family scenes with daughter Chita (MS0029.BIN).
+英美	Emi	character	exe pairs.txt @0x67bac "Emi"; m/MS0000.BIN	Given name of Kirishima Emi. ALWAYS the speaker tag (758+ occurrences) — "Kirishima" alone is never used as a tag. Emotional/exclamatory voice: "Y-Yamase!? You're alive?"
+桐島	Kirishima	character	untranslated in exe (kanji retained, off 00067bb4); used only in the full self-introduction "Kirishima Emi"	Surname; essentially never used standalone as a speaker tag.
+公輝	Kouki	character	exe pairs.txt @0x67bf8 "Kouki"	Given name of Kamikawa Kouki; rarely used alone (surname preferred).
+上河	Kamikawa	character	m/MS0002.BIN "Kamikawa:"	Surname, standard speaker tag. Formal/dutiful voice: "Yes sir."
+勇	Isamu	character	untranslated in exe (kanji retained, off 00067ba0)	Given name of Yamase Isamu; essentially unused in dialogue (surname strongly preferred).
+山瀬	Yamase	character	exe pairs.txt @0x67ba4 "Yamase "; m/MS0000.BIN	Surname, standard speaker tag. Brash survivor voice: "I got the hell out of there as fast as I could."
+哲也	Tetsuya	character	exe pairs.txt @0x67be8 "Tetsuya"	Given name of Sonoda Tetsuya; rarely used alone.
+園田	Sonoda	character	exe pairs.txt @0x67bf0 "Sonoda "; m/MS0002.BIN	Surname, standard speaker tag (also appears once as "Sonoda." with a period — inconsistency, see style guide). Friendly-skeptical resistance-member voice.
+三四郎	Sanshirou	character	m/MS0006.BIN etc.	Given name of Souma Sanshirou; used alone as speaker tag OR combined as "Souma Sanshirou:". Blunt/casual voice: "Hell yeah!", "Shit..."
+相馬	Souma	character	exe pairs.txt @0x67c10 "Souma " (translated, trailing space)	Surname shared by Souma Sanshirou and by the unrelated NPC Souma Kojirou (reincarnation of Masakado, mentioned once). See note on "Souma Yukihito" below.
+泪	Rui	character	exe pairs.txt @0x67b74 "Rui"; m/MS0011.BIN	Given name of Asuka Rui. ALWAYS the speaker tag "Rui:". Terse, urgent lines: "Just a bit more!"
+飛鳥	Asuka	character	exe pairs.txt @0x67b78 "Asuka " (translated, trailing space)	Surname of Rui; not used as a speaker tag in sampled files.
+カズミ	Kazumi	character	exe pairs.txt @0x67bc8 "Kazumi" (already katakana in JP)	Presumed given name of Yamada Kazumi. NOT found paired with "Yamada" anywhere in story files MS0000-MS006D; a bare "Kazumi:" speaker tag exists but the surname link is unconfirmed in the sampled range.
+山田	Yamada	character	exe pairs.txt @0x67bd0 "Yamada " (translated, trailing space)	Presumed surname of Kazumi; pairing not directly confirmed in story text sampled (MS0000-MS006D). May surface later in the game.
+ニュートン	Newton	character	exe pairs.txt @0x67bbc "Newton"; m/ dialogue	Confirmed to be a DOG companion, not a human — all "lines" are onomatopoeia ("Woof!", "*GRRRRRWL*!...").
+内海祥子 (reading uncertain)	Utsumi Shouko	character	tools/dumps/p_names.txt / task brief; NOT located in m/MS0000.BIN-MS006D.BIN	No dialogue evidence found in the sampled story range. Needs verification against later-game files (beyond MS006D) before finalizing voice/register.
+(unconfirmed kanji)	Souma Yukihito	character	tools/dumps/p_names.txt line 1 "P2000 Souma Yukihito" (unit-roster slot 1)	NOT found anywhere in m/MS0000.BIN-MS006D.BIN dialogue (checked exhaustively). Only appears in the p/ unit-name table as the very first party slot. Likely either (a) the protagonist's true/hidden name revealed later in the story, distinct from his alias "Katsuragi Ayato", or (b) an unused/placeholder default name. Flag for confirmation before use in new translation.
+惣厳	(name unclear, not "Katsuragi Ayato"/"Souma")	character	exe UNTOUCHED, sjis_inventory.md off 00067bd8 (English mapped to empty string ''); paired oddly with untranslated surname 立川 ("Tachikawa")	Minor/unclear NPC, not part of the main cast list; the exe leaves this English slot empty. Do not confuse 立川 (Tachikawa) with 橘 (Tachibana) — they are different kanji/readings that both showed up during exe analysis.
+Souma Kojirou (惣厳...unclear)	Souma Kojirou	character	agent-mined story text, m/MS0000.BIN area	Mentioned once as "the reincarnation of Masakado" — unrelated to Souma Sanshirou/Yukihito beyond sharing the Souma surname.
+なし (n/a — see note)	Devil Buster	misc	m/MS0000.BIN ("member of Devil Buster Squad Two, Kirishima Emi"), 30+ files	Established rendering of デビルバスター, the player's profession/faction. Plural "Devil Busters" used naturally. NOT "Devil Hunter" or "Demon Buster" — keep exactly "Devil Buster(s)".
+悪魔	demon	misc	50+ story files, e.g. m/MS00B0.BIN ("a terrible prison there ran by demon")	Generic term for the game's monsters. "devil" essentially never used standalone — it survives only inside the fixed compound "Devil Buster".
+ＣＯＭＰ	COMP	ui-term	tools/exe_analysis/english_inventory.md off 000660b0 (battle command menu: ATTACK/SWORD/GUN/MAGIC/ITEM/COMP/EXTRA/RETURN/DEFENCE)	Battle-menu command label (opens demon-command options in combat). NOT the same string as the narrative "Arm Terminal" below — see inconsistency note in style guide; both likely refer to the same wrist device from two different UI layers.
+(device referred to only in prose, no fixed JP term captured)	Arm Terminal	ui-term	m/MS0000.BIN ("That Arm Terminal of yours"), MS0017/MS0019.BIN ("operating his Arm Terminal")	Established story-text name for the player's wrist device (equivalent to a COMP in mainline SMT). Use this term in new narrative/negotiation text referring to the device.
+ターミナル	Terminal	ui-term	m/MS00A0.BIN ("Welcome to Hatsudai Terminal"); et/ET0101.BIN offsets 0000c3, 0001ef ("Terminal", "Computer Terminal")	Used for TWO distinct things: (a) a fixed network kiosk/terminal in the world ("Hatsudai Terminal", "Computer Terminal"), and (b) loosely for the wrist device via "Arm Terminal". Disambiguate by context.
+ＤＤＳ	DDS	ui-term	m/MS001E.BIN ("The next set of programs, DDS and DDC..."); exe pairs.txt (DDS not installed)	Kept as a bare Latin acronym everywhere, both in the exe and in story text. Likely "Demon [something] System" — full expansion not confirmed in sampled text.
+ＤＣＳ	DCS	ui-term	tools/exe_analysis/pairs.txt off 0x66510/0x66550 "[TALK] DCSを所持していません" -> "DCS not installed"; story files m/MS001E, MS0028, MS0058.BIN	RESOLVED (2026-09 editorial pass): match the shipped exe. The exe knows only DDS / DCS / AMS; the story files' "DDC"/"D.D.C." was drift and has been rewritten to "DCS"/"D.C.S." (11 occurrences across m/MS001E, MS0028, MS0058, MS006A, MS003D). "DAS" is NOT attested in the exe and is left as-is in prose.
+ＡＭＳ	AMS	ui-term	exe pairs.txt ("AMS not installed"); m/MS00A0-MS00AE.BIN heavily ("AMS map data found. Download it?")	Kept as a bare Latin acronym consistently across both exe and story/terminal text.
+ＤＡＳ	DAS	ui-term	exe pairs.txt (untranslated cluster, "ＤＡＳがインストゥールされていません"); m/MS0056-area ("download an analyser named DAS")	Kept as a bare Latin acronym in story text even though the exe string containing it (「ＤＡＳがインストゥールされていません」) is itself still UNTOUCHED/untranslated — a good candidate line for the untranslated-text pass, rendering as e.g. "DAS is not installed."
+合体	Fusion / fuse	misc	m/MS003E.BIN (the fusion facility scene, 28 instances of Fusion/fuse); negotiation lines m/MS600C, MS600E, MS600F, MS6106-MS6109 (合体材料 = fusion material)	RESOLVED (2026-09 editorial pass): MS003E is unambiguously demon fusion, not a software install. Use "Fusion" (noun, capitalised as the facility/menu term) and "fuse" (verb); 合体材料 = "fusion material". The earlier "install" guess was drawn from the unrelated Arm-Terminal program metaphor and has been removed from 8 rows. Note "install" is still correct for actual DDS/DCS/AMS program installs.
+仲魔	Demon (HUD-abbreviated count only)	ui-term	exe pairs.txt @0x68054 "仲魔 %5d／%2d" -> "Demon%5d／%2d"	No "ally demon"/"partner demon"/"companion" phrasing found anywhere in the sampled story dialogue (MS0000-MS006D) — the concept is simply not named directly in prose there. Only the HUD count string translates it, as plain "Demon". Use "Demon"/"demon" for now; revisit if narrative text elsewhere names the concept distinctly.
+宝石	Gemstone	item	tools/dumps/ID_choice_menus.txt (ID00A2/ID00A3, already-translated cat-negotiation menu)	Negotiation "give an item" menu option; official cat-menu translation, reuse verbatim for consistency (ID009D/ID009F are untranslated duplicates of this same menu).
+魔石	Magic Stone	item	tools/dumps/ID_choice_menus.txt (ID00A2/ID00A3)	As above — established, reuse verbatim.
+金	Money	item	tools/dumps/ID_choice_menus.txt (ID00A2/ID00A3)	As above — established, reuse verbatim. NOT "Gold" or "Cash".
+他の物	Other	negotiation-verb	tools/dumps/ID_choice_menus.txt (ID00A2/ID00A3, and 7+ untranslated duplicate files)	Catch-all "give something else" menu option; established, reuse verbatim everywhere 他の物 recurs (ID0099, ID009D, ID009F, ID00C1, ID00C2, ID00C3, ID00E9, ID00EC, ID014E).
+マタタビをあげる	Catnip	negotiation-verb	tools/dumps/ID_choice_menus.txt (ID00A2/ID00A3, established); recurs untranslated in ID009D, ID009F	Cat-type negotiation menu option; reuse verbatim.
+喉を撫でる	Rub Neck	negotiation-verb	tools/dumps/ID_choice_menus.txt (ID00A2/ID00A3, established); recurs untranslated in ID009D, ID009F	Cat-type negotiation menu option; reuse verbatim.
+猫じゃらしを振る	Wave Cat Toy	negotiation-verb	tools/dumps/ID_choice_menus.txt ID009D/ID009F — untranslated, no established precedent found	Proposed. Cat-type negotiation menu, appears alongside マタタビをあげる/喉を撫でる but has no existing English counterpart in the ID00A2/A3 reference pair.
+や (short for やめる in a menu)	Never Mind	negotiation-verb	tools/dumps/ID_choice_menus.txt (ID00A2/ID00A3, established)	Menu-cancel option abbreviated to a single kana in the raw script; reuse "Never Mind" verbatim wherever this exact context recurs.
+＞もっとやりますか？	&gt;Keep going?	negotiation-verb	tools/dumps/ID_choice_menus.txt (ID00A2/ID00A3, established)	Follow-up prompt after giving an item/amount; reuse verbatim. Paired choice options も(っとやる)/やめちゃう -> "Keep Going" / "Stop" (same file).
+マッカ	Macca	currency/unit	m/MS0007, MS0008, MS0019, MS003A, MS0061, MS0065, MS0115.BIN and the MS60xx negotiation set	RESOLVED (2026-09 editorial pass): always capitalised "Macca" (proper noun, official SMT spelling). 35 lowercase "macca" occurrences were rewritten corpus-wide.
+ＭＡＧ	MAG (HUD abbreviation) / Magnetite (spelled out)	currency/unit	tools/exe_analysis/english_inventory.md off 00066a04 "MAG"; tools/dumps/ID_choice_menus.txt ID00A2/A3 "Magnetite" (item-menu spelled-out form)	Two registers: compact HUD/negotiation-amount contexts use "MAG"; the item/negotiation-goods menu spells it "Magnetite". Both are established — use "MAG" in tight UI space, "Magnetite" in prose/full item names.
+シェルター	Shelter / (as part of place names) Shelter	place	m/MS0000.BIN "Our shelter was... overthrown by a demon called Murmur."; et/ET0010.BIN off 0008f7 "Toyama Shelter"	Lowercase "shelter" in generic prose reference, capitalized "Shelter" when part of a proper place name (e.g. "Toyama Shelter").
+史人所属班 / 第二班 (uncertain exact JP)	Devil Buster Squad Two	misc	m/MS0000.BIN ("This is a member of Devil Buster Squad Two, Kirishima Emi.")	Established organizational-unit naming pattern: "Devil Buster Squad <Number>".
+デイティ (guess, unverified — see note)	Deity	race	et/ET0000.BIN off 00076b (already fully translated; original JP not recoverable — overwritten in place)	First race-name table in et/ET0000.BIN. JP source text no longer present in this build (translator replaced it in place); English values are already fully established, listed here for reference/consistency. Sequence: Deity, Goddess, Destroyer, Fierce, Herald, Earth Mother, Dragon, Avian, D.Beast, H.Beast, Element, Divine, Goetia, Serpent, Winged, M.Beast, Mystic, Night, Aqua, Fairy, Tree, Femme, Warrior, Brute, Terra, Cambion, Demonoid, Therian, Ishtarite, Baelite, Lunatic, Soldier, Human, Dog, Foul, Puppet, Machine, Spirit, Undead, Haunt, Ogre, Wood, E.Beast, Raptor, Drake, Servant, Fallen, Demon, Wicked, Tyrant.
+(unrecoverable)	Goddess	race	et/ET0000.BIN off 000771	See "Deity" row note — part of the same already-translated race list.
+(unrecoverable)	Ishtarite	race	et/ET0000.BIN off 000838	Game-specific race tied to the Ishtar cult (matches MS6106 negotiation NPC voice, an Ishtar devotee).
+(unrecoverable)	Baalite	race	et/ET0000.BIN off 0x000842; story text m/MS0019, MS0026, MS0035, MS0067.BIN	RESOLVED (2026-09 editorial pass): follows the Baal decision below - "Baelite(s)" was rewritten to "Baalite(s)" (7 occurrences), including the place name "Baalite Base"/"Baalite Temple" in m/MS0035.BIN.
+(unrecoverable)	Fallen	race	et/ET0000.BIN off 0008b3	Matches "fallen angel" (堕天使) NPC voice MS610A.
+(unrecoverable, second table in same file)	Sky God / Earth God / Hebrew / Hermit / Deva / Asura / Yaksha / Rakshasa / Aesir / Vanir / Danu / Olympian / Titan / Gaian / Fomorian / Viy / Babel / Lewis / Totem / Ra / Yazata	race	et/ET0000.BIN off 00090a-000998	Second block in the same file — reads as a mythological PANTHEON/origin classification (which pantheon a demon belongs to), distinct from the race list above. Already fully translated; listed for completeness.
+(unrecoverable, third table)	Fool / Progeny / Awakened / Superhuman / Great Guru / Demi-God / God	misc	et/ET0000.BIN off 0009ab-0009e0	Reads as a protagonist rank/growth-title progression, not a demon race. Already translated; flagged for whoever maintains the leveling/rank UI.
+(unrecoverable, fourth table)	Undefined / God / Evil God / Demon / Heavenly / Dragon / Bird / Beast / Oni / Spirit / Ghost / Unholy / Human / Cambion / Inanimate / Plant	race	et/ET0000.BIN off 000a08-000a70	A second, simpler race classification (likely used in a different compendium/UI view than the main race list above). Already translated.
+(various, already translated)	Regenerate 7 / Water of Nile / Kanro Ball / Mayutsuba / Gold Elixir / Angel Hair / Hydro Capsule / Antidote P / Antidote PP / Ox Bezoar / Blue Jill / Stone Makeup	item	et/ET0001.BIN (1306 strings total; sampled first ~60)	Representative sample of already-translated item names + effect descriptions (e.g. "Antidote PP" -> "Stronger version of Antidote P. Cures Poison and Paralysis."). File is essentially 100% translated already; only 4 stray garbled fragments found (likely control-byte artifacts, not real leftover Japanese) at offsets 0029f3, 004bf3, 0050be, 005102.
+(already translated)	Soul Blade / Psycho Blast / White Dog's Tongue / Black Dog's Tongue / Makatranda / Tetrazan / Tranzio / Mahorogi	skill	et/ET0004.BIN (369 strings total; sampled)	Representative sample of already-translated skill names. Most entries in this file are skill EFFECT DESCRIPTIONS ("Fire pellet@ - Slight damage to one foe") rather than bare names — the @ symbol appears to be a formatting placeholder. File is effectively fully translated; only 4 stray garbled fragments found, same as ET0001.BIN.
+(already translated)	Virtual Dungeon / Hyperspace / Takamagahara Road / Meiji Jinguu / Yomotsu Hirasaka / Olympic Pool 1 / Ghost House 1 / Ghost House 2 / Baelite Base / Takamagahara / Bardo / Mejiro Fudou / Meao Fudou / Meaka Fudou / Meki Fudou / Meguro Fudou / Yasukuni Shrine / Toyama Shelter / Initiation Space / Hirasawa Laboratory / Kishimojin	place	et/ET0010.BIN (full list, already translated)	Complete list of established area/location names. Note real-world-derived names (Meiji Jinguu, Yasukuni Shrine, Kishimojin) are kept as their real Tokyo-area proper nouns, not translated/localized further.
+(already translated)	Terminal / Exit / Stairs Up / Stairs Down / Elevator / Chute / Computer Shop / Armoury / Transporter / Pharmacy / Cathedral of Shadows / Hospital / Spring / Healing Point / Armour Shop / Bar / Rag's Shop / Curio Store / Computer Terminal	place	et/ET0101.BIN (full list, already translated)	Complete list of established map-feature/facility labels. "Cathedral of Shadows" (the mainline-SMT fusion chapel name) appearing here is indirect evidence that 合体-related facility naming DOES follow official SMT convention even though the verb itself wasn't found translated as "fuse" in story prose — see the 合体 row above.
+バール / バエル	Baal	demon	m/MS0003, MS0020, MS002B, MS0026, MS0067, MS006C.BIN and 35 more; speaker tag バール兵 = "Baal Soldier"; p/_P_NAMES	RESOLVED (2026-09 editorial pass): the Japanese source itself uses BOTH バール and バエル for the same demon lord and his cult - the shipped English already rendered バエル as "Baal" in 51 places and as "Bael" in 32. Unified to "Baal" everywhere (279 occurrences rewritten), including "Lord Baal", "Baal cult", "Baal Soldier", "Baalite", the MS6107/MS6109 cult-fanatic files and the p/_P_NAMES unit-name slot. No "Bael" spelling is retained anywhere.
+(n/a, typo)	Baal Soldier	demon	m/MS000D.BIN (2 instances, now fixed); m/MS0061.BIN (1 tag was missing its colon, now fixed)	FIXED (2026-09 editorial pass): the transposed "Baal Solider" is gone; every instance now reads "Baal Soldier", and the speaker tag always carries its colon.
+(n/a, typo)	Bartender	misc	m/MS0040.BIN (1 instance, now fixed); correct form used throughout m/MS00B0-MS00B8.BIN	FIXED (2026-09 editorial pass): rewritten to "Bartender".
+恐慌	Panic	status	tools/exe_analysis/pairs.txt off 0x63050 (8-byte / 7-char slot table); m/MS7F06.BIN 0:C0, m/MS610C.BIN 9:56	RESOLVED (2026-09 editorial pass): 恐慌 = "Panic". Distinct from 混乱 = "Confusion" (see next row). The text tables already observe this split.
+混乱	Confusion	status	tools/exe_analysis/pairs.txt off 0x63078 (same 7-char slot table); m/MS7F06.BIN 0:49, m/MS6000.BIN 12:A1, m/MS6002.BIN 0:49	RESOLVED (2026-09 editorial pass): in the text tables use "Confusion" (verb form "thrown into confusion"). In the exe's fixed-width status table the 7-character cap still applies, so the slot there must be abbreviated "Confus." per the house word-stem+period convention. 恐慌 keeps "Panic".
+死	Dead	status	tools/exe_analysis/pairs.txt off 00062fe8	Fixed 8-byte-slot (7 visible chars + null) status table — EVERY row in this block is hard-capped at 7 characters. Do not exceed this length for any status name.
+瀕死	Dying	status	tools/exe_analysis/pairs.txt off 00062ff0	Same fixed-width status table.
+昏倒	Swoon	status	tools/exe_analysis/pairs.txt off 00062ff8	Same fixed-width status table.
+石化	Stone	status	tools/exe_analysis/pairs.txt off 00063000	Same fixed-width status table.
+麻痺	Paral.	status	tools/exe_analysis/pairs.txt off 00063008	Same fixed-width status table; abbreviated with a trailing period — this IS the established convention for status names that don't fit in 7 characters unabbreviated (see also Posse., Berse., Suffo., Vamp.).
+凍結	Chill	status	tools/exe_analysis/pairs.txt off 00063010	Same fixed-width status table.
+憑依	Posse.	status	tools/exe_analysis/pairs.txt off 00063018	Same fixed-width status table; abbreviated ("Possession").
+ゾンビ	Zombie	status	tools/exe_analysis/pairs.txt off 00063020	Same fixed-width status table.
+呪い	Curse	status	tools/exe_analysis/pairs.txt off 00063028	Same fixed-width status table.
+気絶	Faint	status	tools/exe_analysis/pairs.txt off 00063030	Same fixed-width status table.
+窒息	Suffo.	status	tools/exe_analysis/pairs.txt off 00063038	Same fixed-width status table; abbreviated ("Suffocation").
+禁縛	Bind	status	tools/exe_analysis/pairs.txt off 00063040	Same fixed-width status table.
+眠り	Sleep	status	tools/exe_analysis/pairs.txt off 00063048	Same fixed-width status table.
+猛毒	Toxic	status	tools/exe_analysis/pairs.txt off 00063058	Same fixed-width status table. Distinct from 毒 ("Poison") below — keep "Toxic" vs "Poison" as the established stronger/weaker distinction.
+毒	Poison	status	tools/exe_analysis/pairs.txt off 00063060	Same fixed-width status table.
+幻覚	Hallu.	status	tools/exe_analysis/pairs.txt off 00063068	Same fixed-width status table; abbreviated ("Hallucination").
+魅了	Charm	status	tools/exe_analysis/pairs.txt off 00063070	Same fixed-width status table.
+舞踏	Dance	status	tools/exe_analysis/pairs.txt off 00063080	Same fixed-width status table (forced-dance ailment).
+感電	Shock	status	tools/exe_analysis/pairs.txt off 00063088	Same fixed-width status table.
+氷結	Freeze	status	tools/exe_analysis/pairs.txt off 00063090	Same fixed-width status table.
+炎上	Ignite	status	tools/exe_analysis/pairs.txt off 00063098	Same fixed-width status table.
+盲目	Blind	status	tools/exe_analysis/pairs.txt off 000630a0	Same fixed-width status table.
+封魔	Sealed	status	tools/exe_analysis/pairs.txt off 000630a8	Same fixed-width status table (magic-sealed ailment).
+居眠り	Drowsy	status	tools/exe_analysis/pairs.txt off 000630b0	Same fixed-width status table.
+狂戦士	Berse.	status	tools/exe_analysis/pairs.txt off 000630b8	Same fixed-width status table; abbreviated ("Berserk").
+ハイ	High	status	tools/exe_analysis/pairs.txt off 000630c0	Same fixed-width status table (intoxication/drug-high ailment, distinct from Drunk/Tipsy).
+泥酔	Drunk	status	tools/exe_analysis/pairs.txt off 000630c8	Same fixed-width status table.
+ほろ酔	Tipsy	status	tools/exe_analysis/pairs.txt off 000630d0	Same fixed-width status table (lighter degree of Drunk).
+幸福	Happy	status	tools/exe_analysis/pairs.txt off 000630d8	Same fixed-width status table.
+ｽﾗｲﾑ	Slime	status	tools/exe_analysis/pairs.txt off 000630e0	Same fixed-width status table (turned-to-slime ailment).
+吸血	Vamp.	status	tools/exe_analysis/pairs.txt off 000630e8	Same fixed-width status table; abbreviated ("Vampirism"/being drained).
+外傷	Wound	status	tools/exe_analysis/pairs.txt off 000630f0	Same fixed-width status table.
+直感	INTUIT	stat	tools/exe_analysis/pairs.txt off 00067e54	GURPS-derived stat abbreviation, 6-char fixed field.
+精神力	W.POWR	stat	tools/exe_analysis/pairs.txt off 00067e5c	"Will Power" abbreviated.
+魔力	MAGIC	stat	tools/exe_analysis/pairs.txt off 00067e64	5-char stat abbreviation.
+知力	INTELL	stat	tools/exe_analysis/pairs.txt off 00067e6c	"Intelligence" abbreviated.
+加護	DIVINE	stat	tools/exe_analysis/pairs.txt off 00067e74	"Divine (favor/protection)" — GURPS-inspired stat unique to this game.
+強さ	STRNGT	stat	tools/exe_analysis/pairs.txt off 00067e7c	"Strength" abbreviated.
+体力	VITALI	stat	tools/exe_analysis/pairs.txt off 00067e84	"Vitality" abbreviated.
+敏捷性	AGILIT	stat	tools/exe_analysis/pairs.txt off 00067e8c	"Agility" abbreviated.
+器用さ	DEXTER	stat	tools/exe_analysis/pairs.txt off 00067e94	"Dexterity" abbreviated.
+魅力	CHARM	stat	tools/exe_analysis/pairs.txt off 00067e9c	5-char stat abbreviation. NOTE: distinct system from the status ailment "Charm" (魅了) above — same English word used for both a stat and a status effect; keep context-aware, don't conflate.
+命運	LUCK	stat	tools/exe_analysis/pairs.txt off 00067ea4	4-char stat abbreviation.
+技能	SKILL	stat	tools/exe_analysis/pairs.txt off 00067eac	Derived stat, 5 chars.
+命中	CRITIC	stat	tools/exe_analysis/pairs.txt off 00067eb4	Likely "Critical (hit chance)" — 6-char derived stat.
+攻撃	ATTACK	stat	tools/exe_analysis/pairs.txt off 00067ebc	Derived combat stat.
+回避	EVADE	stat	tools/exe_analysis/pairs.txt off 00067ec4	Derived combat stat.
+防御	DEFENC	stat	tools/exe_analysis/pairs.txt off 00067ecc	"Defence" abbreviated to 6 chars.
+弾数	BULLETS	stat	tools/exe_analysis/pairs.txt off 00067ed4	7-char field — the one row in this cluster NOT abbreviated (fits exactly).
+仲魔 %5d／%2d	Demon%5d／%2d	ui-term	tools/exe_analysis/pairs.txt off 00068054	Party roster HUD counter string. Format specifiers %5d/%2d must stay in the same order/position.
+所持アイテム %1d/8	Items %1d/8	ui-term	tools/exe_analysis/pairs.txt off 00068140	Inventory counter; preserve %1d.
+%sを会得した！	Learned %s!	ui-term	tools/exe_analysis/pairs.txt off 000666ac	Skill-learned notification; preserve %s position (it substitutes the skill name).
+%sはレベルが上がった	%s levelled up	ui-term	tools/exe_analysis/pairs.txt off 00066700	Level-up notification; preserve %s.
+CALL / RETURN / PURGE	CALL / RETURN / PURGE	ui-term	tools/exe_analysis/english_inventory.md off 0006668c-0006669c	DDS demon-management submenu commands (call a demon / return it / purge it). Already established, keep verbatim if extending this menu.
+CP %11d	CP %11d	ui-term	tools/exe_analysis/english_inventory.md off 00068064	Appears in the party status readout right after the "Demon" (仲魔) count: "...仲魔 %5d／%2d...CP %11d...". Meaning of "CP" is NOT confirmed from available sources (candidates: Combat Points, Command Points) — flag for in-game verification before using in new text; do not guess an expansion.
+態度   %s	Attitude   %s (proposed layout; JP label itself still untranslated)	ui-term	tools/exe_analysis/pairs.txt / sjis_inventory.md off 0006691c (UNTOUCHED)	Analyze-window label preceding the negotiation attitude word. NOT part of the fixed-width 7-char status table — these are ordinary consecutive null-terminated strings with looser (though unverified) length limits. Still recommend keeping the attitude word itself short to match the compact HUD aesthetic.
+状態   %s	Status   %s (proposed; JP label itself still untranslated)	ui-term	sjis_inventory.md off 00066928 (UNTOUCHED)	Analyze-window label preceding the active status-ailment word.
+哀願的	Pleading	negotiation-verb	sjis_inventory.md off 00066858 (UNTOUCHED — confirmed absent from tools/exe_analysis/pairs.txt, i.e. genuinely untranslated)	PROPOSED (not existing translation). Negotiation attitude word (demon "pleading" disposition). Roomier context (態度 %s line): "Pleading". If a hard-capped context is later confirmed, a 7-char fallback like "Meek" may be needed — but no evidence this field is actually length-limited (see ui-term row above), so prefer the fuller word unless proven otherwise.
+友好的	Friendly	negotiation-verb	sjis_inventory.md off 00066860 (UNTOUCHED); also appears in tools/dumps/negotiation_MS6xxx.txt as the top-level "Friendly" attitude-menu choice (MS6000, MS6005, MS6200)	PROPOSED for the attitude-word display AND for the top-level negotiation menu choice (dual use of the same word in two different UI contexts — keep both "Friendly" for consistency).
+超敵対的	Very Hostile	negotiation-verb	sjis_inventory.md off 00066868 (UNTOUCHED)	PROPOSED. Negotiation attitude word, extreme end. Avoid a plain truncation of "Hostile" (e.g. "Hostile+") since it would be visually indistinguishable from 敵対的 at a glance — a separate word is clearer if space is tight (e.g. "Enraged").
+敵対的	Hostile	negotiation-verb	sjis_inventory.md off 00066874 (UNTOUCHED)	PROPOSED. Negotiation attitude word.
+通常	Normal	negotiation-verb	sjis_inventory.md off 0006687c (UNTOUCHED)	PROPOSED. Negotiation attitude word (neutral/default disposition).
+友好的	Friendly	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt (top-level menu "友好的威圧的" in MS6000, MS6005, MS6200); tools/dumps/untranslated_choices.txt	PROPOSED. Top-level "how will you speak to them?" menu choice.
+威圧的	Intimidating	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt (same top-level menu, paired with 友好的)	PROPOSED. Top-level menu choice, the aggressive branch.
+仲魔になれ	Recruit	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS6001-MS6005, MS610A; tools/dumps/untranslated_choices.txt (many)	PROPOSED. Sub-menu under Friendly ("仲魔になれ / 何かくれ / 去れ").
+何かくれ	Give Me Something	negotiation-verb	same contexts as 仲魔になれ	PROPOSED (alternate shorter phrasing: "Ask for Item" if 16-char budget is tight in a given menu).
+去れ	Leave	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS6001-MS6005, MS610A, MS6103	PROPOSED. Sub-menu under Friendly, dismiss the demon.
+怒る	Get Angry	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS6000 raw ("怒る威嚇射撃攻撃")	PROPOSED. Sub-menu under Intimidating.
+威嚇射撃	Warning Shot	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS6000, MS6003, MS6004, MS6005, MS6109, MS6200	PROPOSED. Sub-menu under Intimidating.
+攻撃	Attack	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS6000 (menu line)	PROPOSED for this menu context (the word itself is already established elsewhere as the "ATTACK" combat stat/command — same English word, different UI layer, no conflict).
+ボディランゲージ	Body Language	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS6000; tools/dumps/untranslated_choices.txt	PROPOSED. Non-verbal communication sub-menu (used when the CO translator device malfunctions).
+絵を描く	Draw a Picture	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS6000; tools/dumps/untranslated_choices.txt	PROPOSED. Same non-verbal sub-menu as Body Language.
+念じる	Concentrate	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS6000; tools/dumps/untranslated_choices.txt	PROPOSED. Same non-verbal sub-menu (telepathy attempt).
+あきらめる	Give Up	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS6000 (multiple menus)	PROPOSED. Recurs across several different sub-menus as a "give up" bail-out option.
+武器を置く	Lower Weapon	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS6000 raw menu; narrative precedent in MS6007/6008 ("武器を置くのが礼儀というものじゃぞ")	PROPOSED. Sub-menu ("武器を置く / 近づく / 両手を上げる").
+近づく	Approach	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS6000 (same menu as Lower Weapon)	PROPOSED.
+両手を上げる	Raise Hands	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS6000 (same menu as Lower Weapon)	PROPOSED.
+ごまをする	Flatter	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS6001, MS6002; tools/dumps/untranslated_choices.txt	PROPOSED. Sub-menu ("ごまをする / 話を聞く").
+話を聞く	Hear Them Out	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS6001, MS6002; tools/dumps/ID_choice_menus.txt	PROPOSED.
+おだてる	Butter Up	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS6002, MS6004	PROPOSED. Distinct option from ごまをする("Flatter") even though both are flattery-flavored — keep as two different English verbs to preserve the distinction the game makes.
+貢ぐ	Offer Tribute	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS6001, MS6002, MS6004, MS6012 (frequent)	PROPOSED.
+食べ物をやる	Give Food	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS6000 raw, MS6006	PROPOSED.
+事実を告げる	Tell the Truth	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS6015, MS6016, MS6106	PROPOSED. Sub-menu ("事実を告げる / 適当にごまかす").
+適当にごまかす	Make an Excuse	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS6015, MS6016, MS6106; tools/dumps/ID_choice_menus.txt	PROPOSED.
+成仏させる	Put to Rest	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS6006, MS610B, MS610D	PROPOSED. Ghost/undead-specific menu ("成仏させる / 用を聞く").
+用を聞く	Hear Its Request	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS610B	PROPOSED. Same ghost-specific menu as Put to Rest; shorter alternate "Hear It Out" if space is tight.
+様子を見る	Wait and See	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS6001, MS6004, MS6006, MS610C, MS610D (very frequent, generic)	PROPOSED. Generic "observe" option recurring across many personality files.
+肉をあげる	Give Meat	negotiation-verb	tools/dumps/ID_choice_menus.txt / untranslated_choices.txt ID0099, ID014E	PROPOSED. Animal/dog-type menu ("肉をあげる / 骨をあげる").
+骨をあげる	Give Bone	negotiation-verb	tools/dumps/ID_choice_menus.txt ID0099, ID014E	PROPOSED.
+やめる	Cancel	negotiation-verb	tools/dumps/negotiation_MS6xxx.txt MS6000 raw menu, general	PROPOSED. Generic "stop/cancel" option across various menus.
+そこを何とか	Just This Once	negotiation-verb	tools/dumps/ID_choice_menus.txt ID0099, ID00BB, ID00BC, ID014E; MS6103	PROPOSED. Gatekeeper-NPC menu (asking to be let through).
+意地でも通る	Push Through	negotiation-verb	tools/dumps/ID_choice_menus.txt ID00BB, ID00BC, ID014E	PROPOSED. Same gatekeeper menu, forceful option.
+お願いする	Beg	negotiation-verb	tools/dumps/ID_choice_menus.txt ID0099, ID014E	PROPOSED. Same gatekeeper menu.
+土下座して頼む	Grovel	negotiation-verb	tools/dumps/ID_choice_menus.txt ID0099, ID014E	PROPOSED. Same gatekeeper menu, most extreme option (literally "beg on your knees, forehead to the floor").
+お菓子をあげる	Give Candy	negotiation-verb	tools/dumps/ID_choice_menus.txt ID00C1	PROPOSED. Separate menu, likely a child-like/sweet-toothed demon type.
+桐子	Kiriko	character	m/MS0067.BIN, m/MS0068.BIN (4 speaker-tag instances)	Coined romanisation. Speaker tag "Kiriko:".
+ベリス	Berith	character	m/MS0024.BIN (3), p/_P_NAMES	Coined: the demon lord Berith (standard Goetia spelling), not a phonetic "Beris".
+ピャンカラ	Priyankara	character	m/MS0024.BIN (33), m/MS0064.BIN (16), p/_P_NAMES	Coined: restored to the Buddhist demoness's Sanskrit name Priyankara rather than a phonetic "Pyankara".
+ハリティー	Hariti	character	m/MS0064.BIN (61), m/MS0024.BIN (2), p/_P_NAMES	Coined: the Buddhist deity Hariti (Kishimojin), paired with Priyankara in the MS0064 arc.
+ハツセオノミコト	Hatsuseo-no-Mikoto	character	m/MS000F.BIN (10)	Coined: hyphenated -no-Mikoto form, matching Ama-no-Sakugami and Yomotsu-Shikome.
+黄泉醜女	Yomotsu-Shikome	character	m/MS000F.BIN (25 speaker-tag instances)	Coined: hyphenated, capitalised on both elements.
+ルイ・サイファー	Louis Cypher	character	m/MS0065.BIN (2), m/MS006A.BIN (1)	Series-standard SMT rendering of the Lucifer pun; heads the cybernetics research area.
+樹海	Jukai	place	m/MS0015.BIN (27), m/MS0061.BIN (9), p/_P_NAMES	Coined: left untranslated as a proper place name (the Sea of Trees) rather than glossed.
+母なる金星	Mother Venus	place	m/MS0026, MS0067, MS0018, MS006A, MS00B5.BIN (37)	Coined: the Ginza religious organisation, rival to the Baal cult. Also used as its building/district name.
+臨海コロシアム	Waterfront Colosseum	place	m/MS0008.BIN	Coined: the ruined Ariake venue.
+恵比寿ガーデン	Ebisu Garden	place	m/MS0035.BIN (4), m/MS0009.BIN, m/MS006A.BIN	Coined: real-world Ebisu Garden Place, kept short.
+ＭＹＣＩＴＹ	MYCITY	place	m/MS0019.BIN 0:0C	Coined: kept in full caps as a proper name (the Shinjuku station building).
+聖城学園	Seijou Academy	place	m/MS0014.BIN	Coined: romanised reading + "Academy".
+反魂香	Reviving Incense	item	m/MS003F.BIN 0:04	One of the eleven incenses burned at the MS003F kiln.
+物夫の香	Warrior's Incense	item	m/MS003F.BIN 0:05	One of the eleven incenses burned at the MS003F kiln.
+天の香	Heaven's Incense	item	m/MS003F.BIN 0:07	One of the eleven incenses burned at the MS003F kiln.
+心魂の香	Soul Incense	item	m/MS003F.BIN 0:08	One of the eleven incenses burned at the MS003F kiln.
+魔性の香	Sorcerous Incense	item	m/MS003F.BIN 0:09	One of the eleven incenses burned at the MS003F kiln.
+学人の香	Scholar's Incense	item	m/MS003F.BIN 0:0A	One of the eleven incenses burned at the MS003F kiln.
+精進の香	Devotion Incense	item	m/MS003F.BIN 0:0B	One of the eleven incenses burned at the MS003F kiln.
+疾風の香	Gale Incense	item	m/MS003F.BIN 0:0C	One of the eleven incenses burned at the MS003F kiln.
+職人の香	Craftsman's Incense	item	m/MS003F.BIN 0:0D	One of the eleven incenses burned at the MS003F kiln.
+貴人の香	Noble's Incense	item	m/MS003F.BIN 0:0E	One of the eleven incenses burned at the MS003F kiln.
+運の香	Luck Incense	item	m/MS003F.BIN 0:0F	One of the eleven incenses burned at the MS003F kiln.
+ラビスシジル	Rabis Sigil	item	m/MS0010.BIN	Coined: quest item, "the Rabis Sigil tablet".
+八咫鏡	Yata Mirror	item	m/MS000F.BIN	Coined: the Yata no Kagami of the imperial regalia, shortened for the message box.
+キャンディーナンディー	Candy Nandy	item	m/MS6013, MS6014, MS6015, MS6016.BIN	Candy offered in the お菓子をあげる negotiation menu; keeps the JP rhyme.
+エンジェルティー	Angel Tea	item	m/MS6013, MS6014, MS6015, MS6016.BIN	Candy offered in the お菓子をあげる negotiation menu.
+キキーモラミルク	Kikimora Milk	item	m/MS6013, MS6014, MS6015, MS6016.BIN	Candy offered in the お菓子をあげる negotiation menu; demon-named.
+ブラウニークッキー	Brownie Cookie	item	m/MS6013, MS6014, MS6015, MS6016.BIN	Candy offered in the お菓子をあげる negotiation menu; demon-named.
+レギオングミ	Legion Gummy	item	m/MS6013, MS6014, MS6015, MS6016.BIN	Candy offered in the お菓子をあげる negotiation menu; demon-named.
+トゥルダクカルシウム	Trudak Calcium	item	m/MS6013, MS6014, MS6015, MS6016.BIN	Candy offered in the お菓子をあげる negotiation menu.
+ハーゲンガッツ	Haagen-Gutts	item	et/ID00C2.BIN, et/ID00C3.BIN	Parody brand (Haagen-Dazs). Coined to keep the parody legible in English; no umlaut, cp932-safe ASCII.
+バリバリ君	Bari Bari-kun	item	et/ID00C2.BIN, et/ID00C3.BIN	Parody brand (Gari Gari-kun ice lolly). -kun kept, per the honorific rule.
+ペンタグランマ	Pentagramma	organisation	m/MS0000, MS0004, MS005B, MS005D, MS002C.BIN and 20 more (118 instances)	RESOLVED (2026-09 editorial pass): proper noun for the resistance faction. "Pentagram" (93) and "Pentagrammar" were rewritten to "Pentagramma"; every occurrence in the corpus refers to the faction, none to the five-pointed star.
+レジスタンス	Resistance	organisation	m/MS005A, MS00B1, MS0019, MS005D, MS00B0.BIN (45)	Capitalised when it names the movement Pentagramma belongs to.
+飛び道具	Ranged Weapon	ui-term	m/MS001C, MS0024, MS002A, MS001A, MS002B.BIN; pool call {03:00}	Coined: the battle-menu weapon class.
+切り	Slash	ui-term	m/MS002A.BIN, m/MS002E.BIN; pool call {03:12}	Coined: the battle-menu attack type.
+上位者	the Elevated	term	m/MS0024.BIN (3)	Coined: the Millennium cult's upper rank, admitted to Maitreya's floors.
+悪魔人	Demonoid	term	m/MS0008.BIN (14), m/MS0063, MS0067, MS0069.BIN (15, formerly "Tainted")	RESOLVED (2026-09 editorial pass): 悪魔人 had three renderings - "Demonoid:", "Tainted:" and prose "demon-man". The speaker tag is now "Demonoid:" everywhere (it is also the word the characters use of themselves in dialogue: "Demonoids are pretty much everywhere"). Descriptive prose in m/MS005C.BIN still reads "demon-man"/"demon-woman"; left as narration wording, flagged for a future pass.
+お兄ちゃん	Onii-chan	term	m/MS000E.BIN (14), m/MS0031.BIN (2)	Kept romanised, consistent with the -kun/-chan honorific rule; used as a form of address by child NPCs.
