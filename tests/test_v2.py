@@ -1375,3 +1375,104 @@ def test_no_expression_may_begin_with_an_escape_byte():
                         if x.raw[0] in (0x1D, 0x1E, 0x1F):
                             bad += 1
     assert (bad, total) == (83, 65315), (bad, total)
+
+
+def test_1f00_is_a_two_byte_no_op_because_the_dispatcher_says_so():
+    """The `1F 00` conflict, closed from the dispatcher rather than by playing.
+
+    `0x0042FF50` is the image's only reference to the opcode table at
+    `0x004318B0`, and it indexes that table by the raw token value under
+    `cmp $0x2fd; ja`.  Entries `1D`, `1E` and `1F` are the three escape
+    prefixes: each reads exactly one more byte, adds `0x300`/`0x200`/`0x100`,
+    re-checks the same bound and re-dispatches.  So `1F nn` is index `0x100+nn`
+    and two bytes -- and index `0x100` is the shared no-op `0x004318AA`,
+    `xor ax,ax; pop esi; ret`.
+
+    `1D nn` can never be in range (`0x300` > `0x2FD`), which is why it reads as
+    "eat one byte and do nothing".
+
+    Kept because the alternative -- "`exec_token` consumes something extra
+    around `1F 00`" -- was a live hypothesis for a week, and this is what
+    retired it.  See docs/limits.md.
+    """
+    import struct
+
+    from giten.exe import patch
+    from giten.exe.pe import PE
+
+    img = patch.apply(open(patch.ORG, "rb").read(), "release")
+    pe = PE(img, "o")
+
+    def handler(idx):
+        return struct.unpack_from("<I", img, pe.va2off(0x004318B0 + idx * 4))[0]
+
+    # the bound the dispatcher tests, twice: `cmp $0x2fd,%eax`
+    for va in (0x0042FF63, 0x0042FFBB):
+        assert img[pe.va2off(va):pe.va2off(va) + 5] == b"\x3d\xfd\x02\x00\x00"
+
+    # the three escapes, by the immediate each one adds to the byte it reads
+    for prefix, want in ((0x1D, 0x300), (0x1E, 0x200), (0x1F, 0x100)):
+        stub = handler(prefix)
+        off = pe.va2off(stub)
+        assert img[off:off + 1] == b"\xe8", "escape %02X does not start with a call" % prefix
+        assert img[off + 9:off + 11] == b"\x81\xc6", "no `add esi,imm32` in escape %02X" % prefix
+        got = struct.unpack_from("<I", img, off + 11)[0]
+        assert got == want, "escape %02X adds 0x%X, expected 0x%X" % (prefix, got, want)
+
+    # `1F 00` -> index 0x100 -> the shared no-op, which consumes nothing
+    assert handler(0x100) == 0x004318AA
+    off = pe.va2off(0x004318AA)
+    assert img[off:off + 5] == b"\x66\x33\xc0\x5e\xc3"      # xor ax,ax; pop esi; ret
+
+    # and the sentinel that makes a shorter reading of `10` impossible: opcode
+    # `00` returns 0xFFFF, which the interpreter loop tests with `test ax,ax; jge`
+    off = pe.va2off(handler(0x000))
+    assert img[off:off + 6] == b"\x66\x0d\xff\xff\x5e\xc3"  # or ax,0xffff; pop esi; ret
+
+
+def test_the_expression_table_is_the_engines_own_two_tables():
+    """94 of 94 selectors, derived from the image, not inferred from the corpus.
+
+    `0x00436B00` reads a u8 selector, maps it through `0x00437380`
+    (selector -> kind) and jumps through `0x00437288` (kind -> handler).  Both
+    tables are in the image, so every selector's shape is a fact: walk the 62
+    handlers and count the reads on each path.
+
+    The first attempt at this disagreed with `docs/opcodes.json` for 67 of 94
+    and was recorded as "NOT yet trustworthy" -- it was walking past real
+    function boundaries.  With `tools/opcode_operands.py`'s control-flow walk
+    the two agree everywhere, which is what settles selector `0x0F` as a `u16`
+    (kind 12, handler `0x00436C33`, one `call 0x00438FC0`) and so keeps `10`'s
+    six-byte framing honest even though the text at those sites argues against
+    it.  See docs/limits.md.
+    """
+    import io
+    import json
+    import os
+    import struct
+    import sys
+
+    from giten import paths
+
+    sys.path.insert(0, os.path.join(paths.REPO_ROOT, "tools"))
+    import opcode_operands as oo                                  # noqa: E402
+
+    nodes = json.load(io.open(os.path.join(paths.REPO_ROOT, "docs", "opcodes.json"),
+                              encoding="utf-8"))["expressions"]["nodes"]
+    assert len(nodes) == 94, len(nodes)
+
+    kind_tab, handler_tab = 0x00437380, 0x00437288
+    disagree = []
+    for sel in range(0x5E):
+        k = oo.IMG[oo.PEO.va2off(kind_tab + sel)]
+        h = struct.unpack_from("<I", oo.IMG, oo.PEO.va2off(handler_tab + k * 4))[0]
+        shapes = oo.reads(h)
+        assert len(shapes) == 1, "selector 0x%02X is context-dependent" % sel
+        engine = oo.spec(next(iter(shapes)))
+        ours = nodes.get("0x%02x" % sel)
+        if ours != engine:
+            disagree.append((sel, ours, engine))
+    assert not disagree, disagree
+
+    # the one that matters: 0x0F reads a u16, exactly like 0x01
+    assert nodes["0x0f"] == ["u16"] == nodes["0x01"]
