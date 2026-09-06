@@ -364,3 +364,56 @@ def test_extraction_never_fills_the_reference_columns():
     assert not any(r.ref_en or r.ref_src or r.status for r in rows)
     assert any(r.note for r in rows)
     assert not any(r.ref_en.startswith(("reads:", "record reaches", "@")) for r in rows)
+
+
+def test_every_iat_constant_in_hook_c_names_the_function_it_claims():
+    """hook.c calls Win32 through hard-coded IAT slot addresses.  A wrong
+    constant is not a subtle bug -- it is a call through whatever else happens
+    to live there, on the first game tick.  Check each against the real import
+    directory rather than trusting the comment beside it."""
+    import re
+    import struct
+
+    src = open(os.path.join(os.path.dirname(tracer.HOOK_SOURCE), "hook.c"),
+               encoding="utf-8").read()
+    want = {}
+    for m in re.finditer(r"#define p(\w+)\s*\(\*\([\w_]+\s*\*\)(0x[0-9A-Fa-f]+)\)", src):
+        want[int(m.group(2), 16)] = m.group(1)
+    assert len(want) >= 8, want
+
+    img = open(patch.ORG, "rb").read()
+    pe = PE(img, "imports")
+    pe_off = struct.unpack_from("<I", img, 0x3C)[0]
+    imp_rva = struct.unpack_from("<I", img, pe_off + 24 + 104)[0]
+
+    got = {}
+    o = pe.va2off(pe.imagebase + imp_rva)
+    while True:
+        oft, _ts, _fc, name_rva, first = struct.unpack_from("<IIIII", img, o)
+        if not name_rva:
+            break
+        dll = img[pe.va2off(pe.imagebase + name_rva):].split(b"\x00")[0].decode()
+        t, slot = pe.va2off(pe.imagebase + (oft or first)), pe.imagebase + first
+        while True:
+            e = struct.unpack_from("<I", img, t)[0]
+            if not e:
+                break
+            if not (e & 0x80000000):          # by name, not by ordinal
+                got[slot] = (dll, img[pe.va2off(pe.imagebase + e) + 2:]
+                             .split(b"\x00")[0].decode())
+            t, slot = t + 4, slot + 4
+        o += 20
+
+    for va, name in sorted(want.items()):
+        assert va in got, "0x%08X (p%s) is not an import slot at all" % (va, name)
+        # case-insensitive: the macros capitalise the first letter, so winmm's
+        # timeGetTime is spelled pTimeGetTime
+        assert got[va][1].lower() == name.lower(), (
+            "0x%08X is %s!%s, hook.c calls it p%s"
+            % (va, got[va][0], got[va][1], name))
+
+    # the pacing hook must read the very slot the instruction it replaced called
+    off = pe.va2off(tracer.PACE_SITE)
+    assert img[off:off + 2] == b"\xff\x15", img[off:off + 2].hex()
+    called = struct.unpack_from("<I", img, off + 2)[0]
+    assert want.get(called, "").lower() == "timegettime", (hex(called), want.get(called))
