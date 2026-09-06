@@ -1325,3 +1325,53 @@ def test_dropping_a_pool_call_that_prints_a_name_is_an_error():
     rep = findings.Report()
     check_v2.check_rows(rep, [row("{08:62}", " ")], root=root)
     assert "name-macro" not in [f.rule for f in rep.errors]
+
+
+def test_no_expression_may_begin_with_an_escape_byte():
+    """`1F`, `1E` and `1D` introduce an opcode; they cannot start an expression.
+
+    Valid expression selectors stop at 0x5D (`docs/opcodes.json` says so and the
+    engine's own kind table at 0x00437380 is that long), while 0x1D/0x1E/0x1F are
+    the escapes that make a two-byte opcode.  So an `expr` operand whose first
+    byte is one of those is not an expression at all -- it is the walk eating the
+    next instruction, which `limits.md` already records for `1F82`.
+
+    This is a *proof* of a bad parse that needs no engine and no playing, and it
+    is sharper than the tiling counters: a record can tile end to end and still
+    contain one.  m/MS610D rF4 is the worked example -- `1F0D` claims the
+    expression `1f e5 0c e5 e5`, but `1F E5` is a real opcode with 691 uses and
+    no operands, and a branch in that record points at exactly the byte where the
+    expression would have ended had it stopped after `1f e5`.
+
+    83 of 65,315 expression operands are in this state.  The number is asserted
+    so a model fix that lowers it is visible and a regression is caught; the
+    concentrations are the leads:
+
+        1FE8  34/1717      10  26/55      1F53 10/20     1F54 4/20
+        1F0D   3/742     1F0E   1/160     (plus six in one desynced record,
+                                           m/MS00DB r40)
+
+    `10` at 26 of 55 is the loudest: nearly half its expressions are impossible,
+    and it is already in NOT_A_BRANCH on separate statistical evidence.
+    """
+    from giten import files, paths, script, vmops
+
+    root = paths.game_root()
+    bad = 0
+    total = 0
+    for rel in files.iter_files(("ms", "id")):
+        sc = script.parse(rel, files.read_source(rel, root))
+        if not sc.ok:
+            continue
+        for rec in sc.iter_records():
+            if not rec.data or rec.untiled:
+                continue
+            for t in rec.tokens:
+                if t.kind != "op":
+                    continue
+                for x in t.ops:
+                    if x.kind == "expr" and x.raw:
+                        total += 1
+                        if x.raw[0] in (0x1D, 0x1E, 0x1F):
+                            bad += 1
+    assert (bad, total) == (83, 65315), (bad, total)
