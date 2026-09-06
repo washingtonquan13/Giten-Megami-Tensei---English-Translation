@@ -239,6 +239,34 @@ def _read_rtstr(data: bytes, i: int, out: list, tab: Table) -> int:
     return j
 
 
+def _read_pairs_ff(data: bytes, i: int, out: list) -> int:
+    """``1F03``/``1F04``'s condition list: 2-byte terms, ``FF``-terminated.
+
+    Handler ``0x0042FEB0`` loops over ``0x004393E0``, which reads **two** bytes --
+    ``[u8 bank | 0x80 negate][u8 index]`` -- *before* testing whether the first is
+    ``0xFF``.  So the terminating entry costs two bytes, not one, and that is the
+    detail a byte-scan gets wrong: this is not the single-byte ``list_ff`` used by
+    ``1E 1E``.
+
+    The old fixed ``rel16 + 4x u8`` model happens to equal ``rel16`` + two terms +
+    terminator, so it was right for the 562 two-term sites and silently wrong for
+    the 353 with three or more.  It did not surface as a tiling failure because
+    ``0xFF >= 0x20``, so the stranded bytes were tokenised as one-byte "text" and
+    the walk resynchronised -- the exact silent corruption this module refuses to
+    do elsewhere.
+    """
+    start = i
+    while True:
+        if i + 2 > len(data):
+            raise TileError("unterminated pairs_ff at 0x%X" % start)
+        first = data[i]
+        out.append(Operand("u8", i, 1, data[i:i + 1]))
+        out.append(Operand("u8", i + 1, 1, data[i + 1:i + 2]))
+        i += 2
+        if first == 0xFF:
+            return i
+
+
 def _read_operands(data: bytes, i: int, slots, tab: Table) -> "tuple[int, list]":
     out = []
     for slot in slots:
@@ -253,6 +281,9 @@ def _read_operands(data: bytes, i: int, slots, tab: Table) -> "tuple[int, list]"
             if j >= len(data):
                 raise TileError("unterminated list_ff at 0x%X" % i)
             i = j + 1
+        elif kind == "pairs_ff":
+            i = _read_pairs_ff(data, i, out)
+            continue                       # entries were appended one by one
         elif kind == "rule:wait_1E10":
             i = _wait_1e10(data, i)
         elif kind == "switch":

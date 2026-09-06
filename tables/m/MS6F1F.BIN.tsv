@@ -3,8 +3,6 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS6F1F.BIN	0:00	0	8	00	{06:1C}	{06:1C}				reads: 
-m/MS6F1F.BIN	0:00	1	12	00	{01:FF}	{01:FF}				reads: 
 m/MS6F1F.BIN	0:01	0	0	UNTILED	 / ! / I /  /  /  /  /  /  / 2 / , /  / ) /  / ) / 2 /  /  /   /  /  / ) / ) / ! / )	 / ! / I /  /  /  /  /  /  / 2 / , /  / ) /  / ) / 2 /  /  /   /  /  / ) / ) / ! / )				@noedit; @untiled; record does not tile (switch entry at 0x31 has kind 31 (not 0 or 1)); read-only, copied verbatim; read-only, copied verbatim @rebase-new
 m/MS6F1F.BIN	0:02	0	24	00	 	 				
 m/MS6F1F.BIN	0:02	1	51	00	 P	 P				
@@ -43,7 +41,7 @@ m/MS6F1F.BIN	0:19	1	15	1F0C	{06:0C})	{06:0C})				reads: )
 m/MS6F1F.BIN	0:19	2	23	1F20	K	K				
 m/MS6F1F.BIN	0:19	3	25	00	-	-				
 m/MS6F1F.BIN	0:1A	0	4	1F20	)	)				
-m/MS6F1F.BIN	0:1B	0	0	UNTILED	 / < /  /  /  / 					@noedit; @untiled; record does not tile (u8 operand past end of record at 0x1B); read-only, copied verbatim
+m/MS6F1F.BIN	0:1B	0	0	UNTILED	 / < /  /  /  / 					@noedit; @untiled; record does not tile (unterminated pairs_ff at 0x1A); read-only, copied verbatim; record does not tile (u8 operand past end of record at 0x1B)
 m/MS6F1F.BIN	0:1C	0	4	1F20	*	*				
 m/MS6F1F.BIN	0:20	0	4	1F20	"	"				
 m/MS6F1F.BIN	0:21	0	27	1F0A	{03:00}{03:1F})	{03:00}{03:1F})				reads: 飛び道具)

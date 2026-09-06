@@ -3747,30 +3747,19 @@
      "size": 2
     },
     {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
+     "kind": "pairs_ff",
+     "size": "var"
     }
    ],
-   "fixed_size": 6,
-   "variable": false,
+   "fixed_size": null,
+   "variable": true,
    "has_offset": true,
    "offset_slots": [
     0
    ],
    "refs_record": false,
-   "uses": 777
+   "uses": 777,
+   "note": "multi-condition branch (handler 0x0042FEB0): [rel16] then a list of 2-byte terms [u8 bank|0x80 negate][u8 index], terminated by an entry whose FIRST byte is 0xFF -- both bytes of that entry are consumed, because 0x004393E0 reads the pair before testing it.  1F03 ORs the terms, 1F04 ANDs them; both branch when the result is 0.  The old fixed rel16 + 4x u8 equals rel16 + two terms + terminator, so it was right for the 562 two-term sites and wrong for the 353 with three or more (38% of 915).  It never surfaced as a tiling failure because 0xFF >= 0x20, so the stranded bytes tokenised as one-byte text and the walk resynchronised.  Confirmed 2026-09-06 against engine traces: at all 15 sites where the tracer logged the next token PC after a 1F03/1F04, it equals terminator + 2; none equals terminator + 1 or start + 8."
   },
   "0x104": {
    "encoding": "1F 04",
@@ -3782,30 +3771,19 @@
      "size": 2
     },
     {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
+     "kind": "pairs_ff",
+     "size": "var"
     }
    ],
-   "fixed_size": 6,
-   "variable": false,
+   "fixed_size": null,
+   "variable": true,
    "has_offset": true,
    "offset_slots": [
     0
    ],
    "refs_record": false,
-   "uses": 134
+   "uses": 134,
+   "note": "multi-condition branch (handler 0x0042FEB0): [rel16] then a list of 2-byte terms [u8 bank|0x80 negate][u8 index], terminated by an entry whose FIRST byte is 0xFF -- both bytes of that entry are consumed, because 0x004393E0 reads the pair before testing it.  1F03 ORs the terms, 1F04 ANDs them; both branch when the result is 0.  The old fixed rel16 + 4x u8 equals rel16 + two terms + terminator, so it was right for the 562 two-term sites and wrong for the 353 with three or more (38% of 915).  It never surfaced as a tiling failure because 0xFF >= 0x20, so the stranded bytes tokenised as one-byte text and the walk resynchronised.  Confirmed 2026-09-06 against engine traces: at all 15 sites where the tracer logged the next token PC after a 1F03/1F04, it equals terminator + 2; none equals terminator + 1 or start + 8."
   },
   "0x105": {
    "encoding": "1F 05",
@@ -4212,28 +4190,19 @@
    "handler": "0x0043027F",
    "operands": [
     {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u16",
-     "size": 2
-    },
-    {
-     "kind": "u8",
-     "size": 1
+     "kind": "switch",
+     "size": "var"
     }
    ],
-   "fixed_size": 5,
-   "variable": false,
-   "has_offset": false,
-   "offset_slots": [],
+   "fixed_size": null,
+   "variable": true,
+   "has_offset": true,
+   "offset_slots": [
+    "every rel16 in the table"
+   ],
    "refs_record": false,
-   "uses": 19
+   "uses": 19,
+   "note": "bare switch table, no pre-operands.  Handler pushes a literal mode and tails into trampoline 0x436610, whose only pre-switch call (0x417990) is a pure global getter (movzbw 0x491566; ret) that touches no script bytes.  Was typed fixed_size 5 [u8][u8][u16][u8] -- the same stale mis-typing corrected for 0E/0F on 2026-09-04, missed in that pass.  Verified 2026-09-06: 26 occurrences now tile at 2 + 4N + 1 bytes for N = 1..4 cases, 5 records fixed and 0 broken with the strict kind guard still on, and all 47 rel16 fields in these tables land on a legal instruction boundary."
   },
   "0x118": {
    "encoding": "1F 18",
@@ -4241,28 +4210,19 @@
    "handler": "0x0043028E",
    "operands": [
     {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u16",
-     "size": 2
-    },
-    {
-     "kind": "u8",
-     "size": 1
+     "kind": "switch",
+     "size": "var"
     }
    ],
-   "fixed_size": 5,
-   "variable": false,
-   "has_offset": false,
-   "offset_slots": [],
+   "fixed_size": null,
+   "variable": true,
+   "has_offset": true,
+   "offset_slots": [
+    "every rel16 in the table"
+   ],
    "refs_record": false,
-   "uses": 5
+   "uses": 5,
+   "note": "bare switch table, no pre-operands.  Handler pushes a literal mode and tails into trampoline 0x436610, whose only pre-switch call (0x417990) is a pure global getter (movzbw 0x491566; ret) that touches no script bytes.  Was typed fixed_size 5 [u8][u8][u16][u8] -- the same stale mis-typing corrected for 0E/0F on 2026-09-04, missed in that pass.  Verified 2026-09-06: 26 occurrences now tile at 2 + 4N + 1 bytes for N = 1..4 cases, 5 records fixed and 0 broken with the strict kind guard still on, and all 47 rel16 fields in these tables land on a legal instruction boundary."
   },
   "0x119": {
    "encoding": "1F 19",

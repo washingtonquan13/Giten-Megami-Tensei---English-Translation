@@ -3,7 +3,7 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS610B.BIN	0:00	0	0	UNTILED	2 / ＞会話可能圏外 / U / 　会話対象に接近 / J下 / I / (					@noedit; @untiled; record does not tile (switch entry at 0x4B has kind 227 (not 0 or 1)); read-only, copied verbatim; reads: ＞会話可能圏外です\n　会話対象に接近して下さい\n<wait> @rebase-new @rebase-unmatched idx0 en=>Out of conversation range.\n  Get closer to talk.\n<wait> @rebase-unmatched idx0 en=>Out of conversation range.\n  Get closer to talk.\n<wait>
+m/MS610B.BIN	0:00	0	18	1F88	＞会話可能圏外{08:55}\n　会話対象に接近{08:4A}下{08:49}\n<wait>					reads: ＞会話可能圏外です\n　会話対象に接近して下さい\n<wait>
 m/MS610B.BIN	2:01	0	18	1FD0	{08:90}やら　あまり敵意は無い{08:69}だ。\n		It doesn't seem\ntoo hostile.\n	ours		reads: どうやら　あまり敵意は無いようだ。\n
 m/MS610B.BIN	2:01	1	57	1FBA	＞{02:06}\n	>What will you do?\n	>{02:06}	ours	draft	reads: ＞どうしますか？\n; reads: ＞どうしますか？\n @ours-2026-09-05
 m/MS610B.BIN	2:01	2	78	1FB2	成仏さ{08:2A}		Put to Rest	ours		reads: 成仏させる; menu option, declared width 20 columns

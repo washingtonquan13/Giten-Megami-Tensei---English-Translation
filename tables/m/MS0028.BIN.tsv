@@ -3,212 +3,196 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0028.BIN	0:00	0	31	09						
-m/MS0028.BIN	0:00	1	48	09	U{08:0C}	U{08:0C}	U Attack	ours		reads: U攻撃; v005=U{08:0C}
-m/MS0028.BIN	0:00	2	61	1F03						
-m/MS0028.BIN	0:00	3	82	1F03	{=89}{=02}{06:FF}	{=89}{=02}{06:FF}				reads: {=89}{=02}
-m/MS0028.BIN	0:00	4	107	1F03						
-m/MS0028.BIN	0:00	5	120	1F03						
-m/MS0028.BIN	0:00	6	154	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	7	160	1FD3	いよぉ！　おめ{08:53}さん！\n<wait>		Congrats, man!\n<wait>	v005		reads: いよぉ！　おめっとさん！\n<wait>; reads: いよぉ！　おめっとさん！\n<wait> @refalign
-m/MS0028.BIN	0:00	8	191	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	9	197	1FD3	{08:48}で君も、俺達の{08:0F}入りだねぇ。\n<wait>ま、たあぁ～っぷりしごいてやる{08:42}、覚悟しとけよぉ！\n		You're one of us now.\n<wait>Oh, and don't think I'll go easy on you just because we're friends.\nYou're gonna be working your ass off!\n	v005		reads: これで君も、俺達の仲間入りだねぇ。\n<wait>ま、たあぁ～っぷりしごいてやるから、覚悟しとけよぉ！\n; reads: これで君も、俺達の仲間入りだねぇ。\n<wait>ま、たあぁ～っぷりしごいてやるから、覚悟しとけよぉ！\n @refalign
-m/MS0028.BIN	0:00	10	295	1F03						
-m/MS0028.BIN	0:00	11	308	1F03						
-m/MS0028.BIN	0:00	12	324	1F03						
-m/MS0028.BIN	0:00	13	337	1F03						
-m/MS0028.BIN	0:00	14	350	1F03						
-m/MS0028.BIN	0:00	15	379	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	16	385	1FD3	お、	Oh, 			draft	@ours-2026-09-05
-m/MS0028.BIN	0:00	17	395	1F01	{08:81}ん！　遊びに来てく{08:60}のか？\n<wait>悪い{08:5F}{08:84}、今、アームターミナルの改造に忙しい{08:5F}。\n{08:5B}今度寄{08:52}くれよ！\n<wait>	, it's you! Come to hang out?\n<wait>Sorry, but I'm busy modding the Arm Terminal right now.\nDrop by again some other time!\n<wait>			draft	reads: じゃん！　遊びに来てくれたのか？\n<wait>悪いんだけど、今、アームターミナルの改造に忙しいんだ。\nまた今度寄ってくれよ！\n<wait>; reads: じゃん！　遊びに来てくれたのか？\n<wait>悪いんだけど、今、アームターミナルの改造に忙しいんだ。\nまた今度寄ってくれよ！\n<wait> @ours-2026-09-05
-m/MS0028.BIN	0:00	18	508	1F03	{=89}{=0E}{=89}{=26}	{=89}{=0E}{=89}{=26}				
-m/MS0028.BIN	0:00	19	551	1FD0	{01:01}。\n{08:04}率{08:40}{02:00}隊員の内、一番の古株で{08:7B}。\n<wait>		Yamase Isamu.\nHe is the most senior of the Devil Busters working under Nishino.\n<wait>	v005		reads: 山瀬勇。\n西野率いるデビルバスター隊員の内、一番の古株である。\n<wait>; reads: 山瀬勇。\n西野率いるデビルバスター隊員の内、一番の古株である。\n<wait> @refalign
-m/MS0028.BIN	0:00	20	599	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	21	605	1FD3	ＤＢ入隊試験の資格申請{08:4B}{08:5F}{08:52}？\n<wait>		I heard you submitted an application to participate in the DB exams.\nHow'd that go?\n<wait>	v005		reads: ＤＢ入隊試験の資格申請したんだって？\n<wait>; reads: ＤＢ入隊試験の資格申請したんだって？\n<wait> @refalign
-m/MS0028.BIN	0:00	22	644	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	23	650	1FD3	頑張{08:52}くれよぉ！　応援し{08:2B}ぜ！！\n	Give it your all! I'm rooting for ya!!\n			draft	reads: 頑張ってくれよぉ！　応援してるぜ！！\n; reads: 頑張ってくれよぉ！　応援してるぜ！！\n @ours-2026-09-05
-m/MS0028.BIN	0:00	24	689	1F01	{08:7D}、試験受かるに決まっ{08:2B}よ！！\n<wait>	 is gonna pass that exam for sure!!\n<wait>			draft	reads: なら、試験受かるに決まってるよ！！\n<wait>; reads: なら、試験受かるに決まってるよ！！\n<wait> @ours-2026-09-05
-m/MS0028.BIN	0:00	25	728	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	26	734	1FD3	{08:72}{08:52}言わ{08:2F}と、すんげぇプレッシャーだろ？\n<wait>ま、せいぜい頑張れよ！\n<wait>		Huh... I guess that puts quite a lot of pressure on your shoulders.\n<wait>Anyway. Work hard, okay?\n<wait>	v005		reads: ‥‥って言われると、すんげぇプレッシャーだろ？\n<wait>ま、せいぜい頑張れよ！\n<wait>; reads: ‥‥って言われると、すんげぇプレッシャーだろ？\n<wait>ま、せいぜい頑張れよ！\n<wait> @refalign
-m/MS0028.BIN	0:00	27	831	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	28	845	1F03	{=89}{=35}	{=89}{=35}				
-m/MS0028.BIN	0:00	29	863	1F03	{=89}{=35}	{=89}{=35}				
-m/MS0028.BIN	0:00	30	886	09	ーダメダメ！！\nいくら言{08:51}{08:52}、{08:47}アームターミナルはやらんぜ。\n<wait>		ope! You're not getting it, no matter how much you beg.\n<wait>	v005		reads: ーダメダメ！！\nいくら言ったって、このアームターミナルはやらんぜ。\n<wait>; reads: ーダメダメ！！\nいくら言ったって、このアームターミナルはやらんぜ。\n<wait> @refalign
-m/MS0028.BIN	0:00	31	955	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	32	961	1FD3	明日お前に{08:62}なーんの変哲も{08:25}アームターミナルが支給{03:0C}る{08:5F}{08:42}よ。\n<wait>		Just wait till tomorrow.\nYou're gonna be given a regular, plain-ass Arm Terminal then.\n<wait>	v005		reads: 明日お前には、なーんの変哲もないアームターミナルが支給されるんだからよ。\n<wait>; reads: 明日お前には、なーんの変哲もないアームターミナルが支給されるんだからよ。\n<wait> @refalign
-m/MS0028.BIN	0:00	33	1032	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	34	1038	1FD3	ざ～んね{08:5F}{08:51}ね～ぇ。\n		Sucks to be you!\n	v005		reads: ざ～んねんだったね～ぇ。\n; reads: ざ～んねんだったね～ぇ。\n @refalign
-m/MS0028.BIN	0:00	35	1068	1F03	{=89}{=02}お、	{=89}{=02}Oh, 			draft	@ours-2026-09-05
-m/MS0028.BIN	0:00	36	1082	1F01	{08:81}ん。試験{08:90}だ{08:51}ん？\n<wait>	. How'd the exam go?\n<wait>			draft	reads: じゃん。試験どうだったん？\n<wait>; reads: じゃん。試験どうだったん？\n<wait> @ours-2026-09-05
-m/MS0028.BIN	0:00	37	1111	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	38	1117	1FD3	何？　{08:76}結果待ち？　{08:81}あ、結果出{08:50}教えろよな。\n<wait>		Oh? Still waiting on the results?\nWell, when you do get them, be sure to let me know.\n<wait>	v005		reads: 何？　まだ結果待ち？　じゃあ、結果出たら教えろよな。\n<wait>; reads: 何？　まだ結果待ち？　じゃあ、結果出たら教えろよな。\n<wait> @refalign
-m/MS0028.BIN	0:00	39	1172	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	40	1178	1FD3	合格だっ{08:50}、一応祝{08:52}やる。\n不合格だっ{08:50}、笑{08:52}やるよ。\n<wait>		If you passed, then congrats in advance.\nAnd if you failed, well, tough luck. Haha!\n<wait>	v005		reads: 合格だったら、一応祝ってやる。\n不合格だったら、笑ってやるよ。\n<wait>; reads: 合格だったら、一応祝ってやる。\n不合格だったら、笑ってやるよ。\n<wait> @refalign
-m/MS0028.BIN	0:00	41	1240	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	42	1246	1FD3	{02:08}冗談だよ。俺が{08:7A}に酷いヤツだと思うか？\n<wait>		...Just kidding. You really think I'd say that?\n<wait>	v005		reads: ‥‥‥冗談だよ。俺がそんなに酷いヤツだと思うか？\n<wait>; reads: ‥‥‥冗談だよ。俺がそんなに酷いヤツだと思うか？\n<wait> @refalign
-m/MS0028.BIN	0:00	43	1298	1F01	くぅーん。\n試験、落っこっちゃ{08:51}{08:5F}{08:52}？\n<wait>	-kuuun.\nFailed the exam, did you?\n<wait>	Yo, Katsuragi. I head you failed the exam.\n<wait>	v005	draft	reads: くぅーん。\n試験、落っこっちゃったんだって？\n<wait>; reads: くぅーん。\n試験、落っこっちゃったんだって？\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS0028.BIN	0:00	44	1344	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	45	1350	1FD3	残念だ{08:51}ねぇ。ま、俺もいっぱつで入隊{08:4B}訳{08:81}なし、{08:7A}に気落ち{08:8E}\n{08:46}はねぇよ。\n<wait>		That's unfortunate. But, don't feel too bad.\nIt's not like I passed on my first try either.\n<wait>	v005		reads: 残念だったねぇ。ま、俺もいっぱつで入隊した訳じゃなし、そんなに気落ちする\nことはねぇよ。\n<wait>; reads: 残念だったねぇ。ま、俺もいっぱつで入隊した訳じゃなし、そんなに気落ちする\nことはねぇよ。\n<wait> @refalign
-m/MS0028.BIN	0:00	46	1429	00	合格{08:4B}{08:5F}{08:52}な。すごい{08:81}ん。\n<wait>		So, you passed the exam, huh? That's awesome.\n<wait>	v005		reads: 合格したんだってな。すごいじゃん。\n<wait>; reads: 合格したんだってな。すごいじゃん。\n<wait> @refalign
-m/MS0028.BIN	0:00	47	1464	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	48	1470	1FD3	{08:56}さ、落ち{08:50}慰{08:2E}為に、お前にやろうと思{08:52}た、俺の超アームターミナル\n“ＨＩＲＯＭＩ”はやらんぜ。\n<wait>		I was so sure you'd fail that I thought I'd give you my\nSuper Arm Terminal "Hiromi" to make you feel better.\nUnfortunately, since you did pass, you're not gonna be getting it now.\n<wait>	v005		reads: でもさ、落ちたら慰める為に、お前にやろうと思ってた、俺の超アームターミナル\n“ＨＩＲＯＭＩ”はやらんぜ。\n<wait>; reads: でもさ、落ちたら慰める為に、お前にやろうと思ってた、俺の超アームターミナル\n“ＨＩＲＯＭＩ”はやらんぜ。\n<wait> @refalign
-m/MS0028.BIN	0:00	49	1574	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	50	1580	1FD3	改造バリバリでよー、支給品のアームターミナルよか、ヴァージョン{03:08}{03:0C}た\n優れモンだ{08:51}のに、残念だなぁ！\n<wait>		What a shame. It would've been so much more high-tech than those\nstandard-issue Arm Terminals new recruits are given.\n<wait>	v005		reads: 改造バリバリでよー、支給品のアームターミナルよか、ヴァージョンアップされた\n優れモンだったのに、残念だなぁ！\n<wait>; reads: 改造バリバリでよー、支給品のアームターミナルよか、ヴァージョンアップされた\n優れモンだったのに、残念だなぁ！\n<wait> @refalign
-m/MS0028.BIN	0:00	51	1688	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	52	1694	1FD3	あ、ちなみに名字もついて{08:5F}。\nＭＡＤ－ＷＡＤＡ{08:52}{08:5F}。可愛いだろっ！\n<wait>		I even gave it a surname, in case you were curious.\n"Mad-Wada". Pretty cute, huh?\n<wait>	v005		reads: あ、ちなみに名字もついてんだ。\nＭＡＤ－ＷＡＤＡってんだ。可愛いだろっ！\n<wait>; reads: あ、ちなみに名字もついてんだ。\nＭＡＤ－ＷＡＤＡってんだ。可愛いだろっ！\n<wait> @refalign
-m/MS0028.BIN	0:00	53	1801	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	54	1807	1FD3	よお、来たな！\nお前{08:52}、案外素直{08:81}{08:25}か、可愛いね！\n<wait>		Yo, my man! I love how you always do what you're told.\nYou're like a puppy that way. A cute, little puppy.\n<wait>	v005		reads: よお、来たな！\nお前って、案外素直じゃないか、可愛いね！\n<wait>; reads: よお、来たな！\nお前って、案外素直じゃないか、可愛いね！\n<wait> @refalign
-m/MS0028.BIN	0:00	55	1865	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	56	1871	1FD3	んで、今日呼{08:5F}理由の、例のイイモン{08:52}のは{08:48}さッ！　<wait>ババーーーン！！\n<wait>		Anyway, here's what I called you here for today. <wait>Ta-da!\n<wait>	v005		reads: んで、今日呼んだ理由の、例のイイモンってのはこれさッ！　<wait>ババーーーン！！\n<wait>; reads: んで、今日呼んだ理由の、例のイイモンってのはこれさッ！　<wait>ババーーーン！！\n<wait> @refalign
-m/MS0028.BIN	0:00	57	1950	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	58	1956	1FD3	おい、何ぽけー{08:53}{08:4A}{08:5F}よ！\n<wait>{08:48}だ{08:52}ば、{08:48}！！\n<wait>		So, what do you think? Impressed?\n<wait>Come on, react!\n<wait>	v005		reads: おい、何ぽけーっとしてんだよ！\n<wait>これだってば、これ！！\n<wait>; reads: おい、何ぽけーっとしてんだよ！\n<wait>これだってば、これ！！\n<wait> @refalign
-m/MS0028.BIN	0:00	59	2024	1FB2	{08:02}{08:6A}かいら{08:25}		I don't need a "Yamase"	v005		reads: 山瀬なんかいらない; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0028.BIN	0:00	60	2038	1FB2	どれどれ？		What is it?	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0028.BIN	0:00	61	2068	1FD2	{08:02}：	Yamase:	Yamase:	v005	draft	reads: 山瀬：; reads: 山瀬： @ours-2026-09-05
-m/MS0028.BIN	0:00	62	2074	1FD3	あ～の～なぁ～、	Liiisten here, 	Stop it, Katsuragi.\n<wait>Not even I, Yamase, can stomach such stupid jokes.\n<wait>Just because I don't have a girlfriend that doesn't make me gay!\n<wait>	v005	draft	@ours-2026-09-05
-m/MS0028.BIN	0:00	63	2096	1F01	君。\n<wait>温厚なオレ{08:56}、そう{08:68}ジョークにはマジで怒るぜ。\n<wait>彼女が{08:24}{08:42}{08:52}、オレはモーホー{08:81}ねぇ！！\n<wait>	.\n<wait>Even a nice guy like me gets seriously mad at jokes like that.\n<wait>Just 'cause I don't have a girlfriend doesn't mean I swing that way!!\n<wait>			draft	reads: 君。\n<wait>温厚なオレでも、そういうジョークにはマジで怒るぜ。\n<wait>彼女がいないからって、オレはモーホーじゃねぇ！！\n<wait>; reads: 山瀬： @ours-2026-09-05
-m/MS0028.BIN	0:00	64	2206	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	65	2212	1FD3	{08:72}{08:51}く、{08:47}オレの腕に燦然と輝く、チョー絶品のイカス奴が見え{08:25}のかよ、\nあん？\n<wait>		...No, this is what I'm talking about.\nThis piece of shiny high-tech wrapped around my muscular arm.\n<wait>	v005		reads: ‥‥ったく、このオレの腕に燦然と輝く、チョー絶品のイカス奴が見えないのかよ、\nあん？\n<wait>; reads: 君。\n<wait>温厚なオレでも、そういうジョークにはマジで怒るぜ。\n<wait>彼女がいないからって、オレはモーホーじゃねぇ！！\n<wait> @refalign
-m/MS0028.BIN	0:00	66	2296	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	67	2302	1FD3	アームターミナルだよ！　		It's an Arm Terminal! 	v005		reads: ‥‥ったく、このオレの腕に燦然と輝く、チョー絶品のイカス奴が見えないのかよ、\nあん？\n<wait> @refalign
-m/MS0028.BIN	0:00	68	2332	1FFA	あーむたーみ{08:59}		ARM TERMINAL	v005		reads: あーむたーみなる; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	69	2352	1FFA	！！\n<wait>	!!\n<wait>			draft	@ours-2026-09-05
-m/MS0028.BIN	0:00	70	2365	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: あーむたーみなる @refalign
-m/MS0028.BIN	0:00	71	2371	1FD3	お前{08:52}ば、入隊試験落ちたろ？\n<wait>		You might have flunked the exam. However, fear not.\n<wait>	v005		reads: お前ってば、入隊試験落ちたろ？\n<wait>; reads: お前ってば、入隊試験落ちたろ？\n<wait> @refalign
-m/MS0028.BIN	0:00	72	2408	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	73	2414	1FD3	オレはさ、お前の事が不憫に思{08:52}{08:7D}{08:25}{08:42}、{08:47}芸術的改造アーム\nターミナルを、太っ腹な事にお前にやろうと思{08:51}訳よ。\n<wait>		I've decided that you deserve an arm terminal of your own.\nUnlike those boring army ones we use, this one's been modded\nto hell and back.\n<wait>	v005		reads: オレはさ、お前の事が不憫に思ってならないから、この芸術的改造アーム\nターミナルを、太っ腹な事にお前にやろうと思った訳よ。\n<wait>; reads: お前ってば、入隊試験落ちたろ？\n<wait> @refalign
-m/MS0028.BIN	0:00	74	2530	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	75	2536	1FD3	うれしいか？\n<wait>		You like it?\n<wait>	v005		reads: オレはさ、お前の事が不憫に思ってならないから、この芸術的改造アーム\nターミナルを、太っ腹な事にお前にやろうと思った訳よ。\n<wait> @refalign
-m/MS0028.BIN	0:00	76	2571	1FB2	うれしい！		I love it!	v005		menu option, declared width 20 columns; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	77	2583	1FB2	あんまし		It's okay	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0028.BIN	0:00	78	2611	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; menu option, declared width 20 columns @rebase-new @refalign
-m/MS0028.BIN	0:00	79	2617	1FD3	よしよし。\n<wait>		Glad to hear.\n<wait>	v005		menu option, declared width 20 columns @refalign
-m/MS0028.BIN	0:00	80	2636	1FD2	{08:02}：	Yamase:	Yamase:	v005	draft	reads: 山瀬：; reads: 山瀬： @ours-2026-09-05
-m/MS0028.BIN	0:00	81	2642	1FD3	{08:81}あ、ずぶの素人で{08:7B}	All right then, for a total beginner like 			draft	reads: じゃあ、ずぶの素人である; reads: じゃあ、ずぶの素人である @rebase-unmatched idx81 en=Yamase: @rebase-unmatched idx81 en=Yamase: @ours-2026-09-05
-m/MS0028.BIN	0:00	82	2668	1F01	君に、\n{08:48}{08:42}、アームターミナルの使い方の説明を{08:4A}あげちゃおう。\n<wait>	,\nI'll explain how to use the Arm Terminal!\n<wait>			draft	reads: 君に、\nこれから、アームターミナルの使い方の説明をしてあげちゃおう。\n<wait>; reads: 君に、\nこれから、アームターミナルの使い方の説明をしてあげちゃおう。\n<wait> @ours-2026-09-05
-m/MS0028.BIN	0:00	83	2738	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	84	2744	1FD3	ウォッホォ～ン！\n君にあ{08:44}アームターミナル{08:62}ＤＢ隊員の象徴ともなっ{08:14}物だ。\n<wait>		Design-wise, it's based on the same model we Devil Busters use.\n<wait>	v005		reads: ウォッホォ～ン！\n君にあげたアームターミナルは、ＤＢ隊員の象徴ともなっている物だ。\n<wait>; reads: じゃあ、ずぶの素人である @refalign
-m/MS0028.BIN	0:00	85	2826	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 君に、\nこれから、アームターミナルの使い方の説明をしてあげちゃおう。\n<wait> @refalign
-m/MS0028.BIN	0:00	86	2832	1FD3	ＤＢ隊員の中{08:56}、{08:05}ーの扱いに慣れ、{08:0B}と対峙できる{08:74}の\n精神力に優{08:60}者{08:74}に支給{03:0C}る。\n最大限の注意をも{08:52}、ありがた～く扱う{08:69}に！\n<wait>		You better be grateful. Even within the troops, only a select few with\nthe necessary computer skills and the mental capacity required to\nconverse with demons are given access to these.\n<wait>	v005		reads: ＤＢ隊員の中でも、コンピューターの扱いに慣れ、悪魔と対峙できるだけの\n精神力に優れた者だけに支給される。\n最大限の注意をもって、ありがた～く扱うように！\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	87	2965	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: ウォッホォ～ン！\n君にあげたアームターミナルは、ＤＢ隊員の象徴ともなっている物だ。\n<wait> @refalign
-m/MS0028.BIN	0:00	88	2971	1FD3	{08:48}には{08:0B}と戦うために{01:2C}{03:0C}た、非常に優{08:60}ソフトがインストール\n{03:0C}{08:14}。\n<wait>		Arm Terminals were developed to be used to fight demons.\nNaturally, they come with tons of software designed for that purpose.\n<wait>	v005		reads: これには悪魔と戦うために開発された、非常に優れたソフトがインストール\nされている。\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	89	3045	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: ＤＢ隊員の中でも、コンピューターの扱いに慣れ、悪魔と対峙できるだけの\n精神力に優れた者だけに支給される。\n最大限の注意をもって、ありがた～く扱うように！\n<wait> @refalign
-m/MS0028.BIN	0:00	90	3051	1FD3	まずはマッパー{02:08}{08:53}。\n初めて訪{08:60}場所{08:56}、周囲にセンサーを発{08:4A}、{08:7B}程度の地形を知る事が\n出来る{08:52}、便利モンだ。\n<wait>		First, the Mapper.\nThis is a basic program that automatically scans any areas you visits,\nand displays a simplified version of their layout.\n<wait>	v005		reads: まずはマッパー‥‥‥っと。\n初めて訪れた場所でも、周囲にセンサーを発して、ある程度の地形を知る事が\n出来るって、便利モンだ。\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	91	3166	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: これには悪魔と戦うために開発された、非常に優れたソフトがインストール\nされている。\n<wait> @refalign
-m/MS0028.BIN	0:00	92	3172	1FD3	{08:48}{08:62}常に君の位置を白い三角で表示{08:8E}。\nオプションにより、北を固定で上に向けておく{08:46}もできるし、{08:63}の正面を常に、\n上に置く{08:46}も出来る{08:52}ワケだ！\n<wait>		Your position is shown as a white triangle.\nThere's an option to always have the map point to north,\nor to have it rotate as you move.\n<wait>	v005		reads: これは、常に君の位置を白い三角で表示する。\nオプションにより、北を固定で上に向けておくこともできるし、自分の正面を常に、\n上に置くことも出来るってワケだ！\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	93	3319	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: まずはマッパー‥‥‥っと。\n初めて訪れた場所でも、周囲にセンサーを発して、ある程度の地形を知る事が\n出来るって、便利モンだ。\n<wait> @refalign
-m/MS0028.BIN	0:00	94	3325	1FD3	お前がいくら方向音痴{08:56}、{08:48}さえ{08:3F}ば{01:32}だぜ！\n<wait>		With this thing guiding you,\nnot even an idiot like you can lose his way!\n<wait>	v005		reads: お前がいくら方向音痴でも、これさえあれば大丈夫だぜ！\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	95	3376	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: これは、常に君の位置を白い三角で表示する。\nオプションにより、北を固定で上に向けておくこともできるし、自分の正面を常に、\n上に置くことも出来るってワケだ！\n<wait> @refalign
-m/MS0028.BIN	0:00	96	3382	1FD3	{08:4D}と、場所に関{08:8E}情報を、リアルタイムで衛星{08:42}受け取る{08:69}に{08:1A}る。\n<wait>		In addition, you will also receive real time map data from a satellite.\n<wait>	v005		reads: それと、場所に関する情報を、リアルタイムで衛星から受け取るようになってる。\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	97	3453	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: お前がいくら方向音痴でも、これさえあれば大丈夫だぜ！\n<wait> @refalign
-m/MS0028.BIN	0:00	98	3459	1FD3	こう{08:68}ナビゲーション・{08:09}{08:62}{08:10}ん中で使い方を練習{08:4A}\nおくと{08:7F}ぜ！\n<wait>		I suggest you get comfortable using it before you leave the shelter.\n<wait>	v005		reads: こういうナビゲーション・プログラムは、シェルターん中で使い方を練習して\nおくといいぜ！\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	99	3529	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: それと、場所に関する情報を、リアルタイムで衛星から受け取るようになってる。\n<wait> @refalign
-m/MS0028.BIN	0:00	100	3535	1FD3	{08:74}ど、お前は{02:00}{08:56}{08:25}し、まぁ、{08:10}の外に出る{08:52}事{08:62}\n無いと思う{08:84}な。\n<wait>		Well, not that you'll ever need to. You're not a Devil Buster, remember?\n<wait>	v005		reads: だけど、お前はデビルバスターでもないし、まぁ、シェルターの外に出るって事は、\n無いと思うけどな。\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	101	3607	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: こういうナビゲーション・プログラムは、シェルターん中で使い方を練習して\nおくといいぜ！\n<wait> @refalign
-m/MS0028.BIN	0:00	102	3613	1FD3	さて、我らがアームターミナルの秘{08:2E}パワー{08:62}{08:73}物ではな～い。\n<wait>		Now, if you thought that was all that the Arm Terminal was good for,\nthen you my sir are solemnly mistaken.\n<wait>	v005		reads: さて、我らがアームターミナルの秘めるパワーは、こんな物ではな～い。\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	103	3680	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: だけど、お前はデビルバスターでもないし、まぁ、シェルターの外に出るって事は、\n無いと思うけどな。\n<wait> @refalign
-m/MS0028.BIN	0:00	104	3686	1FD3	次の{01:3D}の{08:09}、ＤＤＳとＤＤＣこそが、{08:79}{08:0B}と実際に遭遇{08:4B}時に、\n{08:79}真価を発揮{08:8E}ので{08:7B}ッ！\n<wait>		The next set of programs, DDS and DCS, are what it's really about!\n<wait>	ours		reads: 次のふたつのプログラム、ＤＤＳとＤＤＣこそが、その悪魔と実際に遭遇した時に、\nその真価を発揮するのであるッ！\n<wait>; reads: 山瀬：
-m/MS0028.BIN	0:00	105	3778	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: さて、我らがアームターミナルの秘めるパワーは、こんな物ではな～い。\n<wait> @refalign
-m/MS0028.BIN	0:00	106	3784	1FD3	お前{08:62}滅多な事では地上に出{08:25}{08:8C}が、{08:0B}の中には人類に対{08:4A}、\n必ずしも敵対的で{08:25}種族も{08:40}。\n<wait>		While you probably will never encounter them,\nthere actually exist demons out there who don't want to eat our brains.\nShocking, I know.\n<wait>	v005		reads: お前は、滅多な事では地上に出ないだろうが、悪魔の中には人類に対して、\n必ずしも敵対的でない種族もいる。\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	107	3878	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 次のふたつのプログラム、ＤＤＳとＤＤＣこそが、その悪魔と実際に遭遇した時に、\nその真価を発揮するのであるッ！\n<wait> @refalign
-m/MS0028.BIN	0:00	108	3884	1FD3	{08:4D}と、会話{08:4A}{08:0E}にしちまう{08:52}のが、ＤＤＣだ。\n会話{08:4B}{08:52}、滅多に{08:0E}に{08:1A}く{08:2F}モン{08:81}{08:25}がな。\n<wait>		DCS is what you can use to talk to and even befriend them.\nOr recruit. Or enslave. Really, it's up to you what you want to call it.\n<wait>	ours		reads: それと、会話して仲魔にしちまうってのが、ＤＤＣだ。\n会話したって、滅多に仲魔になってくれるモンじゃないがな。\n<wait>; reads: 山瀬：
-m/MS0028.BIN	0:00	109	3976	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: お前は、滅多な事では地上に出ないだろうが、悪魔の中には人類に対して、\n必ずしも敵対的でない種族もいる。\n<wait> @refalign
-m/MS0028.BIN	0:00	110	3982	1FD3	ま、オレ様くらい魅力に溢{08:60}{02:0B}{08:81}なきゃあ、まず{08:0E}に{08:23}ね！\n<wait>		You might struggle with it at first if you aren't naturally\ncharismatic like me.\n<wait>	v005		reads: ま、オレ様くらい魅力に溢れた人間じゃなきゃあ、まず仲魔にできないね！\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	111	4045	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: それと、会話して仲魔にしちまうってのが、ＤＤＣだ。\n会話したって、滅多に仲魔になってくれるモンじゃないがな。\n<wait> @refalign
-m/MS0028.BIN	0:00	112	4051	1FD3	で、ＤＤＣと君の頭脳を駆使{08:4A}下僕に{08:4B}{08:0B}を、デジタル・{08:06}と{08:4A}、\n{08:79}アーム・ターミナルのメモリーに、セーブ{08:8E}{08:46}もできる{08:5F}ぜ。\n<wait>		However, once you get the hang of it, you'll be able to turn demons\ninto what we call Digital Devils, and save them in your Arm Terminal.\n<wait>	v005		reads: で、ＤＤＣと君の頭脳を駆使して下僕にした悪魔を、デジタル・デビルとして、\nそのアーム・ターミナルのメモリーに、セーブすることもできるんだぜ。\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	113	4179	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: ま、オレ様くらい魅力に溢れた人間じゃなきゃあ、まず仲魔にできないね！\n<wait> @refalign
-m/MS0028.BIN	0:00	114	4185	1FD3	んで、{08:47}{08:0E}に{08:4B}{08:0B}を必要に応じて召喚し、使役{08:8E}。\n{08:48}を可能に{08:13}のがＤＤＳ、デジタル・{08:06}・サマナーだ。\n<wait>		What do you use said Digital Devils for? That's where DDS comes in.\nIt's a program used to summon demons. For real.\n<wait>	v005		reads: んで、この仲魔にした悪魔を必要に応じて召喚し、使役する。\nこれを可能にしているのがＤＤＳ、デジタル・デビル・サマナーだ。\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	115	4291	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: で、ＤＤＣと君の頭脳を駆使して下僕にした悪魔を、デジタル・デビルとして、\nそのアーム・ターミナルのメモリーに、セーブすることもできるんだぜ。\n<wait> @refalign
-m/MS0028.BIN	0:00	116	4297	1FD3	セーブ・{08:0A}は{08:0B}の存在{08:79}{08:5E}{08:81}なく、{08:0B}が{08:47}世界に実体化{08:8E}為の\n{08:0A}に{08:1A}る。\n<wait>		Do keep in mind, what's stored in your Arm Terminal is not actually\nthe demon itself, but rather, the data required to summon it.\n<wait>	v005		reads: セーブ・データは悪魔の存在そのものじゃなく、悪魔がこの世界に実体化する為の\nデータになってる。\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	117	4373	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: んで、この仲魔にした悪魔を必要に応じて召喚し、使役する。\nこれを可能にしているのがＤＤＳ、デジタル・デビル・サマナーだ。\n<wait> @refalign
-m/MS0028.BIN	0:00	118	4379	1FD3	{08:79}ため、{08:0B}を実体化{08:8E}ために{08:62}生命エネルギーで{08:7B}生体マグネタイトを\n大量に必要と{08:8E}。\n<wait>		Now, just the data itself isn't enough. You also need large quantities\nof what's called Somatic Magnetite to power up the demon.\n<wait>	v005		reads: そのため、悪魔を実体化するためには、生命エネルギーである生体マグネタイトを\n大量に必要とする。\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	119	4469	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: セーブ・データは悪魔の存在そのものじゃなく、悪魔がこの世界に実体化する為の\nデータになってる。\n<wait> @refalign
-m/MS0028.BIN	0:00	120	4475	1FD3	昔っ{08:42}生贄を捧げて生体マグネタイトを抽出し、{08:0B}を召喚{08:8E}儀式が\n行なわれて{08:64}が{02:08}\n<wait>{01:27}、俺達が生贄を捧げるワケにゃあいかんよな？\n<wait>		Back in the day, people used to perform summoning rituals\nwhere they'd extract magnetite from live sacrifices.\n<wait>However, we can't really do that anymore, can we?\n<wait>	v005		reads: 昔っから生贄を捧げて生体マグネタイトを抽出し、悪魔を召喚する儀式が\n行なわれていたが‥‥‥\n<wait>まさか、俺達が生贄を捧げるワケにゃあいかんよな？\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	121	4610	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: そのため、悪魔を実体化するためには、生命エネルギーである生体マグネタイトを\n大量に必要とする。\n<wait> @refalign
-m/MS0028.BIN	0:00	122	4616	1FD3	かとい{08:52}、生体マグネタイトを召喚者{08:42}抽出{08:4A}{08:64}ん{08:81}あ、\n命が幾つあ{08:52}も足りねぇ。\n<wait>		We also can't use our own since we kinda need that to live.\n<wait>	v005		reads: かといって、生体マグネタイトを召喚者から抽出していたんじゃあ、\n命が幾つあっても足りねぇ。\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	123	4702	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 昔っから生贄を捧げて生体マグネタイトを抽出し、悪魔を召喚する儀式が\n行なわれていたが‥‥‥\n<wait>まさか、俺達が生贄を捧げるワケにゃあいかんよな？\n<wait> @refalign
-m/MS0028.BIN	0:00	124	4708	1FD3	んで、オレ達は別の{08:0B}{08:42}{08:4D}を頂戴{08:8E}{08:46}に{08:4B}{08:52}ワケ。\n<wait>		That leaves only one potential source. Demons.\n<wait>	v005		reads: んで、オレ達は別の悪魔からそれを頂戴することにしたってワケ。\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	125	4763	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: かといって、生体マグネタイトを召喚者から抽出していたんじゃあ、\n命が幾つあっても足りねぇ。\n<wait> @refalign
-m/MS0028.BIN	0:00	126	4769	1FD3	{08:0B}を倒{08:4B}ときに、彼らを形づく{08:52}{08:64}肉体{08:42}四散{08:8E}生体マグネタイトを\n収集し、バッテリーに蓄えておく機能、ＭＡＧバッテリーがアームターミナルには\n備わっ{08:14}{08:77}～っ！\n<wait>		Your Arm Terminal comes equipped with a MAG battery that automatically\nabsorbs any left over magnetite from the demons you kill.\n<wait>	v005		reads: 悪魔を倒したときに、彼らを形づくっていた肉体から四散する生体マグネタイトを\n収集し、バッテリーに蓄えておく機能、ＭＡＧバッテリーがアームターミナルには\n備わっているのだ～っ！\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	127	4932	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: んで、オレ達は別の悪魔からそれを頂戴することにしたってワケ。\n<wait> @refalign
-m/MS0028.BIN	0:00	128	4938	1FD3	便利だろぉ？　んん？\n<wait>		Simple, right? You barely even need to worry about it.\n<wait>	v005		reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	129	4967	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 悪魔を倒したときに、彼らを形づくっていた肉体から四散する生体マグネタイトを\n収集し、バッテリーに蓄えておく機能、ＭＡＧバッテリーがアームターミナルには\n備わっているのだ～っ！\n<wait> @refalign
-m/MS0028.BIN	0:00	130	4973	1FD3	あ、そうそう。{01:3B}言{08:51}ＤＤＣとＤＤＳ。\n{08:3F}{08:62}お前にや{08:51}アームターミナルには入{08:52}{08:25}ぜ。\n<wait>		Now, I should say.\nYour Arm Terminal doesn't come with either of these programs installed.\n<wait>	v005		reads: あ、そうそう。さっき言ったＤＤＣとＤＤＳ。\nあれは、お前にやったアームターミナルには入ってないぜ。\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	131	5063	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	132	5069	1FD3	シロートに扱{08:28}{08:69}な、しろモン{08:81}ねぇ{08:42}な。\n<wait>		I know, I know. Don't look at me like that.\nIt's not like I made the rules.\n<wait>	v005		reads: シロートに扱えるような、しろモンじゃねぇからな。\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	133	5118	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: あ、そうそう。さっき言ったＤＤＣとＤＤＳ。\nあれは、お前にやったアームターミナルには入ってないぜ。\n<wait> @refalign
-m/MS0028.BIN	0:00	134	5124	1FD3	ま、{08:79}うち機会があっ{08:50}やるよ！\n機会があっ{08:50}な。\n<wait>		Still, I get this funny feeling that you will get a chance\nto use them sooner rather than later.\n<wait>	v005		reads: ま、そのうち機会があったらやるよ！\n機会があったらな。\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	135	5180	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: シロートに扱えるような、しろモンじゃねぇからな。\n<wait> @refalign
-m/MS0028.BIN	0:00	136	5186	1FD3	{08:82}よ、{08:48}らの驚異的な発明品が、いつ誰の手によ{08:52}{01:2C}{03:0C}たのか、\nい{08:76}に分{08:52}ねぇ{08:5F}。\n<wait>		Also, and this is pretty interesting.\nWe actually do not know who created these programs. Crazy, right?\n<wait>	v005		reads: ただよ、これらの驚異的な発明品が、いつ誰の手によって開発されたのか、\nいまだに分ってねぇんだ。\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	137	5272	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: ま、そのうち機会があったらやるよ！\n機会があったらな。\n<wait> @refalign
-m/MS0028.BIN	0:00	138	5278	1FD3	スティーヴン博士と{08:68}謎の男が、大破壊前の世界各地に出没し、\n{08:48}らの{08:09}や、アームターミナルの原形と{08:16}ハードを\n広範囲に配布{08:4A}い{08:50}しい{08:52}事は分っ{08:14}。\n<wait>		Just after the Rapture, a gentleman known only as "Steven" visited bunch\nof the shelters and distributed the software among the survivors.\nHe's also credited with developing the hardware that would later become\nthe basis for the Arm Terminals.\n<wait>	v005		reads: スティーヴン博士という謎の男が、大破壊前の世界各地に出没し、\nこれらのプログラムや、アームターミナルの原形となったハードを\n広範囲に配布していたらしいって事は分っている。\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	139	5429	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: ただよ、これらの驚異的な発明品が、いつ誰の手によって開発されたのか、\nいまだに分ってねぇんだ。\n<wait> @refalign
-m/MS0028.BIN	0:00	140	5435	1FD3	謎だよな～。\n<wait>		Mysterious, mysterious.\n<wait>	v005		reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	141	5456	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: スティーヴン博士という謎の男が、大破壊前の世界各地に出没し、\nこれらのプログラムや、アームターミナルの原形となったハードを\n広範囲に配布していたらしいって事は分っている。\n<wait> @refalign
-m/MS0028.BIN	0:00	142	5462	1FD3	ま、{08:4D}は{08:4D}と{08:4A}{02:08}‥\n<wait>オレの改造アームターミナルは最高だろ？\n<wait>		Anyway...\n<wait>What do you think? About the Arm Terminal, I mean.\n<wait>	v005		reads: ま、それはそれとして‥‥‥‥\n<wait>オレの改造アームターミナルは最高だろ？\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	143	5546	1FB2	最高ッス！		It's sick!	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
-m/MS0028.BIN	0:00	144	5558	1FB2	分{08:42}{08:25}		Dunno	v005		reads: 分からない; menu option, declared width 20 columns; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	145	5584	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: ま、それはそれとして‥‥‥‥\n<wait>オレの改造アームターミナルは最高だろ？\n<wait> @refalign
-m/MS0028.BIN	0:00	146	5590	1FD3	くー、素直な奴{08:52}の{08:62}オレ大変好きだね。\n<wait>		Hehe! Keep the praise coming.\n<wait>	v005		reads: くー、素直な奴ってのは、オレ大変好きだね。\n<wait>; menu option, declared width 20 columns @refalign
-m/MS0028.BIN	0:00	147	5640	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 分からない; menu option, declared width 20 columns @refalign
-m/MS0028.BIN	0:00	148	5646	1FD3	こいつ{08:62}{02:00}に支給{03:0C}るヤツよりも、ワンランク、\n<wait>ヴァージョン{03:08}{03:0C}て{08:5F}ぜぇ！\n<wait>	This baby is one rank above the ones issued to Devil Busters,\n<wait>it's been upgraded, see!\n<wait>	The mods I've installed put it way past the standard-issue models.\n<wait>I'm a little jealous myself.\n<wait>	v005	draft	reads: こいつは、デビルバスターに支給されるヤツよりも、ワンランク、\n<wait>ヴァージョンアップされてんだぜぇ！\n<wait>; reads: こいつは、デビルバスターに支給されるヤツよりも、ワンランク、\n<wait>ヴァージョンアップされてんだぜぇ！\n<wait> @ours-2026-09-05
-m/MS0028.BIN	0:00	149	5730	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	150	5736	1FD3	さらに、ＤＢに{08:86}支給{03:0C}{08:25}、{08:47}{08:09}も、内緒で付けてやろう！\n<wait>		Now, while I can't have you going around summoning demons,\nthere is another program that I can give you.\n<wait>	v005		reads: さらに、ＤＢにしか支給されない、このプログラムも、内緒で付けてやろう！\n<wait>; reads: くー、素直な奴ってのは、オレ大変好きだね。\n<wait> @refalign
-m/MS0028.BIN	0:00	151	5808	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	152	5814	1FD3	ジャジャ～ン！　オートマッピングぅ！\n<wait>		Ta-da! It's the Auto Mapper!\n<wait>	v005		reads: こいつは、デビルバスターに支給されるヤツよりも、ワンランク、\n<wait>ヴァージョンアップされてんだぜぇ！\n<wait> @refalign
-m/MS0028.BIN	0:00	153	5859	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	154	5865	1FD3	オートマッピングはお前が移動{08:4B}場所を、自動的に記録{08:4A}、ボタン操作一つで、\n{08:79}ドキュメントをスクリーン上に映し出す事が出来る、方向音痴には憧れの\n{08:09}だ。\n<wait>		The Auto Mapper automatically analyses the places you visit and puts\ntogether a map which can then be pulled up later if needed.\nIt's the perfect tool for people with no sense of direction.\n<wait>	v005		reads: オートマッピングはお前が移動した場所を、自動的に記録して、ボタン操作一つで、\nそのドキュメントをスクリーン上に映し出す事が出来る、方向音痴には憧れの\nプログラムだ。\n<wait>; reads: さらに、ＤＢにしか支給されない、このプログラムも、内緒で付けてやろう！\n<wait> @refalign
-m/MS0028.BIN	0:00	155	6022	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	156	6028	1FD3	本来{08:7D}ＤＢに{08:86}、支給{03:0C}{08:25}{08:5F}がねぇ{08:72}\n<wait>君には特別にあげちゃおう！\n<wait>		Now, normally, this software is only available to Devil Busters.\n<wait>However, I'm willing to make a special exception just for you!\n<wait>	v005		reads: 本来ならＤＢにしか、支給されないんだがねぇ‥‥\n<wait>君には特別にあげちゃおう！\n<wait>; reads: 本来ならＤＢにしか、支給されないんだがねぇ‥‥\n<wait>君には特別にあげちゃおう！\n<wait> @refalign
-m/MS0028.BIN	0:00	157	6102	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	158	6108	1FD3	くれぐれも、他の皆には内緒だ{08:42}な。{08:7F}な！\n<wait>		Just don't tell anyone, okay? Thanks!\n<wait>	v005		reads: くれぐれも、他の皆には内緒だからな。いいな！\n<wait>; reads: オートマッピングはお前が移動した場所を、自動的に記録して、ボタン操作一つで、\nそのドキュメントをスクリーン上に映し出す事が出来る、方向音痴には憧れの\nプログラムだ。\n<wait> @refalign
-m/MS0028.BIN	0:00	159	6163	1F01	は{08:02}{08:42}、改造アームターミナルと、オートマッピングを貰{08:51}。\n<wait>{08:72}{08:02}{08:52}{02:08}{02:08}結構、イイ奴かも知れ{08:25}。\n<wait>	 received the modified Arm Terminal and Auto-Mapping from Yamase.\n<wait>...... Yamase............ might be a decent guy after all.\n<wait>	You received the upgraded Arm Terminal and Auto Mapper from Yamase.\n<wait>Yamase... He's a pretty good guy.\n<wait>	v005	draft	reads: は山瀬から、改造アームターミナルと、オートマッピングを貰った。\n<wait>‥‥山瀬って‥‥‥‥‥‥結構、イイ奴かも知れない。\n<wait>; reads: 山瀬： @rebase-tagdiff @refalign @seamfix-2026-09-05
-m/MS0028.BIN	0:00	160	6267	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 本来ならＤＢにしか、支給されないんだがねぇ‥‥\n<wait>君には特別にあげちゃおう！\n<wait> @refalign
-m/MS0028.BIN	0:00	161	6273	1FD3	オレの血と汗の結晶が、{08:79}アームターミナルに詰まっ{08:2B}。\nくれぐれも大切にしろよ。\n<wait>		That thing's the culmination of my blood and sweat.\nTake good care of it, will you?\n<wait>	v005		reads: オレの血と汗の結晶が、そのアームターミナルに詰まってる。\nくれぐれも大切にしろよ。\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	162	6359	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: くれぐれも、他の皆には内緒だからな。いいな！\n<wait> @refalign
-m/MS0028.BIN	0:00	163	6365	1FD3	ちなみに、{08:79}アームターミナルの名前は“ＨＩＲＯＭＩ”だ。\nヒロミちゃん{08:72}お兄ちゃんに、う～んと可愛が{08:52}もらえよ。\n{08:72}{08:52}事だ。\n<wait>		Oh, and by the way, I gave it--or rather, her--a name already.\nHiromi. Hiromi Mad-Wada.\n<wait>	v005		reads: ちなみに、そのアームターミナルの名前は“ＨＩＲＯＭＩ”だ。\nヒロミちゃん‥‥お兄ちゃんに、う～んと可愛がってもらえよ。\n‥‥って事だ。\n<wait>; reads: は山瀬から、改造アームターミナルと、オートマッピングを貰った。\n<wait>‥‥山瀬って‥‥‥‥‥‥結構、イイ奴かも知れない。\n<wait> @refalign
-m/MS0028.BIN	0:00	164	6496	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	165	6502	1FD3	あ、そうそう、名字もつい{08:2B}。\n“ＭＡＤ－ＷＡＤＡ”{08:52}{08:5F}。かっこ{08:7F}だろ！\n<wait>		Cute, right? It's always gotta be a cute name.\n<wait>	v005		reads: あ、そうそう、名字もついてる。\n“ＭＡＤ－ＷＡＤＡ”ってんだ。かっこいいだろ！\n<wait>; reads: オレの血と汗の結晶が、そのアームターミナルに詰まってる。\nくれぐれも大切にしろよ。\n<wait> @refalign
-m/MS0028.BIN	0:00	166	6580	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	167	6586	1FD3	{08:81}、今日はＢ５で当直だ{08:42}な。行{08:52}くるわ。\nと{08:53}と行かねぇと{08:5B}、あの夫婦にどや{03:0C}ちまうわ。\n<wait>		Now then, I've gotta get to work.\nThat couple's gonna yell at me again if I'm late.\n<wait>	v005		reads: じゃ、今日はＢ５で当直だからな。行ってくるわ。\nとっとと行かねぇとまた、あの夫婦にどやされちまうわ。\n<wait>; reads: ちなみに、そのアームターミナルの名前は“ＨＩＲＯＭＩ”だ。\nヒロミちゃん‥‥お兄ちゃんに、う～んと可愛がってもらえよ。\n‥‥って事だ。\n<wait> @refalign
-m/MS0028.BIN	0:00	168	6679	00	あっそ、{08:81}あ、お前にはやら{08:25}。\n<wait>		Oh? Well, in that case, I won't give it to you.\n<wait>	v005		reads: あっそ、じゃあ、お前にはやらない。\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	169	6732	1FB2	冗談ッスぅ！		I was joking!	v005		menu option, declared width 20 columns; reads: あ、そうそう、名字もついてる。\n“ＭＡＤ－ＷＡＤＡ”ってんだ。かっこいいだろ！\n<wait> @refalign
-m/MS0028.BIN	0:00	170	6746	1FB2	いら{08:25}		Don't need it	v005		reads: いらない; menu option, declared width 20 columns; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	171	6772	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: じゃ、今日はＢ５で当直だからな。行ってくるわ。\nとっとと行かねぇとまた、あの夫婦にどやされちまうわ。\n<wait> @refalign
-m/MS0028.BIN	0:00	172	6778	1FD3	くぬーー！\n<wait>そこ{08:71}言わ{08:2F}と、かえ{08:52}無理やりに{08:56}、{08:47}アームターミナルの良さを、\n分{08:42}{08:4A}やりたく{08:59}ぜ！\n<wait>		Fuckin' hell!\n<wait>You're gonna be impressed whetehr you like it or not!\n<wait>	v005		reads: くぬーー！\n<wait>そこまで言われると、かえって無理やりにでも、このアームターミナルの良さを、\n分からしてやりたくなるぜ！\n<wait>; reads: あっそ、じゃあ、お前にはやらない。\n<wait> @refalign
-m/MS0028.BIN	0:00	173	6887	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; menu option, declared width 20 columns @refalign
-m/MS0028.BIN	0:00	174	6893	1FD3	おとなしく貰え！！\n<wait>		Take it!<wait>	v005		reads: いらない; menu option, declared width 20 columns @refalign
-m/MS0028.BIN	0:00	175	6934	1FB2	絶対ヤ！	No way!	Never!	v005	draft	menu option, declared width 20 columns; reads: 山瀬勇 @ours-2026-09-05
-m/MS0028.BIN	0:00	176	6944	1FB2	もらう	Take it	Okay	v005	draft	menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
-m/MS0028.BIN	0:00	177	6970	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	178	6976	1FD3	ま、パンピーの君に{08:62}分{08:42}なく{08:54}仕方{08:25}{08:72}が、{08:61}だ。\n<wait>		Well, not that an idiot like you could understand its true beauty.\nStill...<wait>	v005		reads: ま、パンピーの君には、分からなくても仕方ない‥‥が、しかしだ。\n<wait>; reads: くぬーー！\n<wait>そこまで言われると、かえって無理やりにでも、このアームターミナルの良さを、\n分からしてやりたくなるぜ！\n<wait> @refalign
-m/MS0028.BIN	0:00	179	7033	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	180	7039	1FD3	お前が分{08:42}なく{08:51}{08:52}、俺様の超アームターミナル{08:62}\n<wait>		This Arm Terminal is <wait>	v005		reads: お前が分からなくったって、俺様の超アームターミナルは、\n<wait>; reads: お前が分からなくったって、俺様の超アームターミナルは、\n<wait> @refalign
-m/MS0028.BIN	0:00	181	7096	1FFA	すんげぇ		SUUUPER 	v005		menu option, declared width 20 columns @refalign
-m/MS0028.BIN	0:00	182	7110	1FFA	最高な{08:5F}よっ！！\n<wait>		awesome!\n<wait>	v005		reads: 最高なんだよっ！！\n<wait>; menu option, declared width 20 columns @refalign
-m/MS0028.BIN	0:00	183	7135	1FD2	{08:02}：	Yamase:	Yamase:	v005	draft	reads: 山瀬：; reads: {=EE}{=FF} @ours-2026-09-05
-m/MS0028.BIN	0:00	184	7141	1FD3	分{08:18}な！！　{08:5C}選択肢はねぇぞ！！\n<wait>		Got it? Good! No more questions!\n<wait>	v005		reads: 分かったな！！　もう選択肢はねぇぞ！！\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	185	7182	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: ま、パンピーの君には、分からなくても仕方ない‥‥が、しかしだ。\n<wait> @refalign
-m/MS0028.BIN	0:00	186	7188	1FD3	{02:08}‥ん{08:81}、次の説明だ、次ぃッ！！\n<wait>		Anyway, let's move along.\n<wait>	v005		reads: ‥‥‥‥んじゃ、次の説明だ、次ぃッ！！\n<wait>; reads: 山瀬： @refalign
-m/MS0028.BIN	0:00	187	7254	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: お前が分からなくったって、俺様の超アームターミナルは、\n<wait> @refalign
-m/MS0028.BIN	0:00	188	7260	1FD3	よっ！　お疲れさん！\n{01:15}慣れねー事{08:4A}{08:5F}{08:42}、今日はゆっくり休んどけよ！\n<wait>		Yo, good job! I suggest you head to bed for today and try get some rest.\n<wait>	v005		reads: よっ！　お疲れさん！\nいろいろ慣れねー事してんだから、今日はゆっくり休んどけよ！\n<wait>; reads: よっ！　お疲れさん！\nいろいろ慣れねー事してんだから、今日はゆっくり休んどけよ！\n<wait> @refalign
-m/MS0028.BIN	0:01	0	16	1F03						
-m/MS0028.BIN	0:01	1	29	1F03						
-m/MS0028.BIN	0:01	2	74	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:01	3	80	1FD3	お、	Oh, 			draft	@ours-2026-09-05
-m/MS0028.BIN	0:01	4	90	1F01	{08:81}ん！　遊びに来てく{08:60}のか？\n<wait>悪い{08:5F}{08:84}、今、アームターミナルの改造に忙しい{08:5F}。\n{08:5B}今度寄{08:52}くれよ！\n<wait>	, it's you! Come to hang out?\n<wait>Sorry, but I'm busy modding the Arm Terminal right now.\nDrop by again some other time!\n<wait>			draft	reads: じゃん！　遊びに来てくれたのか？\n<wait>悪いんだけど、今、アームターミナルの改造に忙しいんだ。\nまた今度寄ってくれよ！\n<wait>; reads: じゃん！　遊びに来てくれたのか？\n<wait>悪いんだけど、今、アームターミナルの改造に忙しいんだ。\nまた今度寄ってくれよ！\n<wait> @ours-2026-09-05
-m/MS0028.BIN	0:01	5	223	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:01	6	229	1FD3	おい、何だかよ、{08:00}の様子が変だぜ。\nやばいん{08:81}{08:25}の？\n<wait>		Do you know what's up with Hayasaka?\nHe's been acting a bit... weird recently.\n<wait>	v005		reads: おい、何だかよ、早坂の様子が変だぜ。\nやばいんじゃないの？\n<wait>; reads: おい、何だかよ、早坂の様子が変だぜ。\nやばいんじゃないの？\n<wait> @refalign
-m/MS0028.BIN	0:01	7	321	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:01	8	327	1FD3	最近、{08:34}{01:2E}の{08:03}之海関はさ、なーんか、おっかねぇよな？\nすんげぇ、重いのかな、今月のアレ。\n<wait>		Something's definitely up with Kirishima.\nIs it maybe that time of the month?\n<wait>	v005		reads: 最近、桐島部屋の英美之海関はさ、なーんか、おっかねぇよな？\nすんげぇ、重いのかな、今月のアレ。\n<wait>; reads: 最近、桐島部屋の英美之海関はさ、なーんか、おっかねぇよな？\nすんげぇ、重いのかな、今月のアレ。\n<wait> @refalign
-m/MS0028.BIN	0:01	9	444	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:01	10	450	1FD3	あん？　		Hmm? 	v005		@refalign
-m/MS0028.BIN	0:01	11	463	09	{08:00}	{08:00}	Hayasaka isn't in his room?\n	v005		reads: 早坂
-m/MS0028.BIN	0:01	12	473	09	{08:34}のヤツが{01:2E}に{08:24}？\n<wait>		Kirishima isn't in her room?\n                   <wait>	v005		reads: 桐島のヤツが部屋にいない？\n<wait>; reads: 桐島のヤツが部屋にいない？\n<wait> @refalign
-m/MS0028.BIN	0:01	13	500	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:01	14	506	1FD3	大方、腹が減{08:52}食事に{08:56}行っ{08:2B}ん{08:81}ねーの？\n<wait>		Maybe she got hungry and went to get something to eat.\n<wait>	ours		reads: 大方、腹が減って食事にでも行ってるんじゃねーの？\n<wait>
-m/MS0028.BIN	0:01	15	555	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:01	16	561	1FD3	ま、俺は実際に見た訳{08:81}{08:25}{08:42}、何とも言えねぇ{08:84}な。\n		Then again, don't take my word for it. That's just a guess.\n	v005		reads: ま、俺は実際に見た訳じゃないから、何とも言えねぇけどな。\n; reads: ま、俺は実際に見た訳じゃないから、何とも言えねぇけどな。\n @refalign
-m/MS0028.BIN	0:01	17	635	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
-m/MS0028.BIN	0:01	18	646	09	{08:00}の奴、一体どー{08:4B}{08:52}言う{08:5F}？\nマジにやばいぜ！\n<wait>		What is going on with Hayasaka? Shit's seriously freaking me out.\n<wait>	v005		reads: 早坂の奴、一体どーしたって言うんだ？\nマジにやばいぜ！\n<wait>; reads: 早坂の奴、一体どーしたって言うんだ？\nマジにやばいぜ！\n<wait> @refalign
-m/MS0028.BIN	0:01	19	702	09	{08:34}のヤツ、尋常{08:81}{08:25}よな。\nこりゃ、月のモンどころの騒ぎ{08:81}{08:25}ぜ！\n<wait>		Kirishima isn't acting like herself at all.\nIs it maybe that time of the month?\n<wait>	v005		reads: 桐島のヤツ、尋常じゃないよな。\nこりゃ、月のモンどころの騒ぎじゃないぜ！\n<wait>; reads: 桐島のヤツ、尋常じゃないよな。\nこりゃ、月のモンどころの騒ぎじゃないぜ！\n<wait> @refalign
+m/MS0028.BIN	0:00	0	154	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	1	160	1FD3	いよぉ！　おめ{08:53}さん！\n<wait>		Congrats, man!\n<wait>	v005		reads: いよぉ！　おめっとさん！\n<wait>; reads: いよぉ！　おめっとさん！\n<wait> @refalign
+m/MS0028.BIN	0:00	2	191	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	3	197	1FD3	{08:48}で君も、俺達の{08:0F}入りだねぇ。\n<wait>ま、たあぁ～っぷりしごいてやる{08:42}、覚悟しとけよぉ！\n		You're one of us now.\n<wait>Oh, and don't think I'll go easy on you just because we're friends.\nYou're gonna be working your ass off!\n	v005		reads: これで君も、俺達の仲間入りだねぇ。\n<wait>ま、たあぁ～っぷりしごいてやるから、覚悟しとけよぉ！\n; reads: これで君も、俺達の仲間入りだねぇ。\n<wait>ま、たあぁ～っぷりしごいてやるから、覚悟しとけよぉ！\n @refalign
+m/MS0028.BIN	0:00	4	379	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	5	385	1FD3	お、	Oh, 			draft	@ours-2026-09-05
+m/MS0028.BIN	0:00	6	395	1F01	{08:81}ん！　遊びに来てく{08:60}のか？\n<wait>悪い{08:5F}{08:84}、今、アームターミナルの改造に忙しい{08:5F}。\n{08:5B}今度寄{08:52}くれよ！\n<wait>	, it's you! Come to hang out?\n<wait>Sorry, but I'm busy modding the Arm Terminal right now.\nDrop by again some other time!\n<wait>			draft	reads: じゃん！　遊びに来てくれたのか？\n<wait>悪いんだけど、今、アームターミナルの改造に忙しいんだ。\nまた今度寄ってくれよ！\n<wait>; reads: じゃん！　遊びに来てくれたのか？\n<wait>悪いんだけど、今、アームターミナルの改造に忙しいんだ。\nまた今度寄ってくれよ！\n<wait> @ours-2026-09-05
+m/MS0028.BIN	0:00	7	551	1FD0	{01:01}。\n{08:04}率{08:40}{02:00}隊員の内、一番の古株で{08:7B}。\n<wait>		Yamase Isamu.\nHe is the most senior of the Devil Busters working under Nishino.\n<wait>	v005		reads: 山瀬勇。\n西野率いるデビルバスター隊員の内、一番の古株である。\n<wait>; reads: 山瀬勇。\n西野率いるデビルバスター隊員の内、一番の古株である。\n<wait> @refalign
+m/MS0028.BIN	0:00	8	599	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	9	605	1FD3	ＤＢ入隊試験の資格申請{08:4B}{08:5F}{08:52}？\n<wait>		I heard you submitted an application to participate in the DB exams.\nHow'd that go?\n<wait>	v005		reads: ＤＢ入隊試験の資格申請したんだって？\n<wait>; reads: ＤＢ入隊試験の資格申請したんだって？\n<wait> @refalign
+m/MS0028.BIN	0:00	10	644	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	11	650	1FD3	頑張{08:52}くれよぉ！　応援し{08:2B}ぜ！！\n	Give it your all! I'm rooting for ya!!\n			draft	reads: 頑張ってくれよぉ！　応援してるぜ！！\n; reads: 頑張ってくれよぉ！　応援してるぜ！！\n @ours-2026-09-05
+m/MS0028.BIN	0:00	12	689	1F01	{08:7D}、試験受かるに決まっ{08:2B}よ！！\n<wait>	 is gonna pass that exam for sure!!\n<wait>			draft	reads: なら、試験受かるに決まってるよ！！\n<wait>; reads: なら、試験受かるに決まってるよ！！\n<wait> @ours-2026-09-05
+m/MS0028.BIN	0:00	13	728	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	14	734	1FD3	{08:72}{08:52}言わ{08:2F}と、すんげぇプレッシャーだろ？\n<wait>ま、せいぜい頑張れよ！\n<wait>		Huh... I guess that puts quite a lot of pressure on your shoulders.\n<wait>Anyway. Work hard, okay?\n<wait>	v005		reads: ‥‥って言われると、すんげぇプレッシャーだろ？\n<wait>ま、せいぜい頑張れよ！\n<wait>; reads: ‥‥って言われると、すんげぇプレッシャーだろ？\n<wait>ま、せいぜい頑張れよ！\n<wait> @refalign
+m/MS0028.BIN	0:00	15	831	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	16	885	1F03	あーダメダメ！！\nいくら言{08:51}{08:52}、{08:47}アームターミナルはやらんぜ。\n<wait>					reads: あーダメダメ！！\nいくら言ったって、このアームターミナルはやらんぜ。\n<wait>
+m/MS0028.BIN	0:00	17	955	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	18	961	1FD3	明日お前に{08:62}なーんの変哲も{08:25}アームターミナルが支給{03:0C}る{08:5F}{08:42}よ。\n<wait>		Just wait till tomorrow.\nYou're gonna be given a regular, plain-ass Arm Terminal then.\n<wait>	v005		reads: 明日お前には、なーんの変哲もないアームターミナルが支給されるんだからよ。\n<wait>; reads: 明日お前には、なーんの変哲もないアームターミナルが支給されるんだからよ。\n<wait> @refalign
+m/MS0028.BIN	0:00	19	1032	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	20	1038	1FD3	ざ～んね{08:5F}{08:51}ね～ぇ。\n		Sucks to be you!\n	v005		reads: ざ～んねんだったね～ぇ。\n; reads: ざ～んねんだったね～ぇ。\n @refalign
+m/MS0028.BIN	0:00	21	1072	1F03	お、	Oh, 			draft	@ours-2026-09-05
+m/MS0028.BIN	0:00	22	1082	1F01	{08:81}ん。試験{08:90}だ{08:51}ん？\n<wait>	. How'd the exam go?\n<wait>			draft	reads: じゃん。試験どうだったん？\n<wait>; reads: じゃん。試験どうだったん？\n<wait> @ours-2026-09-05
+m/MS0028.BIN	0:00	23	1111	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	24	1117	1FD3	何？　{08:76}結果待ち？　{08:81}あ、結果出{08:50}教えろよな。\n<wait>		Oh? Still waiting on the results?\nWell, when you do get them, be sure to let me know.\n<wait>	v005		reads: 何？　まだ結果待ち？　じゃあ、結果出たら教えろよな。\n<wait>; reads: 何？　まだ結果待ち？　じゃあ、結果出たら教えろよな。\n<wait> @refalign
+m/MS0028.BIN	0:00	25	1172	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	26	1178	1FD3	合格だっ{08:50}、一応祝{08:52}やる。\n不合格だっ{08:50}、笑{08:52}やるよ。\n<wait>		If you passed, then congrats in advance.\nAnd if you failed, well, tough luck. Haha!\n<wait>	v005		reads: 合格だったら、一応祝ってやる。\n不合格だったら、笑ってやるよ。\n<wait>; reads: 合格だったら、一応祝ってやる。\n不合格だったら、笑ってやるよ。\n<wait> @refalign
+m/MS0028.BIN	0:00	27	1240	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	28	1246	1FD3	{02:08}冗談だよ。俺が{08:7A}に酷いヤツだと思うか？\n<wait>		...Just kidding. You really think I'd say that?\n<wait>	v005		reads: ‥‥‥冗談だよ。俺がそんなに酷いヤツだと思うか？\n<wait>; reads: ‥‥‥冗談だよ。俺がそんなに酷いヤツだと思うか？\n<wait> @refalign
+m/MS0028.BIN	0:00	29	1298	1F01	くぅーん。\n試験、落っこっちゃ{08:51}{08:5F}{08:52}？\n<wait>	-kuuun.\nFailed the exam, did you?\n<wait>	Yo, Katsuragi. I head you failed the exam.\n<wait>	v005	draft	reads: くぅーん。\n試験、落っこっちゃったんだって？\n<wait>; reads: くぅーん。\n試験、落っこっちゃったんだって？\n<wait> @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS0028.BIN	0:00	30	1344	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	31	1350	1FD3	残念だ{08:51}ねぇ。ま、俺もいっぱつで入隊{08:4B}訳{08:81}なし、{08:7A}に気落ち{08:8E}\n{08:46}はねぇよ。\n<wait>		That's unfortunate. But, don't feel too bad.\nIt's not like I passed on my first try either.\n<wait>	v005		reads: 残念だったねぇ。ま、俺もいっぱつで入隊した訳じゃなし、そんなに気落ちする\nことはねぇよ。\n<wait>; reads: 残念だったねぇ。ま、俺もいっぱつで入隊した訳じゃなし、そんなに気落ちする\nことはねぇよ。\n<wait> @refalign
+m/MS0028.BIN	0:00	32	1429	00	合格{08:4B}{08:5F}{08:52}な。すごい{08:81}ん。\n<wait>		So, you passed the exam, huh? That's awesome.\n<wait>	v005		reads: 合格したんだってな。すごいじゃん。\n<wait>; reads: 合格したんだってな。すごいじゃん。\n<wait> @refalign
+m/MS0028.BIN	0:00	33	1464	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	34	1470	1FD3	{08:56}さ、落ち{08:50}慰{08:2E}為に、お前にやろうと思{08:52}た、俺の超アームターミナル\n“ＨＩＲＯＭＩ”はやらんぜ。\n<wait>		I was so sure you'd fail that I thought I'd give you my\nSuper Arm Terminal "Hiromi" to make you feel better.\nUnfortunately, since you did pass, you're not gonna be getting it now.\n<wait>	v005		reads: でもさ、落ちたら慰める為に、お前にやろうと思ってた、俺の超アームターミナル\n“ＨＩＲＯＭＩ”はやらんぜ。\n<wait>; reads: でもさ、落ちたら慰める為に、お前にやろうと思ってた、俺の超アームターミナル\n“ＨＩＲＯＭＩ”はやらんぜ。\n<wait> @refalign
+m/MS0028.BIN	0:00	35	1574	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	36	1580	1FD3	改造バリバリでよー、支給品のアームターミナルよか、ヴァージョン{03:08}{03:0C}た\n優れモンだ{08:51}のに、残念だなぁ！\n<wait>		What a shame. It would've been so much more high-tech than those\nstandard-issue Arm Terminals new recruits are given.\n<wait>	v005		reads: 改造バリバリでよー、支給品のアームターミナルよか、ヴァージョンアップされた\n優れモンだったのに、残念だなぁ！\n<wait>; reads: 改造バリバリでよー、支給品のアームターミナルよか、ヴァージョンアップされた\n優れモンだったのに、残念だなぁ！\n<wait> @refalign
+m/MS0028.BIN	0:00	37	1688	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	38	1694	1FD3	あ、ちなみに名字もついて{08:5F}。\nＭＡＤ－ＷＡＤＡ{08:52}{08:5F}。可愛いだろっ！\n<wait>		I even gave it a surname, in case you were curious.\n"Mad-Wada". Pretty cute, huh?\n<wait>	v005		reads: あ、ちなみに名字もついてんだ。\nＭＡＤ－ＷＡＤＡってんだ。可愛いだろっ！\n<wait>; reads: あ、ちなみに名字もついてんだ。\nＭＡＤ－ＷＡＤＡってんだ。可愛いだろっ！\n<wait> @refalign
+m/MS0028.BIN	0:00	39	1801	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	40	1807	1FD3	よお、来たな！\nお前{08:52}、案外素直{08:81}{08:25}か、可愛いね！\n<wait>		Yo, my man! I love how you always do what you're told.\nYou're like a puppy that way. A cute, little puppy.\n<wait>	v005		reads: よお、来たな！\nお前って、案外素直じゃないか、可愛いね！\n<wait>; reads: よお、来たな！\nお前って、案外素直じゃないか、可愛いね！\n<wait> @refalign
+m/MS0028.BIN	0:00	41	1865	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	42	1871	1FD3	んで、今日呼{08:5F}理由の、例のイイモン{08:52}のは{08:48}さッ！　<wait>ババーーーン！！\n<wait>		Anyway, here's what I called you here for today. <wait>Ta-da!\n<wait>	v005		reads: んで、今日呼んだ理由の、例のイイモンってのはこれさッ！　<wait>ババーーーン！！\n<wait>; reads: んで、今日呼んだ理由の、例のイイモンってのはこれさッ！　<wait>ババーーーン！！\n<wait> @refalign
+m/MS0028.BIN	0:00	43	1950	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	44	1956	1FD3	おい、何ぽけー{08:53}{08:4A}{08:5F}よ！\n<wait>{08:48}だ{08:52}ば、{08:48}！！\n<wait>		So, what do you think? Impressed?\n<wait>Come on, react!\n<wait>	v005		reads: おい、何ぽけーっとしてんだよ！\n<wait>これだってば、これ！！\n<wait>; reads: おい、何ぽけーっとしてんだよ！\n<wait>これだってば、これ！！\n<wait> @refalign
+m/MS0028.BIN	0:00	45	2024	1FB2	{08:02}{08:6A}かいら{08:25}		I don't need a "Yamase"	v005		reads: 山瀬なんかいらない; menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0028.BIN	0:00	46	2038	1FB2	どれどれ？		What is it?	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0028.BIN	0:00	47	2068	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	48	2074	1FD3	あ～の～なぁ～、	Liiisten here, 	Stop it, Katsuragi.\n<wait>Not even I, Yamase, can stomach such stupid jokes.\n<wait>Just because I don't have a girlfriend that doesn't make me gay!\n<wait>	v005	draft	@ours-2026-09-05
+m/MS0028.BIN	0:00	49	2096	1F01	君。\n<wait>温厚なオレ{08:56}、そう{08:68}ジョークにはマジで怒るぜ。\n<wait>彼女が{08:24}{08:42}{08:52}、オレはモーホー{08:81}ねぇ！！\n<wait>	.\n<wait>Even a nice guy like me gets seriously mad at jokes like that.\n<wait>Just 'cause I don't have a girlfriend doesn't mean I swing that way!!\n<wait>			draft	reads: 君。\n<wait>温厚なオレでも、そういうジョークにはマジで怒るぜ。\n<wait>彼女がいないからって、オレはモーホーじゃねぇ！！\n<wait>; reads: 山瀬： @ours-2026-09-05
+m/MS0028.BIN	0:00	50	2206	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	51	2212	1FD3	{08:72}{08:51}く、{08:47}オレの腕に燦然と輝く、チョー絶品のイカス奴が見え{08:25}のかよ、\nあん？\n<wait>		...No, this is what I'm talking about.\nThis piece of shiny high-tech wrapped around my muscular arm.\n<wait>	v005		reads: ‥‥ったく、このオレの腕に燦然と輝く、チョー絶品のイカス奴が見えないのかよ、\nあん？\n<wait>; reads: 君。\n<wait>温厚なオレでも、そういうジョークにはマジで怒るぜ。\n<wait>彼女がいないからって、オレはモーホーじゃねぇ！！\n<wait> @refalign
+m/MS0028.BIN	0:00	52	2296	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	53	2302	1FD3	アームターミナルだよ！　		It's an Arm Terminal! 	v005		reads: ‥‥ったく、このオレの腕に燦然と輝く、チョー絶品のイカス奴が見えないのかよ、\nあん？\n<wait> @refalign
+m/MS0028.BIN	0:00	54	2332	1FFA	あーむたーみ{08:59}		ARM TERMINAL	v005		reads: あーむたーみなる; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	55	2352	1FFA	！！\n<wait>	!!\n<wait>			draft	@ours-2026-09-05
+m/MS0028.BIN	0:00	56	2365	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	57	2371	1FD3	お前{08:52}ば、入隊試験落ちたろ？\n<wait>		You might have flunked the exam. However, fear not.\n<wait>	v005		reads: お前ってば、入隊試験落ちたろ？\n<wait>; reads: お前ってば、入隊試験落ちたろ？\n<wait> @refalign
+m/MS0028.BIN	0:00	58	2408	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	59	2414	1FD3	オレはさ、お前の事が不憫に思{08:52}{08:7D}{08:25}{08:42}、{08:47}芸術的改造アーム\nターミナルを、太っ腹な事にお前にやろうと思{08:51}訳よ。\n<wait>		I've decided that you deserve an arm terminal of your own.\nUnlike those boring army ones we use, this one's been modded\nto hell and back.\n<wait>	v005		reads: オレはさ、お前の事が不憫に思ってならないから、この芸術的改造アーム\nターミナルを、太っ腹な事にお前にやろうと思った訳よ。\n<wait>; reads: お前ってば、入隊試験落ちたろ？\n<wait> @refalign
+m/MS0028.BIN	0:00	60	2530	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	61	2536	1FD3	うれしいか？\n<wait>		You like it?\n<wait>	v005		reads: オレはさ、お前の事が不憫に思ってならないから、この芸術的改造アーム\nターミナルを、太っ腹な事にお前にやろうと思った訳よ。\n<wait> @refalign
+m/MS0028.BIN	0:00	62	2571	1FB2	うれしい！		I love it!	v005		menu option, declared width 20 columns; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	63	2583	1FB2	あんまし		It's okay	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0028.BIN	0:00	64	2611	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	65	2617	1FD3	よしよし。\n<wait>		Glad to hear.\n<wait>	v005		menu option, declared width 20 columns @refalign
+m/MS0028.BIN	0:00	66	2636	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	67	2642	1FD3	{08:81}あ、ずぶの素人で{08:7B}	All right then, for a total beginner like 			draft	reads: じゃあ、ずぶの素人である; reads: じゃあ、ずぶの素人である @rebase-unmatched idx81 en=Yamase: @rebase-unmatched idx81 en=Yamase: @ours-2026-09-05
+m/MS0028.BIN	0:00	68	2668	1F01	君に、\n{08:48}{08:42}、アームターミナルの使い方の説明を{08:4A}あげちゃおう。\n<wait>	,\nI'll explain how to use the Arm Terminal!\n<wait>			draft	reads: 君に、\nこれから、アームターミナルの使い方の説明をしてあげちゃおう。\n<wait>; reads: 君に、\nこれから、アームターミナルの使い方の説明をしてあげちゃおう。\n<wait> @ours-2026-09-05
+m/MS0028.BIN	0:00	69	2738	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	70	2744	1FD3	ウォッホォ～ン！\n君にあ{08:44}アームターミナル{08:62}ＤＢ隊員の象徴ともなっ{08:14}物だ。\n<wait>		Design-wise, it's based on the same model we Devil Busters use.\n<wait>	v005		reads: ウォッホォ～ン！\n君にあげたアームターミナルは、ＤＢ隊員の象徴ともなっている物だ。\n<wait>; reads: じゃあ、ずぶの素人である @refalign
+m/MS0028.BIN	0:00	71	2826	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	72	2832	1FD3	ＤＢ隊員の中{08:56}、{08:05}ーの扱いに慣れ、{08:0B}と対峙できる{08:74}の\n精神力に優{08:60}者{08:74}に支給{03:0C}る。\n最大限の注意をも{08:52}、ありがた～く扱う{08:69}に！\n<wait>		You better be grateful. Even within the troops, only a select few with\nthe necessary computer skills and the mental capacity required to\nconverse with demons are given access to these.\n<wait>	v005		reads: ＤＢ隊員の中でも、コンピューターの扱いに慣れ、悪魔と対峙できるだけの\n精神力に優れた者だけに支給される。\n最大限の注意をもって、ありがた～く扱うように！\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	73	2965	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	74	2971	1FD3	{08:48}には{08:0B}と戦うために{01:2C}{03:0C}た、非常に優{08:60}ソフトがインストール\n{03:0C}{08:14}。\n<wait>		Arm Terminals were developed to be used to fight demons.\nNaturally, they come with tons of software designed for that purpose.\n<wait>	v005		reads: これには悪魔と戦うために開発された、非常に優れたソフトがインストール\nされている。\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	75	3045	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	76	3051	1FD3	まずはマッパー{02:08}{08:53}。\n初めて訪{08:60}場所{08:56}、周囲にセンサーを発{08:4A}、{08:7B}程度の地形を知る事が\n出来る{08:52}、便利モンだ。\n<wait>		First, the Mapper.\nThis is a basic program that automatically scans any areas you visits,\nand displays a simplified version of their layout.\n<wait>	v005		reads: まずはマッパー‥‥‥っと。\n初めて訪れた場所でも、周囲にセンサーを発して、ある程度の地形を知る事が\n出来るって、便利モンだ。\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	77	3166	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	78	3172	1FD3	{08:48}{08:62}常に君の位置を白い三角で表示{08:8E}。\nオプションにより、北を固定で上に向けておく{08:46}もできるし、{08:63}の正面を常に、\n上に置く{08:46}も出来る{08:52}ワケだ！\n<wait>		Your position is shown as a white triangle.\nThere's an option to always have the map point to north,\nor to have it rotate as you move.\n<wait>	v005		reads: これは、常に君の位置を白い三角で表示する。\nオプションにより、北を固定で上に向けておくこともできるし、自分の正面を常に、\n上に置くことも出来るってワケだ！\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	79	3319	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	80	3325	1FD3	お前がいくら方向音痴{08:56}、{08:48}さえ{08:3F}ば{01:32}だぜ！\n<wait>		With this thing guiding you,\nnot even an idiot like you can lose his way!\n<wait>	v005		reads: お前がいくら方向音痴でも、これさえあれば大丈夫だぜ！\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	81	3376	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	82	3382	1FD3	{08:4D}と、場所に関{08:8E}情報を、リアルタイムで衛星{08:42}受け取る{08:69}に{08:1A}る。\n<wait>		In addition, you will also receive real time map data from a satellite.\n<wait>	v005		reads: それと、場所に関する情報を、リアルタイムで衛星から受け取るようになってる。\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	83	3453	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	84	3459	1FD3	こう{08:68}ナビゲーション・{08:09}{08:62}{08:10}ん中で使い方を練習{08:4A}\nおくと{08:7F}ぜ！\n<wait>		I suggest you get comfortable using it before you leave the shelter.\n<wait>	v005		reads: こういうナビゲーション・プログラムは、シェルターん中で使い方を練習して\nおくといいぜ！\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	85	3529	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 君に、\nこれから、アームターミナルの使い方の説明をしてあげちゃおう。\n<wait> @refalign
+m/MS0028.BIN	0:00	86	3535	1FD3	{08:74}ど、お前は{02:00}{08:56}{08:25}し、まぁ、{08:10}の外に出る{08:52}事{08:62}\n無いと思う{08:84}な。\n<wait>		Well, not that you'll ever need to. You're not a Devil Buster, remember?\n<wait>	v005		reads: だけど、お前はデビルバスターでもないし、まぁ、シェルターの外に出るって事は、\n無いと思うけどな。\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	87	3607	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: ウォッホォ～ン！\n君にあげたアームターミナルは、ＤＢ隊員の象徴ともなっている物だ。\n<wait> @refalign
+m/MS0028.BIN	0:00	88	3613	1FD3	さて、我らがアームターミナルの秘{08:2E}パワー{08:62}{08:73}物ではな～い。\n<wait>		Now, if you thought that was all that the Arm Terminal was good for,\nthen you my sir are solemnly mistaken.\n<wait>	v005		reads: さて、我らがアームターミナルの秘めるパワーは、こんな物ではな～い。\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	89	3680	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: ＤＢ隊員の中でも、コンピューターの扱いに慣れ、悪魔と対峙できるだけの\n精神力に優れた者だけに支給される。\n最大限の注意をもって、ありがた～く扱うように！\n<wait> @refalign
+m/MS0028.BIN	0:00	90	3686	1FD3	次の{01:3D}の{08:09}、ＤＤＳとＤＤＣこそが、{08:79}{08:0B}と実際に遭遇{08:4B}時に、\n{08:79}真価を発揮{08:8E}ので{08:7B}ッ！\n<wait>		The next set of programs, DDS and DCS, are what it's really about!\n<wait>	ours		reads: 次のふたつのプログラム、ＤＤＳとＤＤＣこそが、その悪魔と実際に遭遇した時に、\nその真価を発揮するのであるッ！\n<wait>; reads: 山瀬：
+m/MS0028.BIN	0:00	91	3778	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: これには悪魔と戦うために開発された、非常に優れたソフトがインストール\nされている。\n<wait> @refalign
+m/MS0028.BIN	0:00	92	3784	1FD3	お前{08:62}滅多な事では地上に出{08:25}{08:8C}が、{08:0B}の中には人類に対{08:4A}、\n必ずしも敵対的で{08:25}種族も{08:40}。\n<wait>		While you probably will never encounter them,\nthere actually exist demons out there who don't want to eat our brains.\nShocking, I know.\n<wait>	v005		reads: お前は、滅多な事では地上に出ないだろうが、悪魔の中には人類に対して、\n必ずしも敵対的でない種族もいる。\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	93	3878	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: まずはマッパー‥‥‥っと。\n初めて訪れた場所でも、周囲にセンサーを発して、ある程度の地形を知る事が\n出来るって、便利モンだ。\n<wait> @refalign
+m/MS0028.BIN	0:00	94	3884	1FD3	{08:4D}と、会話{08:4A}{08:0E}にしちまう{08:52}のが、ＤＤＣだ。\n会話{08:4B}{08:52}、滅多に{08:0E}に{08:1A}く{08:2F}モン{08:81}{08:25}がな。\n<wait>		DCS is what you can use to talk to and even befriend them.\nOr recruit. Or enslave. Really, it's up to you what you want to call it.\n<wait>	ours		reads: それと、会話して仲魔にしちまうってのが、ＤＤＣだ。\n会話したって、滅多に仲魔になってくれるモンじゃないがな。\n<wait>; reads: 山瀬：
+m/MS0028.BIN	0:00	95	3976	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: これは、常に君の位置を白い三角で表示する。\nオプションにより、北を固定で上に向けておくこともできるし、自分の正面を常に、\n上に置くことも出来るってワケだ！\n<wait> @refalign
+m/MS0028.BIN	0:00	96	3982	1FD3	ま、オレ様くらい魅力に溢{08:60}{02:0B}{08:81}なきゃあ、まず{08:0E}に{08:23}ね！\n<wait>		You might struggle with it at first if you aren't naturally\ncharismatic like me.\n<wait>	v005		reads: ま、オレ様くらい魅力に溢れた人間じゃなきゃあ、まず仲魔にできないね！\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	97	4045	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: お前がいくら方向音痴でも、これさえあれば大丈夫だぜ！\n<wait> @refalign
+m/MS0028.BIN	0:00	98	4051	1FD3	で、ＤＤＣと君の頭脳を駆使{08:4A}下僕に{08:4B}{08:0B}を、デジタル・{08:06}と{08:4A}、\n{08:79}アーム・ターミナルのメモリーに、セーブ{08:8E}{08:46}もできる{08:5F}ぜ。\n<wait>		However, once you get the hang of it, you'll be able to turn demons\ninto what we call Digital Devils, and save them in your Arm Terminal.\n<wait>	v005		reads: で、ＤＤＣと君の頭脳を駆使して下僕にした悪魔を、デジタル・デビルとして、\nそのアーム・ターミナルのメモリーに、セーブすることもできるんだぜ。\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	99	4179	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: それと、場所に関する情報を、リアルタイムで衛星から受け取るようになってる。\n<wait> @refalign
+m/MS0028.BIN	0:00	100	4185	1FD3	んで、{08:47}{08:0E}に{08:4B}{08:0B}を必要に応じて召喚し、使役{08:8E}。\n{08:48}を可能に{08:13}のがＤＤＳ、デジタル・{08:06}・サマナーだ。\n<wait>		What do you use said Digital Devils for? That's where DDS comes in.\nIt's a program used to summon demons. For real.\n<wait>	v005		reads: んで、この仲魔にした悪魔を必要に応じて召喚し、使役する。\nこれを可能にしているのがＤＤＳ、デジタル・デビル・サマナーだ。\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	101	4291	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: こういうナビゲーション・プログラムは、シェルターん中で使い方を練習して\nおくといいぜ！\n<wait> @refalign
+m/MS0028.BIN	0:00	102	4297	1FD3	セーブ・{08:0A}は{08:0B}の存在{08:79}{08:5E}{08:81}なく、{08:0B}が{08:47}世界に実体化{08:8E}為の\n{08:0A}に{08:1A}る。\n<wait>		Do keep in mind, what's stored in your Arm Terminal is not actually\nthe demon itself, but rather, the data required to summon it.\n<wait>	v005		reads: セーブ・データは悪魔の存在そのものじゃなく、悪魔がこの世界に実体化する為の\nデータになってる。\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	103	4373	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: だけど、お前はデビルバスターでもないし、まぁ、シェルターの外に出るって事は、\n無いと思うけどな。\n<wait> @refalign
+m/MS0028.BIN	0:00	104	4379	1FD3	{08:79}ため、{08:0B}を実体化{08:8E}ために{08:62}生命エネルギーで{08:7B}生体マグネタイトを\n大量に必要と{08:8E}。\n<wait>		Now, just the data itself isn't enough. You also need large quantities\nof what's called Somatic Magnetite to power up the demon.\n<wait>	v005		reads: そのため、悪魔を実体化するためには、生命エネルギーである生体マグネタイトを\n大量に必要とする。\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	105	4469	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: さて、我らがアームターミナルの秘めるパワーは、こんな物ではな～い。\n<wait> @refalign
+m/MS0028.BIN	0:00	106	4475	1FD3	昔っ{08:42}生贄を捧げて生体マグネタイトを抽出し、{08:0B}を召喚{08:8E}儀式が\n行なわれて{08:64}が{02:08}\n<wait>{01:27}、俺達が生贄を捧げるワケにゃあいかんよな？\n<wait>		Back in the day, people used to perform summoning rituals\nwhere they'd extract magnetite from live sacrifices.\n<wait>However, we can't really do that anymore, can we?\n<wait>	v005		reads: 昔っから生贄を捧げて生体マグネタイトを抽出し、悪魔を召喚する儀式が\n行なわれていたが‥‥‥\n<wait>まさか、俺達が生贄を捧げるワケにゃあいかんよな？\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	107	4610	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 次のふたつのプログラム、ＤＤＳとＤＤＣこそが、その悪魔と実際に遭遇した時に、\nその真価を発揮するのであるッ！\n<wait> @refalign
+m/MS0028.BIN	0:00	108	4616	1FD3	かとい{08:52}、生体マグネタイトを召喚者{08:42}抽出{08:4A}{08:64}ん{08:81}あ、\n命が幾つあ{08:52}も足りねぇ。\n<wait>		We also can't use our own since we kinda need that to live.\n<wait>	v005		reads: かといって、生体マグネタイトを召喚者から抽出していたんじゃあ、\n命が幾つあっても足りねぇ。\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	109	4702	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: お前は、滅多な事では地上に出ないだろうが、悪魔の中には人類に対して、\n必ずしも敵対的でない種族もいる。\n<wait> @refalign
+m/MS0028.BIN	0:00	110	4708	1FD3	んで、オレ達は別の{08:0B}{08:42}{08:4D}を頂戴{08:8E}{08:46}に{08:4B}{08:52}ワケ。\n<wait>		That leaves only one potential source. Demons.\n<wait>	v005		reads: んで、オレ達は別の悪魔からそれを頂戴することにしたってワケ。\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	111	4763	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: それと、会話して仲魔にしちまうってのが、ＤＤＣだ。\n会話したって、滅多に仲魔になってくれるモンじゃないがな。\n<wait> @refalign
+m/MS0028.BIN	0:00	112	4769	1FD3	{08:0B}を倒{08:4B}ときに、彼らを形づく{08:52}{08:64}肉体{08:42}四散{08:8E}生体マグネタイトを\n収集し、バッテリーに蓄えておく機能、ＭＡＧバッテリーがアームターミナルには\n備わっ{08:14}{08:77}～っ！\n<wait>		Your Arm Terminal comes equipped with a MAG battery that automatically\nabsorbs any left over magnetite from the demons you kill.\n<wait>	v005		reads: 悪魔を倒したときに、彼らを形づくっていた肉体から四散する生体マグネタイトを\n収集し、バッテリーに蓄えておく機能、ＭＡＧバッテリーがアームターミナルには\n備わっているのだ～っ！\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	113	4932	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: ま、オレ様くらい魅力に溢れた人間じゃなきゃあ、まず仲魔にできないね！\n<wait> @refalign
+m/MS0028.BIN	0:00	114	4938	1FD3	便利だろぉ？　んん？\n<wait>		Simple, right? You barely even need to worry about it.\n<wait>	v005		reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	115	4967	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: で、ＤＤＣと君の頭脳を駆使して下僕にした悪魔を、デジタル・デビルとして、\nそのアーム・ターミナルのメモリーに、セーブすることもできるんだぜ。\n<wait> @refalign
+m/MS0028.BIN	0:00	116	4973	1FD3	あ、そうそう。{01:3B}言{08:51}ＤＤＣとＤＤＳ。\n{08:3F}{08:62}お前にや{08:51}アームターミナルには入{08:52}{08:25}ぜ。\n<wait>		Now, I should say.\nYour Arm Terminal doesn't come with either of these programs installed.\n<wait>	v005		reads: あ、そうそう。さっき言ったＤＤＣとＤＤＳ。\nあれは、お前にやったアームターミナルには入ってないぜ。\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	117	5063	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: んで、この仲魔にした悪魔を必要に応じて召喚し、使役する。\nこれを可能にしているのがＤＤＳ、デジタル・デビル・サマナーだ。\n<wait> @refalign
+m/MS0028.BIN	0:00	118	5069	1FD3	シロートに扱{08:28}{08:69}な、しろモン{08:81}ねぇ{08:42}な。\n<wait>		I know, I know. Don't look at me like that.\nIt's not like I made the rules.\n<wait>	v005		reads: シロートに扱えるような、しろモンじゃねぇからな。\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	119	5118	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: セーブ・データは悪魔の存在そのものじゃなく、悪魔がこの世界に実体化する為の\nデータになってる。\n<wait> @refalign
+m/MS0028.BIN	0:00	120	5124	1FD3	ま、{08:79}うち機会があっ{08:50}やるよ！\n機会があっ{08:50}な。\n<wait>		Still, I get this funny feeling that you will get a chance\nto use them sooner rather than later.\n<wait>	v005		reads: ま、そのうち機会があったらやるよ！\n機会があったらな。\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	121	5180	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: そのため、悪魔を実体化するためには、生命エネルギーである生体マグネタイトを\n大量に必要とする。\n<wait> @refalign
+m/MS0028.BIN	0:00	122	5186	1FD3	{08:82}よ、{08:48}らの驚異的な発明品が、いつ誰の手によ{08:52}{01:2C}{03:0C}たのか、\nい{08:76}に分{08:52}ねぇ{08:5F}。\n<wait>		Also, and this is pretty interesting.\nWe actually do not know who created these programs. Crazy, right?\n<wait>	v005		reads: ただよ、これらの驚異的な発明品が、いつ誰の手によって開発されたのか、\nいまだに分ってねぇんだ。\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	123	5272	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 昔っから生贄を捧げて生体マグネタイトを抽出し、悪魔を召喚する儀式が\n行なわれていたが‥‥‥\n<wait>まさか、俺達が生贄を捧げるワケにゃあいかんよな？\n<wait> @refalign
+m/MS0028.BIN	0:00	124	5278	1FD3	スティーヴン博士と{08:68}謎の男が、大破壊前の世界各地に出没し、\n{08:48}らの{08:09}や、アームターミナルの原形と{08:16}ハードを\n広範囲に配布{08:4A}い{08:50}しい{08:52}事は分っ{08:14}。\n<wait>		Just after the Rapture, a gentleman known only as "Steven" visited bunch\nof the shelters and distributed the software among the survivors.\nHe's also credited with developing the hardware that would later become\nthe basis for the Arm Terminals.\n<wait>	v005		reads: スティーヴン博士という謎の男が、大破壊前の世界各地に出没し、\nこれらのプログラムや、アームターミナルの原形となったハードを\n広範囲に配布していたらしいって事は分っている。\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	125	5429	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: かといって、生体マグネタイトを召喚者から抽出していたんじゃあ、\n命が幾つあっても足りねぇ。\n<wait> @refalign
+m/MS0028.BIN	0:00	126	5435	1FD3	謎だよな～。\n<wait>		Mysterious, mysterious.\n<wait>	v005		reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	127	5456	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: んで、オレ達は別の悪魔からそれを頂戴することにしたってワケ。\n<wait> @refalign
+m/MS0028.BIN	0:00	128	5462	1FD3	ま、{08:4D}は{08:4D}と{08:4A}{02:08}‥\n<wait>オレの改造アームターミナルは最高だろ？\n<wait>		Anyway...\n<wait>What do you think? About the Arm Terminal, I mean.\n<wait>	v005		reads: ま、それはそれとして‥‥‥‥\n<wait>オレの改造アームターミナルは最高だろ？\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	129	5546	1FB2	最高ッス！		It's sick!	v005		menu option, declared width 20 columns; menu option, declared width 20 columns @refalign
+m/MS0028.BIN	0:00	130	5558	1FB2	分{08:42}{08:25}		Dunno	v005		reads: 分からない; menu option, declared width 20 columns; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	131	5584	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	132	5590	1FD3	くー、素直な奴{08:52}の{08:62}オレ大変好きだね。\n<wait>		Hehe! Keep the praise coming.\n<wait>	v005		reads: くー、素直な奴ってのは、オレ大変好きだね。\n<wait>; menu option, declared width 20 columns @refalign
+m/MS0028.BIN	0:00	133	5640	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: あ、そうそう。さっき言ったＤＤＣとＤＤＳ。\nあれは、お前にやったアームターミナルには入ってないぜ。\n<wait> @refalign
+m/MS0028.BIN	0:00	134	5646	1FD3	こいつ{08:62}{02:00}に支給{03:0C}るヤツよりも、ワンランク、\n<wait>ヴァージョン{03:08}{03:0C}て{08:5F}ぜぇ！\n<wait>	This baby is one rank above the ones issued to Devil Busters,\n<wait>it's been upgraded, see!\n<wait>	The mods I've installed put it way past the standard-issue models.\n<wait>I'm a little jealous myself.\n<wait>	v005	draft	reads: こいつは、デビルバスターに支給されるヤツよりも、ワンランク、\n<wait>ヴァージョンアップされてんだぜぇ！\n<wait>; reads: こいつは、デビルバスターに支給されるヤツよりも、ワンランク、\n<wait>ヴァージョンアップされてんだぜぇ！\n<wait> @ours-2026-09-05
+m/MS0028.BIN	0:00	135	5730	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: シロートに扱えるような、しろモンじゃねぇからな。\n<wait> @refalign
+m/MS0028.BIN	0:00	136	5736	1FD3	さらに、ＤＢに{08:86}支給{03:0C}{08:25}、{08:47}{08:09}も、内緒で付けてやろう！\n<wait>		Now, while I can't have you going around summoning demons,\nthere is another program that I can give you.\n<wait>	v005		reads: さらに、ＤＢにしか支給されない、このプログラムも、内緒で付けてやろう！\n<wait>; reads: くー、素直な奴ってのは、オレ大変好きだね。\n<wait> @refalign
+m/MS0028.BIN	0:00	137	5808	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: ま、そのうち機会があったらやるよ！\n機会があったらな。\n<wait> @refalign
+m/MS0028.BIN	0:00	138	5814	1FD3	ジャジャ～ン！　オートマッピングぅ！\n<wait>		Ta-da! It's the Auto Mapper!\n<wait>	v005		reads: こいつは、デビルバスターに支給されるヤツよりも、ワンランク、\n<wait>ヴァージョンアップされてんだぜぇ！\n<wait> @refalign
+m/MS0028.BIN	0:00	139	5859	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: ただよ、これらの驚異的な発明品が、いつ誰の手によって開発されたのか、\nいまだに分ってねぇんだ。\n<wait> @refalign
+m/MS0028.BIN	0:00	140	5865	1FD3	オートマッピングはお前が移動{08:4B}場所を、自動的に記録{08:4A}、ボタン操作一つで、\n{08:79}ドキュメントをスクリーン上に映し出す事が出来る、方向音痴には憧れの\n{08:09}だ。\n<wait>		The Auto Mapper automatically analyses the places you visit and puts\ntogether a map which can then be pulled up later if needed.\nIt's the perfect tool for people with no sense of direction.\n<wait>	v005		reads: オートマッピングはお前が移動した場所を、自動的に記録して、ボタン操作一つで、\nそのドキュメントをスクリーン上に映し出す事が出来る、方向音痴には憧れの\nプログラムだ。\n<wait>; reads: さらに、ＤＢにしか支給されない、このプログラムも、内緒で付けてやろう！\n<wait> @refalign
+m/MS0028.BIN	0:00	141	6022	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: スティーヴン博士という謎の男が、大破壊前の世界各地に出没し、\nこれらのプログラムや、アームターミナルの原形となったハードを\n広範囲に配布していたらしいって事は分っている。\n<wait> @refalign
+m/MS0028.BIN	0:00	142	6028	1FD3	本来{08:7D}ＤＢに{08:86}、支給{03:0C}{08:25}{08:5F}がねぇ{08:72}\n<wait>君には特別にあげちゃおう！\n<wait>		Now, normally, this software is only available to Devil Busters.\n<wait>However, I'm willing to make a special exception just for you!\n<wait>	v005		reads: 本来ならＤＢにしか、支給されないんだがねぇ‥‥\n<wait>君には特別にあげちゃおう！\n<wait>; reads: 本来ならＤＢにしか、支給されないんだがねぇ‥‥\n<wait>君には特別にあげちゃおう！\n<wait> @refalign
+m/MS0028.BIN	0:00	143	6102	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	144	6108	1FD3	くれぐれも、他の皆には内緒だ{08:42}な。{08:7F}な！\n<wait>		Just don't tell anyone, okay? Thanks!\n<wait>	v005		reads: くれぐれも、他の皆には内緒だからな。いいな！\n<wait>; reads: オートマッピングはお前が移動した場所を、自動的に記録して、ボタン操作一つで、\nそのドキュメントをスクリーン上に映し出す事が出来る、方向音痴には憧れの\nプログラムだ。\n<wait> @refalign
+m/MS0028.BIN	0:00	145	6163	1F01	は{08:02}{08:42}、改造アームターミナルと、オートマッピングを貰{08:51}。\n<wait>{08:72}{08:02}{08:52}{02:08}{02:08}結構、イイ奴かも知れ{08:25}。\n<wait>	 received the modified Arm Terminal and Auto-Mapping from Yamase.\n<wait>...... Yamase............ might be a decent guy after all.\n<wait>	You received the upgraded Arm Terminal and Auto Mapper from Yamase.\n<wait>Yamase... He's a pretty good guy.\n<wait>	v005	draft	reads: は山瀬から、改造アームターミナルと、オートマッピングを貰った。\n<wait>‥‥山瀬って‥‥‥‥‥‥結構、イイ奴かも知れない。\n<wait>; reads: 山瀬： @rebase-tagdiff @refalign @seamfix-2026-09-05
+m/MS0028.BIN	0:00	146	6267	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	147	6273	1FD3	オレの血と汗の結晶が、{08:79}アームターミナルに詰まっ{08:2B}。\nくれぐれも大切にしろよ。\n<wait>		That thing's the culmination of my blood and sweat.\nTake good care of it, will you?\n<wait>	v005		reads: オレの血と汗の結晶が、そのアームターミナルに詰まってる。\nくれぐれも大切にしろよ。\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	148	6359	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	149	6365	1FD3	ちなみに、{08:79}アームターミナルの名前は“ＨＩＲＯＭＩ”だ。\nヒロミちゃん{08:72}お兄ちゃんに、う～んと可愛が{08:52}もらえよ。\n{08:72}{08:52}事だ。\n<wait>		Oh, and by the way, I gave it--or rather, her--a name already.\nHiromi. Hiromi Mad-Wada.\n<wait>	v005		reads: ちなみに、そのアームターミナルの名前は“ＨＩＲＯＭＩ”だ。\nヒロミちゃん‥‥お兄ちゃんに、う～んと可愛がってもらえよ。\n‥‥って事だ。\n<wait>; reads: は山瀬から、改造アームターミナルと、オートマッピングを貰った。\n<wait>‥‥山瀬って‥‥‥‥‥‥結構、イイ奴かも知れない。\n<wait> @refalign
+m/MS0028.BIN	0:00	150	6496	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	151	6502	1FD3	あ、そうそう、名字もつい{08:2B}。\n“ＭＡＤ－ＷＡＤＡ”{08:52}{08:5F}。かっこ{08:7F}だろ！\n<wait>		Cute, right? It's always gotta be a cute name.\n<wait>	v005		reads: あ、そうそう、名字もついてる。\n“ＭＡＤ－ＷＡＤＡ”ってんだ。かっこいいだろ！\n<wait>; reads: オレの血と汗の結晶が、そのアームターミナルに詰まってる。\nくれぐれも大切にしろよ。\n<wait> @refalign
+m/MS0028.BIN	0:00	152	6580	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	153	6586	1FD3	{08:81}、今日はＢ５で当直だ{08:42}な。行{08:52}くるわ。\nと{08:53}と行かねぇと{08:5B}、あの夫婦にどや{03:0C}ちまうわ。\n<wait>		Now then, I've gotta get to work.\nThat couple's gonna yell at me again if I'm late.\n<wait>	v005		reads: じゃ、今日はＢ５で当直だからな。行ってくるわ。\nとっとと行かねぇとまた、あの夫婦にどやされちまうわ。\n<wait>; reads: ちなみに、そのアームターミナルの名前は“ＨＩＲＯＭＩ”だ。\nヒロミちゃん‥‥お兄ちゃんに、う～んと可愛がってもらえよ。\n‥‥って事だ。\n<wait> @refalign
+m/MS0028.BIN	0:00	154	6679	00	あっそ、{08:81}あ、お前にはやら{08:25}。\n<wait>		Oh? Well, in that case, I won't give it to you.\n<wait>	v005		reads: あっそ、じゃあ、お前にはやらない。\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	155	6732	1FB2	冗談ッスぅ！		I was joking!	v005		menu option, declared width 20 columns; reads: あ、そうそう、名字もついてる。\n“ＭＡＤ－ＷＡＤＡ”ってんだ。かっこいいだろ！\n<wait> @refalign
+m/MS0028.BIN	0:00	156	6746	1FB2	いら{08:25}		Don't need it	v005		reads: いらない; menu option, declared width 20 columns; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	157	6772	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	158	6778	1FD3	くぬーー！\n<wait>そこ{08:71}言わ{08:2F}と、かえ{08:52}無理やりに{08:56}、{08:47}アームターミナルの良さを、\n分{08:42}{08:4A}やりたく{08:59}ぜ！\n<wait>		Fuckin' hell!\n<wait>You're gonna be impressed whetehr you like it or not!\n<wait>	v005		reads: くぬーー！\n<wait>そこまで言われると、かえって無理やりにでも、このアームターミナルの良さを、\n分からしてやりたくなるぜ！\n<wait>; reads: あっそ、じゃあ、お前にはやらない。\n<wait> @refalign
+m/MS0028.BIN	0:00	159	6887	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	160	6893	1FD3	おとなしく貰え！！\n<wait>		Take it!<wait>	v005		reads: いらない; menu option, declared width 20 columns @refalign
+m/MS0028.BIN	0:00	161	6934	1FB2	絶対ヤ！	No way!	Never!	v005	draft	menu option, declared width 20 columns; reads: 山瀬勇 @ours-2026-09-05
+m/MS0028.BIN	0:00	162	6944	1FB2	もらう	Take it	Okay	v005	draft	menu option, declared width 20 columns; menu option, declared width 20 columns @ours-2026-09-05
+m/MS0028.BIN	0:00	163	6970	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	164	6976	1FD3	ま、パンピーの君に{08:62}分{08:42}なく{08:54}仕方{08:25}{08:72}が、{08:61}だ。\n<wait>		Well, not that an idiot like you could understand its true beauty.\nStill...<wait>	v005		reads: ま、パンピーの君には、分からなくても仕方ない‥‥が、しかしだ。\n<wait>; reads: くぬーー！\n<wait>そこまで言われると、かえって無理やりにでも、このアームターミナルの良さを、\n分からしてやりたくなるぜ！\n<wait> @refalign
+m/MS0028.BIN	0:00	165	7033	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	166	7039	1FD3	お前が分{08:42}なく{08:51}{08:52}、俺様の超アームターミナル{08:62}\n<wait>		This Arm Terminal is <wait>	v005		reads: お前が分からなくったって、俺様の超アームターミナルは、\n<wait>; reads: お前が分からなくったって、俺様の超アームターミナルは、\n<wait> @refalign
+m/MS0028.BIN	0:00	167	7096	1FFA	すんげぇ		SUUUPER 	v005		menu option, declared width 20 columns @refalign
+m/MS0028.BIN	0:00	168	7110	1FFA	最高な{08:5F}よっ！！\n<wait>		awesome!\n<wait>	v005		reads: 最高なんだよっ！！\n<wait>; menu option, declared width 20 columns @refalign
+m/MS0028.BIN	0:00	169	7135	1FD2	{08:02}：					reads: 山瀬：
+m/MS0028.BIN	0:00	170	7141	1FD3	分{08:18}な！！　{08:5C}選択肢はねぇぞ！！\n<wait>		Got it? Good! No more questions!\n<wait>	v005		reads: 分かったな！！　もう選択肢はねぇぞ！！\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	171	7182	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: じゃ、今日はＢ５で当直だからな。行ってくるわ。\nとっとと行かねぇとまた、あの夫婦にどやされちまうわ。\n<wait> @refalign
+m/MS0028.BIN	0:00	172	7188	1FD3	{02:08}‥ん{08:81}、次の説明だ、次ぃッ！！\n<wait>		Anyway, let's move along.\n<wait>	v005		reads: ‥‥‥‥んじゃ、次の説明だ、次ぃッ！！\n<wait>; reads: 山瀬： @refalign
+m/MS0028.BIN	0:00	173	7254	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; menu option, declared width 20 columns @refalign
+m/MS0028.BIN	0:00	174	7260	1FD3	よっ！　お疲れさん！\n{01:15}慣れねー事{08:4A}{08:5F}{08:42}、今日はゆっくり休んどけよ！\n<wait>		Yo, good job! I suggest you head to bed for today and try get some rest.\n<wait>	v005		reads: よっ！　お疲れさん！\nいろいろ慣れねー事してんだから、今日はゆっくり休んどけよ！\n<wait>; reads: よっ！　お疲れさん！\nいろいろ慣れねー事してんだから、今日はゆっくり休んどけよ！\n<wait> @refalign
+m/MS0028.BIN	0:01	0	74	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
+m/MS0028.BIN	0:01	1	80	1FD3	お、	Oh, 			draft	@ours-2026-09-05
+m/MS0028.BIN	0:01	2	90	1F01	{08:81}ん！　遊びに来てく{08:60}のか？\n<wait>悪い{08:5F}{08:84}、今、アームターミナルの改造に忙しい{08:5F}。\n{08:5B}今度寄{08:52}くれよ！\n<wait>	, it's you! Come to hang out?\n<wait>Sorry, but I'm busy modding the Arm Terminal right now.\nDrop by again some other time!\n<wait>			draft	reads: じゃん！　遊びに来てくれたのか？\n<wait>悪いんだけど、今、アームターミナルの改造に忙しいんだ。\nまた今度寄ってくれよ！\n<wait>; reads: じゃん！　遊びに来てくれたのか？\n<wait>悪いんだけど、今、アームターミナルの改造に忙しいんだ。\nまた今度寄ってくれよ！\n<wait> @ours-2026-09-05
+m/MS0028.BIN	0:01	3	223	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
+m/MS0028.BIN	0:01	4	229	1FD3	おい、何だかよ、{08:00}の様子が変だぜ。\nやばいん{08:81}{08:25}の？\n<wait>		Do you know what's up with Hayasaka?\nHe's been acting a bit... weird recently.\n<wait>	v005		reads: おい、何だかよ、早坂の様子が変だぜ。\nやばいんじゃないの？\n<wait>; reads: おい、何だかよ、早坂の様子が変だぜ。\nやばいんじゃないの？\n<wait> @refalign
+m/MS0028.BIN	0:01	5	321	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
+m/MS0028.BIN	0:01	6	327	1FD3	最近、{08:34}{01:2E}の{08:03}之海関はさ、なーんか、おっかねぇよな？\nすんげぇ、重いのかな、今月のアレ。\n<wait>		Something's definitely up with Kirishima.\nIs it maybe that time of the month?\n<wait>	v005		reads: 最近、桐島部屋の英美之海関はさ、なーんか、おっかねぇよな？\nすんげぇ、重いのかな、今月のアレ。\n<wait>; reads: 最近、桐島部屋の英美之海関はさ、なーんか、おっかねぇよな？\nすんげぇ、重いのかな、今月のアレ。\n<wait> @refalign
+m/MS0028.BIN	0:01	7	444	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
+m/MS0028.BIN	0:01	8	450	1FD3	あん？　		Hmm? 	v005		@refalign
+m/MS0028.BIN	0:01	9	463	09	{08:00}	{08:00}	Hayasaka isn't in his room?\n	v005		reads: 早坂
+m/MS0028.BIN	0:01	10	473	09	{08:34}のヤツが{01:2E}に{08:24}？\n<wait>		Kirishima isn't in her room?\n                   <wait>	v005		reads: 桐島のヤツが部屋にいない？\n<wait>; reads: 桐島のヤツが部屋にいない？\n<wait> @refalign
+m/MS0028.BIN	0:01	11	500	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
+m/MS0028.BIN	0:01	12	506	1FD3	大方、腹が減{08:52}食事に{08:56}行っ{08:2B}ん{08:81}ねーの？\n<wait>		Maybe she got hungry and went to get something to eat.\n<wait>	ours		reads: 大方、腹が減って食事にでも行ってるんじゃねーの？\n<wait>
+m/MS0028.BIN	0:01	13	555	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
+m/MS0028.BIN	0:01	14	561	1FD3	ま、俺は実際に見た訳{08:81}{08:25}{08:42}、何とも言えねぇ{08:84}な。\n		Then again, don't take my word for it. That's just a guess.\n	v005		reads: ま、俺は実際に見た訳じゃないから、何とも言えねぇけどな。\n; reads: ま、俺は実際に見た訳じゃないから、何とも言えねぇけどな。\n @refalign
+m/MS0028.BIN	0:01	15	635	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; reads: 山瀬： @refalign
+m/MS0028.BIN	0:01	16	646	09	{08:00}の奴、一体どー{08:4B}{08:52}言う{08:5F}？\nマジにやばいぜ！\n<wait>		What is going on with Hayasaka? Shit's seriously freaking me out.\n<wait>	v005		reads: 早坂の奴、一体どーしたって言うんだ？\nマジにやばいぜ！\n<wait>; reads: 早坂の奴、一体どーしたって言うんだ？\nマジにやばいぜ！\n<wait> @refalign
+m/MS0028.BIN	0:01	17	702	09	{08:34}のヤツ、尋常{08:81}{08:25}よな。\nこりゃ、月のモンどころの騒ぎ{08:81}{08:25}ぜ！\n<wait>		Kirishima isn't acting like herself at all.\nIs it maybe that time of the month?\n<wait>	v005		reads: 桐島のヤツ、尋常じゃないよな。\nこりゃ、月のモンどころの騒ぎじゃないぜ！\n<wait>; reads: 桐島のヤツ、尋常じゃないよな。\nこりゃ、月のモンどころの騒ぎじゃないぜ！\n<wait> @refalign

@@ -357,7 +357,26 @@ def test_tokenizer_reproduces_the_published_tiling_numbers():
     # evidence is elsewhere: garbage-prefix spans 118 -> 28, records carrying an
     # expression selector the engine would refuse 78 -> 50, and the NOT_A_BRANCH
     # re-derivation moving 0x182 to the branch side on its own.
-    assert (ok, stray, unimpl, overrun) == (19394, 1081, 99, 116), (ok, stray, unimpl, overrun)
+    # 2026-09-06, two opcode fixes landed together: 19 394 / 1 081 / 99 / 116 ->
+    # 19 398 / 1 084 / 97 / 111.
+    #   0x117/0x118 were still typed `fixed_size 5, [u8][u8][u16][u8]` -- the exact
+    #   stale mis-typing corrected for 0E/0F on 2026-09-04 and missed in that pass.
+    #   Their handlers are two instructions (`push $mode; call 0x436610`) and the
+    #   trampoline's only pre-switch call, 0x417990, is `movzbw 0x491566; ret` -- a
+    #   global getter that touches no script bytes.  They take a bare switch table.
+    #   26 occurrences now tile at 2 + 4N + 1 for N = 1..4, five records move out
+    #   of `overrun`, and all 47 rel16 fields in those tables land on a legal
+    #   instruction boundary.
+    #   0x103/0x104 read `rel16` then an FF-terminated list of 2-byte terms, not
+    #   four fixed u8 (handler 0x0042FEB0 loops over 0x004393E0, which reads the
+    #   pair *before* testing for FF, so the terminator costs two bytes).  The old
+    #   model equals rel16 + two terms + terminator, so it was right for the 562
+    #   two-term sites and wrong for the 353 with three or more.
+    # The acceptance evidence is the engine's own boundaries, not these counters:
+    # against build/trace/jp*.bin, agreement rose 97.73% -> 97.84% (18 258 ->
+    # 18 279 of 18 683 traced token PCs), and `impossible` fell 50 -> 46.  `stray`
+    # rose by 3, which is why it is not the metric.
+    assert (ok, stray, unimpl, overrun) == (19398, 1084, 97, 111), (ok, stray, unimpl, overrun)
 
 
 def test_operands_are_never_text():
@@ -1012,8 +1031,9 @@ def test_no_more_records_carry_an_impossible_expression_selector():
                     break
     assert total > 20000, total
     # 2026-09-06: 78, then 50 once 0x17F-0x184 stopped reading a second
-    # expression they never read.  Must never rise.
-    assert len(bad) <= 50, ("%d records now carry an impossible selector: %s"
+    # expression they never read, then 46 once 0x103/0x104 stopped reading four
+    # fixed u8 in place of an FF-terminated term list.  Must never rise.
+    assert len(bad) <= 46, ("%d records now carry an impossible selector: %s"
                             % (len(bad), bad[:5]))
 
 
