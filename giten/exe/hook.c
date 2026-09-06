@@ -16,6 +16,16 @@ typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;
 
+/* The engine hands us the handle; indexing the handle table with it computes an
+   address before there is anything to null-check, so the index is bounded
+   first.  0x1000 entries keeps 0x47605C + h*8 inside .data (which ends at
+   0x492B54); trace.S bounds the same table the same way.  Every absolute engine
+   address this file touches is registered in giten/exe/engine_state.py with the
+   guard it requires -- a pointer the engine legitimately nulls, dereferenced
+   without a guard, is what crashed the tracer at a scene transition.
+   Defined outside the GAME block so the test harness compiles it too. */
+#define HANDLE_MAX 0x1000
+
 #ifdef GAME
 typedef u8 (*fetch_fn)(u32 handle, u16 *pcp);
 #define ORIG_FETCH ((fetch_fn)0x438E50)
@@ -114,6 +124,8 @@ static struct dir *rebind(u32 handle, u16 fid)
             break;
     if (i == ndirs)
         return 0;                       /* no translation for this file id */
+    if (handle >= HANDLE_MAX)
+        return 0;                       /* out of the table: not ours to read */
     base = HANDLE_BASE(handle);
     if (!base || *(const u16 *)base != 0x0400)
         return 0;                       /* not a script buffer: entry 0 always sits at 0x400 */
