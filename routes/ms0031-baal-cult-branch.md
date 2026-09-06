@@ -36,25 +36,49 @@ Both are recorded in `docs/limits.md`.  **Neither may be "fixed" from corpus
 evidence alone** — that is how the `1F 0D` revert (`pre-expr-model`, b22272e)
 happened the first time.
 
-## How to run it
+## How to run it — no save, no playthrough
 
-The Japanese install is the oracle: on `play/en` every PC inside a translated
-span is incomparable by construction (the engine runs 1-byte English while the
-tokenizer tiles 2-byte Japanese).
+`0C <file> <record>` is goto-record, and the first byte is the file (2,713 of the
+2,807 sites with a file id below 0xA0 resolve to an `m/MS00xx` record that
+exists).  So three bytes send the interpreter anywhere in that range.
 
-1. Run `play/jp/ddswin/dds_dev_jp.exe` — already installed, already the v2
-   tracer (it carries the `GTRC` magic; `dds_dev.exe` beside it is v1 and does
-   **not** log `pc0`).  It writes `trace.bin` into that folder.
-2. Reach the Baal Cult Branch and play the reunion with Rui through to the end
-   of the conversation.  Keep the visit short — the smaller the trace, the
-   easier the read.
-3. Copy `play/jp/ddswin/trace.bin` to `build/trace/jp-ms0031.bin`.
-4. Decode and read the answer:
+`tools/make_warp.py` writes an `m/MS0017.BIN` whose record 0x01 begins
+`0C 31 01` — go to `m/MS0031.BIN` record 0x01.  **`m/MS0017` r01 is the
+injection point, not `m/MS002D` r00**, because every trace on disk runs
+`MS002D` r00, 01, 02, 01, 04 and *then* `MS0017` r01: patching the later one lets
+the whole opening initialise and only then warps.  `0C` never returns, so the
+rest of that record is simply not reached.  `m/MS0031` itself is untouched — it
+is the thing being measured.
+
+**`play/warp` is already built and installed.**  It is a copy of `play/jp` whose
+only difference is that one file (`diff -rq` says so), and it carries the same
+`dds_dev_jp.exe` with the v2 tracer.  To rebuild it from scratch:
 
 ```
-python -m giten trace decode build/trace/jp-ms0031.bin \
-    --dir "C:/Giten Megami Tensei - English - v0.05/play/jp/ddswin"
+python tools/make_warp.py <somewhere>/MS0017.BIN 31 01
+cp -r play/jp play/warp && cp <somewhere>/MS0017.BIN play/warp/ddswin/m/
+rm -f play/warp/ddswin/trace.bin
 ```
+
+Then:
+
+1. Run `play/warp/ddswin/dds_dev_jp.exe` and start a **New Game**.  The opening
+   initialises and the game drops straight into the Rui reunion — no save
+   needed, and nothing has to be played to get there.
+2. Advance the dialogue with Enter until the scene ends (a dozen presses; the
+   two `10` sites are at 0x0108 and 0x0227 of the record, i.e. early).  A crash
+   afterwards does not matter — the tracer writes one `WriteFile` per token, so
+   the kernel already holds everything logged.
+3. Copy `play/warp/ddswin/trace.bin` to `build/trace/jp-ms0031.bin`.
+4. Decode **against the tree that ran**:
+
+```
+python -m giten trace decode build/trace/jp-ms0031.bin     --dir "C:/Giten Megami Tensei - English - v0.05/play/warp/ddswin"
+```
+
+The Japanese install is the oracle either way: on `play/en` every PC inside a
+translated span is incomparable by construction, because the engine runs 1-byte
+English while the tokenizer tiles 2-byte Japanese.
 
 ## Reading the result
 
