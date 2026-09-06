@@ -1327,54 +1327,60 @@ def test_dropping_a_pool_call_that_prints_a_name_is_an_error():
     assert "name-macro" not in [f.rule for f in rep.errors]
 
 
-def test_no_expression_may_begin_with_an_escape_byte():
-    """`1F`, `1E` and `1D` introduce an opcode; they cannot start an expression.
+def test_1d_1e_1f_are_ordinary_expression_selectors():
+    """The "escape byte in an expression" detector was wrong; this is its grave.
 
-    Valid expression selectors stop at 0x5D (`docs/opcodes.json` says so and the
-    engine's own kind table at 0x00437380 is that long), while 0x1D/0x1E/0x1F are
-    the escapes that make a two-byte opcode.  So an `expr` operand whose first
-    byte is one of those is not an expression at all -- it is the walk eating the
-    next instruction, which `limits.md` already records for `1F82`.
+    The retired rule said an `expr` whose first byte is `1D`/`1E`/`1F` proves a
+    bad parse, because those three bytes are the opcode escapes.  They are --
+    *in opcode position*.  The expression reader never looks at them that way:
+    `0x00436B00` reads one raw byte and indexes the kind table at `0x00437380`,
+    where selectors `0x1C` through `0x20` inclusive all map to **kind 13**,
+    handler `0x00436C49`, `['u8', 'expr']`.  `1D` and `1E` are not
+    distinguishable from `1C`, which the rule never objected to.
 
-    This is a *proof* of a bad parse that needs no engine and no playing, and it
-    is sharper than the tiling counters: a record can tile end to end and still
-    contain one.  m/MS610D rF4 is the worked example -- `1F0D` claims the
-    expression `1f e5 0c e5 e5`, but `1F E5` is a real opcode with 691 uses and
-    no operands, and a branch in that record points at exactly the byte where the
-    expression would have ended had it stopped after `1f e5`.
+    The corpus agrees there is nothing to see.  Counting the top-level selector
+    of all 65,315 expression operands, the neighbourhood reads
 
-    83 of 65,315 expression operands are in this state.  The number is asserted
-    so a model fix that lowers it is visible and a regression is caught; the
-    concentrations are the leads:
+        0x19  5    0x1A 11    0x1B  9    0x1C 14
+        0x1D 13    0x1E 13    0x1F 57    0x20  8    0x21 16    0x22 29
 
-        1FE8  34/1717      10  26/55      1F53 10/20     1F54 4/20
-        1F0D   3/742     1F0E   1/160     (plus six in one desynced record,
-                                           m/MS00DB r40)
+    -- `1D` and `1E` sit dead centre among their neighbours.  The rule's 83
+    "impossible" expressions were exactly 13 + 13 + 57, i.e. every top-level use
+    of the three, with no anomaly of any kind.
 
-    `10` at 26 of 55 is the loudest: nearly half its expressions are impossible,
-    and it is already in NOT_A_BRANCH on separate statistical evidence.
+    Retiring it also retires the leads it manufactured: `1FE8` 34/1717, `1F53`
+    10/20, `1F54` 4/20, `1F0D` 3/742, `1F0E` 1/160, and -- the loudest and most
+    misleading -- `10` at 26/55, which sent the `1F 00` hunt down a false trail.
+
+    What survives is one *specific* observation that was filed under the rule and
+    does not depend on it: in `m/MS610D` rF4 a branch points at the byte where
+    `1F0D`'s expression would end if it stopped after `1f e5`.  That is a
+    branch-landing conflict, tracked separately in docs/limits.md.
     """
-    from giten import files, paths, script, vmops
+    import struct
 
-    root = paths.game_root()
-    bad = 0
-    total = 0
-    for rel in files.iter_files(("ms", "id")):
-        sc = script.parse(rel, files.read_source(rel, root))
-        if not sc.ok:
-            continue
-        for rec in sc.iter_records():
-            if not rec.data or rec.untiled:
-                continue
-            for t in rec.tokens:
-                if t.kind != "op":
-                    continue
-                for x in t.ops:
-                    if x.kind == "expr" and x.raw:
-                        total += 1
-                        if x.raw[0] in (0x1D, 0x1E, 0x1F):
-                            bad += 1
-    assert (bad, total) == (83, 65315), (bad, total)
+    from giten.exe import patch
+    from giten.exe.pe import PE
+
+    img = patch.apply(open(patch.ORG, "rb").read(), "release")
+    pe = PE(img, "o")
+
+    kinds = {sel: img[pe.va2off(0x00437380 + sel)] for sel in range(0x1C, 0x21)}
+    assert len(set(kinds.values())) == 1, kinds
+    kind = kinds[0x1D]
+    handler = struct.unpack_from("<I", img, pe.va2off(0x00437288 + kind * 4))[0]
+    assert handler == 0x00436C49, hex(handler)
+
+    import io
+    import json
+    import os
+
+    from giten import paths
+
+    nodes = json.load(io.open(os.path.join(paths.REPO_ROOT, "docs", "opcodes.json"),
+                              encoding="utf-8"))["expressions"]["nodes"]
+    for sel in range(0x1C, 0x21):
+        assert nodes["0x%02x" % sel] == ["u8", "expr"], sel
 
 
 def test_1f00_is_a_two_byte_no_op_because_the_dispatcher_says_so():
