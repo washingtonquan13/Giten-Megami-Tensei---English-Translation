@@ -173,11 +173,12 @@ def build_image(trace: bool) -> bytes:
     image = bytearray(pe.append_section(".ovl", blob, TRC_CHARACTERISTICS))
     _redirect(image, FETCH_SITES, FETCH, ovl_va)
     _pace(image, syms["pace"])
-    from . import database, mapnames, menus, names
+    from . import database, mapnames, menus, names, timing
     image = bytearray(names.apply(bytes(image)))     # English character names (.nam)
     image = bytearray(menus.apply(bytes(image)))     # English menu strings (.men)
     image = bytearray(database.apply(bytes(image)))  # the item database, uncapped (.idb)
     image = bytearray(mapnames.apply(bytes(image)))  # English location names (.mnm)
+    image = bytearray(timing.apply(bytes(image)))    # tick-counted popup duration
     if trace:
         pe = PE(bytes(image), "dds_ovl")
         trc_va = pe.imagebase + pe.sizeimage
