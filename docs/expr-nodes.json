@@ -1,6 +1,6 @@
 {
  "_about": "Expression-node model recovered from the engine.  0x00436B00 reads a selector byte, maps it through the u8 table at 0x00437380 (selector -> kind), and dispatches through the u32 table at 0x00437288 (kind -> handler).  Each handler is walked as a control-flow graph, following calls into their callees, counting 0x00438FA0 (u8) / 0x00438FC0 (u16) / 0x00438FE0 (u32) and treating 0x00436B00 / 0x00437490 as one opaque sub-expression.",
- "_status": "Agrees with docs/opcodes.json for 92 of 94 selectors.  2 are context-dependent in the engine and cannot be modelled as a constant payload; docs/opcodes.json keeps its own value for those.",
+ "_status": "Agrees with docs/opcodes.json for 94 of 94 selectors.  0 are context-dependent in the engine and cannot be modelled as a constant payload; docs/opcodes.json keeps its own value for those.",
  "selectors": {
   "0x00": {
    "kind": "0x00",
@@ -882,11 +882,13 @@
   "0x4B": {
    "kind": "0x2C",
    "handler": "0x0043708A",
-   "engine": null,
+   "engine": [
+    "expr"
+   ],
    "current": [
     "expr"
    ],
-   "note": "callee 0x00437440 of 0x0043708A is context-dependent"
+   "note": ""
   },
   "0x4C": {
    "kind": "0x2D",
@@ -924,11 +926,13 @@
   "0x4F": {
    "kind": "0x30",
    "handler": "0x00437106",
-   "engine": null,
+   "engine": [
+    "expr"
+   ],
    "current": [
     "expr"
    ],
-   "note": "callee 0x004373E0 of 0x00437106 is context-dependent"
+   "note": ""
   },
   "0x50": {
    "kind": "0x31",
@@ -1146,9 +1150,11 @@
   "expr": [
    "0x06",
    "0x07",
+   "0x4B",
    "0x4C",
    "0x4D",
-   "0x4E"
+   "0x4E",
+   "0x4F"
   ],
   "[]": [
    "0x08",
@@ -1217,10 +1223,6 @@
    "0x5B",
    "0x5C",
    "0x5D"
-  ],
-  "null": [
-   "0x4B",
-   "0x4F"
   ]
  }
 }

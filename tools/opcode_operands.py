@@ -122,6 +122,34 @@ def _at(va):
     return _sweep(va).get(va)
 
 
+def _jump_table(ops, limit=64):
+    """Targets of a `jmp *0xTABLE(,%reg,scale)`, read out of the image.
+
+    The entry count is not in the instruction -- it is in the `cmp $N` that
+    guards it -- so read u32s while they look like addresses inside .text and
+    stop at the first that does not.  Erring long is the safe direction: a spare
+    target can only add a path, and a *disagreement* between paths is what makes
+    an opcode context-dependent, so this cannot silently claim a fixed length
+    that the engine does not have.
+    """
+    m = _HEX.search(ops)
+    if not m:
+        return []
+    tab, out = int(m.group(1), 16), []
+    for i in range(limit):
+        try:
+            off = PEO.va2off(tab + i * 4)
+        except Exception:
+            break
+        if off + 4 > len(IMG):
+            break
+        t = struct.unpack_from("<I", IMG, off)[0]
+        if not (TEXT_LO <= t < TEXT_HI):
+            break
+        out.append(t)
+    return out
+
+
 class Ambiguous(RuntimeError):
     pass
 
@@ -175,6 +203,23 @@ def reads(va, depth=0, seen=None):
                 results.add((a, b, u, c))
                 break
             if mnem in UNCOND:
+                if ops.lstrip().startswith("*"):
+                    # `jmp *0xTABLE(,%reg,4)` -- a switch.  The hex in the operand
+                    # is the *table*, not a target; following it as code decodes
+                    # data and invents paths that consume bytes nothing consumes.
+                    # That is what made expression selectors 0x4B and 0x4F look
+                    # context-dependent when both are plainly one `expr`.
+                    tgts = _jump_table(ops)
+                    if not tgts:
+                        results.add((a, b, u, c))
+                        break
+                    for t in tgts[1:]:
+                        _ENTRIES.add(t)
+                        stack.append((t, a, b, u, c, steps + 1))
+                    addr = tgts[0]
+                    _ENTRIES.add(addr)
+                    steps += 1
+                    continue
                 m = _HEX.search(ops)
                 if not m:
                     results.add((a, b, u, c))

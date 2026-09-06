@@ -1027,8 +1027,12 @@ def test_expression_model_agrees_with_the_engine():
     produced a confident, wrong table, and acting on it would have made the walk
     worse -- swapping it in raised `impossible` from 50 to 64.
 
-    Two selectors are context-dependent in the engine and cannot be modelled as a
-    constant payload; `opcodes.json` chooses a value for them.
+    The model is complete: every selector 0x00..0x5D agrees.  0x4B and 0x4F were
+    briefly thought context-dependent, but that was a third walker bug -- an
+    indirect `jmp *0xTABLE(,%reg,4)` was followed as if the table address were
+    code, decoding data into paths that consume bytes nothing consumes.  Both are
+    plainly one `expr`; their callees dispatch on the value already read and take
+    nothing from the stream.
     """
     import io
     import json
@@ -1052,8 +1056,7 @@ def test_expression_model_agrees_with_the_engine():
         elif v["engine"] != ours.get(i):
             differ.append((key, ours.get(i), v["engine"]))
 
-    # kinds 0x2C / 0x30, via callees 0x00437440 / 0x004373E0
-    assert sorted(undecidable) == [0x4B, 0x4F], sorted(undecidable)
+    assert not undecidable, sorted(undecidable)
     assert not differ, differ
 
     # the u32 reader, the finding that closed selector 0x02
