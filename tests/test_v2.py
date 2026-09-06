@@ -1559,3 +1559,59 @@ def test_the_0x4335e0_family_splits_cleanly_into_mode_0_and_mode_1():
         want = ["u8", "u8", "expr"] if mode else ["u8", "u8", "expr", "expr"]
         got = [o["kind"] for o in ops["0x%03X" % idx]["operands"]]
         assert got == want, ("0x%03X" % idx, mode, got, want)
+
+
+def test_the_ms0031_trace_confirms_10_and_expression_kind_13():
+    """The two open model questions, closed by the engine's own PC log.
+
+    Both were engine-vs-corpus conflicts that static analysis could not settle:
+    opcode `10` (whose fall-through text reads `ん、健康そのものだね`, impossible
+    as a sentence) and expression kind 13 (`u8 + expr` by unconditional
+    disassembly, `u8` by 41 records that would otherwise not tile).
+
+    `tools/make_warp.py` put `0C 31 01` -- goto `m/MS0031` record 0x01 -- at the
+    start of `m/MS0017` r01, the record every trace reaches once the opening has
+    initialised, so the scene could be traced with no save and no playthrough.
+
+    Of 148 logged tokens in that record, 145 lengths match this model exactly and
+    no engine token start falls off one of our boundaries.  The 3 that differ are
+    branches (`0x104`, `0x011`, `0x018`) whose logged PC is the branch target,
+    and all three targets are token boundaries.  The disputed sites agree byte
+    for byte, and `@01F0` is the one that settles kind 13: 8 bytes is only
+    reachable if selector `0x1F` is `u8 + expr` nested twice.
+
+    This test pins the *conclusions*, since the trace itself is not in the repo.
+    """
+    import io
+    import json
+    import os
+    import struct
+
+    from giten import files, paths, script, vmops
+    from giten.exe import patch
+    from giten.exe.pe import PE
+
+    d = None
+    sc = script.parse("m/MS0031.BIN", files.read_source("m/MS0031.BIN", paths.game_root()))
+    for c in sc.containers:
+        for rec in c:
+            if rec.id == 0x01:
+                d = rec.data
+    assert d is not None
+    sizes = {t.off: t.size for t in vmops.tokenize(d)}
+
+    # what the engine's PC log measured, offset -> length
+    observed = {0x01F0: 8, 0x0227: 6, 0x022F: 5, 0x02B9: 4}
+    for off, ln in observed.items():
+        assert sizes.get(off) == ln, (hex(off), sizes.get(off), ln)
+
+    # @01F0 is 8 bytes only because kind 13 nests: 1f(u8 ba) -> 1f(u8 d2) -> 9f
+    assert d[0x01F0:0x01F8] == b"\x10\x01\x01\x1f\xba\x1f\xd2\x9f"
+    img = patch.apply(open(patch.ORG, "rb").read(), "release")
+    pe = PE(img, "o")
+    kind = img[pe.va2off(0x00437380 + 0x1F)]
+    handler = struct.unpack_from("<I", img, pe.va2off(0x00437288 + kind * 4))[0]
+    assert handler == 0x00436C49, hex(handler)
+    nodes = json.load(io.open(os.path.join(paths.REPO_ROOT, "docs", "opcodes.json"),
+                              encoding="utf-8"))["expressions"]["nodes"]
+    assert nodes["0x1f"] == ["u8", "expr"], nodes["0x1f"]
