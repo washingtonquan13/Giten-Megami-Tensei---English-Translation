@@ -43,6 +43,7 @@ from __future__ import annotations
 import collections
 import os
 import re
+import sys
 
 from . import findings as check
 from . import script
@@ -158,6 +159,23 @@ def verify_tree(out_dir: str, root=None, report: "Report | None" = None) -> dict
         for rel, ci, rid, why in st["regressions"][:20]:
             report.add("tile", ERROR, "%s %d:%02X" % (rel, ci, rid), why)
     return st
+
+
+def _say(line) -> None:
+    """Print a finding that may quote Japanese, on a console that cannot show it.
+
+    A plain Windows console encodes stdout as cp1252, so a finding quoting the
+    row's own text raises ``UnicodeEncodeError`` and takes the entire run down
+    with it -- losing 1,500 findings to make a point about one.  Substituting
+    the characters the console cannot draw costs a few glyphs in one message.
+    """
+    text = str(line)
+    enc = getattr(sys.stdout, "encoding", None) or "ascii"
+    try:
+        text.encode(enc)
+    except (UnicodeEncodeError, LookupError):
+        text = text.encode(enc, "replace").decode(enc, "replace")
+    print(text)
 
 
 # --- per-row rules ----------------------------------------------------------
@@ -435,11 +453,11 @@ def run(root=None, text_dir=None, family="all", skip_identity=False,
     if not quiet:
         errs, warns = report.errors, report.warnings
         for f in errs[:show]:
-            print(f)
+            _say(f)
         if len(errs) > show:
             print("... and %d more errors" % (len(errs) - show))
         for f in warns[:show]:
-            print(f)
+            _say(f)
         if len(warns) > show:
             print("... and %d more warnings" % (len(warns) - show))
         print("\n%d rows checked over %d files"
