@@ -535,3 +535,33 @@ def _decode_bytes(data):
     with open(p, "wb") as fh:
         fh.write(data)
     return core.decode(p, os.path.join(paths.REPO_ROOT, "original", "ddswin"))[0]
+
+
+def test_a_japanese_dev_exe_carries_no_english_data_patches():
+    """An English exe cannot run against a Japanese install, and dies loudly.
+
+    `database.apply` re-points the engine's item-database load at
+    `et/et0102.bin`.  Per database.S that is deliberate all the way down: if the
+    file is missing the router returns NULL, the next record lookup dereferences
+    a null base, and the game dies on the first frame -- a loud failure being
+    preferred to a half-loaded database.  A Japanese install has no
+    `et0102.bin`, so an English dev exe crashes there before the interpreter
+    runs a single token, which looks exactly like a broken tracer and is not.
+
+    The tracer and the overlay hook stay in the Japanese build, so the two dev
+    exes differ only in the strings and their traces stay comparable.  With no
+    overlay.dat beside it the overlay hook no-ops, which is what makes a
+    Japanese install the clean oracle: the engine executes the file's own bytes.
+    """
+    out = tempfile.mkdtemp()
+    jp = open(tracer.build_dev_jp(out), "rb").read()
+    en = open(tracer.build_dev(out), "rb").read()
+    pj, pe = PE(jp, "jp"), PE(en, "en")
+
+    for name in (".nam", ".men", ".idb", ".mnm"):
+        assert pe.section(name) is not None, "%s missing from the English build" % name
+        assert pj.section(name) is None, "%s must not be in a Japanese build" % name
+    for name in (".ovl", ".trc"):
+        assert pj.section(name) is not None, "%s must stay in a Japanese build" % name
+        assert pe.section(name) is not None
+    assert tracer.TRACE_MAGIC in jp, "the Japanese build lost the tracer"

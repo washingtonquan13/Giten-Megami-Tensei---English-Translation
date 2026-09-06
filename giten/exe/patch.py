@@ -13,7 +13,8 @@ from .. import paths
 TABLE = os.path.join(paths.REPO_ROOT, "docs", "exe-patches.md")
 ORG = os.path.join(paths.ORIGINAL_DDSWIN, "dds_org.exe")
 
-SETS = {"base": ("xp",), "release": ("xp", "locale"), "dev": ("xp", "locale", "dev")}
+SETS = {"base": ("xp",), "release": ("xp", "locale"), "dev": ("xp", "locale", "dev"),
+        "dev-jp": ("xp", "locale", "dev")}
 
 
 def load(table: str = TABLE):
@@ -42,9 +43,11 @@ def apply(data: bytes, which: str, table: str = TABLE) -> bytes:
 
 
 def build(which: str, out_dir: "str | None" = None) -> str:
-    if which in ("dev", "release"):
+    if which in ("dev", "release", "dev-jp"):
         from . import tracer
-        return (tracer.build_dev if which == "dev" else tracer.build_release)(out_dir)
+        fn = {"dev": tracer.build_dev, "release": tracer.build_release,
+              "dev-jp": tracer.build_dev_jp}[which]
+        return fn(out_dir)
     out_dir = out_dir or os.path.join(paths.BUILD_DIR, "exe")
     os.makedirs(out_dir, exist_ok=True)
     dst = os.path.join(out_dir, "dds_%s.exe" % which)

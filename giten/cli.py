@@ -115,7 +115,7 @@ def make_parser():
     p.add_argument("--list", action="store_true", help="just list the dumps found")
 
     p = sub.add_parser("exe", help="build patched exes from docs/exe-patches.md")
-    p.add_argument("which", choices=("base", "release", "dev"))
+    p.add_argument("which", choices=("base", "release", "dev", "dev-jp"))
     p.add_argument("--out", default=None, help="default build/exe/")
 
     p = sub.add_parser("trace", help="decode / diff interpreter traces from the dev exe")

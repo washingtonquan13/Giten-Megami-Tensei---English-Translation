@@ -167,8 +167,18 @@ def _redirect(image: bytearray, sites, old_target: int, new_target: int) -> None
         struct.pack_into("<i", image, off + 1, new_target - (site + 5))
 
 
-def build_image(trace: bool) -> bytes:
-    """Release image (locale patches) + the overlay hook, + the tracer if ``trace``."""
+def build_image(trace: bool, english: bool = True) -> bytes:
+    """Release image (locale patches) + the overlay hook, + the tracer if ``trace``.
+
+    ``english=False`` skips the four data-table patches.  They are not optional
+    decoration: ``database.apply`` re-points the engine's item-database load at
+    ``et/et0102.bin``, and if that file is absent the router returns NULL, the
+    next record lookup dereferences a null base and **the game dies on the first
+    frame** -- deliberately, per ``database.S``.  So an English exe cannot run
+    against a Japanese install, which has no ``et0102.bin``.  The tracer, the
+    overlay hook and the pacing stay, so a Japanese dev build differs from the
+    English one only in the strings, and their traces stay comparable.
+    """
     with open(patch.ORG, "rb") as fh:
         image = patch.apply(fh.read(), "release")
     pe = PE(image, "dds_release")
@@ -178,10 +188,11 @@ def build_image(trace: bool) -> bytes:
     _redirect(image, FETCH_SITES, FETCH, ovl_va)
     _pace(image, syms["pace"])
     from . import database, mapnames, menus, names, timing
-    image = bytearray(names.apply(bytes(image)))     # English character names (.nam)
-    image = bytearray(menus.apply(bytes(image)))     # English menu strings (.men)
-    image = bytearray(database.apply(bytes(image)))  # the item database, uncapped (.idb)
-    image = bytearray(mapnames.apply(bytes(image)))  # English location names (.mnm)
+    if english:
+        image = bytearray(names.apply(bytes(image)))     # English character names (.nam)
+        image = bytearray(menus.apply(bytes(image)))     # English menu strings (.men)
+        image = bytearray(database.apply(bytes(image)))  # the item database, uncapped (.idb)
+        image = bytearray(mapnames.apply(bytes(image)))  # English location names (.mnm)
     image = bytearray(timing.apply(bytes(image)))    # tick-counted popup duration
     if trace:
         pe = PE(bytes(image), "dds_ovl")
@@ -191,12 +202,12 @@ def build_image(trace: bool) -> bytes:
     return bytes(image)
 
 
-def _write(out_dir, name, trace):
+def _write(out_dir, name, trace, english=True):
     out_dir = out_dir or os.path.join(paths.BUILD_DIR, "exe")
     os.makedirs(out_dir, exist_ok=True)
     dst = os.path.join(out_dir, name)
     with open(dst, "wb") as fh:
-        fh.write(build_image(trace))
+        fh.write(build_image(trace, english))
     return dst
 
 
@@ -208,3 +219,16 @@ def build_release(out_dir: "str | None" = None) -> str:
 def build_dev(out_dir: "str | None" = None) -> str:
     """``dds_dev.exe``: the release plus the interpreter tracer."""
     return _write(out_dir, "dds_dev.exe", True)
+
+
+def build_dev_jp(out_dir: "str | None" = None) -> str:
+    """``dds_dev_jp.exe``: the tracer with no English data patches.
+
+    What a Japanese install must run.  The English build hard-requires
+    ``et/et0102.bin`` (see :func:`build_image`), which a Japanese install does not
+    have, so it dies on the first frame there.  This is also the right build for
+    trace work: with no ``overlay.dat`` beside it the overlay hook no-ops, so the
+    engine executes the file's own bytes and every logged PC is directly
+    comparable with what the tokenizer produces from those same bytes.
+    """
+    return _write(out_dir, "dds_dev_jp.exe", True, english=False)
