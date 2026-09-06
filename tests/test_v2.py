@@ -1208,3 +1208,36 @@ def test_the_japanese_rule_sees_rows_whose_en_merely_copies_their_jp():
     rep = findings.Report()
     check_v2.check_rows(rep, pools + [r])
     assert [f for f in rep.errors + rep.warnings if f.rule == "japanese"]
+
+
+def test_1ec4_reads_one_expression_and_its_sibling_reads_two():
+    """`1E C4` is mode 1 of a pair; only mode 0 reads a second expression.
+
+    Found without a trace and without playing.  Of 25,346 rel16 targets in the
+    corpus only 25 miss a token boundary, and one is in `m/MS00D8` r05 -- which
+    the engine executed 187 times on the traced routes, so it is real code and
+    the miss is ours.  `1E C4`'s trampoline is `push $1; call 0x00433860`, which
+    forwards to `0x004335E0`: two u8 via `0x004335A0`, then `0x004335C0`, which
+    reads an expression *only when its argument is 0*, then always one more.
+    Mode 1 therefore takes `u8 u8 expr` and the token is 6 bytes -- 0x25 + 6 is
+    0x2B, exactly the target that missed.
+
+    `1E C3` is the control: identical shape, `push $0`, and it really does read
+    both.  A model that gave them the same operands could not be right for both,
+    and the corpus agrees -- one fewer boundary miss, and `ok`, `stray`,
+    `unimpl`, `untiled` and `impossible` all unchanged.
+
+    Kept as a tripwire because the two look interchangeable in a table.
+    """
+    import io
+    import json
+    import os
+
+    from giten import paths
+
+    ops = json.load(io.open(os.path.join(paths.REPO_ROOT, "docs", "opcodes.json"),
+                            encoding="utf-8"))["opcodes"]
+    c3 = [o["kind"] for o in ops["0x2C3"]["operands"]]
+    c4 = [o["kind"] for o in ops["0x2C4"]["operands"]]
+    assert c3 == ["u8", "u8", "expr", "expr"], c3
+    assert c4 == ["u8", "u8", "expr"], c4

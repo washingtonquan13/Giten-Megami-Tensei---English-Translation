@@ -12568,10 +12568,6 @@
     {
      "kind": "expr",
      "size": "var"
-    },
-    {
-     "kind": "expr",
-     "size": "var"
     }
    ],
    "fixed_size": null,
@@ -12579,7 +12575,8 @@
    "has_offset": false,
    "offset_slots": [],
    "refs_record": false,
-   "uses": 7
+   "uses": 7,
+   "note": "1E C4 pushes mode 1 into 0x00433860 -> 0x004335E0, whose 0x004335C0 reads an expression only when its argument is 0; the second expr is never read.  1E C3 is the same shape with mode 0 and does read both."
   },
   "0x2C5": {
    "encoding": "1E C5",
