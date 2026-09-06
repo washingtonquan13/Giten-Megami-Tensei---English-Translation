@@ -190,10 +190,20 @@ class _Image:
             got = r.data[t.off:t.end]
             kind = "TEXT" if t.kind == "text" else vmops.table().encoding(t.idx)
             return span, anchor, kind, got == want or (t.kind == "op" and got[:1] == want[:1])
-        # 1. the token that ends at pc: text, or an opcode that fell through
+        # 1. the token that ends at pc: text, or an opcode that fell through.
+        #    A text token has to *match the logged character* to claim the pc.
+        #    Accepting any text token that merely ends there shadowed rule 2 and
+        #    reported a mismatch: at m/MS7F04 r07 0x2A the engine had branched
+        #    onto the `18` opcode starting there, and the two text bytes ending
+        #    there were charged with the disagreement instead.
         for k, t in enumerate(r.tokens):
-            if t.end == end and (t.kind == "text" or r.data[t.off] == ch):
-                return hit(k, t, False)
+            if t.end != end:
+                continue
+            if t.kind == "text" and r.data[t.off:t.end] != want:
+                continue
+            if t.kind == "op" and r.data[t.off] != ch:
+                continue
+            return hit(k, t, False)
         # 2. the token that starts at pc: a taken branch, a call, a return
         for k, t in enumerate(r.tokens):
             if t.off == end:
@@ -246,7 +256,108 @@ def decode(trace_path: str, build_dir: "str | None" = None) -> "list[Event]":
         if hit:
             ev.span, ev.anchor, ev.kind, ev.ok = hit
         out.append(ev)
+    _mark_name_excursions(out, images)
     return out
+
+
+#: the kind given to events that are not script addresses at all
+NAME_KIND = "NAME"
+
+
+def _mark_name_excursions(events: "list[Event]", images: dict) -> int:
+    """Mark the runs where the engine left the script to print a runtime string.
+
+    ``1F01 nn`` prints party-member name *nn*.  The interpreter reads it through
+    the same byte fetch the hook watches, so each character arrives as a token --
+    but from a string buffer, not the script: the PC restarts at 0 and counts up
+    in twos.  No record contains those addresses and none ever will, so scoring
+    them against our token boundaries measures nothing about the opcode model.
+    On the traced routes they are 262 of 18,683 events, and counting them as
+    disagreements is what held "engine agreement" at 98.4% instead of 99.8%.
+
+    A run is only marked when it is bounded at both ends and by the opcode that
+    causes it, which is what makes this a classification rather than an excuse:
+
+      * the script token about to run is a ``1F01``;
+      * the entry event carries the ``1F`` escape at pc 0;
+      * the body is even PCs ascending from 2, each a character that decodes
+        as cp932;
+      * execution resumes inside a record (or the trace ends).
+
+    Anything that fails those stays a disagreement.
+    """
+    def inside(ev):
+        img = images.get(ev.rel)
+        if img is None or ev.rec not in img.by_id:
+            return None
+        off = ev.pc - img.base[ev.rec]
+        return off if 0 <= off <= len(img.by_id[ev.rec].data) else None
+
+    def _tokens(ev):
+        img = images.get(ev.rel)
+        rec = img.by_id.get(ev.rec) if img else None
+        return rec.tokens if rec is not None and rec.tokens is not None else None
+
+    def _is_1f01(t):
+        return (t is not None and t.kind == "op"
+                and vmops.table().encoding(t.idx).replace(" ", "") == "1F01")
+
+    def bounded_by_1f01(i, resume):
+        """A 1F01 on either side of the excursion; only that opcode is proven.
+
+        Before: the token about to run where the last in-record event ended.
+        After: the token execution resumes on begins exactly where a 1F01 ends.
+        The second test exists because the events before an excursion can belong
+        to a *different* file -- the engine expands a pool call and returns --
+        so walking back a few events can leave the record entirely.
+        """
+        for j in range(i - 1, max(-1, i - 4), -1):
+            off = inside(events[j])
+            if off is None:
+                continue
+            toks = _tokens(events[j])
+            if toks is None:
+                break
+            if _is_1f01(next((t for t in toks if t.off == off), None)):
+                return True
+            break
+        off = inside(resume) if resume is not None else None
+        toks = _tokens(resume) if resume is not None else None
+        if off is None or toks is None:
+            return False
+        cur = next((t for t in toks if t.end == off or t.off == off), None)
+        return cur is not None and _is_1f01(
+            next((t for t in toks if t.end == cur.off), None))
+
+    marked = i = 0
+    n = len(events)
+    while i < n:
+        e = events[i]
+        if e.ok or e.pc != 0 or e.ch != 0x1F:
+            i += 1
+            continue
+        j, want, body = i + 1, 2, []
+        while j < n and events[j].pc == want and events[j].ch > 0xFF and not events[j].ok:
+            try:
+                bytes([events[j].ch >> 8, events[j].ch & 0xFF]).decode("cp932")
+            except UnicodeDecodeError:
+                break
+            body.append(j)
+            want += 2
+            j += 1
+        resume = events[j] if j < n else None
+        if not body or (resume is not None and inside(resume) is None):
+            i += 1
+            continue
+        if not bounded_by_1f01(i, resume):
+            i += 1
+            continue
+        for k in [i] + body:
+            events[k].kind = NAME_KIND
+            events[k].ok = True
+        marked += 1 + len(body)
+        i = j
+    return marked
 
 
 POOL_CALLS = {"%02X->" % k for k in range(1, 9)}

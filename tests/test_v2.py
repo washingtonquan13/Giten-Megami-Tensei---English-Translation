@@ -1241,3 +1241,45 @@ def test_1ec4_reads_one_expression_and_its_sibling_reads_two():
     c4 = [o["kind"] for o in ops["0x2C4"]["operands"]]
     assert c3 == ["u8", "u8", "expr", "expr"], c3
     assert c4 == ["u8", "u8", "expr"], c4
+
+
+def test_the_name_buffer_is_not_counted_against_the_opcode_model():
+    """`1F01` leaves the script; those PCs are not token boundaries at all.
+
+    The engine prints a party-member name by reading it through the same byte
+    fetch the tracer hooks, but out of a string buffer: the PC restarts at 0 and
+    counts up in twos, one event per character.  No record holds those addresses,
+    so scoring them against our tokenisation measured nothing about the model --
+    and it is what held "engine boundary agreement" at 98.4%.
+
+    On `jp2` + `jp-friends` this covers 252 events.  With them classified, the
+    events our model actually gets wrong number **zero**; what is left is 29
+    script-end events the v1 tracer could not place (it read the context after
+    `exec_token` returned, and the engine had already cleared it -- v2's `pc0`
+    is the fix) and 10 excursions that no `1F01` bounds, which stay
+    disagreements because their cause is not proven.
+
+    The classifier is deliberately strict: a run counts only when a `1F01` token
+    sits on one side of it, the body is even PCs ascending from 2 whose bytes
+    decode as cp932, and execution resumes inside a record.
+    """
+    import os
+
+    from giten import paths
+    from giten.trace import core
+
+    d = os.path.join(paths.REPO_ROOT, "build", "trace")
+    root = os.path.join(paths.REPO_ROOT, "original", "ddswin")
+    if not (os.path.exists(os.path.join(d, "jp2.bin")) and os.path.exists(root)):
+        return                                   # traces are not in the repo
+
+    named = agree = total = 0
+    for name in ("jp2.bin", "jp-friends.bin"):
+        for e in core.decode(os.path.join(d, name), root):
+            total += 1
+            agree += 1 if e.ok else 0
+            named += 1 if e.kind == core.NAME_KIND else 0
+    assert (total, named) == (18683, 252), (total, named)
+    assert agree == 18644, agree
+    # every classified event must really be one the script cannot hold
+    assert agree - named == 18392, agree - named
