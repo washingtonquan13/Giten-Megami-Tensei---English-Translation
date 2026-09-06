@@ -1,155 +1,141 @@
 """Extract the script VM's expression model from the engine itself.
 
-0x00436B00 is the expression reader:
+0x00436B00 is the expression reader::
 
     call 0x00438FA0            read the selector byte
     cmp  esi, 0x5D / ja        selectors are 0x00..0x5D
     mov  cl, [0x00437380+esi]  selector -> kind
     jmp  *0x00437288(,ecx,4)   kind -> handler
 
-Each kind's handler is a *case* of that jump table, not a tidy function: cases
-share epilogues and jump into one another.  A linear "stop at the first ret"
-scan therefore runs one case into the next -- that is how the earlier attempt
-invented a "5 sub-expression" node.  So walk the control-flow graph instead, and
-report the payload separately for every path that ends in a `ret`: if the paths
-disagree, the node is context-dependent and must not be modelled as a constant.
+so a selector's payload is a property of its *kind's* handler, and both tables
+are in the image.
 
-The region 0x00436B00..0x00437288 is disassembled once, linearly, because it is
-dense code; the two tables live above it and are read as data.
+**This file used to carry its own walker, and the walker was wrong.**  On a
+``call`` it compared the target against the readers it knew and otherwise
+stepped straight over it, so any handler that reads through an intermediate
+function reported "consumes nothing".  It is not a rare shape -- kind 0x0D
+(selectors 0x19..0x23) is::
+
+    0x00436C49  add  $-0x19, %eax        ; index within the family
+                call 0x00438C40          ; <- stepped over
+    0x00438C40  call 0x00438FA0          ; READ_U8
+                call 0x00437490          ; READ_EXPR_DEREF
+
+i.e. ``u8 + expr``.  The old output claimed 32 selectors were leaves and
+disagreed with ``docs/opcodes.json`` for 67 of 94; almost all of that was this
+bug plus not knowing the u32 reader at 0x00438FE0.  Following delegation, the
+engine and ``docs/opcodes.json`` agree for **92 of 94**, and the last two are
+context-dependent in the engine.
+
+So the walk now comes from :mod:`opcode_operands`, which already did this
+correctly -- one walker, not two that can drift apart.
 """
+from __future__ import annotations
+
 import collections
-import os
-import re
-import struct
-import subprocess
-import sys
-import tempfile
-
-sys.path.insert(0, "C:/Giten Megami Tensei - English - v0.05/Giten Megami Tensei - English Translation")
-os.chdir("C:/Giten Megami Tensei - English - v0.05/Giten Megami Tensei - English Translation")
-
-from giten.exe import patch                      # noqa: E402
-from giten.exe.pe import PE                      # noqa: E402
-
-IMG = patch.apply(open(patch.ORG, "rb").read(), "release")
-PEO = PE(IMG, "o")
-
-CODE_LO, CODE_HI = 0x00436B00, 0x00437288        # handlers; the tables start here
-JMP_TAB = 0x00437288
-KIND_TAB = 0x00437380
-MAXSEL = 0x5D
-READ_U8 = 0x00438FA0
-READ_U16 = 0x00438FC0
-EXPR = 0x00436B00
-EXPR_DEREF = 0x00437490                          # read_expr(); *result
-
-_LINE = re.compile(r"^\s*([0-9a-f]+):\s+((?:[0-9a-f]{2} )+)\s*(\S+)\s*(.*)$")
-_HEX = re.compile(r"0x([0-9a-f]+)")
-
-tmp = tempfile.mkdtemp(prefix="giten-expr-")
-blob = os.path.join(tmp, "code.bin")
-with open(blob, "wb") as fh:
-    fh.write(IMG[PEO.va2off(CODE_LO):PEO.va2off(CODE_HI)])
-out = subprocess.run(["objdump", "-D", "-b", "binary", "-m", "i386",
-                      "--adjust-vma=0x%X" % CODE_LO, blob],
-                     capture_output=True, text=True, check=True).stdout
-
-INS = {}
-order = []
-for ln in out.splitlines():
-    m = _LINE.match(ln)
-    if not m:
-        continue
-    a = int(m.group(1), 16)
-    INS[a] = (m.group(3), m.group(4), len(m.group(2).split()))
-    order.append(a)
-
-UNCOND = {"jmp"}
-COND = {"je", "jne", "jz", "jnz", "ja", "jae", "jb", "jbe", "jg", "jge",
-        "jl", "jle", "js", "jns", "jo", "jno", "jp", "jnp", "jcxz", "loop"}
-STOP = {"ret", "retw", "hlt"}
-
-
-def paths(entry, limit=4000):
-    """Every ret-terminated path's (u8 reads, u16 reads, sub-expressions)."""
-    results = set()
-    seen_states = set()
-    stack = [(entry, 0, 0, 0, 0)]
-    while stack:
-        addr, b1, b2, sub, steps = stack.pop()
-        if steps > 400 or len(results) > 32:
-            continue
-        while True:
-            ins = INS.get(addr)
-            if ins is None:                       # left the decoded region
-                results.add((b1, b2, sub))
-                break
-            mnem, ops, size = ins
-            key = (addr, b1, b2, sub)
-            if key in seen_states:
-                break
-            seen_states.add(key)
-            if mnem == "call":
-                m = _HEX.search(ops)
-                t = int(m.group(1), 16) if m else 0
-                if t == READ_U8:
-                    b1 += 1
-                elif t == READ_U16:
-                    b2 += 1
-                elif t in (EXPR, EXPR_DEREF):
-                    sub += 1
-                addr += size
-                continue
-            if mnem in STOP:
-                results.add((b1, b2, sub))
-                break
-            if mnem in UNCOND:
-                m = _HEX.search(ops)
-                if not m:
-                    results.add((b1, b2, sub))    # indirect jmp: treat as exit
-                    break
-                addr = int(m.group(1), 16)
-                steps += 1
-                continue
-            if mnem in COND:
-                m = _HEX.search(ops)
-                if m:
-                    stack.append((int(m.group(1), 16), b1, b2, sub, steps + 1))
-                addr += size
-                steps += 1
-                continue
-            addr += size
-    return results
-
-
-kinds = {s: IMG[PEO.va2off(KIND_TAB + s)] for s in range(MAXSEL + 1)}
-handlers = {k: struct.unpack_from("<I", IMG, PEO.va2off(JMP_TAB + k * 4))[0]
-            for k in sorted(set(kinds.values()))}
-
-prof = {}
-for k, h in handlers.items():
-    prof[k] = paths(h)
-
-print("kinds: %d, handlers: %d" % (len(kinds), len(handlers)))
-amb = [k for k, v in prof.items() if len(v) != 1]
-print("kinds whose paths disagree (context-dependent): %s"
-      % (["0x%02X" % k for k in amb] or "none"))
-print()
-
-shape = {}
-for s in range(MAXSEL + 1):
-    v = prof[kinds[s]]
-    shape[s] = sorted(v)[0] if len(v) == 1 else None
-
-groups = collections.defaultdict(list)
-for s, sh in shape.items():
-    groups[sh].append(s)
-print("%-26s %s" % ("(u8, u16, sub-expr)", "selectors"))
-for sh, sels in sorted(groups.items(), key=lambda kv: (kv[0] is None, kv[0])):
-    print("%-26s %s" % (sh, " ".join("%02X" % x for x in sels)))
-
 import json
-json.dump({"%02X" % s: shape[s] for s in shape},
-          open("build/_expr_shapes.json", "w"), indent=1)
-print()
-print("written to build/_expr_shapes.json")
+import os
+import struct
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+import opcode_operands as oo                       # noqa: E402
+
+#: selector -> kind (u8), and kind -> handler (u32)
+KIND_TAB, JMP_TAB = 0x00437380, 0x00437288
+#: ``cmp esi,0x5D / ja <error>`` -- the engine refuses anything above this.
+MAXSEL = 0x5D
+
+OUT = "docs/expr-nodes.json"
+
+
+def kind_of(sel: int) -> int:
+    return oo.IMG[oo.PEO.va2off(KIND_TAB + sel)]
+
+
+def handler_of(kind: int) -> int:
+    return struct.unpack_from("<I", oo.IMG, oo.PEO.va2off(JMP_TAB + kind * 4))[0]
+
+
+def payloads() -> "tuple[dict, dict]":
+    """``({selector: [kind, ...] | None}, {kind: reason})`` -- None = undecidable."""
+    kinds = {s: kind_of(s) for s in range(MAXSEL + 1)}
+    shape, why = {}, {}
+    for k in sorted(set(kinds.values())):
+        h = handler_of(k)
+        try:
+            r = oo.reads(h)
+        except oo.Ambiguous as exc:
+            shape[k], why[k] = None, str(exc)
+            continue
+        if len(r) != 1:
+            shape[k], why[k] = None, "paths disagree: %s" % sorted(r)
+        else:
+            shape[k] = oo.spec(next(iter(r)))
+    return {s: shape[kinds[s]] for s in kinds}, why
+
+
+def main() -> int:
+    out, why = payloads()
+    kinds = {s: kind_of(s) for s in range(MAXSEL + 1)}
+    cur = json.load(open("docs/opcodes.json", encoding="utf-8"))["expressions"]["nodes"]
+    bykey = {int(k, 16): k for k in cur}
+
+    agree, differ, undecidable = [], [], []
+    for s in range(MAXSEL + 1):
+        ours = cur.get(bykey.get(s, ""))
+        got = out[s]
+        if got is None:
+            undecidable.append(s)
+        elif ours == got:
+            agree.append(s)
+        else:
+            differ.append((s, ours, got))
+
+    print("selectors 0x00..0x%02X, %d distinct kinds"
+          % (MAXSEL, len(set(kinds.values()))))
+    print("agree with docs/opcodes.json: %d   differ: %d   undecidable: %d"
+          % (len(agree), len(differ), len(undecidable)))
+    for s, ours, got in differ:
+        print("   0x%02X  docs=%-16s engine=%s" % (s, ours, got))
+    for s in undecidable:
+        print("   0x%02X  kind 0x%02X: %s" % (s, kinds[s], why[kinds[s]][:80]))
+
+    doc = {
+        "_about": (
+            "Expression-node model recovered from the engine.  0x00436B00 reads a "
+            "selector byte, maps it through the u8 table at 0x00437380 "
+            "(selector -> kind), and dispatches through the u32 table at "
+            "0x00437288 (kind -> handler).  Each handler is walked as a "
+            "control-flow graph, following calls into their callees, counting "
+            "0x00438FA0 (u8) / 0x00438FC0 (u16) / 0x00438FE0 (u32) and treating "
+            "0x00436B00 / 0x00437490 as one opaque sub-expression."),
+        "_status": (
+            "Agrees with docs/opcodes.json for %d of %d selectors.  %d are "
+            "context-dependent in the engine and cannot be modelled as a constant "
+            "payload; docs/opcodes.json keeps its own value for those."
+            % (len(agree), MAXSEL + 1, len(undecidable))),
+        "selectors": {
+            "0x%02X" % s: {
+                "kind": "0x%02X" % kinds[s],
+                "handler": "0x%08X" % handler_of(kinds[s]),
+                "engine": out[s],
+                "current": cur.get(bykey.get(s, "")),
+                "note": why.get(kinds[s], ""),
+            } for s in range(MAXSEL + 1)},
+    }
+    groups = collections.defaultdict(list)
+    for s in range(MAXSEL + 1):
+        groups["null" if out[s] is None else "+".join(out[s]) or "[]"].append("0x%02X" % s)
+    doc["shapes"] = dict(groups)
+
+    with open(OUT, "w", encoding="utf-8") as fh:
+        json.dump(doc, fh, ensure_ascii=False, indent=1)
+    print("\nwritten to %s" % OUT)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

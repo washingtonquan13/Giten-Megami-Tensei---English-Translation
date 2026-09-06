@@ -1,698 +1,1226 @@
 {
- "_about": "Expression-node model recovered from the engine, 2026-09-06.  0x00436B00 reads a selector byte, maps it through the u8 table at 0x00437380 (selector -> kind), and dispatches through the u32 table at 0x00437288 (kind -> handler).  Each handler was walked as a control-flow graph -- cases share epilogues and jump into one another, so a linear scan runs one case into the next -- and every ret-terminated path agreed, for all 62 handlers.  Payload = calls to 0x00438FA0 (u8) / 0x00438FC0 (u16); a sub-expression = recursion into 0x00436B00 or its wrapper 0x00437490.",
- "_status": "NOT APPLIED to opcodes.json.  Applying it wholesale fixes 62 untiled records (143 -> 93 with a relaxed switch reader) but breaks 12-17 others and raises garbage-prefix spans 118 -> 129, so something is still wrong -- most likely the interaction with the 0E/0F switch tables, whose kind check had been tightened to compensate for this very model being wrong.",
+ "_about": "Expression-node model recovered from the engine.  0x00436B00 reads a selector byte, maps it through the u8 table at 0x00437380 (selector -> kind), and dispatches through the u32 table at 0x00437288 (kind -> handler).  Each handler is walked as a control-flow graph, following calls into their callees, counting 0x00438FA0 (u8) / 0x00438FC0 (u16) / 0x00438FE0 (u32) and treating 0x00436B00 / 0x00437490 as one opaque sub-expression.",
+ "_status": "Agrees with docs/opcodes.json for 92 of 94 selectors.  2 are context-dependent in the engine and cannot be modelled as a constant payload; docs/opcodes.json keeps its own value for those.",
  "selectors": {
   "0x00": {
+   "kind": "0x00",
+   "handler": "0x00436B25",
    "engine": [
     "u8"
    ],
    "current": [
     "u8"
-   ]
+   ],
+   "note": ""
   },
   "0x01": {
+   "kind": "0x01",
+   "handler": "0x00436C33",
    "engine": [
     "u16"
    ],
    "current": [
     "u16"
-   ]
+   ],
+   "note": ""
   },
   "0x02": {
-   "engine": [],
+   "kind": "0x02",
+   "handler": "0x00436B3B",
+   "engine": [
+    "u32"
+   ],
    "current": [
     "u32"
-   ]
+   ],
+   "note": ""
   },
   "0x03": {
+   "kind": "0x03",
+   "handler": "0x00436B4C",
    "engine": [
     "u8"
    ],
    "current": [
     "u8"
-   ]
+   ],
+   "note": ""
   },
   "0x04": {
+   "kind": "0x04",
+   "handler": "0x00436B6B",
    "engine": [
     "u8"
    ],
    "current": [
     "u8"
-   ]
+   ],
+   "note": ""
   },
   "0x05": {
+   "kind": "0x05",
+   "handler": "0x00436B7F",
    "engine": [
     "u16"
    ],
    "current": [
     "u16"
-   ]
+   ],
+   "note": ""
   },
   "0x06": {
+   "kind": "0x06",
+   "handler": "0x00436B94",
    "engine": [
     "expr"
    ],
    "current": [
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x07": {
+   "kind": "0x07",
+   "handler": "0x00436BAE",
    "engine": [
     "expr"
    ],
    "current": [
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x08": {
+   "kind": "0x3D",
+   "handler": "0x0043727F",
    "engine": [],
-   "current": []
+   "current": [],
+   "note": ""
   },
   "0x09": {
+   "kind": "0x08",
+   "handler": "0x00436BD1",
    "engine": [
     "u16"
    ],
    "current": [
     "u16"
-   ]
+   ],
+   "note": ""
   },
   "0x0A": {
-   "engine": [],
-   "current": null
+   "kind": "0x09",
+   "handler": "0x00436BE9",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
   },
   "0x0B": {
+   "kind": "0x0A",
+   "handler": "0x00436C03",
    "engine": [
     "u16"
    ],
-   "current": null
+   "current": [
+    "u16"
+   ],
+   "note": ""
   },
   "0x0C": {
-   "engine": [],
-   "current": null
+   "kind": "0x0B",
+   "handler": "0x00436C19",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
   },
   "0x0D": {
+   "kind": "0x0C",
+   "handler": "0x00436C33",
    "engine": [
     "u16"
    ],
-   "current": null
+   "current": [
+    "u16"
+   ],
+   "note": ""
   },
   "0x0E": {
+   "kind": "0x0C",
+   "handler": "0x00436C33",
    "engine": [
     "u16"
    ],
-   "current": null
+   "current": [
+    "u16"
+   ],
+   "note": ""
   },
   "0x0F": {
+   "kind": "0x0C",
+   "handler": "0x00436C33",
    "engine": [
     "u16"
    ],
-   "current": null
+   "current": [
+    "u16"
+   ],
+   "note": ""
   },
   "0x10": {
+   "kind": "0x0C",
+   "handler": "0x00436C33",
    "engine": [
     "u16"
    ],
    "current": [
     "u16"
-   ]
+   ],
+   "note": ""
   },
   "0x11": {
+   "kind": "0x0C",
+   "handler": "0x00436C33",
    "engine": [
     "u16"
    ],
    "current": [
     "u16"
-   ]
+   ],
+   "note": ""
   },
   "0x12": {
+   "kind": "0x0C",
+   "handler": "0x00436C33",
    "engine": [
     "u16"
    ],
    "current": [
     "u16"
-   ]
+   ],
+   "note": ""
   },
   "0x13": {
+   "kind": "0x0C",
+   "handler": "0x00436C33",
    "engine": [
     "u16"
    ],
    "current": [
     "u16"
-   ]
+   ],
+   "note": ""
   },
   "0x14": {
+   "kind": "0x0C",
+   "handler": "0x00436C33",
    "engine": [
     "u16"
    ],
    "current": [
     "u16"
-   ]
+   ],
+   "note": ""
   },
   "0x15": {
+   "kind": "0x0C",
+   "handler": "0x00436C33",
    "engine": [
     "u16"
    ],
    "current": [
     "u16"
-   ]
+   ],
+   "note": ""
   },
   "0x16": {
+   "kind": "0x0C",
+   "handler": "0x00436C33",
    "engine": [
     "u16"
    ],
    "current": [
     "u16"
-   ]
+   ],
+   "note": ""
   },
   "0x17": {
+   "kind": "0x0C",
+   "handler": "0x00436C33",
    "engine": [
     "u16"
    ],
    "current": [
     "u16"
-   ]
+   ],
+   "note": ""
   },
   "0x18": {
+   "kind": "0x0C",
+   "handler": "0x00436C33",
    "engine": [
     "u16"
    ],
    "current": [
     "u16"
-   ]
+   ],
+   "note": ""
   },
   "0x19": {
-   "engine": [],
+   "kind": "0x0D",
+   "handler": "0x00436C49",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x1A": {
-   "engine": [],
-   "current": null
+   "kind": "0x0D",
+   "handler": "0x00436C49",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
   },
   "0x1B": {
-   "engine": [],
-   "current": null
+   "kind": "0x0D",
+   "handler": "0x00436C49",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
   },
   "0x1C": {
-   "engine": [],
-   "current": null
+   "kind": "0x0D",
+   "handler": "0x00436C49",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
   },
   "0x1D": {
-   "engine": [],
-   "current": null
+   "kind": "0x0D",
+   "handler": "0x00436C49",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
   },
   "0x1E": {
-   "engine": [],
-   "current": null
+   "kind": "0x0D",
+   "handler": "0x00436C49",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
   },
   "0x1F": {
-   "engine": [],
-   "current": null
+   "kind": "0x0D",
+   "handler": "0x00436C49",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
   },
   "0x20": {
-   "engine": [],
+   "kind": "0x0D",
+   "handler": "0x00436C49",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x21": {
-   "engine": [],
+   "kind": "0x0D",
+   "handler": "0x00436C49",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x22": {
-   "engine": [],
+   "kind": "0x0D",
+   "handler": "0x00436C49",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x23": {
-   "engine": [],
+   "kind": "0x0D",
+   "handler": "0x00436C49",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x24": {
-   "engine": [],
+   "kind": "0x0E",
+   "handler": "0x00436C67",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x25": {
-   "engine": [],
+   "kind": "0x0F",
+   "handler": "0x00436C81",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x26": {
-   "engine": [],
+   "kind": "0x10",
+   "handler": "0x00436CA3",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x27": {
-   "engine": [],
+   "kind": "0x11",
+   "handler": "0x00436CE6",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x28": {
+   "kind": "0x12",
+   "handler": "0x00436D0F",
    "engine": [
     "u8"
    ],
    "current": [
     "u8"
-   ]
+   ],
+   "note": ""
   },
   "0x29": {
+   "kind": "0x13",
+   "handler": "0x00436D4B",
    "engine": [
     "u8"
    ],
    "current": [
     "u8"
-   ]
+   ],
+   "note": ""
   },
   "0x2A": {
+   "kind": "0x14",
+   "handler": "0x00436D85",
    "engine": [
     "u16"
    ],
-   "current": null
+   "current": [
+    "u16"
+   ],
+   "note": ""
   },
   "0x2B": {
-   "engine": [],
-   "current": null
+   "kind": "0x15",
+   "handler": "0x00436D91",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
   },
   "0x2C": {
-   "engine": [],
-   "current": null
+   "kind": "0x16",
+   "handler": "0x00436DB4",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
   },
   "0x2D": {
-   "engine": [],
-   "current": null
+   "kind": "0x17",
+   "handler": "0x00436DD7",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
   },
   "0x2E": {
-   "engine": [],
-   "current": null
+   "kind": "0x18",
+   "handler": "0x00436DFA",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
   },
   "0x2F": {
-   "engine": [],
-   "current": null
+   "kind": "0x19",
+   "handler": "0x00436E1D",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
   },
   "0x30": {
-   "engine": [],
+   "kind": "0x1A",
+   "handler": "0x00436E37",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x31": {
+   "kind": "0x1B",
+   "handler": "0x00436E51",
    "engine": [],
-   "current": []
+   "current": [],
+   "note": ""
   },
   "0x32": {
+   "kind": "0x3D",
+   "handler": "0x0043727F",
    "engine": [],
-   "current": []
+   "current": [],
+   "note": ""
   },
   "0x33": {
+   "kind": "0x3D",
+   "handler": "0x0043727F",
    "engine": [],
-   "current": []
+   "current": [],
+   "note": ""
   },
   "0x34": {
+   "kind": "0x3D",
+   "handler": "0x0043727F",
    "engine": [],
-   "current": []
+   "current": [],
+   "note": ""
   },
   "0x35": {
+   "kind": "0x3D",
+   "handler": "0x0043727F",
    "engine": [],
-   "current": []
+   "current": [],
+   "note": ""
   },
   "0x36": {
+   "kind": "0x3D",
+   "handler": "0x0043727F",
    "engine": [],
-   "current": []
+   "current": [],
+   "note": ""
   },
   "0x37": {
+   "kind": "0x3D",
+   "handler": "0x0043727F",
    "engine": [],
-   "current": []
+   "current": [],
+   "note": ""
   },
   "0x38": {
-   "engine": [],
+   "kind": "0x1C",
+   "handler": "0x00436E64",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x39": {
-   "engine": [],
+   "kind": "0x1D",
+   "handler": "0x00436E81",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x3A": {
-   "engine": [],
-   "current": null
+   "kind": "0x1E",
+   "handler": "0x00436EA2",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
   },
   "0x3B": {
-   "engine": [],
-   "current": null
+   "kind": "0x1F",
+   "handler": "0x00436EC2",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
   },
   "0x3C": {
-   "engine": [],
-   "current": null
+   "kind": "0x20",
+   "handler": "0x00436EDB",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
   },
   "0x3D": {
-   "engine": [],
-   "current": null
+   "kind": "0x21",
+   "handler": "0x00436EF4",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
   },
   "0x3E": {
-   "engine": [],
-   "current": null
+   "kind": "0x22",
+   "handler": "0x00436F1E",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
   },
   "0x3F": {
-   "engine": [],
-   "current": null
+   "kind": "0x23",
+   "handler": "0x00436F47",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
   },
   "0x40": {
-   "engine": [],
+   "kind": "0x24",
+   "handler": "0x00436F67",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x41": {
-   "engine": [],
+   "kind": "0x25",
+   "handler": "0x00436F88",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x42": {
-   "engine": [],
+   "kind": "0x26",
+   "handler": "0x00436FA9",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x43": {
-   "engine": [],
+   "kind": "0x27",
+   "handler": "0x00436FBF",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x44": {
-   "engine": [],
+   "kind": "0x28",
+   "handler": "0x00436FE9",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x45": {
-   "engine": [],
+   "kind": "0x29",
+   "handler": "0x00437014",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x46": {
-   "engine": [],
+   "kind": "0x2A",
+   "handler": "0x0043703F",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x47": {
-   "engine": [],
+   "kind": "0x2B",
+   "handler": "0x00437069",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x48": {
-   "engine": [],
+   "kind": "0x2B",
+   "handler": "0x00437069",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x49": {
-   "engine": [],
+   "kind": "0x2B",
+   "handler": "0x00437069",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x4A": {
-   "engine": [],
-   "current": null
+   "kind": "0x2B",
+   "handler": "0x00437069",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
   },
   "0x4B": {
-   "engine": [
+   "kind": "0x2C",
+   "handler": "0x0043708A",
+   "engine": null,
+   "current": [
     "expr"
    ],
-   "current": null
+   "note": "callee 0x00437440 of 0x0043708A is context-dependent"
   },
   "0x4C": {
+   "kind": "0x2D",
+   "handler": "0x004370A4",
    "engine": [
     "expr"
    ],
-   "current": null
+   "current": [
+    "expr"
+   ],
+   "note": ""
   },
   "0x4D": {
+   "kind": "0x2E",
+   "handler": "0x004370BD",
    "engine": [
     "expr"
    ],
-   "current": null
+   "current": [
+    "expr"
+   ],
+   "note": ""
   },
   "0x4E": {
+   "kind": "0x2F",
+   "handler": "0x004370D5",
    "engine": [
     "expr"
    ],
-   "current": null
+   "current": [
+    "expr"
+   ],
+   "note": ""
   },
   "0x4F": {
-   "engine": [
+   "kind": "0x30",
+   "handler": "0x00437106",
+   "engine": null,
+   "current": [
     "expr"
    ],
-   "current": null
+   "note": "callee 0x004373E0 of 0x00437106 is context-dependent"
   },
   "0x50": {
-   "engine": [],
+   "kind": "0x31",
+   "handler": "0x00437120",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x51": {
-   "engine": [],
+   "kind": "0x32",
+   "handler": "0x0043713C",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x52": {
-   "engine": [],
+   "kind": "0x33",
+   "handler": "0x0043715F",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x53": {
-   "engine": [],
+   "kind": "0x33",
+   "handler": "0x0043715F",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x54": {
-   "engine": [],
+   "kind": "0x33",
+   "handler": "0x0043715F",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x55": {
-   "engine": [],
+   "kind": "0x34",
+   "handler": "0x0043717E",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x56": {
-   "engine": [],
+   "kind": "0x35",
+   "handler": "0x0043719D",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x57": {
-   "engine": [],
+   "kind": "0x36",
+   "handler": "0x004371BD",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x58": {
-   "engine": [],
+   "kind": "0x37",
+   "handler": "0x004371DC",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x59": {
-   "engine": [],
+   "kind": "0x38",
+   "handler": "0x004371FC",
+   "engine": [
+    "u8",
+    "expr"
+   ],
    "current": [
     "u8",
     "expr"
-   ]
+   ],
+   "note": ""
   },
   "0x5A": {
-   "engine": [],
-   "current": null
-  },
-  "0x5B": {
-   "engine": [],
-   "current": null
-  },
-  "0x5C": {
-   "engine": [],
-   "current": null
-  },
-  "0x5D": {
-   "engine": [],
-   "current": null
-  }
- },
- "kinds": {
-  "[1, 0, 0]": {
-   "spec": [
-    "u8"
-   ],
-   "selectors": [
-    "0x00",
-    "0x03",
-    "0x04",
-    "0x28",
-    "0x29"
-   ]
-  },
-  "[0, 1, 0]": {
-   "spec": [
-    "u16"
-   ],
-   "selectors": [
-    "0x01",
-    "0x05",
-    "0x09",
-    "0x0B",
-    "0x0D",
-    "0x0E",
-    "0x0F",
-    "0x10",
-    "0x11",
-    "0x12",
-    "0x13",
-    "0x14",
-    "0x15",
-    "0x16",
-    "0x17",
-    "0x18",
-    "0x2A"
-   ]
-  },
-  "[0, 0, 0]": {
-   "spec": [],
-   "selectors": [
-    "0x02",
-    "0x08",
-    "0x0A",
-    "0x0C",
-    "0x19",
-    "0x1A",
-    "0x1B",
-    "0x1C",
-    "0x1D",
-    "0x1E",
-    "0x1F",
-    "0x20",
-    "0x21",
-    "0x22",
-    "0x23",
-    "0x24",
-    "0x25",
-    "0x26",
-    "0x27",
-    "0x2B",
-    "0x2C",
-    "0x2D",
-    "0x2E",
-    "0x2F",
-    "0x30",
-    "0x31",
-    "0x32",
-    "0x33",
-    "0x34",
-    "0x35",
-    "0x36",
-    "0x37",
-    "0x38",
-    "0x39",
-    "0x3A",
-    "0x3B",
-    "0x3C",
-    "0x3D",
-    "0x3E",
-    "0x3F",
-    "0x40",
-    "0x41",
-    "0x42",
-    "0x43",
-    "0x44",
-    "0x45",
-    "0x46",
-    "0x47",
-    "0x48",
-    "0x49",
-    "0x4A",
-    "0x50",
-    "0x51",
-    "0x52",
-    "0x53",
-    "0x54",
-    "0x55",
-    "0x56",
-    "0x57",
-    "0x58",
-    "0x59",
-    "0x5A",
-    "0x5B",
-    "0x5C",
-    "0x5D"
-   ]
-  },
-  "[0, 0, 1]": {
-   "spec": [
+   "kind": "0x39",
+   "handler": "0x00437218",
+   "engine": [
+    "u8",
     "expr"
    ],
-   "selectors": [
-    "0x06",
-    "0x07",
-    "0x4B",
-    "0x4C",
-    "0x4D",
-    "0x4E",
-    "0x4F"
-   ]
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
+  },
+  "0x5B": {
+   "kind": "0x3A",
+   "handler": "0x00437233",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
+  },
+  "0x5C": {
+   "kind": "0x3B",
+   "handler": "0x0043724F",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
+  },
+  "0x5D": {
+   "kind": "0x3C",
+   "handler": "0x0043726B",
+   "engine": [
+    "u8",
+    "expr"
+   ],
+   "current": [
+    "u8",
+    "expr"
+   ],
+   "note": ""
   }
+ },
+ "shapes": {
+  "u8": [
+   "0x00",
+   "0x03",
+   "0x04",
+   "0x28",
+   "0x29"
+  ],
+  "u16": [
+   "0x01",
+   "0x05",
+   "0x09",
+   "0x0B",
+   "0x0D",
+   "0x0E",
+   "0x0F",
+   "0x10",
+   "0x11",
+   "0x12",
+   "0x13",
+   "0x14",
+   "0x15",
+   "0x16",
+   "0x17",
+   "0x18",
+   "0x2A"
+  ],
+  "u32": [
+   "0x02"
+  ],
+  "expr": [
+   "0x06",
+   "0x07",
+   "0x4C",
+   "0x4D",
+   "0x4E"
+  ],
+  "[]": [
+   "0x08",
+   "0x31",
+   "0x32",
+   "0x33",
+   "0x34",
+   "0x35",
+   "0x36",
+   "0x37"
+  ],
+  "u8+expr": [
+   "0x0A",
+   "0x0C",
+   "0x19",
+   "0x1A",
+   "0x1B",
+   "0x1C",
+   "0x1D",
+   "0x1E",
+   "0x1F",
+   "0x20",
+   "0x21",
+   "0x22",
+   "0x23",
+   "0x24",
+   "0x25",
+   "0x26",
+   "0x27",
+   "0x2B",
+   "0x2C",
+   "0x2D",
+   "0x2E",
+   "0x2F",
+   "0x30",
+   "0x38",
+   "0x39",
+   "0x3A",
+   "0x3B",
+   "0x3C",
+   "0x3D",
+   "0x3E",
+   "0x3F",
+   "0x40",
+   "0x41",
+   "0x42",
+   "0x43",
+   "0x44",
+   "0x45",
+   "0x46",
+   "0x47",
+   "0x48",
+   "0x49",
+   "0x4A",
+   "0x50",
+   "0x51",
+   "0x52",
+   "0x53",
+   "0x54",
+   "0x55",
+   "0x56",
+   "0x57",
+   "0x58",
+   "0x59",
+   "0x5A",
+   "0x5B",
+   "0x5C",
+   "0x5D"
+  ],
+  "null": [
+   "0x4B",
+   "0x4F"
+  ]
  }
 }

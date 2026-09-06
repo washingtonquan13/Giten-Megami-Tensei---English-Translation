@@ -1015,3 +1015,49 @@ def test_no_more_records_carry_an_impossible_expression_selector():
     # expression they never read.  Must never rise.
     assert len(bad) <= 50, ("%d records now carry an impossible selector: %s"
                             % (len(bad), bad[:5]))
+
+
+def test_expression_model_agrees_with_the_engine():
+    """`docs/expr-nodes.json` is the engine's own answer; it must match ours.
+
+    This exists because the first extraction claimed our model was wrong for 67
+    of 94 selectors, which was itself wrong twice: the walker stepped over calls
+    instead of following them (so any handler reading through a helper looked
+    like a leaf), and it did not know the u32 reader at 0x00438FE0.  Both
+    produced a confident, wrong table, and acting on it would have made the walk
+    worse -- swapping it in raised `impossible` from 50 to 64.
+
+    Two selectors are context-dependent in the engine and cannot be modelled as a
+    constant payload; `opcodes.json` chooses a value for them.
+    """
+    import io
+    import json
+    import os
+
+    from giten import paths
+
+    nodes = json.load(io.open(os.path.join(paths.REPO_ROOT, "docs", "opcodes.json"),
+                              encoding="utf-8"))["expressions"]["nodes"]
+    doc = json.load(io.open(os.path.join(paths.REPO_ROOT, "docs", "expr-nodes.json"),
+                            encoding="utf-8"))
+    sel = doc["selectors"]
+    assert len(sel) == 0x5E, len(sel)           # 0x00..0x5D, the engine's own bound
+
+    ours = {int(k, 16): v for k, v in nodes.items()}
+    undecidable, differ = [], []
+    for key, v in sel.items():
+        i = int(key, 16)
+        if v["engine"] is None:
+            undecidable.append(i)
+        elif v["engine"] != ours.get(i):
+            differ.append((key, ours.get(i), v["engine"]))
+
+    # kinds 0x2C / 0x30, via callees 0x00437440 / 0x004373E0
+    assert sorted(undecidable) == [0x4B, 0x4F], sorted(undecidable)
+    assert not differ, differ
+
+    # the u32 reader, the finding that closed selector 0x02
+    assert ours[0x02] == ["u32"], ours[0x02]
+    # kind 0x0D, which delegates through 0x00438C40 = READ_U8 + READ_EXPR_DEREF
+    for i in range(0x19, 0x24):
+        assert ours[i] == ["u8", "expr"], (i, ours[i])
