@@ -341,16 +341,16 @@ def test_tokenizer_reproduces_the_published_tiling_numbers():
     # `unimpl`: they now tile to byte N via the opt-in prefix walk, and what
     # they reach is the 1F 00 engine no-op.  No record changed its tiling, and
     # `ok` and `stray` are untouched, so nothing that shipped before moved.
-    # 2026-09-06, 1F 0D/0E/0F (format-notes 2.13): 19 330 / 1 117 / 100 / 143
-    # became 19 476 / 1 006 / 106 / 102.  The recovered table gave those three
-    # an `expr` operand they never read -- their handlers push a constant and
-    # call 0x00433490, which reaches no operand reader, unlike a real rel16
-    # opcode whose reader (0x00433EC0) calls into the 0x438F.. family and adds
-    # the result to the PC.  41 records stopped overrunning, and -- the
-    # independent corroboration -- `stray` fell by 111: those records now end on
-    # their terminator at the last byte instead of somewhere in the middle,
-    # which is what a correct walk looks like.
-    assert (ok, stray, unimpl, overrun) == (19476, 1006, 106, 102), (ok, stray, unimpl, overrun)
+    # 2026-09-06: an attempt to drop the `expr` from 1F 0D/0E/0F moved these to
+    # 19 476 / 1 006 / 106 / 102 and was REVERTED (tag pre-expr-model).  It fixed
+    # 41 records and broke none, but its justification was wrong: objdump shows
+    # 00430201 -> 00433490 -> 00437490 -> 00436B00 -> 00438FA0 -> 00438E50, i.e.
+    # the handler does reach the expression reader.  The likely truth is that our
+    # *expression* model is wrong -- 0x00436B00 dispatches on a selector through
+    # tables at 0x437380 (selector -> kind) and 0x437288 (kind -> handler), and a
+    # first reading of those disagrees with our nodes for 67 of 94 selectors.
+    # Fix the root there, not by removing an operand that exists.
+    assert (ok, stray, unimpl, overrun) == (19330, 1117, 100, 143), (ok, stray, unimpl, overrun)
 
 
 def test_operands_are_never_text():
