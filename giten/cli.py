@@ -109,6 +109,11 @@ def make_parser():
     p.add_argument("--out", default=None, help="default build/en/et/ET0000.BIN")
     _common(p)
 
+    p = sub.add_parser("crash", help="explain a Windows crash dump in our terms")
+    p.add_argument("dump", nargs="?", help="default: the newest dds*.dmp")
+    p.add_argument("--exe", default=None, help="exe to map the fault address against")
+    p.add_argument("--list", action="store_true", help="just list the dumps found")
+
     p = sub.add_parser("exe", help="build patched exes from docs/exe-patches.md")
     p.add_argument("which", choices=("base", "release", "dev"))
     p.add_argument("--out", default=None, help="default build/exe/")
@@ -181,6 +186,26 @@ def main(argv=None) -> int:
                          "%+d" % (el - ml) if ml is not None else "?"))
         else:
             print(trace.report_diff(args.trace, args.other, jp_build, args.build2 or jp_build))
+        return 0
+    if args.cmd == "crash":
+        from . import crashdump
+        dumps = crashdump.find_dumps()
+        if args.list or (not args.dump and not dumps):
+            for d in dumps:
+                print("  %s" % d)
+            if not dumps:
+                print("no dumps found; enable them with LocalDumps under "
+                      r"HKCU\Software\Microsoft\Windows"
+                      r"\Windows Error Reporting\LocalDumps")
+            return 0
+        path = args.dump or dumps[0]
+        exe = args.exe
+        if exe is None:
+            play = os.path.join(os.path.dirname(paths.REPO_ROOT), "play", "en", "ddswin")
+            base = "dds_dev.exe" if "dev" in os.path.basename(path) else "dds.exe"
+            cand = os.path.join(play, base)
+            exe = cand if os.path.exists(cand) else None
+        print(crashdump.explain(path, exe))
         return 0
     if args.cmd == "exe":
         print("built " + exepatch.build(args.which, args.out))
