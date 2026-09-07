@@ -154,6 +154,14 @@ class Entry:
 _FID = re.compile(r"^[A-Za-z]*([0-9A-Fa-f]+)$")
 
 
+#: Unassigned in cp932, so never a text byte.  The menu rescanner at
+#: ``0x00435CF0`` scans forward for it through ``0x438FA0`` -> ``0x438E50``,
+#: which is one of the five fetch sites this overlay hooks -- so a span whose
+#: Japanese contains one cannot be served without breaking that scan.  See
+#: ``docs/overlay.md``.
+STRUCTURAL_BYTE = 0xFF
+
+
 def _fid(rel: str) -> int:
     """The engine's file id for a script file, from its name.
 
@@ -221,6 +229,15 @@ def plan(rows, root=None):
                     if not data:
                         findings.append(("%s %s[%d]" % (rel, row.rec, row.idx),
                                          "English encodes to nothing; a span cannot vanish"))
+                        continue
+                    jp = rec.data[sp.off:sp.end]
+                    if STRUCTURAL_BYTE in jp and STRUCTURAL_BYTE not in data:
+                        findings.append(("%s %s[%d]" % (rel, row.rec, row.idx),
+                                         "the Japanese here contains 0x%02X, which is "
+                                         "unassigned in cp932 and so is never text; the "
+                                         "menu rescanner (0x00435CF0) scans for it through "
+                                         "the fetch we hook, and English drops it"
+                                         % STRUCTURAL_BYTE))
                         continue
                     ent.spans.append(SpanEntry(base[rec.id] + sp.off, base[rec.id] + sp.end,
                                                0, data, rec.id, sp.idx))

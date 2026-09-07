@@ -2193,3 +2193,71 @@ def test_the_clean_fixture_survives_every_mutation_being_reverted():
     assert findings == [], findings[:3]
     assert stats["out of bounds"] == 0
     assert stats["served"] > 500 and stats["from the file"] > 1500
+
+
+def test_a_span_whose_japanese_carries_ff_is_never_overlaid():
+    """0xFF is structural, and the menu rescanner scans for it through our hook.
+
+    ``0x00435CF0`` saves the program counter, scans forward calling
+    ``0x438FA0`` until it reads ``0xFF``, then restores the PC at
+    ``0x00435D23``.  ``0x438FA0`` calls ``0x438E50``, and ``0x438FAD`` is one of
+    the five fetch sites the overlay hooks -- so that scan reads English wherever
+    we serve it, and English is ASCII.  A scan that enters a span whose Japanese
+    held the terminator cannot stop where the original did.
+
+    ``0xFF`` is unassigned in cp932, so it is never a text byte: a span
+    containing one was never pure text and serving it was unsound regardless.
+    """
+    from giten import overlay
+
+    assert overlay.STRUCTURAL_BYTE == 0xFF
+    # it cannot be produced by encoding any text, which is why English loses it
+    import giten.codec as codec
+    for probe in ("A", "test", "\u3042"):
+        assert 0xFF not in codec.encode(probe, allow=codec.INLINE_OPS)
+
+
+def test_the_ff_refusal_actually_fires_on_a_span_that_has_one():
+    """Adversarial: hand plan() a row over Japanese containing 0xFF."""
+    from giten import overlay, paths, records, script
+
+    # find a real span whose Japanese carries the byte
+    target = None
+    for rel in ("m/MS6001.BIN", "m/MS6012.BIN", "m/MS610D.BIN"):
+        p = os.path.join(paths.ORIGINAL_DDSWIN, *rel.split("/"))
+        if not os.path.exists(p):
+            continue
+        with open(p, "rb") as fh:
+            sc = script.parse(rel, fh.read())
+        if not sc.ok:
+            continue
+        for ci, cont in enumerate(sc.containers):
+            for rec in cont:
+                if rec.span_tokens is None:
+                    continue
+                for sp in rec.spans:
+                    if 0xFF in rec.data[sp.off:sp.end]:
+                        target = (rel, ci, rec.id, sp.idx,
+                                  script.span_text(rec, sp))
+                        break
+                if target:
+                    break
+            if target:
+                break
+        if target:
+            break
+    assert target, "no span in the corpus carries 0xFF -- the rule has nothing to guard"
+
+    rel, ci, rec_id, idx, jp = target
+    row = type("Row", (), {})()
+    row.file, row.rec, row.idx = rel, "%d:%02X" % (ci, rec_id), idx
+    # jp must be the span's real text or stale_rows rejects the row before the
+    # 0xFF rule is ever reached -- which is itself the staleness guard working
+    row.en, row.jp, row.ref_en, row.status = "Plain English", jp, "", "draft"
+    row.edited, row.tag = True, "TEXT"
+
+    entries, findings = overlay.plan([row], paths.ORIGINAL_DDSWIN)
+    assert any("0xFF" in why for _where, why in findings), findings
+    # ...and it is refused rather than quietly served
+    served = [s for e in entries for s in e.spans]
+    assert not served, served[:2]
