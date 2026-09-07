@@ -57,10 +57,32 @@ CALL_SITES = (0x4390C4, 0x439103, 0x43913C)
 DRAWGLYPH = 0x451230
 GLYPH_SITES = (0x4516E0, 0x4517E7, 0x4518EC, 0x451A1F, 0x451C24, 0x451D28)
 
-#: the six draw-string variants that walk a ``char*`` and call DRAWGLYPH per
-#: character -- the level a menu overlay would hook, since each takes the
-#: string as an argument
+#: The six draw-string variants that walk a ``char*`` calling DRAWGLYPH per
+#: character.  This is the level a menu overlay would hook, since each takes
+#: the string as an argument -- but each has a *different* signature, so which
+#: argument that is has to be established before anything dereferences it.
+#: The dev build logs their arguments to settle that from a play session.
 DRAWSTRING = (0x451650, 0x451750, 0x451850, 0x451950, 0x451B20, 0x451CB0)
+
+
+def drawstring_sites(image: bytes) -> "dict[int, tuple]":
+    """``{variant VA: (call site VAs,)}`` -- every ``E8`` that lands on one.
+
+    Found by scanning rather than written down: there are seventy-odd of them
+    across the game and a list that drifted would be worse than no list.
+    """
+    pe = PE(image, "scan")
+    text = [s for s in pe.sections if s["name"] == ".text"][0]
+    lo, hi = text["rawptr"], text["rawptr"] + text["rawsize"]
+    want = {va: [] for va in DRAWSTRING}
+    for off in range(lo, hi - 5):
+        if image[off] != 0xE8:
+            continue
+        rel = struct.unpack_from("<i", image, off + 1)[0]
+        tgt = (pe.off2va(off) + 5 + rel) & 0xFFFFFFFF
+        if tgt in want:
+            want[tgt].append(pe.off2va(off))
+    return {k: tuple(v) for k, v in want.items()}
 
 SYMBOLS = {
     "EXEC_TOKEN": EXEC_TOKEN,
@@ -73,6 +95,12 @@ SYMBOLS = {
     "CAPBUF": 0x481120,             # the 256-byte capture buffer
     "HANDLE_TABLE": 0x47605C,       # [HANDLE_TABLE + handle*8] = buffer base (0x4045F0)
     "DRAWGLYPH": 0x451230,          # the engine's own per-character blitter
+    "DRAWSTR1": 0x451650,         # draw-string variant 1
+    "DRAWSTR2": 0x451750,         # draw-string variant 2
+    "DRAWSTR3": 0x451850,         # draw-string variant 3
+    "DRAWSTR4": 0x451950,         # draw-string variant 4
+    "DRAWSTR5": 0x451B20,         # draw-string variant 5
+    "DRAWSTR6": 0x451CB0,         # draw-string variant 6
 }
 
 #: IMAGE_SCN_CNT_CODE | CNT_INITIALIZED_DATA | MEM_EXECUTE | MEM_READ | MEM_WRITE
@@ -87,8 +115,15 @@ TRACE_VERSION = 2
 TRACE_HEADER_SIZE = 8
 
 
-def assemble(source: str = SOURCE) -> bytes:
-    """``trace.S`` -> raw bytes of its ``.text``."""
+def assemble(source: str = SOURCE, symbols: bool = False):
+    """``trace.S`` -> raw bytes of its ``.text`` (and its symbol offsets).
+
+    ``symbols=True`` also returns ``{name: offset}`` read back from the object
+    with ``nm``.  ``textlog.S`` needs it: its six draw-string stubs are entry
+    points the builder has to redirect call sites to, and counting instruction
+    bytes by hand to find them is exactly the kind of arithmetic that ships a
+    jump into the middle of an instruction.
+    """
     for tool in ("as", "objcopy"):
         if shutil.which(tool) is None:
             raise RuntimeError("%s not found (GNU binutils are required to build the "
@@ -104,11 +139,19 @@ def assemble(source: str = SOURCE) -> bytes:
         subprocess.run(["objcopy", "-O", "binary", "-j", ".text", obj, binp], check=True)
         with open(binp, "rb") as fh:
             blob = fh.read()
+        syms = {}
+        if symbols:
+            out = subprocess.run(["nm", "--format=posix", obj],
+                                 check=True, capture_output=True, text=True).stdout
+            for line in out.splitlines():
+                parts = line.split()
+                if len(parts) >= 3 and parts[1] in ("t", "T"):
+                    syms[parts[0]] = int(parts[2], 16)
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
     if not blob or len(blob) > 0x1000:
         raise RuntimeError("unexpected cave size %d" % len(blob))
-    return blob
+    return (blob, syms) if symbols else blob
 
 
 def short_path(p: str) -> str:
@@ -216,9 +259,15 @@ def build_image(trace: bool, english: bool = True) -> bytes:
         _redirect(image, CALL_SITES, EXEC_TOKEN, trc_va)
         pe = PE(bytes(image), "dds_trc")
         tlg_va = pe.imagebase + pe.sizeimage
-        image = bytearray(pe.append_section(".tlg", assemble(TEXTLOG_SOURCE),
-                                            TRC_CHARACTERISTICS))
+        blob, tsyms = assemble(TEXTLOG_SOURCE, symbols=True)
+        sites = drawstring_sites(bytes(image))
+        image = bytearray(pe.append_section(".tlg", blob, TRC_CHARACTERISTICS))
         _redirect(image, GLYPH_SITES, DRAWGLYPH, tlg_va)
+        for i, target in enumerate(DRAWSTRING, start=1):
+            stub = tsyms.get("str%d" % i)
+            if stub is None:
+                raise RuntimeError("textlog.S has no str%d entry point" % i)
+            _redirect(image, sites[target], target, tlg_va + stub)
     return bytes(image)
 
 

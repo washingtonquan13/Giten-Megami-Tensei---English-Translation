@@ -132,15 +132,30 @@ def test_release_exe_carries_the_overlay_hook_and_dev_adds_the_tracer():
     # -- so the release build must carry none of this.
     tlg = pe2.section(".tlg")
     tlg_va = pe2.imagebase + tlg["vaddr"]
-    blob2 = tracer.assemble(tracer.TEXTLOG_SOURCE)
+    blob2, tsyms = tracer.assemble(tracer.TEXTLOG_SOURCE, symbols=True)
     assert dev[tlg["rawptr"]:tlg["rawptr"] + tlg["vsize"]] == blob2
     _calls_go_to(dev, pe2, tracer.GLYPH_SITES, tlg_va)
     for site in tracer.GLYPH_SITES:
         off = pe2.va2off(site)
         assert (site + 5 + struct.unpack_from("<i", rel, off + 1)[0]) \
             == tracer.DRAWGLYPH, hex(site)          # release still original
-    assert struct.pack("<I", tracer.DRAWGLYPH) in blob2      # the tail call
     assert b"textout.bin\0" in blob2 and b"GTXT" in blob2
+
+    # ...and each of the six draw-string variants: every call site in the game
+    # goes to that variant's own stub, and the release build still calls the
+    # real function.  The sites are found by scanning, so a variant that grew a
+    # caller is covered without editing a list.
+    dsites = tracer.drawstring_sites(rel)
+    assert sum(len(v) for v in dsites.values()) == 71
+    for i, target in enumerate(tracer.DRAWSTRING, start=1):
+        stub = tlg_va + tsyms["str%d" % i]
+        assert dsites[target], hex(target)
+        _calls_go_to(dev, pe2, dsites[target], stub)
+        for site in dsites[target]:
+            off = pe2.va2off(site)
+            assert (site + 5 + struct.unpack_from("<i", rel, off + 1)[0]) \
+                == target, hex(site)
+        assert struct.pack("<I", target) in blob2         # in the target table
     diffs = [i for i in range(len(rel)) if rel[i] != dev[i]]
     # allowed: the redirected rel32s, the COFF/optional-header fields that a new
     # section moves, and the section header table.  Both are derived from the PE
@@ -150,6 +165,8 @@ def test_release_exe_carries_the_overlay_hook_and_dev_adds_the_tracer():
     allowed = ({pe2.va2off(s) + k for s in tracer.CALL_SITES for k in (1, 2, 3, 4)}
                | {pe2.va2off(s) + k for s in tracer.GLYPH_SITES
                   for k in (1, 2, 3, 4)}                  # the glyph calls
+               | {pe2.va2off(s) + k for v in dsites.values()
+                  for s in v for k in (1, 2, 3, 4)}       # the string calls
                | set(range(pe2.e_lfanew + 6, pe2.e_lfanew + 8))       # NumberOfSections
                | set(range(opt + 4, opt + 16))                        # SizeOf{Code,Init,Uninit}Data
                | set(range(opt + 56, opt + 60))                       # SizeOfImage
