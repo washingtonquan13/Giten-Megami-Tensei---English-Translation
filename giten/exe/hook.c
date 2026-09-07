@@ -228,7 +228,9 @@ ENTRY u8 hook(u32 handle, u16 *pcp)
  * without it the accumulating deadline still averages 60 ticks a second.
  * After a stall (a window drag, a disk hitch) the deadline is re-based rather
  * than letting the game burst through the missed ticks. */
+#ifndef TICK3
 #define TICK3 50                /* one tick, in thirds of a millisecond */
+#endif
 #define STALL3 (3 * 250)        /* re-base if we are this far behind */
 
 static u32 deadline3;

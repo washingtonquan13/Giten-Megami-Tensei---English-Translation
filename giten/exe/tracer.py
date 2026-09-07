@@ -45,6 +45,10 @@ CFLAGS = ["-m32", "-O2", "-ffreestanding", "-nostdlib", "-fno-builtin",
           "-mno-stack-arg-probe", "-fno-pic", "-fcf-protection=none",
           "-mpreferred-stack-boundary=2", "-Wall", "-Werror"]
 
+#: main-loop ticks per second.  hook.c keeps deadlines in thirds of a
+#: millisecond, so a rate has to divide 3000 evenly.
+DEFAULT_HZ = 60
+
 EXEC_TOKEN = 0x439020
 #: VA of each ``E8`` that calls exec_token (the rel32 follows at +1)
 CALL_SITES = (0x4390C4, 0x439103, 0x43913C)
@@ -170,9 +174,16 @@ def short_path(p: str) -> str:
     return p
 
 
-def compile_hook_ex(cave_va: int) -> "tuple[bytes, dict[str, int]]":
+def compile_hook_ex(cave_va: int, hz: int = DEFAULT_HZ):
     """``hook.c`` -> (flat blob linked at ``cave_va`` per ``hook.ld``, hook first;
-    the VA of every global function in it, e.g. ``hook`` and ``pace``)."""
+    the VA of every global function in it, e.g. ``hook`` and ``pace``).
+
+    ``hz`` sets the main loop's tick rate.  ``hook.c`` keeps deadlines in
+    thirds of a millisecond, so the per-tick advance is ``3000 // hz`` and
+    only rates that divide 3000 evenly stay drift-free.
+    """
+    if 3000 % hz:
+        raise ValueError("%d Hz does not divide the 1/3 ms clock evenly" % hz)
     for tool in ("gcc", "ld", "objcopy", "nm"):
         if shutil.which(tool) is None:
             raise RuntimeError("%s not found (GNU binutils + gcc are required)" % tool)
@@ -180,7 +191,8 @@ def compile_hook_ex(cave_va: int) -> "tuple[bytes, dict[str, int]]":
     tmp = tempfile.mkdtemp(prefix="giten-hook-")
     try:
         obj, pe_, binp = (os.path.join(tmp, n) for n in ("hook.o", "hook.pe", "hook.bin"))
-        subprocess.run([gcc, *CFLAGS, "-DGAME", "-c", HOOK_SOURCE, "-o", obj], check=True)
+        subprocess.run([gcc, *CFLAGS, "-DGAME", "-DTICK3=%d" % (3000 // hz),
+                        "-c", HOOK_SOURCE, "-o", obj], check=True)
         undef = subprocess.run(["nm", "-u", obj], check=True, capture_output=True, text=True).stdout.split()
         if undef:
             raise RuntimeError("hook.c needs symbols the game cannot supply: %s" % undef)
@@ -230,7 +242,7 @@ def _redirect(image: bytearray, sites, old_target: int, new_target: int) -> None
 
 
 def build_image(trace: bool, english: bool = True,
-                pace: bool = True) -> bytes:
+                pace: bool = True, hz: int = DEFAULT_HZ) -> bytes:
     """Release image (locale patches) + the overlay hook, + the tracer if ``trace``.
 
     ``english=False`` skips the four data-table patches.  They are not optional
@@ -246,7 +258,7 @@ def build_image(trace: bool, english: bool = True,
         image = patch.apply(fh.read(), "release")
     pe = PE(image, "dds_release")
     ovl_va = pe.imagebase + pe.sizeimage             # where append_section will put it
-    blob, syms = compile_hook_ex(ovl_va)
+    blob, syms = compile_hook_ex(ovl_va, hz)
     image = bytearray(pe.append_section(".ovl", blob, TRC_CHARACTERISTICS))
     _redirect(image, FETCH_SITES, FETCH, ovl_va)
     if pace:
@@ -277,13 +289,24 @@ def build_image(trace: bool, english: bool = True,
     return bytes(image)
 
 
-def _write(out_dir, name, trace, english=True, pace=True):
+def _write(out_dir, name, trace, english=True, pace=True, hz=DEFAULT_HZ):
     out_dir = out_dir or os.path.join(paths.BUILD_DIR, "exe")
     os.makedirs(out_dir, exist_ok=True)
     dst = os.path.join(out_dir, name)
     with open(dst, "wb") as fh:
-        fh.write(build_image(trace, english, pace))
+        fh.write(build_image(trace, english, pace, hz))
     return dst
+
+
+def build_dev_nopace(out_dir: "str | None" = None) -> str:
+    """``dds_dev_nopace.exe``: the tracer, without the 60 Hz tick gate.
+
+    The pairing that makes a pacing A/B produce evidence rather than an
+    impression.  ``dds_nopace.exe`` has no tracer, so running it answers "does
+    it feel different" and nothing else; this one records the session too, so a
+    route played on both builds can be compared token for token.
+    """
+    return _write(out_dir, "dds_dev_nopace.exe", True, True, pace=False)
 
 
 def build_nopace(out_dir: "str | None" = None) -> str:
@@ -325,3 +348,15 @@ def build_dev_jp(out_dir: "str | None" = None) -> str:
     comparable with what the tokenizer produces from those same bytes.
     """
     return _write(out_dir, "dds_dev_jp.exe", True, english=False)
+
+
+def build_dev_hz(hz: int, out_dir: "str | None" = None) -> str:
+    """``dds_dev_<hz>hz.exe``: the tracer at a chosen main-loop tick rate.
+
+    For finding a playable rate by trying, rather than arguing about what the
+    original did.  Everything counted in ticks moves together, so a rate that
+    fixes battle and makes walking sluggish has still told us something: that
+    the battle clock wants a different divider from the rest, not that the
+    whole loop is mistimed.
+    """
+    return _write(out_dir, "dds_dev_%dhz.exe" % hz, True, True, hz=hz)

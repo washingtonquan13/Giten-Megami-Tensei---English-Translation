@@ -1985,3 +1985,48 @@ def test_the_overlay_file_id_is_right_for_every_script_family():
     assert sorted(dupes) == [0x00A2, 0x00A3], sorted(dupes)
     for k, v in dupes.items():
         assert len(v) == 2 and v[0].startswith("m/") != v[1].startswith("m/"), v
+
+
+def test_rebuilt_p_files_touch_only_the_name_field():
+    """The 432 ``p/`` files are direct edits, so prove they move nothing.
+
+    ``p/`` is the one family the overlay deliberately does not cover -- the name
+    is a fixed-width field, so it is written in place instead.  That was
+    dismissed as harmless because every file keeps its length, which is not the
+    same thing: a rebuild could still disturb bytes the engine indexes and no
+    length check would notice.
+
+    Checked in *body* coordinates, not file offsets.  A first pass at this used
+    the file offset and reported 431 of 432 files differing outside the field,
+    which was the arithmetic being wrong rather than the files.
+    """
+    from giten import container, paths, spans
+
+    a_dir = os.path.join(paths.ORIGINAL_DDSWIN, "p")
+    b_dir = os.path.join(os.path.dirname(paths.ORIGINAL_DDSWIN.rstrip(os.sep)),
+                         "..", "play", "en", "ddswin", "p")
+    b_dir = os.path.normpath(b_dir)
+    if not os.path.isdir(b_dir):
+        return                               # no installed build to compare against
+
+    lo, hi = spans.PNAME_OFF, spans.PNAME_OFF + spans.PNAME_LEN
+    checked = 0
+    for name in sorted(os.listdir(a_dir)):
+        with open(os.path.join(a_dir, name), "rb") as fh:
+            a = fh.read()
+        pb = os.path.join(b_dir, name)
+        if not os.path.exists(pb):
+            continue
+        with open(pb, "rb") as fh:
+            b = fh.read()
+        checked += 1
+        assert len(a) == len(b), name
+        ca, ea = container.split(a)
+        cb, eb = container.split(b)
+        assert len(ca) == len(cb) and ea == eb, name
+        for i, (x, y) in enumerate(zip(ca, cb)):
+            differ = [k for k in range(len(x.body)) if x.body[k] != y.body[k]]
+            if i == 0:
+                differ = [k for k in differ if not (lo <= k < hi)]
+            assert not differ, (name, i, differ[:4])
+    assert checked > 400, checked
