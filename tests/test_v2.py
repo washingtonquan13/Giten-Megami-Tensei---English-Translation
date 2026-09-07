@@ -2167,13 +2167,23 @@ def test_the_verifier_catches_a_branch_served_out_of_our_english():
     with open(mut_ovl, "wb") as fh:
         fh.write(overlay.build(ents))
 
-    # one record whose PC is just past that byte, logging what we now serve
+    # one record whose PC is just past that byte, logging what we now serve.
+    # The record id and the index entry have to be the real ones for that
+    # address: since the verifier stopped trusting the file register on its
+    # own, a finding is only made when the engine's own index entry says the
+    # label describes the buffer -- so the mutation has to supply one.
     with open(trace, "rb") as fh:
         blob = fh.read()
-    # rec is left alone: the overlay file format does not carry a record id
-    # (it comes back as -1), and the served-byte test keys on file and pc only.
-    bad = _rewrite_record(blob, 1, file=e.fid,
-                          pc=s.start + k + 1, pc0=s.start + k, ch=0x0C)
+    rel = core._rel_of(e.fid)
+    with open(os.path.join(paths.ORIGINAL_DDSWIN, *rel.split("/")), "rb") as fh:
+        img = core._Image(rel, fh.read(), ents)
+    rec_id = max(i for i, b in img.base.items() if b <= s.start)
+    off, ln = core._index_entry(img, rec_id)
+    # pc0 is one past the dispatched byte -- the caller fetches it, and that
+    # fetch is what moves the PC -- so a `0C` at s.start+k is logged with
+    # pc0 == s.start+k+1.
+    bad = _rewrite_record(blob, 1, file=e.fid, rec=rec_id, idx_off=off, idx_len=ln,
+                          pc=s.start + k + 1, pc0=s.start + k + 1, ch=0x0C)
     p = os.path.join(d, "mutant.gtrc")
     with open(p, "wb") as fh:
         fh.write(bad)
@@ -2193,6 +2203,146 @@ def test_the_clean_fixture_survives_every_mutation_being_reverted():
     assert findings == [], findings[:3]
     assert stats["out of bounds"] == 0
     assert stats["served"] > 500 and stats["from the file"] > 1500
+    # and the two gates below must not be passing by never engaging
+    assert stats["virtual PCs"] > 100, stats
+    assert stats["unpaired virtual PCs"] == 0, stats
+    assert stats["label contradicted"] > 0, stats
+
+
+# ---------------------------------------------------------------------------
+# The two gates that were missing, and what they cost me to find.
+#
+# The soft-lock trace reported 228 program counters "outside the file and our
+# overlay", in m/MS00DD record 0x4E.  Both halves of that sentence were wrong,
+# for two different reasons, and each is now a gate with a mutation test.
+#
+#   * The file a record is labelled with comes from an engine global written
+#     when a script is LOADED.  Several scripts are resident at once and the
+#     interpreter runs whichever its context points at, so while it runs an
+#     older one the global still names the file loaded most recently.  All 228
+#     records carried an index entry -- read by trace.S out of the live buffer
+#     -- that MS00DD cannot produce: (0x4BEF, 1), when MS00DD's whole index
+#     stops at 0x1CC9.  They were judged against a file that was not running.
+#
+#   * A trace only means anything against the overlay that produced it, and
+#     nothing enforced that.  Re-checking the 2026-09-06 trace against today's
+#     overlay reported 891 out-of-bounds PCs in m/MS0017; every one was an
+#     artifact of one span (record 6, span 7) whose English has since been
+#     dropped from the table, which shifted every virtual address above it.
+#     The giveaway was that the engine kept reading coherent English past the
+#     end of the last tail -- "and a discarded DB blouson lying next to it" --
+#     which memory past the script buffer cannot produce.
+# ---------------------------------------------------------------------------
+
+def test_a_stale_file_label_is_never_judged():
+    """Corroboration must gate the bounds check, not decorate it.
+
+    Same mutation as the out-of-bounds test -- a program counter moved out of
+    range -- but with the engine's index entry changed too, so the label no
+    longer describes the buffer.  The first mutation alone must be reported;
+    the pair must not, because there is no longer any file to report it
+    against.  Without this, `_corroborated` could return True unconditionally
+    and every test here would still pass.
+    """
+    import tempfile
+    from giten import paths
+    from giten.trace import core
+
+    trace, ovl = _fixture_paths()
+    with open(trace, "rb") as fh:
+        blob = fh.read()
+    body = blob[core.HEADER.size:]
+
+    n = next(i for i in range(400)
+             if core.RECORD_V2.unpack_from(body, i * core.RECORD_V2.size)[9]
+             and core.RECORD_V2.unpack_from(body, i * core.RECORD_V2.size)[7])
+    d = tempfile.mkdtemp()
+
+    # 1. out of range, label intact -> reported
+    p = os.path.join(d, "labelled.gtrc")
+    with open(p, "wb") as fh:
+        fh.write(_rewrite_record(blob, n, pc0=0xF000))
+    stats, findings = core.verify(p, paths.ORIGINAL_DDSWIN, ovl)
+    assert _first_of(findings, "outside the file"), stats
+
+    # 2. out of range, and the engine's own entry says this is not that file
+    q = os.path.join(d, "stale.gtrc")
+    with open(q, "wb") as fh:
+        fh.write(_rewrite_record(blob, n, pc0=0xF000, idx_off=0x4BEF, idx_len=1))
+    stats2, findings2 = core.verify(q, paths.ORIGINAL_DDSWIN, ovl)
+    assert not _first_of(findings2, "outside the file"), \
+        "a program counter was judged against a file the engine was not running"
+    assert stats2["label contradicted"] == stats["label contradicted"] + 1, \
+        (stats2["label contradicted"], stats["label contradicted"])
+
+
+def test_a_trace_is_refused_against_an_overlay_that_did_not_produce_it():
+    """Move one span's virtual address and require the pairing gate to fire.
+
+    Dropping a span is what really happened, but it changes span *count* as
+    well as addresses; moving one tail by a byte isolates the property being
+    tested -- that virtual addresses are ours, so they can only agree with the
+    overlay that assigned them.
+    """
+    import tempfile
+    from giten import overlay, paths
+    from giten.trace import core
+
+    trace, ovl_path = _fixture_paths()
+    with open(ovl_path, "rb") as fh:
+        ents = overlay.parse(fh.read())
+
+    # the file the fixture spends most of its virtual PCs in
+    stats, _ = core.verify(trace, paths.ORIGINAL_DDSWIN, ovl_path)
+    assert stats["virtual PCs"] > 100 and stats["unpaired virtual PCs"] == 0
+
+    moved = 0
+    for e in ents:
+        for s in e.spans:
+            if s.tail:
+                s.virt += 1                 # every address above this one shifts
+                moved += 1
+    assert moved, "the fixture overlay has no tails to move"
+
+    d = tempfile.mkdtemp()
+    p = os.path.join(d, "shifted.gtov")
+    with open(p, "wb") as fh:
+        fh.write(overlay.build(ents))
+    stats2, findings = core.verify(trace, paths.ORIGINAL_DDSWIN, p)
+    assert _first_of(findings, "not the one that produced this trace"), \
+        "a trace was checked against an overlay that could not have produced it"
+    assert stats2["unpaired virtual PCs"] > 0, stats2
+
+
+def test_the_pairing_gate_stops_the_verifier_rather_than_colouring_it():
+    """A refused pairing must suppress the per-event findings, not add to them.
+
+    Every address-based answer is wrong once the pairing is wrong, so reporting
+    them alongside the refusal would be handing over conclusions drawn from the
+    wrong text.  The report says REFUSED and stops.
+    """
+    import tempfile
+    from giten import overlay, paths
+    from giten.trace import core
+
+    trace, ovl_path = _fixture_paths()
+    with open(ovl_path, "rb") as fh:
+        ents = overlay.parse(fh.read())
+    for e in ents:
+        for s in e.spans:
+            if s.tail:
+                s.virt += 1
+    d = tempfile.mkdtemp()
+    p = os.path.join(d, "shifted.gtov")
+    with open(p, "wb") as fh:
+        fh.write(overlay.build(ents))
+
+    _stats, findings = core.verify(trace, paths.ORIGINAL_DDSWIN, p)
+    assert len(findings) == 1, [f[1] for f in findings[:4]]
+    text, rc = core.report_verify(trace, paths.ORIGINAL_DDSWIN, 20, p)
+    assert rc == 1
+    assert "REFUSED" in text
+    assert "wrong build directory" not in text, text
 
 
 def test_a_span_whose_japanese_carries_ff_is_never_overlaid():

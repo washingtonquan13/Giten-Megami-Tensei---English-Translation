@@ -45,33 +45,53 @@ containers of a multi-container file apart.  A buffer whose entry 0 is not at
 
 * Logic cannot change: no script byte is written.  On the same route the EN
   trace must equal the JP trace opcode for opcode (`trace diff`).
-* ~~A wrong span boundary (tokenizer error) shows Japanese or garbled text for
-  that line; it cannot move a branch or crash the interpreter.~~
-  **FALSIFIED 2026-09-07 by a recorded soft lock.**  A session ended in an
-  infinite loop printing a party member's name, and the trace shows the engine
-  dispatching from PC `0x5BE3` in `m/MS00DD` -- whose real image ends at
-  `0x1CC9` and whose virtual tails stop at `0x202A`.  228 records in that state,
-  reading memory neither the script nor the overlay owns and executing whatever
-  followed the record buffer.  No wrong byte was served: every check that asks
-  *what was executed* stayed green, because the loop is built from `01 xx` pool
-  calls, a legal inline opcode.
-  `giten trace verify` now checks the property that was missing -- every PC the
-  engine dispatches from must be inside the real image or a virtual range we
-  declared -- and each of its checks has a mutation test proving it fires.
-  **This can only happen on a translated build**: virtual PCs exist because
-  English is longer than Japanese, so an untranslated run never produces a PC
-  above `image_end` and the bug is unreachable there.
-  How the PC gets out of range is not yet established.  It follows an `r == -1`
-  (the interpreter's "page full, loop exits") on `m/MS00DD` record `0x4E`, which
-  is a single 33-byte `1EB0` opcode -- a menu definition, `dd XX YY 00` entries
-  terminated by `ff` -- that our model measures correctly and that simply ends.
-  The prime suspect is the **menu rescanner `0x435D23`**, listed above as a PC
-  writer under the assumption that "a virtual PC survives all of them; there is
-  no hidden state".  That assumption is what now needs testing.
-  Ruled out while narrowing: the container-0 limitation (`m/MS00DD` has exactly
-  one container and one overlay entry), and a page-capacity rule -- the Japanese
-  itself needs more than three rendered lines on 2,609 pages and more than six
-  on 236, so there is no fixed box the original respects and we exceed.
+* A wrong span boundary (tokenizer error) shows Japanese or garbled text for
+  that line.  Whether it can also move a branch is **open**: not disproven, and
+  not proven either.  One way it provably can is recorded below, under the
+  menu rescanner.
+
+  *A retraction.*  On 2026-09-07 this guarantee was struck as FALSIFIED, on the
+  strength of a recorded soft lock whose trace showed 228 records dispatching
+  from PC `0x5BE3` in `m/MS00DD`, a file whose image ends at `0x1CC9`.  That
+  reading was wrong and the strike is withdrawn.  The file a trace record is
+  labelled with comes from the engine global `0x4911B0`, which is written when
+  a script is **loaded**; several scripts are resident at once and the
+  interpreter runs whichever its context points at, so while it runs an earlier
+  one the global still names the file loaded most recently.  All 228 records
+  carried an index entry -- which `trace.S` reads out of the *live* buffer --
+  of `(0x4BEF, 1)`, and `m/MS00DD`'s entire index stops at `0x1CC9`, so the
+  buffer being executed was not `m/MS00DD` at all.  They were program counters
+  judged against a file that was not running.  Nothing in that trace shows the
+  engine leaving the script.
+  `giten trace verify` now refuses to judge a record whose file label the
+  engine's own index entry contradicts (18,504 of 141,148 on that trace), and
+  reports **0** program counters outside the file and our overlay.
+
+  A second hole came out of the same chase.  A trace only means anything
+  against the overlay that produced it, and nothing enforced that: the
+  2026-09-06 trace re-checked against a later overlay reported 891
+  out-of-bounds PCs in `m/MS0017`, every one an artifact of a single span whose
+  English has since been dropped, shifting every virtual address above it.
+  The tell was that the engine kept reading coherent English past the end of
+  the last tail -- *"and a discarded DB blouson lying next to it"* -- which
+  memory past the script buffer cannot produce.  `verify` now refuses a trace
+  whose virtual PCs hold different bytes than the overlay it is handed puts
+  there; virtual addresses exist only because the hook creates them, so this
+  needs nothing stamped into either file.  It separates the traces on disk
+  completely: three agree on all 31,430 virtual PCs, two disagree on 5,769.
+
+  **What still stands from that investigation**: `verify` does now check that
+  every dispatched PC is inside the real image or a virtual range we declared,
+  and every check has a mutation test proving it fires.  Such a PC *can* only
+  arise on a translated build, since virtual PCs exist because English is
+  longer than Japanese.  The soft lock itself is **unexplained** -- it follows
+  an `r == -1` ("page full, loop exits") on `m/MS00DD` record `0x4E`, a single
+  33-byte `1EB0` menu definition our model measures correctly, after which the
+  context is a different buffer entirely.  Ruled out while narrowing: the
+  container-0 limitation (`m/MS00DD` has one container and one overlay entry);
+  a page-capacity rule (the Japanese itself needs more than three rendered
+  lines on 2,609 pages and more than six on 236); and, now, the claim that the
+  engine was executing memory nobody owns.
 * A span is diverted only when entered at its first byte.  The lines a branch
   lands *inside* (`@noedit`, 115 in the corpus) keep their Japanese tail.
 * Per file, the English *excess* over the Japanese must fit between the image

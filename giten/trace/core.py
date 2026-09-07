@@ -208,13 +208,24 @@ class _Image:
         for k, t in enumerate(r.tokens):
             if t.off == end:
                 return hit(k, t, True)
-        # 3. v2 only: the token that *starts* at pc0.  The post-call pc is 0
-        #    whenever the token ended the script, because the engine clears the
-        #    context before the hook reads it back -- but pc0 was snapshotted
-        #    before the call and is always good.  This is what rescues those
-        #    events; it is a weaker anchor than 1., so it is tried last.
+        # 3. v2 only: the token pc0 sits just past the front of.  The post-call
+        #    pc is 0 whenever the token ended the script, because the engine
+        #    clears the context before the hook reads it back -- but pc0 was
+        #    snapshotted before the call and is always good.  This is what
+        #    rescues those events; it is a weaker anchor than 1., so it is
+        #    tried last.
+        #
+        #    pc0 is NOT the token's first byte: the caller fetches that byte
+        #    (two, for a wide character) before it calls exec_token, and the
+        #    fetch is what advances the PC -- an opcode's operands are consumed
+        #    later, inside the handler.  So the token starts at pc0 minus the
+        #    width of what was fetched.  Measured over the soft-lock trace,
+        #    restricted to corroborated files at addresses the overlay does not
+        #    serve: 35,713 events have the logged character at pc0 - width and
+        #    none has it at pc0 alone.  This rule used to take pc0 itself and
+        #    so placed every event it rescued one token too far along.
         if pc0 is not None:
-            start = pc0 - b
+            start = pc0 - (2 if ch > 0xFF else 1) - b
             if 0 <= start < len(r.data):
                 for k, t in enumerate(r.tokens):
                     if t.off == start:
@@ -465,14 +476,118 @@ def _owned(entry, image_end: int):
 def _in_bounds(ranges, pc: int) -> bool:
     return any(lo <= pc < hi for lo, hi in ranges)
 
+
+def _index_entry(img, rec_id: int):
+    """Our model of the engine's index entry for one record: ``(off, len)``.
+
+    The runtime index is 256 slots of ``{u16 offset, u16 length}``; a record the
+    container does not carry is one byte long, which is what the loader leaves
+    the slot at.  ``records.bases`` already encodes both halves.
+    """
+    if not img.base:
+        return None
+    r = img.by_id.get(rec_id)
+    return img.base[rec_id], (len(r.data) if r is not None else records.ABSENT_LEN)
+
+
+def _corroborated(img, ev) -> bool:
+    """Does the engine's own index entry agree that ``ev`` names this file?
+
+    ``file`` and ``rec`` come from two engine globals (``0x4911B0``,
+    ``0x4911B2``) that are written when a script is *loaded*.  The interpreter
+    runs whatever buffer its context points at and several scripts are resident
+    at once, so while it runs an older one those globals still name the file
+    loaded most recently -- the label is stale, and anything judged against it
+    is judged against the wrong file.
+
+    ``idx_off``/``idx_len`` are different: ``trace.S`` reads them out of the
+    buffer the context actually points at.  So when they equal the entry our
+    model gives that file for that record, both globals describe the running
+    buffer and the label can be used.  When they do not, at least one of them
+    does not, and there is no way to tell which -- so nothing is claimed.
+
+    An event with no entry logged (a null context or handle, which the engine
+    produces legitimately between scripts) is not corroborated either.
+    """
+    return bool(ev.idx_off) and _index_entry(img, ev.rec) == (ev.idx_off, ev.idx_len)
+
+
+def paired(events, images) -> "tuple[int, int, int]":
+    """``(agreeing, wrong byte, outside every tail)`` over virtual PCs.
+
+    A virtual program counter -- one at or above the file's image end -- exists
+    for exactly one reason: our hook put it there, because the English in some
+    span did not fit where the Japanese was.  So for a file whose label the
+    engine's index entry corroborates, every virtual PC in the trace has to lie
+    inside one of that file's tails and carry the byte that tail holds.
+
+    That makes this a test of whether the overlay handed to ``verify`` is the
+    one that produced the trace, and it needs nothing stamped into either file.
+    Drop one span and every virtual address above it shifts, so the bytes stop
+    agreeing immediately.  Over the five traces on disk it separates them
+    completely: the three taken on the overlay now installed agree on all
+    31,430 of their virtual PCs, the two older ones disagree on 5,769.
+
+    A program counter that is itself the *first* address of a tail is skipped.
+    Landing there is the one fetch whose PC does not advance by one -- the hook
+    hands it from the end of the in-place head straight to ``virt`` -- so the
+    byte just read was in the head, at an address no subtraction recovers.
+    Tails are allocated back to back, so this is also every ``vend``.
+    """
+    ok = wrong = outside = 0
+    tails = {}
+    for ev in events:
+        img = images.get(ev.rel)
+        if img is None or img.entry is None or not ev.pc0:
+            continue
+        if not _corroborated(img, ev):
+            continue
+        if ev.pc0 < img.entry.image_end:
+            continue
+        t = tails.get(ev.rel)
+        if t is None:
+            t = [s for s in img.entry.spans if s.tail]
+            t.sort(key=lambda s: s.virt)
+            t = (t, {s.virt for s in t})
+            tails[ev.rel] = t
+        spans, virts = t
+        if ev.pc0 in virts:
+            continue
+        width = 2 if ev.ch > 0xFF else 1
+        a = ev.pc0 - width
+        want = (bytes([(ev.ch >> 8) & 0xFF, ev.ch & 0xFF]) if width == 2
+                else bytes([ev.ch & 0xFF]))
+        got = None
+        for s in spans:
+            if s.virt <= a and a + width <= s.vend:
+                k = s.head + a - s.virt
+                got = s.data[k:k + width]
+                break
+        if got is None:
+            outside += 1
+        elif got == want:
+            ok += 1
+        else:
+            wrong += 1
+    return ok, wrong, outside
+
+
 def _served_bytes(img, pc: int, ch: int):
     """The bytes the overlay actually handed the engine at ``pc``, or None.
 
+    ``pc`` here is ``pc0`` -- the program counter as the token was dispatched,
+    which is one past what the caller fetched: one byte for an opcode (its
+    operands are consumed later, inside the handler) or the width of the
+    character for text.  The post-token ``pc`` will not do: after a pool call
+    (opcodes ``01``-``08``, which our own spans contain wherever a word comes
+    out of the dictionary) it names an address in the *pool* file, and asking
+    this file about it produced a run of "byte does not match the original"
+    findings against text that was ours and correct.
+
     A PC falling inside a span's address range only says where the hook *would*
     substitute.  What settles it is reconstructing the byte the hook would have
-    returned and requiring it to equal what the engine logged -- the trace's
-    ``pc`` is one past the token, so a one-byte token read ``english[pc-1]`` and
-    a two-byte token read ``english[pc-2:pc]``.
+    returned and requiring it to equal what the engine logged -- so a one-byte
+    token read ``english[pc-1]`` and a two-byte token read ``english[pc-2:pc]``.
 
     Asking the range alone was the first cut and it was wrong in every case
     sampled: a span serving ``'No one here...\\n'`` has ``0x20`` where the trace
@@ -552,7 +667,8 @@ def verify(trace_path: str, build_dir: "str | None" = None,
         rs, body = RECORD_V1, data
 
     stats = {"records": 0, "served": 0, "from the file": 0, "unverified": 0,
-             "in a name print": 0, "out of bounds": 0,
+             "in a name print": 0, "out of bounds": 0, "label contradicted": 0,
+             "virtual PCs": 0, "unpaired virtual PCs": 0,
              "overlay entries": len(entries or [])}
     findings, images, events, bounds = [], {}, [], {}
     for n in range(len(body) // rs.size):
@@ -573,6 +689,37 @@ def verify(trace_path: str, build_dir: "str | None" = None,
     # just past a span serving 'Emi:'.
     _mark_name_excursions(events, images)
 
+    # Is this overlay the one that produced this trace?  Asked before anything
+    # is judged, because if it is not, every virtual address in the trace names
+    # a different span than it did when it was recorded, and the findings are
+    # about the wrong text.  That is what an older trace re-checked against a
+    # newer overlay looks like, and it used to come out as 891 out-of-bounds
+    # program counters instead of "these two do not go together".
+    # Only the *wrong byte* count refuses.  A virtual PC that lands outside
+    # every tail is left to the bounds check below, because that is exactly
+    # what a stray program counter looks like -- refusing on it would let the
+    # pairing gate swallow the bug the bounds check exists to find.  A stale
+    # overlay is caught by the other half: shift or drop one span and every
+    # address above it moves, so the addresses that are still claimed start
+    # holding the wrong text.  Measured on the five traces on disk that is
+    # enough on its own (0, 0, 0 against 1,871 and 3,008).
+    ok, wrong, outside = paired(events, images)
+    stats["virtual PCs"] = ok + wrong + outside
+    stats["unpaired virtual PCs"] = wrong
+    if wrong:
+        stats["records"] = len(events)
+        ev = events[0] if events else Event(0, 0, 0, 0, 0, 0, 0, 0)
+        return stats, [(ev, "the overlay is not the one that produced this trace",
+                        "%d of %d virtual program counters hold a different byte "
+                        "than this overlay puts there.  Virtual addresses exist "
+                        "only because the hook creates them, so this is not a "
+                        "property of the game: either this is not the overlay "
+                        "that ran -- the usual case, the tables changed since -- "
+                        "or the hook did not serve what this overlay says "
+                        "(tests/test_overlay.py is what settles that half).  "
+                        "Either way, re-run the route on this build first."
+                        % (wrong, ok + wrong + outside))]
+
     for ev in events:
         stats["records"] += 1
         if ev.kind == NAME_KIND:
@@ -581,6 +728,15 @@ def verify(trace_path: str, build_dir: "str | None" = None,
         img = images[ev.rel]
         if img is None:
             stats["unverified"] += 1
+            continue
+
+        # Whose file is this really?  The label comes from an engine global
+        # written on load, not on every context switch, so it can name a file
+        # the interpreter is not running -- and then every question below is
+        # asked of the wrong file.  Nothing is claimed unless the engine's own
+        # index entry says the label describes the live buffer.
+        if not _corroborated(img, ev):
+            stats["label contradicted"] += 1
             continue
 
         # Does this program counter exist at all?  Checked before anything
@@ -604,10 +760,14 @@ def verify(trace_path: str, build_dir: "str | None" = None,
                 findings.append((ev, "program counter outside the file and our overlay",
                                  "pc0 0x%04X is past the image and in no virtual "
                                  "range we declared; the engine is executing memory "
-                                 "nobody owns" % ev.pc0))
+                                 "nobody owns.  The other reading is an overlay "
+                                 "that has changed above every virtual address "
+                                 "this route still agrees on -- rare, but check "
+                                 "the trace is from this build before acting"
+                                 % ev.pc0))
                 continue
 
-        served = _served_bytes(img, ev.pc, ev.ch)
+        served = _served_bytes(img, ev.pc0 or ev.pc, ev.ch)
         if served is not None:
             stats["served"] += 1
             if served[0] in FLOW_OPCODES and len(served) == 1:
@@ -634,6 +794,14 @@ def report_verify(trace_path: str, build_dir: "str | None" = None,
                   limit: int = 20, overlay_path: "str | None" = None):
     stats, findings = verify(trace_path, build_dir, overlay_path)
     out = ["%s" % os.path.basename(trace_path)]
+    # The pairing gate answers before anything is placed, so it is reported
+    # before the placement line -- otherwise a refused trace reads as "wrong
+    # build directory", which sends the reader looking in the wrong place.
+    unpaired = [f for f in findings if "not the one that produced" in f[1]]
+    if unpaired:
+        out.append("  REFUSED: %s" % unpaired[0][1])
+        out.append("    %s" % unpaired[0][2])
+        return "\n".join(out), 1
     placed = stats["served"] + stats["from the file"]
     out.append("  %d records: %d placed (%d served by the overlay, %d read "
                "from the file), %d unverified"
@@ -644,6 +812,15 @@ def report_verify(trace_path: str, build_dir: "str | None" = None,
         return "\n".join(out), 1
     out.append("  %.1f%% of the trace was checked"
                % (100.0 * placed / max(1, stats["records"])))
+    if stats["label contradicted"]:
+        out.append("  %d record(s) whose file label the engine's own index entry"
+                   " contradicts;" % stats["label contradicted"])
+        out.append("    nothing is claimed about those -- the file register is "
+                   "written on load,")
+        out.append("    not on every context switch")
+    if stats["virtual PCs"]:
+        out.append("  %d virtual program counter(s), all of them served by this "
+                   "overlay" % stats["virtual PCs"])
     if stats["out of bounds"]:
         out.append("  %d program counter(s) outside the file AND our overlay"
                    % stats["out of bounds"])
