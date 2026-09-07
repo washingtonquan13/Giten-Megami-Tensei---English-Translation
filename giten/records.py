@@ -252,3 +252,48 @@ def load(rel: str, raw: bytes) -> FileImage:
     return img
 
 
+
+
+def layout_is_ambiguous(recs: "list[Record]") -> bool:
+    """Does a duplicate record id leave this container's runtime layout undecided?
+
+    A container may hold two records with the same id.  :func:`bases` and
+    :func:`overlay.engine_index` both take the **first**, but which one the
+    loader actually keeps has never been observed, so the honest question is not
+    "is there a duplicate" -- it is whether the answer would change anything.
+
+    It only can when the copies differ in length: the image is laid out by id,
+    so keeping a 24-byte record instead of a 4-byte one shifts every later id.
+    Two copies of the same length leave every base identical either way and
+    there is nothing to be ambiguous about.
+
+    Measured over the corpus, this matters both ways.  `m/MS6000` c0 and c1
+    duplicate ids whose copies are one byte each and identical -- **0 of 256
+    bases differ** -- yet were blocked, holding 502 characters and 109 finished
+    translations.  `m/MS6012` c4 duplicates a 12-byte record with a 28-byte one
+    -- **235 of 256 bases differ, by up to 16 bytes** -- and was *not* blocked,
+    because the old test asked whether the container contained a `rel16`.  That
+    is the wrong question: an overlay span's runtime address is
+    ``base(id) + offset`` whether or not anything branches.
+    """
+    by_id = {}
+    for r in recs:
+        by_id.setdefault(r.id, []).append(r)
+    dups = [v for v in by_id.values() if len(v) > 1]
+    if not dups:
+        return False
+    # Same length but different bytes would leave the *content* at that base
+    # undecided even though the layout is fine.  No such case exists in the
+    # corpus today, but the predicate has to be right, not merely lucky.
+    if any(len({bytes(x.data) for x in v}) > 1 and len({len(x.data) for x in v}) == 1
+           for v in dups):
+        return True
+    first = bases(recs)
+    have = {}
+    for r in recs:
+        have[r.id] = len(r.data)                  # last wins
+    off, last = INDEX_SIZE, {}
+    for i in range(256):
+        last[i] = off
+        off += have.get(i, ABSENT_LEN)
+    return first != last

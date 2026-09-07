@@ -365,20 +365,24 @@ def parse(rel: str, raw: bytes, tab=None) -> Script:
             body_off += r.stored_len
             image_off += len(r.data)
         if len(seen) != len(recs):
-            # Two records with the same id in one container: the runtime index has
-            # one slot per id, so `base(id)` -- and therefore every branch measured
-            # against it -- is ambiguous.  9 containers corpus-wide, all in
-            # m/MS6000, m/MS6012 and m/MS6800.
+            # Two records with the same id in one container: the runtime index
+            # has one slot per id, so one of them is what the loader keeps and
+            # the other is never in the image.  10 containers corpus-wide, in
+            # m/MS6000, m/MS6012, m/MS610B and m/MS6800.
             #
-            # The ambiguity only *matters* where something is measured against
-            # `base(id)`, which means a rel16.  Five of the nine containers hold
-            # no branch at all -- they are flat string pools -- so an edit there
-            # cannot land wrong, and blocking them would throw away real
-            # translations for a hazard that is not present.  The four that do
-            # branch (MS6000 containers 0, 1 and 8; MS6800 container 0) are
-            # blocked.
-            if any(o.kind == "rel16" for rec in rows if rec.tokens
-                   for t in rec.tokens for o in t.ops):
+            # This used to block a container when it contained a `rel16`, on the
+            # grounds that only a branch is measured against `base(id)`.  That is
+            # the wrong question, and it was wrong in both directions: an overlay
+            # span's runtime address is `base(id) + offset` whether or not
+            # anything branches, so `m/MS6012` c4 -- whose duplicate moves 235 of
+            # 256 bases by up to 16 bytes -- was editable; while `m/MS6000` c0 and
+            # c1, whose duplicated ids are one byte each and byte-identical so
+            # that *no* base moves either way, were blocked, holding 502
+            # characters and 109 finished translations hostage.
+            #
+            # The real question is whether resolving the duplicate one way or the
+            # other changes anything at all.  See records.layout_is_ambiguous.
+            if records.layout_is_ambiguous(recs):
                 for rec in rows:
                     rec.blocked = DUPID_NOTE
             else:
