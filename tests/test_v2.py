@@ -1772,3 +1772,53 @@ def test_the_exe_is_only_as_patched_as_the_documentation_says():
     assert behaviour == ["xp", "pace", "popup"], behaviour
     assert sum(n for t, n, _, is_text in EXE_PASSES
                if not is_text and t != "xp") == 11
+
+
+def test_the_skill_and_map_label_databases_round_trip_byte_exactly():
+    """``etdb`` parses ET0004/ET0101 and rebuilds them unchanged.
+
+    Both are the ``u16 count + u16 offset[] + records`` shape ``itemdb``
+    documents, but with a *fixed* header instead of a type byte, so the whole
+    file must come back byte-for-byte before any English is substituted -- the
+    same bar the item database had to clear.
+    """
+    from giten import container, etdb, paths
+
+    for spec in etdb.SPECS.values():
+        path = os.path.join(paths.ORIGINAL_DDSWIN, spec.rel.replace("/", os.sep))
+        with open(path, "rb") as fh:
+            original = fh.read()
+        body = etdb.source(spec)
+        recs = etdb.parse(spec, body)
+        assert etdb.build(spec, recs) == body, spec.rel
+        assert etdb.pack_file(spec, etdb.build(spec, recs)) == original, spec.rel
+
+        # every record really does split into the declared number of strings
+        for r in recs:
+            assert len(r.strings) == spec.fields, (spec.rel, r.index)
+            assert len(r.head) == spec.header, (spec.rel, r.index)
+
+    # ...and substituting English changes only the strings, never the shape.
+    spec = etdb.SKILLS
+    recs = etdb.parse(spec, etdb.source(spec))
+    body = etdb.build(spec, recs, {(0, 0): "No Attack"})
+    again = etdb.parse(spec, body)
+    assert len(again) == len(recs)
+    assert again[0].text(0) == "No Attack"
+    assert again[0].head == recs[0].head
+    assert [r.text(1) for r in again] == [r.text(1) for r in recs]
+
+
+def test_etdb_refuses_a_body_that_outgrows_the_u16_offset_table():
+    """The offset table is ``u16``; a body past 64 KB would wrap, not truncate."""
+    from giten import etdb
+
+    spec = etdb.SKILLS
+    recs = etdb.parse(spec, etdb.source(spec))
+    huge = {(r.index, 1): "x" * 400 for r in recs}        # ~124 KB of description
+    try:
+        etdb.build(spec, recs, huge)
+    except etdb.EtDbError as exc:
+        assert "u16" in str(exc)
+    else:
+        raise AssertionError("etdb.build accepted a body past the u16 ceiling")

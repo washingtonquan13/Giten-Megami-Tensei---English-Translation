@@ -109,6 +109,12 @@ def make_parser():
     p.add_argument("--out", default=None, help="default build/en/et/ET0000.BIN")
     _common(p)
 
+    p = sub.add_parser("etdb", help="the skill (ET0004) and map-label (ET0101) databases")
+    p.add_argument("which", choices=("skills", "maplabels", "all"), nargs="?", default="all")
+    p.add_argument("--extract", action="store_true", help="refresh the tsv instead")
+    p.add_argument("--out-dir", default=None, help="default build/en/et/")
+    _common(p)
+
     p = sub.add_parser("crash", help="explain a Windows crash dump in our terms")
     p.add_argument("dump", nargs="?", help="default: the newest dds*.dmp")
     p.add_argument("--exe", default=None, help="exe to map the fault address against")
@@ -242,6 +248,29 @@ def main(argv=None) -> int:
             print("wrote %s: %d bytes, %d strings English (was %d bytes)"
                   % (out, len(blob), len(english), len(raw)))
         return 0
+    if args.cmd == "etdb":
+        from . import etdb
+        which = list(etdb.SPECS) if args.which == "all" else [args.which]
+        rc = 0
+        for name in which:
+            spec = etdb.SPECS[name]
+            recs = etdb.parse(spec, etdb.source(spec, paths.ORIGINAL_DDSWIN))
+            if args.extract:
+                n = etdb.write_table(spec, recs)
+                if not args.quiet:
+                    print("wrote %s: %d rows" % (spec.table, n))
+                continue
+            english = etdb.read_table(spec)
+            blob = etdb.pack_file(spec, etdb.build(spec, recs, english))
+            out_dir = args.out_dir or os.path.join(paths.BUILD_DIR, "en", "et")
+            out = os.path.join(out_dir, os.path.basename(spec.rel))
+            os.makedirs(out_dir, exist_ok=True)
+            with open(out, "wb") as fh:
+                fh.write(blob)
+            if not args.quiet:
+                print("wrote %s: %d bytes, %d records, %d string(s) English"
+                      % (out, len(blob), len(recs), len(english)))
+        return rc
     if args.cmd == "itemdb":
         from . import itemdb
         from .exe import database
