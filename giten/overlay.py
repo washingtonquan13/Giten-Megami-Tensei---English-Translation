@@ -16,13 +16,14 @@ given a **virtual PC range** above the image end; serving English is then a
 pure function of the PC:
 
 Every span is served **in place** first: for ``start <= PC < start + head``,
-where ``head = min(len(en), len(jp))``, the hook returns ``en[PC - start]`` at
-the real address.  If the English is longer, the remaining ``tail = len(en) -
-head`` bytes live in a virtual range ``[virt, virt + tail)`` above the image;
-the last in-place byte hands the PC to ``virt``, the last tail byte hands it to
-``span.end``.  If the English is shorter, the last byte hands the PC to
-``span.end`` directly.  Virtual space is therefore only ever spent on the
-*excess* of English over Japanese, and serving is a pure function of the PC:
+where ``head = min(len(en), len(jp), cap - start)``, the hook returns
+``en[PC - start]`` at the real address.  If the English is longer, the
+remaining ``tail = len(en) - head`` bytes live in a virtual range
+``[virt, virt + tail)`` above the image; the last in-place byte hands the PC to
+``virt``, the last tail byte hands it to ``span.end``.  If the English is
+shorter, the last byte hands the PC to ``span.end`` directly.  Virtual space is
+therefore only ever spent on the *excess* of English over Japanese, and serving
+is a pure function of the PC:
 
 * start <= PC < start + head     -> en[PC - start]; next: PC+1, or virt (head done, tail exists), or end
 * virt <= PC < virt + tail       -> en[head + PC - virt]; next: PC+1, or end
@@ -30,19 +31,35 @@ the last in-place byte hands the PC to ``virt``, the last tail byte hands it to
 Every write the engine makes to the PC is a plain value store (jump, call
 frame push/pop, menu rescanner), so a virtual PC survives all of them.
 
+``cap`` is the other half of that, and it is not optional.  A PC the engine
+*jumps* to is one the overlay must answer exactly as the original file would,
+because the branch was aimed at a byte in the original file -- almost always
+the span's own trailing ``1E 10`` page wait.  So no span is served past the
+lowest address any branch in its container jumps to; from there on the hook
+falls through and the engine reads the file.  Before this rule the hook
+answered every address inside a span, and 278 shipped spans handed a jump a
+letter of English where an opcode belonged.
+
 ``overlay.dat`` layout (little-endian)
 --------------------------------------
 ::
 
-    header   4s magic "GTOV", u32 version (3), u32 nfiles, u32 reserved
+    header   4s magic "GTOV", u32 version (4), u32 nfiles, u32 reserved
     dir      nfiles x { u16 fid, u16 pad, u32 fp, u16 image_end, u16 nspans, u32 spans_off,
                         u16 ntails, u16 pad, u32 tails_off }
-    spans    per file, sorted by start:   { u16 start, u16 end, u16 virt, u16 len, u32 data_off }
+    spans    per file, sorted by start:
+             { u16 start, u16 end, u16 virt, u16 len, u16 served, u16 pad, u32 data_off }
              (virt == 0 when the English fits in place)
     tails    per file, sorted by virt, one per span with an excess:
-             { u16 start = virt, u16 end, u16 virt, u16 len = tail bytes, u32 data_off (of the tail) }
+             { u16 start = virt, u16 end, u16 virt, u16 len = served = tail bytes,
+               u32 data_off (of the tail) }
              -- the same struct, so one range search serves both arrays
     data     the English bytes (codec-encoded: inline opcodes included)
+
+``served`` is how many bytes this entry answers starting at ``start``; the hook
+never answers ``start + served`` or beyond.  It is stored rather than derived
+because it is not always ``min(len, end - start)``: a span some branch jumps
+into stops at that branch's target, so the jump reads the original file.
 
 ``fid`` is the engine's current-file id (``0x4911B0``); ``fp`` is FNV-1a over
 the engine's own 0x400-byte record index at the start of the buffer, which
@@ -62,13 +79,13 @@ from dataclasses import dataclass, field
 from . import build_v2, codec, extract_v2, files, records, script
 
 MAGIC = b"GTOV"
-VERSION = 3
+VERSION = 4
 FP_BYTES = 0x400                # the whole record index (two MS610B containers agree on 32 entries)
 PC_LIMIT = 0x10000
 
 HDR = struct.Struct("<4sIII")
 DIR = struct.Struct("<HHIHHIHHI")
-SPAN = struct.Struct("<HHHHI")
+SPAN = struct.Struct("<HHHHHHI")
 
 
 def fnv1a(data: bytes) -> int:
@@ -121,11 +138,28 @@ class SpanEntry:
     data: bytes             # the English bytes served
     rec_id: int = -1
     idx: int = -1
+    cap: "int | None" = None    # lowest address a branch jumps to inside the span
 
     @property
     def head(self) -> int:
-        """Bytes served in place: as many as the Japanese occupied, at most."""
-        return min(len(self.data), self.end - self.start)
+        """Bytes served in place.
+
+        As many as the Japanese occupied, at most -- and never past an address
+        some branch in the container jumps to.  ``cap`` is that address, and
+        stopping there is what keeps the overlay's answer to a jump equal to
+        the original file's: everything from ``cap`` on falls through to
+        ``ORIG_FETCH``, so the branch reads exactly the bytes it always read.
+        The English displaced by the cap is not lost, it moves to the tail.
+
+        Without the cap the hook answered any address inside the span, so a
+        branch aiming at the span's own trailing ``1E 10`` page wait got a
+        letter instead and the interpreter ran prose as opcodes.  278 of those
+        shipped.
+        """
+        h = min(len(self.data), self.end - self.start)
+        if self.cap is not None:
+            h = min(h, self.cap - self.start)
+        return h
 
     @property
     def tail(self) -> int:
@@ -209,6 +243,11 @@ def plan(rows, root=None):
             recs = [records.Record(r.id, r.data) for r in cont]
             base = records.bases(recs)
             ent = Entry(rel, ci, _fid(rel), fingerprint(recs), image_end(recs))
+            # Every address some rel16 in this container jumps to, including the
+            # switch-table entries -- vmops types those as rel16 too, so one
+            # call covers both.  A span may not be served past the lowest of
+            # these that falls inside it.
+            targets = sorted(script._branch_targets(cont, base))
             seen = set()
             for rec in cont:
                 # ``span_tokens``, not ``tokens``: a straddling record is untiled
@@ -239,8 +278,11 @@ def plan(rows, root=None):
                                          "the fetch we hook, and English drops it"
                                          % STRUCTURAL_BYTE))
                         continue
-                    ent.spans.append(SpanEntry(base[rec.id] + sp.off, base[rec.id] + sp.end,
-                                               0, data, rec.id, sp.idx))
+                    lo = base[rec.id] + sp.off
+                    hi = base[rec.id] + sp.end
+                    cap = next((t for t in targets if lo < t < hi), None)
+                    ent.spans.append(SpanEntry(lo, hi, 0, data, rec.id, sp.idx,
+                                               cap=cap))
             ent.spans.sort(key=lambda s: s.start)
             cursor = ent.image_end
             kept = []
@@ -274,12 +316,14 @@ def build(entries: "list[Entry]") -> bytes:
         doffs = {}
         for s in e.spans:
             doffs[id(s)] = data_off + len(data)
-            spans += SPAN.pack(s.start, s.end, s.virt, len(s.data), doffs[id(s)])
+            spans += SPAN.pack(s.start, s.end, s.virt, len(s.data), s.head, 0,
+                               doffs[id(s)])
             data += s.data
         toff = spans_off + len(spans)
         tails = e.tails
         for s in tails:
-            spans += SPAN.pack(s.virt, s.end, s.virt, s.tail, doffs[id(s)] + s.head)
+            spans += SPAN.pack(s.virt, s.end, s.virt, s.tail, s.tail, 0,
+                               doffs[id(s)] + s.head)
         dirs += DIR.pack(e.fid, 0, e.fp, e.image_end, len(e.spans), soff, len(tails), 0, toff)
     return HDR.pack(MAGIC, VERSION, len(entries), 0) + bytes(dirs) + bytes(spans) + bytes(data)
 
@@ -293,11 +337,14 @@ def parse(blob: bytes) -> "list[Entry]":
         fid, _, fp, iend, n, soff, nt, _, toff = DIR.unpack_from(blob, HDR.size + i * DIR.size)
         e = Entry("m/MS%04X.BIN" % fid, -1, fid, fp, iend)
         for k in range(n):
-            start, end, virt, ln, doff = SPAN.unpack_from(blob, soff + k * SPAN.size)
-            e.spans.append(SpanEntry(start, end, virt, blob[doff:doff + ln]))
+            start, end, virt, ln, served, _, doff = SPAN.unpack_from(
+                blob, soff + k * SPAN.size)
+            e.spans.append(SpanEntry(start, end, virt, blob[doff:doff + ln],
+                                     cap=start + served))
         # the tails array is derived from the spans; check it says the same thing
         for k in range(nt):
-            vstart, end, virt, tlen, doff = SPAN.unpack_from(blob, toff + k * SPAN.size)
+            vstart, end, virt, tlen, _served, _, doff = SPAN.unpack_from(
+                blob, toff + k * SPAN.size)
             s = next(s for s in e.spans if s.virt == virt and s.tail)
             assert (vstart, end, tlen, blob[doff:doff + tlen]) == (s.virt, s.end, s.tail, s.data[s.head:])
         out.append(e)

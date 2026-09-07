@@ -201,3 +201,108 @@ def test_c_hook_serves_the_same_bytes_as_the_model():
     assert abs(int(r["ticks"]) - 480) <= 3, r                # 8 s of running time
     assert int(r["after_stall"]) <= 3, r                     # ~2.4 ticks fit in 40 ms; no burst
     shutil.rmtree(tmp, ignore_errors=True)
+
+
+# ---------------------------------------------------------------------------
+# The rule that was missing: the overlay must never answer an address a branch
+# jumps to.
+#
+# A rel16's target is a byte in the ORIGINAL file -- almost always the trailing
+# `1E 10` page wait of the very line being translated, which is how a script
+# says "skip the words, go straight to the page break".  The byte builder
+# refuses or re-anchors those edits.  The overlay inherited neither: it served
+# any address inside a span, so the jump landed on a letter of English and the
+# interpreter ran prose as opcodes.  278 spans shipped that way, across 75
+# files, and `docs/limits.md` recorded it as a saving ("the 84 branched-into
+# spans cost the shipped patch nothing").
+#
+# The fix costs no English: the bytes the cap displaces move into the virtual
+# tail, so a sequential read still shows the whole line.  Only the jumped-into
+# path changes, and it changes to what the documentation always claimed it did
+# -- the original Japanese from the jump onward.
+# ---------------------------------------------------------------------------
+
+def _served_inside(entry):
+    """Real addresses this entry answers, excluding each span's first byte.
+
+    A branch that lands on a span's *first* byte is fine and always was: it
+    gets the English from byte 0, exactly as a sequential entry would, and the
+    line reads correctly.  What must never happen is a branch landing part-way
+    in, where the English at that offset has nothing to do with the byte the
+    branch was aimed at.
+    """
+    out = set()
+    for s in entry.spans:
+        out.update(range(s.start + 1, s.start + s.head))
+    return out
+
+
+def test_the_overlay_never_answers_an_address_a_branch_jumps_to():
+    """The invariant, over every file that had the fault, from the real tables."""
+    from giten import paths
+    import collections
+
+    # the files that actually carry branched-into spans, so the test exercises
+    # the rule rather than asserting a vacuous truth
+    rels = ["m/MS0000.BIN", "m/MS000E.BIN", "m/MS0031.BIN", "m/MS005C.BIN",
+            "m/MS000D.BIN", "m/MS0017.BIN"]
+    from giten import extract_v2
+    text_dir = extract_v2.text_v2_dir()
+    rows = [r for p in tables.iter_tables(text_dir) for r in tables.read(p)
+            if r.file in rels]
+    assert rows, "no table rows for the files under test"
+    entries, _findings = overlay.plan(rows)
+    assert entries, "nothing planned"
+
+    checked = collections.Counter()
+    for ent in entries:
+        raw = files.read_source(ent.rel)
+        sc = script.parse(ent.rel, raw)
+        cont = sc.containers[ent.ci]
+        recs = [records.Record(r.id, r.data) for r in cont]
+        base = records.bases(recs)
+        targets = script._branch_targets(cont, base)
+        inside = targets & _served_inside(ent)
+        assert not inside, (
+            "%s c%d: the overlay answers %d address(es) a branch jumps to: %s"
+            % (ent.rel, ent.ci, len(inside),
+               ", ".join("0x%04X" % a for a in sorted(inside)[:8])))
+        # and the rule has to be doing work here, not passing by luck
+        for s in ent.spans:
+            if any(s.start < t < s.end for t in targets):
+                checked["spans a branch jumps into"] += 1
+                if s.head < min(len(s.data), s.end - s.start):
+                    checked["spans the cap actually shortened"] += 1
+    assert checked["spans a branch jumps into"] > 20, checked
+    assert checked["spans the cap actually shortened"] > 10, checked
+
+
+def test_capping_a_span_moves_english_to_the_tail_instead_of_dropping_it():
+    """The cap must cost coverage nothing: the whole line still reads."""
+    en = b"An English line long enough to overflow its Japanese."
+    # 24 Japanese bytes, a branch aimed 4 bytes from the end (its page wait)
+    s = overlay.SpanEntry(0x1000, 0x1018, 0, en, cap=0x1014)
+    assert s.head == 0x14, s.head                    # stops at the branch target
+    assert s.tail == len(en) - 0x14
+    s.virt = 0x8000
+    ent = overlay.Entry("m/MS0000.BIN", 0, 0, 0, 0x2000, [s])
+    img = bytearray(0x10000)
+    img[0x1000:0x1018] = bytes(range(0x18))          # stand-in Japanese
+    model = overlay.Model(ent, bytes(img))
+
+    # the branch target reads the ORIGINAL byte, not our English
+    assert model.fetch(0x1014)[0] == img[0x1014]
+    # and a sequential walk from the span start still sees every English byte
+    assert model.walk(0x1000, 0x1018) == en
+
+
+def test_the_cap_survives_a_round_trip_through_overlay_dat():
+    """`served` is stored, so a parsed overlay serves what the planner meant."""
+    en = b"An English line long enough to overflow its Japanese."
+    s = overlay.SpanEntry(0x1000, 0x1018, 0x8000, en, cap=0x1014)
+    ent = overlay.Entry("m/MS0000.BIN", 0, 0x1234, 0xABCD, 0x2000, [s])
+    back = overlay.parse(overlay.build([ent]))[0]
+    assert len(back.spans) == 1
+    assert back.spans[0].head == s.head, (back.spans[0].head, s.head)
+    assert back.spans[0].tail == s.tail
+    assert back.spans[0].data == en

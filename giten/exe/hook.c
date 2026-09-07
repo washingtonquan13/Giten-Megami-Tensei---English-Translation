@@ -62,7 +62,12 @@ typedef void *(__attribute__((stdcall)) * GetProcAddress_t)(HANDLE, const char *
 
 struct hdr { u32 magic, version, nfiles, reserved; };
 struct dir { u16 fid, pad; u32 fp; u16 image_end, nspans; u32 spans_off; u16 ntails, pad2; u32 tails_off; };
-struct span { u16 start, end, virt, len; u32 data_off; };
+/* `served` is how many bytes this entry answers from `start`.  It used to be
+   derived as min(len, end - start), which meant the hook answered EVERY address
+   inside a span -- including the ones branches jump to.  It is now built into
+   overlay.dat, capped at the lowest branch target inside the span, so a jump
+   falls through to the original file.  See giten/overlay.py. */
+struct span { u16 start, end, virt, len, served, pad; u32 data_off; };
 
 static u8 *ovl;                 /* the whole overlay.dat in memory */
 static int state;               /* 0 not loaded, 1 loaded, -1 unavailable */
@@ -108,7 +113,7 @@ static void load(void)
     }
     pCloseHandle(f);
     h = (struct hdr *)ovl;
-    if (h->magic != 0x564F5447u /* "GTOV" */ || h->version != 3)
+    if (h->magic != 0x564F5447u /* "GTOV" */ || h->version != 4)
         return;
     dirs = (struct dir *)(ovl + sizeof(struct hdr));
     ndirs = h->nfiles;
@@ -151,21 +156,20 @@ static struct dir *lookup(u32 handle, u16 fid)
     return c_dir[k];
 }
 
-/* the entry of a sorted, non-overlapping array whose [start, start+len)
- * holds pc, or 0.  For the spans array the served length is the head,
- * min(len, end - start); for the tails array start == virt and len == tail. */
-static struct span *in_range(struct span *s, u32 n, u16 pc, int heads)
+/* the entry of a sorted, non-overlapping array whose [start, start+served)
+ * holds pc, or 0.  Both arrays carry `served`, so this needs to know nothing
+ * about which one it is walking -- the head/tail distinction used to live here
+ * as a flag and a min(), and getting that min() wrong is what made the hook
+ * answer branch targets. */
+static struct span *in_range(struct span *s, u32 n, u16 pc)
 {
     int lo = 0, hi = (int)n - 1;
     while (lo <= hi) {
         int mid = (lo + hi) >> 1;
         u32 v = s[mid].start;
-        u32 l = s[mid].len;
-        if (heads && l > (u32)(s[mid].end - s[mid].start))
-            l = s[mid].end - s[mid].start;
         if (pc < v)
             hi = mid - 1;
-        else if (pc >= v + l)
+        else if (pc >= v + (u32)s[mid].served)
             lo = mid + 1;
         else
             return &s[mid];
@@ -178,7 +182,7 @@ ENTRY u8 hook(u32 handle, u16 *pcp)
     struct dir *d;
     struct span *s;
     u16 pc;
-    u32 k, head;
+    u32 k;
     if (state == 0)
         load();
     if (state < 0)
@@ -188,23 +192,20 @@ ENTRY u8 hook(u32 handle, u16 *pcp)
         return ORIG_FETCH(handle, pcp);
     pc = *pcp;
     if (pc >= d->image_end) {
-        s = in_range((struct span *)(ovl + d->tails_off), d->ntails, pc, 0);
+        s = in_range((struct span *)(ovl + d->tails_off), d->ntails, pc);
         if (!s)
             return ORIG_FETCH(handle, pcp);
         k = pc - s->start;
         *pcp = (k + 1 == s->len) ? s->end : (u16)(pc + 1);
         return ovl[s->data_off + k];
     }
-    s = in_range((struct span *)(ovl + d->spans_off), d->nspans, pc, 1);
+    s = in_range((struct span *)(ovl + d->spans_off), d->nspans, pc);
     if (!s)
         return ORIG_FETCH(handle, pcp);
     k = pc - s->start;
-    head = s->end - s->start;
-    if (head > s->len)
-        head = s->len;
     if (k + 1 == s->len)
         *pcp = s->end;                  /* the English is done */
-    else if (k + 1 == head)
+    else if (k + 1 == s->served)
         *pcp = s->virt;                 /* head done, the tail is virtual */
     else
         *pcp = (u16)(pc + 1);

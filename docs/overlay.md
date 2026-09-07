@@ -93,7 +93,26 @@ containers of a multi-container file apart.  A buffer whose entry 0 is not at
   lines on 2,609 pages and more than six on 236); and, now, the claim that the
   engine was executing memory nobody owns.
 * A span is diverted only when entered at its first byte.  The lines a branch
-  lands *inside* (`@noedit`, 115 in the corpus) keep their Japanese tail.
+  lands *inside* keep their Japanese tail -- **enforced since 2026-09-07, and
+  false before that.**  The hook derived its served length as
+  `min(len(en), len(jp))`, so it answered every address inside a span,
+  including the ones branches jump to.  Almost all of those aim at the line's
+  own trailing `1E 10` page wait -- the script saying "skip the words, go
+  straight to the page break" -- and instead of `1E` the jump got a letter of
+  English, which the interpreter then ran as an opcode.  278 addresses across
+  75 files shipped that way.
+  The fix is one number: a span is served only up to the lowest branch target
+  inside it (`SpanEntry.cap`), and `overlay.dat` v4 stores that length instead
+  of deriving it.  Everything from the cap on falls through to `ORIG_FETCH`, so
+  a jump reads exactly the bytes it always read.  **It costs no coverage** --
+  the capped bytes move into the virtual tail, so a sequential read still shows
+  the whole English line; only the jumped-into path reverts to Japanese, which
+  is what this bullet always claimed.
+  Note what this was *not*: not a bad span boundary, not a tokenizer error, not
+  a wrong byte in the tables.  The tables were right and the byte builder had
+  refused these very edits for years (`@noedit`).  The overlay was written as a
+  delivery mechanism and inherited the builder's *layout* rules without its
+  *refusals*.
 * Per file, the English *excess* over the Japanese must fit between the image
   end and 0x10000 (`overlay-space` in `check`).  Whole game: 0 refused rows,
   worst file `m/MS0030` at 50%.
