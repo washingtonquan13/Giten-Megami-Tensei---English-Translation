@@ -12404,24 +12404,17 @@
    "handler": "0x0043161A",
    "operands": [
     {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
-    },
-    {
-     "kind": "u8",
-     "size": 1
+     "kind": "mode_1ebe",
+     "size": 0
     }
    ],
-   "fixed_size": 3,
-   "variable": false,
+   "fixed_size": 0,
+   "variable": true,
    "has_offset": false,
    "offset_slots": [],
    "refs_record": false,
-   "uses": 243
+   "uses": 243,
+   "note": "handler 0x0043161A -> 0x004324B0 branches on the first operand byte: non-zero reads two more u8 (0x004335A0), zero reads six expressions (0x00437490 x6).  The old fixed 3x u8 was the walker's fall-through arm; 131 of 262 sites take the other one."
   },
   "0x2BF": {
    "encoding": "1E BF",

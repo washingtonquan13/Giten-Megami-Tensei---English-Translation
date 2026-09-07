@@ -204,6 +204,51 @@ def _read_switch(data: bytes, i: int, out: list) -> int:
         i += 4
 
 
+def _read_1ebe(data: bytes, i: int, out: list, tab: Table) -> int:
+    """``1EBE``: the operand list depends on the first operand byte.
+
+    Read off the handler, ``0x0043161A`` -> ``0x004324B0``::
+
+        call 0x438FA0          ; u8 mode
+        test ax, ax
+        je   0x4324E0
+        call 0x4335A0          ; mode != 0: two more u8   -> 3 bytes
+        ...
+      0x4324E0:                ; mode == 0:
+        call 0x437490 x6       ; six expressions
+
+    ``0x437490`` is ``call 0x436B00; mov eax,[eax]`` -- the expression reader
+    and its dereference, the pair ``tools/extract_expr_nodes.py`` already names
+    as one sub-expression.
+
+    The table said three ``u8`` unconditionally, because the static walker took
+    the ``jne``-not-taken arm and never followed the ``je``.  That is the
+    documented fall-through failure mode, and here it is not academic: **131 of
+    the 262 ``1EBE`` sites in the corpus have mode 0**, spread over 39 files.
+    Every one of them made the walk resume early, so every token after it in
+    that record was at the wrong offset -- and so was every text span extracted
+    from it.  That is English written over somebody else's operands, in either
+    the overlay or the byte build.
+    """
+    if i >= len(data):
+        raise TileError("1EBE mode byte past end of record at 0x%X" % i)
+    mode = data[i]
+    out.append(Operand("u8", i, 1, data[i:i + 1]))
+    i += 1
+    if mode:
+        for _ in range(2):
+            if i >= len(data):
+                raise TileError("1EBE operand past end of record at 0x%X" % i)
+            out.append(Operand("u8", i, 1, data[i:i + 1]))
+            i += 1
+        return i
+    for _ in range(6):
+        start = i
+        i = _read_expr(data, i, 0, tab)
+        out.append(Operand("expr", start, i - start, data[start:i]))
+    return i
+
+
 #: ``1F01`` selectors whose only operand is an expression; every other selector
 #: reads a byte and then an expression (handler ``0x436920``, table ``0x436A4C``)
 RTSTR_EXPR_ONLY = frozenset({0x04, 0x05, 0x06, 0x0C, 0x0D, 0x0E, 0x0F, 0x11, 0x13})
@@ -291,6 +336,9 @@ def _read_operands(data: bytes, i: int, slots, tab: Table) -> "tuple[int, list]"
             continue                       # entries were appended one by one
         elif kind == "rtstr":
             i = _read_rtstr(data, i, out, tab)
+            continue
+        elif kind == "mode_1ebe":
+            i = _read_1ebe(data, i, out, tab)
             continue
         else:
             i += FIXED_SIZE[kind]

@@ -2416,3 +2416,79 @@ def test_the_ff_refusal_actually_fires_on_a_span_that_has_one():
     # ...and it is refused rather than quietly served
     served = [s for e in entries for s in e.spans]
     assert not served, served[:2]
+
+
+# ---------------------------------------------------------------------------
+# 1EBE: the opcode whose operands depend on their own first byte.
+#
+# The table said three u8, unconditionally, because the static walker followed
+# the `jne`-not-taken arm of the handler and never the other one -- the
+# documented fall-through failure mode, and the reason 269 opcodes are typed as
+# consuming nothing.  Here it was not academic: half the corpus's 1EBE sites
+# take the arm we got wrong, and each one made the walk resume early, so every
+# token after it in that record sat at the wrong offset.  Measured against the
+# tables we ship: 442 spans of English written over bytes that were never text,
+# and 2,868 more at the wrong address.
+# ---------------------------------------------------------------------------
+
+def test_1ebe_reads_six_expressions_when_its_mode_byte_is_zero():
+    """The shape, straight from the handler, and the record that proves it.
+
+    `docs/limits.md` recorded eleven bytes in `m/MS001F` r02 that nothing
+    claimed, cause not named.  The model change was derived from
+    `0x004324B0`, not fitted to that record -- and it consumes exactly those
+    eleven bytes.  A fix that explains an anomaly it was not aimed at is the
+    difference between a model and a curve fit.
+    """
+    import os
+    from giten import paths, script, vmops
+
+    tab = vmops.table()
+    idx = next(i for i in range(0x400)
+               if tab.encoding(i).replace(" ", "") == "1EBE")
+    kinds = [s["kind"] for s in tab.operands(idx)]
+    assert kinds == ["mode_1ebe"], kinds
+
+    with open(os.path.join(paths.ORIGINAL_DDSWIN, "m", "MS001F.BIN"), "rb") as fh:
+        sc = script.parse("m/MS001F.BIN", fh.read())
+    rec = next(r for r in sc.containers[0] if r.id == 2)
+    off = rec.data.find(bytes.fromhex("1ebe000172"))
+    assert off > 0, "the mode-0 1EBE moved"
+    tok = next(t for t in rec.tokens if t.off == off)
+    assert tok.size == 16, ("mode 0 must swallow the eleven bytes that used to "
+                            "be unclaimed, not 5", tok.size)
+    assert rec.data[tok.off:tok.end].hex() == (
+        "1ebe" "00"                        # the opcode, then mode 0
+        "017201000000060000" "04ff0064")   # six expressions, thirteen bytes
+
+    # ...and the very next one, mode 1, still takes the short arm
+    nxt = next(t for t in rec.tokens if t.off == tok.end)
+    assert rec.data[nxt.off:nxt.off + 3].hex() == "1ebe01"
+    assert nxt.size == 5, nxt.size
+
+
+def test_both_1ebe_arms_are_exercised_by_the_corpus():
+    """Neither arm may be dead, or the test above proves nothing general."""
+    import collections
+    import os
+    from giten import paths, script, vmops
+
+    tab = vmops.table()
+    seen = collections.Counter()
+    d = os.path.join(paths.ORIGINAL_DDSWIN, "m")
+    for name in sorted(os.listdir(d)):
+        if not name.endswith(".BIN"):
+            continue
+        try:
+            sc = script.parse("m/%s" % name, open(os.path.join(d, name), "rb").read())
+        except Exception:
+            continue
+        if not sc.ok:
+            continue
+        for cont in sc.containers:
+            for r in cont:
+                for t in r.tokens or ():
+                    if t.kind == "op" and tab.encoding(t.idx).replace(" ", "") == "1EBE":
+                        seen["mode 0" if t.ops[0].raw == b"\x00" else "mode n"] += 1
+    assert seen["mode 0"] > 50, seen
+    assert seen["mode n"] > 50, seen
