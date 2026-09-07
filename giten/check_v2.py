@@ -391,11 +391,11 @@ def check_capture(report: Report, rows, root=None) -> None:
         if not sc.ok:
             continue
         for rec in sc.iter_records():
-            if rec.tokens is None:
+            if rec.span_tokens is None:
                 continue
             key = "%d:%02X" % (rec.ci, rec.id)
             on = None
-            for t in rec.tokens:
+            for t in rec.span_tokens:
                 if t.kind == "op" and t.idx == CAPTURE_ON:
                     on = t.off
                     continue

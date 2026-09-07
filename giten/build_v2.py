@@ -70,7 +70,11 @@ def stale_rows(sc, keyed: dict) -> "list[tuple[tuple, str]]":
     '''
     by_key = {}
     for rec in sc.iter_records():
-        if rec.tokens is None:
+        # `span_tokens`, not `tokens`: a straddling record keeps `tokens` None so
+        # the byte builder and `audit` treat it as untiled, but its spans are
+        # complete and the overlay serves them, so they must be addressable here
+        # or every row in one reads as 'no span N in this record any more'.
+        if rec.span_tokens is None:
             continue
         for sp in rec.spans:
             by_key[(rec.ci, rec.id, sp.idx)] = script.span_text(rec, sp)
