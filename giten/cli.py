@@ -126,7 +126,7 @@ def make_parser():
 
     p = sub.add_parser("trace", help="decode / diff interpreter traces from the dev exe")
     p.add_argument("action", choices=("decode", "diff", "selfcheck", "bases",
-                                     "textout"))
+                                     "textout", "verify"))
     p.add_argument("trace", help="trace.bin (JP trace for diff)")
     p.add_argument("other", nargs="?", help="diff: the EN trace.bin")
     p.add_argument("--build", default=None, help="build tree the trace ran on (default original/ddswin)")
@@ -175,6 +175,10 @@ def main(argv=None) -> int:
         return 0
     if args.cmd == "trace":
         jp_build = args.build or paths.game_root()
+        if args.action == "verify":
+            txt, rc = trace.report_verify(args.trace, jp_build, args.limit)
+            print(txt)
+            return rc
         if args.action == "textout":
             from . import textlog
             return textlog.report(args.trace, paths.REPO_ROOT, args.limit)

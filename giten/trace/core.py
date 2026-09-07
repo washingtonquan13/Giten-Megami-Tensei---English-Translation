@@ -441,6 +441,182 @@ def report_diff(jp_trace, en_trace, jp_build, en_build, context=6) -> str:
     return "\n".join(lines)
 
 
+
+#: Opcodes that move the program counter somewhere the next byte would not have
+#: gone: goto-record, call-record, and the branch family that shares
+#: ``0x004348B0``.  If the interpreter ever dispatches one of these *out of
+#: bytes the overlay served*, the English run has taken a path the Japanese run
+#: would not, and every guarantee the overlay is supposed to give is void.
+FLOW_OPCODES = frozenset({0x0C, 0x0D}) | frozenset(range(0x10, 0x19))
+
+
+
+def _served_bytes(img, pc: int, ch: int):
+    """The bytes the overlay actually handed the engine at ``pc``, or None.
+
+    A PC falling inside a span's address range only says where the hook *would*
+    substitute.  What settles it is reconstructing the byte the hook would have
+    returned and requiring it to equal what the engine logged -- the trace's
+    ``pc`` is one past the token, so a one-byte token read ``english[pc-1]`` and
+    a two-byte token read ``english[pc-2:pc]``.
+
+    Asking the range alone was the first cut and it was wrong in every case
+    sampled: a span serving ``'No one here...\\n'`` has ``0x20`` where the trace
+    logged ``0x0D``.  If the overlay had served that byte the two would agree,
+    so the engine was reading something else and the event is not the overlay's
+    to answer for.
+    """
+    e = img.entry
+    if e is None:
+        return None
+    one = bytes([ch & 0xFF])
+    two = bytes([(ch >> 8) & 0xFF, ch & 0xFF]) if ch > 0xFF else None
+    for s in e.spans:
+        for lo, hi, data in ((s.start, s.start + s.head, s.data),
+                             (s.virt, s.virt + s.tail, s.data[s.head:]) if s.tail
+                             else (0, 0, b"")):
+            if not hi:
+                continue
+            for width, want in ((1, one), (2, two)):
+                if want is None:
+                    continue
+                start = pc - width
+                if lo <= start and start + width <= hi:
+                    got = data[start - lo:start - lo + width]
+                    if got == want:
+                        return want
+    return None
+
+def verify(trace_path: str, build_dir: "str | None" = None):
+    """Did the overlay change control flow?  Answered from one English trace.
+
+    The overlay's contract is local: for a translated span it serves English in
+    place of the Japanese bytes and hands the program counter back at the span's
+    end.  Two things follow, and both are checkable against a trace:
+
+    * every token the engine dispatched from **outside** a served span must be
+      the byte that is in the original file at that address -- the overlay must
+      not have touched it;
+    * every token dispatched from **inside** one must be text, or an inline
+      opcode the codec is allowed to embed.  Never a branch.
+
+    If both hold for every event, the instruction stream the interpreter walked
+    *is* the Japanese instruction stream, and the English run cannot have gone
+    anywhere the Japanese run would not.  That is why one trace is enough and no
+    second play-through of the same route is needed -- which is what made the
+    two-build ``diff`` expensive enough to keep being deferred.
+
+    Returns ``(stats, findings)``.  A finding is
+    ``(event, category, explanation)``.
+
+    **What this does not prove.**  Flow equality on the routes actually walked,
+    not universally; coverage grows with play.  And an event the decoder cannot
+    place at all is counted as *unverified*, not as a pass -- those are the
+    stale-context records the tracer's own notes describe, and pretending they
+    are clean would be the whole point of the exercise thrown away.
+    """
+    build_dir = build_dir or paths.game_root()
+    with open(trace_path, "rb") as fh:
+        data = fh.read()
+    entries = None
+    ovl = os.path.join(build_dir, "overlay.dat")
+    if os.path.exists(ovl):
+        with open(ovl, "rb") as fh:
+            entries = overlay.parse(fh.read())
+
+    if data[:4] == MAGIC:
+        _, ver, size = HEADER.unpack_from(data, 0)
+        if ver != 2 or size != RECORD_V2.size:
+            raise ValueError("%s: unknown trace format v%d, %d-byte records"
+                             % (trace_path, ver, size))
+        rs, body = RECORD_V2, data[HEADER.size:]
+    else:
+        rs, body = RECORD_V1, data
+
+    stats = {"records": 0, "served": 0, "from the file": 0, "unverified": 0,
+             "in a name print": 0, "overlay entries": len(entries or [])}
+    findings, images, events = [], {}, []
+    for n in range(len(body) // rs.size):
+        f = rs.unpack_from(body, n * rs.size)
+        pc0, flags = (f[9], f[10]) if rs is RECORD_V2 else (0, 0)
+        ev = Event(n, f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8],
+                   pc0, flags, rel=_rel_of(f[0]))
+        events.append(ev)
+        if ev.rel not in images:
+            p = os.path.join(build_dir, *ev.rel.split("/"))
+            images[ev.rel] = (_Image(ev.rel, open(p, "rb").read(), entries)
+                              if os.path.exists(p) else None)
+
+    # While the engine prints a runtime name the PC is inside a name buffer,
+    # not the script, so its bytes are the name's characters and comparing them
+    # with the script file is meaningless.  Without this the English names we
+    # install read as script corruption -- 'e', ',', 'K' at consecutive PCs
+    # just past a span serving 'Emi:'.
+    _mark_name_excursions(events, images)
+
+    for ev in events:
+        stats["records"] += 1
+        if ev.kind == NAME_KIND:
+            stats["in a name print"] += 1
+            continue
+        img = images[ev.rel]
+        if img is None:
+            stats["unverified"] += 1
+            continue
+
+        served = _served_bytes(img, ev.pc, ev.ch)
+        if served is not None:
+            stats["served"] += 1
+            if served[0] in FLOW_OPCODES and len(served) == 1:
+                findings.append((ev, "branch served from our English",
+                                 "the engine dispatched 0x%02X at pc 0x%04X out "
+                                 "of bytes the overlay supplied"
+                                 % (served[0], ev.pc)))
+            continue
+
+        hit = img.locate(ev.rec, ev.pc, ev.ch, ev.idx_off or None, ev.pc0 or None)
+        if hit is None:
+            stats["unverified"] += 1
+            continue
+        ev.span, ev.anchor, ev.kind, ev.ok = hit
+        stats["from the file"] += 1
+        if not ev.ok:
+            findings.append((ev, "byte does not match the original",
+                             "logged 0x%04X at pc 0x%04X, but %s has something "
+                             "else there" % (ev.ch, ev.pc, ev.rel)))
+    return stats, findings
+
+
+def report_verify(trace_path: str, build_dir: "str | None" = None,
+                  limit: int = 20) -> "tuple[str, int]":
+    stats, findings = verify(trace_path, build_dir)
+    out = ["%s" % os.path.basename(trace_path)]
+    placed = stats["served"] + stats["from the file"]
+    out.append("  %d records: %d placed (%d served by the overlay, %d read "
+               "from the file), %d unverified"
+               % (stats["records"], placed, stats["served"],
+                  stats["from the file"], stats["unverified"]))
+    if not placed:
+        out.append("  NOTHING could be placed -- wrong build directory?")
+        return "\n".join(out), 1
+    out.append("  %.1f%% of the trace was checked"
+               % (100.0 * placed / max(1, stats["records"])))
+    if not findings:
+        out.append("")
+        out.append("  CLEAN: every token dispatched outside a served span "
+                   "matched the original")
+        out.append("  file, and every token inside one was text or an inline "
+                   "opcode.  Over this")
+        out.append("  route the overlay did not change control flow.")
+        return "\n".join(out), 0
+    out.append("")
+    out.append("  %d FINDING(S):" % len(findings))
+    for ev, cat, why in findings[:limit]:
+        out.append("    #%d %s rec 0x%02X pc 0x%04X: %s" % (ev.n, ev.rel, ev.rec,
+                                                            ev.pc, cat))
+        out.append("        %s" % why)
+    return "\n".join(out), 1
+
 def selfcheck(trace_path: str, build_dir: str) -> "tuple[int, int]":
     """``(records, records whose logged bytes did not match the build)``."""
     evs = decode(trace_path, build_dir)
