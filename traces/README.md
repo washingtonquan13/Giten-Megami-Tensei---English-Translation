@@ -12,3 +12,6 @@ Decode with `python -m giten trace decode traces/<file> --build <tree the trace 
 A `selfcheck` mismatch rate of roughly the served share is expected when the trace
 ran with an overlay and the check is against the Japanese `m/` — see the reading
 notes at the end of `docs/playtest-2026-09-06.md`.
+
+| `2026-09-07-glyphs.bin` | The menu-overlay spike's answer: 47,192 glyphs / 2,777 runs from a shop-and-status session. Read with `giten trace textout`. |
+| `2026-09-07-en-dev.bin` | The interpreter trace from that same session, which is what proved the shop text never runs through the interpreter. |
