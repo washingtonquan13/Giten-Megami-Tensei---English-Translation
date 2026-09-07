@@ -36,9 +36,48 @@ from giten import check_v2, codec, extract_v2, paths, tables      # noqa: E402
 OUT = os.path.join(paths.BUILD_DIR, "tables_draft")
 
 
+NL = chr(92) + "n"
+JP_ENDERS = "。！？」』…‥）】　"
+EN_ENDERS = ".!?\"'"
+
+
 def _calls(text):
     """The pool calls in one line, as check_v2's name-macro rule counts them."""
     return {t for t in codec.control_tokens(text) if t.startswith("{0")}
+
+
+def _vis(s):
+    return codec.strip_tokens(s).replace(NL, "").strip()
+
+
+def _covers_the_whole_line(jp, en):
+    """Is this reference a translation of the line, not of this span?
+
+    v0.05 stripped the engine's runtime name prints, so a line the engine prints
+    a name *inside* is one line there and two or three spans here.  ``carry``
+    paired by tag sequence and put the whole English on the first fragment, and
+    ``refalign`` -- whose rule for this is to leave such rows untranslated, "a
+    draft that cannot be split back around the print is worse than an empty row"
+    -- only touches rows that have no reference, so it never revisited them.
+
+    The result renders twice: the fragment shows the whole line in English, then
+    the next span shows its own translation of the rest.  That is the doubled
+    Emi and Yuuka dialogue.
+
+    A genuine fragment translation matches its fragment -- it ends open, on a
+    comma, as the Japanese does.  A whole-line draft closes: a full stop, or a
+    line break, or both.  Requiring 40 characters and 4x keeps short labels
+    (`魔石` -> "Magic Stone") and open continuations ("So as not to get in the way
+    of the two of them,") out of it.
+    """
+    j, e = _vis(jp), _vis(en)
+    if len(j) < 2 or NL in jp:
+        return False
+    if not j or j[-1] in JP_ENDERS:
+        return False
+    if not e or not (NL in en or e[-1] in EN_ENDERS):
+        return False
+    return len(e) >= 40 and len(e) > len(j) * 4
 
 
 def main(out: str = OUT) -> int:
@@ -46,7 +85,7 @@ def main(out: str = OUT) -> int:
     if os.path.isdir(out):
         shutil.rmtree(out)
     names = check_v2.name_macros(None)
-    rows = promoted = kept = skipped = refused = 0
+    rows = promoted = kept = skipped = refused = split = 0
     for path in tables.iter_tables(src):
         table = tables.read(path)
         for r in table:
@@ -59,6 +98,9 @@ def main(out: str = OUT) -> int:
             if r.tag == extract_v2.UNTILED_TAG:
                 # no dependable span boundaries; the overlay refuses these anyway
                 skipped += 1
+                continue
+            if _covers_the_whole_line(r.jp, r.ref_en):
+                split += 1
                 continue
             if names & _calls(r.jp) - _calls(r.ref_en):
                 # The reference drops a macro that prints a runtime name, so the
@@ -75,8 +117,9 @@ def main(out: str = OUT) -> int:
         os.makedirs(os.path.dirname(dst), exist_ok=True)
         tables.write(dst, table)
     print("%s: %d rows, %d already English, %d promoted from a reference, "
-          "%d skipped (@untiled), %d refused (would drop a name macro)"
-          % (out, rows, kept, promoted, skipped, refused))
+          "%d skipped (@untiled), %d refused (would drop a name macro), "
+          "%d refused (translates the whole line, not this span)"
+          % (out, rows, kept, promoted, skipped, refused, split))
     return 0
 
 
