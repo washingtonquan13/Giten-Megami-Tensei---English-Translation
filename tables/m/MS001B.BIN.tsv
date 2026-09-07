@@ -3,36 +3,36 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS001B.BIN	0:00	0	11	1FD0	エレベーターは今１Ｆに{08:40}。階段で行{08:51}方が早い！\n<wait>		The elevator is currently on 1F. It's faster to take the stairs.\n<wait>	v005		reads: エレベーターは今１Ｆにいる。階段で行った方が早い！\n<wait>
+m/MS001B.BIN	0:00	0	11	1FD0	エレベーターは今１Ｆに{08:40}。階段で行{08:51}方が早い！\n<wait>		The elevator is currently on 1F. It's faster to take the stairs.\n<wait>	v005		reads: エレベーターは今１Ｆにいる。階段で行った方が早い！\n<wait>; @refalign
 m/MS001B.BIN	0:01	0	51	1F01	：	:			draft	
-m/MS001B.BIN	0:01	1	61	1F01	くん。そっちは外よ。\n寄り道し{08:2B}場合{08:81}{08:25}わ！\n<wait>	-kun. That way is outside.\nThis is no time for detours!\n<wait>	Wrong way, Katsuragi. This is no time for detours.\n<wait>	v005	draft	reads: くん。そっちは外よ。\n寄り道してる場合じゃないわ！\n<wait>
+m/MS001B.BIN	0:01	1	61	1F01	くん。そっちは外よ。\n寄り道し{08:2B}場合{08:81}{08:25}わ！\n<wait>	-kun. That way is outside.\nThis is no time for detours!\n<wait>	Wrong way, Katsuragi. This is no time for detours.\n<wait>	v005	draft	reads: くん。そっちは外よ。\n寄り道してる場合じゃないわ！\n<wait>; @refalign
 m/MS001B.BIN	0:01	2	129	1F01	：	:			draft	
-m/MS001B.BIN	0:01	3	133	1FD3	早くし{08:25}と、本当に遅刻しちゃう。\n詰所に行きま{08:80}！\n<wait>		We've gotta hurry or we'll be late. Let's hurry to the office.\n<wait>	v005		reads: 早くしないと、本当に遅刻しちゃう。\n詰所に行きましょう！\n<wait>
+m/MS001B.BIN	0:01	3	133	1FD3	早くし{08:25}と、本当に遅刻しちゃう。\n詰所に行きま{08:80}！\n<wait>		We've gotta hurry or we'll be late. Let's hurry to the office.\n<wait>	v005		reads: 早くしないと、本当に遅刻しちゃう。\n詰所に行きましょう！\n<wait>; @refalign
 m/MS001B.BIN	0:01	4	220	1F01	：	:	:	v005	draft	
-m/MS001B.BIN	0:01	5	224	1FD3	早く{08:03}さんの{01:2E}に行かなきゃ。\n		We've gotta hurry over to Emi's place.\n	v005		reads: 早く英美さんの部屋に行かなきゃ。\n
+m/MS001B.BIN	0:01	5	224	1FD3	早く{08:03}さんの{01:2E}に行かなきゃ。\n		We've gotta hurry over to Emi's place.\n	v005		reads: 早く英美さんの部屋に行かなきゃ。\n; @refalign
 m/MS001B.BIN	0:01	6	289	1F01	：	:	:	v005	draft	
-m/MS001B.BIN	0:01	7	293	1FD3	早く詰所に戻りま{08:80}。\n		We've gotta hurry to the office.\n	v005		reads: 早く詰所に戻りましょう。\n
+m/MS001B.BIN	0:01	7	293	1FD3	早く詰所に戻りま{08:80}。\n		We've gotta hurry to the office.\n	v005		reads: 早く詰所に戻りましょう。\n; @refalign
 m/MS001B.BIN	0:01	8	355	1FD2	ガードロボット：	Guard Robot:			draft	
 m/MS001B.BIN	0:01	9	373	1FD3	ココカラ先ハ　危険デス\n<wait>許可ナキ場合ハ　オ通シデキマセン\n<wait><wait>	DANGER BEYOND THIS POINT\n<wait>NO ENTRY WITHOUT AUTHORISATION\n<wait><wait>			draft	
-m/MS001B.BIN	0:01	10	531	1FD0	ガードロボットの残骸が{08:7B}{02:08}\n<wait>		A pile of broken debris that was once a guard robot lies here.\n<wait>	v005		reads: ガードロボットの残骸がある‥‥‥\n<wait>
-m/MS001B.BIN	0:01	11	575	1FD0	ガードロボットの残骸が{08:7B}{02:08}\n<wait>		A pile of broken debris that was once a guard robot lies here.\n<wait>	v005		reads: ガードロボットの残骸がある‥‥‥\n<wait>
-m/MS001B.BIN	0:01	12	608	1FBA	{08:76}、ガスの臭いが{08:8E}。\n<wait>早く{08:45}{08:42}脱出{08:4B}方が{08:7F}{08:8C}。\n<wait>		Furthermore, a thick smell of gasoline lingers in the air.\n<wait>You probably don't want to stay here for too long.\n<wait>	v005		reads: まだ、ガスの臭いがする。\n<wait>早くここから脱出した方がいいだろう。\n<wait>
-m/MS001B.BIN	0:01	13	722	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS001B.BIN	0:01	10	531	1FD0	ガードロボットの残骸が{08:7B}{02:08}\n<wait>		A pile of broken debris that was once a guard robot lies here.\n<wait>	v005		reads: ガードロボットの残骸がある‥‥‥\n<wait>; @refalign
+m/MS001B.BIN	0:01	11	575	1FD0	ガードロボットの残骸が{08:7B}{02:08}\n<wait>		A pile of broken debris that was once a guard robot lies here.\n<wait>	v005		reads: ガードロボットの残骸がある‥‥‥\n<wait>; @refalign
+m/MS001B.BIN	0:01	12	608	1FBA	{08:76}、ガスの臭いが{08:8E}。\n<wait>早く{08:45}{08:42}脱出{08:4B}方が{08:7F}{08:8C}。\n<wait>		Furthermore, a thick smell of gasoline lingers in the air.\n<wait>You probably don't want to stay here for too long.\n<wait>	v005		reads: まだ、ガスの臭いがする。\n<wait>早くここから脱出した方がいいだろう。\n<wait>; @refalign
+m/MS001B.BIN	0:01	13	722	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; @refalign
 m/MS001B.BIN	0:01	14	728	1FD3	おい、	Hey, 			draft	
 m/MS001B.BIN	0:01	15	740	1F01	。\n{08:48}{08:42}どれ{08:74}、外界をさま{08:69}羽目に{08:59}かわ{08:42}{08:25}。\n<wait>	.\nThere's no telling how long we'll be wandering out there.\n<wait>			draft	reads: 。\nこれからどれだけ、外界をさまよう羽目になるかわからない。\n<wait>
-m/MS001B.BIN	0:01	16	794	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS001B.BIN	0:01	17	800	1FD3	食料庫に行{08:52}、食料を持{08:2B}{08:74}持{08:52}いこうぜ。\n<wait>		Let's drop by the pantry and get some food before we go.\n<wait>	v005		reads: 食料庫に行って、食料を持てるだけ持っていこうぜ。\n<wait>
-m/MS001B.BIN	0:01	18	859	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS001B.BIN	0:01	19	865	1FD3	{08:4D}に、{08:47}装備だと不安だな{02:08}\n外の{08:0B}{08:62}強い{08:8C}しな。\n<wait>		We might also want to get some better equipment.\nThe demons can be pretty damn tough...\n<wait>	v005		reads: それに、この装備だと不安だな‥‥‥\n外の悪魔は、強いだろうしな。\n<wait>
-m/MS001B.BIN	0:01	20	921	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS001B.BIN	0:01	21	927	1FD3	武器庫にも寄{08:52}装備を強化し{08:25}と、野垂れ死にだぜ。\n<wait>		Let's pay the armoury a visit as well and see if we can find anything.\n<wait>	v005		reads: 武器庫にも寄って装備を強化しないと、野垂れ死にだぜ。\n<wait>
-m/MS001B.BIN	0:01	22	1001	1FD0	{08:10}の外は全く未知の世界だ。\n<wait>食料庫に行{08:52}、食料を調達{08:4A}来た方が無難{08:8C}。\n<wait>		A scary, unknown world waits you out there.\n<wait>Maybe it'd be for the best if you dropped by the pantry and stocked up.\n<wait>	v005		reads: シェルターの外は全く未知の世界だ。\n<wait>食料庫に行って、食料を調達して来た方が無難だろう。\n<wait>
-m/MS001B.BIN	0:01	23	1088	1FD0	{08:4D}に、{08:47}武器では外の{08:0B}に対抗できるか分{08:42}{08:25}。\n武器庫に行{08:52}、新しい武器を入手{08:4B}方が{08:7F}{08:8C}{08:72}\n<wait>		Furthermore, the weapons you have likely won't take you far.\nMight as well drop by armoury too while you're at it.\n<wait>	v005		reads: それに、この武器では外の悪魔に対抗できるか分からない。\n武器庫に行って、新しい武器を入手した方がいいだろう‥‥\n<wait>
-m/MS001B.BIN	0:01	24	1212	1FD0	{01:03}は引き返{08:4B}{02:08}‥\n<wait>		Newton turns back...\n<wait>	v005		reads: ニュートンは引き返した‥‥‥‥\n<wait>
-m/MS001B.BIN	0:01	25	1295	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS001B.BIN	0:01	16	794	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; @refalign
+m/MS001B.BIN	0:01	17	800	1FD3	食料庫に行{08:52}、食料を持{08:2B}{08:74}持{08:52}いこうぜ。\n<wait>		Let's drop by the pantry and get some food before we go.\n<wait>	v005		reads: 食料庫に行って、食料を持てるだけ持っていこうぜ。\n<wait>; @refalign
+m/MS001B.BIN	0:01	18	859	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; @refalign
+m/MS001B.BIN	0:01	19	865	1FD3	{08:4D}に、{08:47}装備だと不安だな{02:08}\n外の{08:0B}{08:62}強い{08:8C}しな。\n<wait>		We might also want to get some better equipment.\nThe demons can be pretty damn tough...\n<wait>	v005		reads: それに、この装備だと不安だな‥‥‥\n外の悪魔は、強いだろうしな。\n<wait>; @refalign
+m/MS001B.BIN	0:01	20	921	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; @refalign
+m/MS001B.BIN	0:01	21	927	1FD3	武器庫にも寄{08:52}装備を強化し{08:25}と、野垂れ死にだぜ。\n<wait>		Let's pay the armoury a visit as well and see if we can find anything.\n<wait>	v005		reads: 武器庫にも寄って装備を強化しないと、野垂れ死にだぜ。\n<wait>; @refalign
+m/MS001B.BIN	0:01	22	1001	1FD0	{08:10}の外は全く未知の世界だ。\n<wait>食料庫に行{08:52}、食料を調達{08:4A}来た方が無難{08:8C}。\n<wait>		A scary, unknown world waits you out there.\n<wait>Maybe it'd be for the best if you dropped by the pantry and stocked up.\n<wait>	v005		reads: シェルターの外は全く未知の世界だ。\n<wait>食料庫に行って、食料を調達して来た方が無難だろう。\n<wait>; @refalign
+m/MS001B.BIN	0:01	23	1088	1FD0	{08:4D}に、{08:47}武器では外の{08:0B}に対抗できるか分{08:42}{08:25}。\n武器庫に行{08:52}、新しい武器を入手{08:4B}方が{08:7F}{08:8C}{08:72}\n<wait>		Furthermore, the weapons you have likely won't take you far.\nMight as well drop by armoury too while you're at it.\n<wait>	v005		reads: それに、この武器では外の悪魔に対抗できるか分からない。\n武器庫に行って、新しい武器を入手した方がいいだろう‥‥\n<wait>; @refalign
+m/MS001B.BIN	0:01	24	1212	1FD0	{01:03}は引き返{08:4B}{02:08}‥\n<wait>		Newton turns back...\n<wait>	v005		reads: ニュートンは引き返した‥‥‥‥\n<wait>; @refalign
+m/MS001B.BIN	0:01	25	1295	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; @refalign
 m/MS001B.BIN	0:01	26	1301	1FD3	おい、	Hey, 			draft	
 m/MS001B.BIN	0:01	27	1313	1F01	。\n外の{08:0B}{08:62}今{08:71}の奴より数段強い{08:8C}。\n<wait>	.\nThe demons outside are bound to be a lot stronger than the ones so far.\n<wait>			draft	reads: 。\n外の悪魔は、今までの奴より数段強いだろう。\n<wait>
-m/MS001B.BIN	0:01	28	1357	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS001B.BIN	0:01	28	1357	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; @refalign
 m/MS001B.BIN	0:01	29	1363	1FD3	だ{08:42}、武器庫に行{08:52}新しい武器を手に入れて{08:42}にし{08:69}ぜ。\n<wait>	So let's hit the armory and get new weapons first.\n<wait>			draft	reads: だから、武器庫に行って新しい武器を手に入れてからにしようぜ。\n<wait>
 m/MS001B.BIN	0:01	30	1427	1FD0	{08:10}の外は未知の世界で{08:7B}。\n現在の武器で{08:62}外の{08:0B}に対抗できるか分{08:42}{08:25}。\n武器庫に行{08:52}、新しい武器を調達{08:4B}方が{08:7F}{08:8C}{02:08}\n<wait>	Outside the shelter is an unknown world.\nIt's unclear whether their current weapons can match the demons outside.\nBetter to go to the armory and get new weapons first.........\n<wait>			draft	reads: シェルターの外は未知の世界である。\n現在の武器では、外の悪魔に対抗できるか分からない。\n武器庫に行って、新しい武器を調達した方がいいだろう‥‥‥\n<wait>
 m/MS001B.BIN	0:01	31	1574	1FD2	ガードロボット：	Guard Robot:			draft	
@@ -59,7 +59,7 @@ m/MS001B.BIN	0:01	51	2430	1FD0	今戻{08:52}、{08:04}達の身に万が一の�
 m/MS001B.BIN	0:01	52	2493	1F01	の足{08:62}{01:3A}でに元来た道へ戻{08:51}。\n<wait>	's feet carried him back the way he had come of their own accord.\n<wait>			draft	reads: の足は、ひとりでに元来た道へ戻った。\n<wait>
 m/MS001B.BIN	0:01	53	2537	1FD2	ガードロボット：	Guard Robot:			draft	
 m/MS001B.BIN	0:01	54	2555	1FD3	ココカラ先ハ　危険デス\n<wait>許可ナキ場合ハ　オ通シデキマセン\n<wait>	BEYOND THIS POINT IS DANGEROUS\n<wait>WITHOUT AUTHORIZATION YOU MAY NOT PASS\n<wait>			draft	
-m/MS001B.BIN	0:01	55	2629	1F01	{08:62}	 held the ID card entrusted to him by 			draft	reads: は、
+m/MS001B.BIN	0:01	55	2629	1F01	{08:62}	 held the ID card entrusted to him by 			draft	reads: は、; @refalign-merged; @refalign
 m/MS001B.BIN	0:01	56	2637	1F01	{08:42}預{08:18}ＩＤカードを、ロボットの電子アイにかざ{08:4B}。\n<wait>	 up to the robot's electronic eye.\n<wait>			draft	reads: から預かったＩＤカードを、ロボットの電子アイにかざした。\n<wait>
 m/MS001B.BIN	0:01	57	2694	1FD2	ガードロボット：	Guard Robot:			draft	
 m/MS001B.BIN	0:01	58	2712	1FD3	緊急時　通行許可ヲ確認イタシマシタ\n<wait>ドウゾ　オ通リクダサイ\n<wait><wait>	EMERGENCY PASSAGE AUTHORISATION CONFIRMED\n<wait>PLEASE PROCEED\n<wait><wait>			draft	
@@ -71,21 +71,21 @@ m/MS001B.BIN	0:02	2	101	1FBA	今、{08:45}で戻{08:52}{08:62}	Turning back now 
 m/MS001B.BIN	0:02	3	121	1F01	に示しがつか{08:25}。\n<wait>{08:4D}に、やはり{08:04}達の事が心配だ。\n<wait>	.\n<wait>Besides, he was worried about Nishino and the others.\n<wait>			draft	reads: に示しがつかない。\n<wait>それに、やはり西野達の事が心配だ。\n<wait>
 m/MS001B.BIN	0:02	4	185	1F01	{08:62}やはり隔壁扉に向かう事に{08:4B}{02:08}。\n<wait>	 decided to head for the bulkhead door after all.........\n<wait>			draft	reads: は、やはり隔壁扉に向かう事にした‥‥‥。\n<wait>
 m/MS001B.BIN	0:02	5	237	1F01	の胸を{08:7B}想いが包{08:5F}。\n	's heart was filled with a certain feeling.\n			draft	reads: の胸をある想いが包んだ。\n
-m/MS001B.BIN	0:02	6	274	1FB2	{08:90}{08:4A}僕が{08:72}？		Why me...?\n	v005		reads: どうして僕が‥‥？; menu option, declared width 20 columns
-m/MS001B.BIN	0:02	7	288	1FB2	皆{01:31}でいてくれ！		Please be safe!	v005		reads: 皆無事でいてくれ！; menu option, declared width 20 columns
-m/MS001B.BIN	0:02	8	306	1FB2	{08:02}のバカぁ！		Damn you, Yamase!	v005		reads: 山瀬のバカぁ！; menu option, declared width 20 columns
+m/MS001B.BIN	0:02	6	274	1FB2	{08:90}{08:4A}僕が{08:72}？		Why me...?\n	v005		reads: どうして僕が‥‥？; menu option, declared width 20 columns; @refalign
+m/MS001B.BIN	0:02	7	288	1FB2	皆{01:31}でいてくれ！		Please be safe!	v005		reads: 皆無事でいてくれ！; menu option, declared width 20 columns; @refalign
+m/MS001B.BIN	0:02	8	306	1FB2	{08:02}のバカぁ！		Damn you, Yamase!	v005		reads: 山瀬のバカぁ！; menu option, declared width 20 columns; @refalign
 m/MS001B.BIN	0:03	0	8	1F01	{08:62}何を思{08:51}のか階下へ向かう階段の前{08:71}来た。\n<wait>	, for whatever reason, came to the top of the stairs leading down.\n<wait>			draft	reads: は、何を思ったのか階下へ向かう階段の前まで来た。\n<wait>
 m/MS001B.BIN	0:03	1	57	1FBA	{03:0B}扉の前で立ち止まり思い直す{02:08}。\n<wait>	But he stopped in front of the door and reconsidered.........\n<wait>			draft	reads: しかし、扉の前で立ち止まり思い直す‥‥‥。\n<wait>
 m/MS001B.BIN	0:03	2	96	1FBA	今、{08:45}で戻{08:52}{08:62}	Turning back now would set a poor example for 			draft	reads: 今、ここで戻っては、
 m/MS001B.BIN	0:03	3	116	1F01	に示しがつか{08:25}。\n<wait>{08:4D}に、やはり{08:04}達の事が心配だ。\n<wait>	.\n<wait>Besides, he was worried about Nishino and the others.\n<wait>			draft	reads: に示しがつかない。\n<wait>それに、やはり西野達の事が心配だ。\n<wait>
-m/MS001B.BIN	0:03	4	190	1FB2	１Ｆに急ぐ{08:5F}！！		I've gotta hurry!	v005		reads: １Ｆに急ぐんだ！！; menu option, declared width 20 columns
-m/MS001B.BIN	0:03	5	208	1FB2	皆{01:31}でいてくれ！		Please be safe!	v005		reads: 皆無事でいてくれ！; menu option, declared width 20 columns
-m/MS001B.BIN	0:03	6	226	1FB2	{08:02}のバカぁ！		Damn you, Yamase!	v005		reads: 山瀬のバカぁ！; menu option, declared width 20 columns
+m/MS001B.BIN	0:03	4	190	1FB2	１Ｆに急ぐ{08:5F}！！		I've gotta hurry!	v005		reads: １Ｆに急ぐんだ！！; menu option, declared width 20 columns; @refalign
+m/MS001B.BIN	0:03	5	208	1FB2	皆{01:31}でいてくれ！		Please be safe!	v005		reads: 皆無事でいてくれ！; menu option, declared width 20 columns; @refalign
+m/MS001B.BIN	0:03	6	226	1FB2	{08:02}のバカぁ！		Damn you, Yamase!	v005		reads: 山瀬のバカぁ！; menu option, declared width 20 columns; @refalign
 m/MS001B.BIN	0:04	0	59	1FD2	科学者：	Scientist:			draft	
-m/MS001B.BIN	0:04	1	84	09	ん？　{02:00}？\n<wait>		Hmm? A Devil Buster?\n<wait>	v005		reads: ん？　デビルバスター？\n<wait>
+m/MS001B.BIN	0:04	1	84	09	ん？　{02:00}？\n<wait>		Hmm? A Devil Buster?\n<wait>	v005		reads: ん？　デビルバスター？\n<wait>; @refalign
 m/MS001B.BIN	0:04	2	103	1FD2	科学者：	Scientist:			draft	
 m/MS001B.BIN	0:04	3	113	1FD3	さぁ{02:08}今日は見て{08:25}のぅ。\n		No, I haven't seen any today. Sorry.\n	v005		reads: さぁ‥‥‥今日は見てないのぅ。\n
-m/MS001B.BIN	0:04	4	141	18	霊体{08:0B}がウロウロしだす{02:08}原宿に{08:65}がつながら{08:25}{02:08}\n<wait>最近おかしな事ばかり{08:81}。\n		There are all these spirit demons drifting about...\nWe also cannot make contact with Harajuku...\n<wait>It feels like things have taken a strange turn these past few days.\n	v005		reads: 霊体悪魔がウロウロしだす‥‥‥原宿に通信がつながらない‥‥‥\n<wait>最近おかしな事ばかりじゃ。\n
+m/MS001B.BIN	0:04	4	141	18	霊体{08:0B}がウロウロしだす{02:08}原宿に{08:65}がつながら{08:25}{02:08}\n<wait>最近おかしな事ばかり{08:81}。\n		There are all these spirit demons drifting about...\nWe also cannot make contact with Harajuku...\n<wait>It feels like things have taken a strange turn these past few days.\n	v005		reads: 霊体悪魔がウロウロしだす‥‥‥原宿に通信がつながらない‥‥‥\n<wait>最近おかしな事ばかりじゃ。\n; @refalign
 m/MS001B.BIN	0:04	5	234	1F03	{08:45}はファームと呼ば{08:2F}、バイオテクノロジーの粋を集めた施設{08:81}。\n<wait>	This is the Farm, the finest biotechnology gathered in one place.\n<wait>			draft	reads: ここはファームと呼ばれる、バイオテクノロジーの粋を集めた施設じゃ。\n<wait>
 m/MS001B.BIN	0:04	6	303	1FD2	科学者：	Scientist:			draft	
 m/MS001B.BIN	0:04	7	313	1FD3	{08:10}内の食料の全てが、{08:45}で生産{03:0C}ておる。\n<wait>		All of the shelter's food is grown here.\n<wait>	v005		reads: シェルター内の食料の全てが、ここで生産されておる。\n<wait>
@@ -95,7 +95,7 @@ m/MS001B.BIN	0:04	10	474	1FD2	科学者：		Scientist:	v005
 m/MS001B.BIN	0:04	11	484	1FD3	地上{08:42}レンズを用いて直接光を取り入れ、樹木を育{08:2B}{08:47}施設{08:62}\n閉鎖{03:0C}た{08:10}に住む、{02:0C}住民にと{08:52}、と{08:54}重要な場所、\n強いて言うなれば、憩いの場{08:6A}{08:81}よ。\n<wait>		The trees here are grown using sunlight reflected from the surface.\nIt makes for a great change of pace from the otherwise dull and metallic\nshelter.\n<wait>	v005		reads: 地上からレンズを用いて直接光を取り入れ、樹木を育てるこの施設は、\n閉鎖されたシェルターに住む、我々住民にとって、とても重要な場所、\n強いて言うなれば、憩いの場なんじゃよ。\n<wait>
 m/MS001B.BIN	0:04	12	633	1FD2	科学者：		Scientist:	v005		
 m/MS001B.BIN	0:04	13	643	1FD3	{08:90}{08:81}、素晴らしい施設{08:81}ろ？　フォッフォッフォ！\n<wait>		So, what do you think? Quite wonderful, is it not? Hohoho!\n<wait>	v005		reads: どうじゃ、素晴らしい施設じゃろ？　フォッフォッフォ！\n<wait>
-m/MS001B.BIN	0:04	14	705	1F03	最近、子供の見学が多くての。\n<wait>わしもいっぱしの人気者{08:81}て。フォッフォッフォ！\n<wait>		A number of schoolchildren have been coming by recently.\n<wait>I'm quite the popular figure, huh? Hohoho!\n<wait>	v005		reads: 最近、子供の見学が多くての。\n<wait>わしもいっぱしの人気者じゃて。フォッフォッフォ！\n<wait>
+m/MS001B.BIN	0:04	14	705	1F03	最近、子供の見学が多くての。\n<wait>わしもいっぱしの人気者{08:81}て。フォッフォッフォ！\n<wait>		A number of schoolchildren have been coming by recently.\n<wait>I'm quite the popular figure, huh? Hohoho!\n<wait>	v005		reads: 最近、子供の見学が多くての。\n<wait>わしもいっぱしの人気者じゃて。フォッフォッフォ！\n<wait>; @refalign
 m/MS001B.BIN	0:04	15	800	1F03	{02:00}専用食{08:62}他の住人の配給食よりもゴージャス{08:81}。\n<wait>何と言{08:52}も、わしの研究{08:4B}スペシャル・サーモンのソテー{08:62}\n<wait>逸品と言{08:52}良かろう。フォッフォッフォ！\n<wait>	Devil Buster rations are far richer than what other residents get.\n<wait>Above all, my own sauteed special salmon\n<wait>may fairly be called a masterpiece. Ho ho ho!\n<wait>			draft	reads: デビルバスター専用食は、他の住人の配給食よりもゴージャスじゃ。\n<wait>何と言っても、わしの研究したスペシャル・サーモンのソテーは、\n<wait>逸品と言って良かろう。フォッフォッフォ！\n<wait>
 m/MS001B.BIN	0:04	16	1009	1F7C	{08:0B}の数が、急に増え出{08:4B}そう{08:81}{08:25}か。\n<wait>{08:47}階の{02:0B}{08:62}概ね{08:45}に避難{08:4A}おるよ。\n<wait>	I hear the number of demons has suddenly shot up.\n<wait>Most of the people on this floor have taken refuge here.\n<wait>			draft	reads: 悪魔の数が、急に増え出したそうじゃないか。\n<wait>この階の人間は、概ねここに避難しておるよ。\n<wait>
 m/MS001B.BIN	0:04	17	1089	1FD2	科学者：	Scientist:			draft	
@@ -107,14 +107,14 @@ m/MS001B.BIN	0:04	22	1218	1FD3	貴方がたも、頑張{08:52}下{03:0C}よ。\n
 m/MS001B.BIN	0:04	23	1250	00	{08:90}{08:55}かな？　何か進展はありま{08:4B}か？\n<wait>	Well? Has there been any progress?\n<wait>			draft	reads: どうですかな？　何か進展はありましたか？\n<wait>
 m/MS001B.BIN	0:04	24	1298	1FD2	科学者：	Scientist:			draft	
 m/MS001B.BIN	0:04	25	1308	1FD3	{08:76}{08:55}か{02:08}\n<wait>皆、不安が{08:53}り{08:5A}。一刻も早く解決{08:4A}下{08:49}よ。\n<wait>	Not yet.........\n<wait>Everyone is anxious. Please resolve this as soon as you can.\n<wait>			draft	reads: まだですか‥‥‥\n<wait>皆、不安がっとります。一刻も早く解決して下さいよ。\n<wait>
-m/MS001B.BIN	0:04	26	1372	18	最近、子供の見学が多くての。\n<wait>わしもいっぱしの人気者{08:81}て。フォッフォッフォ！\n<wait>		A number of schoolchildren have been coming by recently.\n<wait>I'm quite the popular figure, huh? Hohoho!\n<wait>	v005		reads: 最近、子供の見学が多くての。\n<wait>わしもいっぱしの人気者じゃて。フォッフォッフォ！\n<wait>
+m/MS001B.BIN	0:04	26	1372	18	最近、子供の見学が多くての。\n<wait>わしもいっぱしの人気者{08:81}て。フォッフォッフォ！\n<wait>		A number of schoolchildren have been coming by recently.\n<wait>I'm quite the popular figure, huh? Hohoho!\n<wait>	v005		reads: 最近、子供の見学が多くての。\n<wait>わしもいっぱしの人気者じゃて。フォッフォッフォ！\n<wait>; @refalign
 m/MS001B.BIN	0:05	0	24	1FD2	学者：		Scientist:	v005		
 m/MS001B.BIN	0:05	1	32	1FD3	た、助{08:18}{02:08}！\n<wait>		Thank you. Thank you so much...\n<wait>	v005		reads: た、助かった‥‥‥！\n<wait>
 m/MS001B.BIN	0:05	2	53	1FD2	学者：		Scientist:	v005		
 m/MS001B.BIN	0:05	3	61	1FD3	他の住人は何処だ？\n<wait>		Now, where is everyone else?\n<wait>	v005		
 m/MS001B.BIN	0:05	4	88	1FD0	そう言うなり、学者はファームの奥へと駆け出{08:4B}。\n<wait>		The man quickly walks past you and begins looking for the other\nsurvivors.\n<wait>	v005		reads: そう言うなり、学者はファームの奥へと駆け出した。\n<wait>
-m/MS001B.BIN	0:05	5	189	1FB2	学者を止{08:2E}		Stop him	v005		reads: 学者を止める; menu option, declared width 20 columns
-m/MS001B.BIN	0:05	6	201	1FB2	放{08:52}おく		Let him go	v005		reads: 放っておく; menu option, declared width 20 columns
+m/MS001B.BIN	0:05	5	189	1FB2	学者を止{08:2E}		Stop him	v005		reads: 学者を止める; menu option, declared width 20 columns; @refalign
+m/MS001B.BIN	0:05	6	201	1FB2	放{08:52}おく		Let him go	v005		reads: 放っておく; menu option, declared width 20 columns; @refalign
 m/MS001B.BIN	0:05	7	233	1F01	{08:62}奥に向か{08:52}駆け出{08:4B}学者を止め{08:69}と{08:4B}。\n<wait>	 tried to stop the scholar who had dashed off into the back.\n<wait>			draft	reads: は、奥に向かって駆け出した学者を止めようとした。\n<wait>
 m/MS001B.BIN	0:05	8	278	1FBA	{03:0B}時既に遅く学者はファームの奥へと消え{08:21}{02:08}‥\n<wait>	But it was already too late; the scholar had vanished into the depths\nof the farm............\n<wait>	However, you're too slow to react.\nThe man has already disappeared from your sight.\n<wait>	v005	draft	reads: しかし、時既に遅く学者はファームの奥へと消えていった‥‥‥‥\n<wait>
 m/MS001B.BIN	0:05	9	334	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
@@ -190,9 +190,9 @@ m/MS001B.BIN	0:05	78	2915	1FFA	一緒で	together	were able to	v005	draft
 m/MS001B.BIN	0:05	79	2927	1FFA	{02:08}	......... 			draft	reads: ‥‥‥
 m/MS001B.BIN	0:05	80	2935	1FFA	良{08:18}‥な	I'm glad......	spend your final moments...\n	v005	draft	reads: 良かった‥な
 m/MS001B.BIN	0:05	81	2949	1FFA	{08:72}知多{08:72}\n<wait>	...Chita...\n<wait>	in your mother's embrace...\n<wait>	v005	draft	reads: ‥‥知多‥‥\n<wait>
-m/MS001B.BIN	0:05	82	2973	18	最後{08:71}母さんと一緒にいられて{08:72}良{08:18}な、知多。\n<wait>		Chito... I'm glad that you were able to spend your final moments\nin your mother's embrace.\n<wait>	v005		reads: 最後まで母さんと一緒にいられて‥‥良かったな、知多。\n<wait>
-m/MS001B.BIN	0:05	83	3026	1FD0	{08:04}は小さくつぶや{08:64}{02:08}\n<wait>		Nishino's voice is barely audible.\n<wait>	v005		reads: 西野は小さくつぶやいた‥‥‥\n<wait>
-m/MS001B.BIN	0:05	84	3055	1FD0	{08:79}声に反応{08:4B}のか、{08:0B}はくぐも{08:51}{01:2F}な声で話し出{08:4B}。\n<wait>		As if it recognizes him, the demon then begins speaking\nin the form of a series of muffled, ominous grunts.\n<wait>	v005		reads: その声に反応したのか、悪魔はくぐもった不気味な声で話し出した。\n<wait>
+m/MS001B.BIN	0:05	82	2973	18	最後{08:71}母さんと一緒にいられて{08:72}良{08:18}な、知多。\n<wait>		Chito... I'm glad that you were able to spend your final moments\nin your mother's embrace.\n<wait>	v005		reads: 最後まで母さんと一緒にいられて‥‥良かったな、知多。\n<wait>; @refalign
+m/MS001B.BIN	0:05	83	3026	1FD0	{08:04}は小さくつぶや{08:64}{02:08}\n<wait>		Nishino's voice is barely audible.\n<wait>	v005		reads: 西野は小さくつぶやいた‥‥‥\n<wait>; @refalign
+m/MS001B.BIN	0:05	84	3055	1FD0	{08:79}声に反応{08:4B}のか、{08:0B}はくぐも{08:51}{01:2F}な声で話し出{08:4B}。\n<wait>		As if it recognizes him, the demon then begins speaking\nin the form of a series of muffled, ominous grunts.\n<wait>	v005		reads: その声に反応したのか、悪魔はくぐもった不気味な声で話し出した。\n<wait>; @refalign
 m/MS001B.BIN	0:05	85	3112	1FD2	{08:0B}：	Demon:			draft	reads: 悪魔：
 m/MS001B.BIN	0:05	86	3118	1FD3	{08:72}	...			draft	reads: ‥‥
 m/MS001B.BIN	0:05	87	3126	1F01	くん{08:72}何かあっ{08:50}{08:72}いつ{08:56}{02:08}{02:08}\n<wait>	... if anything happens... any time............\n<wait>			draft	reads: くん‥‥何かあったら‥‥いつでも‥‥‥‥‥‥\n<wait>
@@ -200,10 +200,10 @@ m/MS001B.BIN	0:05	88	3163	1FD2	{08:0B}：		Demon:	v005		reads: 悪魔：
 m/MS001B.BIN	0:05	89	3169	1FD3	{08:72}	... 	Ayato... If something happens... you can always... come talk to me...\n<wait>	v005	draft	reads: ‥‥
 m/MS001B.BIN	0:05	90	3177	1F01	兄ちゃん{08:72}僕も{08:75}{08:72}{02:00}{02:08}\n<wait>	... big brother... me too, y'know... a Devil Buster.........\n<wait>			draft	reads: 兄ちゃん‥‥僕もねえ‥‥デビルバスター‥‥‥\n<wait>
 m/MS001B.BIN	0:05	91	3208	1FD2	{08:0B}：	Demon:	Demon:	v005	draft	reads: 悪魔：
-m/MS001B.BIN	0:05	92	3214	1FD3	{08:72}貴方{08:72}い{08:52}らっしゃい{08:72}{01:21}{08:72}ロボット買{08:52}よ{08:72}\n<wait>		Welcome home... dear... Daddy... buy me... a toy...<wait>	v005		reads: ‥‥貴方‥‥いってらっしゃい‥‥パパ‥‥ロボット買ってよ‥‥\n<wait>
-m/MS001B.BIN	0:05	93	3290	1FB2	{08:0B}に話{08:86}{08:29}		Talk to the demon	v005		reads: 悪魔に話しかける; menu option, declared width 20 columns
-m/MS001B.BIN	0:05	94	3302	1FB2	早く楽に{02:0D}やろう		Put it out its misery	v005		reads: 早く楽にさせてやろう; menu option, declared width 20 columns
-m/MS001B.BIN	0:05	95	3350	1F01	{08:62}{08:0B}人に話{08:86}けてみた{02:08}\n<wait>	 tried speaking to the demonoid......\n<wait>	You decide to try talking to the demon.\n<wait>	v005	draft	reads: は、悪魔人に話しかけてみた‥‥‥\n<wait>
+m/MS001B.BIN	0:05	92	3214	1FD3	{08:72}貴方{08:72}い{08:52}らっしゃい{08:72}{01:21}{08:72}ロボット買{08:52}よ{08:72}\n<wait>		Welcome home... dear... Daddy... buy me... a toy...<wait>	v005		reads: ‥‥貴方‥‥いってらっしゃい‥‥パパ‥‥ロボット買ってよ‥‥\n<wait>; @refalign
+m/MS001B.BIN	0:05	93	3290	1FB2	{08:0B}に話{08:86}{08:29}		Talk to the demon	v005		reads: 悪魔に話しかける; menu option, declared width 20 columns; @refalign
+m/MS001B.BIN	0:05	94	3302	1FB2	早く楽に{02:0D}やろう		Put it out its misery	v005		reads: 早く楽にさせてやろう; menu option, declared width 20 columns; @refalign
+m/MS001B.BIN	0:05	95	3350	1F01	{08:62}{08:0B}人に話{08:86}けてみた{02:08}\n<wait>	 tried speaking to the demonoid......\n<wait>	You decide to try talking to the demon.\n<wait>	v005	draft	reads: は、悪魔人に話しかけてみた‥‥‥\n<wait>; @refalign
 m/MS001B.BIN	0:05	96	3381	1FD2	{08:0B}：	Demon:			draft	reads: 悪魔：
 m/MS001B.BIN	0:05	97	3387	1FD3	ググ{08:72}ガ{02:08}	Gugh... gah......... 	Aa... Aah... Ayato... Big Bro...\n<wait>	v005	draft	reads: ググ‥‥ガ‥‥‥
 m/MS001B.BIN	0:05	98	3403	1F01	くん{02:08}	............ 			draft	reads: くん‥‥‥
@@ -215,15 +215,15 @@ m/MS001B.BIN	0:05	103	3568	1FD0	{08:47}{08:69}な姿に{03:0C}、なおも生き
 m/MS001B.BIN	0:05	104	3642	1FBA	一刻も早く、{08:63}達の手で楽に{08:4A}やる{08:46}が、最上の手段だと考{08:41}	Deciding the best course was to put them out of their misery by their\nown hands as quickly as possible, 			draft	reads: 一刻も早く、自分達の手で楽にしてやることが、最上の手段だと考えた
 m/MS001B.BIN	0:05	105	3704	1F01	{08:62}\n静かに武器を構え直す。\n{03:0B}手の震えは止まら{08:25}{02:08}\n<wait>	 \nquietly readied his weapon again.\nBut his hands would not stop trembling.........\n<wait>			draft	reads: は、\n静かに武器を構え直す。\nしかし、手の震えは止まらない‥‥‥\n<wait>
 m/MS001B.BIN	0:05	106	3800	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS001B.BIN	0:05	107	3806	1FD3	い{08:72}や{08:72}{08:5C}嫌！　{08:73}の嫌よぉッ！！！\n<wait>		No... Stop... Make it stop!!\n<wait>	v005		reads: い‥‥や‥‥もう嫌！　こんなの嫌よぉッ！！！\n<wait>
+m/MS001B.BIN	0:05	107	3806	1FD3	い{08:72}や{08:72}{08:5C}嫌！　{08:73}の嫌よぉッ！！！\n<wait>		No... Stop... Make it stop!!\n<wait>	v005		reads: い‥‥や‥‥もう嫌！　こんなの嫌よぉッ！！！\n<wait>; @refalign
 m/MS001B.BIN	0:05	108	3882	1F01	：	:			draft	
-m/MS001B.BIN	0:05	109	3886	1FD3	い{08:72}や{08:72}{08:5C}嫌！　{08:73}の嫌よぉッ！！！\n<wait>		No... Stop... Make it stop!!\n<wait>	v005		reads: い‥‥や‥‥もう嫌！　こんなの嫌よぉッ！！！\n<wait>
+m/MS001B.BIN	0:05	109	3886	1FD3	い{08:72}や{08:72}{08:5C}嫌！　{08:73}の嫌よぉッ！！！\n<wait>		No... Stop... Make it stop!!\n<wait>	v005		reads: い‥‥や‥‥もう嫌！　こんなの嫌よぉッ！！！\n<wait>; @refalign
 m/MS001B.BIN	0:05	110	3956	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS001B.BIN	0:05	111	3962	1FD3	う{02:08}あ{08:72}{08:73}{08:72}{08:73}事ッ！\n<wait>		This... This can't be happening...\n<wait>	v005		reads: う‥‥‥あ‥‥こんな‥‥こんな事ッ！\n<wait>
-m/MS001B.BIN	0:05	112	4013	1E16	あまりにも無残な地獄絵図であ{08:51}{02:08}{08:72}\n<wait>		The scene playing out before you is straight from a nightmare.\n<wait>	v005		reads: あまりにも無残な地獄絵図であった‥‥‥‥‥\n<wait>
-m/MS001B.BIN	0:05	113	4065	1F01	{08:62}あまりの無残な姿に思わず目を逸ら{08:4B}。\n<wait>	 looked away in spite of himself from so pitiful a sight.\n<wait>	You can only look for so long before averting your eyes.\n<wait>	v005	draft	reads: は、あまりの無残な姿に思わず目を逸らした。\n<wait>
+m/MS001B.BIN	0:05	111	3962	1FD3	う{02:08}あ{08:72}{08:73}{08:72}{08:73}事ッ！\n<wait>		This... This can't be happening...\n<wait>	v005		reads: う‥‥‥あ‥‥こんな‥‥こんな事ッ！\n<wait>; @refalign
+m/MS001B.BIN	0:05	112	4013	1E16	あまりにも無残な地獄絵図であ{08:51}{02:08}{08:72}\n<wait>		The scene playing out before you is straight from a nightmare.\n<wait>	v005		reads: あまりにも無残な地獄絵図であった‥‥‥‥‥\n<wait>; @refalign
+m/MS001B.BIN	0:05	113	4065	1F01	{08:62}あまりの無残な姿に思わず目を逸ら{08:4B}。\n<wait>	 looked away in spite of himself from so pitiful a sight.\n<wait>	You can only look for so long before averting your eyes.\n<wait>	v005	draft	reads: は、あまりの無残な姿に思わず目を逸らした。\n<wait>; @refalign
 m/MS001B.BIN	0:05	114	4148	1FD2	{08:04}：	Nishino:			draft	reads: 西野：
-m/MS001B.BIN	0:05	115	4163	1E16	頼むぞ	I'm counting on you	Go... 	v005	draft	
+m/MS001B.BIN	0:05	115	4163	1E16	頼むぞ	I'm counting on you	Go... 	v005	draft	@refalign
 m/MS001B.BIN	0:05	116	4175	1FFA	{02:08}‥	............ 			draft	reads: ‥‥‥‥
 m/MS001B.BIN	0:05	117	4185	1FFA	{01:03}	Newton	Newton	v005	draft	reads: ニュートン
 m/MS001B.BIN	0:05	118	4193	1FFA	{02:08}‥\n<wait>	............\n<wait>	...\\b<wait>	v005	draft	reads: ‥‥‥‥\n<wait>
@@ -232,38 +232,38 @@ m/MS001B.BIN	0:05	120	4218	1FD3	陽子	Youko	Youko	v005	draft
 m/MS001B.BIN	0:05	121	4228	1FFA	{08:72}	...			draft	reads: ‥‥
 m/MS001B.BIN	0:05	122	4236	1FFA	知多	Chita	and Chita	v005	draft	
 m/MS001B.BIN	0:05	123	4246	1FFA	{08:72}	...			draft	reads: ‥‥
-m/MS001B.BIN	0:05	124	4254	1FFA	いや	no	No	v005	draft	
+m/MS001B.BIN	0:05	124	4254	1FFA	いや	no	No	v005	draft	@refalign
 m/MS001B.BIN	0:05	125	4264	1FFA	{08:72}	...			draft	reads: ‥‥
-m/MS001B.BIN	0:05	126	4272	1FFA	あの	that	That	v005	draft	
+m/MS001B.BIN	0:05	126	4272	1FFA	あの	that	That	v005	draft	@refalign
 m/MS001B.BIN	0:05	127	4282	1FFA	{08:72}	...			draft	reads: ‥‥
-m/MS001B.BIN	0:05	128	4290	1FFA	{08:0B}を	demon	demon... Kill it	v005	draft	reads: 悪魔を
+m/MS001B.BIN	0:05	128	4290	1FFA	{08:0B}を	demon	demon... Kill it	v005	draft	reads: 悪魔を; @refalign
 m/MS001B.BIN	0:05	129	4300	1FFA	{02:08}‥\n	......\n	...\\b	v005	draft	reads: ‥‥‥‥\n
 m/MS001B.BIN	0:05	130	4316	1FD2	{08:04}：	Nishino:			draft	reads: 西野：
 m/MS001B.BIN	0:05	131	4331	1E17	行くぞ！　{01:03}！\n<wait>	Let's go, Newton!\n<wait>			draft	reads: 行くぞ！　ニュートン！\n<wait>
 m/MS001B.BIN	0:05	132	4354	1FD2	{08:04}：	Nishino:			draft	reads: 西野：
 m/MS001B.BIN	0:05	133	4363	18	{08:72}陽子{02:08}知多{02:08}{08:72}<wait>今‥楽に{08:4A}やる{08:42}な{02:08}\n	...Youko......... Chita............<wait>I'll... put you out of your misery now.........\n	Youko... Chita... <wait>Don't worry... You won't need to... suffer for much longer\n	v005	draft	reads: ‥‥陽子‥‥‥知多‥‥‥‥‥<wait>今‥楽にしてやるからな‥‥‥\n
 m/MS001B.BIN	0:05	134	4478	1FD2	{08:04}：	Nishino:			draft	reads: 西野：
-m/MS001B.BIN	0:05	135	4493	1E16	落ち着け	Calm down	Calm down	v005	draft	
+m/MS001B.BIN	0:05	135	4493	1E16	落ち着け	Calm down	Calm down	v005	draft	@refalign
 m/MS001B.BIN	0:05	136	4507	1FFA	{02:08}‥！　	......!			draft	reads: ‥‥‥‥！　
-m/MS001B.BIN	0:05	137	4521	1FFA	惑わ{03:0C}るん{08:81}{08:72}{08:25}	 Don't be fooled	Do not fall... for the enemy's trickery	v005	draft	reads: 惑わされるんじゃ‥‥ない
+m/MS001B.BIN	0:05	137	4521	1FFA	惑わ{03:0C}るん{08:81}{08:72}{08:25}	 Don't be fooled	Do not fall... for the enemy's trickery	v005	draft	reads: 惑わされるんじゃ‥‥ない; @refalign
 m/MS001B.BIN	0:05	138	4543	1FFA	{08:72}！\n	...!\n			draft	reads: ‥‥！\n
 m/MS001B.BIN	0:05	139	4562	1FD2	{08:04}：	Nishino:			draft	reads: 西野：
-m/MS001B.BIN	0:05	140	4568	1FD3	{08:3F}{08:62}陽子{08:56}	That is not Youko	This is not Youko...	v005	draft	reads: あれは、陽子でも
+m/MS001B.BIN	0:05	140	4568	1FD3	{08:3F}{08:62}陽子{08:56}	That is not Youko	This is not Youko...	v005	draft	reads: あれは、陽子でも; @refalign
 m/MS001B.BIN	0:05	141	4584	1FFA	{02:08}	......... 			draft	reads: ‥‥‥
-m/MS001B.BIN	0:05	142	4592	1FFA	知多{08:56}{08:25}<wait>{08:0B}だ！\n敵{08:42}	or Chita either<wait>it's a demon!\nDon't	 or Chito...<wait> but a demon!\n	v005	draft	reads: 知多でもない<wait>悪魔だ！\n敵から
+m/MS001B.BIN	0:05	142	4592	1FFA	知多{08:56}{08:25}<wait>{08:0B}だ！\n敵{08:42}	or Chita either<wait>it's a demon!\nDon't	 or Chito...<wait> but a demon!\n	v005	draft	reads: 知多でもない<wait>悪魔だ！\n敵から; @refalign
 m/MS001B.BIN	0:05	143	4621	1FFA	{02:08}	......... 			draft	reads: ‥‥‥
-m/MS001B.BIN	0:05	144	4629	1FFA	目を‥逸らすな	look away from the enemy	We must	v005	draft	
+m/MS001B.BIN	0:05	144	4629	1FFA	目を‥逸らすな	look away from the enemy	We must	v005	draft	@refalign
 m/MS001B.BIN	0:05	145	4649	1FFA	{08:72}！　	...!			draft	reads: ‥‥！　
-m/MS001B.BIN	0:05	146	4661	1FFA	来るぞ！！\n<wait>	 Here it comes!!\n<wait>	 take it down!\n<wait>	v005	draft	
+m/MS001B.BIN	0:05	146	4661	1FFA	来るぞ！！\n<wait>	 Here it comes!!\n<wait>	 take it down!\n<wait>	v005	draft	@refalign
 m/MS001B.BIN	0:05	147	4681	18	落ち着け！　敵の心理{08:0C}に惑わ{03:0C}るな！\n<wait>	Calm down! Don't be fooled by the enemy's mind attacks!\n<wait>	Calm down! Do not fall for the enemy's trickery!\n<wait>	v005	draft	reads: 落ち着け！　敵の心理攻撃に惑わされるな！\n<wait>
 m/MS001B.BIN	0:05	148	4726	1FD2	{08:04}：	Nishino:			draft	reads: 西野：
-m/MS001B.BIN	0:05	149	4732	1FD3	今{03:13}{08:40}の{08:62}陽子{08:56}、知多{08:56}{08:25}！　{08:0B}だ！！　\n敵{08:42}目を逸らすな！　来るぞ！！\n<wait>		This is not Youko or Chito, but a demon! We must take it down\n<wait>	v005		reads: 今目の前にいるのは、陽子でも、知多でもない！　悪魔だ！！　\n敵から目を逸らすな！　来るぞ！！\n<wait>
+m/MS001B.BIN	0:05	149	4732	1FD3	今{03:13}{08:40}の{08:62}陽子{08:56}、知多{08:56}{08:25}！　{08:0B}だ！！　\n敵{08:42}目を逸らすな！　来るぞ！！\n<wait>		This is not Youko or Chito, but a demon! We must take it down\n<wait>	v005		reads: 今目の前にいるのは、陽子でも、知多でもない！　悪魔だ！！　\n敵から目を逸らすな！　来るぞ！！\n<wait>; @refalign
 m/MS001B.BIN	0:05	150	4836	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS001B.BIN	0:05	151	4842	1FD3	りょ{08:72}了解ッ！！\n<wait>		R-Right!\n<wait>	v005		reads: りょ‥‥了解ッ！！\n<wait>
+m/MS001B.BIN	0:05	151	4842	1FD3	りょ{08:72}了解ッ！！\n<wait>		R-Right!\n<wait>	v005		reads: りょ‥‥了解ッ！！\n<wait>; @refalign
 m/MS001B.BIN	0:05	152	4894	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS001B.BIN	0:05	153	4900	1FD3	りょ{08:72}了解ッ！！\n<wait>		R-Right!\n<wait>	v005		reads: りょ‥‥了解ッ！！\n<wait>
+m/MS001B.BIN	0:05	153	4900	1FD3	りょ{08:72}了解ッ！！\n<wait>		R-Right!\n<wait>	v005		reads: りょ‥‥了解ッ！！\n<wait>; @refalign
 m/MS001B.BIN	0:05	154	4952	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS001B.BIN	0:05	155	4958	1FD3	りょ{08:72}了解ッ！！\n<wait>		R-Right!\n<wait>	v005		reads: りょ‥‥了解ッ！！\n<wait>
+m/MS001B.BIN	0:05	155	4958	1FD3	りょ{08:72}了解ッ！！\n<wait>		R-Right!\n<wait>	v005		reads: りょ‥‥了解ッ！！\n<wait>; @refalign
 m/MS001B.BIN	0:05	156	4992	1F01	は頷くと、震{08:28}手で武器を握り直し、身構{08:41}。\n<wait>	 nodded, gripped his weapon again with trembling hands, and braced\nhimself.\n<wait>			draft	reads: は頷くと、震える手で武器を握り直し、身構えた。\n<wait>
 m/MS001B.BIN	0:05	157	5102	00	{04:FF}	{04:FF}				reads: 
 m/MS001B.BIN	0:05	158	5105	00	d{04:FF}	d{04:FF}				reads: d
@@ -286,11 +286,11 @@ m/MS001B.BIN	0:05	174	5568	1FD3	‥{08:0B}が{08:40}{08:72}{08:0B}が外に{08:4
 m/MS001B.BIN	0:05	175	5603	1FD2	兼嗣：	Kanetsugu:			draft	
 m/MS001B.BIN	0:05	176	5611	1FD3	凄まじい霊体反応{02:08}\n<wait>た{08:72}{08:82}の{08:0B}{08:81}{08:25}{08:5F}ッ！！\n<wait>	A tremendous spirit reading.........\n<wait>Th... these aren't ordinary demons!!\n<wait>			draft	reads: 凄まじい霊体反応‥‥‥\n<wait>た‥‥ただの悪魔じゃないんだッ！！\n<wait>
 m/MS001B.BIN	0:05	177	5693	1FD2	{08:04}：	Nishino:			draft	reads: 西野：
-m/MS001B.BIN	0:05	178	5699	1FD3	何処にいらっしゃるん{08:55}か！！\n		What is your current location!?\n	v005		reads: 何処にいらっしゃるんですか！！\n
+m/MS001B.BIN	0:05	178	5699	1FD3	何処にいらっしゃるん{08:55}か！！\n		What is your current location!?\n	v005		reads: 何処にいらっしゃるんですか！！\n; @refalign
 m/MS001B.BIN	0:05	179	5757	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS001B.BIN	0:05	180	5763	1FD3	何処にいらっしゃるん{08:55}か！！\n		What is your current location!?\n	v005		reads: 何処にいらっしゃるんですか！！\n
+m/MS001B.BIN	0:05	180	5763	1FD3	何処にいらっしゃるん{08:55}か！！\n		What is your current location!?\n	v005		reads: 何処にいらっしゃるんですか！！\n; @refalign
 m/MS001B.BIN	0:05	181	5821	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS001B.BIN	0:05	182	5827	1FD3	何処に{02:08}いらっしゃるん{08:55}か！？\n		What is your current location!?\n	v005		reads: 何処に‥‥‥いらっしゃるんですか！？\n
+m/MS001B.BIN	0:05	182	5827	1FD3	何処に{02:08}いらっしゃるん{08:55}か！？\n		What is your current location!?\n	v005		reads: 何処に‥‥‥いらっしゃるんですか！？\n; @refalign
 m/MS001B.BIN	0:05	183	5893	1F01	：	:			draft	
 m/MS001B.BIN	0:05	184	5897	1FD3	{02:08}{02:08}{02:08}‥\n	.........\n			draft	reads: ‥‥‥‥‥‥‥‥‥‥\n
 m/MS001B.BIN	0:05	185	5911	1FD0	アームターミナル{08:42}{08:62}兼嗣の切羽詰{08:20}声が聞こえてくる{02:08}\n<wait>	Kanetsugu's desperate voice comes from the Arm Terminal.........\n<wait>			draft	reads: アームターミナルからは、兼嗣の切羽詰まった声が聞こえてくる‥‥‥\n<wait>
@@ -308,7 +308,7 @@ m/MS001B.BIN	0:05	196	6328	1FBA	{03:0B}{08:04}は{01:28}言{08:52}{08:64}。\n<w
 m/MS001B.BIN	0:05	197	6351	1FBA	{02:00}で{08:7B}{02:0C}{08:62}相手が{08:6D}{08:69}な人物であろうと、\n{08:0B}に脅か{03:0C}{08:14}者{08:7C}、見捨てては{08:7D}{08:25}{02:08}と\n<wait>	We Devil Busters, no matter what sort of person they are, must never\nabandon anyone threatened by demons.........\n<wait>			draft	reads: デビルバスターである我々は、相手がどのような人物であろうと、\n悪魔に脅かされている者ならば、見捨ててはならない‥‥‥と\n<wait>
 m/MS001B.BIN	0:05	198	6433	1FBA	一行{08:62}倒{08:60}{08:5E}を蘇生させ、管制{08:05}ー室に向かう事に{08:4B}。\n	The party decided to revive the fallen and head for the control\ncomputer room.\n			draft	reads: 一行は、倒れたものを蘇生させ、管制コンピューター室に向かう事にした。\n
 m/MS001B.BIN	0:05	199	6571	1FD2	{08:04}：	Nishino:			draft	reads: 西野：
-m/MS001B.BIN	0:05	200	6577	1FD3	行くぞ	Let's go	Let's go	v005	draft	
+m/MS001B.BIN	0:05	200	6577	1FD3	行くぞ	Let's go	Let's go	v005	draft	@refalign
 m/MS001B.BIN	0:05	201	6589	1FFA	{02:08}‥	............ 			draft	reads: ‥‥‥‥
 m/MS001B.BIN	0:05	202	6599	1FFA	{01:03}	Newton	Newton	v005	draft	reads: ニュートン
 m/MS001B.BIN	0:05	203	6607	1FFA	{02:08}‥\n<wait>	............\n<wait>	...\\b<wait>	v005	draft	reads: ‥‥‥‥\n<wait>
@@ -317,65 +317,65 @@ m/MS001B.BIN	0:05	205	6632	1FD3	{02:0C}は	We are	We're	v005	draft	reads: 我々
 m/MS001B.BIN	0:05	206	6642	1FFA	{08:72}	...			draft	reads: ‥‥
 m/MS001B.BIN	0:05	207	6650	1FFA	{02:00}	Devil Busters	Devil	v005	draft	reads: デビルバスター
 m/MS001B.BIN	0:05	208	6658	1FFA	{08:72}	...			draft	reads: ‥‥
-m/MS001B.BIN	0:05	209	6666	1FFA	だ	that's right	Busters	v005	draft	
+m/MS001B.BIN	0:05	209	6666	1FFA	だ	that's right	Busters	v005	draft	@refalign
 m/MS001B.BIN	0:05	210	6674	1FFA	{08:72}\n	...\n			draft	reads: ‥‥\n
 m/MS001B.BIN	0:05	211	6683	1FFA	相手が	no matter	Whoever it is	v005	draft	
 m/MS001B.BIN	0:05	212	6695	1FFA	{08:72}	...			draft	reads: ‥‥
-m/MS001B.BIN	0:05	213	6703	1FFA	誰で{08:3F}	who they are	we	v005	draft	reads: 誰であれ
+m/MS001B.BIN	0:05	213	6703	1FFA	誰で{08:3F}	who they are	we	v005	draft	reads: 誰であれ; @refalign
 m/MS001B.BIN	0:05	214	6715	1FFA	{02:08}‥	............ 			draft	reads: ‥‥‥‥
-m/MS001B.BIN	0:05	215	6725	1FFA	助けねば	we must help them	keep them	v005	draft	
+m/MS001B.BIN	0:05	215	6725	1FFA	助けねば	we must help them	keep them	v005	draft	@refalign
 m/MS001B.BIN	0:05	216	6739	1FFA	{02:08}‥な\n	......\n	safe...\n	v005	draft	reads: ‥‥‥‥な\n
-m/MS001B.BIN	0:05	217	6764	1FD0	{08:65}が切{08:2F}と、{01:03}は医療施設へと向{08:18}{08:72}\n		As the transmission ends,\nNewton begins heading towards the medical ward.\n	v005		reads: 通信が切れると、ニュートンは医療施設へと向かった‥‥\n
+m/MS001B.BIN	0:05	217	6764	1FD0	{08:65}が切{08:2F}と、{01:03}は医療施設へと向{08:18}{08:72}\n		As the transmission ends,\nNewton begins heading towards the medical ward.\n	v005		reads: 通信が切れると、ニュートンは医療施設へと向かった‥‥\n; @refalign
 m/MS001B.BIN	0:05	218	6802	1FD2	{08:04}：	Nishino:			draft	reads: 西野：
 m/MS001B.BIN	0:05	219	6817	1E17	行くぞ！　{01:03}！\n<wait>	Let's go, Newton!\n<wait>			draft	reads: 行くぞ！　ニュートン！\n<wait>
 m/MS001B.BIN	0:05	220	6840	1FD2	{08:04}：	Nishino:			draft	reads: 西野：
-m/MS001B.BIN	0:05	221	6846	1FD3	{02:0C}は{02:00}だ。\n例え{08:6D}{08:69}な{02:0B}であろうとも、見捨{08:2B}訳に{08:26}かん！\n<wait>		We are Devil Busters. Our job is to protect humans,\nregardless of what kinds of sins they may have committed.\n<wait>	v005		reads: 我々はデビルバスターだ。\n例えどのような人間であろうとも、見捨てる訳にはいかん！\n<wait>
+m/MS001B.BIN	0:05	221	6846	1FD3	{02:0C}は{02:00}だ。\n例え{08:6D}{08:69}な{02:0B}であろうとも、見捨{08:2B}訳に{08:26}かん！\n<wait>		We are Devil Busters. Our job is to protect humans,\nregardless of what kinds of sins they may have committed.\n<wait>	v005		reads: 我々はデビルバスターだ。\n例えどのような人間であろうとも、見捨てる訳にはいかん！\n<wait>; @refalign
 m/MS001B.BIN	0:05	222	6910	1FD2	{08:04}：	Nishino:			draft	reads: 西野：
-m/MS001B.BIN	0:05	223	6916	1FD3	まず{08:62}医療施設で皆を蘇生さ{08:2A}ぞ！\n<wait>		First things first, lets head over to the medical ward\nand revive the fallen.\n<wait>	v005		reads: まずは、医療施設で皆を蘇生させるぞ！\n<wait>
-m/MS001B.BIN	0:05	224	6957	1FD2	{01:03}：		Newton:	v005		reads: ニュートン：
-m/MS001B.BIN	0:05	225	6963	1FD3	ワオン！\n		Woof!\n	v005		
-m/MS001B.BIN	0:05	226	6979	1F01	上官{02:08}{02:00}で{08:7B}{02:0C}{08:62}例え貴方{08:56}\n見捨ては致し{02:0A}{02:08}‥。\n<wait>	, sir...... we are Devil Busters. We will not abandon anyone,\nnot even you......\n<wait>	We are Devil Busters. Our job is to protect humans,\nregardless of what kinds of sins they may have committed.\n<wait>	v005	draft	reads: 上官‥‥‥デビルバスターである我々は、例え貴方でも\n見捨ては致しません‥‥‥‥。\n<wait>
+m/MS001B.BIN	0:05	223	6916	1FD3	まず{08:62}医療施設で皆を蘇生さ{08:2A}ぞ！\n<wait>		First things first, lets head over to the medical ward\nand revive the fallen.\n<wait>	v005		reads: まずは、医療施設で皆を蘇生させるぞ！\n<wait>; @refalign
+m/MS001B.BIN	0:05	224	6957	1FD2	{01:03}：		Newton:	v005		reads: ニュートン：; @refalign
+m/MS001B.BIN	0:05	225	6963	1FD3	ワオン！\n		Woof!\n	v005		@refalign
+m/MS001B.BIN	0:05	226	6979	1F01	上官{02:08}{02:00}で{08:7B}{02:0C}{08:62}例え貴方{08:56}\n見捨ては致し{02:0A}{02:08}‥。\n<wait>	, sir...... we are Devil Busters. We will not abandon anyone,\nnot even you......\n<wait>	We are Devil Busters. Our job is to protect humans,\nregardless of what kinds of sins they may have committed.\n<wait>	v005	draft	reads: 上官‥‥‥デビルバスターである我々は、例え貴方でも\n見捨ては致しません‥‥‥‥。\n<wait>; @refalign
 m/MS001B.BIN	0:05	227	7129	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS001B.BIN	0:05	228	7144	1E16	管制{08:05}ー室{08:72}危険だな{08:72}\n		The main computer room... That's not good...\n	v005		reads: 管制コンピューター室‥‥危険だな‥‥\n
-m/MS001B.BIN	0:05	229	7182	18	隊長、危険{08:55}！\n<wait>		Commander, this is bad!\n<wait>	v005		reads: 隊長、危険です！\n<wait>
+m/MS001B.BIN	0:05	228	7144	1E16	管制{08:05}ー室{08:72}危険だな{08:72}\n		The main computer room... That's not good...\n	v005		reads: 管制コンピューター室‥‥危険だな‥‥\n; @refalign
+m/MS001B.BIN	0:05	229	7182	18	隊長、危険{08:55}！\n<wait>		Commander, this is bad!\n<wait>	v005		reads: 隊長、危険です！\n<wait>; @refalign
 m/MS001B.BIN	0:05	230	7230	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS001B.BIN	0:05	231	7245	1E16	管制{08:05}ー室{08:72}危険だわ{08:72}\n		The main computer room... That's not good...\n	v005		reads: 管制コンピューター室‥‥危険だわ‥‥\n
-m/MS001B.BIN	0:05	232	7283	18	隊長、危険{08:55}！\n<wait>		Commander, this is bad!\n<wait>	v005		reads: 隊長、危険です！\n<wait>
+m/MS001B.BIN	0:05	231	7245	1E16	管制{08:05}ー室{08:72}危険だわ{08:72}\n		The main computer room... That's not good...\n	v005		reads: 管制コンピューター室‥‥危険だわ‥‥\n; @refalign
+m/MS001B.BIN	0:05	232	7283	18	隊長、危険{08:55}！\n<wait>		Commander, this is bad!\n<wait>	v005		reads: 隊長、危険です！\n<wait>; @refalign
 m/MS001B.BIN	0:05	233	7331	1F01	：	:			draft	
-m/MS001B.BIN	0:05	234	7335	1FD3	あ	Th	We... 	v005	draft	
+m/MS001B.BIN	0:05	234	7335	1FD3	あ	Th	We... 	v005	draft	@refalign
 m/MS001B.BIN	0:05	235	7343	1FFA	{08:72}	...			draft	reads: ‥‥
-m/MS001B.BIN	0:05	236	7351	1FFA	あんな人\n<wait>	that man\n<wait>	We have...\n<wait>	v005	draft	
+m/MS001B.BIN	0:05	236	7351	1FFA	あんな人\n<wait>	that man\n<wait>	We have...\n<wait>	v005	draft	@refalign
 m/MS001B.BIN	0:05	237	7370	1FFA	{08:72}	...			draft	reads: ‥‥
-m/MS001B.BIN	0:05	238	7378	1FFA	助{08:29}必要{08:6A}て	there's no need	no obligation to save	v005	draft	reads: 助ける必要なんて
+m/MS001B.BIN	0:05	238	7378	1FFA	助{08:29}必要{08:6A}て	there's no need	no obligation to save	v005	draft	reads: 助ける必要なんて; @refalign
 m/MS001B.BIN	0:05	239	7396	1FFA	{08:72}	...			draft	reads: ‥‥
-m/MS001B.BIN	0:05	240	7404	1FFA	あり{02:0A}	to save him	the likes of him	v005	draft	reads: ありません
+m/MS001B.BIN	0:05	240	7404	1FFA	あり{02:0A}	to save him	the likes of him	v005	draft	reads: ありません; @refalign
 m/MS001B.BIN	0:05	241	7416	1FFA	{02:08}‥！！\n<wait>	......!!\n<wait>			draft	reads: ‥‥‥‥！！\n<wait>
 m/MS001B.BIN	0:05	242	7448	1F01	：	:			draft	
 m/MS001B.BIN	0:05	243	7452	1FD3	あ{08:72}あんな人っ！\n<wait>助{08:29}必要{08:6A}て{08:72}あり{02:0A}{02:08}‥！！\n<wait>	Th... that man!\n<wait>There's no need... to save him......!!\n<wait>	W-We have...\n<wait>no obligation to save the likes him!\n<wait>	v005	draft	reads: あ‥‥あんな人っ！\n<wait>助ける必要なんて‥‥ありません‥‥‥‥！！\n<wait>
 m/MS001B.BIN	0:05	244	7534	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS001B.BIN	0:05	245	7540	1FD3	あ	Th	We... 	v005	draft	
+m/MS001B.BIN	0:05	245	7540	1FD3	あ	Th	We... 	v005	draft	@refalign
 m/MS001B.BIN	0:05	246	7548	1FFA	{08:72}	...			draft	reads: ‥‥
-m/MS001B.BIN	0:05	247	7556	1FFA	あんな奴\n<wait>	that guy\n<wait>	We have...\n<wait>	v005	draft	
+m/MS001B.BIN	0:05	247	7556	1FFA	あんな奴\n<wait>	that guy\n<wait>	We have...\n<wait>	v005	draft	@refalign
 m/MS001B.BIN	0:05	248	7575	1FFA	{08:72}	...			draft	reads: ‥‥
-m/MS001B.BIN	0:05	249	7583	1FFA	助{08:29}必要{08:6A}て	there's no need	no obligation to save	v005	draft	reads: 助ける必要なんて
+m/MS001B.BIN	0:05	249	7583	1FFA	助{08:29}必要{08:6A}て	there's no need	no obligation to save	v005	draft	reads: 助ける必要なんて; @refalign
 m/MS001B.BIN	0:05	250	7601	1FFA	{08:72}	...			draft	reads: ‥‥
-m/MS001B.BIN	0:05	251	7609	1FFA	無い{08:5F}ッ	to save him	the likes of him!	v005	draft	reads: 無いんだッ
+m/MS001B.BIN	0:05	251	7609	1FFA	無い{08:5F}ッ	to save him	the likes of him!	v005	draft	reads: 無いんだッ; @refalign
 m/MS001B.BIN	0:05	252	7623	1FFA	{02:08}‥！！\n<wait>	......!!\n<wait>			draft	reads: ‥‥‥‥！！\n<wait>
 m/MS001B.BIN	0:05	253	7649	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
 m/MS001B.BIN	0:05	254	7655	1FD3	あ{08:72}あんな奴ッ！\n<wait>助{08:29}必要{08:6A}て{08:72}無い{08:5F}{02:08}‥！！\n<wait>	Th... that guy!\n<wait>There's no need... to save him......!!\n<wait>	We... We have...\n<wait>No obligation to save the likes of him!\n<wait>	v005	draft	reads: あ‥‥あんな奴ッ！\n<wait>助ける必要なんて‥‥無いんだ‥‥‥‥！！\n<wait>
 m/MS001B.BIN	0:05	255	7737	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS001B.BIN	0:05	256	7743	1FD3	あ	Th	We... 	v005	draft	
+m/MS001B.BIN	0:05	256	7743	1FD3	あ	Th	We... 	v005	draft	@refalign
 m/MS001B.BIN	0:05	257	7751	1FFA	{08:72}	...			draft	reads: ‥‥
-m/MS001B.BIN	0:05	258	7759	1FFA	あんな奴\n<wait>	that guy\n<wait>	We have...\n<wait>	v005	draft	
+m/MS001B.BIN	0:05	258	7759	1FFA	あんな奴\n<wait>	that guy\n<wait>	We have...\n<wait>	v005	draft	@refalign
 m/MS001B.BIN	0:05	259	7778	1FFA	{08:72}\n	...\n			draft	reads: ‥‥\n
-m/MS001B.BIN	0:05	260	7787	1FFA	助{08:29}必要{08:6A}て	there's no need	no obligation to save	v005	draft	reads: 助ける必要なんて
+m/MS001B.BIN	0:05	260	7787	1FFA	助{08:29}必要{08:6A}て	there's no need	no obligation to save	v005	draft	reads: 助ける必要なんて; @refalign
 m/MS001B.BIN	0:05	261	7805	1FFA	{08:72}	...			draft	reads: ‥‥
-m/MS001B.BIN	0:05	262	7813	1FFA	無い{08:55}	to save him	the likes of him	v005	draft	reads: 無いです
+m/MS001B.BIN	0:05	262	7813	1FFA	無い{08:55}	to save him	the likes of him	v005	draft	reads: 無いです; @refalign
 m/MS001B.BIN	0:05	263	7825	1FFA	{02:08}‥！！\n<wait>	......!!\n<wait>			draft	reads: ‥‥‥‥！！\n<wait>
 m/MS001B.BIN	0:05	264	7851	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
 m/MS001B.BIN	0:05	265	7857	1FD3	あ{08:72}あんな奴ッ！\n<wait>助{08:29}必要{08:6A}て{08:72}無い{08:55}{02:08}‥！！\n<wait>	Th... that guy!\n<wait>There's no need... to save him......!!\n<wait>	We... We have...\n<wait>No obligation to save the likes of him!\n<wait>	v005	draft	reads: あ‥‥あんな奴ッ！\n<wait>助ける必要なんて‥‥無いです‥‥‥‥！！\n<wait>
-m/MS001B.BIN	0:05	266	7938	1FB2	早く助けなくては		We must hurry	v005		menu option, declared width 20 columns
-m/MS001B.BIN	0:05	267	7956	1FB2	助{08:29}必要は{08:25}		Screw him	v005		reads: 助ける必要はない; menu option, declared width 20 columns
+m/MS001B.BIN	0:05	266	7938	1FB2	早く助けなくては		We must hurry	v005		menu option, declared width 20 columns; @refalign
+m/MS001B.BIN	0:05	267	7956	1FB2	助{08:29}必要は{08:25}		Screw him	v005		reads: 助ける必要はない; menu option, declared width 20 columns; @refalign
 m/MS001B.BIN	0:05	268	7990	1FD0	あんな人{08:56}、助け{08:25}訳には行か{08:25}{02:08}‥\n	Even a man like that could not be left to die.........\n			draft	reads: あんな人でも、助けない訳には行かない‥‥‥‥\n
 m/MS001B.BIN	0:05	269	8031	1F01	はそう思{08:51}。\n<wait>	 thought so.\n<wait>			draft	reads: はそう思った。\n<wait>
 m/MS001B.BIN	0:05	270	8050	1FD2	{08:04}：	Nishino:			draft	reads: 西野：
@@ -392,13 +392,13 @@ m/MS001B.BIN	0:05	280	8178	1FFA	蘇生さ{08:2A}{08:77}{08:72}！\n	revive every
 m/MS001B.BIN	0:05	281	8248	1F01	。\n{02:0C}{08:62}	.\nWe must go and rescue Officer 			draft	reads: 。\n我々は、
 m/MS001B.BIN	0:05	282	8261	1F01	上官を助けに行かねば{08:7D}ん。\n<wait>	.\n<wait>			draft	reads: 上官を助けに行かねばならん。\n<wait>
 m/MS001B.BIN	0:05	283	8296	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS001B.BIN	0:05	284	8302	1FD3	例え{08:6D}{08:69}な{02:0B}であろうとも、\n{02:00}で{08:7B}身の{02:0C}が、見捨{08:2B}訳に{08:26}か{08:25}{08:42}な！\n<wait>		We are Devil Busters. It is our duty to protect people, no matter\nhow heinous their crimes might be.\n<wait>	v005		reads: 例えどのような人間であろうとも、\nデビルバスターである身の我々が、見捨てる訳にはいかないからな！\n<wait>
+m/MS001B.BIN	0:05	284	8302	1FD3	例え{08:6D}{08:69}な{02:0B}であろうとも、\n{02:00}で{08:7B}身の{02:0C}が、見捨{08:2B}訳に{08:26}か{08:25}{08:42}な！\n<wait>		We are Devil Busters. It is our duty to protect people, no matter\nhow heinous their crimes might be.\n<wait>	v005		reads: 例えどのような人間であろうとも、\nデビルバスターである身の我々が、見捨てる訳にはいかないからな！\n<wait>; @refalign
 m/MS001B.BIN	0:05	285	8376	1FD2	{08:04}：	Nishino:			draft	reads: 西野：
-m/MS001B.BIN	0:05	286	8382	1FD3	まず{08:62}医療施設で、皆を蘇生させねばな{02:08}‥\n		But, before that, let's get everyone revived.\n	v005		reads: まずは、医療施設で、皆を蘇生させねばな‥‥‥‥\n
+m/MS001B.BIN	0:05	286	8382	1FD3	まず{08:62}医療施設で、皆を蘇生させねばな{02:08}‥\n		But, before that, let's get everyone revived.\n	v005		reads: まずは、医療施設で、皆を蘇生させねばな‥‥‥‥\n; @refalign
 m/MS001B.BIN	0:05	287	8480	1FD2	{08:04}：	Nishino:			draft	reads: 西野：
-m/MS001B.BIN	0:05	288	8486	1FD3	馬鹿な事を言うな！！\n<wait>		Of course we do!\n<wait>	v005		
+m/MS001B.BIN	0:05	288	8486	1FD3	馬鹿な事を言うな！！\n<wait>		Of course we do!\n<wait>	v005		@refalign
 m/MS001B.BIN	0:05	289	8515	1FD2	{08:04}：	Nishino:			draft	reads: 西野：
-m/MS001B.BIN	0:05	290	8530	1E16	例え	No matter	We are	v005	draft	
+m/MS001B.BIN	0:05	290	8530	1E16	例え	No matter	We are	v005	draft	@refalign
 m/MS001B.BIN	0:05	291	8540	1FFA	{08:72}	...			draft	reads: ‥‥
 m/MS001B.BIN	0:05	292	8548	1FFA	{08:6D}{08:69}な	what	Devil Busters	v005	draft	reads: どのような
 m/MS001B.BIN	0:05	293	8560	1FFA	{02:08}‥	............ 			draft	reads: ‥‥‥‥
@@ -416,4 +416,4 @@ m/MS001B.BIN	0:05	304	8673	1FFA	見捨{08:2B}訳に{08:26}かん！\n<wait>	aban
 m/MS001B.BIN	0:05	305	8750	1FE5	例え{08:6D}{08:69}な{02:0B}であろうとも、\n<wait>{02:00}で{08:7B}身の{02:0C}が、見捨{08:2B}訳に{08:26}かん！\n<wait>	No matter what kind of person he may be,\n<wait>as Devil Busters, we cannot simply	We are Devil Busters. <wait>It is our duty to protect people, no matter\nhow heinous their crimes might be.\n<wait>	v005	draft	reads: 例えどのような人間であろうとも、\n<wait>デビルバスターである身の我々が、見捨てる訳にはいかん！\n<wait>
 m/MS001B.BIN	0:05	306	8824	1FD2	{08:04}：	Nishino:			draft	reads: 西野：
 m/MS001B.BIN	0:05	307	8830	1FD3	行くぞ！\n<wait>	Let's go!\n<wait>	Now, let's go!\n<wait>	v005	draft	
-m/MS001B.BIN	0:05	308	8847	1FD0	一同{08:62}兼嗣を救出{08:8E}為、Ｂ９Ｆへと向{08:18}。\n<wait>		The group decides to hurry over to B9F in order to save Kanetsugu.\n<wait>	v005		reads: 一同は、兼嗣を救出する為、Ｂ９Ｆへと向かった。\n<wait>
+m/MS001B.BIN	0:05	308	8847	1FD0	一同{08:62}兼嗣を救出{08:8E}為、Ｂ９Ｆへと向{08:18}。\n<wait>		The group decides to hurry over to B9F in order to save Kanetsugu.\n<wait>	v005		reads: 一同は、兼嗣を救出する為、Ｂ９Ｆへと向かった。\n<wait>; @refalign

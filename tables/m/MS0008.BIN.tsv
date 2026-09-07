@@ -3,17 +3,17 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0008.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}\n		There's no one here...\n	v005		reads: 誰もいない‥‥‥\n
+m/MS0008.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}\n		There's no one here...\n	v005		reads: 誰もいない‥‥‥\n; @refalign
 m/MS0008.BIN	0:01	0	2	1FD2	男性：		Man:	v005		
 m/MS0008.BIN	0:01	1	15	09	都庁の上に出来て{08:1E}建物がさぁ{02:08}\n<wait>{01:08}城らしい{08:5F}{08:52}よ！\n<wait>		You know that building that appeared over the Government Office?\n<wait>People are saying that it's Baal's Castle!\n<wait>	ours		reads: 都庁の上に出来てきた建物がさぁ‥‥‥\n<wait>バエル城らしいんだってよ！\n<wait>
 m/MS0008.BIN	0:01	2	77	1FD2	男性：		Man:	v005		
 m/MS0008.BIN	0:01	3	85	1FD3	{08:72}{08:4D}が本当{08:7D}シャレに{08:6A}ねーよな！\n<wait>		If that's true, then it's big news.\n<wait>	v005		reads: ‥‥それが本当ならシャレになんねーよな！\n<wait>
-m/MS0008.BIN	0:01	4	128	09	六本木仕切{08:52}た{08:0B}、いなく{08:16}{08:5F}{08:52}な。\n<wait>		Apparently, the demons who ran Roppongi are no more.\n<wait>	v005		reads: 六本木仕切ってた悪魔、いなくなったんだってな。\n<wait>
+m/MS0008.BIN	0:01	4	128	09	六本木仕切{08:52}た{08:0B}、いなく{08:16}{08:5F}{08:52}な。\n<wait>		Apparently, the demons who ran Roppongi are no more.\n<wait>	v005		reads: 六本木仕切ってた悪魔、いなくなったんだってな。\n<wait>; @refalign
 m/MS0008.BIN	0:01	5	171	1FD2	男性：		Man:	v005		
 m/MS0008.BIN	0:01	6	179	1FD3	まぁ、銀座も{08:7B}し、遊ぶ所は{08:76}{08:7B}よな。\n<wait>		Well, there's always Ginza to fall back on.\n<wait>	v005		reads: まぁ、銀座もあるし、遊ぶ所はまだあるよな。\n<wait>
 m/MS0008.BIN	0:01	7	221	00	六本木の歓楽街{08:62}こっち{08:81}{08:25}ぜ。\n<wait>		Oh, you came here to visit the red light district?\nIt's over that way.\n<wait>	v005		reads: 六本木の歓楽街は、こっちじゃないぜ。\n<wait>
 m/MS0008.BIN	0:02	0	2	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：
-m/MS0008.BIN	0:02	1	15	09	{08:72}{08:48}{08:42}{08:62}{08:0B}の時代に{08:59}のかも知れ{08:25}な{08:72}\n<wait>		I suspect that the age of demons might be upon us...\n<wait>	v005		reads: ‥‥これからは、悪魔の時代になるのかも知れないな‥‥\n<wait>
+m/MS0008.BIN	0:02	1	15	09	{08:72}{08:48}{08:42}{08:62}{08:0B}の時代に{08:59}のかも知れ{08:25}な{08:72}\n<wait>		I suspect that the age of demons might be upon us...\n<wait>	v005		reads: ‥‥これからは、悪魔の時代になるのかも知れないな‥‥\n<wait>; @refalign
 m/MS0008.BIN	0:02	2	57	00	{08:47}六本木界隈{08:62}{08:0B}や{02:0B}がごちゃごちゃ{08:4A}っ{08:42}な。\n俺ら{08:0B}人も、結構居心地が{08:7F}ぜ。\n<wait>	Round here in Roppongi, demons and humans are all jumbled together.\nEven us cambions find it pretty comfortable.\n<wait>			draft	reads: この六本木界隈は、悪魔や人間がごちゃごちゃしてっからな。\n俺ら悪魔人も、結構居心地がいいぜ。\n<wait>
 m/MS0008.BIN	0:02	3	141	1FD2	{08:0B}人：	Demonoid:			draft	reads: 悪魔人：
 m/MS0008.BIN	0:02	4	149	1FD3	間違{08:52}も、渋谷{08:6A}て所は行けねぇな！\n<wait>	No way I'd ever go to a place like Shibuya!\n<wait>			draft	reads: 間違っても、渋谷なんて所は行けねぇな！\n<wait>
@@ -188,7 +188,7 @@ m/MS0008.BIN	0:14	9	361	1FD3	最近そこに似つかわしく{08:25}、綺麗�
 m/MS0008.BIN	0:14	10	471	1FD2	女性：		Woman:	ours		
 m/MS0008.BIN	0:14	11	479	1FD3	大破壊前の幽霊かしら{02:08}？\n		A ghost from before the Great Destruction, maybe...?\n	ours		reads: 大破壊前の幽霊かしら‥‥‥？\n
 m/MS0008.BIN	0:15	0	24	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：
-m/MS0008.BIN	0:15	1	37	09	上野に{08:62}西郷とか言う人の像が{08:7B}わ。\n<wait>		I hear that there's a statue of this person called Saigou over at Ueno.\n<wait>	v005		reads: 上野には、西郷とか言う人の像があるわ。\n<wait>
+m/MS0008.BIN	0:15	1	37	09	上野に{08:62}西郷とか言う人の像が{08:7B}わ。\n<wait>		I hear that there's a statue of this person called Saigou over at Ueno.\n<wait>	v005		reads: 上野には、西郷とか言う人の像があるわ。\n<wait>; @refalign
 m/MS0008.BIN	0:15	2	80	1FD2	{08:0B}人：		Cambion:	v005		reads: 悪魔人：
 m/MS0008.BIN	0:15	3	88	1FD3	すっごく昔{08:42}{08:7B}らしい{08:5F}{08:84}、{08:8B}残っ{08:2B}わよね。\n		Supposedly, it has been there since forever.\n	v005		reads: すっごく昔からあるらしいんだけど、よく残ってるわよね。\n
 m/MS0008.BIN	0:15	4	132	00	{02:0B}と{08:0B}は所詮、相容れ{08:25}存在{08:6B}かしら{08:72}？\n<wait>		I guess that in the end, humans and demons are simply incompatible...\n<wait>	v005		reads: 人間と悪魔は所詮、相容れない存在なのかしら‥‥？\n<wait>
@@ -287,12 +287,12 @@ m/MS0008.BIN	0:1F	35	1178	1FD2	イポス：	Ipos:			draft
 m/MS0008.BIN	0:1F	36	1188	1FD3	{08:76}生きて{08:64}とはな！！\n{08:47}東京を生き抜いて{08:1E}と{08:68}訳か！\n<wait>	So you were still alive!!\nYou've survived this Tokyo, then!\n<wait>			draft	reads: まだ生きていたとはな！！\nこの東京を生き抜いてきたという訳か！\n<wait>
 m/MS0008.BIN	0:1F	37	1248	1FD2	イポス：	Ipos:			draft	
 m/MS0008.BIN	0:1F	38	1258	1FD3	さて、{08:45}{08:71}来た{08:42}に{08:62}何か用が{08:7B}のであろう？\n	Well now, since you've come all this way, you must want something?\n			draft	reads: さて、ここまで来たからには、何か用があるのであろう？\n
-m/MS0008.BIN	0:1F	39	1317	1FB2	お前を倒しに来た		To kill you	v005		menu option, declared width 20 columns
-m/MS0008.BIN	0:1F	40	1335	1FB2	別に無い		Nothing	v005		menu option, declared width 20 columns
+m/MS0008.BIN	0:1F	39	1317	1FB2	お前を倒しに来た		To kill you	v005		menu option, declared width 20 columns; @refalign
+m/MS0008.BIN	0:1F	40	1335	1FB2	別に無い		Nothing	v005		menu option, declared width 20 columns; @refalign
 m/MS0008.BIN	0:1F	41	1365	1FD2	イポス：	Ipos:	Ipos:	v005	draft	
 m/MS0008.BIN	0:1F	42	1375	1FD3	ほう{08:72}復讐{08:72}と言う訳か{02:08}\n私を倒{08:4B}とて、{08:0F}が蘇ると言う訳では{08:7B}まいに{08:72}\n		Oh... So revenge then...\nYou do know that killing me won't bring your friends back, right?\n	v005		reads: ほう‥‥復讐‥‥と言う訳か‥‥‥\n私を倒したとて、仲間が蘇ると言う訳ではあるまいに‥‥\n
-m/MS0008.BIN	0:1F	43	1461	1FB2	{08:7A}事関係無い		Don't care	v005		reads: そんな事関係無い; menu option, declared width 20 columns
-m/MS0008.BIN	0:1F	44	1475	1FB2	{08:4D}も{01:29}		True...	v005		reads: それもそうだ; menu option, declared width 20 columns
+m/MS0008.BIN	0:1F	43	1461	1FB2	{08:7A}事関係無い		Don't care	v005		reads: そんな事関係無い; menu option, declared width 20 columns; @refalign
+m/MS0008.BIN	0:1F	44	1475	1FB2	{08:4D}も{01:29}		True...	v005		reads: それもそうだ; menu option, declared width 20 columns; @refalign
 m/MS0008.BIN	0:1F	45	1503	1FD2	イポス：		Ipos:	v005		
 m/MS0008.BIN	0:1F	46	1513	1FD3	{02:0B}と{08:62}良く分{08:42}ぬ生き物よのう{02:08}\n<wait>	Humans are creatures I don't quite understand............\n<wait>	Humans truly are senseless creatures...\n<wait>	v005	draft	reads: 人間とは、良く分からぬ生き物よのう‥‥‥\n<wait>
 m/MS0008.BIN	0:1F	47	1552	1FD2	イポス：	Ipos:	Ipos:	v005	draft	
@@ -346,13 +346,13 @@ m/MS0008.BIN	0:21	4	200	1FD2	ウエンディー：		Wendy:	v005
 m/MS0008.BIN	0:21	5	216	1FD3	{08:4D}とも{02:0B}に化けて、ナンパしまくろうかしら{08:72}\n<wait>		Hmm... I could also just turn into a human and do it that way...\n<wait>	v005		reads: それとも人間に化けて、ナンパしまくろうかしら‥‥\n<wait>
 m/MS0008.BIN	0:21	6	271	1FD0	ウエンディーは去っ{08:21}{02:08}\n		Wendy walks away...\n	v005		reads: ウエンディーは去っていった‥‥‥\n
 m/MS0008.BIN	0:21	7	329	1FD2	ウエンディー：		Wendy:	v005		
-m/MS0008.BIN	0:21	8	371	0E	あら、ボウヤ。私が欲しいの？\n		Oh? Are you here for me, boy?\n	v005		
+m/MS0008.BIN	0:21	8	371	0E	あら、ボウヤ。私が欲しいの？\n		Oh? Are you here for me, boy?\n	v005		@refalign
 m/MS0008.BIN	0:21	9	416	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
 m/MS0008.BIN	0:21	10	420	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
 m/MS0008.BIN	0:21	11	444	1FD2	ウエンディー：	Wendy:			draft	
 m/MS0008.BIN	0:21	12	460	1FD3	１０００マッカね。{08:4D}で高いと思う{08:7D}消えな{08:49}！\n		The fee is 1000 Macca.\nIf you think that's too much, then then away from my sight.\n	ours		reads: １０００マッカね。それで高いと思うなら消えなさい！\n
-m/MS0008.BIN	0:21	13	521	1FB2	高い！		Screw that!	v005		menu option, declared width 20 columns
-m/MS0008.BIN	0:21	14	529	1FB2	{08:4D}で{08:7F}		Works for me	v005		reads: それでいい; menu option, declared width 20 columns
+m/MS0008.BIN	0:21	13	521	1FB2	高い！		Screw that!	v005		menu option, declared width 20 columns; @refalign
+m/MS0008.BIN	0:21	14	529	1FB2	{08:4D}で{08:7F}		Works for me	v005		reads: それでいい; menu option, declared width 20 columns; @refalign
 m/MS0008.BIN	0:21	15	557	1FD2	ウエンディー：	Wendy:			draft	
 m/MS0008.BIN	0:21	16	583	1F87	あら？　{08:56}貴方のＭＡＧ少{08:25}わねぇ。\n{08:4D}{08:81}あ、ちょ{08:53}お相手{08:4A}あげられ{08:25}わ。\n	Oh? But you're a bit short on MAG, aren't you.\nThen I can't quite keep you company.\n	Hmm... Looks like you're a little low on Magnetite...\n	v005	draft	reads: あら？　でも貴方のＭＡＧ少ないわねぇ。\nそれじゃあ、ちょっとお相手してあげられないわ。\n
 m/MS0008.BIN	0:21	17	675	1F5D	うふふ。{01:2A}{02:08}‥\n<wait>	Hee hee. Thank you............\n<wait>	Ehehe. Thank you...\n<wait>	v005	draft	reads: うふふ。ありがとう‥‥‥‥\n<wait>
@@ -371,7 +371,7 @@ m/MS0008.BIN	0:21	29	1014	00	{08:5B}今度遊んであげるわ。\n		I'll play 
 m/MS0008.BIN	0:21	30	1038	00	ごめんな{08:49}。今、お客様入っ{08:2B}の。\n{08:5B}今度ね！\n		Sorry, but I already have another customer lined up. Maybe later?\n	v005		reads: ごめんなさい。今、お客様入ってるの。\nまた今度ね！\n
 m/MS0008.BIN	0:22	0	24	1FD2	ベリンダ：		Belinda:	v005		
 m/MS0008.BIN	0:22	1	41	09	{01:08}様が復活{08:4B}ら{08:72}\n{08:45}も前み{08:4E}に、賑やかに{08:59}かしら{08:72}\n		If Baal comes back, I wonder what that means for us.\nNothing good, most likely...\n	ours		reads: バエル様が復活したら‥‥\nここも前みたいに、賑やかになるかしら‥‥\n
-m/MS0008.BIN	0:22	2	97	09	{08:48}{08:42}行くあ{08:54}無いし{02:08}\n{08:45}を中心に、暮らそうかなぁ‥\n		I don't really got anywhere to go...\nHmm... Maybe I'll just stay here?\n	v005		reads: これから行くあても無いし‥‥‥\nここを中心に、暮らそうかなぁ‥\n
+m/MS0008.BIN	0:22	2	97	09	{08:48}{08:42}行くあ{08:54}無いし{02:08}\n{08:45}を中心に、暮らそうかなぁ‥\n		I don't really got anywhere to go...\nHmm... Maybe I'll just stay here?\n	v005		reads: これから行くあても無いし‥‥‥\nここを中心に、暮らそうかなぁ‥\n; @refalign
 m/MS0008.BIN	0:22	3	148	00	{01:16}ぃー、{08:47}辺うろついて{08:50}イポス様に拾わ{08:60}の。\n{08:56}、{08:47}仕事、結構性に合っ{08:2B}{08:52}感じぃー。\n		I mean, I was just wandering around this area when Lord Ipos took me in.\nBut you know, this job actually suits me pretty well.\n	ours		reads: あたしぃー、この辺うろついてたらイポス様に拾われたの。\nでも、この仕事、結構性に合ってるって感じぃー。\n
 m/MS0008.BIN	0:23	0	32	1FD2	ジョセフィーヌ：		Josephine:	v005		
 m/MS0008.BIN	0:23	1	76	0C	あら、ボウヤ。私が欲しいの？\n		Oh? Are you here for me, boy?\n	v005		
@@ -379,8 +379,8 @@ m/MS0008.BIN	0:23	2	121	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu optio
 m/MS0008.BIN	0:23	3	125	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
 m/MS0008.BIN	0:23	4	149	1FD2	ジョセフィーヌ：	Josephine:			draft	
 m/MS0008.BIN	0:23	5	167	1FD3	私と遊ぶのはちょ{08:53}高くつくわよ{02:08}。\n{02:08}‥１万マッカ。{08:4D}が高いと思う{08:7D}、さよ{08:7D}ね。\n		Fair warning, I charge a bit more than the other girls.\nYes... 10000 Macca. That's my fee.\n	ours		reads: 私と遊ぶのはちょっと高くつくわよ‥‥‥。\n‥‥‥‥１万マッカ。それが高いと思うなら、さよならね。\n
-m/MS0008.BIN	0:23	6	263	1FB2	高い！		Screw that!	v005		menu option, declared width 20 columns
-m/MS0008.BIN	0:23	7	271	1FB2	高く{08:25}		Works for me	v005		reads: 高くない; menu option, declared width 20 columns
+m/MS0008.BIN	0:23	6	263	1FB2	高い！		Screw that!	v005		menu option, declared width 20 columns; @refalign
+m/MS0008.BIN	0:23	7	271	1FB2	高く{08:25}		Works for me	v005		reads: 高くない; menu option, declared width 20 columns; @refalign
 m/MS0008.BIN	0:23	8	299	1FD2	ジョセフィーヌ：	Josephine:			draft	
 m/MS0008.BIN	0:23	9	327	1F87	あら？　{08:56}貴方のＭＡＧ少{08:25}わねぇ。\n{08:4D}{08:81}あ、ちょ{08:53}お相手{08:4A}あげられ{08:25}わよ。\n	Oh? But you're a bit short on MAG, aren't you.\nThen I can't quite keep you company.\n	Hmm... Looks like you're a little low on Magnetite...\n	v005	draft	reads: あら？　でも貴方のＭＡＧ少ないわねぇ。\nそれじゃあ、ちょっとお相手してあげられないわよ。\n
 m/MS0008.BIN	0:23	10	424	1F5D	うふふ。{01:2A}{02:08}‥\n<wait>	Hee hee. Thank you............\n<wait>	Ehehe. Thank you...\n<wait>	v005	draft	reads: うふふ。ありがとう‥‥‥‥\n<wait>
@@ -411,8 +411,8 @@ m/MS0008.BIN	0:24	9	343	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu optio
 m/MS0008.BIN	0:24	10	347	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
 m/MS0008.BIN	0:24	11	371	1FD2	ナヴィ：	Navi:			draft	
 m/MS0008.BIN	0:24	12	381	1FD3	１０００マッカね。{08:4D}で高いと思う{08:7D}消えて！\n		The fee is 1000 Macca.\nIf you think that's too much, then please leave.\n	ours		reads: １０００マッカね。それで高いと思うなら消えて！\n
-m/MS0008.BIN	0:24	13	440	1FB2	高い！		Screw that!	v005		menu option, declared width 20 columns
-m/MS0008.BIN	0:24	14	448	1FB2	{08:4D}で{08:7F}		Works for me	v005		reads: それでいい; menu option, declared width 20 columns
+m/MS0008.BIN	0:24	13	440	1FB2	高い！		Screw that!	v005		menu option, declared width 20 columns; @refalign
+m/MS0008.BIN	0:24	14	448	1FB2	{08:4D}で{08:7F}		Works for me	v005		reads: それでいい; menu option, declared width 20 columns; @refalign
 m/MS0008.BIN	0:24	15	476	1FD2	ナヴィ：	Navi:			draft	
 m/MS0008.BIN	0:24	16	496	1F87	{08:56}ぉ。{01:39}ちょ～{08:53}ＭＡＧ少{08:25}ん{08:81}{08:25}？\n{08:4D}{08:81}あ、お相手{08:4A}あげられ{08:25}わよ。\n	Buuut. You're a liiittle short on MAG, aren't you?\nThen I can't keep you company.\n	Hmm... Looks like you're a little low on Magnetite...\nSorry, but I'm going to have to turn you down after all.\n	v005	draft	reads: でもぉ。アナタちょ～っとＭＡＧ少ないんじゃない？\nそれじゃあ、お相手してあげられないわよ。\n
 m/MS0008.BIN	0:24	17	584	1F5D	うふふ。あ・り・が・と！\n<wait>	Hee hee. Thank-you!\n<wait>	Ehehe. Thank you!\n<wait>	v005	draft	
@@ -438,8 +438,8 @@ m/MS0008.BIN	0:26	2	113	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu optio
 m/MS0008.BIN	0:26	3	117	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
 m/MS0008.BIN	0:26	4	141	1FD2	メラニー：	Melanie:			draft	
 m/MS0008.BIN	0:26	5	153	1FD3	１０００マッカね。{08:4D}で高いと思う{08:7D}帰{08:52}ちょうだい！\n		My fee is 1000 Macca.\nIf you think that's too much, then you're free to leave.\n	ours		reads: １０００マッカね。それで高いと思うなら帰ってちょうだい！\n
-m/MS0008.BIN	0:26	6	220	1FB2	高い！		Screw that!	v005		menu option, declared width 20 columns
-m/MS0008.BIN	0:26	7	228	1FB2	{08:4D}で{08:7F}		Works for me	v005		reads: それでいい; menu option, declared width 20 columns
+m/MS0008.BIN	0:26	6	220	1FB2	高い！		Screw that!	v005		menu option, declared width 20 columns; @refalign
+m/MS0008.BIN	0:26	7	228	1FB2	{08:4D}で{08:7F}		Works for me	v005		reads: それでいい; menu option, declared width 20 columns; @refalign
 m/MS0008.BIN	0:26	8	256	1FD2	メラニー：	Melanie:			draft	
 m/MS0008.BIN	0:26	9	278	1F87	え～。{08:56}ぉ。{01:39}{08:52}ＭＡＧ少{08:25}ぃ。\n{08:4D}{08:81}ちょ{08:53}{08:72}ねぇ。\n	Ehh. Buuut. You're short on MAG.\nThen that's a bit......... y'know.\n	Hmm... Looks like you're a little low on Magnetite...\nSorry, but I'm going to have to turn you down after all.\n	v005	draft	reads: え～。でもぉ。アナタってＭＡＧ少ないぃ。\nそれじゃちょっと‥‥ねぇ。\n
 m/MS0008.BIN	0:26	10	348	1F5D	うふふ。あ・り・が・と！\n<wait>	Hee hee. Thank-you!\n<wait>	Ehehehe. Thank you!\n<wait>	v005	draft	
@@ -465,8 +465,8 @@ m/MS0008.BIN	0:28	2	120	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu optio
 m/MS0008.BIN	0:28	3	124	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
 m/MS0008.BIN	0:28	4	148	1FD2	ミランダ：	Miranda:			draft	
 m/MS0008.BIN	0:28	5	160	1FD3	１０００マッカね。{08:4D}で高いと思う{08:7D}帰{08:52}ちょうだい！\n		The fee is 1000 Macca.\nIf you think that's too much, then you're free to leave.\n	ours		reads: １０００マッカね。それで高いと思うなら帰ってちょうだい！\n
-m/MS0008.BIN	0:28	6	227	1FB2	高い！		Screw that!	v005		menu option, declared width 20 columns
-m/MS0008.BIN	0:28	7	235	1FB2	{08:4D}で{08:7F}		Works for me	v005		reads: それでいい; menu option, declared width 20 columns
+m/MS0008.BIN	0:28	6	227	1FB2	高い！		Screw that!	v005		menu option, declared width 20 columns; @refalign
+m/MS0008.BIN	0:28	7	235	1FB2	{08:4D}で{08:7F}		Works for me	v005		reads: それでいい; menu option, declared width 20 columns; @refalign
 m/MS0008.BIN	0:28	8	263	1FD2	ミランダ：	Miranda:			draft	
 m/MS0008.BIN	0:28	9	285	1F87	{08:56}{01:39}、ちょ{08:53}ＭＡＧ少{08:25}わよ。\n{08:4D}{08:81}ちょ{08:53}{08:72}お相手{08:4A}あげる訳には行か{08:25}わ。\n	But you're a bit short on MAG.\nThen......... I can't very well keep you company.\n	Hmm... Looks like you're a little low on Magnetite...\nSorry, but I'm going to have to turn you down after all.\n	v005	draft	reads: でもアナタ、ちょっとＭＡＧ少ないわよ。\nそれじゃちょっと‥‥お相手してあげる訳には行かないわ。\n
 m/MS0008.BIN	0:28	10	380	1F5D	うふふ{02:08}‥{01:2A}{02:08}‥\n<wait>	Hee hee............ thank you............\n<wait>	Ehehe. Thank you...\n<wait>	v005	draft	reads: うふふ‥‥‥‥ありがとう‥‥‥‥\n<wait>
@@ -502,8 +502,8 @@ m/MS0008.BIN	0:2A	7	278	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu optio
 m/MS0008.BIN	0:2A	8	282	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
 m/MS0008.BIN	0:2A	9	306	1FD2	シェリー：	Sherry:			draft	
 m/MS0008.BIN	0:2A	10	318	1FD3	１５００マッカね。{08:4D}で高いと思う{08:7D}消えな{08:49}！\n		My fee is 1000 Macca.\nIf you think that's too much, then you're free to leave.\n	ours		reads: １５００マッカね。それで高いと思うなら消えなさい！\n
-m/MS0008.BIN	0:2A	11	379	1FB2	高い！		Screw that!	v005		menu option, declared width 20 columns
-m/MS0008.BIN	0:2A	12	387	1FB2	{08:4D}で{08:7F}		Works for me	v005		reads: それでいい; menu option, declared width 20 columns
+m/MS0008.BIN	0:2A	11	379	1FB2	高い！		Screw that!	v005		menu option, declared width 20 columns; @refalign
+m/MS0008.BIN	0:2A	12	387	1FB2	{08:4D}で{08:7F}		Works for me	v005		reads: それでいい; menu option, declared width 20 columns; @refalign
 m/MS0008.BIN	0:2A	13	415	1FD2	シェリー：	Sherry:			draft	
 m/MS0008.BIN	0:2A	14	437	1F87	あら？　{01:39}の持っ{08:2B}マグネタイト{02:08}随分少{08:25}わよ。\n{08:4D}{08:81}、ちょ{08:53}お相手{08:4A}あげられ{08:25}わ。{08:81}あね。\n	Oh? Your magnetite......... it's rather low.\nThen I can't quite keep you company. Bye now.\n	Hmm... Looks like you're a little low on Magnetite...\nSorry, but I'm going to have to turn you down after all.\n	v005	draft	reads: あら？　アナタの持ってるマグネタイト‥‥‥随分少ないわよ。\nそれじゃ、ちょっとお相手してあげられないわ。じゃあね。\n
 m/MS0008.BIN	0:2A	15	547	1A	うふふ。{01:2A}{08:72}\n<wait>	Hee hee. Thank you...\n<wait>	Ehehe. Thank you...\n<wait>	v005	draft	reads: うふふ。ありがとう‥‥\n<wait>

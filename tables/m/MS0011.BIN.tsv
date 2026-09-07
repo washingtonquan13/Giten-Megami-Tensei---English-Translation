@@ -3,10 +3,10 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0011.BIN	0:00	0	8	1FD0	そういえば平沢博士が、研究所に通じ{08:14}近道を開けておくと言{08:52}{08:64}……\n<wait>		You remember Doctor Hirasawa saying that he'd leave the door\nto his lab open.\n<wait>	v005		reads: そういえば平沢博士が、研究所に通じている近道を開けておくと言っていた……\n<wait>
-m/MS0011.BIN	0:00	1	85	1E12	出口の近くに{08:7B}扉だと{08:68}{08:46}{08:8F}{02:08}\n<wait>		It should be somewhere near the entrance.\n<wait>	v005		reads: 出口の近くにある扉だということだが‥‥‥\n<wait>; menu option, declared width 20 columns
-m/MS0011.BIN	0:00	2	127	1E12	恐らく、そこに見え{08:14}扉が{01:29}ろう。\n<wait>		You can see it over there.\n<wait>	v005		reads: 恐らく、そこに見えている扉がそうだろう。\n<wait>; menu option, declared width 20 columns
-m/MS0011.BIN	0:00	3	182	1E12	恐らく、右手に見え{08:14}扉が{01:29}ろう。\n<wait>		You can see it on your right.\n<wait>	v005		reads: 恐らく、右手に見えている扉がそうだろう。\n<wait>; menu option, declared width 20 columns
+m/MS0011.BIN	0:00	0	8	1FD0	そういえば平沢博士が、研究所に通じ{08:14}近道を開けておくと言{08:52}{08:64}……\n<wait>		You remember Doctor Hirasawa saying that he'd leave the door\nto his lab open.\n<wait>	v005		reads: そういえば平沢博士が、研究所に通じている近道を開けておくと言っていた……\n<wait>; @refalign
+m/MS0011.BIN	0:00	1	85	1E12	出口の近くに{08:7B}扉だと{08:68}{08:46}{08:8F}{02:08}\n<wait>		It should be somewhere near the entrance.\n<wait>	v005		reads: 出口の近くにある扉だということだが‥‥‥\n<wait>; menu option, declared width 20 columns; @refalign
+m/MS0011.BIN	0:00	2	127	1E12	恐らく、そこに見え{08:14}扉が{01:29}ろう。\n<wait>		You can see it over there.\n<wait>	v005		reads: 恐らく、そこに見えている扉がそうだろう。\n<wait>; menu option, declared width 20 columns; @refalign
+m/MS0011.BIN	0:00	3	182	1E12	恐らく、右手に見え{08:14}扉が{01:29}ろう。\n<wait>		You can see it on your right.\n<wait>	v005		reads: 恐らく、右手に見えている扉がそうだろう。\n<wait>; menu option, declared width 20 columns; @refalign
 m/MS0011.BIN	0:02	0	8	1FD2	平沢：		Hirasawa:	v005		
 m/MS0011.BIN	0:02	1	23	1FD2	学者：		Scientist:	v005		
 m/MS0011.BIN	0:02	2	31	1FD3	何だ？　近頃は外{08:42}の妙な客人が多いな。\n<wait>		What's this? More strange visitors from the surface?\nWe've been getting a lot of those as of late.\n<wait>	v005		reads: 何だ？　近頃は外からの妙な客人が多いな。\n<wait>
@@ -30,13 +30,13 @@ m/MS0011.BIN	0:02	19	655	1FD0	初老の学者風の男{08:62}そう言うと、�
 m/MS0011.BIN	0:02	20	714	1FD2	学者：		Scientist:	v005		
 m/MS0011.BIN	0:02	21	722	1FD3	ハーブティーぐらい{08:86}無いが、飲んで行くかね？\n<wait>		Care to have a drink?\nI'm afraid that all I have is herb tea.\n<wait>	v005		reads: ハーブティーぐらいしか無いが、飲んで行くかね？\n<wait>
 m/MS0011.BIN	0:02	22	775	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n
-m/MS0011.BIN	0:02	23	796	1FB2	頂き{08:5A}！		Accept gratefully	v005		reads: 頂きます！; menu option, declared width 20 columns
-m/MS0011.BIN	0:02	24	806	1FB2	遠慮し{08:5A}		Politely refuse	v005		reads: 遠慮します; menu option, declared width 20 columns
+m/MS0011.BIN	0:02	23	796	1FB2	頂き{08:5A}！		Accept gratefully	v005		reads: 頂きます！; menu option, declared width 20 columns; @refalign
+m/MS0011.BIN	0:02	24	806	1FB2	遠慮し{08:5A}		Politely refuse	v005		reads: 遠慮します; menu option, declared width 20 columns; @refalign
 m/MS0011.BIN	0:02	25	836	1FD2	学者：	Scientist:	Scientist:	v005	draft	
 m/MS0011.BIN	0:02	26	844	1FD3	わしの育てたハーブだ{08:42}な、味は保証付きだ。\n<wait>	I grew these herbs myself, so I can vouch for the taste.\n<wait>	I've grown these herbs myself,\nso I can guarantee that they taste delicious.\n<wait>	v005	draft	reads: わしの育てたハーブだからな、味は保証付きだ。\n<wait>
 m/MS0011.BIN	0:02	27	900	1FD2	学者：		Scientist:	v005		
 m/MS0011.BIN	0:02	28	908	1FD3	そうか、{08:7C}わし{08:74}飲{08:5C}。\n<wait>わしの育てたハーブだ{08:42}な、味は保証付きな{08:5F}が、\nま、無理強いは{08:66}主義だ。\n<wait>		Oh? Well, I suppose that I will just have some myself then.\n<wait>I don't make a habit of forcing people to do things that\nthey don't want to.\n<wait>	v005		reads: そうか、ならばわしだけ飲もう。\n<wait>わしの育てたハーブだからな、味は保証付きなんだが、\nま、無理強いはせん主義だ。\n<wait>
-m/MS0011.BIN	0:02	29	1015	1FD2	{08:31}：	Rui:	Scientist:	v005	draft	reads: 泪：
+m/MS0011.BIN	0:02	29	1015	1FD2	{08:31}：	Rui:	Scientist:	v005	draft	reads: 泪：; @refalign
 m/MS0011.BIN	0:02	30	1021	1FD3	私は頂き{08:5A}わ。\nハーブティーは大好き{08:55}の{08:72}\n<wait>	I'll have some.\nI adore herbal tea...\n<wait>			draft	reads: 私は頂きますわ。\nハーブティーは大好きですの‥‥\n<wait>
 m/MS0011.BIN	0:02	31	1071	1FD2	学者：	Scientist:			draft	
 m/MS0011.BIN	0:02	32	1079	1FD3	{08:4D}は素晴らしい！\nで{08:62}さっそく、極上のを持たせま{08:80}。\n<wait>	Splendid!\nThen I'll have the finest brought at once.\n<wait>			draft	reads: それは素晴らしい！\nでは、さっそく、極上のを持たせましょう。\n<wait>
@@ -54,11 +54,11 @@ m/MS0011.BIN	0:02	43	1539	1FD3	かしこまりま{08:4B}。\n<wait>	Very good, s
 m/MS0011.BIN	0:02	44	1564	1FD0	お伽話の世界に住んでる様な、トランプの兵士の様な{02:0B}{08:62}\nうやうやしく一礼{08:4C}、再びテクテクと引っ込んで行{08:51}。\n<wait>	The person, like a card soldier out of a fairy tale, bowed\nreverently and toddled off again.\n<wait>			draft	reads: お伽話の世界に住んでる様な、トランプの兵士の様な人間は、\nうやうやしく一礼すると、再びテクテクと引っ込んで行った。\n<wait>
 m/MS0011.BIN	0:02	45	1680	1FD2	学者：	Scientist:			draft	
 m/MS0011.BIN	0:02	46	1688	1FD3	おどろ{08:64}か？\n<wait>{08:3F}{08:62}わしが作{08:51}デミ・ヒューマン{08:72}つまる{08:87}人造{02:0B}だ。\n<wait>	Surprised?\n<wait>That was a demi-human I made... an artificial human, in short.\n<wait>			draft	reads: おどろいたか？\n<wait>あれは、わしが作ったデミ・ヒューマン‥‥つまるところ人造人間だ。\n<wait>
-m/MS0011.BIN	0:02	47	1772	1FD2	{08:31}：	Rui:	Scientist:	v005	draft	reads: 泪：
+m/MS0011.BIN	0:02	47	1772	1FD2	{08:31}：	Rui:	Scientist:	v005	draft	reads: 泪：; @refalign
 m/MS0011.BIN	0:02	48	1778	1FD3	貴方が、平沢博士{08:55}か？\n<wait>	Are you Dr. Hirasawa?\n<wait>			draft	reads: 貴方が、平沢博士ですか？\n<wait>
 m/MS0011.BIN	0:02	49	1809	1FD2	平沢博士：	Dr. Hirasawa:			draft	
 m/MS0011.BIN	0:02	50	1821	1FD3	可愛らしいお嬢さん{08:72}{08:8B}、わしの名を御存知{08:55}な。\n<wait>	A charming young lady... and you know my name, I see.\n<wait>			draft	reads: 可愛らしいお嬢さん‥‥よく、わしの名を御存知ですな。\n<wait>
-m/MS0011.BIN	0:02	51	1876	1FD2	{08:31}：		Rui:	v005		reads: 泪：
+m/MS0011.BIN	0:02	51	1876	1FD2	{08:31}：		Rui:	v005		reads: 泪：; @refalign
 m/MS0011.BIN	0:02	52	1882	1FD3	博士の名声{08:62}一部では大変な{08:5E}{08:55}わ。\nデミ・ヒューマンの権威でいらっしゃい{08:5A}{08:5E}{02:08}\n<wait>	Your fame is considerable in certain circles, Doctor.\nYou are the authority on demi-humans......\n<wait>			draft	reads: 博士の名声は、一部では大変なものですわ。\nデミ・ヒューマンの権威でいらっしゃいますもの‥‥‥\n<wait>
 m/MS0011.BIN	0:02	53	1968	1FD2	平沢博士：	Dr. Hirasawa:			draft	
 m/MS0011.BIN	0:02	54	1980	1FD3	{02:08}昔の話だ。\n今で{08:62}概知外博士だの、マッドサイエンティストだの、好き放題言われとる。\n<wait>	......Old news.\nThese days they call me whatever they like: crackpot, mad scientist.\n<wait>			draft	reads: ‥‥‥昔の話だ。\n今では、概知外博士だの、マッドサイエンティストだの、好き放題言われとる。\n<wait>
@@ -81,8 +81,8 @@ m/MS0011.BIN	0:02	70	2653	1FD0	トランプ兵士{08:62}相変わらずテクテ
 m/MS0011.BIN	0:02	71	2792	1F01	達{08:62}前時代の珍しい食べ物を頬張り、結局は全員が、ハーブティーでの\n珍妙なティータイムを過{08:4B}。\n<wait>	 and the others stuffed themselves with rare old-world food, and in\nthe end everyone spent a peculiar teatime over herbal tea.\n<wait>			draft	reads: 達は、前時代の珍しい食べ物を頬張り、結局は全員が、ハーブティーでの\n珍妙なティータイムを過した。\n<wait>
 m/MS0011.BIN	0:02	72	2897	1FD2	平沢博士：	Dr. Hirasawa:			draft	
 m/MS0011.BIN	0:02	73	2909	1FD3	さてと{02:08}\n<wait>君達は一体何の用で、{08:73}所{08:71}来たのかな？\n	Now then......\n<wait>What on earth brings you all the way out here?\n			draft	reads: さてと‥‥‥\n<wait>君達は一体何の用で、こんな所まで来たのかな？\n
-m/MS0011.BIN	0:02	74	2977	1FB2	{08:82}偶然に{08:72}		No reason	v005		reads: ただ偶然に‥‥; menu option, declared width 20 columns
-m/MS0011.BIN	0:02	75	2989	1FB2	博士に会いに！		We came to see you!	v005		menu option, declared width 20 columns
+m/MS0011.BIN	0:02	74	2977	1FB2	{08:82}偶然に{08:72}		No reason	v005		reads: ただ偶然に‥‥; menu option, declared width 20 columns; @refalign
+m/MS0011.BIN	0:02	75	2989	1FB2	博士に会いに！		We came to see you!	v005		menu option, declared width 20 columns; @refalign
 m/MS0011.BIN	0:02	76	3025	1FD2	平沢博士：		Doctor Hirasawa:	v005		
 m/MS0011.BIN	0:02	77	3037	1FD3	{08:7A}理由で、あの迷宮を抜けて来たと言うのか。\n{02:08}面白い冗談だ。\n<wait>		You passed through that maze for "no reason"?\nHmph... Funny.\n<wait>	v005		reads: そんな理由で、あの迷宮を抜けて来たと言うのか。\n‥‥‥面白い冗談だ。\n<wait>
 m/MS0011.BIN	0:02	78	3105	1FD2	平沢博士：	Doctor Hirasawa:	Doctor Hirasawa:	v005	draft	
@@ -130,8 +130,8 @@ m/MS0011.BIN	0:02	119	4538	1FD0	初老の学者風の男{08:62}そう言うと�
 m/MS0011.BIN	0:02	120	4597	1FD2	学者：		Scientist:	v005		
 m/MS0011.BIN	0:02	121	4605	1FD3	ハーブティーぐらい{08:86}無いが、飲んで行くかね？\n<wait>		Care to have a drink?\nI'm afraid that all I have is herb tea.\n<wait>	v005		reads: ハーブティーぐらいしか無いが、飲んで行くかね？\n<wait>
 m/MS0011.BIN	0:02	122	4660	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n
-m/MS0011.BIN	0:02	123	4681	1FB2	頂き{08:5A}！		Accept gratefully	v005		reads: 頂きます！; menu option, declared width 20 columns
-m/MS0011.BIN	0:02	124	4691	1FB2	遠慮し{08:5A}		Politely refuse	v005		reads: 遠慮します; menu option, declared width 20 columns
+m/MS0011.BIN	0:02	123	4681	1FB2	頂き{08:5A}！		Accept gratefully	v005		reads: 頂きます！; menu option, declared width 20 columns; @refalign
+m/MS0011.BIN	0:02	124	4691	1FB2	遠慮し{08:5A}		Politely refuse	v005		reads: 遠慮します; menu option, declared width 20 columns; @refalign
 m/MS0011.BIN	0:02	125	4721	1FD2	学者：		Scientist:	v005		
 m/MS0011.BIN	0:02	126	4729	1FD3	そうか、{08:7C}わし{08:74}飲{08:5C}。\n<wait>わしの育てたハーブだ{08:42}な、味は保証付きな{08:5F}が、\nま、無理強いは{08:66}主義だ。\n<wait>		Oh? Well, I suppose that I will just have some myself then.\n<wait>I don't make a habit of forcing people to do things that\nthey don't want to.\n<wait>	v005		reads: そうか、ならばわしだけ飲もう。\n<wait>わしの育てたハーブだからな、味は保証付きなんだが、\nま、無理強いはせん主義だ。\n<wait>
 m/MS0011.BIN	0:02	127	4839	1FD2	学者：		Scientist:	v005		
@@ -161,8 +161,8 @@ m/MS0011.BIN	0:02	150	5738	1FD0	トランプ兵士{08:62}相変わらずテク�
 m/MS0011.BIN	0:02	151	5877	1F01	{08:62}前時代の珍しい食べ物を頬張り、ハーブティーでの珍妙なティータイムを\n過ご{08:4B}。\n<wait>	 stuffed himself with rare food of the old world, and spent a very\nodd tea-time over herbal tea.\n<wait>	You take this opportunity to fill up your stomach.\nThere's no telling when you'll next be able to eat this well.\n<wait>	v005	draft	reads: は、前時代の珍しい食べ物を頬張り、ハーブティーでの珍妙なティータイムを\n過ごした。\n<wait>
 m/MS0011.BIN	0:02	152	5968	1FD2	平沢博士：		Doctor Hirasawa:	v005		
 m/MS0011.BIN	0:02	153	5980	1FD3	さてと{02:08}\n<wait>君は一体何の用で、{08:73}所{08:71}来たのかな？\n<wait>		Now then...\n<wait>What might bring you down here?\n<wait>	v005		reads: さてと‥‥‥\n<wait>君は一体何の用で、こんな所まで来たのかな？\n<wait>
-m/MS0011.BIN	0:02	154	6052	1FB2	パーツの保存		Need to store limbs	v005		menu option, declared width 20 columns
-m/MS0011.BIN	0:02	155	6066	1FB2	何{08:56}{08:25}		No reason	v005		reads: 何でもない; menu option, declared width 20 columns
+m/MS0011.BIN	0:02	154	6052	1FB2	パーツの保存		Need to store limbs	v005		menu option, declared width 20 columns; @refalign
+m/MS0011.BIN	0:02	155	6066	1FB2	何{08:56}{08:25}		No reason	v005		reads: 何でもない; menu option, declared width 20 columns; @refalign
 m/MS0011.BIN	0:02	156	6092	1FD2	平沢博士：		Doctor Hirasawa:	v005		
 m/MS0011.BIN	0:02	157	6104	1FD3	理由も無いのに、{08:73}所{08:71}迷宮を抜けて来たのか？\n{02:08}面白い冗談だ。\n<wait>		You passed through that maze for "no reason"?\nHmph... Funny.\n<wait>	v005		reads: 理由も無いのに、こんな所まで迷宮を抜けて来たのか？\n‥‥‥面白い冗談だ。\n<wait>
 m/MS0011.BIN	0:02	158	6174	1FD2	平沢博士：		Doctor Hirasawa:	v005		
@@ -201,8 +201,8 @@ m/MS0011.BIN	0:04	6	182	1FD2	平沢博士：		Doctor Hirasawa:	v005
 m/MS0011.BIN	0:04	7	194	1FD3	訪ねて来る{08:7C}、礼儀{08:52}{08:5E}が{08:7B}{08:8C}に{08:72}\n<wait>		What happened to having manners?\n<wait>	v005		reads: 訪ねて来るならば、礼儀ってものがあるだろうに‥‥\n<wait>
 m/MS0011.BIN	0:04	8	235	1FD2	平沢博士：		Doctor Hirasawa:	v005		
 m/MS0011.BIN	0:04	9	247	1FD3	さて、わしに何か用かな？\n<wait>		Now, do you need something from me?\n<wait>	v005		
-m/MS0011.BIN	0:04	10	292	1FB2	パーツについて相談		Explain in detail	v005		menu option, declared width 20 columns
-m/MS0011.BIN	0:04	11	312	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns
+m/MS0011.BIN	0:04	10	292	1FB2	パーツについて相談		Explain in detail	v005		menu option, declared width 20 columns; @refalign
+m/MS0011.BIN	0:04	11	312	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns; @refalign
 m/MS0011.BIN	0:04	12	346	1F01	{08:62}	 showed 			draft	reads: は、
 m/MS0011.BIN	0:04	13	354	1F01	のパーツを平沢博士に見せ、何とか保存が出来{08:25}かを相談{08:4B}。\n<wait>	's parts to Dr. Hirasawa and asked whether they could somehow\nbe preserved.\n<wait>			draft	reads: のパーツを平沢博士に見せ、何とか保存が出来ないかを相談した。\n<wait>
 m/MS0011.BIN	0:04	14	419	1FD2	平沢博士：	Dr. Hirasawa:			draft	
@@ -223,15 +223,15 @@ m/MS0011.BIN	0:04	28	945	1FD3	お{08:53}、忘{08:2F}所だ{08:51}{02:08}日下�
 m/MS0011.BIN	0:04	29	1057	1FD2	平沢博士：	Dr. Hirasawa:			draft	
 m/MS0011.BIN	0:04	30	1069	1FD3	何も無いと{08:68}事はなかろう？\n<wait>		There must be something to tell me, right?\n<wait>	ours		reads: 何も無いという事はなかろう？\n<wait>
 m/MS0011.BIN	0:04	31	1106	1FD1	＞{02:06}\n	>What will you do?\n			draft	reads: ＞どうしますか？\n
-m/MS0011.BIN	0:04	32	1127	1FB2	パーツについて相談		Explain in detail	v005		menu option, declared width 20 columns
-m/MS0011.BIN	0:04	33	1147	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns
+m/MS0011.BIN	0:04	32	1127	1FB2	パーツについて相談		Explain in detail	v005		menu option, declared width 20 columns; @refalign
+m/MS0011.BIN	0:04	33	1147	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns; @refalign
 m/MS0011.BIN	0:04	34	1175	1FD2	平沢博士：		Doctor Hirasawa:	v005		
 m/MS0011.BIN	0:04	35	1187	1FD3	全く{02:08}じれっ{08:4E}の。\n<wait>	Honestly......... how exasperating.\n<wait>	Hmph.n<wait>	v005	draft	reads: 全く‥‥‥じれったいの。\n<wait>
 m/MS0011.BIN	0:04	36	1214	1FD2	平沢博士：	Doctor Hirasawa:	Doctor Hirasawa:	v005	draft	
 m/MS0011.BIN	0:04	37	1226	1FD3	言い{08:4E}事が{08:7B}{08:7D}、まずは言{08:52}みる事{08:8C}？\n<wait>		If you have something to say, just say it.\n<wait>	v005		reads: 言いたい事があるなら、まずは言ってみる事だろう？\n<wait>
 m/MS0011.BIN	0:04	38	1273	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n
-m/MS0011.BIN	0:04	39	1294	1FB2	パーツについて相談		Explain in detail	v005		menu option, declared width 20 columns
-m/MS0011.BIN	0:04	40	1314	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns
+m/MS0011.BIN	0:04	39	1294	1FB2	パーツについて相談		Explain in detail	v005		menu option, declared width 20 columns; @refalign
+m/MS0011.BIN	0:04	40	1314	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns; @refalign
 m/MS0011.BIN	0:05	0	5	1FD0	博士がそう言い終{08:41}所で、{01:3A}の少女が、仔兎の様に元気良く飛び込んで来た。\n<wait>	Just as the doctor finished speaking, a girl bounded in, lively as a\nbaby rabbit.\n<wait>			draft	reads: 博士がそう言い終えた所で、ひとりの少女が、仔兎の様に元気良く飛び込んで来た。\n<wait>
 m/MS0011.BIN	0:05	1	106	1FD2	メイ：	Mei:			draft	
 m/MS0011.BIN	0:05	2	114	1FD3	平沢おじいちゃん！　大変{08:6B}！！\n<wait>時計兎さんが、クッキーを焦しちゃ{08:52}{02:08}\n<wait>	Grandpa Hirasawa! It's terrible!!\n<wait>Mr. Watch Rabbit burnt the cookies......\n<wait>			draft	reads: 平沢おじいちゃん！　大変なの！！\n<wait>時計兎さんが、クッキーを焦しちゃって‥‥‥\n<wait>
@@ -245,8 +245,8 @@ m/MS0011.BIN	0:05	9	365	1FD2	平沢博士：	Dr. Hirasawa:			draft
 m/MS0011.BIN	0:05	10	377	1FD3	ほう{08:72}{01:29}{08:51}のか？\n<wait>	Oh...... is that so?\n<wait>			draft	reads: ほう‥‥そうだったのか？\n<wait>
 m/MS0011.BIN	0:05	11	402	1FD2	メイ：	Mei:			draft	
 m/MS0011.BIN	0:05	12	410	1FD3	{08:56}、何でお兄ちゃんが{08:45}に？！\n	But why are you here, big brother?!\n			draft	reads: でも、何でお兄ちゃんがここに？！\n
-m/MS0011.BIN	0:05	13	455	1FB2	そっちこそ！		That's my line!	v005		menu option, declared width 20 columns
-m/MS0011.BIN	0:05	14	469	1FB2	ええ{08:53}{08:72}		Err...	v005		reads: ええっと‥‥; menu option, declared width 20 columns
+m/MS0011.BIN	0:05	13	455	1FB2	そっちこそ！		That's my line!	v005		menu option, declared width 20 columns; @refalign
+m/MS0011.BIN	0:05	14	469	1FB2	ええ{08:53}{08:72}		Err...	v005		reads: ええっと‥‥; menu option, declared width 20 columns; @refalign
 m/MS0011.BIN	0:05	15	499	1FD2	メイ：	Mei:	Mei:	v005	draft	
 m/MS0011.BIN	0:05	16	507	1FD3	メイはねぇ、あの後、お兄ちゃんといっぱい歩いてぇ{02:08}\n<wait>{08:45}に来れば、メイに{08:7F}お薬が貰{08:28}かも{08:52}聞{08:64}{08:42}、頑張{08:52}、\nお兄ちゃんと一緒に来たの！\n<wait>	After that, Mei walked and walked with big brother.........\n<wait>Mei heard that if she came here she might get good medicine,\nso she tried really hard and came with big brother!\n<wait>	After we parted ways with you, Kazumi and I were left wandering around.\n<wait>We walked so, so long before finally coming here in search of medicine.\n<wait>	v005	draft	reads: メイはねぇ、あの後、お兄ちゃんといっぱい歩いてぇ‥‥‥\n<wait>ここに来れば、メイにいいお薬が貰えるかもって聞いたから、頑張って、\nお兄ちゃんと一緒に来たの！\n<wait>
 m/MS0011.BIN	0:05	17	650	1FD2	平沢博士：		Doctor Hirasawa:	v005		
@@ -286,8 +286,8 @@ m/MS0011.BIN	0:06	6	187	1FD2	平沢博士：		Doctor Hirasawa:	v005
 m/MS0011.BIN	0:06	7	199	1FD3	訪ねて来る{08:7C}、礼儀{08:52}{08:5E}が{08:7B}{08:8C}に{08:72}\n<wait>		What happened to having manners?\n<wait>	v005		reads: 訪ねて来るならば、礼儀ってものがあるだろうに‥‥\n<wait>
 m/MS0011.BIN	0:06	8	240	1FD2	平沢博士：		Doctor Hirasawa:	v005		
 m/MS0011.BIN	0:06	9	252	1FD3	さて、わしに何か用かな？\n<wait>		Now, do you need something from me?\n<wait>	v005		
-m/MS0011.BIN	0:06	10	297	1FB2	パーツについて相談		About the parts...	v005		menu option, declared width 20 columns
-m/MS0011.BIN	0:06	11	317	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns
+m/MS0011.BIN	0:06	10	297	1FB2	パーツについて相談		About the parts...	v005		menu option, declared width 20 columns; @refalign
+m/MS0011.BIN	0:06	11	317	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns; @refalign
 m/MS0011.BIN	0:06	12	351	1F01	{08:62}	 showed 			draft	reads: は、
 m/MS0011.BIN	0:06	13	359	1F01	のパーツを平沢博士に見せ、何とか保存が出来{08:25}かを相談{08:4B}。\n<wait>	's parts to Dr. Hirasawa and asked whether they could somehow\nbe preserved.\n<wait>			draft	reads: のパーツを平沢博士に見せ、何とか保存が出来ないかを相談した。\n<wait>
 m/MS0011.BIN	0:06	14	424	1FD2	平沢博士：	Dr. Hirasawa:			draft	
@@ -308,15 +308,15 @@ m/MS0011.BIN	0:06	28	950	1FD3	お{08:53}、忘{08:2F}所だ{08:51}{02:08}日下�
 m/MS0011.BIN	0:06	29	1062	1FD2	平沢博士：	Dr. Hirasawa:			draft	
 m/MS0011.BIN	0:06	30	1074	1FD3	何も無いと{08:68}事はなかろう？\n<wait>		There must be something to tell me, right?\n<wait>	ours		reads: 何も無いという事はなかろう？\n<wait>
 m/MS0011.BIN	0:06	31	1111	1FD1	＞{02:06}\n	>What will you do?\n			draft	reads: ＞どうしますか？\n
-m/MS0011.BIN	0:06	32	1132	1FB2	パーツについて相談		About the parts...	v005		menu option, declared width 20 columns
-m/MS0011.BIN	0:06	33	1152	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns
+m/MS0011.BIN	0:06	32	1132	1FB2	パーツについて相談		About the parts...	v005		menu option, declared width 20 columns; @refalign
+m/MS0011.BIN	0:06	33	1152	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns; @refalign
 m/MS0011.BIN	0:06	34	1180	1FD2	平沢博士：		Doctor Hirasawa:	v005		
 m/MS0011.BIN	0:06	35	1192	1FD3	全く{02:08}じれっ{08:4E}の。\n<wait>	Honestly......... how exasperating.\n<wait>	Hmph...\n<wait>	v005	draft	reads: 全く‥‥‥じれったいの。\n<wait>
 m/MS0011.BIN	0:06	36	1219	1FD2	平沢博士：	Doctor Hirasawa:	Doctor Hirasawa:	v005	draft	
 m/MS0011.BIN	0:06	37	1231	1FD3	言い{08:4E}事が{08:7B}{08:7D}、まずは言{08:52}みる事{08:8C}？\n<wait>		If you have something to say, just say it.\n<wait>	v005		reads: 言いたい事があるなら、まずは言ってみる事だろう？\n<wait>
 m/MS0011.BIN	0:06	38	1278	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n
-m/MS0011.BIN	0:06	39	1299	1FB2	パーツについて相談		About the parts...	v005		menu option, declared width 20 columns
-m/MS0011.BIN	0:06	40	1319	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns
+m/MS0011.BIN	0:06	39	1299	1FB2	パーツについて相談		About the parts...	v005		menu option, declared width 20 columns; @refalign
+m/MS0011.BIN	0:06	40	1319	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns; @refalign
 m/MS0011.BIN	0:07	0	2	1FD2	平沢博士：		Doctor Hirasawa:	v005		
 m/MS0011.BIN	0:07	1	14	1FD3	{02:08}ん？　何か私に用かね？\n<wait>特に急ぎの用で無い{08:7D}、済ま{08:25}が後に{08:4A}くれんか？\n<wait>		Hmm? You need something?\n<wait>I'm sorry, but if it's not urgent, could we do this some other time?\nI'm awfully busy at the moment, you see.\n<wait>	v005		reads: ‥‥‥ん？　何か私に用かね？\n<wait>特に急ぎの用で無いなら、済まないが後にしてくれんか？\n<wait>
 m/MS0011.BIN	0:08	0	8	1FD2	平沢博士：		Doctor Hirasawa:	v005		
@@ -484,11 +484,11 @@ m/MS0011.BIN	0:0A	0	30	1FD2	トランプ兵士：		Trump Soldier:	v005
 m/MS0011.BIN	0:0A	1	46	1FD3	{02:08}ぐー‥ぐー{02:08}すぴー{08:72}すぱぱ{02:08}‥\n<wait>		Zzz... Zzz...\n<wait>	v005		reads: ‥‥‥ぐー‥ぐー‥‥‥すぴー‥‥すぱぱ‥‥‥‥\n<wait>
 m/MS0011.BIN	0:0A	2	87	1FD0	トランプの兵士{08:62}居眠りを{08:13}様だ。\n<wait>		The Trump Soldier appears to be sleeping.\n<wait>	v005		reads: トランプの兵士は、居眠りをしている様だ。\n<wait>
 m/MS0011.BIN	0:0A	3	178	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n
-m/MS0011.BIN	0:0A	4	199	1FB2	大声を出す！		Yell loudly!	v005		menu option, declared width 20 columns
-m/MS0011.BIN	0:0A	5	213	1FB2	そ{08:53}しとく		Leave him be	v005		reads: そっとしとく; menu option, declared width 20 columns
+m/MS0011.BIN	0:0A	4	199	1FB2	大声を出す！		Yell loudly!	v005		menu option, declared width 20 columns; @refalign
+m/MS0011.BIN	0:0A	5	213	1FB2	そ{08:53}しとく		Leave him be	v005		reads: そっとしとく; menu option, declared width 20 columns; @refalign
 m/MS0011.BIN	0:0A	6	245	1FD0	意地悪を{08:4A}みたく{08:16}	Play a prank on him 	Finding yourself in a mischievous mood,\nyou walk over to the soldier and place your mouth right next to his ear.\n<wait>	v005	draft	reads: 意地悪をしてみたくなった
 m/MS0011.BIN	0:0A	7	269	1F01	{08:62}トランプ兵士の側{08:71}近づき、\n突然大声を張上{08:44}！！\n<wait>	 went right up to the card soldier and\nsuddenly bellowed at the top of his voice!!\n<wait>			draft	reads: は、トランプ兵士の側まで近づき、\n突然大声を張上げた！！\n<wait>
-m/MS0011.BIN	0:0A	8	333	1F01	：	:	:	v005	draft	
+m/MS0011.BIN	0:0A	8	333	1F01	：	:	:	v005	draft	@refalign
 m/MS0011.BIN	0:0A	9	337	1FD3	敵軍襲来！　敵軍襲来ぃぃ！！！\n<wait>	Enemy attack! Enemy attaaack!!!\n<wait>			draft	
 m/MS0011.BIN	0:0A	10	376	1FD2	トランプ兵士：	Card Soldier:			draft	
 m/MS0011.BIN	0:0A	11	392	1FD3	うわぁぁああッ！！\nどどどどど{08:72}敵は何処だっ！　{08:5B}{08:5B}ネズミかッ！！\n<wait>	Waaaaah!!\nW-w-w-where's the enemy! Not the rats again!!\n<wait>			draft	reads: うわぁぁああッ！！\nどどどどど‥‥敵は何処だっ！　またまたネズミかッ！！\n<wait>

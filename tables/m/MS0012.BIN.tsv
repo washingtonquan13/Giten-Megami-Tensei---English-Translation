@@ -3,7 +3,7 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0012.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}\n		There's nothing here...\n	v005		reads: 誰もいない‥‥‥\n
+m/MS0012.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}\n		There's nothing here...\n	v005		reads: 誰もいない‥‥‥\n; @refalign
 m/MS0012.BIN	0:02	0	25	1FD2	酒呑童子：		Shuten-Douji:	ours		
 m/MS0012.BIN	0:02	1	37	1FD3	{08:45}より先{08:62}ヒルコ様の御寝所だ。\n{02:0B}風情が気安く通{08:2F}場所では{08:25}ぞ！\n<wait>		The bedchambers of our mistress, the noble Hiruko lie ahead.\nThe likes of humans have no business stepping inside.\n<wait>	v005		reads: ここより先は、ヒルコ様の御寝所だ。\n人間風情が気安く通れる場所ではないぞ！\n<wait>
 m/MS0012.BIN	0:02	2	109	1FD2	酒呑童子：		Shuten-Douji:	ours		
@@ -98,15 +98,15 @@ m/MS0012.BIN	0:04	84	3569	1FD3	{03:0B}そこ{08:71}{08:4A}、吾に会い{08:4E}
 m/MS0012.BIN	0:04	85	3639	1FD2	ヒルコ：		Hiruko:	v005		
 m/MS0012.BIN	0:04	86	3649	1FD3	望みが{08:7B}{08:7C}、遠慮せずに言うてみるが良い。\n<wait>		Tell me, what is it that you desire.\n<wait>	v005		reads: 望みがあるならば、遠慮せずに言うてみるが良い。\n<wait>
 m/MS0012.BIN	0:04	87	3698	1FD1	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>
-m/MS0012.BIN	0:04	88	3725	1FB2	勾玉について話す		Ask about Magatama	v005		menu option, declared width 20 columns
-m/MS0012.BIN	0:04	89	3743	1FB2	躊躇{08:8E}		Hesitate	v005		reads: 躊躇する; menu option, declared width 20 columns
+m/MS0012.BIN	0:04	88	3725	1FB2	勾玉について話す		Ask about Magatama	v005		menu option, declared width 20 columns; @refalign
+m/MS0012.BIN	0:04	89	3743	1FB2	躊躇{08:8E}		Hesitate	v005		reads: 躊躇する; menu option, declared width 20 columns; @refalign
 m/MS0012.BIN	0:04	90	3775	1F01	{08:62}ヒルコが持っ{08:14}と教えら{08:60}、ヤサカノマガタマについて話{08:4B}。\n<wait>	 spoke of the Yasaka no Magatama he had been told Hiruko possessed.\n<wait>			draft	reads: は、ヒルコが持っていると教えられた、ヤサカノマガタマについて話した。\n<wait>
 m/MS0012.BIN	0:04	91	3842	1FD2	ヒルコ：	Hiruko:	Hiruko:	v005	draft	
 m/MS0012.BIN	0:04	92	3852	1FD3	如何にも{02:08}\nヤサカノマガタマで{08:3F}ば、吾が所蔵{08:4A}おる。\n<wait>	Indeed......\nIf it is the Yasaka no Magatama, I hold it.\n<wait>			draft	reads: 如何にも‥‥‥\nヤサカノマガタマであれば、吾が所蔵しておる。\n<wait>
 m/MS0012.BIN	0:04	93	3912	1FD2	ヒルコ：	Hiruko:			draft	
 m/MS0012.BIN	0:04	94	3922	1FD3	{08:79}マガタマが欲しいと、そなたは申すか？\n<wait>	Do you say you desire that Magatama?\n<wait>			draft	reads: そのマガタマが欲しいと、そなたは申すか？\n<wait>
 m/MS0012.BIN	0:04	95	3983	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns
-m/MS0012.BIN	0:04	96	3987	1FB2	躊躇{08:8E}		Hesitate	v005		reads: 躊躇する; menu option, declared width 20 columns
+m/MS0012.BIN	0:04	96	3987	1FB2	躊躇{08:8E}		Hesitate	v005		reads: 躊躇する; menu option, declared width 20 columns; @refalign
 m/MS0012.BIN	0:04	97	4013	1FD2	ヒルコ：	Hiruko:	Hiruko:	v005	draft	
 m/MS0012.BIN	0:04	98	4023	1FD3	何を遠慮{08:4A}おる？\n<wait>		What are you holding back for?\n<wait>	ours		reads: 何を遠慮しておる？\n<wait>
 m/MS0012.BIN	0:04	99	4048	1FD2	ヒルコ：	Hiruko:	Hiruko:	v005	draft	
@@ -118,7 +118,7 @@ m/MS0012.BIN	0:04	104	4187	1FD3	何を遠慮{08:4A}おる？\n<wait>		What are y
 m/MS0012.BIN	0:04	105	4212	1FD2	ヒルコ：		Hiruko:	v005		
 m/MS0012.BIN	0:04	106	4222	1FD3	{08:90}{08:6B}{08:81}？\n<wait>ヤサカノマガタマが欲しいと申すのか？\n<wait>		Well?\n<wait>Are you saying you want the Yasakani-no-Magatama?\n<wait>	ours		reads: どうなのじゃ？\n<wait>ヤサカノマガタマが欲しいと申すのか？\n<wait>
 m/MS0012.BIN	0:04	107	4294	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns
-m/MS0012.BIN	0:04	108	4298	1FB2	躊躇{08:8E}		Hesitate	v005		reads: 躊躇する; menu option, declared width 20 columns
+m/MS0012.BIN	0:04	108	4298	1FB2	躊躇{08:8E}		Hesitate	v005		reads: 躊躇する; menu option, declared width 20 columns; @refalign
 m/MS0012.BIN	0:04	109	4324	1FD2	ヒルコ：		Hiruko:	v005		
 m/MS0012.BIN	0:04	110	4334	1FD3	{02:0B}に負{08:43}とあ{08:52}{08:62}奴らもより一層自らを高{08:2E}努力を{08:8E}事であろう。\n<wait>		The fighters you defeated are mortified at the prospect of losing\na battle against a mere human. They will surely use it as impetus for\nraising their strength to ever growing heights.\n<wait>	v005		reads: 人間に負けたとあっては、奴らもより一層自らを高める努力をする事であろう。\n<wait>
 m/MS0012.BIN	0:04	111	4403	1FD2	ヒルコ：	Hiruko:	Hiruko:	v005	draft	
@@ -158,18 +158,18 @@ m/MS0012.BIN	0:04	144	6027	1FD2	ヒルコ：	Hiruko:			draft
 m/MS0012.BIN	0:04	145	6037	1FD3	！！！！\n<wait>	!!!!\n<wait>			draft	
 m/MS0012.BIN	0:04	146	6061	1FD0	動揺{08:8E}国津神達{02:08}‥\n<wait>{08:7A}国津神達をしり目に、デカラビアは自らの五芳星の光の中で、\n既に消え{08:69}と{08:4A}{08:64}。\n<wait>		The deities aren't sure what to do...\n<wait>Sneering at them, Decarabia begins glowing with blinding light.\nIt appears that he is trying to teleport away.\n<wait>	v005		reads: 動揺する国津神達‥‥‥‥\n<wait>そんな国津神達をしり目に、デカラビアは自らの五芳星の光の中で、\n既に消えようとしていた。\n<wait>
 m/MS0012.BIN	0:04	147	6201	1FD1	＞{08:90}し{08:5A}か！！\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか！！\n<wait>
-m/MS0012.BIN	0:04	148	6238	1FB2	光の中に飛び込む		Leap at the light	v005		menu option, declared width 20 columns
-m/MS0012.BIN	0:04	149	6256	1FB2	爆弾に飛びつく		Leap at the bomb	v005		menu option, declared width 20 columns
-m/MS0012.BIN	0:04	150	6304	1F01	{08:62}光の中に飛び込{08:5F}！！\n<wait>	 leapt into the light!!\n<wait>	You leap at the light!\n<wait>	v005	draft	reads: は、光の中に飛び込んだ！！\n<wait>
-m/MS0012.BIN	0:04	151	6389	1F01	は爆弾に飛びつ{08:64}！！\n	 leapt at the bomb!!\n	You leap at the bomb!\n	v005	draft	reads: は爆弾に飛びついた！！\n
+m/MS0012.BIN	0:04	148	6238	1FB2	光の中に飛び込む		Leap at the light	v005		menu option, declared width 20 columns; @refalign
+m/MS0012.BIN	0:04	149	6256	1FB2	爆弾に飛びつく		Leap at the bomb	v005		menu option, declared width 20 columns; @refalign
+m/MS0012.BIN	0:04	150	6304	1F01	{08:62}光の中に飛び込{08:5F}！！\n<wait>	 leapt into the light!!\n<wait>	You leap at the light!\n<wait>	v005	draft	reads: は、光の中に飛び込んだ！！\n<wait>; @refalign
+m/MS0012.BIN	0:04	151	6389	1F01	は爆弾に飛びつ{08:64}！！\n	 leapt at the bomb!!\n	You leap at the bomb!\n	v005	draft	reads: は爆弾に飛びついた！！\n; @refalign
 m/MS0012.BIN	0:05	0	28	1FD2	ミュータント：		Mutant:	v005		
 m/MS0012.BIN	0:05	1	49	09	タケミナカタ様を負かすほ{08:6D}腕の持ち主{08:7D}、{08:47}闘技場で戦う事も{08:7B}まい。\n<wait>		If you had the skill to best Lord Takeminakata,\nyou'd have no need to fight here in this arena.\n<wait>	ours		reads: タケミナカタ様を負かすほどの腕の持ち主なら、この闘技場で戦う事もあるまい。\n<wait>
 m/MS0012.BIN	0:05	2	124	1FD2	ミュータント：		Mutant:	v005		
 m/MS0012.BIN	0:05	3	140	1FD3	お前にかなう{08:69}な者{08:62}{08:5C}{08:45}には{08:24}{02:08}\n		There's no one left here who could match you......\n	ours		reads: お前にかなうような者は、もうここにはいない‥‥‥\n
 m/MS0012.BIN	0:05	4	174	00	{02:08}‥闘技に参加{08:8E}のか？\n<wait>		...Are you interested in stepping in the arena?\n<wait>	v005		reads: ‥‥‥‥闘技に参加するのか？\n<wait>
 m/MS0012.BIN	0:05	5	205	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n
-m/MS0012.BIN	0:05	6	226	1FB2	参加{08:8E}		Yeah	v005		reads: 参加する; menu option, declared width 20 columns
-m/MS0012.BIN	0:05	7	234	1FB2	参加し{08:25}		No	v005		reads: 参加しない; menu option, declared width 20 columns
+m/MS0012.BIN	0:05	6	226	1FB2	参加{08:8E}		Yeah	v005		reads: 参加する; menu option, declared width 20 columns; @refalign
+m/MS0012.BIN	0:05	7	234	1FB2	参加し{08:25}		No	v005		reads: 参加しない; menu option, declared width 20 columns; @refalign
 m/MS0012.BIN	0:05	8	264	1FD2	ミュータント：	Mutant:	Mutant:	v005	draft	
 m/MS0012.BIN	0:05	9	280	1FD3	{02:08}‥そうか。\n<wait>	......I see.\n<wait>	...Very well. <wait>	v005	draft	reads: ‥‥‥‥そうか。\n<wait>
 m/MS0012.BIN	0:05	10	301	1FD2	ミュータント：		Mutant:	v005		

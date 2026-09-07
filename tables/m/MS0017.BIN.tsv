@@ -5,43 +5,43 @@
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
 m/MS0017.BIN	0:00	0	2	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n
 m/MS0017.BIN	0:00	1	23	1FB2	{02:07}	{02:07}	Open terminal	v005		reads: 通信をする; menu option, declared width 20 columns
-m/MS0017.BIN	0:00	2	27	1FB2	休む		Rest	v005		menu option, declared width 20 columns
+m/MS0017.BIN	0:00	2	27	1FB2	休む		Rest	v005		menu option, declared width 20 columns; @refalign
 m/MS0017.BIN	0:00	3	33	1FB2	{02:05}	{02:05}	Leave	v005		reads: 出かける; menu option, declared width 20 columns
 m/MS0017.BIN	0:00	4	116	1FD2	{08:04}：	Nishino: 	Nishino:	v005	draft	reads: 西野：; v005={02:01}j @rebase-unmatched idx5 en={02:01} @rebase-unmatched idx5 en={02:01} @ours-2026-09-05
 m/MS0017.BIN	0:00	5	128	1F01	、今は{08:73}所で休んで{08:40}場合では{08:25}！\n{03:10}{08:4B}いので{08:3F}ば、医療施設へ行こう。\n	, this is no time to be resting in a place like this!\nIf you want to heal, go to the medical facility.\n	This is no time to be resting, Katsuragi!\nIf you need to heal, then go visit the medical facility.\n	v005	draft	reads: 、今はこんな所で休んでいる場合ではない！\n回復したいのであれば、医療施設へ行こう。\n
-m/MS0017.BIN	0:00	6	244	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
-m/MS0017.BIN	0:00	7	250	1FD3	おいおい。{08:73}所で、ゆっくり休憩{08:6A}か{08:4A}られ{08:25}ぜ。\n{03:10}{08:4B}い{08:7D}、医療施設へ行こう。\n		Hey, Katsuragi. This is no time to be resting.\nIf you need to heal, then go visit the medical facility.\n	v005		reads: おいおい。こんな所で、ゆっくり休憩なんかしてられないぜ。\n回復したいなら、医療施設へ行こう。\n
-m/MS0017.BIN	0:00	8	331	1FD0	今{08:62}{08:73}所でのうのうと休んで{08:40}場合では{08:25}。\n{03:10}{08:8E}ので{08:3F}ば、医療施設に行{08:51}方が良い{08:8C}。\n		This is no time to be resting.\nIf you need to heal, then go visit the medical facility.\n	v005		reads: 今は、こんな所でのうのうと休んでいる場合ではない。\n回復するのであれば、医療施設に行った方が良いだろう。\n
-m/MS0017.BIN	0:00	9	430	1FD2	{08:03}：		Emi:	v005		reads: 英美：
+m/MS0017.BIN	0:00	6	244	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; @refalign
+m/MS0017.BIN	0:00	7	250	1FD3	おいおい。{08:73}所で、ゆっくり休憩{08:6A}か{08:4A}られ{08:25}ぜ。\n{03:10}{08:4B}い{08:7D}、医療施設へ行こう。\n		Hey, Katsuragi. This is no time to be resting.\nIf you need to heal, then go visit the medical facility.\n	v005		reads: おいおい。こんな所で、ゆっくり休憩なんかしてられないぜ。\n回復したいなら、医療施設へ行こう。\n; @refalign
+m/MS0017.BIN	0:00	8	331	1FD0	今{08:62}{08:73}所でのうのうと休んで{08:40}場合では{08:25}。\n{03:10}{08:8E}ので{08:3F}ば、医療施設に行{08:51}方が良い{08:8C}。\n		This is no time to be resting.\nIf you need to heal, then go visit the medical facility.\n	v005		reads: 今は、こんな所でのうのうと休んでいる場合ではない。\n回復するのであれば、医療施設に行った方が良いだろう。\n; @refalign
+m/MS0017.BIN	0:00	9	430	1FD2	{08:03}：		Emi:	v005		reads: 英美：; @refalign
 m/MS0017.BIN	0:00	10	446	0B	ねぇ。{08:7F}の？　	Hey. Are you sure about this, 			draft	reads: ねぇ。いいの？　
 m/MS0017.BIN	0:00	11	466	1F01	くん。\n	?\n			draft	
 m/MS0017.BIN	0:00	12	479	1F01	ちゃん、き{08:53}話し合いの結果を気にし{08:2B}よ。\n	 must be dying to know how the talk went.\n			draft	reads: ちゃん、きっと話し合いの結果を気にしてるよ。\n
 m/MS0017.BIN	0:00	13	523	18	{02:08}	...... 	Hey, Katsuragi. Let's go visit Tatsuya before that.\\We've... We've gotta tell him about tomorrow.\n	v005	draft	reads: ‥‥‥
 m/MS0017.BIN	0:00	14	531	1F01	くん。{08:01}の所へ行こう。\n明日の事‥伝えなくちゃ{02:08}。\n	, let's go see Tatsuya.\nWe have to tell him about tomorrow......\n			draft	reads: くん。達也の所へ行こう。\n明日の事‥伝えなくちゃ‥‥‥。\n
 m/MS0017.BIN	0:00	15	584	18	休んでる場合{08:81}{08:25}よ。\n隊長の所へ報告に行かなくちゃ。\n	This is no time to be resting.\nWe have to go report to the Commander.\n	This is no time to be resting.\nWe've gotta visit the Commander and tell him what happened.\n	v005	draft	reads: 休んでる場合じゃないよ。\n隊長の所へ報告に行かなくちゃ。\n
-m/MS0017.BIN	0:00	16	648	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0017.BIN	0:00	16	648	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; @refalign
 m/MS0017.BIN	0:00	17	664	0B	おい。本当に{08:7F}のか？　		Are you sure this is a good idea?\n<wait>	v005		reads: おい。本当にいいのか？　
 m/MS0017.BIN	0:00	18	692	1F01	。\n	.\n			draft	
 m/MS0017.BIN	0:00	19	701	1F01	さんの事{02:08}‥。\n<wait>	's situation, I mean......\n<wait>			draft	reads: さんの事‥‥‥‥。\n<wait>
-m/MS0017.BIN	0:00	20	724	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
+m/MS0017.BIN	0:00	20	724	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; @refalign
 m/MS0017.BIN	0:00	21	730	1FD3	隊長との話し合いの結果を、伝えに行{08:51}方が{08:7F}ぜ。\n		Tachibana is probably anxious to hear back from us.\n	v005		reads: 隊長との話し合いの結果を、伝えに行った方がいいぜ。\n
 m/MS0017.BIN	0:00	22	783	1F01	さん、き{08:53}気にし{08:2B}ぞ。\n	 must be worried sick about it.\n			draft	reads: さん、きっと気にしてるぞ。\n
 m/MS0017.BIN	0:00	23	815	1F01	{02:08}{08:03}の所へ行こう。\n明日の事を伝え{08:25}と{02:08}\n	... Let's go find Emi.\nWe have to tell her about tomorrow...\n			draft	reads: ‥‥‥英美の所へ行こう。\n明日の事を伝えないと‥‥‥\n
-m/MS0017.BIN	0:00	24	858	18	おいおい、休んでる場合{08:81}{08:25}ぞ。\n隊長の所に報告に行かなくちゃ。\n<wait>		This is no time to be resting.\nWe've gotta visit the Commander and tell him what happened.\n<wait>	v005		reads: おいおい、休んでる場合じゃないぞ。\n隊長の所に報告に行かなくちゃ。\n<wait>
-m/MS0017.BIN	0:00	25	937	1FD0	{08:73}時に休んで{08:40}場合では{08:25}！\n		This is no time to be resting!\n	v005		reads: こんな時に休んでいる場合ではない！\n
+m/MS0017.BIN	0:00	24	858	18	おいおい、休んでる場合{08:81}{08:25}ぞ。\n隊長の所に報告に行かなくちゃ。\n<wait>		This is no time to be resting.\nWe've gotta visit the Commander and tell him what happened.\n<wait>	v005		reads: おいおい、休んでる場合じゃないぞ。\n隊長の所に報告に行かなくちゃ。\n<wait>; @refalign
+m/MS0017.BIN	0:00	25	937	1FD0	{08:73}時に休んで{08:40}場合では{08:25}！\n		This is no time to be resting!\n	v005		reads: こんな時に休んでいる場合ではない！\n; @refalign
 m/MS0017.BIN	0:00	26	1004	1FD0	誰かが、	Someone is shaking 			draft	
 m/MS0017.BIN	0:00	27	1018	1F01	の身体を揺さぶっ{08:14}{02:08}\n<wait>	 awake......\n<wait>			draft	reads: の身体を揺さぶっている‥‥‥\n<wait>
 m/MS0017.BIN	0:00	28	1075	1F01	：	:			draft	
 m/MS0017.BIN	0:00	29	1085	1F01	くん！　	! 			draft	
 m/MS0017.BIN	0:00	30	1099	1F01	くん！\n<wait>	!\n<wait>			draft	
 m/MS0017.BIN	0:00	31	1120	1F01	：	:			draft	
-m/MS0017.BIN	0:00	32	1124	1FD3	私の妹が！　妹の美莉が！！！\n<wait>		My sister... My sister Miri has!...\n<wait>	v005		
-m/MS0017.BIN	0:00	33	1167	1F01	{08:62}目にいっぱい涙を溜めながら、必死に{08:1A}、\n何かを訴え{08:69}と{08:13}。\n<wait>	, eyes brimming with tears, was desperately trying\nto get something across.\n<wait>	Tears can be seen rolling down Yuuka's cheeks.\nIt appears that she is desperately trying to tell you something.\n<wait>	v005	draft	reads: は、目にいっぱい涙を溜めながら、必死になって、\n何かを訴えようとしている。\n<wait>
-m/MS0017.BIN	0:00	34	1233	1FBA	{03:0B}気が動転{08:13}らしく、思{08:51}様に言葉が出て来{08:25}。\n<wait>		And yet, she seems too shocked to be able to form words.\n<wait>	v005		reads: しかし、気が動転しているらしく、思った様に言葉が出て来ない。\n<wait>
+m/MS0017.BIN	0:00	32	1124	1FD3	私の妹が！　妹の美莉が！！！\n<wait>		My sister... My sister Miri has!...\n<wait>	v005		@refalign
+m/MS0017.BIN	0:00	33	1167	1F01	{08:62}目にいっぱい涙を溜めながら、必死に{08:1A}、\n何かを訴え{08:69}と{08:13}。\n<wait>	, eyes brimming with tears, was desperately trying\nto get something across.\n<wait>	Tears can be seen rolling down Yuuka's cheeks.\nIt appears that she is desperately trying to tell you something.\n<wait>	v005	draft	reads: は、目にいっぱい涙を溜めながら、必死になって、\n何かを訴えようとしている。\n<wait>; @refalign
+m/MS0017.BIN	0:00	34	1233	1FBA	{03:0B}気が動転{08:13}らしく、思{08:51}様に言葉が出て来{08:25}。\n<wait>		And yet, she seems too shocked to be able to form words.\n<wait>	v005		reads: しかし、気が動転しているらしく、思った様に言葉が出て来ない。\n<wait>; @refalign
 m/MS0017.BIN	0:00	35	1286	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>			draft	reads: ＞どうしますか？\n<wait>
-m/MS0017.BIN	0:00	36	1313	1FB2	なだ{08:2E}		Calm her down	v005		reads: なだめる; menu option, declared width 20 columns
-m/MS0017.BIN	0:00	37	1321	1FB2	ほ{08:53}く		Ignore her	v005		reads: ほっとく; menu option, declared width 20 columns
-m/MS0017.BIN	0:00	38	1329	1FB2	無理やり聞く		Force her to speak	v005		menu option, declared width 20 columns
+m/MS0017.BIN	0:00	36	1313	1FB2	なだ{08:2E}		Calm her down	v005		reads: なだめる; menu option, declared width 20 columns; @refalign
+m/MS0017.BIN	0:00	37	1321	1FB2	ほ{08:53}く		Ignore her	v005		reads: ほっとく; menu option, declared width 20 columns; @refalign
+m/MS0017.BIN	0:00	38	1329	1FB2	無理やり聞く		Force her to speak	v005		menu option, declared width 20 columns; @refalign
 m/MS0017.BIN	0:00	39	1371	1F01	{08:62}	 stayed with 			draft	reads: は、
 m/MS0017.BIN	0:00	40	1379	1F01	をなだめながら、気を落ち着か{08:2A}為に、\n合成ブランディーの入{08:51}カップを差し出{08:4B}。\n<wait>	 and, to calm her down, held out\na cup of synthetic brandy.\n<wait>			draft	reads: をなだめながら、気を落ち着かせる為に、\n合成ブランディーの入ったカップを差し出した。\n<wait>
 m/MS0017.BIN	0:00	41	1469	1F01	{08:62}素直にカップを受け取り、中の液体を飲み干{08:4B}。\n<wait>	 meekly took the cup and drank it all down.\n<wait>			draft	reads: は、素直にカップを受け取り、中の液体を飲み干した。\n<wait>
@@ -58,32 +58,32 @@ m/MS0017.BIN	0:00	51	1837	1FD3	ごめんな{08:49}、取り乱{08:4B}り{08:4A}�
 m/MS0017.BIN	0:00	52	1926	1F01	は少々きつい口調で、	, in a somewhat harsh tone, asked 			draft	
 m/MS0017.BIN	0:00	53	1952	1F01	に訳を尋ねた。\n<wait>	 what was going on.\n<wait>			draft	
 m/MS0017.BIN	0:00	54	1981	1F01	：	:			draft	
-m/MS0017.BIN	0:00	55	1985	1FD3	{02:08}{02:08}{08:72}ヒック{02:08}ヒック{02:08}\n<wait>		*Sniff, sniff*...\n<wait>	v005		reads: ‥‥‥‥‥‥‥‥ヒック‥‥‥ヒック‥‥‥\n<wait>
+m/MS0017.BIN	0:00	55	1985	1FD3	{02:08}{02:08}{08:72}ヒック{02:08}ヒック{02:08}\n<wait>		*Sniff, sniff*...\n<wait>	v005		reads: ‥‥‥‥‥‥‥‥ヒック‥‥‥ヒック‥‥‥\n<wait>; @refalign
 m/MS0017.BIN	0:00	56	2027	1F01	：	:	:	v005	draft	
-m/MS0017.BIN	0:00	57	2031	1FD3	{02:08}{1E10:01003C}ごめんな{08:49}、取り乱{08:4B}り{08:4A}。\n{08:56}何とか落ち着{08:64}し、{08:5C}、ちゃんと話{08:2A}と思うわ。\n<wait>		......{1E10:01003C}Sorry. It's not good for me to lose my composure like this...\nI think I should be able to talk now.\n<wait>	v005		reads: ‥‥‥{1E10:01003C}ごめんなさい、取り乱したりして。\nでも何とか落ち着いたし、もう、ちゃんと話せると思うわ。\n<wait>
+m/MS0017.BIN	0:00	57	2031	1FD3	{02:08}{1E10:01003C}ごめんな{08:49}、取り乱{08:4B}り{08:4A}。\n{08:56}何とか落ち着{08:64}し、{08:5C}、ちゃんと話{08:2A}と思うわ。\n<wait>		......{1E10:01003C}Sorry. It's not good for me to lose my composure like this...\nI think I should be able to talk now.\n<wait>	v005		reads: ‥‥‥{1E10:01003C}ごめんなさい、取り乱したりして。\nでも何とか落ち着いたし、もう、ちゃんと話せると思うわ。\n<wait>; @refalign
 m/MS0017.BIN	0:00	58	2126	1F01	：	:	:	v005	draft	
-m/MS0017.BIN	0:00	59	2130	1FD3	私とは腹違いに{08:59}妹の美莉が、{01:3B}		My little sister, Miri	v005		reads: 私とは腹違いになる妹の美莉が、さっき
+m/MS0017.BIN	0:00	59	2130	1FD3	私とは腹違いに{08:59}妹の美莉が、{01:3B}		My little sister, Miri	v005		reads: 私とは腹違いになる妹の美莉が、さっき; @refalign
 m/MS0017.BIN	0:00	60	2166	1FFA	{02:08}‥	............ 			draft	reads: ‥‥‥‥
-m/MS0017.BIN	0:00	61	2176	1FFA	ファームの		She was	v005		
+m/MS0017.BIN	0:00	61	2176	1FFA	ファームの		She was	v005		@refalign
 m/MS0017.BIN	0:00	62	2192	1FFA	{02:08}‥\n	...\n			draft	reads: ‥‥‥‥\n
 m/MS0017.BIN	0:00	63	2216	1F01	：	:			draft	
-m/MS0017.BIN	0:00	64	2220	1FD3	ファームの樹木エリアで		She was found dead	v005		
+m/MS0017.BIN	0:00	64	2220	1FD3	ファームの樹木エリアで		She was found dead	v005		@refalign
 m/MS0017.BIN	0:00	65	2248	1FFA	{02:08}‥	............ 			draft	reads: ‥‥‥‥
-m/MS0017.BIN	0:00	66	2258	1FFA	殺{03:0C}て		near the forest area	v005		reads: 殺されて
+m/MS0017.BIN	0:00	66	2258	1FFA	殺{03:0C}て		near the forest area	v005		reads: 殺されて; @refalign
 m/MS0017.BIN	0:00	67	2270	1FFA	{02:08}‥\n<wait>	............\n<wait>			draft	reads: ‥‥‥‥\n<wait>
 m/MS0017.BIN	0:00	68	2295	1F01	：	:			draft	
 m/MS0017.BIN	0:00	69	2299	1FD3	と{08:54}、おかしな死に方を{08:4A}い{08:50}しい<wait>{08:72}の。\n<wait>	They say she died<wait>...in a very strange way.\n<wait>			draft	reads: とても、おかしな死に方をしていたらしい<wait>‥‥の。\n<wait>
 m/MS0017.BIN	0:00	70	2350	1FD0	今にも倒れてしまいそうな蒼白の顔をしながらも、	Her face pale as though she might collapse any moment, 	Her face so pale it looks like she might collapse any second,\nYuuka forces herself to continue.\n<wait>	v005	draft	
 m/MS0017.BIN	0:00	71	2402	1F01	は何とか言葉を続{08:43}。\n<wait>	 somehow managed to go on.\n<wait>			draft	reads: は何とか言葉を続けた。\n<wait>
 m/MS0017.BIN	0:00	72	2437	1F01	：	:			draft	
-m/MS0017.BIN	0:00	73	2441	1FD3	身体中の血が全部抜き取られてて<wait>{08:72}{08:6B}に何処にも{08:72}\n<wait>{1E10:01003C}何処にも傷がついてい{08:19}{08:52}		Every last drop of her blood had been drained. <wait>And yet...\n<wait>{1E10:01003C}And yet, no wounds were found anywhere on her body	v005		reads: 身体中の血が全部抜き取られてて<wait>‥‥なのに何処にも‥‥\n<wait>{1E10:01003C}何処にも傷がついていなかったって
+m/MS0017.BIN	0:00	73	2441	1FD3	身体中の血が全部抜き取られてて<wait>{08:72}{08:6B}に何処にも{08:72}\n<wait>{1E10:01003C}何処にも傷がついてい{08:19}{08:52}		Every last drop of her blood had been drained. <wait>And yet...\n<wait>{1E10:01003C}And yet, no wounds were found anywhere on her body	v005		reads: 身体中の血が全部抜き取られてて<wait>‥‥なのに何処にも‥‥\n<wait>{1E10:01003C}何処にも傷がついていなかったって; @refalign
 m/MS0017.BIN	0:00	74	2531	1FFA	{02:08}‥	............ 			draft	reads: ‥‥‥‥
 m/MS0017.BIN	0:00	75	2541	1FFA	うっ	Ugh			draft	
 m/MS0017.BIN	0:00	76	2551	1FFA	{08:72}	...			draft	reads: ‥‥
 m/MS0017.BIN	0:00	77	2559	1FFA	うっ		*Sob*	v005		
 m/MS0017.BIN	0:00	78	2569	1FFA	{08:72}\n<wait>	...\n<wait>			draft	reads: ‥‥\n<wait>
 m/MS0017.BIN	0:00	79	2600	1FB2	犯人について訪{08:2C}	Ask about the killer	Ask about the killer	v005	draft	reads: 犯人について訪ねる; menu option, declared width 20 columns
-m/MS0017.BIN	0:00	80	2618	1FB2	黙{08:52}次の言葉を待つ		Wait and say nothing	v005		reads: 黙って次の言葉を待つ; menu option, declared width 20 columns
+m/MS0017.BIN	0:00	80	2618	1FB2	黙{08:52}次の言葉を待つ		Wait and say nothing	v005		reads: 黙って次の言葉を待つ; menu option, declared width 20 columns; @refalign
 m/MS0017.BIN	0:00	81	2662	1F01	：	:			draft	
 m/MS0017.BIN	0:00	82	2666	1FD3	{08:76}	They still	They	v005	draft	reads: まだ
 m/MS0017.BIN	0:00	83	2674	1FFA	{02:08}‥	............ 			draft	reads: ‥‥‥‥
@@ -92,7 +92,7 @@ m/MS0017.BIN	0:00	85	2698	1FFA	{02:08}‥\n<wait>	............\n<wait>			draft	r
 m/MS0017.BIN	0:00	86	2726	1F01	：	:			draft	
 m/MS0017.BIN	0:00	87	2730	1FD3	{08:76}	They still	They	v005	draft	reads: まだ
 m/MS0017.BIN	0:00	88	2738	1FFA	{02:08}‥	............ 			draft	reads: ‥‥‥‥
-m/MS0017.BIN	0:00	89	2748	1FFA	犯人は判ら{08:25}{08:52}言うの		They said that they don't know who the killer is yet	v005		reads: 犯人は判らないって言うの
+m/MS0017.BIN	0:00	89	2748	1FFA	犯人は判ら{08:25}{08:52}言うの		They said that they don't know who the killer is yet	v005		reads: 犯人は判らないって言うの; @refalign
 m/MS0017.BIN	0:00	90	2774	1FFA	{02:08}‥\n<wait>	............\n<wait>			draft	reads: ‥‥‥‥\n<wait>
 m/MS0017.BIN	0:00	91	2799	1F01	：	:			draft	
 m/MS0017.BIN	0:00	92	2809	1F01	くん！　<wait>私怖い	! <wait>I'm scared	Katsuragi-kun! <wait>I'm	v005	draft	
@@ -105,7 +105,7 @@ m/MS0017.BIN	0:00	98	2903	1F01	{08:62}	 clung to 			draft	reads: は、
 m/MS0017.BIN	0:00	99	2911	1F01	にすがりつき、泣き出{08:4B}。\n<wait>	 and burst into tears.\n<wait>			draft	reads: にすがりつき、泣き出した。\n<wait>
 m/MS0017.BIN	0:00	100	2944	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>			draft	reads: ＞どうしますか？\n<wait>
 m/MS0017.BIN	0:00	101	2971	1FB2	抱き寄{08:67}キス{08:8E}	Hold and kiss her	Kiss her	v005	draft	reads: 抱き寄せてキスする; menu option, declared width 20 columns
-m/MS0017.BIN	0:00	102	2987	1FB2	優しく抱きし{08:2E}		Hug her gently	v005		reads: 優しく抱きしめる; menu option, declared width 20 columns
+m/MS0017.BIN	0:00	102	2987	1FB2	優しく抱きし{08:2E}		Hug her gently	v005		reads: 優しく抱きしめる; menu option, declared width 20 columns; @refalign
 m/MS0017.BIN	0:00	103	3003	1FB2	{08:82}じ{08:53}し{08:2B}	Just stay still	Stare at her	v005	draft	reads: ただじっとしてる; menu option, declared width 20 columns
 m/MS0017.BIN	0:00	104	3037	1FD0	身体を振るわせ、怯え切{08:52}泣く	Shaking, weeping in terror			draft	reads: 身体を振るわせ、怯え切って泣く
 m/MS0017.BIN	0:00	105	3077	1FFA	{02:08}‥\n<wait>	............\n<wait>			draft	reads: ‥‥‥‥\n<wait>
@@ -126,21 +126,21 @@ m/MS0017.BIN	0:00	119	3400	1F01	を前にし、	 like this, 			draft
 m/MS0017.BIN	0:00	120	3416	1F01	は{08:82}何も出来ずにじ{08:53}{08:4A}{08:64}。\n<wait>	 could do nothing but sit there in silence.\n<wait>			draft	reads: はただ何も出来ずにじっとしていた。\n<wait>
 m/MS0017.BIN	0:00	121	3457	1F01	：	:			draft	
 m/MS0017.BIN	0:00	122	3467	1F01	くん	-kun			draft	
-m/MS0017.BIN	0:00	123	3477	1FFA	{02:08}{02:08}{08:72}\n<wait>	......\n<wait>			draft	reads: ‥‥‥‥‥‥‥‥\n<wait>
+m/MS0017.BIN	0:00	123	3477	1FFA	{02:08}{02:08}{08:72}\n<wait>	......\n<wait>			draft	reads: ‥‥‥‥‥‥‥‥\n<wait>; @refalign-merged; @refalign
 m/MS0017.BIN	0:00	124	3504	1F01	：	:			draft	
 m/MS0017.BIN	0:00	125	3508	1FD3	お願い	Please			draft	
 m/MS0017.BIN	0:00	126	3520	1FFA	{02:08}‥	............ 			draft	reads: ‥‥‥‥
 m/MS0017.BIN	0:00	127	3536	1F01	くん	-kun			draft	
 m/MS0017.BIN	0:00	128	3546	1FFA	{02:08}‥\n<wait>	............\n<wait>			draft	reads: ‥‥‥‥\n<wait>
 m/MS0017.BIN	0:00	129	3571	1F01	：	:			draft	
-m/MS0017.BIN	0:00	130	3575	1FD3	{08:48}{08:42}、私の実家で美莉のお葬式が{08:7B}の		My parents are planning to hold her funeral soon.	v005		reads: これから、私の実家で美莉のお葬式があるの
+m/MS0017.BIN	0:00	130	3575	1FD3	{08:48}{08:42}、私の実家で美莉のお葬式が{08:7B}の		My parents are planning to hold her funeral soon.	v005		reads: これから、私の実家で美莉のお葬式があるの; @refalign
 m/MS0017.BIN	0:00	131	3615	1FFA	{02:08}‥\n<wait>	............\n<wait>			draft	reads: ‥‥‥‥\n<wait>
 m/MS0017.BIN	0:00	132	3640	1F01	：	:			draft	
 m/MS0017.BIN	0:00	133	3644	1FD3	{08:74}ど私<wait>{08:72}{01:3A}{08:81}行{08:1E}く{08:25}{02:08}。\n<wait>	But I<wait>... I don't want to go alone.........\n<wait>	My parents are planning to hold her funeral soon.	v005	draft	reads: だけど私<wait>‥‥ひとりじゃ行きたくない‥‥‥。\n<wait>
 m/MS0017.BIN	0:00	134	3683	1F01	くん、お願い。一緒に来て	, please. Come with me			draft	
 m/MS0017.BIN	0:00	135	3713	1FFA	{02:08}‥\n<wait>	............\n<wait>			draft	reads: ‥‥‥‥\n<wait>
 m/MS0017.BIN	0:00	136	3732	1FD1	＞{02:06}\n	>What will you do?\n			draft	reads: ＞どうしますか？\n
-m/MS0017.BIN	0:00	137	3753	1FB2	一緒に行く		Go with her	v005		menu option, declared width 20 columns
+m/MS0017.BIN	0:00	137	3753	1FB2	一緒に行く		Go with her	v005		menu option, declared width 20 columns; @refalign
 m/MS0017.BIN	0:00	138	3765	1FB2	断る	Refuse 	Refuse	v005	draft	menu option, declared width 20 columns
 m/MS0017.BIN	0:00	139	3797	1F01	{08:62}	 decided to attend Miri's funeral with 			draft	reads: は、
 m/MS0017.BIN	0:00	140	3805	1F01	と共に、美莉の葬儀に出席{08:8E}事に{08:4B}。\n<wait>	.\n<wait>			draft	reads: と共に、美莉の葬儀に出席する事にした。\n<wait>
@@ -162,7 +162,7 @@ m/MS0017.BIN	0:00	155	4314	1FD3	お願いよ、	Please, 			draft
 m/MS0017.BIN	0:00	156	4330	1F01	くん	-kun			draft	
 m/MS0017.BIN	0:00	157	4340	1FFA	{02:08}‥	............ 			draft	reads: ‥‥‥‥
 m/MS0017.BIN	0:00	158	4350	1FFA	わがま{08:76}{08:52}解っ{08:2B}	I know I'm being selfish			draft	reads: わがままだって解ってる
-m/MS0017.BIN	0:00	159	4372	1FFA	{08:72}\n	...\n			draft	reads: ‥‥\n
+m/MS0017.BIN	0:00	159	4372	1FFA	{08:72}\n	...\n			draft	reads: ‥‥\n; @refalign-merged; @refalign
 m/MS0017.BIN	0:00	160	4381	1FFA	{08:74}ど	But	but, I need you	v005	draft	reads: だけど
 m/MS0017.BIN	0:00	161	4391	1FFA	{08:72}	...			draft	reads: ‥‥
 m/MS0017.BIN	0:00	162	4399	1FFA	お願い	Please			draft	
@@ -187,14 +187,14 @@ m/MS0017.BIN	0:01	6	325	1FB2	{02:05}	{02:05}	Leave	v005		reads: 出かける; me
 m/MS0017.BIN	0:01	7	388	1FD0	万全の態勢で受{08:43}{08:85}の、入隊試験{02:08}‥\n<wait>{08:4D}に落ちたショックで、	The entrance exam he had taken in perfect readiness............\n<wait>The shock of failing it left 	You had so much momentum going into the exams, and yet, you flunked...\n<wait>The sheer shock of it all leaves you utterly unable to get any sleep.\n<wait>	v005	draft	reads: 万全の態勢で受けたはずの、入隊試験‥‥‥‥\n<wait>それに落ちたショックで、
 m/MS0017.BIN	0:01	8	455	1F01	は中々寝つけずに{08:64}。\n<wait>	 couldn't get to sleep.\n<wait>			draft	reads: は中々寝つけずにいた。\n<wait>
 m/MS0017.BIN	0:01	9	482	1FBA	寝苦しさに、幾度も寝返りをうちながら、	Tossing and turning restlessly,\n			draft	
-m/MS0017.BIN	0:01	10	539	1FB2	父さん{08:72}挫け{08:25}よ		Father... Forgive me...	v005		reads: 父さん‥‥挫けないよ; menu option, declared width 20 columns
-m/MS0017.BIN	0:01	11	557	1FB2	母さんごめんね{02:08}		Mother... Sorry...	v005		reads: 母さんごめんね‥‥‥; menu option, declared width 20 columns
-m/MS0017.BIN	0:01	12	575	1FB2	僕は最低な{02:0B}だ{08:72}		I'm worthless...	v005		reads: 僕は最低な人間だ‥‥; menu option, declared width 20 columns
+m/MS0017.BIN	0:01	10	539	1FB2	父さん{08:72}挫け{08:25}よ		Father... Forgive me...	v005		reads: 父さん‥‥挫けないよ; menu option, declared width 20 columns; @refalign
+m/MS0017.BIN	0:01	11	557	1FB2	母さんごめんね{02:08}		Mother... Sorry...	v005		reads: 母さんごめんね‥‥‥; menu option, declared width 20 columns; @refalign
+m/MS0017.BIN	0:01	12	575	1FB2	僕は最低な{02:0B}だ{08:72}		I'm worthless...	v005		reads: 僕は最低な人間だ‥‥; menu option, declared width 20 columns; @refalign
 m/MS0017.BIN	0:01	13	670	0C	＞{02:06}\n<wait>	>What will you do?\n<wait>			draft	reads: ＞どうしますか？\n<wait>
 m/MS0017.BIN	0:01	14	697	1FB2	{02:07}	{02:07}	Open terminal	v005		reads: 通信をする; menu option, declared width 20 columns
 m/MS0017.BIN	0:01	15	701	1FB2	休む	Rest			draft	menu option, declared width 20 columns
 m/MS0017.BIN	0:01	16	707	1FB2	{02:05}	{02:05}	Leave	v005		reads: 出かける; menu option, declared width 20 columns
-m/MS0017.BIN	0:01	17	733	1FD0	試験の結果を、皆も気に{08:13}{08:8C}。\n<wait>		The others are probably curious to hear how you did.\n<wait>	v005		reads: 試験の結果を、皆も気にしているだろう。\n<wait>
+m/MS0017.BIN	0:01	17	733	1FD0	試験の結果を、皆も気に{08:13}{08:8C}。\n<wait>		The others are probably curious to hear how you did.\n<wait>	v005		reads: 試験の結果を、皆も気にしているだろう。\n<wait>; @refalign
 m/MS0017.BIN	0:01	18	768	1FBA	不本意な結果であ{08:51}が、一応皆に{02:08}‥\n{08:04}ぐらいに{08:62}報告{08:4A}お{08:64}方が{08:7F}{08:8C}{02:08}‥\n	It was a disappointing result, but he should let everyone............\nat least Nishino, know............\n	As embarrassing as it is, you probably should let them know.\nAnd if not all of them, then at least Nishino.\n	v005	draft	reads: 不本意な結果であったが、一応皆に‥‥‥‥\n西野ぐらいには、報告しておいた方がいいだろう‥‥‥‥\n
 m/MS0017.BIN	0:01	19	874	1F03	＞{02:06}\n<wait>	>What will you do?\n<wait>			draft	reads: ＞どうしますか？\n<wait>
 m/MS0017.BIN	0:01	20	901	1FB2	{02:07}	{02:07}	Open terminal	v005		reads: 通信をする; menu option, declared width 20 columns
@@ -208,15 +208,15 @@ m/MS0017.BIN	0:01	27	1037	1F01	くぅん。\n<wait>入隊試験、不合格だ{0
 m/MS0017.BIN	0:01	28	1087	1FD2	{08:02}：	Yamase:			draft	reads: 山瀬：
 m/MS0017.BIN	0:01	29	1093	1FD3	そんっ{08:58}落ち込むなよ！\n<wait>俺だ{08:52}一回{08:81}パスし{08:19}{08:5F}ぜ！\n<wait>	Don't be sooo down about it!\n<wait>I didn't pass on my first try either!\n<wait>			draft	reads: そんっなに落ち込むなよ！\n<wait>俺だって一回じゃパスしなかったんだぜ！\n<wait>
 m/MS0017.BIN	0:01	30	1155	1FD2	{08:02}：	Yamase:			draft	reads: 山瀬：
-m/MS0017.BIN	0:01	31	1161	1FD3	{08:4D}よかさ、お前にすっげぇイイモンやるぜ！\n今{08:42}さぁ、俺の{01:2E}に来いよぅぅ、なっ？！\n<wait>		Speaking of which, I got you something nice.\nDrop by my room later on, alright?\n<wait>	v005		reads: それよかさ、お前にすっげぇイイモンやるぜ！\n今からさぁ、俺の部屋に来いよぅぅ、なっ？！\n<wait>
+m/MS0017.BIN	0:01	31	1161	1FD3	{08:4D}よかさ、お前にすっげぇイイモンやるぜ！\n今{08:42}さぁ、俺の{01:2E}に来いよぅぅ、なっ？！\n<wait>		Speaking of which, I got you something nice.\nDrop by my room later on, alright?\n<wait>	v005		reads: それよかさ、お前にすっげぇイイモンやるぜ！\n今からさぁ、俺の部屋に来いよぅぅ、なっ？！\n<wait>; @refalign
 m/MS0017.BIN	0:01	32	1249	1FD2	{08:02}：	Yamase:			draft	reads: 山瀬：
-m/MS0017.BIN	0:01	33	1255	1FD3	何もエッチな事{08:6A}てしねぇ{08:42}よ！\n絶対に来いよ！　来なきゃ損{08:8E}ぞ！\n分{08:18}な！？\n<wait>		No, it's not anything perverted.\nGosh, why would it be?\nAnyway, make sure that you come. Capeesh?\n<wait>	v005		reads: 何もエッチな事なんてしねぇからよ！\n絶対に来いよ！　来なきゃ損するぞ！\n分かったな！？\n<wait>
+m/MS0017.BIN	0:01	33	1255	1FD3	何もエッチな事{08:6A}てしねぇ{08:42}よ！\n絶対に来いよ！　来なきゃ損{08:8E}ぞ！\n分{08:18}な！？\n<wait>		No, it's not anything perverted.\nGosh, why would it be?\nAnyway, make sure that you come. Capeesh?\n<wait>	v005		reads: 何もエッチな事なんてしねぇからよ！\n絶対に来いよ！　来なきゃ損するぞ！\n分かったな！？\n<wait>; @refalign
 m/MS0017.BIN	0:01	34	1338	1FD2	{08:02}：	Yamase:			draft	reads: 山瀬：
-m/MS0017.BIN	0:01	35	1344	1FD3	ん{08:81}、待っ{08:2B}よん！\n<wait>		I'll be waiting for you!\n<wait>	v005		reads: んじゃ、待ってるよん！\n<wait>
+m/MS0017.BIN	0:01	35	1344	1FD3	ん{08:81}、待っ{08:2B}よん！\n<wait>		I'll be waiting for you!\n<wait>	v005		reads: んじゃ、待ってるよん！\n<wait>; @refalign
 m/MS0017.BIN	0:01	36	1509	1FD2	{01:2D}：	Administration:			draft	reads: 管理部：
-m/MS0017.BIN	0:01	37	1521	1F01	君。\n<wait>	-kun.\n<wait>	Mister Katsuragi Ayato.\n<wait>	v005	draft	
+m/MS0017.BIN	0:01	37	1521	1F01	君。\n<wait>	-kun.\n<wait>	Mister Katsuragi Ayato.\n<wait>	v005	draft	@refalign
 m/MS0017.BIN	0:01	38	1534	1FD2	{01:2D}：	Administration:			draft	reads: 管理部：
-m/MS0017.BIN	0:01	39	1540	1FD3	ＤＢ第二部隊救出の功績により、君を正式な\n{02:00}と{08:4A}任命{08:8E}。\n<wait>		For the bravery you showed saving Squad Two,\nwe have decided to officially grant you the title\nof Devil Buster.\n<wait>	v005		reads: ＤＢ第二部隊救出の功績により、君を正式な\nデビルバスターとして任命する。\n<wait>
+m/MS0017.BIN	0:01	39	1540	1FD3	ＤＢ第二部隊救出の功績により、君を正式な\n{02:00}と{08:4A}任命{08:8E}。\n<wait>		For the bravery you showed saving Squad Two,\nwe have decided to officially grant you the title\nof Devil Buster.\n<wait>	v005		reads: ＤＢ第二部隊救出の功績により、君を正式な\nデビルバスターとして任命する。\n<wait>; @refalign
 m/MS0017.BIN	0:01	40	1604	1FD2	{01:2D}：	Administration:			draft	reads: 管理部：
 m/MS0017.BIN	0:01	41	1610	1FD3	今回の功績を常とし、任務に励んでく{08:2F}事を\n{02:0C}は期待{08:8E}。　　　　　　　　　　以上。\n<wait>	We expect you to make this achievement your standard and apply\nyourself to your duties.                    That is all.\n<wait>	We have high hopes for you. May you work hard,\nand eventually surpass them.         That is all.\n<wait>	v005	draft	reads: 今回の功績を常とし、任務に励んでくれる事を\n我々は期待する。　　　　　　　　　　以上。\n<wait>
 m/MS0017.BIN	0:01	42	1706	18	＞{02:06}\n<wait>	>What will you do?\n<wait>			draft	reads: ＞どうしますか？\n<wait>
@@ -239,26 +239,26 @@ m/MS0017.BIN	0:01	58	2284	1FB2	{02:07}	{02:07}	Open terminal	v005		reads: 通信
 m/MS0017.BIN	0:01	59	2288	1FB2	休む	Rest			draft	menu option, declared width 20 columns
 m/MS0017.BIN	0:01	60	2294	1FB2	{02:05}	{02:05}	Leave	v005		reads: 出かける; menu option, declared width 20 columns
 m/MS0017.BIN	0:01	61	2343	1FD0	明日{08:26}よいよ、念願であ{08:51}{02:00}初日で{08:7B}。\n興奮のせいか、目を閉じ{08:54}なかなか眠る{08:46}が出来{08:25}。\n<wait>	Tomorrow, at last, would be his first day as a {02:00} -- the thing\nhe had longed for. Perhaps it was the excitement; however he\nclosed his eyes, sleep would not come.\n<wait>			draft	reads: 明日はいよいよ、念願であったデビルバスター初日である。\n興奮のせいか、目を閉じてもなかなか眠ることが出来ない。\n<wait>
-m/MS0017.BIN	0:01	62	2435	1FBA	嬉しい寝苦しさに寝返りをうちながら、		As you lie there in your bed...\n	v005		
+m/MS0017.BIN	0:01	62	2435	1FBA	嬉しい寝苦しさに寝返りをうちながら、		As you lie there in your bed...\n	v005		@refalign
 m/MS0017.BIN	0:01	63	2490	1FB2	父さん、僕や{08:51}よ！	Dad, I did it!	Dad, I did it!	v005	draft	reads: 父さん、僕やったよ！; menu option, declared width 20 columns
 m/MS0017.BIN	0:01	64	2510	1FB2	母さん、ついにＤＢだ	Mom, I'm finally a DB 	I'm a DB now, Mom	v005	draft	menu option, declared width 20 columns
 m/MS0017.BIN	0:01	65	2635	1F01	{08:62}{08:65}の音で目が覚めた{02:08}‥\n<wait>	 was woken by the sound of an incoming call......\n<wait>			draft	reads: は、通信の音で目が覚めた‥‥‥‥\n<wait>
 m/MS0017.BIN	0:01	66	2672	1FD2	{08:00}：	Hayasaka:			draft	reads: 早坂：
-m/MS0017.BIN	0:01	67	2684	1F01	！\n<wait>	!\n<wait>	Katsuragi!\n<wait>	v005	draft	
+m/MS0017.BIN	0:01	67	2684	1F01	！\n<wait>	!\n<wait>	Katsuragi!\n<wait>	v005	draft	@refalign
 m/MS0017.BIN	0:01	68	2695	1FD2	{08:00}：	Hayasaka:			draft	reads: 早坂：
-m/MS0017.BIN	0:01	69	2701	1FD3	起きろ！　起きろ！　起きろッ！\n<wait>		Wake up, Katsuragi! Hey! Wake up!\n<wait>	v005		
+m/MS0017.BIN	0:01	69	2701	1FD3	起きろ！　起きろ！　起きろッ！\n<wait>		Wake up, Katsuragi! Hey! Wake up!\n<wait>	v005		@refalign
 m/MS0017.BIN	0:01	70	2740	1FD2	{08:00}：	Hayasaka:			draft	reads: 早坂：
-m/MS0017.BIN	0:01	71	2746	1FD3	装備品の支給等が{08:7B}{08:42}、早急にＢ５Ｆの\n詰所{08:71}来い。\n<wait>		We're handing the new recruits their gear.\nHurry your ass over to the office on B5F.\n<wait>	v005		reads: 装備品の支給等があるから、早急にＢ５Ｆの\n詰所まで来い。\n<wait>
+m/MS0017.BIN	0:01	71	2746	1FD3	装備品の支給等が{08:7B}{08:42}、早急にＢ５Ｆの\n詰所{08:71}来い。\n<wait>		We're handing the new recruits their gear.\nHurry your ass over to the office on B5F.\n<wait>	v005		reads: 装備品の支給等があるから、早急にＢ５Ｆの\n詰所まで来い。\n<wait>; @refalign
 m/MS0017.BIN	0:01	72	2804	1FD2	{08:00}：	Hayasaka:			draft	reads: 早坂：
 m/MS0017.BIN	0:01	73	2810	1FD3	遅{08:2F}なよ！　	Don't be late, 	We're handing the new recruits their gear.\nHurry your ass over to the office on B5F.\n<wait>	v005	draft	reads: 遅れるなよ！　
 m/MS0017.BIN	0:01	74	2828	1F01	隊員！\n<wait>	!\n<wait>			draft	
 m/MS0017.BIN	0:01	75	2885	1FB2	{02:07}	{02:07}	Open terminal	v005		reads: 通信をする; menu option, declared width 20 columns
 m/MS0017.BIN	0:01	76	2889	1FB2	休む	Rest			draft	menu option, declared width 20 columns
 m/MS0017.BIN	0:01	77	2895	1FB2	{02:05}	{02:05}	Leave	v005		reads: 出かける; menu option, declared width 20 columns
-m/MS0017.BIN	0:01	78	2929	1F01	は{08:65}をし{08:69}と考{08:41}。\n{03:0B}{08:7A}事を{08:13}場合では{08:25}事に気付き、やめた。\n	 thought of sending a reply.\nBut realizing this was no time for that, he stopped.\n	For a moment, you consider sending a reply.\nHowever, on a second thought, that doesn't seem appropriate here.\n	v005	draft	reads: は通信をしようと考えた。\nしかし、そんな事をしている場合ではない事に気付き、やめた。\n
+m/MS0017.BIN	0:01	78	2929	1F01	は{08:65}をし{08:69}と考{08:41}。\n{03:0B}{08:7A}事を{08:13}場合では{08:25}事に気付き、やめた。\n	 thought of sending a reply.\nBut realizing this was no time for that, he stopped.\n	For a moment, you consider sending a reply.\nHowever, on a second thought, that doesn't seem appropriate here.\n	v005	draft	reads: は通信をしようと考えた。\nしかし、そんな事をしている場合ではない事に気付き、やめた。\n; @refalign
 m/MS0017.BIN	0:01	79	2994	1FD0	今は{08:7A}事を{08:13}場合では{08:25}。\n早く	This is no time for that.\nHe had to hurry to	This is no time for that.\nYou need to hurry to 	v005	draft	reads: 今はそんな事をしている場合ではない。\n早く
 m/MS0017.BIN	0:01	80	3028	09	{08:03}の{01:2E}	 Emi's room	Emi's room.\n	v005	draft	reads: 英美の部屋
-m/MS0017.BIN	0:01	81	3037	18	詰所に行か{08:57}{02:08}‥。\n	 the office............\n	the Devil Buster office.\n                      	v005	draft	reads: 詰所に行かなければ‥‥‥‥。\n
+m/MS0017.BIN	0:01	81	3037	18	詰所に行か{08:57}{02:08}‥。\n	 the office............\n	the Devil Buster office.\n                      	v005	draft	reads: 詰所に行かなければ‥‥‥‥。\n; @refalign
 m/MS0017.BIN	0:01	82	3057	00	＞{02:06}\n<wait>	>What will you do?\n<wait>			draft	reads: ＞どうしますか？\n<wait>
 m/MS0017.BIN	0:01	83	3084	1FB2	{02:07}	{02:07}	Open terminal	v005		reads: 通信をする; menu option, declared width 20 columns
 m/MS0017.BIN	0:01	84	3088	1FB2	休む	Rest			draft	menu option, declared width 20 columns
@@ -293,15 +293,15 @@ m/MS0017.BIN	0:02	5	369	1F58	{05:00}	{05:00}				reads: はいいいえ
 m/MS0017.BIN	0:02	6	384	1FD0	申請し{08:25}と{08:4B}ら、次のチャンスはかなり先に{08:1A}{08:83}。\n<wait>	If I don't apply now, the next chance will be a long way off.\n<wait>			draft	reads: 申請しないとしたら、次のチャンスはかなり先になってしまう。\n<wait>
 m/MS0017.BIN	0:02	7	437	1FBA	今、申請を済ま{08:67}おくべき{08:8C}。\n<wait>	I should get the application done now.\n<wait>			draft	reads: 今、申請を済ませておくべきだろう。\n<wait>
 m/MS0017.BIN	0:02	8	478	1F01	は思い直{08:4A}、再び{08:05}ーに向{08:18}{02:08}\n<wait>	 thought again and turned back to the computer......\n<wait>			draft	reads: は思い直して、再びコンピューターに向かった‥‥‥\n<wait>
-m/MS0017.BIN	0:02	9	588	1FD0	{08:90}やら、{08:65}が入っ{08:14}様だ{02:08}\n<wait>		It appears that you have a new transmission...\n<wait>	v005		reads: どうやら、通信が入っている様だ‥‥‥\n<wait>
-m/MS0017.BIN	0:02	10	648	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：
+m/MS0017.BIN	0:02	9	588	1FD0	{08:90}やら、{08:65}が入っ{08:14}様だ{02:08}\n<wait>		It appears that you have a new transmission...\n<wait>	v005		reads: どうやら、通信が入っている様だ‥‥‥\n<wait>; @refalign
+m/MS0017.BIN	0:02	10	648	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：; @refalign
 m/MS0017.BIN	0:02	11	654	1FD3	市民階級スペシャルＢ　	Citizen Class Special B 			draft	
 m/MS0017.BIN	0:02	12	682	1F01	殿。\n{02:00}入隊試験の受験を認{08:2E}。\n<wait>	:\nYou are hereby permitted to sit the Devil Buster entrance exam.\n<wait>			draft	reads: 殿。\nデビルバスター入隊試験の受験を認める。\n<wait>
-m/MS0017.BIN	0:02	13	720	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：
-m/MS0017.BIN	0:02	14	726	1FD3	又、試験は明日行なわ{08:2F}事に決定{08:4B}。\n{08:79}旨、{08:45}に報告{08:8E}。\n<wait>		The trials will be held tomorrow. That is all.\n<wait>	v005		reads: 又、試験は明日行なわれる事に決定した。\nその旨、ここに報告する。\n<wait>
-m/MS0017.BIN	0:02	15	815	0C	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n
+m/MS0017.BIN	0:02	13	720	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：; @refalign
+m/MS0017.BIN	0:02	14	726	1FD3	又、試験は明日行なわ{08:2F}事に決定{08:4B}。\n{08:79}旨、{08:45}に報告{08:8E}。\n<wait>		The trials will be held tomorrow. That is all.\n<wait>	v005		reads: 又、試験は明日行なわれる事に決定した。\nその旨、ここに報告する。\n<wait>; @refalign
+m/MS0017.BIN	0:02	15	815	0C	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n; @refalign
 m/MS0017.BIN	0:02	16	836	1FB2	{02:07}	{02:07}	Open terminal	v005		reads: 通信をする; menu option, declared width 20 columns
-m/MS0017.BIN	0:02	17	840	1FB2	休む		Rest	v005		menu option, declared width 20 columns
+m/MS0017.BIN	0:02	17	840	1FB2	休む		Rest	v005		menu option, declared width 20 columns; @refalign
 m/MS0017.BIN	0:02	18	846	1FB2	{02:05}	{02:05}	Leave	v005		reads: 出かける; menu option, declared width 20 columns
 m/MS0017.BIN	0:02	19	880	1F01	は横になり、眠ろうと{08:4B}{02:08}\n<wait>	 lay down and tried to sleep......\n<wait>			draft	reads: は横になり、眠ろうとした‥‥‥\n<wait>
 m/MS0017.BIN	0:02	20	911	1FBA	{08:8F}、試験資格を得ら{08:2F}の{08:8C}か{02:08}\n<wait>{08:4D}ばかりが気になり、目がさえて{08:83}{02:08}\n<wait>	But would he get the exam eligibility.........\n<wait>That alone preyed on his mind, and he couldn't sleep.........\n<wait>	However, you are too focused on the entry trials to be able to relax.\n<wait>After a few moments, Katsuragi gets back up.\n<wait>	v005	draft	reads: だが、試験資格を得られるのだろうか‥‥‥\n<wait>そればかりが気になり、目がさえてしまう‥‥‥\n<wait>
@@ -313,8 +313,8 @@ m/MS0017.BIN	0:02	25	1109	1FD2	教育{01:2D}：	Office of Education:			draft	rea
 m/MS0017.BIN	0:02	26	1119	1FD3	資格申請に必要な、学位取得見込み通知を確認。\n<wait>	Notice of expected degree completion required for the\napplication: confirmed.\n<wait>			draft	
 m/MS0017.BIN	0:02	27	1172	1FD2	教育{01:2D}：	Office of Education:			draft	reads: 教育管理部：
 m/MS0017.BIN	0:02	28	1182	1FD3	健康状態チェック\n医療施設端末より、カルテを参照し{08:5A}。\n	Health check\nRetrieving your medical records from the medical terminal.\n			draft	reads: 健康状態チェック\n医療施設端末より、カルテを参照します。\n
-m/MS0017.BIN	0:02	29	1252	1FB2	ＯＫ		OK	v005		menu option, declared width 20 columns
-m/MS0017.BIN	0:02	30	1258	1FB2	中断		Abort	v005		menu option, declared width 20 columns
+m/MS0017.BIN	0:02	29	1252	1FB2	ＯＫ		OK	v005		menu option, declared width 20 columns; @refalign
+m/MS0017.BIN	0:02	30	1258	1FB2	中断		Abort	v005		menu option, declared width 20 columns; @refalign
 m/MS0017.BIN	0:02	31	1284	1FD2	教育{01:2D}：	Office of Education:			draft	reads: 教育管理部：
 m/MS0017.BIN	0:02	32	1300	1FFA	{02:08}{08:72}	......			draft	reads: ‥‥‥‥‥
 m/MS0017.BIN	0:02	33	1310	1FFA	健康状態良好、既往症無し。\n<wait>		Applicant is in perfect health.\nNo record of previous illnesses.\n<wait>	v005		
@@ -326,26 +326,26 @@ m/MS0017.BIN	0:02	38	1427	1FD3	試験資格申請はお早めに{02:08}{08:72}\n
 m/MS0017.BIN	0:02	39	1466	1FD0	{08:45}で申請のチャンスを逃{08:4B}ら、いつ次の試験が{08:7B}か解ら{08:25}{08:77}。\n<wait>		If you miss your chance to submit an application now,\nthere's no telling when the next tryouts will be.\n<wait>	v005		reads: ここで申請のチャンスを逃したら、いつ次の試験があるか解らないのだ。\n<wait>
 m/MS0017.BIN	0:02	40	1529	1FBA	ともかく、試験資格の申請は{08:4A}おくのが賢明{08:8C}。\n<wait>		It'd be smart to get it done as soon as possible.\n<wait>	v005		reads: ともかく、試験資格の申請はしておくのが賢明だろう。\n<wait>
 m/MS0017.BIN	0:02	41	1586	1F01	は思い直{08:4A}、再び{08:05}ーに向{08:18}{02:08}\n<wait>	 thought better of it, and turned back\nto the computer once more......\n<wait>			draft	reads: は思い直して、再びコンピューターに向かった‥‥‥\n<wait>
-m/MS0017.BIN	0:03	0	0	DATA	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>
+m/MS0017.BIN	0:03	0	0	DATA	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>; @refalign
 m/MS0017.BIN	0:03	1	27	1FB2	{02:07}	{02:07}	Open terminal	v005		reads: 通信をする; menu option, declared width 20 columns
-m/MS0017.BIN	0:03	2	31	1FB2	休む		Rest	v005		menu option, declared width 20 columns
+m/MS0017.BIN	0:03	2	31	1FB2	休む		Rest	v005		menu option, declared width 20 columns; @refalign
 m/MS0017.BIN	0:03	3	37	1FB2	{02:05}	{02:05}	Leave	v005		reads: 出かける; menu option, declared width 20 columns
 m/MS0017.BIN	0:03	4	88	1FD0	{01:31}、試験資格が取{08:60}{08:77}。\n休む前に、{08:04}達に報告{08:4A}お{08:64}方が良い{08:8C}。\n<wait>	He had safely got his exam eligibility.\nBefore resting, he should let Nishino and the others know.\n<wait>	You promised quite a few people that you'd let them know\nright away once you got your application approved.\nYou should make sure to do that before going to bed.<wait>	v005	draft	reads: 無事、試験資格が取れたのだ。\n休む前に、西野達に報告しておいた方が良いだろう。\n<wait>; v005={02:01}c @rebase-unmatched idx5 en={02:01} @rebase-unmatched idx5 en={02:01} @ours-2026-09-05
-m/MS0017.BIN	0:04	0	51	1FD0	{08:65}が入{08:51}{08:69}だ{02:08}{08:72}\n<wait>		Looks like you have a new transmission...\n<wait>	v005		reads: 通信が入ったようだ‥‥‥‥‥\n<wait>
-m/MS0017.BIN	0:04	1	99	1FD0	{01:2D}{08:42}の{08:65}が入{08:51}。\n<wait>試験開始を告げるメッセージが、画面にうつし出{03:0C}ていく。\n<wait>		It's from the Administrator's Office.\n<wait>It says that the Devil Buster entry trial is about to begin.\n<wait>	v005		reads: 管理部からの通信が入った。\n<wait>試験開始を告げるメッセージが、画面にうつし出されていく。\n<wait>
-m/MS0017.BIN	0:04	2	187	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：
-m/MS0017.BIN	0:04	3	193	1FD3	{08:48}より{08:72}{02:00}入隊試験の一つで{08:7B}、\n能力試験問題を送信{08:8E}。\n<wait>		The first part of the trial will be held\nin the form of a multiple-choice exam.\n<wait>	v005		reads: これより‥‥デビルバスター入隊試験の一つである、\n能力試験問題を送信する。\n<wait>
-m/MS0017.BIN	0:04	4	255	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：
-m/MS0017.BIN	0:04	5	261	1FD3	試験問題に対{08:8E}回答{08:62}\n{08:79}都度提示{03:0C}る選択肢を選択{08:8E}形式で行なう。\n<wait>		Please select the most appropriate answer\nout of the ones shown on the screen.\n<wait>	v005		reads: 試験問題に対する回答は、\nその都度提示される選択肢を選択する形式で行なう。\n<wait>
-m/MS0017.BIN	0:04	6	333	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：
-m/MS0017.BIN	0:04	7	339	1FD3	試験時間は６０分。\n<wait>		You have 60 minutes.\n<wait>	v005		
-m/MS0017.BIN	0:04	8	366	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：
-m/MS0017.BIN	0:04	9	372	1FD3	時間内に全ての問題に回答出来{08:19}場合におい{08:54}、\n制限時間が訪{08:60}時点で、試験終了と{08:8E}。\n<wait>		The exam will automatically end when the time\nis up, regardless of whether you have managed\nto answer all of the questions.\n<wait>	v005		reads: 時間内に全ての問題に回答出来なかった場合においても、\n制限時間が訪れた時点で、試験終了とする。\n<wait>
-m/MS0017.BIN	0:04	10	462	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：
-m/MS0017.BIN	0:04	11	468	1FD3	質問等、試験中の外部との{08:65}は一切禁じられ{08:14}。\n厳守{08:8E}事。\n<wait>		You are not allowed to contact any outside\nparties during the exam.\n<wait>	v005		reads: 質問等、試験中の外部との通信は一切禁じられている。\n厳守する事。\n<wait>
-m/MS0017.BIN	0:04	12	532	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：
-m/MS0017.BIN	0:04	13	538	1FD3	万が一違反{08:4B}場合、試験結果が{08:6D}様な物であろうと、\n不合格処分と{08:8E}。\n<wait>		In case such behaviour is observed,\nyou will be instantly disqualified.\n<wait>	v005		reads: 万が一違反した場合、試験結果がどの様な物であろうと、\n不合格処分とする。\n<wait>
-m/MS0017.BIN	0:04	14	612	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：
+m/MS0017.BIN	0:04	0	51	1FD0	{08:65}が入{08:51}{08:69}だ{02:08}{08:72}\n<wait>		Looks like you have a new transmission...\n<wait>	v005		reads: 通信が入ったようだ‥‥‥‥‥\n<wait>; @refalign
+m/MS0017.BIN	0:04	1	99	1FD0	{01:2D}{08:42}の{08:65}が入{08:51}。\n<wait>試験開始を告げるメッセージが、画面にうつし出{03:0C}ていく。\n<wait>		It's from the Administrator's Office.\n<wait>It says that the Devil Buster entry trial is about to begin.\n<wait>	v005		reads: 管理部からの通信が入った。\n<wait>試験開始を告げるメッセージが、画面にうつし出されていく。\n<wait>; @refalign
+m/MS0017.BIN	0:04	2	187	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：; @refalign
+m/MS0017.BIN	0:04	3	193	1FD3	{08:48}より{08:72}{02:00}入隊試験の一つで{08:7B}、\n能力試験問題を送信{08:8E}。\n<wait>		The first part of the trial will be held\nin the form of a multiple-choice exam.\n<wait>	v005		reads: これより‥‥デビルバスター入隊試験の一つである、\n能力試験問題を送信する。\n<wait>; @refalign
+m/MS0017.BIN	0:04	4	255	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：; @refalign
+m/MS0017.BIN	0:04	5	261	1FD3	試験問題に対{08:8E}回答{08:62}\n{08:79}都度提示{03:0C}る選択肢を選択{08:8E}形式で行なう。\n<wait>		Please select the most appropriate answer\nout of the ones shown on the screen.\n<wait>	v005		reads: 試験問題に対する回答は、\nその都度提示される選択肢を選択する形式で行なう。\n<wait>; @refalign
+m/MS0017.BIN	0:04	6	333	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：; @refalign
+m/MS0017.BIN	0:04	7	339	1FD3	試験時間は６０分。\n<wait>		You have 60 minutes.\n<wait>	v005		@refalign
+m/MS0017.BIN	0:04	8	366	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：; @refalign
+m/MS0017.BIN	0:04	9	372	1FD3	時間内に全ての問題に回答出来{08:19}場合におい{08:54}、\n制限時間が訪{08:60}時点で、試験終了と{08:8E}。\n<wait>		The exam will automatically end when the time\nis up, regardless of whether you have managed\nto answer all of the questions.\n<wait>	v005		reads: 時間内に全ての問題に回答出来なかった場合においても、\n制限時間が訪れた時点で、試験終了とする。\n<wait>; @refalign
+m/MS0017.BIN	0:04	10	462	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：; @refalign
+m/MS0017.BIN	0:04	11	468	1FD3	質問等、試験中の外部との{08:65}は一切禁じられ{08:14}。\n厳守{08:8E}事。\n<wait>		You are not allowed to contact any outside\nparties during the exam.\n<wait>	v005		reads: 質問等、試験中の外部との通信は一切禁じられている。\n厳守する事。\n<wait>; @refalign
+m/MS0017.BIN	0:04	12	532	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：; @refalign
+m/MS0017.BIN	0:04	13	538	1FD3	万が一違反{08:4B}場合、試験結果が{08:6D}様な物であろうと、\n不合格処分と{08:8E}。\n<wait>		In case such behaviour is observed,\nyou will be instantly disqualified.\n<wait>	v005		reads: 万が一違反した場合、試験結果がどの様な物であろうと、\n不合格処分とする。\n<wait>; @refalign
+m/MS0017.BIN	0:04	14	612	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：; @refalign
 m/MS0017.BIN	0:04	15	618	1FD3	\n\n　　　　　　　　　　　　　　　　　　　　　　以上。\n受験番号０９１６　	\n\n                                          End of notice.\nExaminee No. 0916 			draft	
 m/MS0017.BIN	0:04	16	695	1F01	　検討を祈る。\n<wait>	. Good luck.\n<wait>			draft	
 m/MS0017.BIN	0:04	17	744	1FD0	　　　　　能力試験第一部　{08:0B}形態分類学　\n<wait>	      Section 1: Demon Morphology and Classification\n<wait>			draft	reads: 　　　　　能力試験第一部　悪魔形態分類学　\n<wait>
@@ -354,67 +354,67 @@ m/MS0017.BIN	0:04	19	803	1FD3	{08:0B}とは本来霊的な存在で{08:7B}が、
 m/MS0017.BIN	0:04	20	897	1FBA	受肉の手段は主に二種類に分類{03:0C}る。\n{01:3C}の手段と{08:4A}、他の生物体の肉体に憑依し、{08:4D}を自らの肉体と{08:8E}場合。\n<wait>	There are two main methods of incarnation.\nThe first is to possess the body of another living creature\nand make it their own.\n<wait>			draft	reads: 受肉の手段は主に二種類に分類される。\nひとつの手段として、他の生物体の肉体に憑依し、それを自らの肉体とする場合。\n<wait>
 m/MS0017.BIN	0:04	21	1003	1FBA	そ{08:4A}、残る{08:5C}{01:3C}の手段と{08:4A}、大量の生命エネルギーを用い、\n{08:4D}を肉体に変換{08:8E}場合で{08:7B}。\n<wait>	The second is to gather a large amount of life energy\nand convert it into a body.\n<wait>			draft	reads: そして、残るもうひとつの手段として、大量の生命エネルギーを用い、\nそれを肉体に変換する場合である。\n<wait>
 m/MS0017.BIN	0:04	22	1091	1FBA	{08:47}生命エネルギーを生体マグネタイトと呼ぶが、{08:0B}が{08:47}生命エネルギーを\n{02:0B}{08:42}最も大量に摂取できる方法を、次{08:42}選べ。\n	This life energy is called Magnetite. From the options below,\nchoose the way a demon can take the most of it from a human.\n			draft	reads: この生命エネルギーを生体マグネタイトと呼ぶが、悪魔がこの生命エネルギーを\n人間から最も大量に摂取できる方法を、次から選べ。\n
-m/MS0017.BIN	0:04	23	1217	1FB2	血を流さ{08:2A}		Draining their blood	v005		reads: 血を流させる; menu option, declared width 20 columns
-m/MS0017.BIN	0:04	24	1229	1FB2	信仰心を得る		Gathering worship	v005		menu option, declared width 20 columns
-m/MS0017.BIN	0:04	25	1243	1FB2	炎に焼く		Cooking them	v005		menu option, declared width 20 columns
+m/MS0017.BIN	0:04	23	1217	1FB2	血を流さ{08:2A}		Draining their blood	v005		reads: 血を流させる; menu option, declared width 20 columns; @refalign
+m/MS0017.BIN	0:04	24	1229	1FB2	信仰心を得る		Gathering worship	v005		menu option, declared width 20 columns; @refalign
+m/MS0017.BIN	0:04	25	1243	1FB2	炎に焼く		Cooking them	v005		menu option, declared width 20 columns; @refalign
 m/MS0017.BIN	0:04	26	1283	1FD2	問題２：	Question 2:			draft	
 m/MS0017.BIN	0:04	27	1293	1FD3	{08:0B}の行動形態{08:62}属性と呼ば{08:2F}{08:5E}で主に分類{03:0C}るが、\n{08:4D}以外の要素と{08:4A}、月の運行が大きく影響を及ぼす。\n<wait>	A demon's behavior pattern is mainly classified by what is called its\nalignment, but as another factor, the phases of the moon have a large\ninfluence.\n<wait>	Demons are often classified by their Alignment and Tendency.\nHowever, there are also other qualities that can be used to group them,\nincluding the way in which they react to the movements of the moon.\n<wait>	v005	draft	reads: 悪魔の行動形態は、属性と呼ばれるもので主に分類されるが、\nそれ以外の要素として、月の運行が大きく影響を及ぼす。\n<wait>
-m/MS0017.BIN	0:04	28	1395	1FBA	アンデッド系統に分類{03:0C}る{08:0B}が、{08:79}パワーを増大さ{08:2A}場合、\n月の状態{08:62}{08:90}なっ{08:14}かを答えよ。\n		Which of the following phases of the moon increases the power of demons\nof the Undead type?\n	v005		reads: アンデッド系統に分類される悪魔が、そのパワーを増大させる場合、\n月の状態は、どうなっているかを答えよ。\n
-m/MS0017.BIN	0:04	29	1497	1FB2	満月		Full moon	v005		menu option, declared width 20 columns
-m/MS0017.BIN	0:04	30	1503	1FB2	新月		New moon	v005		menu option, declared width 20 columns
-m/MS0017.BIN	0:04	31	1509	1FB2	下弦の月		Waning moon	v005		menu option, declared width 20 columns
+m/MS0017.BIN	0:04	28	1395	1FBA	アンデッド系統に分類{03:0C}る{08:0B}が、{08:79}パワーを増大さ{08:2A}場合、\n月の状態{08:62}{08:90}なっ{08:14}かを答えよ。\n		Which of the following phases of the moon increases the power of demons\nof the Undead type?\n	v005		reads: アンデッド系統に分類される悪魔が、そのパワーを増大させる場合、\n月の状態は、どうなっているかを答えよ。\n; @refalign
+m/MS0017.BIN	0:04	29	1497	1FB2	満月		Full moon	v005		menu option, declared width 20 columns; @refalign
+m/MS0017.BIN	0:04	30	1503	1FB2	新月		New moon	v005		menu option, declared width 20 columns; @refalign
+m/MS0017.BIN	0:04	31	1509	1FB2	下弦の月		Waning moon	v005		menu option, declared width 20 columns; @refalign
 m/MS0017.BIN	0:04	32	1549	1FD2	問題３：	Question 3:			draft	
-m/MS0017.BIN	0:04	33	1559	1FD3	{08:0B}{08:4D}ぞれの行動パターン予測、及び習性を分類{08:8E}上で、\n重要な要素と{08:59}{08:5E}が、属性と呼ば{08:2F}概念で{08:7B}。\n<wait>		The concepts of Alignments and Tendencies are extremely important when\nit comes to analysing and predicting the behaviour of a type of demon.\n<wait>	v005		reads: 悪魔それぞれの行動パターン予測、及び習性を分類する上で、\n重要な要素となるものが、属性と呼ばれる概念である。\n<wait>
+m/MS0017.BIN	0:04	33	1559	1FD3	{08:0B}{08:4D}ぞれの行動パターン予測、及び習性を分類{08:8E}上で、\n重要な要素と{08:59}{08:5E}が、属性と呼ば{08:2F}概念で{08:7B}。\n<wait>		The concepts of Alignments and Tendencies are extremely important when\nit comes to analysing and predicting the behaviour of a type of demon.\n<wait>	v005		reads: 悪魔それぞれの行動パターン予測、及び習性を分類する上で、\n重要な要素となるものが、属性と呼ばれる概念である。\n<wait>; @refalign
 m/MS0017.BIN	0:04	34	1659	1FBA	属性をグラフで表わ{08:4B}場合、縦横軸線を基準に{08:4B}表の一点に表す{08:46}が\nできる。\n<wait>	Expressed as a graph, alignment can be shown as a point on a chart\nwith vertical and horizontal axes.\n<wait>	Together, they can be used to form a two-dimensional graph where\ndemons can then be placed.\n<wait>	v005	draft	reads: 属性をグラフで表わした場合、縦横軸線を基準にした表の一点に表すことが\nできる。\n<wait>
 m/MS0017.BIN	0:04	35	1737	1FBA	{08:0B}の根本性質を表わす善悪を縦軸と{08:4A}、\n善{08:59}ＬＩＧＨＴ（ライト）、悪の属性で{08:7B}ＤＡＲＫ（ダーク）{02:08}‥\nそ{08:4A}、中間の{01:26}ＭＡＬ（ノーマル）。\n<wait>	The vertical axis shows the demon's fundamental nature, good or evil:\nthe good LIGHT, the evil DARK............\nand in between, NORMAL.\n<wait>	First, there is the demon's natural Tendency,\nranging from LIGHT (good) to DARK (evil), and finally, NORMAL (middle).\n<wait>	v005	draft	reads: 悪魔の根本性質を表わす善悪を縦軸として、\n善なるＬＩＧＨＴ（ライト）、悪の属性であるＤＡＲＫ（ダーク）‥‥‥‥\nそして、中間のＮＯＭＡＬ（ノーマル）。\n<wait>
-m/MS0017.BIN	0:04	36	1876	1FBA	習性や行動形態を表わす横軸に{08:62}ＬＡＷ／ＮＥＵＴＲＡＬ／ＣＨＡＯＳ。\nＬＡＷ（ロウ）{08:62}秩序や全体を重んじ、ＣＨＡＯＳ（カオス）{08:62}混沌の\n中に身を置くのを好む。ＮＥＵＴＲＡＬ（ニュートラル）は中庸で{08:7B}。\n<wait>		Then there are the Alignments (LAW, NETRAL, CHAOS), which let us predict\nhow a demon is going to behave in given circumstances. Demons of the LAW\nalignment prefer order and tend to put the needs of the group over those\nof the individual. CHAOS-aligned demons, on the other hand, adore\ndisarrangement and can most often be found going against the established\nrule. Lastly, there are NEUTRAL demons, who walk the path in the middle.\n<wait>	v005		reads: 習性や行動形態を表わす横軸には、ＬＡＷ／ＮＥＵＴＲＡＬ／ＣＨＡＯＳ。\nＬＡＷ（ロウ）は、秩序や全体を重んじ、ＣＨＡＯＳ（カオス）は、混沌の\n中に身を置くのを好む。ＮＥＵＴＲＡＬ（ニュートラル）は中庸である。\n<wait>
-m/MS0017.BIN	0:04	37	2079	1FBA	で{08:62}{08:47}世界に直接干渉{08:4A}来{08:25}属性の{08:0B}は何か？\n		Which of the following type of demons do not interfere in the matters\nof this world directly?\n	v005		reads: では、この世界に直接干渉して来ない属性の悪魔は何か？\n
-m/MS0017.BIN	0:04	38	2138	1FB2	ＬＩＧＨＴ		LIGHT	v005		menu option, declared width 20 columns
-m/MS0017.BIN	0:04	39	2150	1FB2	ＤＡＲＫ		DARK	v005		menu option, declared width 20 columns
+m/MS0017.BIN	0:04	36	1876	1FBA	習性や行動形態を表わす横軸に{08:62}ＬＡＷ／ＮＥＵＴＲＡＬ／ＣＨＡＯＳ。\nＬＡＷ（ロウ）{08:62}秩序や全体を重んじ、ＣＨＡＯＳ（カオス）{08:62}混沌の\n中に身を置くのを好む。ＮＥＵＴＲＡＬ（ニュートラル）は中庸で{08:7B}。\n<wait>		Then there are the Alignments (LAW, NETRAL, CHAOS), which let us predict\nhow a demon is going to behave in given circumstances. Demons of the LAW\nalignment prefer order and tend to put the needs of the group over those\nof the individual. CHAOS-aligned demons, on the other hand, adore\ndisarrangement and can most often be found going against the established\nrule. Lastly, there are NEUTRAL demons, who walk the path in the middle.\n<wait>	v005		reads: 習性や行動形態を表わす横軸には、ＬＡＷ／ＮＥＵＴＲＡＬ／ＣＨＡＯＳ。\nＬＡＷ（ロウ）は、秩序や全体を重んじ、ＣＨＡＯＳ（カオス）は、混沌の\n中に身を置くのを好む。ＮＥＵＴＲＡＬ（ニュートラル）は中庸である。\n<wait>; @refalign
+m/MS0017.BIN	0:04	37	2079	1FBA	で{08:62}{08:47}世界に直接干渉{08:4A}来{08:25}属性の{08:0B}は何か？\n		Which of the following type of demons do not interfere in the matters\nof this world directly?\n	v005		reads: では、この世界に直接干渉して来ない属性の悪魔は何か？\n; @refalign
+m/MS0017.BIN	0:04	38	2138	1FB2	ＬＩＧＨＴ		LIGHT	v005		menu option, declared width 20 columns; @refalign
+m/MS0017.BIN	0:04	39	2150	1FB2	ＤＡＲＫ		DARK	v005		menu option, declared width 20 columns; @refalign
 m/MS0017.BIN	0:04	40	2160	1FB2	ＬＡＷ		LAW	v005		menu option, declared width 20 columns
 m/MS0017.BIN	0:04	41	2198	1FD2	問題４：	Question 4:			draft	
-m/MS0017.BIN	0:04	42	2208	1FD3	で{08:62}先の属性で、何者かに使役{03:0C}{08:14}{08:0B}の属性は何か言え。\n		Which of the following type of demons could be found working\nunder a third party?\n	v005		reads: では、先の属性で、何者かに使役されている悪魔の属性は何か言え。\n
-m/MS0017.BIN	0:04	43	2277	1FB2	ＤＡＲＫ		DARK	v005		menu option, declared width 20 columns
-m/MS0017.BIN	0:04	44	2287	1FB2	ＮＥＵＴＲＡＬ		NEUTRAL	v005		menu option, declared width 20 columns
+m/MS0017.BIN	0:04	42	2208	1FD3	で{08:62}先の属性で、何者かに使役{03:0C}{08:14}{08:0B}の属性は何か言え。\n		Which of the following type of demons could be found working\nunder a third party?\n	v005		reads: では、先の属性で、何者かに使役されている悪魔の属性は何か言え。\n; @refalign
+m/MS0017.BIN	0:04	43	2277	1FB2	ＤＡＲＫ		DARK	v005		menu option, declared width 20 columns; @refalign
+m/MS0017.BIN	0:04	44	2287	1FB2	ＮＥＵＴＲＡＬ		NEUTRAL	v005		menu option, declared width 20 columns; @refalign
 m/MS0017.BIN	0:04	45	2303	1FB2	ＬＡＷ	LAW	LAW	v005	draft	menu option, declared width 20 columns
 m/MS0017.BIN	0:04	46	2311	1FB2	{01:26}ＭＡＬ	NORMAL	NORMAL	v005	draft	reads: ＮＯＭＡＬ; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	47	2355	1FD2	問題５：	Question 5:			draft	
-m/MS0017.BIN	0:04	48	2365	1FD3	同族及び同種{08:0B}間に{08:62}連帯感及び友情とも呼べる行動が見ら{08:2F}事が、\n研究の結果明らかに{03:0C}{08:14}。\n<wait>		Through experimentation, we have been able to show that demons\ndo in fact display a certain amount of solidarity towards other\ndemons of their own race.\n<wait>	v005		reads: 同族及び同種悪魔間には、連帯感及び友情とも呼べる行動が見られる事が、\n研究の結果明らかにされている。\n<wait>
-m/MS0017.BIN	0:04	49	2459	1FBA	{08:47}行動{08:62}時には{02:0B}を対象に向けら{08:2F}場合も{08:7B}。\n<wait>		There have even been rare circumstances where they've been observed\nacting this way towards humans.\n<wait>	v005		reads: この行動は、時には人間を対象に向けられる場合もある。\n<wait>
-m/MS0017.BIN	0:04	50	2508	1FBA	{08:6D}様な{08:0B}であ{08:52}も、{08:47}様な行動習性を巧みに利用し、\n友好状態に持ち込めた場合において{08:62}{08:0E}に{08:8E}事が可能で{08:7B}。\n<wait>		By carefully taking into consideration the demon's nature and\ndisposition, it is possible to have it lower its guard, and even join\nyour ranks as an ally. This applies to all demons out there.\n<wait>	v005		reads: どの様な悪魔であっても、この様な行動習性を巧みに利用し、\n友好状態に持ち込めた場合においては、仲魔にする事が可能である。\n<wait>
+m/MS0017.BIN	0:04	48	2365	1FD3	同族及び同種{08:0B}間に{08:62}連帯感及び友情とも呼べる行動が見ら{08:2F}事が、\n研究の結果明らかに{03:0C}{08:14}。\n<wait>		Through experimentation, we have been able to show that demons\ndo in fact display a certain amount of solidarity towards other\ndemons of their own race.\n<wait>	v005		reads: 同族及び同種悪魔間には、連帯感及び友情とも呼べる行動が見られる事が、\n研究の結果明らかにされている。\n<wait>; @refalign
+m/MS0017.BIN	0:04	49	2459	1FBA	{08:47}行動{08:62}時には{02:0B}を対象に向けら{08:2F}場合も{08:7B}。\n<wait>		There have even been rare circumstances where they've been observed\nacting this way towards humans.\n<wait>	v005		reads: この行動は、時には人間を対象に向けられる場合もある。\n<wait>; @refalign
+m/MS0017.BIN	0:04	50	2508	1FBA	{08:6D}様な{08:0B}であ{08:52}も、{08:47}様な行動習性を巧みに利用し、\n友好状態に持ち込めた場合において{08:62}{08:0E}に{08:8E}事が可能で{08:7B}。\n<wait>		By carefully taking into consideration the demon's nature and\ndisposition, it is possible to have it lower its guard, and even join\nyour ranks as an ally. This applies to all demons out there.\n<wait>	v005		reads: どの様な悪魔であっても、この様な行動習性を巧みに利用し、\n友好状態に持ち込めた場合においては、仲魔にする事が可能である。\n<wait>; @refalign
 m/MS0017.BIN	0:04	51	2618	1FBA	\n{01:25}か{01:26}かを答えよ。\n		\nYes, or no?	v005		reads: \nＹＥＳかＮＯかを答えよ。\n
 m/MS0017.BIN	0:04	52	2654	1FB2	{01:25}	{01:25}	YES	v005		reads: ＹＥＳ; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	53	2658	1FB2	{01:26}	{01:26}	NO	v005		reads: ＮＯ; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	54	2688	1FD2	問題６：	Question 6:			draft	
 m/MS0017.BIN	0:04	55	2698	1FD3	{08:0B}は{08:79}姿態と属性によ{08:52}種族に分類できる。\n種族によ{08:52}、{08:7B}程度の共通性が他にも見ら{08:2F}が、{08:4D}は何か答えよ。\n<wait>	Demons can be classified into races by their form and alignment.\nA race shares certain other traits too. What are they?\n<wait>	Demons can be classified into different races based on their physical\nappearance, their Alignment, and their Tendency. There is also something\nelse members of a race share in common. What?\n<wait>	v005	draft	reads: 悪魔はその姿態と属性によって種族に分類できる。\n種族によって、ある程度の共通性が他にも見られるが、それは何か答えよ。\n<wait>
-m/MS0017.BIN	0:04	56	2820	1FB2	{08:0D}の傾向		Magic	v005		reads: 魔法の傾向; menu option, declared width 20 columns
-m/MS0017.BIN	0:04	57	2830	1FB2	能力値の偏向		Attributes	v005		menu option, declared width 20 columns
-m/MS0017.BIN	0:04	58	2844	1FB2	出身地		Place of origin	v005		menu option, declared width 20 columns
-m/MS0017.BIN	0:04	59	2897	1FD0	　　　　　能力試験第二部　対{08:0B}戦術学 ＭＡＧＩＣ\n<wait>		      Section 2: Demon Combat - MAGIC<wait>	v005		reads: 　　　　　能力試験第二部　対悪魔戦術学 ＭＡＧＩＣ\n<wait>
+m/MS0017.BIN	0:04	56	2820	1FB2	{08:0D}の傾向		Magic	v005		reads: 魔法の傾向; menu option, declared width 20 columns; @refalign
+m/MS0017.BIN	0:04	57	2830	1FB2	能力値の偏向		Attributes	v005		menu option, declared width 20 columns; @refalign
+m/MS0017.BIN	0:04	58	2844	1FB2	出身地		Place of origin	v005		menu option, declared width 20 columns; @refalign
+m/MS0017.BIN	0:04	59	2897	1FD0	　　　　　能力試験第二部　対{08:0B}戦術学 ＭＡＧＩＣ\n<wait>		      Section 2: Demon Combat - MAGIC<wait>	v005		reads: 　　　　　能力試験第二部　対悪魔戦術学 ＭＡＧＩＣ\n<wait>; @refalign
 m/MS0017.BIN	0:04	60	2953	1FD2	問題１：	Question 1:			draft	
 m/MS0017.BIN	0:04	61	2963	1FD3	{08:0D}{08:62}{08:0B}の出現に伴い、{02:0B}も使{08:28}{08:69}に{08:16}。\n誰もが使{08:28}訳では{08:25}が、{08:79}パワーにシンクロできる者が行使できる。\nよ{08:52}、{08:0D}は{08:79}力の本質を、魔界に置い{08:14}と思わ{08:2F}。\n<wait>	With the appearance of demons, humans too became able to use magic.\nNot everyone can, but those who can synchronize with its power may\nwield it. Magic's true source is thus thought to lie in the Makai.\n<wait>	It was shortly after demons first appeared in this world that humans\nbecame able to use magic. As such, it is commonly assumed that the true\nsource of this power resides in the world of demons.\n<wait>	v005	draft	reads: 魔法は、悪魔の出現に伴い、人間も使えるようになった。\n誰もが使える訳ではないが、そのパワーにシンクロできる者が行使できる。\nよって、魔法はその力の本質を、魔界に置いていると思われる。\n<wait>
 m/MS0017.BIN	0:04	62	3116	1FBA	{08:0D}の行使に{08:62}使用者の魔力が大きく影響{08:8E}が、では{08:4D}に耐{08:28}には\n被使用者の何が最も大きく影響{08:8E}か？　次の項目{08:42}選び答えよ。\n	A caster's magic power greatly affects the use of magic. Which stat\nof the target most affects resisting it? Choose from the following.\n	If MAGIC is the stat which increases the power of one's magical attacks,\nthen which stat acts as its counterpart and boosts magical defence?\nPlease select your answer out of the following.\n	v005	draft	reads: 魔法の行使には、使用者の魔力が大きく影響するが、ではそれに耐えるには\n被使用者の何が最も大きく影響するか？　次の項目から選び答えよ。\n
 m/MS0017.BIN	0:04	63	3250	1FB2	精神力	Willpower	WILLPOWER	v005	draft	menu option, declared width 20 columns
-m/MS0017.BIN	0:04	64	3258	1FB2	加護		DIVINE GRACE	v005		menu option, declared width 20 columns
-m/MS0017.BIN	0:04	65	3264	1FB2	知力		INTELLIGENCE	v005		menu option, declared width 20 columns
+m/MS0017.BIN	0:04	64	3258	1FB2	加護		DIVINE GRACE	v005		menu option, declared width 20 columns; @refalign
+m/MS0017.BIN	0:04	65	3264	1FB2	知力		INTELLIGENCE	v005		menu option, declared width 20 columns; @refalign
 m/MS0017.BIN	0:04	66	3300	1FD2	問題２：	Question 2:			draft	
-m/MS0017.BIN	0:04	67	3310	1FD3	ブフ系凍結{08:0C}{08:0D}{08:62}対象{08:42}熱を奪う{08:0C}{08:0D}で{08:7B}が、\n{08:0D}には相性があり、特に火炎障壁が{08:7B}場合に{08:62}威力を発揮し{08:25}。\n<wait>		Bufu is a basic ice-type spell which works by sucking heat away from\nits target. However, depending on the enemy's affinities, and especially\nif they have set up a Flame Wall, it might not do all that much.\n<wait>	v005		reads: ブフ系凍結攻撃魔法は、対象から熱を奪う攻撃魔法であるが、\n魔法には相性があり、特に火炎障壁がある場合には、威力を発揮しない。\n<wait>
-m/MS0017.BIN	0:04	68	3418	1FBA	で{08:62}同じ様に威力が半減{08:8E}状態を、次の項目{08:42}選び答えよ。\n		Conversely, there also are factors that can raise Bufu's effectiveness.\nPlease choose one such factor out of the following.\n	v005		reads: では、同じ様に威力が半減する状態を、次の項目から選び答えよ。\n
+m/MS0017.BIN	0:04	67	3310	1FD3	ブフ系凍結{08:0C}{08:0D}{08:62}対象{08:42}熱を奪う{08:0C}{08:0D}で{08:7B}が、\n{08:0D}には相性があり、特に火炎障壁が{08:7B}場合に{08:62}威力を発揮し{08:25}。\n<wait>		Bufu is a basic ice-type spell which works by sucking heat away from\nits target. However, depending on the enemy's affinities, and especially\nif they have set up a Flame Wall, it might not do all that much.\n<wait>	v005		reads: ブフ系凍結攻撃魔法は、対象から熱を奪う攻撃魔法であるが、\n魔法には相性があり、特に火炎障壁がある場合には、威力を発揮しない。\n<wait>; @refalign
+m/MS0017.BIN	0:04	68	3418	1FBA	で{08:62}同じ様に威力が半減{08:8E}状態を、次の項目{08:42}選び答えよ。\n		Conversely, there also are factors that can raise Bufu's effectiveness.\nPlease choose one such factor out of the following.\n	v005		reads: では、同じ様に威力が半減する状態を、次の項目から選び答えよ。\n; @refalign
 m/MS0017.BIN	0:04	69	3489	1FB2	非肉体{08:0B}にか{08:29}	Non-physical target	Target is spirit	v005	draft	reads: 非肉体悪魔にかける; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	70	3505	1FB2	水障壁が{08:7B}時	Target has Ice Wall	Target has Ice Wall	v005	draft	reads: 水障壁がある時; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	71	3519	1FB2	対象が凍結の時	Target is frozen	Target is frozen	v005	draft	menu option, declared width 20 columns
 m/MS0017.BIN	0:04	72	3565	1FD2	問題３：	Question 3:			draft	
-m/MS0017.BIN	0:04	73	3575	1FD3	タルカジャ{08:62}{08:0C}力を上昇さ{08:2A}補助{08:0D}で{08:7B}が、対象相手が瀕死及び死に\n瀕{08:4A}{08:24}場合、かつ、{03:04}に対{08:4A}か{08:29}事を前提とすれば、確実に効果を\n発揮{08:8E}。\n<wait>		Tarukaja is a support skill that boosts ATTACK. As long as it's cast on\nan ally, whether that ally is on the verge of death or not, its effect\nwill always go off.\n<wait>	v005		reads: タルカジャは、攻撃力を上昇させる補助魔法であるが、対象相手が瀕死及び死に\n瀕していない場合、かつ、味方に対してかける事を前提とすれば、確実に効果を\n発揮する。\n<wait>
+m/MS0017.BIN	0:04	73	3575	1FD3	タルカジャ{08:62}{08:0C}力を上昇さ{08:2A}補助{08:0D}で{08:7B}が、対象相手が瀕死及び死に\n瀕{08:4A}{08:24}場合、かつ、{03:04}に対{08:4A}か{08:29}事を前提とすれば、確実に効果を\n発揮{08:8E}。\n<wait>		Tarukaja is a support skill that boosts ATTACK. As long as it's cast on\nan ally, whether that ally is on the verge of death or not, its effect\nwill always go off.\n<wait>	v005		reads: タルカジャは、攻撃力を上昇させる補助魔法であるが、対象相手が瀕死及び死に\n瀕していない場合、かつ、味方に対してかける事を前提とすれば、確実に効果を\n発揮する。\n<wait>; @refalign
 m/MS0017.BIN	0:04	74	3714	1FBA	\n{01:25}か{01:26}かを答えよ。\n	\nAnswer {01:25} or {01:26}.\n			draft	reads: \nＹＥＳかＮＯかを答えよ。\n
 m/MS0017.BIN	0:04	75	3750	1FB2	{01:25}	{01:25}	YES	v005		reads: ＹＥＳ; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	76	3754	1FB2	{01:26}	{01:26}	NO	v005		reads: ＮＯ; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	77	3784	1FD2	問題４：	Question 4:			draft	
-m/MS0017.BIN	0:04	78	3794	1FD3	敵{08:0B}が、ファイアブレス等の特殊能力を持つ{08:0B}であ{08:51}場合。\n{08:79}能力に属{08:8E}系統の{08:0D}{08:72}{08:47}場合では火炎系{08:72}をか{08:29}事{08:62}\n危険を招く恐れがあり、リスクが大きく有効な手段では{08:25}。\n<wait>		You are fighting a demon who knows Fire Breath. It would be foolish to\nattack it using a spell of the matching element, Fire in this case.\n<wait>	v005		reads: 敵悪魔が、ファイアブレス等の特殊能力を持つ悪魔であった場合。\nその能力に属する系統の魔法‥‥この場合では火炎系‥‥をかける事は、\n危険を招く恐れがあり、リスクが大きく有効な手段ではない。\n<wait>
+m/MS0017.BIN	0:04	78	3794	1FD3	敵{08:0B}が、ファイアブレス等の特殊能力を持つ{08:0B}であ{08:51}場合。\n{08:79}能力に属{08:8E}系統の{08:0D}{08:72}{08:47}場合では火炎系{08:72}をか{08:29}事{08:62}\n危険を招く恐れがあり、リスクが大きく有効な手段では{08:25}。\n<wait>		You are fighting a demon who knows Fire Breath. It would be foolish to\nattack it using a spell of the matching element, Fire in this case.\n<wait>	v005		reads: 敵悪魔が、ファイアブレス等の特殊能力を持つ悪魔であった場合。\nその能力に属する系統の魔法‥‥この場合では火炎系‥‥をかける事は、\n危険を招く恐れがあり、リスクが大きく有効な手段ではない。\n<wait>; @refalign
 m/MS0017.BIN	0:04	79	3961	1FBA	\n{01:25}か{01:26}かを答えよ。\n	\nAnswer {01:25} or {01:26}.\n			draft	reads: \nＹＥＳかＮＯかを答えよ。\n
 m/MS0017.BIN	0:04	80	3997	1FB2	{01:25}	{01:25}	YES	v005		reads: ＹＥＳ; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	81	4001	1FB2	{01:26}	{01:26}	NO	v005		reads: ＮＯ; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	82	4031	1FD2	問題５：	Question 5:			draft	
-m/MS0017.BIN	0:04	83	4041	1FD3	敵の{08:0C}にさら{03:0C}、コンディションが凍結に{08:16}場合。\nコンディション{03:10}の処置を行なわなくとも、一定時間さえ経てば\n自然に状態は{03:10}{08:8E}。\n<wait>		You have been frozen by an enemy's attack.\nIs it possible to wait out the ailment and let it expire on its own?\n<wait>	v005		reads: 敵の攻撃にさらされ、コンディションが凍結になった場合。\nコンディション回復の処置を行なわなくとも、一定時間さえ経てば\n自然に状態は回復する。\n<wait>
+m/MS0017.BIN	0:04	83	4041	1FD3	敵の{08:0C}にさら{03:0C}、コンディションが凍結に{08:16}場合。\nコンディション{03:10}の処置を行なわなくとも、一定時間さえ経てば\n自然に状態は{03:10}{08:8E}。\n<wait>		You have been frozen by an enemy's attack.\nIs it possible to wait out the ailment and let it expire on its own?\n<wait>	v005		reads: 敵の攻撃にさらされ、コンディションが凍結になった場合。\nコンディション回復の処置を行なわなくとも、一定時間さえ経てば\n自然に状態は回復する。\n<wait>; @refalign
 m/MS0017.BIN	0:04	84	4172	1FBA	\n{01:25}か{01:26}かを答えよ。\n	\nAnswer {01:25} or {01:26}.\n			draft	reads: \nＹＥＳかＮＯかを答えよ。\n
 m/MS0017.BIN	0:04	85	4208	1FB2	{01:25}	{01:25}	YES	v005		reads: ＹＥＳ; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	86	4212	1FB2	{01:26}	{01:26}	NO	v005		reads: ＮＯ; menu option, declared width 20 columns
@@ -422,34 +422,34 @@ m/MS0017.BIN	0:04	87	4242	1FD2	問題６：	Question 6:			draft
 m/MS0017.BIN	0:04	88	4252	1FD3	{08:0D}は{03:0E}を消費{08:8E}。で{08:62}格闘技系の特技{08:62}何を消費{08:8E}か？\n	Magic consumes MP. Then what do martial-arts special techniques\nconsume?\n	Magic skills cost MP. Which resource do special techniques use?\n	v005	draft	reads: 魔法はＭＰを消費する。では、格闘技系の特技は、何を消費するか？\n
 m/MS0017.BIN	0:04	89	4319	1FB2	{03:0D}	{03:0D}	HP	v005		reads: ＨＰ; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	90	4323	1FB2	{03:0E}	{03:0E}	MP	v005		reads: ＭＰ; menu option, declared width 20 columns
-m/MS0017.BIN	0:04	91	4327	1FB2	生体マグネタイト		Magnetite	v005		menu option, declared width 20 columns
+m/MS0017.BIN	0:04	91	4327	1FB2	生体マグネタイト		Magnetite	v005		menu option, declared width 20 columns; @refalign
 m/MS0017.BIN	0:04	92	4375	1FD2	問題７：	Question 7:			draft	
 m/MS0017.BIN	0:04	93	4385	1FD3	{08:0B}はさまざまな{08:0D}や特技を駆使し、コンディションに影響{08:8E}{08:0C}を{08:4A}くる。\n［混乱］{08:62}何を{08:8E}か分{08:42}なくなり、［魅了］{08:62}{03:04}{03:02}始{08:2E}。\n他にも行動不能に陥ら{08:2A}{08:0C}が、数多く報告{03:0C}{08:14}。\n<wait>	Demons use all kinds of magic and techniques that attack your condition.\n[Confusion] makes you lose track of what you're doing; [Charm] makes you\nattack your allies. Many other disabling attacks have been reported.\n<wait>	Some demons possess spells and abilities that inflict status effects.\nConfused causes a character to act unpredictably, whereas Charm\nmakes them attack their allies. In addition, there are various ailments\nthat render you completely unable to act.\n<wait>	v005	draft	reads: 悪魔はさまざまな魔法や特技を駆使し、コンディションに影響する攻撃をしてくる。\n［混乱］は、何をするか分からなくなり、［魅了］は、味方を攻撃し始める。\n他にも行動不能に陥らせる攻撃が、数多く報告されている。\n<wait>
 m/MS0017.BIN	0:04	94	4556	1FBA	で{08:62}パーティーの大半がこう{08:4B}コンディション不良に陥{08:51}とき{08:62}\nいか{08:59}戦術を取るのが、最も適確で{08:7B}か？\n	Now, when most of the party has fallen into such a bad condition,\nwhat is the most appropriate tactic to take?\n	What is the best course of action to take if the majority\nof your party is affected by these sorts of ailments?\n	v005	draft	reads: では、パーティーの大半がこうしたコンディション不良に陥ったときは、\nいかなる戦術を取るのが、最も適確であるか？\n
 m/MS0017.BIN	0:04	95	4670	1FB2	守りに徹{08:8E}	Focus on defense	Focusing on defence	v005	draft	reads: 守りに徹する; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	96	4682	1FB2	危険な敵を倒す	Kill dangerous foes	Target strongest foe	v005	draft	menu option, declared width 20 columns
-m/MS0017.BIN	0:04	97	4698	1FB2	とにかく逃げる		Run	v005		menu option, declared width 20 columns
-m/MS0017.BIN	0:04	98	4752	1FD0	　　　　　能力試験第三部　対{08:0B}戦術学 物理{08:0C}\n<wait>		      Section 3: Demon Combat - Physical Attacks<wait>	v005		reads: 　　　　　能力試験第三部　対悪魔戦術学 物理攻撃\n<wait>
+m/MS0017.BIN	0:04	97	4698	1FB2	とにかく逃げる		Run	v005		menu option, declared width 20 columns; @refalign
+m/MS0017.BIN	0:04	98	4752	1FD0	　　　　　能力試験第三部　対{08:0B}戦術学 物理{08:0C}\n<wait>		      Section 3: Demon Combat - Physical Attacks<wait>	v005		reads: 　　　　　能力試験第三部　対悪魔戦術学 物理攻撃\n<wait>; @refalign
 m/MS0017.BIN	0:04	99	4804	1FD2	問題１：	Question 1:			draft	
 m/MS0017.BIN	0:04	100	4814	1FD3	銃に比べレベルの高い刀剣類{08:62}ほぼ、{08:6D}様な{08:0B}に対{08:4A}も有効なダメージを\n与{08:28}事の出来る、比較的安全な武器で{08:7B}。\n<wait>	Compared to guns, high-level swords can deal effective damage to\nalmost any kind of demon, making them relatively safe weapons.\n<wait>	Unlike guns, swords do decent damage against all types of demons.\n<wait>	v005	draft	reads: 銃に比べレベルの高い刀剣類は、ほぼ、どの様な悪魔に対しても有効なダメージを\n与える事の出来る、比較的安全な武器である。\n<wait>
 m/MS0017.BIN	0:04	101	4926	1FBA	\n{01:25}か{01:26}かを答えよ。\n	\nAnswer {01:25} or {01:26}.\n			draft	reads: \nＹＥＳかＮＯかを答えよ。\n
 m/MS0017.BIN	0:04	102	4962	1FB2	{01:25}	{01:25}	YES	v005		reads: ＹＥＳ; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	103	4966	1FB2	{01:26}	{01:26}	NO	v005		reads: ＮＯ; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	104	4996	1FD2	問題２：	Question 2:			draft	
-m/MS0017.BIN	0:04	105	5006	1FD3	ハンマー等を武器に用{08:64}場合、{08:0C}時のアクションが大きい為、\n目標の回避度が上がり、あまり有効では{08:25}。\n<wait>		Hammers have a long wind-up time,\nmaking them easily dodgeable, thus not particularly effective.\n<wait>	v005		reads: ハンマー等を武器に用いた場合、攻撃時のアクションが大きい為、\n目標の回避度が上がり、あまり有効ではない。\n<wait>
+m/MS0017.BIN	0:04	105	5006	1FD3	ハンマー等を武器に用{08:64}場合、{08:0C}時のアクションが大きい為、\n目標の回避度が上がり、あまり有効では{08:25}。\n<wait>		Hammers have a long wind-up time,\nmaking them easily dodgeable, thus not particularly effective.\n<wait>	v005		reads: ハンマー等を武器に用いた場合、攻撃時のアクションが大きい為、\n目標の回避度が上がり、あまり有効ではない。\n<wait>; @refalign
 m/MS0017.BIN	0:04	106	5110	1FBA	\n{01:25}か{01:26}かを答えよ。\n	\nAnswer {01:25} or {01:26}.\n			draft	reads: \nＹＥＳかＮＯかを答えよ。\n
 m/MS0017.BIN	0:04	107	5146	1FB2	{01:25}	{01:25}	YES	v005		reads: ＹＥＳ; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	108	5150	1FB2	{01:26}	{01:26}	NO	v005		reads: ＮＯ; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	109	5180	1FD2	問題３：	Question 3:			draft	
-m/MS0017.BIN	0:04	110	5190	1FD3	銃器{08:62}離{08:60}敵を{08:0C}できる有効な武器で{08:7B}が、弾薬数に制限を持つ。\n{08:4D}以外のほとん{08:6D}武器は弾数は{08:25}が、接近戦にのみ有効で{08:7B}。\n<wait>		Guns are highly effective against enemies standing far away. However,\nthey are limited by the amount of ammo you have. Conversely, swords\ndon't use ammo, but can only be used at close range.\n<wait>	v005		reads: 銃器は、離れた敵を攻撃できる有効な武器であるが、弾薬数に制限を持つ。\nそれ以外のほとんどの武器は弾数はないが、接近戦にのみ有効である。\n<wait>
-m/MS0017.BIN	0:04	111	5314	1FBA	さて、０距離の戦闘と{08:59}と、混戦となり戦いにかなりの制約とリスクが出る。\n以下の内で、制約で{08:25}物はどれか？\n		Fights at close range come with their own constraints and risks. Which\nof the following is not a constraint associated with close range fights.\n	v005		reads: さて、０距離の戦闘となると、混戦となり戦いにかなりの制約とリスクが出る。\n以下の内で、制約でない物はどれか？\n
+m/MS0017.BIN	0:04	110	5190	1FD3	銃器{08:62}離{08:60}敵を{08:0C}できる有効な武器で{08:7B}が、弾薬数に制限を持つ。\n{08:4D}以外のほとん{08:6D}武器は弾数は{08:25}が、接近戦にのみ有効で{08:7B}。\n<wait>		Guns are highly effective against enemies standing far away. However,\nthey are limited by the amount of ammo you have. Conversely, swords\ndon't use ammo, but can only be used at close range.\n<wait>	v005		reads: 銃器は、離れた敵を攻撃できる有効な武器であるが、弾薬数に制限を持つ。\nそれ以外のほとんどの武器は弾数はないが、接近戦にのみ有効である。\n<wait>; @refalign
+m/MS0017.BIN	0:04	111	5314	1FBA	さて、０距離の戦闘と{08:59}と、混戦となり戦いにかなりの制約とリスクが出る。\n以下の内で、制約で{08:25}物はどれか？\n		Fights at close range come with their own constraints and risks. Which\nof the following is not a constraint associated with close range fights.\n	v005		reads: さて、０距離の戦闘となると、混戦となり戦いにかなりの制約とリスクが出る。\n以下の内で、制約でない物はどれか？\n; @refalign
 m/MS0017.BIN	0:04	112	5434	1FB2	戦闘{08:42}離脱{08:23}	Can't leave battle	Can't flee	v005	draft	reads: 戦闘から離脱できない; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	113	5448	1FB2	ダメージが増{08:28}	Damage increases	Take more damage	v005	draft	reads: ダメージが増える; menu option, declared width 20 columns
-m/MS0017.BIN	0:04	114	5464	1FB2	銃の命中度が下がる		Gun accuracy down	v005		menu option, declared width 20 columns
+m/MS0017.BIN	0:04	114	5464	1FB2	銃の命中度が下がる		Gun accuracy down	v005		menu option, declared width 20 columns; @refalign
 m/MS0017.BIN	0:04	115	5484	1FB2	複数{08:0C}{08:0D}が使え{08:25}	No AoE magic	AOE magic disabled	v005	draft	reads: 複数攻撃魔法が使えない; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	116	5502	1FB2	{08:0C}目標を選べ{08:25}	Can't choose targets	Can't choose targets	v005	draft	reads: 攻撃目標を選べない; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	117	5556	1FD2	問題４：	Question 4:			draft	
-m/MS0017.BIN	0:04	118	5566	1FD3	格闘技は敏捷性が重要視{03:0C}るが、実戦においては銃の扱いに関{08:4A}も、\n同様に敏捷性が重要と{08:59}。\n<wait>		The effectiveness of guns and hand-to-hand combat alike is dependent\non your AGILITY.\n<wait>	v005		reads: 格闘技は敏捷性が重要視されるが、実戦においては銃の扱いに関しても、\n同様に敏捷性が重要となる。\n<wait>
+m/MS0017.BIN	0:04	118	5566	1FD3	格闘技は敏捷性が重要視{03:0C}るが、実戦においては銃の扱いに関{08:4A}も、\n同様に敏捷性が重要と{08:59}。\n<wait>		The effectiveness of guns and hand-to-hand combat alike is dependent\non your AGILITY.\n<wait>	v005		reads: 格闘技は敏捷性が重要視されるが、実戦においては銃の扱いに関しても、\n同様に敏捷性が重要となる。\n<wait>; @refalign
 m/MS0017.BIN	0:04	119	5660	1FBA	\n{01:25}か{01:26}かを答えよ。\n	\nAnswer {01:25} or {01:26}.\n			draft	reads: \nＹＥＳかＮＯかを答えよ。\n
 m/MS0017.BIN	0:04	120	5696	1FB2	{01:25}	{01:25}	YES	v005		reads: ＹＥＳ; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	121	5700	1FB2	{01:26}	{01:26}	NO	v005		reads: ＮＯ; menu option, declared width 20 columns
@@ -459,32 +459,32 @@ m/MS0017.BIN	0:04	124	5791	1FBA	\n{01:25}か{01:26}かを答えよ。\n	\nAnswer
 m/MS0017.BIN	0:04	125	5827	1FB2	{01:25}	{01:25}	YES	v005		reads: ＹＥＳ; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	126	5831	1FB2	{01:26}	{01:26}	NO	v005		reads: ＮＯ; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	127	5861	1FD2	問題６：	Question 6:			draft	
-m/MS0017.BIN	0:04	128	5871	1FD3	{08:0B}を{08:0C}{08:4C}きに、{08:79}向きによ{08:52}効果が変化{08:8E}。\n最も効果の{08:7B}{08:0B}の向きは何か？\n		The effectiveness of an attack can change depending on which direction\nyou attack from. Which is the most effective direction of attack?\n	v005		reads: 悪魔を攻撃するときに、その向きによって効果が変化する。\n最も効果のある悪魔の向きは何か？\n
-m/MS0017.BIN	0:04	129	5957	1FB2	正面		Front	v005		menu option, declared width 20 columns
+m/MS0017.BIN	0:04	128	5871	1FD3	{08:0B}を{08:0C}{08:4C}きに、{08:79}向きによ{08:52}効果が変化{08:8E}。\n最も効果の{08:7B}{08:0B}の向きは何か？\n		The effectiveness of an attack can change depending on which direction\nyou attack from. Which is the most effective direction of attack?\n	v005		reads: 悪魔を攻撃するときに、その向きによって効果が変化する。\n最も効果のある悪魔の向きは何か？\n; @refalign
+m/MS0017.BIN	0:04	129	5957	1FB2	正面		Front	v005		menu option, declared width 20 columns; @refalign
 m/MS0017.BIN	0:04	130	5963	1FB2	側面	Side	Side	v005	draft	menu option, declared width 20 columns
 m/MS0017.BIN	0:04	131	5969	1FB2	背面	Back	Back	v005	draft	menu option, declared width 20 columns
 m/MS0017.BIN	0:04	132	6021	1FD0	　　　　　能力試験第四部　対{08:0B}会話戦術\n<wait>	          Aptitude Test Part 4  Demon Negotiation Tactics\n<wait>	      Section 4: Demon Combat - Conversations<wait>	v005	draft	reads: 　　　　　能力試験第四部　対悪魔会話戦術\n<wait>
 m/MS0017.BIN	0:04	133	6068	1FD2	問題１：	Question 1:			draft	
-m/MS0017.BIN	0:04	134	6078	1FD3	{08:0B}を{08:0E}に{08:8E}為に会話を行なう場合、交渉に宝石を用{08:40}事{08:62}\n大変有効で{08:7B}。\n<wait>		When attempting to talk a demon into joining you, it is possible to\noffer gemstones to help make the negotiations go more smoothly.\n<wait>	v005		reads: 悪魔を仲魔にする為に会話を行なう場合、交渉に宝石を用いる事は、\n大変有効である。\n<wait>
-m/MS0017.BIN	0:04	135	6152	1FBA	で{08:62}数{08:7B}宝石の中で最も効果の高い物{08:62}次の内のどれで{08:7B}かを答えよ。\n		Which one of the following gemstones is the most effective?\n	v005		reads: では、数ある宝石の中で最も効果の高い物は、次の内のどれであるかを答えよ。\n
+m/MS0017.BIN	0:04	134	6078	1FD3	{08:0B}を{08:0E}に{08:8E}為に会話を行なう場合、交渉に宝石を用{08:40}事{08:62}\n大変有効で{08:7B}。\n<wait>		When attempting to talk a demon into joining you, it is possible to\noffer gemstones to help make the negotiations go more smoothly.\n<wait>	v005		reads: 悪魔を仲魔にする為に会話を行なう場合、交渉に宝石を用いる事は、\n大変有効である。\n<wait>; @refalign
+m/MS0017.BIN	0:04	135	6152	1FBA	で{08:62}数{08:7B}宝石の中で最も効果の高い物{08:62}次の内のどれで{08:7B}かを答えよ。\n		Which one of the following gemstones is the most effective?\n	v005		reads: では、数ある宝石の中で最も効果の高い物は、次の内のどれであるかを答えよ。\n; @refalign
 m/MS0017.BIN	0:04	136	6233	1FB2	オパール	Opal	Opal	v005	draft	menu option, declared width 20 columns
 m/MS0017.BIN	0:04	137	6243	1FB2	ダイアモンド	Diamond	Diamond	v005	draft	menu option, declared width 20 columns
 m/MS0017.BIN	0:04	138	6257	1FB2	エメラルド	Emerald	Emerald	v005	draft	menu option, declared width 20 columns
 m/MS0017.BIN	0:04	139	6299	1FD2	問題２：	Question 2:			draft	
-m/MS0017.BIN	0:04	140	6309	1FD3	{08:0B}との会話を安全に行なうに{08:62}ＤＤＥシステムが必要不可欠で{08:7B}。\n<wait>		The DDE System is required to safely converse with demons.\n<wait>	v005		reads: 悪魔との会話を安全に行なうには、ＤＤＥシステムが必要不可欠である。\n<wait>
+m/MS0017.BIN	0:04	140	6309	1FD3	{08:0B}との会話を安全に行なうに{08:62}ＤＤＥシステムが必要不可欠で{08:7B}。\n<wait>		The DDE System is required to safely converse with demons.\n<wait>	v005		reads: 悪魔との会話を安全に行なうには、ＤＤＥシステムが必要不可欠である。\n<wait>; @refalign
 m/MS0017.BIN	0:04	141	6376	1FBA	\n{01:25}か{01:26}かを答えよ。\n	\nAnswer {01:25} or {01:26}.\n			draft	reads: \nＹＥＳかＮＯかを答えよ。\n
 m/MS0017.BIN	0:04	142	6412	1FB2	{01:25}	{01:25}	YES	v005		reads: ＹＥＳ; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	143	6416	1FB2	{01:26}	{01:26}	NO	v005		reads: ＮＯ; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	144	6446	1FD2	問題３：	Question 3:			draft	
-m/MS0017.BIN	0:04	145	6456	1FD3	{08:0B}に対{08:4A}威嚇射撃を行{08:16}場合、{08:79}成果を得るに{08:62}\n相手{08:0B}の服従度合いが大きく影響{08:8E}。\n<wait>		The outcome of firing a warning shot at a demon is highly dependent\non whether that demon is submissive or not.\n<wait>	v005		reads: 悪魔に対して威嚇射撃を行なった場合、その成果を得るには、\n相手悪魔の服従度合いが大きく影響する。\n<wait>
-m/MS0017.BIN	0:04	146	6542	1FBA	で{08:62}眼力による威圧の場合{08:62}次の内の何が{08:79}成否に影響を\n及ぼす事に{08:59}かを答えよ。\n		It is also possible to attempt to coerce a demon through the power of\ninsight. Which of the following determines if this will be successful?\n	v005		reads: では、眼力による威圧の場合は、次の内の何がその成否に影響を\n及ぼす事になるかを答えよ。\n
-m/MS0017.BIN	0:04	147	6636	1FB2	魔力		MAGIC	v005		menu option, declared width 20 columns
+m/MS0017.BIN	0:04	145	6456	1FD3	{08:0B}に対{08:4A}威嚇射撃を行{08:16}場合、{08:79}成果を得るに{08:62}\n相手{08:0B}の服従度合いが大きく影響{08:8E}。\n<wait>		The outcome of firing a warning shot at a demon is highly dependent\non whether that demon is submissive or not.\n<wait>	v005		reads: 悪魔に対して威嚇射撃を行なった場合、その成果を得るには、\n相手悪魔の服従度合いが大きく影響する。\n<wait>; @refalign
+m/MS0017.BIN	0:04	146	6542	1FBA	で{08:62}眼力による威圧の場合{08:62}次の内の何が{08:79}成否に影響を\n及ぼす事に{08:59}かを答えよ。\n		It is also possible to attempt to coerce a demon through the power of\ninsight. Which of the following determines if this will be successful?\n	v005		reads: では、眼力による威圧の場合は、次の内の何がその成否に影響を\n及ぼす事になるかを答えよ。\n; @refalign
+m/MS0017.BIN	0:04	147	6636	1FB2	魔力		MAGIC	v005		menu option, declared width 20 columns; @refalign
 m/MS0017.BIN	0:04	148	6642	1FB2	魅力	Charm	CHARM	v005	draft	menu option, declared width 20 columns
 m/MS0017.BIN	0:04	149	6648	1FB2	{08:0C}力	Attack	ATTACK	v005	draft	reads: 攻撃力; menu option, declared width 20 columns
 m/MS0017.BIN	0:04	150	6684	1FD2	問題４：	Question 4:			draft	
-m/MS0017.BIN	0:04	151	6694	1FD3	次の{08:0B}の内、会話によ{08:52}{08:0E}に{08:7D}{08:25}{08:0B}を選べ。\n		Which of the following demons cannot be recruited through negotiation.\n	v005		reads: 次の悪魔の内、会話によって仲魔にならない悪魔を選べ。\n
-m/MS0017.BIN	0:04	152	6751	1FB2	オーク		Orc	v005		menu option, declared width 20 columns
-m/MS0017.BIN	0:04	153	6759	1FB2	エンジェル		Angel	v005		menu option, declared width 20 columns
+m/MS0017.BIN	0:04	151	6694	1FD3	次の{08:0B}の内、会話によ{08:52}{08:0E}に{08:7D}{08:25}{08:0B}を選べ。\n		Which of the following demons cannot be recruited through negotiation.\n	v005		reads: 次の悪魔の内、会話によって仲魔にならない悪魔を選べ。\n; @refalign
+m/MS0017.BIN	0:04	152	6751	1FB2	オーク		Orc	v005		menu option, declared width 20 columns; @refalign
+m/MS0017.BIN	0:04	153	6759	1FB2	エンジェル		Angel	v005		menu option, declared width 20 columns; @refalign
 m/MS0017.BIN	0:04	154	6771	1FB2	ゴブリン	Goblin	Goblin	v005	draft	menu option, declared width 20 columns
 m/MS0017.BIN	0:04	155	6811	1FD2	問題５：	Question 5:			draft	
 m/MS0017.BIN	0:04	156	6821	1FD3	アンデッド系{08:0B}に対し、会話を行なう事{08:62}全く意味を成さず、\nかえ{08:52}戦況の悪化を招く事にもなりかね{08:25}。\n<wait>	Talking to undead-type demons is utterly meaningless,\nand may even make the battle situation worse.\n<wait>	Demons of the undead type cannot understand speech,\nand attempting to talk to them can often make the situation worse.\n<wait>	v005	draft	reads: アンデッド系悪魔に対し、会話を行なう事は、全く意味を成さず、\nかえって戦況の悪化を招く事にもなりかねない。\n<wait>
@@ -496,7 +496,7 @@ m/MS0017.BIN	0:04	161	7009	1FD3	{08:0B}と会話を行{08:16}場合、{08:0B}は
 m/MS0017.BIN	0:04	162	7152	1FBA	{08:47}場合、逃走{08:4B}{08:0B}との友好関係を保つ為に{08:62}\n{08:6D}様な行動をとる事が的確か、判断し答えよ。\n<wait>	In that case, what is the right action to take to stay on good terms\nwith the demon that ran off?\n<wait>	If this happens, how should you proceed in order to remain on friendly\nterms with the demon?\n<wait>	v005	draft	reads: この場合、逃走した悪魔との友好関係を保つ為には、\nどの様な行動をとる事が的確か、判断し答えよ。\n<wait>
 m/MS0017.BIN	0:04	163	7256	1FB2	あきらめて逃がす	Let it go	Let them go	v005	draft	menu option, declared width 20 columns
 m/MS0017.BIN	0:04	164	7274	1FB2	追いか{08:29}	Chase it	Chase after them	v005	draft	reads: 追いかける; menu option, declared width 20 columns
-m/MS0017.BIN	0:04	165	7284	1FB2	おだ{08:2B}		Flatter them	v005		reads: おだてる; menu option, declared width 20 columns
+m/MS0017.BIN	0:04	165	7284	1FB2	おだ{08:2B}		Flatter them	v005		reads: おだてる; menu option, declared width 20 columns; @refalign
 m/MS0017.BIN	0:04	166	7344	1FD0	\n　　　　　　　筆記試験終了\n<wait>	\n              End of written exam\n<wait>			draft	
 m/MS0017.BIN	0:04	167	7378	1FBA	ＤＢ受験番号０９１６　	DB Examinee No. 0916 			draft	
 m/MS0017.BIN	0:04	168	7406	1F01	。君の筆記試験の成績は以下の通り。\n{08:0B}形態分類学　　　　　　６問　１２点中	. Your written exam results are as follows.\nDemon Morphology & Classification   6 questions, out of 12:			draft	reads: 。君の筆記試験の成績は以下の通り。\n悪魔形態分類学　　　　　　６問　１２点中

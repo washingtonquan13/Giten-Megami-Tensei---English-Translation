@@ -3,10 +3,10 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0010.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}\n		There's no one here...\n	v005		reads: 誰もいない‥‥‥\n
-m/MS0010.BIN	0:01	0	37	1FD2	{08:0B}：		Demon:	v005		reads: 悪魔：
-m/MS0010.BIN	0:01	1	43	1FD3	我が名はマルドゥーク。\n{08:47}八重洲に{01:34}を設け、{08:45}に住う子供達を守護{08:13}者だ。\n<wait>		I am Marduk, the ruler of Yaesu and the protector\nof the children living here.\n<wait>	v005		reads: 我が名はマルドゥーク。\nこの八重洲に結界を設け、ここに住う子供達を守護している者だ。\n<wait>
-m/MS0010.BIN	0:01	2	123	1FD2	{08:0B}：		Demon:	v005		reads: 悪魔：
+m/MS0010.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}\n		There's no one here...\n	v005		reads: 誰もいない‥‥‥\n; @refalign
+m/MS0010.BIN	0:01	0	37	1FD2	{08:0B}：		Demon:	v005		reads: 悪魔：; @refalign
+m/MS0010.BIN	0:01	1	43	1FD3	我が名はマルドゥーク。\n{08:47}八重洲に{01:34}を設け、{08:45}に住う子供達を守護{08:13}者だ。\n<wait>		I am Marduk, the ruler of Yaesu and the protector\nof the children living here.\n<wait>	v005		reads: 我が名はマルドゥーク。\nこの八重洲に結界を設け、ここに住う子供達を守護している者だ。\n<wait>; @refalign
+m/MS0010.BIN	0:01	2	123	1FD2	{08:0B}：		Demon:	v005		reads: 悪魔：; @refalign
 m/MS0010.BIN	0:01	3	129	1FD3	君達を歓迎し{08:69}{02:08}‥\n<wait>	Allow me to welcome you.........\n<wait>			draft	reads: 君達を歓迎しよう‥‥‥‥\n<wait>
 m/MS0010.BIN	0:01	4	156	1FD0	そう言{08:52}、手をかざ{08:4B}マルドゥーク。\n{08:79}手{08:42}、暖かい光が溢れ、一行を包み込{08:5F}{02:08}\n<wait>	So saying, Marduk raised a hand.\nFrom it flowed a warm light that enveloped the party......\n<wait>			draft	reads: そう言って、手をかざしたマルドゥーク。\nその手から、暖かい光が溢れ、一行を包み込んだ‥‥‥\n<wait>
 m/MS0010.BIN	0:01	5	262	1F77	光がおさ{08:20}とき、一行の傷はすっかり治{08:52}{08:64}{02:08}。\n<wait>	When the light faded, the party's wounds were completely healed......\n<wait>			draft	reads: 光がおさまったとき、一行の傷はすっかり治っていた‥‥‥。\n<wait>
@@ -16,8 +16,8 @@ m/MS0010.BIN	0:01	8	374	1FD0	{08:0B}はそう言うと、	So saying, the demon f
 m/MS0010.BIN	0:01	9	396	1F01	を静かに見据{08:41}。\n<wait>	.\n<wait>He seems to be watching to see how 			draft	reads: を静かに見据えた。\n<wait>
 m/MS0010.BIN	0:01	10	423	1F01	の出方を、うかがっ{08:14}様に見{08:28}。\n<wait>	 will respond.\n<wait>			draft	reads: の出方を、うかがっている様に見える。\n<wait>
 m/MS0010.BIN	0:01	11	460	1FBA	＞{02:06}\n<wait>	>What will you do?\n<wait>			draft	reads: ＞どうしますか？\n<wait>
-m/MS0010.BIN	0:01	12	487	1FB2	身構{08:28}		Put up your guard	v005		reads: 身構える; menu option, declared width 20 columns
-m/MS0010.BIN	0:01	13	495	1FB2	安心{08:8E}		Relax	v005		reads: 安心する; menu option, declared width 20 columns
+m/MS0010.BIN	0:01	12	487	1FB2	身構{08:28}		Put up your guard	v005		reads: 身構える; menu option, declared width 20 columns; @refalign
+m/MS0010.BIN	0:01	13	495	1FB2	安心{08:8E}		Relax	v005		reads: 安心する; menu option, declared width 20 columns; @refalign
 m/MS0010.BIN	0:01	14	519	0F	{08:0B}の言葉を素直に信じる程、馬鹿では{08:25}。\n	He was no fool, to take a demon's words at face value.\n			draft	reads: 悪魔の言葉を素直に信じる程、馬鹿ではない。\n
 m/MS0010.BIN	0:01	15	564	1F01	{08:62}いつ{08:56}戦闘に移{08:2F}様に身構{08:41}。\n<wait>	 braced himself, ready to fight at any moment.\n<wait>			draft	reads: は、いつでも戦闘に移れる様に身構えた。\n<wait>
 m/MS0010.BIN	0:01	16	610	1F01	は{08:0B}の言葉を信じ、全身の緊張を緩めた。\n{08:0B}の瞳に宿る意志{08:62}偽りを語っ{08:14}様には見え{08:19}{08:42}だ。\n<wait>	 believed the demon's words and let the tension leave his body.\nThe will in the demon's eyes did not look like it spoke a lie.\n<wait>			draft	reads: は悪魔の言葉を信じ、全身の緊張を緩めた。\n悪魔の瞳に宿る意志は、偽りを語っている様には見えなかったからだ。\n<wait>
@@ -43,9 +43,9 @@ m/MS0010.BIN	0:01	35	1421	1FD3	{03:0B}	But, 	My only desire now is to help these
 m/MS0010.BIN	0:01	36	1429	1F01	よ{08:72}\n{01:23}見{08:25}内に、随分と逞しく{08:16}な{08:72}安心{08:4B}よ。\n<wait>	...\nIt's been a while, and you've grown so strong... I'm relieved.\n<wait>			draft	reads: よ‥‥\nしばらく見ない内に、随分と逞しくなったな‥‥安心したよ。\n<wait>
 m/MS0010.BIN	0:01	37	1489	1F01	の名を親しげに呼び、\nマルドゥークは遠い昔を振り返る様に、目を細め、黙りこく{08:51}。\n<wait>	's name he spoke with warmth. Then Marduk narrowed his eyes,\nas if looking back on a distant past, and fell silent.\n<wait>			draft	reads: の名を親しげに呼び、\nマルドゥークは遠い昔を振り返る様に、目を細め、黙りこくった。\n<wait>
 m/MS0010.BIN	0:01	38	1575	1FBA	＞{02:06}\n<wait>		>What will you do?\n<wait>	v005		reads: ＞どうしますか？\n<wait>
-m/MS0010.BIN	0:01	39	1602	1FB2	{08:90}{08:68}意味か尋{08:2C}		Ask him to explain	v005		reads: どういう意味か尋ねる; menu option, declared width 20 columns
-m/MS0010.BIN	0:01	40	1618	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns
-m/MS0010.BIN	0:01	41	1642	0F	何故マルドォークが、{08:63}の事を、まるで旧知の仲の様に語るのか、\n	Why did Marduk speak of him as if they were old acquaintances?\n	Marduk is acting like the two of you know each other, but why?\nYou do not understand.\n<wait>	v005	draft	reads: 何故マルドォークが、自分の事を、まるで旧知の仲の様に語るのか、\n
+m/MS0010.BIN	0:01	39	1602	1FB2	{08:90}{08:68}意味か尋{08:2C}		Ask him to explain	v005		reads: どういう意味か尋ねる; menu option, declared width 20 columns; @refalign
+m/MS0010.BIN	0:01	40	1618	1FB2	黙っ{08:14}		Say nothing	v005		reads: 黙っている; menu option, declared width 20 columns; @refalign
+m/MS0010.BIN	0:01	41	1642	0F	何故マルドォークが、{08:63}の事を、まるで旧知の仲の様に語るのか、\n	Why did Marduk speak of him as if they were old acquaintances?\n	Marduk is acting like the two of you know each other, but why?\nYou do not understand.\n<wait>	v005	draft	reads: 何故マルドォークが、自分の事を、まるで旧知の仲の様に語るのか、\n; @refalign
 m/MS0010.BIN	0:01	42	1709	1F01	には全く解ら{08:19}。\n<wait>	 could not understand it at all.\n<wait>			draft	reads: には全く解らなかった。\n<wait>
 m/MS0010.BIN	0:01	43	1738	1F01	{08:62}マルドゥークに尋ねた。\n<wait>	 asked Marduk.\n<wait>			draft	reads: は、マルドゥークに尋ねた。\n<wait>
 m/MS0010.BIN	0:01	44	1771	1FD2	マルドゥーク：	Marduk:			draft	
@@ -60,8 +60,8 @@ m/MS0010.BIN	0:01	52	2180	1FD0	目に前に{08:40}{08:0B}{08:72}\n異形の者�
 m/MS0010.BIN	0:01	53	2261	1F01	は驚きのあまり言葉を失い、{08:82}マルドゥークを見つめた。\n<wait>	 was struck speechless with shock, and could only stare at Marduk.\n<wait>			draft	reads: は驚きのあまり言葉を失い、ただマルドゥークを見つめた。\n<wait>
 m/MS0010.BIN	0:01	54	2322	1FD2	マルドゥーク：	Marduk:			draft	
 m/MS0010.BIN	0:01	55	2338	1FD3	{08:04}であ{08:51}私{08:62}	I, who was Nishino,			draft	reads: 西野であった私は、
-m/MS0010.BIN	0:01	56	2355	09	{08:10}壊滅後、ガスによ{08:52}仮死状態と{08:16}。\n		died from the gas in the shelter.\nMy soul was taken to the Mesopotamian underworld,\nwhich is where I first met Marduk, my true self.\n	v005		reads: シェルター壊滅後、ガスによって仮死状態となった。\n
-m/MS0010.BIN	0:01	57	2393	18	{08:00}達と分か{08:60}後、{08:0B}にやられて仮死状態と{08:16}。\n魂はメソポタミアの異界に飛び{02:08}そこで、私は初めて己れの真の姿、\nマルドゥークと出会{08:51}。\n<wait>		was killed by the demons.\nMy soul was taken to the Mesopotamian underworld,\nwhich is where I first met Marduk, my true self.                                                                                                                                 \n<wait>	v005		reads: 早坂達と分かれた後、悪魔にやられて仮死状態となった。\n魂はメソポタミアの異界に飛び‥‥‥そこで、私は初めて己れの真の姿、\nマルドゥークと出会った。\n<wait>
+m/MS0010.BIN	0:01	56	2355	09	{08:10}壊滅後、ガスによ{08:52}仮死状態と{08:16}。\n		died from the gas in the shelter.\nMy soul was taken to the Mesopotamian underworld,\nwhich is where I first met Marduk, my true self.\n	v005		reads: シェルター壊滅後、ガスによって仮死状態となった。\n; @refalign
+m/MS0010.BIN	0:01	57	2393	18	{08:00}達と分か{08:60}後、{08:0B}にやられて仮死状態と{08:16}。\n魂はメソポタミアの異界に飛び{02:08}そこで、私は初めて己れの真の姿、\nマルドゥークと出会{08:51}。\n<wait>		was killed by the demons.\nMy soul was taken to the Mesopotamian underworld,\nwhich is where I first met Marduk, my true self.                                                                                                                                 \n<wait>	v005		reads: 早坂達と分かれた後、悪魔にやられて仮死状態となった。\n魂はメソポタミアの異界に飛び‥‥‥そこで、私は初めて己れの真の姿、\nマルドゥークと出会った。\n<wait>; @refalign
 m/MS0010.BIN	0:01	58	2530	1FD2	マルドゥーク：		Marduk:	v005		
 m/MS0010.BIN	0:01	59	2546	1FD3	マルドゥークは私を迎え、{08:04}で{08:7B}私に{01:08}の秘密を教{08:28}と、\n再び私を地上へと導{08:64}。\n<wait>		He welcomed me, taught me the secrets of Baal,\nand guided me back to the world which I came from.\n<wait>	ours		reads: マルドゥークは私を迎え、西野である私にバエルの秘密を教えると、\n再び私を地上へと導いた。\n<wait>
 m/MS0010.BIN	0:01	60	2630	1FD2	マルドゥーク：		Marduk:	v005		
@@ -101,58 +101,58 @@ m/MS0010.BIN	0:01	93	4356	1FBA	穏やかだ{08:51}マルドゥークの表情が
 m/MS0010.BIN	0:01	94	4412	1F01	{08:62}\n招かれざる客の訪れに不安を感じながら、背後をふり向こうと{08:4B}。\n<wait>	,\nuneasy at the arrival of an unwelcome guest, began to turn around.\n<wait>			draft	reads: は、\n招かれざる客の訪れに不安を感じながら、背後をふり向こうとした。\n<wait>
 m/MS0010.BIN	0:01	95	4482	1FBA	{08:79}時、聞き慣{08:60}声が、	Just then, a familiar voice called 	As you do, a familiar voice calls out your name.\n<wait>The voice belongs to... Yamase.\n<wait>	v005	draft	reads: その時、聞き慣れた声が、
 m/MS0010.BIN	0:01	96	4508	1F01	の名を呼{08:5F}。\n<wait>{08:4D}{08:62}{08:02}の声だ{08:51}。\n<wait>	's name.\n<wait>It was Yamase's voice.\n<wait>			draft	reads: の名を呼んだ。\n<wait>それは、山瀬の声だった。\n<wait>
-m/MS0010.BIN	0:01	97	4550	1FD2	{08:02}：	Yamase:	Marduk:	v005	draft	reads: 山瀬：
+m/MS0010.BIN	0:01	97	4550	1FD2	{08:02}：	Yamase:	Marduk:	v005	draft	reads: 山瀬：; @refalign
 m/MS0010.BIN	0:01	98	4556	1FD3	やあやあ、そこに{08:40}のは	Well, well, is that 			draft	reads: やあやあ、そこにいるのは
 m/MS0010.BIN	0:01	99	4584	1F01	君かい？\n奇遇だねぇ、{08:73}所{08:56}会うとは思わ{08:19}よ！\n<wait>	 there?\nWhat a coincidence! Never thought I'd run into you here!\n<wait>			draft	reads: 君かい？\n奇遇だねぇ、こんな所でも会うとは思わなかったよ！\n<wait>
-m/MS0010.BIN	0:01	100	4664	1FD2	{08:02}：		Marduk:	v005		reads: 山瀬：
-m/MS0010.BIN	0:01	101	4670	1FD3	いやー、参{08:51}よぉ！\n{08:47}辺り{08:52}{08:0B}がわんさか{08:40}{08:81}{08:25}？\n命{08:42}がら{08:45}{08:71}来たのさーーいやー助{08:18}、助か{08:12}！\n<wait>		"It is not yet your time to die", he said.\n<wait>	v005		reads: いやー、参ったよぉ！\nこの辺りって悪魔がわんさかいるじゃない？\n命からがらここまで来たのさーーいやー助かった、助かった！！\n<wait>
-m/MS0010.BIN	0:01	102	4771	1FD2	{08:02}：	Yamase:	Marduk:	v005	draft	reads: 山瀬：
+m/MS0010.BIN	0:01	100	4664	1FD2	{08:02}：		Marduk:	v005		reads: 山瀬：; @refalign
+m/MS0010.BIN	0:01	101	4670	1FD3	いやー、参{08:51}よぉ！\n{08:47}辺り{08:52}{08:0B}がわんさか{08:40}{08:81}{08:25}？\n命{08:42}がら{08:45}{08:71}来たのさーーいやー助{08:18}、助か{08:12}！\n<wait>		"It is not yet your time to die", he said.\n<wait>	v005		reads: いやー、参ったよぉ！\nこの辺りって悪魔がわんさかいるじゃない？\n命からがらここまで来たのさーーいやー助かった、助かった！！\n<wait>; @refalign
+m/MS0010.BIN	0:01	102	4771	1FD2	{08:02}：	Yamase:	Marduk:	v005	draft	reads: 山瀬：; @refalign
 m/MS0010.BIN	0:01	103	4777	1FD3	しっかし何だね、{08:73}所に隠{03:0C}た安全な場所が{08:7B}{08:6A}て、\nもおビックリだよぉ！！\n<wait>	But man, who'd have guessed there was a safe place hidden away here.\nWhat a surprise!!\n<wait>			draft	reads: しっかし何だね、こんな所に隠された安全な場所があるなんて、\nもおビックリだよぉ！！\n<wait>
 m/MS0010.BIN	0:01	104	4884	1FD2	マルドゥーク：	Marduk:			draft	
 m/MS0010.BIN	0:01	105	4900	1FD3	{02:08}何を白々しい事を！\n貴様が{08:63}さえ助かれば{08:7F}と、{08:0B}の手先となり果て、幹部クラスに{08:71}\nのし上がっ{08:14}事など、{02:0E}は全てお見通しだ。\n<wait>	......Spare me your brazen lies!\nWe know full well that you sold yourself to the demons to save your\nown skin, and clawed your way up to their officer class.\n<wait>			draft	reads: ‥‥‥何を白々しい事を！\n貴様が自分さえ助かればいいと、悪魔の手先となり果て、幹部クラスにまで\nのし上がっている事など、こちらは全てお見通しだ。\n<wait>
 m/MS0010.BIN	0:01	106	5031	1FD2	マルドゥーク：	Marduk:			draft	
 m/MS0010.BIN	0:01	107	5047	1FD3	{02:08}一体何を企んで{08:40}！！\n<wait>	......What are you scheming!!\n<wait>			draft	reads: ‥‥‥一体何を企んでいる！！\n<wait>
-m/MS0010.BIN	0:01	108	5104	1FD2	{08:02}：	Yamase: 	Marduk:	v005	draft	reads: 山瀬：
+m/MS0010.BIN	0:01	108	5104	1FD2	{08:02}：	Yamase: 	Marduk:	v005	draft	reads: 山瀬：; @refalign
 m/MS0010.BIN	0:01	109	5116	1F01	君、友達選{08:5F}方が良{08:18}なぁ！\nそうすれば、もーち{08:53}長生き{08:4B}か{08:5D}ん{08:25}ぜぇ。\n{02:08}もー遅い{08:84}な。\n<wait>	, you should've picked your friends better!\nMight've lived a bit longer that way.\n......Too late now, though.\n<wait>			draft	reads: 君、友達選んだ方が良かったなぁ！\nそうすれば、もーちっと長生きしたかもしんないぜぇ。\n‥‥‥もー遅いけどな。\n<wait>
 m/MS0010.BIN	0:01	110	5211	1FD0	そう言い終{08:28}と{08:02}はニヤ{08:53}笑い、アームターミナルを構{08:41}。\n<wait>	With that, Yamase grinned and readied his Arm Terminal.\n<wait>			draft	reads: そう言い終えると山瀬はニヤっと笑い、アームターミナルを構えた。\n<wait>
-m/MS0010.BIN	0:01	111	5274	1FD2	{08:02}：		Marduk:	v005		reads: 山瀬：
-m/MS0010.BIN	0:01	112	5280	1FD3	マルドゥークさんよ、{08:0B}の分際で善人ヅラ{08:4B}のが不味{08:18}な。\nお偉いさん方{08:62}{01:18}がう{08:53}うしくて、どーしょーも{08:25}{08:52}、\nこーおっしゃ{08:52}んのよ。\n<wait>		I blamed myself for having been unable to protect the shelter and its\npeople. I found myself wandering Tokyo, using Marduk's power to do good\nwhere I could, desperately attempting to pay back for my failure.\n<wait>	v005		reads: マルドゥークさんよ、悪魔の分際で善人ヅラしたのが不味かったな。\nお偉いさん方は、あんたがうっとうしくて、どーしょーもないって、\nこーおっしゃってんのよ。\n<wait>
-m/MS0010.BIN	0:01	113	5417	1FD2	{08:02}：		Marduk:	v005		reads: 山瀬：
-m/MS0010.BIN	0:01	114	5423	1FD3	{08:82}さ、頑丈な対{08:0B}{01:34}を張っ{08:2B}らしい{08:81}{08:25}？\n<wait>		It was there that I met Souma Sanshirou. The two of us became temporary\ntravelling companions. Our journey eventually took us to Gokokuji, which\nis where my life as Nishino ended at last in the hands of Astarte.\n<wait>	v005		reads: たださ、頑丈な対悪魔結界を張ってるらしいじゃない？\n<wait>
-m/MS0010.BIN	0:01	115	5470	1FD2	{08:02}：		Marduk:	v005		reads: 山瀬：
-m/MS0010.BIN	0:01	116	5476	1FD3	{08:4D}{08:81}あ、お偉いさん達も手が出せ{08:25}{08:52}言う{08:42}、わざわざ、オイラが\n出向{08:64}{08:52}ワケよ！！\n<wait>		It is said that the more powerful a mortal soul grows,\nthe stronger the deity will emerge when the two halves finally unite.\n<wait>	v005		reads: それじゃあ、お偉いさん達も手が出せないって言うから、わざわざ、オイラが\n出向いたってワケよ！！\n<wait>
-m/MS0010.BIN	0:01	117	5564	1FD2	{08:02}：		Marduk:	v005		reads: 山瀬：
+m/MS0010.BIN	0:01	111	5274	1FD2	{08:02}：		Marduk:	v005		reads: 山瀬：; @refalign
+m/MS0010.BIN	0:01	112	5280	1FD3	マルドゥークさんよ、{08:0B}の分際で善人ヅラ{08:4B}のが不味{08:18}な。\nお偉いさん方{08:62}{01:18}がう{08:53}うしくて、どーしょーも{08:25}{08:52}、\nこーおっしゃ{08:52}んのよ。\n<wait>		I blamed myself for having been unable to protect the shelter and its\npeople. I found myself wandering Tokyo, using Marduk's power to do good\nwhere I could, desperately attempting to pay back for my failure.\n<wait>	v005		reads: マルドゥークさんよ、悪魔の分際で善人ヅラしたのが不味かったな。\nお偉いさん方は、あんたがうっとうしくて、どーしょーもないって、\nこーおっしゃってんのよ。\n<wait>; @refalign
+m/MS0010.BIN	0:01	113	5417	1FD2	{08:02}：		Marduk:	v005		reads: 山瀬：; @refalign
+m/MS0010.BIN	0:01	114	5423	1FD3	{08:82}さ、頑丈な対{08:0B}{01:34}を張っ{08:2B}らしい{08:81}{08:25}？\n<wait>		It was there that I met Souma Sanshirou. The two of us became temporary\ntravelling companions. Our journey eventually took us to Gokokuji, which\nis where my life as Nishino ended at last in the hands of Astarte.\n<wait>	v005		reads: たださ、頑丈な対悪魔結界を張ってるらしいじゃない？\n<wait>; @refalign
+m/MS0010.BIN	0:01	115	5470	1FD2	{08:02}：		Marduk:	v005		reads: 山瀬：; @refalign
+m/MS0010.BIN	0:01	116	5476	1FD3	{08:4D}{08:81}あ、お偉いさん達も手が出せ{08:25}{08:52}言う{08:42}、わざわざ、オイラが\n出向{08:64}{08:52}ワケよ！！\n<wait>		It is said that the more powerful a mortal soul grows,\nthe stronger the deity will emerge when the two halves finally unite.\n<wait>	v005		reads: それじゃあ、お偉いさん達も手が出せないって言うから、わざわざ、オイラが\n出向いたってワケよ！！\n<wait>; @refalign
+m/MS0010.BIN	0:01	117	5564	1FD2	{08:02}：		Marduk:	v005		reads: 山瀬：; @refalign
 m/MS0010.BIN	0:01	118	5570	1FD3	{02:0B}だっ{08:50}、{08:47}{01:34}簡単に越えら{08:2F}{08:42}なぁ。\nん{08:56}{08:52}、中に入っちまえば、楽勝{08:81}{08:25}のよ。\nホイホイッと召喚すりゃ{08:7F}{08:5F}{08:42}！！\n<wait>	A human can cross this barrier easy, see.\nAnd once you're inside, it's a walkover.\nJust summon away!!\n<wait>			draft	reads: 人間だったら、この結界簡単に越えられるからなぁ。\nんでもって、中に入っちまえば、楽勝じゃないのよ。\nホイホイッと召喚すりゃいいんだから！！\n<wait>
 m/MS0010.BIN	0:01	119	5716	1FD2	マルドゥーク：	Marduk:			draft	
 m/MS0010.BIN	0:01	120	5732	1FD3	貴様と{08:68}奴は{08:72}再び我が愛しき家族{08:72}愛しき子供達を{08:72}\n我が手より奪い{08:72}死に追いやろうと言うのか{02:08}！！！\n<wait>	You... you would once again tear my beloved family... my beloved\nchildren... from my hands, and drive them to their deaths......!!!\n<wait>			draft	reads: 貴様という奴は‥‥再び我が愛しき家族‥‥愛しき子供達を‥‥\n我が手より奪い‥‥死に追いやろうと言うのか‥‥‥！！！\n<wait>
-m/MS0010.BIN	0:01	121	5840	1FD2	{08:02}：	Yamase:	Marduk:	v005	draft	reads: 山瀬：
+m/MS0010.BIN	0:01	121	5840	1FD2	{08:02}：	Yamase:	Marduk:	v005	draft	reads: 山瀬：; @refalign
 m/MS0010.BIN	0:01	122	5846	1FD3	{08:5F}よ、何言{08:52}{08:5F}？　あ{08:72}ああッ！！\n<wait>	The hell you on about? Wha... whaaat!!\n<wait>			draft	reads: んだよ、何言ってんだ？　あ‥‥ああッ！！\n<wait>
 m/MS0010.BIN	0:01	123	5934	1FD2	マルドゥーク：	Marduk:			draft	
 m/MS0010.BIN	0:01	124	5950	1FD3	{08:02}{08:72}思い出{08:4B}か{08:72}{08:02}{02:08}\n<wait>貴様の愚かで残忍な行為によ{08:52}、死へと追いやら{08:60}人々の事を！！\n<wait>	Yamase... do you remember now... Yamase......\n<wait>The people your foolish, brutal deeds drove to their deaths!!\n<wait>			draft	reads: 山瀬‥‥思い出したか‥‥山瀬‥‥‥\n<wait>貴様の愚かで残忍な行為によって、死へと追いやられた人々の事を！！\n<wait>
-m/MS0010.BIN	0:01	125	6044	1FD2	{08:02}：	Yamase:	Marduk:	v005	draft	reads: 山瀬：
+m/MS0010.BIN	0:01	125	6044	1FD2	{08:02}：	Yamase:	Marduk:	v005	draft	reads: 山瀬：; @refalign
 m/MS0010.BIN	0:01	126	6050	1FD3	に{08:72}に{08:72}{08:04}隊長{08:72}ば‥ば‥ば{08:72}馬鹿なあッ！！\n<wait>	N... N... Captain Nishino... n-n-n... no way!!\n<wait>			draft	reads: に‥‥に‥‥西野隊長‥‥ば‥ば‥ば‥‥馬鹿なあッ！！\n<wait>
 m/MS0010.BIN	0:01	127	6101	1FD2	マルドゥーク：	Marduk:			draft	
 m/MS0010.BIN	0:01	128	6117	1FD3	{08:10}を守り切れ{08:19}の{08:62}私の責任だ{02:08}\n{08:8F}、避難{08:4B}人々を地獄へと誘{08:51}の{08:62}紛れも無く{08:02}、お前{08:6B}だ！！\n<wait>	Failing to protect the shelter was my responsibility......\nBut the one who led the evacuees into hell was, beyond doubt, you,\nYamase!!\n<wait>			draft	reads: シェルターを守り切れなかったのは、私の責任だ‥‥‥\nだが、避難した人々を地獄へと誘ったのは、紛れも無く山瀬、お前なのだ！！\n<wait>
-m/MS0010.BIN	0:01	129	6241	1FD2	{08:02}：		Marduk:	v005		reads: 山瀬：
-m/MS0010.BIN	0:01	130	6247	1FD3	だ{08:72}だ{08:42}何だよ！！\n俺があの時何を{08:4A}た{08:52}、結局やつらは死んでたさ！！\n<wait>		And yet, his soul still remains. My flesh, my memories, my strength,\nthey all come from Marduk, yet my soul, that is Nishino's.\n<wait>	v005		reads: だ‥‥だから何だよ！！\n俺があの時何をしてたって、結局やつらは死んでたさ！！\n<wait>
-m/MS0010.BIN	0:01	131	6323	1FD2	{08:02}：		Marduk:	v005		reads: 山瀬：
-m/MS0010.BIN	0:01	132	6329	1FD3	そ‥そ‥{08:79}時間が早{08:18}か、{08:5C}少し遅{08:18}か、た{08:51}{08:4D}{08:74}の差に\n過ぎ{08:25}ぜ！！\n<wait>		As soon as I heard the cries of the children of Yaesu,\nI knew what my mission was.\n<wait>\nDone explaining, Marduk lets out a sigh before shifting his gaze\ntowards you. His eyes glow with strength and kindness alike.\n<wait>\nHowever, there is something else there as well.\nSorrow. Unfathomable sorrow.\n<wait>\nSilence fills the room...\n<wait>\nNever did you think that you'd get to see Nishino again.\nYour mind is filled with joy, shock, and fear all at once.\n<wait>\nYou wish to say something... but you know that there's no need\nfor words. Silence is more than enough.\n<wait>\nJust then!\n<wait>\nBreaking the silence, a man emerges.\n<wait>\nMarduk's face immediately grows stiff.\nAnxious, you turn around to face the uninvited guest.\n<wait>\nAs you do, a familiar voice calls out your name.\n<wait>The voice belongs to... Yamase.\n<wait>	v005		reads: そ‥そ‥その時間が早かったか、もう少し遅かったか、たったそれだけの差に\n過ぎないぜ！！\n<wait>
-m/MS0010.BIN	0:01	133	6403	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：
+m/MS0010.BIN	0:01	129	6241	1FD2	{08:02}：		Marduk:	v005		reads: 山瀬：; @refalign
+m/MS0010.BIN	0:01	130	6247	1FD3	だ{08:72}だ{08:42}何だよ！！\n俺があの時何を{08:4A}た{08:52}、結局やつらは死んでたさ！！\n<wait>		And yet, his soul still remains. My flesh, my memories, my strength,\nthey all come from Marduk, yet my soul, that is Nishino's.\n<wait>	v005		reads: だ‥‥だから何だよ！！\n俺があの時何をしてたって、結局やつらは死んでたさ！！\n<wait>; @refalign
+m/MS0010.BIN	0:01	131	6323	1FD2	{08:02}：		Marduk:	v005		reads: 山瀬：; @refalign
+m/MS0010.BIN	0:01	132	6329	1FD3	そ‥そ‥{08:79}時間が早{08:18}か、{08:5C}少し遅{08:18}か、た{08:51}{08:4D}{08:74}の差に\n過ぎ{08:25}ぜ！！\n<wait>		As soon as I heard the cries of the children of Yaesu,\nI knew what my mission was.\n<wait>\nDone explaining, Marduk lets out a sigh before shifting his gaze\ntowards you. His eyes glow with strength and kindness alike.\n<wait>\nHowever, there is something else there as well.\nSorrow. Unfathomable sorrow.\n<wait>\nSilence fills the room...\n<wait>\nNever did you think that you'd get to see Nishino again.\nYour mind is filled with joy, shock, and fear all at once.\n<wait>\nYou wish to say something... but you know that there's no need\nfor words. Silence is more than enough.\n<wait>\nJust then!\n<wait>\nBreaking the silence, a man emerges.\n<wait>\nMarduk's face immediately grows stiff.\nAnxious, you turn around to face the uninvited guest.\n<wait>\nAs you do, a familiar voice calls out your name.\n<wait>The voice belongs to... Yamase.\n<wait>	v005		reads: そ‥そ‥その時間が早かったか、もう少し遅かったか、たったそれだけの差に\n過ぎないぜ！！\n<wait>; @refalign-joined; @refalign
+m/MS0010.BIN	0:01	133	6403	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; @refalign
 m/MS0010.BIN	0:01	134	6409	1FD3	{08:4D}によ、隊長{08:72}{01:18}も、{08:5C}おしまいだ！！\n<wait>	Anyway, Captain... you're finished too!!\n<wait>			draft	reads: それによ、隊長‥‥あんたも、もうおしまいだ！！\n<wait>
 m/MS0010.BIN	0:01	135	6454	1FD0	{08:02}はそう言い放つと、震{08:28}手でアームターミナルを操作し始めた。\n<wait>	Yamase spat this out and began working his Arm Terminal with shaking\nhands.\n<wait>			draft	reads: 山瀬はそう言い放つと、震える手でアームターミナルを操作し始めた。\n<wait>
 m/MS0010.BIN	0:01	136	6521	1FBA	{03:0B}動揺{08:8E}{08:02}の指は思う様に動かず、{08:79}顔面は蒼白に変わ{08:52}行{08:51}。\n<wait>	But the shaken Yamase's fingers would not move as he wished, and his\nface turned deathly pale.\n<wait>			draft	reads: しかし、動揺する山瀬の指は思う様に動かず、その顔面は蒼白に変わって行った。\n<wait>
 m/MS0010.BIN	0:01	137	6588	1FD2	マルドゥーク：	Marduk:			draft	
 m/MS0010.BIN	0:01	138	6604	1FD3	お前は責任を取らねば{08:7D}ぬ{02:08}\n<wait>	You must take responsibility......\n<wait>			draft	reads: お前は責任を取らねばならぬ‥‥‥\n<wait>
-m/MS0010.BIN	0:01	139	6639	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：
+m/MS0010.BIN	0:01	139	6639	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; @refalign
 m/MS0010.BIN	0:01	140	6645	1FD3	や{08:72}や{08:51}、召喚完了だ！！\nは{08:72}は{08:72}は{08:72}早く出て来てくれーーッ！！\n<wait>	I... I did it, summoning complete!!\nH... h... h... hurry up and come out!!\n<wait>			draft	reads: や‥‥やった、召喚完了だ！！\nは‥‥は‥‥は‥‥早く出て来てくれーーッ！！\n<wait>
 m/MS0010.BIN	0:01	141	6791	1FD2	マルドゥーク：	Marduk:			draft	
 m/MS0010.BIN	0:01	142	6807	1FD3	{02:08}死ね{02:08}\n<wait>	......Die......\n<wait>			draft	reads: ‥‥‥死ね‥‥‥\n<wait>
 m/MS0010.BIN	0:01	143	6824	1FD0	マルドゥークは一本の矢をつがえ、{08:02}に向かい放{08:12}！\n<wait>	Marduk nocked an arrow and loosed it at Yamase!!\n<wait>			draft	reads: マルドゥークは一本の矢をつがえ、山瀬に向かい放った！！\n<wait>
-m/MS0010.BIN	0:01	144	6885	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：
-m/MS0010.BIN	0:01	145	6891	1FD3	ぐ{02:08}ぐふッ！！\n<wait>		Who would've expected there to be a safe heaven tugged away\nin a place like this? Not me, that's for sure!\n<wait>	v005		reads: ぐ‥‥‥ぐふッ！！\n<wait>
-m/MS0010.BIN	0:01	146	6940	1FD2	{08:02}：		Marduk:	v005		reads: 山瀬：
-m/MS0010.BIN	0:01	147	6946	1FD3	{02:08}どーせ{08:72}{08:7D}{02:08}破壊前の東京{02:08}‥\n{02:08}１‥９{08:72}８０年代に{08:72}生まれてりゃ{08:72}\n{08:72}良{08:18}{02:08}な{02:08}は{08:72}はは{02:08}{08:72}\n<wait>		...That's enough! Do not think that you can fool me!\nI know you've joined the demon's side,\nand have become quite the high-ranking official in their army!\n<wait>	v005		reads: ‥‥‥どーせ‥‥なら‥‥‥破壊前の東京‥‥‥‥\n‥‥‥１‥９‥‥８０年代に‥‥生まれてりゃ‥‥\n‥‥良かった‥‥‥な‥‥‥は‥‥はは‥‥‥‥‥\n<wait>
-m/MS0010.BIN	0:01	148	7047	1FD2	{08:02}：	Yamase:	Marduk:	v005	draft	reads: 山瀬：
+m/MS0010.BIN	0:01	144	6885	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; @refalign
+m/MS0010.BIN	0:01	145	6891	1FD3	ぐ{02:08}ぐふッ！！\n<wait>		Who would've expected there to be a safe heaven tugged away\nin a place like this? Not me, that's for sure!\n<wait>	v005		reads: ぐ‥‥‥ぐふッ！！\n<wait>; @refalign
+m/MS0010.BIN	0:01	146	6940	1FD2	{08:02}：		Marduk:	v005		reads: 山瀬：; @refalign
+m/MS0010.BIN	0:01	147	6946	1FD3	{02:08}どーせ{08:72}{08:7D}{02:08}破壊前の東京{02:08}‥\n{02:08}１‥９{08:72}８０年代に{08:72}生まれてりゃ{08:72}\n{08:72}良{08:18}{02:08}な{02:08}は{08:72}はは{02:08}{08:72}\n<wait>		...That's enough! Do not think that you can fool me!\nI know you've joined the demon's side,\nand have become quite the high-ranking official in their army!\n<wait>	v005		reads: ‥‥‥どーせ‥‥なら‥‥‥破壊前の東京‥‥‥‥\n‥‥‥１‥９‥‥８０年代に‥‥生まれてりゃ‥‥\n‥‥良かった‥‥‥な‥‥‥は‥‥はは‥‥‥‥‥\n<wait>; @refalign
+m/MS0010.BIN	0:01	148	7047	1FD2	{08:02}：	Yamase:	Marduk:	v005	draft	reads: 山瀬：; @refalign
 m/MS0010.BIN	0:01	149	7053	1FD3	{02:08}隊長{08:72}地獄で先に{08:72}待っ{08:2B}{08:72}ぜ{08:72}\n<wait>	......Captain... I'll be waiting... for you... in hell......\n<wait>			draft	reads: ‥‥‥隊長‥‥地獄で先に‥‥待ってる‥‥ぜ‥‥\n<wait>
 m/MS0010.BIN	0:01	150	7112	1FD0	{08:02}が倒{08:2F}と同時に、周囲には独特の冷気が立ち込め始めた{02:08}\n{08:0B}出現に伴う現象だ。\n<wait>	As Yamase fell, a peculiar chill began to gather in the air......\nThe sign of a demon appearing.\n<wait>			draft	reads: 山瀬が倒れると同時に、周囲には独特の冷気が立ち込め始めた‥‥‥\n悪魔出現に伴う現象だ。\n<wait>
 m/MS0010.BIN	0:01	151	7194	1FBA	稲光が起こ{08:51}かと思うと、そこに{08:62}一体の{08:0B}が出現{08:4A}{08:64}。\n{08:4D}は{02:08}ラマシュトゥだ{08:51}。\n<wait>	There was a flash like lightning, and a demon stood there.\nIt was...... Lamashtu.\n<wait>			draft	reads: 稲光が起こったかと思うと、そこには、一体の悪魔が出現していた。\nそれは‥‥‥ラマシュトゥだった。\n<wait>
@@ -237,8 +237,8 @@ m/MS0010.BIN	0:01	229	10518	1FD2	英多：	Eita:			draft
 m/MS0010.BIN	0:01	230	10526	1FD3	マルドゥーク様{08:62}{08:79}石版に封じら{08:60}{08:5F}ろ？\nだっ{08:50}、元に戻す事だ{08:52}、き{08:53}出来るよな？\n<wait>	Lord Marduk got sealed in that tablet, right?\nThen there's got to be a way to bring him back, right?\n<wait>			draft	reads: マルドゥーク様は、その石版に封じられたんだろ？\nだったら、元に戻す事だって、きっと出来るよな？\n<wait>
 m/MS0010.BIN	0:01	231	10614	1FD2	英多：	Eita:			draft	
 m/MS0010.BIN	0:01	232	10622	1FD3	時間は{08:72}かかるかも知れ{08:25}{08:84}さ。\n	Even if it... takes a while.\n			draft	reads: 時間は‥‥かかるかも知れないけどさ。\n
-m/MS0010.BIN	0:01	233	10669	1FB2	黙り込む		Say nothing	v005		menu option, declared width 20 columns
-m/MS0010.BIN	0:01	234	10679	1FB2	うなずく		Nod	v005		menu option, declared width 20 columns
+m/MS0010.BIN	0:01	233	10669	1FB2	黙り込む		Say nothing	v005		menu option, declared width 20 columns; @refalign
+m/MS0010.BIN	0:01	234	10679	1FB2	うなずく		Nod	v005		menu option, declared width 20 columns; @refalign
 m/MS0010.BIN	0:01	235	10709	1FD2	英多：	Eita:			draft	
 m/MS0010.BIN	0:01	236	10717	1FD3	{02:08}‥悪{08:18}よ。\n{08:7A}事、{01:18}に分かる訳{08:25}{08:52}、知{08:52}て言{08:51}{08:5F}。\n<wait>		...Sorry. It's not like you could know.\n<wait>	v005		reads: ‥‥‥‥悪かったよ。\nそんな事、あんたに分かる訳ないって、知ってて言ったんだ。\n<wait>
 m/MS0010.BIN	0:01	237	10777	1FD2	英多：	Eita:			draft	
@@ -249,8 +249,8 @@ m/MS0010.BIN	0:01	241	10959	1FD2	英多：	Eita:			draft
 m/MS0010.BIN	0:01	242	10967	1FD3	{08:7A}筈は{08:25}だろ、{02:0B}にはき{08:53}未来が{08:7B}{08:5F}。\n<wait>		And that's obviously bullshit. Humanity does have a future!\n<wait>	v005		reads: そんな筈はないだろ、人間にはきっと未来があるんだ。\n<wait>
 m/MS0010.BIN	0:01	243	11012	1FD2	英多：	Eita:			draft	
 m/MS0010.BIN	0:01	244	11020	1FD3	だ{08:42}俺{08:4F}、マルドゥーク様が戻{08:52}くる{08:71}、ず{08:53}ず{08:53}、生き続{08:29}よ。\n生きてみ{08:2A}さ！！\n		Just you wait and see, Lord Marduk!\nBy the time you come back, we'll be prospering!\n	v005		reads: だから俺たち、マルドゥーク様が戻ってくるまで、ずっとずっと、生き続けるよ。\n生きてみせるさ！！\n
-m/MS0010.BIN	0:01	245	11114	1FB2	微笑む		Smile	v005		menu option, declared width 20 columns
-m/MS0010.BIN	0:01	246	11122	1FB2	うなずく		Nod	v005		menu option, declared width 20 columns
+m/MS0010.BIN	0:01	245	11114	1FB2	微笑む		Smile	v005		menu option, declared width 20 columns; @refalign
+m/MS0010.BIN	0:01	246	11122	1FB2	うなずく		Nod	v005		menu option, declared width 20 columns; @refalign
 m/MS0010.BIN	0:01	247	11152	1FD2	英多：	Eita:			draft	
 m/MS0010.BIN	0:01	248	11160	1FD3	石版{08:72}持{08:52}く{08:5F}ろ？\n<wait>		So... Will you be taking the tablet with you?\n<wait>	v005		reads: 石版‥‥持ってくんだろ？\n<wait>
 m/MS0010.BIN	0:01	249	11187	1FD2	英多：	Eita:			draft	
@@ -262,7 +262,7 @@ m/MS0010.BIN	0:01	254	11303	1FD3	俺は{08:0F}以外信用し{08:25}{08:84}、{0
 m/MS0010.BIN	0:01	255	11350	1FD2	英多：	Eita:			draft	
 m/MS0010.BIN	0:01	256	11358	1FD3	{02:08}‥{08:81}あ、俺は{08:0F}のとこに戻るよ。\n何か分{08:18}ら、出来{08:50}教えてくれよな。\n<wait>		...Well then, I should be heading back.\nIf you figure something out, please let me know.\n<wait>	v005		reads: ‥‥‥‥じゃあ、俺は仲間のとこに戻るよ。\n何か分かったら、出来たら教えてくれよな。\n<wait>
 m/MS0010.BIN	0:02	0	68	1FD2	女の子：		Girl:	v005		
-m/MS0010.BIN	0:02	1	83	09	マルドゥーク様{08:62}悪い{08:0B}を倒しに行{08:51}{08:52}、英多は言{08:52}たわ。\n<wait>		Eita told me that Lord Marduk has gone to kill the bad demons.\n<wait>	v005		reads: マルドゥーク様は、悪い悪魔を倒しに行ったって、英多は言ってたわ。\n<wait>
+m/MS0010.BIN	0:02	1	83	09	マルドゥーク様{08:62}悪い{08:0B}を倒しに行{08:51}{08:52}、英多は言{08:52}たわ。\n<wait>		Eita told me that Lord Marduk has gone to kill the bad demons.\n<wait>	v005		reads: マルドゥーク様は、悪い悪魔を倒しに行ったって、英多は言ってたわ。\n<wait>; @refalign
 m/MS0010.BIN	0:02	2	146	1FD2	女の子：		Girl:	v005		
 m/MS0010.BIN	0:02	3	156	1FD3	何だか大変な事み{08:4E}で、戻{08:52}こ{08:2F}のがいつか分{08:42}{08:25}{08:52}言{08:52}た{08:42}、\nちょ{08:53}心配{08:74}ど。\n<wait>		We don't know when he's coming back.\nI'm a little worried, if I'm being honest...\n<wait>	v005		reads: 何だか大変な事みたいで、戻ってこれるのがいつか分からないって言ってたから、\nちょっと心配だけど。\n<wait>
 m/MS0010.BIN	0:02	4	240	1FD2	女の子：		Girl:	v005		
@@ -271,14 +271,14 @@ m/MS0010.BIN	0:02	6	309	1FD2	女の子：		Girl:	v005
 m/MS0010.BIN	0:02	7	319	1FD3	私達、信じ{08:2B}{08:5E}！\n		We all believe in him!\n	v005		reads: 私達、信じてるもの！\n
 m/MS0010.BIN	0:02	8	337	00	マルドゥーク様{08:62}私達孤児の父親み{08:4E}な{08:5E}{08:6B}。\n		Lord Marduk is like a father for us orphans.\n	v005		reads: マルドゥーク様は、私達孤児の父親みたいなものなの。\n
 m/MS0010.BIN	0:03	0	24	1FD2	小さな女の子：		Little Girl:	v005		
-m/MS0010.BIN	0:03	1	45	09	{01:16}、きのう、{08:73}おっきなネズミつかま{08:41}の。\n英多兄ちゃ、えらい{08:52}ホメてく{08:60}{08:5F}！\n<wait>		I caught a rat this big yesterday!\nEita told me I did a good job!\n<wait>	v005		reads: あたし、きのう、こんなおっきなネズミつかまえたの。\n英多兄ちゃ、えらいってホメてくれたんだ！\n<wait>
+m/MS0010.BIN	0:03	1	45	09	{01:16}、きのう、{08:73}おっきなネズミつかま{08:41}の。\n英多兄ちゃ、えらい{08:52}ホメてく{08:60}{08:5F}！\n<wait>		I caught a rat this big yesterday!\nEita told me I did a good job!\n<wait>	v005		reads: あたし、きのう、こんなおっきなネズミつかまえたの。\n英多兄ちゃ、えらいってホメてくれたんだ！\n<wait>; @refalign
 m/MS0010.BIN	0:03	2	128	00	英多兄ちゃ、マルドゥークさまがくるまえ{08:62}ナマエ{08:6A}て{08:19}の。\n<wait>	Before Lord Marduk came, Eita didn't even have a name.\n<wait>			draft	reads: 英多兄ちゃ、マルドゥークさまがくるまえは、ナマエなんてなかったの。\n<wait>
 m/MS0010.BIN	0:03	3	193	1FD2	小さな女の子：	Small Girl:			draft	
 m/MS0010.BIN	0:03	4	209	1FD3	{08:74}ど、マルドゥーク様がつけてく{08:60}の。\n<wait>	But Lord Marduk gave him one.\n<wait>			draft	reads: だけど、マルドゥーク様がつけてくれたの。\n<wait>
 m/MS0010.BIN	0:03	5	254	1FD2	小さな女の子：	Small Girl:			draft	
 m/MS0010.BIN	0:03	6	270	1FD3	かっこ{08:7F}よね！\n	Isn't it cool!\n			draft	reads: かっこいいよね！\n
 m/MS0010.BIN	0:04	0	24	1FD2	少年：		Boy:	v005		
-m/MS0010.BIN	0:04	1	37	09	英多のヤツ{08:62}何だか{01:28}と様子が違{08:52}た。\n<wait>		Something's up with Eita today.\n<wait>	v005		reads: 英多のヤツは、何だかいつもと様子が違ってた。\n<wait>
+m/MS0010.BIN	0:04	1	37	09	英多のヤツ{08:62}何だか{01:28}と様子が違{08:52}た。\n<wait>		Something's up with Eita today.\n<wait>	v005		reads: 英多のヤツは、何だかいつもと様子が違ってた。\n<wait>; @refalign
 m/MS0010.BIN	0:04	2	82	1FD2	少年：		Boy:	v005		
 m/MS0010.BIN	0:04	3	90	1FD3	{08:72}え？　元気が無{08:18}か{08:52}？\n<wait>		...Huh? Is he feeling down?\n<wait>	v005		reads: ‥‥え？　元気が無かったかって？\n<wait>
 m/MS0010.BIN	0:04	4	123	1FD2	少年：		Boy:	v005		
@@ -289,7 +289,7 @@ m/MS0010.BIN	0:04	8	301	1FD2	少年：		Boy:	v005
 m/MS0010.BIN	0:04	9	309	1FD3	あいつに{08:62}ホントかなわ{08:25}よ。\n<wait>		He's seriously in a league of his own.\n<wait>	v005		reads: あいつには、ホントかなわないよ。\n<wait>
 m/MS0010.BIN	0:04	10	345	00	{08:45}の{01:37}{08:62}英多な{08:5F}。\n俺{08:6A}かより年下{08:74}ど、ヤツが一番頭の回転が早いし、情け{08:25}{08:46}{08:74}どさ、\n全くかなわ{08:25}{08:52}訳な{08:5F}よ。\n		Eita is our leader.\nHe's younger than me, but also way smarter and stronger.\n	v005		reads: ここのリーダーは、英多なんだ。\n俺なんかより年下だけど、ヤツが一番頭の回転が早いし、情けないことだけどさ、\n全くかなわないって訳なんだよ。\n
 m/MS0010.BIN	0:05	0	24	1FD2	少年：		Boy:	v005		
-m/MS0010.BIN	0:05	1	37	09	マルドゥーク様がいなく{08:16}ら、{08:45}にも{08:5B}、{08:0B}が出る様に{08:59}よな。\n<wait>		With Lord Marduk gone, demons have started showing up again.\n<wait>	v005		reads: マルドゥーク様がいなくなったら、ここにもまた、悪魔が出る様になるよな。\n<wait>
+m/MS0010.BIN	0:05	1	37	09	マルドゥーク様がいなく{08:16}ら、{08:45}にも{08:5B}、{08:0B}が出る様に{08:59}よな。\n<wait>		With Lord Marduk gone, demons have started showing up again.\n<wait>	v005		reads: マルドゥーク様がいなくなったら、ここにもまた、悪魔が出る様になるよな。\n<wait>; @refalign
 m/MS0010.BIN	0:05	2	104	1FD2	少年：		Boy:	v005		
 m/MS0010.BIN	0:05	3	112	1FD3	ま、ど{08:52}事{08:25}さ。\n俺{08:4F}をなめて貰っちゃ困るぜ！\n<wait>		Well, if they want to take us on, then it's their funeral!\n<wait>	v005		reads: ま、どって事ないさ。\n俺たちをなめて貰っちゃ困るぜ！\n<wait>
 m/MS0010.BIN	0:05	4	166	1FD2	少年：		Boy:	v005		
@@ -298,7 +298,7 @@ m/MS0010.BIN	0:05	6	275	00	英多のヤツ、や{08:53}物心つ{08:64}時に親
 m/MS0010.BIN	0:05	7	404	1FD2	少年：		Boy:	v005		
 m/MS0010.BIN	0:05	8	412	1FD3	まあ、{08:45}に{08:40}ヤツら{08:62}皆似た様な境遇{08:74}どさ、\nヤツ{08:62}{08:79}中{08:56}筋金入りだよ。\n		While we're all orphans here,\nyou could say that he's the most orphan-est.\n	v005		reads: まあ、ここにいるヤツらは、皆似た様な境遇だけどさ、\nヤツは、その中でも筋金入りだよ。\n
 m/MS0010.BIN	0:06	0	24	1FD2	女の子：		Girl:	v005		
-m/MS0010.BIN	0:06	1	39	09	マルドゥーク様が集めて下さ{08:51}食料が、{08:76}随分と残っ{08:2B}のよ。\n<wait>		Lord Marduk gathered us bunch of food,\nand we still have lots of it left.\n<wait>	v005		reads: マルドゥーク様が集めて下さった食料が、まだ随分と残ってるのよ。\n<wait>
+m/MS0010.BIN	0:06	1	39	09	マルドゥーク様が集めて下さ{08:51}食料が、{08:76}随分と残っ{08:2B}のよ。\n<wait>		Lord Marduk gathered us bunch of food,\nand we still have lots of it left.\n<wait>	v005		reads: マルドゥーク様が集めて下さった食料が、まだ随分と残ってるのよ。\n<wait>; @refalign
 m/MS0010.BIN	0:06	2	104	1FD2	女の子：		Girl:	v005		
 m/MS0010.BIN	0:06	3	114	1FD3	マルドゥーク様に教わ{08:52}、作り始めた畑も{08:7B}し、{01:23}の間、\nちゃんとや{08:52}{08:29}わ。\n		Then there are the fields he taught us how to tend to.\nAll in all, I believe we are going to be just fine.\n	v005		reads: マルドゥーク様に教わって、作り始めた畑もあるし、しばらくの間、\nちゃんとやってけるわ。\n
 m/MS0010.BIN	0:06	4	187	00	マルドゥーク様に教わ{08:52}、畑{08:52}{08:5E}を作っ{08:2B}の。\n<wait>		Lord Marduk has been teaching us how to grow food.\n<wait>	v005		reads: マルドゥーク様に教わって、畑ってものを作ってるの。\n<wait>
@@ -307,30 +307,30 @@ m/MS0010.BIN	0:06	6	248	1FD3	何だか変{08:6B}よ。\n浄化{08:4B}地面で�
 m/MS0010.BIN	0:06	7	320	1FD2	女の子：		Girl:	v005		
 m/MS0010.BIN	0:06	8	330	1FD3	ず{08:53}昔、{02:0B}は皆こうや{08:52}、食べ物を育てて、自然と共存{08:4A}、\n平和に暮ら{08:4A}た{08:5F}{08:52}{08:72}。\n		Apparently, that's how all people used to get their food\na long, long time ago...\n	v005		reads: ずっと昔、人間は皆こうやって、食べ物を育てて、自然と共存して、\n平和に暮らしてたんだって‥‥。\n
 m/MS0010.BIN	0:07	0	24	1FD2	小さな男の子：		Little Boy:	v005		
-m/MS0010.BIN	0:07	1	45	09	ぼくねぇ、大きく{08:16}ら、マルドゥーク様みたく、\nおおきくてつよい{02:0B}に{08:59}の！！\n<wait>		Once I grow up, I'll be strong like Lord Marduk!\n<wait>	v005		reads: ぼくねぇ、大きくなったら、マルドゥーク様みたく、\nおおきくてつよい人間になるの！！\n<wait>
-m/MS0010.BIN	0:07	2	126	00	英多兄ちゃん{08:62}すぐおこる{08:42}キライだよ！！\n<wait>		I don't like Eita. He gets mad too easily.\n<wait>	v005		reads: 英多兄ちゃんは、すぐおこるからキライだよ！！\n<wait>
+m/MS0010.BIN	0:07	1	45	09	ぼくねぇ、大きく{08:16}ら、マルドゥーク様みたく、\nおおきくてつよい{02:0B}に{08:59}の！！\n<wait>		Once I grow up, I'll be strong like Lord Marduk!\n<wait>	v005		reads: ぼくねぇ、大きくなったら、マルドゥーク様みたく、\nおおきくてつよい人間になるの！！\n<wait>; @refalign
+m/MS0010.BIN	0:07	2	126	00	英多兄ちゃん{08:62}すぐおこる{08:42}キライだよ！！\n<wait>		I don't like Eita. He gets mad too easily.\n<wait>	v005		reads: 英多兄ちゃんは、すぐおこるからキライだよ！！\n<wait>; @refalign
 m/MS0010.BIN	0:08	0	24	1FD2	少年：		Boy:	v005		
-m/MS0010.BIN	0:08	1	37	09	マルドゥーク様{08:62}俺{08:4F}に色んな事を教えてく{08:60}。\n<wait>		Lord Marduk has taught us all kinds of things.\n<wait>	v005		reads: マルドゥーク様は、俺たちに色んな事を教えてくれた。\n<wait>
+m/MS0010.BIN	0:08	1	37	09	マルドゥーク様{08:62}俺{08:4F}に色んな事を教えてく{08:60}。\n<wait>		Lord Marduk has taught us all kinds of things.\n<wait>	v005		reads: マルドゥーク様は、俺たちに色んな事を教えてくれた。\n<wait>; @refalign
 m/MS0010.BIN	0:08	2	90	1FD2	少年：		Boy:	v005		
 m/MS0010.BIN	0:08	3	98	1FD3	マルドゥーク様が留守の間{08:62}{08:79}教えを実行{08:4A}、ちゃんとやるのが目標な{08:5F}。\n		He wants us to be able to survive on our own\neven while he's gone.\n	v005		reads: マルドゥーク様が留守の間は、その教えを実行して、ちゃんとやるのが目標なんだ。\n
 m/MS0010.BIN	0:08	4	168	00	夢を見た{08:5F}。\n夢の中で{08:62}森とか、湖とかに、楽しそうに{08:0B}が暮ら{08:4A}て、\n{02:0B}は{08:7A}{08:0B}に接しながらも、{08:56}ちゃんと生き{08:2B}{08:5F}。\n<wait>		I had a strange dream last night. In it, demons lived in forests\nand lakes, and were able to co-exist peacefully with humans.\n<wait>	v005		reads: 夢を見たんだ。\n夢の中では、森とか、湖とかに、楽しそうに悪魔が暮らしてて、\n人間はそんな悪魔に接しながらも、でもちゃんと生きてるんだ。\n<wait>
 m/MS0010.BIN	0:08	5	287	1FD2	少年：		Boy:	v005		
 m/MS0010.BIN	0:08	6	295	1FD3	本当に、{08:7A}世界になれば{08:7F}のに{08:52}、真剣に思{08:51}よ。\nへへ{08:72}何だか恥ずかしいな。\n		If only reality could be that simple...\nHehe. Thinking about it now, it was a pretty silly dream.\n	v005		reads: 本当に、そんな世界になればいいのにって、真剣に思ったよ。\nへへ‥‥何だか恥ずかしいな。\n
 m/MS0010.BIN	0:09	0	24	1FD2	女の子：		Girl:	v005		
-m/MS0010.BIN	0:09	1	39	09	マルドゥーク様がお留守の間{08:62}やっぱり不安{08:74}れど、\nしっかり頑張らなきゃね！！\n		I feel a little uneasy whenever Lord Marduk isn't around...\nWell, that just means that I've gotta stay vigilant!\n	v005		reads: マルドゥーク様がお留守の間は、やっぱり不安だけれど、\nしっかり頑張らなきゃね！！\n
-m/MS0010.BIN	0:09	2	116	00	マルドゥーク様はと{08:54}お優しい方よ。\n{08:0B}だ{08:42}{08:52}、全部が全部、悪いとは限ら{08:25}わ。\n		Lord Marduk is always so nice to us.\nClearly, demons aren't all bad.\n	v005		reads: マルドゥーク様はとてもお優しい方よ。\n悪魔だからって、全部が全部、悪いとは限らないわ。\n
+m/MS0010.BIN	0:09	1	39	09	マルドゥーク様がお留守の間{08:62}やっぱり不安{08:74}れど、\nしっかり頑張らなきゃね！！\n		I feel a little uneasy whenever Lord Marduk isn't around...\nWell, that just means that I've gotta stay vigilant!\n	v005		reads: マルドゥーク様がお留守の間は、やっぱり不安だけれど、\nしっかり頑張らなきゃね！！\n; @refalign
+m/MS0010.BIN	0:09	2	116	00	マルドゥーク様はと{08:54}お優しい方よ。\n{08:0B}だ{08:42}{08:52}、全部が全部、悪いとは限ら{08:25}わ。\n		Lord Marduk is always so nice to us.\nClearly, demons aren't all bad.\n	v005		reads: マルドゥーク様はとてもお優しい方よ。\n悪魔だからって、全部が全部、悪いとは限らないわ。\n; @refalign
 m/MS0010.BIN	0:0A	0	24	1FD2	小さな男の子：		Little Boy:	v005		
 m/MS0010.BIN	0:0A	1	40	1FD3	英多は優しい{08:5F}ぞ！\nおこるとウルサイ{08:84}、英多はカッコイイ{08:5F}！！\n		I love Eita! He might never shut up, but he's still cool!\n	v005		reads: 英多は優しいんだぞ！\nおこるとウルサイけど、英多はカッコイイんだ！！\n
 m/MS0010.BIN	0:0B	0	24	1FD2	小さな女の子：		Little Girl:	v005		
-m/MS0010.BIN	0:0B	1	45	09	マルドゥーク様{08:72}{01:1E}、もど{08:52}こ{08:25}かな。\n		I hope Lord Marduk comes back soon...\n	v005		reads: マルドゥーク様‥‥はやく、もどってこないかな。\n
-m/MS0010.BIN	0:0B	2	85	18	お兄ちゃん、だ{08:3F}？\nへんなコト{08:4B}ら、英多兄ちゃにやられちゃうよ！\n		Who are you, mister?\nYou better not try anything weird, or else Eita will get you!\n	v005		reads: お兄ちゃん、だあれ？\nへんなコトしたら、英多兄ちゃにやられちゃうよ！\n
+m/MS0010.BIN	0:0B	1	45	09	マルドゥーク様{08:72}{01:1E}、もど{08:52}こ{08:25}かな。\n		I hope Lord Marduk comes back soon...\n	v005		reads: マルドゥーク様‥‥はやく、もどってこないかな。\n; @refalign
+m/MS0010.BIN	0:0B	2	85	18	お兄ちゃん、だ{08:3F}？\nへんなコト{08:4B}ら、英多兄ちゃにやられちゃうよ！\n		Who are you, mister?\nYou better not try anything weird, or else Eita will get you!\n	v005		reads: お兄ちゃん、だあれ？\nへんなコトしたら、英多兄ちゃにやられちゃうよ！\n; @refalign
 m/MS0010.BIN	0:0C	0	24	1FD2	少年：		Boy:	v005		
-m/MS0010.BIN	0:0C	1	37	09	英多のヤツ、何だか変わ{08:51}よ。\n何だか、ヤツの方が年上み{08:4E}に見{08:28}時があ{08:52}、変な感じが{08:8E}よ。\n		Something's up with that Eiya.\nIt's like... Sometimes he acts way older than his age.\n	v005		reads: 英多のヤツ、何だか変わったよ。\n何だか、ヤツの方が年上みたいに見える時があって、変な感じがするよ。\n
-m/MS0010.BIN	0:0C	2	128	18	英多{08:62}マルドゥーク様の一番のお気に入りさ。\nちょ{08:53}、ひがん{08:81}うよな。\n		Eita is Marduk's favourite. To be honest, I'm a little jealous of him.\n	v005		reads: 英多は、マルドゥーク様の一番のお気に入りさ。\nちょっと、ひがんじゃうよな。\n
+m/MS0010.BIN	0:0C	1	37	09	英多のヤツ、何だか変わ{08:51}よ。\n何だか、ヤツの方が年上み{08:4E}に見{08:28}時があ{08:52}、変な感じが{08:8E}よ。\n		Something's up with that Eiya.\nIt's like... Sometimes he acts way older than his age.\n	v005		reads: 英多のヤツ、何だか変わったよ。\n何だか、ヤツの方が年上みたいに見える時があって、変な感じがするよ。\n; @refalign
+m/MS0010.BIN	0:0C	2	128	18	英多{08:62}マルドゥーク様の一番のお気に入りさ。\nちょ{08:53}、ひがん{08:81}うよな。\n		Eita is Marduk's favourite. To be honest, I'm a little jealous of him.\n	v005		reads: 英多は、マルドゥーク様の一番のお気に入りさ。\nちょっと、ひがんじゃうよな。\n; @refalign
 m/MS0010.BIN	0:0D	0	24	1FD2	少年：		Little Boy:	v005		
 m/MS0010.BIN	0:0D	1	32	1FD3	マルドゥーク様{08:62}と{08:54}{08:0B}だ{08:6A}て思え{08:25}。\n俺{08:4F}にと{08:52}{08:62}かけがえの{08:25}存在な{08:5F}よ。\n		It's hard for me to comprehend that Lord Marduk is a demon.\nHe's always so nice for us.\n	v005		reads: マルドゥーク様は、とても悪魔だなんて思えない。\n俺たちにとっては、かけがえのない存在なんだよ。\n
 m/MS0010.BIN	0:0E	0	24	1FD2	英多：		Eita:	v005		
-m/MS0010.BIN	0:0E	1	37	09	マルドゥーク様の事、皆には黙{08:52}てくれよ。\n皆に{08:62}よけいな心配か{08:43}く{08:25}{08:5F}{08:72}。\n<wait>		Please don't tell the others about Lord Marduk.\nI don't want to make them worry...\n<wait>	v005		reads: マルドゥーク様の事、皆には黙っててくれよ。\n皆には、よけいな心配かけたくないんだ‥‥。\n<wait>
+m/MS0010.BIN	0:0E	1	37	09	マルドゥーク様の事、皆には黙{08:52}てくれよ。\n皆に{08:62}よけいな心配か{08:43}く{08:25}{08:5F}{08:72}。\n<wait>		Please don't tell the others about Lord Marduk.\nI don't want to make them worry...\n<wait>	v005		reads: マルドゥーク様の事、皆には黙っててくれよ。\n皆には、よけいな心配かけたくないんだ‥‥。\n<wait>; @refalign
 m/MS0010.BIN	0:0E	2	119	1FD2	英多：		Eita:	v005		
 m/MS0010.BIN	0:0E	3	127	1FD3	俺{08:4F}の事{08:7D}、心配{08:26}ら{08:25}。\nマルドゥーク様や他の誰かに守られなきゃ、何も出来{08:25}{08:52}{08:68}ん{08:81}、\nマルドゥーク様の教えを無駄に{08:8E}事に{08:59}。\n<wait>		As for us, we're going to be just fine.\nMarduk taught us how to survive on our own.\n<wait>	v005		reads: 俺たちの事なら、心配はいらない。\nマルドゥーク様や他の誰かに守られなきゃ、何も出来ないっていうんじゃ、\nマルドゥーク様の教えを無駄にする事になる。\n<wait>
 m/MS0010.BIN	0:0E	4	260	1FD2	英多：		Eita:	v005		
@@ -352,14 +352,14 @@ m/MS0010.BIN	0:0E	19	905	1FD3	マルドゥーク様もさ、おんなじ様な�
 m/MS0010.BIN	0:0E	20	976	1FD2	英多：		Eita:	v005		
 m/MS0010.BIN	0:0E	21	984	1FD3	何だ{08:52}言う{08:5F}よ、一体。\n<wait>		Not sure what that's about...\n<wait>	v005		reads: 何だって言うんだよ、一体。\n<wait>
 m/MS0010.BIN	0:0F	0	24	1FD2	小さな女の子：		Little Girl:	v005		
-m/MS0010.BIN	0:0F	1	45	09	マルドゥーク様が{08:24}間、うんと{08:7F}子にし{08:2B}！\nだ{08:52}{01:16}、{08:7F}子だもん！！\n		I'm gonna be a good girl while Lord Marduk is gone!\nWhy is that? Cuz I'm a good girl!\n	v005		reads: マルドゥーク様がいない間、うんといい子にしてる！\nだってあたし、いい子だもん！！\n
-m/MS0010.BIN	0:0F	2	112	18	マルドゥーク様{08:62}と{08:52}もおっきい{08:5F}よ！\n		Lord Marduk is huge! Like, mega big!\n	v005		reads: マルドゥーク様は、とってもおっきいんだよ！\n
+m/MS0010.BIN	0:0F	1	45	09	マルドゥーク様が{08:24}間、うんと{08:7F}子にし{08:2B}！\nだ{08:52}{01:16}、{08:7F}子だもん！！\n		I'm gonna be a good girl while Lord Marduk is gone!\nWhy is that? Cuz I'm a good girl!\n	v005		reads: マルドゥーク様がいない間、うんといい子にしてる！\nだってあたし、いい子だもん！！\n; @refalign
+m/MS0010.BIN	0:0F	2	112	18	マルドゥーク様{08:62}と{08:52}もおっきい{08:5F}よ！\n		Lord Marduk is huge! Like, mega big!\n	v005		reads: マルドゥーク様は、とってもおっきいんだよ！\n; @refalign
 m/MS0010.BIN	0:10	0	24	1FD2	小さな男の子：		Little Boy:	v005		
 m/MS0010.BIN	0:10	1	40	1FD3	マルドゥーク様は別{08:74}ど、やっぱりアクマはキライだよ！\n<wait>		Other than Lord Marduk, I hate all demons!\n<wait>	v005		reads: マルドゥーク様は別だけど、やっぱりアクマはキライだよ！\n<wait>
 m/MS0010.BIN	0:10	2	101	1FD2	小さな男の子：		Little Boy:	v005		
 m/MS0010.BIN	0:10	3	117	1FD3	キライだもん{02:08}\n		I hate them...\n	v005		reads: キライだもん‥‥‥\n
 m/MS0010.BIN	0:11	0	24	1FD2	女の子：		Girl:	v005		
-m/MS0010.BIN	0:11	1	39	09	{01:16}達{02:08}マルドゥーク様がいなく{08:54}、ちゃんとや{08:52}{08:29}わ。\n<wait>		We'll make do even without Lord Marduk here to look after us.\n<wait>	v005		reads: あたし達‥‥‥マルドゥーク様がいなくても、ちゃんとやってけるわ。\n<wait>
+m/MS0010.BIN	0:11	1	39	09	{01:16}達{02:08}マルドゥーク様がいなく{08:54}、ちゃんとや{08:52}{08:29}わ。\n<wait>		We'll make do even without Lord Marduk here to look after us.\n<wait>	v005		reads: あたし達‥‥‥マルドゥーク様がいなくても、ちゃんとやってけるわ。\n<wait>; @refalign
 m/MS0010.BIN	0:11	2	98	1FD2	女の子：		Girl:	v005		
 m/MS0010.BIN	0:11	3	108	1FD3	そ{08:4A}、いつかマルドゥーク様が帰{08:52}{08:1E}時に驚か{08:67}やる{08:5F}{08:42}！\n		When he comes back, he'll be shocked out of his mind over\nwhat we've been able to accomplish!\n	v005		reads: そして、いつかマルドゥーク様が帰ってきた時に驚かせてやるんだから！\n
 m/MS0010.BIN	0:11	4	221	1E16	{08:79}人が、	So that person is 	That person over there, that's Katsuragi Ayato, yes?\n<wait>	v005	draft	reads: その人が、

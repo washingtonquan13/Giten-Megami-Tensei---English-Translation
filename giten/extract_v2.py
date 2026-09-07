@@ -62,9 +62,20 @@ _GENERATED_NOTE_PREFIXES = (
 )
 
 
+#: Markers this module derives from the record each time.  Anything else that
+#: starts with "@" is a persistent annotation written by another pass and must
+#: survive a re-extract -- ``@refalign``/``@refalign-joined``/``@refalign-merged``
+#: record which rows refalign placed and how, and blanket-dropping every "@" part
+#: destroyed 11,100 of them on 2026-09-06 before this was noticed.
+_GENERATED_MARKERS = frozenset({
+    script.NOEDIT_NOTE, script.UNTILED_NOTE, script.DUPID_NOTE,
+    script.PARTIAL_NOTE, script.PREFIX_NOTE, script.STRADDLE_NOTE,
+})
+
+
 def _generated(part: str) -> bool:
     part = part.strip()
-    return part.startswith("@") or part.startswith(_GENERATED_NOTE_PREFIXES)
+    return part in _GENERATED_MARKERS or part.startswith(_GENERATED_NOTE_PREFIXES)
 
 
 def _prefill(jp: str) -> str:

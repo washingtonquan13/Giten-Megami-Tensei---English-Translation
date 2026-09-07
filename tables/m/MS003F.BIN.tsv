@@ -3,7 +3,7 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS003F.BIN	0:00	0	6	1FD0	{01:2E}の中には誰も{08:24}。\n香を焚くための炉が置かれ{08:14}。\n<wait>	There is no one in the room.\nA censer for burning incense stands here.\n<wait>	A kiln meant for burning incense sits in the middle of the room.\n<wait>	v005	draft	reads: 部屋の中には誰もいない。\n香を焚くための炉が置かれている。\n<wait>
+m/MS003F.BIN	0:00	0	6	1FD0	{01:2E}の中には誰も{08:24}。\n香を焚くための炉が置かれ{08:14}。\n<wait>	There is no one in the room.\nA censer for burning incense stands here.\n<wait>	A kiln meant for burning incense sits in the middle of the room.\n<wait>	v005	draft	reads: 部屋の中には誰もいない。\n香を焚くための炉が置かれている。\n<wait>; @refalign
 m/MS003F.BIN	0:00	1	67	00	9	9				
 m/MS003F.BIN	0:00	2	69	00	:	:				
 m/MS003F.BIN	0:00	3	71	00	;	;				
@@ -16,7 +16,7 @@ m/MS003F.BIN	0:00	9	83	00	A	A
 m/MS003F.BIN	0:00	10	85	00	B	B				
 m/MS003F.BIN	0:00	11	87	00	v{04:FF}	v{04:FF}				reads: v
 m/MS003F.BIN	0:01	0	16	1FB2	香を焚く		Burn an incense	v005		menu option, declared width 20 columns; read-only, copied verbatim @rebase-new @refalign
-m/MS003F.BIN	0:01	1	26	1FB2	立ち去る	Leave	Leave	v005	reviewed	menu option, declared width 20 columns
+m/MS003F.BIN	0:01	1	26	1FB2	立ち去る	Leave	Leave	v005	reviewed	menu option, declared width 20 columns; @refalign
 m/MS003F.BIN	0:02	0	11	00	9	9				
 m/MS003F.BIN	0:02	1	13	00	:	:				
 m/MS003F.BIN	0:02	2	15	00	;	;				
@@ -32,17 +32,17 @@ m/MS003F.BIN	0:02	11	58	0C	{08:6D}香を焚き{08:15}\n	Which incense will you b
 m/MS003F.BIN	0:03	0	40	1B	香の名前    所持数	Incense Name  Held	Revival In.	v005	draft	
 m/MS003F.BIN	0:03	1	157	1B	反魂香	Revival In.	Warrior In.	v005	draft	
 m/MS003F.BIN	0:03	2	188	1B	物夫の香	Warrior In.	Earth In.	v005	draft	
-m/MS003F.BIN	0:03	3	221	1B	大地の香	Earth In.	Earth In.	v005	reviewed	
+m/MS003F.BIN	0:03	3	221	1B	大地の香	Earth In.	Earth In.	v005	reviewed	@refalign
 m/MS003F.BIN	0:03	4	254	1B	天の香	Heaven In.	Soul In.	v005	draft	
 m/MS003F.BIN	0:03	5	285	1B	心魂の香	Soul In.	Demon In.	v005	draft	
-m/MS003F.BIN	0:03	6	318	1B	魔性の香	Demon In.	Demon In.	v005	reviewed	
-m/MS003F.BIN	0:03	7	351	1B	学人の香	Scholar In.	Scholar In.	v005	reviewed	
-m/MS003F.BIN	0:03	8	384	1B	精進の香	Devotion In.	Asceticism In.	v005	draft	
+m/MS003F.BIN	0:03	6	318	1B	魔性の香	Demon In.	Demon In.	v005	reviewed	@refalign
+m/MS003F.BIN	0:03	7	351	1B	学人の香	Scholar In.	Scholar In.	v005	reviewed	@refalign
+m/MS003F.BIN	0:03	8	384	1B	精進の香	Devotion In.	Asceticism In.	v005	draft	@refalign
 m/MS003F.BIN	0:03	9	417	1B	疾風の香	Gale In.	Artisan In.	v005	draft	
 m/MS003F.BIN	0:03	10	450	1B	職人の香	Artisan In.	Noble In.	v005	draft	
-m/MS003F.BIN	0:03	11	483	1B	貴人の香	Noble In.	Noble In.	v005	reviewed	
-m/MS003F.BIN	0:03	12	516	1B	運の香	Luck In.	Luck In.	v005	reviewed	
-m/MS003F.BIN	0:03	13	547	1B	時だましの香	Time-Cheat In.	Time Cheat In.	v005	draft	
+m/MS003F.BIN	0:03	11	483	1B	貴人の香	Noble In.	Noble In.	v005	reviewed	@refalign
+m/MS003F.BIN	0:03	12	516	1B	運の香	Luck In.	Luck In.	v005	reviewed	@refalign
+m/MS003F.BIN	0:03	13	547	1B	時だましの香	Time-Cheat In.	Time Cheat In.	v005	draft	@refalign
 m/MS003F.BIN	0:04	0	0	DATA	反魂香を	Burned Soul-Return Incense. 	Reviving Incense on	ours	draft	
 m/MS003F.BIN	0:04	1	68	1E3E	は{03:10}{08:4B}。\n<wait>	 recovered.\n<wait>	 was healed.\n<wait>	ours	draft	reads: は回復した。\n<wait>
 m/MS003F.BIN	0:04	2	139	1E3E	は復活{08:4B}。\n<wait>	 was revived.\n<wait>	 was revived.\n<wait>	ours	reviewed	reads: は復活した。\n<wait>
@@ -73,15 +73,15 @@ m/MS003F.BIN	0:10	1	131	0C	誰が使用し{08:15}\n	Who will use it?\n	Who will 
 m/MS003F.BIN	0:10	2	242	1FBA	不思議な香りがあたりを包み込む{08:72}\n	A strange fragrance wraps the room......\n	A mysterious fragrance envelops the surroundings......\n	ours	draft	reads: 不思議な香りがあたりを包み込む‥‥\n
 m/MS003F.BIN	0:11	0	40	1B	メンバー名	Member Name	Party:	v005	draft	
 m/MS003F.BIN	0:12	0	75	1E3E	の{03:0D}・{03:0E}が{03:10}{08:4B}。\n	's HP and MP were restored.\n	's HP and MP were restored.\n	ours	reviewed	reads: のＨＰ・ＭＰが回復した。\n
-m/MS003F.BIN	0:13	0	8	1F77	{1E10:0103}何も起こら{08:19}。\n<wait>	{1E10:0103}Nothing happened.\n<wait>	{1E10:0103}Nothing happened.\n<wait>	v005	reviewed	reads: {1E10:0103}何も起こらなかった。\n<wait>
+m/MS003F.BIN	0:13	0	8	1F77	{1E10:0103}何も起こら{08:19}。\n<wait>	{1E10:0103}Nothing happened.\n<wait>	{1E10:0103}Nothing happened.\n<wait>	v005	reviewed	reads: {1E10:0103}何も起こらなかった。\n<wait>; @refalign
 m/MS003F.BIN	0:14	0	2	1FBA	不思議な香りがあたりを包み込む{08:72}\n<wait>	A strange fragrance wraps the room......\n<wait>	A mysterious fragrance envelops the surroundings......\n<wait>	ours	draft	reads: 不思議な香りがあたりを包み込む‥‥\n<wait>
 m/MS003F.BIN	0:14	1	45	1F01	達は意識を失{08:51}。\n<wait>	 and the others lost consciousness.\n<wait>	{04:FF} and the others lost consciousness.\n<wait>	ours	draft	reads: 達は意識を失った。\n<wait>
 m/MS003F.BIN	0:14	2	118	1F01	達は意識を取り戻{08:4B}。\n<wait>	 and the others regained consciousness.\n<wait>	{04:FF} and the others regained consciousness.\n<wait>	ours	draft	reads: 達は意識を取り戻した。\n<wait>
 m/MS003F.BIN	0:18	0	2	1FD2	マイトレーヤ：	Maitreya:	Maitreya:	v005	reviewed	
 m/MS003F.BIN	0:18	1	18	1FD3	ヒーリングを望むの{08:55}ね{08:72}\n<wait>	So you wish for healing......\n<wait>	Do you seek healing?\n<wait>	v005	draft	reads: ヒーリングを望むのですね‥‥\n<wait>
 m/MS003F.BIN	0:18	2	49	1FBA	では{08:72}\n<wait>気持ちを落ち着け{08:72}身体を楽に{08:4A}下{08:49}{02:08}\n	Then......\n<wait>Calm your mind...... and let your body go easy.........\n	Well then...\n<wait>Relax, and get yourself comfortable...\n	v005	draft	reads: では‥‥\n<wait>気持ちを落ち着け‥‥身体を楽にして下さい‥‥‥\n
-m/MS003F.BIN	0:18	3	113	1FB2	言わ{08:60}通りに{08:8E}	Do as told	Comply	v005	draft	reads: 言われた通りにする; menu option, declared width 20 columns
-m/MS003F.BIN	0:18	4	129	1FB2	治療を取り止{08:2E}	Stop the treatment	Never mind	v005	draft	reads: 治療を取り止める; menu option, declared width 20 columns
+m/MS003F.BIN	0:18	3	113	1FB2	言わ{08:60}通りに{08:8E}	Do as told	Comply	v005	draft	reads: 言われた通りにする; menu option, declared width 20 columns; @refalign
+m/MS003F.BIN	0:18	4	129	1FB2	治療を取り止{08:2E}	Stop the treatment	Never mind	v005	draft	reads: 治療を取り止める; menu option, declared width 20 columns; @refalign
 m/MS003F.BIN	0:18	5	176	1FD2	マイトレーヤ：	Maitreya:	Maitreya:	v005	reviewed	
 m/MS003F.BIN	0:18	6	192	1FD3	おや{02:08}？\n<wait>ヒーリングが必要な方{08:62}おられ{08:25}様{08:8F}{02:08}‥\n<wait>	Oh......?\n<wait>It seems no one here is in need of healing............	Oh?\n<wait>It appears that you have no need for healing...\n<wait>	v005	draft	reads: おや‥‥‥？\n<wait>ヒーリングが必要な方は、おられない様だが‥‥‥‥\n<wait>
 m/MS003F.BIN	0:18	7	253	1FD2	マイトレーヤ：	Maitreya:	Maitreya:	v005	reviewed	
@@ -96,8 +96,8 @@ m/MS003F.BIN	0:18	15	514	1FD2	マイトレーヤ：	Maitreya:	Maitreya:	v005	rev
 m/MS003F.BIN	0:18	16	530	1FD3	何の遠慮もいり{02:0A}よ。\n	There is no need to hold back.\n	There is no need to be shy.\n	v005	draft	reads: 何の遠慮もいりませんよ。\n
 m/MS003F.BIN	0:19	0	28	1FD2	天使：	Angel:	Angel:	v005	reviewed	
 m/MS003F.BIN	0:19	1	36	1FD3	{08:8B}来ま{08:4B}ね。\n	You have come. Welcome.\n	State your wish.\n	v005	draft	reads: よく来ましたね。\n
-m/MS003F.BIN	0:19	2	65	1FB2	癒しを求{08:2E}	Seek healing	I seek healing	v005	draft	reads: 癒しを求める; menu option, declared width 20 columns
-m/MS003F.BIN	0:19	3	77	1FB2	立ち去る	Leave	Leave	v005	reviewed	menu option, declared width 20 columns
+m/MS003F.BIN	0:19	2	65	1FB2	癒しを求{08:2E}	Seek healing	I seek healing	v005	draft	reads: 癒しを求める; menu option, declared width 20 columns; @refalign
+m/MS003F.BIN	0:19	3	77	1FB2	立ち去る	Leave	Leave	v005	reviewed	menu option, declared width 20 columns; @refalign
 m/MS003F.BIN	0:19	4	174	1FD2	天使：	Angel:			draft	
 m/MS003F.BIN	0:19	5	182	1FD3	{08:79}必要はあり{02:0A}。	There is no need for that.	You have no need for such. Now, be on your way.\n	v005	draft	reads: その必要はありません。
 m/MS003F.BIN	0:19	6	203	1FD2	天使：	Angel:			draft	

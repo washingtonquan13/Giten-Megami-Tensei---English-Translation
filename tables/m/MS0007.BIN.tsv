@@ -3,7 +3,7 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0007.BIN	0:00	0	2	1FD0	誰も{08:24}{08:72}\n		There's no one here...\n	v005		reads: 誰もいない‥‥\n
+m/MS0007.BIN	0:00	0	2	1FD0	誰も{08:24}{08:72}\n		There's no one here...\n	v005		reads: 誰もいない‥‥\n; @refalign
 m/MS0007.BIN	0:01	0	30	1FD2	看護婦：		Nurse:	v005		
 m/MS0007.BIN	0:01	1	40	1FD3	お大事にぃー！\n<wait>		Take care!\n<wait>	v005		
 m/MS0007.BIN	0:01	2	80	1FD2	看護婦：		Nurse:	v005		
@@ -33,7 +33,7 @@ m/MS0007.BIN	0:01	25	981	1FD2	看護婦：	Nurse:			draft
 m/MS0007.BIN	0:01	26	991	1FD3	診療室{08:71}{08:62}天井のライトが誘導{08:64}し{08:5A}ので、光の動きに従{08:52}\nお進み下{08:49}ねぇ。\n<wait>	The ceiling lights will guide you to the consulting room, so please\nfollow the moving light~.\n<wait>			draft	reads: 診療室までは、天井のライトが誘導いたしますので、光の動きに従って\nお進み下さいねぇ。\n<wait>
 m/MS0007.BIN	0:01	27	1107	1FD2	看護婦：	Nurse:			draft	
 m/MS0007.BIN	0:01	28	1123	1F01	さん{08:55}ねぇ！\n{08:5C}紹介状の提示は不用{08:55}。{08:90}ぞお通り下さぁい。\n<wait>	, isn't it~!\nNo need to show the letter again. Please, go right through~.\n<wait>			draft	reads: さんですねぇ！\nもう紹介状の提示は不用です。どうぞお通り下さぁい。\n<wait>
-m/MS0007.BIN	0:02	0	19	1FD0	日下は手術室で作業を{08:13}{08:69}だ。\n日下の言う通り、{08:03}に会いに行{08:52}時間を潰すのが得策{08:8C}。\n		Kusaka appears to be busy working. Perhaps it'd be for the best\nif you did as he said and went to kill time with Emi.\n	v005		reads: 日下は手術室で作業をしているようだ。\n日下の言う通り、英美に会いに行って時間を潰すのが得策だろう。\n
+m/MS0007.BIN	0:02	0	19	1FD0	日下は手術室で作業を{08:13}{08:69}だ。\n日下の言う通り、{08:03}に会いに行{08:52}時間を潰すのが得策{08:8C}。\n		Kusaka appears to be busy working. Perhaps it'd be for the best\nif you did as he said and went to kill time with Emi.\n	v005		reads: 日下は手術室で作業をしているようだ。\n日下の言う通り、英美に会いに行って時間を潰すのが得策だろう。\n; @refalign
 m/MS0007.BIN	0:03	0	101	1F01	の全てのパーツを、培養槽の中{08:42}慎重に取り出す。\n各パーツ{08:62}{08:4D}ぞれが生き{08:14}{08:69}に脈動{08:13}。\n<wait>	's parts are all carefully taken out of the culture tank.\nEach part pulses as if alive in its own right.\n<wait>			draft	reads: の全てのパーツを、培養槽の中から慎重に取り出す。\n各パーツは、それぞれが生きているように脈動している。\n<wait>
 m/MS0007.BIN	0:03	1	191	1FBA	静かに台の上に置き、パーツを近づけていく{02:08}\n<wait>	Laid quietly on the table, the parts are brought close together......\n<wait>			draft	reads: 静かに台の上に置き、パーツを近づけていく‥‥‥\n<wait>
 m/MS0007.BIN	0:03	2	244	1FC5	やがて、彼女の身体は柔らかく淡い光を放ち、パーツの切断{03:0C}た部分が\n物凄い勢いで修復{03:0C}ていく{02:08}‥\n<wait>	Before long her body gives off a soft, pale light, and the severed edges\nof the parts knit together at tremendous speed.........\n<wait>			draft	reads: やがて、彼女の身体は柔らかく淡い光を放ち、パーツの切断された部分が\n物凄い勢いで修復されていく‥‥‥‥\n<wait>
@@ -46,15 +46,15 @@ m/MS0007.BIN	0:03	8	505	1FBA	{03:0B}{08:4D}もつかの間。	But it lasts only 
 m/MS0007.BIN	0:03	9	527	1F01	は気を失{08:52}{08:1F}。\n心臓が無いせい{08:8C}。\n<wait>	 loses consciousness.\nNo doubt because she has no heart.\n<wait>			draft	reads: は気を失ってしまった。\n心臓が無いせいだろう。\n<wait>
 m/MS0007.BIN	0:03	10	567	1FBA	{08:4D}{08:56}あの{08:69}な反応を示{08:4B}{08:77}。\n奇跡と{08:86}言い{08:69}が無い。\n<wait>	Even so, she showed that reaction.\nThere is no word for it but miracle.\n<wait>			draft	reads: それでもあのような反応を示したのだ。\n奇跡としか言いようが無い。\n<wait>
 m/MS0007.BIN	0:03	11	645	1F71	事の一部始終を見守{08:52}{08:64}{08:31}が口を開{08:64}{08:72}\n<wait>	Rui, who had watched the whole thing, spoke up...\n<wait>			draft	reads: 事の一部始終を見守っていた泪が口を開いた‥‥\n<wait>
-m/MS0007.BIN	0:03	12	690	1FD2	{08:31}：		Rui:	v005		reads: 泪：
-m/MS0007.BIN	0:03	13	696	1FD3	すごいわ{02:08}心臓が無く{08:54}{08:48}だ{08:5E}{02:08}{08:72}\n<wait>		Whoa... Even without her heart, she...\n<wait>	v005		reads: すごいわ‥‥‥心臓が無くてもこれだもの‥‥‥‥‥\n<wait>
-m/MS0007.BIN	0:03	14	737	1FD2	{08:31}：		Rui:	v005		reads: 泪：
-m/MS0007.BIN	0:03	15	743	1FD3	貴方を見て喜{08:5F}わ{08:72}ちゃんと覚えてたのね。\nそりゃそうよね{08:72}好きな人の事だ{08:5E}。\n<wait>		She looked so happy seeing you.\nIt was like she was... staring at her lover.\n<wait>	v005		reads: 貴方を見て喜んだわ‥‥ちゃんと覚えてたのね。\nそりゃそうよね‥‥好きな人の事だもの。\n<wait>
-m/MS0007.BIN	0:03	16	827	1FD2	{08:31}：		Rui:	v005		reads: 泪：
+m/MS0007.BIN	0:03	12	690	1FD2	{08:31}：		Rui:	v005		reads: 泪：; @refalign
+m/MS0007.BIN	0:03	13	696	1FD3	すごいわ{02:08}心臓が無く{08:54}{08:48}だ{08:5E}{02:08}{08:72}\n<wait>		Whoa... Even without her heart, she...\n<wait>	v005		reads: すごいわ‥‥‥心臓が無くてもこれだもの‥‥‥‥‥\n<wait>; @refalign
+m/MS0007.BIN	0:03	14	737	1FD2	{08:31}：		Rui:	v005		reads: 泪：; @refalign
+m/MS0007.BIN	0:03	15	743	1FD3	貴方を見て喜{08:5F}わ{08:72}ちゃんと覚えてたのね。\nそりゃそうよね{08:72}好きな人の事だ{08:5E}。\n<wait>		She looked so happy seeing you.\nIt was like she was... staring at her lover.\n<wait>	v005		reads: 貴方を見て喜んだわ‥‥ちゃんと覚えてたのね。\nそりゃそうよね‥‥好きな人の事だもの。\n<wait>; @refalign
+m/MS0007.BIN	0:03	16	827	1FD2	{08:31}：		Rui:	v005		reads: 泪：; @refalign
 m/MS0007.BIN	0:03	17	833	1FD3	例え死{08:5F}{08:52}、忘{08:60}く{08:25}よね{02:08}‥\n<wait>	Even if you died, you wouldn't want to forget, right.........\n<wait>			draft	reads: 例え死んだって、忘れたくないよね‥‥‥‥\n<wait>
 m/MS0007.BIN	0:03	18	874	1FD0	{08:31}{08:62}背を向けて扉の方に歩いて行{08:51}。\n扉の前で立ち止ま{08:52}、振り返り、真っすぐに	Rui turned her back and walked toward the door.\nAt the door she stopped, turned around, and looked straight at 			draft	reads: 泪は、背を向けて扉の方に歩いて行った。\n扉の前で立ち止まって、振り返り、真っすぐに
 m/MS0007.BIN	0:03	19	955	1F01	を見て{02:08}\n<wait>	......\n<wait>			draft	reads: を見て‥‥‥\n<wait>
-m/MS0007.BIN	0:03	20	994	1FD2	{08:31}：		Rui:	v005		reads: 泪：
+m/MS0007.BIN	0:03	20	994	1FD2	{08:31}：		Rui:	v005		reads: 泪：; @refalign
 m/MS0007.BIN	0:03	21	1000	1FD3	{08:81}あね。	See you, 	Well then, Ayato. Next we meet, it shall be at Baal's Castle.\n<wait>	ours	draft	reads: じゃあね。
 m/MS0007.BIN	0:03	22	1014	1F01	。今度{08:62}{01:08}城で逢{08:89}{08:80}。\n<wait>	. Next time, let's meet at Bael's castle.\n<wait>			draft	reads: 。今度は、バエル城で逢いましょう。\n<wait>
 m/MS0007.BIN	0:03	23	1049	1FD0	{08:4D}{08:74}言うと、{08:31}は去{08:52}行{08:51}。\n<wait>	With just that, Rui left.\n<wait>			draft	reads: それだけ言うと、泪は去って行った。\n<wait>
@@ -66,15 +66,15 @@ m/MS0007.BIN	0:03	28	1326	1FD2	日下：	Kusaka:			draft
 m/MS0007.BIN	0:03	29	1334	1FD3	{08:4D}{08:74}は肝に命じてお{08:1E}まえ。\n	Engrave that much on your mind.\n			draft	reads: それだけは肝に命じておきたまえ。\n
 m/MS0007.BIN	0:03	30	1364	1FD0	培養槽が幾つも並んで{08:40}{02:08}\n<wait>	Rows of culture tanks stand here.........\n<wait>			draft	reads: 培養槽が幾つも並んでいる‥‥‥\n<wait>
 m/MS0007.BIN	0:03	31	1410	1F01	の	's			draft	
-m/MS0007.BIN	0:03	32	1417	09	左腕{02:08}\n<wait>		Left arm...\n<wait>	v005		reads: 左腕‥‥‥\n<wait>
-m/MS0007.BIN	0:03	33	1435	09	右腕{02:08}\n<wait>		Right arm...\n <wait>	v005		reads: 右腕‥‥‥\n<wait>
-m/MS0007.BIN	0:03	34	1453	09	左脚{02:08}\n<wait>		Left leg...\n<wait>	v005		reads: 左脚‥‥‥\n<wait>
-m/MS0007.BIN	0:03	35	1471	09	右脚{02:08}\n<wait>		Right leg...\n<wait>	v005		reads: 右脚‥‥‥\n<wait>
-m/MS0007.BIN	0:03	36	1489	09	腹部{02:08}\n<wait>		Stomach...\n<wait>	v005		reads: 腹部‥‥‥\n<wait>
-m/MS0007.BIN	0:03	37	1507	09	胸部{02:08}\n<wait>		Chest...\n<wait>	v005		reads: 胸部‥‥‥\n<wait>
-m/MS0007.BIN	0:03	38	1522	1FBA	{08:48}らのパーツが培養槽に入れられ、保存{03:0C}{08:14}{02:08}‥\n<wait>		You take the body parts and put them in the tank where\nthey'll be kept safe.\n<wait>	v005		reads: これらのパーツが培養槽に入れられ、保存されている‥‥‥‥\n<wait>
-m/MS0007.BIN	0:04	0	41	1FD0	培養槽の中に{08:62}物言わぬ{08:00}の体があ{08:51}。\n<wait>		You see a body floating inside one of the tanks.\nThere's no mistaking it. It's Hayasaka.\n<wait>	v005		reads: 培養槽の中には、物言わぬ早坂の体があった。\n<wait>
-m/MS0007.BIN	0:04	1	84	1FBA	大火傷の後は修復{03:0C}ていて、今にも動き出しそうな姿だ{08:51}。\n<wait>		With his burns healed,\nhe looks like he could start moving any second now.\n<wait>	v005		reads: 大火傷の後は修復されていて、今にも動き出しそうな姿だった。\n<wait>
+m/MS0007.BIN	0:03	32	1417	09	左腕{02:08}\n<wait>		Left arm...\n<wait>	v005		reads: 左腕‥‥‥\n<wait>; @refalign
+m/MS0007.BIN	0:03	33	1435	09	右腕{02:08}\n<wait>		Right arm...\n <wait>	v005		reads: 右腕‥‥‥\n<wait>; @refalign
+m/MS0007.BIN	0:03	34	1453	09	左脚{02:08}\n<wait>		Left leg...\n<wait>	v005		reads: 左脚‥‥‥\n<wait>; @refalign
+m/MS0007.BIN	0:03	35	1471	09	右脚{02:08}\n<wait>		Right leg...\n<wait>	v005		reads: 右脚‥‥‥\n<wait>; @refalign
+m/MS0007.BIN	0:03	36	1489	09	腹部{02:08}\n<wait>		Stomach...\n<wait>	v005		reads: 腹部‥‥‥\n<wait>; @refalign
+m/MS0007.BIN	0:03	37	1507	09	胸部{02:08}\n<wait>		Chest...\n<wait>	v005		reads: 胸部‥‥‥\n<wait>; @refalign
+m/MS0007.BIN	0:03	38	1522	1FBA	{08:48}らのパーツが培養槽に入れられ、保存{03:0C}{08:14}{02:08}‥\n<wait>		You take the body parts and put them in the tank where\nthey'll be kept safe.\n<wait>	v005		reads: これらのパーツが培養槽に入れられ、保存されている‥‥‥‥\n<wait>; @refalign
+m/MS0007.BIN	0:04	0	41	1FD0	培養槽の中に{08:62}物言わぬ{08:00}の体があ{08:51}。\n<wait>		You see a body floating inside one of the tanks.\nThere's no mistaking it. It's Hayasaka.\n<wait>	v005		reads: 培養槽の中には、物言わぬ早坂の体があった。\n<wait>; @refalign
+m/MS0007.BIN	0:04	1	84	1FBA	大火傷の後は修復{03:0C}ていて、今にも動き出しそうな姿だ{08:51}。\n<wait>		With his burns healed,\nhe looks like he could start moving any second now.\n<wait>	v005		reads: 大火傷の後は修復されていて、今にも動き出しそうな姿だった。\n<wait>; @refalign
 m/MS0007.BIN	0:04	2	147	1FD2	{08:03}：	Emi:			draft	reads: 英美：
 m/MS0007.BIN	0:04	3	153	1FD3	{08:01}{02:08}{08:01}ッ！！\n<wait>	Tatsuya...... Tatsuya!!\n<wait>			draft	reads: 達也‥‥‥達也ッ！！\n<wait>
 m/MS0007.BIN	0:04	4	197	1FD0	たまらなく{08:16}の{08:8C}、{08:03}が培養槽に駆け寄{08:51}。\n<wait>	Unable to bear it any longer, Emi ran to the culture tank.\n<wait>			draft	reads: たまらなくなったのだろう、英美が培養槽に駆け寄った。\n<wait>
@@ -106,7 +106,7 @@ m/MS0007.BIN	0:04	29	1092	1FD2	{08:03}：	Emi:			draft	reads: 英美：
 m/MS0007.BIN	0:04	30	1098	1FD3	{01:23}{08:45}で働いて、{08:01}を生き返ら{08:2A}資金に{08:4B}いの。\n<wait>	I want to work here for a while and raise the money to revive Tatsuya.\n<wait>			draft	reads: しばらくここで働いて、達也を生き返らせる資金にしたいの。\n<wait>
 m/MS0007.BIN	0:04	31	1149	1FD0	{08:03}の突飛な発言に、日下は唖然と{08:4B}表情を{08:13}。\n<wait>	Kusaka looked dumbfounded at Emi's outlandish proposal.\n<wait>			draft	reads: 英美の突飛な発言に、日下は唖然とした表情をしている。\n<wait>
 m/MS0007.BIN	0:04	32	1200	1FD2	{08:03}：	Emi:			draft	reads: 英美：
-m/MS0007.BIN	0:04	33	1206	1FD3	{01:16}は{08:10}出身で、最新医学の知識もあり{08:5A}。\n軽い患者だっ{08:50}、{01:16}{08:56}扱{08:28}し{02:08}\n<wait>		However...\n<wait>Once their soul is gone for good, it cannot be recalled.\n<wait>	v005		reads: あたしはシェルター出身で、最新医学の知識もあります。\n軽い患者だったら、あたしでも扱えるし‥‥‥\n<wait>
+m/MS0007.BIN	0:04	33	1206	1FD3	{01:16}は{08:10}出身で、最新医学の知識もあり{08:5A}。\n軽い患者だっ{08:50}、{01:16}{08:56}扱{08:28}し{02:08}\n<wait>		However...\n<wait>Once their soul is gone for good, it cannot be recalled.\n<wait>	v005		reads: あたしはシェルター出身で、最新医学の知識もあります。\n軽い患者だったら、あたしでも扱えるし‥‥‥\n<wait>; @refalign
 m/MS0007.BIN	0:04	34	1282	1FD2	{08:03}：	Emi:			draft	reads: 英美：
 m/MS0007.BIN	0:04	35	1288	1FD3	学ん{08:56}{08:53}役に立つ{08:69}になり{08:5A}{08:42}{08:72}！\n<wait>	I'll study, and make myself more useful...!\n<wait>			draft	reads: 学んでもっと役に立つようになりますから‥‥！\n<wait>
 m/MS0007.BIN	0:04	36	1329	1FD0	{08:4D}{08:71}、黙{08:52}{08:64}日下が突然笑い出{08:4B}。\n<wait>	Kusaka, silent until then, suddenly burst out laughing.\n<wait>			draft	reads: それまで、黙っていた日下が突然笑い出した。\n<wait>
@@ -126,14 +126,14 @@ m/MS0007.BIN	0:04	49	1713	1FD2	{08:03}：	Emi:			draft	reads: 英美：
 m/MS0007.BIN	0:04	50	1719	1FD3	{08:72}ごめんね。	...I'm sorry, 			draft	reads: ‥‥ごめんね。
 m/MS0007.BIN	0:04	51	1737	1F01	君。{08:3C}君。\n{01:16}、{08:45}で{08:01}を生き返ら{08:2A}為に頑張るわ。\n<wait>	. Sanshirou.\nI'm going to work here to bring Tatsuya back.\n<wait>			draft	reads: 君。三四郎君。\nあたし、ここで達也を生き返らせる為に頑張るわ。\n<wait>
 m/MS0007.BIN	0:04	52	1793	1FD2	{08:03}：	Emi:			draft	reads: 英美：
-m/MS0007.BIN	0:04	53	1805	1F01	君達も頑張{08:52}ね{08:72}\n<wait>	-kun, all of you, do your best too......\n<wait>	No matter how you slice it, you cannot afford to pay for it.\n<wait>\nHearing this, Emi hangs her head.\n{1E10:01003C}\nHowever, it doesn't take her long to lift her gaze once more.\nThis time, there is a look of stern determination on her face.\n<wait>	v005	draft	reads: 君達も頑張ってね‥‥\n<wait>
-m/MS0007.BIN	0:04	54	1869	1FD0	培養槽の中に{08:62}{08:00}の身体が浮かんで{08:40}{02:08}\n<wait>		You can see Hayasaka's body floating inside the tank...\n<wait>	v005		reads: 培養槽の中には、早坂の身体が浮かんでいる‥‥‥\n<wait>
+m/MS0007.BIN	0:04	53	1805	1F01	君達も頑張{08:52}ね{08:72}\n<wait>	-kun, all of you, do your best too......\n<wait>	No matter how you slice it, you cannot afford to pay for it.\n<wait>\nHearing this, Emi hangs her head.\n{1E10:01003C}\nHowever, it doesn't take her long to lift her gaze once more.\nThis time, there is a look of stern determination on her face.\n<wait>	v005	draft	reads: 君達も頑張ってね‥‥\n<wait>; @refalign-joined; @refalign
+m/MS0007.BIN	0:04	54	1869	1FD0	培養槽の中に{08:62}{08:00}の身体が浮かんで{08:40}{02:08}\n<wait>		You can see Hayasaka's body floating inside the tank...\n<wait>	v005		reads: 培養槽の中には、早坂の身体が浮かんでいる‥‥‥\n<wait>; @refalign
 m/MS0007.BIN	0:04	55	1945	1FD2	看護婦：		Nurse:	v005		
 m/MS0007.BIN	0:04	56	1955	1FD3	あら、{08:45}に{08:64}{08:03}{08:52}子{08:7D}、カレシを生き返ら{08:67}、どっか行っちゃ{08:51}わ。\n<wait>		Oh, that Emi girl? She revived her boyfriend and headed off somewhere.\n<wait>	ours		reads: あら、ここにいた英美って子なら、カレシを生き返らせて、どっか行っちゃったわ。\n<wait>
 m/MS0007.BIN	0:04	57	2026	1FD2	看護婦：		Nurse:	v005		
 m/MS0007.BIN	0:04	58	2036	1FD3	確か{02:08}渋谷の方に行く{08:52}言{08:52}たわ。\n		I'm pretty sure..... she said she was headed toward Shibuya.\n	ours		reads: 確か‥‥‥渋谷の方に行くって言ってたわ。\n
 m/MS0007.BIN	0:04	59	2072	1FD0	培養槽がいくつも並んで{08:40}{02:08}‥\n<wait>		A row of cultivation tanks lines the wall...\n<wait>	v005		reads: 培養槽がいくつも並んでいる‥‥‥‥\n<wait>
-m/MS0007.BIN	0:05	0	6	1FD0	培養槽がいくつも並んで{08:40}{02:08}‥\n<wait>身体の一部分と{08:68}物も{08:3F}ば、中には脳み{08:79}みの物もあ{08:51}。\n<wait>		A row of cultivation tanks lines the wall...\n<wait>A few contain entire bodies,\nwhereas others house only brains floating in liquid.\n<wait>	v005		reads: 培養槽がいくつも並んでいる‥‥‥‥\n<wait>身体の一部分という物もあれば、中には脳みそのみの物もあった。\n<wait>
+m/MS0007.BIN	0:05	0	6	1FD0	培養槽がいくつも並んで{08:40}{02:08}‥\n<wait>身体の一部分と{08:68}物も{08:3F}ば、中には脳み{08:79}みの物もあ{08:51}。\n<wait>		A row of cultivation tanks lines the wall...\n<wait>A few contain entire bodies,\nwhereas others house only brains floating in liquid.\n<wait>	v005		reads: 培養槽がいくつも並んでいる‥‥‥‥\n<wait>身体の一部分という物もあれば、中には脳みそのみの物もあった。\n<wait>; @refalign
 m/MS0007.BIN	0:06	0	24	1FD2	看護婦：		Nurse:	v005		
 m/MS0007.BIN	0:06	1	34	1FD3	{01:1C}高い{08:52}言うけれど、サイバネック医療は材料費も、何もかもが高くつくの。\n<wait>		Our customers complain about how expensive cybernetic treatment is,\nbut most of that is the cost of materials.\n<wait>	v005		reads: みんな高いって言うけれど、サイバネック医療は材料費も、何もかもが高くつくの。\n<wait>
 m/MS0007.BIN	0:06	2	113	1FD2	看護婦：		Nurse:	v005		
@@ -322,8 +322,8 @@ m/MS0007.BIN	0:29	0	13	1FD2	日下：		Kusaka:	v005
 m/MS0007.BIN	0:29	1	21	1FD3	君が何の目的で{08:45}に来たかについて{08:62}博士の紹介状に目を通{08:4B}{08:42}、\n説明は不用だ。\n<wait>		So, you're the people my teacher sent over.\n<wait>	v005		reads: 君が何の目的でここに来たかについては、博士の紹介状に目を通したから、\n説明は不用だ。\n<wait>
 m/MS0007.BIN	0:29	2	105	1FD2	日下：		Kusaka:	v005		
 m/MS0007.BIN	0:29	3	113	1FD3	さて、奇妙な腕と{08:68}のを見{08:67}貰おうか？\n<wait>		Let's get straight to it. Care to show me the arm?\n<wait>	v005		reads: さて、奇妙な腕というのを見せて貰おうか？\n<wait>
-m/MS0007.BIN	0:29	4	172	1FB2	素直に見{08:2A}		Show it	v005		reads: 素直に見せる; menu option, declared width 20 columns
-m/MS0007.BIN	0:29	5	184	1FB2	拒否{08:8E}		Refuse	v005		reads: 拒否する; menu option, declared width 20 columns
+m/MS0007.BIN	0:29	4	172	1FB2	素直に見{08:2A}		Show it	v005		reads: 素直に見せる; menu option, declared width 20 columns; @refalign
+m/MS0007.BIN	0:29	5	184	1FB2	拒否{08:8E}		Refuse	v005		reads: 拒否する; menu option, declared width 20 columns; @refalign
 m/MS0007.BIN	0:29	6	212	1FD2	日下：	Kusaka:	Kusaka:	v005	draft	
 m/MS0007.BIN	0:29	7	220	1FD3	見{08:2A}のが嫌と言うので{08:62}何もやり様が{08:25}な。\n馬鹿々々しい事に、付き合わせ{08:25}でく{08:60}まえ。\n<wait>	If you won't even show me, there's nothing I can do.\nDon't waste my time with nonsense.\n<wait>	How am I supposed to help you if you won't even show the thing to me?\n<wait>	v005	draft	reads: 見せるのが嫌と言うのでは、何もやり様がないな。\n馬鹿々々しい事に、付き合わせないでくれたまえ。\n<wait>
 m/MS0007.BIN	0:29	8	312	1FD2	日下：		Kusaka:	v005		
@@ -343,7 +343,7 @@ m/MS0007.BIN	0:29	21	692	1FD3	天然ウイスキー{08:55}わ{08:72}で{08:62}�
 m/MS0007.BIN	0:29	22	743	1FD0	看護婦{08:62}	The nurse handed 	The nurse hands you a glass of whiskey.\nYou can see her swaying her hips as she walks away.\n<wait>	v005	draft	reads: 看護婦は、
 m/MS0007.BIN	0:29	23	757	1F01	にウイスキーのグラスを渡し、腰をくねらせながら去{08:52}行{08:51}。\n<wait>	 a glass of whiskey and sashayed off.\n<wait>			draft	reads: にウイスキーのグラスを渡し、腰をくねらせながら去って行った。\n<wait>
 m/MS0007.BIN	0:29	24	826	1F01	{08:62}素直に、グラスに満た{03:0C}た、琥珀色の液体を飲みながら、\n日下が戻るのを待{08:51}{02:08}\n<wait>	 obediently sipped the amber liquid that filled the glass while he\nwaited for Kusaka to return......\n<wait>			draft	reads: は、素直に、グラスに満たされた、琥珀色の液体を飲みながら、\n日下が戻るのを待った‥‥‥\n<wait>
-m/MS0007.BIN	0:29	25	910	1FD2	{08:03}：	Emi:	Kusaka:	v005	draft	reads: 英美：
+m/MS0007.BIN	0:29	25	910	1FD2	{08:03}：	Emi:	Kusaka:	v005	draft	reads: 英美：; @refalign
 m/MS0007.BIN	0:29	26	916	1FD3	あの看護婦{08:72}ホントに看護婦免許持っ{08:2B}のかしら{08:72}？\n<wait>	That nurse... does she really have a nursing license......?\n<wait>			draft	reads: あの看護婦‥‥ホントに看護婦免許持ってるのかしら‥‥？\n<wait>
 m/MS0007.BIN	0:29	27	1005	1FD2	日下：	Kusaka:			draft	
 m/MS0007.BIN	0:29	28	1013	1FD3	お待たせ{08:4B}ね。\n<wait>	Sorry to keep you waiting.\n<wait>			draft	reads: お待たせしたね。\n<wait>
@@ -364,15 +364,15 @@ m/MS0007.BIN	0:29	42	1570	1FD3	{08:90}だい？\n悪い取引では無いと思�
 m/MS0007.BIN	0:29	43	1618	1FD0	日下はそう言うと、	With that, Kusaka waited for 			draft	
 m/MS0007.BIN	0:29	44	1642	1F01	の返答を待{08:51}。\n<wait>	's answer.\n<wait>			draft	reads: の返答を待った。\n<wait>
 m/MS0007.BIN	0:29	45	1665	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>			draft	reads: ＞どうしますか？\n<wait>
-m/MS0007.BIN	0:29	46	1692	1FB2	条件をのむ		Sounds good	v005		menu option, declared width 20 columns
-m/MS0007.BIN	0:29	47	1704	1FB2	断る！		No way!	v005		menu option, declared width 20 columns
+m/MS0007.BIN	0:29	46	1692	1FB2	条件をのむ		Sounds good	v005		menu option, declared width 20 columns; @refalign
+m/MS0007.BIN	0:29	47	1704	1FB2	断る！		No way!	v005		menu option, declared width 20 columns; @refalign
 m/MS0007.BIN	0:29	48	1730	1FD2	日下：		Kusaka:	v005		
 m/MS0007.BIN	0:29	49	1738	1FD3	そうか{08:72}大変に残念だよ。\n		Hmph... That's most unfortunate.\n	v005		reads: そうか‥‥大変に残念だよ。\n
 m/MS0007.BIN	0:29	50	1765	1FD2	日下：	Kusaka:	Kusaka:	v005	draft	
 m/MS0007.BIN	0:29	51	1773	1FD3	{01:3C}{08:74}忠告{08:4A}おこう。\n{08:79}パーツは確かに細胞単体で、生命活動を維持{08:13}が、\n{08:4D}も養分の摂取を絶たれ{08:50}、後は干{08:42}びて行く運命だ。\n<wait>	Let me give you one piece of advice.\nThat part is indeed sustaining life as a single cell, but cut off from\nnutrients, it is fated to dry up.\n<wait>	Let me give you one piece of advice.\nThat part is indeed a single cell sustaining its own life,\nbut cut off from nutrients, it's fated to wither away.\n<wait>	ours	draft	reads: ひとつだけ忠告しておこう。\nそのパーツは確かに細胞単体で、生命活動を維持しているが、\nそれも養分の摂取を絶たれたら、後は干からびて行く運命だ。\n<wait>
 m/MS0007.BIN	0:29	52	1900	1FD2	日下：		Kusaka:	v005		
 m/MS0007.BIN	0:29	53	1908	1FD3	培養槽での管理をし{08:25}の{08:7C}、人体に{08:56}移植{08:4A}、養分の補給を{08:8E}{08:86}{08:25}。\n<wait>		If you don't keep it maintained in a tank,\nyour only option is grafting it onto a body for nutrients.\n<wait>	ours		reads: 培養槽での管理をしないのならば、人体にでも移植して、養分の補給をするしかない。\n<wait>
-m/MS0007.BIN	0:29	54	1979	1FD2	{08:03}：	Emi:	Kusaka:	v005	draft	reads: 英美：
+m/MS0007.BIN	0:29	54	1979	1FD2	{08:03}：	Emi:	Kusaka:	v005	draft	reads: 英美：; @refalign
 m/MS0007.BIN	0:29	55	1985	1FD3	{08:72}{08:7A}{08:72}\n<wait>	.........No.........\n<wait>	...No way...\n<wait>	ours	draft	reads: ‥‥そんな‥‥\n<wait>
 m/MS0007.BIN	0:29	56	2000	1FD2	日下：	Kusaka:			draft	
 m/MS0007.BIN	0:29	57	2008	1FD3	ま、{08:4D}なりの金額を支払う{08:7D}、干{08:42}びたパーツの再生も、\n私{08:7C}、出来{08:25}相談では無いがね{02:08}。\n<wait>		Well, if you're willing to pay accordingly, I could probably manage to\nrevive a withered part..... for the right price.\n<wait>	ours		reads: ま、それなりの金額を支払うなら、干からびたパーツの再生も、\n私ならば、出来ない相談では無いがね‥‥‥。\n<wait>
@@ -641,14 +641,14 @@ m/MS0007.BIN	0:33	2	72	1FD2	日下：		Kusaka:	v005
 m/MS0007.BIN	0:33	3	80	1FD3	治療室に行{08:52}{08:42}、{08:5B}来ると{08:7F}。\n		Please get yourselves treated before we talk.\n	v005		reads: 治療室に行ってから、また来るといい。\n
 m/MS0007.BIN	0:33	4	116	1F01	君か。何の用だね？\n<wait>	-kun, is it. What do you want?\n<wait>	Ah, Katsuragi. What do you need?\n<wait>	v005	draft	
 m/MS0007.BIN	0:33	5	143	1FD0	{08:79}言葉が終わるか終わら{08:25}かの内に、{08:03}が{03:12}出{08:4B}。\n<wait>		The words have barely left the man's mouth when Emi cuts in.\n<wait>	v005		reads: その言葉が終わるか終わらないかの内に、英美が切り出した。\n<wait>
-m/MS0007.BIN	0:33	6	198	1FD2	{08:03}：		Kusaka:	v005		reads: 英美：
+m/MS0007.BIN	0:33	6	198	1FD2	{08:03}：		Kusaka:	v005		reads: 英美：; @refalign
 m/MS0007.BIN	0:33	7	204	1FD3	貴方、死体回収業者{08:42}、死体を買い取っ{08:14}ん{08:55}{08:52}ね。\n<wait>		You purchase corpses from the corpse collectors, right?\n<wait>	v005		reads: 貴方、死体回収業者から、死体を買い取っているんですってね。\n<wait>
 m/MS0007.BIN	0:33	8	261	1FD2	日下：	Kusaka:			draft	
 m/MS0007.BIN	0:33	9	269	1FD3	ああ。研究用にな。\n<wait>	Yes. For research.\n<wait>			draft	
-m/MS0007.BIN	0:33	10	296	1FD2	{08:03}：		Kusaka:	v005		reads: 英美：
-m/MS0007.BIN	0:33	11	302	1FD3	{08:79}中に、大火傷を負{08:51}、背の高い男の遺体が無{08:18}？\n<wait>		Please get yourselves treated before we talk.\n	v005		reads: その中に、大火傷を負った、背の高い男の遺体が無かった？\n<wait>
+m/MS0007.BIN	0:33	10	296	1FD2	{08:03}：		Kusaka:	v005		reads: 英美：; @refalign
+m/MS0007.BIN	0:33	11	302	1FD3	{08:79}中に、大火傷を負{08:51}、背の高い男の遺体が無{08:18}？\n<wait>		Please get yourselves treated before we talk.\n	v005		reads: その中に、大火傷を負った、背の高い男の遺体が無かった？\n<wait>; @refalign
 m/MS0007.BIN	0:33	12	357	1FD2	日下：		Ah, Katsuragi. What do you need?\n<wait>	v005		
-m/MS0007.BIN	0:33	13	365	1FD3	{02:08}ああ{08:72}そう言えば。\n{02:08}ついて{08:1E}まえ。\n		The words have barely left the man's mouth when Emi cuts in.\n<wait>	v005		reads: ‥‥‥ああ‥‥そう言えば。\n‥‥‥ついてきたまえ。\n
+m/MS0007.BIN	0:33	13	365	1FD3	{02:08}ああ{08:72}そう言えば。\n{02:08}ついて{08:1E}まえ。\n		The words have barely left the man's mouth when Emi cuts in.\n<wait>	v005		reads: ‥‥‥ああ‥‥そう言えば。\n‥‥‥ついてきたまえ。\n; @refalign
 m/MS0007.BIN	0:34	0	2	1FD2	日下：		Kusaka:	v005		
 m/MS0007.BIN	0:34	1	10	1FD3	何だ。君か。\n<wait>		Oh, you again.\n<wait>	v005		
 m/MS0007.BIN	0:34	2	31	1FD2	日下：		Kusaka:	v005		
@@ -657,8 +657,8 @@ m/MS0007.BIN	0:34	4	96	1FD2	日下：		Kusaka:	v005
 m/MS0007.BIN	0:34	5	104	1FD3	まずは{08:79}、奇妙な腕と{08:68}のを見{08:67}貰わ{08:25}事に{08:62}何も言えんな。\n		Let's start with you showing me that arm.\n	v005		reads: まずはその、奇妙な腕というのを見せて貰わない事には、何も言えんな。\n
 m/MS0007.BIN	0:34	6	166	1FD2	日下：		Kusaka:	v005		
 m/MS0007.BIN	0:34	7	174	1FD3	条件さえのん{08:56}らえれば、培養槽を提供し{08:69}。\n{08:90}{08:8E}かは君の自由だ。\n		If you can agree to my terms, then I will lend you a cultivation tank.\nWhether you think that's fair or not, that's up to you.\n	v005		reads: 条件さえのんでもらえれば、培養槽を提供しよう。\nどうするかは君の自由だ。\n
-m/MS0007.BIN	0:34	8	254	1FB2	条件をのむ		Agree	v005		menu option, declared width 20 columns
-m/MS0007.BIN	0:34	9	266	1FB2	拒否{08:8E}		Refuse	v005		reads: 拒否する; menu option, declared width 20 columns
+m/MS0007.BIN	0:34	8	254	1FB2	条件をのむ		Agree	v005		menu option, declared width 20 columns; @refalign
+m/MS0007.BIN	0:34	9	266	1FB2	拒否{08:8E}		Refuse	v005		reads: 拒否する; menu option, declared width 20 columns; @refalign
 m/MS0007.BIN	0:34	10	303	1F01	{08:62}日下の出{08:4B}条件をのむ事に{08:4B}。\n<wait>	 decided to accept Kusaka's terms.\n<wait>			draft	reads: は、日下の出した条件をのむ事にした。\n<wait>
 m/MS0007.BIN	0:34	11	342	1FD2	日下：	Kusaka:			draft	
 m/MS0007.BIN	0:34	12	350	1FD3	よろしい、取引は成立だ。\nで{08:62}パーツは培養槽に入れ、厳重に保存{02:0D}頂く。\n<wait>	Very well, we have a deal.\nThe parts go into a culture tank, to be kept under strict care.\n<wait>			draft	reads: よろしい、取引は成立だ。\nでは、パーツは培養槽に入れ、厳重に保存させて頂く。\n<wait>
@@ -678,10 +678,10 @@ m/MS0007.BIN	0:35	6	154	1FD2	日下：		Kusaka:	v005
 m/MS0007.BIN	0:35	7	162	1FD3	{03:0B}まず、君の{08:0F}の{08:46}を考えてあ{08:44}まえ。\n{02:08}話は{08:4D}{08:42}にし{08:69}。\n		However, first, you should really have your friends treated.\nWe can talk after that.\n	v005		reads: しかし、まず、君の仲間のことを考えてあげたまえ。\n‥‥‥話はそれからにしよう。\n
 m/MS0007.BIN	0:35	8	221	1FD2	日下：		Kusaka:	v005		
 m/MS0007.BIN	0:35	9	229	1FD3	{08:4D}で、君は{08:90}{08:4B}い{08:77}ね？\n		What do you need?\n	v005		reads: それで、君はどうしたいのだね？\n
-m/MS0007.BIN	0:35	10	268	1FB2	パーツの引き取り		Leave parts	v005		menu option, declared width 20 columns
-m/MS0007.BIN	0:35	11	286	1FB2	再生		Revitalize	v005		menu option, declared width 20 columns
-m/MS0007.BIN	0:35	12	292	1FB2	復活		Revive her	v005		menu option, declared width 20 columns
-m/MS0007.BIN	0:35	13	298	1FB2	何{08:56}{08:25}		Nothing	v005		reads: 何でもない; menu option, declared width 20 columns
+m/MS0007.BIN	0:35	10	268	1FB2	パーツの引き取り		Leave parts	v005		menu option, declared width 20 columns; @refalign
+m/MS0007.BIN	0:35	11	286	1FB2	再生		Revitalize	v005		menu option, declared width 20 columns; @refalign
+m/MS0007.BIN	0:35	12	292	1FB2	復活		Revive her	v005		menu option, declared width 20 columns; @refalign
+m/MS0007.BIN	0:35	13	298	1FB2	何{08:56}{08:25}		Nothing	v005		reads: 何でもない; menu option, declared width 20 columns; @refalign
 m/MS0007.BIN	0:35	14	411	00	ｮ	ｮ				
 m/MS0007.BIN	0:35	15	413	00	ｭ	ｭ				
 m/MS0007.BIN	0:35	16	415	00	ｱ	ｱ				
@@ -820,11 +820,11 @@ m/MS0007.BIN	0:39	8	307	1FD2	看護婦の声：	Nurse's Voice:			draft
 m/MS0007.BIN	0:39	9	321	1FD3	はぁい！\n<wait>	Yes sir~!\n<wait>			draft	
 m/MS0007.BIN	0:39	10	362	1FD2	日下：	Kusaka:			draft	
 m/MS0007.BIN	0:39	11	370	1FD3	さて{08:72}本題に移ろうか。\n<wait>	Now then... let's get down to business.\n<wait>			draft	reads: さて‥‥本題に移ろうか。\n<wait>
-m/MS0007.BIN	0:3A	0	52	09	{01:03}はまるで、見て{08:26}け{08:25}物を見た{08:69}な面持ちで、\nきびすをかえし、{08:47}{01:2E}を後に{08:4B}。\n		This feels like something you shouldn't be seeing.\nNewton decides to leave the room.\n	v005		reads: ニュートンはまるで、見てはいけない物を見たような面持ちで、\nきびすをかえし、この部屋を後にした。\n
-m/MS0007.BIN	0:3A	1	129	00	まるで、見て{08:26}け{08:25}物を見て{08:1F}様な、薄気味の悪い感覚に襲われ、\n		This feels like something you shouldn't be seeing.\nA shiver runs down 	v005		reads: まるで、見てはいけない物を見てしまった様な、薄気味の悪い感覚に襲われ、\n
-m/MS0007.BIN	0:3A	2	193	0D	は身震いを{08:4B}。\n<wait>		's spine.\n<wait>	v005		reads: は身震いをした。\n<wait>
-m/MS0007.BIN	0:3A	3	214	1FBA	{08:73}場所に{08:62}あまり長居は{08:4B}く{08:19}。\n		You all of a sudden don't want to be here anymore.\n	v005		reads: こんな場所には、あまり長居はしたくなかった。\n
-m/MS0007.BIN	0:3A	4	248	0D	{08:62}さっさと{01:2E}を後に{08:4B}。\n<wait>		 decides to leave the room.\n<wait>	v005		reads: は、さっさと部屋を後にした。\n<wait>
+m/MS0007.BIN	0:3A	0	52	09	{01:03}はまるで、見て{08:26}け{08:25}物を見た{08:69}な面持ちで、\nきびすをかえし、{08:47}{01:2E}を後に{08:4B}。\n		This feels like something you shouldn't be seeing.\nNewton decides to leave the room.\n	v005		reads: ニュートンはまるで、見てはいけない物を見たような面持ちで、\nきびすをかえし、この部屋を後にした。\n; @refalign
+m/MS0007.BIN	0:3A	1	129	00	まるで、見て{08:26}け{08:25}物を見て{08:1F}様な、薄気味の悪い感覚に襲われ、\n		This feels like something you shouldn't be seeing.\nA shiver runs down 	v005		reads: まるで、見てはいけない物を見てしまった様な、薄気味の悪い感覚に襲われ、\n; @refalign
+m/MS0007.BIN	0:3A	2	193	0D	は身震いを{08:4B}。\n<wait>		's spine.\n<wait>	v005		reads: は身震いをした。\n<wait>; @refalign
+m/MS0007.BIN	0:3A	3	214	1FBA	{08:73}場所に{08:62}あまり長居は{08:4B}く{08:19}。\n		You all of a sudden don't want to be here anymore.\n	v005		reads: こんな場所には、あまり長居はしたくなかった。\n; @refalign
+m/MS0007.BIN	0:3A	4	248	0D	{08:62}さっさと{01:2E}を後に{08:4B}。\n<wait>		 decides to leave the room.\n<wait>	v005		reads: は、さっさと部屋を後にした。\n<wait>; @refalign
 m/MS0007.BIN	0:3B	0	24	0B	{08:03}	{08:03}	Katsuragi	v005		reads: 英美
 m/MS0007.BIN	0:3B	1	39	0B	{08:3C}	{08:3C}	Emi	v005		reads: 三四郎
 m/MS0007.BIN	0:3B	2	54	0B	{08:31}	{08:31}	Sanshirou	v005		reads: 泪

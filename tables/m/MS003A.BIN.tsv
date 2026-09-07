@@ -3,27 +3,27 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS003A.BIN	0:10	0	0	DATA	何も起こら{08:19}。\n<wait>		Nothing happened.\n<wait>	v005		reads: 何も起こらなかった。\n<wait>
+m/MS003A.BIN	0:10	0	0	DATA	何も起こら{08:19}。\n<wait>		Nothing happened.\n<wait>	v005		reads: 何も起こらなかった。\n<wait>; @refalign
 m/MS003A.BIN	0:11	0	0	DATA	！？\n		!?\n	ours		
 m/MS003A.BIN	0:11	1	41	1E3E	の{03:0D}が{03:10}{08:4B}。\n<wait>		's HP was restored.\n<wait>	ours		reads: のＨＰが回復した。\n<wait>
 m/MS003A.BIN	0:12	0	0	DATA	！？\n	!?\n			draft	
-m/MS003A.BIN	0:12	1	49	1E3E	の{03:0D}・{03:0E}が{03:10}{08:4B}。\n<wait>		 recovered {03:0E}{03:0D}.\n<wait>	v005		reads: のＨＰ・ＭＰが回復した。\n<wait>
+m/MS003A.BIN	0:12	1	49	1E3E	の{03:0D}・{03:0E}が{03:10}{08:4B}。\n<wait>		 recovered {03:0E}{03:0D}.\n<wait>	v005		reads: のＨＰ・ＭＰが回復した。\n<wait>; @refalign
 m/MS003A.BIN	0:13	0	26	0C	！？\n	!?\n			draft	
-m/MS003A.BIN	0:13	1	66	1E3E	は毒に冒{03:0C}た。\n<wait>		 was poisoned.\n<wait>	v005		reads: は毒に冒された。\n<wait>
+m/MS003A.BIN	0:13	1	66	1E3E	は毒に冒{03:0C}た。\n<wait>		 was poisoned.\n<wait>	v005		reads: は毒に冒された。\n<wait>; @refalign
 m/MS003A.BIN	0:14	0	13	0C	！？\n	!?\n			draft	
-m/MS003A.BIN	0:14	1	53	1E3E	は強烈な毒に冒{03:0C}た。\n<wait>		 was badly poisoned.\n<wait>	v005		reads: は強烈な毒に冒された。\n<wait>
+m/MS003A.BIN	0:14	1	53	1E3E	は強烈な毒に冒{03:0C}た。\n<wait>		 was badly poisoned.\n<wait>	v005		reads: は強烈な毒に冒された。\n<wait>; @refalign
 m/MS003A.BIN	0:15	0	13	0C	！？\n	!?\n			draft	
-m/MS003A.BIN	0:15	1	53	1E3E	は麻痺{08:4B}。\n<wait>		 was paralysed.\n<wait>	v005		reads: は麻痺した。\n<wait>
+m/MS003A.BIN	0:15	1	53	1E3E	は麻痺{08:4B}。\n<wait>		 was paralysed.\n<wait>	v005		reads: は麻痺した。\n<wait>; @refalign
 m/MS003A.BIN	0:16	0	13	0C	！？\n	!?\n			draft	
-m/MS003A.BIN	0:16	1	49	1FC4	泉の守護者の呪いか、身体が麻痺{08:4A}{08:1F}。\n<wait>		You've been paralysed by the spring's curse.\n<wait>	v005		reads: 泉の守護者の呪いか、身体が麻痺してしまった。\n<wait>
+m/MS003A.BIN	0:16	1	49	1FC4	泉の守護者の呪いか、身体が麻痺{08:4A}{08:1F}。\n<wait>		You've been paralysed by the spring's curse.\n<wait>	v005		reads: 泉の守護者の呪いか、身体が麻痺してしまった。\n<wait>; @refalign
 m/MS003A.BIN	0:17	0	0	DATA	！？\n	!?\n			draft	
-m/MS003A.BIN	0:17	1	36	1FC4	強力な呪いにより身体が石化{08:4A}{08:1F}。\n<wait>		You've been turned into stone by a powerful curse.\n<wait>	v005		reads: 強力な呪いにより身体が石化してしまった。\n<wait>
-m/MS003A.BIN	0:18	0	0	DATA	何の変化も見られ{08:25}。\n<wait>		Nothing seems to have happened.\n<wait>	v005		reads: 何の変化も見られない。\n<wait>
+m/MS003A.BIN	0:17	1	36	1FC4	強力な呪いにより身体が石化{08:4A}{08:1F}。\n<wait>		You've been turned into stone by a powerful curse.\n<wait>	v005		reads: 強力な呪いにより身体が石化してしまった。\n<wait>; @refalign
+m/MS003A.BIN	0:18	0	0	DATA	何の変化も見られ{08:25}。\n<wait>		Nothing seems to have happened.\n<wait>	v005		reads: 何の変化も見られない。\n<wait>; @refalign
 m/MS003A.BIN	0:19	0	132	0C	！？\n	!?\n			draft	
 m/MS003A.BIN	0:19	1	170	1F2F	が黄金色に輝き始めた。\n<wait>	began to glow golden.\n<wait>			draft	
-m/MS003A.BIN	0:19	2	207	1F01	達は 		 began glowing with golden light.\n<wait>	v005		
-m/MS003A.BIN	0:19	3	216	1F2F	金塊？		You obtained 	v005		
-m/MS003A.BIN	0:19	4	226	1F2F	 を入手{08:4B}\n<wait>		"a golden nuget"\n?\n<wait>	v005		reads:  を入手した\n<wait>
+m/MS003A.BIN	0:19	2	207	1F01	達は 		 began glowing with golden light.\n<wait>	v005		@refalign
+m/MS003A.BIN	0:19	3	216	1F2F	金塊？		You obtained 	v005		@refalign
+m/MS003A.BIN	0:19	4	226	1F2F	 を入手{08:4B}\n<wait>		"a golden nuget"\n?\n<wait>	v005		reads:  を入手した\n<wait>; @refalign-joined; @refalign
 m/MS003A.BIN	0:1A	0	0	DATA	！？\n	!?\n			draft	
 m/MS003A.BIN	0:1A	1	54	1FD2	泉の精霊：		Spring Spirit:	v005		
 m/MS003A.BIN	0:1A	2	66	1FD3	{08:72}私は{08:47}泉に棲む精霊。\n<wait>		...I am the spirit that dwells in this spring.\n<wait>	v005		reads: ‥‥私はこの泉に棲む精霊。\n<wait>
@@ -53,7 +53,7 @@ m/MS003A.BIN	0:1A	25	990	1FD2	泉の精霊：		Spring Spirit:	v005
 m/MS003A.BIN	0:1A	26	1002	1FD3	そうか。では{08:47}普通の	I see. Then this ordinary 	Is that so? Very well then.\nThis regular 	v005	draft	reads: そうか。ではこの普通の
 m/MS003A.BIN	0:1A	27	1035	1F2F	だな。\n持{08:52}ゆくが良い。\n		 is yours to take.\n	v005		reads: だな。\n持ってゆくが良い。\n
 m/MS003A.BIN	0:1A	28	1064	1FD2	泉の精霊：	Spring Spirit:	Spring Spirit:	v005	draft	
-m/MS003A.BIN	0:1A	29	1076	1FD3	？{08:72}そうか、では{08:48}はお前に返すとし{08:69}。\nいや、正直な{08:46}だな。感心、感心{08:72}\n		Oh? Very well then. I shall return this to you.\nHow honest. It is admirable...\n	v005		reads: ？‥‥そうか、ではこれはお前に返すとしよう。\nいや、正直なことだな。感心、感心‥‥\n
+m/MS003A.BIN	0:1A	29	1076	1FD3	？{08:72}そうか、では{08:48}はお前に返すとし{08:69}。\nいや、正直な{08:46}だな。感心、感心{08:72}\n		Oh? Very well then. I shall return this to you.\nHow honest. It is admirable...\n	v005		reads: ？‥‥そうか、ではこれはお前に返すとしよう。\nいや、正直なことだな。感心、感心‥‥\n; @refalign
 m/MS003A.BIN	0:1A	30	1153	1FD2	泉の精霊：		Spring Spirit:	v005		
 m/MS003A.BIN	0:1A	31	1165	1FD3	{08:72}うむ、{08:79}答えを選ぶ{08:46}は私には分か{08:52}{08:64}。\n誠実なお前には{08:48}を授け{08:69}{08:72}\n	...Mm, I knew you would choose that answer.\nTo one so honest, I grant this...\n	Yes, I knew you would say that... Very well.\nAs a price for your honesty, I shall give you this.\n	v005	draft	reads: ‥‥うむ、その答えを選ぶことは私には分かっていた。\n誠実なお前にはこれを授けよう‥‥\n
 m/MS003A.BIN	0:1A	32	1242	1FD2	泉の精霊：		Spring Spirit:	v005		
@@ -143,22 +143,22 @@ m/MS003A.BIN	0:1C	34	842	1FD2	泉のお姉さんβ：	Spring Lady B:			draft
 m/MS003A.BIN	0:1C	35	860	1FD3	泉の～\n<wait>	spring's~\n<wait>			draft	
 m/MS003A.BIN	0:1C	36	875	1FD2	泉のお姉さん達：	Spring Ladies:			draft	
 m/MS003A.BIN	0:1C	37	893	1FD3	効能は～\n	benefits are~\n			draft	
-m/MS003A.BIN	0:1C	38	928	1FB2	聞い{08:14}		Listen	v005		reads: 聞いている; menu option, declared width 20 columns
-m/MS003A.BIN	0:1C	39	936	1FB2	水を飲む		Drink	v005		menu option, declared width 20 columns
-m/MS003A.BIN	0:1C	40	946	1FB2	武器を投げ込む		Throw weapon	v005		menu option, declared width 20 columns
-m/MS003A.BIN	0:1C	41	962	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns
-m/MS003A.BIN	0:1C	42	1012	1FB2	水を飲む		Drink	v005		menu option, declared width 20 columns
-m/MS003A.BIN	0:1C	43	1022	1FB2	武器を投げ込む		Throw weapon	v005		menu option, declared width 20 columns
-m/MS003A.BIN	0:1C	44	1038	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns
-m/MS003A.BIN	0:1C	45	1103	1F85	澄み通{08:51}水を湛{08:41}泉が{08:7B}。\n		There is a spring here.\n	v005		reads: 澄み通った水を湛えた泉がある。\n
-m/MS003A.BIN	0:1C	46	1144	1FB2	水を飲む		Drink	v005		menu option, declared width 20 columns
-m/MS003A.BIN	0:1C	47	1154	1FB2	武器を投げ込む		Throw weapon	v005		menu option, declared width 20 columns
-m/MS003A.BIN	0:1C	48	1170	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns
+m/MS003A.BIN	0:1C	38	928	1FB2	聞い{08:14}		Listen	v005		reads: 聞いている; menu option, declared width 20 columns; @refalign
+m/MS003A.BIN	0:1C	39	936	1FB2	水を飲む		Drink	v005		menu option, declared width 20 columns; @refalign
+m/MS003A.BIN	0:1C	40	946	1FB2	武器を投げ込む		Throw weapon	v005		menu option, declared width 20 columns; @refalign
+m/MS003A.BIN	0:1C	41	962	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; @refalign
+m/MS003A.BIN	0:1C	42	1012	1FB2	水を飲む		Drink	v005		menu option, declared width 20 columns; @refalign
+m/MS003A.BIN	0:1C	43	1022	1FB2	武器を投げ込む		Throw weapon	v005		menu option, declared width 20 columns; @refalign
+m/MS003A.BIN	0:1C	44	1038	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; @refalign
+m/MS003A.BIN	0:1C	45	1103	1F85	澄み通{08:51}水を湛{08:41}泉が{08:7B}。\n		There is a spring here.\n	v005		reads: 澄み通った水を湛えた泉がある。\n; @refalign
+m/MS003A.BIN	0:1C	46	1144	1FB2	水を飲む		Drink	v005		menu option, declared width 20 columns; @refalign
+m/MS003A.BIN	0:1C	47	1154	1FB2	武器を投げ込む		Throw weapon	v005		menu option, declared width 20 columns; @refalign
+m/MS003A.BIN	0:1C	48	1170	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; @refalign
 m/MS003A.BIN	0:1D	0	4	1FD0	誰が飲み{08:15}\n	Who will drink?\n			draft	reads: 誰が飲みますか？\n
 m/MS003A.BIN	0:1D	1	35	1E3E	は泉の水を飲んでみた。\n<wait>	 tried drinking the spring water.\n<wait>			draft	
 m/MS003A.BIN	0:1D	2	72	1FFA	・\n・\n・\n	.\n.\n.\n			draft	
 m/MS003A.BIN	0:1E	0	29	1F2F	を投げ込{08:5F}。\n<wait>	 was thrown into the spring.\n<wait>	 was thrown into the spring.\n<wait>	v005	draft	reads: を投げ込んだ。\n<wait>
-m/MS003A.BIN	0:1E	1	56	1FFA	{02:09}{02:09}{02:09}・・		 was thrown into the spring.\n<wait>\n.........	v005		reads: ・・・・・・・・・・・
+m/MS003A.BIN	0:1E	1	56	1FFA	{02:09}{02:09}{02:09}・・		 was thrown into the spring.\n<wait>\n.........	v005		reads: ・・・・・・・・・・・; @refalign-joined; @refalign
 m/MS003A.BIN	0:21	0	40	1B	メンバー名	Member Name	Name	v005	draft	
 m/MS003A.BIN	0:22	0	71	1F80	泉に投げ込{08:2E}武器を持{08:52}い{02:0A}。\n<wait>	You have no weapon you can throw into the spring.\n<wait>			draft	reads: 泉に投げ込める武器を持っていません。\n<wait>
 m/MS003A.BIN	0:23	0	40	1B	{02:04}名	Item Name	Item	v005	draft	reads: アイテム名
@@ -204,9 +204,9 @@ m/MS003A.BIN	0:27	18	349	1FD2	泉のお姉さんβ：		Water Woman B:	v005
 m/MS003A.BIN	0:27	19	367	1FD3	適度にスライムを含んでい{08:5A}ぅ。\n<wait>		Must be because of the slime.\n<wait>	v005		reads: 適度にスライムを含んでいますぅ。\n<wait>
 m/MS003A.BIN	0:27	20	406	1FD2	泉のお姉さん達：		Water Women:	v005		
 m/MS003A.BIN	0:27	21	424	1FD3	ぬるぬる加減が{08:7F}感じでーす。\n<wait>		Who doesn't like a bit of slime?\n<wait>	v005		reads: ぬるぬる加減がいい感じでーす。\n<wait>
-m/MS003A.BIN	0:27	22	473	1FB2	水を飲む		Drink	v005		menu option, declared width 20 columns
-m/MS003A.BIN	0:27	23	483	1FB2	武器を投げ込む		Throw weapon	v005		menu option, declared width 20 columns
-m/MS003A.BIN	0:27	24	499	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns
+m/MS003A.BIN	0:27	22	473	1FB2	水を飲む		Drink	v005		menu option, declared width 20 columns; @refalign
+m/MS003A.BIN	0:27	23	483	1FB2	武器を投げ込む		Throw weapon	v005		menu option, declared width 20 columns; @refalign
+m/MS003A.BIN	0:27	24	499	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; @refalign
 m/MS003A.BIN	0:28	0	4	1FD0	誰が飲み{08:15}\n	Who will drink?\n			draft	reads: 誰が飲みますか？\n
 m/MS003A.BIN	0:28	1	46	1E3E	は泉の水を飲んでみた。\n<wait>	tried drinking the spring water.\n<wait>			draft	
 m/MS003A.BIN	0:28	2	77	1FD0	ずずず{08:72}\n<wait>	Slurp slurp.........\n<wait>			draft	reads: ずずず‥‥\n<wait>
@@ -271,11 +271,11 @@ m/MS003A.BIN	0:2A	2	63	1FD2	泉のお姉さんβ：		Water Woman B:	v005
 m/MS003A.BIN	0:2A	3	81	1FD3	{08:72}行っちゃ{08:89}{08:4B}ね。\n<wait>		...They left.\n<wait>	v005		reads: ‥‥行っちゃいましたね。\n<wait>
 m/MS003A.BIN	0:2A	4	108	1FD2	泉のお姉さん達：		Water Women:	v005		
 m/MS003A.BIN	0:2A	5	131	0B	{08:72}はあ。\n（がっくり）\n		Haa...\n(Gulp.)\n	v005		reads: ‥‥はあ。\n（がっくり）\n
-m/MS003A.BIN	0:2A	6	156	18	{08:72}ふーっ。\n		Phew...\n	v005		reads: ‥‥ふーっ。\n
+m/MS003A.BIN	0:2A	6	156	18	{08:72}ふーっ。\n		Phew...\n	v005		reads: ‥‥ふーっ。\n; @refalign
 m/MS003A.BIN	0:2A	7	172	1FD2	泉のお姉さん達：		Water Women:	v005		
 m/MS003A.BIN	0:2A	8	190	1FD3	ご利用{01:2A}ござ{08:89}ーす。\n<wait>		Thank you for your patronage.\n<wait>	v005		reads: ご利用ありがとうございまーす。\n<wait>
 m/MS003A.BIN	0:2A	9	219	1FD2	泉のお姉さん達：		Water Women:	v005		
 m/MS003A.BIN	0:2A	10	237	1FD3	{02:08}{02:08}\n<wait>	............\n<wait>			draft	reads: ‥‥‥‥‥‥\n<wait>
 m/MS003A.BIN	0:2A	11	250	1FD2	泉のお姉さん達：		Water Women:	v005		
 m/MS003A.BIN	0:2A	12	273	0B	{08:72}はあ。\n		Haa...\n	v005		reads: ‥‥はあ。\n
-m/MS003A.BIN	0:2A	13	288	18	つ、つか{08:2F}{08:72}。\n		I'm so tired...\n	v005		reads: つ、つかれる‥‥。\n
+m/MS003A.BIN	0:2A	13	288	18	つ、つか{08:2F}{08:72}。\n		I'm so tired...\n	v005		reads: つ、つかれる‥‥。\n; @refalign

@@ -3,8 +3,8 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0018.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}\n		There's no one here...\n	v005		reads: 誰もいない‥‥‥\n
-m/MS0018.BIN	0:01	0	2	1FD0	エレベーターは破壊{03:0C}{08:14}{02:08}\n<wait>		The elevator is broken...\n<wait>	v005		reads: エレベーターは破壊されている‥‥‥\n<wait>
+m/MS0018.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}\n		There's no one here...\n	v005		reads: 誰もいない‥‥‥\n; @refalign
+m/MS0018.BIN	0:01	0	2	1FD0	エレベーターは破壊{03:0C}{08:14}{02:08}\n<wait>		The elevator is broken...\n<wait>	v005		reads: エレベーターは破壊されている‥‥‥\n<wait>; @refalign
 m/MS0018.BIN	0:02	0	11	1FD0	{08:10}の内部{08:62}無残にも破壊{03:0C}て{08:64}。\n<wait>まるで異常な{08:71}の高温で焼か{08:60}かの様に、半ば溶解{08:4B}壁が物語るの{08:62}\n{08:47}{08:10}も{08:5B}原宿や初台と同じ様に、{08:0B}の襲撃にあ{08:51}{08:77}と{08:68}、\n重苦しい真実だ{08:51}{02:08}\n<wait>	The inside of the shelter had been savagely destroyed.\n<wait>Its half-melted walls, as if scorched by unnatural heat, told the grim\ntruth: this shelter too, like Harajuku and Hatsudai, had fallen to a\ndemon attack......\n<wait>			draft	reads: シェルターの内部は、無残にも破壊されていた。\n<wait>まるで異常なまでの高温で焼かれたかの様に、半ば溶解した壁が物語るのは、\nこのシェルターもまた原宿や初台と同じ様に、悪魔の襲撃にあったのだという、\n重苦しい真実だった‥‥‥\n<wait>
 m/MS0018.BIN	0:02	1	187	1FBA	と、突然{03:13}、翼{08:7B}者のヴィジョンがあらわ{08:60}{02:08}！\n<wait>	Then, suddenly, a vision of a winged being appeared before them......!\n<wait>			draft	reads: と、突然目の前に、翼ある者のヴィジョンがあらわれた‥‥‥！\n<wait>
 m/MS0018.BIN	0:02	2	267	1FD2	ファニエル：	Fanuel:			draft	
@@ -38,8 +38,8 @@ m/MS0018.BIN	0:02	29	1446	1FD2	ファニエル：	Fanuel:			draft
 m/MS0018.BIN	0:02	30	1460	1FD3	私に{08:62}もはやアイムと戦う力は残{03:0C}てい{02:0A}。\n<wait>	I no longer have the strength to fight Aim.\n<wait>			draft	reads: 私には、もはやアイムと戦う力は残されていません。\n<wait>
 m/MS0018.BIN	0:02	31	1509	1FD2	ファニエル：	Fanuel:			draft	
 m/MS0018.BIN	0:02	32	1523	1FD3	貴方{08:7C}、奴と戦{08:28}力は十分に{08:7B}で{08:80}。\n<wait>{08:90}か、私の代わりにアイムを倒{08:4A}下{08:49}{02:0A}か？\n	But you surely have power enough to fight him.\n<wait>Please, will you defeat Aim in my stead?\n			draft	reads: 貴方ならば、奴と戦える力は十分にあるでしょう。\n<wait>どうか、私の代わりにアイムを倒して下さいませんか？\n
-m/MS0018.BIN	0:02	33	1619	1FB2	承諾{08:8E}		Sure	v005		reads: 承諾する; menu option, declared width 20 columns
-m/MS0018.BIN	0:02	34	1627	1FB2	断る！		No way!	v005		menu option, declared width 20 columns
+m/MS0018.BIN	0:02	33	1619	1FB2	承諾{08:8E}		Sure	v005		reads: 承諾する; menu option, declared width 20 columns; @refalign
+m/MS0018.BIN	0:02	34	1627	1FB2	断る！		No way!	v005		menu option, declared width 20 columns; @refalign
 m/MS0018.BIN	0:02	35	1667	1FD2	ファニエル：	Fanuel:	Phanuel:	v005	draft	
 m/MS0018.BIN	0:02	36	1681	1FD3	{01:2A}{02:08}‥！\n{08:48}で私も、住民を守る事に集中でき{08:5A}。\n<wait>	Thank you............!\nNow I can concentrate on protecting the residents.\n<wait>	Thank you. I can now focus on protecting the people.\n<wait>	v005	draft	reads: ありがとう‥‥‥‥！\nこれで私も、住民を守る事に集中できます。\n<wait>
 m/MS0018.BIN	0:02	37	1735	1FD2	ファニエル：	Fanuel:	Phanuel:	v005	draft	
@@ -68,7 +68,7 @@ m/MS0018.BIN	0:02	59	2660	1FD2	ファニエル：	Fanuel:	Phanuel:	v005	draft
 m/MS0018.BIN	0:02	60	2674	1FD3	いや{08:72}私にも{08:53}力が{08:3F}ば{02:08}\n<wait>		No... I cannot blame them...\n<wait>	v005		reads: いや‥‥私にもっと力があれば‥‥‥\n<wait>
 m/MS0018.BIN	0:02	61	2811	1FD2	男性：		Man:	v005		
 m/MS0018.BIN	0:02	62	2819	1FD3	{08:47}{08:10}は今、復興作業中{08:55}。\n大変危険{08:6B}で、作業者以外は立入禁止に{08:1A}い{08:5A}。\n<wait>	This shelter is currently being rebuilt.\nIt's very dangerous, so entry is forbidden to all but the workers.\n<wait>	We are currently working to rebuild this shelter.\nIt's pretty dangerous, so if you aren't part of the construction crew,\nwe cannot let you inside.\n<wait>	v005	draft	reads: このシェルターは今、復興作業中です。\n大変危険なので、作業者以外は立入禁止になっています。\n<wait>
-m/MS0018.BIN	0:03	0	29	1FD0	{01:2E}の中には死体が転がっ{08:14}{02:08}‥\n		A corpse lies in the middle of the room...\n	v005		reads: 部屋の中には死体が転がっている‥‥‥‥\n
+m/MS0018.BIN	0:03	0	29	1FD0	{01:2E}の中には死体が転がっ{08:14}{02:08}‥\n		A corpse lies in the middle of the room...\n	v005		reads: 部屋の中には死体が転がっている‥‥‥‥\n; @refalign
 m/MS0018.BIN	0:04	0	42	1FD0	{01:2E}で{08:62}アイムが奥に進む為に扉に炎を放ち、破壊し{08:69}と{08:13}所だ{08:51}。\n<wait>	In the room, Aim was blasting the door with flames, trying to break\nthrough to the rooms beyond.\n<wait>			draft	reads: 部屋では、アイムが奥に進む為に扉に炎を放ち、破壊しようとしている所だった。\n<wait>
 m/MS0018.BIN	0:04	1	109	1FBA	{03:0B}ファニエルの力による{08:5E}{08:8C}か、中々扉は壊れ{08:25}{02:08}‥\n<wait>	But, perhaps thanks to Fanuel's power, the door would not break.........\n<wait>			draft	reads: しかし、ファニエルの力によるものだろうか、中々扉は壊れない‥‥‥‥\n<wait>
 m/MS0018.BIN	0:04	2	166	1FD2	アイム：	Aim:			draft	
@@ -115,13 +115,13 @@ m/MS0018.BIN	0:05	10	450	1FD3	{08:72}私は{08:5C}行かなくては{02:08}\n{08
 m/MS0018.BIN	0:05	11	521	1FD0	ファニエルは消えて{08:1F}{02:08}‥\n<wait>	Fanuel vanished.........\n<wait>			draft	reads: ファニエルは消えてしまった‥‥‥‥\n<wait>
 m/MS0018.BIN	0:06	0	24	1FD2	作業員：		Construction Worker:	v005		
 m/MS0018.BIN	0:06	1	40	1F7C	アイムに破壊{03:0C}た所の修復が大変よ！\n<wait>		It's gonna take forever fixing this place!\n<wait>	v005		reads: アイムに破壊された所の修復が大変よ！\n<wait>
-m/MS0018.BIN	0:06	2	82	18	ちょ{08:53}小耳に挟{08:5F}{08:5F}{08:84}{02:08}\n新宿が{08:0B}達にやら{08:60}ん{08:55}{08:52}！\n<wait>		Something I happened to hear.\nApparently, Shinjuku has been attacked by the demons!\n<wait>	v005		reads: ちょっと小耳に挟んだんだけど‥‥‥\n新宿が悪魔達にやられたんですって！\n<wait>
+m/MS0018.BIN	0:06	2	82	18	ちょ{08:53}小耳に挟{08:5F}{08:5F}{08:84}{02:08}\n新宿が{08:0B}達にやら{08:60}ん{08:55}{08:52}！\n<wait>		Something I happened to hear.\nApparently, Shinjuku has been attacked by the demons!\n<wait>	v005		reads: ちょっと小耳に挟んだんだけど‥‥‥\n新宿が悪魔達にやられたんですって！\n<wait>; @refalign
 m/MS0018.BIN	0:07	0	2	1FD2	女性：		Woman:	v005		
 m/MS0018.BIN	0:07	1	16	1F7C	復興が急ピッチで勧めら{08:60}お陰で、{08:47}フロア{08:62}大分賑やかに{08:1B}わ！\n<wait>		This floor is a total mess because of all the construction\nwork going on.\n<wait>	v005		reads: 復興が急ピッチで勧められたお陰で、このフロアは、大分賑やかになってきたわ！\n<wait>
 m/MS0018.BIN	0:07	2	89	09	新宿に{01:08}城が出来たと{08:68}噂よ{02:08}\n<wait>		I heard the rumours about Baal's Castle appearing in Shinjuku.\n<wait>	ours		reads: 新宿にバエル城が出来たという噂よ‥‥‥\n<wait>
 m/MS0018.BIN	0:07	3	126	1FD2	女性：		Woman:	v005		
 m/MS0018.BIN	0:07	4	134	1FD3	{08:5B}、{08:45}も{08:0B}に狙わ{08:2F}のかしら{02:08}\n<wait>		Are the demons going to be attacking us next, I wonder...\n<wait>	v005		reads: また、ここも悪魔に狙われるのかしら‥‥‥\n<wait>
-m/MS0018.BIN	0:07	5	170	18	神田には研究都市と{08:68}{08:5E}が{08:7B}らしいわ。\n{08:47}御時世に、一体何を研究{08:13}のかしらねぇ？\n<wait>		I hear that Kanda is the number one city for scientific research.\nWhat could they possibly be researching these days?\n<wait>	v005		reads: 神田には研究都市というものがあるらしいわ。\nこの御時世に、一体何を研究しているのかしらねぇ？\n<wait>
+m/MS0018.BIN	0:07	5	170	18	神田には研究都市と{08:68}{08:5E}が{08:7B}らしいわ。\n{08:47}御時世に、一体何を研究{08:13}のかしらねぇ？\n<wait>		I hear that Kanda is the number one city for scientific research.\nWhat could they possibly be researching these days?\n<wait>	v005		reads: 神田には研究都市というものがあるらしいわ。\nこの御時世に、一体何を研究しているのかしらねぇ？\n<wait>; @refalign
 m/MS0018.BIN	0:08	0	2	1FD2	男の子：		Boy:	v005		
 m/MS0018.BIN	0:08	1	18	1F7C	{02:08}アイム怖{08:18}よぅ{02:08}\n<wait>		I was so scared of Aym...\n<wait>	v005		reads: ‥‥‥アイム怖かったよぅ‥‥‥\n<wait>
 m/MS0018.BIN	0:08	2	42	00	ねぇ、お兄ちゃん。{08:5B}他の{08:0B}が来{08:50}{08:90}し{08:69}？\nお兄ちゃんやっつけてく{08:2F}？\n<wait>		Hey, Mister. What's going to happen if more demons show up?\nAre you going to beat them up again?\n<wait>	v005		reads: ねぇ、お兄ちゃん。また他の悪魔が来たらどうしよう？\nお兄ちゃんやっつけてくれる？\n<wait>
@@ -151,7 +151,7 @@ m/MS0018.BIN	0:0D	2	123	00	ねー天使様{08:52}、お空の上に{08:40}んで
 m/MS0018.BIN	0:0E	0	30	1FD2	女性：		Woman:	v005		
 m/MS0018.BIN	0:0E	1	38	1FD3	{08:45}が貴方のお{01:2E}{08:55}。\n{08:90}ぞ、御自由にお使い下{08:49}。\n<wait>		This is your room. Use it as you please.\n<wait>	v005		reads: ここが貴方のお部屋です。\nどうぞ、御自由にお使い下さい。\n<wait>
 m/MS0018.BIN	0:0E	2	147	1F01	達{08:62}個人用の培養槽を設置{08:4B}{08:72}\n<wait>	 and the others installed a personal culture tank......\n<wait>	Hayasaka{04:FF} and the others have installed a personal cultivation tank...\n<wait>	ours	draft	reads: 達は、個人用の培養槽を設置した‥‥\n<wait>
-m/MS0018.BIN	0:0E	3	184	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n
+m/MS0018.BIN	0:0E	3	184	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n; @refalign
 m/MS0018.BIN	0:0E	4	230	1FB2	パーツを保存{08:8E}	Store parts			draft	reads: パーツを保存する; menu option, declared width 20 columns
 m/MS0018.BIN	0:0E	5	252	1F01	を復活さ{08:2A}	: revive			draft	reads: を復活させる
 m/MS0018.BIN	0:0E	6	264	1FB2	休む	Rest			draft	menu option, declared width 20 columns
@@ -363,7 +363,7 @@ m/MS0018.BIN	0:24	4	130	09	新宿都庁の上に、{01:2F}な城が建{08:51}そ
 m/MS0018.BIN	0:24	5	196	1FD2	女性：		Woman:	v005		
 m/MS0018.BIN	0:24	6	204	1FD3	{01:08}は一度、倒{03:0C}たのでは{08:19}ので{08:80}か？\n		I thought Baal was already dead?\n	ours		reads: バエルは一度、倒されたのではなかったのでしょうか？\n
 m/MS0018.BIN	0:24	7	240	00	今度の事件で、主のお力の偉大さを知りま{08:4B}。\n今{08:71}{08:62}信仰などあり{02:0A}で{08:4B}が、{08:48}{08:42}{08:62}主を信じて生きていこうと思{08:52}い{08:5A}。\n<wait>		I used to be an atheist, but after what happened,\nmy eyes have been opened to the glory of God.\nNever again will I question His might.\n<wait>	v005		reads: 今度の事件で、主のお力の偉大さを知りました。\n今までは、信仰などありませんでしたが、これからは、主を信じて生きていこうと思っています。\n<wait>
-m/MS0018.BIN	0:25	0	2	1FD0	エレベーターの扉に{08:62}”点検中”の札がかかっ{08:14}{02:08}\n<wait>		The elevator says "under inspection".\n<wait>	v005		reads: エレベーターの扉には、”点検中”の札がかかっている‥‥‥\n<wait>
+m/MS0018.BIN	0:25	0	2	1FD0	エレベーターの扉に{08:62}”点検中”の札がかかっ{08:14}{02:08}\n<wait>		The elevator says "under inspection".\n<wait>	v005		reads: エレベーターの扉には、”点検中”の札がかかっている‥‥‥\n<wait>; @refalign
 m/MS0018.BIN	0:28	0	64	1FD2	作業員：		Construction Worker:	v005		
 m/MS0018.BIN	0:28	1	74	1FD3	{08:47}{08:10}{08:62}{08:82}{08:89}復興作業中{08:55}。\n大変危険{08:6B}で、作業者以外は立入禁止に{08:1A}い{08:5A}。\n<wait>		We are currently working to rebuild this shelter.\nIt's pretty dangerous, so if you aren't part of the construction crew,\nwe cannot let you inside.\n<wait>	v005		reads: このシェルターは、ただいま復興作業中です。\n大変危険なので、作業者以外は立入禁止になっています。\n<wait>
 m/MS0018.BIN	0:28	2	152	1FD2	作業員：		Construction Worker:	v005		

@@ -3,7 +3,7 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0006.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}\n		There's no one here...\n	v005		reads: 誰もいない‥‥‥\n
+m/MS0006.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}\n		There's no one here...\n	v005		reads: 誰もいない‥‥‥\n; @refalign
 m/MS0006.BIN	0:01	0	60	1FD2	岳克美：	Take Katsumi:			draft	
 m/MS0006.BIN	0:01	1	76	1F01	様！\nやはり、来て下さ{08:51}の{08:55}ね！！\n<wait>	-sama!\nYou came after all, just as I believed you would!!\n<wait>			draft	reads: 様！\nやはり、来て下さったのですね！！\n<wait>
 m/MS0006.BIN	0:01	2	118	1FD2	岳克美：	Take Katsumi:			draft	
@@ -49,9 +49,9 @@ m/MS0006.BIN	0:01	41	1766	1FD3	二つの質問に答{08:41}今、貴方に答え
 m/MS0006.BIN	0:01	42	1870	1FB2	{03:06}ついて	About myself			draft	reads: 自分について; menu option, declared width 20 columns
 m/MS0006.BIN	0:01	43	1886	1F01	について	About 			draft	
 m/MS0006.BIN	0:01	44	1937	1FD1	＞{03:06}ついて何を尋ね{08:15}\n<wait>		>What would you like to know about yourself?\n<wait>	v005		reads: ＞自分について何を尋ねますか？\n<wait>
-m/MS0006.BIN	0:01	45	1980	1FB2	{08:63}はメシア{08:6B}か？	Am I the Messiah?	About Yuuka	v005	draft	reads: 自分はメシアなのか？; menu option, declared width 20 columns
+m/MS0006.BIN	0:01	45	1980	1FB2	{08:63}はメシア{08:6B}か？	Am I the Messiah?	About Yuuka	v005	draft	reads: 自分はメシアなのか？; menu option, declared width 20 columns; @refalign
 m/MS0006.BIN	0:01	46	1998	1FB2	{08:63}の使命は？	My mission?	My mission?	v005	draft	reads: 自分の使命は？; menu option, declared width 20 columns
-m/MS0006.BIN	0:01	47	2012	1FB2	{08:63}も神の転生{08:6B}か？		My mission?	v005		reads: 自分も神の転生なのか？; menu option, declared width 20 columns
+m/MS0006.BIN	0:01	47	2012	1FB2	{08:63}も神の転生{08:6B}か？		My mission?	v005		reads: 自分も神の転生なのか？; menu option, declared width 20 columns; @refalign
 m/MS0006.BIN	0:01	48	2054	1FD2	ガブリエル：	Gabriel:			draft	
 m/MS0006.BIN	0:01	49	2068	1FD3	貴方は今や印を持つ者{08:55}{02:08}<wait>{03:0B}メシアではあり{02:0A}。\n<wait>		You do bear all of the signs. <wait>However, you are not the Messiah.\n<wait>	v005		reads: 貴方は今や印を持つ者です‥‥‥<wait>しかし、メシアではありません。\n<wait>
 m/MS0006.BIN	0:01	50	2125	1FD2	ガブリエル：	Gabriel:			draft	
@@ -68,9 +68,9 @@ m/MS0006.BIN	0:01	60	2490	1FD2	ガブリエル：		Gabriel:	v005
 m/MS0006.BIN	0:01	61	2504	1FD3	貴方はかつて、バビロニアで龍神を屠{08:51}狩人神で{08:4B}。\nそ{08:4A}貴方{08:62}何度か{08:47}東の神の国で生を受け、同じ様に龍を屠り、\n女神を得てい{08:5A}{02:08}\n<wait>		You were once a Babylonian hunter slew the great dragon.\nYou were then reborn here in the land of eastern gods,\nwhere you slew another dragon for a different goddess.\n<wait>	v005		reads: 貴方はかつて、バビロニアで龍神を屠った狩人神でした。\nそして貴方は、何度かこの東の神の国で生を受け、同じ様に龍を屠り、\n女神を得ています‥‥‥\n<wait>
 m/MS0006.BIN	0:01	62	2645	1FD1	＞	>What do you want to know about 	>What would you like to know about Yuuka?\n<wait>	v005	draft	
 m/MS0006.BIN	0:01	63	2653	1F01	について何を尋ね{08:15}\n<wait>	?\n<wait>			draft	reads: について何を尋ねますか？\n<wait>
-m/MS0006.BIN	0:01	64	2694	1FB2	彼女は本当は{08:0B}か？		Am I reincarnated?	v005		reads: 彼女は本当は悪魔か？; menu option, declared width 20 columns
-m/MS0006.BIN	0:01	65	2714	1FB2	彼女と{08:63}との関係は？		Is she a demon?	v005		reads: 彼女と自分との関係は？; menu option, declared width 20 columns
-m/MS0006.BIN	0:01	66	2736	1FB2	彼女は蘇るのか？		Who is she to me?	v005		menu option, declared width 20 columns
+m/MS0006.BIN	0:01	64	2694	1FB2	彼女は本当は{08:0B}か？		Am I reincarnated?	v005		reads: 彼女は本当は悪魔か？; menu option, declared width 20 columns; @refalign
+m/MS0006.BIN	0:01	65	2714	1FB2	彼女と{08:63}との関係は？		Is she a demon?	v005		reads: 彼女と自分との関係は？; menu option, declared width 20 columns; @refalign
+m/MS0006.BIN	0:01	66	2736	1FB2	彼女は蘇るのか？		Who is she to me?	v005		menu option, declared width 20 columns; @refalign
 m/MS0006.BIN	0:01	67	2776	1FD2	ガブリエル：	Gabriel:			draft	
 m/MS0006.BIN	0:01	68	2790	1FD3	かつて{08:72}バビロニアは女神イシュタルの都で{08:4B}。\n<wait>		Babylonia was once the great empire of Ishtar.\n<wait>	v005		reads: かつて‥‥バビロニアは女神イシュタルの都でした。\n<wait>
 m/MS0006.BIN	0:01	69	2843	1FD2	ガブリエル：	Gabriel:			draft	
@@ -260,7 +260,7 @@ m/MS0006.BIN	0:0C	7	255	1FD2	天使：		Angel:	v005
 m/MS0006.BIN	0:0C	8	263	1FD3	猛き者よ{08:72}\n{08:90}か、{08:79}力を用い、{08:0B}達を倒{08:4A}は下{08:49}{02:0A}か？\n<wait>		O brave human. Can you lend us your strength and defeat him?\n<wait>	v005		reads: 猛き者よ‥‥\nどうか、その力を用い、悪魔達を倒しては下さいませんか？\n<wait>
 m/MS0006.BIN	0:0C	9	323	1FD2	天使：		Angel:	v005		
 m/MS0006.BIN	0:0C	10	331	1FD3	{08:47}ま{08:71}{08:62}渋谷は{08:0B}達の手によ{08:52}、崩壊{08:4A}しまい{08:5A}。\n<wait>		I fear that Shibuya will not hold for much longer.\n<wait>	v005		reads: このままでは、渋谷は悪魔達の手によって、崩壊してしまいます。\n<wait>
-m/MS0006.BIN	0:0C	11	390	09	東京は{08:0B}によ{08:52}凌辱{03:0C}、汚{03:0C}てい{08:5A}。\n<wait>{02:0C}{08:62}{08:47}東京を真{08:59}道へと導く為、神に遣わ{03:0C}たの{08:55}。\n<wait>		This once-beautiful city of Tokyo has been raped by the vile demons.\n<wait>We were sent here by God to guide it back to the righteous path.\n<wait>	v005		reads: 東京は悪魔によって凌辱され、汚されています。\n<wait>我々は、この東京を真なる道へと導く為、神に遣わされたのです。\n<wait>
+m/MS0006.BIN	0:0C	11	390	09	東京は{08:0B}によ{08:52}凌辱{03:0C}、汚{03:0C}てい{08:5A}。\n<wait>{02:0C}{08:62}{08:47}東京を真{08:59}道へと導く為、神に遣わ{03:0C}たの{08:55}。\n<wait>		This once-beautiful city of Tokyo has been raped by the vile demons.\n<wait>We were sent here by God to guide it back to the righteous path.\n<wait>	v005		reads: 東京は悪魔によって凌辱され、汚されています。\n<wait>我々は、この東京を真なる道へと導く為、神に遣わされたのです。\n<wait>; @refalign
 m/MS0006.BIN	0:0C	12	483	00	岳　克美に{08:62}{08:5C}会われま{08:4B}か？\n<wait>	Have you already met Take Katsumi?\n<wait>			draft	reads: 岳　克美には、もう会われましたか？\n<wait>
 m/MS0006.BIN	0:0C	13	520	1FD2	天使：	Angel:			draft	
 m/MS0006.BIN	0:0C	14	528	1FD3	彼女{08:62}最上階の大広間にい{08:5A}。\n<wait>	She is in the great hall on the top floor.\n<wait>			draft	reads: 彼女は、最上階の大広間にいます。\n<wait>
@@ -386,7 +386,7 @@ m/MS0006.BIN	0:10	3	150	1FD2	女性：	Woman:			draft
 m/MS0006.BIN	0:10	4	158	1FD3	主の御心に触れ、主の御心を{08:47}世に現わす事が出来るの{08:62}\nこう{08:4B}、無垢{08:59}魂の呼びかけに{08:74}{08:6B}{08:55}。\n<wait>	Only the call of such innocent souls can touch the Lord's heart\nand make His will manifest in this world.\n<wait>			draft	reads: 主の御心に触れ、主の御心をこの世に現わす事が出来るのは、\nこうした、無垢なる魂の呼びかけにだけなのです。\n<wait>
 m/MS0006.BIN	0:11	0	24	1FD2	男性：		Man:	v005		
 m/MS0006.BIN	0:11	1	42	1F03	主は決{08:4A}、私達を見捨{08:2B}{08:46}はあり{02:0A}。\n{08:48}{08:62}主の与え給うた試練{08:6B}{08:55}！！\n<wait>	The Lord will never abandon us.\nThis is a trial that He has given us!!\n<wait>			draft	reads: 主は決して、私達を見捨てることはありません。\nこれは、主の与え給うた試練なのです！！\n<wait>
-m/MS0006.BIN	0:11	2	113	00	私達の心が真に一つとなり、主に呼びか{08:29}時、主は必ずやメシアを御遣わしに\nなり、{08:0B}や{08:0B}に与{08:8E}、よこしま{08:59}存在を、地上より取り除く{08:46}で{08:80}。\n<wait>		Let us unite in prayer, and wait for Him to send down a messiah\nto wipe the earth clean of demons!\n<wait>	v005		reads: 私達の心が真に一つとなり、主に呼びかける時、主は必ずやメシアを御遣わしに\nなり、悪魔や悪魔に与する、よこしまなる存在を、地上より取り除くことでしょう。\n<wait>
+m/MS0006.BIN	0:11	2	113	00	私達の心が真に一つとなり、主に呼びか{08:29}時、主は必ずやメシアを御遣わしに\nなり、{08:0B}や{08:0B}に与{08:8E}、よこしま{08:59}存在を、地上より取り除く{08:46}で{08:80}。\n<wait>		Let us unite in prayer, and wait for Him to send down a messiah\nto wipe the earth clean of demons!\n<wait>	v005		reads: 私達の心が真に一つとなり、主に呼びかける時、主は必ずやメシアを御遣わしに\nなり、悪魔や悪魔に与する、よこしまなる存在を、地上より取り除くことでしょう。\n<wait>; @refalign
 m/MS0006.BIN	0:12	0	24	1FD2	女性：		Woman:	v005		
 m/MS0006.BIN	0:12	1	42	1F03	{08:47}聖{08:59}地にも、{08:0B}が訪{08:2F}とは{02:08}\n<wait>おお神よ！　<wait>{08:90}ぞ、私達を御守り下{08:49}ませ{08:72}！！\n<wait>	That demons should come even to this holy ground......\n<wait>O God! <wait>Please, watch over us......!!\n<wait>			draft	reads: この聖なる地にも、悪魔が訪れるとは‥‥‥\n<wait>おお神よ！　<wait>どうぞ、私達を御守り下さいませ‥‥！！\n<wait>
 m/MS0006.BIN	0:12	2	129	00	{08:47}様な形で終末が訪{08:60}のも、人々がそう望{08:5F}{08:42}に他なり{02:0A}。\n<wait>	That the end came in this form is because people wished it so,\nand for no other reason.\n<wait>			draft	reads: この様な形で終末が訪れたのも、人々がそう望んだからに他なりません。\n<wait>
@@ -437,7 +437,7 @@ m/MS0006.BIN	0:18	5	189	1FD3	{01:22}ー、怖いよぉ{08:72}\n<wait>		Mama, I'm
 m/MS0006.BIN	0:18	6	213	00	貴方{08:62}ヨハネとサロメの物語を知{08:52}い{08:15}\n		Are you familiar with the story of John and Salome?\n	v005		reads: 貴方は、ヨハネとサロメの物語を知っていますか？\n
 m/MS0006.BIN	0:18	7	266	1FB2	{08:26}	{08:26}	Yes	v005		reads: はい; menu option, declared width 20 columns
 m/MS0006.BIN	0:18	8	270	1FB2	{08:27}	{08:27}	No	v005		reads: いいえ; menu option, declared width 20 columns
-m/MS0006.BIN	0:18	9	290	0F	まさに貴方{08:62}洗礼者ヨハネの役割を持つ御方{08:6B}{08:55}。\n<wait>		Your role is that of John the Baptist.\n<wait>	v005		reads: まさに貴方は、洗礼者ヨハネの役割を持つ御方なのです。\n<wait>
+m/MS0006.BIN	0:18	9	290	0F	まさに貴方{08:62}洗礼者ヨハネの役割を持つ御方{08:6B}{08:55}。\n<wait>		Your role is that of John the Baptist.\n<wait>	v005		reads: まさに貴方は、洗礼者ヨハネの役割を持つ御方なのです。\n<wait>; @refalign
 m/MS0006.BIN	0:18	10	345	1FD2	女性：		Woman:	v005		
 m/MS0006.BIN	0:18	11	353	1FD3	ヘロデ王{08:62}すなわち{01:08}。\n<wait>そ{08:4A}イシュタルこそ、父王の前で７つのベールを脱ぎ、裸体を晒{08:4A}踊{08:51}、\nサロメ自身を現わ{08:13}の{08:55}。\n<wait>		As for King Herod, he is played by Baal.\n<wait>Ishtar, in turn, is Salome, the princess who removes the seven veils\nto dance naked before her father the king.\n<wait>	ours		reads: ヘロデ王は、すなわちバエル。\n<wait>そしてイシュタルこそ、父王の前で７つのベールを脱ぎ、裸体を晒して踊った、\nサロメ自身を現わしているのです。\n<wait>
 m/MS0006.BIN	0:18	12	480	1FD2	女性：		Woman:	v005		
@@ -547,7 +547,7 @@ m/MS0006.BIN	0:1D	5	218	1FD2	若者：		Young Person:	v005
 m/MS0006.BIN	0:1D	6	226	1FD3	{08:55}が{08:47}祈り{08:62}必ずや聞き届けら{08:2F}で{08:80}。\n私達{08:62}神に愛{03:0C}し民{08:6B}{08:55}。\n<wait>		God will surely come to our aid.\nHe loves us! We are his chosen!\n<wait>	v005		reads: ですがこの祈りは、必ずや聞き届けられるでしょう。\n私達は、神に愛されし民なのです。\n<wait>
 m/MS0006.BIN	0:1E	0	24	1FD2	男の子：		Boy:	v005		
 m/MS0006.BIN	0:1E	1	44	1F03	怖いよー！　怖いよー{02:08}神様助けて！！\n<wait>僕、あん{08:58}御祈り{08:4B}のに！　早く助けてよ！！\n<wait>	I'm scared! I'm so scared...... God, help me!!\n<wait>I prayed so hard! Come and save us already!!\n<wait>			draft	reads: 怖いよー！　怖いよー‥‥‥神様助けて！！\n<wait>僕、あんなに御祈りしたのに！　早く助けてよ！！\n<wait>
-m/MS0006.BIN	0:1E	2	133	00	僕は毎日、御祈りを欠かさ{08:25}よ。\nだ{08:52}僕達{08:62}選ばれし者な{08:5F}もん！\n<wait>		I make sure to worship God every single day.\nWe are the chosen ones, after all!\n<wait>	v005		reads: 僕は毎日、御祈りを欠かさないよ。\nだって僕達は、選ばれし者なんだもん！\n<wait>
+m/MS0006.BIN	0:1E	2	133	00	僕は毎日、御祈りを欠かさ{08:25}よ。\nだ{08:52}僕達{08:62}選ばれし者な{08:5F}もん！\n<wait>		I make sure to worship God every single day.\nWe are the chosen ones, after all!\n<wait>	v005		reads: 僕は毎日、御祈りを欠かさないよ。\nだって僕達は、選ばれし者なんだもん！\n<wait>; @refalign
 m/MS0006.BIN	0:1F	0	54	1F03	主よ{08:72}{08:90}か{02:08}\n私達親子を、{08:0B}の手より御守り下{08:49}{02:08}‥\n<wait>	O Lord... please......\nProtect me and my child from the hands of the demons........\n<wait>			draft	reads: 主よ‥‥どうか‥‥‥\n私達親子を、悪魔の手より御守り下さい‥‥‥‥\n<wait>
 m/MS0006.BIN	0:1F	1	113	1FD2	女性：		Woman:	v005		
 m/MS0006.BIN	0:1F	2	121	1FD3	恵比寿に{08:62}{08:45}に入り{08:4E}が為に住みつ{08:64}、難民が居ると{08:68}噂{08:55}わね。\n<wait>		I hear that a number of refugees have entered Ebisu in an attempt\nto gain access here.\n<wait>	v005		reads: 恵比寿には、ここに入りたいが為に住みついた、難民が居るという噂ですわね。\n<wait>
@@ -583,5 +583,5 @@ m/MS0006.BIN	0:22	11	397	1FD3	グアッ{02:08}！！\n貴様{02:08}さすが‥�
 m/MS0006.BIN	0:22	12	461	1FD2	モラクス：		Morax:	v005		
 m/MS0006.BIN	0:22	13	473	1FD3	{08:61}{02:08}私を倒{08:4B}{08:87}{08:72}{08:90}{08:59}訳{08:56}無い{02:08}\n		However, do not think that my death changes anything...\n	v005		reads: しかし‥‥‥私を倒したところ‥‥どうなる訳でも無い‥‥‥\n
 m/MS0006.BIN	0:22	14	510	1FFA	最後に笑うのは{02:08}‥！\n<wait>		The ones to get the last laugh... will be us!...\n<wait>	v005		reads: 最後に笑うのは‥‥‥‥！\n<wait>
-m/MS0006.BIN	0:25	0	42	1FD0	エレベーター{08:62}最上階で止まっ{08:14}{02:08}\n<wait>		The elevator is stuck on the topmost floor.\n<wait>	v005		reads: エレベーターは、最上階で止まっている‥‥‥\n<wait>
-m/MS0006.BIN	0:26	0	2	1FD0	エレベーターは破壊{03:0C}{08:14}様だ{02:08}\n<wait>		The elevator appears to be broken.\n<wait>	v005		reads: エレベーターは破壊されている様だ‥‥‥\n<wait>
+m/MS0006.BIN	0:25	0	42	1FD0	エレベーター{08:62}最上階で止まっ{08:14}{02:08}\n<wait>		The elevator is stuck on the topmost floor.\n<wait>	v005		reads: エレベーターは、最上階で止まっている‥‥‥\n<wait>; @refalign
+m/MS0006.BIN	0:26	0	2	1FD0	エレベーターは破壊{03:0C}{08:14}様だ{02:08}\n<wait>		The elevator appears to be broken.\n<wait>	v005		reads: エレベーターは破壊されている様だ‥‥‥\n<wait>; @refalign
