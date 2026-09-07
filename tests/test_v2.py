@@ -1679,3 +1679,96 @@ def test_the_overlay_fingerprint_catches_a_wrong_duplicate_resolution():
         assert first != bytes(last), rel
         assert (overlay.fnv1a(first[:overlay.FP_BYTES])
                 != overlay.fnv1a(bytes(last)[:overlay.FP_BYTES])), rel
+
+
+#: Every in-place byte the release exe differs from ``dds_org.exe`` by, per pass.
+#: The point of pinning these is not the totals themselves -- it is that a new
+#: pass, or an existing one growing a site, cannot slip in unnoticed.  The two
+#: entries flagged ``False`` are the only edits that are not there to show
+#: English; ``docs/exe-patches.md`` argues for both, and that argument should be
+#: revisited, not silently extended, if this list ever grows a third.
+EXE_PASSES = [
+    ("xp",        149, 0,    False),      # inherited from the XP patch
+    ("locale",     15, 0,    True),
+    ("ovl",        38, 2048, True),
+    ("pace",       10, 0,    False),      # 60 Hz tick gate -- behaviour
+    ("names",     117, 512,  True),
+    ("menus",     596, 1536, True),
+    ("database",   64, 512,  True),
+    ("mapnames",   25, 3072, True),
+    ("popup",       1, 0,    False),      # popup default 15 -> 60 -- behaviour
+]
+
+
+def _diff_runs(a, b):
+    out, i, n = [], 0, min(len(a), len(b))
+    while i < n:
+        if a[i] != b[i]:
+            j = i
+            while j < n and a[j] != b[j]:
+                j += 1
+            out.append((i, j - i))
+            i = j
+        else:
+            i += 1
+    return out
+
+
+def test_the_exe_is_only_as_patched_as_the_documentation_says():
+    """The release exe differs from the original by exactly the documented passes.
+
+    "Have we been too liberal with the exe?" is answerable only if every changed
+    byte has an owner.  This rebuilds the release image one pass at a time and
+    checks each pass's own footprint, so an undocumented edit shows up as the
+    pass it belongs to growing rather than as an unattributable total.
+    """
+    from giten.exe import (database, mapnames, menus, names, patch, timing,
+                           tracer)
+    from giten.exe.pe import PE
+
+    def only(data, want):
+        buf = bytearray(data)
+        for pset, off, old, new, _note in patch.load():
+            if pset != want:
+                continue
+            assert bytes(buf[off:off + len(old)]) == old, hex(off)
+            buf[off:off + len(new)] = new
+        return bytes(buf)
+
+    org = open(patch.ORG, "rb").read()
+    seen, cur = [], org
+
+    def step(tag, nxt):
+        runs = _diff_runs(cur, nxt)
+        seen.append((tag, sum(n for _, n in runs), len(nxt) - len(cur)))
+        return nxt
+
+    cur = step("xp", only(cur, "xp"))
+    cur = step("locale", only(cur, "locale"))
+
+    pe = PE(cur, "audit")
+    ovl_va = pe.imagebase + pe.sizeimage
+    blob, syms = tracer.compile_hook_ex(ovl_va)
+    img = bytearray(pe.append_section(".ovl", blob, tracer.TRC_CHARACTERISTICS))
+    tracer._redirect(img, tracer.FETCH_SITES, tracer.FETCH, ovl_va)
+    cur = step("ovl", bytes(img))
+
+    img = bytearray(cur)
+    tracer._pace(img, syms["pace"])
+    cur = step("pace", bytes(img))
+
+    for tag, fn in (("names", names.apply), ("menus", menus.apply),
+                    ("database", database.apply), ("mapnames", mapnames.apply),
+                    ("popup", timing.apply)):
+        cur = step(tag, fn(cur))
+
+    assert seen == [(t, n, g) for t, n, g, _ in EXE_PASSES], seen
+
+    # ...and that chain is the exe we ship, not a parallel recipe.
+    assert cur == open(tracer.build_release(), "rb").read()
+
+    # The whole point: what is *not* translation stays a short, arguable list.
+    behaviour = [t for t, _, _, is_text in EXE_PASSES if not is_text]
+    assert behaviour == ["xp", "pace", "popup"], behaviour
+    assert sum(n for t, n, _, is_text in EXE_PASSES
+               if not is_text and t != "xp") == 11

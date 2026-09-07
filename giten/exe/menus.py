@@ -83,10 +83,108 @@ STRINGS = {
     0x00468DAC: "               Total %10ld   ",  # 合計, width-preserving
     0x00468DCC: "               Total ",
     0x00468DE4: "Total %10ld  ",
+
+    # --- level-up box (bug report 3) -----------------------------------------
+    0x00468AAC: "Learned %s!",                   # %sを会得した！
+    0x00468ABC: "Learned %s!",
+    0x00468ACC: "Please distribute your points\n",   # ポイントを振り分けてください
+    0x00468AEC: "%.1d points remaining  \n",     # 後 %.1d ポイント
+    0x00468B00: "%s leveled up!\n",              # %sはレベルが上がった
+    0x0046A400: "Maximum level",                 # 最高レベルです
+    # --- battle skill list (bug report 4) ------------------------------------
+    # Two cells move from the name field to the wider English "Effect", so the
+    # header still renders 26 cells and the columns stay put.  English skill
+    # names are short (Agi, Bufu, Zan, Dia); 14 is not a real constraint.
+    0x0046A5A4: "Skill Name",                    # 魔法名称
+    0x0046A5B0: "%-14.14s  MP  Effect",          # %-16.16s  MP  効果
+    # --- analyze block (bug report 6) ----------------------------------------
+    # Every label is 7 cells wide in the Japanese and the values are a column;
+    # LABEL_LOCKED keeps the English 7 cells too.
+    0x00468C8C: "DAS is not installed",          # ＤＡＳがインストゥールされていません
+    0x00468CBC: "No analysis data\n",             # アナライズデータがありません
+    0x00468CDC: "Align  %c/%c\n",                 # 属性　 %c/%c
+    0x00468CEC: "Level  L%2d\n",                  # レベル L%2d
+    0x00468CFC: "HP     %d/%d\n",                 # ＨＰ   %d/%d
+    0x00468D0C: "MP     %d/%d\n",                 # ＭＰ   %d/%d
+    0x00468D1C: "Mood   %s\n",                    # 態度   %s
+    0x00468D28: "State  %s\n",                    # 状態   %s
+    0x00468D34: "Run a detailed analysis?",      # 詳細アナライズしますか？
+    # --- field menu and equipment (bug report 6) -----------------------------
+    0x00468B18: "<Items>",                       # <アイテム>
+    0x00468F58: "Discard Item",                  # アイテム削除
+    0x00469808: "Macca",                         # マッカ, the currency
+    0x00469810: "MAG",                           # ＭＡＧ
+    0x00469818: "Macca",
+    0x00469820: "MAG",
+    # The item name is printed immediately before these two, so they have to
+    # read as a continuation and not as a sentence of their own.
+    0x0046A4D4: " equipped.",                    # をはめ込んだ
+    0x0046A4E4: " swapped for %s.",              # と%sを付け替えた
+    0x0046A4FC: " equipped.",
+    0x0046A50C: " swapped for %s.",
+    # --- field and battle messages -------------------------------------------
+    0x004684D0: "Out of range!",                 # 攻撃がとどかない！
+    0x00468654: "The door is locked.",           # 扉はロックされている
+    0x0046866C: "The door is locked.",
+    0x0046C0F8: "Quit the game?",                # 終了しますか？
+    0x0046C110: "Quit the game?",
+    0x0046C1D4: "DirectX initialisation failed.",  # ＤｉｒｅｃｔＸ初期化に失敗しました。
+    0x0046C1FC: "Initialisation failed.",        # 初期化に失敗しました。
+    # Why the field menu greyed an option out.  The bracketed tag is part of
+    # the string, so it moves with it.
+    0x00468880: "[ITEM] Nobody can use that",    # 使用できる人が居ません
+    0x004688A0: "[ITEM] No items",               # アイテムが有りません
+    0x004688BC: "[DDS] You have no DDS",         # DDSを所持していません
+    0x004688D8: "[FIGHT] Nothing to fight",      # 戦う相手が居ません
+    0x004688F4: "[TALK] Nobody to talk to",      # 会話相手が居ません
+    0x00468910: "[TALK] You have no DCS",
+    0x00468930: "[MAPPING] You have no AMS",     # AMSを所持していません
+    0x00468950: "[TALK] You have no DCS",
+    0x00468970: "[FIGHT] Nothing to fight",
+    0x0046898C: "[GUN] Nothing to fight",
+    0x004689A8: "[ITEM] That item cannot be used",  # アイテムを使用できません
+    0x004689C8: "[ITEM] No items",
+    0x004689E4: "[DEFENCE] Nothing to fight",
+    0x00468A04: "[DDS] You have no DDS",
+    0x00468A20: "[MAPPING] You have no AMS",
+    # --- the leftover debug menu ---------------------------------------------
+    # Not reachable in the shipping build, but the dev build arms it and the
+    # plan uses it to set up trace routes, so it may as well be readable.
+    0x00468054: "BGM",                           # ＢＧＭ
+    0x0046805C: "SE",                            # ＳＥ
+    0x00468064: "Spell Effect",                  # 魔法効果
+    0x00468070: "Kill All Demons",               # 悪魔全滅
+    0x0046807C: "Get Item",                      # アイテム取得
+    0x0046808C: "Change Stats",                  # 能力値変化
+    0x00468098: "3D Move",                       # ３Ｄ移動
+    0x004680A4: "Change Flags",                  # フラグ変更
+    0x004680B0: "Save",                          # セーブ
+    0x004680B8: "Load",                          # ロード
+    0x004680C0: "Check Data",                    # データ確認
+    0x004680CC: "+1",                            # ＋１
+    0x004680D4: "-1",
+    0x004680DC: "+10",
+    0x004680E4: "-10",
+    0x004680EC: "+100",
+    0x004680F8: "-100",
+    0x00468104: "Distance",                      # 距離
+    0x0046810C: "Execute",                       # 実行
+    0x00468114: "<Debug Menu>",                  # <デバッグメニュー>
+    0x00468128: "<Spell Debug>",                 # <魔法デバッグ>
+    0x00468468: "Condition Effect Flow",         # コンディション影響フロー
+    0x00468618: "Enemy Action Flow",             # 敵行動フロー
 }
 
 #: templates whose English must occupy exactly the width of the Japanese
 WIDTH_LOCKED = (0x00468DAC, 0x00468DCC, 0x00468DE4)
+
+#: Templates whose *label* -- the text before the first conversion -- has to keep
+#: its width.  The analyze box prints one of these per line and the values form
+#: a column down the right; a label one cell wider puts that line's value out of
+#: line with the rest.  This is weaker than RENDER_LOCKED (which fixes the whole
+#: rendered line) because these conversions have no field width to add up.
+LABEL_LOCKED = (0x00468CDC, 0x00468CEC, 0x00468CFC, 0x00468D0C,
+                0x00468D1C, 0x00468D28)
 
 #: templates whose *formatted* width must match (the 14-cell status block)
 RENDER_LOCKED = (0x0046A454,)
@@ -201,6 +299,14 @@ def check_widths(image: bytes) -> None:
         if rendered_width(jp) != rendered_width(en):
             raise RuntimeError("menus: 0x%08X renders %d cells, English renders %d"
                                % (va, rendered_width(jp), rendered_width(en)))
+
+    for va in LABEL_LOCKED:
+        jp, en = cstring_at(image, pe, va), STRINGS[va]
+        jl, el = jp.split("%")[0], en.split("%")[0]
+        if width(jl) != width(el):
+            raise RuntimeError("menus: 0x%08X label %r is %d cells, English %r "
+                               "is %d; the value column would step"
+                               % (va, jl, width(jl), el, width(el)))
 
 
 def check_effects(image: bytes) -> None:

@@ -21,3 +21,38 @@ Builder-applied patches (`giten/exe/tracer.py`, not table rows because their rel
 | xp | 0x5AB04 | `75` | `74` | XP compatibility patch r0.2b (code only; its font edits at 0x69E42+ are NOT carried) |
 | locale | 0x59DE0 | `6afde819fbffff83c404c39090909090` | `68a4030000e816fbffff83c404c39090` | __initmbctable: _setmbcp(-3=ANSI) -> _setmbcp(932); rel32 = 0x45A500-0x45A9EA |
 | locale | 0x509A9 | `01` | `80` | CreateFontA lfCharSet DEFAULT_CHARSET -> SHIFTJIS_CHARSET |
+
+Applied by their own modules (each finds its sites in the image, so they cannot be table rows; each asserts what it found before writing):
+
+| build | site | what | why not a data edit |
+|---|---|---|---|
+| english | `0x468310` system-menu table, `0x46A118` stat/equip labels, and the `printf` templates' `push imm32` operands | `giten/exe/menus.py` -- re-points each `u32` slot at an English string in an appended `.men` section | the strings live in `.rdata`, not in any `m/`/`et/` file; there is nothing to translate on the data side. `EFFECTS` (the status-condition names) is the exception: a packed struct array with the name inline, so it is overwritten in place under a hard six-character budget |
+| english | `0x4232C2` (39 B), `0x422D2B` (5 B), `0x422D32` (rel32) | `giten/exe/database.py` -- lifts the 64 KB ceiling off the item database; the load is re-pointed at `et/et0102.bin` (which we add) and the offset table widened `u16` -> `u32` | `et/ET0001.BIN` is capped at 65,535 bytes three separate ways and the English does not fit. `ET0001.BIN` itself is left untouched, so an unpatched exe still reads the original |
+| english | `0x42147C` | `giten/exe/mapnames.py` -- hooks the map parser's one pointer computation and indexes a `u32 name[256]` table in `.mnm` | the name is stored inside each of the 109 `m/M####.BIN` headers; one hook covers all of them without editing any map file |
+| release, dev | `0x40263A` (`mov eax,15`, the operand) | `giten/exe/timing.py` -- the popup auto-close default, 15 ticks -> 60 | **not a translation change.** See the accounting note below |
+
+## What the shipped exe actually differs by
+
+Reproduced by `tests/test_v2.py::test_the_exe_is_only_as_patched_as_the_documentation_says`, which rebuilds the release image from `dds_org.exe` and re-derives these numbers, so they cannot drift silently.
+
+| pass | in place | appended | translation? |
+|---|---|---|---|
+| XP compat (`xp` set) | 149 B | -- | inherited; not ours, and its 228 font-table edits are deliberately dropped |
+| locale (`_setmbcp`, charset) | 15 B | -- | yes |
+| overlay hook `.ovl` | 38 B | 2048 B | yes |
+| character names `.nam` | 117 B | 512 B | yes |
+| menu strings `.men` | 596 B | 1536 B | yes |
+| item database `.idb` | 64 B | 512 B | yes |
+| location names `.mnm` | 25 B | 3072 B | yes |
+| 60 Hz tick gate | 10 B | -- | **no** |
+| popup default 15 -> 60 | 1 B | -- | **no** |
+| **total** | **1015 B** (0.0080% of 12,675,072) | **7680 B** | |
+
+Two of those 1,015 bytes' worth of edits -- 11 bytes -- do not exist to show English, and they are the ones to argue about:
+
+* **The 60 Hz tick gate (10 B)** is a compatibility fix of the same kind as the XP patch. The engine ran one game tick per millisecond and leaned on DirectDraw Flip's vertical-retrace wait to hold it back; on a driver that does not block, the game runs up to 16x too fast and is not playable at all. Without this the patch has nothing to demonstrate.
+* **The popup default (1 B)** is a *consequence* of the gate, not an independent liberty. Pinning the loop at 60 Hz gives every tick-counted duration in the binary a wall-clock meaning it did not have in 1997, when the loop free-ran at whatever rate the machine drew. Leaving the default at 15 would have been just as much a decision -- it would render as 250 ms, against the 1-second popups the game asks for explicitly (`push 0x3C` at `0x406211`). Neither value is the neutral one; 60 matches the durations the original author wrote down.
+
+Everything else either shows English or is inherited. Nothing overwrites game content: all English lives in appended sections, `patch.apply` refuses a patch whose old bytes are absent or whose length changes, and no original data file is modified except by the normal table pipeline.
+
+One coupling is deliberate and worth knowing: `database.apply` re-points the item-database load at `et/et0102.bin`, so **the English exe cannot run on a Japanese install** -- the router returns NULL and the game dies on the first frame rather than misreading. `build_image(english=False)` exists for exactly this reason, so a Japanese dev build keeps the hook, the tracer and the pacing and stays trace-comparable.
