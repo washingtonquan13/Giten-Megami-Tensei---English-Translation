@@ -269,6 +269,28 @@ def plan(rows, root=None):
                         findings.append(("%s %s[%d]" % (rel, row.rec, row.idx),
                                          "English encodes to nothing; a span cannot vanish"))
                         continue
+                    # The span list and the record's own tiling must agree that
+                    # a token starts here.  If they ever disagreed, English
+                    # would land at an address the engine only reaches *inside*
+                    # another token, overwriting that token's operands.
+                    #
+                    # **This currently never fires**, and the measurement that
+                    # said it would was wrong: it attributed spans to records by
+                    # walking every record's address range, which double-counts
+                    # the containers that carry duplicate record ids, and named
+                    # three innocent spans in `m/MS6012` and `m/MS610B`.  The
+                    # guard is kept anyway, because it is one `any()` and the
+                    # whole overlay rests on it being true.  A straddling record
+                    # has no `tokens` and is judged by `span_tokens`, which is
+                    # what its spans were derived from.
+                    toks = rec.tokens if rec.tokens is not None else rec.span_tokens
+                    if not any(t.off == sp.off for t in toks):
+                        findings.append(("%s %s[%d]" % (rel, row.rec, row.idx),
+                                         "no token starts here: the span list and "
+                                         "the record's tiling disagree about where "
+                                         "the text begins, so English would land on "
+                                         "another token's operands"))
+                        continue
                     jp = rec.data[sp.off:sp.end]
                     if STRUCTURAL_BYTE in jp and STRUCTURAL_BYTE not in data:
                         findings.append(("%s %s[%d]" % (rel, row.rec, row.idx),

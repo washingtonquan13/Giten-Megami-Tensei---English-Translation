@@ -306,3 +306,37 @@ def test_the_cap_survives_a_round_trip_through_overlay_dat():
     assert back.spans[0].head == s.head, (back.spans[0].head, s.head)
     assert back.spans[0].tail == s.tail
     assert back.spans[0].data == en
+
+
+def test_every_span_the_overlay_serves_starts_where_a_token_starts():
+    """A span start that is not a token boundary is an address the engine only
+    reaches *inside* another token, so English there would overwrite that
+    token's operands.
+
+    No span in the corpus does this, and the two files below were the ones a
+    first measurement wrongly accused -- it attributed spans to records by
+    address range, which double-counts containers carrying duplicate record ids.
+    Kept as the regression test for a property the whole overlay rests on, on
+    the files most likely to break it (16 containers each, duplicate ids).
+    """
+    from giten import extract_v2
+    rels = ["m/MS6012.BIN", "m/MS610B.BIN"]
+    rows = [r for p in tables.iter_tables(extract_v2.text_v2_dir())
+            for r in tables.read(p) if r.file in rels]
+    if not rows:
+        return                                  # nothing written for these yet
+    entries, findings = overlay.plan(rows)
+    for ent in entries:
+        sc = script.parse(ent.rel, files.read_source(ent.rel))
+        cont = sc.containers[ent.ci]
+        recs = [records.Record(r.id, r.data) for r in cont]
+        base = records.bases(recs)
+        starts = set()
+        for r in cont:
+            toks = r.tokens if r.tokens is not None else r.span_tokens
+            if toks:
+                starts.update(base[r.id] + t.off for t in toks)
+        for s in ent.spans:
+            assert s.start in starts, (
+                "%s c%d: span at 0x%04X starts inside a token"
+                % (ent.rel, ent.ci, s.start))
