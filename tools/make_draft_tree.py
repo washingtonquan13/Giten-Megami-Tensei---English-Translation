@@ -26,12 +26,14 @@ this tree must never do is let an unread line look reviewed.
 from __future__ import annotations
 
 import os
+import re
 import shutil
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from giten import check_v2, codec, extract_v2, paths, tables      # noqa: E402
+from giten import (check_v2, codec, extract_v2, files, paths,  # noqa: E402
+                   tables)
 
 OUT = os.path.join(paths.BUILD_DIR, "tables_draft")
 
@@ -48,6 +50,52 @@ def _calls(text):
 
 def _vis(s):
     return codec.strip_tokens(s).replace(NL, "").strip()
+
+
+#: a span that is exactly one pool call and the full-width colon: a speaker tag
+#: whose name the engine looks up at run time
+SPEAKER_TAG = re.compile(r"^(\{[0-9A-F]{2}:[0-9A-F]{2}\})\uff1a$")
+
+
+def _pool_english(src):
+    """``{08:04}`` -> ``"Nishino"``, from the pool tables' own English."""
+    out = {}
+    for fid in range(8):
+        path = files.table_path("m/MS7F%02X.BIN" % fid, src)
+        if not os.path.exists(path):
+            continue
+        for r in tables.read(path):
+            if r.idx != 0:
+                continue
+            en = (r.en or r.ref_en or "").strip()
+            if en:
+                out["{08:%02X}" % int(r.rec.split(":")[1], 16)] = en
+    return out
+
+
+def _speaker_is_wrong(jp, en, poolen):
+    """Does this reference name someone the engine will not name?
+
+    A speaker tag like ``{08:04}\uff1a`` prints whatever the pool holds -- 西野 --
+    so the only faithful English is the pool's own, "Nishino".  v0.05 sometimes
+    wrote who it thought was *really* talking instead: Marduk for the man he is
+    possessing, Kusaka for Emi, Murmur for three different people in the fight
+    where he appears.  A Japanese player sees the pooled name in every one of
+    those, and a reader of the English should too.
+
+    Returns the correct English, or None if there is nothing to say.  Only
+    proper nouns are corrected: several pool words do double duty as common
+    nouns mid-sentence, so {08:0B} reads "demon" and a tag spelling it "Demon:"
+    is better English than the pool's own lower-case copy.
+    """
+    m = SPEAKER_TAG.match(jp.strip())
+    if not m:
+        return None
+    want = poolen.get(m.group(1))
+    if not want or not want[:1].isupper():
+        return None
+    want += ":"
+    return want if en.strip() != want else None
 
 
 def _covers_the_whole_line(jp, en):
@@ -85,7 +133,8 @@ def main(out: str = OUT) -> int:
     if os.path.isdir(out):
         shutil.rmtree(out)
     names = check_v2.name_macros(None)
-    rows = promoted = kept = skipped = refused = split = 0
+    poolen = _pool_english(src)
+    rows = promoted = kept = skipped = refused = split = renamed = 0
     for path in tables.iter_tables(src):
         table = tables.read(path)
         for r in table:
@@ -98,6 +147,13 @@ def main(out: str = OUT) -> int:
             if r.tag == extract_v2.UNTILED_TAG:
                 # no dependable span boundaries; the overlay refuses these anyway
                 skipped += 1
+                continue
+            fixed = _speaker_is_wrong(r.jp, r.ref_en, poolen)
+            if fixed:
+                r.en = fixed
+                r.status = "draft"
+                renamed += 1
+                promoted += 1
                 continue
             if _covers_the_whole_line(r.jp, r.ref_en):
                 split += 1
@@ -118,8 +174,9 @@ def main(out: str = OUT) -> int:
         tables.write(dst, table)
     print("%s: %d rows, %d already English, %d promoted from a reference, "
           "%d skipped (@untiled), %d refused (would drop a name macro), "
-          "%d refused (translates the whole line, not this span)"
-          % (out, rows, kept, promoted, skipped, refused, split))
+          "%d refused (translates the whole line, not this span), "
+          "%d speaker tags renamed to the pooled name"
+          % (out, rows, kept, promoted, skipped, refused, split, renamed))
     return 0
 
 
