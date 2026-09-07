@@ -1951,3 +1951,37 @@ def test_a_recorded_session_shows_the_overlay_did_not_change_flow():
     # and the placement rate must not quietly collapse into "unverified"
     placed = stats["served"] + stats["from the file"]
     assert placed / stats["records"] > 0.7, stats
+
+
+def test_the_overlay_file_id_is_right_for_every_script_family():
+    """``_fid`` must read the id, not a fixed slice of the path.
+
+    It was ``int(rel[4:8], 16)``, which is correct for ``m/MS####`` and wrong
+    for everything else: ``et/ID0099``, ``et/ID009B`` and ``et/ID009C`` all
+    came out ``0xD009``.  Nothing was keyed on it because ``plan`` only ever
+    passed ``m/`` files -- but extending the overlay to ``et/ID*`` is exactly
+    the change that would have shipped three files sharing one id, and the
+    fingerprint would then have decided which of them got served.
+    """
+    from giten import overlay, paths
+
+    assert overlay._fid("m/MS0017.BIN") == 0x0017
+    assert overlay._fid("m/MS7F07.BIN") == 0x7F07
+    assert overlay._fid("et/ID0099.BIN") == 0x0099
+    assert overlay._fid("et/ID014E.BIN") == 0x014E
+
+    # and no two script files may now share one
+    seen = {}
+    for sub, prefix in (("m", "MS"), ("et", "ID")):
+        d = os.path.join(paths.ORIGINAL_DDSWIN, sub)
+        for name in os.listdir(d):
+            if not (name.startswith(prefix) and name.endswith(".BIN")):
+                continue
+            rel = "%s/%s" % (sub, name)
+            seen.setdefault(overlay._fid(rel), []).append(rel)
+    dupes = {k: v for k, v in seen.items() if len(v) > 1}
+    # m/MS00A2 and et/ID00A2 genuinely share id 0xA2, as do 0xA3; the overlay
+    # tells them apart by fingerprint, which is what the fingerprint is for.
+    assert sorted(dupes) == [0x00A2, 0x00A3], sorted(dupes)
+    for k, v in dupes.items():
+        assert len(v) == 2 and v[0].startswith("m/") != v[1].startswith("m/"), v

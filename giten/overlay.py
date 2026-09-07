@@ -54,6 +54,8 @@ bytes.
 """
 from __future__ import annotations
 
+import os
+import re
 import struct
 from dataclasses import dataclass, field
 
@@ -148,8 +150,24 @@ class Entry:
         return [s for s in self.spans if s.tail]
 
 
+#: "m/MS0017.BIN" -> "0017", "et/ID0099.BIN" -> "0099"
+_FID = re.compile(r"^[A-Za-z]*([0-9A-Fa-f]+)$")
+
+
 def _fid(rel: str) -> int:
-    return int(rel[4:8], 16)
+    """The engine's file id for a script file, from its name.
+
+    Slicing ``rel[4:8]`` happened to be right for ``m/MS####`` and wrong for
+    every other family: ``et/ID0099.BIN`` came out ``0xD009``, and so did
+    ``ID009B`` and ``ID009C``, so three different files shared an id.  Nothing
+    was keyed on it because ``plan`` only ever passed ``m/`` files, but that is
+    the sort of latent wrongness that surfaces the moment the filter widens.
+    """
+    stem = os.path.splitext(os.path.basename(rel))[0]
+    m = _FID.match(stem)
+    if not m:
+        raise ValueError("no file id in %r" % rel)
+    return int(m.group(1), 16)
 
 
 def plan(rows, root=None):
