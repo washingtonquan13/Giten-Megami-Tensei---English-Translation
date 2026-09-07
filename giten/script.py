@@ -85,6 +85,13 @@ PARTIAL_NOTE = "@partial"
 #: it must never be byte-rebuilt (see giten/partial.py)
 PREFIX_NOTE = "@prefix"
 
+#: a record that tiles completely except for its final token, which continues
+#: into the next record.  Legal for the engine -- records are contiguous at
+#: runtime and the byte fetch has no bound -- so every span is fully known and
+#: may be overlaid; byte-rebuilding is refused because moving the record would
+#: move that operand's PC.  See :func:`partial.tokenize_straddling`.
+STRADDLE_NOTE = "@straddle"
+
 
 # --- model ------------------------------------------------------------------
 @dataclass
@@ -130,10 +137,22 @@ class Rec:
     tiled_bytes: "int | None" = None
     #: how many of its spans the safety kernel refused
     rejected_spans: int = 0
+    #: for a straddling record: how many bytes its last token reads past the end
+    straddle: int = 0
+    #: a straddling record's tokens.  Kept OUT of ``tokens`` on purpose: that
+    #: field is what the byte builder, ``_relocate`` and ``audit`` consult, and
+    #: they must go on treating the record as untiled.  Span resolution and the
+    #: overlay use :attr:`span_tokens` instead.
+    straddle_tokens: "list | None" = None
 
     @property
     def untiled(self) -> bool:
         return self.tokens is None
+
+    @property
+    def span_tokens(self):
+        """Tokens for resolving :attr:`spans` -- includes straddling records."""
+        return self.tokens if self.tokens is not None else self.straddle_tokens
 
     @property
     def key(self) -> str:
@@ -278,6 +297,11 @@ def parse(rel: str, raw: bytes, tab=None) -> Script:
         seen = set()
         body_off = 2
         rows = []
+        # The engine lays the records out contiguously (base(id) = 0x400 + sum of
+        # lengths) and its byte fetch is unbounded, so a token at a record's end
+        # may read on into the next one.  Keep the image to hand for that case.
+        image = b"".join(x.data for x in recs)
+        image_off = 0
         for r in recs:
             data_off = body_off + r.header_len
             rec = Rec(c.index, r.id, r.order, r.data, data_off,
@@ -290,14 +314,38 @@ def parse(rel: str, raw: bytes, tab=None) -> Script:
                     rec.tokens = vmops.tokenize(r.data, tab)
                 except vmops.TileError as exc:
                     rec.tile_error = str(exc)
+                    # First: the record may tile completely and only its last
+                    # token continue into the next record, which is legal for the
+                    # engine.  That is a full parse, not a prefix, so it needs no
+                    # safety kernel -- but it must stay un-rebuildable.
+                    from . import partial
+                    _toks, _extra = partial.tokenize_straddling(
+                        r.data, image[image_off + len(r.data):], tab)
+                    if _toks is not None:
+                        # Spans only.  `rec.tokens` stays None on purpose, so
+                        # `rec.untiled` stays True and every other consumer --
+                        # the byte builder, `_relocate`, `audit` -- treats this
+                        # record exactly as it did before: unbuildable, its
+                        # bytes copied verbatim.  Letting them see the tokens
+                        # made `_relocate` rewrite `m/MS0031` r0D's rel16 and
+                        # `audit` caught the target moving.  The overlay does
+                        # not rebuild anything, so it can serve the spans.
+                        rec.spans = find_spans(c.index, r.id, r.data, _toks)
+                        rec.straddle_tokens = _toks
+                        rec.straddle = _extra
+                        rec.blocked = STRADDLE_NOTE
                     # Opt-in per file: keep the tokens the walk did produce, and
                     # expose only the spans that pass the safety kernel.  The
                     # record stays `blocked` below -- _rebuild_record works from
                     # rec.tokens, so byte-building one of these would drop
                     # everything past the failure point.  The overlay does not
                     # rebuild anything, which is why it can serve them.
-                    from . import partial
-                    if rel in partial.PREFIX_TILE_FILES:
+                    # Prefix tiling still wins where a file opts into it.  It is
+                    # the older, tested path (m/MS0080 is its worked example and
+                    # tests/test_partial.py proves the whole overlay round-trip on
+                    # it); letting @straddle preempt it renumbered that file's
+                    # spans and stranded rows.  Straddle covers everywhere else.
+                    if rec.tokens is None and rel in partial.PREFIX_TILE_FILES:
                         toks, ok = partial.tokenize_prefix(r.data, tab)
                         keep, _ok, rejected = partial.safe_spans(
                             rel, c.index, r.id, r.data, tab)
@@ -315,6 +363,7 @@ def parse(rel: str, raw: bytes, tab=None) -> Script:
                 rec.tokens = []
             rows.append(rec)
             body_off += r.stored_len
+            image_off += len(r.data)
         if len(seen) != len(recs):
             # Two records with the same id in one container: the runtime index has
             # one slot per id, so `base(id)` -- and therefore every branch measured
@@ -348,7 +397,7 @@ def parse(rel: str, raw: bytes, tab=None) -> Script:
 
 
 def span_text(rec: Rec, sp: Span) -> str:
-    return codec.render(rec.data, rec.tokens[sp.tok_lo:sp.tok_hi])
+    return codec.render(rec.data, rec.span_tokens[sp.tok_lo:sp.tok_hi])
 
 
 def untiled_text(rec: Rec) -> str:
@@ -654,6 +703,14 @@ def _relocate(recs, new_data, omap: OffsetMap, report: BuildReport):
     """
     for pos, rec in enumerate(recs):
         if rec.untiled or not rec.tokens:
+            continue
+        if rec.blocked == STRADDLE_NOTE:
+            # A straddling record's final token reads operand bytes out of the
+            # *next* record, so its rel16 is not a displacement this function can
+            # reason about -- relocating it moved `m/MS0031` r0D's target and
+            # `audit` caught it.  These records exist to be overlaid, never
+            # byte-rebuilt, so leave their bytes exactly as the untiled state
+            # left them: verbatim.
             continue
         base_old = omap.old_base[rec.id]
         base_new = omap.new_base[rec.id]

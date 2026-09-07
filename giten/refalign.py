@@ -154,7 +154,7 @@ def _spans_with_keys(rec):
         text = script.span_text(rec, sp)
         key = text.strip()
         if sp.tok_lo > 0:
-            prev = rec.tokens[sp.tok_lo - 1]
+            prev = rec.span_tokens[sp.tok_lo - 1]
             if prev.kind == "op" and prev.idx == 0x101:
                 key = "1F01:" + rec.data[prev.off:prev.end].hex()
         out.append((sp.idx, sp.tag, text, key))

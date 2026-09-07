@@ -176,3 +176,51 @@ def observed_boundaries(events, rel: str, rec_id: int) -> "set[int]":
     appear here is not a deduction at all.
     """
     return {e.pc for e in events if e.rel == rel and e.rec == rec_id and e.pc}
+
+
+#: How far past its own end a record's final token may reach.  Every one of the
+#: 64 records this applies to needs seven bytes or fewer.
+STRADDLE_MAX = 8
+
+
+def tokenize_straddling(data: bytes, following: bytes, tab=None):
+    """``(tokens, extra)`` for a record that tiles fully bar a straddling tail.
+
+    The engine's script is one contiguous image -- ``base(id) = 0x400 + sum of the
+    record lengths`` -- and the interpreter's byte fetch ``0x00438E50`` is a plain
+    ``[base + pc++]`` with no bound.  So a token at the very end of a record
+    legally reads on into the next one, and the record layer is an *index* into
+    the image, not a limit on the walk.
+
+    That is why 64 of the 78 records that refuse to tile refuse: not because the
+    model is wrong about them, but because we tile each record in isolation.  All
+    64 finish within **seven** bytes, and the straddling token is nearly always
+    control flow emitted at the end of a chunk -- a branch-family opcode (`10`,
+    `14`, `16`, `18`) or `1F 0D`/`0E`/`0F`.  ``m/MS0031`` r17 is typical: it ends
+    ``1F 00 10 01 01 00`` and `10`'s expression wants one more byte.
+
+    Accepted only when the walk is otherwise complete: every token but the last
+    ends at or before the record's end, and the last one starts inside the record
+    and finishes outside it.  A record that merely *stops* early is not this and
+    is left to :func:`tokenize_prefix`.
+
+    The caller must keep such a record un-rebuildable.  Overlaying is safe --
+    the hook only needs ``start`` and ``end`` to be real instruction boundaries,
+    and here the whole record is tiled -- but byte-rebuilding would move the
+    straddling operand's own PC and change what its rel16 resolves to.
+    """
+    n = len(data)
+    for k in range(1, STRADDLE_MAX + 1):
+        if k > len(following):
+            break
+        try:
+            toks = vmops.tokenize(data + following[:k], tab)
+        except vmops.TileError:
+            continue
+        if not toks:
+            continue
+        last = toks[-1]
+        if (last.off < n < last.off + last.size
+                and all(t.off + t.size <= n for t in toks[:-1])):
+            return toks, k
+    return None, 0

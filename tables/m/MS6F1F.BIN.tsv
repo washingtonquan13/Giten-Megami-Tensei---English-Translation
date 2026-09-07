@@ -6,13 +6,16 @@ file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
 m/MS6F1F.BIN	0:01	0	0	UNTILED	 / ! / I /  /  /  /  /  /  / 2 / , /  / ) /  / ) / 2 /  /  /   /  /  / ) / ) / ! / )	 / ! / I /  /  /  /  /  /  / 2 / , /  / ) /  / ) / 2 /  /  /   /  /  / ) / ) / ! / )				@noedit; @untiled; record does not tile (switch entry at 0x31 has kind 31 (not 0 or 1)); read-only, copied verbatim; read-only, copied verbatim @rebase-new
 m/MS6F1F.BIN	0:02	0	24	00	 	 				
 m/MS6F1F.BIN	0:02	1	51	00	 P	 P				
-m/MS6F1F.BIN	0:02	2	55	00	-	-				reads: 
-m/MS6F1F.BIN	0:03	0	0	UNTILED						@noedit; @untiled; record does not tile (u8 operand past end of record at 0x6); read-only, copied verbatim
+m/MS6F1F.BIN	0:02	2	55	00	-	-				
+m/MS6F1F.BIN	0:03	0	4	1F1F						@straddle; record's last token reads 2 byte(s) into the next record; spans are complete and overlay-safe, but the record must never be byte-rebuilt; copied verbatim; read-only, copied verbatim
 m/MS6F1F.BIN	0:04	0	0	UNTILED						@noedit; @untiled; record does not tile (expression node 0x0D payload past end); read-only, copied verbatim
-m/MS6F1F.BIN	0:05	0	0	UNTILED	 /   / 					@noedit; @untiled; record does not tile (u8 operand past end of record at 0x17); read-only, copied verbatim
+m/MS6F1F.BIN	0:05	0	14	00	 	 				@straddle; record's last token reads 2 byte(s) into the next record; spans are complete and overlay-safe, but the record must never be byte-rebuilt; copied verbatim
+m/MS6F1F.BIN	0:05	1	21	1F1F						@straddle; record's last token reads 2 byte(s) into the next record; spans are complete and overlay-safe, but the record must never be byte-rebuilt; copied verbatim
 m/MS6F1F.BIN	0:06	0	17	1F09	{07:1F})	{07:1F})				reads: 暴れ出した！)
 m/MS6F1F.BIN	0:09	0	0	UNTILED	' / 					@noedit; @untiled; record does not tile (expression node 0x0C payload past end); read-only, copied verbatim
-m/MS6F1F.BIN	0:0A	0	0	UNTILED	# / -A / , / + / 					@noedit; @untiled; record does not tile (expression node 0x0D payload past end); read-only, copied verbatim
+m/MS6F1F.BIN	0:0A	0	4	1F20	#	#				@straddle; record's last token reads 2 byte(s) into the next record; spans are complete and overlay-safe, but the record must never be byte-rebuilt; copied verbatim
+m/MS6F1F.BIN	0:0A	1	6	00	-A	-A				@straddle; record's last token reads 2 byte(s) into the next record; spans are complete and overlay-safe, but the record must never be byte-rebuilt; copied verbatim
+m/MS6F1F.BIN	0:0A	2	10	00	,	,				@straddle; record's last token reads 2 byte(s) into the next record; spans are complete and overlay-safe, but the record must never be byte-rebuilt; copied verbatim
 m/MS6F1F.BIN	0:0C	0	14	1F20	'	'				
 m/MS6F1F.BIN	0:0E	0	0	UNTILED	 /  /  / * / , / * /  /  /  /  /   / 					@noedit; @untiled; record does not tile (expression node 0x0D payload past end); read-only, copied verbatim
 m/MS6F1F.BIN	0:0F	0	4	1F20	*	*				
@@ -41,7 +44,7 @@ m/MS6F1F.BIN	0:19	1	15	1F0C	{06:0C})	{06:0C})				reads: )
 m/MS6F1F.BIN	0:19	2	23	1F20	K	K				
 m/MS6F1F.BIN	0:19	3	25	00	-	-				
 m/MS6F1F.BIN	0:1A	0	4	1F20	)	)				
-m/MS6F1F.BIN	0:1B	0	0	UNTILED	 / < /  /  /  / 					@noedit; @untiled; record does not tile (unterminated pairs_ff at 0x1A); read-only, copied verbatim; record does not tile (u8 operand past end of record at 0x1B)
+m/MS6F1F.BIN	0:1B	0	0	UNTILED	 / < /  /  /  / 					@noedit; @untiled; record does not tile (unterminated pairs_ff at 0x1A); read-only, copied verbatim
 m/MS6F1F.BIN	0:1C	0	4	1F20	*	*				
 m/MS6F1F.BIN	0:20	0	4	1F20	"	"				
 m/MS6F1F.BIN	0:21	0	27	1F0A	{03:00}{03:1F})	{03:00}{03:1F})				reads: 飛び道具)
@@ -52,7 +55,7 @@ m/MS6F1F.BIN	0:23	1	6	00	+	+
 m/MS6F1F.BIN	0:24	0	26	1F0B	{03:1F}!	{03:1F}!				reads: !
 m/MS6F1F.BIN	0:24	1	54	1F20	{06:00}	{06:00}				reads: 辞書５
 m/MS6F1F.BIN	0:24	2	61	0B	'	'				
-m/MS6F1F.BIN	0:24	3	66	1F1F	2	2				reads: 辞書５
+m/MS6F1F.BIN	0:24	3	66	1F1F	2	2				
 m/MS6F1F.BIN	0:24	4	68	00	0U	0U				
 m/MS6F1F.BIN	0:24	5	72	00	 	 				
 m/MS6F1F.BIN	0:24	6	79	1F20	+	+				

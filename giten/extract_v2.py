@@ -45,6 +45,28 @@ def _note(parts) -> str:
     return "; ".join(p for p in parts if p)
 
 
+#: Openings of every note part this module generates.  Anything matching one of
+#: these is re-derived on each extract and must not be carried forward from the
+#: previous table, or a marker that has stopped applying sticks forever.
+_GENERATED_NOTE_PREFIXES = (
+    "record is not editable",
+    "record does not tile",
+    "record tiles only to byte",
+    "record's last token reads",
+    "container's record count word",
+    "two records share this id",
+    "record reaches an engine no-op",
+    "reads: ",
+    "menu option, declared width",
+    "fixed ",
+)
+
+
+def _generated(part: str) -> bool:
+    part = part.strip()
+    return part.startswith("@") or part.startswith(_GENERATED_NOTE_PREFIXES)
+
+
 def _prefill(jp: str) -> str:
     """Pre-fill ``en`` when the source already reads as English."""
     return "" if codec.has_japanese(jp) else jp
@@ -53,7 +75,12 @@ def _prefill(jp: str) -> str:
 def script_rows(rel: str, sc: script.Script, pools) -> "list[tables.Row]":
     rows = []
     for rec in sc.iter_records():
-        if rec.untiled:
+        # A straddling record is `untiled` for every other consumer -- it must
+        # never be byte-rebuilt -- but its spans are fully determined, so take
+        # them before the untiled branch claims the record.
+        if rec.untiled and rec.blocked == script.STRADDLE_NOTE and rec.spans:
+            pass
+        elif rec.untiled:
             if not rec.data:
                 continue
             jp = script.untiled_text(rec)
@@ -78,6 +105,18 @@ def script_rows(rel: str, sc: script.Script, pools) -> "list[tables.Row]":
                              "verified in-bounds for the overlay, but the record "
                              "must never be byte-rebuilt"
                              % (rec.tiled_bytes, len(rec.data)))
+            elif rec.blocked == script.STRADDLE_NOTE:
+                # Also deliberately NOT @noedit.  The record tiles *completely*;
+                # only its last token continues into the next record, which the
+                # engine does legally (contiguous records, unbounded byte fetch).
+                # Every span here is therefore fully determined and safe to
+                # overlay -- safer than the @prefix case, which needs a kernel.
+                # The byte builder still refuses it via ``rec.blocked``.
+                notes.append(script.STRADDLE_NOTE)
+                notes.append("record's last token reads %d byte(s) into the next "
+                             "record; spans are complete and overlay-safe, but "
+                             "the record must never be byte-rebuilt"
+                             % rec.straddle)
             elif rec.blocked:
                 notes.append(script.NOEDIT_NOTE)
                 notes.append(rec.blocked)
@@ -213,8 +252,14 @@ def run(family: str = "all", root: "str | None" = None,
             if prev.status and not r.status:
                 r.status = prev.status
             if prev.note and prev.note != r.note:
+                # Carry a human's own note forward, never a generated marker.
+                # A marker can stop applying -- a record that used to be
+                # `@noedit` because it would not tile now tiles -- and carrying
+                # the old one left the row saying both "@straddle, overlay-safe"
+                # and "@noedit, not editable", which kept 81 rows locked that the
+                # extractor had just unlocked.
                 extra = [p for p in prev.note.split("; ")
-                         if p and p not in r.note]
+                         if p and p not in r.note and not _generated(p)]
                 if extra:
                     r.note = _note([r.note] + extra)
         tables.write(path, rows)

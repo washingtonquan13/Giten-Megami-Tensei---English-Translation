@@ -185,7 +185,10 @@ def plan(rows, root=None):
             ent = Entry(rel, ci, _fid(rel), fingerprint(recs), image_end(recs))
             seen = set()
             for rec in cont:
-                if rec.id in seen or rec.tokens is None:
+                # ``span_tokens``, not ``tokens``: a straddling record is untiled
+                # for the byte builder but its spans are complete, and the overlay
+                # rebuilds nothing, so it can serve them.
+                if rec.id in seen or rec.span_tokens is None:
                     continue
                 seen.add(rec.id)
                 for sp in rec.spans:

@@ -399,6 +399,13 @@ def test_tokenizer_reproduces_the_published_tiling_numbers():
     # counters themselves as opcodes 0x15, 0x14, 0x13, 0x12, 0x11.  rel16 landing
     # against the whole container image rose 92.52%% -> 92.60%%, unrelocatable
     # branches fell 14 -> 5, and `m/MS00D1` gained a record that never tiled.
+    # The @straddle rule (2026-09-06) does NOT move these.  A straddling
+    # record keeps `tokens` None so the byte builder, `_relocate` and `audit`
+    # go on treating it exactly as untiled -- the build stays byte-identical,
+    # which is checked by diffing it against a build with the rule disabled.
+    # Its tokens live in `straddle_tokens` and reach only span resolution and
+    # the overlay.  This counter measures tiling *in isolation*, so it is
+    # right that it does not move.
     assert (ok, stray, unimpl, overrun) == (19425, 1099, 93, 73), (ok, stray, unimpl, overrun)
 
 
@@ -1017,17 +1024,26 @@ def test_extract_carries_the_reference_columns():
 
 
 def test_no_more_records_carry_an_impossible_expression_selector():
-    """The engine bounds expression selectors: 0x00436B00 does
+    """A selector above 0x5D is a smell, not a proof.  Corrected 2026-09-06.
 
-        call 0x00438FA0 ; cmp esi,0x5D ; ja <error>
+    The docstring here used to say the engine "would refuse" such a selector,
+    reading `cmp esi,0x5D ; ja <error>` in 0x00436B00 as an error path.  It is
+    not one: `ja` goes to 0x0043727F, which is kind 61 -- the same nullary
+    handler that selectors 0x08 and 0x32-0x37 legitimately use.  A byte above
+    0x5D therefore behaves exactly like selector 0x08, and the MS0031 trace
+    confirms it: the engine's own PC log makes the token at r01 offset 0x01F0
+    eight bytes, which is only reachable if its innermost expression node is the
+    byte `9f` -- above the bound.
 
-    so a selector above 0x5D is a value it would refuse.  A record that tiles
-    "successfully" while containing one is therefore mis-tiled *silently* -- the
-    walk is out of step and the operand bytes it is reading are not operands.
+    It stays as a tracked count because it is still a smell.  In that same
+    confirmed case the byte consumed was the lead half of 泪 (`9f a3`), and the
+    engine went on to render the trailing `a3` alone -- so a walk (the engine's
+    or ours) that lands here is out of step with what the author wrote, even
+    though every step of it is legal.
 
-    This is the honest acceptance metric for opcode/expression model work: it
-    must go down, never up.  `stray` and "records that tile" can both improve
-    while the walk gets worse; this cannot.
+    43 records.  The @straddle rule does not change it: those records keep
+    `tokens` None, so this walk still sees them as untiled.  Model work must not
+    raise it.
     """
     import glob
     import os
@@ -1063,7 +1079,7 @@ def test_no_more_records_carry_an_impossible_expression_selector():
     # expression they never read, then 46 once 0x103/0x104 stopped reading four
     # fixed u8 in place of an FF-terminated term list, then 43 once 0x14C-0x151
     # stopped reading a second expression the engine never reads.  Must never rise.
-    assert len(bad) <= 43, ("%d records now carry an impossible selector: %s"
+    assert len(bad) <= 43, ("%d records now carry an out-of-range selector: %s"
                             % (len(bad), bad[:5]))
 
 
