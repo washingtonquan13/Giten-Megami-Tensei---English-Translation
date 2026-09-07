@@ -184,16 +184,43 @@ def test_c_hook_serves_the_same_bytes_as_the_model():
         got = bytes.fromhex(out[0]) if not out[0].startswith("pc=") else b""
         assert got == model.walk(start, stop), "record %02X" % rec.id
         assert out[-1] == "pc=%d" % stop
-    # a file the overlay does not know passes straight through
-    out = subprocess.run([exe, os.path.join(tmp, "img.bin"), "0x1234", "3", str(base[2]), str(base[2] + 8)],
-                         cwd=tmp, capture_output=True, text=True, check=True).stdout.split()
-    assert bytes.fromhex(out[0]) == img[base[2]:base[2] + 8]
+    def run(*args):
+        return subprocess.run([exe] + [str(a) for a in args], cwd=tmp,
+                              capture_output=True, text=True, check=True).stdout.split()
+
+    # A WRONG file id no longer disables the overlay.  The engine's current-file
+    # global is written on load, not on every context switch, so it can name a
+    # file the interpreter is not running -- and when it did, the hook found no
+    # entry, handed the address to ORIG_FETCH, and ORIG_FETCH read past the end
+    # of the buffer.  That was the 2026-09-07 crash.  rebind() now falls back to
+    # the buffer's own fingerprint, so the English is still served.
+    sp = next(x for x in ent.spans if x.head > 4)
+    out = run(os.path.join(tmp, "img.bin"), "0x1234", 3, sp.start, sp.end)
+    assert bytes.fromhex(out[0]) == model.walk(sp.start, sp.end), "fid fallback"
+
+    # An image the overlay genuinely cannot identify: one byte of the record
+    # INDEX changed, so the fingerprint misses.  (Changing record data would
+    # not -- the fingerprint covers the 0x400 index only.)  Entry 255 is left
+    # alone, because that is where the image end is read from.
+    unknown = bytearray(img)
+    unknown[100 * 4] ^= 0xFF
+    with open(os.path.join(tmp, "unknown.bin"), "wb") as fh:
+        fh.write(unknown)
+    out = run(os.path.join(tmp, "unknown.bin"), ent.fid, 3, base[2], base[2] + 8)
+    assert bytes.fromhex(out[0]) == img[base[2]:base[2] + 8], "unknown file, real pc"
+
+    # ...and a virtual pc in a file we cannot identify must NOT reach
+    # ORIG_FETCH: that address only exists because this overlay made it, and
+    # reading it walks off the buffer.  0xFF instead, and the pc still moves.
+    end = len(img)
+    out = run(os.path.join(tmp, "unknown.bin"), ent.fid, 3, end, end + 4)
+    assert bytes.fromhex(out[0]) == bytes([0xFF]) * 4, out
+    assert out[-1] == "pc=%d" % (end + 4), out
     # pace(): 60 ticks a second whether the clock is fine (1 ms) or coarse
     # (Windows' 15.6 ms default), and no burst of catch-up ticks after a stall
     def pace(granularity, total, stall_at=0, stall=0):
-        out = subprocess.run([exe, "pace", str(granularity), str(total), str(stall_at), str(stall)],
-                             cwd=tmp, capture_output=True, text=True, check=True).stdout.split()
-        return dict(kv.split("=") for kv in out)
+        return dict(kv.split("=") for kv in
+                    run("pace", granularity, total, stall_at, stall))
     for g in (1, 16):
         r = pace(g, 10000)
         assert abs(int(r["ticks"]) - 600) <= 2, (g, r)

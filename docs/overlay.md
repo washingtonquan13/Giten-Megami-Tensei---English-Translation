@@ -41,6 +41,46 @@ fingerprint of the buffer's own 0x400-byte record index, which tells the
 containers of a multi-container file apart.  A buffer whose entry 0 is not at
 0x400 is not a script buffer and is never hashed.
 
+## The fall-through was not safe (2026-09-07)
+
+`hook()` gave up -- and handed the address to `ORIG_FETCH` -- whenever it could
+not identify the buffer, starting from the engine's current-file global
+`0x4911B0`.  That global is written when a script is **loaded**, not on every
+context switch, and several scripts are resident at once, so it routinely names
+a file the interpreter is not running.
+
+For a real address that fall-through is harmless.  For a **virtual** one it is
+not: a PC at or above `image_end` exists only because this overlay put it
+there, and `ORIG_FETCH` just indexes the buffer.  Read past the end and you get
+an access violation if the page is unmapped and garbage if it is not.  Both
+happened, in the same file, one run apart:
+
+* crash, from the dump: `eip 0x00438E75`, `FILEID 0x00DD` (the battle script)
+  while the PC was `0x58EB` -- an address we invented for `m/MS001F`, whose
+  image ends at `0x4BA7`.  `0x58EB` was inside a tail we had declared, so the
+  hook should have served it.
+* the earlier soft lock: same `FILEID 0x00DD`, same file actually running --
+  proved independently by the engine's own index entry `(0x4BEF, 1)`, which is
+  `m/MS001F`'s -- landing on mapped `01` bytes and looping on pool calls.
+
+Two changes, and the second holds even if the first ever fails:
+
+1. `rebind` tries `(fid, fingerprint)` first, then the fingerprint **alone**,
+   accepting it only when exactly one entry matches.  A fingerprint is the
+   buffer's own content and cannot go stale.  Ten fingerprints in the corpus
+   are shared and six of those groups have genuinely different images, so a
+   lone fingerprint is not always an answer -- those keep the old behaviour.
+2. `passthrough()` refuses to call `ORIG_FETCH` at all when the PC is at or
+   above the buffer's own image end, which is four bytes of its index
+   (`index[255].off + .len`) and needs no directory entry.  It returns `0xFF`
+   and advances the PC.  That is a chosen degradation, not a known-correct
+   value: by then the run is already wrong, and the only promise being made is
+   that we do not read memory we do not own.
+
+`tests/test_overlay.py` drives the real C hook for all three: a wrong file id
+still serves English, an unidentifiable buffer still passes real addresses
+through, and a virtual PC in an unidentifiable buffer comes back `0xFF`.
+
 ## Guarantees and limits
 
 * Logic cannot change: no script byte is written.  On the same route the EN
@@ -84,10 +124,12 @@ containers of a multi-container file apart.  A buffer whose entry 0 is not at
   every dispatched PC is inside the real image or a virtual range we declared,
   and every check has a mutation test proving it fires.  Such a PC *can* only
   arise on a translated build, since virtual PCs exist because English is
-  longer than Japanese.  The soft lock itself is **unexplained** -- it follows
-  an `r == -1` ("page full, loop exits") on `m/MS00DD` record `0x4E`, a single
-  33-byte `1EB0` menu definition our model measures correctly, after which the
-  context is a different buffer entirely.  Ruled out while narrowing: the
+  longer than Japanese.  **The soft lock was explained later the same day**:
+  it is the unsafe fall-through documented above, and the section on it carries
+  the evidence.  The `r == -1` ("page full, loop exits") on `m/MS00DD` record
+  `0x4E` is where the context switches to another buffer; the file id does not
+  follow, the hook stops recognising the buffer, and the original fetch is
+  handed a virtual address off the end of it.  Ruled out while narrowing: the
   container-0 limitation (`m/MS00DD` has one container and one overlay entry);
   a page-capacity rule (the Japanese itself needs more than three rendered
   lines on 2,609 pages and more than six on 236); and, now, the claim that the

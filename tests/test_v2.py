@@ -1690,10 +1690,12 @@ def test_the_overlay_fingerprint_catches_a_wrong_duplicate_resolution():
 EXE_PASSES = [
     ("xp",        149, 0,    False),      # inherited from the XP patch
     ("locale",     15, 0,    True),
-    # 2048 -> 1536 on 2026-09-07: overlay.dat v4 stores each entry's served
-    # length, so the hook stopped deriving it and lost a flag, a min() and
-    # a local.  A smaller cave for a stricter rule.
-    ("ovl",        38, 1536, True),
+    # 2048 -> 1536 when overlay.dat v4 started storing each entry's served
+    # length (the hook stopped deriving it, losing a flag, a min() and a local),
+    # then back to 2048 for the fingerprint fallback and the out-of-bounds
+    # guard.  The in-place count has never moved: the cave is appended, and
+    # only 38 bytes of the original are rewritten either way.
+    ("ovl",        38, 2048, True),
     ("pace",       10, 0,    False),      # 60 Hz tick gate -- behaviour
     ("names",     117, 512,  True),
     ("menus",     596, 1536, True),

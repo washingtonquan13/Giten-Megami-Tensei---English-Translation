@@ -121,25 +121,65 @@ static void load(void)
     state = 1;
 }
 
-static struct dir *rebind(u32 handle, u16 fid)
+/* The runtime image's own end: the record index is 256 entries of
+   {u16 offset, u16 length}, so the last one stops where the buffer stops.
+   Four bytes, and it needs no directory entry -- which is the point: it is
+   what lets the hook refuse an out-of-bounds read for a file it cannot
+   identify. */
+static u32 image_end_of(const u8 *base)
 {
-    u32 i, fp;
+    const u16 *last = (const u16 *)(base + 255 * 4);
+    return (u32)last[0] + last[1];
+}
+
+static const u8 *script_buffer(u32 handle)
+{
     const u8 *base;
-    for (i = 0; i < ndirs; i++)
-        if (dirs[i].fid == fid)
-            break;
-    if (i == ndirs)
-        return 0;                       /* no translation for this file id */
     if (handle >= HANDLE_MAX)
         return 0;                       /* out of the table: not ours to read */
     base = HANDLE_BASE(handle);
     if (!base || *(const u16 *)base != 0x0400)
         return 0;                       /* not a script buffer: entry 0 always sits at 0x400 */
+    return base;
+}
+
+/* Which directory entry describes the buffer behind `handle`?
+ *
+ * `fid` is the engine's current-file global (0x4911B0), and it is written when
+ * a script is LOADED, not on every context switch.  Several scripts are
+ * resident at once and the interpreter runs whichever its context points at,
+ * so while it runs an earlier one the global still names the file loaded most
+ * recently.  Requiring both to agree is what made this return 0 -- and a 0
+ * here means the hook hands the address to ORIG_FETCH, which for a virtual PC
+ * reads past the end of the buffer.  Measured, from the 2026-09-07 crash dump:
+ * FILEID said 0x00DD (the battle script) while the program counter was 0x58EB,
+ * an address this overlay invented for m/MS001F, whose image ends at 0x4BA7.
+ *
+ * So the fingerprint is tried on its own when the pair fails.  It identifies
+ * the buffer by its own contents and cannot go stale.  It is only accepted
+ * when exactly one entry matches: ten fingerprints in the corpus are shared,
+ * and six of those groups have genuinely different images (identical record
+ * layouts, different content), so a lone fingerprint is not always an answer.
+ * Those keep the old behaviour, and the guard in hook() keeps them safe.
+ */
+static struct dir *rebind(u32 handle, u16 fid)
+{
+    u32 i, fp;
+    const u8 *base = script_buffer(handle);
+    struct dir *only = 0;
+    if (!base)
+        return 0;
     fp = fnv1a(base, FP_BYTES);
-    for (; i < ndirs; i++)
+    for (i = 0; i < ndirs; i++)
         if (dirs[i].fid == fid && dirs[i].fp == fp)
-            return &dirs[i];
-    return 0;                           /* a container we did not translate */
+            return &dirs[i];            /* both agree: no ambiguity possible */
+    for (i = 0; i < ndirs; i++)
+        if (dirs[i].fp == fp) {
+            if (only)
+                return 0;               /* two files hash alike: no answer */
+            only = &dirs[i];
+        }
+    return only;
 }
 
 static struct dir *lookup(u32 handle, u16 fid)
@@ -178,6 +218,35 @@ static struct span *in_range(struct span *s, u32 n, u16 pc)
     return 0;
 }
 
+/* ORIG_FETCH, unless that would read past the end of the buffer.
+ *
+ * A program counter at or above the image end exists for exactly one reason:
+ * this overlay put it there, because some line's English did not fit where its
+ * Japanese was.  The original fetch knows nothing about that -- it indexes the
+ * script buffer and reads -- so handing it such an address reads memory the
+ * buffer does not own.  On 2026-09-07 that was an access violation at
+ * 0x00438E75 (pc 0x58EB against m/MS001F, whose image ends at 0x4BA7); on the
+ * run before it, the same fall-through landed on mapped bytes instead and the
+ * interpreter looped on `01 01` pool calls until the player gave up.  Same
+ * bug, and which symptom you get depends on what happens to be mapped.
+ *
+ * So: refuse.  0xFF is returned because it is unassigned in cp932 and so is
+ * never text -- the same reason overlay.py will not serve a span containing
+ * one -- and it is what the engine's own list structures terminate on.  This
+ * is a chosen degradation, not a known-correct value: by the time we are here
+ * the run is already wrong, and the only thing being promised is that we do
+ * not read memory we do not own.  The PC still advances, so nothing spins.
+ */
+static u8 passthrough(u32 handle, u16 *pcp)
+{
+    const u8 *base = script_buffer(handle);
+    if (base && *pcp >= image_end_of(base)) {
+        *pcp = (u16)(*pcp + 1);
+        return 0xFF;
+    }
+    return ORIG_FETCH(handle, pcp);
+}
+
 ENTRY u8 hook(u32 handle, u16 *pcp)
 {
     struct dir *d;
@@ -190,12 +259,12 @@ ENTRY u8 hook(u32 handle, u16 *pcp)
         return ORIG_FETCH(handle, pcp);
     d = lookup(handle, FILEID);
     if (!d)
-        return ORIG_FETCH(handle, pcp);
+        return passthrough(handle, pcp);
     pc = *pcp;
     if (pc >= d->image_end) {
         s = in_range((struct span *)(ovl + d->tails_off), d->ntails, pc);
         if (!s)
-            return ORIG_FETCH(handle, pcp);
+            return passthrough(handle, pcp);   /* a virtual PC in no tail of ours */
         k = pc - s->start;
         *pcp = (k + 1 == s->len) ? s->end : (u16)(pc + 1);
         return ovl[s->data_off + k];
