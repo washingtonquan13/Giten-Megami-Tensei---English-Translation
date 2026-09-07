@@ -1822,3 +1822,49 @@ def test_etdb_refuses_a_body_that_outgrows_the_u16_offset_table():
         assert "u16" in str(exc)
     else:
         raise AssertionError("etdb.build accepted a body past the u16 ceiling")
+
+
+def test_the_skill_effect_marker_is_the_split_the_engine_actually_does():
+    """The full-width ``＠`` in an ET0004 description splits it in two.
+
+    Settled from the exe, not guessed: the copier at ``0x0040BC30`` compares
+    each character against ``0x8197`` at ``0x0040BC55`` and either stops there
+    or drops the marker and continues, on a flag the caller passes.  So the
+    skill list shows the text *before* the first marker and something else
+    shows the whole line with the marker removed.
+
+    Two consequences this pins, because getting either wrong is invisible until
+    someone reads the screen: the short form has to fit the 26-cell field, and
+    the shipped English has to keep a short form wherever the Japanese had one
+    (records 16 and 20 deliberately share theirs -- Agi and Maha Agi both read
+    "a small ball of flame" in the list).
+    """
+    from giten import etdb
+
+    AT = "\uff20"
+    FIELD = 26
+
+    def cells(s):
+        return sum(1 if (ord(c) < 0x80 or 0xFF61 <= ord(c) <= 0xFF9F) else 2
+                   for c in s)
+
+    spec = etdb.SKILLS
+    jp = etdb.parse(spec, etdb.source(spec))
+    english = etdb.read_table(spec)
+    body = etdb.build(spec, jp, english)
+    en = etdb.parse(spec, body)
+    assert len(en) == len(jp) == 309
+
+    for r in en:
+        short = r.text(1).split(AT)[0]
+        assert cells(short) <= FIELD, (r.index, short, cells(short))
+        assert AT not in r.text(0), r.index      # names never carry a marker
+
+    # a description the Japanese split must still be split in English
+    for i in (16, 20, 17, 19):
+        assert AT in jp[i].text(1), i
+        assert AT in en[i].text(1), i
+    assert en[16].text(1).split(AT)[0] == en[20].text(1).split(AT)[0]
+
+    # the marker is the cp932 byte pair the exe compares against
+    assert AT.encode("cp932") == b"\x81\x97"
