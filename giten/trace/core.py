@@ -621,6 +621,65 @@ def report_verify(trace_path: str, build_dir: "str | None" = None,
         out.append("        %s" % why)
     return "\n".join(out), 1
 
+
+def files_seen(trace_path: str, build_dir: "str | None" = None):
+    """Every file id the trace visited, resolved to a name where one exists.
+
+    The engine's current-file register is a ``u16``, and the script families do
+    not share one id space cleanly: ``m/MS####`` and ``et/ID####`` both derive
+    an id from their name and two of them genuinely collide.  So a raw id is
+    ambiguous, and this reports every file whose name matches it rather than
+    guessing.
+
+    The question it exists to answer: **do the et/ID demon-negotiation scripts
+    ever run through the interpreter?**  If they never appear here, the overlay
+    cannot reach them -- the hook is on the interpreter's byte fetch -- and the
+    byte build has to stay, exactly as it must for the shop text in m/MS01xx.
+    """
+    import collections
+    build_dir = build_dir or paths.game_root()
+    with open(trace_path, "rb") as fh:
+        data = fh.read()
+    if data[:4] == MAGIC:
+        _, ver, size = HEADER.unpack_from(data, 0)
+        rs, body = RECORD_V2, data[HEADER.size:]
+    else:
+        rs, body = RECORD_V1, data
+    counts = collections.Counter()
+    for n in range(len(body) // rs.size):
+        counts[rs.unpack_from(body, n * rs.size)[0]] += 1
+
+    known = {}
+    for sub, prefix in (("m", "MS"), ("et", "ID")):
+        d = os.path.join(build_dir, sub)
+        if not os.path.isdir(d):
+            continue
+        for name in sorted(os.listdir(d)):
+            if name.startswith(prefix) and name.endswith(".BIN"):
+                try:
+                    known.setdefault(overlay._fid("%s/%s" % (sub, name)), []).append(
+                        "%s/%s" % (sub, name))
+                except ValueError:
+                    pass
+    return [(fid, n, known.get(fid, [])) for fid, n in counts.most_common()]
+
+
+def report_files(trace_path: str, build_dir: "str | None" = None, limit: int = 60):
+    rows = files_seen(trace_path, build_dir)
+    out = ["%s: %d distinct file id(s)" % (os.path.basename(trace_path), len(rows))]
+    et = [r for r in rows if any(x.startswith("et/") for x in r[2])]
+    unknown = [r for r in rows if not r[2]]
+    for fid, n, names in rows[:limit]:
+        tag = ", ".join(names) if names else "-- no file has this id --"
+        out.append("   0x%04X %8d tokens   %s" % (fid, n, tag))
+    out.append("")
+    out.append("   %d id(s) match an et/ID script; %d match no file at all"
+               % (len(et), len(unknown)))
+    if not et:
+        out.append("   No et/ID script ran: the overlay cannot serve them, so")
+        out.append("   the byte build for those 17 files has to stay.")
+    return "\n".join(out), 0
+
 def selfcheck(trace_path: str, build_dir: str) -> "tuple[int, int]":
     """``(records, records whose logged bytes did not match the build)``."""
     evs = decode(trace_path, build_dir)

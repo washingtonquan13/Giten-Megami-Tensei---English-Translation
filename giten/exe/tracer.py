@@ -75,13 +75,17 @@ def drawstring_sites(image: bytes) -> "dict[int, tuple]":
     text = [s for s in pe.sections if s["name"] == ".text"][0]
     lo, hi = text["rawptr"], text["rawptr"] + text["rawsize"]
     want = {va: [] for va in DRAWSTRING}
-    for off in range(lo, hi - 5):
-        if image[off] != 0xE8:
-            continue
-        rel = struct.unpack_from("<i", image, off + 1)[0]
-        tgt = (pe.off2va(off) + 5 + rel) & 0xFFFFFFFF
+    # Seek to each 0xE8 with bytes.find rather than walking 400 KB one index at
+    # a time in Python: the loop version cost ~80 s per dev build once this was
+    # called for six targets, and the build is exercised several times by the
+    # test suite.
+    at = image.find(b"\xE8", lo, hi - 5)
+    while at >= 0:
+        rel = struct.unpack_from("<i", image, at + 1)[0]
+        tgt = (pe.off2va(at) + 5 + rel) & 0xFFFFFFFF
         if tgt in want:
-            want[tgt].append(pe.off2va(off))
+            want[tgt].append(pe.off2va(at))
+        at = image.find(b"\xE8", at + 1, hi - 5)
     return {k: tuple(v) for k, v in want.items()}
 
 SYMBOLS = {
