@@ -229,7 +229,8 @@ def _redirect(image: bytearray, sites, old_target: int, new_target: int) -> None
         struct.pack_into("<i", image, off + 1, new_target - (site + 5))
 
 
-def build_image(trace: bool, english: bool = True) -> bytes:
+def build_image(trace: bool, english: bool = True,
+                pace: bool = True) -> bytes:
     """Release image (locale patches) + the overlay hook, + the tracer if ``trace``.
 
     ``english=False`` skips the four data-table patches.  They are not optional
@@ -248,7 +249,8 @@ def build_image(trace: bool, english: bool = True) -> bytes:
     blob, syms = compile_hook_ex(ovl_va)
     image = bytearray(pe.append_section(".ovl", blob, TRC_CHARACTERISTICS))
     _redirect(image, FETCH_SITES, FETCH, ovl_va)
-    _pace(image, syms["pace"])
+    if pace:
+        _pace(image, syms["pace"])
     from . import database, mapnames, menus, names, timing
     if english:
         image = bytearray(names.apply(bytes(image)))     # English character names (.nam)
@@ -275,13 +277,31 @@ def build_image(trace: bool, english: bool = True) -> bytes:
     return bytes(image)
 
 
-def _write(out_dir, name, trace, english=True):
+def _write(out_dir, name, trace, english=True, pace=True):
     out_dir = out_dir or os.path.join(paths.BUILD_DIR, "exe")
     os.makedirs(out_dir, exist_ok=True)
     dst = os.path.join(out_dir, name)
     with open(dst, "wb") as fh:
-        fh.write(build_image(trace, english))
+        fh.write(build_image(trace, english, pace))
     return dst
+
+
+def build_nopace(out_dir: "str | None" = None) -> str:
+    """``dds_nopace.exe``: the release build with the 60 Hz tick gate left out.
+
+    A control, not a shipping build.  The gate is one of only two changes in the
+    release exe that are not translation, and the main loop's per-tick update
+    also drives the battle clock (``docs/exe-patches.md``), so it changes battle
+    timing by construction.  When play-testing reports a pacing problem this is
+    what says whether the gate is the cause: everything else -- locale, overlay,
+    English data -- is identical, so any difference between the two builds is
+    the gate and nothing else.
+
+    Expect it to run *too fast* rather than correctly: without the gate the loop
+    free-runs at whatever the driver allows, which is the problem the gate was
+    added to fix.  The useful comparison is which way each build is wrong.
+    """
+    return _write(out_dir, "dds_nopace.exe", False, True, pace=False)
 
 
 def build_release(out_dir: "str | None" = None) -> str:

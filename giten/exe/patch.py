@@ -43,10 +43,10 @@ def apply(data: bytes, which: str, table: str = TABLE) -> bytes:
 
 
 def build(which: str, out_dir: "str | None" = None) -> str:
-    if which in ("dev", "release", "dev-jp"):
+    if which in ("dev", "release", "dev-jp", "nopace"):
         from . import tracer
         fn = {"dev": tracer.build_dev, "release": tracer.build_release,
-              "dev-jp": tracer.build_dev_jp}[which]
+              "dev-jp": tracer.build_dev_jp, "nopace": tracer.build_nopace}[which]
         return fn(out_dir)
     out_dir = out_dir or os.path.join(paths.BUILD_DIR, "exe")
     os.makedirs(out_dir, exist_ok=True)
