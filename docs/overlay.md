@@ -45,8 +45,33 @@ containers of a multi-container file apart.  A buffer whose entry 0 is not at
 
 * Logic cannot change: no script byte is written.  On the same route the EN
   trace must equal the JP trace opcode for opcode (`trace diff`).
-* A wrong span boundary (tokenizer error) shows Japanese or garbled text for
-  that line; it cannot move a branch or crash the interpreter.
+* ~~A wrong span boundary (tokenizer error) shows Japanese or garbled text for
+  that line; it cannot move a branch or crash the interpreter.~~
+  **FALSIFIED 2026-09-07 by a recorded soft lock.**  A session ended in an
+  infinite loop printing a party member's name, and the trace shows the engine
+  dispatching from PC `0x5BE3` in `m/MS00DD` -- whose real image ends at
+  `0x1CC9` and whose virtual tails stop at `0x202A`.  228 records in that state,
+  reading memory neither the script nor the overlay owns and executing whatever
+  followed the record buffer.  No wrong byte was served: every check that asks
+  *what was executed* stayed green, because the loop is built from `01 xx` pool
+  calls, a legal inline opcode.
+  `giten trace verify` now checks the property that was missing -- every PC the
+  engine dispatches from must be inside the real image or a virtual range we
+  declared -- and each of its checks has a mutation test proving it fires.
+  **This can only happen on a translated build**: virtual PCs exist because
+  English is longer than Japanese, so an untranslated run never produces a PC
+  above `image_end` and the bug is unreachable there.
+  How the PC gets out of range is not yet established.  It follows an `r == -1`
+  (the interpreter's "page full, loop exits") on `m/MS00DD` record `0x4E`, which
+  is a single 33-byte `1EB0` opcode -- a menu definition, `dd XX YY 00` entries
+  terminated by `ff` -- that our model measures correctly and that simply ends.
+  The prime suspect is the **menu rescanner `0x435D23`**, listed above as a PC
+  writer under the assumption that "a virtual PC survives all of them; there is
+  no hidden state".  That assumption is what now needs testing.
+  Ruled out while narrowing: the container-0 limitation (`m/MS00DD` has exactly
+  one container and one overlay entry), and a page-capacity rule -- the Japanese
+  itself needs more than three rendered lines on 2,609 pages and more than six
+  on 236, so there is no fixed box the original respects and we exceed.
 * A span is diverted only when entered at its first byte.  The lines a branch
   lands *inside* (`@noedit`, 115 in the corpus) keep their Japanese tail.
 * Per file, the English *excess* over the Japanese must fit between the image
