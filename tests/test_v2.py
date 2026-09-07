@@ -2030,3 +2030,166 @@ def test_rebuilt_p_files_touch_only_the_name_field():
                 differ = [k for k in differ if not (lo <= k < hi)]
             assert not differ, (name, i, differ[:4])
     assert checked > 400, checked
+
+
+# ---------------------------------------------------------------------------
+# Adversarial tests for the flow verifier.
+#
+# Everything the verifier had ever done was pass, which is not evidence that it
+# works -- and it was demonstrably not evidence, because it passed on the trace
+# of a session that ended in an infinite loop.  The loop was built from `01 xx`
+# pool calls, a legal inline opcode, executed from an address belonging to
+# nobody; "no flow opcode was served" stayed true throughout.
+#
+# So each check gets a mutation test: take the clean fixture, inject exactly the
+# fault that check exists to find, and require it to fire.  A check that cannot
+# be made to fail is not a check.
+# ---------------------------------------------------------------------------
+
+def _fixture_paths():
+    here = os.path.dirname(os.path.abspath(__file__))
+    return (os.path.join(here, "data", "verify-trace.gtrc"),
+            os.path.join(here, "data", "verify-overlay.gtov"))
+
+
+def _rewrite_record(blob, n, **fields):
+    """Return `blob` with one trace record's fields replaced."""
+    from giten.trace import core
+    head, body = blob[:core.HEADER.size], bytearray(blob[core.HEADER.size:])
+    off = n * core.RECORD_V2.size
+    vals = list(core.RECORD_V2.unpack_from(body, off))
+    order = ("file", "rec", "pc", "ch", "r", "capflag", "caplen",
+             "idx_off", "idx_len", "pc0", "flags")
+    for k, v in fields.items():
+        vals[order.index(k)] = v
+    core.RECORD_V2.pack_into(body, off, *vals)
+    return head + bytes(body)
+
+
+def _first_of(findings, needle):
+    return [f for f in findings if needle in f[1]]
+
+
+def test_the_verifier_catches_a_program_counter_that_belongs_to_nobody(tmpdir=None):
+    """Inject the soft lock's signature and require it to be found.
+
+    A PC above the file's image and outside every virtual range we declare
+    means the engine is reading memory neither the script nor the translation
+    owns.  That is the state the 2026-09-07 soft lock ran in for 228 records
+    while every other check stayed green.
+    """
+    import tempfile
+    from giten import paths
+    from giten.trace import core
+
+    trace, ovl = _fixture_paths()
+    with open(trace, "rb") as fh:
+        blob = fh.read()
+
+    # control: unmutated, nothing found
+    stats, findings = core.verify(trace, paths.ORIGINAL_DDSWIN, ovl)
+    assert findings == [], findings[:2]
+    assert stats["out of bounds"] == 0, stats
+
+    # find a record the verifier currently places, and move its PC out of range
+    n = next(i for i in range(200)
+             if core.RECORD_V2.unpack_from(blob[core.HEADER.size:],
+                                           i * core.RECORD_V2.size)[9])
+    bad = _rewrite_record(blob, n, pc0=0xF000)
+    d = tempfile.mkdtemp()
+    p = os.path.join(d, "mutant.gtrc")
+    with open(p, "wb") as fh:
+        fh.write(bad)
+    stats, findings = core.verify(p, paths.ORIGINAL_DDSWIN, ovl)
+    hits = _first_of(findings, "outside the file")
+    assert hits, "an out-of-range program counter was not reported"
+    assert stats["out of bounds"] >= 1, stats
+    assert hits[0][0].pc0 == 0xF000
+
+
+def test_the_verifier_catches_a_byte_that_does_not_match_the_original():
+    """Inject a token the original file does not have at that address."""
+    import tempfile
+    from giten import paths
+    from giten.trace import core
+
+    trace, ovl = _fixture_paths()
+    with open(trace, "rb") as fh:
+        blob = fh.read()
+
+    # a record the verifier resolved against the file, whose ch we can corrupt
+    base = core.verify(trace, paths.ORIGINAL_DDSWIN, ovl)
+    assert base[1] == []
+
+    n = next(i for i in range(400)
+             if core.RECORD_V2.unpack_from(blob[core.HEADER.size:],
+                                           i * core.RECORD_V2.size)[9])
+    bad = _rewrite_record(blob, n, ch=0x5A5A)
+    d = tempfile.mkdtemp()
+    p = os.path.join(d, "mutant.gtrc")
+    with open(p, "wb") as fh:
+        fh.write(bad)
+    _stats, findings = core.verify(p, paths.ORIGINAL_DDSWIN, ovl)
+    assert findings, "a token that is not in the file was not reported"
+
+
+def test_the_verifier_catches_a_branch_served_out_of_our_english():
+    """Doctor the overlay so a served span contains a goto, and require a report.
+
+    This is the check that was already there, and it had never been shown to
+    fire.  The span keeps its length so `head` and `tail` stay valid -- only one
+    byte of English becomes `0C`, and the trace is pointed at it.
+    """
+    import tempfile
+    from giten import overlay, paths
+    from giten.trace import core
+
+    trace, ovl_path = _fixture_paths()
+    with open(ovl_path, "rb") as fh:
+        ents = overlay.parse(fh.read())
+
+    # a span with plenty of in-place English to corrupt
+    target = None
+    for e in ents:
+        for s in e.spans:
+            if s.head > 8:
+                target = (e, s)
+                break
+        if target:
+            break
+    assert target, "the fixture has no in-place span to doctor"
+    e, s = target
+    k = 4                                        # a byte inside the head
+    s.data = s.data[:k] + bytes([0x0C]) + s.data[k + 1:]
+
+    d = tempfile.mkdtemp()
+    mut_ovl = os.path.join(d, "mutant.gtov")
+    with open(mut_ovl, "wb") as fh:
+        fh.write(overlay.build(ents))
+
+    # one record whose PC is just past that byte, logging what we now serve
+    with open(trace, "rb") as fh:
+        blob = fh.read()
+    # rec is left alone: the overlay file format does not carry a record id
+    # (it comes back as -1), and the served-byte test keys on file and pc only.
+    bad = _rewrite_record(blob, 1, file=e.fid,
+                          pc=s.start + k + 1, pc0=s.start + k, ch=0x0C)
+    p = os.path.join(d, "mutant.gtrc")
+    with open(p, "wb") as fh:
+        fh.write(bad)
+
+    _stats, findings = core.verify(p, paths.ORIGINAL_DDSWIN, mut_ovl)
+    assert _first_of(findings, "branch served"), \
+        "a goto served out of our own English was not reported"
+
+
+def test_the_clean_fixture_survives_every_mutation_being_reverted():
+    """The negative control: none of the above passes by reporting everything."""
+    from giten import paths
+    from giten.trace import core
+
+    trace, ovl = _fixture_paths()
+    stats, findings = core.verify(trace, paths.ORIGINAL_DDSWIN, ovl)
+    assert findings == [], findings[:3]
+    assert stats["out of bounds"] == 0
+    assert stats["served"] > 500 and stats["from the file"] > 1500

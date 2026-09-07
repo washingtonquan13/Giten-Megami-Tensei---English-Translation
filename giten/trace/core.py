@@ -451,6 +451,20 @@ FLOW_OPCODES = frozenset({0x0C, 0x0D}) | frozenset(range(0x10, 0x19))
 
 
 
+
+def _owned(entry, image_end: int):
+    """The PC ranges that exist for one file: the real image, plus our tails."""
+    out = [(0, image_end)]
+    if entry is not None:
+        for s in entry.spans:
+            if s.tail:
+                out.append((s.virt, s.virt + s.tail))
+    return out
+
+
+def _in_bounds(ranges, pc: int) -> bool:
+    return any(lo <= pc < hi for lo, hi in ranges)
+
 def _served_bytes(img, pc: int, ch: int):
     """The bytes the overlay actually handed the engine at ``pc``, or None.
 
@@ -538,8 +552,9 @@ def verify(trace_path: str, build_dir: "str | None" = None,
         rs, body = RECORD_V1, data
 
     stats = {"records": 0, "served": 0, "from the file": 0, "unverified": 0,
-             "in a name print": 0, "overlay entries": len(entries or [])}
-    findings, images, events = [], {}, []
+             "in a name print": 0, "out of bounds": 0,
+             "overlay entries": len(entries or [])}
+    findings, images, events, bounds = [], {}, [], {}
     for n in range(len(body) // rs.size):
         f = rs.unpack_from(body, n * rs.size)
         pc0, flags = (f[9], f[10]) if rs is RECORD_V2 else (0, 0)
@@ -567,6 +582,30 @@ def verify(trace_path: str, build_dir: "str | None" = None,
         if img is None:
             stats["unverified"] += 1
             continue
+
+        # Does this program counter exist at all?  Checked before anything
+        # else, because a PC that belongs to nobody makes every other question
+        # meaningless -- the bytes it reads are whatever follows the record
+        # buffer in memory.
+        if ev.pc0:
+            ranges = bounds.get(ev.rel)
+            if ranges is None:
+                # A file the overlay never touched still has a real image, and
+                # its end is where the last record stops.  Computed rather than
+                # read off an entry, so such a file is checked just as strictly.
+                end = max((b + len(img.by_id[i].data)
+                           for i, b in img.base.items() if i in img.by_id),
+                          default=0)
+                ranges = _owned(img.entry,
+                                img.entry.image_end if img.entry else end)
+                bounds[ev.rel] = ranges
+            if not _in_bounds(ranges, ev.pc0):
+                stats["out of bounds"] += 1
+                findings.append((ev, "program counter outside the file and our overlay",
+                                 "pc0 0x%04X is past the image and in no virtual "
+                                 "range we declared; the engine is executing memory "
+                                 "nobody owns" % ev.pc0))
+                continue
 
         served = _served_bytes(img, ev.pc, ev.ch)
         if served is not None:
@@ -605,6 +644,9 @@ def report_verify(trace_path: str, build_dir: "str | None" = None,
         return "\n".join(out), 1
     out.append("  %.1f%% of the trace was checked"
                % (100.0 * placed / max(1, stats["records"])))
+    if stats["out of bounds"]:
+        out.append("  %d program counter(s) outside the file AND our overlay"
+                   % stats["out of bounds"])
     if not findings:
         out.append("")
         out.append("  CLEAN: every token dispatched outside a served span "
