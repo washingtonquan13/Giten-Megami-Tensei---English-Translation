@@ -1868,3 +1868,49 @@ def test_the_skill_effect_marker_is_the_split_the_engine_actually_does():
 
     # the marker is the cp932 byte pair the exe compares against
     assert AT.encode("cp932") == b"\x81\x97"
+
+
+def test_no_span_we_serve_starts_a_token_the_engine_would_branch_on():
+    """The overlay must not hand the interpreter a flow opcode.
+
+    "The overlay cannot change flow" is usually argued from the script files
+    being byte-identical, which is true and beside the point: the hook changes
+    what the interpreter *reads*.  If English we serve began a token the engine
+    dispatches -- ``0C`` goto-record, ``0D`` call-record, or a member of the
+    ``10``-``18`` branch family -- flow would diverge from the Japanese run
+    while every file on disk still matched.
+
+    Serving those byte *values* is fine and unavoidable: they occur constantly
+    as operands of inline opcodes (``{03:0E}`` is a pool call and its operand,
+    and ``1E 10 01 02 14`` is a wait whose ``b == 2`` pulls a third byte).  What
+    must never happen is one of them landing where the engine reads an opcode.
+    So this walks each served span with the tokenizer and checks the *tokens*,
+    not the bytes.
+    """
+    from giten import codec, tables, vmops
+
+    BRANCHES = {0x0C, 0x0D} | set(range(0x10, 0x19))
+    checked = flagged = 0
+    for path in tables.iter_tables("build/tables_draft"):
+        for r in tables.read(path):
+            en = (r.en or "").strip()
+            if not en or en == r.jp:
+                continue
+            try:
+                raw = codec.encode(en, allow=codec.INLINE_OPS)
+            except Exception:
+                continue                    # check_v2 owns encodability
+            checked += 1
+            try:
+                toks = vmops.tokenize(raw)
+            except vmops.TileError:
+                continue                    # a fragment need not tile alone
+            for t in toks:
+                op = getattr(t, "op", None)
+                if op in BRANCHES:
+                    flagged += 1
+                    raise AssertionError(
+                        "%s %s[%s] serves a flow opcode 0x%02X: %r"
+                        % (r.file, r.rec, r.idx, op, en[:40]))
+    assert checked > 20000, checked
+    assert flagged == 0
