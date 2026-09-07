@@ -26,6 +26,7 @@ from .pe import PE
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SOURCE = os.path.join(HERE, "trace.S")
+TEXTLOG_SOURCE = os.path.join(HERE, "textlog.S")
 HOOK_SOURCE = os.path.join(HERE, "hook.c")
 HOOK_LD = os.path.join(HERE, "hook.ld")
 
@@ -48,6 +49,13 @@ EXEC_TOKEN = 0x439020
 #: VA of each ``E8`` that calls exec_token (the rel32 follows at +1)
 CALL_SITES = (0x4390C4, 0x439103, 0x43913C)
 
+#: GDI32!TextOutA is the only text-drawing API the exe imports, and it is called
+#: from exactly one instruction.  ``textlog.S`` explains why the call site, and
+#: not the import slot, is what gets redirected.
+TEXTOUT_IAT = 0x00464050
+TEXTOUT_SITE = 0x449A30
+TEXTOUT_OLD = bytes.fromhex("ff1550404600")          # call dword ptr [0x464050]
+
 SYMBOLS = {
     "EXEC_TOKEN": EXEC_TOKEN,
     "CREATEFILE_IAT": 0x464074,     # kernel32!CreateFileA
@@ -58,6 +66,7 @@ SYMBOLS = {
     "CAPFLAG": 0x481224,            # text-capture mode (u16, non-zero = on)
     "CAPBUF": 0x481120,             # the 256-byte capture buffer
     "HANDLE_TABLE": 0x47605C,       # [HANDLE_TABLE + handle*8] = buffer base (0x4045F0)
+    "TEXTOUT_IAT": 0x00464050,      # gdi32!TextOutA, the one text primitive
 }
 
 #: IMAGE_SCN_CNT_CODE | CNT_INITIALIZED_DATA | MEM_EXECUTE | MEM_READ | MEM_WRITE
@@ -94,6 +103,23 @@ def assemble(source: str = SOURCE) -> bytes:
     if not blob or len(blob) > 0x1000:
         raise RuntimeError("unexpected cave size %d" % len(blob))
     return blob
+
+
+def _textout_log(image: bytearray, cave_va: int) -> None:
+    """Redirect the single ``call dword ptr [TextOutA]`` at 0x449A30 to the cave.
+
+    Six bytes become ``call <cave>`` plus a ``nop``.  The old bytes are asserted
+    first, so this can never land on the wrong build or twice.
+    """
+    pe = PE(bytes(image), "image")
+    off = pe.va2off(TEXTOUT_SITE)
+    if bytes(image[off:off + 6]) != TEXTOUT_OLD:
+        raise RuntimeError("0x%X is %s, expected %s"
+                           % (TEXTOUT_SITE, bytes(image[off:off + 6]).hex(),
+                              TEXTOUT_OLD.hex()))
+    image[off] = 0xE8
+    struct.pack_into("<i", image, off + 1, cave_va - (TEXTOUT_SITE + 5))
+    image[off + 5] = 0x90
 
 
 def short_path(p: str) -> str:
@@ -199,6 +225,11 @@ def build_image(trace: bool, english: bool = True) -> bytes:
         trc_va = pe.imagebase + pe.sizeimage
         image = bytearray(pe.append_section(".trc", assemble(), TRC_CHARACTERISTICS))
         _redirect(image, CALL_SITES, EXEC_TOKEN, trc_va)
+        pe = PE(bytes(image), "dds_trc")
+        tlg_va = pe.imagebase + pe.sizeimage
+        image = bytearray(pe.append_section(".tlg", assemble(TEXTLOG_SOURCE),
+                                            TRC_CHARACTERISTICS))
+        _textout_log(image, tlg_va)
     return bytes(image)
 
 
