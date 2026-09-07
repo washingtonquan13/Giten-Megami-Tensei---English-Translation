@@ -97,3 +97,45 @@ def test_the_release_exe_carries_it():
     off = pe.va2off(timing.POPUP_DEFAULT_SITE)
     assert struct.unpack_from("<I", img, off + 1)[0] == timing.POPUP_TICKS
     assert abs(timing.seconds(timing.POPUP_TICKS) - 1.0) < 1e-9
+
+
+# ---------------------------------------------------------------------------
+# The background-script divider.
+#
+# 0x401980 calls 0x43B5E0 once per game tick, and 0x43B5E0 runs the background
+# script until it blocks (0x4390F0 = `do exec_token while result >= 0`).  So the
+# tick rate is the rate at which scripted actors take their turns, which is why
+# enemies in a battle outpace the player at 60 Hz.  Lowering the whole loop was
+# tried and rejected: 30 and 40 Hz make walking unbearable.  hook.c divides only
+# this one call, so the field keeps its 60 Hz.
+# ---------------------------------------------------------------------------
+
+def test_the_background_script_step_is_where_the_documentation_says():
+    """Pin the call site against the untouched original, not against a build."""
+    import struct
+    from giten.exe import patch, tracer
+    from giten.exe.pe import PE
+
+    with open(patch.ORG, "rb") as fh:
+        img = fh.read()
+    pe = PE(img)
+    site = tracer.SCRIPT_STEP_SITES[0]
+    off = pe.va2off(site)
+    assert img[off] == 0xE8, "no call at 0x%X" % site
+    rel = struct.unpack_from("<i", img, off + 1)[0]
+    assert (site + 5 + rel) & 0xFFFFFFFF == tracer.SCRIPT_STEP, (
+        "0x%X no longer calls the background-script step" % site)
+
+
+def test_the_divider_reaches_the_compiler_and_exports_its_entry_point():
+    """`-DSCRIPT_DIV` has to change the code, or the exe would build clean and
+    do nothing -- the failure mode this test exists for."""
+    from giten.exe import tracer
+
+    va = 0x1000000
+    plain, syms1 = tracer.compile_hook_ex(va, script_div=1)
+    divided, syms4 = tracer.compile_hook_ex(va, script_div=4)
+    assert "script_step" in syms4, syms4
+    assert plain != divided, "SCRIPT_DIV did not change the compiled hook"
+    # and the hook itself still has to come first, for the fetch redirect
+    assert syms1["hook"] == va and syms4["hook"] == va

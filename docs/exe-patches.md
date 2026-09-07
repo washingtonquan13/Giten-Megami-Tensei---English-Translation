@@ -41,6 +41,7 @@ Reproduced by `tests/test_v2.py::test_the_exe_is_only_as_patched_as_the_document
 | XP compat (`xp` set) | 149 B | -- | inherited; not ours, and its 228 font-table edits are deliberately dropped |
 | locale (`_setmbcp`, charset) | 15 B | -- | yes |
 | overlay hook `.ovl` | 38 B | 1536 B | yes |
+| background-script divider (`dds_dev_bat<N>.exe` only) | 4 B | -- | no -- behaviour, and **dev builds only**: `0x401985`'s rel32 is pointed at `script_step()` in the `.ovl` cave, which calls `0x43B5E0` every Nth game tick instead of every tick. `0x43B5E0` runs the background script until it blocks (`0x4390F0` = `do exec_token while r >= 0`), so that call is the rate at which scripted actors take their turns. The release exe is built with `SCRIPT_DIV=1` and its call site is untouched. |
 | character names `.nam` | 117 B | 512 B | yes |
 | menu strings `.men` | 596 B | 1536 B | yes |
 | item database `.idb` | 64 B | 512 B | yes |

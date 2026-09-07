@@ -49,6 +49,7 @@ typedef void *(__attribute__((stdcall)) * GetProcAddress_t)(HANDLE, const char *
 #define pTimeGetTime (*(timeGetTime_t *)0x4641D8)
 #define pGetModuleHandleA (*(GetModuleHandleA_t *)0x46411C)
 #define pGetProcAddress (*(GetProcAddress_t *)0x46405C)
+#define ORIG_SCRIPT_STEP ((void (*)(void))0x43B5E0)
 #define ENTRY __attribute__((section(".text.entry"), used))
 #define EXPORT __attribute__((used))
 #else
@@ -261,3 +262,47 @@ EXPORT int pace(void)
     deadline3 += TICK3;
     return 1;
 }
+
+
+/* Background-script pacing -- how fast scripted actors take their turns.
+ *
+ * 0x401980 runs, once per game tick:
+ *
+ *     0x402740   the popup countdown        (one decrement)
+ *     0x43B5E0   the background script      (see below)
+ *     0x43BBC0   a script-visible stopwatch (one increment)
+ *
+ * 0x43B5E0 saves the interpreter context, points it at the background script
+ * named by (ds:0x469828, ds:0x46982C), and calls 0x4390F0 -- which is
+ * `do { exec_token(...) } while (result >= 0)`, i.e. run this actor until it
+ * blocks -- then restores the context.  So the game tick IS the rate at which
+ * scripted actors act, and at 60 Hz the enemies in a battle take turns faster
+ * than a person can answer: the player gets one party member in before the
+ * other side has moved again.
+ *
+ * Lowering the loop rate instead does not work.  It is one clock for the whole
+ * game, so 30 Hz and 40 Hz fix the battle and make walking around unbearable
+ * (measured, not guessed).  Dividing here separates the two: the loop keeps
+ * ticking at 60 for movement, drawing and input, and only the script's turn
+ * rate comes down.
+ *
+ * SCRIPT_DIV of 1 is the original behaviour and is what the release exe gets;
+ * the builder only redirects the call site when it is greater.
+ */
+#ifndef SCRIPT_DIV
+#define SCRIPT_DIV 1
+#endif
+
+/* GAME only: the harness has no engine to call through to, and nothing in the
+   overlay's semantics depends on this, so there is nothing for it to test. */
+#ifdef GAME
+static u32 step_phase;
+
+EXPORT void script_step(void)
+{
+    if (++step_phase < SCRIPT_DIV)
+        return;
+    step_phase = 0;
+    ORIG_SCRIPT_STEP();
+}
+#endif

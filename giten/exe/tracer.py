@@ -37,6 +37,13 @@ FETCH_SITES = (0x438E8D, 0x438E9B, 0x438F0D, 0x438F32, 0x438FAD)
 #: the main loop's tick gate (``hook.c`` pace()): at 0x45108A the original does
 #: ``call [timeGetTime]; cmp eax,edi; jbe 0x45104E`` -- one tick per millisecond.
 #: It becomes ``call pace; test eax,eax; je 0x45104E; nop``: one tick per 1/60 s.
+#: the per-tick background-script step (``hook.c`` script_step()).  0x401980
+#: calls 0x43B5E0 once a tick, and 0x43B5E0 runs the background script until
+#: it blocks -- so this call is the rate at which scripted actors take their
+#: turns.  Redirected only when a divider greater than 1 is asked for.
+SCRIPT_STEP = 0x43B5E0
+SCRIPT_STEP_SITES = (0x401985,)
+
 PACE_SITE = 0x45108A
 PACE_OLD = bytes.fromhex("ff15d84146003bc776ba")
 PACE_NEW_TAIL = bytes.fromhex("85c074bb90")          # test eax,eax; je -0x45; nop
@@ -174,7 +181,7 @@ def short_path(p: str) -> str:
     return p
 
 
-def compile_hook_ex(cave_va: int, hz: int = DEFAULT_HZ):
+def compile_hook_ex(cave_va: int, hz: int = DEFAULT_HZ, script_div: int = 1):
     """``hook.c`` -> (flat blob linked at ``cave_va`` per ``hook.ld``, hook first;
     the VA of every global function in it, e.g. ``hook`` and ``pace``).
 
@@ -184,6 +191,8 @@ def compile_hook_ex(cave_va: int, hz: int = DEFAULT_HZ):
     """
     if 3000 % hz:
         raise ValueError("%d Hz does not divide the 1/3 ms clock evenly" % hz)
+    if script_div < 1:
+        raise ValueError("script_div must be at least 1, got %r" % script_div)
     for tool in ("gcc", "ld", "objcopy", "nm"):
         if shutil.which(tool) is None:
             raise RuntimeError("%s not found (GNU binutils + gcc are required)" % tool)
@@ -192,6 +201,7 @@ def compile_hook_ex(cave_va: int, hz: int = DEFAULT_HZ):
     try:
         obj, pe_, binp = (os.path.join(tmp, n) for n in ("hook.o", "hook.pe", "hook.bin"))
         subprocess.run([gcc, *CFLAGS, "-DGAME", "-DTICK3=%d" % (3000 // hz),
+                        "-DSCRIPT_DIV=%d" % script_div,
                         "-c", HOOK_SOURCE, "-o", obj], check=True)
         undef = subprocess.run(["nm", "-u", obj], check=True, capture_output=True, text=True).stdout.split()
         if undef:
@@ -212,6 +222,8 @@ def compile_hook_ex(cave_va: int, hz: int = DEFAULT_HZ):
         raise RuntimeError("unexpected hook size %d" % len(blob))
     if syms.get("hook") != cave_va or "pace" not in syms:
         raise RuntimeError("hook.c layout: %r" % syms)
+    if script_div > 1 and "script_step" not in syms:
+        raise RuntimeError("hook.c has no script_step: %r" % syms)
     return blob, syms
 
 
@@ -241,8 +253,8 @@ def _redirect(image: bytearray, sites, old_target: int, new_target: int) -> None
         struct.pack_into("<i", image, off + 1, new_target - (site + 5))
 
 
-def build_image(trace: bool, english: bool = True,
-                pace: bool = True, hz: int = DEFAULT_HZ) -> bytes:
+def build_image(trace: bool, english: bool = True, pace: bool = True,
+                hz: int = DEFAULT_HZ, script_div: int = 1) -> bytes:
     """Release image (locale patches) + the overlay hook, + the tracer if ``trace``.
 
     ``english=False`` skips the four data-table patches.  They are not optional
@@ -258,11 +270,13 @@ def build_image(trace: bool, english: bool = True,
         image = patch.apply(fh.read(), "release")
     pe = PE(image, "dds_release")
     ovl_va = pe.imagebase + pe.sizeimage             # where append_section will put it
-    blob, syms = compile_hook_ex(ovl_va, hz)
+    blob, syms = compile_hook_ex(ovl_va, hz, script_div)
     image = bytearray(pe.append_section(".ovl", blob, TRC_CHARACTERISTICS))
     _redirect(image, FETCH_SITES, FETCH, ovl_va)
     if pace:
         _pace(image, syms["pace"])
+    if script_div > 1:
+        _redirect(image, SCRIPT_STEP_SITES, SCRIPT_STEP, syms["script_step"])
     from . import database, mapnames, menus, names, timing
     if english:
         image = bytearray(names.apply(bytes(image)))     # English character names (.nam)
@@ -289,12 +303,13 @@ def build_image(trace: bool, english: bool = True,
     return bytes(image)
 
 
-def _write(out_dir, name, trace, english=True, pace=True, hz=DEFAULT_HZ):
+def _write(out_dir, name, trace, english=True, pace=True, hz=DEFAULT_HZ,
+           script_div=1):
     out_dir = out_dir or os.path.join(paths.BUILD_DIR, "exe")
     os.makedirs(out_dir, exist_ok=True)
     dst = os.path.join(out_dir, name)
     with open(dst, "wb") as fh:
-        fh.write(build_image(trace, english, pace, hz))
+        fh.write(build_image(trace, english, pace, hz, script_div))
     return dst
 
 
@@ -360,3 +375,19 @@ def build_dev_hz(hz: int, out_dir: "str | None" = None) -> str:
     whole loop is mistimed.
     """
     return _write(out_dir, "dds_dev_%dhz.exe" % hz, True, True, hz=hz)
+
+
+def build_dev_script_div(div: int, out_dir: "str | None" = None) -> str:
+    """``dds_dev_bat<div>.exe``: the tracer, 60 Hz, background script divided.
+
+    The loop keeps its 60 Hz -- movement, drawing and input are unchanged --
+    and only the once-per-tick background-script step (0x401985 -> 0x43B5E0)
+    runs every ``div``th tick.  That is the clock scripted actors take their
+    turns on, so ``div=4`` gives them one turn per 1/15 s while the field still
+    animates at 60.
+
+    Named for what it is for: at 60 Hz the enemies in a battle act faster than
+    a person can answer, and lowering the whole loop instead was tried and
+    makes walking unbearable.
+    """
+    return _write(out_dir, "dds_dev_bat%d.exe" % div, True, script_div=div)
