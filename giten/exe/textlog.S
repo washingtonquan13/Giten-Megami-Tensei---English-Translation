@@ -1,45 +1,49 @@
-# TextOutA logger for dds.exe (dev builds only) -- the spike for a menu overlay.
+# Glyph-draw logger for dds.exe (dev builds only) -- the spike for a menu overlay.
 #
-# The game imports exactly one text-drawing API, GDI32!TextOutA, and calls it
-# from exactly one instruction: VA 0x449A30, `call dword ptr [0x00464050]`.
-# Every string the engine draws through GDI passes that one point, which makes
-# it a narrower choke point than the script overlay's five byte-fetch sites.
+# The first version of this hooked TextOutA, on the reasoning that it was the
+# only text API the exe imports and had exactly one call site.  A play session
+# produced no log at all: **the game never calls it.**  It imports
+# GetGlyphOutlineA and blits every character itself onto the DirectDraw
+# surface, which is why the CreateFontA charset patch matters (the font must be
+# Shift-JIS to have the kanji) while TextOutA sits unused at 0x449A30.
 #
-# The question this build answers is whether an overlay hung there could
-# replace the 117 pointer rewrites in names.py/menus.py (and possibly the
-# mapnames.py parser hook): does every string we currently patch actually reach
-# TextOutA, and in what form?  So this hook only *records*; it changes nothing.
+# The real text path:
 #
-# WHY THE CALL SITE AND NOT THE IAT SLOT
+#     0x451230   draw one glyph.  arg1 is the character code; 0x20..0xDF come
+#                from a built-in half-width bitmap font at 0x0046C230 and
+#                everything else goes to GetGlyphOutlineA (its only call site,
+#                0x4512B6).
+#     six callers, each a draw-string variant that walks a char* to its NUL:
+#                0x451650  0x451750  0x451850  0x451950  0x451B20  0x451CB0
+#                (~35 call sites between them across the game)
 #
-# Patching the import slot on disk does nothing: the Windows loader overwrites
-# FirstThunk with the resolved address at load time, so our value never
-# survives to be called.  The hook therefore replaces the six-byte
-# `call dword ptr [IAT]` with `call <thunk>` + `nop`, and the thunk reaches the
-# real function through the same IAT slot the loader filled in.  One site, six
-# bytes, and the operand is a rel32 like every other redirect in this file's
-# neighbours.
+# So the choke point a menu overlay would hang on is those six functions, each
+# of which takes the string as an argument -- swap the pointer and the whole of
+# names.py and menus.py could stop rewriting 117 pointers.
 #
-# TextOutA is __stdcall with five arguments, so the thunk tail-*jumps* to it:
-# the real function pops the 20 bytes and returns straight to the game's
-# caller, leaving the stack discipline exactly as it was.
+# This build only answers whether that would work, so it hooks the *glyph*
+# level instead: the six `call 0x451230` sites become calls here, and each
+# logs the arguments and tail-jumps to the real routine.  Six rel32 operands,
+# no trampolines, no displaced instructions -- the same shape as the tracer's
+# three exec_token redirects, and dev-only.
 #
-#     ddswin\textout.bin:  "GTXT" u16 version=1 u16 0
-#     then per call:       u16 n, i16 x, i16 y, then n bytes of the string
+#     ddswin\textout.bin:  "GTXT" u16 version=2 u16 record_size=20
+#     per glyph:           u32 arg1..arg5, exactly as the caller pushed them
 #
-# `n` is capped at 512.  Two WriteFile calls per record rather than a staging
-# buffer: TextOutA cannot re-enter itself, and the kernel holds the bytes, so a
-# crash still leaves every completed record on disk.  Same reasoning as
-# trace.S -- no flush, no CloseHandle.
+# The arguments are logged raw rather than interpreted: 0x451230 reads arg1 and
+# arg3, and naming the rest here would be a guess.  giten/textlog.py decodes
+# them and rebuilds the on-screen text from the character stream.
 #
 # Position-independent: data is reached via call/pop, imports go through their
-# IAT slots, and every absolute address arrives as a --defsym.
+# IAT slots, every absolute address arrives as a --defsym.  One WriteFile per
+# glyph, like trace.S -- the kernel holds the bytes, so a crash still leaves
+# everything drawn so far on disk.
 
         .intel_syntax noprefix
         .section .text
         .globl  _start
 
-# on entry:  [esp+4] hdc  [esp+8] x  [esp+12] y  [esp+16] lpString  [esp+20] c
+# on entry:  [esp] return address, [esp+4..] the args the caller pushed
 _start:
         pushad
         pushfd
@@ -65,67 +69,43 @@ _start:
         lea     eax, [esi + written]
         push    eax
         push    8
-        lea     eax, [esi + hdr]            # "GTXT" 1 0
+        lea     eax, [esi + hdr]            # "GTXT" 2 20
         push    eax
         push    dword ptr [esi + hfile]
         call    dword ptr [WRITEFILE_IAT]
 2:
-        # pushad pushed 32 bytes and pushfd 4, so the caller's frame is at +36
-        mov     edi, dword ptr [esp + 36 + 16]      # lpString
-        mov     ecx, dword ptr [esp + 36 + 20]      # c (byte count, may be < 0)
-        test    edi, edi
-        jz      9f                          # nothing to record
-        test    ecx, ecx
-        jg      3f
-        # a non-positive count: measure the string instead, still bounded
-        xor     ecx, ecx
-4:      cmp     byte ptr [edi + ecx], 0
-        je      3f
-        inc     ecx
-        cmp     ecx, 512
-        jb      4b
-3:      cmp     ecx, 512
-        jbe     5f
-        mov     ecx, 512
-5:      test    ecx, ecx
-        jz      9f
-
-        mov     eax, dword ptr [esp + 36 + 8]       # x
-        mov     word ptr [esi + hx], ax
-        mov     eax, dword ptr [esp + 36 + 12]      # y
-        mov     word ptr [esi + hy], ax
-        mov     word ptr [esi + hn], cx
-        mov     dword ptr [esi + savedn], ecx
+        # pushad pushed 32 and pushfd 4, so the caller's first argument -- at
+        # [esp+4] on entry -- is now at [esp+40]
+        lea     edi, [esi + rec]
+        mov     eax, dword ptr [esp + 40]
+        mov     dword ptr [edi + 0], eax
+        mov     eax, dword ptr [esp + 44]
+        mov     dword ptr [edi + 4], eax
+        mov     eax, dword ptr [esp + 48]
+        mov     dword ptr [edi + 8], eax
+        mov     eax, dword ptr [esp + 52]
+        mov     dword ptr [edi + 12], eax
+        mov     eax, dword ptr [esp + 56]
+        mov     dword ptr [edi + 16], eax
 
         push    0                           # lpOverlapped
         lea     eax, [esi + written]
         push    eax
-        push    6                           # u16 n, i16 x, i16 y
-        lea     eax, [esi + hn]
-        push    eax
+        push    20
+        push    edi
         push    dword ptr [esi + hfile]
         call    dword ptr [WRITEFILE_IAT]
 
-        push    0                           # lpOverlapped
-        lea     eax, [esi + written]
-        push    eax
-        push    dword ptr [esi + savedn]
-        push    edi                         # the string itself
-        push    dword ptr [esi + hfile]
-        call    dword ptr [WRITEFILE_IAT]
-9:
         popfd
         popad
-        jmp     dword ptr [TEXTOUT_IAT]     # tail call: it pops the 20 bytes
+        mov     eax, DRAWGLYPH
+        jmp     eax                         # tail call: cdecl, caller cleans up
 
         .balign 4
 hfile:  .long   0
 written: .long  0
-savedn: .long   0
-hn:     .short  0                           # u16 n   -- these three are one
-hx:     .short  0                           # i16 x      6-byte record header,
-hy:     .short  0                           # i16 y      written in one call
+rec:    .space  20
 hdr:    .ascii  "GTXT"
-        .short  1                           # format version
-        .short  0
+        .short  2                           # format version
+        .short  20                          # bytes per record
 fname:  .asciz  "textout.bin"

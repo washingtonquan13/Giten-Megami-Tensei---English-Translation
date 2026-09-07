@@ -118,8 +118,8 @@ def test_release_exe_carries_the_overlay_hook_and_dev_adds_the_tracer():
         assert nam_va <= tgt < nam_va + nam["vsize"], jp
         assert pe.cstring_at_va(tgt) == ((" " if given else "") + names.NAMES[jp]).encode("ascii"), jp
     assert pe.cstring_at_va(struct.unpack_from("<I", rel, names.sites(org)[1][0])[0]) == b"Katsuragi"
-    # dev = release + .trc + .tlg + the three exec_token redirects and the one
-    # TextOutA redirect, nothing else
+    # dev = release + .trc + .tlg + the three exec_token redirects and the
+    # six glyph redirects, nothing else
     pe2 = PE(dev, "dev")
     sec2 = pe2.section(".trc")
     va2 = pe2.imagebase + sec2["vaddr"]
@@ -127,20 +127,19 @@ def test_release_exe_carries_the_overlay_hook_and_dev_adds_the_tracer():
     _calls_go_to(dev, pe2, tracer.CALL_SITES, va2)
     _calls_go_to(dev, pe2, tracer.FETCH_SITES, va)
 
-    # the TextOutA logger: the release exe must NOT have it, and in dev the one
-    # call site becomes `call <.tlg>` + nop while the thunk reaches the real
-    # function through the import slot the loader filled in.
+    # The glyph logger.  The exe never calls TextOutA -- it blits every
+    # character itself through 0x451230, whose six callers are redirected here
+    # -- so the release build must carry none of this.
     tlg = pe2.section(".tlg")
     tlg_va = pe2.imagebase + tlg["vaddr"]
-    assert dev[tlg["rawptr"]:tlg["rawptr"] + tlg["vsize"]] ==         tracer.assemble(tracer.TEXTLOG_SOURCE)
-    tsite = pe2.va2off(tracer.TEXTOUT_SITE)
-    assert rel[tsite:tsite + 6] == tracer.TEXTOUT_OLD          # release untouched
-    assert dev[tsite] == 0xE8 and dev[tsite + 5] == 0x90
-    assert (tracer.TEXTOUT_SITE + 5
-            + struct.unpack_from("<i", dev, tsite + 1)[0]) == tlg_va
     blob2 = tracer.assemble(tracer.TEXTLOG_SOURCE)
-    # `jmp dword ptr [TextOutA]` -- the tail call that keeps __stdcall cleanup
-    assert b"\xff\x25" + struct.pack("<I", tracer.TEXTOUT_IAT) in blob2
+    assert dev[tlg["rawptr"]:tlg["rawptr"] + tlg["vsize"]] == blob2
+    _calls_go_to(dev, pe2, tracer.GLYPH_SITES, tlg_va)
+    for site in tracer.GLYPH_SITES:
+        off = pe2.va2off(site)
+        assert (site + 5 + struct.unpack_from("<i", rel, off + 1)[0]) \
+            == tracer.DRAWGLYPH, hex(site)          # release still original
+    assert struct.pack("<I", tracer.DRAWGLYPH) in blob2      # the tail call
     assert b"textout.bin\0" in blob2 and b"GTXT" in blob2
     diffs = [i for i in range(len(rel)) if rel[i] != dev[i]]
     # allowed: the redirected rel32s, the COFF/optional-header fields that a new
@@ -149,7 +148,8 @@ def test_release_exe_carries_the_overlay_hook_and_dev_adds_the_tracer():
     opt = pe2.e_lfanew + 4 + 20
     hdrs = opt + struct.unpack_from("<H", dev, pe2.e_lfanew + 4 + 16)[0]
     allowed = ({pe2.va2off(s) + k for s in tracer.CALL_SITES for k in (1, 2, 3, 4)}
-               | set(range(tsite, tsite + 6))                         # the TextOutA call
+               | {pe2.va2off(s) + k for s in tracer.GLYPH_SITES
+                  for k in (1, 2, 3, 4)}                  # the glyph calls
                | set(range(pe2.e_lfanew + 6, pe2.e_lfanew + 8))       # NumberOfSections
                | set(range(opt + 4, opt + 16))                        # SizeOf{Code,Init,Uninit}Data
                | set(range(opt + 56, opt + 60))                       # SizeOfImage

@@ -1,25 +1,23 @@
-"""Read ``ddswin/textout.bin``, the dev build's log of every string GDI drew.
+"""Read ``ddswin/textout.bin``, the dev build's log of every glyph drawn.
 
-``giten/exe/textlog.S`` records one entry per ``TextOutA`` call -- the only
-text-drawing API the exe imports, reached from the only instruction that calls
-it.  Written by the hook as::
+The exe never calls ``TextOutA``.  It blits each character itself
+(``giten/exe/textlog.S``): ``0x451230`` draws one glyph, reading a built-in
+half-width font at ``0x0046C230`` and falling back to ``GetGlyphOutlineA`` for
+everything else, and six draw-string variants walk a ``char*`` calling it per
+character.  The dev build redirects those six ``call`` sites here.
 
-    header      "GTXT" u16 version=1 u16 0
-    per call    u16 n, i16 x, i16 y, then n bytes of cp932
+    header      "GTXT" u16 version=2 u16 record_size=20
+    per glyph   u32 arg1..arg5, exactly as the caller pushed them
 
-What this is for: deciding whether a hook on that one call site could replace
-the 117 pointer rewrites ``names.py`` and ``menus.py`` make, and the parser
-hook in ``mapnames.py``.  Three questions, and :func:`report` answers each
-directly against a play session rather than by reasoning about the binary:
+``arg1`` is the character code.  The rest are logged raw because ``0x451230``
+only reads arg1 and arg3, and naming the others would be a guess -- :func:`report`
+prints their distinct values so the next pass can name them from evidence.
 
-* **Does everything we patch reach it?**  Any string we currently re-point that
-  never appears here needs some other mechanism, so it has to be found now
-  rather than after the pointer rewrites are gone.
-* **In what form?**  A ``printf`` template is expanded before it is drawn, so
-  the hook sees ``Total      1234`` and not ``合計 %10ld``.  Those cannot be
-  matched by equality and are counted separately.
-* **What did we never find?**  Japanese that shows up here and is in none of
-  our tables is untranslated text nobody has spotted yet.
+What this is for: deciding whether a hook on those six string functions could
+replace the 117 pointer rewrites ``names.py`` and ``menus.py`` make.  Each takes
+the string as an argument, so the mechanism would be to swap the pointer.  The
+question this answers is whether everything we currently patch actually flows
+through them, and what Japanese reaches the screen that we have no table for.
 """
 from __future__ import annotations
 
@@ -30,43 +28,72 @@ from dataclasses import dataclass
 
 MAGIC = b"GTXT"
 HEADER = 8
-REC = 6
+REC = 20
+
+#: half-width codes below this are ASCII; the engine's own font table covers
+#: 0x20..0xDF, and anything else came back from GetGlyphOutlineA
+HALFWIDTH_HI = 0xDF
 
 
 @dataclass
-class Draw:
-    x: int
-    y: int
-    raw: bytes
+class Glyph:
+    args: tuple
 
     @property
-    def text(self) -> str:
-        try:
-            return self.raw.decode("cp932")
-        except UnicodeDecodeError:
-            return self.raw.decode("cp932", "replace")
+    def ch(self) -> int:
+        return self.args[0] & 0xFFFF
 
     @property
-    def japanese(self) -> bool:
-        return any(0x3040 <= ord(c) <= 0x30FF or 0x4E00 <= ord(c) <= 0x9FFF
-                   or 0xFF01 <= ord(c) <= 0xFF60 or ord(c) == 0x3000
-                   for c in self.text)
+    def raw(self) -> bytes:
+        c = self.ch
+        return bytes([c]) if c <= 0xFF else bytes([c >> 8, c & 0xFF])
 
 
-def read(path: str) -> "list[Draw]":
+def read(path: str) -> "list[Glyph]":
     with open(path, "rb") as fh:
         blob = fh.read()
     if not blob.startswith(MAGIC):
         raise ValueError("%s is not a GTXT log" % path)
+    ver, size = struct.unpack_from("<HH", blob, 4)
+    if ver != 2 or size != REC:
+        raise ValueError("%s is GTXT v%d/%d, this reads v2/%d" % (path, ver, size, REC))
     out, at = [], HEADER
     while at + REC <= len(blob):
-        n, x, y = struct.unpack_from("<Hhh", blob, at)
+        out.append(Glyph(struct.unpack_from("<5I", blob, at)))
         at += REC
-        if at + n > len(blob):
-            break                       # torn tail: the last call never finished
-        out.append(Draw(x, y, blob[at:at + n]))
-        at += n
     return out
+
+
+def runs(glyphs: "list[Glyph]") -> "list[str]":
+    """Rebuild on-screen strings from the character stream.
+
+    A draw-string call emits its characters back to back, so a run ends when
+    the arguments that are *not* the character stop agreeing -- a new call with
+    a different destination or colour.  That is a heuristic, not a boundary the
+    log records, so a run may merge two strings drawn identically in sequence.
+    """
+    out, cur, key = [], bytearray(), None
+    for g in glyphs:
+        k = g.args[1:]
+        if key is not None and k != key and cur:
+            out.append(bytes(cur))
+            cur = bytearray()
+        key = k
+        cur += g.raw
+    if cur:
+        out.append(bytes(cur))
+    dec = []
+    for b in out:
+        try:
+            dec.append(b.decode("cp932"))
+        except UnicodeDecodeError:
+            dec.append(b.decode("cp932", "replace"))
+    return dec
+
+
+def japanese(s: str) -> bool:
+    return any(0x3040 <= ord(c) <= 0x30FF or 0x4E00 <= ord(c) <= 0x9FFF
+               or 0xFF01 <= ord(c) <= 0xFF60 or ord(c) == 0x3000 for c in s)
 
 
 def _known_strings(repo_root: str) -> "dict[str, str]":
@@ -107,25 +134,33 @@ def _known_strings(repo_root: str) -> "dict[str, str]":
 
 
 def report(path: str, repo_root: str, limit: int = 40) -> int:
-    draws = read(path)
-    uniq: "dict[bytes, int]" = {}
-    for d in draws:
-        uniq[d.raw] = uniq.get(d.raw, 0) + 1
+    glyphs = read(path)
+    strings = runs(glyphs)
+    uniq: "dict[str, int]" = {}
+    for t in strings:
+        uniq[t] = uniq.get(t, 0) + 1
     known = _known_strings(repo_root)
 
-    jp = [d for d in {d.raw: d for d in draws}.values() if d.japanese]
-    print("%d TextOutA calls, %d distinct strings" % (len(draws), len(uniq)))
-    print("%d distinct strings still contain Japanese\n" % len(jp))
+    jp = [t for t in uniq if japanese(t)]
+    print("%d glyphs drawn, grouped into %d runs, %d distinct"
+          % (len(glyphs), len(strings), len(uniq)))
+    print("%d distinct runs still contain Japanese\n" % len(jp))
 
-    hit = [d for d in jp if d.text.strip() in known]
-    miss = [d for d in jp if d.text.strip() not in known]
-    print("  of those, %d are text we already have a table for, %d are not"
+    hit = [t for t in jp if t.strip() in known]
+    miss = [t for t in jp if t.strip() not in known]
+    print("  of those, %d match something we already translate, %d do not"
           % (len(hit), len(miss)))
-    print("  (a miss is either a formatted template -- the hook sees the "
-          "expanded\n   string, not the %-spec -- or text nobody has found yet)\n")
-
+    print("  (a miss is a formatted template, a run the grouping merged, or "
+          "text\n   nobody has found yet)\n")
     if miss:
         print("Japanese drawn on screen that matches nothing we translate:")
-        for d in sorted(miss, key=lambda d: -uniq[d.raw])[:limit]:
-            print("   x=%-4d y=%-4d  x%-4d  %s" % (d.x, d.y, uniq[d.raw], d.text))
+        for t in sorted(miss, key=lambda t: -uniq[t])[:limit]:
+            print("   x%-4d  %s" % (uniq[t], t))
+    print()
+    seen = {}
+    for i in range(1, 5):
+        vals = {g.args[i] for g in glyphs}
+        seen[i] = len(vals)
+    print("distinct values per argument (arg1 is the character): %s"
+          % ", ".join("arg%d=%d" % (i + 1, seen[i]) for i in range(1, 5)))
     return 0
