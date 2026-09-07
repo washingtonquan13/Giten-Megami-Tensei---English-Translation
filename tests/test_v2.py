@@ -1631,3 +1631,51 @@ def test_the_ms0031_trace_confirms_10_and_expression_kind_13():
     nodes = json.load(io.open(os.path.join(paths.REPO_ROOT, "docs", "opcodes.json"),
                               encoding="utf-8"))["expressions"]["nodes"]
     assert nodes["0x1f"] == ["u8", "expr"], nodes["0x1f"]
+
+
+def test_the_overlay_fingerprint_catches_a_wrong_duplicate_resolution():
+    """Why the duplicate-id question is cosmetic, not a hazard.
+
+    Ten containers hold two records with one id.  `records.bases`,
+    `overlay.engine_index` and `overlay.image_bytes` all keep the **first**, and
+    no trace has ever covered a duplicate-id file, so that is a model rather than
+    an observation.  Four containers would be laid out differently under the
+    other reading -- `m/MS6000` c8 shifts 247 of 256 bases by up to 136 bytes.
+
+    It cannot go wrong silently.  `giten/exe/hook.c` computes
+    `fnv1a(base, FP_BYTES)` over the **live** record index the engine built --
+    `FP_BYTES` is 0x400, the whole 256-entry index -- and serves a container's
+    spans only when that hash equals the one built from our model.  Resolve the
+    duplicate the other way and the index differs, so the hash differs, so the
+    hook declines and the text stays Japanese.  A wrong guess costs coverage,
+    never an address.
+
+    This test is the load-bearing half: it fails if the two readings ever hash
+    the same, which is the only way the guard could be fooled.
+    """
+    import struct
+
+    from giten import container, files, overlay, paths, records
+
+    for rel, ci in (("m/MS6000.BIN", 8), ("m/MS6012.BIN", 4),
+                    ("m/MS610B.BIN", 15), ("m/MS6800.BIN", 0)):
+        conts, _ = container.split(files.read_source(rel, paths.ORIGINAL_DDSWIN))
+        recs = [records.Record(r.id, r.data)
+                for r in records.parse_body(conts[ci].body).records]
+        assert records.layout_is_ambiguous(recs), rel
+
+        first = overlay.engine_index(recs)
+        have = {}
+        for r in recs:
+            have[r.id] = len(r.data)              # last wins
+        off, last = records.INDEX_SIZE, bytearray()
+        base = {}
+        for i in range(256):
+            base[i] = off
+            off += have.get(i, records.ABSENT_LEN)
+        for i in range(256):
+            last += struct.pack("<HH", base[i], have.get(i, records.ABSENT_LEN))
+
+        assert first != bytes(last), rel
+        assert (overlay.fnv1a(first[:overlay.FP_BYTES])
+                != overlay.fnv1a(bytes(last)[:overlay.FP_BYTES])), rel
