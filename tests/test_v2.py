@@ -1914,3 +1914,40 @@ def test_no_span_we_serve_starts_a_token_the_engine_would_branch_on():
                         % (r.file, r.rec, r.idx, op, en[:40]))
     assert checked > 20000, checked
     assert flagged == 0
+
+
+def test_a_recorded_session_shows_the_overlay_did_not_change_flow():
+    """A real trace, replayed against the overlay that produced it.
+
+    ``test_no_span_we_serve_starts_a_token_the_engine_would_branch_on`` checks
+    the *data* we would serve.  This checks what the engine actually did with
+    it: 4,000 records cut from a play session, verified against the untouched
+    script files and a frozen copy of that session's overlay.
+
+    The two halves travel together on purpose.  A trace means nothing against a
+    different overlay -- the served-byte reconstruction would miss and every
+    English span would read as script corruption -- so pinning the trace alone
+    would rot the moment the tables changed.  The overlay copy holds only the
+    seven entries this slice touches.
+
+    What it would catch that the static test cannot: the C hook serving the
+    wrong bytes, or handing the program counter back to the wrong address.
+    Both are invisible in the tables and would show here as a token that does
+    not match the original file.
+    """
+    from giten import paths
+    from giten.trace import core
+
+    here = os.path.dirname(os.path.abspath(__file__))
+    trace = os.path.join(here, "data", "verify-trace.gtrc")
+    ovl = os.path.join(here, "data", "verify-overlay.gtov")
+    stats, findings = core.verify(trace, paths.ORIGINAL_DDSWIN, ovl)
+
+    assert findings == [], findings[:3]
+    # both paths have to be exercised or this passes while checking nothing
+    assert stats["served"] > 500, stats
+    assert stats["from the file"] > 1500, stats
+    assert stats["records"] == 4000, stats
+    # and the placement rate must not quietly collapse into "unverified"
+    placed = stats["served"] + stats["from the file"]
+    assert placed / stats["records"] > 0.7, stats

@@ -487,7 +487,8 @@ def _served_bytes(img, pc: int, ch: int):
                         return want
     return None
 
-def verify(trace_path: str, build_dir: "str | None" = None):
+def verify(trace_path: str, build_dir: "str | None" = None,
+           overlay_path: "str | None" = None):
     """Did the overlay change control flow?  Answered from one English trace.
 
     The overlay's contract is local: for a translated span it serves English in
@@ -519,7 +520,10 @@ def verify(trace_path: str, build_dir: "str | None" = None):
     with open(trace_path, "rb") as fh:
         data = fh.read()
     entries = None
-    ovl = os.path.join(build_dir, "overlay.dat")
+    # An explicit overlay lets a test pin a recorded trace against the exact
+    # overlay that produced it: a trace means nothing against any other one, so
+    # the two have to travel together.
+    ovl = overlay_path or os.path.join(build_dir, "overlay.dat")
     if os.path.exists(ovl):
         with open(ovl, "rb") as fh:
             entries = overlay.parse(fh.read())
@@ -588,8 +592,8 @@ def verify(trace_path: str, build_dir: "str | None" = None):
 
 
 def report_verify(trace_path: str, build_dir: "str | None" = None,
-                  limit: int = 20) -> "tuple[str, int]":
-    stats, findings = verify(trace_path, build_dir)
+                  limit: int = 20, overlay_path: "str | None" = None):
+    stats, findings = verify(trace_path, build_dir, overlay_path)
     out = ["%s" % os.path.basename(trace_path)]
     placed = stats["served"] + stats["from the file"]
     out.append("  %d records: %d placed (%d served by the overlay, %d read "
