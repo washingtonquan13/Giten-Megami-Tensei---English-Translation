@@ -228,11 +228,36 @@ done.** The real question is the one nobody has asked: *how are these five files
 loaded at all?* They have overlay entries and English, and nothing found so far
 asks for them by name.
 
-One hypothesis worth testing first, because it is cheap and would shrink the
-problem: `m/MS6F00` has **7,987 records across 32 containers and zero rows with
-English**, and `m/MS6F1F` also has none. They pass `records.is_record_layer` but
-may be data rather than script, like the `m/M00xx` family. If so, 20 of the 73
-untiled records are not text and never were.
+**Tested 2026-09-08, and it changes the shape of the problem.**
+
+`m/MS6F00` and `m/MS6F1F` **are not script.** Every "text span" in them decodes
+to `ÿ` and punctuation -- `b'ÿ P'`, `b'ÿ-ÿ'`, `b'ÿ'` -- and
+0xFF is unassigned in cp932, so it is never text. Neither carries a single row of
+English. 7,936 of `m/MS6F00`'s 7,987 records are the one-byte absent placeholder;
+it holds 51 real records, and `m/MS6F1F` holds the *same* 51 (identical
+record-length histogram). `0x1F` = 31, and `m/MS6F00` container **31** is
+`m/MS6F1F` container 0 -- the same data, on disk twice. **20 of the 73 untiled
+records are neither text nor unique**, like `m/MS7F05` before them.
+
+`m/MS6200` and `m/MS6500` *are* script -- their spans hold real Japanese
+(`大丈夫？`, `友好的`, `威圧的`) -- so those 7 records stay.
+
+That leaves **53 real records**: `m/MS610D` 40, `m/MS6200` 6, `m/MS0031` 6,
+`m/MS6500` 1.
+
+**And they are not blocked by a missing opcode.** Asked why the tokenizer gives
+up, the answers are `switch entry has kind 13 / 31 / 225 / 255 (not 0 or 1)`, and
+then a scatter of `operand past end of record`, which only means the walk was
+already out of step. The switch refusal is **deliberate**, and `vmops._read_switch`
+says why: the engine's handler only tests `kind != 0`, so it would follow these,
+but 0E/0F entries with kind >= 2 point at an instruction 8% of the time -- they
+are bytes a lost walk reached. Relaxing it is the same trap as the `['u8']`
+change that "made 41 records tile".
+
+**So closing these needs ground truth about whether the walk is out of step, not
+a better opcode table** -- and the only instrument for that is the engine's own
+PC log, which reaches `m/MS0031` and nothing else. `m/MS610D`, the 40, is the
+one that matters and the one still out of reach.
 
 **What "100%" cannot mean:** 374 of the 768 dispatch slots never occur anywhere
 in the corpus. Their handlers can be read, but nothing in the game exercises
