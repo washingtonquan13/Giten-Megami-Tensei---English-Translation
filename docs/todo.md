@@ -401,6 +401,45 @@ different one. Nothing above answers that; it needs the battle unit structure.
 ---
 
 
+### 0. Replace the v0.05 English -- USER PRIORITY, set 2026-09-08
+
+**16,789 rows / 582,706 characters of the English we would build are byte-for-byte
+Sneikkimies' v0.05 text, unreviewed.** That is 38% of the shipped rows and 37% of
+the shipped characters.
+
+`giten check` already flags every one of them and has all along -- the guard at
+`check_v2.py:275` errors when `en == ref_en` and `status != "reviewed"`. The
+current count:
+
+| | rows | characters |
+|---|---|---|
+| `en` set but `status` empty | **0** | -- |
+| `en == ref_en`, not reviewed, `ref_src = v005` | **16,789** | 582,706 |
+| `en == ref_en`, not reviewed, `ref_src = ours` | 10,652 | -- |
+| **total `status` errors** | **27,441** | |
+| rows marked `reviewed` in the whole corpus | **292** | |
+
+So there is already a progress metric that cannot be gamed: **drive the `status`
+error count to zero**, by either rewriting the line (so `en != ref_en`) or reading
+the Japanese and marking it `reviewed`. Nothing else needs building first.
+
+**Worst files, by rows of unreviewed v0.05 text:**
+
+    m/MS003B 855   m/MS0030 794   m/MS005C 514   m/MS005D 512   m/MS000D 511
+    m/MS005B 447   m/MS001E 428   m/MS0006 359   m/MS0060 334   m/MS0029 325
+
+**Why this is not merely bookkeeping.** Shipping another translator's work
+verbatim is a real attribution problem independent of quality, and the v0.05
+lines were never checked against the Japanese by anyone here -- they were carried
+in as *candidates*. The standing policy ("v0.05 lines are drafts only, never a
+build input") is currently violated in effect for 16,789 rows, because they were
+promoted into `en`.
+
+**Relationship to item 1.** Item 1 is ~200 rows with *no* English at all. This is
+16,789 rows with the *wrong provenance*. Item 1 is much smaller and finishes
+coverage; this one is the larger body of work and the one the user has named the
+priority.
+
 ### 1. Finish the untranslated ordinary rows — 216 of 854 done
 
 **The "854 untranslated rows" figure overstated the job by about half**: 441 of
