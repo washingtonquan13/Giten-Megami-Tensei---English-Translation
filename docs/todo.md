@@ -888,6 +888,39 @@ nothing has been found to load.
 
 ---
 
+## Parked 2026-09-08 -- picked up after the combat-pacing work
+
+### P1. District names are in `et/ET000D.BIN`, which nothing extracts
+
+`百人町`, `大久保`, `北新宿`, `高田馬場`, `上落合`, `新宿` draw in Japanese in the
+location strip.  They are in **no table** -- found by decoding every game file
+and searching the plaintext, which is why a raw byte search missed them (the
+container is XOR-chained).  Not `mapnames.tsv` (106 of 109 done; the 3 gaps are
+whitespace and an already-Latin name) and not `maplabels.tsv` (a different table,
+96 entries with 69 *empty* slots).  Needs an extractor of the same shape as
+`giten etdb`.
+
+### P2. The Dantalion-corridor directions regressed and I cannot explain it
+
+`m/MS005C` 0:10[14] and 0:10[23] -- "head right, the door will be in front of
+us" -- drew in **Japanese** in the 2026-09-08 evening session; the user reports
+they used to be English.  Everything checks out on paper: both rows carry
+English, both are planned into the overlay, and the file has full coverage (750
+spans for 750 English rows).
+
+**Two process failures made this hard to diagnose, both mine.**  The previous
+`overlay.dat` was overwritten with no backup, so old and new cannot be diffed.
+And a first diagnosis of "not in the overlay" was **wrong**: `Span.idx` is not
+stored in the binary format and reads back as `-1`, so comparing against it says
+"absent" for every span.  Compare against `overlay.plan()`, which carries `idx`,
+or match on `(rec_id, rec_off)`.
+
+`play/en - Copy/ddswin/overlay.dat` is an older (v4) overlay.  If that copy dates
+from when the corridor read English, swapping it in and walking that corridor
+settles the question in one run.
+
+---
+
 ## Deferred -- only after 100% opcode accuracy and 100% translation
 
 ### D1. The engine eats a character at 14 sites. We could give it back.
