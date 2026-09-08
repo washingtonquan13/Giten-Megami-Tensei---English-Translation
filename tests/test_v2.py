@@ -1325,8 +1325,17 @@ def test_dropping_a_pool_call_that_prints_a_name_is_an_error():
     still reads, it just has nobody in it.
 
     Dropping an ordinary pool call stays correct and unreported: an English line
-    spells the word out instead of splicing a Japanese macro.  Only the ten
+    spells the word out instead of splicing a Japanese macro.  Only the
     name-printing entries are protected.
+
+    **The set is closed over pool calls, not just direct `1F01` holders
+    (2026-09-08).**  It was ten entries and missed `{04:19}`, which prints
+    "<name> and the others" by *calling* `{04:1A}` rather than holding a `1F01`
+    itself.  Six battle-result lines in `m/MS00DD` had dropped it and shipped
+    reading " and the others won the battle" with nobody in them -- the exact
+    failure this rule exists to catch, one level of indirection out of reach.
+    Closing over the call graph adds `{04:19}` and `{05:10}`; the count is
+    pinned so that a *wider* accident still fails here.
     """
     from giten import check_v2, findings, paths
     from giten import tables as tbl
@@ -1335,7 +1344,8 @@ def test_dropping_a_pool_call_that_prints_a_name_is_an_error():
     macros = check_v2.name_macros(root)
     assert "{04:03}" in macros and "{04:05}" in macros, sorted(macros)
     assert "{08:62}" not in macros            # は、 is a grammar fragment
-    assert len(macros) == 10, sorted(macros)
+    assert "{04:19}" in macros, "indirect name macros are unprotected again"
+    assert len(macros) == 12, sorted(macros)
 
     def row(jp, en):
         return tbl.Row(file="m/MS00DE.BIN", rec="0:21", idx=0, off=0, tag="DATA",

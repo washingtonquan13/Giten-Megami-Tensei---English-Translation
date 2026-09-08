@@ -239,7 +239,7 @@ def name_macros(root=None) -> set:
     all in pool 4.
     """
     if root not in _NAME_MACROS:
-        out = set()
+        out, calls = set(), {}
         for i in range(8):
             rel = "m/MS7F%02X.BIN" % i
             try:
@@ -255,10 +255,32 @@ def name_macros(root=None) -> set:
                     toks = vmops.tokenize(rec.data)
                 except Exception:
                     continue
+                me = "{%02d:%02X}" % (i + 1, rec.id)
                 if any(t.kind == "op"
                        and vmops.table().encoding(t.idx).replace(" ", "") == "1F01"
                        for t in toks):
-                    out.add("{%02d:%02X}" % (i + 1, rec.id))
+                    out.add(me)
+                # which other pool records does this one call?  Opcodes 0x01-0x08
+                # are the pool calls, taking the record id as a u8.
+                for t in toks:
+                    if t.kind != "op" or not (0x001 <= t.idx <= 0x008):
+                        continue
+                    for o in t.ops:
+                        if o.kind == "u8":
+                            calls.setdefault(me, set()).add(
+                                "{%02d:%02X}" % (t.idx, o.value))
+        # A record that *calls* a name macro prints a name just as surely as one
+        # that holds the 1F01 itself.  `{04:19}` is the case that proved it: it
+        # expands to "<name> and the others" by calling `{04:1A}`, so it was not
+        # recognised, and six battle lines shipped reading " and the others won
+        # the battle" with nobody in them.  Close over the call graph.
+        changed = True
+        while changed:
+            changed = False
+            for me, callees in calls.items():
+                if me not in out and (callees & out):
+                    out.add(me)
+                    changed = True
         _NAME_MACROS[root] = out
     return _NAME_MACROS[root]
 
