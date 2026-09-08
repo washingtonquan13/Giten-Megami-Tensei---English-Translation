@@ -3,7 +3,8 @@
     python tools/tl_apply.py m/MS0002.BIN answers.tsv [--write]
 
 Reads `rec<TAB>idx<TAB>english`, one row per line.  Without `--write` it only
-reports; with `--write` it updates `build/tables_draft` and sets `status=draft`.
+reports; with `--write` it updates `tables/` (the tracked source) and sets
+`status=draft`.  Pass `--text DIR` to write somewhere else.
 
 Every refusal here is a failure mode that `giten check` would either miss or
 only catch much later.  The two token rules were both learned from the pilot,
@@ -55,7 +56,7 @@ _POOL_CACHE: "dict[str, tuple]" = {}
 def _pool(token: str) -> tuple:
     """``(english, japanese)`` for a pool call, or ``("", "")`` if not one."""
     if not _POOL_CACHE:
-        for p in tables.iter_tables(os.path.join(paths.BUILD_DIR, "tables_draft")):
+        for p in tables.iter_tables(DRAFT):
             for r in tables.read(p):
                 if r.file.startswith("m/MS7F"):
                     _POOL_CACHE.setdefault("%s|%s" % (r.file, r.rec),
@@ -82,8 +83,16 @@ def pool_jp(token: str) -> str:
 
 REL = sys.argv[1]
 ANS = sys.argv[2]
-WRITE = "--write" in sys.argv[3:]
-DRAFT = os.path.join(paths.BUILD_DIR, "tables_draft")
+WRITE = "--write" in sys.argv
+#: Where to write.  **Default is `tables/`, the tracked source of truth.**
+#: `build/tables_draft` is *derived* -- `tools/make_draft_tree.py` regenerates it
+#: from `tables/` and its own docstring says "always regenerate from the current
+#: tables/, never rebuild an old tree".  Writing translations there loses them at
+#: the next regeneration, and they are gitignored so nothing notices.  The first
+#: day of this pass wrote 460 rows into the draft tree by mistake.
+DRAFT = os.path.join(paths.REPO_ROOT, "tables")
+if "--text" in sys.argv:
+    DRAFT = sys.argv[sys.argv.index("--text") + 1]
 BOX_COLUMNS = 74
 
 paths_by_file = {}
