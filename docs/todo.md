@@ -450,6 +450,41 @@ re-anchoring on content, with anything unresolvable written to `docs/recovery/`.
 Rows would need re-anchoring, never retranslating. Drop the 20 `@noedit` rows
 from scope.
 
+**PILOT DONE 2026-09-08: 469 rows across 4 early-game files, all applied.**
+`m/MS0002` (82), `m/MS0015` (119), `m/MS0016` (86), `m/MS0017` (182), by Sonnet
+agents through `tools/tl_export.py` -> `tools/tl_apply.py`.
+
+    status errors   27,441 -> 27,138      width-choice  109 -> 107 (2 better than baseline)
+    japanese 129, tokens 5, missing 915, width 10 -- all UNCHANGED
+
+Quality beats v0.05, which the agents caught mistranslating (`Water Wall` as
+"Ice Wall"), inventing sentences absent from the Japanese, and flattening nuance.
+Backup of the tables before the first write:
+`build/tables_draft.bak-20260908-121325` (the tree is gitignored -- that is the
+only undo).
+
+**Four defects found, all in the tooling, none in the translations:**
+
+1. an exact-token-multiset rule, which produced `No one{08:24}{02:08} here...`;
+2. keeping a token whose pool entry is untranslated, which ships Japanese inside
+   English (`by 人間 strength`) -- 102 of `m/MS0017`'s 182 rows;
+3. the refusal list truncated at 40, silently capping a 102-row re-brief;
+4. no output-token discipline: `m/MS0016` died at the 64,000-token ceiling with
+   nothing written, on 86 rows whose text is ~3,000 tokens. Narration and repeated
+   whole-file rewrites, not the translations.
+
+**The number that should change the plan: ~35% of rows converge.** 166 of the 469
+still read `en == ref_en` *after* independent retranslation, because there is only
+one reasonable English -- 146 of them have <= 8 Japanese characters (`男性：` ->
+`Man:`). Corpus-wide **57% of the 17,790 in-scope rows are under 12 Japanese
+characters**. Those cannot be improved by an LLM at ~2,500 tokens each; they need
+a reviewer to confirm and mark `reviewed`.
+
+**Cost, measured, not estimated:** ~2,400-3,000 tokens per row, flat across batch
+sizes from 82 to 182 rows -- so per-row reading and reasoning dominates, not
+fixed overhead. Extrapolating naively gives **40M+ tokens** for 16,769 rows. A
+convergence pass over the short rows first would cut that by more than half.
+
 **Why this is not merely bookkeeping.** Shipping another translator's work
 verbatim is a real attribution problem independent of quality, and the v0.05
 lines were never checked against the Japanese by anyone here -- they were carried
