@@ -496,6 +496,47 @@ target so each fragment is separately translatable. Not a translation task.
 
 ---
 
+### 4a. `m/MS0031`: the bug located exactly, the fix NOT yet proven
+
+**22 spans in `m/MS0031` begin on the trailing byte of a two-byte character.**
+Shifting one byte back reads correctly, which is what makes this certain rather
+than inferred:
+
+| as extracted | one byte back |
+|---|---|
+| `｢きなり、倒れんだもん。` | `いきなり、倒れんだもん。` |
+| `ﾋ然倒れたから、` | `突然倒れたから、` |
+| `｣：` | `泪：` |
+| `ﾚしい事情はあとだ。` | `詳しい事情はあとだ。` |
+| `ｱんなトコが、` | `こんなトコが、` |
+| `ﾅも今度は、` | `でも今度は、` |
+
+**Where it goes wrong.** At `m/MS0031` c0 rec 01 offset 0x3F the bytes are
+`10 01 01 82 A2 ...`. Our tokenizer reads opcode `10` as rel16 + expression,
+takes `01 01` as the rel16 and `82` as an expression selector -- and `0x82` is
+above `0x5D`, so the expression reader treats it as the nullary "invalid" kind
+and consumes it. But `82 A2` is `い`. The token eats the lead byte and the text
+run starts on `A2`, which decodes as `｢`.
+
+**Why the fix is not obvious.** Opcode `10`'s handler `0x00430055` calls
+`0x004348B0(0,0,0)`, which calls `0x00434680` and then `0x00437490` -- the
+expression reader -- unconditionally. And the 2026-09-06 warp trace verified
+`10 01 00 0f` as a **6-byte** token, so `10` really does take an expression
+sometimes. The difference between the two sites is the third byte (`01` here,
+`00` there), which suggests a mode, but that is a guess.
+
+**Do not ship a tokenizer change on this reasoning.** Four separate rules were
+tried today -- "pure hiragana is grammar", "no kana means data", "the
+clothing-radical block means data", "an operand ending on a lead byte is a
+swallowed character" -- and every one of them looked decisive and was wrong on
+the corpus. The same care is owed here.
+
+**What would settle it.** The existing warp trace cannot: the engine ran offset
+0x1 of that record and branched straight to 0x1A0, so the disputed region was
+never executed. `tools/make_warp.py` writes a throwaway JP tree, so it can also
+patch that first branch to fall through, forcing execution across 0x14..0x19F and
+logging the engine's own token boundaries there. One play session answers it.
+
 ### 4. Opcode model — re-stated 2026-09-08 after the data-span work
 
 **"99.65% of records tile" was the wrong headline.** A record can tile and tile
