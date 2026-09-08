@@ -129,3 +129,68 @@ def test_the_structural_byte_is_counted_and_not_merely_looked_for():
     entries, findings = overlay.plan(rows, None)
     where = {w.split()[0] + " " + w.split()[1] for w, _m in findings}
     assert "m/MS610D.BIN 0:FE[4]" in where, "the span that proved the bug is served again"
+
+
+def test_every_span_the_rule_refuses_is_shaped_like_a_pointer_table():
+    """The check that does not depend on the rule being right.
+
+    "Follows opcode 11 in an untiled container" is a discriminator fitted to
+    fifty spans with one counter-example, so it could quietly refuse a real line
+    one day.  This asserts the thing that made the call in the first place: the
+    bytes.  All 24 currently refused share one grammar --
+
+        u16 , 01 00 , u16 , [ 02 00 , u16 ] , FF
+
+    -- with every u16 inside 0xE5DD..0xE668, a 140-wide band, and in 16 of them
+    one word is exactly the record's own id plus 0xE601 or 0xE501.  Prose does
+    not do that.  The `01 00` and `02 00` separators are what the extractor read
+    as pool calls, which is where "Devil Buster" came from.
+
+    If the rule ever refuses something that is *not* shaped like this, that is
+    the moment to look rather than to trust it.
+    """
+    import struct
+    from giten import files, script
+
+    rows = _rows()
+    if not rows:
+        return
+    _entries, findings = overlay.plan(rows, None)
+    refused = [w for w, m in findings if "follows opcode" in m]
+    if not refused:
+        return
+    by_key = {("%s %s[%d]" % (r.file, r.rec, r.idx)): r for r in rows}
+
+    parsed = {}
+    odd, arith = [], 0
+    for key in refused:
+        r = by_key[key]
+        if r.file not in parsed:
+            parsed[r.file] = script.parse(r.file, files.read_source(r.file))
+        sc = parsed[r.file]
+        ci, _, rid = r.rec.partition(":")
+        rid = int(rid, 16)
+        rec = next((x for x in sc.containers[int(ci)] if x.id == rid), None)
+        sp = rec and next((x for x in rec.spans if x.idx == r.idx), None)
+        if sp is None:
+            continue
+        raw = rec.data[sp.off:sp.end]
+
+        # the grammar: pairs of (u16, one-byte separator) ending in 0xFF
+        if raw[-1] != 0xFF or len(raw) < 7 or (len(raw) - 1) % 4 not in (2, 3):
+            odd.append((key, raw.hex()))
+            continue
+        words = [int.from_bytes(raw[i:i + 2], "big") for i in range(0, len(raw) - 2, 4)]
+        if not words or not all(0xE500 <= w <= 0xE700 for w in words):
+            odd.append((key, raw.hex()))
+            continue
+        allw = [int.from_bytes(raw[i:i + 2], "big") for i in range(len(raw) - 1)]
+        if any((w - rid) in (0xE601, 0xE501) for w in allw):
+            arith += 1
+
+    assert not odd, (
+        "%d refused span(s) are not shaped like a pointer table, so the rule may "
+        "be refusing real text: %s" % (len(odd), odd[:4]))
+    assert arith >= 12, (
+        "only %d of the refused spans carry record-id arithmetic; the evidence "
+        "that these are pointer tables has weakened" % arith)
