@@ -496,108 +496,44 @@ target so each fragment is separately translatable. Not a translation task.
 
 ---
 
-### 4. Opcode model: 7 containers, not 119 scattered errors
+### 4. Opcode model — re-stated 2026-09-08 after the data-span work
 
-Re-measured 2026-09-08, and the old framing was misleading.
+**"99.65% of records tile" was the wrong headline.** A record can tile and tile
+*wrong*: the tokenizer invents spans over data, and 25 of them had English
+promoted into them. So the number that matters is not how many records tile but
+how many spans we can vouch for.
 
 | | |
 |---|---|
-| records that tile | 20,617 of 20,690 — **99.65%** |
-| corpus bytes inside a record we cannot tile | 3,927 of 1,688,491 — **0.23%** |
-| branch targets landing on a token boundary | 20,150 of 20,269 — 99.41% |
-| ...**in a container that tiles completely** | **100%** |
+| records that tile | 20,617 of 20,690 — 99.65% |
+| spans in a container holding an untiled record | **615 of 44,604 — 1.38%** |
+| ...of those, served with English | **311** (MS0031 193, MS610D 92, MS6200 22, MS6500 4) |
+| branch targets on a token boundary | 20,150 of 20,269 |
+| spans shaped like a pointer table | 37 — **0 served** (fixed, item 3) |
 
-**All 119 misses sit in a container that also holds an untiled record; zero sit
-in one that tiles cleanly.** So this is not 119 opcode errors scattered through
-the corpus — it is 7 containers we cannot frame, and every branch in everything
-else already lands where the model says.
+**The correlation is now confirmed three independent ways.** Untiled records,
+off-boundary branch targets, and data-shaped spans each occur in the same seven
+containers and **nowhere else**: `m/MS0031` c0, `m/MS610D` c0 and c3,
+`m/MS6200` c0, `m/MS6F00` c31, `m/MS6F1F` c0, `m/MS6500` c0. Outside them the
+model shows no evidence of being wrong at all — every branch lands on a
+boundary and no span is shaped like data.
 
-The 7: `m/MS0031` c0 (6 untiled, 44 strays), `m/MS610D` c0 (36, 40) and c3,
-`m/MS6200` c0 (6, 13), `m/MS6F00` c31 (10, 9), `m/MS6F1F` c0 (10, 9),
-`m/MS6500` c0 (1, 2).
+**The visible residue is `m/MS0031`.** Its 193 served spans start a byte or two
+late, so the English lands just inside the line and a stray Japanese byte shows
+first — `｢きなり` where the record reads `いきなり`, `ﾋ然` where it reads
+`突然`. The translations are correct; the *boundaries* are not. This is the
+"garbage-prefixed spans" noted long ago, now located.
 
-Do **not** re-open opcode `10` or `11` from this. Both were settled by warp
-trace on 2026-09-06 — 145 of 148 logged token lengths matched and the three that
-differed were branches whose logged PC was the target, on a boundary — and the
-corpus-driven `['u8']` change that "made 41 records tile" must never be applied.
-They emit 90 of the 119 because they are the branches *in the broken
-containers*, not because their operands are wrong.
+So the work left is one defect with three faces, in six files:
 
-**The method, and where it stops.** `tools/make_warp.py` puts `0C 31 01` at the
-start of `m/MS0017` r01 -- no save, no playthrough -- and the engine's own PC log
-becomes ground truth. That is what settled opcodes 10, 11 and kind 13.
-
-Checked 2026-09-08, because the first version of this entry assumed it would
-generalise and it does not:
-
-- **Verified:** `0C`'s handler `0x00430019` -> `0x00433E70` -> `0x00433D70`
-  **calls `0x00433CA0` at `0x00433E06`** -- the resolver with the `0xE0..0xFF`
-  branch. So `0C E0 rr` really does warp into conversation slot 0, and
-  `0x0040E9BB` builds the merge on demand. That part works.
-- **But `0C` takes two u8 operands**, so it can name `m/MS00xx` (0x00-0xDF) and
-  the slots (0xE0-0xFF), and **nothing else**. It cannot reach `m/MS610D`,
-  `m/MS6200`, `m/MS6500`, `m/MS6F00` or `m/MS6F1F`.
-- **And `m/MS610D` is not in `et/ET0007`** -- the third column holds
-  00,06,07,08,09,0B,0C, never 0D -- so it is not reachable through a slot either.
-- The exe holds **no immediate** for 0x6200/0x6500/0x6F00. (An earlier search
-  said otherwise; those bytes were inside the opcode dispatch table at
-  `0x4318B0`, not code.)
-
-**So the warp reaches one of the six files, `m/MS0031`, and that one is already
-done.** The real question is the one nobody has asked: *how are these five files
-loaded at all?* They have overlay entries and English, and nothing found so far
-asks for them by name.
-
-**Tested 2026-09-08, and it changes the shape of the problem.**
-
-`m/MS6F00` and `m/MS6F1F` **are not script.** Every "text span" in them decodes
-to `ÿ` and punctuation -- `b'ÿ P'`, `b'ÿ-ÿ'`, `b'ÿ'` -- and
-0xFF is unassigned in cp932, so it is never text. Neither carries a single row of
-English. 7,936 of `m/MS6F00`'s 7,987 records are the one-byte absent placeholder;
-it holds 51 real records, and `m/MS6F1F` holds the *same* 51 (identical
-record-length histogram). `0x1F` = 31, and `m/MS6F00` container **31** is
-`m/MS6F1F` container 0 -- the same data, on disk twice. **20 of the 73 untiled
-records are neither text nor unique**, like `m/MS7F05` before them.
-
-`m/MS6200` and `m/MS6500` *are* script -- their spans hold real Japanese
-(`大丈夫？`, `友好的`, `威圧的`) -- so those 7 records stay.
-
-That leaves **53 real records**: `m/MS610D` 40, `m/MS6200` 6, `m/MS0031` 6,
-`m/MS6500` 1.
-
-**And they are not blocked by a missing opcode.** Asked why the tokenizer gives
-up, the answers are `switch entry has kind 13 / 31 / 225 / 255 (not 0 or 1)`, and
-then a scatter of `operand past end of record`, which only means the walk was
-already out of step. The switch refusal is **deliberate**, and `vmops._read_switch`
-says why: the engine's handler only tests `kind != 0`, so it would follow these,
-but 0E/0F entries with kind >= 2 point at an instruction 8% of the time -- they
-are bytes a lost walk reached. Relaxing it is the same trap as the `['u8']`
-change that "made 41 records tile".
-
-**So closing these needs ground truth about whether the walk is out of step, not
-a better opcode table** -- and the only instrument for that is the engine's own
-PC log, which reaches `m/MS0031` and nothing else. `m/MS610D`, the 40, is the
-one that matters and the one still out of reach.
-
-**Two things to do before chasing `m/MS610D`'s loader, both cheap:**
-
-1. **Add `m/MS6F00` and `m/MS6F1F` to `DEAD_DATA`** in `tools/make_draft_tree.py`,
-   beside `m/MS7F05`. They are not text and they are duplicates of each other.
-   Leaving them in the pipeline means a reference draft can be promoted into a
-   data file -- which is exactly how "Dictionary 5" reached the screen during a
-   battle.
-2. **`m/MS610D` already ships mojibake** in 127 English rows (item 3). It is a
-   live bug in the one file whose loader nobody can find, so understanding the
-   file is worth more than tiling it.
-
-**Then** the open question, stated plainly: *what loads `m/MS610D`?* It is not
-reachable by `0C` (u8 file id), not in `et/ET0007`, and its id appears nowhere in
-`.text` as an immediate. 40 of the 53 remaining untiled records are in it.
-
-**What "100%" cannot mean:** 374 of the 768 dispatch slots never occur anywhere
-in the corpus. Their handlers can be read, but nothing in the game exercises
-them, so they can be modelled and never verified. 394 slots are used, the exe
-implements 384 of them, and 10 are no-ops with 162 uses between them.
+1. **`m/MS0031`** — 193 served spans with a wrong start. Reachable by the
+   existing warp (`0C 31 01`), and already warped once to settle opcodes 10/11,
+   so the ground truth is obtainable today. **Highest value: it is the only one
+   whose fix shows on screen.**
+2. **`m/MS610D`** — 40 untiled records, 92 served spans. Still no known loader,
+   so no warp reaches it.
+3. `m/MS6200`, `m/MS6500` — 7 untiled records between them.
+4. `m/MS6F00`, `m/MS6F1F` — not script at all; deny-listed, nothing to do.
 
 ---
 
