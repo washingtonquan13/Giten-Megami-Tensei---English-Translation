@@ -2492,3 +2492,36 @@ def test_both_1ebe_arms_are_exercised_by_the_corpus():
                         seen["mode 0" if t.ops[0].raw == b"\x00" else "mode n"] += 1
     assert seen["mode 0"] > 50, seen
     assert seen["mode n"] > 50, seen
+
+
+def test_1fa7_reads_expressions_until_one_is_minus_one():
+    """`1FA7`/`1FA8` are a rel16 plus a list, not a rel16 plus two expressions.
+
+    Worker 0x00435620 loops on 0x00437490 while the value is not 0xFFFF.  The
+    old model claimed the first two entries; `docs/limits.md` had the
+    consequence already -- at `m/MS0007` r35 the remaining five became
+    NUL-opcodes and one-byte "text", which is where the garbled half-width kana
+    rows came from.  All five corpus sites end on `04 ff`.
+    """
+    import os
+    from giten import paths, script, vmops
+
+    tab = vmops.table()
+    sites = [("m/MS0007.BIN", 0x35, 0x0192, 20),
+             ("m/MS0018.BIN", 0x0E, 0x01CE, 18),
+             ("m/MS003F.BIN", 0x00, 0x003A, 32),
+             ("m/MS003F.BIN", 0x02, 0x0002, 32),
+             ("m/MS0069.BIN", 0x02, 0x0C07, 18)]
+    for rel, rid, off, size in sites:
+        with open(os.path.join(paths.ORIGINAL_DDSWIN, *rel.split("/")), "rb") as fh:
+            sc = script.parse(rel, fh.read())
+        rec = next(r for r in sc.containers[0] if r.id == rid)
+        tok = next((t for t in rec.tokens or () if t.off == off), None)
+        assert tok is not None, "%s r%02X no longer tiles at 0x%04X" % (rel, rid, off)
+        assert tab.encoding(tok.idx).replace(" ", "") in ("1FA7", "1FA8")
+        assert tok.size == size, (rel, rid, tok.size, size)
+        # the list must end on the terminator, not stop short of it
+        assert rec.data[tok.end - 2:tok.end] == bytes([0x04, 0xFF]), rel
+        # ...and no span may start inside it any more
+        assert not [s for s in rec.spans if off < s.off < tok.end], \
+            "%s r%02X still extracts text from inside the list" % (rel, rid)

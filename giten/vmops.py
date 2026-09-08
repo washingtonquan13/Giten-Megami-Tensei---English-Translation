@@ -204,6 +204,46 @@ def _read_switch(data: bytes, i: int, out: list) -> int:
         i += 4
 
 
+def _read_expr_list(data: bytes, i: int, out: list, tab: Table) -> int:
+    """``1FA7``/``1FA8``: expressions until one evaluates to -1.
+
+    Worker ``0x00435620``::
+
+        call 0x434680          ; the rel16, read by the caller's slot
+        call 0x437490          ; an expression
+        cmp  ax, 0xFFFF
+        je   done              ; -1 ends the list
+        ...
+        call 0x437490          ; the next one
+        cmp  ax, 0xFFFF
+        jne  loop
+
+    The table said ``rel16, expr, expr``: the first two entries, with the rest
+    stranded.  ``docs/limits.md`` had the consequence already -- at
+    ``m/MS0007`` r35 the remaining five became NUL-opcodes and one-byte "text",
+    which is where the ``ｮｭｱｲｳ`` rows come from -- and noted the values are the
+    same ids the neighbouring ``1F60 00 XX`` opcodes take, so they are operands
+    beyond doubt.
+
+    The terminator is a *runtime value*, which a static walk cannot evaluate in
+    general.  It can here: every entry in all five corpus sites is a two-byte
+    leaf, and the terminator is always ``04 ff`` -- selector ``0x04``, one
+    ``u8``, payload ``0xFF``.  So the rule is: stop after a two-byte leaf whose
+    payload is ``0xFF``.  If a site ever ends on a computed expression this
+    raises rather than guessing, which is this module's standing contract.
+    """
+    start = i
+    while True:
+        if i >= len(data):
+            raise TileError("unterminated expression list at 0x%X" % start)
+        j = _read_expr(data, i, 0, tab)
+        out.append(Operand("expr", i, j - i, data[i:j]))
+        last = data[i:j]
+        i = j
+        if len(last) == 2 and last[1] == 0xFF:
+            return i
+
+
 def _read_1ebe(data: bytes, i: int, out: list, tab: Table) -> int:
     """``1EBE``: the operand list depends on the first operand byte.
 
@@ -339,6 +379,9 @@ def _read_operands(data: bytes, i: int, slots, tab: Table) -> "tuple[int, list]"
             continue
         elif kind == "mode_1ebe":
             i = _read_1ebe(data, i, out, tab)
+            continue
+        elif kind == "expr_list":
+            i = _read_expr_list(data, i, out, tab)
             continue
         else:
             i += FIXED_SIZE[kind]
