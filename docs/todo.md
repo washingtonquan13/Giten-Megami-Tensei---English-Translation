@@ -115,8 +115,19 @@ only be served from that one entry. The demon-specific files merged onto it --
 `m/MS6001`..`m/MS6016`, `m/MS61xx`, and an `et/ID*` -- carry their own English
 and none of it is reachable.
 
-Measured: **7,310** span placements resolve from `m/MS6000` alone, **18,024**
-if every merged file's entry is tried. So this is worth roughly 10,700 more.
+**This is almost all of negotiation.** Counted as unique spans rather than
+placements — the 7,310 / 18,024 figures sum over 25 rows x 16 slots, so
+`m/MS6000` is counted 25 times and reads far larger than it is:
+
+| | entries | spans | English |
+|---|---|---|---|
+| `m/MS6000`, served now | 7 | 296 | 4,166 bytes |
+| the other merged files | 290 | **7,647** | **170,227 bytes** |
+
+So what shipped is the UI shell — `>How will you speak to them?`, `Friendly`,
+`Intimidating`, `'s condition recovered!`. Item 2 is **96% of the family's spans
+and 98% of its English**: every demon's actual dialogue (`Who might you be?`,
+`Kyahahahaha!`, `seems to be beckoning you over.`).
 
 The hash gate already makes it safe to try several: a span from the wrong file
 fails and is dropped (0 of 109 in the test). What it needs is a cache that holds
