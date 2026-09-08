@@ -203,12 +203,36 @@ corpus-driven `['u8']` change that "made 41 records tile" must never be applied.
 They emit 90 of the 119 because they are the branches *in the broken
 containers*, not because their operands are wrong.
 
-**The method that would close it** is the one that closed those two:
-`tools/make_warp.py` puts `0C 31 01` at the start of `m/MS0017` r01, no save and
-no playthrough, and the engine's own PC log becomes ground truth. Five of the
-six files are in the merged `m/MS6xxx` family, which a `0C` warp cannot reach by
-file id — but we now know those buffers are slot `0xE0 + i`, so a warp into a
-conversation slot is newly possible.
+**The method, and where it stops.** `tools/make_warp.py` puts `0C 31 01` at the
+start of `m/MS0017` r01 -- no save, no playthrough -- and the engine's own PC log
+becomes ground truth. That is what settled opcodes 10, 11 and kind 13.
+
+Checked 2026-09-08, because the first version of this entry assumed it would
+generalise and it does not:
+
+- **Verified:** `0C`'s handler `0x00430019` -> `0x00433E70` -> `0x00433D70`
+  **calls `0x00433CA0` at `0x00433E06`** -- the resolver with the `0xE0..0xFF`
+  branch. So `0C E0 rr` really does warp into conversation slot 0, and
+  `0x0040E9BB` builds the merge on demand. That part works.
+- **But `0C` takes two u8 operands**, so it can name `m/MS00xx` (0x00-0xDF) and
+  the slots (0xE0-0xFF), and **nothing else**. It cannot reach `m/MS610D`,
+  `m/MS6200`, `m/MS6500`, `m/MS6F00` or `m/MS6F1F`.
+- **And `m/MS610D` is not in `et/ET0007`** -- the third column holds
+  00,06,07,08,09,0B,0C, never 0D -- so it is not reachable through a slot either.
+- The exe holds **no immediate** for 0x6200/0x6500/0x6F00. (An earlier search
+  said otherwise; those bytes were inside the opcode dispatch table at
+  `0x4318B0`, not code.)
+
+**So the warp reaches one of the six files, `m/MS0031`, and that one is already
+done.** The real question is the one nobody has asked: *how are these five files
+loaded at all?* They have overlay entries and English, and nothing found so far
+asks for them by name.
+
+One hypothesis worth testing first, because it is cheap and would shrink the
+problem: `m/MS6F00` has **7,987 records across 32 containers and zero rows with
+English**, and `m/MS6F1F` also has none. They pass `records.is_record_layer` but
+may be data rather than script, like the `m/M00xx` family. If so, 20 of the 73
+untiled records are not text and never were.
 
 **What "100%" cannot mean:** 374 of the 768 dispatch slots never occur anywhere
 in the corpus. Their handlers can be read, but nothing in the game exercises
