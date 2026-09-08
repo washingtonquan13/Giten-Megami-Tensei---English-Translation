@@ -79,6 +79,15 @@ OUT = _rest[0] if _rest else os.path.join(
 #: (the refusals from a `tl_apply` dry run).  Every other row still appears as
 #: context, so a re-run costs only the rows that actually failed instead of the
 #: whole file -- which matters when a rule change invalidates 102 of 182 rows.
+#: `--blind` hides every prior translation -- the v0.05 reference line *and* the
+#: English of the surrounding context rows.  The pilot could not tell whether a
+#: row coming back identical to v0.05 was **convergence** (only one sensible
+#: English) or **anchoring** (the agent read v0.05 first), because the agent saw
+#: it either way; "we told it not to follow the reference" is not independence.
+#: Hiding it makes the two distinguishable afterwards: a blind rendering that
+#: still matches v0.05 is real evidence, one that differs is a triage lead.
+BLIND = "--blind" in sys.argv
+
 ONLY = None
 if "--only" in sys.argv:
     src = sys.argv[sys.argv.index("--only") + 1]
@@ -158,8 +167,15 @@ w("## Names and terms -- non-negotiable\n\n"
 w("## Voice\n\n"
   "This is a 1997 Japanese CRPG: modern-day Tokyo, occult, often grim.  Match the\n"
   "register of the Japanese line -- terse where it is terse, crude where it is\n"
-  "crude.  The v0.05 line is shown only so you can see what is being replaced; it\n"
-  "took liberties and is **not** a model to follow.  Translate the Japanese.\n\n")
+  "crude.  Translate the Japanese.\n\n"
+  + ("**No previous translation is shown here, deliberately.**  An earlier pass\n"
+     "could not tell whether a line matching the old translation was the only\n"
+     "sensible English or simply the old translation copied back.  Render the\n"
+     "Japanese from scratch; if you independently arrive at the same wording,\n"
+     "that is now meaningful evidence rather than an artifact.\n\n"
+     if BLIND else
+     "The v0.05 line is shown only so you can see what is being replaced; it\n"
+     "took liberties and is **not** a model to follow.\n\n"))
 w("---\n\n")
 
 n = 0
@@ -173,6 +189,12 @@ for rec, rs in by_rec.items():
         budget = ""
         if (r.tag or "").upper() in script.CHOICE_TAGS:
             budget = "  (MENU OPTION -- must fit %d columns)" % CHOICE_COLUMNS
+        if BLIND and not todo:
+            # a `keep` row is present for scene context only.  Showing its English
+            # would anchor exactly as the reference line does, so blind mode gives
+            # the Japanese and nothing else.
+            w("- [`%s`|`%d`] context\n  - JP: `%s`\n" % (r.rec, r.idx, r.jp or ""))
+            continue
         line = "**TODO**" if todo else "keep"
         if todo:
             n += 1
@@ -193,7 +215,7 @@ for rec, rs in by_rec.items():
                 else:
                     parts.append("`%s` (control code - keep)" % t)
             w("  - tokens: %s\n" % "; ".join(parts))
-        if (r.en or "").strip():
+        if (r.en or "").strip() and not BLIND:
             w("  - v0.05 (replace this): `%s`\n" % r.en)
     w("\n")
 out.close()

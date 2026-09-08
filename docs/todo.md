@@ -485,6 +485,36 @@ sizes from 82 to 182 rows -- so per-row reading and reasoning dominates, not
 fixed overhead. Extrapolating naively gives **40M+ tokens** for 16,769 rows. A
 convergence pass over the short rows first would cut that by more than half.
 
+**A/B RESULT 2026-09-08: anchoring is 2%. Showing the reference is nearly harmless.**
+`m/MS0016`'s 86 rows were translated twice -- once with the v0.05 line visible,
+once **blind** (`tools/tl_export.py --blind`, which hides the reference *and* the
+English of surrounding context rows; the agent was also told not to read the
+tables, other answer files, or git history, and confirmed it did not).
+
+| | rows matching v0.05 |
+|---|---|
+| sighted pass | 15 of 86 |
+| blind pass | 13 of 86 |
+| **anchoring effect** | **2 rows -- 2% of the file** |
+
+The two are equivalent phrasings, not copying: `YOU DEFEATED THE BOSS` against
+`YOU HAVE WON AGAINST THE BOSS`.
+
+So the earlier worry was wrong. **The rows that come back identical really are
+forced translations, not the reference echoed.** Two consequences:
+
+* the 469 rows already applied do **not** need redoing;
+* the convergence evidence in `tl_converge.py` is more trustworthy than its own
+  docstring claims -- our earlier drafts were written with v0.05 visible, and
+  that turns out to bias the wording by about 2%.
+
+Also measured: the sighted and blind passes agree with **each other** on only 43
+of 86 rows. Legitimate phrasing variation is wide, which is why the ~15% that
+match v0.05 stand out as genuinely forced rather than coincidental.
+
+`--blind` stays the default for new work: it costs nothing and keeps the
+provenance argument clean, which matters independently of the wording.
+
 **Why this is not merely bookkeeping.** Shipping another translator's work
 verbatim is a real attribution problem independent of quality, and the v0.05
 lines were never checked against the Japanese by anyone here -- they were carried
