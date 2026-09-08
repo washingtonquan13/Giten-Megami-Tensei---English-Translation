@@ -259,6 +259,21 @@ a better opcode table** -- and the only instrument for that is the engine's own
 PC log, which reaches `m/MS0031` and nothing else. `m/MS610D`, the 40, is the
 one that matters and the one still out of reach.
 
+**Two things to do before chasing `m/MS610D`'s loader, both cheap:**
+
+1. **Add `m/MS6F00` and `m/MS6F1F` to `DEAD_DATA`** in `tools/make_draft_tree.py`,
+   beside `m/MS7F05`. They are not text and they are duplicates of each other.
+   Leaving them in the pipeline means a reference draft can be promoted into a
+   data file -- which is exactly how "Dictionary 5" reached the screen during a
+   battle.
+2. **`m/MS610D` already ships mojibake** in 127 English rows (item 3). It is a
+   live bug in the one file whose loader nobody can find, so understanding the
+   file is worth more than tiling it.
+
+**Then** the open question, stated plainly: *what loads `m/MS610D`?* It is not
+reachable by `0C` (u8 file id), not in `et/ET0007`, and its id appears nowhere in
+`.text` as an immediate. 40 of the 53 remaining untiled records are in it.
+
 **What "100%" cannot mean:** 374 of the 768 dispatch slots never occur anywhere
 in the corpus. Their handlers can be read, but nothing in the game exercises
 them, so they can be modelled and never verified. 394 slots are used, the exe
