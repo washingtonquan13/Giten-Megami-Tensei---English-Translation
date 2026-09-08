@@ -215,6 +215,48 @@ free-running) and compare the party:enemy action ratio. If the ratio moves, turn
 order is tick-driven and the 60 Hz gate skews it. If it does not, the ratio is
 the game's own and there is nothing here to fix.
 
+### 0e. FOUND IT: the battle machine steps once per tick
+
+The player's report is the evidence that settles this -- *"I was spamming clicks
+on the character selector to get a turn in and couldn't, because the enemy was
+too fast."* That is not a party being out-damaged. That is the battle advancing
+while the player is trying to act.
+
+**The mechanism.** `0x00417160` is a 41-state machine, one handler per tick,
+dispatched through the table at `0x00417288`. Battle is **state 24**,
+`0x0042B6A0`, and that handler is itself a **9-way sub-state machine** dispatched
+through `0x0042C02C`. Every one of those sub-states opens with
+`call 0x00416AD0`, and `0x00416AD0` is:
+
+    mov ax, [0x0047BB72]      ; current sub-state
+    inc ax
+    push eax ; call 0x00416AA0 ; ret      ; set_substate(cur + 1)
+
+So **the battle advances exactly one phase per tick** -- 60 phases a second at
+the rate `pace()` pins. The command UI is a *different* top-level state (32,
+`0x0041D530`), so the window in which the player can act is a particular phase of
+a cycle spinning at 60 Hz.
+
+**This is also why the divider in `5dce533` did nothing.** It gated
+`0x0043B5E0`, which is dead. The battle clock is the state-24 handler.
+
+**The lever.** `0x00416AD0` itself is generic -- 92 callers across menus, field
+and battle -- so gating it would slow everything. But the state table's entry 24
+is one call site, `0x0041720A`, and redirecting that through a counter makes the
+battle machine step once every N ticks while the field, the menus and the battle
+command UI are all untouched. That is exactly the "battle has its own divider"
+idea, applied to the right function this time. Five bytes in place, same
+technique as the existing hooks.
+
+**Unverified, and worth saying before anyone builds it:**
+
+- states 26 (`0x0042D7C0`) and 31 (`0x0042A790`) are also in the battle region
+  and may need the same treatment;
+- if the state-24 handler also drives the battle *rendering*, skipping ticks may
+  stutter the display rather than slow the turns -- rendering looks like it lives
+  in `0x004035E0` off the per-tick chain, but that is not checked;
+- N wants choosing by play, not by theory.
+
 ### 0d. The combat architecture, mapped 2026-09-08
 
 Read out of the exe, with the call-site field in the trace confirming which
