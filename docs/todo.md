@@ -47,15 +47,38 @@ from content: `0x0040EB00` is handed the file id and kind on every load.
 Mechanism and evidence: `tests/test_negotiation_image.py`, `docs/limits.md`
 (overlay), the `giten/records.py` docstring.
 
-### 2. Translate the 854 ordinary untranslated rows
+### 2. Finish the untranslated ordinary rows — 216 of 854 done
 
-854 of 36,243 rows outside the pools and outside `m/MS6xxx`. These are safe:
-the overlay never moves an address, script files stay byte-identical, and
-virtual space is not a constraint (median file uses 0.1% of its room, the worst
-— `m/MS0030` — 56%).
+**The "854 untranslated rows" figure overstated the job by about half**: 441 of
+them contain no Japanese at all (pure `{08:xx}` macros, digits, ASCII rules like
+`~ON` / ` ---------------- ----`), so there is nothing to translate in them and
+there never will be.
 
-Concentration: `m/MS00D1` 221, `m/MS0000` 87, `m/MS001B` 49, `m/MS0064` 48,
-`m/MS006C` 31, `m/MS002B` 30, `m/MS000F` 29, `m/MS0003` 24.
+| | rows | state |
+|---|---|---|
+| no Japanese in them at all | 441 | not work; ignore |
+| speaker tags | 191 | **174 done**, 17 left |
+| debug menu (`m/MS00D1`) | 177 | open, developer-facing |
+| real prose | 45 | **42 done**, 3 left |
+
+Done 2026-09-08. The 174 tags were filled from the rendering the corpus had
+already settled on — `ハリティー：` → `Hariti:` was in 14 other places,
+`バール兵：` → `Baal Soldier:` in 141 — so they were consistency, not judgement.
+The 42 prose spans were written against their neighbours, because each is a
+*fragment*: the engine prints span, then a runtime name, then the next span.
+
+Still open:
+
+- **17 speaker tags** with no rendering anywhere. 13 are `m/MS00D1` debug field
+  labels (`系統`, `計算式`, `消費`, `範囲`, `距離`, `相性`, `治癒`, `追加効果`,
+  `体数`, `使用状況`, `修得`, `特殊コード`, `ﾘｽﾄｱｯﾌﾟ対象`); the others are
+  `ハツセオノミコト：`, `ウサギ：`, and `ﾒ泪：` (mojibake, in `m/MS0031`).
+- **2 `@untiled` rows in `m/MS0031`** — no dependable span boundary, and the
+  overlay refuses them anyway. Blocked on the tiler, not on translation.
+- **1 row in `m/MS0027` 0:01[71]** — its neighbours already print the name twice
+  (`早坂` then `英美`, and the following English repeats `Hayasaka`), so any
+  English here reads wrong until that passage is untangled.
+- **The 177 debug-menu rows in `m/MS00D1`**, if they are wanted at all.
 
 ### 3. Why did `ムールムール：` draw in Japanese?
 
@@ -82,10 +105,18 @@ e.g. `褫{01:00}襁Devil Buster襄`. Mojibake, not translation. Same file alread
 holds 24 of the overlay's 29 refusals (`0xFF` structural bytes), so it wants a
 pass of its own.
 
-### 5. Finish the half-translated row in `m/MS000C`
+### 5. ~~Finish the half-translated row in `m/MS000C`~~ — misdiagnosed
 
-`全てが夢だったのかとすら思えてしまう` still shows inside an otherwise English
-line (`A happy moment.........`).
+**The row is fully translated.** `m/MS000C` 0:04[174] already reads
+`It almost seemed as if it had all been a dream......`. The Japanese appears
+because a branch lands at `0x3E67`, 41 bytes into the span, and the overlay
+must answer a branch target with the original bytes — deliberately, since
+`b4ec69b`. Only the first 41 bytes are served in place; the rest is reachable
+only by entering the span at its start.
+
+So this is the known "branch into a span" gap in `docs/limits.md` (71 remaining
+cases), and the honest fix is the one recorded there: split the span at the
+target so each fragment is separately translatable. Not a translation task.
 
 ---
 
