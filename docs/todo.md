@@ -51,6 +51,34 @@ worth roughly the difference between 7,310 and 18,024 above.
 
 ---
 
+### ✅ Serve a merged buffer from every file in it — SHIPPED 2026-09-08
+
+`m/MS6000` is only the shell: 296 spans, 4 KB, the prompts and the approach
+menus. The demon files merged onto it hold **7,647 spans and 170 KB** — every
+line a demon says — and the hook could reach none of it, because one buffer
+could bind only one entry.
+
+The rule is the cheapest one that works: **an entry belongs to this buffer when
+every one of its spans verifies against it.** A file not in the merge fails on
+the first record the merge does not share with it. That is the per-span hashing
+the hook already does, read as a per-entry verdict — no extra data in
+overlay.dat, no new engine address, no hook on the loader.
+
+Measured over all 25 `et/ET0007` rows x 16 slots: **17,309 placements accepted
+against 7,310**. At most 5 entries and 274 spans bind to one buffer. Exactly two
+addresses in the whole family are claimed by two entries with different English
+(`Mwah!` / `*Smooch*`, `Please` / `Please!`) — both correct renderings of the
+same Japanese, so the tie-break only has to be repeatable: candidates are tried
+in file-id order and the first to claim an address keeps it.
+
+**The C conformance test earned its keep here.** The first version had every
+bound entry start its virtual space at the same address, so several entries
+answered the same virtual PC and the walk never terminated. The model and the C
+agreed — both were wrong — and the test caught it because it walks to a *real*
+stop address. Each entry now gets a stacked, disjoint window.
+
+---
+
 ### ✅ Stop promoting reference drafts into the macro pools — 2026-09-08
 
 A pool record is not a line, it is a fragment spliced into every sentence that
@@ -108,33 +136,7 @@ Still open:
   English here reads wrong until that passage is untangled.
 - **The 177 debug-menu rows in `m/MS00D1`**, if they are wanted at all.
 
-### ✅ Serve a merged buffer from every file in it — SHIPPED 2026-09-08
-
-`m/MS6000` is only the shell: 296 spans, 4 KB, the prompts and the approach
-menus. The demon files merged onto it hold **7,647 spans and 170 KB** — every
-line a demon says — and the hook could reach none of it, because one buffer
-could bind only one entry.
-
-The rule is the cheapest one that works: **an entry belongs to this buffer when
-every one of its spans verifies against it.** A file not in the merge fails on
-the first record the merge does not share with it. That is the per-span hashing
-the hook already does, read as a per-entry verdict — no extra data in
-overlay.dat, no new engine address, no hook on the loader.
-
-Measured over all 25 `et/ET0007` rows x 16 slots: **17,309 placements accepted
-against 7,310**. At most 5 entries and 274 spans bind to one buffer. Exactly two
-addresses in the whole family are claimed by two entries with different English
-(`Mwah!` / `*Smooch*`, `Please` / `Please!`) — both correct renderings of the
-same Japanese, so the tie-break only has to be repeatable: candidates are tried
-in file-id order and the first to claim an address keeps it.
-
-**The C conformance test earned its keep here.** The first version had every
-bound entry start its virtual space at the same address, so several entries
-answered the same virtual PC and the walk never terminated. The model and the C
-agreed — both were wrong — and the test caught it because it walks to a *real*
-stop address. Each entry now gets a stacked, disjoint window.
-
-### 3. Why did `ムールムール：` draw in Japanese?
+### 2. Why did `ムールムール：` draw in Japanese?
 
 **Open, and my first two explanations for it were both wrong.** It is not our
 English keeping the Japanese name — all 89 rows carrying the name already read
@@ -153,13 +155,13 @@ Needs one fresh trace of that scene. **Note for next time: that session's
 longer be reproduced byte-for-byte.** Copy `overlay.dat` next to the trace
 before rebuilding.
 
-### 4. 25 rows in `m/MS610D` ship English that still contains Japanese
+### 3. 25 rows in `m/MS610D` ship English that still contains Japanese
 
 e.g. `褫{01:00}襁Devil Buster襄`. Mojibake, not translation. Same file already
 holds 24 of the overlay's 29 refusals (`0xFF` structural bytes), so it wants a
 pass of its own.
 
-### 5. ~~Finish the half-translated row in `m/MS000C`~~ — misdiagnosed
+### 4. ~~Finish the half-translated row in `m/MS000C`~~ — misdiagnosed
 
 **The row is fully translated.** `m/MS000C` 0:04[174] already reads
 `It almost seemed as if it had all been a dream......`. The Japanese appears
