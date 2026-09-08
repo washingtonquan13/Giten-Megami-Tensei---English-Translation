@@ -428,6 +428,28 @@ the Japanese and marking it `reviewed`. Nothing else needs building first.
     m/MS003B 855   m/MS0030 794   m/MS005C 514   m/MS005D 512   m/MS000D 511
     m/MS005B 447   m/MS001E 428   m/MS0006 359   m/MS0060 334   m/MS0029 325
 
+**Scope, set by the user 2026-09-08.** Retranslate the **16,789 v0.05 rows** and
+the rows with no English at all. **Our own 10,652 unreviewed drafts stay** -- they
+were written against the Japanese by us, where the v0.05 lines took liberties.
+They remain `status` errors and can be reviewed later; they are not a rewrite job.
+
+**This work does NOT wait for the opcode model.** Measured:
+
+| | |
+|---|---|
+| rows to retranslate | 16,789 |
+| ...in a record the builder refuses to edit (`@noedit`) | **20** |
+| ...in an `@untiled` record | **0** |
+
+99.88% of the scope already sits in records that tile and are editable, which is
+the decision corpus consistency exists to make and it is already made. Neither
+the exhaustive handler walk nor any further model work changes it. The only
+coupling is that a model change which moved token boundaries would **re-key** span
+indices -- a migration the extractor already handles by fingerprinting on `jp` and
+re-anchoring on content, with anything unresolvable written to `docs/recovery/`.
+Rows would need re-anchoring, never retranslating. Drop the 20 `@noedit` rows
+from scope.
+
 **Why this is not merely bookkeeping.** Shipping another translator's work
 verbatim is a real attribution problem independent of quality, and the v0.05
 lines were never checked against the Japanese by anyone here -- they were carried
