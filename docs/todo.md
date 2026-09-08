@@ -577,31 +577,92 @@ Even the speaker label is garbled in the original Japanese. The other 12 share
 the identical byte shape. **Our boundaries match the engine everywhere it was
 observed: 44 of 44 token starts.**
 
-So `m/MS0031` is closed, and the work list is one item shorter:
+### `m/MS610D` has no loader -- SOLVED 2026-09-08, and 67 untiled records went with it
 
-1. ~~`m/MS0031` -- 193 served spans with a wrong start~~ **There was no defect.**
-   Our English replaces the whole span, so shipping these rows removes a glitch
-   the 1997 game had.
-2. **`m/MS610D`** -- 40 untiled records, 92 served spans. Still no known loader,
-   so no warp reaches it. **Now the only real unknown.**
-3. `m/MS6200`, `m/MS6500` -- 7 untiled records between them.
-4. `m/MS6F00`, `m/MS6F1F` -- not script at all; deny-listed, nothing to do.
+Item 4 treated `m/MS610D` as a file whose loader we had not found yet. **There
+is none.** Nothing in the shipped game can name it.
 
-**Where the opcode model actually stands** (unchanged by the above -- no code
-moved, so no percentage moved):
+The negotiation merge is the only thing that loads an `m/MS61xx` file, and it
+forms the name in one instruction -- `0x0040EC31 add $0x6100,%edx`, from
+`table[id*3 + 2]`. The table is not inferred: `0x0040EB70` loads it itself and
+caches the pointer.
 
-| | |
-|---|---|
-| opcode slots defined / used in the corpus | 768 / 394 |
-| used slots with a real handler | **384 -- 242,590 of 242,752 instances, 99.9333%** |
-| used but marked no-op | 10 slots, 162 uses (`1F 00` alone is 135) |
-| expression selectors proven against the engine's own two tables | **94 of 94** |
-| records that tile | 20,617 of 20,690 -- 99.65% |
-| branch targets on a token boundary | 20,150 of 20,269 |
+    0x0040EB79  jne  0x40ebac          ; already cached?
+    0x0040EB7F  push $0x7              ; file id 7
+    0x0040EB7D  push $0xc              ; kind 12 -> et\et%.4x.bin
+    0x0040EB81  call 0x401dd0          ; -> et/ET0007.BIN
+    0x0040EB99  movl $0x47b058,0x47b4f8
 
-The gap to 100% is **not** distributed across the corpus. It is 73 untiled
-records in six containers, 40 of them in one file whose loader we have never
-found. Everything outside those containers shows no evidence of being wrong.
+`et/ET0007.BIN`'s third column holds `{00, 06, 07, 08, 09, 0B, 0C}` across all
+25 rows. **It never holds `0D`.** Four other things had to be ruled out and were:
+
+* **no `0x610D` immediate exists anywhere in the exe's code** (191 raw hits, 0 in
+  the code range);
+* **only one instruction forms a `61xx` id**, and it is the one above;
+* **only one call site** of the merge (`0x0040E9CA`);
+* **no script can name a file by a u16 id** -- every file-referencing opcode
+  either hardcodes a pool (`m/MS7F0x`) or takes a **u8** that resolves to
+  `m/MS00xx`. `0C`/`0D` cannot reach `0x610D`.
+
+Two other `et/` files share the table's shape; both are excluded because their
+columns name files that do not exist (`ET1011` 22 of them, `ET10FF` 9).
+
+**What it bought.** 16 of the 46 `m/MS6xxx` files are unreachable, and they hold
+**every untiled record in the family**:
+
+| | files | untiled | spans |
+|---|---|---|---|
+| reachable | 281 | **6** | 42,905 |
+| unreachable | 28 | **67** | 1,028 |
+
+**Every reachable `m/MS6xxx` file tiles perfectly.** The corpus-wide gap is no
+longer "73 untiled records in six containers, 40 of them in a file we cannot
+reach" -- it is **six records in one container of `m/MS0031`**, and everything
+else was never code the game runs.
+
+Pinned by `tests/test_reachability.py`.
+
+**The limit, stated rather than papered over.** The row index is a `u16` read
+from a struct field (`0x47b16f`, stride 254), not a bounded loop counter, so this
+does not prove the engine can never index past the table's 25 rows. It proves
+there is no *designed* path to these files; an out-of-bounds index would be a bug
+producing an arbitrary merge, not a loader.
+
+**What is left, in full:**
+
+1. **`m/MS0031` c0: 6 untiled records** (`00`, `02`, `03`, `0B`, `0D`, `17`) --
+   the entire remaining opcode gap, in a file the warp already reaches. This is
+   now the whole of item 4.
+2. ~~`m/MS610D`, `m/MS6200`, `m/MS6500`~~ -- unreachable; nothing to model.
+3. ~~`m/MS6F00`, `m/MS6F1F`~~ -- not script, already deny-listed.
+
+**Follow-on worth doing:** 1,028 spans of English are built into the overlay for
+files that can never load. Harmless, but they consume overlay budget; dropping
+them is a small win once item 1 is done.
+
+---
+
+## Deferred -- only after 100% opcode accuracy and 100% translation
+
+### D1. The engine eats a character at 14 sites. We could give it back.
+
+`m/MS0031` has 14 spans where the script author left a conditional's operand
+short, so the expression reader takes the following text's **lead byte** as a
+nullary selector and eats it. The engine renders `｢きなり` for `いきなり`, `ﾚしい事情`
+for `詳しい事情`, `ﾒ泥：` for a speaker name. Confirmed on screen via the glyph
+blitter -- Japanese players saw this in 1997. Full analysis in 4a.
+
+**We do not hit it.** Our English replaces the whole span and the stray glyph
+disappears, so the English build already reads correctly. This is only worth
+doing if we ever ship a *Japanese* build or want byte-level parity with intent.
+
+**The fix, if we take it.** Insert one byte -- a valid nullary selector above
+`0x5D` -- before each affected text run, so the reader eats that instead of the
+real lead byte. Every record holding one of the 14 would grow by a byte, so the
+rel16s that span the insertion all relocate; `script.py` already does exactly
+this relocation for translated text, so the machinery exists. **Do not attempt
+it before item 4 closes** -- growing a record in a file whose tiling we cannot
+fully vouch for is how a byte goes missing somewhere we are not looking.
 
 ---
 
