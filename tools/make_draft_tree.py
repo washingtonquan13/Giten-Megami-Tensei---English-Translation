@@ -80,6 +80,30 @@ def _pool_english(src):
 #: are really made of; `docs/limits.md` calls it a dead dictionary.
 DEAD_DATA = frozenset({"m/MS7F05.BIN"})
 
+#: The eight macro pools.  A record here is not a line, it is a fragment the
+#: engine splices into every sentence that calls it -- `m/MS7F07` record 0x52 is
+#: reached from 3,931 places.  A reference translation was written against at
+#: most one of those sentences, so it cannot be right in the others *by
+#: construction*; this is not a judgement about the reference's quality.
+#:
+#: Shipped proof, from the 2026-09-07 session: `m/MS7F02` 0:0C is され, the
+#: passive auxiliary, promoted to "was" (793 call sites), and `m/MS7F01` 0:0A is
+#: ま{08:66} = ません, the negative ending, promoted to "not" (393 sites).  On
+#: screen that reads `AMS用マップDataが登録wasていnot` -- the noun translated
+#: correctly and English grammar words spliced into a Japanese sentence.
+#:
+#: Refusing the whole class costs 298 rows worth 5,351 call sites.  The 76 pool
+#: rows written by hand in `tables/` are untouched and carry 21,910 call sites,
+#: four times the coverage -- because a person picked the ones that *are* words:
+#: names, 悪魔, シェルター, はい, いいえ.
+#:
+#: There is deliberately no "is this grammar?" test.  Two were tried and both
+#: fail on the real data: "pure hiragana" flags はい and ありがとう, and "has no
+#: pool call" misses ま{08:66}.  Whether a fragment is a word is not decidable
+#: from its characters, so the line drawn here is the one that is decidable --
+#: did a person write it, or did a promotion.
+POOL_FILES = frozenset("m/MS7F%02X.BIN" % i for i in range(8))
+
 
 def _speaker_is_wrong(jp, en, poolen):
     """Does this reference name someone the engine will not name?
@@ -143,6 +167,7 @@ def main(out: str = OUT) -> int:
     names = check_v2.name_macros(None)
     poolen = _pool_english(src)
     rows = promoted = kept = skipped = refused = split = renamed = dead = 0
+    shared = 0
     for path in tables.iter_tables(src):
         table = tables.read(path)
         for r in table:
@@ -159,6 +184,10 @@ def main(out: str = OUT) -> int:
                 # "prints", so the reference translation reached the screen as
                 # "Dictionary 5" during a battle.  See docs/limits.md.
                 dead += 1
+                continue
+            if r.file in POOL_FILES:
+                # shared by every script that calls it; see POOL_FILES
+                shared += 1
                 continue
             if r.tag == extract_v2.UNTILED_TAG:
                 # no dependable span boundaries; the overlay refuses these anyway
@@ -190,10 +219,11 @@ def main(out: str = OUT) -> int:
         tables.write(dst, table)
     print("%s: %d rows, %d already English, %d promoted from a reference, "
           "%d dead data (never promoted), "
+          "%d shared pool fragments (never promoted), "
           "%d skipped (@untiled), %d refused (would drop a name macro), "
           "%d refused (translates the whole line, not this span), "
           "%d speaker tags renamed to the pooled name"
-          % (out, rows, kept, promoted, dead, skipped, refused, split, renamed))
+          % (out, rows, kept, promoted, dead, shared, skipped, refused, split, renamed))
     return 0
 
 
