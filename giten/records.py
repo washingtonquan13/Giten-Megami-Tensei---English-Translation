@@ -25,14 +25,39 @@ That is the coordinate space every ``rel16`` branch is measured in, which is why
 :mod:`.relocate` needs it and why changing a record's length shifts every record
 with a higher id.
 
-One container per image
------------------------
+One container per image -- true for m/MS00xx, FALSE for m/MS6xxx
+----------------------------------------------------------------
 51 files hold 16 containers each (``m/MS6xxx``, ``et/ID*``).  Record ids
 **repeat** across the containers of such a file (measured: 35 files have
 duplicate ids), so the containers cannot all be installing into one 256-entry
-index -- they would overwrite each other.  Each container is therefore treated
-as its own runtime image, which is also what ``0x43AA90`` does: it loads exactly
-one container per call.  Branch relocation never crosses a container boundary.
+index -- they would overwrite each other.  Each container is therefore its own
+runtime image, and ``0x43AA90`` does load exactly one container per call.
+Branch relocation never crosses a container boundary.
+
+What does not follow, and what this file wrongly concluded until 2026-09-07, is
+that one container equals one *file*.  ``0x0040EB00`` calls ``0x0043AA90``
+sixteen times on one open file -- once per container slot -- and ``0x0040EB70``
+calls ``0x0040EB00`` up to five times with **different files**, merging them
+into the same sixteen buffers::
+
+    0x0040EB00(row, 0x6000, kind 9, slots 0..15)     # m/MS6000, always
+    t = table[id * 3]                                # et/ET0007.BIN, 25 rows
+    0x0040EB00(row, 0x6000 + t[0], 9, 0..15)         # each unless 0xFF
+    0x0040EB00(row, 0x6000 + t[1], 9, 0..15)
+    0x0040EB00(row, 0x6100 + t[2], 9, 0..15)
+    0x0040EB00(row, [row + 0x38], kind 14, 0..15)    # et/ID%04X.BIN
+
+``0x0043ABC0`` installs each record by id and resizes the buffer by
+``new_len - old_len``, so a later file **replaces** an earlier one's record and
+shifts every record with a higher id.  ``0x0040EB57`` stamps the descriptor's
+id with ``slot - 0x20``, which is why the engine reports these images as file
+ids ``0xE0..0xEF`` and no filename maps to them.
+
+The image is therefore not a static property of any one file, and it is not
+fully static at all: for slot 0 the merge accounts for 12 of the 15 index
+entries a play session logged, and the three it misses are one record (0x97,
+976 bytes at runtime against 82 on disk) plus the two it displaces.  See
+``tests/test_negotiation_image.py``, which pins all of this.
 """
 from __future__ import annotations
 
