@@ -669,6 +669,53 @@ them is a small win once item 1 is done.
 
 ---
 
+### 4b. The six `m/MS0031` records -- 2 explained, 3 staged for a trace, 1 open
+
+**Two are not model defects at all.** Their walk fails *inside dead data after a
+terminator* (opcode `00` = `or ax,0xFFFF; ret`, which ends the run loop):
+
+| rec | terminators | last one | dead bytes after it | fails at |
+|---|---|---|---|---|
+| `00` | 10 | 0x5F | 177 | 0x60 |
+| `0D` | 2 | 0x31 | 4 | 0x33 |
+
+No branch anywhere in the container targets either dead region, so nothing
+executes those bytes. `0D`'s tail even has the canonical switch shape
+(`31 14 ff` is a switch *entry*, matching `0F 00 00 31 12 01 00 ... 31 11 ff` in
+four tiling records) -- it is leftover data, not code we mis-parse.
+
+**Three turn on one binary question.** `02`, `03` and `17` end with a conditional
+branch whose operands run past the record, and whose final byte is `00`:
+
+    r02  ... 0a 1d 01 | 18 00           opcode 18 = [rel16]
+    r03  ... 0a 1d 01 | 16 00           opcode 16 = [rel16, expr]
+    r17  ... 0a 1f 00 | 10 01 01 00     opcode 10 = [rel16, expr], selector 00 = [u8]
+
+Two facts point opposite ways, which is exactly why this needs the engine:
+
+* **For "the `00` terminates":** all 22 tiling records in the container end with a
+  `0x00` byte, 21 as a one-byte terminator token. `r02` and `r03` contain
+  **exactly one `0x00` byte each -- the final one**. Our model eats it, leaving
+  those records with no terminator at all.
+* **For "our model is right":** the runtime image is one flat buffer
+  (`base(id) = 0x400 + sum of lengths`) with no end-of-record, so spilling into
+  the next record is physically normal; and every component of the reading is
+  independently verified against engine code -- opcode `10` four ways on
+  2026-09-08, the expression table 94/94 against the engine's own two tables.
+
+**The run is staged.** `tools/make_warp_seq.py` writes `0D 31 17` (call) then
+`0C 31 02` (goto) into `m/MS0017` r01, so one session measures `r17`, `r02` and
+-- if `r02` spills -- `r03` too. `play/warp31/ddswin` holds it with `m/MS0031`
+**restored byte-identical to the original** (the fall-through patch is gone) and
+exactly one file changed. Predictions are registered in the tool's docstring
+*before* the run, A vs B, so the result cannot be read either way after the fact.
+
+**`0B` is still open** and is not in this run: its `1F 04` at 0x236 runs a
+`pairs_ff` for 612 bytes, swallowing whole records, which is plainly wrong rather
+than one byte out. It needs its own analysis.
+
+---
+
 ## Deferred -- only after 100% opcode accuracy and 100% translation
 
 ### D1. The engine eats a character at 14 sites. We could give it back.
