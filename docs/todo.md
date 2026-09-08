@@ -269,6 +269,30 @@ different entry, and `-DBATTLE_DIV` really changes the compiled hook) and by
   and may need the same gate;
 - which `n` is right.
 
+### 0f. Counting turns from the glyph log is not a reliable instrument
+
+Three attempts at the same question on the same data gave 1 : 1.38, 1 : 1.75 and
+1 : 6.56. The reasons, all found the hard way:
+
+- a party weapon attack reads `Katsuragi Ayato with Sabre,thrust at the enemy`,
+  not `X's Y`, so an `X's Y` pattern misses every one of them;
+- consecutive messages are drawn back to back and a run-splitter that breaks on
+  the draw-variant merges them, so only the first in each run is ever matched;
+- status results (`attack power was lowered`) are consequences of someone
+  *else's* turn and inflate the party side if counted.
+
+And the deeper problem: two sessions are different content -- different areas,
+different enemies, different amounts of negotiation -- so per-battle rates are
+confounded no matter how good the pattern is.
+
+**Use it for existence, not for rates.** "The party acted zero times in a fight
+it outnumbered 3 to 1" is a fact the log states plainly and no pattern can spoil.
+"The ratio improved 2x" is not something this log can support.
+
+To measure pacing properly the tracer would have to log a tick counter --
+`pace()` already has one, and `flags` has no spare bits left, so it wants a
+record-format bump rather than another regex.
+
 ### 0d. The combat architecture, mapped 2026-09-08
 
 Read out of the exe, with the call-site field in the trace confirming which
