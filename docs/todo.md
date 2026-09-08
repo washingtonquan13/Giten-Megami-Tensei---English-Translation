@@ -176,6 +176,47 @@ target so each fragment is separately translatable. Not a translation task.
 
 ---
 
+### 5. Opcode model: 7 containers, not 119 scattered errors
+
+Re-measured 2026-09-08, and the old framing was misleading.
+
+| | |
+|---|---|
+| records that tile | 20,617 of 20,690 — **99.65%** |
+| corpus bytes inside a record we cannot tile | 3,927 of 1,688,491 — **0.23%** |
+| branch targets landing on a token boundary | 20,150 of 20,269 — 99.41% |
+| ...**in a container that tiles completely** | **100%** |
+
+**All 119 misses sit in a container that also holds an untiled record; zero sit
+in one that tiles cleanly.** So this is not 119 opcode errors scattered through
+the corpus — it is 7 containers we cannot frame, and every branch in everything
+else already lands where the model says.
+
+The 7: `m/MS0031` c0 (6 untiled, 44 strays), `m/MS610D` c0 (36, 40) and c3,
+`m/MS6200` c0 (6, 13), `m/MS6F00` c31 (10, 9), `m/MS6F1F` c0 (10, 9),
+`m/MS6500` c0 (1, 2).
+
+Do **not** re-open opcode `10` or `11` from this. Both were settled by warp
+trace on 2026-09-06 — 145 of 148 logged token lengths matched and the three that
+differed were branches whose logged PC was the target, on a boundary — and the
+corpus-driven `['u8']` change that "made 41 records tile" must never be applied.
+They emit 90 of the 119 because they are the branches *in the broken
+containers*, not because their operands are wrong.
+
+**The method that would close it** is the one that closed those two:
+`tools/make_warp.py` puts `0C 31 01` at the start of `m/MS0017` r01, no save and
+no playthrough, and the engine's own PC log becomes ground truth. Five of the
+six files are in the merged `m/MS6xxx` family, which a `0C` warp cannot reach by
+file id — but we now know those buffers are slot `0xE0 + i`, so a warp into a
+conversation slot is newly possible.
+
+**What "100%" cannot mean:** 374 of the 768 dispatch slots never occur anywhere
+in the corpus. Their handlers can be read, but nothing in the game exercises
+them, so they can be modelled and never verified. 394 slots are used, the exe
+implements 384 of them, and 10 are no-ops with 162 uses between them.
+
+---
+
 ## Carried over from before this list existed
 
 - 73 untiled records; 119 of 20,269 branch targets missing a boundary (99.413%);
