@@ -66,12 +66,28 @@ def pool_of(token: str) -> tuple:
 
 
 REL = sys.argv[1] if len(sys.argv) > 1 else "m/MS0002.BIN"
-OUT = sys.argv[2] if len(sys.argv) > 2 else os.path.join(
+_rest = [a for a in sys.argv[2:] if not a.startswith("--")]
+OUT = _rest[0] if _rest else os.path.join(
     R, "build", "tl", REL.split("/")[-1].replace(".BIN", "") + ".md")
+
+#: `--only FILE` limits the TODO set to the `rec<TAB>idx` pairs listed in FILE
+#: (the refusals from a `tl_apply` dry run).  Every other row still appears as
+#: context, so a re-run costs only the rows that actually failed instead of the
+#: whole file -- which matters when a rule change invalidates 102 of 182 rows.
+ONLY = None
+if "--only" in sys.argv:
+    src = sys.argv[sys.argv.index("--only") + 1]
+    ONLY = set()
+    for line in io.open(src, encoding="utf-8"):
+        m = re.search(r"(\d+:[0-9A-Fa-f]+)\[(\d+)\]", line)
+        if m:
+            ONLY.add((m.group(1), int(m.group(2))))
 
 
 def in_scope(r) -> bool:
     """A row this pass is meant to rewrite: v0.05's words, or nothing at all."""
+    if ONLY is not None:
+        return (r.rec, r.idx) in ONLY
     if script.NOEDIT_NOTE in (r.note or ""):
         return False
     if not (r.jp or "").strip():

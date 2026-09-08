@@ -168,9 +168,9 @@ for ln, rec, idx, en in answers:
 
 print("%s: %d answers, %d accepted, %d refused, %d warnings"
       % (REL, len(answers), len(ok), len(bad), len(warn)))
-for ln, rec, idx, why in bad[:40]:
+for ln, rec, idx, why in bad:
     print("   REFUSED line %-4d %s[%d]: %s" % (ln, rec, idx, why))
-for ln, rec, idx, why in warn[:15]:
+for ln, rec, idx, why in warn[:40]:
     print("   warn    line %-4d %s[%d]: %s" % (ln, rec, idx, why))
 
 if not WRITE:
