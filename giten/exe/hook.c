@@ -62,13 +62,29 @@ typedef void *(__attribute__((stdcall)) * GetProcAddress_t)(HANDLE, const char *
 #define FP_BYTES 0x400          /* the whole record index */
 
 struct hdr { u32 magic, version, nfiles, reserved; };
-struct dir { u16 fid, pad; u32 fp; u16 image_end, nspans; u32 spans_off; u16 ntails, pad2; u32 tails_off; };
+struct dir { u16 fid, ci; u32 fp; u16 image_end, nspans; u32 spans_off; u16 ntails, pad2; u32 tails_off; };
 /* `served` is how many bytes this entry answers from `start`.  It used to be
    derived as min(len, end - start), which meant the hook answered EVERY address
    inside a span -- including the ones branches jump to.  It is now built into
    overlay.dat, capped at the lowest branch target inside the span, so a jump
    falls through to the original file.  See giten/overlay.py. */
-struct span { u16 start, end, virt, len, served, pad; u32 data_off; };
+/* `start` and `virt` are where our model of the FILE put this span.  A merged
+   buffer puts the record somewhere else, so neither is an address here: `rec`
+   and `rec_off` say which record the span is in and where inside it, and the
+   real address is the running buffer's own index entry plus `rec_off`.
+   `jp_len` is a length rather than an end for the same reason.  `jp_hash` is
+   FNV-1a over the Japanese those bytes hold, and a span is only served when the
+   buffer still holds exactly that -- which is what makes a merge safe: a record
+   another file replaced fails the hash and is dropped, not served at a
+   plausible-looking address. */
+struct span { u16 start, jp_len, virt, len, served, pad; u32 data_off;
+              u16 rec, rec_off; u32 jp_hash; };
+
+/* the largest nspans in the shipped overlay is 1 013 (m/MS0030 c0); an entry
+   over this is refused whole rather than half-verified.  tests/test_overlay.py
+   pins both numbers. */
+#define MAX_SPANS 1024
+#define MAX_TAILS 1024
 
 static u8 *ovl;                 /* the whole overlay.dat in memory */
 static int state;               /* 0 not loaded, 1 loaded, -1 unavailable */
@@ -81,6 +97,12 @@ static u16 c_fid[2];
 static struct dir *c_dir[2];
 static int c_valid[2];
 static int c_next;
+/* per cached entry: how far the running buffer's end is from the one we planned
+   against (virtual addresses move with it), and one bit per span/tail saying
+   the buffer still holds the Japanese that span was built from. */
+static int c_delta[2];
+static u8 c_ok[2][MAX_SPANS / 8];
+static u8 c_tok[2][MAX_TAILS / 8];
 
 static u32 fnv1a(const u8 *p, u32 n)
 {
@@ -88,6 +110,51 @@ static u32 fnv1a(const u8 *p, u32 n)
     while (n--)
         h = (h ^ *p++) * 0x01000193u;
     return h;
+}
+
+/* the address the running buffer puts this span at */
+static u32 span_start(const u16 *idx, const struct span *s)
+{
+    return (u32)idx[s->rec * 2] + s->rec_off;
+}
+
+/* where the engine resumes once the English is done: just past the Japanese,
+   in the running buffer's coordinates */
+static u16 span_end(const u16 *idx, const struct span *s)
+{
+    return (u16)(span_start(idx, s) + s->jp_len);
+}
+
+/* Does the buffer still hold the Japanese this span replaces?  Three ways it
+   might not: the record is shorter here than the span needs, the span would run
+   past the end of the image, or some other file supplied the record. */
+static int span_holds(const u16 *idx, const u8 *base, u32 end, const struct span *s)
+{
+    u32 off, ln, lo;
+    if (!s->jp_hash || s->rec > 0xFF)
+        return 0;
+    off = idx[s->rec * 2];
+    ln = idx[s->rec * 2 + 1];
+    lo = off + s->rec_off;
+    if ((u32)s->rec_off + s->jp_len > ln || lo + s->jp_len > end)
+        return 0;
+    return fnv1a(base + lo, s->jp_len) == s->jp_hash;
+}
+
+static void mark(u8 *bits, u32 n, const u16 *idx, const u8 *base, u32 end,
+                 struct span *sp, u32 count)
+{
+    u32 i;
+    for (i = 0; i < n; i++)
+        bits[i] = 0;
+    for (i = 0; i < count; i++)
+        if (span_holds(idx, base, end, &sp[i]))
+            bits[i >> 3] |= (u8)(1u << (i & 7));
+}
+
+static int bit(const u8 *bits, u32 i)
+{
+    return (bits[i >> 3] >> (i & 7)) & 1;
 }
 
 static void load(void)
@@ -114,7 +181,7 @@ static void load(void)
     }
     pCloseHandle(f);
     h = (struct hdr *)ovl;
-    if (h->magic != 0x564F5447u /* "GTOV" */ || h->version != 4)
+    if (h->magic != 0x564F5447u /* "GTOV" */ || h->version != 5)
         return;
     dirs = (struct dir *)(ovl + sizeof(struct hdr));
     ndirs = h->nfiles;
@@ -179,22 +246,58 @@ static struct dir *rebind(u32 handle, u16 fid)
                 return 0;               /* two files hash alike: no answer */
             only = &dirs[i];
         }
-    return only;
+    if (only)
+        return only;
+    /* A demon-conversation buffer.  The engine builds it by merging m/MS6000
+       with up to four more files (0x0040EB70) and reports it as 0xE0 + slot,
+       which no filename maps to and whose index hashes to nothing we hold.
+       m/MS6000 is always the base and slot == container, so that is the entry;
+       which of its spans the merge actually left in place is decided per span
+       by span_holds, not here. */
+    if (fid >= 0xE0 && fid <= 0xEF)
+        for (i = 0; i < ndirs; i++)
+            if (dirs[i].fid == 0x6000 && dirs[i].ci == (u16)(fid - 0xE0))
+                return &dirs[i];
+    return 0;
 }
 
-static struct dir *lookup(u32 handle, u16 fid)
+/* Returns the cache slot, not the entry: the caller needs the slot's delta and
+   its verification bits, and recomputing them per fetch would mean hashing
+   every span on every byte. */
+static int lookup(u32 handle, u16 fid)
 {
+    const u8 *base;
+    const u16 *idx;
+    u32 end;
+    struct dir *d;
     int k;
     for (k = 0; k < 2; k++)
         if (c_valid[k] && c_handle[k] == handle && c_fid[k] == fid)
-            return c_dir[k];
+            return k;
     k = c_next;
     c_next ^= 1;
     c_handle[k] = handle;
     c_fid[k] = fid;
-    c_dir[k] = rebind(handle, fid);
     c_valid[k] = 1;
-    return c_dir[k];
+    c_dir[k] = 0;
+    c_delta[k] = 0;
+    d = rebind(handle, fid);
+    if (!d)
+        return k;
+    if (d->nspans > MAX_SPANS || d->ntails > MAX_TAILS)
+        return k;                       /* too big to verify: serve nothing */
+    base = script_buffer(handle);
+    if (!base)
+        return k;
+    idx = (const u16 *)base;
+    end = image_end_of(base);
+    c_delta[k] = (int)end - (int)d->image_end;
+    mark(c_ok[k], sizeof c_ok[k], idx, base, end,
+         (struct span *)(ovl + d->spans_off), d->nspans);
+    mark(c_tok[k], sizeof c_tok[k], idx, base, end,
+         (struct span *)(ovl + d->tails_off), d->ntails);
+    c_dir[k] = d;
+    return k;
 }
 
 /* the entry of a sorted, non-overlapping array whose [start, start+served)
@@ -202,12 +305,32 @@ static struct dir *lookup(u32 handle, u16 fid)
  * about which one it is walking -- the head/tail distinction used to live here
  * as a flag and a min(), and getting that min() wrong is what made the hook
  * answer branch targets. */
-static struct span *in_range(struct span *s, u32 n, u16 pc)
+static struct span *in_range(const u16 *idx, struct span *s, u32 n, u16 pc)
 {
     int lo = 0, hi = (int)n - 1;
     while (lo <= hi) {
         int mid = (lo + hi) >> 1;
-        u32 v = s[mid].start;
+        u32 v = span_start(idx, &s[mid]);
+        if (pc < v)
+            hi = mid - 1;
+        else if (pc >= v + (u32)s[mid].served)
+            lo = mid + 1;
+        else
+            return &s[mid];
+    }
+    return 0;
+}
+
+/* the same search over the virtual side.  Tails sit above the image end, and
+   the image end moves when a merge makes the buffer longer, so every virtual
+   address shifts by the same `delta` -- which is what keeps them from landing
+   on real records that only exist in the merged buffer. */
+static struct span *in_tail(struct span *s, u32 n, int delta, u16 pc)
+{
+    int lo = 0, hi = (int)n - 1;
+    while (lo <= hi) {
+        int mid = (lo + hi) >> 1;
+        u32 v = (u32)((int)s[mid].start + delta);
         if (pc < v)
             hi = mid - 1;
         else if (pc >= v + (u32)s[mid].served)
@@ -250,33 +373,44 @@ static u8 passthrough(u32 handle, u16 *pcp)
 ENTRY u8 hook(u32 handle, u16 *pcp)
 {
     struct dir *d;
-    struct span *s;
+    struct span *s, *sp;
+    const u8 *base;
+    const u16 *idx;
     u16 pc;
-    u32 k;
+    u32 k, end;
+    int slot;
     if (state == 0)
         load();
     if (state < 0)
         return ORIG_FETCH(handle, pcp);
-    d = lookup(handle, FILEID);
+    slot = lookup(handle, FILEID);
+    d = c_dir[slot];
     if (!d)
         return passthrough(handle, pcp);
+    base = script_buffer(handle);
+    if (!base)
+        return ORIG_FETCH(handle, pcp);
+    idx = (const u16 *)base;
+    end = image_end_of(base);
     pc = *pcp;
-    if (pc >= d->image_end) {
-        s = in_range((struct span *)(ovl + d->tails_off), d->ntails, pc);
-        if (!s)
+    if (pc >= end) {
+        sp = (struct span *)(ovl + d->tails_off);
+        s = in_tail(sp, d->ntails, c_delta[slot], pc);
+        if (!s || !bit(c_tok[slot], (u32)(s - sp)))
             return passthrough(handle, pcp);   /* a virtual PC in no tail of ours */
-        k = pc - s->start;
-        *pcp = (k + 1 == s->len) ? s->end : (u16)(pc + 1);
+        k = pc - (u32)((int)s->start + c_delta[slot]);
+        *pcp = (k + 1 == s->len) ? span_end(idx, s) : (u16)(pc + 1);
         return ovl[s->data_off + k];
     }
-    s = in_range((struct span *)(ovl + d->spans_off), d->nspans, pc);
-    if (!s)
+    sp = (struct span *)(ovl + d->spans_off);
+    s = in_range(idx, sp, d->nspans, pc);
+    if (!s || !bit(c_ok[slot], (u32)(s - sp)))
         return ORIG_FETCH(handle, pcp);
-    k = pc - s->start;
+    k = pc - span_start(idx, s);
     if (k + 1 == s->len)
-        *pcp = s->end;                  /* the English is done */
+        *pcp = span_end(idx, s);        /* the English is done */
     else if (k + 1 == s->served)
-        *pcp = s->virt;                 /* head done, the tail is virtual */
+        *pcp = (u16)((int)s->virt + c_delta[slot]);  /* head done, the tail is virtual */
     else
         *pcp = (u16)(pc + 1);
     return ovl[s->data_off + k];

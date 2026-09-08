@@ -79,13 +79,14 @@ from dataclasses import dataclass, field
 from . import build_v2, codec, extract_v2, files, records, script, vmops
 
 MAGIC = b"GTOV"
-VERSION = 4
+VERSION = 5
 FP_BYTES = 0x400                # the whole record index (two MS610B containers agree on 32 entries)
 PC_LIMIT = 0x10000
 
 HDR = struct.Struct("<4sIII")
-DIR = struct.Struct("<HHIHHIHHI")
-SPAN = struct.Struct("<HHHHHHI")
+DIR = struct.Struct("<HHIHHIHHI")            # the second u16 is the container index
+SPAN = struct.Struct("<HHHHHHIHHI")         # start, JP LEN, virt, len, served,
+                                            # pad, data_off, rec, rec_off, jp_hash
 
 
 def fnv1a(data: bytes) -> int:
@@ -139,6 +140,8 @@ class SpanEntry:
     rec_id: int = -1
     idx: int = -1
     cap: "int | None" = None    # lowest address a branch jumps to inside the span
+    rec_off: int = 0            # where the span starts inside its record
+    jp_hash: int = 0            # fnv1a of the Japanese this span replaces
 
     @property
     def head(self) -> int:
@@ -321,7 +324,8 @@ def plan(rows, root=None):
                     hi = base[rec.id] + sp.end
                     cap = next((t for t in targets if lo < t < hi), None)
                     ent.spans.append(SpanEntry(lo, hi, 0, data, rec.id, sp.idx,
-                                               cap=cap))
+                                               cap=cap, rec_off=sp.off,
+                                               jp_hash=fnv1a(jp)))
             ent.spans.sort(key=lambda s: s.start)
             cursor = ent.image_end
             kept = []
@@ -355,38 +359,116 @@ def build(entries: "list[Entry]") -> bytes:
         doffs = {}
         for s in e.spans:
             doffs[id(s)] = data_off + len(data)
-            spans += SPAN.pack(s.start, s.end, s.virt, len(s.data), s.head, 0,
-                               doffs[id(s)])
+            spans += SPAN.pack(s.start, s.end - s.start, s.virt, len(s.data),
+                               s.head, 0, doffs[id(s)], s.rec_id & 0xFFFF,
+                               s.rec_off, s.jp_hash)
             data += s.data
         toff = spans_off + len(spans)
         tails = e.tails
         for s in tails:
-            spans += SPAN.pack(s.virt, s.end, s.virt, s.tail, s.tail, 0,
-                               doffs[id(s)] + s.head)
-        dirs += DIR.pack(e.fid, 0, e.fp, e.image_end, len(e.spans), soff, len(tails), 0, toff)
+            spans += SPAN.pack(s.virt, s.end - s.start, s.virt, s.tail, s.tail,
+                               0, doffs[id(s)] + s.head, s.rec_id & 0xFFFF,
+                               s.rec_off, s.jp_hash)
+        dirs += DIR.pack(e.fid, e.ci & 0xFFFF, e.fp, e.image_end,
+                         len(e.spans), soff, len(tails), 0, toff)
     return HDR.pack(MAGIC, VERSION, len(entries), 0) + bytes(dirs) + bytes(spans) + bytes(data)
 
 
+#: v4 spans stop at ``data_off``; v5 appends ``rec``, ``rec_off`` and ``jp_hash``.
+SPAN_V4 = struct.Struct("<HHHHHHI")
+
+
 def parse(blob: bytes) -> "list[Entry]":
+    """Read v5, and still read v4.
+
+    Recorded traces are only meaningful against the overlay that produced them
+    (``tests/data/verify-overlay.gtov`` is one), so dropping v4 here would throw
+    away the fixtures rather than upgrade them.  A v4 span resolves to itself:
+    with ``rec_off`` 0 and ``jp_hash`` 0 :func:`resolve` cannot verify it, which
+    is why :func:`resolve` refuses a v4 entry outright instead of guessing.
+    """
     magic, version, nfiles, _ = HDR.unpack_from(blob, 0)
-    if magic != MAGIC or version != VERSION:
+    if magic != MAGIC or version not in (4, VERSION):
         raise ValueError("not an overlay.dat")
+    span = SPAN if version == VERSION else SPAN_V4
     out = []
     for i in range(nfiles):
-        fid, _, fp, iend, n, soff, nt, _, toff = DIR.unpack_from(blob, HDR.size + i * DIR.size)
-        e = Entry("m/MS%04X.BIN" % fid, -1, fid, fp, iend)
+        fid, ci, fp, iend, n, soff, nt, _, toff = DIR.unpack_from(blob, HDR.size + i * DIR.size)
+        e = Entry("m/MS%04X.BIN" % fid, ci, fid, fp, iend)
         for k in range(n):
-            start, end, virt, ln, served, _, doff = SPAN.unpack_from(
-                blob, soff + k * SPAN.size)
+            f = span.unpack_from(blob, soff + k * span.size)
+            start, second, virt, ln, served, _, doff = f[:7]
+            rec, rec_off, jp_hash = f[7:] if version == VERSION else (-1, 0, 0)
+            end = (start + second) if version == VERSION else second
             e.spans.append(SpanEntry(start, end, virt, blob[doff:doff + ln],
-                                     cap=start + served))
+                                     rec_id=rec, cap=start + served,
+                                     rec_off=rec_off, jp_hash=jp_hash))
         # the tails array is derived from the spans; check it says the same thing
         for k in range(nt):
-            vstart, end, virt, tlen, _served, _, doff = SPAN.unpack_from(
-                blob, toff + k * SPAN.size)
+            vstart, second, virt, tlen, _served, _, doff = span.unpack_from(
+                blob, toff + k * span.size)[:7]
             s = next(s for s in e.spans if s.virt == virt and s.tail)
+            end = (s.start + second) if version == VERSION else second
             assert (vstart, end, tlen, blob[doff:doff + tlen]) == (s.virt, s.end, s.tail, s.data[s.head:])
         out.append(e)
+    return out
+
+
+def live_index(image: bytes) -> "list[tuple[int, int]]":
+    """The 256 ``(offset, length)`` pairs at the front of a running buffer."""
+    return [struct.unpack_from("<HH", image, i * 4) for i in range(256)]
+
+
+def _live_end(image: bytes) -> int:
+    """Where the running buffer stops, from its own last index entry.
+
+    The same four bytes ``image_end_of`` reads in ``hook.c``; taking it from the
+    buffer rather than from the directory is what makes a merged image safe.
+    """
+    off, ln = struct.unpack_from("<HH", image, 255 * 4)
+    return off + ln
+
+
+def resolve(entry: "Entry", image: bytes) -> "list[SpanEntry]":
+    """The spans of ``entry`` that the buffer ``image`` actually holds.
+
+    A span is placed at ``live_index[rec].offset + rec_off`` -- the address the
+    *running* buffer puts that record at, not the one our model of the file
+    predicts -- and kept only if the Japanese there hashes to what the span was
+    built from.
+
+    That is what makes this survive the m/MS6xxx merge.  A record the merge
+    shifted is still found, because the live index says where it went.  A record
+    another file replaced fails the hash, because the bytes are not the ones we
+    translated, and is dropped rather than served at a plausible-looking
+    address.  Neither case needs to know that a merge happened at all.
+    """
+    idx = live_index(image)
+    # Virtual addresses live above the image, so they move when the image does.
+    # A merge makes the buffer longer than the file we planned against -- for
+    # m/MS6000 c0, 0x1D7B becomes about 0x222C -- and virtual addresses handed
+    # out from the old end would then collide with real records that now exist
+    # there.  Shifting them by the same amount as the image keeps them above it.
+    delta = _live_end(image) - entry.image_end
+    out = []
+    for s in entry.spans:
+        if not 0 <= s.rec_id < 256 or not s.jp_hash:
+            continue        # v4, or a span whose Japanese hashes to zero
+        off, ln = idx[s.rec_id]
+        jp_len = s.end - s.start
+        lo = off + s.rec_off
+        if s.rec_off + jp_len > ln or lo + jp_len > len(image):
+            continue                      # the record is shorter here than we assumed
+        if fnv1a(image[lo:lo + jp_len]) != s.jp_hash:
+            continue                      # some other file supplied this record
+        virt = (s.virt + delta) if s.virt else 0
+        if virt and virt + (len(s.data) - (s.cap - s.start if s.cap else jp_len)) > PC_LIMIT:
+            continue                      # the shifted tail would run off the top
+        moved = SpanEntry(lo, lo + jp_len, virt, s.data, s.rec_id, s.idx,
+                          cap=None if s.cap is None else lo + (s.cap - s.start),
+                          rec_off=s.rec_off, jp_hash=s.jp_hash)
+        out.append(moved)
+    out.sort(key=lambda x: x.start)
     return out
 
 
@@ -396,18 +478,26 @@ class Model:
     def __init__(self, entry: "Entry | None", image: bytes):
         self.entry = entry
         self.image = image
+        # v5 spans are placed against the buffer that is actually running, so a
+        # merged image finds them; v4 spans carry no hash to check and are used
+        # where they were planned, which is what they have always meant.
+        if entry is None:
+            self.spans, self.live_end = [], 0
+        elif any(s.jp_hash for s in entry.spans):
+            self.spans, self.live_end = resolve(entry, image), _live_end(image)
+        else:
+            self.spans, self.live_end = entry.spans, entry.image_end
 
     def fetch(self, pc: int) -> "tuple[int, int]":
         """``(byte, next pc)`` exactly as the hooked engine would see them."""
-        e = self.entry
-        if e is not None:
-            if pc >= e.image_end:
-                for s in e.spans:                       # the hook binary-searches; same answer
+        if self.entry is not None:
+            if pc >= self.live_end:
+                for s in self.spans:                    # the hook binary-searches; same answer
                     if s.tail and s.virt <= pc < s.vend:
                         k = pc - s.virt
                         return s.data[s.head + k], (s.end if k + 1 == s.tail else pc + 1)
             else:
-                for s in e.spans:
+                for s in self.spans:
                     if s.start <= pc < s.start + s.head:
                         k = pc - s.start
                         if k + 1 == len(s.data):

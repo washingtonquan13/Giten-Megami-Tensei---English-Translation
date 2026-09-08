@@ -177,6 +177,18 @@ def test_c_hook_serves_the_same_bytes_as_the_model():
         fh.write(img)
     base = records.bases(recs)
     model = overlay.Model(ent, img)
+
+    # Some machines refuse to execute a binary that was linked a moment ago
+    # (Defender's "block newly created executables" and the like).  That is not
+    # a result about the hook, so it must not read as one -- but it must not
+    # read as a pass either, hence the line on stdout.  Seen 2026-09-08.
+    try:
+        subprocess.run([exe], cwd=tmp, capture_output=True)
+    except OSError as exc:
+        print("      NOT RUN: this machine will not execute the harness (%s);"
+              " the C hook is UNVERIFIED against the model" % exc.__class__.__name__)
+        return
+
     for rec in sc.containers[0]:
         start, stop = base[rec.id], base[rec.id] + len(rec.data)
         out = subprocess.run([exe, os.path.join(tmp, "img.bin"), str(ent.fid), "3", str(start), str(stop)],

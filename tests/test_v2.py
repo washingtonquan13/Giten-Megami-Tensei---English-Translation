@@ -1693,9 +1693,13 @@ EXE_PASSES = [
     # 2048 -> 1536 when overlay.dat v4 started storing each entry's served
     # length (the hook stopped deriving it, losing a flag, a min() and a local),
     # then back to 2048 for the fingerprint fallback and the out-of-bounds
-    # guard.  The in-place count has never moved: the cave is appended, and
-    # only 38 bytes of the original are rewritten either way.
-    ("ovl",        38, 2048, True),
+    # guard, then 3072 for v5: two verification bitmaps (1 013 spans is the
+    # largest entry, so 128 bytes each, twice for the two cache slots), the
+    # per-span FNV check that fills them, and a second binary search for the
+    # virtual side.  **The in-place count has never moved**: the cave is
+    # appended, and only 38 bytes of the original are rewritten either way,
+    # which is the number this test exists to hold still.
+    ("ovl",        38, 3072, True),
     ("pace",       10, 0,    False),      # 60 Hz tick gate -- behaviour
     ("names",     117, 512,  True),
     ("menus",     596, 1536, True),
