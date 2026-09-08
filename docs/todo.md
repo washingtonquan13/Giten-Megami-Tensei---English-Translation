@@ -888,6 +888,50 @@ nothing has been found to load.
 
 ---
 
+## C1. Combat pacing -- REOPENED 2026-09-08, and the popup hypothesis is CORRECT
+
+**The battle command UI is hard-gated by an "a message window is open" flag.**
+`0x0041D530` (state 32, the command UI) opens with
+
+    0x0041D530  push $0x2
+    0x0041D532  call 0x404380      ; return flag_word(0x004683F0) & 2
+    0x0041D53A  test %ax,%ax
+    0x0041D53D  je   0x41d548      ; clear -> run the UI
+    0x0041D53F  call 0x416c20      ; set   -> leave, this tick does nothing
+    0x0041D547  ret
+
+Bit 1 of `0x004683F0` has exactly **one setter and one clearer** in the whole
+image: `0x0041985E` sets it and `0x00419D4B` clears it, both inside the
+message-window subsystem (`0x00419xxx`, the neighbourhood the `1E 10` page-wait
+handler reaches through `0x0043C0C0` -> `0x0041A930`).  So while a battle message
+is on screen the player's command UI **does not run at all** -- not as a side
+effect, by design.
+
+**How long each message holds the gate.**  `0x00402740` decrements `0x004716F4`
+once per tick and fires the close path at zero (`0x004716F8` pauses it).  The one
+setter, `0x00402630`, is
+
+    mov 0x4(%esp),%eax ; cmp $1,%ax ; jge use_it ; mov $0xf,%eax   <- default 15
+
+so a message with no explicit duration holds the UI shut for **15 ticks -- 250 ms
+at 60 Hz**.  Of its three callers one passes `$0x3c` (60 ticks, a full second).
+
+**This is why the battle-state divider did nothing.**  `dds_dev_btl3/4` really
+did patch the call site -- verified: `0x0041720A` points at the divider, not at
+`0x0042B6A0` -- so that experiment was valid and its answer was real.  Slowing
+the battle machine cannot help, because it slows *message production* by the same
+factor; the ratio of "UI blocked" to "UI available" is unchanged.
+
+**What is NOT yet established:** what schedules turns -- the agility/ATB
+calculation that decides how many enemy actions happen per player action.  The
+gate explains why input is refused, not why the enemy acts so often.  That is the
+next thing to find, and it is now a specific question rather than a guess.
+
+**Also found while looking:** the damage line the player actually sees is
+`m/MS00DD` **rec 0x4C** (4,200 tokens in the evening trace).  Record 0x65, which
+this session "fixed", **never executes** -- 0 events.  0x4C still reads
+" HP of damage" and needs the same correction.
+
 ## Parked 2026-09-08 -- picked up after the combat-pacing work
 
 ### P1. District names are in `et/ET000D.BIN`, which nothing extracts
