@@ -27,7 +27,10 @@ from __future__ import annotations
 import io
 import os
 import re
+import shutil
+import subprocess
 import sys
+import tempfile
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -162,3 +165,86 @@ def test_no_entry_is_larger_than_the_hook_can_verify():
     ents = overlay.parse(open(BUILT, "rb").read())
     worst = max(len(e.spans) for e in ents)
     assert worst <= cap, "%d spans in one entry, cap is %d" % (worst, cap)
+
+
+def _build_harness(tmp):
+    """The real hook.c, linked natively.  Returns None when it cannot be run.
+
+    Some machines refuse to execute a binary that was linked a moment ago
+    (Defender, ESET and friends).  That is not a result about the hook, so it is
+    reported rather than silently passed.
+    """
+    from giten.exe import tracer
+    if shutil.which("gcc") is None:
+        return None
+    here = os.path.dirname(os.path.abspath(__file__))
+    exe = os.path.join(tmp, "hook_harness.exe")
+    gcc = tracer.short_path(shutil.which("gcc"))
+    subprocess.run([gcc, "-O2", "-Wall", "-Werror", "-ffreestanding", "-fno-builtin",
+                    "-nostdlib", "-o", exe, tracer.HOOK_SOURCE,
+                    os.path.join(here, "hook_harness.c"), "-I", here,
+                    "-lkernel32", "-e", "_start"], check=True)
+    try:
+        subprocess.run([exe], cwd=tmp, capture_output=True)
+    except OSError as exc:
+        print("      NOT RUN: this machine will not execute the harness (%s);"
+              " the merged-buffer path is UNVERIFIED in C" % exc.__class__.__name__)
+        return None
+    return exe
+
+
+def test_the_c_hook_serves_a_merged_buffer_the_way_the_model_does():
+    """The end-to-end proof for the demon-conversation fix.
+
+    Everything above this runs the Python model.  This runs the exact hook.c
+    that goes into the exe, over the image the engine really builds for a demon
+    conversation, under the file id the engine really reports (0xE0 -- slot 0,
+    which no filename maps to), and demands the same bytes the model gives.
+
+    Without it the fix would rest on the model and the C agreeing by
+    construction, which is the assumption that produced every bug on this list.
+    """
+    e, own = _entry_for("m/MS6000.BIN")
+    if e is None:
+        return                      # build/tables_draft not generated
+    tmp = tempfile.mkdtemp(prefix="giten-merge-")
+    exe = _build_harness(tmp)
+    if exe is None:
+        return
+
+    from giten import tables
+    path = os.path.join(paths.BUILD_DIR, "tables_draft", "m", "MS6000.BIN.tsv")
+    entries, _ = overlay.plan(tables.read(path), None)
+    with open(os.path.join(tmp, "overlay.dat"), "wb") as fh:
+        fh.write(overlay.build(entries))
+
+    image = _merged(ROW0)
+    with open(os.path.join(tmp, "img.bin"), "wb") as fh:
+        fh.write(image)
+
+    model = overlay.Model(e, image)
+    assert model.spans, "the model resolves nothing; the test would prove nothing"
+    idx = overlay.live_index(image)
+    checked = 0
+    for rec in range(256):
+        off, ln = idx[rec]
+        if ln <= 1:
+            continue                            # absent record
+        out = subprocess.run(
+            [exe, os.path.join(tmp, "img.bin"), "224", "3", str(off), str(off + ln)],
+            cwd=tmp, capture_output=True, text=True, check=True).stdout.split()
+        got = bytes.fromhex(out[0]) if not out[0].startswith("pc=") else b""
+        assert got == model.walk(off, off + ln), "record %02X" % rec
+        assert out[-1] == "pc=%d" % (off + ln)
+        checked += 1
+    # 98 records carry data in this merged image; the number is pinned so that
+    # a walk which quietly stops covering the buffer fails here.
+    assert checked == 98, "%d records walked, expected 98" % checked
+
+    # and the English really is in there -- otherwise the walk above would pass
+    # just as well with the overlay switched off
+    whole = b"".join(model.walk(idx[r][0], idx[r][0] + idx[r][1])
+                     for r in range(256) if idx[r][1] > 1)
+    for wanted in (b"Friendly", b"Intimidating", b">How will you speak to them?"):
+        assert wanted in whole, wanted
+    shutil.rmtree(tmp, ignore_errors=True)

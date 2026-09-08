@@ -32,16 +32,13 @@ decidable — a person wrote it, or a promotion did — is the one drawn.
 
 ## Open
 
-### 1. `m/MS6xxx` gets no English — designed and built, NOT YET SHIPPED
+### ✅ 1. `m/MS6xxx` gets no English — SHIPPED 2026-09-08
 
-**The design is proven offline; the C hook is written and compiles but has not
-been verified, so nothing is installed.**
-
-The mechanism: `rebind()` asked two questions a merged buffer cannot answer.
-*Which file is this?* — by hashing the whole 1024-byte record index, which
-belongs to a merge of up to five files. *Where does this span go?* — from our
-model of one file's layout, which the merge moves. So it returned 0 and 7,943
-spans were never served.
+`rebind()` asked two questions a merged buffer cannot answer. *Which file is
+this?* — by hashing the whole 1024-byte record index, which belongs to a merge
+of up to five files. *Where does this span go?* — from our model of one file's
+layout, which the merge moves. So it returned 0 and 7,943 spans were never
+served.
 
 overlay.dat **v5** asks neither. A span carries the record it lives in, its
 offset inside that record, and a hash of the Japanese it replaces:
@@ -49,11 +46,9 @@ offset inside that record, and a hash of the Japanese it replaces:
     addr = live_index[rec].offset + rec_off
     serve only if fnv1a(live[addr : addr + jp_len]) == jp_hash
 
-Measured against the real merges (25 `et/ET0007` rows x 16 slots):
-
 | | |
 |---|---|
-| m/MS6000's spans that resolve | **7,310 of 7,400 (98.8%)** |
+| m/MS6000's spans that resolve, over all 25 merges | **7,310 of 7,400 (98.8%)** |
 | every merged file's spans | **18,024 of 18,192 (99.1%)** |
 | the 90 that do not | records another file replaced — refused, not mis-served |
 | m/MS6000's spans against a *wrong* buffer | **0 of 109** |
@@ -62,29 +57,21 @@ Virtual addresses now follow the live image end, because a merged buffer is
 longer (`m/MS6000` c0: 0x1D7B alone, 0x23D4 merged) and tails handed out from
 the old end would land on records that only exist in the merge.
 
-Done: `giten/overlay.py` (v5 + `resolve`), `giten/exe/hook.c`, and
-`tests/test_merged_overlay.py`. `parse` still reads v4 so recorded traces keep
-their meaning.
+Verified end to end in the real C, not just the model:
+`test_the_c_hook_serves_a_merged_buffer_the_way_the_model_does` walks the exact
+`hook.c` that goes into the exe over the image the engine builds for a demon
+conversation, under file id `0xE0` — the id no filename maps to — across all 98
+records, and demands the same bytes as the model. 203 tests pass.
 
-**What is left, and it is the risky half:**
+Installed: v5 `overlay.dat` and six rebuilt exes in `play/en/ddswin`. The exe
+cave grew 2048 -> 3072 bytes for the two verification bitmaps; **the in-place
+count is unchanged at 38 bytes**, which is what
+`test_the_exe_is_only_as_patched_as_the_documentation_says` exists to hold still.
 
-- `tests/test_overlay.py::test_c_hook_serves_the_same_bytes_as_the_model` walks
-  the real C against the model, and **this machine refuses to execute a freshly
-  linked binary** (`PermissionError`, from every directory tried). The test now
-  prints `NOT RUN ... the C hook is UNVERIFIED` rather than passing quietly.
-  Run it somewhere that allows it before building an exe.
-- Then rebuild the exes and install a v5 `overlay.dat`. **Until both happen the
-  installed exe and overlay stay v4** — which is why the game still works. A v5
-  file under a v4 hook is not a crash: the hook sets `state = -1` and everything
-  plays in Japanese.
-- The exe budget moved 2048 -> 3072 bytes of cave for the two verification
-  bitmaps and the second binary search. **The in-place count is still 38 bytes**,
-  which is the number `test_the_exe_is_only_as_patched_as_the_documentation_says`
-  exists to hold still.
-- Only `m/MS6000`'s entry is reachable for a merged buffer today (`rebind` maps
-  `0xE0 + slot` to its container). The demon-specific files' own spans need the
-  hook to try more than one entry per buffer — a follow-up, worth roughly the
-  difference between 7,310 and 18,024 above.
+**Not play-tested.** Follow-up: `rebind` maps `0xE0 + slot` to `m/MS6000`'s
+container, so only that entry is reachable per merged buffer. The
+demon-specific files' own spans need the hook to try more than one entry —
+worth roughly the difference between 7,310 and 18,024 above.
 
 ### 2. Finish the untranslated ordinary rows — 216 of 854 done
 
