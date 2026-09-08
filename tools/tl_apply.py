@@ -24,14 +24,39 @@ separately) and a hard limit here would reject correct lines.
 """
 from __future__ import annotations
 
+import collections
 import io
 import os
+import re
 import sys
 
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, R)
 
 from giten import codec, paths, script, tables
+
+#: `{08:24}` calls record 0x24 of m/MS7F07; `{01:xx}`..`{08:xx}` map to MS7F00..07.
+_CALL = re.compile(r"^\{0([1-8]):([0-9A-Fa-f]{2})\}$")
+_POOL_CACHE: "dict[str, str]" = {}
+
+
+def pool_en(token: str) -> str:
+    """The English a pool call resolves to, or "" if it has none.
+
+    Dropping a token that resolves to `Hayasaka` loses a name; dropping one whose
+    pool entry is an untranslated Japanese particle loses nothing.  Only the
+    first is worth warning about.
+    """
+    if not _POOL_CACHE:
+        for p in tables.iter_tables(os.path.join(paths.BUILD_DIR, "tables_draft")):
+            for r in tables.read(p):
+                if r.file.startswith("m/MS7F"):
+                    _POOL_CACHE["%s|%s" % (r.file, r.rec)] = r.en or ""
+    m = _CALL.match(token)
+    if not m:
+        return ""
+    rel = "m/MS7F0%d.BIN" % (int(m.group(1)) - 1)
+    return _POOL_CACHE.get("%s|0:%s" % (rel, m.group(2).upper()), "")
 
 REL = sys.argv[1]
 ANS = sys.argv[2]
@@ -81,11 +106,24 @@ for ln, rec, idx, en in answers:
     except UnicodeEncodeError as exc:
         chs = en[exc.start:exc.end]
         bad.append((ln, rec, idx, "not cp932-encodable: %r" % chs)); continue
-    want = sorted(codec.control_tokens(row.jp or ""))
-    got = sorted(codec.control_tokens(en))
-    if want != got:
-        bad.append((ln, rec, idx, "tokens changed: japanese has %s, answer has %s"
-                    % (want or "none", got or "none"))); continue
+    # A token may be DROPPED but never invented.  Dropping is the norm: across
+    # the corpus only 1,475 of 10,554 rows we translated keep every token, and
+    # 2,988 drop them all.  Most `{08:xx}` calls substitute a Japanese
+    # grammatical fragment (いない, もう, なんて) that has no place in an English
+    # sentence; writing the words out literally is correct and is what both our
+    # own translations and v0.05 do.  Requiring equality here is what made the
+    # first MS0002 pass emit `No one{08:24}{02:08} here...`.
+    want = collections.Counter(codec.control_tokens(row.jp or ""))
+    got = collections.Counter(codec.control_tokens(en))
+    added = got - want
+    if added:
+        bad.append((ln, rec, idx, "invented token(s) the Japanese does not have: %s"
+                    % " ".join(sorted(added.elements())))); continue
+    lost = want - got
+    named = [t for t in lost.elements() if pool_en(t)]
+    if named:
+        warn.append((ln, rec, idx, "dropped token(s) that resolve to translated text: %s"
+                     % " ".join("%s=%r" % (t, pool_en(t)) for t in sorted(set(named)))))
     if (row.jp or "").count("\\n") != en.count("\\n"):
         bad.append((ln, rec, idx, "\\n count changed: %d -> %d"
                     % ((row.jp or "").count("\\n"), en.count("\\n")))); continue

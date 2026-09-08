@@ -11,16 +11,27 @@ of the macros, and the width budget it has to fit.
 Writes a Markdown brief and prints the row count.  Pair with `tl_apply.py`,
 which reads the answers back and refuses anything that would not build.
 
-**Why the `{08:24}` tokens must survive.**  They are not formatting: `{enc:hex}`
-is a real inline opcode (`giten/codec.py:op_token`), usually a macro-pool call
-that substitutes a word or a name.  Dropping one silently deletes that word from
-the game; moving one changes where it lands.  `tl_apply` compares the multiset
-of tokens against the Japanese and refuses a mismatch, because `giten check`'s
-`encode` validator only catches *malformed* tokens, not missing ones.
+**The `{08:24}` tokens, and the mistake this brief exists to prevent.**  `{enc:hex}`
+is a real inline opcode (`giten/codec.py:op_token`), usually a macro-pool call:
+the Japanese is stored *compressed*, with common words factored into pools, and
+the engine splices the word back at runtime.
+
+The first pass at this tool told translators to keep every token, and the first
+agent to use it dutifully produced ``No one{08:24}{02:08} here...`` for
+``誰も{08:24}{02:08}‥`` -- because `{08:24}` **is** the word ``いない``, and there is
+nowhere in an English sentence to put it.
+
+So the brief annotates every token with what it resolves to.  A token that
+resolves to a name or a real word (``{08:00}`` = *Hayasaka*) is worth keeping and
+placing; an untranslated Japanese fragment should be dropped and its meaning
+written out.  Dropping is the corpus norm -- only 1,475 of the 10,554 rows we
+have translated keep every token, and 2,988 drop them all.  `tl_apply` enforces
+only the half that is mechanical: you may drop any token, never invent one.
 """
 from __future__ import annotations
 
 import io
+import re
 import os
 import sys
 
@@ -29,10 +40,34 @@ sys.path.insert(0, R)
 
 from giten import codec, paths, script, tables
 
+DRAFT = os.path.join(paths.BUILD_DIR, "tables_draft")
+
+_CALL = re.compile(r"^\{0([1-8]):([0-9A-Fa-f]{2})\}$")
+_POOL: "dict[str, tuple]" = {}
+
+
+def pool_of(token: str) -> tuple:
+    """``(english, japanese)`` a pool call resolves to, or ``("", "")``.
+
+    Showing this in the brief is the whole difference between a translator who
+    keeps `{08:00}` because it is *Hayasaka* and one who keeps `{08:24}` because
+    a rule told them to, and thereby writes `No one{08:24} here...`.
+    """
+    if not _POOL:
+        for p in tables.iter_tables(DRAFT):
+            for r in tables.read(p):
+                if r.file.startswith("m/MS7F"):
+                    _POOL["%s|%s" % (r.file, r.rec)] = (r.en or "", r.jp or "")
+    m = _CALL.match(token)
+    if not m:
+        return ("", "")
+    rel = "m/MS7F0%d.BIN" % (int(m.group(1)) - 1)
+    return _POOL.get("%s|0:%s" % (rel, m.group(2).upper()), ("", ""))
+
+
 REL = sys.argv[1] if len(sys.argv) > 1 else "m/MS0002.BIN"
 OUT = sys.argv[2] if len(sys.argv) > 2 else os.path.join(
     R, "build", "tl", REL.split("/")[-1].replace(".BIN", "") + ".md")
-DRAFT = os.path.join(paths.BUILD_DIR, "tables_draft")
 
 
 def in_scope(r) -> bool:
@@ -68,10 +103,24 @@ w("%d rows to write, of %d in the file.  Rows marked KEEP are already ours --\n"
 w("## How to answer\n\n"
   "Write a TSV with three columns and no header: `rec`, `idx`, `english`.\n"
   "One line per TODO row, tab-separated, in this file's order.  Nothing else.\n\n")
-w("## Hard constraints -- these break the build, not just the prose\n\n"
-  "1. **Keep every `{...}` token**, unchanged and in a sensible place.  They are\n"
-  "   inline opcodes (macro-pool calls that substitute a word or name), not\n"
-  "   formatting.  Same tokens, same count, as the Japanese.\n"
+w("## The `{...}` tokens -- read this first, it is the easiest thing to get wrong\n\n"
+  "A `{08:24}` is a **macro-pool call**: at runtime the engine splices in whatever\n"
+  "word that pool entry holds.  The Japanese sentence is *stored compressed*, with\n"
+  "common words factored out into pools.  Each token below is annotated with what\n"
+  "it resolves to.\n\n"
+  "* If a token resolves to a **name or a real word** (`{08:00}=Hayasaka`), **keep\n"
+  "  it** and put it where that word belongs in the English sentence.\n"
+  "* If a token is an untranslated Japanese grammatical fragment "
+  "(`{08:24}` = `いない`, `{08:5C}` = `もう`), **drop it** and write the meaning out\n"
+  "  in plain English.  These have no place in an English sentence.\n\n"
+  "**Dropping is normal and expected.**  Across the corpus only 1,475 of 10,554\n"
+  "already-translated rows keep every token; 2,988 drop them all.  Do NOT sprinkle\n"
+  "tokens through the English to preserve a count -- that produces word salad like\n"
+  "`No one{08:24}{02:08} here...`.  You may drop any token; you may never invent one\n"
+  "the Japanese does not have.\n\n"
+  "## Hard constraints -- these break the build, not just the prose\n\n"
+  "1. **Never add a `{...}` token** the Japanese line does not contain, and never\n"
+  "   alter one you keep.\n"
   "2. **`\\n` is a literal line break inside the message box.**  Keep the same\n"
   "   number as the Japanese unless the note says otherwise.\n"
   "3. **cp932 only.**  No curly quotes, no en/em dashes, no accented letters.\n"
@@ -112,7 +161,17 @@ for rec, rs in by_rec.items():
         if note.startswith("reads:") or "reads:" in note:
             w("  - reads: `%s`\n" % note.split("reads:", 1)[1].split(";")[0].strip())
         if tok:
-            w("  - tokens that MUST survive: %s\n" % " ".join("`%s`" % t for t in tok))
+            parts = []
+            for t in dict.fromkeys(tok):
+                en, jp = pool_of(t)
+                if en:
+                    parts.append("`%s` = **%s** (keep)" % (t, en))
+                elif jp:
+                    parts.append("`%s` = %s (untranslated fragment - drop it, "
+                                 "write the meaning in English)" % (t, jp))
+                else:
+                    parts.append("`%s` (control code - keep)" % t)
+            w("  - tokens: %s\n" % "; ".join(parts))
         if (r.en or "").strip():
             w("  - v0.05 (replace this): `%s`\n" % r.en)
     w("\n")
