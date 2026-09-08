@@ -6,11 +6,20 @@ Reads `rec<TAB>idx<TAB>english`, one row per line.  Without `--write` it only
 reports; with `--write` it updates `build/tables_draft` and sets `status=draft`.
 
 Every refusal here is a failure mode that `giten check` would either miss or
-only catch much later:
+only catch much later.  The two token rules were both learned from the pilot,
+in opposite directions:
 
-* **a dropped `{...}` token** -- `check`'s `encode` validator parses tokens that
-  are present and malformed; it cannot know one is missing.  A missing macro
-  call silently deletes a word or a name from the game.
+* **an invented `{...}` token** -- a pool call the Japanese never had.  Refused.
+* **a token kept whose pool entry is untranslated** -- the engine splices the
+  pool's *Japanese* in, so the line ships as ``by 人間 strength``.  `check`
+  cannot see this: the `en` column holds a token, not Japanese characters.  The
+  MS0015 pilot had 14 such placements (ニュートン, 人間, 我々, こちら, 結界).
+  Refused, with the Japanese quoted so the translator can write the meaning.
+* **dropping a token is FINE** and is the corpus norm -- only 1,475 of the
+  10,554 rows we have translated keep every token, because most calls
+  substitute a Japanese grammatical fragment with no English counterpart.
+  Dropping one that *does* resolve to translated text is a warning, not an
+  error, since it loses a word the pool already has in English.
 * **a changed `\\n` count** -- the line still builds and then wraps wrongly in a
   box whose height the script already decided.
 * **non-cp932 text** -- caught by `check`, but far cheaper to reject per row than
@@ -37,26 +46,36 @@ from giten import codec, paths, script, tables
 
 #: `{08:24}` calls record 0x24 of m/MS7F07; `{01:xx}`..`{08:xx}` map to MS7F00..07.
 _CALL = re.compile(r"^\{0([1-8]):([0-9A-Fa-f]{2})\}$")
-_POOL_CACHE: "dict[str, str]" = {}
+_POOL_CACHE: "dict[str, tuple]" = {}
+
+
+def _pool(token: str) -> tuple:
+    """``(english, japanese)`` for a pool call, or ``("", "")`` if not one."""
+    if not _POOL_CACHE:
+        for p in tables.iter_tables(os.path.join(paths.BUILD_DIR, "tables_draft")):
+            for r in tables.read(p):
+                if r.file.startswith("m/MS7F"):
+                    _POOL_CACHE.setdefault("%s|%s" % (r.file, r.rec),
+                                           (r.en or "", r.jp or ""))
+    m = _CALL.match(token)
+    if not m:
+        return ("", "")
+    rel = "m/MS7F0%d.BIN" % (int(m.group(1)) - 1)
+    return _POOL_CACHE.get("%s|0:%s" % (rel, m.group(2).upper()), ("", ""))
 
 
 def pool_en(token: str) -> str:
     """The English a pool call resolves to, or "" if it has none.
 
     Dropping a token that resolves to `Hayasaka` loses a name; dropping one whose
-    pool entry is an untranslated Japanese particle loses nothing.  Only the
-    first is worth warning about.
+    pool entry is an untranslated Japanese particle loses nothing.
     """
-    if not _POOL_CACHE:
-        for p in tables.iter_tables(os.path.join(paths.BUILD_DIR, "tables_draft")):
-            for r in tables.read(p):
-                if r.file.startswith("m/MS7F"):
-                    _POOL_CACHE["%s|%s" % (r.file, r.rec)] = r.en or ""
-    m = _CALL.match(token)
-    if not m:
-        return ""
-    rel = "m/MS7F0%d.BIN" % (int(m.group(1)) - 1)
-    return _POOL_CACHE.get("%s|0:%s" % (rel, m.group(2).upper()), "")
+    return _pool(token)[0]
+
+
+def pool_jp(token: str) -> str:
+    """The Japanese a pool call would splice in if its entry is untranslated."""
+    return _pool(token)[1]
 
 REL = sys.argv[1]
 ANS = sys.argv[2]
@@ -119,8 +138,22 @@ for ln, rec, idx, en in answers:
     if added:
         bad.append((ln, rec, idx, "invented token(s) the Japanese does not have: %s"
                     % " ".join(sorted(added.elements())))); continue
+    # KEEPING a token whose pool entry has no English is worse than dropping
+    # one: the engine splices the pool's *Japanese* in, so the line ships as
+    # "by 人間 strength".  `giten check` cannot see it -- the `en` column holds a
+    # token, not Japanese characters -- so it has to be refused here.  Found in
+    # the MS0015 pilot, where 14 placements would have shipped ニュートン, 人間,
+    # 我々, こちら and 結界 inside English sentences.
+    untranslated = sorted({t for t in got.elements()
+                           if pool_jp(t) and not pool_en(t).strip()})
+    if untranslated:
+        bad.append((ln, rec, idx,
+                    "kept token(s) whose pool entry is untranslated, so the game "
+                    "would render Japanese: %s -- drop them and write the meaning"
+                    % " ".join("%s=%s" % (t, pool_jp(t)) for t in untranslated)))
+        continue
     lost = want - got
-    named = [t for t in lost.elements() if pool_en(t)]
+    named = [t for t in lost.elements() if pool_en(t).strip()]
     if named:
         warn.append((ln, rec, idx, "dropped token(s) that resolve to translated text: %s"
                      % " ".join("%s=%r" % (t, pool_en(t)) for t in sorted(set(named)))))
