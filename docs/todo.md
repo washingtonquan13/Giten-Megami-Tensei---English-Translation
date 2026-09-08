@@ -103,6 +103,32 @@ decidable — a person wrote it, or a promotion did — is the one drawn.
 
 ## Open
 
+### ✅ CLOSED: combat difficulty is the Windows port's own balance
+
+Settled 2026-09-08 by the person playing it, against PC-98 footage of the same
+game: PC-98 enemies act far less often and several party members act before the
+enemy does. **That difference is the port's, not this patch's.** Nothing here
+caused it and nothing here should try to "fix" it.
+
+Do not reopen this from the symptom. What the investigation did establish, and
+what is worth keeping:
+
+- **`5dce533`'s divider is a no-op** and is retracted (entry 0 below). The
+  `dds_dev_bat*` exes are deleted from the install.
+- **`dds_dev_btl<n>.exe` is real** -- it gates the battle state machine at
+  `0x0041720A` -- but `btl3` made no perceptible difference when played, so the
+  battle's phase rate is not what decides how many turns a side gets. Kept
+  because it is correct and tested, not because it helps.
+- **The battle is strictly turn-based.** Every call state 32's handler makes
+  lands outside `0x0042Axxx`-`0x0042Dxxx`, so the engine does not run while the
+  player is choosing, and `0x00402740` freezes the popup countdown for
+  input-wait popups. There is no time limit on a command.
+- The architecture map and the pacing measurements below stand.
+
+If it is ever worth revisiting as a *deliberate* rebalance rather than a bug,
+the lever is demon agility in the stat tables, not the loop.
+
+
 ### 0. The battle divider does nothing — RETRACT `5dce533`
 
 **`dds_dev_bat3.exe` and `dds_dev_bat4.exe` are behaviourally identical to
