@@ -211,6 +211,53 @@ counted as party actions, so the true ratio is worse than 1:1.35.)
 decides whose turn is next, and whether it is driven by a per-tick counter that
 the 60 Hz gate has skewed. Nothing in the interpreter will answer it.
 
+### 0d. The combat architecture, mapped 2026-09-08
+
+Read out of the exe, with the call-site field in the trace confirming which
+paths actually carry battle tokens.
+
+```
+0x00450AC0  main loop
+  0x004510B8  pacing gate (pace(), 60 Hz)
+    0x004019D0  per-tick update
+      0x00417160  UI/state  ->  0x0041D530  battle command UI
+                                  ->  0x00414E70 -> command table 0x004687FC
+                                      {u32 id, u32 handler, u16} x 7,
+                                      ids 5,8,3,2,4,0,1
+      0x00401980  ->  0x00402740  popup countdown  [0x004716F4]
+                  ->  0x0043B5E0  background script   -- DEAD (item 0)
+                  ->  0x0043BBC0  stopwatch           -- DEAD (1E 0B/0C/0E: 0/0/2 uses)
+
+0x0042Bxxx-0x0042Cxxx  battle engine
+  ->  0x00402800  open a popup and run a script record inside it
+        ->  0x00439090  run-until-blocked  ->  exec_token at 0x004390C4
+```
+
+**The battle script is driven by the popup system, not by the per-tick chain.**
+The trace's call-site field says so: `m/MS00DD`'s tokens arrive from `0x004390C4`
+(14,769) and `0x0043913C` (7,678), and **not** from `0x00439103`, the site inside
+`0x004390F0` that the dead background script would have used. `0x00402800` is
+"open a popup and run this record in it", and its only callers are five sites in
+`0x0042BDCF`-`0x0042C23C` -- the battle engine.
+
+**Correction to `CALL_SITE_ROLE` in `giten/trace/core.py`:** it labels
+`0x004390C4` and `0x0043913C` "direct". `0x004390C4` is not direct -- it sits in
+a `do { fetch; exec_token } while (r >= 0)` loop at `0x00439090`, the same shape
+as `0x004390F0`. The label should say so.
+
+**Where this leaves the pacing question.** Each battle message is a popup that
+runs one script fragment; the popup's dwell is `[0x004716F4]` ticks, set at
+`0x00402630`, whose default this repo already raised 15 -> 60 (`POPUP_TICKS`).
+So message dwell is already a full second. That is consistent with the trace:
+**the problem is not that messages fly past, it is that the party is not
+offered turns** (item 0c: 1 party turn per 1.35 enemy, longest enemy run 7).
+
+**Next:** the turn order itself, in `0x0042Bxxx`-`0x0042Cxxx`. The question to
+answer first is whether the next actor is chosen from an accumulator advanced
+per tick -- in which case the 60 Hz gate skews it and the fix is there -- or from
+a plain agility sort, in which case the ratio is the game's own and the fix is a
+different one. Nothing above answers that; it needs the battle unit structure.
+
 ### 1. Finish the untranslated ordinary rows — 216 of 854 done
 
 **The "854 untranslated rows" figure overstated the job by about half**: 441 of

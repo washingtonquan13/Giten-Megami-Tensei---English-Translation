@@ -84,7 +84,7 @@ CALL_SITE_BY_RETURN = {0xC9: 0x4390C4, 0x08: 0x439103, 0x41: 0x43913C}
 
 #: what each site is, for reports
 CALL_SITE_ROLE = {
-    0x4390C4: "0x4390C4 direct",
+    0x4390C4: "0x4390C4 inside 0x439090 (run-until-blocked, the popup driver)",
     0x439103: "0x439103 inside 0x4390F0 (run-until-blocked)",
     0x43913C: "0x43913C direct",
 }
