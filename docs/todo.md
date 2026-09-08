@@ -669,7 +669,7 @@ them is a small win once item 1 is done.
 
 ---
 
-### 4b. The six `m/MS0031` records -- RESOLVED 2026-09-08. None is a model defect.
+### 4b. The six `m/MS0031` records -- ALL SIX RESOLVED 2026-09-08. None is a model defect.
 
 The engine was asked and answered. `tools/make_warp_seq.py` wrote `0D 31 17`
 then `0C 31 02` into `m/MS0017` r01, with `m/MS0031` byte-identical to the
@@ -717,9 +717,43 @@ sessions are all early-game and this is plainly a late-game scene, and the
 intra-container reachability walk does not follow `0E`/`0F` switch targets, so it
 under-approximates. Evidence, not proof.
 
-**Still open: r0B.** Its `1F 04` at 0x236 runs a `pairs_ff` for 612 bytes,
-swallowing whole records -- wrong in a different way than one byte out, and the
-only record of the six with no explanation.
+**r0B: the corpus's single unterminated `pairs_ff`.** Its `1F 04` at 0x236 is
+real -- the rel16 is `0x00C9`, targeting record offset `0x0303`, which is the
+record's own final `00` terminator. A jump to the end of the record is not
+something a misaligned walk produces by chance. What is broken is the condition
+list: the record holds **only two `0xFF` bytes**, at 0x113/0x114, and both are
+legitimately consumed by an earlier `1F 01`, so nothing after 0x23A can end the
+list and the engine would read pairs on into the following records.
+
+The loop was read, not assumed:
+
+    call 0x4393e0        ; *a = first & 0x7F, *b = second; returns -1 if first & 0x80
+    cmp  bx,0xffff       ; bit 7 set?
+    jne  body            ; no -> evaluate the pair and loop
+    cmp  ax,0x7f         ; set, and (first & 0x7F) == 0x7F -> first byte is exactly 0xFF
+    je   terminate
+
+-- terminator is a first byte of exactly `0xFF`, costing two bytes, which is
+what `_read_pairs_ff` already does. Corpus-wide, **916 of 919 `1F03`/`1F04`
+sites terminate inside their own record**; the only exceptions are r0B and two
+byte-identical copies of one record in `m/MS6F00`/`m/MS6F1F`, files already
+established as not script. The model is right 916 times; this record is broken.
+
+### The opcode model is now clean
+
+Every one of the 73 untiled records in the corpus is accounted for, and **not one
+is a defect in the tokenizer**:
+
+| cause | records |
+|---|---|
+| dead data after a terminator | `m/MS0031` r00, r0D |
+| operand spills past the record (r02 crashes the real game) | `m/MS0031` r02, r03, r17 |
+| the one unterminated `pairs_ff` | `m/MS0031` r0B |
+| files with no loader found | 67, in `m/MS610D`, `MS6200`, `MS6500`, `MS6F00`, `MS6F1F` |
+
+The remaining gap to "100%" is not model accuracy. It is that six records of
+broken data cannot be tiled *because they are broken*, and 67 more sit in files
+nothing has been found to load.
 
 ---
 

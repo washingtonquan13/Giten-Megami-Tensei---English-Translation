@@ -32,6 +32,26 @@ entered at offset 0, `ﾒ泪：` when r18 is entered at offset 1 by the spill.  
 bytes, two renderings, decided only by entry point.  That also retroactively
 explains the identical `ﾒ泪：` in r01.
 
+**r0B: the one `pairs_ff` in the corpus with no terminator (added 2026-09-08).**
+Its `1F 04` at 0x236 is real -- the rel16 is `0x00C9`, targeting record offset
+0x0303, which is the record's own final `00` terminator, a jump to the end that
+no misaligned walk would produce by chance.  What is broken is the condition
+list: the record holds only two `0xFF` bytes, both at 0x113/0x114 and both
+legitimately consumed by an earlier `1F 01`, so nothing after 0x23A can end the
+list.  The engine's loop was read rather than assumed:
+
+    call 0x4393e0        ; *a = first & 0x7F, *b = second; returns -1 if first & 0x80
+    cmp  bx,0xffff       ; bit 7 set?
+    jne  body            ; no -> evaluate the pair and loop
+    cmp  ax,0x7f         ; set, and (first & 0x7F) == 0x7F -> first byte is exactly 0xFF
+    je   terminate
+
+which is precisely what `_read_pairs_ff` implements.  Corpus-wide, **916 of 919
+`1F03`/`1F04` sites terminate inside their own record**; the three that do not
+are r0B and two byte-identical copies of one record in `m/MS6F00`/`m/MS6F1F`,
+files already established as not script at all.  So the model is right and this
+record is the single broken one.
+
 **What this does NOT establish.**  That these records are unreachable.  Only one
 `0C`/`0D` reference to `m/MS0031` exists in the whole corpus (r1B) and the file
 appears in none of the 668,311 events across nine play traces -- but those
@@ -147,3 +167,59 @@ def test_the_same_marker_is_drawn_two_ways_in_one_session():
     assert len(hits) == 2, "expected 泪： twice, found %d" % len(hits)
     assert s[hits[0] - 1] != "\uff92", "the r17 rendering is garbled too"
     assert s[hits[1] - 1] == "\uff92", "the spilled rendering is no longer garbled"
+
+
+def test_r0b_is_the_only_unterminated_pairs_ff_in_the_corpus():
+    """The model is right 916 times; r0B is the exception, not the rule.
+
+    If this count ever drops, `_read_pairs_ff` has been changed and the change
+    is wrong -- the engine's loop at 0x0042FEB0 terminates only on a first byte
+    of exactly 0xFF, and it costs two bytes.
+    """
+    good, bad = 0, []
+    tab = vmops.table()
+    for rel in files.all_encoded():
+        if not rel.startswith("m/"):
+            continue
+        try:
+            sc = script.parse(rel, files.read_source(rel))
+        except Exception:
+            continue
+        for ci, cont in enumerate(sc.containers):
+            for r in cont:
+                if r.tokens is not None:
+                    good += sum(1 for t in r.tokens
+                                if t.kind == "op" and t.idx in (0x103, 0x104))
+                    continue
+                d, i = r.data, 0
+                while i < len(d):
+                    b = d[i]
+                    if b >= 0x20:
+                        i += 2 if (vmops.is_sjis_lead(b) and i + 1 < len(d)) else 1
+                        continue
+                    idx, head = ((vmops.ESCAPE[b] + d[i + 1], 2)
+                                 if b in vmops.ESCAPE else (b, 1))
+                    try:
+                        j, _ = vmops._read_operands(d, i + head, tab.operands(idx), tab)
+                    except vmops.TileError:
+                        if idx in (0x103, 0x104):
+                            bad.append((rel, ci, r.id))
+                        break
+                    i = j
+    assert good >= 916, "only %d pairs_ff sites terminate cleanly now" % good
+    assert sorted(bad) == sorted([("m/MS0031.BIN", 0, 0x0B),
+                                  ("m/MS6F00.BIN", 31, 0x1B),
+                                  ("m/MS6F1F.BIN", 0, 0x1B)]), bad
+
+
+def test_r0bs_branch_targets_its_own_records_terminator():
+    """Why the token is real even though its operand is broken."""
+    _cont, _base, have = _container()
+    d = have[0x0B]
+    assert d[0x236:0x238] == b"", d[0x236:0x23A].hex()
+    rel = int.from_bytes(d[0x238:0x23A], "little")
+    tgt = 0x23A + rel
+    assert tgt == len(d) - 1, "the branch no longer targets the record's last byte"
+    assert d[tgt] == 0x00, "that byte is no longer the terminator"
+    assert d.count(0xFF) == 2 and d.index(0xFF) == 0x113, (
+        "the record's 0xFF bytes moved; the 'no terminator possible' claim needs rechecking")
