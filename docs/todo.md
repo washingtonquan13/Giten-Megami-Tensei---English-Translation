@@ -269,6 +269,37 @@ different entry, and `-DBATTLE_DIV` really changes the compiled hook) and by
   and may need the same gate;
 - which `n` is right.
 
+### 0g. btl3 changed nothing, and that inverts the hypothesis
+
+Played 2026-09-08 on `dds_dev_btl3.exe`: **no perceptible difference.** Dividing
+the battle state machine by three is not a small effect, so that is a real
+negative result, not a null one.
+
+**And the command UI proves the battle is strictly turn-based.** Every direct
+call made by state 32's handler (`0x0041D530`-`0x0041D860`) lands in
+`0x00402xxx`, `0x00404xxx`, `0x0040Cxxx`, `0x00414xxx`, `0x00416xxx`,
+`0x0041Dxxx`, `0x00422xxx`, `0x00439310`, `0x00449CD0`, `0x00452xxx`,
+`0x00454xxx` -- and **nothing in the battle region `0x0042Axxx`-`0x0042Dxxx`**.
+So while the player is choosing, the battle engine is not running at all. The
+enemy *cannot* act while the command menu is open.
+
+Which kills the reading this whole thread was built on. The player is not being
+out-raced while choosing. **The command menu is simply not being offered**, and
+when it is offered they have unlimited time (`0x00402740` freezes the countdown
+for input-wait popups).
+
+**The player's other observation is the lead now:** PC-98 footage of the same
+game shows the party taking several attacks where this build gives one. If the
+number of actions a side gets is derived from a counter that advances with the
+loop, then pinning the loop at 60 Hz -- where the 1999 build free-ran as fast as
+the machine could draw -- would *starve* the party rather than rush it.
+
+**That inverts the fix.** Every attempt so far has tried to slow combat down.
+The next test is to speed it up: `dds_dev_nopace.exe` removes the pacing gate
+entirely and lets the loop free-run as the original did. If the party suddenly
+gets its turns, the 60 Hz gate is the cause and `pace()` is the thing to change,
+not any divider. Rebuilt and installed 2026-09-08.
+
 ### 0f. Counting turns from the glyph log is not a reliable instrument
 
 Three attempts at the same question on the same data gave 1 : 1.38, 1 : 1.75 and
