@@ -128,8 +128,9 @@ what is worth keeping:
 If it is ever worth revisiting as a *deliberate* rebalance rather than a bug,
 the lever is demon agility in the stat tables, not the loop.
 
+#### Findings from the closed combat thread, kept for reference
 
-### 0. The battle divider does nothing — RETRACT `5dce533`
+##### The battle divider does nothing — RETRACT `5dce533`
 
 **`dds_dev_bat3.exe` and `dds_dev_bat4.exe` are behaviourally identical to
 `dds_dev.exe`.** Diffed: they differ only in the redirect at the `call 0x0043B5E0`
@@ -166,7 +167,7 @@ the likelier explanation. It should not be quoted again.
 The first real question is what the battle loop *is*: whether it runs as script
 through `exec_token` and blocks on that stopwatch, or has its own update.
 
-### 0b. What actually paces the script — first measurements
+##### What actually paces the script — first measurements
 
 **The stopwatch lead is dead.** `0x0043BBC0`'s counter is reached from exactly
 three opcodes -- `1E 0B` start, `1E 0C` stop, `1E 0E` read -- and their use counts
@@ -202,7 +203,7 @@ ticks end on `1E 10`, the lever is `0x0041A930`'s dwell and it can be scaled in
 battle without touching the field. If they end on `-1`, the pacing is the page
 buffer filling up and the lever is elsewhere.
 
-### 0c. Combat: what the 2026-09-08 session does and does not show
+##### Combat: what the 2026-09-08 session does and does not show
 
 **Established, and it closes the pacing thread:**
 
@@ -241,7 +242,7 @@ free-running) and compare the party:enemy action ratio. If the ratio moves, turn
 order is tick-driven and the 60 Hz gate skews it. If it does not, the ratio is
 the game's own and there is nothing here to fix.
 
-### 0e. FOUND IT: the battle machine steps once per tick
+##### The battle machine steps once per tick
 
 The player's report is the evidence that settles this -- *"I was spamming clicks
 on the character selector to get a turn in and couldn't, because the enemy was
@@ -295,7 +296,7 @@ different entry, and `-DBATTLE_DIV` really changes the compiled hook) and by
   and may need the same gate;
 - which `n` is right.
 
-### 0g. btl3 changed nothing, and that inverts the hypothesis
+##### btl3 changed nothing, and that inverts the hypothesis
 
 Played 2026-09-08 on `dds_dev_btl3.exe`: **no perceptible difference.** Dividing
 the battle state machine by three is not a small effect, so that is a real
@@ -326,7 +327,7 @@ entirely and lets the loop free-run as the original did. If the party suddenly
 gets its turns, the 60 Hz gate is the cause and `pace()` is the thing to change,
 not any divider. Rebuilt and installed 2026-09-08.
 
-### 0f. Counting turns from the glyph log is not a reliable instrument
+##### Counting turns from the glyph log is not a reliable instrument
 
 Three attempts at the same question on the same data gave 1 : 1.38, 1 : 1.75 and
 1 : 6.56. The reasons, all found the hard way:
@@ -350,7 +351,7 @@ To measure pacing properly the tracer would have to log a tick counter --
 `pace()` already has one, and `flags` has no spare bits left, so it wants a
 record-format bump rather than another regex.
 
-### 0d. The combat architecture, mapped 2026-09-08
+##### The combat architecture, mapped 2026-09-08
 
 Read out of the exe, with the call-site field in the trace confirming which
 paths actually carry battle tokens.
@@ -396,6 +397,9 @@ answer first is whether the next actor is chosen from an accumulator advanced
 per tick -- in which case the 60 Hz gate skews it and the fix is there -- or from
 a plain agility sort, in which case the ratio is the game's own and the fix is a
 different one. Nothing above answers that; it needs the battle unit structure.
+
+---
+
 
 ### 1. Finish the untranslated ordinary rows — 216 of 854 done
 
