@@ -57,7 +57,25 @@ def test_the_instruction_that_crashed_the_tracer_maps_to_trc():
     assert ".trc + 0x74" in where, where
 
 
-def _synthetic_dump(code=0xC0000005, params=(0, 0x0E), eip=0x01040074):
+def _trc_eip(off=0x74):
+    """An address `off` bytes into the injected `.trc` section of the dev exe.
+
+    It used to be written here as the literal 0x01040074 -- the EIP of the real
+    crash this whole exercise came from.  That address is only meaningful for the
+    build of that day: every time the `.ovl` cave grows, the sections after it
+    move up, and on 2026-09-08 `.trc` went from 0x01040000 to 0x01041000 and the
+    literal started naming `.mnm` instead.  The point of the test is that a fault
+    in our own code is attributed to our own code, so derive it.
+    """
+    from giten.exe.pe import PE
+    pe = PE(open(_dev_exe(), "rb").read(), "dev")
+    sec = next(x for x in pe.sections if x["name"].startswith(".trc"))
+    return pe.imagebase + sec["vaddr"] + off
+
+
+def _synthetic_dump(code=0xC0000005, params=(0, 0x0E), eip=None):
+    if eip is None:
+        eip = _trc_eip()
     """A minimal MINIDUMP with just an exception stream + x86 context."""
     ctx = bytearray(0xCC)
     struct.pack_into("<I", ctx, 0xB8, eip)          # Eip
@@ -92,7 +110,7 @@ def test_reading_a_dump_recovers_the_fault_and_the_registers(tmp=None):
     d = crashdump.read(path)
     assert d["code"] == 0xC0000005
     assert d["params"] == [0, 0x0E]
-    assert d["regs"]["Eip"] == 0x01040074
+    assert d["regs"]["Eip"] == _trc_eip()
     assert d["regs"]["Ecx"] == 0
 
     text = crashdump.explain(path, _dev_exe())
