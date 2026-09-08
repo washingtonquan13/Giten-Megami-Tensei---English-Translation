@@ -2525,3 +2525,37 @@ def test_1fa7_reads_expressions_until_one_is_minus_one():
         # ...and no span may start inside it any more
         assert not [s for s in rec.spans if off < s.off < tok.end], \
             "%s r%02X still extracts text from inside the list" % (rel, rid)
+
+
+def test_the_tracer_records_which_exec_token_call_site_fired():
+    """The wrapper is shared by three call sites; the record must say which.
+
+    `0x4390F0` -- "run this script until it blocks" -- is reached from the
+    per-tick background script AND from `0x42F334`.  A soft loop was analysed
+    at length on the assumption it was the first, and that assumption was never
+    checkable from a trace.  The wrapper's own return address distinguishes
+    them, and it goes in flags bits 8-15, which were spare -- so this is not a
+    format change and every older trace still decodes, with `site` None.
+    """
+    import re
+    from giten.trace import core
+    from giten.exe import tracer
+
+    # the three sites and the return-address bytes they produce must agree
+    want = {(s + 5) & 0xFF: s for s in tracer.CALL_SITES}
+    assert core.CALL_SITE_BY_RETURN == want, (core.CALL_SITE_BY_RETURN, want)
+    assert len(want) == 3, "two call sites share a low byte; the map is ambiguous"
+
+    # the asm has to actually capture it
+    with open(tracer.TRACE_SOURCE if hasattr(tracer, "TRACE_SOURCE")
+              else os.path.join(os.path.dirname(tracer.__file__), "trace.S")) as fh:
+        asm = fh.read()
+    assert re.search(r"mov\s+eax,\s*dword ptr \[ebp\+4\]", asm), \
+        "trace.S no longer reads its own return address"
+
+    # and a decoded record has to expose it, with the old bits intact
+    ev = core.Event(0, 0, 0, 0, 0, 0, 0, 0,
+                    flags=((0x439103 + 5) & 0xFF) << 8 | core.CTX_NULL_BEFORE)
+    assert ev.site == 0x439103
+    assert ev.flags & core.CTX_NULL_BEFORE
+    assert core.Event(0, 0, 0, 0, 0, 0, 0, 0, flags=0).site is None

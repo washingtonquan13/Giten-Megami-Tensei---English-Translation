@@ -71,6 +71,24 @@ HEADER = struct.Struct("<4sHH")
 CTX_NULL_BEFORE = 1
 CTX_NULL_AFTER = 2
 
+#: ``flags >> 8`` is the low byte of the wrapper's own return address, i.e.
+#: WHICH of exec_token's three call sites dispatched this token.  Spare bits,
+#: so no format change: a trace taken before 2026-09-07 has 0 here and decodes
+#: as ``site = None``.
+#:
+#: It exists because ``0x4390F0`` -- "run this script until it blocks" -- is
+#: reached from two places, the per-tick background script and ``0x42F334``,
+#: and telling them apart is the difference between two entirely different
+#: explanations of a loop.
+CALL_SITE_BY_RETURN = {0xC9: 0x4390C4, 0x08: 0x439103, 0x41: 0x43913C}
+
+#: what each site is, for reports
+CALL_SITE_ROLE = {
+    0x4390C4: "0x4390C4 direct",
+    0x439103: "0x439103 inside 0x4390F0 (run-until-blocked)",
+    0x43913C: "0x43913C direct",
+}
+
 RECORD = RECORD_V1          # kept for callers that only want the v1 field order
 
 
@@ -87,12 +105,23 @@ class Event:
     idx_off: int = 0        # where the ENGINE put this record (0 = not logged)
     idx_len: int = 0        # how long the ENGINE thinks it is
     pc0: int = 0            # PC before the token ran, i.e. where it starts (v2)
-    flags: int = 0          # CTX_NULL_BEFORE | CTX_NULL_AFTER (v2)
+    flags: int = 0          # CTX_NULL_BEFORE | CTX_NULL_AFTER, plus the
+                            # call-site byte in bits 8-15 (v2, since 2026-09-07)
+
     rel: str = ""           # "m/MS0017.BIN"
     span: "int | None" = None
     anchor: "int | None" = None
     kind: str = "?"         # opcode encoding, "TEXT", or "?"
     ok: bool = False        # self-check: logged ch matches the bytes at pc
+
+    @property
+    def site(self) -> "int | None":
+        """Which exec_token call site dispatched this token, or None.
+
+        None for any trace taken before 2026-09-07: the bits were spare and
+        read back as zero, so old traces decode unchanged.
+        """
+        return CALL_SITE_BY_RETURN.get(self.flags >> 8)
 
     def key(self):
         return (self.rel, self.rec, self.anchor, self.kind)

@@ -65,6 +65,25 @@ _start:
         mov     word ptr [ebp-8], ax        # pc0    = 0
         mov     word ptr [ebp-6], ax        # flags  = 0
         mov     dword ptr [ebp-4], eax      # index  = not logged
+
+        # WHICH of exec_token's three call sites reached us.
+        #
+        # All three are redirected to this one wrapper, so nothing in the record
+        # said which -- and that matters: 0x4390F0 ("run this script until it
+        # blocks") is reached from the per-tick background script AND from
+        # 0x42F334, and a soft loop was analysed for hours on the assumption it
+        # was the first without that ever being checked.
+        #
+        # The only thing that distinguishes them is our own return address, at
+        # [ebp+4] -- we are past `push ebp; mov ebp,esp` and inside pushad, so
+        # eax is free.  Their low bytes differ (0xC9, 0x08, 0x41), and flags
+        # bits 8-15 were spare, so the record layout and the trace version do
+        # not change; a v2 decoder that ignores them still reads this file.
+        mov     eax, dword ptr [ebp+4]
+        mov     ah, al
+        xor     al, al
+        or      word ptr [ebp-6], ax
+
         mov     ax, word ptr [FILEID]
         mov     word ptr [ebp-12], ax
         mov     ax, word ptr [RECID]
