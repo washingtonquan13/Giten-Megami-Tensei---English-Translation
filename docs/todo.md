@@ -453,13 +453,35 @@ Needs one fresh trace of that scene. **Note for next time: that session's
 longer be reproduced byte-for-byte.** Copy `overlay.dat` next to the trace
 before rebuilding.
 
-### 3. 25 rows in `m/MS610D` ship English that still contains Japanese
+### ✅ 3. `m/MS610D`'s mojibake English — FIXED 2026-09-08
 
-e.g. `褫{01:00}襁Devil Buster襄`. Mojibake, not translation. Same file already
-holds 24 of the overlay's 29 refusals (`0xFF` structural bytes), so it wants a
-pass of its own.
+They were never translations. `m/MS610D` is a negotiation script with **binary
+tables mixed into it** — real menu options (`Save Heart`, `Give Food`, `Grin`,
+`Wipe Away`) interleaved with data the tokenizer walks into and calls a text
+span. The fake spans decode to the clothing-radical block that binary lands on
+when read as Shift-JIS (褫 襁 襄 褻 褶 袿 襌), and a `02 00` inside one reads as a
+pool call — so promotion substituted **"Devil Buster" into the middle of a data
+table**.
 
-### 4. ~~Finish the half-translated row in `m/MS000C`~~ — misdiagnosed
+Two refusals now keep English out, and the obvious version of each was tried
+first and was wrong:
+
+- **A span following opcode `11`, in a container holding a record we cannot
+  tile.** Both halves are needed. 49 of the 50 are data, in `m/MS610D`,
+  `m/MS6200` and `m/MS6500`; the fiftieth is `m/MS6000` 12:CE[1] — `失敗！` →
+  `Failure!` — and is real. "No kana" does not separate them (that one has
+  kanji and no kana) and neither does the clothing-radical block (it holds 裂
+  and 裏, used in 580 real lines). **The container's own tiling does** — the
+  same correlation that explains every off-boundary branch target.
+- **0xFF counted, not merely present.** The old rule compared presence, so a
+  span with two in the Japanese and one in the English passed. Exactly one did:
+  `m/MS610D` 0:FE[4], the only one of the 25 that ever reached the overlay.
+
+Refusals 29 → 44. **No served row carries Japanese in its English any more**,
+and `m/MS6000`'s `Failure!` is still served. Pinned by
+`tests/test_data_spans.py`. 208 tests pass.
+
+### 3. ~~Finish the half-translated row in `m/MS000C`~~ — misdiagnosed
 
 **The row is fully translated.** `m/MS000C` 0:04[174] already reads
 `It almost seemed as if it had all been a dream......`. The Japanese appears
@@ -474,7 +496,7 @@ target so each fragment is separately translatable. Not a translation task.
 
 ---
 
-### 5. Opcode model: 7 containers, not 119 scattered errors
+### 4. Opcode model: 7 containers, not 119 scattered errors
 
 Re-measured 2026-09-08, and the old framing was misleading.
 

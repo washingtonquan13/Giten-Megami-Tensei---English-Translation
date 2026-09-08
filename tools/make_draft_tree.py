@@ -78,7 +78,16 @@ def _pool_english(src):
 #: harmless unused string -- it goes on screen.  `m/MS7F05` holds one record,
 #: the six bytes of the string the corpus's seven apparent `{06:xx}` pool calls
 #: are really made of; `docs/limits.md` calls it a dead dictionary.
-DEAD_DATA = frozenset({"m/MS7F05.BIN"})
+DEAD_DATA = frozenset({"m/MS7F05.BIN", "m/MS6F00.BIN", "m/MS6F1F.BIN"})
+
+#: ...and the two that joined it on 2026-09-08.  Every "text span" in
+#: ``m/MS6F00`` and ``m/MS6F1F`` decodes to 0xFF and punctuation -- 0xFF is
+#: unassigned in cp932 and so is never text -- and neither carries a row of
+#: English.  7,936 of ``m/MS6F00``'s 7,987 records are the one-byte absent
+#: placeholder; it holds 51 real ones and ``m/MS6F1F`` holds the same 51.
+#: ``0x1F`` is 31, and ``m/MS6F00`` container **31** is ``m/MS6F1F`` container 0:
+#: the same data on disk twice.  Nothing promotes into them today, so this
+#: changes no output -- it is here so a future reference cannot.
 
 #: The eight macro pools.  A record here is not a line, it is a fragment the
 #: engine splices into every sentence that calls it -- `m/MS7F07` record 0x52 is
