@@ -83,6 +83,13 @@ VERSION = 5
 FP_BYTES = 0x400                # the whole record index (two MS610B containers agree on 32 entries)
 PC_LIMIT = 0x10000
 
+#: The hook keeps one verification bit per span in a fixed array and refuses an
+#: entry it cannot cover, so an entry over this would ship with its English
+#: silently switched off.  ``m/MS0030`` c0 is already at 1,013, so the headroom
+#: is thin -- which is why this is a build error rather than only a test.
+#: ``tests/test_merged_overlay.py`` checks that hook.c still says the same.
+MAX_SPANS = 1024
+
 HDR = struct.Struct("<4sIII")
 DIR = struct.Struct("<HHIHHIHHI")            # the second u16 is the container index
 SPAN = struct.Struct("<HHHHHHIHHI")         # start, JP LEN, virt, len, served,
@@ -350,6 +357,14 @@ def plan(rows, root=None):
 
 
 def build(entries: "list[Entry]") -> bytes:
+    for e in entries:
+        if len(e.spans) > MAX_SPANS or len(e.tails) > MAX_SPANS:
+            raise ValueError(
+                "%s c%d has %d spans and %d tails; the hook verifies at most %d "
+                "of each and refuses an entry over that, so this file would ship "
+                "with no English at all.  Raise MAX_SPANS in giten/overlay.py "
+                "*and* giten/exe/hook.c together, or shorten the file."
+                % (e.rel, e.ci, len(e.spans), len(e.tails), MAX_SPANS))
     dir_off = HDR.size
     spans_off = dir_off + DIR.size * len(entries)
     data_off = spans_off + SPAN.size * sum(len(e.spans) + len(e.tails) for e in entries)

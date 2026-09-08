@@ -160,6 +160,8 @@ def test_no_entry_is_larger_than_the_hook_can_verify():
     cap = int(re.search(r"#define MAX_SPANS (\d+)", src).group(1))
     assert re.search(r"nspans > MAX_SPANS", src), (
         "hook.c no longer refuses an entry it cannot verify")
+    assert cap == overlay.MAX_SPANS, (
+        "hook.c verifies %d spans, giten/overlay.py believes %d" % (cap, overlay.MAX_SPANS))
     if not os.path.exists(BUILT):
         return                      # nothing built in this checkout
     ents = overlay.parse(open(BUILT, "rb").read())
