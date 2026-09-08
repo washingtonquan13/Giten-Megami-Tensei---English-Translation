@@ -922,10 +922,20 @@ did patch the call site -- verified: `0x0041720A` points at the divider, not at
 the battle machine cannot help, because it slows *message production* by the same
 factor; the ratio of "UI blocked" to "UI available" is unchanged.
 
-**What is NOT yet established:** what schedules turns -- the agility/ATB
-calculation that decides how many enemy actions happen per player action.  The
-gate explains why input is refused, not why the enemy acts so often.  That is the
-next thing to find, and it is now a specific question rather than a guess.
+**ANSWERED: turn order is a uniform random draw, with replacement.**  There is
+no agility calculation and no initiative sort.  The scheduler
+(`0x0042C740`, from battle sub-state 2) drains the turn queue into a buffer and
+then re-enqueues `di` actors chosen by `0x0040B940` = `rand() % (n+1)`.  The pool
+bound is never decremented and the buffer never modified, so the **same actor can
+be drawn several times in one round while another is not drawn at all** -- which
+is exactly six enemy actions against zero party actions.
+
+The smallest faithful fix is **sampling without replacement**: swap `buf[edx]`
+with `buf[ebx]` and decrement `ebx` after each draw, so each actor is drawn once
+per round.  A few bytes in the cave; queue, enqueue and everything downstream
+untouched.
+
+**Full write-up with every address: [`docs/combat-pacing.md`](combat-pacing.md).**
 
 **Also found while looking:** the damage line the player actually sees is
 `m/MS00DD` **rec 0x4C** (4,200 tokens in the evening trace).  Record 0x65, which
