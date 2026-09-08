@@ -669,50 +669,57 @@ them is a small win once item 1 is done.
 
 ---
 
-### 4b. The six `m/MS0031` records -- 2 explained, 3 staged for a trace, 1 open
+### 4b. The six `m/MS0031` records -- RESOLVED 2026-09-08. None is a model defect.
 
-**Two are not model defects at all.** Their walk fails *inside dead data after a
-terminator* (opcode `00` = `or ax,0xFFFF; ret`, which ends the run loop):
+The engine was asked and answered. `tools/make_warp_seq.py` wrote `0D 31 17`
+then `0C 31 02` into `m/MS0017` r01, with `m/MS0031` byte-identical to the
+original and **predictions registered in the tool's docstring before the run**.
+The result was **A**, on both the program counter and the glyph blitter.
 
-| rec | terminators | last one | dead bytes after it | fails at |
-|---|---|---|---|---|
-| `00` | 10 | 0x5F | 177 | 0x60 |
-| `0D` | 2 | 0x31 | 4 | 0x33 |
+**Two records fail inside dead data after a terminator.** Opcode `00` is
+`or ax,0xFFFF; ret`, which ends the run loop. r00 has ten terminators, the last
+at 0x5F with 177 bytes after it; r0D has two, the last at 0x31 with 4. r0D's
+tail carries the canonical switch shape -- `31 14 ff` is a switch *entry*,
+matching `0F 00 00 31 12 01 00 ... 31 11 ff` in four records that tile.
 
-No branch anywhere in the container targets either dead region, so nothing
-executes those bytes. `0D`'s tail even has the canonical switch shape
-(`31 14 ff` is a switch *entry*, matching `0F 00 00 31 12 01 00 ... 31 11 ff` in
-four tiling records) -- it is leftover data, not code we mis-parse.
+**Three end with a branch that eats the terminator and spills into the next
+record.** This is the one that looked like our bug:
 
-**Three turn on one binary question.** `02`, `03` and `17` end with a conditional
-branch whose operands run past the record, and whose final byte is `00`:
+* **r17 has no terminator.** 74 tokens executed past its end. The first is at
+  **r18+0x01 with `ch=0x00D2`** -- the bare trailing byte of `1F D2` -- because
+  opcode `10`'s expression (selector `00` = `[u8]`) consumes r17's final `00`
+  plus one byte of r18. Exactly the registered prediction.
+* **r02 crashes the game.** Its closing `18` reads its rel16 as `00 1F` -- its
+  own last byte plus r03's first -- and branches to `0x0C9D + 0x1F00 = 0x2B9D`,
+  **past the 0x2457 end of the image**. The dialogue played and the process died,
+  which is what the play session showed.
 
-    r02  ... 0a 1d 01 | 18 00           opcode 18 = [rel16]
-    r03  ... 0a 1d 01 | 16 00           opcode 16 = [rel16, expr]
-    r17  ... 0a 1f 00 | 10 01 01 00     opcode 10 = [rel16, expr], selector 00 = [u8]
+**The cleanest evidence in the project.** The glyph log has the *same*
+`[1FD2]泪：[1FD3]` marker drawn twice in one session:
 
-Two facts point opposite ways, which is exactly why this needs the engine:
+| entry | drawn |
+|---|---|
+| r17 at offset 0 | `泪：‥‥なによ！` -- clean |
+| r18 at offset 1, by the spill | `ﾒ泪：うふっ、それで` -- garbled |
 
-* **For "the `00` terminates":** all 22 tiling records in the container end with a
-  `0x00` byte, 21 as a one-byte terminator token. `r02` and `r03` contain
-  **exactly one `0x00` byte each -- the final one**. Our model eats it, leaving
-  those records with no terminator at all.
-* **For "our model is right":** the runtime image is one flat buffer
-  (`base(id) = 0x400 + sum of lengths`) with no end-of-record, so spilling into
-  the next record is physically normal; and every component of the reading is
-  independently verified against engine code -- opcode `10` four ways on
-  2026-09-08, the expression table 94/94 against the engine's own two tables.
+Same bytes, two renderings, decided only by the entry point. That also
+retroactively explains the identical `ﾒ泪：` in r01 and closes the last doubt
+about item 4a.
 
-**The run is staged.** `tools/make_warp_seq.py` writes `0D 31 17` (call) then
-`0C 31 02` (goto) into `m/MS0017` r01, so one session measures `r17`, `r02` and
--- if `r02` spills -- `r03` too. `play/warp31/ddswin` holds it with `m/MS0031`
-**restored byte-identical to the original** (the fall-through patch is gone) and
-exactly one file changed. Predictions are registered in the tool's docstring
-*before* the run, A vs B, so the result cannot be read either way after the fact.
+**So the opcode model has no known defect anywhere in the corpus.** The 73
+untiled records are dead tails, broken data, or files with no loader found --
+not code we cannot parse. Pinned by `tests/test_ms0031_tails.py`.
 
-**`0B` is still open** and is not in this run: its `1F 04` at 0x236 runs a
-`pairs_ff` for 612 bytes, swallowing whole records, which is plainly wrong rather
-than one byte out. It needs its own analysis.
+**What this does NOT establish.** That these records are unreachable. Only one
+`0C`/`0D` reference to `m/MS0031` exists in the entire corpus (r1B), and the file
+appears in **none of the 668,311 events across nine play traces** -- but those
+sessions are all early-game and this is plainly a late-game scene, and the
+intra-container reachability walk does not follow `0E`/`0F` switch targets, so it
+under-approximates. Evidence, not proof.
+
+**Still open: r0B.** Its `1F 04` at 0x236 runs a `pairs_ff` for 612 bytes,
+swallowing whole records -- wrong in a different way than one byte out, and the
+only record of the six with no explanation.
 
 ---
 
