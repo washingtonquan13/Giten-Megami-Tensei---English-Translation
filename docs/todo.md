@@ -176,6 +176,41 @@ ticks end on `1E 10`, the lever is `0x0041A930`'s dwell and it can be scaled in
 battle without touching the field. If they end on `-1`, the pacing is the page
 buffer filling up and the lever is elsewhere.
 
+### 0c. It is not speed, it is turns — measured 2026-09-08
+
+The 2026-09-08 session (`build/trace/en-0908.bin` + textout, on the v5 overlay,
+archived as `overlay-as-run-en-0908.dat`) answers the fork, and answers it
+against the page-wait theory.
+
+**Which opcode ends a battle tick:** of `m/MS00DD`'s 491 yields, **413 end on
+opcode `00` with `r = -1`**, and only 29 on `1E`. Opcode `00`'s handler is
+`0x004314E7` = `or ax, 0xFFFF ; ret` — an unconditional terminator, not a wait.
+So the battle script is not waiting anywhere; it runs a fragment, ends, and
+**everything the player is waiting on happens outside the interpreter**. No
+change to the tokenizer, the tick divider or `1E 10`'s dwell can slow it.
+
+**And the complaint is not speed.** Counting real actions in the drawn text --
+`X's <skill>` and `X's attack`, excluding status results like "attack power was
+lowered", which are consequences of someone else's turn:
+
+| | |
+|---|---|
+| party actions | 37 |
+| enemy actions | 50 |
+| ratio | **1 party turn per 1.35 enemy turns** |
+| longest unbroken enemy run with no party turn | **7** |
+
+Those seven are the end of the Dantalion fight: Ziora, Agilao, Agilao, Ziora,
+Tarukaja, Zanma, and the party dies without acting. That is what "could not
+command units in time" was -- not slow fingers, **no turn offered**.
+
+(The 37 is generous: a few dialogue lines match the `X's ...` shape and are
+counted as party actions, so the true ratio is worse than 1:1.35.)
+
+**So the next question is the battle turn scheduler, not pacing at all** -- what
+decides whose turn is next, and whether it is driven by a per-tick counter that
+the 60 Hz gate has skewed. Nothing in the interpreter will answer it.
+
 ### 1. Finish the untranslated ordinary rows — 216 of 854 done
 
 **The "854 untranslated rows" figure overstated the job by about half**: 441 of
