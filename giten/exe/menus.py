@@ -132,21 +132,39 @@ STRINGS = {
     0x0046C1FC: "Initialisation failed.",        # 初期化に失敗しました。
     # Why the field menu greyed an option out.  The bracketed tag is part of
     # the string, so it moves with it.
-    0x00468880: "[ITEM] Nobody can use that",    # 使用できる人が居ません
-    0x004688A0: "[ITEM] No items",               # アイテムが有りません
-    0x004688BC: "[DDS] You have no DDS",         # DDSを所持していません
-    0x004688D8: "[FIGHT] Nothing to fight",      # 戦う相手が居ません
-    0x004688F4: "[TALK] Nobody to talk to",      # 会話相手が居ません
-    0x00468910: "[TALK] You have no DCS",
-    0x00468930: "[MAPPING] You have no AMS",     # AMSを所持していません
-    0x00468950: "[TALK] You have no DCS",
-    0x00468970: "[FIGHT] Nothing to fight",
-    0x0046898C: "[GUN] Nothing to fight",
+    # The battle-command refusals.  Two blocks hold the same seven messages --
+    # both are live, each address referenced exactly once -- so the wording has
+    # to match across them or the same refusal reads differently depending on
+    # which command produced it.
+    #
+    # The Japanese uses three fixed patterns and the English now follows them
+    # one-for-one, which is what the first pass did not do: it mixed full
+    # sentences ("That item cannot be used") with bare noun phrases ("Nothing to
+    # fight", "No items", "Nobody to talk to") that read as captions rather than
+    # messages.
+    #
+    #   ...が居ません        -> "There is no one to X"   (no *person* to act on)
+    #   ...を所持していません -> "You have no X"          (you are not carrying it)
+    #   ...できません        -> "That item cannot be used"
+    #
+    # Length is not a constraint here: every one of these replaces a much longer
+    # Japanese string, and the longest English in this module already ships at
+    # 31 cells.
+    0x00468880: "[ITEM] No one can use that",       # 使用できる人が居ません
+    0x004688A0: "[ITEM] You have no items",         # アイテムが有りません
+    0x004688BC: "[DDS] You have no DDS",            # DDSを所持していません
+    0x004688D8: "[FIGHT] There is no one to fight",  # 戦う相手が居ません
+    0x004688F4: "[TALK] There is no one to talk to",  # 会話相手が居ません
+    0x00468910: "[TALK] You have no DCS",           # DCSを所持していません
+    0x00468930: "[MAPPING] You have no AMS",        # AMSを所持していません
+    0x00468950: "[TALK] You have no DCS",           # DCSを所持していません
+    0x00468970: "[FIGHT] There is no one to fight",  # 戦う相手が居ません
+    0x0046898C: "[GUN] There is no one to fight",   # 戦う相手が居ません
     0x004689A8: "[ITEM] That item cannot be used",  # アイテムを使用できません
-    0x004689C8: "[ITEM] No items",
-    0x004689E4: "[DEFENCE] Nothing to fight",
-    0x00468A04: "[DDS] You have no DDS",
-    0x00468A20: "[MAPPING] You have no AMS",
+    0x004689C8: "[ITEM] You have no items",         # アイテムが有りません
+    0x004689E4: "[DEFENCE] There is no one to fight",  # 戦う相手が居ません
+    0x00468A04: "[DDS] You have no DDS",            # DDSを所持していません
+    0x00468A20: "[MAPPING] You have no AMS",        # AMSを所持していません
     # --- the leftover debug menu ---------------------------------------------
     # Not reachable in the shipping build, but the dev build arms it and the
     # plan uses it to set up trace routes, so it may as well be readable.
