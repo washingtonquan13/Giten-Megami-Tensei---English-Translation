@@ -248,14 +248,26 @@ command UI are all untouched. That is exactly the "battle has its own divider"
 idea, applied to the right function this time. Five bytes in place, same
 technique as the existing hooks.
 
-**Unverified, and worth saying before anyone builds it:**
+**Built 2026-09-08.** `giten.exe.tracer.build_dev_battle_div(n)` writes
+`dds_dev_btl<n>.exe`, which redirects the state-24 call site at `0x0041720A`
+through `battle_step()` in the cave: the battle machine advances one phase every
+`n` ticks and every other state keeps running every tick. Installed at n = 2, 3
+and 4. `build_dev_script_div` is kept only to carry its retraction, and
+`dds_dev_bat3/bat4` are deleted from the install so nobody plays a no-op again.
 
+Pinned by `test_the_battle_divider_gates_the_state_the_battle_actually_runs_in`
+(state 24's stub really is a call to `0x0042B6A0`, the command UI really is a
+different entry, and `-DBATTLE_DIV` really changes the compiled hook) and by
+`test_the_retracted_script_divider_gates_a_function_that_does_nothing` (opcode
+`1ECB` still occurs 0 times, so the retraction still holds). 205 tests pass.
+
+**Still unverified, and only play can say:**
+
+- whether the state-24 handler also drives battle *rendering*, in which case a
+  divided build stutters the picture instead of slowing the turns;
 - states 26 (`0x0042D7C0`) and 31 (`0x0042A790`) are also in the battle region
-  and may need the same treatment;
-- if the state-24 handler also drives the battle *rendering*, skipping ticks may
-  stutter the display rather than slow the turns -- rendering looks like it lives
-  in `0x004035E0` off the per-tick chain, but that is not checked;
-- N wants choosing by play, not by theory.
+  and may need the same gate;
+- which `n` is right.
 
 ### 0d. The combat architecture, mapped 2026-09-08
 

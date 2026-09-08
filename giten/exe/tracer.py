@@ -44,6 +44,13 @@ FETCH_SITES = (0x438E8D, 0x438E9B, 0x438F0D, 0x438F32, 0x438FAD)
 SCRIPT_STEP = 0x43B5E0
 SCRIPT_STEP_SITES = (0x401985,)
 
+#: the battle state machine (``hook.c`` battle_step()).  0x00417160 dispatches
+#: one state handler per tick through the table at 0x00417288; entry 24 is the
+#: battle, and its handler advances one battle phase per call.  Dividing this
+#: one call site slows combat and nothing else -- the command UI is state 32.
+BATTLE_STEP = 0x42B6A0
+BATTLE_STEP_SITES = (0x41720A,)
+
 PACE_SITE = 0x45108A
 PACE_OLD = bytes.fromhex("ff15d84146003bc776ba")
 PACE_NEW_TAIL = bytes.fromhex("85c074bb90")          # test eax,eax; je -0x45; nop
@@ -181,7 +188,8 @@ def short_path(p: str) -> str:
     return p
 
 
-def compile_hook_ex(cave_va: int, hz: int = DEFAULT_HZ, script_div: int = 1):
+def compile_hook_ex(cave_va: int, hz: int = DEFAULT_HZ, script_div: int = 1,
+                    battle_div: int = 1):
     """``hook.c`` -> (flat blob linked at ``cave_va`` per ``hook.ld``, hook first;
     the VA of every global function in it, e.g. ``hook`` and ``pace``).
 
@@ -193,6 +201,8 @@ def compile_hook_ex(cave_va: int, hz: int = DEFAULT_HZ, script_div: int = 1):
         raise ValueError("%d Hz does not divide the 1/3 ms clock evenly" % hz)
     if script_div < 1:
         raise ValueError("script_div must be at least 1, got %r" % script_div)
+    if battle_div < 1:
+        raise ValueError("battle_div must be at least 1, got %r" % battle_div)
     for tool in ("gcc", "ld", "objcopy", "nm"):
         if shutil.which(tool) is None:
             raise RuntimeError("%s not found (GNU binutils + gcc are required)" % tool)
@@ -202,6 +212,7 @@ def compile_hook_ex(cave_va: int, hz: int = DEFAULT_HZ, script_div: int = 1):
         obj, pe_, binp = (os.path.join(tmp, n) for n in ("hook.o", "hook.pe", "hook.bin"))
         subprocess.run([gcc, *CFLAGS, "-DGAME", "-DTICK3=%d" % (3000 // hz),
                         "-DSCRIPT_DIV=%d" % script_div,
+                        "-DBATTLE_DIV=%d" % battle_div,
                         "-c", HOOK_SOURCE, "-o", obj], check=True)
         undef = subprocess.run(["nm", "-u", obj], check=True, capture_output=True, text=True).stdout.split()
         if undef:
@@ -224,6 +235,8 @@ def compile_hook_ex(cave_va: int, hz: int = DEFAULT_HZ, script_div: int = 1):
         raise RuntimeError("hook.c layout: %r" % syms)
     if script_div > 1 and "script_step" not in syms:
         raise RuntimeError("hook.c has no script_step: %r" % syms)
+    if battle_div > 1 and "battle_step" not in syms:
+        raise RuntimeError("hook.c has no battle_step: %r" % syms)
     return blob, syms
 
 
@@ -254,7 +267,8 @@ def _redirect(image: bytearray, sites, old_target: int, new_target: int) -> None
 
 
 def build_image(trace: bool, english: bool = True, pace: bool = True,
-                hz: int = DEFAULT_HZ, script_div: int = 1) -> bytes:
+                hz: int = DEFAULT_HZ, script_div: int = 1,
+                battle_div: int = 1) -> bytes:
     """Release image (locale patches) + the overlay hook, + the tracer if ``trace``.
 
     ``english=False`` skips the four data-table patches.  They are not optional
@@ -270,13 +284,15 @@ def build_image(trace: bool, english: bool = True, pace: bool = True,
         image = patch.apply(fh.read(), "release")
     pe = PE(image, "dds_release")
     ovl_va = pe.imagebase + pe.sizeimage             # where append_section will put it
-    blob, syms = compile_hook_ex(ovl_va, hz, script_div)
+    blob, syms = compile_hook_ex(ovl_va, hz, script_div, battle_div)
     image = bytearray(pe.append_section(".ovl", blob, TRC_CHARACTERISTICS))
     _redirect(image, FETCH_SITES, FETCH, ovl_va)
     if pace:
         _pace(image, syms["pace"])
     if script_div > 1:
         _redirect(image, SCRIPT_STEP_SITES, SCRIPT_STEP, syms["script_step"])
+    if battle_div > 1:
+        _redirect(image, BATTLE_STEP_SITES, BATTLE_STEP, syms["battle_step"])
     from . import database, mapnames, menus, names, timing
     if english:
         image = bytearray(names.apply(bytes(image)))     # English character names (.nam)
@@ -304,12 +320,12 @@ def build_image(trace: bool, english: bool = True, pace: bool = True,
 
 
 def _write(out_dir, name, trace, english=True, pace=True, hz=DEFAULT_HZ,
-           script_div=1):
+           script_div=1, battle_div=1):
     out_dir = out_dir or os.path.join(paths.BUILD_DIR, "exe")
     os.makedirs(out_dir, exist_ok=True)
     dst = os.path.join(out_dir, name)
     with open(dst, "wb") as fh:
-        fh.write(build_image(trace, english, pace, hz, script_div))
+        fh.write(build_image(trace, english, pace, hz, script_div, battle_div))
     return dst
 
 
@@ -378,16 +394,35 @@ def build_dev_hz(hz: int, out_dir: "str | None" = None) -> str:
 
 
 def build_dev_script_div(div: int, out_dir: "str | None" = None) -> str:
-    """``dds_dev_bat<div>.exe``: the tracer, 60 Hz, background script divided.
+    """RETRACTED -- this builds an exe that behaves exactly like ``dds_dev.exe``.
 
-    The loop keeps its 60 Hz -- movement, drawing and input are unchanged --
-    and only the once-per-tick background-script step (0x401985 -> 0x43B5E0)
-    runs every ``div``th tick.  That is the clock scripted actors take their
-    turns on, so ``div=4`` gives them one turn per 1/15 s while the field still
-    animates at 60.
+    It divides the once-per-tick call to ``0x0043B5E0``, which was believed to be
+    the clock scripted actors take their turns on.  ``0x0043B5E0`` returns
+    immediately, always: it compares the background-script slot words
+    ``[0x00469828]`` / ``[0x0046982C]`` against -1 and returns when either
+    matches, they start at ``FFFF FFFF``, three of the four writers store -1, and
+    the only one that can set a real value is reached from opcode ``1ECB``, which
+    occurs **0 times in 20,690 records**.
 
-    Named for what it is for: at 60 Hz the enemies in a battle act faster than
-    a person can answer, and lowering the whole loop instead was tried and
-    makes walking unbearable.
+    Kept only so the retraction has somewhere to live.  Use
+    :func:`build_dev_battle_div`, which divides the battle state machine -- the
+    thing that actually paces combat.
     """
     return _write(out_dir, "dds_dev_bat%d.exe" % div, True, script_div=div)
+
+
+def build_dev_battle_div(div: int, out_dir: "str | None" = None) -> str:
+    """``dds_dev_btl<div>.exe``: the tracer, 60 Hz, the battle machine divided.
+
+    ``0x00417160`` runs one state handler per tick.  State 24 is the battle, and
+    its handler is a nine-way sub-state machine whose every branch begins by
+    advancing itself (``0x00416AD0`` = ``set_substate(cur + 1)``).  So the battle
+    takes one phase per tick -- sixty a second -- while the player's command UI
+    is a *different* top-level state, 32.  That is why a party of three facing
+    one enemy got zero actions to its six in the 2026-09-08 session.
+
+    Dividing the state-24 call site alone slows combat and nothing else: the
+    field, the menus and the command UI are other states and still run every
+    tick.  ``div=4`` gives the battle one phase per 1/15 s.
+    """
+    return _write(out_dir, "dds_dev_btl%d.exe" % div, True, battle_div=div)

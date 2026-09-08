@@ -139,3 +139,74 @@ def test_the_divider_reaches_the_compiler_and_exports_its_entry_point():
     assert plain != divided, "SCRIPT_DIV did not change the compiled hook"
     # and the hook itself still has to come first, for the fetch redirect
     assert syms1["hook"] == va and syms4["hook"] == va
+
+
+def test_the_battle_divider_gates_the_state_the_battle_actually_runs_in():
+    """The one that matters, and the one the retracted divider got wrong.
+
+    `0x00417160` dispatches one state handler per tick through the table at
+    `0x00417288`, and entry 24 is the battle.  Its handler advances one battle
+    phase per call, so gating that call site is what slows combat -- while the
+    command UI, which is entry 32, keeps running every tick.
+    """
+    import struct
+    from giten.exe import tracer
+    from giten.exe.pe import PE
+
+    img = open(tracer.build_release(), "rb").read()
+    pe = PE(img, "release")
+
+    # entry 24 of the state table really is a stub that calls the battle handler
+    tbl = pe.va2off(0x00417288)
+    stub = struct.unpack_from("<I", img, tbl + 24 * 4)[0]
+    assert stub == 0x0041720A, "state 24's stub moved: 0x%08X" % stub
+    off = pe.va2off(stub)
+    assert img[off] == 0xE8, "state 24's stub is no longer a call"
+    rel = struct.unpack_from("<i", img, off + 1)[0]
+    assert (stub + 5 + rel) & 0xFFFFFFFF == tracer.BATTLE_STEP, (
+        "0x%08X no longer calls the battle state handler" % stub)
+    assert tracer.BATTLE_STEP_SITES == (stub,)
+
+    # and the command UI is a *different* entry, so dividing one leaves it alone
+    ui = struct.unpack_from("<I", img, tbl + 32 * 4)[0]
+    assert ui != stub, "the battle and its command UI are the same state?"
+
+    va = 0x1000000
+    plain, syms1 = tracer.compile_hook_ex(va, battle_div=1)
+    divided, syms4 = tracer.compile_hook_ex(va, battle_div=4)
+    assert "battle_step" in syms4, syms4
+    assert plain != divided, "BATTLE_DIV did not change the compiled hook"
+    assert syms1["hook"] == va and syms4["hook"] == va
+
+
+def test_the_retracted_script_divider_gates_a_function_that_does_nothing():
+    """`build_dev_script_div` builds an exe identical in behaviour to the plain
+    dev build, and this is the proof, so nobody trusts it again.
+
+    `0x0043B5E0` compares the background-script slot against -1 and returns when
+    it matches.  The slot is only ever set from opcode `1ECB`.
+    """
+    import glob
+    import os
+    from giten import files, paths, script
+
+    src = open(os.path.join(paths.REPO_ROOT, "giten", "exe", "tracer.py"),
+               encoding="utf-8").read()
+    assert "RETRACTED" in src, "the retraction note has gone from tracer.py"
+
+    seen = 0
+    for sub in ("m", "et", "p"):
+        for p in sorted(glob.glob(os.path.join(paths.game_root(), sub, "*.BIN"))):
+            rel = os.path.relpath(p, paths.game_root()).replace(os.sep, "/")
+            try:
+                sc = script.parse(rel, files.read_source(rel))
+            except Exception:
+                continue
+            if not sc.ok:
+                continue
+            for c in sc.containers:
+                for r in c:
+                    for t in (r.tokens or []):
+                        if t.idx == 0x200 + 0xCB:      # 1E CB
+                            seen += 1
+    assert seen == 0, "opcode 1ECB now occurs %d time(s); re-check the retraction" % seen

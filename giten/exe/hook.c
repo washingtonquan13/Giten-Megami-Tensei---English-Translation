@@ -50,6 +50,10 @@ typedef void *(__attribute__((stdcall)) * GetProcAddress_t)(HANDLE, const char *
 #define pGetModuleHandleA (*(GetModuleHandleA_t *)0x46411C)
 #define pGetProcAddress (*(GetProcAddress_t *)0x46405C)
 #define ORIG_SCRIPT_STEP ((void (*)(void))0x43B5E0)
+/* state 24 of the per-tick state machine at 0x00417160: the battle.  Its own
+   sub-states each advance themselves by one, so calling it once is one battle
+   phase, and calling it 60 times a second is why the party never gets a turn. */
+#define ORIG_BATTLE_STEP ((u16 (*)(void))0x42B6A0)
 #define ENTRY __attribute__((section(".text.entry"), used))
 #define EXPORT __attribute__((used))
 #else
@@ -612,6 +616,14 @@ EXPORT int pace(void)
 #define SCRIPT_DIV 1
 #endif
 
+/* How many ticks one battle phase takes.  1 is the original behaviour and is
+   what the release exe gets; the builder only redirects the call site when it is
+   greater.  Combat is the only thing affected: the field, the menus and the
+   battle command UI are separate states and still run every tick. */
+#ifndef BATTLE_DIV
+#define BATTLE_DIV 1
+#endif
+
 /* GAME only: the harness has no engine to call through to, and nothing in the
    overlay's semantics depends on this, so there is nothing for it to test. */
 #ifdef GAME
@@ -623,5 +635,19 @@ EXPORT void script_step(void)
         return;
     step_phase = 0;
     ORIG_SCRIPT_STEP();
+}
+
+static u32 battle_phase;
+
+/* Skipping returns 0, which is what 0x0042B6A0 itself returns on its ordinary
+   exit (`xor ax, ax`).  The caller, 0x004019D0, only treats -1 specially, so a
+   skipped tick reads to it as "the battle state did not change" -- which is
+   exactly what happened. */
+EXPORT u16 battle_step(void)
+{
+    if (++battle_phase < BATTLE_DIV)
+        return 0;
+    battle_phase = 0;
+    return ORIG_BATTLE_STEP();
 }
 #endif
