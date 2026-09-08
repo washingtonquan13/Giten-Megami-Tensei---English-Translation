@@ -8,31 +8,7 @@ whether to do it. Tick items here when they land; delete nothing.
 
 ## Done
 
-### ✅ Stop promoting reference drafts into the macro pools — 2026-09-08
-
-A pool record is not a line, it is a fragment spliced into every sentence that
-calls it (`m/MS7F07` record 0x52: 3,931 call sites). A reference translation was
-written against at most one of those sentences, so it cannot be right in the
-rest *by construction*. `tools/make_draft_tree.py` now refuses the whole class:
-**297 rows held back**, worth 5,351 call sites. The 76 pool rows a person wrote
-by hand in `tables/` are untouched and carry 21,910 call sites — four times the
-coverage — because a person picked the ones that are actually words.
-
-Shipped damage this removes, both seen on screen 2026-09-07 in one sentence:
-`m/MS7F02` 0:0C `され` → "was" (793 sites) and `m/MS7F01` 0:0A `ま{08:66}` =
-ません → "not" (393 sites), which rendered as `AMS用マップDataが登録wasていnot`.
-
-No "is this grammar?" test was built, and `tests/test_pool_promotion.py` pins
-why: "pure hiragana" refuses `はい` → Yes and `ありがとう` → Thank you, which are
-words; "has no pool call" misses `ま{08:66}`, which is not one. Whether a
-fragment is a word is not decidable from its characters. The line that *is*
-decidable — a person wrote it, or a promotion did — is the one drawn.
-
----
-
-## Open
-
-### ✅ 1. `m/MS6xxx` gets no English — SHIPPED 2026-09-08
+### ✅ `m/MS6xxx` gets no English — SHIPPED 2026-09-08
 
 `rebind()` asked two questions a merged buffer cannot answer. *Which file is
 this?* — by hashing the whole 1024-byte record index, which belongs to a merge
@@ -73,7 +49,33 @@ container, so only that entry is reachable per merged buffer. The
 demon-specific files' own spans need the hook to try more than one entry —
 worth roughly the difference between 7,310 and 18,024 above.
 
-### 2. Finish the untranslated ordinary rows — 216 of 854 done
+---
+
+### ✅ Stop promoting reference drafts into the macro pools — 2026-09-08
+
+A pool record is not a line, it is a fragment spliced into every sentence that
+calls it (`m/MS7F07` record 0x52: 3,931 call sites). A reference translation was
+written against at most one of those sentences, so it cannot be right in the
+rest *by construction*. `tools/make_draft_tree.py` now refuses the whole class:
+**297 rows held back**, worth 5,351 call sites. The 76 pool rows a person wrote
+by hand in `tables/` are untouched and carry 21,910 call sites — four times the
+coverage — because a person picked the ones that are actually words.
+
+Shipped damage this removes, both seen on screen 2026-09-07 in one sentence:
+`m/MS7F02` 0:0C `され` → "was" (793 sites) and `m/MS7F01` 0:0A `ま{08:66}` =
+ません → "not" (393 sites), which rendered as `AMS用マップDataが登録wasていnot`.
+
+No "is this grammar?" test was built, and `tests/test_pool_promotion.py` pins
+why: "pure hiragana" refuses `はい` → Yes and `ありがとう` → Thank you, which are
+words; "has no pool call" misses `ま{08:66}`, which is not one. Whether a
+fragment is a word is not decidable from its characters. The line that *is*
+decidable — a person wrote it, or a promotion did — is the one drawn.
+
+---
+
+## Open
+
+### 1. Finish the untranslated ordinary rows — 216 of 854 done
 
 **The "854 untranslated rows" figure overstated the job by about half**: 441 of
 them contain no Japanese at all (pure `{08:xx}` macros, digits, ASCII rules like
@@ -105,6 +107,21 @@ Still open:
   (`早坂` then `英美`, and the following English repeats `Hayasaka`), so any
   English here reads wrong until that passage is untangled.
 - **The 177 debug-menu rows in `m/MS00D1`**, if they are wanted at all.
+
+### 2. Let the hook reach more than one entry per merged buffer
+
+`rebind` maps `0xE0 + slot` to `m/MS6000`'s container, so a merged buffer can
+only be served from that one entry. The demon-specific files merged onto it --
+`m/MS6001`..`m/MS6016`, `m/MS61xx`, and an `et/ID*` -- carry their own English
+and none of it is reachable.
+
+Measured: **7,310** span placements resolve from `m/MS6000` alone, **18,024**
+if every merged file's entry is tried. So this is worth roughly 10,700 more.
+
+The hash gate already makes it safe to try several: a span from the wrong file
+fails and is dropped (0 of 109 in the test). What it needs is a cache that holds
+a short list of entries per buffer instead of one, and a rule for the order --
+which `et/ET0007.BIN` gives, since the loader itself reads that table.
 
 ### 3. Why did `ムールムール：` draw in Japanese?
 
