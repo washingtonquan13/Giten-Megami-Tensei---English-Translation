@@ -15,3 +15,6 @@ notes at the end of `docs/playtest-2026-09-06.md`.
 
 | `2026-09-07-glyphs.bin` | The menu-overlay spike's answer: 47,192 glyphs / 2,777 runs from a shop-and-status session. Read with `giten trace textout`. |
 | `2026-09-07-en-dev.bin` | The interpreter trace from that same session, which is what proved the shop text never runs through the interpreter. |
+
+| `2026-09-08-warp31-fallthrough.bin` | The trace that closed the opcode `10` question. `tools/make_warp.py` into `m/MS0031` r01 plus `tools/make_fallthrough.py` redirecting that record's opening `1F 04` branch from 0x019F to 0x0014, so the engine executes the disputed region instead of jumping over it. 496 records; 44 token starts inside r01, **all 44 on one of our boundaries**. The engine's pc goes 0x3F -> 0x43 across the `10 01 01 82` at 0x3F, so the token is 4 bytes and the following text really does begin on a trailing byte. |
+| `2026-09-08-warp31-glyphs.bin` | The glyph log from the same session — the independent confirmation, because the blitter is not the interpreter. It drew `ああ、やっと気がついた。｢きなり、倒れるんだもん。心配したわよ。`: the engine itself renders the broken `｢`. Read with `giten trace textout`. |

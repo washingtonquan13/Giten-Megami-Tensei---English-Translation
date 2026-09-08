@@ -496,46 +496,42 @@ target so each fragment is separately translatable. Not a translation task.
 
 ---
 
-### 4a. `m/MS0031`: the bug located exactly, the fix NOT yet proven
+### 4a. `m/MS0031` -- CLOSED 2026-09-08. There was no bug. Do not change the tokenizer.
 
-**22 spans in `m/MS0031` begin on the trailing byte of a two-byte character.**
-Shifting one byte back reads correctly, which is what makes this certain rather
-than inferred:
+**Ten spans** in `m/MS0031` (not 22 -- the earlier count was wrong) begin on the
+trailing byte of a two-byte character, so they extract as `｢きなり`, `ﾚしい事情`,
+`ｳ事だと`. Shifting one byte back reads perfectly in all ten. That argument
+lost. `10 01 01 82` is opcode `10`, rel16 `01 01`, and `82` as the condition's
+expression selector; `0x82` is above the table's `0x5D` bound, so the reader
+takes the nullary "invalid" kind and consumes one byte -- and that byte is the
+lead byte of `い`. **Our tokenizer was right the whole time.**
 
-| as extracted | one byte back |
+Four independent lines of evidence, gathered after `tools/make_fallthrough.py`
+redirected the record's opening `1F 04` from 0x019F to 0x0014 so the region
+actually executes:
+
+| evidence | result |
 |---|---|
-| `｢きなり、倒れんだもん。` | `いきなり、倒れんだもん。` |
-| `ﾋ然倒れたから、` | `突然倒れたから、` |
-| `｣：` | `泪：` |
-| `ﾚしい事情はあとだ。` | `詳しい事情はあとだ。` |
-| `ｱんなトコが、` | `こんなトコが、` |
-| `ﾅも今度は、` | `でも今度は、` |
+| the engine's own pc | 44 token starts logged in r01, **44 of 44 on our boundaries**; pc goes 0x3F -> 0x43 and **never** lands on 0x42 |
+| the glyph blitter (not the interpreter) | drew `ああ、やっと気がついた。｢きなり、倒れるんだもん。` -- the engine itself renders the broken `｢` |
+| the ten rel16 targets | all exactly `token + 0x104`, a **constant**, while the fourth byte varies (`82`, `8F`, `96`) -- so that byte is not part of the target |
+| the handler walk | `0x00430055` reports `(0 u8, 1 u16, 0 u32, 1 expr)` on every path: `[rel16][condition expr]`, exactly as `_conditional_branch` says |
 
-**Where it goes wrong.** At `m/MS0031` c0 rec 01 offset 0x3F the bytes are
-`10 01 01 82 A2 ...`. Our tokenizer reads opcode `10` as rel16 + expression,
-takes `01 01` as the rel16 and `82` as an expression selector -- and `0x82` is
-above `0x5D`, so the expression reader treats it as the nullary "invalid" kind
-and consumes it. But `82 A2` is `い`. The token eats the lead byte and the text
-run starts on `A2`, which decodes as `｢`.
+**The broken character is the original 1997 game's own bug**, visible on screen
+in Japanese: the script author omitted the condition operand, so the engine eats
+the text's lead byte as the selector. Our English replaces the whole span, so
+shipping these ten rows *fixes* a bug rather than causing one -- the selector at
+token+3 lives inside the token and English never reaches it.
 
-**Why the fix is not obvious.** Opcode `10`'s handler `0x00430055` calls
-`0x004348B0(0,0,0)`, which calls `0x00434680` and then `0x00437490` -- the
-expression reader -- unconditionally. And the 2026-09-06 warp trace verified
-`10 01 00 0f` as a **6-byte** token, so `10` really does take an expression
-sometimes. The difference between the two sites is the third byte (`01` here,
-`00` there), which suggests a mode, but that is a guess.
+Pinned by `tests/test_opcode_10.py` (4 tests), with both traces kept in
+`traces/2026-09-08-warp31-*.bin`.
 
-**Do not ship a tokenizer change on this reasoning.** Four separate rules were
-tried today -- "pure hiragana is grammar", "no kana means data", "the
-clothing-radical block means data", "an operand ending on a lead byte is a
-swallowed character" -- and every one of them looked decisive and was wrong on
-the corpus. The same care is owed here.
-
-**What would settle it.** The existing warp trace cannot: the engine ran offset
-0x1 of that record and branched straight to 0x1A0, so the disputed region was
-never executed. `tools/make_warp.py` writes a throwaway JP tree, so it can also
-patch that first branch to fall through, forcing execution across 0x14..0x19F and
-logging the engine's own token boundaries there. One play session answers it.
+**What this cost, and the lesson.** The change would have re-keyed 217 spans
+across 219 rows, 67 of them hand-written, to correct something that was never
+wrong. That is the fifth rule this month that looked decisive and was wrong on
+the corpus -- after "pure hiragana is grammar", "no kana means data", "the
+clothing-radical block means data", and "an operand ending on a lead byte
+swallowed a character". **Text that reads better one byte over is not evidence.**
 
 ### 4. Opcode model — re-stated 2026-09-08 after the data-span work
 
