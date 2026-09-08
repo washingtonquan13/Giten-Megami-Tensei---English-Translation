@@ -140,6 +140,42 @@ the likelier explanation. It should not be quoted again.
 The first real question is what the battle loop *is*: whether it runs as script
 through `exec_token` and blocks on that stopwatch, or has its own update.
 
+### 0b. What actually paces the script — first measurements
+
+**The stopwatch lead is dead.** `0x0043BBC0`'s counter is reached from exactly
+three opcodes -- `1E 0B` start, `1E 0C` stop, `1E 0E` read -- and their use counts
+are **0, 0 and 2**. It is not the battle pacer.
+
+**The real mechanism is the yield.** `0x004390F0` runs `do exec_token while
+(r >= 0)`, so any negative return ends that tick's script run. `1E 07`, `1E 08`
+and `1E 11` each end with `mov ax, 0xFFFD` (**-3**) — 1,976 + 1,965 + 1,698 uses.
+`1E 10`, the page wait, is the most-used opcode in the game at **22,295** uses;
+its handler `0x0043C0BC` reads two u8 operands plus a mode byte and calls
+`0x0041A930`, which is where a text page's dwell actually lives.
+
+**A trace can be timed even though it has no clock**, because `r` is logged for
+every token: count the negative returns and you have counted ticks. Measured on
+the 2026-09-07 session (`build/trace/en-negotiate.bin`), a multi-hour play:
+
+| | |
+|---|---|
+| whole session | 159,926 tokens, 5,999 yields — **100 s of script** |
+| `m/MS00DD`, the battle script | 42,917 tokens, 853 yields — **14.2 s** |
+| the 14 separate battle stretches | 1.0 s, 1.1 s, 0.4 s, **4.1 s**, 1.8 s, 0.3 s, … |
+
+**A whole battle spends about a second of script time.** That is the complaint,
+in a number. (Of the 853, 233 are the clean `-3` yield, 489 are `-1` "page full,
+loop exits" and 131 are `-2` re-dispatch; all three end the tick, so 853 is the
+count of ticks in which the script ran and stopped. Ticks where the engine
+blocks on input produce no token at all, so wall time is longer than this — this
+measures the script's own budget, not the player's reading time.)
+
+**Next, on the incoming trace:** count yields between consecutive battle actions
+rather than per battle, and find which opcode ends each one. If most battle
+ticks end on `1E 10`, the lever is `0x0041A930`'s dwell and it can be scaled in
+battle without touching the field. If they end on `-1`, the pacing is the page
+buffer filling up and the lever is elsewhere.
+
 ### 1. Finish the untranslated ordinary rows — 216 of 854 done
 
 **The "854 untranslated rows" figure overstated the job by about half**: 441 of
