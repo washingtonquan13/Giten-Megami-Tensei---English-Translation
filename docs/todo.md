@@ -577,10 +577,12 @@ Even the speaker label is garbled in the original Japanese. The other 12 share
 the identical byte shape. **Our boundaries match the engine everywhere it was
 observed: 44 of 44 token starts.**
 
-### `m/MS610D` has no loader -- SOLVED 2026-09-08, and 67 untiled records went with it
+### `m/MS610D`: no loader found -- 2026-09-08, and 67 untiled records may go with it
 
-Item 4 treated `m/MS610D` as a file whose loader we had not found yet. **There
-is none.** Nothing in the shipped game can name it.
+Item 4 treated `m/MS610D` as a file whose loader we had not found yet. After an
+adversarial pass the honest statement is **"no path found, one branch still
+open"** -- not "proven unreachable". The first version of this section said
+proven; that was wrong and is corrected below.
 
 The negotiation merge is the only thing that loads an `m/MS61xx` file, and it
 forms the name in one instruction -- `0x0040EC31 add $0x6100,%edx`, from
@@ -622,11 +624,36 @@ else was never code the game runs.
 
 Pinned by `tests/test_reachability.py`.
 
-**The limit, stated rather than papered over.** The row index is a `u16` read
-from a struct field (`0x47b16f`, stride 254), not a bounded loop counter, so this
-does not prove the engine can never index past the table's 25 rows. It proves
-there is no *designed* path to these files; an out-of-bounds index would be a bug
-producing an arbitrary merge, not a loader.
+**What the adversarial pass found -- the claim is weaker than first written.**
+
+* **`m/MS6800` IS loaded**, by an immediate at `0x0040E948` (kind 9). The first
+  reachability classifier called it unreachable. It has no untiled records so
+  the counts above are unaffected, but the classifier was wrong.
+* **`0x0043AD20` is a generic `m/MS%04X` loader taking a 16-bit id**, reached
+  through a cache at `0x0043B7A0` (`0x481688` heads a list of loaded buffers,
+  each stamped with its id at offset 0). Its caller `0x0043458E` supplies that id
+  in `%edi` from a path **not traced to immediates**. Until that is closed,
+  "nothing can name `0x610D`" is not established.
+* The merge's row index is a `u16` struct field (`0x47b16f`, stride 254), not a
+  bounded counter, so an out-of-bounds index is not excluded either.
+
+**Why this does not block progress.** The reachability claim is only load-bearing
+if the six `m/MS0031` records fail for a different reason than `m/MS610D`'s
+forty. They do not:
+
+| failure class | MS0031 | MS610D | others |
+|---|---|---|---|
+| expression selector past end | 1 | **25** | -- |
+| expression node 0x00 payload past end | 1 | **13** | MS6200 3 |
+| switch entry | 1 | 2 | 4 |
+| unterminated pairs_ff | 1 | -- | 2 |
+| rel16 operand past end | 2 | -- | -- |
+
+The two classes that account for **38 of MS610D's 40** each have a live example
+in `m/MS0031` -- the file the warp already reaches and traced successfully on
+2026-09-08. Correcting the model there should tile both, which **dissolves the
+reachability question rather than requiring it to be settled**. So: do the six
+first, then re-measure. If all 73 tile, reachability becomes trivia.
 
 **What is left, in full:**
 

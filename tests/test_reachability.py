@@ -20,20 +20,35 @@ the pointer:
     0x0040EB99   movl $0x47b058,0x47b4f8
 
 `et/ET0007.BIN`'s third column holds `{00, 06, 07, 08, 09, 0B, 0C}`.  It never
-holds `0D`, so `m/MS610D` is never named.  Nor can a script name it: every
+holds `0D`, so the merge never names `m/MS610D`.  Nor can a script: every
 file-referencing opcode either hardcodes a pool (`m/MS7F0x`) or takes a **u8**
-id that resolves to `m/MS00xx`, so no u16 file id ever reaches the router from
-script data.
+id that resolves to `m/MS00xx`.
 
-**What this is worth.** 67 of the corpus's 73 untiled records are in files that
-cannot be loaded.  Every reachable `m/MS6xxx` file tiles perfectly.  The real
-remaining gap is six records in one container of `m/MS0031`.
+**This is "no path found", NOT "proven unreachable".**  An adversarial pass on
+2026-09-08 found the first version of this argument too crude, and the honest
+statement is narrower:
 
-**The limit, stated rather than papered over.**  The row index is a `u16` read
-from a struct field (`0x47b16f`, stride 254), not a bounded loop counter, so
-this does not prove the engine can never pass an index past the table's 25 rows.
-It proves there is no *designed* path to these files; an out-of-bounds index
-would be a bug producing an arbitrary merge, not a loader.
+* `m/MS6800` **is** loaded, by an immediate at `0x0040E948` -- the first
+  `reachable()` here called it unreachable.  It has no untiled records, so the
+  counts below were unaffected, but the classifier was wrong and would have
+  stayed wrong.
+* `0x0043AD20` is a **generic** `m/MS%04X` loader taking a 16-bit id, reached via
+  the cache at `0x0043B7A0` (`0x481688` is a list of loaded buffers, each stamped
+  with its id).  Its caller `0x0043458E` supplies that id in `%edi` from a path
+  **not traced to immediates**.  Until that is closed, "no code can name 0x610D"
+  is unproven.
+* The merge's own row index is a `u16` struct field (`0x47b16f`, stride 254), not
+  a bounded counter, so an out-of-bounds index is not excluded either.
+
+So these tests pin the *measurements* -- which files the merge names, and where
+the untiled records sit -- and deliberately do not assert unreachability.
+
+**Why it is fine to proceed anyway.** The claim is only load-bearing if the six
+`m/MS0031` records fail for a different reason than `m/MS610D`'s forty.  They do
+not: `m/MS0031` carries one record of each of the two classes that account for 38
+of `m/MS610D`'s 40 ("expression selector past end", "expression node 0x00 payload
+past end").  Correcting the model on the file the warp reaches should tile both,
+which dissolves the question instead of settling it.
 """
 from __future__ import annotations
 
@@ -50,6 +65,11 @@ MERGE_TABLE = "et/ET0007.BIN"
 #: the third column is added to this, at 0x0040EC31
 FAMILY_61 = 0x6100
 PAT = re.compile(r"^m/MS([0-9A-Fa-f]{4})\.BIN$")
+
+#: ids the exe loads by immediate, outside the negotiation merge.  0x6800 is
+#: pushed at 0x0040E948 (kind 9); missing it is what made the first version of
+#: this classifier wrong, so new entries belong here rather than in a special case.
+DIRECT_IMMEDIATE = frozenset({0x6800})
 
 
 def _rows():
@@ -80,9 +100,11 @@ def reachable(rel: str) -> bool:
         return True
     if 0x7F00 <= fid <= 0x7F07:           # the macro pools, hardcoded per opcode
         return True
+    if fid in DIRECT_IMMEDIATE:           # loaded by name, outside the merge
+        return True
     if 0x6000 <= fid <= 0x61FF:
         return fid in _reachable_6xxx()
-    return False                          # no instruction forms the id
+    return False                          # no path found -- see the module docstring
 
 
 def test_the_merge_table_is_et0007_and_it_never_names_ms610d():
@@ -120,8 +142,14 @@ def test_no_script_opcode_can_name_a_file_by_a_u16_id():
             "reachability cannot be decided from the exe alone" % (k, f))
 
 
-def test_every_untiled_record_outside_ms0031_is_in_a_file_nothing_can_load():
-    """The payoff, and the assertion that fails if that stops being true."""
+def test_every_untiled_record_outside_ms0031_is_in_a_file_with_no_known_loader():
+    """The measurement, not the unreachability claim.
+
+    67 untiled records sit in files nothing has been found to load, and 6 sit in
+    `m/MS0031`, which the warp reaches.  If a loader turns up for one of the
+    five, this test should be *updated*, not deleted -- the number moving is the
+    signal.
+    """
     bad, unreach_untiled = [], 0
     for rel in sorted(files.all_encoded()):
         if not rel.startswith("m/"):
