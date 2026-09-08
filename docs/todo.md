@@ -103,6 +103,43 @@ decidable — a person wrote it, or a promotion did — is the one drawn.
 
 ## Open
 
+### 0. The battle divider does nothing — RETRACT `5dce533`
+
+**`dds_dev_bat3.exe` and `dds_dev_bat4.exe` are behaviourally identical to
+`dds_dev.exe`.** Diffed: they differ only in the redirect at the `call 0x0043B5E0`
+site and the code behind it, so the one thing they change is gating that call.
+
+And that call is already a no-op. `0x0043B5E0` opens with:
+
+    or   eax, 0xFFFFFFFF
+    cmp  word ptr [0x00469828], ax     ; background-script FILE
+    je   ret
+    cmp  word ptr [0x0046982C], ax     ; background-script RECORD
+    je   ret
+
+Those two words start at `FFFF FFFF`. Of the four places that write them, three
+write `-1` — they are clears (`0x0043B132`, `0x0043B527`, and the tail of
+`0x0043B590`). The only one that can store a real value is `0x0043B590`, reached
+from opcode **`1ECB`**, and `1ECB` occurs **0 times in 20,690 records**.
+
+So the function returns immediately, always, and dividing it divides nothing.
+
+**Also retract the measurement.** The "party:enemy ratio 1:3.8 -> 1:0.8" credited
+to that commit cannot have been caused by it; two traces of different play are
+the likelier explanation. It should not be quoted again.
+
+**What actually paces combat is still unknown.** Candidates, none checked:
+
+- the main tick itself (`pace()`, 60 Hz) — but that governs the field too, and
+  30/40 Hz was already tried and is unbearable out of combat;
+- the script stopwatch `[0x0048164C]` / `[0x00481650]`, incremented once per tick
+  by `0x0043BBC0` and read only around `0x0043BAE5`-`0x0043BB67` — a
+  script-visible "wait n" timer, which is the most promising lead;
+- a battle-specific frame counter nobody has looked for.
+
+The first real question is what the battle loop *is*: whether it runs as script
+through `exec_token` and blocks on that stopwatch, or has its own update.
+
 ### 1. Finish the untranslated ordinary rows — 216 of 854 done
 
 **The "854 untranslated rows" figure overstated the job by about half**: 441 of
