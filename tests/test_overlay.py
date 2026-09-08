@@ -367,3 +367,53 @@ def test_every_span_the_overlay_serves_starts_where_a_token_starts():
             assert s.start in starts, (
                 "%s c%d: span at 0x%04X starts inside a token"
                 % (ent.rel, ent.ci, s.start))
+
+
+def test_no_span_ends_on_a_dangling_escape_prefix():
+    """English may not end on 1D/1E/1F.
+
+    The engine reads an escape prefix and then takes the NEXT byte as the
+    opcode's second half -- and that byte comes from the original stream at the
+    span's end.  So our text and the game's bytes combine into an opcode that
+    is in neither.  It shipped: `m/MS6000` 12:D2[3] ended `... 01 00 1e`, the
+    byte at the span's end is `1F`, and together they made `1E1F` -- which also
+    swallowed the `1F` that was itself a prefix, putting every token after it
+    one byte out.
+
+    Checked over the whole draft tree, because that is what ships; the two rows
+    that trip it are both promoted references, not anything a human wrote.
+    """
+    import os
+    from giten import extract_v2, vmops
+
+    draft = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                         "build", "tables_draft")
+    text_dir = draft if os.path.isdir(draft) else extract_v2.text_v2_dir()
+    rows = [r for p in tables.iter_tables(text_dir) for r in tables.read(p)]
+    assert rows
+    entries, findings = overlay.plan(rows)
+    bad = [(e.rel, s.start) for e in entries for s in e.spans
+           if s.data and s.data[-1] in vmops.ESCAPE]
+    assert not bad, bad[:5]
+    # and the rule has to be doing work, not passing because nothing trips it
+    assert [f for f in findings if "escape prefix" in f[1]], \
+        "no row tripped the rule -- has the source changed?"
+
+
+def test_the_dead_dictionary_is_never_translated():
+    """`m/MS7F05` holds one data run the interpreter walks and prints.
+
+    `tables/` leaves it blank on purpose; only the draft promotion filled it,
+    and it reached the screen as "Dictionary 5" during a battle.  The overlay
+    must carry no entry for it.
+    """
+    import os
+    from giten import extract_v2
+
+    draft = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                         "build", "tables_draft")
+    if not os.path.isdir(draft):
+        return
+    rows = [r for p in tables.iter_tables(draft) for r in tables.read(p)]
+    dead = [r for r in rows if r.file == "m/MS7F05.BIN" and r.en]
+    assert not dead, [(r.rec, r.idx, r.en) for r in dead]

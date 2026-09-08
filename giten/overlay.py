@@ -76,7 +76,7 @@ import re
 import struct
 from dataclasses import dataclass, field
 
-from . import build_v2, codec, extract_v2, files, records, script
+from . import build_v2, codec, extract_v2, files, records, script, vmops
 
 MAGIC = b"GTOV"
 VERSION = 4
@@ -290,6 +290,23 @@ def plan(rows, root=None):
                                          "the record's tiling disagree about where "
                                          "the text begins, so English would land on "
                                          "another token's operands"))
+                        continue
+                    # English may not end on a dangling escape prefix.  The
+                    # engine reads 1D/1E/1F and then takes the NEXT byte as the
+                    # opcode's second half -- and the next byte comes from the
+                    # original stream at `end`, so our text and the game's
+                    # bytes combine into an opcode neither side has.  Shipped
+                    # once: m/MS6000 span 0x2204 ended `... 01 00 1e`, the byte
+                    # at 0x2210 is `1F`, and together they made `1E1F` -- which
+                    # also swallowed the `1F` that was itself a prefix, putting
+                    # every token after it one byte out.
+                    if data[-1] in vmops.ESCAPE:
+                        findings.append(("%s %s[%d]" % (rel, row.rec, row.idx),
+                                         "the English ends on a bare 0x%02X, an escape "
+                                         "prefix; the engine would pair it with the "
+                                         "original byte at the span's end and dispatch "
+                                         "an opcode that is in neither stream"
+                                         % data[-1]))
                         continue
                     jp = rec.data[sp.off:sp.end]
                     if STRUCTURAL_BYTE in jp and STRUCTURAL_BYTE not in data:

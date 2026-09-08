@@ -73,6 +73,14 @@ def _pool_english(src):
     return out
 
 
+#: Files whose "text" is a data run the tokenizer renders as characters.  The
+#: engine walks and prints them, so a reference translation here is not a
+#: harmless unused string -- it goes on screen.  `m/MS7F05` holds one record,
+#: the six bytes of the string the corpus's seven apparent `{06:xx}` pool calls
+#: are really made of; `docs/limits.md` calls it a dead dictionary.
+DEAD_DATA = frozenset({"m/MS7F05.BIN"})
+
+
 def _speaker_is_wrong(jp, en, poolen):
     """Does this reference name someone the engine will not name?
 
@@ -134,7 +142,7 @@ def main(out: str = OUT) -> int:
         shutil.rmtree(out)
     names = check_v2.name_macros(None)
     poolen = _pool_english(src)
-    rows = promoted = kept = skipped = refused = split = renamed = 0
+    rows = promoted = kept = skipped = refused = split = renamed = dead = 0
     for path in tables.iter_tables(src):
         table = tables.read(path)
         for r in table:
@@ -143,6 +151,14 @@ def main(out: str = OUT) -> int:
                 kept += 1
                 continue
             if not r.ref_en:
+                continue
+            if r.file in DEAD_DATA:
+                # Not text.  `tables/` deliberately leaves these blank; only
+                # this promotion filled them, and the engine does execute them
+                # -- m/MS7F05 record 0 is a data run the interpreter walks and
+                # "prints", so the reference translation reached the screen as
+                # "Dictionary 5" during a battle.  See docs/limits.md.
+                dead += 1
                 continue
             if r.tag == extract_v2.UNTILED_TAG:
                 # no dependable span boundaries; the overlay refuses these anyway
@@ -173,10 +189,11 @@ def main(out: str = OUT) -> int:
         os.makedirs(os.path.dirname(dst), exist_ok=True)
         tables.write(dst, table)
     print("%s: %d rows, %d already English, %d promoted from a reference, "
+          "%d dead data (never promoted), "
           "%d skipped (@untiled), %d refused (would drop a name macro), "
           "%d refused (translates the whole line, not this span), "
           "%d speaker tags renamed to the pooled name"
-          % (out, rows, kept, promoted, skipped, refused, split, renamed))
+          % (out, rows, kept, promoted, dead, skipped, refused, split, renamed))
     return 0
 
 
