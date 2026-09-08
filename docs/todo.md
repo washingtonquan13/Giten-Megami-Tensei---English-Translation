@@ -555,22 +555,53 @@ containers and **nowhere else**: `m/MS0031` c0, `m/MS610D` c0 and c3,
 model shows no evidence of being wrong at all — every branch lands on a
 boundary and no span is shaped like data.
 
-**The visible residue is `m/MS0031`.** Its 193 served spans start a byte or two
-late, so the English lands just inside the line and a stray Japanese byte shows
-first — `｢きなり` where the record reads `いきなり`, `ﾋ然` where it reads
-`突然`. The translations are correct; the *boundaries* are not. This is the
-"garbage-prefixed spans" noted long ago, now located.
+**The `m/MS0031` residue was ours to explain, not ours to fix -- CORRECTED
+2026-09-08.** This section used to say its 193 served spans "start a byte or two
+late" and called fixing them the highest-value work left. That was wrong twice
+over. The observable residue is **18 spans, not 193**, and every one of them is
+the game's own data bug:
 
-So the work left is one defect with three faces, in six files:
+| class | n | what it is |
+|---|---|---|
+| opcode `10` | 10 | `10 01 01 82`: rel16 `01 01`, then `82` as the condition's expression selector. `0x82 > 0x5D` so the reader takes the nullary kind and eats it -- and it is `い`'s lead byte. See 4a. |
+| nested expression | 4 | same defect one level down. Selector `1F` is `u8 + expr`, so `10 01 01 1F BA 93` ends on a nested selector `93` -- `突`'s lead byte. |
+| leading `0xFF` | 4 | not a broken start at all; `0xFF` is a real control byte and the span legitimately opens with it. |
 
-1. **`m/MS0031`** — 193 served spans with a wrong start. Reachable by the
-   existing warp (`0C 31 01`), and already warped once to settle opcodes 10/11,
-   so the ground truth is obtainable today. **Highest value: it is the only one
-   whose fix shows on screen.**
-2. **`m/MS610D`** — 40 untiled records, 92 served spans. Still no known loader,
-   so no warp reaches it.
-3. `m/MS6200`, `m/MS6500` — 7 untiled records between them.
-4. `m/MS6F00`, `m/MS6F1F` — not script at all; deny-listed, nothing to do.
+**One member of each of the first two classes is confirmed directly**, by the
+engine's own pc *and* by the glyph blitter, which is not the interpreter:
+
+* `0:01[2]` -- pc `0x3F -> 0x43`, blitter drew `｢きなり、倒れるんだもん。`
+* `0:01[0]` -- pc read `0x00D2` at 0x14, then `泥` at 0x15, `：` at 0x17; blitter drew `ﾒ泥：！`
+
+Even the speaker label is garbled in the original Japanese. The other 12 share
+the identical byte shape. **Our boundaries match the engine everywhere it was
+observed: 44 of 44 token starts.**
+
+So `m/MS0031` is closed, and the work list is one item shorter:
+
+1. ~~`m/MS0031` -- 193 served spans with a wrong start~~ **There was no defect.**
+   Our English replaces the whole span, so shipping these rows removes a glitch
+   the 1997 game had.
+2. **`m/MS610D`** -- 40 untiled records, 92 served spans. Still no known loader,
+   so no warp reaches it. **Now the only real unknown.**
+3. `m/MS6200`, `m/MS6500` -- 7 untiled records between them.
+4. `m/MS6F00`, `m/MS6F1F` -- not script at all; deny-listed, nothing to do.
+
+**Where the opcode model actually stands** (unchanged by the above -- no code
+moved, so no percentage moved):
+
+| | |
+|---|---|
+| opcode slots defined / used in the corpus | 768 / 394 |
+| used slots with a real handler | **384 -- 242,590 of 242,752 instances, 99.9333%** |
+| used but marked no-op | 10 slots, 162 uses (`1F 00` alone is 135) |
+| expression selectors proven against the engine's own two tables | **94 of 94** |
+| records that tile | 20,617 of 20,690 -- 99.65% |
+| branch targets on a token boundary | 20,150 of 20,269 |
+
+The gap to 100% is **not** distributed across the corpus. It is 73 untiled
+records in six containers, 40 of them in one file whose loader we have never
+found. Everything outside those containers shows no evidence of being wrong.
 
 ---
 
