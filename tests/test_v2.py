@@ -1699,12 +1699,15 @@ EXE_PASSES = [
     # virtual side.  **The in-place count has never moved**: the cave is
     # appended, and only 38 bytes of the original are rewritten either way,
     # which is the number this test exists to hold still.
-    ("ovl",        38, 3072, True),
+    ("ovl",        38, 4608, True),
     ("pace",       10, 0,    False),      # 60 Hz tick gate -- behaviour
     ("names",     117, 512,  True),
     ("menus",     596, 1536, True),
-    ("database",   64, 512,  True),
-    ("mapnames",   25, 3072, True),
+    # database and mapnames patch addresses derived from the image size, so
+    # they move by a byte or two whenever the .ovl cave changes size.  The
+    # numbers are theirs, not the overlay's; only `ovl` grew on purpose.
+    ("database",   65, 512,  True),
+    ("mapnames",   23, 3072, True),
     ("popup",       1, 0,    False),      # popup default 15 -> 60 -- behaviour
 ]
 

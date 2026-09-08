@@ -108,31 +108,31 @@ Still open:
   English here reads wrong until that passage is untangled.
 - **The 177 debug-menu rows in `m/MS00D1`**, if they are wanted at all.
 
-### 2. Let the hook reach more than one entry per merged buffer
+### ✅ Serve a merged buffer from every file in it — SHIPPED 2026-09-08
 
-`rebind` maps `0xE0 + slot` to `m/MS6000`'s container, so a merged buffer can
-only be served from that one entry. The demon-specific files merged onto it --
-`m/MS6001`..`m/MS6016`, `m/MS61xx`, and an `et/ID*` -- carry their own English
-and none of it is reachable.
+`m/MS6000` is only the shell: 296 spans, 4 KB, the prompts and the approach
+menus. The demon files merged onto it hold **7,647 spans and 170 KB** — every
+line a demon says — and the hook could reach none of it, because one buffer
+could bind only one entry.
 
-**This is almost all of negotiation.** Counted as unique spans rather than
-placements — the 7,310 / 18,024 figures sum over 25 rows x 16 slots, so
-`m/MS6000` is counted 25 times and reads far larger than it is:
+The rule is the cheapest one that works: **an entry belongs to this buffer when
+every one of its spans verifies against it.** A file not in the merge fails on
+the first record the merge does not share with it. That is the per-span hashing
+the hook already does, read as a per-entry verdict — no extra data in
+overlay.dat, no new engine address, no hook on the loader.
 
-| | entries | spans | English |
-|---|---|---|---|
-| `m/MS6000`, served now | 7 | 296 | 4,166 bytes |
-| the other merged files | 290 | **7,647** | **170,227 bytes** |
+Measured over all 25 `et/ET0007` rows x 16 slots: **17,309 placements accepted
+against 7,310**. At most 5 entries and 274 spans bind to one buffer. Exactly two
+addresses in the whole family are claimed by two entries with different English
+(`Mwah!` / `*Smooch*`, `Please` / `Please!`) — both correct renderings of the
+same Japanese, so the tie-break only has to be repeatable: candidates are tried
+in file-id order and the first to claim an address keeps it.
 
-So what shipped is the UI shell — `>How will you speak to them?`, `Friendly`,
-`Intimidating`, `'s condition recovered!`. Item 2 is **96% of the family's spans
-and 98% of its English**: every demon's actual dialogue (`Who might you be?`,
-`Kyahahahaha!`, `seems to be beckoning you over.`).
-
-The hash gate already makes it safe to try several: a span from the wrong file
-fails and is dropped (0 of 109 in the test). What it needs is a cache that holds
-a short list of entries per buffer instead of one, and a rule for the order --
-which `et/ET0007.BIN` gives, since the loader itself reads that table.
+**The C conformance test earned its keep here.** The first version had every
+bound entry start its virtual space at the same address, so several entries
+answered the same virtual PC and the walk never terminated. The model and the C
+agreed — both were wrong — and the test caught it because it walks to a *real*
+stop address. Each entry now gets a stacked, disjoint window.
 
 ### 3. Why did `ムールムール：` draw in Japanese?
 

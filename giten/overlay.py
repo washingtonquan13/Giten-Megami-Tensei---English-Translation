@@ -90,6 +90,11 @@ PC_LIMIT = 0x10000
 #: ``tests/test_merged_overlay.py`` checks that hook.c still says the same.
 MAX_SPANS = 1024
 
+#: How many entries may bind to one merged buffer.  The engine merges m/MS6000
+#: with up to four more files; measured, at most 5 of ours ever verify against
+#: one buffer.  ``giten/exe/hook.c`` holds the same number.
+MAX_MERGE = 8
+
 HDR = struct.Struct("<4sIII")
 DIR = struct.Struct("<HHIHHIHHI")            # the second u16 is the container index
 SPAN = struct.Struct("<HHHHHHIHHI")         # start, JP LEN, virt, len, served,
@@ -444,7 +449,7 @@ def _live_end(image: bytes) -> int:
     return off + ln
 
 
-def resolve(entry: "Entry", image: bytes) -> "list[SpanEntry]":
+def resolve(entry: "Entry", image: bytes, virt_base: "int | None" = None) -> "list[SpanEntry]":
     """The spans of ``entry`` that the buffer ``image`` actually holds.
 
     A span is placed at ``live_index[rec].offset + rec_off`` -- the address the
@@ -464,7 +469,12 @@ def resolve(entry: "Entry", image: bytes) -> "list[SpanEntry]":
     # m/MS6000 c0, 0x1D7B becomes about 0x222C -- and virtual addresses handed
     # out from the old end would then collide with real records that now exist
     # there.  Shifting them by the same amount as the image keeps them above it.
-    delta = _live_end(image) - entry.image_end
+    # `virt_base` is where this entry's virtual space starts.  It defaults to the
+    # end of the image, which is right when one entry owns the buffer.  When
+    # several bind to a merged buffer they must be given disjoint windows, or
+    # their tails all begin at the same address and a virtual PC is ambiguous --
+    # which is exactly what the C conformance test caught.
+    delta = (_live_end(image) if virt_base is None else virt_base) - entry.image_end
     out = []
     for s in entry.spans:
         if not 0 <= s.rec_id < 256 or not s.jp_hash:
@@ -487,21 +497,68 @@ def resolve(entry: "Entry", image: bytes) -> "list[SpanEntry]":
     return out
 
 
+def merged_slot(fid: int) -> "int | None":
+    """The container a merged-buffer file id names, or None.
+
+    ``0x0040EB57`` stamps the descriptor id with ``slot - 0x20``, so the engine
+    reports a demon-conversation buffer as ``0xE0 + slot`` -- an id no filename
+    maps to, which is why this family was untranslated at all.
+    """
+    return fid - 0xE0 if 0xE0 <= fid <= 0xEF else None
+
+
+def bind(entries: "list[Entry]", fid: int, image: bytes) -> "list[SpanEntry]":
+    """Every span the buffer ``image`` should be served, from every entry in it.
+
+    For an ordinary buffer this is one entry's spans, resolved.  For a merged
+    one the buffer holds records from several files, and an entry belongs to it
+    when *all* of its spans verify -- a file that is not in this merge fails on
+    the first record the merge does not share with it.
+
+    Candidates are ordered by file id, and the first to claim an address keeps
+    it.  Two addresses in the corpus are claimed twice with different English
+    and both are correct translations of the same Japanese, so what this needs
+    to be is repeatable, not clever.
+    """
+    slot = merged_slot(fid)
+    if slot is None:
+        return resolve(entries[0], image) if entries else []
+    out, taken, cursor = [], set(), _live_end(image)
+    for e in sorted(entries, key=lambda x: (x.fid, x.ci)):
+        if e.ci != slot or not e.spans:
+            continue
+        if len(resolve(e, image)) != len(e.spans):
+            continue                        # not every span fits: not this buffer
+        got = resolve(e, image, virt_base=cursor)
+        used = max((sp.vend for sp in got if sp.tail), default=cursor) - cursor
+        cursor += used
+        for sp in got:
+            if sp.start in taken:
+                continue
+            taken.add(sp.start)
+            out.append(sp)
+    out.sort(key=lambda x: x.start)
+    return out
+
+
 class Model:
     """Reference semantics of the exe hook, one fetch at a time."""
 
-    def __init__(self, entry: "Entry | None", image: bytes):
-        self.entry = entry
+    def __init__(self, entry, image: bytes, fid: "int | None" = None):
+        """``entry`` is one Entry, or the list to consider for a merged buffer."""
+        entries = [] if entry is None else (entry if isinstance(entry, list) else [entry])
+        self.entry = entries[0] if entries else None
         self.image = image
         # v5 spans are placed against the buffer that is actually running, so a
         # merged image finds them; v4 spans carry no hash to check and are used
         # where they were planned, which is what they have always meant.
-        if entry is None:
+        if not entries:
             self.spans, self.live_end = [], 0
-        elif any(s.jp_hash for s in entry.spans):
-            self.spans, self.live_end = resolve(entry, image), _live_end(image)
+        elif any(s.jp_hash for e in entries for s in e.spans):
+            self.spans = bind(entries, fid if fid is not None else entries[0].fid, image)
+            self.live_end = _live_end(image)
         else:
-            self.spans, self.live_end = entry.spans, entry.image_end
+            self.spans, self.live_end = entries[0].spans, entries[0].image_end
 
     def fetch(self, pc: int) -> "tuple[int, int]":
         """``(byte, next pc)`` exactly as the hooked engine would see them."""

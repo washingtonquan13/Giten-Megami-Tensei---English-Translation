@@ -86,6 +86,13 @@ struct span { u16 start, jp_len, virt, len, served, pad; u32 data_off;
 #define MAX_SPANS 1024
 #define MAX_TAILS 1024
 
+/* How many entries may bind to one merged buffer.  m/MS6000 is only the shell:
+   296 spans, the prompts and the approach menus.  The demon files merged onto
+   it hold 7,647 spans, which is every line a demon says, and they are reachable
+   only by serving one buffer from several entries.  Measured, at most 5 ever
+   verify against one buffer. */
+#define MAX_MERGE 8
+
 static u8 *ovl;                 /* the whole overlay.dat in memory */
 static int state;               /* 0 not loaded, 1 loaded, -1 unavailable */
 static struct dir *dirs;
@@ -103,6 +110,11 @@ static int c_next;
 static int c_delta[2];
 static u8 c_ok[2][MAX_SPANS / 8];
 static u8 c_tok[2][MAX_TAILS / 8];
+/* the merged case: several entries, each accepted only if EVERY one of its
+   spans verifies, so no per-span bitmap is needed for them */
+static struct dir *c_multi[2][MAX_MERGE];
+static int c_mdelta[2][MAX_MERGE];
+static u32 c_nmulti[2];
 
 static u32 fnv1a(const u8 *p, u32 n)
 {
@@ -155,6 +167,26 @@ static void mark(u8 *bits, u32 n, const u16 *idx, const u8 *base, u32 end,
 static int bit(const u8 *bits, u32 i)
 {
     return (bits[i >> 3] >> (i & 7)) & 1;
+}
+
+/* Is this entry part of the buffer in front of us?
+ *
+ * An entry belongs when every one of its spans verifies.  A file that is not in
+ * this merge fails on the first record the merge does not share with it, and a
+ * file that is in it cannot fail at all -- a record another file replaced would
+ * mean this entry did not supply it.  That is the whole membership test, and it
+ * is the same hashing the single-entry path already does.
+ */
+static int entry_fits(struct dir *d, const u16 *idx, const u8 *base, u32 end)
+{
+    struct span *sp = (struct span *)(ovl + d->spans_off);
+    u32 i;
+    if (!d->nspans || d->nspans > MAX_SPANS)
+        return 0;
+    for (i = 0; i < d->nspans; i++)
+        if (!span_holds(idx, base, end, &sp[i]))
+            return 0;
+    return 1;
 }
 
 static void load(void)
@@ -281,12 +313,49 @@ static int lookup(u32 handle, u16 fid)
     c_valid[k] = 1;
     c_dir[k] = 0;
     c_delta[k] = 0;
+    c_nmulti[k] = 0;
+    base = script_buffer(handle);
+    if (fid >= 0xE0 && fid <= 0xEF) {
+        /* A demon-conversation buffer.  dirs are in file-id order, and the
+           first entry to claim an address keeps it -- two addresses in the
+           corpus are claimed twice, by two correct translations of the same
+           Japanese, so this only has to be repeatable. */
+        u32 i, cursor;
+        if (!base)
+            return k;
+        idx = (const u16 *)base;
+        end = image_end_of(base);
+        /* Each bound entry needs its OWN virtual window.  They all planned
+           their tails from their own image end, so handing them the same base
+           makes several entries answer the same virtual address and a fetch
+           there is ambiguous -- the C conformance test caught exactly that.
+           Stacking the windows keeps them disjoint. */
+        cursor = end;
+        for (i = 0; i < ndirs && c_nmulti[k] < MAX_MERGE; i++) {
+            struct span *tl;
+            u32 used = 0;
+            if (dirs[i].ci != (u16)(fid - 0xE0))
+                continue;
+            if (!entry_fits(&dirs[i], idx, base, end))
+                continue;
+            tl = (struct span *)(ovl + dirs[i].tails_off);
+            if (dirs[i].ntails)
+                used = (u32)tl[dirs[i].ntails - 1].start
+                     + tl[dirs[i].ntails - 1].served - dirs[i].image_end;
+            if (cursor + used > 0x10000u)
+                break;                      /* no room left below the PC limit */
+            c_mdelta[k][c_nmulti[k]] = (int)cursor - (int)dirs[i].image_end;
+            c_multi[k][c_nmulti[k]] = &dirs[i];
+            c_nmulti[k]++;
+            cursor += used;
+        }
+        return k;
+    }
     d = rebind(handle, fid);
     if (!d)
         return k;
     if (d->nspans > MAX_SPANS || d->ntails > MAX_TAILS)
         return k;                       /* too big to verify: serve nothing */
-    base = script_buffer(handle);
     if (!base)
         return k;
     idx = (const u16 *)base;
@@ -370,6 +439,45 @@ static u8 passthrough(u32 handle, u16 *pcp)
     return ORIG_FETCH(handle, pcp);
 }
 
+/* One fetch out of a merged buffer.  Returns 1 and sets *out when one of the
+   bound entries answers this address, 0 when none does. */
+static int merged_fetch(int slot, const u8 *base, u16 *pcp, u8 *out)
+{
+    const u16 *idx = (const u16 *)base;
+    u32 end = image_end_of(base);
+    u16 pc = *pcp;
+    u32 i, k;
+    for (i = 0; i < c_nmulti[slot]; i++) {
+        struct dir *d = c_multi[slot][i];
+        int delta = c_mdelta[slot][i];
+        struct span *s, *sp;
+        if (pc >= end) {
+            sp = (struct span *)(ovl + d->tails_off);
+            s = in_tail(sp, d->ntails, delta, pc);
+            if (!s)
+                continue;
+            k = pc - (u32)((int)s->start + delta);
+            *pcp = (k + 1 == s->len) ? span_end(idx, s) : (u16)(pc + 1);
+            *out = ovl[s->data_off + k];
+            return 1;
+        }
+        sp = (struct span *)(ovl + d->spans_off);
+        s = in_range(idx, sp, d->nspans, pc);
+        if (!s)
+            continue;
+        k = pc - span_start(idx, s);
+        if (k + 1 == s->len)
+            *pcp = span_end(idx, s);
+        else if (k + 1 == s->served)
+            *pcp = (u16)((int)s->virt + delta);
+        else
+            *pcp = (u16)(pc + 1);
+        *out = ovl[s->data_off + k];
+        return 1;
+    }
+    return 0;
+}
+
 ENTRY u8 hook(u32 handle, u16 *pcp)
 {
     struct dir *d;
@@ -384,12 +492,20 @@ ENTRY u8 hook(u32 handle, u16 *pcp)
     if (state < 0)
         return ORIG_FETCH(handle, pcp);
     slot = lookup(handle, FILEID);
-    d = c_dir[slot];
-    if (!d)
-        return passthrough(handle, pcp);
     base = script_buffer(handle);
     if (!base)
         return ORIG_FETCH(handle, pcp);
+    if (c_nmulti[slot]) {
+        u8 b;
+        if (merged_fetch(slot, base, pcp, &b))
+            return b;
+        pc = *pcp;
+        return (pc >= image_end_of(base)) ? passthrough(handle, pcp)
+                                          : ORIG_FETCH(handle, pcp);
+    }
+    d = c_dir[slot];
+    if (!d)
+        return passthrough(handle, pcp);
     idx = (const u16 *)base;
     end = image_end_of(base);
     pc = *pcp;

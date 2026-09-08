@@ -214,17 +214,20 @@ def test_the_c_hook_serves_a_merged_buffer_the_way_the_model_does():
     if exe is None:
         return
 
-    from giten import tables
-    path = os.path.join(paths.BUILD_DIR, "tables_draft", "m", "MS6000.BIN.tsv")
-    entries, _ = overlay.plan(tables.read(path), None)
-    with open(os.path.join(tmp, "overlay.dat"), "wb") as fh:
-        fh.write(overlay.build(entries))
+    # the overlay that actually ships, not one rebuilt for the test
+    if not os.path.exists(BUILT):
+        return
+    shutil.copyfile(BUILT, os.path.join(tmp, "overlay.dat"))
+    fam = [x for x in overlay.parse(open(BUILT, "rb").read())
+           if 0x6000 <= x.fid < 0x7000]
 
     image = _merged(ROW0)
     with open(os.path.join(tmp, "img.bin"), "wb") as fh:
         fh.write(image)
 
-    model = overlay.Model(e, image)
+    # 0xE0 is slot 0 -- several of `fam` bind to this one buffer
+    model = overlay.Model(fam, image, fid=0x00E0)
+    assert len({s.rec_id for s in model.spans}) > 1
     assert model.spans, "the model resolves nothing; the test would prove nothing"
     idx = overlay.live_index(image)
     checked = 0
@@ -247,6 +250,7 @@ def test_the_c_hook_serves_a_merged_buffer_the_way_the_model_does():
     # just as well with the overlay switched off
     whole = b"".join(model.walk(idx[r][0], idx[r][0] + idx[r][1])
                      for r in range(256) if idx[r][1] > 1)
-    for wanted in (b"Friendly", b"Intimidating", b">How will you speak to them?"):
+    for wanted in (b"Friendly", b"Intimidating", b">How will you speak to them?",
+                   b"Gaze passionately", b"Persuade"):   # the last two are demon files
         assert wanted in whole, wanted
     shutil.rmtree(tmp, ignore_errors=True)
