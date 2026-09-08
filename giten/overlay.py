@@ -210,6 +210,11 @@ _FID = re.compile(r"^[A-Za-z]*([0-9A-Fa-f]+)$")
 #: ``docs/overlay.md``.
 STRUCTURAL_BYTE = 0xFF
 
+#: The tag a span carries when it follows opcode ``11``.  49 of the 50 such spans
+#: in the corpus are data the tokenizer walked into; the exception is real text in
+#: a container that tiles cleanly, which is why :func:`plan` requires both.
+DATA_TAG = "11"
+
 
 def _fid(rel: str) -> int:
     """The engine's file id for a script file, from its name.
@@ -263,6 +268,9 @@ def plan(rows, root=None):
             # call covers both.  A span may not be served past the lowest of
             # these that falls inside it.
             targets = sorted(script._branch_targets(cont, base))
+            # a container with a record we cannot tile is one where the walk is
+            # known to go out of step; spans after a branch in it are suspect
+            untiled_here = any(r.tokens is None for r in cont)
             seen = set()
             for rec in cont:
                 # ``span_tokens``, not ``tokens``: a straddling record is untiled
@@ -324,13 +332,45 @@ def plan(rows, root=None):
                                          % data[-1]))
                         continue
                     jp = rec.data[sp.off:sp.end]
-                    if STRUCTURAL_BYTE in jp and STRUCTURAL_BYTE not in data:
+                    # A span that follows opcode 11, **in a container we could
+                    # not fully tile**, is not text.  Both halves are needed.
+                    #
+                    # 49 of the 50 such spans corpus-wide contain no kana at all
+                    # and decode to the clothing-radical block that binary lands
+                    # on when read as Shift-JIS; they sit only in m/MS610D,
+                    # m/MS6200 and m/MS6500, whose records the tokenizer also
+                    # cannot tile -- the tell that it is out of step there.  A
+                    # `02 00` inside one reads as a pool call, so promotion put
+                    # "Devil Buster" in the middle of a data table.
+                    #
+                    # The fiftieth is m/MS6000 12:CE[1], `失敗！` -> `Failure!`,
+                    # which is real.  It has kanji and no kana, so "no kana" was
+                    # not the rule; and the clothing-radical block was not either
+                    # -- it contains 裂 and 裏, and 580 real lines use them.  The
+                    # container's own tiling is what separates them, which is the
+                    # same correlation that explains every off-boundary branch
+                    # target: all 119 sit in a container with an untiled record,
+                    # none in a clean one.
+                    if row.tag == DATA_TAG and untiled_here:
+
+                        findings.append(("%s %s[%d]" % (rel, row.rec, row.idx),
+                                         "the span follows opcode %s in a container "
+                                         "holding a record we cannot tile, so the walk is "
+                                         "out of step here and this is data, not text"
+                                         % DATA_TAG))
+                        continue
+                    # 0xFF has to be *counted*, not merely present.  A span whose
+                    # Japanese holds two and whose English holds one passed this
+                    # when it compared presence, and one did: m/MS610D 0:FE[4].
+                    if jp.count(STRUCTURAL_BYTE) != data.count(STRUCTURAL_BYTE):
                         findings.append(("%s %s[%d]" % (rel, row.rec, row.idx),
                                          "the Japanese here contains 0x%02X, which is "
                                          "unassigned in cp932 and so is never text; the "
                                          "menu rescanner (0x00435CF0) scans for it through "
-                                         "the fetch we hook, and English drops it"
-                                         % STRUCTURAL_BYTE))
+                                         "the fetch we hook, and the English carries %d of "
+                                         "them against the Japanese's %d"
+                                         % (STRUCTURAL_BYTE, data.count(STRUCTURAL_BYTE),
+                                            jp.count(STRUCTURAL_BYTE))))
                         continue
                     lo = base[rec.id] + sp.off
                     hi = base[rec.id] + sp.end
