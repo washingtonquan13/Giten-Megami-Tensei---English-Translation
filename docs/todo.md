@@ -741,6 +741,11 @@ established as not script. The model is right 916 times; this record is broken.
 
 ### The opcode model is now clean
 
+> **Full write-up: [`docs/opcode-model.md`](opcode-model.md)** -- what the model
+> is, the four independent verification methods, the findings that cost the most
+> to get right, and a "what is NOT established" section that must be quoted
+> alongside any confidence number.
+
 Every one of the 73 untiled records in the corpus is accounted for, and **not one
 is a defect in the tokenizer**:
 
