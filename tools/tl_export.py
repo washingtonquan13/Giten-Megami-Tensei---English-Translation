@@ -38,7 +38,12 @@ import sys
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, R)
 
-from giten import codec, paths, script, tables
+from giten import codec, paths, script, tables, width as _width
+
+#: the width a menu option must fit; `check`'s `width-choice` rule.
+#: The first brief guessed the tag was 1FB1 alone, so the MS0017 pass
+#: produced three options 22-26 columns wide in a 20-column menu.
+CHOICE_COLUMNS = _width.CHOICE_COLUMNS
 
 DRAFT = os.path.join(paths.BUILD_DIR, "tables_draft")
 
@@ -166,8 +171,8 @@ for rec, rs in by_rec.items():
         todo = in_scope(r)
         tok = codec.control_tokens(r.jp or "")
         budget = ""
-        if (r.tag or "").upper() == "1FB1" or "choice" in (r.note or ""):
-            budget = "  (menu option: keep it short)"
+        if (r.tag or "").upper() in script.CHOICE_TAGS:
+            budget = "  (MENU OPTION -- must fit %d columns)" % CHOICE_COLUMNS
         line = "**TODO**" if todo else "keep"
         if todo:
             n += 1

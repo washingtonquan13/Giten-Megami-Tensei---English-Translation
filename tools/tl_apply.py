@@ -11,10 +11,13 @@ in opposite directions:
 
 * **an invented `{...}` token** -- a pool call the Japanese never had.  Refused.
 * **a token kept whose pool entry is untranslated** -- the engine splices the
-  pool's *Japanese* in, so the line ships as ``by 人間 strength``.  `check`
-  cannot see this: the `en` column holds a token, not Japanese characters.  The
-  MS0015 pilot had 14 such placements (ニュートン, 人間, 我々, こちら, 結界).
-  Refused, with the Japanese quoted so the translator can write the meaning.
+  pool's *Japanese* in, so the line ships as ``by 人間 strength``.  The MS0015
+  pilot had 14 such placements (ニュートン, 人間, 我々, こちら, 結界).  `check`
+  **does** catch this -- its ``japanese`` rule expands pool calls against the
+  English column -- so this refusal is not the only guard, just a much faster
+  one: per row, at translation time, with the offending Japanese quoted, instead
+  of one number in a corpus-wide report.  (An earlier version of this note
+  claimed `check` could not see it.  That was wrong.)
 * **dropping a token is FINE** and is the corpus norm -- only 1,475 of the
   10,554 rows we have translated keep every token, because most calls
   substitute a Japanese grammatical fragment with no English counterpart.
