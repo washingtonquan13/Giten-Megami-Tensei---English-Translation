@@ -339,6 +339,11 @@ worst session from 1 : 35 to 1 : 1.15.
 
 | address | what |
 |---|---|
+| `0x0043EF60` | status walker: all 35 slots, once per gauge tick |
+| `0x0043EFA0` | one status slot: gate, rate-table lookup, add, clamp |
+| `0x00469F08` | **status rate table**, 35 x u16; zero = that status never ticks. Byte-identical to the PC-98 exe (`pc98-comparison.md` §3b) |
+| `unit + 5 + n` | status slot `n`, one byte, 0..255 |
+| `0x0040B890` | clamp(v, lo, hi) |
 | `0x0043F510` | **one ATB gauge tick**: `step = 2*(1+rand%speed)+5`, counter at `p+1` |
 | `0x0043F570` | party gauge tick, slots 0..5; calls `0x00409420` on ready |
 | `0x0040E250` | enemy gauge tick, slots 0..15; breaks at the first that acts |

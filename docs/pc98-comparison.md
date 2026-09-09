@@ -137,8 +137,8 @@ records are the Roman numeral in the name.
   its offset table, so the records were reorganised. That is the signature of
   text or layout work, not parameter tuning.
 
-**[conjecture]** If ailment duration is tuned anywhere it is more likely in the
-exe than in data. Not looked at.
+It is not in the exe either: the status-rate table is byte-identical between the
+releases. See **§3b**, which settles this.
 
 ### The shape of the whole difficulty pass
 
@@ -347,6 +347,83 @@ and everything else along with combat -- measured and rejected already
 
 ---
 
+## 3b. The exe's combat loop, compared -- status rates are identical
+
+**[measured]** The one exe-side combat change is the ATB step in §3. The status
+system, checked directly, is unchanged.
+
+### How statuses work
+
+Each combatant carries **35 one-byte status slots** at `ptr + 5 + index`.
+`0x0043EF60(ptr, amount)` walks all 35 once per gauge tick:
+
+    edi = 0
+    for index in 0 .. 0x22:                    ; 35 slots
+        edi |= 0x0043EFA0(amount, ptr, index)
+    return edi
+
+and `0x0043EFA0` is the per-slot step:
+
+    if (!0x0043E6B0(ptr, index)) return 0       ; slot not active
+    if (word[0x00469F08 + index*2] == 0) return 0   ; this status does not tick
+    v = byte[ptr + index + 5] + amount
+    byte[ptr + index + 5] = 0x0040B890(v, 0, 255)   ; clamp
+    return 1
+
+So `0x00469F08` is a **35-entry u16 table giving each status its rate**, and a
+zero entry means the slot never advances. `0x0040F890` calls the walker with
+`amount = 1`, once per enemy per tick.
+
+**[measured]** The table, in the Windows exe:
+
+| slots | values |
+|---|---|
+| 0-9 | all 0 -- unused |
+| 10-14 | 15, 40, 30, 40, 40 |
+| 15-19 | 0, 60, 10, 50, 50 |
+| 20-24 | **128**, 60, 50, 50, 10 |
+| 25-30 | 80, 10, 70, 80, 50, 10 |
+| 31-34 | all 0 -- unused |
+
+### The comparison
+
+**[measured]** All 70 bytes of that table appear **verbatim** in `DDS98.EXE` at
+file offset `0x0004EB4A`. Same values, same order, same length.
+
+The identical run is only **73 bytes** -- one zero before it and two after -- so
+this is an isolated table, not part of a larger block that happened to survive.
+It kept its values through a 16-bit-to-32-bit port while the data on either side
+was rearranged.
+
+**So status rates and durations were not touched.** This closes the question §2b
+left open.
+
+**[conjecture]** Matching 73 bytes proves the *values* are identical; it does not
+prove the PC-98 code indexes them the same way. Confirming that means tracing
+PC-98 status code through the `INT 3Fh` overlay thunks -- the same wall that
+blocks the enemy-cadence question in §5. Given the table is the same length with
+the same values, and every other module layout checked has matched, treat it as
+settled unless something contradicts it.
+
+### What changed, and where
+
+| | changed | where |
+|---|---|---|
+| ATB step | **yes** | exe, one instruction (§3) |
+| status rates / durations | no | exe table, identical |
+| gauge reload (255) | no | exe |
+| party slots (6), enemy slots (16), status slots (35) | no | exe |
+| boss ailment resistance | **yes** | data, `p/` (§2b) |
+| heals, buffs, debuffs | **yes** | data, `ET0004` (§2) |
+| demon HP / MP / levels | no | data |
+
+The difficulty pass was done **almost entirely in the data files, with exactly
+one instruction changed in the executable.** That is a coherent picture of how
+the work was actually carried out: a designer retuning tables, plus one
+programmer edit to combat speed.
+
+---
+
 ## 4. Was the port playtested?
 
 Worth writing down, because the obvious reading of "combat is unplayably fast"
@@ -426,7 +503,7 @@ competing reading -- they simply wanted snappier combat in the port -- fits the
 * **`ET0004` `+0x02`, and `+0x05`** -- the single most-changed field in the port,
   and still unidentified. (`+0x03` is the MP cost and `+0x0A` the magnitude; both
   verified against in-game menus and the heal diff.)
-* **Whether status *duration* differs at all.** No duration table was found in
-  data (§2b); the exe has not been checked.
+* ~~**Whether status duration differs.**~~ **Answered in §3b** -- the 35-entry
+  status-rate table at `0x00469F08` is byte-identical in both exes.
 * Whether the 41 differing `MS` scripts and 18 `M` files change anything the
   translation should follow. Unexamined.
