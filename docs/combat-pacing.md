@@ -262,6 +262,44 @@ column can be compared directly, which is a cheap and decisive experiment.
 
 ---
 
+## 4b. Measured: what the restored step actually did
+
+Play-tested 2026-09-08 on `dds_dev_atb.exe`, counted with
+`tools/battle_ratio.py`, which counts the announcement *span* the engine picks
+rather than the rendered English -- see its docstring for why three earlier
+attempts from the glyph log disagreed with each other.
+
+| session | build | party | enemy | ratio | battles won |
+|---|---|---|---|---|---|
+| `2026-09-06b-murmur` | dev | 32 | 39 | 1 : 1.22 | 76 |
+| `2026-09-07c-softlock` | dev | 8 | 95 | 1 : 11.88 | 138 |
+| `2026-09-07e-newsave-bat4` | btl4 | 2 | 37 | 1 : 18.50 | 68 |
+| **`2026-09-08-atb`** | **atb** | **80** | **11** | **1 : 0.14** | **81** |
+
+The player's report on the last row: *"it feels perfect now. I still lost the
+fight, but you can see from the trace and textout that I was able to actually
+fight back."*
+
+**Two honest caveats, neither of which changes the verdict.**
+
+*The sessions are different content* -- different areas, enemies and lengths --
+so this is not a controlled experiment. Battles won are the same order of
+magnitude across all four (68-138), so these are comparable session lengths, and
+the swing is 130x, far outside what content variation plausibly explains.
+
+*The gun line is unattributed.* `r04[5]` ("'s {04:02} opened fire") is used by
+both sides and the tool refuses to guess: 81 in the ATB session against 30-36 in
+each earlier one. Assign **every** gun attack to the enemy and the ATB session is
+still 80 : 92 = 1 : 1.15, better than all three; assign them all to the party and
+it is 1 : 0.07. It does not track either side cleanly across sessions -- in
+`2026-09-07e` the party made 2 attributable attacks and 33 gun attacks -- which
+is why it stays out of the count until something settles it.
+
+So under the most hostile assumption available, the restored step still moved the
+worst session from 1 : 35 to 1 : 1.15.
+
+---
+
 ## 5. What is still not known
 
 * **Which state a battle runs in** (11, 16 or 34). Decides the enemy divisor.
