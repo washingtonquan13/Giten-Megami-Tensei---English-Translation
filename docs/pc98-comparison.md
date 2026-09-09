@@ -62,12 +62,103 @@ Patterns worth knowing:
   `+0x0B: 8 -> 10`; タルンダ / スクンダ / ラクンダ / マカンダ `+0x0B: 8 -> 5`.
 * `+0x05: 1 -> 6` on 25 records is the single most common edit.
 
-`+0x0C` -- the packed hit-count nibble byte that `0x0042C740` reads (see
-[`combat-pacing.md`](combat-pacing.md) §0) -- **changed in zero records.**
+`+0x0C` **changed in zero records** -- which matters more than it looked at the
+time, because that byte is the **element index** that joins a skill to a demon's
+affinity table ([`format-notes.md`](format-notes.md) §7.1). The port retuned what
+skills *do* and left every skill's element alone.
+
+**A conflict to resolve, flagged rather than smoothed over.** This section
+originally called `+0x0C` "the packed hit-count nibble byte that `0x0042C740`
+reads", from [`combat-pacing.md`](combat-pacing.md) §0. Both readings cannot be
+right. The element-index reading is the better supported one -- ten values, ten
+affinity bytes, and Salamander nulling index 2 independently -- so either
+`0x00423460` returns a record that is not the `ET0004` one, or the argument
+mapping in `combat-pacing.md` §0 is off by a field. Not resolved.
 
 The other six differing `ET` files are `ET0000` (8 bytes), `ET0001` (items,
 substantially), `ET0008`, `ET0011`, `ET0020` and `ET0028` (16 bytes).
 `ET0022`, `ET0018` and `ET0040` are byte-identical.
+
+---
+
+## 2b. `p/P####.BIN` -- the port made bosses immune to status
+
+**[measured]** 37 of the 432 demon records differ. **25 of those 37 changes are
+in the affinity table's ailment block** -- element indices 7, 8 and 9. Twenty-four
+demons became *more* ailment-resistant and six less. Nothing else in the family
+moved at anything like that rate:
+
+    +0x60 (index 7)   25 records        +0x16, +0x1C, +0x1E  skill slots, 5 records
+    +0x61 (index 8)   25 records        +0x22..+0x29         5 records, meaning unknown
+    +0x62 (index 9)   26 records        +0x36..+0x43         names, 3 records
+
+The record layout and the affinity scale are in
+[`format-notes.md`](format-notes.md) §7. **50 is neutral, 0 is immune.**
+
+| demon | Lv | PC-98 | Windows |
+|---|---|---|---|
+| Dantalion II | 25 | 50 / 50 / 50 | **0 / 0 / 0** |
+| Dantalion III | 44 | 50 / 50 / 50 | **0 / 0 / 0** |
+| Morax | 54 | 50 / 50 / 50 | **0 / 0 / 0** |
+| Haagenti | 48 | 50 / 50 / 50 | **0 / 0 / 0** |
+| Lamashtu | 44 | 50 / 50 / 50 | **0 / 0 / 0** |
+| Ose | 43 | 50 / 50 / 50 | **0 / 0 / 0** |
+| Vepar | 35 | 50 / 50 / 50 | **0 / 0 / 0** |
+| Murmur (x2) | 48 | 50 / 50 / 50 | **0 / 255 / 0** |
+| Tamuz | 48 | 50 / 50 / 50 | **0 / 253 / 0** |
+| Leraje | 28 | 50 / 50 / 50 | 10 / 10 / 10 |
+| Abaddon | 24 | 50 / 50 / 50 | 10 / 10 / 10 |
+| Vepar (the Lv 25 form) | 25 | 50 / 50 / 50 | 5 / 5 / 5 |
+| Dantalion | 15 | 20 / 20 / 20 | 5 / 5 / 5 |
+
+**Every one of those was fully susceptible on the PC-98.** In the port a whole
+class of named demon lords ignores debuffs and status outright, and Murmur and
+Tamuz went past immunity into the 253/255 special range.
+
+**None of the 37 changed records is a party member**, so the edit is
+one-directional: the enemies were hardened against the player's debuffs and the
+player's own resistances were left alone.
+
+This was found from a play session, not from the table. Kamikawa cast Rakunda
+three times at Dantalion II and got "was unaffected" three times -- a correct
+read of the *original* game, defeated by a change the port made.
+
+**HP, MP and levels were not touched.** Verified directly on Dantalion's three
+forms: identical in both releases, and the only other differences in those
+records are the Roman numeral in the name.
+
+### What was checked for status *duration* and not found
+
+**[measured]** The other four differing databases are not a duration table:
+
+* `ET0028` -- 256 entries of 0 or 1, sixteen flipped. A boolean table of
+  something unidentified.
+* `ET0008`, `ET0011`, `ET0020` -- all three changed size, and each diff begins at
+  its offset table, so the records were reorganised. That is the signature of
+  text or layout work, not parameter tuning.
+
+**[conjecture]** If ailment duration is tuned anywhere it is more likely in the
+exe than in data. Not looked at.
+
+### The shape of the whole difficulty pass
+
+Four separate edits that all push the same way:
+
+| | change |
+|---|---|
+| ATB step | doubled (§3) |
+| boss ailment resistance | 50 -> 0 on a dozen named bosses |
+| healing skills | 25-50% stronger (§2) |
+| buffs / debuffs | buffs 8 -> 10, debuffs 8 -> 5 (§2) |
+
+Faster enemies, stronger enemy healing, weaker player debuffs, and bosses that
+ignore status. That is a deliberate difficulty pass, not drift.
+
+**Open, and deliberately not decided here:** whether any of §2 or §2b should be
+restored the way the ATB step was. The step had a clean argument -- one
+instruction, the original's own arithmetic, and a measurable result. These are
+data edits across dozens of records with no such single lever, and reverting
+them would be a much larger claim about what this project is for.
 
 ---
 
@@ -328,8 +419,14 @@ competing reading -- they simply wanted snappier combat in the port -- fits the
   cannot find their callers. Resolving it needs the overlay map.
 * **That the PC-98 ATB tick is on the VSYNC clock**, rather than a separate
   free-running loop. The display certainly is (§3); the gauge is inferred.
-* **What the changed `ET0004` fields mean.** The offsets are known to be read
-  (`+0x0A`, `+0x0B`, `+0x0C` reach `0x0042C740` through `0x00423460`), but only
-  `+0x0C` has a confirmed meaning.
+* **Whether `0x0042C740`'s third argument really is `ET0004`'s `+0x0C`.** That
+  byte is now established as the element index (§2, `format-notes.md` §7.1), which
+  contradicts the packed-hit-count reading in `combat-pacing.md` §0. One of the
+  two is wrong.
+* **`ET0004` `+0x02`, and `+0x05`** -- the single most-changed field in the port,
+  and still unidentified. (`+0x03` is the MP cost and `+0x0A` the magnitude; both
+  verified against in-game menus and the heal diff.)
+* **Whether status *duration* differs at all.** No duration table was found in
+  data (§2b); the exe has not been checked.
 * Whether the 41 differing `MS` scripts and 18 `M` files change anything the
   translation should follow. Unexamined.

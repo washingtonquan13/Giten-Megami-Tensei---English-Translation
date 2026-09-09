@@ -789,3 +789,74 @@ demon:
 -- and draws either through the same `strcpy`-then-`0x00441940` path with no
 `printf` field width.  So race and title share one budget: the widest thing the
 game already draws there, `イシュタル信者` at 14 half-width cells.
+
+---
+
+## 7. The demon database `p/P####.BIN` **[VERIFIED 2026-09-09]**
+
+432 files, one container each, body 122 bytes. Loaded by `0x0043AD20(id)`, which
+calls `0x00401DD0(id, kind=9, 0)`, decodes through `0x0043AA90`, and then
+**overwrites the first word with the demon id** -- so `+0x00`'s file value is not
+what the engine reads back. Records are cached in a linked list at
+`ds:0x00481688` with the buffer at `[node+4]`.
+
+| offset | size | what | how it was established |
+|---|---|---|---|
+| `+0x00` | u16 | **clobbered with the id at load.** Its file value is 6,645 for Dantalion II, against 4,430 EXP awarded -- exactly 2/3, which is suggestive and nothing more | log vs file |
+| `+0x04` | u32 | **cash dropped** | 667 in the file, 667 in the battle log |
+| `+0x08` | u32 | **Bio-Magnetite dropped** | 154 in the file, 154 in the log |
+| `+0x0C` | u16 | **HP** | Slime 5, the two level-1 party members 17, Kalki (Lv 70) 3,218 |
+| `+0x0E` | u16 | **MP** | same series |
+| `+0x10`..`+0x1F` | 8 x u16 | **skill list**, indices into `et/ET0004.BIN`, filled from slot 0 | every non-zero value across all 416 readable records lands in 1..308, and the fill counts decrease monotonically by slot |
+| `+0x36` | cp932 | **name**, NUL-terminated | |
+| `+0x47` | u8 | **level** | range 0..70; Dantalion 15 / 25 / 44 |
+| `+0x59`..`+0x62` | 10 x u8 | **affinity table** -- one byte per element index (§7.1) | |
+
+Not established: `+0x02`, `+0x20` (0..33), `+0x22`..`+0x34` (ids outside the
+ET0004 range -- possibly drops), `+0x48`..`+0x58` (a stat block; `+0x5B` is
+compared against `rand()%100` at `0x0042B5A1`, so at least one of them is a
+percentage), and `+0x63`..`+0x79`.
+
+### 7.1 The affinity table and its join to `et/ET0004.BIN`
+
+Each skill record carries an **element index at `+0x0C`, values 0..9**. The
+demon's affinity table is **ten bytes**. The mapping is one to one:
+
+    affinity offset = 0x59 + element index
+
+Confirmed independently: fire skills carry index 2, and Salamander -- the fire
+elemental -- has **255** at `0x59+2`.
+
+Values are a percentage where **50 is neutral**:
+
+| value | meaning |
+|---|---|
+| 0 | immune; the effect never applies |
+| < 50 | resistant, roughly `2 x value` percent damage |
+| 50 | normal |
+| > 50 | weak |
+| 253, 255 | special (null / drain / repel) |
+
+Known indices: **2 = fire, 4 = wind, 5 = electric**; **0 and 1 are the physical
+columns** (nothing in the corpus is ever weak to index 0, and 371 of 416 demons
+sit at neutral); **7, 8, 9 are the debuff / ailment / instant-death block**, where
+the four `-nda` debuffs and Desaman all carry index 8. Indices 3 and 6 are not
+individually pinned.
+
+### 7.2 Corrections to `et/ET0004.BIN` (§6 covers `ET0001`, not this)
+
+Record shape is `20 bytes || name\0 || description\0`, 309 records
+(`giten/etdb.py`). Within the 20-byte header:
+
+* `+0x03` is the **MP cost**. Verified against the in-game menus captured in a
+  play session -- Agi 3, Agilao 8, Zanma 6, Tarukaja 10, Dia 15, Media 25,
+  Rakunda 8, all exact. **An earlier note in this project put the cost at
+  `+0x02`; that was wrong** and `+0x02` remains unidentified.
+* `+0x0A` is the **magnitude** -- Dia 120, and the PC-98 diff moves exactly this
+  byte on every healing skill.
+* `+0x0B` is the buff/debuff magnitude (the port moved buffs 8 -> 10 and debuffs
+  8 -> 5).
+* `+0x0C` is the element index above.
+* **Records 1..15 are the basic weapon attacks and all carry power 0**, so their
+  damage comes entirely from the equipped weapon and its ammunition. That is why
+  a plain attack ignores the scaling that flattens skills.
