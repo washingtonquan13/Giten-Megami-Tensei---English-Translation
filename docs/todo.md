@@ -103,6 +103,28 @@ decidable — a person wrote it, or a promotion did — is the one drawn.
 
 ## Open
 
+### Presentation (upscaling / shaders) -- proposal, nothing built
+
+[`docs/presentation.md`](presentation.md), 2026-09-09. Asked whether the sprites
+could be extracted, upscaled and put back to fix how rough it looks in
+fullscreen. **They can be extracted trivially -- all 1,577 `fc/` files are plain
+BMPs -- but upscaling them would not fix it.** Every file is 8bpp (256 colours),
+and 640x480 is hardcoded in the display setup: `push 0x1E0` occurs exactly four
+times in the whole image, twice each at `0x00450AC9` and `0x00450C9B`. There is
+no other resolution path, so the full-screen art is already native and anything
+larger is downsampled straight back.
+
+The dgVoodoo2 config is already optimal (`max_isf` + `pointsampled`, both
+bilinear paths off), so what is on screen is an honest integer scale of 640x480.
+The proposal is a post-process shader instead -- ReShade over dgVoodoo2, CRT
+first -- which sidesteps both the palette and the framebuffer and touches no
+game file. Untested.
+
+**The part that matters to the translation regardless:** build the `fc/`
+extractor and check whether any of the 239 full-screen images have Japanese text
+baked into the bitmap. No table covers those, and they would ship untranslated
+without anyone noticing.
+
 ### Release / distribution -- planned, nothing built
 
 [`docs/distribution.md`](distribution.md), written 2026-09-09. Design and
