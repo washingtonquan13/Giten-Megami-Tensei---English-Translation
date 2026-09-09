@@ -278,7 +278,16 @@ attempts from the glyph log disagreed with each other.
 
 The player's report on the last row: *"it feels perfect now. I still lost the
 fight, but you can see from the trace and textout that I was able to actually
-fight back."*
+fight back."* And, after seeing the numbers and having played both releases:
+**"this patch is gold. it honestly gives parity between the two versions."**
+
+That verdict is the evidence that matters here, and it is worth being clear about
+why. Whether combat *feels* like the original is not a question a disassembler
+can answer -- it is a question for someone who has played both. The arithmetic
+predicted parity (§4: our 60 Hz against the PC-98's hardware-locked 56.4, and the
+step restored to the 1997 formula, so both clocks and both formulas match within
+a few percent). The person who has played both reports parity. The prediction and
+the play-test agree, which is the strongest position this question has been in.
 
 **Two honest caveats, neither of which changes the verdict.**
 

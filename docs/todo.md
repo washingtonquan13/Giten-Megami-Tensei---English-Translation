@@ -103,12 +103,22 @@ decidable — a person wrote it, or a promotion did — is the one drawn.
 
 ## Open
 
-### ✅ CLOSED: combat difficulty is the Windows port's own balance
+### ✅ CLOSED: combat difficulty is the Windows port's own balance -- and it is now fixed
 
 Settled 2026-09-08 by the person playing it, against PC-98 footage of the same
 game: PC-98 enemies act far less often and several party members act before the
 enemy does. **That difference is the port's, not this patch's.** Nothing here
-caused it and nothing here should try to "fix" it.
+caused it.
+
+~~Nothing here should try to "fix" it.~~ **Superseded the same day.** The cause
+turned out to be one instruction (below), the restoration is four bytes, and the
+person playing has tested it and given the verdict: *"this patch is gold. it
+honestly gives parity between the two versions."* Measured 80 party actions to
+11 enemy, against 1 : 1.22, 1 : 11.88 and 1 : 18.50 in the three archived
+pre-patch sessions (`docs/combat-pacing.md` §4b, `tools/battle_ratio.py`).
+
+**The one decision left is whether it ships**, and it is not a technical one --
+see the open item immediately below.
 
 **Confirmed from the PC-98 disc later the same day, and now quantified.**  The
 1997 PC-9801 release is the same game (1,041 of 1,548 data files byte-identical)
@@ -146,6 +156,30 @@ agility is a **weaker** lever than it looks: the step is `2*(1+rand%speed)+5`
 against a reload of 255, so mean time to act is `255/(speed+6)` and a 6x stat
 difference buys only about 3x the turn rate. The cadence (which state, and the
 mod-4 divisor at `ds:0x0047B7D4`) moves it much harder than the stat tables do.
+
+### Does the restored turn gauge go in the release build?
+
+**Not decided, and it is the player's call, not the tooling's.** The change is
+four bytes at `0x0043F52F` restoring the 1997 arithmetic; it is currently in
+`dds_dev_atb.exe` only.
+
+Both readings of "faithful" are defensible, which is exactly why this is not a
+technical decision:
+
+* **Ship it.** The thing being restored is the *original release's own* formula.
+  A player on this patch would experience the pacing the 1997 game had, which is
+  what a translation is usually trying to deliver.
+* **Do not ship it.** What this project translates is the **Windows port**, and
+  the port's authors doubled that step deliberately. Changing it makes the patch
+  a rebalance as well as a translation, which is a different promise.
+
+**One practical trap if it does ship.** `dds_dev_atb.exe` holds the popup dwell
+at the stock **15** ticks, so the gauge was the only variable under test. The
+release runs **60** so English is readable. A release build would therefore be
+*ATB-restored + dwell 60* -- a combination **nobody has played yet**. The longer
+dwell holds the command UI shut four times longer (`combat-pacing.md` §2), so it
+eats into exactly what the gauge change gave back. Build it and play it before
+assuming the measured result carries over.
 
 #### Findings from the closed combat thread, kept for reference
 

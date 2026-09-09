@@ -214,8 +214,17 @@ patch** with no relocation and no cave:
 It touches nothing else -- same reload, same distribution, same everything --
 and it narrows the fast-vs-slow gap back to what the 1997 release had.
 
-**It is not in the release build**, and should not be: combat speed is a
-gameplay decision, not a translation one. It is in one dev build, for testing:
+**Play-tested 2026-09-08 and it does what the arithmetic said it would.**
+Measured 80 party actions against 11 enemy, where the three archived pre-patch
+sessions ran 1 : 1.22, 1 : 11.88 and 1 : 18.50 (`combat-pacing.md` §4b). The
+player's verdict, having played both releases: *"this patch is gold. it honestly
+gives parity between the two versions."*
+
+That is what the numbers predicted. Our 60 Hz sits within 6% of the PC-98's
+hardware-locked 56.4, and with the step restored both formulas are identical, so
+parity is the expected outcome rather than a happy accident.
+
+**It is still not in the release build.** It lives in one dev build:
 
     python -m giten exe dev-atb     ->  build/exe/dds_dev_atb.exe
 
