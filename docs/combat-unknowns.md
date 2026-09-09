@@ -91,9 +91,30 @@ lookup, partly known), `0x0042ABE0` (33, combatant by id, partly known),
 Blade went 22 -> 6 across one debuff in a logged fight. We have never read the
 code that produces a number.
 
-**Where to start:** work back from whatever writes a combatant's HP, or forward
-from the `m/MS00DD` rec `0x4C` damage-line emission, which is the most-executed
-record in every battle trace.
+**Started 2026-09-09, not finished.** What is established so far:
+
+* **The damage number is printed by the script, not the exe.** Only 20 sites
+  call the record-runner `0x00439330` and none of them emits the damage line, so
+  `m/MS00DD` runs as an ordinary script and the number arrives as a runtime
+  substitution.
+* `m/MS00DD` rec `0x4C` opens with two runtime-print tokens before any text:
+
+        0x0000   1F E8 03 08 4B 00 01
+        0x0007   1F 02 03 08
+        0x000B   03 0D                  {03:0D} -- the "HP" pool fragment
+        0x000D   のダメージを            (text)
+
+  so the number comes out of the `1F E8` or `1F 02` token.
+* The `1Fxx` family is "print a runtime value" -- `giten/vmops.py` documents
+  `1F01` as *print a runtime string (a name, a number, ...)*, selector byte plus
+  an expression.
+
+**The next step, teed up:** resolve the handler for dispatch index `0x102`
+(`1F 02`; `ESCAPE[0x1F] = 0x100` in `vmops.py`) and read which global it prints.
+`exec_token` at `0x00439020` dispatches opcodes through `0x0042FF50`; expressions
+evaluate at `0x00436B00` via the byte map at `0x00437380` into the jump table at
+`0x00437288`. **Whatever writes that global is the tail of the damage formula**,
+and everything upstream of it is arithmetic over fields already mapped.
 
 ### 4. To-hit, graze, and "could not damage"
 
@@ -102,7 +123,9 @@ grazed" (`MS00DD` r0C), "It could not damage" (r0B), plus "dodged it" (r0A) --
 and the code that chooses between them has never been read. Whether a graze is a
 hit-quality roll or a damage result floored near zero is **inference**.
 
-Pairs naturally with item 3.
+Pairs naturally with item 3 -- and the same entry point serves both, since
+"could not damage" is what the damage routine emits when its result lands at
+zero. Do them as one pass.
 
 ### 5. The enemy AI
 
