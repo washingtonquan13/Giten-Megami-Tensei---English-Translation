@@ -346,7 +346,26 @@ entirely and lets the loop free-run as the original did. If the party suddenly
 gets its turns, the 60 Hz gate is the cause and `pace()` is the thing to change,
 not any divider. Rebuilt and installed 2026-09-08.
 
-##### Counting turns from the glyph log is not a reliable instrument
+##### SOLVED: count the announcement span, not the rendered prose
+
+`tools/battle_ratio.py`.  `m/MS00DE.BIN` is the attack-announcement file, and
+several of its records carry **both directions of the same attack as different
+alternates within the record** -- `r29[1]` "slashed at the enemy!" against
+`r29[2]` "came slashing at you!", and the same pairing on r02/r05/r06/r0C/r2A/
+r2B/r23/r26/r27.  The direction is a span index the engine picks before a glyph
+is drawn, and the trace records which span ran.  No prose is parsed, and editing
+the English cannot move the number.
+
+Ambiguous alternates (`r04[5]` "'s {04:02} opened fire", `r03[5]` "'s attack" --
+both sides use them) are reported as *unattributed* rather than folded into
+either side.  Open: whether r04's gun alternates split by side through some
+other tell.
+
+**The trace is truncated on every launch.**  Copy it out before relaunching, and
+archive anything worth keeping in `traces/`.  The 2026-09-08 20:02 ATB session
+was lost this way while being analysed.
+
+##### Why the glyph log was not a reliable instrument
 
 Three attempts at the same question on the same data gave 1 : 1.38, 1 : 1.75 and
 1 : 6.56. The reasons, all found the hard way:
