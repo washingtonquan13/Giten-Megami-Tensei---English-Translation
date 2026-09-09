@@ -115,6 +115,7 @@ SYMBOLS = {
     "RECID": 0x4911B2,              # current record id (u16)
     "CAPFLAG": 0x481224,            # text-capture mode (u16, non-zero = on)
     "CAPBUF": 0x481120,             # the 256-byte capture buffer
+    "STATE": 0x47BB70,              # the top-level engine state (u16)
     "HANDLE_TABLE": 0x47605C,       # [HANDLE_TABLE + handle*8] = buffer base (0x4045F0)
     "DRAWGLYPH": 0x451230,          # the engine's own per-character blitter
     "DRAWSTR1": 0x451650,         # draw-string variant 1
@@ -128,12 +129,12 @@ SYMBOLS = {
 #: IMAGE_SCN_CNT_CODE | CNT_INITIALIZED_DATA | MEM_EXECUTE | MEM_READ | MEM_WRITE
 TRC_CHARACTERISTICS = 0xE0000060
 
-#: file, rec, pc, ch, r, capflag, caplen, idx_off, idx_len, pc0, flags
-#: (v2; behind an 8-byte "GTRC" header.  giten/trace/core.py decodes v1 too.)
-RECORD = struct.Struct("<HHHHhBBHHHH")
+#: file, rec, pc, ch, r, capflag, caplen, idx_off, idx_len, pc0, flags, state
+#: (v3; behind an 8-byte "GTRC" header.  giten/trace/core.py decodes v1 and v2.)
+RECORD = struct.Struct("<HHHHhBBHHHHH")
 RECORD_SIZE = RECORD.size
 TRACE_MAGIC = b"GTRC"
-TRACE_VERSION = 2
+TRACE_VERSION = 3
 TRACE_HEADER_SIZE = 8
 
 

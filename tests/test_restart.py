@@ -517,11 +517,19 @@ def test_tracer_snapshots_the_record_base_before_the_call():
     assert blob[3:6] == b"\x83\xEC\x0C", "no `sub esp, 12` for the locals"
     assert b"\xC9\xC3" in blob, "no `leave; ret` to match the frame"
 
-    # the record is 20 bytes behind an 8-byte header, and both are written
-    assert tracer.RECORD.size == 20
+    # the record is 22 bytes behind an 8-byte header, and both are written
+    assert tracer.RECORD.size == 22
     assert tracer.TRACE_MAGIC + struct.pack("<HH", tracer.TRACE_VERSION,
                                             tracer.RECORD.size) in blob
-    assert b"\x6A\x14" in blob, "no `push 20` for the record WriteFile"
+    assert b"\x6A\x16" in blob, "no `push 22` for the record WriteFile"
+
+    # v3's state word is read AFTER the call, on purpose.  It costs no
+    # stack slot, and a token that changes state is then logged with the
+    # state it left behind -- the same one-record lag `pc` already has.
+    # Pinned so the decision has to be re-made rather than drifted into.
+    state = b"\x66\xA1" + struct.pack("<I", tracer.SYMBOLS["STATE"])
+    assert state in blob, "the engine state is never read"
+    assert blob.find(state) > call, "STATE is read before the call, not after"
     assert b"\x6A\x08" in blob, "no `push 8` for the header WriteFile"
 
 

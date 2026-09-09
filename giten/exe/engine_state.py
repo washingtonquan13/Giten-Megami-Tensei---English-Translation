@@ -38,6 +38,7 @@ ENGINE_STATE = {
     0x004911B0: (VALUE, "current script file id (u16)", "hook.c, trace.S"),
     0x004911B2: (VALUE, "current record id (u16)", "trace.S"),
     0x00481224: (VALUE, "text-capture flag (u16)", "trace.S"),
+    0x0047BB70: (VALUE, "top-level engine state (u16)", "trace.S"),
     0x00481120: (VALUE, "256-byte capture buffer", "trace.S"),
     0x0047605C: (INDEX, "handle table; [base + handle*8] = script buffer",
                  "hook.c, trace.S"),

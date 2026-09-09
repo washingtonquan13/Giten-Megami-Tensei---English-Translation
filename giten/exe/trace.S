@@ -1,10 +1,10 @@
 # Interpreter trace hook for dds.exe (dev builds only).
 #
 # Every call to exec_token (0x439020) is redirected here.  We snapshot the
-# interpreter state, call the real function, then append one 20-byte record to
+# interpreter state, call the real function, then append one 22-byte record to
 # ddswin\trace.bin, behind an 8-byte file header:
 #
-#     header  "GTRC" u16 version=2 u16 record_size=20   (written once, at create)
+#     header  "GTRC" u16 version=3 u16 record_size=22   (written once, at create)
 #
 #     u16 file      ds:FILEID      script file id (0x7F00-07 = pools)   [before]
 #     u16 rec       ds:RECID       record id                            [before]
@@ -18,6 +18,10 @@
 #     u16 pc0       [ds:CTX]+0x0E  program counter BEFORE the token     [before]
 #     u16 flags     bit0: CTX was null before the call
 #                   bit1: CTX was null after it
+#     u16 state     ds:STATE       top-level engine state                [after]
+#                   Read at write time, like capflag, so a token that changes
+#                   state is logged with the state it left behind.  Good enough
+#                   for "which state is a battle in" and it costs no stack slot.
 #
 # WHY THE SNAPSHOT IS TAKEN BEFORE THE CALL
 #
@@ -147,7 +151,7 @@ _start:
         lea     eax, [esi + written]
         push    eax
         push    8
-        lea     eax, [esi + hdr]            # "GTRC" 2 20
+        lea     eax, [esi + hdr]            # "GTRC" 3 22
         push    eax
         push    dword ptr [esi + hfile]
         call    dword ptr [WRITEFILE_IAT]
@@ -183,11 +187,13 @@ _start:
         cmp     ecx, 255
         jb      3b
 4:      mov     byte ptr [edi+11], cl
+        mov     ax, word ptr [STATE]        # ds:0x0047BB70, top-level engine
+        mov     word ptr [edi+20], ax       # state.  Fixed .data, cannot fault.
 
         push    0                           # lpOverlapped
         lea     eax, [esi + written]
         push    eax
-        push    20
+        push    22
         push    edi                         # lpBuffer = rec
         push    dword ptr [esi + hfile]
         call    dword ptr [WRITEFILE_IAT]
@@ -200,8 +206,8 @@ _start:
         .balign 4
 hfile:  .long   0
 written: .long  0
-rec:    .space  20
+rec:    .space  22
 hdr:    .ascii  "GTRC"
-        .short  2                           # format version
-        .short  20                          # bytes per record
+        .short  3                           # format version
+        .short  22                          # bytes per record
 fname:  .asciz  "trace.bin"

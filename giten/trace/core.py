@@ -64,8 +64,34 @@ RECORD_V1 = struct.Struct("<HHHHhBBHH")
 #: takes file/rec/pc0/idx from a snapshot made before the call, when the context
 #: is guaranteed live.  Behind an 8-byte header so both formats decode.
 RECORD_V2 = struct.Struct("<HHHHhBBHHHH")
+
+#: v3 appends ``state`` -- ``ds:0x0047BB70``, the top-level engine state, read at
+#: record-write time (so *after* the token, like capflag).  Added 2026-09-09 to
+#: answer which state a battle runs in; the static answer turned out to be
+#: state 16 sub-state 2, and this makes the question checkable from any session.
+RECORD_V3 = struct.Struct("<HHHHhBBHHHHH")
 MAGIC = b"GTRC"
 HEADER = struct.Struct("<4sHH")
+BY_VERSION = {2: RECORD_V2, 3: RECORD_V3}
+
+
+def _pick(data, path):
+    """``(record struct, body)`` for a trace of any version this decodes."""
+    if data[:4] != MAGIC:
+        return RECORD_V1, data                    # pre-2026-09-06, headerless
+    _, ver, size = HEADER.unpack_from(data, 0)
+    rs = BY_VERSION.get(ver)
+    if rs is None or size != rs.size:
+        raise ValueError("%s: unknown trace format v%d, %d-byte records"
+                         % (path, ver, size))
+    return rs, data[HEADER.size:]
+
+
+def _fields(rs, f):
+    """``(pc0, flags, state)`` from one unpacked record, whatever its version."""
+    if rs is RECORD_V1:
+        return 0, 0, -1
+    return f[9], f[10], (f[11] if rs is RECORD_V3 else -1)
 
 #: ``flags``
 CTX_NULL_BEFORE = 1
@@ -107,6 +133,8 @@ class Event:
     pc0: int = 0            # PC before the token ran, i.e. where it starts (v2)
     flags: int = 0          # CTX_NULL_BEFORE | CTX_NULL_AFTER, plus the
                             # call-site byte in bits 8-15 (v2, since 2026-09-07)
+    state: int = -1         # ds:0x0047BB70, the top-level engine state (v3).
+                            # -1 on any trace older than v3.
 
     rel: str = ""           # "m/MS0017.BIN"
     span: "int | None" = None
@@ -272,21 +300,14 @@ def decode(trace_path: str, build_dir: "str | None" = None) -> "list[Event]":
     if os.path.exists(ovl):
         with open(ovl, "rb") as fh:
             entries = overlay.parse(fh.read())
-    if data[:4] == MAGIC:
-        _, ver, size = HEADER.unpack_from(data, 0)
-        if ver != 2 or size != RECORD_V2.size:
-            raise ValueError("%s: unknown trace format v%d, %d-byte records"
-                             % (trace_path, ver, size))
-        rs, body = RECORD_V2, data[HEADER.size:]
-    else:
-        rs, body = RECORD_V1, data          # pre-2026-09-06, headerless
+    rs, body = _pick(data, trace_path)
     images = {}
     out = []
     for n in range(len(body) // rs.size):
         f = rs.unpack_from(body, n * rs.size)
-        pc0, flags = (f[9], f[10]) if rs is RECORD_V2 else (0, 0)
+        pc0, flags, state = _fields(rs, f)
         ev = Event(n, f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8],
-                   pc0, flags, rel=_rel_of(f[0]))
+                   pc0, flags, state, rel=_rel_of(f[0]))
         if ev.rel not in images:
             p = os.path.join(build_dir, *ev.rel.split("/"))
             images[ev.rel] = _Image(ev.rel, open(p, "rb").read(), entries) if os.path.exists(p) else None
@@ -686,14 +707,7 @@ def verify(trace_path: str, build_dir: "str | None" = None,
         with open(ovl, "rb") as fh:
             entries = overlay.parse(fh.read())
 
-    if data[:4] == MAGIC:
-        _, ver, size = HEADER.unpack_from(data, 0)
-        if ver != 2 or size != RECORD_V2.size:
-            raise ValueError("%s: unknown trace format v%d, %d-byte records"
-                             % (trace_path, ver, size))
-        rs, body = RECORD_V2, data[HEADER.size:]
-    else:
-        rs, body = RECORD_V1, data
+    rs, body = _pick(data, trace_path)
 
     stats = {"records": 0, "served": 0, "from the file": 0, "unverified": 0,
              "in a name print": 0, "out of bounds": 0, "label contradicted": 0,
@@ -702,9 +716,9 @@ def verify(trace_path: str, build_dir: "str | None" = None,
     findings, images, events, bounds = [], {}, [], {}
     for n in range(len(body) // rs.size):
         f = rs.unpack_from(body, n * rs.size)
-        pc0, flags = (f[9], f[10]) if rs is RECORD_V2 else (0, 0)
+        pc0, flags, state = _fields(rs, f)
         ev = Event(n, f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8],
-                   pc0, flags, rel=_rel_of(f[0]))
+                   pc0, flags, state, rel=_rel_of(f[0]))
         events.append(ev)
         if ev.rel not in images:
             p = os.path.join(build_dir, *ev.rel.split("/"))
@@ -888,11 +902,7 @@ def files_seen(trace_path: str, build_dir: "str | None" = None):
     build_dir = build_dir or paths.game_root()
     with open(trace_path, "rb") as fh:
         data = fh.read()
-    if data[:4] == MAGIC:
-        _, ver, size = HEADER.unpack_from(data, 0)
-        rs, body = RECORD_V2, data[HEADER.size:]
-    else:
-        rs, body = RECORD_V1, data
+    rs, body = _pick(data, trace_path)
     counts = collections.Counter()
     for n in range(len(body) // rs.size):
         counts[rs.unpack_from(body, n * rs.size)[0]] += 1
