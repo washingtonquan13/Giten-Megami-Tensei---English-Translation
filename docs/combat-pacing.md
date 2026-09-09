@@ -201,9 +201,36 @@ factor") was a guess that happened to land on the right conclusion.
 
 ---
 
-## 4. Would the PC-98 version illuminate this?
+## 4. The PC-98 release answers it: the port doubled the step
 
-Yes, and now for a specific reason rather than a vague one.
+**Done, same day.** Full write-up: [`pc98-comparison.md`](pc98-comparison.md).
+
+The 1997 PC-9801 release turns out to be the same game -- 1,041 of its 1,548
+data files are byte-identical to the Windows ones -- and its combat code ported
+across almost literally, which makes the ATB tick findable and the diff exact:
+
+    PC-98   0x0321AA:   add ax, 5             ; step =     1 + rand%speed  + 5
+    Windows 0x0043F510: lea ecx,[eax+eax*1+5] ; step = 2*( 1 + rand%speed) + 5
+
+Everything else is verified identical -- reload 255, the party layout (gauge
+`unit+0x17F`, ready flag `+0x17E`, speed `+0x5E`, six slots), the enemy layout
+shifted 4 bytes by the 32-bit port, the master gate, and the arguments to the
+random helper. **The port's entire change to the ATB arithmetic is the `x2`.**
+
+It does two things: everything acts 1.3x-1.8x more often per tick, and the gap
+between fast and slow *widens* (relative rate `(s1+11)/(s2+11)` becomes
+`(s1+6)/(s2+6)`), which favours whichever side is faster -- the demons, early.
+That is a quantitative account of the player's own PC-98 observation.
+
+And it compounds with the frame rate, because the gauge advances once per loop
+iteration and this build pins the loop at 60 Hz where a 1997 PC-9821 could not
+have come close.
+
+A faithful restoration is four bytes at `0x0043F52F`, same length, no cave:
+`8D 4C 00 05` -> `8D 48 05 90`. **Not applied** -- it is a gameplay change.
+
+The rest of this section is the reasoning that led there, kept because it is
+the right shape for the next question of this kind.
 
 The gauges advance **per frame of a state handler**, so:
 
@@ -238,7 +265,10 @@ column can be compared directly, which is a cheap and decisive experiment.
 ## 5. What is still not known
 
 * **Which state a battle runs in** (11, 16 or 34). Decides the enemy divisor.
-  Highest value, cheapest to answer.
+  Highest value, cheapest to answer. The PC-98 side of the same question is
+  blocked by Microsoft overlay thunks -- see `pc98-comparison.md` §4.
+* **The PC-98 main-loop rate.** The last number needed to say how much faster
+  this build is than the original. Measurable from footage; do not guess it.
 * **Whether the gauges advance while a message window is up.** The popup
   countdown is driven from the main loop (`0x00401980` -> `0x00402740`), not
   from a state, so if the current state stays at 11/16/34 during a message then

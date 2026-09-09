@@ -110,6 +110,18 @@ game: PC-98 enemies act far less often and several party members act before the
 enemy does. **That difference is the port's, not this patch's.** Nothing here
 caused it and nothing here should try to "fix" it.
 
+**Confirmed from the PC-98 disc later the same day, and now quantified.**  The
+1997 PC-9801 release is the same game (1,041 of 1,548 data files byte-identical)
+and its combat code ported across almost literally.  The port's entire change to
+the turn gauge is one instruction: `add ax,5` became `lea ecx,[eax+eax*1+5]`, so
+the ATB step doubled.  Everything acts 1.3x-1.8x more often per tick and the
+fast-vs-slow gap widens, favouring the demons.  A faithful restoration is four
+bytes at `0x0043F52F` (`8D 4C 00 05` -> `8D 48 05 90`), **not applied** -- it is
+a gameplay change and belongs to the player, not the translation.  The port also
+retuned 73 of the 309 skill records.  Full write-up:
+[`docs/pc98-comparison.md`](pc98-comparison.md); reproduce with
+`tools/pc98_diff.py`.
+
 Do not reopen this from the symptom. What the investigation did establish, and
 what is worth keeping:
 
