@@ -210,3 +210,94 @@ def test_the_retracted_script_divider_gates_a_function_that_does_nothing():
                         if t.idx == 0x200 + 0xCB:      # 1E CB
                             seen += 1
     assert seen == 0, "opcode 1ECB now occurs %d time(s); re-check the retraction" % seen
+
+
+# ---------------------------------------------------------------------------
+# The turn gauge.
+#
+# 0x0043F510 is one tick of one combatant's ATB wait counter, and it is the
+# game's turn order -- there is no initiative sort.  The 1997 PC-9801 release
+# has the same routine with `add ax,5` where this one has
+# `lea ecx,[eax+eax*1+5]`, so the port doubled the step and nothing else.
+# `atb_pc98` puts it back, in the same four bytes.  It is a gameplay change and
+# only the comparison build carries it.
+# ---------------------------------------------------------------------------
+
+def test_the_step_is_the_instruction_the_pc98_diff_identified():
+    """Pin it against the untouched original, and pin the call above it too --
+    the `x2` only means what we claim if the value being doubled really is the
+    `1 + rand()%speed` the random helper returns."""
+    import struct
+    from giten.exe.pe import PE
+
+    with open(patch.ORG, "rb") as fh:
+        img = fh.read()
+    pe = PE(img)
+    off = pe.va2off(timing.ATB_STEP_SITE)
+    assert img[off:off + 4] == timing.ATB_STEP_DOUBLED
+
+    # ... immediately after `call 0x0040B960`, reached with (1, speed, 0)
+    call = off - 5
+    assert img[call] == 0xE8, "no call above the step"
+    rel = struct.unpack_from("<i", img, call + 1)[0]
+    assert (timing.ATB_STEP_SITE - 5 + 5 + rel) & 0xFFFFFFFF == 0x0040B960
+    # push 0 / push eax (the speed field) / push 1 -- cdecl pushes right to
+    # left, so this is f(1, speed, 0) = 1 + rand()%speed, the value doubled
+    assert img[call - 5:call] == bytes.fromhex("6a00506a01"), \
+        img[call - 5:call].hex(" ")
+
+    # eax is dead right after, which is what makes dropping an addend safe
+    assert img[off + 4:off + 8] == bytes.fromhex("668b4601"), "mov ax,[esi+1]"
+
+
+def test_restoring_it_changes_exactly_four_bytes():
+    img = _release()
+    out = timing.atb_pc98(img)
+    assert len(out) == len(img)
+    pe = PE(img, "t")
+    off = pe.va2off(timing.ATB_STEP_SITE)
+    assert set(i for i in range(len(img)) if img[i] != out[i]) <= set(range(off, off + 4))
+    assert out[off:off + 4] == timing.ATB_STEP_PC98
+    assert len(timing.ATB_STEP_PC98) == len(timing.ATB_STEP_DOUBLED) == 4
+
+
+def test_it_refuses_an_image_that_is_not_the_port_s():
+    """Including one that already carries it -- applying twice must not be a
+    silent no-op that leaves someone thinking a build was halved when it was."""
+    img = _release()
+    once = timing.atb_pc98(img)
+    for bad in (once,):
+        try:
+            timing.atb_pc98(bad)
+        except RuntimeError as exc:
+            assert "is not the port's" in str(exc), exc
+        else:
+            raise AssertionError("a already-patched image was accepted")
+
+
+def test_only_the_comparison_build_carries_it():
+    """And it keeps the stock popup dwell, so the gauge is the only variable.
+
+    The release and plain dev builds must be unaffected: combat speed is a
+    gameplay decision and does not belong in the patch people play.
+    """
+    import struct
+    from giten.exe import tracer
+    from giten.exe.pe import PE
+
+    plain = tracer.build_image(False)
+    pe = PE(plain, "rel")
+    off = pe.va2off(timing.ATB_STEP_SITE)
+    pop = pe.va2off(timing.POPUP_DEFAULT_SITE)
+    assert plain[off:off + 4] == timing.ATB_STEP_DOUBLED, "the release halved the gauge"
+    assert struct.unpack_from("<I", plain, pop + 1)[0] == timing.POPUP_TICKS
+
+    atb = tracer.build_image(True, atb_pc98=True, popup_ticks=15)
+    assert atb[off:off + 4] == timing.ATB_STEP_PC98
+    assert struct.unpack_from("<I", atb, pop + 1)[0] == 15, "the dwell is not stock"
+
+    # the two builds it is meant to be compared against differ only in these
+    dev = tracer.build_image(True)
+    assert len(dev) == len(atb)
+    diff = set(i for i in range(len(dev)) if dev[i] != atb[i])
+    assert diff <= set(range(off, off + 4)) | {pop + 1}, sorted(diff)

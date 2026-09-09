@@ -268,7 +268,8 @@ def _redirect(image: bytearray, sites, old_target: int, new_target: int) -> None
 
 def build_image(trace: bool, english: bool = True, pace: bool = True,
                 hz: int = DEFAULT_HZ, script_div: int = 1,
-                battle_div: int = 1) -> bytes:
+                battle_div: int = 1, atb_pc98: bool = False,
+                popup_ticks: "int | None" = None) -> bytes:
     """Release image (locale patches) + the overlay hook, + the tracer if ``trace``.
 
     ``english=False`` skips the four data-table patches.  They are not optional
@@ -299,7 +300,13 @@ def build_image(trace: bool, english: bool = True, pace: bool = True,
         image = bytearray(menus.apply(bytes(image)))     # English menu strings (.men)
         image = bytearray(database.apply(bytes(image)))  # the item database, uncapped (.idb)
         image = bytearray(mapnames.apply(bytes(image)))  # English location names (.mnm)
-    image = bytearray(timing.apply(bytes(image)))    # tick-counted popup duration
+    # tick-counted popup duration; `popup_ticks` lets a comparison build keep
+    # the stock 15 so the message lockout is not a second variable
+    image = bytearray(timing.apply(bytes(image),
+                                   timing.POPUP_TICKS if popup_ticks is None
+                                   else popup_ticks))
+    if atb_pc98:
+        image = bytearray(timing.atb_pc98(bytes(image)))   # the PC-98 turn-gauge step
     if trace:
         pe = PE(bytes(image), "dds_ovl")
         trc_va = pe.imagebase + pe.sizeimage
@@ -320,12 +327,13 @@ def build_image(trace: bool, english: bool = True, pace: bool = True,
 
 
 def _write(out_dir, name, trace, english=True, pace=True, hz=DEFAULT_HZ,
-           script_div=1, battle_div=1):
+           script_div=1, battle_div=1, atb_pc98=False, popup_ticks=None):
     out_dir = out_dir or os.path.join(paths.BUILD_DIR, "exe")
     os.makedirs(out_dir, exist_ok=True)
     dst = os.path.join(out_dir, name)
     with open(dst, "wb") as fh:
-        fh.write(build_image(trace, english, pace, hz, script_div, battle_div))
+        fh.write(build_image(trace, english, pace, hz, script_div, battle_div,
+                             atb_pc98, popup_ticks))
     return dst
 
 
@@ -379,6 +387,28 @@ def build_dev_jp(out_dir: "str | None" = None) -> str:
     comparable with what the tokenizer produces from those same bytes.
     """
     return _write(out_dir, "dds_dev_jp.exe", True, english=False)
+
+
+def build_dev_atb(out_dir: "str | None" = None) -> str:
+    """``dds_dev_atb.exe``: the tracer, 60 Hz, the PC-98 turn-gauge step.
+
+    The A/B partner for ``dds_dev.exe``.  Two differences from it, both
+    deliberate:
+
+    * the turn gauge steps by ``1 + rand()%speed + 5`` instead of the port's
+      ``2*(1 + rand()%speed) + 5`` -- the 1997 release's own arithmetic, restored
+      in four bytes at ``0x0043F52F`` (``giten/exe/timing.atb_pc98``);
+    * **the popup dwell stays at the stock 15 ticks**, not the 60 the release
+      raises it to.  An open message window hard-disables the command UI
+      (``docs/combat-pacing.md`` §2), so our longer dwell is itself a pacing
+      change; leaving it at 15 keeps the gauge the only variable under test.
+      English battle messages will flash past in this build.  That is the cost
+      of a clean comparison, and it is why this is a dev exe and not a release.
+
+    Everything else -- the English tables, the tracer, the 60 Hz loop -- matches
+    ``dds_dev.exe``, so a route played on both is comparable token for token.
+    """
+    return _write(out_dir, "dds_dev_atb.exe", True, atb_pc98=True, popup_ticks=15)
 
 
 def build_dev_hz(hz: int, out_dir: "str | None" = None) -> str:

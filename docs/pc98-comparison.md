@@ -185,12 +185,25 @@ patch** with no relocation and no cave:
     new:  8D 48 05 90      lea ecx,[eax+5] ; nop
 
 It touches nothing else -- same reload, same distribution, same everything --
-and it narrows the fast-vs-slow gap back to what the 1997 release had. It is
-**not applied**; it is a deliberate gameplay change and belongs to the person
-playing the game, not to the translation.
+and it narrows the fast-vs-slow gap back to what the 1997 release had.
+
+**It is not in the release build**, and should not be: combat speed is a
+gameplay decision, not a translation one. It is in one dev build, for testing:
+
+    python -m giten exe dev-atb     ->  build/exe/dds_dev_atb.exe
+
+`dds_dev_atb.exe` differs from `dds_dev.exe` in **exactly four bytes** -- three
+in the gauge step and one in the popup default, which it holds at the **stock
+15 ticks** rather than the 60 the release raises it to. That second point is
+deliberate: an open message window hard-disables the command UI, so our longer
+dwell is itself a pacing change, and leaving it stock keeps the gauge the only
+variable. English battle messages flash past in that build; that is the cost of
+a clean comparison. Both builds carry the tracer, so a route played on each can
+be diffed token for token.
 
 The blunter alternative is lowering `pace()` below 60 Hz, which slows animation
-and everything else along with combat.
+and everything else along with combat -- measured and rejected already
+(`docs/todo.md`: 30 and 40 Hz make walking unbearable).
 
 ---
 

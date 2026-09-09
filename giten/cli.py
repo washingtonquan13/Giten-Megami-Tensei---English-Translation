@@ -122,7 +122,7 @@ def make_parser():
 
     p = sub.add_parser("exe", help="build patched exes from docs/exe-patches.md")
     p.add_argument("which", choices=("base", "release", "dev", "dev-jp",
-                                    "nopace", "dev-nopace"))
+                                    "nopace", "dev-nopace", "dev-atb"))
     p.add_argument("--out", default=None, help="default build/exe/")
 
     p = sub.add_parser("trace", help="decode / diff interpreter traces from the dev exe")

@@ -49,6 +49,52 @@ POPUP_TICKS = 60
 TICKS_PER_SECOND = 60
 
 
+# --- the turn gauge ---------------------------------------------------------
+#
+# Every combatant carries a u16 wait counter -- party at ``unit+0x17F``, enemy
+# at ``enemy+0x199`` -- reloaded to 255 when its owner acts and decremented once
+# per tick by ``0x0043F510``.  That is the game's turn order: there is no
+# initiative sort (``docs/combat-pacing.md``).
+#
+# The 1997 PC-9801 release has the same routine, at file offset ``0x0321AA`` of
+# ``DDS98.EXE``, and it differs by **one instruction**::
+#
+#     PC-98    add ax, 5              ; step =    1 + rand()%speed  + 5
+#     Windows  lea ecx,[eax+eax*1+5]  ; step = 2*(1 + rand()%speed) + 5
+#
+# Everything else is verified identical -- the reload, both struct layouts, the
+# master gate, and the arguments reaching the random helper.  So the port's
+# whole edit to the turn gauge is a factor of two, and undoing it restores the
+# original's arithmetic exactly (``docs/pc98-comparison.md`` §3).
+#
+# It is deliberately **not** in the release build.  Combat speed is a gameplay
+# decision, not a translation one; this exists so the two can be compared.
+
+#: ``lea ecx,[eax+eax*1+5]`` -- the doubled step the Windows port introduced
+ATB_STEP_SITE = 0x0043F52F
+ATB_STEP_DOUBLED = bytes.fromhex("8d4c0005")
+#: ``lea ecx,[eax+5] ; nop`` -- the PC-98 arithmetic, same four bytes
+ATB_STEP_PC98 = bytes.fromhex("8d480590")
+
+
+def atb_pc98(image: bytes) -> bytes:
+    """Restore the PC-98 turn-gauge step: halve it, in place, four bytes.
+
+    ``eax`` is dead immediately after (``mov ax,[esi+1]`` overwrites it and only
+    ``cx`` is compared), so dropping the second addend is a safe drop-in and the
+    trailing ``nop`` keeps every following address where it was.
+    """
+    pe = PE(image, "timing")
+    off = pe.va2off(ATB_STEP_SITE)
+    found = image[off:off + 4]
+    if found != ATB_STEP_DOUBLED:
+        raise RuntimeError("timing: the turn-gauge step at 0x%08X is not the "
+                           "port's (%s)" % (ATB_STEP_SITE, found.hex(" ")))
+    out = bytearray(image)
+    out[off:off + 4] = ATB_STEP_PC98
+    return bytes(out)
+
+
 def seconds(ticks: int) -> float:
     return ticks / float(TICKS_PER_SECOND)
 
