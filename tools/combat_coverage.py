@@ -43,6 +43,11 @@ REGIONS = (
     ("enemy AI / actor", 0x0040DC00, 0x00410000),
     ("unit state / status", 0x0043E000, 0x00440000),
     ("battle command UI", 0x0041D000, 0x0041E000),
+    # Added 2026-09-09 with combat-damage.md: the attack / damage / accuracy
+    # routines live here and were not being measured at all, so every earlier
+    # figure in combat-unknowns.md silently excluded the arithmetic centre of
+    # combat.  Counting it drops the total, which is the honest direction.
+    ("attack / damage", 0x00406000, 0x0040C000),
 )
 
 
