@@ -103,6 +103,27 @@ decidable — a person wrote it, or a promotion did — is the one drawn.
 
 ## Open
 
+### Release / distribution -- planned, nothing built
+
+[`docs/distribution.md`](distribution.md), written 2026-09-09. Design and
+measurements only; every claim is marked measured or conjecture.
+
+The short version: **not a 1.0.** `tables/` is 41.0% translated (18,497 of
+45,083 rows) while the installed build is 97.7% -- the difference is 25,527 rows
+and 953,674 characters promoted from v0.05, about 61% of the shipped text, which
+the v0.05 policy says is never a build input. `giten check` reports 1,479
+errors. 1.0 means every shipped line is ours or `reviewed`, zero errors, and the
+four known visible defects closed. Until then it is a **0.9 public beta**, which
+is worth shipping.
+
+**The one task that gates two sections of that plan: get a clean retail install
+and hash it.** Our `original/ddswin` has `dds_org.exe` only because someone ran
+the XP tool -- it is that tool's backup -- so a clean copy almost certainly has
+`dds.exe` = `9b810530...` and no `dds_org.exe`, and a patcher that opens
+`dds_org.exe` by name would fail on exactly the users it needs to serve. That
+inference has never been checked against an actual clean install.
+
+
 ### ✅ CLOSED: combat difficulty is the Windows port's own balance -- and it is now fixed
 
 Settled 2026-09-08 by the person playing it, against PC-98 footage of the same
