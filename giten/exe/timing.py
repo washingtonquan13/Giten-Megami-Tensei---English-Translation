@@ -27,9 +27,12 @@ so a caller passing a positive count gets it, and a caller passing 0 falls back
 to the default.  The game does both: ``0x00406211`` opens its popup with
 ``push 0x3C`` (60 ticks, a second at 60 Hz) while ``0x004027E0`` passes
 ``push 0`` and lands on the 15-tick default -- 250 ms, which is why some battle
-popups linger and others blink.  Raising the default to 60 makes the second
-kind behave like the first.  Callers that ask for a specific count are
+popups linger and others blink.  Callers that ask for a specific count are
 unaffected, because the ``jge`` skips this instruction entirely.
+
+This repo raised that default to 60 for most of its life, so English had a full
+second to be read.  **It is back to 15 as of 2026-09-08**, because the dwell is
+also how long the battle command UI is refused -- see :data:`POPUP_TICKS`.
 """
 from __future__ import annotations
 
@@ -41,9 +44,17 @@ from .pe import PE
 POPUP_DEFAULT_SITE = 0x0040263A
 POPUP_DEFAULT_OLD = bytes.fromhex("b80f000000")          # mov eax, 0x0F
 
-#: What to raise it to.  60 ticks = 1.0 s at the 60 Hz the release exe paces at,
-#: matching the popups the game already opens with an explicit ``push 0x3C``.
-POPUP_TICKS = 60
+#: What the release ships.  **This was 60 and is now back to the stock 15**,
+#: decided 2026-09-08 by the person playing it, together with restoring the turn
+#: gauge below.  The two are one decision: the dwell is also the length of time
+#: the battle command UI is refused (``docs/combat-pacing.md`` §2), so 60 gave
+#: back with one hand what the gauge fix gave with the other.  Battle messages
+#: are short and the pacing matters more than the extra 750 ms of reading time.
+#:
+#: At 15 this is a **verified no-op** -- :func:`apply` still asserts the
+#: instruction is the one we reverse-engineered, then writes the value already
+#: there.  Pass a different number to change it; nothing else moves.
+POPUP_TICKS = 15
 
 #: the tick rate hook.c paces the main loop at, for the arithmetic above
 TICKS_PER_SECOND = 60
@@ -67,8 +78,17 @@ TICKS_PER_SECOND = 60
 # whole edit to the turn gauge is a factor of two, and undoing it restores the
 # original's arithmetic exactly (``docs/pc98-comparison.md`` §3).
 #
-# It is deliberately **not** in the release build.  Combat speed is a gameplay
-# decision, not a translation one; this exists so the two can be compared.
+# **This ships in the release** as of 2026-09-08.  It was dev-only first, on the
+# reasoning that combat speed is a gameplay decision rather than a translation
+# one -- and it still is a gameplay decision, which is why it was put to the
+# person playing rather than decided here.  Their verdict, having played both
+# releases: *"it's technically faithful and actually makes battles, battles (the
+# speed it ran at before was impossible to fight at)."*  Measured 80 party
+# actions to 11 enemy, against 1 : 1.22, 1 : 11.88 and 1 : 18.50 in the three
+# archived pre-patch sessions (``docs/combat-pacing.md`` §4b).
+#
+# ``build_image(atb_pc98=False)`` builds without it; ``dds_dev_x2.exe`` is that
+# build, kept so the comparison stays reproducible.
 
 #: ``lea ecx,[eax+eax*1+5]`` -- the doubled step the Windows port introduced
 ATB_STEP_SITE = 0x0043F52F

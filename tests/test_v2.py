@@ -1718,7 +1718,13 @@ EXE_PASSES = [
     # numbers are theirs, not the overlay's; only `ovl` grew on purpose.
     ("database",   65, 512,  True),
     ("mapnames",   23, 3072, True),
-    ("popup",       1, 0,    False),      # popup default 15 -> 60 -- behaviour
+    # 1 -> 0 on 2026-09-08: the release went back to the stock 15-tick dwell,
+    # so this pass now asserts the instruction and writes the value already
+    # there.  Kept in the chain because the assert is the guard.
+    ("popup",       0, 0,    False),
+    # the turn gauge, restored to the 1997 PC-9801 arithmetic.  Four bytes
+    # written, three of them different (the opcode byte is shared).
+    ("atb",         3, 0,    False),
 ]
 
 
@@ -1781,7 +1787,7 @@ def test_the_exe_is_only_as_patched_as_the_documentation_says():
 
     for tag, fn in (("names", names.apply), ("menus", menus.apply),
                     ("database", database.apply), ("mapnames", mapnames.apply),
-                    ("popup", timing.apply)):
+                    ("popup", timing.apply), ("atb", timing.atb_pc98)):
         cur = step(tag, fn(cur))
 
     assert seen == [(t, n, g) for t, n, g, _ in EXE_PASSES], seen
@@ -1791,9 +1797,9 @@ def test_the_exe_is_only_as_patched_as_the_documentation_says():
 
     # The whole point: what is *not* translation stays a short, arguable list.
     behaviour = [t for t, _, _, is_text in EXE_PASSES if not is_text]
-    assert behaviour == ["xp", "pace", "popup"], behaviour
+    assert behaviour == ["xp", "pace", "popup", "atb"], behaviour
     assert sum(n for t, n, _, is_text in EXE_PASSES
-               if not is_text and t != "xp") == 11
+               if not is_text and t != "xp") == 13
 
 
 def test_the_skill_and_map_label_databases_round_trip_byte_exactly():

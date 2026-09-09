@@ -268,7 +268,7 @@ def _redirect(image: bytearray, sites, old_target: int, new_target: int) -> None
 
 def build_image(trace: bool, english: bool = True, pace: bool = True,
                 hz: int = DEFAULT_HZ, script_div: int = 1,
-                battle_div: int = 1, atb_pc98: bool = False,
+                battle_div: int = 1, atb_pc98: bool = True,
                 popup_ticks: "int | None" = None) -> bytes:
     """Release image (locale patches) + the overlay hook, + the tracer if ``trace``.
 
@@ -327,7 +327,7 @@ def build_image(trace: bool, english: bool = True, pace: bool = True,
 
 
 def _write(out_dir, name, trace, english=True, pace=True, hz=DEFAULT_HZ,
-           script_div=1, battle_div=1, atb_pc98=False, popup_ticks=None):
+           script_div=1, battle_div=1, atb_pc98=True, popup_ticks=None):
     out_dir = out_dir or os.path.join(paths.BUILD_DIR, "exe")
     os.makedirs(out_dir, exist_ok=True)
     dst = os.path.join(out_dir, name)
@@ -389,26 +389,20 @@ def build_dev_jp(out_dir: "str | None" = None) -> str:
     return _write(out_dir, "dds_dev_jp.exe", True, english=False)
 
 
-def build_dev_atb(out_dir: "str | None" = None) -> str:
-    """``dds_dev_atb.exe``: the tracer, 60 Hz, the PC-98 turn-gauge step.
+def build_dev_x2(out_dir: "str | None" = None) -> str:
+    """``dds_dev_x2.exe``: the tracer with the Windows port's **doubled** turn step.
 
-    The A/B partner for ``dds_dev.exe``.  Two differences from it, both
-    deliberate:
+    The A/B partner for ``dds_dev.exe``, and the inverse of what this function
+    used to be.  Until 2026-09-08 the restored step was the special build and
+    this one was the default; the play-test settled it the other way, so the
+    restored step is now standard and the port's doubling is what you have to
+    ask for.
 
-    * the turn gauge steps by ``1 + rand()%speed + 5`` instead of the port's
-      ``2*(1 + rand()%speed) + 5`` -- the 1997 release's own arithmetic, restored
-      in four bytes at ``0x0043F52F`` (``giten/exe/timing.atb_pc98``);
-    * **the popup dwell stays at the stock 15 ticks**, not the 60 the release
-      raises it to.  An open message window hard-disables the command UI
-      (``docs/combat-pacing.md`` §2), so our longer dwell is itself a pacing
-      change; leaving it at 15 keeps the gauge the only variable under test.
-      English battle messages will flash past in this build.  That is the cost
-      of a clean comparison, and it is why this is a dev exe and not a release.
-
-    Everything else -- the English tables, the tracer, the 60 Hz loop -- matches
-    ``dds_dev.exe``, so a route played on both is comparable token for token.
+    Four bytes different from ``dds_dev.exe``, same size, tracer and all,
+    so a route played on each is comparable token for token --
+    ``tools/battle_ratio.py`` counts the difference.
     """
-    return _write(out_dir, "dds_dev_atb.exe", True, atb_pc98=True, popup_ticks=15)
+    return _write(out_dir, "dds_dev_x2.exe", True, atb_pc98=False)
 
 
 def build_dev_hz(hz: int, out_dir: "str | None" = None) -> str:

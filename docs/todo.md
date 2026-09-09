@@ -157,9 +157,19 @@ against a reload of 255, so mean time to act is `255/(speed+6)` and a 6x stat
 difference buys only about 3x the turn rate. The cadence (which state, and the
 mod-4 divisor at `ds:0x0047B7D4`) moves it much harder than the stat tables do.
 
-### Does the restored turn gauge go in the release build?
+### ✅ SHIPPED: the restored turn gauge is in the release build
 
-**Not decided, and it is the player's call, not the tooling's.** The change is
+**Decided 2026-09-08 by the person playing it** -- *"it's technically faithful
+and actually makes battles, battles (the speed it ran at before was impossible
+to fight at)"* -- and shipped the same day, together with putting the popup
+dwell back to the stock 15. Those are one decision, for the reason in the trap
+below. `dds.exe`, every dev build and the installed `play/en/ddswin` all carry
+both; `dds_dev_x2.exe` (`giten exe dev-x2`) is the opt-out with the port's
+doubled step, kept so the A/B stays reproducible. Exe accounting moved 1,015 ->
+1,016 bytes in place and 11 -> 13 non-translation
+([`exe-patches.md`](exe-patches.md)).
+
+The reasoning is preserved because it was a real judgment call, not a formality. The change is
 four bytes at `0x0043F52F` restoring the 1997 arithmetic; it is currently in
 `dds_dev_atb.exe` only.
 
@@ -173,13 +183,15 @@ technical decision:
   the port's authors doubled that step deliberately. Changing it makes the patch
   a rebalance as well as a translation, which is a different promise.
 
-**One practical trap if it does ship.** `dds_dev_atb.exe` holds the popup dwell
-at the stock **15** ticks, so the gauge was the only variable under test. The
-release runs **60** so English is readable. A release build would therefore be
-*ATB-restored + dwell 60* -- a combination **nobody has played yet**. The longer
-dwell holds the command UI shut four times longer (`combat-pacing.md` §2), so it
-eats into exactly what the gauge change gave back. Build it and play it before
-assuming the measured result carries over.
+**The trap, and how it was resolved.** The tested build held the popup dwell at
+the stock **15** ticks so the gauge was the only variable, while the release ran
+**60** so English was readable. Shipping the gauge alone would have produced
+*ATB-restored + dwell 60* -- a combination nobody had played, and a worse one
+than either, because the dwell is also how long the command UI is refused
+(`combat-pacing.md` §2) and 60 eats a quarter of what the gauge gives back. The
+player chose the tested combination: gauge restored **and** dwell 15. So what
+ships is what was measured, which is the only version of this that was ever
+safe.
 
 #### Findings from the closed combat thread, kept for reference
 

@@ -34,15 +34,24 @@ def test_the_default_is_the_instruction_we_think_it_is():
 
 
 def test_only_the_immediate_changes():
+    """At the shipped value this is a no-op, and at any other value it is one
+    byte.  Both halves matter: the no-op is what "we deliberately keep the
+    original dwell" looks like, and the one byte is what stops a future change
+    from moving anything else."""
     img = _release()
-    out = timing.apply(img)
-    assert len(out) == len(img)
-    diff = [i for i in range(len(img)) if img[i] != out[i]]
     pe = PE(img, "t")
     off = pe.va2off(timing.POPUP_DEFAULT_SITE)
+
+    out = timing.apply(img)
+    assert len(out) == len(img)
+    assert out == img, "POPUP_TICKS is the stock 15; applying it should change nothing"
+    assert struct.unpack_from("<I", out, off + 1)[0] == timing.POPUP_TICKS == 15
+
+    out = timing.apply(img, 60)
+    diff = [i for i in range(len(img)) if img[i] != out[i]]
     assert diff == [off + 1], diff          # one byte: 0x0F -> 0x3C
     assert out[off] == 0xB8
-    assert struct.unpack_from("<I", out, off + 1)[0] == timing.POPUP_TICKS
+    assert struct.unpack_from("<I", out, off + 1)[0] == 60
 
 
 def test_the_counter_is_a_u16_so_the_value_must_fit():
@@ -73,8 +82,10 @@ def test_the_call_sites_are_what_the_docstring_claims_and_are_untouched():
         off = pe.va2off(va)
         assert img[off - 2:off].hex() == want, (hex(va), img[off - 2:off].hex())
         assert out[off - 2:off] == img[off - 2:off], "a call site changed"
-    # the explicit caller's value is what we raise the default to
-    assert timing.POPUP_TICKS == 0x3C
+    # We ship the stock default.  0x00406211's explicit `push 0x3C` is what the
+    # default was raised to for most of this repo's life and is why 60 was ever
+    # a defensible number -- kept here so the reasoning is not lost with it.
+    assert timing.POPUP_TICKS == 15
 
 
 def test_it_refuses_an_image_whose_default_moved():
@@ -89,14 +100,16 @@ def test_it_refuses_an_image_whose_default_moved():
         raise AssertionError("a moved default was accepted")
 
 
-def test_the_release_exe_carries_it():
+def test_the_release_exe_ships_the_stock_dwell():
+    """250 ms, the 1999 value.  The dwell is also how long the battle command UI
+    is refused, so it is a pacing number as much as a reading-time one."""
     from giten.exe import tracer
 
     img = tracer.build_image(False)
     pe = PE(img, "rel")
     off = pe.va2off(timing.POPUP_DEFAULT_SITE)
     assert struct.unpack_from("<I", img, off + 1)[0] == timing.POPUP_TICKS
-    assert abs(timing.seconds(timing.POPUP_TICKS) - 1.0) < 1e-9
+    assert abs(timing.seconds(timing.POPUP_TICKS) - 0.25) < 1e-9
 
 
 # ---------------------------------------------------------------------------
@@ -275,29 +288,22 @@ def test_it_refuses_an_image_that_is_not_the_port_s():
             raise AssertionError("a already-patched image was accepted")
 
 
-def test_only_the_comparison_build_carries_it():
-    """And it keeps the stock popup dwell, so the gauge is the only variable.
-
-    The release and plain dev builds must be unaffected: combat speed is a
-    gameplay decision and does not belong in the patch people play.
-    """
-    import struct
+def test_the_release_ships_the_restored_gauge():
+    """Shipped 2026-09-08 after the play-test.  This test is the inverse of the
+    one it replaces, which pinned the release *not* carrying it -- kept in that
+    shape deliberately, so flipping the decision back would have to flip a test
+    rather than quietly relax one."""
     from giten.exe import tracer
     from giten.exe.pe import PE
 
-    plain = tracer.build_image(False)
-    pe = PE(plain, "rel")
+    rel = tracer.build_image(False)
+    pe = PE(rel, "rel")
     off = pe.va2off(timing.ATB_STEP_SITE)
-    pop = pe.va2off(timing.POPUP_DEFAULT_SITE)
-    assert plain[off:off + 4] == timing.ATB_STEP_DOUBLED, "the release halved the gauge"
-    assert struct.unpack_from("<I", plain, pop + 1)[0] == timing.POPUP_TICKS
+    assert rel[off:off + 4] == timing.ATB_STEP_PC98, "the release does not carry it"
 
-    atb = tracer.build_image(True, atb_pc98=True, popup_ticks=15)
-    assert atb[off:off + 4] == timing.ATB_STEP_PC98
-    assert struct.unpack_from("<I", atb, pop + 1)[0] == 15, "the dwell is not stock"
-
-    # the two builds it is meant to be compared against differ only in these
-    dev = tracer.build_image(True)
-    assert len(dev) == len(atb)
-    diff = set(i for i in range(len(dev)) if dev[i] != atb[i])
-    assert diff <= set(range(off, off + 4)) | {pop + 1}, sorted(diff)
+    # and the opt-out still builds the port's own arithmetic, for the A/B
+    x2 = tracer.build_image(False, atb_pc98=False)
+    assert x2[off:off + 4] == timing.ATB_STEP_DOUBLED
+    assert len(x2) == len(rel)
+    diff = set(i for i in range(len(rel)) if rel[i] != x2[i])
+    assert diff == set(range(off + 1, off + 4)), sorted(diff)

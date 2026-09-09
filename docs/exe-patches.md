@@ -30,7 +30,8 @@ Applied by their own modules (each finds its sites in the image, so they cannot 
 | english | `0x468310` system-menu table, `0x46A118` stat/equip labels, and the `printf` templates' `push imm32` operands | `giten/exe/menus.py` -- re-points each `u32` slot at an English string in an appended `.men` section | the strings live in `.rdata`, not in any `m/`/`et/` file; there is nothing to translate on the data side. `EFFECTS` (the status-condition names) is the exception: a packed struct array with the name inline, so it is overwritten in place under a hard six-character budget |
 | english | `0x4232C2` (39 B), `0x422D2B` (5 B), `0x422D32` (rel32) | `giten/exe/database.py` -- lifts the 64 KB ceiling off the item database; the load is re-pointed at `et/et0102.bin` (which we add) and the offset table widened `u16` -> `u32` | `et/ET0001.BIN` is capped at 65,535 bytes three separate ways and the English does not fit. `ET0001.BIN` itself is left untouched, so an unpatched exe still reads the original |
 | english | `0x42147C` | `giten/exe/mapnames.py` -- hooks the map parser's one pointer computation and indexes a `u32 name[256]` table in `.mnm` | the name is stored inside each of the 109 `m/M####.BIN` headers; one hook covers all of them without editing any map file |
-| release, dev | `0x40263A` (`mov eax,15`, the operand) | `giten/exe/timing.py` -- the popup auto-close default, 15 ticks -> 60 | **not a translation change.** See the accounting note below |
+| release, dev | `0x40263A` (`mov eax,15`, the operand) | `giten/exe/timing.py` -- the popup auto-close default. Raised 15 -> 60 for most of this repo's life; **back to the stock 15 on 2026-09-08**, so this pass now asserts the instruction and writes the value already there | **not a translation change.** See the accounting note below |
+| release, dev | `0x43F52F` (`lea ecx,[eax+eax*1+5]`) | `giten/exe/timing.py` `atb_pc98()` -- the turn gauge, restored to the 1997 PC-9801 step (`lea ecx,[eax+5] ; nop`) | **not a translation change; a gameplay one, decided by the player.** See the accounting note below |
 
 ## What the shipped exe actually differs by
 
@@ -41,20 +42,21 @@ Reproduced by `tests/test_v2.py::test_the_exe_is_only_as_patched_as_the_document
 | XP compat (`xp` set) | 149 B | -- | inherited; not ours, and its 228 font-table edits are deliberately dropped |
 | locale (`_setmbcp`, charset) | 15 B | -- | yes |
 | overlay hook `.ovl` | 38 B | 2048 B | yes |
-| turn-gauge step (`dds_dev_atb.exe` only) | 4 B | -- | no -- **gameplay**, and **that one dev build only**. `0x0043F52F`'s `lea ecx,[eax+eax*1+5]` becomes `lea ecx,[eax+5] ; nop`, restoring the step the 1997 PC-9801 release uses (`add ax,5` at `DDS98.EXE` offset `0x0321AA`); the Windows port doubled it and changed nothing else about the gauge. `eax` is dead one instruction later, so dropping the addend is a safe drop-in. That build also keeps the popup default at the stock 15, so the gauge is the only variable under test. The release exe has neither. See [`pc98-comparison.md`](pc98-comparison.md) §3. |
 | background-script divider (`dds_dev_bat<N>.exe` only) | 4 B | -- | no -- behaviour, and **dev builds only**: `0x401985`'s rel32 is pointed at `script_step()` in the `.ovl` cave, which calls `0x43B5E0` every Nth game tick instead of every tick. `0x43B5E0` runs the background script until it blocks (`0x4390F0` = `do exec_token while r >= 0`), so that call is the rate at which scripted actors take their turns. The release exe is built with `SCRIPT_DIV=1` and its call site is untouched. |
 | character names `.nam` | 117 B | 512 B | yes |
 | menu strings `.men` | 596 B | 1536 B | yes |
 | item database `.idb` | 64 B | 512 B | yes |
 | location names `.mnm` | 25 B | 3072 B | yes |
 | 60 Hz tick gate | 10 B | -- | **no** |
-| popup default 15 -> 60 | 1 B | -- | **no** |
-| **total** | **1015 B** (0.0080% of 12,675,072) | **7680 B** | |
+| popup default (left at the stock 15) | 0 B | -- | **no** |
+| turn-gauge step restored to the 1997 arithmetic | 3 B | -- | **no** |
+| **total** | **1016 B** (0.0080% of 12,675,072) | **7680 B** | |
 
-Two of those 1,015 bytes' worth of edits -- 11 bytes -- do not exist to show English, and they are the ones to argue about:
+Three of those 1,016 bytes' worth of edits -- 13 bytes -- do not exist to show English, and they are the ones to argue about:
 
 * **The 60 Hz tick gate (10 B)** is a compatibility fix of the same kind as the XP patch. The engine ran one game tick per millisecond and leaned on DirectDraw Flip's vertical-retrace wait to hold it back; on a driver that does not block, the game runs up to 16x too fast and is not playable at all. Without this the patch has nothing to demonstrate.
-* **The popup default (1 B)** is a *consequence* of the gate, not an independent liberty. Pinning the loop at 60 Hz gives every tick-counted duration in the binary a wall-clock meaning it did not have in 1997, when the loop free-ran at whatever rate the machine drew. Leaving the default at 15 would have been just as much a decision -- it would render as 250 ms, against the 1-second popups the game asks for explicitly (`push 0x3C` at `0x406211`). Neither value is the neutral one; 60 matches the durations the original author wrote down.
+* **The popup default (0 B)** was 1 byte and is now none. The argument for raising it 15 -> 60 stands on its own terms -- pinning the loop at 60 Hz gives every tick-counted duration a wall-clock meaning it did not have in 1997, and neither value is the neutral one. What changed is that the dwell turned out to be the *same number* as how long the battle command UI is refused ([`combat-pacing.md`](combat-pacing.md) §2), so 60 was quietly undoing a quarter of what the gauge fix below gave back. The player chose the stock 15 with the gauge restored. Battle messages are short; the pacing was worth more than 750 ms of reading time.
+* **The turn-gauge step (3 B)** is the one outright gameplay change in the exe, and the only one not decided here. `0x0043F52F` restores the step the 1997 PC-9801 release uses; the Windows port doubled it and changed nothing else about the gauge ([`pc98-comparison.md`](pc98-comparison.md) §3). Measured 80 party actions to 11 enemy against 1 : 1.22, 1 : 11.88 and 1 : 18.50 in three archived pre-patch sessions. It was built dev-only first and put to the person playing, whose verdict was *"it's technically faithful and actually makes battles, battles (the speed it ran at before was impossible to fight at)"*. **The honest objection is that what this project translates is the Windows port, and its authors doubled that step on purpose** -- so this makes the patch a small rebalance as well as a translation. `dds_dev_x2.exe` builds without it, and `tools/battle_ratio.py` measures the difference, so the decision stays reversible and checkable rather than a matter of taste.
 
 Everything else either shows English or is inherited. Nothing overwrites game content: all English lives in appended sections, `patch.apply` refuses a patch whose old bytes are absent or whose length changes, and no original data file is modified except by the normal table pipeline.
 

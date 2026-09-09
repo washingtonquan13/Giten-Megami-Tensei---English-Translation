@@ -226,8 +226,10 @@ And it compounds with the frame rate, because the gauge advances once per loop
 iteration and this build pins the loop at 60 Hz where a 1997 PC-9821 could not
 have come close.
 
-A faithful restoration is four bytes at `0x0043F52F`, same length, no cave:
-`8D 4C 00 05` -> `8D 48 05 90`. **Not applied** -- it is a gameplay change.
+The restoration is four bytes at `0x0043F52F`, same length, no cave:
+`8D 4C 00 05` -> `8D 48 05 90`. **Shipped in the release 2026-09-08**, together
+with putting the popup dwell back to the stock 15 -- they are one decision,
+because the dwell is also how long the command UI is refused (§2).
 
 The rest of this section is the reasoning that led there, kept because it is
 the right shape for the next question of this kind.

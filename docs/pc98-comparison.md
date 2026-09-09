@@ -224,18 +224,31 @@ That is what the numbers predicted. Our 60 Hz sits within 6% of the PC-98's
 hardware-locked 56.4, and with the step restored both formulas are identical, so
 parity is the expected outcome rather than a happy accident.
 
-**It is still not in the release build.** It lives in one dev build:
+**It ships, as of 2026-09-08.** The player's call, made after playing it:
+*"it's technically faithful and actually makes battles, battles (the speed it
+ran at before was impossible to fight at)."*
 
-    python -m giten exe dev-atb     ->  build/exe/dds_dev_atb.exe
+The release carries it, and **the popup dwell went back to the stock 15 ticks**
+with it. Those are one decision, not two: an open message window hard-disables
+the command UI (`combat-pacing.md` §2), so the 60-tick dwell this repo shipped
+for most of its life was quietly undoing part of what the gauge fix gives back.
+Battle messages are short; the pacing was worth more than 750 ms of reading
+time.
 
-`dds_dev_atb.exe` differs from `dds_dev.exe` in **exactly four bytes** -- three
-in the gauge step and one in the popup default, which it holds at the **stock
-15 ticks** rather than the 60 the release raises it to. That second point is
-deliberate: an open message window hard-disables the command UI, so our longer
-dwell is itself a pacing change, and leaving it stock keeps the gauge the only
-variable. English battle messages flash past in that build; that is the cost of
-a clean comparison. Both builds carry the tracer, so a route played on each can
-be diffed token for token.
+The opt-out is kept so the comparison stays reproducible:
+
+    python -m giten exe dev-x2      ->  build/exe/dds_dev_x2.exe
+
+That is the tracer build with the **port's** doubled step -- the inverse of what
+`dds_dev_atb.exe` used to be, since the restored step is now standard and the
+doubling is what you have to ask for. It differs from `dds_dev.exe` in three
+bytes, and `tools/battle_ratio.py` measures the difference between them.
+
+The honest objection, recorded because it is a real one: what this project
+translates is the Windows port, and the port's authors doubled that step on
+purpose. Shipping the restoration makes the patch a small rebalance as well as a
+translation. It is three bytes, it is reversible with a flag, and the effect is
+measured rather than felt -- but it is not nothing.
 
 The blunter alternative is lowering `pace()` below 60 Hz, which slows animation
 and everything else along with combat -- measured and rejected already
