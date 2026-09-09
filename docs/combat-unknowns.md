@@ -8,13 +8,18 @@ not, and the gap was much larger than it felt from inside:
 
     python tools/combat_coverage.py [--unnamed]
 
-| region | functions | named | covered |
+| region | functions | named at first measurement | named now |
 |---|---|---|---|
-| battle module (`0x0042A000`-`0x0042E000`) | 81 | 9 | 11% |
-| enemy AI / actor (`0x0040DC00`-`0x00410000`) | 74 | 7 | 9% |
-| unit state / status (`0x0043E000`-`0x00440000`) | 75 | 5 | 7% |
-| battle command UI (`0x0041D000`-`0x0041E000`) | 13 | 1 | 8% |
-| **total** | **243** | **22** | **9%** |
+| battle module (`0x0042A000`-`0x0042E000`) | 81 | 9 (11%) | 10 (12%) |
+| enemy AI / actor (`0x0040DC00`-`0x00410000`) | 74 | 7 (9%) | 10 (14%) |
+| unit state / status (`0x0043E000`-`0x00440000`) | 75 | 5 (7%) | 18 (24%) |
+| battle command UI (`0x0041D000`-`0x0041E000`) | 13 | 1 (8%) | 1 (8%) |
+| **total** | **243** | **22 (9%)** | **39 (16%)** |
+
+The second column is the same afternoon, after item 2 below was answered. One
+session on the two busiest unnamed functions moved the whole module from 9% to
+16%, and the unit-state region from 7% to 24% -- which is the argument for
+picking targets by call-site count rather than by curiosity.
 
 "Named" means *mentioned anywhere in `docs/*.md`*, which is a generous proxy for
 understood. The real figure is no higher and probably lower.
@@ -54,15 +59,25 @@ unknown.
 **How:** log `ds:0x0047BB70` once per frame during a fight. One instrumented
 play-test; the tracer infrastructure already exists.
 
-### 2. The two hub functions nobody has named
+### 2. ~~The two hub functions nobody has named~~ -- ANSWERED 2026-09-09
 
     0x0043FE70   92 call sites
     0x0043FEB0   78 call sites
 
-**170 call sites between them** and no idea what either does. Anything called
-that often is a primitive the rest of the module rests on, so naming these two
-probably decodes a large amount of everything else cheaply. Best
-effort-to-payoff ratio on the list after item 1.
+**They are the identity layer**, and naming them did exactly what was hoped:
+`0x0043FE70(id)` resolves a unit id to its struct through a 32-entry roster at
+`0x004910A0`, and `0x0043FEB0(id)` returns field 0 of that struct. Written up in
+[`format-notes.md`](format-notes.md) §8, together with the 6-entry active-party
+table at `0x00491092`, the registration setter `0x0043FED0`, and the universal
+lookup `0x0042ABE0` that handles the negative-id party space as well.
+
+That also explains the sign convention that had been noticed but not understood:
+party members are negative ids, roster entries are `0..31`, and the two spaces
+are disjoint.
+
+**Still open from this thread:** what field 0 actually is. It is read 78 times
+and compared against `0x20`; the low range appears to mean a human party member.
+Worth its own pass.
 
 Next tier, same reasoning: `0x0043EDD0` (38), `0x0043FF40` (37, party slot
 lookup, partly known), `0x0042ABE0` (33, combatant by id, partly known),
@@ -151,6 +166,6 @@ It is not a prerequisite for anything currently shipping. The ATB restoration is
 measured and play-tested, the translation pipeline does not touch combat, and
 none of the open items above casts doubt on a shipped claim.
 
-It is the answer to "do we understand combat?", which is **no, about 9% of it**,
-written down so that the next person to ask gets a number instead of a summary
-of the parts that happen to be well understood.
+It is the answer to "do we understand combat?", which is **no -- 16% of it, up
+from 9%** -- written down so that the next person to ask gets a number instead of
+a summary of the parts that happen to be well understood.

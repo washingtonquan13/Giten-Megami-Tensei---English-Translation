@@ -860,3 +860,64 @@ Record shape is `20 bytes || name\0 || description\0`, 309 records
 * **Records 1..15 are the basic weapon attacks and all carry power 0**, so their
   damage comes entirely from the equipped weapon and its ammunition. That is why
   a plain attack ignores the scaling that flattens skills.
+
+---
+
+## 8. The combatant registry **[VERIFIED 2026-09-09]**
+
+The identity layer the rest of combat is built on. Found by asking which
+functions have the most call sites in the combat regions
+(`tools/combat_coverage.py --unnamed`) rather than by following a thread -- the
+top two were unidentified and account for 170 call sites between them.
+
+### The two tables
+
+| address | shape | what |
+|---|---|---|
+| `0x004910A0` | 32 x ptr | **the roster** -- one combatant struct pointer per unit id `0..31` |
+| `0x00491092` | 6 x u16 | **the active party** -- which units are in the field |
+
+### The accessors
+
+    0x0043FE50(id)      if (id < 0 || id >= 0x20) return NULL
+                        return dword[0x004910A0 + id*4]
+
+    0x0043FE70(id)      = 0x0043FE50(id)          ; 0x0043FE30 is an identity wrapper
+                        ** 92 call sites -- the workhorse of the module **
+
+    0x0043FEB0(id)      p = 0x0043FE70(id)
+                        return p ? *(u16*)p : -1   ; field 0 of the struct
+                        ** 78 call sites **
+
+    0x0043FE90(v)       for i in 0..5:
+                            if (word[0x00491092 + i*2] == v) return i
+                        return -1                  ; which active slot holds v
+
+    0x0043FED0(id, p)   dword[0x004910A0 + id*4] = p     ; register a struct
+
+    0x0043FE40()        returns dword[0x004910A0], i.e. roster slot 0
+
+`0x0043FED0`'s callers are the party- and demon-management code -- `0x0041B278`,
+`0x0041B2E2`, `0x00429FE9`, `0x0042A050`, `0x0042A36E`, `0x0042A3FF`,
+`0x0042A460`, `0x0043C777`, `0x0043F7F7`, `0x0043F8A1` -- which is what a roster
+being populated by recruitment and summoning should look like.
+
+### The sign convention, and the universal lookup
+
+`0x0043FE50` only accepts ids `0..31`. Party members are addressed by
+**negative** ids elsewhere (`0x00408254` counts `edi` down to -7;
+`0x0041A6B1` computes `-1 - slot`), so the two spaces are disjoint and the
+general lookup handles both:
+
+    0x0042ABE0(id)      if (id < 0)  return 0x0043FF40(-1 - id)   ; party slot
+                        s = 0x0040DC70(id)                        ; -> enemy slot
+                        if (s < 0) return NULL
+                        return 0x0040DDC0(s)                      ; -> enemy struct
+
+So: **`0x0042ABE0` resolves any combatant, `0x0043FE70` resolves a roster
+entry.** 33 and 92 call sites respectively.
+
+**[conjecture]** Field 0 of a combatant struct -- what `0x0043FEB0` returns -- is
+an identity value compared against `0x20` at `0x0043FD0A` and `0x0043FD4E`, with
+the low range apparently meaning a human party member. Not pinned; it is read 78
+times and deserves its own pass.
