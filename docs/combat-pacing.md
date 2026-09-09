@@ -1,69 +1,150 @@
-# Combat pacing: why the player cannot act, and what actually schedules turns
+# Combat pacing: what actually schedules turns
 
-Written 2026-09-08. The player's report was consistent across sessions: *"I was
-spamming clicks on the character selector to get a turn in and couldn't, because
-the enemy was too fast"*, and in the final Dantalion fight three party members
-alive against one enemy produced **six enemy actions and zero party actions**.
+Rewritten 2026-09-08, second pass. **The first pass of this file was wrong about
+its main claim and is retracted in section 0.** The retraction is kept in place
+rather than deleted, because the wrong reading is a very easy one to arrive at
+again from the same code.
 
-This documents the two mechanisms behind that, both read out of the engine rather
-than inferred, and records one experiment whose *null* result is now explained.
+The player's report was consistent across sessions: *"I was spamming clicks on
+the character selector to get a turn in and couldn't, because the enemy was too
+fast"*, and in the final Dantalion fight three party members alive against one
+enemy produced **six enemy actions and zero party actions**.
 
 ---
 
-## 1. Turn order is a uniform random draw, with replacement
+## 0. Retraction: `0x0042C740` is not the scheduler
 
-**There is no agility calculation and no initiative sort.** The turn queue is a
-plain array and the scheduler fills it by drawing at random.
+The first pass reported that turn order was "a uniform random draw with
+replacement" out of a queue at `0x00480AD0`, and recommended patching the draw
+to sample without replacement. **Do not do that.** Every instruction quoted was
+read correctly; what was wrong was the identification of the data.
 
-    0x00480AD0   the turn queue -- an array of u16 actor ids, capacity 270
-    0x00480CFC   its length
+`0x00480AD0` / `0x00480CFC` is the **target list**, not a turn queue. Three
+independent proofs, any one of which is sufficient:
 
-    0x0042AA50   enqueue(actor, unique_flag)   append, with an optional dedupe scan
-    0x0042AAA0   dequeue()                     pop the head, shift left, len--,
-                                               returns 0x8000 when empty
-    0x0042AA40   queue_len()
+* `0x0042BA73` writes `0` into the length **immediately before** calling
+  `0x0042C740`. A turn queue that is cleared before the scheduler runs is not a
+  turn queue.
+* `0x0042BAC7` dequeues and stores the result into `ds:0x00491996`, which is the
+  **target**. The actor, `ds:0x004919F6`, is not touched anywhere in that path.
+* `0x0042B5DB` removes a unit from the list at the moment it dies
+  (`0x0042AAE0` = "delete every occurrence"). Pending *targets* need that;
+  a turn order does not work that way.
 
-`enqueue` is a **plain FIFO append**: it scans for a duplicate only when
-`unique_flag == 0`, refuses past 270 entries, and otherwise writes at `len` and
-increments. Nothing sorts.
+And the call sites give the arguments their real meaning. All three are inside
+sub-state 0 of state 24 — "resolve the action this actor already chose":
 
-The scheduler (reached from battle sub-state 2 via `call 0x0042C740`) does this,
-at `0x0042C8D6`:
+    0x0042B8D6   command 5 (skill):  0x42C740(rec[0x0A], rec[0x0B], rec[0x0C], target, actor)
+                                     rec = 0x00423460(skill id)
+    0x0042B9A5   command 2:          0x42C740(7, 0x0A, 0xF1, target, actor)
+    0x0042BAB4   item:               0x42C740(rec[5], rec[6], rec[7], target, actor)
+                                     rec = 0x0042E4B0(item id)
 
-    esi = 0
-    while (a = dequeue()) != 0x8000:      ; drain the whole queue
-        buf[esi++] = a                     ;   into a stack buffer
-    ebx = esi - 1                          ; pool upper bound
-    esi = di                               ; number of draws
-    do:
-        edx = rand_mod(ebx)                ; 0x0040B940
-        enqueue(buf[edx], 1)               ; re-enqueue the drawn actor
-    while (--esi)
+So `0x0042C740` is the **multi-hit target-list builder**, and the loop at
+`0x0042C8D6` picks *which enemies this one attack hits*, not who acts next.
 
-and `0x0040B940` is exactly:
+### What `di` is — the first open question, answered
 
-    call 0x0045B290          ; CRT rand()
-    ecx = arg & 0xFF ; ecx++
-    idiv ecx                 ; edx = rand() % (n + 1)
-    return dx
+`di` is the number of entries to write into the target list, and it comes from
+argument 2, a packed nibble byte in the skill or item record (low nibble `n`,
+high nibble `m`):
 
-**`ebx` is never decremented and `buf` is never modified**, so this samples *with
-replacement*. One actor can be drawn several times in a single round while
-another is not drawn at all. With a party of three against one enemy, a run of
-six consecutive enemy actions is an ordinary outcome, not a bug in the sense of
-corrupted state -- it is what the algorithm does.
+| `m` | behaviour |
+|---|---|
+| `0` | draws = `round(max(n,1) x uniform(80..120) / 100)`; pool sampled **with replacement** |
+| `1`..`E` | walk the pool **in order**, enqueue each entry `round(max(n,1) x uniform(80..120)/100)` times, draws clamped to the pool size |
+| `F` | draws = whatever the sub-effect at `0x0042C9E0` returned, clamped to the pool size |
 
-This is the answer to "what schedules turns", and it is the thing to change if
-combat is to be made fairer. The smallest faithful fix is **sampling without
-replacement**: swap `buf[edx]` with `buf[ebx]` and decrement `ebx` after each
-draw, so every actor is drawn once per round. That is a few bytes in the cave and
-leaves the queue, the enqueue and everything downstream untouched.
+Sampling *with replacement* is correct here: a random multi-hit attack is
+allowed to hit the same target twice. Nothing about it is a bug.
+
+`0x0040B9A0(n, lo, hi)` is `round(n x uniform(100+lo .. 100+hi) / 100)` — an
+"n plus or minus x%" helper — built on `0x0040B960(a, b, c)`, the average of
+`c+1` uniform draws in `[a, b]`.
+
+### The second open question, answered by the same reading
+
+"Whether any stat feeds the draw" — no. The parameter is a constant byte in the
+skill/item record. No actor stat reaches it.
+
+---
+
+## 1. Turn order is an ATB wait counter, ticked per frame
+
+This is the mechanism the first pass was looking for and did not find. It is
+also exactly the alternative named in `todo.md` ("an accumulator advanced per
+tick ... or a plain agility sort"): **it is the accumulator.**
+
+Every combatant carries a u16 wait counter:
+
+    party member + 0x17F      (the ready flag is the byte at + 0x17E)
+    enemy        + 0x199      (the ready flag is the byte at + 0x198)
+
+`0x0043F510(p, speed)` is one tick of one gauge, where the counter is at `p+1`:
+
+    if (*(u16*)(p+1) == 0) return 0            ; already ready
+    step = 2 * (1 + rand() % speed) + 5        ; uniform in [7, 2*speed+5]
+    if (wait < step) wait = 0 else wait -= step
+    return wait != 0                           ; nonzero = still waiting
+
+`speed` is the unit's speed field: **`unit+0x5E`** for a party member (read at
+`0x0043F591`), **`enemy+0x78`** for an enemy (read at `0x0040F8D7`).
+
+The counter is reloaded to **255** the moment its owner acts — party at
+`0x0040842C`, enemy at `0x0040F901`.
+
+**Both sides tick the same gauge, with the same step formula and the same
+reload.** There is no initiative sort and no per-round ordering anywhere.
+
+### The two tick drivers
+
+    0x0043F570   party:  slots 0..5.  Ticks EVERY slot; calls 0x00409420 for
+                         each one that just became ready; returns the count.
+                         Reached only as a tail jump from 0x0040805A, which
+                         first checks the ds:0x00491544 gate.
+
+    0x0040E250   enemy:  slots 0..15, array base 0x004789D0, stride 573 (0x23D).
+                         Ticks each slot via 0x0040F890 and **breaks at the
+                         first enemy that actually acts**.
+
+`ds:0x00491544` is the master gate. Zero means "enemies do not act":
+`0x0040F890` returns immediately on it and `0x00408050` skips the party tick
+entirely. It is set to **0** at `0x00408440` — the instant a party member's
+queued command begins resolving.
+
+### Cadence — where the real asymmetry lives
+
+Three state handlers tick the gauges. They do not tick them at the same rate:
+
+| state | handler | party gauge | enemy gauge |
+|---|---|---|---|
+| 11 | `0x00407390` | every frame (`0x0040778A`) | **every frame** (`0x004077F0`) |
+| 16 | `0x00412D20` | every frame (`0x00413258`) | **every 4th frame** (`0x00413284`) |
+| 34 | `0x00407AA0` | every frame (`0x00407C70`) | **every frame** (`0x00407C7D`) |
+
+The divide-by-four is a free-running counter at `ds:0x0047B7D4`, which has
+**exactly one writer in the whole image** — the `inc / and 3` at `0x00413284`.
+So the enemy handicap exists *only* in state 16.
+
+**Which state a battle actually runs in therefore decides whether enemies fill
+their gauges at the same rate as the party or at a quarter of it.** That is the
+single highest-value unknown left, and it is one instrumented play-test away
+(log `ds:0x0047BB70` per frame during a fight).
+
+### A caution before anyone rebalances agility
+
+`step` has a floor of 7 and a `+5` constant, so mean time to act is
+`255 / (speed + 6)` frames of whichever tick applies. Speed 4 acts about every
+26 ticks; speed 24 about every 8.5. **A 6x difference in the stat is only a 3x
+difference in turn rate.** Editing the stat tables moves this less than it looks
+like it should.
 
 ---
 
 ## 2. An open message window disables the command UI outright
 
-Separately from *who* acts, the player's ability to *input* is hard-gated.
+Unchanged from the first pass and re-verified. Separately from *who* acts, the
+player's ability to *input* is hard-gated.
 
 The battle command UI is state 32, `0x0041D530`, and it begins:
 
@@ -74,86 +155,137 @@ The battle command UI is state 32, `0x0041D530`, and it begins:
     0x0041D53F  call 0x00416C20      ; bit set   -> leave; this tick does nothing
     0x0041D547  ret
 
-`0x00404380` is `flag_word & mask`; `0x00404390` is `|= mask` and `0x004043B0` is
-`&= ~mask`. Bit 1 of `0x004683F0` has **exactly one setter and one clearer in the
-whole image**:
+Bit 1 of `0x004683F0` has **exactly one setter and one clearer in the whole
+image**, both inside the message-window subsystem:
 
     0x0041985E   set   bit 1     (a message window opens)
     0x00419D4B   clear bit 1     (it closes)
 
-both inside the message-window subsystem at `0x00419xxx` -- the neighbourhood the
-`1E 10` page-wait handler reaches through `0x0043C0C0` -> `0x0041A930`. So while a
-battle message is on screen the command UI **does not run at all**. Not a side
-effect: the state handler tests that bit first and returns.
+So while a battle message is on screen the command UI does not run at all. Not a
+side effect: the state handler tests that bit first and returns.
 
-### How long a message holds the gate shut
+### How long a message holds the gate shut — and what we did to it
 
     0x00402740   per tick: if 0x004716F8 == 0 and 0x004716F4 != 0,
                  decrement it; on reaching zero, jump to the close path
-    0x00402630   set_popup_timer(n):
-                     mov 0x4(%esp),%eax ; cmp $1,%ax ; jge use_it
-                     mov $0xf,%eax                      <- default 15
-                     mov %ax,0x004716F4
+    0x00402630   set_popup_timer(n):  default 15 when n < 1
 
-A message with no explicit duration holds the UI shut for **15 ticks -- 250 ms at
-60 Hz**. Of the three callers of `set_popup_timer`, one passes `$0x3c` (60 ticks,
-a full second).
+**Stock is 15 ticks. This repo already ships 60** — `giten/exe/timing.py`
+`POPUP_TICKS = 60`, pinned by `tests/test_timing.py`. We raised it so English
+text is readable, and the cost is that **every battle message holds the command
+UI shut four times longer than the original did.**
 
-**Raising this timer would make the problem worse, not better**: it lengthens the
-window during which input is refused. It is the wrong lever, and it is an
-inviting one, which is why it is written down here.
+The first pass warned "do not raise this timer". That was too simple: we already
+raised it, deliberately. The accurate statement is that the dwell and the input
+lockout are the same number, so if the party is losing turns to the lockout the
+lever is to *lower* it, or to stop the dwell from holding the gate — not to
+raise it further.
 
 ---
 
-## 3. Why the battle-state divider did nothing -- a null result, explained
+## 3. Why the battle-state divider did nothing — now properly explained
 
 `7e0b76d` built `dds_dev_btl<n>.exe`, which divides the call site of the battle
-state handler (state 24, `0x0042B6A0`) so the battle machine steps once every N
-ticks. It had no perceptible effect and combat was provisionally written off as
-"the Windows port's own balance".
+state handler (state 24, `0x0042B6A0`) so that machine steps once every N ticks.
+It had no perceptible effect.
 
-**The patch was real.** Verified 2026-09-08 by reading the built exes: at
-`0x0041720A`, `dds_dev.exe` calls `0x0042B6A0` while `dds_dev_btl3.exe` and
-`dds_dev_btl4.exe` call the divider in the cave. So the experiment was valid and
-its answer stands.
+**The patch was real** — at `0x0041720A`, `dds_dev.exe` calls `0x0042B6A0` while
+`dds_dev_btl3/4.exe` call the divider in the cave. The experiment was valid.
 
-It did nothing because **it slows message production by the same factor it slows
-everything else**. The binding constraint is not how fast the battle machine
-steps; it is (1) that turn order is drawn at random, and (2) that the UI is shut
-whenever a message is up. Dividing the whole machine leaves both ratios exactly
-where they were.
+It did nothing because **state 24 does not tick the gauges.** State 24 resolves
+one already-chosen action; the gauges are ticked from states 11, 16 and 34.
+Dividing state 24 slows the *animation* of an action, not the rate at which
+actions are granted. The null result is exactly what the mechanism predicts, and
+the first pass's explanation of it ("it slows message production by the same
+factor") was a guess that happened to land on the right conclusion.
 
 ---
 
-## 4. What is not yet known
+## 4. Would the PC-98 version illuminate this?
 
-* **What `di` is** in the scheduler -- the number of draws per round. If it is
-  larger than the number of combatants, that alone multiplies actions per round.
-* Whether any stat feeds the draw indirectly (nothing in the drawn path reads
-  one, but the *pool* is built by the nine `enqueue` sites in
-  `0x0042C8xx`-`0x0042CBxx`, which have not all been read).
-* Whether the command UI's own 4-way sub-state machine (`0x0041D864`) can be
-  pre-empted once entered, or only refused before it starts.
+Yes, and now for a specific reason rather than a vague one.
 
-## 5. Addresses, for whoever picks this up
+The gauges advance **per frame of a state handler**, so:
+
+* The party:enemy *ratio inside one state* is frame-rate independent — both
+  sides advance on the same tick. A "PC-98 feels slower" observation alone does
+  **not** implicate the loop rate.
+* The *absolute* rate is entirely frame-rate dependent, and the player's
+  thinking time is wall-clock. A loop running several times faster than a 1997
+  PC-9821 managed makes every gauge fill several times faster in real seconds
+  while the human at the keyboard does not speed up.
+
+That splits the question into two things PC-98 footage can actually settle:
+
+1. **Count enemy actions per party action in a PC-98 battle.** If that ratio
+   matches this build's, the port did not change the balance and the whole
+   difference is wall-clock speed — the lever is the loop rate. If the PC-98
+   ratio is materially lower, something structural differs: the divisor, or
+   which state battles run in, or the stat tables.
+2. The already-recorded observation — *"PC-98 enemies act far less often and
+   several party members act before the enemy does"* — reads as evidence for
+   **(1) second branch**, i.e. a structural difference, which under this
+   mechanism most plausibly means the enemy divisor or the battle's state.
+
+Caveat, stated because it is tempting to forget: the PC-98 release is a separate
+build for a different CPU. Its executable cannot be diffed against this one.
+It is useful as a **behavioural reference**, and potentially for its **data** —
+if the `et/` databases are close enough between the two releases, the speed
+column can be compared directly, which is a cheap and decisive experiment.
+
+---
+
+## 5. What is still not known
+
+* **Which state a battle runs in** (11, 16 or 34). Decides the enemy divisor.
+  Highest value, cheapest to answer.
+* **Whether the gauges advance while a message window is up.** The popup
+  countdown is driven from the main loop (`0x00401980` -> `0x00402740`), not
+  from a state, so if the current state stays at 11/16/34 during a message then
+  the gauges keep filling while the player is locked out — and our 60-tick dwell
+  is directly costing the party turns. If a message instead makes state 32
+  current, they do not. Not resolvable statically with confidence.
+* **What sets the "a command is queued" flag** `[unit+0x17E]`. Written at
+  `0x00409B16` and `0x00409BE3`, both inside `0x00409620`, the battle
+  command-input driver, which has not been read.
+* Whether `unit+0x5E` / `enemy+0x78` are literally the displayed Agility stat
+  (`0x0046A28C`, "Agility" / the Japanese label) or a derived speed.
+
+---
+
+## 6. Addresses
 
 | address | what |
 |---|---|
-| `0x00480AD0` | turn queue (u16 actor ids, capacity 270) |
-| `0x00480CFC` | queue length |
-| `0x0042AA50` | enqueue(actor, unique_flag) |
-| `0x0042AAA0` | dequeue() -> actor, or `0x8000` when empty |
-| `0x0042C740` | the scheduler, entered from battle sub-state 2 |
-| `0x0042C8D6` | the drain-and-redraw loop |
+| `0x0043F510` | **one ATB gauge tick**: `step = 2*(1+rand%speed)+5`, counter at `p+1` |
+| `0x0043F570` | party gauge tick, slots 0..5; calls `0x00409420` on ready |
+| `0x0040E250` | enemy gauge tick, slots 0..15; breaks at the first that acts |
+| `0x0040F890` | one enemy's gate: master gate, status, then `0x0043F510` |
+| `0x00408330` | party input driver (`0x00408200`, `0x00408050`, `0x0043F5F0`) |
+| `0x00408050` | gate check, then tail-jump to `0x0043F570` |
+| `0x0043F5F0` | first party slot with a queued command, or -1 |
+| `unit+0x17E` / `unit+0x17F` | party ready flag / u16 wait counter |
+| `unit+0x5E` | party speed field |
+| `enemy+0x198` / `enemy+0x199` | enemy ready flag / u16 wait counter |
+| `enemy+0x78` | enemy speed field |
+| `0x004789D0` | enemy array base, stride 573 (`0x23D`), 16 slots |
+| `ds:0x00491544` | **master gate**: 0 = enemies do not act, gauges do not tick |
+| `ds:0x0047B7D4` | the divide-by-four counter; one writer, `0x00413284` |
+| `ds:0x004919F6` / `ds:0x00491996` | current actor / current target |
 | `0x0040B940` | `rand() % (n+1)` |
+| `0x0040B960` | average of `c+1` uniform draws in `[a, b]` |
+| `0x0040B9A0` | `round(n * uniform(100+lo..100+hi) / 100)` |
 | `0x0045B290` | CRT `rand()` |
-| `0x0042B6A0` | battle state handler (state 24), 9 sub-states via `0x0042C02C` |
-| `0x00416BD0` / `0x00416AD0` | get_substate / set_substate(cur+1) |
-| `0x0047BB72` / `0x0047BB74` | state / sub-state words |
-| `0x0041D530` | battle command UI (state 32) |
+| `0x00417160` | state dispatcher; 41 states via the table at `0x00417288` |
+| `0x0047BB70` / `0x0047BB72` / `0x0047BB74` / `0x0047BB76` | state / sub / sub-sub / sub-sub-sub |
+| `0x00407390` / `0x00412D20` / `0x00407AA0` | states 11 / 16 / 34 — the three gauge tickers |
+| `0x0042B6A0` | state 24, resolve one action, 9 sub-states via `0x0042C02C` |
+| `0x0042AB40` | the only launcher of state 24; busy flag `ds:0x00480D00` |
+| `0x0041D530` | state 32, battle command UI |
 | `0x004683F0` | UI flag word; **bit 1 = a message window is open** |
-| `0x00404380` / `0x00404390` / `0x004043B0` | flag test / set / clear |
 | `0x0041985E` / `0x00419D4B` | the only setter / clearer of bit 1 |
 | `0x004716F4` / `0x004716F8` | popup countdown / its pause flag |
-| `0x00402740` | per-tick countdown |
-| `0x00402630` | set_popup_timer(n), default 15 ticks |
+| `0x00402630` | `set_popup_timer(n)`, stock default 15; **we ship 60** |
+| `0x0042C740` | multi-hit **target-list** builder (NOT a scheduler) |
+| `0x00480AD0` / `0x00480CFC` | the **target list** and its length |
+| `0x0042AA50` / `0x0042AAA0` / `0x0042AAE0` | target list append / pop / remove-all |

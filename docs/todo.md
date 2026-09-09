@@ -119,14 +119,21 @@ what is worth keeping:
   `0x0041720A` -- but `btl3` made no perceptible difference when played, so the
   battle's phase rate is not what decides how many turns a side gets. Kept
   because it is correct and tested, not because it helps.
-- **The battle is strictly turn-based.** Every call state 32's handler makes
-  lands outside `0x0042Axxx`-`0x0042Dxxx`, so the engine does not run while the
-  player is choosing, and `0x00402740` freezes the popup countdown for
-  input-wait popups. There is no time limit on a command.
+- ~~**The battle is strictly turn-based.**~~ **Wrong, corrected 2026-09-08
+  second pass.** It is an ATB: every combatant has a wait counter advanced once
+  per frame of a state handler (`0x0043F510`). The evidence used for the old
+  claim -- that state 32's handler calls nothing in `0x0042Axxx`-`0x0042Dxxx` --
+  was scoped to the wrong address range; the gauge tick lives at `0x0040E250` /
+  `0x0043F570`, outside it. It remains true that only one state handler runs per
+  frame, so the gauges are frozen whenever state 32 is current; what is *not*
+  established is whether state 32 is current while a message window is up.
 - The architecture map and the pacing measurements below stand.
 
 If it is ever worth revisiting as a *deliberate* rebalance rather than a bug,
-the lever is demon agility in the stat tables, not the loop.
+agility is a **weaker** lever than it looks: the step is `2*(1+rand%speed)+5`
+against a reload of 255, so mean time to act is `255/(speed+6)` and a 6x stat
+difference buys only about 3x the turn rate. The cadence (which state, and the
+mod-4 divisor at `ds:0x0047B7D4`) moves it much harder than the stat tables do.
 
 #### Findings from the closed combat thread, kept for reference
 
@@ -913,27 +920,41 @@ setter, `0x00402630`, is
 
     mov 0x4(%esp),%eax ; cmp $1,%ax ; jge use_it ; mov $0xf,%eax   <- default 15
 
-so a message with no explicit duration holds the UI shut for **15 ticks -- 250 ms
-at 60 Hz**.  Of its three callers one passes `$0x3c` (60 ticks, a full second).
+so a message with no explicit duration holds the UI shut for **15 ticks** at
+stock.  **This repo already ships 60** (`giten/exe/timing.py POPUP_TICKS`), so
+every battle message holds the command UI shut *four times longer than the
+original did*.  We chose that for readable English; it is a real cost and it is
+the one pacing lever this project has actually pulled.
 
-**This is why the battle-state divider did nothing.**  `dds_dev_btl3/4` really
-did patch the call site -- verified: `0x0041720A` points at the divider, not at
-`0x0042B6A0` -- so that experiment was valid and its answer was real.  Slowing
-the battle machine cannot help, because it slows *message production* by the same
-factor; the ratio of "UI blocked" to "UI available" is unchanged.
+**Why the battle-state divider did nothing.**  `dds_dev_btl3/4` really did patch
+the call site -- verified: `0x0041720A` points at the divider, not at
+`0x0042B6A0` -- so that experiment was valid.  It did nothing because **state 24
+does not tick the turn gauges at all**; it resolves an action already chosen.
+The gauges are ticked from states 11, 16 and 34 (below).
 
-**ANSWERED: turn order is a uniform random draw, with replacement.**  There is
-no agility calculation and no initiative sort.  The scheduler
-(`0x0042C740`, from battle sub-state 2) drains the turn queue into a buffer and
-then re-enqueues `di` actors chosen by `0x0040B940` = `rand() % (n+1)`.  The pool
-bound is never decremented and the buffer never modified, so the **same actor can
-be drawn several times in one round while another is not drawn at all** -- which
-is exactly six enemy actions against zero party actions.
+**RETRACTED: "turn order is a uniform random draw with replacement".**  That
+claim, made earlier the same day, was wrong.  `0x0042C740` is the **multi-hit
+target-list builder**, and `0x00480AD0` is the **target list**, not a turn queue:
+`0x0042BA73` zeroes its length immediately before the "scheduler" runs,
+`0x0042BAC7` dequeues into `ds:0x00491996` (the *target*, never the actor), and
+`0x0042B5DB` deletes a unit from it when it dies.  Sampling with replacement is
+correct there -- a random multi-hit attack may hit the same target twice.  **Do
+not patch it.**
 
-The smallest faithful fix is **sampling without replacement**: swap `buf[edx]`
-with `buf[ebx]` and decrement `ebx` after each draw, so each actor is drawn once
-per round.  A few bytes in the cave; queue, enqueue and everything downstream
-untouched.
+**ANSWERED, second pass: turn order is an ATB wait counter advanced per frame.**
+Which is exactly the first branch this file predicted ("an accumulator advanced
+per tick ... or a plain agility sort").  Each combatant has a u16 counter --
+party at `unit+0x17F`, enemy at `enemy+0x199` -- reloaded to 255 on acting and
+decremented once per tick by `0x0043F510` as `2*(1 + rand()%speed) + 5`
+(speed = `unit+0x5E` / `enemy+0x78`).  Party gauges tick via `0x0043F570`, enemy
+via `0x0040E250`, both gated by `ds:0x00491544`.
+
+**The asymmetry is a cadence, not a draw.**  Three state handlers tick the
+gauges: state 11 (`0x00407390`) and state 34 (`0x00407AA0`) tick the enemy gauge
+**every frame**, state 16 (`0x00412D20`) only **every fourth** frame (the mod-4
+counter at `ds:0x0047B7D4`, single writer `0x00413284`).  So *which state a
+battle runs in* decides whether enemies fill at 1x or 4x the party rate.  That is
+the highest-value open question and one instrumented play-test answers it.
 
 **Full write-up with every address: [`docs/combat-pacing.md`](combat-pacing.md).**
 
