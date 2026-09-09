@@ -267,8 +267,11 @@ column can be compared directly, which is a cheap and decisive experiment.
 * **Which state a battle runs in** (11, 16 or 34). Decides the enemy divisor.
   Highest value, cheapest to answer. The PC-98 side of the same question is
   blocked by Microsoft overlay thunks -- see `pc98-comparison.md` §4.
-* **The PC-98 main-loop rate.** The last number needed to say how much faster
-  this build is than the original. Measurable from footage; do not guess it.
+* ~~**The PC-98 main-loop rate.**~~ **Answered by disassembly, not footage.**
+  `DDS98.EXE` hooks the vertical-sync interrupt (ISR at `0x0112E8`, acknowledge
+  `out 0x64,al`, page flip `out 0xA4,al`), so the PC-98 clock is the display
+  refresh -- 56.4 Hz at 24.83 kHz, 70.1 at 31.47 -- and does not scale with CPU
+  speed. Our 60 Hz is within ~6% of it. See `pc98-comparison.md` §3.
 * **Whether the gauges advance while a message window is up.** The popup
   countdown is driven from the main loop (`0x00401980` -> `0x00402740`), not
   from a state, so if the current state stays at 11/16/34 during a message then

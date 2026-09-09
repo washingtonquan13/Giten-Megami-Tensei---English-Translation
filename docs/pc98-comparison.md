@@ -162,18 +162,45 @@ That is a quantitative account of the player's own PC-98 observation -- *"PC-98
 enemies act far less often and several party members act before the enemy
 does"* -- and it is a real difference in the port, not in this patch.
 
-### And then the frame rate multiplies it
+### And then the frame rate -- but the PC-98's is hardware-locked
 
-The gauge advances **once per iteration of the main loop**. The 1999 Windows
-binary free-ran as fast as the machine could draw; our release pins it at 60 Hz
-(`pace()` in `hook.c`, see `giten/exe/timing.py`). A 1997 PC-9821 drawing this
-first-person view certainly managed far fewer than 60. So the two effects
-compound: whatever the PC-98 loop rate was, the Windows build multiplies the
-gauge by `(60 / that rate) x (1.3..1.8)`.
+The gauge advances **once per iteration of the game's clock**, so the clock rate
+matters as much as the step. The two builds get theirs very differently.
 
-**The PC-98 loop rate is not established here** and should not be guessed. It
-is measurable from footage -- and it is the last number needed to say how much
-faster this build is than the original.
+**PC-98: the vertical-sync interrupt.** `DDS98.EXE` installs a VSYNC ISR at
+`0x0112E8` -- `pusha / push ds / push es`, a re-entrancy guard at `ds:0x6E6`, a
+switch to a dedicated interrupt stack, and a call to the per-frame worker at
+`0x014470`. It acknowledges the interrupt through the PC-98's VSYNC reset port
+(`0x0112DC`: `xor ax,ax ; out 0x64,al`) and flips the display bank on the same
+event (`xor ds:0x6E2,1` then `out 0xA4,al` at `0x0112D3`). The 38 `out 0x02`
+and 16 `out 0x00` sites are the PIC mask and EOI that go with hooking IRQ 2.
+
+That makes the PC-98 clock a **hardware constant**: the display refresh, 56.4 Hz
+in the standard 640x400 24.83 kHz mode or 70.1 Hz at 31.47 kHz. It does not
+scale with CPU speed. A machine too slow to finish a frame misses a retrace and
+drops to *half* rate -- it never runs fast.
+
+**Windows: whatever the display driver happens to do.** The stock loop at
+`0x0045104E` steps whenever `timeGetTime` has advanced a millisecond, so its only
+real governor was DirectDraw `Flip` blocking on retrace. Take that away -- a
+modern driver, dgVoodoo2, a windowed mode -- and the ceiling becomes the actual
+rate, up to 1000 Hz. Our release pins it at 60 Hz (`pace()` in `hook.c`).
+
+**So 60 Hz is within about 6% of the PC-98's 56.4.** The clocks are effectively
+the same, which means the `x2` on the step is not compensating for a clock
+difference on this hardware -- it simply makes combat twice as fast as the
+original. Restore the step and the pacing lands within a few percent of 1997.
+
+(This also gives the compensation hypothesis in §4 a sharper form: a 1997 PC
+that could not finish a Windows frame in one retrace would have run at *half*
+rate, 30 Hz against the PC-98's 56.4, and doubling the step restores parity
+exactly. That is consistent with everything here and still unproven.)
+
+**Caveat.** What is established is that the PC-98 *display* is vsync-driven with
+page flipping on the interrupt. That the ATB tick hangs off that same clock
+rather than a separate free-running loop is not proven -- the overlay thunks
+block the caller trace (§5) -- though a separate logic clock would be an odd
+design next to this one.
 
 ### The faithful fix, if we want one
 
@@ -260,7 +287,9 @@ hardware" is a hypothesis consistent with the doubling, not a fact. The
 competing reading -- they simply wanted snappier combat in the port -- fits the
 `x2` equally well. Two things would separate them:
 
-1. **The PC-98 loop rate**, from footage.
+1. **Whether a 1997 Windows PC held one retrace per frame or dropped to half
+   rate.** The PC-98 clock is now known -- it is the vertical-sync interrupt,
+   hardware-locked (§3) -- so the open half is the port's own period rate.
 2. **Whether the enemy-gauge divisor is Windows-only.** The Windows build ticks
    the enemy gauge only every fourth frame in state 16 (`ds:0x0047B7D4`). If the
    PC-98 build has no such divisor, then the port doubled everyone's step *and*
@@ -275,7 +304,8 @@ competing reading -- they simply wanted snappier combat in the port -- fits the
   `DDS98.EXE` routes most inter-module calls through Microsoft overlay thunks
   (404 `INT 3Fh` sites), so the direct-call scan that found the leaf routines
   cannot find their callers. Resolving it needs the overlay map.
-* **The PC-98 main-loop rate**, as above.
+* **That the PC-98 ATB tick is on the VSYNC clock**, rather than a separate
+  free-running loop. The display certainly is (§3); the gauge is inferred.
 * **What the changed `ET0004` fields mean.** The offsets are known to be read
   (`+0x0A`, `+0x0B`, `+0x0C` reach `0x0042C740` through `0x00423460`), but only
   `+0x0C` has a confirmed meaning.
