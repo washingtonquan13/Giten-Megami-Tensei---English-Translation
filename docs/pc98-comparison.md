@@ -207,7 +207,67 @@ and everything else along with combat -- measured and rejected already
 
 ---
 
-## 4. What is not established
+## 4. Was the port playtested?
+
+Worth writing down, because the obvious reading of "combat is unplayably fast"
+is "nobody tested it", and the evidence says otherwise.
+
+**Against "untested":**
+
+* Somebody made a **surgical, single-instruction edit to the combat pacing
+  constant.** A compiler retranslating the same C would emit the same
+  arithmetic; `add ax,5` becoming `2*x+5` means a person changed the source.
+* Somebody made a **balance pass over the skill table** -- 73 of 309 records,
+  including the *same* edit applied to all fifteen basic weapon attacks and a
+  buff to every healing skill. That is deliberate tuning, not drift.
+* The port **redrew every asset** at 10-20x the size. A studio spending that
+  does not skip QA on the combat system.
+
+**And the direction is the tell.** The port *doubled* the step, which makes
+combat **faster**. If the change were compensating for a Windows loop that ran
+*faster* than the PC-98's, they would have halved it. Doubling only makes sense
+as compensation for a loop that ran **slower** -- which is exactly what you would
+expect from art 10-20x larger being blitted at 8bpp through DirectDraw on a 1997
+Pentium.
+
+So the likely story is not "they never tested it". It is **"they tested it on
+1997 hardware, where the port ran slower, and compensated in the direction that
+is now backwards."** Modern hardware runs the loop far faster than either 1997
+machine, and the doubled step sits on top of that.
+
+**The actual defect is upstream of any of this.** The stock main loop at
+`0x0045104E` runs one update+render whenever `timeGetTime` has advanced by a
+millisecond -- a 1000 Hz ceiling, which is not a frame-rate target, it is "as
+fast as possible with a trivial guard". What really held it back in 1999 was
+DirectDraw's `Flip` blocking on the vertical retrace. **The engine delegates its
+clock to the display hardware, and measures every duration in loop iterations.**
+On a PC-9821 that is a defensible assumption: a narrow, known family of machines.
+On Windows 95 it is not, and the moment `Flip` stops blocking -- dgVoodoo2, a
+modern driver, a windowed mode -- the ceiling becomes the real rate and
+everything frame-counted runs up to 16x too fast.
+
+They did not fail to test. They failed to own the clock.
+
+That also answers the objection that movement would have given them away: if the
+port ran *slower* on their hardware, movement felt fine or slightly sluggish and
+there was no signal to act on. Frame-coupled movement is a property of both
+builds; what differs is that the PC-98 target was one machine family and the
+Windows target was everything from a 486 to a Pentium II.
+
+**Caveat, because this is inference and the rest of this document is not:** the
+PC-98 loop rate has not been measured, so "the port ran slower on period
+hardware" is a hypothesis consistent with the doubling, not a fact. The
+competing reading -- they simply wanted snappier combat in the port -- fits the
+`x2` equally well. Two things would separate them:
+
+1. **The PC-98 loop rate**, from footage.
+2. **Whether the enemy-gauge divisor is Windows-only.** The Windows build ticks
+   the enemy gauge only every fourth frame in state 16 (`ds:0x0047B7D4`). If the
+   PC-98 build has no such divisor, then the port doubled everyone's step *and*
+   quartered the enemy's tick rate -- a net enemy slowdown, which would be
+   strong evidence of deliberate tuning toward the player and would settle this.
+
+## 5. What is not established
 
 * **The enemy cadence on PC-98.** The Windows build divides the enemy gauge
   tick by four, but only in state 16 (`ds:0x0047B7D4`, single writer
