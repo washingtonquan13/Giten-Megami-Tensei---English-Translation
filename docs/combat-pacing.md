@@ -313,6 +313,13 @@ worst session from 1 : 35 to 1 : 1.15.
 
 ## 5. What is still not known
 
+**The honest scope of this file:** it documents four threads through combat, and
+those four are about **9% of the module** -- 22 of 243 functions across the
+battle, enemy-AI, unit-state and command-UI regions. The damage formula, the
+to-hit and graze logic, and the enemy AI have never been read. The measured
+backlog is [`combat-unknowns.md`](combat-unknowns.md); re-measure with
+`python tools/combat_coverage.py`.
+
 * **Which state a battle runs in** (11, 16 or 34). Decides the enemy divisor.
   Highest value, cheapest to answer. The PC-98 side of the same question is
   blocked by Microsoft overlay thunks -- see `pc98-comparison.md` §4.

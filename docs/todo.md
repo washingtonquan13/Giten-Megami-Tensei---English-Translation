@@ -103,6 +103,22 @@ decidable — a person wrote it, or a promotion did — is the one drawn.
 
 ## Open
 
+### Combat: 9% of it has actually been read
+
+[`docs/combat-unknowns.md`](combat-unknowns.md), 2026-09-09, measured by
+`tools/combat_coverage.py`. Of 243 functions in the four combat regions, **22
+are named** -- and "named" only means mentioned in a doc, which is generous.
+
+The turn gauge, the input gate, the target-list builder and the status tick are
+correct and play-tested. **The damage formula, the to-hit/graze logic and the
+enemy AI have never been read.** Nothing shipped depends on the gap, but
+"we understand combat" would be an overstatement, so the number is written down.
+
+Top of the list: (1) which state a battle runs in, because it decides whether
+enemies tick at 1x or 4x and one instrumented play-test settles it; (2) the two
+hub functions `0x0043FE70` and `0x0043FEB0`, 170 call sites between them and
+completely unidentified; (3) the damage formula.
+
 ### Presentation (upscaling / shaders) -- proposal, nothing built
 
 [`docs/presentation.md`](presentation.md), 2026-09-09. Asked whether the sprites
