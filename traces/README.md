@@ -21,3 +21,15 @@ notes at the end of `docs/playtest-2026-09-06.md`.
 
 | `2026-09-08-warp17-spill.bin` | The run that settled `m/MS0031` r02/r03/r17. `tools/make_warp_seq.py` wrote `0D 31 17` then `0C 31 02` into `m/MS0017` r01, with `m/MS0031` **byte-identical to the original**. Predictions were registered before the run. Result: **A**. r17 has no terminator -- 74 tokens execute past its end, the first at r18+0x01 reading `ch=0x00D2`, the bare trailing byte. r02's closing `18` reads its rel16 as `00 1F` (its own last byte plus r03's first) and branches to **0x2B9D, past the 0x2457 end of the image** -- the crash the player saw. |
 | `2026-09-08-warp17-glyphs.bin` | The glyph log from that session, and the cleanest evidence in the project: the *same* `[1FD2]泪：[1FD3]` marker drawn twice, `泪：` when r17 is entered at offset 0 and `ﾒ泪：` when r18 is entered at offset 1 by the spill. One session, one marker, two renderings, decided purely by entry point. |
+
+## 2026-09-10
+
+Two sessions supplied by the player, both from the dev build:
+
+    2026-09-09-mycity.bin        / -glyphs.bin   hours of play, ends at My City
+    2026-09-10-run2.bin          / -glyphs.bin   a shorter second run
+
+Copied out of `play/en/ddswin` (`trace_to_mycity.bin`, `textout_to_mycity.bin`,
+`trace.bin`, `textout.bin`) before the next launch truncated them.  These are
+the basis of `docs/screen-audit.md`; run `tools/screen_audit.py` against the
+`-glyphs` half.

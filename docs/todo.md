@@ -548,6 +548,16 @@ different one. Nothing above answers that; it needs the battle unit structure.
 ---
 
 
+### What a player actually sees -- measured 2026-09-10
+
+[`docs/screen-audit.md`](screen-audit.md), from two sessions the player
+recorded. The finding that reorders this whole list: **most of the Japanese on
+screen is not untranslated text.** The location strip with no extractor, and
+already-translated rows the overlay failed to serve, are about nine tenths of
+it between them. New translation is the smallest of the three buckets.
+
+    python tools/screen_audit.py traces/2026-09-09-mycity-glyphs.bin --min 3
+
 ### 0. Replace the v0.05 English -- USER PRIORITY, set 2026-09-08
 
 **16,789 rows / 582,706 characters of the English we would build are byte-for-byte
@@ -1106,6 +1116,13 @@ this session "fixed", **never executes** -- 0 events.  0x4C still reads
 ## Parked 2026-09-08 -- picked up after the combat-pacing work
 
 ### P1. District names are in `et/ET000D.BIN`, which nothing extracts
+
+**No longer parked -- measured 2026-09-10 and it is the biggest visible defect
+in the patch.** Two recorded sessions from the player put the location strip at
+**58% and 92%** of every Japanese character that reached the screen. Structure,
+counts and the two open questions (field width, reachable entry count) are in
+[`screen-audit.md`](screen-audit.md) §1. The rest of the original note follows.
+
 
 `百人町`, `大久保`, `北新宿`, `高田馬場`, `上落合`, `新宿` draw in Japanese in the
 location strip.  They are in **no table** -- found by decoding every game file
