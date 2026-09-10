@@ -330,3 +330,61 @@ def test_the_merged_serve_path_checks_each_span_before_serving_it():
     assert body.count("span_ok(") >= 2, (
         "merged_fetch checks %d span(s) before serving; both the in-place path "
         "and the tail path must" % body.count("span_ok("))
+
+
+def test_the_c_hook_serves_a_merge_that_displaced_a_record():
+    """The fix itself, in the real hook.c rather than the model.
+
+    The test above walks ``ROW0``, a merge that displaces nothing, so it passed
+    both before and after the change.  This walks ``ROW17``, where m/MS6100
+    replaces four of m/MS6000's records -- the case the old all-or-nothing
+    membership rule turned into "serve none of this file".  Under that rule the
+    hook served 10 spans here; it now serves 115, and this demands the C agree
+    with the model byte for byte over every record in the buffer.
+    """
+    e, _own = _entry_for("m/MS6000.BIN")
+    if e is None:
+        return                      # build/tables_draft not generated
+    tmp = tempfile.mkdtemp(prefix="giten-merge17-")
+    exe = _build_harness(tmp)
+    if exe is None:
+        return                      # reported by _build_harness
+    if not os.path.exists(BUILT):
+        return
+    shutil.copyfile(BUILT, os.path.join(tmp, "overlay.dat"))
+    fam = [x for x in overlay.parse(open(BUILT, "rb").read())
+           if 0x6000 <= x.fid < 0x7000]
+
+    image = _merged(ROW17)
+    with open(os.path.join(tmp, "img.bin"), "wb") as fh:
+        fh.write(image)
+
+    # the merge really does displace, or this proves nothing beyond ROW0
+    assert 0 < len(overlay.resolve(e, image)) < len(e.spans)
+
+    model = overlay.Model(fam, image, fid=0x00E0)
+    assert len(model.spans) > 100, len(model.spans)
+
+    idx = overlay.live_index(image)
+    checked = 0
+    for rec in range(256):
+        off, ln = idx[rec]
+        if ln <= 1:
+            continue
+        out = subprocess.run(
+            [exe, os.path.join(tmp, "img.bin"), "224", "3", str(off), str(off + ln)],
+            cwd=tmp, capture_output=True, text=True, check=True).stdout.split()
+        got = bytes.fromhex(out[0]) if not out[0].startswith("pc=") else b""
+        assert got == model.walk(off, off + ln), "record %02X" % rec
+        assert out[-1] == "pc=%d" % (off + ln)
+        checked += 1
+    assert checked == 73, "%d records walked, expected 73" % checked
+
+    # and it is the negotiation English, not just any bytes
+    whole = b"".join(model.walk(idx[r][0], idx[r][0] + idx[r][1])
+                     for r in range(256) if idx[r][1] > 1)
+    for wanted in (b"It seems to have understood",
+                   b" put heart and soul into speaking",
+                   b"The COMP seems to be malfunctioning"):
+        assert wanted in whole, wanted
+    shutil.rmtree(tmp, ignore_errors=True)

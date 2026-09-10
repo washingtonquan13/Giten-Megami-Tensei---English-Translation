@@ -218,27 +218,44 @@ overlay against them (`scratchpad/merge_probe.py`, slot 0 of all 25 demon rows):
 Seven of the twenty-five rows go from about **3** spans to about **108**. That
 is slot 0 of sixteen, so the whole-game figure is larger.
 
-### What the fix needs, and why it was not done in one sitting
+### What the fix was -- LANDED 2026-09-10, commit 6950987
 
-1. `overlay.bind()`: drop the `len(resolve(...)) != len(e.spans)` gate; order
-   candidates by how many spans they verify, then by file id, so the file that
-   best explains the buffer claims contested addresses first.
-2. `hook.c` `entry_fits()`: return true when **any** span verifies.
-3. `hook.c` `merged_fetch()`: a merged entry may now hold spans that do not
-   verify, so the serve path has to skip them. The single-entry path already
-   solves this with a precomputed bitmap (`c_ok`) precisely because hashing per
-   fetch is O(span) per byte. The merged path needs the same, sized
-   `2 x MAX_MERGE x MAX_SPANS/8` for spans and again for tails -- about 4 KB of
-   BSS against a 4,608-byte `.ovl` section, so the section budget has to be
-   checked, and `MAX_MERGE` can drop from 8 to the measured 5 if it is tight.
-4. The **tail** path needs the same skip, and a tail is a separate struct from
-   its span, so the two have to be associated before a tail can be refused.
-5. Then: rebuild the exe, extend `tests/test_merged_overlay.py` with a merged
-   image in which one record is displaced (today nothing covers that case --
-   the full suite passes with the model and the C disagreeing), and play-test.
+1. `overlay.bind()`: the `len(resolve(...)) != len(e.spans)` gate is gone; an
+   entry contributes the spans that verify. Candidate order is unchanged (file
+   id), because ordering by explanatory power would have to be mirrored in C and
+   buys nothing: a span that hashes to the Japanese in front of it is a correct
+   translation of those bytes whoever supplied them.
+2. `hook.c` `entry_fits()`: returns on the first span that verifies.
+3. `hook.c` `merged_fetch()`: tests the span a PC lands in before serving it.
+   **Not** with a bitmap -- that is how the single-entry path does it, but here
+   it would be `2 x MAX_MERGE x MAX_SPANS/8` twice over, about 4 KB, and
+   `hook.ld` puts `.bss` inside the blob so all of it is appended to the exe.
+   `span_ok()` memoises on the last span asked about instead: eight bytes, and
+   one hash per span rather than one per byte, because consecutive fetches walk
+   through the same span.
+4. The tail path needed no new structure after all: a tail is packed with its
+   span's `rec`, `rec_off` and `jp_hash`, so the same test decides both.
+5. `lookup()` reserves virtual space from the last tail that *verifies* rather
+   than the last tail, so windows do not over-reserve now that partial entries
+   bind. `bind()` sizes them the same way.
 
-Steps 1 and 2 are small. Step 3 is a size-budgeted embedded change and step 4
-needs a data-structure decision, which is why this is written down rather than
-half-applied. **Do not land 1 without 2 to 4**: the Python model is what
-`tests/test_overlay.py` checks the C against, and a model that binds more than
-the hook does silently voids that guarantee.
+`.ovl` grew 4,608 -> 5,120 bytes. The 38 bytes patched in place did not move.
+
+### How it is verified
+
+`tests/test_merged_overlay.py` compiles the real `hook.c` into a harness and
+walks a merged buffer through it, demanding the same bytes the Python model
+gives. Two merges are walked: `ROW0`, which displaces nothing and passed before
+the fix too, and **`ROW17`, where m/MS6100 replaces four of m/MS6000's records**
+-- the case the old rule turned into "serve none of this file". All 73 records
+of that buffer agree byte for byte, and the negotiation English is present in
+the walk.
+
+Reverting `entry_fits()` to the all-or-nothing form makes that test fail at
+record `0x02`, so it is the bug it catches and not a restatement of the code.
+
+**One caveat, and it is about the machine, not the fix.** The harness will not
+run while ESET is active: it reports `NOT RUN: this machine will not execute the
+harness (PermissionError)` and passes. That is exactly how the model and the C
+came to disagree unnoticed in the first place. If this test ever reports NOT
+RUN, the merged path is unverified in C for that run, whatever the suite says.
