@@ -109,6 +109,13 @@ def make_parser():
     p.add_argument("--out", default=None, help="default build/en/et/ET0000.BIN")
     _common(p)
 
+    p = sub.add_parser("districts",
+                       help="district names (the location strip) -> et/ET000D.BIN")
+    p.add_argument("--extract", action="store_true",
+                   help="refresh tables/districts.tsv instead")
+    p.add_argument("--out", default=None, help="default build/en/et/ET000D.BIN")
+    _common(p)
+
     p = sub.add_parser("etdb", help="the skill (ET0004) and map-label (ET0101) databases")
     p.add_argument("which", choices=("skills", "maplabels", "all"), nargs="?", default="all")
     p.add_argument("--extract", action="store_true", help="refresh the tsv instead")
@@ -260,6 +267,29 @@ def main(argv=None) -> int:
         if not args.quiet:
             print("wrote %s: %d bytes, %d strings English (was %d bytes)"
                   % (out, len(blob), len(english), len(raw)))
+        return 0
+    if args.cmd == "districts":
+        from . import districts
+        raw = districts.source(paths.ORIGINAL_DDSWIN)
+        if args.extract:
+            n = districts.write_table(raw)
+            if not args.quiet:
+                print("wrote %s: %d rows" % (districts.TABLE, n))
+            return 0
+        english = districts.read_table()
+        _names, findings = districts.plan(raw, english)
+        for idx, msg in findings:
+            print("  REFUSED %d: %s" % (idx, msg))
+        if findings:
+            return 1
+        blob = districts.build(raw, english)
+        out = args.out or os.path.join(paths.BUILD_DIR, "en", "et", "ET000D.BIN")
+        os.makedirs(os.path.dirname(out), exist_ok=True)
+        with open(out, "wb") as fh:
+            fh.write(blob)
+        if not args.quiet:
+            print("wrote %s: %d bytes, %d of %d names English (was %d bytes)"
+                  % (out, len(blob), len(english), len(_names), len(raw)))
         return 0
     if args.cmd == "etdb":
         from . import etdb

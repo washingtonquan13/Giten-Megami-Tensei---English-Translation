@@ -921,3 +921,55 @@ entry.** 33 and 92 call sites respectively.
 an identity value compared against `0x20` at `0x0043FD0A` and `0x0043FD4E`, with
 the low range apparently meaning a human party member. Not pinned; it is read 78
 times and deserves its own pass.
+
+---
+
+## 9. The equip check, and the two requirement bytes **[VERIFIED 2026-09-10]**
+
+A player asked why the protagonist could not equip an Ice Wolf Blade he was
+carrying -- its name drew in yellow -- while stuck on a Ceramic Blade for hours.
+The answer is two bytes in the weapon record and one comparison.
+
+**Reading the record.** `0x00422D40` decodes an `et/ET0001.BIN` record into a
+working struct. Its head takes the item index into `+0x00`, `raw[0..3]` into
+`+0x02` and `raw[4]`, the type, into `+0x06`; it then switches on **type minus
+one** through the table at `0x00423180`. Type 11 (sword-class weapons) is index
+10, so its arm is `0x00422F86` -- **not** `0x00423013`, which is type 12 and is
+the easy mistake to make here. Walking that arm from `raw[5]`:
+
+    raw[5..8]  -> +0x1C +0x1D +0x1E +0x1F     (via 0x00423240)
+    raw[9]     -> +0x20      raw[10] -> +0x21
+    raw[11]    -> +0x22      raw[12] -> +0x23
+    raw[13]    -> +0x28      raw[14] -> +0x0D
+    raw[15]    -> +0x24      raw[16] -> +0x25
+    raw[17]    -> +0x26      raw[18] -> +0x27
+
+**The check** is at `0x0041BA4F`, inside `0x0041B960`:
+
+    movzx dx, byte ptr [eax + 0x26]     ; requirement A
+    cmp   word ptr [edi + 0xEC], dx     ; the unit's stat
+    jl    <refuse>
+    movzx ax, byte ptr [eax + 0x27]     ; requirement B
+    cmp   word ptr [edi + 0xF0], ax     ; the unit's other stat
+    jge   <allow>
+
+So a weapon is equippable when **both** `unit+0xEC >= raw[17]` and
+`unit+0xF0 >= raw[18]`. Nothing else gates it -- not the weapon class byte
+`raw[5]`, which had looked like a candidate because exactly six elemental blades
+share the value 37.
+
+The two figures for the case that prompted this:
+
+| weapon | req A | req B | power |
+|---|---|---|---|
+| Ceramic Blade | 7 | 7 | 30 |
+| Ice Wolf Blade | 18 | 14 | 98 |
+
+**What is not established:** which named stats `unit+0xEC` and `unit+0xF0` are.
+They sit 4 apart, which fits a seven-entry base-stat array on a 4-byte stride
+starting around `unit+0xE0` -- and `combat-damage.md` §3 already found the
+critical pre-roll reading `actor+0xE0` and `actor+0xE8`, consistent with the
+same array. Mapping those offsets onto the seven labels the status screen draws
+(Intelligence, Blessing, Strength, Vitality, Agility, Dexterity, Charisma) needs
+the status-screen drawing code read, which has not been done. That also closes
+part of item 8 in `combat-unknowns.md`.

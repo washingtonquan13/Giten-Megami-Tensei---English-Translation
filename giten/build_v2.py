@@ -144,12 +144,18 @@ def _racenames(raw):
     return racenames.build(raw)
 
 
+def _districts(raw):
+    from . import districts
+    return districts.build(raw)
+
+
 #: ``dir/FILE.BIN`` -> a function from the original bytes to the built bytes,
 #: for files the script pipeline cannot parse.  ``et/ET0001.BIN`` is deliberately
 #: absent: the item database is never modified in place, its English ships as the
 #: separate ``et/et0102.bin`` (``giten itemdb``), so an identity copy is correct.
 DATA_TABLE_BUILDERS = {
     "et/ET0000.BIN": _racenames,          # giten racenames
+    "et/ET000D.BIN": _districts,          # giten districts -- the location strip
 }
 
 

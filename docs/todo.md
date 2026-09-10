@@ -1115,13 +1115,19 @@ this session "fixed", **never executes** -- 0 events.  0x4C still reads
 
 ## Parked 2026-09-08 -- picked up after the combat-pacing work
 
-### P1. District names are in `et/ET000D.BIN`, which nothing extracts
+### ✅ P1. District names in `et/ET000D.BIN` -- BUILT 2026-09-10
 
-**No longer parked -- measured 2026-09-10 and it is the biggest visible defect
-in the patch.** Two recorded sessions from the player put the location strip at
-**58% and 92%** of every Japanese character that reached the screen. Structure,
-counts and the two open questions (field width, reachable entry count) are in
-[`screen-audit.md`](screen-audit.md) §1. The rest of the original note follows.
+Measured first: two recorded sessions put the location strip at **60% and 92%**
+of every Japanese character that reached the screen, making it the biggest
+visible defect in the patch. Then built: `giten/districts.py`,
+`tables/districts.tsv` (220 of 221 romanised), `giten districts`, a build hook,
+and `tests/test_districts.py`. Loader, accessor and buffer size are in
+[`screen-audit.md`](screen-audit.md) §1.
+
+**Not yet play-tested.** The one open question is the strip's on-screen width:
+`districts.BUDGET` is 12 half-width cells against the 10 the game draws itself,
+chosen so ordinary romanisations stay intact. If it clips, lower that constant.
+The original note follows.
 
 
 `百人町`, `大久保`, `北新宿`, `高田馬場`, `上落合`, `新宿` draw in Japanese in the

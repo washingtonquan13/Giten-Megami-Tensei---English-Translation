@@ -64,14 +64,27 @@ every one of the 20 distinct *Japanese* strings variant 1 drew, 600 calls, is in
 this file. Shelter names already translate through `mapnames.tsv`; the 221
 district names are a separate table nobody wired up.
 
-Two things to settle before building the extractor, neither checked yet:
+**Built 2026-09-10**: `giten/districts.py`, `tables/districts.tsv`,
+`giten districts`, and `tests/test_districts.py`. 220 of the 221 names are
+romanised; the identity build is byte-exact and container 0 is carried through
+untouched.
 
-* **Display width.** 高田馬場 is four full-width characters, sixteen columns.
-  "Takadanobaba" is twelve half-width columns, so it fits, but 雑司が谷 ->
-  "Zoshigaya" and 西日暮里 -> "Nishi-Nippori" need the strip's real field width
-  measured, not assumed.
-* **Whether 221 entries are all reachable.** The count is the table's, not the
-  game's.
+Two things were settled while building it:
+
+* **The loader** is `0x00412020`: file id `0x0D`, `0x00401C30` called exactly
+  twice, handles at `ds:0x0047B724` and `ds:0x0047B728`. So the container count
+  is fixed at two.
+* **The accessor** `0x00412140` strcpy's the name into `ds:0x00491340` with no
+  length limit, which looked alarming until the buffer's size turned up:
+  `0x00403A0C` hands the same address to `0x00449710`, which passes it to a
+  Win32 import along with `0x100`. **The buffer is 256 bytes**, so no name can
+  overrun it.
+
+What is still *not* settled is the strip's on-screen width. The widest thing the
+game draws there itself is ten half-width cells; `BUDGET` is set to twelve so
+that ordinary romanisations survive intact rather than becoming "Shirokaned"
+and "GroundZero". If the strip clips, lower that one constant. The failure mode
+is cosmetic and visible on sight.
 
 ---
 
