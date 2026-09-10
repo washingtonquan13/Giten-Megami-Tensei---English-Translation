@@ -1706,10 +1706,16 @@ EXE_PASSES = [
     # guard, then 3072 for v5: two verification bitmaps (1 013 spans is the
     # largest entry, so 128 bytes each, twice for the two cache slots), the
     # per-span FNV check that fills them, and a second binary search for the
-    # virtual side.  **The in-place count has never moved**: the cave is
-    # appended, and only 38 bytes of the original are rewritten either way,
-    # which is the number this test exists to hold still.
-    ("ovl",        38, 4608, True),
+    # virtual side; then 5120 on 2026-09-10 for the merged-buffer fix -- the
+    # membership rule relaxed to "any span verifies", so merged_fetch has to
+    # test the span a PC lands in, and span_ok() plus its eight-byte memo is
+    # what that costs.  (A bit per span per bound entry, which is how the
+    # single-entry path does it, would have been ~4 KB: hook.ld puts .bss inside
+    # the blob, so every byte of it is appended to the exe.)  **The in-place
+    # count has never moved**: the cave is appended, and only 38 bytes of the
+    # original are rewritten either way, which is the number this test exists to
+    # hold still.
+    ("ovl",        38, 5120, True),
     ("pace",       10, 0,    False),      # 60 Hz tick gate -- behaviour
     ("names",     117, 512,  True),
     ("menus",     596, 1536, True),

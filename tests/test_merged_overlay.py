@@ -254,3 +254,79 @@ def test_the_c_hook_serves_a_merged_buffer_the_way_the_model_does():
                    b"Gaze passionately", b"Persuade"):   # the last two are demon files
         assert wanted in whole, wanted
     shutil.rmtree(tmp, ignore_errors=True)
+
+
+#: et/ET0007 row 17: this merge REPLACES four of m/MS6000's records, which is
+#: the case the old all-or-nothing membership rule could not survive.
+ROW17 = ("m/MS6000.BIN", "m/MS6100.BIN")
+
+
+def test_a_displaced_record_no_longer_discards_the_rest_of_the_file():
+    """The demon-negotiation fix, stated as the thing that used to go wrong.
+
+    ``0x0043ABC0`` lets a later merged file replace an earlier file's record by
+    id.  ``bind()`` used to require every span of an entry to verify before any
+    of them were served, so those four displaced records threw away the other
+    105 spans of English in m/MS6000 -- which is why negotiation drew English
+    nouns in Japanese sentences.
+    """
+    e, _own = _entry_for("m/MS6000.BIN")
+    if e is None:
+        return                      # build/tables_draft not generated
+
+    img = _merged(ROW17)
+    got = overlay.resolve(e, img)
+    assert 0 < len(got) < len(e.spans), (
+        "%d of %d spans resolve; this merge is supposed to displace some, so "
+        "either et/ET0007 row 17 changed or the merge model did"
+        % (len(got), len(e.spans)))
+
+    # the old rule: every span or nothing.  The new one keeps the survivors.
+    from giten import tables
+    rows = [r for p in tables.iter_tables(os.path.join(paths.BUILD_DIR, "tables_draft"))
+            for r in tables.read(p)]
+    entries, _ = overlay.plan(rows, None)
+    bound = overlay.bind(entries, 0x00E0, img)
+    assert len(bound) >= len(got), (
+        "bind() served %d spans while m/MS6000 alone resolves %d; the "
+        "all-or-nothing gate is back" % (len(bound), len(got)))
+
+    # and the buffer that displaces nothing is unaffected by the change
+    assert len(overlay.resolve(e, _merged(ROW0))) == len(e.spans)
+
+
+def test_the_hook_states_the_same_membership_rule_as_the_model():
+    """`entry_fits` in C and `bind` in Python have to agree, and this machine
+    cannot run the C harness (see `_build_harness`), so the rule is compared at
+    the source level instead.
+
+    This is weaker than executing it and is here because the alternative is
+    nothing: the divergence that motivated the fix survived a full green suite
+    precisely because the harness silently does not run here.
+    """
+    src = io.open(HOOK, encoding="utf-8").read()
+    m = re.search(r"static int entry_fits\([^)]*\)\s*\{(.*?)\n\}", src, re.S)
+    assert m, "entry_fits not found in hook.c"
+    body = m.group(1)
+    assert "if (span_holds(" in body and "return 1;" in body, (
+        "entry_fits no longer accepts an entry on the first span that verifies")
+    assert "if (!span_holds(" not in body, (
+        "entry_fits rejects an entry when a span fails to verify -- that is the "
+        "all-or-nothing rule the merged path was fixed to drop; giten/overlay.py "
+        "bind() no longer does this and the two would silently disagree")
+
+
+def test_the_merged_serve_path_checks_each_span_before_serving_it():
+    """Relaxing membership is only safe because the serve path still verifies.
+
+    With the gate gone a bound entry may hold spans the merge displaced, so
+    `merged_fetch` has to test the one span a PC lands in -- for tails too,
+    which carry their span's rec/rec_off/jp_hash exactly so this works.
+    """
+    src = io.open(HOOK, encoding="utf-8").read()
+    m = re.search(r"static int merged_fetch\([^)]*\)\s*\{(.*?)\n\}", src, re.S)
+    assert m, "merged_fetch not found in hook.c"
+    body = m.group(1)
+    assert body.count("span_ok(") >= 2, (
+        "merged_fetch checks %d span(s) before serving; both the in-place path "
+        "and the tail path must" % body.count("span_ok("))

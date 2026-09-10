@@ -551,14 +551,28 @@ def bind(entries: "list[Entry]", fid: int, image: bytes) -> "list[SpanEntry]":
     """Every span the buffer ``image`` should be served, from every entry in it.
 
     For an ordinary buffer this is one entry's spans, resolved.  For a merged
-    one the buffer holds records from several files, and an entry belongs to it
-    when *all* of its spans verify -- a file that is not in this merge fails on
-    the first record the merge does not share with it.
+    one the buffer holds records from several files and an entry contributes
+    **the spans that verify**, which is what :func:`resolve` already returns.
+
+    It used to require that *every* span of an entry verify before any of them
+    were served, on the reasoning that a file not in the merge fails on the
+    first record the merge does not share.  That rejects members too:
+    ``0x0043ABC0`` lets a later merged file replace an earlier file's record by
+    id, so one displaced record threw away the hundred-odd other spans of
+    English in the same file, all of which had verified.  Against the merges
+    ``et/ET0007`` names, slot 0 alone bound 2,646 spans under that rule and
+    3,435 under this one, seven of the twenty-five demon rows going from about
+    three spans to about a hundred.
+
+    Relaxing it cannot serve a span differently -- the per-span hash in
+    :func:`resolve` is unchanged and is still what decides every byte. It can
+    only add spans whose Japanese is present and matches.
 
     Candidates are ordered by file id, and the first to claim an address keeps
     it.  Two addresses in the corpus are claimed twice with different English
     and both are correct translations of the same Japanese, so what this needs
-    to be is repeatable, not clever.
+    to be is repeatable, not clever.  ``hook.c`` walks the directory in the same
+    order for the same reason.
     """
     slot = merged_slot(fid)
     if slot is None:
@@ -567,9 +581,9 @@ def bind(entries: "list[Entry]", fid: int, image: bytes) -> "list[SpanEntry]":
     for e in sorted(entries, key=lambda x: (x.fid, x.ci)):
         if e.ci != slot or not e.spans:
             continue
-        if len(resolve(e, image)) != len(e.spans):
-            continue                        # not every span fits: not this buffer
         got = resolve(e, image, virt_base=cursor)
+        if not got:
+            continue                        # nothing of this file is in here
         used = max((sp.vend for sp in got if sp.tail), default=cursor) - cursor
         cursor += used
         for sp in got:

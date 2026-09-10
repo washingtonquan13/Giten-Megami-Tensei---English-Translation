@@ -41,7 +41,15 @@ Reproduced by `tests/test_v2.py::test_the_exe_is_only_as_patched_as_the_document
 |---|---|---|---|
 | XP compat (`xp` set) | 149 B | -- | inherited; not ours, and its 228 font-table edits are deliberately dropped |
 | locale (`_setmbcp`, charset) | 15 B | -- | yes |
-| overlay hook `.ovl` | 38 B | 2048 B | yes |
+| overlay hook `.ovl` | 38 B | 5120 B | yes |
+
+The `.ovl` figure is the cave, and it grows as the hook does: 2048 when this
+table was written, 4608 for overlay v5's per-span verification bitmaps, 5120 on
+2026-09-10 for the merged-buffer fix. **The 38 bytes in place have never moved**,
+and that is the number that matters: five `E8` call sites redirected, nothing
+else of the original rewritten. `EXE_PASSES` in `tests/test_v2.py` pins both
+halves, so a pass that starts editing the original in place fails there.
+
 | background-script divider (`dds_dev_bat<N>.exe` only) | 4 B | -- | no -- behaviour, and **dev builds only**: `0x401985`'s rel32 is pointed at `script_step()` in the `.ovl` cave, which calls `0x43B5E0` every Nth game tick instead of every tick. `0x43B5E0` runs the background script until it blocks (`0x4390F0` = `do exec_token while r >= 0`), so that call is the rate at which scripted actors take their turns. The release exe is built with `SCRIPT_DIV=1` and its call site is untouched. |
 | character names `.nam` | 117 B | 512 B | yes |
 | menu strings `.men` | 596 B | 1536 B | yes |

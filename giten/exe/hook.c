@@ -114,11 +114,19 @@ static int c_next;
 static int c_delta[2];
 static u8 c_ok[2][MAX_SPANS / 8];
 static u8 c_tok[2][MAX_TAILS / 8];
-/* the merged case: several entries, each accepted only if EVERY one of its
-   spans verifies, so no per-span bitmap is needed for them */
+/* the merged case: several entries, each contributing the spans that verify */
 static struct dir *c_multi[2][MAX_MERGE];
 static int c_mdelta[2][MAX_MERGE];
 static u32 c_nmulti[2];
+/* A merged entry may hold spans the merge displaced, so the serve path has to
+   check the one span a PC lands in.  The single-entry path keeps a bit per span
+   instead; doing that here would need 2 x MAX_MERGE x MAX_SPANS/8 for spans and
+   again for tails, about 4 KB -- and hook.ld puts .bss inside the blob, so it
+   would be 4 KB of zeroes appended to the exe.  Consecutive fetches walk
+   through the same span, so a one-entry memo costs eight bytes and makes it one
+   hash per span rather than one per byte.  Cleared whenever a slot rebinds. */
+static const struct span *c_last[2];
+static int c_last_ok[2];
 
 static u32 fnv1a(const u8 *p, u32 n)
 {
@@ -173,13 +181,30 @@ static int bit(const u8 *bits, u32 i)
     return (bits[i >> 3] >> (i & 7)) & 1;
 }
 
-/* Is this entry part of the buffer in front of us?
+/* span_holds() for the merged path, memoised on the last span asked about. */
+static int span_ok(int slot, const u16 *idx, const u8 *base, u32 end,
+                   const struct span *s)
+{
+    if (c_last[slot] != s) {
+        c_last[slot] = s;
+        c_last_ok[slot] = span_holds(idx, base, end, s);
+    }
+    return c_last_ok[slot];
+}
+
+/* Does this entry have anything to say about the buffer in front of us?
  *
- * An entry belongs when every one of its spans verifies.  A file that is not in
- * this merge fails on the first record the merge does not share with it, and a
- * file that is in it cannot fail at all -- a record another file replaced would
- * mean this entry did not supply it.  That is the whole membership test, and it
- * is the same hashing the single-entry path already does.
+ * ANY span that verifies is enough.  This used to demand that *every* span
+ * verify, on the reasoning that a file in the merge cannot fail one -- but
+ * 0x0043ABC0 lets a later merged file REPLACE an earlier file's record by id,
+ * so a file that is in the merge fails too, and the all-or-nothing rule then
+ * discarded the hundred-odd other spans of English that had verified.  Measured
+ * against the merges et/ET0007 names, slot 0 alone went from 2 646 spans bound
+ * to 3 435, and seven of the twenty-five demon rows from about 3 to about 108.
+ *
+ * Relaxing it cannot serve a span differently: span_holds() is unchanged and is
+ * still consulted before any byte is served (merged_fetch).  It can only add
+ * spans whose Japanese is present and hashes to what we translated.
  */
 static int entry_fits(struct dir *d, const u16 *idx, const u8 *base, u32 end)
 {
@@ -188,9 +213,9 @@ static int entry_fits(struct dir *d, const u16 *idx, const u8 *base, u32 end)
     if (!d->nspans || d->nspans > MAX_SPANS)
         return 0;
     for (i = 0; i < d->nspans; i++)
-        if (!span_holds(idx, base, end, &sp[i]))
-            return 0;
-    return 1;
+        if (span_holds(idx, base, end, &sp[i]))
+            return 1;
+    return 0;
 }
 
 static void load(void)
@@ -318,6 +343,8 @@ static int lookup(u32 handle, u16 fid)
     c_dir[k] = 0;
     c_delta[k] = 0;
     c_nmulti[k] = 0;
+    c_last[k] = 0;              /* the memo belongs to the buffer, not the slot */
+    c_last_ok[k] = 0;
     base = script_buffer(handle);
     if (fid >= 0xE0 && fid <= 0xEF) {
         /* A demon-conversation buffer.  dirs are in file-id order, and the
@@ -337,15 +364,23 @@ static int lookup(u32 handle, u16 fid)
         cursor = end;
         for (i = 0; i < ndirs && c_nmulti[k] < MAX_MERGE; i++) {
             struct span *tl;
-            u32 used = 0;
+            u32 used = 0, j;
             if (dirs[i].ci != (u16)(fid - 0xE0))
                 continue;
             if (!entry_fits(&dirs[i], idx, base, end))
                 continue;
+            /* Reserve only what this entry can actually use.  Tails are sorted
+               by virtual address, so the last one that verifies is the highest;
+               sizing from the last tail regardless (which is what this did when
+               every span was known to verify) over-reserves, and with more
+               entries binding that reaches the PC limit sooner and stops the
+               loop early.  overlay.bind() sizes the window the same way. */
             tl = (struct span *)(ovl + dirs[i].tails_off);
-            if (dirs[i].ntails)
-                used = (u32)tl[dirs[i].ntails - 1].start
-                     + tl[dirs[i].ntails - 1].served - dirs[i].image_end;
+            for (j = dirs[i].ntails; j-- > 0; )
+                if (span_holds(idx, base, end, &tl[j])) {
+                    used = (u32)tl[j].start + tl[j].served - dirs[i].image_end;
+                    break;
+                }
             if (cursor + used > 0x10000u)
                 break;                      /* no room left below the PC limit */
             c_mdelta[k][c_nmulti[k]] = (int)cursor - (int)dirs[i].image_end;
@@ -458,7 +493,10 @@ static int merged_fetch(int slot, const u8 *base, u16 *pcp, u8 *out)
         if (pc >= end) {
             sp = (struct span *)(ovl + d->tails_off);
             s = in_tail(sp, d->ntails, delta, pc);
-            if (!s)
+            /* A tail is packed with its span's rec, rec_off and jp_hash, so the
+               same test decides both -- an English tail must not be served when
+               the Japanese it belongs to is not the Japanese in the buffer. */
+            if (!s || !span_ok(slot, idx, base, end, s))
                 continue;
             k = pc - (u32)((int)s->start + delta);
             *pcp = (k + 1 == s->len) ? span_end(idx, s) : (u16)(pc + 1);
@@ -467,7 +505,7 @@ static int merged_fetch(int slot, const u8 *base, u16 *pcp, u8 *out)
         }
         sp = (struct span *)(ovl + d->spans_off);
         s = in_range(idx, sp, d->nspans, pc);
-        if (!s)
+        if (!s || !span_ok(slot, idx, base, end, s))
             continue;
         k = pc - span_start(idx, s);
         if (k + 1 == s->len)
