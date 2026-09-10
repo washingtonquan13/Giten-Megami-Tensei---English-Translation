@@ -171,3 +171,74 @@ through, and a virtual PC in an unidentifiable buffer comes back `0xFF`.
 `play/jp/ddswin` = original files + the same `dds_dev.exe` and *no*
 `overlay.dat` (the hook passes everything through).  Snapshot `trace.bin` after
 each run; it is recreated on every launch.
+
+---
+
+## The merged-buffer gate, and why it costs 789 spans on slot 0 alone
+
+Diagnosed 2026-09-10 against the player's recorded sessions. **The negotiation
+text is not untranslated; it is translated and refused at bind time.**
+
+`tools/screen_audit.py` put 30% of the surviving Japanese in the "row has clean
+English and Japanese drew anyway" bucket. Decoding the trace says why. The
+engine uses **only** the merged file ids `0x00E0`..`0x00EE` for demon
+conversation, never a `m/MS6xxx` id, and the shipped `overlay.dat` holds 296
+entries keyed on `0x6xxx` ids and **zero** on merged ids. All 296 are reachable
+only through `bind()`'s merged path.
+
+### What is actually wrong
+
+Both `overlay.bind()` and `entry_fits()` in `giten/exe/hook.c` require **every**
+span of an entry to verify before **any** of it is served:
+
+    if (!span_holds(idx, base, end, &sp[i]))
+        return 0;                   /* one miss rejects the whole file */
+
+The rationale was that a file not in the merge fails on the first record the
+merge does not share. But `0x0043ABC0` lets a later file **replace** an earlier
+file's record by id, so a file that *is* in the merge fails too, and its other
+hundred-odd verified spans go with it.
+
+The per-span hash in `resolve()` / `span_holds()` is already the correctness
+test: it keeps a span only when the Japanese at the live address hashes to what
+that span was built from. It does not need the all-or-nothing gate on top, and
+relaxing the gate cannot serve a span differently -- a span that verifies under
+one rule verifies under the other. It can only add spans.
+
+### Measured
+
+Building the real merges that `et/ET0007` names, and binding the shipped
+overlay against them (`scratchpad/merge_probe.py`, slot 0 of all 25 demon rows):
+
+| | spans bound |
+|---|---|
+| all-or-nothing (today) | 2,646 |
+| per-span | 3,435 |
+
+Seven of the twenty-five rows go from about **3** spans to about **108**. That
+is slot 0 of sixteen, so the whole-game figure is larger.
+
+### What the fix needs, and why it was not done in one sitting
+
+1. `overlay.bind()`: drop the `len(resolve(...)) != len(e.spans)` gate; order
+   candidates by how many spans they verify, then by file id, so the file that
+   best explains the buffer claims contested addresses first.
+2. `hook.c` `entry_fits()`: return true when **any** span verifies.
+3. `hook.c` `merged_fetch()`: a merged entry may now hold spans that do not
+   verify, so the serve path has to skip them. The single-entry path already
+   solves this with a precomputed bitmap (`c_ok`) precisely because hashing per
+   fetch is O(span) per byte. The merged path needs the same, sized
+   `2 x MAX_MERGE x MAX_SPANS/8` for spans and again for tails -- about 4 KB of
+   BSS against a 4,608-byte `.ovl` section, so the section budget has to be
+   checked, and `MAX_MERGE` can drop from 8 to the measured 5 if it is tight.
+4. The **tail** path needs the same skip, and a tail is a separate struct from
+   its span, so the two have to be associated before a tail can be refused.
+5. Then: rebuild the exe, extend `tests/test_merged_overlay.py` with a merged
+   image in which one record is displaced (today nothing covers that case --
+   the full suite passes with the model and the C disagreeing), and play-test.
+
+Steps 1 and 2 are small. Step 3 is a size-budgeted embedded change and step 4
+needs a data-structure decision, which is why this is written down rather than
+half-applied. **Do not land 1 without 2 to 4**: the Python model is what
+`tests/test_overlay.py` checks the C against, and a model that binds more than
+the hook does silently voids that guarantee.
