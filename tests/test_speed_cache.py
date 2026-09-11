@@ -63,6 +63,25 @@ def view(sc):
                    b.error) for b in sc.bodies))
 
 
+class cache_on:
+    """Run a block with the cache on, whatever the environment says.
+
+    Three of the tests below are *about* the cache, so they have to exercise it
+    even when the whole suite is being run under ``GITEN_NO_CACHE=1`` to prove
+    the bypass works.  Without this they read as failures of the cache when they
+    are really "the cache was switched off underneath them".
+    """
+
+    def __enter__(self):
+        self.saved = os.environ.pop("GITEN_NO_CACHE", None)
+        return self
+
+    def __exit__(self, *exc):
+        if self.saved is not None:
+            os.environ["GITEN_NO_CACHE"] = self.saved
+        return False
+
+
 _FRESH_CHILD = r'''
 import os, pickle, sys
 sys.path.insert(0, %r)
@@ -98,10 +117,11 @@ def test_a_cached_parse_holds_exactly_what_a_fresh_parse_holds():
         fresh = pickle.load(fh)
 
     n = 0
-    for rel in files.all_encoded():
-        got = view(script.parse(rel, files.read_source(rel)))
-        assert got == fresh[rel], rel
-        n += 1
+    with cache_on():                    # even when the suite runs with it off
+        for rel in files.all_encoded():
+            got = view(script.parse(rel, files.read_source(rel)))
+            assert got == fresh[rel], rel
+            n += 1
     assert n == len(fresh) == 844, (n, len(fresh))
 
 
@@ -207,46 +227,51 @@ def test_one_callers_mutation_never_reaches_the_next_caller():
     """
     rel = "m/MS0000.BIN"
     raw = files.read_source(rel)
-    a = script.parse(rel, raw)
-    before = view(a)
+    with cache_on():
+        # twice, because nothing is memoised until it is asked for twice and
+        # the shared template is the thing under test here
+        script.parse(rel, raw)
+        a = script.parse(rel, raw)
+        before = view(a)
 
-    rec = a.containers[0][0]
-    rec.tokens = None
-    rec.spans = []
-    rec.data = b"\x00"
-    rec.flags.append("@probe")
-    a.containers[0].append(rec)
-    a.cont_offsets.append(-1)
+        rec = a.containers[0][0]
+        rec.tokens = None
+        rec.spans = []
+        rec.data = b"\x00"
+        rec.flags.append("@probe")
+        a.containers[0].append(rec)
+        a.cont_offsets.append(-1)
 
-    b = script.parse(rel, raw)
-    assert view(b) == before
+        b = script.parse(rel, raw)
+        assert view(b) == before
 
-    # and the shared halves really are shared -- that is what makes it cheap
-    c = script.parse(rel, raw)
-    d = script.parse(rel, raw)
-    rc, rd = c.containers[0][1], d.containers[0][1]
-    assert rc is not rd
-    assert rc.tokens is not rd.tokens
-    assert rc.data is rd.data
-    if rc.tokens:
-        assert rc.tokens[0] is rd.tokens[0]
+        # and the shared halves really are shared -- that is what makes it cheap
+        c = script.parse(rel, raw)
+        d = script.parse(rel, raw)
+        rc, rd = c.containers[0][1], d.containers[0][1]
+        assert rc is not rd
+        assert rc.tokens is not rd.tokens
+        assert rc.data is rd.data
+        if rc.tokens:
+            assert rc.tokens[0] is rd.tokens[0]
 
 
 def test_the_disk_entry_round_trips_and_is_written_atomically():
     """A stored entry reads back equal, and only whole files ever appear."""
     tmp = tempfile.mkdtemp(prefix="giten-cachedir-")
     rel = "m/MS0001.BIN"
-    sc = script.parse(rel, files.read_source(rel))
-    k = cache.key("parse", rel.encode(), files.read_source(rel))
-    assert cache.load(tmp, k) is None
-    cache.store(tmp, k, sc)
-    back = cache.load(tmp, k)
-    assert back is not None
-    assert view(back) == view(sc)
-    # nothing half-written is left behind
-    leftovers = [n for _d, _s, ns in os.walk(tmp) for n in ns
-                 if n.startswith(".tmp-")]
-    assert leftovers == [], leftovers
+    with cache_on():
+        sc = script.parse(rel, files.read_source(rel))
+        k = cache.key("parse", rel.encode(), files.read_source(rel))
+        assert cache.load(tmp, k) is None
+        cache.store(tmp, k, sc)
+        back = cache.load(tmp, k)
+        assert back is not None
+        assert view(back) == view(sc)
+        # nothing half-written is left behind
+        leftovers = [n for _d, _s, ns in os.walk(tmp) for n in ns
+                     if n.startswith(".tmp-")]
+        assert leftovers == [], leftovers
 
 
 def test_the_bypass_really_bypasses():
@@ -254,6 +279,7 @@ def test_the_bypass_really_bypasses():
     rel = "m/MS0002.BIN"
     raw = files.read_source(rel)
     k = cache.key("parse", rel.encode(), raw)
+    saved = os.environ.get("GITEN_NO_CACHE")
     os.environ["GITEN_NO_CACHE"] = "1"
     try:
         assert cache.disabled()
@@ -261,10 +287,19 @@ def test_the_bypass_really_bypasses():
         script._SEEN.discard(k)
         sc = script.parse(rel, raw)
         assert k not in script._MEMO
+        assert cache.load(cache.PARSE_DIR, k) is None, \
+            "a disabled cache still read an entry"
     finally:
-        os.environ.pop("GITEN_NO_CACHE", None)
-    assert not cache.disabled()
-    assert view(sc) == view(script.parse(rel, raw))
+        # restore whatever was there, which may be a "1" the whole suite is
+        # being run under -- popping it unconditionally would quietly switch
+        # the cache back on for every test after this one
+        if saved is None:
+            os.environ.pop("GITEN_NO_CACHE", None)
+        else:
+            os.environ["GITEN_NO_CACHE"] = saved
+    with cache_on():
+        assert not cache.disabled()
+        assert view(sc) == view(script.parse(rel, raw))
 
 
 def test_the_vectorised_unxor_agrees_with_the_byte_loop():
