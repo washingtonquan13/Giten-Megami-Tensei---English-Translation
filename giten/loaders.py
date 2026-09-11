@@ -102,6 +102,34 @@ def immediate_sites(value: int) -> "list[int]":
     return out
 
 
+def instruction_immediates(*values: int) -> "list[str]":
+    """Every disassembled ``.text`` line carrying one of ``values`` as a literal.
+
+    ``immediate_sites`` finds the *bytes*; this finds the *instructions*, which
+    is the question that matters -- three of the four byte hits for ``0x6F00``
+    straddle two entries of a jump table and one is a jump table's own base
+    address.  Linear disassembly can desync, but it desyncs into *more* apparent
+    instructions, not fewer, so an empty result here is the strong direction.
+    """
+    import subprocess
+    import tempfile
+
+    img, pe = _image()
+    tmp = tempfile.mkdtemp(prefix="giten-imm-")
+    try:
+        p = os.path.join(tmp, "img.exe")
+        with open(p, "wb") as fh:
+            fh.write(img)
+        out = subprocess.run(["objdump", "-d", "-M", "intel", p],
+                             check=True, capture_output=True, text=True).stdout
+    finally:
+        import shutil
+        shutil.rmtree(tmp, ignore_errors=True)
+    want = tuple("0x%x" % v for v in values)
+    return [ln for ln in out.splitlines()
+            if "\t" in ln and any(w in ln.split("\t")[-1] for w in want)]
+
+
 def file_id(rel: str) -> "int | None":
     """``m/MS6F00.BIN`` -> ``0x6F00``; ``None`` for anything not in that family."""
     name = os.path.basename(rel).upper()
