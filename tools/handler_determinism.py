@@ -121,8 +121,19 @@ AMBIGUOUS_CALLEES = {
                  "1FA7/1FA8: rel16 then expressions until one EVALUATES to "
                  "-1.  The terminator is a runtime value; vmops models it as "
                  "'a two-byte leaf whose payload is 0xFF', true at all five "
-                 "corpus sites, and raises anywhere else",
-                 "limits.md, 1FA7 reads expressions until one is minus one"),
+                 "corpus sites, and raises anywhere else.  Read to the end "
+                 "(0x00435620): each value is an ITEM ID, tested with "
+                 "0x004236B0 (inventory count via 0x00423D10, the 64-slot table "
+                 "at 0x47FFA0; a 16-entry table for type-9 items); mode 0 "
+                 "(1FA7) falls through only if the party holds EVERY listed "
+                 "item, mode 1 (1FA8) only if it holds NONE, else the rel16 is "
+                 "taken (0x00433EF0 jumps when the flag is 0).  Corpus: the two "
+                 "1FA8 sites list every incense (0x2C, 0x38-0x42, 0x76) before "
+                 "'you have used up the incense'; the three 1FA7 sites list the "
+                 "seven Lover's body parts (0xAD-0xB3) before the restoration "
+                 "line",
+                 "limits.md, 1FA7 reads expressions until one is minus one; "
+                 "0x00435620 / 0x004236B0 / 0x00423D10 read 2026-09-11"),
 }
 
 SPEC_RULES = {
