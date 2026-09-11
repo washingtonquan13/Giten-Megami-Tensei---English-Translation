@@ -67,13 +67,18 @@ RUNTIME_SIZED_RECORD = 0x97
 
 
 def _lens(rel, ci=0):
-    """``{record id: length}`` for one container, first occurrence wins."""
+    """``{record id: length}`` for one container, last occurrence wins.
+
+    Last, because that is what the loader does with a repeated id -- it
+    installs each copy in turn (``records.bases``, measured on m/MS6800 c0 in
+    the Roppongi trace).
+    """
     sc = script.parse(rel, files.read_source(rel))
     if not sc.containers or ci >= len(sc.containers):
         return None
     out = {}
     for r in sc.containers[ci]:
-        out.setdefault(r.id, len(r.data))
+        out[r.id] = len(r.data)
     return out
 
 

@@ -48,6 +48,12 @@ def _note(parts) -> str:
 #: Openings of every note part this module generates.  Anything matching one of
 #: these is re-derived on each extract and must not be carried forward from the
 #: previous table, or a marker that has stopped applying sticks forever.
+#:
+#: A note is joined with ``"; "`` and split on the same string, so a generated
+#: note of two clauses arrives here as **two** parts and both halves need an
+#: entry.  They did not have one until 2026-09-11, which is why rows carried
+#: "copied verbatim" and "editable because nothing here branches" long after the
+#: sentences they came from had been rewritten.
 _GENERATED_NOTE_PREFIXES = (
     "record is not editable",
     "record does not tile",
@@ -55,10 +61,21 @@ _GENERATED_NOTE_PREFIXES = (
     "record's last token reads",
     "container's record count word",
     "two records share this id",
+    "this container installs record",
     "record reaches an engine no-op",
     "reads: ",
     "menu option, declared width",
     "fixed ",
+    # second halves of the above
+    "copied verbatim",
+    "read-only, copied verbatim",
+    "this span is verified in-bounds",
+    "spans are complete and overlay-safe",
+    "editable, but verify this file in game",
+    "editable because nothing here branches",     # the pre-2026-09-11 wording
+    "the loader keeps the last copy",
+    "these are the bytes of the earlier one",
+    "verify in game",
 )
 
 
@@ -83,6 +100,19 @@ def _prefill(jp: str) -> str:
     return "" if codec.has_japanese(jp) else jp
 
 
+#: The losing copy of a repeated record id.  Its rows exist so the bytes can be
+#: read, and they must never be keyed like the winner's -- ``('m/MS6012.BIN',
+#: '4:14', 0)`` named two different rows until 2026-09-11, so ``tables.read``
+#: kept whichever came last and ``stale_rows``/``plan`` compared the survivor
+#: against the other record's spans.
+LOSER_SUFFIX = "~"
+
+
+def _rec_key(rec, key: str) -> str:
+    """The table's ``rec`` column for a record: ``0:3A``, or ``0:3A~``."""
+    return key + LOSER_SUFFIX if rec.dup_loser else key
+
+
 def script_rows(rel: str, sc: script.Script, pools) -> "list[tables.Row]":
     rows = []
     for rec in sc.iter_records():
@@ -98,7 +128,8 @@ def script_rows(rel: str, sc: script.Script, pools) -> "list[tables.Row]":
             if not jp.strip():
                 continue
             rows.append(tables.Row(
-                rel, rec.key, 0, 0, UNTILED_TAG, jp.replace("\t", " "), "",
+                rel, _rec_key(rec, rec.key), 0, 0, UNTILED_TAG,
+                jp.replace("\t", " "), "",
                 note=_note([script.NOEDIT_NOTE, script.UNTILED_NOTE,
                        "record does not tile (%s); read-only, copied verbatim"
                        % rec.tile_error])))
@@ -106,6 +137,14 @@ def script_rows(rel: str, sc: script.Script, pools) -> "list[tables.Row]":
         for sp in rec.spans:
             jp = script.span_text(rec, sp)
             notes = []
+            if rec.dup_loser:
+                # Never in the runtime image, so never executed, never branched
+                # to and never served.  Kept readable, keyed apart, not editable.
+                notes.append(script.NOEDIT_NOTE)
+                notes.append("this container installs record %02X twice and the "
+                             "loader keeps the last copy; these are the bytes of "
+                             "the earlier one, which is never in the image"
+                             % rec.id)
             if rec.blocked == script.PREFIX_NOTE:
                 # Deliberately NOT @noedit: the span is verified safe to overlay
                 # (giten/partial.py), so it should be translated and width-checked
@@ -139,7 +178,8 @@ def script_rows(rel: str, sc: script.Script, pools) -> "list[tables.Row]":
                                  "body; editable, but verify this file in game")
                 elif f == script.DUPID_NOTE:
                     notes.append("two records share this id in one container; "
-                                 "editable because nothing here branches")
+                                 "the loader keeps the last copy (measured), so "
+                                 "the layout is known and this is advisory")
             if rec.unimplemented:
                 notes.append("record reaches an engine no-op opcode; verify in game")
             if pool.has_calls(jp):
@@ -149,8 +189,9 @@ def script_rows(rel: str, sc: script.Script, pools) -> "list[tables.Row]":
                 notes.append("reads: " + pool.reading(jp, pools))
             if sp.is_choice and sp.choice_width:
                 notes.append("menu option, declared width %d columns" % sp.choice_width)
-            rows.append(tables.Row(rel, sp.rec_key, sp.idx, sp.off, sp.tag,
-                                   jp, _prefill(jp), note=_note(notes)))
+            rows.append(tables.Row(rel, _rec_key(rec, sp.rec_key), sp.idx,
+                                   sp.off, sp.tag, jp, _prefill(jp),
+                                   note=_note(notes)))
     return rows
 
 
@@ -186,16 +227,38 @@ def rows_for(rel: str, raw: bytes, pools) -> "list[tables.Row]":
 
 
 def run(family: str = "all", root: "str | None" = None,
-        text_dir: "str | None" = None, quiet: bool = False) -> dict:
+        text_dir: "str | None" = None, quiet: bool = False,
+        only: "list[str] | None" = None) -> dict:
+    """Re-extract ``family`` into ``text_dir``.
+
+    ``only`` is a list of ``fnmatch`` patterns against the ``dir/FILE.BIN`` key,
+    exactly as ``build_v2.run`` takes: a file that does not match is not read and
+    its table is not rewritten, so a change that can only affect a named handful
+    of files can be shown to have touched only those tables.
+    """
     text_dir = text_dir or text_v2_dir()
     pools = pool.load(root)
     fams = files.expand_family(family)
+    wanted = None
+    if only:
+        import fnmatch
+        wanted = [rel for rel in files.iter_files(fams, root)
+                  if any(fnmatch.fnmatch(rel, pat) for pat in only)]
+        # One table may hold several files (``p/_P_NAMES``).  Rewriting it from
+        # a subset would silently drop the rest, so refuse instead.
+        picked = {files.table_path(rel, text_dir) for rel in wanted}
+        clash = [rel for rel in files.iter_files(fams, root)
+                 if rel not in set(wanted)
+                 and files.table_path(rel, text_dir) in picked]
+        if clash:
+            raise ValueError("--only would rewrite %s, which also holds %s"
+                             % (files.table_path(clash[0], text_dir), clash[0]))
 
     by_table, order = {}, []
     st = {"files": 0, "rows": 0, "tables": 0, "untiled": 0, "blocked": 0,
           "nonscript": 0, "reanchored": 0, "unanchored": 0}
 
-    for rel in files.iter_files(fams, root):
+    for rel in (wanted if wanted is not None else files.iter_files(fams, root)):
         raw = files.read_source(rel, root)
         rows = rows_for(rel, raw, pools)
         st["files"] += 1
@@ -235,7 +298,13 @@ def run(family: str = "all", root: "str | None" = None,
                 # this index did not exist before.  Both are answered the same
                 # way: find the old row whose Japanese is this row's, and only
                 # when that is unambiguous.
-                cands = by_content.get((r.rec, r.jp)) or []
+                # The losing copy of a duplicate id was keyed like the winner
+                # until 2026-09-11 and is keyed `<rec>~` now, so look under both
+                # -- otherwise every such row loses its reference translation on
+                # the extract that renames it.
+                cands = (by_content.get((r.rec, r.jp))
+                         or by_content.get((r.rec.rstrip(LOSER_SUFFIX), r.jp))
+                         or [])
                 # "Unambiguous" means the candidates *agree*, not that there is
                 # only one of them.  A record often repeats a line verbatim --
                 # the same narration for each party member, say -- and every

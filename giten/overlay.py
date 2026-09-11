@@ -151,31 +151,52 @@ def engine_index(recs: "list[records.Record]") -> bytes:
     """The 0x400-byte index the loader builds: 256 x { u16 offset, u16 length }.
 
     Verified against the engine's own entries logged by the tracer (``trace
-    bases``): absent ids are one zero byte at their slot.
+    bases``): absent ids are one zero byte at their slot, and a duplicated id
+    resolves **last**-wins, exactly as :func:`records.bases` does -- measured on
+    ``m/MS6800`` c0 in the Roppongi trace.
     """
     base = records.bases(recs)
-    first = {}
+    keep = {}
     for r in recs:
-        first.setdefault(r.id, len(r.data))
+        keep[r.id] = len(r.data)
     out = bytearray()
     for i in range(256):
-        out += struct.pack("<HH", base[i], first.get(i, records.ABSENT_LEN))
+        out += struct.pack("<HH", base[i], keep.get(i, records.ABSENT_LEN))
     return bytes(out)
 
 
 def image_bytes(recs: "list[records.Record]") -> bytes:
     """The runtime image: index, then record data in id order (absent = 00)."""
-    first = {}
+    keep = {}
     for r in recs:
-        first.setdefault(r.id, r.data)
+        keep[r.id] = r.data
     out = bytearray(engine_index(recs))
     for i in range(256):
-        out += first.get(i, b"\0")
+        out += keep.get(i, b"\0")
     return bytes(out)
 
 
 def image_end(recs) -> int:
     return len(image_bytes(recs))
+
+
+def other_bases(recs: "list[records.Record]") -> "dict[int, int]":
+    """``records.bases`` with a duplicated id resolved the *other* way.
+
+    The layout the engine does **not** build (first-wins), kept so :func:`plan`
+    can cap a span under both readings and serve the smaller of the two.  Serving
+    fewer bytes is always safe, and a container that repeats an id is the one
+    place where an unmodelled loader detail could still move a branch target.
+    For a container with no duplicate this is exactly :func:`records.bases`.
+    """
+    have = {}
+    for r in recs:
+        have.setdefault(r.id, len(r.data))
+    off, out = records.INDEX_SIZE, {}
+    for i in range(256):
+        out[i] = off
+        off += have.get(i, records.ABSENT_LEN)
+    return out
 
 
 def live_index(image: bytes) -> "list[tuple[int, int]]":
@@ -345,6 +366,13 @@ def plan(rows, root=None):
             if r.tag == extract_v2.UNTILED_TAG or r.rec == extract_v2.PNAME_REC:
                 findings.append(("%s %s[%d]" % (rel, r.rec, r.idx), "record is not editable"))
                 continue
+            if r.rec.endswith(extract_v2.LOSER_SUFFIX):
+                findings.append(("%s %s[%d]" % (rel, r.rec, r.idx),
+                                 "the losing copy of a repeated record id: the "
+                                 "loader installs the later copy over it, so "
+                                 "these bytes are never in any buffer and no "
+                                 "address in them can ever be served"))
+                continue
             ci, _, rid = r.rec.partition(":")
             keyed[(int(ci), int(rid, 16), r.idx)] = r
         for key, why in build_v2.stale_rows(sc, keyed):
@@ -359,17 +387,29 @@ def plan(rows, root=None):
             # these that falls inside it.  Held record-relative, because the
             # record can turn up in a buffer this container never built.
             targets = sorted(script._branch_targets(cont, base))
+            # Insurance for the one place a layout detail could still move a
+            # target: a container that repeats a record id.  Last-wins is
+            # measured (``records.bases``), but the cost of being wrong is a jump
+            # landing on English, so such a container is capped under BOTH
+            # readings and the smaller `served` is kept.
+            alt_base = alt_targets = None
+            if len({r.id for r in cont}) != len(cont):
+                alt_base = other_bases(recs)
+                alt_targets = sorted(script._branch_targets(cont, alt_base))
             # a container with a record we cannot tile is one where the walk is
             # known to go out of step; spans after a branch in it are suspect
             untiled_here = any(r.tokens is None for r in cont)
-            seen = set()
+            # last wins, as the loader does: a duplicated id installs the second
+            # copy, so the second copy's spans are the ones in the buffer
+            keep = {}
             for rec in cont:
+                keep[rec.id] = rec
+            for rec in keep.values():
                 # ``span_tokens``, not ``tokens``: a straddling record is untiled
                 # for the byte builder but its spans are complete, and the overlay
                 # rebuilds nothing, so it can serve them.
-                if rec.id in seen or rec.span_tokens is None:
+                if rec.span_tokens is None:
                     continue
-                seen.add(rec.id)
                 rkey = (rec.id, len(rec.data), fnv1a(rec.data))
                 for sp in rec.spans:
                     row = keyed.get((ci, rec.id, sp.idx))
@@ -470,6 +510,12 @@ def plan(rows, root=None):
                     served = min(len(data), jp_len)
                     if cap is not None:
                         served = min(served, cap - lo)
+                    if alt_base is not None:
+                        alo = alt_base[rec.id] + sp.off
+                        ahi = alt_base[rec.id] + sp.end
+                        acap = next((t for t in alt_targets if alo < t < ahi), None)
+                        if acap is not None:
+                            served = min(served, acap - alo)
                     _add_span(table, rkey,
                               SpanEntry(sp.off, jp_len, data, served,
                                         sources=[(rel, ci, rec.id, sp.idx)]),

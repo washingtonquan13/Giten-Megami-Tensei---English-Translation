@@ -137,6 +137,11 @@ class Rec:
     tiled_bytes: "int | None" = None
     #: how many of its spans the safety kernel refused
     rejected_spans: int = 0
+    #: an earlier copy of a record id this container repeats.  The loader
+    #: installs each copy in turn, so only the last is in the runtime image;
+    #: this one is never executed, never branched to and never served, and its
+    #: table rows are keyed apart from the winner's.
+    dup_loser: bool = False
     #: how many bytes this record's last token reads past its own end.  Legal
     #: for the engine -- records are contiguous at runtime and the byte fetch
     #: has no bound -- so the record is tiled like any other; the byte builder
@@ -314,20 +319,29 @@ def parse(rel: str, raw: bytes, tab=None) -> Script:
         # the coordinate space the engine actually runs in.
         image = records.runtime_image(recs)
         image_base = records.bases(recs)
-        for r in recs:
+        # Which copy of a repeated id the loader ends up with: the last one it
+        # installs (``records.bases``, measured on m/MS6800 c0).  Every earlier
+        # copy is a *loser* -- never in the image, never branched to, never
+        # served -- and has to be told apart from the winner, or two rows in one
+        # table are keyed alike.
+        last_pos = {}
+        for pos, r in enumerate(recs):
+            last_pos[r.id] = pos
+        for pos, r in enumerate(recs):
             data_off = body_off + r.header_len
             rec = Rec(c.index, r.id, r.order, r.data, data_off,
                       c.off + 2 + data_off, cond=r.cond, param=r.param)
             if r.id in seen:
                 dups.append((c.index, r.id))
             seen.add(r.id)
+            rec.dup_loser = last_pos[r.id] != pos
             if r.data:
                 # Where this record sits in the runtime image -- unless it is
-                # the losing copy of a duplicate id, which the loader never
-                # installs and which therefore has nothing after it at all.
-                # Checked by comparing the bytes rather than by counting
-                # duplicates: `records.bases` resolves first-wins and this has
-                # to agree with it or the walk reads a neighbour's operands.
+                # the losing copy of a duplicate id, which the loader overwrites
+                # and which therefore has nothing after it at all.  Checked by
+                # comparing the bytes rather than by counting duplicates: the
+                # walk has to agree with `records.bases` or it reads a
+                # neighbour's operands.
                 start = image_base[r.id] - records.INDEX_SIZE
                 if image[start:start + len(r.data)] != r.data:
                     image_for, start = r.data, 0
@@ -385,24 +399,16 @@ def parse(rel: str, raw: bytes, tab=None) -> Script:
             # the other is never in the image.  10 containers corpus-wide, in
             # m/MS6000, m/MS6012, m/MS610B and m/MS6800.
             #
-            # This used to block a container when it contained a `rel16`, on the
-            # grounds that only a branch is measured against `base(id)`.  That is
-            # the wrong question, and it was wrong in both directions: an overlay
-            # span's runtime address is `base(id) + offset` whether or not
-            # anything branches, so `m/MS6012` c4 -- whose duplicate moves 235 of
-            # 256 bases by up to 16 bytes -- was editable; while `m/MS6000` c0 and
-            # c1, whose duplicated ids are one byte each and byte-identical so
-            # that *no* base moves either way, were blocked, holding 502
-            # characters and 109 finished translations hostage.
-            #
-            # The real question is whether resolving the duplicate one way or the
-            # other changes anything at all.  See records.layout_is_ambiguous.
-            if records.layout_is_ambiguous(recs):
-                for rec in rows:
-                    rec.blocked = DUPID_NOTE
-            else:
-                for rec in rows:
-                    rec.flags.append(DUPID_NOTE)
+            # **Advisory only since 2026-09-11.**  This blocked the container
+            # while "which copy wins" was a guess.  It is not a guess any more --
+            # the engine's own index entries say the last copy wins
+            # (``records.bases``) -- so the layout is as determined here as
+            # anywhere else, and the marker is left as a note.  What the answer
+            # does change is *identity*: the losing copy is a record nothing ever
+            # executes, so its rows are keyed apart and marked `@noedit`
+            # (``extract_v2.script_rows``).
+            for rec in rows:
+                rec.flags.append(DUPID_NOTE)
         if b.short_count or b.tail:
             for rec in rows:
                 rec.flags.append(PARTIAL_NOTE)
@@ -842,16 +848,17 @@ def build(sc: Script, edits: "dict[tuple[int, int, int], str]") -> "tuple[bytes,
     bodies = []
     for ci, recs in enumerate(sc.containers):
         # The runtime index has one slot per id; when a container repeats an id
-        # the first record installed is the one the index describes.
-        first = {}
+        # the loader installs each copy in turn, so the **last** one is what the
+        # index ends up describing (measured: `records.bases`).
+        keep = {}
         for pos, r in enumerate(recs):
-            first.setdefault(r.id, pos)
+            keep[r.id] = pos
 
         omap = OffsetMap()
         off = records.INDEX_SIZE
         for i in range(256):
             omap.old_base[i] = off
-            omap.old_len[i] = (len(recs[first[i]].data) if i in first
+            omap.old_len[i] = (len(recs[keep[i]].data) if i in keep
                                else records.ABSENT_LEN)
             off += omap.old_len[i]
 
@@ -891,11 +898,11 @@ def build(sc: Script, edits: "dict[tuple[int, int, int], str]") -> "tuple[bytes,
         off = records.INDEX_SIZE
         for i in range(256):
             omap.new_base[i] = off
-            omap.new_len[i] = (len(new_data[first[i]]) if i in first
+            omap.new_len[i] = (len(new_data[keep[i]]) if i in keep
                                else records.ABSENT_LEN)
-            omap.runs[i] = (new_runs[first[i]] if i in first
+            omap.runs[i] = (new_runs[keep[i]] if i in keep
                             else [(0, records.ABSENT_LEN, 0)])
-            omap.anchors[i] = new_anchors.get(first.get(i), {})
+            omap.anchors[i] = new_anchors.get(keep.get(i), {})
             off += omap.new_len[i]
         omap.finish()
 

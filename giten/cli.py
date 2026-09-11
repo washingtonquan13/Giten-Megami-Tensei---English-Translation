@@ -29,6 +29,9 @@ def make_parser():
 
     p = sub.add_parser("extract", help="game files -> editable text tables")
     p.add_argument("--family", default="all", choices=files.FAMILY_CHOICES)
+    p.add_argument("--only", action="append", default=None, metavar="GLOB",
+                   help="re-extract only the files matching this pattern "
+                        "(repeatable), leaving every other table alone")
     _common(p)
 
     p = sub.add_parser("build", help="tables + game files -> a build tree")
@@ -183,7 +186,8 @@ def main(argv=None) -> int:
     args = make_parser().parse_args(argv)
     if args.cmd == "extract":
         mod = extract_v2
-        mod.run(args.family, args.root, args.text_dir, args.quiet)
+        mod.run(args.family, args.root, args.text_dir, args.quiet,
+                only=args.only)
         return 0
     if args.cmd == "build":
         mod = build_v2

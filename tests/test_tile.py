@@ -138,7 +138,7 @@ def _stop_offset(m, ci, rec_id):
     recs = m.sc.containers[ci]
     byid = {}
     for r in recs:
-        byid.setdefault(r.id, r)
+        byid[r.id] = r                      # last wins, as the loader does
     image = _records.runtime_image(recs)
     off = _records.INDEX_SIZE
     for i in range(256):

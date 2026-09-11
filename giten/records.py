@@ -220,13 +220,25 @@ def bases(records: "list[Record]") -> "dict[int, int]":
     """``{record id: runtime offset}`` for one container's records.
 
     Every id 0..255 gets an entry; ids with no record are one byte long, which
-    is what the loader pre-initialises them to.  Duplicate ids inside a single
-    container would be ambiguous; the first one wins and the caller is expected
-    to have reported the duplicate.
+    is what the loader pre-initialises them to.
+
+    Duplicate ids inside a single container resolve **last-wins**, and that is
+    measured, not assumed (2026-09-11).  ``0x0043ABC0`` installs each record by
+    id in **file** order and resizes the buffer by ``new_len - old_len``, so a
+    second record with the same id replaces the first (``docs/format-notes.md``
+    section 2.6).  The engine said so itself: in the Roppongi trace
+    (``build/traces/2026-09-11-roppongi-trace.bin``, events #114236-7)
+    ``m/MS6800`` container 0 -- which holds record ``0x0E`` twice, 11 bytes then
+    7 -- is logged with index entry ``(0x0810, 7)`` and image end ``0x09C8``.
+    First-wins predicts ``(0x0810, 11)`` and ``0x09CC``.  Swept over the whole
+    trace, restricted to events whose logged character matches the bytes it
+    resolves to and whose record content names exactly one place outside the
+    demon merge: **106 434 events, 0 disagreeing with last-wins**, 6 328 (in 25
+    records) disagreeing with first-wins.  ``tests/test_v2.py`` pins both halves.
     """
     have = {}
     for r in records:
-        have.setdefault(r.id, len(r.data))
+        have[r.id] = len(r.data)
     off = INDEX_SIZE
     out = {}
     for i in range(256):
@@ -246,10 +258,13 @@ def runtime_image(records: "list[Record]") -> bytes:
     it matters: a token at the end of a record reads on into whatever the engine
     put next to it, which is the record with the next id, not the record stored
     next in the file.
+
+    Duplicate ids resolve last-wins, exactly as :func:`bases` does; the two have
+    to agree or a walk reads a neighbour's operands.
     """
     have = {}
     for r in records:
-        have.setdefault(r.id, r.data)
+        have[r.id] = r.data
     return b"".join(have.get(i, b"\x00") for i in range(256))
 
 
@@ -298,17 +313,18 @@ def load(rel: str, raw: bytes) -> FileImage:
 
 
 def layout_is_ambiguous(recs: "list[Record]") -> bool:
-    """Does a duplicate record id leave this container's runtime layout undecided?
+    """Would the *other* reading of a duplicate record id change this layout?
 
-    A container may hold two records with the same id.  :func:`bases` and
-    :func:`overlay.engine_index` both take the **first**, but which one the
-    loader actually keeps has never been observed, so the honest question is not
-    "is there a duplicate" -- it is whether the answer would change anything.
+    **Advisory since 2026-09-11.**  The question this used to answer -- "which
+    copy does the loader keep, and is it safe to edit a container where we do
+    not know" -- has an answer now: the last one, measured off the engine's own
+    index entries (see :func:`bases`).  Nothing blocks on this any more; it is
+    kept because it is still the honest way to say how much the reading is worth
+    in a given container, and the corpus measurement below is still true.
 
-    It only can when the copies differ in length: the image is laid out by id,
-    so keeping a 24-byte record instead of a 4-byte one shifts every later id.
-    Two copies of the same length leave every base identical either way and
-    there is nothing to be ambiguous about.
+    It only matters when the copies differ in length: the image is laid out by
+    id, so keeping a 24-byte record instead of a 4-byte one shifts every later
+    id.  Two copies of the same length leave every base identical either way.
 
     Measured over the corpus, this matters both ways.  `m/MS6000` c0 and c1
     duplicate ids whose copies are one byte each and identical -- **0 of 256
@@ -331,12 +347,11 @@ def layout_is_ambiguous(recs: "list[Record]") -> bool:
     if any(len({bytes(x.data) for x in v}) > 1 and len({len(x.data) for x in v}) == 1
            for v in dups):
         return True
-    first = bases(recs)
     have = {}
     for r in recs:
-        have[r.id] = len(r.data)                  # last wins
-    off, last = INDEX_SIZE, {}
+        have.setdefault(r.id, len(r.data))        # the reading the engine does NOT do
+    off, first = INDEX_SIZE, {}
     for i in range(256):
-        last[i] = off
+        first[i] = off
         off += have.get(i, ABSENT_LEN)
-    return first != last
+    return first != bases(recs)

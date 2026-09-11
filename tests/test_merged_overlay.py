@@ -81,11 +81,8 @@ def merged_image(rels, ci=0):
     """The image the engine builds: later files replace earlier ones by id."""
     m = {}
     for rel in rels:
-        seen = set()
         for r in _recs(rel, ci):
-            if r.id not in seen:            # first occurrence wins within a file
-                seen.add(r.id)
-                m[r.id] = r.data
+            m[r.id] = r.data                # last wins, as the loader does
     return overlay.image_bytes([records.Record(i, m[i]) for i in sorted(m)])
 
 

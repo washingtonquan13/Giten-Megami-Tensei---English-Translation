@@ -49,13 +49,13 @@ def branch_map(sc, ci=0):
     where they ought to move.
     """
     recs = sc.containers[ci]
-    first = {}
+    keep = {}
     for pos, r in enumerate(recs):
-        first.setdefault(r.id, pos)
+        keep[r.id] = pos                    # last wins, as the loader does
     base, off = {}, records.INDEX_SIZE
     for i in range(256):
         base[i] = off
-        off += len(recs[first[i]].data) if i in first else records.ABSENT_LEN
+        off += len(recs[keep[i]].data) if i in keep else records.ABSENT_LEN
 
     where = {}
     ordinal = {}
@@ -1670,14 +1670,145 @@ def test_the_ms0031_trace_confirms_10_and_expression_kind_13():
     assert nodes["0x1f"] == ["u8", "expr"], nodes["0x1f"]
 
 
-def test_a_wrong_duplicate_resolution_costs_one_record_and_no_address():
-    """Why the duplicate-id question is cosmetic, not a hazard -- under v6.
+def test_the_engine_keeps_the_last_copy_of_a_repeated_record_id():
+    """The measurement, and the numbers it was read off.
 
-    Ten containers hold two records with one id.  `records.bases`,
-    `overlay.engine_index` and `overlay.image_bytes` all keep the **first**, and
-    no trace has ever covered a duplicate-id file, so that is a model rather than
-    an observation.  Four containers would be laid out differently under the
-    other reading -- `m/MS6000` c8 shifts 247 of 256 bases by up to 136 bytes.
+    ``m/MS6800`` container 0 holds record ``0x0E`` twice: eleven bytes, then
+    seven.  In ``build/traces/2026-09-11-roppongi-trace.bin`` the engine logs its
+    own index entry for that record as ``(0x0810, 7)`` and the buffer's image end
+    as ``0x09C8`` -- the seven-byte copy, i.e. the **last** one.  First-wins
+    predicts ``(0x0810, 11)`` and ``0x09CC``, so the two readings are four bytes
+    apart and the trace picks one of them.
+
+    Pinned here without the trace as well as with it: the model's own numbers are
+    asserted against the observed ones, so a change to ``records.bases`` fails
+    this whether or not the capture is in the checkout.
+    """
+    from giten import container, files, overlay, paths, records
+
+    conts, _ = container.split(files.read_source("m/MS6800.BIN", paths.ORIGINAL_DDSWIN))
+    recs = [records.Record(r.id, r.data)
+            for r in records.parse_body(conts[0].body).records]
+    copies = [r for r in recs if r.id == 0x0E]
+    assert [len(r.data) for r in copies] == [11, 7], [len(r.data) for r in copies]
+
+    idx = overlay.live_index(overlay.image_bytes(recs))
+    assert idx[0x0E] == (0x0810, 7), idx[0x0E]          # the engine's own entry
+    assert records.bases(recs)[0x0E] == 0x0810
+    # the record after it is where the two readings part company: 0x0810 + 7
+    assert records.bases(recs)[0x0F] == 0x0817, hex(records.bases(recs)[0x0F])
+    assert overlay.image_end(recs) == 0x09C8, hex(overlay.image_end(recs))
+    # ...and the image really holds the later copy's bytes there
+    img = overlay.image_bytes(recs)
+    assert img[0x0810:0x0817] == copies[1].data
+
+    # the other reading, stated so the four-byte gap is visible in the test
+    other = overlay.other_bases(recs)
+    assert other[0x0F] - records.bases(recs)[0x0F] == 4
+
+    ROPPONGI = os.path.join(paths.BUILD_DIR, "traces",
+                            "2026-09-11-roppongi-trace.bin")
+    if not os.path.exists(ROPPONGI):
+        return
+    from giten import tile
+    key = (0x0E, 7, overlay.fnv1a(copies[1].data))
+    _ver, evs = tile.read_events(ROPPONGI)
+    hits = [e for e in evs
+            if (e.rec, e.idx_len, e.rec_hash) == key and e.idx_off == 0x0810]
+    assert hits, "no event stands in m/MS6800 c0 r0E any more"
+    for e in hits:
+        assert e.image_end == 0x09C8, (e.n, hex(e.image_end))
+
+
+def test_the_roppongi_trace_agrees_with_last_wins_and_not_with_first_wins():
+    """The sweep behind ``records.bases``, over a real four-hour session.
+
+    Every event whose logged character matches the bytes it resolves to (the
+    self-check that separated the real events from the impostors in the
+    2026-09-06 pass) and whose record *content* names exactly one place in the
+    corpus, outside the demon-merge family -- a merged buffer is several files at
+    once, so no single container's layout can describe it.  For each, the
+    engine's own ``(index offset, index length, image end)`` against the model's,
+    computed both ways.
+
+    Measured 2026-09-11: **106 434 events, 0 disagreeing with last-wins**, and
+    6 328 events in 25 records disagreeing with first-wins -- every one of them
+    in ``m/MS6800`` c0, the only non-merge container in the session that repeats
+    a record id.
+    """
+    from giten import container, files, paths, records, tile
+
+    trace_path = os.path.join(paths.BUILD_DIR, "traces",
+                              "2026-09-11-roppongi-trace.bin")
+    if not os.path.exists(trace_path):
+        return
+    index = tile.record_index(paths.game_root())
+    layouts = {}
+
+    def layout(rel, ci):
+        if (rel, ci) not in layouts:
+            conts, _ = container.split(files.read_source(rel))
+            recs = records.parse_body(conts[ci].body).records
+            out = {}
+            for name, pick in (("first", dict.setdefault), ("last", dict.__setitem__)):
+                have = {}
+                for r in recs:
+                    pick(have, r.id, len(r.data))
+                off, base = records.INDEX_SIZE, {}
+                for i in range(256):
+                    base[i] = off
+                    off += have.get(i, records.ABSENT_LEN)
+                out[name] = (base, off, have)
+            layouts[(rel, ci)] = out
+        return layouts[(rel, ci)]
+
+    usable = 0
+    bad = {"first": {}, "last": {}}
+    _ver, evs = tile.read_events(trace_path)
+    for ev in evs:
+        if not ev.idx_len or not ev.pc0:
+            continue
+        hit = index.get((ev.rec, ev.idx_len, ev.rec_hash))
+        if not hit or len({(h[0], h[1]) for h in hit}) > 1:
+            continue
+        rel, ci, rec_id, data = hit[0]
+        if rel.startswith("m/MS60") or rel.startswith("m/MS61"):
+            continue                        # the demon merge: several files at once
+        off = ev.pc0 - ev.width - ev.idx_off
+        if not (0 <= off and off + ev.width <= len(data)):
+            continue
+        want = (bytes([ev.ch >> 8, ev.ch & 0xFF]) if ev.ch > 0xFF
+                else bytes([ev.ch]))
+        if data[off:off + ev.width] != want:
+            continue                        # the character self-check
+        usable += 1
+        for name in ("first", "last"):
+            base, end, have = layout(rel, ci)[name]
+            if (base[rec_id] != ev.idx_off or have.get(rec_id) != ev.idx_len
+                    or (ev.image_end and end != ev.image_end)):
+                bad[name][(rel, ci, rec_id)] = bad[name].get((rel, ci, rec_id), 0) + 1
+
+    assert usable > 100000, usable
+    assert not bad["last"], sorted(bad["last"])[:8]
+    assert sum(bad["first"].values()) > 6000, sum(bad["first"].values())
+    assert {k[0] for k in bad["first"]} == {"m/MS6800.BIN"}, sorted(bad["first"])[:8]
+    # ...and the layout this test built for itself is the one the model builds,
+    # or it would agree with the engine about a rule the code does not follow
+    conts, _ = container.split(files.read_source("m/MS6800.BIN"))
+    recs = records.parse_body(conts[0].body).records
+    assert records.bases(recs) == layout("m/MS6800.BIN", 0)["last"][0]
+    assert records.bases(recs) != layout("m/MS6800.BIN", 0)["first"][0]
+
+
+def test_a_wrong_duplicate_resolution_costs_one_record_and_no_address():
+    """Why a duplicate id costs at most one record -- under v6.
+
+    Ten containers hold two records with one id.  Which copy the loader keeps is
+    measured now (the last;
+    ``test_the_engine_keeps_the_last_copy_of_a_repeated_record_id``), and this is
+    what says the cost of having read it the other way would have been bounded
+    anyway.  Four containers are laid out differently under the two readings --
+    `m/MS6000` c8 shifts 247 of 256 bases by up to 136 bytes.
 
     Under v4/v5 the guard was a fingerprint of the whole record index: resolve
     the duplicate the other way and the index differed, so the hash differed,

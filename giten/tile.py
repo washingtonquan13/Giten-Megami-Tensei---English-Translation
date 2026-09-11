@@ -536,10 +536,11 @@ class _Model:
         self._entries = {}
 
     def rec(self, ci, rec_id):
+        out = None
         for r in self.sc.containers[ci]:
             if r.id == rec_id:
-                return r
-        return None
+                out = r                 # last wins, as the loader does
+        return out
 
     def _container(self, ci):
         if ci in self._starts:
@@ -547,7 +548,7 @@ class _Model:
         recs = self.sc.containers[ci]
         byid = {}
         for r in recs:
-            byid.setdefault(r.id, r)
+            byid[r.id] = r              # last wins, as the loader does
         image = records.runtime_image(recs)
         off, bases = records.INDEX_SIZE, {}
         for i in range(256):

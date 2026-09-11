@@ -64,14 +64,14 @@ RECORD_LIMIT = 0x7FFF
 
 def _bases(recs) -> "dict[int, int]":
     """``{record id: runtime offset}`` -- :func:`records.bases` over parsed recs."""
-    first = {}
+    keep = {}
     for pos, r in enumerate(recs):
-        first.setdefault(r.id, pos)
+        keep[r.id] = pos                    # last wins, as the loader does
     out = {}
     off = records.INDEX_SIZE
     for i in range(256):
         out[i] = off
-        off += len(recs[first[i]].data) if i in first else records.ABSENT_LEN
+        off += len(recs[keep[i]].data) if i in keep else records.ABSENT_LEN
     return out
 
 

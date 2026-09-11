@@ -60,12 +60,12 @@ def corpus(root=None):
                 recs = records.parse_body(c.body).records
             except Exception:
                 continue
-            first = {}
+            keep = {}
             for r in recs:
-                first.setdefault(r.id, r.data)
+                keep[r.id] = r.data     # last wins, as the loader does
             off = 0x400
             for i in range(256):
-                data = first.get(i)
+                data = keep.get(i)
                 n = len(data) if data is not None else records.ABSENT_LEN
                 if data is not None and n > 1:
                     out[(i, off, n)].setdefault(

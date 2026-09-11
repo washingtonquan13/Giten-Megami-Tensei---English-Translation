@@ -115,7 +115,7 @@ def test_max_image_end_still_bounds_every_buffer_one_of_our_records_can_be_in():
             return None
         out = {}
         for r in records.parse_body(cs[ci].body).records:
-            out.setdefault(r.id, len(r.data))
+            out[r.id] = len(r.data)         # last wins, as the loader does
         return out
 
     def end(ls):
@@ -724,11 +724,10 @@ def test_the_overlay_never_answers_an_address_a_branch_jumps_to():
             recs = [records.Record(r.id, r.data) for r in cont]
             base = records.bases(recs)
             targets = script._branch_targets(cont, base)
-            seen = set()
+            keep = {}
             for rec in cont:
-                if rec.id in seen:
-                    continue
-                seen.add(rec.id)
+                keep[rec.id] = rec          # last wins, as the loader does
+            for rec in keep.values():
                 e = overlay.find_entry(table, rec.id, len(rec.data),
                                        overlay.fnv1a(rec.data))
                 if e is None:
@@ -812,11 +811,10 @@ def test_every_span_the_overlay_serves_starts_where_a_token_starts():
     for rel in rels:
         sc = script.parse(rel, files.read_source(rel))
         for cont in sc.containers:
-            seen = set()
+            keep = {}
             for rec in cont:
-                if rec.id in seen:
-                    continue
-                seen.add(rec.id)
+                keep[rec.id] = rec          # last wins, as the loader does
+            for rec in keep.values():
                 e = overlay.find_entry(table, rec.id, len(rec.data),
                                        overlay.fnv1a(rec.data))
                 if e is None:

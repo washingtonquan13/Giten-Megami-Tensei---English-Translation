@@ -41,7 +41,7 @@ def _load(root=None) -> "dict[int, dict[int, bytes]]":
                 img = records.load(rel, fh.read())
             if img.ok:
                 for _ci, r in img.iter_records():
-                    table.setdefault(r.id, r.data)
+                    table[r.id] = r.data     # last wins, as the loader does
         out[k] = table
     return out
 

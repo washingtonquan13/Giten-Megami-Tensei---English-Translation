@@ -54,11 +54,12 @@ def record_keys(rel: str, root=None):
     if not sc.ok:
         return out
     for cont in sc.containers:
-        seen = set()
+        keep = {}
         for rec in cont:
-            if rec.id in seen or rec.span_tokens is None:
+            keep[rec.id] = rec          # last wins, as the loader does
+        for rec in keep.values():
+            if rec.span_tokens is None:
                 continue
-            seen.add(rec.id)
             key = (rec.id, len(rec.data), overlay.fnv1a(rec.data))
             for sp in rec.spans:
                 out[(sp.rec_key, sp.idx)] = key

@@ -241,7 +241,7 @@ class _Image:
             self.base = records.bases(rr)
             self.image_end = overlay.image_end(rr)
             for r in recs:
-                self.by_id.setdefault(r.id, r)
+                self.by_id[r.id] = r          # last wins, as the loader does
             if entries:
                 table = sorted(entries, key=lambda e: e.key)
                 for rid, r in self.by_id.items():
@@ -667,11 +667,13 @@ def corpus_records(root: "str | None" = None) -> "dict[tuple[int, int, int], byt
                     recs = records.parse_body(c.body).records
                 except Exception:
                     continue
-                seen = set()
+                keep = {}
                 for r in recs:
-                    if r.id in seen:
-                        continue            # first occurrence wins, as the loader does
-                    seen.add(r.id)
+                    # last occurrence wins, as the loader does: it installs each
+                    # copy of a repeated id in turn, so the second replaces the
+                    # first (measured on m/MS6800 c0 -- see `records.bases`)
+                    keep[r.id] = r
+                for r in keep.values():
                     out.setdefault((r.id, len(r.data), overlay.fnv1a(r.data)), r.data)
     return out
 
