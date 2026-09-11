@@ -127,9 +127,15 @@ from 0 the head is `1F 00` (a two-byte no-op), then `02 1F` (pool call into
 the run-loop terminator. If the engine really stops after nine bytes and draws
 nothing, the head is a preamble some other subsystem reads and these five
 records are not entered at 0 by anything; if it draws 「武器屋：おっと、まだ店は
-開店してねーんだ。」 then `02 1F` is not a pool call and `partial.tokenize_prefix`'s
-reading of the head is wrong in a way that has been guessed at since the file
-was opted into prefix tiling.
+開店してねーんだ。」 then `02 1F` is not a pool call and the tokenizer's reading of
+the head is wrong.
+
+**Since the container-image walk these five records tile completely**, so they
+are no longer prefix-tiled and the file no longer needs `partial`'s opt-in: the
+trailer reads one byte into the next record, and for r04 — the last — into the
+`0x00` the loader pre-installs for absent record `0x05`. Two spans per record
+that the old safety kernel used to reject, the `02 1F` and `01 1F` of the head,
+are now ordinary spans. Whether *that* is right is the same question.
 
 * **`MS0080-r00`** — 武器屋 (weapon shop). **Watch the screen**: whether any text
   is drawn at all is the measurement.
@@ -245,7 +251,7 @@ way.
 * **`MS6200-r16`** — 26 bytes; switch entry at `0x14` has kind 31.
 * **`MS6200-r1F`** — 79 bytes; switch entry at `0x0C` has kind 229.
 * **`MS6200-r55`** — 10 bytes; a switch entry running past the end.
-* **`MS6200-r4F`** — 25 bytes; expression node `0x00` payload past the end.
+* **`MS6200-r4F`** — 25 bytes; straddle-tiled since the container-image walk (it was untiled when this tree was built, which is why it has one).
 * **`MS6200-r18`** — 22 bytes, straddle-tiled.
 * **`MS6200-r1A`** — 165 bytes, straddle-tiled.
 * **`MS6500-rC7`** — 141 bytes; switch entry at `0x4E` has kind 255.
