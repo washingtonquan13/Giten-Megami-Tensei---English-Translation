@@ -139,8 +139,8 @@ m/MS000C.BIN	0:01	31	787	1FD3	{08:4D}{08:81}あ私、{08:48}{08:42}出勤だ{08:
 m/MS000C.BIN	0:01	32	828	1F01	：	:			draft	
 m/MS000C.BIN	0:01	33	832	1FD3	あの‥{08:5D}良{08:18}ら後で、私とヴァーチャトレーナーでトレーニングし{08:25}？\n<wait>		Err... If you'd like, maybe we could do some training later?\n<wait>	v005		reads: あの‥もし良かったら後で、私とヴァーチャトレーナーでトレーニングしない？\n<wait>; @refalign
 m/MS000C.BIN	0:01	34	911	1F01	：	:	:	v005	draft	
-m/MS000C.BIN	0:01	35	915	1FD3	私も少し鍛え{08:25}といけ{08:25}し、{08:4D}に一人{08:55}るより二人の方が楽しい{08:42}。\n		I need to get stronger anyway, and it's more with the two of us.\nAt least consider it, okay?\n<wait>	v005		reads: 私も少し鍛えないといけないし、それに一人でするより二人の方が楽しいから。\n; @split: was 私も少し鍛え{08:25}といけ{08:25}し、{08:4D}に一人{08:55}るより二人の方が楽しい{08:42}。\n{08:4D}{08:81}あ、{08:5B}ね！\n<wait>; @refalign
-m/MS000C.BIN	0:01	36	978	1FD3	{08:4D}{08:81}あ、{08:5B}ね！\n<wait>					@split-tail of [35]; reads: それじゃあ、またね！\n<wait>
+m/MS000C.BIN	0:01	35	915	1FD3	私も少し鍛え{08:25}といけ{08:25}し、{08:4D}に一人{08:55}るより二人の方が楽しい{08:42}。\n	I need to train a bit myself, and it's more fun with two than alone.\n	I need to get stronger anyway, and it's more with the two of us.\nAt least consider it, okay?\n<wait>	v005	draft	reads: 私も少し鍛えないといけないし、それに一人でするより二人の方が楽しいから。\n; @refalign; @split-authored
+m/MS000C.BIN	0:01	36	978	1FD3	{08:4D}{08:81}あ、{08:5B}ね！\n<wait>	Well then, see you!\n<wait>			draft	@split-tail of [35]; reads: それじゃあ、またね！\n<wait>; @split-authored
 m/MS000C.BIN	0:01	37	1032	1F01	{08:62}パタパタと{01:2E}を出{08:21}。\n<wait>	 went pattering out of the room.\n<wait>	Wanting to avoid the awkward silence that is sure to follow,\nYuuka quickly turns around and runs off.\n<wait>	v005	draft	reads: は、パタパタと部屋を出ていった。\n<wait>; @refalign
 m/MS000C.BIN	0:01	38	1094	1F01	：	:	:	v005	draft	
 m/MS000C.BIN	0:01	39	1098	1FD3	大変！\n<wait>	Oh no!\n<wait>			draft	
@@ -247,7 +247,7 @@ m/MS000C.BIN	0:02	27	918	1F01	を優しく見つめ続{08:43}{02:08}\n	......\n	
 m/MS000C.BIN	0:02	28	945	1F01	も、嬉しそうな表情で	 too was gazing at 			draft	
 m/MS000C.BIN	0:02	29	971	1F01	を見つめ{08:14}{08:72}\n<wait>	 with a happy look...\n<wait>			draft	reads: を見つめている‥‥\n<wait>
 m/MS000C.BIN	0:02	30	998	1F01	：	:			draft	
-m/MS000C.BIN	0:02	31	1008	1F01	くん{02:08}\n	......\n	Katsuragi-kun...\n	v005	draft	reads: くん‥‥‥\n; @split: was くん{02:08}\n<wait>; @refalign
+m/MS000C.BIN	0:02	31	1008	1F01	くん{02:08}\n	......\n	Katsuragi-kun...\n	v005	draft	reads: くん‥‥‥\n; @refalign; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS000C.BIN	0:02	32	1035	1FD0	{08:79}時だ。\n背後で物音がし、思わず振り向くと、いつ{08:42}{08:64}のか{08:02}が入口に{08:64}。\n<wait>		Right then, you hear a sound behind you.\nYou quickly turn around, only to find Yamase standing by the doorway.\n<wait>	v005		reads: その時だ。\n背後で物音がし、思わず振り向くと、いつからいたのか山瀬が入口にいた。\n<wait>; @refalign
 m/MS000C.BIN	0:02	33	1139	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; @refalign
 m/MS000C.BIN	0:02	34	1145	1FD3	いや～～～。ど～もど～もぉ。\n悪いねぇ、邪魔しちゃ{08:52}～。\n<wait>		Oh my, oh my. Am I interrupting something?\n<wait>	v005		reads: いや～～～。ど～もど～もぉ。\n悪いねぇ、邪魔しちゃって～。\n<wait>; @refalign
@@ -517,22 +517,22 @@ m/MS000C.BIN	0:04	170	4789	18	翌朝、目覚めた	The next morning, 	You wake 
 m/MS000C.BIN	0:04	171	4809	1F01	{08:62}{08:76}眠気の残る頭で、{01:2E}を見回{08:4B}。\n<wait>	, still drowsy, looked around the room.\n<wait>			draft	reads: は、まだ眠気の残る頭で、部屋を見回した。\n<wait>
 m/MS000C.BIN	0:04	172	4862	1FD0	{02:08}{01:28}と違う{01:2E}{02:08}\n<wait>	......A room different from usual......\n<wait>			draft	reads: ‥‥‥いつもと違う部屋‥‥‥\n<wait>
 m/MS000C.BIN	0:04	173	4883	1FBA	ふと、傍らを見ると	Glancing to the side, he saw 			draft	
-m/MS000C.BIN	0:04	174	4907	1F01	が、テーブルにひじをつき、うたたねを{08:13}{02:08}\n	 dozing with her elbows on the table.........\n{1E10:01001E}It almost seemed as if it had all been a dream......\n<wait>			draft	reads: が、テーブルにひじをつき、うたたねをしている‥‥‥\n; @split: was が、テーブルにひじをつき、うたたねを{08:13}{02:08}\n{1E10:01001E}全てが夢だ{08:51}のかとすら思えて{08:83}{02:08}\n<wait>
-m/MS000C.BIN	0:04	175	4948	1F01	{1E10:01001E}全てが夢だ{08:51}のかとすら思えて{08:83}{02:08}\n<wait>					@split-tail of [174]; reads: {1E10:01001E}全てが夢だったのかとすら思えてしまう‥‥‥\n<wait>
+m/MS000C.BIN	0:04	174	4907	1F01	が、テーブルにひじをつき、うたたねを{08:13}{02:08}\n	 dozing with her elbows on the table.........\n			draft	reads: が、テーブルにひじをつき、うたたねをしている‥‥‥\n; @split-authored
+m/MS000C.BIN	0:04	175	4948	1F01	{1E10:01001E}全てが夢だ{08:51}のかとすら思えて{08:83}{02:08}\n<wait>	{1E10:01001E}It almost seemed as if it had all been a dream.........\n<wait>			draft	@split-tail of [174]; reads: {1E10:01001E}全てが夢だったのかとすら思えてしまう‥‥‥\n<wait>; @split-authored
 m/MS000C.BIN	0:04	176	4992	1FBA	{03:0B}{08:7A}思いなど手易く木端微塵に砕いて{08:83}、容赦の無い現実が訪{08:60}。\n<wait>	But then a merciless reality arrived, shattering such thoughts to pieces.\n<wait>			draft	reads: しかし、そんな思いなど手易く木端微塵に砕いてしまう、容赦の無い現実が訪れた。\n<wait>
 m/MS000C.BIN	0:04	177	5101	1FD2	{08:03}：		Emi:	v005		reads: 英美：; @refalign
 m/MS000C.BIN	0:04	178	5113	1F01	くん、作戦を遂行{08:8E}わ。\n<wait>詰所に来て{08:72}急いで！！\n<wait>	-kun, we're carrying out the operation.\n<wait>Come to the post...... hurry!!\n<wait>	Katsuragi. We're ready to begin.\n<wait>Come to the office... and fast!\n<wait>	v005	draft	reads: くん、作戦を遂行するわ。\n<wait>詰所に来て‥‥急いで！！\n<wait>; @refalign
 m/MS000C.BIN	0:04	179	5179	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：; @refalign
 m/MS000C.BIN	0:04	180	5191	1F01	、いよいよ作戦を遂行{08:8E}。\n<wait>詰所{08:71}来てくれ！\n<wait>	, we're finally carrying out the operation.\n<wait>Get to the guard post!\n<wait>			draft	reads: 、いよいよ作戦を遂行する。\n<wait>詰所まで来てくれ！\n<wait>
 m/MS000C.BIN	0:04	181	5262	1F01	{08:62}ベッド{08:42}飛び起き、慌{08:82}しく着替えを始{08:2E}。\n	 leapt out of bed and hurriedly began to change.\n			draft	reads: は、ベッドから飛び起き、慌ただしく着替えを始める。\n
-m/MS000C.BIN	0:04	182	5314	1F01	{08:62}ベッド{08:42}飛び起き、{01:2E}を出る準備を進めた。\n	 leapt out of bed and got ready to leave the room.\n			draft	reads: は、ベッドから飛び起き、部屋を出る準備を進めた。\n; @split: was {08:62}ベッド{08:42}飛び起き、{01:2E}を出る準備を進めた。\n<wait>
+m/MS000C.BIN	0:04	182	5314	1F01	{08:62}ベッド{08:42}飛び起き、{01:2E}を出る準備を進めた。\n	 leapt out of bed and got ready to leave the room.\n			draft	reads: は、ベッドから飛び起き、部屋を出る準備を進めた。\n; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS000C.BIN	0:04	183	5371	1F01	：	:			draft	
 m/MS000C.BIN	0:04	184	5381	1F01	くん、気をつけて{02:08}\n<wait>	, be careful......\n<wait>			draft	reads: くん、気をつけて‥‥‥\n<wait>
 m/MS000C.BIN	0:04	185	5413	0B	奥{08:42}出て{08:1E}	Coming out from the back, 	You leap up and rush to get yourself dressed.\n	v005	draft	reads: 奥から出てきた
 m/MS000C.BIN	0:04	186	5429	1F01	が、心配そうな顔を{08:13}{02:08}\n	 looked worried.........\n			draft	reads: が、心配そうな顔をしている‥‥‥\n
 m/MS000C.BIN	0:04	187	5455	18	うたたねを{08:4A}{08:64}	Roused from her doze, 	You and up and rush to get yourself ready.\n<wait>	v005	draft	reads: うたたねをしていた; @refalign
 m/MS000C.BIN	0:04	188	5475	1F01	{08:62}{08:65}の音で飛び起きると、心配そうな瞳で\n	 sprang up at the sound of the transmission and, with worried eyes,\ngazed at 	Yuuka:	v005	draft	reads: は、通信の音で飛び起きると、心配そうな瞳で\n
-m/MS000C.BIN	0:04	189	5520	1F01	を見つめた{02:08}\n	......\n	Please be careful, Katsuragi-kun...\n	v005	draft	reads: を見つめた‥‥‥\n; @split: was を見つめた{02:08}\n<wait>
+m/MS000C.BIN	0:04	189	5520	1F01	を見つめた{02:08}\n	......\n	Please be careful, Katsuragi-kun...\n	v005	draft	reads: を見つめた‥‥‥\n; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS000C.BIN	0:04	190	5545	1F01	{08:62}	 turned to face 			draft	reads: は、
 m/MS000C.BIN	0:04	191	5553	1F01	の方を向き、力強く頷く。\n<wait>	 and nodded firmly.\n<wait>	The sound of the incoming transmission causes Yuuka to wake up as well.\nJudging by her face, it's clear that she's deeply worried about you.\n<wait>	v005	draft	
 m/MS000C.BIN	0:04	192	5590	1F01	{08:62}	 left 			draft	reads: は、

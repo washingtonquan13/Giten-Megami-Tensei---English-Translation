@@ -63,8 +63,8 @@ m/MS005D.BIN	0:10	5	142	1FD3	こうしちゃいられ{08:25}！\n{08:47}{08:7E}�
 m/MS005D.BIN	0:10	6	210	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; @refalign
 m/MS005D.BIN	0:10	7	216	1FD3	何とか脱出し{08:57}{02:08}‥！\n<wait>		Hmm... Is there anyway for us to escape...\n<wait>	v005		reads: 何とか脱出しなければ‥‥‥‥！\n<wait>; @refalign
 m/MS005D.BIN	0:10	8	250	0B	{08:37}と協力{08:4A}、ドアをこじ開けにか{08:18}。\n		You and Sonoda slam yourselves against the door.\n	v005		reads: 園田と協力して、ドアをこじ開けにかかった。\n; @refalign
-m/MS005D.BIN	0:10	9	288	18	{08:37}{08:62}何とかドアをこじ開け{08:69}と試みた{02:08}\n		Sonoda attempts to force the door open.\n{1E10:01003C}However, it's locked from the outside, and doesn't as much as budge.\n<wait>	v005		reads: 園田は、何とかドアをこじ開けようと試みた‥‥‥\n; @split: was {08:37}{08:62}何とかドアをこじ開け{08:69}と試みた{02:08}\n{1E10:01003C}が、{03:0B}外側{08:42}ロック{03:0C}たドアはびくと{08:5D}{08:19}。\n<wait>; @refalign
-m/MS005D.BIN	0:10	10	325	18	{1E10:01003C}が、{03:0B}外側{08:42}ロック{03:0C}たドアはびくと{08:5D}{08:19}。\n<wait>					@split-tail of [9]; reads: {1E10:01003C}が、しかし、外側からロックされたドアはびくともしなかった。\n<wait>
+m/MS005D.BIN	0:10	9	288	18	{08:37}{08:62}何とかドアをこじ開け{08:69}と試みた{02:08}\n	Sonoda tried to force the door open.........\n	Sonoda attempts to force the door open.\n{1E10:01003C}However, it's locked from the outside, and doesn't as much as budge.\n<wait>	v005	draft	reads: 園田は、何とかドアをこじ開けようと試みた‥‥‥\n; @refalign; @split-authored
+m/MS005D.BIN	0:10	10	325	18	{1E10:01003C}が、{03:0B}外側{08:42}ロック{03:0C}たドアはびくと{08:5D}{08:19}。\n<wait>	{1E10:01003C}But the door was locked from the outside and would not budge.\n<wait>			draft	@split-tail of [9]; reads: {1E10:01003C}が、しかし、外側からロックされたドアはびくともしなかった。\n<wait>; @split-authored
 m/MS005D.BIN	0:10	11	379	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; @refalign
 m/MS005D.BIN	0:10	12	385	1FD3	駄目か{02:08}‥\n他に脱出できそうな所は{02:08}\n<wait>		Figures. What else, what else...\n<wait>	v005		reads: 駄目か‥‥‥‥\n他に脱出できそうな所は‥‥‥\n<wait>; @refalign
 m/MS005D.BIN	0:10	13	429	1FD0	他に脱出できそうな箇所を捜すが、どこにも見当{08:50}{08:19}。\n<wait>		You look around,\nbut can't find anything that could be used to escape.\n<wait>	v005		reads: 他に脱出できそうな箇所を捜すが、どこにも見当たらなかった。\n<wait>; @refalign
@@ -694,8 +694,8 @@ m/MS005D.BIN	0:5A	34	933	1FD3	{08:47}、同行{08:4A}{08:64}女は{08:90}し{08:
 m/MS005D.BIN	0:5A	35	966	1FD2	渡邊：	Watanabe:			draft	
 m/MS005D.BIN	0:5A	36	974	1FD3	{08:79}女は無関係{08:8C}が、念の為	The woman is probably uninvolved, but to be safe	Hmm. It is possible.\n	v005	draft	reads: その女は無関係だろうが、念の為
 m/MS005D.BIN	0:5A	37	1003	0B	私が尋問{08:8E}。\n	I'll question her myself.\n			draft	reads: 私が尋問する。\n
-m/MS005D.BIN	0:5A	38	1019	18	、治療の後に尋問{08:8E}。\n		I'll question her and see what she says.                                        \n<wait>	v005		reads: 、治療の後に尋問する。\n; @split: was 、治療の後に尋問{08:8E}。\n{08:47}場に置いていけ。\n<wait>; @refalign
-m/MS005D.BIN	0:5A	39	1040	18	{08:47}場に置いていけ。\n<wait>					@split-tail of [38]; reads: この場に置いていけ。\n<wait>
+m/MS005D.BIN	0:5A	38	1019	18	、治療の後に尋問{08:8E}。\n	, and I will question her after treatment.\n	I'll question her and see what she says.                                        \n<wait>	v005	draft	reads: 、治療の後に尋問する。\n; @refalign; @split-authored
+m/MS005D.BIN	0:5A	39	1040	18	{08:47}場に置いていけ。\n<wait>	Leave her here.\n<wait>			draft	@split-tail of [38]; reads: この場に置いていけ。\n<wait>; @split-authored
 m/MS005D.BIN	0:5A	40	1077	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：; @refalign
 m/MS005D.BIN	0:5A	41	1083	1FD3	{08:31}{02:08}よ{08:18}{08:72}\n<wait>	Rui......... thank goodness...\n<wait>			draft	reads: 泪‥‥‥よかった‥‥\n<wait>
 m/MS005D.BIN	0:5A	42	1102	1FD2	渡邊：	Watanabe:			draft	
@@ -762,8 +762,8 @@ m/MS005D.BIN	0:5A	102	3200	1FD3	私など{08:62}	As for me, 	As for me, I spent 
 m/MS005D.BIN	0:5A	103	3215	1FD2	渡邊：	Watanabe:			draft	
 m/MS005D.BIN	0:5A	104	3223	1FD3	やはりそうか。\n<wait>		Huh. Figures.\n<wait>	v005		
 m/MS005D.BIN	0:5A	105	3246	1FD2	渡邊：	Watanabe:			draft	
-m/MS005D.BIN	0:5A	106	3254	1FD3	私も、	I got worked up too, at my age.\nI couldn't get to sleep for quite a while.\n	I too spent the night lying wide awake.\nI hate to admit it, but I'm feeling a bit nervous.\n                                                    	v005	draft	@split: was 私も、年がいも無く興奮{08:4A}しま{08:52}ね。\n中々寝つけ{08:19}よ。\n
-m/MS005D.BIN	0:5A	107	3260	1FD3	年がいも無く興奮{08:4A}しま{08:52}ね。\n中々寝つけ{08:19}よ。\n					@split-tail of [106]; reads: 年がいも無く興奮してしまってね。\n中々寝つけなかったよ。\n
+m/MS005D.BIN	0:5A	106	3254	1FD3	私も、	I too 	I too spent the night lying wide awake.\nI hate to admit it, but I'm feeling a bit nervous.\n                                                    	v005	draft	@split-authored
+m/MS005D.BIN	0:5A	107	3260	1FD3	年がいも無く興奮{08:4A}しま{08:52}ね。\n中々寝つけ{08:19}よ。\n	got worked up, at my age.\nI could not get to sleep for quite a while.\n			draft	@split-tail of [106]; reads: 年がいも無く興奮してしまってね。\n中々寝つけなかったよ。\n; @split-authored
 m/MS005D.BIN	0:5A	108	3309	1FD2	渡邊：	Watanabe:			draft	
 m/MS005D.BIN	0:5A	109	3317	1FD3	皆が落ち着いて{08:1E}ら、次の作戦を決{08:2E}会議を開こうと思っ{08:14}{08:77}が{02:08}\n<wait>	Once everyone has settled down, I mean to hold a meeting to decide\nour next operation.........\n<wait>	Once the folks calm down a little, I'm going to hold a conference\nwhere we go over the next step in our plan.\n<wait>	v005	draft	reads: 皆が落ち着いてきたら、次の作戦を決める会議を開こうと思っているのだが‥‥‥\n<wait>
 m/MS005D.BIN	0:5A	110	3445	1FD2	渡邊：	Watanabe:			draft	

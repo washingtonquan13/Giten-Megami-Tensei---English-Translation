@@ -27,8 +27,8 @@ m/MS0022.BIN	0:00	20	738	1FD3	{08:5B}、審査の結果、貴殿の部隊内に�
 m/MS0022.BIN	0:00	21	790	09	{08:05}ー戦		Hacking.	v005		reads: コンピューター戦; @refalign
 m/MS0022.BIN	0:00	22	804	09	格闘戦		Melee Combat.	v005		@refalign
 m/MS0022.BIN	0:00	23	818	09	射撃戦		Ranged Combat.	v005		@refalign
-m/MS0022.BIN	0:00	24	832	09	{08:0D}戦		Magic.                                    \n<wait>	v005		reads: 魔法戦; @split: was {08:0D}戦と判定{03:0C}た。\n<wait>; @refalign
-m/MS0022.BIN	0:00	25	836	09	と判定{03:0C}た。\n<wait>					@split-tail of [24]; reads: と判定された。\n<wait>
+m/MS0022.BIN	0:00	24	832	09	{08:0D}戦	Magic combat	Magic.                                    \n<wait>	v005	draft	reads: 魔法戦; @refalign; @split-authored
+m/MS0022.BIN	0:00	25	836	09	と判定{03:0C}た。\n<wait>	 was the verdict.\n<wait>			draft	@split-tail of [24]; reads: と判定された。\n<wait>; @split-authored
 m/MS0022.BIN	0:00	26	857	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：; @refalign
 m/MS0022.BIN	0:00	27	863	1FD3	以後、{08:47}技能に磨きをかけ{02:00}と{08:4A}の\n能力を十二分に発揮{08:8E}{08:69}に。\n　　　　　　　　　　　　　　　　　　　　　以上。\n<wait>		May you continue proving yourself as\na capable Devil Buster.\n                            That is all.\n<wait>	v005		reads: 以後、この技能に磨きをかけデビルバスターとしての\n能力を十二分に発揮するように。\n　　　　　　　　　　　　　　　　　　　　　以上。\n<wait>; @refalign
 m/MS0022.BIN	0:00	28	991	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：; @refalign
@@ -40,8 +40,8 @@ m/MS0022.BIN	0:00	33	1153	1FD3	尚、試験中の行動を判定{08:4B}結果、
 m/MS0022.BIN	0:00	34	1195	09	{08:05}ー戦		Hacking.	v005		reads: コンピューター戦; @refalign
 m/MS0022.BIN	0:00	35	1209	09	格闘戦		Melee Combat.	v005		@refalign
 m/MS0022.BIN	0:00	36	1223	09	射撃戦		Ranged Combat.	v005		@refalign
-m/MS0022.BIN	0:00	37	1237	09	{08:0D}戦		Magic.             \n<wait>	v005		reads: 魔法戦; @split: was {08:0D}戦に優れ{08:14}と判定{03:0C}た。\n<wait>; @refalign
-m/MS0022.BIN	0:00	38	1241	09	に優れ{08:14}と判定{03:0C}た。\n<wait>					@split-tail of [37]; reads: に優れていると判定された。\n<wait>
+m/MS0022.BIN	0:00	37	1237	09	{08:0D}戦	Magic combat	Magic.             \n<wait>	v005	draft	reads: 魔法戦; @refalign; @split-authored
+m/MS0022.BIN	0:00	38	1241	09	に優れ{08:14}と判定{03:0C}た。\n<wait>	 was judged to be your strength.\n<wait>			draft	@split-tail of [37]; reads: に優れていると判定された。\n<wait>; @split-authored
 m/MS0022.BIN	0:00	39	1270	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：; @refalign
 m/MS0022.BIN	0:00	40	1276	1FD3	{08:47}技能に磨きをかけ、再試験に臨んでほしい。\n<wait>		We recommend that you focus your efforts\non this style of combat.\n<wait>	v005		reads: この技能に磨きをかけ、再試験に臨んでほしい。\n<wait>; @refalign
 m/MS0022.BIN	0:00	41	1327	1FD2	{01:2D}：		Administrator's Office:	v005		reads: 管理部：; @refalign
@@ -653,8 +653,8 @@ m/MS0022.BIN	0:02	494	17770	18	翌朝、目覚めた	The next morning, 	You wake
 m/MS0022.BIN	0:02	495	17790	1F01	{02:08}。\n<wait>	 awoke.........\n<wait>			draft	reads: ‥‥‥。\n<wait>
 m/MS0022.BIN	0:02	496	17817	1FD0	まどろみの中で、{01:28}と変わらぬ室内を見渡す。\n<wait>	Half-asleep, he looked around the room, the same as ever.\n<wait>			draft	reads: まどろみの中で、いつもと変わらぬ室内を見渡す。\n<wait>
 m/MS0022.BIN	0:02	497	17872	1F01	は{02:08}{1E10:01001E}{08:64}{02:08}\n彼女{08:62}傍らのテーブルでうたたねを{08:13}{08:69}だ{02:08}\n<wait>	 was.........{1E10:01001E}there.........\nShe seemed to be dozing at the table beside him.........\n<wait>			draft	reads: は‥‥‥{1E10:01001E}いた‥‥‥\n彼女は、傍らのテーブルでうたたねをしているようだ‥‥‥\n<wait>
-m/MS0022.BIN	0:02	498	17933	1FBA	{02:08}{01:2E}の中は静寂に包まれ{08:14}{02:08}\n	.........The room was wrapped in silence.........\n{1E10:01001E}He could almost believe it had all been a dream.........\n<wait>			draft	reads: ‥‥‥部屋の中は静寂に包まれている‥‥‥\n; @split: was {02:08}{01:2E}の中は静寂に包まれ{08:14}{02:08}\n{1E10:01001E}全てが夢だ{08:51}のかとすら思えて{08:83}{02:08}\n<wait>
-m/MS0022.BIN	0:02	499	17960	1FBA	{1E10:01001E}全てが夢だ{08:51}のかとすら思えて{08:83}{02:08}\n<wait>					@split-tail of [498]; reads: {1E10:01001E}全てが夢だったのかとすら思えてしまう‥‥‥\n<wait>
+m/MS0022.BIN	0:02	498	17933	1FBA	{02:08}{01:2E}の中は静寂に包まれ{08:14}{02:08}\n	.........The room was wrapped in silence.........\n			draft	reads: ‥‥‥部屋の中は静寂に包まれている‥‥‥\n; @split-authored
+m/MS0022.BIN	0:02	499	17960	1FBA	{1E10:01001E}全てが夢だ{08:51}のかとすら思えて{08:83}{02:08}\n<wait>	{1E10:01001E}He could almost believe it had all been a dream.........\n<wait>			draft	@split-tail of [498]; reads: {1E10:01001E}全てが夢だったのかとすら思えてしまう‥‥‥\n<wait>; @split-authored
 m/MS0022.BIN	0:02	500	18004	1FBA	{03:0B}{08:7A}思いなど手易く木端微塵に砕いて{08:83}、容赦の無い現実が訪{08:60}。\n<wait>	But a merciless reality arrived that shattered such thoughts to pieces\nwith ease.\n<wait>			draft	reads: しかし、そんな思いなど手易く木端微塵に砕いてしまう、容赦の無い現実が訪れた。\n<wait>
 m/MS0022.BIN	0:02	501	18071	1FBA	{08:00}が迎えに現{08:60}{08:77}{02:08}‥\n<wait>	Hayasaka had come to fetch him............\n<wait>			draft	reads: 早坂が迎えに現れたのだ‥‥‥‥\n<wait>
 m/MS0022.BIN	0:02	502	18135	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
@@ -664,8 +664,8 @@ m/MS0022.BIN	0:02	505	18224	1F01	が奥{08:42}出て来る気配が{08:4B}。\n	
 m/MS0022.BIN	0:02	506	18252	18	{08:00}に付き添われ、{01:2E}を出る	Accompanied by Hayasaka, 	You follow Hayasaka and leave your room.\n<wait>	v005	draft	reads: 早坂に付き添われ、部屋を出る; @refalign
 m/MS0022.BIN	0:02	507	18282	1F01	{02:08}\n<wait>	......\n<wait>			draft	reads: ‥‥‥\n<wait>
 m/MS0022.BIN	0:02	508	18291	1FBA	背後で、	Behind them, 			draft	
-m/MS0022.BIN	0:02	509	18305	1F01	の目覚{08:2E}気配が{08:8E}。\n	 waking.\nBut 			draft	reads: の目覚める気配がする。\n; @split: was の目覚{08:2E}気配が{08:8E}。\n{08:8F}、
-m/MS0022.BIN	0:02	510	18324	1F01	{08:8F}、					@split-tail of [509]; reads: だが、
+m/MS0022.BIN	0:02	509	18305	1F01	の目覚{08:2E}気配が{08:8E}。\n	 is stirring awake.\n			draft	reads: の目覚める気配がする。\n; @split-authored
+m/MS0022.BIN	0:02	510	18324	1F01	{08:8F}、	But 			draft	@split-tail of [509]; reads: だが、; @split-authored
 m/MS0022.BIN	0:02	511	18334	1F01	にはふり向く{08:74}の{08:33}気は無{08:18}{02:08}\n<wait>	 did not have the courage to turn around.........\n<wait>			draft	reads: にはふり向くだけの勇気は無かった‥‥‥\n<wait>
 m/MS0022.BIN	0:02	512	18390	1FE5	＞{02:06}\n<wait>	>What will you do?\n<wait>			draft	reads: ＞どうしますか？\n<wait>
 m/MS0022.BIN	0:02	513	18417	1FB2	{02:07}		Open terminal	v005		reads: 通信をする; menu option, declared width 20 columns

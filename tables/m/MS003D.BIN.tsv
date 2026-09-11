@@ -58,8 +58,8 @@ m/MS003D.BIN	0:0F	1	138	1F86	Ｖ１		V1	v005		@refalign
 m/MS003D.BIN	0:0F	2	150	1F86	Ｖ２		V2	v005		@refalign
 m/MS003D.BIN	0:0F	3	162	1F86	Ｖ３		V3	v005		@refalign
 m/MS003D.BIN	0:0F	4	174	1F86	Ｖ４		V4	v005		@refalign
-m/MS003D.BIN	0:0F	5	186	1F86	Ｖ５		V5-type virus found.      \n<wait>>Saver program used to eradicate the virus.\n No damage caused to the system.\n<wait>	v005		@split: was Ｖ５型ウイルス{08:09}が侵入しま{08:4B}\n<wait>＞報告：対応{08:8E}セーバーを起動しウイルス\n　　　　{08:09}を消去しま{08:4B}\n　　　　システムへの影響はあり{02:0A}で{08:4B}\n<wait>; @refalign
-m/MS003D.BIN	0:0F	6	190	1F86	型ウイルス{08:09}が侵入しま{08:4B}\n<wait>＞報告：対応{08:8E}セーバーを起動しウイルス\n　　　　{08:09}を消去しま{08:4B}\n　　　　システムへの影響はあり{02:0A}で{08:4B}\n<wait>					@split-tail of [5]; reads: 型ウイルスプログラムが侵入しました\n<wait>＞報告：対応するセーバーを起動しウイルス\n　　　　プログラムを消去しました\n　　　　システムへの影響はありませんでした\n<wait>
+m/MS003D.BIN	0:0F	5	186	1F86	Ｖ５	V5	V5-type virus found.      \n<wait>>Saver program used to eradicate the virus.\n No damage caused to the system.\n<wait>	v005	draft	@refalign; @split-authored
+m/MS003D.BIN	0:0F	6	190	1F86	型ウイルス{08:09}が侵入しま{08:4B}\n<wait>＞報告：対応{08:8E}セーバーを起動しウイルス\n　　　　{08:09}を消去しま{08:4B}\n　　　　システムへの影響はあり{02:0A}で{08:4B}\n<wait>	-type virus program detected.\n<wait>>Report: The matching saver program was started and the\n        virus program was erased.\n        There was no effect on the system.\n<wait>			draft	@split-tail of [5]; reads: 型ウイルスプログラムが侵入しました\n<wait>＞報告：対応するセーバーを起動しウイルス\n　　　　プログラムを消去しました\n　　　　システムへの影響はありませんでした\n<wait>; @split-authored
 m/MS003D.BIN	0:0F	7	331	1FC4	＞報告：未登録のウイルス{08:09}が侵入しま{08:4B}\n<wait>		>Error: Unregistered virus found.\n<wait>	v005		reads: ＞報告：未登録のウイルスプログラムが侵入しました\n<wait>; @refalign
 m/MS003D.BIN	0:0F	8	446	1FBA	＞報告：汎用セーバーを起動し、各システムの保護を\n　　　　試み{08:5A}\n<wait>		>Attempting to use a generic saver program\n to protect system.\n<wait>	v005		reads: ＞報告：汎用セーバーを起動し、各システムの保護を\n　　　　試みます\n<wait>; @refalign
 m/MS003D.BIN	0:0F	9	562	1FBA	＞報告：システムへの影響はあり{02:0A}で{08:4B}\n<wait>		>Success: System is safe.\n<wait>	v005		reads: ＞報告：システムへの影響はありませんでした\n<wait>; @refalign

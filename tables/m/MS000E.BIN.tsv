@@ -29,14 +29,14 @@ m/MS000E.BIN	0:01	21	476	1FD2	{08:0B}：		Demon:	v005		reads: 悪魔：
 m/MS000E.BIN	0:01	22	482	1FD3	俺{08:62}アドニス様{08:42}の書状を預か{08:52}{08:1E}者だ。\n{08:4D}さえ渡せば、お前達に用は無い。\n<wait>		I have a message to you from Lord Adonis. Here.\n<wait>	v005		reads: 俺は、アドニス様からの書状を預かってきた者だ。\nそれさえ渡せば、お前達に用は無い。\n<wait>; @refalign
 m/MS000E.BIN	0:01	23	562	1FD0	そう言うと{08:0B}{08:62}今時珍しい、白い紙で出来た封筒を差し出{08:4B}。\n<wait>		With that, the demon hands you a letter written on real paper,\nsomething that you don't see often these days.\n<wait>	v005		reads: そう言うと悪魔は、今時珍しい、白い紙で出来た封筒を差し出した。\n<wait>; @refalign
 m/MS000E.BIN	0:01	24	644	0B	{08:37}		Sonoda	v005		reads: 園田
-m/MS000E.BIN	0:01	25	654	0B	{08:31}	Rui took it.\n<wait>	Rui takes it.      \n<wait>	v005	draft	reads: 泪; @split: was {08:31}は{08:4D}を受けと{08:51}。\n<wait>
-m/MS000E.BIN	0:01	26	656	0B	は{08:4D}を受けと{08:51}。\n<wait>					@split-tail of [25]; reads: はそれを受けとった。\n<wait>
+m/MS000E.BIN	0:01	25	654	0B	{08:31}	Rui	Rui takes it.      \n<wait>	v005	draft	reads: 泪; @split-authored
+m/MS000E.BIN	0:01	26	656	0B	は{08:4D}を受けと{08:51}。\n<wait>	 took it.\n<wait>			draft	@split-tail of [25]; reads: はそれを受けとった。\n<wait>; @split-authored
 m/MS000E.BIN	0:01	27	681	1FD2	{08:0B}：		Demon:	v005		reads: 悪魔：
 m/MS000E.BIN	0:01	28	687	1FD3	{02:08}{08:81}あな！\n<wait>	.........See ya!\n<wait>	...Later!\n<wait>	v005	draft	reads: ‥‥‥じゃあな！\n<wait>
 m/MS000E.BIN	0:01	29	710	1FD0	{08:0B}{08:62}現わ{08:60}時と同じ{08:69}に忽然と消{08:41}。\n<wait>	The demon vanished as suddenly as he had appeared.\n<wait>	The demon vanishes just as swiftly as he appeared.\n<wait>	v005	draft	reads: 悪魔は、現われた時と同じように忽然と消えた。\n<wait>
 m/MS000E.BIN	0:01	30	770	0B	{08:37}		Sonoda	v005		reads: 園田
-m/MS000E.BIN	0:01	31	780	0B	{08:31}	Rui opened the envelope.\n{1E10:01003C}	Rui opens the letter.  \n{1E10:01003C}	v005	draft	reads: 泪; @split: was {08:31}は封筒を開いてみた。\n{1E10:01003C}
-m/MS000E.BIN	0:01	32	782	0B	は封筒を開いてみた。\n{1E10:01003C}					@split-tail of [31]
+m/MS000E.BIN	0:01	31	780	0B	{08:31}	Rui	Rui opens the letter.  \n{1E10:01003C}	v005	draft	reads: 泪; @split-authored
+m/MS000E.BIN	0:01	32	782	0B	は封筒を開いてみた。\n{1E10:01003C}	 opened the envelope.\n{1E10:01003C}			draft	@split-tail of [31]; @split-authored
 m/MS000E.BIN	0:01	33	810	1FBA	封筒を開き、中の書状を読んでみると、{08:4D}は	Opening the envelope and reading the letter, it was a challenge\naddressed to 	Inside, there is a challenge directed towards Katsuragi.\n<wait>	v005	draft	reads: 封筒を開き、中の書状を読んでみると、それは
 m/MS000E.BIN	0:01	34	856	1F01	への挑戦状だ{08:51}。\n<wait>	.\n<wait>	Inside, there is a challenge directed towards Katsuragi.\n<wait>	v005	draft	reads: への挑戦状だった。\n<wait>; @refalign
 m/MS000E.BIN	0:01	35	879	1FBA	挑戦の内容{08:62}新宿爆心地コロシアムにて一騎打ちを行い、{01:3F}の実力が上かを\n決め{08:69}との事だ{08:51}。\n<wait>	The challenge: a duel at the Shinjuku Ground Zero Colosseum, to\ndecide whose strength was greater.\n<wait>	It appears that Adonis wants you to duel him at the colosseum located\nwithin the ground zero at Shinjuku to decide once and for all which\none of you is stronger.\n<wait>	v005	draft	reads: 挑戦の内容は、新宿爆心地コロシアムにて一騎打ちを行い、どちらの実力が上かを\n決めようとの事だった。\n<wait>
@@ -61,8 +61,8 @@ m/MS000E.BIN	0:01	53	1612	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：
 m/MS000E.BIN	0:01	54	1618	1FD3	磔に{03:0C}る人が一人{08:56}出{08:25}{08:69}に、すぐ爆心地に向かおう！！\n<wait>		Let's hurry there before a single innocent person gets hurt!\n<wait>	v005		reads: 磔にされる人が一人でも出ないように、すぐ爆心地に向かおう！！\n<wait>; @refalign
 m/MS000E.BIN	0:01	55	1678	18	{08:48}で{08:62}挑戦を受けざるを得{08:25}{08:81}{08:25}か！！\n<wait>		Shit. He's made it so that we cannot refuse his challenge!\n<wait>	v005		reads: これでは、挑戦を受けざるを得ないじゃないか！！\n<wait>; @refalign
 m/MS000E.BIN	0:01	56	1723	1FD2	{08:37}：		Sonoda:	v005		reads: 園田：
-m/MS000E.BIN	0:01	57	1740	09	と{08:31}		 and Rui... Wait just a bit longer...\n<wait>	v005		reads: と泪; @split: was と{08:31}の手当てを{08:4A}、爆心地に急が{08:57}{02:08}！\n<wait>; @refalign
-m/MS000E.BIN	0:01	58	1744	09	の手当てを{08:4A}、爆心地に急が{08:57}{02:08}！\n<wait>					@split-tail of [57]; reads: の手当てをして、爆心地に急がなければ‥‥‥！\n<wait>
+m/MS000E.BIN	0:01	57	1740	09	と{08:31}	 and Rui	 and Rui... Wait just a bit longer...\n<wait>	v005	draft	reads: と泪; @refalign; @split-authored
+m/MS000E.BIN	0:01	58	1744	09	の手当てを{08:4A}、爆心地に急が{08:57}{02:08}！\n<wait>	 must be treated, then we have to hurry to ground zero......!\n<wait>			draft	@split-tail of [57]; reads: の手当てをして、爆心地に急がなければ‥‥‥！\n<wait>; @split-authored
 m/MS000E.BIN	0:01	59	1791	1FD2	{08:31}：		Rui:	v005		reads: 泪：
 m/MS000E.BIN	0:01	60	1797	1FD3	{02:08}ふん{08:72}卑怯な手を、使う{08:5E}ね{02:08}\n<wait>	.........Hmph... what a cowardly trick.........\n<wait>	Hmph... What a coward...\n<wait>	v005	draft	reads: ‥‥‥ふん‥‥卑怯な手を、使うものね‥‥‥\n<wait>
 m/MS000E.BIN	0:01	61	1836	1FD2	{08:31}：		Rui:	v005		reads: 泪：
@@ -73,8 +73,8 @@ m/MS000E.BIN	0:01	65	1951	1FD2	{08:31}：		Rui:	v005		reads: 泪：
 m/MS000E.BIN	0:01	66	1957	1FD3	{08:5C}、ちゃっちゃと行{08:52}、ちゃっちゃと倒しちゃ{08:89}{08:80}よ！\n<wait>		Let's get over there and kick his ass!\n<wait>	v005		reads: もう、ちゃっちゃと行って、ちゃっちゃと倒しちゃいましょうよ！\n<wait>; @refalign
 m/MS000E.BIN	0:01	67	2015	18	随分、面倒な事を{08:4A}く{08:2F}{08:81}{08:25}{02:08}？\n<wait>		Sounds like a real pain in the ass...\n<wait>	v005		reads: 随分、面倒な事をしてくれるじゃない‥‥‥？\n<wait>; @refalign
 m/MS000E.BIN	0:01	68	2054	1FD2	{08:31}：		Rui:	v005		reads: 泪：
-m/MS000E.BIN	0:01	69	2071	09	と{08:37}君		 and Sonoda... Wait just a bit longer...       \n<wait>	v005		reads: と園田君; @split: was と{08:37}君の手当てを{08:4A}、爆心地に行{08:51}方が良いわね{08:72}。\n<wait>; @refalign
-m/MS000E.BIN	0:01	70	2077	09	の手当てを{08:4A}、爆心地に行{08:51}方が良いわね{08:72}。\n<wait>					@split-tail of [69]; reads: の手当てをして、爆心地に行った方が良いわね‥‥。\n<wait>
+m/MS000E.BIN	0:01	69	2071	09	と{08:37}君	 and Sonoda	 and Sonoda... Wait just a bit longer...       \n<wait>	v005	draft	reads: と園田君; @refalign; @split-authored
+m/MS000E.BIN	0:01	70	2077	09	の手当てを{08:4A}、爆心地に行{08:51}方が良いわね{08:72}。\n<wait>	 should be treated, and then we had better head for ground zero......\n<wait>			draft	@split-tail of [69]; reads: の手当てをして、爆心地に行った方が良いわね‥‥。\n<wait>; @split-authored
 m/MS000E.BIN	0:01	71	2129	1FD0	{08:90}やら、挑戦を受けざるを得なく{08:1A}{08:1F}{08:69}だ{02:08}\n<wait>	It seems there's no choice now but to accept the challenge......\n<wait>			draft	reads: どうやら、挑戦を受けざるを得なくなってしまったようだ‥‥‥\n<wait>
 m/MS000E.BIN	0:01	72	2176	1FBA	{03:0B}まずは{08:31}と{08:37}の手当てをし{08:57}{02:08}\n<wait>	But first, Rui and Sonoda need treatment......\n<wait>			draft	reads: しかし、まずは泪と園田の手当てをしなければ‥‥‥\n<wait>
 m/MS000E.BIN	0:01	73	2269	1FD2	男の声：	Man's Voice:	Man's Voice:	v005	draft	reads: 
@@ -197,8 +197,8 @@ m/MS000E.BIN	0:0A	6	152	1FB2	誰だ！		Who goes there!?	v005		menu option, decl
 m/MS000E.BIN	0:0A	7	160	1FB2	ごめん下さ～い！		Sorry!	v005		menu option, declared width 20 columns; @refalign
 m/MS000E.BIN	0:0A	8	196	1FD0	物音の{08:4B}方向に向かい、	Turning toward the sound,	Turning into the direction of the noise, 	v005	draft	reads: 物音のした方向に向かい、
 m/MS000E.BIN	0:0A	9	237	0B	{08:37}		Sonoda	v005		reads: 園田
-m/MS000E.BIN	0:0A	10	242	18	{08:31}	Rui called out.\n<wait>	Rui yells.\n  <wait>	v005	draft	reads: 泪; @split: was {08:31}は叫{08:5F}。\n<wait>
-m/MS000E.BIN	0:0A	11	244	18	は叫{08:5F}。\n<wait>					@split-tail of [10]; reads: は叫んだ。\n<wait>
+m/MS000E.BIN	0:0A	10	242	18	{08:31}	Rui	Rui yells.\n  <wait>	v005	draft	reads: 泪; @split-authored
+m/MS000E.BIN	0:0A	11	244	18	は叫{08:5F}。\n<wait>	 cried out.\n<wait>			draft	@split-tail of [10]; reads: は叫んだ。\n<wait>; @split-authored
 m/MS000E.BIN	0:0A	12	261	1FD0	{08:4C}{02:08}物陰{08:42}、怯{08:41}表情の少女がちょこんと姿を現わ{08:4B}。\n<wait>	Then......... from the shadows, a girl with a frightened look timidly\nappeared.\n<wait>	Soon after, a girl appears from the shadows.\nOne look at her face makes it clear that she's terribly frightened.\n<wait>	v005	draft	reads: すると‥‥‥物陰から、怯えた表情の少女がちょこんと姿を現わした。\n<wait>
 m/MS000E.BIN	0:0A	13	342	1FD2	女の子：	Girl:			draft	
 m/MS000E.BIN	0:0A	14	352	1FD3	{02:08}{02:08}{02:08}\n<wait>	.........\n<wait>			draft	reads: ‥‥‥‥‥‥‥‥‥\n<wait>; @refalign-merged; @refalign
@@ -219,7 +219,7 @@ m/MS000E.BIN	0:0A	28	715	1FD2	{08:37}：	Sonoda:			draft	reads: 園田：
 m/MS000E.BIN	0:0A	29	721	1FD3	君{08:62}{08:45}に住んでる子{08:6B}かい？\n	Do you live here?\n	Do you live here by any chance?\n	v005	draft	reads: 君は、ここに住んでる子なのかい？\n
 m/MS000E.BIN	0:0A	30	758	1FD2	{08:31}：	Rui:			draft	reads: 泪：
 m/MS000E.BIN	0:0A	31	764	1FD3	{08:45}に住んで{08:40}の？\n	Do you live here?\n			draft	reads: ここに住んでいるの？\n
-m/MS000E.BIN	0:0A	32	786	1FD0	少女は何も言わ{08:25}。\n	The girl says nothing.\n	The girl doesn't reply.\n	v005	draft	reads: 少女は何も言わない。\n; @split: was 少女は何も言わ{08:25}。\n<wait>
+m/MS000E.BIN	0:0A	32	786	1FD0	少女は何も言わ{08:25}。\n	The girl says nothing.\n	The girl doesn't reply.\n	v005	draft	reads: 少女は何も言わない。\n; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS000E.BIN	0:0A	33	824	1F01	は面倒に思い、少女を無視{08:8E}事に{08:4B}。\n<wait>	 found it a bother and decided to ignore the girl.\n<wait>			draft	reads: は面倒に思い、少女を無視する事にした。\n<wait>
 m/MS000E.BIN	0:0A	34	878	1FD0	少女はきびすを返{08:4A}、再び奥に消えて行{08:51}。\n<wait>	The girl turned on her heel and vanished into the back again.\n<wait>			draft	reads: 少女はきびすを返して、再び奥に消えて行った。\n<wait>
 m/MS000E.BIN	0:0A	35	925	1FBA	そ{08:4A}奥{08:42}{08:62}少女が誰かに、話{08:86}け{08:14}声が聞こえて来た。\n<wait>	Then from the back came the sound of the girl talking to someone.\n<wait>			draft	reads: そして奥からは、少女が誰かに、話しかけている声が聞こえて来た。\n<wait>
@@ -237,18 +237,18 @@ m/MS000E.BIN	0:0A	46	1214	1FD2	{08:37}：	Sonoda:			draft	reads: 園田：
 m/MS000E.BIN	0:0A	47	1220	1FD3	誰か、他にも{08:40}み{08:4E}だな{08:72}\n		It sounds like she's not alone...\n	v005		reads: 誰か、他にもいるみたいだな‥‥\n; @refalign
 m/MS000E.BIN	0:0A	48	1255	1FD2	{08:31}：	Rui:			draft	reads: 泪：
 m/MS000E.BIN	0:0A	49	1261	1FD3	誰か、他に{08:40}み{08:4E}ね{02:08}\n		It sounds like she's not alone...\n	v005		reads: 誰か、他にいるみたいね‥‥‥\n; @refalign
-m/MS000E.BIN	0:0A	50	1287	1FD0	{08:90}やら、誰か他に{08:40}{08:69}だ{02:08}\n		It sounds like the girl's not alone...\n	v005		reads: どうやら、誰か他にいるようだ‥‥‥\n; @split: was {08:90}やら、誰か他に{08:40}{08:69}だ{02:08}\n<wait>; @refalign
+m/MS000E.BIN	0:0A	50	1287	1FD0	{08:90}やら、誰か他に{08:40}{08:69}だ{02:08}\n		It sounds like the girl's not alone...\n	v005		reads: どうやら、誰か他にいるようだ‥‥‥\n; @refalign; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS000E.BIN	0:0A	51	1342	1FD2	{01:06}：	Kazumi:			draft	reads: カズミ：
 m/MS000E.BIN	0:0A	52	1348	1FD3	{02:08}何だお前達？\n<wait>		...And who might you people be?\n<wait>	v005		reads: ‥‥‥何だお前達？\n<wait>; @refalign
 m/MS000E.BIN	0:0A	53	1371	1FD0	男{08:62}鋭い視線を一行に向けて、無感情にそう言{08:51}。\n<wait>		The man gives the party a stern look.\nIt doesn't look like you're welcome.\n<wait>	v005		reads: 男は、鋭い視線を一行に向けて、無感情にそう言った。\n<wait>; @refalign
 m/MS000E.BIN	0:0A	54	1436	1FD2	{08:37}：	Sonoda:			draft	reads: 園田：
 m/MS000E.BIN	0:0A	55	1442	1FD3	俺達{08:62}決{08:4A}怪しい者{08:81}{08:25}{08:72}\n俺{08:62}{08:37}。で、そっちが{08:72}\n		I promise you, we're not here to hurt you.\nI'm Sonoda. These two are...\n	v005		reads: 俺達は、決して怪しい者じゃない‥‥\n俺は、園田。で、そっちが‥‥\n; @refalign
 m/MS000E.BIN	0:0A	56	1495	1FD2	{08:31}：	Rui:			draft	reads: 泪：
-m/MS000E.BIN	0:0A	57	1501	1FD3	{01:16}達{08:62}怪しい者{08:81}{08:25}わ。\n{08:82}、{08:45}を{08:72}\n		I promise you, we're not here to hurt you.\nWe kinda ended up stumbling here, and...\n	v005		reads: あたし達は、怪しい者じゃないわ。\nただ、ここを‥‥\n; @split: was {01:16}達{08:62}怪しい者{08:81}{08:25}わ。\n{08:82}、{08:45}を{08:72}\n<wait>; @refalign
+m/MS000E.BIN	0:0A	57	1501	1FD3	{01:16}達{08:62}怪しい者{08:81}{08:25}わ。\n{08:82}、{08:45}を{08:72}\n		I promise you, we're not here to hurt you.\nWe kinda ended up stumbling here, and...\n	v005		reads: あたし達は、怪しい者じゃないわ。\nただ、ここを‥‥\n; @refalign; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS000E.BIN	0:0A	58	1541	1FBA	{03:0B}男は全く興味を示す気配はなく、\n	But the man showed not the slightest interest,\n			draft	reads: しかし、男は全く興味を示す気配はなく、\n
 m/MS000E.BIN	0:0A	59	1579	0B	{08:37}		Sonoda	v005		reads: 園田
-m/MS000E.BIN	0:0A	60	1584	18	{08:31}	Rui's words were cut off midway as he spoke roughly.\n<wait>	Rui gets ignored as he lashes back.\n       <wait>	v005	draft	reads: 泪; @split: was {08:31}の言葉を途中で遮り、荒々しく言い放{08:51}。\n<wait>
-m/MS000E.BIN	0:0A	61	1586	18	の言葉を途中で遮り、荒々しく言い放{08:51}。\n<wait>					@split-tail of [60]; reads: の言葉を途中で遮り、荒々しく言い放った。\n<wait>
+m/MS000E.BIN	0:0A	60	1584	18	{08:31}	Rui	Rui gets ignored as he lashes back.\n       <wait>	v005	draft	reads: 泪; @split-authored
+m/MS000E.BIN	0:0A	61	1586	18	の言葉を途中で遮り、荒々しく言い放{08:51}。\n<wait>	's words were cut off midway, and he spoke roughly.\n<wait>			draft	@split-tail of [60]; reads: の言葉を途中で遮り、荒々しく言い放った。\n<wait>; @split-authored
 m/MS000E.BIN	0:0A	62	1636	1FD1	＞{02:06}\n		>What will you do?\n	v005		reads: ＞どうしますか？\n; @refalign
 m/MS000E.BIN	0:0A	63	1657	1FB2	思わず口ごもる		Mumble something	v005		menu option, declared width 20 columns; @refalign
 m/MS000E.BIN	0:0A	64	1673	1FB2	名乗る		Introduce yourself	v005		menu option, declared width 20 columns; @refalign
@@ -315,8 +315,8 @@ m/MS000E.BIN	0:0A	124	3504	1FD3	メイちゃん{08:52}言うのね。\n{01:16}�
 m/MS000E.BIN	0:0A	125	3579	1FD0	少女は答{08:41}後、すぐ真剣な表情に{08:1A}言{08:51}。\n<wait>		After answering, the girl immediately turns serious and speaks.\n<wait>	ours		reads: 少女は答えた後、すぐ真剣な表情になって言った。\n<wait>
 m/MS000E.BIN	0:0A	126	3629	1FD0	少女は		The girl cuts off	ours		
 m/MS000E.BIN	0:0A	127	3640	0B	{08:37}		Sonoda	v005		reads: 園田
-m/MS000E.BIN	0:0A	128	3645	18	{08:31}	Rui's words and spoke with a serious look.\n<wait>	's words and speaks with a serious expression.\n<wait>	ours	draft	reads: 泪; @split: was {08:31}の言葉を遮り、真剣な表情で言{08:51}。\n<wait>
-m/MS000E.BIN	0:0A	129	3647	18	の言葉を遮り、真剣な表情で言{08:51}。\n<wait>					@split-tail of [128]; reads: の言葉を遮り、真剣な表情で言った。\n<wait>
+m/MS000E.BIN	0:0A	128	3645	18	{08:31}	Rui	's words and speaks with a serious expression.\n<wait>	ours	draft	reads: 泪; @split-authored
+m/MS000E.BIN	0:0A	129	3647	18	の言葉を遮り、真剣な表情で言{08:51}。\n<wait>	's words were cut off, and he spoke with a serious look.\n<wait>			draft	@split-tail of [128]; reads: の言葉を遮り、真剣な表情で言った。\n<wait>; @split-authored
 m/MS000E.BIN	0:0A	130	3688	1FD2	メイ：	Mei:			draft	
 m/MS000E.BIN	0:0A	131	3696	1FD3	満月の日は{08:72}{08:45}に来ちゃダメ{08:72}！\n<wait>{01:1E}{08:72}{01:1E}帰{08:52}{08:6E}{08:72}！\n<wait>		On the night of the full moon... you mustn't come here...!\n<wait>Quickly... please go home quickly...!\n<wait>	ours		reads: 満月の日は‥‥ここに来ちゃダメ‥‥！\n<wait>はやく‥‥はやく帰ってください‥‥！\n<wait>
 m/MS000E.BIN	0:0A	132	3761	1FD2	{08:37}：	Sonoda:			draft	reads: 園田：
@@ -405,7 +405,7 @@ m/MS000E.BIN	0:0A	214	6204	1F01	達を乱暴に突き飛ば{08:4B}。\n<wait>	 a
 m/MS000E.BIN	0:0A	215	6240	1FD2	{08:37}：	Sonoda:			draft	reads: 園田：
 m/MS000E.BIN	0:0A	216	6246	1FD3	何を{08:8E}{08:5F}！\n		What are you doing!?\n	ours		reads: 何をするんだ！\n; @refalign
 m/MS000E.BIN	0:0A	217	6267	1FD2	{08:31}：	Rui:			draft	reads: 泪：
-m/MS000E.BIN	0:0A	218	6273	1FD3	なっ！　何{08:8E}のよ！！\n		Wha! What do you think you're doing!?\n	ours		reads: なっ！　何するのよ！！\n; @split: was なっ！　何{08:8E}のよ！！\n<wait>; @refalign
+m/MS000E.BIN	0:0A	218	6273	1FD3	なっ！　何{08:8E}のよ！！\n		Wha! What do you think you're doing!?\n	ours		reads: なっ！　何するのよ！！\n; @refalign; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS000E.BIN	0:0A	219	6302	1FD2	{01:06}：	Kazumi:			draft	reads: カズミ：
 m/MS000E.BIN	0:0A	220	6308	1FD3	と{08:53}と出て行けッ！！　出て行か{08:25}と、貴様らを殺すッ！！\n<wait>		Get out, now!! If you don't leave, I'll kill you!!\n<wait>	ours		reads: とっとと出て行けッ！！　出て行かないと、貴様らを殺すッ！！\n<wait>; @refalign
 m/MS000E.BIN	0:0A	221	6371	1FD0	男の態度は気迫に満ち、何を言{08:52}も無駄な事は一目瞭然だ{08:51}。\n<wait>		The man's demeanor was so intense that it was obvious\nnothing they said would do any good.<wait>	ours		reads: 男の態度は気迫に満ち、何を言っても無駄な事は一目瞭然だった。\n<wait>
@@ -439,7 +439,7 @@ m/MS000E.BIN	0:0C	9	298	1FD3	メイちゃんのお兄ちゃんに{08:62}嫌わ�
 m/MS000E.BIN	0:0C	10	362	1FD2	{08:31}：	Rui:			draft	reads: 泪：
 m/MS000E.BIN	0:0C	11	368	1FD3	メイちゃん。こんにちは！\nお姉さん達の事、覚え{08:2B}？\n<wait>		Mei-chan. Hello there!\nDo you remember us?\n<wait>	ours		reads: メイちゃん。こんにちは！\nお姉さん達の事、覚えてる？\n<wait>
 m/MS000E.BIN	0:0C	12	426	1FD2	{08:31}：		Rui:	ours		reads: 泪：
-m/MS000E.BIN	0:0C	13	432	1FD3	メイちゃんのお兄さんに{08:62}嫌われ{08:2B}み{08:4E}{08:74}ど、{08:5B}来ちゃ{08:51}{02:08}\n		Looks like Mei-chan's brother doesn't like us,\nbut we came back anyway...\n	ours		reads: メイちゃんのお兄さんには、嫌われてるみたいだけど、また来ちゃった‥‥‥\n; @split: was メイちゃんのお兄さんに{08:62}嫌われ{08:2B}み{08:4E}{08:74}ど、{08:5B}来ちゃ{08:51}{02:08}\n<wait>
+m/MS000E.BIN	0:0C	13	432	1FD3	メイちゃんのお兄さんに{08:62}嫌われ{08:2B}み{08:4E}{08:74}ど、{08:5B}来ちゃ{08:51}{02:08}\n		Looks like Mei-chan's brother doesn't like us,\nbut we came back anyway...\n	ours		reads: メイちゃんのお兄さんには、嫌われてるみたいだけど、また来ちゃった‥‥‥\n; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS000E.BIN	0:0C	14	506	1F01	{08:62}怯{08:28}メイの心を開く為、冗談を言{08:51}。\n<wait>	 cracked a joke to open the frightened Mei up.\n<wait>	{04:FF} cracked a joke, hoping to open the frightened Mei's heart.\n<wait>	ours	draft	reads: は、怯えるメイの心を開く為、冗談を言った。\n<wait>
 m/MS000E.BIN	0:0C	15	562	1F01	{08:62}怯{08:28}メイの心を開く為、明るく挨拶を{08:4B}。\n<wait>	 greeted her brightly to open the frightened Mei up.\n<wait>	{04:FF} greeted her cheerfully, hoping to open the frightened Mei's heart.\n<wait>	ours	draft	reads: は、怯えるメイの心を開く為、明るく挨拶をした。\n<wait>
 m/MS000E.BIN	0:0C	16	614	1FD2	メイ：	Mei:			draft	
@@ -454,7 +454,7 @@ m/MS000E.BIN	0:0C	24	884	1FD3	笑{08:51}顔も可愛いね。\n{08:87}で{08:72}
 m/MS000E.BIN	0:0C	25	941	1FD2	{08:31}：	Rui:			draft	reads: 泪：
 m/MS000E.BIN	0:0C	26	947	1FD3	うふふふ{02:08}可愛いのね。\n<wait>		Ufufu... You really are cute.\n<wait>	ours		reads: うふふふ‥‥‥可愛いのね。\n<wait>
 m/MS000E.BIN	0:0C	27	978	1FD2	{08:31}：	Rui:	Rui:	ours	draft	reads: 泪：
-m/MS000E.BIN	0:0C	28	984	1FD3	メイちゃん、お兄さんと一緒に住んでるんでしょ？\nお兄さんは何をし{08:2B}人{08:6B}？\n		Mei-chan, you live with your brother, right?\nWhat does he do?\n	ours		reads: メイちゃん、お兄さんと一緒に住んでるんでしょ？\nお兄さんは何をしてる人なの？\n; @split: was メイちゃん、お兄さんと一緒に住んでるんでしょ？\nお兄さんは何をし{08:2B}人{08:6B}？\n<wait>
+m/MS000E.BIN	0:0C	28	984	1FD3	メイちゃん、お兄さんと一緒に住んでるんでしょ？\nお兄さんは何をし{08:2B}人{08:6B}？\n		Mei-chan, you live with your brother, right?\nWhat does he do?\n	ours		reads: メイちゃん、お兄さんと一緒に住んでるんでしょ？\nお兄さんは何をしてる人なの？\n; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS000E.BIN	0:0C	29	1075	1F01	{08:62}メイの兄で{08:7B}らしい、{01:06}について尋ねた。\n<wait>	 asked about Kazumi, who seemed to be Mei's older brother.\n<wait>	{04:FF} asked about Kazumi, who seemed to be Mei's older brother.\n<wait>	ours	draft	reads: は、メイの兄であるらしい、カズミについて尋ねた。\n<wait>
 m/MS000E.BIN	0:0C	30	1124	1FD2	メイ：	Mei:			draft	
 m/MS000E.BIN	0:0C	31	1132	1FD3	{02:08}{02:08}{08:72}\n<wait>	.........\n<wait>			draft	reads: ‥‥‥‥‥‥‥‥\n<wait>
@@ -471,7 +471,7 @@ m/MS000E.BIN	0:0C	41	1362	1FD3	んー。{08:81}あ、メイちゃんは今いく
 m/MS000E.BIN	0:0C	42	1404	1FD2	{08:31}：	Rui:			draft	reads: 泪：
 m/MS000E.BIN	0:0C	43	1410	1FD3	え{08:72}あら、{08:90}{08:4B}の{02:08}‥？\n<wait>		Huh...? Oh my, what's wrong...?\n<wait>	ours		reads: え‥‥あら、どうしたの‥‥‥‥？\n<wait>
 m/MS000E.BIN	0:0C	44	1441	1FD2	{08:31}：		Rui:	ours		reads: 泪：
-m/MS000E.BIN	0:0C	45	1447	1FD3	{02:08}‥まあ{08:7F}わ。\n{08:81}あ{02:08}メイちゃんは今、いくつ{08:6B}？\n		...Well, never mind.\nSo then... how old are you now, Mei-chan?\n	ours		reads: ‥‥‥‥まあいいわ。\nじゃあ‥‥‥メイちゃんは今、いくつなの？\n; @split: was {02:08}‥まあ{08:7F}わ。\n{08:81}あ{02:08}メイちゃんは今、いくつ{08:6B}？\n<wait>
+m/MS000E.BIN	0:0C	45	1447	1FD3	{02:08}‥まあ{08:7F}わ。\n{08:81}あ{02:08}メイちゃんは今、いくつ{08:6B}？\n		...Well, never mind.\nSo then... how old are you now, Mei-chan?\n	ours		reads: ‥‥‥‥まあいいわ。\nじゃあ‥‥‥メイちゃんは今、いくつなの？\n; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS000E.BIN	0:0C	46	1508	1FD0	聞いては不味い事を、聞いて{08:1F}様だ。\n仕方が無いので、		It seems they'd asked something better left unasked.\nWith no other choice,	ours		reads: 聞いては不味い事を、聞いてしまった様だ。\n仕方が無いので、
 m/MS000E.BIN	0:0C	47	1565	1F01	{08:62}話題をメイ自身の事に変{08:41}。\n<wait>	 turned the talk to Mei herself.\n<wait>	{04:FF} changed the subject to Mei herself.\n<wait>	ours	draft	reads: は、話題をメイ自身の事に変えた。\n<wait>
 m/MS000E.BIN	0:0C	48	1607	1FD0	聞いては不味い事を、聞いて{08:1F}様だ。\n{03:0B}		It seems they'd asked something better left unasked.\nHowever,	ours		reads: 聞いては不味い事を、聞いてしまった様だ。\nしかし、
@@ -494,7 +494,7 @@ m/MS000E.BIN	0:0C	64	2079	1FD3	えっ{02:08}？\n<wait>		Huh...?\n<wait>	ours		r
 m/MS000E.BIN	0:0C	65	2096	1FD2	{08:37}：		Sonoda:	ours		reads: 園田：
 m/MS000E.BIN	0:0C	66	2102	1FD3	{02:08}そうな{08:5F}{02:08}\n		...I see...\n	ours		reads: ‥‥‥そうなんだ‥‥‥\n
 m/MS000E.BIN	0:0C	67	2120	1FD2	{08:31}：	Rui:			draft	reads: 泪：
-m/MS000E.BIN	0:0C	68	2126	1FD3	えっ{02:08}‥{08:90}{08:4A}？\n	Huh............ why?\n	Huh...? Why?\n	ours	draft	reads: えっ‥‥‥‥どうして？\n; @split: was えっ{02:08}‥{08:90}{08:4A}？\n<wait>
+m/MS000E.BIN	0:0C	68	2126	1FD3	えっ{02:08}‥{08:90}{08:4A}？\n	Huh............ why?\n	Huh...? Why?\n	ours	draft	reads: えっ‥‥‥‥どうして？\n; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS000E.BIN	0:0C	69	2154	1FD0	おかしな事を言うメイに、		At Mei saying something so strange,	ours		
 m/MS000E.BIN	0:0C	70	2184	1F01	は理由を尋ねた。\n<wait>	 asked why.\n<wait>	{04:FF} asked for the reason.\n<wait>	ours	draft	
 m/MS000E.BIN	0:0C	71	2214	1FD0	{08:63}の歳が分ら{08:25}など、おかしな事を言う{02:08}\n<wait>		Not knowing your own age... that's a strange thing to say...\n<wait>	ours		reads: 自分の歳が分らないなど、おかしな事を言う‥‥‥\n<wait>
@@ -522,7 +522,7 @@ m/MS000E.BIN	0:0C	92	2883	1FB2	怪しい{08:42}		You seem suspicious	ours		reads
 m/MS000E.BIN	0:0C	93	2922	1FD2	{08:37}：		Sonoda:	ours		reads: 園田：
 m/MS000E.BIN	0:0C	94	2928	1FD3	{02:08}‥何故{08:72}そう思う{08:5F}？\n		...Why... would you think that?\n	ours		reads: ‥‥‥‥何故‥‥そう思うんだ？\n
 m/MS000E.BIN	0:0C	95	2956	1FD2	{08:31}：	Rui:			draft	reads: 泪：
-m/MS000E.BIN	0:0C	96	2962	1FD3	{08:72}何故、そう思うのかしら{02:08}？\n		...I wonder, why would you think that...?\n	ours		reads: ‥‥何故、そう思うのかしら‥‥‥？\n; @split: was {08:72}何故、そう思うのかしら{02:08}？\n<wait>
+m/MS000E.BIN	0:0C	96	2962	1FD3	{08:72}何故、そう思うのかしら{02:08}？\n		...I wonder, why would you think that...?\n	ours		reads: ‥‥何故、そう思うのかしら‥‥‥？\n; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS000E.BIN	0:0C	97	2999	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：
 m/MS000E.BIN	0:0C	98	3005	1FD3	{02:08}‥<wait>しつこく尋ねて来る{08:42}、そう思{08:51}{08:5F}！\n<wait>		......<wait>Because you kept pestering me with questions, that's why!\n<wait>	ours		reads: ‥‥‥‥<wait>しつこく尋ねて来るから、そう思ったんだ！\n<wait>
 m/MS000E.BIN	0:0C	99	3056	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：
@@ -573,24 +573,24 @@ m/MS000E.BIN	0:0E	2	68	1FD0	一行の姿を見て、メイは驚{08:64}様子だ
 m/MS000E.BIN	0:0E	3	137	1FBA	そ{08:4A}、{01:28}とは逆に、メイの方{08:42}話{08:86}けて来た。\n<wait>		And then, unlike usual, it was Mei who spoke up first.\n<wait>	ours		reads: そして、いつもとは逆に、メイの方から話しかけて来た。\n<wait>
 m/MS000E.BIN	0:0E	4	188	1FD2	メイ：	Mei:			draft	
 m/MS000E.BIN	0:0E	5	206	1F03	お姉	Big sis			draft	
-m/MS000E.BIN	0:0E	6	213	18	お兄		How come you guys keep coming to see me and Onii-chan?\n<wait>	ours		@split: was お兄ちゃん達{08:62}{08:90}{08:4A}メイ達の所に来るの？\n<wait>
-m/MS000E.BIN	0:0E	7	217	18	ちゃん達{08:62}{08:90}{08:4A}メイ達の所に来るの？\n<wait>					@split-tail of [6]; reads: ちゃん達は、どうしてメイ達の所に来るの？\n<wait>
+m/MS000E.BIN	0:0E	6	213	18	お兄	Onii-	How come you guys keep coming to see me and Onii-chan?\n<wait>	ours	draft	@split-authored
+m/MS000E.BIN	0:0E	7	217	18	ちゃん達{08:62}{08:90}{08:4A}メイ達の所に来るの？\n<wait>	chan and the rest of you, how come you keep coming to see Mei?\n<wait>			draft	@split-tail of [6]; reads: ちゃん達は、どうしてメイ達の所に来るの？\n<wait>; @split-authored
 m/MS000E.BIN	0:0E	8	279	1FB2	何だか気に{08:59}{08:42}		Just curious	ours		reads: 何だか気になるから; menu option, declared width 20 columns
 m/MS000E.BIN	0:0E	9	295	1FB2	分ら{08:25}		I don't know	ours		reads: 分らない; menu option, declared width 20 columns
 m/MS000E.BIN	0:0E	10	329	1FD2	{08:37}：	Sonoda:			draft	reads: 園田：
 m/MS000E.BIN	0:0E	11	335	1FD3	いや{02:08}何だか気に{08:1A}{02:08}な。\n	No......... it's just been on our minds......... you know.\n	Well... it's just, somehow, we got curious...\n	ours	draft	reads: いや‥‥‥何だか気になって‥‥‥な。\n
 m/MS000E.BIN	0:0E	12	365	1FD2	{08:31}：	Rui:			draft	reads: 泪：
-m/MS000E.BIN	0:0E	13	371	1FD3	{02:08}何だか{08:72}気に{08:1A}。\n		...I don't know... we just got curious.\n	ours		reads: ‥‥‥何だか‥‥気になって。\n; @split: was {02:08}何だか{08:72}気に{08:1A}。\n<wait>
+m/MS000E.BIN	0:0E	13	371	1FD3	{02:08}何だか{08:72}気に{08:1A}。\n		...I don't know... we just got curious.\n	ours		reads: ‥‥‥何だか‥‥気になって。\n; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS000E.BIN	0:0E	14	398	1FD2	メイ：	Mei:			draft	
 m/MS000E.BIN	0:0E	15	416	1F03	お姉	Big sis			draft	
-m/MS000E.BIN	0:0E	16	423	18	お兄		You guys think we're weird, don't you... me and Onii-chan?\n<wait>	ours		@split: was お兄ちゃん達{08:62}メイ達の事{08:72}変だ{08:52}思っ{08:2B}でしょ？\n<wait>
-m/MS000E.BIN	0:0E	17	427	18	ちゃん達{08:62}メイ達の事{08:72}変だ{08:52}思っ{08:2B}でしょ？\n<wait>					@split-tail of [16]; reads: ちゃん達は、メイ達の事‥‥変だって思ってるでしょ？\n<wait>
+m/MS000E.BIN	0:0E	16	423	18	お兄	Onii-	You guys think we're weird, don't you... me and Onii-chan?\n<wait>	ours	draft	@split-authored
+m/MS000E.BIN	0:0E	17	427	18	ちゃん達{08:62}メイ達の事{08:72}変だ{08:52}思っ{08:2B}でしょ？\n<wait>	chan and the rest of you think Mei and them are......weird, don't you?\n<wait>			draft	@split-tail of [16]; reads: ちゃん達は、メイ達の事‥‥変だって思ってるでしょ？\n<wait>; @split-authored
 m/MS000E.BIN	0:0E	18	497	1FB2	まあね{08:72}		I guess so...	ours		reads: まあね‥‥; menu option, declared width 20 columns
 m/MS000E.BIN	0:0E	19	507	1FB2	うーん		Hmm...	ours		menu option, declared width 20 columns
 m/MS000E.BIN	0:0E	20	541	1FD2	{08:37}：	Sonoda:			draft	reads: 園田：
 m/MS000E.BIN	0:0E	21	547	1FD3	あ{02:08}いや、{08:7A}事{08:25}よ{08:72}うん。\n		Ah... n-no, that's not it at all... yeah.\n	ours		reads: あ‥‥‥いや、そんな事ないよ‥‥うん。\n
 m/MS000E.BIN	0:0E	22	579	1FD2	{08:31}：	Rui:			draft	reads: 泪：
-m/MS000E.BIN	0:0E	23	585	1FD3	まぁ{08:72}ね。\n{08:73}トコに、二人っきりで住んでる{08:6A}て{08:72}。\n	Well... yeah.\nLiving in a place like this, just the two of you.........\n	Well... yeah.\nLiving out here, just the two of you, all alone...\n	ours	draft	reads: まぁ‥‥ね。\nこんなトコに、二人っきりで住んでるなんて‥‥。\n; @split: was まぁ{08:72}ね。\n{08:73}トコに、二人っきりで住んでる{08:6A}て{08:72}。\n<wait>
+m/MS000E.BIN	0:0E	23	585	1FD3	まぁ{08:72}ね。\n{08:73}トコに、二人っきりで住んでる{08:6A}て{08:72}。\n	Well... yeah.\nLiving in a place like this, just the two of you.........\n	Well... yeah.\nLiving out here, just the two of you, all alone...\n	ours	draft	reads: まぁ‥‥ね。\nこんなトコに、二人っきりで住んでるなんて‥‥。\n; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS000E.BIN	0:0E	24	643	1FD2	メイ：	Mei:			draft	
 m/MS000E.BIN	0:0E	25	651	1FD3	{01:06}お兄ちゃん{08:62}{01:28}お兄ちゃん達が来ると怒る{08:84}{02:08}\n{08:4D}{08:62}メイを守る為{08:6B}。\n<wait>		Kazumi-onii-chan always gets angry when people like\nyou come around, but that's because he's trying to protect me.\n<wait>	ours		reads: カズミお兄ちゃんは、いつもお兄ちゃん達が来ると怒るけど‥‥‥\nそれは、メイを守る為なの。\n<wait>
 m/MS000E.BIN	0:0E	26	725	1FD2	メイ：	Mei:			draft	
@@ -623,8 +623,8 @@ m/MS000E.BIN	0:0E	52	1654	1FD2	メイ：	Mei:			draft
 m/MS000E.BIN	0:0E	53	1662	1FD3	{02:08}お兄ちゃんは{08:72}悪く{08:25}もん{02:08}\n<wait>		...Onii-chan... didn't do anything wrong...\n<wait>	ours		reads: ‥‥‥お兄ちゃんは‥‥悪くないもん‥‥‥\n<wait>
 m/MS000E.BIN	0:0E	54	1699	1FD0	メイ{08:62}泣き{08:8A}そうな顔に{08:16}。\n		Mei's face looks like it's about to crumple into tears.\n	ours		reads: メイは、泣きだしそうな顔になった。\n
 m/MS000E.BIN	0:0E	55	1731	0B	{08:37}が		Sonoda	ours		reads: 園田が
-m/MS000E.BIN	0:0E	56	1743	0B	{08:31}が		Rui was about to rush over and comfort her, when just then,\n{01:06} came back from outside.<wait>	ours		reads: 泪が; @split: was {08:31}が慌てて慰め{08:69}と{08:4B}{08:79}時、{01:06}が外{08:42}戻{08:52}来た。\n<wait>
-m/MS000E.BIN	0:0E	57	1747	0B	慌てて慰め{08:69}と{08:4B}{08:79}時、{01:06}が外{08:42}戻{08:52}来た。\n<wait>					@split-tail of [56]; reads: 慌てて慰めようとしたその時、カズミが外から戻って来た。\n<wait>
+m/MS000E.BIN	0:0E	56	1743	0B	{08:31}が	Rui	Rui was about to rush over and comfort her, when just then,\n{01:06} came back from outside.<wait>	ours	draft	reads: 泪が; @split-authored
+m/MS000E.BIN	0:0E	57	1747	0B	慌てて慰め{08:69}と{08:4B}{08:79}時、{01:06}が外{08:42}戻{08:52}来た。\n<wait>	 hurried to comfort her, and just then Kazumi came back from outside.\n<wait>			draft	@split-tail of [56]; reads: 慌てて慰めようとしたその時、カズミが外から戻って来た。\n<wait>; @split-authored
 m/MS000E.BIN	0:0E	58	1823	1FD2	{08:37}：	Sonoda:			draft	reads: 園田：
 m/MS000E.BIN	0:0E	59	1829	1FD3	不味いな{02:08}\n<wait>		This isn't good...\n<wait>	ours		reads: 不味いな‥‥‥\n<wait>
 m/MS000E.BIN	0:0E	60	1856	1FD2	{08:31}：	Rui:			draft	reads: 泪：

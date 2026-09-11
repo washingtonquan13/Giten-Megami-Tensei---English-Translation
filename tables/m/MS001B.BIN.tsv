@@ -112,8 +112,8 @@ m/MS001B.BIN	0:05	4	88	1FD0	そう言うなり、学者はファームの奥へ�
 m/MS001B.BIN	0:05	5	189	1FB2	学者を止{08:2E}		Stop him	v005		reads: 学者を止める; menu option, declared width 20 columns; @refalign
 m/MS001B.BIN	0:05	6	201	1FB2	放{08:52}おく		Let him go	v005		reads: 放っておく; menu option, declared width 20 columns; @refalign
 m/MS001B.BIN	0:05	7	233	1F01	{08:62}奥に向か{08:52}駆け出{08:4B}学者を止め{08:69}と{08:4B}。\n<wait>	 tried to stop the scholar who had dashed off into the back.\n<wait>			draft	reads: は、奥に向かって駆け出した学者を止めようとした。\n<wait>
-m/MS001B.BIN	0:05	8	278	1FBA	{03:0B}時既に遅く	But it was already too late; the scholar had vanished into the depths\nof the farm............\n<wait>	However, you're too slow to react.\nThe man has already disappeared from your sight.\n<wait>	v005	draft	reads: しかし、時既に遅く; @split: was {03:0B}時既に遅く学者はファームの奥へと消え{08:21}{02:08}‥\n<wait>
-m/MS001B.BIN	0:05	9	290	1FBA	学者はファームの奥へと消え{08:21}{02:08}‥\n<wait>					@split-tail of [8]; reads: 学者はファームの奥へと消えていった‥‥‥‥\n<wait>
+m/MS001B.BIN	0:05	8	278	1FBA	{03:0B}時既に遅く	But it was already too late; 	However, you're too slow to react.\nThe man has already disappeared from your sight.\n<wait>	v005	draft	reads: しかし、時既に遅く; @split-authored
+m/MS001B.BIN	0:05	9	290	1FBA	学者はファームの奥へと消え{08:21}{02:08}‥\n<wait>	the scholar had vanished into the depths of the farm............\n<wait>			draft	@split-tail of [8]; reads: 学者はファームの奥へと消えていった‥‥‥‥\n<wait>; @split-authored
 m/MS001B.BIN	0:05	10	334	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
 m/MS001B.BIN	0:05	11	340	1FD3	危{08:25}！！　{08:76}何が{08:7B}か{02:08}‥！！\n<wait>		Wait, slow down! It might be dangerous!\n<wait>	v005		reads: 危ない！！　まだ何があるか‥‥‥‥！！\n<wait>
 m/MS001B.BIN	0:05	12	377	1FD2	学者：		Scientist:	v005		
@@ -258,7 +258,7 @@ m/MS001B.BIN	0:05	150	5392	1F01	：	:			draft
 m/MS001B.BIN	0:05	151	5396	1FD3	御父様！？\n	Father!?\n			draft	
 m/MS001B.BIN	0:05	152	5421	1FD0	アームターミナル{08:42}{08:62}兼嗣の声が聞こえてくる{02:08}‥\n	Kanetsugu's voice comes through the Arm Terminal........\n			draft	reads: アームターミナルからは、兼嗣の声が聞こえてくる‥‥‥‥\n
 m/MS001B.BIN	0:05	153	5485	1FD0	アームターミナル{08:42}聞こえて{08:1E}声{08:62}	The voice coming from the Arm Terminal was that of 	The voice you hear belongs to Kanetsugu, Yuuka's father.\n<wait>	v005	draft	reads: アームターミナルから聞こえてきた声は、
-m/MS001B.BIN	0:05	154	5523	1F01	の父、兼嗣の声だ{08:51}。\n	's father, Kanetsugu.\n			draft	reads: の父、兼嗣の声だった。\n; @split: was の父、兼嗣の声だ{08:51}。\n<wait>
+m/MS001B.BIN	0:05	154	5523	1F01	の父、兼嗣の声だ{08:51}。\n	's father, Kanetsugu.\n			draft	reads: の父、兼嗣の声だった。\n; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS001B.BIN	0:05	155	5560	1FD2	兼嗣：	Kanetsugu:			draft	
 m/MS001B.BIN	0:05	156	5568	1FD3	‥{08:0B}が{08:40}{08:72}{08:0B}が外に{08:40}{08:77}！！\n<wait>	...Demons... there are demons... demons outside!!\n<wait>			draft	reads: ‥悪魔がいる‥‥悪魔が外にいるのだ！！\n<wait>
 m/MS001B.BIN	0:05	157	5603	1FD2	兼嗣：	Kanetsugu:			draft	
@@ -271,7 +271,7 @@ m/MS001B.BIN	0:05	163	5821	1FD2	{08:00}：		Hayasaka:	v005		reads: 早坂：
 m/MS001B.BIN	0:05	164	5827	1FD3	何処に{02:08}いらっしゃるん{08:55}か！？\n		What is your current location!?\n	v005		reads: 何処に‥‥‥いらっしゃるんですか！？\n; @refalign
 m/MS001B.BIN	0:05	165	5893	1F01	：	:			draft	
 m/MS001B.BIN	0:05	166	5897	1FD3	{02:08}{02:08}{02:08}‥\n	.........\n			draft	reads: ‥‥‥‥‥‥‥‥‥‥\n
-m/MS001B.BIN	0:05	167	5911	1FD0	アームターミナル{08:42}{08:62}兼嗣の切羽詰{08:20}声が聞こえてくる{02:08}\n	Kanetsugu's desperate voice comes from the Arm Terminal.........\n			draft	reads: アームターミナルからは、兼嗣の切羽詰まった声が聞こえてくる‥‥‥\n; @split: was アームターミナル{08:42}{08:62}兼嗣の切羽詰{08:20}声が聞こえてくる{02:08}\n<wait>
+m/MS001B.BIN	0:05	167	5911	1FD0	アームターミナル{08:42}{08:62}兼嗣の切羽詰{08:20}声が聞こえてくる{02:08}\n	Kanetsugu's desperate voice comes from the Arm Terminal.........\n			draft	reads: アームターミナルからは、兼嗣の切羽詰まった声が聞こえてくる‥‥‥\n; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS001B.BIN	0:05	168	5980	1FD2	兼嗣：	Kanetsugu:			draft	
 m/MS001B.BIN	0:05	169	5988	1FD3	{08:72}か{08:72}管制{08:05}ールームだ！\n<wait>{08:72}{08:47}階に、{01:2B}は進入{08:4A}{08:24}。\n<wait>{08:72}私がロック{08:4B}{08:5F}。\n<wait>	...The... the control computer room!\n<wait>...The zombies haven't got onto this floor.\n<wait>...I locked it.\n<wait>			draft	reads: ‥‥か‥‥管制コンピュータールームだ！\n<wait>‥‥この階に、ゾンビは進入していない。\n<wait>‥‥私がロックしたんだ。\n<wait>
 m/MS001B.BIN	0:05	170	6071	1FD2	兼嗣：	Kanetsugu:			draft	

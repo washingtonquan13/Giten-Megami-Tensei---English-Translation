@@ -21,7 +21,7 @@ m/MS0019.BIN	0:01	13	689	1FD2	男性：	Man:			draft
 m/MS0019.BIN	0:01	14	697	1FD3	ふう{08:72}まずは{08:48}で安心だな。\n{08:8F}、{08:47}{08:7E}外に出{08:69}{08:6A}て思わ{08:25}方が{08:7F}ぜ。\n応急処置程度だ{08:42}な{02:08}後でちゃんと{03:10}{08:4A}や{08:52}くれ。\n	Phew... that's one worry off my mind.\nBut don't go thinking of heading outside like this.\nIt's only first aid...... make sure she gets properly healed later.\n			draft	reads: ふう‥‥まずはこれで安心だな。\nだが、このまま外に出ようなんて思わない方がいいぜ。\n応急処置程度だからな‥‥‥後でちゃんと回復してやってくれ。\n
 m/MS0019.BIN	0:01	15	867	1FD2	男性：	Man:			draft	
 m/MS0019.BIN	0:01	16	875	1FD3	{08:48}{08:7D}、{08:48}を使えば{01:32}だな{02:08}\n<wait>		With this... if I use it, we'll be fine...\n<wait>	ours		reads: これなら、これを使えば大丈夫だな‥‥‥\n<wait>
-m/MS0019.BIN	0:01	17	933	1FD0	{08:03}は{03:10}{08:4B}。\n		Emi was healed.\n	ours		reads: 英美は回復した。\n; @split: was {08:03}は{03:10}{08:4B}。\n<wait>
+m/MS0019.BIN	0:01	17	933	1FD0	{08:03}は{03:10}{08:4B}。\n		Emi was healed.\n	ours		reads: 英美は回復した。\n; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS0019.BIN	0:01	18	952	1FD2	男性：	Man:			draft	
 m/MS0019.BIN	0:01	19	960	1FD3	{02:08}君、{01:32}かい？\n<wait>		...Hey, are you alright?\n<wait>	ours		reads: ‥‥‥君、大丈夫かい？\n<wait>
 m/MS0019.BIN	0:01	20	983	1FD2	{08:03}：		Emi:	v005		reads: 英美：
@@ -64,8 +64,8 @@ m/MS0019.BIN	0:01	56	2104	1FD2	男性：	Man:	Man:	v005	draft
 m/MS0019.BIN	0:01	57	2112	1FD3	初台だ{08:52}！\n	Hatsudai, you say!\n	Hatsudai? Interesting... I was travelling with a Devil Buster\nfrom Hatsudai until not that long ago myself.\n	v005	draft	reads: 初台だって！\n
 m/MS0019.BIN	0:01	58	2136	1F01	{08:62}トラブルに巻き込ま{08:2F}のも面倒{08:6B}で、男の問いを否定{08:4B}。\n<wait>	, not wanting the trouble, denied the man's question.\n<wait>	{04:FF}, not wanting the hassle, denied the man's question.\n<wait>	ours	draft	reads: は、トラブルに巻き込まれるのも面倒なので、男の問いを否定した。\n<wait>
 m/MS0019.BIN	0:01	59	2199	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	60	2207	1FD3	{08:72}そうか。\n	...I see.\nUntil a little while ago, I was traveling with someone who'd been a\nDevil Buster from Hatsudai.\n<wait>			draft	reads: ‥‥そうか。\n; @split: was {08:72}そうか。\n俺少し前{08:71}、初台の{02:00}だ{08:51}{08:52}{08:68}人と、一緒に行動{08:4A}た{08:5F}。\n<wait>
-m/MS0019.BIN	0:01	61	2218	1FD3	俺少し前{08:71}、初台の{02:00}だ{08:51}{08:52}{08:68}人と、一緒に行動{08:4A}た{08:5F}。\n<wait>					@split-tail of [60]; reads: 俺少し前まで、初台のデビルバスターだったっていう人と、一緒に行動してたんだ。\n<wait>
+m/MS0019.BIN	0:01	60	2207	1FD3	{08:72}そうか。\n	......I see.\n			draft	reads: ‥‥そうか。\n; @split-authored
+m/MS0019.BIN	0:01	61	2218	1FD3	俺少し前{08:71}、初台の{02:00}だ{08:51}{08:52}{08:68}人と、一緒に行動{08:4A}た{08:5F}。\n<wait>	Until a little while ago I was travelling with someone who'd been a\nDevil Buster from Hatsudai.\n<wait>			draft	@split-tail of [60]; reads: 俺少し前まで、初台のデビルバスターだったっていう人と、一緒に行動してたんだ。\n<wait>; @split-authored
 m/MS0019.BIN	0:01	62	2279	1FD2	男性：	Man:			draft	
 m/MS0019.BIN	0:01	63	2287	1FD3	{08:04}{08:52}{08:68}人だ{08:51}{08:5F}{08:84}{02:08}\n<wait>	A man called Nishino......\n<wait>			draft	reads: 西野っていう人だったんだけど‥‥‥\n<wait>
 m/MS0019.BIN	0:01	64	2314	1FD2	{08:03}：		Emi:	v005		reads: 英美：
@@ -105,8 +105,8 @@ m/MS0019.BIN	0:01	97	3313	1FD2	男性：	Man:			draft
 m/MS0019.BIN	0:01	98	3321	1FD3	{08:48}{08:62}好きな画像を入れてお{08:29}、カードタイプのプロジェクターだよ。\n<wait>	It's a card-type projector. You can load any picture you like into it.\n<wait>			draft	reads: これは、好きな画像を入れておける、カードタイプのプロジェクターだよ。\n<wait>
 m/MS0019.BIN	0:01	99	3392	1FD2	男性：	Man:	Man:	v005	draft	
 m/MS0019.BIN	0:01	100	3400	1FD3	{08:45}を、こう{08:4C}{02:08}\n<wait>	You press here, like this......\n<wait>	You just press the tiny button here, and...\n<wait>	v005	draft	reads: ここを、こうすると‥‥‥\n<wait>
-m/MS0019.BIN	0:01	101	3423	1FD0	男が	When the man flicked the switch on the card, a hologram appeared of\nYouko and Chita smiling, close together......\n<wait>			draft	@split: was 男がカードについて{08:64}スイッチを入{08:2F}と、陽子と知多が寄り添い微笑んで{08:40}\nホログラムが現わ{08:60}{02:08}\n<wait>
-m/MS0019.BIN	0:01	102	3427	1FD0	カードについて{08:64}スイッチを入{08:2F}と、陽子と知多が寄り添い微笑んで{08:40}\nホログラムが現わ{08:60}{02:08}\n<wait>					@split-tail of [101]; reads: カードについていたスイッチを入れると、陽子と知多が寄り添い微笑んでいる\nホログラムが現われた‥‥‥\n<wait>
+m/MS0019.BIN	0:01	101	3423	1FD0	男が	When the man			draft	@split-authored
+m/MS0019.BIN	0:01	102	3427	1FD0	カードについて{08:64}スイッチを入{08:2F}と、陽子と知多が寄り添い微笑んで{08:40}\nホログラムが現わ{08:60}{02:08}\n<wait>	 flicked the switch on the card, a hologram appeared of Youko and Chita\nsmiling, close together.........\n<wait>			draft	@split-tail of [101]; reads: カードについていたスイッチを入れると、陽子と知多が寄り添い微笑んでいる\nホログラムが現われた‥‥‥\n<wait>; @split-authored
 m/MS0019.BIN	0:01	103	3521	1FD2	{08:03}：		Emi:	v005		reads: 英美：
 m/MS0019.BIN	0:01	104	3527	1FD3	{08:72}おばさん{08:72}知多君{02:08}\n<wait>	...Ma'am... Chita......\n<wait>			draft	reads: ‥‥おばさん‥‥知多君‥‥‥\n<wait>
 m/MS0019.BIN	0:01	105	3556	1FD2	男性：	Man:			draft	
@@ -206,7 +206,7 @@ m/MS0019.BIN	0:06	23	641	1FD3	え？　{08:45}で買い取りはや{08:52}{08:25
 m/MS0019.BIN	0:06	24	743	1FD2	男性：		Man:	v005		
 m/MS0019.BIN	0:06	25	751	1FD3	{08:48}は早いモン勝ちだ{08:42}な。\n欲しいモンが{08:7B}ん{08:7D}、と{08:53}と荷物に余裕を作{08:52}来な！\n		It's first come, first served around here.\nIf there's something you want, hurry up and make room in your bags!\n	ours		reads: これは早いモン勝ちだからな。\n欲しいモンがあるんなら、とっとと荷物に余裕を作って来な！\n
 m/MS0019.BIN	0:06	26	833	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:06	27	841	1FD3	まいどありー。\n		Thanks!\n	v005		@split: was まいどありー。\n<wait>
+m/MS0019.BIN	0:06	27	841	1FD3	まいどありー。\n		Thanks!\n	v005		@split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS0019.BIN	0:06	28	864	1FD2	男性：		Man:	v005		
 m/MS0019.BIN	0:06	29	872	1FD3	他にも何か{08:7B}かい？\n		Anything else?\n	v005		reads: 他にも何かあるかい？\n
 m/MS0019.BIN	0:06	30	898	1FD2	男性：		Man:	v005		

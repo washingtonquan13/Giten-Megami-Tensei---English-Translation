@@ -35,12 +35,12 @@ m/MS001D.BIN	0:01	15	807	1FD2	男性：		Man:	v005
 m/MS001D.BIN	0:01	16	815	1FD3	{08:76}{08:76}、破壊後は終わら{08:25}な。\n<wait>		The world truly is beyond salvation, huh?\n<wait>	v005		reads: まだまだ、破壊後は終わらないな。\n<wait>
 m/MS001D.BIN	0:02	0	2	1FD2	ＤＢ隊員：		Devil Buster:	v005		
 m/MS001D.BIN	0:02	1	24	09	{08:00}？　{08:00}		Hayasaka? I'm pretty sure I saw him heading to the cafeteria.\n	v005		reads: 早坂？　早坂; @refalign
-m/MS001D.BIN	0:02	2	40	09	{08:34}？　{08:34}		Kirishima? I'm pretty sure I saw her heading to the cafeteria.                                        \n<wait>	v005		reads: 桐島？　桐島; @split: was {08:34}？　{08:34}{08:7D}つい今し方、食堂に入{08:52}{08:51}ぜ。\n<wait>; @refalign
-m/MS001D.BIN	0:02	3	48	09	{08:7D}つい今し方、食堂に入{08:52}{08:51}ぜ。\n<wait>					@split-tail of [2]; reads: ならつい今し方、食堂に入ってったぜ。\n<wait>
+m/MS001D.BIN	0:02	2	40	09	{08:34}？　{08:34}	Kirishima? Kirishima	Kirishima? I'm pretty sure I saw her heading to the cafeteria.                                        \n<wait>	v005	draft	reads: 桐島？　桐島; @refalign; @split-authored
+m/MS001D.BIN	0:02	3	48	09	{08:7D}つい今し方、食堂に入{08:52}{08:51}ぜ。\n<wait>	 went into the cafeteria just a moment ago.\n<wait>			draft	@split-tail of [2]; reads: ならつい今し方、食堂に入ってったぜ。\n<wait>; @split-authored
 m/MS001D.BIN	0:02	4	94	1F03	{01:3B}の{02:08}	That earlier.........			draft	reads: さっきの‥‥‥
 m/MS001D.BIN	0:02	5	105	09	{08:00}		It was Hayasaka, right?\n	v005		reads: 早坂
-m/MS001D.BIN	0:02	6	115	09	{08:34}		It was Kirishima, right?             \n<wait>	v005		reads: 桐島; @split: was {08:34}{02:08}だよな？\n<wait>; @refalign
-m/MS001D.BIN	0:02	7	117	09	{02:08}だよな？\n<wait>					@split-tail of [6]; reads: ‥‥‥だよな？\n<wait>
+m/MS001D.BIN	0:02	6	115	09	{08:34}	Kirishima	It was Kirishima, right?             \n<wait>	v005	draft	reads: 桐島; @refalign; @split-authored
+m/MS001D.BIN	0:02	7	117	09	{02:08}だよな？\n<wait>	, right.........?\n<wait>			draft	@split-tail of [6]; reads: ‥‥‥だよな？\n<wait>; @split-authored
 m/MS001D.BIN	0:02	8	136	1FD2	男性：		Man:	v005		
 m/MS001D.BIN	0:02	9	144	1FD3	あいつ{02:08}一体{08:90}{08:4B}{08:52}言う{08:5F}よ。\nまるで、人が変わっちまっ{08:2B}{08:81}{08:25}か！\n<wait>		What on earth happened with that guy?\nHe was acting like a totally different person.\n<wait>	v005		reads: あいつ‥‥‥一体どうしたって言うんだよ。\nまるで、人が変わっちまってるじゃないか！\n<wait>
 m/MS001D.BIN	0:02	10	231	1F7C	おや、君はかなり、古い型のブルゾンを着{08:2B}ね。\n<wait>	Oh, that's quite an old model of blouson you're wearing.\n<wait>			draft	reads: おや、君はかなり、古い型のブルゾンを着てるね。\n<wait>
@@ -105,7 +105,7 @@ m/MS001D.BIN	0:05	26	1033	1FD2	ウエイトレス：		Waitress:	v005
 m/MS001D.BIN	0:05	27	1049	1FD3	今の人{08:72}{08:82}でさえ量の多いＤＢ食を、１０人前も注文なさ{08:51}ん{08:55}。\n<wait>	That man just now...... he ordered ten DB rations, and they're big\nportions to begin with.\n<wait>			draft	reads: 今の人‥‥ただでさえ量の多いＤＢ食を、１０人前も注文なさったんです。\n<wait>
 m/MS001D.BIN	0:05	28	1118	1FD2	ウエイトレス：	Waitress:			draft	
 m/MS001D.BIN	0:05	29	1134	1FD3	{08:4D}で{02:08}確認し{08:69}と{08:4B}ら、凄い目でにらみつけられて{02:08}\n<wait>{02:08}あの目{08:72}まるで、{02:0B}{08:81}{08:25}み{08:4E}だ{08:51}{02:08}\n	So...... when I tried to confirm it, he glared at me with such\nterrible eyes......\n<wait>......Those eyes...... it was as if he weren't even human......\n			draft	reads: それで‥‥‥確認しようとしたら、凄い目でにらみつけられて‥‥‥\n<wait>‥‥‥あの目‥‥まるで、人間じゃないみたいだった‥‥‥\n
-m/MS001D.BIN	0:05	30	1225	18	一体あの人、何を{08:8E}{01:3E}{08:6B}かしら{02:08}？\n		Just what on earth is happening...\n	v005		reads: 一体あの人、何をするつもりなのかしら‥‥‥？\n; @split: was 一体あの人、何を{08:8E}{01:3E}{08:6B}かしら{02:08}？\n<wait>; @refalign
+m/MS001D.BIN	0:05	30	1225	18	一体あの人、何を{08:8E}{01:3E}{08:6B}かしら{02:08}？\n		Just what on earth is happening...\n	v005		reads: 一体あの人、何をするつもりなのかしら‥‥‥？\n; @refalign; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS001D.BIN	0:05	31	1269	1F7C	いらっしゃ{08:89}せぇ！\n<wait>	Welcome!\n<wait>			draft	reads: いらっしゃいませぇ！\n<wait>
 m/MS001D.BIN	0:05	32	1296	1FD2	ウエイトレス：	Waitress:			draft	
 m/MS001D.BIN	0:05	33	1312	1FD3	只今のおすすめはぁ、	Today's special is			draft	
@@ -113,8 +113,8 @@ m/MS001D.BIN	0:05	34	1350	0E	ビーフミニッツステーキ	...the beef minut
 m/MS001D.BIN	0:05	35	1375	18	若鷄のクリーム煮		chicken breasts with cream sauce!	v005		@refalign
 m/MS001D.BIN	0:05	36	1394	18	白身魚のフリット、ポテト添え	fried white fish with potatoes!	fish fingers with potatoes on the side!	v005	draft	
 m/MS001D.BIN	0:05	37	1425	18	ポークのトマトソース煮込み	pork stewed in tomato sauce!	pork stew with tomato sauce!	v005	draft	
-m/MS001D.BIN	0:05	38	1454	18	天然ほうれん草のソテー付、サーモンのグリル	grilled salmon with sauteed wild spinach!\n<wait>	grilled salmon with spinach!        \n<wait>	v005	draft	@split: was 天然ほうれん草のソテー付、サーモンのグリル{08:55}ぅ！\n<wait>
-m/MS001D.BIN	0:05	39	1496	18	{08:55}ぅ！\n<wait>					@split-tail of [38]; reads: ですぅ！\n<wait>
+m/MS001D.BIN	0:05	38	1454	18	天然ほうれん草のソテー付、サーモンのグリル	grilled salmon with sauteed wild spinach	grilled salmon with spinach!        \n<wait>	v005	draft	@split-authored
+m/MS001D.BIN	0:05	39	1496	18	{08:55}ぅ！\n<wait>	, it is!\n<wait>			draft	@split-tail of [38]; reads: ですぅ！\n<wait>; @split-authored
 m/MS001D.BIN	0:05	40	1508	00	お客様。{08:5C}よろしいん{08:55}かぁ？\n<wait>		Leaving already?\n<wait>	v005		reads: お客様。もうよろしいんですかぁ？\n<wait>; @refalign
 m/MS001D.BIN	0:05	41	1557	1FB2	{08:5C}{08:7F}	That's all	Yeah	v005	draft	reads: もういい; menu option, declared width 20 columns
 m/MS001D.BIN	0:05	42	1563	1FB2	{08:7F}や{08:76}		Not yet	v005		reads: いいやまだ; menu option, declared width 20 columns; @refalign
@@ -124,24 +124,24 @@ m/MS001D.BIN	0:05	45	1629	1FD2	ウエイトレス：	Waitress:			draft
 m/MS001D.BIN	0:05	46	1645	1FD3	で{08:62}ごゆっくり{08:90}ぞぉ！\n<wait>	Well then, take your time!\n<wait>	Well then, take your time!\n<wait>	v005	draft	reads: では、ごゆっくりどうぞぉ！\n<wait>
 m/MS001D.BIN	0:06	0	2	1FD2	女性：		Woman:	v005		
 m/MS001D.BIN	0:06	1	20	09	{02:00}用の食事{08:52}、凄い量{08:6B}ね。\n<wait>見{08:2B}{08:74}で、お腹いっぱいになっちゃうわ。\n		The meals they make for Devil Busters are massive!\n<wait>I could never hope to finish one of those things.\n	v005		reads: デビルバスター用の食事って、凄い量なのね。\n<wait>見てるだけで、お腹いっぱいになっちゃうわ。\n; @refalign
-m/MS001D.BIN	0:06	2	93	18	配給食{08:62}まずい{08:52}言う人も{08:40}{08:84}。\n<wait>私{08:62}清潔で安心{08:4A}食べら{08:2F}し、味も{08:4D}ほど、悪くは{08:25}と思うわ。\n		Some people call the food we're served crap.\n<wait>Personally though, I don't thinks it's all that bad.\nSure, it might not taste the greatest, but it's clean and safe,\nand that's enough for me.\n	v005		reads: 配給食は、まずいって言う人もいるけど。\n<wait>私は、清潔で安心して食べられるし、味もそれほど、悪くはないと思うわ。\n; @split: was 配給食{08:62}まずい{08:52}言う人も{08:40}{08:84}。\n<wait>私{08:62}清潔で安心{08:4A}食べら{08:2F}し、味も{08:4D}ほど、悪くは{08:25}と思うわ。\n<wait>; @refalign
+m/MS001D.BIN	0:06	2	93	18	配給食{08:62}まずい{08:52}言う人も{08:40}{08:84}。\n<wait>私{08:62}清潔で安心{08:4A}食べら{08:2F}し、味も{08:4D}ほど、悪くは{08:25}と思うわ。\n		Some people call the food we're served crap.\n<wait>Personally though, I don't thinks it's all that bad.\nSure, it might not taste the greatest, but it's clean and safe,\nand that's enough for me.\n	v005		reads: 配給食は、まずいって言う人もいるけど。\n<wait>私は、清潔で安心して食べられるし、味もそれほど、悪くはないと思うわ。\n; @refalign; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS001D.BIN	0:07	0	7	1FD2	ＤＢ隊員：		Devil Buster:	v005		
 m/MS001D.BIN	0:07	1	29	1F03	ＤＢ専用食の目玉{08:62}何て{08:51}{08:52}天然酵母のパンさ。\n<wait>人工物とは香も味も、比較に{08:7D}{08:25}ね。\n	The pride of the DB rations is the natural-yeast bread.\n<wait>Nothing artificial comes close, in scent or taste.\n			draft	reads: ＤＢ専用食の目玉は、何てったって天然酵母のパンさ。\n<wait>人工物とは香も味も、比較にならないね。\n
 m/MS001D.BIN	0:07	2	131	1F03	{01:3B}の{02:08}第二部隊の	That earlier......... Second Squad's 			draft	reads: さっきの‥‥‥第二部隊の
 m/MS001D.BIN	0:07	3	152	09	{08:00}		Hayasaka from Squad Two.\n	v005		reads: 早坂
-m/MS001D.BIN	0:07	4	157	18	{08:34}		Kirishima from Squad Two.         \n<wait>	v005		reads: 桐島; @split: was {08:34}{08:8C}{02:08}？\n<wait>; @refalign
-m/MS001D.BIN	0:07	5	159	18	{08:8C}{02:08}？\n<wait>					@split-tail of [4]; reads: だろう‥‥‥？\n<wait>
+m/MS001D.BIN	0:07	4	157	18	{08:34}	Kirishima	Kirishima from Squad Two.         \n<wait>	v005	draft	reads: 桐島; @refalign; @split-authored
+m/MS001D.BIN	0:07	5	159	18	{08:8C}{02:08}？\n<wait>	, right.........?\n<wait>			draft	@split-tail of [4]; reads: だろう‥‥‥？\n<wait>; @split-authored
 m/MS001D.BIN	0:07	6	174	1FD2	ＤＢ隊員：		Devil Buster:	v005		
 m/MS001D.BIN	0:07	7	186	1FD3	一体あいつ{02:08}{08:90}{08:4B}{08:52}{08:68}{08:5F}？\n尋常{08:81}{08:25}ぜ！！\n		Just what is 	v005		reads: 一体あいつ‥‥‥どうしたっていうんだ？\n尋常じゃないぜ！！\n
 m/MS001D.BIN	0:07	8	229	18	{03:0B}霊体のみの、さほど強く{08:25}{08:0B}とは言{08:52}も、{08:10}内に\nこうウヨウヨ発生{03:0C}ちゃあ、出動回数が多く{08:1A}たまらんよ。\n<wait>		The number of spirit sightings has been increasing rapidly these\npast few days. While relatively weak, they are still demons.\n<wait>	v005		reads: しかし、霊体のみの、さほど強くない悪魔とは言っても、シェルター内に\nこうウヨウヨ発生されちゃあ、出動回数が多くなってたまらんよ。\n<wait>; @refalign
 m/MS001D.BIN	0:07	9	339	1FD2	ＤＢ隊員：		Devil Buster:	v005		
 m/MS001D.BIN	0:07	10	351	1FD3	{01:2D}の説明{08:81}、霊的磁場の異常上昇のせいで、外部{08:42}の進入{08:81}あ無い\n{08:52}事{08:8F}、住民達を納得させら{08:2F}話{08:81}{08:25}。困{08:51}モンだな{08:72}。\n		The official explanation is that the spirits and able to enter\nthe shelter from outside due to an influx in the Spirito-Magnetic Field,\nthough many people are sceptical about this and have their own theories.\nIt's honestly a really difficult situation...\n	v005		reads: 管理部の説明じゃ、霊的磁場の異常上昇のせいで、外部からの進入じゃあ無い\nって事だが、住民達を納得させられる話じゃない。困ったモンだな‥‥。\n
-m/MS001D.BIN	0:07	11	468	18	食べるのも仕事の内だぞ！\n<wait>男は体力が勝負。私生活{08:56}任務{08:56}{08:72}さ。\n		Eating is part of my duties!\n<wait>Both in life and work, a man's gotta be strong.\n	v005		reads: 食べるのも仕事の内だぞ！\n<wait>男は体力が勝負。私生活でも任務でも‥‥さ。\n; @split: was 食べるのも仕事の内だぞ！\n<wait>男は体力が勝負。私生活{08:56}任務{08:56}{08:72}さ。\n<wait>; @refalign
+m/MS001D.BIN	0:07	11	468	18	食べるのも仕事の内だぞ！\n<wait>男は体力が勝負。私生活{08:56}任務{08:56}{08:72}さ。\n		Eating is part of my duties!\n<wait>Both in life and work, a man's gotta be strong.\n	v005		reads: 食べるのも仕事の内だぞ！\n<wait>男は体力が勝負。私生活でも任務でも‥‥さ。\n; @refalign; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS001D.BIN	0:08	0	2	1FD2	男性：		Man:	v005		
 m/MS001D.BIN	0:08	1	15	09	{08:47}間、原宿{08:10}の人に打ち合わせ{08:4B}い事が{08:7B}{08:52}、メールを\n出{08:4B}{08:5F}が{02:08}‥未だに返事が来{08:25}{08:5F}よ。\n<wait>		I sent a message to a guy living over at Harajuku Shelter\na while ago. He still hasn't gotten back to me...\n<wait>	v005		reads: この間、原宿シェルターの人に打ち合わせしたい事があるって、メールを\n出したんだが‥‥‥‥未だに返事が来ないんだよ。\n<wait>; @refalign
 m/MS001D.BIN	0:08	2	109	1FD2	男性：		Man:	v005		
 m/MS001D.BIN	0:08	3	117	1FD3	おかしいなぁ。\n		What's up with that?\n	v005		
-m/MS001D.BIN	0:08	4	135	18	エリート専用食堂には入{08:52}みたかい？\n<wait>全く、嫌味だよな。\n<wait>階級制度の無{08:18}、前時代が羨ましいよ。\n		You ever been to the elite section of the cafeteria?\n<wait>I think it sucks that we're separated like that.\n<wait>I miss the good old days before all this class bullshit.\n	v005		reads: エリート専用食堂には入ってみたかい？\n<wait>全く、嫌味だよな。\n<wait>階級制度の無かった、前時代が羨ましいよ。\n; @split: was エリート専用食堂には入{08:52}みたかい？\n<wait>全く、嫌味だよな。\n<wait>階級制度の無{08:18}、前時代が羨ましいよ。\n<wait>; @refalign
+m/MS001D.BIN	0:08	4	135	18	エリート専用食堂には入{08:52}みたかい？\n<wait>全く、嫌味だよな。\n<wait>階級制度の無{08:18}、前時代が羨ましいよ。\n		You ever been to the elite section of the cafeteria?\n<wait>I think it sucks that we're separated like that.\n<wait>I miss the good old days before all this class bullshit.\n	v005		reads: エリート専用食堂には入ってみたかい？\n<wait>全く、嫌味だよな。\n<wait>階級制度の無かった、前時代が羨ましいよ。\n; @refalign; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS001D.BIN	0:09	0	7	1FD2	少女：		Girl:	v005		
 m/MS001D.BIN	0:09	1	25	1F03	私、{08:47}間{08:65}ムービーで、前時代の映画を見たの。\n<wait>そ{08:4B}ら、外で調理{08:4A}、{08:86}も骨{08:71}付{08:64}動物の肉を食べ{08:2B}シーンがあ{08:52}\n<wait>{02:08}ゾッと{08:4B}わ。\n<wait>	I watched an old-world film on the comms the other day.\n<wait>There was a scene of them cooking outdoors, eating animal meat\n<wait>with the bones still in......... It gave me chills.\n<wait>			draft	reads: 私、この間通信ムービーで、前時代の映画を見たの。\n<wait>そしたら、外で調理して、しかも骨まで付いた動物の肉を食べてるシーンがあって\n<wait>‥‥‥ゾッとしたわ。\n<wait>
 m/MS001D.BIN	0:09	2	169	1F03	{01:18}、{02:00}でしょ！\n<wait>	You're a Devil Buster, aren't you!\n<wait>			draft	reads: あんた、デビルバスターでしょ！\n<wait>
@@ -155,19 +155,19 @@ m/MS001D.BIN	0:0A	0	2	1FD2	労働者：		Worker:	v005
 m/MS001D.BIN	0:0A	1	17	09	今、そこらをウロウロし{08:2B}霊体{08:0B}だ{08:52}、女子供が襲われ{08:50}危{08:25}ぜ。\n{08:72}{08:51}く、{02:00}も、も{08:53}しっかり{08:4A}ほしいよ。\n		While the spirits are most just floating around for time being,\nthings around going to get really nasty if they decide to start\nattacking women and children. I wish the Devil Busters would\ndo something.\n	v005		reads: 今、そこらをウロウロしてる霊体悪魔だって、女子供が襲われたら危ないぜ。\n‥‥ったく、デビルバスターも、もっとしっかりしてほしいよ。\n; @refalign
 m/MS001D.BIN	0:0A	2	120	18	{08:10}住人の中に{08:62}市民階級がＢ以下の{02:0B}は殆ど{08:24}が、\n全く{08:24}ワケ{08:81}{08:25}。\n<wait>		While most of the folk living in this shelter are\ncitizen rank B or higher, there are few that aren't.\n<wait>	v005		reads: シェルター住人の中には、市民階級がＢ以下の人間は殆どいないが、\n全くいないワケじゃない。\n<wait>; @refalign
 m/MS001D.BIN	0:0A	3	192	1FD2	労働者：		Worker:	v005		
-m/MS001D.BIN	0:0A	4	202	1FD3	俺達労働者に{08:62}特に多く含まれ{08:14}{08:42}ね。\n<wait>差別{03:0C}{08:14}のを見るの{08:62}忍び{08:25}事だよ。\n		It's mostly workers like me.\n<wait>That's exactly why I can't bring myself to just stand by\nand watch while they're being discriminated against.\n	v005		reads: 俺達労働者には、特に多く含まれているからね。\n<wait>差別されているのを見るのは、忍びない事だよ。\n; @split: was 俺達労働者に{08:62}特に多く含まれ{08:14}{08:42}ね。\n<wait>差別{03:0C}{08:14}のを見るの{08:62}忍び{08:25}事だよ。\n<wait>
+m/MS001D.BIN	0:0A	4	202	1FD3	俺達労働者に{08:62}特に多く含まれ{08:14}{08:42}ね。\n<wait>差別{03:0C}{08:14}のを見るの{08:62}忍び{08:25}事だよ。\n		It's mostly workers like me.\n<wait>That's exactly why I can't bring myself to just stand by\nand watch while they're being discriminated against.\n	v005		reads: 俺達労働者には、特に多く含まれているからね。\n<wait>差別されているのを見るのは、忍びない事だよ。\n; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS001D.BIN	0:0B	0	2	1FD2	労働者：		Worker:	v005		
 m/MS001D.BIN	0:0B	1	17	09	{08:45}の調理場に{08:40}{08:00}さんて人{08:62}市民階級がＤランクな{08:5F}が、{08:47}間も\n{08:79}階級差のせいでエリートの奴らに、いちゃもん付けられてたよ。\n<wait>		Old Man Hayasaka from the pantry is a rare example of a rank D citizen.\nJust the other day, I saw him getting picked on by some elite guys.\n<wait>	v005		reads: ここの調理場にいる早坂さんて人は、市民階級がＤランクなんだが、この間も\nその階級差のせいでエリートの奴らに、いちゃもん付けられてたよ。\n<wait>; @refalign
 m/MS001D.BIN	0:0B	2	145	1FD2	労働者：		Worker:	v005		
 m/MS001D.BIN	0:0B	3	155	1FD3	{08:73}閉鎖{03:0C}た場所でさ。\n逃げられ{08:5D}{08:25}のに、あんまりな話しだよな。\n		It honestly sucks to see. What is he supposed to do?\nHe's quite literally stuck here with them.\n	v005		reads: こんな閉鎖された場所でさ。\n逃げられもしないのに、あんまりな話しだよな。\n
 m/MS001D.BIN	0:0B	4	220	18	エリートの奴ら{08:62}{08:48}みよがしに天然素材の私服を着やが{08:52}さ。\n<wait>		Those elite guys wear clothes made out of natural materials.\n<wait>	v005		reads: エリートの奴らは、これみよがしに天然素材の私服を着やがってさ。\n<wait>; @refalign
 m/MS001D.BIN	0:0B	5	285	1FD2	労働者：		Worker:	v005		
-m/MS001D.BIN	0:0B	6	295	1FD3	天然素材が高級だ{08:42}{08:52}、人工物と何が違う{08:52}言う{08:5F}よ。\n{08:72}{08:51}くよ！\n		Other than the price tag,\nwhat makes them so much better than artificial stuff? Huh?\n	v005		reads: 天然素材が高級だからって、人工物と何が違うって言うんだよ。\n‥‥ったくよ！\n; @split: was 天然素材が高級だ{08:42}{08:52}、人工物と何が違う{08:52}言う{08:5F}よ。\n{08:72}{08:51}くよ！\n<wait>
+m/MS001D.BIN	0:0B	6	295	1FD3	天然素材が高級だ{08:42}{08:52}、人工物と何が違う{08:52}言う{08:5F}よ。\n{08:72}{08:51}くよ！\n		Other than the price tag,\nwhat makes them so much better than artificial stuff? Huh?\n	v005		reads: 天然素材が高級だからって、人工物と何が違うって言うんだよ。\n‥‥ったくよ！\n; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS001D.BIN	0:0C	0	2	1FD2	ＤＢ隊員：		Devil Buster:	v005		
 m/MS001D.BIN	0:0C	1	34	1A	おい！　{01:3B}の{02:08}第二部隊の		Damn. 	v005		reads: おい！　さっきの‥‥‥第二部隊の; @refalign
 m/MS001D.BIN	0:0C	2	63	09	{08:00}		him	v005		reads: 早坂
-m/MS001D.BIN	0:0C	3	73	09	{08:34}		him	v005		reads: 桐島; @split: was {08:34}{08:81}{08:25}か！？\n一体、{08:90}{08:4B}{08:52}言う{08:5F}よ。\n<wait>; @refalign
-m/MS001D.BIN	0:0C	4	75	09	{08:81}{08:25}か！？\n一体、{08:90}{08:4B}{08:52}言う{08:5F}よ。\n<wait>					@split-tail of [3]; reads: じゃないか！？\n一体、どうしたって言うんだよ。\n<wait>
+m/MS001D.BIN	0:0C	3	73	09	{08:34}	Kirishima	him	v005	draft	reads: 桐島; @refalign; @split-authored
+m/MS001D.BIN	0:0C	4	75	09	{08:81}{08:25}か！？\n一体、{08:90}{08:4B}{08:52}言う{08:5F}よ。\n<wait>	, isn't it!?\nWhat on earth is going on?\n<wait>			draft	@split-tail of [3]; reads: じゃないか！？\n一体、どうしたって言うんだよ。\n<wait>; @split-authored
 m/MS001D.BIN	0:0C	5	117	1FD2	ＤＢ隊員：		Devil Buster:	v005		
 m/MS001D.BIN	0:0C	6	129	1FD3	ＤＢ食を１０人前だぜ！？\n過食症っ{08:21}{08:52}、ああ{08:81}{08:25}{08:8C}？\n<wait>		No one can eat ten whole meals by themselves, right?\n<wait>	v005		reads: ＤＢ食を１０人前だぜ！？\n過食症っていったって、ああじゃないだろう？\n<wait>
 m/MS001D.BIN	0:0C	7	189	1FD2	ＤＢ隊員：		Devil Buster:	v005		

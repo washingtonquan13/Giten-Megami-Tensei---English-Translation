@@ -194,7 +194,7 @@ m/MS0056.BIN	0:03	2	102	1FD2	{08:03}：		Emi:	v005		reads: 英美：; @refalign
 m/MS0056.BIN	0:03	3	108	1FD3	ＯＫ{08:55}！！\n<wait>		Ok!\n<wait>	v005		reads: ＯＫです！！\n<wait>; @refalign
 m/MS0056.BIN	0:04	0	73	1FD0	エレベーターと{08:68}閉鎖空間の中で、襲撃{03:0C}{08:50}た{08:20}{08:5E}では{08:25}。\n階段で行く方が安全{08:8C}。\n		There's no room to fight if you get attacked inside the elevator.\nTaking the stairs would likely be safer.\n	v005		reads: エレベーターという閉鎖空間の中で、襲撃されたらたまったものではない。\n階段で行く方が安全だろう。\n; @refalign
 m/MS0056.BIN	0:04	1	156	1FD2	{08:03}：		Emi:	v005		reads: 英美：; @refalign
-m/MS0056.BIN	0:04	2	162	1FD3	エレベーターは危険だよ。階段で行こう。\n		The elevator is too dangerous. Let's take the stairs.\n	v005		@split: was エレベーターは危険だよ。階段で行こう。\n<wait>; @refalign
+m/MS0056.BIN	0:04	2	162	1FD3	エレベーターは危険だよ。階段で行こう。\n		The elevator is too dangerous. Let's take the stairs.\n	v005		@refalign; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS0056.BIN	0:04	3	213	1FD0	扉はしっかりと溶接{03:0C}{08:14}。\n<wait>		The door has been welded shut.\n<wait>	v005		reads: 扉はしっかりと溶接されている。\n<wait>; @refalign
 m/MS0056.BIN	0:05	0	2	1FD0	扉はロック{03:0C}{08:14}。\n<wait>		The door is locked.\n<wait>	v005		reads: 扉はロックされている。\n<wait>; @refalign
 m/MS0056.BIN	0:05	1	37	1A	恐らく{08:47}程度{08:7D}、銃で壊{08:2A}{08:8C}。\n<wait>		You should be able to blow it open.\n<wait>	v005		reads: 恐らくこの程度なら、銃で壊せるだろう。\n<wait>; @refalign
@@ -203,8 +203,8 @@ m/MS0056.BIN	0:05	3	95	1FB2	ロックを壊す		Shoot it open	v005		menu option,
 m/MS0056.BIN	0:05	4	109	1FB2	放{08:52}おく		Leave	v005		reads: 放っておく; menu option, declared width 20 columns; @refalign
 m/MS0056.BIN	0:05	5	152	1FD2	{08:04}：	Nishino:	Nishino:	v005	draft	reads: 西野：
 m/MS0056.BIN	0:05	6	158	1FD3	ふむ、{08:47}程度{08:7D}銃で壊{08:2A}{08:8C}。\n<wait>		Hmm. We should be able to blow this door open.\n<wait>	v005		reads: ふむ、この程度なら銃で壊せるだろう。\n<wait>; @refalign
-m/MS0056.BIN	0:05	7	216	18	{08:04}	The bullet Nishino fired struck home, and the door's lock blew off.\n<wait>	Sure enough, all it takes is one well-aimed bullet to break the lock.                                             \n<wait>	v005	draft	reads: 西野; @split: was {08:04}の発射{08:4B}弾丸が命中し、扉のロックは吹っ飛{08:5F}。\n<wait>
-m/MS0056.BIN	0:05	8	218	18	の発射{08:4B}弾丸が命中し、扉のロックは吹っ飛{08:5F}。\n<wait>					@split-tail of [7]; reads: の発射した弾丸が命中し、扉のロックは吹っ飛んだ。\n<wait>
+m/MS0056.BIN	0:05	7	216	18	{08:04}	Nishino	Sure enough, all it takes is one well-aimed bullet to break the lock.                                             \n<wait>	v005	draft	reads: 西野; @split-authored
+m/MS0056.BIN	0:05	8	218	18	の発射{08:4B}弾丸が命中し、扉のロックは吹っ飛{08:5F}。\n<wait>	's bullet struck home, and the door's lock blew off.\n<wait>			draft	@split-tail of [7]; reads: の発射した弾丸が命中し、扉のロックは吹っ飛んだ。\n<wait>; @split-authored
 m/MS0056.BIN	0:05	9	276	1FD1	＞{02:06}\n<wait>	>What will you do?\n<wait>	>What will you do?\n<wait>	v005	draft	reads: ＞どうしますか？\n<wait>
 m/MS0056.BIN	0:05	10	303	1FB2	中に入る		Enter	v005		menu option, declared width 20 columns; @refalign
 m/MS0056.BIN	0:05	11	313	1FB2	立ち去る		Back out	v005		menu option, declared width 20 columns; @refalign
@@ -216,16 +216,16 @@ m/MS0056.BIN	0:05	16	467	1FD3	ま{08:72}待{08:52}くれ{08:72}！\n<wait>	W... 
 m/MS0056.BIN	0:05	17	492	1FD0	{08:4C}、{01:2E}の中{08:42}声が{08:4B}。{08:90}やら生存者がい{08:50}しい。\n<wait>	Then a voice came from inside the room. There seemed to be a survivor.\n<wait>			draft	reads: すると、部屋の中から声がした。どうやら生存者がいたらしい。\n<wait>
 m/MS0056.BIN	0:05	18	549	1F01	{08:62}{01:2E}の中へと入っ{08:21}{02:08}‥\n	 went into the room............\n			draft	reads: は、部屋の中へと入っていった‥‥‥‥\n
 m/MS0056.BIN	0:05	19	577	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0056.BIN	0:05	20	583	1FD3	中に入るぞ、生存者が{08:40}かも知れ{08:25}。\n		Be careful, everyone. There might be survivors inside.\n	v005		reads: 中に入るぞ、生存者がいるかも知れない。\n; @split: was 中に入るぞ、生存者が{08:40}かも知れ{08:25}。\n<wait>; @refalign
+m/MS0056.BIN	0:05	20	583	1FD3	中に入るぞ、生存者が{08:40}かも知れ{08:25}。\n		Be careful, everyone. There might be survivors inside.\n	v005		reads: 中に入るぞ、生存者がいるかも知れない。\n; @refalign; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS0056.BIN	0:05	21	644	1FD0	{08:8F}、{01:2B}は{08:76}残っ{08:14}。\n今は全て{01:2B}を駆逐{08:8E}事が先決だ。\n		There are still zombies left. You must eliminate them first.\n	v005		reads: だが、ゾンビはまだ残っている。\n今は全てゾンビを駆逐する事が先決だ。\n; @refalign
 m/MS0056.BIN	0:05	22	699	1FD2	{08:04}：		Nishino:	v005		reads: 西野：
-m/MS0056.BIN	0:05	23	705	1FD3	{08:8F}、今は{01:2B}共の駆逐が先だ。\n		However, first, we must eliminate the remaining zombies.\n	v005		reads: だが、今はゾンビ共の駆逐が先だ。\n; @split: was {08:8F}、今は{01:2B}共の駆逐が先だ。\n<wait>; @refalign
+m/MS0056.BIN	0:05	23	705	1FD3	{08:8F}、今は{01:2B}共の駆逐が先だ。\n		However, first, we must eliminate the remaining zombies.\n	v005		reads: だが、今はゾンビ共の駆逐が先だ。\n; @refalign; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS0056.BIN	0:05	24	758	1F01	{08:62}ロック{03:0C}た扉を{08:79}{08:7E}にし、{08:47}場を立ち去{08:51}。\n	 left the locked door as it was and walked away.\n	You decide to leave the door be and walk away.\n	v005	draft	reads: は、ロックされた扉をそのままにし、この場を立ち去った。\n; @refalign
 m/MS0056.BIN	0:06	0	2	1FD2	科学者：		Scientist:	v005		
 m/MS0056.BIN	0:06	1	17	09	{08:0B}撃退{08:09}{02:08}か。\n{02:0E}と{08:4A}も、興味は{08:7B}{08:5F}がな。\n<wait>		Devil Repulsion Program, huh? It certainly does sound intriguing.\n<wait>	v005		reads: 悪魔撃退プログラム‥‥‥か。\nこちらとしても、興味はあるんだがな。\n<wait>; @refalign
 m/MS0056.BIN	0:06	2	67	1FD2	科学者：		Scientist:	v005		
 m/MS0056.BIN	0:06	3	77	1FD3	いかん{08:66}、人員を回{08:66}{08:77}よ。\n		I wish I could spare a few of my boys to work on it,\nbut alas, we're pretty low on resources at the moment.\n	v005		reads: いかんせん、人員を回せんのだよ。\n
-m/MS0056.BIN	0:06	4	107	18	{08:45}Ｂ８Ｆはテクノ・クラートと呼ば{08:2F}、言わば、{08:10}内での“思考”を\n司っ{08:14}場所だ。\n		This floor is nicknamed Technocrat.\nIt's where the shelter's "thinking" occurs.\n	v005		reads: ここＢ８Ｆはテクノ・クラートと呼ばれる、言わば、シェルター内での“思考”を\n司っている場所だ。\n; @split: was {08:45}Ｂ８Ｆはテクノ・クラートと呼ば{08:2F}、言わば、{08:10}内での“思考”を\n司っ{08:14}場所だ。\n<wait>; @refalign
+m/MS0056.BIN	0:06	4	107	18	{08:45}Ｂ８Ｆはテクノ・クラートと呼ば{08:2F}、言わば、{08:10}内での“思考”を\n司っ{08:14}場所だ。\n		This floor is nicknamed Technocrat.\nIt's where the shelter's "thinking" occurs.\n	v005		reads: ここＢ８Ｆはテクノ・クラートと呼ばれる、言わば、シェルター内での“思考”を\n司っている場所だ。\n; @refalign; @split-tailless: the cut took only a trailing escape, nothing to divide
 m/MS0056.BIN	0:07	0	2	1FD2	科学者：		Scientist:	v005		
 m/MS0056.BIN	0:07	1	12	1FD3	ラボでは主にＤ.Ｄ.Ｓ{08:09}に関{08:8E}{01:2C}と、{08:79}周辺{08:09}の{01:2C}、\nそ{08:4A}、{08:0B}{08:0A}の分析とヴァーチャダンジョンや、ヴァーチャルトレーナーの\n管理を行なっ{08:14}。\n<wait>		Here at the laboratory, we mostly work on updating and maintaining DDS,\nas well as adding new demons to the Virtual Dungeon.\n<wait>	v005		reads: ラボでは主にＤ.Ｄ.Ｓプログラムに関する開発と、その周辺プログラムの開発、\nそして、悪魔データの分析とヴァーチャダンジョンや、ヴァーチャルトレーナーの\n管理を行なっている。\n<wait>
 m/MS0056.BIN	0:08	0	2	1FD2	ＤＢ隊員：		Devil Buster:	v005		

@@ -3,8 +3,8 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS00D2.BIN	0:00	0	0	DATA	ＮＰＣフォント表示\n	NPC font display\nEnter a font number (ffff to quit)	NPC Font Display\nEnter font number (ffff to quit)	ours	draft	@split: was ＮＰＣフォント表示\nフォント番号を入力{08:4A}{08:6E}（ｆｆｆｆで終了）
-m/MS00D2.BIN	0:00	1	19	DATA	フォント番号を入力{08:4A}{08:6E}（ｆｆｆｆで終了）					@split-tail of [0]; reads: フォント番号を入力してください（ｆｆｆｆで終了）
+m/MS00D2.BIN	0:00	0	0	DATA	ＮＰＣフォント表示\n	NPC font display\n	NPC Font Display\nEnter font number (ffff to quit)	ours	draft	@split-authored
+m/MS00D2.BIN	0:00	1	19	DATA	フォント番号を入力{08:4A}{08:6E}（ｆｆｆｆで終了）	Enter a font number (ffff to quit)			draft	@split-tail of [0]; reads: フォント番号を入力してください（ｆｆｆｆで終了）; @split-authored
 m/MS00D2.BIN	0:00	2	98	1FE8	＝	=	=	ours	draft	
 m/MS00D2.BIN	0:00	3	104	1F02	（ＦＣ	 (FC	(FC	ours	draft	
 m/MS00D2.BIN	0:00	4	113	0D	）\nパレット番号を入力{08:4A}{08:6E}	)\nEnter a palette number	)\nEnter palette number	ours	draft	reads: ）\nパレット番号を入力してください
