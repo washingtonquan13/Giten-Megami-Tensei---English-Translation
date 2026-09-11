@@ -101,25 +101,47 @@ static u32 nrecs;
 
 /* The memo, and the ONLY thing remembered between fetches.
  *
- * A slot is valid only when its handle and base pointer still match and the
- * buffer's own index entry for the memoised record is still (off, len) -- which
- * is re-checked on every fetch, never trusted.  That is the difference between
- * this and the (handle, fid) cache it replaces: this one cannot outlive the
- * buffer contents it describes.
+ * It exists so that a record is hashed once per record transition rather than
+ * once per byte.  Everything about it is about how hard it is to *invalidate*,
+ * because a memo that outlives what it describes is the entire bug this file
+ * was rewritten to remove.  A slot is valid only when all four hold:
  *
- * Four slots, because several buffers are resident at once: a pool call
- * (opcodes 01-08, the only control transfer our own English may contain)
- * switches to the pool file's buffer and returns, so both memos have to
- * survive it.  `entry` may be a null pointer, meaning "this record is not
- * translated" -- memoised too, so an untranslated record costs one hash and
- * not one per byte. */
-#define MEMO_SLOTS 4
+ *   - the handle is the same;
+ *   - the buffer's base pointer is the same;
+ *   - the buffer's own index entry for the memoised record is still (off, len);
+ *   - the incoming program counter is the one THIS SLOT handed back last.
+ *
+ * The fourth is not in docs/PLAN-content-addressing.md and the first three are
+ * not enough without it.  (off, len) is not content: measured over the corpus,
+ * 92 (record id, offset, length) slots hold more than one record -- 257
+ * different records in all -- and 80 of those slots hold something we
+ * translate.  `rec 00` at 0x400 with length 9 is seventeen different records;
+ * `rec 02` at 0x423 with length 9 is seven, which is the plan's own third
+ * symptom row.  So a buffer reloaded in place under one handle can present a
+ * *different* record at the same id, offset and length, and the first three
+ * checks would all pass.
+ *
+ * The program counter closes it.  A buffer is reloaded by a script load, which
+ * also sets a new program counter, so a reloaded buffer's first fetch is never
+ * a continuation of the walk the memo was built during -- it re-hashes and gets
+ * the record that is actually there.  The cost is one extra hash per jump.
+ *
+ * One slot per handle, direct-mapped on the low nibble, rather than a few slots
+ * round-robin: a virtual program counter can only be resolved while its
+ * handle's slot survives, and round-robin lets four fetches on other buffers
+ * evict a handle that is sitting mid-tail at a page wait.  Direct mapping means
+ * only a handle congruent mod 16 can displace another, and the engine's handles
+ * are small integers.
+ *
+ * `entry` may be a null pointer, meaning "this record is not translated" --
+ * memoised too, so an untranslated record costs one hash and not one per byte.
+ */
+#define MEMO_SLOTS 16
 static u32 m_handle[MEMO_SLOTS];
 static const u8 *m_base[MEMO_SLOTS];
-static u16 m_rec[MEMO_SLOTS], m_off[MEMO_SLOTS], m_len[MEMO_SLOTS];
+static u16 m_rec[MEMO_SLOTS], m_off[MEMO_SLOTS], m_len[MEMO_SLOTS], m_pc[MEMO_SLOTS];
 static const struct rec *m_entry[MEMO_SLOTS];
 static u8 m_used[MEMO_SLOTS];
-static u32 m_next;
 
 static u32 fnv1a(const u8 *p, u32 n)
 {
@@ -226,37 +248,24 @@ static const struct rec *find_entry(u16 rec_id, u16 jp_len, u32 hash)
     return 0;
 }
 
-static int memo_valid(int slot, u32 handle, const u8 *base, const u16 *idx)
+static int memo_valid(int slot, u32 handle, const u8 *base, const u16 *idx, u16 pc)
 {
     u32 r;
-    if (!m_used[slot] || m_handle[slot] != handle || m_base[slot] != base)
+    if (!m_used[slot] || m_handle[slot] != handle || m_base[slot] != base
+        || m_pc[slot] != pc)
         return 0;
     r = m_rec[slot];
     return idx[r * 2] == m_off[slot] && idx[r * 2 + 1] == m_len[slot];
 }
 
-/* The slot this handle owns, or a fresh one.  A reused slot is marked unused
-   first, so nothing can read it as valid before it is filled. */
-static int memo_slot(u32 handle)
-{
-    int i;
-    for (i = 0; i < MEMO_SLOTS; i++)
-        if (m_used[i] && m_handle[i] == handle)
-            return i;
-    i = (int)m_next;
-    m_next = (m_next + 1) & (MEMO_SLOTS - 1);
-    m_used[i] = 0;
-    return i;
-}
-
 /* The table entry for the record `rec` of this buffer, memoised.  The hash is
    the cost this exists to pay once per record transition rather than per byte;
-   everything else is four u16 compares. */
+   everything else is five u16 compares. */
 static const struct rec *entry_for(int slot, u32 handle, const u8 *base,
-                                   const u16 *idx, int rec)
+                                   const u16 *idx, int rec, u16 pc)
 {
     u16 off = idx[rec * 2], ln = idx[rec * 2 + 1];
-    if (memo_valid(slot, handle, base, idx) && m_rec[slot] == (u16)rec)
+    if (memo_valid(slot, handle, base, idx, pc) && m_rec[slot] == (u16)rec)
         return m_entry[slot];
     m_handle[slot] = handle;
     m_base[slot] = base;
@@ -334,38 +343,33 @@ static u8 passthrough(u32 handle, u16 *pcp)
     return ORIG_FETCH(handle, pcp);
 }
 
-ENTRY u8 hook(u32 handle, u16 *pcp)
+/* One fetch, when the overlay has something to say about it.
+ *
+ * Returns the byte and advances *pcp, or -1 when this address is not ours.
+ * Split out of hook() so that every path -- served, fallen through, refused --
+ * leaves the memo's `m_pc` equal to the program counter actually handed back,
+ * which is what makes "is this fetch a continuation of the walk I memoised"
+ * answerable at all.
+ */
+static int serve(int slot, u32 handle, const u8 *base, const u16 *idx,
+                 u32 end, u16 *pcp)
 {
     const struct rec *e;
-    struct span *sp, *s;
-    const u8 *base;
-    const u16 *idx;
-    u16 pc;
-    u32 k, end, off;
-    int slot, rec;
-    if (state == 0)
-        load();
-    if (state < 0)
-        return ORIG_FETCH(handle, pcp);
-    base = script_buffer(handle);
-    if (!base)
-        return ORIG_FETCH(handle, pcp);
-    idx = (const u16 *)base;
-    end = image_end_of(base);
-    pc = *pcp;
-    slot = memo_slot(handle);
+    struct span *s;
+    u32 k, off;
+    u16 pc = *pcp;
+    int rec;
     if (pc < end) {
         rec = find_record(idx, pc);
         if (rec < 0)
-            return ORIG_FETCH(handle, pcp);     /* the index itself, or a gap */
-        e = entry_for(slot, handle, base, idx, rec);
+            return -1;                          /* the index itself, or a gap */
+        e = entry_for(slot, handle, base, idx, rec, pc);
         if (!e)
-            return ORIG_FETCH(handle, pcp);     /* this record is not translated */
+            return -1;                          /* this record is not translated */
         off = idx[rec * 2];
-        sp = spans + e->span_first;
-        s = find_span(sp, e->nspans, pc - off);
+        s = find_span(spans + e->span_first, e->nspans, pc - off);
         if (!s)
-            return ORIG_FETCH(handle, pcp);
+            return -1;
         k = pc - off - s->rec_off;
         if (k + 1 == s->len)
             *pcp = (u16)(off + s->rec_off + s->jp_len);   /* the English is done */
@@ -380,21 +384,46 @@ ENTRY u8 hook(u32 handle, u16 *pcp)
        record the fetch that created this address was in.  That holds because no
        opcode the codec may put inside a span transfers control within this
        handle: a pool call switches buffers, and that buffer has its own slot. */
-    if (!memo_valid(slot, handle, base, idx))
-        return passthrough(handle, pcp);
+    if (!memo_valid(slot, handle, base, idx, pc))
+        return -1;
     e = m_entry[slot];
     if (!e)
-        return passthrough(handle, pcp);
-    sp = spans + e->span_first;
-    s = find_tail(sp, e->nspans, pc - end);
+        return -1;
+    s = find_tail(spans + e->span_first, e->nspans, pc - end);
     if (!s)
-        return passthrough(handle, pcp);
+        return -1;
     k = s->served + (pc - end - s->virt_off);
     if (k + 1 == s->len)
         *pcp = (u16)((u32)m_off[slot] + s->rec_off + s->jp_len);
     else
         *pcp = (u16)(pc + 1);
     return ovl[s->data_off + k];
+}
+
+ENTRY u8 hook(u32 handle, u16 *pcp)
+{
+    const u8 *base;
+    int slot, b;
+    u8 got;
+    if (state == 0)
+        load();
+    if (state < 0)
+        return ORIG_FETCH(handle, pcp);
+    base = script_buffer(handle);
+    if (!base)
+        return ORIG_FETCH(handle, pcp);
+    slot = (int)(handle & (MEMO_SLOTS - 1));
+    b = serve(slot, handle, base, (const u16 *)base, image_end_of(base), pcp);
+    if (b < 0) {
+        got = passthrough(handle, pcp);
+    } else {
+        got = (u8)b;
+    }
+    /* The program counter we are handing back, whichever way this went.  The
+       next fetch on this handle is a continuation of this walk only if it
+       arrives with exactly this value; anything else re-hashes the record. */
+    m_pc[slot] = *pcp;
+    return got;
 }
 
 /* Frame pacing -- the game tick at 60 per second.

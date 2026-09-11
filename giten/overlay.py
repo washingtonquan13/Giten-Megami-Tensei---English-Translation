@@ -61,6 +61,17 @@ wait and the eight pool calls) transfers control **within the same handle**: a
 pool call switches to the pool file's own buffer, which gets its own memo slot,
 and returns.  ``tests/test_overlay.py`` pins that precondition.
 
+The memo is valid only while the handle, the buffer's base pointer, the
+buffer's own index entry for the memoised record, **and the program counter the
+last fetch handed back** all still agree.  The fourth is load-bearing: a record
+id plus an offset and a length is not content.  Measured over the corpus, 92
+``(id, offset, length)`` slots hold more than one record -- 257 records in all,
+80 of the slots holding something we translate -- and ``rec 02`` at 0x423 with
+length 9 is seven different records, which is the third wrong line in the
+session that prompted v6.  Without the program-counter check a buffer reloaded
+in place could present a different record at the same slot and keep the old
+record's English.  See the memo comment in ``giten/exe/hook.c``.
+
 ``cap`` is the other half of the rules, and it is not optional.  A PC the engine
 *jumps* to is one the overlay must answer exactly as the original file would,
 because the branch was aimed at a byte in the original file -- almost always
@@ -592,9 +603,16 @@ class Model:
     def __init__(self, entries, image: bytes):
         self.entries = sorted(entries or [], key=lambda e: e.key)
         self.image = image
-        #: the memo of section 2 step 2: ``(rec, off, len, entry)``, where
-        #: ``entry`` may be None ("this record is not translated", memoised too)
+        #: ``(rec, off, len, entry)``, where ``entry`` may be None ("this record
+        #: is not translated", memoised too)
         self.memo = None
+        #: the program counter the previous fetch handed back.  A fetch that
+        #: does not arrive with this value is not a continuation of the walk the
+        #: memo was built during, so the record is hashed again -- see the memo
+        #: comment in ``giten/exe/hook.c`` for why (off, len) alone is not
+        #: enough: 92 (id, offset, length) slots in the corpus hold more than
+        #: one record.
+        self.memo_pc = None
 
     # -- the pieces the hook has, in the same order ------------------------
     def image_end(self) -> int:
@@ -622,16 +640,16 @@ class Model:
         off, ln = self._index(best)
         return best if pc < off + ln else None
 
-    def _memo_valid(self) -> bool:
-        if self.memo is None:
+    def _memo_valid(self, pc: int) -> bool:
+        if self.memo is None or self.memo_pc != pc:
             return False
         rec, off, ln, _entry = self.memo
         return self._index(rec) == (off, ln)
 
-    def _entry_for(self, rec: int):
+    def _entry_for(self, rec: int, pc: int):
         """The record entry for ``rec``, memoised and re-validated every fetch."""
         off, ln = self._index(rec)
-        if self._memo_valid() and self.memo[0] == rec:
+        if self._memo_valid(pc) and self.memo[0] == rec:
             return self.memo[3]
         entry = find_entry(self.entries, rec, ln,
                            fnv1a(self.image[off:off + ln]))
@@ -652,20 +670,20 @@ class Model:
                 return s
         return None
 
-    def fetch(self, pc: int) -> "tuple[int, int]":
-        """``(byte, next pc)`` exactly as the hooked engine would see them."""
+    def _serve(self, pc: int) -> "tuple[int, int] | None":
+        """``(byte, next pc)`` when this address is ours, else None."""
         end = self.image_end()
         if pc < end:
             rec = self.find_record(pc)
             if rec is None:
-                return self.image[pc], (pc + 1) & 0xFFFF
-            entry = self._entry_for(rec)
+                return None
+            entry = self._entry_for(rec, pc)
             if entry is None:
-                return self.image[pc], (pc + 1) & 0xFFFF
+                return None
             off = self._index(rec)[0]
             s = self._span_at(entry, pc - off)
             if s is None:
-                return self.image[pc], (pc + 1) & 0xFFFF
+                return None
             k = pc - off - s.rec_off
             if k + 1 == len(s.data):
                 nxt = off + s.rec_off + s.jp_len
@@ -676,15 +694,28 @@ class Model:
             return s.data[k], nxt & 0xFFFF
         # a virtual PC exists only because the fetch before it created one, so
         # the memo names the record it belongs to
-        if not self._memo_valid() or self.memo[3] is None:
-            return STRUCTURAL_BYTE, (pc + 1) & 0xFFFF
-        rec, off, _ln, entry = self.memo
+        if not self._memo_valid(pc) or self.memo[3] is None:
+            return None
+        _rec, off, _ln, entry = self.memo
         s = self._tail_at(entry, pc - end)
         if s is None:
-            return STRUCTURAL_BYTE, (pc + 1) & 0xFFFF
+            return None
         k = s.served + (pc - end - s.virt_off)
         nxt = (off + s.rec_off + s.jp_len) if k + 1 == len(s.data) else pc + 1
         return s.data[k], nxt & 0xFFFF
+
+    def fetch(self, pc: int) -> "tuple[int, int]":
+        """``(byte, next pc)`` exactly as the hooked engine would see them."""
+        got = self._serve(pc)
+        if got is None:
+            # passthrough: the original fetch for a real address, and a refusal
+            # for one above the image, which only this overlay can have invented
+            if pc >= self.image_end():
+                got = (STRUCTURAL_BYTE, (pc + 1) & 0xFFFF)
+            else:
+                got = (self.image[pc], (pc + 1) & 0xFFFF)
+        self.memo_pc = got[1]
+        return got
 
     def walk(self, pc: int, stop: int, limit: int = 1 << 20) -> bytes:
         """The byte stream a straight-line walk from ``pc`` to the real ``stop`` sees."""
