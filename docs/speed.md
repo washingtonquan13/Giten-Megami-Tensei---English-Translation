@@ -38,7 +38,9 @@ as it goes.
 
 The suite is **338 tests, 0 failures, no `NOT RUN` line**, and the set of test
 names is exactly the baseline's 331 plus the 7 added here.  Serial and parallel
-report the identical set.
+report the identical set.  With every cache switched off --
+`GITEN_NO_CACHE=1 python -m tests.run`, which is how to ask whether the cache is
+at fault for something -- it is the same 338 tests, 0 failures, in 109.5 s.
 
 ### The slowest tests
 
