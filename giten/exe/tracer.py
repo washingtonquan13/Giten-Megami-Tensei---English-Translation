@@ -222,6 +222,43 @@ def compile_hook_ex(cave_va: int, hz: int = DEFAULT_HZ, script_div: int = 1,
     for tool in ("gcc", "ld", "objcopy", "nm"):
         if shutil.which(tool) is None:
             raise RuntimeError("%s not found (GNU binutils + gcc are required)" % tool)
+    blob, syms = _compile(cave_va, hz, script_div, battle_div)
+    if not blob or len(blob) > 0x2000:
+        raise RuntimeError("unexpected hook size %d" % len(blob))
+    if syms.get("hook") != cave_va or "pace" not in syms:
+        raise RuntimeError("hook.c layout: %r" % syms)
+    if script_div > 1 and "script_step" not in syms:
+        raise RuntimeError("hook.c has no script_step: %r" % syms)
+    if battle_div > 1 and "battle_step" not in syms:
+        raise RuntimeError("hook.c has no battle_step: %r" % syms)
+    return blob, syms
+
+
+def _compile(cave_va: int, hz: int, script_div: int, battle_div: int):
+    """The four-subprocess build of ``hook.c``, cached on disk.
+
+    ``(blob, syms)`` is a pure function of ``hook.c``, ``hook.ld``, the flags,
+    these four numbers and the toolchain, and the suite asks for it fourteen
+    times -- the same handful of argument tuples over and over, gcc + ld +
+    objcopy + nm each time.  The key covers every one of those inputs, so an
+    edit to ``hook.c`` rebuilds; ``GITEN_NO_CACHE=1`` rebuilds regardless.
+    """
+    from .. import cache
+
+    k = cache.raw_key("hook",
+                      cache.file_key(HOOK_SOURCE, HOOK_LD).encode(),
+                      cache.toolchain_key("gcc", "ld", "objcopy", "nm").encode(),
+                      repr((CFLAGS, cave_va, hz, script_div, battle_div)).encode())
+    where = os.path.join(paths.BUILD_DIR, "cache", "hook")
+    got = cache.load(where, k)
+    if got is not None:
+        return got
+    got = _compile_uncached(cave_va, hz, script_div, battle_div)
+    cache.store(where, k, got)
+    return got
+
+
+def _compile_uncached(cave_va: int, hz: int, script_div: int, battle_div: int):
     gcc = short_path(shutil.which("gcc"))
     tmp = tempfile.mkdtemp(prefix="giten-hook-")
     try:
@@ -245,14 +282,6 @@ def compile_hook_ex(cave_va: int, hz: int = DEFAULT_HZ, script_div: int = 1,
                 syms[parts[2].lstrip("_")] = int(parts[0], 16)
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
-    if not blob or len(blob) > 0x2000:
-        raise RuntimeError("unexpected hook size %d" % len(blob))
-    if syms.get("hook") != cave_va or "pace" not in syms:
-        raise RuntimeError("hook.c layout: %r" % syms)
-    if script_div > 1 and "script_step" not in syms:
-        raise RuntimeError("hook.c has no script_step: %r" % syms)
-    if battle_div > 1 and "battle_step" not in syms:
-        raise RuntimeError("hook.c has no battle_step: %r" % syms)
     return blob, syms
 
 

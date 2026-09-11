@@ -11,27 +11,68 @@ execute a binary that was linked a moment ago (Defender, ESET and friends).
 That is not a result about the hook, so it must not read as one -- but it must
 not read as a pass either, hence the line on stdout.  **A green suite carrying a
 NOT RUN line is not verification.**
+
+The link is cached (``build/cache/harness``), because eight tests ask for the
+same binary and gcc is 2.5 s a time.  The key is the content of the three
+sources plus the gcc command line plus the identity of the toolchain, so any
+edit to ``hook.c`` -- the thing these tests exist to check -- relinks.  The
+**NOT RUN probe is not cached**: whether this machine will execute the binary is
+a fact about the machine right now, so every call still tries to run it.
 """
 from __future__ import annotations
 
 import os
 import shutil
 import subprocess
+import tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 
+def _link(exe: str, gcc: str, sources) -> None:
+    # no CRT: the mingw driver cannot link its own CRT from a path with spaces
+    subprocess.run([gcc, "-O2", "-Wall", "-Werror", "-ffreestanding",
+                    "-fno-builtin", "-nostdlib", "-o", exe, *sources,
+                    "-I", HERE, "-lkernel32", "-e", "_start"], check=True)
+
+
 def build(tmp: str, what: str = "the C hook"):
+    from giten import cache, paths
     from giten.exe import tracer
     if shutil.which("gcc") is None:
         return None
-    exe = os.path.join(tmp, "hook_harness.exe")
     gcc = tracer.short_path(shutil.which("gcc"))
-    # no CRT: the mingw driver cannot link its own CRT from a path with spaces
-    subprocess.run([gcc, "-O2", "-Wall", "-Werror", "-ffreestanding", "-fno-builtin",
-                    "-nostdlib", "-o", exe, tracer.HOOK_SOURCE,
-                    os.path.join(HERE, "hook_harness.c"), "-I", HERE,
-                    "-lkernel32", "-e", "_start"], check=True)
+    sources = [tracer.HOOK_SOURCE, os.path.join(HERE, "hook_harness.c")]
+    if cache.disabled():
+        exe = os.path.join(tmp, "hook_harness.exe")
+        _link(exe, gcc, sources)
+    else:
+        k = cache.raw_key(
+            "harness",
+            cache.file_key(*sources, os.path.join(HERE, "hook_harness.h")).encode(),
+            cache.toolchain_key("gcc").encode(),
+            repr(["-O2", "-Wall", "-Werror", "-ffreestanding", "-fno-builtin",
+                  "-nostdlib", "-I", HERE, "-lkernel32", "-e",
+                  "_start"]).encode("utf-8"))
+        d = os.path.join(paths.BUILD_DIR, "cache", "harness")
+        exe = os.path.join(d, k + ".exe")
+        if not os.path.exists(exe):
+            os.makedirs(d, exist_ok=True)
+            fd, staging = tempfile.mkstemp(dir=d, prefix=".tmp-", suffix=".exe")
+            os.close(fd)
+            os.unlink(staging)
+            _link(staging, gcc, sources)
+            try:
+                os.replace(staging, exe)
+            except OSError:
+                # another worker linked it first and is running it; its copy is
+                # the same bytes, so use that and drop ours
+                if not os.path.exists(exe):
+                    raise
+                try:
+                    os.unlink(staging)
+                except OSError:
+                    pass
     try:
         subprocess.run([exe], cwd=tmp, capture_output=True)
     except OSError as exc:
