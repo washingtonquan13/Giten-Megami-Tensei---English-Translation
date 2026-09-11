@@ -54,19 +54,20 @@ m/MS001A.BIN	0:02	12	678	1FD3	原宿に出動{08:4B}隊員{08:62}直ちに全員
 m/MS001A.BIN	0:02	13	742	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; @refalign
 m/MS001A.BIN	0:02	14	748	1FD3	{02:08}了解。\n<wait>		...Roger that.\n<wait>	v005		reads: ‥‥‥了解。\n<wait>; @refalign
 m/MS001A.BIN	0:02	15	777	1F03	{02:0C}{08:62}今より	From this moment we 			draft	reads: 我々は、今より
-m/MS001A.BIN	0:02	16	790	18	重傷者を治療{08:4B}後に、全員{01:2D}に出頭{08:8E}。\n<wait>		after treating the injured.             \n<wait>	v005		reads: 重傷者を治療した後に、全員管理部に出頭する。\n<wait>; @refalign
-m/MS001A.BIN	0:02	17	835	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; @refalign
-m/MS001A.BIN	0:02	18	841	1FD3	{08:02}、君は自宅で待機{08:4A}いてくれ。\n<wait>		Yamase. Head to your room and wait there.\n<wait>	v005		reads: 山瀬、君は自宅で待機していてくれ。\n<wait>; @refalign
-m/MS001A.BIN	0:02	19	888	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; @refalign
-m/MS001A.BIN	0:02	20	894	1FD3	御健闘をお祈りし{08:5A}。\n<wait>		I wish you the best of luck.\n<wait>	v005		reads: 御健闘をお祈りします。\n<wait>; @refalign
-m/MS001A.BIN	0:02	21	927	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; @refalign
-m/MS001A.BIN	0:02	22	949	1F03	聞いての通りだ。\n<wait>今{08:42}、全員{01:2D}に出頭{08:8E}。行くぞ！\n<wait>	You heard it.\n<wait>All of us report to Administration now. Move!\n<wait>			draft	reads: 聞いての通りだ。\n<wait>今から、全員管理部に出頭する。行くぞ！\n<wait>
-m/MS001A.BIN	0:02	23	1009	1FD2	一同：		Everyone:	v005		
-m/MS001A.BIN	0:02	24	1017	1FD3	{08:72}了解。\n<wait>		...Roger.\n<wait>	v005		reads: ‥‥了解。\n<wait>
-m/MS001A.BIN	0:02	25	1049	1F04	重傷者を治療{08:4B}後に、{01:2D}に出頭{08:8E}。行くぞ！\n<wait>	Once the badly wounded are treated, we report to Administration. Move!\n<wait>			draft	reads: 重傷者を治療した後に、管理部に出頭する。行くぞ！\n<wait>
-m/MS001A.BIN	0:02	26	1099	18	まず{08:62}重傷者を急いで治療せねばな{02:08}{08:72}\n<wait>		First, we need to take care of the injured...\n<wait>	v005		reads: まずは、重傷者を急いで治療せねばな‥‥‥‥‥\n<wait>; @refalign
-m/MS001A.BIN	0:02	27	1144	1FD0	{08:04}{08:62}まず医療施設へと急いだ{02:08}‥\n<wait>		Nishino headed to the medical ward...\n<wait>	v005		reads: 西野は、まず医療施設へと急いだ‥‥‥‥\n<wait>; @refalign
-m/MS001A.BIN	0:02	28	1246	1FD0	{08:76}毒ガスの匂いが、僅かに残っ{08:14}。\n<wait>中に入{08:52}は危険だ。引き返す{08:86}{08:25}。\n<wait>		You can still smell a faint amount of poison gas in the air.\n<wait>It's most likely not safe to enter.\n<wait>	v005		reads: まだ毒ガスの匂いが、僅かに残っている。\n<wait>中に入っては危険だ。引き返すしかない。\n<wait>; @refalign
+m/MS001A.BIN	0:02	16	790	18	重傷者を治療{08:4B}後に、		after treating the injured.             \n<wait>	v005		reads: 重傷者を治療した後に、; @split: was 重傷者を治療{08:4B}後に、全員{01:2D}に出頭{08:8E}。\n<wait>; @refalign
+m/MS001A.BIN	0:02	17	810	18	全員{01:2D}に出頭{08:8E}。\n<wait>					@split-tail of [16]; reads: 全員管理部に出頭する。\n<wait>
+m/MS001A.BIN	0:02	18	835	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; @refalign
+m/MS001A.BIN	0:02	19	841	1FD3	{08:02}、君は自宅で待機{08:4A}いてくれ。\n<wait>		Yamase. Head to your room and wait there.\n<wait>	v005		reads: 山瀬、君は自宅で待機していてくれ。\n<wait>; @refalign
+m/MS001A.BIN	0:02	20	888	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; @refalign
+m/MS001A.BIN	0:02	21	894	1FD3	御健闘をお祈りし{08:5A}。\n<wait>		I wish you the best of luck.\n<wait>	v005		reads: 御健闘をお祈りします。\n<wait>; @refalign
+m/MS001A.BIN	0:02	22	927	1FD2	{08:04}：		Nishino:	v005		reads: 西野：; @refalign
+m/MS001A.BIN	0:02	23	949	1F03	聞いての通りだ。\n<wait>今{08:42}、全員{01:2D}に出頭{08:8E}。行くぞ！\n<wait>	You heard it.\n<wait>All of us report to Administration now. Move!\n<wait>			draft	reads: 聞いての通りだ。\n<wait>今から、全員管理部に出頭する。行くぞ！\n<wait>
+m/MS001A.BIN	0:02	24	1009	1FD2	一同：		Everyone:	v005		
+m/MS001A.BIN	0:02	25	1017	1FD3	{08:72}了解。\n<wait>		...Roger.\n<wait>	v005		reads: ‥‥了解。\n<wait>
+m/MS001A.BIN	0:02	26	1049	1F04	重傷者を治療{08:4B}後に、{01:2D}に出頭{08:8E}。行くぞ！\n<wait>	Once the badly wounded are treated, we report to Administration. Move!\n<wait>			draft	reads: 重傷者を治療した後に、管理部に出頭する。行くぞ！\n<wait>
+m/MS001A.BIN	0:02	27	1099	18	まず{08:62}重傷者を急いで治療せねばな{02:08}{08:72}\n<wait>		First, we need to take care of the injured...\n<wait>	v005		reads: まずは、重傷者を急いで治療せねばな‥‥‥‥‥\n<wait>; @refalign
+m/MS001A.BIN	0:02	28	1144	1FD0	{08:04}{08:62}まず医療施設へと急いだ{02:08}‥\n<wait>		Nishino headed to the medical ward...\n<wait>	v005		reads: 西野は、まず医療施設へと急いだ‥‥‥‥\n<wait>; @refalign
+m/MS001A.BIN	0:02	29	1246	1FD0	{08:76}毒ガスの匂いが、僅かに残っ{08:14}。\n<wait>中に入{08:52}は危険だ。引き返す{08:86}{08:25}。\n<wait>		You can still smell a faint amount of poison gas in the air.\n<wait>It's most likely not safe to enter.\n<wait>	v005		reads: まだ毒ガスの匂いが、僅かに残っている。\n<wait>中に入っては危険だ。引き返すしかない。\n<wait>; @refalign
 m/MS001A.BIN	0:03	0	8	1F01	{08:62}地下に降りるエレベーターに向かおうと{08:4B}。\n<wait>	 made to head for the elevator down to the lower levels.\n<wait>	You briefly consider riding the elevator back down.\n<wait>	v005	draft	reads: は、地下に降りるエレベーターに向かおうとした。\n<wait>; @refalign
 m/MS001A.BIN	0:03	1	57	1FBA	{03:0B}こう{08:13}間にも、窮地に陥っ{08:14}{08:04}達が{08:90}{08:59}かわ{08:42}{08:25}。\n<wait>		However, if you leave now,\nthen what's going to happen to Nishino and the rest?\n<wait>	v005		reads: しかし、こうしている間にも、窮地に陥っている西野達がどうなるかわからない。\n<wait>; @refalign
 m/MS001A.BIN	0:03	2	118	1F01	{08:62}隔壁に向かう事に{08:4B}{02:08}‥\n<wait>	 decided to head for the bulkhead......\n<wait>	You can't just leave them. Not like this...\n<wait>	v005	draft	reads: は、隔壁に向かう事にした‥‥‥‥\n<wait>; @refalign

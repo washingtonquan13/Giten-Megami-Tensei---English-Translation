@@ -4,7 +4,7 @@
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
 m/MS003F.BIN	0:00	0	6	1FD0	{01:2E}の中には誰も{08:24}。\n香を焚くための炉が置かれ{08:14}。\n<wait>	There is no one in the room.\nA censer for burning incense stands here.\n<wait>	A kiln meant for burning incense sits in the middle of the room.\n<wait>	v005	draft	reads: 部屋の中には誰もいない。\n香を焚くための炉が置かれている。\n<wait>; @refalign
-m/MS003F.BIN	0:01	0	16	1FB2	香を焚く		Burn an incense	v005		menu option, declared width 20 columns; read-only, copied verbatim @rebase-new @refalign
+m/MS003F.BIN	0:01	0	16	1FB2	香を焚く		Burn an incense	v005		menu option, declared width 20 columns
 m/MS003F.BIN	0:01	1	26	1FB2	立ち去る	Leave	Leave	v005	reviewed	menu option, declared width 20 columns; @refalign
 m/MS003F.BIN	0:02	0	34	1FA8	香を使い切{08:52}{08:1F}。\n<wait>	You have used up all your incense.\n<wait>			draft	reads: 香を使い切ってしまった。\n<wait>; written against the neighbouring spans
 m/MS003F.BIN	0:02	1	58	0C	{08:6D}香を焚き{08:15}\n	Which incense will you burn?\n	Which incense would you like to burn?\n	ours	draft	reads: どの香を焚きますか？\n
@@ -37,8 +37,8 @@ m/MS003F.BIN	0:09	0	0	DATA	魔性の香を	Burned Demon Incense. 	Sorcerous Ince
 m/MS003F.BIN	0:09	1	28	1E3E	の魔力が上が{08:51}。\n<wait>	's Magic went up.\n<wait>	's Magic rose.\n<wait>	ours	draft	reads: の魔力が上がった。\n<wait>
 m/MS003F.BIN	0:0A	0	0	DATA	学人の香を	Burned Scholar Incense. 	Scholar's Incense on	ours	draft	
 m/MS003F.BIN	0:0A	1	28	1E3E	の知力が上が{08:51}。\n<wait>	's Intellect went up.\n<wait>	's Intellect rose.\n<wait>	ours	draft	reads: の知力が上がった。\n<wait>
-m/MS003F.BIN	0:0B	0	0	DATA	精進の香を	Burned Devotion Incense. 	Devotion Incense on	ours	draft	verify in game
-m/MS003F.BIN	0:0B	1	28	1E3E	の加護が上が{08:51}。\n<wait>	's Grace went up.\n<wait>	's Divine favor rose.\n<wait>	ours	draft	reads: の加護が上がった。\n<wait>; verify in game
+m/MS003F.BIN	0:0B	0	0	DATA	精進の香を	Burned Devotion Incense. 	Devotion Incense on	ours	draft	
+m/MS003F.BIN	0:0B	1	28	1E3E	の加護が上が{08:51}。\n<wait>	's Grace went up.\n<wait>	's Divine favor rose.\n<wait>	ours	draft	reads: の加護が上がった。\n<wait>
 m/MS003F.BIN	0:0C	0	0	DATA	疾風の香を	Burned Gale Incense. 	Gale Incense on	ours	draft	
 m/MS003F.BIN	0:0C	1	28	1E3E	の敏捷性が上が{08:51}。\n<wait>	's Agility went up.\n<wait>	's Agility rose.\n<wait>	ours	draft	reads: の敏捷性が上がった。\n<wait>
 m/MS003F.BIN	0:0D	0	0	DATA	職人の香を	Burned Artisan Incense. 	Craftsman's Incense on	ours	draft	
@@ -85,7 +85,8 @@ m/MS003F.BIN	0:19	8	242	1FD0	礼拝堂に光が満ちてゆく{08:72}\n<wait>	Li
 m/MS003F.BIN	0:19	9	302	1FD2	天使：	Angel:			draft	
 m/MS003F.BIN	0:19	10	310	1FD3	主への感謝を忘れてはなり{02:0A}よ。さあ、	Do not forget your gratitude to the Lord. Now,			draft	reads: 主への感謝を忘れてはなりませんよ。さあ、
 m/MS003F.BIN	0:19	11	351	1FD2	天使：	Angel:			draft	
-m/MS003F.BIN	0:19	12	359	1FD3	そう{08:55}か。ではお行きな{08:49}。\n	I see. Then go.\n			draft	reads: そうですか。ではお行きなさい。\n
+m/MS003F.BIN	0:19	12	359	1FD3	そう{08:55}か。では	I see. Then go.\n			draft	reads: そうですか。では; @split: was そう{08:55}か。ではお行きな{08:49}。\n
+m/MS003F.BIN	0:19	13	373	1FD3	お行きな{08:49}。\n					@split-tail of [12]; reads: お行きなさい。\n
 m/MS003F.BIN	0:1C	0	105	1F80	使用できるメンバーがい{02:0A}。\n	There is no one who can use it.\n			draft	reads: 使用できるメンバーがいません。\n
 m/MS003F.BIN	0:1C	1	143	0C	誰が使用し{08:15}\n	Who will use it?\n	Who will use it?\n	ours	reviewed	reads: 誰が使用しますか？\n
 m/MS003F.BIN	0:1C	2	254	1FBA	不思議な香りがあたりを包み込む{08:72}\n	A strange fragrance wraps the room......\n	A mysterious fragrance envelops the surroundings......\n	ours	draft	reads: 不思議な香りがあたりを包み込む‥‥\n

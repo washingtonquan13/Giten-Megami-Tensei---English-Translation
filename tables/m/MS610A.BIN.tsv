@@ -46,7 +46,8 @@ m/MS610A.BIN	0:73	20	1147	1FB2	何か教えろ	Tell me something			draft	menu op
 m/MS610A.BIN	0:73	21	1159	1FB2	去れ	Leave			draft	menu option, declared width 20 columns
 m/MS610A.BIN	0:73	22	1278	1FB2	{08:26}	Yes			draft	reads: はい; menu option, declared width 20 columns
 m/MS610A.BIN	0:73	23	1282	1FB2	ふざ{08:29}な！	Don't be absurd!			draft	reads: ふざけるな！; menu option, declared width 20 columns
-m/MS610A.BIN	0:AF	0	18	1F13	神の手先の貴様に仕{08:28}くらい{08:7D}\n<wait>	Rather than serve a lackey of God like you\n<wait>			draft	reads: 神の手先の貴様に仕えるくらいなら\n<wait>
+m/MS610A.BIN	0:AF	0	18	1F13	神の手先の	Rather than serve a lackey of God like you\n<wait>			draft	@split: was 神の手先の貴様に仕{08:28}くらい{08:7D}\n<wait>
+m/MS610A.BIN	0:AF	1	28	1F13	貴様に仕{08:28}くらい{08:7D}\n<wait>					@split-tail of [0]; reads: 貴様に仕えるくらいなら\n<wait>
 m/MS610A.BIN	3:08	0	19	1FB2	{01:29}な	I suppose	{01:29}	ours	draft	reads: そうだな; menu option, declared width 20 columns
 m/MS610A.BIN	3:08	1	25	1FB2	どこが？		Where?	ours		menu option, declared width 20 columns
 m/MS610A.BIN	3:08	2	35	1FB2	無視		Skip	ours		menu option, declared width 20 columns
@@ -71,19 +72,26 @@ m/MS610A.BIN	3:08	20	1107	1FB2	謝る		Oops	ours		menu option, declared width 20
 m/MS610A.BIN	3:08	21	1113	1FB2	無視		Skip	ours		menu option, declared width 20 columns
 m/MS610A.BIN	3:08	22	1175	1FB2	わ{08:18}		Got It	ours		reads: わかった; menu option, declared width 20 columns
 m/MS610A.BIN	3:08	23	1181	1FB2	やだ		Nope	ours		menu option, declared width 20 columns
-m/MS610A.BIN	4:12	0	18	1F13	偽善者{08:74}あ{08:52}　ムシの{08:7F}奴だ！\n<wait>	Just like a hypocrite, shameless!\n<wait>			draft	reads: 偽善者だけあって　ムシのいい奴だ！\n<wait>
-m/MS610A.BIN	4:15	0	18	1F13	薄汚い偽善者め！　{08:79}根性　叩き直{08:4A}く{08:2F}わ！！\n<wait>	Filthy hypocrite! I'll beat that\nattitude out of you!!\n<wait>			draft	reads: 薄汚い偽善者め！　その根性　叩き直してくれるわ！！\n<wait>
-m/MS610A.BIN	4:1A	0	18	1F13	神の手先などに　話す事など無い！\n<wait>	I have nothing to say to a lackey\nof God!\n<wait>			draft	
+m/MS610A.BIN	4:12	0	18	1F13	偽善者{08:74}あ{08:52}　	Just like a hypocrite, shameless!\n<wait>			draft	reads: 偽善者だけあって　; @split: was 偽善者{08:74}あ{08:52}　ムシの{08:7F}奴だ！\n<wait>
+m/MS610A.BIN	4:12	1	32	1F13	ムシの{08:7F}奴だ！\n<wait>					@split-tail of [0]; reads: ムシのいい奴だ！\n<wait>
+m/MS610A.BIN	4:15	0	18	1F13	薄汚い偽善者め！　	Filthy hypocrite! I'll beat that\nattitude out of you!!\n<wait>			draft	@split: was 薄汚い偽善者め！　{08:79}根性　叩き直{08:4A}く{08:2F}わ！！\n<wait>
+m/MS610A.BIN	4:15	1	36	1F13	{08:79}根性　叩き直{08:4A}く{08:2F}わ！！\n<wait>					@split-tail of [0]; reads: その根性　叩き直してくれるわ！！\n<wait>
+m/MS610A.BIN	4:1A	0	18	1F13	神の手先などに　	I have nothing to say to a lackey\nof God!\n<wait>			draft	@split: was 神の手先などに　話す事など無い！\n<wait>
+m/MS610A.BIN	4:1A	1	34	1F13	話す事など無い！\n<wait>					@split-tail of [0]
 m/MS610A.BIN	4:26	0	0	DATA	我が一族の者の　具合が悪い様{08:8F}\n<wait>		One of my kin seems to be unwell,\n<wait>	ours		reads: 我が一族の者の　具合が悪い様だが\n<wait>
 m/MS610A.BIN	4:29	0	0	DATA	我が一族の者が　負傷{08:4B}ので{08:3F}ば\n手を貸さぬ訳には行かぬ\n{08:47}私が治そう！\n<wait>		If one of my kin has been wounded,\nI cannot simply stand by...\nI shall heal them myself!\n<wait>	ours		reads: 我が一族の者が　負傷したのであれば\n手を貸さぬ訳には行かぬ\nこの私が治そう！\n<wait>
 m/MS610A.BIN	4:2B	0	0	DATA	我が一族の者　宜しく頼むぞ\n<wait>		Take good care of my kin.\n<wait>	ours		
 m/MS610A.BIN	4:2C	0	0	DATA	一族を裏切る訳には行かぬ\n<wait>		I cannot betray my kin.\n<wait>	ours		
-m/MS610A.BIN	4:31	0	18	1F13	神の手先の貴様などに用は{08:25}！\n<wait>	I've no business with a lackey of God\nlike you!\n<wait>			draft	reads: 神の手先の貴様などに用はない！\n<wait>
-m/MS610A.BIN	4:36	0	18	1F13	こやつは忌まわしき　神に属{08:8E}者{02:09}\n{08:47}様な愚かな奴を　相手に{08:4A}いては\n我らの名に傷がつくわ！\n<wait>	This one belongs to the loathsome God...\nDealing with such a fool would\nsully our name!\n<wait>			draft	reads: こやつは忌まわしき　神に属する者・・・\nこの様な愚かな奴を　相手にしていては\n我らの名に傷がつくわ！\n<wait>
+m/MS610A.BIN	4:31	0	18	1F13	神の手先の	I've no business with a lackey of God\nlike you!\n<wait>			draft	@split: was 神の手先の貴様などに用は{08:25}！\n<wait>
+m/MS610A.BIN	4:31	1	28	1F13	貴様などに用は{08:25}！\n<wait>					@split-tail of [0]; reads: 貴様などに用はない！\n<wait>
+m/MS610A.BIN	4:36	0	18	1F13	こやつは忌まわしき　神に属{08:8E}者{02:09}\n	This one belongs to the loathsome God...\nDealing with such a fool would\nsully our name!\n<wait>			draft	reads: こやつは忌まわしき　神に属する者・・・\n; @split: was こやつは忌まわしき　神に属{08:8E}者{02:09}\n{08:47}様な愚かな奴を　相手に{08:4A}いては\n我らの名に傷がつくわ！\n<wait>
+m/MS610A.BIN	4:36	1	51	1F13	{08:47}様な愚かな奴を　相手に{08:4A}いては\n我らの名に傷がつくわ！\n<wait>					@split-tail of [0]; reads: この様な愚かな奴を　相手にしていては\n我らの名に傷がつくわ！\n<wait>
 m/MS610A.BIN	4:56	0	0	DATA	一族を裏切れと{08:68}のか？\n<wait>		Betray my\nown kind, you say?\n<wait>	ours		reads: 一族を裏切れというのか？\n<wait>
-m/MS610A.BIN	4:7B	0	18	1F13	神の元へと行くが{08:7F}！\n死ねッ！！\n<wait>	Go to your God!\nDie!!\n<wait>			draft	reads: 神の元へと行くがいい！\n死ねッ！！\n<wait>
+m/MS610A.BIN	4:7B	0	18	1F13	神の元へと行くが{08:7F}！\n	Go to your God!\nDie!!\n<wait>			draft	reads: 神の元へと行くがいい！\n; @split: was 神の元へと行くが{08:7F}！\n死ねッ！！\n<wait>
+m/MS610A.BIN	4:7B	1	39	1F13	死ねッ！！\n<wait>					@split-tail of [0]
 m/MS610A.BIN	4:85	0	0	DATA	一族の者が　黙{08:52}は{08:24}ぞ\n<wait>		My kin will not\nstand idly by for this.\n<wait>	ours		reads: 一族の者が　黙ってはいないぞ\n<wait>
-m/MS610A.BIN	4:98	0	18	1F13	薄汚くも愚かな　神の下僕よ！\n血だ！　我に血を捧げよ！！\n<wait>	Filthy, foolish servant of God!\nBlood! Offer me your blood!!\n<wait>			draft	
+m/MS610A.BIN	4:98	0	18	1F13	薄汚くも愚かな　神の下僕よ！\n	Filthy, foolish servant of God!\nBlood! Offer me your blood!!\n<wait>			draft	@split: was 薄汚くも愚かな　神の下僕よ！\n血だ！　我に血を捧げよ！！\n<wait>
+m/MS610A.BIN	4:98	1	47	1F13	血だ！　我に血を捧げよ！！\n<wait>					@split-tail of [0]
 m/MS610A.BIN	4:9B	0	7	1F17	{08:7F}月夜だ\n		What a fine moonlit night.\n	ours		reads: いい月夜だ\n
 m/MS610A.BIN	4:9B	1	17	00	{08:7F}闇夜だ\n<wait>		What a fine, dark night.\n<wait>	ours		reads: いい闇夜だ\n<wait>
 m/MS610A.BIN	4:B8	0	0	DATA	{08:47}私を倒{08:4A}みろ！\n<wait>		Try and defeat me, if you can!\n<wait>	ours		reads: この私を倒してみろ！\n<wait>; unified with m/MS6103.BIN 4:B8[0]

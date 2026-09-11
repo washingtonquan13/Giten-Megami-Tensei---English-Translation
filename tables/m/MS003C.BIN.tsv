@@ -3,12 +3,12 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS003C.BIN	0:10	0	18	0D	　御利用に{08:59}サービスを選択{08:4A}下{08:49}\n		 Please select which service you'd like to use.\n	v005		reads: 　御利用になるサービスを選択して下さい\n; read-only, copied verbatim @rebase-new @refalign
+m/MS003C.BIN	0:10	0	18	0D	　御利用に{08:59}サービスを選択{08:4A}下{08:49}\n		 Please select which service you'd like to use.\n	v005		reads: 　御利用になるサービスを選択して下さい\n
 m/MS003C.BIN	0:10	1	67	1FB2	ターミナル間転送		Terminal Travel	v005		menu option, declared width 20 columns; @refalign
 m/MS003C.BIN	0:10	2	85	1FB2	ＡＭＳ{08:0A}配布		AMS Data	v005		reads: ＡＭＳデータ配布; menu option, declared width 20 columns; @refalign
 m/MS003C.BIN	0:10	3	99	1FB2	個人{08:0A}の管理		Personal Management	v005		reads: 個人データの管理; menu option, declared width 20 columns; @refalign
 m/MS003C.BIN	0:10	4	113	1FB2	終了		Exit	v005		menu option, declared width 20 columns; @refalign
-m/MS003C.BIN	0:11	0	4	1FD0	＞御利用に{08:59}サービスを選択{08:4A}下{08:49}\n		>Please select which service you'd like to use.\n	v005		reads: ＞御利用になるサービスを選択して下さい\n; read-only, copied verbatim @rebase-new @refalign
+m/MS003C.BIN	0:11	0	4	1FD0	＞御利用に{08:59}サービスを選択{08:4A}下{08:49}\n		>Please select which service you'd like to use.\n	v005		reads: ＞御利用になるサービスを選択して下さい\n
 m/MS003C.BIN	0:11	1	53	1FB2	ターミナル間転送		Terminal Travel	v005		menu option, declared width 20 columns; @refalign
 m/MS003C.BIN	0:11	2	71	1FB2	ＡＭＳ{08:0A}配布		Download AMS Data	v005		reads: ＡＭＳデータ配布; menu option, declared width 20 columns; @refalign
 m/MS003C.BIN	0:11	3	85	1FB2	個人{08:0A}の管理		Personal Management	v005		reads: 個人データの管理; menu option, declared width 20 columns; @refalign
@@ -34,7 +34,7 @@ m/MS003C.BIN	0:16	14	404	1B	市ヶ谷		Ichigaya	v005		@refalign
 m/MS003C.BIN	0:17	0	2	1FBA	＞転送実行し{08:5A}\n<wait>		>Initiating warp.\n<wait>	v005		reads: ＞転送実行します\n<wait>; @refalign
 m/MS003C.BIN	0:18	0	8	1F77	{1E10:0103}＞転送正常終了しま{08:4B}\n<wait>		{1E10:0103}>Destination reached.\n<wait>	v005		reads: {1E10:0103}＞転送正常終了しました\n<wait>; @refalign
 m/MS003C.BIN	0:18	1	39	1FBA	＞{08:5B}の御利用をお待ち{08:4A}い{08:5A}\n<wait>		>We look forward to serving you again.\n<wait>	v005		reads: ＞またの御利用をお待ちしています\n<wait>; @refalign
-m/MS003C.BIN	0:28	0	18	1FB2	{08:0A}セーブ		Save	v005		reads: データセーブ; menu option, declared width 20 columns; read-only, copied verbatim @rebase-new @refalign
+m/MS003C.BIN	0:28	0	18	1FB2	{08:0A}セーブ		Save	v005		reads: データセーブ; menu option, declared width 20 columns
 m/MS003C.BIN	0:28	1	28	1FB2	{08:0A}ロード		Load	v005		reads: データロード; menu option, declared width 20 columns; @refalign
 m/MS003C.BIN	0:28	2	38	1FB2	ゲームの終了		Quit	v005		menu option, declared width 20 columns; @refalign
 m/MS003C.BIN	0:28	3	52	1FB2	メニューに戻る		Back	v005		menu option, declared width 20 columns; @refalign

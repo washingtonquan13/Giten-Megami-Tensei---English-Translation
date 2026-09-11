@@ -22,9 +22,10 @@ m/MS6004.BIN	0:5F	2	32	1FFB	？？？	??? 	???	ours	draft
 m/MS6004.BIN	0:5F	3	44	1F01	は魅了{03:0C}た！\n	 was charmed completely!\n	{04:FF} was charmed completely!\n	ours	draft	reads: は魅了された！\n
 m/MS6004.BIN	0:5F	4	87	0E	{02:09}チュッ\n		...Mwah!\n	ours		reads: ・・・チュッ\n
 m/MS6004.BIN	0:5F	5	118	1FA3	{08:03}が睨んで{08:40}{02:09}\n		Emi is glaring...\n	ours		reads: 英美が睨んでいる・・・\n
-m/MS6004.BIN	0:5F	6	146	0E	{08:03}のメガトンパンチが炸裂！！！\n		Emi's Megaton Punch explodes!!!\n	ours		reads: 英美のメガトンパンチが炸裂！！！\n
-m/MS6004.BIN	0:5F	7	219	1FA3	{08:31}が睨んで{08:40}{02:09}\n		Rui is glaring...\n	ours		reads: 泪が睨んでいる・・・\n
-m/MS6004.BIN	0:5F	8	247	0E	{08:31}の鉄拳が		Rui's Iron Fist	ours		reads: 泪の鉄拳が
+m/MS6004.BIN	0:5F	6	146	0E	{08:03}のメガトンパンチが		Emi's Megaton Punch explodes!!!\n	ours		reads: 英美のメガトンパンチが; @split: was {08:03}のメガトンパンチが炸裂！！！\n
+m/MS6004.BIN	0:5F	7	166	0E	炸裂！！！\n					@split-tail of [6]
+m/MS6004.BIN	0:5F	8	219	1FA3	{08:31}が睨んで{08:40}{02:09}\n		Rui is glaring...\n	ours		reads: 泪が睨んでいる・・・\n
+m/MS6004.BIN	0:5F	9	247	0E	{08:31}の鉄拳が		Rui's Iron Fist	ours		reads: 泪の鉄拳が
 m/MS6004.BIN	0:62	0	6	1FFA	{02:09}	...			draft	reads: ・・・
 m/MS6004.BIN	0:62	1	10	1FFB	{01:23}お待ち下{08:49}	Please wait a moment	{01:23}#Please Wait	ours	draft	reads: しばらくお待ち下さい
 m/MS6004.BIN	0:62	2	24	1FFA	{02:09}\n	...\n			draft	reads: ・・・\n
@@ -64,12 +65,13 @@ m/MS6004.BIN	0:90	3	192	1F01	は泣き出{08:17}\n	 burst into tears!\n			draft	
 m/MS6004.BIN	0:90	4	231	1FB2	{08:0E}	{08:0E}	Ally	ours		reads: 仲魔; menu option, declared width 20 columns
 m/MS6004.BIN	0:90	5	235	1FB2	キミ	You	You	ours	reviewed	menu option, declared width 20 columns
 m/MS6004.BIN	0:90	6	241	1FB2	お前の命	Your life	Your Life	ours	draft	menu option, declared width 20 columns
-m/MS6004.BIN	0:92	0	13	1FA3	{08:03}が睨んで{08:40}{02:09}\n		Emi is glaring...\n	ours		reads: 英美が睨んでいる・・・\n
-m/MS6004.BIN	0:92	1	48	1FA3	{08:31}が		Rui	ours		reads: 泪が
-m/MS6004.BIN	0:92	2	72	1FFA	{02:09}	...			draft	reads: ・・・
-m/MS6004.BIN	0:92	3	83	1FFA	{02:09}{02:09}	......			draft	reads: ・・・・・・
-m/MS6004.BIN	0:92	4	89	1FFB	{01:23}お待ち下{08:49}	Please wait a moment	{01:23}#Please Wait	ours	draft	reads: しばらくお待ち下さい
-m/MS6004.BIN	0:92	5	103	1FFA	{02:09}{02:09}\n	......\n			draft	reads: ・・・・・・\n
+m/MS6004.BIN	0:92	0	13	1FA3	{08:03}が		Emi is glaring...\n	ours		reads: 英美が; @split: was {08:03}が睨んで{08:40}{02:09}\n
+m/MS6004.BIN	0:92	1	17	1FA3	睨んで{08:40}{02:09}\n					@split-tail of [0]; reads: 睨んでいる・・・\n
+m/MS6004.BIN	0:92	2	48	1FA3	{08:31}が		Rui	ours		reads: 泪が
+m/MS6004.BIN	0:92	3	72	1FFA	{02:09}	...			draft	reads: ・・・
+m/MS6004.BIN	0:92	4	83	1FFA	{02:09}{02:09}	......			draft	reads: ・・・・・・
+m/MS6004.BIN	0:92	5	89	1FFB	{01:23}お待ち下{08:49}	Please wait a moment	{01:23}#Please Wait	ours	draft	reads: しばらくお待ち下さい
+m/MS6004.BIN	0:92	6	103	1FFA	{02:09}{02:09}\n	......\n			draft	reads: ・・・・・・\n
 m/MS6004.BIN	1:03	0	28	1FB2	ちょ{08:53}待{08:52}	Wait a moment	Gladly	ours	draft	reads: ちょっと待って; menu option, declared width 20 columns
 m/MS6004.BIN	1:03	1	40	1FB2	さよ{08:7D}	Goodbye	Can't Be Helped	ours	draft	reads: さよなら; menu option, declared width 20 columns
 m/MS6004.BIN	1:03	2	85	1FB2	謝る	Apologize	Not for You!	ours	draft	menu option, declared width 20 columns
@@ -179,9 +181,10 @@ m/MS6004.BIN	2:04	13	439	1FBA	{08:31}の鉄拳が		Rui's Iron Fist	ours		reads: 
 m/MS6004.BIN	2:04	14	455	18	炸裂！！！\n		Detonation!!!\n	ours		
 m/MS6004.BIN	3:07	0	24	1F01	は迫っ{08:1C}\n	 closed right in!\n	{04:EF} closed right in!\n	ours	draft	reads: は迫ってきた！\n
 m/MS6004.BIN	3:07	1	47	1FA3	{08:03}が睨んで{08:40}{02:09}\n		Emi is glaring...\n	ours		reads: 英美が睨んでいる・・・\n
-m/MS6004.BIN	3:07	2	75	0E	{08:03}のメガトンパンチが炸裂！！！\n		Emi's Megaton Punch explodes!!!\n	ours		reads: 英美のメガトンパンチが炸裂！！！\n
-m/MS6004.BIN	3:07	3	133	1FA3	{08:31}が睨んで{08:40}{02:09}\n		Rui is glaring...\n	ours		reads: 泪が睨んでいる・・・\n
-m/MS6004.BIN	3:07	4	161	0E	{08:31}の鉄拳が		Rui's Iron Fist	ours		reads: 泪の鉄拳が
+m/MS6004.BIN	3:07	2	75	0E	{08:03}のメガトンパンチが		Emi's Megaton Punch explodes!!!\n	ours		reads: 英美のメガトンパンチが; @split: was {08:03}のメガトンパンチが炸裂！！！\n
+m/MS6004.BIN	3:07	3	95	0E	炸裂！！！\n					@split-tail of [2]
+m/MS6004.BIN	3:07	4	133	1FA3	{08:31}が睨んで{08:40}{02:09}\n		Rui is glaring...\n	ours		reads: 泪が睨んでいる・・・\n
+m/MS6004.BIN	3:07	5	161	0E	{08:31}の鉄拳が		Rui's Iron Fist	ours		reads: 泪の鉄拳が
 m/MS6004.BIN	3:0A	0	6	0E	チュッ\n		Mwah!\n	ours		
 m/MS6004.BIN	3:0B	0	8	1FFA	{02:09}	...			draft	reads: ・・・
 m/MS6004.BIN	3:0B	1	12	1FFB	{01:23}お待ち下{08:49}	Please wait a moment	{01:23}#Please Wait	ours	draft	reads: しばらくお待ち下さい

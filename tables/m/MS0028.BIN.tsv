@@ -188,11 +188,12 @@ m/MS0028.BIN	0:01	6	327	1FD3	最近、{08:34}{01:2E}の{08:03}之海関はさ、
 m/MS0028.BIN	0:01	7	444	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; @refalign
 m/MS0028.BIN	0:01	8	450	1FD3	あん？　		Hmm? 	v005		@refalign
 m/MS0028.BIN	0:01	9	463	09	{08:00}	{08:00}	Hayasaka isn't in his room?\n	v005		reads: 早坂
-m/MS0028.BIN	0:01	10	473	09	{08:34}のヤツが{01:2E}に{08:24}？\n<wait>		Kirishima isn't in her room?\n                   <wait>	v005		reads: 桐島のヤツが部屋にいない？\n<wait>; @refalign
-m/MS0028.BIN	0:01	11	500	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; @refalign
-m/MS0028.BIN	0:01	12	506	1FD3	大方、腹が減{08:52}食事に{08:56}行っ{08:2B}ん{08:81}ねーの？\n<wait>		Maybe she got hungry and went to get something to eat.\n<wait>	ours		reads: 大方、腹が減って食事にでも行ってるんじゃねーの？\n<wait>
-m/MS0028.BIN	0:01	13	555	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; @refalign
-m/MS0028.BIN	0:01	14	561	1FD3	ま、俺は実際に見た訳{08:81}{08:25}{08:42}、何とも言えねぇ{08:84}な。\n		Then again, don't take my word for it. That's just a guess.\n	v005		reads: ま、俺は実際に見た訳じゃないから、何とも言えねぇけどな。\n; @refalign
-m/MS0028.BIN	0:01	15	635	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; @refalign
-m/MS0028.BIN	0:01	16	646	09	{08:00}の奴、一体どー{08:4B}{08:52}言う{08:5F}？\nマジにやばいぜ！\n<wait>		What is going on with Hayasaka? Shit's seriously freaking me out.\n<wait>	v005		reads: 早坂の奴、一体どーしたって言うんだ？\nマジにやばいぜ！\n<wait>; @refalign
-m/MS0028.BIN	0:01	17	702	09	{08:34}のヤツ、尋常{08:81}{08:25}よな。\nこりゃ、月のモンどころの騒ぎ{08:81}{08:25}ぜ！\n<wait>		Kirishima isn't acting like herself at all.\nIs it maybe that time of the month?\n<wait>	v005		reads: 桐島のヤツ、尋常じゃないよな。\nこりゃ、月のモンどころの騒ぎじゃないぜ！\n<wait>; @refalign
+m/MS0028.BIN	0:01	10	473	09	{08:34}	{08:34}	Kirishima isn't in her room?\n                   <wait>	v005		reads: 桐島; @split: was {08:34}のヤツが{01:2E}に{08:24}？\n<wait>; @refalign
+m/MS0028.BIN	0:01	11	475	09	のヤツが{01:2E}に{08:24}？\n<wait>					@split-tail of [10]; reads: のヤツが部屋にいない？\n<wait>
+m/MS0028.BIN	0:01	12	500	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; @refalign
+m/MS0028.BIN	0:01	13	506	1FD3	大方、腹が減{08:52}食事に{08:56}行っ{08:2B}ん{08:81}ねーの？\n<wait>		Maybe she got hungry and went to get something to eat.\n<wait>	ours		reads: 大方、腹が減って食事にでも行ってるんじゃねーの？\n<wait>
+m/MS0028.BIN	0:01	14	555	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; @refalign
+m/MS0028.BIN	0:01	15	561	1FD3	ま、俺は実際に見た訳{08:81}{08:25}{08:42}、何とも言えねぇ{08:84}な。\n		Then again, don't take my word for it. That's just a guess.\n	v005		reads: ま、俺は実際に見た訳じゃないから、何とも言えねぇけどな。\n; @refalign
+m/MS0028.BIN	0:01	16	635	1FD2	{08:02}：		Yamase:	v005		reads: 山瀬：; @refalign
+m/MS0028.BIN	0:01	17	646	09	{08:00}の奴、一体どー{08:4B}{08:52}言う{08:5F}？\nマジにやばいぜ！\n<wait>		What is going on with Hayasaka? Shit's seriously freaking me out.\n<wait>	v005		reads: 早坂の奴、一体どーしたって言うんだ？\nマジにやばいぜ！\n<wait>; @refalign
+m/MS0028.BIN	0:01	18	702	09	{08:34}のヤツ、尋常{08:81}{08:25}よな。\nこりゃ、月のモンどころの騒ぎ{08:81}{08:25}ぜ！\n<wait>		Kirishima isn't acting like herself at all.\nIs it maybe that time of the month?\n<wait>	v005		reads: 桐島のヤツ、尋常じゃないよな。\nこりゃ、月のモンどころの騒ぎじゃないぜ！\n<wait>; @refalign

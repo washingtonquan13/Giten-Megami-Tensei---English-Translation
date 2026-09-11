@@ -6,9 +6,9 @@ file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
 m/MS00DD.BIN	0:03	0	0	DATA	{04:05}に{08:62}効果が無{08:18}\n	{04:05} was unaffected\n	No effect on {04:05}.\n	v005	draft	reads: 　には、効果が無かった\n; @refalign
 m/MS00DD.BIN	0:04	0	0	DATA	{08:61}{04:05}に、かわ{03:0C}て{08:1F}\n	But {04:05} dodged it\n	However, {04:05} dodged.\n	v005	draft	reads: しかし　に、かわされてしまった\n; @refalign
 m/MS00DD.BIN	0:0A	0	7	1E5C	{04:05}{08:62}巧くかわ{08:17}\n	{04:05} dodged it neatly!\n	{04:05} dodged with ease!\n	v005	draft	reads: 　は、巧くかわした！\n; @refalign
-m/MS00DD.BIN	0:0A	1	25	18	{03:0B}{04:05}にかわ{03:0C}た\n\n	But {04:05} dodged it\n\n	However, {04:05} dodged.\n\n	v005	draft	reads: しかし、　にかわされた\n\n; @refalign
+m/MS00DD.BIN	0:0A	1	25	18	{03:0B}{04:05}にかわ{03:0C}た\n	But {04:05} dodged it\n	However, {04:05} dodged.\n	v005	draft	reads: しかし、　にかわされた\n; @split: was {03:0B}{04:05}にかわ{03:0C}た\n\n; @refalign
 m/MS00DD.BIN	0:0B	0	7	1E5C	{04:05}に{08:62}ダメージが無{08:18}\n	{04:05} took no damage\n	{04:05} took no damage.\n	v005	draft	reads: 　には、ダメージが無かった\n; @refalign
-m/MS00DD.BIN	0:0B	1	31	18	{04:05}にダメージを与えられ{08:19}\n\n	It could not damage {04:05}\n\n	No damage was dealt to {04:05}.\n\n	v005	draft	reads: 　にダメージを与えられなかった\n\n; @refalign
+m/MS00DD.BIN	0:0B	1	31	18	{04:05}にダメージを与えられ{08:19}\n	It could not damage {04:05}\n	No damage was dealt to {04:05}.\n	v005	draft	reads: 　にダメージを与えられなかった\n; @split: was {04:05}にダメージを与えられ{08:19}\n\n; @refalign
 m/MS00DD.BIN	0:0C	0	13	1E5C	{08:62}かすり傷を受け、\n	 took only a scratch,	 took only a scratch,\n	ours	draft	reads: は、かすり傷を受け、\n
 m/MS00DD.BIN	0:0C	1	35	18	をかすり	 was only grazed	 was grazed	ours	draft	
 m/MS00DD.BIN	0:0D	0	0	DATA	{04:05}{04:09}、\n	 on {04:05},\n			draft	reads: 　はに、\n
@@ -18,7 +18,7 @@ m/MS00DD.BIN	0:0E	2	90	1F01	{04:09}、	 	{04:EB} on {04:09}, 	ours	draft	reads: 
 m/MS00DD.BIN	0:0F	0	60	1E5D	必殺の一撃！\n	A deadly blow!\n	Critical strike!\n	v005	draft	@refalign
 m/MS00DD.BIN	0:0F	1	76	18	痛恨の一撃！\n	A crushing blow!\n	Fierce blow!\n	v005	draft	@refalign
 m/MS00DD.BIN	0:10	0	13	1F01	に{08:62}効か{08:25}	 is unaffected 	No effect on 	v005	draft	reads: には、効かない; @refalign
-m/MS00DD.BIN	0:10	1	32	1F01	には{08:20}く効か{08:25}\n	 is completely unaffected\n			draft	reads: にはまったく効かない\n
+m/MS00DD.BIN	0:10	1	32	1F01	には{08:20}く効か{08:25}	 is completely unaffected			draft	reads: にはまったく効かない; @split: was には{08:20}く効か{08:25}\n
 m/MS00DD.BIN	0:11	0	28	1E5C	{03:0B}{04:05}{08:62}跳ね返{08:17}\n	But {04:05} reflected it!\n	However, {04:05} struck back!\n 	v005	draft	reads: しかし、　は、跳ね返した！\n; @refalign
 m/MS00DD.BIN	0:11	1	74	1F01	に、	 took 			draft	
 m/MS00DD.BIN	0:11	2	82	1F02	{03:0D}のダメージを与{08:41}\n	 HP of damage\n	 damage to HP.\n	v005	draft	reads: ＨＰのダメージを与えた\n; @refalign
@@ -47,19 +47,19 @@ m/MS00DD.BIN	0:13	2	24	1F02	{03:0E}を得た\n	 MP\n	 gained MP.\n	ours	draft	re
 m/MS00DD.BIN	0:13	3	36	18	に、{03:0E}吸収{03:0C}た\n	 had MP drained\n	 absorbed some MP.\n	v005	draft	reads: に、ＭＰ吸収された\n; @refalign
 m/MS00DD.BIN	0:14	0	0	DATA	{04:05}	{04:05}				reads: 　
 m/MS00DD.BIN	0:14	1	9	1E5C	{08:62}回避{08:4B}\n	 evaded it\n	 dodged.\n	v005	draft	reads: は、回避した\n; @refalign
-m/MS00DD.BIN	0:14	2	21	18	に、回避{03:0C}た\n\n	 evaded it\n\n	 dodged.\n	v005	draft	reads: に、回避された\n\n; @refalign
+m/MS00DD.BIN	0:14	2	21	18	に、回避{03:0C}た\n	 evaded it\n	 dodged.	v005	draft	reads: に、回避された\n; @split: was に、回避{03:0C}た\n\n; @refalign
 m/MS00DD.BIN	0:15	0	0	DATA	{04:05}	{04:05}				reads: 　
 m/MS00DD.BIN	0:15	1	9	1E5C	{08:62}耐{08:41}\n	 endured it\n	 resisted.\n	v005	draft	reads: は、耐えた\n; @refalign
-m/MS00DD.BIN	0:15	2	19	18	には効か{08:19}\n\n	 was unaffected\n\n	 dodged the effect.\n	v005	draft	reads: には効かなかった\n\n; @refalign
+m/MS00DD.BIN	0:15	2	19	18	には効か{08:19}\n	 was unaffected\n	 dodged the effect.	v005	draft	reads: には効かなかった\n; @split: was には効か{08:19}\n\n; @refalign
 m/MS00DD.BIN	0:17	0	0	DATA	{04:05}	{04:05}				reads: 　
 m/MS00DD.BIN	0:17	1	9	1E5C	{08:62}かすり傷を受け\n	 took only a scratch\n	 took only a scratch\n	ours	reviewed	reads: は、かすり傷を受け\n
 m/MS00DD.BIN	0:17	2	29	18	をかすり\n	 was only grazed\n	 was grazed\n	ours	draft	
 m/MS00DD.BIN	0:18	0	0	DATA	{04:05}{04:09}	 on {04:05}			draft	reads: 　はに
-m/MS00DD.BIN	0:19	0	0	DATA	{04:05}{04:0B}	 from {04:05}	Absorbed from {04:05}	v005	draft	reads: 　はから; verify in game
-m/MS00DD.BIN	0:19	1	21	1F1A	を吸い取{04:0C}た\n	 was drained away\n			draft	reads: を吸い取られった\n; verify in game
-m/MS00DD.BIN	0:19	2	40	1F02	{03:0D}	{03:0D}	 HP.\n	v005		reads: ＨＰ; verify in game
-m/MS00DD.BIN	0:19	3	48	1F02	{03:0E}	{03:0E}	 MP.\n	v005		reads: ＭＰ; verify in game
-m/MS00DD.BIN	0:19	4	56	1F02	{03:0F}	{03:0F}	 EXP.\n	v005		reads: ＥＸＰ; verify in game
+m/MS00DD.BIN	0:19	0	0	DATA	{04:05}{04:0B}	 from {04:05}	Absorbed from {04:05}	v005	draft	reads: 　はから
+m/MS00DD.BIN	0:19	1	21	1F1A	を吸い取{04:0C}た\n	 was drained away\n			draft	reads: を吸い取られった\n
+m/MS00DD.BIN	0:19	2	40	1F02	{03:0D}	{03:0D}	 HP.\n	v005		reads: ＨＰ
+m/MS00DD.BIN	0:19	3	48	1F02	{03:0E}	{03:0E}	 MP.\n	v005		reads: ＭＰ
+m/MS00DD.BIN	0:19	4	56	1F02	{03:0F}	{03:0F}	 EXP.\n	v005		reads: ＥＸＰ
 m/MS00DD.BIN	0:1B	0	28	1F83	さらに	Furthermore, 			draft	
 m/MS00DD.BIN	0:1B	1	61	1F87	{04:05}の{03:0D}はＭＡＸだ\n	{04:05}'s HP is at MAX\n	{04:05}'s HP is full.\n	v005	draft	reads: 　のＨＰはＭＡＸだ\n; @refalign
 m/MS00DD.BIN	0:1C	0	43	1F87	{04:05}の{03:0E}はＭＡＸだ\n	{04:05}'s MP is at MAX\n	{04:05}'s MP is full.\n	v005	draft	reads: 　のＭＰはＭＡＸだ\n; @refalign
@@ -89,13 +89,17 @@ m/MS00DD.BIN	0:24	3	28	1F86	{08:4A}\n{03:0E}がＭＡＸに{08:16}\n	 and\nMP re
 m/MS00DD.BIN	0:24	4	49	18	{08:4B}\n	.\n			draft	reads: した\n
 m/MS00DD.BIN	0:24	5	55	18	は{08:0D}のパワーを取り戻{08:4B}\n	 regained magical power\n	's magic power returned.\\	v005	draft	reads: は魔法のパワーを取り戻した\n; @refalign
 m/MS00DD.BIN	0:26	0	15	1F86	{04:05}{04:0E}{08:0C}力{04:13}{03:09}させ	{04:05}'s attack power was lowered	{04:05}'s ATTACK went down	v005	draft	reads: 　はの攻撃力がをダウンさせ; @refalign
-m/MS00DD.BIN	0:26	1	38	1E5C	られた\n	.\n			draft	
+m/MS00DD.BIN	0:26	1	38	1E5C	られ	.\n			draft	@split: was られた\n
+m/MS00DD.BIN	0:26	2	42	1E5C	た\n					@split-tail of [1]
 m/MS00DD.BIN	0:27	0	15	1F86	{04:05}{04:0E}命中度{04:13}{03:09}させ	{04:05}'s accuracy was lowered	{04:05}'s ACCURACY went down	v005	draft	reads: 　はの命中度がをダウンさせ; @refalign
-m/MS00DD.BIN	0:27	1	40	1E5C	られた\n	.\n			draft	
+m/MS00DD.BIN	0:27	1	40	1E5C	られ	.\n			draft	@split: was られた\n
+m/MS00DD.BIN	0:27	2	44	1E5C	た\n					@split-tail of [1]
 m/MS00DD.BIN	0:28	0	15	1F86	{04:05}{04:0E}防御力{04:13}{03:09}させ	{04:05}'s defense was lowered	{04:05}'s DEFENSE went down	v005	draft	reads: 　はの防御力がをダウンさせ; @refalign
-m/MS00DD.BIN	0:28	1	40	1E5C	られた\n	.\n			draft	
+m/MS00DD.BIN	0:28	1	40	1E5C	られ	.\n			draft	@split: was られた\n
+m/MS00DD.BIN	0:28	2	44	1E5C	た\n					@split-tail of [1]
 m/MS00DD.BIN	0:29	0	15	1F86	{04:05}{04:0E}{08:0D}の能力{04:13}{03:09}させ	{04:05}'s magic ability was lowered	{04:05}'s MAGIC went down	v005	draft	reads: 　はの魔法の能力がをダウンさせ; @refalign
-m/MS00DD.BIN	0:29	1	42	1E5C	られた\n	.\n			draft	
+m/MS00DD.BIN	0:29	1	42	1E5C	られ	.\n			draft	@split: was られた\n
+m/MS00DD.BIN	0:29	2	46	1E5C	た\n					@split-tail of [1]
 m/MS00DD.BIN	0:2A	0	15	1F86	{04:05}{04:0E}{08:0C}力{04:14}{03:08}{04:10}た\n	{04:05}'s attack power rose\n	{04:05}'s ATTACK went up.\n	v005	draft	reads: 　はの攻撃力をがアップさせした\n; @refalign
 m/MS00DD.BIN	0:2B	0	15	1F86	{04:05}{04:0E}命中度{04:14}{03:08}{04:10}た\n	{04:05}'s accuracy rose\n	{04:05}'s ACCURACY went up.\n	v005	draft	reads: 　はの命中度をがアップさせした\n; @refalign
 m/MS00DD.BIN	0:2C	0	15	1F86	{04:05}{04:0E}防御力{04:14}{03:08}{04:10}た\n	{04:05}'s defense rose\n	{04:05}'s DEFENSE went up.\n	v005	draft	reads: 　はの防御力をがアップさせした\n; @refalign
@@ -108,7 +112,7 @@ m/MS00DD.BIN	0:31	1	98	1F01	は叩き落と{03:0C}{08:19}\n	 was not knocked awa
 m/MS00DD.BIN	0:31	2	116	18	{04:07}{04:0E}	{04:07}'s 			draft	reads: 敵 はの
 m/MS00DD.BIN	0:31	3	125	1F01	を叩き落と{04:0F}た\n	 was knocked away\n	{03:12}]\nwas knocked away.\n	v005	draft	reads: を叩き落とされした\n; @refalign
 m/MS00DD.BIN	0:31	4	181	1F01	を素早く拾{08:12}\n	 was quickly picked up!\n	You quickly pick up [\n{03:12}]!\n	v005	draft	reads: を素早く拾った！\n; @refalign-joined; @refalign
-m/MS00DD.BIN	0:31	5	208	18	{03:0B}\n{04:07}は武器を持{08:52}い{08:19}\n\n	But\n{04:07} had no weapon\n\n	However,\n{04:07} isn't holding a weapon.\n	v005	draft	reads: しかし、\n敵 は武器を持っていなかった\n\n; @refalign
+m/MS00DD.BIN	0:31	5	208	18	{03:0B}\n{04:07}は武器を持{08:52}い{08:19}\n	But\n{04:07} had no weapon\n	However,\n{04:07} isn't holding a weapon.	v005	draft	reads: しかし、\n敵 は武器を持っていなかった\n; @split: was {03:0B}\n{04:07}は武器を持{08:52}い{08:19}\n\n; @refalign
 m/MS00DD.BIN	0:32	0	6	1F01	は	 	{04:EB} is 	ours	draft	
 m/MS00DD.BIN	0:32	1	14	1F01	だ\n	.\n	{04:EB}.\n	ours	draft	
 m/MS00DD.BIN	0:33	0	6	1F01	は踊っ{08:14}\n	 is dancing.\n	{04:EB} is dancing.\n	ours	draft	reads: は踊っている\n
@@ -124,7 +128,7 @@ m/MS00DD.BIN	0:36	5	117	1F86	さらに	Furthermore, 			draft
 m/MS00DD.BIN	0:36	6	126	18	{04:05}{08:62}	{04:05} 			draft	reads: 　は、
 m/MS00DD.BIN	0:36	7	150	1F86	{03:0B}復活に失敗{08:17}\n	But the revival failed!\n	However, the revival failed!\n	ours	draft	reads: しかし、復活に失敗した！\n
 m/MS00DD.BIN	0:36	8	181	1F80	{03:0B}{08:0D}は効果が無い\n	But the magic has no effect\n			draft	reads: しかし、魔法は効果が無い\n
-m/MS00DD.BIN	0:37	0	144	1E5E	{03:0B}	{03:0B}				reads: しかし、; verify in game
+m/MS00DD.BIN	0:37	0	144	1E5E	{03:0B}	{03:0B}				reads: しかし、
 m/MS00DD.BIN	0:38	0	10	1F01	は復活{08:4B}\n	 revived.\n	{04:EB} recovered health.\n	v005	draft	reads: は復活した\n; @refalign
 m/MS00DD.BIN	0:39	0	10	1F01	は目覚めた\n	 woke up.\n	{04:EB} woke up.\n	v005	draft	@refalign
 m/MS00DD.BIN	0:3A	0	10	1F01	は正気に戻{08:51}\n	 came to their senses.\n	{04:EB} came to their senses.\n	v005	draft	reads: は正気に戻った\n; @refalign
@@ -160,14 +164,15 @@ m/MS00DD.BIN	0:4D	1	7	1F02	{03:0E}を失な	 MP lost	lost MP	ours	draft	reads: �
 m/MS00DD.BIN	0:4D	2	26	1E5C	{08:51}\n	.\n	.\n	ours	draft	reads: った\n
 m/MS00DD.BIN	0:4D	3	32	18	わせた\n	.\n	.\n	ours	draft	
 m/MS00DD.BIN	0:4D	4	49	1E5C	い\n	.\n	.\n	ours	draft	
-m/MS00DD.BIN	0:4D	5	55	18	わせ\n\nさらに	\n\nFurthermore, 	.\n\nFurthermore, 	ours	draft	
-m/MS00DD.BIN	0:4F	0	90	1EB0	を倒{08:17}\n	 was defeated!\n	 was defeated!\n	v005	reviewed	reads: を倒した！\n; reads: 　; verify in game
-m/MS00DD.BIN	0:4F	1	98	00	{08:62}機能を停止{08:4B}\n	 ceased functioning	 ceased functioning.\n	v005	draft	reads: は、機能を停止した\n; verify in game @ours-2026-09-05
-m/MS00DD.BIN	0:4F	2	114	00	{08:62}消え去{08:51}\n	 vanished	 vanished.\n	v005	draft	reads: は、消え去った\n; verify in game @ours-2026-09-05
-m/MS00DD.BIN	0:4F	3	126	00	{08:62}崩れ落ちた\n	 crumbled	 crumbled down.\n	v005	draft	reads: は、崩れ落ちた\n; verify in game
-m/MS00DD.BIN	0:4F	4	140	00	{08:62}灰燼と化{08:4B}\n	 turned to ash	 turned into ash.\n	v005	draft	reads: は、灰燼と化した\n; verify in game
-m/MS00DD.BIN	0:4F	5	154	00	{08:62}{08:90}と倒{08:60}\n	 fell with a thud	 was defeated.\n	v005	draft	reads: は、どうと倒れた\n; verify in game
-m/MS00DD.BIN	0:4F	6	166	00	{08:62}落鳥{08:4B}\n	 dropped from the sky	 fell.\n	v005	draft	reads: は、落鳥した\n; verify in game @rebase-unmatched idx8 en= was defeated!\n @ours-2026-09-05
+m/MS00DD.BIN	0:4D	5	55	18	わせ\n	\n\nFurthermore, 	.\n\nFurthermore, 	ours	draft	@split: was わせ\n\nさらに
+m/MS00DD.BIN	0:4D	6	60	18	\nさらに					@split-tail of [5]
+m/MS00DD.BIN	0:4F	0	90	1EB0	を倒{08:17}\n	 was defeated!\n	 was defeated!\n	v005	reviewed	reads: を倒した！\n; reads: 　
+m/MS00DD.BIN	0:4F	1	98	00	{08:62}機能を停止{08:4B}\n	 ceased functioning	 ceased functioning.\n	v005	draft	reads: は、機能を停止した\n
+m/MS00DD.BIN	0:4F	2	114	00	{08:62}消え去{08:51}\n	 vanished	 vanished.\n	v005	draft	reads: は、消え去った\n
+m/MS00DD.BIN	0:4F	3	126	00	{08:62}崩れ落ちた\n	 crumbled	 crumbled down.\n	v005	draft	reads: は、崩れ落ちた\n
+m/MS00DD.BIN	0:4F	4	140	00	{08:62}灰燼と化{08:4B}\n	 turned to ash	 turned into ash.\n	v005	draft	reads: は、灰燼と化した\n
+m/MS00DD.BIN	0:4F	5	154	00	{08:62}{08:90}と倒{08:60}\n	 fell with a thud	 was defeated.\n	v005	draft	reads: は、どうと倒れた\n
+m/MS00DD.BIN	0:4F	6	166	00	{08:62}落鳥{08:4B}\n	 dropped from the sky	 fell.\n	v005	draft	reads: は、落鳥した\n
 m/MS00DD.BIN	0:50	0	15	1F01	{08:62}がっくりと力尽{08:1E}\n	 slumped down, strength spent.\n	{04:EB} slumped down, strength spent.\n	ours	draft	reads: は、がっくりと力尽きた\n
 m/MS00DD.BIN	0:51	0	0	DATA	{04:19}戦いに勝ち残{08:51}\n	{04:19} won through the battle\n	{04:19} was victorious.\n	v005	draft	reads: たちは戦いに勝ち残った\n; @refalign
 m/MS00DD.BIN	0:52	0	0	DATA	{04:19}	{04:19} gained 	{04:19} gained 	v005	reviewed	reads: たちは; @reviewed: v0.05 kept {04:19} here and was right; the name-macro guard requires it
@@ -181,7 +186,8 @@ m/MS00DD.BIN	0:55	2	138	1F01	は	 	 	v005	draft
 m/MS00DD.BIN	0:55	3	145	1F01	を捨て、	 was thrown away, and 	obtained 	v005	draft	@refalign
 m/MS00DD.BIN	0:55	4	178	1F80	{04:1A}は	{04:1A} 			draft	reads: は
 m/MS00DD.BIN	0:55	5	193	1F01	を	 	 	v005	draft	
-m/MS00DD.BIN	0:55	6	207	1F02	個手に入{08:60}\n	 obtained\n	 copies).       \n	v005	draft	reads: 個手に入れた\n; @refalign
+m/MS00DD.BIN	0:55	6	207	1F02	個	 obtained\n	 copies).       \n	v005	draft	@split: was 個手に入{08:60}\n; @refalign
+m/MS00DD.BIN	0:55	7	209	1F02	手に入{08:60}\n					@split-tail of [6]; reads: 手に入れた\n
 m/MS00DD.BIN	0:56	0	0	DATA	{04:19}、戦いに勝利{08:4B}\n	{04:19} won the battle\n	{04:19} was victorious.\n	v005	draft	reads: たちは、戦いに勝利した\n; @refalign
 m/MS00DD.BIN	0:57	0	0	DATA	敵は逃げて{08:1F}\n	The enemy fled\n	The enemy ran away.\n	v005	draft	reads: 敵は逃げてしまった\n; @refalign
 m/MS00DD.BIN	0:58	0	0	DATA	{04:19}、戦いを生き延びた\n	{04:19} survived the battle\n	{04:19} was victorious.\n	v005	draft	reads: たちは、戦いを生き延びた\n; @refalign
