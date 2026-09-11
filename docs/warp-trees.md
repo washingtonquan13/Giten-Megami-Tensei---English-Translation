@@ -265,3 +265,84 @@ way.
 **The exe in a cave tree is still called `dds_dev_jp.exe`** so the instruction
 above never changes, but it is not the plain build: it carries the `.wrp`
 section and its five redirected calls. Do not copy it anywhere else.
+
+---
+
+## Results — the 2026-09-11 session, tree by tree
+
+All 22 trees were played.  The traces are `build/traces/warp-<name>.bin`, the
+reports `build/traces/observe-<name>.txt`, the player's notes
+`build/traces/warp-notes.md`, and every boundary they produced is a fixture
+under `tests/data/observed/`.
+
+**Headline: 2,052 engine token starts the repo had never seen — the fixture
+corpus goes 246 records / 1,414 boundaries → 399 / 3,466 — and `giten tile
+observe` disagrees with the model at 0 of them.**  Not one opcode
+and not one expression node changed.  What did change is the accounting: a
+program counter the model does not start a token at is scored as an **entry**
+when the model's own reachability closure over the container image reaches it
+(every `rel16` target, every straddle landing, walked), because the engine
+really does enter a record in the middle of one of our tokens.  The census's
+`untiled` category is empty; the eight records in it were classified from these
+traces as `dead` (5) or `unreached` (3).
+
+### `m/MS0031`
+
+| tree | what happened | verdict |
+|---|---|---|
+| `MS0031-r00` | 86 boundaries: `0x0000`, `0x0011`, `0x002C`, `0x002F`, `0x004A`, then 80 text starts from `0x006B`.  All predicted: the `1F 14` switch takes case 01 to `0x002F`, the `1F 79`s jump to `0x002C`/`0x004A`, both `18`s target `0x006B`.  The last token straddles into r01, which the engine then reads from `+0x0002`. | **`unreached`** — the walk stops at `0x0060`, in the third of three nine-byte blobs the `1F 79`s jump over |
+| `MS0031-r02` | Six spans of dialogue, then the closing `18` at `0x008C` branches to `0x2B9D`, past the `0x2457` image end, and the process dies.  The model predicted `0x2B9D` exactly. | tiled (`straddle`), crash expected and confirmed |
+| `MS0031-r03` | The same, one opcode over: the closing `16` at `0x0040` reads `rel16 = 0x1F00` (its own terminating `00` plus r04's leading `1F`) and branches to `0x2BDF`.  Model target `0x2BDF`, engine `pc = 0x2BDF`, trace ends. | tiled (`straddle`); **new**, and the same mechanism as r02 |
+| `MS0031-r0B` | 284 boundaries, 283 on model token starts.  The one that is not is `0x00BA`, the target of the `10` at `0x00B6` whose `rel16` is 1 — the engine branches into the second byte of its own expression and draws 「それがまず…」.  The final `1F 04` measured **612 bytes**, ending at `r0C + 0x0196`, exactly as the model computes it. | tiled (`straddle`); the `pairs_ff` model confirmed to the byte |
+| `MS0031-r0D` | 19 boundaries, all on model token starts. | tiled (`straddle`) |
+| `MS0031-r17` | 63 boundaries, all on model token starts; the `10` at `0x0079` branches out of the record into `r19 + 0x0050`, which is inside a two-byte text token of r19's own phase. | tiled (`straddle`) |
+
+### `m/MS0080` — five records nothing enters
+
+All five behaved identically and **nothing was drawn**, which is the answer the
+tree was built to get.  Entered at offset 0 the engine dispatches exactly two
+tokens: `1F 00` (the two-byte no-op) and the pool call `02 1F` at `0x0002`,
+whose program counter goes into `m/MS7F01`'s buffer.  The byte it returns to is
+`0x0004` — `00`, the run-loop terminator — so the record ends after five bytes
+and the shop dialogue at `0x0009` is never reached.  Both boundaries agree with
+the model; the ~72/47/37/62/56 tokens after them were never executed by
+anything, in this session or in any of the ten on disk.
+
+So the nine-byte head is not a preamble to be entered past: **these five records
+are unused**.  Nothing in any `m/` or `et/ID*` file carries file operand `0x80`,
+no loader takes `0x0080` as an immediate, and the merge forms only `0x6000 + t`
+and `0x6100 + t`.  They tile, the overlay may serve them, and no session will
+ever ask.
+
+### `m/MS610D`
+
+| tree | what happened | verdict |
+|---|---|---|
+| `MS610D-c0` (broad) | The Pixie conversation ran on `m/MS610D`'s script as designed: 127 records observed, 1,357 boundaries, **0 disagreements**.  Only r00 of `m/MS610D` itself was entered, though — the conversation's own opening — so the 35 straddle-tiled records stayed unobserved. | the merge trick works; coverage was thin |
+| `MS610D-c0-r1B` | The cave put the engine on r1B six times: `0x0000`, then the `12` at `0x0002` to `0x0052`, then `0x0057`, `0x0059`, `0x005A`, `0x005D` and out through a `0C`.  Every one predicted by the model. | **`unreached`** — the walk stops on the `0F` at `0x001C`, which the `12` jumps over |
+| `MS610D-c0-rFF` | The cave fired, but in the merged slot-0 image record `0xFF` is one byte, not `m/MS610D`'s twenty: **no token was ever dispatched in rFF's bytes**.  The run went to the buffer's last byte and then through 610,910 virtual program counters before the process died.  (Those events are dropped by `tile observe` now: on a tree with no `overlay.dat` a program counter at or above the image end means the interpreter has left the script, and everything after it is the engine lost.) | **`dead`** — and the one record of the eight this session did not actually reach |
+| `MS610D-c3-rCE` | Five entries, four boundaries each: `0x0000` (a six-byte `0E` with one kind-0 case), `0x0006`, `0x0009`, `0x000B` — where the `0D` leaves for another record every time.  The game later crashed on the last conversation. | **`unreached`** — rCE is the last record of container 3, so the `0E` at `0x00A4` the walk stops on has nowhere to terminate; the engine never reaches it |
+
+### `m/MS6200` and `m/MS6500` — the 16-bit warp
+
+The cave works: all seven records were loaded and entered.  What they are is the
+other half of the answer — a file nothing loads, holding bytes that are not a
+script any more.
+
+| tree | what happened | verdict |
+|---|---|---|
+| `MS6200-r16` | one token, at `0x0000`; the trace ends there | **`dead`** |
+| `MS6200-r18` | 6 boundaries, all on model token starts | tiled (`straddle`) |
+| `MS6200-r1A` | 2 boundaries, both on model token starts; a falling sound, then the crash | tiled (`straddle`) |
+| `MS6200-r1F` | six tokens.  The `0E` at `0x000B` is the session's one genuine kind-guard case: a table with keys `1F 54 0E 02 06 9F` (not ascending) and kinds `E5 09 12 1F 00 18`, which the engine read at a 4-byte stride and branched out of at its **sixth** entry to `0x0027`; the `18` there took it to `0x004E` and the process died | **`dead`** |
+| `MS6200-r4F` | 3 boundaries, all on model token starts | tiled (`straddle`) |
+| `MS6200-r55` | the `0C` in `m/MS0017` r01 jumped to its base, `0x0A00`, and that is the last event: **not one token was dispatched** | **`dead`** |
+| `MS6500-rC7` | one token, at `0x0000`; the trace ends there | **`dead`** |
+
+`MS6200-r1F` is why `vmops._read_switch`'s `kind > 1` refusal is documented as
+*not* VM-faithful and kept anyway: the engine really does stride a table whose
+kinds are anything at all (`0x004327C0` skips a non-matching entry with one
+`READ_U8` and one `READ_U16` and never looks at the byte), but dropping the
+refusal grows a 390-byte `0F` over `m/MS0031` c0 r00's dialogue — over 80
+program counters the engine was observed drawing text at.  A table that covers
+bytes the engine itself dispatched as tokens is not a table.
