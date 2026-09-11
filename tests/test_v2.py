@@ -406,7 +406,22 @@ def test_tokenizer_reproduces_the_published_tiling_numbers():
     # Its tokens live in `straddle_tokens` and reach only span resolution and
     # the overlay.  This counter measures tiling *in isolation*, so it is
     # right that it does not move.
-    assert (ok, stray, unimpl, overrun) == (19425, 1099, 93, 73), (ok, stray, unimpl, overrun)
+    # 2026-09-11, the container-image walk: 19 425 / 1 099 / 93 / 73 ->
+    # 19 425 / 1 149 / 106 / 10.  `vmops.tokenize_record` tiles a record out of
+    # the image the engine runs in -- `base(id) = 0x400 + sum of the lengths`,
+    # an absent record being one `0x00` -- instead of out of the record in
+    # isolation, so a token at the end of a record reads its operands out of the
+    # next one, which is what the byte fetch `0x00438E50` does.  63 records move
+    # out of `overrun`, 50 of them into `stray` (by definition: their last token
+    # does not end on the terminator, it runs past it) and 13 into `unimpl`.
+    # **`ok` does not move at all**, which is the acceptance evidence: not one
+    # record that already tiled tiles differently.
+    #
+    # Text is still bounded by the record on purpose: 269 records end on a
+    # Shift-JIS lead byte, and letting those grow would renumber their spans to
+    # describe a character half in one record and half in the next.  Every
+    # straddle actually observed is control flow.
+    assert (ok, stray, unimpl, overrun) == (19425, 1149, 106, 10), (ok, stray, unimpl, overrun)
 
 
 def test_operands_are_never_text():
@@ -1069,7 +1084,7 @@ def test_no_more_records_carry_an_impossible_expression_selector():
                 for t in r.tokens:
                     for o in t.ops:
                         if o.kind == "expr" and o.raw and o.raw[0] > 0x5D:
-                            bad.append((rel, r.id, o.raw[0]))
+                            bad.append((rel, r.id, r.straddle))
                             break
                     else:
                         continue
@@ -1079,8 +1094,20 @@ def test_no_more_records_carry_an_impossible_expression_selector():
     # expression they never read, then 46 once 0x103/0x104 stopped reading four
     # fixed u8 in place of an FF-terminated term list, then 43 once 0x14C-0x151
     # stopped reading a second expression the engine never reads.  Must never rise.
-    assert len(bad) <= 43, ("%d records now carry an out-of-range selector: %s"
-                            % (len(bad), bad[:5]))
+    #
+    # 2026-09-11: the container-image walk brought 63 records that had never
+    # tiled at all into the denominator, and 10 of them carry such a selector.
+    # That is not the counter rising -- it is 63 records being counted for the
+    # first time -- so the invariant is kept where it was measured, over the
+    # records that were already tiling, and the newcomers are reported
+    # separately.  Every one of the 10 straddles, i.e. its last token reads into
+    # the next record, and settling those is what the warp trees are for.
+    settled = [b for b in bad if not b[2]]
+    fresh = [b for b in bad if b[2]]
+    assert len(settled) <= 43, (
+        "%d already-tiling records now carry an out-of-range selector: %s"
+        % (len(settled), settled[:5]))
+    assert len(fresh) == 10, (len(fresh), fresh[:5])
 
 
 def test_expression_model_agrees_with_the_engine():

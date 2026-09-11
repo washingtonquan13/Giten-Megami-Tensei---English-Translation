@@ -27,14 +27,14 @@ def test_the_census_residue_is_exactly_what_it_was_measured_to_be():
         ("m/MS0031.BIN", 0, 0x00, tile.UNTILED),
         ("m/MS0031.BIN", 0, 0x02, tile.STRADDLE),
         ("m/MS0031.BIN", 0, 0x03, tile.STRADDLE),
-        ("m/MS0031.BIN", 0, 0x0B, tile.UNTILED),
+        ("m/MS0031.BIN", 0, 0x0B, tile.STRADDLE),
         ("m/MS0031.BIN", 0, 0x0D, tile.STRADDLE),
         ("m/MS0031.BIN", 0, 0x17, tile.STRADDLE),
-        ("m/MS0080.BIN", 0, 0x00, tile.PREFIX),
-        ("m/MS0080.BIN", 0, 0x01, tile.PREFIX),
-        ("m/MS0080.BIN", 0, 0x02, tile.PREFIX),
-        ("m/MS0080.BIN", 0, 0x03, tile.PREFIX),
-        ("m/MS0080.BIN", 0, 0x04, tile.PREFIX),
+        ("m/MS0080.BIN", 0, 0x00, tile.STRADDLE),
+        ("m/MS0080.BIN", 0, 0x01, tile.STRADDLE),
+        ("m/MS0080.BIN", 0, 0x02, tile.STRADDLE),
+        ("m/MS0080.BIN", 0, 0x03, tile.STRADDLE),
+        ("m/MS0080.BIN", 0, 0x04, tile.STRADDLE),
     ]
     got_head = [r for r in res if r[0] in ("m/MS0031.BIN", "m/MS0080.BIN")]
     assert got_head == want, got_head
@@ -46,8 +46,12 @@ def test_the_census_residue_is_exactly_what_it_was_measured_to_be():
 
 #: state -> how many records are in it, over every ``m/`` and ``et/ID`` file.
 #: Re-baselined whenever a change moves it; the commit message says why.
-CENSUS_COUNTS = {tile.STRADDLE: 44, tile.PREFIX: 5, tile.UNTILED: 9,
-                 tile.DATA: 8038}
+#: 2026-09-11, the container-image walk: straddle 44 -> 50, prefix 5 -> 0,
+#: untiled 9 -> 8.  m/MS0080's five records now tile completely (their
+#: `1f 00 10 01 01 00` trailer reads one byte into the next record, and for
+#: r04 -- the last -- into the `0x00` the loader pre-installs for absent record
+#: 0x05), which is why `prefix` is empty; m/MS6200 c0 r4F joins them.
+CENSUS_COUNTS = {tile.STRADDLE: 50, tile.UNTILED: 8, tile.DATA: 8038}
 
 
 def test_the_census_covers_every_record_of_every_script_file():

@@ -154,7 +154,14 @@ def test_serving_english_never_changes_a_byte_outside_a_span():
 
     rows = extract_v2.rows_for(SHOPS, files.read_source(SHOPS),
                                pool.load(paths.ORIGINAL_DDSWIN))
-    assert len(rows) == 10, len(rows)
+    # 20 since 2026-09-11: m/MS0080's records tile completely now, so the two
+    # spans per record that the prefix walk's safety kernel used to reject --
+    # the `02 1F` and `01 1F` of the nine-byte head, read as pool calls -- are
+    # ordinary spans.  Whether that reading is right is what the MS0080 warp
+    # trees exist to settle.  This test fills EVERY row with English, so it now
+    # proves the stronger statement: even serving those two, no byte outside a
+    # span changes and nothing reaches the trailer.
+    assert len(rows) == 20, len(rows)
     for r in rows:
         if not r.en:
             r.en = "English placeholder"

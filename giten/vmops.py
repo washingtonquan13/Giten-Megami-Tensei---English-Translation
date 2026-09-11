@@ -428,6 +428,60 @@ def tokenize(data: bytes, tab: "Table | None" = None,
     return out
 
 
+def tokenize_record(image: bytes, start: int, length: int,
+                    tab: "Table | None" = None) -> "tuple[list[Token], int]":
+    """Tile one record **out of its container image**: ``(tokens, straddle)``.
+
+    The engine's byte fetch is ``[base + pc++]`` with no bound (``0x00438E50``),
+    and records sit contiguously at runtime -- ``base(id) = 0x400 + sum of the
+    lengths``, with an absent record occupying one ``0x00``.  So a token at the
+    end of a record legally reads its operands out of the next one, and the
+    record layer is an *index* into one image, not a limit on the walk.  Tiling
+    each record in isolation is what made 44 records refuse to tile; they are
+    ordinary tokens read against the wrong bound.
+
+    ``straddle`` is how many bytes past the record's own end the last token
+    reached.  Zero for the overwhelming majority.  It is not an error and not a
+    special tiling mode -- only the **byte builder** cares, because rebuilding
+    such a record would move the operand bytes it does not own (see
+    ``script.STRADDLE_NOTE``).
+
+    One deliberate exception: **text is still bounded by the record.**  A
+    trailing Shift-JIS lead byte does not grow into the next record, even though
+    the engine's fetch would take two bytes there.  269 records end on a lead
+    byte, none of them on a boundary any span or table row would survive moving,
+    and every straddle actually observed is control flow emitted at the end of a
+    chunk -- a branch-family opcode or ``1F 0D``/``0E``/``0F``.  Widening text
+    would renumber 269 records' spans to describe a character that is half in
+    one record and half in another, which no translator can edit and no overlay
+    can serve.
+    """
+    tab = tab or table()
+    data = image[start:]
+    n = len(data)
+    out: "list[Token]" = []
+    i = 0
+    while i < length:
+        b = data[i]
+        if b >= 0x20:
+            size = 2 if (is_sjis_lead(b) and i + 1 < length) else 1
+            out.append(Token("text", i, size))
+            i += size
+            continue
+        if b in ESCAPE:
+            if i + 1 >= n:
+                raise TileError("escape prefix %02X at end of image (0x%X)" % (b, i))
+            idx = ESCAPE[b] + data[i + 1]
+            head = 2
+        else:
+            idx = b
+            head = 1
+        j, ops = _read_operands(data, i + head, tab.operands(idx), tab)
+        out.append(Token("op", i, j - i, idx, tuple(ops)))
+        i = j
+    return out, i - length
+
+
 def tiles(data: bytes, tab: "Table | None" = None) -> bool:
     try:
         tokenize(data, tab)

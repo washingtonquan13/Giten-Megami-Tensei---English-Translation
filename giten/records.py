@@ -235,6 +235,24 @@ def bases(records: "list[Record]") -> "dict[int, int]":
     return out
 
 
+def runtime_image(records: "list[Record]") -> bytes:
+    """The bytes from ``0x400`` on: every record in **id** order, absent ones a ``0x00``.
+
+    Exactly what ``0x43AA30`` pre-initialises and ``0x43ABC0`` fills in, and the
+    coordinate space :func:`bases` describes -- ``image[bases(recs)[i] - 0x400]``
+    is the first byte of record ``i``.
+
+    Id order, not file order.  They usually coincide and occasionally do not, and
+    it matters: a token at the end of a record reads on into whatever the engine
+    put next to it, which is the record with the next id, not the record stored
+    next in the file.
+    """
+    have = {}
+    for r in records:
+        have.setdefault(r.id, r.data)
+    return b"".join(have.get(i, b"\x00") for i in range(256))
+
+
 
 # --- whole-file convenience -------------------------------------------------
 @dataclass

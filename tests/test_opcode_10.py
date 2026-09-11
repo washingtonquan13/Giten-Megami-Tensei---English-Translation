@@ -119,7 +119,11 @@ def test_the_ten_rel16_targets_are_constant_so_the_fourth_byte_is_not_the_target
     offset does not.  A rel16 that included it could not do that.
     """
     sites = _sites()
-    assert len(sites) == 10, "expected 10 sites, found %d" % len(sites)
+    # 11 since 2026-09-11: r0B tiles now that a token may read its operands out
+    # of the next record, and it carries an eleventh site.  The invariant is
+    # unchanged -- the target offset is still constant while the fourth byte is
+    # not -- which is the whole content of this test.
+    assert len(sites) == 11, "expected 11 sites, found %d" % len(sites)
     deltas, fourth = set(), set()
     for _ci, base, rec, _sp, t in sites:
         r = next(o for o in t.ops if o.kind == "rel16")

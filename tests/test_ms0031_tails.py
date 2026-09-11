@@ -207,9 +207,63 @@ def test_r0b_is_the_only_unterminated_pairs_ff_in_the_corpus():
                         break
                     i = j
     assert good >= 916, "only %d pairs_ff sites terminate cleanly now" % good
-    assert sorted(bad) == sorted([("m/MS0031.BIN", 0, 0x0B),
-                                  ("m/MS6F00.BIN", 31, 0x1B),
-                                  ("m/MS6F1F.BIN", 0, 0x1B)]), bad
+    # 2026-09-11: this list is now EMPTY, and the reason is the interesting
+    # part.  Since `vmops.tokenize_record` walks the container image, a
+    # `pairs_ff` list may end in the next record -- which is exactly what the
+    # engine's loop at 0x0042FEB0 would do, since its byte fetch has no bound --
+    # so all three records tile.  That is not the same as the list being sound:
+    # see the test below, which pins how far each of them reaches.
+    assert bad == [], bad
+
+
+#: The three records whose ``1F 03``/``1F 04`` list runs out of its own record,
+#: with how many bytes past the end it takes to find a ``0xFF``.  ``m/MS6F00``
+#: and ``m/MS6F1F`` are byte-identical here and are ``data`` anyway; the one
+#: that matters is ``m/MS0031`` r0B.
+RUNAWAY_PAIRS_FF = {
+    ("m/MS0031.BIN", 0, 0x0B): 406,
+    ("m/MS6F00.BIN", 31, 0x1B): 61,
+    ("m/MS6F1F.BIN", 0, 0x1B): 61,
+}
+
+
+def test_the_three_runaway_pairs_ff_lists_are_the_only_long_straddles():
+    """A token reading 406 bytes into the next record is a claim, not a fact.
+
+    Letting the walk cross a record boundary is right -- the engine's fetch has
+    no bound -- but "right" has a scale.  47 of the 50 straddling records finish
+    within **six** bytes and their last token is control flow emitted at the end
+    of a chunk.  These three are a different animal: `m/MS0031` r0B holds only
+    two `0xFF` bytes, both consumed at 0x113 by an earlier `1F 01`, so its
+    condition list cannot end inside the record at all and the walk keeps going
+    until it meets an `0xFF` 406 bytes into r0C.
+
+    So the record tiles, and what it tiles into is still the open question --
+    which is why `build/warp/MS0031-r0B` exists.  This test exists so that the
+    three cannot quietly become four, and so that a change which "fixes" r0B by
+    shortening the list has to face the 916 sites that terminate cleanly.
+    """
+    got = {}
+    for rel in sorted({k[0] for k in RUNAWAY_PAIRS_FF}):
+        sc = script.parse(rel, files.read_source(rel))
+        for ci, cont in enumerate(sc.containers):
+            for r in cont:
+                if r.straddle > 8:
+                    assert r.tokens[-1].idx in (0x103, 0x104), (
+                        "%s c%d r%02X straddles %d bytes on opcode 0x%03X, which "
+                        "is not a pairs_ff -- read it before re-baselining"
+                        % (rel, ci, r.id, r.straddle, r.tokens[-1].idx))
+                    got[(rel, ci, r.id)] = r.straddle
+    assert got == RUNAWAY_PAIRS_FF, got
+
+    # and corpus-wide there are no others
+    n = 0
+    for rel in files.all_encoded():
+        if not rel.startswith("m/"):
+            continue
+        sc = script.parse(rel, files.read_source(rel))
+        n += sum(1 for c in sc.containers for r in c if r.straddle > 8)
+    assert n == len(RUNAWAY_PAIRS_FF), n
 
 
 def test_r0bs_branch_targets_its_own_records_terminator():

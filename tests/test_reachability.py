@@ -162,6 +162,10 @@ def test_every_untiled_record_outside_ms0031_is_in_a_file_with_no_known_loader()
             bad.append((rel, un))
         else:
             unreach_untiled += un
-    assert unreach_untiled == 67, unreach_untiled
-    assert bad == [("m/MS0031.BIN", 6)], (
+    # 2026-09-11, the container-image walk: 67 -> 9 and 6 -> 1.  A token at the
+    # end of a record reads its operands out of the next one, which is legal for
+    # the engine, so 63 records that "refused to tile" were only ever being
+    # measured against the wrong bound.  What is left in m/MS0031 is r00 alone.
+    assert unreach_untiled == 9, unreach_untiled
+    assert bad == [("m/MS0031.BIN", 1)], (
         "untiled records now sit in a reachable file: %s" % bad)

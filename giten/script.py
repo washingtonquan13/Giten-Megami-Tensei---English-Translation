@@ -89,7 +89,7 @@ PREFIX_NOTE = "@prefix"
 #: into the next record.  Legal for the engine -- records are contiguous at
 #: runtime and the byte fetch has no bound -- so every span is fully known and
 #: may be overlaid; byte-rebuilding is refused because moving the record would
-#: move that operand's PC.  See :func:`partial.tokenize_straddling`.
+#: move that operand's PC.  See :func:`vmops.tokenize_record`.
 STRADDLE_NOTE = "@straddle"
 
 
@@ -137,13 +137,11 @@ class Rec:
     tiled_bytes: "int | None" = None
     #: how many of its spans the safety kernel refused
     rejected_spans: int = 0
-    #: for a straddling record: how many bytes its last token reads past the end
+    #: how many bytes this record's last token reads past its own end.  Legal
+    #: for the engine -- records are contiguous at runtime and the byte fetch
+    #: has no bound -- so the record is tiled like any other; the byte builder
+    #: is the only consumer that has to refuse it.
     straddle: int = 0
-    #: a straddling record's tokens.  Kept OUT of ``tokens`` on purpose: that
-    #: field is what the byte builder, ``_relocate`` and ``audit`` consult, and
-    #: they must go on treating the record as untiled.  Span resolution and the
-    #: overlay use :attr:`span_tokens` instead.
-    straddle_tokens: "list | None" = None
 
     @property
     def untiled(self) -> bool:
@@ -151,8 +149,8 @@ class Rec:
 
     @property
     def span_tokens(self):
-        """Tokens for resolving :attr:`spans` -- includes straddling records."""
-        return self.tokens if self.tokens is not None else self.straddle_tokens
+        """Kept as a name: for two years this differed from :attr:`tokens`."""
+        return self.tokens
 
     @property
     def key(self) -> str:
@@ -241,9 +239,21 @@ def _visible(data: bytes, toks, lo: int, hi: int) -> bool:
 
 
 def find_spans(ci: int, rec_id: int, data: bytes, toks) -> "list[Span]":
-    """Every translatable span in one tiled record."""
+    """Every translatable span in one tiled record.
+
+    A token that runs past the record's own end is never part of a span, even if
+    it is an inline opcode: the span's text would be half in this record and half
+    in the next, which no table row can hold and no overlay can serve.  In
+    practice a straddling token is always control flow, so this costs nothing --
+    it is here so that it cannot start costing something silently.
+    """
     out: "list[Span]" = []
     n = len(toks)
+    limit = len(data)
+
+    def inline(t):
+        return _inline(t) and t.end <= limit
+
     i = 0
     menu_width = None
     while i < n:
@@ -251,11 +261,11 @@ def find_spans(ci: int, rec_id: int, data: bytes, toks) -> "list[Span]":
         if t.kind == "op" and t.idx == MENU_OPEN_OP and t.ops:
             v = literal_expr(data, t.ops[0].off)
             menu_width = v if v and v > 0 else DEFAULT_CHOICE_WIDTH
-        if not _inline(t):
+        if not inline(t):
             i += 1
             continue
         j = i
-        while j < n and _inline(toks[j]):
+        while j < n and inline(toks[j]):
             j += 1
         if any(_draws(toks[k]) for k in range(i, j)) and _visible(data, toks, i, j):
             prev = toks[i - 1] if i else None
@@ -298,10 +308,12 @@ def parse(rel: str, raw: bytes, tab=None) -> Script:
         body_off = 2
         rows = []
         # The engine lays the records out contiguously (base(id) = 0x400 + sum of
-        # lengths) and its byte fetch is unbounded, so a token at a record's end
-        # may read on into the next one.  Keep the image to hand for that case.
-        image = b"".join(x.data for x in recs)
-        image_off = 0
+        # lengths, an absent record being one 0x00) and its byte fetch is
+        # unbounded, so a token at a record's end reads on into the next one.
+        # Tile against that image, not against the record in isolation: it is
+        # the coordinate space the engine actually runs in.
+        image = records.runtime_image(recs)
+        image_base = records.bases(recs)
         for r in recs:
             data_off = body_off + r.header_len
             rec = Rec(c.index, r.id, r.order, r.data, data_off,
@@ -310,30 +322,23 @@ def parse(rel: str, raw: bytes, tab=None) -> Script:
                 dups.append((c.index, r.id))
             seen.add(r.id)
             if r.data:
+                # Where this record sits in the runtime image -- unless it is
+                # the losing copy of a duplicate id, which the loader never
+                # installs and which therefore has nothing after it at all.
+                # Checked by comparing the bytes rather than by counting
+                # duplicates: `records.bases` resolves first-wins and this has
+                # to agree with it or the walk reads a neighbour's operands.
+                start = image_base[r.id] - records.INDEX_SIZE
+                if image[start:start + len(r.data)] != r.data:
+                    image_for, start = r.data, 0
+                else:
+                    image_for = image
                 try:
-                    rec.tokens = vmops.tokenize(r.data, tab)
+                    toks, extra = vmops.tokenize_record(
+                        image_for, start, len(r.data), tab)
                 except vmops.TileError as exc:
                     rec.tile_error = str(exc)
-                    # First: the record may tile completely and only its last
-                    # token continue into the next record, which is legal for the
-                    # engine.  That is a full parse, not a prefix, so it needs no
-                    # safety kernel -- but it must stay un-rebuildable.
                     from . import partial
-                    _toks, _extra = partial.tokenize_straddling(
-                        r.data, image[image_off + len(r.data):], tab)
-                    if _toks is not None:
-                        # Spans only.  `rec.tokens` stays None on purpose, so
-                        # `rec.untiled` stays True and every other consumer --
-                        # the byte builder, `_relocate`, `audit` -- treats this
-                        # record exactly as it did before: unbuildable, its
-                        # bytes copied verbatim.  Letting them see the tokens
-                        # made `_relocate` rewrite `m/MS0031` r0D's rel16 and
-                        # `audit` caught the target moving.  The overlay does
-                        # not rebuild anything, so it can serve the spans.
-                        rec.spans = find_spans(c.index, r.id, r.data, _toks)
-                        rec.straddle_tokens = _toks
-                        rec.straddle = _extra
-                        rec.blocked = STRADDLE_NOTE
                     # Opt-in per file: keep the tokens the walk did produce, and
                     # expose only the spans that pass the safety kernel.  The
                     # record stays `blocked` below -- _rebuild_record works from
@@ -357,13 +362,23 @@ def parse(rel: str, raw: bytes, tab=None) -> Script:
                             rec.blocked = PREFIX_NOTE
 
                 else:
+                    rec.tokens = toks
+                    rec.straddle = extra
+                    if extra:
+                        # An ordinary record whose last token reads `extra` bytes
+                        # out of the next one.  Tiled, spanned and overlaid like
+                        # any other; only the byte builder refuses it, because
+                        # rebuilding would move operand bytes this record does
+                        # not own.  `_relocate` skips it for the same reason --
+                        # letting it through moved m/MS0031 r0D's branch target
+                        # and `audit` caught it.
+                        rec.blocked = STRADDLE_NOTE
                     rec.unimplemented = vmops.uses_unimplemented(rec.tokens, tab)
                     rec.spans = find_spans(c.index, r.id, r.data, rec.tokens)
             else:
                 rec.tokens = []
             rows.append(rec)
             body_off += r.stored_len
-            image_off += len(r.data)
         if len(seen) != len(recs):
             # Two records with the same id in one container: the runtime index
             # has one slot per id, so one of them is what the loader keeps and
@@ -505,6 +520,9 @@ class BuildReport:
     #: edits skipped because a branch lands inside the span (see
     #: :func:`_drop_branched_into`)
     branched_into: int = 0
+    #: edits skipped because the span holds the operand bytes of the *previous*
+    #: record's straddling last token (see :func:`_drop_straddled_into`)
+    straddled_into: int = 0
     #: ``rel16`` slots left alone because the operand does not behave like a
     #: branch at all (see :func:`_is_branch`)
     not_a_branch: int = 0
@@ -647,6 +665,49 @@ def preserved_tail(old: bytes, new: bytes, k: int) -> bool:
     distance from the end.  See :func:`_drop_branched_into`.
     """
     return 0 < k <= min(len(old), len(new)) and old[-k:] == new[-k:]
+
+
+def _straddled_bytes(recs, old_base) -> "set[int]":
+    """Runtime offsets that belong to a *previous* record's last token.
+
+    A straddling record's final token reads its operands out of the record with
+    the next id.  Those bytes are an instruction's operands and somebody else's
+    text at the same time, and editing them changes an instruction in a record
+    the edit never named.  Measured on the shipped data: nine such overlaps, of
+    which `m/MS0031` c0 r0B's 406-byte `pairs_ff` covers **all fourteen** spans
+    of r0C.  `giten audit` reports it as a structural-opcode difference -- which
+    is how it was found, and which it could not do before straddling records
+    carried tokens.
+    """
+    out = set()
+    for r in recs:
+        if not r.straddle:
+            continue
+        start = old_base[r.id] + len(r.data)
+        out.update(range(start, start + r.straddle))
+    return out
+
+
+def _drop_straddled_into(rel, rec, per, base, owned, report: BuildReport):
+    """Refuse an edit to a span holding a previous record's operand bytes."""
+    if not per or not owned:
+        return per
+    keep = {}
+    for idx, text in per.items():
+        sp = next((s for s in rec.spans if s.idx == idx), None)
+        if sp is None:
+            continue
+        hit = [t for t in owned if base + sp.off <= t < base + sp.end]
+        if hit:
+            report.straddled_into += 1
+            if len(report.warnings) < 40:
+                report.warnings.append(
+                    "%s %s[%d]: 0x%04X..0x%04X holds the operand bytes of the "
+                    "previous record's straddling last token; edit refused"
+                    % (rel, rec.key, idx, base + sp.off, base + sp.end))
+            continue
+        keep[idx] = text
+    return keep
 
 
 def _drop_branched_into(rel, rec, per, base, landed, report: BuildReport):
@@ -802,6 +863,7 @@ def build(sc: Script, edits: "dict[tuple[int, int, int], str]") -> "tuple[bytes,
         # prevent.  Blocking on every rel16 target costs a few skipped lines;
         # trusting the table here would cost correctness.
         landed = _branch_targets(recs, omap.old_base)
+        owned = _straddled_bytes(recs, omap.old_base)
 
         new_data = {}
         new_runs = {}
@@ -816,6 +878,7 @@ def build(sc: Script, edits: "dict[tuple[int, int, int], str]") -> "tuple[bytes,
                 per = {}
             rbase = omap.old_base.get(r.id, 0)
             per = _drop_branched_into(sc.rel, r, per, rbase, landed, report)
+            per = _drop_straddled_into(sc.rel, r, per, rbase, owned, report)
             inner = [t - rbase for t in landed
                      if rbase <= t < rbase + len(r.data)]
             data, runs, anchors, changed = _rebuild_record(r, per, report, inner)
