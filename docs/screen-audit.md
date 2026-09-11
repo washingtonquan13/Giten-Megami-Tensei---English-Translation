@@ -139,22 +139,75 @@ fight.
 
 ---
 
-## 5. How the tool works, and what it cannot do
+## 5. How the tool works
 
-Two details it gets right that a naive version gets wrong:
+Three details it gets right that a naive version gets wrong:
 
 * **Pool calls are expanded, not stripped.** A drawn line is contiguous kana;
   the file stores `手に入{08:60}` and `{08:60}` is `れた`. Deleting the marker
   breaks the join and reports "no table row" for text sitting in a table. The
   first run of this audit made exactly that mistake and reported 45 fragments as
-  having no row; the real figure is 22, and most of those are the strip.
+  having no row; the real figure is 22, and most of those are the strip. The
+  same is true on the English side, which is why the verdict is taken from
+  `check_v2.render_english` and not from the `en` cell -- English that splices
+  an untranslated pool call reaches the screen in Japanese.
 * **Some draw-string variants are typewriters**, one call per glyph. Counting
   those calls separately shreds every sentence into single characters, and the
   first run reported `し`, `た`, `く`, `す` as untranslated Japanese.
+* **The glyph code is a `u16` in a `u32` field.** The tool used to read the raw
+  dword; `textlog.Rec.ch` masks it. On the Roppongi log about one glyph in nine
+  carried something in the high half, and the unmasked read prefixed each of
+  those with a spurious `\x00` -- corrupting exactly the one-byte glyphs (ASCII,
+  half-width katakana), because a two-byte character survives the mistake by
+  luck. It now reads through `giten.textlog`, the same reader
+  `giten trace textout` uses.
 
-What it cannot do: attribute a fragment to the row that *actually* drew it. It
-matches text, so a fragment appearing in many rows gets credited to the shortest
-one. `UNEXTRACTED` is the escape hatch: files listed there are read directly and
-a fragment found in one is attributed to it outright, no table search. Pairing
-the glyph log against the interpreter trace would remove the remaining guesswork
-and has not been done.
+## 6. Attribution: `--trace`
+
+**Done 2026-09-11.** The tool used to match text, so a fragment appearing in
+many rows was credited to the shortest one, and a hard-coded `UNEXTRACTED` list
+was the only escape hatch -- a list that still claimed `et/ET000D` had no
+extractor months after §1 shipped one.
+
+Both are gone:
+
+* The sets of strings that belong to something *other* than the script are read
+  from the things themselves -- `etdb` (skills, map labels), `districts`,
+  `racenames`, `itemdb`, `mapnames.tsv`, and the exe's own `.rdata` via
+  `giten/exe/menus.py` and `names.py`. A file that gains an extractor stops
+  being reported as lacking one without anybody editing a list. Those get a
+  `DATA ...` verdict naming the source, so the fix is never confused with a
+  script translation.
+* With `--trace`, a fragment is attributed to the **event that drew it**: the
+  fragment's cp932 bytes are searched for in the trace's own `ch` stream, and
+  that event's `(rec, idx_len, rec_hash)` -- the same content key overlay v6
+  uses -- resolves to a record, an offset inside it, and the table row that owns
+  that offset (through `overlay.plan`'s `sources` where a span covers it).
+
+Two things that had to be got right:
+
+* **The whole fragment is usually not contiguous in the `ch` stream.** What is
+  contiguous on screen can be three tokens in the file: `へ続く階段が{08:7B}ある`
+  draws as one run and the pool call sits in the middle of it. Matching walks
+  down from the whole fragment to its longest contiguous prefix; the event that
+  drew the first characters is the event standing in the record that owns the
+  line.
+* **`pc0` is one past the token it logged.** The character's own offset in the
+  record is `pc0 - idx_off - len`. The tool tries both readings and takes the
+  one the record's bytes agree with, so the *check* decides rather than the
+  comment -- and a hit whose bytes agree is preferred over one whose do not,
+  which is what separates the events a v4 trace charged to the right record from
+  the ones its stale `RECID` did not.
+
+**Validated on the 2026-09-11 Roppongi session** (a v4 trace, 272,405 events,
+156,757 draw-string calls): 23 distinct Japanese fragments, and every one of
+them resolves. 20 attribute to a script row, 17 of those with the record
+confirmed by content; 3 are the analyze box's Mood values in `dds.exe`. The six
+records the inspection named are all among them -- `m/MS7F04 0:07`,
+`m/MS00DD 0:55`, `m/MS003D 0:0F`, `m/MS003E 0:01`, `m/MS0018 0:0E`,
+`m/MS00DE 0:36` -- and so are the four rows that were blank, including
+`は逃げ出した`, which substring matching had credited to `m/MS000F 0:0E[54]`
+and which the trace attributes to `m/MS7F04 0:10[0]`.
+
+Without `--trace` the tool falls back to substring matching and says so in its
+own output.
