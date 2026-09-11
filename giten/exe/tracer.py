@@ -130,18 +130,26 @@ SYMBOLS = {
 TRC_CHARACTERISTICS = 0xE0000060
 
 #: file, rec, pc, ch, r, capflag, caplen, idx_off, idx_len, pc0, flags, state,
-#: rec_hash, image_end (v4; behind an 8-byte "GTRC" header.  giten/trace/core.py
-#: decodes v1 through v4.)
+#: rec_hash, image_end, handle (v5; behind an 8-byte "GTRC" header.
+#: giten/trace/core.py decodes v1 through v5.)
 #:
-#: v4 appends the two things overlay v6 needs and no earlier version logged:
+#: v4 appended the two things overlay v6 needs and no earlier version logged:
 #: FNV-1a over the current record's own bytes, and the buffer's own image end.
 #: The overlay keys on record CONTENT, so a trace carrying only the engine's
 #: file label cannot be checked against it -- the label is written on load, not
 #: on every context switch.
-RECORD = struct.Struct("<HHHHhBBHHHHHIH")
+#:
+#: v5 stops taking the record id from ds:RECID, which is written on load and
+#: goes stale, and finds the record containing the program counter in the live
+#: index -- the same question hook.c's `find_record` answers.  `rec`, `idx_off`,
+#: `idx_len` and `rec_hash` are that record's; flag bit 3 says the scan found
+#: it, bit 2 says the program counter was at or above the image end and names
+#: no record at all.  `handle` is new, and is what attributes such an address
+#: offline: the record the last real fetch on the same handle was in.
+RECORD = struct.Struct("<HHHHhBBHHHHHIHH")
 RECORD_SIZE = RECORD.size
 TRACE_MAGIC = b"GTRC"
-TRACE_VERSION = 4
+TRACE_VERSION = 5
 TRACE_HEADER_SIZE = 8
 
 

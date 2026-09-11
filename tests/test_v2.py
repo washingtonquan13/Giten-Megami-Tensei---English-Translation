@@ -2129,8 +2129,165 @@ def test_a_generated_english_run_verifies_clean():
     assert stats["virtual PCs"] > 500, stats
     assert stats["out of bounds"] == 0, stats
     assert stats["unverified"] == 0, stats
+    assert stats["record does not contain pc0"] == 0, stats
+    # ...and the v5 carry has to have done real work, or "clean" would only
+    # mean the virtual events were quietly declined: they log no record, so
+    # every one of them was judged through the record its handle was last in
+    assert stats["virtual PCs attributed"] >= stats["virtual PCs"], stats
     placed = stats["served"] + stats["from the file"]
     assert placed == stats["records"], stats
+
+
+def test_a_v4_trace_still_verifies_and_the_v5_fields_read_back_as_absent():
+    """Every trace taken in real play is v4, so v4 has to keep being judged.
+
+    v4 names the record from ``ds:RECID`` and logs no handle, so both new flag
+    bits read back as zero and the carry is a no-op -- which is exactly what a
+    trace that cannot say which record an address is in should look like.  The
+    run still verifies, because a v4 trace generated from the model names the
+    right record by construction; what it may not do is *claim* it did.
+    """
+    import tempfile
+    from giten import files, overlay, paths, records, script, tables
+    from giten.trace import core
+    from tests import harness
+
+    draft = os.path.join(paths.BUILD_DIR, "tables_draft", "m", "MS0017.BIN.tsv")
+    rows = tables.read(draft if os.path.exists(draft)
+                       else files.table_path(VERIFY_REL))
+    entries, _ = overlay.plan(rows)
+    table = sorted(entries, key=lambda e: e.key)
+    sc = script.parse(VERIFY_REL, files.read_source(VERIFY_REL))
+    image = overlay.image_bytes([records.Record(r.id, r.data)
+                                 for r in sc.containers[0]])
+
+    d = tempfile.mkdtemp(prefix="giten-verify-v4-")
+    tp = os.path.join(d, "run.gtrc")
+    with open(tp, "wb") as fh:
+        fh.write(harness.synth_trace(table, image, VERIFY_FID, version=4))
+    op = os.path.join(d, "overlay.dat")
+    with open(op, "wb") as fh:
+        fh.write(overlay.build(entries))
+
+    rs, _body = core._pick(open(tp, "rb").read(), tp)
+    assert rs is core.RECORD_V4, rs
+    stats, findings = core.verify(tp, paths.ORIGINAL_DDSWIN, op)
+    assert findings == [], findings[:3]
+    assert stats["served"] > 5000, stats
+    assert stats["virtual PCs"] > 500, stats
+    assert stats["virtual PCs attributed"] == 0, stats
+    assert all(ev.handle == 0 and not ev.flags for ev in core.decode(tp, paths.ORIGINAL_DDSWIN)[:50])
+
+
+def test_an_event_whose_record_does_not_hold_its_pc_is_a_category_not_a_finding():
+    """The 2026-09-11 defect, injected: one event names the wrong record.
+
+    Through v4 ``trace.S`` took the record id from ``ds:RECID``, written on
+    load, while ``hook.c`` found it from the program counter -- so on the
+    Roppongi session 165 events were reported as "the engine is executing
+    memory nobody owns" when all that had happened was that the oracle named
+    record 0x59 while the interpreter stood in record 0x22.
+
+    Nothing about the address can be concluded from such an event, in either
+    direction, so it is a tracer category and never a finding.  ``REC_FROM_PC``
+    is cleared along with the record, because that flag is the trace saying it
+    found the record from the program counter: a v5 record that still claims it
+    did while naming a record that does not hold the address would be lying
+    about itself, and is judged, not excused.
+    """
+    import struct
+    import tempfile
+    from giten import files, overlay, records, script
+    from giten.trace import core
+
+    tp, op, build = _verify_run()
+    sc = script.parse(VERIFY_REL, files.read_source(VERIFY_REL))
+    image = overlay.image_bytes([records.Record(r.id, r.data)
+                                 for r in sc.containers[0]])
+    idx = overlay.live_index(image)
+
+    with open(tp, "rb") as fh:
+        blob = bytearray(fh.read())
+    rs, body = core.RECORD_V5, core.HEADER.size
+    at = body + 300 * rs.size
+    f = list(rs.unpack_from(blob, at))
+    pc0 = f[9]
+    assert f[10] & core.REC_FROM_PC, "event 300 is not one the scan placed"
+    other = next(i for i in range(255, -1, -1)
+                 if idx[i][1] > 1 and not (idx[i][0] <= pc0 - 1 < idx[i][0] + idx[i][1]))
+    o_off, o_len = idx[other]
+    f[1], f[7], f[8] = other, o_off, o_len
+    f[12] = overlay.fnv1a(image[o_off:o_off + o_len])
+    f[10] &= ~core.REC_FROM_PC
+    rs.pack_into(blob, at, *f)
+
+    d = tempfile.mkdtemp(prefix="giten-stalerec-")
+    stale = os.path.join(d, "stale.gtrc")
+    with open(stale, "wb") as fh:
+        fh.write(bytes(blob))
+
+    stats, findings = core.verify(stale, build, op)
+    assert findings == [], [f[1] for f in findings[:3]]
+    assert stats["record does not contain pc0"] == 1, stats
+    assert stats["out of bounds"] == 0, stats
+
+
+def _roppongi():
+    """``(trace, build dir, overlay)`` for the archived session, or None.
+
+    ``build/`` is not in the repository, so this is skipped on a fresh clone.
+    The overlay the session ran against is ``build/overlay.dat``; the script
+    files are the untouched originals, because an overlay install never
+    rewrites one.
+    """
+    from giten import paths
+
+    tp = os.path.join(paths.BUILD_DIR, "traces", "2026-09-11-roppongi-trace.bin")
+    op = os.path.join(paths.BUILD_DIR, "overlay.dat")
+    if not (os.path.exists(tp) and os.path.exists(op)):
+        return None
+    return tp, paths.ORIGINAL_DDSWIN, op
+
+
+def test_the_roppongi_session_verifies_clean_once_the_stale_records_are_named():
+    """The whole point of Item 1, measured on the session that exposed it.
+
+    Before: 165 findings, all of them "program counter outside the record and
+    our overlay" in the Alice scene of ``m/MS0032`` c0, plus 450 events
+    reported unverified -- every one of them an address judged against record
+    0x59 while the interpreter stood in record 0x22.  After: 0 findings and 614
+    events named as what they are, an oracle that could not say which record it
+    was in.  The served count does not move, because nothing about what the
+    overlay did was ever in question.
+    """
+    from giten.trace import core
+
+    got = _roppongi()
+    if got is None:
+        return
+    tp, build, op = got
+    stats, findings = core.verify(tp, build, op)
+    assert findings == [], [(f[0].n, f[1]) for f in findings[:3]]
+    assert stats["record does not contain pc0"] == 614, stats
+    assert stats["out of bounds"] == 0, stats
+    assert stats["served"] == 135378, stats
+
+
+def test_the_roppongi_session_classifies_its_name_prints():
+    """``1F01`` leaves the script for a name buffer, and that has to be visible.
+
+    The walk required two-byte characters, so once the party names became ASCII
+    it classified exactly nothing: 19,086 events of this session read as
+    unplaceable addresses instead of as the engine printing "Katsuragi Ayato".
+    """
+    from giten.trace import core
+
+    got = _roppongi()
+    if got is None:
+        return
+    tp, build, op = got
+    stats, _findings = core.verify(tp, build, op)
+    assert stats["in a name print"] > 10000, stats
 
 
 def test_the_verifier_catches_a_byte_that_does_not_match():
@@ -2242,9 +2399,9 @@ def test_the_verifier_needs_no_file_identity_at_all():
     with open(tp, "rb") as fh:
         blob = bytearray(fh.read())
     body = core.HEADER.size
-    n = (len(blob) - body) // core.RECORD_V4.size
+    n = (len(blob) - body) // core.RECORD_V5.size
     for i in range(n):
-        struct.pack_into("<H", blob, body + i * core.RECORD_V4.size, 0xBEEF)
+        struct.pack_into("<H", blob, body + i * core.RECORD_V5.size, 0xBEEF)
     d = tempfile.mkdtemp(prefix="giten-nolabel-")
     lied = os.path.join(d, "lied.gtrc")
     with open(lied, "wb") as fh:

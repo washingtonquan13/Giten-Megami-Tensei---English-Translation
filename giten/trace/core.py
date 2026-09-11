@@ -1,20 +1,35 @@
 """Decode and diff interpreter traces written by the dev exe's ``.trc`` hook.
 
-A trace is a flat file of fixed-size records (see ``exe/trace.S``).  v4 carries
-an 8-byte ``"GTRC"`` header and 28-byte records::
+A trace is a flat file of fixed-size records (see ``exe/trace.S``).  v5 carries
+an 8-byte ``"GTRC"`` header and 30-byte records::
 
     u16 file, u16 rec, u16 pc, u16 ch, i16 r, u8 capflag, u8 caplen,
     u16 idx_off, u16 idx_len, u16 pc0, u16 flags, u16 state,
-    u32 rec_hash, u16 image_end
+    u32 rec_hash, u16 image_end, u16 handle
 
 v1 is headerless with 16-byte records (no ``pc0``/``flags``); v2 adds those, v3
-adds ``state``, v4 adds ``rec_hash`` and ``image_end``.  All of them decode,
-since the traces taken before 2026-09-06 are still the oracle the opcode model
-is checked against -- but :func:`verify` needs v4, because overlay v6 keys a
-translated span on the CONTENT of the record it lives in and nothing older logs
-that.  ``rec_hash`` is FNV-1a over the record the interpreter is standing in;
-``image_end`` is the buffer's own ``idx[255].off + idx[255].len``, the same four
-bytes the hook reads to tell a real program counter from a virtual one.
+adds ``state``, v4 adds ``rec_hash`` and ``image_end``, v5 adds ``handle`` and
+changes what ``rec``/``idx``/``rec_hash`` describe.  All of them decode, since
+the traces taken before 2026-09-06 are still the oracle the opcode model is
+checked against -- but :func:`verify` needs v4 or better, because overlay v6
+keys a translated span on the CONTENT of the record it lives in and nothing
+older logs that.  ``rec_hash`` is FNV-1a over the record the interpreter is
+standing in; ``image_end`` is the buffer's own ``idx[255].off + idx[255].len``,
+the same four bytes the hook reads to tell a real program counter from a
+virtual one.
+
+**v5: the record is the one the program counter is in.**  Through v4 the hook
+took the record id from ``ds:RECID``, an engine global written on *load*, while
+``hook.c`` found it by searching the live index for the record containing the
+program counter.  The oracle therefore answered a different question than the
+thing it was checking, and on the 2026-09-11 Roppongi session that produced 165
+false findings, 450 events reported unverified and 611 served events charged to
+the wrong record.  v5 scans the index exactly as ``hook.c`` does and says which
+answer it gave: ``REC_FROM_PC`` means the scan found the record, its absence
+means ``rec`` is still the stale global.  ``VIRTUAL`` means the program counter
+was at or above the image end, where it names no record at all -- those are
+attributed offline to the last real fetch on the same ``handle``, which is why
+the handle is logged.
 
 ``decode`` maps each record back to the script: the hook logs after exec_token
 returns, so ``pc`` is the byte after the whole token (operands included), and
@@ -83,9 +98,17 @@ RECORD_V3 = struct.Struct("<HHHHhBBHHHHH")
 #: keys a translated span on record CONTENT and so cannot be checked against a
 #: trace that carries only the engine's file label.
 RECORD_V4 = struct.Struct("<HHHHhBBHHHHHIH")
+
+#: v5 appends ``handle`` -- ``[ds:CTX]+0x0A``, the script buffer the context
+#: points at -- and redefines ``rec``/``idx_off``/``idx_len``/``rec_hash`` as
+#: the record the PROGRAM COUNTER is in rather than the one ``ds:RECID`` names.
+#: Added 2026-09-11: the global is written on load and goes stale, so the
+#: oracle was answering a different question than ``hook.c``.  Two new flag
+#: bits say which answer this record carries (``VIRTUAL``, ``REC_FROM_PC``).
+RECORD_V5 = struct.Struct("<HHHHhBBHHHHHIHH")
 MAGIC = b"GTRC"
 HEADER = struct.Struct("<4sHH")
-BY_VERSION = {2: RECORD_V2, 3: RECORD_V3, 4: RECORD_V4}
+BY_VERSION = {2: RECORD_V2, 3: RECORD_V3, 4: RECORD_V4, 5: RECORD_V5}
 
 
 def _pick(data, path):
@@ -101,22 +124,36 @@ def _pick(data, path):
 
 
 def _fields(rs, f):
-    """``(pc0, flags, state, rec_hash, image_end)`` from one unpacked record.
+    """``(pc0, flags, state, rec_hash, image_end, handle)`` from one record.
 
-    ``rec_hash`` is 0 and ``image_end`` is 0 on anything older than v4, which
-    means "not logged" -- not "zero".  ``verify`` refuses to judge such an
-    event rather than guessing, because the overlay is keyed on the hash.
+    ``rec_hash`` is 0 and ``image_end`` is 0 on anything older than v4, and
+    ``handle`` is 0 on anything older than v5, which means "not logged" -- not
+    "zero".  ``verify`` refuses to judge an event whose hash is not logged
+    rather than guessing, because the overlay is keyed on the hash.
     """
     if rs is RECORD_V1:
-        return 0, 0, -1, 0, 0
-    state = f[11] if rs in (RECORD_V3, RECORD_V4) else -1
+        return 0, 0, -1, 0, 0, 0
+    state = f[11] if rs in (RECORD_V3, RECORD_V4, RECORD_V5) else -1
+    if rs is RECORD_V5:
+        return f[9], f[10], state, f[12], f[13], f[14]
     if rs is RECORD_V4:
-        return f[9], f[10], state, f[12], f[13]
-    return f[9], f[10], state, 0, 0
+        return f[9], f[10], state, f[12], f[13], 0
+    return f[9], f[10], state, 0, 0, 0
 
 #: ``flags``
 CTX_NULL_BEFORE = 1
 CTX_NULL_AFTER = 2
+
+#: v5.  ``VIRTUAL``: ``pc0`` was at or above the buffer's image end, so it names
+#: no record and ``idx_off``/``idx_len``/``rec_hash`` are logged as 0.
+#: ``REC_FROM_PC``: ``rec`` and its index entry came from the hook's own scan of
+#: the live index for the record containing the program counter -- the question
+#: ``hook.c`` asks.  Without it, ``rec`` is ``ds:RECID``, which is written on
+#: load and can name a record the interpreter is not in.  Both read back 0 on
+#: v4 and older, so those traces decode unchanged and are simply never trusted
+#: about which record an address belongs to.
+VIRTUAL = 4
+REC_FROM_PC = 8
 
 #: ``flags >> 8`` is the low byte of the wrapper's own return address, i.e.
 #: WHICH of exec_token's three call sites dispatched this token.  Spare bits,
@@ -159,6 +196,8 @@ class Event:
     rec_hash: int = 0       # FNV-1a over the record's own bytes (v4); 0 = not
                             # logged, which is not the same as a hash of zero
     image_end: int = 0      # idx[255].off + idx[255].len of the live buffer (v4)
+    handle: int = 0         # [ds:CTX]+0x0A, the script buffer (v5); 0 = not
+                            # logged.  A VIRTUAL event is attributed through it
 
     rel: str = ""           # "m/MS0017.BIN"
     span: "int | None" = None
@@ -346,9 +385,10 @@ def decode(trace_path: str, build_dir: "str | None" = None) -> "list[Event]":
     out = []
     for n in range(len(body) // rs.size):
         f = rs.unpack_from(body, n * rs.size)
-        pc0, flags, state, rec_hash, image_end_ = _fields(rs, f)
+        pc0, flags, state, rec_hash, image_end_, handle = _fields(rs, f)
         ev = Event(n, f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8],
-                   pc0, flags, state, rec_hash, image_end_, rel=_rel_of(f[0]))
+                   pc0, flags, state, rec_hash, image_end_, handle,
+                   rel=_rel_of(f[0]))
         if ev.rel not in images:
             p = os.path.join(build_dir, *ev.rel.split("/"))
             images[ev.rel] = _Image(ev.rel, open(p, "rb").read(), entries) if os.path.exists(p) else None
@@ -364,6 +404,25 @@ def decode(trace_path: str, build_dir: "str | None" = None) -> "list[Event]":
 
 #: the kind given to events that are not script addresses at all
 NAME_KIND = "NAME"
+
+
+def _name_char_width(ch: int) -> "int | None":
+    """How many bytes this logged character is, or None if it is not one.
+
+    A name buffer holds text and nothing else, so every step of the walk has to
+    be a printable cp932 character: a two-byte one, an ASCII one, or a
+    half-width katakana byte.  Control bytes below 0x20 are where the opcodes
+    live, so they end the run rather than extending it.
+    """
+    if ch > 0xFF:
+        try:
+            bytes([ch >> 8, ch & 0xFF]).decode("cp932")
+        except UnicodeDecodeError:
+            return None
+        return 2
+    if 0x20 <= ch <= 0x7E or 0xA1 <= ch <= 0xDF:
+        return 1
+    return None
 
 
 def _mark_name_excursions(events: "list[Event]", images: dict, place=None) -> int:
@@ -382,8 +441,8 @@ def _mark_name_excursions(events: "list[Event]", images: dict, place=None) -> in
 
       * the script token about to run is a ``1F01``;
       * the entry event carries the ``1F`` escape at pc 0;
-      * the body is even PCs ascending from 2, each a character that decodes
-        as cp932;
+      * the body is PCs ascending by the width of each character from the width
+        of the first, each character decoding as cp932;
       * execution resumes inside a record (or the trace ends).
 
     Anything that fails those stays a disagreement.
@@ -447,14 +506,24 @@ def _mark_name_excursions(events: "list[Event]", images: dict, place=None) -> in
         if e.ok or e.pc != 0 or e.ch != 0x1F:
             i += 1
             continue
-        j, want, body = i + 1, 2, []
-        while j < n and events[j].pc == want and events[j].ch > 0xFF and not events[j].ok:
-            try:
-                bytes([events[j].ch >> 8, events[j].ch & 0xFF]).decode("cp932")
-            except UnicodeDecodeError:
+        j, want, body = i + 1, None, []
+        while j < n and not events[j].ok:
+            w = _name_char_width(events[j].ch)
+            if w is None:
+                break
+            if want is None:
+                # The walk starts at the width of its first character -- 2 for a
+                # Japanese name, 1 for the ASCII ones we install -- so the first
+                # body PC is 1 or 2 and never more.  Requiring 2 is what made
+                # this classify nothing at all once party names became ASCII:
+                # the run counts 1,2,3... now, not 2,4,6...
+                if events[j].pc != w:
+                    break
+                want = w
+            elif events[j].pc != want:
                 break
             body.append(j)
-            want += 2
+            want += w
             j += 1
         resume = events[j] if j < n else None
         if not body or (resume is not None and inside(resume) is None):
@@ -701,6 +770,38 @@ def _candidates(pc0: int, width: int, handoffs) -> "list[tuple]":
     return out
 
 
+def _attribute_virtual(events: "list[Event]") -> int:
+    """Give every ``VIRTUAL`` event the record the same handle was last in.
+
+    A virtual program counter exists only because the hook invented one, and it
+    is invented from the record the previous fetch was in -- every record's
+    tails begin at the same ``image_end``, so the address names no record on its
+    own and the hook itself resolves it through a per-handle memo.  v5 logs the
+    handle for exactly this: the trace can do the same lookup offline, which is
+    what turns an event the hook served into one the verifier can judge instead
+    of one it has to decline.
+
+    The events are rewritten in place -- ``rec``, the index entry, the hash, and
+    ``REC_FROM_PC`` if the record it is taken from was itself found from a
+    program counter.  Nothing happens on a v4 trace: ``VIRTUAL`` is never set
+    there, and ``handle`` is not logged.
+
+    Returns how many events were attributed.
+    """
+    last, n = {}, 0
+    for ev in events:
+        if ev.flags & VIRTUAL:
+            src = last.get(ev.handle)
+            if src is not None:
+                ev.rec, ev.idx_off, ev.idx_len, ev.rec_hash, from_pc = src
+                ev.flags |= from_pc
+                n += 1
+        elif ev.idx_len:
+            last[ev.handle] = (ev.rec, ev.idx_off, ev.idx_len, ev.rec_hash,
+                               ev.flags & REC_FROM_PC)
+    return n
+
+
 def verify(trace_path: str, build_dir: "str | None" = None,
            overlay_path: "str | None" = None):
     """Did the overlay change control flow?  Answered from one English trace.
@@ -754,16 +855,17 @@ def verify(trace_path: str, build_dir: "str | None" = None,
     stats = {"records": 0, "served": 0, "from the file": 0, "unverified": 0,
              "in a name print": 0, "out of bounds": 0, "no context": 0,
              "record not in the corpus": 0, "virtual PCs": 0,
+             "record does not contain pc0": 0, "virtual PCs attributed": 0,
              "overlay entries": len(entries)}
     findings, events = [], []
     for n in range(len(body) // rs.size):
         f = rs.unpack_from(body, n * rs.size)
-        pc0, flags, state, rec_hash, image_end_ = _fields(rs, f)
+        pc0, flags, state, rec_hash, image_end_, handle = _fields(rs, f)
         events.append(Event(n, f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7],
                             f[8], pc0, flags, state, rec_hash, image_end_,
-                            rel=_rel_of(f[0])))
+                            handle, rel=_rel_of(f[0])))
     stats["records"] = len(events)
-    if rs is not RECORD_V4:
+    if rs not in (RECORD_V4, RECORD_V5):
         ev = events[0] if events else Event(0, 0, 0, 0, 0, 0, 0, 0)
         return stats, [(ev, "this trace predates content addressing",
                         "overlay v6 keys a translated span on the CONTENT of "
@@ -773,6 +875,7 @@ def verify(trace_path: str, build_dir: "str | None" = None,
                         "which is written on load and names whatever script was "
                         "loaded most recently -- not necessarily the one "
                         "running.  Re-record the route on this build.")]
+    stats["virtual PCs attributed"] = _attribute_virtual(events)
 
     corpus = corpus_records(build_dir)
     bytes_of = {}
@@ -847,7 +950,18 @@ def verify(trace_path: str, build_dir: "str | None" = None,
         if hit is None:
             a, how = readable if readable else (starts[0][0], "outside")
             if how == "outside":
-                if a >= ev.image_end:
+                # Does the record this event names hold the address the token
+                # was fetched from at all?  Through v4 the hook took the record
+                # id from ds:RECID, written on load, so the answer is routinely
+                # no and nothing about the address can be concluded -- 165
+                # "outside the record" findings and 450 "unverified" events on
+                # the Roppongi session were this and only this.  A v5 trace
+                # finds the record from the program counter and says so with
+                # REC_FROM_PC; only then is an unplaceable address a finding.
+                holds = ev.idx_off <= ev.pc0 - 1 < ev.idx_off + ev.idx_len
+                if not holds and not (ev.flags & REC_FROM_PC):
+                    stats["record does not contain pc0"] += 1
+                elif a >= ev.image_end:
                     stats["out of bounds"] += 1
                     findings.append((ev, "program counter outside the record and our overlay",
                                      "pc0 0x%04X is above the buffer's image end "
@@ -858,8 +972,8 @@ def verify(trace_path: str, build_dir: "str | None" = None,
                                      "or the engine is executing memory nobody owns"
                                      % (ev.pc0, ev.image_end, ev.rec)))
                 else:
-                    # a real address in some other record: the trace says which
-                    # record the engine thought it was in, and this is not in it
+                    # the record holds pc0 - 1, but the token's other bytes run
+                    # off its start: nothing is claimed either way
                     stats["unverified"] += 1
                 continue
             got, how = _read(ranges, data_, ev.idx_off, ev.idx_len, starts[0])
@@ -913,6 +1027,16 @@ def report_verify(trace_path: str, build_dir: "str | None" = None,
     if stats["virtual PCs"]:
         out.append("  %d virtual program counter(s), all inside a tail this "
                    "overlay declares" % stats["virtual PCs"])
+    if stats.get("virtual PCs attributed"):
+        out.append("  %d event(s) logged no record (v5 VIRTUAL) and were "
+                   "attributed to the record their buffer handle was last in"
+                   % stats["virtual PCs attributed"])
+    if stats.get("record does not contain pc0"):
+        out.append("  %d record(s) the trace could not attribute: the record it "
+                   "names does not hold pc0" % stats["record does not contain pc0"])
+        out.append("    (a v4 trace names the record from ds:RECID, which is "
+                   "written on load and goes stale; re-record on a v5 build to "
+                   "have these judged)")
     if stats["out of bounds"]:
         out.append("  %d program counter(s) outside the record AND our overlay"
                    % stats["out of bounds"])

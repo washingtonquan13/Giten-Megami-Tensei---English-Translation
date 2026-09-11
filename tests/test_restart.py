@@ -513,12 +513,13 @@ def test_tracer_snapshots_the_record_base_before_the_call():
     # ... and so is the handle table it indexes to reach the record base
     assert blob.find(struct.pack("<I", tracer.SYMBOLS["HANDLE_TABLE"])) < call
 
-    # the snapshot goes to stack locals (sub esp, 20 ... leave), not the cave.
+    # the snapshot goes to stack locals (sub esp, 24 ... leave), not the cave.
     # 20, not 12, since v4: the record's own FNV-1a and the buffer's image end
     # are snapshotted too, because overlay v6 keys a translated span on record
     # CONTENT and a trace carrying only the file label cannot be checked
-    # against it.
-    assert blob[3:6] == b"\x83\xEC\x14", "no `sub esp, 20` for the locals"
+    # against it.  24, not 20, since v5: the buffer handle goes with them,
+    # because that is what attributes a virtual program counter offline.
+    assert blob[3:6] == b"\x83\xEC\x18", "no `sub esp, 24` for the locals"
     assert b"\xC9\xC3" in blob, "no `leave; ret` to match the frame"
 
     # ...and the record is hashed before the call too, like everything else
@@ -527,11 +528,11 @@ def test_tracer_snapshots_the_record_base_before_the_call():
     assert fnv in blob, "the record is never hashed"
     assert blob.find(fnv) < call, "the record is hashed after the real call"
 
-    # the record is 28 bytes behind an 8-byte header, and both are written
-    assert tracer.RECORD.size == 28
+    # the record is 30 bytes behind an 8-byte header, and both are written
+    assert tracer.RECORD.size == 30
     assert tracer.TRACE_MAGIC + struct.pack("<HH", tracer.TRACE_VERSION,
                                             tracer.RECORD.size) in blob
-    assert b"\x6A\x1C" in blob, "no `push 28` for the record WriteFile"
+    assert b"\x6A\x1E" in blob, "no `push 30` for the record WriteFile"
 
     # v3's state word is read AFTER the call, on purpose.  It costs no
     # stack slot, and a token that changes state is then logged with the
@@ -541,6 +542,55 @@ def test_tracer_snapshots_the_record_base_before_the_call():
     assert state in blob, "the engine state is never read"
     assert blob.find(state) > call, "STATE is read before the call, not after"
     assert b"\x6A\x08" in blob, "no `push 8` for the header WriteFile"
+
+
+def test_the_tracer_finds_the_record_from_the_program_counter_not_from_recid():
+    """v5: the oracle has to ask the question the hook asks.
+
+    Through v4 this cave read the record id from ``ds:RECID`` -- an engine
+    global written on *load* -- while ``hook.c``'s ``find_record`` searched the
+    live index for the record containing the program counter and never touched
+    the global.  The trace exists to check the hook, and it cannot do that
+    while the two are answering different questions: on the 2026-09-11 Roppongi
+    session the mismatch produced 165 false findings, 450 events reported
+    unverified and 611 served events charged to the wrong record.
+
+    Pinned structurally, because there is no way to run the cave from here.
+    Put `movzx ecx,[RECID]; mov eax,[edx+ecx*4]` back as the primary lookup and
+    every assertion below fails.
+    """
+    blob = tracer.assemble()
+    call = blob.find(b"\xB8" + struct.pack("<I", tracer.EXEC_TOKEN) + b"\xFF\xD0")
+    assert call > 0, "no `mov eax, exec_token; call eax`"
+
+    # the scan walks the 256 index entries downward, before the real call
+    scan = blob.find(b"\xB8\xFF\x00\x00\x00")               # mov eax, 255
+    assert 0 < scan < call, "no `mov eax,255` starting the index scan"
+    entry = blob.find(b"\x0F\xB7\x34\x82", scan)            # movzx esi,[edx+eax*4]
+    assert entry > scan, "the scan never reads idx[eax].off"
+    step = blob.find(b"\x48\x79", entry)                    # dec eax; jns
+    assert step > entry and step < call, "`dec eax; jns` is not the scan's step"
+    # and it must require the entry to REACH the address, not merely start at
+    # or below it -- that second half is what makes the answer a containment
+    # test rather than a nearest-neighbour guess, exactly as hook.c does it
+    length = blob.find(b"\x0F\xB7\x7C\x82\x02", entry)      # movzx edi,[edx+eax*4+2]
+    assert length > entry and length < call, "idx[eax].len is never read"
+
+    # the record id is written from the scan as well as from RECID: two stores
+    # to [ebp-10], one per answer.  Reverting leaves one.
+    assert blob.count(b"\x66\x89\x45\xF6") == 2, (
+        "expected the scanned record id and the RECID fallback to be the only "
+        "two writers of the record slot, found %d"
+        % blob.count(b"\x66\x89\x45\xF6"))
+
+    # ...and the record says which answer it carries
+    assert b"\x66\x83\x4D\xFA\x08" in blob, "REC_FROM_PC (flags bit 3) is never set"
+    assert b"\x66\x83\x4D\xFA\x04" in blob, "VIRTUAL (flags bit 2) is never set"
+
+    # the handle goes in the record too: it is the only thing that attributes a
+    # virtual program counter, which names no record by construction
+    assert b"\x8B\x41\x0A" in blob, "the buffer handle is never read"
+    assert b"\x66\x89\x47\x1C" in blob, "the handle is never stored at rec+28"
 
 
 def test_trace_decoder_reads_both_formats_and_pc0_rescues_a_lost_event():

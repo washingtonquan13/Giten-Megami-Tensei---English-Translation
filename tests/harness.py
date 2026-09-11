@@ -73,8 +73,9 @@ def quoted(path: str) -> str:
     return '"%s"' % path
 
 
-def synth_trace(table, image, fid: int = 0, recs=None, mutate=None) -> bytes:
-    """A v4 trace of an English run over ``image``, from ``overlay.Model``.
+def synth_trace(table, image, fid: int = 0, recs=None, mutate=None,
+                handle: int = 3, version: int = 5) -> bytes:
+    """A v5 trace of an English run over ``image``, from ``overlay.Model``.
 
     The recorded fixtures this replaces were v4/v5 overlays and a v2 trace, and
     a trace only means anything against the overlay that produced it -- so they
@@ -89,16 +90,30 @@ def synth_trace(table, image, fid: int = 0, recs=None, mutate=None) -> bytes:
     the operands later -- so ``pc0`` is the program counter just past the head,
     not past the whole token.
 
+    The record ids, index entries and hashes are the ones ``trace.S`` v5 logs:
+    found from the program counter, not from ``ds:RECID``.  A program counter at
+    or above the image end names no record at all -- every record's tails begin
+    there -- so such an event carries ``VIRTUAL`` and zero idx/hash, exactly as
+    the hook writes it, and the verifier has to attribute it through the handle
+    or decline to judge it.  That is the whole carry path, so it has to be here
+    rather than assumed.
+
     ``mutate(ev)`` may rewrite one event's field tuple before it is packed;
     that is how the fault-injection tests put a byte or a program counter
     somewhere it should not be.
+
+    ``version=4`` emits what the hook wrote before 2026-09-11: no handle, no
+    flags, and the record's own index entry on every event including the
+    virtual ones.  Every trace taken in real play is one of those, so the
+    verifier has to keep reading them.
     """
     from giten import overlay, vmops
     from giten.trace import core
 
+    rec_struct = core.RECORD_V5 if version >= 5 else core.RECORD_V4
     idx = overlay.live_index(image)
     end = overlay.live_end(image)
-    out = bytearray(core.HEADER.pack(core.MAGIC, 4, core.RECORD_V4.size))
+    out = bytearray(core.HEADER.pack(core.MAGIC, version, rec_struct.size))
     n = 0
     for rid in (range(256) if recs is None else recs):
         off, ln = idx[rid]
@@ -131,10 +146,17 @@ def synth_trace(table, image, fid: int = 0, recs=None, mutate=None) -> bytes:
             for start, width in heads:
                 ch = int.from_bytes(bytes(stream[start:start + width]), "big")
                 pc0 = after[start + width - 1]
-                ev = [fid, rid, pc0, ch, 0, 0, 0, off, ln, pc0, 0, 0, h, end]
+                if version < 5:
+                    ev = [fid, rid, pc0, ch, 0, 0, 0, off, ln, pc0, 0, 0, h, end]
+                elif pc0 >= end:            # VIRTUAL: names no record
+                    ev = [fid, rid, pc0, ch, 0, 0, 0, 0, 0, pc0,
+                          core.VIRTUAL, 0, 0, end, handle]
+                else:
+                    ev = [fid, rid, pc0, ch, 0, 0, 0, off, ln, pc0,
+                          core.REC_FROM_PC, 0, h, end, handle]
                 if mutate is not None:
                     ev = mutate(list(ev), n) or ev
-                out += core.RECORD_V4.pack(*ev)
+                out += rec_struct.pack(*ev)
                 n += 1
     return bytes(out)
 
