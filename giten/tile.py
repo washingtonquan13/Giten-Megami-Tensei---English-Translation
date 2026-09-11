@@ -291,15 +291,22 @@ def record_index(root: "str | None" = None) -> "dict[tuple[int, int, int], list]
     return out
 
 
-def served_keys(build_dir: str) -> "frozenset[tuple]":
+def served_keys(build_dir: str, overlay_path: "str | None" = None) -> "frozenset[tuple]":
     """``(id, length, hash)`` of every record a build tree's overlay translates.
 
     A record the overlay serves is one the engine was handed *different bytes*
     for, so its program counters say nothing about the Japanese tokenisation.
     Measured, not assumed: the keys come out of ``overlay.dat`` itself, which is
     the same table the hook matches on.
+
+    ``overlay_path`` names the table **the trace actually ran against**, which
+    is not always the one sitting in the tree: installing a newer overlay over a
+    play tree leaves a trace paired with a table that no longer exists there,
+    and reading the new one would exclude the wrong records.  An archived
+    session passes the copy taken at the time; everything else defaults to the
+    tree's own ``overlay.dat`` as before.
     """
-    path = os.path.join(build_dir, "overlay.dat")
+    path = overlay_path or os.path.join(build_dir, "overlay.dat")
     if not os.path.exists(path):
         return frozenset()
     with open(path, "rb") as fh:
@@ -353,11 +360,16 @@ class Report:
         return sum(len(s["not_judged"]) for s in self.seen.values())
 
 
-def observe(trace_path: str, build_dir: "str | None" = None) -> Report:
-    """The engine's boundaries per record, against the model's token starts."""
+def observe(trace_path: str, build_dir: "str | None" = None,
+            overlay_path: "str | None" = None) -> Report:
+    """The engine's boundaries per record, against the model's token starts.
+
+    ``overlay_path`` is the table the session ran against; see
+    :func:`served_keys` for why that is not always the tree's own.
+    """
     build_dir = build_dir or paths.game_root()
     index = record_index(build_dir)
-    served = served_keys(build_dir)
+    served = served_keys(build_dir, overlay_path)
     ver, events = read_events(trace_path)
     rep = Report(version=ver, served_keys=len(served))
     found: "dict[tuple, Seen]" = {}

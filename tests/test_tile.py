@@ -18,6 +18,16 @@ from giten import files, overlay, paths, script, tile
 ROPPONGI = os.path.join(paths.BUILD_DIR, "traces", "2026-09-11-roppongi-trace.bin")
 PLAY = os.path.join(os.path.dirname(paths.REPO_ROOT), "play", "en", "ddswin")
 
+#: The overlay the Roppongi session actually ran against, archived the day it
+#: was taken.  **Not** the one in the play install: that tree is re-installed
+#: whenever a new overlay is built, and a trace only means anything against the
+#: table that produced it -- pointing this at the live install is what turned
+#: these two assertions red the first time the overlay was rebuilt under them.
+#: The script files in the tree are still the right ones either way, because
+#: installing an overlay never rewrites one.
+ROPPONGI_OVERLAY = os.path.join(paths.BUILD_DIR, "trace",
+                                "overlay-as-run-2026-09-11.dat")
+
 
 def test_observe_refuses_a_trace_with_no_record_hash():
     old = os.path.join(paths.REPO_ROOT, "traces", "2026-09-08-warp17-spill.bin")
@@ -170,7 +180,12 @@ def test_observe_agrees_with_the_engine_on_the_roppongi_session():
     """
     if not (os.path.exists(ROPPONGI) and os.path.isdir(PLAY)):
         return
-    rep = tile.observe(ROPPONGI, PLAY)
+    if not os.path.exists(ROPPONGI_OVERLAY):
+        print("      NOT RUN: %s is missing, and the session can only be judged "
+              "against the overlay it ran on" % os.path.relpath(
+                  ROPPONGI_OVERLAY, paths.REPO_ROOT).replace(os.sep, "/"))
+        return
+    rep = tile.observe(ROPPONGI, PLAY, ROPPONGI_OVERLAY)
     assert rep.version == 4, rep.version
     assert len(rep.seen) == 246, len(rep.seen)
     assert rep.agree == 1414, rep.agree

@@ -2403,12 +2403,24 @@ def _roppongi():
     The overlay the session ran against is ``build/overlay.dat``; the script
     files are the untouched originals, because an overlay install never
     rewrites one.
+
+    The overlay is the **archived copy taken the day the session was traced**,
+    not ``build/overlay.dat``: that one is rewritten every time an overlay is
+    built, and a trace only means anything against the table that produced it.
+    Reading the live one made this test go red the first time an overlay was
+    rebuilt under it -- "byte does not match what the overlay serves", true of
+    the new table and nothing to do with the session.
     """
     from giten import paths
 
     tp = os.path.join(paths.BUILD_DIR, "traces", "2026-09-11-roppongi-trace.bin")
-    op = os.path.join(paths.BUILD_DIR, "overlay.dat")
-    if not (os.path.exists(tp) and os.path.exists(op)):
+    op = os.path.join(paths.BUILD_DIR, "trace", "overlay-as-run-2026-09-11.dat")
+    if not os.path.exists(tp):
+        return None
+    if not os.path.exists(op):
+        print("      NOT RUN: build/trace/overlay-as-run-2026-09-11.dat is "
+              "missing, and the session can only be judged against the overlay "
+              "it ran on")
         return None
     return tp, paths.ORIGINAL_DDSWIN, op
 
