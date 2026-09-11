@@ -345,20 +345,35 @@ def main(argv=None) -> int:
         entries, findings = overlay.plan(rows, args.root)
         out = args.out or os.path.join(paths.BUILD_DIR, "overlay.dat")
         os.makedirs(os.path.dirname(out), exist_ok=True)
+        clash = overlay.conflicts(entries)
+        if clash:
+            # Nothing is written.  Two files whose records are byte-identical
+            # share one key, so a table that disagrees would hand one of them
+            # the other's line -- which is the whole class of bug v6 removes.
+            for msg in clash:
+                print("  CONFLICT %s" % msg)
+            print("%d record(s) carry two different translations of the same "
+                  "Japanese bytes; run tools/unify_duplicates.py.  Nothing written."
+                  % len(clash))
+            return 1
         blob = overlay.build(entries)
         with open(out, "wb") as fh:
             fh.write(blob)
         if not args.quiet:
-            for e in entries:
-                used = sum(s.tail for s in e.spans)
-                print("  %-16s c%d  %4d spans, %4d with a virtual tail (%6d bytes, 0x%04X..0x%04X, %d%% of the room)"
-                      % (e.rel, e.ci, len(e.spans), len(e.tails), used, e.image_end, e.image_end + used,
-                         100 * used // max(1, overlay.PC_LIMIT - e.image_end)))
+            worst = sorted(entries, key=lambda e: -e.tail_total)[:8]
+            for e in worst:
+                print("  record %02X  %5d JP bytes, %4d spans, %5d bytes of "
+                      "virtual tail (%d%% of the room a record has)"
+                      % (e.rec_id, e.jp_len, len(e.spans), e.tail_total,
+                         100 * e.tail_total // overlay.MAX_TAIL_TOTAL))
             for where, msg in findings:
                 print("  REFUSED %s: %s" % (where, msg))
-            print("wrote %s: %d files, %d spans (%d with a virtual tail), %d bytes; %d rows refused"
+            shared = sum(1 for e in entries for s in e.spans if len(s.sources) > 1)
+            print("wrote %s: %d record keys, %d spans (%d with a virtual tail, "
+                  "%d shared by two or more files), %d bytes; %d rows refused"
                   % (out, len(entries), sum(len(e.spans) for e in entries),
-                     sum(len(e.tails) for e in entries), len(blob), len(findings)))
+                     sum(1 for e in entries for s in e.spans if s.tail),
+                     shared, len(blob), len(findings)))
         return 1 if findings else 0
     if args.cmd == "where":
         print("game (read-only): %s" % paths.game_root())

@@ -1,18 +1,39 @@
 /* Native driver for giten/exe/hook.c -- freestanding Win32, no C runtime
  * (the mingw driver cannot link its CRT from a path with spaces).
  *
- *   hook_harness <image.bin> <fid> <handle> <start_pc> <stop_pc>
+ * Three modes:
  *
- * Loads a runtime image (index + records, as overlay.image_bytes builds it)
- * as buffer <handle>, sets the current file id, and walks from start_pc until
- * the PC equals stop_pc, calling the hook for every byte exactly as the
- * engine's next_char would.  Prints the bytes seen as hex on one line, then
- * "pc=<final>".  overlay.dat is read from the current directory by the hook
- * itself, through the real Win32 imports.  Numbers are decimal or 0x-hex.
+ *   hook_harness <image.bin> <fid> <handle> <start_pc> <stop_pc>
+ *       One walk.  `fid` is ignored -- overlay v6 identifies no file -- but the
+ *       argument is still accepted so the existing tests keep working.
+ *
+ *   hook_harness pace <granularity_ms> <total_ms> <stall_at_ms> <stall_ms>
+ *       Drives pace() against a simulated clock.
+ *
+ *   hook_harness script <file>
+ *       One command per line, so ONE PROCESS can do what one play session
+ *       does -- which is the only way to test that a buffer swapped under a
+ *       live handle stops serving the old script's English:
+ *
+ *           load <handle> <image.bin>     map the image as this handle's buffer
+ *           reload <handle> <image.bin>   overwrite that buffer IN PLACE
+ *                                         (same base pointer, so only the
+ *                                         content changes -- exactly what the
+ *                                         engine does when it loads the next
+ *                                         shop into the same slot)
+ *           walk <handle> <start> <stop>  walk, printing "bytes=<hex>" and
+ *                                         "pc=<final>"
+ *           fid <n>                       accepted and ignored (see above)
+ *           #...                          a comment
+ *
+ * Loads a runtime image (index + records, as overlay.image_bytes builds it),
+ * and walks from start_pc until the PC equals stop_pc, calling the hook for
+ * every byte exactly as the engine's next_char would.  overlay.dat is read from
+ * the current directory by the hook itself, through the real Win32 imports.
+ * Numbers are decimal or 0x-hex.
  */
 #include "hook_harness.h"
 
-u16 g_fileid;
 u8 *g_bases[16];
 
 u8 hook(u32 handle, u16 *pcp);
@@ -51,6 +72,13 @@ static u32 put_num(char *p, u32 v)
     return n;
 }
 
+static u32 put_str(char *p, const char *s)
+{
+    u32 n = 0;
+    while (*s) p[n++] = *s++;
+    return n;
+}
+
 /* hook_harness pace <granularity_ms> <total_ms> <stall_at_ms> <stall_ms>
  *
  * Drives pace() the way the main loop does -- polled continuously (8 polls a
@@ -78,11 +106,9 @@ static void pace_mode(char **argv)
                     after++;
             }
     }
-    line[n++] = 't'; line[n++] = 'i'; line[n++] = 'c'; line[n++] = 'k'; line[n++] = 's'; line[n++] = '=';
+    n += put_str(line + n, "ticks=");
     n += put_num(line + n, ticks);
-    line[n++] = ' ';
-    line[n++] = 'a'; line[n++] = 'f'; line[n++] = 't'; line[n++] = 'e'; line[n++] = 'r'; line[n++] = '_';
-    line[n++] = 's'; line[n++] = 't'; line[n++] = 'a'; line[n++] = 'l'; line[n++] = 'l'; line[n++] = '=';
+    n += put_str(line + n, " after_stall=");
     n += put_num(line + n, after);
     line[n++] = '\n';
     out(line, n);
@@ -126,52 +152,133 @@ static int split(char *cl, char **argv, int max)
     return n;
 }
 
+static int same(const char *a, const char *b)
+{
+    while (*a && *a == *b) { a++; b++; }
+    return *a == 0 && *b == 0;
+}
+
+/* Every handle's buffer is one fixed allocation, made on its first `load`.
+ * `reload` writes into the SAME allocation, so the base pointer the hook sees
+ * does not change -- which is the whole point: the memo must be invalidated by
+ * the buffer's own index entry, not by the address moving. */
+#define BUFSZ 0x40000
+
+static u32 read_into(const char *path, u8 *dst, u32 cap)
+{
+    HANDLE f = CreateFileA(path, GENERIC_READ, FILE_SHARE_READ, 0, OPEN_EXISTING, 0, 0);
+    DWORD size, got;
+    if (f == INVALID_HANDLE_VALUE)
+        ExitProcess(2);
+    size = GetFileSize(f, 0);
+    if (size > cap)
+        ExitProcess(2);
+    if (!ReadFile(f, dst, size, &got, 0) || got != size)
+        ExitProcess(2);
+    CloseHandle(f);
+    return size;
+}
+
+static void map_image(u32 handle, const char *path)
+{
+    u32 i;
+    handle &= 15;
+    if (!g_bases[handle])
+        g_bases[handle] = (u8 *)VirtualAlloc(0, BUFSZ, MEM_COMMIT | MEM_RESERVE,
+                                             PAGE_READWRITE);
+    if (!g_bases[handle])
+        ExitProcess(2);
+    for (i = 0; i < BUFSZ; i++)
+        g_bases[handle][i] = 0;
+    read_into(path, g_bases[handle], BUFSZ);
+}
+
+static char g_out[1 << 20];
+static u32 g_n;
+
+static void flush(void)
+{
+    if (g_n)
+        out(g_out, g_n);
+    g_n = 0;
+}
+
+static void walk(u32 handle, u32 pc, u32 stop)
+{
+    u32 steps = 0;
+    handle &= 15;
+    g_n += put_str(g_out + g_n, "bytes=");
+    while (pc != stop && steps < (1u << 16) && g_n + 32 < sizeof g_out) {
+        u16 p = (u16)pc;
+        u8 b = hook(handle, &p);
+        g_out[g_n++] = "0123456789abcdef"[b >> 4];
+        g_out[g_n++] = "0123456789abcdef"[b & 15];
+        pc = p;
+        steps++;
+    }
+    g_out[g_n++] = '\n';
+    g_n += put_str(g_out + g_n, "pc=");
+    g_n += put_num(g_out + g_n, pc);
+    g_out[g_n++] = '\n';
+    if (g_n + 64 > sizeof g_out)
+        flush();
+}
+
+/* one command per line; see the banner */
+static void script_mode(const char *path)
+{
+    static u8 buf[1 << 16];
+    u32 size = read_into(path, buf, sizeof buf - 1);
+    u32 i = 0;
+    buf[size] = 0;
+    while (i < size) {
+        char *line = (char *)buf + i;
+        char *argv[8];
+        int argc;
+        while (i < size && buf[i] != '\n') i++;
+        if (i < size) buf[i++] = 0;
+        {
+            char *p = line;
+            while (*p) { if (*p == '\r') *p = 0; p++; }
+        }
+        if (line[0] == '#' || line[0] == 0)
+            continue;
+        argc = split(line, argv, 8);
+        if (argc == 0)
+            continue;
+        if (same(argv[0], "load") && argc == 3)
+            map_image(number(argv[1]), argv[2]);
+        else if (same(argv[0], "reload") && argc == 3)
+            map_image(number(argv[1]), argv[2]);
+        else if (same(argv[0], "walk") && argc == 4)
+            walk(number(argv[1]), number(argv[2]), number(argv[3]));
+        else if (same(argv[0], "fid"))
+            ;                   /* v6 reads no file id; accepted, ignored */
+        else
+            ExitProcess(3);
+    }
+    flush();
+    ExitProcess(0);
+}
+
 void _start(void)
 {
     char *argv[8];
     int argc = split(GetCommandLineA(), argv, 8);
-    HANDLE f;
-    DWORD size, got;
-    u32 fid, handle, pc, stop, steps = 0;
-    static char line[1 << 18];
-    u32 n = 0;
-    if (argc == 6 && argv[1][0] == 'p' && argv[1][1] == 'a' && argv[1][2] == 'c' && argv[1][3] == 'e' && !argv[1][4])
+    u32 handle, pc, stop;
+    if (argc == 6 && same(argv[1], "pace"))
         pace_mode(argv + 1);
+    if (argc == 3 && same(argv[1], "script"))
+        script_mode(argv[2]);
     if (argc != 6) {
         out("usage: hook_harness image fid handle start stop\n", 48);
         ExitProcess(2);
     }
-    f = CreateFileA(argv[1], GENERIC_READ, FILE_SHARE_READ, 0, OPEN_EXISTING, 0, 0);
-    if (f == INVALID_HANDLE_VALUE)
-        ExitProcess(2);
-    size = GetFileSize(f, 0);
-    fid = number(argv[2]);
     handle = number(argv[3]) & 15;
     pc = number(argv[4]);
     stop = number(argv[5]);
-    g_bases[handle] = (u8 *)VirtualAlloc(0, size + 0x10000, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
-    if (!ReadFile(f, g_bases[handle], size, &got, 0) || got != size)
-        ExitProcess(2);
-    CloseHandle(f);
-    g_fileid = (u16)fid;
-    while (pc != stop && steps < (1u << 16) && n + 16 < sizeof line) {
-        u16 p = (u16)pc;
-        u8 b = hook(handle, &p);
-        line[n++] = "0123456789abcdef"[b >> 4];
-        line[n++] = "0123456789abcdef"[b & 15];
-        pc = p;
-        steps++;
-    }
-    line[n++] = '\n';
-    line[n++] = 'p'; line[n++] = 'c'; line[n++] = '=';
-    {
-        char tmp[12];
-        int k = 0;
-        u32 v = pc;
-        do { tmp[k++] = '0' + v % 10; v /= 10; } while (v);
-        while (k) line[n++] = tmp[--k];
-    }
-    line[n++] = '\n';
-    out(line, n);
+    map_image(handle, argv[1]);
+    walk(handle, pc, stop);
+    flush();
     ExitProcess(0);
 }
