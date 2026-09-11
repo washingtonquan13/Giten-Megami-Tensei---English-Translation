@@ -141,7 +141,12 @@ def _jump_table(ops, limit=64):
             off = PEO.va2off(tab + i * 4)
         except Exception:
             break
-        if off + 4 > len(IMG):
+        # `va2off` RETURNS None for an address in no section -- it does not
+        # raise -- and the `except` above quietly hid that for as long as this
+        # function has existed.  15 of the 272 variable-length opcodes died on
+        # `None + 4` in the determinism sweep, every one of them at a `jmp
+        # *TABLE(,reg,4)` whose table runs to the end of its section.
+        if off is None or off + 4 > len(IMG):
             break
         t = struct.unpack_from("<I", IMG, off)[0]
         if not (TEXT_LO <= t < TEXT_HI):
