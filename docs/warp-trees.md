@@ -211,6 +211,12 @@ target. No script is patched, and `m/MS610D` stays byte-identical.
   `m/MS610D` c0 r1B instead of its usual opening line. Expect something
   abnormal — r1B is a 97-byte record whose `0E` switch fails at `0x1D` with
   kind 225.
+* **`MS610D-c0-rFF`** — the cave rewrites `0C E0 00` → `0C E0 FF`. **In game:**
+  as above. rFF is 20 bytes ending `1f 0d 1f e5 00`, and `0xFF` is the highest
+  record id there is, so its `1F 0D` expression wants a byte past the end of the
+  installed image — there is no next record to read it from, in any buffer.
+  Either the model is wrong about `1F 0D` here or the record is broken; the
+  trace says which.
 * **`MS610D-c3-rCE`** — the cave rewrites `0C E0 00` → `0C E3 CE`, i.e. into
   merge slot **3**. **In game:** as above. rCE opens `0e 32 00 e4 b2 ff` — a
   `0E` switch whose one case jumps to slot 4 record 0xB2 — and fails at `0xA5`
