@@ -33,7 +33,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from giten import (check_v2, codec, extract_v2, files, paths,  # noqa: E402
-                   tables)
+                   script, tables)
 
 OUT = os.path.join(paths.BUILD_DIR, "tables_draft")
 
@@ -198,8 +198,14 @@ def main(out: str = OUT) -> int:
                 # shared by every script that calls it; see POOL_FILES
                 shared += 1
                 continue
-            if r.tag == extract_v2.UNTILED_TAG:
-                # no dependable span boundaries; the overlay refuses these anyway
+            if r.tag == extract_v2.UNTILED_TAG or script.NOEDIT_NOTE in r.note:
+                # The overlay refuses these: no dependable span boundaries
+                # (@untiled), or the record is one the strict rule keeps out --
+                # a file nothing opens, a file nothing enters, the losing copy of
+                # a repeated record id, or a container where some record's branch
+                # targets are unknown (`script._mark_overlay_refusals`).
+                # Promoting a reference into one puts English in a table that
+                # nothing can serve, which reads as a translation that failed.
                 skipped += 1
                 continue
             fixed = _speaker_is_wrong(r.jp, r.ref_en, poolen)

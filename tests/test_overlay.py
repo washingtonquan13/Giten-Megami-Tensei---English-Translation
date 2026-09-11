@@ -749,6 +749,108 @@ def test_the_overlay_never_answers_an_address_a_branch_jumps_to():
     assert checked["spans the cap actually shortened"] > 10, checked
 
 
+def test_no_served_span_lives_in_a_container_with_an_unknown_target():
+    """The strict rule: serve a container only when every branch target in it is known.
+
+    What makes a served byte wrong is never the span itself -- it is a branch
+    *elsewhere in the same container* landing inside it.  The cap
+    (``test_the_overlay_never_answers_an_address_a_branch_jumps_to``) is what
+    stops that, and the cap is only as good as the target set it is computed
+    from.  So a container qualifies only when every record in it has known
+    tokens.
+
+    Three legs, because the rule has three moving parts:
+
+    1. **no served span sits in a container with an unknown record.**  A ``dead``
+       record is the one exception, and not a loophole: a warp put the
+       interpreter on its first byte and the process died there, so those bytes
+       hold no branch that ever runs.
+    2. **the target set really collects from the awkward records.**  A straddling
+       record's branches and an ``unreached`` record's ``known_tokens`` both have
+       to be in it; dropping either is the mutation this leg exists to fail on.
+    3. **the refusal fires.**  Nothing in the corpus trips it, so it is shown
+       working on a doctored parse.
+    """
+    from giten import extract_v2, observed, vmops
+
+    rels = ["m/MS0031.BIN", "m/MS610D.BIN", "m/MS0017.BIN", "m/MS00DD.BIN"]
+    rows = [r for p in tables.iter_tables(extract_v2.text_v2_dir())
+            for r in tables.read(p) if r.file in rels]
+    assert rows, "no table rows for the files under test"
+    entries, _findings = overlay.plan(rows)
+    served = {e.key for e in entries}
+    assert served
+
+    # -- 1 -----------------------------------------------------------------
+    checked = 0
+    for rel in rels:
+        sc = script.parse(rel, files.read_source(rel))
+        for ci, cont in enumerate(sc.containers):
+            keep = {}
+            for rec in cont:
+                keep[rec.id] = rec
+            here = [rec for rec in keep.values()
+                    if (rec.id, len(rec.data), overlay.fnv1a(rec.data)) in served]
+            if not here:
+                continue
+            checked += len(here)
+            for rec in cont:
+                if not rec.data or (rel, ci, rec.id) in observed.DEAD_RECORDS:
+                    continue
+                assert rec.span_tokens is not None, (
+                    "%s c%d serves a span, but record %02X's tokens are unknown "
+                    "(%s), so not every branch target in the container is"
+                    % (rel, ci, rec.id, rec.tile_error))
+    assert checked > 20, checked
+
+    # -- 2 -----------------------------------------------------------------
+    def targets_of(rec, base):
+        return {vmops.rel16_target(base, t, o) for t in (rec.span_tokens or [])
+                for o in t.ops if o.kind == "rel16"}
+
+    seen = {"straddle": 0, "unreached": 0}
+    for rel in ("m/MS0031.BIN", "m/MS610D.BIN"):
+        sc = script.parse(rel, files.read_source(rel))
+        for cont in sc.containers:
+            rr = [records.Record(r.id, r.data) for r in cont]
+            base = records.bases(rr)
+            got = script._branch_targets(cont, base)
+            for rec in cont:
+                kind = ("straddle" if rec.straddle else
+                        "unreached" if rec.known_tokens is not None else None)
+                if kind is None:
+                    continue
+                mine = targets_of(rec, base[rec.id])
+                assert mine <= got, (
+                    "%s %s: %d of this record's branch targets are missing from "
+                    "the container's set" % (rel, rec.key, len(mine - got)))
+                seen[kind] += len(mine)
+    assert seen["straddle"] > 0 and seen["unreached"] > 0, seen
+
+    # -- 3 -----------------------------------------------------------------
+    rel = "m/MS0017.BIN"
+    sc = script.parse(rel, files.read_source(rel))
+    donor = next(r for r in sc.containers[0] if r.spans)
+    victim = next(r for r in sc.containers[0] if r.data and r is not donor)
+    victim.tokens = None
+    victim.tile_error = "doctored: pretend the walk stopped here"
+    script._mark_overlay_refusals(rel, sc)
+    assert donor.no_overlay and "cannot walk" in donor.no_overlay, donor.no_overlay
+    row = tables.Row(rel, donor.spans[0].rec_key, donor.spans[0].idx,
+                     donor.spans[0].off, donor.spans[0].tag,
+                     script.span_text(donor, donor.spans[0]), "English", "", "",
+                     "draft", "")
+    import giten.overlay as _ovl
+    real_parse = script.parse
+    script.parse = lambda r, raw, tab=None: sc if r == rel else real_parse(r, raw, tab)
+    try:
+        ents, finds = _ovl.plan([row])
+    finally:
+        script.parse = real_parse
+    assert not ents, "a container with an unknown target was still served"
+    assert finds and "cannot walk" in finds[0][1], finds
+
+
 def _one_record_table(rec_id, data, spans):
     """A one-entry table over a synthetic record, plus the image holding it."""
     image = overlay.image_bytes([records.Record(rec_id, data)])

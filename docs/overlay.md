@@ -194,6 +194,35 @@ it is the only fact the overlay needs.
   refused these very edits for years (`@noedit`).  The overlay was written as a
   delivery mechanism and inherited the builder's *layout* rules without its
   *refusals*.
+* **The strict rule (2026-09-11): a span is served only when its whole
+  container can be proved safe.**  The cap above is only as good as the set of
+  branch targets it is computed from, and what makes a served byte wrong is
+  never the span itself -- it is a branch *elsewhere in the same container*
+  landing inside it.  So `script._mark_overlay_refusals` decides, once, per
+  record, and `overlay.plan` reports every refusal as a finding rather than
+  skipping quietly; `extract` writes the same sentence into the row's note
+  behind `@noedit`, so `check`'s `editable` rule and the overlay cannot drift
+  apart, and `make_draft_tree` promotes nothing into such a row.  Four
+  refusals:
+  * **a file the script loader never opens** (`giten/loaders.py`:
+    `m/MS6F00`, `m/MS6F1F`) -- 110 spans, none translated;
+  * **a file nothing enters** (`giten/observed.py`: `m/MS0080`) -- 20 spans, 10
+    of them translated, and they are the whole cost of the rule on this corpus.
+    The five shop records tile perfectly; what refuses them is the engine, which
+    terminated after two tokens without drawing, five times out of five, when a
+    warp put it on each of them;
+  * **the losing copy of a repeated record id** -- overwritten on load, so no
+    address in it exists (1 span);
+  * **a record the model cannot walk, and with it every record of its
+    container.**  This one currently refuses nothing, and that is the point of
+    item 3 of the plan: the `unreached` records expose the tokens the model can
+    prove (`Rec.known_tokens` -- the walk to its failure point plus the closure
+    from every address the container's own `rel16` operands and straddles name),
+    so their branch targets are in the set and the container qualifies.  `dead`
+    records are the one exception and not a loophole: a warp put the interpreter
+    on the record's first byte and the process died there, so those bytes hold
+    no branch that ever runs.
+  Measured: **0 reachable rows removed**.
 * Per **record**, the English excess over the Japanese must fit between the
   image end and 0x10000 (`overlay-space` in `check`).  Whole game: 0 refused
   rows; the worst record spends 7,422 of 24,576 bytes.

@@ -84,7 +84,8 @@ import os
 import struct
 from dataclasses import dataclass, field
 
-from . import container, files, overlay, paths, records, script, vmops
+from . import (container, files, observed, overlay, paths, records, script,
+               vmops)
 from .trace import core
 
 OBSERVED_DIR = os.path.join(paths.REPO_ROOT, "tests", "data", "observed")
@@ -99,67 +100,12 @@ OBSERVED_DIR = os.path.join(paths.REPO_ROOT, "tests", "data", "observed")
 TILED, STRADDLE, PREFIX, UNTILED, DATA = "tiled", "straddle", "prefix", "untiled", "data"
 DEAD, UNREACHED = "dead", "unreached"
 
-#: **``dead``** -- a warp put the interpreter on this record's first byte and the
-#: process died there.  Every one is in a container the shipped game has no path
-#: to (``docs/limits.md``: the loader was never missing, the *caller* is), so
-#: what the engine executes in them is whatever bytes happen to be there.  Their
-#: program counters are logged and reported, and deliberately **not** scored
-#: against the model: an interpreter running off the end of a garbage table is
-#: not evidence about the tokenizer.  Value: the trace, and what it shows.
-DEAD_RECORDS = {
-    ("m/MS6200.BIN", 0, 0x16):
-        "warp-MS6200-r16: one token dispatched, at 0x0000, and the trace ends "
-        "there -- the process died (player's note: 'r16: crash')",
-    ("m/MS6200.BIN", 0, 0x1F):
-        "warp-MS6200-r1F: six tokens, then the trace ends.  The 0E at 0x000B is "
-        "a table with keys 1F 54 0E 02 06 9F (not ascending) and kinds "
-        "E5 09 12 1F 00 18; the engine read it, branched out of its sixth entry "
-        "to 0x0027, took the 18 there to 0x004E and the process died",
-    ("m/MS6200.BIN", 0, 0x55):
-        "warp-MS6200-r55: the 0C in m/MS0017 r01 jumped to its base (0x0A00) "
-        "and NOT ONE token was ever dispatched in it (player's note: "
-        "'r55: crash')",
-    ("m/MS6500.BIN", 0, 0xC7):
-        "warp-MS6500-rC7: one token dispatched, at 0x0000, and the trace ends "
-        "there (player's note: 'rc7: crash')",
-    ("m/MS610D.BIN", 0, 0xFF):
-        "warp-MS610D-c0-rFF: no token was ever dispatched in its bytes.  0xFF is "
-        "the highest record id there is, so nothing follows it in any image and "
-        "its final 1F 0D expression reads a byte the container does not contain; "
-        "the run went to the buffer's last byte and then through 610,910 virtual "
-        "program counters before the process died",
-}
-
-#: **``unreached``** -- the walk fails at an offset the engine's own control flow
-#: passes over.  The condition is checked, not asserted (see
-#: ``tests/test_tile.py``): every program counter the engine was observed
-#: dispatching at inside the record is reproduced by the model -- as a token of
-#: the walk up to its failure point, or by re-walking from an address the
-#: model's own ``rel16``/straddle names -- and the failure offset is never one of
-#: them.  So the record's *code* is tiled and understood; what is not is a run of
-#: bytes nothing executes.
-UNREACHED_RECORDS = {
-    ("m/MS0031.BIN", 0, 0x00):
-        "warp-MS0031-r00: 86 boundaries, every one reproduced.  The record holds "
-        "three copies of a nine-byte blob -- `3X 00 00 00` then five bytes -- "
-        "between a `10` conditional and a pair of `18` jumps; the walk reads the "
-        "first two (0x0020, 0x003E) as junk opcodes and stops on the third, at "
-        "the `0F` at 0x0060.  Nothing enters them: the `1F 79` at 0x0011/0x002F/"
-        "0x004D jumps over each blob to the second `18` (0x002C, 0x004A, 0x0068) "
-        "and all three of those land on 0x006B, where the engine was observed "
-        "drawing text",
-    ("m/MS610D.BIN", 0, 0x1B):
-        "warp-MS610D-c0-r1B: seven boundaries, six times over, every one "
-        "reproduced.  The engine runs 0x0000, takes the `12` at 0x0002 to 0x0052 "
-        "and never touches 0x0005..0x0051, where the walk stops on a `0F` at "
-        "0x001C",
-    ("m/MS610D.BIN", 3, 0xCE):
-        "warp-MS610D-c3-rCE: four boundaries, five times over, every one "
-        "reproduced (0x0000, 0x0006, 0x0009, 0x000B); the `0D` at 0x000B leaves "
-        "the record every time, so the `0E` at 0x00A4 the walk stops on is never "
-        "reached.  rCE is the last record of container 3, so that table has "
-        "nowhere to terminate: it runs to the image end at 0x06AB",
-}
+#: The two verdicts that close a record without tiling it, and the evidence
+#: for each.  They live in :mod:`giten.observed` because `script` needs them
+#: too and `tile` imports `script`; re-exported here under the names every
+#: caller already uses.
+DEAD_RECORDS = observed.DEAD_RECORDS
+UNREACHED_RECORDS = observed.UNREACHED_RECORDS
 
 
 # --- the census -------------------------------------------------------------
@@ -515,8 +461,11 @@ def observe(trace_path: str, build_dir: "str | None" = None) -> Report:
 class _Model:
     """One container-image walk of one file, with its entry points.
 
-    The model tiles a record by walking it from offset 0.  This adds the two
-    things the engine does that such a walk does not describe, and *only* those:
+    A thin reading of :func:`giten.script.image_walks`, which is where the walk
+    itself lives -- ``script.parse`` needs the same closure to recover the tokens
+    of an ``unreached`` record, and one copy of it is one thing that can be
+    wrong.  Two things the engine does that a walk from offset 0 does not
+    describe, and *only* those:
 
     * the walk of a record the tokenizer refuses is kept up to the byte it
       refused at (``vmops`` raises rather than resynchronising, so everything
@@ -532,8 +481,7 @@ class _Model:
 
     def __init__(self, sc):
         self.sc = sc
-        self._starts = {}
-        self._entries = {}
+        self._walks = {}
 
     def rec(self, ci, rec_id):
         out = None
@@ -543,116 +491,20 @@ class _Model:
         return out
 
     def _container(self, ci):
-        if ci in self._starts:
-            return
-        recs = self.sc.containers[ci]
-        byid = {}
-        for r in recs:
-            byid[r.id] = r              # last wins, as the loader does
-        image = records.runtime_image(recs)
-        off, bases = records.INDEX_SIZE, {}
-        for i in range(256):
-            bases[i] = off
-            r = byid.get(i)
-            off += len(r.data) if (r is not None and r.data) else 1
-        end = off
-        tab = vmops.table()
-
-        def owner(addr):
-            """(record id, base) of the record holding a runtime address."""
-            for i in range(255, -1, -1):
-                if bases[i] <= addr:
-                    r = byid.get(i)
-                    if r is None or not r.data:
-                        return None, None
-                    if addr < bases[i] + len(r.data):
-                        return i, bases[i]
-                    return None, None
-            return None, None
-
-        # Reachability closure over the container image, from the model alone:
-        # every record's own offset 0, then every address a walked token's
-        # `rel16` names, then every address a walk that straddles lands on.
-        # Each address is walked once; nothing here reads the trace.
-        starts = {i: set() for i in byid}
-        entries = {i: set() for i in byid}
-        seeds = [(bases[i], True) for i in sorted(byid) if byid[i].data]
-        done = set()
-        while seeds:
-            addr, own = seeds.pop()
-            if addr in done or not (records.INDEX_SIZE <= addr < end):
-                continue
-            done.add(addr)
-            rid, base = owner(addr)
-            if rid is None:
-                continue
-            length = len(byid[rid].data) - (addr - base)
-            toks, stopped = _walk(image, addr - records.INDEX_SIZE, length, tab)
-            bag = starts[rid] if own else entries[rid]
-            bag.add(addr - base)
-            for t in toks:
-                bag.add(addr - base + t.off)
-            if stopped is not None:
-                bag.add(addr - base + stopped)
-            else:
-                # the walk ran to (or past) the record's end: where it lands is
-                # the next address the engine fetches from
-                spent = sum(t.size for t in toks)
-                if spent > length:
-                    seeds.append((addr + spent, False))
-            for t in toks:
-                for op in t.ops:
-                    if op.kind == "rel16":
-                        # token offsets are relative to this walk's origin, so
-                        # the displacement is measured from `addr`, not `base`
-                        seeds.append((vmops.rel16_target(addr, t, op), False))
-        for i in starts:
-            entries[i] -= starts[i]
-        self._starts[ci] = starts
-        self._entries[ci] = entries
+        if ci not in self._walks:
+            self._walks[ci] = script.image_walks(self.sc.containers[ci])
+        return self._walks[ci]
 
     def starts(self, ci, rec_id) -> "set[int]":
-        self._container(ci)
-        return self._starts[ci].get(rec_id, set())
+        return self._container(ci).own_bounds.get(rec_id, set())
 
     def entry_starts(self, ci, rec_id) -> "set[int]":
-        self._container(ci)
-        return self._entries[ci].get(rec_id, set())
+        return self._container(ci).entered_bounds.get(rec_id, set())
 
 
-def _walk(image: bytes, start: int, length: int, tab):
-    """``(tokens, stopped_at)`` -- ``tokenize_record`` that keeps a partial walk.
-
-    ``stopped_at`` is ``None`` when the record tiled and the record-relative
-    offset the tokenizer refused at otherwise.  It is deliberately *not* a
-    resynchronising walk: it is the same walk, reported up to the byte it gave
-    up on, which is the only thing that can be compared with a program counter.
-    """
-    data = image[start:]
-    out, i, n = [], 0, len(data)
-    while i < length:
-        if i >= n:
-            return out, i
-        b = data[i]
-        try:
-            if b >= 0x20:
-                size = 2 if (vmops.is_sjis_lead(b) and i + 1 < length) else 1
-                out.append(vmops.Token("text", i, size))
-                i += size
-                continue
-            if b in vmops.ESCAPE:
-                if i + 1 >= n:
-                    return out, i
-                idx = vmops.ESCAPE[b] + data[i + 1]
-                head = 2
-            else:
-                idx, head = b, 1
-            j, ops = vmops._read_operands(data, i + head, tab.operands(idx), tab)
-            out.append(vmops.Token("op", i, j - i, idx, tuple(ops)))
-            i = j
-        except vmops.TileError:
-            return out, i
-    return out, None
+#: The partial walk lives in :mod:`giten.script` now; kept as a name because
+#: ``tests/test_tile.py`` reads the failure offset out of it directly.
+_walk = script.walk_from
 
 
 def observe_report(rep: Report, verbose: bool = True) -> str:

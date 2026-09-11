@@ -44,7 +44,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from . import codec, container, records, vmops
+from . import codec, container, observed, records, vmops
 
 #: Tags whose span is a menu option and is measured against the menu's declared
 #: per-option width rather than the message-box line budget.
@@ -81,9 +81,19 @@ DUPID_NOTE = "@dupid"
 #: past the end of such a container and what it finds there is garbage either
 #: way.  ``m/MS600A`` and ``m/MS610B`` between them hold 318 finished lines.
 PARTIAL_NOTE = "@partial"
-#: a record that only tiles up to a point; its verified spans may be overlaid but
-#: it must never be byte-rebuilt (see giten/partial.py)
+#: **Retired 2026-09-11.**  A record that only tiled up to a point, whose
+#: verified spans could still be overlaid (``giten/partial.py``).  Its one
+#: worked example, ``m/MS0080``, tiles completely since the tokenizer started
+#: walking the container image, so nothing sets this any more.  The constant
+#: stays so a note written by an older extract is still recognised as generated
+#: and dropped rather than carried forward for ever.
 PREFIX_NOTE = "@prefix"
+
+#: Opening of every reason a record is kept out of the overlay.  One prefix, so
+#: :mod:`.extract_v2` can recognise the note as generated, :func:`.overlay.plan`
+#: can report the same sentence as its finding, and ``check``'s ``editable`` rule
+#: and the overlay cannot drift apart.
+NO_OVERLAY_PREFIX = "not served: "
 
 #: a record that tiles completely except for its final token, which continues
 #: into the next record.  Legal for the engine -- records are contiguous at
@@ -133,10 +143,17 @@ class Rec:
     blocked: "str | None" = None
     #: advisory markers that do *not* stop an edit (currently ``@partial``)
     flags: "list[str]" = field(default_factory=list)
-    #: for a prefix-tiled record: how many bytes the walk got through
-    tiled_bytes: "int | None" = None
-    #: how many of its spans the safety kernel refused
-    rejected_spans: int = 0
+    #: Why the overlay must never serve this record, or ``None``.  Always opens
+    #: with :data:`NO_OVERLAY_PREFIX`; see :func:`_mark_overlay_refusals`.
+    no_overlay: "str | None" = None
+    #: For a record the walk cannot finish but whose *code* is known anyway
+    #: (:data:`observed.UNREACHED_RECORDS`): every token the model can prove,
+    #: from the walk to the failure point and from every address the container's
+    #: own ``rel16`` operands and straddles name.  Not a linear tiling -- these
+    #: come from several walks at different phases -- so no span is derived from
+    #: them; they exist so the record's branch targets are in the container's
+    #: target set and the strict rule needs no exception.
+    known_tokens: "list | None" = None
     #: an earlier copy of a record id this container repeats.  The loader
     #: installs each copy in turn, so only the last is in the runtime image;
     #: this one is never executed, never branched to and never served, and its
@@ -154,8 +171,17 @@ class Rec:
 
     @property
     def span_tokens(self):
-        """Kept as a name: for two years this differed from :attr:`tokens`."""
-        return self.tokens
+        """Every token this record is known to hold.
+
+        :attr:`tokens` when the walk finished -- which is every record except
+        the eight the census calls ``dead`` and ``unreached`` -- and, for an
+        ``unreached`` one, :attr:`known_tokens`: the tokens the model can prove
+        without claiming to have tiled the record.  Spans are never derived from
+        those (they are not one linear walk), but their ``rel16`` operands are
+        real branch targets and the container's target set would be incomplete
+        without them.
+        """
+        return self.tokens if self.tokens is not None else self.known_tokens
 
     @property
     def key(self) -> str:
@@ -284,6 +310,142 @@ def find_spans(ci: int, rec_id: int, data: bytes, toks) -> "list[Span]":
     return out
 
 
+# --- what the model can prove about a container -----------------------------
+def walk_from(image: bytes, start: int, length: int, tab) -> "tuple[list, int | None]":
+    """``(tokens, stopped_at)`` -- :func:`vmops.tokenize_record` keeping a partial walk.
+
+    ``stopped_at`` is ``None`` when the walk reached ``length`` and the offset it
+    refused at otherwise.  Deliberately *not* a resynchronising walk: it is the
+    same walk, reported up to the byte it gave up on, which is the only thing
+    that can be compared with a program counter.
+    """
+    data = image[start:]
+    out, i, n = [], 0, len(data)
+    while i < length:
+        if i >= n:
+            return out, i
+        b = data[i]
+        try:
+            if b >= 0x20:
+                size = 2 if (vmops.is_sjis_lead(b) and i + 1 < length) else 1
+                out.append(vmops.Token("text", i, size))
+                i += size
+                continue
+            if b in vmops.ESCAPE:
+                if i + 1 >= n:
+                    return out, i
+                idx = vmops.ESCAPE[b] + data[i + 1]
+                head = 2
+            else:
+                idx, head = b, 1
+            j, ops = vmops._read_operands(data, i + head, tab.operands(idx), tab)
+            out.append(vmops.Token("op", i, j - i, idx, tuple(ops)))
+            i = j
+        except vmops.TileError:
+            return out, i
+    return out, None
+
+
+@dataclass
+class Walks:
+    """Every address of one container the model can reach from the model alone.
+
+    ``own`` is what walking each record from its own first byte produces;
+    ``entered`` is what walking from every *other* address the container's own
+    decoding names produces -- each ``rel16`` target, and the landing point of a
+    token that straddles into the next record.  Both are
+    ``{record id: {record-relative offset: Token}}``, with ``*_bounds`` carrying
+    the same offsets plus the two things that are boundaries without being
+    tokens: the address a walk was entered at, and the offset a walk gave up on.
+
+    Nothing here reads a trace.  Every seed comes out of the model's own
+    decoding of the container image, so a mistiled record cannot manufacture an
+    entry point to excuse itself with.
+    """
+    own: dict = field(default_factory=dict)
+    entered: dict = field(default_factory=dict)
+    own_bounds: dict = field(default_factory=dict)
+    entered_bounds: dict = field(default_factory=dict)
+
+    def tokens(self, rec_id: int) -> list:
+        """Every token proved for one record, in offset order, de-duplicated.
+
+        Two walks that reach the same address decode the same bytes, so a
+        repeated offset is the same token and keeping either is the same thing.
+        """
+        merged = dict(self.own.get(rec_id, {}))
+        merged.update(self.entered.get(rec_id, {}))
+        return [merged[k] for k in sorted(merged)]
+
+
+def image_walks(recs, tab=None) -> Walks:
+    """Walk one container's runtime image from every address the model names."""
+    tab = tab or vmops.table()
+    byid = {}
+    for r in recs:
+        byid[r.id] = r                      # last wins, as the loader does
+    image = records.runtime_image(recs)
+    bases = records.bases(recs)
+    end = bases[255] + (len(byid[255].data) if byid.get(255) is not None
+                        and byid[255].data else records.ABSENT_LEN)
+
+    def owner(addr):
+        """``(record id, base)`` of the record holding a runtime address."""
+        for i in range(255, -1, -1):
+            if bases[i] <= addr:
+                r = byid.get(i)
+                if r is None or not r.data:
+                    return None, None
+                if addr < bases[i] + len(r.data):
+                    return i, bases[i]
+                return None, None
+        return None, None
+
+    w = Walks({i: {} for i in byid}, {i: {} for i in byid},
+              {i: set() for i in byid}, {i: set() for i in byid})
+    seeds = [(bases[i], True) for i in sorted(byid) if byid[i].data]
+    done = set()
+    while seeds:
+        addr, own = seeds.pop()
+        if addr in done or not (records.INDEX_SIZE <= addr < end):
+            continue
+        done.add(addr)
+        rid, base = owner(addr)
+        if rid is None:
+            continue
+        length = len(byid[rid].data) - (addr - base)
+        toks, stopped = walk_from(image, addr - records.INDEX_SIZE, length, tab)
+        bag = w.own[rid] if own else w.entered[rid]
+        bounds = w.own_bounds[rid] if own else w.entered_bounds[rid]
+        bounds.add(addr - base)
+        for t in toks:
+            at = addr - base + t.off
+            bounds.add(at)
+            # the token's own offsets are relative to this walk's origin; hold
+            # it in the record's coordinates so several walks can be merged
+            bag[at] = vmops.Token(t.kind, at, t.size, t.idx,
+                                  tuple(vmops.Operand(o.kind, o.off + addr - base,
+                                                      o.size, o.raw)
+                                        for o in t.ops))
+        if stopped is not None:
+            bounds.add(addr - base + stopped)
+        else:
+            # the walk ran to (or past) the record's end: where it lands is the
+            # next address the engine fetches from
+            spent = sum(t.size for t in toks)
+            if spent > length:
+                seeds.append((addr + spent, False))
+        for t in toks:
+            for op in t.ops:
+                if op.kind == "rel16":
+                    # token offsets are relative to this walk's origin, so the
+                    # displacement is measured from `addr`, not `base`
+                    seeds.append((vmops.rel16_target(addr, t, op), False))
+    for i in w.own_bounds:
+        w.entered_bounds[i] -= w.own_bounds[i]
+    return w
+
+
 # --- parse ------------------------------------------------------------------
 def parse(rel: str, raw: bytes, tab=None) -> Script:
     """Decode, frame and tile one ``.BIN``."""
@@ -351,30 +513,15 @@ def parse(rel: str, raw: bytes, tab=None) -> Script:
                     toks, extra = vmops.tokenize_record(
                         image_for, start, len(r.data), tab)
                 except vmops.TileError as exc:
+                    # The record is not tiled, and nothing here pretends
+                    # otherwise: no span is derived from a partial walk, and the
+                    # record is refused by the byte builder and by the overlay
+                    # alike.  What the walk *did* reach is recovered below, per
+                    # container, and only for the records the engine has already
+                    # answered for (`observed.UNREACHED_RECORDS`) -- as
+                    # `known_tokens`, which carries branch targets and nothing
+                    # else.
                     rec.tile_error = str(exc)
-                    from . import partial
-                    # Opt-in per file: keep the tokens the walk did produce, and
-                    # expose only the spans that pass the safety kernel.  The
-                    # record stays `blocked` below -- _rebuild_record works from
-                    # rec.tokens, so byte-building one of these would drop
-                    # everything past the failure point.  The overlay does not
-                    # rebuild anything, which is why it can serve them.
-                    # Prefix tiling still wins where a file opts into it.  It is
-                    # the older, tested path (m/MS0080 is its worked example and
-                    # tests/test_partial.py proves the whole overlay round-trip on
-                    # it); letting @straddle preempt it renumbered that file's
-                    # spans and stranded rows.  Straddle covers everywhere else.
-                    if rec.tokens is None and rel in partial.PREFIX_TILE_FILES:
-                        toks, ok = partial.tokenize_prefix(r.data, tab)
-                        keep, _ok, rejected = partial.safe_spans(
-                            rel, c.index, r.id, r.data, tab)
-                        if keep:
-                            rec.tokens = toks
-                            rec.spans = keep
-                            rec.tiled_bytes = ok
-                            rec.rejected_spans = len(rejected)
-                            rec.blocked = PREFIX_NOTE
-
                 else:
                     rec.tokens = toks
                     rec.straddle = extra
@@ -393,6 +540,20 @@ def parse(rel: str, raw: bytes, tab=None) -> Script:
                 rec.tokens = []
             rows.append(rec)
             body_off += r.stored_len
+        # A record the walk cannot finish still has known code when the engine
+        # has said so: `unreached` means every program counter observed inside it
+        # is reproduced by the model and the failure offset is not one of them
+        # (`giten/observed.py`, re-checked by tests/test_tile.py).  Recover those
+        # tokens so the container's branch targets are complete.  Computed only
+        # when there is such a record -- five containers corpus-wide -- because
+        # the closure re-walks the image from every address it names.
+        if any((rel, c.index, rec.id) in observed.UNREACHED_RECORDS
+               for rec in rows if rec.tokens is None and rec.data):
+            walks = image_walks(recs, tab)
+            for rec in rows:
+                if (rec.tokens is None and rec.data
+                        and (rel, c.index, rec.id) in observed.UNREACHED_RECORDS):
+                    rec.known_tokens = walks.tokens(rec.id)
         if len(seen) != len(recs):
             # Two records with the same id in one container: the runtime index
             # has one slot per id, so one of them is what the loader keeps and
@@ -418,7 +579,71 @@ def parse(rel: str, raw: bytes, tab=None) -> Script:
         for rec in rows:
             if rec.untiled and rec.data and rec.blocked is None:
                 rec.blocked = UNTILED_NOTE
-    return Script(rel, raw, True, None, out_conts, cont_offsets, dups, cont_bodies)
+    sc = Script(rel, raw, True, None, out_conts, cont_offsets, dups, cont_bodies)
+    _mark_overlay_refusals(rel, sc)
+    return sc
+
+
+def _mark_overlay_refusals(rel: str, sc: Script) -> None:
+    """Fill :attr:`Rec.no_overlay` -- the strict rule, in one place.
+
+    The overlay serves a span only when the whole container it lives in can be
+    proved safe, because what makes a served byte wrong is not the span, it is a
+    branch elsewhere in the container landing inside it.  Four refusals:
+
+    * **a file the script loader never opens** (``giten.loaders.DATA_FILES``).
+      Its records are not code; nothing in them is ever fetched.
+    * **a file nothing enters** (``observed.UNUSED_FILES``).  Reachable by the
+      loader, entered by nothing -- ``m/MS0080``'s five shop records, each warped
+      to and each terminating after two tokens without drawing.
+    * **the losing copy of a repeated record id.**  Overwritten on load, so it is
+      never in a buffer and no address in it can be reached.
+    * **a record the model cannot walk**, and, with it, **every record of its
+      container**: if one record's tokens are unknown then so are its branches,
+      and a jump out of it could land inside English somewhere else in the same
+      image.  ``dead`` records are the one exception and it is not a loophole --
+      a warp put the interpreter on the record's first byte and the process died
+      there, so those bytes hold no branch that ever runs.  An ``unreached``
+      record is not in this class at all: it carries :attr:`Rec.known_tokens`,
+      so its targets *are* known and only the record itself is refused.
+    """
+    from . import loaders
+    if rel in loaders.DATA_FILES:
+        why = (NO_OVERLAY_PREFIX + "no code path in the game opens %s, so its "
+               "records are never handed to the interpreter (giten/loaders.py)"
+               % rel)
+        for rec in sc.iter_records():
+            rec.no_overlay = why
+        return
+    unused = observed.UNUSED_FILES.get(rel)
+    if unused:
+        why = NO_OVERLAY_PREFIX + unused
+        for rec in sc.iter_records():
+            rec.no_overlay = why
+        return
+    for ci, cont in enumerate(sc.containers):
+        unknown = next((r for r in cont
+                        if r.data and r.span_tokens is None
+                        and (rel, ci, r.id) not in observed.DEAD_RECORDS), None)
+        why_container = None
+        if unknown is not None:
+            why_container = (
+                NO_OVERLAY_PREFIX + "this container holds record %02X, which the "
+                "model cannot walk (%s), so not every branch target in it is "
+                "known and a jump could land inside a served span"
+                % (unknown.id, (unknown.tile_error or "no tokens").replace("; ", ", ")))
+        for rec in cont:
+            if rec.dup_loser:
+                rec.no_overlay = (
+                    NO_OVERLAY_PREFIX + "this container installs record %02X "
+                    "twice and the loader keeps the last copy, so these bytes "
+                    "are never in any buffer" % rec.id)
+            elif rec.data and rec.tokens is None:
+                rec.no_overlay = (
+                    NO_OVERLAY_PREFIX + "the record does not tile (%s)"
+                    % (rec.tile_error or "no tokens").replace("; ", ", "))
+            elif why_container is not None:
+                rec.no_overlay = why_container
 
 
 def span_text(rec: Rec, sp: Span) -> str:
@@ -650,13 +875,21 @@ def _is_branch(tok) -> bool:
 
 
 def _branch_targets(recs, old_base) -> "set[int]":
-    """Every runtime offset some ``rel16`` in this container jumps to."""
+    """Every runtime offset some ``rel16`` in this container jumps to.
+
+    ``span_tokens``, not ``tokens``: a straddling record's tokens are ordinary
+    tokens and its branches are ordinary branches, and an ``unreached`` record
+    contributes the tokens the model can prove for it (:attr:`Rec.known_tokens`).
+    Both matter to the two callers for the same reason -- the byte builder must
+    not move a byte a branch lands on, and the overlay must not answer one.
+    """
     out = set()
     for r in recs:
-        if r.untiled or not r.tokens:
+        toks = r.span_tokens
+        if not toks:
             continue
         base = old_base[r.id]
-        for tok in r.tokens:
+        for tok in toks:
             for op in tok.ops:
                 if op.kind == "rel16":
                     out.add(vmops.rel16_target(base, tok, op))

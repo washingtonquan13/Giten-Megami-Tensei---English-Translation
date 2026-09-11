@@ -9,6 +9,7 @@ happily emit.
 from __future__ import annotations
 
 import glob
+import io
 import os
 import sys
 
@@ -135,10 +136,61 @@ def test_the_trailer_is_never_served():
             assert sp.end <= foot_at, (rec_id, sp.off, sp.end, foot_at)
 
 
-def test_prefix_tiling_is_opt_in_per_file():
-    assert SHOPS in partial.PREFIX_TILE_FILES
-    assert len(partial.PREFIX_TILE_FILES) == 1, \
-        "widen this only after the added file has been play-tested"
+def test_prefix_tiling_is_retired_and_nothing_opts_into_it():
+    """The opt-in list is gone, and so is the branch that read it.
+
+    ``m/MS0080`` was the only file on it, and it tiles completely since the
+    tokenizer started walking the container image: the six-byte trailer that
+    defeated a record-in-isolation walk reads its last byte out of the record
+    with the next id, like any other straddling token.  So there is nothing left
+    for the prefix path to do, and `script.parse` no longer has a branch that
+    calls it.
+
+    The kernel below is kept on purpose -- it is the written form of the safety
+    condition and the tests above still exercise all three of its checks -- so
+    this asserts the *wiring* is gone, not the module.
+    """
+    from giten import script
+    assert not hasattr(partial, "PREFIX_TILE_FILES")
+    assert partial.PREFIX_TILING_RETIRED
+    src = io.open(script.__file__, encoding="utf-8").read()
+    assert "PREFIX_TILE_FILES" not in src, "script.parse still opts files in"
+    sc = script.parse(SHOPS, files.read_source(SHOPS))
+    for rec in sc.iter_records():
+        assert rec.blocked != script.PREFIX_NOTE, rec.key
+        if rec.data:
+            assert rec.tokens is not None, rec.key
+
+
+def test_the_five_shop_records_are_never_served():
+    """The strict rule, on the file it actually costs something.
+
+    `m/MS0080` tiles, so nothing about the model refuses it.  What refuses it is
+    the engine: each of the five records was warped to and dispatched exactly two
+    tokens -- the `1F 00` no-op and the `02 1F` pool call at 0x0002, whose return
+    lands on the `00` terminator at 0x0004 -- and drew nothing, five times out of
+    five, while three independent searches found nothing in the game that names
+    file 0x80 at all.  The shop dialogue at 0x0009 is never reached.
+
+    So the overlay does not serve it, and says so per row rather than silently.
+    Ten of the twenty rows carry English; all ten are for a screen no session can
+    reach, which is the whole of what the rule costs on this corpus.
+    """
+    from giten import extract_v2, overlay, paths, pool
+
+    rows = extract_v2.rows_for(SHOPS, files.read_source(SHOPS),
+                               pool.load(paths.ORIGINAL_DDSWIN))
+    assert len(rows) == 20, len(rows)
+    assert all("@noedit" in r.note for r in rows),         [r.rec for r in rows if "@noedit" not in r.note]
+    for i, r in enumerate(rows):
+        # every row, not just the blank ones: half of them are pre-filled with
+        # their own Japanese, which is not an edit and would not be planned
+        r.en = "English placeholder %d" % i
+    entries, findings = overlay.plan(rows, paths.ORIGINAL_DDSWIN)
+    assert not entries, "a record nothing enters was planned into the overlay"
+    assert len(findings) == 20, len(findings)
+    for _where, why in findings:
+        assert "nothing enters this file" in why, why
 
 
 def test_serving_english_never_changes_a_byte_outside_a_span():
@@ -146,43 +198,35 @@ def test_serving_english_never_changes_a_byte_outside_a_span():
 
     Stated exactly: outside the served ranges the hook must return the original
     image byte.  Inline ops *inside* a span (pool calls, newlines) are span
-    content and may differ -- the English for r03 drops two {08:25} calls.  What
-    may never change is a byte the interpreter dispatches as structure, and in
-    particular the six-byte trailer that defeats the tokenizer.
+    content and may differ.  What may never change is a byte the interpreter
+    dispatches as structure.
+
+    Run on `m/MS0017`, an ordinary served file.  It used to run on `m/MS0080`,
+    which was the worked example for prefix tiling; that file is not served at
+    all now (nothing enters it), so the proof moved to a file where it is about
+    something that ships.
     """
-    from giten import extract_v2, overlay, paths, pool, records
+    from giten import codec, extract_v2, overlay, paths, pool, records
 
-    rows = extract_v2.rows_for(SHOPS, files.read_source(SHOPS),
+    rel = "m/MS0017.BIN"
+    rows = extract_v2.rows_for(rel, files.read_source(rel),
                                pool.load(paths.ORIGINAL_DDSWIN))
-    # 20 since 2026-09-11: m/MS0080's records tile completely now, so the two
-    # spans per record that the prefix walk's safety kernel used to reject --
-    # the `02 1F` and `01 1F` of the nine-byte head, read as pool calls -- are
-    # ordinary spans.  Whether that reading is right is what the MS0080 warp
-    # trees exist to settle.  This test fills EVERY row with English, so it now
-    # proves the stronger statement: even serving those two, no byte outside a
-    # span changes and nothing reaches the trailer.
-    assert len(rows) == 20, len(rows)
     for r in rows:
-        if not r.en:
-            r.en = "English placeholder"
+        # plain ASCII, and only where the Japanese holds no 0xFF (which the
+        # overlay counts) -- the point here is the bytes outside the spans
+        if not codec.has_japanese(r.jp) or "{" in r.jp:
+            continue
+        r.en = "English line %d" % r.idx
     entries, findings = overlay.plan(rows, paths.ORIGINAL_DDSWIN)
-    assert not findings, findings
-    assert entries
+    assert entries and not findings, findings[:3]
 
-    sc = script.parse(SHOPS, files.read_source(SHOPS))
+    sc = script.parse(rel, files.read_source(rel))
     cont = sc.containers[0]
     rr = [records.Record(r.id, r.data) for r in cont]
     base = records.bases(rr)
-    image = bytearray(0x10000)
-    idx = overlay.engine_index(rr)
-    image[:len(idx)] = idx
-    for r in cont:
-        image[base[r.id]:base[r.id] + len(r.data)] = r.data
-    image = bytes(image)
+    image = overlay.image_bytes(rr)
 
     hook = overlay.Model(entries, image)
-    # v6 addresses a span inside its record, so the real address is whatever the
-    # running buffer's index puts that record at plus the span's offset.
     table = sorted(entries, key=lambda e: e.key)
     served, ends = [], []
     for r in cont:
@@ -194,24 +238,17 @@ def test_serving_english_never_changes_a_byte_outside_a_span():
             served.append((lo_, lo_ + s.served))
             ends.append(lo_ + s.jp_len)
     assert served
-    FOOT = bytes.fromhex("1f0010010100")
 
     checked = 0
     for r in cont:
         if not r.data:
             continue
         lo, hi = base[r.id], base[r.id] + len(r.data)
-        foot_at = hi - len(FOOT)
-        # no span may reach into the trailer
-        assert not [1 for a, b in served if a < hi and b > foot_at], \
-            "a span overlaps the trailer of record 0x%02X" % r.id
         for pc in range(lo, hi):
             if any(a <= pc < b for a, b in served):
                 continue
             got, _nxt = hook.fetch(pc)
-            assert got == image[pc], \
-                "pc 0x%04X outside every span served %02X, image has %02X" \
-                % (pc, got, image[pc])
+            assert got == image[pc],                 "pc 0x%04X outside every span served %02X, image has %02X"                 % (pc, got, image[pc])
             checked += 1
     assert checked > 50, checked
 

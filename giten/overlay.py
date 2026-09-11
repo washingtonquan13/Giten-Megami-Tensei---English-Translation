@@ -405,6 +405,18 @@ def plan(rows, root=None):
             for rec in cont:
                 keep[rec.id] = rec
             for rec in keep.values():
+                if rec.no_overlay:
+                    # The strict rule, decided once in `script._mark_overlay_
+                    # refusals` so `check`'s `editable` rule, the table notes and
+                    # this cannot drift apart.  A finding, never a silent skip:
+                    # a row that cannot be served has to say so where somebody
+                    # reads it.
+                    for sp in rec.spans:
+                        row = keyed.get((ci, rec.id, sp.idx))
+                        if row is not None:
+                            findings.append(("%s %s[%d]" % (rel, row.rec, row.idx),
+                                             rec.no_overlay))
+                    continue
                 # ``span_tokens``, not ``tokens``: a straddling record is untiled
                 # for the byte builder but its spans are complete, and the overlay
                 # rebuilds nothing, so it can serve them.

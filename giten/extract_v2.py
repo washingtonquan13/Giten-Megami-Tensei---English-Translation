@@ -63,6 +63,7 @@ _GENERATED_NOTE_PREFIXES = (
     "two records share this id",
     "this container installs record",
     "record reaches an engine no-op",
+    script.NO_OVERLAY_PREFIX,
     "reads: ",
     "menu option, declared width",
     "fixed ",
@@ -137,25 +138,14 @@ def script_rows(rel: str, sc: script.Script, pools) -> "list[tables.Row]":
         for sp in rec.spans:
             jp = script.span_text(rec, sp)
             notes = []
-            if rec.dup_loser:
-                # Never in the runtime image, so never executed, never branched
-                # to and never served.  Kept readable, keyed apart, not editable.
+            if rec.no_overlay:
+                # The overlay will refuse this row, so the table has to say so:
+                # `check`'s `editable` rule keys on @noedit, and a row nobody can
+                # serve must not look translatable.  One predicate
+                # (`script._mark_overlay_refusals`), so the two cannot disagree.
                 notes.append(script.NOEDIT_NOTE)
-                notes.append("this container installs record %02X twice and the "
-                             "loader keeps the last copy; these are the bytes of "
-                             "the earlier one, which is never in the image"
-                             % rec.id)
-            if rec.blocked == script.PREFIX_NOTE:
-                # Deliberately NOT @noedit: the span is verified safe to overlay
-                # (giten/partial.py), so it should be translated and width-checked
-                # like any other.  The byte builder refuses it via ``rec.blocked``,
-                # not via this note.
-                notes.append(script.PREFIX_NOTE)
-                notes.append("record tiles only to byte %d of %d; this span is "
-                             "verified in-bounds for the overlay, but the record "
-                             "must never be byte-rebuilt"
-                             % (rec.tiled_bytes, len(rec.data)))
-            elif rec.blocked == script.STRADDLE_NOTE:
+                notes.append(rec.no_overlay)
+            if rec.blocked == script.STRADDLE_NOTE:
                 # Also deliberately NOT @noedit.  The record tiles *completely*;
                 # only its last token continues into the next record, which the
                 # engine does legally (contiguous records, unbounded byte fetch).
@@ -168,7 +158,8 @@ def script_rows(rel: str, sc: script.Script, pools) -> "list[tables.Row]":
                              "the record must never be byte-rebuilt"
                              % rec.straddle)
             elif rec.blocked:
-                notes.append(script.NOEDIT_NOTE)
+                if script.NOEDIT_NOTE not in notes:
+                    notes.append(script.NOEDIT_NOTE)
                 notes.append(rec.blocked)
                 notes.append("record is not editable; copied verbatim")
             for f in rec.flags:

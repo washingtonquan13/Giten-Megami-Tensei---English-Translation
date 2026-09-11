@@ -3,65 +3,59 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS6F1F.BIN	0:01	0	0	UNTILED	 / ! / I /  /  /  /  /  /  / 2 / , /  / ) /  / ) / 2 /  /  /   /  /  / ) / ) / ! / )	 / ! / I /  /  /  /  /  /  / 2 / , /  / ) /  / ) / 2 /  /  /   /  /  / ) / ) / ! / )				@noedit; @untiled; record does not tile (switch entry at 0x31 has kind 31 (not 0 or 1)); read-only, copied verbatim; read-only, copied verbatim @rebase-new
-m/MS6F1F.BIN	0:02	0	24	00	 	 				
-m/MS6F1F.BIN	0:02	1	51	00	 P	 P				
-m/MS6F1F.BIN	0:02	2	55	00	-	-				
-m/MS6F1F.BIN	0:03	0	4	1F1F						@straddle; record's last token reads 2 byte(s) into the next record; spans are complete and overlay-safe, but the record must never be byte-rebuilt; copied verbatim; read-only, copied verbatim
-m/MS6F1F.BIN	0:04	0	0	UNTILED						@noedit; @untiled; record does not tile (expression node 0x0D payload past end); read-only, copied verbatim
-m/MS6F1F.BIN	0:05	0	14	00	 	 				@straddle; record's last token reads 2 byte(s) into the next record; spans are complete and overlay-safe, but the record must never be byte-rebuilt; copied verbatim
-m/MS6F1F.BIN	0:05	1	21	1F1F						@straddle; record's last token reads 2 byte(s) into the next record; spans are complete and overlay-safe, but the record must never be byte-rebuilt; copied verbatim
-m/MS6F1F.BIN	0:06	0	17	1F09	{07:1F})	{07:1F})				reads: 暴れ出した！)
-m/MS6F1F.BIN	0:09	0	0	UNTILED	' / 					@noedit; @untiled; record does not tile (expression node 0x0C payload past end); read-only, copied verbatim
-m/MS6F1F.BIN	0:0A	0	4	1F20	#	#				@straddle; record's last token reads 2 byte(s) into the next record; spans are complete and overlay-safe, but the record must never be byte-rebuilt; copied verbatim
-m/MS6F1F.BIN	0:0A	1	6	00	-A	-A				@straddle; record's last token reads 2 byte(s) into the next record; spans are complete and overlay-safe, but the record must never be byte-rebuilt; copied verbatim
-m/MS6F1F.BIN	0:0A	2	10	00	,	,				@straddle; record's last token reads 2 byte(s) into the next record; spans are complete and overlay-safe, but the record must never be byte-rebuilt; copied verbatim
-m/MS6F1F.BIN	0:0C	0	14	1F20	'	'				
-m/MS6F1F.BIN	0:0E	0	0	UNTILED	 /  /  / * / , / * /  /  /  /  /   / 					@noedit; @untiled; record does not tile (expression node 0x0D payload past end); read-only, copied verbatim
-m/MS6F1F.BIN	0:0F	0	4	1F20	*	*				
-m/MS6F1F.BIN	0:10	0	0	UNTILED	$ /  /  /  / & /  / # /  / F /  /  / / / '					@noedit; @untiled; record does not tile (expression node 0x02 payload past end); read-only, copied verbatim
-m/MS6F1F.BIN	0:11	0	28	1F1F	(	(				
-m/MS6F1F.BIN	0:11	1	30	00	0A	0A				
-m/MS6F1F.BIN	0:11	2	34	00	1	1				
-m/MS6F1F.BIN	0:11	3	41	1F20	"	"				
-m/MS6F1F.BIN	0:13	0	22	00	0F	0F				
-m/MS6F1F.BIN	0:13	1	26	00	1	1				
-m/MS6F1F.BIN	0:13	2	45	00	-A	-A				
-m/MS6F1F.BIN	0:13	3	49	00	 	 				
-m/MS6F1F.BIN	0:13	4	73	1F20	"	"				
-m/MS6F1F.BIN	0:14	0	11	1F20	"	"				
-m/MS6F1F.BIN	0:15	0	0	UNTILED	' /  /  /  /  / 					@noedit; @untiled; record does not tile (expression node 0x0D payload past end); read-only, copied verbatim
-m/MS6F1F.BIN	0:16	0	4	1F20	\<	\<				
-m/MS6F1F.BIN	0:16	1	6	00	-Z	-Z				
-m/MS6F1F.BIN	0:16	2	10	00	,	,				
-m/MS6F1F.BIN	0:17	0	6	1E00	-2	-2				
-m/MS6F1F.BIN	0:17	1	10	00	,\<	,\<				
-m/MS6F1F.BIN	0:17	2	14	00	1	1				
-m/MS6F1F.BIN	0:17	3	25	1F20	"	"				
-m/MS6F1F.BIN	0:17	4	34	1F1F	\n	\n				
-m/MS6F1F.BIN	0:19	0	7	1F0A	)	)				
-m/MS6F1F.BIN	0:19	1	15	1F0C	{06:0C})	{06:0C})				reads: )
-m/MS6F1F.BIN	0:19	2	23	1F20	K	K				
-m/MS6F1F.BIN	0:19	3	25	00	-	-				
-m/MS6F1F.BIN	0:1A	0	4	1F20	)	)				
-m/MS6F1F.BIN	0:1B	0	0	UNTILED	 / < /  /  /  / 					@noedit; @untiled; record does not tile (unterminated pairs_ff at 0x1A); read-only, copied verbatim
-m/MS6F1F.BIN	0:1C	0	4	1F20	*	*				
-m/MS6F1F.BIN	0:20	0	4	1F20	"	"				
-m/MS6F1F.BIN	0:21	0	27	1F0A	{03:00}{03:1F})	{03:00}{03:1F})				reads: 飛び道具)
-m/MS6F1F.BIN	0:22	0	9	1F08	{07:04}	{07:04}				reads: ＞攻撃しますか？
-m/MS6F1F.BIN	0:22	1	12	00	{03:0C}#	{03:0C}#				reads: され#
-m/MS6F1F.BIN	0:23	0	4	1F1F	2	2				
-m/MS6F1F.BIN	0:23	1	6	00	+	+				
-m/MS6F1F.BIN	0:24	0	26	1F0B	{03:1F}!	{03:1F}!				reads: !
-m/MS6F1F.BIN	0:24	1	54	1F20	{06:00}	{06:00}				reads: 辞書５
-m/MS6F1F.BIN	0:24	2	61	0B	'	'				
-m/MS6F1F.BIN	0:24	3	66	1F1F	2	2				
-m/MS6F1F.BIN	0:24	4	68	00	0U	0U				
-m/MS6F1F.BIN	0:24	5	72	00	 	 				
-m/MS6F1F.BIN	0:24	6	79	1F20	+	+				
-m/MS6F1F.BIN	0:25	0	12	1F1F	2	2				
-m/MS6F1F.BIN	0:25	1	14	00	-	-				
-m/MS6F1F.BIN	0:25	2	24	1F0B	{03:0C}	{03:0C}				reads: され
-m/MS6F1F.BIN	0:26	0	35	1F20	'	'				
-m/MS6F1F.BIN	0:27	0	7	1F0B	(	(				
-m/MS6F1F.BIN	0:27	1	22	1F20	'	'				
+m/MS6F1F.BIN	0:01	0	0	UNTILED	 / ! / I /  /  /  /  /  /  / 2 / , /  / ) /  / ) / 2 /  /  /   /  /  / ) / ) / ! / )	 / ! / I /  /  /  /  /  /  / 2 / , /  / ) /  / ) / 2 /  /  /   /  /  / ) / ) / ! / )				@noedit; @untiled; record does not tile (switch entry at 0x31 has kind 31 (not 0 or 1)); read-only, copied verbatim
+m/MS6F1F.BIN	0:02	0	24	00	 	 				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:02	1	51	00	 P	 P				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:02	2	55	00	-	-				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:03	0	4	1F1F						@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py); @straddle; record's last token reads 2 byte(s) into the next record; spans are complete and overlay-safe, but the record must never be byte-rebuilt
+m/MS6F1F.BIN	0:05	0	14	00	 	 				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py); @straddle; record's last token reads 2 byte(s) into the next record; spans are complete and overlay-safe, but the record must never be byte-rebuilt
+m/MS6F1F.BIN	0:05	1	21	1F1F						@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py); @straddle; record's last token reads 2 byte(s) into the next record; spans are complete and overlay-safe, but the record must never be byte-rebuilt
+m/MS6F1F.BIN	0:06	0	17	1F09	{07:1F})	{07:1F})				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py); reads: 暴れ出した！)
+m/MS6F1F.BIN	0:0A	0	4	1F20	#	#				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py); @straddle; record's last token reads 2 byte(s) into the next record; spans are complete and overlay-safe, but the record must never be byte-rebuilt
+m/MS6F1F.BIN	0:0A	1	6	00	-A	-A				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py); @straddle; record's last token reads 2 byte(s) into the next record; spans are complete and overlay-safe, but the record must never be byte-rebuilt
+m/MS6F1F.BIN	0:0A	2	10	00	,	,				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py); @straddle; record's last token reads 2 byte(s) into the next record; spans are complete and overlay-safe, but the record must never be byte-rebuilt
+m/MS6F1F.BIN	0:0C	0	14	1F20	'	'				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:0F	0	4	1F20	*	*				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:11	0	28	1F1F	(	(				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:11	1	30	00	0A	0A				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:11	2	34	00	1	1				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:11	3	41	1F20	"	"				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:13	0	22	00	0F	0F				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:13	1	26	00	1	1				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:13	2	45	00	-A	-A				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:13	3	49	00	 	 				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:13	4	73	1F20	"	"				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:14	0	11	1F20	"	"				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:16	0	4	1F20	\<	\<				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:16	1	6	00	-Z	-Z				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:16	2	10	00	,	,				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:17	0	6	1E00	-2	-2				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:17	1	10	00	,\<	,\<				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:17	2	14	00	1	1				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:17	3	25	1F20	"	"				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:17	4	34	1F1F	\n	\n				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:19	0	7	1F0A	)	)				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:19	1	15	1F0C	{06:0C})	{06:0C})				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py); reads: )
+m/MS6F1F.BIN	0:19	2	23	1F20	K	K				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:19	3	25	00	-	-				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:1A	0	4	1F20	)	)				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:1C	0	4	1F20	*	*				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:20	0	4	1F20	"	"				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:21	0	27	1F0A	{03:00}{03:1F})	{03:00}{03:1F})				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py); reads: 飛び道具)
+m/MS6F1F.BIN	0:22	0	9	1F08	{07:04}	{07:04}				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py); reads: ＞攻撃しますか？
+m/MS6F1F.BIN	0:22	1	12	00	{03:0C}#	{03:0C}#				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py); reads: され#
+m/MS6F1F.BIN	0:23	0	4	1F1F	2	2				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:23	1	6	00	+	+				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:24	0	26	1F0B	{03:1F}!	{03:1F}!				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py); reads: !
+m/MS6F1F.BIN	0:24	1	54	1F20	{06:00}	{06:00}				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py); reads: 辞書５
+m/MS6F1F.BIN	0:24	2	61	0B	'	'				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:24	3	66	1F1F	2	2				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:24	4	68	00	0U	0U				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:24	5	72	00	 	 				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:24	6	79	1F20	+	+				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:25	0	12	1F1F	2	2				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:25	1	14	00	-	-				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:25	2	24	1F0B	{03:0C}	{03:0C}				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py); reads: され
+m/MS6F1F.BIN	0:26	0	35	1F20	'	'				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:27	0	7	1F0B	(	(				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)
+m/MS6F1F.BIN	0:27	1	22	1F20	'	'				@noedit; not served: no code path in the game opens m/MS6F1F.BIN, so its records are never handed to the interpreter (giten/loaders.py)

@@ -60,11 +60,24 @@ TEXT_INTRO_OPS = frozenset({
     0x212,      # 1E 12
 })
 
-#: Files where prefix tiling is permitted.  Opt-in per file, so a record is only
-#: exposed after its spans have been verified and the file play-tested.
-PREFIX_TILE_FILES = frozenset({
-    "m/MS0080.BIN",
-})
+#: **Retired 2026-09-11.**  ``PREFIX_TILE_FILES`` was the opt-in list: a file
+#: whose records the tokenizer could not finish, whose spans were exposed anyway
+#: once the kernel below had checked them one by one.  It held exactly one file,
+#: ``m/MS0080``, and that file tiles completely now -- the tokenizer walks the
+#: container image, so the six-byte trailer that used to defeat it reads its last
+#: byte out of the next record like any other straddling token.  Nothing calls
+#: :func:`safe_spans` from the pipeline any more.
+#:
+#: ``m/MS0080`` itself is not served, for a different and stronger reason:
+#: nothing enters it (``observed.UNUSED_FILES``).
+#:
+#: The kernel stays.  It is the written form of the safety condition -- a span
+#: may be served only when its start and end are genuine instruction boundaries,
+#: which is much weaker than "the record is understood" and is checkable -- and
+#: ``tests/test_partial.py`` still exercises all three checks.  A future file
+#: that needs it will need exactly this, and re-deriving it from the docstring
+#: would be worse than keeping it.
+PREFIX_TILING_RETIRED = "m/MS0080.BIN tiles completely; see observed.UNUSED_FILES"
 
 
 class UnsafeSpan(RuntimeError):
