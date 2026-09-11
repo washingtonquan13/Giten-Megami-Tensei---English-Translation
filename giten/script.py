@@ -122,6 +122,12 @@ class Span:
     #: would call it ``DATA`` and a menu option's second half would stop being a
     #: menu option.
     split_head: "int | None" = None
+    #: Was the run of inline tokens this span came from cut at all?  True on
+    #: every piece of a cut run, including the head, and including a run whose
+    #: other piece drew nothing and produced no span -- which is still a span
+    #: that got shorter, and still a table row whose old English was written for
+    #: more text than it now holds.
+    cut_run: bool = False
     #: A record-relative offset some ``rel16`` in this record jumps to that falls
     #: *inside* this span without being a token boundary.  The span cannot be
     #: split there -- there is no boundary to split on -- so the overlay refuses
@@ -314,13 +320,13 @@ def find_spans(ci: int, rec_id: int, data: bytes, toks, cuts=()) -> "list[Span]"
     def inline(t):
         return _inline(t) and t.end <= limit
 
-    def emit(a, b, tag, width, head):
+    def emit(a, b, tag, width, head, cut):
         """One piece of a run, if it draws.  Returns its ``idx`` or None."""
         if not (any(_draws(toks[k]) for k in range(a, b))
                 and _visible(data, toks, a, b)):
             return None
         sp = Span(ci, rec_id, len(out), a, b, toks[a].off, toks[b - 1].end, tag,
-                  split_head=head)
+                  split_head=head, cut_run=cut)
         if sp.is_choice:
             sp.choice_width = width or DEFAULT_CHOICE_WIDTH
         sp.cut_inside = next((c for c in sorted(cuts)
@@ -350,7 +356,7 @@ def find_spans(ci: int, rec_id: int, data: bytes, toks, cuts=()) -> "list[Span]"
         bounds = [i] + [m for m in range(i + 1, j) if toks[m].off in cuts] + [j]
         head = None
         for a, b in zip(bounds, bounds[1:]):
-            idx = emit(a, b, tag, menu_width, head)
+            idx = emit(a, b, tag, menu_width, head, len(bounds) > 2)
             if idx is not None and head is None:
                 head = idx
         i = j

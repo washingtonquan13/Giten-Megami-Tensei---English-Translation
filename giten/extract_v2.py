@@ -203,6 +203,7 @@ def script_rows(rel: str, sc: script.Script, pools) -> "list[tables.Row]":
             row = tables.Row(rel, _rec_key(rec, sp.rec_key), sp.idx,
                              sp.off, sp.tag, jp, _prefill(jp), note=_note(notes))
             row.split_head = sp.split_head
+            row.cut_run = sp.cut_run
             rows.append(row)
     return rows
 
@@ -269,7 +270,8 @@ def run(family: str = "all", root: "str | None" = None,
     by_table, order = {}, []
     splits: "list[tuple]" = []
     st = {"files": 0, "rows": 0, "tables": 0, "untiled": 0, "blocked": 0,
-          "nonscript": 0, "reanchored": 0, "unanchored": 0, "split": 0}
+          "nonscript": 0, "reanchored": 0, "unanchored": 0, "split": 0,
+          "split_trimmed": 0}
 
     for rel in (wanted if wanted is not None else files.iter_files(fams, root)):
         raw = files.read_source(rel, root)
@@ -301,53 +303,79 @@ def run(family: str = "all", root: "str | None" = None,
         # does not, re-anchor on the Japanese, and only when that is unambiguous.
         # build_v2.stale_rows protects the *builder* the same way.
         by_content: "dict[tuple, list]" = {}
-        by_rec: "dict[str, list]" = {}
         for o in old_rows:
             if o.en or o.ref_en or o.status:
                 by_content.setdefault((o.rec, o.jp), []).append(o)
-                by_rec.setdefault(o.rec, []).append(o)
+        # A split inserts a row, so every row after it in the same record moves
+        # up by one.  That is a *known* shift, not an ambiguity, so it is applied
+        # first and checked on the `jp` exactly as an unmoved index is: guess the
+        # old index, then demand the fingerprint match.  Without this the content
+        # rule below has to answer thousands of shifted rows, and it refuses any
+        # line a record repeats with different notes -- 448 finished translations
+        # went on the floor the first time this extract ran.
+        shift, tails, heads = {}, {}, set()
+        for r in rows:
+            shift[(r.file, r.rec, r.idx)] = tails.get((r.file, r.rec), 0)
+            if r.split_head is not None:
+                tails[(r.file, r.rec)] = tails.get((r.file, r.rec), 0) + 1
+            elif r.cut_run:
+                # the head of a cut run -- including one whose other piece drew
+                # nothing, which inserts no row but still shortens this one
+                heads.add((r.file, r.rec, r.idx))
         for r in rows:
             prev = old.get(r.key)
+            dropped = None
             if prev is None or prev.jp != r.jp:
                 # Either the index moved under this line, or the record grew and
-                # this index did not exist before.  Both are answered the same
-                # way: find the old row whose Japanese is this row's, and only
-                # when that is unambiguous.
-                # The losing copy of a duplicate id was keyed like the winner
-                # until 2026-09-11 and is keyed `<rec>~` now, so look under both
-                # -- otherwise every such row loses its reference translation on
-                # the extract that renames it.
-                cands = (by_content.get((r.rec, r.jp))
-                         or by_content.get((r.rec.rstrip(LOSER_SUFFIX), r.jp))
-                         or [])
-                # "Unambiguous" means the candidates *agree*, not that there is
-                # only one of them.  A record often repeats a line verbatim --
-                # the same narration for each party member, say -- and every
-                # copy carries the same English, so refusing on count alone
-                # threw away hundreds of translations that were never in doubt.
-                # Disagreement is still refused: that is a real ambiguity.
+                # this index did not exist before.
                 picked = None
-                if cands:
-                    vals = {(c.en, c.ref_en, c.status) for c in cands}
-                    if len(vals) == 1:
-                        picked = cands[0]
+                sh = shift.get((r.file, r.rec, r.idx), 0)
+                # `sh` is 0 for the head of the first split in its record, and
+                # then this is the row that used to be at the same index -- the
+                # whole line, before the cut.
+                before = old.get((r.file, r.rec, r.idx - sh))
+                if r.split_head is not None:
+                    # A tail starts empty, deliberately: the old English
+                    # translates the whole line, and putting it here would print
+                    # the line twice on the jump path.  On screen this is what
+                    # shipped before -- English if the engine reads through,
+                    # Japanese from the jump -- until the pair is re-authored.
+                    pass
+                elif before is not None and before.jp == r.jp:
+                    picked = before                     # the shift, verified
+                elif ((r.file, r.rec, r.idx) in heads and before is not None
+                        and len(before.jp) > len(r.jp)
+                        and before.jp.startswith(r.jp)):
+                    # The head of a line a branch target has just cut in two: its
+                    # `jp` is what is left of the old row's.  It keeps that row's
+                    # English and says where it came from; `check` reports it as
+                    # `split-pending` until someone re-reads the pair.
+                    picked = before
+                    dropped = before.jp[len(r.jp):]
+                    r.note = _note([r.note, SPLIT_NOTE + " was "
+                                    + before.jp.replace("; ", ", ")])
+                    st["split"] += 1
+                    splits.append((r, before, rows))
                 if picked is None and r.split_head is None:
-                    # A span that a branch target has just cut in two.  The head
-                    # is what is left of the old row's Japanese, so its `jp` is a
-                    # proper prefix of exactly one old `jp` in the same record;
-                    # give it that row's English and say where it came from.  The
-                    # tail deliberately gets nothing: the old English translates
-                    # the whole line, and putting it on the tail would print the
-                    # line twice on the jump path.  On screen this is what
-                    # shipped before -- English if you read through, Japanese if
-                    # you jump -- until the pair is re-authored.
-                    split = [o for o in by_rec.get(r.rec, ())
-                             if len(o.jp) > len(r.jp) and o.jp.startswith(r.jp)]
-                    if len(split) == 1:
-                        picked = split[0]
-                        r.note = _note([r.note, SPLIT_NOTE + " was " + picked.jp])
-                        st["split"] += 1
-                        splits.append((r, picked, rows))
+                    # Fall back on the Japanese, and only when it is unambiguous.
+                    # The losing copy of a duplicate id was keyed like the winner
+                    # until 2026-09-11 and is keyed `<rec>~` now, so look under
+                    # both -- otherwise every such row loses its reference
+                    # translation on the extract that renames it.
+                    cands = (by_content.get((r.rec, r.jp))
+                             or by_content.get((r.rec.rstrip(LOSER_SUFFIX), r.jp))
+                             or [])
+                    # "Unambiguous" means the candidates *agree*, not that there
+                    # is only one of them.  A record often repeats a line
+                    # verbatim -- the same narration for each party member, say
+                    # -- and every copy carries the same English, so refusing on
+                    # count alone threw away hundreds of translations that were
+                    # never in doubt.  Disagreement is still refused: that is a
+                    # real ambiguity.
+                    if cands:
+                        vals = {(c.en, c.ref_en, c.status) for c in cands}
+                        if len(vals) == 1:
+                            picked = cands[0]
                 if prev is not None:            # there *was* a row here
                     st["reanchored" if picked else "unanchored"] += 1
                 prev = picked
@@ -363,6 +391,20 @@ def run(family: str = "all", root: "str | None" = None,
                 r.ref_en, r.ref_src = prev.ref_en, prev.ref_src
             if prev.status and not r.status:
                 r.status = prev.status
+            if dropped:
+                # 149 of the 296 cuts take a trailing newline or page wait out
+                # of the span -- the branch aims at exactly that byte, which is the
+                # script saying "skip the words, go to the page break" -- and the
+                # piece left over draws nothing, so it is not a row.  The old
+                # English ends in the same escape, and serving it now would put a
+                # page wait of ours in front of the game's own: two key presses
+                # where there was one.  Trim it, but only when it matches byte for
+                # byte, so nothing is guessed.
+                for col in ("en", "ref_en"):
+                    text = getattr(r, col)
+                    if text and text.endswith(dropped):
+                        setattr(r, col, text[:-len(dropped)])
+                        st["split_trimmed"] += 1
             if prev.note and prev.note != r.note:
                 # Carry a human's own note forward, never a generated marker.
                 # A marker can stop applying -- a record that used to be

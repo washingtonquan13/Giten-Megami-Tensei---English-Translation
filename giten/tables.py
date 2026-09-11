@@ -53,6 +53,9 @@ class Row:
     #: by the extractor; a row read back from a table carries it in its note
     #: instead (``extract_v2.SPLIT_TAIL_NOTE``).
     split_head: "int | None" = field(default=None, compare=False, repr=False)
+    #: Runtime only: was this row's span cut out of a longer run?  True on the
+    #: head as well as the tail, and on a head whose other piece drew nothing.
+    cut_run: bool = field(default=False, compare=False, repr=False)
 
     @property
     def key(self) -> "tuple[str, str, int]":
