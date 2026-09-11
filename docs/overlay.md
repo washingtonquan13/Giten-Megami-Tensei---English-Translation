@@ -290,7 +290,9 @@ one rule verifies under the other. It can only add spans.
 ### Measured
 
 Building the real merges that `et/ET0007` names, and binding the shipped
-overlay against them (`scratchpad/merge_probe.py`, slot 0 of all 25 demon rows):
+overlay against them (`tools/merge_probe.py`, slot 0 of all 25 demon rows -- the
+script is deleted with v6, since `bind()`, `resolve()` and `merged_slot()` are
+gone and there is no longer anything to bind):
 
 | | spans bound |
 |---|---|
