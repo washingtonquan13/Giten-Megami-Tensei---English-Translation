@@ -141,6 +141,20 @@ def make_parser():
     p.add_argument("--build2", default=None, help="diff: the EN build tree")
     p.add_argument("--limit", type=int, default=60)
 
+    p = sub.add_parser("warp",
+                       help="build a Japanese play tree whose opening jumps "
+                            "straight to one record (for tracing it)")
+    p.add_argument("file", help="file id in hex, e.g. 31 (m/MS0031) or 6200")
+    p.add_argument("rec", help="record id in hex")
+    p.add_argument("--out", default=None,
+                   help="tree folder (default build/warp/MS<file>-r<rec>)")
+    p.add_argument("--entry", default="0",
+                   help="hex byte offset inside the record to start at "
+                        "(needs the dev cave; default 0)")
+    p.add_argument("--rebuild-exe", action="store_true",
+                   help="rebuild dds_dev_jp.exe even if build/exe has one")
+    p.add_argument("-q", "--quiet", action="store_true")
+
     sub.add_parser("where", help="print the resolved game and repo paths")
     return ap
 
@@ -375,6 +389,15 @@ def main(argv=None) -> int:
                      sum(1 for e in entries for s in e.spans if s.tail),
                      shared, len(blob), len(findings)))
         return 1 if findings else 0
+    if args.cmd == "warp":
+        from . import warp
+        fid, rid, entry = (int(args.file, 16), int(args.rec, 16),
+                           int(args.entry, 16))
+        out = args.out or os.path.join(paths.BUILD_DIR, "warp",
+                                       "MS%04X-r%02X" % (fid, rid))
+        warp.build(out, fid, rid, entry, rebuild_exe=args.rebuild_exe,
+                   quiet=args.quiet)
+        return 0
     if args.cmd == "where":
         print("game (read-only): %s" % paths.game_root())
         print("repo            : %s" % paths.REPO_ROOT)

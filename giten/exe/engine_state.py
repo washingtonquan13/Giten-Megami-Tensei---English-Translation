@@ -59,6 +59,25 @@ KNOWN_NULLERS = {
     0x00491160: (0x0042EA18, "mov dword ptr [0x491160], 0 ; ret"),
 }
 
+#: Engine *functions* our injected code calls, with the signature we rely on.
+#: A call is not a load, so the VALUE/POINTER/INDEX rule above does not apply to
+#: it -- but the same discipline does: the address, what it takes and what it
+#: does are written down in exactly one place, and a test asserts that every
+#: absolute call target in our caves appears here.  Address -> (signature, what
+#: it does, who calls it).
+ENGINE_CALLS = {
+    0x00439020: ("exec_token(ctx, ch)",
+                 "run one already-assembled token", "trace.S"),
+    0x00433D70: ("goto_record(u16 file, u16 record)",
+                 "resolve the file (loading it through 0x0043B650 -> "
+                 "0x0043AD20 -> 0x00401DD0(id, kind 9) on a miss) and switch "
+                 "the interpreter to that record",
+                 "warp16.S"),
+    0x00433C40: ("set_pc(u16 pc)",
+                 "mov [ctx+0x0E], ax -- the engine's own program-counter write",
+                 "warp16.S"),
+}
+
 
 def pointers() -> "list[int]":
     return [a for a, (k, _d, _w) in ENGINE_STATE.items() if k == POINTER]
