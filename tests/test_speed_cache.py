@@ -1,6 +1,6 @@
-"""The parse cache has to be invisible, and these are the ways it could not be.
+"""The speed work has to be invisible, and these are the ways it could not be.
 
-Four questions, each with a test:
+Five questions, each with a test:
 
 * does a **cached** parse hold the same values as a **fresh** one, for every
   file in the corpus?  (``GITEN_NO_CACHE=1`` gives the fresh side, in a child
@@ -12,6 +12,9 @@ Four questions, each with a test:
   "the cache hands out a shared object" would be a real corruption.
 * does the round trip through pickle survive?  A field that does not pickle
   would come back missing rather than wrong, which is worse.
+* does the vectorised container decode give the same bytes as the byte loop it
+  replaced?  Only one of the two runs on any given machine, so both are driven
+  over the whole corpus here.
 """
 from __future__ import annotations
 
@@ -262,3 +265,39 @@ def test_the_bypass_really_bypasses():
         os.environ.pop("GITEN_NO_CACHE", None)
     assert not cache.disabled()
     assert view(sc) == view(script.parse(rel, raw))
+
+
+def test_the_vectorised_unxor_agrees_with_the_byte_loop():
+    """Every container in the corpus, both code paths, byte for byte.
+
+    ``container.unxor`` has a numpy path and a loop, and which one runs depends
+    on whether numpy is installed and on how long the body is -- so on any given
+    machine only one of them is exercised by everything else.  Both are checked
+    here, on the real ciphertext and on the edge lengths around the threshold.
+    """
+    from giten import container
+
+    n = 0
+    for rel in files.all_encoded():
+        raw = files.read_source(rel)
+        p = 0
+        while p + 2 <= len(raw):
+            hdr = int.from_bytes(raw[p:p + 2], "little")
+            if hdr == 0:
+                break
+            enc = raw[p + 2:p + 2 + hdr]
+            seed = container.seed_of(hdr)
+            assert container.unxor(enc, seed) == container._unxor_loop(enc, seed), \
+                "%s at 0x%X" % (rel, p)
+            n += 1
+            p += 2 + hdr
+    assert n > 1700, n
+
+    blob = bytes(range(256)) * 3
+    for k in range(0, container._VECTOR_MIN + 4):
+        for seed in (0, 1, 0x5A, 0xFF):
+            assert container.unxor(blob[:k], seed) == \
+                container._unxor_loop(blob[:k], seed), (k, seed)
+    # and it is still the inverse of the encoder it has to undo
+    for k in (0, 1, 63, 64, 65, 700):
+        assert container.unxor(container.enxor(blob[:k], 0x37), 0x37) == blob[:k]

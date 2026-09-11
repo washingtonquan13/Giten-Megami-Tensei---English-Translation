@@ -423,6 +423,12 @@ def plan(rows, root=None):
                 if rec.span_tokens is None:
                     continue
                 rkey = (rec.id, len(rec.data), fnv1a(rec.data))
+                # Offsets a token starts at, for the boundary guard below.  Once
+                # per record rather than a scan of the record's whole token list
+                # per span: the corpus has 20 690 records and 44 774 spans, and
+                # that scan was 28.7 million comparisons a run.
+                starts = {t.off for t in (rec.tokens if rec.tokens is not None
+                                          else rec.span_tokens)}
                 for sp in rec.spans:
                     row = keyed.get((ci, rec.id, sp.idx))
                     if row is None:
@@ -465,8 +471,7 @@ def plan(rows, root=None):
                     # whole overlay rests on it being true.  A straddling record
                     # has no `tokens` and is judged by `span_tokens`, which is
                     # what its spans were derived from.
-                    toks = rec.tokens if rec.tokens is not None else rec.span_tokens
-                    if not any(t.off == sp.off for t in toks):
+                    if sp.off not in starts:
                         findings.append(("%s %s[%d]" % (rel, row.rec, row.idx),
                                          "no token starts here: the span list and "
                                          "the record's tiling disagree about where "

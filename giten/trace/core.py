@@ -235,6 +235,9 @@ class _Image:
         #: more, so this is built per record and a file that happens to share a
         #: record with another file shares its entry too.
         self.ovl = {}
+        self._span_list = None
+        self._last_tok = {}
+        self._tokix = {}
         if self.sc.ok and self.sc.containers:
             recs = self.sc.containers[0]              # limitation: container 0
             rr = [records.Record(r.id, r.data) for r in recs]
@@ -255,10 +258,38 @@ class _Image:
 
         ``start`` and ``virt`` are addresses in *this file's* image, which is
         what a decoded trace of a run of this file is measured in.
+
+        Built once and kept: it is the same list on every call -- ``ovl``,
+        ``base`` and ``image_end`` are all fixed at construction -- and
+        :meth:`_overlay_hit` walks it once per trace event, a quarter of a
+        million times for the Roppongi session.
         """
-        for rid, e in self.ovl.items():
-            for s in e.spans:
-                yield s, self.base[rid] + s.rec_off, self.image_end + s.virt_off
+        if self._span_list is None:
+            self._span_list = [
+                (s, self.base[rid] + s.rec_off, self.image_end + s.virt_off)
+                for rid, e in self.ovl.items() for s in e.spans]
+        return self._span_list
+
+    def _last_token(self, s):
+        """``(last byte or character, kind)`` of a span's final token.
+
+        Memoised on the span's bytes.  It was re-tokenised inside the event
+        loop, so a file's every span was tiled again for every logged
+        character; that alone was 40% of ``screen_audit``.  Computed here, at
+        the point in the walk the loop reaches the span -- not up front for all
+        of them -- so a span whose bytes do not tile still raises exactly where
+        it used to and not sooner.
+        """
+        got = self._last_tok.get(s.data)
+        if got is None:
+            toks = vmops.tokenize(s.data)
+            lt = toks[-1]
+            if lt.kind == "op":
+                got = (s.data[lt.off], vmops.table().encoding(lt.idx))
+            else:
+                got = (int.from_bytes(s.data[lt.off:lt.end], "big"), "TEXT")
+            self._last_tok[s.data] = got
+        return got
 
     def _overlay_hit(self, pc: int, ch: int):
         """A logged pc produced by the overlay: inside a virtual range, or the
@@ -269,12 +300,7 @@ class _Image:
             # last character, or the opcode byte of a trailing inline opcode
             # (a page wait or newline ending the line).  A jump can land on
             # s.end too, and its ch is a different opcode, so it is not taken.
-            toks = vmops.tokenize(s.data)
-            lt = toks[-1]
-            if lt.kind == "op":
-                last, kind = s.data[lt.off], vmops.table().encoding(lt.idx)
-            else:
-                last, kind = int.from_bytes(s.data[lt.off:lt.end], "big"), "TEXT"
+            last, kind = self._last_token(s)
             in_head = s_start < pc <= s_start + s.served
             in_tail = s.tail and s_virt < pc <= s_virt + s.tail
             if in_head or in_tail:
@@ -292,6 +318,38 @@ class _Image:
                 span = next((sp.idx for sp in r.spans if sp.tok_lo <= k < sp.tok_hi), None)
                 return span, anchor, kind, True
         return None
+
+    def _tokens_by(self, rec_id: int, r):
+        """``(by end, by start, anchors, span idx)`` for one record's tokens.
+
+        A record's tokens tile its bytes, so no two of them end at the same
+        offset and no two start at the same offset -- the dicts answer exactly
+        what the three linear scans in :meth:`locate` answered, and the first
+        token wins where the loop's first iteration would have.  ``anchors[k]``
+        is the count the loop recomputed from scratch for every event, and
+        ``span[k]`` the span the loop searched for the same way.
+
+        Built once per record.  ``locate`` runs once per logged character --
+        251 259 times for the Roppongi session -- and each call walked every
+        token of the record up to three times.
+        """
+        got = self._tokix.get(rec_id)
+        if got is None:
+            by_end, by_off, anchors = {}, {}, []
+            n = 0
+            for k, t in enumerate(r.tokens):
+                by_end.setdefault(t.end, (k, t))
+                by_off.setdefault(t.off, (k, t))
+                anchors.append(n)
+                if t.kind == "op" and t.idx not in codec.INLINE_OPS:
+                    n += 1
+            span = [None] * len(r.tokens)
+            for sp in r.spans:
+                for k in range(max(0, sp.tok_lo), min(sp.tok_hi, len(span))):
+                    if span[k] is None:
+                        span[k] = sp.idx
+            got = self._tokix[rec_id] = (by_end, by_off, anchors, span)
+        return got
 
     def locate(self, rec_id: int, pc: int, ch: int, base: "int | None" = None,
                pc0: "int | None" = None):
@@ -315,10 +373,11 @@ class _Image:
                 return None
             end = -1
         want = bytes([ch]) if ch <= 0xFF else bytes([ch >> 8, ch & 0xFF])
+        by_end, by_off, anchors, spans_of = self._tokens_by(rec_id, r)
+
         def hit(k, t, jumped):
-            anchor = sum(1 for u in r.tokens[:k]
-                         if u.kind == "op" and u.idx not in codec.INLINE_OPS)
-            span = next((s.idx for s in r.spans if s.tok_lo <= k < s.tok_hi), None)
+            anchor = anchors[k]
+            span = spans_of[k]
             if jumped:
                 # a control opcode ran and execution *landed* here: name the
                 # opcode that ran (ch) and the place it went (this token)
@@ -333,18 +392,16 @@ class _Image:
         #    reported a mismatch: at m/MS7F04 r07 0x2A the engine had branched
         #    onto the `18` opcode starting there, and the two text bytes ending
         #    there were charged with the disagreement instead.
-        for k, t in enumerate(r.tokens):
-            if t.end != end:
-                continue
-            if t.kind == "text" and r.data[t.off:t.end] != want:
-                continue
-            if t.kind == "op" and r.data[t.off] != ch:
-                continue
-            return hit(k, t, False)
+        got = by_end.get(end)
+        if got is not None:
+            k, t = got
+            if not (t.kind == "text" and r.data[t.off:t.end] != want) and \
+               not (t.kind == "op" and r.data[t.off] != ch):
+                return hit(k, t, False)
         # 2. the token that starts at pc: a taken branch, a call, a return
-        for k, t in enumerate(r.tokens):
-            if t.off == end:
-                return hit(k, t, True)
+        got = by_off.get(end)
+        if got is not None:
+            return hit(got[0], got[1], True)
         # 3. v2 only: the token pc0 sits just past the front of.  The post-call
         #    pc is 0 whenever the token ended the script, because the engine
         #    clears the context before the hook reads it back -- but pc0 was
@@ -364,9 +421,9 @@ class _Image:
         if pc0 is not None:
             start = pc0 - (2 if ch > 0xFF else 1) - b
             if 0 <= start < len(r.data):
-                for k, t in enumerate(r.tokens):
-                    if t.off == start:
-                        return hit(k, t, False)
+                got = by_off.get(start)
+                if got is not None:
+                    return hit(got[0], got[1], False)
         return None
 
 
