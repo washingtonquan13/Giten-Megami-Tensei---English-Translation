@@ -40,6 +40,8 @@ Rejected alternative: exporting the hook's memo to the tracer. The tracer must r
 
 ## Item 2 — the exe string patcher
 
+**DONE 2026-09-11 (commit 4da93b2).**  `PIECEWISE` verified by reading the instruction stream at all five sites; every sub-address is referenced exactly once.  `apply()` pads the `.men` entry to the piece total and re-points every operand, under the rule `len(cp932) + 1 <= sum(pieces)`.  The five Mood values added with `VALUE_BUDGET = 15` enforced in `check_widths`.  `.men` footprint 596 → 664 B in place, total 1016 → 1084.  The new tests emulate the load/store chain against the patched image and compare the *assembled buffer*, which is what the old pointer test could not do.
+
 **Files:** `giten/exe/menus.py`, `tests/test_menus.py`, `docs/exe-patches.md`, `tests/test_v2.py` (footprint pin).
 
 1. New table `PIECEWISE = {0x469808: (4,2,1), 0x469810: (4,2,1), 0x469818: (4,2,1), 0x469820: (4,2,1), 0x46A400: (4,4,4,2,1)}`: the engine copies these strings as consecutive loads of those sizes (sites `0x436D1A`, `0x436D55`, `0x438CCA`, `0x438D1A`, `0x441B12`; every sub-address is referenced exactly once). `apply()` pads the `.men` entry with NULs to the piece total and repoints **each** piece's operand with `slot_of(image, va + piece_offset)`. Rule: `len(en.encode("cp932")) + 1 <= sum(pieces)`, refused otherwise (Macca 6 ≤ 7, Maximum level 14 ≤ 15).
@@ -83,6 +85,10 @@ The agent builds every warp tree and the ET0007 variant into `build/warp/<name>/
 
 ## Item 5 — the four rows, the pre-fill, the draft tree
 
+**DONE 2026-09-11 (commits 3161b42 code, 870e7da tables).**  The pre-fill and `check_rows`'s `missing` test both decide on `pool.reading`: **672** rows in 108 tables gave their `en == jp` pre-fill back and read as untranslated (`missing` 26,582 → 27,200, `japanese` 71 → 2, errors unchanged at 1,341).  `_pool_english` keys on `{file id + 1:record}`, not `{08:xx}`.  The blanket `POOL_FILES` refusal became the row rule (reading ends 。！？, or the bytes end the line; **and** the reference closes in English): **95** of 297 pool rows qualify, 92 of them `m/MS7F06` battle lines — 93 once the two `m/MS7F04` rows below are hand-written and stop counting as promotions.  All four rows authored at `status=reviewed`.
+
+**The split-row authoring the plan did not schedule but Item 4 created** is commit afc4a36: 143 of the 144 pairs whose tail draws text, plus 152 tail-less cuts cleared; `split-pending` 138 → 0.
+
 **Files:** `giten/extract_v2.py`, `giten/check_v2.py`, `tools/make_draft_tree.py`, `tests/test_pool_promotion.py`, `tables/m/MS7F04.BIN.tsv`, `tables/m/MS0032.BIN.tsv`, `tables/m/MS600F.BIN.tsv`, `tables/m/MS7F07.BIN.tsv`.
 
 1. `extract_v2._prefill` (`:80-83`) and the re-instatement at `:255-258` decide "already English" on the pool-expanded reading (`pool.reading`), so `{08:7C}` (reads ならば) is no longer pre-filled with `en == jp`; 648 such rows become visibly untranslated. `check_v2.check_rows:306` must test the reading, not `strip_tokens(jp)`, or the `missing` warning never fires for them (1,169 token-only rows).
@@ -90,6 +96,8 @@ The agent builds every warp tree and the ET0007 variant into `build/warp/<name>/
 3. Author the four rows by reading the Japanese: `m/MS7F04 0:10[0]` → `{04:04} ran away.\n{1E10:010214}`, `0:11[0]` → `Failed to run away!\n{1E10:010214}`, `m/MS0032 0:03[4]` → `Rabbit:` (identical to `0:03[1]`), `m/MS7F07 0:7C` (ならば, the pool word behind `m/MS600F 4:02[0]` and its siblings) → the text the unification chose for that family (`Well then, ` per commit a344401), with `status=reviewed` and a note naming the source. Then regenerate the draft tree and confirm all four resolve in the table.
 
 ## Item 6 — build reproducibility and the screen audit
+
+**DONE 2026-09-11 (commits 4bfcec7 build/install, e53c4a9 the audit).**  6.1: `DATA_TABLE_BUILDERS` gained `et/ET0004.BIN` and `et/ET0101.BIN` over `etdb`, and `ADDED_FILES` produces `et/et0102.bin` from `et/ET0001.BIN`; all three come out byte-identical to `giten etdb` / `giten itemdb`, asserted.  `install` gained the added-file allow-list and the refusal to write any `m/` file where `overlay.dat` lives; both fire.  6.2: the audit reads through `giten.textlog` (the mask), judges through `check_v2.render_english`, defaults to `build/tables_draft`, takes its non-script sources from the tables themselves (the stale `UNEXTRACTED` entry is gone, and the exe's own `.rdata` is one of the sources now), and with `--trace` attributes a fragment to the event that drew it.  On the Roppongi session all **23** fragments resolve — 20 to a script row, 17 content-confirmed, 3 to `dds.exe`'s Mood values — and all six records the inspection named are among them.
 
 **Files:** `giten/build_v2.py`, `giten/etdb.py`, `giten/itemdb.py`, `giten/install.py`, `tools/screen_audit.py`, `giten/trace/core.py` (`corpus_records`), `tests/`, `docs/distribution.md`, `docs/PLAN.md`.
 
@@ -101,6 +109,13 @@ The agent builds every warp tree and the ET0007 variant into `build/warp/<name>/
 ## Order and commits
 
 1 → 2 → 3a-3c → 4 → 5 → 6 → build, replay, install → 3d: warp trees and the ET0007 variant built and handed to the player; the 16-bit warp cave written and tested in the harness; then, as each trace comes back, the model fixed and the file re-enabled. One commit per item (Item 3 in three: layout, rule, and one commit per observed file; Item 5 table edits separate from code).
+
+## Build, replay, install — DONE 2026-09-11
+
+* `python -m tests.run`: **331 passed, 0 failed in 344.2s**, no skips and no `NOT RUN` line.
+* `tools/make_draft_tree.py`, `giten overlay --text build/tables_draft` (**0 conflicts**; 7,888 record keys, 42,013 spans, 2,257,569 bytes, 60 rows refused), `giten build --text build/tables_draft --out build/en` (844 files, 1 added), `giten exe release`, `giten exe dev`.
+* **Offline instead of a replay.** A trace is only meaningful against the overlay that produced it, so `trace verify` against the *new* overlay would be meaningless. Checked directly instead: all **16** spans -- the six Roppongi records' head/tail pairs and the four rows that were blank -- resolve to English in the new `build/overlay.dat`, looked up by the content key the hook uses and the span's own offset. The built release exe assembles `Macca`, `MAG` and `Maximum level` at all five piecewise sites, and the Mood table reads Pleading / Friendly / Enraged / Hostile / Neutral.
+* Installed into `play/en/ddswin`: `dds.exe`, `dds_dev.exe`, `overlay.dat` **changed**; `et/ET0000.BIN`, `ET0004.BIN`, `ET0101.BIN`, `et0102.bin`, `ET000D.BIN` were **already byte-identical** to what the build produces -- which is the reproducibility claim of 6.1, measured. The previous `overlay.dat` is archived at `build/trace/overlay-as-run-2026-09-11.dat`. All **309** `m/` files in the install are still byte-identical to `original/ddswin`.
 
 ## Verification
 
