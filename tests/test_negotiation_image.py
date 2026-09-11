@@ -181,17 +181,26 @@ def test_merging_is_what_moves_the_records_not_a_duplicate_id_rule():
     assert _agree(first) == _agree(last) == 10
 
 
-def test_the_overlay_cannot_identify_this_buffer():
-    """The consequence, stated as a test rather than left implied.
+def test_no_static_index_can_identify_this_buffer_which_is_why_v6_does_not_try():
+    """The finding that killed identity binding, kept as the reason it died.
 
-    ``rebind()`` needs the fingerprint of the buffer the engine actually built.
-    That buffer's index is the merged one, so no single container's fingerprint
-    can equal it -- and the merged index cannot be computed statically either,
-    because of the runtime-sized record.  Both halves are asserted here.
+    v4 and v5 identified a buffer by hashing its 1024-byte record index and
+    matching that against a hash built from one container of one file.  This
+    buffer defeats that twice over:
+
+    * its index is the *merged* one, so no single container can equal it;
+    * the merged index cannot even be computed statically, because record 0x97
+      is 976 bytes at run time against 82 on disk -- the loader builds the rest.
+
+    So the answer to "which file is this" was unavailable, and `rebind()`
+    returned 0 for every demon conversation.  v6 does not ask: it reads the
+    record the program counter is in out of the buffer's own index and keys on
+    that record's bytes.  Both halves of the old obstacle are asserted here,
+    because they are why the question was abandoned rather than answered better.
     """
     sc = script.parse("m/MS6000.BIN", files.read_source("m/MS6000.BIN"))
     recs = [records.Record(r.id, r.data) for r in sc.containers[0]]
-    lone = overlay.fingerprint(recs)
+    lone = overlay.fnv1a(overlay.engine_index(recs))
 
     merged = dict(_lens("m/MS6000.BIN"))
     for rel in ("m/MS6003.BIN", "m/MS600A.BIN"):
@@ -202,10 +211,48 @@ def test_the_overlay_cannot_identify_this_buffer():
         off, ln = idx[i]
         blob += off.to_bytes(2, "little") + ln.to_bytes(2, "little")
     assert overlay.fnv1a(bytes(blob)) != lone, (
-        "a single container now fingerprints the same as the merged image; "
-        "the overlay's lookup would be fixed, so this test should be rewritten")
+        "a single container now hashes the same as the merged image")
 
-    # ...and even the merged fingerprint is not the engine's, because record
-    # 0x97 is 894 bytes longer at runtime than anything on disk.
+    # ...and even the merged index is not the engine's, because record 0x97 is
+    # 894 bytes longer at run time than anything on disk.
     off, ln = idx[RUNTIME_SIZED_RECORD]
     assert (off, ln) != ENGINE_INDEX_SLOT0[RUNTIME_SIZED_RECORD]
+
+
+def test_the_records_of_this_buffer_are_found_by_content_without_any_of_that():
+    """And the same buffer, answered.
+
+    Every record the merge leaves in place keeps its bytes, so it keeps its v6
+    key -- and the address it moved to comes out of the buffer's own index, not
+    out of any model of a file.  Including record 0x97, whose length no file on
+    disk explains: it is simply a key we do not hold, and a key we do not hold
+    is served nothing.
+    """
+    rels = ("m/MS6000.BIN", "m/MS6003.BIN", "m/MS600A.BIN")
+    own, merged = {}, {}
+    for rel in rels:                            # later files replace earlier ones
+        sc = script.parse(rel, files.read_source(rel))
+        seen = set()
+        for r in sc.containers[0]:
+            if r.id in seen:
+                continue
+            seen.add(r.id)
+            merged[r.id] = r.data
+            if rel == "m/MS6000.BIN":
+                own[r.id] = r.data
+
+    a = overlay.image_bytes([records.Record(i, own[i]) for i in sorted(own)])
+    b = overlay.image_bytes([records.Record(i, merged[i]) for i in sorted(merged)])
+    ia, ib = overlay.live_index(a), overlay.live_index(b)
+
+    kept = moved = 0
+    for i in sorted(own):
+        if merged[i] != own[i]:
+            continue                            # a record the merge replaced
+        kept += 1
+        ka = (i, ia[i][1], overlay.fnv1a(a[ia[i][0]:ia[i][0] + ia[i][1]]))
+        kb = (i, ib[i][1], overlay.fnv1a(b[ib[i][0]:ib[i][0] + ib[i][1]]))
+        assert ka == kb, "record %02X changed key in the merge" % i
+        if ia[i][0] != ib[i][0]:
+            moved += 1
+    assert kept > 20 and moved > 5, (kept, moved)

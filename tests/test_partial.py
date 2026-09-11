@@ -158,9 +158,9 @@ def test_serving_english_never_changes_a_byte_outside_a_span():
     for r in rows:
         if not r.en:
             r.en = "English placeholder"
-    entry_list, findings = overlay.plan(rows, paths.ORIGINAL_DDSWIN)
+    entries, findings = overlay.plan(rows, paths.ORIGINAL_DDSWIN)
     assert not findings, findings
-    entry = entry_list[0]
+    assert entries
 
     sc = script.parse(SHOPS, files.read_source(SHOPS))
     cont = sc.containers[0]
@@ -173,8 +173,20 @@ def test_serving_english_never_changes_a_byte_outside_a_span():
         image[base[r.id]:base[r.id] + len(r.data)] = r.data
     image = bytes(image)
 
-    hook = overlay.Model(entry, image)
-    served = [(s.start, s.start + s.head) for s in entry.spans]
+    hook = overlay.Model(entries, image)
+    # v6 addresses a span inside its record, so the real address is whatever the
+    # running buffer's index puts that record at plus the span's offset.
+    table = sorted(entries, key=lambda e: e.key)
+    served, ends = [], []
+    for r in cont:
+        e = overlay.find_entry(table, r.id, len(r.data), overlay.fnv1a(r.data))
+        if e is None:
+            continue
+        for s in e.spans:
+            lo_ = base[r.id] + s.rec_off
+            served.append((lo_, lo_ + s.served))
+            ends.append(lo_ + s.jp_len)
+    assert served
     FOOT = bytes.fromhex("1f0010010100")
 
     checked = 0
@@ -197,6 +209,6 @@ def test_serving_english_never_changes_a_byte_outside_a_span():
     assert checked > 50, checked
 
     # and every span resumes on the untouched image
-    for s in entry.spans:
-        if s.end < len(image):
-            assert hook.fetch(s.end)[0] == image[s.end], hex(s.end)
+    for end in ends:
+        if end < len(image):
+            assert overlay.Model(entries, image).fetch(end)[0] == image[end], hex(end)

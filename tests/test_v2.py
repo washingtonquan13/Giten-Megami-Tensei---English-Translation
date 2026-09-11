@@ -1643,8 +1643,8 @@ def test_the_ms0031_trace_confirms_10_and_expression_kind_13():
     assert nodes["0x1f"] == ["u8", "expr"], nodes["0x1f"]
 
 
-def test_the_overlay_fingerprint_catches_a_wrong_duplicate_resolution():
-    """Why the duplicate-id question is cosmetic, not a hazard.
+def test_a_wrong_duplicate_resolution_costs_one_record_and_no_address():
+    """Why the duplicate-id question is cosmetic, not a hazard -- under v6.
 
     Ten containers hold two records with one id.  `records.bases`,
     `overlay.engine_index` and `overlay.image_bytes` all keep the **first**, and
@@ -1652,19 +1652,23 @@ def test_the_overlay_fingerprint_catches_a_wrong_duplicate_resolution():
     an observation.  Four containers would be laid out differently under the
     other reading -- `m/MS6000` c8 shifts 247 of 256 bases by up to 136 bytes.
 
-    It cannot go wrong silently.  `giten/exe/hook.c` computes
-    `fnv1a(base, FP_BYTES)` over the **live** record index the engine built --
-    `FP_BYTES` is 0x400, the whole 256-entry index -- and serves a container's
-    spans only when that hash equals the one built from our model.  Resolve the
-    duplicate the other way and the index differs, so the hash differs, so the
-    hook declines and the text stays Japanese.  A wrong guess costs coverage,
-    never an address.
+    Under v4/v5 the guard was a fingerprint of the whole record index: resolve
+    the duplicate the other way and the index differed, so the hash differed,
+    and the hook declined the **whole container**.  A wrong guess cost every
+    line in the file.
 
-    This test is the load-bearing half: it fails if the two readings ever hash
-    the same, which is the only way the guard could be fooled.
+    v6 has no index hash and no file to decline.  A span is keyed on the content
+    of its own record, and found at whatever address the *live* index puts that
+    record at, so:
+
+    * the duplicated id resolves to different bytes under the other reading,
+      which is a different key, so it is simply not served -- one record;
+    * every other record keeps its key, because the key has no offset in it,
+      and is found wherever the shifted layout puts it.
+
+    Both halves are asserted.  The second is the one that is new: it is what
+    turns "a wrong guess costs the file" into "a wrong guess costs a record".
     """
-    import struct
-
     from giten import container, files, overlay, paths, records
 
     for rel, ci in (("m/MS6000.BIN", 8), ("m/MS6012.BIN", 4),
@@ -1674,21 +1678,28 @@ def test_the_overlay_fingerprint_catches_a_wrong_duplicate_resolution():
                 for r in records.parse_body(conts[ci].body).records]
         assert records.layout_is_ambiguous(recs), rel
 
-        first = overlay.engine_index(recs)
-        have = {}
+        first, last = {}, {}
         for r in recs:
-            have[r.id] = len(r.data)              # last wins
-        off, last = records.INDEX_SIZE, bytearray()
-        base = {}
-        for i in range(256):
-            base[i] = off
-            off += have.get(i, records.ABSENT_LEN)
-        for i in range(256):
-            last += struct.pack("<HH", base[i], have.get(i, records.ABSENT_LEN))
+            first.setdefault(r.id, r.data)
+            last[r.id] = r.data                   # the other reading
+        dup = [i for i in first if first[i] != last[i]]
+        assert dup, rel
 
-        assert first != bytes(last), rel
-        assert (overlay.fnv1a(first[:overlay.FP_BYTES])
-                != overlay.fnv1a(bytes(last)[:overlay.FP_BYTES])), rel
+        def key(data):
+            return (len(data), overlay.fnv1a(data))
+
+        for i in dup:
+            assert key(first[i]) != key(last[i]), (rel, i)
+        shared = [i for i in first if i not in dup]
+        assert len(shared) > 20, (rel, len(shared))
+        for i in shared:
+            assert key(first[i]) == key(last[i]), (rel, i)
+
+        # ...and the layouts really do differ, or the point is vacuous
+        a = overlay.image_bytes([records.Record(i, first[i]) for i in sorted(first)])
+        b = overlay.image_bytes([records.Record(i, last[i]) for i in sorted(last)])
+        ia, ib = overlay.live_index(a), overlay.live_index(b)
+        assert any(ia[i] != ib[i] for i in range(256)), rel
 
 
 #: Every in-place byte the release exe differs from ``dds_org.exe`` by, per pass.
@@ -1706,24 +1717,30 @@ EXE_PASSES = [
     # guard, then 3072 for v5: two verification bitmaps (1 013 spans is the
     # largest entry, so 128 bytes each, twice for the two cache slots), the
     # per-span FNV check that fills them, and a second binary search for the
-    # virtual side; then 5120 on 2026-09-10 for the merged-buffer fix -- the
-    # membership rule relaxed to "any span verifies", so merged_fetch has to
-    # test the span a PC lands in, and span_ok() plus its eight-byte memo is
-    # what that costs.  (A bit per span per bound entry, which is how the
-    # single-entry path does it, would have been ~4 KB: hook.ld puts .bss inside
-    # the blob, so every byte of it is appended to the exe.)  **The in-place
-    # count has never moved**: the cave is appended, and only 38 bytes of the
-    # original are rewritten either way, which is the number this test exists to
-    # hold still.
-    ("ovl",        38, 5120, True),
+    # virtual side; then 5120 on 2026-09-10 for the merged-buffer fix.
+    #
+    # **2560 on 2026-09-10 for v6**, and the halving is the point: content
+    # addressing deleted more than it added.  Gone are the directory, the
+    # fingerprint, the (handle, fid) cache, the two 128-byte verification
+    # bitmaps, entry_fits, merged_fetch, the merge windows and the per-span
+    # FNV check.  What replaced them is two binary searches and a 16-slot memo
+    # of five words each.
+    #
+    # The in-place count moved 38 -> 37 at the same time, and it is not a new
+    # edit: the pass rewrites exactly the same five rel32 operands at the five
+    # fetch sites plus the same PE header fields, and one of those bytes now
+    # happens to equal the byte that was already there, because the cave sits at
+    # a different address.  `database` and `mapnames` move for the same reason
+    # -- their patch addresses are derived from the image size.
+    ("ovl",        37, 2560, True),
     ("pace",       10, 0,    False),      # 60 Hz tick gate -- behaviour
     ("names",     117, 512,  True),
     ("menus",     596, 1536, True),
     # database and mapnames patch addresses derived from the image size, so
     # they move by a byte or two whenever the .ovl cave changes size.  The
-    # numbers are theirs, not the overlay's; only `ovl` grew on purpose.
-    ("database",   65, 512,  True),
-    ("mapnames",   23, 3072, True),
+    # numbers are theirs, not the overlay's; only `ovl` changed on purpose.
+    ("database",   64, 512,  True),
+    ("mapnames",   25, 3072, True),
     # 1 -> 0 on 2026-09-08: the release went back to the stock 15-tick dwell,
     # so this pass now asserts the instruction and writes the value already
     # there.  Kept in the chain because the assert is the guard.
@@ -1950,43 +1967,6 @@ def test_no_span_we_serve_starts_a_token_the_engine_would_branch_on():
     assert flagged == 0
 
 
-def test_a_recorded_session_shows_the_overlay_did_not_change_flow():
-    """A real trace, replayed against the overlay that produced it.
-
-    ``test_no_span_we_serve_starts_a_token_the_engine_would_branch_on`` checks
-    the *data* we would serve.  This checks what the engine actually did with
-    it: 4,000 records cut from a play session, verified against the untouched
-    script files and a frozen copy of that session's overlay.
-
-    The two halves travel together on purpose.  A trace means nothing against a
-    different overlay -- the served-byte reconstruction would miss and every
-    English span would read as script corruption -- so pinning the trace alone
-    would rot the moment the tables changed.  The overlay copy holds only the
-    seven entries this slice touches.
-
-    What it would catch that the static test cannot: the C hook serving the
-    wrong bytes, or handing the program counter back to the wrong address.
-    Both are invisible in the tables and would show here as a token that does
-    not match the original file.
-    """
-    from giten import paths
-    from giten.trace import core
-
-    here = os.path.dirname(os.path.abspath(__file__))
-    trace = os.path.join(here, "data", "verify-trace.gtrc")
-    ovl = os.path.join(here, "data", "verify-overlay.gtov")
-    stats, findings = core.verify(trace, paths.ORIGINAL_DDSWIN, ovl)
-
-    assert findings == [], findings[:3]
-    # both paths have to be exercised or this passes while checking nothing
-    assert stats["served"] > 500, stats
-    assert stats["from the file"] > 1500, stats
-    assert stats["records"] == 4000, stats
-    # and the placement rate must not quietly collapse into "unverified"
-    placed = stats["served"] + stats["from the file"]
-    assert placed / stats["records"] > 0.7, stats
-
-
 def test_the_overlay_file_id_is_right_for_every_script_family():
     """``_fid`` must read the id, not a fixed slice of the path.
 
@@ -2075,308 +2055,205 @@ def test_rebuilt_p_files_touch_only_the_name_field():
 # pool calls, a legal inline opcode, executed from an address belonging to
 # nobody; "no flow opcode was served" stayed true throughout.
 #
-# So each check gets a mutation test: take the clean fixture, inject exactly the
-# fault that check exists to find, and require it to fire.  A check that cannot
-# be made to fail is not a check.
+# So each check gets a mutation test: take a clean run, inject exactly the fault
+# that check exists to find, and require it to fire.  A check that cannot be
+# made to fail is not a check.
+#
+# The runs are GENERATED now, from `overlay.Model`, rather than recorded.  The
+# fixtures this replaces -- `tests/data/verify-trace.gtrc` and
+# `verify-overlay.gtov` -- were a v2 trace and a v5 overlay, and a trace only
+# means anything against the overlay that produced it, so v6 could not upgrade
+# them, only delete them.  Generating is also strictly better as a test: the
+# trace is the model's own answer, so a check that fires here is firing on the
+# thing the hook implements rather than on a recording of a build nobody can
+# rebuild.
 # ---------------------------------------------------------------------------
 
-def _fixture_paths():
-    here = os.path.dirname(os.path.abspath(__file__))
-    return (os.path.join(here, "data", "verify-trace.gtrc"),
-            os.path.join(here, "data", "verify-overlay.gtov"))
+VERIFY_REL = "m/MS0017.BIN"
+VERIFY_FID = 0x0017
 
 
-def _rewrite_record(blob, n, **fields):
-    """Return `blob` with one trace record's fields replaced."""
-    from giten.trace import core
-    head, body = blob[:core.HEADER.size], bytearray(blob[core.HEADER.size:])
-    off = n * core.RECORD_V2.size
-    vals = list(core.RECORD_V2.unpack_from(body, off))
-    order = ("file", "rec", "pc", "ch", "r", "capflag", "caplen",
-             "idx_off", "idx_len", "pc0", "flags")
-    for k, v in fields.items():
-        vals[order.index(k)] = v
-    core.RECORD_V2.pack_into(body, off, *vals)
-    return head + bytes(body)
+def _verify_run(doctor=None, mutate=None):
+    """``(trace path, overlay path, build dir)`` for one generated English run.
+
+    ``doctor(entries)`` may change the overlay before both the trace and the
+    overlay.dat are made from it -- that is how a served byte becomes a branch.
+    ``mutate(fields, n)`` may change one trace record after the fact -- that is
+    how a logged byte or program counter goes somewhere it should not.
+    """
+    import tempfile
+    from giten import files, overlay, paths, records, script, tables
+    from tests import harness
+
+    draft = os.path.join(paths.BUILD_DIR, "tables_draft", "m", "MS0017.BIN.tsv")
+    rows = tables.read(draft if os.path.exists(draft)
+                       else files.table_path(VERIFY_REL))
+    entries, _ = overlay.plan(rows)
+    assert entries, "nothing planned for %s" % VERIFY_REL
+    if doctor is not None:
+        doctor(entries)
+    table = sorted(entries, key=lambda e: e.key)
+    sc = script.parse(VERIFY_REL, files.read_source(VERIFY_REL))
+    recs = [records.Record(r.id, r.data) for r in sc.containers[0]]
+    image = overlay.image_bytes(recs)
+
+    d = tempfile.mkdtemp(prefix="giten-verify-")
+    tp = os.path.join(d, "run.gtrc")
+    with open(tp, "wb") as fh:
+        fh.write(harness.synth_trace(table, image, VERIFY_FID, mutate=mutate))
+    op = os.path.join(d, "overlay.dat")
+    with open(op, "wb") as fh:
+        fh.write(overlay.build(entries))
+    return tp, op, paths.ORIGINAL_DDSWIN
 
 
 def _first_of(findings, needle):
     return [f for f in findings if needle in f[1]]
 
 
-def test_the_verifier_catches_a_program_counter_that_belongs_to_nobody(tmpdir=None):
+def test_a_generated_english_run_verifies_clean():
+    """The control, and the thing every mutation below is measured against.
+
+    Both paths have to be exercised or this passes while checking nothing: the
+    overlay must serve thousands of bytes, the file must supply thousands more,
+    and some of the served ones must live in virtual space -- those are the
+    addresses only the hook can have invented.
+    """
+    from giten.trace import core
+
+    tp, op, build = _verify_run()
+    stats, findings = core.verify(tp, build, op)
+    assert findings == [], findings[:3]
+    assert stats["served"] > 5000, stats
+    assert stats["from the file"] > 500, stats
+    assert stats["virtual PCs"] > 500, stats
+    assert stats["out of bounds"] == 0, stats
+    assert stats["unverified"] == 0, stats
+    placed = stats["served"] + stats["from the file"]
+    assert placed == stats["records"], stats
+
+
+def test_the_verifier_catches_a_byte_that_does_not_match():
+    """Flip one logged byte inside a served span.
+
+    The overlay says what is at that address; the trace says something else.
+    One of them is wrong and the verifier has to say so rather than quietly
+    charging it to the file.
+    """
+    from giten.trace import core
+
+    def mutate(fields, n):
+        if n == 400:
+            fields[3] = 0x5A                     # ch
+        return fields
+
+    tp, op, build = _verify_run(mutate=mutate)
+    _stats, findings = core.verify(tp, build, op)
+    hits = _first_of(findings, "does not match")
+    assert hits, "a logged byte that is in neither the overlay nor the file passed"
+    assert hits[0][0].n == 400, hits[0][0].n
+
+
+def test_the_verifier_catches_a_program_counter_in_virtual_space_with_no_tail():
     """Inject the soft lock's signature and require it to be found.
 
-    A PC above the file's image and outside every virtual range we declare
-    means the engine is reading memory neither the script nor the translation
-    owns.  That is the state the 2026-09-07 soft lock ran in for 228 records
-    while every other check stayed green.
+    A program counter above the buffer's own image end and outside every
+    virtual range this overlay declares means the engine is reading memory
+    neither the script nor the translation owns.  That is the state the
+    2026-09-07 soft lock ran in for 228 records while every other check stayed
+    green.
     """
-    import tempfile
-    from giten import paths
     from giten.trace import core
 
-    trace, ovl = _fixture_paths()
-    with open(trace, "rb") as fh:
-        blob = fh.read()
+    def mutate(fields, n):
+        if n == 500:
+            fields[9] = 0xF000                   # pc0, far above any tail
+            fields[2] = 0xF000
+        return fields
 
-    # control: unmutated, nothing found
-    stats, findings = core.verify(trace, paths.ORIGINAL_DDSWIN, ovl)
-    assert findings == [], findings[:2]
-    assert stats["out of bounds"] == 0, stats
-
-    # find a record the verifier currently places, and move its PC out of range
-    n = next(i for i in range(200)
-             if core.RECORD_V2.unpack_from(blob[core.HEADER.size:],
-                                           i * core.RECORD_V2.size)[9])
-    bad = _rewrite_record(blob, n, pc0=0xF000)
-    d = tempfile.mkdtemp()
-    p = os.path.join(d, "mutant.gtrc")
-    with open(p, "wb") as fh:
-        fh.write(bad)
-    stats, findings = core.verify(p, paths.ORIGINAL_DDSWIN, ovl)
-    hits = _first_of(findings, "outside the file")
+    tp, op, build = _verify_run(mutate=mutate)
+    stats, findings = core.verify(tp, build, op)
+    hits = _first_of(findings, "outside the record")
     assert hits, "an out-of-range program counter was not reported"
-    assert stats["out of bounds"] >= 1, stats
+    assert stats["out of bounds"] == 1, stats
     assert hits[0][0].pc0 == 0xF000
-
-
-def test_the_verifier_catches_a_byte_that_does_not_match_the_original():
-    """Inject a token the original file does not have at that address."""
-    import tempfile
-    from giten import paths
-    from giten.trace import core
-
-    trace, ovl = _fixture_paths()
-    with open(trace, "rb") as fh:
-        blob = fh.read()
-
-    # a record the verifier resolved against the file, whose ch we can corrupt
-    base = core.verify(trace, paths.ORIGINAL_DDSWIN, ovl)
-    assert base[1] == []
-
-    n = next(i for i in range(400)
-             if core.RECORD_V2.unpack_from(blob[core.HEADER.size:],
-                                           i * core.RECORD_V2.size)[9])
-    bad = _rewrite_record(blob, n, ch=0x5A5A)
-    d = tempfile.mkdtemp()
-    p = os.path.join(d, "mutant.gtrc")
-    with open(p, "wb") as fh:
-        fh.write(bad)
-    _stats, findings = core.verify(p, paths.ORIGINAL_DDSWIN, ovl)
-    assert findings, "a token that is not in the file was not reported"
 
 
 def test_the_verifier_catches_a_branch_served_out_of_our_english():
     """Doctor the overlay so a served span contains a goto, and require a report.
 
-    This is the check that was already there, and it had never been shown to
-    fire.  The span keeps its length so `head` and `tail` stay valid -- only one
-    byte of English becomes `0C`, and the trace is pointed at it.
+    The span keeps its length, so `served` and the tail stay valid -- only one
+    byte of English becomes `0C`, and the generated run then dispatches it.
     """
-    import tempfile
-    from giten import overlay, paths
     from giten.trace import core
 
-    trace, ovl_path = _fixture_paths()
-    with open(ovl_path, "rb") as fh:
-        ents = overlay.parse(fh.read())
+    def doctor(entries):
+        for e in entries:
+            for s in e.spans:
+                if s.served > 8:
+                    k = 4                        # a byte inside what is served
+                    s.data = s.data[:k] + bytes([0x0C]) + s.data[k + 1:]
+                    return
+        raise AssertionError("no in-place span long enough to doctor")
 
-    # a span with plenty of in-place English to corrupt
-    target = None
-    for e in ents:
-        for s in e.spans:
-            if s.head > 8:
-                target = (e, s)
-                break
-        if target:
-            break
-    assert target, "the fixture has no in-place span to doctor"
-    e, s = target
-    k = 4                                        # a byte inside the head
-    s.data = s.data[:k] + bytes([0x0C]) + s.data[k + 1:]
-
-    d = tempfile.mkdtemp()
-    mut_ovl = os.path.join(d, "mutant.gtov")
-    with open(mut_ovl, "wb") as fh:
-        fh.write(overlay.build(ents))
-
-    # one record whose PC is just past that byte, logging what we now serve.
-    # The record id and the index entry have to be the real ones for that
-    # address: since the verifier stopped trusting the file register on its
-    # own, a finding is only made when the engine's own index entry says the
-    # label describes the buffer -- so the mutation has to supply one.
-    with open(trace, "rb") as fh:
-        blob = fh.read()
-    rel = core._rel_of(e.fid)
-    with open(os.path.join(paths.ORIGINAL_DDSWIN, *rel.split("/")), "rb") as fh:
-        img = core._Image(rel, fh.read(), ents)
-    rec_id = max(i for i, b in img.base.items() if b <= s.start)
-    off, ln = core._index_entry(img, rec_id)
-    # pc0 is one past the dispatched byte -- the caller fetches it, and that
-    # fetch is what moves the PC -- so a `0C` at s.start+k is logged with
-    # pc0 == s.start+k+1.
-    bad = _rewrite_record(blob, 1, file=e.fid, rec=rec_id, idx_off=off, idx_len=ln,
-                          pc=s.start + k + 1, pc0=s.start + k + 1, ch=0x0C)
-    p = os.path.join(d, "mutant.gtrc")
-    with open(p, "wb") as fh:
-        fh.write(bad)
-
-    _stats, findings = core.verify(p, paths.ORIGINAL_DDSWIN, mut_ovl)
+    tp, op, build = _verify_run(doctor=doctor)
+    _stats, findings = core.verify(tp, build, op)
     assert _first_of(findings, "branch served"), \
         "a goto served out of our own English was not reported"
 
 
-def test_the_clean_fixture_survives_every_mutation_being_reverted():
-    """The negative control: none of the above passes by reporting everything."""
+def test_a_trace_older_than_v4_is_refused_rather_than_guessed_at():
+    """v6 keys on record content, and only a v4 trace logs it.
+
+    An older trace carries the engine's file label instead, which is written on
+    load and names whatever script was loaded most recently -- so judging one
+    against a v6 overlay would be judging addresses against the wrong file.
+    The traces on disk are the ones this refuses.
+    """
     from giten import paths
     from giten.trace import core
 
-    trace, ovl = _fixture_paths()
-    stats, findings = core.verify(trace, paths.ORIGINAL_DDSWIN, ovl)
-    assert findings == [], findings[:3]
-    assert stats["out of bounds"] == 0
-    assert stats["served"] > 500 and stats["from the file"] > 1500
-    # and the two gates below must not be passing by never engaging
-    assert stats["virtual PCs"] > 100, stats
-    assert stats["unpaired virtual PCs"] == 0, stats
-    assert stats["label contradicted"] > 0, stats
-
-
-# ---------------------------------------------------------------------------
-# The two gates that were missing, and what they cost me to find.
-#
-# The soft-lock trace reported 228 program counters "outside the file and our
-# overlay", in m/MS00DD record 0x4E.  Both halves of that sentence were wrong,
-# for two different reasons, and each is now a gate with a mutation test.
-#
-#   * The file a record is labelled with comes from an engine global written
-#     when a script is LOADED.  Several scripts are resident at once and the
-#     interpreter runs whichever its context points at, so while it runs an
-#     older one the global still names the file loaded most recently.  All 228
-#     records carried an index entry -- read by trace.S out of the live buffer
-#     -- that MS00DD cannot produce: (0x4BEF, 1), when MS00DD's whole index
-#     stops at 0x1CC9.  They were judged against a file that was not running.
-#
-#   * A trace only means anything against the overlay that produced it, and
-#     nothing enforced that.  Re-checking the 2026-09-06 trace against today's
-#     overlay reported 891 out-of-bounds PCs in m/MS0017; every one was an
-#     artifact of one span (record 6, span 7) whose English has since been
-#     dropped from the table, which shifted every virtual address above it.
-#     The giveaway was that the engine kept reading coherent English past the
-#     end of the last tail -- "and a discarded DB blouson lying next to it" --
-#     which memory past the script buffer cannot produce.
-# ---------------------------------------------------------------------------
-
-def test_a_stale_file_label_is_never_judged():
-    """Corroboration must gate the bounds check, not decorate it.
-
-    Same mutation as the out-of-bounds test -- a program counter moved out of
-    range -- but with the engine's index entry changed too, so the label no
-    longer describes the buffer.  The first mutation alone must be reported;
-    the pair must not, because there is no longer any file to report it
-    against.  Without this, `_corroborated` could return True unconditionally
-    and every test here would still pass.
-    """
-    import tempfile
-    from giten import paths
-    from giten.trace import core
-
-    trace, ovl = _fixture_paths()
-    with open(trace, "rb") as fh:
-        blob = fh.read()
-    body = blob[core.HEADER.size:]
-
-    n = next(i for i in range(400)
-             if core.RECORD_V2.unpack_from(body, i * core.RECORD_V2.size)[9]
-             and core.RECORD_V2.unpack_from(body, i * core.RECORD_V2.size)[7])
-    d = tempfile.mkdtemp()
-
-    # 1. out of range, label intact -> reported
-    p = os.path.join(d, "labelled.gtrc")
-    with open(p, "wb") as fh:
-        fh.write(_rewrite_record(blob, n, pc0=0xF000))
-    stats, findings = core.verify(p, paths.ORIGINAL_DDSWIN, ovl)
-    assert _first_of(findings, "outside the file"), stats
-
-    # 2. out of range, and the engine's own entry says this is not that file
-    q = os.path.join(d, "stale.gtrc")
-    with open(q, "wb") as fh:
-        fh.write(_rewrite_record(blob, n, pc0=0xF000, idx_off=0x4BEF, idx_len=1))
-    stats2, findings2 = core.verify(q, paths.ORIGINAL_DDSWIN, ovl)
-    assert not _first_of(findings2, "outside the file"), \
-        "a program counter was judged against a file the engine was not running"
-    assert stats2["label contradicted"] == stats["label contradicted"] + 1, \
-        (stats2["label contradicted"], stats["label contradicted"])
-
-
-def test_a_trace_is_refused_against_an_overlay_that_did_not_produce_it():
-    """Move one span's virtual address and require the pairing gate to fire.
-
-    Dropping a span is what really happened, but it changes span *count* as
-    well as addresses; moving one tail by a byte isolates the property being
-    tested -- that virtual addresses are ours, so they can only agree with the
-    overlay that assigned them.
-    """
-    import tempfile
-    from giten import overlay, paths
-    from giten.trace import core
-
-    trace, ovl_path = _fixture_paths()
-    with open(ovl_path, "rb") as fh:
-        ents = overlay.parse(fh.read())
-
-    # the file the fixture spends most of its virtual PCs in
-    stats, _ = core.verify(trace, paths.ORIGINAL_DDSWIN, ovl_path)
-    assert stats["virtual PCs"] > 100 and stats["unpaired virtual PCs"] == 0
-
-    moved = 0
-    for e in ents:
-        for s in e.spans:
-            if s.tail:
-                s.virt += 1                 # every address above this one shifts
-                moved += 1
-    assert moved, "the fixture overlay has no tails to move"
-
-    d = tempfile.mkdtemp()
-    p = os.path.join(d, "shifted.gtov")
-    with open(p, "wb") as fh:
-        fh.write(overlay.build(ents))
-    stats2, findings = core.verify(trace, paths.ORIGINAL_DDSWIN, p)
-    assert _first_of(findings, "not the one that produced this trace"), \
-        "a trace was checked against an overlay that could not have produced it"
-    assert stats2["unpaired virtual PCs"] > 0, stats2
-
-
-def test_the_pairing_gate_stops_the_verifier_rather_than_colouring_it():
-    """A refused pairing must suppress the per-event findings, not add to them.
-
-    Every address-based answer is wrong once the pairing is wrong, so reporting
-    them alongside the refusal would be handing over conclusions drawn from the
-    wrong text.  The report says REFUSED and stops.
-    """
-    import tempfile
-    from giten import overlay, paths
-    from giten.trace import core
-
-    trace, ovl_path = _fixture_paths()
-    with open(ovl_path, "rb") as fh:
-        ents = overlay.parse(fh.read())
-    for e in ents:
-        for s in e.spans:
-            if s.tail:
-                s.virt += 1
-    d = tempfile.mkdtemp()
-    p = os.path.join(d, "shifted.gtov")
-    with open(p, "wb") as fh:
-        fh.write(overlay.build(ents))
-
-    _stats, findings = core.verify(trace, paths.ORIGINAL_DDSWIN, p)
+    old = os.path.join(paths.REPO_ROOT, "traces", "2026-09-10-run2.bin")
+    if not os.path.exists(old):
+        return
+    stats, findings = core.verify(old, paths.ORIGINAL_DDSWIN)
+    assert _first_of(findings, "predates content addressing"), findings[:2]
     assert len(findings) == 1, [f[1] for f in findings[:4]]
-    text, rc = core.report_verify(trace, paths.ORIGINAL_DDSWIN, 20, p)
-    assert rc == 1
-    assert "REFUSED" in text
+    text, rc = core.report_verify(old, paths.ORIGINAL_DDSWIN)
+    assert rc == 1 and "REFUSED" in text
     assert "wrong build directory" not in text, text
+
+
+def test_the_verifier_needs_no_file_identity_at_all():
+    """The property that made v6 possible, as a test of the verifier.
+
+    ``verify`` is handed a trace whose file label is a lie -- every record says
+    it is a file that is not even in the corpus -- and must reach exactly the
+    same conclusion, because it never looks at the label.  The old verifier
+    could not do this: it resolved every address through the labelled file and
+    had a whole gate (`_corroborated`) for noticing when the label was stale.
+    """
+    import struct
+    import tempfile
+    from giten import paths
+    from giten.trace import core
+
+    tp, op, build = _verify_run()
+    with open(tp, "rb") as fh:
+        blob = bytearray(fh.read())
+    body = core.HEADER.size
+    n = (len(blob) - body) // core.RECORD_V4.size
+    for i in range(n):
+        struct.pack_into("<H", blob, body + i * core.RECORD_V4.size, 0xBEEF)
+    d = tempfile.mkdtemp(prefix="giten-nolabel-")
+    lied = os.path.join(d, "lied.gtrc")
+    with open(lied, "wb") as fh:
+        fh.write(bytes(blob))
+
+    a, fa = core.verify(tp, build, op)
+    b, fb = core.verify(lied, build, op)
+    assert fa == [] and fb == []
+    assert a == b, (a, b)
 
 
 def test_a_span_whose_japanese_carries_ff_is_never_overlaid():

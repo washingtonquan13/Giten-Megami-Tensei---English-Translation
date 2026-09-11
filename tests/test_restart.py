@@ -513,15 +513,25 @@ def test_tracer_snapshots_the_record_base_before_the_call():
     # ... and so is the handle table it indexes to reach the record base
     assert blob.find(struct.pack("<I", tracer.SYMBOLS["HANDLE_TABLE"])) < call
 
-    # the snapshot goes to stack locals (sub esp, 12 ... leave), not the cave
-    assert blob[3:6] == b"\x83\xEC\x0C", "no `sub esp, 12` for the locals"
+    # the snapshot goes to stack locals (sub esp, 20 ... leave), not the cave.
+    # 20, not 12, since v4: the record's own FNV-1a and the buffer's image end
+    # are snapshotted too, because overlay v6 keys a translated span on record
+    # CONTENT and a trace carrying only the file label cannot be checked
+    # against it.
+    assert blob[3:6] == b"\x83\xEC\x14", "no `sub esp, 20` for the locals"
     assert b"\xC9\xC3" in blob, "no `leave; ret` to match the frame"
 
-    # the record is 22 bytes behind an 8-byte header, and both are written
-    assert tracer.RECORD.size == 22
+    # ...and the record is hashed before the call too, like everything else
+    # that describes the state the token was dispatched from
+    fnv = b"\xBF\xC5\x9D\x1C\x81"            # mov edi, 0x811C9DC5
+    assert fnv in blob, "the record is never hashed"
+    assert blob.find(fnv) < call, "the record is hashed after the real call"
+
+    # the record is 28 bytes behind an 8-byte header, and both are written
+    assert tracer.RECORD.size == 28
     assert tracer.TRACE_MAGIC + struct.pack("<HH", tracer.TRACE_VERSION,
                                             tracer.RECORD.size) in blob
-    assert b"\x6A\x16" in blob, "no `push 22` for the record WriteFile"
+    assert b"\x6A\x1C" in blob, "no `push 28` for the record WriteFile"
 
     # v3's state word is read AFTER the call, on purpose.  It costs no
     # stack slot, and a token that changes state is then logged with the

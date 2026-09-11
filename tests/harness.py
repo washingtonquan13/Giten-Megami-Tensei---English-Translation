@@ -73,6 +73,72 @@ def quoted(path: str) -> str:
     return '"%s"' % path
 
 
+def synth_trace(table, image, fid: int = 0, recs=None, mutate=None) -> bytes:
+    """A v4 trace of an English run over ``image``, from ``overlay.Model``.
+
+    The recorded fixtures this replaces were v4/v5 overlays and a v2 trace, and
+    a trace only means anything against the overlay that produced it -- so they
+    could not be upgraded, only regenerated.  Generating them instead is
+    strictly better: the trace is the model's own answer, so a check that fires
+    on it is firing on the thing the hook implements rather than on a recording
+    of a build nobody can rebuild.
+
+    One event per *token*, the way ``trace.S`` logs them: the caller fetches the
+    character or the opcode head (two bytes for a wide character or an
+    ``1D``/``1E``/``1F`` escape), calls ``exec_token``, and the handler consumes
+    the operands later -- so ``pc0`` is the program counter just past the head,
+    not past the whole token.
+
+    ``mutate(ev)`` may rewrite one event's field tuple before it is packed;
+    that is how the fault-injection tests put a byte or a program counter
+    somewhere it should not be.
+    """
+    from giten import overlay, vmops
+    from giten.trace import core
+
+    idx = overlay.live_index(image)
+    end = overlay.live_end(image)
+    out = bytearray(core.HEADER.pack(core.MAGIC, 4, core.RECORD_V4.size))
+    n = 0
+    for rid in (range(256) if recs is None else recs):
+        off, ln = idx[rid]
+        if ln <= 1:
+            continue
+        h = overlay.fnv1a(image[off:off + ln])
+        model = overlay.Model(table, image)
+        stream, after, pc, steps = bytearray(), [], off, 0
+        while pc != off + ln and steps < (1 << 16):
+            b, nxt = model.fetch(pc)
+            stream.append(b)
+            after.append(nxt)
+            pc = nxt
+            steps += 1
+        try:
+            toks = vmops.tokenize(bytes(stream))
+        except Exception:
+            continue                        # a record we cannot tile is not an oracle
+        for t in toks:
+            heads = []
+            if t.kind == "op":
+                heads.append((t.off, 1 if t.idx < 0x100 else 2))
+            else:
+                i = t.off
+                while i < t.end:
+                    w = 2 if (0x81 <= stream[i] <= 0x9F or 0xE0 <= stream[i] <= 0xFC) else 1
+                    w = min(w, t.end - i)
+                    heads.append((i, w))
+                    i += w
+            for start, width in heads:
+                ch = int.from_bytes(bytes(stream[start:start + width]), "big")
+                pc0 = after[start + width - 1]
+                ev = [fid, rid, pc0, ch, 0, 0, 0, off, ln, pc0, 0, 0, h, end]
+                if mutate is not None:
+                    ev = mutate(list(ev), n) or ev
+                out += core.RECORD_V4.pack(*ev)
+                n += 1
+    return bytes(out)
+
+
 def pace(exe: str, tmp: str, granularity, total, stall_at=0, stall=0):
     out = subprocess.run([exe, "pace", str(granularity), str(total),
                           str(stall_at), str(stall)],

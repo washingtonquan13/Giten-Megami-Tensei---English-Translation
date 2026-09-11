@@ -129,12 +129,19 @@ SYMBOLS = {
 #: IMAGE_SCN_CNT_CODE | CNT_INITIALIZED_DATA | MEM_EXECUTE | MEM_READ | MEM_WRITE
 TRC_CHARACTERISTICS = 0xE0000060
 
-#: file, rec, pc, ch, r, capflag, caplen, idx_off, idx_len, pc0, flags, state
-#: (v3; behind an 8-byte "GTRC" header.  giten/trace/core.py decodes v1 and v2.)
-RECORD = struct.Struct("<HHHHhBBHHHHH")
+#: file, rec, pc, ch, r, capflag, caplen, idx_off, idx_len, pc0, flags, state,
+#: rec_hash, image_end (v4; behind an 8-byte "GTRC" header.  giten/trace/core.py
+#: decodes v1 through v4.)
+#:
+#: v4 appends the two things overlay v6 needs and no earlier version logged:
+#: FNV-1a over the current record's own bytes, and the buffer's own image end.
+#: The overlay keys on record CONTENT, so a trace carrying only the engine's
+#: file label cannot be checked against it -- the label is written on load, not
+#: on every context switch.
+RECORD = struct.Struct("<HHHHhBBHHHHHIH")
 RECORD_SIZE = RECORD.size
 TRACE_MAGIC = b"GTRC"
-TRACE_VERSION = 3
+TRACE_VERSION = 4
 TRACE_HEADER_SIZE = 8
 
 

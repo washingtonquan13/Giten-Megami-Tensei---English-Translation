@@ -46,6 +46,19 @@ def _rows():
     return [r for p in tables.iter_tables(DRAFT) for r in tables.read(p)]
 
 
+def _served(entries):
+    """``{(file, rec, idx)}`` -- every table row the planned overlay serves.
+
+    v6 keys on record content, not on a file, so an entry no longer knows which
+    file it came from.  Each span remembers the rows that produced it instead --
+    several, once two files turn out to hold the same record -- and that is what
+    "the overlay serves this row" means now.
+    """
+    return {(rel, "%d:%02X" % (ci, rid), idx)
+            for e in entries for s in e.spans
+            for rel, ci, rid, idx in s.sources}
+
+
 def test_the_data_span_rule_needs_both_halves():
     """Neither half alone is the rule, and each was tried and found wrong.
 
@@ -73,11 +86,7 @@ def test_the_data_span_rule_needs_both_halves():
         "'no kana' was the wrong test" % (real[0].file, real[0].rec, real[0].idx))
 
     entries, findings = overlay.plan(rows, None)
-    served = set()
-    for e in entries:
-        for s in e.spans:
-            served.add((e.rel, "%d:%02X" % (e.ci, s.rec_id), s.idx))
-    assert (real[0].file, real[0].rec, real[0].idx) in served, (
+    assert (real[0].file, real[0].rec, real[0].idx) in _served(entries), (
         "the rule is refusing real text in a container that tiles cleanly")
 
     refused = {w.rsplit("[", 1)[0].split()[0] for w, m in findings
@@ -96,10 +105,7 @@ def test_the_overlay_serves_no_english_that_still_carries_japanese():
     if not rows:
         return
     entries, _ = overlay.plan(rows, None)
-    served = set()
-    for e in entries:
-        for s in e.spans:
-            served.add((e.rel, "%d:%02X" % (e.ci, s.rec_id), s.idx))
+    served = _served(entries)
     bad = [r for r in rows if r.edited and CJK.search(r.en)
            and (r.file, r.rec, r.idx) in served]
     assert not bad, "%d served row(s) still carry Japanese in their English: %s" % (

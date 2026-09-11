@@ -1,10 +1,10 @@
 # Interpreter trace hook for dds.exe (dev builds only).
 #
 # Every call to exec_token (0x439020) is redirected here.  We snapshot the
-# interpreter state, call the real function, then append one 22-byte record to
+# interpreter state, call the real function, then append one 28-byte record to
 # ddswin\trace.bin, behind an 8-byte file header:
 #
-#     header  "GTRC" u16 version=3 u16 record_size=22   (written once, at create)
+#     header  "GTRC" u16 version=4 u16 record_size=28   (written once, at create)
 #
 #     u16 file      ds:FILEID      script file id (0x7F00-07 = pools)   [before]
 #     u16 rec       ds:RECID       record id                            [before]
@@ -22,6 +22,23 @@
 #                   Read at write time, like capflag, so a token that changes
 #                   state is logged with the state it left behind.  Good enough
 #                   for "which state is a battle in" and it costs no stack slot.
+#     u32 rec_hash  FNV-1a over the record's own bytes                  [before]
+#     u16 image_end idx[255].off + idx[255].len                         [before]
+#
+# WHY THE HASH AND THE IMAGE END ARE LOGGED (v4, 2026-09-10)
+#
+# The overlay stopped identifying files.  A translated span is keyed on the
+# CONTENT of the record it lives in -- (record id, record length, FNV-1a of the
+# record's bytes) -- because that is the only thing about a running buffer that
+# cannot go stale.  So a trace that carries only the engine's file label cannot
+# be checked against the overlay at all: the label is written on load, not on
+# every context switch, and the same id is reused for every shop on a map.
+#
+# The hash is taken from the same index entry the snapshot already reads, under
+# the same guards, so it costs one pass over the record per token and no new
+# engine state.  `image_end` is the four bytes the hook itself reads to decide
+# whether a program counter is real or virtual; logging it is what lets an
+# offline replay resolve a virtual PC without guessing which file was loaded.
 #
 # WHY THE SNAPSHOT IS TAKEN BEFORE THE CALL
 #
@@ -58,17 +75,20 @@
 #   [ebp-12] u16 file      [ebp-10] u16 rec
 #   [ebp-8]  u16 pc0       [ebp-6]  u16 flags
 #   [ebp-4]  u32 index entry (u16 off, u16 len)
+#   [ebp-16] u32 rec_hash  [ebp-20] u16 image_end
 _start:
         push    ebp
         mov     ebp, esp
-        sub     esp, 12
+        sub     esp, 20
         pushad
         pushfd
 
         xor     eax, eax
-        mov     word ptr [ebp-8], ax        # pc0    = 0
-        mov     word ptr [ebp-6], ax        # flags  = 0
-        mov     dword ptr [ebp-4], eax      # index  = not logged
+        mov     word ptr [ebp-8], ax        # pc0       = 0
+        mov     word ptr [ebp-6], ax        # flags     = 0
+        mov     dword ptr [ebp-4], eax      # index     = not logged
+        mov     dword ptr [ebp-16], eax     # rec_hash  = not logged
+        mov     dword ptr [ebp-20], eax     # image_end = not logged
 
         # WHICH of exec_token's three call sites reached us.
         #
@@ -113,9 +133,34 @@ _start:
         mov     eax, dword ptr [HANDLE_TABLE + eax*8]
         test    eax, eax
         jz      8f
+        mov     edx, eax                    # edx = the buffer base
         movzx   ecx, byte ptr [RECID]       # 256 entries: the id is one byte
-        mov     eax, dword ptr [eax + ecx*4]
+        mov     eax, dword ptr [edx + ecx*4]
         mov     dword ptr [ebp-4], eax
+        # The record's own CONTENT, which is what the overlay keys on, plus the
+        # buffer's own end.  Only for a real script buffer: entry 0 always sits
+        # at 0x400 there, and if it does not, the offsets below are not offsets
+        # and the hash loop would read whatever follows.
+        cmp     word ptr [edx], 0x400
+        jne     8f
+        movzx   ebx, word ptr [edx + 0x3FC] # idx[255].off
+        movzx   esi, word ptr [edx + 0x3FE] # idx[255].len
+        add     ebx, esi
+        mov     word ptr [ebp-20], bx       # image_end
+        movzx   esi, ax                     # this record's offset...
+        shr     eax, 16                     # ...and its length
+        add     esi, edx                    # esi = base + offset
+        mov     edi, 0x811C9DC5             # FNV-1a over the record's bytes
+        mov     ecx, eax
+        test    ecx, ecx
+        jz      0f
+9:      movzx   eax, byte ptr [esi]
+        xor     edi, eax
+        imul    edi, edi, 0x01000193
+        inc     esi
+        dec     ecx
+        jnz     9b
+0:      mov     dword ptr [ebp-16], edi
 8:
         popfd
         popad
@@ -151,7 +196,7 @@ _start:
         lea     eax, [esi + written]
         push    eax
         push    8
-        lea     eax, [esi + hdr]            # "GTRC" 3 22
+        lea     eax, [esi + hdr]            # "GTRC" 4 28
         push    eax
         push    dword ptr [esi + hfile]
         call    dword ptr [WRITEFILE_IAT]
@@ -167,6 +212,10 @@ _start:
         mov     word ptr [edi+16], ax
         mov     ax, word ptr [ebp-6]        # flags  (snapshot)
         mov     word ptr [edi+18], ax
+        mov     eax, dword ptr [ebp-16]     # rec_hash (snapshot)
+        mov     dword ptr [edi+22], eax
+        mov     ax, word ptr [ebp-20]       # image_end (snapshot)
+        mov     word ptr [edi+26], ax
 
         mov     ecx, dword ptr [CTX]
         xor     eax, eax                    # no context -> log pc 0
@@ -193,7 +242,7 @@ _start:
         push    0                           # lpOverlapped
         lea     eax, [esi + written]
         push    eax
-        push    22
+        push    28
         push    edi                         # lpBuffer = rec
         push    dword ptr [esi + hfile]
         call    dword ptr [WRITEFILE_IAT]
@@ -206,8 +255,8 @@ _start:
         .balign 4
 hfile:  .long   0
 written: .long  0
-rec:    .space  22
+rec:    .space  28
 hdr:    .ascii  "GTRC"
-        .short  3                           # format version
-        .short  22                          # bytes per record
+        .short  4                           # format version
+        .short  28                          # bytes per record
 fname:  .asciz  "trace.bin"
