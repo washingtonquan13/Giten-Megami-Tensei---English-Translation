@@ -42,8 +42,9 @@ evidence, never on "the walk had not failed yet":
     full walk had from ``end`` onward.  If ``end`` were not a real boundary the
     independent walk would diverge or fail.
 
-:func:`verify_span` requires all three.  :func:`observed_boundaries` adds the
-fourth and strongest check when a trace is available: the engine's own token PCs.
+:func:`verify_span` requires all three.  The fourth and strongest check, when a
+trace is available, is the engine's own token program counters -- see
+:func:`giten.tile.observe`.
 """
 from __future__ import annotations
 
@@ -168,14 +169,13 @@ def safe_spans(rel: str, ci: int, rec_id: int, data: bytes, tab=None):
     return keep, ok, rejected
 
 
-def observed_boundaries(events, rel: str, rec_id: int) -> "set[int]":
-    """Instruction boundaries the *engine* used, from a decoded trace.
-
-    The strongest check there is: the tracer logs one record per token dispatch,
-    so these PCs are the engine's own tiling.  A span whose start and end both
-    appear here is not a deduction at all.
-    """
-    return {e.pc for e in events if e.rel == rel and e.rec == rec_id and e.pc}
+#: **Moved.**  ``observed_boundaries`` used to live here and was wrong twice
+#: over: it took ``e.pc``, which is one past the *end* of the token, and it
+#: matched on ``e.rel``/``e.rec`` -- the trace's file label and ``ds:RECID``,
+#: both written on load and both routinely naming a script that is not running.
+#: The real thing is :func:`giten.tile.observe`, which takes ``pc0`` minus the
+#: width of the dispatched character and identifies the record by its content.
+OBSERVED_BOUNDARIES_MOVED_TO = "giten.tile.observe"
 
 
 #: How far past its own end a record's final token may reach.  Every one of the
