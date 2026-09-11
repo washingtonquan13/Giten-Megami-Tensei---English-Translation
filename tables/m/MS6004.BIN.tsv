@@ -3,14 +3,14 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS6004.BIN	0:31	0	37	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
-m/MS6004.BIN	0:31	1	41	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
-m/MS6004.BIN	0:31	2	99	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
-m/MS6004.BIN	0:31	3	103	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
-m/MS6004.BIN	0:31	4	183	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
-m/MS6004.BIN	0:31	5	187	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
-m/MS6004.BIN	0:31	6	253	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
-m/MS6004.BIN	0:31	7	257	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
+m/MS6004.BIN	0:31	0	37	1FB2	{08:26}		Yes	ours		reads: はい; menu option, declared width 20 columns
+m/MS6004.BIN	0:31	1	41	1FB2	{08:27}		No	ours		reads: いいえ; menu option, declared width 20 columns
+m/MS6004.BIN	0:31	2	99	1FB2	{08:26}		Yes	ours		reads: はい; menu option, declared width 20 columns
+m/MS6004.BIN	0:31	3	103	1FB2	{08:27}		No	ours		reads: いいえ; menu option, declared width 20 columns
+m/MS6004.BIN	0:31	4	183	1FB2	{08:26}		Yes	ours		reads: はい; menu option, declared width 20 columns
+m/MS6004.BIN	0:31	5	187	1FB2	{08:27}		No	ours		reads: いいえ; menu option, declared width 20 columns
+m/MS6004.BIN	0:31	6	253	1FB2	{08:26}		Yes	ours		reads: はい; menu option, declared width 20 columns
+m/MS6004.BIN	0:31	7	257	1FB2	{08:27}		No	ours		reads: いいえ; menu option, declared width 20 columns
 m/MS6004.BIN	0:57	0	30	1FB2	わ{08:18}	Understood	Understood	ours	reviewed	reads: わかった; menu option, declared width 20 columns
 m/MS6004.BIN	0:57	1	36	1FB2	駄目	No	No Good	ours	draft	menu option, declared width 20 columns
 m/MS6004.BIN	0:59	0	95	18	{02:09}・・引き寄せら{08:2F}？？？\n		.....Am I being drawn in???\n	ours		reads: ・・・・・引き寄せられる？？？\n
@@ -33,7 +33,7 @@ m/MS6004.BIN	0:73	0	6	1F01	は怯え{08:14}{08:69}だ\n	 seems terrified.\n	{04:
 m/MS6004.BIN	0:73	1	35	1FB2	威嚇射撃	Warning shot	Warning Shot	ours	draft	menu option, declared width 20 columns
 m/MS6004.BIN	0:73	2	45	1FB2	近づく	Approach	Approach	ours	reviewed	menu option, declared width 20 columns
 m/MS6004.BIN	0:73	3	53	1FB2	様子を見る	Wait and see	Wait and See	ours	draft	menu option, declared width 20 columns
-m/MS6004.BIN	0:73	4	65	1FB2	{08:0C}	{08:0C}	Attack	ours		reads: 攻撃; menu option, declared width 20 columns
+m/MS6004.BIN	0:73	4	65	1FB2	{08:0C}		Attack	ours		reads: 攻撃; menu option, declared width 20 columns
 m/MS6004.BIN	0:84	0	6	1FAE	ガンを装備{08:4A}{08:24}！\n		Not equipped with a gun!\n	ours		reads: ガンを装備していない！\n
 m/MS6004.BIN	0:84	1	139	1F01	は涙を流{08:13}\n	 has tears streaming down.\n	{04:EF} has tears streaming down.\n	ours	draft	reads: は涙を流している\n
 m/MS6004.BIN	0:84	2	166	1FB2	脅す	Threaten	Threaten Them	ours	draft	menu option, declared width 20 columns
@@ -58,11 +58,11 @@ m/MS6004.BIN	0:8F	2	39	1FB2	謝る	Apologize	Apologize	ours	reviewed	menu option
 m/MS6004.BIN	0:8F	3	45	1FB2	ほ{08:53}く	Leave it	Leave It Alone	ours	draft	reads: ほっとく; menu option, declared width 20 columns
 m/MS6004.BIN	0:8F	4	101	1FFA	{02:09}{02:09}\n	......\n			draft	reads: ・・・・・・\n
 m/MS6004.BIN	0:8F	5	153	1F01	は{08:76}　泣い{08:14}\n	 is still crying\n	{04:EF} is still crying.\n	ours	draft	reads: はまだ　泣いている\n
-m/MS6004.BIN	0:90	0	30	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
-m/MS6004.BIN	0:90	1	34	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
+m/MS6004.BIN	0:90	0	30	1FB2	{08:26}		Yes	ours		reads: はい; menu option, declared width 20 columns
+m/MS6004.BIN	0:90	1	34	1FB2	{08:27}		No	ours		reads: いいえ; menu option, declared width 20 columns
 m/MS6004.BIN	0:90	2	121	1F01	は後ずさろうと{08:4B}が後退{08:23}！\n	 tried to back away but can't retreat!\n			draft	reads: は後ずさろうとしたが後退できない！\n
 m/MS6004.BIN	0:90	3	192	1F01	は泣き出{08:17}\n	 burst into tears!\n			draft	reads: は泣き出した！\n
-m/MS6004.BIN	0:90	4	231	1FB2	{08:0E}	{08:0E}	Ally	ours		reads: 仲魔; menu option, declared width 20 columns
+m/MS6004.BIN	0:90	4	231	1FB2	{08:0E}		Ally	ours		reads: 仲魔; menu option, declared width 20 columns
 m/MS6004.BIN	0:90	5	235	1FB2	キミ	You	You	ours	reviewed	menu option, declared width 20 columns
 m/MS6004.BIN	0:90	6	241	1FB2	お前の命	Your life	Your Life	ours	draft	menu option, declared width 20 columns
 m/MS6004.BIN	0:92	0	13	1FA3	{08:03}が		Emi is glaring...\n	ours		reads: 英美が; @split: was {08:03}が睨んで{08:40}{02:09}\n
@@ -98,7 +98,7 @@ m/MS6004.BIN	2:01	6	222	1FB2	スキだよ	I like you	I suppose so	ours	draft	men
 m/MS6004.BIN	2:01	7	232	1FB2	うーん‥	Hmm...	No Way!	ours	draft	menu option, declared width 20 columns
 m/MS6004.BIN	2:01	8	303	1FB2	もちろん	Of course	Fine, But	ours	draft	menu option, declared width 20 columns
 m/MS6004.BIN	2:01	9	313	1FB2	今は結構	Not just now	Offer Tribute	ours	draft	menu option, declared width 20 columns
-m/MS6004.BIN	2:01	10	399	1FB2	{02:04}	{02:04}	Something Naughty	ours		reads: アイテム; menu option, declared width 20 columns
+m/MS6004.BIN	2:01	10	399	1FB2	{02:04}		Something Naughty	ours		reads: アイテム; menu option, declared width 20 columns
 m/MS6004.BIN	2:01	11	403	1FB2	ＭＡＧ	MAG			draft	menu option, declared width 20 columns
 m/MS6004.BIN	2:01	12	411	1FB2	マッカ	Macca			draft	menu option, declared width 20 columns
 m/MS6004.BIN	2:01	13	613	1FB2	ごめん！	Sorry!			draft	menu option, declared width 20 columns
@@ -146,8 +146,8 @@ m/MS6004.BIN	2:11	1	28	1FB2	構うな	Leave it be	Don't Mind Me	ours	draft	menu 
 m/MS6004.BIN	2:12	0	16	1FB2	そ{08:53}抱きし{08:2E}	Hold it gently	Hold Them Gently	ours	draft	reads: そっと抱きしめる; menu option, declared width 20 columns
 m/MS6004.BIN	2:12	1	30	1FB2	いきなり押し倒す！	Shove it down!	Suddenly Push Down!	ours	draft	menu option, declared width 20 columns
 m/MS6004.BIN	2:12	2	50	1FB2	キス{08:8E}	Kiss it	Kiss Them	ours	draft	reads: キスする; menu option, declared width 20 columns
-m/MS6004.BIN	2:13	0	37	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
-m/MS6004.BIN	2:13	1	41	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
+m/MS6004.BIN	2:13	0	37	1FB2	{08:26}		Yes	ours		reads: はい; menu option, declared width 20 columns
+m/MS6004.BIN	2:13	1	41	1FB2	{08:27}		No	ours		reads: いいえ; menu option, declared width 20 columns
 m/MS6004.BIN	2:14	0	16	1FB2	何を？	What?	What?	ours	reviewed	menu option, declared width 20 columns
 m/MS6004.BIN	2:14	1	24	1FB2	断る！	Refuse!	Refuse!	ours	reviewed	menu option, declared width 20 columns
 m/MS6004.BIN	2:14	2	90	1FB2	Ｈな事を{08:8E}	Do something naughty	Do Something Naughty	ours	draft	reads: Ｈな事をする; menu option, declared width 20 columns
@@ -168,7 +168,7 @@ m/MS6004.BIN	2:04	0	112	1F01	は誘惑し{08:1C}\n	 tried to tempt you!\n			draf
 m/MS6004.BIN	2:04	1	136	1F01	は耐え切{08:12}\n	 endured it!\n			draft	reads: は耐え切った！\n
 m/MS6004.BIN	2:04	2	163	1FB2	威嚇射撃	Warning shot	Warning Shot	ours	draft	menu option, declared width 20 columns
 m/MS6004.BIN	2:04	3	173	1FB2	見逃す	Let it go	Let It Go	ours	draft	menu option, declared width 20 columns
-m/MS6004.BIN	2:04	4	181	1FB2	{08:0C}	{08:0C}	Attack	ours		reads: 攻撃; menu option, declared width 20 columns
+m/MS6004.BIN	2:04	4	181	1FB2	{08:0C}		Attack	ours		reads: 攻撃; menu option, declared width 20 columns
 m/MS6004.BIN	2:04	5	217	1F01	はガンを装備{08:4A}{08:24}！\n	 has no gun equipped!\n			draft	reads: はガンを装備していない！\n
 m/MS6004.BIN	2:04	6	291	0D	チュッ\n	Smooch\n	Mwah!\n	ours	draft	
 m/MS6004.BIN	2:04	7	306	1F01	は幸せだ\n	 is happy\n	{04:FF} is happy.\n	ours	draft	
@@ -217,7 +217,7 @@ m/MS6004.BIN	5:0F	0	5	1FBA	＞も{08:53}やり{08:15}\n		>Give more?\n	ours		rea
 m/MS6004.BIN	5:0F	1	40	1F01	は踊{08:12}\n	 danced!\n	{04:FF} danced!\n	ours	draft	reads: は踊った！\n
 m/MS6004.BIN	6:00	0	30	1FB2	そこを何とか	Come on, please	Offer Tribute	ours	draft	menu option, declared width 20 columns
 m/MS6004.BIN	6:00	1	44	1FB2	引き下がる	Back down	Apologize	ours	draft	menu option, declared width 20 columns
-m/MS6004.BIN	6:00	2	56	1FB2	{08:0C}	{08:0C}	Back Down	ours		reads: 攻撃; menu option, declared width 20 columns
+m/MS6004.BIN	6:00	2	56	1FB2	{08:0C}		Back Down	ours		reads: 攻撃; menu option, declared width 20 columns
 m/MS6004.BIN	6:00	3	106	1FB2	{08:0E}になれ	Become my ally	Ignore Them	ours	draft	reads: 仲魔になれ; menu option, declared width 20 columns
 m/MS6004.BIN	6:00	4	116	1FB2	何かくれ	Give me something			draft	menu option, declared width 20 columns
 m/MS6004.BIN	6:00	5	126	1FB2	あっち行け	Go away			draft	menu option, declared width 20 columns
@@ -234,7 +234,7 @@ m/MS6004.BIN	6:0D	1	43	1FB2	怒る	Get angry	Get Angry	ours	draft	menu option, d
 m/MS6004.BIN	6:0D	2	49	1FB2	貢ぐ	Offer tribute	Offer Tribute	ours	draft	menu option, declared width 20 columns
 m/MS6004.BIN	6:0D	3	55	1FB2	受けを狙う	Go for laughs	Play It Safe	ours	draft	menu option, declared width 20 columns
 m/MS6004.BIN	6:0D	4	67	1FB2	睨む	Glare	Glare	ours	reviewed	menu option, declared width 20 columns
-m/MS6004.BIN	6:0D	5	73	1FB2	{08:0C}	{08:0C}	Attack	ours		reads: 攻撃; menu option, declared width 20 columns
+m/MS6004.BIN	6:0D	5	73	1FB2	{08:0C}		Attack	ours		reads: 攻撃; menu option, declared width 20 columns
 m/MS6004.BIN	6:0D	6	153	1FFA	{02:09}・・{02:09}・・\n	..........\n	..........\n	ours	draft	reads: ・・・・・・・・・・\n
 m/MS6004.BIN	6:0D	7	200	1F01	は	 has	{04:FF}	ours	draft	
 m/MS6004.BIN	6:0D	8	207	16	ウィットに富{08:5F}ジョークを言{08:12}\n	 told a witty joke!\n	 told a witty joke!\n	ours	draft	reads: ウィットに富んだジョークを言った！\n
@@ -243,8 +243,8 @@ m/MS6004.BIN	6:0D	10	350	1FDA	にらみ合いは続く{02:09}・・\n		The stare
 m/MS6004.BIN	6:0D	11	389	1FB2	続{08:29}	Continue	Keep Going	ours	draft	reads: 続ける; menu option, declared width 20 columns
 m/MS6004.BIN	6:0D	12	395	1FB2	目をそらす	Look away	Look Away	ours	draft	menu option, declared width 20 columns
 m/MS6004.BIN	7:00	0	151	1FB2	{08:26}	Yes			draft	reads: はい; menu option, declared width 20 columns
-m/MS6004.BIN	7:00	1	155	1FB2	{08:27}	{08:27}	Money	ours		reads: いいえ; menu option, declared width 20 columns
-m/MS6004.BIN	7:00	2	231	1FB2	{02:04}	{02:04}	MAG	ours		reads: アイテム; menu option, declared width 20 columns
+m/MS6004.BIN	7:00	1	155	1FB2	{08:27}		Money	ours		reads: いいえ; menu option, declared width 20 columns
+m/MS6004.BIN	7:00	2	231	1FB2	{02:04}		MAG	ours		reads: アイテム; menu option, declared width 20 columns
 m/MS6004.BIN	7:00	3	235	1FB2	金	Money	You	ours	draft	menu option, declared width 20 columns
 m/MS6004.BIN	7:00	4	239	1FB2	ＭＡＧ	MAG			draft	menu option, declared width 20 columns
 m/MS6004.BIN	7:00	5	247	1FB2	キミ	You			draft	menu option, declared width 20 columns
@@ -312,7 +312,7 @@ m/MS6004.BIN	13:00	5	289	1FB2	{08:26}	Yes			draft	reads: はい; menu option, de
 m/MS6004.BIN	13:00	6	293	1FB2	{08:4D}は…	Well...	Can't Be Helped	ours	draft	reads: それは…; menu option, declared width 20 columns
 m/MS6004.BIN	13:00	7	391	1FB2	人に害を成せば	If they harm people	That's Wrong!	ours	draft	menu option, declared width 20 columns
 m/MS6004.BIN	13:00	8	407	1FB2	{08:0B}による	Depends on the demon	Leave It Alone	ours	draft	reads: 悪魔による; menu option, declared width 20 columns
-m/MS6004.BIN	13:00	9	504	1FB2	{01:29}	{01:29}	Calm Them Down	ours		reads: そうだ; menu option, declared width 20 columns
+m/MS6004.BIN	13:00	9	504	1FB2	{01:29}		Calm Them Down	ours		reads: そうだ; menu option, declared width 20 columns
 m/MS6004.BIN	13:00	10	508	1FB2	違う！	Wrong!	Get Angry	ours	draft	menu option, declared width 20 columns
 m/MS6004.BIN	13:00	11	553	1FB2	{01:29}	That's right			draft	reads: そうだ; menu option, declared width 20 columns
 m/MS6004.BIN	13:00	12	557	1FB2	仕方{08:25}	Can't be helped			draft	reads: 仕方ない; menu option, declared width 20 columns

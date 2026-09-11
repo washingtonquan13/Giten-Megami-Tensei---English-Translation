@@ -3,8 +3,8 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS6005.BIN	0:31	0	112	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
-m/MS6005.BIN	0:31	1	116	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
+m/MS6005.BIN	0:31	0	112	1FB2	{08:26}		Yes	ours		reads: はい; menu option, declared width 20 columns
+m/MS6005.BIN	0:31	1	116	1FB2	{08:27}		No	ours		reads: いいえ; menu option, declared width 20 columns
 m/MS6005.BIN	0:64	0	40	1F01	は	 and 	{04:FF}	ours	draft	
 m/MS6005.BIN	0:64	1	48	1F01	と\n語り合{08:51}\n	 talked things over\n	 and\n{04:EF} talked things over\n	ours	draft	reads: と\n語り合った\n
 m/MS6005.BIN	0:64	2	66	1FFA	{02:09}・・\n	.....\n	.....\n	ours	draft	reads: ・・・・・\n
@@ -37,9 +37,9 @@ m/MS6005.BIN	5:12	2	96	1FB2	ＭＡＧ	MAG	MAG	ours	reviewed	menu option, declare
 m/MS6005.BIN	5:12	3	104	1FB2	マッカ	Macca	Macca	ours	reviewed	menu option, declared width 20 columns
 m/MS6005.BIN	6:00	0	27	1FB2	{01:29}	That's right			draft	reads: そうだ; menu option, declared width 20 columns
 m/MS6005.BIN	6:00	1	31	1FB2	怒る	Get angry	Get Angry	ours	draft	menu option, declared width 20 columns
-m/MS6005.BIN	6:00	2	37	1FB2	{08:0C}	{08:0C}	Attack	ours		reads: 攻撃; menu option, declared width 20 columns
+m/MS6005.BIN	6:00	2	37	1FB2	{08:0C}		Attack	ours		reads: 攻撃; menu option, declared width 20 columns
 m/MS6005.BIN	6:00	3	93	1FB2	黙っ{08:14}	Stay quiet	Calm Them Down	ours	draft	reads: 黙っている; menu option, declared width 20 columns
-m/MS6005.BIN	6:00	4	101	1FB2	{08:0C}	{08:0C}	Glare	ours		reads: 攻撃; menu option, declared width 20 columns
+m/MS6005.BIN	6:00	4	101	1FB2	{08:0C}		Glare	ours		reads: 攻撃; menu option, declared width 20 columns
 m/MS6005.BIN	6:00	5	310	1FB2	なだ{08:2E}	Soothe	Ignore Them	ours	draft	reads: なだめる; menu option, declared width 20 columns
 m/MS6005.BIN	6:00	6	318	1FB2	睨む	Glare	Ignore Them	ours	draft	menu option, declared width 20 columns
 m/MS6005.BIN	6:00	7	324	1FB2	無視	Ignore	Apologize	ours	draft	menu option, declared width 20 columns
@@ -77,7 +77,7 @@ m/MS6005.BIN	7:00	9	275	1FB2	絶対許さん	Absolutely not	Jewel	ours	draft	men
 m/MS6005.BIN	7:00	10	384	1FB2	仕方が{08:25}な	Nothing for it	Get Angry	ours	draft	reads: 仕方がないな; menu option, declared width 20 columns
 m/MS6005.BIN	7:00	11	396	1FB2	許さん	Unforgivable	Apologize	ours	draft	menu option, declared width 20 columns
 m/MS6005.BIN	7:00	12	404	1FB2	かわりに何かくれ	Something else then	Glare	ours	draft	menu option, declared width 20 columns
-m/MS6005.BIN	7:00	13	541	1FB2	{08:26}	{08:26}	Warning Shot	ours		reads: はい; menu option, declared width 20 columns
+m/MS6005.BIN	7:00	13	541	1FB2	{08:26}		Warning Shot	ours		reads: はい; menu option, declared width 20 columns
 m/MS6005.BIN	7:00	14	545	1FB2	{08:27}	No			draft	reads: いいえ; menu option, declared width 20 columns
 m/MS6005.BIN	7:00	15	618	1FB2	{02:04}	Item			draft	reads: アイテム; menu option, declared width 20 columns
 m/MS6005.BIN	7:00	16	622	1FB2	金	Money			draft	menu option, declared width 20 columns
@@ -93,11 +93,11 @@ m/MS6005.BIN	7:00	25	1179	1FFA	{02:09}\n	...\n			draft	reads: ・・・\n
 m/MS6005.BIN	7:00	26	1222	1F0D	{08:61}　ガンを装備{08:4A}{08:24}！\n		But -- not equipped with a gun!\n	ours		reads: しかし　ガンを装備していない！\n
 m/MS6005.BIN	7:00	27	1352	1FB2	{01:29}	That's right			draft	reads: そうだ; menu option, declared width 20 columns
 m/MS6005.BIN	7:00	28	1356	1FB2	違う！	Wrong!	That's Wrong!	ours	draft	menu option, declared width 20 columns
-m/MS6005.BIN	7:13	0	222	1FB2	{08:26}	{08:26}	Yes	ours		reads: はい; menu option, declared width 20 columns
-m/MS6005.BIN	7:13	1	226	1FB2	{08:27}	{08:27}	No	ours		reads: いいえ; menu option, declared width 20 columns
+m/MS6005.BIN	7:13	0	222	1FB2	{08:26}		Yes	ours		reads: はい; menu option, declared width 20 columns
+m/MS6005.BIN	7:13	1	226	1FB2	{08:27}		No	ours		reads: いいえ; menu option, declared width 20 columns
 m/MS6005.BIN	13:00	0	39	1FB2	違う！	Wrong!	Because I Like It	ours	draft	menu option, declared width 20 columns
-m/MS6005.BIN	13:00	1	47	1FB2	{01:29}	{01:29}	For My Lover	ours		reads: そうだ; menu option, declared width 20 columns
-m/MS6005.BIN	13:00	2	276	1FB2	{01:29}	{01:29}	For the World	ours		reads: そうだ; menu option, declared width 20 columns
+m/MS6005.BIN	13:00	1	47	1FB2	{01:29}		For My Lover	ours		reads: そうだ; menu option, declared width 20 columns
+m/MS6005.BIN	13:00	2	276	1FB2	{01:29}		For the World	ours		reads: そうだ; menu option, declared width 20 columns
 m/MS6005.BIN	13:00	3	280	1FB2	違う！	Wrong!			draft	menu option, declared width 20 columns
 m/MS6005.BIN	13:00	4	331	1FB2	{08:7F}{08:8C}	Very well			draft	reads: いいだろう; menu option, declared width 20 columns
 m/MS6005.BIN	13:00	5	337	1FB2	断る！	Refuse!			draft	menu option, declared width 20 columns
