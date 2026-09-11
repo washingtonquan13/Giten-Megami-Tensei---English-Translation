@@ -68,6 +68,47 @@ traces and dgVoodoo2, none of which belong in a release).
 | **added** `overlay.dat` | 1 | 2,253,422 B -- the runtime English (v6; smaller than v5 because a record shared by several files is one entry, not one per file) |
 | **added** `et/et0102.bin` | 1 | 72,623 B -- the uncapped item database |
 
+### The `et/` table files, and where each comes from
+
+These four are not scripts, so `script.parse` rejects them and the byte builder
+would otherwise emit identity copies -- quietly reverting work a different
+command owns. `build_v2.DATA_TABLE_BUILDERS` hands each to the module that does
+understand it, and `build_v2.ADDED_FILES` produces the one file the original
+tree does not have. **As of 2026-09-11 `giten build` alone produces all five**;
+before that, `ET0004` and `ET0101` were identity copies here and the installed
+English ones came from a hand-run `giten etdb`, so nothing in the repo could
+reproduce what was shipped.
+
+| file | builder | equivalent command | size |
+|---|---|---|---|
+| `et/ET0000.BIN` | `racenames.build` | `giten racenames` | race / lineage / title |
+| `et/ET0004.BIN` | `etdb` (`skills`) | `giten etdb skills` | 19,724 B, 309 records, 618 strings English |
+| `et/ET0101.BIN` | `etdb` (`maplabels`) | `giten etdb maplabels` | 638 B, 96 records, 27 strings English |
+| `et/ET000D.BIN` | `districts.build` | `giten districts` | the location strip |
+| **added** `et/et0102.bin` | `itemdb` from `et/ET0001.BIN` | `giten itemdb` | 72,623 B, 744 records |
+
+`tests/test_build_added.py` asserts each builder's output is byte-identical to
+the dedicated command's, so the two cannot drift.
+
+`et/ET0001.BIN` itself is deliberately **not** rebuilt: it is capped at 65,535
+bytes three separate ways, the English does not fit, and the patched loader is
+re-pointed at `et/et0102.bin` instead. An unpatched exe still reads the
+original.
+
+### Two install guards
+
+`giten install` refuses a source file with no counterpart in the game folder --
+that is what stops a stray file in a build tree becoming a stray file in
+someone's game folder -- so `et/et0102.bin` needs an explicit allow-list
+(`build_v2.ADDED_FILES`), not a switch.
+
+It also **refuses to write any `m/` file into a folder that holds
+`overlay.dat`**. The two ways of shipping the translation are alternatives: an
+overlay install's `m/` files are the untouched originals, because overlay v6
+keys every translated span on the content of the record it lives in. Installing
+byte-built `m/` files over them changes every key, and the overlay then serves
+nothing. Mixing the two is strictly worse than either.
+
 Nearly all the English is in `overlay.dat`, which holds our text plus FNV hashes
 of the Japanese it replaces -- no game text of any kind.  v6 keys every span on
 `(record id, record length, FNV-1a of the record's bytes)` and carries no file
@@ -160,7 +201,9 @@ A single-file `giten-patch.exe` (PyInstaller) wrapping what already exists:
 1. ask for the game folder;
 2. identify the base exe by hash (§4) and refuse state D with a clear message;
 3. back up every file to be touched, re-reading the backup to verify;
-4. `giten build` then `giten install` from the user's own files;
+4. `giten build` then `giten install` from the user's own files -- one `build`
+   now produces the whole shipping tree, `et/ET0004`, `et/ET0101` and the added
+   `et/et0102.bin` included, so there is no hand-run step to forget;
 5. prompt for the combat-pacing choice (§7).
 
 Steps 3 and 4 exist. Steps 1, 2 and 5 do not.

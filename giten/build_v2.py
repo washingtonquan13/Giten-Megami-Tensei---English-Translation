@@ -149,13 +149,61 @@ def _districts(raw):
     return districts.build(raw)
 
 
+def _etdb(name):
+    """A builder for one of the ``etdb`` files, from that file's own bytes.
+
+    The same four steps ``giten etdb`` runs -- split the container, parse the
+    ``u16 count; u16 offset[]; records`` body, rebuild it with whatever English
+    the table holds, wrap it back into a container -- so a build tree carries
+    the same bytes that command writes.  Until 2026-09-11 it did not: these two
+    were identity copies here and the play install's English ones came from a
+    hand-run ``giten etdb``, which is exactly the "not reproducible from the
+    tree" hazard the rest of this module exists to prevent.
+    """
+    def build_one(raw):
+        from . import container, etdb
+        spec = etdb.SPECS[name]
+        conts, _end = container.split(raw)
+        if len(conts) != 1:
+            raise etdb.EtDbError("%s: %d containers, expected 1"
+                                 % (spec.rel, len(conts)))
+        recs = etdb.parse(spec, conts[0].body)
+        return etdb.pack_file(spec, etdb.build(spec, recs, etdb.read_table(spec)))
+    return build_one
+
+
 #: ``dir/FILE.BIN`` -> a function from the original bytes to the built bytes,
 #: for files the script pipeline cannot parse.  ``et/ET0001.BIN`` is deliberately
 #: absent: the item database is never modified in place, its English ships as the
-#: separate ``et/et0102.bin`` (``giten itemdb``), so an identity copy is correct.
+#: separate ``et/et0102.bin`` (:data:`ADDED_FILES`), so an identity copy is correct.
 DATA_TABLE_BUILDERS = {
     "et/ET0000.BIN": _racenames,          # giten racenames
     "et/ET000D.BIN": _districts,          # giten districts -- the location strip
+    "et/ET0004.BIN": _etdb("skills"),     # giten etdb skills
+    "et/ET0101.BIN": _etdb("maplabels"),  # giten etdb maplabels
+}
+
+
+def _itemdb(raw):
+    from . import container, itemdb, paths as _paths
+    recs = itemdb.parse(container.split(raw)[0][0].body)
+    table = os.path.join(_paths.REPO_ROOT, "tables", "itemdb.tsv")
+    strings, findings = itemdb.strings_from_table(table, recs)
+    return itemdb.pack_file(recs, strings), findings
+
+
+#: Files the build *adds* that the original tree does not have, as
+#: ``new path -> (the shipped file its content is derived from, builder)``.
+#:
+#: There is exactly one, and it exists because ``et/ET0001.BIN`` is capped at
+#: 65,535 bytes three separate ways and the English item database does not fit
+#: (``docs/exe-patches.md``, ``giten/exe/database.py``).  The original is left
+#: untouched and the patched loader is re-pointed at this one, so an unpatched
+#: exe still reads the Japanese.  The builder returns ``(bytes, findings)``;
+#: a finding is a row the item table could not encode and is reported, not
+#: silently dropped.
+ADDED_FILES = {
+    "et/et0102.bin": ("et/ET0001.BIN", _itemdb),
 }
 
 
@@ -228,8 +276,22 @@ def run(out_dir: "str | None" = None, family: str = "all",
 
     _copy_untouched(root, out_dir)
 
+    if not ignore_tables:
+        for rel, (src_rel, fn) in sorted(ADDED_FILES.items()):
+            blob, findings = fn(files.read_source(src_rel, root))
+            dst = os.path.join(out_dir, *rel.split("/"))
+            os.makedirs(os.path.dirname(dst), exist_ok=True)
+            with open(dst, "wb") as fh:
+                fh.write(blob)
+            st["added"] = st.get("added", 0) + 1
+            for idx, msg in findings:
+                st["warnings"].append("%s record %d: %s" % (rel, idx, msg))
+
     if not quiet:
         print("built %d files into %s" % (st["files"], out_dir))
+        if st.get("added"):
+            print("  %d added file(s): %s"
+                  % (st["added"], ", ".join(sorted(ADDED_FILES))))
         print("  %d files changed, %d spans in %d records, %d branch "
               "displacements relocated, %d byte-identical"
               % (st["changed_files"], st["changed_spans"], st["changed_records"],

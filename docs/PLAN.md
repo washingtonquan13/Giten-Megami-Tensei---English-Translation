@@ -27,6 +27,8 @@ python -m giten extract --family all                 # tables/ from the original
 python -m giten carry                                # ref_en/ref_src from old/text_v3 (run once)
 python -m giten check                                # tables + capture-region rule
 python -m giten build --only "m/MS0017.BIN" --out build/en && python -m giten audit --dir build/en
+python -m giten build --text build/tables_draft --out build/en   # the whole tree, et/ included
+python -m giten overlay --text build/tables_draft                # -> build/overlay.dat
 python -m giten install --from build/en --to "<play>/en/ddswin" --yes
 python -m giten trace selfcheck <play>/jp/ddswin/trace.bin
 python -m giten trace diff <jp trace> <en trace> --build2 build/en
