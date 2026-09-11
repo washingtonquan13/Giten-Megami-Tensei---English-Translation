@@ -61,15 +61,17 @@ traces and dgVoodoo2, none of which belong in a release).
 
 | what | count | note |
 |---|---|---|
-| `dds.exe` | 1 | 12,675,072 -> 12,685,312; +10,240 B of appended sections |
+| `dds.exe` | 1 | 12,675,072 -> 12,683,264; +8,192 B of appended sections |
 | `p/P*.BIN` | 432 | demon names, edited in place, every file the same size |
 | `et/ID*.BIN` | 17 | item text |
 | `et/ET0000`, `ET0004`, `ET0101` | 3 | race/lineage, skills, map labels -- rebuilt |
-| **added** `overlay.dat` | 1 | 3,177,637 B -- the runtime English |
+| **added** `overlay.dat` | 1 | 2,253,422 B -- the runtime English (v6; smaller than v5 because a record shared by several files is one entry, not one per file) |
 | **added** `et/et0102.bin` | 1 | 72,623 B -- the uncapped item database |
 
 Nearly all the English is in `overlay.dat`, which holds our text plus FNV hashes
-of the Japanese it replaces -- no game text of any kind.
+of the Japanese it replaces -- no game text of any kind.  v6 keys every span on
+`(record id, record length, FNV-1a of the record's bytes)` and carries no file
+names, no offsets into any game file and no Japanese.
 
 ---
 
