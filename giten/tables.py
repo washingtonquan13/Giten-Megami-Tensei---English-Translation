@@ -48,6 +48,11 @@ class Row:
     ref_src: str = ""     # where it came from: ours / v005
     status: str = ""      # "" | draft | reviewed -- required once en is set
     note: str = ""
+    #: Runtime only, never a column: the ``idx`` of the row this one continues
+    #: when a branch target cut one line into two spans (``script.Span``).  Set
+    #: by the extractor; a row read back from a table carries it in its note
+    #: instead (``extract_v2.SPLIT_TAIL_NOTE``).
+    split_head: "int | None" = field(default=None, compare=False, repr=False)
 
     @property
     def key(self) -> "tuple[str, str, int]":

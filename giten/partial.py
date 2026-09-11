@@ -167,10 +167,15 @@ def verify_span(data: bytes, tokens, ok: int, sp) -> None:
                              % (hi, got[:3], want[:3]))
 
 
-def safe_spans(rel: str, ci: int, rec_id: int, data: bytes, tab=None):
-    """``(spans, ok, rejected)`` -- the spans of a record that are safe to overlay."""
+def safe_spans(rel: str, ci: int, rec_id: int, data: bytes, tab=None, cuts=()):
+    """``(spans, ok, rejected)`` -- the spans of a record that are safe to overlay.
+
+    ``cuts`` is passed straight through to :func:`script.find_spans`: a span ends
+    where a branch in the record lands, here as everywhere else, or the kernel
+    would be verifying boundaries the rest of the pipeline does not use.
+    """
     tokens, ok = tokenize_prefix(data, tab)
-    spans = script.find_spans(ci, rec_id, data, tokens)
+    spans = script.find_spans(ci, rec_id, data, tokens, cuts)
     keep, rejected = [], []
     for sp in spans:
         try:

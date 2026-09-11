@@ -700,15 +700,30 @@ def test_the_memos_survive_a_pool_call_into_another_handle():
 # -- the original Japanese from the jump onward.
 # ---------------------------------------------------------------------------
 
-def test_the_overlay_never_answers_an_address_a_branch_jumps_to():
-    """The invariant, over every file that had the fault, from the real tables."""
+def test_no_served_span_contains_a_same_record_branch_target():
+    """The rule the cap used to enforce by truncating, now enforced by the spans.
+
+    A byte a branch in the same record jumps to is a byte the engine can arrive
+    at from two directions: read straight through, it is part of the line;
+    jumped to, it is where the line resumes.  One table row cannot be both.
+    Until 2026-09-11 the overlay handled that by *capping* -- serving English up
+    to that byte and the original from there on -- which is safe and unreadable:
+    145 of the 192 Japanese draws in the Roppongi session were six lines whose
+    English was written across such a target, so the player saw an English
+    fragment and then Japanese.
+
+    `script.find_spans` now ends a span there and starts another, so the two
+    halves are two rows and each can be written.  The invariant that replaces
+    the old count: **no served span contains a same-record branch target at
+    all.**  Cross-record targets are not cuts -- they depend on the container's
+    layout and a record can be installed in a buffer built from other files --
+    and are still handled by the cap, which the next test exercises.
+    """
     import collections
     from giten import extract_v2
 
-    # the files that actually carry branched-into spans, so the test exercises
-    # the rule rather than asserting a vacuous truth
     rels = ["m/MS0000.BIN", "m/MS000E.BIN", "m/MS0031.BIN", "m/MS005C.BIN",
-            "m/MS000D.BIN", "m/MS0017.BIN"]
+            "m/MS000D.BIN", "m/MS0017.BIN", "m/MS00DD.BIN", "m/MS00DE.BIN"]
     text_dir = extract_v2.text_v2_dir()
     rows = [r for p in tables.iter_tables(text_dir) for r in tables.read(p)
             if r.file in rels]
@@ -732,21 +747,74 @@ def test_the_overlay_never_answers_an_address_a_branch_jumps_to():
                                        overlay.fnv1a(rec.data))
                 if e is None:
                     continue
+                mine = script.same_record_cuts(rec.data, rec.span_tokens,
+                                               base[rec.id])
                 for s in e.spans:
                     lo = base[rec.id] + s.rec_off
                     # a branch onto a span's FIRST byte is fine and always was:
                     # it gets the English from byte 0 and the line reads right.
-                    # What must never happen is a branch landing part-way in.
                     inside = targets & set(range(lo + 1, lo + s.served))
                     assert not inside, (
                         "%s c%d: the overlay answers %s, address(es) a branch "
                         "jumps to" % (rel, ci, ["0x%04X" % a for a in sorted(inside)[:8]]))
+                    same = {c for c in mine if s.rec_off < c < s.rec_off + s.jp_len}
+                    assert not same, (
+                        "%s c%d record %02X span at +0x%04X still contains a "
+                        "same-record branch target (+0x%04X): find_spans should "
+                        "have cut it there"
+                        % (rel, ci, rec.id, s.rec_off, sorted(same)[0]))
+                    checked["served spans"] += 1
                     if any(lo < t < lo + s.jp_len for t in targets):
-                        checked["spans a branch jumps into"] += 1
-                        if s.served < min(len(s.data), s.jp_len):
-                            checked["spans the cap actually shortened"] += 1
-    assert checked["spans a branch jumps into"] > 20, checked
-    assert checked["spans the cap actually shortened"] > 10, checked
+                        checked["spans a cross-record branch jumps into"] += 1
+    assert checked["served spans"] > 500, checked
+    assert checked["spans a cross-record branch jumps into"] > 10, checked
+
+
+def test_the_cap_still_fires_when_a_span_was_not_split():
+    """The cap is defence in depth, and this is the doctored case that proves it.
+
+    Splitting handles the same-record targets.  The cap is what handles the rest
+    -- a branch from another record -- and what would catch a same-record one if
+    `find_spans` ever stopped cutting.  Since the corpus is now split, the cap's
+    code path is shown here on a file parsed *without* the cuts: the same bytes,
+    the pre-split span numbering, and the planner must shorten `served` rather
+    than answer the address the branch aims at.
+    """
+    rel = "m/MS0031.BIN"
+    sc = script.parse(rel, files.read_source(rel))
+    for cont in sc.containers:
+        for rec in cont:
+            if rec.tokens is not None and rec.data:
+                rec.spans = script.find_spans(rec.ci, rec.id, rec.data,
+                                              rec.tokens)          # no cuts
+    rows = []
+    for ci, cont in enumerate(sc.containers):
+        for rec in cont:
+            if rec.no_overlay:
+                continue
+            for sp in rec.spans:
+                jp = script.span_text(rec, sp)
+                if codec.strip_tokens(jp).strip() and "{" not in jp:
+                    rows.append(tables.Row(rel, sp.rec_key, sp.idx, sp.off,
+                                           sp.tag, jp,
+                                           "English for span %d" % sp.idx,
+                                           "", "", "draft", ""))
+    assert rows
+
+    real_parse = script.parse
+    script.parse = lambda r, raw, tab=None: sc if r == rel else real_parse(r, raw, tab)
+    try:
+        entries, _findings = overlay.plan(rows)
+    finally:
+        script.parse = real_parse
+
+    capped = [s for e in entries for s in e.spans
+              if s.served < min(len(s.data), s.jp_len)]
+    assert capped, ("nothing was capped on an unsplit m/MS0031: either the cap "
+                    "is gone or this file stopped branching into its own lines")
+    # and the capped bytes are not lost -- they move into the virtual tail
+    assert any(s.tail for s in capped), [s.where for s in capped[:3]]
+
 
 
 def test_no_served_span_lives_in_a_container_with_an_unknown_target():

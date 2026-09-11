@@ -427,6 +427,21 @@ def plan(rows, root=None):
                     row = keyed.get((ci, rec.id, sp.idx))
                     if row is None:
                         continue
+                    if sp.cut_inside is not None:
+                        # A branch in this record lands inside the span at a byte
+                        # that is not a token boundary, so the span cannot be cut
+                        # there (`script.find_spans`) and there is no honest
+                        # answer: read straight through, the byte is part of the
+                        # line; jumped to, it is where the line resumes.  Eleven
+                        # spans corpus-wide, seven of them the garbage-prefix
+                        # spans of `m/MS0031` whose text starts mid-character.
+                        findings.append(("%s %s[%d]" % (rel, row.rec, row.idx),
+                                         "a branch in this record lands at +0x%04X, "
+                                         "inside this span but not on a token "
+                                         "boundary, so the span cannot end there "
+                                         "and the English cannot be served"
+                                         % sp.cut_inside))
+                        continue
                     try:
                         data = codec.encode(row.en, allow=codec.INLINE_OPS)
                     except codec.CodecError as exc:

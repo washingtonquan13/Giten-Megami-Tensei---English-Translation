@@ -115,6 +115,18 @@ class Span:
     end: int
     tag: str
     choice_width: "int | None" = None
+    #: ``idx`` of the span this one is a continuation of, when a branch target
+    #: inside the record cut one run of inline tokens into several spans.  The
+    #: head has ``None``; every piece after it names the head.  The tail inherits
+    #: the head's ``tag``: the opcode before it is inline, so the default rule
+    #: would call it ``DATA`` and a menu option's second half would stop being a
+    #: menu option.
+    split_head: "int | None" = None
+    #: A record-relative offset some ``rel16`` in this record jumps to that falls
+    #: *inside* this span without being a token boundary.  The span cannot be
+    #: split there -- there is no boundary to split on -- so the overlay refuses
+    #: it (24 corpus-wide, all in ``m/MS0031``).
+    cut_inside: "int | None" = None
 
     @property
     def rec_key(self) -> str:
@@ -269,7 +281,7 @@ def _visible(data: bytes, toks, lo: int, hi: int) -> bool:
     return False
 
 
-def find_spans(ci: int, rec_id: int, data: bytes, toks) -> "list[Span]":
+def find_spans(ci: int, rec_id: int, data: bytes, toks, cuts=()) -> "list[Span]":
     """Every translatable span in one tiled record.
 
     A token that runs past the record's own end is never part of a span, even if
@@ -277,13 +289,44 @@ def find_spans(ci: int, rec_id: int, data: bytes, toks) -> "list[Span]":
     in the next, which no table row can hold and no overlay can serve.  In
     practice a straddling token is always control flow, so this costs nothing --
     it is here so that it cannot start costing something silently.
+
+    ``cuts`` is the set of record-relative offsets some ``rel16`` **in this
+    record** jumps to.  A run of inline tokens ends before each of them and a new
+    span starts there, because that is a byte the engine can arrive at from two
+    directions: read straight through, it is part of the line; jumped to, it is
+    where the line resumes.  One table row cannot be both, and before this the
+    overlay's cap silently truncated the English at that byte -- 145 of the 192
+    Japanese draws in the Roppongi session were six such lines.  Splitting makes
+    the two halves two rows, which a translator can actually write.
+
+    Only *same-record* targets are cuts.  A branch from another record resolves
+    through ``base(id)``, which depends on the whole container's layout, and a
+    record can turn up in a buffer built from different files; a cut has to be a
+    property of the record's own bytes or it is wrong in the other buffer.  Those
+    stay with the cap, which is computed per container at plan time.
     """
     out: "list[Span]" = []
     n = len(toks)
     limit = len(data)
+    cuts = set(cuts)
+    starts = {t.off for t in toks}
 
     def inline(t):
         return _inline(t) and t.end <= limit
+
+    def emit(a, b, tag, width, head):
+        """One piece of a run, if it draws.  Returns its ``idx`` or None."""
+        if not (any(_draws(toks[k]) for k in range(a, b))
+                and _visible(data, toks, a, b)):
+            return None
+        sp = Span(ci, rec_id, len(out), a, b, toks[a].off, toks[b - 1].end, tag,
+                  split_head=head)
+        if sp.is_choice:
+            sp.choice_width = width or DEFAULT_CHOICE_WIDTH
+        sp.cut_inside = next((c for c in sorted(cuts)
+                              if sp.off < c < sp.end and c not in starts), None)
+        out.append(sp)
+        return sp.idx
 
     i = 0
     menu_width = None
@@ -298,14 +341,18 @@ def find_spans(ci: int, rec_id: int, data: bytes, toks) -> "list[Span]":
         j = i
         while j < n and inline(toks[j]):
             j += 1
-        if any(_draws(toks[k]) for k in range(i, j)) and _visible(data, toks, i, j):
-            prev = toks[i - 1] if i else None
-            tag = (vmops.table().encoding(prev.idx)
-                   if prev is not None and prev.kind == "op" else DATA_TAG)
-            sp = Span(ci, rec_id, len(out), i, j, toks[i].off, toks[j - 1].end, tag)
-            if sp.is_choice:
-                sp.choice_width = menu_width or DEFAULT_CHOICE_WIDTH
-            out.append(sp)
+        # the run's tag comes from the opcode that introduced it, and every
+        # piece keeps it: the token before a tail is inline, so the default
+        # rule would make it DATA
+        prev = toks[i - 1] if i else None
+        tag = (vmops.table().encoding(prev.idx)
+               if prev is not None and prev.kind == "op" else DATA_TAG)
+        bounds = [i] + [m for m in range(i + 1, j) if toks[m].off in cuts] + [j]
+        head = None
+        for a, b in zip(bounds, bounds[1:]):
+            idx = emit(a, b, tag, menu_width, head)
+            if idx is not None and head is None:
+                head = idx
         i = j
     return out
 
@@ -446,6 +493,34 @@ def image_walks(recs, tab=None) -> Walks:
     return w
 
 
+def same_record_cuts(data: bytes, toks, base: int) -> "set[int]":
+    """Record-relative offsets a ``rel16`` **in this record** jumps to.
+
+    Only this record's own branches, because only they give an answer that is a
+    property of the record's bytes.  A branch from another record is measured
+    through ``base(id)`` -- the whole container's layout -- and a record can be
+    installed in a buffer built from a different set of files, where that
+    distance is not the same.  Those targets are still honoured, by the cap in
+    :func:`overlay.plan`, which is computed per container at plan time.
+
+    Deliberately *not* filtered by :data:`NOT_A_BRANCH`, for the reason given
+    there: refusing to *protect* a byte because the opcode looks odd is the
+    unsafe direction, and the cap this splits in front of is unfiltered too.  The
+    two have to agree or a span would be split where nothing lands, or worse, not
+    split where something does.
+    """
+    out = set()
+    hi = len(data)
+    for tok in (toks or []):
+        for op in tok.ops:
+            if op.kind != "rel16":
+                continue
+            t = vmops.rel16_target(base, tok, op) - base
+            if 0 < t < hi:
+                out.add(t)
+    return out
+
+
 # --- parse ------------------------------------------------------------------
 def parse(rel: str, raw: bytes, tab=None) -> Script:
     """Decode, frame and tile one ``.BIN``."""
@@ -535,7 +610,13 @@ def parse(rel: str, raw: bytes, tab=None) -> Script:
                         # and `audit` caught it.
                         rec.blocked = STRADDLE_NOTE
                     rec.unimplemented = vmops.uses_unimplemented(rec.tokens, tab)
-                    rec.spans = find_spans(c.index, r.id, r.data, rec.tokens)
+                    # A span ends where a branch in this record lands.  Only this
+                    # record's own branches: see `same_record_cuts`.  They need
+                    # nothing but the record's own tokens and its base, both of
+                    # which are in hand here, so this is not a second pass.
+                    rec.spans = find_spans(
+                        c.index, r.id, r.data, rec.tokens,
+                        same_record_cuts(r.data, rec.tokens, image_base[r.id]))
             else:
                 rec.tokens = []
             rows.append(rec)

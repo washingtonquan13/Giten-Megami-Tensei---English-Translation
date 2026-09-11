@@ -299,6 +299,10 @@ def check_rows(report: Report, rows, pools=None,
                        "en equals ref_en; mark it reviewed or change it")
 
     epool = english_pool(rows)
+    # A line a branch target cut in two is one menu option on screen and two
+    # rows here, so its width is the sum of the pieces.  The tail names its head
+    # in its note; measure at the head and skip the tail.
+    tails_of, is_tail = _split_pairs(rows)
     for r in rows:
         where = "%s %s[%d]" % (r.file, r.rec, r.idx)
         blocked = script.NOEDIT_NOTE in r.note
@@ -371,11 +375,51 @@ def check_rows(report: Report, rows, pools=None,
                        "drops %s, which prints a runtime name; the line would "
                        "have no one in it" % " ".join(sorted(lost)))
 
+        if extract_v2.SPLIT_NOTE in r.note:
+            # The English on this row was written before a branch target cut the
+            # line in two, so it translates the whole line and somebody has to
+            # decide how much of it belongs here.  A warning, not an error: on
+            # screen it reads exactly as it did before -- English if the engine
+            # reads through, Japanese from the jump -- so nothing regressed.
+            report.add("split-pending", WARN, where,
+                       "this line was split at a branch target; its English is "
+                       "the whole of the old line and the tail is empty")
+
         is_choice = r.tag in script.CHOICE_TAGS
+        if is_choice and is_tail.get(_key3(r)):
+            continue                    # measured with its head, just below
         cw = _declared_width(r)
-        for rule, msg in width.findings(r.en, is_choice, cw, line_columns,
+        measured = r.en
+        if is_choice:
+            measured += "".join(t.en for t in tails_of.get(_key3(r), ()))
+        for rule, msg in width.findings(measured, is_choice, cw, line_columns,
                                         page_rows, pools):
             report.add(rule, WARN, where, msg)
+
+
+def _key3(row):
+    return (row.file, row.rec, row.idx)
+
+
+_SPLIT_TAIL = re.compile(re.escape(extract_v2.SPLIT_TAIL_NOTE) + r"\s*\[(\d+)\]")
+
+
+def _split_pairs(rows) -> "tuple[dict, dict]":
+    """``({head key: [tail rows]}, {tail key: True})`` from the rows' own notes.
+
+    The tail names its head's ``idx`` in its note, which is what a table read
+    back off disk carries instead of ``Row.split_head``.
+    """
+    tails_of, is_tail = {}, {}
+    for r in rows:
+        m = _SPLIT_TAIL.search(r.note or "")
+        if not m:
+            continue
+        is_tail[_key3(r)] = True
+        tails_of.setdefault((r.file, r.rec, int(m.group(1))), []).append(r)
+    for v in tails_of.values():
+        v.sort(key=lambda x: x.idx)
+    return tails_of, is_tail
 
 
 def _declared_width(row) -> int:

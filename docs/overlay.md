@@ -194,6 +194,28 @@ it is the only fact the overlay needs.
   refused these very edits for years (`@noedit`).  The overlay was written as a
   delivery mechanism and inherited the builder's *layout* rules without its
   *refusals*.
+* **A span ends where a branch in its own record lands (2026-09-11).**  The cap
+  below was safe and unreadable: a line whose English is written across a branch
+  target was served up to that byte and Japanese from there on, and in the
+  Roppongi session 145 of the 192 Japanese draws were six such lines.  The byte
+  is genuinely two things -- part of the line when the engine reads through it,
+  the place the line resumes when the engine jumps to it -- and one table row
+  cannot be both.  `script.find_spans` now takes `cuts` and ends a run of inline
+  tokens before each one, so those six lines are twelve rows and each half can
+  be written.  The head keeps the old row's English and a `@split: was <old jp>`
+  note (`check` reports it as `split-pending`); the tail starts empty, because
+  the old English is a translation of the whole line and putting it on the tail
+  would print the line twice on the jump path.  Until the pairs are re-authored
+  the screen reads exactly as it did before.
+  Only **same-record** targets are cuts.  A branch from another record is
+  measured through `base(id)`, i.e. the whole container's layout, and a record
+  can be installed in a buffer built from a different set of files, so a cut
+  derived from one would be in the wrong place there.  Those stay with the cap,
+  which is computed per container at plan time and is now defence in depth.
+  A cut that is not on a token boundary cannot split anything -- there is no
+  boundary to split on -- so `plan` refuses that span with a finding: 11 spans
+  corpus-wide, 7 of them the garbage-prefix spans of `m/MS0031` whose text
+  starts half-way through a character.
 * **The strict rule (2026-09-11): a span is served only when its whole
   container can be proved safe.**  The cap above is only as good as the set of
   branch targets it is computed from, and what makes a served byte wrong is

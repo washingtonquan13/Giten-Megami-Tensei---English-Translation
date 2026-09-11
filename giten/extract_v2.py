@@ -108,6 +108,17 @@ def _prefill(jp: str) -> str:
 #: against the other record's spans.
 LOSER_SUFFIX = "~"
 
+#: On the **head** of a span a branch target cut in two: this row's English was
+#: written for the whole line, before the split, and someone has to decide how
+#: much of it belongs here and how much on the tail.  ``check`` reports it as
+#: ``split-pending``.  Written once, by the extract that performs the split, and
+#: carried forward like any other human note.
+SPLIT_NOTE = "@split:"
+
+#: On every **tail**: which row it continues.  Re-derived from the spans on each
+#: extract, so it follows the head's index when numbering moves.
+SPLIT_TAIL_NOTE = "@split-tail of"
+
 
 def _rec_key(rec, key: str) -> str:
     """The table's ``rec`` column for a record: ``0:3A``, or ``0:3A~``."""
@@ -171,6 +182,15 @@ def script_rows(rel: str, sc: script.Script, pools) -> "list[tables.Row]":
                     notes.append("two records share this id in one container; "
                                  "the loader keeps the last copy (measured), so "
                                  "the layout is known and this is advisory")
+            if sp.split_head is not None:
+                # The second (or third) half of a line a branch lands inside.
+                # It gets no English of its own at extract time; see the `@split`
+                # migration in `run`.
+                notes.append("%s [%d]" % (SPLIT_TAIL_NOTE, sp.split_head))
+            if sp.cut_inside is not None:
+                notes.append("a branch in this record lands at +0x%04X, inside "
+                             "this span and not on a token boundary, so the "
+                             "overlay refuses it" % sp.cut_inside)
             if rec.unimplemented:
                 notes.append("record reaches an engine no-op opcode; verify in game")
             if pool.has_calls(jp):
@@ -180,9 +200,10 @@ def script_rows(rel: str, sc: script.Script, pools) -> "list[tables.Row]":
                 notes.append("reads: " + pool.reading(jp, pools))
             if sp.is_choice and sp.choice_width:
                 notes.append("menu option, declared width %d columns" % sp.choice_width)
-            rows.append(tables.Row(rel, _rec_key(rec, sp.rec_key), sp.idx,
-                                   sp.off, sp.tag, jp, _prefill(jp),
-                                   note=_note(notes)))
+            row = tables.Row(rel, _rec_key(rec, sp.rec_key), sp.idx,
+                             sp.off, sp.tag, jp, _prefill(jp), note=_note(notes))
+            row.split_head = sp.split_head
+            rows.append(row)
     return rows
 
 
@@ -246,8 +267,9 @@ def run(family: str = "all", root: "str | None" = None,
                              % (files.table_path(clash[0], text_dir), clash[0]))
 
     by_table, order = {}, []
+    splits: "list[tuple]" = []
     st = {"files": 0, "rows": 0, "tables": 0, "untiled": 0, "blocked": 0,
-          "nonscript": 0, "reanchored": 0, "unanchored": 0}
+          "nonscript": 0, "reanchored": 0, "unanchored": 0, "split": 0}
 
     for rel in (wanted if wanted is not None else files.iter_files(fams, root)):
         raw = files.read_source(rel, root)
@@ -279,9 +301,11 @@ def run(family: str = "all", root: "str | None" = None,
         # does not, re-anchor on the Japanese, and only when that is unambiguous.
         # build_v2.stale_rows protects the *builder* the same way.
         by_content: "dict[tuple, list]" = {}
+        by_rec: "dict[str, list]" = {}
         for o in old_rows:
             if o.en or o.ref_en or o.status:
                 by_content.setdefault((o.rec, o.jp), []).append(o)
+                by_rec.setdefault(o.rec, []).append(o)
         for r in rows:
             prev = old.get(r.key)
             if prev is None or prev.jp != r.jp:
@@ -307,6 +331,23 @@ def run(family: str = "all", root: "str | None" = None,
                     vals = {(c.en, c.ref_en, c.status) for c in cands}
                     if len(vals) == 1:
                         picked = cands[0]
+                if picked is None and r.split_head is None:
+                    # A span that a branch target has just cut in two.  The head
+                    # is what is left of the old row's Japanese, so its `jp` is a
+                    # proper prefix of exactly one old `jp` in the same record;
+                    # give it that row's English and say where it came from.  The
+                    # tail deliberately gets nothing: the old English translates
+                    # the whole line, and putting it on the tail would print the
+                    # line twice on the jump path.  On screen this is what
+                    # shipped before -- English if you read through, Japanese if
+                    # you jump -- until the pair is re-authored.
+                    split = [o for o in by_rec.get(r.rec, ())
+                             if len(o.jp) > len(r.jp) and o.jp.startswith(r.jp)]
+                    if len(split) == 1:
+                        picked = split[0]
+                        r.note = _note([r.note, SPLIT_NOTE + " was " + picked.jp])
+                        st["split"] += 1
+                        splits.append((r, picked, rows))
                 if prev is not None:            # there *was* a row here
                     st["reanchored" if picked else "unanchored"] += 1
                 prev = picked
@@ -350,4 +391,39 @@ def run(family: str = "all", root: "str | None" = None,
             print("  span numbering moved: %d row(s) re-anchored on their "
                   "Japanese, %d could not be matched and kept nothing"
                   % (st["reanchored"], st["unanchored"]))
+    if splits:
+        st["split_report"] = write_split_report(splits)
+        if not quiet:
+            print("  %d row(s) split at a branch target; the head kept the old "
+                  "English and the tail is empty.  %s"
+                  % (st["split"], os.path.relpath(st["split_report"],
+                                                  paths.REPO_ROOT)))
     return st
+
+
+SPLIT_REPORT = os.path.join(paths.BUILD_DIR, "split-report.tsv")
+
+
+def write_split_report(splits, path: str = SPLIT_REPORT) -> str:
+    """One line per (head, tail) pair a branch target created, for the translator.
+
+    The head carries the old row's English, which translates the *whole* line;
+    the tail is empty on purpose, because putting the whole line on it would
+    print it twice on the jump path.  Re-authoring the pair is a reading job, and
+    this is the worklist for it.
+    """
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    lines = ["file\trecord\thead_idx\ttail_idx\tjp_head\tjp_tail\told_en"]
+    for head, old, rows in splits:
+        tails = [r for r in rows
+                 if r.rec == head.rec and r.file == head.file
+                 and r.split_head == head.idx]
+        for t in tails or [None]:
+            lines.append("\t".join([
+                head.file, head.rec, str(head.idx),
+                "" if t is None else str(t.idx),
+                head.jp, "" if t is None else t.jp,
+                old.en or old.ref_en or ""]))
+    with open(path, "w", encoding="utf-8", newline="\n") as fh:
+        fh.write("\n".join(lines) + "\n")
+    return path
