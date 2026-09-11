@@ -86,7 +86,7 @@ anyone's view on copyright:
   message naming what was found, which removes a whole class of "it crashed"
   reports whose real cause is a different base install.
 * **It demonstrates the project's own claim.** `docs/exe-patches.md` asserts the
-  exe differs from the original by 1,016 accounted-for bytes. A patcher that
+  exe differs from the original by 1,084 accounted-for bytes. A patcher that
   reads the user's own pristine exe and writes exactly those bytes proves it. A
   repack asks to be taken on trust.
 * **Backups.** `giten install` copies every file it will touch and re-reads the

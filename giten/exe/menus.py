@@ -22,6 +22,16 @@ how this kind of search goes wrong).
 conditions are a packed struct array with the name stored inline, so they are
 overwritten in place and the budget is a hard six characters.
 
+:data:`PIECEWISE` is the other exception, and it is why "Macca" shipped as
+"Maccカ".  Five of these strings are short enough that the compiler inlined the
+copy instead of calling one: the engine loads the *bytes* with two to five
+consecutive ``mov reg,[imm32]`` of decreasing size and stores them into a work
+buffer.  Each of those operands is a separate absolute address a few bytes
+apart, so re-pointing only the first one leaves the rest reading the original
+Japanese -- "Macc" out of the new dword, then the stale ``カ`` out of the old
+word and byte.  For those five, :func:`apply` pads the ``.men`` entry out to
+the piece total with NULs and re-points **every** piece.
+
 Widths are in half-width cells: a full-width kana or kanji is 2, ASCII is 1.
 Two different width rules apply, because two different things are being kept:
 
@@ -109,6 +119,16 @@ STRINGS = {
     0x00468D1C: "Mood   %s\n",                    # 態度   %s
     0x00468D28: "State  %s\n",                    # 状態   %s
     0x00468D34: "Run a detailed analysis?",      # 詳細アナライズしますか？
+    # The five values the 態度 / "Mood" line above prints through its %s.  They
+    # are a plain u32 pointer table at 0x00468BF8 (five live slots, then 0xFFFF
+    # filler), one reference each, so they re-point like any other string.  The
+    # budget is VALUE_BUDGET: the window is type 16, 22 usable cells, and the
+    # 7-cell label leaves 15.
+    0x00468C58: "Pleading",                      # 哀願的
+    0x00468C60: "Friendly",                      # 友好的
+    0x00468C68: "Enraged",                       # 超敵対的, the escalated one
+    0x00468C74: "Hostile",                       # 敵対的
+    0x00468C7C: "Neutral",                       # 通常
     # --- field menu and equipment (bug report 6) -----------------------------
     0x00468B18: "<Items>",                       # <アイテム>
     0x00468F58: "Discard Item",                  # アイテム削除
@@ -206,6 +226,51 @@ LABEL_LOCKED = (0x00468CDC, 0x00468CEC, 0x00468CFC, 0x00468D0C,
 
 #: templates whose *formatted* width must match (the 14-cell status block)
 RENDER_LOCKED = (0x0046A454,)
+
+#: String VA -> the sizes of the consecutive ``mov reg,[imm32]`` loads that copy
+#: it.  Read out of ``original/ddswin/dds_org.exe``; every sub-address is
+#: referenced exactly once, which is what lets :func:`slot_of` find each operand
+#: on its own::
+#:
+#:     0x00436D1A  a1 08 98 46 00        mov eax,[0x00469808]   dword
+#:                 66 8b 0d 0c 98 46 00  mov cx, [0x0046980C]   word
+#:                 8a 15 0e 98 46 00     mov dl, [0x0046980E]   byte
+#:     0x00436D55  0x00469810 / 0x14 / 0x16                  (ecx, dx, al)
+#:     0x00438CCA  0x00469818 / 0x1C / 0x1E                  (eax, cx, dl)
+#:     0x00438D1A  0x00469820 / 0x24 / 0x26                  (eax, cx, dl)
+#:     0x00441B12  0x0046A400 / 04 / 08 / 0x0C / 0x0E   (edx, eax, ecx, dx, al)
+#:
+#: The three at 0x0049112x and the five at 0x0049134x store back into a work
+#: buffer exactly the piece total wide, so the sum is a hard budget: the
+#: English plus its NUL has to fit (Macca 6 <= 7, Maximum level 14 <= 15).
+PIECEWISE = {
+    0x00469808: (4, 2, 1),
+    0x00469810: (4, 2, 1),
+    0x00469818: (4, 2, 1),
+    0x00469820: (4, 2, 1),
+    0x0046A400: (4, 4, 4, 2, 1),
+}
+
+#: String VA -> the cells it may occupy when it is printed as a *value* into a
+#: field whose label is already spoken for.  The five Mood values print through
+#: ``Mood   %s`` in a type-16 window: 22 usable cells less the 7-cell label.
+VALUE_BUDGET = {va: 15 for va in (0x00468C58, 0x00468C60, 0x00468C68,
+                                  0x00468C74, 0x00468C7C)}
+
+
+def piece_offsets(va: int):
+    """``(offset, size)`` for each load that copies the string at ``va``."""
+    off = 0
+    for n in PIECEWISE[va]:
+        yield off, n
+        off += n
+
+
+def targets_of(va: int) -> list[int]:
+    """Every address that has to be re-pointed for the string at ``va``."""
+    if va not in PIECEWISE:
+        return [va]
+    return [va + off for off, _n in piece_offsets(va)]
 
 #: The status conditions: a packed array at ``0x004647E0`` of
 #: ``[u8 id][7-byte NUL-terminated cp932 name]``, stride 8, 35 entries.  The
@@ -326,6 +391,33 @@ def check_widths(image: bytes) -> None:
                                "is %d; the value column would step"
                                % (va, jl, width(jl), el, width(el)))
 
+    for va, cells in VALUE_BUDGET.items():
+        en = STRINGS[va]
+        if width(en) > cells:
+            raise RuntimeError("menus: 0x%08X value %r is %d cells, the field "
+                               "holds %d" % (va, en, width(en), cells))
+
+
+def check_pieces(image: bytes) -> None:
+    """Every piecewise-copied string must fit the buffer its pieces are stored
+    into, and each piece's operand must still be findable on its own."""
+    pe = PE(image, "menus")
+    for va, pieces in PIECEWISE.items():
+        total = sum(pieces)
+        en = STRINGS[va]
+        need = len(en.encode("cp932")) + 1
+        if need > total:
+            raise RuntimeError("menus: 0x%08X is copied in %d bytes but %r "
+                               "needs %d" % (va, total, en, need))
+        # the Japanese has to fit too, or we have the piece sizes wrong
+        jp = cstring_at(image, pe, va)
+        if len(jp.encode("cp932")) + 1 > total:
+            raise RuntimeError("menus: 0x%08X is copied in %d bytes but the "
+                               "Japanese %r is %d" % (va, total, jp,
+                                                      len(jp.encode("cp932")) + 1))
+        for off, _n in piece_offsets(va):
+            slot_of(image, va + off)            # raises unless exactly one
+
 
 def check_effects(image: bytes) -> None:
     """Every English condition name must fit the inline field, and the Japanese
@@ -346,19 +438,30 @@ def apply(image: bytes) -> bytes:
     overwrite the status-condition names in place."""
     check_widths(image)
     check_effects(image)
-    slots = {va: slot_of(image, va) for va in STRINGS}
+    check_pieces(image)
+    slots = {t: slot_of(image, t) for va in STRINGS for t in targets_of(va)}
 
     blob = bytearray()
     at: dict[int, int] = {}
     for va, en in STRINGS.items():
-        at[va] = len(blob)
-        blob += en.encode("cp932") + b"\x00"
+        base = len(blob)
+        raw = en.encode("cp932") + b"\x00"
+        if va in PIECEWISE:
+            # the pieces are copied by size, not by terminator: pad the entry
+            # out so every load reads from inside this string and not from
+            # whatever the next one happens to start with
+            raw = raw.ljust(sum(PIECEWISE[va]), b"\x00")
+            for off, _n in piece_offsets(va):
+                at[va + off] = base + off
+        else:
+            at[va] = base
+        blob += raw
 
     pe = PE(image, "menus")
     men_va = pe.imagebase + pe.sizeimage
     out = bytearray(pe.append_section(".men", bytes(blob), MEN_CHARACTERISTICS))
-    for va, off in slots.items():
-        struct.pack_into("<I", out, off, men_va + at[va])
+    for target, off in slots.items():
+        struct.pack_into("<I", out, off, men_va + at[target])
 
     pe = PE(bytes(out), "menus2")
     for i, (_jp, en) in enumerate(EFFECTS):

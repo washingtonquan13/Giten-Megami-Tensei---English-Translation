@@ -27,7 +27,7 @@ Applied by their own modules (each finds its sites in the image, so they cannot 
 
 | build | site | what | why not a data edit |
 |---|---|---|---|
-| english | `0x468310` system-menu table, `0x46A118` stat/equip labels, and the `printf` templates' `push imm32` operands | `giten/exe/menus.py` -- re-points each `u32` slot at an English string in an appended `.men` section | the strings live in `.rdata`, not in any `m/`/`et/` file; there is nothing to translate on the data side. `EFFECTS` (the status-condition names) is the exception: a packed struct array with the name inline, so it is overwritten in place under a hard six-character budget |
+| english | `0x468310` system-menu table, `0x46A118` stat/equip labels, `0x468BF8` the five Mood values, the `printf` templates' `push imm32` operands, and the twelve extra `mov reg,[imm32]` operands of the five piecewise-copied strings (`0x436D1A`, `0x436D55`, `0x438CCA`, `0x438D1A`, `0x441B12`) | `giten/exe/menus.py` -- re-points each `u32` slot at an English string in an appended `.men` section | the strings live in `.rdata`, not in any `m/`/`et/` file; there is nothing to translate on the data side. `EFFECTS` (the status-condition names) is the exception: a packed struct array with the name inline, so it is overwritten in place under a hard six-character budget |
 | english | `0x4232C2` (39 B), `0x422D2B` (5 B), `0x422D32` (rel32) | `giten/exe/database.py` -- lifts the 64 KB ceiling off the item database; the load is re-pointed at `et/et0102.bin` (which we add) and the offset table widened `u16` -> `u32` | `et/ET0001.BIN` is capped at 65,535 bytes three separate ways and the English does not fit. `ET0001.BIN` itself is left untouched, so an unpatched exe still reads the original |
 | english | `0x42147C` | `giten/exe/mapnames.py` -- hooks the map parser's one pointer computation and indexes a `u32 name[256]` table in `.mnm` | the name is stored inside each of the 109 `m/M####.BIN` headers; one hook covers all of them without editing any map file |
 | release, dev | `0x40263A` (`mov eax,15`, the operand) | `giten/exe/timing.py` -- the popup auto-close default. Raised 15 -> 60 for most of this repo's life; **back to the stock 15 on 2026-09-08**, so this pass now asserts the instruction and writes the value already there | **not a translation change.** See the accounting note below |
@@ -62,15 +62,40 @@ fails there.
 
 | background-script divider (`dds_dev_bat<N>.exe` only) | 4 B | -- | no -- behaviour, and **dev builds only**: `0x401985`'s rel32 is pointed at `script_step()` in the `.ovl` cave, which calls `0x43B5E0` every Nth game tick instead of every tick. `0x43B5E0` runs the background script until it blocks (`0x4390F0` = `do exec_token while r >= 0`), so that call is the rate at which scripted actors take their turns. The release exe is built with `SCRIPT_DIV=1` and its call site is untouched. |
 | character names `.nam` | 117 B | 512 B | yes |
-| menu strings `.men` | 596 B | 1536 B | yes |
+| menu strings `.men` | 664 B | 1536 B | yes |
 | item database `.idb` | 64 B | 512 B | yes |
 | location names `.mnm` | 25 B | 3072 B | yes |
 | 60 Hz tick gate | 10 B | -- | **no** |
 | popup default (left at the stock 15) | 0 B | -- | **no** |
 | turn-gauge step restored to the 1997 arithmetic | 3 B | -- | **no** |
-| **total** | **1016 B** (0.0080% of 12,675,072) | **7680 B** | |
+| **total** | **1084 B** (0.0086% of 12,675,072) | **7680 B** | |
 
-Three of those 1,016 bytes' worth of edits -- 13 bytes -- do not exist to show English, and they are the ones to argue about:
+The `.men` figure moved 596 -> 664 on 2026-09-11 and both halves of that are
+worth naming, because one of them was a bug:
+
+* **The five Mood values (20 B).** `哀願的 / 友好的 / 超敵対的 / 敵対的 / 通常`, a
+  plain `u32` pointer table at `0x00468BF8` behind the `態度 %s` line of the
+  analyze box. One slot each, one reference each; they re-point like anything
+  else. Their budget is not a fixed field but what the label leaves: the window
+  is type 16, 22 usable cells, the label `Mood   ` is 7, so a value may be 15.
+  `VALUE_BUDGET` enforces that in `check_widths`.
+* **Twelve extra operands (48 B), and the "Maccカ" bug.** Five of these strings
+  are copied by *inlined* loads rather than by a call: `mov eax,[0x00469808]`,
+  `mov cx,[0x0046980C]`, `mov dl,[0x0046980E]` — one dword, one word, one byte,
+  into a 7-byte work buffer. `0x0046A400` (`最高レベルです`) is five loads into
+  15 bytes. The patcher re-pointed only the operand it could find from the
+  string's own address, so the engine assembled `Macc` out of the new English
+  and the stale `カ` out of the original Japanese, and `Maxiレベルです` the same
+  way. `PIECEWISE` now records the piece sizes, `apply` pads the `.men` entry
+  to the piece total with NULs and re-points every operand, and the piece total
+  is a hard budget (`len(cp932) + 1 <= sum(pieces)`: Macca 6 ≤ 7, Maximum level
+  14 ≤ 15). These are not new sites -- each of the twelve is the instruction
+  sitting immediately beside one already being rewritten, each referenced
+  exactly once in the image. `tests/test_menus.py` emulates the load/store
+  chain at all five sites and compares the *assembled buffer*, not the pointer;
+  the pointer test passed for the broken strings, which is how this shipped.
+
+Three of those 1,084 bytes' worth of edits -- 13 bytes -- do not exist to show English, and they are the ones to argue about:
 
 * **The 60 Hz tick gate (10 B)** is a compatibility fix of the same kind as the XP patch. The engine ran one game tick per millisecond and leaned on DirectDraw Flip's vertical-retrace wait to hold it back; on a driver that does not block, the game runs up to 16x too fast and is not playable at all. Without this the patch has nothing to demonstrate.
 * **The popup default (0 B)** was 1 byte and is now none. The argument for raising it 15 -> 60 stands on its own terms -- pinning the loop at 60 Hz gives every tick-counted duration a wall-clock meaning it did not have in 1997, and neither value is the neutral one. What changed is that the dwell turned out to be the *same number* as how long the battle command UI is refused ([`combat-pacing.md`](combat-pacing.md) §2), so 60 was quietly undoing a quarter of what the gauge fix below gave back. The player chose the stock 15 with the gauge restored. Battle messages are short; the pacing was worth more than 750 ms of reading time.

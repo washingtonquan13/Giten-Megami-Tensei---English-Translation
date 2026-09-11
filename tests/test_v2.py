@@ -1893,7 +1893,13 @@ EXE_PASSES = [
     ("ovl",        37, 2560, True),
     ("pace",       10, 0,    False),      # 60 Hz tick gate -- behaviour
     ("names",     117, 512,  True),
-    ("menus",     596, 1536, True),
+    # 596 -> 664 on 2026-09-11: the five Mood values (5 slots = 20 B) and the
+    # twelve extra operands of the five piecewise-copied strings (48 B).  Those
+    # twelve are not new sites -- they are the word and byte loads that sit
+    # beside the dword the patcher was already re-pointing, and leaving them
+    # alone is what put "Maccカ" on screen.  The appended section did not grow
+    # past its file-alignment block.
+    ("menus",     664, 1536, True),
     # database and mapnames patch addresses derived from the image size, so
     # they move by a byte or two whenever the .ovl cave changes size.  The
     # numbers are theirs, not the overlay's; only `ovl` changed on purpose.
