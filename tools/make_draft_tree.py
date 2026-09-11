@@ -33,7 +33,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from giten import (check_v2, codec, extract_v2, files, paths,  # noqa: E402
-                   script, tables)
+                   pool, script, tables)
 
 OUT = os.path.join(paths.BUILD_DIR, "tables_draft")
 
@@ -58,7 +58,14 @@ SPEAKER_TAG = re.compile(r"^(\{[0-9A-F]{2}:[0-9A-F]{2}\})\uff1a$")
 
 
 def _pool_english(src):
-    """``{08:04}`` -> ``"Nishino"``, from the pool tables' own English."""
+    """``{08:04}`` -> ``"Nishino"``, from the pool tables' own English.
+
+    The key is ``{opcode:record}`` and **the opcode is the file id plus one**
+    (``giten/pool.py``: ``01 nn`` is m/MS7F00, ``08 nn`` is m/MS7F07).  This
+    keyed every one of the eight files as ``{08:xx}`` until 2026-09-11, so
+    seven of them wrote into pool 8's namespace and the speaker-tag rule saw a
+    map that was both wrong and self-colliding.
+    """
     out = {}
     for fid in range(8):
         path = files.table_path("m/MS7F%02X.BIN" % fid, src)
@@ -69,7 +76,7 @@ def _pool_english(src):
                 continue
             en = (r.en or r.ref_en or "").strip()
             if en:
-                out["{08:%02X}" % int(r.rec.split(":")[1], 16)] = en
+                out["{%02X:%02X}" % (fid + 1, int(r.rec.split(":")[1], 16))] = en
     return out
 
 
@@ -111,7 +118,47 @@ DEAD_DATA = frozenset({"m/MS7F05.BIN", "m/MS6F00.BIN", "m/MS6F1F.BIN"})
 #: pool call" misses ま{08:66}.  Whether a fragment is a word is not decidable
 #: from its characters, so the line drawn here is the one that is decidable --
 #: did a person write it, or did a promotion.
+#: ...which is what the blanket refusal below used to say.  It was too wide.  A
+#: pool record that is a *whole sentence* cannot be spliced mid-clause by
+#: construction either: the engine has to call it where a sentence can start,
+#: and a caller that wanted half of it would have had to stop somewhere else.
+#: So the rule is now per row rather than per file, and it is the narrowest
+#: sound one:
+#:
+#:   * the record's own reading ends a sentence (。！？), **or** its bytes end
+#:     the line -- a trailing ``\n``, or a ``{1E10:..}`` page wait, which is the
+#:     script saying "that is the end of what I had to say"; and
+#:   * the reference ends a sentence in English too (``.!?"'``), so a fragment
+#:     translation cannot slip through on a whole-sentence Japanese side.
+#:
+#: Everything the blanket rule was defending against still fails this: され is
+#: not a sentence, ま{08:66} is not a sentence, and neither reference closes.
+#: Names stay out for the same reason -- ニュートン ends in nothing.
 POOL_FILES = frozenset("m/MS7F%02X.BIN" % i for i in range(8))
+
+#: a page wait at the very end of the bytes
+_WAIT_AT_END = re.compile(r"\{1E10:[0-9A-Fa-f]*\}$")
+
+JP_SENTENCE_ENDERS = "。！？"
+
+
+def _pool_row_is_a_whole_line(row, pools=None) -> bool:
+    """May this pool row take its reference translation?
+
+    See :data:`POOL_FILES`.  Both halves have to hold: the Japanese has to end
+    a line and so does the English.
+    """
+    if not row.ref_en.strip():
+        return False
+    jp = row.jp.rstrip()
+    reading = pool.reading(row.jp, pools).strip()
+    ends_jp = bool(reading and reading[-1] in JP_SENTENCE_ENDERS)
+    if not ends_jp:
+        ends_jp = jp.endswith(NL) or bool(_WAIT_AT_END.search(jp))
+    if not ends_jp:
+        return False
+    e = _vis(row.ref_en)
+    return bool(e) and e[-1] in EN_ENDERS
 
 
 def _speaker_is_wrong(jp, en, poolen):
@@ -175,8 +222,9 @@ def main(out: str = OUT) -> int:
         shutil.rmtree(out)
     names = check_v2.name_macros(None)
     poolen = _pool_english(src)
+    pools = pool.load()
     rows = promoted = kept = skipped = refused = split = renamed = dead = 0
-    shared = 0
+    shared = pooled = 0
     for path in tables.iter_tables(src):
         table = tables.read(path)
         for r in table:
@@ -194,8 +242,10 @@ def main(out: str = OUT) -> int:
                 # "Dictionary 5" during a battle.  See docs/limits.md.
                 dead += 1
                 continue
-            if r.file in POOL_FILES:
-                # shared by every script that calls it; see POOL_FILES
+            if r.file in POOL_FILES and not _pool_row_is_a_whole_line(r, pools):
+                # a fragment, shared by every script that calls it; see
+                # POOL_FILES.  A whole sentence falls through and is judged by
+                # the same rules as any other row (name macros included).
                 shared += 1
                 continue
             if r.tag == extract_v2.UNTILED_TAG or script.NOEDIT_NOTE in r.note:
@@ -228,17 +278,21 @@ def main(out: str = OUT) -> int:
             r.en = r.ref_en
             r.status = "draft"          # never "reviewed": nobody has read it
             promoted += 1
+            if r.file in POOL_FILES:
+                pooled += 1
         rel = os.path.relpath(path, src)
         dst = os.path.join(out, rel)
         os.makedirs(os.path.dirname(dst), exist_ok=True)
         tables.write(dst, table)
-    print("%s: %d rows, %d already English, %d promoted from a reference, "
+    print("%s: %d rows, %d already English, %d promoted from a reference "
+          "(%d of them whole-sentence pool records), "
           "%d dead data (never promoted), "
           "%d shared pool fragments (never promoted), "
           "%d skipped (@untiled), %d refused (would drop a name macro), "
           "%d refused (translates the whole line, not this span), "
           "%d speaker tags renamed to the pooled name"
-          % (out, rows, kept, promoted, dead, shared, skipped, refused, split, renamed))
+          % (out, rows, kept, promoted, pooled, dead, shared, skipped, refused,
+             split, renamed))
     return 0
 
 

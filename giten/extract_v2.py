@@ -96,9 +96,18 @@ def _generated(part: str) -> bool:
     return part in _GENERATED_MARKERS or part.startswith(_GENERATED_NOTE_PREFIXES)
 
 
-def _prefill(jp: str) -> str:
-    """Pre-fill ``en`` when the source already reads as English."""
-    return "" if codec.has_japanese(jp) else jp
+def _prefill(jp: str, pools=None) -> str:
+    """Pre-fill ``en`` when the source already reads as English.
+
+    Judged on the **pool-expanded reading**, not on the stored bytes.  A span
+    that is nothing but ``{08:7C}`` has no Japanese *characters* in it, so the
+    literal test called it English and pre-filled ``en = jp`` -- which then
+    looked translated to everyone downstream while the engine drew ならば.  648
+    rows were parked that way.  ``pool.reading`` answers what the line actually
+    puts on screen, which is the question being asked.
+    """
+    reading = pool.reading(jp, pools) if pool.has_calls(jp) else jp
+    return "" if codec.has_japanese(reading) else jp
 
 
 #: The losing copy of a repeated record id.  Its rows exist so the bytes can be
@@ -201,7 +210,8 @@ def script_rows(rel: str, sc: script.Script, pools) -> "list[tables.Row]":
             if sp.is_choice and sp.choice_width:
                 notes.append("menu option, declared width %d columns" % sp.choice_width)
             row = tables.Row(rel, _rec_key(rec, sp.rec_key), sp.idx,
-                             sp.off, sp.tag, jp, _prefill(jp), note=_note(notes))
+                             sp.off, sp.tag, jp, _prefill(jp, pools),
+                             note=_note(notes))
             row.split_head = sp.split_head
             row.cut_run = sp.cut_run
             rows.append(row)
@@ -384,7 +394,11 @@ def run(family: str = "all", root: "str | None" = None,
             if prev.en and prev.en != prev.jp:
                 r.en = prev.en                  # a real translation survives
             elif prev.en:
-                r.en = r.jp                     # a stale pre-fill: refresh it
+                # A stale pre-fill.  Re-decide it the same way a fresh row is
+                # decided -- on the pool-expanded reading -- so the 648 rows
+                # that were pre-filled with `en == jp` while the engine drew
+                # Japanese come back empty and `check` calls them untranslated.
+                r.en = _prefill(r.jp, pools)
             # ref_en / ref_src / status were never carried at all, so every
             # re-extract used to drop 35,000 reference translations on the floor
             if prev.ref_en and not r.ref_en:

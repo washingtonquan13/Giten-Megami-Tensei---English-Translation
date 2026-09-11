@@ -307,7 +307,14 @@ def check_rows(report: Report, rows, pools=None,
         where = "%s %s[%d]" % (r.file, r.rec, r.idx)
         blocked = script.NOEDIT_NOTE in r.note
 
-        if not r.en and codec.strip_tokens(r.jp).strip():
+        # "Has this row anything to translate" is a question about the screen,
+        # not about the stored bytes: a span that is nothing but `{08:7C}`
+        # strips to the empty string and yet draws ならば.  1,169 token-only
+        # rows never raised `missing` because of that, so ask the reading.
+        visible = codec.strip_tokens(r.jp).strip()
+        if not visible and pool.has_calls(r.jp):
+            visible = codec.strip_tokens(pool.reading(r.jp, pools)).strip()
+        if not r.en and visible:
             if not any(m in r.note.lower() for m in SKIP_MARKERS):
                 report.add("missing", WARN, where, "untranslated")
             continue
