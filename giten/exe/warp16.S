@@ -22,14 +22,26 @@
 #
 # HOW IT IS REACHED
 #
-# The dev build redirects the single `call 0x00433D70` at 0x00433E97 -- the
-# mode-0 (goto) arm of the `0C`/`0D` trampoline `0x00433E70` -- to `warp16`.
-# A script that executes `0C <SENTINEL> nn` gets the pinned target instead;
-# every other `0C` is passed through unchanged, with the same arguments, to the
-# same function.  SENTINEL is a file byte that occurs nowhere in the corpus as a
-# `0C`/`0D` operand, so nothing real can be shadowed, and it is below 0xE0 so
-# that a cave that failed to fire would take the ordinary `m/MS00xx` path rather
-# than the demon-merge path at 0x00433CA8.
+# The dev build redirects **every** `call 0x00433D70` in the image -- all five,
+# listed in `warp16.py` -- to `warp16`.  Redirecting only the `0C` handler would
+# be enough for a script-initiated jump, but not for one the exe starts itself
+# (`0x00438D70(file, rec, ctx)` and the `0x00481658`/`0x0048165C` pair), and the
+# negotiation entry is one of those.  Every caller of `0x00433D70` passes
+# (file, record) in that order -- the function's own signature fixes it -- so
+# one cave serves all five, and a call it does not claim is forwarded with the
+# arguments it received, untouched.
+#
+# WARP_SENTINEL is the file id the cave claims and WARP_MATCH_REC the record
+# (0xFFFF matches any).  Two uses:
+#
+#   * a field warp: SENTINEL is a file byte that occurs nowhere in the corpus as
+#     a `0C`/`0D` operand, so nothing real can be shadowed, and it is below 0xE0
+#     so that a cave which failed to fire would take the ordinary `m/MS00xx`
+#     path rather than the demon-merge path at 0x00433CA8.  The warp tree writes
+#     `0C <SENTINEL> 00` into `m/MS0017` r01.
+#   * rewriting a jump the game already makes, which is the only way into a
+#     record nothing names: `0C E0 00` -- the negotiation's own entry into merge
+#     slot 0 -- becomes `0C E0 1B` or `0C E3 CE`.  No script is patched at all.
 #
 # THE ENTRY OFFSET
 #
@@ -55,9 +67,15 @@
 
 # --- the cave ---------------------------------------------------------------
 warp16:
-        mov     eax, dword ptr [esp+4]      # arg1: file id, as 0x00433E97 pushes it
+        mov     eax, dword ptr [esp+4]      # arg1: the file id, always
         cmp     ax, WARP_SENTINEL
         jne     passthrough
+        mov     edx, WARP_MATCH_REC         # 0xFFFF = any record
+        cmp     dx, 0xFFFF
+        je      1f
+        cmp     dx, word ptr [esp+8]        # arg2: the record
+        jne     passthrough
+1:
         mov     eax, WARP_FILE
         cmp     ax, 0xFFFF                  # 0xFFFF = "no target pinned"
         je      passthrough

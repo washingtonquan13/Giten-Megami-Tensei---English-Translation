@@ -141,10 +141,23 @@ def make_parser():
     p.add_argument("--build2", default=None, help="diff: the EN build tree")
     p.add_argument("--limit", type=int, default=60)
 
+    p = sub.add_parser("tile",
+                       help="the tiling census, and the engine's own answer to it")
+    p.add_argument("action", choices=("census", "observe"))
+    p.add_argument("trace", nargs="?", help="observe: the trace.bin to read")
+    p.add_argument("--build", default=None,
+                   help="observe: the tree the trace ran on (default the game root)")
+    p.add_argument("--write-fixtures", action="store_true",
+                   help="observe: save the engine's boundaries under "
+                        "tests/data/observed/")
+    p.add_argument("--root", help="game ddswin/ folder (default: auto)")
+    p.add_argument("-q", "--quiet", action="store_true")
+
     p = sub.add_parser("warp",
                        help="build a Japanese play tree whose opening jumps "
                             "straight to one record (for tracing it)")
-    p.add_argument("file", help="file id in hex, e.g. 31 (m/MS0031) or 6200")
+    p.add_argument("file", help="file id in hex, e.g. 31 (m/MS0031) or 6200; "
+                                "`-` builds a tree with no jump at all")
     p.add_argument("rec", help="record id in hex")
     p.add_argument("--out", default=None,
                    help="tree folder (default build/warp/MS<file>-r<rec>)")
@@ -153,6 +166,13 @@ def make_parser():
                         "(needs the dev cave; default 0)")
     p.add_argument("--rebuild-exe", action="store_true",
                    help="rebuild dds_dev_jp.exe even if build/exe has one")
+    p.add_argument("--match", default=None, metavar="FILE:REC",
+                   help="instead of patching a script, have the dev cave rewrite "
+                        "a jump the game already makes (hex, e.g. E0:00); the "
+                        "target file stays byte-identical and so does m/MS0017")
+    p.add_argument("--et0007", default=None, metavar="ROW:T2",
+                   help="override et/ET0007.BIN row ROW's third column with T2 "
+                        "(hex), so the negotiation merge loads m/MS61<T2>")
     p.add_argument("-q", "--quiet", action="store_true")
 
     sub.add_parser("where", help="print the resolved game and repo paths")
@@ -389,14 +409,39 @@ def main(argv=None) -> int:
                      sum(1 for e in entries for s in e.spans if s.tail),
                      shared, len(blob), len(findings)))
         return 1 if findings else 0
+    if args.cmd == "tile":
+        from . import tile
+        if args.action == "census":
+            print(tile.census_report(root=args.root))
+            return 0
+        if not args.trace:
+            print("tile observe needs a trace.bin")
+            return 2
+        rep = tile.observe(args.trace, args.build)
+        print(tile.observe_report(rep))
+        if args.write_fixtures:
+            written = tile.write_fixtures(rep, args.trace)
+            print("\nwrote %d fixture(s) under %s"
+                  % (len(written), tile.OBSERVED_DIR))
+        return 1 if rep.disagree else 0
     if args.cmd == "warp":
         from . import warp
-        fid, rid, entry = (int(args.file, 16), int(args.rec, 16),
-                           int(args.entry, 16))
-        out = args.out or os.path.join(paths.BUILD_DIR, "warp",
-                                       "MS%04X-r%02X" % (fid, rid))
-        warp.build(out, fid, rid, entry, rebuild_exe=args.rebuild_exe,
-                   quiet=args.quiet)
+        fid = None if args.file == "-" else int(args.file, 16)
+        rid = 0 if args.rec == "-" else int(args.rec, 16)
+        entry = int(args.entry, 16)
+        out = args.out or os.path.join(
+            paths.BUILD_DIR, "warp",
+            "no-jump" if fid is None else "MS%04X-r%02X" % (fid, rid))
+        over = {}
+        if args.et0007:
+            row, t2 = (int(x, 16) for x in args.et0007.split(":"))
+            raw = files.read_source(warp.ET0007_REL, paths.ORIGINAL_DDSWIN)
+            over[warp.ET0007_REL] = warp.et0007_with(raw, row, t2)
+        match = None
+        if args.match:
+            match = tuple(int(x, 16) for x in args.match.split(":"))
+        warp.build(out, fid, rid, entry, overrides=over,
+                   rebuild_exe=args.rebuild_exe, quiet=args.quiet, match=match)
         return 0
     if args.cmd == "where":
         print("game (read-only): %s" % paths.game_root())

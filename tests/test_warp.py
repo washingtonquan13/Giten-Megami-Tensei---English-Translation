@@ -100,13 +100,19 @@ def test_the_cave_bytes_are_pinned():
     runs inside the game on a path the game takes constantly, so a change to it
     has to be deliberate.  If this fails, read the new bytes before re-baselining.
     """
-    blob = warp16.assemble(0x6200, 0x16, 0, sentinel=warp.SENTINEL_FILE)
+    blob = warp16.assemble(0x6200, 0x16, 0, sentinel=warp.SENTINEL_FILE,
+                           match_rec=warp16.ANY_REC)
     want = bytes.fromhex(
         "8b442404"              # mov eax,[esp+4]          -- the file id
-        "663dd900"              # cmp ax,0xD9              -- the sentinel
+        "663dd900"              # cmp ax,0xD9              -- WARP_SENTINEL
+        "7554"                  # jne passthrough
+        "baffff0000"            # mov edx,0xFFFF           -- WARP_MATCH_REC
+        "6683faff"              # cmp dx,0xFFFF            -- 0xFFFF = any record
+        "7407"                  # je fire
+        "663b542408"            # cmp dx,word [esp+8]      -- the record
         "7542"                  # jne passthrough
-        "b800620000"            # mov eax,0x6200           -- WARP_FILE
-        "6683f8ff"              # cmp ax,0xFFFF
+        "b800620000"            # fire: mov eax,0x6200     -- WARP_FILE
+        "6683f8ff"              # cmp ax,0xFFFF            -- no target pinned?
         "7437"                  # je  passthrough
         "6a16"                  # push 0x16                -- WARP_REC
         "50"                    # push eax
@@ -135,18 +141,31 @@ def test_the_cave_bytes_are_pinned():
     assert set(blob[len(want):]) <= {0x90}, "unexpected tail: %s" % blob[len(want):].hex()
 
 
-def test_the_cave_install_repoints_the_goto_arm_of_the_0c_trampoline():
-    """It hooks one call, and only after checking what that call targets."""
+def test_the_cave_claims_every_call_to_goto_record_and_no_other():
+    """The list of call sites is scanned for, not trusted.
+
+    One site would do for a `0C` a script executes, but the negotiation is
+    entered by the engine (`0x00438D70`), so a cave that hooked only the `0C`
+    handler could never rewrite that jump -- which is how `m/MS610D` c0 r1B and
+    c3 rCE are reached at all, since nothing in the data names them.
+    """
     org = os.path.join(paths.ORIGINAL_DDSWIN, "dds_org.exe")
     if not os.path.exists(org):
         raise AssertionError("original exe missing: %s" % org)
     from giten.exe.pe import PE
     image = open(org, "rb").read()
     pe = PE(image, "dds_org")
-    off = pe.va2off(warp16.CALL_SITE)
-    assert image[off] == 0xE8
-    rel = struct.unpack_from("<i", image, off + 1)[0]
-    assert (warp16.CALL_SITE + 5 + rel) & 0xFFFFFFFF == warp16.GOTO_RECORD
+    text = [s for s in pe.sections if s["name"] == ".text"][0]
+    lo, hi = text["rawptr"], text["rawptr"] + text["rawsize"]
+    found = []
+    at = image.find(b"\xE8", lo, hi - 5)
+    while at >= 0:
+        rel = struct.unpack_from("<i", image, at + 1)[0]
+        if (pe.off2va(at) + 5 + rel) & 0xFFFFFFFF == warp16.GOTO_RECORD:
+            found.append(pe.off2va(at))
+        at = image.find(b"\xE8", at + 1, hi - 5)
+    assert sorted(found) == sorted(warp16.CALL_SITES), [hex(f) for f in found]
+    assert warp16.CALL_SITE in warp16.CALL_SITES
 
 
 def test_a_tree_hardlinks_the_data_and_overrides_only_what_it_must():
@@ -168,3 +187,66 @@ def test_a_tree_hardlinks_the_data_and_overrides_only_what_it_must():
     finally:
         import shutil
         shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_installing_the_cave_repoints_every_goto_record_call_and_nothing_else():
+    """On the real image: five calls moved, the target function untouched."""
+    from giten.exe import patch
+    from giten.exe.pe import PE
+    base = patch.apply(open(patch.ORG, "rb").read(), "release")
+    pe0 = PE(base, "release")
+    cave_va = pe0.imagebase + pe0.sizeimage
+    out = warp16.install(base, 0x6200, 0x16, 0)
+    pe = PE(out, "warp")
+    for site in warp16.CALL_SITES:
+        off = pe.va2off(site)
+        rel = struct.unpack_from("<i", out, off + 1)[0]
+        assert (site + 5 + rel) & 0xFFFFFFFF == cave_va, hex(site)
+    # goto-record itself is not patched: the cave calls the original
+    assert out[pe.va2off(warp16.GOTO_RECORD):
+               pe.va2off(warp16.GOTO_RECORD) + 8] == \
+        base[pe0.va2off(warp16.GOTO_RECORD):pe0.va2off(warp16.GOTO_RECORD) + 8]
+    # and the cave itself is there, at the end
+    assert warp16.assemble(0x6200, 0x16, 0) in out
+
+
+# --- the negotiation variant (m/MS610D) -------------------------------------
+def test_et0007_is_twenty_five_three_byte_rows_read_in_the_clear():
+    """The table `0x0040EB70` merges from, and the one thing it never names.
+
+    Read straight out of the file with no decryption, because `0x00401D90`
+    freads the length word and then the body: two `fread`s, no call to the
+    cipher.  If this ever needed `container.split`, every row below would be
+    different bytes and the whole variant would be aimed at the wrong file.
+    """
+    raw = files.read_source(warp.ET0007_REL, paths.ORIGINAL_DDSWIN)
+    rows = warp.et0007_rows(raw)
+    assert len(rows) == warp.ET0007_ROWS == 25
+    t2 = {r[2] for r in rows if r[2] != 0xFF}
+    assert t2 == {0x00, 0x06, 0x07, 0x08, 0x09, 0x0B, 0x0C}, sorted(t2)
+    assert 0x0D not in t2, "the shipped table now names m/MS610D by itself"
+
+
+def test_the_variant_changes_exactly_one_byte_and_that_byte_names_ms610d():
+    raw = files.read_source(warp.ET0007_REL, paths.ORIGINAL_DDSWIN)
+    out = warp.et0007_with(raw, 5, 0x0D)
+    assert len(out) == len(raw)
+    diff = [i for i, (a, b) in enumerate(zip(raw, out)) if a != b]
+    assert diff == [2 + 5 * 3 + 2], diff
+    assert warp.et0007_rows(out)[5][2] == 0x0D
+    # the demon's own files are still merged: only the third column moved
+    assert warp.et0007_rows(out)[5][:2] == warp.et0007_rows(raw)[5][:2]
+
+
+def test_the_chosen_row_is_the_one_pixie_uses():
+    """Row 5 is picked because its cheapest member is the game's first demon.
+
+    The row a demon uses is the u16 at 0x73 of its own `p/P####.BIN` record --
+    the merge descriptor copies that record to +0x04 and reads the field at
+    +0x77 (`0x0040E9BB`).
+    """
+    members = warp.demons_in_row(5)
+    assert members, "row 5 has no demons; the field offset has moved"
+    lowest = members[0]
+    assert lowest[0] == "P20C7" and lowest[2] == 3, lowest
+    assert lowest[1] == "\u30d4\u30af\u30b7\u30fc", lowest[1]      # ピクシー

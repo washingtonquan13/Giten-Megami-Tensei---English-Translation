@@ -178,18 +178,74 @@ def add_runtime(out_dir: str, exe: str) -> "list[str]":
     return out
 
 
-def dev_exe(rebuild: bool = False, cave: "tuple | None" = None,
+# --- the negotiation variant ------------------------------------------------
+#: ``et/ET0007.BIN``: a 2-byte length word, then 25 rows of three bytes, read in
+#: the clear (``0x00401D90`` freads the word and then the body, with no
+#: decryption).  ``0x0040EB70`` merges, per row, ``m/MS6000`` always, then
+#: ``0x6000 + t0``, ``0x6000 + t1`` and ``0x6100 + t2``, each unless the column
+#: is ``0xFF``, then the demon's own ``et/ID%04X``.
+ET0007_REL = "et/ET0007.BIN"
+ET0007_ROWS = 25
+
+#: Which row a demon uses is a field of its own ``p/P####.BIN`` record: the u16
+#: at ``0x73``.  (The engine reads it as the merge descriptor's ``+0x77``, and
+#: the descriptor's ``+0x04`` is a copy of the 122-byte ``p/`` record.)
+DEMON_ROW_OFFSET = 0x73
+
+
+def et0007_rows(raw: bytes) -> "list[tuple]":
+    n = int.from_bytes(raw[:2], "little")
+    if n != len(raw) - 2 or n % 3:
+        raise ValueError("%s is not 3-byte rows behind a length word" % ET0007_REL)
+    return [tuple(raw[2 + i * 3:5 + i * 3]) for i in range(n // 3)]
+
+
+def et0007_with(raw: bytes, row: int, t2: int) -> bytes:
+    """``et/ET0007.BIN`` with one row's third column set.
+
+    Only the third column, and only one row: the merge *adds* a file rather than
+    replacing one, so the demon's own conversation files are all still loaded and
+    the only difference is that `m/MS61<t2>` is merged on top of them.
+    """
+    rows = et0007_rows(raw)
+    if not 0 <= row < len(rows):
+        raise ValueError("row %d is outside the %d-row table" % (row, len(rows)))
+    out = bytearray(raw)
+    out[2 + row * 3 + 2] = t2
+    return bytes(out)
+
+
+def demons_in_row(row: int, root: "str | None" = None) -> "list[tuple]":
+    """``[(record id, name, level)]`` for every demon that uses one table row."""
+    import glob
+    import struct
+
+    from . import container
+    root = root or paths.ORIGINAL_DDSWIN
+    out = []
+    for p in sorted(glob.glob(os.path.join(root, "p", "*.BIN"))):
+        body = container.split(open(p, "rb").read())[0][0].body
+        if len(body) < 0x7A:
+            continue
+        if struct.unpack_from("<H", body, DEMON_ROW_OFFSET)[0] != row:
+            continue
+        name = body[0x36:0x36 + 26].split(b"\0")[0].decode("cp932", "replace")
+        out.append((os.path.basename(p)[:-4], name, body[0x47]))
+    return sorted(out, key=lambda r: r[2])
+
+
+# --- building a tree --------------------------------------------------------
+def dev_exe(rebuild: bool = False, cave: "dict | None" = None,
             out_dir: "str | None" = None) -> str:
     """Path to the Japanese dev exe, built if it is missing or ``rebuild``.
 
-    ``cave`` is ``(file_id, rec_id, entry)`` for a 16-bit warp; it produces a
-    separate exe carrying the warp cave, since the cave's target is pinned into
-    the image rather than read from the script.
+    ``cave`` produces a separate exe carrying the warp cave, since the cave's
+    target is pinned into the image rather than read from the script.
     """
     from .exe import tracer, warp16
     out_dir = out_dir or os.path.join(paths.BUILD_DIR, "exe")
     if cave is not None:
-        return warp16.build(cave[0], cave[1], cave[2], out_dir)
+        return warp16.build(out_dir=out_dir, **cave)
     dst = os.path.join(out_dir, DEV_EXE)
     if rebuild or not os.path.exists(dst):
         return tracer.build_dev_jp(out_dir)
@@ -198,23 +254,45 @@ def dev_exe(rebuild: bool = False, cave: "tuple | None" = None,
 
 def build(out_dir: str, file_id: int, rec_id: int, entry: int = 0,
           overrides: "dict[str, bytes] | None" = None,
-          rebuild_exe: bool = False, quiet: bool = False) -> dict:
-    """Build one warp tree.  Returns a small report dict."""
+          rebuild_exe: bool = False, quiet: bool = False,
+          match: "tuple | None" = None) -> dict:
+    """Build one warp tree.  Returns a small report dict.
+
+    ``match`` is ``(file, rec)`` -- a jump the game already makes, which the cave
+    rewrites to the target.  With it, **no script is patched at all**: the tree's
+    ``m/MS0017`` is the original, and the warp fires wherever the engine itself
+    performs that jump.  That is the only way into a record nothing names.
+    """
+    from .exe import warp16
     cave = None
-    if file_id > 0xFF or entry:
-        cave = (file_id, rec_id, entry)
+    script_warp = None
+    if file_id is None:
+        # no jump at all: a tree that differs from the original only in its data
+        # overrides.  What `et/ET0007` needs -- the player has to reach the
+        # scene by playing, and the merge does the rest.
+        pass
+    elif match is not None:
+        cave = {"file_id": file_id, "rec_id": rec_id, "entry": entry,
+                "sentinel": match[0], "match_rec": match[1],
+                "name": "dds_dev_warp_%02X%02X_to_%04X%02X.exe"
+                        % (match[0], match[1], file_id, rec_id)}
+    elif file_id > 0xFF or entry:
+        cave = {"file_id": file_id, "rec_id": rec_id, "entry": entry,
+                "sentinel": SENTINEL_FILE, "match_rec": warp16.ANY_REC,
+                "name": "dds_dev_warp_%04X_%02X.exe" % (file_id, rec_id)}
         script_warp = warp_bytes(SENTINEL_FILE, 0x00)
     else:
         script_warp = warp_bytes(file_id, rec_id)
 
-    src_raw = files.read_source(SRC_REL, paths.ORIGINAL_DDSWIN)
-    patched = patch_injection(src_raw, script_warp)
-    diff = changed_records(src_raw, patched)
-    if diff != [SRC_REC]:
-        raise RuntimeError("the injection moved records %r" % diff)
-
     over = dict(overrides or {})
-    over[SRC_REL] = patched
+    if script_warp is not None:
+        src_raw = files.read_source(SRC_REL, paths.ORIGINAL_DDSWIN)
+        patched = patch_injection(src_raw, script_warp)
+        diff = changed_records(src_raw, patched)
+        if diff != [SRC_REC]:
+            raise RuntimeError("the injection moved records %r" % diff)
+        over[SRC_REL] = patched
+
     if os.path.isdir(out_dir):
         shutil.rmtree(out_dir)
     n = materialise(out_dir, overrides=over)
@@ -222,13 +300,22 @@ def build(out_dir: str, file_id: int, rec_id: int, entry: int = 0,
     added = add_runtime(out_dir, exe)
     rep = {"out": out_dir, "files": n, "exe": os.path.basename(exe),
            "runtime": added, "file_id": file_id, "rec_id": rec_id,
-           "entry": entry, "cave": cave is not None,
-           "warp": script_warp.hex(" "), "overrides": sorted(over)}
+           "entry": entry, "cave": cave is not None, "match": match,
+           "warp": script_warp.hex(" ") if script_warp else None,
+           "overrides": sorted(over)}
     if not quiet:
         print("%s: %d data files, %s" % (out_dir, n, ", ".join(added)))
-        print("   m/MS0017 r%02X starts %s  ->  m/MS%04X.BIN r%02X%s"
-              % (SRC_REC, script_warp.hex(" "), file_id, rec_id,
-                 " at +0x%X (cave)" % entry if cave else ""))
+        if file_id is None:
+            print("   no jump: the tree differs from the original only in its "
+                  "data overrides")
+        elif script_warp is not None:
+            print("   m/MS0017 r%02X starts %s  ->  m/MS%04X.BIN r%02X%s"
+                  % (SRC_REC, script_warp.hex(" "), file_id, rec_id,
+                     " at +0x%X (cave)" % entry if cave else ""))
+        else:
+            print("   no script patched; the cave rewrites 0C %02X %02X -> "
+                  "0C %02X %02X%s" % (match[0], match[1], file_id, rec_id,
+                                      " at +0x%X" % entry if entry else ""))
         for k in sorted(over):
             if k != SRC_REL:
                 print("   override %s (%d bytes)" % (k, len(over[k])))
