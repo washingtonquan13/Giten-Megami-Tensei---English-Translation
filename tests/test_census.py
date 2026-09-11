@@ -24,7 +24,7 @@ def test_the_census_residue_is_exactly_what_it_was_measured_to_be():
     rows = tile.census()
     res = [(r.rel, r.ci, r.rec_id, r.state) for r in tile.residue(rows)]
     want = [
-        ("m/MS0031.BIN", 0, 0x00, tile.UNTILED),
+        ("m/MS0031.BIN", 0, 0x00, tile.UNREACHED),
         ("m/MS0031.BIN", 0, 0x02, tile.STRADDLE),
         ("m/MS0031.BIN", 0, 0x03, tile.STRADDLE),
         ("m/MS0031.BIN", 0, 0x0B, tile.STRADDLE),
@@ -51,14 +51,43 @@ def test_the_census_residue_is_exactly_what_it_was_measured_to_be():
 #: `1f 00 10 01 01 00` trailer reads one byte into the next record, and for
 #: r04 -- the last -- into the `0x00` the loader pre-installs for absent record
 #: 0x05), which is why `prefix` is empty; m/MS6200 c0 r4F joins them.
-CENSUS_COUNTS = {tile.STRADDLE: 50, tile.UNTILED: 8, tile.DATA: 8038}
+#: 2026-09-11, the 22 warp traces: **untiled 8 -> 0**.  Not one of the eight was
+#: tiled by a model change; all eight were *classified*, from a trace of the
+#: engine being aimed straight at them -- five `dead` (the process died on or
+#: before their first token) and three `unreached` (the walk stops on bytes the
+#: engine's own control flow jumps over).  `giten/tile.py` carries the evidence
+#: per record and `tests/test_tile.py` re-checks it.
+CENSUS_COUNTS = {tile.STRADDLE: 50, tile.DEAD: 5, tile.UNREACHED: 3,
+                 tile.DATA: 8038}
 
 
 def test_the_census_covers_every_record_of_every_script_file():
     rows = tile.census()
     assert len(rows) > 20000, len(rows)
     assert {r.state for r in rows} <= {tile.TILED, tile.STRADDLE, tile.PREFIX,
-                                       tile.UNTILED, tile.DATA}
+                                       tile.UNTILED, tile.DEAD, tile.UNREACHED,
+                                       tile.DATA}
     # a `data` row never carries a tiling error: the file is not code, so the
     # tokenizer's opinion of it is not reported at all
     assert all(r.error is None for r in rows if r.state == tile.DATA)
+
+
+def test_no_record_is_untiled_any_more():
+    """The end state item 3d asked for, as an assertion rather than a total.
+
+    Every record of every script file is now one of: tiled, tiled with a token
+    whose operands sit in the record with the next id (`straddle`), in a file
+    the script loader never opens (`data`), or closed from a trace (`dead`,
+    `unreached`).  `untiled` -- "the model cannot walk this and nothing says
+    why" -- is empty, and each of the eight records that used to be in it names
+    the trace that closed it.
+    """
+    rows = tile.census()
+    left = [(r.rel, r.ci, r.rec_id, r.error) for r in rows
+            if r.state == tile.UNTILED]
+    assert not left, left
+    for r in rows:
+        if r.state in (tile.DEAD, tile.UNREACHED):
+            key = (r.rel, r.ci, r.rec_id)
+            why = tile.DEAD_RECORDS.get(key) or tile.UNREACHED_RECORDS.get(key)
+            assert why and "warp-" in why, key

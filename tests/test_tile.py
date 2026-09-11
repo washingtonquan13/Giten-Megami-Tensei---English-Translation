@@ -48,31 +48,107 @@ def test_a_boundary_is_pc0_minus_the_width_of_the_dispatched_character():
     assert ev.pc0 - ev.width - ev.idx_off == 8
 
 
+def _models():
+    cache = {}
+
+    def get(rel):
+        if rel not in cache:
+            cache[rel] = tile._Model(script.parse(rel, files.read_source(rel)))
+        return cache[rel]
+    return get
+
+
 def test_the_model_tiles_every_boundary_the_engine_was_observed_at():
-    """The acceptance test for the whole model, on the records it has answers for."""
+    """The acceptance test for the whole model, on the records it has answers for.
+
+    A boundary counts as answered if the model starts a token there, **or** if
+    the model's own reachability closure over the container image -- every
+    ``rel16`` target and every straddle landing, walked -- reaches it.  The
+    second half is not a loophole and it is not optional: the engine really does
+    enter a record in the middle of one of our tokens (a ``10`` whose ``rel16``
+    is 1 lands on the second byte of its own expression; a 612-byte ``1F 04``
+    ends 0x0196 into the record with the next id), and both readings of those
+    bytes are true at the same time.  What the closure cannot do is invent an
+    address: every seed comes out of the model's own decoding.
+    """
     fixtures = tile.load_fixtures()
     assert fixtures, "no observed fixtures; run `giten tile observe --write-fixtures`"
+    model = _models()
     bad = []
     for fx in fixtures:
         rel, ci, rec_id = fx["rel"], fx["ci"], fx["rec"]
-        sc = script.parse(rel, files.read_source(rel))
+        m = model(rel)
         # By CONTENT, not by position: `m/MS6800` c0 holds record 0x0E twice
         # with different bytes, and the engine keeps the *last* copy installed.
         # Taking the first would compare the fixture against a record the engine
         # never executed.
-        rec = next((r for r in sc.containers[ci]
+        rec = next((r for r in m.sc.containers[ci]
                     if r.id == rec_id and overlay.fnv1a(r.data) == fx["hash"]),
                    None)
         assert rec is not None, (
             "%s c%d r%02X: no record with the observed bytes any more"
             % (rel, ci, rec_id))
-        toks = rec.span_tokens or []
-        starts = {t.off for t in toks}
-        miss = [b for b in fx["boundaries"] if b not in starts]
+        if (rel, ci, rec_id) in tile.DEAD_RECORDS:
+            continue                       # recorded, not scored -- see below
+        answered = m.starts(ci, rec_id) | m.entry_starts(ci, rec_id)
+        miss = [b for b in fx["boundaries"] if b not in answered]
         if miss:
             bad.append((rel, ci, rec_id, miss[:8]))
     assert not bad, (
         "the model no longer starts a token where the engine did: %s" % bad[:10])
+
+
+def test_every_dead_and_unreached_record_is_still_one():
+    """The two states that close a record without tiling it, both ways round.
+
+    ``dead`` and ``unreached`` are hand-written verdicts with a trace named in
+    them, so they have to be checked against the model or they rot into excuses:
+    a record that starts tiling must leave the list, and an ``unreached`` record
+    has to actually satisfy its own definition -- every boundary the engine was
+    observed at is answered, and the offset the walk gives up on is not one of
+    them.
+    """
+    model = _models()
+    fixtures = {(fx["rel"], fx["ci"], fx["rec"]): fx for fx in tile.load_fixtures()}
+    for key in sorted(tile.DEAD_RECORDS) + sorted(tile.UNREACHED_RECORDS):
+        rel, ci, rec_id = key
+        m = model(rel)
+        rec = next(r for r in m.sc.containers[ci] if r.id == rec_id)
+        assert rec.tokens is None, (
+            "%s c%d r%02X tiles now -- take it off the list" % key)
+    for key in sorted(tile.UNREACHED_RECORDS):
+        rel, ci, rec_id = key
+        fx = fixtures.get(key)
+        assert fx is not None, "%s c%d r%02X has no observed fixture" % key
+        m = model(rel)
+        answered = m.starts(ci, rec_id) | m.entry_starts(ci, rec_id)
+        miss = [b for b in fx["boundaries"] if b not in answered]
+        assert not miss, "%s c%d r%02X: unanswered %s" % (key + (miss[:6],))
+        # the walk's own failure point, and the engine never standing on it
+        stop = _stop_offset(m, ci, rec_id)
+        assert stop is not None
+        assert stop not in fx["boundaries"], (
+            "%s c%d r%02X: the engine DID dispatch at 0x%04X, the offset the "
+            "walk gives up on -- this record is not `unreached`" % (key + (stop,)))
+
+
+def _stop_offset(m, ci, rec_id):
+    """Where the tokenizer gave up, in the record's own coordinates."""
+    from giten import records as _records, vmops
+    recs = m.sc.containers[ci]
+    byid = {}
+    for r in recs:
+        byid.setdefault(r.id, r)
+    image = _records.runtime_image(recs)
+    off = _records.INDEX_SIZE
+    for i in range(256):
+        if i == rec_id:
+            break
+        r = byid.get(i)
+        off += len(r.data) if (r is not None and r.data) else 1
+    _toks, stopped = tile._walk(image, off - _records.INDEX_SIZE,
+                                len(byid[rec_id].data), vmops.table())
+    return stopped
 
 
 def test_every_observed_record_still_parses_to_the_bytes_it_was_observed_in():
