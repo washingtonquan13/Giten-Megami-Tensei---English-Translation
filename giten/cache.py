@@ -123,11 +123,15 @@ def reset() -> None:
     _CODE_KEY = None
 
 
-def key(kind: str, *parts: bytes) -> str:
-    """The cache key for one entry: the code key, the kind, and the inputs."""
+def raw_key(kind: str, *parts: bytes) -> str:
+    """A key over ``kind`` and ``parts`` alone.
+
+    For an entry whose inputs are *not* this package's source -- a disassembly
+    of the game exe, an object file built from ``hook.c`` -- where keying on
+    :func:`code_key` would throw the whole cache away every time an unrelated
+    module was edited.  Such a caller keys on its own inputs' bytes instead.
+    """
     h = hashlib.sha256()
-    h.update(code_key().encode("ascii"))
-    h.update(b"\0")
     h.update(kind.encode("utf-8"))
     h.update(b"\0")
     for p in parts:
@@ -136,12 +140,48 @@ def key(kind: str, *parts: bytes) -> str:
     return h.hexdigest()
 
 
+def key(kind: str, *parts: bytes) -> str:
+    """The cache key for one entry: the code key, the kind, and the inputs."""
+    return raw_key(kind, code_key().encode("ascii"), *parts)
+
+
+def toolchain_key(*names: str) -> str:
+    """An identity for the external build tools an entry was produced with.
+
+    Resolved path, size and mtime of each -- not the file's contents, because
+    ``gcc.exe`` is tens of megabytes and this runs on every call, and not
+    ``--version``, because that is another subprocess.  Updating the toolchain
+    changes all three, which is what has to invalidate a cached object file.
+    """
+    import shutil
+
+    parts = []
+    for n in names:
+        p = shutil.which(n)
+        if p is None:
+            parts.append("%s=missing" % n)
+            continue
+        try:
+            st = os.stat(p)
+            parts.append("%s=%s:%d:%d" % (n, p, st.st_size, st.st_mtime_ns))
+        except OSError:
+            parts.append("%s=%s" % (n, p))
+    return raw_key("toolchain", *(x.encode("utf-8") for x in parts))
+
+
+def file_key(*paths_: str) -> str:
+    """A digest of the *contents* of some source files, for a build product."""
+    return digest_of(tuple(paths_))
+
+
 def _path(where: str, k: str) -> str:
     return os.path.join(where, k[:2], k + ".pickle")
 
 
 def load(where: str, k: str):
     """The cached object, or ``None`` on a miss or an unreadable entry."""
+    if disabled():
+        return None
     p = _path(where, k)
     try:
         with open(p, "rb") as fh:
@@ -154,6 +194,8 @@ def load(where: str, k: str):
 def store(where: str, k: str, obj) -> None:
     """Write one entry.  Best effort: a cache that cannot be written is not an
     error, it is a cache miss next time."""
+    if disabled():
+        return
     p = _path(where, k)
     d = os.path.dirname(p)
     try:

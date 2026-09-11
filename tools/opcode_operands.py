@@ -32,6 +32,8 @@ and is reported as such instead of being given a constant operand list.
 """
 from __future__ import annotations
 
+import bisect
+import hashlib
 import os
 import re
 import struct
@@ -41,6 +43,7 @@ import tempfile
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from giten import cache, paths                   # noqa: E402
 from giten.exe import patch                      # noqa: E402
 from giten.exe.pe import PE                      # noqa: E402
 
@@ -67,6 +70,22 @@ STOP = {"ret", "retw", "hlt", "iret"}
 _TMP = tempfile.mkdtemp(prefix="giten-ops-")
 _CACHE: "dict[int, tuple]" = {}
 
+#: The image is disassembled once per ``(image, va, window)`` and the answer is
+#: kept on disk, because the walk asks for the same few hundred addresses in
+#: every process that runs it -- and `tools/handler_determinism.py` deliberately
+#: runs one fresh process *per opcode*, so the in-process `_CACHE` above buys
+#: nothing across the 272 of them.  786 objdump calls, 39 s, in the suite alone.
+#:
+#: Deliberately **not** one linear dump of `.text` that later calls slice.  A
+#: linear sweep stays aligned only while it decodes real instructions; the whole
+#: reason `_at` picks a base and sweeps from there is that a sweep started
+#: somewhere else drifts and answers with misaligned instructions (selector 0x59
+#: read as a leaf in one run and as ``u8 + expr`` in another until this was
+#: understood).  So what is cached is each sweep, keyed by the exact bytes it
+#: disassembled -- same objdump invocation, same output, just not run twice.
+_IMG_KEY = hashlib.sha256(IMG).hexdigest()
+_DISK = os.path.join(paths.BUILD_DIR, "cache", "objdump")
+
 
 def _sweep(va, n=0x200):
     """Linear disassembly from ``va``; ``va`` must be an instruction boundary."""
@@ -77,25 +96,71 @@ def _sweep(va, n=0x200):
     except Exception:
         _CACHE[va] = {}
         return {}
-    p = os.path.join(_TMP, "%08x.bin" % va)
-    with open(p, "wb") as fh:
-        fh.write(IMG[off:off + n])
-    out = subprocess.run(["objdump", "-D", "-b", "binary", "-m", "i386",
-                          "--adjust-vma=0x%X" % va, p],
-                         capture_output=True, text=True, check=True).stdout
-    ins = {}
-    for ln in out.splitlines():
-        m = _LINE.match(ln)
-        if m:
-            ins[int(m.group(1), 16)] = (m.group(3), m.group(4),
-                                        len(m.group(2).split()))
+    k = cache.raw_key("objdump", _IMG_KEY.encode(), b"%08x/%x" % (va, n))
+    ins = cache.load(_DISK, k)
+    if ins is None:
+        p = os.path.join(_TMP, "%08x.bin" % va)
+        with open(p, "wb") as fh:
+            fh.write(IMG[off:off + n])
+        out = subprocess.run(["objdump", "-D", "-b", "binary", "-m", "i386",
+                              "--adjust-vma=0x%X" % va, p],
+                             capture_output=True, text=True, check=True).stdout
+        ins = {}
+        for ln in out.splitlines():
+            m = _LINE.match(ln)
+            if m:
+                ins[int(m.group(1), 16)] = (m.group(3), m.group(4),
+                                            len(m.group(2).split()))
+        cache.store(_DISK, k, ins)
     _CACHE[va] = ins
     return ins
 
 
-#: Addresses known to be real instruction boundaries: function entries we were
-#: asked to walk, and the targets of calls and jumps taken from them.
-_ENTRIES: "set[int]" = set()
+class _Entries:
+    """Addresses known to be real instruction boundaries: function entries we
+    were asked to walk, and the targets of calls and jumps taken from them.
+
+    A set, plus the same values kept sorted so :func:`_at` can find *the
+    greatest entry in ``(va - 0x200, va]``* with a binary search instead of a
+    scan of the whole set.  It was a scan, and `_at` is called once per
+    instruction per path: 3.5 million times for the 94 expression selectors,
+    against a set that grows to thousands, which is 64 of the 71 seconds that
+    walk used to take.  The answer is the same value by construction -- the
+    largest element of the same interval -- so nothing about the decoding
+    changes; only how long it takes to find it.
+    """
+
+    __slots__ = ("_set", "_sorted")
+
+    def __init__(self):
+        self._set = set()
+        self._sorted = []
+
+    def add(self, va: int) -> None:
+        if va not in self._set:
+            self._set.add(va)
+            bisect.insort(self._sorted, va)
+
+    def base_for(self, va: int) -> "int | None":
+        """The greatest known entry ``b`` with ``b <= va < b + 0x200``."""
+        i = bisect.bisect_right(self._sorted, va) - 1
+        if i >= 0:
+            b = self._sorted[i]
+            if va < b + 0x200:
+                return b
+        return None
+
+    def __contains__(self, va):
+        return va in self._set
+
+    def __iter__(self):
+        return iter(self._sorted)
+
+    def __len__(self):
+        return len(self._set)
+
+
+_ENTRIES = _Entries()
 
 
 def _at(va):
@@ -113,9 +178,8 @@ def _at(va):
     """
     if va in _CACHE and va in _CACHE[va]:
         return _CACHE[va][va]
-    bases = [b for b in _ENTRIES if b <= va < b + 0x200]
-    if bases:
-        best = max(bases)
+    best = _ENTRIES.base_for(va)
+    if best is not None:
         ins = _sweep(best).get(va)
         if ins is not None:
             return ins
