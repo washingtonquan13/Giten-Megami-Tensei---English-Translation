@@ -42,9 +42,11 @@ be read, but the builder refuses to edit them and copies the record verbatim.
 """
 from __future__ import annotations
 
+
+
 from dataclasses import dataclass, field
 
-from . import codec, container, observed, records, vmops
+from . import cache, codec, container, observed, records, vmops
 
 #: Tags whose span is a menu option and is measured against the menu's declared
 #: per-option width rather than the message-box line budget.
@@ -529,7 +531,94 @@ def same_record_cuts(data: bytes, toks, base: int) -> "set[int]":
 
 # --- parse ------------------------------------------------------------------
 def parse(rel: str, raw: bytes, tab=None) -> Script:
-    """Decode, frame and tile one ``.BIN``."""
+    """Decode, frame and tile one ``.BIN``.
+
+    The answer is a pure function of ``rel``, ``raw`` and the code that reads
+    them, and the same handful of files get parsed over and over -- ``check``
+    alone walks the corpus four times in one process -- so the result is
+    memoised in this process and cached on disk under ``build/cache/parse``
+    (:mod:`giten.cache`, which also documents the key and the invalidation
+    rule).  ``GITEN_NO_CACHE=1`` bypasses both.
+
+    **No caller ever receives an object another caller holds.**  A result that
+    came straight from the disk entry or from a real parse is already nobody
+    else's, and is returned as it is.  Only a *memoised* result is shared, and
+    that one is never handed out: :func:`_skeleton` rebuilds the ``Script``, its
+    :class:`Rec` objects and their ``spans``/``tokens``/``flags`` lists first, so
+    a caller that assigns ``rec.tokens`` or ``rec.spans`` -- three tests do --
+    cannot be seen by the next caller.  Tokens, operands, spans and the record
+    bytes are shared, because nothing in the tree mutates one of those in place.
+
+    **Nothing is memoised until it is asked for twice.**  Holding 844 parsed
+    scripts alive costs more in garbage collection than it saves when each file
+    is only wanted once, which is what ``extract``, ``overlay`` and
+    ``tile census`` do: measured, the memo made ``tile census`` 0.4 s *slower*
+    that way.  A key is remembered on its first use and the object is only kept
+    from the second, so a single pass over the corpus pays nothing and
+    ``check`` -- four passes in one process -- still gets every repeat for free.
+
+    An explicit ``tab`` is never cached: the result then depends on a table the
+    key does not cover.
+    """
+    if tab is not None or cache.disabled():
+        return _parse(rel, raw, tab)
+    k = cache.key("parse", rel.encode("utf-8"), raw)
+    sc = _MEMO.get(k)
+    if sc is not None:
+        return _skeleton(sc)
+    sc = cache.load(cache.PARSE_DIR, k)
+    if sc is None:
+        sc = _parse(rel, raw, None)
+        cache.store(cache.PARSE_DIR, k, sc)
+    if k in _SEEN:
+        _MEMO[k] = sc                       # asked for twice: worth keeping
+        return _skeleton(sc)
+    _SEEN.add(k)
+    return sc
+
+
+#: parse key -> the template ``Script`` for it.  Bounded by the corpus (844
+#: files); nothing else is ever parsed.
+_MEMO: "dict[str, Script]" = {}
+
+#: keys this process has answered once.  Just the hex digests, so remembering
+#: every file in the corpus costs a few tens of kilobytes and no GC pressure.
+_SEEN: "set[str]" = set()
+
+
+def _skeleton(sc: Script) -> Script:
+    """A copy of ``sc`` nobody else holds a reference into.
+
+    New ``Script``, new ``Rec`` objects, new lists.  Deliberately *not* a
+    :func:`copy.deepcopy`: tokens, operands, spans, the record bytes and the
+    parsed container bodies are immutable in practice -- no module in the tree
+    assigns an attribute of one -- so copying them would cost the whole saving
+    and buy nothing.  What *is* assigned, by ``giten/warp.py``'s callers and by
+    three tests, is a ``Rec`` field (``data``, ``tokens``, ``spans``), and each
+    of those is per-copy here.
+    """
+    return Script(sc.rel, sc.raw, sc.ok, sc.error,
+                  [[_skeleton_rec(r) for r in cont] for cont in sc.containers],
+                  list(sc.cont_offsets), list(sc.duplicate_ids),
+                  list(sc.bodies))
+
+
+def _skeleton_rec(rec: Rec) -> Rec:
+    # Field by field rather than ``copy.copy`` + fix-ups: this runs 20 690 times
+    # per corpus pass and ``copy.copy`` on a dataclass costs three times what the
+    # constructor does.
+    toks, known = rec.tokens, rec.known_tokens
+    out = Rec(rec.ci, rec.id, rec.order, rec.data, rec.body_off, rec.raw_off,
+              None if toks is None else list(toks),
+              rec.tile_error, rec.unimplemented, list(rec.spans),
+              rec.cond, rec.param, rec.blocked, list(rec.flags),
+              rec.no_overlay, None if known is None else list(known),
+              rec.dup_loser, rec.straddle)
+    return out
+
+
+def _parse(rel: str, raw: bytes, tab=None) -> Script:
+    """:func:`parse` with no cache in front of it."""
     tab = tab or vmops.table()
     if rel.startswith("p/"):
         # p/P*.BIN is a fixed struct, not a script; one of the 432 (P2194)
