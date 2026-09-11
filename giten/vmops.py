@@ -179,6 +179,37 @@ def _read_switch(data: bytes, i: int, out: list) -> int:
     random 1..100 (first case >= the roll wins).  Every slot is appended to
     ``out`` as an ordinary operand, so the ``rel16`` targets are relocated and
     audited exactly like a plain branch's.
+
+    **The ``kind`` guard, and why it stays (re-examined 2026-09-11).**  The
+    refusal below is *not* VM-faithful, and the handler says so plainly.  Both of
+    ``0x004327C0``'s loops step a **non-matching** entry with::
+
+        4327f1:  call 0x438fa0     ; the kind byte -- never looked at
+        4327f6:  call 0x438fc0     ; the two payload bytes
+        4327fb:  jmp  0x432822     ; next key
+
+    and only the matching arm (``0x4327FD`` / ``0x432866``) does
+    ``test al,al; je`` on it, to choose ``0x00433C10`` (``[u8 file][u8 rec]``)
+    over ``0x00433EC0`` (``rel16``).  So the engine strides 4 bytes per entry
+    whatever the kind holds, and the engine was watched doing exactly that: at
+    ``m/MS6200`` c0 r1F ``0x000B`` (``build/traces/warp-MS6200-r1F.bin``) it
+    dispatched the ``0E`` where this model says it starts, over a table whose
+    kinds run ``E5 09 12 1F 00 18`` and whose keys run ``1F 54 0E 02 06 9F`` --
+    not ascending, so not a threshold table any compiler wrote -- and its next
+    program counter was the ``rel16`` target of that table's **sixth** four-byte
+    entry.
+
+    It stays anyway, and the reason is measured rather than argued.  Dropping it
+    tiles eight records, and two of them are tiled *wrongly*: ``m/MS0031`` c0 r00
+    grows a 390-byte ``0F`` token over the 273-byte record, swallowing every one
+    of the 86 program counters the engine was observed dispatching text at
+    (``0x006B``..``0x010B``, 「＃暫定：ゲームオーバーです。」and two lines of
+    dialogue we translate), and ``m/MS610D`` c0 r1B grows a 198-byte ``0F`` over
+    the five boundaries the engine was observed at in *its* tail.  A table that
+    covers bytes the engine itself dispatched as tokens is not a table.  So the
+    guard is kept for what it now demonstrably is -- a bound on how far a walk
+    may run on bytes that are not a table -- and the records it refuses are
+    classified from the traces instead (``giten.tile``: ``dead``, ``unreached``).
     """
     while True:
         if i >= len(data):
@@ -189,11 +220,8 @@ def _read_switch(data: bytes, i: int, out: list) -> int:
         if i + 4 > len(data):
             raise TileError("switch entry past end of record at 0x%X" % i)
         if data[i + 1] > 1:
-            # the handler only tests kind != 0, but no real table in the corpus
-            # uses another value (the 14 other switch opcodes are 100% kind 1)
-            # and 0E/0F "entries" with kind >= 2 point at an instruction 8% of
-            # the time -- they are bytes the walk reached out of step.  Refuse.
-            raise TileError("switch entry at 0x%X has kind %d (not 0 or 1)" % (i, data[i + 1]))
+            raise TileError("switch entry at 0x%X has kind %d (not 0 or 1)"
+                            % (i, data[i + 1]))
         out.append(Operand("u8", i, 1, data[i:i + 1]))
         out.append(Operand("u8", i + 1, 1, data[i + 1:i + 2]))
         if data[i + 1]:
