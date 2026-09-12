@@ -227,6 +227,32 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     (`giten.script.parse`) before deciding which of the two a short span is;
     guessing from the text alone gets it wrong in both directions.
 
+18. **Seam-aware width, and the tokens that are NOT wide.** `giten check`
+    measures every row **alone**, so it never sees a line the engine assembles
+    out of head + runtime print + tail: m/MS0053 0:01[34]/[35] measured 44 and 59
+    columns apiece and rendered as one 119-column line. Measure a `1F01`/`1F02`/
+    `1E3E` run the way style-guide correction 4 says -- `head + 15 columns of
+    name + tail` -- and put the `\n` where you want the break, because otherwise
+    the engine picks it. Walk the record's tokens and concatenate every span that
+    is separated from the next only by a print opcode; a `1FD0`/`1FD2`/`1FD3`/
+    `1FBA` between two spans ends the run. **The converse trap:** a control token
+    written out in a cell (`{1E10:01003C}`, 13 characters of text) costs **zero**
+    columns -- `giten.width.text_width` charges only what draws -- and a writer
+    who believes otherwise shortens perfectly good lines for nothing (m/MS0053
+    0:05[3], 0:07[13], both 67 columns or less as they stood, 2026-09-12).
+
+19. **A relative-clause head before a name print inverts in English.** Japanese
+    puts the clause before the noun, so `エレベーターの前まで来た` + `1F01` +
+    `‥‥‥` is "<NAME>, who had come as far as the elevator....." -- and an
+    English head translated straight through renders "came to the front of the
+    elevator Katsuragi.........". The head must be recast as a participial
+    phrase that can stand before the name ("Having come as far as the elevator,
+    "), not as a finite clause. Three in m/MS0053 alone (0:04[8], 0:04[13],
+    0:05[0]); 0:04[13] had also been given a `\n<wait>` the jp does not have,
+    which put a page break between the clause and the name it modifies
+    (2026-09-12). The tell is a head span that ends in a past-tense verb with no
+    following punctuation and a tail span that opens on `‥` or a particle.
+
 ## 5. Procedure
 
 Writers, per file: select rows (status != reviewed; `ref_en` set with `en`
