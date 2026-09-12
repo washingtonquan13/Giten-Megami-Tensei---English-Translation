@@ -31,7 +31,12 @@ committed) in route order (`build/tl-route.tsv`).
   美莉ちゃん "Miri-chan", お兄ちゃん "Onii-chan". Demons with 様 take
   "Lord"/"Lady" ("Lord Bael"). Never add one the Japanese lacks. 君 as a bare
   pronoun is "you"; 父さん/母さん are kinship terms ("Dad"/"Mom"); 様 inside
-  様子 is grammar.
+  様子 is grammar. Generic address nouns that merely contain an honorific
+  character and name no individual (巫女さん "priestess", おばさん "ma'am",
+  a stranger's 御兄ちゃん "mister") are translated naturally, without a
+  suffix (settled 2026-09-12). Where the Japanese itself writes the demon
+  lord's name as バール, keep "Baal" literally -- never merge by referent.
+  Item names follow tables/itemdb.tsv over a table's own ref_en.
 - **Profanity is not a register problem.** Adult game. Swearing stays unless it
   REPLACED what the Japanese says; then restore the meaning in the same voice.
 - **Place names are romanised Japanese**; district strip and glossary stand.
