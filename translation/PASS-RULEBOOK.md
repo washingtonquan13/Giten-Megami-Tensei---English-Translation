@@ -75,6 +75,7 @@ committed) in route order (`build/tl-route.tsv`).
 | ＤＢ隊員： / ＤＢ男性隊員： | Devil Buster: / Devil Buster (Male): | never "DB Member:" |
 | オートマッピング | Auto Mapping | not "Auto Mapper"/"Auto-Mapping" |
 | ペンタグランマ, 合体, マッカ | Pentagramma, Fusion/fuse, Macca | |
+| シャンシャンシティ | **Sunshine City** | owner decision 2026-09-12: the Ikebukuro tower; "Shan Shan"/"Sanshan"/"Shanshan"/"Xanxan City" are retired (also mapnames.tsv) |
 | names | p/_P_NAMES.tsv and corpus majority | Belberith, Sherry, Chita, Phanuel, Baal Zephon, Togo Shrine |
 | ellipses | mirror the Japanese run length | six dots stay six; ASCII dots |
 | full-width Latin / digits / ideographic space in English | ASCII | after a switch-table digit strip, `giten audit` a build: no control-flow differences |
