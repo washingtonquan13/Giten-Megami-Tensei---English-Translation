@@ -382,6 +382,20 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     the rest sit in `ref_en` waiting to be applied verbatim by the next writer
     who trusts it (2026-09-12, m/MS0021 review).
 
+25. **A sibling cited as precedent must be read in its `en` column, not its
+    `ref_en`.** Detector 20 says to dump the family side by side; this says
+    which cell settles it. The pass has spent days rewriting place names *out*
+    of `ref_en`, so a sibling's `ref_en` is often the very reading that was
+    already rejected there -- quoting it back is how a corrected name returns
+    to the tree in a different file. m/MS0036 0:3F shipped 芝浦埠頭駅 as
+    "Shibaura Station" on the report's claim that "m/MS0035 0:49 already
+    established this exact location as plain 'Shibaura Subway Station'": that
+    string is 0:49's `ref_en`, while its committed `en` (ef1e20a) is "Shibaura
+    Pier Subway Station", carrying §2's binding 芝浦埠頭 = Shibaura Pier. The
+    same trap catches any note that says "matched the precedent in <file>" --
+    open the sibling and look at column 7, and prefer a binding §2 row over
+    any file's practice (2026-09-12, m/MS0036 review).
+
 ## 5. Procedure
 
 Writers, per file: select rows (status != reviewed; `ref_en` set with `en`
