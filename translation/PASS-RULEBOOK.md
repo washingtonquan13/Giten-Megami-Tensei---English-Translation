@@ -367,6 +367,21 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     mapnames entry is 御花屋敷 "Hanayashiki", against v0.05's invented "Flower
     Garden" (2026-09-12).
 
+24. **A literal backslash where v0.05 meant a newline.** Detector 4 is the
+    newline that lost its backslash (`.n<wait>`); this is the other half -- a
+    v0.05 cell that carries a **doubled** backslash, sometimes with a stray
+    letter after it (`\\`, `\\b`, `\\m`), exactly where `\n` belongs. The table
+    escapes a real backslash as two characters, so the cell is legal, the
+    validator is silent, `giten check` says nothing, and the engine draws a
+    backslash mid-sentence: m/MS0021 0:20[9] shipped "And it's not just
+    her.\\All of your party members have been healed!". **Scan every `en` for
+    two backslashes in a row**, not only for the escapes the format forbids --
+    a well-formed escape can still be the wrong one. Corpus-wide there are 28
+    such cells, four of them already shipping in `en` and marked `checked`
+    (m/MS000E 0:0A[2], m/MS001A 0:06[16], m/MS005A 0:30[3], m/MS005B 0:13[35]);
+    the rest sit in `ref_en` waiting to be applied verbatim by the next writer
+    who trusts it (2026-09-12, m/MS0021 review).
+
 ## 5. Procedure
 
 Writers, per file: select rows (status != reviewed; `ref_en` set with `en`
