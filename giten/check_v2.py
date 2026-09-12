@@ -484,7 +484,13 @@ def check_capture(report: Report, rows, root=None) -> None:
                     for sp in rec.spans:
                         if sp.off >= on and sp.end <= t.off:
                             row = edited.get((key, sp.idx))
-                            total += len(codec.encode(row.en)) if row else sp.end - sp.off
+                            if not row:
+                                total += sp.end - sp.off
+                                continue
+                            try:
+                                total += len(codec.encode(row.en))
+                            except codec.CodecError:
+                                continue        # reported by the `encode` rule
                     if total > CAPTURE_LIMIT:
                         report.add("capture", check.ERROR, "%s %s" % (rel, key),
                                    "%d bytes of text between 1B and 1C; the capture "
@@ -548,7 +554,13 @@ def check_record_size(report: Report, rows, root=None) -> None:
             for sp in rec.spans:
                 row = edited.get((key, sp.idx))
                 if row:
-                    size += len(codec.encode(row.en)) - (sp.end - sp.off)
+                    try:
+                        size += len(codec.encode(row.en)) - (sp.end - sp.off)
+                    except codec.CodecError:
+                        # already reported by the `encode` rule; one bad cell
+                        # must not stop the whole check for every other file
+                        # (a writer's stray "\u" did, 2026-09-11)
+                        continue
             if size > RECORD_LIMIT:
                 report.add("record-size", check.ERROR, "%s %s" % (rel, key),
                            "would build to %d bytes; the engine cannot load a "
