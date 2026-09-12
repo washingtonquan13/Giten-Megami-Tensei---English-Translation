@@ -17,7 +17,7 @@ m/MS00DE.BIN	0:02	9	179	1E5D	{08:62}{03:04}に{03:12}つけ{08:14}\n	 is slashin
 m/MS00DE.BIN	0:02	10	203	1ECE	は\n{04:01}で{03:12}かか{08:52}{08:1E}\n	 came at you\nslashing with {04:01}\n	 attacked using [{04:01}].\n	v005	draft	reads: は\nで切りかかってきた\n
 m/MS00DE.BIN	0:02	11	224	18	の{04:01}が舞う\n	's {04:01} dances\n	's [{04:01}] swings wild.\n	v005	draft	reads: のが舞う\n
 m/MS00DE.BIN	0:03	0	0	DATA	{04:03}					reads: 　
-m/MS00DE.BIN	0:03	1	15	1ECF	{08:62}{03:0A}{03:02}{03:03}\n	 attacked themself	 attacked themselves.\n	v005	draft	reads: は、自分自身を攻撃しだした\n
+m/MS00DE.BIN	0:03	1	15	1ECF	{08:62}{03:0A}{03:02}{03:03}\n	 started attacking themself	 attacked themselves.\n	v005	draft	reads: は、自分自身を攻撃しだした\n; @tl:fit
 m/MS00DE.BIN	0:03	2	40	1ECE	は	 came at 	 is attacking 	v005	draft	@refalign
 m/MS00DE.BIN	0:03	3	48	1F01	に向か{08:52}{08:1E}\n	.\n			draft	reads: に向かってきた\n
 m/MS00DE.BIN	0:03	4	62	18	{08:62}{03:04}{03:02}{03:03}！\n	 started attacking an ally!\n	 attacked an ally!\n	v005	draft	reads: は、味方を攻撃しだした！\n; @refalign
@@ -77,27 +77,27 @@ m/MS00DE.BIN	0:09	1	9	1E5C	{08:62}	 			draft	reads: は、
 m/MS00DE.BIN	0:09	2	17	1ECF	{03:0A}に\n	 cast on themself:\n	 on themself!\n	v005	draft	reads: 自分自身に\n; @refalign
 m/MS00DE.BIN	0:09	3	44	1F01	に	!\n	cast\n\n on \n{04:EB}!\n	v005	draft	@refalign-joined; @refalign
 m/MS00DE.BIN	0:09	4	49	18	{03:04}に	 cast at an ally: 	cast\n	v005	draft	reads: 味方に; @refalign; @split-authored
-m/MS00DE.BIN	0:09	5	53	18	{04:00}					@split-tail of [4]; reads: を唱えた！ ; @split-authored
-m/MS00DE.BIN	0:09	6	64	1ECF	{08:62}{03:06}\n{04:00}		cast\n	v005		reads: は、自分に\nを唱えた！ 
-m/MS00DE.BIN	0:09	7	81	1E5D	{08:63}の{03:04}に\n{04:00}	 cast at their own ally:\n{04:00}	cast\n\n on themself!\n\ncast\n\n on an ally!\n	v005	draft	reads: 自分の味方に\nを唱えた！ ; @refalign-joined; @refalign
+m/MS00DE.BIN	0:09	5	53	18	{04:00}	{04:00}			draft	@split-tail of [4]; reads: を唱えた！; @split-authored; @tl:new; @tl:accuracy
+m/MS00DE.BIN	0:09	6	64	1ECF	{08:62}{03:06}\n{04:00}	 cast on themself:\n{04:00}	cast\n	v005	draft	reads: は、自分に\nを唱えた！; @tl:fit; @tl:accuracy
+m/MS00DE.BIN	0:09	7	81	1E5D	{08:63}の{03:04}に\n{04:00}	 cast at their own ally:\n{04:00}	cast\n\n on themself!\n\ncast\n\n on an ally!\n	v005	draft	reads: 自分の味方に\nを唱えた！; @refalign-joined; @refalign; @tl:fit; @tl:accuracy
 m/MS00DE.BIN	0:09	8	95	18	の	's 	uses 	v005	draft	@refalign
 m/MS00DE.BIN	0:0A	0	0	DATA	{04:03}{08:62}	{04:03}			draft	reads: 　は、
 m/MS00DE.BIN	0:0A	1	24	1ECE	{01:1C}に	 on everyone	cast\n	v005	draft	reads: みんなに; @refalign
 m/MS00DE.BIN	0:0A	2	37	1ECF	{08:63}で	 by themself	 on everyone!\n	v005	draft	reads: 自分で; @refalign
 m/MS00DE.BIN	0:0A	3	50	1F01	に	!\n	cast\n\n on themself!\n	v005	draft	@refalign-joined; @refalign
 m/MS00DE.BIN	0:0A	4	55	18	{03:11}	 cast at the enemy: 	cast\n	v005	draft	reads: 敵に; @split-authored
-m/MS00DE.BIN	0:0A	5	57	18	{04:00}					@split-tail of [4]; reads: を唱えた！ ; @split-authored
+m/MS00DE.BIN	0:0A	5	57	18	{04:00}	{04:00}			draft	@split-tail of [4]; reads: を唱えた！; @split-authored; @tl:new; @tl:accuracy
 m/MS00DE.BIN	0:0A	6	69	1E5C	{02:0E}に	 this way	 on 	v005	draft	reads: こちらに; @refalign
 m/MS00DE.BIN	0:0A	7	88	1ECF	{03:06}\n	 on themself\n			draft	reads: 自分に\n
-m/MS00DE.BIN	0:0A	8	94	18	{08:0E}に\n	 cast at an allied demon:\n	cast\n	v005	draft	reads: 仲魔に\n; @refalign; @split-authored
-m/MS00DE.BIN	0:0A	9	99	18	{04:00}					@split-tail of [8]; reads: を唱えた！ ; @split-authored
+m/MS00DE.BIN	0:0A	8	94	18	{08:0E}に\n	 cast at an ally:\n	cast\n	v005	draft	reads: 仲魔に\n; @refalign; @split-authored; @tl:accuracy
+m/MS00DE.BIN	0:0A	9	99	18	{04:00}	{04:00}			draft	@split-tail of [8]; reads: を唱えた！; @split-authored; @tl:new; @tl:accuracy
 m/MS00DE.BIN	0:0B	0	0	DATA	{04:03}					reads: 　
 m/MS00DE.BIN	0:0B	1	9	1E5C	は{04:00}	 cast {04:00}	 cast \n!\n	v005	draft	reads: はを唱えた！ ; @refalign-joined; @refalign
 m/MS00DE.BIN	0:0B	2	16	18	の	's 	 uses 	v005	draft	@refalign
 m/MS00DE.BIN	0:0C	0	0	DATA	{04:03}					reads: 　
 m/MS00DE.BIN	0:0C	1	9	1E5C	は	 	cast\n	v005	draft	@refalign
 m/MS00DE.BIN	0:0C	2	18	1E5D	{03:11}向けて	 cast at the enemy: 	 at an enemy!\n	v005	draft	reads: 敵に向けて; @refalign; @split-authored
-m/MS00DE.BIN	0:0C	3	26	1E5D	{04:00}					@split-tail of [2]; reads: を唱えた！ ; @split-authored
+m/MS00DE.BIN	0:0C	3	26	1E5D	{04:00}	{04:00}			draft	@split-tail of [2]; reads: を唱えた！; @split-authored; @tl:new; @tl:accuracy
 m/MS00DE.BIN	0:0C	4	38	1E5D	の	's 	uses \n.\n	v005	draft	@refalign-joined; @refalign
 m/MS00DE.BIN	0:0C	5	49	18	{02:0E}に向けて{04:00}	 cast this way: {04:00}	cast\n	v005	draft	reads: こちらに向けてを唱えた！ ; @refalign
 m/MS00DE.BIN	0:0D	0	0	DATA	{04:03}の目が光{08:12}\n	{04:03}'s eyes flashed!\n	{04:03}'s eyes shine!\n	v005	draft	reads: 　の目が光った！\n; @refalign
@@ -169,33 +169,33 @@ m/MS00DE.BIN	0:33	1	10	1A	{08:4F}{08:62}ガーディアンの制服を\n装備�
 m/MS00DE.BIN	0:33	2	58	19	{08:4F}{08:62}ガーディアンの制服を脱いだ\n	 and the others took off the Guardian uniforms\n	's group took off the Guardian uniform.\n	ours	draft	reads: たちは、ガーディアンの制服を脱いだ\n
 m/MS00DE.BIN	0:34	0	6	1F01	{08:62}	 summoned 	{04:EC} 	ours	draft	reads: は、
 m/MS00DE.BIN	0:34	1	14	1F01	を召喚{08:4B}\n	.\n	summoned {04:EB}.\n	ours	draft	reads: を召喚した\n
-m/MS00DE.BIN	0:35	0	0	DATA	{04:08}使{08:51}\n	{04:08}was used.\n	 used it.\n	ours	draft	reads: は、を使った\n
-m/MS00DE.BIN	0:36	0	0	DATA	{04:08}					reads: は、を
+m/MS00DE.BIN	0:35	0	0	DATA	{04:08}使{08:51}\n	{04:08} was used.\n	 used it.\n	ours	draft	reads: は、を使った\n; @tl:fit
+m/MS00DE.BIN	0:36	0	0	DATA	{04:08}	{04:08}			draft	reads: は、を; @tl:new
 m/MS00DE.BIN	0:36	1	8	1ECF	{08:63}	 -- themself			draft	reads: 自分
 m/MS00DE.BIN	0:36	2	28	18	{01:1C}	 -- everyone	 used it on everyone.\n	ours	draft	reads: みんな; @split-authored
 m/MS00DE.BIN	0:36	3	30	18	に使{08:51}\n	 had it used on them\n			draft	@split-tail of [2]; reads: に使った\n; @split-authored
-m/MS00DE.BIN	0:37	0	0	DATA	{04:08}					reads: は、を
+m/MS00DE.BIN	0:37	0	0	DATA	{04:08}	{04:08} 			draft	reads: は、を; @tl:new
 m/MS00DE.BIN	0:37	1	8	1ECF	飲{08:5F}	was drunk	 drank 	v005	draft	reads: 飲んだ
 m/MS00DE.BIN	0:37	2	27	1F01	に	 			draft	
 m/MS00DE.BIN	0:37	3	32	18	{01:1C}に	 -- everyone	 made the party drink 	v005	draft	reads: みんなに; @refalign; @split-authored
 m/MS00DE.BIN	0:37	4	36	18	飲ませた\n	 was made to drink it\n			draft	@split-tail of [3]; @split-authored
-m/MS00DE.BIN	0:38	0	0	DATA	{04:08}					reads: は、を
+m/MS00DE.BIN	0:38	0	0	DATA	{04:08}	{04:08} 			draft	reads: は、を; @tl:new
 m/MS00DE.BIN	0:38	1	8	1ECF	食べた	was eaten	 ate 	v005	draft	
 m/MS00DE.BIN	0:38	2	29	1F01	に	 			draft	
 m/MS00DE.BIN	0:38	3	34	18	{01:1C}に	 -- everyone	 made the party eat 	v005	draft	reads: みんなに; @refalign; @split-authored
 m/MS00DE.BIN	0:38	4	38	18	食べさせた\n	 was made to eat it\n			draft	@split-tail of [3]; @split-authored
-m/MS00DE.BIN	0:39	0	0	DATA	{04:08}振りかざ{08:4B}\n	{04:08}was brandished.\n			draft	reads: は、を振りかざした\n
-m/MS00DE.BIN	0:3A	0	0	DATA	{04:08}投げつ{08:43}\n	{04:08}was thrown.\n			draft	reads: は、を投げつけた\n
-m/MS00DE.BIN	0:3B	0	0	DATA	{04:08}発射{08:4B}\n	{04:08}was fired.\n			draft	reads: は、を発射した\n
-m/MS00DE.BIN	0:3C	0	0	DATA	{04:08}鳴ら{08:4B}\n	{04:08}was sounded.\n			draft	reads: は、を鳴らした\n
-m/MS00DE.BIN	0:3D	0	0	DATA	{04:08}撒{08:64}\n	{04:08}was scattered.\n			draft	reads: は、を撒いた\n
-m/MS00DE.BIN	0:3E	0	0	DATA	{04:08}割{08:51}\n	{04:08}was broken.\n			draft	reads: は、を割った\n
+m/MS00DE.BIN	0:39	0	0	DATA	{04:08}振りかざ{08:4B}\n	{04:08} was brandished.\n			draft	reads: は、を振りかざした\n; @tl:fit
+m/MS00DE.BIN	0:3A	0	0	DATA	{04:08}投げつ{08:43}\n	{04:08} was thrown.\n			draft	reads: は、を投げつけた\n; @tl:fit
+m/MS00DE.BIN	0:3B	0	0	DATA	{04:08}発射{08:4B}\n	{04:08} was fired.\n			draft	reads: は、を発射した\n; @tl:fit
+m/MS00DE.BIN	0:3C	0	0	DATA	{04:08}鳴ら{08:4B}\n	{04:08} was sounded.\n			draft	reads: は、を鳴らした\n; @tl:fit
+m/MS00DE.BIN	0:3D	0	0	DATA	{04:08}撒{08:64}\n	{04:08} was scattered.\n			draft	reads: は、を撒いた\n; @tl:fit
+m/MS00DE.BIN	0:3E	0	0	DATA	{04:08}割{08:51}\n	{04:08} was broken.\n			draft	reads: は、を割った\n; @tl:fit
 m/MS00DE.BIN	0:3F	0	6	1F01	は{02:0E}に気がつ{08:64}！\n	 has noticed you!\n	{04:EC} noticed you!\n	v005	draft	reads: はこちらに気がついた！\n; @refalign
 m/MS00DE.BIN	0:40	0	0	DATA	{04:03}は	{04:03} [	{04:03} is doing [	v005	draft	reads: 　は; @refalign
 m/MS00DE.BIN	0:40	1	9	1F01	を{08:13}\n	 ]\n			draft	reads: をしている\n
 m/MS00DE.BIN	0:41	0	0	DATA	{04:03}は	{04:03} [	{04:03} gave up [	v005	draft	reads: 　は; @refalign
 m/MS00DE.BIN	0:41	1	9	1F01	を放{08:51}\n	 ]\n			draft	reads: を放った\n
-m/MS00DE.BIN	0:42	0	0	DATA	{04:08}ぎゅ{08:53}握り締めた\n	{04:08}was gripped tight.\n			draft	reads: は、をぎゅっと握り締めた\n
+m/MS00DE.BIN	0:42	0	0	DATA	{04:08}ぎゅ{08:53}握り締めた\n	{04:08} was gripped tight.\n			draft	reads: は、をぎゅっと握り締めた\n; @tl:fit
 m/MS00DE.BIN	0:43	0	0	DATA	{04:03}{08:62}	{04:03} made a wish on 	{04:03} begged [	v005	draft	reads: 　は、
 m/MS00DE.BIN	0:43	1	9	1F01	に願いをか{08:43}\n	.\n			draft	reads: に願いをかけた\n
 m/MS00DE.BIN	0:44	0	0	DATA	{04:03}{08:62}	{04:03} released the power of 	{04:03} freed [	v005	draft	reads: 　は、
