@@ -193,6 +193,28 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     is: the same record's 本来君は‥‥ tail had become "He is not, after all,
     anyone connected to..." when 君 is the person being addressed (2026-09-12).
 
+17. **A span that begins one byte inside a two-byte character.** The tiler
+    sometimes hands a span its Japanese with the first kana's *lead byte*
+    missing, because the opcode before it swallowed that byte as an operand.
+    The tell is a span opening on a half-width kana, or on a stray Latin letter
+    where the sentence needs a word: m/MS0031 `ﾆころが‥‥` is ところが, `れがまず
+    かった` is それがまずかった, `＜Vを食うと` is `83 81 83 56` = メシ ("grub", so
+    the camp's food is what brainwashes you), and `｣：` is `9F|A3 81 46` = 泪：,
+    a speaker tag and not punctuation. **The lost character is the English's to
+    carry**, because nothing else will draw it -- the owner's own reviewed
+    0:0A[2] does exactly that, shipping `レは、悪魔に襲われたんだ` as "I got
+    attacked by a demon." A writer who reads such a row literally ships the
+    garbage instead: 0:0B[1] went out as "the \\<V> stuff" and 0:01[12] /
+    0:1A[18] as a bare ":" with Rui's name dropped (2026-09-12).
+    **The opposite case, and how to tell them apart: disassemble.** When the
+    missing text is a *whole token of its own* -- an `08 xx` dictionary word, a
+    `1F D2` tag -- the engine still draws it and the English must NOT repeat it.
+    m/MS0031 0:06[0]'s span is the bare `：` of `1F D2 08 00 81 46`: 早坂 is the
+    `08 00` token *before* the span, so ":" is right there and "Hayasaka:" would
+    print 早坂Hayasaka:. Dump `rec.span_tokens` beside `rec.data`
+    (`giten.script.parse`) before deciding which of the two a short span is;
+    guessing from the text alone gets it wrong in both directions.
+
 ## 5. Procedure
 
 Writers, per file: select rows (status != reviewed; `ref_en` set with `en`
