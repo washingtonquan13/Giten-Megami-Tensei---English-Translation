@@ -200,6 +200,20 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     m/MS001D), every unbranched row about them must stay ungendered in English --
     the Japanese always is. The tell is one file saying "she" in one record and
     "he" in another for the same person.
+    **The converse, and it is the half that gets edited by mistake: a FIXED
+    referent must stay gendered, and the print operand is what says which it
+    is.** "This message is reusable, so it must not say 'him'" is a claim about
+    the `1F01` operand (detector 15), not about the prose, and it is checked by
+    disassembling -- not by imagining who the line could fire for. m/MS002A's
+    skill-awakening notification prints `1F01 07 00 04FF`, the protagonist's
+    family name, in every one of its ten spans; a writer degendered
+    0:01[0]/0:02[0] to "welling up inside **them**" reasoning that the message
+    "fires for any party member -- including Emi and Rui, both female", which
+    the bytes flatly contradict. The corpus settles it four ways for this
+    construction -- m/MS0000 0:01 " felt rage come boiling up inside him.",
+    m/MS005F 0:05[91], m/MS006C 0:07[0], and the sibling m/MS002C's "his back" /
+    "his shoulders" / "his forehead" (detector 20) -- so a degendering edit that
+    desyncs a file from its own sibling is the tell (2026-09-12).
 11. **Numbers**: prices and counts must match the Japanese digits.
 12. **Pool callers** (see §3).
 13. **Structural scans** before and after applying: bad escapes, `<wait>`
