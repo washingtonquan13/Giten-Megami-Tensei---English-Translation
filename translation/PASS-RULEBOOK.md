@@ -328,6 +328,26 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     in 0:2A and the correct "<A> did as he was told and handed <B>'s part to
     Kusaka" in 0:29 (2026-09-12).
 
+23. **A `0C`/`0D` at the *head* of a record is usually not a seam -- and the warp
+    op beside it says which `mapnames.tsv` row the line names.** Detector 21 is
+    the record call that lands *between* two spans. `m/MS0035` is the other
+    shape: every one of its 98 entrance records opens with `0D 35 62` -- a call
+    to the file's own record `0x62` -- and only then draws `<place>入口\n`.
+    Nothing is spliced in front of the title: `0x62`'s first block is four
+    opcodes and its terminating `00`, so it draws nothing before it returns, and
+    its own two `1FB2` options ("Enter"/"Walk away") sit in a `1FB1` list opened
+    *after* that return. So walk the target's tokens to its first `00` before
+    calling a head call a seam; a call that returns without drawing needs no
+    leading space and no shared-row measurement. The same records carry the tool
+    that makes a location file reviewable at all: the first `expr` operand of
+    each record's `1E 04` (`script.literal_expr(rec.data, tok.off + 2)`) is the
+    **destination map id**, so every row keys straight onto a
+    `tables/mapnames.tsv` row and the two tables can be read against each other
+    line by line instead of by guessing which 渋谷 is which. It is how
+    `m/MS0035` 0:28/0:29 were caught: both warp to maps `0023`/`0024`, whose
+    mapnames entry is 御花屋敷 "Hanayashiki", against v0.05's invented "Flower
+    Garden" (2026-09-12).
+
 ## 5. Procedure
 
 Writers, per file: select rows (status != reviewed; `ref_en` set with `en`
