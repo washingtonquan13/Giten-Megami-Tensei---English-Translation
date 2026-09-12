@@ -5,14 +5,14 @@
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
 m/MS00AF.BIN	0:02	0	19	1B	音ナンバー	Sound No.	+10	ours	draft	
 m/MS00AF.BIN	0:02	1	98	1B	＋１０	+10	-10	ours	draft	
-m/MS00AF.BIN	0:02	2	119	1B	－１０		Request	ours		
+m/MS00AF.BIN	0:02	2	119	1B	－１０	-10	Request	ours	draft	@tl:fit
 m/MS00AF.BIN	0:02	3	140	1B	リクエスト	Request	EXIT	ours	draft	
 m/MS00AF.BIN	0:02	4	165	1B	ＥＸＩＴ	EXIT			draft	
-m/MS00AF.BIN	0:04	0	281	1FB2	召喚	Summon	Summon	ours	draft	menu option, declared width 20 columns
-m/MS00AF.BIN	0:04	1	287	1FB2	キャンセル	Cancel	Cancel	ours	draft	menu option, declared width 20 columns
+m/MS00AF.BIN	0:04	0	281	1FB2	召喚	Summon	Summon	ours	checked	menu option, declared width 20 columns
+m/MS00AF.BIN	0:04	1	287	1FB2	キャンセル	Cancel	Cancel	ours	checked	menu option, declared width 20 columns
 m/MS00AF.BIN	0:05	0	19	1B	コマンド選択{08:4A}ね	Select a command	Variable +10	ours	draft	reads: コマンド選択してね
 m/MS00AF.BIN	0:05	1	121	1B	変数＋１０	Variable +10	Variable -10	ours	draft	
-m/MS00AF.BIN	0:05	2	146	1B	変数－１０		Variable +100	ours		
+m/MS00AF.BIN	0:05	2	146	1B	変数－１０	Variable -10	Variable +100	ours	draft	@tl:fit
 m/MS00AF.BIN	0:05	3	171	1B	変数＋１００	Variable +100	Variable -100	ours	draft	
 m/MS00AF.BIN	0:05	4	198	1B	変数－１００	Variable -100	Confirm	ours	draft	
 m/MS00AF.BIN	0:05	5	225	1B	確認	Confirm	Summon	ours	draft	
@@ -20,56 +20,56 @@ m/MS00AF.BIN	0:05	6	244	1B	召喚	Summon	EXIT	ours	draft
 m/MS00AF.BIN	0:05	7	263	1B	ＥＸＩＴ	EXIT			draft	
 m/MS00AF.BIN	0:09	0	19	1B	ポイント名　　　座標	Point Name    Coords	Map X	ours	draft	
 m/MS00AF.BIN	0:09	1	98	1B	マップＸ	Map X	Map Y	ours	draft	
-m/MS00AF.BIN	0:09	2	133	1B	マップＹ		Position X	ours		
+m/MS00AF.BIN	0:09	2	133	1B	マップＹ	Map Y	Position X	ours	draft	@tl:fit
 m/MS00AF.BIN	0:09	3	168	1B	ポジションＸ	Position X	Position Y	ours	draft	
 m/MS00AF.BIN	0:09	4	207	1B	ポジションＹ	Position Y	Execute	ours	draft	
 m/MS00AF.BIN	0:09	5	246	1B	実行	Run			draft	
 m/MS00AF.BIN	0:0B	0	19	1B	番号　　　　　{02:04}名	No.           Item Name	Number +10	ours	draft	reads: 番号　　　　　アイテム名
 m/MS00AF.BIN	0:0B	1	138	1B	ナンバー＋１０	Number +10	Number -10	ours	draft	
-m/MS00AF.BIN	0:0B	2	167	1B	ナンバー－１０		Number +100	ours		
+m/MS00AF.BIN	0:0B	2	167	1B	ナンバー－１０	Number -10	Number +100	ours	draft	@tl:fit
 m/MS00AF.BIN	0:0B	3	196	1B	ナンバー＋１００	Number +100	Number -100	ours	draft	
 m/MS00AF.BIN	0:0B	4	227	1B	ナンバー－１００	Number -100	Obtain	ours	draft	
 m/MS00AF.BIN	0:0B	5	258	1B	入手	Obtain	EXIT	ours	draft	
 m/MS00AF.BIN	0:0B	6	277	1B	ＥＸＩＴ	EXIT			draft	
 m/MS00AF.BIN	0:1B	0	23	1B	能力値名	Stat Name	LIGHT/DARK	v005	draft	
 m/MS00AF.BIN	0:1B	1	126	1B	Ｌ／Ｄ属性値	L/D Alignment	LAW/CHAOS	v005	draft	
-m/MS00AF.BIN	0:1B	2	153	1B	Ｌ／Ｃ属性値		LAW/CHAOS	v005		@refalign
+m/MS00AF.BIN	0:1B	2	153	1B	Ｌ／Ｃ属性値	L/C Alignment	LAW/CHAOS	v005	draft	@refalign; @tl:fit
 m/MS00AF.BIN	0:1B	3	180	1B	レベル	Level	INTUITION	v005	draft	
 m/MS00AF.BIN	0:1B	4	201	1B	直感	Intuition	WILLPOWER	v005	draft	
 m/MS00AF.BIN	0:1B	5	220	1B	精神力	Willpower	MAGIC	v005	draft	
-m/MS00AF.BIN	0:1B	6	241	1B	魔力		MAGIC	v005		@refalign
-m/MS00AF.BIN	0:1B	7	260	1B	知力		INTELLIGENCE	v005		@refalign
-m/MS00AF.BIN	0:1B	8	279	1B	加護		DIVINE GRACE	v005		@refalign
+m/MS00AF.BIN	0:1B	6	241	1B	魔力	Magic	MAGIC	v005	draft	@refalign; @tl:fit
+m/MS00AF.BIN	0:1B	7	260	1B	知力	Intelligence	INTELLIGENCE	v005	draft	@refalign; @tl:fit
+m/MS00AF.BIN	0:1B	8	279	1B	加護	Divine Grace	DIVINE GRACE	v005	draft	@refalign; @tl:fit
 m/MS00AF.BIN	0:1B	9	298	1B	強さ	Strength	VITALITY	v005	draft	
 m/MS00AF.BIN	0:1B	10	317	1B	体力	Vitality	AGILITY	v005	draft	
-m/MS00AF.BIN	0:1B	11	336	1B	敏捷性		AGILITY	v005		@refalign
-m/MS00AF.BIN	0:1B	12	357	1B	器用さ		DEXTERITY	v005		@refalign
-m/MS00AF.BIN	0:1B	13	378	1B	魅力		CHARM	v005		@refalign
-m/MS00AF.BIN	0:1B	14	397	1B	命運		LUCK	v005		@refalign
+m/MS00AF.BIN	0:1B	11	336	1B	敏捷性	Agility	AGILITY	v005	draft	@refalign; @tl:fit
+m/MS00AF.BIN	0:1B	12	357	1B	器用さ	Dexterity	DEXTERITY	v005	draft	@refalign; @tl:fit
+m/MS00AF.BIN	0:1B	13	378	1B	魅力	Charm	CHARM	v005	draft	@refalign; @tl:fit
+m/MS00AF.BIN	0:1B	14	397	1B	命運	Luck	LUCK	v005	draft	@refalign; @tl:fit
 m/MS00AF.BIN	0:1C	0	19	1B	値を増減{08:4A}ね	Adjust the value	Please adjust the value	ours	draft	reads: 値を増減してね
-m/MS00AF.BIN	0:1C	1	88	1B	ＯＫ	OK	OK	ours	draft	
+m/MS00AF.BIN	0:1C	1	88	1B	ＯＫ	OK	OK	ours	checked	
 m/MS00AF.BIN	0:1E	0	23	1B	マップNo.／フロア数／マップ名	Map No. / Floors / Map Name	Map No. / Floor Count / Map Name	ours	draft	
 m/MS00AF.BIN	0:1F	0	19	1B	どこへ行き{08:15}	Where to?	Floor Number	ours	draft	reads: どこへ行きますか？
 m/MS00AF.BIN	0:1F	1	84	1B	フロアナンバー	Floor Number	X Position	ours	draft	
-m/MS00AF.BIN	0:1F	2	125	1B	Ｘポジション		Y Position	ours		
+m/MS00AF.BIN	0:1F	2	125	1B	Ｘポジション	X Position	Y Position	ours	draft	@tl:fit
 m/MS00AF.BIN	0:1F	3	164	1B	Ｙポジション	Y Position	Execute	ours	draft	
 m/MS00AF.BIN	0:1F	4	203	1B	実行	Execute	Cancel	ours	draft	
 m/MS00AF.BIN	0:1F	5	222	1B	キャンセル	Cancel			draft	
-m/MS00AF.BIN	0:21	0	19	1B	グループ選択	Select Group	Select Group	ours	draft	
+m/MS00AF.BIN	0:21	0	19	1B	グループ選択	Select Group	Select Group	ours	checked	
 m/MS00AF.BIN	0:23	0	143	1B	~ON	~ON				
 m/MS00AF.BIN	0:23	1	161	1B	~OFF	~OFF			draft	
-m/MS00AF.BIN	0:24	0	2	1FBA	＞現在の状況をセーブし{08:5A}\n　セーブ{08:8E}ファイルを選択{08:4A}下{08:49}\n		>Your progress will be saved.\n Please select a file to save to.\n	v005		reads: ＞現在の状況をセーブします\n　セーブするファイルを選択して下さい\n; @refalign
+m/MS00AF.BIN	0:24	0	2	1FBA	＞現在の状況をセーブし{08:5A}\n　セーブ{08:8E}ファイルを選択{08:4A}下{08:49}\n	>Your progress will be saved.\n Please select a file to save to.\n	>Your progress will be saved.\n Please select a file to save to.\n	v005	checked	reads: ＞現在の状況をセーブします\n　セーブするファイルを選択して下さい\n; @refalign
 m/MS00AF.BIN	0:24	1	239	1FBA	＞{08:0A}を上書きし{08:5A}。よろしい{08:55}か？\n	>This will overwrite the saved data. Is that alright?\n			draft	reads: ＞データを上書きします。よろしいですか？\n
-m/MS00AF.BIN	0:24	2	288	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns
-m/MS00AF.BIN	0:24	3	292	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns
+m/MS00AF.BIN	0:24	2	288	1FB2	{08:26}	Yes	Yes	v005	checked	reads: はい; menu option, declared width 20 columns
+m/MS00AF.BIN	0:24	3	292	1FB2	{08:27}	No	No	v005	checked	reads: いいえ; menu option, declared width 20 columns
 m/MS00AF.BIN	0:24	4	336	1FD0	＞セーブ終了\n<wait>	>Save complete\n<wait>			draft	
-m/MS00AF.BIN	0:24	5	358	1FD0	＞報告：{08:0A}セーブに失敗しま{08:4B}\n　　　　ハードディスクの空き容量が不足{08:4A}い{08:5A}\n<wait>		>Error: Failed to save the game\n Not enough disk space available\n<wait>	v005		reads: ＞報告：データセーブに失敗しました\n　　　　ハードディスクの空き容量が不足しています\n<wait>; @refalign
-m/MS00AF.BIN	0:25	0	40	1B	 プレイヤー名     LEVEL セーブ地点	 PLAYER NAME      LEVEL LOCATION	 PLAYER NAME      LEVEL LOCATION	v005	draft	
+m/MS00AF.BIN	0:24	5	358	1FD0	＞報告：{08:0A}セーブに失敗しま{08:4B}\n　　　　ハードディスクの空き容量が不足{08:4A}い{08:5A}\n<wait>	>Error: Failed to save the game\n Not enough disk space available\n<wait>	>Error: Failed to save the game\n Not enough disk space available\n<wait>	v005	checked	reads: ＞報告：データセーブに失敗しました\n　　　　ハードディスクの空き容量が不足しています\n<wait>; @refalign
+m/MS00AF.BIN	0:25	0	40	1B	 プレイヤー名     LEVEL セーブ地点	 PLAYER NAME      LEVEL LOCATION	 PLAYER NAME      LEVEL LOCATION	v005	checked	
 m/MS00AF.BIN	0:25	1	132	1B	 ---------------- ----- ------------------	 ---------------- ----- ------------------				
-m/MS00AF.BIN	0:26	0	6	1FBA	＞{08:0A}をロードし{08:5A}\n　ロード{08:8E}ファイルを選択{08:4A}下{08:49}\n		>Please select a save to load\n	v005		reads: ＞データをロードします\n　ロードするファイルを選択して下さい\n; @refalign
-m/MS00AF.BIN	0:26	1	165	1FBA	＞{08:0A}をロードし{08:5A}。よろしい{08:55}か？\n		>Do you wish to load this save?\n	v005		reads: ＞データをロードします。よろしいですか？\n; @refalign
-m/MS00AF.BIN	0:26	2	214	1FB2	{08:26}	Yes	Yes	v005	draft	reads: はい; menu option, declared width 20 columns
-m/MS00AF.BIN	0:26	3	218	1FB2	{08:27}	No	No	v005	draft	reads: いいえ; menu option, declared width 20 columns
-m/MS00AF.BIN	0:26	4	264	1E07	＞報告：{08:0A}ロードに失敗しま{08:4B}\n　　　　セーブ{08:0A}が異常{08:55}\n<wait>	>Error: Failed to load data	>Error: Failed to load the save\n Save data is corrupted\n<wait>	v005	draft	reads: ＞報告：データロードに失敗しました\n　　　　セーブデータが異常です\n<wait>
-m/MS00AF.BIN	0:27	0	40	1B	 プレイヤー名     LEVEL セーブ地点	 PLAYER NAME      LEVEL LOCATION	 PLAYER NAME      LEVEL LOCATION	v005	draft	
+m/MS00AF.BIN	0:26	0	6	1FBA	＞{08:0A}をロードし{08:5A}\n　ロード{08:8E}ファイルを選択{08:4A}下{08:49}\n	>Your data will be loaded.\n Please select a file to load.\n	>Please select a save to load\n	v005	draft	reads: ＞データをロードします\n　ロードするファイルを選択して下さい\n; @refalign; @tl:fit
+m/MS00AF.BIN	0:26	1	165	1FBA	＞{08:0A}をロードし{08:5A}。よろしい{08:55}か？\n	>This will load the saved data. Is that alright?\n	>Do you wish to load this save?\n	v005	draft	reads: ＞データをロードします。よろしいですか？\n; @refalign; @tl:fit
+m/MS00AF.BIN	0:26	2	214	1FB2	{08:26}	Yes	Yes	v005	checked	reads: はい; menu option, declared width 20 columns
+m/MS00AF.BIN	0:26	3	218	1FB2	{08:27}	No	No	v005	checked	reads: いいえ; menu option, declared width 20 columns
+m/MS00AF.BIN	0:26	4	264	1E07	＞報告：{08:0A}ロードに失敗しま{08:4B}\n　　　　セーブ{08:0A}が異常{08:55}\n<wait>	>Error: Failed to load the save\n Save data is corrupted\n<wait>	>Error: Failed to load the save\n Save data is corrupted\n<wait>	v005	checked	reads: ＞報告：データロードに失敗しました\n　　　　セーブデータが異常です\n<wait>
+m/MS00AF.BIN	0:27	0	40	1B	 プレイヤー名     LEVEL セーブ地点	 PLAYER NAME      LEVEL LOCATION	 PLAYER NAME      LEVEL LOCATION	v005	checked	
 m/MS00AF.BIN	0:27	1	132	1B	 ---------------- ----- ------------------	 ---------------- ----- ------------------				
