@@ -50,6 +50,7 @@ committed) in route order (`build/tl-route.tsv`).
 |---|---|---|
 | バエル | **Bael** | the demon lord; "Lord Bael", "Bael's forces" |
 | バール | **Baal** | the cult only: "Baal Cult", "Baal Soldier", "Baalite", "Baalite Base/Temple" -- never merged with Bael |
+| both in one sentence | keep both | the Gabriel myth (m/MS0006) says Bael was once worshipped *as* "Baal"; never regex one into the other blindly -- decide per row from `reads:`, and mind compounds ("Baal Zephon", "Baal Hadad") |
 | ＤＤＣ / ＤＣＳ / ＤＤＳ / Ｄ.Ｄ.Ｍ | DDC / DCS / DDS / D.D.M. | distinct terms; dotted where the Japanese dots ("D.D.C.") |
 | 隊長 | Commander | never "Captain" |
 | 悪魔撃退プログラム | Demon Repel | |
