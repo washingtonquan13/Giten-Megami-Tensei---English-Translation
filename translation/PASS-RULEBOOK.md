@@ -269,6 +269,14 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     columns -- `giten.width.text_width` charges only what draws -- and a writer
     who believes otherwise shortens perfectly good lines for nothing (m/MS0053
     0:05[3], 0:07[13], both 67 columns or less as they stood, 2026-09-12).
+    **A print row needs no head span to cost its 15 columns.** When the opcode
+    before a `1F01` is a `1FD2` tag or a `1FD0`/`1FBA` window open, no span joins
+    it and the run-walk above returns nothing -- but the engine still draws the
+    name first, so the line is `15 + the row's own first line` and `giten check`
+    measures only the second half. Every one of m/MS0067's 33 joined runs came in
+    under 74 after the refit while three *unjoined* print rows were still over
+    (0:07[220] 78, 0:07[225] 76, 0:1D[9] 76). Measure `15 + first line` on every
+    row tagged `1F01`/`1F02`/`1E3E`, joined or not (2026-09-12).
 
 19. **A relative-clause head before a name print inverts in English.** Japanese
     puts the clause before the noun, so `エレベーターの前まで来た` + `1F01` +
