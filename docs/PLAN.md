@@ -10,8 +10,9 @@ Everything before the restart lives under `old/` (moved with `git mv`; history f
 - **Nothing ships that we cannot explain.** Every module has an entry in `docs/limits.md`; an
   entry closes only on evidence from the exe or the tracer.
 - **`en` is written by someone reading `jp`.** Earlier translations arrive as `ref_en` (+ `ref_src`
-  = `ours` / `v005`), never as `en`. `check` refuses an `en` without a `status` (`draft`/`reviewed`)
-  and an `en` that copies `ref_en` without `reviewed`.
+  = `ours` / `v005`), never as `en`. `check` refuses an `en` without a `status` (`draft`/`checked`/`reviewed`)
+  and an `en` that copies `ref_en` unless it is `checked` (a writer read it against the Japanese
+  and kept it, 2026-09-11) or `reviewed` (the owner).
 - **Sections, in story order, each played before the next is enabled.** A section is done when:
   untouched files are byte-identical (`build --only`), `audit` is clean, `check` is clean,
   `trace diff` against the JP run of the same route is clean, and a human has played it.

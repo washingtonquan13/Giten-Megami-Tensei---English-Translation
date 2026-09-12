@@ -46,7 +46,10 @@ class Row:
     en: str = ""
     ref_en: str = ""      # a candidate translation, never applied by the builder
     ref_src: str = ""     # where it came from: ours / v005
-    status: str = ""      # "" | draft | reviewed -- required once en is set
+    status: str = ""      # "" | draft | checked | reviewed -- required once en
+                          # is set.  draft: written and unread; checked: a writer
+                          # read it against the jp and kept it (en may equal
+                          # ref_en); reviewed: the project owner's word.
     note: str = ""
     #: Runtime only, never a column: the ``idx`` of the row this one continues
     #: when a branch target cut one line into two spans (``script.Span``).  Set

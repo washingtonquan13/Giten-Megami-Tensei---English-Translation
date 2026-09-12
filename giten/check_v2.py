@@ -289,14 +289,21 @@ def check_rows(report: Report, rows, pools=None,
                line_columns=width.LINE_COLUMNS, page_rows=width.PAGE_ROWS,
                root=None) -> None:
     # (s) workflow: an en is only real once someone has marked it, and an en that
-    # merely copies its ref_en candidate needs a reviewer's word for it.
+    # merely copies its ref_en candidate needs someone's word that it was read
+    # against the Japanese: `checked` (a writer read it and kept it) or
+    # `reviewed` (the project owner).  Before `checked` existed, a writer who
+    # found Sneik's line correct had no honest way to say so and reworded 156
+    # good lines of m/MS003B to get past this rule (2026-09-11) -- the exact
+    # loss the translation pass is meant to avoid.
     for row in rows:
         if row.edited and not row.status:
             report.add("status", check.ERROR, _where(row),
-                       "en is set but status is empty (draft or reviewed)")
-        elif row.edited and row.ref_en and row.en == row.ref_en and row.status != "reviewed":
+                       "en is set but status is empty (draft, checked or reviewed)")
+        elif (row.edited and row.ref_en and row.en == row.ref_en
+              and row.status not in ("checked", "reviewed")):
             report.add("status", check.ERROR, _where(row),
-                       "en equals ref_en; mark it reviewed or change it")
+                       "en equals ref_en; mark it checked (read against the "
+                       "Japanese and kept) or reviewed, or change it")
 
     epool = english_pool(rows)
     # A line a branch target cut in two is one menu option on screen and two
