@@ -311,6 +311,23 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     `0C`/`0D` operands over `rec.span_tokens` before judging any record whose
     first span is `DATA`.
 
+22. **Two runtime prints in one sentence, and the roles that get swapped.** One
+    sentence can carry several `1F01`s, and the Japanese marks each print's role
+    with the particle that follows it -- which is the first character of the
+    *next* span, not of the print. `日下はビニールバックに入れられた、`+A+`の
+    パーツを、`+B+`に返した。` is "Kusaka returned A's part to B": `の` makes A a
+    possessor, `に` makes B a recipient. v0.05 tokenised these seams short, so
+    what it left reads as a whole sentence only while the prints are invisible;
+    both m/MS0007 0:29[62-64] and its twin 0:2A[64-66] shipped "Kusaka hands
+    over<NAME> the part,<NAME> and handed it back to you." -- head with no
+    trailing space, the second print handed the *subject* role, and a "you"
+    standing where a printed name belongs. Read the particle opening each tail
+    span before writing the English, and read the run assembled. **A twin record
+    usually settles it**: the same file's `は言われた通り、`+`のパーツを、日下に
+    手渡した。` was "<A> did as he was told, and <B> handed the part to Kusaka"
+    in 0:2A and the correct "<A> did as he was told and handed <B>'s part to
+    Kusaka" in 0:29 (2026-09-12).
+
 ## 5. Procedure
 
 Writers, per file: select rows (status != reviewed; `ref_en` set with `en`
