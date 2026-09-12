@@ -119,7 +119,13 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
    a space. Kanji **君** straight after a name-print is the suffix, not the bare
    pronoun -- `{name}君を医療施設まで運べ` is "carry <name>-kun to the medical
    ward", and §1's "君 as a bare pronoun is 'you'" does not reach it
-   (m/MS001D 0:0D[41], 2026-09-12).
+   (m/MS001D 0:0D[41], 2026-09-12). **A grep for さん/くん/君/様/殿 does not find
+   the seam when the honorific is broken up by pause dots.** A dying or sobbing
+   line writes it `さ‥ん` / `く‥ん`, and a writer who triaged by grepping those
+   five strings reported the row as "no honorific present": m/MS0002 0:27[37]
+   `さ‥ん‥‥よ‥かっ‥‥‥た` shipped as "...... th...ank... good...ness......",
+   dropping Kamikawa's dying "-san" entirely. Read every `1F01` row's jp opening
+   character by character, dots included (2026-09-12).
 2. **Mid-line honorifics**: a name+honorific inside a line keeps it.
 3. **Misattached `ref_en`**: a fluent line from the wrong row, scene or
    character -- shifted by an offset, duplicated across near-identical scene
