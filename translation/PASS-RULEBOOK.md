@@ -161,6 +161,15 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     name, yes?") exactly as a `1F01` seam does (2026-09-12). Detector 1 is the
     common case of this, not the whole of it.
 
+15. **Runtime-print edges**: a row's `tag` names the opcode BEFORE it, so a row
+    tagged with a print op (`1F01`, `1F02`, `1E3E`: name / item / count prints)
+    begins mid-value and BOTH its edges need a space wherever the English needs
+    one ("Katsuragifound a trap" shipped without it); the row before a print
+    ends in a space. Alternative branch chains joined by runtime prints (a
+    `1F86`/`1F19` switch choosing tails) must read on every path; when the rows
+    are fragments rather than sentences, disassemble the record (m/MS0037,
+    2026-09-12: 17 assembled paths checked).
+
 ## 5. Procedure
 
 Writers, per file: select rows (status != reviewed; `ref_en` set with `en`
