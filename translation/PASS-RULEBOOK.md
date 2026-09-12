@@ -149,7 +149,17 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
 11. **Numbers**: prices and counts must match the Japanese digits.
 12. **Pool callers** (see §3).
 13. **Structural scans** before and after applying: bad escapes, `<wait>`
-    counts against jp, cells reduced to whitespace, full-width Latin.
+    counts against jp, cells reduced to whitespace, full-width Latin. The
+    `<wait>` half is not pedantry: condensing an over-long page is the moment a
+    writer drops the page-wait with the fifth line (m/MS001F 0:05[48], [50],
+    2026-09-12) and no other rule sees it.
+14. **A mid-sentence span break that is not a `1F01`.** Spans concatenate raw,
+    and a switch or a jump can cut one sentence into several spans of
+    *different* tags with nothing inserted between them: m/MS001F 0:02 prints
+    西野 (`1FD3`), ‥‥ (`1FFA`) and と言いましたね (`1FFA`) as one sentence, so the
+    English pieces carry their own spacing ("Nishino", `... `, "that was your
+    name, yes?") exactly as a `1F01` seam does (2026-09-12). Detector 1 is the
+    common case of this, not the whole of it.
 
 ## 5. Procedure
 
