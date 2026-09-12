@@ -20,7 +20,7 @@ m/MS003D.BIN	0:09	1	84	1FB2	実行		Proceed	v005		menu option, declared width 20
 m/MS003D.BIN	0:09	2	90	1FB2	中止		Abort	v005		menu option, declared width 20 columns; @refalign
 m/MS003D.BIN	0:09	3	126	1FBA	＞{03:09}ロードを中止し{08:5A}\n<wait>	>Download aborted\n<wait>	>Download aborted.\n<wait>	v005	draft	reads: ＞ダウンロードを中止します\n<wait>
 m/MS003D.BIN	0:0A	0	70	1FC4	＞「	>[ 			draft	
-m/MS003D.BIN	0:0A	1	79	1F01	」を発見しま{08:4B}\n		{03:19}] found.\n	v005		reads: 」を発見しました\n; @refalign
+m/MS003D.BIN	0:0A	1	79	1F01	」を発見しま{08:4B}\n	] found.\n	{03:19}] found.\n	v005	draft	reads: 」を発見しました\n; @refalign; @pool-call-dropped: the v0.05 reference carried a pool call the source span lacks (v0.05 tokenised 1F01 short); written from the jp
 m/MS003D.BIN	0:0A	2	237	18	　プロテクトを解除し、{03:09}ロードを試み{08:5A}\n		 Decrypt and download?\n	v005		reads: 　プロテクトを解除し、ダウンロードを試みます\n; @refalign
 m/MS003D.BIN	0:0A	3	292	1FB2	実行		Proceed	v005		menu option, declared width 20 columns; @refalign
 m/MS003D.BIN	0:0A	4	298	1FB2	中止		Abort	v005		menu option, declared width 20 columns; @refalign

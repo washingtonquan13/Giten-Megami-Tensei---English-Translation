@@ -224,7 +224,7 @@ def main(out: str = OUT) -> int:
     poolen = _pool_english(src)
     pools = pool.load()
     rows = promoted = kept = skipped = refused = split = renamed = dead = 0
-    shared = pooled = 0
+    shared = pooled = added = 0
     for path in tables.iter_tables(src):
         table = tables.read(path)
         for r in table:
@@ -275,6 +275,17 @@ def main(out: str = OUT) -> int:
                 # already the original bytes -- which are correct.  Leave them.
                 refused += 1
                 continue
+            if _calls(r.ref_en) - _calls(r.jp):
+                # The reference ADDS a pool call the source span does not have.
+                # v0.05 tokenised `1F01` shorter than the engine does, so the
+                # operand bytes that follow it (`03 07`, say) were read as a
+                # pool call and carried into the English.  Served, that English
+                # really does call the pool -- m/MS010A 0:06[1] drew the shop
+                # line "Saver V襲いかかっ, huh." on 2026-09-11.  Four rows.
+                # `check` has the same rule for `en` (``tokens``); this is the
+                # draft tree's half of it.
+                added += 1
+                continue
             r.en = r.ref_en
             r.status = "draft"          # never "reviewed": nobody has read it
             promoted += 1
@@ -290,9 +301,10 @@ def main(out: str = OUT) -> int:
           "%d shared pool fragments (never promoted), "
           "%d skipped (@untiled), %d refused (would drop a name macro), "
           "%d refused (translates the whole line, not this span), "
-          "%d speaker tags renamed to the pooled name"
+          "%d speaker tags renamed to the pooled name, "
+          "%d refused (adds a pool call the source lacks)"
           % (out, rows, kept, promoted, pooled, dead, shared, skipped, refused,
-             split, renamed))
+             split, renamed, added))
     return 0
 
 
