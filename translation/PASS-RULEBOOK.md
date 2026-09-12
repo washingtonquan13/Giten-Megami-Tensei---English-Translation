@@ -412,6 +412,25 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     open the sibling and look at column 7, and prefer a binding §2 row over
     any file's practice (2026-09-12, m/MS0036 review).
 
+26. **A row that opens as a sentence *tail* but is preceded by a `1FD2`/`1FD3`
+    pair is a v0.05 mis-assembly, not a seam.** Detector 16 is the trap in one
+    direction -- a print row reads short because its subject sits in the row
+    before it. This is the other direction, and it ships broken English rather
+    than merely looking odd: v0.05 tokenised branch alternatives loosely, so a
+    span that the bytes place *after a fresh speaker tag* can carry English
+    written as the continuation of a head two spans earlier. m/MS005B 0:00 is
+    the shape: `[1]` "...those Devil Buster uniforms " is a head with two
+    alternative tails (`09` falls through to `[2]` "stand out quite a bit.",
+    branches to `[5]` "are pretty flashy."), and v0.05 fitted a *third* tail,
+    "are pretty efficient.", into `[4]` -- which the bytes put after `1FBA
+    1FD2 男性： 1FD3`, so the screen drew "Man:" and then "are pretty
+    efficient." (its jp, 性能はいいんだから‥, is a whole sentence). The tell is
+    an `en` whose first word is a bare verb or a conjunction while the token
+    immediately before its span is `1FD2`/`1FD3`/`1FD0`/`1FBA` -- a break op,
+    which no tail may follow. Check the opcode before the span, not the
+    reading; the row was `checked` and verbatim-`ref_en` (2026-09-12,
+    m/MS005B review).
+
 ## 5. Procedure
 
 Writers, per file: select rows (status != reviewed; `ref_en` set with `en`
