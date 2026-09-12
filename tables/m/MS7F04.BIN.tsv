@@ -3,11 +3,11 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS7F04.BIN	0:00	0	16	1FB2	{08:26}		Yes	v005		reads: はい; menu option, declared width 20 columns
-m/MS7F04.BIN	0:00	1	20	1FB2	{08:27}		No	v005		reads: いいえ; menu option, declared width 20 columns
-m/MS7F04.BIN	0:07	0	35	1EB0	上	Up: 			draft	
-m/MS7F04.BIN	0:07	1	40	18	下	Down: 	There is a staircase leading down here.\nProceed?\n                         	v005	draft	@refalign; @split-authored
-m/MS7F04.BIN	0:07	2	42	18	へ続く階段が{08:7B}\n移動し{08:15}\n	a staircase leads from here.\nProceed?\n			draft	@split-tail of [1]; reads: へ続く階段がある\n移動しますか？\n; @split-authored
+m/MS7F04.BIN	0:00	0	16	1FB2	{08:26}	Yes	Yes	v005	checked	reads: はい; menu option, declared width 20 columns
+m/MS7F04.BIN	0:00	1	20	1FB2	{08:27}	No	No	v005	checked	reads: いいえ; menu option, declared width 20 columns
+m/MS7F04.BIN	0:07	0	35	1EB0	上	There is a staircase leading up			draft	@tl:fit
+m/MS7F04.BIN	0:07	1	40	18	下	There is a staircase leading down	There is a staircase leading down here.\nProceed?\n                         	v005	draft	@refalign; @split-authored; @tl:fit
+m/MS7F04.BIN	0:07	2	42	18	へ続く階段が{08:7B}\n移動し{08:15}\n	 here.\nProceed?\n			draft	@split-tail of [1]; reads: へ続く階段がある\n移動しますか？\n; @split-authored; @tl:fit
 m/MS7F04.BIN	0:07	3	114	1F58	{05:00}					reads: はいいいえ
 m/MS7F04.BIN	0:07	4	146	1EB2	{05:08}{05:09}	{05:08}{05:09}				reads: 
 m/MS7F04.BIN	0:0A	0	100	1FEA	{05:0E}					reads: ？０１２３４５６７８９ａｂｃｄｅｆ
@@ -23,23 +23,23 @@ m/MS7F04.BIN	0:0C	0	12	1F54	{05:0D}					reads: ？０１２３４５６７８９
 m/MS7F04.BIN	0:0C	1	20	1FEA	{05:0D}					reads: ？０１２３４５６７８９ａｂｃｄｅｆ？０１２３４５６７８９ａｂｃｄｅｆ
 m/MS7F04.BIN	0:0D	0	12	1F54	{05:0E}					reads: ？０１２３４５６７８９ａｂｃｄｅｆ
 m/MS7F04.BIN	0:0D	1	20	1FEA	{05:0E}					reads: ？０１２３４５６７８９ａｂｃｄｅｆ
-m/MS7F04.BIN	0:0E	0	81	1F19	？					
-m/MS7F04.BIN	0:0E	1	84	00	０					
-m/MS7F04.BIN	0:0E	2	87	00	１					
-m/MS7F04.BIN	0:0E	3	90	00	２					
-m/MS7F04.BIN	0:0E	4	93	00	３					
-m/MS7F04.BIN	0:0E	5	96	00	４					
-m/MS7F04.BIN	0:0E	6	99	00	５					
-m/MS7F04.BIN	0:0E	7	102	00	６					
-m/MS7F04.BIN	0:0E	8	105	00	７					
-m/MS7F04.BIN	0:0E	9	108	00	８					
-m/MS7F04.BIN	0:0E	10	111	00	９					
-m/MS7F04.BIN	0:0E	11	114	00	ａ					
-m/MS7F04.BIN	0:0E	12	117	00	ｂ					
-m/MS7F04.BIN	0:0E	13	120	00	ｃ					
-m/MS7F04.BIN	0:0E	14	123	00	ｄ					
-m/MS7F04.BIN	0:0E	15	126	00	ｅ					
-m/MS7F04.BIN	0:0E	16	129	00	ｆ					
+m/MS7F04.BIN	0:0E	0	81	1F19	？	?			draft	@tl:new
+m/MS7F04.BIN	0:0E	1	84	00	０	0			draft	@tl:new
+m/MS7F04.BIN	0:0E	2	87	00	１	1			draft	@tl:new
+m/MS7F04.BIN	0:0E	3	90	00	２	2			draft	@tl:new
+m/MS7F04.BIN	0:0E	4	93	00	３	3			draft	@tl:new
+m/MS7F04.BIN	0:0E	5	96	00	４	4			draft	@tl:new
+m/MS7F04.BIN	0:0E	6	99	00	５	5			draft	@tl:new
+m/MS7F04.BIN	0:0E	7	102	00	６	6			draft	@tl:new
+m/MS7F04.BIN	0:0E	8	105	00	７	7			draft	@tl:new
+m/MS7F04.BIN	0:0E	9	108	00	８	8			draft	@tl:new
+m/MS7F04.BIN	0:0E	10	111	00	９	9			draft	@tl:new
+m/MS7F04.BIN	0:0E	11	114	00	ａ	a			draft	@tl:new
+m/MS7F04.BIN	0:0E	12	117	00	ｂ	b			draft	@tl:new
+m/MS7F04.BIN	0:0E	13	120	00	ｃ	c			draft	@tl:new
+m/MS7F04.BIN	0:0E	14	123	00	ｄ	d			draft	@tl:new
+m/MS7F04.BIN	0:0E	15	126	00	ｅ	e			draft	@tl:new
+m/MS7F04.BIN	0:0E	16	129	00	ｆ	f			draft	@tl:new
 m/MS7F04.BIN	0:10	0	0	DATA	{04:04}は逃げ出{08:4B}\n{1E10:010214}	{04:04} ran away.\n{1E10:010214}	{04:04} ran away.\n{1E10:010214}	v005	reviewed	reads: 味方たちは逃げ出した\n{1E10:010214}; @refalign; 味方たちは逃げ出した: the party fled; {04:04} is the runtime party-name print and is kept
 m/MS7F04.BIN	0:11	0	0	DATA	逃げられ{08:19}！\n{1E10:010214}	Failed to run away!\n{1E10:010214}	Failed to run away!\n{1E10:010214}	v005	reviewed	reads: 逃げられなかった！\n{1E10:010214}; @refalign; 逃げられなかった！: the escape attempt failed
 m/MS7F04.BIN	0:12	0	214	00	{05:13}	{05:13}				reads: 
