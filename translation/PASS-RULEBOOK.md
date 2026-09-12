@@ -253,6 +253,23 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     (2026-09-12). The tell is a head span that ends in a past-tense verb with no
     following punctuation and a tail span that opens on `‥` or a particle.
 
+20. **A file with near-identical siblings is reviewed against them, not alone.**
+    Several families repeat one script with a word changed -- the terminals
+    `m/MS00A0`-`MS00AE` (the same kiosk, one district name apiece), the shops
+    `m/MS0100`-`MS0115`, the negotiation templates `MS6007`-`MS6016`. Dump the
+    family's rows side by side (`awk -F'\t'` over `tables/m/MS00A*.tsv`) before
+    judging anything in one of them: the siblings settle the house reading, the
+    status convention and the token handling at a glance, and a lone file that
+    differs is the one to look at. m/MS00AA came to review with its two
+    `．．．\n` rows promoted to `checked` on an empty `ref_en` -- which `giten
+    check` itself rejects -- while all thirteen siblings had them right as
+    `draft`; the same dump confirmed that dropping that row's trailing `\n` and
+    dropping the `{01:23}`/`{03:09}` pool calls is the family's settled practice
+    and not a writer's slip (2026-09-12). The converse: do NOT unilaterally
+    reword a line the whole family shares (`中止` -> "Cancel" here) -- a
+    one-file "improvement" desyncs the other thirteen, and that is a corpus
+    sweep for `build/tl-followups.md`, not a review edit.
+
 ## 5. Procedure
 
 Writers, per file: select rows (status != reviewed; `ref_en` set with `en`
