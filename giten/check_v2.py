@@ -358,6 +358,13 @@ def check_rows(report: Report, rows, pools=None,
                        "copy it verbatim and ignore this translation")
             continue
 
+        if '\\\\' in r.en:
+            # a doubled backslash is an escaped literal backslash: v0.05 cells
+            # carried one where a newline belonged, and it survived every
+            # other rule because it is a legal character (rulebook detector 24)
+            report.add("backslash", ERROR, where,
+                       "en contains a literal backslash; v0.05 meant a newline")
+            continue
         allow = frozenset() if r.rec == extract_v2.PNAME_REC else codec.INLINE_OPS
         try:
             data = codec.encode(r.en, allow=allow)
