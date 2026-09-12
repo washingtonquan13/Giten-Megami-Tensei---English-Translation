@@ -176,6 +176,17 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     are fragments rather than sentences, disassemble the record (m/MS0037,
     2026-09-12: 17 assembled paths checked).
 
+16. **A print row read alone looks truncated, and "restoring" it duplicates the
+    head.** A `1F01`/`1F02`/`1E3E` row is the *tail* of a sentence whose subject
+    and verb usually sit in the row before it, so a short tail is normal, not a
+    dropped clause. m/MS0061 0:08[47]/[48] is `用があるのは、`+name+`君の持つ
+    パーツだ。`; the writer read [48] on its own, judged it "truncated to just
+    '-kun.'" and wrote the whole clause into it, shipping "What I am after is the
+    part held by <name>-kun, this is the part you're carrying." Read head+print+
+    tail before adding anything to a print row -- and read *whose* sentence it
+    is: the same record's 本来君は‥‥ tail had become "He is not, after all,
+    anyone connected to..." when 君 is the person being addressed (2026-09-12).
+
 ## 5. Procedure
 
 Writers, per file: select rows (status != reviewed; `ref_en` set with `en`
