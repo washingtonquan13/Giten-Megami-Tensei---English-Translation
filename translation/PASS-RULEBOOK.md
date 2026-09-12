@@ -120,8 +120,11 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
 6. **Doubled seam punctuation**: `{04:00}!\n` plus a literal `!\n`.
 7. **Needless rewording**: a draft that differs from `ref_en` with no gain in
    meaning is restored as `checked`.
-8. **`en` that merely repeats its own jp token** ships Japanese and `missing`
-   never fires; fill it or leave it empty.
+8. **`en` that merely repeats its own jp token** ships whatever the pool
+   record holds: fine when that pool row has English (a `{05:00}` Yes/No
+   pass-through), Japanese when it does not -- check the pool row before
+   accepting it; a status of `checked` is right only when the rendered result
+   is English. A row whose fixed `en` ends up equal to `ref_en` is `checked`.
 9. **Shared-tail assembly**: alternative fragments must read on every path.
    The `@split-tail of [n]` note names only the fall-through head; a `0E` switch
    or a run of `18 xx 00` jumps can send *several* alternatives to that same
