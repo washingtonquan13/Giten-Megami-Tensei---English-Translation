@@ -100,9 +100,12 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
 
 ## 4. Detectors -- every review runs all of them
 
-1. **Seam class**: a `1F01` row whose jp opens くん。/さん。/ちゃん/殿 must start
-   with the honorific and must not repeat the name; the row before ends in a
-   space.
+1. **Seam class**: a `1F01` row whose jp opens くん。/さん。/ちゃん/殿/**君** must
+   start with the honorific and must not repeat the name; the row before ends in
+   a space. Kanji **君** straight after a name-print is the suffix, not the bare
+   pronoun -- `{name}君を医療施設まで運べ` is "carry <name>-kun to the medical
+   ward", and §1's "君 as a bare pronoun is 'you'" does not reach it
+   (m/MS001D 0:0D[41], 2026-09-12).
 2. **Mid-line honorifics**: a name+honorific inside a line keeps it.
 3. **Misattached `ref_en`**: a fluent line from the wrong row, scene or
    character -- shifted by an offset, duplicated across near-identical scene
@@ -120,9 +123,20 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
 8. **`en` that merely repeats its own jp token** ships Japanese and `missing`
    never fires; fill it or leave it empty.
 9. **Shared-tail assembly**: alternative fragments must read on every path.
-10. **Numbers**: prices and counts must match the Japanese digits.
-11. **Pool callers** (see §3).
-12. **Structural scans** before and after applying: bad escapes, `<wait>`
+   The `@split-tail of [n]` note names only the fall-through head; a `0E` switch
+   or a run of `18 xx 00` jumps can send *several* alternatives to that same
+   tail, and the note says nothing about them. Resolve the jumps before judging
+   a tail: in m/MS001D 0:05 all five dish names converge on `ですぅ！`, so four
+   of them ended their own sentence and then assembled as "...cream sauce!, it
+   is!". Read the gaps between spans, not the note.
+10. **Branch-chosen referents may not be gendered**: when who a scene is about is
+    picked by a name branch that can be either a man or a woman (早坂/桐島 in
+    m/MS001D), every unbranched row about them must stay ungendered in English --
+    the Japanese always is. The tell is one file saying "she" in one record and
+    "he" in another for the same person.
+11. **Numbers**: prices and counts must match the Japanese digits.
+12. **Pool callers** (see §3).
+13. **Structural scans** before and after applying: bad escapes, `<wait>`
     counts against jp, cells reduced to whitespace, full-width Latin.
 
 ## 5. Procedure
@@ -159,4 +173,8 @@ for the owner.
 Kept in `build/tl-followups.md` (corpus sweeps for the end of the route:
 Bael/Baal by jp, ＤＢ隊員 tags, Watanabe-san, Cambion, City Hall/都庁, DDS
 dotting, Auto-Mapping, the `en == own token` class, the `.n<wait>` guard at
-extract, MS003B's 699 full-width floor labels, width-choice menu pass).
+extract, MS003B's 699 full-width floor labels, width-choice menu pass,
+**ellipsis run lengths** -- §2 says mirror the Japanese, and the inherited
+English does not: m/MS001D alone has 37 rows where a `‥‥‥` reads "..." or
+".........", none of them wrong in meaning. A corpus sweep, not a per-file
+review job, and not something `giten check` sees).
