@@ -76,6 +76,9 @@ committed) in route order (`build/tl-route.tsv`).
 | オートマッピング | Auto Mapping | not "Auto Mapper"/"Auto-Mapping" |
 | ペンタグランマ, 合体, マッカ | Pentagramma, Fusion/fuse, Macca | |
 | シャンシャンシティ | **Sunshine City** | owner decision 2026-09-12: the Ikebukuro tower; "Shan Shan"/"Sanshan"/"Shanshan"/"Xanxan City" are retired (also mapnames.tsv) |
+| 臨海新交通 | **Rinkai** | mapnames.tsv 0048 "Rinkai Line"; v0.05's "Waterfront" is invented English, which §1 forbids for a place name (m/MS0044 review, 2026-09-12). **Still open, a corpus sweep not a per-file fix:** 臨海コロシアム is "Waterfront Colosseum" in m/MS0008, "Seaside Colosseum" in m/MS0035 and "Rinkai Colosseum" in mapnames.tsv 0056 -- three renderings of one place; glossary.tsv has no 臨海 entry yet |
+| 芝浦埠頭 | **Shibaura Pier** | mapnames.tsv 0046 "Shibaura Pier Stn"; v0.05's "Harbour" names no place at all |
+| 駅 names | m/MS0036 and the district/mapnames tables | 東池袋 is **Higashi-Ikebukuro**, never "Ikebukuro"; 明治神宮前 is **Meiji-Jinguumae**, never "Meiji"; 代々木公園 is **Yoyogi Park**, never "Yoyogi" -- v0.05 clipped all three in m/MS0044 while spelling them in full in the same file's own 方面 menus |
 | names | p/_P_NAMES.tsv and corpus majority | Belberith, Sherry, Chita, Phanuel, Baal Zephon, Togo Shrine |
 | ellipses | mirror the Japanese run length | six dots stay six; ASCII dots |
 | full-width Latin / digits / ideographic space in English | ASCII | after a switch-table digit strip, `giten audit` a build: no control-flow differences |
@@ -284,6 +287,29 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     reword a line the whole family shares (`中止` -> "Cancel" here) -- a
     one-file "improvement" desyncs the other thirteen, and that is a corpus
     sweep for `build/tl-followups.md`, not a review edit.
+
+21. **A record-call seam: `0C ff nn` / `0D ff nn` splices another record's text
+    into the middle of a sentence.** `0D` is a **call** and `0C` a **goto** to
+    `m/MS<ff>.BIN` record `nn` (`docs/format-notes.md` §"(2) `0B` and `0C`/`0D`
+    are not text"), routed through the same handler as the `01..08` pool
+    shorthands -- so the target's text resumes in the caller's open window at the
+    caller's cursor, exactly the way an `08 xx` dictionary word does. The span
+    ending immediately before a `0C`/`0D`, and the **first** span of the record
+    it names, are therefore two halves of one rendered line, and `giten check`
+    measures them apart. The tell is a record whose span `[0]` is tagged `DATA`
+    (nothing precedes it, so the extractor has no tag to give it) and reads as a
+    sentence fragment. m/MS0044 is the whole pattern in one file: each of its 25
+    station records draws `[駅名]・[路線]` and then calls record `0x00`
+    (`[大手町駅・丸ノ内線]ホームに降りる階段がある`) and record `0x01`
+    (`[大手町駅・丸ノ内線]プラットホーム`). Sneik had read the second seam -- his
+    `0:01[0]` is `" Platform."`, leading space and all -- and missed the first,
+    so all 25 stations shipped "Ootemachi-MarunouchiThere are stairs leading to
+    the platform here." **One shared row serves every caller, so measure it
+    against the longest one**: recast to `" platform is down these stairs."` the
+    worst case (Higashi-Ikebukuro-Yurakucho) is 58 columns, where the obvious
+    literal head+tail came to exactly 74 (2026-09-12). Walk the container's
+    `0C`/`0D` operands over `rec.span_tokens` before judging any record whose
+    first span is `DATA`.
 
 ## 5. Procedure
 
