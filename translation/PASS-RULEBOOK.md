@@ -182,6 +182,19 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
    a tail: in m/MS001D 0:05 all five dish names converge on `ですぅ！`, so four
    of them ended their own sentence and then assembled as "...cream sauce!, it
    is!". Read the gaps between spans, not the note.
+   **`giten check` joins the fall-through alternative and only that one, which
+   is how a whole file of broken assemblies passes a clean check.** The common
+   shape is a `1E12` case list -- four `1E12 len 00 00 0N` cases, each ending in
+   an `18 xx xx` that jumps *into* the fourth case's tail span. The check prints
+   the fourth path joined ("To the right is the way deeper in......"), so the
+   writer sees a sentence and stops; the other three read "If we head straight
+   north from here, is the way deeper in......". m/MS005C had seventeen such
+   tails and every one of them was broken on three paths of four (2026-09-12).
+   Walk `18 xx xx` over `rec.span_tokens`, resolve each target to a span index,
+   and print head+tail for *every* alternative before judging a menu record --
+   the heads are usually `checked` verbatim-`ref_en` rows, so the defect sits
+   where nothing flags it. Measure each assembled path too: the widest one is
+   the budget, not the fall-through.
 10. **Branch-chosen referents may not be gendered**: when who a scene is about is
     picked by a name branch that can be either a man or a woman (早坂/桐島 in
     m/MS001D), every unbranched row about them must stay ungendered in English --
@@ -212,7 +225,10 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     after the opcode (`docs/format-notes.md` §2.11, `giten/exe/names.py`):
     `07` prints the family name, `00` the family+given full name, `08` the
     given name **with a leading space of its own**. So a tail after a `08`
-    print needs no leading space and a tail after `07`/`00` does -- and a head
+    print needs no leading space, **and the head before one must not end in a
+    trailing space either** -- m/MS005C 0:12[60] "Bye then, " before a `08`
+    print gave "Bye then,  Ayato" (2026-09-12; m/MS0021 0:1F[13] was the same
+    bug). A tail after `07`/`00` does need one -- and a head
     that reads short is often a full name in two halves: m/MS0068 0:06[99] is
     `1F01 07 .. 04FE` + `桐子の事は`, whose `en` " Kiriko, what shall we do
     about her?" is correct as "Tachibana Kiriko", not a stray space
