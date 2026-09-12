@@ -3,23 +3,23 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0033.BIN	0:01	0	7	1FD0	誰も{08:24}{08:72}\n		No one here...\n	ours		reads: 誰もいない‥‥\n
+m/MS0033.BIN	0:01	0	7	1FD0	誰も{08:24}{08:72}\n	No one here...\n	No one here...\n	ours	checked	reads: 誰もいない‥‥\n; @tl:fit
 m/MS0033.BIN	0:0E	0	107	1FEF	{05:04}	{05:04}				reads: 
 m/MS0033.BIN	0:0E	1	328	1FE8	{05:01}	{05:01}				reads: 
 m/MS0033.BIN	0:0E	2	394	1FE8	{05:02}	{05:02}				reads: 
-m/MS0033.BIN	0:0F	0	40	1B	メンバー名              治療費	Member Name              Treatment Cost	Member Name              Treatment Cost	ours	draft	
+m/MS0033.BIN	0:0F	0	40	1B	メンバー名              治療費	Member Name              Treatment Cost	Member Name              Treatment Cost	ours	checked	
 m/MS0033.BIN	0:0F	1	192	1B	＊	*			draft	
-m/MS0033.BIN	0:0F	2	249	1B	合計	Total	Total	ours	draft	
+m/MS0033.BIN	0:0F	2	249	1B	合計	Total	Total	ours	checked	
 m/MS0033.BIN	0:10	0	109	1FEF	{05:04}	{05:04}				reads: 
 m/MS0033.BIN	0:10	1	330	1FE8	{05:01}	{05:01}				reads: 
 m/MS0033.BIN	0:10	2	396	1FE8	{05:02}	{05:02}				reads: 
-m/MS0033.BIN	0:11	0	40	1B	メンバー名              治療費	Member Name              Treatment Cost	Member Name              Treatment Cost	ours	draft	
+m/MS0033.BIN	0:11	0	40	1B	メンバー名              治療費	Member Name              Treatment Cost	Member Name              Treatment Cost	ours	checked	
 m/MS0033.BIN	0:11	1	192	1B	＊	*			draft	
-m/MS0033.BIN	0:11	2	249	1B	合計	Total	Total	ours	draft	
-m/MS0033.BIN	0:12	0	12	1F80	治療をや{08:2E}のかね？\n<wait>	You will stop the healing?\n<wait>			draft	reads: 治療をやめるのかね？\n<wait>
+m/MS0033.BIN	0:11	2	249	1B	合計	Total	Total	ours	checked	
+m/MS0033.BIN	0:12	0	12	1F80	治療をや{08:2E}のかね？\n<wait>	You're going to stop the treatment?\n<wait>			draft	reads: 治療をやめるのかね？\n<wait>; @tl:style
 m/MS0033.BIN	0:13	0	87	1FEF	{05:04}	{05:04}				reads: 
-m/MS0033.BIN	0:14	0	40	1B	メンバー名              治療費	Member Name              Treatment Cost	Member Name              Treatment Cost	ours	draft	
-m/MS0033.BIN	0:14	1	239	1B	合計		Total	ours		
+m/MS0033.BIN	0:14	0	40	1B	メンバー名              治療費	Member Name              Treatment Cost	Member Name              Treatment Cost	ours	checked	
+m/MS0033.BIN	0:14	1	239	1B	合計	Total	Total	ours	checked	@tl:fit
 m/MS0033.BIN	0:1A	0	33	1FE8	{05:05}	{05:05}				reads: 
 m/MS0033.BIN	0:1D	0	62	1E3E	のダメージが{03:10}{08:4B}\n{1E10:010214}	's damage was healed\n{1E10:010214}			draft	reads: のダメージが回復した\n{1E10:010214}
 m/MS0033.BIN	0:1D	1	88	1FEF	{05:04}	{05:04}				reads: 
