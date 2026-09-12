@@ -431,6 +431,34 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     reading; the row was `checked` and verbatim-`ref_en` (2026-09-12,
     m/MS005B review).
 
+27. **A shared head is not always followed by a jump, and a head that ends on
+    its subject is broken English.** Two halves, both found in m/MS005D 0:5A.
+    (a) Detector 9 walks `18 xx xx` and `1E12` case lists; a `1E16`/`1FA3`
+    **status-conditional chain** picks between alternative tails without a
+    single `18` in sight. m/MS005D 0:5A[45] `見せしめだ。その` is one head with
+    four tails selected on each party member's state -- `躯` (corpse), `石と化
+    した者` (stone), `麻痺した者` (paralysed), `凍りついている者` (frozen) -- and
+    the fall-through tail was the only one that assembled: v0.05 gave the other
+    three a whole sentence apiece, so the screen drew "As an example. Throw
+    thatThrow the one turned to stone in with them too." Walk **every** operand
+    the record's `1E16`/`1E12`/`18`/`0B`/`0E` tokens carry, resolve each with
+    `vmops.rel16_target` (the displacement is *relative*, so a hand-decoded
+    little-endian operand points at the wrong span and makes the whole record
+    look sane), and print head+tail for every alternative. The same record's
+    `[36]` had three paths through `[37]`/`[38]` into a shared `[39]`, and
+    `[102]` jumped clean over four spans into `[107]`, which `[106]` also falls
+    into -- "As for me, " + "got worked up, at my age." (2026-09-12).
+    (b) **A head that ends on its subject leaves the verb on the far side of the
+    print.** Japanese puts the verb last, so `そう言うと、渡邊は` + `1F01` +
+    `達には目もくれずに、部屋を出ていった。` translated head-first gives "With
+    that, Watanabe <NAME> and the others." -- a noun phrase with no verb, which
+    reads as a list of people and passes every mechanical check. The head must
+    carry the verb ("With that, Watanabe walked out of the room\nwithout a
+    glance at " + <NAME> + " and the others."). Detector 19 is the relative
+    clause; this is the plain transitive sentence, and the tell is a head ending
+    in a name plus `は`/`も` with the tail opening on `達` or a particle
+    (2026-09-12, m/MS005D 0:5A[67] and its twin [79]).
+
 ## 5. Procedure
 
 Writers, per file: select rows (status != reviewed; `ref_en` set with `en`
