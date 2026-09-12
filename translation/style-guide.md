@@ -28,6 +28,24 @@
 > Also obsolete: the file/tool paths in section (d) refer to the old `tools/`
 > layout. The current pipeline is `giten/` with `docs/format-notes.md`.
 >
+> **6. Decisions of 2026-09-11 (project owner), which supersede section (a)'s
+>    honorific rule and section (b)'s profanity notes:**
+>    - **Honorifics are kept**, romanised: `-san`, `-kun`, `-chan`, `-sama`,
+>      `-sensei`, `-dono` for humans. Demons and demon lords addressed with 様 take
+>      "Lord"/"Lady" instead ("Lord Bael"), never `-sama`. Do not drop an honorific
+>      the Japanese has; do not add one it lacks.
+>    - **Place names are romanised Japanese**, never invented English ("Ikebukuro",
+>      "Higashi-Ikebukuro", "Sunshine 60" only where the Japanese itself is the
+>      English loanword). Existing glossary/district renderings stand unless wrong.
+>    - **Profanity is not a register problem.** This is an adult game and the
+>      inherited English swears where the characters do. A line is wrong only when
+>      the swearing *replaced what the Japanese says*; then restore the content and
+>      keep the voice. Never sanitise a line that is accurate.
+>    - **The translation pass fits the inherited (v0.05) English into this version**:
+>      start from `ref_en`, correct meaning where it drifts from `jp`, fit the tokens,
+>      seams, splits and width, keep the voice, mark `draft`. A writer never blanks an
+>      `en`; `ref_en` is never edited; `reviewed` is set only by the project owner.
+>
 > **5. Section (b) quotes inherited lines as voice evidence, and some of them are
 >    mistranslations.** The guide was written by sampling the shipped English,
 >    most of which came from v0.05 and had never been checked against the
