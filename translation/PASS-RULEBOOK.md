@@ -133,6 +133,18 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
    row against jp; mirrored branches (Hayasaka/Emi) must agree; a twin row
    elsewhere often proves the reading; Newton is a dog and never gets a
    sentence; "TEST" strings are debug artefacts.
+   **A shift is a RUN, not a row.** When v0.05 lost step with this version it
+   stays out of step until something resynchronises it, so every row in the
+   stretch holds an earlier row's line and each one reads fluently on its own.
+   The tell is not a nonsense line, it is a line that answers the *previous*
+   question: m/MS0064 0:01 runs two rows out from [20] to [64], and a writer who
+   found the shift at [22] and [62] (where the displaced text named the wrong
+   characters and could not be missed) applied the other seven verbatim and
+   reported the file clean -- Rui's また発作だわ！ shipped as "I see. And that is
+   why you came here.", which is the answer to [26]. Having found one misattached
+   row, walk forward and back until the offset closes; the displaced cell you are
+   standing on usually holds an earlier row's line, and an earlier row's cell
+   holds yours -- reuse it, so the fix keeps Sneik's wording (2026-09-12).
 4. **Bare-`n` corruption**: `.n<wait>` where `\n<wait>` belongs (a newline is
    stored as `\` + `n`, so split on `\n` before word-boundary matching).
 5. **Short row**: English badly short against its Japanese -- a fluent line that
