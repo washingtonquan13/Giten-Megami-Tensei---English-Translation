@@ -88,12 +88,26 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
 - Width 74 columns per line, 4 lines per page (text between `<wait>`s);
   half-width ASCII = 1 column, kana/kanji = 2. Rows noted `menu option,
   declared width N columns` must fit N.
-- Every pool call `{0k:xx}` the jp has stays in `en` in the same slot, EXCEPT
-  that a caller may DROP one and spell the word when the pool word (a
-  capitalised game term: "Attack", "Magic", "Shelter") would render mid-sentence
-  in the wrong case. Never ADD a pool call the jp lacks (v0.05 tokenised `1F01`
-  short and read its operand bytes as a call; the draft tree now refuses such
-  references). Never drop a name-printing macro (`{01:xx}`-`{04:xx}` that
+- ~~Every pool call `{0k:xx}` the jp has stays in `en` in the same slot, EXCEPT
+  that a caller may DROP one and spell the word when the pool word would render
+  in the wrong case.~~ (Struck 2026-09-12, m/MS0018 review: it states the
+  practice backwards. Measured over the whole tree that day, only **334 of the
+  10,275** rows whose jp carries a `{01:xx}`/`{02:xx}`/`{03:xx}` call keep one
+  in `en`.) **A pool call is DROPPED and its word written out in English unless
+  the pool row's own English is a real word the sentence can use.** Dropping is
+  the norm because most pool words are Japanese grammar fragments -- され,
+  そうだ, ならば, ません, ‥‥ -- that have no slot in an English sentence at all.
+  KEEP the call, in the same place the jp has it, when the pool row renders a
+  real word or name the sentence needs -- "Bael", a place, a game term ("Devil
+  Buster", "Magnetite"), a ＹＥＳ/ＮＯ a caller offers as a choice -- so that the
+  caller follows the pool row if it is ever retuned. Two things still force a
+  drop even then: the pool word (a capitalised game term: "Attack", "Magic",
+  "Shelter") would render mid-sentence in the wrong case, or its case is wrong
+  for the slot (a lowercase pool word heading a menu option). And **read the
+  pool row before keeping a call**: one whose pool row has no English ships
+  Japanese (detector 8). Never ADD a pool call the jp lacks (v0.05 tokenised
+  `1F01` short and read its operand bytes as a call; the draft tree now refuses
+  such references). Never drop a name-printing macro (`{01:xx}`-`{04:xx}` that
   prints a runtime name).
 - `\n` and `<wait>` counts match the jp unless the English needs fewer.
 - **`1F01` name seams.** The engine prints a runtime name at the seam. The row
