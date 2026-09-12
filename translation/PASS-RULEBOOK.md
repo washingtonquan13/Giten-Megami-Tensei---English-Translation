@@ -207,7 +207,18 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     begins mid-value and BOTH its edges need a space wherever the English needs
     one ("Katsuragifound a trap" shipped without it); the row before a print
     ends in a space -- EXCEPT a speaker tag (`1FD2`), which ends in its colon
-    with no trailing space (corpus 264 to 16; the engine starts a new line). Alternative branch chains joined by runtime prints (a
+    with no trailing space (corpus 264 to 16; the engine starts a new line).
+    **Which space is already there depends on the `1F01` selector**, the byte
+    after the opcode (`docs/format-notes.md` §2.11, `giten/exe/names.py`):
+    `07` prints the family name, `00` the family+given full name, `08` the
+    given name **with a leading space of its own**. So a tail after a `08`
+    print needs no leading space and a tail after `07`/`00` does -- and a head
+    that reads short is often a full name in two halves: m/MS0068 0:06[99] is
+    `1F01 07 .. 04FE` + `桐子の事は`, whose `en` " Kiriko, what shall we do
+    about her?" is correct as "Tachibana Kiriko", not a stray space
+    (2026-09-12). The `expr` operand names the character (`04FF` the
+    protagonist, `04FE` his sweetheart Tachibana Yuuka), which is how a file
+    full of nameless seams is read at all. Alternative branch chains joined by runtime prints (a
     `1F86`/`1F19` switch choosing tails) must read on every path; when the rows
     are fragments rather than sentences, disassemble the record (m/MS0037,
     2026-09-12: 17 assembled paths checked).
