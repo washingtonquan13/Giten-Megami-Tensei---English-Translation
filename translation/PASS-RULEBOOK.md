@@ -165,7 +165,8 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     tagged with a print op (`1F01`, `1F02`, `1E3E`: name / item / count prints)
     begins mid-value and BOTH its edges need a space wherever the English needs
     one ("Katsuragifound a trap" shipped without it); the row before a print
-    ends in a space. Alternative branch chains joined by runtime prints (a
+    ends in a space -- EXCEPT a speaker tag (`1FD2`), which ends in its colon
+    with no trailing space (corpus 264 to 16; the engine starts a new line). Alternative branch chains joined by runtime prints (a
     `1F86`/`1F19` switch choosing tails) must read on every path; when the rows
     are fragments rather than sentences, disassemble the record (m/MS0037,
     2026-09-12: 17 assembled paths checked).
@@ -190,9 +191,13 @@ Reviewers, per file (a fresh agent per file): compare rows against HEAD with
 row against jp, run every detector in §4, fix, check (zero ERRORs; `m/MS0031`
 keeps 10 pre-existing `overlay` errors that are engine limits), regenerate
 `tests/data/tl-floor.json` (counts from HEAD for every file except this one,
-which comes from disk), `python -m tests.run translation_floor`, then commit
-`tables/m/<NAME>.tsv tests/data/tl-floor.json` (and this rulebook if amended)
-ONLY -- never `git add -A`/`.`, never stash/checkout; other writers have
+which comes from disk), `python -m tests.run translation_floor`, then commit with a PATHSPEC COMMIT and no separate `git add`:
+`git commit -m "..." -- tables/m/<NAME>.tsv tests/data/tl-floor.json`
+(plus this rulebook if amended). Two reviewers share one git index, and a
+staged file is swept into whoever commits next (it happened on 2026-09-12:
+26fd6a0 carried another reviewer's review); a pathspec commit uses its own
+temporary index and takes only the named files. Never `git add -A`/`.`,
+never stash/checkout; other writers have
 uncommitted tables in the tree. Message: rows read / corrected with examples /
 restored / meaning fixes; end with `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`.
 Never push. Report per file to the lead: rows read, corrected (three examples),
