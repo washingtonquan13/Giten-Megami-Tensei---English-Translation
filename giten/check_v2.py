@@ -304,6 +304,14 @@ def check_rows(report: Report, rows, pools=None,
             report.add("status", check.ERROR, _where(row),
                        "en equals ref_en; mark it checked (read against the "
                        "Japanese and kept) or reviewed, or change it")
+        elif row.edited and row.status == "checked" and row.en != row.ref_en:
+            # the other direction: `checked` means "kept ref_en verbatim", so a
+            # reworded or freshly written row cannot carry it.  Reviewers found
+            # 22 such rows in one file (m/MS003D, 2026-09-12) that the rule
+            # above could not see.
+            report.add("status", check.ERROR, _where(row),
+                       "status is checked but en differs from ref_en; a changed "
+                       "or new line is draft with an @tl:<reason> note")
 
     epool = english_pool(rows)
     # A line a branch target cut in two is one menu option on screen and two

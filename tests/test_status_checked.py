@@ -42,3 +42,14 @@ def test_a_changed_line_marked_draft_is_fine():
 
 def test_reviewed_still_covers_a_kept_line():
     assert _status_findings(_row("Yes.", "Yes.", "reviewed")) == []
+
+
+def test_a_changed_line_cannot_be_marked_checked():
+    """`checked` means kept verbatim.  A reviewer found 22 reworded rows carrying
+    it in one file (m/MS003D, 2026-09-12); the rule above could not see that
+    direction."""
+    assert _status_findings(_row("Yeah.", "Yes.", "checked"))
+
+
+def test_a_line_with_no_reference_cannot_be_marked_checked():
+    assert _status_findings(_row("Yes.", "", "checked"))
