@@ -40,6 +40,15 @@ committed) in route order (`build/tl-route.tsv`).
   note. `reviewed` = the owner only; agents never set it. A row written from
   the jp is `draft`, never `checked`. Never reword a line merely to make `en`
   differ from `ref_en`.
+- **Our own earlier drafts are in scope too.** A row with `en` set, status
+  `draft` and no `@tl:` marker is an unread draft of ours (ref_src `ours`, or
+  no ref at all): read it against the jp like any other row. If it is right,
+  keep the status `draft` and append `@tl:verified` to the note so the
+  reviewer knows it was read; if it is wrong, fix it with `@tl:accuracy`.
+  "Left as pre-existing draft" is not an outcome the pass accepts (added
+  2026-09-12 after a writer left 513 such rows unread in two files).
+  Reviewers read every row carrying an `@tl:` marker, `@tl:verified`
+  included, not only rows whose text changed.
 - **Writers never blank an `en`; never edit `jp`, `ref_en`, `ref_src`, `off`,
   `tag`, `idx`.** A file's count of translated rows may never go down
   (`tests/test_translation_floor.py`).
