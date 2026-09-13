@@ -530,6 +530,25 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     anything other than end-of-cell before judging a print row's head
     (2026-09-12, m/MS0062 review).
 
+30. **One record saying the same thing twice is a displaced `ref_en`, and it is
+    a mechanical check.** Detector 3 says a shift is a run; this is the cheapest
+    way to *find* one, because the run does not have to land earlier -- it can
+    land several spans **later**, past the rows it belongs to. In m/MS006D 0:01
+    the `1F01` narration spans `[8]`-`[11]` had **empty** `ref_en`, so the
+    writer wrote them fresh and correctly ("The " + name + " of old would have
+    felt his heart ache at the sight, never displeasure.") -- while v0.05's own
+    rendering of those same four spans sat on `[23]` and `[24]`, fifteen spans
+    further on, where the jp is a woman's `‥‥おお‥‥何て酷い‥‥なんて` and a
+    line about her hollow eyes. Both were applied verbatim and marked `checked`
+    with `@refalign`, so the record shipped the protagonist's interior monologue
+    twice and the woman's two lines not at all. **The tell needs no Japanese:
+    two rows of one record whose English says the same thing, one of them a
+    fresh draft with an empty `ref_en` and the other a `checked` `@refalign`
+    row.** Diff every record's `en` cells against each other for shared content
+    before trusting any `@refalign` note -- the marker records where the aligner
+    *put* a v0.05 cell, never that it belongs there (2026-09-12, m/MS006D
+    review).
+
 ## 5. Procedure
 
 Writers, per file: select rows (status != reviewed; `ref_en` set with `en`
