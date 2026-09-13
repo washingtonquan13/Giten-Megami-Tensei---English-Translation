@@ -156,7 +156,7 @@ not this one: it is hardcoded at 50% and 150% and keyed on status flags `0x23`,
 else. The four multiplier gates named in `combat-damage.md` §6
 (`0x004085A0`, `0x00408610`, `0x004086D0`) are the next place to look.
 
-### 8. The unit stat block
+### 8. ~~The unit stat block~~ -- ANSWERED 2026-09-12
 
 `unit+0x48`..`+0x58` is unidentified. `+0x5B` is compared against `rand()%100` at
 `0x0042B5A1`, so at least one entry is a percentage. Speed is `unit+0x5E` /
@@ -170,6 +170,26 @@ gauge, `+0x181` action kind, `+0x186` hit quality, `+0x187` pending HP delta,
 they are runtime fields, and finding what fills them is the natural next step
 for this item.
 
+**That step was taken.** The stat block proper is **eleven `u16`s at
+`unit+0xE0`**, one per named stat -- Intuition, Willpower, Magic, Intelligence,
+Blessing, Strength, Vitality, Agility, Dexterity, Charisma, Fate -- read out of
+the status-screen draw loop `0x00442450` against the label pointer array at
+`0x0046A118`. It is the *total*; the base is at `unit+0x88` and comes from `p/`
+record `+0x4C`..`+0x56`. `format-notes.md` §9.1 has the array, the five parallel
+copies, the record join and four independent checks.
+
+The six runtime fields of `combat-damage.md` §4 are now joined too, one step
+removed: `0x0043D560` derives a maximum block at `unit+0xF6`..`+0x124` from
+`unit+0xE0`, and `0x0042D140` restores the current block from it at a fixed
+`+0x30`. `combat-damage.md` §4.1 has each formula -- attack from Strength and
+Vitality, defence from Blessing, Strength and Willpower, evade from Agility and
+Intuition, and so on.
+
+Still not joined from this item: `unit+0x48`..`+0x4B` and `+0x5B`'s neighbours
+in the *combatant* frame (`+0x5B` itself was the drop rate all along -- see the
+2026-09-12 correction in `format-notes.md` §7), and `unit+0x6B`, the critical
+damage bonus.
+
 ### 9. The rest of state 24
 
 Sub-state 0 was read in detail, 1-6 were skimmed, **7 and 8 were never read**
@@ -179,8 +199,25 @@ sub-effect the `m == 0xF` target mode calls.
 
 ### 10. Remaining record fields
 
-`p/` demon record: `+0x02`, `+0x20` (0..33), `+0x48`..`+0x58`, `+0x63`..`+0x66`
-and `+0x68`..`+0x79`.  ~~`+0x22`..`+0x34`~~ **ANSWERED 2026-09-12** and it was
+`p/` demon record: `+0x02`, `+0x20` (0..33), ~~`+0x48`..`+0x58`~~,
+~~`+0x63`..`+0x66`~~ and `+0x68`..`+0x79`.
+
+**`+0x4C`..`+0x56` ANSWERED 2026-09-12: the eleven base stats**, in the order
+the status screen draws them (`format-notes.md` §9.1), which is also what named
+the two equip-requirement bytes -- requirement A is **Vitality**, requirement B
+is **Dexterity**. Two more from the same pass: **`+0x58` is the moon-cycle row**
+(`actor+0x1F8`, `combat-damage.md` §5) and **`+0x66` is the speed field**
+(`struct+0x78` / biased `+0x5E`, the ATB divisor of `combat-pacing.md` §1) --
+which also answers that document's open question, because it agrees with the
+Agility stat on only 21 of 416 records, so speed is its own number.
+
+Narrowed, not closed: `+0x48`/`+0x49` and `+0x4A`/`+0x4B` are two *pairs*, each
+reduced by `0x00410420` = `clamp_i8((a-b)*42/10)` into `struct+0x94` / `+0x95`
+-- a two-axis alignment `[conjecture]`. `+0x57` becomes a u16 at `struct+0x1B8`,
+range 0..109, immediately below the equipment array. `+0x63`..`+0x65` go to
+`struct+0x5C`..`+0x5E`.
+
+~~`+0x22`..`+0x34`~~ **ANSWERED 2026-09-12** and it was
 three fields, not one: `+0x22`..`+0x31` is the demon's eight equipment slots
 (`0x0043DCE0` -> `0x00424BA0`), `+0x32` its single **drop item** with the rate at
 `+0x67` (`0x0042B5A1`), and `+0x34` its **species id** -- combatant field 0, not

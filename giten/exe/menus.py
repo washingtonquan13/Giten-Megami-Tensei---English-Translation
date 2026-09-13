@@ -80,8 +80,13 @@ STRINGS = {
     # %2d, so the running count cannot reach three digits.  RENDER_LOCKED
     # checks that the line still comes out 14 cells wide.
     0x0046A454: "Minions %2d／%2d",              # 仲魔
-    # --- equip stat labels (0x0046A140), 4 cells each ------------------------
+    # 命運 is the *eleventh base stat*, not an equip label: it is slot 10 of the
+    # array at 0x0046A118, and the status screen simply stops at ten so it is
+    # never drawn (docs/format-notes.md §9.1).  The equip labels proper start
+    # one NUL slot later, at 0x0046A148.  Its width budget is the equip group's
+    # because of where it sits, so leave it at 4 cells.
     0x0046A2A4: "Fate",                          # 命  運
+    # --- equip stat labels (0x0046A148), 4 cells each ------------------------
     0x0046A2AC: "Skl",                           # 技能
     0x0046A2B4: "Hit",                           # 命中
     0x0046A2BC: "Atk",                           # 攻撃

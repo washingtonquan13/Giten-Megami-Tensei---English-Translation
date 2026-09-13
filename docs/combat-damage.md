@@ -147,6 +147,31 @@ it field for field.
        0                neither
 
    A 4 or a 5 **skips the accuracy roll entirely**, so a critical cannot miss.
+
+   **The stats are named, 2026-09-12** (`format-notes.md` §9.1). `+0xE0` is
+   **Intuition** and `+0xE8` is **Blessing**, so the critical line reads
+
+       Intuition + Blessing + rand(0..6) + power
+         >  target Intuition + target Blessing + rand(0..30)
+
+   and the deadly-blow comparison above it (`0x0040A70E`..`0x0040A7E4`) turns
+   out to use a **different pair**: `+0xE0` again and `+0xF4`, which is
+   **命運 Fate** -- the eleventh stat, the one the status screen never draws.
+   With `0.01` at `0x00464298` and `0.5` at `0x004642A0`:
+
+       actor  = round( (Fate + 0.5*Intuition) * rand(80..120) * 0.01
+                       + 0x00408480(actor, target) )
+       target = round( (target Fate + 0.5*target Intuition)
+                       * rand(100..200) * 0.01 )
+       deadly blow if actor > target
+
+   The branch is only reached when **`power == 0`** (`0x0040A6FC` tests the
+   same argument the critical line later adds), so a deadly blow is a plain
+   attack's privilege and a powered skill can never roll one. `0x00408480` is
+   unread.
+
+   So Fate is not decoration: it is the whole of the game's rarest outcome, and
+   finding it there is the strongest single confirmation that slot 10 is real.
 3. If the pre-roll returned 0, **`0x0040A490` rolls to hit** and writes outcome
    0, 2 or 3.
 4. `0x0040A270` computes the damage; if it lands at zero it writes outcome 1.
@@ -239,6 +264,69 @@ its accuracy roll. The pairing is exact:
 That names six fields of the runtime unit struct that were unread. They are
 **runtime** fields; the join to the `p/` demon record is not made here.
 
+**The join was made on 2026-09-12** and is section 4.1.
+
+**One caveat on the word "magic" in that table.** The right-hand column is one
+of *four* parallel quads the equip screen draws side by side, at `unit+0x126`,
+`+0x132`, `+0x13E` and `+0x14A` (`format-notes.md` §9). It is the second, and
+the **firearm** equip check at `0x0041BA1A` reads that same column's skill
+figure, `unit+0x132` -- which is what a gun column would look like, not a spell
+column. The quad is reached through `0x00408B40`, the not-physical damage
+function, and Giten routes gun attacks through the skill list the same way it
+routes spells (`format-notes.md` §7.2: `ET0004` records 1..15 are the basic
+weapon attacks, and element 1 is "gun"), so "magic" here may be too narrow a
+name for one path that covers both. The *offsets* are right either way; only
+the label is in doubt.
+
+---
+
+## 4.1 Where those fields come from **[VERIFIED 2026-09-12]**
+
+`format-notes.md` §9.1 names the eleven base stats and pins the array at
+`unit+0xE0` (`u16`, stride 2, in status-screen order). This section is the
+other half: what the engine builds out of them.
+
+`0x0043D560(unit)` recomputes the whole combat block. It hands
+`edi = unit+0xE0` -- the *total* stat array -- to a family of one-line
+functions and files each result in a **maximum** block at `unit+0xF6`..`+0x124`.
+`0x0042D140` then restores the **current** block at `unit+0x12A`..`+0x154` from
+it: every pair it touches is exactly `0x30` apart (`+0xFA`->`+0x12A`,
+`+0xFC`->`+0x12C`, `+0x100`->`+0x130`, `+0x106`->`+0x136`, `+0x108`->`+0x138`,
+`+0x10C`->`+0x13C`), so **current[x] = max[x-0x30]** and naming the maxima names
+the six fields of section 4.
+
+With the constants at `0x00464928`..`0x00464980` (`0.25, 0.5, -0.25, 0.2,
+-0.1, -0.2, 0.4, -0.15`) folded in, and every result passed through
+`0x0043D160` = `clamp(1, 999, round(x))`:
+
+| field | max | formula |
+|---|---|---|
+| accuracy `+0x12A` | `+0xFA` | `Strength + 0.5*Agility + weapon` (`0x0043D390`) |
+| attack `+0x12C` | `+0xFC` | `weapon + 0.2*(Strength + Vitality)`, plus `0.15*x` for item kinds `>= 0x20` (`0x0043D3F0`) |
+| evade `+0x12E` | `+0xFE` | `Agility + 0.4*Intuition + armour` (`0x0043D470`) |
+| defence `+0x130` | `+0x100` | `0.2*Blessing + 0.25*Strength + 0.1*Willpower + armour` (`0x0043D240`) |
+| magic accuracy `+0x136` | `+0x106` | `Dexterity + 0.2*Intuition + a`, `+ (2b+10)` when `b > 0` (`0x0043D2C0`) |
+| magic attack `+0x138` | `+0x108` | a clamp of a local; not derived from the stat array (`0x0043D81E`) |
+| magic evade `+0x13A` | `+0x10A` | `0.4*(Blessing + Intuition)` (`0x0043D340`) |
+| magic defence `+0x13C` | `+0x10C` | a straight copy of `+0x100`, the physical defence (`0x0043D84D`) |
+
+Four more in the same block, for completeness: `+0x112 = (Intelligence +
+Magic)/2`, `+0x114 = Magic + w`, `+0x116 = (Blessing + Intelligence)/2`,
+`+0x118 = (Willpower + Blessing)/2 + w`.
+
+**This is the cross-check that makes §9.1 safe.** Attack comes out of Strength
+and Vitality, and Vitality is the stat a weapon's first requirement byte is
+compared against -- a weapon gates on part of what makes it hit hard. Evade and
+magic evade come out of Intuition and Blessing, the same two slots the critical
+pre-roll of section 3 reads (`actor+0xE0` = **Intuition**, `actor+0xE8` =
+**Blessing**), so criticals and dodges are decided by the same pair. None of
+that was assumed; the formulas were read first and the names fitted afterwards.
+
+`0x0040A690`'s pre-roll therefore reads, in words:
+
+    Intuition + Blessing + rand(0..6) + power
+        >  target Intuition + target Blessing + rand(0..30)
+
 ---
 
 ## 5. Two things found on the way
@@ -262,6 +350,11 @@ two sprites out of a different bank; and **counter 14 is the full moon** -- the
 phase `m/MS0037.BIN` r04 opens the ornate chest at and `m/MS000E.BIN` runs the
 abduction event the town blames on 満月 at.
 
+**And the row a unit uses comes out of its record, 2026-09-12.**
+`0x004107D5` copies `p/` record `+0x58` to `struct+0x212` = `actor+0x1F8`
+biased, which is the selector `0x00417A40` indexes with. Values across the
+corpus are 0..16, inside the file's 21 rows.
+
 **A hardcoded buff path.** `0x0043DA90` scales stats by status flag, through
 `0x0043DBE0(v, pct) = v*pct/100`:
 
@@ -282,9 +375,13 @@ whatever the magnitude field scales, it is not this.
   and target that gate four separate multipliers. Their contents are unread. One
   of them is very likely the affinity join already documented in
   `format-notes.md` section 7.1, but that is a guess and is marked as one.
-* `actor+0x6B` (the critical damage bonus), `actor+0xE0` and `actor+0xE8` (the
-  critical roll) and `actor+0x1F8` (the cycle row) are not joined to any file
-  record.
+* ~~`actor+0xE0` and `actor+0xE8` (the critical roll) and `actor+0x1F8` (the
+  cycle row) are not joined to any file record.~~ **Joined 2026-09-12.**
+  `actor+0xE0` is Intuition and `actor+0xE8` is Blessing, entries 0 and 4 of
+  the eleven-stat array whose base values are `p/` record `+0x4C`..`+0x56`
+  (`format-notes.md` §9.1); `actor+0x1F8` is `p/` record `+0x58`, the moon-cycle
+  row (`format-notes.md` §7). `actor+0x6B`, the critical damage bonus, is still
+  unjoined.
 * Outcomes 6..10 (no effect, repelled, absorbed, protected) are written from
   `0x00406F20`, `0x0041F7D0`, `0x0040AA20` and `0x0040B0F0`, which were located
   but not read.

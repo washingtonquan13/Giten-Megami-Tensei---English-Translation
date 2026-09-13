@@ -815,11 +815,17 @@ what the engine reads back. Records are cached in a linked list at
 | `+0x34` | u16 | **species id** -- combatant field 0, what `0x0043FEB0` returns | `0x004104DA` -> `struct+0x1A`; distinct for all 416 records, range 0..431; `0x0043FFF0` scans the roster for it, and `0x0043FD0A`'s `< 0x20` test for "human party member" is a low species id. **Not an item index**, though it collides with one |
 | `+0x36` | cp932 | **name**, NUL-terminated | |
 | `+0x47` | u8 | **level** | range 0..70; Dantalion 15 / 25 / 44 |
+| `+0x4C`..`+0x56` | 11 x u8 | **the eleven base stats** -- Intuition, Willpower, Magic, Intelligence, Blessing, Strength, Vitality, Agility, Dexterity, Charisma, Fate, in the order the status screen draws them (§9.1) | `0x0041053C`..`0x004105BA` copies `+0x4C+k` to `struct+0xA2+2k`, i.e. `+0x88+2k` in the `0x0043FE70` frame, the array the status screen and the equip check read through `+0xE0` |
+| `+0x58` | u8 | **moon-cycle row** -- which of `et/ET0003.BIN`'s 21 rows of 28 percentages scales this unit's damage | `0x004107D5` -> `struct+0x212`, i.e. `+0x1F8` in the `0x0043FE70` frame, which is the row selector `0x00417A40` reads (`combat-damage.md` §4 and §5). Values are 0..16 across the corpus, inside the 21 rows |
 | `+0x59`..`+0x62` | 10 x u8 | **affinity table** -- one byte per element index (§7.1) | |
+| `+0x66` | u8 | **speed** -- the ATB step divisor of `combat-pacing.md` §1 | `0x004105BB` -> `struct+0x78`, i.e. `+0x5E` biased: the two addresses `combat-pacing.md` names for "party speed" and "enemy speed" are one field in two framings. Range 3..20, and it agrees with the Agility stat (`+0x53`, range 5..101) on only 21 of 416 records -- so **speed is its own field, not the displayed Agility**, which closes that document's open question |
 | `+0x67` | u8 | **drop rate, percent** for `+0x32` | `0x00410811` -> `struct+0x75`; `0x0042B5A1` compares it against `0x0040B940(0x63)` = `rand()%100` and drops when it is strictly greater, so 0 never and >=100 always (120, 180, 200 and 255 all occur) |
 
-Not established: `+0x02`, `+0x20` (0..33), `+0x48`..`+0x58` (a stat block),
-`+0x63`..`+0x66` and `+0x68`..`+0x79`.
+Not established: `+0x02`, `+0x20` (0..33), `+0x48`..`+0x4B` (two pairs, each fed
+to `0x00410420` = `clamp_i8((a-b)*42/10)` and stored at `struct+0x94`/`+0x95` --
+a two-axis alignment `[conjecture]`), `+0x57` (-> `struct+0x1B8` as a u16,
+range 0..109), `+0x63`..`+0x65` (-> `struct+0x5C`..`+0x5E`) and
+`+0x68`..`+0x79`.
 
 **Correction, 2026-09-12.** An earlier version of this paragraph read the
 `rand()%100` site at `0x0042B5A1` as comparing the *record's* `+0x5B`. It does
@@ -982,11 +988,219 @@ The two figures for the case that prompted this:
 | Ceramic Blade | 7 | 7 | 30 |
 | Ice Wolf Blade | 18 | 14 | 98 |
 
-**What is not established:** which named stats `unit+0xEC` and `unit+0xF0` are.
-They sit 4 apart, which fits a seven-entry base-stat array on a 4-byte stride
-starting around `unit+0xE0` -- and `combat-damage.md` §3 already found the
-critical pre-roll reading `actor+0xE0` and `actor+0xE8`, consistent with the
-same array. Mapping those offsets onto the seven labels the status screen draws
-(Intelligence, Blessing, Strength, Vitality, Agility, Dexterity, Charisma) needs
-the status-screen drawing code read, which has not been done. That also closes
-part of item 8 in `combat-unknowns.md`.
+**The two requirement bytes, named [VERIFIED 2026-09-12].** `unit+0xEC` is
+**体力 Vitality** and `unit+0xF0` is **器用さ Dexterity**. They are entries 6
+and 8 of an **eleven-entry `u16` array at `unit+0xE0`** -- the array the status
+screen draws. The guess above was wrong in both directions: the stride is **2**,
+not 4, and the game has **eleven** base stats, not seven. §9.1 is the whole
+array, how it was read, and the join down to the `p/` record.
+
+**Firearms are a special case.** `0x0041BA15` tests the item type and takes a
+different arm for **type 12**: if `unit+0x132 > 0` it is added to *both* stats
+before the comparison (`0x0041BA26`..`0x0041BA4B`), which is why gun records
+carry requirements no stat can reach -- the Minigun asks 255, the M249 200, and
+Megido Flame 250.
+
+`unit+0x132` is the **技能 "Skill"** figure of the equip screen's *second* stat
+column. `0x00442920` draws one column from a base pointer `p`: a weapon-kind
+string, then `[p+0]` (**humans only** -- demons get an indent instead), then
+`[p+4]`, `[p+6]`, `[p+8]`, `[p+0xA]`; `0x00442A64`..`0x00442AE6` calls it with
+`p = unit+0x126`, `+0x132`, `+0x13E`, `+0x14A`, and 弾数 "Ammo" is drawn
+separately from `unit+0x1C0`. For the first column `[p+4]`..`[p+0xA]` are
+`+0x12A`, `+0x12C`, `+0x12E`, `+0x130` -- accuracy, attack, evade, defence,
+exactly the four `combat-damage.md` §4 named and in the label order 命中 攻撃
+回避 防御, which is what identifies `[p+0]` as 技能. So the per-column skill
+figures are `+0x126`, `+0x132`, `+0x13E`, `+0x14A`, and the firearm check reads
+the second one. **Which weapon class each column belongs to is not settled**:
+column 1's quad (`+0x136`, `+0x138`, `+0x13A`, `+0x13C`) is the one
+`combat-damage.md` §4 calls "magic", but a *gun* check reading column 1's skill
+suggests that column is the ranged/skill column and that §4's label may be too
+narrow. Flagged, not resolved.
+
+Type 11 (swords, clubs, claws, spears -- every weapon the melee player cares
+about) has no addend: it is the plain two-byte comparison at `0x0041BA4F`.
+
+---
+
+## 9.1 The eleven base stats **[VERIFIED 2026-09-12]**
+
+### How the array was read
+
+`0x00442450` is the status screen's stat block. It walks the unit and the label
+pointer array in lockstep, and the two strides are what name every slot:
+
+    mov  ebp, 0x0046A118            ; the label pointer array (§6.4)
+    add  ebx, 0xE0                  ; ebx was the unit; now the stat array
+    loop:
+      movsx eax, word ptr [ebx]     ; the value  -- u16
+      mov   ecx, dword ptr [ebp+0]  ; the label
+      sprintf(0x491340, "%-6.6s %3d", ecx, eax)     ; format at 0x0046A47C
+      draw
+      add ebx, 2                    ; <-- stride 2, not 4
+      add ebp, 4
+      cmp si, 0xA                   ; <-- ten rows drawn
+      jl  loop
+
+Two further sites make the same join and rule out an off-by-one. `0x00442780`
+is the equip-comparison draw (`esi = arg+0xE0`, `ebx = 0x0046A118`, count 10,
+and a second unit pointer `arg3 - arg2` away so it can colour a stat blue when
+the candidate item raises it and red when it lowers it). And `0x004428CF` does
+it in indexed form in a single pair of instructions:
+
+    movsx eax, word ptr [edi+esi*2+0xE0]        ; value  -- index * 2
+    mov   ecx, dword ptr [esi*4+0x0046A118]     ; label  -- index * 4
+
+`edi` there is the pointer `0x0043FE70` hands out, the same `+0x1A`-biased
+combatant pointer the equip check's `edi` is (`0x0041B9FF` -> `0x00440040` ->
+`0x0043FE50`), so `+0xEC` and `+0xF0` in §9 are entries 6 and 8 of *this* array
+and no rebasing is needed. The status screen's own entry point `0x00441CF0`
+confirms the frame: it takes a unit id, calls `0x0043FE70`, and passes the
+result straight to `0x00442780` alongside the race/title draw of §6.5.
+
+The label array at `0x0046A118` holds **11 pointers, then a NUL** at index 11;
+the equip labels (技能 命中 攻撃 回避 防御 弾数) are a separate run starting at
+index 12. All three draw sites stop at ten, so **命運 Fate is a real slot that
+the status screen never shows** -- it is in the array, in every `p/` record,
+raisable by a gem (Lapis Lazuli), and it decides the game's rarest outcome: the
+deadly blow gate at `0x0040A70E` is `Fate + 0.5*Intuition` against the target's
+(`combat-damage.md` §3). A hidden luck stat, in other words.
+(`giten/exe/menus.py` filed its label with the equip labels because of where it
+sits in the flat array; that comment is now annotated.)
+
+### The array
+
+Struct offsets are in the `0x0043FE70` frame. Record bytes are `p/P####.BIN`.
+English wording follows `giten/exe/menus.py`.
+
+| # | label | English | total `unit+` | base `unit+` | record | notes |
+|---|---|---|---|---|---|---|
+| 0 | 直  感 | Intuition | `0xE0` | `0x88` | `+0x4C` | critical pre-roll; evade; magic evade |
+| 1 | 精神力 | Willpower | `0xE2` | `0x8A` | `+0x4D` | defence |
+| 2 | 魔  力 | Magic | `0xE4` | `0x8C` | `+0x4E` | |
+| 3 | 知  力 | Intelligence | `0xE6` | `0x8E` | `+0x4F` | |
+| 4 | 加  護 | Blessing | `0xE8` | `0x90` | `+0x50` | critical pre-roll; defence; magic evade |
+| 5 | 強  さ | Strength | `0xEA` | `0x92` | `+0x51` | attack; accuracy; defence |
+| 6 | 体  力 | **Vitality** | `0xEC` | `0x94` | `+0x52` | **weapon requirement A**; attack |
+| 7 | 敏捷性 | Agility | `0xEE` | `0x96` | `+0x53` | accuracy; evade |
+| 8 | 器用さ | **Dexterity** | `0xF0` | `0x98` | `+0x54` | **weapon requirement B**; magic accuracy |
+| 9 | 魅  力 | Charisma | `0xF2` | `0x9A` | `+0x55` | |
+| 10 | 命  運 | Fate | `0xF4` | `0x9C` | `+0x56` | never drawn (loop count 10) |
+
+### The record join
+
+`0x00410470` builds a combatant from a `p/` record. Its `ebp` is the *unbiased*
+base (`0x0043FE70`'s pointer is `ebp+0x1A`; `encounters.md` §5 fixes that bias)
+and `ebx` is the record. `0x0041053C`..`0x004105BA` copies eleven consecutive
+record bytes into eleven consecutive `u16`s:
+
+    movzx dx, byte [ebx+0x4C] ; mov [ebp+0xA2], dx
+    movzx ax, byte [ebx+0x4D] ; mov [ebp+0xA4], ax
+    ... (the compiler emits 0x50 out of order, after 0x52; the mapping is
+        linear anyway: record +0x4C+k -> ebp+0xA2+2k for k = 0..10)
+
+`ebp+0xA2` is `+0x88` in the biased frame, so **record `+0x4C`..`+0x56` are the
+eleven base stats, in status-screen order.** That closes `+0x4C`..`+0x56` of the
+`+0x48`..`+0x58` block `combat-unknowns.md` §10 lists as unidentified. Also in
+that block: `+0x48`/`+0x49` and `+0x4A`/`+0x4B` are each passed as a *pair* to
+`0x00410420`, which returns `clamp_i8((a-b)*42/10)` into `struct+0x94` and
+`+0x95` -- two signed axes built from four bytes, almost certainly the alignment
+the analyze box prints as `属性 %c/%c`, but that is `[conjecture]` and was not
+chased. `+0x57` goes to `struct+0x1B8` and `+0x58` is still unread.
+
+### Five parallel arrays, and which one every rule reads
+
+The eleven-entry `u16` shape repeats five times on a `0x16` stride:
+
+| `unit+` | what | established by |
+|---|---|---|
+| `0x88` | **base** | written from record `+0x4C`..`+0x56` (above); the level-up point box increments and decrements it (`0x00418F21` / `0x00418F6E`, `movsx`-indexed `[esi+eax*2+0x88]`) |
+| `0x9E` | **equipment and gem bonus** | `0x0043DCE0(base, &equipment)` zeroes it, then hands `base+0x16` to `0x00424BA0` once per equipment slot, which increments entries in it |
+| `0xB4` | a bonus array zeroed by `0x0043DCB0(base)` (`base+0x2C`) | |
+| `0xCA` | a bonus array zeroed by `0x0043DCE0` alongside `0x9E` | |
+| `0xE0` | **total** -- what everything reads | `0x0043DC60(base)` recomputes it |
+
+`0x0043DC60` is the one line worth keeping:
+
+    for i in 0..10:
+        total[i] = clamp(1, 100, base[i] + bonus9E[i] + bonusCA[i] + bonusB4[i])
+
+(`0x0043DC40` sums the three, `0x0043DC10` clamps.) `0x0043CE20` shows the whole
+sequence on a live unit: `edi = 0x0043FE70(0)`, `esi = edi+0x88`, then
+`0x0043DCB0(esi)`, `0x0043DCE0(esi, edi+0x1A2)`, `0x0043DC60(esi)`.
+
+Two consequences for a player. **The effective ceiling is 100**, not 99 or 255.
+And the equip check reads the **total**, so a gem or a piece of equipment that
+raises Vitality or Dexterity counts toward a weapon's requirement exactly as a
+level-up point does.
+
+### Four independent checks
+
+**1. The gem table.** `0x00424BA0(item, &bonus)` dispatches on a selector byte
+(`struct+0x12`, which the type-9 decode arm at `0x00422EDD` fills from record
+byte 12) through the 41-entry table at `0x00424CD4`. **Selectors 1..11 all land
+on one arm**, `0x00424C10`:
+
+    inc word ptr [bonus + selector*2 - 2]
+
+-- eleven selectors, one per stat, in array order, which is the array's shape
+proven a second way. The gems that use them read as they should: Rose Quartz
+(愛を司る, "governs love") is selector 10 = Charisma, Turquoise (邪眼に対抗する
+神聖なる石, a holy amulet against the evil eye) is 5 = Blessing, Moonstone is
+3 = Magic, Lapis Lazuli is 11 = Fate. Selectors 12..17 are the two-stat arms --
+Ruby raises `+0xA`/`+0x12` (Strength and Charisma), Sapphire `+0x0`/`+0xE`
+(Intuition and Agility), Emerald `+0x4`/`+0x8` (Magic and Blessing), Diamond
+`+0x2`/`+0xA`/`+0xC` (Willpower, Strength, Vitality).
+
+**2. The data.** Sorting all 416 readable records by each slot
+(`python tools/demon.py --party`, and the per-demon block) puts the right names
+on top of each column:
+
+| slot | highest | lowest |
+|---|---|---|
+| Strength | Kalki 102, Ishtar / Susanoo / Baal 90 | Pixie 5, Will-o'-Wisp 5, Bluebell 5, Primrose 5 |
+| Vitality | Toyotamahime 93, Kalki 90, Baal 82 | Pixie 4, Will-o'-Wisp 4, Primrose 4 |
+| Agility | **Garuda 101, Yatagarasu 89**, Kalki 79, Nike 76, Phoenix 64 | Shoko Utsumi 5, Mandragora 5, Undead 5 |
+| Magic | Kayanohime 74, Kalki 73, Vampire 62, Amaterasu 61 | Gate Robot 2, Bit Ball 2, Eye Ball 2 |
+| Blessing | Toyotamahime 77, Kalki 53, Amaterasu 50, Urd 49, Remiel 48 | Slime 3, Innsmouth 4 |
+| Charisma | Kalki 101, Toyotamahime 92, Amaterasu 90, Ishtar 88, Urd 88 | Splatter 2, Critter 2, Plasma Ball 2 |
+| Fate | Amaterasu 50, **Urd 49** (a Norn), Remiel 48, Lakshmi 46 | Innsmouth 3, Wardog 3 |
+| Dexterity | Toyotamahime 56, Kayanohime 38, Kalki 33, Garuda 33 | Dark Willow 2, Mandragora 2, Bogey Dog 2 |
+
+The four fliers at the top of Agility, the four fairies at the bottom of
+Strength and Vitality, and a Norn near the top of Fate are not a coincidence a
+wrong ordering could produce.
+
+**3. The requirement pairs themselves.** Across all 161 type-11 records the two
+bytes separate exactly the way a body stat and a finesse stat should:
+
+| weapon | req A (Vitality) | req B (Dexterity) |
+|---|---|---|
+| 超棍棒 Super Club | 22 | 6 |
+| ヘルムクラッシャー Helm Crusher | 28 | 8 |
+| メガトンアックス Megaton Axe | 30 | 12 |
+| ヘカトンアックス Hecaton Axe | 35 | 12 |
+| ニードルレイピア Needle Rapier | 3 | 7 |
+| 苦無 Kunai | 7 | 12 |
+| 忍者刀 Ninja Sword | 12 | 17 |
+| ブレードワイヤー Blade Wire | 10 | 26 |
+
+**4. The derived stats.** `0x0043D560` recomputes the combat block from
+`unit+0xE0` and the formulas read as the names predict -- see
+`combat-damage.md` §4.1.
+
+### The practical answer
+
+The check is `Vitality >= raw[17] and Dexterity >= raw[18]`, on totals.
+
+| weapon | Vitality | Dexterity |
+|---|---|---|
+| 聖王の剣 Holy King's Sword (#740) | 5 | 11 |
+| 草薙剣 Kusanagi (#319) | 18 | 13 |
+| 天叢雲剣 Ame-no-Murakumo (#330) | 18 | 18 |
+| カーラヴァジュラ Kala Vajra (#340) | 40 | 20 |
+| ダグザの棍棒 Dagda's Club (#339) | 50 | 16 |
+
+`python tools/demon.py --weapon <name or index>` prints any weapon's two
+requirements by name and lists which human party members already meet them on
+base stats alone; `python tools/demon.py --party` prints the sixteen human
+records' base stats in the same order the status screen draws them.

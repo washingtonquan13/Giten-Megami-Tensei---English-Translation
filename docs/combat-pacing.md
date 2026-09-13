@@ -337,8 +337,14 @@ backlog is [`combat-unknowns.md`](combat-unknowns.md); re-measure with
 * **What sets the "a command is queued" flag** `[unit+0x17E]`. Written at
   `0x00409B16` and `0x00409BE3`, both inside `0x00409620`, the battle
   command-input driver, which has not been read.
-* Whether `unit+0x5E` / `enemy+0x78` are literally the displayed Agility stat
-  (`0x0046A28C`, "Agility" / the Japanese label) or a derived speed.
+* ~~Whether `unit+0x5E` / `enemy+0x78` are literally the displayed Agility stat
+  (`0x0046A28C`, "Agility" / the Japanese label) or a derived speed.~~
+  **ANSWERED 2026-09-12: neither -- it is its own record field.** `unit+0x5E`
+  and `enemy+0x78` are one field in two framings (they differ by the `0x1A`
+  pointer bias of `encounters.md` §5), and `0x004105BB` fills it from `p/`
+  record `+0x66`. The displayed Agility is record `+0x53`
+  (`format-notes.md` §9.1). They agree on **21 of 416** records; speed runs
+  3..20 while Agility runs 5..101.
 
 ---
 
