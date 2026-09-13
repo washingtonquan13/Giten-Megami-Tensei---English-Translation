@@ -335,7 +335,7 @@ def show_area(w, a, out):
             else:
                 tag = "%swhile flag %d:%d is clear" % ("" if ei == 0 else "fallback, ",
                                                        cond & 0x7F, cond >> 8)
-            out.write("      entry %d (%s): group %d, %d%% per check, +%d enemies, weights %s\n"
+            out.write("      entry %d (%s): group %d, chance byte %d, +%d enemies, weights %s\n"
                       % (ei, tag, gi, rate, count,
                          w.weights[wi] if wi < len(w.weights) else "?"))
             for slot, rid in enumerate(w.groups[gi] if gi < len(w.groups) else ()):
