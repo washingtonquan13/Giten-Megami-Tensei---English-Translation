@@ -473,6 +473,34 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     in a name plus `は`/`も` with the tail opening on `達` or a particle
     (2026-09-12, m/MS005D 0:5A[67] and its twin [79]).
 
+28. **A print row with NO head at all still has the name in front of it, and the
+    portrait operand says who is speaking.** Two halves, both from m/MS0006.
+    (a) Detector 19 recasts a *head* that must stand before a name; this is the
+    case where the opcode before the `1F01` is a `1FB2`/`1FD2`/`1FD0`, so there
+    is no head to recast and the English has to *begin* where the Japanese put
+    the particle. m/MS0006 0:01 offers 自分について / `1F01 08 .. 04FE`+について /
+    バエルについて as three options of one `1FB1` menu; v0.05 and the writer both
+    gave the middle one "About ", which the engine draws as " YuukaAbout " --
+    the name is printed *first* and nothing can move it. The tail must read as
+    a continuation of the name (", about her"), never as the start of the
+    English sentence. Same shape at 0:01[102], where `1FB2` + a `08` print +
+    との関係は？ is " Yuuka and Bael?". **And mind the selector's own space:**
+    `08` supplies a leading space, so the head before it must NOT end in one
+    (four heads in this file shipped "...of is  Yuuka") while the tail after it
+    must (" and Bael?"), which is the exact opposite of the `07`/`00` rule in
+    detector 15.
+    (b) **A generic speaker tag's gender is settled by the record's own
+    `1F70` portrait id**, the way detector 23's `1E 04` operand settles a place
+    name. 若者 is 192 "Young Man:" / 9 "Young Woman:" / 8 "Young Person:" /
+    7 "Youngster:" corpus-wide, and reading the lines settles nothing -- every
+    one of them is neutral polite です/ます. The portrait does: in m/MS0006
+    `1F70 0000 0027 0001` is every record already tagged "Young Man:" (0:17) and
+    `0028` every record already tagged "Young Woman:" (0:0E, 0:15), so 0:13 +
+    0:1A (`0027`) are Young Man and 0:1D (`0028`) is Young Woman -- confirmed
+    independently by 0:1D[1]'s feminine 下さいませ. The same file's 0x0025/0x0026
+    are the plain 男性/女性 tags. Read the operand before defaulting to the
+    corpus majority (2026-09-12).
+
 ## 5. Procedure
 
 Writers, per file: select rows (status != reviewed; `ref_en` set with `en`
