@@ -858,7 +858,7 @@ Values are a percentage where **50 is neutral**:
 | < 50 | resistant, roughly `2 x value` percent damage |
 | 50 | normal |
 | > 50 | weak |
-| 253, 255 | special (null / drain / repel) |
+| 250..255 | special (null / drain / repel) -- **not** a weakness. Measured 2026-09-13: a demon carrying one of these values uses that element **itself** in 56-100% of slots (250: 3/3, 253: 4/5, 254: 16/24, 255: 20/25), while 120 and 150, which are real weaknesses, are self-used in **0 of 22**. `tools/demon.py` had the band at 253/254/255 only and so reported Asherah (252, electric) as 504% weak to the element she casts and repels. |
 
 Known indices: **2 = fire, 4 = wind, 5 = electric**; **0 and 1 are the physical
 columns** (nothing in the corpus is ever weak to index 0, and 371 of 416 demons

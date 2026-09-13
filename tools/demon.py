@@ -162,10 +162,18 @@ def describe(rid, jp, en, sk, out):
         v = jp[AFFINITY + k]
         if v == 0:
             verdict = "IMMUNE"
-        elif v in (253, 254, 255):
+        elif v >= 250:
+            # 250..255 is the special band, not a 500%% weakness: across the
+            # 416 records a demon carrying one of these values USES that
+            # element itself in 56-100%% of cases (250: 3/3, 253: 4/5,
+            # 254: 16/24, 255: 20/25), while 120 and 150 -- real weaknesses
+            # -- are never self-used (0 of 22).  Reading 252 as "weak" told
+            # a player to cast electric at Asherah, who repels it.
             verdict = "special (null / drain / repel)"
         elif v > 50:
             verdict = "WEAK -- %d%% damage" % (v * 2)
+            if v >= 200:
+                verdict += "  [unverified: 200 is only 2 slots and half are self-used]"
         elif v < 50:
             verdict = "resists -- %d%% damage" % (v * 2)
         else:
