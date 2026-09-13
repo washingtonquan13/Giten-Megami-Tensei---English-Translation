@@ -549,6 +549,32 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     *put* a v0.05 cell, never that it belongs there (2026-09-12, m/MS006D
     review).
 
+31. **One v0.05 cell sitting on two rows' `ref_en` is a misalignment, and the
+    `en` column will never show it.** Detector 30 finds a displaced cell by
+    diffing a record's `en` cells against each other -- which works only once
+    *both* rows have been written. The cheaper and earlier tell is in the
+    column the writer never edits: **group a record's rows by `ref_en` and look
+    at every non-empty value that appears more than once** -- normalised, with
+    `\n`, `<wait>` and every non-letter stripped before grouping, because the
+    aligner routinely hands the two rows the same sentence with a different
+    trailing escape and an exact-match group misses the pair entirely (in
+    m/MS000F it is the `<wait>` that differs, and only the normalised grouping
+    finds it; the exact one returns nothing but speaker tags). The aligner matched
+    one v0.05 line to two spans; at most one of them is right, and a writer who
+    applies it verbatim to the one that comes first will mark it `checked` and
+    then quite correctly write the *other* one fresh -- so the two `en` cells
+    end up different and detector 30 stays silent. m/MS000F 0:01 is the shape:
+    Sneik's `As promised, the sword is now yours. May it prove useful your you.`
+    is the `ref_en` of both `[7]` (jp `‥‥その剣はお主にやろう。\nわしらが後生大事
+    に持っているよりも、お主の方が役立てるだろうて。`) and `[13]` (jp `約束通り、
+    その神剣はお主にやろう。`). It belongs to `[13]` -- 約束通り *is* "As
+    promised" -- and `[7]` shipped it `checked` with `@tl:fit`, which put a
+    clause `[7]` does not have into the English, dropped the whole
+    `わしらが後生大事に持っているよりも` clause and one of its two `\n`s, and
+    carried v0.05's own typo "useful your you" into the build. The duplicate
+    `ref_en` names the pair in one line of awk before any Japanese is read
+    (2026-09-12, m/MS000F review).
+
 ## 5. Procedure
 
 Writers, per file: select rows (status != reviewed; `ref_en` set with `en`
