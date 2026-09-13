@@ -252,6 +252,16 @@ it against 14 and 15. A 28-step cycle scaling damage and criticals in a Megami
 Tensei game is the moon phase; the exe does not say so, and the file the table
 is loaded from has not been located.
 
+**Both halves are settled, 2026-09-12 (`docs/treasure.md` §3.1).** The file is
+**`et/ET0003.BIN`**: `0x004179D0` calls `0x00401DD0(3, 12, 0)`, reads it plain
+into `ds:0x0047B8B8` and writes `ds:0x0047BEAC = 0x0047B8B8`. It is 21 rows of
+28 percentages. And the counter *is* the moon: one step is 1520 minutes, so 28
+steps are 29.56 days; column 14 is the extreme of fourteen of the twenty
+non-flat rows; the icon table at `0x0046B560` gives counters 0 and 14 their own
+two sprites out of a different bank; and **counter 14 is the full moon** -- the
+phase `m/MS0037.BIN` r04 opens the ornate chest at and `m/MS000E.BIN` runs the
+abduction event the town blames on 満月 at.
+
 **A hardcoded buff path.** `0x0043DA90` scales stats by status flag, through
 `0x0043DBE0(v, pct) = v*pct/100`:
 

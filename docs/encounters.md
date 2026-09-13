@@ -586,7 +586,7 @@ two:
 |---|---|---|
 | drop (§10) | **Cassiel, 20%, four areas** | none reachable |
 | negotiation gem gift (§11.3) | needs a level 41-45 demon, above the encounter ceiling | **impossible at any level** |
-| chest or event script (§11.4) | none | none |
+| chest (`treasure.md`) | **Hall of the Cult f2, renews monthly** | **Ochanomizu Shelter f14, renews monthly** |
 | bought from a shop (§12.3) | **no** -- no shop script offers a gem | **no** |
 | **shopkeeper's gift (§12.5)** | **0.096% per transaction** | **0.016% per transaction** |
 | sold to a shop (§12.4) | yes, 6000 | yes, 12000 |
@@ -595,6 +595,12 @@ two:
 So: **grind Cassiel for Topaz. For Diamond there is nothing to kill and nothing
 to buy -- the only repeatable source in the game is the shopkeeper's thank-you
 gift, at about one in six thousand transactions.**
+
+~~That last sentence~~ **is wrong, 2026-09-12**: the ornate chest in the
+Ochanomizu Shelter holds a Diamond, opens only at the full moon, and its
+"already opened" flag is one of the fifteen `et/ET0019.BIN` clears one step
+after every full moon. One Diamond per lunar month, forever. See
+`docs/treasure.md`.
 
 
 ---
@@ -739,6 +745,16 @@ negotiation gift out at any demon level.
 ---
 
 ## 13. The complete item-grant scan **[VERIFIED; a negative result, and a correction]**
+
+> **Superseded in part, 2026-09-12 — see `docs/treasure.md`.** This scan is
+> exhaustive over the *script* surface and its conclusion holds there. It is
+> not exhaustive over the game: **a treasure chest is a map object, not a
+> script grant.** `m/M####.BIN` holds a 16-byte entry per chest and
+> `m/MS0037.BIN` reads its own bytes back through `1E AD`/`1E AC`, so the item
+> is a register whose value lives in the map file and no read of the script
+> corpus can resolve it. There are 235 chests; 27 hold a gem and **three hold
+> a Diamond**, one of them a full-moon chest that refills every lunar month.
+> §11.6's table is corrected in `treasure.md` §5.
 
 §11.4's "no chest, no event and no script hands out a gem" was reached before
 `1E F0` had been identified as the give-item opcode (§12.3 found it), and before
