@@ -234,7 +234,9 @@ GEM_GIFT = {157: 12, 158: 12, 159: 12, 167: 12, 160: 8, 161: 8, 162: 8,
             163: 8, 164: 3, 165: 3, 166: 3, 168: 3, 169: 2, 170: 2,
             171: 2, 172: 2}
 
-#: `m/MS0015.BIN` removes each of these twice -- the Five-Coloured Fudo puzzle
+#: `m/MS0015.BIN`'s Five-Coloured Fudo: one gem per eye, two per statue.
+#: The gate is `1E 2D` mode 0 ("how many do I hold") plus a presence test,
+#: not a count of two -- `docs/encounters.md` section 13.3.
 FUDO_GEMS = {157: "Onyx", 167: "Topaz", 169: "Ruby", 170: "Sapphire",
              172: "Diamond"}
 
@@ -472,15 +474,15 @@ def other_routes(w, idx, out):
             out.write("   negotiation gift (1F 69 / 1F 6B): from a demon of level"
                       " %d-%d\n" % (lo, hi))
     if idx in FUDO_GEMS:
-        out.write("   m/MS0015.BIN spends TWO of these on the Five-Coloured Fudo"
-                  " puzzle\n")
+        out.write("   m/MS0015.BIN's Five-Coloured Fudo takes one per eye, two per"
+                  " statue, asking separately for the second\n")
     if idx in GEM_GIFT:
         pc = GIFT_GATE * GEM_GIFT[idx] / 100.0
         out.write("   shopkeeper's thank-you gift (m/MS0039.BIN r1A): %d%% of gem"
                   " gifts, %.3f%% per shop transaction -- about 1 in %d\n"
                   % (GEM_GIFT[idx], 100.0 * pc, round(1.0 / pc)))
-        out.write("   no chest and no event grants a gem, and no shop script"
-                  " sells one (docs/encounters.md section 12.3)\n")
+        out.write("   no chest, no event and no shop sells one -- the complete"
+                  " item-grant scan is docs/encounters.md section 13\n")
 
 
 def main(argv):

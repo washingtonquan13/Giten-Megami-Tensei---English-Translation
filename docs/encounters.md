@@ -525,8 +525,9 @@ never meet in a random encounter.
 plain **give-item** opcode; `1F 61` (`0x004356D0` -> `0x00423780`) removes one;
 `1E F0` gives or takes a signed count. Scanning every `m/MS*.BIN`:
 
-* **`1F 60`, 117 sites, 67 distinct items.** Every one of the sixteen gems
-  appears **exactly once, and all sixteen are in `m/MS0039.BIN` r1A** -- the shop
+* **`1F 60`, 117 sites, 67 distinct literal items** (and 11 that take the item
+  from a register -- all resolved in §13.2, none a gem). Every one of the sixteen
+  gems appears **exactly once, and all sixteen are in `m/MS0039.BIN` r1A** -- the shop
   script (its spans are 店員： and …を入手, and r0C lists the equip categories
   格闘武器 / 射撃武器 / 弾丸 / …). r1A is a switch on the selection variable with
   one arm per item, i.e. the *purchase-completed* dispenser. **No chest, no NPC
@@ -534,10 +535,12 @@ plain **give-item** opcode; `1F 61` (`0x004356D0` -> `0x00423780`) removes one;
 * **`1F 61`, 116 sites.** The only gem sites are `m/MS0015.BIN`: **the
   Five-Coloured Fudo puzzle** -- r0A Onyx, r0B Diamond, r0C Ruby, r0D Sapphire
   (Jukai supplies that one himself), r0E Topaz. Each record removes its gem
-  **twice** (片方の瞳にもはめ -- *set it into the other eye too*) and r0B's guard is
-  `op 22D [23, …, 172, 2, 0]`. So the game **consumes 2 Onyx, 2 Diamond, 2 Ruby
-  and 2 Topaz**, and r14 is the refusal 適当な宝石を持っていない.
-* **`1E F0`, 71 sites** -- never a gem.
+  **twice**, one per eye (片方の瞳にもはめ -- *set it into the other eye too*),
+  and r14 is the refusal 適当な宝石を持っていない. ~~r0B's guard `op 22D
+  [23, …, 172, 2, 0]` checks for 2~~ -- **wrong, see §13.3**: the trailing 0 is
+  `1E 2D`'s *mode*, the guard is a presence test, and the second eye is behind a
+  separate yes/no.
+* **`1E F0`, 71 sites** -- never a gem, literal or register-valued (§13.2). This is the opcode §13.1 identifies as the *other* give-item opcode; the first version of this scan did not know that and is superseded by §13.
 
 **Where the shop stock is not.** Searched and empty: every `et/` container in
 both readings for a u16 run containing 167 or 172 among plausible item indices
@@ -731,3 +734,106 @@ negotiation gift out at any demon level.
 * Whether the 25 `MS00A0`..`MS00B8` voices belong to shops with their own,
   differently-weighted gift tables: they are installed by `m/MS003C.BIN`, which
   was not read.
+
+
+---
+
+## 13. The complete item-grant scan **[VERIFIED; a negative result, and a correction]**
+
+§11.4's "no chest, no event and no script hands out a gem" was reached before
+`1E F0` had been identified as the give-item opcode (§12.3 found it), and before
+the expression model was being used to read operands. Both gaps are now closed.
+The conclusion survives; two of the details around it do not.
+
+### 13.1 The opcode set, found by walking up rather than guessing
+
+Walking *down* from opcode handlers is useless -- every handler reaches the
+shared expression evaluator, and a four-deep walk marks 330 of them as "reaching"
+an item function. Walking *up* from the engine functions that actually move an
+item is bounded: there are a dozen call sites in the image, and the function each
+sits in maps to at most one opcode.
+
+| engine function | script opcode(s) |
+|---|---|
+| `0x004236E0` add item | **`1F 60`** (expr; 80 uses), **`1E F0`** (expr, expr, u8, u8; 70), `1E 21` (0) |
+| `0x00423780` remove item | **`1F 61`** (103), **`1E F0`**, `1E 22` (0) |
+| `0x00423820` add with count | **`1E 1F`** (1 use, none reachable) |
+| `0x00423920` slot write | `1E 20` (0) |
+| `0x00423540` split a pack | `1E 21` (0), **`1E F4`** (1) |
+| `0x004246F0` gem pouch | reached only from `0x004236E0` / `0x00423780` and the pouch sort `1E 1C`/`1E 1D` |
+| `0x00423C20` battle spoils | no script opcode -- only `0x0042B5B5`, the drop (§5) |
+
+So the whole grant surface is **`1F 60`, `1E F0`, `1E F4`, `1E 1F`, `1E 20`,
+`1E 21`**, and the whole removal surface is `1F 61`, `1E F0`, `1E 22`.
+
+### 13.2 The scan
+
+308 grant/removal sites across 47 files, every operand read through the
+expression model. (Seven records are skipped because they do not tile:
+`MS610D` rFF, `MS6200` r16/r1F/r55, `MS6500` rC7, `MS6F00` r01, `MS6F1F` r01 --
+all already classified `dead` or unreachable in `limits.md`.)
+
+* **`1F 60`, 117 sites.** 106 name a literal item; **11 take the item from a
+  script register**. Sixty-two register-valued sites across `1F 60` and `1E F0`
+  resolve by walking back to the nearest `1F E8 (kind 3, that register, ...)`
+  assignment in the same record, and every one of them is a literal: 37 distinct
+  items, all ammunition, medicine, armour or story blades -- **no gem**.
+* **`1E F0`, 71 sites.** Four literals (Ration Pack, Guardian Set, Higonokami,
+  Ame-no-Murakumo replica); the rest are `reg[0], reg[1]` -- the shared
+  "hand over the item in reg0" idiom -- and resolve as above.
+* **The 15 sites that stay register-valued** are accounted for individually:
+  `m/MS0057` r01 and `m/MS00DF` r02 are ammunition top-up loops (the register is
+  compared against 386 / 390 in the same record); `m/MS003A` r1A is the
+  **spring-spirit exchange** (「泉の精霊は…を置いて再び泉の中へ消えた」), whose
+  registers are loaded in r08-r0D with **blades and spears only**; and
+  `m/MS00DB` r01 / `m/MS00DD` r31 read `sel3C`/`sel3B`, which are
+  `word[unit+0x1BA]` and `word[unit+0x1B6]` -- a unit's **equipment** slots,
+  i.e. "take what this demon is carrying".
+* That last one is worth closing too: **no demon in `p/` carries a gem.** Across
+  all 416 records the eight equipment slots (`+0x22`..`+0x31`, §6) hold 225
+  distinct items and **not one is in 157..172**.
+
+**Result: the only script site in the game that grants item 167 or 172 is
+`m/MS0039.BIN` r1A** -- the shopkeeper's thank-you gift (§12.5) -- and the only
+sites that *remove* one are `m/MS0015.BIN`, the Five-Coloured Fudo.
+
+### 13.3 Correction: what the Fudo statue actually checks
+
+§11.4 said "r0B's guard is `op 22D [23, …, 172, 2, 0]`" and read the `2` as a
+required count. **That was wrong.** `1E 2D` is `<u8 kind> <u8 dst> <expr a>
+<expr b> <expr mode>` (`0x0043116A` -> `0x00437CB0`), and the trailing `0` is the
+*mode*, not a count: modes 1 and 2 scan the roster's equipment arrays
+(`unit+0x1A2`), mode 0 is the plain "how many of item `a` do I hold". The same
+idiom appears in `m/MS0057.BIN` r01, where `1E 2D (3, 23, 386, 2, 0)` is followed
+by `1F 89 (rel16, reg23, 99)` to cap ammunition at 99.
+
+So `m/MS0015.BIN` r0B reads **reg23 = how many Diamonds you hold** and then
+`1F 83 (rel16, reg23)` -- a one-operand test, i.e. a **presence** check, not a
+"have two" check. It sets one eye, `1F 61 172`, then offers a two-option menu
+(「片方の瞳にもはめますか」 -- *set one in the other eye too?*) and removes the
+second only on "yes". The statue therefore wants **two gems for two eyes but
+asks for them one at a time, and simply declines when you have none** -- r14 is
+that refusal, 「適当な宝石を持っていない」.
+
+### 13.4 Which of the three explanations the data supports
+
+The question was: a shipped game does not gate a puzzle behind a 1-in-6,250 item
+with no other source, so either a grant was missed, the puzzle is optional, or
+the Fudo reading is wrong.
+
+**A grant was not missed** -- §13.2 is exhaustive over the opcode set §13.1
+derives from the engine side. **The Fudo reading was partly wrong** (§13.3): the
+gate is presence, not a count of two, and each eye is a separate consented step,
+so the puzzle degrades gracefully instead of demanding two Diamonds up front.
+And **the puzzle does not force itself**: nothing found here makes the statue
+mandatory at a fixed point; the script declines and you return later, and Jukai
+supplies the Sapphire himself in r0D.
+
+What the data does **not** support is any second source of a Diamond. The
+shopkeeper's gift is the only one, at the odds in §12.5. `[conjecture]` The most
+likely reading of that is that gems are meant to accumulate slowly over a long
+game -- they are the negotiation currency (§11.2), so the player is expected to
+be spending and re-acquiring them constantly rather than farming for two -- and
+the Fudo statues are a late sink for whatever colours happen to have turned up.
+That is an interpretation, not a finding, and it is the one thing in this section
+the data cannot settle.
