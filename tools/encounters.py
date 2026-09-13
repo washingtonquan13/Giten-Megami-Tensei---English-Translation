@@ -29,10 +29,11 @@ carriers are in no encounter group at all, and two more are in groups that no
 area's cells name (`docs/encounters.md` section 4.1).  `--drops` separates the
 three cases rather than lumping them as "boss".
 
-`--drops` also reports the routes that are **not** drops, because killing a demon
-is the only repeatable one: the item's price, the demon level the negotiation
-gift needs (`docs/encounters.md` section 11.3 -- for Diamond that level does not
-exist), and whether a script spends it.
+`--drops` also reports the routes that are **not** drops: the item's price, the
+demon level the negotiation gift needs (`docs/encounters.md` section 11.3 -- for
+Diamond that level does not exist), the odds of the shopkeeper's thank-you gift
+(section 12.5, the only repeatable way to a Diamond), and whether a script spends
+it.  No shop sells a gem: shops are hand-written scripts, not stock tables.
 
 Both corrections are checked against the engine in `docs/encounters.md` sections
 5 and 6.  Japanese names come from `original/ddswin`; English ones from
@@ -223,6 +224,15 @@ GEM_TIERS = (20, 30, 40, 50, 60, 70, 75, 80, 85, 90, 95, 100, 110, 120, 130, 140
 
 #: the highest level any `p/P####.BIN` record carries
 MAX_DEMON_LEVEL = 70
+
+#: `m/MS0039.BIN` r1A, the shopkeeper's thank-you gift: three nested `0E`
+#: percentage rolls (`0E`'s key is `0x0040B960(1,100,0)`, one d100 --
+#: `0x004328C0`).  40% a gift at all, 2% of gifts are gems, then this table.
+#: `docs/encounters.md` section 12.5.
+GIFT_GATE = 0.40 * 0.02
+GEM_GIFT = {157: 12, 158: 12, 159: 12, 167: 12, 160: 8, 161: 8, 162: 8,
+            163: 8, 164: 3, 165: 3, 166: 3, 168: 3, 169: 2, 170: 2,
+            171: 2, 172: 2}
 
 #: `m/MS0015.BIN` removes each of these twice -- the Five-Coloured Fudo puzzle
 FUDO_GEMS = {157: "Onyx", 167: "Topaz", 169: "Ruby", 170: "Sapphire",
@@ -464,9 +474,13 @@ def other_routes(w, idx, out):
     if idx in FUDO_GEMS:
         out.write("   m/MS0015.BIN spends TWO of these on the Five-Coloured Fudo"
                   " puzzle\n")
-    if band is not None:
-        out.write("   no chest or event grants it: the only 1F 60 site for any gem"
-                  " is m/MS0039.BIN r1A, the shop's purchase dispenser\n")
+    if idx in GEM_GIFT:
+        pc = GIFT_GATE * GEM_GIFT[idx] / 100.0
+        out.write("   shopkeeper's thank-you gift (m/MS0039.BIN r1A): %d%% of gem"
+                  " gifts, %.3f%% per shop transaction -- about 1 in %d\n"
+                  % (GEM_GIFT[idx], 100.0 * pc, round(1.0 / pc)))
+        out.write("   no chest and no event grants a gem, and no shop script"
+                  " sells one (docs/encounters.md section 12.3)\n")
 
 
 def main(argv):

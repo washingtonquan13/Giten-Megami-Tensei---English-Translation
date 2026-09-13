@@ -399,13 +399,11 @@ facts: the group index rises monotonically with level, and the lowest groups
   exists to mark.
 * **Whether any script-driven encounter path exists beside `0x00411030`.**
   Nothing else calls it, and nothing else writes `ds:0x004919A0`.
-* ~~**Whether Topaz or Diamond can be bought or found in a chest.**~~ **Answered,
-  and it is §11.** One thing inside it is still open and it is the last one
-  that matters: **which items each shop stocks.** `m/MS0039.BIN` r1A can hand
-  over any of the sixteen gems, so the capability exists; the list that decides
-  whether a given shop offers one is not in `et/`, not a literal in any `m/`
-  record and not an array in the image (§11.4). It is built at run time from
-  something this pass did not reach.
+* ~~**Whether Topaz or Diamond can be bought or found in a chest.**~~ **Answered:
+  §11 and §12.** ~~Which items each shop stocks~~ was the wrong question --
+  there is no stock table because shops are hand-written scripts (§12.3), and
+  `m/MS0039.BIN` r1A is not a purchase dispenser but the shopkeeper's **thank-you
+  gift** (§12.5).  What is left open there is narrow and named in §12.6.
 * **The condition-flag banks** other than 0 — `0xCF00` (bank 0x4F) and `0x1180`
   (bank 0, negated) occur and were not traced to a story event.
 
@@ -545,8 +543,11 @@ plain **give-item** opcode; `1F 61` (`0x004356D0` -> `0x00423780`) removes one;
 both readings for a u16 run containing 167 or 172 among plausible item indices
 (only `ET0100`, `ET0021` and `ET0030` hit, all explained here); every `m/` and
 `p/` container for four or more ids in 157..172 inside ten words; and `.rdata`
-plus `.data` of `dds_org.exe` for the same, as u16 and as u8. Nothing. So the
-buy list is assembled at run time from something this pass did not identify.
+plus `.data` of `dds_org.exe` for the same, as u16 and as u8. Nothing --
+**because there is no stock table at all**: §12.3 shows a shop is a hand-written
+script with its price as a literal in a comparison. And the reading of
+`m/MS0039.BIN` r1A above as a *purchase* dispenser is **wrong**; §12.5 decodes it
+properly as the shopkeeper's thank-you gift, which is where gems come from.
 
 ### 11.5 Two tables that looked like the answer and are not
 
@@ -582,12 +583,151 @@ two:
 |---|---|---|
 | drop (§10) | **Cassiel, 20%, four areas** | none reachable |
 | negotiation gem gift (§11.3) | needs a level 41-45 demon, above the encounter ceiling | **impossible at any level** |
-| script / chest (§11.4) | none | none |
-| shop | possible in principle; the stock list was not found | possible in principle; the stock list was not found |
+| chest or event script (§11.4) | none | none |
+| bought from a shop (§12.3) | **no** -- no shop script offers a gem | **no** |
+| **shopkeeper's gift (§12.5)** | **0.096% per transaction** | **0.016% per transaction** |
+| sold to a shop (§12.4) | yes, 6000 | yes, 12000 |
 | consumed by (§11.4) | 2 for the Fudo puzzle | 2 for the Fudo puzzle |
 
-So: **grind Cassiel for Topaz, and do not grind for Diamond -- there is nothing
-to grind.** The Fudo puzzle needs two Diamonds and nothing repeatable yields
-one, so the game must supply them through a shop or a one-off script that the
-corpus scan above cannot see as a literal; finding *that* is what the remaining
-open item in §9 is for.
+So: **grind Cassiel for Topaz. For Diamond there is nothing to kill and nothing
+to buy -- the only repeatable source in the game is the shopkeeper's thank-you
+gift, at about one in six thousand transactions.**
+
+
+---
+
+## 12. Shops, and where a Diamond actually comes from **[VERIFIED by disassembly]**
+
+§11.4 ended at "the buy list is assembled at run time from something this pass
+did not identify". That was the wrong shape of question: **there is no stock
+table because there are no table-driven shops.** Each shop is a hand-written
+script, and the gems come from somewhere else entirely -- a gift.
+
+### 12.1 `1E 70` installs a script file under another id
+
+`0x00434000` reads two expressions (`edi = first & 0xFF`, `esi = second`) and its
+default arm `0x0043458C` calls **`0x0043B7A0(key, file)`**, which walks the loaded
+-buffer list at `ds:0x00481688` for a buffer whose id word is `key`, loads
+`m/MS<file>.BIN` through `0x0043AD20` if there is none, and then
+`mov WORD PTR [eax], di` -- **stamps `key` over the buffer's own id**. So the
+file is *aliased*, and a later `0C key rr` / `0D key rr` runs records of whatever
+was installed.
+
+**This closes the open question in `limits.md`** that ends "its caller
+`0x0043458E` supplies that id in `%edi` from a path not traced to immediates":
+the id is the *second* operand of `1E 70`, and the first is the alias.
+
+All 41 `1E 70` sites in the corpus use key **127 (0x7F)**:
+
+| caller | installs | what it is |
+|---|---|---|
+| `m/MS0039.BIN` r00-r06 | `MS0100`..`MS0106` | seven **shopkeeper voices** |
+| `m/MS0033.BIN` r00-r07 | `MS0110`..`MS0115` | clinic / receptionist voices |
+| `m/MS003C.BIN` r00-r18 | `MS00A0`..`MS00B8` | 25 more, one per location |
+
+`m/MS0100.BIN` is exactly that and nothing else -- 「いらっしゃいませ。ご用件をどうぞ。」,
+「お金が足りないようですが？」, 「そんなに持ち切れませんよ。」, 「ＯＫ。その値で買い取り
+ましょう。」 -- and **scanning every `MS01xx` / `MS00Axx` file through the expression
+model finds not one item id in any of them.** They are voice only.
+
+### 12.2 `0E` is a percentage table
+
+`0x00430037` (the `0E` handler) calls `0x004328C0`, which computes the key as
+
+    0x0040B960(1, 100, 0)        ; n = 0, so one uniform roll: 1..100
+
+and hands it to `0x004327C0`, which takes the first case byte at or above the
+roll. So **`0E` is "roll 1d100 and branch by percentage band"**, and a `0E`
+table's case bytes are cumulative percentages. (`0F`, `0x004328E0`, is the same
+walk keyed on `ds:0x004919E0` instead of a roll.) `format-notes.md` §2.12
+documents the parser these share but not where the key comes from.
+
+### 12.3 Shops are hand-written scripts
+
+`m/MS0019.BIN` r06 is a complete one, and nothing about it is table-driven:
+
+    1F B1 / 1F B2      a two-option menu, 「買う」 / 「買わない」
+    1F 89 (rel16, <the party's money>, 5000)     branch if you cannot afford it
+                       -> 「残念！！ マッカが足りないな。」
+    1E F0 (260, 1, ...)                          hand over item 260
+    1F 83 (rel16, <result>)  -> 「荷物を持てないみたいだねぇ」
+
+The price is a literal in a comparison and the item is a literal in the grant.
+Corroborating that there is no shared price path: **the only expression nodes
+that can read an item's price are selectors 0x06 and 0x07** (`0x00436B94` /
+`0x00436BAE` -> `0x00423400`, which decodes the record and returns
+`dword ds:0x004911C2`, i.e. `raw[0..3]`, with 0x07 dividing by four), they occur
+**26 times in the whole corpus, and every one is in a record `limits.md` already
+classifies as unreachable** (`MS0031` c0, `MS610D`, `MS6200`, `MS6F00`,
+`MS6F1F`). No shop script in the game computes a price.
+
+### 12.4 The sell path
+
+Settled, and it is engine-side. `0x0041B750(count, data)` creates an item-list
+window whose per-line callback is **`0x0041B7C0`**:
+
+* mode 1 (`0x0041B82B`) takes the list entry's item word, masks it with
+  `shl 5 / sar 5` (the low 11 bits, §11.1), calls `0x00423460(item)` and reads
+  `[rec+0x02]` -- **the price** -- then formats with string `0x3450` when the
+  price is non-zero and `0x3500` when it is zero, which is how an unsellable item
+  is drawn;
+* mode -1 (`0x0041B8D0`) calls `0x00423800` to clear `ds:0x0047FEA0` and
+  `0x00423820(item, count)` for each entry, i.e. rebuilds the inventory from the
+  window's list.
+
+Its three creators all list things the player already holds: `0x0041C010` over
+`ds:0x0047FEA0` (the 64-slot inventory, adjacent to the 16-slot gem pouch at
+`ds:0x0047FE60`), `0x0041BF20` over `0x00423AA0`, `0x0041B6E0` over a filtered
+copy. **So gems are sellable, at the ladder in §11.1 -- Diamond 12000, Topaz
+6000.** What is *not* pinned is the multiplier the shop applies on the way out:
+selector 0x07 exists and is exactly `price / 4`, so a quarter-price buy-back is
+likely, but no reachable script uses it and the money transfer was not traced.
+
+### 12.5 **`m/MS0039.BIN` r1A is the shopkeeper's thank-you gift**
+
+r1A prints 「店員：」 and then `0D 7F 11` and `0D 7F 15` -- records 0x11 and 0x15
+of whichever voice file `1E 70` installed. In `MS0100` those are
+
+> r11 「ああ‥‥そうそう。」 — *Oh, by the way…*
+> r15 「つまらない物ですがこれを差し上げます。お役立てください。」 — *It's only a trifle, but please take this.*
+
+and then three nested `0E` rolls choose the item and `1F 60` grants it, over the
+message 「…を入手」. It is reached by `0D 39 1A` from r12 and r15, the buy and
+sell branches, after the transaction succeeds. Its head is
+`reg23 = 16; reg23 &= reg0; 1F 80 <skip>` and the 60% arm at `0x02F6` is
+`1F 4F (reg0, 16)` then end -- a once-per-visit gate and a 60% "no gift".
+
+**The tables, decoded** (`0E` case bytes are cumulative, §12.2):
+
+    @0013   40%  -> the gift tables below        60%  -> no gift
+    @0039    2%  gems (@004F)   2% charms   3% amulets   13% stones   80% food
+
+    @004F, the gem table -- the same order as et/ET0100.BIN container 0:
+      12% Onyx      12% Crystal   12% Aquamarine  12% TOPAZ
+       8% Moonstone  8% Amethyst   8% Turquoise    8% Rose Quartz
+       3% Lapis      3% Garnet     3% Opal         3% Pearl
+       2% Ruby       2% Sapphire   2% Emerald      2% DIAMOND
+
+That is what `et/ET0100.BIN` container 0's otherwise-unread sixteen entries are:
+the same list in the same odd order (Topaz sitting between Aquamarine and
+Moonstone), authored alongside this table.
+
+**So the odds per completed shop transaction are**
+
+    Topaz    0.40 x 0.02 x 0.12  = 0.096%   (about 1 in 1,000)
+    Diamond  0.40 x 0.02 x 0.02  = 0.016%   (about 1 in 6,250)
+
+Rare, and repeatable -- which makes it the **only** repeatable source of a
+Diamond in the game, since §10 has no reachable carrier and §11.3 rules the
+negotiation gift out at any demon level.
+
+### 12.6 What is still open
+
+* **What exactly re-arms the gift.** The gate is a bit of `reg0` cleared
+  somewhere between visits; r12 and r15 each set their own bit after calling
+  r1A. "Trade with a shop" is the trigger, but whether it is once per visit,
+  once per purchase or once per haggle was not pinned.
+* **The sell multiplier** (§12.4).
+* Whether the 25 `MS00A0`..`MS00B8` voices belong to shops with their own,
+  differently-weighted gift tables: they are installed by `m/MS003C.BIN`, which
+  was not read.
