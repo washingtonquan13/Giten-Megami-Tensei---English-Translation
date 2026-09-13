@@ -179,8 +179,12 @@ sub-effect the `m == 0xF` target mode calls.
 
 ### 10. Remaining record fields
 
-`p/` demon record: `+0x02`, `+0x20` (0..33), `+0x22`..`+0x34` (ids outside the
-`ET0004` range, possibly drops), `+0x63`..`+0x79`.
+`p/` demon record: `+0x02`, `+0x20` (0..33), `+0x48`..`+0x58`, `+0x63`..`+0x66`
+and `+0x68`..`+0x79`.  ~~`+0x22`..`+0x34`~~ **ANSWERED 2026-09-12** and it was
+three fields, not one: `+0x22`..`+0x31` is the demon's eight equipment slots
+(`0x0043DCE0` -> `0x00424BA0`), `+0x32` its single **drop item** with the rate at
+`+0x67` (`0x0042B5A1`), and `+0x34` its **species id** -- combatant field 0, not
+an item at all.  `encounters.md` §5 and §6.
 `ET0004`: `+0x02`, and **`+0x05` -- the single most-changed field in the port's
 rebalance (25 records) and still unidentified.**
 `et/ET0028`: 256 booleans, 16 flipped by the port, meaning unknown.

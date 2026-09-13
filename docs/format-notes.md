@@ -587,7 +587,9 @@ the jump table at `0x402208`, `sprintf`s a name and `fopen(name, "rb")`
 | **9** | **`m\ms%.4x.bin`** — every script / pool file | 0x46828C |
 | 10 | `p\p%.4x.bin` | 0x4682A0 |
 | 11 | `et\et%.4x.bin` | 0x4682B0 |
-| 13 | `et\id%.4x.bin` | 0x4682E4 |
+| **12** | **`et\et%.4x.bin`** -- same template, different arm (`0x4020BA`); the encounter tables come through this one | 0x4682C4 |
+| 13 | `gd%.4x.bin` | 0x4682D8 |
+| 14 | `et\id%.4x.bin` | 0x4682E8 |
 | 15 | `fc\fc%.4x%01d.bin` | 0x468198 |
 
 `ds:0x4716E0` holds the id of the file currently being opened.
@@ -808,14 +810,29 @@ what the engine reads back. Records are cached in a linked list at
 | `+0x0C` | u16 | **HP** | Slime 5, the two level-1 party members 17, Kalki (Lv 70) 3,218 |
 | `+0x0E` | u16 | **MP** | same series |
 | `+0x10`..`+0x1F` | 8 x u16 | **skill list**, indices into `et/ET0004.BIN`, filled from slot 0 | every non-zero value across all 416 readable records lands in 1..308, and the fill counts decrease monotonically by slot |
+| `+0x22`..`+0x31` | 8 x u16 | **equipment**, `et/ET0001.BIN` indices, last two the weapon and armour | `0x004105FE`..`0x004106D5` copies them to `struct+0x1BC` stride 4, `OR 0xF800`; `0x0043DCE0` masks the low 11 bits back off and hands each to `0x00424BA0`, the stat-bonus applier (§9's decoder) |
+| `+0x32` | u16 | **drop item**, an `et/ET0001.BIN` index | `0x00410817` -> `struct+0x76`; the death path reads it at `0x0042B5AE` (as `[esi+0x5C]`, `esi` = struct+0x1A) and passes it to `0x00423C20`, the battle-spoils adder, whose **only** call site that is. All 318 non-zero values are valid item indices |
+| `+0x34` | u16 | **species id** -- combatant field 0, what `0x0043FEB0` returns | `0x004104DA` -> `struct+0x1A`; distinct for all 416 records, range 0..431; `0x0043FFF0` scans the roster for it, and `0x0043FD0A`'s `< 0x20` test for "human party member" is a low species id. **Not an item index**, though it collides with one |
 | `+0x36` | cp932 | **name**, NUL-terminated | |
 | `+0x47` | u8 | **level** | range 0..70; Dantalion 15 / 25 / 44 |
 | `+0x59`..`+0x62` | 10 x u8 | **affinity table** -- one byte per element index (§7.1) | |
+| `+0x67` | u8 | **drop rate, percent** for `+0x32` | `0x00410811` -> `struct+0x75`; `0x0042B5A1` compares it against `0x0040B940(0x63)` = `rand()%100` and drops when it is strictly greater, so 0 never and >=100 always (120, 180, 200 and 255 all occur) |
 
-Not established: `+0x02`, `+0x20` (0..33), `+0x22`..`+0x34` (ids outside the
-ET0004 range -- possibly drops), `+0x48`..`+0x58` (a stat block; `+0x5B` is
-compared against `rand()%100` at `0x0042B5A1`, so at least one of them is a
-percentage), and `+0x63`..`+0x79`.
+Not established: `+0x02`, `+0x20` (0..33), `+0x48`..`+0x58` (a stat block),
+`+0x63`..`+0x66` and `+0x68`..`+0x79`.
+
+**Correction, 2026-09-12.** An earlier version of this paragraph read the
+`rand()%100` site at `0x0042B5A1` as comparing the *record's* `+0x5B`. It does
+not: its pointer is a combatant struct **biased by `0x1A`** -- the form
+`0x0043FE70` hands out -- so `[esi+0x5B]` is `struct+0x75`, which is record
+`+0x67`, the drop rate now in the table above. The bias is fixed by the three
+fields either side of it: `0x00410470` puts record `+0x00`/`+0x04`/`+0x08` at
+`struct+0x88`/`+0x8C`/`+0x90`, and the death path accumulates exactly
+`[esi+0x6E]`/`[esi+0x72]`/`[esi+0x76]` into the experience, cash and Magnetite
+totals -- the same `+0x04` and `+0x08` this table already verified against a
+battle log. The same bias settles §8's open `[conjecture]`: combatant field 0 is
+`struct+0x1A`, i.e. record `+0x34`, the species id.  Full account in
+[`encounters.md`](encounters.md) §5 and §6.
 
 ### 7.1 The affinity table and its join to `et/ET0004.BIN`
 
