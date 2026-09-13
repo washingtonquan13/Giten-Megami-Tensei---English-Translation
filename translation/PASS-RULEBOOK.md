@@ -144,6 +144,18 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
    `さ‥ん‥‥よ‥かっ‥‥‥た` shipped as "...... th...ank... good...ness......",
    dropping Kamikawa's dying "-san" entirely. Read every `1F01` row's jp opening
    character by character, dots included (2026-09-12).
+   **The failure mode is not only dropping the suffix -- a writer can "restore"
+   it as the pronoun and mark the row `@tl:accuracy`.** m/MS0013's writer found
+   six `1F01 07` seams opening on 君, read §1's "君 as a bare pronoun is 'you'"
+   rather than this detector, and wrote "you" into every one of them as a
+   content-drop fix: `嘘‥‥`+name+`君？` shipped as "No way...... KatsuragiYou?",
+   `本当に`+name+`君なのね` as "...but it's really Katsuragiyou......", and
+   `達也と`+name+`君を探し出す` as "to find Tatsuya and Katsuragiyou,". Every
+   one of them reads as a correct restoration in the `en` column alone and is
+   only visible assembled. So: an `@tl:accuracy` note on a `1F01` row whose jp
+   opens 君 is a *reason to read it*, not evidence it was read, and the row
+   after a name print is never the place the English says "you"
+   (2026-09-12, m/MS0013 review).
 2. **Mid-line honorifics**: a name+honorific inside a line keeps it.
 3. **Misattached `ref_en`**: a fluent line from the wrong row, scene or
    character -- shifted by an offset, duplicated across near-identical scene
@@ -252,6 +264,15 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     `1F86`/`1F19` switch choosing tails) must read on every path; when the rows
     are fragments rather than sentences, disassemble the record (m/MS0037,
     2026-09-12: 17 assembled paths checked).
+    **A double space at a seam is fixed on the side the selector does not
+    supply, and a writer who guesses picks the wrong one.** m/MS0013's writer
+    saw "travel with  you" at a `1F01 **07**` seam and deleted the leading space
+    from the *tail* -- but `07` supplies no space of its own, so the render
+    became "travel with Katsuragiyou". The head's trailing space was right and
+    the tail's was right; the row was wrong for a different reason (detector 1).
+    Decide from the selector byte, never from the doubled space: `08` supplies
+    the space, `07`/`00` supply none, and the fix is always on the `08` side
+    (2026-09-12, m/MS0013 0:0A[2]/0:0B[2]).
 
 16. **A print row read alone looks truncated, and "restoring" it duplicates the
     head.** A `1F01`/`1F02`/`1E3E` row is the *tail* of a sentence whose subject
