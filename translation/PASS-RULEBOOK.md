@@ -501,6 +501,35 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     are the plain 男性/女性 tags. Read the operand before defaulting to the
     corpus majority (2026-09-12).
 
+29. **A head invented by appending to the row before is a head on one path
+    only -- and it dangles on all the others.** Detector 28 says a print row
+    with no head of its own must begin as a continuation of the name.
+    Detector 19 says a Japanese clause standing before the name has to be
+    recast. Put those two together and a writer facing `1FD0`/`1FBA` +
+    `1F01` + `の前に、…` reaches for the obvious escape: write the recast head
+    onto the *end of the previous span*, past its own `\n<wait>`, and leave
+    the print row opening on a comma. It reads perfectly in the table and in
+    `giten check`, and it is broken twice over. m/MS0062 0:06 has both
+    shapes. `[123]` ended `...returning to the arena.\n<wait>Before ` with
+    `[124]` opening `, a battle goddess appeared.` -- but `[124]` is a
+    **shared tail**: `[116]` jumps straight to it (`18` at record offset
+    4600), so that path drew "Katsuragi, a battle goddess appeared." with no
+    "Before " anywhere. `[128]` ended `...in the duel.\n<wait>Taking the
+    weapon back from ` with `[129]` opening `,` -- and the two `1F80`s at
+    offsets 5094/5100 branch *over* `[129]` to `[130]`, so the weapon-returned
+    path drew the dangling "Taking the weapon back from " and then a speaker
+    tag. **Text a span puts after its own `<wait>` belongs to the next page,
+    and text before a `1FBA`/`1FD0` belongs to the old window** -- neither
+    can serve as the head of a name print that a branch may reach on its own.
+    The fix is always the same: end the previous row at its `\n<wait>` and
+    make the print row a sentence that starts from the name (`[124]` became
+    `" saw a battle goddess appear before him."`, `[129]` became `"'s weapon
+    back in her hands,\n"`). The tell is an `en` with text after a trailing
+    `<wait>`, or an `en` whose last characters are a preposition or a
+    participle with no punctuation; grep the file for `<wait>` followed by
+    anything other than end-of-cell before judging a print row's head
+    (2026-09-12, m/MS0062 review).
+
 ## 5. Procedure
 
 Writers, per file: select rows (status != reviewed; `ref_en` set with `en`
