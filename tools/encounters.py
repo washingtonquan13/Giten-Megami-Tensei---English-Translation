@@ -29,6 +29,11 @@ carriers are in no encounter group at all, and two more are in groups that no
 area's cells name (`docs/encounters.md` section 4.1).  `--drops` separates the
 three cases rather than lumping them as "boss".
 
+`--drops` also reports the routes that are **not** drops, because killing a demon
+is the only repeatable one: the item's price, the demon level the negotiation
+gift needs (`docs/encounters.md` section 11.3 -- for Diamond that level does not
+exist), and whether a script spends it.
+
 Both corrections are checked against the engine in `docs/encounters.md` sections
 5 and 6.  Japanese names come from `original/ddswin`; English ones from
 `tables/` (districts) and from the installed play build (demons, items), so a
@@ -197,17 +202,48 @@ def demons():
 
 
 def items():
+    """``(records, {index: japanese}, {index str: english})``."""
     recs = itemdb.parse(itemdb.source_body(paths.ORIGINAL_DDSWIN))
     out = {}
     for i, r in enumerate(recs):
         n = r.name
         out[i] = n.decode("cp932", "replace") if isinstance(n, bytes) else (n or "")
     en = _tsv("tables/itemdb.tsv", 0, 3)
-    return out, en
+    return recs, out, en
 
 
 def dname(b):
     return b[NAME:NAME + 26].split(b"\0")[0].decode("cp932", "replace")
+
+
+#: `0x004646C8`: the sixteen thresholds the negotiation gem gift compares
+#: `mean-of-101-rolls(0..100) + the demon's level` against, low tier first.
+#: `docs/encounters.md` section 11.3.
+GEM_TIERS = (20, 30, 40, 50, 60, 70, 75, 80, 85, 90, 95, 100, 110, 120, 130, 140)
+
+#: the highest level any `p/P####.BIN` record carries
+MAX_DEMON_LEVEL = 70
+
+#: `m/MS0015.BIN` removes each of these twice -- the Five-Coloured Fudo puzzle
+FUDO_GEMS = {157: "Onyx", 167: "Topaz", 169: "Ruby", 170: "Sapphire",
+             172: "Diamond"}
+
+
+def gem_gift_levels(w, idx):
+    """``(lo, hi)`` demon levels whose negotiation gift is gem ``idx``, else None.
+
+    `0x00432FA0` picks tier ``t`` as the first whose threshold is at or above
+    ``~50 + the demon's level``, and hands over pouch base + t.  The band that
+    yields one particular gem is therefore fixed, and for the top tiers it is
+    above anything the game contains -- which is the whole reason
+    ``--drops diamond`` has nothing to offer.
+    """
+    base = w.gem_base()
+    if base is None or not (base <= idx < base + len(GEM_TIERS)):
+        return None
+    t = idx - base
+    lo = (GEM_TIERS[t - 1] if t else 0) + 1 - 50
+    return max(lo, 0), GEM_TIERS[t] - 50
 
 
 # --- the joins --------------------------------------------------------------
@@ -218,7 +254,7 @@ class World:
         self.dgrid, self.dnames = districts()
         self.den = english_districts()
         self.demons, self.demons_en = demons()
-        self.items, self.iten = items()
+        self.itemrecs, self.items, self.iten = items()
         self.mapnames = _tsv("tables/mapnames.tsv", 1, 2)
 
     def demon_label(self, rid):
@@ -266,6 +302,18 @@ class World:
                                   "cond": e["cond"], "weights": e["weights"]})
                     rec["cells"] += 1
         return use
+
+    def gem_base(self):
+        """First `et/ET0001.BIN` record of type 9 -- the gem pouch's item 0.
+
+        `0x00423358` finds it exactly this way and hands it to `0x004246B0`,
+        which lays out the sixteen-slot pouch at `ds:0x0047FE60` as
+        ``base + 0..15``.  157 (Onyx) in the shipped data.
+        """
+        for i, r in enumerate(self.itemrecs):
+            if getattr(r, "type", None) == 9:
+                return i
+        return None
 
     def live_groups(self):
         """Group indices some area's cells actually name.
@@ -379,13 +427,46 @@ def show_drops(w, idx, out):
     if stranded:
         out.write("=== in an encounter group no area's cells reference ===\n")
         for rid, b, gs in stranded:
-            out.write("   P%04X Lv%-3d %-18s %3d%%   groups %s (unused)\n"
+            out.write("   P%04X Lv%-3d %-26s %3d%%  groups %s (unused)\n"
                       % (rid, b[LEVEL], w.demon_label(rid), b[DROP_RATE], gs))
     if boss:
         out.write("=== in no encounter group at all -- scripted / boss only ===\n")
         for rid, b in boss:
-            out.write("   P%04X Lv%-3d %-18s %3d%%\n"
+            out.write("   P%04X Lv%-3d %-26s %3d%%\n"
                       % (rid, b[LEVEL], w.demon_label(rid), b[DROP_RATE]))
+    other_routes(w, idx, out)
+
+
+def other_routes(w, idx, out):
+    """Everything that is not a drop: price, negotiation gift, and what eats it.
+
+    Killing a demon is the only *repeatable* source in the game -- `0x00423C20`,
+    the battle-spoils adder, has exactly one call site and it is the drop.  These
+    are the routes that are not repeatable but are what actually puts the item in
+    the player's hands; `docs/encounters.md` section 11 is the evidence.
+    """
+    r = w.itemrecs[idx] if idx < len(w.itemrecs) else None
+    hdr = getattr(r, "header", None)
+    out.write("\n=== not a drop ===\n")
+    if hdr is not None and len(hdr) >= 4:
+        out.write("   price %d (et/ET0001.BIN raw[0..3])\n"
+                  % struct.unpack_from("<I", bytes(hdr), 0)[0])
+    band = gem_gift_levels(w, idx)
+    if band is not None:
+        lo, hi = band
+        if lo > MAX_DEMON_LEVEL:
+            out.write("   negotiation gift (1F 69 / 1F 6B): would need a demon of"
+                      " level %d-%d -- NO demon in the game is above %d, so this"
+                      " route can never yield it\n" % (lo, hi, MAX_DEMON_LEVEL))
+        else:
+            out.write("   negotiation gift (1F 69 / 1F 6B): from a demon of level"
+                      " %d-%d\n" % (lo, hi))
+    if idx in FUDO_GEMS:
+        out.write("   m/MS0015.BIN spends TWO of these on the Five-Coloured Fudo"
+                  " puzzle\n")
+    if band is not None:
+        out.write("   no chest or event grants it: the only 1F 60 site for any gem"
+                  " is m/MS0039.BIN r1A, the shop's purchase dispenser\n")
 
 
 def main(argv):

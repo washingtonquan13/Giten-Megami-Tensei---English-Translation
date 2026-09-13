@@ -398,12 +398,14 @@ facts: the group index rises monotonically with level, and the lowest groups
   (§5 fixes the pointer bias), and reading it as one is the trap this section
   exists to mark.
 * **Whether any script-driven encounter path exists beside `0x00411030`.**
-  Nothing else calls it, and nothing else writes `ds:0x004919A0` — but a
-  scripted battle could still award items by another route. Not searched.
-* **Whether Topaz or Diamond can be bought or found in a chest.** The shop
-  inventories were not looked at. *This is the one experiment that would change
-  the practical answer below*, and it is a self-contained next step: find the
-  shop-stock table and grep it for item indices 167 and 172.
+  Nothing else calls it, and nothing else writes `ds:0x004919A0`.
+* ~~**Whether Topaz or Diamond can be bought or found in a chest.**~~ **Answered,
+  and it is §11.** One thing inside it is still open and it is the last one
+  that matters: **which items each shop stocks.** `m/MS0039.BIN` r1A can hand
+  over any of the sixteen gems, so the capability exists; the list that decides
+  whether a given shop offers one is not in `et/`, not a literal in any `m/`
+  record and not an array in the image (§11.4). It is built at run time from
+  something this pass did not reach.
 * **The condition-flag banks** other than 0 — `0xCF00` (bank 0x4F) and `0x1180`
   (bank 0, negated) occur and were not traced to a story event.
 
@@ -411,7 +413,9 @@ facts: the group index rises monotonically with level, and the lowest groups
 
 ## 10. The answer this was written for
 
-Drop rate is per enemy killed, rolled independently for each.
+Drop rate is per enemy killed, rolled independently for each.  §11 covers every
+*other* way an item can reach the player and sharpens the advice: there is
+nothing to farm for Diamond, and the game spends two of each gem on one puzzle.
 
 **Topaz (`et/ET0001.BIN` 167)** — four demons carry it; **one is farmable**:
 
@@ -437,3 +441,153 @@ So Diamond has **no repeatable source through the encounter system**: every
 carrier is either a one-off scripted fight or sits in one of the 21 groups the
 area files never name. Topaz has exactly one, Cassiel, and the best places for
 it are the four areas above.
+
+
+---
+
+## 11. Every other route to an item **[VERIFIED by disassembly; §11.4 is a negative result]**
+
+Written 2026-09-12 as the follow-up to §9, because "farm it" is only good advice
+if nothing else supplies it.
+
+### 11.1 Gems are a separate 16-slot pouch, and they have prices
+
+`0x004246B0(base)` writes `ds:0x00480100 = base` and initialises **sixteen
+slots** at `ds:0x0047FE60`, stride 4, as `{u16 item = base + i, u8 count}`.
+`base` is found at `0x00423358` by scanning `et/ET0001.BIN` upward for the first
+record whose type byte (`0x004233C0`) is **9**, which is **157, Onyx**. So the
+pouch is items **157..172**, and Topaz is slot 10, Diamond slot 15.
+
+Ordinary add and remove route into it automatically: `0x004236E0` and
+`0x00423780` both call `0x00424580(item)`, which returns `item - base` when the
+item's type is 9 and `-1` otherwise, and then `0x004246F0` adjusts the slot.
+
+`et/ET0001.BIN` `raw[0..3]` is a **u32 price** (§9's decoder puts it at
+`struct+0x02`): Salve 30, Ceramic Blade 2500, and the sixteen gems run
+
+    Onyx 500, Crystal 700, Aquamarine 900, Moonstone 1100, Amethyst 1200,
+    Turquoise 1500, Rose Quartz 1800, Lapis Lazuli 2000, Garnet 3000,
+    Opal 4000, Topaz 6000, Pearl 7000, Ruby 8000, Sapphire 9000,
+    Emerald 10000, Diamond 12000
+
+-- monotone, and in exactly the order the gift table below ranks them.
+
+### 11.2 What gems are *for*: negotiation
+
+`m/MS0017.BIN` r04, the tutorial quiz, says it outright -- 交渉に宝石を用いる事は
+大変有効である, *using gems in negotiation is highly effective* -- and then asks
+which gem is the most effective, with ダイアモンド among the answers. Gems are the
+game's negotiation currency, and Diamond is the top of the ladder.
+
+### 11.3 The demon-gift opcodes, and the gem they can give
+
+Seven opcodes call `0x00432EA0(kind)`, a nine-way jump table at `0x00433134`
+that ends by publishing its result in script variables 0x12 and 0x13
+(`0x0043BF60`). Its subject is `[ds:0x00491160 + 2]`, the script context's
+combatant -- the demon being talked to: one arm reads that unit's `+0x5C`
+(record `+0x32`, its own drop item, §5) and another calls `0x0043FAA0` on its
+species id to recruit it. **All 390 sites of these opcodes are in `m/MS60xx` /
+`m/MS61xx`**, the negotiation family, which is what fixes the subject.
+
+| opcode | uses | what it hands over |
+|---|---|---|
+| `1F 68` | 9 | 宝玉 Treasure Orb -- `et/ET0100.BIN` container 0 slot **0** |
+| `1F 67` | 26 | 魔石 Magic Stone -- the same list, slot **1** |
+| `1F 64` | 39 | the demon's own `+0x32` drop item |
+| `1F 69` | 8 | **a gem, tier chosen by the demon's level** (below) |
+| `1F 6B` | 263 | a weighted roll that can land on any of the above |
+| `1F 6C` | 73 | a weighted roll that tops out at Magic Stone |
+| `1F 65` / `1F 66` | 69 | `0x00433210` -- money / Magnetite, not an item |
+
+**The gem tier**, `0x00432FA0`:
+
+    value = 0x0040B960(0, 100, 100) + byte[demon + 0x6B]        ; the demon's level
+    for t in 0..15:  if (value <= word[0x004646C8 + 2*t]) break
+    gem = ds:0x00480100 + t                                      ; pouch base + t
+
+`0x0040B960(0,100,100)` is the mean of **101** rolls of `rand()%101`, so the
+first term is ~50 with a standard deviation near 3 -- it barely moves. The
+sixteen thresholds are
+
+    20 30 40 50 60 70 75 80 85 90 95 100 110 120 130 140
+
+so the gem is essentially a function of the demon's level alone:
+
+* **Topaz is tier 10** -- needs `90 < value <= 95`, i.e. **level ~41-45**.
+* **Diamond is tier 15** -- needs `130 < value <= 140`, i.e. **level ~81-90**.
+
+`p/P####.BIN` `+0x47` runs 0..**70** across the whole corpus (§7), so **no demon
+in the game can give you a Diamond**, and Topaz needs a level 41-45 demon --
+which §4.1's ceiling (no encounter group above mean level 30) means you will
+never meet in a random encounter.
+
+### 11.4 Scripts, chests and shops -- what the corpus does and does not hold
+
+`1F 60` (`0x00435690`: one expression, then `0x004236E0(item, 1, -1)`) is the
+plain **give-item** opcode; `1F 61` (`0x004356D0` -> `0x00423780`) removes one;
+`1E F0` gives or takes a signed count. Scanning every `m/MS*.BIN`:
+
+* **`1F 60`, 117 sites, 67 distinct items.** Every one of the sixteen gems
+  appears **exactly once, and all sixteen are in `m/MS0039.BIN` r1A** -- the shop
+  script (its spans are 店員： and …を入手, and r0C lists the equip categories
+  格闘武器 / 射撃武器 / 弾丸 / …). r1A is a switch on the selection variable with
+  one arm per item, i.e. the *purchase-completed* dispenser. **No chest, no NPC
+  and no event hands out a gem.**
+* **`1F 61`, 116 sites.** The only gem sites are `m/MS0015.BIN`: **the
+  Five-Coloured Fudo puzzle** -- r0A Onyx, r0B Diamond, r0C Ruby, r0D Sapphire
+  (Jukai supplies that one himself), r0E Topaz. Each record removes its gem
+  **twice** (片方の瞳にもはめ -- *set it into the other eye too*) and r0B's guard is
+  `op 22D [23, …, 172, 2, 0]`. So the game **consumes 2 Onyx, 2 Diamond, 2 Ruby
+  and 2 Topaz**, and r14 is the refusal 適当な宝石を持っていない.
+* **`1E F0`, 71 sites** -- never a gem.
+
+**Where the shop stock is not.** Searched and empty: every `et/` container in
+both readings for a u16 run containing 167 or 172 among plausible item indices
+(only `ET0100`, `ET0021` and `ET0030` hit, all explained here); every `m/` and
+`p/` container for four or more ids in 157..172 inside ten words; and `.rdata`
+plus `.data` of `dds_org.exe` for the same, as u16 and as u8. Nothing. So the
+buy list is assembled at run time from something this pass did not identify.
+
+### 11.5 Two tables that looked like the answer and are not
+
+* **`et/ET0100.BIN`** is loaded at `0x004232E9` (kind 12) through
+  `0x00401D40`, so §2.1 applies and it is plaintext. It is **two** containers,
+  not one 24-entry list: the first u16 of the file is the container length 36,
+  not an item. Container 0 is 18 words -- Treasure Orb, Magic Stone, then the
+  sixteen gems -- and its **only** reader is `0x00423380(i)`, called from exactly
+  one site, `0x00432F91`, with `i` in {0, 1}. Fourteen of its eighteen entries
+  are read by nothing. Container 1 is **not a list but pairs**: `0x004234F0`
+  walks it two words at a time, terminator `0xFFFF`, and returns the second of a
+  matching pair -- `{9 Ration Pack -> 2 Ration}`, `{3 Salve Set -> 1 Salve}`. It
+  is the "a pack breaks into units" map, consulted by `0x00423C20` when a
+  dropped item is a pack. Not a shop list, not prices, not gifts.
+* **`et/ET0030.BIN` / `et/ET0031.BIN`** are **skill** tables, not item tables.
+  `0x0041C250` loads both plain; `0x0041C2B0` picks one of ET0030's thirteen
+  `0xFFFF`-terminated lists by the unit's race group (`0x0043CDB0`, 1..12) or by
+  a byte on the protagonist (keys -1, -3, -4); `0x004194C0` copies it to
+  `ds:0x0047BB78`; `0x0041C330` picks an entry the unit does not already hold in
+  its own 8-slot list at `unit+0x1F1` (`0x0042DCA0`), with ET0031 gating eight of
+  them behind a flag word (`0x00439480`); and `0x004190AD` installs it and prints
+  %sを会得した！ -- *learned %s!* -- with the name from `0x0042E410`, which is the
+  **`et/ET0004.BIN` skill** accessor (`+0x14` past the 20-byte header,
+  `format-notes.md` §7.2). The "172 = ダイアモンド" in key 8's list is a skill index
+  colliding with an item index: the same trap as `+0x34` in §6.
+
+### 11.6 What this means for farming
+
+Farming is the only repeatable route to a gem, and it reaches exactly one of the
+two:
+
+| route | Topaz | Diamond |
+|---|---|---|
+| drop (§10) | **Cassiel, 20%, four areas** | none reachable |
+| negotiation gem gift (§11.3) | needs a level 41-45 demon, above the encounter ceiling | **impossible at any level** |
+| script / chest (§11.4) | none | none |
+| shop | possible in principle; the stock list was not found | possible in principle; the stock list was not found |
+| consumed by (§11.4) | 2 for the Fudo puzzle | 2 for the Fudo puzzle |
+
+So: **grind Cassiel for Topaz, and do not grind for Diamond -- there is nothing
+to grind.** The Fudo puzzle needs two Diamonds and nothing repeatable yields
+one, so the game must supply them through a shop or a one-off script that the
+corpus scan above cannot see as a literal; finding *that* is what the remaining
+open item in §9 is for.
