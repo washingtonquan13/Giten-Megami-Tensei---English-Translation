@@ -176,8 +176,9 @@ def test_repointing_only_the_first_piece_reassembles_the_japanese_tail():
     try:
         out = menus.apply(img)
         got = _assembled(_emulate_copy(out, 0x00436D1A))
-        assert got != b"Macca\x00\x00", "the mutation did not change anything"
-        assert got.startswith(b"Macc"), got
+        want = menus.STRINGS[0x00469808].encode("cp932") + b"\x00"
+        assert got != want, "the mutation did not change anything"
+        assert got.startswith(want[:4]), got
         assert got[4:].decode("cp932", "replace").startswith("カ"), got
     finally:
         menus.targets_of = saved
@@ -186,10 +187,10 @@ def test_repointing_only_the_first_piece_reassembles_the_japanese_tail():
 def test_a_string_too_long_for_its_pieces_is_refused():
     img = _release()
     saved = menus.STRINGS[0x00469808]
-    menus.STRINGS[0x00469808] = "Maccas"         # 6 + NUL = 7, the buffer is 7
+    menus.STRINGS[0x00469808] = " Maccas"[:6]    # 6 + NUL = 7, the buffer is 7
     try:
         menus.check_pieces(img)                  # exactly fits, still fine
-        menus.STRINGS[0x00469808] = "Maccass"    # 7 + NUL = 8
+        menus.STRINGS[0x00469808] = " Maccas"    # 7 + NUL = 8
         try:
             menus.check_pieces(img)
         except RuntimeError as exc:

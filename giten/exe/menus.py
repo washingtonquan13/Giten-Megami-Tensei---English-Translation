@@ -137,10 +137,17 @@ STRINGS = {
     # --- field menu and equipment (bug report 6) -----------------------------
     0x00468B18: "<Items>",                       # <アイテム>
     0x00468F58: "Discard Item",                  # アイテム削除
-    0x00469808: "Macca",                         # マッカ, the currency
-    0x00469810: "MAG",                           # ＭＡＧ
-    0x00469818: "Macca",
-    0x00469820: "MAG",
+    # These four are never shown on their own: an expression that reads the
+    # party's money or Magnetite (0x00436D1A, 0x00436D55, 0x00438CCA,
+    # 0x00438D1A) copies one into the unit buffer 0x00491120, and the `1F 02`
+    # number print (0x0043BA30) clears that buffer, prints the digits and
+    # appends it -- its only other reader.  So the leading space always lands
+    # between a number and its unit ("443 Macca"), which the tables cannot
+    # supply.  " Macca" + NUL is exactly the 7 bytes the pieces carry.
+    0x00469808: " Macca",                        # マッカ, the currency
+    0x00469810: " MAG",                          # ＭＡＧ
+    0x00469818: " Macca",
+    0x00469820: " MAG",
     # The item name is printed immediately before these two, so they have to
     # read as a continuation and not as a sentence of their own.
     0x0046A4D4: " equipped.",                    # をはめ込んだ
