@@ -29,6 +29,7 @@ Applied by their own modules (each finds its sites in the image, so they cannot 
 |---|---|---|---|
 | english | `0x468310` system-menu table, `0x46A118` stat/equip labels, `0x468BF8` the five Mood values, the `printf` templates' `push imm32` operands, and the twelve extra `mov reg,[imm32]` operands of the five piecewise-copied strings (`0x436D1A`, `0x436D55`, `0x438CCA`, `0x438D1A`, `0x441B12`) | `giten/exe/menus.py` -- re-points each `u32` slot at an English string in an appended `.men` section | the strings live in `.rdata`, not in any `m/`/`et/` file; there is nothing to translate on the data side. `EFFECTS` (the status-condition names) is the exception: a packed struct array with the name inline, so it is overwritten in place under a hard six-character budget |
 | english | `0x4232C2` (39 B), `0x422D2B` (5 B), `0x422D32` (rel32) | `giten/exe/database.py` -- lifts the 64 KB ceiling off the item database; the load is re-pointed at `et/et0102.bin` (which we add) and the offset table widened `u16` -> `u32` | `et/ET0001.BIN` is capped at 65,535 bytes three separate ways and the English does not fit. `ET0001.BIN` itself is left untouched, so an unpatched exe still reads the original |
+| english | `0x43BA6E` (5 B, inside the `1F 02` print routine `0x43BA30`): `e8 dd fc 01 00` (`call 0x45B750` = `_mbbtombc`) -> `8b c1 90 90 90` (`mov eax,ecx ; nop x3`) | `giten/exe/patch.py` `ascii_digits()` (tests in `tests/test_damage.py`) -- `1F 02` number prints come out as ASCII digits (and an ASCII `-`) instead of full-width Shift-JIS pairs; "Next４４３Macca" becomes "Next443Macca". `ecx` was zero-extended from the `%ld` character two instructions earlier, so `ax <= 0xFF`, the `jbe` is always taken and exactly one byte is stored per character; the `push ecx`/`add esp,4` pair is kept, so the stack balances, and the NUL at `0x43BAA1` still lands right after the last byte. Output shrinks from 2n to n bytes (max 12 of the 64-byte buffer at `0x4815A0`, was 23). `_mbbtombc` has no other caller and no pointer to it exists. The asserted old bytes are the whole 26-byte loop at `0x43BA69`, so an already-patched image is refused. English builds only: `dds_dev_jp.exe` keeps full-width digits | the digits are made at run time by `sprintf` + `_mbbtombc`; there is no string to translate, and a script-side workaround would need one per print (124 uses). No window was found that aligns anything after a printed number, so the one-cell digits only shorten lines; the English beside a print still has to supply its own spaces |
 | english | `0x42147C` | `giten/exe/mapnames.py` -- hooks the map parser's one pointer computation and indexes a `u32 name[256]` table in `.mnm` | the name is stored inside each of the 109 `m/M####.BIN` headers; one hook covers all of them without editing any map file |
 | release, dev | `0x40263A` (`mov eax,15`, the operand) | `giten/exe/timing.py` -- the popup auto-close default. Raised 15 -> 60 for most of this repo's life; **back to the stock 15 on 2026-09-08**, so this pass now asserts the instruction and writes the value already there | **not a translation change.** See the accounting note below |
 | release, dev | `0x43F52F` (`lea ecx,[eax+eax*1+5]`) | `giten/exe/timing.py` `atb_pc98()` -- the turn gauge, restored to the 1997 PC-9801 step (`lea ecx,[eax+5] ; nop`) | **not a translation change; a gameplay one, decided by the player.** See the accounting note below |
@@ -65,10 +66,11 @@ fails there.
 | menu strings `.men` | 664 B | 1536 B | yes |
 | item database `.idb` | 64 B | 512 B | yes |
 | location names `.mnm` | 25 B | 3072 B | yes |
+| ASCII digits for `1F 02` (`digits`, 2026-09-13) | 5 B | -- | yes |
 | 60 Hz tick gate | 10 B | -- | **no** |
 | popup default (left at the stock 15) | 0 B | -- | **no** |
 | turn-gauge step restored to the 1997 arithmetic | 3 B | -- | **no** |
-| **total** | **1084 B** (0.0086% of 12,675,072) | **7680 B** | |
+| **total** | **1089 B** (0.0086% of 12,675,072) | **7680 B** | |
 
 The `.men` figure moved 596 -> 664 on 2026-09-11 and both halves of that are
 worth naming, because one of them was a bug:
@@ -95,7 +97,7 @@ worth naming, because one of them was a bug:
   chain at all five sites and compares the *assembled buffer*, not the pointer;
   the pointer test passed for the broken strings, which is how this shipped.
 
-Three of those 1,084 bytes' worth of edits -- 13 bytes -- do not exist to show English, and they are the ones to argue about:
+Three of those 1,089 bytes' worth of edits -- 13 bytes -- do not exist to show English, and they are the ones to argue about:
 
 * **The 60 Hz tick gate (10 B)** is a compatibility fix of the same kind as the XP patch. The engine ran one game tick per millisecond and leaned on DirectDraw Flip's vertical-retrace wait to hold it back; on a driver that does not block, the game runs up to 16x too fast and is not playable at all. Without this the patch has nothing to demonstrate.
 * **The popup default (0 B)** was 1 byte and is now none. The argument for raising it 15 -> 60 stands on its own terms -- pinning the loop at 60 Hz gives every tick-counted duration a wall-clock meaning it did not have in 1997, and neither value is the neutral one. What changed is that the dwell turned out to be the *same number* as how long the battle command UI is refused ([`combat-pacing.md`](combat-pacing.md) §2), so 60 was quietly undoing a quarter of what the gauge fix below gave back. The player chose the stock 15 with the gauge restored. Battle messages are short; the pacing was worth more than 750 ms of reading time.

@@ -1905,6 +1905,11 @@ EXE_PASSES = [
     # numbers are theirs, not the overlay's; only `ovl` changed on purpose.
     ("database",   64, 512,  True),
     ("mapnames",   25, 3072, True),
+    # added 2026-09-13: `1F 02` number prints in ASCII instead of full-width
+    # Shift-JIS ("Next４４３Macca").  Five bytes -- the one `call _mbbtombc`
+    # in the image becomes `mov eax,ecx` + three NOPs (giten/exe/patch.py ascii_digits).
+    # Text rendering, so it counts as translation; English builds only.
+    ("digits",      5, 0,    True),
     # 1 -> 0 on 2026-09-08: the release went back to the stock 15-tick dwell,
     # so this pass now asserts the instruction and writes the value already
     # there.  Kept in the chain because the assert is the guard.
@@ -1974,7 +1979,7 @@ def test_the_exe_is_only_as_patched_as_the_documentation_says():
 
     for tag, fn in (("names", names.apply), ("menus", menus.apply),
                     ("database", database.apply), ("mapnames", mapnames.apply),
-                    ("popup", timing.apply), ("atb", timing.atb_pc98)):
+                    ("digits", patch.ascii_digits), ("popup", timing.apply), ("atb", timing.atb_pc98)):
         cur = step(tag, fn(cur))
 
     assert seen == [(t, n, g) for t, n, g, _ in EXE_PASSES], seen

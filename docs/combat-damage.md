@@ -47,6 +47,9 @@ Reading right to left:
   number*. It calls `sprintf(buf, "%ld", eval(expr))` with the format string at
   `0x00469EDC`, then converts each ASCII digit to its full-width Shift-JIS twin
   one byte at a time and appends that to the draw buffer at `0x004815A0`.
+  **English builds patch this** (`patch.ascii_digits` in `giten/exe/patch.py`, `docs/exe-patches.md`):
+  the conversion is the one `call _mbbtombc` at `0x0043BA6E`, replaced by
+  `mov eax,ecx`, so the number (and its `-`) prints as half-width ASCII.
 * **`1F E8 03 nn <expr>`** (`0x1E8`, handler `0x00430E22` -> `0x004338D0`) is
   *assign*: `var[nn] = eval(expr)`. It is the corpus's generic assignment, 1,399
   uses. The `03 nn` in front is an expression node `0x03` read as an lvalue by

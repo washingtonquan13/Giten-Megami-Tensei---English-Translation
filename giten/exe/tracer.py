@@ -317,7 +317,8 @@ def build_image(trace: bool, english: bool = True, pace: bool = True,
                 popup_ticks: "int | None" = None) -> bytes:
     """Release image (locale patches) + the overlay hook, + the tracer if ``trace``.
 
-    ``english=False`` skips the four data-table patches.  They are not optional
+    ``english=False`` skips the four data-table patches and the ASCII-digit
+    patch (``patch.ascii_digits``).  They are not optional
     decoration: ``database.apply`` re-points the engine's item-database load at
     ``et/et0102.bin``, and if that file is absent the router returns NULL, the
     next record lookup dereferences a null base and **the game dies on the first
@@ -345,6 +346,7 @@ def build_image(trace: bool, english: bool = True, pace: bool = True,
         image = bytearray(menus.apply(bytes(image)))     # English menu strings (.men)
         image = bytearray(database.apply(bytes(image)))  # the item database, uncapped (.idb)
         image = bytearray(mapnames.apply(bytes(image)))  # English location names (.mnm)
+        image = bytearray(patch.ascii_digits(bytes(image)))  # 1F 02 prints ASCII digits
     # tick-counted popup duration; `popup_ticks` lets a comparison build keep
     # the stock 15 so the message lockout is not a second variable
     image = bytearray(timing.apply(bytes(image),
