@@ -76,6 +76,12 @@ committed) in route order (`build/tl-route.tsv`).
   similar nouns, but not the sibling terms. A speaker referring to themselves
   as お兄ちゃん達/お姉さん達 may still become "us" where the romanised form
   would misread who is meant.
+- **おばさん to a woman the speaker knows is "Obasan"** (owner, 2026-09-14,
+  from the MS0019 review: Emi addressing Youko, Chita's mother). The
+  generic-noun rendering ("ma'am") stays only for a stranger or an
+  unnamed woman; a familiar address keeps the romanised honorific.
+- **大破壊 is "the Great Destruction"** everywhere (owner, 2026-09-14); the
+  v0.05 "rapture" is retired (glossary.tsv).
 
 ## 2. Glossary decisions made during the pass (binding; also in glossary.tsv)
 
