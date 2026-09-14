@@ -621,6 +621,45 @@ corpus-wide majority form: grep the tag across `tables/m/*.tsv` before choosing.
     `ref_en` names the pair in one line of awk before any Japanese is read
     (2026-09-12, m/MS000F review).
 
+32. **Verb-final pieces joined by the engine must be translated as a joinable
+    set.** Detector 21 is one `0C`/`0D` seam; the demon negotiation is a whole
+    grammar of them. The flow scripts (`m/MS6000` c12, `m/MS6002`-`MS6006` c13,
+    the voice files' own c13/c14) build one Japanese sentence out of separate
+    slot-4 voice records called back to back with `0D E4 nn`: an opening
+    (`4:09` 悪いが, `4:02` では, `4:21` だが, `4:4A` もう, `4:4B` 今度は,
+    `4:4D` もう一つ), then the amount the engine prints (`1F 02` at the head of
+    `4:32` Macca / `4:33` MAG -- digits from `sprintf`, the unit word copied out
+    of the exe at `0x469818`/`0x469820` by the expression reader, so the table
+    can never put a space between `443` and `Macca`), then the verb that closes
+    the sentence -- or, instead of amount + verb, a whole-object demand (`4:34`
+    魔石, `4:35` 宝石). Nothing is inserted between the pieces and no row knows
+    which piece precedes it, so every piece was written as a sentence of its
+    own and the screen drew "Next443MaccaI'll take it!", "More251MAGI want it",
+    "Ugh130MaccカWon't you give it to me?" (もお is "more", not "ugh") and
+    "One moreI'll take it" (m/MS6011 `4:34` 魔石を頂くわ with the Magic Stone
+    dropped). `giten check` measures each record alone and passed all of it.
+    **Enumerate the joins before writing a word:** walk the flow records over
+    every `et/ET0007` merge row (MS6000 + t0 + t1 + t2; later files replace
+    records by id), treat `0D` into another slot as a call with a summary of
+    its exits, `0C` as a goto, a `0A`/`1E10` as the end of a line, and record
+    every pair and triple of voice records drawn with no line end between them
+    (2026-09-14: 777 distinct chains in 20 voice files over the 25 merge rows). Then write the set so that
+    every chain reads: openings are lead-ins ending in punctuation that a
+    capitalised sentence can follow ("More... ", "This time... ", "Sorry,
+    but... ") because the same record also precedes lines that stand alone
+    elsewhere (`4:2F` "Your soul is mine!", `4:13`, `4:1A`, `4:0A`); closings
+    after the amount begin with their own separator and finish the sentence
+    (", won't you give it to me?", " -- hand it over!", " is my wish."); a
+    closing whose record carries a head before the print keeps the verb in the
+    head ("For Lord Bael's sake, offer up " + amount + "."); whole-object
+    demands name the item. **Byte-identical records across voice files are one
+    overlay key**, so `{08:5C}` `4:4A` is one English for thirteen demons --
+    register can only differ where the bytes do. Measure the widest chain (the
+    apology + opening + six-digit amount + closing), not the row. The residual
+    this family cannot fix in the tables: `4:4A` もう also heads `4:13`
+    付き合い切れん / `4:1A` 話す事など無い, where it means "any more", and one
+    shared English cannot be both (build/tl/negotiation-demands.md).
+
 ## 5. Procedure
 
 Writers, per file: select rows (status != reviewed; `ref_en` set with `en`

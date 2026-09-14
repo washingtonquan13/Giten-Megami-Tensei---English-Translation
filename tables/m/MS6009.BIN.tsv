@@ -44,7 +44,7 @@ m/MS6009.BIN	3:1F	0	0	DATA	放{08:52}おいてくれ　わしに構うな！\n<w
 m/MS6009.BIN	3:20	0	0	DATA	蝿の様にうる{08:49}{02:0B}だ！\n<wait>		A human buzzing like a fly, how irritating!\n<wait>	ours		reads: 蝿の様にうるさい人間だ！\n<wait>
 m/MS6009.BIN	4:00	0	0	DATA	貴様　何者だ？\n<wait>		Who are you?\n<wait>	ours		
 m/MS6009.BIN	4:01	0	0	DATA	{08:0E}に{08:1A}欲しいのか？\n<wait>		Want me as your demon?\n<wait>	ours		reads: 仲魔になって欲しいのか？\n<wait>
-m/MS6009.BIN	4:02	0	0	DATA	{08:7C}　		Well,	ours		reads: ならば　
+m/MS6009.BIN	4:02	0	0	DATA	{08:7C}　	Then... 	Well,	ours	draft	reads: ならば　; @tl:accuracy: engine-joined negotiation piece; lead-in must end in a separator the next piece can follow; ならば is 'then', not 'well'
 m/MS6009.BIN	4:03	0	0	DATA	何か欲しいと言うのか？\n<wait>		Is there something you want?\n<wait>	ours		unified with m/MS6107.BIN 4:03[0]
 m/MS6009.BIN	4:04	0	0	DATA	ほう　そうか\n<wait>		Oh, I see\n<wait>	ours		
 m/MS6009.BIN	4:05	0	0	DATA	さらば！\n<wait>		Farewell\n<wait>	ours		
@@ -52,7 +52,7 @@ m/MS6009.BIN	4:06	0	0	DATA	何が望みだ？\n<wait>		What now?\n<wait>	ours
 m/MS6009.BIN	4:07	0	0	DATA	我が名は　		My name is	ours		
 m/MS6009.BIN	4:07	1	24	1F01	\n今後とも　宜しく頼むぞ\n<wait>	.\nI look forward to working with you.\n<wait>			draft	
 m/MS6009.BIN	4:08	0	0	DATA	{08:48}を　受け取るが{08:7F}！\n<wait>		Take this!\n<wait>	ours		reads: これを　受け取るがいい！\n<wait>
-m/MS6009.BIN	4:09	0	0	DATA	悪いが\n<wait>		Alas,\n<wait>	ours		
+m/MS6009.BIN	4:09	0	0	DATA	悪いが\n<wait>	Alas...\n<wait>	Alas,\n<wait>	ours	draft	@tl:fit: lead-in on its own line; reads as a trailing phrase
 m/MS6009.BIN	4:0A	0	0	DATA	今は　持{08:52}おらぬ\n<wait>		I have none now\n<wait>	ours		reads: 今は　持っておらぬ\n<wait>
 m/MS6009.BIN	4:0B	0	0	DATA	代わりに\n<wait>		Instead\n<wait>	ours		
 m/MS6009.BIN	4:0C	0	0	DATA	貢ぎ物を捧げると言うのか？\n<wait>		You offer me tribute?\n<wait>	ours		
@@ -93,10 +93,10 @@ m/MS6009.BIN	4:2E	0	0	DATA	面白い！\n<wait>		Amusing!\n<wait>	ours
 m/MS6009.BIN	4:2F	0	0	DATA	貴様の魂を貰おう！\n<wait>		Your soul is mine!\n<wait>	ours		
 m/MS6009.BIN	4:30	0	0	DATA	貴様の事は忘れぬ\n<wait>		I won't forget you.\n<wait>	ours		unified with m/MS6107.BIN 4:30[0]
 m/MS6009.BIN	4:31	0	0	DATA	貴様のごとき{02:0B}風情に　用など無いわ！\n<wait>		I have no business with the likes of a human such as you!\n<wait>	ours		reads: 貴様のごとき人間風情に　用など無いわ！\n<wait>
-m/MS6009.BIN	4:32	0	6	1F02	を捧げる{08:77}！\n<wait>		Offer it up!\n<wait>	ours		reads: を捧げるのだ！\n<wait>
-m/MS6009.BIN	4:33	0	6	1F02	を捧げる{08:77}！\n<wait>		Offer it up!\n<wait>	ours		reads: を捧げるのだ！\n<wait>
-m/MS6009.BIN	4:34	0	0	DATA	我に魔石を捧げよ！\n<wait>		A magic stone!\n<wait>	ours		
-m/MS6009.BIN	4:35	0	0	DATA	我に宝石を　捧げるが良い！\n<wait>		Offer me a gemstone!\n<wait>	ours		
+m/MS6009.BIN	4:32	0	6	1F02	を捧げる{08:77}！\n<wait>	 -- offer it up!\n<wait>	Offer it up!\n<wait>	ours	draft	reads: を捧げるのだ！\n<wait>; @tl:fit: follows the 1F02 amount+unit print; begins with its separator and finishes the demand
+m/MS6009.BIN	4:33	0	6	1F02	を捧げる{08:77}！\n<wait>	 -- offer it up!\n<wait>	Offer it up!\n<wait>	ours	draft	reads: を捧げるのだ！\n<wait>; @tl:fit: follows the 1F02 amount+unit print; begins with its separator and finishes the demand
+m/MS6009.BIN	4:34	0	0	DATA	我に魔石を捧げよ！\n<wait>	Offer me a Magic Stone!\n<wait>	A magic stone!\n<wait>	ours	draft	@tl:accuracy: whole-object demand must name the item and read after any lead-in; 我に魔石を捧げよ keeps its verb
+m/MS6009.BIN	4:35	0	0	DATA	我に宝石を　捧げるが良い！\n<wait>	Offer me a Gemstone!\n<wait>	Offer me a gemstone!\n<wait>	ours	draft	@tl:accuracy: whole-object demand must name the item and read after any lead-in; item-name case
 m/MS6009.BIN	4:36	0	0	DATA	{08:47}様な下等な猿如き　相手に{08:4A}いては\n我らの名が廃るわ！\n<wait>		Such a lowly ape\nwould disgrace our name!\n<wait>	ours		reads: この様な下等な猿如き　相手にしていては\n我らの名が廃るわ！\n<wait>
 m/MS6009.BIN	4:37	0	0	DATA	皆　帰ると{08:8E}ぞ！\n<wait>		Let's withdraw!\n<wait>	ours		reads: 皆　帰るとするぞ！\n<wait>
 m/MS6009.BIN	4:38	0	0	DATA	貴様か！　我らに楯突く　不快な虫は！！\n<wait>		So it's you! The pest who defies us!\n<wait>	ours		
@@ -119,10 +119,10 @@ m/MS6009.BIN	4:46	0	0	DATA	持{08:52}おらぬでは{08:25}か！\n<wait>		You d
 m/MS6009.BIN	4:47	0	0	DATA	ＭＡＧが足りぬだと！\n<wait>		Not enough MAG!?\n<wait>	ours		
 m/MS6009.BIN	4:48	0	0	DATA	マッカが足りぬだと！\n<wait>		Not enough Macca!?\n<wait>	ours		
 m/MS6009.BIN	4:49	0	0	DATA	致し方{08:7B}まい\n<wait>		No help for it\n<wait>	ours		reads: 致し方あるまい\n<wait>
-m/MS6009.BIN	4:4A	0	0	DATA	{08:5C}\n<wait>		More\n<wait>	ours		reads: もう\n<wait>
-m/MS6009.BIN	4:4B	0	0	DATA	今度は\n<wait>		Again\n<wait>	ours		
+m/MS6009.BIN	4:4A	0	0	DATA	{08:5C}\n<wait>	More...\n<wait>	More\n<wait>	ours	draft	reads: もう\n<wait>; @tl:fit: lead-in on its own line; reads as a trailing phrase
+m/MS6009.BIN	4:4B	0	0	DATA	今度は\n<wait>	This time...\n<wait>	Again\n<wait>	ours	draft	@tl:accuracy: 今度は is 'this time', not 'again'
 m/MS6009.BIN	4:4C	0	0	DATA	{08:76}{08:76}　足りぬな\n<wait>		Still not enough.\n<wait>	ours		reads: まだまだ　足りぬな\n<wait>
-m/MS6009.BIN	4:4D	0	0	DATA	{08:5C}一つ\n<wait>		One more\n<wait>	ours		reads: もう一つ\n<wait>
+m/MS6009.BIN	4:4D	0	0	DATA	{08:5C}一つ\n<wait>	One more...\n<wait>	One more\n<wait>	ours	draft	reads: もう一つ\n<wait>; @tl:fit: lead-in on its own line; reads as a trailing phrase
 m/MS6009.BIN	4:4E	0	0	DATA	貴様の如き薄情な輩とは　付き合い切れぬわ！\n<wait>		No dealing with a heartless fool!\n<wait>	ours		
 m/MS6009.BIN	4:4F	0	0	DATA	わしも共に戦わ{08:67}くれ\n<wait>		Let me fight with you.\n<wait>	ours		reads: わしも共に戦わせてくれ\n<wait>
 m/MS6009.BIN	4:50	0	0	DATA	分{08:18}\n<wait>		Agreed.\n<wait>	ours		reads: 分かった\n<wait>

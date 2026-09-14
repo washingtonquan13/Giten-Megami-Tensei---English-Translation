@@ -33,7 +33,7 @@ m/MS6013.BIN	4:7B	0	0	DATA	死ねや！\n<wait>		Die already!\n<wait>	ours
 m/MS6013.BIN	4:5D	0	0	DATA	知ら{08:75}ど\n<wait>		Dunno nothin'\n<wait>	ours		reads: 知らねえど\n<wait>
 m/MS6013.BIN	4:75	0	0	DATA	お前ぇが		You	ours		
 m/MS6013.BIN	4:75	1	14	1F01	があー！　\n<wait>	, gaaah!\n<wait>	 -- {04:FF} -- gaaah!\n<wait>	ours	draft	
-m/MS6013.BIN	4:02	0	0	DATA	{08:81}あ　		Well then	ours		reads: じゃあ　
+m/MS6013.BIN	4:02	0	0	DATA	{08:81}あ　	Well then... 	Well then	ours	draft	reads: じゃあ　; @tl:fit: engine-joined negotiation piece; lead-in must end in a separator the next piece can follow
 m/MS6013.BIN	4:05	0	0	DATA	{08:81}あな{02:09}\n<wait>		See you around...\n<wait>	ours		reads: じゃあな・・・\n<wait>; unified with m/MS6015.BIN 4:05[0]
 m/MS6013.BIN	4:7F	0	0	DATA	こっちにこいよぉ{02:09}\n<wait>		C'mon over heeere...\n<wait>	ours		reads: こっちにこいよぉ・・・\n<wait>
 m/MS6013.BIN	4:0F	0	0	DATA	ずま{08:19}\n<wait>		Sorry 'bout that\n<wait>	ours		reads: ずまなかった\n<wait>
@@ -42,8 +42,8 @@ m/MS6013.BIN	4:53	0	0	DATA	ばかめぇ！\n<wait>		Ya fool!\n<wait>	ours
 m/MS6013.BIN	4:10	0	0	DATA	がああ{02:09}何のよぉだあ{02:09}\n<wait>		Gaaah... whaddya want...\n<wait>	ours		reads: がああ・・・何のよぉだあ・・・\n<wait>
 m/MS6013.BIN	4:3E	0	0	DATA	お前{08:7F}やつ{08:8F}あ\n<wait>		Yer a good one, ya are\n<wait>	ours		reads: お前いいやつだがあ\n<wait>
 m/MS6013.BIN	4:92	0	0	DATA	もっどぐれぇぇぇ\n<wait>		Give it back, damn iiiit\n<wait>	ours		
-m/MS6013.BIN	4:33	0	0	DATA	せめて		At least	ours		
-m/MS6013.BIN	4:33	1	12	1F02	{08:56}　くれよお\n<wait>		...give it to me\n<wait>	ours		reads: でも　くれよお\n<wait>
+m/MS6013.BIN	4:33	0	0	DATA	せめて	At least 	At least	ours	draft	@tl:fit: head before the 1F02 amount print needs its trailing space
+m/MS6013.BIN	4:33	1	12	1F02	{08:56}　くれよお\n<wait>	, give it to me...\n<wait>	...give it to me\n<wait>	ours	draft	reads: でも　くれよお\n<wait>; @tl:fit: follows the 1F02 amount+unit print; begins with its separator and finishes the demand
 m/MS6013.BIN	12:24	0	0	DATA	せめて		At least...	ours		
 m/MS6013.BIN	14:13	0	0	DATA	イヤははははあ！　\n<wait>		Nooo hahahaha!\n<wait>	ours		
 m/MS6013.BIN	14:14	0	0	DATA	ああ{02:09}\nな{08:5F}か気分が{08:7F}ぜぇ{02:09}\n<wait>		Ahh...\nSomehow feelin' pretty good...\n<wait>	ours		reads: ああ・・・\nなんだか気分がいいぜぇ・・・\n<wait>
