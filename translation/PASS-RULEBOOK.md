@@ -57,6 +57,15 @@ committed) in route order (`build/tl-route.tsv`).
 - **Writers never blank an `en`; never edit `jp`, `ref_en`, `ref_src`, `off`,
   `tag`, `idx`.** A file's count of translated rows may never go down
   (`tests/test_translation_floor.py`).
+- **No hardcoded protagonist name the Japanese does not have** (owner,
+  2026-09-14). Where v0.05 wrote "Ayato" (or "Katsuragi") in narration or
+  dialogue but the `jp` names nobody, use a pronoun ("he"/"him"/"his") or
+  the construction the Japanese uses, marked `@tl:accuracy`. The player can
+  rename the hero, and only a `1F01` name print knows the chosen name; a
+  literal "Ayato" is wrong for every renamed player. Where the `jp` itself
+  prints the name, it stays a name print, never a literal. When a pronoun
+  would be ambiguous (several men in the scene), prefer recasting the
+  sentence over reintroducing the literal name.
 
 ## 2. Glossary decisions made during the pass (binding; also in glossary.tsv)
 
