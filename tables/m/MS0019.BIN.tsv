@@ -3,373 +3,373 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS0019.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}\n		There's no one here...\n	v005		reads: 誰もいない‥‥‥\n; @refalign
-m/MS0019.BIN	0:01	0	199	1FD0	歩き出{08:4B}途端、一人の男とぶつか{08:12}\n<wait>	The moment he set off, he bumped into a man!\n<wait>			draft	reads: 歩き出した途端、一人の男とぶつかった！\n<wait>
-m/MS0019.BIN	0:01	1	266	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	2	274	1FD3	あっ！　す、すまん！\nちょ{08:53}考え事を{08:4A}たも{08:5F}{08:42}{08:72}\n<wait>	Oh! S-sorry!\nI was lost in thought there......\n<wait>			draft	reads: あっ！　す、すまん！\nちょっと考え事をしてたもんだから‥‥\n<wait>
-m/MS0019.BIN	0:01	3	330	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	4	338	1FD3	{01:32}かい？\n<wait>	You all right?\n<wait>			draft	reads: 大丈夫かい？\n<wait>
-m/MS0019.BIN	0:01	5	365	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	6	373	1FD3	ん{08:72}？　そっちの女の子が、{01:32}そう{08:81}{08:25}な{08:72}\n<wait>{08:48}くらいだっ{08:50}、治{08:2A}か{08:72}な{08:72}\n<wait>	Hm...? That girl there doesn't look all right...\n<wait>If it's only this much, I can probably... treat it...\n<wait>			draft	reads: ん‥‥？　そっちの女の子が、大丈夫そうじゃないな‥‥\n<wait>これくらいだったら、治せるか‥‥な‥‥\n<wait>
-m/MS0019.BIN	0:01	7	455	1FD0	男はそう言うと、{08:03}の手当てを始めた。\n<wait>	So saying, the man began treating Emi.\n<wait>			draft	reads: 男はそう言うと、英美の手当てを始めた。\n<wait>
-m/MS0019.BIN	0:01	8	500	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	9	508	1FD3	{01:32}だ。絶対に悪い{08:69}にはし{08:25}{02:08}\nぶつ{08:18}お詫びさ。\n<wait>	Don't worry. I'd never do anything to hurt her......\nIt's my apology for bumping into you.\n<wait>			draft	reads: 大丈夫だ。絶対に悪いようにはしない‥‥‥\nぶつかったお詫びさ。\n<wait>
-m/MS0019.BIN	0:01	10	604	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	11	612	1FD3	よし！　{08:76}間に合うな！\n<wait>	Right! Still in time!\n<wait>			draft	reads: よし！　まだ間に合うな！\n<wait>
-m/MS0019.BIN	0:01	12	668	1FD0	{08:03}は蘇生{08:4B}。\n<wait>	Emi was revived.\n<wait>			draft	reads: 英美は蘇生した。\n<wait>
-m/MS0019.BIN	0:01	13	689	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	14	697	1FD3	ふう{08:72}まずは{08:48}で安心だな。\n{08:8F}、{08:47}{08:7E}外に出{08:69}{08:6A}て思わ{08:25}方が{08:7F}ぜ。\n応急処置程度だ{08:42}な{02:08}後でちゃんと{03:10}{08:4A}や{08:52}くれ。\n	Phew... that's one worry off my mind.\nBut don't go thinking of heading outside like this.\nIt's only first aid...... make sure she gets properly healed later.\n			draft	reads: ふう‥‥まずはこれで安心だな。\nだが、このまま外に出ようなんて思わない方がいいぜ。\n応急処置程度だからな‥‥‥後でちゃんと回復してやってくれ。\n
-m/MS0019.BIN	0:01	15	867	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	16	875	1FD3	{08:48}{08:7D}、{08:48}を使えば{01:32}だな{02:08}\n<wait>		With this... if I use it, we'll be fine...\n<wait>	ours		reads: これなら、これを使えば大丈夫だな‥‥‥\n<wait>
-m/MS0019.BIN	0:01	17	933	1FD0	{08:03}は{03:10}{08:4B}。\n		Emi was healed.\n	ours		reads: 英美は回復した。\n; @split-tailless: the cut took only a trailing escape, nothing to divide
-m/MS0019.BIN	0:01	18	952	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	19	960	1FD3	{02:08}君、{01:32}かい？\n<wait>		...Hey, are you alright?\n<wait>	ours		reads: ‥‥‥君、大丈夫かい？\n<wait>
-m/MS0019.BIN	0:01	20	983	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0019.BIN	0:01	21	989	1FD3	ええ{02:08}貴方が手当て{08:4A}く{08:60}のね。{01:2A}。\n<wait>		Yeah... You're the one who treated me, huh. Thank you.\n<wait>	ours		reads: ええ‥‥‥貴方が手当てしてくれたのね。ありがとう。\n<wait>
-m/MS0019.BIN	0:01	22	1049	1FB2	{01:32}だ		I'm okay	v005		reads: 大丈夫だ; menu option, declared width 20 columns; @refalign
-m/MS0019.BIN	0:01	23	1055	1FB2	君こそ{01:32}か？		You?	v005		reads: 君こそ大丈夫か？; menu option, declared width 20 columns; @refalign
-m/MS0019.BIN	0:01	24	1090	1FD2	{08:03}：	Emi:	Emi:	v005	draft	reads: 英美：
-m/MS0019.BIN	0:01	25	1096	1FD3	ええ{02:08}{01:32}。貴方こそ{01:32}？\n<wait>		Yeah... I'm fine. What about you, are you okay?\n<wait>	ours		reads: ええ‥‥‥大丈夫。貴方こそ大丈夫？\n<wait>
-m/MS0019.BIN	0:01	26	1127	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	27	1135	1FD3	俺は{01:32}{08:8F}{02:08}君の{08:0F}がマズイ{08:69}だな。\n<wait>		I'm fine, but... your friend looks like they're in trouble.\n<wait>	ours		reads: 俺は大丈夫だが‥‥‥君の仲間がマズイようだな。\n<wait>
-m/MS0019.BIN	0:01	28	1176	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	29	1184	1FD3	ちょ{08:53}、見{08:67}くれ。\n絶対に悪い{08:69}にはし{08:25}{08:42}。\n<wait>		Hey, let me take a look.\nI promise I won't do anything shady.\n<wait>	ours		reads: ちょっと、見せてくれ。\n絶対に悪いようにはしないから。\n<wait>
-m/MS0019.BIN	0:01	30	1236	1FD0	そう言{08:52}、男は	So saying, the man began to treat 	So saying, the man	ours	draft	reads: そう言って、男は
-m/MS0019.BIN	0:01	31	1256	1F01	の手当てを始めた{02:08}\n<wait>	's wounds......\n<wait>	{04:FF} began receiving treatment...\n<wait>	ours	draft	reads: の手当てを始めた‥‥‥\n<wait>
-m/MS0019.BIN	0:01	32	1283	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	33	1291	1FD3	気にすんな。ぶつかっち{08:20}お詫びだよ。\n<wait>		Don't worry about it. It's an apology for bumping into you.\n<wait>	ours		reads: 気にすんな。ぶつかっちまったお詫びだよ。\n<wait>
-m/MS0019.BIN	0:01	34	1378	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	35	1386	1FD3	よし！　{08:76}間に合うな！\n<wait>	Right! Still in time!\n<wait>			draft	reads: よし！　まだ間に合うな！\n<wait>
-m/MS0019.BIN	0:01	36	1448	1F01	は蘇生{08:4B}。\n<wait>	 was revived.\n<wait>	{04:FF} was revived.\n<wait>	ours	draft	reads: は蘇生した。\n<wait>
-m/MS0019.BIN	0:01	37	1467	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	38	1475	1FD3	ふう{08:72}まずは{08:48}で安心だな。\n{08:8F}、{08:47}{08:7E}外に出{08:69}{08:6A}て思わ{08:25}方が{08:7F}ぜ。\n応急処置程度だ{08:42}な{02:08}後でちゃんと{03:10}{08:4A}や{08:52}くれ。\n	Phew... that's one worry off my mind.\nBut don't go thinking of heading outside like this.\nIt's only first aid...... make sure he gets properly healed later.\n			draft	reads: ふう‥‥まずはこれで安心だな。\nだが、このまま外に出ようなんて思わない方がいいぜ。\n応急処置程度だからな‥‥‥後でちゃんと回復してやってくれ。\n
-m/MS0019.BIN	0:01	39	1645	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	40	1653	1FD3	{08:48}{08:7D}、{08:48}を使えば{01:32}だな{02:08}\n<wait>		With this... if I use it, we'll be fine...\n<wait>	ours		reads: これなら、これを使えば大丈夫だな‥‥‥\n<wait>
-m/MS0019.BIN	0:01	41	1717	1F01	は{03:10}{08:4B}。\n<wait>	 recovered.\n<wait>	{04:FF} has recovered.\n<wait>	ours	draft	reads: は回復した。\n<wait>
-m/MS0019.BIN	0:01	42	1734	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	43	1742	1FD3	{02:08}君、{01:32}かい？\n<wait>		...Hey, are you alright?\n<wait>	ours		reads: ‥‥‥君、大丈夫かい？\n<wait>
-m/MS0019.BIN	0:01	44	1765	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0019.BIN	0:01	45	1777	1F01	くん{02:08}良{08:18}{02:08}‥\n{08:47}人が手当て{08:4A}く{08:60}のよ。\n<wait>	-kun...... thank goodness......\nThis person is the one who treated you.\n<wait>	{04:FF}-kun... Thank goodness...\nThis person's the one who treated you.\n<wait>	ours	draft	reads: くん‥‥‥良かった‥‥‥‥\nこの人が手当てしてくれたのよ。\n<wait>
-m/MS0019.BIN	0:01	46	1831	1F01	は男に礼を言{08:51}。\n<wait>	 thanked the man.\n<wait>	{04:FF} thanked the man.\n<wait>	ours	draft	reads: は男に礼を言った。\n<wait>
-m/MS0019.BIN	0:01	47	1856	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	48	1864	1FD3	あ{02:08}\n<wait>		Ah...\n<wait>	ours		reads: あ‥‥‥\n<wait>
-m/MS0019.BIN	0:01	49	1880	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	50	1888	1FD3	ああ。俺{08:7D}{01:32}だ。{08:7A}にやわには出来て{08:25}{08:42}な。\n<wait>	Yeah. I'm fine. I'm not made that soft.\n<wait>			draft	reads: ああ。俺なら大丈夫だ。そんなにやわには出来てないからな。\n<wait>
-m/MS0019.BIN	0:01	51	1939	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	52	1947	1FD3	{02:08}{08:79}アームターミナル{02:08}\n君はも{08:61}て、どこかの{08:10}の{02:00}か？\n	......That Arm Terminal......\nCould you be a Devil Buster from one of the shelters?\n			draft	reads: ‥‥‥そのアームターミナル‥‥‥\n君はもしかして、どこかのシェルターのデビルバスターか？\n
-m/MS0019.BIN	0:01	53	2017	1FB2	{08:26}、初台の{08:72}		Yeah, Hatsudai	v005		reads: はい、初台の‥‥; menu option, declared width 20 columns; @refalign
-m/MS0019.BIN	0:01	54	2031	1FB2	{08:27}	No 	No	v005	draft	reads: いいえ; menu option, declared width 20 columns
-m/MS0019.BIN	0:01	55	2061	1F01	は肯定し、出身が初台で{08:7B}事を答{08:41}。\n<wait>	 confirmed it, and answered that he was from Hatsudai.\n<wait>			draft	reads: は肯定し、出身が初台である事を答えた。\n<wait>
-m/MS0019.BIN	0:01	56	2104	1FD2	男性：	Man:	Man:	v005	draft	
-m/MS0019.BIN	0:01	57	2112	1FD3	初台だ{08:52}！\n	Hatsudai, you say!\n	Hatsudai? Interesting... I was travelling with a Devil Buster\nfrom Hatsudai until not that long ago myself.\n	v005	draft	reads: 初台だって！\n
-m/MS0019.BIN	0:01	58	2136	1F01	{08:62}トラブルに巻き込ま{08:2F}のも面倒{08:6B}で、男の問いを否定{08:4B}。\n<wait>	, not wanting the trouble, denied the man's question.\n<wait>	{04:FF}, not wanting the hassle, denied the man's question.\n<wait>	ours	draft	reads: は、トラブルに巻き込まれるのも面倒なので、男の問いを否定した。\n<wait>
-m/MS0019.BIN	0:01	59	2199	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	60	2207	1FD3	{08:72}そうか。\n	......I see.\n			draft	reads: ‥‥そうか。\n; @split-authored
-m/MS0019.BIN	0:01	61	2218	1FD3	俺少し前{08:71}、初台の{02:00}だ{08:51}{08:52}{08:68}人と、一緒に行動{08:4A}た{08:5F}。\n<wait>	Until a little while ago I was travelling with someone who'd been a\nDevil Buster from Hatsudai.\n<wait>			draft	@split-tail of [60]; reads: 俺少し前まで、初台のデビルバスターだったっていう人と、一緒に行動してたんだ。\n<wait>; @split-authored
-m/MS0019.BIN	0:01	62	2279	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	63	2287	1FD3	{08:04}{08:52}{08:68}人だ{08:51}{08:5F}{08:84}{02:08}\n<wait>	A man called Nishino......\n<wait>			draft	reads: 西野っていう人だったんだけど‥‥‥\n<wait>
-m/MS0019.BIN	0:01	64	2314	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0019.BIN	0:01	65	2320	1FD3	隊長だわ！！\n<wait>	That's the Captain!!\n<wait>			draft	
-m/MS0019.BIN	0:01	66	2341	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	67	2349	1FD3	知っ{08:14}のか？\n<wait>	You know him?\n<wait>			draft	reads: 知っているのか？\n<wait>
-m/MS0019.BIN	0:01	68	2370	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0019.BIN	0:01	69	2376	1FD3	ええ、本当にお世話に{08:16}人{08:6A}{08:55}{02:08}。\n<wait>	Yes, he did so much for us......\n<wait>			draft	reads: ええ、本当にお世話になった人なんです‥‥‥。\n<wait>
-m/MS0019.BIN	0:01	70	2417	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	71	2425	1FD3	{08:72}俺も随分と世話に{08:16}よ{08:72}\n<wait>	...He did a lot for me too...\n<wait>			draft	reads: ‥‥俺も随分と世話になったよ‥‥\n<wait>
-m/MS0019.BIN	0:01	72	2458	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	73	2466	1FD3	{08:04}さんと{08:62}宿を求めて鬼子母神に立ち寄{08:51}時に知り合{08:52}、{08:4D}{08:42}\n{01:23}、一緒に行動{08:4A}{08:64}{08:5F}。\n	I met Nishino when I stopped at Kishimojin looking for lodging, and\nwe traveled together for a while after that.\n			draft	reads: 西野さんとは、宿を求めて鬼子母神に立ち寄った時に知り合って、それから\nしばらく、一緒に行動していたんだ。\n
-m/MS0019.BIN	0:01	74	2562	1FB2	彼は今何処に？		Where is he now?	v005		menu option, declared width 20 columns; @refalign
-m/MS0019.BIN	0:01	75	2578	1FB2	ふーん		Hmph...	v005		menu option, declared width 20 columns; @refalign
-m/MS0019.BIN	0:01	76	2612	1F01	が相づちを打つと、{08:03}が待ちかねた{08:69}に口を挟{08:5F}。\n<wait>	 nodded along, and Emi cut in as if she could wait no longer.\n<wait>			draft	reads: が相づちを打つと、英美が待ちかねたように口を挟んだ。\n<wait>
-m/MS0019.BIN	0:01	77	2667	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0019.BIN	0:01	78	2673	1FD3	隊長{08:72}{08:04}さんは今何処に？\n<wait>		Captain... where is Nishino right now?\n<wait>	ours		reads: 隊長‥‥西野さんは今何処に？\n<wait>
-m/MS0019.BIN	0:01	79	2717	1F01	{08:62}{08:04}の行方を訊ねた。\n<wait>	 asked where Nishino had gone.\n<wait>	You ask for Nishino's whereabouts.\n<wait>	v005	draft	reads: は、西野の行方を訊ねた。\n<wait>
-m/MS0019.BIN	0:01	80	2746	1FD2	男性：	Man:	Man:	v005	draft	
-m/MS0019.BIN	0:01	81	2754	1FD3	{02:08}‥{08:04}さんは{02:08}‥<wait>{08:72}死んで{08:1F}{08:72}\n<wait>	.........Nishino is.........<wait>...dead...\n<wait>			draft	reads: ‥‥‥‥西野さんは‥‥‥‥<wait>‥‥死んでしまった‥‥\n<wait>
-m/MS0019.BIN	0:01	82	2795	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0019.BIN	0:01	83	2801	1FD3	{02:08}{08:7A}！　隊長{02:08}\n<wait>	......No! The Captain......\n<wait>			draft	reads: ‥‥‥そんな！　隊長‥‥‥\n<wait>
-m/MS0019.BIN	0:01	84	2824	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	85	2832	1FD3	護国寺で、アスタルテの襲撃を受けて、奴の炎にやら{08:60}{08:5F}。\n<wait>	We were attacked by Astarte at Gokokuji, and her flames got him.\n<wait>			draft	reads: 護国寺で、アスタルテの襲撃を受けて、奴の炎にやられたんだ。\n<wait>
-m/MS0019.BIN	0:01	86	2895	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	87	2903	1FD3	{08:72}俺がも{08:53}しっかり{08:4A}いれば、{08:73}事には{08:72}\n<wait>	...If only I'd been more capable, this never would have......\n<wait>			draft	reads: ‥‥俺がもっとしっかりしていれば、こんな事には‥‥\n<wait>
-m/MS0019.BIN	0:01	88	2956	1F01	達{08:62}衝撃的な事実に思わず口を閉ざ{08:4A}{08:1F}{08:72}\n<wait>	 and the others fell silent at the shocking news...\n<wait>			draft	reads: 達は、衝撃的な事実に思わず口を閉ざしてしまった‥‥\n<wait>
-m/MS0019.BIN	0:01	89	3008	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	90	3016	1FD3	{02:08}{08:48}{08:72}彼の遺品な{08:5F}{08:72}\n彼の肉親に{08:56}遭っ{08:50}手渡そうと、持{08:52}{08:64}{08:5F}が{08:72}\n<wait>	......This... was his.\nI was carrying it to hand over if I ever met his family, but...\n<wait>			draft	reads: ‥‥‥これ‥‥彼の遺品なんだ‥‥\n彼の肉親にでも遭ったら手渡そうと、持っていたんだが‥‥\n<wait>
-m/MS0019.BIN	0:01	91	3088	1FD0	そう言うと、男は１枚のカードを差し出{08:4B}。\n	So saying, the man held out a single card.\n			draft	reads: そう言うと、男は１枚のカードを差し出した。\n
-m/MS0019.BIN	0:01	92	3145	1FB2	受けとる		Take it	v005		menu option, declared width 20 columns; @refalign
-m/MS0019.BIN	0:01	93	3155	1FB2	{08:48}は？		What's this?	v005		reads: これは？; menu option, declared width 20 columns; @refalign
-m/MS0019.BIN	0:01	94	3189	1F01	{08:62}カードを受けと{08:51}。\n<wait>	 accepted the card.\n<wait>			draft	reads: は、カードを受けとった。\n<wait>
-m/MS0019.BIN	0:01	95	3223	1FD0	見た{08:74}では{08:79}カードが何で{08:7B}か、判別がつか{08:19}。\n	Just from looking, he could not tell what the card was.\n			draft	reads: 見ただけではそのカードが何であるか、判別がつかなかった。\n
-m/MS0019.BIN	0:01	96	3274	1F01	{08:62}男に{08:47}カードが何かを訊ねた。\n<wait>	 asked the man what the card was.\n<wait>			draft	reads: は、男にこのカードが何かを訊ねた。\n<wait>
-m/MS0019.BIN	0:01	97	3313	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	98	3321	1FD3	{08:48}{08:62}好きな画像を入れてお{08:29}、カードタイプのプロジェクターだよ。\n<wait>	It's a card-type projector. You can load any picture you like into it.\n<wait>			draft	reads: これは、好きな画像を入れておける、カードタイプのプロジェクターだよ。\n<wait>
-m/MS0019.BIN	0:01	99	3392	1FD2	男性：	Man:	Man:	v005	draft	
-m/MS0019.BIN	0:01	100	3400	1FD3	{08:45}を、こう{08:4C}{02:08}\n<wait>	You press here, like this......\n<wait>	You just press the tiny button here, and...\n<wait>	v005	draft	reads: ここを、こうすると‥‥‥\n<wait>
-m/MS0019.BIN	0:01	101	3423	1FD0	男が	When the man			draft	@split-authored
-m/MS0019.BIN	0:01	102	3427	1FD0	カードについて{08:64}スイッチを入{08:2F}と、陽子と知多が寄り添い微笑んで{08:40}\nホログラムが現わ{08:60}{02:08}\n<wait>	 flicked the switch on the card, a hologram appeared of Youko and Chita\nsmiling, close together.........\n<wait>			draft	@split-tail of [101]; reads: カードについていたスイッチを入れると、陽子と知多が寄り添い微笑んでいる\nホログラムが現われた‥‥‥\n<wait>; @split-authored
-m/MS0019.BIN	0:01	103	3521	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0019.BIN	0:01	104	3527	1FD3	{08:72}おばさん{08:72}知多君{02:08}\n<wait>	...Ma'am... Chita......\n<wait>			draft	reads: ‥‥おばさん‥‥知多君‥‥‥\n<wait>
-m/MS0019.BIN	0:01	105	3556	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	106	3564	1FD3	{08:48}{08:62}君達が持{08:52}{08:64}方が{08:7F}{08:8C}。\n君達が今、一番{08:04}さんに近い人の{08:69}だ{08:42}ね。\n<wait>	You two should keep this.\nRight now, you seem to be the people closest to Nishino.\n<wait>			draft	reads: これは、君達が持っていた方がいいだろう。\n君達が今、一番西野さんに近い人のようだからね。\n<wait>
-m/MS0019.BIN	0:01	107	3640	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:01	108	3648	1FD3	{02:08}あっ、お、俺そういえば自己紹介が{08:76}だ{08:51}な！\n俺は{08:3B}{08:3C}だ。\n<wait>	......Oh, r-right, I haven't introduced myself!\nI'm Souma Sanshirou.\n<wait>			draft	reads: ‥‥‥あっ、お、俺そういえば自己紹介がまだだったな！\n俺は相馬三四郎だ。\n<wait>
-m/MS0019.BIN	0:01	109	3714	1FD2	{08:3C}：		Sanshirou:	v005		reads: 三四郎：
-m/MS0019.BIN	0:01	110	3720	1FD3	大破壊前に、一緒に行動{08:4A}{08:64}{08:0F}達を捜{08:13}{08:5F}。\n{08:72}生き{08:14}のか{08:90}かも、分{08:42}{08:25}{08:5F}がな{08:72}\n<wait>		I'm looking for the people I used to work with before the rapture.\nAssuming that they're still alive, that is...\n<wait>	v005		reads: 大破壊前に、一緒に行動していた仲間達を捜しているんだ。\n‥‥生きているのかどうかも、分からないんだがな‥‥\n<wait>; @refalign
-m/MS0019.BIN	0:01	111	3818	1FB2	{08:63}も名乗る		Introduce yourself	v005		reads: 自分も名乗る; menu option, declared width 20 columns; @refalign
-m/MS0019.BIN	0:01	112	3830	1FB2	君も大変な{08:5F}ね		Sounds tough	v005		reads: 君も大変なんだね; menu option, declared width 20 columns; @refalign
-m/MS0019.BIN	0:01	113	3864	1FD2	{08:3C}：		Sanshirou:	v005		reads: 三四郎：
-m/MS0019.BIN	0:01	114	3870	1FD3	ああ{02:08}まあな。\n{08:87}で、君の名前は{02:08}‥？\n<wait>		Yeah... By the way, what is your name?\n<wait>	v005		reads: ああ‥‥‥まあな。\nところで、君の名前は‥‥‥‥？\n<wait>; @refalign
-m/MS0019.BIN	0:01	115	3916	1FD0	{08:45}{08:71}来{08:50}、{08:63}も名乗るのが礼儀{08:8C}。\n<wait>		I already introduced myself. It's only polite that you do the same.\n<wait>	v005		reads: ここまで来たら、自分も名乗るのが礼儀だろう。\n<wait>; @refalign
-m/MS0019.BIN	0:01	116	3963	1F01	は{08:63}も名乗り、他のメンバーも紹介{08:4B}。\n<wait>	 gave his own name too, and introduced the others.\n<wait>	You introduce yourself and your party members to the man.\n<wait>	v005	draft	reads: は自分も名乗り、他のメンバーも紹介した。\n<wait>; @refalign
-m/MS0019.BIN	0:01	117	4008	1FD2	{08:3C}：		Sanshirou:	v005		reads: 三四郎：
-m/MS0019.BIN	0:01	118	4014	1FD3	{08:45}に来たの{08:62}廃墟で{08:0B}にやられて片腕無くしち{08:20}{08:5F}よ。\nサイバーアームだ{08:51}{08:84}な。\n<wait>		A little while ago, I was attacked by some demons, and lost my arm.\n<wait>	v005		reads: ここに来たのは、廃墟で悪魔にやられて片腕無くしちまったんだよ。\nサイバーアームだったけどな。\n<wait>; @refalign
-m/MS0019.BIN	0:01	119	4098	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0019.BIN	0:01	120	4104	1FD3	{08:4D}で、安くサイバーアームを仕入れに来た{08:52}訳ね。\n<wait>	So you came to buy a cyber arm on the cheap, then.\n<wait>	And you came here to see if you could find a replacement?\n<wait>	v005	draft	reads: それで、安くサイバーアームを仕入れに来たって訳ね。\n<wait>
-m/MS0019.BIN	0:01	121	4159	1FD2	{08:3C}：	Sanshirou:	Sanshirou:	v005	draft	reads: 三四郎：
-m/MS0019.BIN	0:01	122	4165	1FD3	{08:79}通り。\n<wait>で、{08:48}{08:42}は銀座に向かおうと思っ{08:2B}{08:5F}。\n<wait>		Pretty much, yeah.\n<wait>After that, I'm planning on heading to Ginza.\n<wait>	v005		reads: その通り。\n<wait>で、これからは銀座に向かおうと思ってるんだ。\n<wait>; @refalign
-m/MS0019.BIN	0:01	123	4223	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0019.BIN	0:01	124	4229	1FD3	銀座{08:7D}私達も、{08:48}{08:42}向かおうと思{08:52}{08:64}ん{08:55}。\n<wait>		That's a coincidence. We were about to head there ourselves.\n<wait>	v005		reads: 銀座なら私達も、これから向かおうと思っていたんです。\n<wait>; @refalign
-m/MS0019.BIN	0:01	125	4278	1FD2	{08:3C}：		Sanshirou:	v005		reads: 三四郎：
-m/MS0019.BIN	0:01	126	4284	1FD3	{08:4D}{08:7D}丁度{08:7F}。\n	Then that's perfect.\n			draft	reads: それなら丁度いい。\n
-m/MS0019.BIN	0:01	127	4303	1F01	君、よ{08:18}ら俺もパーティーに加えてくれ{08:25}か？\n<wait>	, would you let me join your party?\n<wait>			draft	reads: 君、よかったら俺もパーティーに加えてくれないか？\n<wait>
-m/MS0019.BIN	0:01	128	4354	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0019.BIN	0:01	129	4360	1FD3	{02:0E}こそ。{08:0B}も強く{08:1B}しで、不安だ{08:51}の。\n	Same here. The demons have been getting stronger, and I was worried.\n			draft	reads: こちらこそ。悪魔も強くなってきたしで、不安だったの。\n
-m/MS0019.BIN	0:01	130	4403	1F01	君の、{08:0B}も{08:40}と{08:26}え{08:72}ね。\n<wait>	's demons are with us, but still... you know.\n<wait>			draft	reads: 君の、悪魔もいるとはいえ‥‥ね。\n<wait>
-m/MS0019.BIN	0:01	131	4436	1FD2	{08:03}：		Emi:	v005		reads: 英美：
-m/MS0019.BIN	0:01	132	4442	1FD3	{02:0E}{08:42}お願い{08:4B}いくらいだわ。\n<wait>		Welcome aboard, Sanshirou.\n<wait>	v005		reads: こちらからお願いしたいくらいだわ。\n<wait>; @refalign
-m/MS0019.BIN	0:01	133	4477	1FD2	{08:3C}：		Sanshirou:	v005		reads: 三四郎：
-m/MS0019.BIN	0:01	134	4483	1FD3	よし！　{08:81}あ、決まりだな。\n{01:23}よろしく頼むぜ！\n<wait>		Hell yeah!\n<wait>	v005		reads: よし！　じゃあ、決まりだな。\nしばらくよろしく頼むぜ！\n<wait>; @refalign
-m/MS0019.BIN	0:02	0	24	1FD2	若者：		Young Man:	v005		
-m/MS0019.BIN	0:02	1	37	09	都庁の上に、どでかい城が建っち{08:20}{08:5F}{08:52}よ！\n<wait>		They say that a massive castle appeared over the Government Office!\n<wait>	v005		reads: 都庁の上に、どでかい城が建っちまったんだってよ！\n<wait>; @refalign
-m/MS0019.BIN	0:02	2	86	1FD2	若者：		Young Man:	v005		
-m/MS0019.BIN	0:02	3	94	1FD3	{08:0B}達が攻めてくる{08:72}絶対そうに決まっ{08:2B}！！\n		The demons are gonna attack us! It's gotta be!\n	v005		reads: 悪魔達が攻めてくる‥‥絶対そうに決まってる！！\n
-m/MS0019.BIN	0:02	4	141	09	上野にバール教団の総本山が{08:7B}ぜ！\n<wait>		The central church of the Baalites is located in Ueno.\n<wait>	ours		reads: 上野にバール教団の総本山があるぜ！\n<wait>
-m/MS0019.BIN	0:02	5	182	1FD2	若者：		Young Man:	v005		
-m/MS0019.BIN	0:02	6	190	1FD3	気味が悪いんで、あんまり近寄る奴は{08:24}{08:84}な。\n教団に入信し{08:69}{08:52}ん{08:7D}、別{08:74}どな。\n		You'd be wise to stay far away from there.\nUnless you're looking to join their ranks, that is.\n	v005		reads: 気味が悪いんで、あんまり近寄る奴はいないけどな。\n教団に入信しようってんなら、別だけどな。\n
-m/MS0019.BIN	0:02	7	272	09	新宿の{08:0B}共が、何か建て{08:2B}らしいぜ。\n奴ら{08:52}、けっこうマメだよな。\n		It appears that the demons in Shinjuku are building something.\nThose are some hard-working bastards...\n	v005		reads: 新宿の悪魔共が、何か建ててるらしいぜ。\n奴らって、けっこうマメだよな。\n; @refalign
-m/MS0019.BIN	0:02	8	337	00	新宿が{08:5B}、{08:0B}共の手に落ち{08:50}しい。\nかなり死人も出{08:2B}らしいぜ。\n<wait>	Shinjuku seems to have fallen to the demons again.\nQuite a few dead too, I hear.\n<wait>			draft	reads: 新宿がまた、悪魔共の手に落ちたらしい。\nかなり死人も出てるらしいぜ。\n<wait>
-m/MS0019.BIN	0:02	9	405	1FD2	若者：	Young Man:			draft	
-m/MS0019.BIN	0:02	10	413	1FD3	死体回収業者の奴、大{08:5C}けだ{08:51}{08:8C}な。\n	The corpse collectors must've made a killing.\n			draft	reads: 死体回収業者の奴、大もうけだっただろうな。\n
-m/MS0019.BIN	0:03	0	24	1FD2	女性：		Woman:	v005		
-m/MS0019.BIN	0:03	1	44	09	市ヶ谷の{08:10}{08:52}、今、予約一杯で紹介状持{08:52}{08:25}と\n診療{08:4A}もらえ{08:25}の。\n<wait>		There's a super advanced hospital located in Ichigaya Shelter.\nHowever, they'll only treat you if you have a referral note.\n<wait>	v005		reads: 市ヶ谷のシェルターって、今、予約一杯で紹介状持ってないと\n診療してもらえないの。\n<wait>; @refalign
-m/MS0019.BIN	0:03	2	114	1FD2	女性：		Woman:	v005		
-m/MS0019.BIN	0:03	3	122	1FD3	紹介状{08:52}言{08:52}も、そんじょそこらの医者や博士の{08:81}ダメ。\n市ヶ谷{08:10}の先生が、頭あがん{08:25}人{08:81}{08:25}とダメよ。\n		A letter of introduction from just any old doctor won't do.\nIt has to be from someone the Ichigaya Shelter doctor can't say no to.\n	ours		reads: 紹介状って言っても、そんじょそこらの医者や博士のじゃダメ。\n市ヶ谷シェルターの先生が、頭あがんない人じゃないとダメよ。\n
-m/MS0019.BIN	0:03	4	226	09	うっそー！！　{08:3F}{08:52}{01:08}城{08:6B}ぉ！？\nやだー！　{08:5B}、あいつらが勢力伸ば{08:4A}くるの？\n		No way!! Is that seriously Baal's Castle!?\nUgh, no way! Are they gonna keep growing their power again?\n	ours		reads: うっそー！！　あれってバエル城なのぉ！？\nやだー！　また、あいつらが勢力伸ばしてくるの？\n
-m/MS0019.BIN	0:03	5	306	09	上野にバール教総本山が{08:7B}{08:84}、{01:08}と関係{08:7B}のかしらね？\n取りあえず、{08:0B}とは関係{08:7B}み{08:4E}{08:74}ど。\n		There's the Baal cult's head temple in Ueno... is it connected to Baal?\nWell, it does seem connected to demons somehow, at least.\n	ours		reads: 上野にバール教総本山があるけど、バエルと関係あるのかしらね？\n取りあえず、悪魔とは関係あるみたいだけど。\n
-m/MS0019.BIN	0:03	6	398	09	都庁の上の建物、殆ど完成し{08:2B}わよね。\nまるで、お城み{08:4E}{02:08}\n		That building above City Hall is pretty much finished now, huh.\nIt's just like a castle...\n	ours		reads: 都庁の上の建物、殆ど完成してるわよね。\nまるで、お城みたい‥‥‥\n
-m/MS0019.BIN	0:03	7	460	09	ねぇ知{08:52}た？\n都庁の上、空中に{08:0B}達が何か作っ{08:2B}ん{08:55}{08:52}！\n<wait>		Hey, did you know?\nApparently the demons are building something in the sky above City Hall!\n<wait>	ours		reads: ねぇ知ってた？\n都庁の上、空中に悪魔達が何か作ってるんですって！\n<wait>
-m/MS0019.BIN	0:03	8	522	1FD2	女性：		Woman:	v005		
-m/MS0019.BIN	0:03	9	530	1FD3	{08:56}{08:72}空飛べ{08:50}便利よねぇ。\nカッコイイ飛行ユニットとか出{08:25}かしら{02:08}\n		But... it'd be handy to be able to fly, huh.\nI wonder if some cool flying unit will show up...\n	ours		reads: でも‥‥空飛べたら便利よねぇ。\nカッコイイ飛行ユニットとか出ないかしら‥‥‥\n
-m/MS0019.BIN	0:03	10	595	00	{08:45}で売っ{08:2B}サイバーパーツ{08:62}どれもお買い得よ！\n<wait>		They have incredible deals on cybernetics here.\n<wait>	v005		reads: ここで売ってるサイバーパーツは、どれもお買い得よ！\n<wait>
-m/MS0019.BIN	0:03	11	648	1FD2	女性：		Woman:	v005		
-m/MS0019.BIN	0:03	12	656	1FD3	外部記憶装置も捨て難いし{02:08}<wait>どれにし{08:69}か迷っちゃうわ！\n		Just look at this memory device... It'd be a waste not to buy it...\n<wait>Aah! Too much choice!\n	v005		reads: 外部記憶装置も捨て難いし‥‥‥<wait>どれにしようか迷っちゃうわ！\n
-m/MS0019.BIN	0:04	0	24	1FD2	女性：		Woman:	v005		
-m/MS0019.BIN	0:04	1	37	09	都庁の上に出来た{08:5E}見た！？\nすっごいお城よね！！\n<wait>		Have you seen that thing over the Government Office?\nThat giant, floating castle?\n<wait>	v005		reads: 都庁の上に出来たもの見た！？\nすっごいお城よね！！\n<wait>; @refalign
-m/MS0019.BIN	0:04	2	95	09	{08:0B}が都庁上空に、変な物建て{08:2B}のよね！\n一体どんな技術{08:6B}かしら！？\n<wait>		The demons are building something in the air over the Government Office!\nHow is that even physically possible?\n<wait>	v005		reads: 悪魔が都庁上空に、変な物建ててるのよね！\n一体どんな技術なのかしら！？\n<wait>; @refalign
-m/MS0019.BIN	0:04	3	164	00	{08:47}東京を旅{08:8E}{02:0B}にと{08:52}、サイバネック技術は無くては{08:7D}{08:25}物よ。\n<wait>	For anyone traveling this Tokyo, cybernetics are a must.\n<wait>			draft	reads: この東京を旅する人間にとって、サイバネック技術は無くてはならない物よ。\n<wait>
-m/MS0019.BIN	0:04	4	231	1FD2	女性：	Woman:			draft	
-m/MS0019.BIN	0:04	5	239	1FD3	早くお金をためて、サイバー化しなきゃ！\n<wait>	I've got to save up and get cybered up, quick!\n<wait>			draft	
-m/MS0019.BIN	0:05	0	24	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:05	1	44	09	市ヶ谷の先生{08:62}昔どっかの博士に師事{08:4A}い{08:50}しい。\n{08:79}師匠も、今はどこかの地下に引きこも{08:52}研究に没頭し{08:2B}らしい。\n		Apparently the professor in Ichigaya used to study under some doctor.\nAnd that mentor's now buried underground, lost in his research.\n	ours		reads: 市ヶ谷の先生は、昔どっかの博士に師事していたらしい。\nその師匠も、今はどこかの地下に引きこもって研究に没頭してるらしい。\n
-m/MS0019.BIN	0:05	2	158	09	{01:08}{08:72}やっぱり生きていやが{08:51}か！\n		Baal... So that bastard's still alive after all!\n	ours		reads: バエル‥‥やっぱり生きていやがったか！\n
-m/MS0019.BIN	0:05	3	195	09	{01:08}が倒{03:0C}て{08:42}も、奴の威光は消え{08:25}{08:72}\n<wait>		Even after Baal was defeated, his influence hasn't faded...\n<wait>	ours		reads: バエルが倒されてからも、奴の威光は消えない‥‥\n<wait>
-m/MS0019.BIN	0:05	4	238	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:05	5	246	1FD3	{02:03}が倒{08:4B}の{08:62}やっぱり偽物だ{08:51}ん{08:8C}な。\n影武者の一人や二人、い{08:54}おかしく{08:25}{08:42}な。\n		The one the Resistance took down was probably just a decoy after all.\nWouldn't be strange for a guy like that to have a body double or two.\n	ours		reads: レジスタンスが倒したのは、やっぱり偽物だったんだろうな。\n影武者の一人や二人、いてもおかしくないからな。\n
-m/MS0019.BIN	0:05	6	330	09	新宿の空中に出来{08:2B}建物{08:62}{01:08}城だ{08:72}<wait>{08:52}{08:68}噂が有力な{08:5F}。\n		That building forming in the sky over Shinjuku is Baal's Castle...<wait>or so the rumor goes, at least.\n	ours		reads: 新宿の空中に出来てる建物は、バエル城だ‥‥<wait>っていう噂が有力なんだ。\n
-m/MS0019.BIN	0:05	7	391	09	品川のホテル{08:52}、どこぞ{08:42}逃げ出{08:4B}デミ・ヒューマン達が\n居着いてた{08:5F}{08:52}な。\n		That hotel in Shinagawa, huh - I hear it's become a hideout\nfor demi-humans who escaped from somewhere.\n	ours		reads: 品川のホテルって、どこぞから逃げ出したデミ・ヒューマン達が\n居着いてたんだってな。\n
-m/MS0019.BIN	0:05	8	469	09	品川に大破壊前の高級ホテルがあ{08:52}な、建物の損傷が比較的少なくて、\n雨露凌ぐにゃ絶好の場所だ{01:29}。\n		There's a fancy hotel in Shinagawa from before the Great Destruction, and\nsince it wasn't damaged much, it's a perfect spot to wait out the rain.\n	ours		reads: 品川に大破壊前の高級ホテルがあってな、建物の損傷が比較的少なくて、\n雨露凌ぐにゃ絶好の場所だそうだ。\n
-m/MS0019.BIN	0:05	9	564	00	神田に{08:62}俺み{08:4E}なミュータントがたくさん{08:40}{08:84}よ、{08:90}もあそこ{08:62}\n辛気臭くていけねぇや。\n		Kanda is home to many other mutants like me.\nEven so, I wouldn't want to live there. The place sucks.\n	v005		reads: 神田には、俺みたいなミュータントがたくさんいるけどよ、どうもあそこは、\n辛気臭くていけねぇや。\n; @refalign
-m/MS0019.BIN	0:06	0	33	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:06	1	41	1FD3	へい！　らっしゃい！！\nあ{08:72}あ、アンタか{02:08}‥\n<wait>		Welcome! Wait... Ah! It's you!\n<wait>	v005		reads: へい！　らっしゃい！！\nあ‥‥あ、アンタか‥‥‥‥\n<wait>
-m/MS0019.BIN	0:06	2	93	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:06	3	101	1FD3	今日は強盗は無しだぜ！！\n<wait>		Listen, I haven't stolen anything today!\n<wait>	v005		
-m/MS0019.BIN	0:06	4	134	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:06	5	142	1FD3	何に{08:8E}{08:5F}？\n		What do you want?\n	v005		reads: 何にするんだ？\n
-m/MS0019.BIN	0:06	6	169	1FB2	天叢雲剣		Ama-no-Murakumo	v005		menu option, declared width 20 columns; @refalign
-m/MS0019.BIN	0:06	7	179	1FB2	ガーディアンの服		Guardian Uniform	v005		menu option, declared width 20 columns; @refalign
-m/MS0019.BIN	0:06	8	197	1FB2	ミレニアムベレー		Millennium Beret	v005		menu option, declared width 20 columns; @refalign
-m/MS0019.BIN	0:06	9	215	1FB2	いら{08:25}		Never mind	v005		reads: いらない; menu option, declared width 20 columns; @refalign
-m/MS0019.BIN	0:06	10	251	1FD2	男性：	Man:	Man:	v005	draft	
-m/MS0019.BIN	0:06	11	259	1FD3	今日の目玉商品だ！　あの伝説の剣、天叢雲剣！！\nと、言{08:52}もレプリカ{08:8F}な。\n<wait>		Today's special product is the legendary sword Ama-no-Murakumo!\nWell, a replica, actually...\n<wait>	v005		reads: 今日の目玉商品だ！　あの伝説の剣、天叢雲剣！！\nと、言ってもレプリカだがな。\n<wait>
-m/MS0019.BIN	0:06	12	339	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:06	13	347	1FD3	{08:48}さえ{08:3F}ば、ナウなギャルにモテモテだ！！\n<wait>		With this, all the girls will fall for you!\n<wait>	v005		reads: これさえあれば、ナウなギャルにモテモテだ！！\n<wait>
-m/MS0019.BIN	0:06	14	396	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:06	15	404	1FD3	値段は{02:08}５０００マッカだぜ。\n		The price is... 5000 Macca.\n	ours		reads: 値段は‥‥‥５０００マッカだぜ。\n
-m/MS0019.BIN	0:06	16	449	1FB2	買う		Purchase	v005		menu option, declared width 20 columns; @refalign
-m/MS0019.BIN	0:06	17	455	1FB2	買わ{08:25}		Never mind	v005		reads: 買わない; menu option, declared width 20 columns; @refalign
-m/MS0019.BIN	0:06	18	494	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:06	19	502	1FD3	残念！！　マッカが足り{08:25}{08:69}だな。\n	Too bad!! Looks like you don't have enough Macca.\n	Sorry! Looks like you don't got enough Macca.\n	ours	draft	reads: 残念！！　マッカが足りないようだな。\n
-m/MS0019.BIN	0:06	20	555	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:06	21	563	1FD3	おんや？　{08:5C}荷物を持て{08:25}み{08:4E}だねぇ。\nどっかで物売{08:52}{08:42}{08:5B}来な！\n<wait>		Oh my? Looks like you can't carry any more, huh.\nCome back after you've sold some stuff somewhere!\n<wait>	ours		reads: おんや？　もう荷物を持てないみたいだねぇ。\nどっかで物売ってからまた来な！\n<wait>
-m/MS0019.BIN	0:06	22	633	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:06	23	641	1FD3	え？　{08:45}で買い取りはや{08:52}{08:25}のか{08:52}？\n<wait>{01:18}らの持っ{08:2B}モンで、俺の商売心をくすぐる物が無い{08:5F}よ。\n<wait>		Huh? You're asking if I don't buy things here?\n<wait>Nothing you're carrying tickles my merchant's fancy, that's all.\n<wait>	ours		reads: え？　ここで買い取りはやってないのかって？\n<wait>あんたらの持ってるモンで、俺の商売心をくすぐる物が無いんだよ。\n<wait>
-m/MS0019.BIN	0:06	24	743	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:06	25	751	1FD3	{08:48}は早いモン勝ちだ{08:42}な。\n欲しいモンが{08:7B}ん{08:7D}、と{08:53}と荷物に余裕を作{08:52}来な！\n		It's first come, first served around here.\nIf there's something you want, hurry up and make room in your bags!\n	ours		reads: これは早いモン勝ちだからな。\n欲しいモンがあるんなら、とっとと荷物に余裕を作って来な！\n
-m/MS0019.BIN	0:06	26	833	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:06	27	841	1FD3	まいどありー。\n		Thanks!\n	v005		@split-tailless: the cut took only a trailing escape, nothing to divide
-m/MS0019.BIN	0:06	28	864	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:06	29	872	1FD3	他にも何か{08:7B}かい？\n		Anything else?\n	v005		reads: 他にも何かあるかい？\n
-m/MS0019.BIN	0:06	30	898	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:06	31	906	1FD3	そうか。残念だな。\n		Really? Well, that's too bad.\n	v005		
-m/MS0019.BIN	0:06	32	932	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:06	33	940	1FD3	{08:48}はミレニアムの警備兵、ガーディアンの制服セットだ。\n{08:48}を着れば、今日{08:42}貴方もミレニアムの一員！！\n<wait>		This is the same set of armour worn by the guardians at Millennium.\nYou'll be able to blend right in!\n<wait>	v005		reads: これはミレニアムの警備兵、ガーディアンの制服セットだ。\nこれを着れば、今日から貴方もミレニアムの一員！！\n<wait>
-m/MS0019.BIN	0:06	34	1046	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:06	35	1054	1FD3	今{08:7D}お得な、人数分のセットだぜ！\n<wait>		Purchase it now,\nand I'll toss in a set for your party members as a bonus!\n<wait>	v005		reads: 今ならお得な、人数分のセットだぜ！\n<wait>
-m/MS0019.BIN	0:06	36	1095	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:06	37	1103	1FD3	お{08:53}、バレち{08:20}後の保証{08:71}は付いて{08:25}{08:42}な。\n俺を恨むのはよ{08:4A}くれよ！\n<wait>		Oh, but I should mention, if you get caught, that's your own fault.\nI don't give refunds!\n<wait>	v005		reads: おっと、バレちまった後の保証までは付いてないからな。\n俺を恨むのはよしてくれよ！\n<wait>
-m/MS0019.BIN	0:06	38	1177	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:06	39	1185	1FD3	今{08:7D}特価、６８００マッカだ！\n		The price is 6800 Macca. What do you say?\n	ours		reads: 今なら特価、６８００マッカだ！\n
-m/MS0019.BIN	0:06	40	1230	1FB2	買う		Purchase	v005		menu option, declared width 20 columns; @refalign
-m/MS0019.BIN	0:06	41	1236	1FB2	買わ{08:25}		Never mind	v005		reads: 買わない; menu option, declared width 20 columns; @refalign
-m/MS0019.BIN	0:06	42	1300	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:06	43	1308	1FD3	まいどありー。\n		Thanks!\n	v005		
-m/MS0019.BIN	0:06	44	1330	1FD2	男性：	Man:	Man:	v005	draft	
-m/MS0019.BIN	0:06	45	1344	1F7C	ミレニアム信者がかぶっ{08:2B}、おしゃれなベレー帽だ！\nレプリカ{08:6A}か{08:81}{08:25}、れっきと{08:4B}本物さ！！\n<wait>		This is the headwear worn by the devotees of Millennium.\nIt's the real thing. Not a replica.\n<wait>	v005		reads: ミレニアム信者がかぶってる、おしゃれなベレー帽だ！\nレプリカなんかじゃない、れっきとした本物さ！！\n<wait>
-m/MS0019.BIN	0:06	46	1440	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:06	47	1448	1FD3	男性用と女性用が{08:7B}{08:42}、カップルでペア{08:52}のも{08:7F}ね！\n<wait>		I've got ones for both men and women,\nso you and your gal can be stylish together!\n<wait>	v005		reads: 男性用と女性用があるから、カップルでペアってのもいいね！\n<wait>
-m/MS0019.BIN	0:06	48	1505	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:06	49	1513	1FD3	え？　出所？\n出所{08:6A}て野暮な事聞か{08:25}でくれよ、ハニー。\n<wait>		Huh? Where did I get them? Oh, come on.\nYou never ask a merchant where he gets his wares.\n<wait>	v005		reads: え？　出所？\n出所なんて野暮な事聞かないでくれよ、ハニー。\n<wait>
-m/MS0019.BIN	0:06	50	1575	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:06	51	1583	1FD3	気に{08:59}お値段は{02:08}{08:72}\n<wait>ありゃ！？　在庫切れだ。すま{08:25}ねぇ。\n		The price is...\n<wait>Oh? Sorry. On a second look, it seems that I'm out of stock.\n	v005		reads: 気になるお値段は‥‥‥‥‥\n<wait>ありゃ！？　在庫切れだ。すまないねぇ。\n
-m/MS0019.BIN	0:06	52	1646	18	こいつは今、在庫切れな{08:5F}。すま{08:25}ねぇ。\n		I'm out of stock at the moment. Sorry about that.\n	v005		reads: こいつは今、在庫切れなんだ。すまないねぇ。\n; @refalign
-m/MS0019.BIN	0:06	53	1692	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:06	54	1700	1FD3	そうか。{08:81}あ、{08:5B}気が向い{08:50}寄{08:52}くれよな！\n		I see. Well, drop by again whenever you feel like it!\n	ours		reads: そうか。じゃあ、また気が向いたら寄ってくれよな！\n
-m/MS0019.BIN	0:07	0	24	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:07	1	37	09	おい、新宿にでっかいのが建{08:51}だろ！\n{08:3F}、実は{01:08}城らしいぜ！\n<wait>		You've seen that giant building in Shinjuku?\nThat's actually Baal's Castle!\n<wait>	ours		reads: おい、新宿にでっかいのが建っただろ！\nあれ、実はバエル城らしいぜ！\n<wait>
-m/MS0019.BIN	0:07	2	103	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:07	3	111	1FD3	嘘{08:81}ねぇよ！\nちゃんと、ネットに潜{08:52}見た{08:5F}{08:42}よ！\n<wait>		No, I'm not kidding. I've seen it online.\n<wait>	v005		reads: 嘘じゃねぇよ！\nちゃんと、ネットに潜って見たんだからよ！\n<wait>
-m/MS0019.BIN	0:07	4	164	00	秋葉原のお買い得品{08:62}サイバー関係{08:74}{08:81}{08:25}ぜ！\n<wait>		Cybernetics aren't the only goods they sell here at Akihabara.\n<wait>	v005		reads: 秋葉原のお買い得品は、サイバー関係だけじゃないぜ！\n<wait>
-m/MS0019.BIN	0:07	5	215	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:07	6	223	1FD3	一見、{08:82}のガラクタや古道具に見え{08:54}、{08:79}実、とん{08:56}{08:25}物だ{08:51}り\n{08:8E}か{08:5D}れ{08:25}ぜ！\n<wait>		What looks like junk at first might very well prove to be treasure!\n<wait>	v005		reads: 一見、ただのガラクタや古道具に見えても、その実、とんでもない物だったり\nするかもしれないぜ！\n<wait>
-m/MS0019.BIN	0:08	0	2	1FD2	女性：		Woman:	v005		
-m/MS0019.BIN	0:08	1	15	09	バール教信者{08:52}、何考えてんのかしら？\n<wait>		What goes on in the mind of those Baalites?\n<wait>	ours		reads: バール教信者って、何考えてんのかしら？\n<wait>
-m/MS0019.BIN	0:08	2	60	1FD2	女性：		Woman:	v005		
-m/MS0019.BIN	0:08	3	68	1FD3	あっちこっちで、{08:0B}の手先み{08:4E}に動き回{08:52}{02:08}\n{02:0B}のプライド{08:52}モンが無いのかしら？\n<wait>		How can a human being work for a demon? Don't they have any shame?\n<wait>	v005		reads: あっちこっちで、悪魔の手先みたいに動き回って‥‥‥\n人間のプライドってモンが無いのかしら？\n<wait>
-m/MS0019.BIN	0:08	4	154	09	{08:0B}達{08:62}新宿を制圧{08:4A}東京を制覇し{08:69}と{08:13}に違{08:24}わ！！\nき{08:53}そうよ！！\n<wait>		First Shinjuku, then Tokyo. The demons are coming for all of us!\n<wait>	v005		reads: 悪魔達は、新宿を制圧して東京を制覇しようとしているに違いないわ！！\nきっとそうよ！！\n<wait>; @refalign
-m/MS0019.BIN	0:08	5	223	00	{08:45}で売っ{08:2B}激安品{08:52}、いんちき商品も{08:7B}のよね！\n<wait>	Some of the bargains they sell here are fakes, you know!\n<wait>			draft	reads: ここで売ってる激安品って、いんちき商品もあるのよね！\n<wait>
-m/MS0019.BIN	0:08	6	276	1FD2	女性：	Woman:			draft	
-m/MS0019.BIN	0:08	7	284	1FD3	こ{08:25}だ買{08:51}ケーブル{08:6A}て、ひどい物だ{08:51}わ！\n<wait>	The cable I bought the other day was awful!\n<wait>			draft	reads: こないだ買ったケーブルなんて、ひどい物だったわ！\n<wait>
-m/MS0019.BIN	0:09	0	2	1FD2	男性：		Man:	ours		
-m/MS0019.BIN	0:09	1	15	09	最近、バール教徒の数が減{08:51}み{08:4E}で、上野近辺に行{08:52}も脅{03:0C}たり、\n追い返{03:0C}たり{08:52}事が少なく{08:16}{08:5F}。\n<wait>		Lately the number of Baal worshippers near Ueno seems to have dropped, so\ngetting threatened or chased off doesn't happen as much anymore.\n<wait>	ours		reads: 最近、バール教徒の数が減ったみたいで、上野近辺に行っても脅されたり、\n追い返されたりって事が少なくなったんだ。\n<wait>
-m/MS0019.BIN	0:09	2	117	09	{08:0B}達が都庁の上に、群がっ{08:14}のを見ると、\n<wait>{02:0B}の時代は終わ{08:51}のかも知れ{08:25}{02:08}<wait>そう思えてくるよ。\n<wait>		Seeing the demons swarming above City Hall like that,\n<wait>it makes me think... maybe the age of humanity is already over...<wait>that's how it feels, anyway.\n<wait>	ours		reads: 悪魔達が都庁の上に、群がっているのを見ると、\n<wait>人間の時代は終わったのかも知れない‥‥‥<wait>そう思えてくるよ。\n<wait>
-m/MS0019.BIN	0:09	3	218	00	せっかく新宿が解放{03:0C}て、上手い{08:46}や{08:52}たのに{02:08}\n{08:5B}{08:0B}共にやら{08:2F}{08:6A}てよ{02:08}\n<wait>		After Shinjuku finally got liberated and things were going well...\nnow we're getting overrun by demons again...\n<wait>	ours		reads: せっかく新宿が解放されて、上手いことやってたのに‥‥‥\nまた悪魔共にやられるなんてよ‥‥‥\n<wait>
-m/MS0019.BIN	0:09	4	294	1FD2	男性：		Man:	ours		
-m/MS0019.BIN	0:09	5	302	1FD3	{02:01}の連中{08:62}全く役に立た{08:19}し{08:72}\n奴らは一体何をや{08:52}{08:64}{08:5F}！？\n<wait>		Those Pentagramma people were completely useless...\nWhat the hell were they even doing!?\n<wait>	ours		reads: ペンタグランマの連中は、全く役に立たなかったし‥‥\n奴らは一体何をやっていたんだ！？\n<wait>
-m/MS0019.BIN	0:0A	0	24	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:0A	1	37	09	{08:47}東京{08:62}{08:0B}に支配{03:0C}て{08:83}のか{08:72}？\n<wait>		Will all of Tokyo soon be controlled by the demons?...\n<wait>	v005		reads: この東京は、悪魔に支配されてしまうのか‥‥？\n<wait>; @refalign
-m/MS0019.BIN	0:0A	2	78	09	{08:3F}以来、{02:03}はすっかり鳴りをひそめ{08:14}。\n<wait>		I haven't heard a single word of the Resistance ever since the incident.\n<wait>	v005		reads: あれ以来、レジスタンスはすっかり鳴りをひそめている。\n<wait>; @refalign
-m/MS0019.BIN	0:0A	3	123	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:0A	4	131	1FD3	都庁を奪回{08:4A}{08:42}後、{02:03}は何だかおかしく{08:1A}{08:1F}よな{08:72}\n<wait>		I can't quite put my finger on it, but something about the Resistance\nchanged after they took back the Government Office.\n<wait>	v005		reads: 都庁を奪回してから後、レジスタンスは何だかおかしくなってしまったよな‥‥\n<wait>
-m/MS0019.BIN	0:0A	5	183	00	新宿に{08:0B}が攻めて{08:1E}時、{02:03}は何も{08:4A}くれ{08:19}{08:72}\n<wait>		Demons attacked Shinjuku, and yet, they did nothing.\n<wait>	v005		reads: 新宿に悪魔が攻めてきた時、レジスタンスは何もしてくれなかった‥‥\n<wait>
-m/MS0019.BIN	0:0A	6	232	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:0A	7	240	1FD3	あん{08:58}統制が取れて{08:64}組織だ{08:51}のに、あの時は統制{08:6A}てあ{08:51}モン{08:81}\n{08:19}。\n<wait>		They used to always be so tightly organized, but not anymore.\n<wait>	v005		reads: あんなに統制が取れていた組織だったのに、あの時は統制なんてあったモンじゃ\nなかった。\n<wait>
-m/MS0019.BIN	0:0A	8	314	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:0A	9	322	1FD3	そう{02:08}まるで大将を失{08:51}軍の{08:69}だ{08:51}{08:72}\n<wait>		It reminds of me... Yes, an army that has lost its leader.\n<wait>	v005		reads: そう‥‥‥まるで大将を失った軍のようだった‥‥\n<wait>
-m/MS0019.BIN	0:0B	0	2	1FD2	女性：		Woman:	v005		
-m/MS0019.BIN	0:0B	1	20	0E	次はどこをサイバー化し{08:69}かしら{02:08}\n<wait>	Where shall I cyberize next, I wonder......\n<wait>			draft	reads: 次はどこをサイバー化しようかしら‥‥‥\n<wait>
-m/MS0019.BIN	0:0B	2	58	00	死体回収業者{08:62}神出鬼没よ。\n<wait>		Those corpse collectors are like ghosts - here one second, gone the next.\n<wait>	ours		reads: 死体回収業者は、神出鬼没よ。\n<wait>
-m/MS0019.BIN	0:0B	3	93	1FD2	女性：	Woman:			draft	
-m/MS0019.BIN	0:0B	4	101	1FD3	まあ、{08:47}東京はどこに行{08:52}も死体にあ{08:28}し。\n商売のネタには事欠か{08:25}で{08:80}ね。\n<wait>		Well, you can find corpses no matter where you go in Tokyo.\nThey'll never run short of material for their trade.\n<wait>	ours		reads: まあ、この東京はどこに行っても死体にあえるし。\n商売のネタには事欠かないでしょうね。\n<wait>
-m/MS0019.BIN	0:0B	5	181	1FD2	女性：	Woman:			draft	
-m/MS0019.BIN	0:0B	6	189	1FD3	{08:56}、あんな事{08:4A}儲かっ{08:2B}のかしら？\n<wait>		But I wonder if doing something like that actually turns a profit?\n<wait>	ours		reads: でも、あんな事して儲かってるのかしら？\n<wait>
-m/MS0019.BIN	0:0B	7	227	00	{02:03}{08:52}一体{08:90}しちゃ{08:51}のかしら？\nあの人達、新宿陥落{08:4B}時も、何{08:5D}{08:19}らしいし{02:08}\n<wait>何だか変よね。\n<wait>		I wonder what in the world happened to the Resistance?\nThey say those people didn't even do anything when Shinjuku fell...\n<wait>It's kind of strange, isn't it.\n<wait>	ours		reads: レジスタンスって一体どうしちゃったのかしら？\nあの人達、新宿陥落した時も、何もしなかったらしいし‥‥‥\n<wait>何だか変よね。\n<wait>
-m/MS0019.BIN	0:0C	0	2	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:0C	1	15	09	{08:0B}共は本当に、空中城を本拠地に{08:4B}らしい。\n<wait>		I can hardly believe it, but it sounds like the demons\nhave genuinely built a castle in the sky.\n<wait>	v005		reads: 悪魔共は本当に、空中城を本拠地にしたらしい。\n<wait>; @refalign
-m/MS0019.BIN	0:0C	2	66	09	{08:0B}共、いずれはあの空中城に本拠地を移す気{08:8C}。\n<wait>		Those demons will probably move their base to that sky castle eventually.\n<wait>	ours		reads: 悪魔共、いずれはあの空中城に本拠地を移す気だろう。\n<wait>
-m/MS0019.BIN	0:0C	3	121	09	{08:48}{08:42}東京は{08:90}{08:1A}{08:83}{08:5F}{02:08}\n<wait>		I wonder what the future looks like for Tokyo...\n<wait>	v005		reads: これから東京はどうなってしまうんだ‥‥‥\n<wait>; @refalign
-m/MS0019.BIN	0:0C	4	147	00	新宿は酷い事に{08:1A}{08:1F}。\n都庁に近づくにつれて、{08:0B}が凶暴化{08:13}{08:69}だ。\n<wait>		Shinjuku's turned into an awful mess.\nThe closer you get to City Hall, the more vicious the demons seem to get.\n<wait>	ours		reads: 新宿は酷い事になってしまった。\n都庁に近づくにつれて、悪魔が凶暴化しているようだ。\n<wait>
-m/MS0019.BIN	0:0C	5	217	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:0C	6	225	1FD3	都庁の側{08:71}行{08:43}と{08:4A}も、都庁の中には入れ{08:25}し{08:72}\nマイシテーも{08:0B}の手に落ちて、逃げのびた者{08:26}いが取り残{03:0C}た者達は{02:08}\n<wait>		Even if you managed to reach City Hall, you still couldn't get inside...\nMYCITY fell too - the escapees were lucky, but the ones left behind...\n<wait>	ours		reads: 都庁の側まで行けたとしても、都庁の中には入れないし‥‥\nマイシテーも悪魔の手に落ちて、逃げのびた者はいいが取り残された者達は‥‥‥\n<wait>
-m/MS0019.BIN	0:0D	0	24	1FD2	男性：		Man:	v005		
-m/MS0019.BIN	0:0D	1	37	09	上野に{08:62}{01:08}が潜んでる{08:52}専らの噂だ{02:08}\n		There are rumours going around that say that Baal is hiding in Ueno.\n	ours		reads: 上野には、バエルが潜んでるって専らの噂だ‥‥‥\n
-m/MS0019.BIN	0:0D	2	78	09	{08:72}やっぱり、{01:08}は生きてやがる{08:5F}！\nき{08:53}、あの城の上で俺達を嘲笑{08:52}やがる{08:5F}！\n<wait>		I knew that he was still alive!\nThat bastard is probably laughing at us from his castle!\n<wait>	v005		reads: ‥‥やっぱり、バエルは生きてやがるんだ！\nきっと、あの城の上で俺達を嘲笑ってやがるんだ！\n<wait>; @refalign
-m/MS0019.BIN	0:0D	3	157	00	俺は新宿{08:42}逃げて{08:1E}{08:5F}。\n新宿{08:62}{08:0B}軍に落と{03:0C}ち{08:20}{02:08}\n<wait>	I fled here from Shinjuku.\nShinjuku's fallen to the demon army......\n<wait>			draft	reads: 俺は新宿から逃げてきたんだ。\n新宿は、悪魔軍に落とされちまった‥‥‥\n<wait>
-m/MS0019.BIN	0:0D	4	213	1FD2	男性：	Man:			draft	
-m/MS0019.BIN	0:0D	5	221	1FD3	{03:0B}{08:0B}達が無秩序ではなく、むしろ秩序だ{08:52}襲{08:52}{08:1E}{08:52}事は{02:08}\n<wait>	But the demons attacking in an organized way, not chaotically......\nthat means......\n<wait>			draft	reads: しかし、悪魔達が無秩序ではなく、むしろ秩序だって襲ってきたって事は‥‥‥\n<wait>
-m/MS0019.BIN	0:0E	0	24	1FD2	女性：		Woman:	v005		
-m/MS0019.BIN	0:0E	1	37	09	やだー！\nやっぱ{01:08}{08:52}生きてて、裏で何かや{08:52}たのね！！\n<wait>		I knew it! Baal is still alive!\n<wait>	ours		reads: やだー！\nやっぱバエルって生きてて、裏で何かやってたのね！！\n<wait>
-m/MS0019.BIN	0:0E	2	97	1FD2	女性：		Woman:	v005		
-m/MS0019.BIN	0:0E	3	105	1FD3	あんな奴、誰かぶっ殺しちゃえば{08:7F}のに！！\n		Someone should go and off that motherfucker!\n	v005		reads: あんな奴、誰かぶっ殺しちゃえばいいのに！！\n
-m/MS0019.BIN	0:0E	4	152	09	{01:08}{08:52}、今{08:56}上野の総本山に{08:40}のかしら？\n<wait>		I wonder where Baal is right now. Maybe at his temple in Ueno?\n<wait>	ours		reads: バエルって、今でも上野の総本山にいるのかしら？\n<wait>
-m/MS0019.BIN	0:0E	5	197	1FD2	女性：		Woman:	v005		
-m/MS0019.BIN	0:0E	6	205	1FD3	前はそこに{08:40}{08:52}評判だ{08:51}{08:84}ね。\n新宿に{08:64}奴？　あん{08:6B}影武者よ！　き{08:53}！\n		That's the word on the street.\nAnd the one in Shinjuku? That one's totally a body double!\n	v005		reads: 前はそこにいるって評判だったけどね。\n新宿にいた奴？　あんなの影武者よ！　きっと！\n
-m/MS0019.BIN	0:0E	7	279	09	{01:08}{08:52}生き{08:2B}らしいわよ！\n冗談{08:81}{08:25}わよね！\n		Folks are saying that Baal's still alive. It's for real!\n	ours		reads: バエルって生きてるらしいわよ！\n冗談じゃないわよね！\n
-m/MS0019.BIN	0:0E	8	325	09	何{08:3F}？　都庁の上の変{08:6B}ぉ～\n		What's that weird thing over the Government Office?\n	v005		reads: 何あれ？　都庁の上の変なのぉ～\n; @refalign
-m/MS0019.BIN	0:0E	9	353	00	都庁が{02:03}に奪回{03:0C}て、や{08:53}{02:0B}が勢いに乗{08:52}{08:1E}と思っ{08:50}、\n{08:5B}{08:0B}に都庁を取られちゃ{08:52}さぁ。勘弁{08:4A}欲しいわよね！\n		When the Resistance took over the Government Office,\nI thought that humanity was at last going to have its moment,\nbut no, they got wiped out the next day. Bloody hell!\n	v005		reads: 都庁がレジスタンスに奪回されて、やっと人間が勢いに乗ってきたと思ったら、\nまた悪魔に都庁を取られちゃってさぁ。勘弁して欲しいわよね！\n; @refalign
-m/MS0019.BIN	0:0F	0	24	1FD2	老女：		Hag:	v005		
-m/MS0019.BIN	0:0F	1	37	09	{02:0B}{08:62}{08:0B}と共存{08:4A}いく{08:86}{08:25}のかのう{08:72}\n<wait>		Humans are going to have to learn to co-exist with the demons.\n<wait>	v005		reads: 人間は、悪魔と共存していくしかないのかのう‥‥\n<wait>; @refalign
-m/MS0019.BIN	0:0F	2	80	09	{02:0B}{08:74}の平和な世の中と{08:68}の{08:62}{08:5C}二度と訪れんのかのぅ{08:72}\n<wait>		Never again will this world be ours alone...\n<wait>	v005		reads: 人間だけの平和な世の中というのは、もう二度と訪れんのかのぅ‥‥\n<wait>; @refalign
-m/MS0019.BIN	0:0F	3	136	00	新宿が{08:0B}にやら{08:60}そう{08:81}が{02:08}\n他の街は{01:32}{08:6B}かのぉ{02:08}\n<wait>	They say Shinjuku fell to the demons......\nI wonder if the other towns are safe......\n<wait>			draft	reads: 新宿が悪魔にやられたそうじゃが‥‥‥\n他の街は大丈夫なのかのぉ‥‥‥\n<wait>
-m/MS0019.BIN	0:0F	4	192	1FD2	老女：	Old Woman:			draft	
-m/MS0019.BIN	0:0F	5	200	1FD3	{08:47}秋葉原{08:71}、攻めてくる{08:69}な事があっ{08:50}、\n{08:5C}わしの命は無い{08:81}ろうのぉ{08:72}\n<wait>	If they ever come attacking as far as Akihabara,\nthat'll be the end of me......\n<wait>			draft	reads: この秋葉原まで、攻めてくるような事があったら、\nもうわしの命は無いじゃろうのぉ‥‥\n<wait>
-m/MS0019.BIN	0:0F	6	276	1FD2	老女：	Old Woman:			draft	
-m/MS0019.BIN	0:0F	7	284	1FD3	まぁ{08:47}歳{08:71}生きれば、何も言う{08:46}もありゃ{08:66}がのう{08:72}\n	Well, having lived this long, I've nothing to complain about......\n			draft	reads: まぁこの歳まで生きれば、何も言うこともありゃせんがのう‥‥\n
-m/MS0019.BIN	0:10	0	24	1FD2	男性：		Man:	ours		
-m/MS0019.BIN	0:10	1	37	09	あの城が建{08:51}今、新宿は{08:6C}に{08:0B}の巣窟に{08:1A}る。\nお前もあの辺を通る時{08:62}十分気を付{08:29}事だな！\n<wait>		Now that castle's up, Shinjuku's turned into a den of demons.\nYou'd better be plenty careful if you're passing through that area!\n<wait>	ours		reads: あの城が建った今、新宿は完全に悪魔の巣窟になってる。\nお前もあの辺を通る時は、十分気を付ける事だな！\n<wait>
-m/MS0019.BIN	0:10	2	133	09	品川の廃墟に{08:1A}るホテルに、すっごい可愛い女の子が{08:40}らしいぜ！\n<wait>		I heard a super cute girl's living in that ruined Shinagawa hotel!\n<wait>	ours		reads: 品川の廃墟になってるホテルに、すっごい可愛い女の子がいるらしいぜ！\n<wait>
-m/MS0019.BIN	0:10	3	202	1FD2	男性：		Man:	ours		
-m/MS0019.BIN	0:10	4	210	1FD3	{08:52}言{08:52}も、本当に”女の子”{08:74}どな。\n		Though when I say that, I mean an actual "girl", mind you.\n	ours		reads: って言っても、本当に”女の子”だけどな。\n
-m/MS0019.BIN	0:10	5	246	00	銀座に{08:62}母{08:59}金星{08:52}言う教団が大神殿を構え{08:2B}。\n<wait>		In Ginza, a cult calling themselves Mother Venus set up a grand temple.\n<wait>	ours		reads: 銀座には、母なる金星って言う教団が大神殿を構えてる。\n<wait>
-m/MS0019.BIN	0:10	6	299	1FD2	男性：		Man:	ours		
-m/MS0019.BIN	0:10	7	307	1FD3	で、そ{08:47}神殿に行くと、美人の巫女さんがイイ事{08:4A}く{08:2F}{08:5F}{08:52}よ！\n<wait>		And apparently, that shrine's beautiful priestess treats you real nice!\n<wait>	ours		reads: で、そこの神殿に行くと、美人の巫女さんがイイ事してくれるんだってよ！\n<wait>
-m/MS0019.BIN	0:10	8	374	1FD2	男性：		Man:	ours		
-m/MS0019.BIN	0:10	9	382	1FD3	{08:5C}たまんねーらしいぜ！\n		I hear it's just too much to handle!\n	ours		reads: もうたまんねーらしいぜ！\n
-m/MS0019.BIN	0:11	0	99	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：
-m/MS0019.BIN	0:11	1	105	1FD3	あっ！　		Ah!	ours		
-m/MS0019.BIN	0:11	2	119	1F01	君！\n	-kun!\n	{04:FF}-kun!\n	ours	draft	
-m/MS0019.BIN	0:11	3	129	09	酷い{02:08}{08:90}{08:4A}{08:73}状態に{02:08}\n<wait>		This is awful... How did things end up like this...\n<wait>	ours		reads: 酷い‥‥‥どうしてこんな状態に‥‥‥\n<wait>
-m/MS0019.BIN	0:11	4	158	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：
-m/MS0019.BIN	0:11	5	164	1FD3	待{08:52}ろ。今{08:48}を{02:08}‥\n<wait>		Wait right there. I'll just... use this...\n<wait>	ours		reads: 待ってろ。今これを‥‥‥‥\n<wait>
-m/MS0019.BIN	0:11	6	191	1FD0	{01:06}{08:62}透明な薬瓶を取り出し、{08:4D}をゆっくりと	Kazumi took out a clear medicine bottle, and slowly made 	{01:06} took out a clear medicine bottle, and slowly	ours	draft	reads: カズミは、透明な薬瓶を取り出し、それをゆっくりと
-m/MS0019.BIN	0:11	7	237	1F01	に飲ませた。\n<wait>	 drink it.\n<wait>	made {04:FF} drink it.\n<wait>	ours	draft	
-m/MS0019.BIN	0:11	8	258	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：
-m/MS0019.BIN	0:11	9	264	1FD3	さぁ、君達も{08:48}を飲んで{02:08}‥\n<wait>		Now then, you all drink this too...\n<wait>	ours		reads: さぁ、君達もこれを飲んで‥‥‥‥\n<wait>
-m/MS0019.BIN	0:11	10	323	1FD2	{01:06}：	Kazumi: 	{01:06}:	ours	draft	reads: カズミ：
-m/MS0019.BIN	0:11	11	335	1F01	君{08:72}良{08:18}。\n<wait>	... thank goodness.\n<wait>	{04:FF}-kun... Thank goodness.\n<wait>	ours	draft	reads: 君‥‥良かった。\n<wait>
-m/MS0019.BIN	0:11	12	354	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：
-m/MS0019.BIN	0:11	13	360	1FD3	{08:87}で<wait>		By the way<wait>	ours		reads: ところで<wait>
-m/MS0019.BIN	0:11	14	371	18	君も秋葉原に来て{08:64}のか！\n<wait>		So you were in Akihabara too!\n<wait>	ours		reads: 君も秋葉原に来ていたのか！\n<wait>
-m/MS0019.BIN	0:11	15	404	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：
-m/MS0019.BIN	0:11	16	410	1FD3	{02:08}{08:37}君と、{08:31}さんは？\n		...What about Sonoda and Rui?\n	ours		reads: ‥‥‥園田君と、泪さんは？\n
-m/MS0019.BIN	0:11	17	447	1FB2	訳を話す		Explain why	ours		menu option, declared width 20 columns
-m/MS0019.BIN	0:11	18	457	1FB2	黙っ{08:14}		Stay silent	ours		reads: 黙っている; menu option, declared width 20 columns
-m/MS0019.BIN	0:11	19	491	1F01	{08:62}{08:48}{08:71}のいきさつを話{08:4B}{08:72}\n<wait>	 told him everything that had happened......\n<wait>			draft	reads: は、これまでのいきさつを話した‥‥\n<wait>
-m/MS0019.BIN	0:11	20	524	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：
-m/MS0019.BIN	0:11	21	530	1FD3	{02:08}{01:29}{08:51}のか{02:08}{08:37}君{02:08}\n{1E10:01003C}		...I see... so that's what happened... Sonoda...\n{1E10:01003C}	ours		reads: ‥‥‥そうだったのか‥‥‥園田君‥‥‥\n{1E10:01003C}
-m/MS0019.BIN	0:11	22	556	1FBA	{08:31}さんも一人で{01:32}{08:8C}か？\n<wait>		I wonder if Rui's doing alright on her own too...\n<wait>	ours		reads: 泪さんも一人で大丈夫だろうか？\n<wait>
-m/MS0019.BIN	0:11	23	598	1F01	{08:62}{01:06}に{08:37}の死を伝{08:28}のがつらく、黙{08:52}{08:64}{02:08}\n<wait>	 found it too hard to tell Kazumi of Sonoda's death,\nand stayed silent......\n<wait>	{04:FF} found it too hard to tell {01:06} about Sonoda, stayed silent...\n<wait>	ours	draft	reads: は、カズミに園田の死を伝えるのがつらく、黙っていた‥‥‥\n<wait>
-m/MS0019.BIN	0:11	24	645	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：
-m/MS0019.BIN	0:11	25	651	1FD3	{08:72}すまん。\n聞か{08:60}く{08:25}事を、聞いちゃ{08:51}み{08:4E}だな。\n<wait>		...Sorry.\nSeems I asked about something you didn't want to talk about.\n<wait>	ours		reads: ‥‥すまん。\n聞かれたくない事を、聞いちゃったみたいだな。\n<wait>
-m/MS0019.BIN	0:11	26	707	1FD2	{01:06}：	Kazumi: 	{01:06}:	ours	draft	reads: カズミ：
-m/MS0019.BIN	0:11	27	719	1F01	君達は{08:48}{08:42}何処へ？\n	, where are you all headed now?\n	{04:FF}-kun, where are you all headed now?\n	ours	draft	reads: 君達はこれから何処へ？\n
-m/MS0019.BIN	0:11	28	754	1FB2	銀座へ		To Ginza	ours		menu option, declared width 20 columns
-m/MS0019.BIN	0:11	29	762	1FB2	特にあては無い		No plan really	ours		menu option, declared width 20 columns
-m/MS0019.BIN	0:11	30	778	1FB2	黙っ{08:14}		Stay silent	ours		reads: 黙っている; menu option, declared width 20 columns
-m/MS0019.BIN	0:11	31	810	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：
-m/MS0019.BIN	0:11	32	816	1FD3	そうか。あそこは今、イシュタルと{08:68}女神を崇{08:2E}教団が二つも{08:7B}らしい。\n<wait>		I see. Apparently two cults now worship some goddess called Ishtar there.\n<wait>	ours		reads: そうか。あそこは今、イシュタルという女神を崇める教団が二つもあるらしい。\n<wait>
-m/MS0019.BIN	0:11	33	891	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：
-m/MS0019.BIN	0:11	34	897	1FD3	{08:86}も、あのバール兵達も多いと聞い{08:14}。\n行く時は十分気を付けてな。\n<wait>	What's more, I hear there are plenty of those Baal soldiers too.\nBe very careful when you go.\n<wait>	And I hear those Baal soldiers are thick there too.\nBe real careful when you go.\n<wait>	ours	draft	reads: しかも、あのバール兵達も多いと聞いている。\n行く時は十分気を付けてな。\n<wait>
-m/MS0019.BIN	0:11	35	974	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：
-m/MS0019.BIN	0:11	36	980	1FD3	そうか、俺と大{08:4A}変わりが無いな。ハハハ。\n<wait>		I see, not too different from me, then. Hahaha.\n<wait>	ours		reads: そうか、俺と大して変わりが無いな。ハハハ。\n<wait>
-m/MS0019.BIN	0:11	37	1034	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：
-m/MS0019.BIN	0:11	38	1040	1FD3	{02:08}言{08:64}く無い{08:7D}、{08:4D}{08:56}{08:7F}さ。\n<wait>		...If you don't want to talk about it, that's fine too.\n<wait>	ours		reads: ‥‥‥言いたく無いなら、それでもいいさ。\n<wait>
-m/MS0019.BIN	0:11	39	1075	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：
-m/MS0019.BIN	0:11	40	1081	1FD3	俺{08:62}戸山{08:10}に{08:40}平沢博士にメイを預けて、{08:63}を磨く為に旅を\n{08:13}{08:5F}。\n<wait>		I left Mei with Dr. Hirasawa over at the Toyama Shelter, and I'm out\ntraveling to sharpen myself.\n<wait>	ours		reads: 俺は、戸山シェルターにいる平沢博士にメイを預けて、自分を磨く為に旅を\nしているんだ。\n<wait>
-m/MS0019.BIN	0:11	41	1151	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：
-m/MS0019.BIN	0:11	42	1157	1FD3	平沢博士にいなく{08:16}デミ・ヒューマンの、アリスを捜し出し、\n連れ戻{08:4A}くれと頼まれ{08:14}のも{08:7B}しな。\n<wait>		Dr. Hirasawa also asked me to track down Alice, a Demi-Human\nwho went missing, and bring her back.\n<wait>	ours		reads: 平沢博士にいなくなったデミ・ヒューマンの、アリスを捜し出し、\n連れ戻してくれと頼まれているのもあるしな。\n<wait>
-m/MS0019.BIN	0:11	43	1257	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：
-m/MS0019.BIN	0:11	44	1263	1FD3	まあ、{08:48}も{08:63}を磨く良い機会だ。\n		Well, this is a good chance to sharpen myself too.\n	ours		reads: まあ、これも自分を磨く良い機会だ。\n
-m/MS0019.BIN	0:11	45	1310	1FB2	一緒に行か{08:25}か		Come along with me?	ours		reads: 一緒に行かないか; menu option, declared width 20 columns
-m/MS0019.BIN	0:11	46	1326	1FB2	頑張れ！		Good luck!	ours		menu option, declared width 20 columns
-m/MS0019.BIN	0:11	47	1354	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：
-m/MS0019.BIN	0:11	48	1360	1FD3	誘いはありが{08:4E}が、遠慮{08:8E}よ。\n俺は{08:63}一人で、{08:63}の力を磨{08:1E}い{08:5F}。\n<wait>		I appreciate the offer, but I'll pass.\nI want to sharpen my own strength on my own.\n<wait>	ours		reads: 誘いはありがたいが、遠慮するよ。\n俺は自分一人で、自分の力を磨きたいんだ。\n<wait>
-m/MS0019.BIN	0:11	49	1433	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：
-m/MS0019.BIN	0:11	50	1439	1FD3	{01:2A}。\n俺は{08:63}一人で、{08:63}の力を磨いていく{01:3E}だ。\n<wait>		Thanks.\nI intend to keep honing my own strength, on my own.\n<wait>	ours		reads: ありがとう。\n俺は自分一人で、自分の力を磨いていくつもりだ。\n<wait>
-m/MS0019.BIN	0:11	51	1491	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：
-m/MS0019.BIN	0:11	52	1497	1FD3	強くなればメイを一人で守り切{08:2F}{08:69}に{08:59}。\nだ{08:42}、メイとも離れていなく{08:54}済む{08:42}な。\n<wait>	If I get strong, I'll be able to protect Mei all by myself.\nThen I won't have to be apart from her any more.\n<wait>	Once I get stronger, I'll be able to protect Mei on my own.\nThat way, I won't have to be apart from her anymore either.\n<wait>	ours	draft	reads: 強くなればメイを一人で守り切れるようになる。\nだから、メイとも離れていなくても済むからな。\n<wait>
-m/MS0019.BIN	0:11	53	1583	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：
-m/MS0019.BIN	0:11	54	1589	1FD3	{08:4D}{08:81}あ、俺は{01:36}行かなきゃな。\n{08:81}あ、{08:5B}な{02:08}\n<wait>		Well then, I should get going soon.\nAlright, see you around...\n<wait>	ours		reads: それじゃあ、俺はそろそろ行かなきゃな。\nじゃあ、またな‥‥‥\n<wait>
-m/MS0019.BIN	0:11	55	1643	1FD0	{01:06}は去{08:52}行{08:51}{02:08}‥\n<wait>		{01:06} turned and left...\n<wait>	ours		reads: カズミは去って行った‥‥‥‥\n<wait>
-m/MS0019.BIN	0:12	0	24	1FD2	店主：		Shopkeeper:	ours		
-m/MS0019.BIN	0:12	1	32	1FD3	{08:45}{08:62}{08:05}ー用ソフトを扱う店だ。\n<wait>他では真似出来{08:25}、豊富な品揃え！！\nさ、じっくり見て行きな！！\n<wait>		This shop deals in computer software.\n<wait>A selection so rich, no one else can match it!!\nGo on, take your time and look around!!\n<wait>	ours		reads: ここは、コンピューター用ソフトを扱う店だ。\n<wait>他では真似出来ない、豊富な品揃え！！\nさ、じっくり見て行きな！！\n<wait>
-m/MS0019.BIN	0:12	2	135	1FD0	暫定：ＣＯ{03:0E}ショップの処理が{08:76}入{08:52}{08:24}為、\n　　　今回は暫定{08:55}。\n<wait>	Provisional: the COMP shop routine isn't in yet, so this is a\nplaceholder for now.\n<wait>	Provisional: the COMP shop handling is not implemented yet,\n　　　so this is provisional for now.\n<wait>	ours	draft	reads: 暫定：ＣＯＭＰショップの処理がまだ入っていない為、\n　　　今回は暫定です。\n<wait>
+m/MS0019.BIN	0:00	0	2	1FD0	誰も{08:24}{02:08}\n	There's no one here...\n	There's no one here...\n	v005	checked	reads: 誰もいない‥‥‥\n; @refalign; @tl:fit
+m/MS0019.BIN	0:01	0	199	1FD0	歩き出{08:4B}途端、一人の男とぶつか{08:12}\n<wait>	The moment he set off, he bumped into a man!\n<wait>			draft	reads: 歩き出した途端、一人の男とぶつかった！\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	1	266	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	2	274	1FD3	あっ！　す、すまん！\nちょ{08:53}考え事を{08:4A}たも{08:5F}{08:42}{08:72}\n<wait>	Oh! S-sorry!\nI was lost in thought there......\n<wait>			draft	reads: あっ！　す、すまん！\nちょっと考え事をしてたもんだから‥‥\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	3	330	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	4	338	1FD3	{01:32}かい？\n<wait>	You all right?\n<wait>			draft	reads: 大丈夫かい？\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	5	365	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	6	373	1FD3	ん{08:72}？　そっちの女の子が、{01:32}そう{08:81}{08:25}な{08:72}\n<wait>{08:48}くらいだっ{08:50}、治{08:2A}か{08:72}な{08:72}\n<wait>	Hm...? That girl there doesn't look all right...\n<wait>If it's only this much, I can probably... treat it...\n<wait>			draft	reads: ん‥‥？　そっちの女の子が、大丈夫そうじゃないな‥‥\n<wait>これくらいだったら、治せるか‥‥な‥‥\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	7	455	1FD0	男はそう言うと、{08:03}の手当てを始めた。\n<wait>	So saying, the man began treating Emi.\n<wait>			draft	reads: 男はそう言うと、英美の手当てを始めた。\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	8	500	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	9	508	1FD3	{01:32}だ。絶対に悪い{08:69}にはし{08:25}{02:08}\nぶつ{08:18}お詫びさ。\n<wait>	Don't worry. I'd never do anything to hurt her......\nIt's my apology for bumping into you.\n<wait>			draft	reads: 大丈夫だ。絶対に悪いようにはしない‥‥‥\nぶつかったお詫びさ。\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	10	604	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	11	612	1FD3	よし！　{08:76}間に合うな！\n<wait>	Right! Still in time!\n<wait>			draft	reads: よし！　まだ間に合うな！\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	12	668	1FD0	{08:03}は蘇生{08:4B}。\n<wait>	Emi was revived.\n<wait>			draft	reads: 英美は蘇生した。\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	13	689	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	14	697	1FD3	ふう{08:72}まずは{08:48}で安心だな。\n{08:8F}、{08:47}{08:7E}外に出{08:69}{08:6A}て思わ{08:25}方が{08:7F}ぜ。\n応急処置程度だ{08:42}な{02:08}後でちゃんと{03:10}{08:4A}や{08:52}くれ。\n	Phew... that's one worry off my mind.\nBut don't go thinking of heading outside like this.\nIt's only first aid...... make sure she gets properly healed later.\n			draft	reads: ふう‥‥まずはこれで安心だな。\nだが、このまま外に出ようなんて思わない方がいいぜ。\n応急処置程度だからな‥‥‥後でちゃんと回復してやってくれ。\n; @tl:verified
+m/MS0019.BIN	0:01	15	867	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	16	875	1FD3	{08:48}{08:7D}、{08:48}を使えば{01:32}だな{02:08}\n<wait>	With this... if I use it, we'll be fine...\n<wait>	With this... if I use it, we'll be fine...\n<wait>	ours	checked	reads: これなら、これを使えば大丈夫だな‥‥‥\n<wait>; @tl:fit
+m/MS0019.BIN	0:01	17	933	1FD0	{08:03}は{03:10}{08:4B}。\n	Emi was healed.\n	Emi was healed.\n	ours	checked	reads: 英美は回復した。\n; @split-tailless: the cut took only a trailing escape, nothing to divide; @tl:fit
+m/MS0019.BIN	0:01	18	952	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	19	960	1FD3	{02:08}君、{01:32}かい？\n<wait>	...Hey, are you alright?\n<wait>	...Hey, are you alright?\n<wait>	ours	checked	reads: ‥‥‥君、大丈夫かい？\n<wait>; @tl:fit
+m/MS0019.BIN	0:01	20	983	1FD2	{08:03}：	Emi:	Emi:	v005	checked	reads: 英美：; @tl:fit
+m/MS0019.BIN	0:01	21	989	1FD3	ええ{02:08}貴方が手当て{08:4A}く{08:60}のね。{01:2A}。\n<wait>	Yeah... You're the one who treated me, huh. Thank you.\n<wait>	Yeah... You're the one who treated me, huh. Thank you.\n<wait>	ours	checked	reads: ええ‥‥‥貴方が手当てしてくれたのね。ありがとう。\n<wait>; @tl:fit
+m/MS0019.BIN	0:01	22	1049	1FB2	{01:32}だ	I'm okay	I'm okay	v005	checked	reads: 大丈夫だ; menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS0019.BIN	0:01	23	1055	1FB2	君こそ{01:32}か？	What about you?	You?	v005	draft	reads: 君こそ大丈夫か？; menu option, declared width 20 columns; @refalign; @tl:accuracy (review: 君こそ大丈夫か: 'You?' lost the question)
+m/MS0019.BIN	0:01	24	1090	1FD2	{08:03}：	Emi:	Emi:	v005	checked	reads: 英美：; @tl:fit
+m/MS0019.BIN	0:01	25	1096	1FD3	ええ{02:08}{01:32}。貴方こそ{01:32}？\n<wait>	Yeah... I'm fine. What about you, are you okay?\n<wait>	Yeah... I'm fine. What about you, are you okay?\n<wait>	ours	checked	reads: ええ‥‥‥大丈夫。貴方こそ大丈夫？\n<wait>; @tl:fit
+m/MS0019.BIN	0:01	26	1127	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	27	1135	1FD3	俺は{01:32}{08:8F}{02:08}君の{08:0F}がマズイ{08:69}だな。\n<wait>	I'm fine, but... your friend looks like they're in trouble.\n<wait>	I'm fine, but... your friend looks like they're in trouble.\n<wait>	ours	checked	reads: 俺は大丈夫だが‥‥‥君の仲間がマズイようだな。\n<wait>; @tl:fit
+m/MS0019.BIN	0:01	28	1176	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	29	1184	1FD3	ちょ{08:53}、見{08:67}くれ。\n絶対に悪い{08:69}にはし{08:25}{08:42}。\n<wait>	Hey, let me take a look.\nI promise I won't do anything shady.\n<wait>	Hey, let me take a look.\nI promise I won't do anything shady.\n<wait>	ours	checked	reads: ちょっと、見せてくれ。\n絶対に悪いようにはしないから。\n<wait>; @tl:fit
+m/MS0019.BIN	0:01	30	1236	1FD0	そう言{08:52}、男は	So saying, the man began to treat 	So saying, the man	ours	draft	reads: そう言って、男は; @tl:verified
+m/MS0019.BIN	0:01	31	1256	1F01	の手当てを始めた{02:08}\n<wait>	's wounds......\n<wait>	{04:FF} began receiving treatment...\n<wait>	ours	draft	reads: の手当てを始めた‥‥‥\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	32	1283	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	33	1291	1FD3	気にすんな。ぶつかっち{08:20}お詫びだよ。\n<wait>	Don't worry about it. It's an apology for bumping into you.\n<wait>	Don't worry about it. It's an apology for bumping into you.\n<wait>	ours	checked	reads: 気にすんな。ぶつかっちまったお詫びだよ。\n<wait>; @tl:fit
+m/MS0019.BIN	0:01	34	1378	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	35	1386	1FD3	よし！　{08:76}間に合うな！\n<wait>	Right! Still in time!\n<wait>			draft	reads: よし！　まだ間に合うな！\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	36	1448	1F01	は蘇生{08:4B}。\n<wait>	 was revived.\n<wait>	{04:FF} was revived.\n<wait>	ours	draft	reads: は蘇生した。\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	37	1467	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	38	1475	1FD3	ふう{08:72}まずは{08:48}で安心だな。\n{08:8F}、{08:47}{08:7E}外に出{08:69}{08:6A}て思わ{08:25}方が{08:7F}ぜ。\n応急処置程度だ{08:42}な{02:08}後でちゃんと{03:10}{08:4A}や{08:52}くれ。\n	Phew... that's one worry off my mind.\nBut don't go thinking of heading outside like this.\nIt's only first aid...... make sure he gets properly healed later.\n			draft	reads: ふう‥‥まずはこれで安心だな。\nだが、このまま外に出ようなんて思わない方がいいぜ。\n応急処置程度だからな‥‥‥後でちゃんと回復してやってくれ。\n; @tl:verified
+m/MS0019.BIN	0:01	39	1645	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	40	1653	1FD3	{08:48}{08:7D}、{08:48}を使えば{01:32}だな{02:08}\n<wait>	With this... if I use it, we'll be fine...\n<wait>	With this... if I use it, we'll be fine...\n<wait>	ours	checked	reads: これなら、これを使えば大丈夫だな‥‥‥\n<wait>; @tl:fit
+m/MS0019.BIN	0:01	41	1717	1F01	は{03:10}{08:4B}。\n<wait>	 recovered.\n<wait>	{04:FF} has recovered.\n<wait>	ours	draft	reads: は回復した。\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	42	1734	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	43	1742	1FD3	{02:08}君、{01:32}かい？\n<wait>	...Hey, are you alright?\n<wait>	...Hey, are you alright?\n<wait>	ours	checked	reads: ‥‥‥君、大丈夫かい？\n<wait>; @tl:fit
+m/MS0019.BIN	0:01	44	1765	1FD2	{08:03}：	Emi:	Emi:	v005	checked	reads: 英美：; @tl:fit
+m/MS0019.BIN	0:01	45	1777	1F01	くん{02:08}良{08:18}{02:08}‥\n{08:47}人が手当て{08:4A}く{08:60}のよ。\n<wait>	-kun...... thank goodness......\nThis person is the one who treated you.\n<wait>	{04:FF}-kun... Thank goodness...\nThis person's the one who treated you.\n<wait>	ours	draft	reads: くん‥‥‥良かった‥‥‥‥\nこの人が手当てしてくれたのよ。\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	46	1831	1F01	は男に礼を言{08:51}。\n<wait>	 thanked the man.\n<wait>	{04:FF} thanked the man.\n<wait>	ours	draft	reads: は男に礼を言った。\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	47	1856	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	48	1864	1FD3	あ{02:08}\n<wait>	Ah...\n<wait>	Ah...\n<wait>	ours	checked	reads: あ‥‥‥\n<wait>; @tl:fit
+m/MS0019.BIN	0:01	49	1880	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	50	1888	1FD3	ああ。俺{08:7D}{01:32}だ。{08:7A}にやわには出来て{08:25}{08:42}な。\n<wait>	Yeah. I'm fine. I'm not made that soft.\n<wait>			draft	reads: ああ。俺なら大丈夫だ。そんなにやわには出来てないからな。\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	51	1939	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	52	1947	1FD3	{02:08}{08:79}アームターミナル{02:08}\n君はも{08:61}て、どこかの{08:10}の{02:00}か？\n	......That Arm Terminal......\nCould you be a Devil Buster from one of the shelters?\n			draft	reads: ‥‥‥そのアームターミナル‥‥‥\n君はもしかして、どこかのシェルターのデビルバスターか？\n; @tl:verified
+m/MS0019.BIN	0:01	53	2017	1FB2	{08:26}、初台の{08:72}	Yeah, Hatsudai	Yeah, Hatsudai	v005	checked	reads: はい、初台の‥‥; menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS0019.BIN	0:01	54	2031	1FB2	{08:27}	No	No	v005	checked	reads: いいえ; menu option, declared width 20 columns; @tl:fit
+m/MS0019.BIN	0:01	55	2061	1F01	は肯定し、出身が初台で{08:7B}事を答{08:41}。\n<wait>	 confirmed it, and answered that he was from Hatsudai.\n<wait>			draft	reads: は肯定し、出身が初台である事を答えた。\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	56	2104	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:01	57	2112	1FD3	初台だ{08:52}！\n	Hatsudai, you say!\n	Hatsudai? Interesting... I was travelling with a Devil Buster\nfrom Hatsudai until not that long ago myself.\n	v005	draft	reads: 初台だって！\n; @tl:verified
+m/MS0019.BIN	0:01	58	2136	1F01	{08:62}トラブルに巻き込ま{08:2F}のも面倒{08:6B}で、男の問いを否定{08:4B}。\n<wait>	, not wanting the trouble, denied the man's question.\n<wait>	{04:FF}, not wanting the hassle, denied the man's question.\n<wait>	ours	draft	reads: は、トラブルに巻き込まれるのも面倒なので、男の問いを否定した。\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	59	2199	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	60	2207	1FD3	{08:72}そうか。\n	......I see.\n			draft	reads: ‥‥そうか。\n; @split-authored; @tl:verified
+m/MS0019.BIN	0:01	61	2218	1FD3	俺少し前{08:71}、初台の{02:00}だ{08:51}{08:52}{08:68}人と、一緒に行動{08:4A}た{08:5F}。\n<wait>	Until a little while ago I was travelling with someone who'd been a\nDevil Buster from Hatsudai.\n<wait>			draft	@split-tail of [60]; reads: 俺少し前まで、初台のデビルバスターだったっていう人と、一緒に行動してたんだ。\n<wait>; @split-authored; @tl:verified
+m/MS0019.BIN	0:01	62	2279	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	63	2287	1FD3	{08:04}{08:52}{08:68}人だ{08:51}{08:5F}{08:84}{02:08}\n<wait>	A man called Nishino......\n<wait>			draft	reads: 西野っていう人だったんだけど‥‥‥\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	64	2314	1FD2	{08:03}：	Emi:	Emi:	v005	checked	reads: 英美：; @tl:fit
+m/MS0019.BIN	0:01	65	2320	1FD3	隊長だわ！！\n<wait>	That's the Commander!!\n<wait>			draft	@tl:accuracy (review: 隊長 is Commander per glossary, never Captain)
+m/MS0019.BIN	0:01	66	2341	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	67	2349	1FD3	知っ{08:14}のか？\n<wait>	You know him?\n<wait>			draft	reads: 知っているのか？\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	68	2370	1FD2	{08:03}：	Emi:	Emi:	v005	checked	reads: 英美：; @tl:fit
+m/MS0019.BIN	0:01	69	2376	1FD3	ええ、本当にお世話に{08:16}人{08:6A}{08:55}{02:08}。\n<wait>	Yes, he did so much for us......\n<wait>			draft	reads: ええ、本当にお世話になった人なんです‥‥‥。\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	70	2417	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	71	2425	1FD3	{08:72}俺も随分と世話に{08:16}よ{08:72}\n<wait>	...He did a lot for me too...\n<wait>			draft	reads: ‥‥俺も随分と世話になったよ‥‥\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	72	2458	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	73	2466	1FD3	{08:04}さんと{08:62}宿を求めて鬼子母神に立ち寄{08:51}時に知り合{08:52}、{08:4D}{08:42}\n{01:23}、一緒に行動{08:4A}{08:64}{08:5F}。\n	I met Nishino-san when I stopped at Kishimojin looking for lodging, and\nwe traveled together for a while after that.\n			draft	reads: 西野さんとは、宿を求めて鬼子母神に立ち寄った時に知り合って、それから\nしばらく、一緒に行動していたんだ。\n; @tl:accuracy (existing draft dropped -san on Nishino-san)
+m/MS0019.BIN	0:01	74	2562	1FB2	彼は今何処に？	Where is he now?	Where is he now?	v005	checked	menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS0019.BIN	0:01	75	2578	1FB2	ふーん	Hmph...	Hmph...	v005	checked	menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS0019.BIN	0:01	76	2612	1F01	が相づちを打つと、{08:03}が待ちかねた{08:69}に口を挟{08:5F}。\n<wait>	 nodded, and Emi cut in as if she could wait no longer.\n<wait>			draft	reads: が相づちを打つと、英美が待ちかねたように口を挟んだ。\n<wait>; @tl:fit (review: assembled 15+61=76 columns)
+m/MS0019.BIN	0:01	77	2667	1FD2	{08:03}：	Emi:	Emi:	v005	checked	reads: 英美：; @tl:fit
+m/MS0019.BIN	0:01	78	2673	1FD3	隊長{08:72}{08:04}さんは今何処に？\n<wait>	Commander... where is Nishino-san right now?\n<wait>	Captain... where is Nishino right now?\n<wait>	ours	draft	reads: 隊長‥‥西野さんは今何処に？\n<wait>; @tl:accuracy (review: 隊長 is Commander per glossary)
+m/MS0019.BIN	0:01	79	2717	1F01	{08:62}{08:04}の行方を訊ねた。\n<wait>	 asked where Nishino had gone.\n<wait>	You ask for Nishino's whereabouts.\n<wait>	v005	draft	reads: は、西野の行方を訊ねた。\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	80	2746	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:01	81	2754	1FD3	{02:08}‥{08:04}さんは{02:08}‥<wait>{08:72}死んで{08:1F}{08:72}\n<wait>	.........Nishino-san is.........<wait>...dead...\n<wait>			draft	reads: ‥‥‥‥西野さんは‥‥‥‥<wait>‥‥死んでしまった‥‥\n<wait>; @tl:accuracy (existing draft dropped -san on Nishino-san)
+m/MS0019.BIN	0:01	82	2795	1FD2	{08:03}：	Emi:	Emi:	v005	checked	reads: 英美：; @tl:fit
+m/MS0019.BIN	0:01	83	2801	1FD3	{02:08}{08:7A}！　隊長{02:08}\n<wait>	......No! The Commander......\n<wait>			draft	reads: ‥‥‥そんな！　隊長‥‥‥\n<wait>; @tl:accuracy (review: 隊長 is Commander per glossary)
+m/MS0019.BIN	0:01	84	2824	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	85	2832	1FD3	護国寺で、アスタルテの襲撃を受けて、奴の炎にやら{08:60}{08:5F}。\n<wait>	We were attacked by Astarte at Gokokuji, and her flames got him.\n<wait>			draft	reads: 護国寺で、アスタルテの襲撃を受けて、奴の炎にやられたんだ。\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	86	2895	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	87	2903	1FD3	{08:72}俺がも{08:53}しっかり{08:4A}いれば、{08:73}事には{08:72}\n<wait>	...If only I'd been more capable, this never would have......\n<wait>			draft	reads: ‥‥俺がもっとしっかりしていれば、こんな事には‥‥\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	88	2956	1F01	達{08:62}衝撃的な事実に思わず口を閉ざ{08:4A}{08:1F}{08:72}\n<wait>	 and the others fell silent at the shocking news...\n<wait>			draft	reads: 達は、衝撃的な事実に思わず口を閉ざしてしまった‥‥\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	89	3008	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	90	3016	1FD3	{02:08}{08:48}{08:72}彼の遺品な{08:5F}{08:72}\n彼の肉親に{08:56}遭っ{08:50}手渡そうと、持{08:52}{08:64}{08:5F}が{08:72}\n<wait>	......This... was his.\nI was carrying it to hand over if I ever met his family, but...\n<wait>			draft	reads: ‥‥‥これ‥‥彼の遺品なんだ‥‥\n彼の肉親にでも遭ったら手渡そうと、持っていたんだが‥‥\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	91	3088	1FD0	そう言うと、男は１枚のカードを差し出{08:4B}。\n	So saying, the man held out a single card.\n			draft	reads: そう言うと、男は１枚のカードを差し出した。\n; @tl:verified
+m/MS0019.BIN	0:01	92	3145	1FB2	受けとる	Take it	Take it	v005	checked	menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS0019.BIN	0:01	93	3155	1FB2	{08:48}は？	What's this?	What's this?	v005	checked	reads: これは？; menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS0019.BIN	0:01	94	3189	1F01	{08:62}カードを受けと{08:51}。\n<wait>	 accepted the card.\n<wait>			draft	reads: は、カードを受けとった。\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	95	3223	1FD0	見た{08:74}では{08:79}カードが何で{08:7B}か、判別がつか{08:19}。\n	Just from looking, he could not tell what the card was.\n			draft	reads: 見ただけではそのカードが何であるか、判別がつかなかった。\n; @tl:verified
+m/MS0019.BIN	0:01	96	3274	1F01	{08:62}男に{08:47}カードが何かを訊ねた。\n<wait>	 asked the man what the card was.\n<wait>			draft	reads: は、男にこのカードが何かを訊ねた。\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	97	3313	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	98	3321	1FD3	{08:48}{08:62}好きな画像を入れてお{08:29}、カードタイプのプロジェクターだよ。\n<wait>	It's a card-type projector. You can load any picture you like into it.\n<wait>			draft	reads: これは、好きな画像を入れておける、カードタイプのプロジェクターだよ。\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	99	3392	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:01	100	3400	1FD3	{08:45}を、こう{08:4C}{02:08}\n<wait>	You press here, like this......\n<wait>	You just press the tiny button here, and...\n<wait>	v005	draft	reads: ここを、こうすると‥‥‥\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	101	3423	1FD0	男が	The man switched it on.\n			draft	@split-authored; @tl:accuracy (review: head of a shared tail: [102] is also reached from [94] by the 18 at offset 3216, so the head must be a sentence of its own)
+m/MS0019.BIN	0:01	102	3427	1FD0	カードについて{08:64}スイッチを入{08:2F}と、陽子と知多が寄り添い微笑んで{08:40}\nホログラムが現わ{08:60}{02:08}\n<wait>	With the card's switch turned on, a hologram appeared of Youko and\nChita smiling, close together.........\n<wait>			draft	@split-tail of [101]; reads: カードについていたスイッチを入れると、陽子と知多が寄り添い微笑んでいる\nホログラムが現われた‥‥‥\n<wait>; @split-authored; @tl:accuracy (review: shared tail (18 at 3216 from [94] jumps here): must read with no head; was 'When the man' + ' flicked...' = ' flicked the switch...' on the accept path, 83 columns assembled)
+m/MS0019.BIN	0:01	103	3521	1FD2	{08:03}：	Emi:	Emi:	v005	checked	reads: 英美：; @tl:fit
+m/MS0019.BIN	0:01	104	3527	1FD3	{08:72}おばさん{08:72}知多君{02:08}\n<wait>	...Ma'am... Chita-kun......\n<wait>			draft	reads: ‥‥おばさん‥‥知多君‥‥‥\n<wait>; @tl:accuracy (existing draft dropped -kun on Chita-kun)
+m/MS0019.BIN	0:01	105	3556	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	106	3564	1FD3	{08:48}{08:62}君達が持{08:52}{08:64}方が{08:7F}{08:8C}。\n君達が今、一番{08:04}さんに近い人の{08:69}だ{08:42}ね。\n<wait>	You two should keep this.\nRight now, you seem to be the people closest to Nishino-san.\n<wait>			draft	reads: これは、君達が持っていた方がいいだろう。\n君達が今、一番西野さんに近い人のようだからね。\n<wait>; @tl:accuracy (existing draft dropped -san on Nishino-san)
+m/MS0019.BIN	0:01	107	3640	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:01	108	3648	1FD3	{02:08}あっ、お、俺そういえば自己紹介が{08:76}だ{08:51}な！\n俺は{08:3B}{08:3C}だ。\n<wait>	......Oh, r-right, I haven't introduced myself!\nI'm Souma Sanshirou.\n<wait>			draft	reads: ‥‥‥あっ、お、俺そういえば自己紹介がまだだったな！\n俺は相馬三四郎だ。\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	109	3714	1FD2	{08:3C}：	Sanshirou:	Sanshirou:	v005	checked	reads: 三四郎：; @tl:fit
+m/MS0019.BIN	0:01	110	3720	1FD3	大破壊前に、一緒に行動{08:4A}{08:64}{08:0F}達を捜{08:13}{08:5F}。\n{08:72}生き{08:14}のか{08:90}かも、分{08:42}{08:25}{08:5F}がな{08:72}\n<wait>	I'm looking for the people I used to work with before the rapture.\nAssuming that they're still alive, that is...\n<wait>	I'm looking for the people I used to work with before the rapture.\nAssuming that they're still alive, that is...\n<wait>	v005	checked	reads: 大破壊前に、一緒に行動していた仲間達を捜しているんだ。\n‥‥生きているのかどうかも、分からないんだがな‥‥\n<wait>; @refalign; @tl:fit
+m/MS0019.BIN	0:01	111	3818	1FB2	{08:63}も名乗る	Introduce yourself	Introduce yourself	v005	checked	reads: 自分も名乗る; menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS0019.BIN	0:01	112	3830	1FB2	君も大変な{08:5F}ね	Sounds tough	Sounds tough	v005	checked	reads: 君も大変なんだね; menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS0019.BIN	0:01	113	3864	1FD2	{08:3C}：	Sanshirou:	Sanshirou:	v005	checked	reads: 三四郎：; @tl:fit
+m/MS0019.BIN	0:01	114	3870	1FD3	ああ{02:08}まあな。\n{08:87}で、君の名前は{02:08}‥？\n<wait>	Yeah... By the way, what is your name?\n<wait>	Yeah... By the way, what is your name?\n<wait>	v005	checked	reads: ああ‥‥‥まあな。\nところで、君の名前は‥‥‥‥？\n<wait>; @refalign; @tl:fit
+m/MS0019.BIN	0:01	115	3916	1FD0	{08:45}{08:71}来{08:50}、{08:63}も名乗るのが礼儀{08:8C}。\n<wait>	Having come this far, it was only polite to give his own name too.\n<wait>	I already introduced myself. It's only polite that you do the same.\n<wait>	v005	draft	reads: ここまで来たら、自分も名乗るのが礼儀だろう。\n<wait>; @refalign; @tl:accuracy (review: 1FD0 narration (ここまで来たら、自分も名乗るのが礼儀だろう); ref_en made it Sanshirou's speech)
+m/MS0019.BIN	0:01	116	3963	1F01	は{08:63}も名乗り、他のメンバーも紹介{08:4B}。\n<wait>	 gave his own name too, and introduced the others.\n<wait>	You introduce yourself and your party members to the man.\n<wait>	v005	draft	reads: は自分も名乗り、他のメンバーも紹介した。\n<wait>; @refalign; @tl:verified
+m/MS0019.BIN	0:01	117	4008	1FD2	{08:3C}：	Sanshirou:	Sanshirou:	v005	checked	reads: 三四郎：; @tl:fit
+m/MS0019.BIN	0:01	118	4014	1FD3	{08:45}に来たの{08:62}廃墟で{08:0B}にやられて片腕無くしち{08:20}{08:5F}よ。\nサイバーアームだ{08:51}{08:84}な。\n<wait>	I came here because I lost an arm to demons out in the ruins.\nIt was a cyber arm, mind you.\n<wait>	A little while ago, I was attacked by some demons, and lost my arm.\n<wait>	v005	draft	reads: ここに来たのは、廃墟で悪魔にやられて片腕無くしちまったんだよ。\nサイバーアームだったけどな。\n<wait>; @refalign; @tl:accuracy (review: ref_en dropped the reason he came and サイバーアームだったけどな)
+m/MS0019.BIN	0:01	119	4098	1FD2	{08:03}：	Emi:	Emi:	v005	checked	reads: 英美：; @tl:fit
+m/MS0019.BIN	0:01	120	4104	1FD3	{08:4D}で、安くサイバーアームを仕入れに来た{08:52}訳ね。\n<wait>	So you came to buy a cyber arm on the cheap, then.\n<wait>	And you came here to see if you could find a replacement?\n<wait>	v005	draft	reads: それで、安くサイバーアームを仕入れに来たって訳ね。\n<wait>; @tl:verified
+m/MS0019.BIN	0:01	121	4159	1FD2	{08:3C}：	Sanshirou:	Sanshirou:	v005	checked	reads: 三四郎：; @tl:fit
+m/MS0019.BIN	0:01	122	4165	1FD3	{08:79}通り。\n<wait>で、{08:48}{08:42}は銀座に向かおうと思っ{08:2B}{08:5F}。\n<wait>	Pretty much, yeah.\n<wait>After that, I'm planning on heading to Ginza.\n<wait>	Pretty much, yeah.\n<wait>After that, I'm planning on heading to Ginza.\n<wait>	v005	checked	reads: その通り。\n<wait>で、これからは銀座に向かおうと思ってるんだ。\n<wait>; @refalign; @tl:fit
+m/MS0019.BIN	0:01	123	4223	1FD2	{08:03}：	Emi:	Emi:	v005	checked	reads: 英美：; @tl:fit
+m/MS0019.BIN	0:01	124	4229	1FD3	銀座{08:7D}私達も、{08:48}{08:42}向かおうと思{08:52}{08:64}ん{08:55}。\n<wait>	That's a coincidence. We were about to head there ourselves.\n<wait>	That's a coincidence. We were about to head there ourselves.\n<wait>	v005	checked	reads: 銀座なら私達も、これから向かおうと思っていたんです。\n<wait>; @refalign; @tl:fit
+m/MS0019.BIN	0:01	125	4278	1FD2	{08:3C}：	Sanshirou:	Sanshirou:	v005	checked	reads: 三四郎：; @tl:fit
+m/MS0019.BIN	0:01	126	4284	1FD3	{08:4D}{08:7D}丁度{08:7F}。\n	Then that's perfect.\n			draft	reads: それなら丁度いい。\n; @tl:verified
+m/MS0019.BIN	0:01	127	4303	1F01	君、よ{08:18}ら俺もパーティーに加えてくれ{08:25}か？\n<wait>	-kun, would you let me join your party?\n<wait>			draft	reads: 君、よかったら俺もパーティーに加えてくれないか？\n<wait>; @tl:accuracy (1F01 seam opens with kun; existing draft dropped the honorific entirely)
+m/MS0019.BIN	0:01	128	4354	1FD2	{08:03}：	Emi:	Emi:	v005	checked	reads: 英美：; @tl:fit
+m/MS0019.BIN	0:01	129	4360	1FD3	{02:0E}こそ。{08:0B}も強く{08:1B}しで、不安だ{08:51}の。\n	Same here. The demons have been getting stronger, and I was worried.\n			draft	reads: こちらこそ。悪魔も強くなってきたしで、不安だったの。\n; @tl:verified
+m/MS0019.BIN	0:01	130	4403	1F01	君の、{08:0B}も{08:40}と{08:26}え{08:72}ね。\n<wait>	-kun's demons are with us, but still... you know.\n<wait>			draft	reads: 君の、悪魔もいるとはいえ‥‥ね。\n<wait>; @tl:accuracy (1F01 seam opens with kun's; existing draft dropped the honorific entirely)
+m/MS0019.BIN	0:01	131	4436	1FD2	{08:03}：	Emi:	Emi:	v005	checked	reads: 英美：; @tl:fit
+m/MS0019.BIN	0:01	132	4442	1FD3	{02:0E}{08:42}お願い{08:4B}いくらいだわ。\n<wait>	If anything, I should be the one asking you.\n<wait>	Welcome aboard, Sanshirou.\n<wait>	v005	draft	reads: こちらからお願いしたいくらいだわ。\n<wait>; @refalign; @tl:accuracy (review: こちらからお願いしたいくらいだわ; ref_en 'Welcome aboard, Sanshirou.' replaced the meaning)
+m/MS0019.BIN	0:01	133	4477	1FD2	{08:3C}：	Sanshirou:	Sanshirou:	v005	checked	reads: 三四郎：; @tl:fit
+m/MS0019.BIN	0:01	134	4483	1FD3	よし！　{08:81}あ、決まりだな。\n{01:23}よろしく頼むぜ！\n<wait>	Hell yeah! Then it's settled.\nI'm counting on you guys for a while!\n<wait>	Hell yeah!\n<wait>	v005	draft	reads: よし！　じゃあ、決まりだな。\nしばらくよろしく頼むぜ！\n<wait>; @refalign; @tl:accuracy (review: ref_en kept only 'Hell yeah!' and dropped 決まりだな / しばらくよろしく頼むぜ)
+m/MS0019.BIN	0:02	0	24	1FD2	若者：	Young Man:	Young Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:02	1	37	09	都庁の上に、どでかい城が建っち{08:20}{08:5F}{08:52}よ！\n<wait>	They say that a massive castle appeared over the Government Office!\n<wait>	They say that a massive castle appeared over the Government Office!\n<wait>	v005	checked	reads: 都庁の上に、どでかい城が建っちまったんだってよ！\n<wait>; @refalign; @tl:fit
+m/MS0019.BIN	0:02	2	86	1FD2	若者：	Young Man:	Young Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:02	3	94	1FD3	{08:0B}達が攻めてくる{08:72}絶対そうに決まっ{08:2B}！！\n	The demons are gonna attack us! It's gotta be!\n	The demons are gonna attack us! It's gotta be!\n	v005	checked	reads: 悪魔達が攻めてくる‥‥絶対そうに決まってる！！\n; @tl:fit
+m/MS0019.BIN	0:02	4	141	09	上野にバール教団の総本山が{08:7B}ぜ！\n<wait>	The central church of the Baalites is located in Ueno.\n<wait>	The central church of the Baalites is located in Ueno.\n<wait>	ours	checked	reads: 上野にバール教団の総本山があるぜ！\n<wait>; @tl:fit
+m/MS0019.BIN	0:02	5	182	1FD2	若者：	Young Man:	Young Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:02	6	190	1FD3	気味が悪いんで、あんまり近寄る奴は{08:24}{08:84}な。\n教団に入信し{08:69}{08:52}ん{08:7D}、別{08:74}どな。\n	It's creepy, so hardly anyone goes near the place.\nUnless you're looking to join their ranks, that is.\n	You'd be wise to stay far away from there.\nUnless you're looking to join their ranks, that is.\n	v005	draft	reads: 気味が悪いんで、あんまり近寄る奴はいないけどな。\n教団に入信しようってんなら、別だけどな。\n; @tl:accuracy (review: あんまり近寄る奴はいない is a statement, not advice)
+m/MS0019.BIN	0:02	7	272	09	新宿の{08:0B}共が、何か建て{08:2B}らしいぜ。\n奴ら{08:52}、けっこうマメだよな。\n	It appears that the demons in Shinjuku are building something.\nThose are some hard-working bastards...\n	It appears that the demons in Shinjuku are building something.\nThose are some hard-working bastards...\n	v005	checked	reads: 新宿の悪魔共が、何か建ててるらしいぜ。\n奴らって、けっこうマメだよな。\n; @refalign; @tl:fit
+m/MS0019.BIN	0:02	8	337	00	新宿が{08:5B}、{08:0B}共の手に落ち{08:50}しい。\nかなり死人も出{08:2B}らしいぜ。\n<wait>	Shinjuku seems to have fallen to the demons again.\nQuite a few dead too, I hear.\n<wait>			draft	reads: 新宿がまた、悪魔共の手に落ちたらしい。\nかなり死人も出てるらしいぜ。\n<wait>; @tl:verified
+m/MS0019.BIN	0:02	9	405	1FD2	若者：	Young Man:			draft	@tl:verified
+m/MS0019.BIN	0:02	10	413	1FD3	死体回収業者の奴、大{08:5C}けだ{08:51}{08:8C}な。\n	The corpse collectors must've made a killing.\n			draft	reads: 死体回収業者の奴、大もうけだっただろうな。\n; @tl:verified
+m/MS0019.BIN	0:03	0	24	1FD2	女性：	Woman:	Woman:	v005	checked	@tl:fit
+m/MS0019.BIN	0:03	1	44	09	市ヶ谷の{08:10}{08:52}、今、予約一杯で紹介状持{08:52}{08:25}と\n診療{08:4A}もらえ{08:25}の。\n<wait>	The Ichigaya Shelter is booked solid right now. Without a referral\nletter, they won't even see you.\n<wait>	There's a super advanced hospital located in Ichigaya Shelter.\nHowever, they'll only treat you if you have a referral note.\n<wait>	v005	draft	reads: 市ヶ谷のシェルターって、今、予約一杯で紹介状持ってないと\n診療してもらえないの。\n<wait>; @refalign; @tl:accuracy (review: 予約一杯 dropped; 'super advanced hospital' is not in the jp)
+m/MS0019.BIN	0:03	2	114	1FD2	女性：	Woman:	Woman:	v005	checked	@tl:fit
+m/MS0019.BIN	0:03	3	122	1FD3	紹介状{08:52}言{08:52}も、そんじょそこらの医者や博士の{08:81}ダメ。\n市ヶ谷{08:10}の先生が、頭あがん{08:25}人{08:81}{08:25}とダメよ。\n	A letter of introduction from just any old doctor won't do.\nIt has to be from someone the Ichigaya Shelter doctor can't say no to.\n	A letter of introduction from just any old doctor won't do.\nIt has to be from someone the Ichigaya Shelter doctor can't say no to.\n	ours	checked	reads: 紹介状って言っても、そんじょそこらの医者や博士のじゃダメ。\n市ヶ谷シェルターの先生が、頭あがんない人じゃないとダメよ。\n; @tl:fit
+m/MS0019.BIN	0:03	4	226	09	うっそー！！　{08:3F}{08:52}{01:08}城{08:6B}ぉ！？\nやだー！　{08:5B}、あいつらが勢力伸ば{08:4A}くるの？\n	No way!! Is that seriously Bael's Castle!?\nUgh, no way! Are they gonna keep growing their power again?\n	No way!! Is that seriously Baal's Castle!?\nUgh, no way! Are they gonna keep growing their power again?\n	ours	draft	reads: うっそー！！　あれってバエル城なのぉ！？\nやだー！　また、あいつらが勢力伸ばしてくるの？\n; @tl:accuracy (the {01:08} baeru pool token was rendered 'Baal' in ref_en; corrected to 'Bael' -- baaru/Baal is the cult only, never merged)
+m/MS0019.BIN	0:03	5	306	09	上野にバール教総本山が{08:7B}{08:84}、{01:08}と関係{08:7B}のかしらね？\n取りあえず、{08:0B}とは関係{08:7B}み{08:4E}{08:74}ど。\n	There's the Baal cult's head temple in Ueno... is it connected to Bael?\nWell, it does seem connected to demons somehow, at least.\n	There's the Baal cult's head temple in Ueno... is it connected to Baal?\nWell, it does seem connected to demons somehow, at least.\n	ours	draft	reads: 上野にバール教総本山があるけど、バエルと関係あるのかしらね？\n取りあえず、悪魔とは関係あるみたいだけど。\n; @tl:accuracy (same row mixes both terms: baaru-kyou (the cult) stays 'Baal', the {01:08} baeru pool call corrected to 'Bael')
+m/MS0019.BIN	0:03	6	398	09	都庁の上の建物、殆ど完成し{08:2B}わよね。\nまるで、お城み{08:4E}{02:08}\n	That building over the Government Office is almost finished now, huh.\nIt's just like a castle...\n	That building above City Hall is pretty much finished now, huh.\nIt's just like a castle...\n	ours	draft	reads: 都庁の上の建物、殆ど完成してるわよね。\nまるで、お城みたい‥‥‥\n; @tl:accuracy (review: 都庁 is Government Office per glossary)
+m/MS0019.BIN	0:03	7	460	09	ねぇ知{08:52}た？\n都庁の上、空中に{08:0B}達が何か作っ{08:2B}ん{08:55}{08:52}！\n<wait>	Hey, did you know?\nApparently the demons are building something in the sky\nover the Government Office!\n<wait>	Hey, did you know?\nApparently the demons are building something in the sky above City Hall!\n<wait>	ours	draft	reads: ねぇ知ってた？\n都庁の上、空中に悪魔達が何か作ってるんですって！\n<wait>; @tl:accuracy (review: 都庁 is Government Office per glossary)
+m/MS0019.BIN	0:03	8	522	1FD2	女性：	Woman:	Woman:	v005	checked	@tl:fit
+m/MS0019.BIN	0:03	9	530	1FD3	{08:56}{08:72}空飛べ{08:50}便利よねぇ。\nカッコイイ飛行ユニットとか出{08:25}かしら{02:08}\n	But... it'd be handy to be able to fly, huh.\nI wonder if some cool flying unit will show up...\n	But... it'd be handy to be able to fly, huh.\nI wonder if some cool flying unit will show up...\n	ours	checked	reads: でも‥‥空飛べたら便利よねぇ。\nカッコイイ飛行ユニットとか出ないかしら‥‥‥\n; @tl:fit
+m/MS0019.BIN	0:03	10	595	00	{08:45}で売っ{08:2B}サイバーパーツ{08:62}どれもお買い得よ！\n<wait>	They have incredible deals on cybernetics here.\n<wait>	They have incredible deals on cybernetics here.\n<wait>	v005	checked	reads: ここで売ってるサイバーパーツは、どれもお買い得よ！\n<wait>; @tl:fit
+m/MS0019.BIN	0:03	11	648	1FD2	女性：	Woman:	Woman:	v005	checked	@tl:fit
+m/MS0019.BIN	0:03	12	656	1FD3	外部記憶装置も捨て難いし{02:08}<wait>どれにし{08:69}か迷っちゃうわ！\n	Just look at this memory device... It'd be a waste not to buy it...\n<wait>Aah! Too much choice!\n	Just look at this memory device... It'd be a waste not to buy it...\n<wait>Aah! Too much choice!\n	v005	checked	reads: 外部記憶装置も捨て難いし‥‥‥<wait>どれにしようか迷っちゃうわ！\n; @tl:fit
+m/MS0019.BIN	0:04	0	24	1FD2	女性：	Woman:	Woman:	v005	checked	@tl:fit
+m/MS0019.BIN	0:04	1	37	09	都庁の上に出来た{08:5E}見た！？\nすっごいお城よね！！\n<wait>	Have you seen that thing over the Government Office?\nThat giant, floating castle?\n<wait>	Have you seen that thing over the Government Office?\nThat giant, floating castle?\n<wait>	v005	checked	reads: 都庁の上に出来たもの見た！？\nすっごいお城よね！！\n<wait>; @refalign; @tl:fit
+m/MS0019.BIN	0:04	2	95	09	{08:0B}が都庁上空に、変な物建て{08:2B}のよね！\n一体どんな技術{08:6B}かしら！？\n<wait>	The demons are building something in the air over the Government Office!\nHow is that even physically possible?\n<wait>	The demons are building something in the air over the Government Office!\nHow is that even physically possible?\n<wait>	v005	checked	reads: 悪魔が都庁上空に、変な物建ててるのよね！\n一体どんな技術なのかしら！？\n<wait>; @refalign; @tl:fit
+m/MS0019.BIN	0:04	3	164	00	{08:47}東京を旅{08:8E}{02:0B}にと{08:52}、サイバネック技術は無くては{08:7D}{08:25}物よ。\n<wait>	For anyone traveling this Tokyo, cybernetics are a must.\n<wait>			draft	reads: この東京を旅する人間にとって、サイバネック技術は無くてはならない物よ。\n<wait>; @tl:verified
+m/MS0019.BIN	0:04	4	231	1FD2	女性：	Woman:			draft	@tl:verified
+m/MS0019.BIN	0:04	5	239	1FD3	早くお金をためて、サイバー化しなきゃ！\n<wait>	I've got to save up and get cybered up, quick!\n<wait>			draft	@tl:verified
+m/MS0019.BIN	0:05	0	24	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:05	1	44	09	市ヶ谷の先生{08:62}昔どっかの博士に師事{08:4A}い{08:50}しい。\n{08:79}師匠も、今はどこかの地下に引きこも{08:52}研究に没頭し{08:2B}らしい。\n	Apparently the doctor in Ichigaya used to study under some professor.\nAnd that mentor's holed up underground now, lost in his research.\n	Apparently the professor in Ichigaya used to study under some doctor.\nAnd that mentor's now buried underground, lost in his research.\n	ours	draft	reads: 市ヶ谷の先生は、昔どっかの博士に師事していたらしい。\nその師匠も、今はどこかの地下に引きこもって研究に没頭してるらしい。\n; @tl:accuracy (review: 先生/博士 roles were swapped; 引きこもって is holed up, not buried)
+m/MS0019.BIN	0:05	2	158	09	{01:08}{08:72}やっぱり生きていやが{08:51}か！\n	Bael... So that bastard's still alive after all!\n	Baal... So that bastard's still alive after all!\n	ours	draft	reads: バエル‥‥やっぱり生きていやがったか！\n; @tl:accuracy ({01:08} baeru pool token was rendered 'Baal' in ref_en; corrected to 'Bael')
+m/MS0019.BIN	0:05	3	195	09	{01:08}が倒{03:0C}て{08:42}も、奴の威光は消え{08:25}{08:72}\n<wait>	Even after Bael was defeated, his influence hasn't faded...\n<wait>	Even after Baal was defeated, his influence hasn't faded...\n<wait>	ours	draft	reads: バエルが倒されてからも、奴の威光は消えない‥‥\n<wait>; @tl:accuracy ({01:08} baeru pool token corrected Baal->Bael)
+m/MS0019.BIN	0:05	4	238	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:05	5	246	1FD3	{02:03}が倒{08:4B}の{08:62}やっぱり偽物だ{08:51}ん{08:8C}な。\n影武者の一人や二人、い{08:54}おかしく{08:25}{08:42}な。\n	The one the Resistance took down was probably just a decoy after all.\nWouldn't be strange for a guy like that to have a body double or two.\n	The one the Resistance took down was probably just a decoy after all.\nWouldn't be strange for a guy like that to have a body double or two.\n	ours	checked	reads: レジスタンスが倒したのは、やっぱり偽物だったんだろうな。\n影武者の一人や二人、いてもおかしくないからな。\n; @tl:fit
+m/MS0019.BIN	0:05	6	330	09	新宿の空中に出来{08:2B}建物{08:62}{01:08}城だ{08:72}<wait>{08:52}{08:68}噂が有力な{08:5F}。\n	That building forming in the sky over Shinjuku is Bael's Castle...<wait>or so the rumor goes, at least.\n	That building forming in the sky over Shinjuku is Baal's Castle...<wait>or so the rumor goes, at least.\n	ours	draft	reads: 新宿の空中に出来てる建物は、バエル城だ‥‥<wait>っていう噂が有力なんだ。\n; @tl:accuracy ({01:08} baeru pool token corrected Baal->Bael)
+m/MS0019.BIN	0:05	7	391	09	品川のホテル{08:52}、どこぞ{08:42}逃げ出{08:4B}デミ・ヒューマン達が\n居着いてた{08:5F}{08:52}な。\n	That hotel in Shinagawa, huh - I hear it's become a hideout\nfor demi-humans who escaped from somewhere.\n	That hotel in Shinagawa, huh - I hear it's become a hideout\nfor demi-humans who escaped from somewhere.\n	ours	checked	reads: 品川のホテルって、どこぞから逃げ出したデミ・ヒューマン達が\n居着いてたんだってな。\n; @tl:fit
+m/MS0019.BIN	0:05	8	469	09	品川に大破壊前の高級ホテルがあ{08:52}な、建物の損傷が比較的少なくて、\n雨露凌ぐにゃ絶好の場所だ{01:29}。\n	There's a fancy hotel in Shinagawa from before the Great Destruction, and\nsince it wasn't damaged much, it's a perfect spot to wait out the rain.\n	There's a fancy hotel in Shinagawa from before the Great Destruction, and\nsince it wasn't damaged much, it's a perfect spot to wait out the rain.\n	ours	checked	reads: 品川に大破壊前の高級ホテルがあってな、建物の損傷が比較的少なくて、\n雨露凌ぐにゃ絶好の場所だそうだ。\n; @tl:fit
+m/MS0019.BIN	0:05	9	564	00	神田に{08:62}俺み{08:4E}なミュータントがたくさん{08:40}{08:84}よ、{08:90}もあそこ{08:62}\n辛気臭くていけねぇや。\n	Kanda's got plenty of mutants like me, but man, that place\nis just too damn gloomy.\n	Kanda is home to many other mutants like me.\nEven so, I wouldn't want to live there. The place sucks.\n	v005	draft	reads: 神田には、俺みたいなミュータントがたくさんいるけどよ、どうもあそこは、\n辛気臭くていけねぇや。\n; @refalign; @tl:accuracy (review: 辛気臭くていけねぇ is gloomy; ref_en invented 'wouldn't want to live there')
+m/MS0019.BIN	0:06	0	33	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	1	41	1FD3	へい！　らっしゃい！！\nあ{08:72}あ、アンタか{02:08}‥\n<wait>	Welcome! Wait... Ah! It's you!\n<wait>	Welcome! Wait... Ah! It's you!\n<wait>	v005	checked	reads: へい！　らっしゃい！！\nあ‥‥あ、アンタか‥‥‥‥\n<wait>; @tl:fit
+m/MS0019.BIN	0:06	2	93	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	3	101	1FD3	今日は強盗は無しだぜ！！\n<wait>	There'll be no robbery today, got it!!\n<wait>	Listen, I haven't stolen anything today!\n<wait>	v005	draft	@tl:accuracy (review: 今日は強盗は無しだぜ; ref_en 'I haven't stolen anything' changed the claim)
+m/MS0019.BIN	0:06	4	134	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	5	142	1FD3	何に{08:8E}{08:5F}？\n	What do you want?\n	What do you want?\n	v005	checked	reads: 何にするんだ？\n; @tl:fit
+m/MS0019.BIN	0:06	6	169	1FB2	天叢雲剣	Ama-no-Murakumo	Ama-no-Murakumo	v005	checked	menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS0019.BIN	0:06	7	179	1FB2	ガーディアンの服	Guardian Uniform	Guardian Uniform	v005	checked	menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS0019.BIN	0:06	8	197	1FB2	ミレニアムベレー	Millennium Beret	Millennium Beret	v005	checked	menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS0019.BIN	0:06	9	215	1FB2	いら{08:25}	Never mind	Never mind	v005	checked	reads: いらない; menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS0019.BIN	0:06	10	251	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	11	259	1FD3	今日の目玉商品だ！　あの伝説の剣、天叢雲剣！！\nと、言{08:52}もレプリカ{08:8F}な。\n<wait>	Today's special product is the legendary sword Ama-no-Murakumo!\nWell, a replica, actually...\n<wait>	Today's special product is the legendary sword Ama-no-Murakumo!\nWell, a replica, actually...\n<wait>	v005	checked	reads: 今日の目玉商品だ！　あの伝説の剣、天叢雲剣！！\nと、言ってもレプリカだがな。\n<wait>; @tl:fit
+m/MS0019.BIN	0:06	12	339	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	13	347	1FD3	{08:48}さえ{08:3F}ば、ナウなギャルにモテモテだ！！\n<wait>	With this, all the girls will fall for you!\n<wait>	With this, all the girls will fall for you!\n<wait>	v005	checked	reads: これさえあれば、ナウなギャルにモテモテだ！！\n<wait>; @tl:fit
+m/MS0019.BIN	0:06	14	396	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	15	404	1FD3	値段は{02:08}５０００マッカだぜ。\n	The price is... 5000 Macca.\n	The price is... 5000 Macca.\n	ours	checked	reads: 値段は‥‥‥５０００マッカだぜ。\n; @tl:fit
+m/MS0019.BIN	0:06	16	449	1FB2	買う	Purchase	Purchase	v005	checked	menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS0019.BIN	0:06	17	455	1FB2	買わ{08:25}	Never mind	Never mind	v005	checked	reads: 買わない; menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS0019.BIN	0:06	18	494	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	19	502	1FD3	残念！！　マッカが足り{08:25}{08:69}だな。\n	Too bad!! Looks like you don't have enough Macca.\n	Sorry! Looks like you don't got enough Macca.\n	ours	draft	reads: 残念！！　マッカが足りないようだな。\n; @tl:verified
+m/MS0019.BIN	0:06	20	555	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:06	21	563	1FD3	おんや？　{08:5C}荷物を持て{08:25}み{08:4E}だねぇ。\nどっかで物売{08:52}{08:42}{08:5B}来な！\n<wait>	Oh my? Looks like you can't carry any more, huh.\nCome back after you've sold some stuff somewhere!\n<wait>	Oh my? Looks like you can't carry any more, huh.\nCome back after you've sold some stuff somewhere!\n<wait>	ours	checked	reads: おんや？　もう荷物を持てないみたいだねぇ。\nどっかで物売ってからまた来な！\n<wait>; @tl:fit
+m/MS0019.BIN	0:06	22	633	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	23	641	1FD3	え？　{08:45}で買い取りはや{08:52}{08:25}のか{08:52}？\n<wait>{01:18}らの持っ{08:2B}モンで、俺の商売心をくすぐる物が無い{08:5F}よ。\n<wait>	Huh? You're asking if I don't buy things here?\n<wait>Nothing you're carrying tickles my merchant's fancy, that's all.\n<wait>	Huh? You're asking if I don't buy things here?\n<wait>Nothing you're carrying tickles my merchant's fancy, that's all.\n<wait>	ours	checked	reads: え？　ここで買い取りはやってないのかって？\n<wait>あんたらの持ってるモンで、俺の商売心をくすぐる物が無いんだよ。\n<wait>; @tl:fit
+m/MS0019.BIN	0:06	24	743	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	25	751	1FD3	{08:48}は早いモン勝ちだ{08:42}な。\n欲しいモンが{08:7B}ん{08:7D}、と{08:53}と荷物に余裕を作{08:52}来な！\n	It's first come, first served around here.\nIf there's something you want, hurry up and make room in your bags!\n	It's first come, first served around here.\nIf there's something you want, hurry up and make room in your bags!\n	ours	checked	reads: これは早いモン勝ちだからな。\n欲しいモンがあるんなら、とっとと荷物に余裕を作って来な！\n; @tl:fit
+m/MS0019.BIN	0:06	26	833	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	27	841	1FD3	まいどありー。\n	Thanks!\n	Thanks!\n	v005	checked	@split-tailless: the cut took only a trailing escape, nothing to divide; @tl:fit
+m/MS0019.BIN	0:06	28	864	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	29	872	1FD3	他にも何か{08:7B}かい？\n	Anything else?\n	Anything else?\n	v005	checked	reads: 他にも何かあるかい？\n; @tl:fit
+m/MS0019.BIN	0:06	30	898	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	31	906	1FD3	そうか。残念だな。\n	Really? Well, that's too bad.\n	Really? Well, that's too bad.\n	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	32	932	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	33	940	1FD3	{08:48}はミレニアムの警備兵、ガーディアンの制服セットだ。\n{08:48}を着れば、今日{08:42}貴方もミレニアムの一員！！\n<wait>	This is the same set of armour worn by the guardians at Millennium.\nYou'll be able to blend right in!\n<wait>	This is the same set of armour worn by the guardians at Millennium.\nYou'll be able to blend right in!\n<wait>	v005	checked	reads: これはミレニアムの警備兵、ガーディアンの制服セットだ。\nこれを着れば、今日から貴方もミレニアムの一員！！\n<wait>; @tl:fit
+m/MS0019.BIN	0:06	34	1046	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	35	1054	1FD3	今{08:7D}お得な、人数分のセットだぜ！\n<wait>	Purchase it now,\nand I'll toss in a set for your party members as a bonus!\n<wait>	Purchase it now,\nand I'll toss in a set for your party members as a bonus!\n<wait>	v005	checked	reads: 今ならお得な、人数分のセットだぜ！\n<wait>; @tl:fit
+m/MS0019.BIN	0:06	36	1095	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	37	1103	1FD3	お{08:53}、バレち{08:20}後の保証{08:71}は付いて{08:25}{08:42}な。\n俺を恨むのはよ{08:4A}くれよ！\n<wait>	Oh, but I should mention, if you get caught, that's your own fault.\nI don't give refunds!\n<wait>	Oh, but I should mention, if you get caught, that's your own fault.\nI don't give refunds!\n<wait>	v005	checked	reads: おっと、バレちまった後の保証までは付いてないからな。\n俺を恨むのはよしてくれよ！\n<wait>; @tl:fit
+m/MS0019.BIN	0:06	38	1177	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	39	1185	1FD3	今{08:7D}特価、６８００マッカだ！\n	The price is 6800 Macca. What do you say?\n	The price is 6800 Macca. What do you say?\n	ours	checked	reads: 今なら特価、６８００マッカだ！\n; @tl:fit
+m/MS0019.BIN	0:06	40	1230	1FB2	買う	Purchase	Purchase	v005	checked	menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS0019.BIN	0:06	41	1236	1FB2	買わ{08:25}	Never mind	Never mind	v005	checked	reads: 買わない; menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS0019.BIN	0:06	42	1300	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	43	1308	1FD3	まいどありー。\n	Thanks!\n	Thanks!\n	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	44	1330	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	45	1344	1F7C	ミレニアム信者がかぶっ{08:2B}、おしゃれなベレー帽だ！\nレプリカ{08:6A}か{08:81}{08:25}、れっきと{08:4B}本物さ！！\n<wait>	This is the headwear worn by the devotees of Millennium.\nIt's the real thing. Not a replica.\n<wait>	This is the headwear worn by the devotees of Millennium.\nIt's the real thing. Not a replica.\n<wait>	v005	checked	reads: ミレニアム信者がかぶってる、おしゃれなベレー帽だ！\nレプリカなんかじゃない、れっきとした本物さ！！\n<wait>; @tl:fit
+m/MS0019.BIN	0:06	46	1440	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	47	1448	1FD3	男性用と女性用が{08:7B}{08:42}、カップルでペア{08:52}のも{08:7F}ね！\n<wait>	I've got ones for both men and women,\nso you and your gal can be stylish together!\n<wait>	I've got ones for both men and women,\nso you and your gal can be stylish together!\n<wait>	v005	checked	reads: 男性用と女性用があるから、カップルでペアってのもいいね！\n<wait>; @tl:fit
+m/MS0019.BIN	0:06	48	1505	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	49	1513	1FD3	え？　出所？\n出所{08:6A}て野暮な事聞か{08:25}でくれよ、ハニー。\n<wait>	Huh? Where did I get them? Oh, come on.\nYou never ask a merchant where he gets his wares.\n<wait>	Huh? Where did I get them? Oh, come on.\nYou never ask a merchant where he gets his wares.\n<wait>	v005	checked	reads: え？　出所？\n出所なんて野暮な事聞かないでくれよ、ハニー。\n<wait>; @tl:fit
+m/MS0019.BIN	0:06	50	1575	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	51	1583	1FD3	気に{08:59}お値段は{02:08}{08:72}\n<wait>ありゃ！？　在庫切れだ。すま{08:25}ねぇ。\n	The price is...\n<wait>Oh? Sorry. On a second look, it seems that I'm out of stock.\n	The price is...\n<wait>Oh? Sorry. On a second look, it seems that I'm out of stock.\n	v005	checked	reads: 気になるお値段は‥‥‥‥‥\n<wait>ありゃ！？　在庫切れだ。すまないねぇ。\n; @tl:fit
+m/MS0019.BIN	0:06	52	1646	18	こいつは今、在庫切れな{08:5F}。すま{08:25}ねぇ。\n	I'm out of stock at the moment. Sorry about that.\n	I'm out of stock at the moment. Sorry about that.\n	v005	checked	reads: こいつは今、在庫切れなんだ。すまないねぇ。\n; @refalign; @tl:fit
+m/MS0019.BIN	0:06	53	1692	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:06	54	1700	1FD3	そうか。{08:81}あ、{08:5B}気が向い{08:50}寄{08:52}くれよな！\n	I see. Well, drop by again whenever you feel like it!\n	I see. Well, drop by again whenever you feel like it!\n	ours	checked	reads: そうか。じゃあ、また気が向いたら寄ってくれよな！\n; @tl:fit
+m/MS0019.BIN	0:07	0	24	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:07	1	37	09	おい、新宿にでっかいのが建{08:51}だろ！\n{08:3F}、実は{01:08}城らしいぜ！\n<wait>	You've seen that giant building in Shinjuku?\nThat's actually Bael's Castle!\n<wait>	You've seen that giant building in Shinjuku?\nThat's actually Baal's Castle!\n<wait>	ours	draft	reads: おい、新宿にでっかいのが建っただろ！\nあれ、実はバエル城らしいぜ！\n<wait>; @tl:accuracy ({01:08} baeru pool token corrected Baal->Bael)
+m/MS0019.BIN	0:07	2	103	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:07	3	111	1FD3	嘘{08:81}ねぇよ！\nちゃんと、ネットに潜{08:52}見た{08:5F}{08:42}よ！\n<wait>	No, I'm not kidding. I've seen it online.\n<wait>	No, I'm not kidding. I've seen it online.\n<wait>	v005	checked	reads: 嘘じゃねぇよ！\nちゃんと、ネットに潜って見たんだからよ！\n<wait>; @tl:fit
+m/MS0019.BIN	0:07	4	164	00	秋葉原のお買い得品{08:62}サイバー関係{08:74}{08:81}{08:25}ぜ！\n<wait>	Cybernetics aren't the only goods they sell here at Akihabara.\n<wait>	Cybernetics aren't the only goods they sell here at Akihabara.\n<wait>	v005	checked	reads: 秋葉原のお買い得品は、サイバー関係だけじゃないぜ！\n<wait>; @tl:fit
+m/MS0019.BIN	0:07	5	215	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:07	6	223	1FD3	一見、{08:82}のガラクタや古道具に見え{08:54}、{08:79}実、とん{08:56}{08:25}物だ{08:51}り\n{08:8E}か{08:5D}れ{08:25}ぜ！\n<wait>	What looks like junk at first might very well prove to be treasure!\n<wait>	What looks like junk at first might very well prove to be treasure!\n<wait>	v005	checked	reads: 一見、ただのガラクタや古道具に見えても、その実、とんでもない物だったり\nするかもしれないぜ！\n<wait>; @tl:fit
+m/MS0019.BIN	0:08	0	2	1FD2	女性：	Woman:	Woman:	v005	checked	@tl:fit
+m/MS0019.BIN	0:08	1	15	09	バール教信者{08:52}、何考えてんのかしら？\n<wait>	What goes on in the mind of those Baalites?\n<wait>	What goes on in the mind of those Baalites?\n<wait>	ours	checked	reads: バール教信者って、何考えてんのかしら？\n<wait>; @tl:fit
+m/MS0019.BIN	0:08	2	60	1FD2	女性：	Woman:	Woman:	v005	checked	@tl:fit
+m/MS0019.BIN	0:08	3	68	1FD3	あっちこっちで、{08:0B}の手先み{08:4E}に動き回{08:52}{02:08}\n{02:0B}のプライド{08:52}モンが無いのかしら？\n<wait>	How can a human being work for a demon? Don't they have any shame?\n<wait>	How can a human being work for a demon? Don't they have any shame?\n<wait>	v005	checked	reads: あっちこっちで、悪魔の手先みたいに動き回って‥‥‥\n人間のプライドってモンが無いのかしら？\n<wait>; @tl:fit
+m/MS0019.BIN	0:08	4	154	09	{08:0B}達{08:62}新宿を制圧{08:4A}東京を制覇し{08:69}と{08:13}に違{08:24}わ！！\nき{08:53}そうよ！！\n<wait>	First Shinjuku, then Tokyo. The demons are coming for all of us!\n<wait>	First Shinjuku, then Tokyo. The demons are coming for all of us!\n<wait>	v005	checked	reads: 悪魔達は、新宿を制圧して東京を制覇しようとしているに違いないわ！！\nきっとそうよ！！\n<wait>; @refalign; @tl:fit
+m/MS0019.BIN	0:08	5	223	00	{08:45}で売っ{08:2B}激安品{08:52}、いんちき商品も{08:7B}のよね！\n<wait>	Some of the bargains they sell here are fakes, you know!\n<wait>			draft	reads: ここで売ってる激安品って、いんちき商品もあるのよね！\n<wait>; @tl:verified
+m/MS0019.BIN	0:08	6	276	1FD2	女性：	Woman:			draft	@tl:verified
+m/MS0019.BIN	0:08	7	284	1FD3	こ{08:25}だ買{08:51}ケーブル{08:6A}て、ひどい物だ{08:51}わ！\n<wait>	The cable I bought the other day was awful!\n<wait>			draft	reads: こないだ買ったケーブルなんて、ひどい物だったわ！\n<wait>; @tl:verified
+m/MS0019.BIN	0:09	0	2	1FD2	男性：	Man:	Man:	ours	checked	@tl:fit
+m/MS0019.BIN	0:09	1	15	09	最近、バール教徒の数が減{08:51}み{08:4E}で、上野近辺に行{08:52}も脅{03:0C}たり、\n追い返{03:0C}たり{08:52}事が少なく{08:16}{08:5F}。\n<wait>	Lately the number of Baal worshippers near Ueno seems to have dropped, so\ngetting threatened or chased off doesn't happen as much anymore.\n<wait>	Lately the number of Baal worshippers near Ueno seems to have dropped, so\ngetting threatened or chased off doesn't happen as much anymore.\n<wait>	ours	checked	reads: 最近、バール教徒の数が減ったみたいで、上野近辺に行っても脅されたり、\n追い返されたりって事が少なくなったんだ。\n<wait>; @tl:fit
+m/MS0019.BIN	0:09	2	117	09	{08:0B}達が都庁の上に、群がっ{08:14}のを見ると、\n<wait>{02:0B}の時代は終わ{08:51}のかも知れ{08:25}{02:08}<wait>そう思えてくるよ。\n<wait>	Seeing the demons swarming above the Government Office like that,\n<wait>it makes me think... maybe the age of humanity is already over...<wait>that's how it feels, anyway.\n<wait>	Seeing the demons swarming above City Hall like that,\n<wait>it makes me think... maybe the age of humanity is already over...<wait>that's how it feels, anyway.\n<wait>	ours	draft	reads: 悪魔達が都庁の上に、群がっているのを見ると、\n<wait>人間の時代は終わったのかも知れない‥‥‥<wait>そう思えてくるよ。\n<wait>; @tl:accuracy (review: 都庁 is Government Office per glossary)
+m/MS0019.BIN	0:09	3	218	00	せっかく新宿が解放{03:0C}て、上手い{08:46}や{08:52}たのに{02:08}\n{08:5B}{08:0B}共にやら{08:2F}{08:6A}てよ{02:08}\n<wait>	After Shinjuku finally got liberated and things were going well...\nnow we're getting overrun by demons again...\n<wait>	After Shinjuku finally got liberated and things were going well...\nnow we're getting overrun by demons again...\n<wait>	ours	checked	reads: せっかく新宿が解放されて、上手いことやってたのに‥‥‥\nまた悪魔共にやられるなんてよ‥‥‥\n<wait>; @tl:fit
+m/MS0019.BIN	0:09	4	294	1FD2	男性：	Man:	Man:	ours	checked	@tl:fit
+m/MS0019.BIN	0:09	5	302	1FD3	{02:01}の連中{08:62}全く役に立た{08:19}し{08:72}\n奴らは一体何をや{08:52}{08:64}{08:5F}！？\n<wait>	Those Pentagramma people were completely useless...\nWhat the hell were they even doing!?\n<wait>	Those Pentagramma people were completely useless...\nWhat the hell were they even doing!?\n<wait>	ours	checked	reads: ペンタグランマの連中は、全く役に立たなかったし‥‥\n奴らは一体何をやっていたんだ！？\n<wait>; @tl:fit
+m/MS0019.BIN	0:0A	0	24	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:0A	1	37	09	{08:47}東京{08:62}{08:0B}に支配{03:0C}て{08:83}のか{08:72}？\n<wait>	Will all of Tokyo soon be controlled by the demons?...\n<wait>	Will all of Tokyo soon be controlled by the demons?...\n<wait>	v005	checked	reads: この東京は、悪魔に支配されてしまうのか‥‥？\n<wait>; @refalign; @tl:fit
+m/MS0019.BIN	0:0A	2	78	09	{08:3F}以来、{02:03}はすっかり鳴りをひそめ{08:14}。\n<wait>	I haven't heard a single word of the Resistance ever since the incident.\n<wait>	I haven't heard a single word of the Resistance ever since the incident.\n<wait>	v005	checked	reads: あれ以来、レジスタンスはすっかり鳴りをひそめている。\n<wait>; @refalign; @tl:fit
+m/MS0019.BIN	0:0A	3	123	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:0A	4	131	1FD3	都庁を奪回{08:4A}{08:42}後、{02:03}は何だかおかしく{08:1A}{08:1F}よな{08:72}\n<wait>	I can't quite put my finger on it, but something about the Resistance\nchanged after they took back the Government Office.\n<wait>	I can't quite put my finger on it, but something about the Resistance\nchanged after they took back the Government Office.\n<wait>	v005	checked	reads: 都庁を奪回してから後、レジスタンスは何だかおかしくなってしまったよな‥‥\n<wait>; @tl:fit
+m/MS0019.BIN	0:0A	5	183	00	新宿に{08:0B}が攻めて{08:1E}時、{02:03}は何も{08:4A}くれ{08:19}{08:72}\n<wait>	Demons attacked Shinjuku, and yet, they did nothing.\n<wait>	Demons attacked Shinjuku, and yet, they did nothing.\n<wait>	v005	checked	reads: 新宿に悪魔が攻めてきた時、レジスタンスは何もしてくれなかった‥‥\n<wait>; @tl:fit
+m/MS0019.BIN	0:0A	6	232	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:0A	7	240	1FD3	あん{08:58}統制が取れて{08:64}組織だ{08:51}のに、あの時は統制{08:6A}てあ{08:51}モン{08:81}\n{08:19}。\n<wait>	They used to always be so tightly organized, but not anymore.\n<wait>	They used to always be so tightly organized, but not anymore.\n<wait>	v005	checked	reads: あんなに統制が取れていた組織だったのに、あの時は統制なんてあったモンじゃ\nなかった。\n<wait>; @tl:fit
+m/MS0019.BIN	0:0A	8	314	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:0A	9	322	1FD3	そう{02:08}まるで大将を失{08:51}軍の{08:69}だ{08:51}{08:72}\n<wait>	It reminds me of... Yes, an army that has lost its leader.\n<wait>	It reminds of me... Yes, an army that has lost its leader.\n<wait>	v005	draft	reads: そう‥‥‥まるで大将を失った軍のようだった‥‥\n<wait>; @tl:style (review: typo 'reminds of me')
+m/MS0019.BIN	0:0B	0	2	1FD2	女性：	Woman:	Woman:	v005	checked	@tl:fit
+m/MS0019.BIN	0:0B	1	20	0E	次はどこをサイバー化し{08:69}かしら{02:08}\n<wait>	Where shall I cyberize next, I wonder......\n<wait>			draft	reads: 次はどこをサイバー化しようかしら‥‥‥\n<wait>; @tl:verified
+m/MS0019.BIN	0:0B	2	58	00	死体回収業者{08:62}神出鬼没よ。\n<wait>	Those corpse collectors are like ghosts - here one second, gone the next.\n<wait>	Those corpse collectors are like ghosts - here one second, gone the next.\n<wait>	ours	checked	reads: 死体回収業者は、神出鬼没よ。\n<wait>; @tl:fit
+m/MS0019.BIN	0:0B	3	93	1FD2	女性：	Woman:			draft	@tl:verified
+m/MS0019.BIN	0:0B	4	101	1FD3	まあ、{08:47}東京はどこに行{08:52}も死体にあ{08:28}し。\n商売のネタには事欠か{08:25}で{08:80}ね。\n<wait>	Well, you can find corpses no matter where you go in Tokyo.\nThey'll never run short of material for their trade.\n<wait>	Well, you can find corpses no matter where you go in Tokyo.\nThey'll never run short of material for their trade.\n<wait>	ours	checked	reads: まあ、この東京はどこに行っても死体にあえるし。\n商売のネタには事欠かないでしょうね。\n<wait>; @tl:fit
+m/MS0019.BIN	0:0B	5	181	1FD2	女性：	Woman:			draft	@tl:verified
+m/MS0019.BIN	0:0B	6	189	1FD3	{08:56}、あんな事{08:4A}儲かっ{08:2B}のかしら？\n<wait>	But I wonder if doing something like that actually turns a profit?\n<wait>	But I wonder if doing something like that actually turns a profit?\n<wait>	ours	checked	reads: でも、あんな事して儲かってるのかしら？\n<wait>; @tl:fit
+m/MS0019.BIN	0:0B	7	227	00	{02:03}{08:52}一体{08:90}しちゃ{08:51}のかしら？\nあの人達、新宿陥落{08:4B}時も、何{08:5D}{08:19}らしいし{02:08}\n<wait>何だか変よね。\n<wait>	I wonder what in the world happened to the Resistance?\nThey say those people didn't even do anything when Shinjuku fell...\n<wait>It's kind of strange, isn't it.\n<wait>	I wonder what in the world happened to the Resistance?\nThey say those people didn't even do anything when Shinjuku fell...\n<wait>It's kind of strange, isn't it.\n<wait>	ours	checked	reads: レジスタンスって一体どうしちゃったのかしら？\nあの人達、新宿陥落した時も、何もしなかったらしいし‥‥‥\n<wait>何だか変よね。\n<wait>; @tl:fit
+m/MS0019.BIN	0:0C	0	2	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:0C	1	15	09	{08:0B}共は本当に、空中城を本拠地に{08:4B}らしい。\n<wait>	So the demons really have made that sky castle their base, it seems.\n<wait>	I can hardly believe it, but it sounds like the demons\nhave genuinely built a castle in the sky.\n<wait>	v005	draft	reads: 悪魔共は本当に、空中城を本拠地にしたらしい。\n<wait>; @refalign; @tl:accuracy (review: 本拠地にした dropped)
+m/MS0019.BIN	0:0C	2	66	09	{08:0B}共、いずれはあの空中城に本拠地を移す気{08:8C}。\n<wait>	Those demons will probably move their base to that sky castle eventually.\n<wait>	Those demons will probably move their base to that sky castle eventually.\n<wait>	ours	checked	reads: 悪魔共、いずれはあの空中城に本拠地を移す気だろう。\n<wait>; @tl:fit
+m/MS0019.BIN	0:0C	3	121	09	{08:48}{08:42}東京は{08:90}{08:1A}{08:83}{08:5F}{02:08}\n<wait>	I wonder what the future looks like for Tokyo...\n<wait>	I wonder what the future looks like for Tokyo...\n<wait>	v005	checked	reads: これから東京はどうなってしまうんだ‥‥‥\n<wait>; @refalign; @tl:fit
+m/MS0019.BIN	0:0C	4	147	00	新宿は酷い事に{08:1A}{08:1F}。\n都庁に近づくにつれて、{08:0B}が凶暴化{08:13}{08:69}だ。\n<wait>	Shinjuku's turned into an awful mess.\nThe nearer the Government Office, the more vicious the demons get.\n<wait>	Shinjuku's turned into an awful mess.\nThe closer you get to City Hall, the more vicious the demons seem to get.\n<wait>	ours	draft	reads: 新宿は酷い事になってしまった。\n都庁に近づくにつれて、悪魔が凶暴化しているようだ。\n<wait>; @tl:accuracy (review: 都庁 is Government Office per glossary)
+m/MS0019.BIN	0:0C	5	217	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:0C	6	225	1FD3	都庁の側{08:71}行{08:43}と{08:4A}も、都庁の中には入れ{08:25}し{08:72}\nマイシテーも{08:0B}の手に落ちて、逃げのびた者{08:26}いが取り残{03:0C}た者達は{02:08}\n<wait>	Even if you made it to the Government Office, you couldn't get inside...\nMyCity fell too - the escapees were lucky, but the ones left behind...\n<wait>	Even if you managed to reach City Hall, you still couldn't get inside...\nMYCITY fell too - the escapees were lucky, but the ones left behind...\n<wait>	ours	draft	reads: 都庁の側まで行けたとしても、都庁の中には入れないし‥‥\nマイシテーも悪魔の手に落ちて、逃げのびた者はいいが取り残された者達は‥‥‥\n<wait>; @tl:accuracy (review: 都庁 Government Office per glossary; MyCity corpus form)
+m/MS0019.BIN	0:0D	0	24	1FD2	男性：	Man:	Man:	v005	checked	@tl:fit
+m/MS0019.BIN	0:0D	1	37	09	上野に{08:62}{01:08}が潜んでる{08:52}専らの噂だ{02:08}\n	There are rumours going around that say that Bael is hiding in Ueno.\n	There are rumours going around that say that Baal is hiding in Ueno.\n	ours	draft	reads: 上野には、バエルが潜んでるって専らの噂だ‥‥‥\n; @tl:accuracy ({01:08} baeru pool token corrected Baal->Bael)
+m/MS0019.BIN	0:0D	2	78	09	{08:72}やっぱり、{01:08}は生きてやがる{08:5F}！\nき{08:53}、あの城の上で俺達を嘲笑{08:52}やがる{08:5F}！\n<wait>	I knew that he was still alive!\nThat bastard is probably laughing at us from his castle!\n<wait>	I knew that he was still alive!\nThat bastard is probably laughing at us from his castle!\n<wait>	v005	checked	reads: ‥‥やっぱり、バエルは生きてやがるんだ！\nきっと、あの城の上で俺達を嘲笑ってやがるんだ！\n<wait>; @refalign; @tl:fit
+m/MS0019.BIN	0:0D	3	157	00	俺は新宿{08:42}逃げて{08:1E}{08:5F}。\n新宿{08:62}{08:0B}軍に落と{03:0C}ち{08:20}{02:08}\n<wait>	I fled here from Shinjuku.\nShinjuku's fallen to the demon army......\n<wait>			draft	reads: 俺は新宿から逃げてきたんだ。\n新宿は、悪魔軍に落とされちまった‥‥‥\n<wait>; @tl:verified
+m/MS0019.BIN	0:0D	4	213	1FD2	男性：	Man:			draft	@tl:verified
+m/MS0019.BIN	0:0D	5	221	1FD3	{03:0B}{08:0B}達が無秩序ではなく、むしろ秩序だ{08:52}襲{08:52}{08:1E}{08:52}事は{02:08}\n<wait>	But the demons attacking in an organized way, not chaotically......\nthat means......\n<wait>			draft	reads: しかし、悪魔達が無秩序ではなく、むしろ秩序だって襲ってきたって事は‥‥‥\n<wait>; @tl:verified
+m/MS0019.BIN	0:0E	0	24	1FD2	女性：	Woman:	Woman:	v005	checked	@tl:fit
+m/MS0019.BIN	0:0E	1	37	09	やだー！\nやっぱ{01:08}{08:52}生きてて、裏で何かや{08:52}たのね！！\n<wait>	Ugh, no! So Bael really is alive,\nand he's been up to something behind the scenes!!\n<wait>	I knew it! Baal is still alive!\n<wait>	ours	draft	reads: やだー！\nやっぱバエルって生きてて、裏で何かやってたのね！！\n<wait>; @tl:accuracy (review: Bael pool; ref_en dropped 裏で何かやってた)
+m/MS0019.BIN	0:0E	2	97	1FD2	女性：	Woman:	Woman:	v005	checked	@tl:fit
+m/MS0019.BIN	0:0E	3	105	1FD3	あんな奴、誰かぶっ殺しちゃえば{08:7F}のに！！\n	Someone should go and off that motherfucker!\n	Someone should go and off that motherfucker!\n	v005	checked	reads: あんな奴、誰かぶっ殺しちゃえばいいのに！！\n; @tl:fit
+m/MS0019.BIN	0:0E	4	152	09	{01:08}{08:52}、今{08:56}上野の総本山に{08:40}のかしら？\n<wait>	I wonder where Bael is right now. Maybe at his temple in Ueno?\n<wait>	I wonder where Baal is right now. Maybe at his temple in Ueno?\n<wait>	ours	draft	reads: バエルって、今でも上野の総本山にいるのかしら？\n<wait>; @tl:accuracy ({01:08} baeru pool token corrected Baal->Bael)
+m/MS0019.BIN	0:0E	5	197	1FD2	女性：	Woman:	Woman:	v005	checked	@tl:fit
+m/MS0019.BIN	0:0E	6	205	1FD3	前はそこに{08:40}{08:52}評判だ{08:51}{08:84}ね。\n新宿に{08:64}奴？　あん{08:6B}影武者よ！　き{08:53}！\n	Well, that's where people used to say he was.\nAnd the one in Shinjuku? That was a body double! Had to be!\n	That's the word on the street.\nAnd the one in Shinjuku? That one's totally a body double!\n	v005	draft	reads: 前はそこにいるって評判だったけどね。\n新宿にいた奴？　あんなの影武者よ！　きっと！\n; @tl:accuracy (review: 前はそこにいるって評判だった)
+m/MS0019.BIN	0:0E	7	279	09	{01:08}{08:52}生き{08:2B}らしいわよ！\n冗談{08:81}{08:25}わよね！\n	Folks are saying that Bael's still alive. It's for real!\n	Folks are saying that Baal's still alive. It's for real!\n	ours	draft	reads: バエルって生きてるらしいわよ！\n冗談じゃないわよね！\n; @tl:accuracy ({01:08} baeru pool token corrected Baal->Bael)
+m/MS0019.BIN	0:0E	8	325	09	何{08:3F}？　都庁の上の変{08:6B}ぉ～\n	What's that weird thing over the Government Office?\n	What's that weird thing over the Government Office?\n	v005	checked	reads: 何あれ？　都庁の上の変なのぉ～\n; @refalign; @tl:fit
+m/MS0019.BIN	0:0E	9	353	00	都庁が{02:03}に奪回{03:0C}て、や{08:53}{02:0B}が勢いに乗{08:52}{08:1E}と思っ{08:50}、\n{08:5B}{08:0B}に都庁を取られちゃ{08:52}さぁ。勘弁{08:4A}欲しいわよね！\n	When the Resistance took back the Government Office, I thought\nhumans were finally getting some momentum, but then the demons\ntook it again. Give me a break!\n	When the Resistance took over the Government Office,\nI thought that humanity was at last going to have its moment,\nbut no, they got wiped out the next day. Bloody hell!\n	v005	draft	reads: 都庁がレジスタンスに奪回されて、やっと人間が勢いに乗ってきたと思ったら、\nまた悪魔に都庁を取られちゃってさぁ。勘弁して欲しいわよね！\n; @refalign; @tl:accuracy (review: ref_en invented 'wiped out the next day'; また悪魔に都庁を取られちゃって / 勘弁して)
+m/MS0019.BIN	0:0F	0	24	1FD2	老女：	Old Woman:	Hag:	v005	draft	@tl:accuracy (review: 老女 speaker-tag corpus form (Old Woman 26, Hag 1); same record's [4]/[6])
+m/MS0019.BIN	0:0F	1	37	09	{02:0B}{08:62}{08:0B}と共存{08:4A}いく{08:86}{08:25}のかのう{08:72}\n<wait>	Humans are going to have to learn to co-exist with the demons.\n<wait>	Humans are going to have to learn to co-exist with the demons.\n<wait>	v005	checked	reads: 人間は、悪魔と共存していくしかないのかのう‥‥\n<wait>; @refalign; @tl:fit
+m/MS0019.BIN	0:0F	2	80	09	{02:0B}{08:74}の平和な世の中と{08:68}の{08:62}{08:5C}二度と訪れんのかのぅ{08:72}\n<wait>	Never again will this world be ours alone...\n<wait>	Never again will this world be ours alone...\n<wait>	v005	checked	reads: 人間だけの平和な世の中というのは、もう二度と訪れんのかのぅ‥‥\n<wait>; @refalign; @tl:fit
+m/MS0019.BIN	0:0F	3	136	00	新宿が{08:0B}にやら{08:60}そう{08:81}が{02:08}\n他の街は{01:32}{08:6B}かのぉ{02:08}\n<wait>	They say Shinjuku fell to the demons......\nI wonder if the other towns are safe......\n<wait>			draft	reads: 新宿が悪魔にやられたそうじゃが‥‥‥\n他の街は大丈夫なのかのぉ‥‥‥\n<wait>; @tl:verified
+m/MS0019.BIN	0:0F	4	192	1FD2	老女：	Old Woman:			draft	@tl:verified
+m/MS0019.BIN	0:0F	5	200	1FD3	{08:47}秋葉原{08:71}、攻めてくる{08:69}な事があっ{08:50}、\n{08:5C}わしの命は無い{08:81}ろうのぉ{08:72}\n<wait>	If they ever come attacking as far as Akihabara,\nthat'll be the end of me......\n<wait>			draft	reads: この秋葉原まで、攻めてくるような事があったら、\nもうわしの命は無いじゃろうのぉ‥‥\n<wait>; @tl:verified
+m/MS0019.BIN	0:0F	6	276	1FD2	老女：	Old Woman:			draft	@tl:verified
+m/MS0019.BIN	0:0F	7	284	1FD3	まぁ{08:47}歳{08:71}生きれば、何も言う{08:46}もありゃ{08:66}がのう{08:72}\n	Well, having lived this long, I've nothing to complain about......\n			draft	reads: まぁこの歳まで生きれば、何も言うこともありゃせんがのう‥‥\n; @tl:verified
+m/MS0019.BIN	0:10	0	24	1FD2	男性：	Man:	Man:	ours	checked	@tl:fit
+m/MS0019.BIN	0:10	1	37	09	あの城が建{08:51}今、新宿は{08:6C}に{08:0B}の巣窟に{08:1A}る。\nお前もあの辺を通る時{08:62}十分気を付{08:29}事だな！\n<wait>	Now that castle's up, Shinjuku's turned into a den of demons.\nYou'd better be plenty careful if you're passing through that area!\n<wait>	Now that castle's up, Shinjuku's turned into a den of demons.\nYou'd better be plenty careful if you're passing through that area!\n<wait>	ours	checked	reads: あの城が建った今、新宿は完全に悪魔の巣窟になってる。\nお前もあの辺を通る時は、十分気を付ける事だな！\n<wait>; @tl:fit
+m/MS0019.BIN	0:10	2	133	09	品川の廃墟に{08:1A}るホテルに、すっごい可愛い女の子が{08:40}らしいぜ！\n<wait>	I heard a super cute girl's living in that ruined Shinagawa hotel!\n<wait>	I heard a super cute girl's living in that ruined Shinagawa hotel!\n<wait>	ours	checked	reads: 品川の廃墟になってるホテルに、すっごい可愛い女の子がいるらしいぜ！\n<wait>; @tl:fit
+m/MS0019.BIN	0:10	3	202	1FD2	男性：	Man:	Man:	ours	checked	@tl:fit
+m/MS0019.BIN	0:10	4	210	1FD3	{08:52}言{08:52}も、本当に”女の子”{08:74}どな。\n	Though when I say that, I mean an actual "girl", mind you.\n	Though when I say that, I mean an actual "girl", mind you.\n	ours	checked	reads: って言っても、本当に”女の子”だけどな。\n; @tl:fit
+m/MS0019.BIN	0:10	5	246	00	銀座に{08:62}母{08:59}金星{08:52}言う教団が大神殿を構え{08:2B}。\n<wait>	In Ginza, a cult calling themselves Mother Venus set up a grand temple.\n<wait>	In Ginza, a cult calling themselves Mother Venus set up a grand temple.\n<wait>	ours	checked	reads: 銀座には、母なる金星って言う教団が大神殿を構えてる。\n<wait>; @tl:fit
+m/MS0019.BIN	0:10	6	299	1FD2	男性：	Man:	Man:	ours	checked	@tl:fit
+m/MS0019.BIN	0:10	7	307	1FD3	で、そ{08:47}神殿に行くと、美人の巫女さんがイイ事{08:4A}く{08:2F}{08:5F}{08:52}よ！\n<wait>	And apparently, that shrine's beautiful priestess treats you real nice!\n<wait>	And apparently, that shrine's beautiful priestess treats you real nice!\n<wait>	ours	checked	reads: で、そこの神殿に行くと、美人の巫女さんがイイ事してくれるんだってよ！\n<wait>; @tl:fit
+m/MS0019.BIN	0:10	8	374	1FD2	男性：	Man:	Man:	ours	checked	@tl:fit
+m/MS0019.BIN	0:10	9	382	1FD3	{08:5C}たまんねーらしいぜ！\n	I hear it's just too much to handle!\n	I hear it's just too much to handle!\n	ours	checked	reads: もうたまんねーらしいぜ！\n; @tl:fit
+m/MS0019.BIN	0:11	0	99	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：; @tl:verified
+m/MS0019.BIN	0:11	1	105	1FD3	あっ！　	Ah! 	Ah!	ours	draft	@tl:fit (review: head before a 1F01 07 print needs its trailing space ('Ah!Katsuragi-kun!'))
+m/MS0019.BIN	0:11	2	119	1F01	君！\n	-kun!\n	{04:FF}-kun!\n	ours	draft	@tl:verified
+m/MS0019.BIN	0:11	3	129	09	酷い{02:08}{08:90}{08:4A}{08:73}状態に{02:08}\n<wait>	This is awful... How did things end up like this...\n<wait>	This is awful... How did things end up like this...\n<wait>	ours	checked	reads: 酷い‥‥‥どうしてこんな状態に‥‥‥\n<wait>; @tl:fit
+m/MS0019.BIN	0:11	4	158	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：; @tl:verified
+m/MS0019.BIN	0:11	5	164	1FD3	待{08:52}ろ。今{08:48}を{02:08}‥\n<wait>	Wait right there. I'll just... use this...\n<wait>	Wait right there. I'll just... use this...\n<wait>	ours	checked	reads: 待ってろ。今これを‥‥‥‥\n<wait>; @tl:fit
+m/MS0019.BIN	0:11	6	191	1FD0	{01:06}{08:62}透明な薬瓶を取り出し、{08:4D}をゆっくりと	Kazumi took out a clear medicine bottle\nand slowly made 	{01:06} took out a clear medicine bottle, and slowly	ours	draft	reads: カズミは、透明な薬瓶を取り出し、それをゆっくりと; @tl:fit (review: assembled 57+15+10=82 columns)
+m/MS0019.BIN	0:11	7	237	1F01	に飲ませた。\n<wait>	 drink it.\n<wait>	made {04:FF} drink it.\n<wait>	ours	draft	@tl:verified
+m/MS0019.BIN	0:11	8	258	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：; @tl:verified
+m/MS0019.BIN	0:11	9	264	1FD3	さぁ、君達も{08:48}を飲んで{02:08}‥\n<wait>	Now then, you all drink this too...\n<wait>	Now then, you all drink this too...\n<wait>	ours	checked	reads: さぁ、君達もこれを飲んで‥‥‥‥\n<wait>; @tl:fit
+m/MS0019.BIN	0:11	10	323	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：; @tl:style (trailing space after speaker-tag colon removed)
+m/MS0019.BIN	0:11	11	335	1F01	君{08:72}良{08:18}。\n<wait>	-kun... thank goodness.\n<wait>	{04:FF}-kun... Thank goodness.\n<wait>	ours	draft	reads: 君‥‥良かった。\n<wait>; @tl:accuracy (1F01 seam opens with kun; existing draft dropped the honorific entirely)
+m/MS0019.BIN	0:11	12	354	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：; @tl:verified
+m/MS0019.BIN	0:11	13	360	1FD3	{08:87}で<wait>	By the way<wait>	By the way<wait>	ours	checked	reads: ところで<wait>; @tl:fit
+m/MS0019.BIN	0:11	14	371	18	君も秋葉原に来て{08:64}のか！\n<wait>	So you were in Akihabara too!\n<wait>	So you were in Akihabara too!\n<wait>	ours	checked	reads: 君も秋葉原に来ていたのか！\n<wait>; @tl:fit
+m/MS0019.BIN	0:11	15	404	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：; @tl:verified
+m/MS0019.BIN	0:11	16	410	1FD3	{02:08}{08:37}君と、{08:31}さんは？\n	...What about Sonoda-kun and Rui-san?\n	...What about Sonoda and Rui?\n	ours	draft	reads: ‥‥‥園田君と、泪さんは？\n; @tl:accuracy (ref_en dropped both mid-line honorifics jp has (Sonoda-kun, Rui-san))
+m/MS0019.BIN	0:11	17	447	1FB2	訳を話す	Explain why	Explain why	ours	checked	menu option, declared width 20 columns; @tl:fit
+m/MS0019.BIN	0:11	18	457	1FB2	黙っ{08:14}	Stay silent	Stay silent	ours	checked	reads: 黙っている; menu option, declared width 20 columns; @tl:fit
+m/MS0019.BIN	0:11	19	491	1F01	{08:62}{08:48}{08:71}のいきさつを話{08:4B}{08:72}\n<wait>	 told him everything that had happened......\n<wait>			draft	reads: は、これまでのいきさつを話した‥‥\n<wait>; @tl:verified
+m/MS0019.BIN	0:11	20	524	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：; @tl:verified
+m/MS0019.BIN	0:11	21	530	1FD3	{02:08}{01:29}{08:51}のか{02:08}{08:37}君{02:08}\n{1E10:01003C}	...I see... so that's what happened... Sonoda-kun...\n{1E10:01003C}	...I see... so that's what happened... Sonoda...\n{1E10:01003C}	ours	draft	reads: ‥‥‥そうだったのか‥‥‥園田君‥‥‥\n{1E10:01003C}; @tl:accuracy (review: 園田君: mid-line honorific dropped)
+m/MS0019.BIN	0:11	22	556	1FBA	{08:31}さんも一人で{01:32}{08:8C}か？\n<wait>	I wonder if Rui-san's doing alright on her own too...\n<wait>	I wonder if Rui's doing alright on her own too...\n<wait>	ours	draft	reads: 泪さんも一人で大丈夫だろうか？\n<wait>; @tl:accuracy (ref_en dropped the -san honorific on Rui-san)
+m/MS0019.BIN	0:11	23	598	1F01	{08:62}{01:06}に{08:37}の死を伝{08:28}のがつらく、黙{08:52}{08:64}{02:08}\n<wait>	 found it too hard to tell Kazumi of Sonoda's death,\nand stayed silent......\n<wait>	{04:FF} found it too hard to tell {01:06} about Sonoda, stayed silent...\n<wait>	ours	draft	reads: は、カズミに園田の死を伝えるのがつらく、黙っていた‥‥‥\n<wait>; @tl:verified
+m/MS0019.BIN	0:11	24	645	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：; @tl:verified
+m/MS0019.BIN	0:11	25	651	1FD3	{08:72}すまん。\n聞か{08:60}く{08:25}事を、聞いちゃ{08:51}み{08:4E}だな。\n<wait>	...Sorry.\nSeems I asked about something you didn't want to talk about.\n<wait>	...Sorry.\nSeems I asked about something you didn't want to talk about.\n<wait>	ours	checked	reads: ‥‥すまん。\n聞かれたくない事を、聞いちゃったみたいだな。\n<wait>; @tl:fit
+m/MS0019.BIN	0:11	26	707	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：; @tl:style (trailing space after speaker-tag colon removed)
+m/MS0019.BIN	0:11	27	719	1F01	君達は{08:48}{08:42}何処へ？\n	-kun, where are you all headed now?\n	{04:FF}-kun, where are you all headed now?\n	ours	draft	reads: 君達はこれから何処へ？\n; @tl:accuracy (1F01 seam opens with kun; existing draft dropped the honorific entirely)
+m/MS0019.BIN	0:11	28	754	1FB2	銀座へ	To Ginza	To Ginza	ours	checked	menu option, declared width 20 columns; @tl:fit
+m/MS0019.BIN	0:11	29	762	1FB2	特にあては無い	No plan really	No plan really	ours	checked	menu option, declared width 20 columns; @tl:fit
+m/MS0019.BIN	0:11	30	778	1FB2	黙っ{08:14}	Stay silent	Stay silent	ours	checked	reads: 黙っている; menu option, declared width 20 columns; @tl:fit
+m/MS0019.BIN	0:11	31	810	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：; @tl:verified
+m/MS0019.BIN	0:11	32	816	1FD3	そうか。あそこは今、イシュタルと{08:68}女神を崇{08:2E}教団が二つも{08:7B}らしい。\n<wait>	I see. Apparently two cults now worship some goddess called Ishtar there.\n<wait>	I see. Apparently two cults now worship some goddess called Ishtar there.\n<wait>	ours	checked	reads: そうか。あそこは今、イシュタルという女神を崇める教団が二つもあるらしい。\n<wait>; @tl:fit
+m/MS0019.BIN	0:11	33	891	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：; @tl:verified
+m/MS0019.BIN	0:11	34	897	1FD3	{08:86}も、あのバール兵達も多いと聞い{08:14}。\n行く時は十分気を付けてな。\n<wait>	And I hear those Baal soldiers are thick there too.\nBe real careful when you go.\n<wait>	And I hear those Baal soldiers are thick there too.\nBe real careful when you go.\n<wait>	ours	checked	reads: しかも、あのバール兵達も多いと聞いている。\n行く時は十分気を付けてな。\n<wait>; @tl:fit
+m/MS0019.BIN	0:11	35	974	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：; @tl:verified
+m/MS0019.BIN	0:11	36	980	1FD3	そうか、俺と大{08:4A}変わりが無いな。ハハハ。\n<wait>	I see, not too different from me, then. Hahaha.\n<wait>	I see, not too different from me, then. Hahaha.\n<wait>	ours	checked	reads: そうか、俺と大して変わりが無いな。ハハハ。\n<wait>; @tl:fit
+m/MS0019.BIN	0:11	37	1034	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：; @tl:verified
+m/MS0019.BIN	0:11	38	1040	1FD3	{02:08}言{08:64}く無い{08:7D}、{08:4D}{08:56}{08:7F}さ。\n<wait>	...If you don't want to talk about it, that's fine too.\n<wait>	...If you don't want to talk about it, that's fine too.\n<wait>	ours	checked	reads: ‥‥‥言いたく無いなら、それでもいいさ。\n<wait>; @tl:fit
+m/MS0019.BIN	0:11	39	1075	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：; @tl:verified
+m/MS0019.BIN	0:11	40	1081	1FD3	俺{08:62}戸山{08:10}に{08:40}平沢博士にメイを預けて、{08:63}を磨く為に旅を\n{08:13}{08:5F}。\n<wait>	I left Mei with Dr. Hirasawa over at the Toyama Shelter, and I'm out\ntraveling to sharpen myself.\n<wait>	I left Mei with Dr. Hirasawa over at the Toyama Shelter, and I'm out\ntraveling to sharpen myself.\n<wait>	ours	checked	reads: 俺は、戸山シェルターにいる平沢博士にメイを預けて、自分を磨く為に旅を\nしているんだ。\n<wait>; @tl:fit
+m/MS0019.BIN	0:11	41	1151	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：; @tl:verified
+m/MS0019.BIN	0:11	42	1157	1FD3	平沢博士にいなく{08:16}デミ・ヒューマンの、アリスを捜し出し、\n連れ戻{08:4A}くれと頼まれ{08:14}のも{08:7B}しな。\n<wait>	Dr. Hirasawa also asked me to track down Alice, a Demi-Human\nwho went missing, and bring her back.\n<wait>	Dr. Hirasawa also asked me to track down Alice, a Demi-Human\nwho went missing, and bring her back.\n<wait>	ours	checked	reads: 平沢博士にいなくなったデミ・ヒューマンの、アリスを捜し出し、\n連れ戻してくれと頼まれているのもあるしな。\n<wait>; @tl:fit
+m/MS0019.BIN	0:11	43	1257	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：; @tl:verified
+m/MS0019.BIN	0:11	44	1263	1FD3	まあ、{08:48}も{08:63}を磨く良い機会だ。\n	Well, this is a good chance to sharpen myself too.\n	Well, this is a good chance to sharpen myself too.\n	ours	checked	reads: まあ、これも自分を磨く良い機会だ。\n; @tl:fit
+m/MS0019.BIN	0:11	45	1310	1FB2	一緒に行か{08:25}か	Come along with me?	Come along with me?	ours	checked	reads: 一緒に行かないか; menu option, declared width 20 columns; @tl:fit
+m/MS0019.BIN	0:11	46	1326	1FB2	頑張れ！	Good luck!	Good luck!	ours	checked	menu option, declared width 20 columns; @tl:fit
+m/MS0019.BIN	0:11	47	1354	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：; @tl:verified
+m/MS0019.BIN	0:11	48	1360	1FD3	誘いはありが{08:4E}が、遠慮{08:8E}よ。\n俺は{08:63}一人で、{08:63}の力を磨{08:1E}い{08:5F}。\n<wait>	I appreciate the offer, but I'll pass.\nI want to sharpen my own strength on my own.\n<wait>	I appreciate the offer, but I'll pass.\nI want to sharpen my own strength on my own.\n<wait>	ours	checked	reads: 誘いはありがたいが、遠慮するよ。\n俺は自分一人で、自分の力を磨きたいんだ。\n<wait>; @tl:fit
+m/MS0019.BIN	0:11	49	1433	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：; @tl:verified
+m/MS0019.BIN	0:11	50	1439	1FD3	{01:2A}。\n俺は{08:63}一人で、{08:63}の力を磨いていく{01:3E}だ。\n<wait>	Thanks.\nI intend to keep honing my own strength, on my own.\n<wait>	Thanks.\nI intend to keep honing my own strength, on my own.\n<wait>	ours	checked	reads: ありがとう。\n俺は自分一人で、自分の力を磨いていくつもりだ。\n<wait>; @tl:fit
+m/MS0019.BIN	0:11	51	1491	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：; @tl:verified
+m/MS0019.BIN	0:11	52	1497	1FD3	強くなればメイを一人で守り切{08:2F}{08:69}に{08:59}。\nだ{08:42}、メイとも離れていなく{08:54}済む{08:42}な。\n<wait>	Once I get stronger, I'll be able to protect Mei on my own.\nThat way, I won't have to be apart from her anymore either.\n<wait>	Once I get stronger, I'll be able to protect Mei on my own.\nThat way, I won't have to be apart from her anymore either.\n<wait>	ours	checked	reads: 強くなればメイを一人で守り切れるようになる。\nだから、メイとも離れていなくても済むからな。\n<wait>; @tl:fit
+m/MS0019.BIN	0:11	53	1583	1FD2	{01:06}：	Kazumi:	{01:06}:	ours	draft	reads: カズミ：; @tl:verified
+m/MS0019.BIN	0:11	54	1589	1FD3	{08:4D}{08:81}あ、俺は{01:36}行かなきゃな。\n{08:81}あ、{08:5B}な{02:08}\n<wait>	Well then, I should get going soon.\nAlright, see you around...\n<wait>	Well then, I should get going soon.\nAlright, see you around...\n<wait>	ours	checked	reads: それじゃあ、俺はそろそろ行かなきゃな。\nじゃあ、またな‥‥‥\n<wait>; @tl:fit
+m/MS0019.BIN	0:11	55	1643	1FD0	{01:06}は去{08:52}行{08:51}{02:08}‥\n<wait>	{01:06} turned and left...\n<wait>	{01:06} turned and left...\n<wait>	ours	checked	reads: カズミは去って行った‥‥‥‥\n<wait>; @tl:fit
+m/MS0019.BIN	0:12	0	24	1FD2	店主：	Shopkeeper:	Shopkeeper:	ours	checked	@tl:fit
+m/MS0019.BIN	0:12	1	32	1FD3	{08:45}{08:62}{08:05}ー用ソフトを扱う店だ。\n<wait>他では真似出来{08:25}、豊富な品揃え！！\nさ、じっくり見て行きな！！\n<wait>	This shop deals in computer software.\n<wait>A selection so rich, no one else can match it!!\nGo on, take your time and look around!!\n<wait>	This shop deals in computer software.\n<wait>A selection so rich, no one else can match it!!\nGo on, take your time and look around!!\n<wait>	ours	checked	reads: ここは、コンピューター用ソフトを扱う店だ。\n<wait>他では真似出来ない、豊富な品揃え！！\nさ、じっくり見て行きな！！\n<wait>; @tl:fit
+m/MS0019.BIN	0:12	2	135	1FD0	暫定：ＣＯ{03:0E}ショップの処理が{08:76}入{08:52}{08:24}為、\n　　　今回は暫定{08:55}。\n<wait>	Provisional: the COMP shop routine isn't in yet, so this is a\nplaceholder for now.\n<wait>	Provisional: the COMP shop handling is not implemented yet,\n　　　so this is provisional for now.\n<wait>	ours	draft	reads: 暫定：ＣＯＭＰショップの処理がまだ入っていない為、\n　　　今回は暫定です。\n<wait>; @tl:verified
