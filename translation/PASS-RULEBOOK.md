@@ -66,6 +66,16 @@ committed) in route order (`build/tl-route.tsv`).
   prints the name, it stays a name print, never a literal. When a pronoun
   would be ambiguous (several men in the scene), prefer recasting the
   sentence over reintroducing the literal name.
+- **Kinship honorifics stay honorifics** (owner, 2026-09-14, from the MS000E
+  review). お兄ちゃん/お兄さん/お姉ちゃん/お姉さん keep their romanised form
+  ("Onii-chan", "Onii-san", "Onee-chan"...) both when an adult uses them about a
+  third person ("your Onii-chan", "Mei-chan's Onii-san" for Kazumi -- not "your
+  brother") and when a child addresses a stranger (Mei calling the hero
+  "Onii-chan" at first meeting -- not "mister"). This narrows the 2026-09-12
+  generic-address-noun rule above: that rule still covers 巫女さん/おばさん and
+  similar nouns, but not the sibling terms. A speaker referring to themselves
+  as お兄ちゃん達/お姉さん達 may still become "us" where the romanised form
+  would misread who is meant.
 
 ## 2. Glossary decisions made during the pass (binding; also in glossary.tsv)
 
