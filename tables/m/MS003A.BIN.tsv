@@ -3,273 +3,273 @@
 # original bytes.  Escapes: \n newline, <wait> page-wait, {XX} control byte
 # (keep them, in order), \\ \{ \< literal backslash / brace / angle.
 file	rec	idx	off	tag	jp	en	ref_en	ref_src	status	note
-m/MS003A.BIN	0:10	0	0	DATA	何も起こら{08:19}。\n<wait>		Nothing happened.\n<wait>	v005		reads: 何も起こらなかった。\n<wait>; @refalign
-m/MS003A.BIN	0:11	0	0	DATA	！？\n		!?\n	ours		
-m/MS003A.BIN	0:11	1	41	1E3E	の{03:0D}が{03:10}{08:4B}。\n<wait>		's HP was restored.\n<wait>	ours		reads: のＨＰが回復した。\n<wait>
-m/MS003A.BIN	0:12	0	0	DATA	！？\n	!?\n			draft	
-m/MS003A.BIN	0:12	1	49	1E3E	の{03:0D}・{03:0E}が{03:10}{08:4B}。\n<wait>		 recovered {03:0E}{03:0D}.\n<wait>	v005		reads: のＨＰ・ＭＰが回復した。\n<wait>; @refalign
-m/MS003A.BIN	0:13	0	26	0C	！？\n	!?\n			draft	
-m/MS003A.BIN	0:13	1	66	1E3E	は毒に冒{03:0C}た。\n<wait>		 was poisoned.\n<wait>	v005		reads: は毒に冒された。\n<wait>; @refalign
-m/MS003A.BIN	0:14	0	13	0C	！？\n	!?\n			draft	
-m/MS003A.BIN	0:14	1	53	1E3E	は強烈な毒に冒{03:0C}た。\n<wait>		 was badly poisoned.\n<wait>	v005		reads: は強烈な毒に冒された。\n<wait>; @refalign
-m/MS003A.BIN	0:15	0	13	0C	！？\n	!?\n			draft	
-m/MS003A.BIN	0:15	1	53	1E3E	は麻痺{08:4B}。\n<wait>		 was paralysed.\n<wait>	v005		reads: は麻痺した。\n<wait>; @refalign
-m/MS003A.BIN	0:16	0	13	0C	！？\n	!?\n			draft	
-m/MS003A.BIN	0:16	1	49	1FC4	泉の守護者の呪いか、身体が麻痺{08:4A}{08:1F}。\n<wait>		You've been paralysed by the spring's curse.\n<wait>	v005		reads: 泉の守護者の呪いか、身体が麻痺してしまった。\n<wait>; @refalign
-m/MS003A.BIN	0:17	0	0	DATA	！？\n	!?\n			draft	
-m/MS003A.BIN	0:17	1	36	1FC4	強力な呪いにより身体が石化{08:4A}{08:1F}。\n<wait>		You've been turned into stone by a powerful curse.\n<wait>	v005		reads: 強力な呪いにより身体が石化してしまった。\n<wait>; @refalign
-m/MS003A.BIN	0:18	0	0	DATA	何の変化も見られ{08:25}。\n<wait>		Nothing seems to have happened.\n<wait>	v005		reads: 何の変化も見られない。\n<wait>; @refalign
-m/MS003A.BIN	0:19	0	132	0C	！？\n	!?\n			draft	
-m/MS003A.BIN	0:19	1	170	1F2F	が黄金色に輝き始めた。\n<wait>	began to glow golden.\n<wait>			draft	
-m/MS003A.BIN	0:19	2	207	1F01	達は 		 began glowing with golden light.\n<wait>	v005		@refalign
-m/MS003A.BIN	0:19	3	216	1F2F	金塊？		You obtained 	v005		@refalign
-m/MS003A.BIN	0:19	4	226	1F2F	 を入手{08:4B}\n<wait>		"a golden nuget"\n?\n<wait>	v005		reads:  を入手した\n<wait>; @refalign-joined; @refalign
-m/MS003A.BIN	0:1A	0	0	DATA	！？\n	!?\n			draft	
-m/MS003A.BIN	0:1A	1	54	1FD2	泉の精霊：		Spring Spirit:	v005		
-m/MS003A.BIN	0:1A	2	66	1FD3	{08:72}私は{08:47}泉に棲む精霊。\n<wait>		...I am the spirit that dwells in this spring.\n<wait>	v005		reads: ‥‥私はこの泉に棲む精霊。\n<wait>
-m/MS003A.BIN	0:1A	3	313	1FD2	泉の精霊：		Spring Spirit:	v005		
-m/MS003A.BIN	0:1A	4	325	1FD3	お前が今投げ入{08:60}のは{08:47}	Was it this 	Which sword did you cast into the water?\n	v005	draft	reads: お前が今投げ入れたのはこの
-m/MS003A.BIN	0:1A	5	360	1F2F	か？\n{08:4D}とも{08:47}	 you just threw in?\nOr this 	? Or perhaps 	v005	draft	reads: か？\nそれともこの
-m/MS003A.BIN	0:1A	6	420	1F2F	か！？\n	?!\n			draft	
-m/MS003A.BIN	0:1A	7	465	1FB2	忘{08:60}	I forgot	I forgot	v005	draft	reads: 忘れた; menu option, declared width 20 columns
-m/MS003A.BIN	0:1A	8	525	1FB2	忘{08:60}	I forgot	I forgot	v005	draft	reads: 忘れた; menu option, declared width 20 columns
-m/MS003A.BIN	0:1A	9	585	1FB2	忘{08:60}	I forgot	I forgot	v005	draft	reads: 忘れた; menu option, declared width 20 columns
-m/MS003A.BIN	0:1A	10	612	1FD2	泉の精霊：		Spring Spirit:	v005		
-m/MS003A.BIN	0:1A	11	624	1FD3	お前が落と{08:4B}のは{08:47}	What you dropped was this 	Was the weapon you threw into the water this\n	v005	draft	reads: お前が落としたのはこの
-m/MS003A.BIN	0:1A	12	646	1F2F	銀の	silver 	silver 	v005	draft	
-m/MS003A.BIN	0:1A	13	659	1F2F	か？\n{08:4D}とも{08:47}		? Or perhaps 	v005		reads: か？\nそれともこの
-m/MS003A.BIN	0:1A	14	676	1F2F	金の	gold 	this gold 	v005	draft	
-m/MS003A.BIN	0:1A	15	689	1F2F	か！？\n	?!\n			draft	
-m/MS003A.BIN	0:1A	16	712	1FB2	金	Gold	Gold	v005	draft	menu option, declared width 20 columns
-m/MS003A.BIN	0:1A	17	716	1FB2	銀	Silver	Silver	v005	draft	menu option, declared width 20 columns
-m/MS003A.BIN	0:1A	18	720	1FB2	両方	Both	Both	v005	draft	menu option, declared width 20 columns
-m/MS003A.BIN	0:1A	19	726	1FB2	{01:3F}{08:56}{08:25}	Neither	Neither	v005	draft	reads: どちらでもない; menu option, declared width 20 columns
-m/MS003A.BIN	0:1A	20	796	1FD2	泉の精霊：	Spring Spirit:	Spring Spirit:	v005	draft	
-m/MS003A.BIN	0:1A	21	808	1FD3	{08:6A}と{08:72}無責任な。\n{08:63}の持ち物すら把握出来ておらんと{08:68}{08:46}か？\n<wait>	How......... irresponsible.\nYou can't even keep track of your own belongings?\n<wait>	Hmph... Pathetic.\nCan you not even keep track of your own possessions?\n<wait>	v005	draft	reads: なんと‥‥無責任な。\n自分の持ち物すら把握出来ておらんということか？\n<wait>
-m/MS003A.BIN	0:1A	22	874	1FD2	泉の精霊：		Spring Spirit:	v005		
-m/MS003A.BIN	0:1A	23	886	1FD3	お前が落と{08:4B}のは{08:47}	What you dropped was this 	Was the weapon you threw into the water this\n	v005	draft	reads: お前が落としたのはこの
-m/MS003A.BIN	0:1A	24	917	1F2F	だ。\n{08:72}{08:5C}少ししっかり{08:8E}{08:46}だな。\n	.\n...Try to be a bit more careful.\n	 was the correct answer.\nTry harder next time.\n	v005	draft	reads: だ。\n‥‥もう少ししっかりすることだな。\n
-m/MS003A.BIN	0:1A	25	990	1FD2	泉の精霊：		Spring Spirit:	v005		
-m/MS003A.BIN	0:1A	26	1002	1FD3	そうか。では{08:47}普通の	I see. Then this ordinary 	Is that so? Very well then.\nThis regular 	v005	draft	reads: そうか。ではこの普通の
-m/MS003A.BIN	0:1A	27	1035	1F2F	だな。\n持{08:52}ゆくが良い。\n		 is yours to take.\n	v005		reads: だな。\n持ってゆくが良い。\n
-m/MS003A.BIN	0:1A	28	1064	1FD2	泉の精霊：	Spring Spirit:	Spring Spirit:	v005	draft	
-m/MS003A.BIN	0:1A	29	1076	1FD3	？{08:72}そうか、では{08:48}はお前に返すとし{08:69}。\nいや、正直な{08:46}だな。感心、感心{08:72}\n		Oh? Very well then. I shall return this to you.\nHow honest. It is admirable...\n	v005		reads: ？‥‥そうか、ではこれはお前に返すとしよう。\nいや、正直なことだな。感心、感心‥‥\n; @refalign
-m/MS003A.BIN	0:1A	30	1153	1FD2	泉の精霊：		Spring Spirit:	v005		
-m/MS003A.BIN	0:1A	31	1165	1FD3	{08:72}うむ、{08:79}答えを選ぶ{08:46}は私には分か{08:52}{08:64}。\n誠実なお前には{08:48}を授け{08:69}{08:72}\n	...Mm, I knew you would choose that answer.\nTo one so honest, I grant this...\n	Yes, I knew you would say that... Very well.\nAs a price for your honesty, I shall give you this.\n	v005	draft	reads: ‥‥うむ、その答えを選ぶことは私には分かっていた。\n誠実なお前にはこれを授けよう‥‥\n
-m/MS003A.BIN	0:1A	32	1242	1FD2	泉の精霊：		Spring Spirit:	v005		
-m/MS003A.BIN	0:1A	33	1254	1FD3	愚かな！欲に目を眩ま{03:0C}お{08:52}！\n今{08:71}何を{08:4A}来た{08:77}！！\n		You fool! You have been blinded by greed!\n	v005		reads: 愚かな！欲に目を眩まされおって！\n今まで何をして来たのだ！！\n
-m/MS003A.BIN	0:1A	34	1313	1FD2	泉の精霊：		Spring Spirit:	v005		
-m/MS003A.BIN	0:1A	35	1325	1FD3	くっくっく{08:72}。なかなかに正直な奴では{08:25}か。\n{08:72}気に入{08:51}。望み通り{08:48}をお前にくれてやろう。\n		Hehehe... You are quite the honest man.\nI like that. Very well then. I shall give this to you.\n	v005		reads: くっくっく‥‥。なかなかに正直な奴ではないか。\n‥‥気に入った。望み通りこれをお前にくれてやろう。\n
-m/MS003A.BIN	0:1A	36	1418	1FD2	泉の精霊：	Spring Spirit:	Spring Spirit:	v005	draft	
-m/MS003A.BIN	0:1A	37	1430	1FD3	{08:72}嘘{08:26}かんな。{08:4D}とも忘れて{08:1F}のか？\nお前の落と{08:4B}のは{08:48}であろうが。\n	...You mustn't lie. Or have you forgotten?\nWhat you dropped was this, was it not?\n	...You shouldn't lie. Or did you perhaps forget?\nThis was the one you dropped.\n	v005	draft	reads: ‥‥嘘はいかんな。それとも忘れてしまったのか？\nお前の落としたのはこれであろうが。\n
-m/MS003A.BIN	0:1A	38	1501	1FD2	泉の精霊：		Spring Spirit:	v005		
-m/MS003A.BIN	0:1A	39	1513	1FD3	{08:72}む、{08:79}答えを選ぶ{08:8C}とは思{08:51}が。\nたわ{08:43}奴め。{08:48}以上付き合えんわ。\n	...Hm, I thought you would choose that answer.\nYou fool. I'll waste no more time on you.\n	Hmph. I thought you would way that.\nI cannot go along with this foolishness for any longer.\n	v005	draft	reads: ‥‥む、その答えを選ぶだろうとは思ったが。\nたわけた奴め。これ以上付き合えんわ。\n
-m/MS003A.BIN	0:1A	40	1584	1FD2	泉の精霊：	Spring Spirit:	Spring Spirit:	v005	draft	
-m/MS003A.BIN	0:1A	41	1596	1FD3	愚かな{08:72}。{08:48}を持{08:52}去るが良い。\n	Fool... Take this and be gone.\n	Fool... Take this and leave my sight.\n	v005	draft	reads: 愚かな‥‥。これを持って去るが良い。\n
-m/MS003A.BIN	0:1A	42	1632	1FD2	泉の精霊：		Spring Spirit:	v005		
-m/MS003A.BIN	0:1A	43	1644	1FD3	{02:08}。\n<wait>	.........\n<wait>			draft	reads: ‥‥‥。\n<wait>
-m/MS003A.BIN	0:1A	44	1657	1FD2	泉の精霊：		Spring Spirit:	v005		
-m/MS003A.BIN	0:1A	45	1669	1FD3	そこ{08:71}言{08:28}のも{08:5B}別の意味で正直{08:6B}だとい{08:28}。\n{08:8F}我を出し過ぎて身を滅ぼさぬ{08:69}に気を付{08:29}が良い。\n		Being able to say that is one form of honesty.\nI merely suggest that you do not go too far with it.\n	v005		reads: そこまで言えるのもまた別の意味で正直なのだといえる。\nだが我を出し過ぎて身を滅ぼさぬように気を付けるが良い。\n
-m/MS003A.BIN	0:1A	46	1796	1FD0	泉の精霊は	The Spring Spirit left	The spirit disappears into the spring,\nleaving behind 	v005	draft	
-m/MS003A.BIN	0:1A	47	1819	1F2F	を置いて再び泉の中へ\n消え{08:21}{08:72}\n<wait>	behind and disappeared back into the spring...\n<wait>			draft	reads: を置いて再び泉の中へ\n消えていった‥‥\n<wait>
-m/MS003A.BIN	0:1A	48	1928	1FD0	精霊は	The spirit left	The spirit disappears into the spring,\nleaving behind 	v005	draft	
-m/MS003A.BIN	0:1A	49	1981	1F2F	を置いて泉の中へ消え{08:21}。\n<wait>	behind and disappeared into the spring.\n<wait>			draft	reads: を置いて泉の中へ消えていった。\n<wait>
-m/MS003A.BIN	0:1B	0	233	1FD0	澄み通{08:51}水を湛{08:41}泉が{08:7B}。\n泉に近づこうと{08:4C}どこ{08:42}とも無く声が聞こえて{08:1E}。\n<wait>	There is a spring brimming with crystal-clear water.\nAs you move to approach it, a voice comes from nowhere in particular.\n<wait>			draft	reads: 澄み通った水を湛えた泉がある。\n泉に近づこうとするとどこからとも無く声が聞こえてきた。\n<wait>
-m/MS003A.BIN	0:1B	1	313	1FD2	声：	Voice:			draft	
-m/MS003A.BIN	0:1B	2	319	1FD3	止まれ、若者よ。汝は我が泉を汚す者{08:59}か？\n	Halt, young one. Art thou one who would defile my spring?\n			draft	reads: 止まれ、若者よ。汝は我が泉を汚す者なるか？\n
-m/MS003A.BIN	0:1B	3	376	1FB2	{08:26}					reads: はい; menu option, declared width 20 columns
-m/MS003A.BIN	0:1B	4	380	1FB2	{08:27}					reads: いいえ; menu option, declared width 20 columns
-m/MS003A.BIN	0:1B	5	402	1FD2	声：	Voice:			draft	
-m/MS003A.BIN	0:1B	6	408	1FD3	止まれ、若者。我が泉に立ち入る{08:46}まかり{08:7D}ぬ。\n早々に立ち去れい！\n	Halt, young one. Thou shalt not set foot in my spring.\nBegone at once!\n			draft	reads: 止まれ、若者。我が泉に立ち入ることまかりならぬ。\n早々に立ち去れい！\n
-m/MS003A.BIN	0:1B	7	488	1FB2	立ち去る	Leave			draft	menu option, declared width 20 columns
-m/MS003A.BIN	0:1B	8	498	1FB2	立ち去ら{08:25}	Don't leave			draft	reads: 立ち去らない; menu option, declared width 20 columns
-m/MS003A.BIN	0:1B	9	530	1FD2	声：	Voice:			draft	
-m/MS003A.BIN	0:1B	10	536	1FD3	では何用か？\n	Then what is thy business?\n			draft	
-m/MS003A.BIN	0:1B	11	565	1FB2	泉を使い{08:4E}	Use the spring			draft	reads: 泉を使いたい; menu option, declared width 20 columns
-m/MS003A.BIN	0:1B	12	577	1FB2	特に用は無い	Nothing really			draft	menu option, declared width 20 columns
-m/MS003A.BIN	0:1B	13	711	1FD2	声：	Voice:			draft	
-m/MS003A.BIN	0:1B	14	717	1FD3	ふむ{08:72}お主の役に立つか{08:90}かは保証{08:86}{08:2C}。\n{08:4D}で構わぬの{08:7C}自由に使うが良い。\n<wait>	Hmm.... I cannot promise it will be of any use to thee.\nIf that suits thee, use it freely.\n<wait>			draft	reads: ふむ‥‥お主の役に立つかどうかは保証しかねる。\nそれで構わぬのならば自由に使うが良い。\n<wait>
-m/MS003A.BIN	0:1B	15	812	1FD2	声：	Voice:			draft	
-m/MS003A.BIN	0:1B	16	818	1FD3	{08:7C}	Then			draft	reads: ならば
-m/MS003A.BIN	0:1B	17	824	1F02	マッカを払う{08:77}。\n	 Macca thou must pay.\n			draft	reads: マッカを払うのだ。\n
-m/MS003A.BIN	0:1B	18	857	1FB2	払う	Pay			draft	menu option, declared width 20 columns
-m/MS003A.BIN	0:1B	19	863	1FB2	やめておく	Never mind			draft	menu option, declared width 20 columns
-m/MS003A.BIN	0:1B	20	905	1FD2	声：	Voice:			draft	
-m/MS003A.BIN	0:1B	21	911	1FD3	{08:72}マッカが足りぬか。話に{08:7D}んな。\n泉を使わ{08:2A}{08:8D}にはゆかぬ。立ち去る{08:77}。\n<wait>	....Thou hast not the Macca? Then there is nothing to discuss.\nI cannot let thee use the spring. Begone.\n<wait>			draft	reads: ‥‥マッカが足りぬか。話にならんな。\n泉を使わせるわけにはゆかぬ。立ち去るのだ。\n<wait>
-m/MS003A.BIN	0:1B	22	996	1FD2	声：	Voice:			draft	
-m/MS003A.BIN	0:1B	23	1002	1FD3	確かに。では御自由に使われよ。\n<wait>	Very well. Then use it as thou pleasest.\n<wait>			draft	
-m/MS003A.BIN	0:1B	24	1046	1FD2	声：	Voice:			draft	
-m/MS003A.BIN	0:1B	25	1052	1FD3	では{08:45}{08:42}立ち去る{08:77}。\n<wait>	Then begone from this place.\n<wait>			draft	reads: ではここから立ち去るのだ。\n<wait>
-m/MS003A.BIN	0:1B	26	1086	1FD2	声：	Voice:			draft	
-m/MS003A.BIN	0:1B	27	1092	1FD3	左様か{08:72}{08:7C}汝らを葬るのが番人たる我が役目。\n覚悟はよいな！？\n{1E10:01025A}	Is that so.... Then it is my duty as guardian to bury thee.\nArt thou prepared!?\n{1E10:01025A}			draft	reads: 左様か‥‥ならば汝らを葬るのが番人たる我が役目。\n覚悟はよいな！？\n{1E10:01025A}
-m/MS003A.BIN	0:1C	0	15	1F86	番人の血で真っ赤に染{08:20}泉が{08:7B}。\n	There is a spring dyed deep red with the guardian's blood.\n			draft	reads: 番人の血で真っ赤に染まった泉がある。\n
-m/MS003A.BIN	0:1C	1	54	1F86	澄み通{08:51}水を湛{08:41}泉に{08:72}２人のお姉さんが浸かっ{08:14}。\n<wait>	In a spring of clear water......... two ladies are soaking.\n<wait>			draft	reads: 澄み通った水を湛えた泉に‥‥２人のお姉さんが浸かっている。\n<wait>
-m/MS003A.BIN	0:1C	2	124	1FD2	泉のお姉さんα：	Spring Lady A:			draft	
-m/MS003A.BIN	0:1C	3	142	1FD3	あら。\n<wait>	Oh.\n<wait>			draft	
-m/MS003A.BIN	0:1C	4	157	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	
-m/MS003A.BIN	0:1C	5	175	1FD3	まあ。\n<wait>	My.\n<wait>			draft	
-m/MS003A.BIN	0:1C	6	190	1FD2	泉のお姉さん達：	Spring Ladies:			draft	
-m/MS003A.BIN	0:1C	7	208	1FD3	いらっしゃ{08:89}せ～。\n<wait>	Welcome~.\n<wait>			draft	reads: いらっしゃいませ～。\n<wait>
-m/MS003A.BIN	0:1C	8	235	1FD2	泉のお姉さんα：	Spring Lady A:			draft	
-m/MS003A.BIN	0:1C	9	253	1FD3	（ん～、久しぶりのお客さんねぇ）\n<wait>	(Hmm~, our first customer in a while.)\n<wait>			draft	
-m/MS003A.BIN	0:1C	10	294	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	
-m/MS003A.BIN	0:1C	11	312	1FD3	（{08:72}ちょ{08:53}緊張し{08:5A}ね～）\n<wait>	(...I'm a little nervous~.)\n<wait>			draft	reads: （‥‥ちょっと緊張しますね～）\n<wait>
-m/MS003A.BIN	0:1C	12	350	1FD2	泉のお姉さんα：	Spring Lady A:			draft	
-m/MS003A.BIN	0:1C	13	368	1FD3	あら。\n（げ。）\n<wait>	Oh.\n(Ugh.)\n<wait>			draft	
-m/MS003A.BIN	0:1C	14	392	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	
-m/MS003A.BIN	0:1C	15	410	1FD3	まあ。\n（ひいっ。）\n<wait>	My.\n(Eek.)\n<wait>			draft	
-m/MS003A.BIN	0:1C	16	438	1FD2	泉のお姉さん達：	Spring Ladies:			draft	
-m/MS003A.BIN	0:1C	17	456	1FD3	いらっしゃ{08:89}せ～。\n<wait>	Welcome~.\n<wait>			draft	reads: いらっしゃいませ～。\n<wait>
-m/MS003A.BIN	0:1C	18	483	1FD2	泉のお姉さんα：	Spring Lady A:			draft	
-m/MS003A.BIN	0:1C	19	501	1FD3	（{08:5B}来た{08:72}）\n<wait>	(He's back...)\n<wait>			draft	reads: （また来た‥‥）\n<wait>
-m/MS003A.BIN	0:1C	20	522	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	
-m/MS003A.BIN	0:1C	21	540	1FD3	（ど、{08:90}し{08:69}{08:72}）\n<wait>	(Wh... what do we do...)\n<wait>			draft	reads: （ど、どうしよう‥‥）\n<wait>
-m/MS003A.BIN	0:1C	22	565	1FD2	泉のお姉さんα：	Spring Lady A:			draft	
-m/MS003A.BIN	0:1C	23	583	1FD3	（こら！ {08:58}弱気に{08:1A}んのよ！）\n<wait>	(Hey! Don't go all timid on me!)\n<wait>			draft	reads: （こら！ なに弱気になってんのよ！）\n<wait>
-m/MS003A.BIN	0:1C	24	621	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	
-m/MS003A.BIN	0:1C	25	639	1FD3	（そ、そうよね、{08:73}{08:46}{08:81}ダメね。{08:72}だ{08:52}私{08:4F}）\n<wait>	(R... right, we can't be like this. ...After all, we're)\n<wait>			draft	reads: （そ、そうよね、こんなことじゃダメね。‥‥だって私たち）\n<wait>
-m/MS003A.BIN	0:1C	26	690	1FD2	泉のお姉さん達：	Spring Ladies:			draft	
-m/MS003A.BIN	0:1C	27	708	1FD3	（プロ{08:8A}！）\n<wait>	(professionals!)\n<wait>			draft	reads: （プロだし！）\n<wait>
-m/MS003A.BIN	0:1C	28	729	1FD2	泉のお姉さんα：	Spring Lady A:			draft	
-m/MS003A.BIN	0:1C	29	747	1FD3	（{08:81}あ{01:28}通りにね）\n<wait>	(Then, as usual.)\n<wait>			draft	reads: （じゃあいつも通りにね）\n<wait>
-m/MS003A.BIN	0:1C	30	774	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	
-m/MS003A.BIN	0:1C	31	792	1FD3	（は～い）\n<wait>	(Okaaay.)\n<wait>			draft	
-m/MS003A.BIN	0:1C	32	811	1FD2	泉のお姉さんα：	Spring Lady A:			draft	
-m/MS003A.BIN	0:1C	33	829	1FD3	{08:47}～\n<wait>	This~\n<wait>			draft	reads: この～\n<wait>
-m/MS003A.BIN	0:1C	34	842	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	
-m/MS003A.BIN	0:1C	35	860	1FD3	泉の～\n<wait>	spring's~\n<wait>			draft	
-m/MS003A.BIN	0:1C	36	875	1FD2	泉のお姉さん達：	Spring Ladies:			draft	
-m/MS003A.BIN	0:1C	37	893	1FD3	効能は～\n	benefits are~\n			draft	
-m/MS003A.BIN	0:1C	38	928	1FB2	聞い{08:14}		Listen	v005		reads: 聞いている; menu option, declared width 20 columns; @refalign
-m/MS003A.BIN	0:1C	39	936	1FB2	水を飲む		Drink	v005		menu option, declared width 20 columns; @refalign
-m/MS003A.BIN	0:1C	40	946	1FB2	武器を投げ込む		Throw weapon	v005		menu option, declared width 20 columns; @refalign
-m/MS003A.BIN	0:1C	41	962	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; @refalign
-m/MS003A.BIN	0:1C	42	1012	1FB2	水を飲む		Drink	v005		menu option, declared width 20 columns; @refalign
-m/MS003A.BIN	0:1C	43	1022	1FB2	武器を投げ込む		Throw weapon	v005		menu option, declared width 20 columns; @refalign
-m/MS003A.BIN	0:1C	44	1038	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; @refalign
-m/MS003A.BIN	0:1C	45	1103	1F85	澄み通{08:51}水を湛{08:41}泉が{08:7B}。\n		There is a spring here.\n	v005		reads: 澄み通った水を湛えた泉がある。\n; @refalign
-m/MS003A.BIN	0:1C	46	1144	1FB2	水を飲む		Drink	v005		menu option, declared width 20 columns; @refalign
-m/MS003A.BIN	0:1C	47	1154	1FB2	武器を投げ込む		Throw weapon	v005		menu option, declared width 20 columns; @refalign
-m/MS003A.BIN	0:1C	48	1170	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; @refalign
-m/MS003A.BIN	0:1D	0	4	1FD0	誰が飲み{08:15}\n	Who will drink?\n			draft	reads: 誰が飲みますか？\n
-m/MS003A.BIN	0:1D	1	35	1E3E	は泉の水を飲んでみた。\n<wait>	 tried drinking the spring water.\n<wait>			draft	
-m/MS003A.BIN	0:1D	2	72	1FFA	・\n・\n・\n	.\n.\n.\n			draft	
-m/MS003A.BIN	0:1E	0	29	1F2F	を投げ込{08:5F}。\n<wait>	 was thrown into the spring.\n<wait>	 was thrown into the spring.\n<wait>	v005	draft	reads: を投げ込んだ。\n<wait>
-m/MS003A.BIN	0:1E	1	56	1FFA	{02:09}{02:09}{02:09}・・		 was thrown into the spring.\n<wait>\n.........	v005		reads: ・・・・・・・・・・・; @refalign-joined; @refalign
-m/MS003A.BIN	0:21	0	40	1B	メンバー名	Member Name	Name	v005	draft	
-m/MS003A.BIN	0:22	0	71	1F80	泉に投げ込{08:2E}武器を持{08:52}い{02:0A}。\n<wait>	You have no weapon you can throw into the spring.\n<wait>			draft	reads: 泉に投げ込める武器を持っていません。\n<wait>
-m/MS003A.BIN	0:23	0	40	1B	{02:04}名	Item Name	Item	v005	draft	reads: アイテム名
-m/MS003A.BIN	0:26	0	2	1FD0	澄み通{08:51}水を湛{08:41}泉が{08:7B}。\n泉に近づこうと{08:4C}どこ{08:42}とも無く声が聞こえて{08:1E}。\n<wait>	There is a spring brimming with crystal-clear water.\nAs you move to approach it, a voice comes from nowhere in particular.\n<wait>			draft	reads: 澄み通った水を湛えた泉がある。\n泉に近づこうとするとどこからとも無く声が聞こえてきた。\n<wait>
-m/MS003A.BIN	0:26	1	82	1FD2	声：	Voice:			draft	
-m/MS003A.BIN	0:26	2	88	1FD3	待たれよ、若者。おぬし、よい剣をさげておるな。\n	Hold, young one. That is a fine sword thou bearest.\n			draft	
-m/MS003A.BIN	0:26	3	151	1FB2	{08:4D}ほど{08:56}	Not really			draft	reads: それほどでも; menu option, declared width 20 columns
-m/MS003A.BIN	0:26	4	161	1FB2	とん{08:56}{08:25}	Not at all			draft	reads: とんでもない; menu option, declared width 20 columns
-m/MS003A.BIN	0:26	5	191	1FD2	声：	Voice:			draft	
-m/MS003A.BIN	0:26	6	197	1FD3	{08:4D}はかの名剣、まさしく天叢雲剣。\n{08:72}{08:4D}がしに譲{08:52}はくれぬか？\n	That is the famed blade -- the Ama-no-Murakumo itself.\n....Wilt thou not part with it, for my sake?\n			draft	reads: それはかの名剣、まさしく天叢雲剣。\n‥‥それがしに譲ってはくれぬか？\n
-m/MS003A.BIN	0:26	7	273	1FB2	困り{08:5A}	I'd rather not			draft	reads: 困ります; menu option, declared width 20 columns
-m/MS003A.BIN	0:26	8	281	1FB2	とん{08:56}{08:25}	Out of the question			draft	reads: とんでもない; menu option, declared width 20 columns
-m/MS003A.BIN	0:26	9	311	1FD2	声：	Voice:			draft	
-m/MS003A.BIN	0:26	10	317	1FD3	そこを曲げてお頼み申す！ \n	I beg thee, make an exception! \n			draft	
-m/MS003A.BIN	0:26	11	359	1FB2	だーめーだっ	Nooo waaay			draft	menu option, declared width 20 columns
-m/MS003A.BIN	0:26	12	373	1FB2	死ん{08:56}やらん	Not if I'm killed			draft	reads: 死んでもやらん; menu option, declared width 20 columns
-m/MS003A.BIN	0:26	13	407	1FD2	ハアゲンティ：	Haagenti:			draft	
-m/MS003A.BIN	0:26	14	423	1FD3	{08:72}ぬうぅ{08:72}{08:7C}腕ずくに{08:56}！\n	....Nuuu.... Then I shall take it by force!\n			draft	reads: ‥‥ぬうぅ‥‥ならば腕ずくにでも！\n
-m/MS003A.BIN	0:26	15	455	1FD2	ハアゲンティ：	Haagenti:			draft	
-m/MS003A.BIN	0:26	16	471	1FD3	{08:7C}死ね！\n	Then die!\n			draft	reads: ならば死ね！\n
-m/MS003A.BIN	0:27	0	4	1FD2	泉のお姉さんα：		Water Woman A:	v005		
-m/MS003A.BIN	0:27	1	22	1FD3	肩こり～眼精疲労～\n<wait>		Stiff shoulders~ Sore eyes~\n<wait>	v005		
-m/MS003A.BIN	0:27	2	49	1FD2	泉のお姉さんβ：		Water Woman B:	v005		
-m/MS003A.BIN	0:27	3	67	1FD3	腰痛～神経痛な{08:6D}～\n<wait>		Back ache~ Nerve pain~\n<wait>	v005		reads: 腰痛～神経痛などの～\n<wait>
-m/MS003A.BIN	0:27	4	94	1FD2	泉のお姉さん達：		Water Women:	v005		
-m/MS003A.BIN	0:27	5	112	1FD3	緩和でーす。\n<wait>		All will be cured!\n<wait>	v005		
-m/MS003A.BIN	0:27	6	133	1FD2	泉のお姉さん達：		Water Women:	v005		
-m/MS003A.BIN	0:27	7	151	1FD3	水温は～\n<wait>		The water~\n<wait>	v005		
-m/MS003A.BIN	0:27	8	168	1FD2	泉のお姉さんα：		Water Woman A:	v005		
-m/MS003A.BIN	0:27	9	186	1FD3	摂氏～\n<wait>		Is at~\n<wait>	v005		
-m/MS003A.BIN	0:27	10	201	1FD2	泉のお姉さんβ：		Water Woman B:	v005		
-m/MS003A.BIN	0:27	11	219	1FD3	２度！\n<wait>		Two degrees Celsius!\n<wait>	v005		
-m/MS003A.BIN	0:27	12	234	1FD2	泉のお姉さん達：		Water Women:	v005		
-m/MS003A.BIN	0:27	13	252	1FD3	うーん、冷た～い。\n<wait>		Yes. nice and cool.\n<wait>	v005		
-m/MS003A.BIN	0:27	14	279	1FD2	泉のお姉さん達：		Water Women:	v005		
-m/MS003A.BIN	0:27	15	297	1FD3	泉質は～\n<wait>		Water quality reads~\n<wait>	v005		
-m/MS003A.BIN	0:27	16	314	1FD2	泉のお姉さんα：		Water Woman A:	v005		
-m/MS003A.BIN	0:27	17	332	1FD3	弱酸性～\n<wait>		Slightly acid~\n<wait>	v005		
-m/MS003A.BIN	0:27	18	349	1FD2	泉のお姉さんβ：		Water Woman B:	v005		
-m/MS003A.BIN	0:27	19	367	1FD3	適度にスライムを含んでい{08:5A}ぅ。\n<wait>		Must be because of the slime.\n<wait>	v005		reads: 適度にスライムを含んでいますぅ。\n<wait>
-m/MS003A.BIN	0:27	20	406	1FD2	泉のお姉さん達：		Water Women:	v005		
-m/MS003A.BIN	0:27	21	424	1FD3	ぬるぬる加減が{08:7F}感じでーす。\n<wait>		Who doesn't like a bit of slime?\n<wait>	v005		reads: ぬるぬる加減がいい感じでーす。\n<wait>
-m/MS003A.BIN	0:27	22	473	1FB2	水を飲む		Drink	v005		menu option, declared width 20 columns; @refalign
-m/MS003A.BIN	0:27	23	483	1FB2	武器を投げ込む		Throw weapon	v005		menu option, declared width 20 columns; @refalign
-m/MS003A.BIN	0:27	24	499	1FB2	立ち去る		Leave	v005		menu option, declared width 20 columns; @refalign
-m/MS003A.BIN	0:28	0	4	1FD0	誰が飲み{08:15}\n	Who will drink?\n			draft	reads: 誰が飲みますか？\n
-m/MS003A.BIN	0:28	1	46	1E3E	は泉の水を飲んでみた。\n<wait>	tried drinking the spring water.\n<wait>			draft	
-m/MS003A.BIN	0:28	2	77	1FD0	ずずず{08:72}\n<wait>	Slurp slurp.........\n<wait>			draft	reads: ずずず‥‥\n<wait>
-m/MS003A.BIN	0:28	3	107	1FD2	泉のお姉さんα：	Spring Lady A:			draft	
-m/MS003A.BIN	0:28	4	125	1FD3	{02:08}{02:08}\n（げッ！{08:58}よこいつ、人がしゃべ{08:52}んのに！）\n	............\n(Ugh! What's with this guy, while someone's talking!)\n			draft	reads: ‥‥‥‥‥‥\n（げッ！なによこいつ、人がしゃべってんのに！）\n
-m/MS003A.BIN	0:28	5	178	1FD2	泉のお姉さんα：	Spring Lady A:			draft	
-m/MS003A.BIN	0:28	6	196	1FD3	{02:08}{02:08}\n（な{08:72}{08:58}？ 何{08:6B}こいつ{08:72}）\n	............\n(Wh... what? What is this guy...)\n			draft	reads: ‥‥‥‥‥‥\n（な‥‥なに？ 何なのこいつ‥‥）\n; @split-tailless: the cut took only a trailing escape, nothing to divide
-m/MS003A.BIN	0:28	7	235	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	
-m/MS003A.BIN	0:28	8	253	1FD3	{02:08}{02:08}\n（{08:72}うそ{08:72}）\n<wait>	............\n(...No way...)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥うそ‥‥）\n<wait>
-m/MS003A.BIN	0:28	9	282	1FD2	泉のお姉さんα：	Spring Lady A:			draft	
-m/MS003A.BIN	0:28	10	300	1FD3	{02:08}{02:08}\n（{08:72}変態{08:72}変態{08:72}）\n<wait>	............\n(...Pervert... pervert...)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥変態‥‥変態‥‥）\n<wait>
-m/MS003A.BIN	0:28	11	332	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	
-m/MS003A.BIN	0:28	12	350	1FD3	{02:08}{02:08}\n（{08:72}しくしく{08:72}）\n<wait>	............\n(...sniff sniff...)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥しくしく‥‥）\n<wait>
-m/MS003A.BIN	0:28	13	380	1FD0	{08:72}ぐびぐび{08:72}\n<wait>	...Gulp gulp...\n<wait>			draft	reads: ‥‥ぐびぐび‥‥\n<wait>
-m/MS003A.BIN	0:28	14	406	1FD2	泉のお姉さんα：	Spring Lady A:			draft	
-m/MS003A.BIN	0:28	15	424	1FD3	{02:08}{02:08}\n（{02:08}{02:08}）\n<wait>	............\n(............)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥‥‥‥‥）\n<wait>
-m/MS003A.BIN	0:28	16	446	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	
-m/MS003A.BIN	0:28	17	464	1FD3	{02:08}{02:08}\n（{02:08}{02:08}）\n<wait>	............\n(............)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥‥‥‥‥）\n<wait>
-m/MS003A.BIN	0:28	18	489	1FD2	泉のお姉さんα：	Spring Lady A:			draft	
-m/MS003A.BIN	0:28	19	507	1FD3	{02:08}{02:08}\n（{08:72}変態{08:72}変態へん{08:4E}ヘンタイッ！）\n<wait>	............\n(...Pervert... pervert, pervert, PERVERT!)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥変態‥‥変態へんたいヘンタイッ！）\n<wait>
-m/MS003A.BIN	0:28	20	555	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	
-m/MS003A.BIN	0:28	21	573	1FD3	{02:08}{02:08}\n（{08:72}おかあさん{08:72}）\n<wait>	............\n(...Mummy...)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥おかあさん‥‥）\n<wait>
-m/MS003A.BIN	0:28	22	605	1FD0	{08:72}ごくん\n<wait>	...Gulp.\n<wait>			draft	reads: ‥‥ごくん\n<wait>
-m/MS003A.BIN	0:28	23	622	1FD2	泉のお姉さん達：	Spring Ladies:			draft	
-m/MS003A.BIN	0:28	24	640	1FD3	{02:08}{02:08}\n（誰か～助けて～）\n<wait>	............\n(Somebody~ help~)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（誰か～助けて～）\n<wait>
-m/MS003A.BIN	0:29	0	40	1F2F	を投げ込{08:5F}。\n<wait>	 was thrown into the spring.\n<wait>			draft	reads: を投げ込んだ。\n<wait>
-m/MS003A.BIN	0:29	1	66	1FD2	泉のお姉さんα：	Spring Lady A:			draft	
-m/MS003A.BIN	0:29	2	84	1FD3	{02:08}{02:08}\n（わッ！{08:58}よこいつ、やる気？）\n<wait>	............\n(Wah! What's with this guy, is he looking for a fight?)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（わッ！なによこいつ、やる気？）\n<wait>
-m/MS003A.BIN	0:29	3	128	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	
-m/MS003A.BIN	0:29	4	146	1FD3	{02:08}{02:08}\n（ひいっ{08:72}）\n<wait>	............\n(Eek....)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（ひいっ‥‥）\n<wait>
-m/MS003A.BIN	0:29	5	172	1FD2	泉のお姉さんα：	Spring Lady A:			draft	
-m/MS003A.BIN	0:29	6	190	1FD3	{02:08}{02:08}\n（{08:72}読め{08:25}わね{08:72}何考えてんのかしら？）\n<wait>	............\n(....Can't read him at all.... what is he thinking?)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥読めないわね‥‥何考えてんのかしら？）\n<wait>
-m/MS003A.BIN	0:29	7	242	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	
-m/MS003A.BIN	0:29	8	260	1FD3	{02:08}{02:08}\n（あの{08:72}{08:90}しま{08:80}、{08:47}	............\n(Um.... what do we do about this 			draft	reads: ‥‥‥‥‥‥\n（あの‥‥どうしましょう、この
-m/MS003A.BIN	0:29	9	290	1F01	{08:72}）\n<wait>	....)\n<wait>			draft	reads: ‥‥）\n<wait>
-m/MS003A.BIN	0:29	10	303	1FD2	泉のお姉さんα：	Spring Lady A:			draft	
-m/MS003A.BIN	0:29	11	321	1FD3	{02:08}{02:08}\n（{01:18}返{08:4A}あげな{08:49}よ）\n<wait>	............\n(You give it back to him.)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（あんた返してあげなさいよ）\n<wait>
-m/MS003A.BIN	0:29	12	355	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	
-m/MS003A.BIN	0:29	13	373	1FD3	{02:08}{02:08}\n（！？ ええ～っ、何で私が～）\n	............\n(!? Ehhh~, why me~?)\n			draft	reads: ‥‥‥‥‥‥\n（！？ ええ～っ、何で私が～）\n
-m/MS003A.BIN	0:29	14	413	1FD2	泉のお姉さんα：	Spring Lady A:			draft	
-m/MS003A.BIN	0:29	15	431	1FD3	{02:08}{02:08}\n（{08:72}{08:5B}{08:72}{08:5B}かこいつ！）\n<wait>	............\n(....Again.... this guy again!)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥また‥‥またかこいつ！）\n<wait>
-m/MS003A.BIN	0:29	16	467	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	
-m/MS003A.BIN	0:29	17	485	1FD3	{02:08}{02:08}\n（{08:72}うっううっ{08:72}）\n<wait>	............\n(....Uu-uuh....)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥うっううっ‥‥）\n<wait>
-m/MS003A.BIN	0:29	18	517	1FD2	泉のお姉さんα：	Spring Lady A:			draft	
-m/MS003A.BIN	0:29	19	535	1FD3	{02:08}{02:08}\n（ほら、さっさと渡しちゃいな！）\n<wait>	............\n(Come on, just hand it over already!)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（ほら、さっさと渡しちゃいな！）\n<wait>
-m/MS003A.BIN	0:29	20	581	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	
-m/MS003A.BIN	0:29	21	599	1FD3	{02:08}{02:08}\n（え～っ、{08:5B}{08:55}かぁ？ たまには先輩が{08:72}）\n<wait>	............\n(Ehh~, again? Couldn't you do it for once, senpai....)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（え～っ、またですかぁ？ たまには先輩が‥‥）\n<wait>
-m/MS003A.BIN	0:29	22	658	1FD2	泉のお姉さんα：	Spring Lady A:			draft	
-m/MS003A.BIN	0:29	23	676	1FD3	{08:72}あ、あのう{08:72}{08:48}{08:72}{01:12}{08:55}よね？\n（い・い・か・ら・！）\n<wait>	....U-Um.... this.... it's yours, isn't it?\n(J.U.S.T. D.O. I.T.!)\n<wait>			draft	reads: ‥‥あ、あのう‥‥これ‥‥あなたのですよね？\n（い・い・か・ら・！）\n<wait>
-m/MS003A.BIN	0:29	24	736	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	
-m/MS003A.BIN	0:29	25	754	1FD3	{08:72}あの{08:72}ど、{08:90}ぞ{08:72}。\n（{08:72}うぅ{08:72}こ、こわい～{08:72}）\n<wait>	....Um.... h-here you are.....\n(....Uuh.... h-he's so scary~....)\n<wait>			draft	reads: ‥‥あの‥‥ど、どうぞ‥‥。\n（‥‥うぅ‥‥こ、こわい～‥‥）\n<wait>
-m/MS003A.BIN	0:29	26	823	1F2F	を受け取{08:51}。\n<wait>	 was handed back.\n<wait>			draft	reads: を受け取った。\n<wait>
-m/MS003A.BIN	0:29	27	844	1FD2	泉のお姉さんα：	Spring Lady A:			draft	
-m/MS003A.BIN	0:29	28	862	1FD3	{02:08}{02:08}\n（{02:08}{02:08}）\n<wait>	............\n(............)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥‥‥‥‥）\n<wait>
-m/MS003A.BIN	0:29	29	884	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	
-m/MS003A.BIN	0:29	30	902	1FD3	{02:08}{02:08}\n（{02:08}{02:08}）\n<wait>	............\n(............)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥‥‥‥‥）\n<wait>
-m/MS003A.BIN	0:29	31	924	1FD2	泉のお姉さん達：	Spring Ladies:			draft	
-m/MS003A.BIN	0:29	32	942	1FD3	{02:08}{02:08}\n（何{08:6B}よぉーっっ！）\n<wait>	............\n(What IS he!!)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（何なのよぉーっっ！）\n<wait>
-m/MS003A.BIN	0:2A	0	12	1FD2	泉のお姉さんα：		Water Woman A:	v005		
-m/MS003A.BIN	0:2A	1	30	1FD3	肩こり～眼精疲{08:72}{08:52}あら？\n<wait>		Stiff shoulders~ Sore eyes~ ...Huh?\n<wait>	v005		reads: 肩こり～眼精疲‥‥ってあら？\n<wait>
-m/MS003A.BIN	0:2A	2	63	1FD2	泉のお姉さんβ：		Water Woman B:	v005		
-m/MS003A.BIN	0:2A	3	81	1FD3	{08:72}行っちゃ{08:89}{08:4B}ね。\n<wait>		...They left.\n<wait>	v005		reads: ‥‥行っちゃいましたね。\n<wait>
-m/MS003A.BIN	0:2A	4	108	1FD2	泉のお姉さん達：		Water Women:	v005		
-m/MS003A.BIN	0:2A	5	131	0B	{08:72}はあ。\n（がっくり）\n		Haa...\n(Gulp.)\n	v005		reads: ‥‥はあ。\n（がっくり）\n
-m/MS003A.BIN	0:2A	6	156	18	{08:72}ふーっ。\n		Phew...\n	v005		reads: ‥‥ふーっ。\n; @refalign
-m/MS003A.BIN	0:2A	7	172	1FD2	泉のお姉さん達：		Water Women:	v005		
-m/MS003A.BIN	0:2A	8	190	1FD3	ご利用{01:2A}ござ{08:89}ーす。\n<wait>		Thank you for your patronage.\n<wait>	v005		reads: ご利用ありがとうございまーす。\n<wait>
-m/MS003A.BIN	0:2A	9	219	1FD2	泉のお姉さん達：		Water Women:	v005		
-m/MS003A.BIN	0:2A	10	237	1FD3	{02:08}{02:08}\n<wait>	............\n<wait>			draft	reads: ‥‥‥‥‥‥\n<wait>
-m/MS003A.BIN	0:2A	11	250	1FD2	泉のお姉さん達：		Water Women:	v005		
-m/MS003A.BIN	0:2A	12	273	0B	{08:72}はあ。\n		Haa...\n	v005		reads: ‥‥はあ。\n
-m/MS003A.BIN	0:2A	13	288	18	つ、つか{08:2F}{08:72}。\n		I'm so tired...\n	v005		reads: つ、つかれる‥‥。\n; @refalign
+m/MS003A.BIN	0:10	0	0	DATA	何も起こら{08:19}。\n<wait>	Nothing happened.\n<wait>	Nothing happened.\n<wait>	v005	checked	reads: 何も起こらなかった。\n<wait>; @refalign; @tl:fit
+m/MS003A.BIN	0:11	0	0	DATA	！？\n	!?\n	!?\n	ours	checked	@tl:fit
+m/MS003A.BIN	0:11	1	41	1E3E	の{03:0D}が{03:10}{08:4B}。\n<wait>	's HP was restored.\n<wait>	's HP was restored.\n<wait>	ours	checked	reads: のＨＰが回復した。\n<wait>; @tl:fit
+m/MS003A.BIN	0:12	0	0	DATA	！？\n	!?\n			draft	@tl:verified
+m/MS003A.BIN	0:12	1	49	1E3E	の{03:0D}・{03:0E}が{03:10}{08:4B}。\n<wait>	's HP and MP were restored.\n<wait>	 recovered {03:0E}{03:0D}.\n<wait>	v005	draft	reads: のＨＰ・ＭＰが回復した。\n<wait>; @refalign; @tl:accuracy
+m/MS003A.BIN	0:13	0	26	0C	！？\n	!?\n			draft	@tl:verified
+m/MS003A.BIN	0:13	1	66	1E3E	は毒に冒{03:0C}た。\n<wait>	 was poisoned.\n<wait>	 was poisoned.\n<wait>	v005	checked	reads: は毒に冒された。\n<wait>; @refalign; @tl:fit
+m/MS003A.BIN	0:14	0	13	0C	！？\n	!?\n			draft	@tl:verified
+m/MS003A.BIN	0:14	1	53	1E3E	は強烈な毒に冒{03:0C}た。\n<wait>	 was badly poisoned.\n<wait>	 was badly poisoned.\n<wait>	v005	checked	reads: は強烈な毒に冒された。\n<wait>; @refalign; @tl:fit
+m/MS003A.BIN	0:15	0	13	0C	！？\n	!?\n			draft	@tl:verified
+m/MS003A.BIN	0:15	1	53	1E3E	は麻痺{08:4B}。\n<wait>	 was paralysed.\n<wait>	 was paralysed.\n<wait>	v005	checked	reads: は麻痺した。\n<wait>; @refalign; @tl:fit
+m/MS003A.BIN	0:16	0	13	0C	！？\n	!?\n			draft	@tl:verified
+m/MS003A.BIN	0:16	1	49	1FC4	泉の守護者の呪いか、身体が麻痺{08:4A}{08:1F}。\n<wait>	You've been paralysed by the spring's curse.\n<wait>	You've been paralysed by the spring's curse.\n<wait>	v005	checked	reads: 泉の守護者の呪いか、身体が麻痺してしまった。\n<wait>; @refalign; @tl:fit
+m/MS003A.BIN	0:17	0	0	DATA	！？\n	!?\n			draft	@tl:verified
+m/MS003A.BIN	0:17	1	36	1FC4	強力な呪いにより身体が石化{08:4A}{08:1F}。\n<wait>	You've been turned into stone by a powerful curse.\n<wait>	You've been turned into stone by a powerful curse.\n<wait>	v005	checked	reads: 強力な呪いにより身体が石化してしまった。\n<wait>; @refalign; @tl:fit
+m/MS003A.BIN	0:18	0	0	DATA	何の変化も見られ{08:25}。\n<wait>	Nothing seems to have happened.\n<wait>	Nothing seems to have happened.\n<wait>	v005	checked	reads: 何の変化も見られない。\n<wait>; @refalign; @tl:fit
+m/MS003A.BIN	0:19	0	132	0C	！？\n	!?\n			draft	@tl:verified
+m/MS003A.BIN	0:19	1	170	1F2F	が黄金色に輝き始めた。\n<wait>	 began to glow golden.\n<wait>			draft	@tl:fit
+m/MS003A.BIN	0:19	2	207	1F01	達は 	 and the others obtained 	 began glowing with golden light.\n<wait>	v005	draft	@refalign; @tl:accuracy
+m/MS003A.BIN	0:19	3	216	1F2F	金塊？	a Gold Ingot?	You obtained 	v005	draft	@refalign; @tl:accuracy
+m/MS003A.BIN	0:19	4	226	1F2F	 を入手{08:4B}\n<wait>	\n<wait>	"a golden nuget"\n?\n<wait>	v005	draft	reads:  を入手した\n<wait>; @refalign-joined; @refalign; @tl:accuracy
+m/MS003A.BIN	0:1A	0	0	DATA	！？\n	!?\n			draft	@tl:verified
+m/MS003A.BIN	0:1A	1	54	1FD2	泉の精霊：	Spring Spirit:	Spring Spirit:	v005	checked	@tl:fit
+m/MS003A.BIN	0:1A	2	66	1FD3	{08:72}私は{08:47}泉に棲む精霊。\n<wait>	...I am the spirit that dwells in this spring.\n<wait>	...I am the spirit that dwells in this spring.\n<wait>	v005	checked	reads: ‥‥私はこの泉に棲む精霊。\n<wait>; @tl:fit
+m/MS003A.BIN	0:1A	3	313	1FD2	泉の精霊：	Spring Spirit:	Spring Spirit:	v005	checked	@tl:fit
+m/MS003A.BIN	0:1A	4	325	1FD3	お前が今投げ入{08:60}のは{08:47}	Was it this 	Which sword did you cast into the water?\n	v005	draft	reads: お前が今投げ入れたのはこの; @tl:verified
+m/MS003A.BIN	0:1A	5	360	1F2F	か？\n{08:4D}とも{08:47}	 you just threw in?\nOr this 	? Or perhaps 	v005	draft	reads: か？\nそれともこの; @tl:verified
+m/MS003A.BIN	0:1A	6	420	1F2F	か！？\n	?!\n			draft	@tl:verified
+m/MS003A.BIN	0:1A	7	465	1FB2	忘{08:60}	I forgot	I forgot	v005	checked	reads: 忘れた; menu option, declared width 20 columns; @tl:fit
+m/MS003A.BIN	0:1A	8	525	1FB2	忘{08:60}	I forgot	I forgot	v005	checked	reads: 忘れた; menu option, declared width 20 columns; @tl:fit
+m/MS003A.BIN	0:1A	9	585	1FB2	忘{08:60}	I forgot	I forgot	v005	checked	reads: 忘れた; menu option, declared width 20 columns; @tl:fit
+m/MS003A.BIN	0:1A	10	612	1FD2	泉の精霊：	Spring Spirit:	Spring Spirit:	v005	checked	@tl:fit
+m/MS003A.BIN	0:1A	11	624	1FD3	お前が落と{08:4B}のは{08:47}	What you dropped was this 	Was the weapon you threw into the water this\n	v005	draft	reads: お前が落としたのはこの; @tl:verified
+m/MS003A.BIN	0:1A	12	646	1F2F	銀の	silver 	silver 	v005	checked	@tl:fit
+m/MS003A.BIN	0:1A	13	659	1F2F	か？\n{08:4D}とも{08:47}	?\nOr perhaps 	? Or perhaps 	v005	draft	reads: か？\nそれともこの; @tl:fit
+m/MS003A.BIN	0:1A	14	676	1F2F	金の	this gold 	this gold 	v005	checked	@tl:fit
+m/MS003A.BIN	0:1A	15	689	1F2F	か！？\n	?!\n			draft	@tl:verified
+m/MS003A.BIN	0:1A	16	712	1FB2	金	Gold	Gold	v005	checked	menu option, declared width 20 columns; @tl:fit
+m/MS003A.BIN	0:1A	17	716	1FB2	銀	Silver	Silver	v005	checked	menu option, declared width 20 columns; @tl:fit
+m/MS003A.BIN	0:1A	18	720	1FB2	両方	Both	Both	v005	checked	menu option, declared width 20 columns; @tl:fit
+m/MS003A.BIN	0:1A	19	726	1FB2	{01:3F}{08:56}{08:25}	Neither	Neither	v005	checked	reads: どちらでもない; menu option, declared width 20 columns; @tl:fit
+m/MS003A.BIN	0:1A	20	796	1FD2	泉の精霊：	Spring Spirit:	Spring Spirit:	v005	checked	@tl:fit
+m/MS003A.BIN	0:1A	21	808	1FD3	{08:6A}と{08:72}無責任な。\n{08:63}の持ち物すら把握出来ておらんと{08:68}{08:46}か？\n<wait>	Hmph... Pathetic.\nCan you not even keep track of your own possessions?\n<wait>	Hmph... Pathetic.\nCan you not even keep track of your own possessions?\n<wait>	v005	checked	reads: なんと‥‥無責任な。\n自分の持ち物すら把握出来ておらんということか？\n<wait>; @tl:fit
+m/MS003A.BIN	0:1A	22	874	1FD2	泉の精霊：	Spring Spirit:	Spring Spirit:	v005	checked	@tl:fit
+m/MS003A.BIN	0:1A	23	886	1FD3	お前が落と{08:4B}のは{08:47}	What you dropped was this 	Was the weapon you threw into the water this\n	v005	draft	reads: お前が落としたのはこの; @tl:verified
+m/MS003A.BIN	0:1A	24	917	1F2F	だ。\n{08:72}{08:5C}少ししっかり{08:8E}{08:46}だな。\n	.\n...Try to be a bit more careful.\n	 was the correct answer.\nTry harder next time.\n	v005	draft	reads: だ。\n‥‥もう少ししっかりすることだな。\n; @tl:verified
+m/MS003A.BIN	0:1A	25	990	1FD2	泉の精霊：	Spring Spirit:	Spring Spirit:	v005	checked	@tl:fit
+m/MS003A.BIN	0:1A	26	1002	1FD3	そうか。では{08:47}普通の	I see. Then this ordinary 	Is that so? Very well then.\nThis regular 	v005	draft	reads: そうか。ではこの普通の; @tl:verified
+m/MS003A.BIN	0:1A	27	1035	1F2F	だな。\n持{08:52}ゆくが良い。\n	 is yours to take.\n	 is yours to take.\n	v005	checked	reads: だな。\n持ってゆくが良い。\n; @tl:fit
+m/MS003A.BIN	0:1A	28	1064	1FD2	泉の精霊：	Spring Spirit:	Spring Spirit:	v005	checked	@tl:fit
+m/MS003A.BIN	0:1A	29	1076	1FD3	？{08:72}そうか、では{08:48}はお前に返すとし{08:69}。\nいや、正直な{08:46}だな。感心、感心{08:72}\n	Oh? Very well then. I shall return this to you.\nHow honest. It is admirable...\n	Oh? Very well then. I shall return this to you.\nHow honest. It is admirable...\n	v005	checked	reads: ？‥‥そうか、ではこれはお前に返すとしよう。\nいや、正直なことだな。感心、感心‥‥\n; @refalign; @tl:fit
+m/MS003A.BIN	0:1A	30	1153	1FD2	泉の精霊：	Spring Spirit:	Spring Spirit:	v005	checked	@tl:fit
+m/MS003A.BIN	0:1A	31	1165	1FD3	{08:72}うむ、{08:79}答えを選ぶ{08:46}は私には分か{08:52}{08:64}。\n誠実なお前には{08:48}を授け{08:69}{08:72}\n	Yes, I knew you would say that... Very well.\nAs a price for your honesty, I shall give you this.\n	Yes, I knew you would say that... Very well.\nAs a price for your honesty, I shall give you this.\n	v005	checked	reads: ‥‥うむ、その答えを選ぶことは私には分かっていた。\n誠実なお前にはこれを授けよう‥‥\n; @tl:fit
+m/MS003A.BIN	0:1A	32	1242	1FD2	泉の精霊：	Spring Spirit:	Spring Spirit:	v005	checked	@tl:fit
+m/MS003A.BIN	0:1A	33	1254	1FD3	愚かな！欲に目を眩ま{03:0C}お{08:52}！\n今{08:71}何を{08:4A}来た{08:77}！！\n	You fool! You have been blinded by greed!\nWhat have you been doing all this time!!\n	You fool! You have been blinded by greed!\n	v005	draft	reads: 愚かな！欲に目を眩まされおって！\n今まで何をして来たのだ！！\n; @tl:accuracy
+m/MS003A.BIN	0:1A	34	1313	1FD2	泉の精霊：	Spring Spirit:	Spring Spirit:	v005	checked	@tl:fit
+m/MS003A.BIN	0:1A	35	1325	1FD3	くっくっく{08:72}。なかなかに正直な奴では{08:25}か。\n{08:72}気に入{08:51}。望み通り{08:48}をお前にくれてやろう。\n	Hehehe... You are quite the honest man.\nI like that. Very well then. I shall give this to you.\n	Hehehe... You are quite the honest man.\nI like that. Very well then. I shall give this to you.\n	v005	checked	reads: くっくっく‥‥。なかなかに正直な奴ではないか。\n‥‥気に入った。望み通りこれをお前にくれてやろう。\n; @tl:fit
+m/MS003A.BIN	0:1A	36	1418	1FD2	泉の精霊：	Spring Spirit:	Spring Spirit:	v005	checked	@tl:fit
+m/MS003A.BIN	0:1A	37	1430	1FD3	{08:72}嘘{08:26}かんな。{08:4D}とも忘れて{08:1F}のか？\nお前の落と{08:4B}のは{08:48}であろうが。\n	...You shouldn't lie. Or did you perhaps forget?\nThis was the one you dropped.\n	...You shouldn't lie. Or did you perhaps forget?\nThis was the one you dropped.\n	v005	checked	reads: ‥‥嘘はいかんな。それとも忘れてしまったのか？\nお前の落としたのはこれであろうが。\n; @tl:fit
+m/MS003A.BIN	0:1A	38	1501	1FD2	泉の精霊：	Spring Spirit:	Spring Spirit:	v005	checked	@tl:fit
+m/MS003A.BIN	0:1A	39	1513	1FD3	{08:72}む、{08:79}答えを選ぶ{08:8C}とは思{08:51}が。\nたわ{08:43}奴め。{08:48}以上付き合えんわ。\n	Hmph. I thought you would say that.\nI cannot go along with this foolishness for any longer.\n	Hmph. I thought you would way that.\nI cannot go along with this foolishness for any longer.\n	v005	draft	reads: ‥‥む、その答えを選ぶだろうとは思ったが。\nたわけた奴め。これ以上付き合えんわ。\n; @tl:accuracy
+m/MS003A.BIN	0:1A	40	1584	1FD2	泉の精霊：	Spring Spirit:	Spring Spirit:	v005	checked	@tl:fit
+m/MS003A.BIN	0:1A	41	1596	1FD3	愚かな{08:72}。{08:48}を持{08:52}去るが良い。\n	Fool... Take this and leave my sight.\n	Fool... Take this and leave my sight.\n	v005	checked	reads: 愚かな‥‥。これを持って去るが良い。\n; @tl:fit
+m/MS003A.BIN	0:1A	42	1632	1FD2	泉の精霊：	Spring Spirit:	Spring Spirit:	v005	checked	@tl:fit
+m/MS003A.BIN	0:1A	43	1644	1FD3	{02:08}。\n<wait>	.........\n<wait>			draft	reads: ‥‥‥。\n<wait>; @tl:verified
+m/MS003A.BIN	0:1A	44	1657	1FD2	泉の精霊：	Spring Spirit:	Spring Spirit:	v005	checked	@tl:fit
+m/MS003A.BIN	0:1A	45	1669	1FD3	そこ{08:71}言{08:28}のも{08:5B}別の意味で正直{08:6B}だとい{08:28}。\n{08:8F}我を出し過ぎて身を滅ぼさぬ{08:69}に気を付{08:29}が良い。\n	Being able to say that is one form of honesty.\nI merely suggest that you do not go too far with it.\n	Being able to say that is one form of honesty.\nI merely suggest that you do not go too far with it.\n	v005	checked	reads: そこまで言えるのもまた別の意味で正直なのだといえる。\nだが我を出し過ぎて身を滅ぼさぬように気を付けるが良い。\n; @tl:fit
+m/MS003A.BIN	0:1A	46	1796	1FD0	泉の精霊は	The Spring Spirit left 	The spirit disappears into the spring,\nleaving behind 	v005	draft	@tl:fit
+m/MS003A.BIN	0:1A	47	1819	1F2F	を置いて再び泉の中へ\n消え{08:21}{08:72}\n<wait>	 behind and\ndisappeared back into the spring...\n<wait>			draft	reads: を置いて再び泉の中へ\n消えていった‥‥\n<wait>; @tl:fit
+m/MS003A.BIN	0:1A	48	1928	1FD0	精霊は	The spirit left 	The spirit disappears into the spring,\nleaving behind 	v005	draft	@tl:fit
+m/MS003A.BIN	0:1A	49	1981	1F2F	を置いて泉の中へ消え{08:21}。\n<wait>	 behind and disappeared into the spring.\n<wait>			draft	reads: を置いて泉の中へ消えていった。\n<wait>; @tl:fit
+m/MS003A.BIN	0:1B	0	233	1FD0	澄み通{08:51}水を湛{08:41}泉が{08:7B}。\n泉に近づこうと{08:4C}どこ{08:42}とも無く声が聞こえて{08:1E}。\n<wait>	There is a spring brimming with crystal-clear water.\nAs you move to approach it, a voice comes from nowhere in particular.\n<wait>			draft	reads: 澄み通った水を湛えた泉がある。\n泉に近づこうとするとどこからとも無く声が聞こえてきた。\n<wait>; @tl:verified
+m/MS003A.BIN	0:1B	1	313	1FD2	声：	Voice:			draft	@tl:verified
+m/MS003A.BIN	0:1B	2	319	1FD3	止まれ、若者よ。汝は我が泉を汚す者{08:59}か？\n	Halt, young one. Art thou one who would defile my spring?\n			draft	reads: 止まれ、若者よ。汝は我が泉を汚す者なるか？\n; @tl:verified
+m/MS003A.BIN	0:1B	3	376	1FB2	{08:26}	Yes			draft	reads: はい; menu option, declared width 20 columns; @tl:new
+m/MS003A.BIN	0:1B	4	380	1FB2	{08:27}	No			draft	reads: いいえ; menu option, declared width 20 columns; @tl:new
+m/MS003A.BIN	0:1B	5	402	1FD2	声：	Voice:			draft	@tl:verified
+m/MS003A.BIN	0:1B	6	408	1FD3	止まれ、若者。我が泉に立ち入る{08:46}まかり{08:7D}ぬ。\n早々に立ち去れい！\n	Halt, young one. Thou shalt not set foot in my spring.\nBegone at once!\n			draft	reads: 止まれ、若者。我が泉に立ち入ることまかりならぬ。\n早々に立ち去れい！\n; @tl:verified
+m/MS003A.BIN	0:1B	7	488	1FB2	立ち去る	Leave			draft	menu option, declared width 20 columns; @tl:verified
+m/MS003A.BIN	0:1B	8	498	1FB2	立ち去ら{08:25}	Don't leave			draft	reads: 立ち去らない; menu option, declared width 20 columns; @tl:verified
+m/MS003A.BIN	0:1B	9	530	1FD2	声：	Voice:			draft	@tl:verified
+m/MS003A.BIN	0:1B	10	536	1FD3	では何用か？\n	Then what is thy business?\n			draft	@tl:verified
+m/MS003A.BIN	0:1B	11	565	1FB2	泉を使い{08:4E}	Use the spring			draft	reads: 泉を使いたい; menu option, declared width 20 columns; @tl:verified
+m/MS003A.BIN	0:1B	12	577	1FB2	特に用は無い	Nothing really			draft	menu option, declared width 20 columns; @tl:verified
+m/MS003A.BIN	0:1B	13	711	1FD2	声：	Voice:			draft	@tl:verified
+m/MS003A.BIN	0:1B	14	717	1FD3	ふむ{08:72}お主の役に立つか{08:90}かは保証{08:86}{08:2C}。\n{08:4D}で構わぬの{08:7C}自由に使うが良い。\n<wait>	Hmm.... I cannot promise it will be of any use to thee.\nIf that suits thee, use it freely.\n<wait>			draft	reads: ふむ‥‥お主の役に立つかどうかは保証しかねる。\nそれで構わぬのならば自由に使うが良い。\n<wait>; @tl:verified
+m/MS003A.BIN	0:1B	15	812	1FD2	声：	Voice:			draft	@tl:verified
+m/MS003A.BIN	0:1B	16	818	1FD3	{08:7C}	Then 			draft	reads: ならば; @tl:fit
+m/MS003A.BIN	0:1B	17	824	1F02	マッカを払う{08:77}。\n	 Macca thou must pay.\n			draft	reads: マッカを払うのだ。\n; @tl:verified
+m/MS003A.BIN	0:1B	18	857	1FB2	払う	Pay			draft	menu option, declared width 20 columns; @tl:verified
+m/MS003A.BIN	0:1B	19	863	1FB2	やめておく	Never mind			draft	menu option, declared width 20 columns; @tl:verified
+m/MS003A.BIN	0:1B	20	905	1FD2	声：	Voice:			draft	@tl:verified
+m/MS003A.BIN	0:1B	21	911	1FD3	{08:72}マッカが足りぬか。話に{08:7D}んな。\n泉を使わ{08:2A}{08:8D}にはゆかぬ。立ち去る{08:77}。\n<wait>	....Thou hast not the Macca? Then there is nothing to discuss.\nI cannot let thee use the spring. Begone.\n<wait>			draft	reads: ‥‥マッカが足りぬか。話にならんな。\n泉を使わせるわけにはゆかぬ。立ち去るのだ。\n<wait>; @tl:verified
+m/MS003A.BIN	0:1B	22	996	1FD2	声：	Voice:			draft	@tl:verified
+m/MS003A.BIN	0:1B	23	1002	1FD3	確かに。では御自由に使われよ。\n<wait>	Very well. Then use it as thou pleasest.\n<wait>			draft	@tl:verified
+m/MS003A.BIN	0:1B	24	1046	1FD2	声：	Voice:			draft	@tl:verified
+m/MS003A.BIN	0:1B	25	1052	1FD3	では{08:45}{08:42}立ち去る{08:77}。\n<wait>	Then begone from this place.\n<wait>			draft	reads: ではここから立ち去るのだ。\n<wait>; @tl:verified
+m/MS003A.BIN	0:1B	26	1086	1FD2	声：	Voice:			draft	@tl:verified
+m/MS003A.BIN	0:1B	27	1092	1FD3	左様か{08:72}{08:7C}汝らを葬るのが番人たる我が役目。\n覚悟はよいな！？\n{1E10:01025A}	Is that so.... Then it is my duty as guardian to bury thee.\nArt thou prepared!?\n{1E10:01025A}			draft	reads: 左様か‥‥ならば汝らを葬るのが番人たる我が役目。\n覚悟はよいな！？\n{1E10:01025A}; @tl:verified
+m/MS003A.BIN	0:1C	0	15	1F86	番人の血で真っ赤に染{08:20}泉が{08:7B}。\n	There is a spring dyed deep red with the guardian's blood.\n			draft	reads: 番人の血で真っ赤に染まった泉がある。\n; @tl:verified
+m/MS003A.BIN	0:1C	1	54	1F86	澄み通{08:51}水を湛{08:41}泉に{08:72}２人のお姉さんが浸かっ{08:14}。\n<wait>	In a spring of clear water......... two ladies are soaking.\n<wait>			draft	reads: 澄み通った水を湛えた泉に‥‥２人のお姉さんが浸かっている。\n<wait>; @tl:verified
+m/MS003A.BIN	0:1C	2	124	1FD2	泉のお姉さんα：	Spring Lady A:			draft	@tl:verified
+m/MS003A.BIN	0:1C	3	142	1FD3	あら。\n<wait>	Oh.\n<wait>			draft	@tl:verified
+m/MS003A.BIN	0:1C	4	157	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	@tl:verified
+m/MS003A.BIN	0:1C	5	175	1FD3	まあ。\n<wait>	My.\n<wait>			draft	@tl:verified
+m/MS003A.BIN	0:1C	6	190	1FD2	泉のお姉さん達：	Spring Ladies:			draft	@tl:verified
+m/MS003A.BIN	0:1C	7	208	1FD3	いらっしゃ{08:89}せ～。\n<wait>	Welcome~.\n<wait>			draft	reads: いらっしゃいませ～。\n<wait>; @tl:verified
+m/MS003A.BIN	0:1C	8	235	1FD2	泉のお姉さんα：	Spring Lady A:			draft	@tl:verified
+m/MS003A.BIN	0:1C	9	253	1FD3	（ん～、久しぶりのお客さんねぇ）\n<wait>	(Hmm~, our first customer in a while.)\n<wait>			draft	@tl:verified
+m/MS003A.BIN	0:1C	10	294	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	@tl:verified
+m/MS003A.BIN	0:1C	11	312	1FD3	（{08:72}ちょ{08:53}緊張し{08:5A}ね～）\n<wait>	(...I'm a little nervous~.)\n<wait>			draft	reads: （‥‥ちょっと緊張しますね～）\n<wait>; @tl:verified
+m/MS003A.BIN	0:1C	12	350	1FD2	泉のお姉さんα：	Spring Lady A:			draft	@tl:verified
+m/MS003A.BIN	0:1C	13	368	1FD3	あら。\n（げ。）\n<wait>	Oh.\n(Ugh.)\n<wait>			draft	@tl:verified
+m/MS003A.BIN	0:1C	14	392	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	@tl:verified
+m/MS003A.BIN	0:1C	15	410	1FD3	まあ。\n（ひいっ。）\n<wait>	My.\n(Eek.)\n<wait>			draft	@tl:verified
+m/MS003A.BIN	0:1C	16	438	1FD2	泉のお姉さん達：	Spring Ladies:			draft	@tl:verified
+m/MS003A.BIN	0:1C	17	456	1FD3	いらっしゃ{08:89}せ～。\n<wait>	Welcome~.\n<wait>			draft	reads: いらっしゃいませ～。\n<wait>; @tl:verified
+m/MS003A.BIN	0:1C	18	483	1FD2	泉のお姉さんα：	Spring Lady A:			draft	@tl:verified
+m/MS003A.BIN	0:1C	19	501	1FD3	（{08:5B}来た{08:72}）\n<wait>	(He's back...)\n<wait>			draft	reads: （また来た‥‥）\n<wait>; @tl:verified
+m/MS003A.BIN	0:1C	20	522	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	@tl:verified
+m/MS003A.BIN	0:1C	21	540	1FD3	（ど、{08:90}し{08:69}{08:72}）\n<wait>	(Wh... what do we do...)\n<wait>			draft	reads: （ど、どうしよう‥‥）\n<wait>; @tl:verified
+m/MS003A.BIN	0:1C	22	565	1FD2	泉のお姉さんα：	Spring Lady A:			draft	@tl:verified
+m/MS003A.BIN	0:1C	23	583	1FD3	（こら！ {08:58}弱気に{08:1A}んのよ！）\n<wait>	(Hey! Don't go all timid on me!)\n<wait>			draft	reads: （こら！ なに弱気になってんのよ！）\n<wait>; @tl:verified
+m/MS003A.BIN	0:1C	24	621	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	@tl:verified
+m/MS003A.BIN	0:1C	25	639	1FD3	（そ、そうよね、{08:73}{08:46}{08:81}ダメね。{08:72}だ{08:52}私{08:4F}）\n<wait>	(R... right, we can't be like this. ...After all, we're)\n<wait>			draft	reads: （そ、そうよね、こんなことじゃダメね。‥‥だって私たち）\n<wait>; @tl:verified
+m/MS003A.BIN	0:1C	26	690	1FD2	泉のお姉さん達：	Spring Ladies:			draft	@tl:verified
+m/MS003A.BIN	0:1C	27	708	1FD3	（プロ{08:8A}！）\n<wait>	(professionals!)\n<wait>			draft	reads: （プロだし！）\n<wait>; @tl:verified
+m/MS003A.BIN	0:1C	28	729	1FD2	泉のお姉さんα：	Spring Lady A:			draft	@tl:verified
+m/MS003A.BIN	0:1C	29	747	1FD3	（{08:81}あ{01:28}通りにね）\n<wait>	(Then, as usual.)\n<wait>			draft	reads: （じゃあいつも通りにね）\n<wait>; @tl:verified
+m/MS003A.BIN	0:1C	30	774	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	@tl:verified
+m/MS003A.BIN	0:1C	31	792	1FD3	（は～い）\n<wait>	(Okaaay.)\n<wait>			draft	@tl:verified
+m/MS003A.BIN	0:1C	32	811	1FD2	泉のお姉さんα：	Spring Lady A:			draft	@tl:verified
+m/MS003A.BIN	0:1C	33	829	1FD3	{08:47}～\n<wait>	This~\n<wait>			draft	reads: この～\n<wait>; @tl:verified
+m/MS003A.BIN	0:1C	34	842	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	@tl:verified
+m/MS003A.BIN	0:1C	35	860	1FD3	泉の～\n<wait>	spring's~\n<wait>			draft	@tl:verified
+m/MS003A.BIN	0:1C	36	875	1FD2	泉のお姉さん達：	Spring Ladies:			draft	@tl:verified
+m/MS003A.BIN	0:1C	37	893	1FD3	効能は～\n	benefits are~\n			draft	@tl:verified
+m/MS003A.BIN	0:1C	38	928	1FB2	聞い{08:14}	Listen	Listen	v005	checked	reads: 聞いている; menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS003A.BIN	0:1C	39	936	1FB2	水を飲む	Drink	Drink	v005	checked	menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS003A.BIN	0:1C	40	946	1FB2	武器を投げ込む	Throw weapon	Throw weapon	v005	checked	menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS003A.BIN	0:1C	41	962	1FB2	立ち去る	Leave	Leave	v005	checked	menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS003A.BIN	0:1C	42	1012	1FB2	水を飲む	Drink	Drink	v005	checked	menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS003A.BIN	0:1C	43	1022	1FB2	武器を投げ込む	Throw weapon	Throw weapon	v005	checked	menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS003A.BIN	0:1C	44	1038	1FB2	立ち去る	Leave	Leave	v005	checked	menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS003A.BIN	0:1C	45	1103	1F85	澄み通{08:51}水を湛{08:41}泉が{08:7B}。\n	There is a spring brimming with crystal-clear water.\n	There is a spring here.\n	v005	draft	reads: 澄み通った水を湛えた泉がある。\n; @refalign; @tl:accuracy
+m/MS003A.BIN	0:1C	46	1144	1FB2	水を飲む	Drink	Drink	v005	checked	menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS003A.BIN	0:1C	47	1154	1FB2	武器を投げ込む	Throw weapon	Throw weapon	v005	checked	menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS003A.BIN	0:1C	48	1170	1FB2	立ち去る	Leave	Leave	v005	checked	menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS003A.BIN	0:1D	0	4	1FD0	誰が飲み{08:15}\n	Who will drink?\n			draft	reads: 誰が飲みますか？\n; @tl:verified
+m/MS003A.BIN	0:1D	1	35	1E3E	は泉の水を飲んでみた。\n<wait>	 tried drinking the spring water.\n<wait>			draft	@tl:verified
+m/MS003A.BIN	0:1D	2	72	1FFA	・\n・\n・\n	.\n.\n.\n			draft	@tl:verified
+m/MS003A.BIN	0:1E	0	29	1F2F	を投げ込{08:5F}。\n<wait>	 was thrown into the spring.\n<wait>	 was thrown into the spring.\n<wait>	v005	checked	reads: を投げ込んだ。\n<wait>; @tl:fit
+m/MS003A.BIN	0:1E	1	56	1FFA	{02:09}{02:09}{02:09}・・	...........	 was thrown into the spring.\n<wait>\n.........	v005	draft	reads: ・・・・・・・・・・・; @refalign-joined; @refalign; @tl:accuracy
+m/MS003A.BIN	0:21	0	40	1B	メンバー名	Member Name	Name	v005	draft	@tl:verified
+m/MS003A.BIN	0:22	0	71	1F80	泉に投げ込{08:2E}武器を持{08:52}い{02:0A}。\n<wait>	You have no weapon you can throw into the spring.\n<wait>			draft	reads: 泉に投げ込める武器を持っていません。\n<wait>; @tl:verified
+m/MS003A.BIN	0:23	0	40	1B	{02:04}名	Item Name	Item	v005	draft	reads: アイテム名; @tl:verified
+m/MS003A.BIN	0:26	0	2	1FD0	澄み通{08:51}水を湛{08:41}泉が{08:7B}。\n泉に近づこうと{08:4C}どこ{08:42}とも無く声が聞こえて{08:1E}。\n<wait>	There is a spring brimming with crystal-clear water.\nAs you move to approach it, a voice comes from nowhere in particular.\n<wait>			draft	reads: 澄み通った水を湛えた泉がある。\n泉に近づこうとするとどこからとも無く声が聞こえてきた。\n<wait>; @tl:verified
+m/MS003A.BIN	0:26	1	82	1FD2	声：	Voice:			draft	@tl:verified
+m/MS003A.BIN	0:26	2	88	1FD3	待たれよ、若者。おぬし、よい剣をさげておるな。\n	Hold, young one. That is a fine sword thou bearest.\n			draft	@tl:verified
+m/MS003A.BIN	0:26	3	151	1FB2	{08:4D}ほど{08:56}	Not really			draft	reads: それほどでも; menu option, declared width 20 columns; @tl:verified
+m/MS003A.BIN	0:26	4	161	1FB2	とん{08:56}{08:25}	Not at all			draft	reads: とんでもない; menu option, declared width 20 columns; @tl:verified
+m/MS003A.BIN	0:26	5	191	1FD2	声：	Voice:			draft	@tl:verified
+m/MS003A.BIN	0:26	6	197	1FD3	{08:4D}はかの名剣、まさしく天叢雲剣。\n{08:72}{08:4D}がしに譲{08:52}はくれぬか？\n	That is the famed blade -- the Ama-no-Murakumo itself.\n....Wilt thou not part with it, for my sake?\n			draft	reads: それはかの名剣、まさしく天叢雲剣。\n‥‥それがしに譲ってはくれぬか？\n; @tl:verified
+m/MS003A.BIN	0:26	7	273	1FB2	困り{08:5A}	I'd rather not			draft	reads: 困ります; menu option, declared width 20 columns; @tl:verified
+m/MS003A.BIN	0:26	8	281	1FB2	とん{08:56}{08:25}	Out of the question			draft	reads: とんでもない; menu option, declared width 20 columns; @tl:verified
+m/MS003A.BIN	0:26	9	311	1FD2	声：	Voice:			draft	@tl:verified
+m/MS003A.BIN	0:26	10	317	1FD3	そこを曲げてお頼み申す！ \n	I beg thee, make an exception! \n			draft	@tl:verified
+m/MS003A.BIN	0:26	11	359	1FB2	だーめーだっ	Nooo waaay			draft	menu option, declared width 20 columns; @tl:verified
+m/MS003A.BIN	0:26	12	373	1FB2	死ん{08:56}やらん	Over my dead body			draft	reads: 死んでもやらん; menu option, declared width 20 columns; @tl:accuracy
+m/MS003A.BIN	0:26	13	407	1FD2	ハアゲンティ：	Haagenti:			draft	@tl:verified
+m/MS003A.BIN	0:26	14	423	1FD3	{08:72}ぬうぅ{08:72}{08:7C}腕ずくに{08:56}！\n	....Nuuu.... Then I shall take it by force!\n			draft	reads: ‥‥ぬうぅ‥‥ならば腕ずくにでも！\n; @tl:verified
+m/MS003A.BIN	0:26	15	455	1FD2	ハアゲンティ：	Haagenti:			draft	@tl:verified
+m/MS003A.BIN	0:26	16	471	1FD3	{08:7C}死ね！\n	Then die!\n			draft	reads: ならば死ね！\n; @tl:verified
+m/MS003A.BIN	0:27	0	4	1FD2	泉のお姉さんα：	Spring Lady A:	Water Woman A:	v005	draft	@tl:accuracy
+m/MS003A.BIN	0:27	1	22	1FD3	肩こり～眼精疲労～\n<wait>	Stiff shoulders~ Sore eyes~\n<wait>	Stiff shoulders~ Sore eyes~\n<wait>	v005	checked	@tl:fit
+m/MS003A.BIN	0:27	2	49	1FD2	泉のお姉さんβ：	Spring Lady B:	Water Woman B:	v005	draft	@tl:accuracy
+m/MS003A.BIN	0:27	3	67	1FD3	腰痛～神経痛な{08:6D}～\n<wait>	Back ache~ Nerve pain~\n<wait>	Back ache~ Nerve pain~\n<wait>	v005	checked	reads: 腰痛～神経痛などの～\n<wait>; @tl:fit
+m/MS003A.BIN	0:27	4	94	1FD2	泉のお姉さん達：	Spring Ladies:	Water Women:	v005	draft	@tl:accuracy
+m/MS003A.BIN	0:27	5	112	1FD3	緩和でーす。\n<wait>	All will be cured!\n<wait>	All will be cured!\n<wait>	v005	checked	@tl:fit
+m/MS003A.BIN	0:27	6	133	1FD2	泉のお姉さん達：	Spring Ladies:	Water Women:	v005	draft	@tl:accuracy
+m/MS003A.BIN	0:27	7	151	1FD3	水温は～\n<wait>	The water~\n<wait>	The water~\n<wait>	v005	checked	@tl:fit
+m/MS003A.BIN	0:27	8	168	1FD2	泉のお姉さんα：	Spring Lady A:	Water Woman A:	v005	draft	@tl:accuracy
+m/MS003A.BIN	0:27	9	186	1FD3	摂氏～\n<wait>	Is at~\n<wait>	Is at~\n<wait>	v005	checked	@tl:fit
+m/MS003A.BIN	0:27	10	201	1FD2	泉のお姉さんβ：	Spring Lady B:	Water Woman B:	v005	draft	@tl:accuracy
+m/MS003A.BIN	0:27	11	219	1FD3	２度！\n<wait>	Two degrees Celsius!\n<wait>	Two degrees Celsius!\n<wait>	v005	checked	@tl:fit
+m/MS003A.BIN	0:27	12	234	1FD2	泉のお姉さん達：	Spring Ladies:	Water Women:	v005	draft	@tl:accuracy
+m/MS003A.BIN	0:27	13	252	1FD3	うーん、冷た～い。\n<wait>	Mmm, nice and cold~.\n<wait>	Yes. nice and cool.\n<wait>	v005	draft	@tl:accuracy
+m/MS003A.BIN	0:27	14	279	1FD2	泉のお姉さん達：	Spring Ladies:	Water Women:	v005	draft	@tl:accuracy
+m/MS003A.BIN	0:27	15	297	1FD3	泉質は～\n<wait>	Water quality reads~\n<wait>	Water quality reads~\n<wait>	v005	checked	@tl:fit
+m/MS003A.BIN	0:27	16	314	1FD2	泉のお姉さんα：	Spring Lady A:	Water Woman A:	v005	draft	@tl:accuracy
+m/MS003A.BIN	0:27	17	332	1FD3	弱酸性～\n<wait>	Slightly acid~\n<wait>	Slightly acid~\n<wait>	v005	checked	@tl:fit
+m/MS003A.BIN	0:27	18	349	1FD2	泉のお姉さんβ：	Spring Lady B:	Water Woman B:	v005	draft	@tl:accuracy
+m/MS003A.BIN	0:27	19	367	1FD3	適度にスライムを含んでい{08:5A}ぅ。\n<wait>	It has just the right amount of slime in it~.\n<wait>	Must be because of the slime.\n<wait>	v005	draft	reads: 適度にスライムを含んでいますぅ。\n<wait>; @tl:accuracy
+m/MS003A.BIN	0:27	20	406	1FD2	泉のお姉さん達：	Spring Ladies:	Water Women:	v005	draft	@tl:accuracy
+m/MS003A.BIN	0:27	21	424	1FD3	ぬるぬる加減が{08:7F}感じでーす。\n<wait>	Who doesn't like a bit of slime?\n<wait>	Who doesn't like a bit of slime?\n<wait>	v005	checked	reads: ぬるぬる加減がいい感じでーす。\n<wait>; @tl:fit
+m/MS003A.BIN	0:27	22	473	1FB2	水を飲む	Drink	Drink	v005	checked	menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS003A.BIN	0:27	23	483	1FB2	武器を投げ込む	Throw weapon	Throw weapon	v005	checked	menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS003A.BIN	0:27	24	499	1FB2	立ち去る	Leave	Leave	v005	checked	menu option, declared width 20 columns; @refalign; @tl:fit
+m/MS003A.BIN	0:28	0	4	1FD0	誰が飲み{08:15}\n	Who will drink?\n			draft	reads: 誰が飲みますか？\n; @tl:verified
+m/MS003A.BIN	0:28	1	46	1E3E	は泉の水を飲んでみた。\n<wait>	 tried drinking the spring water.\n<wait>			draft	@tl:fit
+m/MS003A.BIN	0:28	2	77	1FD0	ずずず{08:72}\n<wait>	Slurp slurp.........\n<wait>			draft	reads: ずずず‥‥\n<wait>; @tl:verified
+m/MS003A.BIN	0:28	3	107	1FD2	泉のお姉さんα：	Spring Lady A:			draft	@tl:verified
+m/MS003A.BIN	0:28	4	125	1FD3	{02:08}{02:08}\n（げッ！{08:58}よこいつ、人がしゃべ{08:52}んのに！）\n	............\n(Ugh! What's with this guy, while someone's talking!)\n			draft	reads: ‥‥‥‥‥‥\n（げッ！なによこいつ、人がしゃべってんのに！）\n; @tl:verified
+m/MS003A.BIN	0:28	5	178	1FD2	泉のお姉さんα：	Spring Lady A:			draft	@tl:verified
+m/MS003A.BIN	0:28	6	196	1FD3	{02:08}{02:08}\n（な{08:72}{08:58}？ 何{08:6B}こいつ{08:72}）\n	............\n(Wh... what? What is this guy...)\n			draft	reads: ‥‥‥‥‥‥\n（な‥‥なに？ 何なのこいつ‥‥）\n; @split-tailless: the cut took only a trailing escape, nothing to divide; @tl:verified
+m/MS003A.BIN	0:28	7	235	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	@tl:verified
+m/MS003A.BIN	0:28	8	253	1FD3	{02:08}{02:08}\n（{08:72}うそ{08:72}）\n<wait>	............\n(...No way...)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥うそ‥‥）\n<wait>; @tl:verified
+m/MS003A.BIN	0:28	9	282	1FD2	泉のお姉さんα：	Spring Lady A:			draft	@tl:verified
+m/MS003A.BIN	0:28	10	300	1FD3	{02:08}{02:08}\n（{08:72}変態{08:72}変態{08:72}）\n<wait>	............\n(...Pervert... pervert...)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥変態‥‥変態‥‥）\n<wait>; @tl:verified
+m/MS003A.BIN	0:28	11	332	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	@tl:verified
+m/MS003A.BIN	0:28	12	350	1FD3	{02:08}{02:08}\n（{08:72}しくしく{08:72}）\n<wait>	............\n(...sniff sniff...)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥しくしく‥‥）\n<wait>; @tl:verified
+m/MS003A.BIN	0:28	13	380	1FD0	{08:72}ぐびぐび{08:72}\n<wait>	...Gulp gulp...\n<wait>			draft	reads: ‥‥ぐびぐび‥‥\n<wait>; @tl:verified
+m/MS003A.BIN	0:28	14	406	1FD2	泉のお姉さんα：	Spring Lady A:			draft	@tl:verified
+m/MS003A.BIN	0:28	15	424	1FD3	{02:08}{02:08}\n（{02:08}{02:08}）\n<wait>	............\n(............)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥‥‥‥‥）\n<wait>; @tl:verified
+m/MS003A.BIN	0:28	16	446	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	@tl:verified
+m/MS003A.BIN	0:28	17	464	1FD3	{02:08}{02:08}\n（{02:08}{02:08}）\n<wait>	............\n(............)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥‥‥‥‥）\n<wait>; @tl:verified
+m/MS003A.BIN	0:28	18	489	1FD2	泉のお姉さんα：	Spring Lady A:			draft	@tl:verified
+m/MS003A.BIN	0:28	19	507	1FD3	{02:08}{02:08}\n（{08:72}変態{08:72}変態へん{08:4E}ヘンタイッ！）\n<wait>	............\n(...Pervert... pervert, pervert, PERVERT!)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥変態‥‥変態へんたいヘンタイッ！）\n<wait>; @tl:verified
+m/MS003A.BIN	0:28	20	555	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	@tl:verified
+m/MS003A.BIN	0:28	21	573	1FD3	{02:08}{02:08}\n（{08:72}おかあさん{08:72}）\n<wait>	............\n(...Mommy...)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥おかあさん‥‥）\n<wait>; @tl:style
+m/MS003A.BIN	0:28	22	605	1FD0	{08:72}ごくん\n<wait>	...Gulp.\n<wait>			draft	reads: ‥‥ごくん\n<wait>; @tl:verified
+m/MS003A.BIN	0:28	23	622	1FD2	泉のお姉さん達：	Spring Ladies:			draft	@tl:verified
+m/MS003A.BIN	0:28	24	640	1FD3	{02:08}{02:08}\n（誰か～助けて～）\n<wait>	............\n(Somebody~ help~)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（誰か～助けて～）\n<wait>; @tl:verified
+m/MS003A.BIN	0:29	0	40	1F2F	を投げ込{08:5F}。\n<wait>	 was thrown into the spring.\n<wait>			draft	reads: を投げ込んだ。\n<wait>; @tl:verified
+m/MS003A.BIN	0:29	1	66	1FD2	泉のお姉さんα：	Spring Lady A:			draft	@tl:verified
+m/MS003A.BIN	0:29	2	84	1FD3	{02:08}{02:08}\n（わッ！{08:58}よこいつ、やる気？）\n<wait>	............\n(Wah! What's with this guy, is he looking for a fight?)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（わッ！なによこいつ、やる気？）\n<wait>; @tl:verified
+m/MS003A.BIN	0:29	3	128	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	@tl:verified
+m/MS003A.BIN	0:29	4	146	1FD3	{02:08}{02:08}\n（ひいっ{08:72}）\n<wait>	............\n(Eek....)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（ひいっ‥‥）\n<wait>; @tl:verified
+m/MS003A.BIN	0:29	5	172	1FD2	泉のお姉さんα：	Spring Lady A:			draft	@tl:verified
+m/MS003A.BIN	0:29	6	190	1FD3	{02:08}{02:08}\n（{08:72}読め{08:25}わね{08:72}何考えてんのかしら？）\n<wait>	............\n(....Can't read him at all.... what is he thinking?)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥読めないわね‥‥何考えてんのかしら？）\n<wait>; @tl:verified
+m/MS003A.BIN	0:29	7	242	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	@tl:verified
+m/MS003A.BIN	0:29	8	260	1FD3	{02:08}{02:08}\n（あの{08:72}{08:90}しま{08:80}、{08:47}	............\n(Um.... what do we do about this 			draft	reads: ‥‥‥‥‥‥\n（あの‥‥どうしましょう、この; @tl:verified
+m/MS003A.BIN	0:29	9	290	1F01	{08:72}）\n<wait>	....)\n<wait>			draft	reads: ‥‥）\n<wait>; @tl:verified
+m/MS003A.BIN	0:29	10	303	1FD2	泉のお姉さんα：	Spring Lady A:			draft	@tl:verified
+m/MS003A.BIN	0:29	11	321	1FD3	{02:08}{02:08}\n（{01:18}返{08:4A}あげな{08:49}よ）\n<wait>	............\n(You give it back to him.)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（あんた返してあげなさいよ）\n<wait>; @tl:verified
+m/MS003A.BIN	0:29	12	355	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	@tl:verified
+m/MS003A.BIN	0:29	13	373	1FD3	{02:08}{02:08}\n（！？ ええ～っ、何で私が～）\n	............\n(!? Ehhh~, why me~?)\n			draft	reads: ‥‥‥‥‥‥\n（！？ ええ～っ、何で私が～）\n; @tl:verified
+m/MS003A.BIN	0:29	14	413	1FD2	泉のお姉さんα：	Spring Lady A:			draft	@tl:verified
+m/MS003A.BIN	0:29	15	431	1FD3	{02:08}{02:08}\n（{08:72}{08:5B}{08:72}{08:5B}かこいつ！）\n<wait>	............\n(....Again.... this guy again!)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥また‥‥またかこいつ！）\n<wait>; @tl:verified
+m/MS003A.BIN	0:29	16	467	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	@tl:verified
+m/MS003A.BIN	0:29	17	485	1FD3	{02:08}{02:08}\n（{08:72}うっううっ{08:72}）\n<wait>	............\n(....Uu-uuh....)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥うっううっ‥‥）\n<wait>; @tl:verified
+m/MS003A.BIN	0:29	18	517	1FD2	泉のお姉さんα：	Spring Lady A:			draft	@tl:verified
+m/MS003A.BIN	0:29	19	535	1FD3	{02:08}{02:08}\n（ほら、さっさと渡しちゃいな！）\n<wait>	............\n(Come on, just hand it over already!)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（ほら、さっさと渡しちゃいな！）\n<wait>; @tl:verified
+m/MS003A.BIN	0:29	20	581	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	@tl:verified
+m/MS003A.BIN	0:29	21	599	1FD3	{02:08}{02:08}\n（え～っ、{08:5B}{08:55}かぁ？ たまには先輩が{08:72}）\n<wait>	............\n(Ehh~, again? Couldn't you do it for once, senpai....)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（え～っ、またですかぁ？ たまには先輩が‥‥）\n<wait>; @tl:verified
+m/MS003A.BIN	0:29	22	658	1FD2	泉のお姉さんα：	Spring Lady A:			draft	@tl:verified
+m/MS003A.BIN	0:29	23	676	1FD3	{08:72}あ、あのう{08:72}{08:48}{08:72}{01:12}{08:55}よね？\n（い・い・か・ら・！）\n<wait>	....U-Um.... this.... it's yours, isn't it?\n(J.U.S.T. D.O. I.T.!)\n<wait>			draft	reads: ‥‥あ、あのう‥‥これ‥‥あなたのですよね？\n（い・い・か・ら・！）\n<wait>; @tl:verified
+m/MS003A.BIN	0:29	24	736	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	@tl:verified
+m/MS003A.BIN	0:29	25	754	1FD3	{08:72}あの{08:72}ど、{08:90}ぞ{08:72}。\n（{08:72}うぅ{08:72}こ、こわい～{08:72}）\n<wait>	....Um.... h-here you are.....\n(....Uuh.... h-he's so scary~....)\n<wait>			draft	reads: ‥‥あの‥‥ど、どうぞ‥‥。\n（‥‥うぅ‥‥こ、こわい～‥‥）\n<wait>; @tl:verified
+m/MS003A.BIN	0:29	26	823	1F2F	を受け取{08:51}。\n<wait>	 was handed back.\n<wait>			draft	reads: を受け取った。\n<wait>; @tl:verified
+m/MS003A.BIN	0:29	27	844	1FD2	泉のお姉さんα：	Spring Lady A:			draft	@tl:verified
+m/MS003A.BIN	0:29	28	862	1FD3	{02:08}{02:08}\n（{02:08}{02:08}）\n<wait>	............\n(............)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥‥‥‥‥）\n<wait>; @tl:verified
+m/MS003A.BIN	0:29	29	884	1FD2	泉のお姉さんβ：	Spring Lady B:			draft	@tl:verified
+m/MS003A.BIN	0:29	30	902	1FD3	{02:08}{02:08}\n（{02:08}{02:08}）\n<wait>	............\n(............)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（‥‥‥‥‥‥）\n<wait>; @tl:verified
+m/MS003A.BIN	0:29	31	924	1FD2	泉のお姉さん達：	Spring Ladies:			draft	@tl:verified
+m/MS003A.BIN	0:29	32	942	1FD3	{02:08}{02:08}\n（何{08:6B}よぉーっっ！）\n<wait>	............\n(What IS he!!)\n<wait>			draft	reads: ‥‥‥‥‥‥\n（何なのよぉーっっ！）\n<wait>; @tl:verified
+m/MS003A.BIN	0:2A	0	12	1FD2	泉のお姉さんα：	Spring Lady A:	Water Woman A:	v005	draft	@tl:accuracy
+m/MS003A.BIN	0:2A	1	30	1FD3	肩こり～眼精疲{08:72}{08:52}あら？\n<wait>	Stiff shoulders~ Sore eyes~ ...Huh?\n<wait>	Stiff shoulders~ Sore eyes~ ...Huh?\n<wait>	v005	checked	reads: 肩こり～眼精疲‥‥ってあら？\n<wait>; @tl:fit
+m/MS003A.BIN	0:2A	2	63	1FD2	泉のお姉さんβ：	Spring Lady B:	Water Woman B:	v005	draft	@tl:accuracy
+m/MS003A.BIN	0:2A	3	81	1FD3	{08:72}行っちゃ{08:89}{08:4B}ね。\n<wait>	...They left.\n<wait>	...They left.\n<wait>	v005	checked	reads: ‥‥行っちゃいましたね。\n<wait>; @tl:fit
+m/MS003A.BIN	0:2A	4	108	1FD2	泉のお姉さん達：	Spring Ladies:	Water Women:	v005	draft	@tl:accuracy
+m/MS003A.BIN	0:2A	5	131	0B	{08:72}はあ。\n（がっくり）\n	Haa...\n(Slump.)\n	Haa...\n(Gulp.)\n	v005	draft	reads: ‥‥はあ。\n（がっくり）\n; @tl:accuracy
+m/MS003A.BIN	0:2A	6	156	18	{08:72}ふーっ。\n	Phew...\n	Phew...\n	v005	checked	reads: ‥‥ふーっ。\n; @refalign; @tl:fit
+m/MS003A.BIN	0:2A	7	172	1FD2	泉のお姉さん達：	Spring Ladies:	Water Women:	v005	draft	@tl:accuracy
+m/MS003A.BIN	0:2A	8	190	1FD3	ご利用{01:2A}ござ{08:89}ーす。\n<wait>	Thank you for your patronage.\n<wait>	Thank you for your patronage.\n<wait>	v005	checked	reads: ご利用ありがとうございまーす。\n<wait>; @tl:fit
+m/MS003A.BIN	0:2A	9	219	1FD2	泉のお姉さん達：	Spring Ladies:	Water Women:	v005	draft	@tl:accuracy
+m/MS003A.BIN	0:2A	10	237	1FD3	{02:08}{02:08}\n<wait>	............\n<wait>			draft	reads: ‥‥‥‥‥‥\n<wait>; @tl:verified
+m/MS003A.BIN	0:2A	11	250	1FD2	泉のお姉さん達：	Spring Ladies:	Water Women:	v005	draft	@tl:accuracy
+m/MS003A.BIN	0:2A	12	273	0B	{08:72}はあ。\n	Haa...\n	Haa...\n	v005	checked	reads: ‥‥はあ。\n; @tl:fit
+m/MS003A.BIN	0:2A	13	288	18	つ、つか{08:2F}{08:72}。\n	I'm so tired...\n	I'm so tired...\n	v005	checked	reads: つ、つかれる‥‥。\n; @refalign; @tl:fit
